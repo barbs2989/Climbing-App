@@ -28,6 +28,7 @@ npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB render
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
@@ -2626,6 +2627,34 @@ a build error, but a screen that renders wrong or not at all.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+- **`audit:grade-num-drift`** asks whether the **stored** `grade_num` still agrees with what
+  `lib/grade.js` derives from the row's own `grade`. `check:grade-parser` asserts there is exactly
+  ONE parser in the CODE and structurally cannot see this: the column was populated by importers,
+  so a row written by an older parser stays wrong forever and every gate stays green. Nobody had
+  asked. Reads the DB, so **not** a build gate; report-only.
+  - **Measured first run: 113 of 8,014 readable WA grades disagree (1.4%).** It is not cosmetic —
+    `grade_num` is the sortable grade and both finder RPCs (`0018`/`0019`) rank and filter on it, so
+    a wrong value is invisible: the route simply sits in the wrong place in a list nobody
+    cross-checks.
+  - **MOST DISAGREEMENTS ARE NOT DEFECTS, which is why it must stay report-only.** `grade_num` is
+    **lossy across grade systems by construction**: `gradeNumFrom` maps `class 3` and `5.3` to the
+    same `3`, and a roman numeral — a **commitment** grade — to its own number, so a Grade V alpine
+    route and 5.5 share a slot. Sweeping the parser's answer over the column would file scrambles
+    among rock climbs. The six classes separate *"the row disagrees with its own system"* (E, F —
+    read these) from *"the column cannot express this"* (A, B, D — leave them).
+  - **ONE ROW WAS FIXED, and how it was cleared is the bar for the rest.**
+    `wa_shock_and_awe` stored **10** for `"V3"`, sorting a boulder problem among 5.10 routes. The
+    convention was then measured against the population that PASSES rather than reasoned about:
+    **2,277 of 2,278 V-graded WA rows store the V number**, none stores a YDS equivalent, and this
+    was the single exception. *A convention with one exception is a defect, not a convention.*
+    `scripts/oneoff/probe-v-grade-convention.mjs` is that measurement and
+    `fix-shock-and-awe-grade-num.mjs` the write, under the usual declared-state contract.
+  - **Compare a suspect against the rows in its own system that AGREE before calling it wrong.**
+    That step is what separated the one real defect from 113 rows where the column, not the row, is
+    the limitation — and it is the same step that stopped a "fix" being applied to correct data in
+    the camp-elevation and clickable-shield work.
+  - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
+    a broken scan rather than a clean catalog.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
@@ -6350,6 +6379,29 @@ the correction knows the screen is wrong, and they have no way to report it.
       road/access; the ROUTE PROSE section is a standing reading list and always was. A per-section
       count is not the audit's verdict, and neither is a stale headline — **re-run it rather than
       quoting this line**, which has already been wrong once in a message to the user.
+  - **IT COVERED TWO OF THE SIX RACK COLUMNS, AND THE OTHER FOUR ALL RENDER.** `PROSE_COLS` held
+    `gear` and `what_to_bring` and stopped there, so **`sling_rack`, `detailed_rack`, `pro_needs`
+    and `rope_note`** had never been opened — every one of them feeding the RACK box on the route
+    page. Catalog-wide they carry **132 hits**, and `rope_note` alone has **63**, more than any
+    column already on the list. Adding them took the WA ROUTE PROSE section from **365 values on
+    272 routes to 481 on 352** — a third more than the audit could previously see.
+    - **RENDERING is the bar, and it was proven rather than argued.** All four are in
+      `check:field-renders`' `FIELDS` with **no `KNOWN` exemption**, and that guard fails a column
+      reaching no screen. That is the same test `data_quality` fails in the other direction, which
+      is why it stays out: it holds far more citations and renders nowhere, so it cannot break the
+      rule and would bury the real findings.
+    - **Found from the `sling_rack` end, and the recorded blocker there was WRONG.** CLAUDE.md said
+      that column holds *"three incompatible stored shapes"*; measured, it is **two** — 221 objects
+      and 21 arrays-of-object — and **0 of 242 render nothing**. The real blocker is narrower and
+      still stands: `fmtSlingRack` returns `null` for a plain **string**, so a *contributed* text
+      value would be invisible. That is a claim about the reader, not the data.
+    - **The bigger finding on that column is what DOES render.** 84% of values are labelled
+      **"Slings —"** while carrying cams, nuts, pickets and pitons — 162 objects have a `cams` key
+      — and the bullet runs to **p50 85, p90 172, max 454** characters, e.g. *"Slings — cams: note:
+      single rack, primary sizes, size: purple C3 to #3 BD, count: 1; …"*. A wrong label over a
+      paragraph in a bullet: the `check:token-boxes` question one element over, and NOT fixed here.
+      `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
+      lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
