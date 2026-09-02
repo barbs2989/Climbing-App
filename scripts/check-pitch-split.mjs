@@ -101,6 +101,34 @@ const CASES = [
     expectBeta: ["ROUTE BETA", "Approach gully", "Summit snowfield"],
   },
   {
+    // wa_monte_cristo_peak_scramble, live catalog 2026-09-02. `pitches` is 3 and ALL THREE
+    // entries are described: one roped pitch in this table, two stages under ROUTE BETA on
+    // the same tab. The heading read "1 of 3" — telling a climber two pitches were
+    // undescribed while both were on screen above it. 55 routes did that; on 52 of them
+    // `route.pitches` is exactly the entry count, so the denominator was counting the very
+    // stages the table filters out and the shortfall could not have existed.
+    name: "wa_monte_cristo_peak_scramble — every entry described, so NO shortfall may be claimed",
+    route: route("probe_noshortfall", "scrambling", 3, [
+      { pitch: "1", grade: "5.6", lengthM: 9, notes: "Crux chimney: three moves rated 5.6, 5.2, 5.6; now bolted." },
+      { pitch: "2", grade: "3rd/4th class ramp", lengthM: 30, notes: "From the bolted rap anchor a steepish ramp leads left." },
+      { pitch: "3", grade: "Class 3-4 (4th avoidable)", lengthM: 75, notes: "Loose red volcanic breccia scrambling to the summit." },
+    ]),
+    expectPitch: ["PITCH-BY-PITCH \u00b7 1"],
+    expectBeta: ["ROUTE BETA", "steepish ramp leads left"],
+    expectNoText: ["\u00b7 1 of 3"],
+  },
+  {
+    // The other direction, or the rule above is satisfied by never claiming a shortfall at
+    // all. A route that genuinely describes fewer pitches than it climbs must still say so.
+    name: "a route claiming more pitches than the page describes ANYWHERE still reads N of M",
+    route: route("probe_shortfall", "trad", 6, [
+      { pitch: "P1", grade: "5.9", notes: "Corner to a good ledge.", anchor: "2 bolts" },
+      { pitch: "P2", grade: "5.10a", notes: "Thin face past a small roof.", bolts: 4 },
+    ]),
+    expectPitch: ["PITCH-BY-PITCH \u00b7 2 of 6"],
+    expectNoBeta: true,
+  },
+  {
     name: "wa_baldy_standard — bare numbers on a walk-up are stages, not pitches",
     route: route("probe_walkup", "scrambling", null, [
       { pitch: "1", grade: "Class 2", notes: "Rough path to a low sub-peak on Gray Wolf Ridge." },
@@ -142,6 +170,9 @@ for (const c of CASES) {
   }
   for (const s of (c.expectPitch || [])) {
     if (!t.includes(s)) fail(`${c.name}: expected PITCH-BY-PITCH to carry ${JSON.stringify(s)}`);
+  }
+  for (const s2 of (c.expectNoText || [])) {
+    if (t.includes(s2)) fail(`${c.name}: heading claimed a shortfall it cannot substantiate — found ${JSON.stringify(s2)}`);
   }
   if (c.expectNoPitchTable && t.includes("PITCH-BY-PITCH")) {
     fail(`${c.name}: rendered PITCH-BY-PITCH over entries that are not pitches`);
