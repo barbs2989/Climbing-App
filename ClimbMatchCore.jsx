@@ -79,7 +79,12 @@ const enrichRoute = (route) => {
   }
   return out;
 };
-const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",orange:"#f0883e",pink:"#ff77c8",yellow:"#f2d669",lime:"#8fd14f",cyan:"#22c1e0",indigo:"#7d7cf5",magenta:"#e05fd8",brown:"#b5794a"};
+// `teal` and `orange` were the only chip colours with no matching *Bg fill. A chip does
+// `C[color+"Bg"] || C.surface`, so the Cascade-volcano and desert-tower tags rendered as a
+// GREY chip with coloured text beside properly tinted siblings - 178 routes reach one of
+// those two. The tints follow the family: same hue, S ~60-65%, L ~11%, and darker than the
+// matching *Dim, which is a border colour rather than a fill.
+const C={bg:"#0d1117",surface:"#161b22",card:"#1c2330",border:"#30363d",borderHi:"#3d4552",borderLight:"#21262d",text:"#e6edf3",textSub:"#99a3ad",textMuted:"#8b949e",blue:"#3b89f7",blueSolid:"#2a74de",blueChip:"#102442",greenChip:"#11421b",redSolid:"#d0443d",blueDim:"#1a3a6b",blueBg:"#0d2044",green:"#3fb950",greenBg:"#0f2419",greenDim:"#196127",amber:"#e3b341",amberBg:"#2a2207",red:"#f85149",redBg:"#2d1117",purple:"#a371f7",purpleBg:"#1e1240",teal:"#2cc9b8",tealDim:"#0c3b35",tealBg:"#0b2d29",orange:"#f0883e",orangeBg:"#2e190a",pink:"#ff77c8",yellow:"#f2d669",lime:"#8fd14f",cyan:"#22c1e0",indigo:"#7d7cf5",magenta:"#e05fd8",brown:"#b5794a"};
 const HERO_BG="linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN="inset 0 1px 0 rgba(255,255,255,0.07)";
 const SZ1={display:"flex",gap:6,overflowX:"auto",marginBottom:8,paddingBottom:2};
