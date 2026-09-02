@@ -19,7 +19,7 @@
 // column, which is the same drift that caused the original bug — so the check below proves a
 // chip and a challenge answer from the same call.
 
-import { routeTags, hasTag, LIST_TAGS } from "../lib/routeTags.js";
+import { routeTags, hasTag, LIST_TAGS, FEATURE_TAGS } from "../lib/routeTags.js";
 import { LIST_ALIASES, routeInList } from "../lib/lists.js";
 
 let fail = 0;
@@ -86,6 +86,25 @@ ok("duplicate list collapses to one chip", dup.filter(x => x.slug === "bulgers")
 ok("bare route -> no tags", routeTags({}).length === 0, routeTags({}));
 ok("null route -> no tags", routeTags(null).length === 0);
 ok("lists:null tolerated", routeTags({ lists: null, features: null }).length === 0);
+
+// --- feature presentation ------------------------------------------------------------------
+// A `features` value with no FEATURE_TAGS entry still renders, through routeTags own fallback
+// - a grey bullet with an EMPTY blurb. That degrades QUIETLY: the chip is on screen, so no
+// coverage check can see it carries none of the information its siblings carry. 383 of 1,216
+// chip instances were in that state until the table was completed. So every entry must
+// actually be presentable, and the fallback must stay a fallback rather than the common case.
+for (const [name, def] of Object.entries(FEATURE_TAGS)) {
+  ok(`feature ${name}: has an icon`, !!(def.icon && String(def.icon).trim()), def);
+  ok(`feature ${name}: has a blurb`, !!(def.blurb && def.blurb.trim().length > 10), def);
+  ok(`feature ${name}: names a colour`, !!(def.color && String(def.color).trim()), def);
+  const chip = routeTags({ features: [name] }).find(x => x.slug === name);
+  ok(`feature ${name}: reaches a chip carrying its own presentation`,
+    !!chip && chip.icon === def.icon && chip.color === def.color && chip.blurb === def.blurb, chip);
+}
+// The fallback still has to work - a value the table has not learned yet must RENDER, not
+// vanish. Losing the chip would be worse than losing its colour.
+const unknownChip = routeTags({ features: ["Verglas"] }).find(x => x.slug === "Verglas");
+ok("an unknown feature still renders a chip", !!unknownChip && unknownChip.label === "Verglas", unknownChip);
 
 // Derived warnings must read the columns the closure actually lives in.
 ok("raptor closure from access prose", hasTag({ access: { seasonal: "Peregrine falcon nesting closure Feb 1 - Jul 15." } }, "raptor_closure"));

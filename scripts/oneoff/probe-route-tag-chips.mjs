@@ -14,15 +14,16 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 import { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib", "db.js"))};
+import { C } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const qc = new QueryClient({ defaultOptions:{queries:{retry:false}} }); const noop=()=>{};
-export { dbRouteToCamel };
+export { dbRouteToCamel, C };
 export function render(route,tab){return renderToStaticMarkup(React.createElement(QueryClientProvider,{client:qc},
  React.createElement(RouteDetail,{route,initialSubTab:tab,onBack:noop,onSubTab:noop,contribs:[],myReports:[],connections:[],comments:{},hzVotes:{},sunReports:{},gearEdits:{},diffRatings:{},crewsForRoute:[],myStars:{},presence:null})));}
 `;
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-tag-")), "b.cjs");
 await build({ stdin:{contents:ENTRY,resolveDir:ROOT,loader:"js"}, bundle:true, format:"cjs", platform:"node",
   jsx:"automatic", loader:{".jsx":"jsx"}, define:{"import.meta.env":"{}"}, outfile:out, logLevel:"error" });
-const { render, dbRouteToCamel } = require_(out);
+const { render, dbRouteToCamel, C } = require_(out);
 const key = anonKey();
 const text = h => h.replace(/<style[\s\S]*?<\/style>/g," ").replace(/<[^>]+>/g," ")
   .replace(/&#x27;/g,"'").replace(/&amp;/g,"&").replace(/&middot;/g,"·").replace(/\s+/g," ");
@@ -45,3 +46,19 @@ for (const id of IDS) {
   const titles = [...html.matchAll(/title="([^"]{0,140})"/g)].map(m=>m[1]).filter(x=>/Steck|Bulger|prominence|highest|drops right beside|Retreat is hard/.test(x));
   if (titles.length) console.log("   blurbs reachable ONLY via title= (no hover on a phone):\n      - " + titles.join("\n      - "));
 }
+
+// --- every FEATURE_TAGS colour must actually EXIST in the palette --------------------------
+// TagChip does `C[t.color] || C.textSub` and `C[t.color+"Bg"] || C.surface`, so a colour name
+// that is not in the palette does not throw and does not look broken - the chip renders in the
+// muted fallback, indistinguishable from a value the table never learned. Only resolving the
+// name against C can tell those apart, and a static guard cannot: C lives in a JSX module.
+const { FEATURE_TAGS, LIST_TAGS } = await import("file://" + path.join(ROOT, "lib", "routeTags.js"));
+let bad = 0;
+for (const [table, defs] of [["FEATURE_TAGS", FEATURE_TAGS], ["LIST_TAGS", LIST_TAGS]]) {
+  for (const [name, def] of Object.entries(defs)) {
+    const fg = C[def.color], bg = C[def.color + "Bg"];
+    if (!fg || !bg) { console.log(`  FAIL ${table}.${name}: colour ${JSON.stringify(def.color)} -> fg=${fg} bg=${bg}`); bad++; }
+  }
+}
+console.log(`\ncolour resolution: ${Object.keys(FEATURE_TAGS).length} feature + ${Object.keys(LIST_TAGS).length} list entries, ${bad} unresolved`);
+if (bad) process.exit(1);
