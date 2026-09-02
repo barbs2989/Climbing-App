@@ -28,6 +28,7 @@ npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB render
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
@@ -205,6 +206,28 @@ a build error, but a screen that renders wrong or not at all.
     overview/planner/conditions/safety/partners/photos — so it spent a walk on an id the route page
     has no branch for and **never inspected Partners at all**, while its own header claimed six
     sub-tabs.
+  - **SECTION 4 READS CLAUDE.md's OWN ARCHITECTURE BULLET, because the rule above is scoped to
+    `scripts/` and the DOCS hold a hand-copy of the same vocabulary.** That is not hypothetical:
+    the Architecture bullet listed the route sub-tabs as
+    overview/conditions/planner/safety/photos/**`ranks`** — the identical wrong list recorded two
+    bullets up as costing `check:token-boxes` a whole walk, with `partners` missing the same way.
+    **The guard was fixed at the time and the sentence that seeded it was not**, so for months a
+    reader starting from Architecture would have copied it straight back out. A stated vocabulary
+    is a hand-copy wherever it lives.
+    - Scoped to that ONE bullet, deliberately — CLAUDE.md discusses these ids in prose throughout
+      (this entry does), so a document-wide scan fires on every correct mention. It reads the
+      bullet's own LINE, and the explanation naming the absent id lives on a sub-bullet beneath
+      it: a version that scanned the whole entry **failed on its own documentation**, the trap
+      `check:ci-cancel` records from the other side. Keep the list on one line.
+    - **An IGNORE list is how this check goes vacuous, and the first draft proved it**: it excused
+      `ranks` as "the NAV tab it names", which is precisely the id the defect consisted of — it
+      would have passed the original wrong bullet. The bullet's SUBJECT is stripped structurally
+      instead, and only genuine app-state names (`selRoute`, `tab`) are excused.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-architecture-subtab-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring byte-identically, and asserting the
+      failure came from section 4 rather than a script-list section above it. Case 1 is the real
+      bullet, restored verbatim. **Case 4 must PASS** — the sub-bullet names `Ranks` while
+      explaining it, and a guard flagging that would forbid its own explanation.
   - **Both vocabularies are READ from the app, never restated**: `NAV` from `ClimbMatch.jsx`, the
     sub-tab bar from `RouteDetail.jsx`, each with `ANCHOR LOST` if it moves. Any array of string
     literals under `scripts/` holding **three or more** members of one vocabulary is a list *of* that
@@ -1013,13 +1036,32 @@ a build error, but a screen that renders wrong or not at all.
           It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
           unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
           **absent** from the healthy one.
-        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
-          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
-          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
-          browser. That remains the best explanation for two differing 5,026-char captures and it
-          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
-          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
-          run to confirm.
+        - **SOLVED, AND IT WAS NEVER THE CLOCK: `tapByText` WAS CLICKING THE WRONG ELEMENT.**
+          Dumping every match on a quiet box settled it. **Two** elements have the exact text
+          `Reports` — the rating summary label (*"4.2 ★ 5 Reports"*, a **DIV**) and the sub-tab
+          **BUTTON** — and the DIV comes first in DOM order, so `hit[0]` clicked the label, which
+          does nothing, and returned **true**. The capture was 5,026 because it *was* Overview. The
+          clock hypothesis is **withdrawn**.
+        - **`check:overflow` HAS HAD THE SAME DEFECT SINCE #818**, which is the part worth keeping:
+          it calls `tapByText(page, "Reports")` for that sub-tab, gets `true`, and reports a
+          `route:Reports` row that is **Overview measured twice** — false coverage in a shipped
+          guard, invisible because the row is present and green. Fixed in the shared helper, which
+          fixes both callers: when several elements share the text it prefers a real control
+          (`BUTTON`/`A`/`role="button"`) over the first match. Verified on a quiet box (load 4.7)
+          — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
+          applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
+          5,026 and Photos' 678.
+        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
+          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
+          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
+          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
+          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
+          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
+          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
+          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
+          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
+          unverified fix alongside the walk would put main red. **Land the caveat first, then the
+          walk.**
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -2626,6 +2668,34 @@ a build error, but a screen that renders wrong or not at all.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+- **`audit:grade-num-drift`** asks whether the **stored** `grade_num` still agrees with what
+  `lib/grade.js` derives from the row's own `grade`. `check:grade-parser` asserts there is exactly
+  ONE parser in the CODE and structurally cannot see this: the column was populated by importers,
+  so a row written by an older parser stays wrong forever and every gate stays green. Nobody had
+  asked. Reads the DB, so **not** a build gate; report-only.
+  - **Measured first run: 113 of 8,014 readable WA grades disagree (1.4%).** It is not cosmetic —
+    `grade_num` is the sortable grade and both finder RPCs (`0018`/`0019`) rank and filter on it, so
+    a wrong value is invisible: the route simply sits in the wrong place in a list nobody
+    cross-checks.
+  - **MOST DISAGREEMENTS ARE NOT DEFECTS, which is why it must stay report-only.** `grade_num` is
+    **lossy across grade systems by construction**: `gradeNumFrom` maps `class 3` and `5.3` to the
+    same `3`, and a roman numeral — a **commitment** grade — to its own number, so a Grade V alpine
+    route and 5.5 share a slot. Sweeping the parser's answer over the column would file scrambles
+    among rock climbs. The six classes separate *"the row disagrees with its own system"* (E, F —
+    read these) from *"the column cannot express this"* (A, B, D — leave them).
+  - **ONE ROW WAS FIXED, and how it was cleared is the bar for the rest.**
+    `wa_shock_and_awe` stored **10** for `"V3"`, sorting a boulder problem among 5.10 routes. The
+    convention was then measured against the population that PASSES rather than reasoned about:
+    **2,277 of 2,278 V-graded WA rows store the V number**, none stores a YDS equivalent, and this
+    was the single exception. *A convention with one exception is a defect, not a convention.*
+    `scripts/oneoff/probe-v-grade-convention.mjs` is that measurement and
+    `fix-shock-and-awe-grade-num.mjs` the write, under the usual declared-state contract.
+  - **Compare a suspect against the rows in its own system that AGREE before calling it wrong.**
+    That step is what separated the one real defect from 113 rows where the column, not the row, is
+    the limitation — and it is the same step that stopped a "fix" being applied to correct data in
+    the camp-elevation and clickable-shield work.
+  - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
+    a broken scan rather than a clean catalog.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
@@ -4287,9 +4357,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **The prose test is corroboration ON TOP OF a geometric signal, not a detector on its own.**
       That is why it is folded in per-finding rather than used to select findings.
     - **A partial repair would be worse than none here**: removing only the flagged Three Fingers
-      Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
-      class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
+      Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind.
+      **THE CLOSING SENTENCE HERE USED TO SAY THE CATALOG DOES NOT RECORD WHICH TRAILHEAD A CAMP
+      SERVES. IT DOES** — `approach_logistics.trailhead` — and reading that as a worklist rather
+      than a caveat is what closed this corridor; see the Mountain Loop entry below. The signal is
+      real per route and is still NOT a detector: ranking by it flags a repaired group.
 
+  - **FOUR SIGNALS NOW, AND THE FOURTH FAILED WITH ITS OWN FAILURE ALREADY WRITTEN DOWN**
+    (`probe-witness-list-subsets.mjs`). The one heuristic that survived the first three is manual —
+    *find the route that does NOT carry the shared list; that author was not the propagation* — and
+    this tried to mechanise it. In the Mountain Loop corridor the witness carried **four** camps and
+    all four were the shared list's Three Fingers entries: a **SLICE**, one peak's share of a union.
+    - **9 slices catalog-wide, 0 real.** Terror Basin camp is the Picket peaks' camp; Colchuck Lake
+      is Colchuck Peak's; *Camp Muir / Ingraham Flats* are exactly Ingraham Direct's; *Glacier
+      Meadows / Snow Dome / Elk Lake* are the Blue Glacier route's; *Wing Lake / Lewis Lake* are
+      Black Peak's.
+    - **The reason is that a slice is ALSO what GOOD data looks like**: a route with a shorter,
+      more specific camp list than the zone it sits in. Being more specific than the zone list is
+      an improvement, not a defect. The signature was true of Mountain Loop and is not diagnostic
+      of it — a distinction no amount of reading the code exposes, only running it against a peak
+      whose answer you already know.
+    - **The caveat was in the script BEFORE the run and it was still worth running.** Predicting a
+      signal's failure is not the same as measuring it: without the run there is no count, and *9
+      hits, 0 real* is what stops the next session rebuilding it on the strength of the Mountain
+      Loop precedent.
+    - **So the class is NOT mechanically detectable with what the catalog holds.** `audit:camp-route-fit`
+      — does a camp name a peak that is not this route's? — remains the only working test, and its
+      under-reporting is **a cost to accept rather than a bug to fix**.
   - **THE CLASS IS 65 SHARED LISTS AND IT CANNOT BE RANKED — three signals tried, all three flag
     known-correct data** (`measure-propagated-camp-lists.mjs`). 800 routes carry a bivy list across
     149 distinct lists; **65 of those lists appear on more than one area**, 55 across three or more.
@@ -6310,6 +6404,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     `expiredanswered`/`pastreport` must report zero under `expired`. **Re-run all six after touching
     the output path** — `--json` routes every report line through `say()`, so a mistake there is
     silent on stdout and invisible in the exit code.
+- **PROSE WRITTEN FOR THE PIPELINE IS A DIFFERENT CLASS FROM A CITATION, and every
+  publisher-keyed needle misses it.** `audit:prose-citations` finds a sentence NAMING a third
+  party. It cannot see a sentence about **our own record** that names nobody —
+  `measure-pipeline-voice-in-route-prose.mjs` asks that question of the same columns, and
+  `audit:note-voice` already asks it of waypoint NOTES while nothing asked it of route prose.
+  **13 values on 12 routes**, now 1.
+  - **The worst was an editor talking to the next editor, shipped to a climber**:
+    *"the claim that these bolts were 'replaced in 2001' is not supported by any source specific to
+    this Washington peak and should not be presented as fact"*. A climber learns nothing from it and
+    is told the app does not trust itself. The claim it argues with **is not in the app at all**.
+  - **THE REPAIR RULE IS "KEEP THE FACT AND KEEP THE UNCERTAINTY, DROP ONLY THE SOURCING."** A hedge
+    is CONTENT — *"the lengths are estimated"* warns a party not to rig to them — so *"Trip reports
+    vary 3-5 rappels"* becomes **"Expect 3-5 rappels"**, never *"4 rappels"*. Deleting the hedge
+    would make the record read as MORE certain than it is, which is worse than the leak.
+  - **THE OBJECT DECIDES, NOT THE PHRASE.** *"should not be treated as a casual scramble"* and
+    *"should not be treated as guaranteed snow-free"* are advice about the MOUNTAIN and are correct;
+    only an object naming the record (*as fact*, *as verified*, *as a repeated line*) is pipeline
+    voice. Requiring the object took that needle from **1 real of 3** to 2 of 2.
+  - **THE FIRST NEEDLE MANUFACTURED 27 FINDINGS ON CORRECT PROSE.** `(this|the) (record|entry|…)`
+    matches **"the entry gully"** and **"the entry hourglass"** — ordinary climbing terms. 42 → 13
+    once `entry` came out. The report now prints the **matched substring**, because a needle that
+    cannot show its own match is one nobody can audit.
+  - **THE EXACTLY-ONCE CONTRACT CAUGHT A PARALLEL SESSION MID-FLIGHT.** `wa_remmel_mountain_nw_ridge`
+    `pro_needs` was in the batch; another session landed the same repair while this was being
+    written, `find` matched **0 times**, and the run REFUSED rather than clobbering it. That is the
+    contract earning its place, not a near miss.
+  - **One value is deliberately left**: `wa_nooksack_tower_south_face` carries this defect AND a
+    named guidebook, which is what the open guidebook-citation batch is sweeping. *Two sessions
+    rewriting one value is how a merge silently drops half of it.*
+  - **`rope_note` AND THE RACK COLUMNS ARE A PARALLEL SESSION'S** (#1431,
+    `revoice-pipeline-notes-in-rope-note.mjs`), so the two sweeps are complementary rather than
+    rival: this one covers the other eight columns. Their needle and this one also miss different
+    shapes — *"No indexed route-specific gear list found online"* matches nothing here, because
+    `gear list` is not `source|record|reference`. **Neither sweep closes the class**; between them
+    they close what each could see.
+  - Confirmed on screen, **14 assertions across 4 routes, both directions** — and the KEEPS are the
+    load-bearing half here, since a rewrite that quietly dropped a hedge satisfies every removal
+    assertion.
 - **`audit:prose-citations`** asks whether the prose that renders on a route page still names a
   third party as the **source** of a claim. The standing rule is no sources anywhere in the app;
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
@@ -7077,12 +7209,34 @@ their own Résumé showed an amber **"Unverified"** chip.
     one partition and sum to the total.
   - **It found a real defect on its first run afterwards**: reading `editDraft` is what surfaced the
     profile wipe above.
-  - **Stated scope, as a worklist rather than a boundary**: it scans `ClimbMatch.jsx` and
-    `ClimbMatchCore.jsx` only, so an overlay rendering a `lib/` component has its gating invisible.
-    `dashOpen` and `guideAppOpen` are the live cases and were read by hand (`DbGuideDashboard` gates
-    on `inqError`/`revError`/`profileError`; `DbGuideApply` on `existingError`). **Nothing has yet
-    asked this question of `lib/`.**
-  - Injection-tested 2/2 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
+  - **THE `lib/` SCOPE GAP IS CLOSED, and the note that stated it is replaced rather than left
+    standing.** It said the guard scanned the two app files only, that an overlay rendering a `lib/`
+    component had its gating invisible, and that nothing had yet asked the question of `lib/`. All
+    three are false now: the body lookup follows `lib/*.jsx`.
+    - **The answer is a NEGATIVE RESULT, measured before the widening**
+      (`scripts/oneoff/measure-lib-component-absence.mjs`): across 14 lib components, **7 assert
+      absence**, and every one of those claims is gated on an error, filter copy that stays TRUE
+      during an outage (*"No areas match."*), a fallback label, a statement about a row's own data,
+      or a comment. **No findings — and it still bought something**: `dashOpen` and `guideAppOpen`
+      no longer need hand-written CHECKED entries, because the guard reads their real gate. *A
+      declaration that exists because a guard cannot see something is not a reason; it is an excuse
+      with a shelf life.*
+    - **`lib/` SPELLS ITS GATE DIFFERENTLY, and following those bodies without knowing that would
+      have reported correctly-gated components as ungated** — the guard-flags-correct-work failure,
+      introduced by the very change meant to widen coverage. The app derives `xUnavailable` from
+      `isError`; lib destructures the binding off the hook (`{ data, isError: inqError }`). Detected
+      on the **followed body**, never on the window: adding `isError` to the global `FLAGS` list
+      would let any app-side window containing `.isError` read as gated, **weakening** the detection
+      this guard exists for.
+    - `maskComments`' comment floor became a **parameter**: 50 was calibrated for two 400kB files,
+      and a lib component is legitimately terse, so applying it there fails a correct file. A parse
+      error stays fatal for every file — that is the real fail-closed test.
+    - **The measurement's own first version accused the wrong line**, and it is the same attribution
+      defect this guard had: it took `indexOf(claim)`, so `"No areas"` resolved to
+      `DbAreaBrowser`'s *"No areas match."* filter copy while the row was really about line 1072 —
+      which is correctly gated, with `if (error)` returning **ahead of** the empty branch. *A weak
+      locator is not merely imprecise; it accuses code that is fine.*
+  - Injection-tested 3/3 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
     landed by checksum.
 
 **THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
@@ -7496,9 +7650,14 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (near the bottom, ~line 2208) holds **~100 `useState` hooks** and every screen. Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, recent condition reports, your crews, suggestions).
-- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `photos`, `ranks`.
-- `discover` — find partners or crews (`partnersMode` toggles `"partners"` / `"crews"`).
+- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `partners`, `photos`.
+  - **Six, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
+    which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
+    fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
+    reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
+    prose naming the absent id would fail on its own explanation.
+- `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
 - `crew` — your crews and direct/crew messaging (`crewView`).
 - `logbook` — your objectives, completed climbs, trip reports.
 - `me` — profile, settings, verification, trust score.
