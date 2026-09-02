@@ -7842,6 +7842,27 @@ Four functions do the real work; everything else is UI around them. The code is 
 
 ### One-off scripts that touch Supabase
 
+**THE `--linked` GUARDS CANNOT RUN FROM A WORKTREE UNTIL YOU SYMLINK THE LINK STATE, and they
+fail in a way that reads like a broken guard rather than a missing file.** `check:function-drift`
+and `check:function-columns` shell out to `npx supabase db query --linked`, whose project ref lives
+in `supabase/.temp/` — gitignored, so a worktree does not have it. The CLI answers
+`LegacyProjectNotLinkedError: Cannot find project ref`, and the guard correctly refuses (*"cannot
+report on a database it did not reach. Not a pass."*). Fix it the way `.env` and `.env.local`
+already are:
+
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/supabase/.temp supabase/.temp
+
+That directory holds a project ref, a pooler host and component versions — no credentials; the
+access token lives in the CLI's own config. The ignore pattern is `supabase/.temp` with **no
+trailing slash** on purpose: the slashed form matches a DIRECTORY only, so the symlink showed up as
+untracked and was one `git add .` away from committing one developer's linked project. Verified
+that the slashless form still ignores the real directory in the main checkout.
+
+Both guards were run this way on 2026-09-02 and both are clean — 45 of 46 live functions match
+their newest migration (1 declared benign), and every column the 11 writing functions touch exists.
+`check:column-drift` needs no link (anon key) and also agrees: 41 tables / 480 columns, snapshot
+current.
+
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
 `.env`, the `VITE_*` url/anon key in `.env.local`), so a script that reads only
