@@ -1003,8 +1003,23 @@ a build error, but a screen that renders wrong or not at all.
           Overview's**, in both the healthy and failing runs. The inequality assertion passes, so
           the strings differ while the lengths match, and nothing available explains that. Coverage
           that cannot be explained is the false-coverage defect this file exists to prevent, so it
-          was reverted a second time rather than shipped. **Next step: prove the capture is really
-          the Conditions tab** — assert on text only that panel renders, not on length.
+          was reverted a second time rather than shipped.
+        - **SSR ANSWERS MOST OF WHAT THE BROWSER COULD NOT** (`probe-conditions-tab-unique-text.mjs`
+          — no browser, no DB, so it runs on a box too loaded for a walk to be evidence).
+          `RouteDetail` takes `initialSubTab`, so each sub-tab renders directly. On a bare route:
+          **Overview 2,817 chars, Conditions 487, Photos 476**, all three distinct. So a correct
+          walk should capture Conditions at roughly Photos' size — **not at Overview's 5,026**, and
+          the 5,026 reading was Overview after all, whatever let the inequality assertion through.
+          It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
+          unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
+          **absent** from the healthy one.
+        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
+          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
+          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
+          browser. That remains the best explanation for two differing 5,026-char captures and it
+          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
+          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
+          run to confirm.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -4272,8 +4287,11 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **The prose test is corroboration ON TOP OF a geometric signal, not a detector on its own.**
       That is why it is folded in per-finding rather than used to select findings.
     - **A partial repair would be worse than none here**: removing only the flagged Three Fingers
-      Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
-      class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
+      Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind.
+      **THE CLOSING SENTENCE HERE USED TO SAY THE CATALOG DOES NOT RECORD WHICH TRAILHEAD A CAMP
+      SERVES. IT DOES** — `approach_logistics.trailhead` — and reading that as a worklist rather
+      than a caveat is what closed this corridor; see the Mountain Loop entry below. The signal is
+      real per route and is still NOT a detector: ranking by it flags a repaired group.
 
   - **FOUR SIGNALS NOW, AND THE FOURTH FAILED WITH ITS OWN FAILURE ALREADY WRITTEN DOWN**
     (`probe-witness-list-subsets.mjs`). The one heuristic that survived the first three is manual —
@@ -6662,16 +6680,41 @@ a semantic invariant in a comment rots, and this file records that lesson twice 
       version lifted `useStates`' body and balanced parens from `queryFn:`, which stops at the
       arrow's own `()` and emitted `queryFn: ()`; the guard then failed on a **parse error** and the
       case read as a miss. *An injection that produces a different failure is not a catch.*
-  - **A THIRD BLINDNESS IS STATED RATHER THAN CLOSED, so it reads as a worklist.** The predicate
-    needs a condition on an `error`/`err`/`e` identifier, so a read that **never binds `error` at
-    all** — `(await supabase…).data` — is invisible even inside this file. Measured: 15 such sites
-    in `lib/db.js`, of which the ones that also return an empty value are `useMyHomeStatePath`
-    (fixed above) and **`useMyFiledReports`**, whose `if(!uid) return []` after a discarded
-    `getSession()` hands back an empty list **without throwing** — so `filedReportsUnavailable`,
-    which keys on `isError`, cannot fire. Two more sit in `useCrewMessagesRealtime` /
-    `useDirectMessagesRealtime`, which are **imported by all three app files and called by none** —
-    dead wiring, like `updateTopoLine`. Nothing has yet asked this of `lib/auth.js`, where #1404's
-    `getProfile` lived.
+  - **SECTION 3 — inside a `queryFn`, a supabase await must BIND `error`.** Sections 1 and 2 both
+    need the error in scope before they can say anything: one asks what you return when you test it,
+    the other whether a sibling body throws. A read that **never binds `error`** is invisible to
+    both — and that is how #1404 reached production from `lib/auth.js`, and how `useMyFiledReports`
+    handed the Profile an empty list without throwing, leaving `filedReportsUnavailable` unable to
+    fire for half its failures.
+    - **Exact rather than stylistic inside a queryFn**: react-query's `isError` is the ONLY channel
+      a query has to report failure, and every `xUnavailable` flag in the app keys on it. An error
+      discarded there is a failure the UI structurally *cannot* learn about.
+    - **It codifies what the file already did.** Measured before proposing it: **58 supabase awaits
+      inside a queryFn bound `error` and exactly 1 did not**
+      (`scripts/oneoff/measure-queryfn-discarded-errors.mjs`). That one — `useMyHomeStatePath`'s
+      `my-uid` lookup — was **fixed rather than exempted**, so the rule ships with **no exemption
+      list and therefore nothing that can rot**. Add one only when a genuine exception appears.
+    - **Scoped to queryFns deliberately.** The same shape before a WRITE is correct: a null uid
+      meets RLS and the write's own error surfaces, so flagging all 15 such sites in `lib/db.js`
+      would report correct work. Injection case 5 pins that silence.
+  - **THE SCOPE WAS `lib/db.js` ALONE, AND THAT WAS A STATED FACT READ AS A GUARANTEE.** This entry
+    used to record that applying the predicate to `lib/auth.js` finds **zero sites** — true of the
+    predicate, and not a statement about the file. #1404 was a read in exactly that file. Both
+    scopes are **discovered**, never listed: section 1 walks every `lib/` file touching `supabase`
+    (**6**), sections 2 and 3 walk every file declaring a `useQuery` (**2** — the four admin panels
+    match on `useQueryClient`, which is invalidation, not a declaration). The reach went **187
+    exported functions in 1 file → 229 across 6**.
+    - **Section 2 compares keys ACROSS files, and must**: a `queryKey` is global to the QueryClient,
+      so one declared in `lib/db.js` and again elsewhere is ONE Query object with one winning body.
+      A per-file comparison reports clean on precisely the fork hardest to spot by reading.
+    - Fails **closed** four ways: `lib/db.js` missing from either scan, fewer than 3 read files or 2
+      query files discovered, no constant key parsed, and fewer than 20 supabase awaits examined
+      inside queryFns. `DECLARED` is keyed **`file:function`** now, so two same-named exports in
+      different files cannot excuse each other.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-read-failures-scope-cases.mjs`), each edit
+      proven **by checksum**. Cases 1 and 2 prove the guard can now SEE the other files — which is
+      the point, since it already fired inside `lib/db.js`. **Cases 3 and 5 must stay SILENT**: a
+      key holding a variable is per-call, and a discarded session error before a write is correct.
 
 **The three that prompted it.** `check:writes` already forbids a success
 message in front of a write whose failure is unobservable; the read side had no such rule, and
