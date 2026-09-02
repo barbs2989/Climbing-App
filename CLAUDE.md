@@ -1053,9 +1053,26 @@ a build error, but a screen that renders wrong or not at all.
       `DbGuides` gates *"No guides listed yet."* and *"No reviews yet."* on `guidesError`/`revError`.
       Only the profile read was ungated.
     - **`isGuideVerified(credentials || [])` is deliberately NOT gated**: a failed credentials read
-      drops the ✓ badge, which is **under**-claiming rather than a false statement, and there is no
-      second source to fall back to (unlike `check:verification-fallback`, where the session carries
-      the answer). Recorded so it is not re-derived as a defect.
+      drops the ✓ badge, which is **under**-claiming rather than a false statement. `verified` is
+      consumed at exactly three places and every one is that badge and nothing else
+      (`DbGuideDashboard` once, `DbGuides` twice) — nothing downstream gates an action, a price, a
+      booking, or a claim in words. Recorded so it is not re-derived as a defect.
+    - **THE REASON FIRST RECORDED HERE WAS WRONG, and the wrong reason is the dangerous half.** It
+      said *"there is no second source to fall back to"*. There is: `guide_profiles.active_disciplines`
+      is maintained by the `sync_active_disciplines()` trigger whose WHERE clause is **exactly**
+      `isGuideVerified`'s predicate (`kind='primary_track'`, `status='verified'`, unexpired), and it
+      arrives on a **different query**, so a failed credentials read does not lose it.
+      - **Falling back to it would be a REGRESSION, which is why the conclusion survives the
+        correction.** `0021` says outright that it is a denormalised **cache** with **no cron** —
+        reconciliation is opportunistic, *"the cache is never more than one page-load stale"* — so a
+        credential that has quietly crossed `verified_expires_at` leaves `active_disciplines`
+        non-empty until `reconcile_guide_verification()` runs. `isGuideVerified` re-checks expiry at
+        render, which is precisely why the badge is honest. Substituting the cache would risk showing
+        **✓ for a lapsed credential**: over-claiming a safety credential, which is worse than the
+        under-claim it would cure.
+      - So the rule is **not** *"no second source exists"* but *"the second source cannot re-check
+        expiry"*. Written the old way, a future session that goes looking, finds `active_disciplines`
+        and "fixes" the badge with it would ship exactly the defect this bullet exists to prevent.
     - Executed rather than rendered, and here that is not convenience: the dashboard needs a session,
       a portal and four queries, and it lives in `lib/` so it is not in the core bundle. `lib/db.js`
       is ~164kB against core's ~1.1MB, so the second esbuild is cheap.
