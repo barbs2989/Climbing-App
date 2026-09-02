@@ -6656,16 +6656,41 @@ a semantic invariant in a comment rots, and this file records that lesson twice 
       version lifted `useStates`' body and balanced parens from `queryFn:`, which stops at the
       arrow's own `()` and emitted `queryFn: ()`; the guard then failed on a **parse error** and the
       case read as a miss. *An injection that produces a different failure is not a catch.*
-  - **A THIRD BLINDNESS IS STATED RATHER THAN CLOSED, so it reads as a worklist.** The predicate
-    needs a condition on an `error`/`err`/`e` identifier, so a read that **never binds `error` at
-    all** — `(await supabase…).data` — is invisible even inside this file. Measured: 15 such sites
-    in `lib/db.js`, of which the ones that also return an empty value are `useMyHomeStatePath`
-    (fixed above) and **`useMyFiledReports`**, whose `if(!uid) return []` after a discarded
-    `getSession()` hands back an empty list **without throwing** — so `filedReportsUnavailable`,
-    which keys on `isError`, cannot fire. Two more sit in `useCrewMessagesRealtime` /
-    `useDirectMessagesRealtime`, which are **imported by all three app files and called by none** —
-    dead wiring, like `updateTopoLine`. Nothing has yet asked this of `lib/auth.js`, where #1404's
-    `getProfile` lived.
+  - **SECTION 3 — inside a `queryFn`, a supabase await must BIND `error`.** Sections 1 and 2 both
+    need the error in scope before they can say anything: one asks what you return when you test it,
+    the other whether a sibling body throws. A read that **never binds `error`** is invisible to
+    both — and that is how #1404 reached production from `lib/auth.js`, and how `useMyFiledReports`
+    handed the Profile an empty list without throwing, leaving `filedReportsUnavailable` unable to
+    fire for half its failures.
+    - **Exact rather than stylistic inside a queryFn**: react-query's `isError` is the ONLY channel
+      a query has to report failure, and every `xUnavailable` flag in the app keys on it. An error
+      discarded there is a failure the UI structurally *cannot* learn about.
+    - **It codifies what the file already did.** Measured before proposing it: **58 supabase awaits
+      inside a queryFn bound `error` and exactly 1 did not**
+      (`scripts/oneoff/measure-queryfn-discarded-errors.mjs`). That one — `useMyHomeStatePath`'s
+      `my-uid` lookup — was **fixed rather than exempted**, so the rule ships with **no exemption
+      list and therefore nothing that can rot**. Add one only when a genuine exception appears.
+    - **Scoped to queryFns deliberately.** The same shape before a WRITE is correct: a null uid
+      meets RLS and the write's own error surfaces, so flagging all 15 such sites in `lib/db.js`
+      would report correct work. Injection case 5 pins that silence.
+  - **THE SCOPE WAS `lib/db.js` ALONE, AND THAT WAS A STATED FACT READ AS A GUARANTEE.** This entry
+    used to record that applying the predicate to `lib/auth.js` finds **zero sites** — true of the
+    predicate, and not a statement about the file. #1404 was a read in exactly that file. Both
+    scopes are **discovered**, never listed: section 1 walks every `lib/` file touching `supabase`
+    (**6**), sections 2 and 3 walk every file declaring a `useQuery` (**2** — the four admin panels
+    match on `useQueryClient`, which is invalidation, not a declaration). The reach went **187
+    exported functions in 1 file → 229 across 6**.
+    - **Section 2 compares keys ACROSS files, and must**: a `queryKey` is global to the QueryClient,
+      so one declared in `lib/db.js` and again elsewhere is ONE Query object with one winning body.
+      A per-file comparison reports clean on precisely the fork hardest to spot by reading.
+    - Fails **closed** four ways: `lib/db.js` missing from either scan, fewer than 3 read files or 2
+      query files discovered, no constant key parsed, and fewer than 20 supabase awaits examined
+      inside queryFns. `DECLARED` is keyed **`file:function`** now, so two same-named exports in
+      different files cannot excuse each other.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-read-failures-scope-cases.mjs`), each edit
+      proven **by checksum**. Cases 1 and 2 prove the guard can now SEE the other files — which is
+      the point, since it already fired inside `lib/db.js`. **Cases 3 and 5 must stay SILENT**: a
+      key holding a variable is per-call, and a discarded session error before a write is correct.
 
 **The three that prompted it.** `check:writes` already forbids a success
 message in front of a write whose failure is unobservable; the read side had no such rule, and
