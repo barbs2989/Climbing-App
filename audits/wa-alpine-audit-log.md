@@ -11947,3 +11947,99 @@ climbing/reference sites — Wikipedia, SummitPost — but search-result summari
 were sufficient to corroborate or refute every fact checked).
 
 Next batch continues after `wa_vasiliki_ridge_standard` in the id-ordered scope.
+
+## Batch 175 — 2026-09-02 (pass 3)
+
+Routes: wa_vesper_peak_north_face_ragged_edge, wa_warrior_peak_standard,
+wa_washington_ellinor_traverse_ridge, wa_west_craggy_peak_standard_route,
+wa_west_face_2, wa_west_twin_needle_south_route, wa_whatcom_peak_southwest_route,
+wa_whitehorse_mountain_nw_shoulder.
+
+All eight of these were also audited in pass 2 (batches 110-111, 2026-08-13); this
+pass mostly re-confirmed those findings rather than turning up new independent
+facts, plus caught one prior fix that was apparently never actually applied to the
+database and one internal-consistency defect batch 110/111 didn't check for.
+
+**Fixed (2), in `audits/sql/2026-09-02-batch-175.sql`:**
+- `wa_washington_ellinor_traverse_ridge`: Mount Washington's summit elevation is
+  stated three different ways in one row. The route's own primary fields agree on
+  6,260 ft (top-level `high_point_ft`, and the "Mount Washington - Summit"
+  waypoint) and 6,260 ft is also what Wikipedia gives for Mount Washington
+  (Olympics) — confirmed exactly, same as batch 110 found. But
+  `access._raw.altitude_restrictions` says "6,278 feet" and
+  `approach_variants[0].notes` ends a sentence with "...to the 6,255 ft summit."
+  Neither figure matches any external source or the row's own agreeing fields;
+  read as copy/paste slips rather than a second citable convention (unlike West
+  Craggy Peak's genuinely-disputed 8366/8372 split two routes over, which batch
+  110 explicitly left alone and this batch leaves alone too). Corrected both
+  nested strings to 6,260 ft.
+- `wa_west_face_2` (West Face, North Peak/Gunsight Range): CLAUDE.md's audit log
+  records this exact "approach" field claim — that the area's stored coordinates
+  place it at Washington Pass, "likely a data/geocoding error" — as fixed in pass
+  2 batch 110 (`audits/sql/2026-08-13-batch-110.sql`). The live row still carries
+  the original, unfixed text verbatim, so that SQL evidently was never applied to
+  the database. Re-verified the underlying claim is still false today (the area's
+  live coordinates, 48.3068/-120.994, match Wikipedia's Gunsight Peak entry to
+  four decimal places, correctly placing it near Dome Peak in the Glacier Peak
+  Wilderness) and re-applied batch 110's exact fix text, which also resolves that
+  batch's separately-flagged "South Peak's granite faces" cross-contamination
+  (this route's own peak is North Peak) by wording it as "the peak's."
+
+`npm run check:sql -- audits/sql/2026-09-02-batch-175.sql` reports OK (both write
+targets exist; no DELETE removes an only copy). One statement triggers the
+checker's own "no literal id predicate" WARN because the fixed string value
+itself contains a semicolon (matching the live data's punctuation, "...6,278
+feet; day hike...") which defeats the checker's naive statement splitter — not a
+real SQL problem (Postgres respects the quoting), and the same shape appears
+harmlessly in several earlier batches' fix files.
+
+**Flagged for human review (2):**
+- `wa_washington_ellinor_traverse_ridge`: `access._raw.seasonal_closures` states
+  "Staircase and adjacent wilderness areas closed due to Bear Gulch Fire impacts"
+  with no date. The Bear Gulch Fire (2025) closure is real and partially still in
+  effect as of mid-2026 per USFS/NPS alerts (FS-2451 and the Copper Creek Trail
+  remain closed; the Staircase developed area and FS-24 reopened), but this
+  route's own trailhead is up FR-2419 off North Lake Cushman Road, not through
+  the Staircase/FS-2451 closure area itself, and it wasn't possible to confirm
+  from here whether this specific trailhead corridor is actually affected. Left
+  as-is rather than guessing at wording for a fire-closure claim.
+- `wa_west_twin_needle_south_route`: the route's own waypoint chain has a
+  physically-impossible internal contradiction that doesn't need an external
+  source to spot. "Eye Col gully traverse" (distMi 8.7, at 48.746312/-121.26574)
+  to "West Twin Needle" summit (distMi 9.5, at 48.77667/-121.3125) is stated as
+  only 0.8 mi of trail distance, but the straight-line distance between those two
+  coordinates is about 3.0 mi — a trail cannot be shorter than the straight line
+  between its endpoints (the same invariant CLAUDE.md's `audit:waypoint-distances`
+  checks for). The summit coordinate itself checks out independently (it places
+  West Twin Needle almost exactly 0.55 mi west of Mount Terror's published
+  coordinates, matching Wikipedia's stated relative position, and matches this
+  route's own area-level lat/lng). That leaves the Eye Col waypoint's coordinate,
+  its distMi, or the summit's distMi as the likely error, but nothing here
+  establishes which one — flagged rather than guessed at.
+
+**Clean / confirmed accurate, reconfirming pass-2 findings (4):**
+`wa_vesper_peak_north_face_ragged_edge` (Berdinka & Pires, Aug 18 2013 FA and
+Vesper Peak's 6,214 ft summit both reconfirmed); `wa_warrior_peak_standard`
+(Beckey solo 1945 FA and Warrior's 7,320+ ft / NW summit 7,285 ft both
+reconfirmed exactly against Wikipedia); `wa_west_craggy_peak_standard_route`
+(the `corrections` field's already-documented 8366/8372 elevation split
+reconfirmed via WTA as a genuine disagreement between sources, not touched, per
+batch 110's explicit precedent); `wa_whatcom_peak_southwest_route` (Berry &
+Buchanan 1936 FA and 7,574 ft elevation reconfirmed; the route's own
+`corrections` field already documents the "Southwest Route" vs. "South Spur"
+naming ambiguity as intentional, unchanged since batch 111).
+
+**Unchanged since prior flag:** `wa_whitehorse_mountain_nw_shoulder` still has
+the ~1-2 ft elevation spread across its own fields (`high_point_ft` 6852,
+waypoint 6850.5, schedule note "6,851 ft") that batch 111 flagged and explicitly
+declined to resolve given an 18 ft spread across external sources for this
+peak's true elevation — still true, left as-is.
+
+WebSearch worked this run; WebFetch was blocked for every specific reference page
+attempted (listsofjohn.com, and general climbing/reference domains), consistent
+with every earlier batch's tooling note.
+
+This is the last-but-one batch of pass 3: 4 routes remain
+(`wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
+`wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`). Next batch
+finishes pass 3 and a new pass (4) will begin after that.
