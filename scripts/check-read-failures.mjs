@@ -138,4 +138,75 @@ if (stale.length) {
   process.exit(1);
 }
 
-console.log(`ok — every error-swallowing read is declared (${swallows.length} declared, 0 undeclared).`);
+/* SECTION 2 — ONE queryKey, ONE implementation.
+ *
+ * Section 1 reads a function and asks what IT returns on an error. That is blind to a read whose
+ * body is not the one that runs. React Query keeps ONE Query object per key and executes the
+ * queryFn belonging to whichever observer triggers the fetch, so two call sites sharing a constant
+ * key are interchangeable at runtime — and if either body cannot throw, EVERY consumer of that key
+ * can silently receive an empty result with `isError` false.
+ *
+ * That is section 1's own subject arriving in a shape its predicate cannot express, and it was
+ * live: useMyHomeStatePath declared its own body on useStates' key ["area-children","roots"],
+ * discarding both errors, returning [], and skipping orOffline. When that body fetched,
+ * `statesUnavailable` stayed false and Manage areas claimed 46 of 50 states have no catalog —
+ * the defect check:outage-copy exists for, reached around the flag that fixes it.
+ *
+ * NOT A NEW GUARD, deliberately: measured across this file there were 12 constant keys and exactly
+ * ONE clash, and a detector for a class of one is what this repo keeps refusing to build. It is an
+ * assertion inside the guard whose subject it already is, costing one traversal and no new file.
+ *
+ * Only CONSTANT keys are compared. A key holding a variable (["route-search", qq, lim]) is
+ * per-call, so two such sites are different queries and flagging them would report correct code. */
+function literalKey(node) {
+  if (!node || node.type !== "ArrayExpression") return null;
+  const parts = [];
+  for (const el of node.elements) {
+    if (!el) return null;
+    if (el.type === "StringLiteral") parts.push(JSON.stringify(el.value));
+    else if (el.type === "NumericLiteral") parts.push(String(el.value));
+    else return null;
+  }
+  return "[" + parts.join(",") + "]";
+}
+
+const byKey = new Map();
+traverse(ast, {
+  CallExpression(p) {
+    if (!p.node.callee || p.node.callee.name !== "useQuery") return;
+    const arg = p.node.arguments[0];
+    if (!arg || arg.type !== "ObjectExpression") return;
+    let key = null, fn = null;
+    for (const pr of arg.properties) {
+      if (!pr.key) continue;
+      if (pr.key.name === "queryKey") key = literalKey(pr.value);
+      if (pr.key.name === "queryFn") fn = src.slice(pr.value.start, pr.value.end).replace(/\s+/g, " ").trim();
+    }
+    if (!key || !fn) return;
+    if (!byKey.has(key)) byKey.set(key, []);
+    byKey.get(key).push({ line: p.node.loc.start.line, fn });
+  },
+});
+
+// Fails closed: parsing no constant keys at all would make every comparison vacuous.
+if (!byKey.size) {
+  console.error("check:read-failures — no constant queryKey parsed in lib/db.js; section 2 is blind, not clean");
+  process.exit(1);
+}
+
+const forked = [...byKey.entries()].filter(([, uses]) => new Set(uses.map((u) => u.fn)).size > 1);
+if (forked.length) {
+  console.error("\nThese queryKeys carry more than one implementation. React Query runs whichever");
+  console.error("body the fetching observer supplied, so every consumer of the key inherits it —");
+  console.error("and a body that cannot throw hands them an empty result with isError false:");
+  for (const [key, uses] of forked) {
+    console.error(`  ${key}`);
+    for (const u of uses) console.error(`    lib/db.js:${u.line}`);
+  }
+  console.error("\nCollapse them to one implementation — have one call the other — rather than");
+  console.error("making the two bodies match, which only restarts the drift.");
+  process.exit(1);
+}
+
+console.log(`ok — every error-swallowing read is declared (${swallows.length} declared, 0 undeclared);`
+  + ` ${byKey.size} constant queryKey(s), each with one implementation.`);
