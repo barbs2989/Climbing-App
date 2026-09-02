@@ -360,7 +360,27 @@ console.log("\n--- the panel is actually reachable, on every route ---");
   } else {
     // The element is built once and rendered by name, so look for the rendered symbol
     // rather than the JSX tag.
-    const el = (h.match(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{[^]*?<FireNearRoute/) || [])[1];
+    /* THE NEAREST PRECEDING IIFE, NOT THE FIRST ONE IN THE FILE. This was a lazy match from the
+       first `const X = (function () {` to `<FireNearRoute`, so ANY IIFE-assigned const added
+       earlier in a 480,000-character file silently became the symbol this guard hunts for. That
+       happened: a `const _avyNote=(function(){…})()` in the avalanche panel made it look for
+       `{_avyNote}` on the Safety tab and report the fire panel as unmounted — accusing correct
+       code, which is the direction that teaches people to ignore a guard. Search backwards from
+       the tag instead, so the binding found is the one that actually builds it. */
+    /* The FIRST occurrence of the tag is inside a COMMENT that explains this very hazard, so
+       anchoring on it looked backwards from the wrong place. Take the first occurrence that is
+       not inside a block comment, then the nearest preceding IIFE binding — the one that actually
+       builds the element rather than the first in a 480,000-character file. */
+    const realTagAt = (() => {
+      for (const m of h.matchAll(/<FireNearRoute/g)) {
+        const open = h.lastIndexOf("/*", m.index), close = h.lastIndexOf("*/", m.index);
+        if (open === -1 || close > open) return m.index;   // not inside a block comment
+      }
+      return -1;
+    })();
+    const before = realTagAt >= 0 ? h.slice(0, realTagAt) : "";
+    const iifes = [...before.matchAll(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{/g)];
+    const el = iifes.length ? iifes[iifes.length - 1][1] : null;
     const sym = el || "FireNearRoute";
     const safetyAt = h.search(/tab===["']safety["']\s*\?/);
     const overviewAt = h.search(/tab===["']overview["']\s*\?/);

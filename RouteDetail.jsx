@@ -1492,7 +1492,29 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
           <div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{String(text)}</div>
         </div>)}
       </div>;})()}
-    {mountain&&mountain.avyZone&&avyRelevant?(()=>{const avy=(enrichRoute(route).seasonalHazards||{}).avalanche;const months=avy&&avy.byMonth?Object.entries(avy.byMonth).sort((a,b)=>monthRank(a[0])-monthRank(b[0])):[];const AVY_COL={Considerable:[C.red,C.redBg],Moderate:[C.amber,C.amberBg],Low:[C.green,C.greenBg]};return <div style={{background:C.card,borderRadius:12,padding:"13px 15px",marginBottom:12,border:`1px solid ${C.border}`}}><div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginBottom:8}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>AVALANCHE FORECAST</div><span style={{fontSize:12,color:C.textMuted}}>{mountain.avyZone}</span></div>{months.length?<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:9}}>{months.map(([month,level])=>{const [col,bg]=AVY_COL[level]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:8,padding:"6px 8px"}}><div style={{fontSize:11.5,fontWeight:700,color:col}}>{month}</div><div style={{fontSize:10.5,color:C.textSub}}>{level}</div></div>;})}</div>:null}<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>This app doesn't pull a live danger rating — check the forecast below before you go.</div><a href={avyCenter[2]} target="_blank" rel="noreferrer" style={{display:"block",marginTop:8,fontSize:12,color:C.blue,textDecoration:"none"}}>{"→ Full forecast at "+avyCenter[1]}</a></div>;})():null}
+    {avyRelevant?(()=>{const avy=(enrichRoute(route).seasonalHazards||{}).avalanche;const months=avy&&avy.byMonth?Object.entries(avy.byMonth).sort((a,b)=>monthRank(a[0])-monthRank(b[0])):[];
+  /* THE GATE READ THE AREA AND THE CONTENT LIVES ON THE ROUTE. It was
+     `mountain && mountain.avyZone && avyRelevant`, so a route carrying its own month-by-month
+     avalanche ratings showed NOTHING whenever the area it hangs under had no `avy_zone` string.
+     Measured: 146 of 184 avy-relevant routes with real ratings were hidden that way — Chair Peak's
+     north face has twelve months of them. Same shape as the fire map gated on the seed-only
+     selArea, fixed by reading `dbAreaCtx || selArea`.
+
+     The obvious repair — fall back to the ROUTE's own `avalanche.zone` in the label — is wrong,
+     and the data says so: that field is prose, not a zone name. 196 real values, p50 128
+     characters, 154 over 60, max 327 ("NWAC's daily avalanche forecast does not run during this
+     route's July-September climbing season..."). Putting it where `mountain.avyZone` goes is the
+     season/grade/bivy defect again: a display slot taking a paragraph.
+
+     So the LABEL keeps taking only the short area zone, the ratings gate on themselves, and the
+     route's prose renders as prose beneath the grid where it reads properly. */
+  const _realAvyMonths=months.filter(function(m){return !/^n\/?a$/i.test(String(m[1]||"").trim());});
+  /* Deliberately NOT an IIFE, for the reason the `_peakGeoPm` comment above records: check:fire
+     finds the fire panel's element by looking backwards from `<FireNearRoute` for a
+     `const <name>=(function(){`, so an IIFE-assigned const above `fireEl` makes the guard hunt
+     for the wrong symbol and report the panel missing. */
+  const _avyZoneRaw=avy&&avy.zone?String(avy.zone).trim():"",_avyNote=_avyZoneRaw&&!/^n\/?a\b/i.test(_avyZoneRaw)?_avyZoneRaw:"";
+  if(!(mountain&&mountain.avyZone)&&!_realAvyMonths.length)return null;const AVY_COL={Considerable:[C.red,C.redBg],Moderate:[C.amber,C.amberBg],Low:[C.green,C.greenBg]};return <div style={{background:C.card,borderRadius:12,padding:"13px 15px",marginBottom:12,border:`1px solid ${C.border}`}}><div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginBottom:8}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>AVALANCHE FORECAST</div>{mountain&&mountain.avyZone?<span style={{fontSize:12,color:C.textMuted}}>{mountain.avyZone}</span>:null}</div>{months.length?<div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:9}}>{months.map(([month,level])=>{const [col,bg]=AVY_COL[level]||[C.textMuted,C.surface];return <div key={month} style={{background:bg,border:"1px solid "+col+"55",borderRadius:8,padding:"6px 8px"}}><div style={{fontSize:11.5,fontWeight:700,color:col}}>{month}</div><div style={{fontSize:10.5,color:C.textSub}}>{level}</div></div>;})}</div>:null}{_avyNote?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:7}}><span style={{fontWeight:700}}>{"Forecast coverage: "}</span>{_avyNote}</div>:null}<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>This app doesn't pull a live danger rating — check the forecast below before you go.</div><a href={avyCenter[2]} target="_blank" rel="noreferrer" style={{display:"block",marginTop:8,fontSize:12,color:C.blue,textDecoration:"none"}}>{"→ Full forecast at "+avyCenter[1]}</a></div>;})():null}
     <div style={{background:C.card,borderRadius:12,padding:"13px 15px",marginBottom:12,border:`1px solid ${C.border}`}}>
       <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:3}}><div style={{fontSize:12,fontWeight:700,color:C.green}}>BAILOUT & TURNAROUND</div>{route.turnaround&&onOpenTurnaround?<EditIconButton onClick={onOpenTurnaround} title="Edit turnaround guidance"/>:null}</div>
       {/* WHEN to retreat, above WHERE to retreat to — the order a decision is actually
