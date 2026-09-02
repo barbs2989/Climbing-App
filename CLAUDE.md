@@ -1003,8 +1003,23 @@ a build error, but a screen that renders wrong or not at all.
           Overview's**, in both the healthy and failing runs. The inequality assertion passes, so
           the strings differ while the lengths match, and nothing available explains that. Coverage
           that cannot be explained is the false-coverage defect this file exists to prevent, so it
-          was reverted a second time rather than shipped. **Next step: prove the capture is really
-          the Conditions tab** — assert on text only that panel renders, not on length.
+          was reverted a second time rather than shipped.
+        - **SSR ANSWERS MOST OF WHAT THE BROWSER COULD NOT** (`probe-conditions-tab-unique-text.mjs`
+          — no browser, no DB, so it runs on a box too loaded for a walk to be evidence).
+          `RouteDetail` takes `initialSubTab`, so each sub-tab renders directly. On a bare route:
+          **Overview 2,817 chars, Conditions 487, Photos 476**, all three distinct. So a correct
+          walk should capture Conditions at roughly Photos' size — **not at Overview's 5,026**, and
+          the 5,026 reading was Overview after all, whatever let the inequality assertion through.
+          It also names the text an assertion can key on: *logbook*, *ascents*, *automatically* are
+          unique to the Conditions render, and ConsensusPanel's outage sentence is correctly
+          **absent** from the healthy one.
+        - **The clock hypothesis is NOT proven, and is recorded as a hypothesis.** Two SSR renders
+          of one screen come back byte-identical, so there is no nondeterminism under SSR — but SSR
+          runs no effects, and the live clock this file records in ASPECT & SUN only ticks in a
+          browser. That remains the best explanation for two differing 5,026-char captures and it
+          has not been demonstrated. **Next attempt: assert the capture CONTAINS a Conditions-only
+          word**, which is immune to both a clock and a length coincidence, and needs one quiet-box
+          run to confirm.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
