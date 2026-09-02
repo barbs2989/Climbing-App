@@ -49,6 +49,32 @@ const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 const CLAIMS = /no .{0,30}? yet|nothing here(?=\s*(?:yet\b|[.<—,)]|$))|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
 const app = maskComments(appRaw, "ClimbMatch.jsx");
 const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
+
+/* lib/ COMPONENTS ARE FOLLOWED NOW, and the two CHECKED entries that used to stand in for this
+   were excuses for a scope gap rather than reasons. `dashOpen` renders `<DbGuideDashboard/>` and
+   `guideAppOpen` renders `<DbGuideApply/>`; both live in lib/, so the body lookup could not reach
+   them, both landed in the ungated list, and both were answered by hand — bookkeeping that goes
+   stale the moment either component changes.
+
+   Measured before widening (scripts/oneoff/measure-lib-component-absence.mjs): across 14 lib
+   components, 7 assert absence and every one of those claims is either gated on an error, filter
+   copy that stays TRUE during an outage ("No areas match."), a fallback label, a statement about a
+   row's own data, or a comment. So this adds coverage without adding findings — which is the
+   result, not a disappointment. */
+const libSrc = fs.readdirSync(path.join(ROOT, "lib"))
+  .filter((f) => /\.jsx$/.test(f))
+  .map((f) => maskComments(fs.readFileSync(path.join(ROOT, "lib", f), "utf8"), "lib/" + f, 1));
+
+/* lib/ SPELLS ITS GATE DIFFERENTLY, and following these bodies without knowing that would report
+   correctly-gated components as ungated — the guard-flags-correct-work failure, introduced by the
+   very change meant to widen coverage. The app derives `xUnavailable` from a query's isError;
+   lib components destructure the binding straight off the hook (`{ data, isError: inqError }`) and
+   branch on that. Both are "this component can tell a read failed"; only the spelling differs.
+
+   Detected on the FOLLOWED BODY, never on the window, and that scoping is the whole point: adding
+   `isError` to the global FLAGS list would let any app-side window containing `.isError` read as
+   gated, which would WEAKEN the detection this guard exists for. */
+const LIB_ERR = /\bisError\b|\berror\s*:\s*\w+|\b\w+Error\b/;
 const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailable)/g)].map((m) => m[1]))];
 
 /* COMMENTS ARE MASKED OUT OF THE SOURCE, so a claim written in prose cannot be reported as copy.
@@ -64,14 +90,18 @@ const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailabl
    A GLOBAL "is this string rendered somewhere?" test was tried first and is WRONG: "nothing here"
    IS real copy elsewhere in the app, so the comment match passed anyway and the count did not move.
    Position is the whole question — masking answers it, set-membership cannot. */
-function maskComments(src, label) {
+function maskComments(src, label, minComments = 50) {
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
   catch (e) { console.error(`FAIL — could not parse ${label}: ${e.message}`); process.exit(1); }
   const cs = ast.comments || [];
   /* Fail closed. Zero comments in a 400kB file of this repo's prose density means the parse
-     returned something unusable, and masking nothing would silently restore the v4 behaviour. */
-  if (cs.length < 50) { console.error(`FAIL — ${label} reported only ${cs.length} comments; a broken parse, not a terse file.`); process.exit(1); }
+     returned something unusable, and masking nothing would silently restore the v4 behaviour.
+     The floor is a PARAMETER because it was calibrated for the two app files: a lib/ component is
+     legitimately terse, and applying 50 to it would fail a correct file — the guard-flags-correct-
+     work failure. A parse error is still fatal for every file, which is the real fail-closed test;
+     the floor only adds a second opinion where the file is big enough for one to mean anything. */
+  if (cs.length < minComments) { console.error(`FAIL — ${label} reported only ${cs.length} comments; a broken parse, not a terse file.`); process.exit(1); }
   const buf = src.split("");
   for (const c of cs) for (let i = c.start; i < c.end; i++) if (buf[i] !== "\n") buf[i] = " ";
   return buf.join("");
@@ -146,12 +176,18 @@ for (const st of states) {
     const win = app.slice(m.index, end);
     const comps = [...new Set([...win.matchAll(/<([A-Z][\w$]*)[\s/>]/g)].map((x) => x[1]))];
     let text = win;
-    const followed = [];
+    const followed = [], libGates = [];
     for (const c of comps) {
-      const b = bodyOf(core, c) || bodyOf(app, c);
-      if (b && b.length > 200) { text += "\n" + b; followed.push(`${c}(${b.length})`); }
+      let b = bodyOf(core, c) || bodyOf(app, c), fromLib = false;
+      if (!b) for (const L of libSrc) { b = bodyOf(L, c); if (b) { fromLib = true; break; } }
+      if (b && b.length > 200) {
+        text += "\n" + b;
+        followed.push(`${c}(${b.length})`);
+        // A lib component that branches on its own read error IS gated, in lib's spelling.
+        if (fromLib && LIB_ERR.test(b)) libGates.push(`${c}:error`);
+      }
     }
-    return { text, followed };
+    return { text, followed, libGates };
   };
   const nb = RENDER_SITES.find((b) => b.at > m.index && b.name !== st.name);
   const wide = gather(m.index + 3000);
@@ -161,7 +197,7 @@ for (const st of states) {
   if (!claims.length) continue;
   rows.push({
     name: st.name, claims: claims.slice(0, 4), boundary: nb ? nb.name : null,
-    gated: FLAGS.filter((f) => own.text.includes(f)), followed: wide.followed.slice(0, 4),
+    gated: FLAGS.filter((f) => own.text.includes(f)).concat(own.libGates), followed: wide.followed.slice(0, 4),
   });
 }
 
@@ -192,12 +228,16 @@ const CHECKED = {
   crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
 
-  /* The four below were EXPOSED by the attribution fix above — each had been counted as gated on
-     the Inbox's flags and so was dropped before anything examined it. Read one at a time. */
+  /* The two below were EXPOSED by the attribution fix — each had been counted as gated on the
+     Inbox's flags and so was dropped before anything examined it. Read one at a time.
+
+     dashOpen and guideAppOpen were here too, and are GONE: they render DbGuideDashboard and
+     DbGuideApply from lib/, which the body lookup now follows, so the guard reads their real gate
+     instead of taking my word for it. Both entries went stale the moment that landed, and this
+     file's own stale test is what said so. A declaration that exists because a guard cannot see
+     something is not a reason — it is an excuse with a shelf life. */
   calOpen: 'Calendar\'s "No events yet" is `!going.length && !up.length`, both derived from `events` — useState({}) in production (its seed is behind DEMO_FILLERS) and written only by four in-session functional setEvents calls. No read feeds it, so nothing can fail. `createdGroups` IS DB-hydrated and chooses which groups are iterated, but events[cl.id] is empty for every one of them regardless, and you cannot have created an event for a group that never loaded',
   editDraft: 'EditProfileScreen\'s "No certifications added yet" / "No skills added yet" describe `draft`, i.e. editDraft — a useState(null) seeded from ME when the climber taps Edit. certifications and skills are client-only: saveEdit\'s PATCH payload omits both, and nothing reads them back from profiles. A blank editor over an unread profile is a REAL defect, and it is a different one — check:profile-edit-gate owns it',
-  dashOpen: "the copy attributed here is the neighbouring overlays' (the claims column is a wide window by design). dashOpen renders DbGuideDashboard, which lives in lib/ and gates its own \"No inquiries yet.\" / \"No reviews yet.\" on inqError/revError/profileError. See the lib/ scope note below",
-  guideAppOpen: "same window artifact; guideAppOpen renders DbGuideApply, which lives in lib/ and branches on existingError — it REFUSES rather than showing an approved guide a blank application (check:outage-copy pins that ordering)",
 };
 
 /* v5 — WHAT THE PREVIOUS NOTE HERE SAID IS NOW WRONG, AND THE CORRECTION IS THE POINT.
@@ -252,11 +292,21 @@ if (vanished.length) {
   process.exitCode = 1;
 }
 
-/* SCOPE, stated so it reads as a worklist rather than as a boundary: this guard scans
-   ClimbMatch.jsx and ClimbMatchCore.jsx only. An overlay that renders a component from lib/ has
-   its gating INVISIBLE here — dashOpen and guideAppOpen are the live cases, and both were read by
-   hand instead. Nothing has yet asked the same question of lib/, where DbGuides, DbGuideDashboard
-   and DbGuideApply all carry absence copy of their own. */
+/* SCOPE — ASKED AND ANSWERED, and the note is replaced rather than left standing. It used to say
+   this guard scanned ClimbMatch.jsx and ClimbMatchCore.jsx only, that an overlay rendering a lib/
+   component had its gating invisible here, and that nothing had yet asked the same question of
+   lib/. All three are now false: the body lookup follows lib/*.jsx, and lib's own spelling of a
+   gate (a destructured `isError`/`xError` branch) is read off the followed body.
+
+   The answer, measured across 14 lib components before the widening
+   (scripts/oneoff/measure-lib-component-absence.mjs): 7 assert absence, and every one of those
+   claims is gated on an error, filter copy that stays TRUE during an outage ("No areas match."),
+   a fallback label, a statement about a row's own data, or a comment. A NEGATIVE RESULT — and it
+   still bought something, because dashOpen and guideAppOpen stopped needing hand-written CHECKED
+   entries and are now gated by measurement.
+
+   A closed worklist item left in place reads as work; that mistake put a stale `OPEN:` line in
+   front of the user twice in one day. Delete the note or replace it with the measurement. */
 console.log("\nNOT YET READ — nothing reachable in that text names an xUnavailable flag:");
 for (const r of ungated) {
   console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
