@@ -811,18 +811,26 @@ function BetaDiff({route}){
    name cannot drift from the visible one.
    THE STAGE ROW IS A CONTROL TOO NOW (it used to expand only from its own tiny ▸), so it carries
    the same defence: its label and CRUX are also two spans held apart by a margin. */
-function pitchRowName(p,isOpen){
+/* THE STATE IS `aria-expanded`, NOT WORDS IN THE NAME. These rows are disclosures — tapping one
+   reveals its own detail and changes nothing else — and this file already states the convention
+   on TagChip: "`aria-expanded` rather than `aria-pressed`: this is a disclosure, not a toggle
+   that changes anything". The stage row's old ▸ carried it and lost it when the whole row became
+   the control, which is a regression rather than a gap; the pitch row spelled "collapsed" into
+   its own label instead, which announces the state to a screen reader and to nothing else — no
+   automation, and no user agent that offers "expand" as an action. So the attribute carries it
+   and the name stops repeating it: with both, a reader hears "collapsed" twice. */
+function pitchRowName(p){
   const bits=["Pitch "+p._badge];
   if(p.grade)bits.push(String(p.grade));
   if(p.crux)bits.push("crux");
   if(p._title)bits.push(String(p._title));
-  return bits.join(", ")+(isOpen?", expanded":", collapsed");
+  return bits.join(", ");
 }
-function stageRowName(r,isOpen){
+function stageRowName(r){
   const bits=["Section "+r._seq,r._label];
   if(r.crux)bits.push("crux");
   if(r.grade)bits.push(String(r.grade));
-  return bits.filter(Boolean).join(", ")+(isOpen?", expanded":", collapsed");
+  return bits.filter(Boolean).join(", ");
 }
 /* ONE SECTION, ONE SEQUENCE. `pitch_detail` was rendered as two boxes stacked on the Plan tab —
    ROUTE BETA (the travel legs) and then PITCH-BY-PITCH (the roped pitches) — and on the 144 routes
@@ -910,7 +918,7 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
             {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
           </div>
           <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
-            <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-label={hasMore?(isPitch?pitchRowName(r,isOpen):stageRowName(r,isOpen)):undefined} style={{padding:"9px 11px",cursor:hasMore?"pointer":"default"}}>
+            <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",cursor:hasMore?"pointer":"default"}}>
               {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
                 <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{color:C.red,fontSize:11.5,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
