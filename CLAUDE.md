@@ -4275,6 +4275,27 @@ the correction knows the screen is wrong, and they have no way to report it.
       Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
       class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
 
+  - **FOUR SIGNALS NOW, AND THE FOURTH FAILED WITH ITS OWN FAILURE ALREADY WRITTEN DOWN**
+    (`probe-witness-list-subsets.mjs`). The one heuristic that survived the first three is manual —
+    *find the route that does NOT carry the shared list; that author was not the propagation* — and
+    this tried to mechanise it. In the Mountain Loop corridor the witness carried **four** camps and
+    all four were the shared list's Three Fingers entries: a **SLICE**, one peak's share of a union.
+    - **9 slices catalog-wide, 0 real.** Terror Basin camp is the Picket peaks' camp; Colchuck Lake
+      is Colchuck Peak's; *Camp Muir / Ingraham Flats* are exactly Ingraham Direct's; *Glacier
+      Meadows / Snow Dome / Elk Lake* are the Blue Glacier route's; *Wing Lake / Lewis Lake* are
+      Black Peak's.
+    - **The reason is that a slice is ALSO what GOOD data looks like**: a route with a shorter,
+      more specific camp list than the zone it sits in. Being more specific than the zone list is
+      an improvement, not a defect. The signature was true of Mountain Loop and is not diagnostic
+      of it — a distinction no amount of reading the code exposes, only running it against a peak
+      whose answer you already know.
+    - **The caveat was in the script BEFORE the run and it was still worth running.** Predicting a
+      signal's failure is not the same as measuring it: without the run there is no count, and *9
+      hits, 0 real* is what stops the next session rebuilding it on the strength of the Mountain
+      Loop precedent.
+    - **So the class is NOT mechanically detectable with what the catalog holds.** `audit:camp-route-fit`
+      — does a camp name a peak that is not this route's? — remains the only working test, and its
+      under-reporting is **a cost to accept rather than a bug to fix**.
   - **THE CLASS IS 65 SHARED LISTS AND IT CANNOT BE RANKED — three signals tried, all three flag
     known-correct data** (`measure-propagated-camp-lists.mjs`). 800 routes carry a bivy list across
     149 distinct lists; **65 of those lists appear on more than one area**, 55 across three or more.
