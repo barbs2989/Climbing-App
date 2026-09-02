@@ -4298,6 +4298,43 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE CROSS-CHECK WAS NOT REGION-BOUNDED WHILE THE DONOR INDEX BESIDE IT WAS, and that cost
+    real answers.** `wpElev` was keyed by NAME ALONE; `wpByRegion` two lines down is keyed by
+    name+region — same store, same identity function, two different scopes. So a namesake anywhere
+    in Washington could refuse a correct answer: *"Five Mile Camp, Park Creek trail"* sits on nine
+    **North Cascades** routes and was refused because a *"Five Mile Camp"* waypoint on a Mount La
+    Crosse route — **`wa_olympics`, ~250 km away** — states 1,350 ft against the gazetteer's 3,921.
+    Neither is wrong; they are two places sharing a name. Bounding it unlocked that name and *"Twin
+    Lakes basin, under the west face of Columbia"*, and the gazetteer confirms the first verbatim:
+    **"Five Mile Camp, Park Creek Trail, Chelan County"**. `donorFor`'s own comment already records
+    this lesson; its sibling did not apply it.
+  - **SKAGIT QUEEN CAMP IS SETTLED, and this entry used to say it could not be.** It read
+    *"independent research leans toward the DEM but not conclusively, so it stays unwritten"*. The
+    refusal compared the waypoint's STATED elevation against the DEM at the GAZETTEER's coordinate —
+    two different places — and **nothing had asked what the ground is under the waypoint's OWN pin**.
+    Three facts settle it: the pin is **real** (six decimals, no interpolation residue, 1,437 m off
+    the nearest chord between its neighbours — it matters, because ground under a COMPUTED pin is
+    ground under a place nobody chose); the gazetteer feature is **7 metres away**, so agreeing on
+    height is corroboration rather than coincidence; and the two ground reads are **3,089 and 3,093
+    ft** against a stated **4,000**. The waypoint is 911 ft above the ground it sits on. Corrected,
+    which unlocked its 9 camp rows at 3,093 ft, now marked CORROB.
+  - **THE SOLVER HAS A WAYPOINT-DONOR PATH AND NO BIVY-TO-BIVY ONE**, so a camp whose height the
+    catalog already publishes on a sibling route stayed blank —
+    `measure-missing-camp-elevations.mjs` had been labelling those **FREE** the whole time and
+    nothing acted on the label. `fill-camp-elevations-from-unanimous-siblings.mjs` fills them under
+    a gate **stricter than the solver's own 400 ft cross-check: UNANIMITY.** Where donors disagree
+    at all, copying either is a silent pick.
+    - **THE REFUSALS ARE A SEPARATE FINDING: one camp, two elevations, depending which route you
+      open.** Camp Schurman is **9,440 ft on some routes and 9,460 on others** (15 donors), Sahale
+      Glacier Camp 7,400/7,500 (26), Thumb Rock 10,760/10,775 (14), Boston Basin high 6,200/6,300,
+      Whatcom Camp 5,286/5,500. Every spread is inside the solver's tolerance and would have been
+      copied silently. That is the [[facts-stored-twice-census]] class in the camp store, and it is
+      **reported, not repaired** — picking a winner needs a source, and 5 names is not a sweep.
+  - **Coverage 1,255 -> 1,207 blank rows, 166 -> 159 distinct names**, across four passes: 9 rows
+    the solver already had, 17 unlocked by the region bound, 9 unlocked by the Skagit Queen repair,
+    29 from unanimous siblings. Confirmed on screen, **9 assertions across 4 routes** — asserting the
+    camp NAME beside each number, since a bare number search is satisfied by a coincidence elsewhere
+    on the tab.
   - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
     find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
     result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
