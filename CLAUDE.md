@@ -6326,6 +6326,29 @@ the correction knows the screen is wrong, and they have no way to report it.
       road/access; the ROUTE PROSE section is a standing reading list and always was. A per-section
       count is not the audit's verdict, and neither is a stale headline — **re-run it rather than
       quoting this line**, which has already been wrong once in a message to the user.
+  - **IT COVERED TWO OF THE SIX RACK COLUMNS, AND THE OTHER FOUR ALL RENDER.** `PROSE_COLS` held
+    `gear` and `what_to_bring` and stopped there, so **`sling_rack`, `detailed_rack`, `pro_needs`
+    and `rope_note`** had never been opened — every one of them feeding the RACK box on the route
+    page. Catalog-wide they carry **132 hits**, and `rope_note` alone has **63**, more than any
+    column already on the list. Adding them took the WA ROUTE PROSE section from **365 values on
+    272 routes to 481 on 352** — a third more than the audit could previously see.
+    - **RENDERING is the bar, and it was proven rather than argued.** All four are in
+      `check:field-renders`' `FIELDS` with **no `KNOWN` exemption**, and that guard fails a column
+      reaching no screen. That is the same test `data_quality` fails in the other direction, which
+      is why it stays out: it holds far more citations and renders nowhere, so it cannot break the
+      rule and would bury the real findings.
+    - **Found from the `sling_rack` end, and the recorded blocker there was WRONG.** CLAUDE.md said
+      that column holds *"three incompatible stored shapes"*; measured, it is **two** — 221 objects
+      and 21 arrays-of-object — and **0 of 242 render nothing**. The real blocker is narrower and
+      still stands: `fmtSlingRack` returns `null` for a plain **string**, so a *contributed* text
+      value would be invisible. That is a claim about the reader, not the data.
+    - **The bigger finding on that column is what DOES render.** 84% of values are labelled
+      **"Slings —"** while carrying cams, nuts, pickets and pitons — 162 objects have a `cams` key
+      — and the bullet runs to **p50 85, p90 172, max 454** characters, e.g. *"Slings — cams: note:
+      single rack, primary sizes, size: purple C3 to #3 BD, count: 1; …"*. A wrong label over a
+      paragraph in a bullet: the `check:token-boxes` question one element over, and NOT fixed here.
+      `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
+      lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:

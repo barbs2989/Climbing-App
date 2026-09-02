@@ -118,6 +118,19 @@ const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_te
   "beta", "overview", "watch_out", "best_season", "approach", "approach_variants", "climbing_route",
   "itinerary", "bivy", "pitch_detail", "gear", "what_to_bring", "pro_tips", "hazards", "obj_haz",
   "seasonal_guidance", "seasonal_hazards", "climate", "emergency", "crowds", "partner_requirements",
+  /* ADDED 2026-09-02, the same way `fa` was added below and for the same reason: measured what
+     this audit could not see. It covered `gear` and `what_to_bring` and stopped there, so the
+     other FOUR columns feeding the RACK box had never been opened -- and all four RENDER, which
+     is the bar this list is held to. Proven rather than argued: every one is in
+     check:field-renders' FIELDS with no KNOWN exemption, and that guard fails a column that
+     reaches no screen.
+
+     They carry 132 hits between them, and `rope_note` alone has 63 -- more than any column
+     already listed. The sample that found it was a rendered sling bullet reading
+     "cams: ... (per Mountain Project + 2 trip reports)", i.e. a publisher named on screen inside
+     a climber's rack. `data_quality` stays out for the opposite reason stated below: it renders
+     nowhere, so its citations cannot break the rule. RENDERING is the test, not size. */
+  "sling_rack", "detailed_rack", "pro_needs", "rope_note",
   /* ADDED 2026-08-26 after measuring what this audit could not see. `fa` RENDERS -- `route.fa` on
      the route page -- and was never opened, so a citation in it was on screen and uncounted.
      ONLY `fa`. `road` and `access` also render and also carry citations, and are deliberately NOT
