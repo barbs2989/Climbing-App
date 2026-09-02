@@ -4186,6 +4186,62 @@ the correction knows the screen is wrong, and they have no way to report it.
       Lookout from Pilchuck leaves three equally-foreign Three Fingers camps behind. Closing this
       class needs a signal saying which TRAILHEAD a camp serves, which the catalog does not record.
 
+  - **THE DIAGNOSIS ABOVE IS HALF WRONG, AND THE CORRECTION MATTERS MORE THAN THE ORIGINAL.** The
+    entry blames the peak-NAME requirement. Measured per camp on Pilchuck, that is not what
+    dominates: **six of the seven foreign camps are at or BELOW Pilchuck's own summit**, so the
+    **elevation dial** — *the camp is >500 ft above the route's high point* — is what excludes them.
+    Tin Can Gap geocodes fine and sits 14.1 km away; it is passed over at **+276 ft**. Give the
+    audit perfect coordinates for all seven and it still reports one. *A stated cause that has never
+    been measured is a hypothesis*, and this one sent a session widening the wrong gate.
+  - **A COORDINATE-BASED DETECTOR WAS BUILT, MEASURED AND NOT SHIPPED**, and the negative result is
+    the useful part. Geocoding the camp NAME removes the peak requirement entirely: **419 of 646
+    distinct names resolve, covering 3,180 of 5,060 pairs (63%)** against this audit's **314 (6.2%)**
+    — a ten-fold widening of reach that produced **no new confirmed defect the reading did not**.
+    Four gates make a geocode usable: the name resolves; **exactly one** feature of it exists in WA
+    (the box the elevation solver uses is the wrong instrument here, since a genuinely foreign camp
+    lies outside it and would simply not be found — uniqueness is what replaces it); not a linear
+    feature; and **the DEM under the coordinate agrees with the elevation the row already stores**,
+    which is an independent record neither the name nor the gazetteer produced. Agreement is
+    striking where it holds — Three Fingers Lookout 6,854 ft stored against 6,850.8 measured, Bedal
+    Campground 1,246 against 1,246.2.
+    - **THE PER-ROUTE VERSION IS BIASED AND MUST NOT BE REBUILT.** Asking *"is this route's whole
+      camp list centred somewhere else?"* looks strictly better than asking about one pair, and it
+      is unusable: **the geocodable subset is not a random sample of the list.** The names that fail
+      to resolve are the descriptive, multi-place, zone-y ones — *"Snowgrass Flat area backcountry
+      camps"*, *"Conrad Meadows and Surprise Lake"* — which are exactly what a zone file
+      contributes. Mount St. Helens resolved 3 of 7 camps, and they were its two CORRECT ones plus
+      one foreign, so its median read a healthy **7.1 km while five of its seven camps were 60 km
+      away**. Every per-route aggregate over that subset errs toward *looking fine*, which is the
+      false-pass direction. Raising the coverage requirement does not fix it — it selects for
+      well-named lists, which are the least likely to be zone files.
+    - **The `Number(null) === 0` trap cost 83% of the first run**, and it is the one
+      `audit:map-pins` records from a 12,215 km finding. `isFinite(Number(null))` is **true**, so a
+      route whose `high_point_ft` is NULL reads as a 0 ft summit and every camp on earth is "above"
+      it: 23 findings became **4** once null was tested for separately, and three of the top five
+      were `wa_mount_index_northeast_buttress` on a fabricated +1000/+880/+2420 ft.
+    - **Prose corroboration is real here, and only the BASE RATE proves it.** All 30 spread-rule
+      candidates came back prose-silent, which is the shape of a vacuous test — but measured across
+      every pair on a route with ≥600 characters of prose, **51.4% of camps ARE named by their own
+      route** (4,938 pairs). So silence is not the norm and 30/30 is a signal. *A pattern among
+      findings is not evidence until it is compared against the rows that pass.*
+    - Traverses are excluded **structurally**: a traverse is a line and its area carries one
+      coordinate, so every camp along it reads as distant. 3 of 33 candidates were this.
+  - **ONE DEFECT WAS FOUND AND REPAIRED, BY READING RATHER THAN BY ANY RULE
+    (`fix-goat-rocks-st-helens-camp-split.mjs`).** An identical 7-entry list sat on **seven routes
+    across four areas** — Mount St. Helens, and the Goat Rocks peaks Old Snowy, Ives and Gilbert.
+    Five entries are Goat Rocks places and two are St. Helens places, so the contamination ran
+    **both ways**: St. Helens was told to camp 59-66 km east over the Cascade crest, and the three
+    Goat Rocks peaks were told to camp at the two St. Helens climbers' trailheads 69 km west.
+    - **Decidable because it is two-way.** Every assignment was measured against BOTH anchors, so
+      neither range is privileged: the separation is **8x to 25x** and nothing is near the line.
+      Independent confirmation arrived from the catalog itself — Ives Peak's route is named
+      *"Northeast Slopes / Goat Rocks crest"*.
+    - **`"Dana Yelverton Shelter site"` was deliberately NOT moved.** It is in no gazetteer under
+      any spelling tried, so it cannot be placed, and **a repair may remove what is proven foreign
+      and nothing else** — assigning it from the balance of the list is the zone-file reasoning the
+      repair exists to undo. It stays on all seven routes and the script says so.
+    - Neither range is left empty: St. Helens keeps 3, each Goat Rocks peak keeps 5.
+
 - **`audit:camp-elevations`** asks whether the camp elevations **already on screen** are right.
   3,821 bivy sites carry one, almost all written by enrichment, and nothing had ever checked them.
   `audit:waypoint-elevations` asks this of the waypoint store; the bivy store is 11x larger, feeds
