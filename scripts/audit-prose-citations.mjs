@@ -49,6 +49,16 @@ const ROAD_ACCESS = [["road", "status"], ["road", "seasonalGate"], ["road", "dri
 
 // A named third-party publisher. `Beckey` needs a guide word beside it — on its own it is a route
 // name here far more often than a citation.
+// `Peakbagger` is a website; `peakbagger`/`peakbaggers`/`peakbagging` is the ordinary English
+// word for a kind of climber - "a known peakbagger objective", "Bulger-list peakbaggers pairing
+// it with the summit", "occasional peakbagger visits mid-July through August". Those cite nobody.
+// The site is CAPITALISED AND SINGULAR (`Peakbagger`, `Peakbagger's`), so every other form is
+// blanked before matching. Measured 2026-09-02: 15 of 300 flagged leaves in WA were reachable
+// ONLY through the common noun, and a sweep on them would have deleted true prose about who
+// climbs a peak. Exactly the `Source Lake` / "water source" exclusion below, one word over.
+const COMMON_NOUN = /\bpeakbaggers\b|\bpeakbagger\b|\bPeakbaggers\b|\bpeakbagging\b|\bPeakbagging\b/g;
+const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
+
 const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
@@ -139,13 +149,16 @@ if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes and
 if (!values.some(v => v.kind === "route prose")) { console.error("FAIL — 0 route-prose values across every column. The widened scan is not reading."); process.exit(1); }
 
 if (INJECT === "cite") { values[0].text = "The road is open to the trailhead, per SummitPost and several trip reports."; console.log(`[inject] a citation onto ${values[0].id} ${values[0].field}`); }
+if (INJECT === "commonnoun") { for (const v of values) v.text = "Rarely climbed; occasional peakbagger visits, and Bulger-list peakbaggers tag it from a shared high camp."; console.log("[inject] every value uses the COMMON NOUN peakbagger(s) and cites nobody; the citation count must be 0"); }
+if (INJECT === "thesite") { for (const v of values) v.text = "Peakbagger lists four logged ascents for this peak, and Peakbagger's page gives the elevation."; console.log("[inject] every value names the SITE Peakbagger; every value must be reported"); }
 if (INJECT === "liveonly") { for (const v of values) v.text = "Call the Mt. Baker Ranger District at (360) 854-2553 and check fs.usda.gov/alerts before driving."; console.log("[inject] every value is a LIVE reference; the citation count must be 0 and the live count must be every value"); }
 
 const exemptKeys = new Set(EXEMPT.map(e => e[0] + "\0" + e[1]));
 const hitKeys = new Set();
 const hits = [], live = [];
 for (const v of values) {
-  const cited = NAMED.test(v.text) || ACT.test(v.text);
+  const _t = deCommonNoun(v.text);
+  const cited = NAMED.test(_t) || ACT.test(_t);
   if (cited) hitKeys.add(v.id + "\0" + v.field);
   if (cited && !exemptKeys.has(v.id + "\0" + v.field)) hits.push(v);
   else if (!cited && LIVE.test(v.text)) live.push(v);
@@ -186,6 +199,12 @@ if (stale.length) {
 // Injection-tested:
 //   --inject=cite      a citation onto the first value -> must be reported
 //   --inject=liveonly  every value a phone number + a land-manager URL -> citations 0, live = all.
+//   --inject=commonnoun  every value uses "peakbagger(s)" as the common noun -> citations 0.
+//                        This must PASS; it is the precision case, and it is what stops the
+//                        needle reporting true prose about who climbs a peak.
+//   --inject=thesite     every value names the SITE Peakbagger -> every value reported. Pairs
+//                        with commonnoun: without it, a needle that matched nothing would also
+//                        satisfy the precision case.
 //                      This is the precision rule: the destructive failure of this audit is
 //                      reporting the 589 operational references as findings. It exits 1, correctly:
 //                      overwriting every value also makes the exemption stale, and stale bookkeeping

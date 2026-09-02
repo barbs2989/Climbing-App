@@ -38,6 +38,20 @@ if (!m) {
 }
 const NAMED = eval(m[1]);
 
+// The audit BLANKS the common-noun forms of "peakbagger" before matching, because the site is
+// capitalised and singular while the word for a kind of climber is neither. Lifting NAMED and
+// not this would make the map over-report by exactly those 15 values - a second classifier
+// silently disagreeing with the guard, which is the failure this file's header is about. So it
+// is anchored too, and its absence is fatal rather than a quiet drift back to the old counts.
+const cm = src.match(/const COMMON_NOUN = (\/.*\/[a-z]*);/);
+if (!cm) {
+  console.error("ANCHOR LOST: `const COMMON_NOUN = /.../` is no longer in scripts/audit-prose-citations.mjs.");
+  console.error("Without it this map counts the common noun 'peakbagger' as a citation and disagrees with the audit.");
+  process.exit(1);
+}
+const COMMON_NOUN = eval(cm[1]);
+const deCommonNoun = (t) => t.replace(COMMON_NOUN, (x) => "x".repeat(x.length));
+
 // Feed it the audit's own --full output:  npm run audit:prose-citations -- --full > cites.txt
 const dumpPath = process.argv[2];
 if (!dumpPath) {
@@ -88,7 +102,7 @@ let tot = 0;
 for (const row of rows) {
   for (const c of wanted.get(row.id) || []) {   // ONLY the columns the audit named for THIS route
     for (const s of leaves(row[c])) {
-      const hit = s.match(NAMED);
+      const hit = deCommonNoun(s).match(NAMED);
       if (!hit) continue;
       tot++;
       const k = hit[0].toLowerCase().replace(/\s+/g, " ");
