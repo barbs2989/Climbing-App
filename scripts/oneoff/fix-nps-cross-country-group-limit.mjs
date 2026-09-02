@@ -5,9 +5,10 @@
 //    Mount Shuksan, Eldorado Peak, and Forbidden Peak. Group size limit is 6 for the remainder of the
 //    cross-country zones."   ...and "Group size limits include people and stock."
 //
-// 16 routes inside those three zones store `access.group_limit: 6`, and 11 of them carry prose that
-// NAMES Eldorado while assigning it the 6 — the exception applied to exactly the zone it exists for.
-// The consequence is a legal party of 8-12 being told to split.
+// The FIRST run repaired 16 routes inside those three zones, 11 of them carrying prose that NAMED
+// Eldorado while assigning it the 6 — the exception applied to exactly the zone it exists for.
+// The consequence is a legal party of 8-12 being told to split. A SECOND run then corrected the
+// scope (see the ZONES comment below) and repaired 13 more.
 //
 // THIS IS NOT THE CLOSURE GRIND (stopped 2026-08-28) and the distinction is structural, not a
 // technicality: a closure is a dated, transient order, so writing one into a column nothing re-reads
@@ -36,12 +37,33 @@ import { selectAll, patchRow, requireServiceKey } from "../lib/supabase-env.mjs"
 const APPLY = process.argv.includes("--apply");
 requireServiceKey();
 
-const ZONES = ["wa_eldorado_peak", "wa_forbidden_peak", "wa_mount_shuksan"];
+// THE FIRST RUN OF THIS SCRIPT WAS UNDER-SCOPED AND THIS IS THE CORRECTION.
+// It used the NPS Wilderness Trip Planner, which says the limit is 12 "in cross-country zones around
+// Mount Shuksan, Eldorado Peak, and Forbidden Peak". THAT IS A SUMMARY. The authoritative page
+// (planyourvisit/cross-country-zones.htm, last updated 1 May 2024) enumerates 62 zones and names
+// ELEVEN with a 12-person limit: Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration,
+// Nooksack, Price, Sulphide Glacier, Torment Basin, Triad. Reading the summary as the list left 13
+// routes unrepaired. A SUMMARY PAGE IS NOT THE AUTHORITATIVE LIST.
+//
+// Two of the missing zones exist as real ancestor areas in this catalog's own tree and are added here:
+//   wa_boston_basin — a genuine parent area; Boston Peak, Buckner, Sahale, Sharkfin Tower,
+//                     Mount Torment and Aiguille de l'M all sit under it. 7.4 km from Eldorado.
+//   wa_the_triad    — an area of exactly that name, 2.9 km from Eldorado.
+//
+// "INSPIRATION" IS DELIBERATELY NOT ADDED, and the reason is the name-collision class this audit keeps
+// finding. NPS's 12-person zones are a Cascade Pass/Eldorado cluster and Eldorado's own approach
+// crosses the INSPIRATION GLACIER — but this catalog's "Inspiration Peak" is in the SOUTHERN PICKETS,
+// measured 28.3 km away, against Boston Basin's 7.4 and the Triad's 2.9. Two different Inspirations;
+// the Pickets peak is in a 6-person zone. Hidden Lake, Icy, Nooksack, Price and Sulphide Glacier are
+// likewise not added: they have no matching ancestor area, and "Icy" and "Price" are common words, so
+// a name match there would be a guess rather than a boundary test.
+const ZONES = ["wa_eldorado_peak", "wa_forbidden_peak", "wa_mount_shuksan",
+               "wa_boston_basin", "wa_the_triad"];
 
 // The exact clause to replace, and its replacement. An exact find/replace asserted to match ONCE, so
 // nothing can be invented and a row whose prose has since changed is refused rather than rewritten.
 const BAD = "Group size capped at 6 in off-trail cross-country zones (which includes Boston Basin/Eldorado approaches; 12 in on-trail corridors).";
-const GOOD = "Group size limit is 12 in trail corridors and camps and in the Mount Shuksan, Eldorado Peak and Forbidden Peak cross-country zones, which this route is in; 6 in the remaining cross-country zones. Limits include people and stock.";
+const GOOD = "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock.";
 
 const routes = await selectAll("routes", "id,area_id,access", "id=like.wa_*", { pageSize: 1000 });
 console.log(`WA routes read: ${routes.length}`);

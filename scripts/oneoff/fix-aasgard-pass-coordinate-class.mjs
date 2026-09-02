@@ -14,9 +14,11 @@
 // height — and the ones that do also carry different NAMES ("Aasgard Pass Gully Break" at 6,000 ft,
 // "Aasgard Pass trail (south shore)" at 5,800 ft), so they are different features and correct as
 // stored. Cluster 2 claims the majority's exact elevation while sitting 612 m from its coordinate:
-// that is a coordinate error, not a second location. Cluster 1 is left alone — 41 ft and 363 m is
-// consistent with a different point on a broad pass, and this project has already learned (Colchuck
-// Lake, batch 80) that a separation alone is a question rather than a verdict.
+// that is a coordinate error, not a second location. CLUSTER 1 WAS LEFT ALONE ON THE FIRST RUN and
+// that was right at the time — 41 ft and 363 m is consistent with a different point on a broad
+// pass, and this project had already learned (Colchuck Lake, batch 80) that a separation alone is
+// a question rather than a verdict. Batch 83 research then SETTLED it against Wikipedia and all
+// four were repaired. The gate stays: it was correct to hold, and correct to release on evidence.
 //
 // NOTHING IS TYPED: the replacement coordinate is the catalog's own majority cluster, computed at run
 // time from the rows that agree. A repair needing a coordinate the catalog does not already hold
@@ -37,6 +39,25 @@ const hav = (a, b) => {
   const h = Math.sin(dLa/2)**2 + Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dLo/2)**2;
   return 2*R*Math.asin(Math.sqrt(h));
 };
+
+// RESEARCH-SETTLED EXCEPTION TO THE ELEVATION GATE.
+// The gate below leaves a pin alone when its elevation differs from the majority's, because a
+// different height is consistent with a genuinely different point on a broad pass — and on the first
+// run that correctly held back four pins at 47.4828,-120.8175 @ 7,800 ft, 363 m out. Batch 83
+// research then SETTLED it: Wikipedia gives Aasgard Pass as 47.48028,-120.82056 @ 7,841 ft, matching
+// the catalog's own 9-pin majority almost exactly, so the 7,800 ft cluster is the outlier on BOTH
+// coordinate and elevation rather than a second location.
+//
+// It is declared here rather than by relaxing the gate, because the gate is right in general and this
+// is one cluster an external source has resolved. Both lat/lng AND elev are taken from the donor.
+// A stale entry fails: if no pin matches, the declaration has outlived its subject.
+// The list is EMPTY because its one entry has been applied and the stale check below then fired,
+// which is the contract working: a declaration that stops being true fails rather than lingering.
+// What it recorded, kept as history: four pins at 47.4828,-120.8175 @ 7,800 ft were held back by
+// the elevation gate on the first run, batch 83 research settled them against Wikipedia
+// (47.48028,-120.82056 @ 7,841 ft, matching the catalog's own majority), and both coordinate and
+// elevation were then taken from the donor. All four verified.
+const SETTLED = [];
 
 const rows = await selectAll("routes", "id,waypoints", "id=like.wa_*", { pageSize: 1000 });
 console.log(`WA routes read: ${rows.length}`);
@@ -80,7 +101,18 @@ for (const c of clusters.slice(1)) {
       : !sameElev ? `LEFT ALONE — elevation ${m.p.elev} differs from the majority's ${majElev}, so it may be a different point`
       : "DISPLACED — claims the majority's elevation at a different coordinate";
     console.log(`  ${m.id.padEnd(46)} [${m.i}] ${m.p.lat},${m.p.lng} @ ${m.p.elev}  ${sep.toFixed(0)} m out — ${verdict}`);
-    if (sep > WRONG_M && sameElev) plan.push({ ...m, sep });
+    const settled = SETTLED.find(x => m.p.lat === x.lat && m.p.lng === x.lng && m.p.elev === x.elev);
+    if (sep > WRONG_M && sameElev) plan.push({ ...m, sep, withElev: false });
+    else if (sep > WRONG_M && settled) {
+      console.log(`       ^ RESEARCH-SETTLED: ${settled.why}`);
+      plan.push({ ...m, sep, withElev: true });
+    }
+  }
+}
+for (const x of SETTLED) {
+  if (!pins.some(m => m.p.lat === x.lat && m.p.lng === x.lng && m.p.elev === x.elev)) {
+    console.error(`STALE SETTLED entry: no pin at ${x.lat},${x.lng} @ ${x.elev} — drop it.\n  reason on file: ${x.why}`);
+    process.exit(1);
   }
 }
 console.log(`\nto repair: ${plan.length}`);
@@ -95,7 +127,10 @@ for (const m of plan) {
   if (!cur || cur.lat !== m.p.lat || cur.lng !== m.p.lng || String(cur.name).trim() !== String(m.p.name).trim()) {
     console.log(`  REFUSED ${m.id}[${m.i}]: the row has changed since it was read`); refused++; continue;
   }
-  const next = r.waypoints.map((p, i) => i === m.i ? { ...p, lat: donor.p.lat, lng: donor.p.lng } : p);
+  const next = r.waypoints.map((p, i) => i === m.i
+    ? (m.withElev ? { ...p, lat: donor.p.lat, lng: donor.p.lng, elev: donor.p.elev, elevFt: donor.p.elevFt ?? donor.p.elev }
+                  : { ...p, lat: donor.p.lat, lng: donor.p.lng })
+    : p);
   await patchRow("routes", m.id, { waypoints: next });
   wrote++;
 }
@@ -106,7 +141,8 @@ const after = new Map((await selectAll("routes", "id,waypoints", "id=like.wa_*",
 let ok = 0;
 for (const m of plan) {
   const a = after.get(m.id)?.waypoints?.[m.i];
-  if (a && a.lat === donor.p.lat && a.lng === donor.p.lng && a.elev === m.p.elev && String(a.name).trim() === String(m.p.name).trim()) ok++;
+  const wantElev = m.withElev ? donor.p.elev : m.p.elev;
+  if (a && a.lat === donor.p.lat && a.lng === donor.p.lng && a.elev === wantElev && String(a.name).trim() === String(m.p.name).trim()) ok++;
   else console.log(`  NOT APPLIED: ${m.id}[${m.i}]`);
 }
 console.log(`verified ${ok} of ${plan.length}`);
