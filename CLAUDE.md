@@ -1481,6 +1481,22 @@ the total when deciding where a new guard belongs.
       `catch(cmFail)` and `_restore(setCondReports, …)`. **A too-narrow proxy manufactures
       findings here rather than hiding them** — it would have sent somebody to "fix" five correct
       handlers.
+  - **AND THE THIRD DIRECTION IS EMPTY TOO, so the write side is closed: a write that SUCCEEDS
+    whose result never reaches the screen.** That is the mirror of the two above — the climber's
+    change vanishes until reload, so a successful write reads as a failure. Of 43 write call sites
+    carrying a `.then`, **40 update the screen** (a setter, a `refetch`, an `invalidate`) and the
+    three that do not are non-findings: both crew-invite sites pass `done`, which is
+    `()=>emailInvitesQ.refetch()` at the call site, and `reportPhoto`'s toast is the only sensible
+    feedback for a write that goes to a moderation queue the reporter cannot see.
+  - **THE REST OF THAT SCAN IS NOT MEASURABLE THIS WAY, and saying so beats reporting it.** It also
+    flagged 13 writes with no `.then` and no optimistic update "before" the call — including
+    `saveObjective`, `addComment` and `createClimbLog`. Every one is a false positive: the
+    optimistic `setUserLists(...)` for `saveObjective` sits **~700 characters earlier on the same
+    physical line**, outside the 260-character window the scan used. On a file whose longest line
+    is 58,365 characters, *"before the call"* is not a scope, and answering this properly needs the
+    enclosing HANDLER resolved rather than a window. Same failure as
+    [[a-partial-measurement-agrees-with-what-you-expect]], and the reason those 13 are recorded as
+    unmeasured rather than as findings.
   - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
     and both defects were the guide pair above. The other seven are non-findings with reasons, so
     nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
