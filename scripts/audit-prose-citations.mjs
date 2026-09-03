@@ -127,6 +127,9 @@ const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakba
 //
 // So do NOT extend this narrowing to `sources? (differ|describe|...)` on the grounds that it too
 // names nobody. It was considered and rejected: those say "source" on screen.
+// A CREDIT field names a person because that is the column's whole purpose, so a bare NAME
+// there is content rather than a citation. Declared (not inlined) so consumers can LIFT it.
+const CREDIT_FIELD = /^fa\b/;
 const ACT =/\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b|(?<!water )(?<!heat )\bSources?:/i;
 
 // Go and look at this yourself, now — operational, and it must never be swept.
@@ -289,7 +292,7 @@ for (const v of values) {
      longer counts there -- only a sourcing ACT does. ACT is unaffected by the credit vocabulary:
      "documented as a likely first ascent" and "reported a suspected first winter ascent" are
      hedges about certainty, which this repo keeps deliberately, and neither is in ACT. */
-  const isCredit = /^fa\b/.test(v.field);
+  const isCredit = CREDIT_FIELD.test(v.field);
   const cited = isCredit ? ACT.test(_t) : (NAMED.test(_t) || ACT.test(_t));
   if (cited) hitKeys.add(v.id + "\0" + v.field);
   if (cited && !exemptKeys.has(v.id + "\0" + v.field)) hits.push(v);
