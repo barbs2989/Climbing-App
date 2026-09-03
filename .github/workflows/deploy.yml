@@ -9,6 +9,10 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  # Needed to read which commit is currently published, so a superseded run can tell
+  # "I would move production forward" from "I would move it backwards". See
+  # scripts/ci/should-publish.sh.
+  deployments: read
 
 # Queue deploys instead of cancelling them. With cancel-in-progress: true, a push that
 # lands while a build is running kills that build -- and the build takes ~5 min. On
@@ -36,7 +40,11 @@ jobs:
       current: ${{ steps.tip_final.outputs.current }}
     steps:
       - uses: actions/checkout@v7
-      # Only the tip of the default branch may publish.
+        with:
+          # should-publish.sh asks `git merge-base --is-ancestor`, which cannot answer
+          # anything at the default depth of 1.
+          fetch-depth: 0
+      # A commit may publish when doing so moves production FORWARD.
       #
       # #616 stopped deploys cancelling each other, reasoning that "the last run to
       # finish still publishes the newest commit". That holds only when runs are
@@ -45,25 +53,31 @@ jobs:
       # re-run of f340ba1 (#614) finished after newer runs and published, so production
       # went BACKWARDS: #613, #621 and #622 vanished from the live site.
       #
-      # Checked twice — here, so a superseded run does not spend minutes building, and
-      # again after the build, since the tip can move while it runs. A superseded run
-      # publishes nothing; the newer commit's own run is what publishes.
+      # THAT PROPERTY IS RIGHT AND THE TEST FOR IT WAS OVER-STRICT, WHICH STARVED THE
+      # PIPELINE. "Am I the tip?" is a proxy for "would I move production backwards?",
+      # and when several sessions merge every few minutes nothing is ever still the tip
+      # when its build finishes. Measured 2026-09-02: over 25 runs, 10 skipped the deploy
+      # job and 10 were cancelled while queued, and production sat 17 commits and ~80
+      # minutes behind main while every run reported "success".
       #
-      # This prevents production moving backwards. It does NOT guarantee the tip gets
-      # published: if the tip's own run fails, production stays put. Stale beats
-      # reverted, but a failed deploy still needs looking at.
+      # scripts/ci/should-publish.sh asks the real question instead — is the currently
+      # PUBLISHED commit a strict ancestor of mine? — so a superseded commit still
+      # publishes when that moves production forward, and never when it would move it
+      # back. It falls back to the old strict tip rule if the published commit cannot be
+      # determined, so any API trouble degrades to the previous behaviour.
+      #
+      # Asked twice — here, so a run that cannot publish does not spend minutes building,
+      # and again after the build, since production can move while it runs.
+      #
+      # It still does NOT guarantee the tip gets published: if the tip's own run fails,
+      # production stays put. Stale beats reverted, but a failed deploy still needs
+      # looking at — and check:drift is what notices.
       - id: tip_early
-        name: Skip if this commit is already superseded
-        run: |
-          BR="${{ github.event.repository.default_branch }}"
-          git fetch --quiet origin "${BR:-main}"
-          TIP=$(git rev-parse FETCH_HEAD)
-          if [ "$TIP" = "${{ github.sha }}" ]; then
-            echo "current=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "current=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Not publishing ${GITHUB_SHA:0:7}: superseded by ${TIP:0:7}. That commit's own run publishes."
-          fi
+        name: Skip if publishing this commit would not move production forward
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash scripts/ci/should-publish.sh
       - uses: actions/setup-node@v7
         if: steps.tip_early.outputs.current == 'true'
         with:
@@ -128,18 +142,12 @@ jobs:
       #                                ...-<id>-<N>, and dies on a missing artifact.
       # The tip can move during the build, so re-check before anything is published.
       - id: tip_final
-        name: Re-check the tip after building
+        name: Re-ask after building — production may have moved
         if: steps.tip_early.outputs.current == 'true'
-        run: |
-          BR="${{ github.event.repository.default_branch }}"
-          git fetch --quiet origin "${BR:-main}"
-          TIP=$(git rev-parse FETCH_HEAD)
-          if [ "$TIP" = "${{ github.sha }}" ]; then
-            echo "current=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "current=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::Built ${GITHUB_SHA:0:7} but ${TIP:0:7} landed meanwhile; not publishing."
-          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+        run: bash scripts/ci/should-publish.sh
       - uses: actions/upload-pages-artifact@v5
         if: steps.tip_final.outputs.current == 'true'
         with:
