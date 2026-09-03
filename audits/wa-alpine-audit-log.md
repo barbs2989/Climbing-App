@@ -12704,3 +12704,68 @@ Every FA/elevation claim checked this batch came back either confirmed or correc
 no unresolved contradictions carried forward.
 
 Next batch continues from `wa_classic_route_3` onward alphabetically (pass 4).
+
+## 2026-09-03 — Pass 4, Batch 184
+
+Routes: `wa_colchuck_peak_colchuck_glacier`, `wa_colchuck_peak_east_ridge`,
+`wa_colchuck_peak_holsten_hilden`, `wa_colchuck_peak_north_buttress_couloir`,
+`wa_colchuck_peak_northeast_couloir`, `wa_colfax_peak_cosley_houston`,
+`wa_colfax_peak_kimchi_suicide_volcano`, `wa_colfax_peak_polish_route`,
+`wa_colonial_peak_west_ridge`, `wa_complete_south_buttress`.
+
+**Fixed:**
+`wa_colchuck_peak_east_ridge`'s `gain_ft`/`loss_ft` were stored as 2800, which is
+physically impossible: the row's own waypoints put the Stuart Lake Trailhead at
+3,400 ft and Colchuck Peak's summit at 8,705 ft (both independently confirmed —
+Wikipedia/SummitPost), so any party on this route gains at least 5,305 ft. No
+waypoint sits near the elevation 2,800 ft of gain would imply (5,905 ft), ruling out
+a "measured from a high camp" convention — just a wrong number. Corrected to 5305,
+matching three of the route's four Colchuck Peak siblings that already store the
+correct rise for the same trailhead/summit pair. `wa_colchuck_peak_northeast_couloir`'s
+`watch_out` was stored as one string joined with literal `\n` characters instead of a
+JSON array — the recurring array-shape bug this audit keeps finding (Sharkfin Tower,
+Mount Shuksan SE Ridge, Chockstone Route last batch); fixed to an 8-item array,
+content unchanged. `wa_colonial_peak_west_ridge`'s `corrections` field consisted
+entirely of a note about a routeId `wa_colonial_peak_northeast` that does not exist
+anywhere in the catalog (checked directly against the live table) and is not this
+row's id — the row's actual name, aspect, and face text already correctly describe a
+west-facing route, so the note was stale noise from a prior pass, the same
+broken-self-reference shape as last batch's Chianti Spire fix. Removed.
+
+**Flagged for human review:**
+`wa_colchuck_peak_east_ridge`'s own `corrections` field admits it is "the same
+physical route" as `wa_colchuck_peak_colchuck_glacier` — both are the peak's original
+1948, non-technical, Colchuck-Glacier-to-Colchuck-Col standard line — kept under a
+name ("East Ridge (Non-Technical)") no primary source uses. Possible duplicate route
+entry; needs a human naming/merge decision, not an automated fix (matches how this
+audit has handled similar duplicate-route questions before, e.g. Forbidden Peak's
+East Ridge/East Ridge Direct). `wa_colchuck_peak_north_buttress_couloir`'s `grade`
+field is null despite a populated `grade_num` (5) and `rock_grade` ("5.5, harder
+direct-start variation"); external sources (SummitPost, Mountaineers, SpokAlpine)
+describe the route as roughly Grade II-III, Class 3-4 with occasional easy 5th class,
+but composing the right canonical grade string conflates the optional 5.5 variation
+with the route's normal difficulty if done carelessly, so left as a documented gap
+rather than guessed at. `wa_colfax_peak_cosley_houston` and `wa_colfax_peak_polish_route`
+share an identical trailhead and an identical "Climbers' Trail / Hogsback Ridge
+junction" waypoint, yet place the real, shared landmark "Hogsback Camp" ~4.9 km apart
+from each other (48.749482,-121.838857 vs. 48.7893,-121.867771). Triangulating against
+a secondary source's rough "~3 miles from trailhead" figure was inconclusive for both
+candidates, and the junction shares near-identical longitude with one of the two
+camp coordinates (~2 m apart), which is a pattern this audit treats as suggestive of
+synthetic/interpolated placement rather than a survey. Not confident enough in either
+figure to correct one from the other with no independent third source; left both
+routes unchanged. `wa_complete_south_buttress`'s "base / area reference point"
+waypoint sits only ~32 m from its own Summit waypoint despite the route being 22
+pitches and 3,300 ft of gain — physically implausible for where a route actually
+starts. No authoritative source for the real base coordinate was found, so this is
+reported rather than guessed at.
+
+**Clean / confirmed accurate:** `wa_colchuck_peak_colchuck_glacier` (elevation, FA,
+approach all confirmed), `wa_colchuck_peak_holsten_hilden` (elevation/FA confirmed;
+its own `corrections` field already honestly documents a Mountain Project vs. AAC
+grade disagreement, no action needed), `wa_colfax_peak_kimchi_suicide_volcano`
+(elevation and FA — Colin Haley & Sarah Hart, April 2015 — confirmed via AAC
+Publications). Colfax Peak's elevation (9,440 ft) and Cutthroat Peak's (8,066 ft, for
+`wa_complete_south_buttress`) were both independently confirmed as well.
+
+Next batch continues from `wa_complete_south_buttress` onward alphabetically (pass 4).
