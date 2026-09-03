@@ -40,11 +40,19 @@
 //   LEGITIMATE  `rappel_detail` x3 on one Planner — R2, R4 and R5 are three separate stations
 //       that happen to share an anchor description ("natural sling on chockstone/horn").
 //
-//   A CLASS OF THREE, not a class  two prose columns sharing an OPENING clause and then
-//       diverging. Sized by measure-prose-shared-openings.mjs: 3 routes in 1,086. Not swept.
-//       NOTE ITS LIMIT: it compares shared PREFIXES, so it does not cover a shared clause that
-//       starts mid-value — which is what wa_a_servant_to_liberty actually has (`overview` opens
-//       "Also published as…" and then repeats `beta`'s first sentence). That shape is unmeasured.
+//   LEGITIMATE, and the count was WRONG BY 15x FIRST  two prose columns sharing a clause. This
+//       was recorded on 2026-09-03 as "a class of three" on the strength of
+//       measure-prose-shared-openings.mjs — which compared longest common PREFIXES and therefore
+//       could not see its own founding example, wa_a_servant_to_liberty, where the shared clause
+//       starts at char 0 of `beta` and MID-VALUE in `overview`. A true number about a narrower
+//       question, reported as though it sized the class: this file's own
+//       "ask what a count is a number OF" rule, broken by its own triage.
+//       measure-prose-shared-clauses.mjs replaces it and matches a run at ANY offset: 46 routes,
+//       51 pairs, all read. Still NOT swept, and now for a reason rather than for want of
+//       looking — 10 of the 13 hazard rows are already deduped by mergeHazards before anything
+//       renders, `beta`+`approach` is the documented audit:approach-scope class, and the rest is
+//       one fact answering two questions. The founding example is legitimate too: its ascent
+//       recap is the antecedent for "Descent THEREFORE follows Thin Red Line's exit".
 import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
