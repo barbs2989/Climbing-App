@@ -26,8 +26,13 @@
 //                      gates it too, so there is no dangling "yr exp" label. Same conditional-max
 //                      design covers reliability, responseRate, partnerCount, conditionsReported
 //                      and floatPlans.
-//   communityVouches   Vouches are session state, not DB-backed, and received ones arrive through
-//                      VOUCH_BOOST[id] which trustFactors adds separately. Reporting 0 stored
+//   communityVouches   NOT settled, and the reason recorded here was WRONG. It read "received
+//                      vouches arrive via VOUCH_BOOST" -- half true, and therefore convincing:
+//                      VOUCH_BOOST is the supplement for climbers *I* vouch for, and you cannot
+//                      vouch for yourself, so VOUCH_BOOST[ME.id] can never be written by
+//                      anything. The tile added two structural zeroes. Fixed by reading
+//                      useClimberVouches(uid) into meLive, so the field is RESTORED now and no
+//                      longer belongs in SETTLED at all.
 //                      vouches for an account with none is true.
 //
 // UPDATED after #1457. `hikingSpeedFtHr` WAS a second defect of exactly the catchLedger shape and
@@ -110,7 +115,6 @@ const SETTLED = {
   riskTolerance: "supplemented at BOTH reads (meRisk || ME.riskTolerance)",
   photos: "profilePhotos = useState(ME.photos||[]) initialises from it, then is the live source",
   years: "never settable (EditProfileScreen does not collect it) and max:0 excludes it from the score",
-  communityVouches: "session-only; received vouches arrive via VOUCH_BOOST, added separately",
   age: "not collected (no \\bage\\b in EditProfileScreen) and the hero gates it: ME.age ? name+age : name",
   belayDevices: "not collected; both reads guard it (Object.keys(...||{}) and an empty-state test)",
   philosophy: "not collected; the hero renders it only as ME.philosophy ? ... : null",
