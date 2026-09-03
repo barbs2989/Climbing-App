@@ -41,6 +41,7 @@ npm run check:logged-times # a climber’s logged time reaches the planner (in b
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
@@ -411,6 +412,28 @@ the total when deciding where a new guard belongs.
   - The guard **names the byte it forbids and must not contain one**, which is the cheapest possible
     self-test — and it is asserted, not assumed. The fix script and the injection harness obey the
     same rule through `String.fromCharCode(0)`.
+  - **IT WALKED TRACKED FILES ONLY, SO IT COULD NOT SEE THE FILE YOU ARE ABOUT TO COMMIT.** The
+    enumeration was a bare `git ls-files`, which lists the index — and an untracked file is exactly
+    the one whose diff this guard exists to protect. #1449 failed CI on a literal NUL in a script
+    written minutes earlier while this guard had **passed locally on the same tree**; the counts
+    said so and nobody read them (2003 files before `git add`, 2009 after, 2041 today).
+    - **Worst possible shape for THIS guard**, which is what makes it worth fixing rather than
+      noting: it runs **first** in the chain, so when it does fire in CI nothing else runs and the
+      PR shows one red check carrying no other information. Locally green, remotely red, on a file
+      the author has in front of them.
+    - `--cached --others --exclude-standard` adds untracked files while still honouring
+      `.gitignore`, so `node_modules`, `dist` and the `.env` dotfiles stay out; `EXTS` already
+      limits the walk to source types, so nothing binary is dragged in either.
+    - **`audit:silent-reverts` uses a BARE `ls-files` and must keep doing so** — it asks what
+      exists at HEAD, and an untracked file has no history to have been reverted from. Measured:
+      those two are the only `ls-files` callers in the repo, so this is a **class of one** and no
+      sweep is warranted.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-no-nul-untracked-cases.mjs`). The defect is
+      reproduced by **reverting** the fix rather than by assuming the unfixed tree, so the suite
+      keeps meaning something once the fix is in — the first version asserted "BEFORE the fix the
+      guard passes", went red the moment the fix landed, and was testing the tree rather than the
+      guard. **Case 3 must stay SILENT**: a widening that fired on ordinary untracked files would
+      be worse than the gap it closes.
   - Fails **closed**: fewer than 500 source files found is reported as a broken walk, never as a
     clean tree. Injection-tested 4/4 (`scripts/oneoff/inject-nul-byte-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must PASS** —
@@ -498,6 +521,35 @@ the total when deciding where a new guard belongs.
     `===ME.name?ME` survives, naming file:line. Comments and string contents are blanked in
     **one stateful pass** (offsets preserved) for the reason `check:dead-flag-gates` records —
     a regex strip ate real code there — so prose that merely *mentions* the pattern is safe.
+  - **A THIRD SHAPE SHIPPED ON HOME, and both tests above are blind to it BY CONSTRUCTION.**
+    `_friendFeed` matched connections to seed activity by display name —
+    `ROUTES.flatMap(…).filter(x => connections.some(c => c.name === x.a.user))` — so a DB-backed
+    friend called **"Maya Chen" was shown her 11 seed climbs as their recent activity**. It never
+    calls `ticksFor` and never writes `===ME.name`, so the guard built for exactly this class
+    passed throughout. Crew:Friends does the same job correctly, through `seedHistoryFor(f)`.
+    - **Found by READING CI's `ui-screens` artifact, not by a scan.** Home says *"Recent friend
+      activity · 11 updates"* and Crew:Friends says *"Show all 14"* — two derivations of one
+      feature. Chasing the count disagreement found the identity bug under it. The walk asserts no
+      NaN and no `undefined`; nobody reads the copy for sense, and `gh run download <id> -n
+      ui-screens` costs nothing locally, which matters when the box is too loaded to walk.
+    - **The gate is now ONE exported predicate**, `seedIdentity(c)`, used by `seedHistoryFor` and
+      by both Home readers. It was inline before, so it existed in exactly one place and every
+      other reader had to re-derive it — and one did not.
+    - **Section 3 found a SECOND instance the hand-fix missed, and it is the worse one.**
+      `var fr = connections.find(c => c.name === x.a.user)` resolves the friend object behind each
+      row and drives its Kudos, **Message** and **Vouch** buttons — so a real connection sharing a
+      seed author's name could be **vouched for off somebody else's climb**. Fixing the display
+      and stopping would have left it.
+    - The rule is exact rather than a keyword sweep: a comparison whose two sides are a `.name`
+      and a seed row's `.user` is **always** an identity claim, and nothing else in this codebase
+      compares those two fields. The gate must be in the **same expression**, not merely somewhere
+      in the file.
+    - **The probe that proved it RETYPED the predicate instead of lifting it**, so it kept failing
+      after the fix landed — the exact trap its own header warns about. Its extraction also cut at
+      the first `;`, which sits *inside* the flatMap body, so it never contained the filter at all;
+      that stayed invisible while the copy was doing the deciding.
+      `scripts/oneoff/probe-home-friend-feed-name-match.mjs` now executes the predicate from source
+      and is injection-tested: removing `seedIdentity(c)` fails it, restoring passes.
   - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
@@ -1026,11 +1078,31 @@ the total when deciding where a new guard belongs.
       from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
       (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
-      - **`toposUnavailable` is MASKED to THIS guard, and `check:topo-outage-copy` is what proved it.** Overview is
-        already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
-        topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
+      - **`toposUnavailable` is MASKED to THIS guard, and it has now been PROVEN both ways.**
+        Overview is already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether
+        or not the topos copy flips, and `check:topo-outage-copy` proves the copy statically.
+        Isolating it here needs a run failing only that read — **`ONLY=topos`**, not
         `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
+        - **Measured over three runs, 2026-09-02**: it intercepts (4 blocked, 80 through) and
+          reports `RouteDetail` **5,018 → 5,031 says-broken=YES** identically every time, with
+          `RouteDetail:Conditions` and `:Photos` IDENTICAL — so the flag flips on Overview, the
+          screen acknowledges the fault, and neither sub-tab is fed by that read. The guard's own
+          comment had said `ONLY=topo_photos` (a storage bucket, not a PostgREST path at all) and
+          that the mode could not clear a `>=3` floor, which **#1262 had already scoped to 1**.
+          Two stale reasons kept a five-minute measurement unmade for months.
+        - **`ONLY=` ALSO FAILS ON ONE ARBITRARY UNRELATED SCREEN PER RUN, so read the table rather
+          than the exit code.** Those three runs failed on Ranks, Ranks and Crew:Groups — and Ranks
+          reproduced its exact counts (1,170 → 1,148) **twice** before coming back IDENTICAL on the
+          third. *Two agreeing runs are not determinism*, and a **catch** on a loaded box is no
+          more evidence than the miss this file already records. Nothing on those screens can read
+          topos: `useAreaTopos` has one call site, in `RouteDetail`, and Ranks is captured before
+          the route page is opened. The mechanism is `waitOutFetch`, which in the failing run
+          re-settles only while a **spinner** is on screen — enough under a blanket outage where
+          every read fails fast, not enough under `ONLY=` where the other 80 reads are still in
+          flight with no spinner to wait out. Deliberately unfixed: the repair is a more patient
+          settle, it costs a settle per screen in the CI blanket run that has already timed out
+          once, and CI never invokes `ONLY=`.
       - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
         — and no flag lives on them. Click one when a flag lands on it.
       - **A FLAG HAS LANDED ON CONDITIONS, AND CLICKING IT IS HARDER THAN THIS NOTE IMPLIES.**
@@ -1086,17 +1158,22 @@ the total when deciding where a new guard belongs.
           — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
           applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
           5,026 and Photos' 678.
-        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
-          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
-          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
-          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
-          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
-          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
-          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
-          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
-          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
-          unverified fix alongside the walk would put main red. **Land the caveat first, then the
-          walk.**
+        - **THE WALK FOUND A REAL DEFECT ON ITS FIRST CI RUN, AND BOTH HALVES SHIPPED TOGETHER IN
+          #1453.** Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and
+          said nothing was wrong** — rule 1, on the very screen the walk was added to cover. The
+          cause: `activity` is `route.activity + myReports + dbReports`, so a failed reports read
+          drops the DB half and `buildConsensus` runs on what is left, presenting a **partial**
+          derived safety judgement as complete. `ConsensusPanel` already received
+          `reportsUnavailable` and consulted it **only on the empty branch**, so exactly this case
+          was silent. It now carries *"Some reports couldn't load, so this is based on the ones
+          that did — not on everything filed for this route."*
+          - **This entry read "STILL NOT SHIPPED … land the caveat first, then the walk" for as
+            long as both were live on main**, which is the
+            [[an-audits-advice-rots-faster-than-its-counts]] shape landing on a guard entry rather
+            than on an audit. A stated blocker that has since cleared is worse than no note: it
+            sits in the worklist looking like work, and the next session re-derives a fix that is
+            already there. When a limitation here is acted on, come back and replace it with the
+            measurement.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -2113,6 +2190,37 @@ the total when deciding where a new guard belongs.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+  - **THE GRACE CLOCK WAS TIED TO THE WRONG COMMIT, AND THAT MADE THIS GUARD STRUCTURALLY
+    UNABLE TO REPORT THE THING IT EXISTS FOR.** It excused any gap where the **newest** commit
+    on main was younger than the grace — and in a repo where several sessions merge every few
+    minutes, there is ALWAYS a commit younger than 45 minutes, so **the grace never expired**.
+    Measured 2026-09-02: production sat **17 commits and ~80 minutes behind** while this printed
+    *"ok — a deploy is probably still in flight"* on every run. Same shape as
+    `check:field-renders` reporting `NO DATA` during an outage: a green that is a statement
+    about the guard rather than about production.
+  - The clock is now **how long the OLDEST unpublished commit has waited**, from
+    `compare/<published>...<main>`, whose `commits` are oldest-first. That number is unaffected
+    by later merges, so a busy repo can no longer excuse itself, and the run also prints **how
+    many commits behind** production is — which the old output never said.
+  - **It fails SOFT, not closed, if the comparison cannot be made**, and that is deliberate: the
+    answer is still *"production is behind"*, and refusing to report that would be worse than
+    reporting it on the weaker clock. The output names which clock it used.
+  - **WHAT WAS STARVING THE DEPLOYS is now cause 1 in the failure message**, because it is the
+    one that actually happened and it is invisible from the run list: `deploy.yml` gates every
+    step on the SHA still being the tip of main (`tip_early`/`tip_final`), so a merge landing
+    during the ~1 minute build makes the **deploy job SKIP while the run still reports
+    `success`**. Over 25 consecutive runs: **10 skipped, 10 cancelled while queued**, and the
+    last run that actually published was 5 runs earlier. **Read the JOB, never the run** —
+    `gh run view <id> --json jobs --jq '.jobs[] | "\(.name) \(.conclusion)"'`.
+  - It resolved itself when the merge rate dropped and one build finished before the next merge,
+    which is exactly why nobody notices it: the failure is intermittent and load-driven.
+  - `SIMULATE_PUBLISHED=<sha>` is the injection hook, and it exists because the healthy state of
+    this guard is *"in sync"* — which is also what a broken clock prints, so the stale path
+    cannot be exercised without pretending production is behind. Verified against the REAL stall
+    (`published=700f125a`): **19 commits behind, oldest unpublished waited 284 min**. The A/B
+    that proves the fix is `GRACE_MINUTES=240` — the old clock (newest commit, 191 min) would
+    have **passed**, the new clock (285 min) **fails** — with `GRACE_MINUTES=400` passing, so
+    the guard is not simply always red.
 - **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
   SQUASH silently delete what an earlier PR added?** **It RUNS on every push to main now**
   (`.github/workflows/silent-reverts.yml`), which it did not for most of its life — see the
@@ -2846,6 +2954,28 @@ the total when deciding where a new guard belongs.
     was checked*, never as a clean catalog. Injection-tested; the 7 cases are at the bottom of the
     script. Cases 6 and 7 pin the `KNOWN` map in both directions — removing a live entry must
     surface it as a real failure, and a bogus name must report as stale.
+- **THE THREE HAND-RUN DB GUARDS WERE RUN, AND TWO OF THEM COULD NOT START.** CLAUDE.md asks for
+  `check:column-drift`, `check:function-columns` and `check:function-drift` to be run **by hand
+  after any migration**, because CI must not hold the service or management key. Doing that found
+  the database healthy — and found that the instruction could not be followed.
+  - **A FRESH WORKTREE IS NOT LINKED.** Both function guards go through
+    `supabase db query --linked`, and `supabase link` writes `supabase/.temp`, which is
+    **gitignored** and therefore absent from every new worktree. So a session that does exactly
+    what this file asks gets `FAIL: could not read the live catalog`, reads it as a missing
+    credential, and stops. **A guard nobody CAN run is worse than one nobody remembers to run** —
+    the remembering is at least fixable by a note.
+  - The link needs **no database password**: it authenticates against the Management API with the
+    token the CLI already holds, and `npx supabase projects list` succeeding is the tell that the
+    credential is present while the link is not. Both guards now print that remedy, verified by
+    unlinking and re-running rather than asserted.
+  - **RESULTS, so the next reader knows what a clean run looks like.** `check:function-columns` ok
+    (11 writing functions, 6 insert lists, 9 update lists). `check:function-drift` ok — **46 live
+    functions, 45 agreeing with their newest migration** plus the one declared `handle_new_user`.
+    `check:column-drift` reported `profiles.photos_public` as live and undescribed, and that is
+    **NOT a defect**: it belongs to an open PR that carries its migration. The guard compares live
+    schema against MERGED migrations, so any session applying DDL before its PR lands makes it
+    fail — expected, and the reason it must not be declared in `KNOWN`, which would go stale the
+    moment that PR merges.
 - **`check:function-drift`** is the sibling question, and the one no gate on the checkout can
   answer: **is the function running in production the one this repository describes?**
   `verify-migrations-applied.mjs` checks objects EXIST by name — `merge_accounts` exists, so it
@@ -3001,6 +3131,36 @@ the total when deciding where a new guard belongs.
     editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - **IT PROVES THE KEY IS READ, WHICH IS WEAKER THAN IT SOUNDS: the form showed
+    `Weather: [object Object]` AS THE CURRENT VALUE ON EVERY ROUTE.** `objStr` builds the line the
+    keyed editor opens with and did a raw `String(v)`; `weather` is an OBJECT on 498 of the 504
+    routes carrying `seasonal_hazards`, so 100% of them rendered that. This guard passed
+    throughout — `weather` *was* read — because reaching a screen and being **legible** on it are
+    different questions, the same split `check:token-boxes` draws against `check:field-renders`.
+    - **Not cosmetic.** That line also feeds `wasEmpty`, which decides whether one climber can
+      fill a blank or three must agree, and a form opening on `[object Object]` invites a climber
+      to replace a real value with whatever they can actually see.
+    - **Two fixes, each proven independently necessary by reverting them one at a time.** The
+      form already supports DOTTED keys, so `weather` became `weather.typical` (string on 498) and
+      `weather.probability` (471) — one field per fact. And `objStr` now flattens a nested value
+      through the app's own `fmtSlingVal` rather than `String(v)`, because `crevasses` is a string
+      on 453 rows and an OBJECT on 34, so **no single key spec is right for it** and the next
+      column to drift shape would reintroduce the defect.
+    - **Reverting the dotted keys alone leaves the row count at ZERO**, because the flattener
+      catches it — which is why the regression check asserts the key SPECS as well as the count.
+      A count-only check would have missed that revert entirely. Reverting the flattener alone
+      puts 34 rows back.
+    - **The 30 fields that show `route.<prop>` RAW are CLEAN, measured rather than assumed**
+      (`scripts/oneoff/measure-raw-cur-stringification.mjs`): 28 columns read, 0 stringify badly,
+      and the 2 with no column at all (`permitUrl`, `style`) are declared with reasons and fail as
+      **stale** if they stop being raw-cur fields. So this class is the keyed fields only — *a
+      detector for a class of zero is the thing this repo keeps refusing to build.*
+    - **Test the rendered STRING, never the type.** `String(["a","b"])` is `"a,b"` — readable —
+      so a `typeof v === "object"` scan counts arrays and over-reported by a factor of two, 1,008
+      rows against a true 504. `requiredSkills` is an array of strings and renders fine.
+    - This guard's `ANCHOR LOST` branch earned itself during the fix: a comment landed between
+      `export const` and `SEASHAZ_KEYS`, and it refused the run — *"the sub-keys went unchecked,
+      so this run proved less than it claims"* — rather than skipping the field.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
@@ -4222,6 +4382,61 @@ the correction knows the screen is wrong, and they have no way to report it.
     a different `shown`, and the `> described` half of that predicate is *inside* the function, so
     the edit landed by checksum and reproduced no defect. *Checksum movement proves an edit
     happened, not that it was the right one.*
+- **`check:trailhead-directions`** asserts a screen offers **exactly one way to drive to the
+  trailhead**, that the **coordinates** are beside it, and that a **label describes the value under
+  it**. Static (one esbuild bundle, five SSR renders), so it sits in `npm run build`.
+  - **IT IS THE GATE #1437 DID NOT GET.** That change moved `TrailheadCard` up under GETTING THERE
+    and dropped the standalone *"Directions to trailhead"* button standing there — both resolved
+    the same `trailheadPoint()`, so the page offered one destination twice and printed the road
+    name and status twice with it. Its check is
+    `scripts/oneoff/probe-trailhead-sits-with-getting-there.mjs`, and **nothing runs
+    `scripts/oneoff/`** — the *"a verification nobody runs is not a verification"* shape, on a
+    surface this file records as user-visible since the trailhead sweep.
+  - **NOTHING ELSE CAN SEE THE CLASS.** `check:dead-props` asks whether a prop is read — both
+    controls were read and both worked. `check:field-renders` asks whether a column reaches a
+    screen — these reached it **twice**, which is more than enough for that guard.
+    `check:waypoint-placement` asks whether a coordinate is DRAWABLE, not whether it is drawn once.
+    **A duplicate is invisible to every guard that asks *does this reach a screen*; the question
+    has to be *how many times*.**
+  - **COUNTING A CONTROL IS THE WHOLE PROBLEM, AND BOTH OBVIOUS METHODS ARE BLIND IN OPPOSITE
+    DIRECTIONS — measured, not reasoned about.** By **label** over the page text is a deny-list
+    over English, and this catalog writes prose into the very fields that render here: an
+    `approach_logistics.trailheadDirection` reading *"Drive here and park at the gate"* makes a
+    correct page report two controls. By **destination URL** over the markup looks rigorous and is
+    worse: the Plan tab's control is an `<a href>`, but the crag Overview's is
+    `<button onClick={window.open(…)}>`, and **React does not serialize a handler** — so the URL is
+    not in the markup at all. A first version counted hrefs and reported **zero** controls on a
+    screen that plainly has one. It counts **anchor-or-button elements whose own text is a drive
+    label**: prose lives in a `<div>` and is not counted, a handler-only button is. Injection cases
+    6 and 7 are those two false positives and both must stay **SILENT**.
+  - **IT FOUND A MISLABELLED ROW ON 249 ROUTES.** The crag Overview printed
+    `road.driveNote || road.name` under the heading **"Trailhead"**, so *"Roughly 25-30 minutes
+    (about 20 miles) from Dayton, WA via S 4th Street"* read as the name of the trailhead — a
+    description of the **drive**, under the name of the place you drive to, and the same string the
+    Plan tab labels correctly as *"Drive notes"*. **One label cannot be right for both values**, so
+    it is chosen per value (`"The drive"` / `"Road"`) rather than picked once and made to cover the
+    other. `scripts/oneoff/measure-crag-drive-note-label.mjs` is the count.
+  - **"With GETTING THERE" is asserted as ORDER, not as a character window** — the control renders
+    inside `TrailheadCard`, so slicing N characters after the heading would encode a guess about
+    the panel's size, the trap the camping panel and the Logbook badge both record. It must fall
+    between the GETTING THERE and APPROACH headings.
+  - **The seasonal gate is asserted because it nearly went with the duplicate.** It had two render
+    sites; the surviving one showed it only as a **suffix on the road STATUS row**, so a route with
+    a gate and no status would have lost it silently — the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **A KNOWN GAP, stated rather than quietly passed: a crag route shows GETTING THERE TWICE**, once
+    on Overview and once on Plan, with a different drive control on each. This guard asserts one per
+    SCREEN, which is what it can defend; whether a crag's Overview should carry a drive block at all
+    is a question about what belongs on which tab, and that is a product decision rather than
+    polish. Read this guard's green as *"no screen offers two"*, never as *"the route offers one"*.
+  - Fails **closed** five ways: a thin render, either GETTING THERE panel missing, a missing
+    APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
+    nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
+    nothing at all.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
+    the duplication back one piece at a time so the guard cannot pass on the strength of its
+    neighbours.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -4345,6 +4560,39 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE 50 "NO FEATURE ANYWHERE IN WA" REFUSALS ARE REAL — 42 of 50 MEASURED, not assumed.**
+    That bucket had been *read* as climbers' names and never tested, and this repo has been burned
+    by exactly that shape: an ArcGIS `LIKE` was case-sensitive, GNIS matched nothing for 25 of 39
+    pins, and the run reported every one as *"a climbers' name, not a federal one"* — uniform,
+    plausible and wrong. `diagnose-unfound-camp-names.mjs` asks the gazetteer directly for every
+    refused name and prints what came back:
+
+        ABSENT  the gazetteer holds nothing of this name : 42
+        EXACT   an exact name match, in Washington       :  2
+        NEAR    hits in WA, no exact name match          :  2
+        FAR     best hit is outside Washington           :  4
+
+    So the reading was right, and now it is evidence. *Lower Lena Lake*, *Chiwaukum Chain Lakes*,
+    *Upper Ice Lake* and *Upper Horseshoe Basin* return **nothing** — these are climbers' and
+    descriptive names, and no amount of querying finds a place that is not mapped.
+    - **The 4 FAR entries are the namesake gate working**: *Chicago Camp* resolves to California,
+      *Bearpaw Lake* to Wyoming, *Moose Creek bridge* to New York, *Colonnade Ridge* to the Grand
+      Canyon.
+    - **ONE was a gate gap and is fixed**: `roadhead` was missing from `TAIL`, so the search was the
+      whole phrase — *"Trinity trailhead roadhead"* returned nothing while *"Trinity trailhead"*
+      matches exactly. Added, and it **composes with the gates rather than bypassing them**:
+      *"Bedal Creek roadhead"* now reaches *"Bedal Creek"* and is refused as LINEAR, which is the
+      right answer for a stream. One row filled: Trinity Trailhead, 2,764 ft.
+    - **TWO ARE REPORTED, NOT SWEPT.** *"Sulphide Camp, end of the Baker River trail"* → *"Sulphide
+      Creek Camp"*, and *"Cat Basin"* → *"Cat Basin Stock Camp"*. Both are plausibly the same place
+      — Sulphide Creek Camp really is on the Baker River trail the row names — but accepting them
+      means letting an INSERTED WORD through the identity gate, and this catalog already records
+      that a feature type discriminates: Whatcom Pass is not Whatcom Camp. Two rows are not worth
+      loosening the rule that keeps 855 wrong matches out.
+    - **So the remaining camp-name work is genuinely unavailable, not merely undone.** 42 names have
+      no mapped feature, 66 more are dispersed zones where no single height exists, and 31 name
+      several places at once. That is the answer to *"can this be finished?"* — no, and the refusals
+      are the result.
   - **NOT-COMPUTED IS NOT NOT-MISPLACED, and conflating them nearly wrote a WRONG number with a
     measurement to justify it.** The five camps stored at two elevations were taken back to the
     ground — the method that settled Skagit Queen — and the first pass "settled" Sahale Glacier
@@ -6779,6 +7027,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     notes of which **44** are water and place names. A citation is a **counted or qualified plural**
     (*"multiple sources"*) or **sources doing something** (*"sources describe"*). That distinction
     takes the waypoint-note count from 45 to 1.
+  - **NARROWED 2026-09-02 BY THE USER: "per trip reports" NAMES NO THIRD PARTY, and the audit had
+    been reporting its own convention back as a defect. 101 → 34.** The headline question is
+    whether prose *"names a third party as the source of a claim"*, and by that test the phrase was
+    a false positive — **67 of 101 findings** — while being the wording this sweep spent eighteen
+    PRs deliberately converting **to**, on the stated reasoning that a category is not a source and
+    that it tells a reader a number is INFERRED rather than counted.
+    - **The split was measured, not assumed** (`classify-remaining-citation-findings.mjs`), and the
+      three surviving shapes are not the same question: **2** name an actual publisher and are
+      documented keeps (the guidebook in the reader's own hands; *"Green Trails / CalTopo map and
+      compass"*, a gear line saying WHICH map to buy); **16** put the word *"source"* in front of a
+      climber (*"sources differ"*, *"no source gives a season"*), which is the app-facing thing the
+      no-sources rule is actually about; and **12** are other sourcing acts.
+    - **DO NOT extend the narrowing to `sources? (differ|describe|…)` on the grounds that it names
+      nobody either.** Considered and rejected: those say *"source"* on screen, which a bare
+      category does not. The two look alike and are different questions.
+    - **That last bucket of 12 is NOT noise, which is why it stays**: it holds the last real
+      citations in the catalog — two *"Verified via SpokAlpine"* values naming a publisher `NAMED`
+      has never known about. A tidier-looking narrowing would have buried them.
+    - **The ambiguity was in the QUESTION, and the preview is what settled it.** The option offered
+      to the user named both *"per trip reports"* and *"sources differ"* while its worked example
+      showed 101 → ~34 — arithmetic that removes only the first. The number they compared is the
+      contract; a strict reading of the label would have taken it to ~2 and deleted the SpokAlpine
+      findings. **When an option's label and its preview disagree, the preview is what was chosen.**
+    - Injection-tested as a **PAIR**, and the pair is the point: `--inject=tripcategory` must report
+      **0** and `--inject=tripnamed` must report **every** value, on the same sentence differing
+      only in whether the thing after *"per"* is a category or a masthead. Either case alone is
+      satisfied by a needle that matches nothing, or everything.
   - **The count is a FLOOR, not a total, and this was proven rather than hedged.** It is a deny-list
     of publisher names, and one more phrasing beats it: the first sweep declared 33 and repaired 32,
     then widening the sourcing-act pattern immediately surfaced **five more on four routes**,

@@ -90,6 +90,19 @@ try {
 } catch (e) {
   console.error("FAIL: could not read the live catalog —", String(e.message).split("\n")[0].slice(0, 200));
   console.error("      This guard cannot report on a database it did not reach. Not a pass.");
+  // SAY HOW TO FIX IT. Both hand-run function guards go through `supabase db query --linked`, and
+  // a FRESH WORKTREE IS NOT LINKED — `supabase link` writes to supabase/.temp, which is gitignored
+  // and therefore absent from every new worktree. So a session that does the thing CLAUDE.md asks
+  // ("run it by hand after any migration") hits this message, reads it as a missing credential,
+  // and moves on. A guard nobody CAN run is worse than one nobody remembers to: the remembering
+  // is at least fixable by a note.
+  // The link needs no database password — it authenticates against the Management API with the
+  // token the CLI already holds, and `supabase projects list` working is the tell that it does.
+  console.error("");
+  console.error("      If this is a fresh worktree it is simply not LINKED, which is not the same");
+  console.error("      as having no credential. Check with:  npx supabase projects list");
+  console.error("      If that lists the project, link this worktree and re-run:");
+  console.error("        npx supabase link --project-ref <ref>       # no DB password needed");
   process.exit(1);
 }
 const jm = raw.match(/\{[\s\S]*\}/);
