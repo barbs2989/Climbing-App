@@ -28,7 +28,19 @@ const PAIRS = {
   connections: "connectionsUnavailable",
   crews: "crewsUnavailable",
   userLists: "listsUnavailable",
+  blocked: "blockedUnavailable",
+  comments: "commentsUnavailable",
+  dbReports: "reportsUnavailable",
+  joinedGroups: "groupsUnavailable",
+  crewReqIn: "crewInvitesUnavailable",
+  savedSearches: "searchesUnavailable",
 };
+
+// STATED SO IT READS AS A WORKLIST, not a caveat: nothing has yet asked about a count that has
+// already been MATERIALISED into a variable. This walks `<list>.length`, so
+// `const vouchesIn = (myVouchesInQ.data||[]).length` -- a count of a flagged query, stored as a
+// number and rendered as one -- is invisible here by construction. Reaching those needs the
+// variable traced back to the query that produced it.
 
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
 let examined = 0;
