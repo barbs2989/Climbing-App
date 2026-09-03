@@ -1044,14 +1044,29 @@ the total when deciding where a new guard belongs.
     Verified by insert → delete → re-read rather than by reading the SQL, which is how the absence
     was found in the first place. **The read-back in teardown stays** even now: a policy can be
     dropped again, and a status code cannot be trusted about rows.
-  - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
+  - **The concurrency work is what MADE it promotable, and it is why the promotion was safe.** Two
     `messages` rows coexist; every assertion holds with either or both present; teardown targets a
     single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
     **its own** message. Without that last part run A passes on run B's row — a **false pass in the
-    exact window this guard watches**. What is missing is only the ability to clean up.
-  - **The missing delete policy is worth knowing on its own terms:** a climber cannot delete a
-    message they sent or received, ever. Whether they should be able to is a product question
-    (unsend), and adding a policy to make a test tidy would be the wrong reason to answer it.
+    exact window this guard watches**. It had all of that while it sat in `scripts/oneoff/`; the
+    only missing piece was the ability to clean up, and `0176` supplied it.
+  - **THE PRODUCT QUESTION WAS ANSWERED, AND NOT FOR THE TEST'S SAKE — which is the distinction
+    this bullet used to be about.** It read *"a climber cannot delete a message they sent or
+    received, ever … adding a policy to make a test tidy would be the wrong reason to answer it"*,
+    and that stayed on the page after `0176` shipped the policy — so two bullets apart this file
+    said the capability exists and that it does not. The principle survives the correction:
+    `0176`'s own header opens *"a climber could not delete a message they sent or received.
+    Ever"* and closes a **user-facing** gap, with the test tidiness a by-product. It covers both
+    parties rather than sender-only unsend, because a recipient of an unwanted message has the
+    stronger claim to clear it and could already block the sender while being unable to remove
+    what they wrote. What it does **not** do is hide a deletion from the other party: a row is a
+    row, and a per-side unsend needs state this table does not have.
+  - **The leak is now OBSERVABLE rather than merely fixed.** Nothing in the repo can see teardown
+    being refused again — the guard prints *"removed the message: ok"* either way, which is exactly
+    how the original defect hid — so `messages` is in
+    `scripts/oneoff/probe-latent-claims-anon-vs-service.mjs`, where a **rising row count is the
+    regression**. Read it with the **service key**: `messages`' select policy is sender-or-recipient,
+    so an anon count returns 0 whatever the table holds. Measured after the promotion: **0**.
   - **Its two siblings are NOT safe and stay in `scripts/oneoff/`**, each for its own reason:
     `vouches` is `UNIQUE(from_id, to_id)`, so a second run's insert is refused with a 409 *and*
     teardown removes the single shared row under the first run — an upsert fixes only the first
