@@ -160,10 +160,20 @@ the total when deciding where a new guard belongs.
   merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
   a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
   defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
-- **The cheap version has already been taken twice**, and is what to try first on any new guard:
-  `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors instead
-  of twice, and `check:overlay-absence` was kept out of the build chain entirely (a CI job instead)
-  once its ~10s proved to be almost all Babel.
+- **The cheap version has already been taken three times**, and is what to try first on any new
+  guard: `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors
+  instead of twice; `check:overlay-absence` was kept out of the build chain entirely (a CI job
+  instead) once its ~10s proved to be almost all Babel; and `check:wp-styles` — the most expensive
+  guard in the chain — had the identical double-parse and now parses **3 times instead of 6**.
+  - **That was the LAST one, measured rather than assumed.** Every build-chain guard was scanned
+    for a second `parse()` of the same source and `check:wp-styles` was the only genuine hit. The
+    other three the scan reported are false positives of its own regex — two are `JSON.parse` of a
+    baseline file and one is `Date.parse` quoted inside a comment. So there is no remaining
+    free saving of this kind; what is left is the shared-runner refactor above, which is not free.
+  - **Verify such a change by OUTPUT, and by the PARSE COUNT — not by the clock.** The before/after
+    timing was attempted at load average 227 and read 110s against the 10.4s the same guard measures
+    on a quiet box, which is useless in both directions. What is load-independent is that the
+    guard's own counter goes 6 → 3 and its output is byte-identical.
 - **Measure it with `scripts/oneoff/measure-build-gate-cost.mjs`, on a quiet machine.** The number
   above is CPU-ish rather than wall clock deliberately: this box routinely runs several sessions at
   once, and a wall-clock profile taken at load average ~450 was off by 4x — recorded under
