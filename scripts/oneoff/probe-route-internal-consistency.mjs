@@ -47,7 +47,7 @@ const IDS = process.argv.slice(2).filter(a => !a.startsWith("--"));
 if (!IDS.length) { console.error("usage: probe-route-internal-consistency.mjs <route_id> [route_id ...]"); process.exit(2); }
 
 const rows = await selectAll("routes",
-  "id,area_id,name,grade,grade_num,rock_grade,alpine_grade,pitches,length_m,gain_ft,loss_ft,dist_km,high_point_ft,aspect,face,season,rope_length_m,rope_type,rappels,rappel_count_note,rappel_detail,gear,rack,detailed_rack,what_to_bring,rope_note,descent_text,bail,pro_tips,overview,beta,climbing_route,pitch_detail,waypoints,gpx,approach,approach_logistics,access,permit,emergency",
+  "id,area_id,name,grade,grade_num,rock_grade,alpine_grade,pitches,length_m,gain_ft,loss_ft,dist_km,high_point_ft,aspect,face,season,rope_length_m,rope_type,rappels,rappel_count_note,rappel_detail,gear,rack,detailed_rack,what_to_bring,rope_note,descent_text,bail,pro_tips,overview,beta,climbing_route,pitch_detail,waypoints,gpx,approach,approach_logistics,access,road,permit,emergency",
   `id=in.(${IDS.join(",")})`, { pageSize: 20 });
 const areas = await selectAll("areas", "id,name,path", "", { pageSize: 1000 });
 const A = new Map(areas.map(a => [a.id, a]));
@@ -390,21 +390,56 @@ for (const [aid, list] of byArea) {
   }
 }
 console.log(`\n================ ROUTE-PROSE CONTAMINATION (sentences >60 chars, all pairs)`);
+// FIELD COVERAGE AGAIN, and the misdiagnosis is worth recording. A batch-102 agent found
+// wa_blood_sport.access.seasonal and wa_big_snow_mountain_east_buttress.access.notes byte-identical
+// (137 chars: an I-90 avalanche-closure sentence, correct for Snoqualmie Pass and wrong for a route
+// that leaves I-90 at exit 34 in North Bend) and reported that this scan missed it "because the two
+// rows file it under different key names". THAT IS NOT THE MECHANISM -- the scan keys on the
+// SENTENCE and looks it up in the other row's map regardless of which field it came from, so a moved
+// key was always handled. It missed it because it never read the `access` blob at all. Same class as
+// the rope scan not reading `bail`: a field the probe cannot see produces a confident NEGATIVE.
+//
+// BUT A SHARED `access` BLOB IS USUALLY CORRECT, which is why these two are CROSS-PEAK ONLY.
+// CLAUDE.md records that access is a CRAG-LEVEL record -- 18 distinct blobs cover 1,371 WA rows, one
+// of them covering 1,128 -- so two routes on one crag sharing access prose is the design, not a
+// defect, and reporting it would bury the real finding under thousands of correct rows. Across
+// DIFFERENT areas the same sentence is exactly what the agent found: a fact about one trailhead
+// asserted about another.
+const JSONB_XPEAK = ["access", "road"];
+const leaves = (v, out) => {
+  if (typeof v === "string") out.push(v);
+  else if (Array.isArray(v)) v.forEach(x => leaves(x, out));
+  else if (v && typeof v === "object") Object.values(v).forEach(x => leaves(x, out));
+  return out;
+};
 const bag = rows.map(r => {
   const m = new Map();
   for (const k of ["overview", "beta", "climbing_route", "descent_text"]) {
     const v = r[k]; if (typeof v !== "string") continue;
     for (const s of SENTS(v)) { const n = s.trim().toLowerCase().replace(/\s+/g, " "); if (n.length > 60) m.set(n, k); }
   }
-  return [r.id, r.area_id, m];
+  const x = new Map();
+  for (const k of JSONB_XPEAK) {
+    for (const v of leaves(r[k], [])) {
+      for (const s of SENTS(v)) { const n = s.trim().toLowerCase().replace(/\s+/g, " "); if (n.length > 60) x.set(n, k); }
+    }
+  }
+  return [r.id, r.area_id, m, x];
 });
 let shared = 0;
 for (let i = 0; i < bag.length; i++) for (let j = i + 1; j < bag.length; j++) {
+  const samePeak = bag[i][1] === bag[j][1];
   for (const [s, k] of bag[i][2]) {
     if (!bag[j][2].has(s)) continue;
     shared++;
-    const samePeak = bag[i][1] === bag[j][1];
     console.log(`  ${samePeak ? "same-peak" : "CROSS-PEAK"}  ${bag[i][0].replace(/^wa_/, "")}.${k} <-> ${bag[j][0].replace(/^wa_/, "")}.${bag[j][2].get(s)}`);
+    console.log(`     ${JSON.stringify(s.slice(0, 150))}`);
+  }
+  if (samePeak) continue;                    // a shared access/road blob on ONE crag is the design
+  for (const [s, k] of bag[i][3]) {
+    if (!bag[j][3].has(s)) continue;
+    shared++;
+    console.log(`  CROSS-PEAK  ${bag[i][0].replace(/^wa_/, "")}.${k} <-> ${bag[j][0].replace(/^wa_/, "")}.${bag[j][3].get(s)}   [access/road blob]`);
     console.log(`     ${JSON.stringify(s.slice(0, 150))}`);
   }
 }
