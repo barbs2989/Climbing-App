@@ -3287,6 +3287,30 @@ the total when deciding where a new guard belongs.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+- **A THIRD ROPE DETECTOR WAS BUILT, MEASURED AND REJECTED — and the reason is a rule about when a
+  rope disagreement is DECIDABLE at all.** The question looked obviously worth asking, and nothing
+  asks it: `check:rappel-lengths` tests a stated station LENGTH against the rope's reach (arithmetic
+  on numbers) and `audit:rappel-claims` asks whether `rappels` claims raps the `descent_text` denies
+  (a COUNT test) — **neither compares the two fields on ROPE CONFIGURATION**, which is what decides
+  whether the stated count is reachable at all. `wa_east_ridge_9` was exactly that defect:
+  `descent_text` instructed *"three rappels with a single 60m rope"* while `rappels` said *"4 on a
+  single 60 m rope, or 3 on two 60 m ropes"*.
+  - **Measured across WA: 82 rows state a rope configuration in BOTH fields, 6 disagree, and
+    reading all six gives ZERO repairable defects.** Four are rows correctly stating **both**
+    options — `wa_mix_up_peak_east_face`'s own `rappel_count_note` says outright *"Both counts are
+    the same descent with a different rope setup, **not a disagreement**"* — and
+    `wa_mount_cruiser_south_corner` is a route recording that its guidebook recommends two ropes
+    while trip reports get down on one 60 m doubled, which its own stated rap lengths (25/30/30 m)
+    confirm. Only `wa_prey` genuinely disagrees, and nothing in that row arbitrates it.
+  - **THE TRANSFERABLE RULE: a TWO-field rope disagreement is not decidable, and it took a THIRD
+    field to settle the one that was.** `wa_east_ridge_9` was repairable only because
+    `rappel_count_note` said *"the three stations listed here are the two-rope sequence"* **and**
+    `approach_variants.hazards` said *"a 60 m rope comes up short"* — three fields against one. The
+    six candidates have no such third record, which is why they are candidates rather than findings.
+    Do not read a two-field split as a defect; look for the arbitrating field first.
+  - So the class is **ONE**, already fixed, and a detector for it would report ~6 rows of which ~0
+    are actionable. *A detector for a class of one is what this repo keeps refusing to build.*
+    `scripts/oneoff/` holds no probe for this deliberately — the measurement is this bullet.
 - **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
   only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
   catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
@@ -8070,10 +8094,18 @@ value, put the reasoning somewhere else.**
 - **`season` is a WINDOW, not an explanation.** It is rendered in the route header strap
   beside elevation and pitch count (`8,815 ft · 6p · Jul-Sep`). Enrichment has written up
   to 232 characters into it (`wa_hourglass_gully_winter`), and a paragraph about snow
-  bridges then wrapped over the cover photo and pushed the header open. WA currently has
-  **14 `season` values containing a parenthetical** and many more that are a whole
-  sentence — `"Late May–June is most commonly reported, when snow still covers the couloir
-  and brush; by mid-summer the couloir is loose talus/scree"`. Write `"late May-Jun"` there
+  bridges then wrapped over the cover photo and pushed the header open. **RE-MEASURED
+  2026-09-03: 138 WA `season` values contain a parenthetical and 201 run past 18 characters
+  (120 of those past 60).** This entry said **14** for months, so the figure was TEN-FOLD
+  stale — the same failure `check:track-caveat` records from its own comment, and the reason
+  to re-run the count rather than quote this line. It also changes what the number means:
+  at 14 this reads as a handful to tidy, at 201 it is a standing property of the column, so
+  **do not sweep it** — `seasonShort()` already defends the header, and rewriting 201 values
+  is editorial work, not a mechanical repair. `audit:access-prose` acted on the one shape
+  that IS mechanical (`<window> (<road note>)`, 17 values) and deliberately left the rest.
+  Many more are a whole sentence — `"Late May–June is most commonly reported, when snow
+  still covers the couloir and brush; by mid-summer the couloir is loose talus/scree"`.
+  Write `"late May-Jun"` there
   and put that sentence in **`best_season`** or `seasonal_guidance.monthBreakdown`, which
   exist for exactly this and are rendered as prose on the Conditions tab.
   `seasonShort()` in `RouteDetail.jsx` defends the header by matching a month range and
