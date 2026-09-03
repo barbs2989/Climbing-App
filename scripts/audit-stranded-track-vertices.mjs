@@ -6,7 +6,13 @@
 // EVERY vertex to be on a pin, deliberately: a genuine track passes through its own waypoints too,
 // so a threshold would caption correct data.
 //
-// THAT MAKES IT FRAGILE IN ONE DIRECTION NOBODY HAD ASKED ABOUT. Move a pin — which the cross-route,
+// SINCE lib/track.js GAINED ONE VERTEX OF SLACK, a SINGLE stranded vertex no longer deletes the
+// caveat — the root cause of that fragility is fixed and this audit's subject narrowed accordingly:
+// it now finds lines carrying TWO adrift vertices, which the slack deliberately does not cover.
+// The accuracy question is separate and still live: a stranded vertex is painted on the map a
+// kilometre from the pin it belongs to whether or not the caveat renders.
+//
+// THAT MADE IT FRAGILE IN ONE DIRECTION NOBODY HAD ASKED ABOUT. Move a pin — which the cross-route,
 // trailhead and camp repairs all do — and the vertex drawn through its OLD position stays behind.
 // The line stops being "the waypoints and nothing else", the predicate goes false, and the route
 // SILENTLY STOPS SAYING its line is a sketch. A five-vertex sketch across 30 miles of the North

@@ -125,6 +125,35 @@ else ok("predicate: a genuine track with vertices between the pins is NOT called
 if (trackIsJustTheWaypoints([[48.49, -121.11], [48.55, -121.10]], [])) fail("predicate: a route with NO waypoints must not qualify");
 else ok("predicate: no waypoints means nothing to be a copy of");
 
+// ── 1b. ONE VERTEX OF SLACK. A pin repair strands the vertex drawn through the pin's old position,
+//    and with no slack that ONE vertex deleted the caveat: 52 routes had lost it, 17 of them beyond
+//    recovery because the pin had been replaced rather than refined. The slack is safe only because
+//    of the <=40 cap — a recording's points do not land within 5 m of NAMED waypoints — so these
+//    cases pin BOTH directions. A rule that only ever admits is satisfied by deleting the test.
+// Built FROM WPS, never typed: a hand-written coordinate that misses a pin makes the case test
+// nothing, which is how the first version of these four failed against a correct predicate.
+const OFF = [48.60, -121.30];                      // on no pin, a long way from every one of them
+const STRANDED = [SYNTH[0], OFF, SYNTH[2], SYNTH[3]];
+if (!trackIsJustTheWaypoints(STRANDED, WPS)) fail("predicate: one stranded vertex still deletes the caveat — a pin repair breaks it again");
+else ok("predicate: a line with ONE vertex off a pin is still recognised as a sketch");
+
+// two off is not a sketch: at that point the line has content the waypoints do not explain
+const TWO_OFF = [SYNTH[0], OFF, [48.61, -121.31], SYNTH[3]];
+if (trackIsJustTheWaypoints(TWO_OFF, WPS)) fail("predicate: TWO vertices off a pin must not qualify — the slack is one, not a fraction");
+else ok("predicate: two vertices off a pin is not a waypoint line");
+
+// STRICTLY ADDITIVE: a two-point line has no interior, so one of slack is HALF of it. Applying the
+// slack there admitted a 55 m placeholder and took the caveat AWAY from 34 lines that had it.
+if (trackIsJustTheWaypoints([SYNTH[0], OFF], WPS)) fail("predicate: a 2-point line with one end off a pin must NOT qualify — the slack must not reach a line with no interior");
+else ok("predicate: a two-point line still needs both ends on a pin");
+// against a TWO-pin route: with four pins a two-point line fails the PIN side (3 of 4 must be on
+// the line), so this case would have been testing the wrong half of the predicate.
+const TWO_PINS = [WPS[0], WPS[3]];
+if (!trackIsJustTheWaypoints([SYNTH[0], SYNTH[3]], TWO_PINS)) fail("predicate: a 2-point line through two pins stopped qualifying — the change must be additive");
+else ok("predicate: a two-point line through two pins is unaffected");
+if (trackIsJustTheWaypoints([SYNTH[0], OFF], TWO_PINS)) fail("predicate: a 2-point line with one end off a pin qualified against a 2-pin route — the slack reached a line with no interior");
+else ok("predicate: two points, one off a pin, still refused when the pin side cannot mask it");
+
 // ── 2. It reaches the screen, and only on the routes it should.
 if (!shows(route({ gpxPts: SYNTH, waypoints: WPS }))) fail("the caveat does not render on a route whose track is just its waypoints");
 else ok("the caveat renders on a waypoint-polyline route");

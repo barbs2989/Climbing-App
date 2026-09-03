@@ -24,6 +24,7 @@ import { trackIsJustTheWaypoints } from "../../lib/track.js";
 const NEAR_M = 5;          // the predicate's own tolerance
 const MAX_VERTICES = 40;   // the predicate's own cap
 const MAX_MOVE_M = 3000;   // past this, a vertex is not a stale copy of this pin
+const CONFIDENT_X = 3;     // an assigned orphan must be this much nearer than any other still free
 const T = Math.PI / 180;
 const metres = (a, b) => 2 * 6371000 * Math.asin(Math.sqrt(
   Math.sin((b.lat - a.lat) * T / 2) ** 2 +
@@ -46,7 +47,11 @@ for (const r of rows) {
   const pins = (r.waypoints || []).map((w) => { const p = pointOf(w); return p ? { ...p, name: w.name } : null; })
     .filter(Boolean);
   if (line.filter(Boolean).length < 2 || !pins.length) continue;
-  if (trackIsJustTheWaypoints(r.gpx, r.waypoints)) continue;      // already correct
+  // NOT gated on the predicate. Since lib/track.js gained one vertex of slack, a route with a single
+  // stranded vertex SATISFIES trackIsJustTheWaypoints and would be skipped here — but the caveat and
+  // the drawn line are different questions. The slack restores the honesty; this restores the
+  // ACCURACY, since that vertex is still painted on the map a kilometre from the pin it belongs to.
+  // Routes with nothing adrift fall out below anyway.
   if (line.length > MAX_VERTICES) continue;                        // a real recording
 
   const adrift = [];
@@ -60,31 +65,54 @@ for (const r of rows) {
     refused.push({ id: r.id, why: `${adrift.length} vertex adrift but ${orphans.length} pin(s) orphaned` });
     continue;
   }
-  // Pair each adrift vertex with its nearest orphan. ORDER IS NOT AVAILABLE AS A RULE — measured,
-  // 34% of sketched lines do not follow their own waypoint list (an out-and-back sketch reads
-  // 0,1,2,2,2), so pairing by position would scramble them. Distance it is, with an ambiguity gate.
-  const used = new Set(), pairs = [];
+  // PAIRING. Order is not available as a rule — measured, 34% of sketched lines do not follow their
+  // own waypoint list (an out-and-back sketch reads 0,1,2,2,2) — so this pairs by distance. But
+  // GREEDY-IN-LIST-ORDER and an AGGREGATE tie-break were both wrong, and each was wrong on a real
+  // route rather than in principle:
+  //
+  //   wa_tenpeak_mountain_southeast has a vertex 15 m from the summit pin and 380 m from the other
+  //   orphan — overwhelming. Greedy took the OTHER vertex first and handed it the summit; the
+  //   aggregate test then saw 872 m against 559 m swapped, refused the route, and the assignment it
+  //   was defending was the wrong one.
+  //
+  //   wa_vasiliki_ridge_standard has a vertex 114 m from the pullout against ~1,900 m to the only
+  //   alternative — 17x, unarguable. It was refused because the SUM was dominated by the second,
+  //   genuinely uncertain pair. An aggregate hides a certain pairing behind an uncertain one.
+  //
+  // So: take the most CONFIDENT pair first — the one whose vertex is at least CONFIDENT_X nearer to
+  // its orphan than to any other still-unassigned orphan — assign it, and repeat. When one vertex
+  // and one orphan are left they pair BY ELIMINATION, which is sound precisely because the pairings
+  // that forced it were confident. If two or more remain and none is confident, refuse: that is a
+  // coin flip, and the exact post-condition below cannot catch it (any bijection satisfies it).
+  const pairs = [];
   let bad = null;
-  for (const a of adrift) {
-    let best = Infinity, bi = -1;
-    orphans.forEach((p, j) => { if (used.has(j)) return; const d = metres(a.v, p); if (d < best) { best = d; bi = j; } });
-    if (bi < 0) { bad = "no orphan left to pair with"; break; }
-    if (best > MAX_MOVE_M) { bad = `nearest orphan is ${Math.round(best)} m away — not a stale copy`; break; }
-    used.add(bi); pairs.push({ ...a, pin: orphans[bi], d: best });
-  }
-  if (bad) { refused.push({ id: r.id, why: bad }); continue; }
-
-  // THE POST-CONDITION IS SATISFIED BY ANY BIJECTION, so with two adrift vertices a WRONG pairing
-  // passes the gate while scrambling the drawn line. Require the chosen assignment to beat the
-  // alternative by a clear margin; a near-tie is a coin flip and is refused.
-  if (pairs.length === 2) {
-    const mine = pairs[0].d + pairs[1].d;
-    const swapped = metres(pairs[0].v, pairs[1].pin) + metres(pairs[1].v, pairs[0].pin);
-    if (!(swapped > mine * 3)) {
-      refused.push({ id: r.id, why: `the two pairings are within 3x (${Math.round(mine)} m vs ${Math.round(swapped)} m swapped) — a coin flip` });
-      continue;
+  {
+    const vs = adrift.slice(), os = orphans.slice();
+    while (vs.length) {
+      if (vs.length === 1) {                       // by elimination
+        const d = metres(vs[0].v, os[0]);
+        if (d > MAX_MOVE_M) { bad = `by elimination the last vertex is ${Math.round(d)} m from its orphan — not a stale copy`; break; }
+        pairs.push({ ...vs[0], pin: os[0], d, why: pairs.length ? "elimination" : "only pair" });
+        break;
+      }
+      // most confident (vertex, orphan) among those left
+      let best = null;
+      for (const a of vs) {
+        const ds = os.map((p) => ({ p, d: metres(a.v, p) })).sort((x, y) => x.d - y.d);
+        const ratio = ds[1] ? ds[1].d / Math.max(ds[0].d, 1) : Infinity;
+        if (!best || ratio > best.ratio) best = { a, p: ds[0].p, d: ds[0].d, ratio };
+      }
+      if (!best || best.ratio < CONFIDENT_X) {
+        bad = `no confident pairing left (best is ${best ? best.ratio.toFixed(1) : "?"}x, needs ${CONFIDENT_X}x) — a coin flip`;
+        break;
+      }
+      if (best.d > MAX_MOVE_M) { bad = `nearest orphan is ${Math.round(best.d)} m away — not a stale copy`; break; }
+      pairs.push({ ...best.a, pin: best.p, d: best.d, why: `${best.ratio.toFixed(1)}x` });
+      vs.splice(vs.indexOf(best.a), 1);
+      os.splice(os.indexOf(best.p), 1);
     }
   }
+  if (bad) { refused.push({ id: r.id, why: bad }); continue; }
 
   // THE EXACT GATE: apply in memory and ask the app's own predicate
   const next = gpx.map((v, i) => {
@@ -101,7 +129,7 @@ for (const r of rows) {
 console.log(`${plan.length} route(s) repairable, ${refused.length} refused.\n`);
 for (const p of plan) {
   console.log(`  ${p.id}  (${p.verts} vertices)`);
-  for (const q of p.pairs) console.log(`      vertex ${q.i} -> pin "${q.pin.name}"  (${Math.round(q.d)} m)`);
+  for (const q of p.pairs) console.log(`      vertex ${q.i} -> pin "${q.pin.name}"  (${Math.round(q.d)} m, ${q.why})`);
 }
 if (refused.length) {
   console.log(`\n=== refused, reported rather than forced ===`);

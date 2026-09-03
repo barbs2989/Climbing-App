@@ -268,6 +268,9 @@ if (INJECT === "thesite") { for (const v of values) v.text = "Peakbagger lists f
    in whether the thing after "per" is a category or a masthead. */
 if (INJECT === "tripcategory") { for (const v of values) v.text = "Expect 3-5 rappels per trip reports, and treat the count as approximate."; console.log("[inject] every value says 'per trip reports' and names NO third party; citations must be 0"); }
 if (INJECT === "tripnamed") { for (const v of values) v.text = "Expect 3-5 rappels per SummitPost, and treat the count as approximate."; console.log("[inject] the same sentence naming a PUBLISHER; every value must be reported"); }
+if (INJECT === "facredit") { for (const v of values) { v.field = "fa[0]"; v.text = "The Mountaineers, 1925 - the first recorded ascent of Mount Daniel used this Lynch Glacier line."; } console.log("[inject] every value is an fa CREDIT naming a club; citations must be 0"); }
+if (INJECT === "facite") { for (const v of values) { v.field = "fa[0]"; v.text = "First ascent party is given as Beckey and Schmidtke, corroborated by multiple sources."; } console.log("[inject] every value is an fa value carrying a sourcing ACT; every one must still be reported"); }
+if (INJECT === "notfa") { for (const v of values) { v.field = "beta[0]"; v.text = "The Mountaineers describe this as the standard line."; } console.log("[inject] the SAME club name outside fa; every value must still be reported"); }
 if (INJECT === "livedash") { for (const v of values) v.text = "Okanogan County Sheriff non-emergency dispatch: 509-422-7232, or call 911."; console.log("[inject] every value carries a BARE-DASH phone number and cites nobody; citations must be 0 and live must be every value"); }
 if (INJECT === "liveonly") { for (const v of values) v.text = "Call the Mt. Baker Ranger District at (360) 854-2553 and check fs.usda.gov/alerts before driving."; console.log("[inject] every value is a LIVE reference; the citation count must be 0 and the live count must be every value"); }
 
@@ -276,7 +279,18 @@ const hitKeys = new Set();
 const hits = [], live = [];
 for (const v of values) {
   const _t = deCommonNoun(v.text);
-  const cited = NAMED.test(_t) || ACT.test(_t);
+  /* `fa` IS A CREDIT FIELD, so a name in it is the CONTENT, not a citation. Naming who made the
+     first ascent is the entire purpose of the column -- "The Mountaineers, 1925", "Steph Abegg
+     and Wayne Wallace, June 27, 2009" -- and NAMED matches both the club and the person. Measured
+     2026-09-03: 12 of 12 `fa` hits were credits and NONE was a citation, so this column ran at 0%
+     precision and contributed 16% of the headline.
+     The column stays scanned rather than removed, because a real citation CAN appear in it ("FA
+     per SummitPost", "corroborated by multiple sources"). What changes is that a bare NAME no
+     longer counts there -- only a sourcing ACT does. ACT is unaffected by the credit vocabulary:
+     "documented as a likely first ascent" and "reported a suspected first winter ascent" are
+     hedges about certainty, which this repo keeps deliberately, and neither is in ACT. */
+  const isCredit = /^fa\b/.test(v.field);
+  const cited = isCredit ? ACT.test(_t) : (NAMED.test(_t) || ACT.test(_t));
   if (cited) hitKeys.add(v.id + "\0" + v.field);
   if (cited && !exemptKeys.has(v.id + "\0" + v.field)) hits.push(v);
   else if (!cited && LIVE.test(v.text)) live.push(v);
