@@ -2991,6 +2991,36 @@ the total when deciding where a new guard belongs.
     editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - **IT PROVES THE KEY IS READ, WHICH IS WEAKER THAN IT SOUNDS: the form showed
+    `Weather: [object Object]` AS THE CURRENT VALUE ON EVERY ROUTE.** `objStr` builds the line the
+    keyed editor opens with and did a raw `String(v)`; `weather` is an OBJECT on 498 of the 504
+    routes carrying `seasonal_hazards`, so 100% of them rendered that. This guard passed
+    throughout — `weather` *was* read — because reaching a screen and being **legible** on it are
+    different questions, the same split `check:token-boxes` draws against `check:field-renders`.
+    - **Not cosmetic.** That line also feeds `wasEmpty`, which decides whether one climber can
+      fill a blank or three must agree, and a form opening on `[object Object]` invites a climber
+      to replace a real value with whatever they can actually see.
+    - **Two fixes, each proven independently necessary by reverting them one at a time.** The
+      form already supports DOTTED keys, so `weather` became `weather.typical` (string on 498) and
+      `weather.probability` (471) — one field per fact. And `objStr` now flattens a nested value
+      through the app's own `fmtSlingVal` rather than `String(v)`, because `crevasses` is a string
+      on 453 rows and an OBJECT on 34, so **no single key spec is right for it** and the next
+      column to drift shape would reintroduce the defect.
+    - **Reverting the dotted keys alone leaves the row count at ZERO**, because the flattener
+      catches it — which is why the regression check asserts the key SPECS as well as the count.
+      A count-only check would have missed that revert entirely. Reverting the flattener alone
+      puts 34 rows back.
+    - **The 30 fields that show `route.<prop>` RAW are CLEAN, measured rather than assumed**
+      (`scripts/oneoff/measure-raw-cur-stringification.mjs`): 28 columns read, 0 stringify badly,
+      and the 2 with no column at all (`permitUrl`, `style`) are declared with reasons and fail as
+      **stale** if they stop being raw-cur fields. So this class is the keyed fields only — *a
+      detector for a class of zero is the thing this repo keeps refusing to build.*
+    - **Test the rendered STRING, never the type.** `String(["a","b"])` is `"a,b"` — readable —
+      so a `typeof v === "object"` scan counts arrays and over-reported by a factor of two, 1,008
+      rows against a true 504. `requiredSkills` is an array of strings and renders fine.
+    - This guard's `ANCHOR LOST` branch earned itself during the fix: a comment landed between
+      `export const` and `SEASHAZ_KEYS`, and it refused the run — *"the sub-keys went unchecked,
+      so this run proved less than it claims"* — rather than skipping the field.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
