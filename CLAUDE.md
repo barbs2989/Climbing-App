@@ -2103,6 +2103,37 @@ the total when deciding where a new guard belongs.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+  - **THE GRACE CLOCK WAS TIED TO THE WRONG COMMIT, AND THAT MADE THIS GUARD STRUCTURALLY
+    UNABLE TO REPORT THE THING IT EXISTS FOR.** It excused any gap where the **newest** commit
+    on main was younger than the grace — and in a repo where several sessions merge every few
+    minutes, there is ALWAYS a commit younger than 45 minutes, so **the grace never expired**.
+    Measured 2026-09-02: production sat **17 commits and ~80 minutes behind** while this printed
+    *"ok — a deploy is probably still in flight"* on every run. Same shape as
+    `check:field-renders` reporting `NO DATA` during an outage: a green that is a statement
+    about the guard rather than about production.
+  - The clock is now **how long the OLDEST unpublished commit has waited**, from
+    `compare/<published>...<main>`, whose `commits` are oldest-first. That number is unaffected
+    by later merges, so a busy repo can no longer excuse itself, and the run also prints **how
+    many commits behind** production is — which the old output never said.
+  - **It fails SOFT, not closed, if the comparison cannot be made**, and that is deliberate: the
+    answer is still *"production is behind"*, and refusing to report that would be worse than
+    reporting it on the weaker clock. The output names which clock it used.
+  - **WHAT WAS STARVING THE DEPLOYS is now cause 1 in the failure message**, because it is the
+    one that actually happened and it is invisible from the run list: `deploy.yml` gates every
+    step on the SHA still being the tip of main (`tip_early`/`tip_final`), so a merge landing
+    during the ~1 minute build makes the **deploy job SKIP while the run still reports
+    `success`**. Over 25 consecutive runs: **10 skipped, 10 cancelled while queued**, and the
+    last run that actually published was 5 runs earlier. **Read the JOB, never the run** —
+    `gh run view <id> --json jobs --jq '.jobs[] | "\(.name) \(.conclusion)"'`.
+  - It resolved itself when the merge rate dropped and one build finished before the next merge,
+    which is exactly why nobody notices it: the failure is intermittent and load-driven.
+  - `SIMULATE_PUBLISHED=<sha>` is the injection hook, and it exists because the healthy state of
+    this guard is *"in sync"* — which is also what a broken clock prints, so the stale path
+    cannot be exercised without pretending production is behind. Verified against the REAL stall
+    (`published=700f125a`): **19 commits behind, oldest unpublished waited 284 min**. The A/B
+    that proves the fix is `GRACE_MINUTES=240` — the old clock (newest commit, 191 min) would
+    have **passed**, the new clock (285 min) **fails** — with `GRACE_MINUTES=400` passing, so
+    the guard is not simply always red.
 - **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
   SQUASH silently delete what an earlier PR added?** **It RUNS on every push to main now**
   (`.github/workflows/silent-reverts.yml`), which it did not for most of its life — see the
