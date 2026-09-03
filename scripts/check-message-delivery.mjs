@@ -240,9 +240,17 @@ try {
     const d = await fetch(`${SUPA}/rest/v1/messages?id=eq.${msgId}`, {
       method: "DELETE", headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` },
     }).catch(() => null);
-    // The delete policy may not cover the sender; the account delete cascades either way, so this
-    // is reported rather than asserted.
-    log(`  removed the message: ${d && d.ok ? "ok" : "not removed here — the account delete cascades"}`);
+    // A 204 IS NOT EVIDENCE THE ROW WENT. `messages` has no DELETE policy at all (0042 grants
+    // select, insert and update only), so RLS refuses this and PostgREST answers 204 with res.ok
+    // true — measured: insert, delete, re-read, and the row is still there. An earlier version
+    // printed "removed the message: ok" off that status and was reporting a success it did not
+    // have, which is the class this repo records as "a 200 is not evidence the data changed".
+    // Read the row back instead of trusting the code.
+    const still = await fetch(`${SUPA}/rest/v1/messages?id=eq.${msgId}&select=id`, {
+      headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` },
+    }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    const gone = Array.isArray(still) && still.length === 0;
+    log(`  removed the message: ${gone ? "ok" : `NO — HTTP ${d ? d.status : "?"} but the row is still there (messages has no delete policy). Locally the account delete cascades; this is why the guard is not wired into CI.`}`);
   }
   if (fixture) {
     const leaked = await fixture.cleanup().catch((e) => [`cleanup threw: ${e}`]);
