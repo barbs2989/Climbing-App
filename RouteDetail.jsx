@@ -61,9 +61,11 @@ function isPitched(r){return !["mountaineering","scrambling","hiking","scramble"
 // whose entries are numbered pitches. Worse, 144 routes hold BOTH — wa_big_four_mountain_
 // tower_route is "Approach gully / First tower / Notch rappel / Second and third towers /
 // Summit snowfield" — so no per-route verdict can be right about it.
-// Split per entry instead: real pitches stay in PITCH-BY-PITCH, travel legs move to
-// ROUTE BETA beside the topo. Nothing is dropped; 2,181 entries read as pitches and
-// 1,388 as sections.
+// Classify per entry instead. Both kinds render in ROUTE BREAKDOWN, in the record's own
+// array order, because that order is the sequence of the climb and a mixed route interleaves
+// them; what the classification decides is how a row is DRAWN — a roped pitch gets the square
+// P-badge and the per-pitch detail, a travel leg gets a round badge and a terrain chip.
+// Nothing is dropped; 2,181 entries read as pitches and 1,388 as sections.
 const PITCH_NUM_RE=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$|^pitch(?:es)?\s*\d+/i;
 const TRAVEL_LBL_RE=/\b(approach|trailhead|trail\s?head|trail to|road|drive|parking|camp|bivy|bivouac|descent|descend|bushwhack|hike|walk|ford|shuttle|return)\b/i;
 const TECH_GRADE_RE=/\b5\.\d|\bV\d|\bAI\s?\d|\bWI\s?\d|\bM\d\b|\bA[0-5]\b|\bC[0-4]\b|\b(?:easy|low|mid|hard|moderate)\s+5th\b|\b5th\s+class\b/i;
@@ -78,12 +80,6 @@ function pitchEntryKind(p,route){
   if(p&&(p.bolts!=null||(p.anchor&&String(p.anchor).trim())))return "pitch";
   if(PITCH_NUM_RE.test(lbl))return isPitched(route)?"pitch":"stage";
   return "stage";
-}
-function splitPitchDetail(route){
-  const pd=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail:[];
-  const pitches=[],stages=[];
-  pd.forEach(function(p,i){(pitchEntryKind(p,route)==="pitch"?pitches:stages).push(Object.assign({},p,{_idx:i}));});
-  return {pitches:pitches,stages:stages};
 }
 // The PITCH-BY-PITCH heading reads "N of M". That comparison is only valid when N and M count
 // the same thing, and after splitPitchDetail they do not: N is the ROPED half, while M
@@ -393,7 +389,7 @@ function gearReadout(route,owners){
   return base.map(label=>{const c=GEAR_CATS.find(x=>x.label===label)||{kw:[label.toLowerCase()]};return {label:label,have:owned.some(t=>c.kw.some(k=>t.includes(k)))};});
 }
 const GEAR_MARGIN_TIERS=[["ultralight","Ultralight",[]],["midweight","Midweight",["Extra insulating layer","Headlamp + spare batteries"]],["cautious","Extra cautious",["Extra insulating layer","Headlamp + spare batteries","First aid kit","Emergency bivy / space blanket","Extra food & water","Backup navigation (paper map/compass)"]]];
-function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
+function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){/* A {size,count} pair is a QUANTITY, and the generic branch below read it out as the   pipeline's own shape: "size: #0 C3 to 0.75 in, count: 2". 16 of 242 stored values   rendered that way in the RACK box. A count of 1 adds nothing, and a NON-numeric count   ("a few extra") cannot be a multiplier, so it goes in brackets after the size rather   than in front of it. *//* A `note` RIDES ALONG WITH size/count ON 8 OF THE 242, and requiring the object to hold nothing else let all 8 fall through to the generic branch — so half the machine text survived a fix aimed at exactly it. The note is folded into the SAME bracket as a non-numeric count rather than given its own, because two parentheticals in a row read worse than the thing they replaced. */if(v.size!=null&&Object.keys(v).every(function(k){return k==="size"||k==="count"||k==="note"||k==="notes";})){var _sz=fmtSlingVal(v.size);if(!_sz)return null;var _ct=v.count,_no=fmtSlingVal(v.note!=null?v.note:v.notes),_n=Number(_ct),_hasCt=(_ct!=null&&_ct!=="");var _head=(_hasCt&&isFinite(_n)&&_n>1)?(_n+"× "+_sz):_sz;var _ex=[];if(_hasCt&&!isFinite(_n))_ex.push(String(_ct));if(_no)_ex.push(_no);return _ex.length?(_head+" ("+_ex.join("; ")+")"):_head;}var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
 function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length)return null;if(sr[0]&&typeof sr[0]==="object"&&"sizeCm" in sr[0])return sr.map(function(s){return s.qty+"× "+s.sizeCm+"cm";}).join(", ");return sr.map(fmtSlingVal).filter(Boolean).join("; ");}if(typeof sr!=="object")return null;var parts=Object.keys(sr).map(function(k){var v=sr[k];if(v===false||v==null||v==="")return null;var label=k.replace(/_/g," ");if(/^\d+(\.\d+)?(cm|in|mm)$/i.test(k)&&(typeof v==="number"||/^\d+$/.test(v)))return v+"× "+k;var sub=fmtSlingVal(v);return sub?(label+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}
 /* The Edit button used to open a textarea whose Save wrote to `gearEdits`, a bare
    useState({}) in App. It never reached `contributions`, never hit the DB, was invisible to
@@ -417,7 +413,32 @@ function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length
    scripts/oneoff/prove-gear-confidence-caption.mjs — it renders all three states and asserts
    the silent ones stay silent. Re-run it if you touch this caption; it fails if the caption
    text moves, rather than passing over a box it never mounted. */
-function RouteRackBox({route,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _slingText=fmtSlingRack(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. */if(route.draws)lines.push(route.draws+" quickdraws");if(route.screws)lines.push(route.screws+" ice screws");if(_slingText)lines.push("Slings — "+_slingText);if(route.alpineDraws)lines.push(route.alpineDraws+" alpine draws");var _ropeContrib=route.ropeLen?String(route.ropeLen).replace(/\s+/g,""):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
+/* THE COLUMN IS CALLED `sling_rack` AND 84% OF IT IS NOT SLINGS. Measured over all 242 stored
+   values: 162 carry a `cams` key and 154 a `nuts` key, plus pickets, pitons, ice screws and
+   tricams — and every one of them rendered under a single bullet reading "Slings — ...". A wrong
+   label on a rack is worse than a long one: a climber scanning for what to bring reads the first
+   word.
+
+   It was also a paragraph in a bullet (p50 85, p90 172, max 454 characters), which is the
+   check:token-boxes question one element over. One bullet per gear type fixes both at once, and
+   fixes them from the data rather than by truncating: the keys are already there.
+
+   An ARRAY value keeps the "Slings" label, because there it is genuinely a sling list
+   ({qty,sizeCm} on 21 routes -> "5x 60cm, 2x 120cm"). Only the keyed-object shape was mislabelled.
+   A plain STRING still yields nothing — that is the recorded blocker on making this column
+   contributable, and it is deliberately NOT changed here. */
+function rackLines(sr){
+  if(!sr)return[];
+  if(Array.isArray(sr)){var _a=fmtSlingRack(sr);return _a?[{label:"Slings",text:_a}]:[];}
+  if(typeof sr!=="object")return[];
+  return Object.keys(sr).map(function(k){
+    var t=fmtSlingVal(sr[k]);
+    if(!t)return null;
+    var l=k.replace(/_/g," ");
+    return {label:l.charAt(0).toUpperCase()+l.slice(1),text:t};
+  }).filter(Boolean);
+}
+function RouteRackBox({route,onEditRack,rack,onSeeReports,rackGeneric}){const items=gearReadout(route,[]);const cams=(route&&route.cams)||[];const _rackLines=rackLines(route.slingRack);const lines=[];/* draws/screws/ropeLen are contributable in SuggestFix and were rendered NOWHERE — a climber could correct the quickdraw count, the screw count or the rope length, watch it pass the 3-agree gate, and never see it on the route. They belong on the same list as the alpine draws and the rope that were already here. ropeLen is the contributed spelling ("60 m"); ropeLengthM is the enrichment column, and they can disagree because NOTHING mirrors one onto the other. An agreed correction wins (_ropeEdited); absent one the enrichment number is the better value, since it is a number rather than free text. Never print two rope lines. */if(route.draws)lines.push(route.draws+" quickdraws");if(route.screws)lines.push(route.screws+" ice screws");_rackLines.forEach(function(rl){lines.push(rl.label+" — "+rl.text);});if(route.alpineDraws)lines.push(route.alpineDraws+" alpine draws");var _ropeContrib=route.ropeLen?String(route.ropeLen).replace(/\s+/g,""):"";var _ropeLen=(_ropeEdited(route)&&_ropeContrib)?_ropeContrib:(route.ropeLengthM?(route.ropeLengthM+"m"):_ropeContrib);if(route.ropeType||_ropeLen)lines.push("Rope — "+[route.ropeType,_ropeLen].filter(Boolean).join(" "));/* ropeNote used to be appended here in brackets, which meant two things: a note on a route with no ropeType and no length rendered NOWHERE (63 WA routes), and the 381 that did render put a whole paragraph inside a bullet — median 186 chars, max 716. It has its own box below now. *//* No route-level anchor line: `anchorType` was deliberately removed from SS ("anchors are per-pitch
    now"), `routes` has no anchor_type column, and no seed route carries the key — so this read could
    never fire. The live anchor records are `station.anchorType` on a bailout and `wp.anchorType` on a
    waypoint, both of which render elsewhere. */if(route.ascender&&route.ascender!=="Not needed")lines.push("Ascender — "+route.ascender);const specificItems=(rack&&rack.length)?rack:items.map(x=>x.label);const allRack=lines.concat(cams.map(camFmt)).concat(specificItems);const _gbX=((route.activity)||[]).filter(a=>a&&a.gearBeta).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.gearBeta}));const beta=_gbX.concat((route.gearBeta&&route.gearBeta.length)?route.gearBeta:(((route.activity)||[]).filter(a=>a&&a.text&&/(\bcams?\b|\brack\b|doubles|#\d|\bnuts?\b|draws|quickdraw|\bropes?\b|screws|pickets|\bset of\b)/i.test(a.text)).slice(0,3).map(a=>({who:a.user,avatar:a.avatar,date:a.date,note:a.text}))));if(!allRack.length&&!onEditRack)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:3,gap:10}}><span style={{fontSize:13,fontWeight:700,color:C.text}}>RACK</span>{onEditRack?<EditIconButton onClick={()=>onEditRack(allRack.join("\n"))} title={allRack.length?"Suggest a rack correction":"Add the rack for this route"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{rackGeneric?"Standard rack for this discipline — nobody has recorded what this route itself takes, so treat it as a starting point and check it in the field":(route&&route.gearConfidence==="inferred"?"Protection and technical gear — inferred from this route's own description, not confirmed against trip reports":"Protection and technical gear")}.</div>{allRack.length?<div style={{display:"flex",flexDirection:"column",gap:5}}>{allRack.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>:<div style={{fontSize:12.5,color:C.textMuted,lineHeight:1.5}}>No rack listed yet — climbed it? Add what you brought.</div>}{beta.length?<div style={{marginTop:11,paddingTop:10,borderTop:`1px solid ${C.borderLight}`}}><div style={{fontSize:11.5,fontWeight:700,color:C.textSub,marginBottom:7}}>Rack beta</div>{beta.map((b,i)=><div key={i} style={{display:"flex",gap:8,marginBottom:8}}>{b.avatar?<Av src={b.avatar} size={24}/>:null}<div style={{flex:1,minWidth:0}}><div style={{fontSize:11.5,color:C.textMuted,marginBottom:1}}>{(b.who||"A climber")+(b.date?" · "+b.date:"")}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.5,fontStyle:"italic"}}>{"\""+b.note+"\""}</div></div></div>)}{onSeeReports?<button onClick={onSeeReports} style={{marginTop:2,padding:"7px 12px",background:C.surface,border:`1px solid ${C.border}`,borderRadius:9,color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer"}}>Reports →</button>:null}</div>:null}</div>;}
@@ -788,91 +809,144 @@ function BetaDiff({route}){
    Note "5.9+" was already safe and "5.9" was not: the rule is a word character on BOTH sides, and
    `+` separates the two fragments on its own. Built from the row's own values so the announced
    name cannot drift from the visible one.
-   The STAGES row below carries the same markup and is NOT a control — no role, so nothing computes
-   a name for it — which puts it outside this class rather than fixed by it. */
-function pitchRowName(p,isOpen){
+   THE STAGE ROW IS A CONTROL TOO NOW (it used to expand only from its own tiny ▸), so it carries
+   the same defence: its label and CRUX are also two spans held apart by a margin. */
+/* THE STATE IS `aria-expanded`, NOT WORDS IN THE NAME. These rows are disclosures — tapping one
+   reveals its own detail and changes nothing else — and this file already states the convention
+   on TagChip: "`aria-expanded` rather than `aria-pressed`: this is a disclosure, not a toggle
+   that changes anything". The stage row's old ▸ carried it and lost it when the whole row became
+   the control, which is a regression rather than a gap; the pitch row spelled "collapsed" into
+   its own label instead, which announces the state to a screen reader and to nothing else — no
+   automation, and no user agent that offers "expand" as an action. So the attribute carries it
+   and the name stops repeating it: with both, a reader hears "collapsed" twice. */
+function pitchRowName(p){
   const bits=["Pitch "+p._badge];
   if(p.grade)bits.push(String(p.grade));
   if(p.crux)bits.push("crux");
   if(p._title)bits.push(String(p._title));
-  return bits.join(", ")+(isOpen?", expanded":", collapsed");
+  return bits.join(", ");
 }
-function PitchTable({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
-  const [open,setOpen]=useState(null);useEffect(function(){if(focus!=null)setOpen(focus);},[focus]);
-  if(!route.pitchDetail||!route.pitchDetail.length)return null;
-  // Only the entries that are actually roped pitches. The travel legs render in RouteBeta.
-  const roped=splitPitchDetail(route).pitches;
-  if(!roped.length)return null;
-  // `_n` is the raw label and stays the comment key. `_badge` is what the 26px circle can
-  // actually hold and `_title` is the descriptive label — "Chimney pitch", "Gendarme" —
-  // which had no reader at all: the badge rendered "P"+label, i.e. "PChimney pitch".
-  const mapped=roped.map((p,i)=>{const raw=p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1);const num=/^p?\s*(\d+)/i.exec(String(raw));
-    return {...p,_n:raw,_badge:num?num[1]:String(i+1),_title:/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$/i.test(String(raw).trim())?"":String(raw).trim(),_note:p.note!=null?p.note:(p.notes||"")};});
-  // Sort only when every label is a number — descriptive labels ("Chimney pitch") are
-  // already in route order and `a._n-b._n` on them is NaN, which is not an ordering.
-  const allNum=mapped.every(p=>typeof p._n==="number"||(typeof p._n==="string"&&p._n.trim()!==""&&!isNaN(Number(p._n))));
-  const pitches=allNum?mapped.slice().sort((a,b)=>Number(a._n)-Number(b._n)):mapped;
-  const hasLengths=pitches.some(p=>p.lengthM!=null);
-  // Every entry here passed pitchEntryKind as a roped pitch, whatever the route's
-  // discipline says — an ice line filed as "mountaineering" still climbs pitches. There is
-  // no longer a "staged" mode: the stages have their own component.
-  const lbl="PITCH-BY-PITCH";
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8,gap:10,flexWrap:"wrap"}}><div style={{display:"flex",alignItems:"center",gap:7,minWidth:0}}><div style={{fontSize:12,fontWeight:700,color:C.blue,whiteSpace:"nowrap"}}>{lbl+" · "+(pitchShortfall(route,pitches.length)?(pitches.length+" of "+route.pitches):pitches.length)}</div><ProvChip prov={sectionProvenance(route,"pitchDetail")}/></div><div style={{display:"flex",alignItems:"center",gap:8,marginLeft:"auto"}}><div style={{fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"4px 9px",whiteSpace:"nowrap"}}>Tap for detail</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit pitch descriptions"/>:null}</div></div>
-    {pitches.map((p,idx)=>{const isOpen=open===idx;return <div key={p._n+"-"+idx} id={"pitch-"+idx} style={{border:"1px solid "+(focus===idx?C.blue:C.border),borderRadius:10,marginBottom:8,boxShadow:focus===idx?"0 0 0 1px "+C.blue:"none",scrollMarginTop:"80px"}}>
-      <div {...clickable(()=>setOpen(isOpen?null:idx))} aria-label={pitchRowName(p,isOpen)} style={{display:"flex",gap:10,padding:"9px 11px",alignItems:"flex-start",cursor:"pointer"}}><div style={{width:26,height:26,borderRadius:7,background:p.crux?C.amberBg:C.surface,border:`1px solid ${p.crux?C.amber:C.border}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:12,fontWeight:700,color:p.crux?C.amber:C.textSub}}>{"P"+p._badge}</div><div style={{flex:1,minWidth:0}}>{p._title?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p._title}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",marginBottom:4,gap:8,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.amber,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{p.grade}{p.crux?<span style={{color:C.red,fontSize:12,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span><span style={{fontSize:12,color:C.textMuted,textAlign:"right",flexShrink:0,whiteSpace:"nowrap",marginLeft:"auto"}}>{hasLengths?(p.lengthM!=null?uLen(p.lengthM):"—"):null}{hasLengths?<span style={{opacity:0.6}}> · {uLen(pitches.slice(0,idx+1).reduce((a,pp)=>a+(pp.lengthM||0),0))} up</span>:null} <span style={{color:C.blue,fontWeight:700,marginLeft:3}}>{isOpen?"▾":"▸ more"}</span></span></div>{p._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{p._note}</div>:null}</div></div>
-      {isOpen?<div style={{padding:"0 11px 11px"}}><div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:9}}>{[["Length",p.lengthM!=null?uLen(p.lengthM):"—",C.blue],["Bolts (this pitch)",p.bolts!=null?String(p.bolts):"—",C.amber],["Anchor",p.anchor||"—",/bolt/i.test(p.anchor||"")?C.green:C.blue]].map(s=><div key={s[0]} style={{background:C.surface,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:14,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>)}</div><PitchConsensus p={p} onSuggestFix={onEdit}/><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:8,textTransform:"uppercase",letterSpacing:0.5,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Photos</div>{p.photos&&p.photos.length?<PhotoRow items={p.photos} w={160} h={108}/>:<div style={{background:C.surface,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+p._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></div>:null}
-    </div>;})}
-  </div>;
+function stageRowName(r){
+  const bits=["Section "+r._seq,r._label];
+  if(r.crux)bits.push("crux");
+  if(r.grade)bits.push(String(r.grade));
+  return bits.filter(Boolean).join(", ");
 }
-// The other half of pitch_detail: the legs that are travel rather than roped climbing.
-// 1,388 such entries across 451 routes were being printed under a "PITCH-BY-PITCH" or
-// "ROUTE STAGES" heading that misdescribed them. The content is the most useful thing on
-// some of these pages — "Hidden cleft below the west ridge", "the step-across (crux)" —
-// so it moves rather than being dropped, and it sits beside the topo because it answers
-// the same question the topo does: where do I actually go.
-function RouteBeta({route,onEdit}){
+/* ONE SECTION, ONE SEQUENCE. `pitch_detail` was rendered as two boxes stacked on the Plan tab —
+   ROUTE BETA (the travel legs) and then PITCH-BY-PITCH (the roped pitches) — and on the 144 routes
+   that hold both kinds that ordering is a claim the record never made. wa_big_four_mountain_tower_
+   route is "Approach gully / First tower / Notch rappel / Second and third towers / Summit
+   snowfield": travel, climbing, descent, climbing, travel. Split into two boxes it read as three
+   walks followed by two pitches, which is not the climb. The record's own array ORDER is the
+   sequence, and the only way to show it is one list.
+   WHAT DOES NOT MERGE IS THE VOCABULARY, and that was the explicit ask: a roped pitch and a walk
+   are different kinds of ground and must stay distinguishable at a glance. So a pitch keeps its
+   square P-badge, its blue accent and its full detail (length, bolts, anchor, per-pitch consensus,
+   photos, beta comments); a section keeps a round badge, a terrain chip and its own three tiles.
+   The spine down the left is what carries the integration — it runs through both kinds, in order.
+   `data-kind` / `data-label` are on each row for check:pitch-split, which used to tell the two
+   apart by which HEADING an entry landed under. With one heading the classification is only
+   visible in the markup, and asserting it per row also lets that guard check the ORDER, which is
+   the property this change is about. */
+function breakdownRows(route){
+  const pd=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail:[];
+  let nP=0,nS=0,cum=0;
+  let rows=pd.map(function(p,i){
+    const kind=pitchEntryKind(p,route);
+    const raw=p.n!=null?p.n:(p.pitch!=null?p.pitch:i+1);
+    const lbl=String(raw==null?"":raw).trim();
+    // `_n` is the raw label and stays the comment key. `_badge` is what the 26px badge can
+    // actually hold and `_title` is the descriptive label — "Chimney pitch", "Gendarme" —
+    // which had no reader at all: the badge rendered "P"+label, i.e. "PChimney pitch".
+    const num=/^p?\s*(\d+)/i.exec(lbl);
+    const bare=/^p?\s*\d+\s*(?:[-–]\s*p?\s*\d+)?$/i.test(lbl);
+    const row=Object.assign({},p,{_i:i,_kind:kind,_n:raw,
+      _note:p.note!=null?p.note:(p.notes||"")});
+    if(kind==="pitch"){row._pIdx=nP++;row._badge=num?num[1]:String(nP);row._title=bare?"":lbl;}
+    else {row._seq=++nS;row._label=lbl||("Section "+nS);}
+    return row;
+  });
+  // Sort only when every label is a number and nothing is interleaved with it — descriptive
+  // labels ("Chimney pitch") are already in route order and `a._n-b._n` on them is NaN, which
+  // is not an ordering, and a mixed route's two label spaces ("1" and "Approach gully") cannot
+  // be compared at all. On a pure-pitch route this is exactly the old behaviour.
+  if(!nS){
+    const allNum=rows.every(p=>typeof p._n==="number"||(typeof p._n==="string"&&p._n.trim()!==""&&!isNaN(Number(p._n))));
+    if(allNum)rows=rows.slice().sort((a,b)=>Number(a._n)-Number(b._n));
+  }
+  // Cumulative height gained is a CLIMBING figure: it counts roped pitches and steps over the
+  // walking between them, which is what "N ft up" has always meant on this row.
+  rows.forEach(function(r){if(r._kind==="pitch"){cum+=(r.lengthM||0);r._cum=cum;}});
+  return {rows:rows,pitchCount:nP,stageCount:nS};
+}
+function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onCommentAdd}){
   const [open,setOpen]=useState(null);
-  const stages=splitPitchDetail(route).stages;
-  if(!stages.length)return null;
-  const rows=stages.map(function(s,i){return Object.assign({},s,{_label:String((s.pitch!=null?s.pitch:s.n)||"").trim()||("Section "+(i+1)),_note:s.note!=null?s.note:(s.notes||"")});});
-  const anyLen=rows.some(r=>r.lengthM!=null);
+  const {rows,pitchCount,stageCount}=breakdownRows(route);
+  useEffect(function(){if(focus==null)return;const hit=rows.filter(r=>r._kind==="pitch")[focus];if(hit)setOpen(hit._i);},[focus]);
+  if(!rows.length)return null;
+  const hasPitchLen=rows.some(r=>r._kind==="pitch"&&r.lengthM!=null);
+  const hasStageLen=rows.some(r=>r._kind==="stage"&&r.lengthM!=null);
+  /* THE SHORTFALL IS pitchShortfall()'s, NOT A COUNT OF PITCHES. #1440 measured the mismatched
+     version on the live catalog: comparing `route.pitches` against the ROPED half told 55 routes
+     that entries were undescribed while every one of them was on screen, because the denominator
+     was counting the very stages the old table filtered out. Merging the two sections removes the
+     mechanism — everything described is in this list — but the rule stays the rule, and passing
+     `rows.length` is what says so: a shortfall may only be claimed when the route claims more
+     pitches than the page describes ANYWHERE. */
+  const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches and "+rows.length+" section"+(rows.length!==1?"s are":" is")+" described here."):"";
+  const intro=(pitchCount&&stageCount)
+    ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
+    :(pitchCount
+      ?(pitchCount+" roped pitch"+(pitchCount!==1?"es":"")+", in route order."+short)
+      :("How the route goes, section by section — "+stageCount+" leg"+(stageCount!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."));
   return <div style={{marginBottom:14}}>
     <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginTop:18,marginBottom:9,gap:10}}>
-      <SL prov={sectionProvenance(route,"pitchDetail")}>ROUTE BETA</SL>
-      {onEdit?<EditIconButton onClick={onEdit} title="Edit the route beta"/>:null}
+      <SL prov={sectionProvenance(route,"pitchDetail")}>ROUTE BREAKDOWN</SL>
+      <div style={{display:"flex",alignItems:"center",gap:8,marginLeft:"auto"}}><div style={{fontSize:11.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"4px 9px",whiteSpace:"nowrap"}}>Tap for detail</div>{onEdit?<EditIconButton onClick={onEdit} title="Edit the route breakdown"/>:null}</div>
     </div>
     <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>
-        {"How the route goes, section by section — "+rows.length+" leg"+(rows.length!==1?"s":"")+". These are stages of travel and route-finding, not roped pitches."}
-      </div>
-      {rows.map(function(r,i){const isOpen=open===i;const hasMore=!!(r.grade||r.lengthM!=null||r.anchor);
-        return <div key={i} style={{display:"flex",gap:10,marginBottom:i<rows.length-1?10:0}}>
+      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{intro}</div>
+      {rows.map(function(r,idx){
+        const isOpen=open===r._i;
+        const isPitch=r._kind==="pitch";
+        const last=idx===rows.length-1;
+        const hasMore=isPitch||!!(r.grade||r.lengthM!=null||r.anchor);
+        const accent=r.crux?C.amber:(isPitch?C.blue:C.border);
+        return <div key={r._i} data-kind={r._kind} data-label={isPitch?("P"+r._badge+(r._title?" "+r._title:"")):r._label} id={isPitch?("pitch-"+r._pIdx):undefined} style={{display:"flex",gap:10,marginBottom:last?0:9,scrollMarginTop:"80px"}}>
           <div style={{display:"flex",flexDirection:"column",alignItems:"center",flexShrink:0}}>
-            <div style={{width:26,height:26,borderRadius:13,background:r.crux?C.amberBg:C.surface,border:"1px solid "+(r.crux?C.amber:C.border),display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,fontWeight:700,color:r.crux?C.amber:C.textSub}}>{i+1}</div>
-            {i<rows.length-1?<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>:null}
+            <div aria-hidden="true" style={{width:26,height:26,borderRadius:isPitch?7:13,background:r.crux?C.amberBg:(isPitch?C.blueBg:C.surface),border:"1px solid "+(r.crux?C.amber:(isPitch?C.blueDim:C.border)),display:"flex",alignItems:"center",justifyContent:"center",fontSize:isPitch?11.5:12,fontWeight:700,color:r.crux?C.amber:(isPitch?C.blue:C.textSub)}}>{isPitch?("P"+r._badge):r._seq}</div>
+            {last?null:<div style={{flex:1,width:2,background:C.border,marginTop:3,minHeight:14}}/>}
           </div>
-          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px"}}>
-            <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
-              <span style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._label}{r.crux?<span style={{color:C.red,fontSize:11.5,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
-              {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
-                  live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
-                  ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
-                  nowrap chip in a flexShrink:0 group it measured 315px wide and put its own
-                  row's right edge at x=392 on a 390px phone, clipping the ▸ expander off
-                  screen. So this group SHRINKS and WRAPS, and only the ▸ is pinned. Do not
-                  restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
-                  stage is the other half of pitch_detail. */}
-              <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
-                {r.grade?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
-                {anyLen&&r.lengthM!=null?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{uLen(r.lengthM)}</span>:null}
-                {hasMore?<span role="button" tabIndex={0} aria-expanded={isOpen} aria-label={(isOpen?"Hide":"Show")+" detail for "+r._label} onClick={function(){setOpen(isOpen?null:i);}} onKeyDown={function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();setOpen(isOpen?null:i);}}} style={{fontSize:11.5,color:C.blue,fontWeight:700,cursor:"pointer",whiteSpace:"nowrap"}}>{isOpen?"▾":"▸"}</span>:null}
-              </span>
+          <div style={{flex:1,minWidth:0,background:C.surface,border:"1px solid "+C.border,borderLeft:"3px solid "+accent,borderRadius:10}}>
+            <div {...(hasMore?clickable(function(){setOpen(isOpen?null:r._i);}):{})} aria-expanded={hasMore?isOpen:undefined} aria-label={hasMore?(isPitch?pitchRowName(r):stageRowName(r)):undefined} style={{padding:"9px 11px",cursor:hasMore?"pointer":"default"}}>
+              {(isPitch&&r._title)?<div style={{fontSize:12.5,fontWeight:700,color:C.text,marginBottom:3,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r._title}</div>:null}
+              <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,flexWrap:"wrap",marginBottom:r._note?5:0}}>
+                <span style={{fontSize:13,fontWeight:700,color:isPitch?C.amber:C.text,minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{isPitch?(r.grade||("Pitch "+r._badge)):r._label}{r.crux?<span style={{color:C.red,fontSize:11.5,marginLeft:6,fontWeight:700,whiteSpace:"nowrap"}}>CRUX</span>:null}</span>
+                {/* A stage's `grade` is TERRAIN PROSE, not a grade token: measured across the
+                    live catalog it runs to 51 characters ("Class 2-3 rock scramble (easy snow
+                    ridge in winter)", "Glacier travel to a bergschrund/moat"). Drawn as a
+                    nowrap chip in a flexShrink:0 group it measured 315px wide and put its own
+                    row's right edge at x=392 on a 390px phone, clipping the ▸ expander off
+                    screen. So this group SHRINKS and WRAPS, and only the ▸ is pinned. Do not
+                    restore whiteSpace:nowrap here — that is what a pitch grade wants, and a
+                    stage is the other half of pitch_detail. */}
+                <span style={{display:"flex",alignItems:"center",gap:7,flexShrink:1,minWidth:0,flexWrap:"wrap",justifyContent:"flex-end",marginLeft:"auto"}}>
+                  {(!isPitch&&r.grade)?<span style={{fontSize:11.5,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:6,padding:"2px 7px",minWidth:0,wordBreak:"break-word",overflowWrap:"anywhere"}}>{r.grade}</span>:null}
+                  {(isPitch?hasPitchLen:(hasStageLen&&r.lengthM!=null))?<span style={{fontSize:11.5,color:C.textMuted,whiteSpace:"nowrap"}}>{r.lengthM!=null?uLen(r.lengthM):"—"}</span>:null}
+                  {(isPitch&&hasPitchLen&&r._cum)?<span style={{fontSize:11.5,color:C.textMuted,opacity:0.6,whiteSpace:"nowrap"}}>{uLen(r._cum)+" up"}</span>:null}
+                  {hasMore?<span aria-hidden="true" style={{fontSize:11.5,color:C.blue,fontWeight:700,whiteSpace:"nowrap"}}>{isOpen?"▾":"▸"}</span>:null}
+                </span>
+              </div>
+              {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
             </div>
-            {r._note?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word",overflowWrap:"break-word"}}>{r._note}</div>:null}
-            {isOpen?<div style={{marginTop:9,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7}}>
-              {[["Terrain",r.grade||"—",C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Anchor / belay",r.anchor||"—",C.blue]].map(function(s){
-                return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+            {isOpen?<div style={{padding:"0 11px 11px"}}>
+              <div style={{marginTop:2,paddingTop:9,borderTop:"1px solid "+C.borderLight,display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:7,marginBottom:isPitch?9:0}}>
+                {(isPitch
+                  ?[["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Bolts (this pitch)",r.bolts!=null?String(r.bolts):"—",C.amber],["Anchor",r.anchor||"—",/bolt/i.test(r.anchor||"")?C.green:C.blue]]
+                  :[["Terrain",r.grade||"—",C.amber],["Length",r.lengthM!=null?uLen(r.lengthM):"—",C.blue],["Anchor / belay",r.anchor||"—",C.blue]]
+                ).map(function(s){return <div key={s[0]} style={{background:C.card,borderRadius:8,padding:"7px 9px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:s[2],overflowWrap:"anywhere"}}>{s[1]}</div><div style={{fontSize:11,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{s[0]}</div></div>;})}
+              </div>
+              {isPitch?<><PitchConsensus p={r} onSuggestFix={onEdit}/><div style={{fontSize:13,fontWeight:700,color:C.text,marginBottom:8,textTransform:"uppercase",letterSpacing:0.5,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Photos</div>{r.photos&&r.photos.length?<PhotoRow items={r.photos} w={160} h={108}/>:<div style={{background:C.card,borderRadius:8,padding:"14px 12px",textAlign:"center",border:`1px dashed ${C.border}`}}><div style={{marginBottom:3,display:"flex",justifyContent:"center"}}><ActionIcon name="camera" size={21} color={C.textMuted}/></div><div style={{fontSize:12,color:C.textMuted}}>No photos yet — add route photos for this pitch</div></div>}<PitchComments targetId={route.id+"_pitch_"+r._n} comments={comments} commentsUnavailable={commentsUnavailable} onAdd={onCommentAdd}/></>:null}
             </div>:null}
           </div>
         </div>;})}
@@ -1403,7 +1477,7 @@ export function ConsensusPanel({route,activity,hzVotes,onVote,reportsUnavailable
   const [openK,setOpenK]=useState(null);const voteFor=useCallback(function(label){return hzVotes&&hzVotes[route.id+"|"+label];},[route.id,hzVotes]);const c=useMemo(()=>buildConsensus(activityAll,voteFor),[activityAll,voteFor]);const k=useMemo(()=>routeKw(Object.assign({},route,{activity:activityAll})),[route.id,activityAll,route.hazards]);const kh=useMemo(()=>k.hazards.filter(x=>x.count>=2),[k.hazards]);const kc=useMemo(()=>k.conditions.filter(x=>x.count>=2),[k.conditions]);
   if(!c)return <div style={{color:C.textMuted,fontSize:13,padding:10}}>{reportsUnavailable?"Couldn’t load this route's reports — try again in a moment.":"No reports yet — be the first to log this climb."}</div>;const _dates=(activityAll||[]).map(function(a){return a.date;}).filter(Boolean).sort();const _latest=_dates[_dates.length-1];const _dago=_latest?Math.round((new Date()-new Date(String(_latest).slice(0,10)+"T12:00:00"))/86400000):null;const _fresh=_dago==null?"":(_dago<=0?"Updated today":_dago===1?"Updated yesterday":(_dago<14?"Updated "+_dago+"d ago":(_dago<60?"Updated "+Math.round(_dago/7)+"w ago":"Updated "+Math.round(_dago/30)+"mo ago")));const _rc=(activityAll||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));})[0];const _rtx=_rc?(((_rc.condTags||[]).join(" ")+" "+(_rc.text||"")).toLowerCase()):"";const _good=/(dry|perfect|firm|bluebird|tacky|cool|crisp|prime|stellar)/.test(_rtx);const _bad=/(wet|greasy|humid|snow|ice|verglas|slick|warm|hot|damp|muddy|seep|soaked)/.test(_rtx);const _trend=(_good&&!_bad)?{a:"↗",l:"trending good",c:C.green}:((_bad&&!_good)?{a:"↘",l:"trending poor",c:C.red}:{a:"→",l:"holding steady",c:C.textSub});
   const confCol=c.confidence==="high"?C.green:c.confidence==="medium"?C.amber:C.red;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:14}}>{_fresh?<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:11,fontSize:11.5,fontWeight:600}}><span style={{width:6,height:6,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{color:C.textMuted}}>{_fresh}</span><span style={{color:_trend.c,fontWeight:700}}><span className="cm-pop" style={{display:"inline-block"}}>{_trend.a}</span>{" "+_trend.l}</span></div>:null}
+  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:14}}>{/* A PARTIAL CONSENSUS IS NOT A CONSENSUS. `activity` is route.activity + myReports + dbReports, so a failed reports read silently drops the DB half and buildConsensus runs on what is left — the panel then presents a DERIVED SAFETY JUDGEMENT as if it had seen everything filed. `reportsUnavailable` was already passed in and was consulted ONLY on the empty branch, so exactly this case said nothing. Found by walking the Conditions sub-tab in check:outage for the first time: under a blanket outage the screen CHANGED (3,388 -> 3,384 chars) and acknowledged nothing, which is rule 1. */}{reportsUnavailable?<div style={{fontSize:11.5,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber,borderRadius:8,padding:"7px 9px",marginBottom:10,lineHeight:1.45}}>{"Some reports couldn’t load, so this is based on the ones that did — not on everything filed for this route."}</div>:null}{_fresh?<div style={{display:"flex",alignItems:"center",gap:8,marginBottom:11,fontSize:11.5,fontWeight:600}}><span style={{width:6,height:6,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{color:C.textMuted}}>{_fresh}</span><span style={{color:_trend.c,fontWeight:700}}><span className="cm-pop" style={{display:"inline-block"}}>{_trend.a}</span>{" "+_trend.l}</span></div>:null}
     <div style={SZ3}><div style={{fontSize:14,fontWeight:700}}>Community Consensus</div><Pill label={`${c.confidence} confidence · ${c.reportCount} reports`} color={confCol} bg={`${confCol}22`} sm/></div>{c.hazards&&c.hazards.length?<div style={{background:C.redBg,border:`1px solid ${C.red}55`,borderRadius:10,padding:"10px 12px",marginBottom:12}}><div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:6}}>Recent hazard reports</div>{c.hazards.map((h,i)=><div key={i} style={{display:"flex",alignItems:"center",gap:7,marginBottom:i<c.hazards.length-1?6:0}}><Av src={h.avatar} size={20}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.text,fontWeight:600}}>{h.tags.join(" · ")}</div><div style={{fontSize:12,color:C.textMuted}}>{h.user+" · "+h.date}</div></div><span style={{fontSize:12,color:h.trust>=90?C.green:h.trust>=70?C.blue:C.amber,fontWeight:700,flexShrink:0}}>{""+h.trust}</span></div>)}</div>:null}{c.lastDate?<div style={{fontSize:12,color:C.textMuted,marginBottom:10}}>Most recent report: <span style={{color:C.textMuted}}>{ago(c.lastDate)+" · "+c.lastDate}</span>{c.verifiedCount?" · "+c.verifiedCount+" of "+c.reportCount+" reports from verified climbers":""}</div>:null}
     {(kh.length||kc.length||k.conflicts.length)?<div style={{background:C.surface,border:`1px solid ${C.border}`,borderRadius:10,padding:"11px 12px",marginBottom:13}}><div style={{display:"flex",alignItems:"center",gap:7,marginBottom:9,flexWrap:"wrap"}}><span style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",borderLeft:"3px solid "+C.blue,paddingLeft:9,letterSpacing:0.5,flex:1}}>What trip reports consistently mention</span><span style={{fontSize:12,fontWeight:700,color:k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.red,background:(k.confidence==="High"?C.green:k.confidence==="Medium"?C.amber:C.redSolid)+"22",borderRadius:6,padding:"2px 7px"}}>{k.confidence+" confidence in these tags"}</span></div>{k.conflicts.length?<div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:8,padding:"8px 10px",marginBottom:10,fontSize:11.5,color:C.amber,lineHeight:1.45}}>{k.conflicts[0]}</div>:null}{kh.length?<div style={{marginBottom:kc.length?11:0}}><div style={{fontSize:11.5,fontWeight:700,color:C.red,marginBottom:7}}>Hazards climbers report</div>{kh.map(h=><CRow key={h.label} item={h} kind="h" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}{kc.length?<div><div style={{fontSize:11.5,fontWeight:700,color:C.teal,marginBottom:7}}>Conditions climbers report</div>{kc.slice(0,6).map(co=><CRow key={co.label} item={co} kind="c" routeId={route.id} hzVotes={hzVotes} onVote={onVote} openK={openK} setOpenK={setOpenK}/>)}</div>:null}<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:9,paddingTop:9,borderTop:`1px solid ${C.borderLight}`}}>From {k.total} report{k.total!==1?"s":""}; a signal needs 2+ to show. Tap a row for its sources. <span style={{color:C.green,fontWeight:700}}>✓</span> official · <span style={{color:C.amber,fontWeight:700}}>⚑</span> community-flagged · <span style={{color:C.purple,fontWeight:700}}>✦</span> verified across seasons · ● within last year.</div></div>:null}
     {c.conditions&&Object.keys(c.conditions).length?<div style={{marginBottom:14}}><div style={{fontSize:12,color:C.blue,fontWeight:800,letterSpacing:0.4,marginBottom:6}}>{"CONDITIONS NOW"}</div>{VOLATILE_DISC.indexOf(catOf(route))>=0?<div style={{display:"flex",alignItems:"center",gap:6,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"6px 9px",marginBottom:8,fontSize:11.5,color:C.amber,lineHeight:1.4}}><span>⚠</span><span>This route's conditions can change fast — verify before you go.</span></div>:null}<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>{[["carToCar","⏱ Car-to-car"],["tempF","🌡 Temp"],["snow","❄ Snow"],["snowDepth","📏 Snow depth"],["freezing","🧊 Freezing lvl"],["water","💧 Water"],["bugs","🦟 Bugs"],["trail","🥾 Trail"],["seepage","💦 Seepage"],["mud","🟤 Mud"]].map(function(p){var cd=c.conditions[p[0]];return cd?<div key={p[0]} style={{background:C.surface,border:"1px solid "+C.border,borderRadius:8,padding:"5px 9px",fontSize:12}}><span style={{color:C.textMuted}}>{p[1]+" "}</span><span style={{color:C.text,fontWeight:700}}>{cd.value}</span>{cd.n?<span style={{color:C.textMuted,fontSize:11}}>{" · "+cd.n+(cd.mostRecent?" · "+ago(cd.mostRecent):"")}</span>:null}</div>:null;})}</div></div>:null}<div style={{display:"flex",gap:12,alignItems:"center",marginBottom:14}}>
@@ -2094,7 +2168,7 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      499 routes, not a phrase), and shows the label. Printing the raw code in the summary line
      would make the collapsed field read "solitude: 4". */
   const objLabel=function(k,v){if(k[3]!=="enum"||!k[4])return v;var hit=k[4].filter(function(o){return String(o[0])===String(v);})[0];return hit?hit[1]:v;};
-  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=_dget(o,k[0]);return (v==null||String(v).trim()==="")?null:k[1]+": "+v;}).filter(Boolean).join(" · ");};
+  const objStr=function(keys,o){if(!o)return "";return keys.map(function(k){var v=_dget(o,k[0]);/* `String(v)` HERE PUT "[object Object]" ON EVERY ROUTE CARRYING seasonal_hazards. The dotted key specs are the real fix (see the note on SEASHAZ_KEYS), and this is the fail-safe: `crevasses` is a string on 453 rows and an OBJECT on 34, so no single key spec is right for it, and the next column to drift shape would reintroduce the defect. fmtSlingVal is the app's own leaf flattener — despite the name it is generic (string, number, array, keyed object) — so there is one flattener rather than two that drift. */var s=(v!=null&&typeof v==="object")?fmtSlingVal(v):v;return (s==null||String(s).trim()==="")?null:k[1]+": "+s;}).filter(Boolean).join(" · ");};
   const _clip=function(s){return s.length>44?s.slice(0,44)+"…":s;};
   /* `cur` drives three things, and "—" is load-bearing in all of them: the collapsed summary
      line, `wasEmpty` (which decides whether one climber can fill a blank or three must agree),
@@ -2509,8 +2583,25 @@ export function seasonShort(s,max){const lim=typeof max==="number"?max:30;if(!s)
    `detail` ("#19", "tied #51") is the rank the slug cannot carry; it rides beside the
    label rather than inside it, so the announced name stays the tag and not "Bulger#19".
    See lib/routeTags.js for why the column it reads had to be normalised first. */
-function TagChip({t}){const col=C[t.color]||C.textSub;const bg=C[t.color+"Bg"]||C.surface;return <span title={(t.blurb||t.label)+(t.detail?" ("+t.detail+")":"")} style={{display:"inline-flex",alignItems:"center",gap:4,background:bg,border:"1px solid "+col+"55",borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:700,color:col,whiteSpace:"nowrap"}}><span aria-hidden="true">{t.icon}</span>{t.short||t.label}{t.detail?<b style={{fontWeight:800,opacity:0.8,marginLeft:1}}>{t.detail}</b>:null}</span>;}
-function RouteTagRow({route}){const tags=routeTags(route);if(!tags.length)return null;return <>{tags.map(function(t){return <TagChip key={t.kind+":"+t.slug} t={t}/>;})}</>;}
+/* A chip's blurb is the only thing that says what the tag MEANS, and it used to live solely in
+   `title` - a hover tooltip, on an app built for a 390px phone, where there is no hover. So on
+   the target device it was unreachable, and that is every explanation the row carries. The chip
+   is a real control now (clickable() gives it the role, the tab stop and Enter/Space) and
+   reveals its own blurb below the row.
+
+   `aria-expanded` rather than `aria-pressed`: this is a disclosure, not a toggle that changes
+   anything. The accessible NAME carries the blurb too, so a screen reader gets the meaning
+   without having to open anything. */
+function TagChip({t,open,onToggle}){const col=C[t.color]||C.textSub;const bg=C[t.color+"Bg"]||C.surface;
+  const name=(t.label||t.short)+(t.detail?", "+t.detail:"")+(t.blurb?" - "+t.blurb:"");
+  return <span {...clickable(onToggle)} aria-expanded={!!open} aria-label={name} title={(t.blurb||t.label)+(t.detail?" ("+t.detail+")":"")} style={{display:"inline-flex",alignItems:"center",gap:4,background:bg,border:"1px solid "+col+(open?"":"55"),borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:700,color:col,whiteSpace:"nowrap",cursor:"pointer"}}><span aria-hidden="true">{t.icon}</span>{t.short||t.label}{t.detail?<b style={{fontWeight:800,opacity:0.8,marginLeft:1}}>{t.detail}</b>:null}</span>;}
+function RouteTagRow({route}){const tags=routeTags(route);const [open,setOpen]=useState(null);
+  if(!tags.length)return null;
+  const shown=open!=null?tags[open]:null;
+  return <div>
+    <div style={{display:"flex",alignItems:"center",gap:7,flexWrap:"wrap"}}>{tags.map(function(t,i){return <TagChip key={t.kind+":"+t.slug} t={t} open={open===i} onToggle={function(){setOpen(open===i?null:i);}}/>;})}</div>
+    {shown&&shown.blurb?<div style={{marginTop:8,background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"8px 11px",fontSize:12,color:C.textSub,lineHeight:1.5}}>{shown.blurb}</div>:null}
+  </div>;}
 /* trad and sport deliberately omit the season, which left the strap ending in a bare "3p · ". */
 function strapTrim(s){return String(s||"").replace(/\s*·\s*$/,"").replace(/^\s*·\s*/,"").trim();}
 /* A gap is now the *quietest* thing in its section, not a dashed card competing with the
@@ -2653,7 +2744,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
     every route now has. It did start on `conditions`, and that is worth not repeating — that tab is
     LABELLED "Reports" / "Send Reports", so a climber looking for hazards never opens it. Same trap
     as #655. */}
-      <div style={{marginBottom:6}}>{saved?<div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{padding:"7px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Find partners →</button></div>:<button onClick={onToggleSave} style={{width:"100%",padding:"9px",marginBottom:6,background:C.amberBg,color:C.amber,border:"1px solid "+C.amber,borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}>Save route to your objectives</button>}</div><button onClick={()=>onLog(route)} style={{width:"100%",padding:"9px",marginBottom:6,background:logged?C.greenBg:C.blueBg,color:logged?C.green:C.blue,border:"1px solid "+(logged?C.greenDim:C.blueDim),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700}}>{logged?"✓ Logged":"Log ascent?"}</button><button onClick={onToggleOffline} style={{width:"100%",padding:"9px",marginBottom:12,background:offlineSaved?C.greenBg:C.card,color:offlineSaved?C.green:C.textSub,border:"1px solid "+(offlineSaved?C.greenDim:C.border),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}><div style={{lineHeight:1.3}}>Save to offline</div><div style={{fontSize:11,fontWeight:400,color:offlineSaved?C.green:C.textMuted,marginTop:2}}>Work without cell service</div></button>{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{fontSize:11.5,fontWeight:700,color:C.teal,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}{(()=>{var vw=(presence&&presence.count)||0;var viewers=(presence&&presence.viewers)||[];var ey=OPEN_CREWS.filter(function(oc){return oc.routeId===route.id&&oc.spots>0;}).length;var lists=popInterest(route);var asc=route.activity?route.activity.length:0;var chips=[];if(ey)chips.push({n:ey,label:" crew"+(ey!==1?"s":"")+" eyeing"});if(asc)chips.push({n:asc,label:" ascent"+(asc!==1?"s":"")+" logged"});if(lists>0)chips.push({n:lists,label:" list"+(lists!==1?"s":"")+" saved"});return <div className="cm-stagger" {...clickable(()=>setTab("partners"))} style={{display:"flex",alignItems:"center",gap:7,marginBottom:13,flexWrap:"wrap",cursor:"pointer"}}>{vw?<span style={{display:"inline-flex",alignItems:"center",gap:6,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:20,padding:"4px 11px"}}><span style={{width:7,height:7,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{fontSize:12,fontWeight:700,color:C.green}}><CountUp value={vw}/> viewing now</span></span>:null}{viewers.slice(0,4).map(function(vwr,i){return <span key={"v"+i} {...clickable(function(e){e.stopPropagation();onViewProfile&&onViewProfile(Object.assign({},CLIMBERS[0],{id:"presence_"+vwr.id,name:vwr.name||"Climber",username:(vwr.name||"climber").toLowerCase().replace(/\s+/g,""),avatar:vwr.avatar||FALLBACK_AV,trustScore:50,vouches:[],bio:"Viewing this route right now.",philosophy:"",verified:false,objectiveIds:[]}));})} title={(vwr.name||"A climber")+" is viewing this route now — tap to connect"} style={{cursor:"pointer",display:"inline-flex"}}><Av src={vwr.avatar} size={22}/></span>;})}{chips.map(function(c,i){return <span key={i} style={{display:"inline-flex",alignItems:"center",gap:4,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:600,color:C.textSub}}><b style={{color:C.text,fontWeight:800}}><CountUp value={c.n}/></b>{c.label}</span>;})}<RouteTagRow route={route}/></div>;})()}{cragOnly?techStatsEl:null}{/* MERGE NOTE: the card renders when there is a description OR "About this peak", because
+      <div style={{marginBottom:6}}>{saved?<div className="cm-pop" style={{display:"flex",alignItems:"center",gap:9,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:11,padding:"7px 13px"}}><span style={{fontSize:13.5,fontWeight:700,color:C.green,flex:1}}>On your objectives</span><button onClick={()=>setTab("partners")} style={{padding:"7px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Find partners →</button></div>:<button onClick={onToggleSave} style={{width:"100%",padding:"9px",marginBottom:6,background:C.amberBg,color:C.amber,border:"1px solid "+C.amber,borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}>Save route to your objectives</button>}</div><button onClick={()=>onLog(route)} style={{width:"100%",padding:"9px",marginBottom:6,background:logged?C.greenBg:C.blueBg,color:logged?C.green:C.blue,border:"1px solid "+(logged?C.greenDim:C.blueDim),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700}}>{logged?"✓ Logged":"Log ascent?"}</button><button onClick={onToggleOffline} style={{width:"100%",padding:"9px",marginBottom:12,background:offlineSaved?C.greenBg:C.card,color:offlineSaved?C.green:C.textSub,border:"1px solid "+(offlineSaved?C.greenDim:C.border),borderRadius:11,fontSize:13,cursor:"pointer",fontWeight:700,boxSizing:"border-box"}}><div style={{lineHeight:1.3}}>Save to offline</div><div style={{fontSize:11,fontWeight:400,color:offlineSaved?C.green:C.textMuted,marginTop:2}}>Work without cell service</div></button>{route.condWindow?<div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px",marginBottom:12}}><div style={{fontSize:11.5,fontWeight:700,color:C.teal,textTransform:"uppercase",letterSpacing:0.4,marginBottom:3}}>Conditions window</div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{Array.isArray(route.condWindow)?route.condWindow.join(", "):route.condWindow}</div></div>:null}{(()=>{var vw=(presence&&presence.count)||0;var viewers=(presence&&presence.viewers)||[];var ey=OPEN_CREWS.filter(function(oc){return oc.routeId===route.id&&oc.spots>0;}).length;var lists=popInterest(route);var asc=route.activity?route.activity.length:0;var chips=[];if(ey)chips.push({n:ey,label:" crew"+(ey!==1?"s":"")+" eyeing"});if(asc)chips.push({n:asc,label:" ascent"+(asc!==1?"s":"")+" logged"});if(lists>0)chips.push({n:lists,label:" list"+(lists!==1?"s":"")+" saved"});var _social=vw||viewers.length||chips.length;return <div style={{display:"flex",flexDirection:"column",gap:7,marginBottom:13}}>{_social?<div className="cm-stagger" {...clickable(()=>setTab("partners"))} style={{display:"flex",alignItems:"center",gap:7,flexWrap:"wrap",cursor:"pointer"}}>{vw?<span style={{display:"inline-flex",alignItems:"center",gap:6,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:20,padding:"4px 11px"}}><span style={{width:7,height:7,borderRadius:"50%",background:C.green,flexShrink:0,animation:"cm-pulse 2s infinite"}}/><span style={{fontSize:12,fontWeight:700,color:C.green}}><CountUp value={vw}/> viewing now</span></span>:null}{viewers.slice(0,4).map(function(vwr,i){return <span key={"v"+i} {...clickable(function(e){e.stopPropagation();onViewProfile&&onViewProfile(Object.assign({},CLIMBERS[0],{id:"presence_"+vwr.id,name:vwr.name||"Climber",username:(vwr.name||"climber").toLowerCase().replace(/\s+/g,""),avatar:vwr.avatar||FALLBACK_AV,trustScore:50,vouches:[],bio:"Viewing this route right now.",philosophy:"",verified:false,objectiveIds:[]}));})} title={(vwr.name||"A climber")+" is viewing this route now — tap to connect"} style={{cursor:"pointer",display:"inline-flex"}}><Av src={vwr.avatar} size={22}/></span>;})}{chips.map(function(c,i){return <span key={i} style={{display:"inline-flex",alignItems:"center",gap:4,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"4px 10px",fontSize:12,fontWeight:600,color:C.textSub}}><b style={{color:C.text,fontWeight:800}}><CountUp value={c.n}/></b>{c.label}</span>;})}</div>:null}<RouteTagRow route={route}/></div>;})()}{cragOnly?techStatsEl:null}{/* MERGE NOTE: the card renders when there is a description OR "About this peak", because
     geology has no other home — PeakMetadataPanel stopped rendering it, so gating this card on
     the description alone would leave routes.peak_metadata.geology populated and displayed
     nowhere. The GapNote still fires on a missing DESCRIPTION specifically, which is a
@@ -2761,8 +2852,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     Overview, which left Plan describing how to reach the base and how to walk off but
     nothing about the climbing in between. */}
 {!cragOnly?<ProtectionCard route={route} myReports={myReports} onEdit={()=>{setFixOpenSection("rack");setFixOpen(true);}}/>:null}
-{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<RouteBeta route={route} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null}
-{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<div style={{marginBottom:14}}><PitchTable route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/></div>:(gapPitches(route)?<GapNote what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null)}
+{route.discipline!=="bouldering"&&route.pitchDetail&&route.pitchDetail.length?<RouteBreakdown route={route} comments={comments} commentsUnavailable={commentsUnavailable} onCommentAdd={onCommentAdd} onEdit={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:(gapPitches(route)?<GapNote what="No pitch-by-pitch breakdown" why={route.pitches+" pitches are listed, but none of them are described — no per-pitch grades, belays or crux."} cta="Add the pitches" onFix={()=>{setFixOpenSection("pitchDetail");setFixOpen(true);}}/>:null)}
 {/* The unpitched counterpart, in the SAME slot as PITCH-BY-PITCH. isPitched() is the
     switch, so exactly one of PITCH-BY-PITCH and CLIMBING ROUTE can appear on a route and
     neither can silently shadow the other. Moved here with the pitch table when Plan took

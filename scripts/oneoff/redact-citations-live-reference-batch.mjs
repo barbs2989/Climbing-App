@@ -1,0 +1,118 @@
+// Citation batch: the three values the live-reference decision surfaced.
+//
+// Each edit is a declared find -> replace pair and the script REFUSES unless `find` matches the
+// live value EXACTLY ONCE. Nothing can be invented and a stale table cannot half-apply. It then
+// re-reads every row and reconciles, because a 200 is not evidence the data changed.
+//
+// EDITS ARE ACCUMULATED PER (route, column), and that is not a tidy-up — the first version of
+// this script wrote each edit from a row it had read BEFORE the previous edit was applied, so the
+// second edit on `pro_tips` rebuilt the array from the original and silently reverted the first.
+// CLAUDE.md names this trap in as many words and I still wrote it; the reconcile below is what
+// caught it. One read and one patch per (route, column).
+//
+// The decision (2026-09-02, "keep them") shapes the first repair rather than deciding whether to
+// make it: that sentence is a POINTER — go and get this guidebook, there is no online topo —
+// welded to an ATTRIBUTION establishing the guidebook's authority from two aggregators. The
+// pointer stays; the attribution goes. Cutting the whole sentence would have removed the one
+// actionable line on a peak with no usable online beta.
+//
+// --apply to write; dry run by default.
+import { requireServiceKey, SUPABASE_URL, headers, patchRow } from "../lib/supabase-env.mjs";
+
+const APPLY = process.argv.includes("--apply");
+const key = requireServiceKey();
+
+const EDITS = [
+  {
+    id: "wa_chimney_peak_the_chimney", col: "pro_tips", idx: 0,
+    why: "shape 1, separable: the publisher clause is a trailing tag on a sentence that is otherwise a pointer",
+    find: " — it is the source Peakbagger and Peakware both cite for this peak, and there is",
+    repl: " — there is",
+  },
+  {
+    id: "wa_chimney_peak_the_chimney", col: "pro_tips", idx: 5,
+    why: "web-analytics metric: logged-ascent counts measure a WEBSITE's records, not the mountain — cut regardless of the decision, and the qualitative verdict is what a climber wanted",
+    find: "Peakery shows zero logged ascents and Peakbagger only four;",
+    repl: "Almost no ascent records exist for this peak;",
+  },
+  {
+    id: "wa_lewis_creek_route", col: "seasonal_hazards", path: ["exposure"],
+    why: "shape 3, the attribution IS the verb, and it speaks a quotation — a quotation cannot survive its speaker, so the quote marks go with it or the line reads as scare quotes",
+    find: "; WTA also flags 'numerous search and rescue missions' on this route.",
+    repl: "; numerous search and rescue missions have been reported on this route.",
+  },
+];
+
+async function readRow(id, col) {
+  const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${id}&select=id,${col}`, { headers: headers(key) });
+  const j = await r.json();
+  if (!Array.isArray(j) || j.length !== 1) throw new Error(`read ${id}.${col} -> ${JSON.stringify(j).slice(0, 160)}`);
+  return j[0];
+}
+
+const getLeaf = (colVal, e) => {
+  if (e.idx != null) return Array.isArray(colVal) && typeof colVal[e.idx] === "string" ? colVal[e.idx] : null;
+  let n = colVal; for (const k of e.path.slice(0, -1)) n = n && n[k];
+  const last = e.path[e.path.length - 1];
+  return n && typeof n[last] === "string" ? n[last] : null;
+};
+const setLeaf = (colVal, e, next) => {
+  if (e.idx != null) { const c = colVal.slice(); c[e.idx] = next; return c; }
+  const clone = JSON.parse(JSON.stringify(colVal));
+  let n = clone; for (const k of e.path.slice(0, -1)) n = n[k];
+  n[e.path[e.path.length - 1]] = next; return clone;
+};
+const label = (e) => `${e.id}  ${e.col}${e.idx != null ? "[" + e.idx + "]" : "." + e.path.join(".")}`;
+
+// Group first, so every edit on one column is applied to one accumulating copy.
+const groups = new Map();
+for (const e of EDITS) {
+  const k = e.id + "\x00" + e.col;
+  if (!groups.has(k)) groups.set(k, { id: e.id, col: e.col, edits: [] });
+  groups.get(k).edits.push(e);
+}
+
+let refused = 0;
+const planned = [];
+
+for (const g of groups.values()) {
+  const row = await readRow(g.id, g.col);
+  let acc = row[g.col];
+  const expect = [];
+  for (const e of g.edits) {
+    const before = getLeaf(acc, e);
+    if (before == null) { console.log(`REFUSE ${label(e)} — not a string leaf`); refused++; continue; }
+    const hits = before.split(e.find).length - 1;
+    /* IDEMPOTENT, and the distinction matters: `find` gone AND `repl` present is an edit that has
+       already landed, which must read as done rather than as a refusal — otherwise one applied
+       edit blocks the whole batch from ever completing. `find` gone with `repl` absent is a real
+       refusal: the value moved under us and the declared edit no longer describes it. */
+    if (hits === 0 && before.includes(e.repl)) { console.log(`skip   ${label(e)} — already applied`); continue; }
+    if (hits !== 1) { console.log(`REFUSE ${label(e)} — find matched ${hits}x, expected 1`); refused++; continue; }
+    const after = before.replace(e.find, e.repl);
+    acc = setLeaf(acc, e, after);
+    expect.push({ e, after });
+    console.log(`\n${label(e)}`);
+    console.log(`  why: ${e.why}`);
+    console.log(`  --  ${before.trim()}`);
+    console.log(`  ++  ${after.trim()}`);
+  }
+  planned.push({ ...g, body: { [g.col]: acc }, expect });
+}
+
+if (refused) { console.error(`\n${refused} edit(s) refused — writing nothing.`); process.exit(1); }
+if (!APPLY) { console.log(`\nDRY RUN — ${EDITS.length} edit(s) across ${planned.length} (route, column) group(s). Re-run with --apply.`); process.exit(0); }
+
+for (const p of planned) await patchRow("routes", p.id, p.body);
+
+let bad = 0;
+for (const p of planned) {
+  const row = await readRow(p.id, p.col);
+  for (const { e, after } of p.expect) {
+    const now = getLeaf(row[p.col], e);
+    if (now !== after) { console.error(`MISMATCH ${label(e)}`); bad++; }
+    else if (now.includes(e.find)) { console.error(`STILL PRESENT ${label(e)}`); bad++; }
+  }
+}
+console.log(bad ? `\n${bad} leaf/leaves did not land` : `\nok — ${EDITS.length} edit(s) applied and re-read across ${planned.length} group(s).`);
+process.exit(bad ? 1 : 0);

@@ -83,7 +83,7 @@ npm run check:overlays # every overlay inside #appscroll is portalled to documen
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
-npm run check:pitch-split # a pitch_detail entry reaches the section describing it (in build)
+npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
 npm run check:route-tags # real list prose still reaches a list key, and each key renders (in build)
 npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its readers READ (in build)
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
@@ -147,6 +147,31 @@ npm run enrich:apply       # write approach_variants / climbing_route / bivy (--
 There is no unit test suite, linter, or type checker. The `check:` scripts are what
 stands in for one, and they target the failure mode this codebase actually ships: not
 a build error, but a screen that renders wrong or not at all.
+
+**WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
+**71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
+the total when deciding where a new guard belongs.
+- **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
+  between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
+  same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
+  files, 2.0 MB of JSX). Those 14 are ~104s, **65% of the chain**, and at least **41s of it is
+  per-process overhead** that one shared runner would pay once.
+- **That is a real prize and it is NOT free to collect.** Merging 14 guards into one process means
+  merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
+  a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
+  defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
+- **The cheap version has already been taken twice**, and is what to try first on any new guard:
+  `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors instead
+  of twice, and `check:overlay-absence` was kept out of the build chain entirely (a CI job instead)
+  once its ~10s proved to be almost all Babel.
+- **Measure it with `scripts/oneoff/measure-build-gate-cost.mjs`, on a quiet machine.** The number
+  above is CPU-ish rather than wall clock deliberately: this box routinely runs several sessions at
+  once, and a wall-clock profile taken at load average ~450 was off by 4x — recorded under
+  `check:waypoint-placement`, where it also blamed the wrong two suspects.
+- **Not every expensive guard is wasteful.** `check:flex-scroll` costs 7.4s with no Babel parse at
+  all: it resolves real JSX ancestry through `scripts/lib/jsx-ancestors.mjs`, because a fixed
+  character window missed 28 of 50 panes. Cost bought coverage there. Read what a guard is doing
+  before treating its position in this list as a defect.
 
 - **`check:refs`** parses with Babel and fails on any identifier with no binding in
   an enclosing scope — the bug that blank-screened production in #317 and #359.
@@ -2078,6 +2103,37 @@ a build error, but a screen that renders wrong or not at all.
   It reports rather than self-heals: a `workflow_dispatch` made with the built-in
   `GITHUB_TOKEN` does not start a new run, so an auto-redeploy step would look like
   it worked and do nothing. The fix is `gh workflow run deploy.yml --ref main`.
+  - **THE GRACE CLOCK WAS TIED TO THE WRONG COMMIT, AND THAT MADE THIS GUARD STRUCTURALLY
+    UNABLE TO REPORT THE THING IT EXISTS FOR.** It excused any gap where the **newest** commit
+    on main was younger than the grace — and in a repo where several sessions merge every few
+    minutes, there is ALWAYS a commit younger than 45 minutes, so **the grace never expired**.
+    Measured 2026-09-02: production sat **17 commits and ~80 minutes behind** while this printed
+    *"ok — a deploy is probably still in flight"* on every run. Same shape as
+    `check:field-renders` reporting `NO DATA` during an outage: a green that is a statement
+    about the guard rather than about production.
+  - The clock is now **how long the OLDEST unpublished commit has waited**, from
+    `compare/<published>...<main>`, whose `commits` are oldest-first. That number is unaffected
+    by later merges, so a busy repo can no longer excuse itself, and the run also prints **how
+    many commits behind** production is — which the old output never said.
+  - **It fails SOFT, not closed, if the comparison cannot be made**, and that is deliberate: the
+    answer is still *"production is behind"*, and refusing to report that would be worse than
+    reporting it on the weaker clock. The output names which clock it used.
+  - **WHAT WAS STARVING THE DEPLOYS is now cause 1 in the failure message**, because it is the
+    one that actually happened and it is invisible from the run list: `deploy.yml` gates every
+    step on the SHA still being the tip of main (`tip_early`/`tip_final`), so a merge landing
+    during the ~1 minute build makes the **deploy job SKIP while the run still reports
+    `success`**. Over 25 consecutive runs: **10 skipped, 10 cancelled while queued**, and the
+    last run that actually published was 5 runs earlier. **Read the JOB, never the run** —
+    `gh run view <id> --json jobs --jq '.jobs[] | "\(.name) \(.conclusion)"'`.
+  - It resolved itself when the merge rate dropped and one build finished before the next merge,
+    which is exactly why nobody notices it: the failure is intermittent and load-driven.
+  - `SIMULATE_PUBLISHED=<sha>` is the injection hook, and it exists because the healthy state of
+    this guard is *"in sync"* — which is also what a broken clock prints, so the stale path
+    cannot be exercised without pretending production is behind. Verified against the REAL stall
+    (`published=700f125a`): **19 commits behind, oldest unpublished waited 284 min**. The A/B
+    that proves the fix is `GRACE_MINUTES=240` — the old clock (newest commit, 191 min) would
+    have **passed**, the new clock (285 min) **fails** — with `GRACE_MINUTES=400` passing, so
+    the guard is not simply always red.
 - **`audit:silent-reverts`** asks the question `check:merge-survival` structurally cannot: **did a
   SQUASH silently delete what an earlier PR added?** **It RUNS on every push to main now**
   (`.github/workflows/silent-reverts.yml`), which it did not for most of its life — see the
@@ -2966,6 +3022,36 @@ a build error, but a screen that renders wrong or not at all.
     editorial preference lives in the comment beside `ACCESS_KEYS` where it will be read.
   - Reports the reverse direction as information, not failure: 4 keys are in `SS` without
     being in the form (`gpxPts`, `discipline`, `rockStyle`, `topo`), each set by another flow.
+  - **IT PROVES THE KEY IS READ, WHICH IS WEAKER THAN IT SOUNDS: the form showed
+    `Weather: [object Object]` AS THE CURRENT VALUE ON EVERY ROUTE.** `objStr` builds the line the
+    keyed editor opens with and did a raw `String(v)`; `weather` is an OBJECT on 498 of the 504
+    routes carrying `seasonal_hazards`, so 100% of them rendered that. This guard passed
+    throughout — `weather` *was* read — because reaching a screen and being **legible** on it are
+    different questions, the same split `check:token-boxes` draws against `check:field-renders`.
+    - **Not cosmetic.** That line also feeds `wasEmpty`, which decides whether one climber can
+      fill a blank or three must agree, and a form opening on `[object Object]` invites a climber
+      to replace a real value with whatever they can actually see.
+    - **Two fixes, each proven independently necessary by reverting them one at a time.** The
+      form already supports DOTTED keys, so `weather` became `weather.typical` (string on 498) and
+      `weather.probability` (471) — one field per fact. And `objStr` now flattens a nested value
+      through the app's own `fmtSlingVal` rather than `String(v)`, because `crevasses` is a string
+      on 453 rows and an OBJECT on 34, so **no single key spec is right for it** and the next
+      column to drift shape would reintroduce the defect.
+    - **Reverting the dotted keys alone leaves the row count at ZERO**, because the flattener
+      catches it — which is why the regression check asserts the key SPECS as well as the count.
+      A count-only check would have missed that revert entirely. Reverting the flattener alone
+      puts 34 rows back.
+    - **The 30 fields that show `route.<prop>` RAW are CLEAN, measured rather than assumed**
+      (`scripts/oneoff/measure-raw-cur-stringification.mjs`): 28 columns read, 0 stringify badly,
+      and the 2 with no column at all (`permitUrl`, `style`) are declared with reasons and fail as
+      **stale** if they stop being raw-cur fields. So this class is the keyed fields only — *a
+      detector for a class of zero is the thing this repo keeps refusing to build.*
+    - **Test the rendered STRING, never the type.** `String(["a","b"])` is `"a,b"` — readable —
+      so a `typeof v === "object"` scan counts arrays and over-reported by a factor of two, 1,008
+      rows against a true 504. `requiredSkills` is an array of strings and renders fine.
+    - This guard's `ANCHOR LOST` branch earned itself during the fix: a comment landed between
+      `export const` and `SEASHAZ_KEYS`, and it refused the run — *"the sub-keys went unchecked,
+      so this run proved less than it claims"* — rather than skipping the field.
   - Fails closed on an empty parse of either side, and `ANCHOR LOST` if `const FIELDS=[{k:`
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
@@ -3597,8 +3683,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     `rappels` was wired to the wrong one of **two** surfaces that both render the text
     "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
     `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
-    `check:field-renders` already records; `pitch_detail` splits **per entry** across
-    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare; and the
+    `check:field-renders` already records; `pitch_detail` split **per entry** across
+    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare (they are one
+    ROUTE BREAKDOWN now, and both fixtures stay because either kind alone must still draw it);
+    and the
     "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
     season-keyed chip there rendered nothing at all.
   - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
@@ -4114,6 +4202,77 @@ the correction knows the screen is wrong, and they have no way to report it.
     (`scripts/oneoff/inject-access-checked-cases.mjs`), each case proving its edit landed **by
     checksum** and restoring the file byte-identically. **Case 4 must PASS** — a comment naming the
     render site is documentation, and a guard flagging it would forbid explaining itself.
+- **`check:pitch-split`** asserts that every `pitch_detail` entry is a row of **ROUTE BREAKDOWN**,
+  in the record's own order, drawn as the kind of ground it actually is. Static SSR, in the build.
+  - **IT USED TO READ THE VERDICT OFF THE HEADING**, because there were two: roped pitches under
+    PITCH-BY-PITCH and travel legs under ROUTE BETA, stacked on the Plan tab. **That stacking was
+    itself a claim the record never made.** 144 routes hold both kinds interleaved —
+    `wa_big_four_mountain_tower_route` is *"Approach gully / First tower / Notch rappel / Second and
+    third towers / Summit snowfield"*, i.e. travel, climbing, descent, climbing, travel — and split
+    into two boxes it reads as every walk first and then every pitch, which is not the climb. The
+    array **order** is the sequence, and the only way to show a sequence is one list.
+  - **What does NOT merge is the vocabulary.** A roped pitch and a walk are different kinds of
+    ground: a pitch keeps its square `P1` badge, its blue accent and its full detail (length,
+    bolts, anchor, per-pitch consensus, photos, beta comments); a section keeps a round badge, a
+    terrain chip and its own three tiles. The **spine** down the left runs through both, in order,
+    and that is what carries the integration. On a pure-pitch or pure-stage route the section is
+    what it always was, renamed.
+  - **So the assertion moved to the row's own `data-kind`**, and that is strictly stronger than the
+    heading test it replaces: per entry rather than per page, and it can check the **ORDER**, which
+    nothing did before. With one heading the classification is only visible in the markup — it is
+    the badge shape, the accent and the detail block, none of which survive tag-stripping.
+  - The **numeric sort is scoped to a route with no stages**, which is exactly the old behaviour for
+    a pure-pitch route. A mixed route's two label spaces (`"1"` and `"Approach gully"`) cannot be
+    compared at all, so sorting one is not an ordering — it is the two boxes rebuilt inside one.
+  - **#1440's shortfall rule is unchanged and both its cases are kept.** Merging removes the
+    MECHANISM that produced the false claim — everything described is now in one list, so
+    `pitchShortfall(route, rows.length)` reduces to *"the route claims more pitches than the page
+    describes"* — but a route that genuinely climbs more than it describes must still say so, and a
+    rule that only ever suppresses is satisfied by deleting the feature.
+  - **The cumulative "N ft up" still counts roped pitches only**, stepping over the walking between
+    them. It is a climbing figure and always was; summing the approach into it would silently change
+    what that number means, which is the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **NO BROWSER GUARD SEES THIS SECTION, and the two probes beside it exist for that reason.**
+    `check:overflow` and `check:a11y-badges` reach the route page with `?zr=1`, which opens
+    `ROUTES[0]` — `kings_hf`, a scramble whose `pitchDetail` is null — so "0 offenders" there is a
+    statement about a page these rows were never on.
+    `scripts/oneoff/probe-route-breakdown-overflow.mjs` lays them out in Chrome at 390×844 over the
+    measured worst case (the 51-character terrain prose, a compound grade, a long descriptive
+    title) and is **proven non-vacuous**: restoring `nowrap` on the right-hand group reproduces the
+    historical **394px** overflow and it catches it.
+    `probe-route-breakdown-onscreen.mjs` prints the three shapes as read.
+  - **THE ROWS ARE DISCLOSURES, so the state is `aria-expanded` and the NAME does not repeat it.**
+    The stage row's old ▸ carried the attribute and lost it when the whole row became the control
+    — a regression rather than a gap — while the pitch row had spelled `", collapsed"` into its own
+    `aria-label` instead, which announces the state to a screen reader and to nothing else: no
+    automation, and no user agent that offers *expand* as an action. This file already states the
+    convention on `TagChip` (*"`aria-expanded` rather than `aria-pressed`: this is a disclosure,
+    not a toggle that changes anything"*); it simply had not been applied here. With both, a reader
+    hears "collapsed" twice, so the attribute carries it and the name says only what the row IS.
+    `check:selected-state` accepts `aria-expanded` and cannot see these rows anyway — `?zr=1` opens
+    `kings_hf`, whose `pitchDetail` is null. `probe-breakdown-rows-announce-expanded.mjs` is the
+    measurement, proven non-vacuous in **both** directions: dropping the attribute and re-adding
+    the words each fail it.
+  - **IT TOOK `check:ui`'s PITCH-EXPAND STEP WITH IT, AND THAT STEP WAS RIGHT TO GO RED.** That
+    walk found the pitch row by the text **`"▸ more"`** — a string only the old pitch row
+    rendered, so once both kinds of row got the same bare `▸` the needle matched nothing and the
+    step reported *"the pitch-expand render path went unchecked"*. It was not a stale assertion
+    about cosmetics: expanding a pitch is the render path that blanked in #359, and it carries the
+    photos, the comments and PitchConsensus. It clicks the row by `data-kind="pitch"` now — what
+    the step has always MEANT — and a travel section is deliberately not accepted, since expanding
+    one exercises a much smaller path. Verified non-vacuous by the capture growing: Plan 21,576
+    chars against pitch-expanded 21,820. **A guard keyed on a string that one component happens to
+    render is keyed on that component**, and it will go quiet rather than wrong the day the
+    component changes — this one failed loudly only because it counts a miss as a failure.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-route-breakdown-cases.mjs`). Cases 1-3 are the
+    original three re-run against the merged section — *a guard that still catches everything it
+    used to* is half the claim. **Case 4 is the property the merge added**: reorder the rows into
+    stages-then-pitches (the old two boxes, merged) and only the ORDER assertion can see it. **Case
+    5's first version reported MISS while the guard was innocent** — it called `pitchShortfall` with
+    a different `shown`, and the `> described` half of that predicate is *inside* the function, so
+    the edit landed by checksum and reproduced no defect. *Checksum movement proves an edit
+    happened, not that it was the right one.*
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -4237,6 +4396,67 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **NOT-COMPUTED IS NOT NOT-MISPLACED, and conflating them nearly wrote a WRONG number with a
+    measurement to justify it.** The five camps stored at two elevations were taken back to the
+    ground — the method that settled Skagit Queen — and the first pass "settled" Sahale Glacier
+    Camp: three pins read 7,376-7,380 ft, which admits the majority's 7,400 and refuses 7,500. Every
+    fabrication check passed: clean 4-decimal tails, not on any chord.
+    - **The gazetteer inverted it.** *"Sahale Glacier Camp, Sahale Arm Trail"* sits **458 m** from
+      those pins on ground of **7,612 ft** — which is what the pins THEMSELVES state (7,600). So the
+      pin's elevation is right, its COORDINATE is 458 m downhill, and both bivy values (7,400/7,500)
+      are low. Applying the "settled" repair would have moved the row FURTHER from the truth.
+    - Skagit Queen was decidable because its gazetteer feature was **7 metres** away. That distance
+      was the whole difference and it had not been made a rule. It is now: a pin may only speak for
+      a camp when an independent record of that camp is within **250 m** of it.
+    - **The gate caught a second one immediately.** Two *Boston Basin high camp* pins sit **1,051 m**
+      from *"Boston Basin High Camp, Boston Basin Trail"*, reading 5,395 ft where the real camp
+      stands on 6,248. The one pin that IS corroborated (0 m) reads 6,248 and admits BOTH stored
+      values, so that split honestly stands.
+    - **A SPREAD BELOW THE INSTRUMENT IS A CONSISTENCY DEFECT, NOT AN ACCURACY ONE.** Camp Schurman's
+      two values are **20 ft** apart and Thumb Rock's **15 ft**; 3DEP is a 10 m grid on steep ground.
+      Asking it to choose is asking a question finer than the instrument, and an answer would be
+      noise wearing a verdict's clothes. Those want one value used everywhere — a choice about the
+      record — not a measurement.
+    - **RESULT: 0 of 5 settled**, and two misplaced pins found as a by-product. The splits are
+      REPORTED and unrepaired; picking on the majority alone is the *ten agreeing records are one
+      claim counted ten times* trap this file already records.
+  - **THE CROSS-CHECK WAS NOT REGION-BOUNDED WHILE THE DONOR INDEX BESIDE IT WAS, and that cost
+    real answers.** `wpElev` was keyed by NAME ALONE; `wpByRegion` two lines down is keyed by
+    name+region — same store, same identity function, two different scopes. So a namesake anywhere
+    in Washington could refuse a correct answer: *"Five Mile Camp, Park Creek trail"* sits on nine
+    **North Cascades** routes and was refused because a *"Five Mile Camp"* waypoint on a Mount La
+    Crosse route — **`wa_olympics`, ~250 km away** — states 1,350 ft against the gazetteer's 3,921.
+    Neither is wrong; they are two places sharing a name. Bounding it unlocked that name and *"Twin
+    Lakes basin, under the west face of Columbia"*, and the gazetteer confirms the first verbatim:
+    **"Five Mile Camp, Park Creek Trail, Chelan County"**. `donorFor`'s own comment already records
+    this lesson; its sibling did not apply it.
+  - **SKAGIT QUEEN CAMP IS SETTLED, and this entry used to say it could not be.** It read
+    *"independent research leans toward the DEM but not conclusively, so it stays unwritten"*. The
+    refusal compared the waypoint's STATED elevation against the DEM at the GAZETTEER's coordinate —
+    two different places — and **nothing had asked what the ground is under the waypoint's OWN pin**.
+    Three facts settle it: the pin is **real** (six decimals, no interpolation residue, 1,437 m off
+    the nearest chord between its neighbours — it matters, because ground under a COMPUTED pin is
+    ground under a place nobody chose); the gazetteer feature is **7 metres away**, so agreeing on
+    height is corroboration rather than coincidence; and the two ground reads are **3,089 and 3,093
+    ft** against a stated **4,000**. The waypoint is 911 ft above the ground it sits on. Corrected,
+    which unlocked its 9 camp rows at 3,093 ft, now marked CORROB.
+  - **THE SOLVER HAS A WAYPOINT-DONOR PATH AND NO BIVY-TO-BIVY ONE**, so a camp whose height the
+    catalog already publishes on a sibling route stayed blank —
+    `measure-missing-camp-elevations.mjs` had been labelling those **FREE** the whole time and
+    nothing acted on the label. `fill-camp-elevations-from-unanimous-siblings.mjs` fills them under
+    a gate **stricter than the solver's own 400 ft cross-check: UNANIMITY.** Where donors disagree
+    at all, copying either is a silent pick.
+    - **THE REFUSALS ARE A SEPARATE FINDING: one camp, two elevations, depending which route you
+      open.** Camp Schurman is **9,440 ft on some routes and 9,460 on others** (15 donors), Sahale
+      Glacier Camp 7,400/7,500 (26), Thumb Rock 10,760/10,775 (14), Boston Basin high 6,200/6,300,
+      Whatcom Camp 5,286/5,500. Every spread is inside the solver's tolerance and would have been
+      copied silently. That is the [[facts-stored-twice-census]] class in the camp store, and it is
+      **reported, not repaired** — picking a winner needs a source, and 5 names is not a sweep.
+  - **Coverage 1,255 -> 1,207 blank rows, 166 -> 159 distinct names**, across four passes: 9 rows
+    the solver already had, 17 unlocked by the region bound, 9 unlocked by the Skagit Queen repair,
+    29 from unanimous siblings. Confirmed on screen, **9 assertions across 4 routes** — asserting the
+    camp NAME beside each number, since a bare number search is satisfied by a coincidence elsewhere
+    on the tab.
   - **The 1,763 missing elevations were 230 DISTINCT NAMES, and 180 of them have no answer to
     find. `scripts/oneoff/solve-camp-elevations.mjs` filled 320 rows; the REFUSALS are the
     result.** Named place -> OSM coordinate -> USGS DEM (`elevationAt`), no agent involved.
@@ -6103,7 +6323,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     check list from what was actually written — an earlier version omitted `climbing_route`, so
     a route setting only that column satisfied every remaining clause vacuously and printed
     "verified" having confirmed nothing.
-  - A populated column is not a rendered one. `CLIMBING ROUTE` and `PITCH-BY-PITCH` are mutually
+  - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
     dense line its mount lived on.
@@ -7633,7 +7853,7 @@ This is **ClimbMatch**, a mobile-first social app for finding climbing partners,
 
 ### A real Supabase backend exists, but most of the app still runs on in-memory seed data
 
-A `USE_DB` flag (`lib/supabase.js`, on when `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`/`VITE_USE_DB=true` are all set) gates a real DB path: `lib/db.js` (`useAreaRoutes`, `submitContribution`, `dbRouteToCamel`) and `lib/DbAreaBrowser.jsx` back the Climbs tab's area browser + route list from Supabase's `areas`/`routes` tables, which hold Washington's full alpine + rock catalog (thousands of routes — see `BACKEND.md` for the schema and pipeline). `lib/auth.js`/`lib/AuthModal.jsx` provide real login. See `BACKEND.md` for what's DB-backed vs. still simulated.
+A `USE_DB` flag (`lib/supabase.js`, on when `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`/`VITE_USE_DB=true` are all set) gates a real DB path: `lib/db.js` (`useAreaRoutes`, `submitContribution`, `dbRouteToCamel`) and `lib/DbAreaBrowser.jsx` back the Climbs tab's area browser + route list from Supabase's `areas`/`routes` tables, which hold Washington's full alpine + rock catalog (thousands of routes — see `docs/BACKEND.md` for the schema and pipeline). `lib/auth.js`/`lib/AuthModal.jsx` provide real login. See `docs/BACKEND.md` for the schema and the pipeline — but note that its "still simulated" lists were **over a month stale** when corrected on 2026-09-02, so re-derive what is DB-backed from `lib/db.js` rather than reading it off that page.
 
 Everything else — crews, messages, connections, vouches, logs, trip reports, and any state outside a DB-backed route's own fields — is still **seeded from module-level `const` arrays/objects at the top of the file and lives only in React state for the session** (refreshing resets everything). Key seed data structures:
 
@@ -7694,6 +7914,27 @@ Four functions do the real work; everything else is UI around them. The code is 
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.
 
 ### One-off scripts that touch Supabase
+
+**THE `--linked` GUARDS CANNOT RUN FROM A WORKTREE UNTIL YOU SYMLINK THE LINK STATE, and they
+fail in a way that reads like a broken guard rather than a missing file.** `check:function-drift`
+and `check:function-columns` shell out to `npx supabase db query --linked`, whose project ref lives
+in `supabase/.temp/` — gitignored, so a worktree does not have it. The CLI answers
+`LegacyProjectNotLinkedError: Cannot find project ref`, and the guard correctly refuses (*"cannot
+report on a database it did not reach. Not a pass."*). Fix it the way `.env` and `.env.local`
+already are:
+
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/supabase/.temp supabase/.temp
+
+That directory holds a project ref, a pooler host and component versions — no credentials; the
+access token lives in the CLI's own config. The ignore pattern is `supabase/.temp` with **no
+trailing slash** on purpose: the slashed form matches a DIRECTORY only, so the symlink showed up as
+untracked and was one `git add .` away from committing one developer's linked project. Verified
+that the slashless form still ignores the real directory in the main checkout.
+
+Both guards were run this way on 2026-09-02 and both are clean — 45 of 46 live functions match
+their newest migration (1 declared benign), and every column the 11 writing functions touch exists.
+`check:column-drift` needs no link (anon key) and also agrees: 41 tables / 480 columns, snapshot
+current.
 
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
