@@ -6091,6 +6091,34 @@ the correction knows the screen is wrong, and they have no way to report it.
     original, so it structurally cannot rewrite prose — the same constraint that made the
     `audit:approach-scope` batches safe, and for the same reason (trimming interior sentences
     strands the connectives around them).
+  - **THE TRUNCATION HELD AND THE REPAIR DID NOT — the same sentence had been written into SIX
+    other fields, and the entry above read for a week as though one edit had closed it.** Batch 105
+    re-audited the row and found `approach` clean (the 636-character tail gone, the negative result
+    standing) while the identical framing survived verbatim in `timing.sectionBreakdown[0].note`,
+    `itinerary.days[0].note`, `itinerary.totalNote`, `descent_text`, and — found by reading the row
+    rather than by the audit — `itinerary.days[0].title` and `timing.sectionBreakdown[0].fromTo`,
+    both reading *"Boulder session, **car to car**"*.
+    - **The surviving half was the WORSE half.** `timing` and `itinerary` are the **Planner**
+      surfaces, where a party budgets the day; `approach` is prose they may skim. So the repair
+      cleaned the field a reader might not open and left the one that feeds the estimate.
+    - *An instance fixed by hand is not a class closed* — this file's own rule, and here the
+      "class" was **one row**. Scoping a repair to the field the finding named is how a sentence
+      written into several fields survives it. **Ask which OTHER fields hold the string, not just
+      the one the finding names.**
+    - **NEEDED NO SOURCE, because the row refutes itself in five places**: `access.permit` is
+      *"Self-Issue Wilderness Permit"* — which the sentence explicitly denies — while
+      `crowds.estimatePerSeason` and `partner_requirements.approachTime` both put it *"~8 miles up
+      the North Fork Sauk"*, `requiredSkills[0]` is *"Multi-day wilderness backpacking"*, and
+      `best_season` says the approach *"requires snow-free high-alpine trail conditions"*. Every
+      replacement clause is a copy from those fields; `fix-boulder-approach-framing-survivors.mjs`
+      re-asserts all three premises against the live row before writing.
+    - **THE NUMBERS ARE DELIBERATELY UNTOUCHED, and that is the lesson from the first repair rather
+      than timidity.** `dist_km` 0.97, `gainFt` 0, `packLb` 0 and `hours` 2 describe the boulder,
+      not the journey; correcting them needs a measured approach figure for this row, which is
+      research. What went wrong the first time is that the truncation removed the sentence
+      **explaining** what the small numbers were, leaving bare wrong figures with nothing to read
+      them by — so the new notes carry that explanation instead of deleting it. A repair that
+      strips a false frame must not also strip the frame that made the residue legible.
   - **The class is ONE, measured before acting**: across 8,365 WA routes, **13** carry a documented
     negative — correct, and CLAUDE.md already records that writing over one is fabrication — and
     **2** go on to speculate. The second, `wa_the_pyramid_picket_east_ridge`, is deliberately left
