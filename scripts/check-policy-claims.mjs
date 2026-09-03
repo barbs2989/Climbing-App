@@ -45,10 +45,32 @@ const live = flagM[1] === "true";
 // Each `{PRIVACY_CONTROLS_LIVE?<...>:null}` block. Note `:null` — a false flag REMOVES the
 // control rather than disabling it, so it is absent, not greyed out.
 const gated = [];
+/* THE BLOCK, NOT A CHARACTER WINDOW. This read `app.slice(i, i + 900)` and that number is a guess
+   about the size of the thing being looked at — the trap this repo records for the camping panel,
+   the Logbook badge and the seed-route discipline read. It is already too small here: measured on
+   this tree, the "Show my real name publicly" switch sits 978 characters from its own gate, so if
+   that control were gated the scan would not have found its label. The gated region is delimited
+   by its own ternary, so it is balanced rather than guessed. Braces are counted over RAW source,
+   the way check:overlay-discovery does it: the comment/string blanker desynchronises on JSX
+   apostrophes, and every brace inside a style object is balanced anyway. */
+const blockAt = (i) => {
+  let d = 0;
+  for (let k = i; k < app.length; k++) {
+    if (app[k] === "{") d++;
+    else if (app[k] === "}" && --d === 0) return app.slice(i, k + 1);
+  }
+  return null;
+};
 for (const m of app.matchAll(/\{PRIVACY_CONTROLS_LIVE\?/g)) {
-  const w = app.slice(m.index, m.index + 900);
+  const w = blockAt(m.index);
+  if (!w) dead("a PRIVACY_CONTROLS_LIVE block does not close — the brace walk ran off the end of the file");
   const label = /aria-label="([^"]+)"/.exec(w) || /letterSpacing:0\.3\}\}>([A-Z][A-Z ]{4,})</.exec(w);
-  gated.push(label ? label[1] : "(unlabelled)");
+  /* An unnameable gated control is a BROKEN SCAN, not an unnamed one, and it has to be fatal
+     because of the OFFERED branch below: a control whose label is not found matches no entry, so
+     the entry looks not-gated, is classified OFFERED, and its promise test is SKIPPED — a document
+     promising a withheld control would stop being flagged, silently. */
+  if (!label) dead("a PRIVACY_CONTROLS_LIVE-gated block has no aria-label, so it cannot be matched to a promise entry and would be read as OFFERED rather than withheld");
+  gated.push(label[1]);
 }
 if (!gated.length) dead("no PRIVACY_CONTROLS_LIVE-gated block found in ClimbMatch.jsx — the scan is broken, and with no gated controls every comparison below passes vacuously");
 
@@ -108,21 +130,37 @@ const PROMISES = [
     re: /you control location sharing|approximate location only”? shares|"approximate location only" shares|location when you enable it/i },
   { control: "Who can see your profile",
     re: /governed by your privacy settings|the fields you choose to make visible|choose who can see your (?:full )?profile/i },
-  // "Show my real name publicly" WAS here, and it came out because the control came BACK. This
-  // list is of controls the app WITHHOLDS, so an entry is only correct while its switch is gated:
-  // #1540 gives that one a real column (0175), so it persists, reaches other climbers through
-  // pubName, and the Privacy §3 sentence promising it is now TRUE. That is the outcome this guard
-  // wants — its sibling entry was filed to the legal reviewer as F13 precisely because the policy
-  // described a choice the app had stopped offering, and the two ways to end that are to edit the
-  // policy or to restore the control. Restoring it is the better one where the app can.
+  /* RESTORED, and the note that removed it was wrong on a checkable fact. #1540 took this entry
+     out saying "the Privacy §3 sentence promising it is now TRUE". There is no such sentence:
+     #1536 had already closed F13 by AMENDING the document, so §3 now reads "your username, the
+     profile you fill in, and the trust signals" and the Privacy Policy contains the phrase "real
+     name" ZERO times. This entry's own regex matches neither document today — verified, not
+     assumed. So it is inert rather than true, and deleting it cost the question instead of
+     answering it: if the switch is ever gated again while a name-choice sentence exists, nothing
+     would notice. It stays, and the OFFERED branch below is what lets it stay without failing. */
+  /* The needle must match the wording the documents ACTUALLY carry, and the inherited one did not.
+     It was written against "your username or real name", which #1551 removed; #1557 puts the
+     choice back in a different shape — "your username, or your real name if you choose to show
+     it". Restoring the entry without widening it restores a branch that CANNOT FIRE, which is the
+     dead-coverage failure this file already records for its own first version. Measured, not read:
+     composed with #1557 and re-gating the switch, the narrow needle stayed silent and this one
+     fails naming the sentence. Both phrasings are matched, so it works either side of that PR. */
+  { control: "Show my real name publicly",
+    re: /your username,? or (?:your )?real name|your real name if you choose|choose(?:s)? (?:to show )?your real name/i },
   { control: "Toggle online status", re: /online status/i },
   { control: "Who can invite you to a crew", re: /who can invite you|crew invites? settings?/i },
 ];
 
-// A promise entry naming a control that no longer exists is stale bookkeeping, and it fails --
-// otherwise the entry silently stops asking its question. Every registry in this repo is held to
-// this; the reason it is needed HERE is that the entry's death is invisible from a green run.
-const stale = PROMISES.filter((p) => !gated.includes(p.control));
+/* A control leaves the gated set TWO ways and they need opposite treatment. The first version of
+   this test failed on "not gated", so #1540 making "Show my real name publicly" real reported the
+   entry as stale bookkeeping — and deleting the entry was the fix chosen. It is the wrong one:
+   nothing then re-arms if the control is gated again.
+     - GONE (no such aria-label anywhere): stale, and it fails. The entry can never fire again.
+     - OFFERED (present, just not behind the flag): fine. Section 1 asks whether a document
+       promises a control the app WITHHOLDS, so an offered control has no question to answer —
+       and the entry survives, so re-gating re-arms it. */
+const offered = PROMISES.filter((p) => !gated.includes(p.control) && app.includes(`aria-label="${p.control}"`)).map((p) => p.control);
+const stale = PROMISES.filter((p) => !gated.includes(p.control) && !offered.includes(p.control));
 if (stale.length) {
   dead(`${stale.length} promise entr(ies) name a control that is no longer gated, so they can never fire: ${stale.map((p) => `"${p.control}"`).join(", ")}. The app's gated labels are: ${gated.map((g) => `"${g}"`).join(", ")}. Re-key them, or drop the entry if the control is genuinely gone.`);
 }
@@ -133,11 +171,13 @@ for (const [name, text] of surfaces) {
     const m = p.re.exec(text);
     if (!m) continue;
     if (live) continue;   // a control that RENDERS may of course be described
+    if (offered.includes(p.control)) continue;   // ...and so may one taken out from behind the flag
     promises++;
     bad(`${name} describes "${p.control}", which the app renders as null: …${text.slice(Math.max(0, m.index - 70), m.index + m[0].length + 90).replace(/\s+/g, " ")}…`);
   }
 }
 if (!promises) ok(`none of the ${surfaces.length} surfaces promises any of the ${gated.length} controls behind the flag`);
+if (offered.length) ok(`${offered.length} entr(ies) name a control the app now OFFERS, so no document can be promising a control it withholds: ${offered.map((c) => `"${c}"`).join(", ")}`);
 
 /* The sheet also claimed a CAPABILITY rather than a control: "You can edit or clear anything from
    your profile and settings at any time." Measured false in two places -- `saveEdit` guards name
