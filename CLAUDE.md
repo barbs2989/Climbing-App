@@ -161,10 +161,20 @@ the total when deciding where a new guard belongs.
   merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
   a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
   defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
-- **The cheap version has already been taken twice**, and is what to try first on any new guard:
-  `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors instead
-  of twice, and `check:overlay-absence` was kept out of the build chain entirely (a CI job instead)
-  once its ~10s proved to be almost all Babel.
+- **The cheap version has already been taken three times**, and is what to try first on any new
+  guard: `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors
+  instead of twice; `check:overlay-absence` was kept out of the build chain entirely (a CI job
+  instead) once its ~10s proved to be almost all Babel; and `check:wp-styles` — the most expensive
+  guard in the chain — had the identical double-parse and now parses **3 times instead of 6**.
+  - **That was the LAST one, measured rather than assumed.** Every build-chain guard was scanned
+    for a second `parse()` of the same source and `check:wp-styles` was the only genuine hit. The
+    other three the scan reported are false positives of its own regex — two are `JSON.parse` of a
+    baseline file and one is `Date.parse` quoted inside a comment. So there is no remaining
+    free saving of this kind; what is left is the shared-runner refactor above, which is not free.
+  - **Verify such a change by OUTPUT, and by the PARSE COUNT — not by the clock.** The before/after
+    timing was attempted at load average 227 and read 110s against the 10.4s the same guard measures
+    on a quiet box, which is useless in both directions. What is load-independent is that the
+    guard's own counter goes 6 → 3 and its output is byte-identical.
 - **Measure it with `scripts/oneoff/measure-build-gate-cost.mjs`, on a quiet machine.** The number
   above is CPU-ish rather than wall clock deliberately: this box routinely runs several sessions at
   once, and a wall-clock profile taken at load average ~450 was off by 4x — recorded under
@@ -402,6 +412,28 @@ the total when deciding where a new guard belongs.
   - The guard **names the byte it forbids and must not contain one**, which is the cheapest possible
     self-test — and it is asserted, not assumed. The fix script and the injection harness obey the
     same rule through `String.fromCharCode(0)`.
+  - **IT WALKED TRACKED FILES ONLY, SO IT COULD NOT SEE THE FILE YOU ARE ABOUT TO COMMIT.** The
+    enumeration was a bare `git ls-files`, which lists the index — and an untracked file is exactly
+    the one whose diff this guard exists to protect. #1449 failed CI on a literal NUL in a script
+    written minutes earlier while this guard had **passed locally on the same tree**; the counts
+    said so and nobody read them (2003 files before `git add`, 2009 after, 2041 today).
+    - **Worst possible shape for THIS guard**, which is what makes it worth fixing rather than
+      noting: it runs **first** in the chain, so when it does fire in CI nothing else runs and the
+      PR shows one red check carrying no other information. Locally green, remotely red, on a file
+      the author has in front of them.
+    - `--cached --others --exclude-standard` adds untracked files while still honouring
+      `.gitignore`, so `node_modules`, `dist` and the `.env` dotfiles stay out; `EXTS` already
+      limits the walk to source types, so nothing binary is dragged in either.
+    - **`audit:silent-reverts` uses a BARE `ls-files` and must keep doing so** — it asks what
+      exists at HEAD, and an untracked file has no history to have been reverted from. Measured:
+      those two are the only `ls-files` callers in the repo, so this is a **class of one** and no
+      sweep is warranted.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-no-nul-untracked-cases.mjs`). The defect is
+      reproduced by **reverting** the fix rather than by assuming the unfixed tree, so the suite
+      keeps meaning something once the fix is in — the first version asserted "BEFORE the fix the
+      guard passes", went red the moment the fix landed, and was testing the tree rather than the
+      guard. **Case 3 must stay SILENT**: a widening that fired on ordinary untracked files would
+      be worse than the gap it closes.
   - Fails **closed**: fewer than 500 source files found is reported as a broken walk, never as a
     clean tree. Injection-tested 4/4 (`scripts/oneoff/inject-nul-byte-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must PASS** —
@@ -1046,11 +1078,31 @@ the total when deciding where a new guard belongs.
       from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
       (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
-      - **`toposUnavailable` is MASKED to THIS guard, and `check:topo-outage-copy` is what proved it.** Overview is
-        already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
-        topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
+      - **`toposUnavailable` is MASKED to THIS guard, and it has now been PROVEN both ways.**
+        Overview is already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether
+        or not the topos copy flips, and `check:topo-outage-copy` proves the copy statically.
+        Isolating it here needs a run failing only that read — **`ONLY=topos`**, not
         `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
+        - **Measured over three runs, 2026-09-02**: it intercepts (4 blocked, 80 through) and
+          reports `RouteDetail` **5,018 → 5,031 says-broken=YES** identically every time, with
+          `RouteDetail:Conditions` and `:Photos` IDENTICAL — so the flag flips on Overview, the
+          screen acknowledges the fault, and neither sub-tab is fed by that read. The guard's own
+          comment had said `ONLY=topo_photos` (a storage bucket, not a PostgREST path at all) and
+          that the mode could not clear a `>=3` floor, which **#1262 had already scoped to 1**.
+          Two stale reasons kept a five-minute measurement unmade for months.
+        - **`ONLY=` ALSO FAILS ON ONE ARBITRARY UNRELATED SCREEN PER RUN, so read the table rather
+          than the exit code.** Those three runs failed on Ranks, Ranks and Crew:Groups — and Ranks
+          reproduced its exact counts (1,170 → 1,148) **twice** before coming back IDENTICAL on the
+          third. *Two agreeing runs are not determinism*, and a **catch** on a loaded box is no
+          more evidence than the miss this file already records. Nothing on those screens can read
+          topos: `useAreaTopos` has one call site, in `RouteDetail`, and Ranks is captured before
+          the route page is opened. The mechanism is `waitOutFetch`, which in the failing run
+          re-settles only while a **spinner** is on screen — enough under a blanket outage where
+          every read fails fast, not enough under `ONLY=` where the other 80 reads are still in
+          flight with no spinner to wait out. Deliberately unfixed: the repair is a more patient
+          settle, it costs a settle per screen in the CI blanket run that has already timed out
+          once, and CI never invokes `ONLY=`.
       - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
         — and no flag lives on them. Click one when a flag lands on it.
       - **A FLAG HAS LANDED ON CONDITIONS, AND CLICKING IT IS HARDER THAN THIS NOTE IMPLIES.**
@@ -1106,17 +1158,22 @@ the total when deciding where a new guard belongs.
           — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
           applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
           5,026 and Photos' 678.
-        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
-          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
-          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
-          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
-          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
-          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
-          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
-          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
-          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
-          unverified fix alongside the walk would put main red. **Land the caveat first, then the
-          walk.**
+        - **THE WALK FOUND A REAL DEFECT ON ITS FIRST CI RUN, AND BOTH HALVES SHIPPED TOGETHER IN
+          #1453.** Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and
+          said nothing was wrong** — rule 1, on the very screen the walk was added to cover. The
+          cause: `activity` is `route.activity + myReports + dbReports`, so a failed reports read
+          drops the DB half and `buildConsensus` runs on what is left, presenting a **partial**
+          derived safety judgement as complete. `ConsensusPanel` already received
+          `reportsUnavailable` and consulted it **only on the empty branch**, so exactly this case
+          was silent. It now carries *"Some reports couldn't load, so this is based on the ones
+          that did — not on everything filed for this route."*
+          - **This entry read "STILL NOT SHIPPED … land the caveat first, then the walk" for as
+            long as both were live on main**, which is the
+            [[an-audits-advice-rots-faster-than-its-counts]] shape landing on a guard entry rather
+            than on an audit. A stated blocker that has since cleared is worse than no note: it
+            sits in the worklist looking like work, and the next session re-derives a fix that is
+            already there. When a limitation here is acted on, come back and replace it with the
+            measurement.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
@@ -6970,6 +7027,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     notes of which **44** are water and place names. A citation is a **counted or qualified plural**
     (*"multiple sources"*) or **sources doing something** (*"sources describe"*). That distinction
     takes the waypoint-note count from 45 to 1.
+  - **NARROWED 2026-09-02 BY THE USER: "per trip reports" NAMES NO THIRD PARTY, and the audit had
+    been reporting its own convention back as a defect. 101 → 34.** The headline question is
+    whether prose *"names a third party as the source of a claim"*, and by that test the phrase was
+    a false positive — **67 of 101 findings** — while being the wording this sweep spent eighteen
+    PRs deliberately converting **to**, on the stated reasoning that a category is not a source and
+    that it tells a reader a number is INFERRED rather than counted.
+    - **The split was measured, not assumed** (`classify-remaining-citation-findings.mjs`), and the
+      three surviving shapes are not the same question: **2** name an actual publisher and are
+      documented keeps (the guidebook in the reader's own hands; *"Green Trails / CalTopo map and
+      compass"*, a gear line saying WHICH map to buy); **16** put the word *"source"* in front of a
+      climber (*"sources differ"*, *"no source gives a season"*), which is the app-facing thing the
+      no-sources rule is actually about; and **12** are other sourcing acts.
+    - **DO NOT extend the narrowing to `sources? (differ|describe|…)` on the grounds that it names
+      nobody either.** Considered and rejected: those say *"source"* on screen, which a bare
+      category does not. The two look alike and are different questions.
+    - **That last bucket of 12 is NOT noise, which is why it stays**: it holds the last real
+      citations in the catalog — two *"Verified via SpokAlpine"* values naming a publisher `NAMED`
+      has never known about. A tidier-looking narrowing would have buried them.
+    - **The ambiguity was in the QUESTION, and the preview is what settled it.** The option offered
+      to the user named both *"per trip reports"* and *"sources differ"* while its worked example
+      showed 101 → ~34 — arithmetic that removes only the first. The number they compared is the
+      contract; a strict reading of the label would have taken it to ~2 and deleted the SpokAlpine
+      findings. **When an option's label and its preview disagree, the preview is what was chosen.**
+    - Injection-tested as a **PAIR**, and the pair is the point: `--inject=tripcategory` must report
+      **0** and `--inject=tripnamed` must report **every** value, on the same sentence differing
+      only in whether the thing after *"per"* is a category or a masthead. Either case alone is
+      satisfied by a needle that matches nothing, or everything.
   - **The count is a FLOOR, not a total, and this was proven rather than hedged.** It is a deny-list
     of publisher names, and one more phrasing beats it: the first sweep declared 33 and repaired 32,
     then widening the sourcing-act pattern immediately surfaced **five more on four routes**,

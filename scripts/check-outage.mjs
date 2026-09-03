@@ -201,12 +201,43 @@ const ROUTE = "RouteDetail";
 //
 // So: walking a screen nothing has walked is worth doing independently of why you walked it.
 //
-// WHAT IS STILL UNPROVEN, stated because the wrong reason above would otherwise read as settled:
-// `toposUnavailable` is masked. It renders on Overview, and Overview is already says-broken=YES
-// from `reportsUnavailable`, so rule 1 is satisfied whether or not the topos copy ever flips.
-// Proving it needs a run that fails ONLY the topos read -- `ONLY=topo_photos` -- and that mode
-// cannot currently pass its own fail-closed floor (it demands >=3 screens differ and exists to
-// make one differ). Read its per-screen table, not its exit code. Nothing has yet asked this.
+// `toposUnavailable` IS MASKED TO THIS GUARD AND HAS NOW BEEN ASKED SEPARATELY. It renders on
+// Overview, and Overview is already says-broken=YES from `reportsUnavailable`, so rule 1 is
+// satisfied whether or not the topos copy ever flips. Isolating it needs `ONLY=topos`, and
+// measured over three runs on 2026-09-02 that mode intercepts (4 reads blocked, 80 let through)
+// and reports, IDENTICALLY EVERY TIME:
+//
+//     RouteDetail             healthy 5018ch  failing 5031ch  CHANGED  says-broken=YES
+//     RouteDetail:Conditions  healthy 3388ch  failing 3388ch  IDENTICAL
+//     RouteDetail:Photos      healthy  678ch  failing  678ch  IDENTICAL
+//
+// So the flag flips on Overview and the screen acknowledges the fault, Conditions is untouched by
+// this read, and Photos is untouched -- which is the point the entry two bullets down already
+// makes from the other side: topos render in TopoSection on OVERVIEW, not on the Photos tab.
+//
+// THE TABLE IS `topos`, NOT `topo_photos`, and this comment said the wrong one for months.
+// `useAreaTopos` selects `.from("topos")`; `topo_photos` is a storage bucket and is not a
+// PostgREST path at all, so that mode intercepted NOTHING and the guard would have said so.
+// `topo_lines` is EMBEDDED in the same query string, and ONLY matches the path segment after
+// /rest/v1/ rather than a substring, so naming it would miss too.
+//
+// AND THE OLD REASON FOR NOT RUNNING IT WAS ALSO STALE: the floor has not demanded >=3 differing
+// screens under ONLY= since #1262, which scoped it to 1 for exactly this mode.
+//
+// WHAT IS ACTUALLY WRONG WITH `ONLY=` IS A FLAKE, AND IT IS WORTH KNOWING BEFORE YOU BELIEVE A
+// RED ONE. Each of those three runs also failed on ONE arbitrary screen that had nothing to do
+// with topos -- Ranks, Ranks, then Crew:Groups -- and Ranks reproduced its exact character counts
+// (1170 -> 1148) TWICE before coming back IDENTICAL on the third run. Two agreeing runs are not
+// determinism. Nothing on those screens can read topos: `useAreaTopos` is called once, in
+// RouteDetail, and Ranks is captured BEFORE the route page is ever opened.
+//
+// The mechanism is `waitOutFetch` below: in the failing run it re-settles only while a SPINNER is
+// on screen. Under a blanket outage every read fails fast, so that is enough. Under `ONLY=` the
+// other 80 reads still succeed, so a screen can settle with content genuinely in flight and no
+// spinner to wait out, and gets captured short. Deliberately NOT fixed here: the honest repair is
+// a more patient settle, that costs a settle per screen in the CI blanket run which has already
+// timed out once, and `ONLY=` is a hand-use mode that CI never invokes. Read the per-screen table
+// and re-run before believing any single ONLY= failure.
 //
 // The other four sub-tabs stay unwalked: no flag lives on them, and each is two more settles in
 // each of two runs. That is a cost decision, not a claim they are fine.

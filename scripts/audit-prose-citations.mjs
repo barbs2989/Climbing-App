@@ -59,7 +59,33 @@ const ROAD_ACCESS = [["road", "status"], ["road", "seasonalGate"], ["road", "dri
 const COMMON_NOUN = /\bpeakbaggers\b|\bpeakbagger\b|\bPeakbaggers\b|\bpeakbagging\b|\bPeakbagging\b/g;
 const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
 
-const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
+// FOUR FAMILIES WERE MISSING, AND THE SWEEP WAS DECLARED CLOSED WITHOUT THEM. This list is a
+// DENY-LIST, and its own note two paragraphs down already says the count is a FLOOR and to
+// "re-scan with a different pattern before calling the class closed". That was not done: #1480
+// reported "the publisher half is closed, 1 masthead left" measured with THIS regex, which is
+// circular — a deny-list cannot audit itself. Scanning for shapes it does not list found, in WA:
+//
+//     AAJ / American Alpine Journal          18 values
+//     "The Mountaineers" (only Mountaineers.org was listed)  29
+//     Climber's Guide to the Olympic Mountains               7
+//     a literal "Source:" prefix                              1
+//
+// The last one is the sharpest: wa_mount_steel_standard's `face` reads "West (the standard line
+// climbs the amphitheater on the west side of the peak). SOURCE: Climbers Guide to the Olympic
+// Mountains route description, consistent with the route's own aspect field." A rendered field
+// that names its source with the word "Source:" AND then names a database column.
+//
+// TWO CANDIDATES WERE MEASURED AND DELIBERATELY LEFT OUT. "Fifty Classic Climbs" is a LIST THIS
+// APP ITSELF RENDERS (`fifty_classics`, and its own copy names the book), so a route saying it is
+// on that list is stating a fact about the route, not citing a source. "Selected Climbs" matches
+// ZERO values in WA - a detector for a class of nothing.
+//
+// "THE MOUNTAINEERS" IS OFTEN AN OPERATOR, NOT A PUBLISHER, and this file already states that
+// rule for clubs: "especially when The Mountaineers or other clubs run scheduled trips" is a fact
+// about who climbs a peak. But "The Mountaineers route page: 'Descend by rappelling and
+// downclimbing the route'" is a citation. Same word, both kinds, so this stays a READING LIST -
+// which is what this audit is - and must not be swept on the pattern alone.
+const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|\bThe Mountaineers\b|WenatcheeOutdoors|\bAAJ\b|American Alpine Journal|\bAAC\b|American Alpine Club|Climber'?s Guide|Cascade Alpine Guide|Cascade ?Climbers|NWHikers|TrailCatJim|SuperTopo|SpokAlpine|SkiSickness|Steph ?Abegg|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
 // HERE: waypoint notes say "reliable water source" and "Source Lake" (a real place in the Alpental
@@ -76,7 +102,33 @@ const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakba
 // They are safe to add BECAUSE THEY ARE INFORMATIONAL VERBS. The water-source trap this comment
 // already warns about does not reach them: a creek can BE a source and can be seasonal, but it
 // cannot differ on an elevation or fail to document a length.
-const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b/i;
+//
+// NARROWED 2026-09-02 BY THE USER: "per trip reports" NAMES NO THIRD PARTY, so this pattern no
+// longer matches it. The audit's headline question is whether prose "names a third party as the
+// source of a claim", and by that test the phrase was a false positive -- 67 of 101 findings, and
+// it is the phrasing this sweep spent eighteen PRs deliberately converting TO, on the reasoning
+// that a category is not a source and that it tells a reader a number is INFERRED rather than
+// counted. The audit was reporting its own convention back as a defect. 101 -> 34.
+//
+// WHAT DELIBERATELY STAYS, because the split was measured rather than assumed
+// (classify-remaining-citation-findings.mjs) and the three surviving shapes are not the same:
+//   * 2 name an actual publisher and are documented keeps (the guidebook in the reader's hands,
+//     and "Green Trails / CalTopo map and compass" -- a gear line saying WHICH map to buy).
+//   * 16 put the word "source" in front of a climber -- "sources differ", "no source gives a
+//     season". That is the app-facing thing the no-sources rule is actually about, so a bare
+//     category and a visible "source" are different questions however similar they look here.
+//   * 12 are other sourcing acts, and that bucket is NOT noise: it holds the last real citations,
+//     two "Verified via SpokAlpine" values naming a publisher NAMED has never known about.
+// A LITERAL "Source:" LABEL IS A SEPARATE ALTERNATIVE, added 2026-09-02 alongside the narrowing
+// above and not affected by it: it names the ACT with a colon rather than the category. 5 values
+// in WA, and the sharpest is wa_mount_steel_standard's `face` -- "Source: Climbers Guide to the
+// Olympic Mountains route description, consistent with the route's own aspect field." Lookbehinds
+// exclude "water source:" and "heat source:", tested on five shapes.
+//
+// So do NOT extend this narrowing to `sources? (differ|describe|...)` on the grounds that it too
+// names nobody. It was considered and rejected: those say "source" on screen.
+const ACT =/\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b|(?<!water )(?<!heat )\bSources?:/i;
+
 // Go and look at this yourself, now — operational, and it must never be swept.
 /* `data_quality` IS DELIBERATELY NOT SCANNED, and it is the whole reason this widening had to be
    measured rather than swept. It carries 288 of the 302 hits -- by far the largest column -- and
@@ -123,12 +175,16 @@ const EXEMPT = [
   // "East Ridge/Beckey Route" needed an exemption until NAMED was tightened to require a guide word
   // beside the name; it is now excluded BY CONSTRUCTION and an entry here would report as stale.
   ["wa_wolframite_mountain_scramble", "access.rules", "three associations named as the volunteers who MAINTAIN the mine site — content, not a source"],
-  /* Names SummitPost as the thing that will MISLEAD you, not as the authority behind a claim:
-     "Do not confuse this peak with the SummitPost page for Chimney Peak in the Selway Crags,
-     Idaho — search engines mix the two constantly and the Idaho route beta is useless here."
-     The publisher IS the content; cut it and the warning means nothing. Same family as the kept
-     "don't trust the Gaia road line" values, and it is a namesake confusion — the failure this
-     catalog has paid for repeatedly at the level of route ids. */
+  /* WHERE A GENERIC FORM LOSES NOTHING, THE BROADER INSTRUCTION WINS — #1462's test, and it
+     retired an exemption I had added hours earlier. I exempted wa_chimney_peak_the_chimney
+     pro_tips[1] on the grounds that "the SummitPost page for Chimney Peak in the Selway Crags"
+     names the page that MISLEADS you, so the publisher IS the content. #1462 cut the name, and
+     the warning survives intact: "Do not confuse this peak with Chimney Peak in the Selway
+     Crags, Idaho — search engines mix the two constantly and the Idaho route beta is useless
+     here" says everything the longer form said. The masthead was carrying nothing.
+     The DECISION above still stands and is a different shape: a POINTER sends the reader
+     somewhere useful, and cutting the destination destroys it. A WARNING not to trust something
+     usually survives the cut, because the reason not to trust it is the part doing the work. */
 ];
 
 const rows = await selectAll("routes", "id,name,road,access,waypoints", `id=like.${STATE}_*`, { pageSize: 1000 });
@@ -175,7 +231,13 @@ const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_te
      corpus from 126,112 values to 153,869 and inflated the headline while finding nothing new.
      READ THE OUTPUT'S SECTION HEADINGS BEFORE WIDENING A COLUMN LIST.
      `data_quality` is excluded for the opposite reason -- see the note above LIVE. */
-  "fa"];
+  "fa",
+  /* ADDED 2026-09-02. `face` renders as its OWN CARD on Overview under the heading
+     FACE / WHERE ON THE PEAK — 1,035 WA routes, prose up to 247 characters — and had never
+     been scanned. It held the only literal "Source:" in the catalog, an AAJ citation and a
+     named guidebook. A column that renders prose and is not in this list is invisible by
+     construction, which is how the rack columns hid 132 citations until #1422. */
+  "face"];
 function leaves(v, out = []) {
   if (typeof v === "string") { if (v.trim()) out.push(v); return out; }
   if (Array.isArray(v)) { for (const x of v) leaves(x, out); return out; }
@@ -200,6 +262,12 @@ if (!values.some(v => v.kind === "route prose")) { console.error("FAIL — 0 rou
 if (INJECT === "cite") { values[0].text = "The road is open to the trailhead, per SummitPost and several trip reports."; console.log(`[inject] a citation onto ${values[0].id} ${values[0].field}`); }
 if (INJECT === "commonnoun") { for (const v of values) v.text = "Rarely climbed; occasional peakbagger visits, and Bulger-list peakbaggers tag it from a shared high camp."; console.log("[inject] every value uses the COMMON NOUN peakbagger(s) and cites nobody; the citation count must be 0"); }
 if (INJECT === "thesite") { for (const v of values) v.text = "Peakbagger lists four logged ascents for this peak, and Peakbagger's page gives the elevation."; console.log("[inject] every value names the SITE Peakbagger; every value must be reported"); }
+/* THE NARROWING NEEDS BOTH DIRECTIONS OR IT IS NOT PINNED. `tripcategory` alone is satisfied by a
+   needle that matches nothing at all, and `tripnamed` alone by one that matches everything; only
+   the pair says the boundary is where it is meant to be. Same sentence in each, differing solely
+   in whether the thing after "per" is a category or a masthead. */
+if (INJECT === "tripcategory") { for (const v of values) v.text = "Expect 3-5 rappels per trip reports, and treat the count as approximate."; console.log("[inject] every value says 'per trip reports' and names NO third party; citations must be 0"); }
+if (INJECT === "tripnamed") { for (const v of values) v.text = "Expect 3-5 rappels per SummitPost, and treat the count as approximate."; console.log("[inject] the same sentence naming a PUBLISHER; every value must be reported"); }
 if (INJECT === "livedash") { for (const v of values) v.text = "Okanogan County Sheriff non-emergency dispatch: 509-422-7232, or call 911."; console.log("[inject] every value carries a BARE-DASH phone number and cites nobody; citations must be 0 and live must be every value"); }
 if (INJECT === "liveonly") { for (const v of values) v.text = "Call the Mt. Baker Ranger District at (360) 854-2553 and check fs.usda.gov/alerts before driving."; console.log("[inject] every value is a LIVE reference; the citation count must be 0 and the live count must be every value"); }
 
