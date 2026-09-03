@@ -62,6 +62,7 @@ npm run check:log  # BOTH climb_logs hydrations keep every column worth showing 
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
+npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -1066,6 +1067,47 @@ the total when deciding where a new guard belongs.
   - **Length is worthless here and every assertion is on text.** The populated inbox is ~48
     characters and the EMPTY one ~117, because the empty state carries the explanatory copy — the
     numbers run backwards from the intuition, which `check:signed-in`'s entry already records.
+- **`check:block-guarantees`** runs the three block promises **as two real climbers**. The
+  Blocked-climbers screen says a blocked climber *"can't message you, add you to a crew, or open
+  your profile from their account"*, and three migrations implement that — **and all three say in
+  their own text that the behaviour was never exercised.** `0095` is explicit: *"BEHAVIOUR CANNOT
+  BE PROVEN WITH ONE ACCOUNT … Until that is run, this is reviewed and reasoned, NOT verified."*
+  That is a stated limitation, and this repo reads one as a worklist. **The machinery already
+  existed** — `scripts/lib/ui-fixture.mjs` creates two real accounts for `check:signed-in` — it had
+  simply never been pointed at these. **Result: all three hold.**
+  - **WHY ONE ACCOUNT CANNOT ANSWER IT, from `0095`'s own header, and it is the most transferable
+    thing here.** An RLS subquery is evaluated as the **calling** role, and `0088` restricts reading
+    `blocked_users` to the **blocker** — so the obvious policy runs its subquery *as the blocked
+    party*, finds nothing, `not exists` is true, and the profile is returned. *"The policy would
+    look present, pass review, and enforce nothing."* The escape is a `SECURITY DEFINER` function.
+    None of that is observable from one account, and the **service role bypasses RLS entirely**, so
+    a service-key probe reports success either way.
+  - **The service key creates the two accounts and touches nothing else.** Every read and write
+    under test goes through the **anon key plus that climber's own JWT**, which is the entire
+    question — the rule `check:signed-in` already records from the other side.
+  - **CONTROLS RUN FIRST, BEFORE ANY BLOCK, and they are the non-vacuity proof.** *"0 rows after
+    blocking"* means nothing unless the same read returned a row before it: RLS could be refusing
+    for an unrelated reason, which is precisely the always-passing guard `0095` warns about. And
+    the profile read is re-checked **after unblocking**, so a refusal is attributable to the block
+    rather than to something else breaking mid-run.
+  - It also asserts **neither refusal names the block**. Confirming a block *to the blocked party*
+    is the leak the read policy exists to prevent, and both migrations say so in their own comments.
+  - **`crews` HAS NO `name` COLUMN** — the first run died `PGRST204` on a guessed payload. Read
+    `scripts/schema-snapshot.json` rather than assuming; the columns are `created_by`, `route_id`,
+    `dates`, `cap`, `meet_place`, `meet_time`, `float_plan`, `agreed_date`, `date_forced`,
+    `dismissed`.
+  - **`process.exit()` SKIPS `finally`**, so the first failure leaked two accounts and a crew — the
+    teardown never ran. Its `dead()` throws now. `sweepOrphans` is the backstop and is age-gated at
+    45 minutes, so a leak is bounded rather than permanent, but a script that cannot clean up after
+    its own failure is one that leaks every time it is useful.
+  - **Hand-run, and declared in `check:guard-wiring`'s `EXCLUDED` with the measurement.** CI must
+    never hold the service key; and the durable CI pair is **not** a substitute, because the run
+    **blocks one of them** — a concurrent guard signed in as that account would be locked out of
+    the other's profile mid-walk. Its control leg also inserts a `messages` row, and `messages` has
+    **no DELETE policy**: on per-run accounts that goes with the cascade, against the durable pair
+    it would leak one per run forever, exactly as `check:message-delivery` records.
+  - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
+    `crew_members`.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
