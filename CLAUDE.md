@@ -412,6 +412,28 @@ the total when deciding where a new guard belongs.
   - The guard **names the byte it forbids and must not contain one**, which is the cheapest possible
     self-test — and it is asserted, not assumed. The fix script and the injection harness obey the
     same rule through `String.fromCharCode(0)`.
+  - **IT WALKED TRACKED FILES ONLY, SO IT COULD NOT SEE THE FILE YOU ARE ABOUT TO COMMIT.** The
+    enumeration was a bare `git ls-files`, which lists the index — and an untracked file is exactly
+    the one whose diff this guard exists to protect. #1449 failed CI on a literal NUL in a script
+    written minutes earlier while this guard had **passed locally on the same tree**; the counts
+    said so and nobody read them (2003 files before `git add`, 2009 after, 2041 today).
+    - **Worst possible shape for THIS guard**, which is what makes it worth fixing rather than
+      noting: it runs **first** in the chain, so when it does fire in CI nothing else runs and the
+      PR shows one red check carrying no other information. Locally green, remotely red, on a file
+      the author has in front of them.
+    - `--cached --others --exclude-standard` adds untracked files while still honouring
+      `.gitignore`, so `node_modules`, `dist` and the `.env` dotfiles stay out; `EXTS` already
+      limits the walk to source types, so nothing binary is dragged in either.
+    - **`audit:silent-reverts` uses a BARE `ls-files` and must keep doing so** — it asks what
+      exists at HEAD, and an untracked file has no history to have been reverted from. Measured:
+      those two are the only `ls-files` callers in the repo, so this is a **class of one** and no
+      sweep is warranted.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-no-nul-untracked-cases.mjs`). The defect is
+      reproduced by **reverting** the fix rather than by assuming the unfixed tree, so the suite
+      keeps meaning something once the fix is in — the first version asserted "BEFORE the fix the
+      guard passes", went red the moment the fix landed, and was testing the tree rather than the
+      guard. **Case 3 must stay SILENT**: a widening that fired on ordinary untracked files would
+      be worse than the gap it closes.
   - Fails **closed**: fewer than 500 source files found is reported as a broken walk, never as a
     clean tree. Injection-tested 4/4 (`scripts/oneoff/inject-nul-byte-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. **Case 2 must PASS** —
@@ -7005,6 +7027,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     notes of which **44** are water and place names. A citation is a **counted or qualified plural**
     (*"multiple sources"*) or **sources doing something** (*"sources describe"*). That distinction
     takes the waypoint-note count from 45 to 1.
+  - **NARROWED 2026-09-02 BY THE USER: "per trip reports" NAMES NO THIRD PARTY, and the audit had
+    been reporting its own convention back as a defect. 101 → 34.** The headline question is
+    whether prose *"names a third party as the source of a claim"*, and by that test the phrase was
+    a false positive — **67 of 101 findings** — while being the wording this sweep spent eighteen
+    PRs deliberately converting **to**, on the stated reasoning that a category is not a source and
+    that it tells a reader a number is INFERRED rather than counted.
+    - **The split was measured, not assumed** (`classify-remaining-citation-findings.mjs`), and the
+      three surviving shapes are not the same question: **2** name an actual publisher and are
+      documented keeps (the guidebook in the reader's own hands; *"Green Trails / CalTopo map and
+      compass"*, a gear line saying WHICH map to buy); **16** put the word *"source"* in front of a
+      climber (*"sources differ"*, *"no source gives a season"*), which is the app-facing thing the
+      no-sources rule is actually about; and **12** are other sourcing acts.
+    - **DO NOT extend the narrowing to `sources? (differ|describe|…)` on the grounds that it names
+      nobody either.** Considered and rejected: those say *"source"* on screen, which a bare
+      category does not. The two look alike and are different questions.
+    - **That last bucket of 12 is NOT noise, which is why it stays**: it holds the last real
+      citations in the catalog — two *"Verified via SpokAlpine"* values naming a publisher `NAMED`
+      has never known about. A tidier-looking narrowing would have buried them.
+    - **The ambiguity was in the QUESTION, and the preview is what settled it.** The option offered
+      to the user named both *"per trip reports"* and *"sources differ"* while its worked example
+      showed 101 → ~34 — arithmetic that removes only the first. The number they compared is the
+      contract; a strict reading of the label would have taken it to ~2 and deleted the SpokAlpine
+      findings. **When an option's label and its preview disagree, the preview is what was chosen.**
+    - Injection-tested as a **PAIR**, and the pair is the point: `--inject=tripcategory` must report
+      **0** and `--inject=tripnamed` must report **every** value, on the same sentence differing
+      only in whether the thing after *"per"* is a category or a masthead. Either case alone is
+      satisfied by a needle that matches nothing, or everything.
   - **The count is a FLOOR, not a total, and this was proven rather than hedged.** It is a deny-list
     of publisher names, and one more phrasing beats it: the first sweep declared 33 and repaired 32,
     then widening the sourcing-act pattern immediately surfaced **five more on four routes**,

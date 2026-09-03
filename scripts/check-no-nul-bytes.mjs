@@ -23,7 +23,19 @@ import { execFileSync } from "node:child_process";
 const ROOT = new URL("..", import.meta.url).pathname;
 const EXTS = /\.(jsx?|mjs|cjs|tsx?|json|md|sql|ya?ml|html|css|txt|sh)$/;
 
-const files = execFileSync("git", ["ls-files"], { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 })
+/* --cached --others --exclude-standard, NOT a bare `ls-files`, AND THE DIFFERENCE COST A CI CYCLE.
+   A bare ls-files lists TRACKED files only, so a file written but not yet `git add`ed is invisible
+   — which is exactly the file whose diff this guard exists to protect. #1449 failed CI on a
+   literal NUL in a script written minutes earlier, while this guard had passed locally on the same
+   tree; the counts said so and nobody read them (2003 files before `git add`, 2009 after). Worst
+   possible shape for THIS guard specifically: it runs first in the chain, so when it fires in CI
+   nothing else runs and the PR shows one red check carrying no other information.
+   `--others` adds untracked files; `--exclude-standard` still honours .gitignore, so node_modules,
+   dist and the .env dotfiles stay out, and EXTS above already limits the walk to source types.
+   `audit:silent-reverts` uses a BARE ls-files and must keep doing so — it asks what exists at
+   HEAD, and an untracked file has no history to have been reverted from. Measured: those two are
+   the only ls-files callers in the repo, so this is a class of one. */
+const files = execFileSync("git", ["ls-files", "--cached", "--others", "--exclude-standard"], { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 })
   .split("\n").filter((f) => f && EXTS.test(f));
 
 // Fails CLOSED. The healthy output of this guard is "nothing found", which is also what a broken
