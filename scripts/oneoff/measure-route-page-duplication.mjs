@@ -19,6 +19,32 @@
 //
 // Real rows, not fixtures: a fixture proves the renderer works on invented data, and this class is
 // about which of a real row's ~95 columns collide on screen. Reads the DB, so not a build gate.
+//
+// ── EVERY GROUP THIS PRODUCED, TRIAGED 2026-09-03. One real, three legitimate, one artifact.
+// Recorded because the counts alone invite a sweep, and four fifths of them should not be swept.
+//
+//   REAL, and FIXED (#1514)  `timing` + `itinerary` — the same day-plan legs stored in both and
+//       both rendered on Planner. `timing.sectionBreakdown[i]` mirrors `itinerary.days[i]` field
+//       for field (`fromTo`==`title`, `hrs`==`hours`, `note`==`note`) on 503 of 522 non-crag
+//       routes, and on 497 the sectionBreakdown note is TRUNCATED — the second copy was worse.
+//
+//   ARTIFACT of this script  `access` — matching a 60-char PREFIX found it inside a LONGER stored
+//       value (`land_manager` inside `notes`). Fixed here by the containment filter below; the
+//       page was correct all along.
+//
+//   LEGITIMATE  `waypoints` on planner+safety, and twice on safety. Read on screen: a named place
+//       appears under "Forecast at key points", again in the bail-out list ("inferred from nearby
+//       waypoints"), and again in the approach block. Three different questions about one place,
+//       not a section printed twice.
+//
+//   LEGITIMATE  `rappel_detail` x3 on one Planner — R2, R4 and R5 are three separate stations
+//       that happen to share an anchor description ("natural sling on chockstone/horn").
+//
+//   A CLASS OF THREE, not a class  two prose columns sharing an OPENING clause and then
+//       diverging. Sized by measure-prose-shared-openings.mjs: 3 routes in 1,086. Not swept.
+//       NOTE ITS LIMIT: it compares shared PREFIXES, so it does not cover a shared clause that
+//       starts mid-value — which is what wa_a_servant_to_liberty actually has (`overview` opens
+//       "Also published as…" and then repeats `beta`'s first sentence). That shape is unmeasured.
 import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -145,4 +171,5 @@ console.log(`  a stored value printed TWICE on ONE tab: ${sameTab}`);
 console.log(`  a stored value printed on TWO tabs:      ${twoTabs}`);
 console.log("\nCANDIDATES, NOT DEFECTS. Some repetition is correct — a grade belongs in the header");
 console.log("strap and in the grades panel, and `hazards` is deliberately merged from three columns.");
-console.log("Read each with its surroundings before changing anything.");
+console.log("Read each with its surroundings before changing anything. THE 2026-09-03 TRIAGE OF");
+console.log("EVERY GROUP THIS PRODUCED IS IN THIS FILE'S HEADER — read it before re-investigating.");
