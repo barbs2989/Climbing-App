@@ -12297,3 +12297,97 @@ WebFetch was blocked for every route-database/guidebook domain attempted this ba
 with batch 177's note; all research relied on WebSearch synthesis.
 
 Next batch continues from `wa_bacon_peak_diobsud` onward alphabetically (pass 4).
+
+## Batch 179 (2026-09-03, pass 4)
+
+Routes: `wa_baring_mountain_northwest_ridge`, `wa_baring_mountain_r1`,
+`wa_bear_mountain_chilliwack_north_buttress`, `wa_beckey_davis`,
+`wa_beckey_tate`, `wa_beyond_redlining`, `wa_big_four_mountain_northwest_ridge`,
+`wa_big_four_mountain_spindrift_couloir`.
+
+**Confirmed errors fixed (6, across 5 rows) — see `audits/sql/2026-09-03-batch-179.sql`:**
+
+1. `wa_baring_mountain_northwest_ridge` — the "Barclay Lake Trailhead" waypoint
+   stored lat/lng roughly 500m from the real trailhead. This batch's sibling
+   route, `wa_baring_mountain_r1`, stores the identical named trailhead at
+   47.7923,-121.4592, which exactly matches the coordinates web search turned
+   up independently (WTA/AllTrails/USFS-derived, end of gravel FS Road
+   6024/Barclay Creek Road off US-2 near Baring). Corrected to that value.
+2. `wa_beckey_davis` — the Stuart Lake Trailhead waypoint's own note
+   contradicted itself in one sentence: "Alternate access only, used when the
+   standard ... approach is closed" immediately followed by "Stuart Lake
+   Trailhead is the standard/preferred access." This row's own `approach`
+   field settles it plainly ("Standard access is via ... Stuart Lake
+   Trailhead ...", with a seasonal-closure caveat pointing to the longer Snow
+   Lakes/Lake Viviane alternative). Rewrote the note to state that without
+   self-contradiction, using nothing beyond what the row's own approach text
+   already says.
+3. `wa_beyond_redlining` — `fa` read "Rad Roberts and Kurt Hicks, May 2020,"
+   contradicting this same row's own `overview` field ("Established ... in
+   July 2020"). AAC Publications externally confirms the first free ascent
+   was July 11, 2020 (published in the 2021 AAJ). Corrected `fa` to "Rad
+   Roberts and Kurt Hicks, July 11, 2020."
+4. `wa_beyond_redlining` — `high_point_ft` was null despite this row's own
+   overview/descent_text both stating the route "tops out on the same summit
+   as Mile High Club." The sibling route `wa_mile_high_club` (not in this
+   batch) already stores `high_point_ft = 5280` for that shared top, and its
+   own trailhead note independently names the same "Vegan/Vega Tower group"
+   this route's approach describes. Filled from the sibling's value; the
+   resulting net rise from this route's own 2,350 ft trailhead (2,930 ft)
+   stays comfortably under the stored `gain_ft` (3,500), so no gain-floor
+   issue is introduced.
+5. `wa_big_four_mountain_northwest_ridge` and `wa_big_four_mountain_spindrift_couloir`
+   — both share an identical trailhead waypoint ("Big Four Picnic Area / Ice
+   Caves Trailhead") stored at elev 1,640 ft. Multiple independent external
+   sources (WTA-derived figures, The Mountaineers, hikeoftheweek.com) converge
+   on 1,750 ft for this well-documented trailhead. Fixing it also resolves a
+   `gain_ft` floor violation on both routes: net rise to the (externally
+   corroborated, unchanged) 6,170 ft summit was 4,530 ft against a stored
+   `gain_ft` of 4,450 — impossible by 80 ft. With the corrected trailhead, net
+   rise is 4,420 ft, which the existing `gain_ft` of 4,450 now satisfies, so
+   `gain_ft` itself was left untouched. Two more sibling routes on this same
+   peak, not in this batch (`wa_big_four_mountain_tower_route`,
+   `wa_big_four_mountain_dry_creek_route`), carry the identical stale 1,640
+   value and will need the same fix when their turn comes; `wa_big_four_mountain_dry_creek_route`
+   also still has a small residual gain_ft floor gap (10 ft) even after a
+   trailhead fix, negligible enough to leave for that future pass.
+
+**Clean / no fix needed (3):** `wa_baring_mountain_r1` (elevation and FA
+credit — "Don Gordon (Claunch) and Ed Cooper, July 9-13, 1960, with Fred
+Beckey on the final summit team; built on attempts dating to Pete Schoening
+and Richard Berge in 1951" — all independently confirmed via web search,
+including the "Claunch" middle/alternate name, which read at first like a
+possible data error but checks out);
+`wa_bear_mountain_chilliwack_north_buttress` (elevation 7,931 ft and FA
+"Fred Beckey & Mark Fielding, July 14-15, 1967" both confirmed; gain_ft
+(5,950) sits comfortably above the simple trailhead-to-summit floor (4,831)
+even though the multi-day approach's own waypoints trace a real up-and-down
+profile that sums to a much larger cumulative gain than the stored figure —
+treated as the same high-camp/multi-day-approach scoping convention already
+documented for `wa_austera_peak` in batch 178, not flagged further since the
+row passes the floor test this audit actually applies);
+`wa_beckey_tate` (elevation 8,326 ft and 1967 FA year confirmed; one source
+snippet cited "5.8" against the stored 5.9+, but the route's own beta text
+and a detailed independent source — stephabegg.com, "Beckey-Tate (5.9,
+900')," matching this row's own stated pitch count/length — corroborate
+5.9+, so not treated as an error).
+
+Permit/fee details spot-checked against current sources: North Cascades NP
+backcountry fee structure ($10/person/night + $6 reservation fee, charged
+mid-May-early Oct only) and the 2026 early-access lottery window (Mar 2-13)
+on `wa_bear_mountain_chilliwack_north_buttress` both confirmed current.
+
+Area hierarchy spot-checked for all six peaks touched — all correctly filed
+under their respective parent regions, and each area row's own lat/lng/
+elevation_ft matches (or closely matches) the coordinates independently
+stored on its routes. `wa_main_peak_3` ("Main Peak," Baring Mountain's own
+north/main summit sub-area) is correctly filed as a child of `wa_baring_mountain`
+and is not a naming error.
+
+WebFetch was blocked for every route-database/guidebook domain attempted
+this batch (en.wikipedia.org, publications.americanalpineclub.org,
+cascadeclimbers.com) — consistent with every recent batch's note; all
+research relied on WebSearch synthesis.
+
+Next batch continues from `wa_big_four_mountain_spindrift_couloir` onward
+alphabetically (pass 4).
