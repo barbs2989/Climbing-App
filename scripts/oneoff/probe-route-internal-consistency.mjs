@@ -339,7 +339,22 @@ for (const r of rows) {
   const FREE = /\bfree(?:\s+(?:self[- ]issued?|wilderness(?:\/\w+)?|backcountry(?:\/\w+)?|day[- ]use|overnight|camping|NPS|park))*\s+permits?\b|\bpermits?\b\s+(?:is|are)\s+free\b/i;
   const PRICED = /\$\s?\d+[^.;]{0,70}\b(?:permit|backcountry|wilderness|camping|reservation)/i;
   const PARKING = /northwest forest pass|america the beautiful|interagency|discover pass|per vehicle|parking|entrance fee/i;
-  const DENY = /\bno\s+(?:day[- ]use\s+|wilderness\s+|climbing\s+)?permits?\s+(?:is|are)?\s*(?:required|needed)/i;
+  // A DENY-LIST IS BEATEN BY ONE MORE ADJECTIVE -- FOURTH TIME THIS SESSION, AND THE FOURTH FIX IS
+  // THE SAME ONE. This allowed exactly ONE qualifier between "no" and "permit", so
+  // "No climbing permit required" matched while "No climbing OR WILDERNESS permit required" did
+  // not -- and the REQ branch below then read that denial as a requirement, so
+  // wa_early_winter_couloir was reported as denying and requiring a permit at the same scope when
+  // BOTH of its strings are denials. CLAUDE.md records the identical widening for check:outage's
+  // rule 2, which could not match "no CREW INVITES", and this session hit it twice more in the
+  // access.fees audit (where a hyphen in "cost-recovery" defeated it a second time).
+  // Up to four intervening words, hyphens allowed inside them.
+  // RESIDUAL RISK, stated rather than discovered later: REQ is suppressed wherever DENY matches
+  // the same string, so a sentence doing BOTH at different scopes -- "no permit required for day
+  // use; overnight permits are required" -- is counted only as a denial and its requirement half
+  // goes unseen. That was already true before this widening and the widening enlarges it. It is
+  // the safer direction here (the alternative is reporting correct rows as self-contradictory),
+  // but a scope-aware split of a mixed sentence is the real fix if this check is ever leaned on.
+  const DENY = /\bno(?:\s+[\w-]+){0,4}\s+permits?\s+(?:is|are)?\s*(?:required|needed)/i;
   const REQ = /(?:wilderness|backcountry|climbing|day[- ]use|self[- ]issued?)\s+permits?[^.;]{0,60}\b(?:required|needed|must)/i;
   const freeHits = [], pricedHits = [], denyHits = [], reqHits = [];
   for (const [k, v0] of fields) {
