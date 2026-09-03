@@ -17,6 +17,19 @@ const snap = JSON.parse(fs.readFileSync("scripts/schema-snapshot.json", "utf8"))
 const base = () => JSON.parse(JSON.stringify(snap));
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "coldrift-"));
 
+/* Copies the real migrations into a temp dir MINUS whatever main has that this tree does not
+   already lack — i.e. it manufactures the stale tree rather than waiting to be run on one. On a
+   checkout that is genuinely behind, nothing needs holding back and the note fires anyway. */
+function heldBackMigrations() {
+  const src = path.join("supabase", "migrations");
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), "coldrift-mig-"));
+  const all = fs.readdirSync(src).filter((f) => /^\d+.*\.sql$/.test(f)).sort();
+  if (all.length < 20) { console.log("HARNESS BROKEN: fewer than 20 migrations to copy from"); process.exit(1); }
+  const hold = new Set(all.slice(-2));           // the two newest — the shape a stale worktree has
+  for (const f of all) if (!hold.has(f)) fs.copyFileSync(path.join(src, f), path.join(out, f));
+  return out;
+}
+
 const CASES = [
   { name: "untracked-column", section: "A", expect: /crews\.zz_untracked/,
     why: "THE REAL DEFECT: a column applied to the live database that no migration describes",
@@ -38,7 +51,25 @@ const CASES = [
     args: ["--known", "routes.zz_declared=a column declared for this test"],
     mutate: () => {} },
 
+  /* A STALE CHECKOUT IS A FACT THE GUARD CAN CHECK, and until 2026-09-03 it did not. A worktree
+     stopped at 0174 while main carried 0175 reported `profiles.show_name` as described by
+     nothing; cause 1 ("an open PR carries its migration") came back EMPTY because that PR had
+     merged, which routes the reader to cause 2 — "write the migration" — for a migration that
+     exists, under a number check:migrations would then reject. The note is ADVISORY and must not
+     suppress the finding: a stale tree and a genuinely undescribed column can both be true. */
+  { name: "stale-checkout", section: "A", expect: /THIS CHECKOUT IS BEHIND origin\/main/,
+    why: "THE REAL EVENT: migrations exist on main and not in this tree, so a live column they create reads as described by nothing",
+    args: () => ["--migrations", heldBackMigrations()],
+    mutate: () => {} },
+
   // --- must stay SILENT ------------------------------------------------------------------
+  /* `absent` rather than `expect: null`, because the plain silent test asks whether the section
+     says FAIL — and this note carries no FAIL, so a spuriously-firing note would slip straight
+     past it. The case has to name the thing that must not appear. */
+  { name: "stale-note-on-a-current-tree", section: "A", absent: /THIS CHECKOUT IS BEHIND/,
+    why: "the note must NOT fire when the checkout is level with main, or it is noise on every clean run",
+    mutate: () => {} },
+
   { name: "view-is-not-a-table", section: "A", expect: null,
     why: "route_duplicate_names is a MATERIALIZED VIEW, created by `create view` — flagging it would tell an author to write a migration that already exists",
     mutate: () => {} },
@@ -54,7 +85,8 @@ for (const c of CASES) {
   const f = path.join(dir, `${c.name}.json`);
   fs.writeFileSync(f, JSON.stringify(s));
   let out = "";
-  try { out = execFileSync("node", ["scripts/check-column-drift.mjs", "--fixture", f, ...(c.args || [])], { encoding: "utf8" }); }
+  const extra = typeof c.args === "function" ? c.args() : (c.args || []);
+  try { out = execFileSync("node", ["scripts/check-column-drift.mjs", "--fixture", f, ...extra], { encoding: "utf8" }); }
   catch (e) { out = String((e.stdout || "") + (e.stderr || "")); }
 
   // slice the section this case is about, so a finding in a NEIGHBOURING section cannot be
@@ -69,9 +101,9 @@ for (const c of CASES) {
               : c.section === "C" ? cut("C. the committed snapshot", "\ncheck:column-drift")
               : cut("KNOWN names", null) || out;
   if (!block && c.section !== "KNOWN") { fails.push(`${c.name}: section ${c.section} not found in output`); continue; }
-  const fired = c.expect ? c.expect.test(block) : /\bFAIL\b/.test(block);
-  const ok = c.expect ? fired : !fired;
-  ok ? pass++ : fails.push(`${c.name}: section ${c.section} expected ${c.expect ? "to name " + c.expect : "SILENCE"}, got:\n` +
+  const fired = c.absent ? c.absent.test(block) : c.expect ? c.expect.test(block) : /\bFAIL\b/.test(block);
+  const ok = c.absent ? !fired : c.expect ? fired : !fired;
+  ok ? pass++ : fails.push(`${c.name}: section ${c.section} expected ${c.absent ? "NOT to name " + c.absent : c.expect ? "to name " + c.expect : "SILENCE"}, got:\n` +
         block.split("\n").filter((l) => l.trim()).slice(0, 6).map((l) => "        | " + l).join("\n"));
   console.log(`${ok ? "ok  " : "FAIL"}  ${c.name.padEnd(22)} [${c.section}]`);
   console.log(`        ${c.why}`);

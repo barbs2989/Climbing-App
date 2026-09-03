@@ -64,12 +64,31 @@ const CASES = [
     wantExit: 2,
   },
   {
-    name: "s3names",
-    why: "§3 goes back to offering a username-or-real-name choice — the control #1535 gated away, which the policy was still describing hours later",
+    // The ORIGINAL §3, restored verbatim. Note WHY it is still a defect: the name choice it
+    // offers is real again (#1540 gave it a column), but "governed by your privacy settings"
+    // still names the profile-visibility control, which IS still gated. Same sentence, different
+    // half of it wrong -- which is exactly why the guard tests the clauses separately.
+    name: "s3original",
+    why: "§3 goes back to the original sentence, whose \"governed by your privacy settings\" still names a control the app withholds",
     file: "ClimbMatchCore.jsx",
-    find: `["What others can see","Other climbers see your public profile — your username, the profile you fill in, and the trust signals built from your climbing activity. Climbers you have connected with also see the name on your account, in your friends list and crew rosters.`,
+    find: `["What others can see","Other climbers see your public profile — your username, or your real name if you choose to show it — along with the profile you fill in and the trust signals built from your climbing activity. Climbers you have connected with see the name on your account either way, in your friends list and crew rosters.`,
     repl: `["What others can see","Other climbers see your public profile as governed by your privacy settings — your username or real name, and the fields you choose to make visible.`,
-    expect: /your username or real name|governed by your privacy settings/,
+    expect: /governed by your privacy settings/,
+  },
+  {
+    // The LIMIT is the disclosure the original sentence never made, and dropping it is the
+    // tempting "simplification" -- the policy would read cleanly and be quietly misleading.
+    name: "s3limit",
+    why: "§3 keeps the name choice but drops the limit, so it implies the switch governs every surface — FriendsList and CrewCard still show the account name either way",
+    file: "ClimbMatchCore.jsx",
+    find: ` Climbers you have connected with see the name on your account either way, in your friends list and crew rosters.`,
+    repl: ``,
+    // Match the guard's FAILURE message, not its ok() wording. The first version of this expected
+    // "states the LIMIT of it", which is the text printed when the assertion PASSES -- so the case
+    // reported MISSED while the guard was firing correctly, exit 1 and all. Reproduced in
+    // isolation before changing anything, because "the guard missed" and "my expectation was
+    // wrong" look identical from a red case.
+    expect: /no longer says: "see the name on your account either way"/,
   },
   {
     // THE DEAD-BRANCH CASE. The first version of this guard paired promises to controls by fuzzy

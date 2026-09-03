@@ -62,6 +62,7 @@ npm run check:log  # BOTH climb_logs hydrations keep every column worth showing 
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
+npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -1043,14 +1044,29 @@ the total when deciding where a new guard belongs.
     Verified by insert → delete → re-read rather than by reading the SQL, which is how the absence
     was found in the first place. **The read-back in teardown stays** even now: a policy can be
     dropped again, and a status code cannot be trusted about rows.
-  - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
+  - **The concurrency work is what MADE it promotable, and it is why the promotion was safe.** Two
     `messages` rows coexist; every assertion holds with either or both present; teardown targets a
     single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
     **its own** message. Without that last part run A passes on run B's row — a **false pass in the
-    exact window this guard watches**. What is missing is only the ability to clean up.
-  - **The missing delete policy is worth knowing on its own terms:** a climber cannot delete a
-    message they sent or received, ever. Whether they should be able to is a product question
-    (unsend), and adding a policy to make a test tidy would be the wrong reason to answer it.
+    exact window this guard watches**. It had all of that while it sat in `scripts/oneoff/`; the
+    only missing piece was the ability to clean up, and `0176` supplied it.
+  - **THE PRODUCT QUESTION WAS ANSWERED, AND NOT FOR THE TEST'S SAKE — which is the distinction
+    this bullet used to be about.** It read *"a climber cannot delete a message they sent or
+    received, ever … adding a policy to make a test tidy would be the wrong reason to answer it"*,
+    and that stayed on the page after `0176` shipped the policy — so two bullets apart this file
+    said the capability exists and that it does not. The principle survives the correction:
+    `0176`'s own header opens *"a climber could not delete a message they sent or received.
+    Ever"* and closes a **user-facing** gap, with the test tidiness a by-product. It covers both
+    parties rather than sender-only unsend, because a recipient of an unwanted message has the
+    stronger claim to clear it and could already block the sender while being unable to remove
+    what they wrote. What it does **not** do is hide a deletion from the other party: a row is a
+    row, and a per-side unsend needs state this table does not have.
+  - **The leak is now OBSERVABLE rather than merely fixed.** Nothing in the repo can see teardown
+    being refused again — the guard prints *"removed the message: ok"* either way, which is exactly
+    how the original defect hid — so `messages` is in
+    `scripts/oneoff/probe-latent-claims-anon-vs-service.mjs`, where a **rising row count is the
+    regression**. Read it with the **service key**: `messages`' select policy is sender-or-recipient,
+    so an anon count returns 0 whatever the table holds. Measured after the promotion: **0**.
   - **Its two siblings are NOT safe and stay in `scripts/oneoff/`**, each for its own reason:
     `vouches` is `UNIQUE(from_id, to_id)`, so a second run's insert is refused with a 409 *and*
     teardown removes the single shared row under the first run — an upsert fixes only the first
@@ -1066,6 +1082,47 @@ the total when deciding where a new guard belongs.
   - **Length is worthless here and every assertion is on text.** The populated inbox is ~48
     characters and the EMPTY one ~117, because the empty state carries the explanatory copy — the
     numbers run backwards from the intuition, which `check:signed-in`'s entry already records.
+- **`check:block-guarantees`** runs the three block promises **as two real climbers**. The
+  Blocked-climbers screen says a blocked climber *"can't message you, add you to a crew, or open
+  your profile from their account"*, and three migrations implement that — **and all three say in
+  their own text that the behaviour was never exercised.** `0095` is explicit: *"BEHAVIOUR CANNOT
+  BE PROVEN WITH ONE ACCOUNT … Until that is run, this is reviewed and reasoned, NOT verified."*
+  That is a stated limitation, and this repo reads one as a worklist. **The machinery already
+  existed** — `scripts/lib/ui-fixture.mjs` creates two real accounts for `check:signed-in` — it had
+  simply never been pointed at these. **Result: all three hold.**
+  - **WHY ONE ACCOUNT CANNOT ANSWER IT, from `0095`'s own header, and it is the most transferable
+    thing here.** An RLS subquery is evaluated as the **calling** role, and `0088` restricts reading
+    `blocked_users` to the **blocker** — so the obvious policy runs its subquery *as the blocked
+    party*, finds nothing, `not exists` is true, and the profile is returned. *"The policy would
+    look present, pass review, and enforce nothing."* The escape is a `SECURITY DEFINER` function.
+    None of that is observable from one account, and the **service role bypasses RLS entirely**, so
+    a service-key probe reports success either way.
+  - **The service key creates the two accounts and touches nothing else.** Every read and write
+    under test goes through the **anon key plus that climber's own JWT**, which is the entire
+    question — the rule `check:signed-in` already records from the other side.
+  - **CONTROLS RUN FIRST, BEFORE ANY BLOCK, and they are the non-vacuity proof.** *"0 rows after
+    blocking"* means nothing unless the same read returned a row before it: RLS could be refusing
+    for an unrelated reason, which is precisely the always-passing guard `0095` warns about. And
+    the profile read is re-checked **after unblocking**, so a refusal is attributable to the block
+    rather than to something else breaking mid-run.
+  - It also asserts **neither refusal names the block**. Confirming a block *to the blocked party*
+    is the leak the read policy exists to prevent, and both migrations say so in their own comments.
+  - **`crews` HAS NO `name` COLUMN** — the first run died `PGRST204` on a guessed payload. Read
+    `scripts/schema-snapshot.json` rather than assuming; the columns are `created_by`, `route_id`,
+    `dates`, `cap`, `meet_place`, `meet_time`, `float_plan`, `agreed_date`, `date_forced`,
+    `dismissed`.
+  - **`process.exit()` SKIPS `finally`**, so the first failure leaked two accounts and a crew — the
+    teardown never ran. Its `dead()` throws now. `sweepOrphans` is the backstop and is age-gated at
+    45 minutes, so a leak is bounded rather than permanent, but a script that cannot clean up after
+    its own failure is one that leaks every time it is useful.
+  - **Hand-run, and declared in `check:guard-wiring`'s `EXCLUDED` with the measurement.** CI must
+    never hold the service key; and the durable CI pair is **not** a substitute, because the run
+    **blocks one of them** — a concurrent guard signed in as that account would be locked out of
+    the other's profile mid-walk. Its control leg also inserts a `messages` row, and `messages` has
+    **no DELETE policy**: on per-run accounts that goes with the cascade, against the durable pair
+    it would leak one per run forever, exactly as `check:message-delivery` records.
+  - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
+    `crew_members`.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
@@ -1712,12 +1769,36 @@ the total when deciding where a new guard belongs.
       with *"we store no device location"*, twice in two days.
     - **The general lesson: gating a control is a change to the DOCUMENTS too.** The flag exists to
       make a promise honest; it makes a different promise dishonest one section over.
+    - **AND THE INVERSE BIT WITHIN HOURS, WHICH IS THE HALF WORTH REMEMBERING.** #1540 gave that
+      same switch a REAL column (`show_name`, `0175`): it persists, `pubName` honours it, and it
+      is no longer gated. So the §3 rewrite above — which had removed the name choice because the
+      control was absent — became **false in the other direction**: *"others see your username"* is
+      wrong the moment a climber turns it on. **Un-gating a control changes the documents too.**
+      Both edits were correct when made; a policy sentence is only true relative to a build.
+    - **§3 was NOT simply restored, and measuring is what decided that.** The original implied the
+      choice governs everything. It does not: `FriendsList` and `CrewCard` still mix `pubName`
+      with a bare `.name`, so **a connection sees the account name whichever way the switch is
+      set**. §3 now states the choice AND that limit — the part the original never said and the
+      part a climber would most reasonably assume otherwise. Injection case `s3limit` pins it,
+      because dropping the limit is the tempting simplification: the sentence reads more cleanly
+      and is quietly misleading.
+    - **The stale assertion was REMOVED, not reworded.** *"§3 must not offer a name choice"* was
+      correct while the control was gated and became a guard **forbidding the policy from
+      describing a live privacy control** — arguing with correct work, the failure this file
+      records under half a dozen names. An assertion kept past the fact it describes is stale
+      bookkeeping wherever it lives, including inside a guard.
+    - **A CASE CAN REPORT `MISSED` WHILE THE GUARD IS INNOCENT.** `s3limit`'s first `expect`
+      matched the text the assertion prints when it **passes** (`ok    …states the LIMIT of it`)
+      rather than its failure message, so the case went red against a guard firing correctly with
+      exit 1. Reproduced in isolation before anything was changed — *"the guard missed"* and *"my
+      expectation was wrong"* are indistinguishable from a red case, and this repo has read one as
+      the other twice.
   - **A same-day amendment does not move a DATE version**, and that is stated rather than papered
     over: §3 changed hours after §4 under the same `POLICY_VERSION`, so an account that accepted
     earlier in the day has a record pointing at slightly different words. Inherent to a date-based
     version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
     real launch, not worth inventing a counter for at three accounts.
-  - Injection-tested **10/10** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+  - Injection-tested **11/11** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
     historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
     dead-branch defect above** — renaming a gated control must report a BROKEN scan rather than
@@ -3245,6 +3326,13 @@ the total when deciding where a new guard belongs.
     reproducing **both bodies verbatim in the migration**, which puts them in version control
     for the first time. `KNOWN` is now **empty** here and `handle_new_user` alone in the drift
     guard — `merge_accounts` was the last entry and `0170` dropped it.
+  - **ITS `UNTRACKED` BRANCH HAD `check:column-drift`'s ADVICE DEFECT VERBATIM** — *"Either write
+    the migration or drop the function"*. Same wrong first move for the same likely cause (an open
+    PR carrying the migration), and here the **second** option is the dangerous one: `0167` dropped
+    two functions this way and one of them, `merge_accounts`, reassigned `climb_logs.user_id` and
+    `vouches.from_id` for two arbitrary uuids with **no `auth.uid()` check** — an account-takeover
+    primitive kept inert only by naming a column that did not exist. *Read the body before dropping
+    a function git has never seen* is now cause 3's warning rather than a bare instruction.
   - **ONE `KNOWN` entry** now, a claim about the live database that fails when **stale**:
     `handle_new_user` (benign — live writes `public.profiles` where 0009 writes `profiles`, so the
     **live** copy is the safer one, since it does not depend on `search_path`). `merge_accounts`
@@ -3296,6 +3384,23 @@ the total when deciding where a new guard belongs.
     of its columns as undescribed. `check:rls` records the identical defect from the policy side.
   - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
     parsed columns, an unreachable database, and a live schema exposing zero tables.
+  - **IT FIRED CORRECTLY AND THEN PRESCRIBED THE WRONG REPAIR — all three plausible actions, for
+    its most likely cause.** Section A said *"Write the migration, or declare it in KNOWN with the
+    reason"*. Sessions here apply DDL while their PR is still open, so the commonest reason a
+    column is live-and-undescribed is that **an open PR already carries its migration** — and then
+    writing one duplicates a number that PR claims (`check:migrations` fails the build), declaring
+    it in KNOWN goes stale the moment the PR merges and fails this guard on the stale entry, and
+    the third thing a reader reaches for, `npm run schema:refresh`, is the destructive one section
+    A exists to prevent. Three causes now, in likelihood order, the open-PR one **first and saying
+    to do NOTHING**, with the object interpolated into the `gh pr list --search` that settles it.
+    The whole-TABLE branch carried **no advice at all** and now carries the same three.
+  - **The remedy is the half nothing tests.** An injection case asserts the guard FIRED; none of
+    them reads the sentence it printed. Same shape as `check:field-renders` telling an author to
+    delete correct bookkeeping during an outage. **Neither of these branches fires on a clean
+    tree**, so both messages were RENDERED before shipping rather than only written — the table
+    branch through `--fixture` with a synthetic table, and `check:function-drift`'s sibling by
+    hiding ONE parsed definition on a throwaway copy. Emptying that map entirely was the first
+    attempt and it hit the guard's own fail-closed branch instead, which is that branch working.
   - **`KNOWN` IS EMPTY, AND THE ONE ENTRY IT EVER HELD PROVED THE CONTRACT AGAINST A REAL EVENT.**
     `routes.access_checked_at` was declared for exactly one day, with a reason predicting that the
     repair would be another session's migration landing. **#1347** landed it
@@ -3307,12 +3412,37 @@ the total when deciding where a new guard belongs.
     `--known table.column=reason` adds a declaration at run time and is used only by the injection
     harness. An assertion that can run only while the tree is unhealthy is not an assertion —
     the same reason `check:field-renders` injects `SENTINELS` for columns with zero rows.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
+  - **A STALE CHECKOUT REPORTED A LIVE COLUMN AS DESCRIBED BY NOTHING, and the guard's ADVICE was
+    then wrong in the expensive direction.** Section A compares the live database against the
+    migrations **in the working tree**, so a tree that is merely BEHIND main is indistinguishable
+    from a column nobody wrote. Met for real on 2026-09-03: a worktree stopped at `0174` while
+    main carried `0175_a_climber_can_choose_to_show_their_name.sql`, and it reported
+    `profiles.show_name`.
+    - **The three causes it prints could not rescue it, and cause 1 actively misdirects.** *"An
+      open PR already carries its migration"* came back **empty**, because #1540 had already
+      merged — which routes the reader to cause 2, *"write the migration"*, for a migration that
+      exists, under a number `check:migrations` would then reject. That is the
+      `check:field-renders`-during-an-outage shape: the guard is right to fail and its repair
+      advice points at the wrong half.
+    - **So it is now a FACT the guard checks, not a fourth guess.** `git ls-tree origin/main` on
+      the migrations directory against the local one; if main has files this tree lacks, the note
+      names them and says to pull before acting. **Advisory only — it never suppresses a
+      finding**, because a stale tree and a genuinely undescribed column can be true at once.
+      Fail-soft: no git, no `origin/main`, or a different layout just means no hint.
+    - `--migrations <dir>` is the test seam, alongside `--fixture` and `--known` and for the same
+      stated reason — the note fires only on a stale tree, so without it the assertion could run
+      only while the checkout happened to be stale. The harness manufactures that tree by copying
+      the real migrations minus the two newest.
+    - **The SILENT case needs `absent`, not `expect: null`.** The plain silent test asks whether
+      the section says `FAIL`, and this note carries none — so a spuriously-firing note would slip
+      straight past it. A case has to name the thing that must not appear.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
     `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
     section**, never on the exit code — a mutation that adds a column also makes the fixture
     disagree with the snapshot, so section C fires too and every case would look alike from an
-    exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
-    dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
+    exit status. **Three cases must stay SILENT** (a materialized view is not an untracked table;
+    a dropped-and-recreated table is not undescribed; the staleness note must not fire on a
+    current tree) and **each was proven non-vacuous** by
     breaking their mechanism and confirming they then fire. The `stale-known` case supplies its
     own declaration through `--known`, since there is no longer one in the file to make stale.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the

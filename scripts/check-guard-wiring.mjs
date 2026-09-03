@@ -84,6 +84,16 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-block-guarantees.mjs":
+    "creates TWO real accounts to prove a blocked climber cannot read, message or crew-invite " +
+    "the blocker — and creating them needs the SERVICE key, which CI must never hold (the same " +
+    "rule that put check:signed-in on two durable anon-key accounts). The durable pair is not " +
+    "a substitute here: the run BLOCKS one of them, and a concurrent guard signed in as that " +
+    "account would be locked out of the other's profile mid-walk. Its control leg also inserts " +
+    "a `messages` row, and `messages` has no DELETE policy — on per-run accounts that goes with " +
+    "the cascade, against the durable pair it would leak one per run forever, exactly as " +
+    "check:message-delivery records. Run it by hand after touching 0088/0094/0095 or any " +
+    "policy on profiles, messages or crew_members.",
   "check-column-drift.mjs":
     "fetches PostgREST's OpenAPI root, which returns 401 to the anon key and so needs the " +
     "SERVICE key — the credential this repo keeps out of CI, the same rule that put " +

@@ -48,6 +48,7 @@ const TABLES = [
   ["climb_logs", "flagged (logsUnavailable); kept as the known anon-vs-service contrast"],
   ["vouches", "UNFLAGGED — feeds \"Vouches you've given (N)\", a count of a failed read"],
   ["belay_catches", "flagged (catchesUnavailable) — was reverted once, see #1239/#1248"],
+  ["messages", "the LEAK check for check:message-delivery — one row per CI run before 0176 gave the table a DELETE policy; a rising count means teardown is being refused again"],
   ["hazard_votes", "UNFLAGGED — route page hazard votes"],
   ["inquiries", "UNFLAGGED — the guide dashboard's inquiry list"],
   ["topos", "flagged in RouteDetail (toposUnavailable); is it measurable?"],
