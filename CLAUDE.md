@@ -3412,12 +3412,37 @@ the total when deciding where a new guard belongs.
     `--known table.column=reason` adds a declaration at run time and is used only by the injection
     harness. An assertion that can run only while the tree is unhealthy is not an assertion —
     the same reason `check:field-renders` injects `SENTINELS` for columns with zero rows.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
+  - **A STALE CHECKOUT REPORTED A LIVE COLUMN AS DESCRIBED BY NOTHING, and the guard's ADVICE was
+    then wrong in the expensive direction.** Section A compares the live database against the
+    migrations **in the working tree**, so a tree that is merely BEHIND main is indistinguishable
+    from a column nobody wrote. Met for real on 2026-09-03: a worktree stopped at `0174` while
+    main carried `0175_a_climber_can_choose_to_show_their_name.sql`, and it reported
+    `profiles.show_name`.
+    - **The three causes it prints could not rescue it, and cause 1 actively misdirects.** *"An
+      open PR already carries its migration"* came back **empty**, because #1540 had already
+      merged — which routes the reader to cause 2, *"write the migration"*, for a migration that
+      exists, under a number `check:migrations` would then reject. That is the
+      `check:field-renders`-during-an-outage shape: the guard is right to fail and its repair
+      advice points at the wrong half.
+    - **So it is now a FACT the guard checks, not a fourth guess.** `git ls-tree origin/main` on
+      the migrations directory against the local one; if main has files this tree lacks, the note
+      names them and says to pull before acting. **Advisory only — it never suppresses a
+      finding**, because a stale tree and a genuinely undescribed column can be true at once.
+      Fail-soft: no git, no `origin/main`, or a different layout just means no hint.
+    - `--migrations <dir>` is the test seam, alongside `--fixture` and `--known` and for the same
+      stated reason — the note fires only on a stale tree, so without it the assertion could run
+      only while the checkout happened to be stale. The harness manufactures that tree by copying
+      the real migrations minus the two newest.
+    - **The SILENT case needs `absent`, not `expect: null`.** The plain silent test asks whether
+      the section says `FAIL`, and this note carries none — so a spuriously-firing note would slip
+      straight past it. A case has to name the thing that must not appear.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-column-drift-cases.mjs`), driven by
     `--fixture` from the committed snapshot so the whole harness runs **offline**. Judged **per
     section**, never on the exit code — a mutation that adds a column also makes the fixture
     disagree with the snapshot, so section C fires too and every case would look alike from an
-    exit status. **Two cases must stay SILENT** (a materialized view is not an untracked table; a
-    dropped-and-recreated table is not undescribed) and **both were proven non-vacuous** by
+    exit status. **Three cases must stay SILENT** (a materialized view is not an untracked table;
+    a dropped-and-recreated table is not undescribed; the staleness note must not fire on a
+    current tree) and **each was proven non-vacuous** by
     breaking their mechanism and confirming they then fire. The `stale-known` case supplies its
     own declaration through `--known`, since there is no longer one in the file to make stale.
 - **`check:contrib-fields`** asserts that every field a climber can submit is a field the
