@@ -3245,6 +3245,13 @@ the total when deciding where a new guard belongs.
     reproducing **both bodies verbatim in the migration**, which puts them in version control
     for the first time. `KNOWN` is now **empty** here and `handle_new_user` alone in the drift
     guard — `merge_accounts` was the last entry and `0170` dropped it.
+  - **ITS `UNTRACKED` BRANCH HAD `check:column-drift`'s ADVICE DEFECT VERBATIM** — *"Either write
+    the migration or drop the function"*. Same wrong first move for the same likely cause (an open
+    PR carrying the migration), and here the **second** option is the dangerous one: `0167` dropped
+    two functions this way and one of them, `merge_accounts`, reassigned `climb_logs.user_id` and
+    `vouches.from_id` for two arbitrary uuids with **no `auth.uid()` check** — an account-takeover
+    primitive kept inert only by naming a column that did not exist. *Read the body before dropping
+    a function git has never seen* is now cause 3's warning rather than a bare instruction.
   - **ONE `KNOWN` entry** now, a claim about the live database that fails when **stale**:
     `handle_new_user` (benign — live writes `public.profiles` where 0009 writes `profiles`, so the
     **live** copy is the safer one, since it does not depend on `search_path`). `merge_accounts`
@@ -3296,6 +3303,23 @@ the total when deciding where a new guard belongs.
     of its columns as undescribed. `check:rls` records the identical defect from the policy side.
   - Fails **closed** five ways: no migrations directory, fewer than 20 migrations, fewer than 100
     parsed columns, an unreachable database, and a live schema exposing zero tables.
+  - **IT FIRED CORRECTLY AND THEN PRESCRIBED THE WRONG REPAIR — all three plausible actions, for
+    its most likely cause.** Section A said *"Write the migration, or declare it in KNOWN with the
+    reason"*. Sessions here apply DDL while their PR is still open, so the commonest reason a
+    column is live-and-undescribed is that **an open PR already carries its migration** — and then
+    writing one duplicates a number that PR claims (`check:migrations` fails the build), declaring
+    it in KNOWN goes stale the moment the PR merges and fails this guard on the stale entry, and
+    the third thing a reader reaches for, `npm run schema:refresh`, is the destructive one section
+    A exists to prevent. Three causes now, in likelihood order, the open-PR one **first and saying
+    to do NOTHING**, with the object interpolated into the `gh pr list --search` that settles it.
+    The whole-TABLE branch carried **no advice at all** and now carries the same three.
+  - **The remedy is the half nothing tests.** An injection case asserts the guard FIRED; none of
+    them reads the sentence it printed. Same shape as `check:field-renders` telling an author to
+    delete correct bookkeeping during an outage. **Neither of these branches fires on a clean
+    tree**, so both messages were RENDERED before shipping rather than only written — the table
+    branch through `--fixture` with a synthetic table, and `check:function-drift`'s sibling by
+    hiding ONE parsed definition on a throwaway copy. Emptying that map entirely was the first
+    attempt and it hit the guard's own fail-closed branch instead, which is that branch working.
   - **`KNOWN` IS EMPTY, AND THE ONE ENTRY IT EVER HELD PROVED THE CONTRACT AGAINST A REAL EVENT.**
     `routes.access_checked_at` was declared for exactly one day, with a reason predicting that the
     repair would be another session's migration landing. **#1347** landed it
