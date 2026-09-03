@@ -150,6 +150,18 @@ function vScore(c){if(!c)return 50;var tf=trustFactors(c);var sum=0,max=0;tf.for
    That guard was named here for a while before it existed, which is worse than no claim at all:
    a reader looking for coverage found a sentence saying it was covered. Ties break toward the EARLIER factor, so the order is stable rather than
    engine-dependent. */
+/* ONE mapping from `vouches` rows to the cards VouchCard renders. It lived inline in FullProfile,
+   which resolves `_realId` from a uuid -- and ME.id is 0 signed in or out, so a climber's OWN
+   profile skipped the whole enrichment and listed `ME.vouches`, which is []. The count on the
+   Profile tab reads the real total, so a second copy of this transform in App would be the
+   four-grade-parsers shape: two implementations that agree today and drift later. */
+export function vouchRowsFrom(rows,authors){
+  return (rows||[]).map(function(row){
+    var parsed={};try{parsed=JSON.parse(row.reason)||{};}catch(e){parsed={text:row.reason||""};}
+    var a=(authors||[]).find(function(x){return x.id===row.from_id;});
+    return {from:(a&&a.name)||"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:parsed.skills||[],text:parsed.text||"",wouldClimbAgain:parsed.wouldClimbAgain!==false};
+  });
+}
 function trustContributions(c){
   var tf=trustFactors(c);
   var max=0;tf.forEach(function(f){max+=f.max;});
@@ -1780,7 +1792,7 @@ function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,on
   climber=useMemo(function(){
     if(!_realId)return climber;
     var p=realProfileQ.data||{};
-    var vouches=(realVouchesQ.data||[]).map(function(row){var parsed={};try{parsed=JSON.parse(row.reason)||{};}catch(e){parsed={text:row.reason||""};}var a=(vAuthorsQ.data||[]).find(function(x){return x.id===row.from_id;});return {from:(a&&a.name)||"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:parsed.skills||[],text:parsed.text||"",wouldClimbAgain:parsed.wouldClimbAgain!==false};});
+    var vouches=vouchRowsFrom(realVouchesQ.data,vAuthorsQ.data);
     return Object.assign({},climber,{_real:true,vouches:vouches,communityVouches:vouches.length,objectiveIds:climber.objectiveIds||[],photos:climber.photos||[],certifications:climber.certifications||[],skills:climber.skills||[],availability:climber.availability||[],availWeek:climber.availWeek||[],disciplines:p.disciplines||climber.disciplines||[],name:p.name||climber.name,avatar:p.avatar||climber.avatar,username:p.username||climber.username,bio:p.bio||climber.bio,location:p.location||climber.location,sportGrade:p.sport_grade||climber.sportGrade,tradGrade:p.trad_grade||climber.tradGrade,boulderGrade:p.boulder_grade||climber.boulderGrade});
   },[climber,_realId,realProfileQ.data,realVouchesQ.data,vAuthorsQ.data]);
   const [pt,setPt]=useState(climber._tab||"overview");const [invOpen,setInvOpen]=useState(false);
