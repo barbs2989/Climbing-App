@@ -12639,3 +12639,68 @@ research relied on WebSearch's own synthesis of source content.
 
 Next batch continues from `wa_chair_peak_northeast_buttress` onward
 alphabetically (pass 4).
+
+## 2026-09-03 — Pass 4, Batch 183
+
+Routes: `wa_chair_peak_northwest_ridge`, `wa_chalangin_peak_little_giant_pass_luahna_col`,
+`wa_chianti_spire_east_face`, `wa_chimney_rock_east_face_direct`,
+`wa_chimney_rock_west_face`, `wa_chiwawa_mountain_southwest`, `wa_chockstone_route`,
+`wa_clark_mountain_west_ridge`, `wa_classic_route_2`, `wa_classic_route_3`.
+
+**Fixed:**
+`wa_chianti_spire_east_face`'s `approach` opened "This is the same East Face/Rebel Yell
+line as wa_east_face_rebel_yell, so the hike-in is identical" — a raw internal route id
+leaked into rendered prose, and a broken one: no route with id `wa_east_face_rebel_yell`
+exists anywhere in the catalog (checked directly against the live table), and "Rebel
+Yell" is not a separately-catalogued route on this peak or any other in WA — only this
+row's own name mentions it. Removed; the rest of the approach text stands on its own.
+Chianti Spire's `high_point_ft` (8459, shared identically across all three routes on the
+peak) had no traceable source; ListsOfJohn — the source this catalog leans on elsewhere
+for unofficial/unsurveyed peaks — gives 8,420 ft, with other sources describing it more
+loosely as "roughly equal to Burgundy Spire (~8,400 ft)." Corrected on all three routes
+(east_face is the only alpine-discipline one in scope; north_face/lichen_bouquet are
+trad siblings on the same summit, updated only for the shared elevation so the peak does
+not disagree with itself) and flagged as a gap on the audited row, since spire elevations
+here are inherently loose. `wa_chockstone_route`'s `watch_out` was stored as one string
+joined with literal `\n` characters instead of a JSON array — the recurring array-shape
+bug this audit has fixed on other routes before (Sharkfin Tower, Mount Shuksan SE Ridge);
+fixed, content unchanged. `wa_classic_route_3` (Lane Peak "Classic Route", standard SE-face
+scramble) — `descent_text` flatly claimed "This is a walk-off/downclimb — no rappelling,"
+which contradicted the row's own `gear` field ("short rope or sling useful for the
+optional/fixed rappel near the summit") and independent trip reports (willhiteweb.com and
+others), which describe a short rappel from a large tree near the summit as a standard
+part of the descent, used instead of downclimbing that step. Corrected to reflect the
+tree rappel rather than deny it; the rest of the descent narrative is unchanged.
+
+**Clean / confirmed accurate:**
+`wa_chair_peak_northwest_ridge` shares Chair Peak's already-reconfirmed 6,238 ft summit
+and its gain_ft (3,138) matches the trailhead/summit pair on file; FA correctly stored as
+"unknown". `wa_chalangin_peak_little_giant_pass_luahna_col`: peak elevation (8,371 ft,
+matches ListsOfJohn's 8,370 ft) and the Little Giant Pass -> Napeequa River -> Luahna Col
+-> Pilz Glacier approach are both independently confirmed as a real, documented line
+(Mountaineers, WTA, and a trip report specifically titled for this Chalangin-via-Luahna
+route). `wa_chimney_rock_east_face_direct` FA (Cornelius Molenaar, Elvis R. Johnson, 1954)
+left as previously verified; no new contradiction found. `wa_chimney_rock_west_face`:
+its own note that the peak's 1930 FA (Forest Farr, Art Winder, Laurence Byington) was via
+the south/east face rather than this line is confirmed by Wikipedia, as is the FA party
+itself; its 7,440 ft "true summit" and the East Face Direct route's 7,727 ft are BOTH
+correct — Chimney Rock has genuinely distinct summit points (a 7,727 ft main spire and a
+lower 7,440 ft south peak) and each route's own high point matches the summit it
+actually reaches. `wa_chiwawa_mountain_southwest`: elevation (8,459 ft) and the 1921
+Lorenz A. Nelson/Mountaineers first-recorded-ascent both confirmed (Wikipedia, SummitPost);
+gain_ft (5,659) matches its own stated trailhead/summit figures. `wa_chockstone_route` FA
+(Wesley Grande, Pete Schoening, Dick Widrig, May 28 1950) and its note that this is
+historically also called the Southwest/South Face Route are both confirmed as the
+original, first-ascent line on North Early Winters Spire (SummitPost, SpokAlpine, Get
+High on Altitude all treat "Chockstone Route" as today's name for that 1950 line).
+`wa_clark_mountain_west_ridge`: elevation (8,602 ft) and the Walrus/Clark Glacier dual
+naming both confirmed (Wikipedia, Wenatchee Outdoors, SummitPost); gain_ft (6,500) falls
+inside the route's own stated 6,200-6,500+ ft range. `wa_classic_route_2` (Unicorn Peak):
+elevation (6,971 ft) confirmed as the Tatoosh Range high point (Wikipedia, WTA); its
+gain_ft and approach mileage already agree with each other. `wa_classic_route_3`'s
+elevation (6,012 ft) independently confirmed alongside the descent fix above.
+
+Every FA/elevation claim checked this batch came back either confirmed or corrected —
+no unresolved contradictions carried forward.
+
+Next batch continues from `wa_classic_route_3` onward alphabetically (pass 4).
