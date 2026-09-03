@@ -84,17 +84,6 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
-  "check-message-delivery.mjs":
-    "IT CANNOT CLEAN UP AFTER ITSELF, and that is measured rather than assumed. It inserts a row " +
-    "into `messages` as the mate, and that table has select/insert/update policies in 0042 and NO " +
-    "DELETE POLICY — so the teardown DELETE comes back 204 with res.ok true and the row is still " +
-    "there. Locally that is harmless: the per-run accounts are deleted and cascade. In CI the " +
-    "accounts are DURABLE, so every run would leak a message into a live project forever — " +
-    "exactly the shape CLAUDE.md records under 'the table without a backstop is the one whose " +
-    "leaks you can see', where 13 crews accumulated one per run. Unlike crews, NO SWEEP IS " +
-    "POSSIBLE, because a sweep needs the same DELETE the policy refuses. Hand-run until " +
-    "`messages` gains a delete policy, which is a product question (should a sender be able to " +
-    "unsend?) rather than something to add for a test's convenience.",
   "check-column-drift.mjs":
     "fetches PostgREST's OpenAPI root, which returns 401 to the anon key and so needs the " +
     "SERVICE key — the credential this repo keeps out of CI, the same rule that put " +

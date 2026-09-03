@@ -61,7 +61,7 @@ npm run check:overlay-absence # every overlay that claims you have none is gated
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
-npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender (hand-run: it cannot delete what it writes)
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -1023,21 +1023,26 @@ the total when deciding where a new guard belongs.
   - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
     different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
     and not a name either: a climber cannot tell which of their partners wrote to them.
-  - **IT IS HAND-RUN, AND THE REASON IS A DEFECT I FOUND IN MY OWN TEARDOWN AN HOUR AFTER WIRING IT
-    INTO CI.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
+  - **IT RUNS IN CI, AND THE ROUTE THERE IS THE ENTRY WORTH READING.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
     all**, so the teardown's DELETE is refused by RLS — and PostgREST answers a zero-row DELETE
     with **204**, which `res.ok` reads as success. Measured directly (insert → delete → re-read):
     HTTP 204, `res.ok` true, **row still there**. The guard printed *"removed the message: ok"* off
     that status and was reporting a success it did not have — *a 200 is not evidence the data
     changed*, which this file records for hand-written SQL and for `patchRow` and which arrived
     here in a third place. It reads the row back now and says plainly when it could not remove it.
-  - **Locally that is harmless and in CI it would not be.** The per-run accounts are deleted and
-    cascade; the durable CI pair is permanent, so **every run would leak a message into a live
+  - **Locally that was harmless and in CI it would not have been.** The per-run accounts cascade;
+    the durable CI pair is permanent, so **every run would have leaked a message into a live
     project forever** — the shape recorded under *"the table without a backstop is the one whose
-    leaks you can see"*, where 13 crews accumulated one per run. **Unlike crews, no sweep is
-    possible**: a sweep needs the same DELETE the policy refuses. The CI job was written, measured,
-    and **pulled before it merged**; the exemption in `check:guard-wiring`'s `EXCLUDED` carries the
-    measurement so the next reader does not re-derive it.
+    leaks you can see"*, where 13 crews accumulated one per run. And **unlike crews no sweep was
+    possible**, because a sweep needs the same DELETE the policy refused. So the job was written,
+    measured, and **pulled before it merged**.
+  - **`0176` is what let it back in**, and it closes a gap that was never about testing: a climber
+    could not delete a message they had sent *or received*, ever. The policy covers **both
+    parties**, deliberately — a recipient of an unwanted message has the stronger claim to clear
+    it, and they could already block the sender while being unable to remove what they wrote.
+    Verified by insert → delete → re-read rather than by reading the SQL, which is how the absence
+    was found in the first place. **The read-back in teardown stays** even now: a policy can be
+    dropped again, and a status code cannot be trusted about rows.
   - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
     `messages` rows coexist; every assertion holds with either or both present; teardown targets a
     single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
