@@ -488,6 +488,35 @@ the total when deciding where a new guard belongs.
     `===ME.name?ME` survives, naming file:line. Comments and string contents are blanked in
     **one stateful pass** (offsets preserved) for the reason `check:dead-flag-gates` records —
     a regex strip ate real code there — so prose that merely *mentions* the pattern is safe.
+  - **A THIRD SHAPE SHIPPED ON HOME, and both tests above are blind to it BY CONSTRUCTION.**
+    `_friendFeed` matched connections to seed activity by display name —
+    `ROUTES.flatMap(…).filter(x => connections.some(c => c.name === x.a.user))` — so a DB-backed
+    friend called **"Maya Chen" was shown her 11 seed climbs as their recent activity**. It never
+    calls `ticksFor` and never writes `===ME.name`, so the guard built for exactly this class
+    passed throughout. Crew:Friends does the same job correctly, through `seedHistoryFor(f)`.
+    - **Found by READING CI's `ui-screens` artifact, not by a scan.** Home says *"Recent friend
+      activity · 11 updates"* and Crew:Friends says *"Show all 14"* — two derivations of one
+      feature. Chasing the count disagreement found the identity bug under it. The walk asserts no
+      NaN and no `undefined`; nobody reads the copy for sense, and `gh run download <id> -n
+      ui-screens` costs nothing locally, which matters when the box is too loaded to walk.
+    - **The gate is now ONE exported predicate**, `seedIdentity(c)`, used by `seedHistoryFor` and
+      by both Home readers. It was inline before, so it existed in exactly one place and every
+      other reader had to re-derive it — and one did not.
+    - **Section 3 found a SECOND instance the hand-fix missed, and it is the worse one.**
+      `var fr = connections.find(c => c.name === x.a.user)` resolves the friend object behind each
+      row and drives its Kudos, **Message** and **Vouch** buttons — so a real connection sharing a
+      seed author's name could be **vouched for off somebody else's climb**. Fixing the display
+      and stopping would have left it.
+    - The rule is exact rather than a keyword sweep: a comparison whose two sides are a `.name`
+      and a seed row's `.user` is **always** an identity claim, and nothing else in this codebase
+      compares those two fields. The gate must be in the **same expression**, not merely somewhere
+      in the file.
+    - **The probe that proved it RETYPED the predicate instead of lifting it**, so it kept failing
+      after the fix landed — the exact trap its own header warns about. Its extraction also cut at
+      the first `;`, which sits *inside* the flatMap body, so it never contained the filter at all;
+      that stayed invisible while the copy was doing the deciding.
+      `scripts/oneoff/probe-home-friend-feed-name-match.mjs` now executes the predicate from source
+      and is injection-tested: removing `seedIdentity(c)` fails it, restoring passes.
   - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
