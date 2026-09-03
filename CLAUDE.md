@@ -4416,6 +4416,15 @@ the correction knows the screen is wrong, and they have no way to report it.
     Plan tab labels correctly as *"Drive notes"*. **One label cannot be right for both values**, so
     it is chosen per value (`"The drive"` / `"Road"`) rather than picked once and made to cover the
     other. `scripts/oneoff/measure-crag-drive-note-label.mjs` is the count.
+    - **That class is now closed BY CONSTRUCTION, which is stronger than the assertion it
+      replaces.** `road` is one of the fields `hasPlanContent()` reads, so a route carrying a drive
+      note always has a Plan tab, and the Overview panel it used to be mislabelled in no longer
+      renders that route's road at all. Section 4 therefore asserts the label on the tab that DOES
+      print it, plus the negative that the surviving crag Overview panel carries no drive note under
+      any label. **Injection case 4 had to be repointed for the same reason and MISSED first** —
+      aimed at the Overview it found nothing to mislabel, which reads as a guard that stopped
+      working and is really a defect that stopped being reachable. Asserting the old shape against
+      today's crag Overview would pass **vacuously**.
   - **"With GETTING THERE" is asserted as ORDER, not as a character window** — the control renders
     inside `TrailheadCard`, so slicing N characters after the heading would encode a guess about
     the panel's size, the trap the camping panel and the Logbook badge both record. It must fall
@@ -4424,19 +4433,35 @@ the correction knows the screen is wrong, and they have no way to report it.
     sites; the surviving one showed it only as a **suffix on the road STATUS row**, so a route with
     a gate and no status would have lost it silently — the
     [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
-  - **A KNOWN GAP, stated rather than quietly passed: a crag route shows GETTING THERE TWICE**, once
-    on Overview and once on Plan, with a different drive control on each. This guard asserts one per
-    SCREEN, which is what it can defend; whether a crag's Overview should carry a drive block at all
-    is a question about what belongs on which tab, and that is a product decision rather than
-    polish. Read this guard's green as *"no screen offers two"*, never as *"the route offers one"*.
+  - **THAT KNOWN GAP IS CLOSED, and reading it as a worklist rather than a caveat is what closed
+    it.** The entry here used to say a crag route shows GETTING THERE **twice** — once on Overview,
+    once on Plan, with a different drive control on each — and defer it as *"a product decision
+    rather than polish"*. #1493 is that decision: the gate is `cragOnly && !showPlan`, so exactly
+    one tab owns the panel. Measured on the pre-fix tree, the same crag rendered GETTING THERE and
+    a drive control on **both** tabs; after it, a crag **with** plan content shows it on Plan only
+    and a crag **without** one still shows it on Overview — moved, not deleted, and both directions
+    are asserted. This is the [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape for the
+    fourth time in this file.
+  - **The two PRs looked like a collision and were not.** #1493 forked before this guard existed,
+    so its merge was the first time they met, and the guard went red on `ANCHOR LOST` — its crag
+    Overview fixture asserted the very duplication its own entry called a defect. What changed is
+    the fixture and the section, never the invariant: section 1 now walks the Plan tab and the crag
+    Plan tab, section **1b** asserts the no-duplication rule directly, and the crag Overview fixture
+    is a route with **no plan content**, the only state in which that panel is the owner.
+  - **A crag Overview can never carry a drive control, by construction rather than by fixture.** A
+    control needs `trailheadPoint()` to resolve, which needs a placed Trailhead waypoint or
+    `approach_logistics.trailheadLat/Lng` — and **both are fields `hasPlanContent()` reads**, so the
+    Plan tab exists and owns the panel. Section 1 says so where it drops that row, rather than
+    leaving a reader to wonder whether coverage was lost.
   - Fails **closed** five ways: a thin render, either GETTING THERE panel missing, a missing
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+  - Injection-tested **8/8** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
-    neighbours.
+    neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
+    cannot quietly re-open.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
