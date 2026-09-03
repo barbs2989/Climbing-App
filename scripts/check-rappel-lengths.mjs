@@ -43,7 +43,24 @@ const INJECT = flag("inject");
 
 // Rope sizes a party actually carries. A station length equal to one of these, with nothing in the
 // route's prose describing two ropes, is the fingerprint of capacity-written-as-distance.
-const ROPES = [50, 60, 70, 80];
+// 30 IS IN THIS LIST BECAUSE A ROW NAMED A SINGLE 30 m ROPE AND RULE 3 STOOD DOWN. Two 30 m ropes
+// are a real configuration in this catalog, so "single 30m rope" is a rope size a party can carry —
+// but with 30 absent, namedRopes() returned nothing, `biggest` was 0, and rule 3 could not fire.
+// wa_hourglass_gully_winter read "2-3 raps (single 30m rope)" beside its own table of two 30 m
+// stations, which one 30 m rope cannot reach: it gives 15 m doubled, and a published trip report
+// records a party carrying exactly that being forced to downclimb.
+//
+// This does NOT reopen the 22 correct routes rule 2 was scoped away from. Rule 2 still requires
+// max >= 50, so a 30 in `named` can never satisfy its `named.includes(max)` test. Only rule 3 is
+// affected, and rule 3 fires on an EXPLICIT "single-rope" claim rather than on a bare station
+// length — which is the whole reason it needs no threshold: a stated configuration beats an
+// inferred one, the same asymmetry this file already applies to `gear`.
+//
+// Measured before shipping: on the live catalog, adding 30 changes the finding count not at all
+// (14 candidates either way), and against the pre-repair Hourglass text it is the difference
+// between silent and flagged. Rule 3 is report-only, so the cost of a false positive here is a
+// line in a candidate list, not a red build.
+const ROPES = [30, 50, 60, 70, 80];
 // Deliberately loose, and note the plural: the first draft used /double[- ]rope\b/, which does not
 // match "double ropes", and it therefore flagged wa_action_potential — a route whose descent text
 // lists all five lengths individually AND says "with double ropes". A guard that flags correct work
