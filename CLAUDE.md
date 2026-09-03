@@ -1712,12 +1712,36 @@ the total when deciding where a new guard belongs.
       with *"we store no device location"*, twice in two days.
     - **The general lesson: gating a control is a change to the DOCUMENTS too.** The flag exists to
       make a promise honest; it makes a different promise dishonest one section over.
+    - **AND THE INVERSE BIT WITHIN HOURS, WHICH IS THE HALF WORTH REMEMBERING.** #1540 gave that
+      same switch a REAL column (`show_name`, `0175`): it persists, `pubName` honours it, and it
+      is no longer gated. So the §3 rewrite above — which had removed the name choice because the
+      control was absent — became **false in the other direction**: *"others see your username"* is
+      wrong the moment a climber turns it on. **Un-gating a control changes the documents too.**
+      Both edits were correct when made; a policy sentence is only true relative to a build.
+    - **§3 was NOT simply restored, and measuring is what decided that.** The original implied the
+      choice governs everything. It does not: `FriendsList` and `CrewCard` still mix `pubName`
+      with a bare `.name`, so **a connection sees the account name whichever way the switch is
+      set**. §3 now states the choice AND that limit — the part the original never said and the
+      part a climber would most reasonably assume otherwise. Injection case `s3limit` pins it,
+      because dropping the limit is the tempting simplification: the sentence reads more cleanly
+      and is quietly misleading.
+    - **The stale assertion was REMOVED, not reworded.** *"§3 must not offer a name choice"* was
+      correct while the control was gated and became a guard **forbidding the policy from
+      describing a live privacy control** — arguing with correct work, the failure this file
+      records under half a dozen names. An assertion kept past the fact it describes is stale
+      bookkeeping wherever it lives, including inside a guard.
+    - **A CASE CAN REPORT `MISSED` WHILE THE GUARD IS INNOCENT.** `s3limit`'s first `expect`
+      matched the text the assertion prints when it **passes** (`ok    …states the LIMIT of it`)
+      rather than its failure message, so the case went red against a guard firing correctly with
+      exit 1. Reproduced in isolation before anything was changed — *"the guard missed"* and *"my
+      expectation was wrong"* are indistinguishable from a red case, and this repo has read one as
+      the other twice.
   - **A same-day amendment does not move a DATE version**, and that is stated rather than papered
     over: §3 changed hours after §4 under the same `POLICY_VERSION`, so an account that accepted
     earlier in the day has a record pointing at slightly different words. Inherent to a date-based
     version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
     real launch, not worth inventing a counter for at three accounts.
-  - Injection-tested **10/10** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+  - Injection-tested **11/11** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
     historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
     dead-branch defect above** — renaming a gated control must report a BROKEN scan rather than
