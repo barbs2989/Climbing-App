@@ -22,6 +22,12 @@
 // A vouch is written first, under the mate's own JWT, so the profile has something real to render
 // on its Vouches tab rather than being judged empty.
 //
+// IT ALSO WALKS THE CREW, from the side that is not the creator. The fixture's crew is made BY
+// the owner with both accounts confirmed, so the mate is a member who did not create it — the side
+// seven historical defects lived on (#569 "You + 0 climbers", #680, #715, #734, #756, #778, #826),
+// every one a seed-id lookup meeting a uuid, and every one found by walking one more surface AS
+// THE OWNER. Nothing has walked the member's.
+//
 // Writes to the live project; per-run fixture, rows deleted, leaks reported. Local only: it needs
 // the mate's password, which CI's durable pair does not expose.
 
@@ -213,6 +219,56 @@ try {
   } else {
     log("\n  --- the Friends screen, which is where the tap was made ---");
     log(friends.slice(0, 700).replace(/\n{2,}/g, "\n"));
+    log("  --- end ---\n");
+  }
+
+  // ---- and the CREW, from the side that is not the creator ----
+  // The fixture's crew is created BY the owner with both accounts confirmed, so the mate is a
+  // member who did not make it. That is the side seven historical defects lived on, every one of
+  // them a seed-id lookup meeting a uuid: #569 rendered a populated roster as "You + 0 climbers",
+  // #680 gave a DB group's own owner no controls, #756 said "Climber" on the day-agreement row,
+  // #778 dropped real partners from the FLOAT PLAN — the screen that records who is on the
+  // mountain — and #826 emptied a past crew's partner list. Each was found by walking one more
+  // surface as the OWNER. This walks the member's side, which no guard has.
+  const dismissed = await page.evaluate(() => {
+    const d = document.querySelector('[role="dialog"][aria-label="Climber profile"]');
+    const x = d && [...d.querySelectorAll("button")].find((b) => (b.textContent || "").trim() === "✕");
+    if (x) { x.click(); return true; }
+    return false;
+  });
+  if (!dismissed) await page.goto(base + "?zt=crew", { waitUntil: "domcontentloaded" });
+  await settledText(page);
+  // BACK TO THE CREWS SUB-VIEW. `crewView` is still on "friends" from the tap above, and closing
+  // the dialog does not reset it — a first version asserted on the Friends screen and reported a
+  // missing crew that was never on it. By accessible name, because the badge count renders INSIDE
+  // the button, so textContent is "Crews1".
+  const toCrews = await tapByName(page, "Crews");
+  must(toCrews, "the Crews sub-view could be reached");
+  await settledText(page);
+
+  const crew = await page.evaluate(() => document.body.innerText);
+  must(crew.length > 300, `the Crew tab rendered (${crew.length} chars)`);
+
+  // The crew has to be THERE for a member who did not create it.
+  must(/Heliotrope Ridge TH/.test(crew), "the crew the mate belongs to is listed, by its meeting place");
+
+  if (/Heliotrope Ridge TH/.test(crew)) {
+    // #569 exactly: a populated roster that resolves nobody reads as a crew of one.
+    must(!/You \+ 0 climbers?/i.test(crew), 'the roster does not read "You + 0 climbers" on a crew with two confirmed members');
+    // and the other member is IDENTIFIED rather than falling back to a placeholder.
+    const named = crew.includes(ownerName) || crew.includes("@" + ownerName.toLowerCase().replace(/[^a-z0-9]/g, "")) || crew.includes("Quinn");
+    must(named, `the OTHER member is identified on the crew (looking for "${ownerName}")`);
+    for (const ph of ["Member", "A climber", "Climber "]) {
+      must(!crew.includes(ph), `the roster does not fall back to the placeholder "${ph.trim()}"`);
+    }
+    if (!named || /You \+ 0 climbers?/i.test(crew)) {
+      log("\n  --- the Crew tab, as a member who did not create it (first 800 chars) ---");
+      log(crew.slice(0, 800).replace(/\n{2,}/g, "\n"));
+      log("  --- end ---\n");
+    }
+  } else {
+    log("\n  --- the Crew tab (first 800 chars) ---");
+    log(crew.slice(0, 800).replace(/\n{2,}/g, "\n"));
     log("  --- end ---\n");
   }
 
