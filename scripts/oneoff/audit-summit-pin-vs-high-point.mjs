@@ -36,7 +36,7 @@
 // summit across one peak's rows.
 import { selectAll, requireServiceKey } from "../lib/supabase-env.mjs";
 const KEY = requireServiceKey();
-const rows = await selectAll("routes", "id,high_point_ft,waypoints,areas!inner(name,path,elevation_ft)",
+const rows = await selectAll("routes", "id,high_point_ft,gain_ft,waypoints,areas!inner(name,path,elevation_ft)",
   "areas.path=cd.usa.washington", { pageSize: 500, key: KEY });
 console.log("WA rows:", rows.length);
 if (rows.length < 5000) { console.error("SHORT READ"); process.exit(1); }
@@ -93,7 +93,24 @@ for (const r of rows) {
     compared++;
     const d = Math.abs(e - hp);
     if (d < TOL) continue;
-    hits.push({ id: r.id, peak: r.areas.name, pin: e, hp, d,
+    // A THIRD FIELD CAN ADJUDICATE, AND IT SETTLED THE FIRST CASE THIS AUDIT COULD NOT.
+    // `gain_ft` is derived from a summit height, so it agrees with whichever of the two the author
+    // actually used. On the Chianti Spire pair it is decisive: gain_ft 4450 = pin 8400 - trailhead
+    // 4250 + the row's own stated 300 ft re-gain, EXACTLY, where high_point_ft 8459 would give
+    // 4509. So the pin and gain_ft are the coherent pair and the column is the outlier -- a
+    // direction reached by arithmetic rather than by picking a source.
+    // It only speaks where a trailhead pin carries an elevation, and it is SILENT rather than
+    // guessing otherwise; a tolerance is allowed because a route re-gains ground on the way in.
+    let arb = null;
+    const thW = wps.find(x => /trailhead/i.test(String(x.type || "") + String(x.name || "")));
+    const thE = thW ? elevOf(thW) : null;
+    const g = r.gain_ft === null || r.gain_ft === undefined ? null : Number(r.gain_ft);
+    if (thE !== null && Number.isFinite(g) && g > 0) {
+      const dPin = Math.abs(g - (e - thE)), dHp = Math.abs(g - (hp - thE));
+      // require a clear separation, or the arbitration says nothing
+      if (Math.min(dPin, dHp) <= 15 && Math.abs(dPin - dHp) >= 20) arb = dPin < dHp ? "PIN" : "high_point_ft";
+    }
+    hits.push({ id: r.id, peak: r.areas.name, pin: e, hp, d, arb,
       area: r.areas.elevation_ft ?? null, type: String(w.type || ""), name: String(w.name || w.type || "") });
   }
 }
@@ -105,7 +122,7 @@ console.log(`disagreeing by ${TOL} ft or more: ${hits.length}\n`);
 for (const h of hits) {
   const agree = h.area == null ? "" :
     `   area says ${h.area} ft -> ${Math.abs(h.area - h.hp) <= Math.abs(h.area - h.pin) ? "closer to high_point_ft" : "closer to the PIN"}`;
-  console.log(`  !! ${h.id.padEnd(44)} pin ${String(h.pin).padStart(6)} vs hp ${String(h.hp).padStart(6)} (${String(h.d).padStart(4)} ft)  type=${JSON.stringify(h.type)} name=${JSON.stringify(h.name.slice(0,44))}`);
+  console.log(`  !! ${h.id.padEnd(44)} pin ${String(h.pin).padStart(6)} vs hp ${String(h.hp).padStart(6)} (${String(h.d).padStart(4)} ft)` + (h.arb ? `   gain_ft agrees with the ${h.arb}` : "") + `   name=${JSON.stringify(h.name.slice(0,40))}`);
 }
 console.log(`\nREPORT-ONLY. The peak's own \`areas.elevation_ft\` is printed as a THIRD record where it`);
 console.log(`exists, because it is written by a different pass -- but it is not decisive on its own:`);
