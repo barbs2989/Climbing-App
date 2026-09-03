@@ -112,6 +112,22 @@ eq("a gain equal to the rise is silent", /trailhead and summit pins/.test(planOf
 eq("a recorded high camp at the implied start is silent", /trailhead and summit pins/.test(planOf(route({
   waypoints: route().waypoints.concat([{ n: 3, type: "Campsite", name: "High camp", elev: 9399, lat: 46.83, lng: -121.78 }]),
 }))), false);
+/* ...AND THE SAME CAMP RECORDED IN `bivy` RATHER THAN `waypoints`, which is where most of them
+   live. The predicate read ONLY waypoints, so 12 of the 49 routes that fire on the live catalog
+   were being told their correct gain was impossible - a quarter of them. The worst was
+   wa_mount_rainier_tahoma_glacier: the caveat claimed it 6,499 ft short while the row records a
+   camp at 9,440 ft, 41 ft from the implied start; wa_south_ridge_6 matched to the FOOT. A false
+   warning is how a real one stops being read. Measured A/B: 49 -> 37, and the 12 go to 0.
+   The fixture is the WHOLE-ROW shape - dbRouteToCamel spreads the raw row, so `bivy` reaches the
+   app beside `waypoints`, and campSites() already merges the same two stores for CAMPING. */
+eq("a high camp recorded in BIVY is equally silent", /trailhead and summit pins/.test(planOf(route({
+  bivy: [{ name: "Emerald Ridge camp", elev: 9399 }],
+}))), false);
+/* ...but a bivy at some OTHER height must not silence it, or the widening would excuse any route
+   that happens to record a camp anywhere. */
+eq("a bivy far from the implied start still fires", /trailhead and summit pins/.test(planOf(route({
+  bivy: [{ name: "Valley camp", elev: 3200 }],
+}))), true);
 /* THE CLIMBING VERTICAL IS CREDITED FIRST, and this is the case that corrects #1353 as merged.
    `scarfHrs` is the HIKE leg and `techHrs` the climbing leg, so `gain_ft` is the APPROACH gain,
    not trailhead-to-summit. A route whose pitch count alone explains the gap has a perfectly

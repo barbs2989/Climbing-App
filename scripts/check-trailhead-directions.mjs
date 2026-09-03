@@ -101,27 +101,37 @@ const render = (route, tab) => renderToStaticMarkup(
     })));
 
 const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "crag", pitches: 1 }, extra || {}));
+/* Every field hasPlanContent() reads, cleared. Anything that resolves a trailhead coordinate is in
+   that list, which is why a crag Overview can never carry a drive control — see section 1. */
+const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, noCoord, cragOv, cragPlan, gateOnly;
+let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
   noCoord = render(ROUTE({ approachLogistics: { trailhead: "Probe Trailhead" }, waypoints: [] }), "planner");
-  cragOv = render(CRAG(), "overview");   // cragOnly puts a GETTING THERE panel on OVERVIEW too
+  /* A crag route owns GETTING THERE on OVERVIEW only when no Plan tab is offered to host it —
+     showPlan is `!cragOnly || hasPlanContent(route)`, so for a crag it IS hasPlanContent. A crag
+     that HAS plan content renders the panel on Plan and must not repeat it on Overview; that is
+     cragDup below. Measured on the pre-#1493 tree, the same crag rendered GETTING THERE and a
+     drive control on BOTH tabs — one destination offered twice on one page, the #1437 defect one
+     level out. */
+  cragOv = render(CRAG(BARE), "overview");   // no plan content: Overview owns the panel
+  cragDup = render(CRAG(), "overview");      // has plan content: Plan owns it, Overview must be silent
   cragPlan = render(CRAG(), "planner");
   // A seasonal gate with NO road status — the one shape that could have lost the gate when
   // TrailheadCard's own road line was dropped.
   gateOnly = render(ROUTE({ road: { name: "Probe River Road (FR 99)", seasonalGate: "Gated 1 Nov to 1 Jun" } }), "planner");
 } catch (e) { dead(`RouteDetail threw while rendering: ${String(e && e.message).slice(0, 200)}`); }
 
-for (const [n, h] of [["planner", plan], ["no-coordinate", noCoord], ["crag overview", cragOv], ["crag planner", cragPlan], ["gate-only", gateOnly]]) {
+for (const [n, h] of [["planner", plan], ["no-coordinate", noCoord], ["crag overview", cragOv], ["crag duplicate-check", cragDup], ["crag planner", cragPlan], ["gate-only", gateOnly]]) {
   if (h.length < 900) dead(`the ${n} render came back thin (${h.length} chars)`);
 }
 
 /* SSR escapes: renderToStaticMarkup emits &amp; and &#x27;. Match the un-escaped words only, the
    trap [[ssr-probes-must-match-escaped-html]] records. */
 const text = (h) => h.replace(/<[^>]*>/g, " ").replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/\s+/g, " ");
-const pTxt = text(plan), nTxt = text(noCoord), coTxt = text(cragOv);
+const pTxt = text(plan), nTxt = text(noCoord), coTxt = text(cragOv), cpTxt = text(cragPlan);
 
 /* A CONTROL, not a phrase and not a URL — see the header. An <a> or <button> whose own text IS a
    drive label. `[^<]*` keeps it to the element's own text, so a label wrapped around other markup
@@ -133,18 +143,40 @@ const driveControls = (html) => [...html.matchAll(/<(a|button)\b[^>]*>([^<]*)<\/
 
 // The panels must exist, or every count below is a statement about a page that never rendered.
 if (!/GETTING THERE/.test(pTxt)) dead("the Plan tab's GETTING THERE panel did not render — ANCHOR LOST");
-if (!/GETTING THERE/.test(coTxt)) dead("the crag Overview's GETTING THERE panel did not render — ANCHOR LOST");
+if (!/GETTING THERE/.test(coTxt)) dead("a plan-content-free crag's Overview GETTING THERE panel did not render — ANCHOR LOST");
+if (!/GETTING THERE/.test(cpTxt)) dead("the crag Plan tab's GETTING THERE panel did not render — ANCHOR LOST");
 if (!/TRAILHEAD/.test(pTxt)) dead("TrailheadCard did not render — ANCHOR LOST, and the duplication assertions below would be vacuous");
 if (!/APPROACH/.test(pTxt)) dead("the APPROACH heading did not render — ANCHOR LOST, nothing bounds the panel");
 if (!driveControls(plan).length && !driveControls(cragOv).length) dead("no drive control found on ANY screen — the control detector matches nothing");
 ok("both GETTING THERE panels, TrailheadCard and the APPROACH heading render, so the counts below mean something");
 
 // ── 1. one drive control per screen, and it is with GETTING THERE ────────────────────────────────
-for (const [n, html] of [["Plan tab", plan], ["crag Overview", cragOv], ["crag Plan tab", cragPlan]]) {
+/* "crag Overview" is NOT in this list, and its absence is structural rather than a gap. A drive
+   control needs trailheadPoint() to resolve, which needs either a placed Trailhead waypoint or
+   approachLogistics.trailheadLat/Lng — and BOTH make hasPlanContent() true, so the Plan tab exists
+   and owns the panel. A crag Overview carrying a drive control is unreachable by construction.
+   Section 1b asserts that directly rather than leaving it implied. */
+for (const [n, html] of [["Plan tab", plan], ["crag Plan tab", cragPlan]]) {
   const c = driveControls(html);
   if (c.length === 1) ok(`${n}: exactly one drive control (${JSON.stringify(c[0])})`);
   else fail(`${n}: ${c.length} drive control(s) — ${JSON.stringify(c)}. One destination must be offered once.`);
 }
+
+// ── 1b. one PAGE, one GETTING THERE — the crag must not say it on both tabs ──────────────────────
+/* #1437 fixed one destination offered twice on ONE SCREEN. The same duplication survived across the
+   two sub-tabs of a crag route: `cragOnly?` put the panel on Overview whether or not a Plan tab was
+   also showing it. Measured on the pre-fix tree, a crag with plan content rendered GETTING THERE and
+   a drive control on Overview AND on Plan. The gate is now `cragOnly && !showPlan`, so exactly one
+   tab owns it. Both directions are asserted: a crag WITH a Plan tab must be silent on Overview, and
+   a crag WITHOUT one must still say it somewhere, or the fix has deleted the panel rather than
+   moved it. */
+const cdTxt = text(cragDup);
+if (!/GETTING THERE/.test(cdTxt)) ok("a crag with a Plan tab does not repeat GETTING THERE on Overview");
+else fail("a crag renders GETTING THERE on Overview AND on Plan — one destination, offered twice on one page");
+if (driveControls(cragDup).length === 0) ok("...and offers no second drive control there");
+else fail(`a crag Overview offers ${driveControls(cragDup).length} drive control(s) the Plan tab already offers`);
+if (/GETTING THERE/.test(coTxt)) ok("a crag with no Plan tab still gets GETTING THERE on Overview — moved, not deleted");
+else fail("a crag with no Plan tab has nowhere to see GETTING THERE at all");
 
 /* ABOVE THE APPROACH HEADING is how "with GETTING THERE" is asserted without a character window:
    the control renders inside TrailheadCard, which sits between the road panel and APPROACH, so
@@ -182,15 +214,25 @@ else fail(`the drive note is printed ${nNote} time(s) on one tab`);
 // ── 4. a label describes the value under it ──────────────────────────────────────────────────────
 /* The crag Overview printed `road.driveNote || road.name` under the heading "Trailhead", so 249
    crag-family routes read "Roughly 25-30 minutes (about 20 miles) from Dayton, WA" as the name of
-   the trailhead — a description of the DRIVE, under the name of the place you drive to, and the
-   same string the Plan tab labels correctly as "Drive notes". One label cannot be right for both
-   values, so it is chosen per value. */
-const oIdx = coTxt.indexOf("GETTING THERE");
-const oPanel = oIdx < 0 ? "" : coTxt.slice(oIdx, oIdx + 700);
-if (!new RegExp("Trailhead\\s+" + DRIVE_NOTE.replace(/[.]/g, "\\$&")).test(oPanel)) ok('the crag Overview does not label the drive "Trailhead"');
-else fail('the crag Overview prints the drive note under the label "Trailhead" — a description of the drive, under the name of the place you drive to');
-if (new RegExp("The drive\\s+" + DRIVE_NOTE.replace(/[.]/g, "\\$&")).test(oPanel)) ok("...it labels it as the drive");
-else fail("the crag Overview's drive note has no label naming it as the drive");
+   the trailhead — a description of the DRIVE, under the name of the place you drive to.
+
+   THAT CLASS IS NOW CLOSED BY CONSTRUCTION, which is a stronger statement than the old assertion
+   and is why this section changed shape. `road` is one of the fields hasPlanContent() reads, so a
+   route carrying a drive note ALWAYS has a Plan tab, and the Overview panel it used to be
+   mislabelled in no longer renders for that route at all. The assertion below is therefore about
+   the panel that DOES render it — the Plan tab, which labels it "Drive notes" — plus the negative
+   that the surviving crag Overview panel prints no drive note under any label. Asserting the old
+   "Trailhead + note" shape against today's crag Overview would pass vacuously: that render has no
+   road on it to mislabel. */
+const cpIdx = cpTxt.indexOf("GETTING THERE");
+const cpPanel = cpIdx < 0 ? "" : cpTxt.slice(cpIdx, cpIdx + 700);
+const noteRe = (label) => new RegExp(label + "\\s+" + DRIVE_NOTE.replace(/[.]/g, "\\$&"));
+if (noteRe("Drive notes").test(cpPanel)) ok('the crag Plan tab labels the drive note "Drive notes"');
+else fail('the crag Plan tab does not label the drive note as the drive');
+if (!noteRe("Trailhead").test(cpPanel)) ok('...and does not label it "Trailhead"');
+else fail('the crag Plan tab prints the drive note under the label "Trailhead" — a description of the drive, under the name of the place you drive to');
+if (!new RegExp(DRIVE_NOTE.replace(/[.]/g, "\\$&")).test(coTxt)) ok("the surviving crag Overview panel carries no drive note to mislabel");
+else fail("a crag Overview prints a drive note — it should have no road at all, since road implies a Plan tab");
 
 // ── 5. no coordinate on file — no control, and it says so ────────────────────────────────────────
 if (driveControls(noCoord).length === 0) ok("a route with no trailhead coordinate offers no drive control");

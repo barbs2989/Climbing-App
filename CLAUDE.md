@@ -60,6 +60,7 @@ npm run check:overlay-absence # every overlay that claims you have none is gated
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender (hand-run: it cannot delete what it writes)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -971,6 +972,69 @@ the total when deciding where a new guard belongs.
     label everyone sees, so reverting the `isCreator` fix left it **green**. Only injection
     found that. `+ Mod` is gated on `isCreator`, the visibility toggle on `isMod`; they are
     different questions and must be asserted separately.
+- **`check:message-delivery`** is the **first guard here that involves two people**. Every other
+  browser guard signs in as at most one account and reads its own screens — `check:ui` walks the
+  demo logged out, `check:zero` a new account with nothing, `check:signed-in` and `check:outage` a
+  real account reading its OWN data — so **a fact written by a SECOND climber has been outside CI
+  by construction**. That is not a hypothetical seam: it is where **#1497** came from, a vouch you
+  had received reaching no screen and no number, with every gate green throughout.
+  - **What it walks:** the mate sends a direct message under the mate's own JWT, through the same
+    `users can send messages` policy (`auth.uid() = sender_id`) the app's `sendDirectMessage` uses;
+    the owner then signs in and opens the inbox. It asserts the inbox does not claim to be empty,
+    the sender is **identified**, the body is previewed, the thread opens, and the body renders in
+    the words the sender wrote — 9 assertions.
+  - **Never the service key.** It bypasses RLS, and *what a second REAL account can do* is the
+    entire question; a service-key insert would manufacture a state the app's own flow may not
+    reach. This is the rule `check:signed-in` already records from the other side, where seeding as
+    the users found that RLS refuses an `accepted` connection written directly.
+  - **IDENTIFIED, NOT NAMED, and getting that wrong is how this walk nearly asserted a defect as
+    the contract.** The inbox renders the sender through `pubName()`, which falls back to the
+    handle unless `showName` is set — and a DB profile can never carry it, because **`profiles` has
+    no `show_name` column** and nothing anywhere writes one. An assertion on the display name fails
+    against a correct app. It accepts either, and the naming inconsistency that sits behind it
+    (profile and inbox gate through `pubName`; the friends list and crew roster do not) is recorded
+    in memory as a product question rather than fixed here.
+  - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
+    different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
+    and not a name either: a climber cannot tell which of their partners wrote to them.
+  - **IT IS HAND-RUN, AND THE REASON IS A DEFECT I FOUND IN MY OWN TEARDOWN AN HOUR AFTER WIRING IT
+    INTO CI.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
+    all**, so the teardown's DELETE is refused by RLS — and PostgREST answers a zero-row DELETE
+    with **204**, which `res.ok` reads as success. Measured directly (insert → delete → re-read):
+    HTTP 204, `res.ok` true, **row still there**. The guard printed *"removed the message: ok"* off
+    that status and was reporting a success it did not have — *a 200 is not evidence the data
+    changed*, which this file records for hand-written SQL and for `patchRow` and which arrived
+    here in a third place. It reads the row back now and says plainly when it could not remove it.
+  - **Locally that is harmless and in CI it would not be.** The per-run accounts are deleted and
+    cascade; the durable CI pair is permanent, so **every run would leak a message into a live
+    project forever** — the shape recorded under *"the table without a backstop is the one whose
+    leaks you can see"*, where 13 crews accumulated one per run. **Unlike crews, no sweep is
+    possible**: a sweep needs the same DELETE the policy refuses. The CI job was written, measured,
+    and **pulled before it merged**; the exemption in `check:guard-wiring`'s `EXCLUDED` carries the
+    measurement so the next reader does not re-derive it.
+  - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
+    `messages` rows coexist; every assertion holds with either or both present; teardown targets a
+    single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
+    **its own** message. Without that last part run A passes on run B's row — a **false pass in the
+    exact window this guard watches**. What is missing is only the ability to clean up.
+  - **The missing delete policy is worth knowing on its own terms:** a climber cannot delete a
+    message they sent or received, ever. Whether they should be able to is a product question
+    (unsend), and adding a policy to make a test tidy would be the wrong reason to answer it.
+  - **Its two siblings are NOT safe and stay in `scripts/oneoff/`**, each for its own reason:
+    `vouches` is `UNIQUE(from_id, to_id)`, so a second run's insert is refused with a 409 *and*
+    teardown removes the single shared row under the first run — an upsert fixes only the first
+    half; and the logged-climb walk asserts `fresh.length === 1`, which a concurrent row breaks.
+  - **A CLAIM THAT KEPT THIS OUT OF CI FOR A WEEK WAS FALSE, and it was mine.** Three merged PRs
+    said these walks were local-only because *"the mate's password is not exposed to CI"*.
+    `durable-fixture.mjs` signs in **as the mate** with `CI_TEST_MATE_PASSWORD` and holds
+    `mateSession` throughout — it uses it to sweep stale crews — and simply never **returned** it.
+    The blocker was a missing property on a return object, not a missing credential. *Read what a
+    module does, not only what it hands back.*
+  - **Promotion changed its DEPTH**, the trap `check:pitch-discount` records: it kept `../..` from
+    `scripts/oneoff/` and would have resolved the wrong tree. `ROOT` is one level now.
+  - **Length is worthless here and every assertion is on text.** The populated inbox is ~48
+    characters and the EMPTY one ~117, because the empty state carries the explanatory copy — the
+    numbers run backwards from the intuition, which `check:signed-in`'s entry already records.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
@@ -3338,6 +3402,23 @@ the total when deciding where a new guard belongs.
     would be fitted to the answer. Routes that RECORD something at the implied start are excluded:
     that is the documented high-camp convention (24 routes), and flagging them would accuse correct
     work.
+  - **AND "RECORDS SOMETHING" MEANS EITHER COLUMN, WHICH IT DID NOT UNTIL #1533.** The predicate
+    read `waypoints` alone, and most high camps live in **`bivy`** — so a quarter of the caveats it
+    rendered were telling a climber that a CORRECT gain was impossible. Measured A/B on the live
+    catalog: the caveat fires on **49 routes, 12 of them falsely**, and the widening takes it to 37
+    with those 12 at zero. The worst was `wa_mount_rainier_tahoma_glacier` — the caveat claimed it
+    **6,499 ft short** while the row records a camp at 9,440 ft, **41 ft** from the implied start;
+    `wa_south_ridge_6` matched to the **foot**. *A false warning is how a real one stops being
+    read*, which this file states for rope warnings and for the "After dark" tile, arriving on the
+    tile next to them.
+    - The two stores are the same pair **`campSites()` already merges** for CAMPING & BIVY, so this
+      is not a new source — it is the second half of one the app already treats as one thing.
+    - **The widening is NOT a blanket excuse**, and the guard pins that: a bivy at some *other*
+      height must still let the caveat fire, or any route recording a camp anywhere would be
+      silenced. Both directions are cases, and the new one was proven non-vacuous by reverting the
+      predicate and watching it fail.
+    - **`audit:gain` has the same blind spot and is REPORT-ONLY, so it is left**: 24 of its 80
+      findings are this. Read its count as an upper bound until somebody widens it too.
   - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
     **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
     while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
@@ -4436,6 +4517,15 @@ the correction knows the screen is wrong, and they have no way to report it.
     Plan tab labels correctly as *"Drive notes"*. **One label cannot be right for both values**, so
     it is chosen per value (`"The drive"` / `"Road"`) rather than picked once and made to cover the
     other. `scripts/oneoff/measure-crag-drive-note-label.mjs` is the count.
+    - **That class is now closed BY CONSTRUCTION, which is stronger than the assertion it
+      replaces.** `road` is one of the fields `hasPlanContent()` reads, so a route carrying a drive
+      note always has a Plan tab, and the Overview panel it used to be mislabelled in no longer
+      renders that route's road at all. Section 4 therefore asserts the label on the tab that DOES
+      print it, plus the negative that the surviving crag Overview panel carries no drive note under
+      any label. **Injection case 4 had to be repointed for the same reason and MISSED first** —
+      aimed at the Overview it found nothing to mislabel, which reads as a guard that stopped
+      working and is really a defect that stopped being reachable. Asserting the old shape against
+      today's crag Overview would pass **vacuously**.
   - **"With GETTING THERE" is asserted as ORDER, not as a character window** — the control renders
     inside `TrailheadCard`, so slicing N characters after the heading would encode a guess about
     the panel's size, the trap the camping panel and the Logbook badge both record. It must fall
@@ -4444,19 +4534,35 @@ the correction knows the screen is wrong, and they have no way to report it.
     sites; the surviving one showed it only as a **suffix on the road STATUS row**, so a route with
     a gate and no status would have lost it silently — the
     [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
-  - **A KNOWN GAP, stated rather than quietly passed: a crag route shows GETTING THERE TWICE**, once
-    on Overview and once on Plan, with a different drive control on each. This guard asserts one per
-    SCREEN, which is what it can defend; whether a crag's Overview should carry a drive block at all
-    is a question about what belongs on which tab, and that is a product decision rather than
-    polish. Read this guard's green as *"no screen offers two"*, never as *"the route offers one"*.
+  - **THAT KNOWN GAP IS CLOSED, and reading it as a worklist rather than a caveat is what closed
+    it.** The entry here used to say a crag route shows GETTING THERE **twice** — once on Overview,
+    once on Plan, with a different drive control on each — and defer it as *"a product decision
+    rather than polish"*. #1493 is that decision: the gate is `cragOnly && !showPlan`, so exactly
+    one tab owns the panel. Measured on the pre-fix tree, the same crag rendered GETTING THERE and
+    a drive control on **both** tabs; after it, a crag **with** plan content shows it on Plan only
+    and a crag **without** one still shows it on Overview — moved, not deleted, and both directions
+    are asserted. This is the [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape for the
+    fourth time in this file.
+  - **The two PRs looked like a collision and were not.** #1493 forked before this guard existed,
+    so its merge was the first time they met, and the guard went red on `ANCHOR LOST` — its crag
+    Overview fixture asserted the very duplication its own entry called a defect. What changed is
+    the fixture and the section, never the invariant: section 1 now walks the Plan tab and the crag
+    Plan tab, section **1b** asserts the no-duplication rule directly, and the crag Overview fixture
+    is a route with **no plan content**, the only state in which that panel is the owner.
+  - **A crag Overview can never carry a drive control, by construction rather than by fixture.** A
+    control needs `trailheadPoint()` to resolve, which needs a placed Trailhead waypoint or
+    `approach_logistics.trailheadLat/Lng` — and **both are fields `hasPlanContent()` reads**, so the
+    Plan tab exists and owns the panel. Section 1 says so where it drops that row, rather than
+    leaving a reader to wonder whether coverage was lost.
   - Fails **closed** five ways: a thin render, either GETTING THERE panel missing, a missing
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+  - Injection-tested **8/8** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
-    neighbours.
+    neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
+    cannot quietly re-open.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
@@ -4671,6 +4777,13 @@ the correction knows the screen is wrong, and they have no way to report it.
       The ambiguity gate (the chosen assignment must beat the swap by 3x) **earned itself immediately**:
       `wa_tenpeak_mountain_southeast`'s swapped pairing was *better* (559 m against 872 m), so greedy
       had it wrong. 36 -> 31 repaired, 21 refused, every refusal printed.
+      - **IT WAS DETECTING A REAL FAULT AND DRAWING THE WRONG CONCLUSION FROM IT, which is why the
+        pairing was later rewritten.** *"Greedy had it wrong"* is a defect in the PAIRING, and the
+        gate answered it by refusing the route — so it defended the wrong assignment rather than
+        replacing it, and a route with an unarguable 15 m anchor went unrepaired. An aggregate also
+        hides a certain pair behind an uncertain one (`wa_vasiliki_ridge_standard`, 17.5x, refused
+        on the sum). Confidence-first plus elimination fixes both; the counts above are the
+        pre-rewrite ones. **A gate that fires correctly can still prescribe the wrong repair.**
     - **THE ROOT CAUSE WAS AN ASYMMETRY IN THE PREDICATE, AND FIXING IT BEAT REPAIRING VERTICES.**
       `trackIsJustTheWaypoints` demanded `line.every(onAPin)` — **no slack at all on the vertex side,
       while pins already had one** — and only the pin slack had a stated reason. So the vertex
