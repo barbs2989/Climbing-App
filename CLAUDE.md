@@ -5227,6 +5227,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **3 of the 8 have a decidable half and 5 do not** (`measure-stranded-vertex-pairings.mjs`),
       and a route needs only its confident half repaired because the predicate tolerates one adrift.
       Left as follow-up: the measurement is committed, the write is not.
+    - **AND THE REPAIR PATH HAD THE SAME HOLE AS THE AUDIT, IN A SECOND CONSUMER.**
+      `fix-stranded-track-vertices` asserted its post-condition by asking the app's predicate to
+      return true after the move — exact while the predicate demanded every vertex be on a pin, and
+      **vacuous** once it tolerated two: on precisely the routes the script exists to repair it now
+      returns true BEFORE the move as well. It measures the repair instead — strictly fewer adrift
+      vertices and no newly-orphaned pin — neither of which a future widening can weaken.
+    - **ALL-OR-NOTHING PAIRING WAS REFUSING UNARGUABLE WORK.** Every one of the 17 was refused
+      because ONE of its vertices could not be placed, including a vertex **26 m** from Anderson
+      Pass at 776x. An unplaceable pair now stops the pairing rather than condemning the route.
+    - **THE MOST USEFUL FINDING: THREE OF THE SIX CANDIDATES WERE NOT STRANDED VERTICES AT ALL.**
+      A stranded vertex sits where a pin used to be; these were **interpolated along the line**
+      — 14-decimal coordinate tails, **0.00 m** off the straight chord between their own
+      neighbours, at fractions of exactly **3/5** and **2/5**. Moving one onto a pin would invent a
+      shape the line never had, which is the fabrication class `audit:synthetic-waypoints` already
+      documents for pins, arriving on a gpx VERTEX. **The confidence ratio did not catch them —
+      `wa_mount_lyall_south_route` scored 18.4x** — because distance from a pin says nothing about
+      where a point came from. `lib/track.js` now exports `coordinateIsComputed` per point so the
+      repair path and the audit ask its rule rather than copying it.
+    - **A computed vertex is EXCLUDED FROM PAIRING, not route-fatal**, and the first version got
+      that wrong: refusing the whole route threw away `wa_inner_constance_standard`'s 85 m / 80x
+      repair because its *other* vertex was computed.
+    - **ELIMINATION IS ONLY SOUND WITH ONE ORPHAN LEFT, and excluding a vertex broke that
+      silently.** With fewer candidates than orphans the "last vertex" branch took `os[0]` — an
+      arbitrary pick wearing elimination's clothes. It proposed Mushroom Tower at 1,520 m to the
+      first orphan when the confidence test had correctly refused that route at 2.3x. **Found by
+      reading the dry run, not by any check.**
+    - **A PARTIAL PAIR HAS NO ELIMINATION BEHIND IT, so its bar is 500 m rather than 3 km — and
+      that number sits in a measured VOID rather than being fitted.** Across all 17 routes the
+      move distances are 26, 85, 2103, 3156, 3546, 4583, 6257, 6257, 6258, 12430, 15682: a
+      refinement is tens of metres, a replacement is kilometres, and **85 to 2,103 is empty**. It
+      matters on `wa_mount_rainier_liberty_ridge`, whose vertex would move 2,103 m onto the Liberty
+      Cap pin while its own 3-decimal coordinate sits closer to Rainier's MAIN summit.
+    - **Applied: 2 routes** (26 m and 85 m, both onto a coordinate the row already holds), verified
+      by read-back on the repaired property rather than on the caption — re-checking the caption
+      would have the identical hole, since it is already true of those rows.
+    - **The audit names the CAUSE now, because the two want opposite repairs**: 23 adrift vertices
+      across 17 routes, **8 of them computed**. Telling somebody to carry a computed vertex onto a
+      pin is wrong advice, and the report used to give it for all of them.
     - Injection-tested **4/4** (`scripts/oneoff/inject-majority-slack-cases.mjs`), each proving its
       edit landed **by checksum**. **Two cases came back WRONG FAILURE first and the guard was
       innocent both times**: the three-point case was written against the FIVE-pin fixture, where
