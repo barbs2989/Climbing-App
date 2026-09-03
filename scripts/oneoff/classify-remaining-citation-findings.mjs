@@ -14,11 +14,11 @@ import { selectAll } from "../lib/supabase-env.mjs";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const src = fs.readFileSync(path.join(ROOT, "scripts/audit-prose-citations.mjs"), "utf8");
 const lift = (n) => {
-  const m = src.match(new RegExp("^const " + n + " = (/.*/[a-z]*);$", "m"));
+  const m = src.match(new RegExp("^const " + n + " ?= ?(/.*/[a-z]*);$", "m"));
   if (!m) { console.error("ANCHOR LOST: " + n); process.exit(1); }
   return eval(m[1]);
 };
-const NAMED = lift("NAMED"), ACT = lift("ACT");
+const NAMED = lift("NAMED"), ACT = lift("ACT"), CREDIT_FIELD = lift("CREDIT_FIELD");
 const CN = lift("COMMON_NOUN");
 const de = (t) => t.replace(CN, (m) => "x".repeat(m.length));
 const pcm = src.match(/const PROSE_COLS = \[[\s\S]*?\];/);
@@ -41,8 +41,11 @@ const buckets = { publisher: [], trip: [], record: [], other: [] };
 for (const v of values) {
   const t = de(v.text);
   const named = NAMED.test(t), act = ACT.test(t);
-  if (!named && !act) continue;
-  if (named) { buckets.publisher.push(v); continue; }
+  // Mirror the audit's OWN verdict, including #1537's credit-field scoping. A copy of that rule
+  // drifted 6 findings apart from the audit before this was lifted.
+  const isCredit = CREDIT_FIELD.test(v.field);
+  if (!(isCredit ? act : (named || act))) continue;
+  if (named && !isCredit) { buckets.publisher.push(v); continue; }
   // ACT only. Which shape?
   if (TRIP.test(t) && !/\bsources?\b/i.test(t)) buckets.trip.push(v);
   else if (/\bsources?\b/i.test(t)) buckets.record.push(v);

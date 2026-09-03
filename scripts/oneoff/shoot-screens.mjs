@@ -9,6 +9,7 @@ import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { fileURLToPath } from "node:url";
 import { settledText } from "../lib/render-settle.mjs";
+import { tapByText } from "../lib/tap-by-text.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const OUT = process.env.SHOT_DIR || path.join(ROOT, "node_modules", ".shots");
@@ -53,6 +54,7 @@ page.setDefaultNavigationTimeout(120000);
 await page.goto(base, { waitUntil: "domcontentloaded" });
 await settledText(page);
 
+let routeMissed = false;
 const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
 for (const t of TABS) {
   const ok = await page.evaluate((label) => {
@@ -71,6 +73,36 @@ for (const t of TABS) {
   console.log(`  ${t} -> ${f}`);
 }
 
+// ---- the route page and its six sub-tabs ----------------------------------------
+// The richest layout in the app, and the one surface the clipping sweep MEASURED and
+// nobody ever LOOKED at. `?zr=1` calls the app's own openRoute() from inside the shared
+// opener. Sub-tab ORDER matters: check:overflow records that "Reports" clicks from
+// Overview and does not from Photos.
+await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded" });
+await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).catch(() => {});
+if (!(await page.evaluate(() => window.__routeOpen === true))) {
+  console.error("  route page NOT REACHED - ?zr=1 never set window.__routeOpen. Shots below are missing, not clean.");
+  routeMissed = true;
+} else {
+  await settledText(page);
+  const seen = new Map();
+  for (const sub of ["Overview", "Reports", "Photos", "Partners", "Plan", "Safety"]) {
+    if (!(await tapByText(page, sub))) { console.log(`  route:${sub}: sub-tab not found`); continue; }
+    await settledText(page);
+    // A click that returns TRUE is not evidence it navigated -- two elements carry the text
+    // "Reports", and a guard once reported six clean sub-tabs while shooting Overview six
+    // times. Fingerprint the screen so a repeat is visible rather than filed as coverage.
+    const fp = await page.evaluate(() => (document.body.innerText || "").length);
+    const dup = seen.get(fp);
+    seen.set(fp, sub);
+    const f = path.join(OUT, "route-" + sub.toLowerCase() + ".png");
+    await page.screenshot({ path: f, fullPage: true });
+    console.log(`  route:${sub} -> ${f}${dup ? `  <-- SAME SCREEN as ${dup} (${fp} chars): the click did not land` : ` (${fp} chars)`}`);
+    if (dup) routeMissed = true;
+  }
+}
+
 await browser.close();
 stop();
 console.log("\nshots in " + OUT);
+if (routeMissed) { console.error("a route screen was not reached - that is a broken walk, not a clean page."); process.exit(1); }
