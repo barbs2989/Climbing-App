@@ -10,6 +10,7 @@ import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { fileURLToPath } from "node:url";
 import { settledText } from "../lib/render-settle.mjs";
+import { tapByText } from "../lib/tap-by-text.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const WIDTHS = (process.env.WIDTHS || "320,360,390,430").split(",").map(Number);
@@ -73,6 +74,7 @@ const SCAN = () => {
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 let total = 0;
+let routeMissed = 0;
 for (const w of WIDTHS) {
   const page = await browser.newPage({ viewport: { width: w, height: 844 } });
   page.setDefaultNavigationTimeout(120000);
@@ -95,8 +97,45 @@ for (const w of WIDTHS) {
     }
     if (!hits.length) console.log(`  [${tab}] nothing clipped`);
   }
+  // ---- the route page and its six sub-tabs --------------------------------------
+  // The richest layout in the app, and where BOTH recorded horizontal-overflow bugs
+  // lived. `?zr=1` calls the app's own openRoute() from inside the shared opener, which
+  // no slow list or moved control can defeat. Sub-tab ORDER matters: check:overflow
+  // records that "Reports" clicks from Overview and does not from Photos.
+  await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded" });
+  await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).catch(() => {});
+  const opened = await page.evaluate(() => window.__routeOpen === true);
+  if (!opened) {
+    console.log("  [route] NOT REACHED — ?zr=1 never set window.__routeOpen (not a clean result)");
+    routeMissed++;
+  } else {
+    await settledText(page);
+    const seen = new Map();
+    for (const sub of ["Overview", "Reports", "Photos", "Partners", "Plan", "Safety"]) {
+      const ok = await tapByText(page, sub);
+      if (!ok) { console.log(`  [route:${sub}] sub-tab not found — skipped`); continue; }
+      await settledText(page);
+      // A click that returns TRUE is not evidence it navigated: two elements carry the
+      // text "Reports" (the rating summary DIV and the sub-tab BUTTON), and a guard once
+      // reported six clean sub-tabs while measuring Overview six times. Fingerprint the
+      // screen so a repeat is visible rather than silently counted as coverage.
+      const fp = await page.evaluate(() => (document.body.innerText || "").length);
+      const dup = seen.get(fp);
+      seen.set(fp, sub);
+      const hits = await page.evaluate(SCAN);
+      for (const h of hits) {
+        total++;
+        console.log(`  [route:${sub}] clipped by ${String(h.over).padStart(5)}px  ${h.client}/${h.scroll}  ${JSON.stringify(h.text)}`);
+      }
+      const note = dup ? `  <-- SAME SCREEN as ${dup} (${fp} chars): the click did not land` : ` (${fp} chars)`;
+      if (dup) routeMissed++;
+      if (!hits.length) console.log(`  [route:${sub}] nothing clipped${note}`);
+    }
+  }
+
   await page.close();
 }
 await browser.close();
 stop();
 console.log(`\n${total} clipped label(s) across ${WIDTHS.length} width(s)`);
+if (routeMissed) { console.error(`the route page was not reached at ${routeMissed} width(s) — that is a broken walk, not a clean screen.`); process.exit(1); }
