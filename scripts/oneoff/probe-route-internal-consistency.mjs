@@ -47,7 +47,7 @@ const IDS = process.argv.slice(2).filter(a => !a.startsWith("--"));
 if (!IDS.length) { console.error("usage: probe-route-internal-consistency.mjs <route_id> [route_id ...]"); process.exit(2); }
 
 const rows = await selectAll("routes",
-  "id,area_id,name,grade,grade_num,rock_grade,alpine_grade,pitches,length_m,gain_ft,loss_ft,dist_km,high_point_ft,aspect,face,season,rope_length_m,rope_type,rappels,rappel_count_note,rappel_detail,gear,rack,detailed_rack,what_to_bring,rope_note,descent_text,overview,beta,climbing_route,pitch_detail,waypoints,gpx,approach,approach_logistics,access,permit,emergency",
+  "id,area_id,name,grade,grade_num,rock_grade,alpine_grade,pitches,length_m,gain_ft,loss_ft,dist_km,high_point_ft,aspect,face,season,rope_length_m,rope_type,rappels,rappel_count_note,rappel_detail,gear,rack,detailed_rack,what_to_bring,rope_note,descent_text,bail,pro_tips,overview,beta,climbing_route,pitch_detail,waypoints,gpx,approach,approach_logistics,access,permit,emergency",
   `id=in.(${IDS.join(",")})`, { pageSize: 20 });
 const areas = await selectAll("areas", "id,name,path", "", { pageSize: 1000 });
 const A = new Map(areas.map(a => [a.id, a]));
@@ -111,7 +111,15 @@ for (const r of rows) {
   const ROPE = /\b(\d{2})\s*m\b[^.;|]{0,25}\brope\b|\brope\b[^.;|]{0,25}\b(\d{2})\s*m\b|\b(\d{2})\s*m\s+(?:single|double|dynamic|twin|half)\b/gi;
   const RAP = /\brappel\w*\b[^.;|]{0,40}?\b(\d{2})\s*(?:[-–]\s*(\d{2})\s*)?m\b|\b(\d{2})\s*(?:[-–]\s*(\d{2})\s*)?m\b[^.;|]{0,40}?\brappel\w*\b/gi;
   const proseRaps = new Set(), rapSrc = new Map(), ambiguous = new Set();
-  for (const k of ["gear", "rack", "detailed_rack", "what_to_bring", "rope_note", "rappel_count_note", "rappels", "descent_text"]) {
+  // FIELD COVERAGE IS PART OF THE PRECISION, and this list was short by two. A brief I wrote from
+  // this probe told an agent that wa_accendo_lunae_lib_west_face_var "states a 30 m rappel and names
+  // NO rope anywhere" -- and the row names "two 60 m ropes" in `bail`, which was not scanned. The
+  // agent corrected me. A field the probe cannot see produces a confident NEGATIVE, which is the
+  // false-pass direction and worse than a missed positive.
+  // Measured across WA: 73 rows name a rope in an unscanned field (52 `pro_tips`, 21 `bail`), and
+  // SIX have their only rope there -- five of them on Colchuck Balanced Rock. `turnaround` was
+  // measured too and names a rope on ZERO rows, so it is deliberately not added.
+  for (const k of ["gear", "rack", "detailed_rack", "what_to_bring", "rope_note", "pro_tips", "rappel_count_note", "rappels", "descent_text", "bail"]) {
     const s = txt(r[k]); if (!s) continue;
     const ok = n => Number.isFinite(n) && n >= 10 && n <= 90;
     const hitsR = new Set(), hitsP = new Set();
@@ -124,7 +132,9 @@ for (const r of rows) {
     // wa_andersons_thumb_standard on the shortfall list, both wrongly -- and a rope-vs-rope
     // disagreement, which Anderson's Thumb really has, is a different and milder finding.
     // Luahna's real defect is untouched by this: it states its 20-30 m rappel in descent_text.
-    const DESCENT_FIELD = k === "descent_text" || k === "rappels" || k === "rappel_count_note";
+    // `bail` joins the DESCENT fields, not the kit ones: it describes RETREAT, so a length in it can
+    // genuinely be a rappel distance. `pro_tips` is advice and stays a kit field under rule 3.
+    const DESCENT_FIELD = k === "descent_text" || k === "rappels" || k === "rappel_count_note" || k === "bail";
     // RULE 5 -- "60m ROPE" IS A ROPE WHEREVER IT IS WRITTEN, INCLUDING IN A DESCENT SENTENCE. This
     // was the single largest source of false findings and it produced SIX of eight on a hand-read
     // sample: a descent field routinely prescribes the rope beside the rappel it is for --
