@@ -177,7 +177,11 @@ for (const [t, cols] of Object.entries(live)) {
     aFound++;
     const key = t;
     if (KNOWN[key]) { console.log(`  known  ${key} (whole table) — ${KNOWN[key]}`); continue; }
-    fail(`${t} — a whole TABLE that no migration creates (${cols.length} columns).`);
+    fail(`${t} — a whole TABLE that no migration creates (${cols.length} columns).\n` +
+         `        Same three causes as an undescribed column, in the same order: check for an OPEN PR\n` +
+         `        carrying its migration first (\`gh pr list --state open --search "${t} in:title,body"\`)\n` +
+         `        and if there is one, do NOTHING. Only then write the migration, or declare it in KNOWN.\n` +
+         `        Never \`npm run schema:refresh\` — that absorbs it and the question stops being asked.`);
     continue;
   }
   for (const c of cols) {
