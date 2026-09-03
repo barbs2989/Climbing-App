@@ -27,6 +27,7 @@ npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (
 npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
