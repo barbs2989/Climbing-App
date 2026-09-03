@@ -122,6 +122,7 @@ npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the 
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
 npm run audit:waypoint-geometry # FOURTH waypoint audit — pins vs EACH OTHER, so it reaches routes with no gpx
 npm run audit:waypoint-geometry -- --ground # ...and asks the TERRAIN which of two clashing pins is the wrong one
+npm run audit:stranded-track-vertices # a pin repair left the DRAWN LINE behind, so the sketch caveat vanished
 npm run audit:cross-route-pins # FIFTH waypoint audit — do TWO ROUTES disagree about one named point? (place, and height)
 npm run audit:travel-bearings # does the prose send a party the way its OWN pins say the summit is?
 npm run audit:synthetic-waypoints # are the pins REAL, or computed? (3 tests; --selftest needs no DB)
@@ -4584,6 +4585,82 @@ the correction knows the screen is wrong, and they have no way to report it.
       *declare a winner, never a coordinate* contract. Only the coordinate moves: the 50 ft
       elevation difference is below what the DEM resolves and is not what is being repaired.
       Cross-route agreement **436 -> 437 (81% -> 82%)**, candidates 14 -> 13.
+    - **A ROW THAT CONTRADICTS ITS OWN STATED DIRECTION IS STRONGER EVIDENCE THAN ANY DISTANCE**
+      (`fix-adjudicated-cross-route-pins.mjs`). `wa_magic_mountain_south_ridge` puts *"Kool-Aid
+      Lake"* **1,623 m** from the lake, and its own approach says *"From Cache Col, descend roughly
+      600 ft ... a descending traverse to the **southeast**, dropping to Kool-Aid Lake"*. Measured
+      from that row's **own** Cache Col pin, its lake pin bears **345 deg** where the corroborated
+      position bears **154 deg** — nearly opposite, and it breaks the row's own waypoint sequence.
+      That is the route disagreeing with itself, which needs no second route and no vote. The
+      elevation settles which half is wrong: it matches the corroborated cluster to **1 ft**, so the
+      pin means that lake and the COORDINATE is the wrong half rather than the name.
+    - **THE GROUND SAYS WHETHER THE ELEVATION SURVIVES THE MOVE, and not asking is how a coordinate
+      repair strands the field beside it.** Lake Constance left its elevation alone correctly — 50 ft,
+      inside the DEM floor. `wa_ptarmigan_traverse`'s *"Cache Col"* is the other case: six routes
+      place that col within 50 m of the gazetteer and this pin is **2,752 m** away, and the ground at
+      the corroborated coordinate reads **6,935 ft** — admitting the siblings' 6,903 and **refusing
+      this pin's 6,600 by 335 ft**. Moving the coordinate and keeping the number would have minted a
+      fresh `audit:waypoint-elevations` finding, which is
+      [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] committed by the repair.
+      Both values are COPIED from the corroborated donor, so the contract is unchanged. The script
+      decides per repair and **refuses** an elevation move the ground does not demand.
+    - **AND THE THIRD FINDING WAS REFUSED ON MIXED EVIDENCE, which is what the prose check is for.**
+      The same traverse's *"Spire Point"* pin sits **2,124 m** from Spire Point with an elevation
+      matching the summit **exactly** (8,264) — which argues it means the peak. Everything else
+      argues it does not: it is typed **Junction** rather than Summit, it sits in sequence between
+      White Rock Lakes and Cub Lake (i.e. on the traverse line), and the route's one mention of it
+      reads *"If you summit **optional peaks** (Dome, Sentinel, Spire) ... do not commit to peak
+      summits unless the time/weather window is clear"* — **the traverse does not go over it.**
+      Moving it would put a traverse waypoint on a summit the route does not climb and break its own
+      order. *Mixed evidence is a refusal*, the Lake Ingalls discipline on a route rather than a lake.
+    - **A SIBLING SESSION ADJUDICATES THE SAME AUDIT BY A DIFFERENT RECORD, and the two are
+      complementary rather than rival** (#1519, merged eight minutes after #1518). It compares each
+      pin's **own stated elevation** against the ground under its cluster and needs no gazetteer, so
+      it reaches names no gazetteer holds (*"Sahale-Boston col"*, *"Luna Col"*, *"Mary's Falls
+      Camp"*); this one uses the gazetteer plus the route's prose, so it reaches pins whose stated
+      elevation is fine. **Independently, both conclude the Lake Constance OUTLIER was the correct
+      pin** — the entry above records the ground fitting it better, and the gazetteer puts it 29 m
+      from the feature. Check `git log` before quoting a count from this audit: it moved by more
+      than either session's writes.
+  - **A PIN REPAIR SILENTLY DELETES THE "NOT A RECORDED TRACK" CAVEAT, AND 52 ROUTES HAD ALREADY LOST
+    IT** (`audit-stranded-track-vertices.mjs`, `fix-stranded-track-vertices.mjs`). `trackIsJustTheWaypoints`
+    requires **every** vertex to be on a pin — correctly, since a threshold would caption genuine
+    tracks. So moving a pin and leaving the vertex drawn through its OLD position turns the predicate
+    false, and the route **stops saying its line is a sketch**: a seven-vertex line across the North
+    Cascades then poses as a recorded GPS track with **Download GPX** beneath it.
+    - **Found by causing it.** The Cache Col repair above took `wa_ptarmigan_traverse` from 0 m off
+      its own track to 1,133 m, which looked like evidence the repair was WRONG — a real recording is
+      a stronger record than any gazetteer. It was not: that route stores **11 points for 11
+      waypoints**, 10 sitting exactly on a pin, median vertex spacing **3.3 km**. The line was drawn
+      THROUGH the pins, so the old 0 m was by construction and proved nothing. *Check what a track IS
+      before reading agreement with it as corroboration.*
+    - **The fingerprint is a ROUNDED vertex beside a HIGH-PRECISION pin** — `wa_tooth_and_claw` has a
+      vertex at `48.521,-120.644` against a pin at `48.51454,-120.64332`. This repo has applied **427**
+      researched coordinates, so the collateral scales with that work. Sketched lines had gone
+      **201 -> 139**; the repair took them to **170** and stranded routes **52 -> 21**.
+    - **NOTHING COULD SEE IT.** `check:track-caveat` proves the CODE renders the caveat when the
+      predicate fires, never that a row still satisfies the predicate. The three waypoint audits ask
+      whether a pin is on its track — true by construction on these routes before the repair, and
+      afterwards reported (if at all) as a *pin* defect rather than as a lost caveat.
+    - **ORDER IS NOT A PAIRING RULE, measured rather than assumed** (`probe-sketch-line-follows-waypoint-order.mjs`):
+      only 64.6% of sketched lines are drawn vertex-i-on-waypoint-i, and **34.2% do not follow their
+      own list at all** — an out-and-back sketch reads `0,1,2,2,2`. Pairing by position would scramble
+      27 lines. Distance it is.
+    - **THE POST-CONDITION IS EXACT AND STILL NOT SUFFICIENT.** Every candidate is applied in memory
+      and the app's own predicate must return **true** afterwards — but that is satisfied by ANY
+      bijection, so with two adrift vertices a wrong pairing passes while scrambling the drawn line.
+      The ambiguity gate (the chosen assignment must beat the swap by 3x) **earned itself immediately**:
+      `wa_tenpeak_mountain_southeast`'s swapped pairing was *better* (559 m against 872 m), so greedy
+      had it wrong. 36 -> 31 repaired, 21 refused, every refusal printed.
+    - **THE REFUSALS ARE A SECOND CLASS, NOT A TAIL OF THE FIRST.** A repaired pin moves a few hundred
+      metres (p50 **381 m**); a refused one is 3-27 km out, which is a trailhead REPLACED rather than
+      refined — `wa_mount_lyall_south_route`'s orphan is **High Bridge on the Stehekin Valley Road,
+      27 km from Holden Village**, a different access point entirely. Carrying the vertex there would
+      redraw the line across another valley, so which of the two records is right has to be read.
+    - The repair **moves a vertex onto a coordinate the row already holds** — no latitude or longitude
+      is typed — and is verified through the app's OWN hydration, not the raw column: `RouteDetail`
+      reads `route.gpxPts`, so `dbRouteToCamel` and `normalizeWaypoints` sit between the write and the
+      screen and either could have made 31 repaired columns reach nothing.
   - **The waypoint NOTE store is clean**: `audit:note-voice` finds **1 note in pipeline voice out of
     2,931 on screen**, and reading it, the audit's *"delete"* verdict would lose the road-washout
     location it carries. Left alone.
