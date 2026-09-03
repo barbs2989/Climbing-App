@@ -26,8 +26,16 @@
 // naming the top of the range as the rope the descent uses. Both premises are re-asserted at apply
 // time, so a row whose fields change is refused rather than rewritten.
 //
-// THE CLASS IS TWO, MEASURED. 141 WA rows offer a rope range and only these two are contradicted by
-// their own row. A first scan reported a third, wa_ridge_traverse_from_east_fury, whose "required"
+// THE CLASS IS FOUR, MEASURED, AND THE DENOMINATOR HERE WAS WRONG UNTIL 2026-09-03. This header
+// claimed "141 WA rows offer a rope range"; the script prints 54 and 141 is not reproducible by any
+// scoping tried. The two figures that ARE: **54** WA rows put a rope range in `gear`, which is the
+// only field this applier reads and therefore the honest denominator, and **98** put one somewhere
+// across gear / detailed_rack / rope_note / what_to_bring. Two rows were repaired on the first run
+// (Liberty Bell, Bulls Tooth) and two more once the dead `descent_text` donor path below was fixed,
+// leaving three genuinely held. A number in a repair script that nobody can reproduce is the stale
+// bookkeeping this repo fails guards over; state what the number is a number OF.
+//
+// A first scan reported a third, wa_ridge_traverse_from_east_fury, whose "required"
 // sentence turned out to be what_to_bring RESTATING the same range — "Rope (50-60m, 9mm minimum)" —
 // with the "9mm minimum" read as a required length. A sentence that contains the range is not
 // independent evidence about the range, so it is excluded.
@@ -49,9 +57,17 @@ const txt = v => Array.isArray(v) ? v.join(" | ") : (typeof v === "string" ? v :
 // It is the field most likely to name the rope ("bring 60m if you have the choice"), so rows
 // were being HELD for want of a donor while the best donor field was not being read.
 // A silently-dead branch in an applier reads as a careful refusal. Re-run after any edit here.
-const rows = await selectAll("routes", "id,gear,detailed_rack,rope_note,rappel_count_note,rappels,rappel_detail,what_to_bring,descent_text", "id=like.wa_*", { pageSize: 1000 });
+//
+// SCOPED BY THE AREA SUBTREE, NOT BY `id like wa_%` (fixed 2026-09-03). Four WA routes carry legacy
+// ids — adams_avalanche_glacier, adams_northwest_ridge, rainier_central_mowich_face,
+// rainier_north_mowich_headwall — and the id filter drops all four in silence. They are Rainier and
+// Adams, i.e. exactly the routes most likely to carry a rope claim worth checking. CLAUDE.md records
+// this trap and it was walked into anyway.
+const rows = await selectAll("routes", "id,gear,detailed_rack,rope_note,rappel_count_note,rappels,rappel_detail,what_to_bring,descent_text,areas!inner(path)", "areas.path=cd.usa.washington", { pageSize: 1000 });
 console.log(`WA routes read: ${rows.length}`);
 if (rows.length < 5000) { console.error("SHORT READ — refusing to act on a partial read"); process.exit(1); }
+const legacy = rows.filter(r => !/^wa_/.test(r.id)).map(r => r.id);
+console.log(`  of which legacy-id (invisible to the old \`id=like.wa_*\` filter): ${legacy.length}${legacy.length ? " — " + legacy.join(", ") : ""}`);
 
 const plan = [], held = [];
 let withRange = 0;
