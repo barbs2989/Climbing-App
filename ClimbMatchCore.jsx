@@ -239,9 +239,17 @@ const gainBelowOwnPins=route=>{
   const walkRise=rise-climbFt;
   if(!(rise>0)||!(walkRise>0)||g>=walkRise-300)return null;
   /* A row that RECORDS something at the height the stored gain implies is using the documented
-     convention - measured from a high camp or the base of the climb - and is not wrong. */
+     convention - measured from a high camp or the base of the climb - and is not wrong.
+     AND A CAMP IS RECORDED IN EITHER OF TWO COLUMNS. This looked only at `waypoints`, so a route
+     whose high camp lives in `bivy` - which is where most of them live - got a caveat calling its
+     correct gain impossible. 12 of the 49 routes that fire were that, a quarter of them, and the
+     worst was wa_mount_rainier_tahoma_glacier: the caveat claimed it short by 6,499 ft while the
+     row records a camp at 9,440 ft, 41 ft from the implied start. wa_south_ridge_6 matched to the
+     FOOT. A false warning is how a real one stops being read, so the same question is asked of
+     both stores - the same pair `campSites()` already merges for the CAMPING panel. */
   const implied=top-g;
-  const recorded=wps.map(_wpElevFt).filter(n=>n!==null).some(n=>Math.abs(n-implied)<=300);
+  const _camps=Array.isArray(route.bivy)?route.bivy:[];
+  const recorded=wps.concat(_camps).map(_wpElevFt).filter(n=>n!==null).some(n=>Math.abs(n-implied)<=300);
   if(recorded)return null;
   /* riseFt is the WALKING rise the sentence is about, not the whole-outing rise — quoting the
      latter beside a claim about the approach would overstate by the climbing vertical. */
