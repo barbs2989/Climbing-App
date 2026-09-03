@@ -297,7 +297,12 @@ export function render(route, tab) {
   });
   const { render } = require2(out);
   let html = "";
-  try { html = render(probe, "overview"); }
+  /* The PLANNER tab, not Overview. The waypoint list and the map legend -- the two surfaces this
+     section asserts every type reaches -- used to sit on Overview for a crag-family route and on
+     Plan for an alpine one. Plan now owns the whole getting-there story for every discipline, so
+     there is one place to render rather than two, and this probe route (trad, with waypoints) no
+     longer has an Overview block at all. */
+  try { html = render(probe, "planner"); }
   catch (e) { bad(`RouteDetail threw while rendering a route with waypoints: ${e.message.slice(0, 120)}`); }
   if (html) {
     // Every glyph below occurs exactly ONCE in app source — its own WP_STYLE row — so a hit
