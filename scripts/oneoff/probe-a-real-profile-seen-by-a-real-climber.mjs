@@ -28,8 +28,20 @@
 // every one a seed-id lookup meeting a uuid, and every one found by walking one more surface AS
 // THE OWNER. Nothing has walked the member's.
 //
-// Writes to the live project; per-run fixture, rows deleted, leaks reported. Local only: it needs
-// the mate's password, which CI's durable pair does not expose.
+// A CLAIM IN AN EARLIER VERSION OF THIS HEADER WAS WRONG, and it was repeated across three merged
+// PRs: "local only — it needs the mate's password, which CI's durable pair does not expose."
+// `durable-fixture.mjs` signs in AS THE MATE with CI_TEST_MATE_PASSWORD and holds `mateSession`
+// throughout; it simply does not RETURN it. So CI has had the second account's session all along
+// and the blocker was a missing property, not a missing credential. It returns `mateSession` now.
+//
+// WHAT ACTUALLY BLOCKS CI IS CONCURRENCY, which is a different problem with a different answer per
+// probe, because the durable accounts are SHARED between runs:
+//   THIS ONE IS NOT SAFE YET. `vouches` is UNIQUE(from_id, to_id), so a second concurrent run's
+//   plain INSERT is refused (409) and the walk fails on a healthy app; and teardown deletes the
+//   single shared row while the other run is still asserting on it. An upsert fixes the first half
+//   and not the second. Local until that is answered.
+//
+// Writes to the live project; per-run fixture, rows deleted, leaks reported.
 
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
@@ -103,7 +115,7 @@ try {
 
   fixture = await createFixture(log);
   if (!fixture.mate || !fixture.mate.password) {
-    console.error("no mate password — this probe must sign in AS the mate, and CI's durable pair does not expose one.");
+    console.error("no mate password — this probe signs in AS the mate. createFixture supplies one; durableFixture returns a mateSession instead, which this probe does not yet use (see the concurrency note in the header).");
     process.exit(1);
   }
 
