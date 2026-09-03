@@ -43,6 +43,7 @@
 
 import fs from "fs";
 import path from "path";
+import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 import { SUPABASE_URL, requireServiceKey, headers } from "./lib/supabase-env.mjs";
 
@@ -85,10 +86,46 @@ const dead = (what) => {
 };
 
 // ── what the migrations describe ─────────────────────────────────────────────────────────────
-const MIG = path.join(ROOT, "supabase", "migrations");
+/* `--migrations <dir>` is a TEST SEAM, like `--fixture` for the live schema and `--known` for a
+   declaration. The staleness note below only fires on a tree that is BEHIND main, so without it
+   the assertion could run only while the checkout happened to be stale — and CLAUDE.md's rule
+   here is that an assertion which can only run on an unhealthy tree is not an assertion. */
+const MIG = arg("migrations") ? path.resolve(arg("migrations")) : path.join(ROOT, "supabase", "migrations");
 if (!fs.existsSync(MIG)) dead("supabase/migrations does not exist");
 const files = fs.readdirSync(MIG).filter((f) => /^\d+.*\.sql$/.test(f)).sort();
 if (files.length < 20) dead(`only ${files.length} migration(s) found — the walk broke`);
+
+/* A STALE CHECKOUT REPORTS A LIVE COLUMN AS UNDESCRIBED, and the advice below would then be
+   WRONG in the expensive direction. This compares the live database against the migrations IN
+   THIS WORKING TREE, so a tree that is merely BEHIND main is indistinguishable from a column
+   nobody wrote — except that it is checkable, which the three causes below are not.
+
+   Met for real on 2026-09-03: a worktree stopped at 0174 while main carried
+   0175_a_climber_can_choose_to_show_their_name.sql, and the guard reported `profiles.show_name`
+   as described by nothing. Cause 1 (an open PR carries it) came back EMPTY because that PR had
+   already merged, which sends the reader to cause 2 — "write the migration" — for a migration
+   that exists, under a number `check:migrations` would then reject.
+
+   So this is a FACT rather than a fourth guess, and it is reported FIRST. It is advisory only:
+   it never suppresses a finding, because a stale tree and a genuinely undescribed column can be
+   true at the same time. Fail-soft — no git, no `origin/main`, or a repo laid out differently
+   just means no hint. */
+function migrationsOnOriginMain() {
+  try {
+    const out = execFileSync("git", ["ls-tree", "--name-only", "origin/main", "supabase/migrations/"],
+      { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+    return out.split("\n").map((l) => path.basename(l.trim())).filter((f) => /^\d+.*\.sql$/.test(f));
+  } catch { return null; }
+}
+const onMain = migrationsOnOriginMain();
+const here = new Set(files);
+const missingHere = onMain ? onMain.filter((f) => !here.has(f)).sort() : [];
+const staleNote = missingHere.length
+  ? `\n  NOTE — THIS CHECKOUT IS BEHIND origin/main: ${missingHere.length} migration(s) exist on main and not here` +
+    `\n         (${missingHere.slice(0, 4).join(", ")}${missingHere.length > 4 ? ", …" : ""}).` +
+    `\n         A live column those files create WILL be reported below as described by nothing.` +
+    `\n         Run \`git pull\` and re-run before acting on any section A finding.\n`
+  : "";
 
 const strip = (s) => s.replace(/--[^\n]*/g, "").replace(/\/\*[\s\S]*?\*\//g, "");
 const tracked = new Map();     // table -> Set(column)
@@ -169,6 +206,7 @@ console.log(`the live database has ${Object.keys(live).length} table(s) / ${live
 
 // ── A. live, and described NOWHERE ───────────────────────────────────────────────────────────
 console.log("A. live schema no migration describes");
+if (staleNote) console.log(staleNote);
 let aFound = 0;
 for (const [t, cols] of Object.entries(live)) {
   const k = tracked.get(t.toLowerCase());
