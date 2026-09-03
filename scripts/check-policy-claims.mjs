@@ -67,7 +67,29 @@ const lift = (anchor) => {
   if (e < 0) dead(`unbalanced literal for ${anchor}`);
   return core.slice(i, e);
 };
-const surfaces = [["Terms of Service", lift("const TERMS=")], ["Privacy Policy", lift("const PRIVACY=")]];
+/* The IN-APP PRIVACY SHEET is surface 3 of 4 and matters more than its lack of a policy label
+   suggests: it opens from Settings AND from partner search -- the screen where a climber decides
+   whether strangers can see them -- and it carries no review disclaimer and no version. It is an
+   inline array in ClimbMatch.jsx rather than a named constant, so it is lifted from its first
+   heading. Leaving it out was this guard's own stated limitation, and a stated limitation is a
+   worklist rather than a caveat. */
+const liftSheet = () => {
+  const i = app.indexOf('[["What we store"');
+  if (i < 0) dead("ANCHOR LOST: the in-app privacy sheet's first heading");
+  let d = 0, inStr = null;
+  for (let k = i; k < app.length; k++) {
+    const c = app[k];
+    if (inStr) { if (c === "\\") k++; else if (c === inStr) inStr = null; continue; }
+    if (c === '"' || c === "'" || c === "`") { inStr = c; continue; }
+    if (c === "[") d++; else if (c === "]" && --d === 0) return app.slice(i, k + 1);
+  }
+  dead("unbalanced literal for the in-app privacy sheet");
+};
+const surfaces = [
+  ["Terms of Service", lift("const TERMS=")],
+  ["Privacy Policy", lift("const PRIVACY=")],
+  ["In-app privacy sheet", liftSheet()],
+];
 if (surfaces.some(([, t]) => t.length < 1500)) dead("a legal surface lifted short — every promise test below would pass on text that is not there");
 
 /* What a PROMISE looks like: the document telling the reader they HAVE a control. Deliberately
@@ -115,7 +137,22 @@ for (const [name, text] of surfaces) {
     bad(`${name} describes "${p.control}", which the app renders as null: …${text.slice(Math.max(0, m.index - 70), m.index + m[0].length + 90).replace(/\s+/g, " ")}…`);
   }
 }
-if (!promises) ok(`neither document promises any of the ${gated.length} controls behind the flag`);
+if (!promises) ok(`none of the ${surfaces.length} surfaces promises any of the ${gated.length} controls behind the flag`);
+
+/* The sheet also claimed a CAPABILITY rather than a control: "You can edit or clear anything from
+   your profile and settings at any time." Measured false in two places -- `saveEdit` guards name
+   and username with `if (d.x && d.x.trim())`, so a blank is skipped and the old value survives,
+   and the avatar has a change control and deliberately no remove. Asserted as SOURCE rather than
+   rendered, because this sheet is inline in App rather than in LegalView, and standing up App is
+   far more than this question is worth. */
+const sheet = surfaces[2][1];
+if (/edit or clear anything/.test(sheet)) {
+  bad(`the privacy sheet says "edit or clear anything", and name, username and the avatar cannot be cleared`);
+} else if (!/can be changed but not left blank/.test(sheet)) {
+  bad(`the privacy sheet's "Your control" no longer states which fields cannot be cleared — say what is true or the claim drifts back`);
+} else {
+  ok(`the sheet's "Your control" names the fields that cannot be cleared`);
+}
 
 // ── 2. WHAT §4 AND §1 SAY NOW, RENDERED ─────────────────────────────────────────────────────
 // A populated constant is not a rendered one -- descent_text was populated on 1,021 routes and

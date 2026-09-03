@@ -85,6 +85,25 @@ const CASES = [
     wantExit: 2,
   },
   {
+    name: "sheetclear",
+    why: "the in-app sheet goes back to \"edit or clear anything\", which name, username and the avatar cannot honour",
+    file: "ClimbMatch.jsx",
+    find: `["Your control","You can edit your profile and settings at any time. Your name and username can be changed but not left blank, and your avatar is replaced rather than removed. To have data removed, use Settings → Your data."]`,
+    repl: `["Your control","You can edit or clear anything from your profile and settings at any time."]`,
+    expect: /edit or clear anything/,
+  },
+  {
+    // The second branch: a rewrite that stops over-claiming but also stops saying anything is
+    // the drift this assertion exists to catch, and it would pass a test that only looked for
+    // the old sentence.
+    name: "sheetvague",
+    why: "the sheet's claim is softened into vagueness — no longer false, but it no longer says which fields cannot be cleared",
+    file: "ClimbMatch.jsx",
+    find: `You can edit your profile and settings at any time. Your name and username can be changed but not left blank, and your avatar is replaced rather than removed. To have data removed, use Settings → Your data.`,
+    repl: `You can edit your profile and settings at any time.`,
+    expect: /no longer states which fields cannot be cleared/,
+  },
+  {
     // Must stay SILENT: with the flag true the controls actually render, so a document describing
     // them is CORRECT. A guard that still fired here would forbid the fix.
     name: "flaglive",
