@@ -196,7 +196,13 @@ for (const [claim, why] of [
   // §3, after #1535 gated the name switch away and left the policy describing it. pubName() gates
   // the display name and the friends list and crew roster do NOT go through it, so a connection
   // really does see the account name -- claiming otherwise would be a fresh false statement.
-  ["Climbers you have connected with also see the name on your account", "§3 states where the account name IS shown, rather than claiming it is hidden"],
+  // The name switch is REAL again (#1540, column `show_name` in 0175), so §3 describes the choice
+  // rather than denying it. What it must keep saying is the LIMIT: FriendsList and CrewCard still
+  // mix pubName with a bare `.name`, so a connection sees the account name whichever way the
+  // switch is set. That is the part the original sentence never said, and the part a climber
+  // would most reasonably assume otherwise.
+  ["or your real name if you choose to show it", "§3 describes the name choice, which is a live control again"],
+  ["see the name on your account either way", "§3 states the LIMIT of it — connections see the name whichever way it is set"],
 ]) {
   if (text.includes(claim)) ok(why);
   else bad(`the rendered Privacy Policy no longer says: "${claim}"`);
@@ -209,7 +215,10 @@ for (const [gone, why] of [
   ["search-and-rescue", "no search-and-rescue integration"],
   ["if you opt in", "no opt-in"],
   ["location when you enable it", "and §1 promises no enablement either"],
-  ["your username or real name", "§3 does not offer a name choice that was gated away"],
+  // "your username or real name" is NOT forbidden any more: #1540 restored the control with a real
+  // column, so offering the choice is now TRUE. An assertion kept past the fact it describes is
+  // stale bookkeeping, and here it would have forbidden the policy from describing a live privacy
+  // control -- a guard arguing with correct work. Removed rather than reworded.
   ["governed by your privacy settings", "§3 does not defer to profile-visibility settings the app withholds"],
 ]) {
   if (text.includes(gone)) bad(`the rendered Privacy Policy says "${gone}" again — a claim the app cannot support`);
