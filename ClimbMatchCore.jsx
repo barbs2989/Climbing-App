@@ -896,7 +896,27 @@ const CLIMBERS=[
   {id:5,online:false,name:"Riley Nguyen",username:"rileyn",instagram:"riley.alpine",showName:false,age:27,location:"Park City, UT",lat:40.646,lng:-111.498,avatar:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",level:"Intermediate",years:4,disciplines:["sport","bouldering","scrambling"],sportGrade:"5.11a",tradGrade:"N/A",boulderGrade:"V5",bio:"Training hard for Rifle. Loves long mountain days. Looking to get into trad.",philosophy:"Process over outcome.",verified:false,objectiveIds:["kings_hf","olympus_wf"],hikingSpeedFtHr:1100,technicalSpeedFtHr:290,vehicle:"SUV",gear:["60m rope","10 quickdraws","ATC","Crashpad","Trekking poles","Microspikes"],cams:[],certifications:["CPR/AED","Gym Belay Certified"],belayDevices:{atc:"Expert",grigri:"Proficient"},catchLedger:{totalCatches:22,highFactorCatches:4,lastCatch:"2024-07-01",partnersSigned:5},safetyScore:72,trustScore:68,communityVouches:5,routesLogged:18,vertYr:22000,daysYr:46,stats:{peaks:{life:9,yr:4},sends:{rock:{life:60,yr:22},sport:{life:60,yr:22},trad:{life:0,yr:0},bouldering:{life:88,yr:31},scrambling:{life:18,yr:6}},onsights:{rock:{life:11,yr:5},sport:{life:11,yr:5},trad:{life:0,yr:0},bouldering:{life:18,yr:7}}},floatPlanEnabled:false,emergencyContact:"Lan Nguyen · (801) 555-0505",photos:["https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=280&fit=crop","https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&h=280&fit=crop","https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=280&fit=crop"],riskTolerance:"moderate",resumePublic:false,
    vouches:[{from:"Sam Rivera",avatar:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop&crop=face",route:"Joe's Valley",date:"2024-05-10",ratings:{belay:4,communication:4,punctuality:3,gear:4,fitness:4,safety:4},text:"Strong climber and a solid belayer. Fitness excellent — steady pace all day. Sometimes runs a bit late but worth waiting for.",wouldClimbAgain:true,catchVerified:false}]}
 ];
-const DEMO_FILLERS=false;
+/* SAMPLE CONTENT — TEMPORARY, REMOVE BEFORE LAUNCH.
+   Turned ON 2026-09-03 at the user's request so every surface can be seen populated while
+   the app is still being built ("include an example of each thing ... I will eventually
+   remove the examples before the app goes live").
+
+   TO REMOVE: set this back to `false`. That is the whole switch — every sample group,
+   group event, group join-request, sample comment, filler climber, sample belay catch and
+   sample condition report disappears with it, and the four seed-only tick-list cards go
+   back to being hidden. Nothing here is ever written to Supabase: all of it is module
+   constants and useState seeds, so a signed-in account's real rows are untouched and no
+   sample row can reach the database.
+
+   WHILE IT IS TRUE, `check:dead-flag-gates` cannot see the three constants it gates
+   (FILLER_CLIMBERS, GROUPS, COMMENTS) — a flag that can be true genuinely does populate
+   them, so it has nothing to report. That guard now SAYS SO on every run rather than
+   printing a clean "ok", because a silent loss of coverage is the failure this repo keeps
+   recording. Flipping this back to false re-arms it automatically.
+
+   The empty-app-is-honest reasoning behind the original `false` still stands FOR LAUNCH;
+   see memory demo-fillers-boundary-locked. This flag stays cosmetic — it gates no feature. */
+const DEMO_FILLERS=true;
 const PRIVACY_CONTROLS_LIVE=false;
 // Opt-IN demo gate. Unset — which is production — means the real Supabase session is the
 // only way into the app (see realAuthGate in ClimbMatch.jsx). Set VITE_DEMO_AUTOLOGIN=true
