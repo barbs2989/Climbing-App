@@ -144,5 +144,15 @@ for (const [needle, why] of [
   else bad(`${why} — matched ${n} times in ClimbMatch.jsx, expected 1`);
 }
 
+
+// The two group-join handlers are byte-identical, so this one is asserted at a count of 2: fixing
+// one and not the other leaves half the app refusing a join on a score it could not compute.
+{
+  const needle = 'showToast(_trustPartial?"Couldn’t check your trust score just now';
+  const n = app.split(needle).length - 1;
+  if (n === 2) ok("both group-join handlers refuse on an unknown score rather than quoting one");
+  else bad(`the group-join refusal is honest in ${n} handler(s), expected 2`);
+}
+
 console.log(fails ? `\n${fails} FAILURE(S)` : "\nok — the gap map joins the real factors and the panel says so");
 process.exit(fails ? 1 : 0);
