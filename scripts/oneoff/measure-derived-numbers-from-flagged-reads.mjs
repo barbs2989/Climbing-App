@@ -20,6 +20,15 @@
 // only a defect when what it renders is a NUMBER presented as a fact. A list, a label, a control
 // or a handler is not.
 //
+// THE HIGHER-STAKES HALF WAS MEASURED SEPARATELY AND IS A CLASS OF TWO, BOTH FIXED. This scan
+// reports calls that RENDER, and groupTrustShortfall was caught only because its call sits inside
+// an onClick -- i.e. inside a JSXExpressionContainer. "An action REFUSED on a value derived from a
+// failed read" is worse than a wrong number, and a handler declared outside JSX would be invisible
+// here. Asked directly (a call on a tainted value, assigned to a name, whose result gates an early
+// return): 2 such calls exist in the whole app and both are groupTrustShortfall, both repaired. A
+// detector for a class of two that is already closed is the thing this repo keeps refusing to
+// build, so the measurement is recorded and the scan is not.
+//
 // AND IT UNDER-REPORTS IN ONE KNOWN WAY, stated so the denominator is not over-trusted: taint
 // propagates through `const X = <expr>` and NOT through MUTATION of a module global. `ME.objectiveIds
 // = wishlist` is exactly that, so `compat(ME, c)` -- which scores shared objectives -- is invisible
