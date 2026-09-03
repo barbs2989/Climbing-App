@@ -313,6 +313,17 @@ export async function durableFixture(log) {
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },
     mate: { id: mateSession.user.id, email: mateEmail, name: mate.name },
+    // THE SECOND ACCOUNT'S SESSION, which this fixture has held all along and did not hand back.
+    // Three merged PRs stated that CI could not run a two-account walk because "the durable pair
+    // does not expose the mate's password" — and the password was never the point: signIn() above
+    // already used it, so the session exists. The blocker was a missing property. A walk that
+    // needs the second account to WRITE (a vouch, a message, a crew invite) can now do it under
+    // the mate's own JWT in CI exactly as it does locally, which is the whole reason those probes
+    // refuse the service key. What still gates each one is CONCURRENCY on these shared accounts,
+    // and that is per-probe rather than general: a `messages` insert is safe because two runs'
+    // rows coexist and teardown deletes by id, while `vouches` is UNIQUE(from_id, to_id) so a
+    // second run is refused and a shared row is torn down under the first.
+    mateSession,
     group,
     inviteCrew,
     session,
