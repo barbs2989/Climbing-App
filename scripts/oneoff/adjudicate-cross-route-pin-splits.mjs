@@ -52,6 +52,7 @@ const CLUSTER_M = 300;
 // A label point cannot locate an edge. Same list the camp solver uses, and for the same reason.
 const LINEAR = /stream|ridge|basin|flat|valley|range|area|swamp|woods|bench|bar|channel|arroyo|canal|cliff|slope/i;
 
+const corrobOf = (n) => !!(n && n.d <= NEAR_M);
 const num = (v) => { const n = Number(v); return v !== null && v !== "" && Number.isFinite(n) ? n : null; };
 const D = (a, b, c, d) => {
   const R = 6371000, t = (x) => x * Math.PI / 180, dp = t(c - a), dl = t(d - b);
@@ -104,11 +105,25 @@ for (const c of candidates) {
   // The gazetteer, once, over a box covering every cluster.
   const lats = c.cl.map((x) => x.lat), lngs = c.cl.map((x) => x.lng);
   const box = [Math.min(...lngs) - 0.2, Math.min(...lats) - 0.2, Math.max(...lngs) + 0.2, Math.max(...lats) + 0.2];
-  // Strip the descriptive tail: "Sahale-Boston col" searches better as its proper noun.
-  const term = c.nm.replace(/\s*[-—(].*$/, "").replace(/\b(camp|col|pass|lake|trailhead|basin|saddle|notch)\b.*$/i, "$1").trim();
-  let hits = [];
-  try { hits = await gnis(term, box, 5); if (!hits.length) hits = await gnis(term, box, 7); }
-  catch (e) { console.log(`   gazetteer: UNREACHABLE (${String(e.message).slice(0, 60)})`); }
+  // SEARCH THE FULL NAME FIRST and only shorten if it finds nothing. An earlier version stripped a
+  // "descriptive tail" and had three bugs at once, all of which read as "no point-like feature":
+  //   "Lake Ingalls"   -> "Lake"        a LEADING generic ate the proper noun
+  //   "Kool-Aid Lake"  -> "Kool"        a hyphen is a COMPOUND NAME here, not a tail
+  //   "Sahale-Boston col" -> "Sahale"   same
+  // GNIS matches on LIKE %term%, so the full name is the most precise query available and there is
+  // no reason to shorten before trying it. The fallbacks drop a parenthetical or a comma clause,
+  // then a TRAILING generic only — never a leading one.
+  const terms = [c.nm,
+    c.nm.replace(/\s*[(,].*$/, "").trim(),
+    c.nm.replace(/\s*[(,].*$/, "").replace(/\s+\b(camp|col|pass|trailhead|basin|saddle|notch|junction|jct)\b\s*$/i, "").trim(),
+  ].filter((t, i, a) => t && a.indexOf(t) === i);
+  let hits = [], used = "";
+  for (const t of terms) {
+    try { hits = await gnis(t, box, 5); if (!hits.length) hits = await gnis(t, box, 7); }
+    catch (e) { console.log(`   gazetteer: UNREACHABLE (${String(e.message).slice(0, 60)})`); break; }
+    if (hits.length) { used = t; break; }
+  }
+  if (hits.length && used !== c.nm) console.log(`   gazetteer matched on the shortened term "${used}"`);
 
   const usable = hits.filter((h) => !LINEAR.test(h.cls || ""));
   if (hits.length && !usable.length) {
@@ -121,21 +136,56 @@ for (const c of candidates) {
     const ground = await elevationAt(cl.lat, cl.lng);
     const stated = [...new Set(cl.pins.map((p) => p.elev).filter((x) => x !== null))];
     const near = usable.map((h) => ({ ...h, d: D(cl.lat, cl.lng, h.lat, h.lng) })).sort((a, b) => a.d - b.d)[0];
-    const corrob = near && near.d <= NEAR_M;
-    const fits = ground !== null && stated.length ? stated.some((s) => Math.abs(s - ground) <= 400) : null;
-    verdicts.push({ cl, ground, stated, near, corrob, fits });
+    const corrob = corrobOf(near);
+    const fits = ground !== null && stated.length ? stated.some((x) => Math.abs(x - ground) <= 400) : null;
+    // WHAT IS ACTUALLY HERE, under ANY name? This is the check that inverted the first three
+    // verdicts. A cluster the gazetteer does not know by THIS name may still be a real, correctly
+    // placed waypoint carrying the WRONG NAME — and moving it would destroy a good pin.
+    // ...but ONLY where the pin is internally consistent. A cluster whose ground refuses its own
+    // stated elevation by thousands of feet is broken however it is named, and IS a misplacement:
+    // that is what separates these from the three repaired in #1519, where the outliers claimed
+    // 8,600 / 6,700 / 1,000 ft while standing on 4,927 / 4,594 / 2,545.
+    let elsewhere = null;
+    if (!corrobOf(near) && fits === true) {
+      const b2 = [cl.lng - 0.02, cl.lat - 0.02, cl.lng + 0.02, cl.lat + 0.02];
+      let any = [];
+      for (const layer of [5, 7]) { try { any = any.concat(await gnis("", b2, layer)); } catch { /* reported below */ } }
+      const same = (x) => String(x || "").toLowerCase().replace(/[^a-z]/g, "");
+      elsewhere = any.filter((h) => !LINEAR.test(h.cls || "") && same(h.name) !== same(c.nm))
+        .map((h) => ({ ...h, d: D(cl.lat, cl.lng, h.lat, h.lng) }))
+        .filter((h) => h.d < 800).sort((a, b) => a.d - b.d)[0] || null;
+    }
+    verdicts.push({ cl, ground, stated, near, corrob, fits, elsewhere });
     console.log(`   ${cl.lat.toFixed(4)},${cl.lng.toFixed(4)}  ${String(cl.pins.length).padStart(2)} pin(s)  stated ${stated.length ? stated.join("/") + " ft" : "(none)"}`
       + `  ground ${ground === null ? "UNREACHABLE" : Math.round(ground) + " ft"}`
       + `  ${fits === null ? "" : fits ? "GROUND FITS" : "ground REFUSES"}`
-      + `  ${near ? `| ${near.cls} "${near.name}" ${Math.round(near.d)} m${corrob ? "  CORROBORATED" : ""}` : "| no point-like feature"}`);
+      + `  ${near ? `| ${near.cls} "${near.name}" ${Math.round(near.d)} m${corrob ? "  CORROBORATED" : ""}` : "| no point-like feature"}`
+      + `${elsewhere ? `\n        ^ but ${elsewhere.cls} "${elsewhere.name}" is ${Math.round(elsewhere.d)} m away - suspect the NAME, not the coordinate` : ""}`);
     for (const p of cl.pins.slice(0, 3)) console.log(`        ${p.id}`);
     if (cl.pins.length > 3) console.log(`        ... +${cl.pins.length - 3} more`);
   }
 
   const fitting = verdicts.filter((v) => v.fits === true);
   const corrobs = verdicts.filter((v) => v.corrob);
-  if (corrobs.length === 1 && fitting.length === 1 && corrobs[0] === fitting[0]) {
-    console.log(`   -> DECIDABLE: the gazetteer and the ground both pick ${corrobs[0].cl.lat.toFixed(4)},${corrobs[0].cl.lng.toFixed(4)}`);
+  // THE GAZETTEER DECIDES ON ITS OWN when it is essentially ON one cluster and FAR from every
+  // other. Requiring the ground to also refuse the losers was too strict and hid three real
+  // findings: where both pins are internally consistent — each stating an elevation its own
+  // ground admits — the terrain says nothing about WHICH IS THE NAMED PLACE, and only an
+  // independent record of the name can. "Lake Ingalls" is 1 m from one cluster and 3,135 m from
+  // the other; the ground admits both because both sit on plausible ground.
+  const FAR_M = 1000;
+  const others = verdicts.filter((v) => !v.corrob);
+  const allFar = others.length && others.every((v) => !v.near || v.near.d >= FAR_M);
+  const misnamed = others.filter((v) => v.elsewhere);
+  if (misnamed.length) {
+    console.log(`   -> NOT A MISPLACEMENT: ${misnamed.length} cluster(s) sit on a DIFFERENT named feature`
+      + ` (${misnamed.map((v) => `"${v.elsewhere.name}"`).join(", ")}). Moving the pin would destroy a`
+      + ` correctly-placed waypoint; the defect is its NAME, and which needs the route's own prose.`);
+    undecided++;
+  } else if (corrobs.length === 1 && allFar && corrobs[0].fits !== false) {
+    const w = corrobs[0];
+    console.log(`   -> DECIDABLE: the gazetteer is ${Math.round(w.near.d)} m from ${w.cl.lat.toFixed(4)},${w.cl.lng.toFixed(4)}`
+      + ` and ${others.map((v) => v.near ? Math.round(v.near.d) + " m" : "nowhere near").join(", ")} from the other(s)`);
     decided++;
   } else if (fitting.length === 1 && verdicts.length > 1 && verdicts.every((v) => v === fitting[0] || v.fits === false)) {
     console.log(`   -> LEANS: the ground admits only ${fitting[0].cl.lat.toFixed(4)},${fitting[0].cl.lng.toFixed(4)} and refuses the rest. No gazetteer corroboration.`);
