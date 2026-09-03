@@ -12043,3 +12043,98 @@ This is the last-but-one batch of pass 3: 4 routes remain
 (`wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
 `wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`). Next batch
 finishes pass 3 and a new pass (4) will begin after that.
+
+## Batch 176 — 2026-09-03
+
+Closes pass 3 (final 4 routes) and opens pass 4 (first 4 routes, alphabetically
+from the top of scope — this is a re-audit of the same routes checked in pass 1
+batch 1, since facts can go stale between passes).
+
+**Pass 3 closer:** `wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
+`wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`.
+**Pass 4 opener:** `wa_a_servant_to_liberty`, `wa_abernathy_peak_south_ridge`,
+`wa_action_potential`, `wa_agnes_mountain_west_route`.
+
+**Confirmed errors fixed (2):**
+- `wa_agnes_mountain_west_route`: `gain_ft` (4000) sits far below the physical
+  floor set by the route's own other fields — trailhead waypoint (1,650 ft) to
+  summit waypoint (8,131 ft) is a net rise of 6,481 ft on its own, before
+  crediting a single foot for the 5 roped pitches near the top. The row's own
+  `itinerary` field independently corroborates this from a different angle:
+  day-by-day `gainFt` values sum to 6,700 ft, and `itinerary.totalNote` states
+  in prose "~6,500 ft gain to the 8,131 ft summit." No external source needed —
+  three fields already on this row agree with each other (~6,500-6,700 ft) and
+  disagree with the standalone `gain_ft` column by well over 2,000 ft. This is
+  the CLAUDE.md-documented `audit:gain`/`check:gain-floor-stated` defect shape,
+  and it feeds the Planner tab's Est. summit/Est. return/after-dark warning.
+  Set to 6500, the figure the row's own itinerary already states.
+- `wa_a_servant_to_liberty`: the row's own `data_quality.gaps` already flagged
+  this as an open question — "FA (Mikey Schaefer, Aug 2016) is corroborated by
+  Mountain Project's route history, which also credits Shanjean Lee as his
+  partner on the successful redpoint push — the on-file FA credit lists
+  Schaefer only; worth a follow-up review if a more complete credit is
+  wanted." Did that follow-up: per Climbing magazine and AAC Publications, the
+  route was rope-soloed and equipped by Schaefer in 2015, then completed as a
+  one-day free ascent on August 6, 2016 with Shanjean Lee belaying every
+  pitch. Updated `fa` to credit both the date and Lee's role rather than
+  leaving the row's own flagged gap open. `data_quality` left untouched as a
+  record of the research trail. (Route name itself reconfirmed accurate: MP's
+  canonical URL slug is still `a-slave-to-liberty` but its display title is
+  "A Servant To Liberty," matching this row's `name` and the parenthetical
+  note in `fa` about the original documented name.)
+
+`npm run check:sql -- audits/sql/2026-09-03-batch-176.sql` reports OK for the
+`gain_ft` statement (target id exists). The `fa` statement trips the checker's
+"no literal id predicate" WARN for the same reason CLAUDE.md's batch-175 note
+already records: the fixed string value itself contains a semicolon and
+escaped quotes, which defeats the naive statement splitter — not a real SQL
+problem (standard `''`-escaping, valid Postgres), and the id was independently
+confirmed to exist via the same REST query that pulled this batch's rows.
+
+**Flagged for human review (1):**
+- `wa_witches_tower_south_face`: the row's own `data_quality.gaps` already
+  documents this — "Exact grade/pitch count varies by source between the
+  'South Face' (Class 3-4 scramble with a short 5th-class step) and the 'West
+  Buttress' (2 roped pitches to 5.4) — guidebook naming for Witches Tower's
+  routes is inconsistent." Independently reproduced the same ambiguity via
+  Mountaineers.org (describes "South Face" as an alpine-scramble activity, no
+  roped grade given) vs. other sources describing a "West Buttress" at 5.4/2
+  pitches — matching what the row already says. Elevation (8,566 ft) and the
+  FA gap note both reconfirmed accurate/still-unresolved. Not touched — this
+  is a documented, unresolved naming/grading dispute across guidebook sources
+  rather than a new finding, consistent with the batch-110 precedent for
+  leaving an already-self-documented split alone (`wa_west_craggy_peak`).
+
+**Clean / confirmed accurate (5):**
+`wa_windy_peak_iron_gate_trail` and `wa_windy_peak_windy_creek_trail` (Windy
+Peak's 8,335 ft elevation matches Wikipedia exactly on both; the Iron Gate
+Trailhead route/road/permit description matches the Okanogan-Wenatchee and
+Colville National Forest pages for that trailhead nearly word-for-word —
+FR-39, FR-3900-500, 14 mi + 6 mi, high-clearance-only, Boundary Trail to Sunny
+Pass, all confirmed); `wa_abernathy_peak_south_ridge` (elevation 8,321 ft AND
+gain 5,200 ft both match The Mountaineers' page on Abernathy Peak exactly;
+Scatter Lake Trailhead/Trail naming confirmed); `wa_agnes_mountain_west_route`
+FA (1936, W. Ronald Frazier and Dan O'Brien via the West Fork of Agnes Creek,
+confirmed via Wikipedia verbatim) and its already-documented elevation
+ambiguity (8,119 vs. 8,133 ft across sources — row's `high_point_ft` of 8119
+matches Wikipedia exactly, left as-is per the row's own gap note);
+`wa_a_servant_to_liberty` grade/pitch count (5.13-, 11 pitches, confirmed via
+AAC Publications and Climbing magazine).
+
+**Unable to independently confirm (not flagged — no contradicting evidence,
+just thin sourcing):** `wa_action_potential`'s FA date (Mark Allen and Mike
+Layton, July 18-20, 2004) — a Mountain Project photo caption reads "photo by
+MisterE 2005," which is weak and ambiguous (could just be when the photo was
+taken/uploaded, not the FA date) and not a real contradiction. WebFetch was
+blocked for supertopo.com's Action Potential page, the one source likely to
+have the full FA writeup, consistent with every earlier batch's tooling note.
+Left as-is per the guardrail against flagging without a real contradicting
+source.
+
+**Unchanged since prior flag:** `wa_whitehorse_mountain_r1` still has the
+~1-2 ft elevation spread across its own fields that batch 111 flagged and
+declined to resolve; not re-flagged here.
+
+Pass 3 is now complete (529 routes in scope, cycled through fully). Pass 4
+begins with this batch's second half; next batch continues from
+`wa_agnes_mountain_west_route` onward alphabetically.
