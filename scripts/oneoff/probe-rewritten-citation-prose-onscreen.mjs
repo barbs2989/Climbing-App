@@ -50,6 +50,20 @@ const CASES = [
     // "reportedly" is the hedge on the fine, which is the part we are least sure of.
     kept: ["illegal and reportedly heavily fined"],
   },
+  // --- batch 2: `road`, which renders in GETTING THERE. A different render path from every
+  //     case above, so their passes say nothing about it.
+  {
+    id: "wa_mount_pugh_pika_slab", tab: "planner",
+    gone: ["depending on the source"],
+    // the RANGE is the surviving hedge, and the untouched "trip reports say" clause must not
+    // have been collaterally eaten.
+    kept: ["roughly 12.5-14 miles from Darrington", "trip reports say"],
+  },
+  {
+    id: "wa_mount_persis_the_hexorcist", tab: "planner",
+    gone: ["in any source found"],
+    kept: ["is not documented anywhere on file"],
+  },
 ];
 
 const KEY = anonKey();
