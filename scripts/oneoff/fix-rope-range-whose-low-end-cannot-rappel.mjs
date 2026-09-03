@@ -44,7 +44,12 @@ const NAMES = /\b(?:a\s+)?single\s+(\d{2})\s*m\b|\bon\s+a\s+(\d{2})\s*m\s*rope\b
 const SENTS = s => String(s || "").split(/(?<=[.;])\s+/);
 const txt = v => Array.isArray(v) ? v.join(" | ") : (typeof v === "string" ? v : "");
 
-const rows = await selectAll("routes", "id,gear,detailed_rack,rope_note,rappel_count_note,rappels,rappel_detail,what_to_bring", "id=like.wa_*", { pageSize: 1000 });
+// BUG FIXED 2026-09-03: `descent_text` was listed as a donor field below and was NOT in this
+// SELECT, so `r.descent_text` was undefined on every row and that donor path never ran once.
+// It is the field most likely to name the rope ("bring 60m if you have the choice"), so rows
+// were being HELD for want of a donor while the best donor field was not being read.
+// A silently-dead branch in an applier reads as a careful refusal. Re-run after any edit here.
+const rows = await selectAll("routes", "id,gear,detailed_rack,rope_note,rappel_count_note,rappels,rappel_detail,what_to_bring,descent_text", "id=like.wa_*", { pageSize: 1000 });
 console.log(`WA routes read: ${rows.length}`);
 if (rows.length < 5000) { console.error("SHORT READ — refusing to act on a partial read"); process.exit(1); }
 
