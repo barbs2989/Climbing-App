@@ -86,8 +86,13 @@ const PROMISES = [
     re: /you control location sharing|approximate location only”? shares|"approximate location only" shares|location when you enable it/i },
   { control: "Who can see your profile",
     re: /governed by your privacy settings|the fields you choose to make visible|choose who can see your (?:full )?profile/i },
-  { control: "Show my real name publicly",
-    re: /your username or real name|choose(?:s)? (?:to show )?your real name/i },
+  // "Show my real name publicly" WAS here, and it came out because the control came BACK. This
+  // list is of controls the app WITHHOLDS, so an entry is only correct while its switch is gated:
+  // #1540 gives that one a real column (0175), so it persists, reaches other climbers through
+  // pubName, and the Privacy §3 sentence promising it is now TRUE. That is the outcome this guard
+  // wants — its sibling entry was filed to the legal reviewer as F13 precisely because the policy
+  // described a choice the app had stopped offering, and the two ways to end that are to edit the
+  // policy or to restore the control. Restoring it is the better one where the app can.
   { control: "Toggle online status", re: /online status/i },
   { control: "Who can invite you to a crew", re: /who can invite you|crew invites? settings?/i },
 ];
