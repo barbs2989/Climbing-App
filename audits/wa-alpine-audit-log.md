@@ -12227,3 +12227,73 @@ its routes.
 
 Next batch continues from `wa_amphitheater_mountain_pilgrimage_to_mecca`
 onward alphabetically (pass 4).
+
+## 2026-09-03 — Pass 4, Batch 178
+
+Eight routes, five peaks: Amphitheater Mountain (West Route), Anderson's Thumb (Standard
+Route), Argonaut Peak (East/Southeast Ridge, Northeast Couloir), Austera Peak (itself,
+Chockstone Route, Southwest Ridge/McAllister Glacier), Bacon Peak (Diobsud Creek/Green Lake
+Glacier).
+
+**Confirmed errors fixed (5, across 4 routes):**
+
+`wa_amphitheater_mountain_west_route` — `gain_ft` (3,000 ft) is provably below the floor
+set by the route's own two waypoints: Andrews Creek Trailhead (3,050 ft) and the summit
+(8,358 ft, matching `high_point_ft`) establish a net rise of 5,308 ft on their own, and the
+route's own `pitch_detail` independently states "3,700-5,550 ft of gain" just to reach
+Upper Cathedral Lake camp — before any further gain to the summit. No pitches recorded, so
+no climbing-vertical credit applies. Set to the provable floor, 5,308 ft.
+
+`wa_argonaut_peak_east_ridge` — the Beverly Turnpike Trailhead waypoint was missing
+elev/elevFt entirely, though the route's own `approach` text states it directly ("roughly
+3,650 ft"). Filled from the row's own already-stated fact.
+
+`wa_bacon_peak_diobsud` — the Watson Lakes Trailhead waypoint carried two contradictory
+elevations in the same object (`elev`: 4,300 vs `elevFt`: 800, a ~5.4x mismatch). The
+route's own `approach` text gives "~4,360 ft", matching `elev` and not `elevFt`. Corrected
+`elevFt` to match.
+
+`wa_andersons_thumb_standard` — two separate issues on this row. (1) The Dosewallips Road
+washout parking waypoint had the identical elev/elevFt contradiction (700 vs 1,600, ~2.3x).
+Web search corroborates ~600 ft for this trailhead (Mountaineers.org / trip-report
+aggregators), matching `elev` and not `elevFt`; corrected. Also cleaned up a stale `note` on
+that waypoint that described "Current DB value (47.7413,-123.0474)" as misplaced — that
+value is no longer what the row stores (current lat/lng already match
+`approach_logistics.trailheadLat/Lng`), so the note was documenting an already-fixed problem
+and read as self-contradictory. (2) The route's final waypoint was labeled "Mount Anderson
+summit" at 7,330 ft — confirmed via web search to be the real, distinct, taller Mount
+Anderson summit (a different, better-known peak on the same massif), not this route's own
+top: the row's own `high_point_ft` is 6,785 ft, 545 ft lower. The `areas` table already
+carries a distinct, correct coordinate for `wa_andersons_thumb` itself (47.715925,
+-123.341845, matching this route's own `approach_logistics.peakLat/Lng`) — corrected the
+waypoint to that already-recorded coordinate and this route's own `high_point_ft`, rather
+than inventing a new one. (Piro's Spire, a third, separate 6,259 ft satellite pinnacle on the
+same massif, was checked and ruled out as a possible match.)
+
+**Clean / confirmed accurate, or ambiguity resolved without a fix (4):**
+`wa_argonaut_peak_northeast_couloir` (gain_ft 5,057 matches its own trailhead/summit net
+rise exactly); `wa_austera_peak_chockstone_route` (no internal contradictions found);
+`wa_austera_peak` and `wa_austera_peak_southwest_ridge` — both share an identical `gain_ft`/
+`loss_ft` (1,280/592), which is far below a trailhead(2,100 ft)-to-summit(8,339 ft) floor of
+6,239 ft and initially looked like the same class of error just fixed above. On closer
+reading this looks like a deliberate, consistent scoping choice rather than an error: these
+two routes' `dist_km` (4.5 km / 2.8 mi) is also far too short to represent the whole
+multi-day approach — a sibling route on the same peak (`wa_austera_peak_chockstone_route`)
+states in its own `approach` text that reaching high camp alone is "approximately 7 miles
+and 6,000 ft of elevation gain" — so `dist_km`/`gain_ft`/`loss_ft` on these two rows appear
+to be scoped to the summit-day glacier traverse from high camp only, with the multi-day
+backpack-in handled separately via the `bivy`/itinerary fields, not to the whole trip. Not
+fixed, and not flagged further since a plausible non-error explanation was found on the
+row's own data.
+
+Area hierarchy spot-checked for all five peaks (Amphitheater Mountain under Pasayten,
+Anderson's Thumb under Central Olympics/Olympic NP, Argonaut Peak under Stuart Range, Austera
+Peak under North Cascades Core, Bacon Peak under Shuksan/Baker neighbors) — all correctly
+filed, and each area row's own lat/lng matches the coordinates independently stored on its
+routes (this is in fact what supplied the correct Anderson's Thumb summit coordinate above).
+
+WebFetch was blocked for every route-database/guidebook domain attempted this batch
+(en.wikipedia.org, sites.google.com, trailcatjim.com, www.mountainproject.com) — consistent
+with batch 177's note; all research relied on WebSearch synthesis.
+
+Next batch continues from `wa_bacon_peak_diobsud` onward alphabetically (pass 4).
