@@ -49,6 +49,32 @@ const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 const CLAIMS = /no .{0,30}? yet|nothing here(?=\s*(?:yet\b|[.<—,)]|$))|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
 const app = maskComments(appRaw, "ClimbMatch.jsx");
 const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
+
+/* lib/ COMPONENTS ARE FOLLOWED NOW, and the two CHECKED entries that used to stand in for this
+   were excuses for a scope gap rather than reasons. `dashOpen` renders `<DbGuideDashboard/>` and
+   `guideAppOpen` renders `<DbGuideApply/>`; both live in lib/, so the body lookup could not reach
+   them, both landed in the ungated list, and both were answered by hand — bookkeeping that goes
+   stale the moment either component changes.
+
+   Measured before widening (scripts/oneoff/measure-lib-component-absence.mjs): across 14 lib
+   components, 7 assert absence and every one of those claims is either gated on an error, filter
+   copy that stays TRUE during an outage ("No areas match."), a fallback label, a statement about a
+   row's own data, or a comment. So this adds coverage without adding findings — which is the
+   result, not a disappointment. */
+const libSrc = fs.readdirSync(path.join(ROOT, "lib"))
+  .filter((f) => /\.jsx$/.test(f))
+  .map((f) => maskComments(fs.readFileSync(path.join(ROOT, "lib", f), "utf8"), "lib/" + f, 1));
+
+/* lib/ SPELLS ITS GATE DIFFERENTLY, and following these bodies without knowing that would report
+   correctly-gated components as ungated — the guard-flags-correct-work failure, introduced by the
+   very change meant to widen coverage. The app derives `xUnavailable` from a query's isError;
+   lib components destructure the binding straight off the hook (`{ data, isError: inqError }`) and
+   branch on that. Both are "this component can tell a read failed"; only the spelling differs.
+
+   Detected on the FOLLOWED BODY, never on the window, and that scoping is the whole point: adding
+   `isError` to the global FLAGS list would let any app-side window containing `.isError` read as
+   gated, which would WEAKEN the detection this guard exists for. */
+const LIB_ERR = /\bisError\b|\berror\s*:\s*\w+|\b\w+Error\b/;
 const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailable)/g)].map((m) => m[1]))];
 
 /* COMMENTS ARE MASKED OUT OF THE SOURCE, so a claim written in prose cannot be reported as copy.
@@ -64,14 +90,18 @@ const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailabl
    A GLOBAL "is this string rendered somewhere?" test was tried first and is WRONG: "nothing here"
    IS real copy elsewhere in the app, so the comment match passed anyway and the count did not move.
    Position is the whole question — masking answers it, set-membership cannot. */
-function maskComments(src, label) {
+function maskComments(src, label, minComments = 50) {
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
   catch (e) { console.error(`FAIL — could not parse ${label}: ${e.message}`); process.exit(1); }
   const cs = ast.comments || [];
   /* Fail closed. Zero comments in a 400kB file of this repo's prose density means the parse
-     returned something unusable, and masking nothing would silently restore the v4 behaviour. */
-  if (cs.length < 50) { console.error(`FAIL — ${label} reported only ${cs.length} comments; a broken parse, not a terse file.`); process.exit(1); }
+     returned something unusable, and masking nothing would silently restore the v4 behaviour.
+     The floor is a PARAMETER because it was calibrated for the two app files: a lib/ component is
+     legitimately terse, and applying 50 to it would fail a correct file — the guard-flags-correct-
+     work failure. A parse error is still fatal for every file, which is the real fail-closed test;
+     the floor only adds a second opinion where the file is big enough for one to mean anything. */
+  if (cs.length < minComments) { console.error(`FAIL — ${label} reported only ${cs.length} comments; a broken parse, not a terse file.`); process.exit(1); }
   const buf = src.split("");
   for (const c of cs) for (let i = c.start; i < c.end; i++) if (buf[i] !== "\n") buf[i] = " ";
   return buf.join("");
@@ -98,6 +128,38 @@ function bodyOf(src, name) {
 }
 
 const states = overlayStates(app, core);
+
+/* ATTRIBUTION BOUNDARY. A flag is credited to an overlay only if it appears BEFORE the next
+   overlay's render site. The 3000-char window runs straight past the end of one overlay's JSX into
+   the next one's, and this file's own closing note already named the symptom — "an overlay rendered
+   NEXT TO others picks up their copy". It then fed that same contaminated `gated` field to two
+   verdicts, and both failed in the direction that matters:
+
+     - FOUR overlays (editDraft, dashOpen, guideAppOpen, calOpen) were credited with the INBOX's
+       dmThreadsUnavailable/dmUnavailable, so they counted as gated and were dropped from the
+       ungated list before anything examined them. A false pass, on the one question this guard asks.
+     - logPickOpen was reported STALE against resumeLogsUnavailable, which belongs to the `resumeFor`
+       overlay rendered next door — an instruction to delete a CHECKED entry that is CORRECT, after
+       which a genuinely ungated overlay would have passed as gated.
+
+   A stated limitation is a worklist, not a caveat: the note was right and was never acted on.
+
+   The boundary must be a RENDER site (`name && <`, `name ? (`, `if (name) return`), never a bare
+   `name &&`: the loose form also matches handlers and inline conditionals, and truncating at one of
+   those cuts a real region short — measured, it severed the Inbox from its own component body. */
+const RENDER_SITES = [];
+for (const st of states) {
+  const n = st.name.replace(/[$]/g, "\\$");
+  const re = new RegExp("\\b" + n + "\\s*(?:&&|\\?)\\s*[<(]|if\\s*\\(\\s*" + n + "\\s*\\)\\s*return", "g");
+  for (const m of app.matchAll(re)) RENDER_SITES.push({ at: m.index, name: st.name });
+}
+RENDER_SITES.sort((a, b) => a.at - b.at);
+if (!RENDER_SITES.length) {
+  console.error("FAIL — no overlay render site found anywhere; the boundary scan is broken, not the app.");
+  console.error("Every overlay would then be scoped to its whole 3000-char window. Do not read this run.");
+  process.exit(1);
+}
+
 const rows = [];
 for (const st of states) {
   const n = st.name.replace(/[$]/g, "\\$");
@@ -105,19 +167,37 @@ for (const st of states) {
   re.lastIndex = st.at;
   const m = re.exec(app);
   if (!m) continue;
-  const win = app.slice(m.index, m.index + 3000);
-  const comps = [...new Set([...win.matchAll(/<([A-Z][\w$]*)[\s/>]/g)].map((x) => x[1]))];
-  let text = win;
-  const followed = [];
-  for (const c of comps) {
-    const b = bodyOf(core, c) || bodyOf(app, c);
-    if (b && b.length > 200) { text += "\n" + b; followed.push(`${c}(${b.length})`); }
-  }
-  const claims = [...new Set((text.match(CLAIMS) || []).map((s) => s.trim()))];
+  /* The two scopings are deliberately ASYMMETRIC, and both err the same way — toward examining
+     MORE. CLAIMS stay on the wide window, which over-reports and is documented below as an upper
+     bound; GATING is scoped to the boundary, so an overlay can never be excused by a neighbour's
+     flag. Narrowing the claims as well would be the other false pass: an overlay whose own copy
+     sits past a nested render site would stop being reported at all. */
+  const gather = (end) => {
+    const win = app.slice(m.index, end);
+    const comps = [...new Set([...win.matchAll(/<([A-Z][\w$]*)[\s/>]/g)].map((x) => x[1]))];
+    let text = win;
+    const followed = [], libGates = [];
+    for (const c of comps) {
+      let b = bodyOf(core, c) || bodyOf(app, c), fromLib = false;
+      if (!b) for (const L of libSrc) { b = bodyOf(L, c); if (b) { fromLib = true; break; } }
+      if (b && b.length > 200) {
+        text += "\n" + b;
+        followed.push(`${c}(${b.length})`);
+        // A lib component that branches on its own read error IS gated, in lib's spelling.
+        if (fromLib && LIB_ERR.test(b)) libGates.push(`${c}:error`);
+      }
+    }
+    return { text, followed, libGates };
+  };
+  const nb = RENDER_SITES.find((b) => b.at > m.index && b.name !== st.name);
+  const wide = gather(m.index + 3000);
+  const own = gather(Math.min(m.index + 3000, nb ? nb.at : Infinity));
+
+  const claims = [...new Set((wide.text.match(CLAIMS) || []).map((s) => s.trim()))];
   if (!claims.length) continue;
   rows.push({
-    name: st.name, claims: claims.slice(0, 4),
-    gated: FLAGS.filter((f) => text.includes(f)), followed: followed.slice(0, 4),
+    name: st.name, claims: claims.slice(0, 4), boundary: nb ? nb.name : null,
+    gated: FLAGS.filter((f) => own.text.includes(f)).concat(own.libGates), followed: wide.followed.slice(0, 4),
   });
 }
 
@@ -147,6 +227,17 @@ const CHECKED = {
   eventInvite: "renders FullProfile; same reason",
   crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
+
+  /* The two below were EXPOSED by the attribution fix — each had been counted as gated on the
+     Inbox's flags and so was dropped before anything examined it. Read one at a time.
+
+     dashOpen and guideAppOpen were here too, and are GONE: they render DbGuideDashboard and
+     DbGuideApply from lib/, which the body lookup now follows, so the guard reads their real gate
+     instead of taking my word for it. Both entries went stale the moment that landed, and this
+     file's own stale test is what said so. A declaration that exists because a guard cannot see
+     something is not a reason — it is an excuse with a shelf life. */
+  calOpen: 'Calendar\'s "No events yet" is `!going.length && !up.length`, both derived from `events` — useState({}) in production (its seed is behind DEMO_FILLERS) and written only by four in-session functional setEvents calls. No read feeds it, so nothing can fail. `createdGroups` IS DB-hydrated and chooses which groups are iterated, but events[cl.id] is empty for every one of them regardless, and you cannot have created an event for a group that never loaded',
+  editDraft: 'EditProfileScreen\'s "No certifications added yet" / "No skills added yet" describe `draft`, i.e. editDraft — a useState(null) seeded from ME when the climber taps Edit. certifications and skills are client-only: saveEdit\'s PATCH payload omits both, and nothing reads them back from profiles. A blank editor over an unread profile is a REAL defect, and it is a different one — check:profile-edit-gate owns it',
 };
 
 /* v5 — WHAT THE PREVIOUS NOTE HERE SAID IS NOW WRONG, AND THE CORRECTION IS THE POINT.
@@ -175,8 +266,17 @@ const stale = Object.keys(CHECKED).filter((n) => rows.some((r) => r.name === n &
 const ungated = ungatedAll.filter((r) => !CHECKED[r.name]);
 const checked = ungatedAll.filter((r) => CHECKED[r.name]);
 console.log(`${states.length} overlay states; ${rows.length} assert absence; ${ungatedAll.length} ungated — ${checked.length} of those CHECKED and explained, ${ungated.length} not yet read\n`);
+/* A STALE ENTRY FAILS, like every other registry in this repo. It used to print and exit 0, which
+   made it advice nobody had to act on — and while the gating was window-contaminated that was just
+   as well, because the one entry it accused (logPickOpen, against the `resumeFor` overlay's flag)
+   was CORRECT and deleting it would have created a false pass. Now that a flag is only credited to
+   the overlay it belongs to, the accusation means something and can be enforced. */
 if (stale.length) {
-  console.log(`STALE: ${stale.join(", ")} now name a flag, so their CHECKED entry is describing code that has moved. Remove it.\n`);
+  console.error(`STALE: ${stale.join(", ")} now name a flag of their OWN, so their CHECKED entry is`);
+  console.error("describing code that has moved. Remove the entry — the flag now does that work.");
+  console.error("If the flag belongs to a neighbouring overlay, the boundary scan is broken; fix");
+  console.error("that instead, and do NOT delete a reason that is still true.\n");
+  process.exitCode = 1;
 }
 console.log("CHECKED — ungated for a reason, verified by reading the component:");
 for (const r of checked) {
@@ -187,7 +287,26 @@ for (const r of checked) {
    `stale` test above cannot see it — that one only fires when the name reappears WITH a flag.
    Masking comments removed two rows outright, which is exactly this case. */
 const vanished = Object.keys(CHECKED).filter((n) => !rows.some((r) => r.name === n));
-if (vanished.length) console.log(`\n  STALE (no longer assert absence at all — remove): ${vanished.join(", ")}`);
+if (vanished.length) {
+  console.error(`\n  STALE (no longer assert absence at all — remove): ${vanished.join(", ")}`);
+  process.exitCode = 1;
+}
+
+/* SCOPE — ASKED AND ANSWERED, and the note is replaced rather than left standing. It used to say
+   this guard scanned ClimbMatch.jsx and ClimbMatchCore.jsx only, that an overlay rendering a lib/
+   component had its gating invisible here, and that nothing had yet asked the same question of
+   lib/. All three are now false: the body lookup follows lib/*.jsx, and lib's own spelling of a
+   gate (a destructured `isError`/`xError` branch) is read off the followed body.
+
+   The answer, measured across 14 lib components before the widening
+   (scripts/oneoff/measure-lib-component-absence.mjs): 7 assert absence, and every one of those
+   claims is gated on an error, filter copy that stays TRUE during an outage ("No areas match."),
+   a fallback label, a statement about a row's own data, or a comment. A NEGATIVE RESULT — and it
+   still bought something, because dashOpen and guideAppOpen stopped needing hand-written CHECKED
+   entries and are now gated by measurement.
+
+   A closed worklist item left in place reads as work; that mistake put a stale `OPEN:` line in
+   front of the user twice in one day. Delete the note or replace it with the measurement. */
 console.log("\nNOT YET READ — nothing reachable in that text names an xUnavailable flag:");
 for (const r of ungated) {
   console.log(`  ${r.name.padEnd(20)} ${JSON.stringify(r.claims)}`);
@@ -198,7 +317,11 @@ console.log("\nREAD THE ATTRIBUTION, NOT THE COUNT. Components are collected fro
 console.log("window after the render site, so an overlay rendered NEXT TO others picks up their");
 console.log("copy as well as its own -- `dashOpen` listing Inbox is that, not a finding. The rows");
 console.log("with ONE followed component are the clean ones. The count is an upper bound.");
-console.log(`\nGATED (${rows.length - ungated.length}): `
+/* Count the rows that ARE gated, not "everything minus the unexamined". The old arithmetic folded
+   the CHECKED rows into the gated total, so it printed "16 gated" above a list of three — and the
+   two numbers being the same shape made the discrepancy easy to read past. A guard that misreports
+   its own census teaches people to skim it. */
+console.log(`\nGATED (${rows.filter((x) => x.gated.length).length}): `
   + (rows.filter((x) => x.gated.length).map((r) => `${r.name}[${r.gated.join(",")}]`).join(", ") || "(none)"));
 
 /* THE VERDICT. An overlay that asserts absence, names no flag, and carries no recorded reason is
@@ -216,6 +339,9 @@ if (ungated.length) {
   console.error("filter text, or a field a DB-derived object never carries).");
   process.exitCode = 1;
 } else {
-  console.log(`\nok — ${rows.length} overlay(s) assert absence: ${rows.length - ungated.length} gated,`
-    + ` ${Object.keys(CHECKED).length} explained, 0 unexamined.`);
+  /* All three numbers come from one partition and sum to `rows.length`, so the line cannot claim
+     more than it counted. `explained` is the CHECKED entries that ACTUALLY matched a row — not
+     Object.keys(CHECKED).length, which counts bookkeeping rather than coverage. */
+  console.log(`\nok — ${rows.length} overlay(s) assert absence: `
+    + `${rows.filter((x) => x.gated.length).length} gated, ${checked.length} explained, 0 unexamined.`);
 }

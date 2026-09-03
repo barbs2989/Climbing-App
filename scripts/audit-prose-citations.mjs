@@ -49,6 +49,16 @@ const ROAD_ACCESS = [["road", "status"], ["road", "seasonalGate"], ["road", "dri
 
 // A named third-party publisher. `Beckey` needs a guide word beside it — on its own it is a route
 // name here far more often than a citation.
+// `Peakbagger` is a website; `peakbagger`/`peakbaggers`/`peakbagging` is the ordinary English
+// word for a kind of climber - "a known peakbagger objective", "Bulger-list peakbaggers pairing
+// it with the summit", "occasional peakbagger visits mid-July through August". Those cite nobody.
+// The site is CAPITALISED AND SINGULAR (`Peakbagger`, `Peakbagger's`), so every other form is
+// blanked before matching. Measured 2026-09-02: 15 of 300 flagged leaves in WA were reachable
+// ONLY through the common noun, and a sweep on them would have deleted true prose about who
+// climbs a peak. Exactly the `Source Lake` / "water source" exclusion below, one word over.
+const COMMON_NOUN = /\bpeakbaggers\b|\bpeakbagger\b|\bPeakbaggers\b|\bpeakbagging\b|\bPeakbagging\b/g;
+const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
+
 const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
@@ -76,13 +86,50 @@ const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagg
    break it, and adding it here would bury eleven real findings under 288 that nobody should act
    on -- a detector whose output is 96% noise is one people stop reading.
    If `data_quality` ever starts rendering, add it: the citations are still in there. */
-const LIVE = /fs\.usda\.gov|nps\.gov|wsdot|weather\.gov|recreation\.gov|\(\d{3}\)\s*\d{3}-\d{4}/i;
+/* THE PHONE NEEDLE REQUIRED PARENTHESES AND THIS CATALOG DOES NOT WRITE THEM. Measured
+   2026-09-02 (measure-live-phone-formats.mjs): 425 values carry a phone number and LIVE matched
+   5 -- so 417 sheriff's offices, ranger districts, hospitals and SAR dispatch numbers, nearly all
+   of them in `emergency`, counted as neither live nor cited. That is the most operational content
+   in the catalog going unreported by the bucket whose whole job is to say "this is operational".
+   IT CANNOT CHANGE THE FINDING COUNT, which is why it is safe: `live` is only assigned in the
+   `!cited` branch below, so widening it can never take a value out of `hits`. Of the 420 LIVE
+   missed, 3 are also cited and correctly stay findings. */
+const LIVE = /fs\.usda\.gov|nps\.gov|wsdot|weather\.gov|recreation\.gov|(?:\(\d{3}\)\s*|\b\d{3}[-.\s])\d{3}[-.\s]\d{4}\b/i;
+
+/* DECIDED BY THE USER 2026-09-02: A POINTER TELLING A CLIMBER TO GO AND CHECK SOMETHING FOR
+   THEMSELVES IS A LIVE REFERENCE AND STAYS. Asked as "is 'go check WTA yourself' a live reference
+   (keep) or a citation (cut)?", answered "keep them". It is the same reasoning that already keeps
+   the land-manager alert pages and ranger phone numbers above: the actionable thing a climber is
+   told to go and look at, often the only line in the value they can act on.
+   The distinction is DIRECTION, not vocabulary. "check recent trip reports before you go" points
+   the reader outward; "per recent trip reports" attributes a claim backwards to a source. The
+   second is still cut.
+
+   NO DETECTOR WAS BUILT FOR IT, and that is a measurement rather than laziness
+   (measure-live-reference-pointers.mjs): of the 214 findings, a strict pointer test matched 0 and
+   a deliberately loose cross-check -- any advisory verb anywhere in a citing sentence -- matched
+   3. Two of those three are the class, and they are handled below and by repair. A detector for a
+   class of two is the thing this repo keeps refusing to build.
+
+   THE REAL RISK IS THE OPPOSITE ONE, so it is written here rather than in a memory file: the
+   pointer-shaped values mostly do not trip these needles AT ALL. "check recent trip reports
+   before you go" names no publisher NAMED knows, and "Read both CascadeClimbers trip reports"
+   names a site that is not in the list. DO NOT ADD bare `trip reports?` to NAMED, and do not add
+   CascadeClimbers or NWHikers -- that widening would sweep precisely the class the user decided
+   to keep, and it would look like progress while doing it. */
 
 // Flagged and deliberately not a citation. A stale entry fails.
 const EXEMPT = [
   // "East Ridge/Beckey Route" needed an exemption until NAMED was tightened to require a guide word
   // beside the name; it is now excluded BY CONSTRUCTION and an entry here would report as stale.
   ["wa_wolframite_mountain_scramble", "access.rules", "three associations named as the volunteers who MAINTAIN the mine site — content, not a source"],
+  /* Names SummitPost as the thing that will MISLEAD you, not as the authority behind a claim:
+     "Do not confuse this peak with the SummitPost page for Chimney Peak in the Selway Crags,
+     Idaho — search engines mix the two constantly and the Idaho route beta is useless here."
+     The publisher IS the content; cut it and the warning means nothing. Same family as the kept
+     "don't trust the Gaia road line" values, and it is a namesake confusion — the failure this
+     catalog has paid for repeatedly at the level of route ids. */
+  ["wa_chimney_peak_the_chimney", "pro_tips[1]", "SummitPost named as the page that MISLEADS — a namesake warning, and the publisher is the content"],
 ];
 
 const rows = await selectAll("routes", "id,name,road,access,waypoints", `id=like.${STATE}_*`, { pageSize: 1000 });
@@ -108,6 +155,19 @@ const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_te
   "beta", "overview", "watch_out", "best_season", "approach", "approach_variants", "climbing_route",
   "itinerary", "bivy", "pitch_detail", "gear", "what_to_bring", "pro_tips", "hazards", "obj_haz",
   "seasonal_guidance", "seasonal_hazards", "climate", "emergency", "crowds", "partner_requirements",
+  /* ADDED 2026-09-02, the same way `fa` was added below and for the same reason: measured what
+     this audit could not see. It covered `gear` and `what_to_bring` and stopped there, so the
+     other FOUR columns feeding the RACK box had never been opened -- and all four RENDER, which
+     is the bar this list is held to. Proven rather than argued: every one is in
+     check:field-renders' FIELDS with no KNOWN exemption, and that guard fails a column that
+     reaches no screen.
+
+     They carry 132 hits between them, and `rope_note` alone has 63 -- more than any column
+     already listed. The sample that found it was a rendered sling bullet reading
+     "cams: ... (per Mountain Project + 2 trip reports)", i.e. a publisher named on screen inside
+     a climber's rack. `data_quality` stays out for the opposite reason stated below: it renders
+     nowhere, so its citations cannot break the rule. RENDERING is the test, not size. */
+  "sling_rack", "detailed_rack", "pro_needs", "rope_note",
   /* ADDED 2026-08-26 after measuring what this audit could not see. `fa` RENDERS -- `route.fa` on
      the route page -- and was never opened, so a citation in it was on screen and uncounted.
      ONLY `fa`. `road` and `access` also render and also carry citations, and are deliberately NOT
@@ -139,13 +199,17 @@ if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes and
 if (!values.some(v => v.kind === "route prose")) { console.error("FAIL — 0 route-prose values across every column. The widened scan is not reading."); process.exit(1); }
 
 if (INJECT === "cite") { values[0].text = "The road is open to the trailhead, per SummitPost and several trip reports."; console.log(`[inject] a citation onto ${values[0].id} ${values[0].field}`); }
+if (INJECT === "commonnoun") { for (const v of values) v.text = "Rarely climbed; occasional peakbagger visits, and Bulger-list peakbaggers tag it from a shared high camp."; console.log("[inject] every value uses the COMMON NOUN peakbagger(s) and cites nobody; the citation count must be 0"); }
+if (INJECT === "thesite") { for (const v of values) v.text = "Peakbagger lists four logged ascents for this peak, and Peakbagger's page gives the elevation."; console.log("[inject] every value names the SITE Peakbagger; every value must be reported"); }
+if (INJECT === "livedash") { for (const v of values) v.text = "Okanogan County Sheriff non-emergency dispatch: 509-422-7232, or call 911."; console.log("[inject] every value carries a BARE-DASH phone number and cites nobody; citations must be 0 and live must be every value"); }
 if (INJECT === "liveonly") { for (const v of values) v.text = "Call the Mt. Baker Ranger District at (360) 854-2553 and check fs.usda.gov/alerts before driving."; console.log("[inject] every value is a LIVE reference; the citation count must be 0 and the live count must be every value"); }
 
 const exemptKeys = new Set(EXEMPT.map(e => e[0] + "\0" + e[1]));
 const hitKeys = new Set();
 const hits = [], live = [];
 for (const v of values) {
-  const cited = NAMED.test(v.text) || ACT.test(v.text);
+  const _t = deCommonNoun(v.text);
+  const cited = NAMED.test(_t) || ACT.test(_t);
   if (cited) hitKeys.add(v.id + "\0" + v.field);
   if (cited && !exemptKeys.has(v.id + "\0" + v.field)) hits.push(v);
   else if (!cited && LIVE.test(v.text)) live.push(v);
@@ -186,6 +250,12 @@ if (stale.length) {
 // Injection-tested:
 //   --inject=cite      a citation onto the first value -> must be reported
 //   --inject=liveonly  every value a phone number + a land-manager URL -> citations 0, live = all.
+//   --inject=commonnoun  every value uses "peakbagger(s)" as the common noun -> citations 0.
+//                        This must PASS; it is the precision case, and it is what stops the
+//                        needle reporting true prose about who climbs a peak.
+//   --inject=thesite     every value names the SITE Peakbagger -> every value reported. Pairs
+//                        with commonnoun: without it, a needle that matched nothing would also
+//                        satisfy the precision case.
 //                      This is the precision rule: the destructive failure of this audit is
 //                      reporting the 589 operational references as findings. It exits 1, correctly:
 //                      overwriting every value also makes the exemption stale, and stale bookkeeping

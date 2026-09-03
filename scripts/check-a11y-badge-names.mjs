@@ -297,8 +297,19 @@ const findCandidates = () => page.evaluate(() => {
       if (ps.display === "none" || ps.visibility === "hidden") continue;
       parts.push({ t: n.textContent, owner: n.parentElement });
     }
-    let hit = null;
-    for (let i = 1; i < parts.length && !hit; i++) {
+    // EVERY boundary, not the first. This loop used to stop at the first qualifying pair
+    // (`&& !hit`), and a control's SECOND glued boundary was then covered by nothing: section 2
+    // below explicitly skips anything inside a control. The pitch row is the case that found it —
+    //
+    //   <div role=button>  "P2" | "5.5" | "CRUX" | "180 ft · 361 ft up" | …
+    //
+    // The first pair is "P2"→"5.5", whose owners are two FLEX children; Chrome blockifies those
+    // and inserts a space, so the computed name has no "25.5" in it and the confirm step correctly
+    // drops the candidate. But the loop had already stopped, so "5.5"→"CRUX" — the pair that
+    // really does announce as "5.5CRUX" — was never examined. The guard reported the control clean
+    // on the strength of a boundary it had rejected.
+    const hits = [];
+    for (let i = 1; i < parts.length; i++) {
       if (parts[i].owner === parts[i - 1].owner) continue;
       const prev = parts[i - 1].t, cur = parts[i].t;
       const a = prev.slice(-1), b = cur.slice(0, 1);
@@ -319,11 +330,19 @@ const findCandidates = () => page.evaluate(() => {
       // rule reports correct rows.
       let needle = null;
       if (/\w/.test(a) && /\w/.test(b)) needle = (prev.match(/\w+$/) || [""])[0] + (cur.match(/^\w+/) || [""])[0];
-      if (needle && needle.length > 1) hit = { needle, before: prev.slice(-24), after: cur.slice(0, 24) };
+      // Dedupe by needle: one control can produce the same pair twice (a repeated chip), and
+      // confirming it twice would report one defect as two.
+      if (needle && needle.length > 1 && !hits.some((h) => h.needle === needle)) {
+        hits.push({ needle, before: prev.slice(-24), after: cur.slice(0, 24) });
+      }
     }
-    if (!hit) continue;
+    if (!hits.length) continue;
+    // One probe attribute per CONTROL, one candidate per BOUNDARY. The confirm step looks the
+    // element up by that attribute and tests each needle against the computed name separately, so
+    // several candidates sharing a probe id is exactly right.
     el.setAttribute("data-a11yprobe", String(idx));
-    out.push({ probe: idx, tag: el.tagName.toLowerCase(), role: el.getAttribute("role") || "", text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60), ...hit });
+    const meta = { probe: idx, tag: el.tagName.toLowerCase(), role: el.getAttribute("role") || "", text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60) };
+    for (const h of hits) out.push({ ...meta, ...h });
     idx++;
   }
   return out;
@@ -398,7 +417,9 @@ let boundariesExamined = 0;
 
 async function sweep(label) {
   const cands = await findCandidates();
-  controlsScanned += cands.length;
+  // Candidates are per BOUNDARY now and a control can contribute several, so count the distinct
+  // probe ids — otherwise the summary reports more "controls" than the page has.
+  controlsScanned += new Set(cands.map((c) => c.probe)).size;
   const confirmed = await confirm(cands);
   const off = await scanOffControl();
   boundariesExamined += off.examined;
@@ -464,6 +485,46 @@ if (!routeOpen) {
   for (const sub of ["Reports", "Photos", "Partners", "Plan", "Safety"]) {
     if (!(await tapSub(sub))) { log(`  route:${sub}`.padEnd(30) + "  sub-tab not present on this route"); continue; }
     await sweep("route:" + sub);
+  }
+
+  // 1c. A SECOND route, chosen because it can render a PITCH TABLE.
+  //
+  // `?zr=1` opens ROUTES[0] — `kings_hf`, a scramble whose `pitchDetail` is null — so every walk
+  // this guard has ever made saw a route with no pitch rows on it. That is how #1374 happened: a
+  // pitch row is a clickable() control whose CRUX badge is a separate <span> held off the grade by
+  // a margin, so a pitch graded "5.9" announced as "5.9CRUX" — this guard's exact subject, on a
+  // screen it could not reach. Eight of the fourteen seed routes carry a crux pitch and seven of
+  // those render the glued shape; the one this walk opened was not among them.
+  //
+  // `?zrp=1` asks the scaffold for a route with a crux pitch BY PROPERTY, so reordering the seed
+  // array cannot quietly re-open the hole. The pitch table lives on the PLAN tab, not Overview.
+  await load("?zr=1&zrp=1", 2200, true);
+  const pitchedOpen = await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 20000 }).then(() => true).catch(() => false);
+  const noPitched = await page.evaluate(() => window.__zrNoPitched === true);
+  if (!pitchedOpen) {
+    fail("route detail (pitched)", "?zr=1&zrp=1 never set window.__routeOpen, so the pitch table went unmeasured");
+  } else if (noPitched) {
+    // Fail closed. Without this the scaffold silently falls back to ROUTES[0] and the sweep below
+    // reports a clean pass over a screen with no pitch rows on it — the very shape this covers.
+    fail("route detail (pitched)", "no seed route carries a crux pitch any more, so the scaffold fell back to ROUTES[0] and the pitch table was NOT walked");
+  } else {
+    await sweep("route:pitched-overview");
+    if (await tapSub("Plan")) {
+      await sweep("route:pitched-plan");
+      // The rows are collapsed; the header is the control whose name is at issue, so the sweep
+      // above already covers it. Expanding one is cheap and widens it to the open state.
+      const expanded = await page.evaluate(() => {
+        const row = [...document.querySelectorAll('[role="button"]')]
+          .find((e) => /^Pitch \d/.test(e.getAttribute("aria-label") || ""));
+        if (!row) return false;
+        row.click();
+        return true;
+      });
+      if (expanded) { await settledText(page, { min: CHROME_ONLY, timeout: 45000 }).catch(() => {}); await sweep("route:pitch-expanded"); }
+      else log("  route:pitch-expanded".padEnd(30) + "  no named pitch row to expand");
+    } else {
+      fail("route detail (pitched)", "the Plan sub-tab is not on a route that has a pitch table — the pitch rows were not walked");
+    }
   }
 }
 

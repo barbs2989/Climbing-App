@@ -211,6 +211,12 @@ const ROUTE = "RouteDetail";
 // The other four sub-tabs stay unwalked: no flag lives on them, and each is two more settles in
 // each of two runs. That is a cost decision, not a claim they are fine.
 const ROUTE_PHOTOS = "RouteDetail:Photos";
+// Conditions, for reportsUnavailable AT ITS OWN RENDER SITE. This file used to say the other four
+// sub-tabs were a COST decision, "and no flag lives on them. Click one when a flag lands on it."
+// One does: <ConsensusPanel ... reportsUnavailable={reportsUnavailable}/> renders behind
+// tab==="conditions", so the Overview walk proves the FLAG flips while leaving that panel's own
+// copy unexercised.
+const ROUTE_CONDITIONS = "RouteDetail:Conditions";
 // ONE name for the page-load budget, used at BOTH gotos, and that is a merge defence rather
 // than tidiness. It was written as two bare 180000 literals and a stale-base squash reverted
 // BOTH to 120000 on main (#1243 is an ancestor of main and neither value survived), which
@@ -237,7 +243,7 @@ const SUBTAB2 = "Logbook:Areas";
 // Both sides added a stop to this list -- Logbook:Areas from main, RouteDetail:Photos here.
 // They are independent, so the merge is the UNION: dropping either silently un-walks a screen
 // whose walk code is already below (out[SUBTAB2] and out[ROUTE_PHOTOS] are both written).
-const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE, ROUTE_PHOTOS];
+const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE, ROUTE_CONDITIONS, ROUTE_PHOTOS];
 // The two verdicts. Hoisted because the WAIT below tests the same question the verdict does,
 // and a wait that asked a different question would let the walk start before the thing it is
 // waiting for is measurable.
@@ -538,6 +544,31 @@ async function walk(browser, base, session, fail) {
     // tapByText skips fixed/sticky chrome, which is the load-bearing half: a route sub-tab name
     // collides with the bottom nav, so a global text match does not miss -- it silently NAVIGATES
     // AWAY and returns true, and the caller then measures a tab believing it is on the route page.
+    // THE SUB-TAB ID IS NOT ITS LABEL: the bar is
+    //   ["conditions", cragOnly ? "Send Reports" : "Reports"]
+    // so there is no control reading "Conditions", and the label depends on the discipline.
+    // ORDER MATTERS: this must run from OVERVIEW. Clicking it after Photos does not take --
+    // tapByText returns TRUE and the page stays on Photos, so the capture comes back
+    // byte-identical (678ch both) and reads as a screen with nothing wrong. check:overflow has
+    // driven these six in this order since #818; a click that returns true is not evidence it
+    // navigated, so the capture is required to DIFFER from Overview's.
+    let ct = "";
+    for (const label of ["Reports", "Send Reports"]) {
+      if (!(await tapByText(page, label))) continue;
+      let t = await waitOutFetch(page, fail);
+      if (fail) {
+        for (let i = 0; i < 25 && !BROKEN_RE.test(t); i++) {
+          await new Promise((r) => setTimeout(r, 1000));
+          t = await waitOutFetch(page, fail);
+        }
+      }
+      if (t && t !== out[ROUTE]) { ct = t; break; }
+    }
+    if (ct) out[ROUTE_CONDITIONS] = ct;
+    else {
+      out.__navFail = (out.__navFail || []).concat(ROUTE_CONDITIONS + " (no label changed the screen)");
+      out[ROUTE_CONDITIONS] = "";
+    }
     if (await tapByText(page, "Photos")) {
       let pt = await waitOutFetch(page, fail);
       if (fail) {
@@ -552,7 +583,7 @@ async function walk(browser, base, session, fail) {
       out[ROUTE_PHOTOS] = "";
     }
   }
-  if (!opened) out[ROUTE_PHOTOS] = "";
+  if (!opened) { out[ROUTE_PHOTOS] = ""; out[ROUTE_CONDITIONS] = ""; }
   out.__blocked = blocked;
   out.__passed = passed;
   await page.close();

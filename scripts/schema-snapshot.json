@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-08-27",
+  "generatedAt": "2026-09-02",
   "tables": {
     "areas": [
       "area_type",
@@ -372,6 +372,7 @@
       "is_admin",
       "location",
       "name",
+      "photos",
       "primary_account_id",
       "sport_grade",
       "terms_accepted_at",

@@ -19,7 +19,7 @@
 // column, which is the same drift that caused the original bug — so the check below proves a
 // chip and a challenge answer from the same call.
 
-import { routeTags, hasTag, LIST_TAGS } from "../lib/routeTags.js";
+import { routeTags, hasTag, LIST_TAGS, FEATURE_TAGS } from "../lib/routeTags.js";
 import { LIST_ALIASES, routeInList } from "../lib/lists.js";
 
 let fail = 0;
@@ -86,6 +86,58 @@ ok("duplicate list collapses to one chip", dup.filter(x => x.slug === "bulgers")
 ok("bare route -> no tags", routeTags({}).length === 0, routeTags({}));
 ok("null route -> no tags", routeTags(null).length === 0);
 ok("lists:null tolerated", routeTags({ lists: null, features: null }).length === 0);
+
+// --- the four Washington peak lists, as the catalog actually stores them -------------------
+// Real values, copied out of the live catalog. Each reached NO chip: routeTags iterates
+// LIST_ALIASES keys, so a raw string matching none of them was never considered, and the
+// membership was in the row and on no screen.
+//
+// Each must resolve to EXACTLY ONE key. Two keys matching one string would draw the same
+// membership twice, which is the duplicate the "Regional classic" fix removed, arriving from
+// the resolver end instead of the render end.
+const REAL_LIST_VALUES = [
+  ["Peakbagger 'Home Court' Top 100 Washington peaks by elevation – ranked #29", "wa_top100_elev", "#29"],
+  ["Peakbagger Washington 400'+ clean-prominence steepest-peaks 'Master List' – ranked #93", "wa_prominence", "#93"],
+  ["Washington Top 200 Peaks (elevation-based list of the ~200 highest Washington peaks with 400+ ft of prominence) - Buckskin Mountain is listed among the 'Extra 110' peaks needed to complete the Top 200, per Country Highpoints' tracked list.", "wa_top200", ""],
+  ["Washington's Difficult 10 (\"Hardest Peaks\") — SummitPost list", "wa_difficult10", ""],
+  // Regression: the Bulger spellings must NOT be captured by the new keys, and vice versa.
+  ["Washington Top 100 (Bulger List)", "bulgers", ""],
+  ["Bulger List (Washington's 100 highest peaks) - #48", "bulgers", "#48"],
+  ["fifty_classics", "fifty", ""],
+];
+for (const [value, wantKey, wantRank] of REAL_LIST_VALUES) {
+  const hits = Object.keys(LIST_ALIASES).filter(k => routeInList({ lists: [value] }, k));
+  ok(`${wantKey}: resolves to exactly one key`, hits.length === 1 && hits[0] === wantKey, hits);
+  const chip = routeTags({ lists: [value] }).find(x => x.slug === wantKey);
+  ok(`${wantKey}: reaches a chip`, !!chip, chip);
+  if (chip) ok(`${wantKey}: rank ${JSON.stringify(wantRank)} carried through`, (chip.detail || "") === wantRank, chip.detail);
+}
+// NO SOURCES. Every one of these values names the site it was read from. A chip repeating that
+// would put a source on screen, which this app does not do anywhere - so the label, the short
+// form and the blurb are checked, not just the label.
+const PUBLISHERS = /peakbagger|summitpost|mountain\s*project|country\s+highpoints|wta\b|alltrails|gaia|caltopo/i;
+for (const [key, def] of Object.entries(LIST_TAGS)) {
+  ok(`${key}: names no publisher`, !PUBLISHERS.test([def.label, def.short, def.blurb].join(" ")), def);
+}
+
+// --- feature presentation ------------------------------------------------------------------
+// A `features` value with no FEATURE_TAGS entry still renders, through routeTags own fallback
+// - a grey bullet with an EMPTY blurb. That degrades QUIETLY: the chip is on screen, so no
+// coverage check can see it carries none of the information its siblings carry. 383 of 1,216
+// chip instances were in that state until the table was completed. So every entry must
+// actually be presentable, and the fallback must stay a fallback rather than the common case.
+for (const [name, def] of Object.entries(FEATURE_TAGS)) {
+  ok(`feature ${name}: has an icon`, !!(def.icon && String(def.icon).trim()), def);
+  ok(`feature ${name}: has a blurb`, !!(def.blurb && def.blurb.trim().length > 10), def);
+  ok(`feature ${name}: names a colour`, !!(def.color && String(def.color).trim()), def);
+  const chip = routeTags({ features: [name] }).find(x => x.slug === name);
+  ok(`feature ${name}: reaches a chip carrying its own presentation`,
+    !!chip && chip.icon === def.icon && chip.color === def.color && chip.blurb === def.blurb, chip);
+}
+// The fallback still has to work - a value the table has not learned yet must RENDER, not
+// vanish. Losing the chip would be worse than losing its colour.
+const unknownChip = routeTags({ features: ["Verglas"] }).find(x => x.slug === "Verglas");
+ok("an unknown feature still renders a chip", !!unknownChip && unknownChip.label === "Verglas", unknownChip);
 
 // Derived warnings must read the columns the closure actually lives in.
 ok("raptor closure from access prose", hasTag({ access: { seasonal: "Peregrine falcon nesting closure Feb 1 - Jul 15." } }, "raptor_closure"));
