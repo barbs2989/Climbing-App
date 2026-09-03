@@ -43,9 +43,24 @@ const CASES = [
     expect: "fail",
   },
   {
-    name: "4. the crag Overview labels the drive note \"Trailhead\" again",
-    find: '{route.road.driveNote?"The drive":"Road"}',
-    repl: '"Trailhead"',
+    // REPOINTED when #1493 gave the Plan tab sole ownership of GETTING THERE on a crag. This case
+    // used to inject the label into the crag OVERVIEW panel, and that state is now unreachable:
+    // `road` is one of the fields hasPlanContent() reads, so a route carrying a drive note always
+    // has a Plan tab and the Overview panel no longer renders its road at all. Injected there the
+    // case MISSED — correctly, because there was nothing on that render to mislabel. It aims at
+    // the surface that does render the note, which is the same defect in the place it can occur.
+    name: "4. the drive note is labelled \"Trailhead\" again, on the tab that prints it",
+    find: 'row("Drive notes",road.driveNote)',
+    repl: 'row("Trailhead",road.driveNote)',
+    expect: "fail",
+  },
+  {
+    // The gap #1479 declared and deferred, now closed by #1493 and guarded by section 1b. Reverting
+    // the gate puts GETTING THERE back on BOTH tabs of a crag route, each with its own drive
+    // control — one destination offered twice on one page, which is the #1437 defect one level out.
+    name: "4b. the crag says GETTING THERE on Overview AND Plan again",
+    find: '{cragOnly&&!showPlan?<div style={{marginBottom:12}}>',
+    repl: '{cragOnly?<div style={{marginBottom:12}}>',
     expect: "fail",
   },
   {
