@@ -37,12 +37,12 @@ if (!rd.includes("ac.closures||ac.closure||ac.seasonal")) { console.error("ANCHO
 // Values that mean "nothing to say" rather than saying anything.
 const NOOP = /^(n\/?a|none|none known|no known closures|no closures|not applicable|-|—|none\.?|no seasonal closures)\.?$/i;
 
-const rows = await selectAll("routes", "id,access", "id=like.wa_*", { pageSize: 1000 });
+const rows = await selectAll("routes", "id,access,road,approach_logistics", "id=like.wa_*", { pageSize: 1000 });
 console.log(`WA routes read: ${rows.length}`);
 if (rows.length < 5000) { console.error("SHORT READ — refusing to act on a partial read"); process.exit(1); }
 
 let haveClosures = 0, placeholder = 0;
-const plan = [], keep = [];
+const plan = [], keep = [], mismatched = [];
 for (const r of rows) {
   const a = r.access; if (!a || typeof a !== "object") continue;
   const c = a.closures;
@@ -52,12 +52,27 @@ for (const r of rows) {
   placeholder++;
   const alt = [a.closure, a.seasonal].find(v => typeof v === "string" && v.trim() && !NOOP.test(v.trim()));
   if (!alt) { keep.push(r.id); continue; }
+  // GEOGRAPHIC FIT MUST BE CHECKED AGAINST THE ROUTE'S OWN ROAD, NOT ITS AREA PATH. The first run
+  // grouped the revealed texts by area path, and every candidate sat under
+  // usa.washington.wa_northwest.wa_hwy20_ncnp.wa_north_cascades — so "Cascade River Road" passed for
+  // peaks nowhere near it, and two rows (Primus Peak via Colonial Creek/Thunder Creek, Black Peak from
+  // Rainy Pass) were given a closure for a road they do not use. Reverted in
+  // fix-revert-two-foreign-closures-i-surfaced.mjs. A named road in the revealed text must now appear
+  // in the row's OWN road block, which is the record that actually answers the question.
+  const road = [r.road && r.road.name, r.road && r.road.driveNote,
+                r.approach_logistics && r.approach_logistics.trailheadDirection].filter(v => typeof v === "string").join(" | ");
+  const named = String(alt).match(/\b((?:[A-Z][a-z]+ ){1,3}(?:Road|Highway))\b/);
+  if (named && road.trim() && !road.toLowerCase().includes(named[1].toLowerCase())) {
+    mismatched.push({ id: r.id, names: named[1] }); continue;
+  }
   plan.push({ id: r.id, from: c, reveals: String(alt).trim() });
 }
 if (!haveClosures) { console.error("no access.closures found at all — the scan is broken, refusing"); process.exit(1); }
 console.log(`\nrows with access.closures: ${haveClosures}`);
 console.log(`  value is a placeholder meaning "nothing"          : ${placeholder}`);
 console.log(`  ...with nothing behind it, left alone             : ${keep.length}`);
+console.log(`  ...but the revealed text names a road THIS route does not use, held back: ${mismatched.length}`);
+for (const m of mismatched) console.log(`         ${m.id} (text names ${m.names})`);
 console.log(`  ...CONTRADICTED by the row's own closure text     : ${plan.length}\n`);
 const byText = new Map();
 for (const p of plan) byText.set(p.reveals, (byText.get(p.reveals) || 0) + 1);
