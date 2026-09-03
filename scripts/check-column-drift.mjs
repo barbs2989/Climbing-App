@@ -187,7 +187,19 @@ for (const [t, cols] of Object.entries(live)) {
     if (KNOWN[key]) { console.log(`  known  ${key} — ${KNOWN[key]}`); continue; }
     fail(`${key} exists in the live database and NO migration describes it.\n` +
          `        Nothing in git creates it, so a rebuild from migrations would not produce it and\n` +
-         `        nobody reviewed it. Write the migration, or declare it in KNOWN with the reason.`);
+         `        nobody reviewed it. THREE CAUSES, and they want opposite actions:\n` +
+         `          1. AN OPEN PR ALREADY CARRIES ITS MIGRATION — the likeliest, because sessions\n` +
+         `             here apply DDL before the PR lands. Check first:\n` +
+         `               gh pr list --state open --search "${c} in:title,body"\n` +
+         `               gh search code --owner "$(gh repo view --json owner -q .owner.login)" "${c}"\n` +
+         `             If so do NOTHING: not a migration (it would duplicate a number), and NOT a\n` +
+         `             KNOWN entry — that goes stale the moment the PR merges, and a stale entry\n` +
+         `             fails this guard in its own right.\n` +
+         `          2. DDL applied by hand and never written down — write the migration.\n` +
+         `          3. Genuinely intended to live outside the migrations — declare it in KNOWN\n` +
+         `             with the reason, and expect to remove that entry later.\n` +
+         `        Do NOT reach for \`npm run schema:refresh\` in any of the three: section A exists\n` +
+         `        to stop a refresh silently absorbing a column no migration creates.`);
   }
 }
 if (!aFound) console.log("  ok    every live table and column is described by a migration");
