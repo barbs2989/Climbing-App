@@ -4671,6 +4671,46 @@ the correction knows the screen is wrong, and they have no way to report it.
       The ambiguity gate (the chosen assignment must beat the swap by 3x) **earned itself immediately**:
       `wa_tenpeak_mountain_southeast`'s swapped pairing was *better* (559 m against 872 m), so greedy
       had it wrong. 36 -> 31 repaired, 21 refused, every refusal printed.
+    - **THE ROOT CAUSE WAS AN ASYMMETRY IN THE PREDICATE, AND FIXING IT BEAT REPAIRING VERTICES.**
+      `trackIsJustTheWaypoints` demanded `line.every(onAPin)` — **no slack at all on the vertex side,
+      while pins already had one** — and only the pin slack had a stated reason. So the vertex
+      strictness was doing the damage: one stranded vertex deleted the caveat outright, and 17 routes
+      could not be recovered by moving it because the pin had been **REPLACED rather than refined**
+      (`wa_mount_lyall_south_route`'s orphan is High Bridge on the Stehekin Valley Road, **27 km**
+      from Holden Village) so there was nowhere correct to move it to.
+      - **The stated objection does not apply to this change, and that distinction is the whole
+        argument.** The comment says *"a threshold would condemn genuine tracks that happen to be
+        sparse"* — true of a threshold on the FRACTION of vertices that are waypoints, and not of
+        **one** of slack under the existing `<=40` cap: a recording has hundreds of points and not
+        one lands within 5 m of a NAMED waypoint by chance. Measured: the 26 lines this newly
+        recognises carry at most **8 vertices at a median spacing of 2,217 m**, densest 105 m, so
+        **none of them could be a recording**.
+      - **A SPACING-BASED PREDICATE WAS MEASURED FIRST AND IS THE WRONG INSTRUMENT.** Median vertex
+        spacing separates the catalog cleanly — recordings sit at 8-47 m, sketches at 2,356 m — and
+        **66** uncaptioned lines have spacing over 500 m with a median of 4 vertices. But **62 of
+        those 66 are a line through SOME of their own pins**, which the one-vertex slack already
+        reaches, and the other 4 are lines related to no pin at all, where the existing sentence
+        (*"Straight lines between this route's waypoints"*) would be a **false claim**. A threshold
+        would also need justifying against the stated objection; the slack does not.
+      - **STRICTLY ADDITIVE, AND THAT HAD TO BE ENFORCED RATHER THAN ASSUMED.** A two-point line has
+        no interior, so one of slack is HALF of it: applying it there admitted a **55 m placeholder**
+        (`wa_mount_terror_stoddard_buttress`, which this file already records as a stub) AND **took
+        the caveat AWAY from 34 two-point lines that legitimately carry it**. Only the measurement's
+        own `LOST:` check caught that — the summary line alone read 174 -> 140 and `tail` had scrolled
+        the evidence off. **A change to a predicate must assert that nothing loses what it had.**
+      - Sketched lines **139 -> 174** by repairing vertices, then **-> 200** by fixing the predicate;
+        stranded routes **52 -> 21 -> 17 -> 8**. Injection-tested **both** directions in
+        `check:track-caveat`: reverting to no slack fails **exactly** the stranded case while the
+        three over-reach cases stay green, and widening to two-of-slack fails **exactly** the
+        two-point case.
+      - **The repair script is deliberately NOT gated on the predicate any more.** With the slack a
+        single stranded vertex now SATISFIES it and would be skipped — but the caveat and the drawn
+        line are different questions: that vertex is still painted on the map a kilometre from the
+        pin it belongs to. The slack restores the honesty; the repair restores the accuracy.
+      - **The cases had to be built FROM the fixture, not typed.** Two of the four first failed
+        against a correct predicate because their hand-written coordinates missed every pin, and a
+        third was testing the PIN half by accident — a two-point line cannot put 3 of 4 pins on
+        itself, so it needs a two-pin route. *A case that fails for its own reasons proves nothing.*
     - **THE REFUSALS ARE A SECOND CLASS, NOT A TAIL OF THE FIRST.** A repaired pin moves a few hundred
       metres (p50 **381 m**); a refused one is 3-27 km out, which is a trailhead REPLACED rather than
       refined — `wa_mount_lyall_south_route`'s orphan is **High Bridge on the Stehekin Valley Road,
