@@ -70,6 +70,27 @@ if (rows.length !== IDS.length) {
 }
 console.log(`rows: ${rows.length}\n`);
 
+// RULE 8 -- A ROPE WRITTEN AS AN ALTERNATION IS TWO ROPES, NOT A ROPE AND A RAPPEL. Rule 5's mask
+// needs the number DIRECTLY followed by the rope noun, so in "carry a 50 m or 60 m rope" only the
+// 60 is masked; the 50 then sits near the word "rappel" and is filed as a rappel DISTANCE. That
+// put wa_mount_fury_east_direct_east_ridge on the shortfall list -- the very route CLAUDE.md names
+// as the reason a peak-typed `trad` route is alpine -- against a "50 m rappel" nobody wrote. Its
+// real rappel is the 20-ft step its own prose describes.
+//
+// IT CANNOT HIDE A REAL SHORTFALL, which is what makes it safe: it moves a number from the rappel
+// set into the ROPE set, and the shortfall test uses the SMALLEST rope. So "a 30m or 60m rope" --
+// four WA rows write exactly that -- still flags if a 30 m rope cannot reach a stated rappel. The
+// rule removes a phantom rappel, never a rope that is too short.
+//
+// Measured: 11 WA rows, 15 occurrences, across "or", "/" and metre-word spellings.
+const ROPE_ALT = /\b(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)?\s*(?:or|\/)\s*(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)\.?\s+(?:(?:single|double|dynamic|twin|half|static|glacier|dry[- ]treated)\s+)*ropes?\b/gi;
+function applyRopeAlternation(text, hitsR, ok) {
+  for (const m of text.matchAll(ROPE_ALT)) {
+    for (const n of [Number(m[1]), Number(m[2])]) if (ok(n) && n >= 20) hitsR.add(n);
+  }
+  return text.replace(ROPE_ALT, m => " ".repeat(m.length));
+}
+
 for (const r of rows) {
   console.log(`\n================ ${r.id}   (${A.get(r.area_id)?.name})`);
 
@@ -121,11 +142,16 @@ for (const r of rows) {
     // the number on their own.
     const ROPE_NOUN = /\b(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)\.?\s+(?:(?:single|double|dynamic|twin|half|static|glacier|dry[- ]treated)\s+)*ropes?\b|\b(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)\.?\s+(?:single|double|twin|half|dynamic|static)\b/gi;
     let descentTxt = s;
-    for (const m of s.matchAll(ROPE_NOUN)) {
+    // ORDER IS LOAD-BEARING: rule 8 runs FIRST. Written the other way round, rule 5's mask consumes
+    // "60 m rope" out of "a 50 m or 60 m rope" and leaves "50 m or " with nothing for the alternation
+    // to match -- so rule 8 fired on nothing and Fury stayed on the shortfall list. The rule looked
+    // correct in isolation and did nothing; only re-running the case showed it.
+    descentTxt = applyRopeAlternation(descentTxt, hitsR, ok);
+    for (const m of descentTxt.matchAll(ROPE_NOUN)) {
       const n = Number(m[1] || m[2]);
       if (ok(n) && n >= 20) { hitsR.add(n); }
-      descentTxt = descentTxt.replace(m[0], " ".repeat(m[0].length));   // it cannot also be a rappel
     }
+    descentTxt = descentTxt.replace(ROPE_NOUN, m => " ".repeat(m.length));   // it cannot also be a rappel
     // RULE 6 -- A ROW STATING ZERO RAPPELS HAS NO RAPPEL TO REACH. wa_kyes_peak_glaciated_scramble
     // stores rappels "0" and a walk-off descent, and was still flagged because a rope length elsewhere
     // in its prose got read as a distance. This is structural, unlike widening the denial regex --
