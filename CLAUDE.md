@@ -60,6 +60,7 @@ npm run check:overlay-absence # every overlay that claims you have none is gated
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender (hand-run: it cannot delete what it writes)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -970,6 +971,69 @@ the total when deciding where a new guard belongs.
     label everyone sees, so reverting the `isCreator` fix left it **green**. Only injection
     found that. `+ Mod` is gated on `isCreator`, the visibility toggle on `isMod`; they are
     different questions and must be asserted separately.
+- **`check:message-delivery`** is the **first guard here that involves two people**. Every other
+  browser guard signs in as at most one account and reads its own screens — `check:ui` walks the
+  demo logged out, `check:zero` a new account with nothing, `check:signed-in` and `check:outage` a
+  real account reading its OWN data — so **a fact written by a SECOND climber has been outside CI
+  by construction**. That is not a hypothetical seam: it is where **#1497** came from, a vouch you
+  had received reaching no screen and no number, with every gate green throughout.
+  - **What it walks:** the mate sends a direct message under the mate's own JWT, through the same
+    `users can send messages` policy (`auth.uid() = sender_id`) the app's `sendDirectMessage` uses;
+    the owner then signs in and opens the inbox. It asserts the inbox does not claim to be empty,
+    the sender is **identified**, the body is previewed, the thread opens, and the body renders in
+    the words the sender wrote — 9 assertions.
+  - **Never the service key.** It bypasses RLS, and *what a second REAL account can do* is the
+    entire question; a service-key insert would manufacture a state the app's own flow may not
+    reach. This is the rule `check:signed-in` already records from the other side, where seeding as
+    the users found that RLS refuses an `accepted` connection written directly.
+  - **IDENTIFIED, NOT NAMED, and getting that wrong is how this walk nearly asserted a defect as
+    the contract.** The inbox renders the sender through `pubName()`, which falls back to the
+    handle unless `showName` is set — and a DB profile can never carry it, because **`profiles` has
+    no `show_name` column** and nothing anywhere writes one. An assertion on the display name fails
+    against a correct app. It accepts either, and the naming inconsistency that sits behind it
+    (profile and inbox gate through `pubName`; the friends list and crew roster do not) is recorded
+    in memory as a product question rather than fixed here.
+  - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
+    different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
+    and not a name either: a climber cannot tell which of their partners wrote to them.
+  - **IT IS HAND-RUN, AND THE REASON IS A DEFECT I FOUND IN MY OWN TEARDOWN AN HOUR AFTER WIRING IT
+    INTO CI.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
+    all**, so the teardown's DELETE is refused by RLS — and PostgREST answers a zero-row DELETE
+    with **204**, which `res.ok` reads as success. Measured directly (insert → delete → re-read):
+    HTTP 204, `res.ok` true, **row still there**. The guard printed *"removed the message: ok"* off
+    that status and was reporting a success it did not have — *a 200 is not evidence the data
+    changed*, which this file records for hand-written SQL and for `patchRow` and which arrived
+    here in a third place. It reads the row back now and says plainly when it could not remove it.
+  - **Locally that is harmless and in CI it would not be.** The per-run accounts are deleted and
+    cascade; the durable CI pair is permanent, so **every run would leak a message into a live
+    project forever** — the shape recorded under *"the table without a backstop is the one whose
+    leaks you can see"*, where 13 crews accumulated one per run. **Unlike crews, no sweep is
+    possible**: a sweep needs the same DELETE the policy refuses. The CI job was written, measured,
+    and **pulled before it merged**; the exemption in `check:guard-wiring`'s `EXCLUDED` carries the
+    measurement so the next reader does not re-derive it.
+  - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
+    `messages` rows coexist; every assertion holds with either or both present; teardown targets a
+    single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
+    **its own** message. Without that last part run A passes on run B's row — a **false pass in the
+    exact window this guard watches**. What is missing is only the ability to clean up.
+  - **The missing delete policy is worth knowing on its own terms:** a climber cannot delete a
+    message they sent or received, ever. Whether they should be able to is a product question
+    (unsend), and adding a policy to make a test tidy would be the wrong reason to answer it.
+  - **Its two siblings are NOT safe and stay in `scripts/oneoff/`**, each for its own reason:
+    `vouches` is `UNIQUE(from_id, to_id)`, so a second run's insert is refused with a 409 *and*
+    teardown removes the single shared row under the first run — an upsert fixes only the first
+    half; and the logged-climb walk asserts `fresh.length === 1`, which a concurrent row breaks.
+  - **A CLAIM THAT KEPT THIS OUT OF CI FOR A WEEK WAS FALSE, and it was mine.** Three merged PRs
+    said these walks were local-only because *"the mate's password is not exposed to CI"*.
+    `durable-fixture.mjs` signs in **as the mate** with `CI_TEST_MATE_PASSWORD` and holds
+    `mateSession` throughout — it uses it to sweep stale crews — and simply never **returned** it.
+    The blocker was a missing property on a return object, not a missing credential. *Read what a
+    module does, not only what it hands back.*
+  - **Promotion changed its DEPTH**, the trap `check:pitch-discount` records: it kept `../..` from
+    `scripts/oneoff/` and would have resolved the wrong tree. `ROOT` is one level now.
+  - **Length is worthless here and every assertion is on text.** The populated inbox is ~48
+    characters and the EMPTY one ~117, because the empty state carries the explanatory copy — the
+    numbers run backwards from the intuition, which `check:signed-in`'s entry already records.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
