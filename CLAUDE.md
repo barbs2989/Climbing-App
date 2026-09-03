@@ -5089,7 +5089,47 @@ the correction knows the screen is wrong, and they have no way to report it.
         against a correct predicate because their hand-written coordinates missed every pin, and a
         third was testing the PIN half by accident — a two-point line cannot put 3 of 4 pins on
         itself, so it needs a two-pin route. *A case that fails for its own reasons proves nothing.*
-    - **THE REFUSALS ARE A SECOND CLASS, NOT A TAIL OF THE FIRST.** A repaired pin moves a few hundred
+    - **THE SLACK IS TWO WHERE TWO IS STILL A MINORITY, AND WIDENING IT SILENCED THE AUDIT THAT FOUND
+    THE CLASS — which is the part worth reading.** Eight routes had TWO pins repaired, so the
+    one-vertex fix left them posing as recorded GPS tracks with Download GPX beneath them, and five
+    of the eight cannot be repaired at all: the pin was **replaced** rather than refined (a
+    trailhead up a different valley), so there is nowhere correct to carry the vertex to. A caveat
+    that only reaches the repairable half is not the honesty fix.
+    - **Stated as what it MEANS rather than as a picked number**: a strict majority of the points
+      must still sit on a pin, which **derives** the five-vertex minimum instead of choosing it and
+      leaves every shorter line on exactly the old rule. A flat two is wrong and
+      `check:track-caveat` pins it — on a three-point line it means ONE vertex need be a pin, which
+      is not a sketch test at all.
+    - **Measured across the catalog before shipping, and the LOSING side is the one that mattered:
+      275 lines considered, 200 captioned by both rules, GAINED 8, LOST 0.** A summary count alone
+      hid a real loss last time (34 two-point lines), so `measure-majority-slack.mjs` prints the
+      lost set in full and exits 1 if it is not empty. None of the 8 could be a recording — their
+      median vertex spacing runs **258 m to 4,432 m** against the 8-47 m a real GPS track sits at.
+    - **THE AUDIT SHARED THE PREDICATE, SO EVERY WIDENING QUIETLY SHORTENED IT.**
+      `audit:stranded-track-vertices` `continue`d on a qualifying route, so the moment two of slack
+      landed all eight vanished and it printed *"no stranded vertices"* about a catalog where eight
+      lines still had a vertex drawn a kilometre from its pin. **An audit that goes quiet because
+      the thing it measures was excused is the overstated-coverage failure this file keeps
+      recording** — committed here by the author of the widening.
+    - **Decoupling it showed the silencing had ALREADY HAPPENED ONCE: 17 routes carry a misplaced
+      vertex, not 8.** Nine were hidden by the ONE-vertex slack from #1541 and nobody noticed,
+      because the only thing that reported them consulted the rule that excused them. The caption
+      is a **column** now, not a filter: a captioned route is still reported, flagged
+      `[captioned — accuracy only]`, and only an uncaptioned one is the honesty defect. Today that
+      reads **0 uncaptioned, 17 accuracy** — which is the correct state, since *the slack restores
+      the honesty and the repair restores the accuracy*, as this entry already says one bullet up.
+    - **3 of the 8 have a decidable half and 5 do not** (`measure-stranded-vertex-pairings.mjs`),
+      and a route needs only its confident half repaired because the predicate tolerates one adrift.
+      Left as follow-up: the measurement is committed, the write is not.
+    - Injection-tested **4/4** (`scripts/oneoff/inject-majority-slack-cases.mjs`), each proving its
+      edit landed **by checksum**. **Two cases came back WRONG FAILURE first and the guard was
+      innocent both times**: the three-point case was written against the FIVE-pin fixture, where
+      the PIN half refuses the line before the vertex rule is reached — so it passed against a
+      flat-two predicate while proving nothing about the rule it names. The same wrong-half mistake
+      the two-point cases already record, found only because the injection judged on each case's
+      **own** failure text. **Case 4 must stay SILENT**: the same rule written longhand is not a
+      change.
+  - **THE REFUSALS ARE A SECOND CLASS, NOT A TAIL OF THE FIRST.** A repaired pin moves a few hundred
       metres (p50 **381 m**); a refused one is 3-27 km out, which is a trailhead REPLACED rather than
       refined — `wa_mount_lyall_south_route`'s orphan is **High Bridge on the Stehekin Valley Road,
       27 km from Holden Village**, a different access point entirely. Carrying the vertex there would
