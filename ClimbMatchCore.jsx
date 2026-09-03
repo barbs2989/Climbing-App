@@ -939,7 +939,7 @@ const FILLER_CLIMBERS=DEMO_FILLERS?(()=>{
   const LEVEL_BIO={Beginner:"Still building a base and stoked to learn from more experienced partners.",Intermediate:"Comfortable on moderate terrain and looking to push into harder routes.",Advanced:"Solid on committing terrain and always up for something bigger.",Expert:"Years of hard sends — dialed on nearly everything in the area."};
   const PHIL_BY_DISC={sport:"Send hard, clip smart.",trad:"Protect the pitch, trust the gear.",bouldering:"Every problem has a beta — find yours.",alpine:"The mountain decides the day, not the plan.",mountaineering:"Slow and steady gets you to the summit and back.",ice:"Respect the ice, respect the conditions.",mixed:"Patience on the tools, patience with the process.",scrambling:"Move efficient, move safe."};
   const VOUCH_TXT=["Reliable belay, always dialed in.","Solid partner — shows up prepared and communicates well.","Calm under pressure and great with gear.","Would rope up with them again without hesitation.","Attentive belayer, good eye for hazards.","Easygoing and safety-first on every pitch."];
-  return Array.from({length:480},(_,k)=>{
+  return Array.from({length:12},(_,k)=>{
     const disc=DSET[fh(k,1)%DSET.length];const rock=disc.includes("sport")||disc.includes("trad");const peak=isPeak(disc);const bould=disc.includes("bouldering");
     const routesLogged=16+fh(k,24)%185;
     const peaksLife=peak?fh(k,25)%55:fh(k,25)%8,peaksYr=peak?fh(k,26)%14:fh(k,26)%3;
