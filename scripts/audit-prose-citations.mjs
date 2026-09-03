@@ -123,13 +123,15 @@ const EXEMPT = [
   // "East Ridge/Beckey Route" needed an exemption until NAMED was tightened to require a guide word
   // beside the name; it is now excluded BY CONSTRUCTION and an entry here would report as stale.
   ["wa_wolframite_mountain_scramble", "access.rules", "three associations named as the volunteers who MAINTAIN the mine site — content, not a source"],
-  /* Names SummitPost as the thing that will MISLEAD you, not as the authority behind a claim:
-     "Do not confuse this peak with the SummitPost page for Chimney Peak in the Selway Crags,
-     Idaho — search engines mix the two constantly and the Idaho route beta is useless here."
-     The publisher IS the content; cut it and the warning means nothing. Same family as the kept
-     "don't trust the Gaia road line" values, and it is a namesake confusion — the failure this
-     catalog has paid for repeatedly at the level of route ids. */
-  ["wa_chimney_peak_the_chimney", "pro_tips[1]", "SummitPost named as the page that MISLEADS — a namesake warning, and the publisher is the content"],
+  /* wa_chimney_peak_the_chimney pro_tips[1] was exempt here on the reasoning that it named SummitPost
+     as the thing that would MISLEAD you rather than as an authority — "the publisher IS the content;
+     cut it and the warning means nothing". THE VALUE HAS SINCE BEEN REWRITTEN and the exemption went
+     stale, which is what the stale test is for: it now reads "Do not confuse this peak with Chimney
+     Peak in the Selway Crags, Idaho (7,681 ft) — search engines mix the two constantly and the Idaho
+     route beta is useless here." The namesake warning survives in full and the publisher name is gone,
+     so the value the exemption described no longer exists and the entry is removed rather than
+     re-justified. Recorded because it is the good outcome: the argument for keeping the publisher was
+     that the warning could not work without it, and the rewrite disproves that. */
 ];
 
 const rows = await selectAll("routes", "id,name,road,access,waypoints", `id=like.${STATE}_*`, { pageSize: 1000 });
