@@ -897,7 +897,20 @@ if(prev!=null){setVerified(false);setCrews(function(cs){return cs.filter(functio
         </div>
       </div>
     </div>;})():null}
-    {friendsOpen&&<FriendsList unavailable={connectionsUnavailable} friends={connections} onKudos={(name,route)=>giveKudos(name,route)} kudosGiven={kudosGiven} onVouch={c=>{setFriendsOpen(false);setGiveVouchWith(c);}} hasVouched={id=>givenVouches.some(v=>v._targetId===id)} myFriendIds={connections.map(x=>x.id)} onFormCrew={(c,r)=>{setFriendsOpen(false);setInvitePrompt({climber:c,route:r});}} onClose={()=>setFriendsOpen(false)} onOpenProfile={c=>{setFriendsOpen(false);setSharedRoute(null);setProfileModal(c);}} onMessage={c=>{setFriendsOpen(false);setMsgBack(tab);setChatFromInbox(false);setChatWith(c);setTab("crew");}} onRemove={c=>{setConnections(p=>p.filter(x=>x.id!==c.id));showToast(c.name.split(" ")[0]+" removed from friends");}}/>}
+    {friendsOpen&&<FriendsList unavailable={connectionsUnavailable} friends={connections} onKudos={(name,route)=>giveKudos(name,route)} kudosGiven={kudosGiven} onVouch={c=>{setFriendsOpen(false);setGiveVouchWith(c);}} hasVouched={id=>givenVouches.some(v=>v._targetId===id)} myFriendIds={connections.map(x=>x.id)} onFormCrew={(c,r)=>{setFriendsOpen(false);setInvitePrompt({climber:c,route:r});}} onClose={()=>setFriendsOpen(false)} onOpenProfile={c=>{setFriendsOpen(false);setSharedRoute(null);setProfileModal(c);}} onMessage={c=>{setFriendsOpen(false);setMsgBack(tab);setChatFromInbox(false);setChatWith(c);setTab("crew");}} onRemove={c=>{
+    /* "Remove friend" DID NOT REMOVE ANYTHING. This handler filtered local state and toasted
+       success, while `removeConnection` sat imported and called from nowhere -- so a climber tapped
+       Remove, was told it worked, the row vanished, and the connection was still there on reload.
+       Worse than the usual swallowed write (#548/#551/#563), because there IS no write to swallow:
+       check:writes forbids a success message in front of an unobservable FAILURE, and check:claims
+       a success toast for a write that only runs signed-in -- neither can see a toast in front of
+       NO WRITE AT ALL. This is a relationship control: the whole point is that it takes effect.
+       Mirrors acceptReq/declineReq exactly -- optimistic, persist, revert on rejection, and say
+       plainly when the change is local only. */
+    var _row=_connRow(c.id);var _first=String(c.name||"").split(" ")[0];
+    setConnections(p=>p.filter(x=>x.id!==c.id));
+    if(uid&&_row&&_row._dbId){removeConnection(_row._dbId).then(function(){myConnQ.refetch&&myConnQ.refetch();showToast(_first+" removed from friends");}).catch(function(){setConnections(p=>p.find(x=>x.id===c.id)?p:[...p,c]);showToast("Couldn’t remove that connection — try again.");});}
+    else showToast(_first+" removed in this preview — not saved.");}}/>}
     {logPickOpen&&<LogRoutePicker onClose={()=>setLogPickOpen(false)} onPick={r=>{setLogPickOpen(false);setLogModal(r);}}/>}
     {/* Your own logs for your own resume, THEIR public ones for theirs — never `logs` for both,
       because handing yours to another climber's resume would put your logbook under their name.
