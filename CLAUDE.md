@@ -56,6 +56,7 @@ npm run check:verification-fallback # a failed verification read must not un-ver
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
+npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1570,6 +1571,57 @@ the total when deciding where a new guard belongs.
     real historical defect. **Case 3 must fail on the HEALTHY side** — deleting the invitation from
     both states also silences case 1, so a guard asserting only the outage half would go green on a
     blanket rewrite that turned a correct empty state into an error message.
+- **`check:policy-claims`** asserts that **no legal surface claims a control or a capability the
+  app does not have**, and that **the version a reader SEES is the version recorded against their
+  account**. Static (one esbuild bundle, one SSR render), **1.6s CPU** against 1.69s for
+  `check:topo-outage-copy` beside it, so it sits in `npm run build`.
+  - **THE FIX IT GUARDS CHANGES STRINGS AND NO IDENTIFIER, which is exactly the revert nothing else
+    can see.** #1522 rewrote Privacy §4 and §1; `audit:silent-reverts` tracks named definitions and
+    says in its own closing caveat that *"a merge that kept a name and dropped its guard clause is
+    invisible here"*. A stale-base squash could restore four false claims **to a legal document**
+    with every guard green and no name moved. Same argument that promoted
+    `check:verification-fallback` and `check:topo-outage-copy`.
+  - **§4 promised FOUR things the app cannot do, not one.** A location toggle that renders nowhere
+    (all four privacy controls are `PRIVACY_CONTROLS_LIVE?…:null`, i.e. **absent**, not disabled);
+    *"You control location sharing"* when there is no control; *"if you opt in — float plans and
+    search-and-rescue"* when a float plan carries `{filedAt, contact, returnBy}` and the **route's**
+    coordinates rather than the climber's position, and the only SAR content in the app is `SARS`,
+    a directory of phone numbers you dial yourself. **And §1 carried the same absent enablement**
+    (*"approximate or precise location when you enable it"*) — fixing §4 alone would have left it
+    one section above, the *an instance fixed by hand is not a class closed* shape.
+  - **Section 1 is the DURABLE half and section 2 the ANTI-REVERT half**, and they are different
+    questions. Section 1 asks the general thing — does either document describe a control the flag
+    withholds — so it catches the NEXT instance; section 2 pins today's exact clauses so a squash
+    cannot quietly undo them. Section 1's needle is deliberately narrow: *"we use approximate
+    location"* is a statement about PROCESSING and is correct, while *"you control location
+    sharing"* is a claim about a switch. Matching the mere word would flag every honest sentence.
+  - **Section 3 was a semantic invariant living in a COMMENT.** `lib/policy.js` says the version a
+    user sees and the version recorded *"cannot drift"* — and **nothing asserted it**. It now
+    renders the policy and requires `policyVersionLabel(POLICY_VERSION)` to be on the screen, so a
+    reader can see which version they are being asked to accept.
+  - **DELETING the location section was the other option and is WORSE**, recorded so it is not
+    re-derived: it leaves the policy silent on location while the app reads device position from
+    four call sites. Every clause section 2 asserts is measured — `profiles` has a `location` TEXT
+    column and **no lat/lng**; `useNearbyAreas`/`useNearbyPeaks` query `areas` by the map's lat/lng
+    box, so the corners of the view **do** reach the backend and *"it never leaves your device"*
+    would have been false; and `climb_logs.gpx_track` is written and read back, so a GPS track
+    attached to a logged climb **is** stored. **The first draft of the replacement said "we store
+    no device location against your account" and was itself false** — caught by reading the SCHEMA
+    rather than re-reading the sentence. *Check the columns before writing a negative claim into a
+    privacy policy.*
+  - It supersedes two `scripts/oneoff/` probes that ran nowhere
+    (`probe-privacy-location-onscreen`, `probe-policy-promises-vs-live-controls`) — the
+    *a verification nobody runs is not a verification* promotion this file records for
+    `check:overflow` and `check:pitch-discount`.
+  - Fails **closed** six ways, and each prints identically to a clean run: a missing
+    `PRIVACY_CONTROLS_LIVE`, **zero gated controls found** (with none, every promise comparison
+    passes vacuously), a legal surface that lifted short, a failed bundle, a missing `LegalView`,
+    and a render under 2,000 chars — against which every *"must NOT contain"* assertion passes.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
+    historical text, restored verbatim. **Case 6 must stay SILENT** — flipping
+    `PRIVACY_CONTROLS_LIVE` to true makes the controls real, so describing them becomes correct,
+    and a guard that still fired would forbid the fix.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
