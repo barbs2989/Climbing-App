@@ -277,7 +277,14 @@ for (const r of rows) {
   const wps = r.waypoints || [];
   const th = wps.filter(w => /trailhead/i.test(String(w.type || "") + String(w.name || ""))).map(el).filter(Boolean);
   const su = wps.filter(w => /summit/i.test(String(w.type || "") + String(w.name || ""))).map(el).filter(Boolean);
-  const g = Number(r.gain_ft);
+  // NULL IS NOT ZERO -- AGAIN, AND THIS TIME IN THE GAIN CHECK. Number(null) is 0 and isFinite(0)
+  // is true, so a row storing NOTHING was judged as gaining nothing and failed every floor. The
+  // probe's own header records this coercion trap for the rope column and it was never applied one
+  // section down. `gain_ft` is NULL on 7,450 of 8,369 WA routes, so the reach is the whole catalog:
+  // any row with a trailhead pin, a summit pin and no stored gain was a manufactured finding.
+  // Measured on the 166 newly-scoped routes: 17 of 24 gain findings were this, i.e. 71% false.
+  // A null gain makes no claim, so there is nothing to contradict and the check is skipped.
+  const g = r.gain_ft === null || r.gain_ft === undefined ? NaN : Number(r.gain_ft);
   if (th.length && su.length && Number.isFinite(g)) {
     const rise = Math.max(...su) - Math.min(...th);
     const climb = Number(r.pitches) > 0 ? Number(r.pitches) * 35 * 3.28084 : 0;

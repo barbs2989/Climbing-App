@@ -82,6 +82,35 @@
 // 30 m rope is sufficient, so deleting it would be editing correct prose.
 //
 // ------------------------------------------------------------------------------------------------
+// wa_summit_chief_mountain_north_face -- EVIDENCE. A DELETION OF AN UNSOURCED INFERENCE.
+//
+//   gear          "30m rope minimum for the descent rappels"
+//   rappels       "2 x 30m rappels down the descent snow gully on the southwest side"
+//   descent_text  "make two 30m rappels down the gully"
+//
+// A 30 m rope doubled reaches 15 m -- half of a 30 m rappel. The row prescribes exactly half the
+// rope its own descent requires, on an ice route in the Alpine Lakes with a long approach.
+//
+// RESEARCH DID NOT SETTLE IT; IT SETTLED SOMETHING BETTER -- THAT NOTHING SUPPORTS THE CLAIM. The
+// first ascent account (Dave and Colin, 17-18 April 2004, http://www.alpinedave.com/summit_chief/
+// north_face.htm) is plainly this row's source: "two titanium (aka 'afterthought') ice screws and
+// much rock gear", "the odd knifeblade in the compact rock", and "We downclimbed neve and made two
+// 30m rappels". Every distinctive phrase in the row tracks it. And the FA account NEVER STATES WHAT
+// ROPE THEY CARRIED -- nor does the AAJ note on the second line up the face (Alpine Chicken, Hirst
+// and Larsen), nor any other source found. There is no Mountain Project page for the route.
+//
+// So "30m rope minimum" is not a mis-transcription of a published figure. It is an INFERENCE an
+// enrichment pass drew from "two 30m rappels", and it is wrong by exactly the doubling factor this
+// audit exists to catch. Deleting it removes an unsourced claim the row itself refutes, and loses
+// nothing any source supports: "two 30m rappels" IS sourced and stays, in both fields.
+//
+// NO ROPE IS WRITTEN IN ITS PLACE. The row's own arithmetic gives 60 m of rope, but that is one 60 m
+// rope OR two 30 m ropes joined, and no source names either -- so stating one would be picking kit
+// on a route where the only published account declines to. A gear list silent on the rope, beside a
+// descent that states two 30 m rappels, is worse than a correct entry and far better than a wrong
+// one. Recorded as a `missing` finding rather than quietly closed.
+//
+// ------------------------------------------------------------------------------------------------
 // wa_vanishing_point -- RESEARCHED. ONE WORD.
 //
 //   rappels  "...the approach can be reversed with a single 70 m rappel where the updated anchors
@@ -158,6 +187,21 @@ const EDITS = [
     },
   },
   {
+    id: "wa_summit_chief_mountain_north_face",
+    field: "gear",
+    array: true,                      // remove the whole element; `repl` is unused for an array entry
+    evidence: "The row's own `rappels` and `descent_text` both state two 30 m rappels. A 30 m rope "
+      + "doubled reaches 15 m, so the gear line prescribes half the rope its own descent requires. "
+      + "Corroborated negatively: the FA account this row is drawn from states no rope at all.",
+    find: "30m rope minimum for the descent rappels",
+    premises: r => {
+      const rap = String(r.rappels ?? "") + " " + String(r.descent_text ?? "");
+      if (!/two 30\s?m rappels|2\s?x\s?30\s?m rappels/i.test(rap)) return "the row no longer states two 30 m rappels — that is the whole basis for calling a 30 m rope short.";
+      if (!Array.isArray(r.gear)) return "`gear` is no longer an array; re-read it before editing.";
+      return null;
+    },
+  },
+  {
     id: "wa_vanishing_point",
     field: "rappels",
     researched: {
@@ -198,6 +242,28 @@ for (const e of EDITS) {
   if (!gate || (e.evidence && e.researched)) {
     console.error(`FAIL: ${e.id} declares ${e.evidence && e.researched ? "BOTH gates" : "neither gate"}. Malformed entry.`);
     process.exit(1);
+  }
+
+  // AN ARRAY FIELD REMOVES A WHOLE ELEMENT. `gear` is a list of kit lines, so the unit that can be
+  // false is one line; splicing inside one would leave a fragment. Exactly-once still applies, and
+  // it is asserted against the ELEMENTS, not against the joined string -- a substring test would
+  // count a line that merely contains the text.
+  if (e.array) {
+    const arr = Array.isArray(r[e.field]) ? r[e.field] : null;
+    if (!arr) { console.error(`\n== ${e.id}.${e.field}\n   REFUSED: not an array.`); refused++; continue; }
+    const hits = arr.filter(x => typeof x === "string" && x.includes(e.find));
+    if (!hits.length) { console.log(`\n== ${e.id}.${e.field}\n   already applied — no element carries the claim. No-op.`); skipped++; continue; }
+    if (hits.length !== 1) { console.error(`\n== ${e.id}.${e.field}\n   REFUSED: ${hits.length} elements carry the claim, not exactly one.`); refused++; continue; }
+    const bad0 = e.premises(r);
+    if (bad0) { console.error(`\n== ${e.id}.${e.field}\n   REFUSED: ${bad0}`); refused++; continue; }
+    const nextArr = arr.filter(x => x !== hits[0]);
+    console.log(`\n== ${e.id}.${e.field}   [gate: EVIDENCE]  (array element removed)`);
+    console.log(`   evidence: ${e.evidence}`);
+    console.log(`   REMOVING: "${hits[0]}"`);
+    console.log(`   ${arr.length} element(s) -> ${nextArr.length}`);
+    plan.push({ id: e.id, field: e.field, next: nextArr, find: e.find, array: true });
+    planned++;
+    continue;
   }
 
   const cur = String(r[e.field] ?? "");
@@ -247,10 +313,17 @@ if (!APPLY) { console.log("\ndry run — re-run with --apply to write."); proces
 for (const p of plan) await patchRow("routes", p.id, { [p.field]: p.next });
 
 // verify by RE-READ, never by the write's own status
-const after = await selectAll("routes", "id,rappels,descent_text", `id=in.(${plan.map(p => p.id).join(",")})`, { pageSize: 20 });
+const after = await selectAll("routes", "id,rappels,descent_text,gear", `id=in.(${plan.map(p => p.id).join(",")})`, { pageSize: 20 });
 let bad = 0;
 for (const p of plan) {
-  const got = String(after.find(x => x.id === p.id)?.[p.field] ?? "");
+  const raw = after.find(x => x.id === p.id)?.[p.field];
+  if (p.array) {
+    const arr = Array.isArray(raw) ? raw : [];
+    if (arr.length !== p.next.length) { console.error(`FAIL: ${p.id}.${p.field} re-read has ${arr.length} elements, expected ${p.next.length}.`); bad++; }
+    else if (arr.some(x => typeof x === "string" && x.includes(p.find))) { console.error(`FAIL: ${p.id}.${p.field} still contains the false claim.`); bad++; }
+    continue;
+  }
+  const got = String(raw ?? "");
   if (got !== p.next) { console.error(`FAIL: ${p.id}.${p.field} re-read does not match what was written.`); bad++; }
   else if (got.includes(p.find)) { console.error(`FAIL: ${p.id}.${p.field} still contains the false clause.`); bad++; }
 }
