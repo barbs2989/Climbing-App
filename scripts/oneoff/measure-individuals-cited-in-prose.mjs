@@ -25,7 +25,7 @@ const dead = (w) => { console.error(`\nmeasurement FAILED — ${w}. Nothing belo
 // here is strictly what it CANNOT see.
 const audit = fs.readFileSync(path.join(ROOT, "scripts/audit-prose-citations.mjs"), "utf8");
 const liftRe = (n) => {
-  const m = new RegExp("^const " + n + " = (/.*/[gimsuy]*);$", "m").exec(audit);
+  const m = new RegExp("^const " + n + "\\s*=\\s*(/.*/[gimsuy]*);$", "m").exec(audit);
   if (!m) dead(`ANCHOR LOST: const ${n}`);
   return new Function("return " + m[1])();
 };

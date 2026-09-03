@@ -1007,6 +1007,24 @@ the total when deciding where a new guard belongs.
     segment after `/rest/v1/`, **never as a substring**: PostgREST names EMBEDDED tables in the
     query string (`select=*,crew_members(*)`), so a substring test fails requests aimed elsewhere.
     It isolates a **table, not a hook** — several hooks reading one table fail together.
+  - **#1467 EXPLAINED A CI/LOCAL DISAGREEMENT WITH A REASON THAT IS FALSE, and the correction
+    matters more than the original claim.** A blanket local run failed `Profile — the outage
+    introduced ["0 logged"]` while the same commit passed all 16 checks in CI, and that commit
+    message attributed it to the durable CI fixture having no logged climb — so "0 logged" would
+    appear in BOTH runs and rule 2 would have nothing *introduced* to report. **It has one.**
+    Measured with the service key (`scripts/oneoff/probe-durable-fixture-has-a-log.mjs`, read-only,
+    because an anon count on an RLS-protected table returns 0 with a 200 whatever the table holds):
+    `climb_logs` holds exactly one row, owned by **CI Fixture Owner**, on
+    `wa_mount_baker_north_ridge`, noted *"CI fixture log."* — inserted by
+    `seed-ci-test-fixture.mjs`, which has done so all along.
+    - **So the disagreement is REAL and its cause is UNKNOWN.** Recording it that way is the point:
+      a plausible mechanism that has not been measured is a hypothesis, and this file already
+      records three of those shipping as facts. The likeliest remaining candidate is the settle —
+      `isError` is false while react-query retries, and this entry already documents the healthy
+      capture racing a read — but nothing has measured it, so nothing here claims it.
+    - **The lesson is about WHERE the claim was made.** It was written into a commit message, which
+      is the one place this repo cannot edit afterwards without a force-push. A causal claim about
+      CI belongs where it can be corrected; the correction lives here because the commit cannot.
   - Two fixture modes, exactly as `check:signed-in`: per-run accounts on the **service key**
     locally, two **durable** accounts on the **anon key** in CI. That rule is why this could not
     be lifted out of `scripts/oneoff/` unchanged — it called `createFixture` unconditionally.
@@ -4560,6 +4578,64 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE PIN-DISTANCE GATE GENERALISES OFF THE CAMP STORE, and it turns `audit:cross-route-pins`
+    from 54 unactionable rows into 9 adjudicated ones** (`adjudicate-cross-route-pins.mjs`). That
+    audit reports a named POINT placed 2 km or more apart by two routes and **deliberately refuses
+    to pick** — *"a majority can be one enrichment pass counted many times"* — which is right and
+    leaves every row unactionable. The adjudicator supplies what it asks for: an independent record
+    (the gazetteer) plus the distance rule the camp work arrived at. A pin within **250 m** of a
+    uniquely-named feature is corroborated; a sibling **1.5 km+** away is the misplaced one.
+    - **Its refusals are most of its value, and each is a rule already paid for here**: a name the
+      gazetteer does not hold; SEVERAL features of that name in WA (*"Cathedral Pass"* is three);
+      a LINEAR feature whose label point locates nothing; EVERY pin far from the feature (*"Myrtle
+      Lake"* resolves 87 km from both pins, so it adjudicates nothing); and every pin near it.
+    - **PROSE DECIDED WHICH OF TWO IDENTICAL-LOOKING FINDINGS TO REPAIR.** Four Mount Constance
+      routes put *"Lake Constance"* **2,827 m** from the lake, and all four describe walking *"the
+      unsigned, unmaintained Lake Constance climbers' trail"* — they mean that lake, so the pin
+      belongs at it. Three Mount Stuart routes put *"Lake Ingalls"* **3,203 m** from Lake Ingalls
+      and **none of them mentions the lake anywhere**; their pin sits near Longs Pass, so it is
+      plausibly a DIFFERENT place carrying the wrong name, where the repair is a rename rather than
+      a move. **Moving it would put a correct point at a wrong one.** Repaired the first, reported
+      the second — the same split as the two Cascade Pass pins that merely mention Pelton Basin.
+    - The repair **copies a corroborated sibling's coordinate**, so no latitude or longitude is
+      typed and a fix needing a coordinate the catalog lacks cannot be expressed — the
+      *declare a winner, never a coordinate* contract. Only the coordinate moves: the 50 ft
+      elevation difference is below what the DEM resolves and is not what is being repaired.
+      Cross-route agreement **436 -> 437 (81% -> 82%)**, candidates 14 -> 13.
+  - **The waypoint NOTE store is clean**: `audit:note-voice` finds **1 note in pipeline voice out of
+    2,931 on screen**, and reading it, the audit's *"delete"* verdict would lose the road-washout
+    location it carries. Left alone.
+  - **THE WHOLE CAMP STORE WAS SWEPT, AND THE ONE DISAGREEMENT WAS ONE I HAD SPREAD THAT MORNING.**
+    `audit:camp-elevations` places 178 of 459 populated names and **177 agree with the ground within
+    400 ft (99%)**. The single disagreement was `Pelton Basin` — **5,400 ft stored on 25 rows against
+    4,770 ft of ground** — and four of those rows had been written hours earlier by
+    `solve-camp-elevations`' WAYPOINT-DONOR path, copying 5,400 from the catalog waypoint.
+    - **Decided by the gate built the same day, and it cuts BOTH ways.** The pin is real (five
+      decimals), the gazetteer's *"Pelton Basin, Water Access Trail"* is **14 metres** away, and both
+      ground reads agree (4,778 under the pin, 4,770 under the feature). Sahale Glacier Camp is the
+      mirror: its feature is **458 m** away, so there the ground speaks for somewhere else and the
+      stored value stands. **The audit line looks identical in both cases; only the distance
+      separates them.** Waypoint and all 25 rows corrected.
+    - **TWO OTHER PINS NAME PELTON BASIN AND WERE NOT TOUCHED** — *"Cascade Pass — cross and descend
+      east toward Pelton Basin"* states 5,392 ft on ground of 5,321, and sits 1,037 m from the
+      feature. Those are CASCADE PASS; the name merely says where you are heading. A repair matching
+      on the name alone would have moved them 600 ft.
+  - **THE CAMP PROSE HAD NEVER BEEN ASKED ANYTHING** — `measure-pipeline-voice-in-route-prose`'s
+    column list does not include `bivy`, so every prose needle this repo has was pointed elsewhere.
+    `audit-bivy-prose-quality.mjs` scans all 29,809 leaves across 4,995 sites: **0 citations, 0
+    pipeline voice**, 51 properly-dated claims (the ACCEPTABLE form — *date it or drop the claim*),
+    and **2** genuinely open-ended ones.
+    - **Its first version manufactured 14 findings on correct prose**, and the fix is the sibling
+      audit's own rule: every one read *"…through the END OF 2027, with no reopening estimate…"* —
+      the sentence bounds itself, and the needle fired on the fragment without it.
+      `audit:expiring-closures` carries a `SELF_LIMITING` exclusion for exactly this and omitting it
+      here reproduced the defect. **14 -> 2.**
+  - **THE FULL CAMP VERDICT, so it is not re-derived**: renders (`check:camping` ok), chip shapes
+    (`check:token-boxes` ok, 5,274 boxes), route fit (`audit:camp-route-fit` **0** at its headline
+    threshold, down from 5), elevations on screen (**99%**), coverage (1,206 of 5,022 blank, and
+    measured as UNAVAILABLE rather than undone), propagated lists (63 shared, mostly genuine zone
+    files, two corridors split), prose (clean), and 5 camps stored at two elevations — reported,
+    since 2 are below the DEM's resolution and 2 sit on misplaced pins.
   - **THE 50 "NO FEATURE ANYWHERE IN WA" REFUSALS ARE REAL — 42 of 50 MEASURED, not assumed.**
     That bucket had been *read* as climbers' names and never tested, and this repo has been burned
     by exactly that shape: an ArcGIS `LIKE` was case-sensitive, GNIS matched nothing for 25 of 39
