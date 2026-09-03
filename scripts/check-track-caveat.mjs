@@ -137,10 +137,48 @@ const STRANDED = [SYNTH[0], OFF, SYNTH[2], SYNTH[3]];
 if (!trackIsJustTheWaypoints(STRANDED, WPS)) fail("predicate: one stranded vertex still deletes the caveat — a pin repair breaks it again");
 else ok("predicate: a line with ONE vertex off a pin is still recognised as a sketch");
 
-// two off is not a sketch: at that point the line has content the waypoints do not explain
+// TWO OFF A *FOUR*-POINT LINE IS NOT A SKETCH, and this case is what pins the slack to a MAJORITY
+// rather than to a flat two. At four vertices, two of slack leaves only two explained by the
+// waypoints — the line has as much content they do not account for as content they do. A flat
+// two-of-slack qualifies this, which is why the rule is written as "a strict majority still sits on
+// a pin" and derives its own minimum length.
 const TWO_OFF = [SYNTH[0], OFF, [48.61, -121.31], SYNTH[3]];
-if (trackIsJustTheWaypoints(TWO_OFF, WPS)) fail("predicate: TWO vertices off a pin must not qualify — the slack is one, not a fraction");
-else ok("predicate: two vertices off a pin is not a waypoint line");
+if (trackIsJustTheWaypoints(TWO_OFF, WPS)) fail("predicate: TWO vertices off a FOUR-point line must not qualify — two is not a minority there");
+else ok("predicate: two vertices off a four-point line is not a waypoint line");
+
+// ── 1c. TWO OF SLACK WHERE TWO IS STILL A MINORITY. Eight routes had two pins repaired, so one
+//    vertex of slack left them posing as recorded tracks — and five cannot be repaired at all,
+//    because the pin was REPLACED rather than refined and there is nowhere correct to carry the
+//    vertex to. Both directions, because a rule that only ever admits is satisfied by deleting it.
+// A FIVE-pin fixture, so the vertex half is what these measure: against the four-pin WPS a
+// five-point line fails the PIN side first and the case would be testing the wrong half — the
+// mistake the two-point cases above already record.
+const WPS5 = WPS.concat([{ name: "Col", type: "Junction", lat: 48.5512, lng: -121.1150 }]);
+const P5 = WPS5.map(w => [w.lat, w.lng]);
+const OFF2 = [48.62, -121.32], OFF3 = [48.63, -121.33];
+
+// 3 of 5 on a pin: a strict majority, so this is the line drawn through pins two of which have
+// since moved. Under one-vertex slack it is refused, which is the defect.
+if (!trackIsJustTheWaypoints([P5[0], P5[1], P5[2], OFF, OFF2], WPS5))
+  fail("predicate: a FIVE-point line with two stranded vertices is refused — two repaired pins still delete the caveat");
+else ok("predicate: two stranded vertices on a five-point line is still recognised as a sketch");
+
+// 2 of 5 is not a majority. The slack must not grow with the line.
+if (trackIsJustTheWaypoints([P5[0], P5[1], OFF, OFF2, OFF3], WPS5))
+  fail("predicate: THREE vertices off a five-point line qualified — the majority condition is not holding");
+else ok("predicate: three vertices off a five-point line is not a waypoint line");
+
+// THE CASE THAT SEPARATES A MAJORITY FROM A FLAT TWO. On a three-point line, two of slack means ONE
+// vertex need be a pin — not a sketch test at all. Refused here, admitted by a flat two.
+//
+// AGAINST A *THREE*-PIN ROUTE, and that is not cosmetic: with five pins the PIN half refuses this
+// line first (one of five on it), so the case passed against a flat-two predicate and was proving
+// nothing about the vertex rule it names. Found by the injection coming back WRONG FAILURE, not by
+// reading it — the same wrong-half mistake the two-point cases above already record.
+const WPS3 = WPS.slice(0, 3);
+if (trackIsJustTheWaypoints([P5[0], OFF, OFF2], WPS3))
+  fail("predicate: a THREE-point line with one vertex on a pin qualified — a flat two of slack has been let in");
+else ok("predicate: a three-point line still needs two of its points on a pin");
 
 // STRICTLY ADDITIVE: a two-point line has no interior, so one of slack is HALF of it. Applying the
 // slack there admitted a 55 m placeholder and took the caveat AWAY from 34 lines that had it.

@@ -55,7 +55,8 @@ for (const r of rows) {
   }).filter(Boolean);
   if (line.length < 2 || !pins.length) continue;
   withTrack++;
-  if (trackIsJustTheWaypoints(r.gpx, r.waypoints)) { sketch++; continue; }
+  const captioned = trackIsJustTheWaypoints(r.gpx, r.waypoints);
+  if (captioned) sketch++;
   if (line.length > MAX_VERTICES) continue;           // a real recording, out of scope
 
   const off = line.filter((v) => !pins.some((p) => metres(v, p) < NEAR_M));
@@ -64,20 +65,36 @@ for (const r of rows) {
   if (line.length - off.length < 3) continue;         // too short to call a sketch at all
 
   stranded.push({
-    id: r.id, verts: line.length, off,
+    id: r.id, verts: line.length, off, captioned,
     orphanPins: pins.filter((p) => !line.some((v) => metres(v, p) < NEAR_M)),
   });
 }
 
 console.log(`${withTrack} route(s) carry a track and pins; ${sketch} are their own waypoints joined up.\n`);
+// THE CAPTION IS A COLUMN, NOT A FILTER — and it was a filter until the slack reached two.
+//
+// This audit shares `trackIsJustTheWaypoints` with the app, and while a qualifying route was
+// SKIPPED, every widening of that predicate silently shortened this report: the moment two of
+// slack landed, all eight routes it had been reporting vanished and it printed "no stranded
+// vertices" about a catalog where eight lines still have a vertex drawn a kilometre from the pin
+// it belongs to. An audit that goes quiet because the thing it measures was excused is the
+// overstated-coverage failure this repo keeps recording, committed by its own author.
+//
+// The caveat and the drawn line are DIFFERENT QUESTIONS, which lib/track.js already says of the
+// one-vertex slack: the slack restores the honesty, the repair restores the accuracy. So a
+// captioned route is still reported — flagged as captioned, so nobody reads it as a missing
+// caveat — and only the UNCAPTIONED ones are the honesty defect.
+const lost = stranded.filter((s) => !s.captioned);
 if (!stranded.length) {
   console.log("No stranded vertices: every sketched line still matches its pins, so no route has");
   console.log("silently lost the 'not a recorded GPS track' caveat.");
 } else {
   console.log(`=== ${stranded.length} route(s) whose line is ALMOST its own waypoints ===`);
-  console.log("Each has lost the caveat: the line now poses as a recorded track.\n");
+  console.log(lost.length
+    ? `${lost.length} have LOST the caveat: the line poses as a recorded track. The rest are captioned, and still carry a misplaced vertex.`
+    : "All are still captioned, so no route poses as a recorded track — but each carries a vertex drawn where a pin used to be.\n");
   for (const s of stranded) {
-    console.log(`  ${s.id}  (${s.verts} vertices, ${s.off.length} adrift)`);
+    console.log(`  ${s.id}  (${s.verts} vertices, ${s.off.length} adrift)${s.captioned ? "  [captioned — accuracy only]" : "  [CAVEAT LOST]"}`);
     for (const v of s.off) console.log(`      vertex at ${v.lat},${v.lng} sits on no pin`);
     for (const p of s.orphanPins) console.log(`      pin "${p.name}" @ ${p.lat},${p.lng} is on no vertex`);
   }
