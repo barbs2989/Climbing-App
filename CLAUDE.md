@@ -4560,6 +4560,37 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE WHOLE CAMP STORE WAS SWEPT, AND THE ONE DISAGREEMENT WAS ONE I HAD SPREAD THAT MORNING.**
+    `audit:camp-elevations` places 178 of 459 populated names and **177 agree with the ground within
+    400 ft (99%)**. The single disagreement was `Pelton Basin` — **5,400 ft stored on 25 rows against
+    4,770 ft of ground** — and four of those rows had been written hours earlier by
+    `solve-camp-elevations`' WAYPOINT-DONOR path, copying 5,400 from the catalog waypoint.
+    - **Decided by the gate built the same day, and it cuts BOTH ways.** The pin is real (five
+      decimals), the gazetteer's *"Pelton Basin, Water Access Trail"* is **14 metres** away, and both
+      ground reads agree (4,778 under the pin, 4,770 under the feature). Sahale Glacier Camp is the
+      mirror: its feature is **458 m** away, so there the ground speaks for somewhere else and the
+      stored value stands. **The audit line looks identical in both cases; only the distance
+      separates them.** Waypoint and all 25 rows corrected.
+    - **TWO OTHER PINS NAME PELTON BASIN AND WERE NOT TOUCHED** — *"Cascade Pass — cross and descend
+      east toward Pelton Basin"* states 5,392 ft on ground of 5,321, and sits 1,037 m from the
+      feature. Those are CASCADE PASS; the name merely says where you are heading. A repair matching
+      on the name alone would have moved them 600 ft.
+  - **THE CAMP PROSE HAD NEVER BEEN ASKED ANYTHING** — `measure-pipeline-voice-in-route-prose`'s
+    column list does not include `bivy`, so every prose needle this repo has was pointed elsewhere.
+    `audit-bivy-prose-quality.mjs` scans all 29,809 leaves across 4,995 sites: **0 citations, 0
+    pipeline voice**, 51 properly-dated claims (the ACCEPTABLE form — *date it or drop the claim*),
+    and **2** genuinely open-ended ones.
+    - **Its first version manufactured 14 findings on correct prose**, and the fix is the sibling
+      audit's own rule: every one read *"…through the END OF 2027, with no reopening estimate…"* —
+      the sentence bounds itself, and the needle fired on the fragment without it.
+      `audit:expiring-closures` carries a `SELF_LIMITING` exclusion for exactly this and omitting it
+      here reproduced the defect. **14 -> 2.**
+  - **THE FULL CAMP VERDICT, so it is not re-derived**: renders (`check:camping` ok), chip shapes
+    (`check:token-boxes` ok, 5,274 boxes), route fit (`audit:camp-route-fit` **0** at its headline
+    threshold, down from 5), elevations on screen (**99%**), coverage (1,206 of 5,022 blank, and
+    measured as UNAVAILABLE rather than undone), propagated lists (63 shared, mostly genuine zone
+    files, two corridors split), prose (clean), and 5 camps stored at two elevations — reported,
+    since 2 are below the DEM's resolution and 2 sit on misplaced pins.
   - **THE 50 "NO FEATURE ANYWHERE IN WA" REFUSALS ARE REAL — 42 of 50 MEASURED, not assumed.**
     That bucket had been *read* as climbers' names and never tested, and this repo has been burned
     by exactly that shape: an ArcGIS `LIKE` was case-sensitive, GNIS matched nothing for 25 of 39
