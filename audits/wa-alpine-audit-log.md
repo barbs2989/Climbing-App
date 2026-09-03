@@ -12927,3 +12927,97 @@ variation specifically — checked again this batch, still true, left as-is.
 confirmed party member (Nate Farr); no stronger claim to check it against.
 
 Next batch continues from `wa_dome_peak_indian_summer` onward alphabetically (pass 4).
+
+## Batch 187 — 2026-09-03
+
+Checked: `wa_dorado_needle_east_ridge`, `wa_dragontail_peak_backbone_ridge`,
+`wa_dragontail_peak_east_ridge_aasgard_pass`, `wa_dragontail_peak_r1` (Hidden
+Couloir), `wa_dragontail_peak_r2` (Gerber-Sink), `wa_dragontail_peak_r3`
+(Pandora's Box), `wa_dragontail_peak_r4` (Triple Couloirs),
+`wa_dragontail_peak_serpentine_arete`, `wa_e_se_face` (Witches Tower),
+`wa_east_face` (Middle Peak / Gunsight Range).
+
+**Fixed:** `wa_dragontail_peak_r1`'s `dist_km` (20 -> 10.1) contradicted the
+row's own waypoint chain, which climbs monotonically to 6.3 mi (=10.14 km) at
+the summit and matches the identical-corridor sibling
+`wa_dragontail_peak_east_ridge_aasgard_pass` (whose own 6.25-mi waypoint chain
+already equals its stored 10.1 km). Checked whether 20 km might instead
+represent a full camp-based round-trip mileage (approach in + climb day +
+hike out summing to ~12.6 mi = 20.3 km, a near-exact match) before fixing --
+but `wa_dragontail_peak_r2`/`r3`, which share the identical camp-based,
+approach/climb/hike-out `timing.sectionBreakdown` structure, both store the
+shorter ~6.4 km approach-only figure instead, so that reading doesn't hold
+across the family and was set aside.
+
+`wa_east_face`'s `permit` field was null. Confirmed via the Mt.
+Baker-Snoqualmie NF's own Downey Creek Trailhead page that this approach
+requires a paid Recreation/Northwest Forest Pass for parking plus a free
+self-issued wilderness permit for Glacier Peak Wilderness entry -- populated
+to match how every other row this batch (and generally in this catalog)
+states its permit requirement rather than leaving it blank.
+
+**Flagged for human review:**
+`wa_dragontail_peak_backbone_ridge` and `wa_dragontail_peak_serpentine_arete`
+both store `dist_km: 26.55` -- identical across two different routes, and
+~4x what either route's own approach text describes ("~4 mi" to Colchuck
+Lake plus a modest additional distance to the route base) and what three
+tightly-comparable siblings on the same peak/corridor store (6.4-6.9 km).
+26.55 km doubled is 53.1 km = 33.0006 mi -- almost exactly a round-number
+mile figure, which is the documented "half a round trip" `dist_km` tell
+CLAUDE.md records for this column elsewhere in the catalog. Both rows'
+`waypoints` arrays also duplicate "Colchuck Lake" and "Aasgard Pass" entries
+(each appears twice, once as a bare landmark/pass with no distMi and once
+with distMi/directions), and place "Aasgard Pass" *before* "Dragontail Peak
+Summit" in stored order even though both routes' own `descent_text` places
+Aasgard Pass only on the *descent*, after the summit -- consistent with a
+generic ascent-route waypoint template (matching the unrelated East Ridge
+via Aasgard Pass scramble route almost coordinate-for-coordinate) having been
+merged onto these two technical lines without removing the redundant
+entries or correcting the order. No SQL written: the core landmark
+coordinates (trailhead/lake/pass/summit) are independently correct fixed
+points shared across the whole peak, so this needs a human decision about
+which waypoint entries to keep/reorder and what the corrected one-way
+`dist_km` should be, not a field patch.
+
+`wa_east_face`'s own `waypoints` array states `distMi: 17` (miles) to the
+summit from Downey Creek Trailhead, while its `dist_km` field (16.1 km =
+10.0 mi) implies a ~70% shorter distance -- a real internal disagreement,
+but the row already self-hedges ("approach distance is approximate given
+the glaciated, multi-day approach") for this remote, rarely-documented
+Ptarmigan-Traverse-corridor peak, and no independent source found gives a
+precise mileage to adjudicate between 10 and 17 miles one-way. Left
+unchanged rather than guessed at. Separately, the route's own `overview`/
+`approach` fields call the peak "Middle Gunsight," and the FA climber's own
+2016 retrospective blog post (via search snippet; direct fetch blocked)
+describes the route as the "East Face of the Main Gunsight Peak" rather than
+"Middle" -- worth a second look with the primary source (the blog itself, or
+Beckey's guide) to confirm whether "Middle Peak"/`wa_middle_peak` is the
+right peak in the Gunsight Range for this route, though the area's stored
+elevation (8,185 ft) does fall inside the "8,000-8,200 ft" range independent
+sources give for all four named Gunsight summits, so this reads as
+terminology ambiguity rather than confirmed misplacement. Also: the FA
+partner's name is stored as "Martins Putelis"; one 2006 trip-report source
+title uses that same spelling, but the climber's own 2016 blog post (search
+snippet only) renders it "Mahting Putelis" -- primary sources
+(mountainproject, cascadeclimbers.com, solclimbs.blogspot.com) were all
+blocked by the network egress proxy and could not be fetched directly to
+resolve the spelling, so left as-is.
+
+**Clean / confirmed accurate:** `wa_dorado_needle_east_ridge`'s FA (Joan and
+Joe Firey, Hans Hoesli, Dave Knudson, Peter Renz, July 4 1971) independently
+confirmed via multiple sources (American Alpine Institute route profile,
+climbing trip-report/guide sites); the row's own "(this attribution is not
+certain)" hedge is now more cautious than the sourcing warrants but is not a
+factual error. `wa_dragontail_peak_r4`'s (Triple Couloirs) FA (Bill Joiner,
+Leslie Nelson, Dave Seman, May 1974) confirmed exactly via search; grade/
+approach/hazards read as accurate for this well-documented classic.
+`wa_dragontail_peak_serpentine_arete`'s FA (Tom Hargis, Jay Ossiander, 1973)
+confirmed exactly; its `length_m` (610 m = 2,001 ft) matches the commonly
+cited "~2000 ft" route length. `wa_dragontail_peak_r2` (Gerber-Sink) and
+`wa_dragontail_peak_r3` (Pandora's Box): approach/dist_km/timing all
+internally coherent and consistent with each other. `wa_e_se_face` (Witches
+Tower): waypoint chain, permit, and hazards all coherent; FA honestly marked
+"unknown." `wa_dragontail_peak_east_ridge_aasgard_pass`: coherent waypoint
+chain, dist_km matches its own waypoint-derived distance exactly.
+
+Next batch continues from `wa_east_face` onward alphabetically (pass 4).

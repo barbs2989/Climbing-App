@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_dome_peak_indian_summer",
+    "last_processed_id": "wa_east_face",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3867,6 +3867,27 @@
             "flagged_for_human_review": 3,
             "clean": 5,
             "sql_file": "audits/sql/2026-09-03-batch-186.sql"
+        },
+        {
+            "batch_number": 187,
+            "date": "2026-09-03",
+            "route_ids": [
+                "wa_dorado_needle_east_ridge",
+                "wa_dragontail_peak_backbone_ridge",
+                "wa_dragontail_peak_east_ridge_aasgard_pass",
+                "wa_dragontail_peak_r1",
+                "wa_dragontail_peak_r2",
+                "wa_dragontail_peak_r3",
+                "wa_dragontail_peak_r4",
+                "wa_dragontail_peak_serpentine_arete",
+                "wa_e_se_face",
+                "wa_east_face"
+            ],
+            "confirmed_errors_fixed": 2,
+            "flagged_for_human_review": 3,
+            "clean": 7,
+            "sql_file": "audits/sql/2026-09-03-batch-187.sql",
+            "note": "wa_dragontail_peak_r1: dist_km corrected 20->10.1, contradicted by its own waypoint-chain distance (6.3mi/10.14km) and matching sibling wa_dragontail_peak_east_ridge_aasgard_pass. wa_east_face: permit populated (was null) per Mt Baker-Snoqualmie NF Downey Creek Trailhead requirements. Flagged: wa_dragontail_peak_backbone_ridge and wa_dragontail_peak_serpentine_arete both store an identical, ~4x-too-large dist_km (26.55, which doubles to almost exactly 33.00 mi -- the documented half-round-trip tell) plus duplicated/misordered Colchuck Lake and Aasgard Pass waypoint entries apparently templated from the unrelated Aasgard Pass scramble route; wa_east_face has an internal distMi-vs-dist_km mismatch on a self-acknowledged-imprecise remote approach, plus a Main-vs-Middle Gunsight naming ambiguity and an FA-partner name-spelling discrepancy (Martins vs Mahting Putelis) that primary sources (blocked by egress proxy) could not resolve."
         }
     ]
 }
