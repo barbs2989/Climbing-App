@@ -40,6 +40,20 @@
 // they are superseded the same way: `useCrewMessagesRealtime` / `useDirectMessagesRealtime`, which
 // App replaces with five inline `.channel()` subscriptions of its own.
 //
+// BUCKET B WAS THEN READ, 2026-09-03, AND IT IS CLEAN — 33 entries, 0 further findings. Recorded
+// because a reading list nobody reads is worth nothing, and re-reading it from scratch is the
+// cost this note exists to save. Every entry is correctly about a PLACE (areas, routes, topos,
+// nearby bounds), a LOOKUP TABLE (countries, cert tracks), an ADMIN QUEUE, or SOMEBODY ELSE by
+// id. The one that looked like the vouch shape is not: `useCrewEmailInvites(crewId)` is keyed on
+// the crew being viewed, not on a person, so pending invites belong to the crew rather than to a
+// climber. Re-read it after a batch of new reads, not before.
+//
+// TWO ENTRIES LEFT BUCKET B WHEN THE MATCHER LEARNED TO UNWRAP. `useMyFiledReports(!!uid)` is a
+// call about ME, and a matcher looking only at bare Identifiers filed it under "never asked about
+// you" — a false entry on the very list this script exists to keep short. Names are now collected
+// through `!!x`, `x || y` and ternaries, and printed inside the wrapper so the reading list shows
+// what a call is actually keyed on.
+//
 // Static: Babel over lib/db.js and the three app files plus lib/*.jsx. No browser, no database.
 
 import fs from "node:fs";
@@ -116,15 +130,28 @@ for (const f of files) {
       const c = p.node.callee;
       if (c.type !== "Identifier" || !reads.has(c.name)) return;
       const a = p.node.arguments[0];
+      // UNWRAP the guards a self identity is routinely passed inside. `useMyFiledReports(!!uid)`
+      // is a call about ME, and a matcher that only looks at bare Identifiers files it under
+      // "never asked about you" -- which is a false entry on the very reading list this script
+      // exists to keep short. Collect every name reachable through the wrappers this codebase
+      // actually writes, rather than only the outermost node.
+      const names = [];
+      (function walk(n, depth) {
+        if (!n || depth > 4) return;
+        if (n.type === "Identifier") { names.push(n.name); return; }
+        if (n.type === "UnaryExpression") return walk(n.argument, depth + 1);
+        if (n.type === "LogicalExpression") { walk(n.left, depth + 1); walk(n.right, depth + 1); return; }
+        if (n.type === "ConditionalExpression") { walk(n.test, depth + 1); walk(n.consequent, depth + 1); walk(n.alternate, depth + 1); return; }
+      })(a, 0);
       let arg = "()";
       if (a) {
         if (a.type === "Identifier") arg = a.name;
         else if (a.type === "MemberExpression") arg = "<member>";
         else if (a.type === "StringLiteral") arg = `"${a.value}"`;
-        else arg = `<${a.type}>`;
+        else arg = names.length ? `<${a.type}: ${[...new Set(names)].join("/")}>` : `<${a.type}>`;
       }
       if (!calls.has(c.name)) calls.set(c.name, []);
-      calls.get(c.name).push({ file: path.basename(f), arg });
+      calls.get(c.name).push({ file: path.basename(f), arg, names });
     },
   });
 }
@@ -138,7 +165,7 @@ const unwired = [], notSelf = [], selfWired = [];
 for (const [name, meta] of [...reads].sort()) {
   const sites = calls.get(name) || [];
   if (!sites.length) { unwired.push({ name, meta }); continue; }
-  const anySelf = sites.some((s) => SELF.has(s.arg));
+  const anySelf = sites.some((s) => SELF.has(s.arg) || (s.names || []).some((n) => SELF.has(n)));
   (anySelf ? selfWired : notSelf).push({ name, meta, sites });
 }
 
