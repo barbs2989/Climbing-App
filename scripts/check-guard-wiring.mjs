@@ -61,6 +61,9 @@ try { pkg = JSON.parse(fs.readFileSync(path.join(ROOT, "package.json"), "utf8"))
 catch (e) { dead(`package.json could not be parsed: ${e.message}`); }
 const npmScripts = pkg.scripts || {};
 if (!npmScripts.build) dead("package.json has no `build` script — the chain is the main wiring point");
+if (!npmScripts["build:guards"] || npmScripts["build:guards"].split("node scripts/").length < 20) {
+  dead("package.json has no `build:guards` chain, or it names fewer than 20 guards — the\n  list that gates a build has gone missing, and every guard below would read as unwired");
+}
 
 const WF = path.join(ROOT, ".github", "workflows");
 if (!fs.existsSync(WF)) dead(".github/workflows does not exist — CI wiring could not be read");
@@ -81,17 +84,6 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
-  "check-message-delivery.mjs":
-    "IT CANNOT CLEAN UP AFTER ITSELF, and that is measured rather than assumed. It inserts a row " +
-    "into `messages` as the mate, and that table has select/insert/update policies in 0042 and NO " +
-    "DELETE POLICY — so the teardown DELETE comes back 204 with res.ok true and the row is still " +
-    "there. Locally that is harmless: the per-run accounts are deleted and cascade. In CI the " +
-    "accounts are DURABLE, so every run would leak a message into a live project forever — " +
-    "exactly the shape CLAUDE.md records under 'the table without a backstop is the one whose " +
-    "leaks you can see', where 13 crews accumulated one per run. Unlike crews, NO SWEEP IS " +
-    "POSSIBLE, because a sweep needs the same DELETE the policy refuses. Hand-run until " +
-    "`messages` gains a delete policy, which is a product question (should a sender be able to " +
-    "unsend?) rather than something to add for a test's convenience.",
   "check-column-drift.mjs":
     "fetches PostgREST's OpenAPI root, which returns 401 to the anon key and so needs the " +
     "SERVICE key — the credential this repo keeps out of CI, the same rule that put " +
@@ -127,7 +119,11 @@ const EXCLUDED = {
     "a build to run it against — it gates the moment a .sql file is handed to the user.",
 };
 
-const buildChain = npmScripts.build;
+/* The guard list lives in `build:guards` since the chain was moved behind the concurrent
+   runner; `build` itself now only names the runner and vite. Both are read so that this
+   guard keeps proving every check runs somewhere, and so that putting a guard back into
+   `build` directly still counts as wired. */
+const buildChain = (npmScripts.build || "") + " " + (npmScripts["build:guards"] || "");
 const wiring = new Map();
 
 for (const f of onDisk) {

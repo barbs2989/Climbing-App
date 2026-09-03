@@ -101,7 +101,12 @@ const ALLOW = [
   { key: '+c.years+"yr · "', why: "PartnerSearch's example card, fed by ALL_CLIMBERS — seed climbers only; real profiles render through RealClimberRow" },
   { key: '" trust · "+cl.level', why: "GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one and resolves its own profiles" },
   { key: 'cl.years+" yrs · "+cl.level', why: "the same seed GuideDashboard, its inquiry stat grid — same cl, same seed source" },
-  { key: '{"Trust "+vScore(c)}', why: "OPEN_CREWS organiser chip — OPEN_CREWS is seed data and its organiser is always a seed climber" },
+  // REMOVED, and the removal is worth the note: this exemption read "OPEN_CREWS is seed data and
+  // its organiser is always a seed climber", and merging real crews from crew_listings into that
+  // same list made the claim false. The site is gated now -- `c._profile ? climberLine(c) :
+  // ("Trust "+vScore(c))` -- so it needs no exemption at all. THE GUARD CAUGHT THIS ITSELF, as a
+  // STALE entry rather than as a new finding, which is exactly what a reason-carrying exemption is
+  // for: it fails when the claim behind it stops being true.
 ];
 const used = new Set();
 

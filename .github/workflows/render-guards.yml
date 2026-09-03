@@ -515,3 +515,52 @@ jobs:
           name: signed-in-screens
           path: signed-in-screens.json
           if-no-files-found: warn
+
+  message-delivery:
+    name: A message from another climber arrives
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Confirm a browser is present
+        run: |
+          if ! command -v google-chrome >/dev/null 2>&1; then
+            echo "::error::google-chrome is not on this runner, so check:message-delivery cannot drive anything."
+            exit 1
+          fi
+          google-chrome --version
+
+      # THE FIRST GUARD HERE THAT INVOLVES TWO PEOPLE. Every other browser guard signs in as at
+      # most one account and reads its own screens, so a fact written by a SECOND climber has been
+      # outside CI by construction — the seam #1497 came out of, where a vouch you had received
+      # reached no screen and no number.
+      #
+      # IT WRITES to the live project, which no other guard in this workflow does, on exactly the
+      # terms check:signed-in already set: two durable accounts that are discoverable=false, the
+      # anon key only, one `messages` row per run, deleted by id, leaks reported.
+      #
+      # THIS JOB WAS ADDED, MEASURED, AND PULLED ONCE before it merged, because the teardown could
+      # not actually delete: `messages` had no DELETE policy, so RLS refused it and PostgREST's 204
+      # read as success. 0176 adds the policy — verified by insert/delete/re-read rather than by
+      # reading the SQL — and the guard reads the row back rather than trusting the status code.
+      #
+      # Concurrency between runs is answered rather than assumed: two rows coexist, every assertion
+      # holds with either or both present, teardown targets a single ID, and the body carries
+      # GITHUB_RUN_ID so a run asserts on its OWN message. Without that last part run A passes on
+      # run B's row — a false pass in the exact window this guard watches.
+      - name: Deliver a message between two real accounts
+        run: npm run check:message-delivery
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          VITE_USE_DB: "true"
+          CI_TEST_OWNER_EMAIL: ${{ secrets.CI_TEST_OWNER_EMAIL }}
+          CI_TEST_OWNER_PASSWORD: ${{ secrets.CI_TEST_OWNER_PASSWORD }}
+          CI_TEST_MATE_EMAIL: ${{ secrets.CI_TEST_MATE_EMAIL }}
+          CI_TEST_MATE_PASSWORD: ${{ secrets.CI_TEST_MATE_PASSWORD }}

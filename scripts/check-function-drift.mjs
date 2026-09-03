@@ -171,7 +171,18 @@ for (const [name, kind] of found) {
         `        re-applying anything: a migration may have deliberately left a defect in place.`
       : `${name}: exists in the live database and NO migration creates it.\n` +
         `        Nothing in git describes it, so nobody reviewed it, and rebuilding the database from\n` +
-        `        migrations would not produce it. Either write the migration or drop the function.`);
+        `        migrations would not produce it. THREE CAUSES, wanting opposite actions:\n` +
+        `          1. AN OPEN PR ALREADY CARRIES ITS MIGRATION — the likeliest, because sessions here\n` +
+        `             apply DDL before the PR lands. Check first:\n` +
+        `               gh pr list --state open --search "${name} in:title,body"\n` +
+        `             If so do NOTHING — not a second migration (it would duplicate a number), and NOT\n` +
+        `             a KNOWN entry, which goes stale the moment that PR merges and then fails this\n` +
+        `             guard in its own right.\n` +
+        `          2. Made by hand in the SQL editor and never written down — write the migration,\n` +
+        `             reproducing the live body verbatim so the intent reaches version control.\n` +
+        `          3. Dead and unwanted — drop it. Read the body first: 0167 dropped two functions\n` +
+        `             this way and one of them was an account-takeover primitive kept inert only by\n` +
+        `             a column that did not exist.`);
 }
 for (const name of Object.keys(KNOWN)) {
   if (!found.has(name)) fail.push(

@@ -56,12 +56,12 @@ npm run check:verification-fallback # a failed verification read must not un-ver
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
-npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
+npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
-npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender (hand-run: it cannot delete what it writes)
+npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -165,6 +165,31 @@ the total when deciding where a new guard belongs.
   merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
   a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
   defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
+- **MOST OF THE WALL-CLOCK WIN WAS TAKEN WITHOUT THAT REFACTOR: the guards now run CONCURRENTLY.**
+  `npm run build` calls `scripts/run-build-guards.mjs`, which reads the same `&&` chain — moved
+  verbatim to `build:guards`, so there is no second list to rot — and runs it with bounded
+  concurrency. **Nothing about any guard changes**: each still runs in its own process with its own
+  contract, its own fail-closed paths and its own injection suite. Only the orchestration moved.
+  - **Safe to parallelise, measured before it was written.** On a normal run no guard writes a
+    fixed path — all six `BASELINE` writes sit behind `--update`, which the chain never passes —
+    every temp file is pid- or `mkdtemp`-scoped, and none mutates cwd or `process.env`. **Re-check
+    that before adding a guard that writes anything.**
+  - **It reports MORE than the chain did.** `a && b && c` stops at the first failure, so a tree with
+    three broken guards showed one. The runner runs them all and lists every failure — strictly more
+    information for the same work.
+  - **The dangerous direction is a runner that passes while a guard fails**, so it fails closed four
+    ways: fewer than 20 guards parsed out of the chain, a child exiting non-zero, a child killed by
+    a SIGNAL (where `code` is null and a naive check reads it as a pass), and a child that could not
+    be spawned. Injection-tested 3/3 — one failing guard, TWO failing guards with both listed, and a
+    gutted guard list — each judged on the message as well as the exit code.
+  - `check:guard-wiring` reads **both** `build` and `build:guards`, and fails closed if the latter
+    goes missing or names fewer than 20 guards. Without that, moving the chain would have made
+    every guard read as running nowhere.
+  - Output is printed in **chain order**, not completion order, so two runs of one tree produce the
+    same log and a CI diff stays readable.
+  - What this does NOT do is remove the duplicated Babel parses; those 14 guards still each parse
+    the app. The shared-runner refactor above is still the way to collect that, and is still not
+    free.
 - **The cheap version has already been taken three times**, and is what to try first on any new
   guard: `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors
   instead of twice; `check:overlay-absence` was kept out of the build chain entirely (a CI job
@@ -998,21 +1023,26 @@ the total when deciding where a new guard belongs.
   - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
     different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
     and not a name either: a climber cannot tell which of their partners wrote to them.
-  - **IT IS HAND-RUN, AND THE REASON IS A DEFECT I FOUND IN MY OWN TEARDOWN AN HOUR AFTER WIRING IT
-    INTO CI.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
+  - **IT RUNS IN CI, AND THE ROUTE THERE IS THE ENTRY WORTH READING.** `messages` has select/insert/update policies in `0042` and **no DELETE policy at
     all**, so the teardown's DELETE is refused by RLS — and PostgREST answers a zero-row DELETE
     with **204**, which `res.ok` reads as success. Measured directly (insert → delete → re-read):
     HTTP 204, `res.ok` true, **row still there**. The guard printed *"removed the message: ok"* off
     that status and was reporting a success it did not have — *a 200 is not evidence the data
     changed*, which this file records for hand-written SQL and for `patchRow` and which arrived
     here in a third place. It reads the row back now and says plainly when it could not remove it.
-  - **Locally that is harmless and in CI it would not be.** The per-run accounts are deleted and
-    cascade; the durable CI pair is permanent, so **every run would leak a message into a live
+  - **Locally that was harmless and in CI it would not have been.** The per-run accounts cascade;
+    the durable CI pair is permanent, so **every run would have leaked a message into a live
     project forever** — the shape recorded under *"the table without a backstop is the one whose
-    leaks you can see"*, where 13 crews accumulated one per run. **Unlike crews, no sweep is
-    possible**: a sweep needs the same DELETE the policy refuses. The CI job was written, measured,
-    and **pulled before it merged**; the exemption in `check:guard-wiring`'s `EXCLUDED` carries the
-    measurement so the next reader does not re-derive it.
+    leaks you can see"*, where 13 crews accumulated one per run. And **unlike crews no sweep was
+    possible**, because a sweep needs the same DELETE the policy refused. So the job was written,
+    measured, and **pulled before it merged**.
+  - **`0176` is what let it back in**, and it closes a gap that was never about testing: a climber
+    could not delete a message they had sent *or received*, ever. The policy covers **both
+    parties**, deliberately — a recipient of an unwanted message has the stronger claim to clear
+    it, and they could already block the sender while being unable to remove what they wrote.
+    Verified by insert → delete → re-read rather than by reading the SQL, which is how the absence
+    was found in the first place. **The read-back in teardown stays** even now: a policy can be
+    dropped again, and a status code cannot be trusted about rows.
   - **The concurrency work still stands and is what makes it promotable the day that changes.** Two
     `messages` rows coexist; every assertion holds with either or both present; teardown targets a
     single **id**, never a sender; and the body carries **`GITHUB_RUN_ID`** so a run asserts on
@@ -1591,6 +1621,13 @@ the total when deciding where a new guard belongs.
   app does not have**, and that **the version a reader SEES is the version recorded against their
   account**. Static (one esbuild bundle, one SSR render), **1.6s CPU** against 1.69s for
   `check:topo-outage-copy` beside it, so it sits in `npm run build`.
+  - **THREE of the four surfaces**, and the third was added by reading this guard's own stated
+    limitation as a worklist. The **in-app privacy sheet** matters more than its lack of a policy
+    label suggests — the packet's Q7 calls it the place the privacy decision is actually made,
+    because it opens from Settings **and from partner search**, carries no review disclaimer and
+    is not versioned. It is an inline array rather than a named constant, so it is lifted by
+    balancing brackets from its first heading, with the same skip-string-contents care the other
+    two get. **Surface 4 (scattered copy) is still by hand.**
   - **THE FIX IT GUARDS CHANGES STRINGS AND NO IDENTIFIER, which is exactly the revert nothing else
     can see.** #1522 rewrote Privacy §4 and §1; `audit:silent-reverts` tracks named definitions and
     says in its own closing caveat that *"a merge that kept a name and dropped its guard clause is
@@ -1611,6 +1648,27 @@ the total when deciding where a new guard belongs.
     cannot quietly undo them. Section 1's needle is deliberately narrow: *"we use approximate
     location"* is a statement about PROCESSING and is correct, while *"you control location
     sharing"* is a claim about a switch. Matching the mere word would flag every honest sentence.
+  - **A CAPABILITY claim is a different question from a CONTROL claim, and the sheet made one.**
+    *"You can edit or clear anything from your profile and settings at any time"* was false twice
+    over: `saveEdit` guards `name` and `username` with `if (d.x && d.x.trim())`, so a blank is
+    **skipped** and the old value survives, and the avatar has a change control and **deliberately**
+    no remove — so the sheet contradicted a product decision taken hours earlier. The assertion has
+    **two branches**, because a rewrite that stops over-claiming and also stops saying anything is
+    the drift it exists to catch, and that would pass a test which only looked for the old
+    sentence. Asserted as **source rather than rendered**: this sheet is inline in `App` rather
+    than in `LegalView`, and standing up App is far more than the question is worth — stated in
+    the guard rather than implied.
+  - **Two of the sheet's claims were measured and HOLD, recorded so they are not re-derived.**
+    *"Direct messages and crew chats are visible only to the people in that conversation"* is
+    **RLS-enforced** rather than merely true of the UI — `0042` gives `messages` a SELECT policy of
+    `auth.uid() = sender_id or auth.uid() = recipient_id` and `crews_messages`
+    confirmed-member-or-creator. And the name-vs-handle claim rests on the four-surface
+    inconsistency that is already an **open product decision**, so it is not this guard's to
+    settle.
+  - **MEASURING IT HIT THE DOCUMENTED DESTRUCTURED-PARAMS TRAP.** Balancing braces from
+    `function PartnerSearch({…})` returns the **parameter list** — 196 characters — not the body,
+    which is **35,762**. This file already records that exact failure making an overlay probe
+    report 150 characters of signature as a component. Find the `)` that closes the params first.
   - **Section 3 was a semantic invariant living in a COMMENT.** `lib/policy.js` says the version a
     user sees and the version recorded *"cannot drift"* — and **nothing asserted it**. It now
     renders the policy and requires `policyVersionLabel(POLICY_VERSION)` to be on the screen, so a
@@ -1659,7 +1717,7 @@ the total when deciding where a new guard belongs.
     earlier in the day has a record pointing at slightly different words. Inherent to a date-based
     version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
     real launch, not worth inventing a counter for at three accounts.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+  - Injection-tested **10/10** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
     historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
     dead-branch defect above** — renaming a gated control must report a BROKEN scan rather than
