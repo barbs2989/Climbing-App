@@ -59,7 +59,33 @@ const ROAD_ACCESS = [["road", "status"], ["road", "seasonalGate"], ["road", "dri
 const COMMON_NOUN = /\bpeakbaggers\b|\bpeakbagger\b|\bPeakbaggers\b|\bpeakbagging\b|\bPeakbagging\b/g;
 const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
 
-const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
+// FOUR FAMILIES WERE MISSING, AND THE SWEEP WAS DECLARED CLOSED WITHOUT THEM. This list is a
+// DENY-LIST, and its own note two paragraphs down already says the count is a FLOOR and to
+// "re-scan with a different pattern before calling the class closed". That was not done: #1480
+// reported "the publisher half is closed, 1 masthead left" measured with THIS regex, which is
+// circular — a deny-list cannot audit itself. Scanning for shapes it does not list found, in WA:
+//
+//     AAJ / American Alpine Journal          18 values
+//     "The Mountaineers" (only Mountaineers.org was listed)  29
+//     Climber's Guide to the Olympic Mountains               7
+//     a literal "Source:" prefix                              1
+//
+// The last one is the sharpest: wa_mount_steel_standard's `face` reads "West (the standard line
+// climbs the amphitheater on the west side of the peak). SOURCE: Climbers Guide to the Olympic
+// Mountains route description, consistent with the route's own aspect field." A rendered field
+// that names its source with the word "Source:" AND then names a database column.
+//
+// TWO CANDIDATES WERE MEASURED AND DELIBERATELY LEFT OUT. "Fifty Classic Climbs" is a LIST THIS
+// APP ITSELF RENDERS (`fifty_classics`, and its own copy names the book), so a route saying it is
+// on that list is stating a fact about the route, not citing a source. "Selected Climbs" matches
+// ZERO values in WA - a detector for a class of nothing.
+//
+// "THE MOUNTAINEERS" IS OFTEN AN OPERATOR, NOT A PUBLISHER, and this file already states that
+// rule for clubs: "especially when The Mountaineers or other clubs run scheduled trips" is a fact
+// about who climbs a peak. But "The Mountaineers route page: 'Descend by rappelling and
+// downclimbing the route'" is a citation. Same word, both kinds, so this stays a READING LIST -
+// which is what this audit is - and must not be swept on the pattern alone.
+const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|\bThe Mountaineers\b|WenatcheeOutdoors|\bAAJ\b|American Alpine Journal|\bAAC\b|American Alpine Club|Climber'?s Guide|Cascade Alpine Guide|Cascade ?Climbers|NWHikers|TrailCatJim|SuperTopo|SpokAlpine|SkiSickness|Steph ?Abegg|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
 // HERE: waypoint notes say "reliable water source" and "Source Lake" (a real place in the Alpental
@@ -76,7 +102,7 @@ const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakba
 // They are safe to add BECAUSE THEY ARE INFORMATIONAL VERBS. The water-source trap this comment
 // already warns about does not reach them: a creek can BE a source and can be seasonal, but it
 // cannot differ on an elevation or fail to document a length.
-const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b/i;
+const ACT = /\bsourced (?:via|from)\b|\bper (?:WTA|AllTrails|SummitPost|Peakbagger|Wikipedia|Mountain ?Project|recent trip reports?|trip reports?)|\bcorroborated by\b|confirmed by (?:two|multiple|several|independent)|\b(?:multiple|several|various|numerous|independent|published|online|climbing|guidebook)\s+sources?\b|\bsources?\s+(?:describe|state|report|say|agree|list|indicate|confirm)\b|\breported by (?:WTA|AllTrails|trip)|\baccording to (?:WTA|AllTrails|SummitPost|Mountain ?Project)|\bverified via\b|\bsources?\s+(?:differ|disagree|vary|conflict|only say)\b|\bdepending on the sources?\b|\bno sources?\s+(?:gives?|describes?|documents?|states?|specifies|mentions?|confirms?|found)\b|\bnot (?:stated|documented|given|specified|recorded|broken out) in (?:the |any )?sources?\b|\bthe sources?\s+(?:does not|doesn't|do not|don't|only)\b|\bsource range\b|\bin the source (?:account|report|text|trip report)\b|\bper (?:the )?source\b|\bfound in sources?\b|\bby any source\b|(?<!water )(?<!heat )\bSources?:/i;
 // Go and look at this yourself, now — operational, and it must never be swept.
 /* `data_quality` IS DELIBERATELY NOT SCANNED, and it is the whole reason this widening had to be
    measured rather than swept. It carries 288 of the 302 hits -- by far the largest column -- and
@@ -175,7 +201,13 @@ const PROSE_COLS = ["rappel_detail", "rappel_count_note", "rappels", "descent_te
      corpus from 126,112 values to 153,869 and inflated the headline while finding nothing new.
      READ THE OUTPUT'S SECTION HEADINGS BEFORE WIDENING A COLUMN LIST.
      `data_quality` is excluded for the opposite reason -- see the note above LIVE. */
-  "fa"];
+  "fa",
+  /* ADDED 2026-09-02. `face` renders as its OWN CARD on Overview under the heading
+     FACE / WHERE ON THE PEAK — 1,035 WA routes, prose up to 247 characters — and had never
+     been scanned. It held the only literal "Source:" in the catalog, an AAJ citation and a
+     named guidebook. A column that renders prose and is not in this list is invisible by
+     construction, which is how the rack columns hid 132 citations until #1422. */
+  "face"];
 function leaves(v, out = []) {
   if (typeof v === "string") { if (v.trim()) out.push(v); return out; }
   if (Array.isArray(v)) { for (const x of v) leaves(x, out); return out; }
