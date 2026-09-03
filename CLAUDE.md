@@ -41,6 +41,7 @@ npm run check:logged-times # a climber’s logged time reaches the planner (in b
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
+npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
@@ -4273,6 +4274,61 @@ the correction knows the screen is wrong, and they have no way to report it.
     a different `shown`, and the `> described` half of that predicate is *inside* the function, so
     the edit landed by checksum and reproduced no defect. *Checksum movement proves an edit
     happened, not that it was the right one.*
+- **`check:trailhead-directions`** asserts a screen offers **exactly one way to drive to the
+  trailhead**, that the **coordinates** are beside it, and that a **label describes the value under
+  it**. Static (one esbuild bundle, five SSR renders), so it sits in `npm run build`.
+  - **IT IS THE GATE #1437 DID NOT GET.** That change moved `TrailheadCard` up under GETTING THERE
+    and dropped the standalone *"Directions to trailhead"* button standing there — both resolved
+    the same `trailheadPoint()`, so the page offered one destination twice and printed the road
+    name and status twice with it. Its check is
+    `scripts/oneoff/probe-trailhead-sits-with-getting-there.mjs`, and **nothing runs
+    `scripts/oneoff/`** — the *"a verification nobody runs is not a verification"* shape, on a
+    surface this file records as user-visible since the trailhead sweep.
+  - **NOTHING ELSE CAN SEE THE CLASS.** `check:dead-props` asks whether a prop is read — both
+    controls were read and both worked. `check:field-renders` asks whether a column reaches a
+    screen — these reached it **twice**, which is more than enough for that guard.
+    `check:waypoint-placement` asks whether a coordinate is DRAWABLE, not whether it is drawn once.
+    **A duplicate is invisible to every guard that asks *does this reach a screen*; the question
+    has to be *how many times*.**
+  - **COUNTING A CONTROL IS THE WHOLE PROBLEM, AND BOTH OBVIOUS METHODS ARE BLIND IN OPPOSITE
+    DIRECTIONS — measured, not reasoned about.** By **label** over the page text is a deny-list
+    over English, and this catalog writes prose into the very fields that render here: an
+    `approach_logistics.trailheadDirection` reading *"Drive here and park at the gate"* makes a
+    correct page report two controls. By **destination URL** over the markup looks rigorous and is
+    worse: the Plan tab's control is an `<a href>`, but the crag Overview's is
+    `<button onClick={window.open(…)}>`, and **React does not serialize a handler** — so the URL is
+    not in the markup at all. A first version counted hrefs and reported **zero** controls on a
+    screen that plainly has one. It counts **anchor-or-button elements whose own text is a drive
+    label**: prose lives in a `<div>` and is not counted, a handler-only button is. Injection cases
+    6 and 7 are those two false positives and both must stay **SILENT**.
+  - **IT FOUND A MISLABELLED ROW ON 249 ROUTES.** The crag Overview printed
+    `road.driveNote || road.name` under the heading **"Trailhead"**, so *"Roughly 25-30 minutes
+    (about 20 miles) from Dayton, WA via S 4th Street"* read as the name of the trailhead — a
+    description of the **drive**, under the name of the place you drive to, and the same string the
+    Plan tab labels correctly as *"Drive notes"*. **One label cannot be right for both values**, so
+    it is chosen per value (`"The drive"` / `"Road"`) rather than picked once and made to cover the
+    other. `scripts/oneoff/measure-crag-drive-note-label.mjs` is the count.
+  - **"With GETTING THERE" is asserted as ORDER, not as a character window** — the control renders
+    inside `TrailheadCard`, so slicing N characters after the heading would encode a guess about
+    the panel's size, the trap the camping panel and the Logbook badge both record. It must fall
+    between the GETTING THERE and APPROACH headings.
+  - **The seasonal gate is asserted because it nearly went with the duplicate.** It had two render
+    sites; the surviving one showed it only as a **suffix on the road STATUS row**, so a route with
+    a gate and no status would have lost it silently — the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **A KNOWN GAP, stated rather than quietly passed: a crag route shows GETTING THERE TWICE**, once
+    on Overview and once on Plan, with a different drive control on each. This guard asserts one per
+    SCREEN, which is what it can defend; whether a crag's Overview should carry a drive block at all
+    is a question about what belongs on which tab, and that is a product decision rather than
+    polish. Read this guard's green as *"no screen offers two"*, never as *"the route offers one"*.
+  - Fails **closed** five ways: a thin render, either GETTING THERE panel missing, a missing
+    APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
+    nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
+    nothing at all.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
+    the duplication back one piece at a time so the guard cannot pass on the strength of its
+    neighbours.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
