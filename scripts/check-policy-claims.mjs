@@ -138,8 +138,15 @@ const PROMISES = [
      assumed. So it is inert rather than true, and deleting it cost the question instead of
      answering it: if the switch is ever gated again while a name-choice sentence exists, nothing
      would notice. It stays, and the OFFERED branch below is what lets it stay without failing. */
+  /* The needle must match the wording the documents ACTUALLY carry, and the inherited one did not.
+     It was written against "your username or real name", which #1551 removed; #1557 puts the
+     choice back in a different shape — "your username, or your real name if you choose to show
+     it". Restoring the entry without widening it restores a branch that CANNOT FIRE, which is the
+     dead-coverage failure this file already records for its own first version. Measured, not read:
+     composed with #1557 and re-gating the switch, the narrow needle stayed silent and this one
+     fails naming the sentence. Both phrasings are matched, so it works either side of that PR. */
   { control: "Show my real name publicly",
-    re: /your username or real name|choose(?:s)? (?:to show )?your real name/i },
+    re: /your username,? or (?:your )?real name|your real name if you choose|choose(?:s)? (?:to show )?your real name/i },
   { control: "Toggle online status", re: /online status/i },
   { control: "Who can invite you to a crew", re: /who can invite you|crew invites? settings?/i },
 ];
