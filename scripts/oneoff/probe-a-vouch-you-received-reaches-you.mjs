@@ -85,6 +85,10 @@ function claimPort(start, span = 40) {
 const SUPA = envVal("VITE_SUPABASE_URL").replace(/\/$/, "");
 const ANON = envVal("VITE_SUPABASE_ANON_KEY");
 
+// Distinctive on purpose: the vouch CARD is found by its own text, and "vouch" appears several
+// times on these screens.
+const VOUCH_TEXT = "Steady on the sharp end and unflappable at the belay.";
+
 let fixture = null, server = null, browser = null, vouchId = null, mateTok = null;
 
 try {
@@ -129,7 +133,7 @@ try {
   const vouchRes = await fetch(`${SUPA}/rest/v1/vouches`, {
     method: "POST",
     headers: { apikey: ANON, Authorization: `Bearer ${mateTok}`, "Content-Type": "application/json", Prefer: "return=representation" },
-    body: JSON.stringify({ from_id: fixture.mate.id, to_id: uid, reason: JSON.stringify({ text: "Steady on the sharp end.", ratings: { belay: 5 } }) }),
+    body: JSON.stringify({ from_id: fixture.mate.id, to_id: uid, reason: JSON.stringify({ text: VOUCH_TEXT, route: "Henry's Fork Route", ratings: { belay: 5, communication: 5 } }) }),
   });
   const vouchRows = await vouchRes.json().catch(() => null);
   must(vouchRes.ok && Array.isArray(vouchRows) && vouchRows.length === 1,
@@ -159,6 +163,13 @@ try {
 
   must(me.length > 400, "the profile tab rendered");
   must(/At a glance/i.test(me), "the AT A GLANCE panel is on screen");
+  // DELIBERATELY NOT ASSERTED, and not even printed as a number. The headline is
+  // `<CountUp value={vScore(meLive)}/>`, which animates up from 0 inside an effect, and
+  // settledText MASKS DIGITS -- so a screen settles while the number is still climbing. Three runs
+  // of this probe read 17, 3 and 0 off that element and every one was a frame rather than a
+  // verdict; the 0 was on a run WITH the fix applied. The trust claim is made on the breakdown's
+  // "N received" line instead, which is plain text.
+  must(/Trust score/i.test(me), "the trust headline is on screen (its NUMBER animates, so nothing reads it)");
 
   // The tile is <div title={caption}><div>{number}</div><div>{label}</div></div>, so the CAPTION
   // is an attribute rather than text — a first version searched the box's innerText for "peer
@@ -204,6 +215,45 @@ try {
     const received = (factors.match(/(\d+) received/) || [])[1];
     log(`  the Peer vouches factor reads: "${received === undefined ? "(no 'N received' line)" : received + " received"}"`);
     must(received === "1", `the trust breakdown counts the vouch (reads ${received ? `"${received} received"` : "nothing"}, expected "1 received")`);
+  }
+
+  // ---- 4. and does the LIST agree with the COUNT? ----
+  // Raising the tile alone would strand its neighbour. FullProfile enriches a climber from the DB
+  // only when `_realId` is a uuid -- `if(!_realId) return climber` -- and ME.id is 0 signed in or
+  // out, so your own public profile listed `ME.vouches`, which is []. A tile reading 1 above a tab
+  // reading "No vouches yet" is one screen with two answers, the shape CLAUDE.md records as
+  // changing-which-record-wins-leaves-the-neighbouring-field-behind.
+  const toProfile = await tapByText(page, "View public profile");
+  must(toProfile, '"View public profile" could be opened');
+  if (toProfile) {
+    await settledText(page);
+    const toVouches = await page.evaluate(() => {
+      const d = document.querySelector('[role="dialog"][aria-label="Climber profile"]');
+      if (!d) return "no dialog";
+      const b = [...d.querySelectorAll("button")].find((x) => (x.textContent || "").trim() === "Vouches");
+      if (!b) return "no Vouches button in the dialog";
+      b.click();
+      return true;
+    });
+    must(toVouches === true, `the Vouches sub-tab could be opened${toVouches === true ? "" : ` (${toVouches})`}`);
+    if (toVouches) {
+      await settledText(page);
+      const prof = await page.evaluate(() => {
+        const d = document.querySelector('[role="dialog"][aria-label="Climber profile"]');
+        return d ? (d.innerText || "") : "";
+      });
+      must(!/No vouches yet/i.test(prof), 'the profile does not say "No vouches yet" while the tile counts one');
+      must(prof.includes(VOUCH_TEXT), "the vouch itself is listed, in the words the voucher wrote");
+      if (/No vouches yet/i.test(prof) || !prof.includes(VOUCH_TEXT)) {
+        const dlg = await page.evaluate(() => {
+          const d = document.querySelector('[role="dialog"][aria-label="Climber profile"]');
+          return d ? (d.innerText || "").slice(0, 900) : "(no climber-profile dialog in the DOM)";
+        });
+        log("\n  --- the Climber profile dialog ---");
+        log(dlg.replace(/\n{2,}/g, "\n"));
+        log("  --- end ---\n");
+      }
+    }
   }
 
   must(pageErrors.length === 0, `no uncaught page errors${pageErrors.length ? ` — ${pageErrors[0].slice(0, 120)}` : ""}`);
