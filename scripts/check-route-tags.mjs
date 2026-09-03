@@ -87,6 +87,39 @@ ok("bare route -> no tags", routeTags({}).length === 0, routeTags({}));
 ok("null route -> no tags", routeTags(null).length === 0);
 ok("lists:null tolerated", routeTags({ lists: null, features: null }).length === 0);
 
+// --- the four Washington peak lists, as the catalog actually stores them -------------------
+// Real values, copied out of the live catalog. Each reached NO chip: routeTags iterates
+// LIST_ALIASES keys, so a raw string matching none of them was never considered, and the
+// membership was in the row and on no screen.
+//
+// Each must resolve to EXACTLY ONE key. Two keys matching one string would draw the same
+// membership twice, which is the duplicate the "Regional classic" fix removed, arriving from
+// the resolver end instead of the render end.
+const REAL_LIST_VALUES = [
+  ["Peakbagger 'Home Court' Top 100 Washington peaks by elevation – ranked #29", "wa_top100_elev", "#29"],
+  ["Peakbagger Washington 400'+ clean-prominence steepest-peaks 'Master List' – ranked #93", "wa_prominence", "#93"],
+  ["Washington Top 200 Peaks (elevation-based list of the ~200 highest Washington peaks with 400+ ft of prominence) - Buckskin Mountain is listed among the 'Extra 110' peaks needed to complete the Top 200, per Country Highpoints' tracked list.", "wa_top200", ""],
+  ["Washington's Difficult 10 (\"Hardest Peaks\") — SummitPost list", "wa_difficult10", ""],
+  // Regression: the Bulger spellings must NOT be captured by the new keys, and vice versa.
+  ["Washington Top 100 (Bulger List)", "bulgers", ""],
+  ["Bulger List (Washington's 100 highest peaks) - #48", "bulgers", "#48"],
+  ["fifty_classics", "fifty", ""],
+];
+for (const [value, wantKey, wantRank] of REAL_LIST_VALUES) {
+  const hits = Object.keys(LIST_ALIASES).filter(k => routeInList({ lists: [value] }, k));
+  ok(`${wantKey}: resolves to exactly one key`, hits.length === 1 && hits[0] === wantKey, hits);
+  const chip = routeTags({ lists: [value] }).find(x => x.slug === wantKey);
+  ok(`${wantKey}: reaches a chip`, !!chip, chip);
+  if (chip) ok(`${wantKey}: rank ${JSON.stringify(wantRank)} carried through`, (chip.detail || "") === wantRank, chip.detail);
+}
+// NO SOURCES. Every one of these values names the site it was read from. A chip repeating that
+// would put a source on screen, which this app does not do anywhere - so the label, the short
+// form and the blurb are checked, not just the label.
+const PUBLISHERS = /peakbagger|summitpost|mountain\s*project|country\s+highpoints|wta\b|alltrails|gaia|caltopo/i;
+for (const [key, def] of Object.entries(LIST_TAGS)) {
+  ok(`${key}: names no publisher`, !PUBLISHERS.test([def.label, def.short, def.blurb].join(" ")), def);
+}
+
 // --- feature presentation ------------------------------------------------------------------
 // A `features` value with no FEATURE_TAGS entry still renders, through routeTags own fallback
 // - a grey bullet with an EMPTY blurb. That degrades QUIETLY: the chip is on screen, so no

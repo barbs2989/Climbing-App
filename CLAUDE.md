@@ -148,6 +148,31 @@ There is no unit test suite, linter, or type checker. The `check:` scripts are w
 stands in for one, and they target the failure mode this codebase actually ships: not
 a build error, but a screen that renders wrong or not at all.
 
+**WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
+**71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
+the total when deciding where a new guard belongs.
+- **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
+  between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
+  same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
+  files, 2.0 MB of JSX). Those 14 are ~104s, **65% of the chain**, and at least **41s of it is
+  per-process overhead** that one shared runner would pay once.
+- **That is a real prize and it is NOT free to collect.** Merging 14 guards into one process means
+  merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
+  a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
+  defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
+- **The cheap version has already been taken twice**, and is what to try first on any new guard:
+  `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors instead
+  of twice, and `check:overlay-absence` was kept out of the build chain entirely (a CI job instead)
+  once its ~10s proved to be almost all Babel.
+- **Measure it with `scripts/oneoff/measure-build-gate-cost.mjs`, on a quiet machine.** The number
+  above is CPU-ish rather than wall clock deliberately: this box routinely runs several sessions at
+  once, and a wall-clock profile taken at load average ~450 was off by 4x — recorded under
+  `check:waypoint-placement`, where it also blamed the wrong two suspects.
+- **Not every expensive guard is wasteful.** `check:flex-scroll` costs 7.4s with no Babel parse at
+  all: it resolves real JSX ancestry through `scripts/lib/jsx-ancestors.mjs`, because a fixed
+  character window missed 28 of 50 panes. Cost bought coverage there. Read what a guard is doing
+  before treating its position in this list as a defect.
+
 - **`check:refs`** parses with Babel and fails on any identifier with no binding in
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
@@ -4156,6 +4181,18 @@ the correction knows the screen is wrong, and they have no way to report it.
     title) and is **proven non-vacuous**: restoring `nowrap` on the right-hand group reproduces the
     historical **394px** overflow and it catches it.
     `probe-route-breakdown-onscreen.mjs` prints the three shapes as read.
+  - **THE ROWS ARE DISCLOSURES, so the state is `aria-expanded` and the NAME does not repeat it.**
+    The stage row's old ▸ carried the attribute and lost it when the whole row became the control
+    — a regression rather than a gap — while the pitch row had spelled `", collapsed"` into its own
+    `aria-label` instead, which announces the state to a screen reader and to nothing else: no
+    automation, and no user agent that offers *expand* as an action. This file already states the
+    convention on `TagChip` (*"`aria-expanded` rather than `aria-pressed`: this is a disclosure,
+    not a toggle that changes anything"*); it simply had not been applied here. With both, a reader
+    hears "collapsed" twice, so the attribute carries it and the name says only what the row IS.
+    `check:selected-state` accepts `aria-expanded` and cannot see these rows anyway — `?zr=1` opens
+    `kings_hf`, whose `pitchDetail` is null. `probe-breakdown-rows-announce-expanded.mjs` is the
+    measurement, proven non-vacuous in **both** directions: dropping the attribute and re-adding
+    the words each fail it.
   - **IT TOOK `check:ui`'s PITCH-EXPAND STEP WITH IT, AND THAT STEP WAS RIGHT TO GO RED.** That
     walk found the pitch row by the text **`"▸ more"`** — a string only the old pitch row
     rendered, so once both kinds of row got the same bare `▸` the needle matched nothing and the
@@ -7816,6 +7853,27 @@ Four functions do the real work; everything else is UI around them. The code is 
 - For anything outside the DB-backed routes/areas/contributions/auth path (crews, messages, connections, vouches, logs, trip reports, etc.), "saving" means updating React state — don't reach for storage APIs unless explicitly asked to add persistence. For DB-backed data, use the existing `lib/db.js`/`lib/supabase.js` patterns (e.g. `submitContribution`) rather than writing new ad-hoc persistence.
 
 ### One-off scripts that touch Supabase
+
+**THE `--linked` GUARDS CANNOT RUN FROM A WORKTREE UNTIL YOU SYMLINK THE LINK STATE, and they
+fail in a way that reads like a broken guard rather than a missing file.** `check:function-drift`
+and `check:function-columns` shell out to `npx supabase db query --linked`, whose project ref lives
+in `supabase/.temp/` — gitignored, so a worktree does not have it. The CLI answers
+`LegacyProjectNotLinkedError: Cannot find project ref`, and the guard correctly refuses (*"cannot
+report on a database it did not reach. Not a pass."*). Fix it the way `.env` and `.env.local`
+already are:
+
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/supabase/.temp supabase/.temp
+
+That directory holds a project ref, a pooler host and component versions — no credentials; the
+access token lives in the CLI's own config. The ignore pattern is `supabase/.temp` with **no
+trailing slash** on purpose: the slashed form matches a DIRECTORY only, so the symlink showed up as
+untracked and was one `git add .` away from committing one developer's linked project. Verified
+that the slashless form still ignores the real directory in the main checkout.
+
+Both guards were run this way on 2026-09-02 and both are clean — 45 of 46 live functions match
+their newest migration (1 declared benign), and every column the 11 writing functions touch exists.
+`check:column-drift` needs no link (anon key) and also agrees: 41 tables / 480 columns, snapshot
+current.
 
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
