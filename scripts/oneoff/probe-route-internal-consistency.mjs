@@ -132,6 +132,49 @@ for (const r of rows) {
     // a phrase list is beaten by one more adjective ("not A rappel descent" defeated the existing one).
     const ZERO_RAPS = String(r.rappels ?? "").trim() === "0";
     if (DESCENT_FIELD && !ZERO_RAPS) for (const m of descentTxt.matchAll(RAP)) for (const n of [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])]) if (ok(n)) hitsP.add(n);
+    // RULE 7 -- "A DOUBLED N ... OR A SINGLE 2N" IS ONE CONFIGURATION DESCRIBED TWICE, NOT TWO ROPE
+    // OPTIONS. Both Whitehorse Mountain rows say, of the summit bergschrund, "a doubled 30 m rope (or
+    // a single 60 m rope doubled)" / "using a doubled 30 m or single 60 m rope" -- and both were
+    // reported as a shortfall against their own 30 m rappel, because 30 was read as a single rope and
+    // 30 doubled reaches 15 m. That reading is wrong. "Doubled" contrasted with "single" is the
+    // ordinary way to say TWO ROPES: two 30 m ropes joined give a 30 m rappel, and one 60 m rope
+    // doubled gives a 30 m rappel. The two configurations are equivalent, which is exactly why the
+    // sentence offers them as alternatives, and both clear the 30 m rappel. The prose is correct.
+    //
+    // I came within one edit of "repairing" it. That is the failure this repo records under half a
+    // dozen names -- a detector that flags correct work is one people learn to ignore -- so the rule
+    // is structural rather than a phrase added to a deny-list.
+    //
+    // NARROW ON PURPOSE, and the mirror case proves it has to be. "a single 30 m or doubled 60 m
+    // rope" is NOT this pattern: there the doubling applies to the LARGER rope, the single 30 m
+    // really does reach only 15 m, and it is a genuine finding. So the suppression fires only when
+    // the DOUBLED number is exactly half the SINGLE one, and only within one sentence -- two
+    // configurations discussed in separate sentences are not being offered as equivalents.
+    // AND IT MUST NOT SUPPRESS A NUMBER THE SAME TEXT ASSERTS AS A SINGLE ROPE. Measuring rule 7's
+    // reach across WA found 5 rows, and one of them -- wa_primus_peak_south_ridge -- says BOTH
+    // things in one sentence: "A single 30-60m rope is more than sufficient (a doubled 30m or single
+    // 60m easily covers 50-60 ft)". The parenthetical is the correct doubled/single pair, but the
+    // main clause independently offers a SINGLE 30 m rope, which doubled reaches 15 m = 49 ft
+    // against a stated 50-60 ft rappel. Suppressing 30 on the strength of the parenthetical would
+    // have hidden a real, if marginal, shortfall. So a number is only suppressed when the text does
+    // not also name it as a single rope -- including as the low end of a range after "single".
+    for (const sent of s.split(/(?<=[.;])\s+/)) {
+      const dbl = new Set(), sgl = new Set(), singleAsserted = new Set();
+      for (const m of sent.matchAll(/\bdoubled\s+(\d{2})\s*m\b/gi)) dbl.add(Number(m[1]));
+      // "single 60m" and "single 30-60m" both assert their number(s) as one rope
+      for (const m of sent.matchAll(/\bsingle\s+(\d{2})(?:\s*[-\u2013]\s*(\d{2}))?\s*m\b/gi)) {
+        const a = Number(m[1]), b = m[2] ? Number(m[2]) : null;
+        singleAsserted.add(a); if (b !== null) singleAsserted.add(b);
+        sgl.add(b !== null ? b : a);   // the pairing partner is the ROPE the sentence contrasts with
+      }
+      for (const d of dbl) if (sgl.has(d * 2) && !singleAsserted.has(d)) hitsR.delete(d);
+    }
+    // STATED LIMITATION, found while narrowing the rule above: Primus is preserved as a candidate
+    // and still gets NO verdict, because it states its rappel in FEET ("covers 50-60 ft") and the
+    // rappel regex only reads metres. So this probe is blind to any row whose rappel distance is
+    // imperial. Not fixed here -- a foot figure in this catalog is far more often an elevation or a
+    // pitch length than a rappel, so parsing it needs its own precision work and its own measurement.
+    // Recorded rather than left silent: a limitation nobody writes down is a limitation nobody closes.
     for (const n of hitsP) { proseRaps.add(n); if (!rapSrc.has(n)) rapSrc.set(n, []); if (!rapSrc.get(n).includes(k)) rapSrc.get(n).push(k); }
     for (const n of hitsR) {
       if (hitsP.has(n)) { ambiguous.add(n); continue; }          // a rappel distance, not a rope
