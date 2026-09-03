@@ -124,6 +124,7 @@
     "audit:waypoint-elevations": "node scripts/audit-waypoint-elevations.mjs",
     "audit:waypoint-geometry": "node scripts/audit-waypoint-geometry.mjs",
     "audit:cross-route-pins": "node scripts/audit-cross-route-pins.mjs",
+    "audit:stranded-track-vertices": "node scripts/audit-stranded-track-vertices.mjs",
     "audit:travel-bearings": "node scripts/audit-travel-bearings.mjs",
     "audit:synthetic-waypoints": "node scripts/audit-synthetic-waypoints.mjs",
     "check:no-sources": "node scripts/check-no-rendered-sources.mjs",
