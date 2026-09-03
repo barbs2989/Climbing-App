@@ -164,6 +164,31 @@ the total when deciding where a new guard belongs.
   merging 14 fail-closed contracts and 14 injection suites, and this file records what happens when
   a guard's traversal is refactored without re-running its cases — `check:dead-props` had three
   defects that each made it report a clean sweep. Recorded as a measured opportunity, not a task.
+- **MOST OF THE WALL-CLOCK WIN WAS TAKEN WITHOUT THAT REFACTOR: the guards now run CONCURRENTLY.**
+  `npm run build` calls `scripts/run-build-guards.mjs`, which reads the same `&&` chain — moved
+  verbatim to `build:guards`, so there is no second list to rot — and runs it with bounded
+  concurrency. **Nothing about any guard changes**: each still runs in its own process with its own
+  contract, its own fail-closed paths and its own injection suite. Only the orchestration moved.
+  - **Safe to parallelise, measured before it was written.** On a normal run no guard writes a
+    fixed path — all six `BASELINE` writes sit behind `--update`, which the chain never passes —
+    every temp file is pid- or `mkdtemp`-scoped, and none mutates cwd or `process.env`. **Re-check
+    that before adding a guard that writes anything.**
+  - **It reports MORE than the chain did.** `a && b && c` stops at the first failure, so a tree with
+    three broken guards showed one. The runner runs them all and lists every failure — strictly more
+    information for the same work.
+  - **The dangerous direction is a runner that passes while a guard fails**, so it fails closed four
+    ways: fewer than 20 guards parsed out of the chain, a child exiting non-zero, a child killed by
+    a SIGNAL (where `code` is null and a naive check reads it as a pass), and a child that could not
+    be spawned. Injection-tested 3/3 — one failing guard, TWO failing guards with both listed, and a
+    gutted guard list — each judged on the message as well as the exit code.
+  - `check:guard-wiring` reads **both** `build` and `build:guards`, and fails closed if the latter
+    goes missing or names fewer than 20 guards. Without that, moving the chain would have made
+    every guard read as running nowhere.
+  - Output is printed in **chain order**, not completion order, so two runs of one tree produce the
+    same log and a CI diff stays readable.
+  - What this does NOT do is remove the duplicated Babel parses; those 14 guards still each parse
+    the app. The shared-runner refactor above is still the way to collect that, and is still not
+    free.
 - **The cheap version has already been taken three times**, and is what to try first on any new
   guard: `check:waypoint-placement` went 37s → 20s by parsing each file **once** for two visitors
   instead of twice; `check:overlay-absence` was kept out of the build chain entirely (a CI job
