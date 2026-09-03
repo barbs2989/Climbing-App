@@ -19,6 +19,14 @@
 // IT STILL OVER-REPORTS and is a reading list, not a defect count -- a call on a tainted value is
 // only a defect when what it renders is a NUMBER presented as a fact. A list, a label, a control
 // or a handler is not.
+//
+// AND IT UNDER-REPORTS IN ONE KNOWN WAY, stated so the denominator is not over-trusted: taint
+// propagates through `const X = <expr>` and NOT through MUTATION of a module global. `ME.objectiveIds
+// = wishlist` is exactly that, so `compat(ME, c)` -- which scores shared objectives -- is invisible
+// here. Measured separately and it is a class of ZERO for real data: every DB-derived climber is
+// built with `objectiveIds: []` hardcoded, so the term is 0 whether or not the read failed. `ME` is
+// the one value in this app written that way, and CLAUDE.md already flags that assignment as a
+// legacy sync hack not to extend, so the blind spot is bounded -- but it is real.
 import fs from "fs";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
