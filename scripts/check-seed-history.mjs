@@ -117,6 +117,42 @@ if (authorHits.length) {
   ok("no place resolves a seed activity author by comparing against ME.name");
 }
 
+/* THIRD SHAPE: matching a connection against a seed activity AUTHOR by display name, without
+   calling ticksFor and without writing `===ME.name`. Both tests above are blind to it, and it
+   shipped on Home:
+
+       _friendFeed = ROUTES.flatMap(...).filter(x => connections.some(c => c.name === x.a.user))
+
+   `a.user` is a display name belonging to neither id space, so a DB-backed friend called
+   "Maya Chen" was shown her 11 seed climbs as their recent activity — the #735 defect on a
+   surface #735's guard could not see. Crew:Friends' FriendsFeed does the same job correctly,
+   through seedHistoryFor(f).
+
+   The rule is precise rather than a keyword sweep: a comparison whose two sides are a `.name`
+   and a seed row's `.user` is ALWAYS an identity claim, so it must carry `seedIdentity`. Nothing
+   else in this codebase compares those two fields, which is why this can be exact rather than
+   heuristic. */
+const nameVsUser = [];
+for (const f of ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]) {
+  const src = blank(fs.readFileSync(path.join(ROOT, f), "utf8"));
+  // Either order: `c.name===x.a.user` or `x.a.user===c.name`.
+  const RE = /(?:\w+(?:\.\w+)*\.name\s*===\s*\w+(?:\.\w+)*\.user|\w+(?:\.\w+)*\.user\s*===\s*\w+(?:\.\w+)*\.name)\b/g;
+  for (const m of src.matchAll(RE)) {
+    // The gate must be in the SAME expression, not merely somewhere in the file.
+    if (/seedIdentity\s*\(/.test(src.slice(m.index, m.index + 90))) continue;
+    nameVsUser.push(`${f}:${src.slice(0, m.index).split("\n").length}  ${m[0]}`);
+  }
+}
+if (!/const seedIdentity\s*=/.test(core)) {
+  fail("seedIdentity is gone from ClimbMatchCore.jsx — the shared identity gate no longer exists");
+} else ok("seedIdentity is present");
+if (nameVsUser.length) {
+  fail(`${nameVsUser.length} place(s) match a connection to a seed activity author by NAME with no identity gate. Add seedIdentity(c) to the comparison, or route it through seedHistoryFor:`);
+  for (const h of nameVsUser) console.error(`         ${h}`);
+} else {
+  ok("no place matches a seed activity author by name without seedIdentity");
+}
+
 // ---------------------------------------------------------------- render half
 const ENTRY = `
 import React from "react";
