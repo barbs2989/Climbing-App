@@ -30,6 +30,26 @@
 // top-outs ~99 ft off a ridge figure -- and tightening further would be fitting the detector to its
 // own output, which is the failure this repo records under half a dozen names. Read the pair.
 //
+// THE 34 WERE READ, 2026-09-03, and this is what they are -- recorded because I started to
+// re-derive the paragraph above rather than reading it. Three explicable classes:
+//   - THE PIN NAMES A POINT THE ROUTE PASSES THROUGH, not one it ends at: "Lexington Tower
+//     notch", "Der Dihedral base area", "The Tooth summit (traverse start point)".
+//   - THE ROW IS A TRAVERSE -- and the MECHANISM is what the note above does not say.
+//     wa_tooth_chair_traverse pins The Tooth (5,606) against a high_point_ft of Chair Peak's
+//     6,238; both are right. The `su.length !== 1` filter reports ZERO traverses skipped on a
+//     full run, because a traverse row typically pins only ONE of its summits -- so there is no
+//     second summit pin for that filter to detect, and the class it exists to exclude walks
+//     straight past it. CLAUDE.md: traverses belong to no single peak.
+//   - THE PIN NAMES THE FORMATION CLIMBED and the AREA *is* that formation ("Ed Wood Memorial
+//     Buttress"), so the identity test above passes and the comparison is still weak.
+//
+// A SUBFEATURE DENY-LIST WAS CONSIDERED AND REJECTED, which is worth naming because the next
+// session will reach for the same rule. The camp solver's test -- a structure noun the matched
+// feature lacks means a DIFFERENT place standing near it -- does NOT transfer here: a route
+// that ENDS at a top-out or a notch has that point as its high point, so the disagreement is
+// real. Suppressing "top-out" would have silenced wa_moss_out_for_harambe and wa_ez_way, where
+// the pin sits 54-99 ft ABOVE the stated high_point_ft and one of the two is simply wrong.
+//
 // IT FOUND A FOLLOW-ON FROM ITS OWN FOUNDING REPAIR, which is the best evidence it is measuring
 // something real: wa_castle_peak_tatoosh_southeast_face pins The Castle's summit at 6,640 ft, while
 // the sibling row repaired above had 6,460 and the column says 6,440. THREE elevations for one
