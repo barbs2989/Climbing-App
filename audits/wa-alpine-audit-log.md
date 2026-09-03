@@ -12391,3 +12391,92 @@ research relied on WebSearch synthesis.
 
 Next batch continues from `wa_big_four_mountain_spindrift_couloir` onward
 alphabetically (pass 4).
+
+
+## Batch 180 (2026-09-03, pass 4)
+
+Eight routes across four peaks: West Face / West Route (Big Kangaroo); East Ridge
+(Hardscrabble) Route, North Slope (Dingford) Route (Big Snow Mountain); East Buttress,
+Northeast Ridge (Black Peak); Mary Green Glacier (Standard Route), North Ridge, Northeast
+Buttress (Bonanza Peak). (`wa_blue_s_buttress` on Poster Peak was skipped — that area is
+`area_type: crag`, out of scope.)
+
+**No confirmed errors / no SQL fixes this batch** — two items below are flagged for human
+review rather than fixed, since neither could be resolved to a single confident correction.
+
+**Confirmed correct, no fix needed:**
+- `wa_big_kangaroo_west_face` — Big Kangaroo's elevation (8,326 ft) and coordinates
+  (48.519416, -120.617505 vs. Wikipedia's 48.519243, -120.6175) both confirmed almost exactly.
+  FA ("Fred Beckey, Helmy Beckey, and Walt Varney, June 21, 1942") confirmed exactly, including
+  that the West Face is specifically documented as the original 1942 line up the peak, and the
+  descent's "single old, rusty 1/4-inch bolt" on the summit slab matches independent
+  descriptions of the peak's signature unprotected 5.6 finish.
+- `wa_big_snow_mountain_east_ridge_hardscrabble_route` /
+  `wa_big_snow_mountain_north_slope_dingford_route` — Big Snow Mountain's elevation (6,680 ft)
+  confirmed. Myrtle Lake waypoint (3,781 ft stored) matches Wikipedia's 3,777 ft almost exactly,
+  corroborating the whole waypoint chain. Dingford Creek Trailhead's stored 1,400 ft is within
+  normal cross-source variance (one source says ~1,500 ft; no strong consensus figure found) and
+  not treated as an error. Both routes' `gain_ft` (5,300 and 5,280) sit at or just above the
+  trailhead-to-summit floor (5,280 ft) — no gain-floor violation. The Hardscrabble route's
+  `dist_km` (20.1, i.e. ~40 km / ~25 mi round trip) is internally consistent with its own
+  `hazards` note about "roughly a 25-mile round trip due to the Dingford Creek gate."
+- `wa_black_peak_northeast_ridge` — FA ("Roger Jackson and Michael Kennedy, September 1, 1973")
+  confirmed exactly via canyoneeringusa.com. Black Peak's elevation (8,970 ft) is one of two
+  commonly-cited figures (8,970 vs. 8,975 ft NAVD88), a 5 ft cross-datum variance not treated as
+  an error, consistent with how this audit has handled similar small elevation splits before.
+  Rainy Pass/Lake Ann trailhead (4,855 ft stored) confirmed exactly. `gain_ft` (4,130) sits just
+  above the trailhead-to-summit floor (4,115 ft) — no violation.
+- `wa_black_peak_east_buttress` — sparse row (grade/pitches/gain/FA all null), but the populated
+  fields (elevation 8,970 ft, trailhead, road/access) are shared with and consistent with its
+  sibling Northeast Ridge route above; sparseness alone isn't an error.
+- `wa_bonanza_peak_northeast_buttress` — FA ("Kurt Buchwald, Peter Avolio, and Martin Volken,
+  August 21-22, 2004, as the opening leg of the first three-summit ridge traverse") confirmed
+  exactly via an AAC Publications listing, including that the traverse approached via the Mary
+  Green Glacier before climbing this buttress to the main summit.
+- All three Bonanza Peak routes' `road`/`access` fields describing the FR 8301 / Holden Village
+  closure (Dec 10-11, 2025 flood/landslide, USFS closure order #06-17-05-26-04, effective Jan
+  28, 2026 through Dec 31, 2027, ~$20M repair estimate, boat shuttle also suspended) were
+  cross-checked against multiple independent 2026 news sources (NWPB, Spokesman-Review, KHQ) and
+  confirmed accurate down to the order number and dates — an unusually specific and verifiable
+  claim that checks out in full.
+
+**Flagged for human review (not fixed):**
+1. `wa_bonanza_peak_mary_green_glacier` — the `fa` field credits the 1937 Ijames/James/Leuthold
+   Mazamas ascent to this route specifically ("this easiest line is widely regarded as the
+   original route"). Independent search results on the 1937 first ascent consistently describe
+   the approach as being via **Company Glacier**, not Mary Green Glacier (the two are distinct,
+   separately-named glaciers on the peak). It's possible the historical account uses "Company
+   Glacier" loosely for the lower approach basin that today's Mary Green Glacier route also
+   crosses, but nothing found here confirms that overlap, and no source explicitly states the
+   1937 party climbed via Mary Green Glacier. The climbers' names/date themselves are correct
+   (confirmed "Curtis Ijames" is the right spelling — he authored the original 1937 Mazama
+   Annual writeup — not a data-entry error). Left unfixed because rewriting the route-attribution
+   claim in `fa` without primary-source access (mountaineers.org, summitpost.org, Wikipedia,
+   AAC publications were all blocked by network egress) risks introducing a different error;
+   flagging for a human with access to those sources to confirm which glacier the 1937 route
+   actually followed.
+2. `wa_bonanza_peak_north_ridge` — internal inconsistency: `grade` is stored as "Class 2"
+   (grade_system: class), but the same row's own `gear` array includes "light rock rack for
+   class 4 rock," and multiple independent sources describe Bonanza Peak's ridge routes in
+   general as sustained Class 3-4 with sections that can go to low 5th ("no easy route to the
+   top"). No source was found describing a "North Ridge" route on Bonanza by that specific name
+   as a genuinely separate, easier (Class 2) line — search results only discuss the Mary Green
+   Glacier standard route and a "northeast ridge" both rated Class 3-4. Left unfixed because it's
+   unclear whether the correct grade is Class 3, Class 4, or something else, and guessing a
+   specific replacement value isn't warranted by what could be confirmed.
+
+Area hierarchy spot-checked for all four peaks (Big Kangaroo under Kangaroo Ridge/Washington
+Pass corridor; Big Snow Mountain under Western Alpine Lakes; Black Peak under the Washington
+Pass corridor; Bonanza Peak under the Chiwawa/Entiat region) — all correctly filed, and each
+area's own lat/lng/elevation_ft is consistent with its routes' waypoints. One internal
+inconsistency noted rather than fixed: `areas.elevation_ft` for Bonanza Peak is 9,516 ft while
+all three of its routes store `high_point_ft` 9,511 ft — both are legitimate, independently
+attested figures (9,511 ft is the older/classic-literature figure, 9,516 ft the modern
+LIDAR-era figure used by current Wikipedia/PeakVisor/AllTrails), so this wasn't treated as an
+error needing a fix, just noted for awareness.
+
+WebFetch was blocked for every route-database/guidebook/encyclopedia domain attempted this batch
+(en.wikipedia.org, summitpost.org, mountaineers.org) — consistent with every recent batch's
+note; all research relied on WebSearch synthesis.
+
+Next batch continues from `wa_bonanza_peak_northeast_buttress` onward alphabetically (pass 4).

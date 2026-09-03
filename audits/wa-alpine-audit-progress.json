@@ -1,8 +1,8 @@
 {
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_big_four_mountain_spindrift_couloir",
+    "last_processed_id": "wa_bonanza_peak_northeast_buttress",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -80,7 +80,7 @@
             "flagged_for_human_review": 15,
             "clean": 0,
             "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
         },
         {
             "batch_number": 5,
@@ -3319,7 +3319,7 @@
             "flagged_for_human_review": 0,
             "clean": 2,
             "sql_file": "audits/sql/2026-08-27-batch-158.sql",
-            "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review \u2014 both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed \u2014 the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
+            "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review — both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed — the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
         },
         {
             "batch_number": 159,
@@ -3338,7 +3338,7 @@
             "flagged_for_human_review": 2,
             "clean": 4,
             "sql_file": "audits/sql/2026-08-27-batch-159.sql",
-            "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) \u2014 could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
+            "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) — could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
         },
         {
             "batch_number": 160,
@@ -3728,6 +3728,25 @@
             "clean": 3,
             "sql_file": "audits/sql/2026-09-03-batch-179.sql",
             "note": "wa_baring_mountain_northwest_ridge: trailhead coordinate corrected to the externally-confirmed Barclay Lake Trailhead location (matched by this batch's sibling route wa_baring_mountain_r1, off by ~500m before the fix). wa_beckey_davis: self-contradictory trailhead waypoint note ('alternate access only' vs 'standard/preferred access' about the same named trailhead in the same sentence) rewritten to match the row's own approach text, no external research needed. wa_beyond_redlining: fa date corrected May->July 2020 (contradicted this row's own overview field and external AAC sourcing confirming the first free ascent was July 11, 2020) and high_point_ft filled from 5,280 (was null; this row's own text states it shares a summit with sibling route wa_mile_high_club, which already stores that value). wa_big_four_mountain_northwest_ridge and wa_big_four_mountain_spindrift_couloir: shared trailhead elevation (1,640 ft) corrected to the externally-confirmed 1,750 ft for Big Four Picnic Area/Ice Caves Trailhead, which also resolves a gain_ft floor violation on both rows without needing to touch gain_ft itself; two more sibling routes on the same peak not in this batch (wa_big_four_mountain_tower_route, wa_big_four_mountain_dry_creek_route) carry the identical stale trailhead value and will need the same fix in a future pass. Clean: wa_baring_mountain_r1, wa_bear_mountain_chilliwack_north_buttress, wa_beckey_tate (elevations, FA credits and dates all externally corroborated; wa_bear_mountain_chilliwack_north_buttress's gain_ft (5,950) sits well above the simple trailhead-to-summit floor (4,831) despite the multi-day approach's real up-and-down profile summing higher -- treated as the same high-camp/multi-day scoping convention already documented for wa_austera_peak in batch 178, not flagged further). WebFetch was blocked for every route-database/guidebook domain attempted this batch (en.wikipedia.org, publications.americanalpineclub.org, cascadeclimbers.com); all research relied on WebSearch synthesis."
+        },
+        {
+            "batch_number": 180,
+            "date": "2026-09-03",
+            "route_ids": [
+                "wa_big_kangaroo_west_face",
+                "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+                "wa_big_snow_mountain_north_slope_dingford_route",
+                "wa_black_peak_east_buttress",
+                "wa_black_peak_northeast_ridge",
+                "wa_bonanza_peak_mary_green_glacier",
+                "wa_bonanza_peak_north_ridge",
+                "wa_bonanza_peak_northeast_buttress"
+            ],
+            "confirmed_errors_fixed": 0,
+            "flagged_for_human_review": 2,
+            "clean": 6,
+            "sql_file": null,
+            "note": "No confirmed/fixable errors this batch. Flagged for human review: wa_bonanza_peak_mary_green_glacier's fa field attributes the 1937 first ascent to this route ('widely regarded as the original route'), but independent sources describe the 1937 approach as via Company Glacier, not Mary Green Glacier -- left unfixed pending primary-source access (all blocked). wa_bonanza_peak_north_ridge stores grade='Class 2' while its own gear array lists 'light rock rack for class 4 rock' and external sources describe Bonanza's ridge routes generally as sustained Class 3-4 -- left unfixed since no source confirms a specific correct replacement grade. Clean (6): wa_big_kangaroo_west_face (elevation, coordinates, FA all confirmed exactly), wa_big_snow_mountain_east_ridge_hardscrabble_route and wa_big_snow_mountain_north_slope_dingford_route (elevation, Myrtle Lake waypoint within 4ft of Wikipedia, gain_ft floors satisfied, dist_km internally consistent with hazards note), wa_black_peak_east_buttress and wa_black_peak_northeast_ridge (FA confirmed exactly via canyoneeringusa.com, elevation/trailhead/gain_ft all consistent), wa_bonanza_peak_northeast_buttress (FA confirmed exactly via AAC Publications). All three Bonanza routes' road/access fields describing the Dec 2025 FR 8301/Holden Village flood closure (order #06-17-05-26-04, effective through Dec 31 2027) were verified accurate down to the order number and dates against multiple 2026 news sources. Noted but not fixed: areas.elevation_ft for Bonanza Peak (9,516) disagrees with all three of its routes' high_point_ft (9,511) -- both are legitimate, independently attested figures (older vs. modern survey), not treated as an error. WebFetch was blocked for every route-database/guidebook/encyclopedia domain attempted (en.wikipedia.org, summitpost.org, mountaineers.org); all research relied on WebSearch synthesis."
         }
     ]
 }
