@@ -27,6 +27,7 @@ npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (
 npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
+npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
 npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
 npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
@@ -1008,6 +1009,24 @@ the total when deciding where a new guard belongs.
     segment after `/rest/v1/`, **never as a substring**: PostgREST names EMBEDDED tables in the
     query string (`select=*,crew_members(*)`), so a substring test fails requests aimed elsewhere.
     It isolates a **table, not a hook** — several hooks reading one table fail together.
+  - **#1467 EXPLAINED A CI/LOCAL DISAGREEMENT WITH A REASON THAT IS FALSE, and the correction
+    matters more than the original claim.** A blanket local run failed `Profile — the outage
+    introduced ["0 logged"]` while the same commit passed all 16 checks in CI, and that commit
+    message attributed it to the durable CI fixture having no logged climb — so "0 logged" would
+    appear in BOTH runs and rule 2 would have nothing *introduced* to report. **It has one.**
+    Measured with the service key (`scripts/oneoff/probe-durable-fixture-has-a-log.mjs`, read-only,
+    because an anon count on an RLS-protected table returns 0 with a 200 whatever the table holds):
+    `climb_logs` holds exactly one row, owned by **CI Fixture Owner**, on
+    `wa_mount_baker_north_ridge`, noted *"CI fixture log."* — inserted by
+    `seed-ci-test-fixture.mjs`, which has done so all along.
+    - **So the disagreement is REAL and its cause is UNKNOWN.** Recording it that way is the point:
+      a plausible mechanism that has not been measured is a hypothesis, and this file already
+      records three of those shipping as facts. The likeliest remaining candidate is the settle —
+      `isError` is false while react-query retries, and this entry already documents the healthy
+      capture racing a read — but nothing has measured it, so nothing here claims it.
+    - **The lesson is about WHERE the claim was made.** It was written into a commit message, which
+      is the one place this repo cannot edit afterwards without a force-push. A causal claim about
+      CI belongs where it can be corrected; the correction lives here because the commit cannot.
   - Two fixture modes, exactly as `check:signed-in`: per-run accounts on the **service key**
     locally, two **durable** accounts on the **anon key** in CI. That rule is why this could not
     be lifted out of `scripts/oneoff/` unchanged — it called `createFixture` unconditionally.
