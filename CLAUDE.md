@@ -3970,6 +3970,93 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested 5/5. It found **9 unswept rows** when written, five reachable with a real
     profile — including `ConnectModal`'s own subtitle, which read "undefined · Bellingham, WA"
     on the sheet that asks you to connect.
+- **`check:trust-breakdown`** asserts that the factors under WHAT FEEDS YOUR SCORE add up to the
+  number above them. Static (SSR of the real panel + a read of the migration), so it sits in
+  `npm run build`.
+  - **IT USED TO ASSERT AGAINST A SCORE THE SCREEN NO LONGER SHOWS, and that is the change.** One
+    climber had **two** trust scores: `FullProfile` reads
+    `climber._real ? realTrust : vScore(climber)`, `_real` is set only for a **uuid** id, and
+    **`ME.id` is 0 signed in or out** — so your own Profile and your own *"View public profile"*
+    rendered the **client** model while every other climber looking at you got the **server** one.
+    Measured gap up to **36 points** on a 0-99 scale: a verified account with 5 vouches and 20
+    climbs read **50** to itself and **14** to everyone else.
+  - **They were never two implementations of one formula, which is why "just swap the headline" is
+    wrong.** The client model scores email · reliability · response rate · vouches (4 each) ·
+    catches · logs, normalised to sum to 99; the server model (`0038`) scores email 5 · id 10 ·
+    certs 10 · **tenure 20** · vouches 20 (**1** each) · logs 15 (1 per 5) · reports 14 (1 per 3) ·
+    catches 10, raw and capped. **Tenure** and **condition reports** exist only server-side;
+    **reliability** and **response rate** only client-side. Swapping the headline alone would have
+    left an itemisation of six factors under a number derived from eight different ones — and this
+    guard would have stayed green, because it compared the breakdown against `vScore` rather than
+    against what the screen renders.
+  - **THE SERVER MAXIMA TOTAL 104 AGAINST A CAP OF 99**, so a factor list that sums past the
+    headline is correct rather than a defect. The panel says so instead of hiding it; a breakdown
+    quietly rescaled to hit 99 would be the [[trust-breakdown-shows-a-different-scale-from-its-headline]]
+    defect committed in the other direction.
+  - **TWO DEFENCES AGAINST THE TRANSCRIPTION DRIFTING, because `serverTrustFactors` is a JS copy of
+    plpgsql and this file records the four-grade-parsers shape four times over.** Build-time,
+    **section 3 reads the weights out of `0038` itself** — every rate, divisor and cap is parsed
+    from the migration, so nothing is written down twice and a re-weight in SQL fails the build.
+    Run-time, the app compares its local total against the number the server actually returned and
+    **withholds the itemisation** when they disagree, showing the server number alone. *A breakdown
+    that does not add up to its own headline is worse than no breakdown.*
+  - **THE FIRST VERSION OF SECTION 3 WAS BLIND TO TWO REAL DRIFTS AND ONLY INJECTION SAID SO.** It
+    asserted that one unit of input scores one point — which cannot see a wrong **rate** (one catch
+    at 3 points still caps at 10) nor a wrong **divisor** (`floor(5/4)` is 1 exactly as `floor(5/5)`
+    is). It probes **21 values per factor** now, spanning either side of the parameter and past the
+    cap: *probe the whole curve, never one point on it.*
+  - **AND THE HARNESS CREDITED CATCHES IT HAD NOT MADE.** It tested `/SERVER MODEL/` against the
+    whole output — which matches the **`ok SERVER MODEL: …`** lines too, so it scored any run that
+    merely *reached* section 3, and filed a section-4 failure as a section-3 catch. Each case
+    declares the text its **own** failure must carry now, matched against `FAIL` lines; that
+    immediately exposed one case being credited on the wrong message.
+  - **Section 4 proves the rows REACH THE MARKUP**, which no number can: the panel takes them
+    through `TrustBreakdown`'s `rows` prop, and a merge dropping that prop falls back to
+    `trustContributions(climber)` **silently** — the client model rendering under a server headline,
+    i.e. this whole defect restored without touching a value. It keys on *"Time on ClimbMatch"*,
+    a factor the client model has no equivalent of, so a fall-through cannot satisfy it.
+  - **The eight inputs are counted off the RAW query rows, not the hydrated `logs`**, and that is
+    not tidiness: the hydration defaults a null `trip_report_visibility` to `"public"` while the
+    SQL's `in ('public','crew')` does **not** match a null. Counting the hydrated list would
+    disagree with the server on precisely the rows nobody set a visibility on — and the runtime
+    check would then withhold the breakdown for a reason that is the reader's fault.
+  - **`VOUCH_BOOST` reaching no screen is NOT a regression and was checked rather than assumed.**
+    That session supplement gives immediate feedback when you vouch for someone; a real climber's
+    headline is the server score, which counts vouches at 1 point each, so the number is right on
+    the next fetch and there is no double-count.
+  - Fails **closed**: a missing export, a factor count that does not match the migration's, an
+    account with no inputs that already scores (which would hide a constant inside a rate), or a
+    panel rendering under 200 characters are each a broken guard rather than a clean one.
+  - **IT LANDED ON TOP OF #1539, WHICH CAVEATS THE SAME CARD, AND THE TWO NEEDED RECONCILING RATHER
+    THAN STACKING.** That change reads three flags — `logsUnavailable`, `catchesUnavailable`,
+    `vouchesInUnavailable` — and says *"Some of what feeds this couldn't load, so your score is
+    showing lower than it is"*, because a failed read does not blank the client score, it silently
+    **lowers** it (measured there: an established account reads 88 healthy against 32 with all three
+    down). Those three reads feed the **client** model. Once the headline is the number the server
+    computed, **they do not feed it** — so leaving the caveat on every account would put a false
+    warning over a number that is right, and this file records in half a dozen places that a false
+    warning is how a real one stops being read. `_trustUnsure` adds *"and the fallback is what is
+    showing"*: `_trustPartial && myServerTrust == null`. The caveat and the withheld *"Raise it
+    with"* prompt both key on it, and the probe asserts the **derivation** as well as the two uses —
+    a merge keeping the uses and dropping the definition would put the caveat back everywhere.
+  - **`trustGapLabels` takes a `server` flag for one reason worth stating**: the server model counts
+    **logged climbs and condition reports off the ONE `climb_logs` read**, so a failed logs read
+    takes both rows; in the client model *"Conditions reported"* is a separate, untracked input, and
+    marking it *"Couldn't load"* there would be a false statement about a row that reads *"Not yet
+    tracked"*. Same flag, two models, two correct answers.
+  - **THE GROUP-JOIN GATE IS DELIBERATELY LEFT ON THE CLIENT SCORE, and that is a decision rather
+    than an oversight.** `groupTrustShortfall(cl, meLive)` refuses a *"Trust 55+ only"* group off
+    `vScore`, so a climber the group sees at server-14 can still join. Switching it would be
+    correct-looking and is **not polish**: the server model is the stricter of the two (1 point a
+    vouch against 4), so it changes **who can join groups** — locking out climbers the app admits
+    today. That is the group owners' call, not a display fix's. Recorded in
+    [[two-trust-scores-client-and-server]] as the remaining axis.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. The cases drift
+    the two sides in **both** directions on purpose — a comparison that only ever read the JS would
+    pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
+    SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
+    reading those would fail on the file explaining itself.
 - **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
   resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
   other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does

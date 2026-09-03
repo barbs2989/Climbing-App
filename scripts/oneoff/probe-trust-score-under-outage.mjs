@@ -134,10 +134,19 @@ for (const [key, lbl, sub] of [["logs", "Logged climbs", "0 recorded"],
 console.log("\nSECTION 3 — App still wires it (source)");
 const app = fs.readFileSync("ClimbMatch.jsx", "utf8");
 for (const [needle, why] of [
-  ["<TrustBreakdown climber={meLive} failed={_trustGaps}/>", "the breakdown is told which reads failed"],
+  ["<TrustBreakdown climber={meLive} rows={myTrustRows||undefined} failed={_trustGaps}/>", "the breakdown is told which reads failed"],
   ["const _trustGaps={logs:logsUnavailable,catches:catchesUnavailable,vouches:vouchesInUnavailable}", "the gap map is built from all three flags"],
   ["so your score is showing lower than it is", "the headline caveat"],
-  ["{(!_trustPartial&&vScore(meLive)<90)?", "the Raise-it-with prompt is withheld while an input is missing"],
+  // THE CAVEAT IS GATED ON WHICH NUMBER IS ON SCREEN, NOT ON WHETHER A READ FAILED. Once the
+  // headline is the score the SERVER computed, these three client-side reads do not feed it, so
+  // saying "your score is showing lower than it is" would be a false warning about a number that
+  // is right -- and a false warning is how a real one stops being read. Both the caveat and the
+  // withheld prompt therefore key on _trustUnsure, which adds "and the fallback is what is
+  // showing" to _trustPartial. Asserting the derivation as well as the two uses, because a merge
+  // that keeps the uses and drops the definition would put the caveat back on every account.
+  ["const _trustUnsure=_trustPartial&&myServerTrust==null;", "the caveat is gated on the LOCAL number being the one on screen"],
+  ["{(!_trustUnsure&&myTrustScore<90)?", "the Raise-it-with prompt is withheld while an input is missing"],
+  ["{_trustUnsure?<div", "the headline caveat fires on the fallback score, not on the server one"],
 ]) {
   const n = app.split(needle).length - 1;
   if (n === 1) ok(why);

@@ -1786,9 +1786,56 @@ function mutualLabel(id,myIds){var n=mutualCount(id,myIds);return n?(n+" mutual 
 function mutualFirstNames(id,myIds){return mutualIds(id,myIds).map(function(f){var c=CLIMBERS.find(function(x){return x.id===f;});return c?c.name.split(" ")[0]:null;}).filter(Boolean);}
 function gdisc(cl){return (cl.disciplines&&cl.disciplines.length)?cl.disciplines:(cl.kind?[cl.kind]:[]);}
 function gdlabel(cl){var d=gdisc(cl);return d.length<=2?d.join(" · "):d.slice(0,2).join(" · ")+" +"+(d.length-2);}
+/* THE SERVER TRUST MODEL, TRANSCRIBED FROM `compute_trust_score` (migration 0038).
+   WHY A SECOND MODEL EXISTS AT ALL: your own Profile used to render the CLIENT score (`vScore`)
+   while every other climber looking at you got the SERVER one, because `_real` is set only for a
+   uuid id and `ME.id` is 0 signed in or out. Two models, different factors, a measured gap of up
+   to 36 points on a 0-99 scale. One climber now has ONE score: the server's, which is the one
+   other people see and the one the database actually stores.
+   THE PANEL HAD TO MOVE WITH THE NUMBER. WHAT FEEDS YOUR SCORE is built on `trustFactors`, so
+   swapping the headline alone would leave a breakdown that silently contradicts it -- and
+   `check:trust-breakdown` could not have caught that, since it asserts the breakdown against
+   `vScore` rather than against whatever the headline renders.
+   THE RPC RETURNS ONE NUMBER AND NO BREAKDOWN, so the factors are recomputed here from inputs the
+   app already holds. That is a SECOND IMPLEMENTATION of a formula, which this repo has been burned
+   by four times (four grade parsers). Two defences, and they are different in kind:
+     - `check:trust-breakdown` reads the constants out of 0038 and asserts these match, so a
+       migration that re-weights the model fails the build rather than drifting silently;
+     - at RENDER TIME the total below is compared against the number the server actually returned,
+       and the itemisation is withheld unless they agree. The app detects its own drift.
+   RAW SUM, NOT A PERCENTAGE. Unlike `trustFactors` there is no apportionment: the server adds
+   points and caps the result, so a factor's points ARE its share. The parts total at most 104
+   against a cap of 99, so the panel states the cap rather than quietly rescaling -- factors that
+   do not add up to the headline is the exact defect check:trust-breakdown exists for. */
+export function serverTrustFactors(x){
+  x=x||{};
+  var certs=Math.max(0,x.certCount||0),ten=Math.max(0,Math.floor((x.tenureDays||0)/30)),v=Math.max(0,x.vouches||0);
+  var lg=Math.max(0,x.logs||0),rp=Math.max(0,x.reports||0),ct=Math.max(0,x.catches||0);
+  return [
+    {label:"Email verified",sub:x.emailVerified?"confirmed via account email":"not verified \u2014 the quickest 5 points",pts:x.emailVerified?5:0,max:5,met:!!x.emailVerified},
+    {label:"ID verified",sub:x.idVerified?"government ID confirmed":"not verified \u2014 worth 10",pts:x.idVerified?10:0,max:10,met:!!x.idVerified},
+    {label:"Certifications",sub:certs+" club or guide credential"+(certs===1?"":"s")+" on file \u00b7 5 each",pts:Math.min(certs*5,10),max:10,met:certs>0},
+    {label:"Time on ClimbMatch",sub:ten+" month"+(ten===1?"":"s")+" \u00b7 1 point a month",pts:Math.min(ten,20),max:20,met:ten>0},
+    {label:"Peer vouches",sub:v+" received \u00b7 1 point each",pts:Math.min(v,20),max:20,met:v>0},
+    {label:"Logged climbs",sub:lg+" recorded \u00b7 1 point per 5",pts:Math.min(Math.floor(lg/5),15),max:15,met:lg>=5},
+    {label:"Conditions reported",sub:rp+" trip report"+(rp===1?"":"s")+" shared \u00b7 1 point per 3",pts:Math.min(Math.floor(rp/3),14),max:14,met:rp>0},
+    {label:"Verified belay catches",sub:ct+" logged \u00b7 2 points each",pts:Math.min(ct*2,10),max:10,met:ct>0},
+  ];
+}
+/* The raw total BEFORE the cap. Kept separate from the capped score so the panel can say which of
+   the two it is showing; collapsing them is how a breakdown stops adding up to its own headline. */
+export function serverTrustRaw(x){return serverTrustFactors(x).reduce(function(s,f){return s+f.pts;},0);}
+export var SERVER_TRUST_CAP=99;
+export function serverTrustScore(x){return Math.min(serverTrustRaw(x),SERVER_TRUST_CAP);}
 function trustFactors(c){var cl=c.catchLedger||{};var v=(c.communityVouches||0)+(VOUCH_BOOST[c.id]||0);var certs=(c.certifications||[]).length;var rl=c.routesLogged||0;var catchPts=Math.round(Math.min(cl.totalCatches||0,14)+Math.min((cl.highFactorCatches||0)*1.5,6));var lastM=cl.lastCatch?(Date.now()-new Date(cl.lastCatch+"T12:00:00").getTime())/(86400000*30.4):99;var recLbl=!cl.lastCatch?"none logged":lastM<2?"this month":lastM<12?Math.round(lastM)+" mo ago":(lastM/12).toFixed(lastM<24?1:0)+" yr ago";var isMe=c.id===0;var _rel=c.reliability!=null?c.reliability:null;var _rr=RESPONSE_RATES[c.id];var _resp=c.responseRate!=null?c.responseRate:_rr;var _pn=c.partnerCount!=null?c.partnerCount:null;var _fp=c.floatPlans!=null?c.floatPlans:null;var _cr=c.conditionsReported!=null?c.conditionsReported:null;var _yr=c.years!=null?c.years:null;return [{label:"Email verified",sub:c.verified?"confirmed via account email":"not verified — the single biggest boost",pts:c.verified?20:0,max:20,met:!!c.verified},{label:"Reliability",sub:_rel!=null?(_rel+"% of confirmed crews honored — no-shows hurt this"):"Not yet tracked",pts:_rel!=null?Math.round(_rel/100*18):0,max:_rel!=null?18:0,met:_rel!=null&&_rel>=85},{label:"Response rate",sub:_resp!=null?(_resp+"% — replies to partner & crew requests"):"Not yet tracked",pts:_resp!=null?Math.round(_resp/100*10):0,max:_resp!=null?10:0,met:_resp!=null&&_resp>=80},{label:"Peer vouches",sub:v+" received · weighted by each voucher’s trust",pts:Math.min(v*4,22),max:22,met:v>0},{label:"Verified belay catches",sub:(cl.totalCatches||0)+" total · "+(cl.highFactorCatches||0)+" high-factor"+(cl.lastCatch?" · last "+recLbl:""),pts:catchPts,max:20,met:(cl.totalCatches||0)>0},{label:"Logged climbs",sub:rl+" recorded",pts:Math.min(Math.floor(rl/5),16),max:16,met:rl>=12},{label:"Partner network",sub:_pn!=null?(_pn+" distinct partner"+(_pn===1?"":"s")+" climbed with"):"Not yet tracked",pts:_pn!=null?Math.min(Math.floor(_pn/3),12):0,max:_pn!=null?12:0,met:_pn!=null&&_pn>=8},{label:"Conditions reported",sub:_cr!=null?(_cr+" trip report"+(_cr===1?"":"s")+" shared with the community"):"Not yet tracked",pts:_cr!=null?Math.min(Math.floor(_cr/2),10):0,max:_cr!=null?10:0,met:_cr!=null&&_cr>0},{label:"Float plans filed",sub:_fp!=null?(_fp+" filed before heading out"):"Not yet tracked",pts:_fp!=null?Math.min(_fp*2,8):0,max:_fp!=null?8:0,met:_fp!=null&&_fp>0},{label:"Experience",sub:_yr!=null?(_yr+" yr climbing"):"Not yet tracked",pts:_yr!=null?Math.min(Math.round(_yr*1.6),14):0,max:_yr!=null?14:0,met:_yr!=null&&_yr>=3},{label:"Certifications",sub:certs+" on file",pts:Math.min(certs*3,10),max:10,met:certs>0}];}
-function trustGapLabels(g){/* Which trustFactors rows are fed by a read that FAILED. Kept beside trustFactors because those labels are string literals there; a copy in ClimbMatch.jsx would be a hand-copy across a 400kB file boundary, and probe-trust-score-under-outage.mjs asserts every label here still matches a real factor. */if(!g)return [];var o=[];if(g.logs)o.push("Logged climbs");if(g.catches)o.push("Verified belay catches");if(g.vouches)o.push("Peer vouches");return o;}
-function TrustBreakdown({climber,failed}){var _gap=trustGapLabels(failed);return <div>{trustContributions(climber).map(function(f){var w=Math.round(f.pts/f.max*100);var _out=_gap.indexOf(f.label)>=0;return <div key={f.label} style={{display:"flex",alignItems:"center",gap:9,padding:"5px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.text,fontWeight:600}}>{f.label}</div><div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.3}}>{_out?"Couldn’t load — not counted in the score right now":f.sub}</div></div><div style={{width:54,height:5,borderRadius:3,background:C.surface,overflow:"hidden",flexShrink:0}}><div style={{height:"100%",width:w+"%",background:f.met?C.green:C.borderLight}}/></div><span style={{fontSize:12,fontWeight:800,color:f.met?C.green:C.textMuted,width:30,textAlign:"right",flexShrink:0}}>{"+"+f.share}</span></div>;})}</div>;}
+/* TWO CALLERS, TWO THINGS THEY NEED TO SAY, AND ONE RENDERER. `rows` lets a caller supply an
+   ALREADY-APPORTIONED breakdown -- the Profile passes the SERVER model's factors, whose points ARE
+   their share because that model is a raw sum rather than a percentage. `failed` marks a row whose
+   read did not load, so it says so instead of reporting the climber's own record as 0. A second
+   copy of this markup is how the panel and its numbers drift apart, which is the defect
+   check:trust-breakdown section 2 exists for. */
+function trustGapLabels(g,server){/* Which factor rows are fed by a read that FAILED. Kept beside trustFactors because those labels are string literals there; a copy in ClimbMatch.jsx would be a hand-copy across a 400kB file boundary, and probe-trust-score-under-outage.mjs asserts every label here still matches a real factor. `server` is set when the SERVER model's rows are on screen, where LOGGED CLIMBS and CONDITIONS REPORTED are both counted off the one climb_logs read -- in the client model "Conditions reported" is a different, untracked input and marking it failed would be a false statement. */if(!g)return [];var o=[];if(g.logs){o.push("Logged climbs");if(server)o.push("Conditions reported");}if(g.catches)o.push("Verified belay catches");if(g.vouches)o.push("Peer vouches");return o;}
+function TrustBreakdown({climber,rows,failed}){var _gap=trustGapLabels(failed,!!rows);return <div>{(rows||trustContributions(climber)).map(function(f){var w=Math.round(f.pts/f.max*100);var _out=_gap.indexOf(f.label)>=0;return <div key={f.label} style={{display:"flex",alignItems:"center",gap:9,padding:"5px 0",borderTop:`1px solid ${C.borderLight}`}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.text,fontWeight:600}}>{f.label}</div><div style={{fontSize:11.5,color:C.textMuted,marginTop:1,lineHeight:1.3}}>{_out?"Couldn\u2019t load \u2014 not counted in the score right now":f.sub}</div></div><div style={{width:54,height:5,borderRadius:3,background:C.surface,overflow:"hidden",flexShrink:0}}><div style={{height:"100%",width:w+"%",background:f.met?C.green:C.borderLight}}/></div><span style={{fontSize:12,fontWeight:800,color:f.met?C.green:C.textMuted,width:30,textAlign:"right",flexShrink:0}}>{"+"+f.share}</span></div>;})}</div>;}
 function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,onResume,onFormCrew,onMessage,onOpenReport,catchCredits,onBlock,onReport,emRel,onLogCatch,onVouch,joinReq,onAcceptJoin,onDeclineJoin,crewInv,onAcceptInv,onDeclineInv,myCrews,onInviteToCrew,vouched,myFriendIds,onShowMutuals,mySpeedFtHr,onOpenRoute,routeById}){
   // Real (uuid) profiles arrive with only a few fields (id/name/avatar from a
   // member chip or search row), while this component was written against the
