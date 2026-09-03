@@ -55,7 +55,12 @@ export const LINEAR = new Set(["stream", "river", "path", "track", "valley", "ri
 // Point-like tails that can be stripped to reach the mapped feature: OSM maps the LAKE, not the
 // basin around it, and you camp at the lake. `creek`, `ridge` and `valley` are NOT here — those
 // are linear, and stripping to them reintroduces the defect LINEAR exists to stop.
-export const TAIL = /\s+(basin|floor|tarns?|area|bench(es)?|shelf|cirque)$/i;
+// `roadhead` is point-like in the same way — the end of a road is a point, and you camp at it.
+// Without it the search was the whole phrase: "Trinity trailhead roadhead" returned nothing
+// while "Trinity trailhead" matches EXACTLY. It composes with the gates rather than bypassing
+// them: "Bedal Creek roadhead" now reaches "Bedal Creek" and is refused as LINEAR, which is
+// the right answer for a stream.
+export const TAIL = /\s+(basin|floor|tarns?|area|bench(es)?|shelf|cirque|roadhead)$/i;
 
 const NOISE = /\b(the|a|an|and|at|on|in|of|for|from|to)\b/g;
 export const core = (x) => norm(x).replace(NOISE, " ").replace(/\s+/g, " ").trim();
