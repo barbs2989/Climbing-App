@@ -56,7 +56,7 @@ npm run check:verification-fallback # a failed verification read must not un-ver
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
-npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
+npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1591,6 +1591,13 @@ the total when deciding where a new guard belongs.
   app does not have**, and that **the version a reader SEES is the version recorded against their
   account**. Static (one esbuild bundle, one SSR render), **1.6s CPU** against 1.69s for
   `check:topo-outage-copy` beside it, so it sits in `npm run build`.
+  - **THREE of the four surfaces**, and the third was added by reading this guard's own stated
+    limitation as a worklist. The **in-app privacy sheet** matters more than its lack of a policy
+    label suggests — the packet's Q7 calls it the place the privacy decision is actually made,
+    because it opens from Settings **and from partner search**, carries no review disclaimer and
+    is not versioned. It is an inline array rather than a named constant, so it is lifted by
+    balancing brackets from its first heading, with the same skip-string-contents care the other
+    two get. **Surface 4 (scattered copy) is still by hand.**
   - **THE FIX IT GUARDS CHANGES STRINGS AND NO IDENTIFIER, which is exactly the revert nothing else
     can see.** #1522 rewrote Privacy §4 and §1; `audit:silent-reverts` tracks named definitions and
     says in its own closing caveat that *"a merge that kept a name and dropped its guard clause is
@@ -1611,6 +1618,27 @@ the total when deciding where a new guard belongs.
     cannot quietly undo them. Section 1's needle is deliberately narrow: *"we use approximate
     location"* is a statement about PROCESSING and is correct, while *"you control location
     sharing"* is a claim about a switch. Matching the mere word would flag every honest sentence.
+  - **A CAPABILITY claim is a different question from a CONTROL claim, and the sheet made one.**
+    *"You can edit or clear anything from your profile and settings at any time"* was false twice
+    over: `saveEdit` guards `name` and `username` with `if (d.x && d.x.trim())`, so a blank is
+    **skipped** and the old value survives, and the avatar has a change control and **deliberately**
+    no remove — so the sheet contradicted a product decision taken hours earlier. The assertion has
+    **two branches**, because a rewrite that stops over-claiming and also stops saying anything is
+    the drift it exists to catch, and that would pass a test which only looked for the old
+    sentence. Asserted as **source rather than rendered**: this sheet is inline in `App` rather
+    than in `LegalView`, and standing up App is far more than the question is worth — stated in
+    the guard rather than implied.
+  - **Two of the sheet's claims were measured and HOLD, recorded so they are not re-derived.**
+    *"Direct messages and crew chats are visible only to the people in that conversation"* is
+    **RLS-enforced** rather than merely true of the UI — `0042` gives `messages` a SELECT policy of
+    `auth.uid() = sender_id or auth.uid() = recipient_id` and `crews_messages`
+    confirmed-member-or-creator. And the name-vs-handle claim rests on the four-surface
+    inconsistency that is already an **open product decision**, so it is not this guard's to
+    settle.
+  - **MEASURING IT HIT THE DOCUMENTED DESTRUCTURED-PARAMS TRAP.** Balancing braces from
+    `function PartnerSearch({…})` returns the **parameter list** — 196 characters — not the body,
+    which is **35,762**. This file already records that exact failure making an overlay probe
+    report 150 characters of signature as a component. Find the `)` that closes the params first.
   - **Section 3 was a semantic invariant living in a COMMENT.** `lib/policy.js` says the version a
     user sees and the version recorded *"cannot drift"* — and **nothing asserted it**. It now
     renders the policy and requires `policyVersionLabel(POLICY_VERSION)` to be on the screen, so a
@@ -1659,7 +1687,7 @@ the total when deciding where a new guard belongs.
     earlier in the day has a record pointing at slightly different words. Inherent to a date-based
     version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
     real launch, not worth inventing a counter for at three accounts.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+  - Injection-tested **10/10** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
     historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
     dead-branch defect above** — renaming a gated control must report a BROKEN scan rather than
