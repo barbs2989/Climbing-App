@@ -129,7 +129,6 @@ const EXEMPT = [
      The publisher IS the content; cut it and the warning means nothing. Same family as the kept
      "don't trust the Gaia road line" values, and it is a namesake confusion — the failure this
      catalog has paid for repeatedly at the level of route ids. */
-  ["wa_chimney_peak_the_chimney", "pro_tips[1]", "SummitPost named as the page that MISLEADS — a namesake warning, and the publisher is the content"],
 ];
 
 const rows = await selectAll("routes", "id,name,road,access,waypoints", `id=like.${STATE}_*`, { pageSize: 1000 });
