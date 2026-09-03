@@ -2932,6 +2932,28 @@ the total when deciding where a new guard belongs.
     was checked*, never as a clean catalog. Injection-tested; the 7 cases are at the bottom of the
     script. Cases 6 and 7 pin the `KNOWN` map in both directions — removing a live entry must
     surface it as a real failure, and a bogus name must report as stale.
+- **THE THREE HAND-RUN DB GUARDS WERE RUN, AND TWO OF THEM COULD NOT START.** CLAUDE.md asks for
+  `check:column-drift`, `check:function-columns` and `check:function-drift` to be run **by hand
+  after any migration**, because CI must not hold the service or management key. Doing that found
+  the database healthy — and found that the instruction could not be followed.
+  - **A FRESH WORKTREE IS NOT LINKED.** Both function guards go through
+    `supabase db query --linked`, and `supabase link` writes `supabase/.temp`, which is
+    **gitignored** and therefore absent from every new worktree. So a session that does exactly
+    what this file asks gets `FAIL: could not read the live catalog`, reads it as a missing
+    credential, and stops. **A guard nobody CAN run is worse than one nobody remembers to run** —
+    the remembering is at least fixable by a note.
+  - The link needs **no database password**: it authenticates against the Management API with the
+    token the CLI already holds, and `npx supabase projects list` succeeding is the tell that the
+    credential is present while the link is not. Both guards now print that remedy, verified by
+    unlinking and re-running rather than asserted.
+  - **RESULTS, so the next reader knows what a clean run looks like.** `check:function-columns` ok
+    (11 writing functions, 6 insert lists, 9 update lists). `check:function-drift` ok — **46 live
+    functions, 45 agreeing with their newest migration** plus the one declared `handle_new_user`.
+    `check:column-drift` reported `profiles.photos_public` as live and undescribed, and that is
+    **NOT a defect**: it belongs to an open PR that carries its migration. The guard compares live
+    schema against MERGED migrations, so any session applying DDL before its PR lands makes it
+    fail — expected, and the reason it must not be declared in `KNOWN`, which would go stale the
+    moment that PR merges.
 - **`check:function-drift`** is the sibling question, and the one no gate on the checkout can
   answer: **is the function running in production the one this repository describes?**
   `verify-migrations-applied.mjs` checks objects EXIST by name — `merge_accounts` exists, so it
