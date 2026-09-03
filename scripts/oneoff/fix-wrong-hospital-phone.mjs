@@ -50,7 +50,15 @@ for (const r of rows) {
   }
 }
 console.log(`values naming Cascade Medical: ${RIGHT} on ${right}, ${WRONG} on ${wrong}`);
-if (right < 20 || wrong === 0 || right < wrong * 5) {
+// A FULLY REPAIRED CATALOG IS NOT A BROKEN PREMISE. `wrong === 0` was folded into the refusal, so
+// re-running this after it had done its job reported "the majority does not clearly favour the
+// verified number" about 59 correct rows and 0 wrong ones — a success state printed as an alarm,
+// which is exactly what sends the next reader looking for a defect that is not there.
+if (right >= 20 && wrong === 0) {
+  console.log("every value naming this hospital already carries the verified number — nothing to do.");
+  process.exit(0);
+}
+if (right < 20 || right < wrong * 5) {
   console.error("the catalog's own majority does not clearly favour the verified number — refusing");
   process.exit(1);
 }

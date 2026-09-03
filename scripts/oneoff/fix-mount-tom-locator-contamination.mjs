@@ -37,10 +37,13 @@ console.log(`WA routes read: ${rows.length}`);
 if (rows.length < 5000) { console.error("SHORT READ — refusing to act on a partial read"); process.exit(1); }
 
 const plan = [], onTom = [];
+let examined = 0;
 for (const r of rows) {
   const e = r.access; if (!e || typeof e !== "object") continue;
   for (const [k, v] of Object.entries(e)) {
-    if (typeof v !== "string" || !v.includes(CLAUSE)) continue;
+    if (typeof v !== "string") continue;
+    examined++;
+    if (!v.includes(CLAUSE)) continue;
     // A row that genuinely IS on Mount Tom keeps its locator.
     const segs = String(A.get(r.area_id)?.path || "").split(".");
     if (tomIds.has(r.area_id) || segs.some(s => tomIds.has(s))) { onTom.push(r.id); continue; }
@@ -49,7 +52,12 @@ for (const r of rows) {
     plan.push({ id: r.id, k, peak: A.get(r.area_id)?.name, from: v, to: v.replace(CLAUSE, "").trimEnd(), premise: e });
   }
 }
-if (!plan.length && !onTom.length) { console.error("clause not found anywhere — the scan is broken, refusing"); process.exit(1); }
+// FAIL CLOSED ON A BROKEN SCAN, NOT ON A FINISHED JOB. The first version refused whenever the clause
+// appeared nowhere — which is precisely the state this script CREATES, so a second run reported its
+// own success as "the scan is broken". The scan is broken if no access value was examined at all;
+// the clause being absent afterwards is the point of the exercise.
+if (!examined) { console.error(`examined 0 access values across ${rows.length} routes — the scan is broken, refusing`); process.exit(1); }
+if (!plan.length && !onTom.length) { console.log("the locator appears on no route — already repaired, nothing to do."); process.exit(0); }
 console.log(`\nvalues carrying the locator: ${plan.length + onTom.length}`);
 console.log(`  ...on a route genuinely on Mount Tom, kept: ${onTom.length}`);
 console.log(`  ...on a route elsewhere, locator removed: ${plan.length}\n`);
