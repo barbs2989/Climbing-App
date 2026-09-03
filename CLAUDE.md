@@ -4578,6 +4578,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE PIN-DISTANCE GATE GENERALISES OFF THE CAMP STORE, and it turns `audit:cross-route-pins`
+    from 54 unactionable rows into 9 adjudicated ones** (`adjudicate-cross-route-pins.mjs`). That
+    audit reports a named POINT placed 2 km or more apart by two routes and **deliberately refuses
+    to pick** — *"a majority can be one enrichment pass counted many times"* — which is right and
+    leaves every row unactionable. The adjudicator supplies what it asks for: an independent record
+    (the gazetteer) plus the distance rule the camp work arrived at. A pin within **250 m** of a
+    uniquely-named feature is corroborated; a sibling **1.5 km+** away is the misplaced one.
+    - **Its refusals are most of its value, and each is a rule already paid for here**: a name the
+      gazetteer does not hold; SEVERAL features of that name in WA (*"Cathedral Pass"* is three);
+      a LINEAR feature whose label point locates nothing; EVERY pin far from the feature (*"Myrtle
+      Lake"* resolves 87 km from both pins, so it adjudicates nothing); and every pin near it.
+    - **PROSE DECIDED WHICH OF TWO IDENTICAL-LOOKING FINDINGS TO REPAIR.** Four Mount Constance
+      routes put *"Lake Constance"* **2,827 m** from the lake, and all four describe walking *"the
+      unsigned, unmaintained Lake Constance climbers' trail"* — they mean that lake, so the pin
+      belongs at it. Three Mount Stuart routes put *"Lake Ingalls"* **3,203 m** from Lake Ingalls
+      and **none of them mentions the lake anywhere**; their pin sits near Longs Pass, so it is
+      plausibly a DIFFERENT place carrying the wrong name, where the repair is a rename rather than
+      a move. **Moving it would put a correct point at a wrong one.** Repaired the first, reported
+      the second — the same split as the two Cascade Pass pins that merely mention Pelton Basin.
+    - The repair **copies a corroborated sibling's coordinate**, so no latitude or longitude is
+      typed and a fix needing a coordinate the catalog lacks cannot be expressed — the
+      *declare a winner, never a coordinate* contract. Only the coordinate moves: the 50 ft
+      elevation difference is below what the DEM resolves and is not what is being repaired.
+      Cross-route agreement **436 -> 437 (81% -> 82%)**, candidates 14 -> 13.
+  - **The waypoint NOTE store is clean**: `audit:note-voice` finds **1 note in pipeline voice out of
+    2,931 on screen**, and reading it, the audit's *"delete"* verdict would lose the road-washout
+    location it carries. Left alone.
   - **THE WHOLE CAMP STORE WAS SWEPT, AND THE ONE DISAGREEMENT WAS ONE I HAD SPREAD THAT MORNING.**
     `audit:camp-elevations` places 178 of 459 populated names and **177 agree with the ground within
     400 ft (99%)**. The single disagreement was `Pelton Basin` — **5,400 ft stored on 25 rows against
