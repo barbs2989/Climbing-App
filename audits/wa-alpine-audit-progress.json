@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_burnt_boot_peak_north_ridge",
+    "last_processed_id": "wa_chair_peak_northeast_buttress",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3765,6 +3765,25 @@
             "flagged_for_human_review": 1,
             "clean": 6,
             "sql_file": "audits/sql/2026-09-03-batch-181.sql"
+        },
+        {
+            "batch_number": 182,
+            "date": "2026-09-03",
+            "route_ids": [
+                "wa_cardinal_peak_nw_couloir_north_ridge",
+                "wa_cascade_peak_east_ridge",
+                "wa_castle_peak_tatoosh_southeast_face",
+                "wa_cathedral_peak_pasayten_se_buttress",
+                "wa_chair_bryant_traverse",
+                "wa_chair_peak_east_face",
+                "wa_chair_peak_north_face",
+                "wa_chair_peak_northeast_buttress"
+            ],
+            "confirmed_errors_fixed": 2,
+            "flagged_for_human_review": 2,
+            "clean": 4,
+            "sql_file": "audits/sql/2026-09-03-batch-182.sql",
+            "note": "wa_castle_peak_tatoosh_southeast_face: Summit waypoint elev/elevFt corrected 6640->6440 to match this row's own high_point_ft (6440) and Wikipedia (The Castle, Tatoosh Range = 6,440 ft). wa_chair_peak_northeast_buttress: gain_ft corrected 3100->3138 to match this row's own loss_ft (3138) and its own trailhead(3100ft)/summit(6238ft) waypoints, matching sibling routes wa_chair_peak_east_face/wa_chair_peak_north_face which already store gain_ft=loss_ft=3138 for the same trailhead/summit pair. Flagged for human review: wa_chair_bryant_traverse's fa field (\"Ari Schneider, Jason Linker\") contradicts its own corrections field, which states no FA data for this exact traverse was found anywhere -- could not verify or deny externally. wa_chair_peak_north_face's fa (4-person party, Jan 1975) overlaps 2 of 4 names and the exact month/year with an external source crediting Kit Lewis and Robert Harris with the first winter ascent of Chair Peak's Northwest Ridge (a different named feature) in Jan 1975 -- possible route-name conflation, left unfixed. Unchanged since prior flag: wa_cascade_peak_east_ridge's elevation/FA reconfirmed clean but its own data_quality.gaps still documents the previously-flagged half-corrected row (aspect/face/approach/corrections/seasonal_guidance not updated after a prior overview rewrite fixed a Johannesburg Mountain conflation) -- needs a human rewrite, not re-flagged as new."
         }
     ]
 }

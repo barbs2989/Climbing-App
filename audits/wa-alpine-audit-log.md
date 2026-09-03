@@ -12542,3 +12542,100 @@ batch (stephabegg.com, cascadeclimbers.com, peakbagger.com) — consistent with 
 batch's note; all research relied on WebSearch synthesis.
 
 Next batch continues from `wa_burnt_boot_peak_north_ridge` onward alphabetically (pass 4).
+
+## Batch 182 (2026-09-03, pass 4)
+
+Checked: `wa_cardinal_peak_nw_couloir_north_ridge`, `wa_cascade_peak_east_ridge`,
+`wa_castle_peak_tatoosh_southeast_face`, `wa_cathedral_peak_pasayten_se_buttress`,
+`wa_chair_bryant_traverse`, `wa_chair_peak_east_face`, `wa_chair_peak_north_face`,
+`wa_chair_peak_northeast_buttress`.
+
+**Confirmed errors fixed (2):**
+- `wa_castle_peak_tatoosh_southeast_face`: the row's own Summit waypoint
+  ("The Castle summit (true/northernmost ridge)") stored elev/elevFt 6640,
+  200 ft above this same row's own `high_point_ft` (6440). Wikipedia
+  confirms The Castle (Tatoosh Range, Mount Rainier NP) at 6,440 ft,
+  matching `high_point_ft` and contradicting the waypoint. Waypoint
+  corrected to 6440.
+- `wa_chair_peak_northeast_buttress`: `gain_ft` (3100) disagreed with this
+  same row's own `loss_ft` (3138) for a car-to-car climb between the row's
+  own trailhead (3,100 ft) and summit (6,238 ft) waypoints — a net rise of
+  3,138 ft, exactly what sibling routes `wa_chair_peak_east_face` and
+  `wa_chair_peak_north_face` (same trailhead, same summit) already store
+  for both gain_ft and loss_ft. `gain_ft` corrected to 3138 to match.
+
+`npm run check:sql -- audits/sql/2026-09-03-batch-182.sql` reports OK (both
+target ids exist).
+
+**Flagged for human review (2):**
+- `wa_chair_bryant_traverse`: top-level `fa` credits "Ari Schneider, Jason
+  Linker", but this same row's own `corrections` field — its documented
+  research trail — states plainly that no page for this exact traverse
+  with FA data was found on Mountain Project, SummitPost, or Peakbagger,
+  and instead cites a different, related route's FA as the closest
+  documented analog. The `fa` field contradicts the row's own sourcing
+  notes; could not independently confirm or deny "Ari Schneider, Jason
+  Linker" via WebSearch. Left unfixed — recommend checking wherever that
+  name pair originated (club records, personal communication) rather than
+  guessing.
+- `wa_chair_peak_north_face`: `fa` credits "Kit Lewis, Charlie Hampson, Rob
+  Harris, Greg Jacobson (January 1975)". External sources instead credit
+  Kit Lewis and Robert Harris with the first WINTER ascent of Chair Peak's
+  **Northwest Ridge** in January 1975 — same two names, same month/year,
+  but a different named feature and half the party size. Given this
+  catalog's documented history of exactly this kind of route-name
+  conflation (see the still-open `wa_cascade_peak_east_ridge` issue below),
+  this may be one historical event recorded under two different route
+  names, or two genuinely separate 1975 ascents. Not enough to resolve
+  either way from available sources; left unfixed pending a structured FA
+  source (Beckey's guide or AAC Publications archive).
+
+**Clean / confirmed accurate:**
+`wa_chair_peak_east_face` elevation (6,238 ft, exact Wikipedia match for
+Chair Peak) and FA ("Don Blair and Art Winder, September 30, 1933" —
+confirmed verbatim as the first definite recorded ascent of the East
+Face); `wa_cascade_peak_east_ridge` elevation (7,428 ft) and FA (Fred
+Beckey, Pete Schoening, Phil Sharpe, July 23 1950 — confirmed verbatim,
+this is Cascade Peak's overall FA per the row's own wording) both
+reconfirmed; `wa_cathedral_peak_pasayten_se_buttress` elevation (8,606 ft,
+confirmed) and the peak's 1901 FA (Carl W. Smith and George O. Smith,
+confirmed) — the SE Buttress route's own honest "First ascent party
+unrecorded; route established July 1973" also matches the absence of any
+named FA party in available sources, so it is not treated as a gap;
+permit/access description (free self-issue Pasayten Wilderness permit,
+Okanogan-Wenatchee NF) matches standard policy; grade/pitch count (Grade
+III, 5.9-5.10a, ~10 pitches) is consistent with independent route
+descriptions found. `wa_cardinal_peak_nw_couloir_north_ridge`: approach
+narrative (North Fork Entiat Trailhead via FR-5606, shared approach with
+Saska/Emerald/Pinnacle Peaks) and land manager (Okanogan-Wenatchee NF,
+Entiat Ranger District) confirmed via USFS/Mountaineers sources; parent
+area's coordinates (48.1019, -120.6133) closely match Wikipedia's Cardinal
+Peak location. This route stores no `high_point_ft`/`gain_ft`/`lat`/`lng`
+of its own to cross-check, and nothing else on the row implies a value —
+left null rather than added from external research alone (out of scope
+for a fact-check audit; no internal claim to corroborate against).
+`wa_castle_peak_tatoosh_southeast_face`'s trailhead/road/permit narrative
+(Reflection Lakes, Pinnacle Peak Trail, Stevens Canyon Road, MRNP
+wilderness permit for overnight only) matches known geography and NPS
+policy. `wa_chair_peak_northeast_buttress` and `wa_chair_peak_north_face`
+elevations (6,238 ft) reconfirmed; both correctly store `fa` as null or
+(after this batch) a flagged value rather than fabricating an unsupported
+claim.
+
+**Unchanged since prior flag:**
+`wa_cascade_peak_east_ridge` — elevation and FA check out (see above), but
+this row's own `data_quality.gaps` field still documents the same
+still-unresolved issue this audit flagged previously: `aspect`, `face`,
+part of `approach`, a stale `corrections` blob, and `seasonal_guidance`
+were never fully updated after a prior pass rewrote the `overview` to
+describe the real NW Chimney route (correcting an earlier conflation with
+Johannesburg Mountain's East Ridge). Still a half-corrected row needing a
+human rewrite/split rather than a field patch — not re-fixed here.
+
+WebSearch worked this run; WebFetch was blocked for every specific
+reference page attempted (en.wikipedia.org, willhiteweb.com,
+spokalpine.com), consistent with every earlier batch's tooling note — all
+research relied on WebSearch's own synthesis of source content.
+
+Next batch continues from `wa_chair_peak_northeast_buttress` onward
+alphabetically (pass 4).
