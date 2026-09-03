@@ -12850,3 +12850,80 @@ III 5.8 confirmed via the Mountaineers' own route description.
 Next batch continues from `wa_cutthroat_south_buttress` onward alphabetically (pass 4) —
 `wa_cutthroat_west_ridge` is next, and is worth checking against the shared beta string found
 this batch.
+
+## 2026-09-03 — Pass 4, Batch 186
+
+(This run also filled in `confirmed_errors_fixed`/`flagged_for_human_review`/`clean` on the
+batch-185 progress entry, which a prior run had left null despite the batch being fully
+logged and committed: 7/2/2, derived from the batch-185 log entry above.)
+
+Routes: `wa_cutthroat_west_ridge`, `wa_dark_peak_dark_glacier_route`,
+`wa_dark_side_of_liberty`, `wa_diamond_in_the_rough`, `wa_direct_north_buttress`,
+`wa_direct_southwest_buttress`, `wa_direct_west_face`, `wa_dolphin_chimney`,
+`wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer`.
+
+**Fixed:**
+`wa_dark_side_of_liberty` and `wa_dolphin_chimney` both had `watch_out` stored as one
+string joined with literal `\n` characters instead of a JSON array — the same
+array-shape bug this audit keeps finding (Sharkfin Tower, Mount Shuksan SE Ridge,
+Chockstone Route, Colchuck Peak Northeast Couloir in prior batches). Both converted to
+proper 5-item arrays; content unchanged. `wa_direct_north_buttress`'s `ice_grade` was
+"WI5+" — a serious vertical water-ice grade — on a row whose `pitch_detail` is entirely
+rock pitches (5.8–5.10-, an offwidth, ridge crest climbing, no ice pitch at all) and
+whose beta/overview describe a sustained rock buttress; the one ice-axe mention in
+`what_to_bring` is explicitly for "a steep snow section near the route base," not a
+technical ice pitch. Independently confirmed via AAC Publications/skisickness.com/
+Mountain Project that the Direct North Buttress (Kearney/Knight, Sept 1980, freed by
+Burdo/Merrand 1985) is a V 5.10 rock route with no ice climbing on it — no other row in
+the catalog carries this exact ice_grade value, so it reads as a stray field rather than
+traceable contamination from a sibling route; nulled. `wa_cutthroat_west_ridge`'s
+`partner_requirements.approachTime` claimed "on-file timing lists an 8-hour total route
+day," but the row's own `timing.totalHrs` is 10 and its own
+`partner_requirements.fitnessSpec.hiking` independently says "roughly 6 hours up and 4
+hours down" (= 10) — the derived narrative field misdescribed what the row itself
+already states; corrected "8-hour" to "10-hour" to match.
+
+**Also resolved (no DB write needed):** last batch flagged `wa_cutthroat_west_ridge` as
+the likely rightful home of the contaminated "Grade II, 5.7 climbing..." beta string
+found on four Cutthroat Peak routes. Confirmed: this route's own row already carries
+that exact text, its stored grade (5.6, with a pitch_detail max of 5.6) and commitment
+("II") are consistent with independently-researched sourcing for Cutthroat's West Ridge
+(Grade II, Class 5+/5.5-5.7 crux per SummitPost/Mountaineers), and the FA credit
+(Kenneth Adam, Raffi Bedayn, W. Kenneth Davis, July 22 1937 — also the peak's overall
+FA) matches known history for the route. No action needed; last batch's flag is closed.
+
+**Flagged for human review:**
+`wa_direct_west_face`'s (Pernod Spire) `high_point_ft` is 8507 — not contradicted by any
+source found (Wine Spires-area sources place Pernod as the tallest of the group, above
+Chianti Spire's ~8,400 ft), but no primary source gives Pernod's precise elevation
+either, and 8507 happens to be the exact same figure stored for the unrelated
+`wa_dark_peak_dark_glacier_route` (Dark Peak, ~400 km away in the Stehekin drainage) —
+confirmed correct for Dark Peak via two independent sources (PeakVisor's 2,593 m =
+8,507 ft; a Country Highpoints trip report giving "Dark Peak (8,504 feet)"), so that
+side is not the error, but the identical-value coincidence on Pernod is worth a second
+look with a source this audit couldn't reach (guidebook page, not indexed online).
+`wa_dome_peak_indian_summer`'s `gain_ft` (9,700) sits well above the "about 7,800 ft"
+figure its own `approach` text gives for the western approach to high camp — plausibly
+consistent, since the route continues past camp to a summit at 8,920 ft and the
+Ptarmigan-Traverse-style approach crosses multiple passes/cols with real terrain
+undulation a simple net-rise figure wouldn't capture, but not confirmable one way or the
+other without a per-leg breakdown; left unchanged rather than guessed at.
+`wa_diamond_in_the_rough`'s `gpx` track has only 4 points, one of which is duplicated
+(point 2 and point 4 are identical coordinates) — resembles a placeholder/synthetic
+track rather than a real recording, but no authoritative GPS source was found to replace
+it with, and inventing points would be fabrication; reported rather than fixed.
+
+**Clean / confirmed accurate:** `wa_dark_peak_dark_glacier_route`'s `high_point_ft`
+(8507) — see above. `wa_dome_peak_dome_glacier`'s FA (George Freed and Eric Larson,
+August 1 1936) confirmed exactly via search (Wikipedia/PeakVisor); its `high_point_ft`
+(8,920) matches the commonly-cited figure for Dome Peak. `wa_direct_north_buttress`'s FA
+(Alan Kearney and Bobby/Robert Knight, September 1980, over 2.5 days) confirmed via AAC
+Publications and skisickness.com; the "freed by Bryan Burdo and Yann Merrand, 1985" note
+is consistent with the original 1980 ascent's V 5.10 A2 rating later going free.
+`wa_direct_southwest_buttress`'s (Dorado Needle) own `corrections` field already
+honestly documents that no standalone source could be found for this "Direct" 5.10a
+variation specifically — checked again this batch, still true, left as-is.
+`wa_dome_peak_indian_summer`'s FA note already hedges with "approximately" and names one
+confirmed party member (Nate Farr); no stronger claim to check it against.
+
+Next batch continues from `wa_dome_peak_indian_summer` onward alphabetically (pass 4).
