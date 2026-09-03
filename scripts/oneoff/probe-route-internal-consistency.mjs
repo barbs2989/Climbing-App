@@ -21,6 +21,14 @@
 //   4. SHARED ROUTE PROSE. Two rows carrying the same sentence is one claim counted twice, or
 //      contamination. Cross-peak sharing is the serious form.
 //
+// A KNOWN FALSE POSITIVE IT WILL NOT CHASE: a row that discusses a MARGINAL rope honestly trips the
+// arithmetic every time. wa_mount_cruiser_south_corner reads "a 50m rope has been used but is tight
+// on the longer stretches ... bring 60m if you have the choice" -- correct, useful, and indis-
+// tinguishable from "a 50m rope is sufficient" to any length-comparing check. Detecting the hedge
+// means a phrase list, and this repo records repeatedly that such a list is beaten by one more
+// adjective. Better to keep the flag and read the row than to build a classifier that goes quiet on
+// the case it cannot parse.
+//
 // WHAT IT CANNOT DO, stated rather than implied. It never says a value is RIGHT -- only that nothing
 // in the row refuses it. "Clears its floor" is not "verified"; that needs a published record.
 //
