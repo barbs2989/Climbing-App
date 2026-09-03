@@ -140,18 +140,33 @@ else {
 // treats every straight quote as a string delimiter, and JSX body text is full of them, so it
 // can desynchronise and wipe a REAL `wc[w.type]` -- a false pass, which is the one outcome a
 // guard must never produce. An AST has neither failure mode.
-const STYLE_MAPS = new Set(["WP_STYLE", "WP_COLORS", "wc"]);
-const STYLE_FNS = new Set(["wpColor", "wpGlyph"]);
-const rawLookups = [];
-for (const f of FILES) {
-  let ast;
+/* PARSE EACH FILE ONCE. Sections 6 and 7 below are two separate `for (const f of FILES)` loops
+   and each used to call parse() on the same `raw[f]` with identical options, so all three files
+   were parsed TWICE -- 2.1s of Babel per pass over ~2.0MB of JSX, for nothing. This is the same
+   waste CLAUDE.md records for check:waypoint-placement, which went 37s -> 20s by parsing once for
+   two visitors; that entry says to try this first on any new guard, and this guard is the most
+   expensive one in the build chain.
+   Re-traversing a cached AST is exactly what that fix does: @babel/traverse caches paths on the
+   node, so the second visitor sees the same tree. The parse OPTIONS were already identical in
+   both places -- if they ever diverge, this memo must not be used for both. */
+const AST_CACHE = {};
+function astOf(f) {
+  if (AST_CACHE[f]) return AST_CACHE[f];
   try {
-    ast = parse(raw[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+    AST_CACHE[f] = parse(raw[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
   } catch (e) {
     console.error(`\n${GUARD} FAILED — could not parse ${f}: ${e.message}`);
     console.error("Nothing below was checked for this file.\n");
     process.exit(1);
   }
+  return AST_CACHE[f];
+}
+
+const STYLE_MAPS = new Set(["WP_STYLE", "WP_COLORS", "wc"]);
+const STYLE_FNS = new Set(["wpColor", "wpGlyph"]);
+const rawLookups = [];
+for (const f of FILES) {
+  const ast = astOf(f);
   // `x.type` where x is anything — the raw column read.
   const isRawType = (n) => n && n.type === "MemberExpression" && !n.computed
     && n.property && n.property.type === "Identifier" && n.property.name === "type";
@@ -205,13 +220,7 @@ if (rawLookups.length) {
 const CANON_TYPES = new Set(styled);
 const rawEquality = [];
 for (const f of FILES) {
-  let ast;
-  try {
-    ast = parse(raw[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
-  } catch (e) {
-    console.error(`\n${GUARD} FAILED — could not parse ${f}: ${e.message}`);
-    process.exit(1);
-  }
+  const ast = astOf(f);
   const isRawType = (n) => n && n.type === "MemberExpression" && !n.computed
     && n.property && n.property.type === "Identifier" && n.property.name === "type";
   traverse(ast, {
