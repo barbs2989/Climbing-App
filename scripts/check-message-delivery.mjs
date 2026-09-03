@@ -1,4 +1,13 @@
-// Somebody messages you. Does it arrive, and are they named?
+// check:message-delivery — somebody messages you. Does it arrive, and are they named?
+//
+// THE FIRST GUARD IN THIS REPO THAT INVOLVES TWO PEOPLE. Every other browser guard signs in as at
+// most one account and reads its own screens, so a fact written by a SECOND climber has been
+// outside CI by construction — and that is the seam #1497 came out of, where a vouch you received
+// reached no screen and no number.
+//
+// It was promoted out of scripts/oneoff/ because a probe nobody runs is not a verification, which
+// this file records under half a dozen names. What kept it out was a claim of mine that turned out
+// to be false — see #1520; durable-fixture.mjs had the mate's session all along.
 //
 // The last untested leg of the second-person seam. The others were walked and are sound — a vouch
 // (was NOT: #1497), a belay catch, a connection request, the crew roster from the member's side,
@@ -31,11 +40,20 @@
 //
 // WHAT ACTUALLY BLOCKS CI IS CONCURRENCY, which is a different problem with a different answer per
 // probe, because the durable accounts are SHARED between runs:
-//   THIS ONE IS SAFE. Two concurrent runs each insert a message mate->owner, and every assertion
-//   here holds with either or both present: the inbox is not empty, the sender is identified, the
-//   body is on screen. Teardown deletes by ID, never by sender. It is the promotion candidate.
+//   THIS ONE IS SAFE, and that is why it is the one promoted. Two concurrent runs each insert a
+//   row mate->owner and every assertion holds with either or both present: the inbox is not empty,
+//   the sender is identified, the body is on screen. Teardown deletes BY ID, never by sender, so
+//   one run cannot tear down another's evidence. The body carries GITHUB_RUN_ID, so a run asserts
+//   on ITS OWN message rather than on whatever happens to be in the thread — without that, run A
+//   passes on run B's row, a false pass in exactly the window this guard watches.
 //
-// Writes to the live project; per-run fixture locally, rows deleted, leaks reported.
+//   `vouches` is NOT safe: UNIQUE(from_id, to_id) refuses a second run's insert, and teardown
+//   removes the single shared row under the other run. `climb_logs` is not either, because its
+//   delta assertion is `fresh.length === 1`. Both stay in scripts/oneoff/ until that is answered.
+//
+// IT WRITES TO THE LIVE PROJECT, which no other guard in the build chain does. That is acceptable
+// on the same terms as check:signed-in: two durable accounts that are discoverable=false, one row
+// per run, deleted by id, and leaks reported rather than accumulating.
 
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
@@ -43,10 +61,13 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
-import { settledText } from "../lib/render-settle.mjs";
+import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
+import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
+import { settledText } from "./lib/render-settle.mjs";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// ONE level up, not two. This lived in scripts/oneoff/ and promotion changes its DEPTH —
+// CLAUDE.md records a probe that kept `../..` and silently measured a different worktree.
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 5370;
 
 const envFile = (f) => { try { return fs.readFileSync(path.join(ROOT, f), "utf8"); } catch { return ""; } };
@@ -86,7 +107,11 @@ function claimPort(start, span = 40) {
 const SUPA = envVal("VITE_SUPABASE_URL").replace(/\/$/, "");
 const ANON = envVal("VITE_SUPABASE_ANON_KEY");
 // Distinctive, and deliberately not a word that appears in the app's own copy.
-const BODY = "Bringing the 60m and a light rack — meet at the pullout at five?";
+// UNIQUE PER RUN. Two CI runs share the durable accounts, so a fixed string would let run A's
+// assertion pass on run B's message — a false pass in exactly the window this guard is meant to
+// watch. The run id makes each message attributable to the run that sent it.
+const RUN_TAG = process.env.GITHUB_RUN_ID || `${process.pid}-${Date.now().toString(36)}`;
+const BODY = `Bringing the 60m and a light rack — meet at the pullout at five? [${RUN_TAG}]`;
 
 let fixture = null, server = null, browser = null, msgId = null, mateTok = null;
 
@@ -107,24 +132,33 @@ try {
   page.setDefaultNavigationTimeout(120000);
   page.setDefaultTimeout(120000);
 
-  fixture = await createFixture(log);
-  if (!fixture.mate || !fixture.mate.password) {
-    console.error("no mate password — the message must be sent BY the mate, not with the service key.");
-    process.exit(1);
-  }
+  // TWO FIXTURE MODES, exactly as check:signed-in: per-run accounts on the SERVICE KEY locally,
+  // and two DURABLE accounts on the ANON KEY in CI, which must never hold the service key.
+  fixture = durableCredsPresent() ? await durableFixture(log) : await createFixture(log);
 
   const ownerId = fixture.session.user.id;
   const mateName = fixture.mate.name;
 
-  // ---- the mate signs in and writes to the owner ----
-  const tokRes = await fetch(`${SUPA}/auth/v1/token?grant_type=password`, {
-    method: "POST",
-    headers: { apikey: ANON, "Content-Type": "application/json" },
-    body: JSON.stringify({ email: fixture.mate.email, password: fixture.mate.password }),
-  });
-  const mateSession = await tokRes.json();
-  if (!tokRes.ok || !mateSession.access_token) { console.error(`the mate could not sign in (${tokRes.status})`); process.exit(1); }
-  mateTok = mateSession.access_token;
+  // ---- the mate writes to the owner, under the MATE's own JWT ----
+  // durableFixture RETURNS its mate session (it has always signed in as the mate; it simply did
+  // not hand the session back until #1520). createFixture gives a password instead, so exchange
+  // one. Never the service key: it bypasses RLS, and what a second REAL account can do is the
+  // entire question this walk asks.
+  if (fixture.mateSession && fixture.mateSession.access_token) {
+    mateTok = fixture.mateSession.access_token;
+  } else if (fixture.mate && fixture.mate.password) {
+    const tokRes = await fetch(`${SUPA}/auth/v1/token?grant_type=password`, {
+      method: "POST",
+      headers: { apikey: ANON, "Content-Type": "application/json" },
+      body: JSON.stringify({ email: fixture.mate.email, password: fixture.mate.password }),
+    });
+    const ms = await tokRes.json();
+    if (!tokRes.ok || !ms.access_token) { console.error(`the mate could not sign in (${tokRes.status})`); process.exit(1); }
+    mateTok = ms.access_token;
+  } else {
+    console.error("no mate session and no mate password — the message cannot be sent BY the mate, and sending it any other way would prove nothing.");
+    process.exit(1);
+  }
 
   const sent = await fetch(`${SUPA}/rest/v1/messages`, {
     method: "POST",
