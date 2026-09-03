@@ -1056,11 +1056,31 @@ the total when deciding where a new guard belongs.
       from `routePhotos` (composed from `useRouteTripReports`) plus `dbPhotos`
       (`useRouteContributions`) — two reads, one sentence, now gated by `photosUnavailable`.
       **Walking a screen nothing has walked is worth doing independently of why you walked it.**
-      - **`toposUnavailable` is MASKED to THIS guard, and `check:topo-outage-copy` is what proved it.** Overview is
-        already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether or not the
-        topos copy flips. It needs a run failing only that read — **`ONLY=topos`**, not
+      - **`toposUnavailable` is MASKED to THIS guard, and it has now been PROVEN both ways.**
+        Overview is already `says-broken=YES` from `reportsUnavailable`, so rule 1 passes whether
+        or not the topos copy flips, and `check:topo-outage-copy` proves the copy statically.
+        Isolating it here needs a run failing only that read — **`ONLY=topos`**, not
         `topo_photos`: `useAreaTopos` selects `from("topos")`, and ONLY is matched on the path
         segment after `/rest/v1/`, so a wrong table name intercepts nothing and now says so.
+        - **Measured over three runs, 2026-09-02**: it intercepts (4 blocked, 80 through) and
+          reports `RouteDetail` **5,018 → 5,031 says-broken=YES** identically every time, with
+          `RouteDetail:Conditions` and `:Photos` IDENTICAL — so the flag flips on Overview, the
+          screen acknowledges the fault, and neither sub-tab is fed by that read. The guard's own
+          comment had said `ONLY=topo_photos` (a storage bucket, not a PostgREST path at all) and
+          that the mode could not clear a `>=3` floor, which **#1262 had already scoped to 1**.
+          Two stale reasons kept a five-minute measurement unmade for months.
+        - **`ONLY=` ALSO FAILS ON ONE ARBITRARY UNRELATED SCREEN PER RUN, so read the table rather
+          than the exit code.** Those three runs failed on Ranks, Ranks and Crew:Groups — and Ranks
+          reproduced its exact counts (1,170 → 1,148) **twice** before coming back IDENTICAL on the
+          third. *Two agreeing runs are not determinism*, and a **catch** on a loaded box is no
+          more evidence than the miss this file already records. Nothing on those screens can read
+          topos: `useAreaTopos` has one call site, in `RouteDetail`, and Ranks is captured before
+          the route page is opened. The mechanism is `waitOutFetch`, which in the failing run
+          re-settles only while a **spinner** is on screen — enough under a blanket outage where
+          every read fails fast, not enough under `ONLY=` where the other 80 reads are still in
+          flight with no spinner to wait out. Deliberately unfixed: the repair is a more patient
+          settle, it costs a settle per screen in the CI blanket run that has already timed out
+          once, and CI never invokes `ONLY=`.
       - The other four sub-tabs are a **cost** decision — two more settles each, in each of two runs
         — and no flag lives on them. Click one when a flag lands on it.
       - **A FLAG HAS LANDED ON CONDITIONS, AND CLICKING IT IS HARDER THAN THIS NOTE IMPLIES.**
@@ -1116,17 +1136,22 @@ the total when deciding where a new guard belongs.
           — `check:overflow` still passes and now reaches that sub-tab for real, and with the walk
           applied `check:outage` captured Conditions at **3,388 chars**, distinct from Overview's
           5,026 and Photos' 678.
-        - **THE WALK ITSELF IS STILL NOT SHIPPED, because its first CI run found a REAL DEFECT.**
-          Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and said
-          nothing was wrong** — rule 1, on the very screen the walk was added to cover. The cause:
-          `activity` is `route.activity + myReports + dbReports`, so a failed reports read drops
-          the DB half and `buildConsensus` runs on what is left, presenting a **partial** derived
-          safety judgement as complete. `ConsensusPanel` already receives `reportsUnavailable` and
-          consults it **only on the empty branch**, so this case is silent. A caveat gated on that
-          flag was drafted and is deliberately NOT in this change: `ONLY=user_reports` leaves the
-          tab unchanged locally, so it cannot be exercised without a blanket run, and shipping an
-          unverified fix alongside the walk would put main red. **Land the caveat first, then the
-          walk.**
+        - **THE WALK FOUND A REAL DEFECT ON ITS FIRST CI RUN, AND BOTH HALVES SHIPPED TOGETHER IN
+          #1453.** Under a blanket outage `RouteDetail:Conditions` **CHANGED (3,388 → 3,384) and
+          said nothing was wrong** — rule 1, on the very screen the walk was added to cover. The
+          cause: `activity` is `route.activity + myReports + dbReports`, so a failed reports read
+          drops the DB half and `buildConsensus` runs on what is left, presenting a **partial**
+          derived safety judgement as complete. `ConsensusPanel` already received
+          `reportsUnavailable` and consulted it **only on the empty branch**, so exactly this case
+          was silent. It now carries *"Some reports couldn't load, so this is based on the ones
+          that did — not on everything filed for this route."*
+          - **This entry read "STILL NOT SHIPPED … land the caveat first, then the walk" for as
+            long as both were live on main**, which is the
+            [[an-audits-advice-rots-faster-than-its-counts]] shape landing on a guard entry rather
+            than on an audit. A stated blocker that has since cleared is worse than no note: it
+            sits in the worklist looking like work, and the next session re-derives a fix that is
+            already there. When a limitation here is acted on, come back and replace it with the
+            measurement.
     - **Photos is clicked by TEXT, not by accessible name**, and that is the opposite of every
       other sub-tab here: `tapByName` queries `[aria-label]` ONLY, and those six buttons carry
       `aria-current` plus their own text and no label. `scripts/lib/tap-by-text.mjs` is shared with
