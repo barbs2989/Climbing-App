@@ -19,7 +19,7 @@ const dead = (w) => { console.error(`\nmeasurement FAILED — ${w}. Nothing belo
 
 const audit = fs.readFileSync(path.join(ROOT, "scripts/audit-prose-citations.mjs"), "utf8");
 function liftRe(name) {
-  const m = new RegExp("^const " + name + " = (/.*/[gimsuy]*);$", "m").exec(audit);
+  const m = new RegExp("^const " + name + "\\s*=\\s*(/.*/[gimsuy]*);$", "m").exec(audit);
   if (!m) dead(`ANCHOR LOST: const ${name} = /.../ is not in audit-prose-citations.mjs`);
   return new Function("return " + m[1])();
 }
