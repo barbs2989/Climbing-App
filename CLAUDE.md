@@ -4181,6 +4181,18 @@ the correction knows the screen is wrong, and they have no way to report it.
     title) and is **proven non-vacuous**: restoring `nowrap` on the right-hand group reproduces the
     historical **394px** overflow and it catches it.
     `probe-route-breakdown-onscreen.mjs` prints the three shapes as read.
+  - **THE ROWS ARE DISCLOSURES, so the state is `aria-expanded` and the NAME does not repeat it.**
+    The stage row's old ▸ carried the attribute and lost it when the whole row became the control
+    — a regression rather than a gap — while the pitch row had spelled `", collapsed"` into its own
+    `aria-label` instead, which announces the state to a screen reader and to nothing else: no
+    automation, and no user agent that offers *expand* as an action. This file already states the
+    convention on `TagChip` (*"`aria-expanded` rather than `aria-pressed`: this is a disclosure,
+    not a toggle that changes anything"*); it simply had not been applied here. With both, a reader
+    hears "collapsed" twice, so the attribute carries it and the name says only what the row IS.
+    `check:selected-state` accepts `aria-expanded` and cannot see these rows anyway — `?zr=1` opens
+    `kings_hf`, whose `pitchDetail` is null. `probe-breakdown-rows-announce-expanded.mjs` is the
+    measurement, proven non-vacuous in **both** directions: dropping the attribute and re-adding
+    the words each fail it.
   - **IT TOOK `check:ui`'s PITCH-EXPAND STEP WITH IT, AND THAT STEP WAS RIGHT TO GO RED.** That
     walk found the pitch row by the text **`"▸ more"`** — a string only the old pitch row
     rendered, so once both kinds of row got the same bare `▸` the needle matched nothing and the
