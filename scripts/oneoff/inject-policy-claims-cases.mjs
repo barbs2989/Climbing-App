@@ -64,6 +64,27 @@ const CASES = [
     wantExit: 2,
   },
   {
+    name: "s3names",
+    why: "§3 goes back to offering a username-or-real-name choice — the control #1535 gated away, which the policy was still describing hours later",
+    file: "ClimbMatchCore.jsx",
+    find: `["What others can see","Other climbers see your public profile — your username, the profile you fill in, and the trust signals built from your climbing activity. Climbers you have connected with also see the name on your account, in your friends list and crew rosters.`,
+    repl: `["What others can see","Other climbers see your public profile as governed by your privacy settings — your username or real name, and the fields you choose to make visible.`,
+    expect: /your username or real name|governed by your privacy settings/,
+  },
+  {
+    // THE DEAD-BRANCH CASE. The first version of this guard paired promises to controls by fuzzy
+    // name match, and 2 of 4 entries never connected -- they could not fire whatever the documents
+    // said, which reads as coverage and is not. Renaming a gated control must now make the guard
+    // report a BROKEN scan rather than quietly losing that promise.
+    name: "staleentry",
+    why: "a gated control is renamed, so a promise entry can no longer fire — the guard must say so instead of going silently dead",
+    file: "ClimbMatch.jsx",
+    find: `aria-label="Toggle online status"`,
+    repl: `aria-label="Toggle my online status"`,
+    expect: /can never fire|BROKEN/,
+    wantExit: 2,
+  },
+  {
     // Must stay SILENT: with the flag true the controls actually render, so a document describing
     // them is CORRECT. A guard that still fired here would forbid the fix.
     name: "flaglive",

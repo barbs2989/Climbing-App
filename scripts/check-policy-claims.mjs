@@ -74,23 +74,38 @@ if (surfaces.some(([, t]) => t.length < 1500)) dead("a legal surface lifted shor
    narrow — "we use approximate location" is a statement about PROCESSING and is correct; "you
    control location sharing" is a claim about a switch. Matching the mere WORD would flag every
    honest sentence, the too-broad-needle trap this repo records throughout. */
+/* `control` is the control's EXACT aria-label, and that is not fussiness. The first version of
+   this table carried prose names and paired them to the app by fuzzy match -- and 2 of the 4
+   entries never connected ("Show my online status" against the app's "Toggle online status",
+   "Who can see my full profile" against "Who can see your profile"), so they could not fire
+   whatever the documents said. Two dead branches reading as coverage, which is the exact failure
+   this repo keeps finding in its own guards. An exact key plus the stale test below makes a
+   rename fail LOUDLY instead of going quietly dead. */
 const PROMISES = [
   { control: "Share approximate location only",
     re: /you control location sharing|approximate location only”? shares|"approximate location only" shares|location when you enable it/i },
-  { control: "Who can see my full profile",
+  { control: "Who can see your profile",
     re: /governed by your privacy settings|the fields you choose to make visible|choose who can see your (?:full )?profile/i },
-  { control: "Show my online status", re: /online status/i },
-  { control: "Who can invite me to crews", re: /who can invite you|crew invites? settings?/i },
+  { control: "Show my real name publicly",
+    re: /your username or real name|choose(?:s)? (?:to show )?your real name/i },
+  { control: "Toggle online status", re: /online status/i },
+  { control: "Who can invite you to a crew", re: /who can invite you|crew invites? settings?/i },
 ];
+
+// A promise entry naming a control that no longer exists is stale bookkeeping, and it fails --
+// otherwise the entry silently stops asking its question. Every registry in this repo is held to
+// this; the reason it is needed HERE is that the entry's death is invisible from a green run.
+const stale = PROMISES.filter((p) => !gated.includes(p.control));
+if (stale.length) {
+  dead(`${stale.length} promise entr(ies) name a control that is no longer gated, so they can never fire: ${stale.map((p) => `"${p.control}"`).join(", ")}. The app's gated labels are: ${gated.map((g) => `"${g}"`).join(", ")}. Re-key them, or drop the entry if the control is genuinely gone.`);
+}
 
 let promises = 0;
 for (const [name, text] of surfaces) {
   for (const p of PROMISES) {
     const m = p.re.exec(text);
     if (!m) continue;
-    const isGated = gated.some((g) => g.toLowerCase().includes(p.control.toLowerCase().slice(0, 14))
-      || p.control.toLowerCase().includes(g.toLowerCase().slice(0, 14)));
-    if (!isGated || live) continue;   // a control that RENDERS may of course be described
+    if (live) continue;   // a control that RENDERS may of course be described
     promises++;
     bad(`${name} describes "${p.control}", which the app renders as null: …${text.slice(Math.max(0, m.index - 70), m.index + m[0].length + 90).replace(/\s+/g, " ")}…`);
   }
@@ -136,6 +151,10 @@ for (const [claim, why] of [
   // one false claim with another. The exception has to stay stated.
   ["A GPS track is stored only when you attach one to a climb you log", "the one place location IS stored"],
   ["directory you call yourself", "search-and-rescue is a phone list, not an integration"],
+  // §3, after #1535 gated the name switch away and left the policy describing it. pubName() gates
+  // the display name and the friends list and crew roster do NOT go through it, so a connection
+  // really does see the account name -- claiming otherwise would be a fresh false statement.
+  ["Climbers you have connected with also see the name on your account", "§3 states where the account name IS shown, rather than claiming it is hidden"],
 ]) {
   if (text.includes(claim)) ok(why);
   else bad(`the rendered Privacy Policy no longer says: "${claim}"`);
@@ -148,6 +167,8 @@ for (const [gone, why] of [
   ["search-and-rescue", "no search-and-rescue integration"],
   ["if you opt in", "no opt-in"],
   ["location when you enable it", "and §1 promises no enablement either"],
+  ["your username or real name", "§3 does not offer a name choice that was gated away"],
+  ["governed by your privacy settings", "§3 does not defer to profile-visibility settings the app withholds"],
 ]) {
   if (text.includes(gone)) bad(`the rendered Privacy Policy says "${gone}" again — a claim the app cannot support`);
   else ok(why);

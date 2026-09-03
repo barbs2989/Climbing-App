@@ -1617,11 +1617,39 @@ the total when deciding where a new guard belongs.
     `PRIVACY_CONTROLS_LIVE`, **zero gated controls found** (with none, every promise comparison
     passes vacuously), a legal surface that lifted short, a failed bundle, a missing `LegalView`,
     and a render under 2,000 chars — against which every *"must NOT contain"* assertion passes.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
+  - **ITS OWN FIRST VERSION HAD TWO DEAD BRANCHES, and they read exactly like coverage.** Section 1
+    paired each promise to a gated control by **fuzzy name match**, and 2 of the 4 entries never
+    connected — `"Show my online status"` against the app's `Toggle online status`, and
+    `"Who can see my full profile"` against `Who can see your profile`. Those two could not fire
+    **whatever the documents said**, and a green run looked identical either way. Found by asking
+    the guard's own table which entries resolve, not by reading it. The key is now the control's
+    **exact aria-label**, and a promise naming a control that is no longer gated **fails as stale**
+    — so a rename is loud instead of silently costing a question.
+  - **FIXING THAT IMMEDIATELY CAUGHT A LIVE DEFECT HOURS OLD, WHICH IS THE ARGUMENT FOR THE WHOLE
+    GUARD.** #1535 gated `showRealName` and `visibleWhileBrowsing` behind the flag — correctly —
+    and **left Privacy §3 describing both**: *"Other climbers see your public profile **as governed
+    by your privacy settings — your username or real name**, and the fields you choose to make
+    visible."* Two clauses naming controls that now render as `null`. Nothing else would have
+    noticed: gating a switch changes no document, and the document changes no identifier.
+    - The replacement states what is measurably shown, **including the awkward part**:
+      `pubName()` gates the display name, and the friends list and crew roster do **not** go
+      through it, so a connection really does see the account name. Claiming *"your real name is
+      not shown"* would have been a fresh false statement — the same trap the §4 rewrite fell into
+      with *"we store no device location"*, twice in two days.
+    - **The general lesson: gating a control is a change to the DOCUMENTS too.** The flag exists to
+      make a promise honest; it makes a different promise dishonest one section over.
+  - **A same-day amendment does not move a DATE version**, and that is stated rather than papered
+    over: §3 changed hours after §4 under the same `POLICY_VERSION`, so an account that accepted
+    earlier in the day has a record pointing at slightly different words. Inherent to a date-based
+    version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
+    real launch, not worth inventing a counter for at three accounts.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
-    historical text, restored verbatim. **Case 6 must stay SILENT** — flipping
-    `PRIVACY_CONTROLS_LIVE` to true makes the controls real, so describing them becomes correct,
-    and a guard that still fired would forbid the fix.
+    historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
+    dead-branch defect above** — renaming a gated control must report a BROKEN scan rather than
+    quietly losing a promise. **`flaglive` must stay SILENT** — flipping `PRIVACY_CONTROLS_LIVE`
+    to true makes the controls real, so describing them becomes correct, and a guard that still
+    fired would forbid the fix.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
