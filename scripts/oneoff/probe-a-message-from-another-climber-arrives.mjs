@@ -23,8 +23,19 @@
 // policy (auth.uid() = sender_id) the app's sendDirectMessage uses — never the service key, which
 // would prove nothing about what a second real account can do.
 //
-// Writes to the live project; per-run fixture, rows deleted, leaks reported. Local only: it needs
-// the mate's password, which CI's durable pair does not expose.
+// A CLAIM IN AN EARLIER VERSION OF THIS HEADER WAS WRONG, and it was repeated across three merged
+// PRs: "local only — it needs the mate's password, which CI's durable pair does not expose."
+// `durable-fixture.mjs` signs in AS THE MATE with CI_TEST_MATE_PASSWORD and holds `mateSession`
+// throughout; it simply does not RETURN it. So CI has had the second account's session all along
+// and the blocker was a missing property, not a missing credential. It returns `mateSession` now.
+//
+// WHAT ACTUALLY BLOCKS CI IS CONCURRENCY, which is a different problem with a different answer per
+// probe, because the durable accounts are SHARED between runs:
+//   THIS ONE IS SAFE. Two concurrent runs each insert a message mate->owner, and every assertion
+//   here holds with either or both present: the inbox is not empty, the sender is identified, the
+//   body is on screen. Teardown deletes by ID, never by sender. It is the promotion candidate.
+//
+// Writes to the live project; per-run fixture locally, rows deleted, leaks reported.
 
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
