@@ -96,7 +96,34 @@ for (const r of rows) {
     // disagreement, which Anderson's Thumb really has, is a different and milder finding.
     // Luahna's real defect is untouched by this: it states its 20-30 m rappel in descent_text.
     const DESCENT_FIELD = k === "descent_text" || k === "rappels" || k === "rappel_count_note";
-    if (DESCENT_FIELD) for (const m of s.matchAll(RAP)) for (const n of [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])]) if (ok(n)) hitsP.add(n);
+    // RULE 5 -- "60m ROPE" IS A ROPE WHEREVER IT IS WRITTEN, INCLUDING IN A DESCENT SENTENCE. This
+    // was the single largest source of false findings and it produced SIX of eight on a hand-read
+    // sample: a descent field routinely prescribes the rope beside the rappel it is for --
+    // "rappel the Chockstone Route (60m rope)", "a single rappel with a 70m rope", "a 60m rope
+    // doubled gives about 30m per side". Rule 3 excused kit fields; these are descent fields saying
+    // the same thing. The measured effect is not subtle: wa_icy_peak_southwest_route does the
+    // doubling arithmetic correctly IN ITS OWN PROSE and was reported as contradicting itself.
+    //
+    // The mask is deliberately narrow -- the number must be DIRECTLY followed by the rope noun, so
+    // "a roughly 60-meter rappel" (wa_big_four_mountain_dry_creek_route, a real finding) and
+    // "a single-rope rappel ... roughly 20-30m" (wa_luahna_peak_east_slopes, a real finding) both
+    // survive untouched. Widening it to any sentence mentioning a rope would delete both.
+    // The rope noun is often ELIDED after its adjective -- "bring a 60m single" (wa_northwest_ridge)
+    // means a 60 m single ROPE. Those adjectives describe a rope and never a rappel, so they mask
+    // the number on their own.
+    const ROPE_NOUN = /\b(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)\.?\s+(?:(?:single|double|dynamic|twin|half|static|glacier|dry[- ]treated)\s+)*ropes?\b|\b(\d{2})\s*(?:m|-?\s?met(?:er|re)s?)\.?\s+(?:single|double|twin|half|dynamic|static)\b/gi;
+    let descentTxt = s;
+    for (const m of s.matchAll(ROPE_NOUN)) {
+      const n = Number(m[1] || m[2]);
+      if (ok(n) && n >= 20) { hitsR.add(n); }
+      descentTxt = descentTxt.replace(m[0], " ".repeat(m[0].length));   // it cannot also be a rappel
+    }
+    // RULE 6 -- A ROW STATING ZERO RAPPELS HAS NO RAPPEL TO REACH. wa_kyes_peak_glaciated_scramble
+    // stores rappels "0" and a walk-off descent, and was still flagged because a rope length elsewhere
+    // in its prose got read as a distance. This is structural, unlike widening the denial regex --
+    // a phrase list is beaten by one more adjective ("not A rappel descent" defeated the existing one).
+    const ZERO_RAPS = String(r.rappels ?? "").trim() === "0";
+    if (DESCENT_FIELD && !ZERO_RAPS) for (const m of descentTxt.matchAll(RAP)) for (const n of [Number(m[1]), Number(m[2]), Number(m[3]), Number(m[4])]) if (ok(n)) hitsP.add(n);
     for (const n of hitsP) { proseRaps.add(n); if (!rapSrc.has(n)) rapSrc.set(n, []); if (!rapSrc.get(n).includes(k)) rapSrc.get(n).push(k); }
     for (const n of hitsR) {
       if (hitsP.has(n)) { ambiguous.add(n); continue; }          // a rappel distance, not a rope
