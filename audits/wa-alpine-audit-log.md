@@ -12480,3 +12480,65 @@ WebFetch was blocked for every route-database/guidebook/encyclopedia domain atte
 note; all research relied on WebSearch synthesis.
 
 Next batch continues from `wa_bonanza_peak_northeast_buttress` onward alphabetically (pass 4).
+
+## Batch 181 (2026-09-03, pass 4)
+
+Routes: Booker Mountain NE Face, Boston Peak SE Face, Boving-Christensen (Prusik), Boving
+Roofs (South Early Winters Spire), Buckner Mountain North Face, Buckner Mountain SW Face,
+Burgundy Spire North Face, Burnt Boot Peak North Ridge.
+
+**1 confirmed error fixed:**
+- `wa_buckner_mountain_north_face` — header `season` said "Jul-Sep", contradicting the same
+  row's own `best_season` ("Late May through early July") and `seasonal_guidance` (whose
+  monthBreakdown only rates May/June/July, with July already "marginal", and says nothing
+  about Aug/Sep). External sources corroborate spring/early-summer as the season for this
+  north-facing snow/ice climb (ice degrades fast through the summer). Corrected `season` to
+  "May-Jul" to match the route's own documented, sourced window.
+
+**Confirmed correct, no fix needed:**
+- `wa_booker_mountain_northeast_face` — elevation (8,284 ft) and FA (Dan Davis, John Holland,
+  Aug 22 1964) both confirmed exactly via Wikipedia/web search. Area coordinates match the
+  route's summit waypoint almost exactly.
+- `wa_boston_peak_southeast_face` — elevation (8,894 ft) and the 1938 Bressler/Clough/Cox/Myers
+  FA confirmed exactly, matching the row's own `overview` text. Left `fa` column itself null
+  rather than populating it: the row's own `data_quality.gaps` already flags that the 1938 date
+  may be the peak's general FA rather than confirmed specifically for this SE-face line, so
+  writing it into `fa` would overstate certainty the row itself disclaims. (Also previously
+  reviewed in batch 55/pass 2 with the same conclusion.)
+- `wa_boving_roofs` — no issues found; rappel_detail (3 stations) and rappel_count_note are
+  internally consistent.
+- `wa_buckner_mountain_southwest_face` — elevation (9,114 ft) confirmed; gain_ft comfortably
+  clears the trailhead-to-summit floor once the route's up-and-down profile (Sahale Glacier
+  Camp → Sahale-Buckner notch → Horseshoe Basin → summit) is accounted for.
+- `wa_burgundy_spire_north_face` — high_point_ft/summit waypoint (8,400 ft) vs. the parent
+  area's `elevation_ft` (8,483 ft): NOT an error. The row's own `data_quality.gaps` already
+  documents this as a deliberate dual convention — climbing literature (SummitPost/
+  Mountaineers/LemkeClimbs) uses ~8,400 ft, peak databases (listsofjohn/peakbagger) cite
+  ~8,492 ft from LIDAR — same pattern already recorded for Bonanza Peak in batch 180. FA
+  (Beckey party, 1953) confirmed via web search.
+- `wa_burnt_boot_peak_north_ridge` — elevation (6,540 ft) confirmed exactly; FA (Williamson/
+  Bucher/Oas) matches the row's own quoted first-ascent note.
+
+**Flagged for human review (not fixed):**
+1. `wa_boving_christensen` — three fields describe descent inconsistently. `bail` describes a
+   2-rappel retreat to the base of the West Ridge *from partway up the route*. `rappels` reuses
+   that same "two rappels ... to the base of the West Ridge" language but frames it as a
+   completion option ("or complete the West Ridge and use its normal rappel descent"), which
+   reads as conflating the bail option with topping out. `descent_text` then describes a third,
+   different completion descent entirely — one full-length rappel down the north side sharing
+   anchors with the neighboring Solid Gold/Energizer Bunny routes, with no mention of the West
+   Ridge at all. It's plausible these are genuinely different, non-contradictory options (a
+   mid-route bail vs. two different ways to finish), but nothing available here confirms how
+   they relate, and the sources that might (cascadeclimbers.com forum thread specifically about
+   this route, stephabegg.com trip report) were both blocked by network egress. Left unfixed
+   rather than guess at which completion description is authoritative or how to reconcile them.
+
+FA year for `wa_boving_christensen` itself ("year not given by available sources") was also
+searched and remains genuinely unconfirmed externally — the row's own honest admission stands,
+not treated as an error.
+
+WebFetch was blocked for every route-database/guidebook/trip-report domain attempted this
+batch (stephabegg.com, cascadeclimbers.com, peakbagger.com) — consistent with every recent
+batch's note; all research relied on WebSearch synthesis.
+
+Next batch continues from `wa_burnt_boot_peak_north_ridge` onward alphabetically (pass 4).
