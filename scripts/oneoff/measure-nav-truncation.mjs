@@ -79,7 +79,7 @@ for (const w of WIDTHS) {
   await page.goto(base, { waitUntil: "domcontentloaded" });
   await settledText(page);
   console.log(`\n=== ${w}px ===`);
-  for (const tab of ["Home", "Crew"]) {
+  for (const tab of (process.env.TABS || "Home,Climbs,Partners,Crew,Logbook,Ranks,Profile").split(",")) {
     await page.evaluate((label) => {
       const el = [...document.querySelectorAll("[aria-label]")].find((e) => {
         const l = e.getAttribute("aria-label");
