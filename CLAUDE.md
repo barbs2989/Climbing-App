@@ -3454,6 +3454,23 @@ the total when deciding where a new guard belongs.
     would be fitted to the answer. Routes that RECORD something at the implied start are excluded:
     that is the documented high-camp convention (24 routes), and flagging them would accuse correct
     work.
+  - **AND "RECORDS SOMETHING" MEANS EITHER COLUMN, WHICH IT DID NOT UNTIL #1533.** The predicate
+    read `waypoints` alone, and most high camps live in **`bivy`** — so a quarter of the caveats it
+    rendered were telling a climber that a CORRECT gain was impossible. Measured A/B on the live
+    catalog: the caveat fires on **49 routes, 12 of them falsely**, and the widening takes it to 37
+    with those 12 at zero. The worst was `wa_mount_rainier_tahoma_glacier` — the caveat claimed it
+    **6,499 ft short** while the row records a camp at 9,440 ft, **41 ft** from the implied start;
+    `wa_south_ridge_6` matched to the **foot**. *A false warning is how a real one stops being
+    read*, which this file states for rope warnings and for the "After dark" tile, arriving on the
+    tile next to them.
+    - The two stores are the same pair **`campSites()` already merges** for CAMPING & BIVY, so this
+      is not a new source — it is the second half of one the app already treats as one thing.
+    - **The widening is NOT a blanket excuse**, and the guard pins that: a bivy at some *other*
+      height must still let the caveat fire, or any route recording a camp anywhere would be
+      silenced. Both directions are cases, and the new one was proven non-vacuous by reverting the
+      predicate and watching it fail.
+    - **`audit:gain` has the same blind spot and is REPORT-ONLY, so it is left**: 24 of its 80
+      findings are this. Read its count as an upper bound until somebody widens it too.
   - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
     **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
     while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
