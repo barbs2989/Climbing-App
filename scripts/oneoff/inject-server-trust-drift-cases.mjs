@@ -41,8 +41,8 @@ const CASES = [
     from: "return least(base_score, 99);", to: "return least(base_score, 95);" },
   { name: "rows-prop-dropped", file: CORE, expect: "fail",
     why: "TrustBreakdown ignores `rows` and falls back to the client model — a silent revert that changes no number", says: /FAIL\s+the panel does not render the supplied server rows/,
-    from: "function TrustBreakdown({climber,rows}){return <div>{(rows||trustContributions(climber)).map(",
-    to:   "function TrustBreakdown({climber,rows}){return <div>{trustContributions(climber).map(" },
+    from: "return <div>{(rows||trustContributions(climber)).map(",
+    to:   "return <div>{trustContributions(climber).map(" },
   // MUST STAY SILENT. A comment in the migration that names a different number is documentation:
   // 0038's own header lists component RANGES ("verification (0-20)") that are not the weights, and a
   // guard reading those would fail on the file explaining itself.
