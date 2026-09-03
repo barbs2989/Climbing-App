@@ -12138,3 +12138,92 @@ declined to resolve; not re-flagged here.
 Pass 3 is now complete (529 routes in scope, cycled through fully). Pass 4
 begins with this batch's second half; next batch continues from
 `wa_agnes_mountain_west_route` onward alphabetically.
+
+## Batch 177 (2026-09-03, pass 4)
+
+Checked: `wa_alpine_lookout_round_mountain_trail`,
+`wa_american_border_peak_northeast_face`,
+`wa_american_border_peak_southeast_face`,
+`wa_amphitheater_mountain_finger_of_fatwa`,
+`wa_amphitheater_mountain_middle_finger_buttress_left_side`,
+`wa_amphitheater_mountain_middle_finger_buttress_right_side`,
+`wa_amphitheater_mountain_north_ridge`,
+`wa_amphitheater_mountain_pilgrimage_to_mecca`.
+
+**Confirmed errors fixed (2):**
+- `wa_amphitheater_mountain_finger_of_fatwa`: `grade` was null while
+  `grade_system` ('yds'), `grade_num` (11) and `rock_grade` ('5.11c') were all
+  populated and agreed with each other — the one route on this buttress
+  missing the plain-text grade every sibling route on `wa_amphitheater_mountain`
+  carries (grade mirrors rock_grade on Right Side, North Ridge, and Pilgrimage
+  to Mecca). Confirmed via Wikipedia's Amphitheater Mountain page, which
+  independently describes Finger of Fatwa as "a class 5.11c rock climbing
+  route with 5 pitches." Filled with `5.11c`.
+- `wa_amphitheater_mountain_middle_finger_buttress_left_side`: same defect,
+  same buttress — `grade` null against a populated, agreeing
+  `grade_system`/`grade_num` (10)/`rock_grade` ('5.10b'). Filled with `5.10b`.
+
+`npm run check:sql -- audits/sql/2026-09-03-batch-177.sql` reports OK — both
+target ids exist and the scoped `WHERE` clauses (`grade IS NULL AND
+rock_grade = ...`) match live rows.
+
+**Flagged for human review (2):**
+- `wa_american_border_peak_southeast_face`: `beta` claims the standard/
+  easiest line was "first climbed by Baker, Beckey, and Dudra in 1952," but
+  this row's own `fa` field (independently confirmed correct — Sept 14, 1930,
+  Alec Dalgleish/Tom Fyles/Stan Henderson/R.A. Fraser, matching Wikipedia and
+  SummitPost verbatim) already credits that exact line as the peak's 1930
+  first ascent. Unclear whether Baker/Beckey/Dudra's 1952 ascent was a
+  genuinely distinct combination/variation now regarded as the standard route,
+  or whether `beta` is conflating a different historical ascent with this
+  line. Beckey's Cascade Alpine Guide would likely settle it, but WebFetch was
+  blocked for every route-database/guidebook domain tried this batch
+  (summitpost.org, mountainproject.com, mountaineers.org, en.wikipedia.org,
+  peakbagger.com — consistent with every earlier batch's tooling note about
+  WebFetch access).
+- `wa_amphitheater_mountain_*` (all 5 routes sharing this approach):
+  `dist_km` is 27.4 (~17 mi) on every route. Independent sourcing — a
+  SummitPost-derived Andrews Creek Trail #504 segment breakdown (3,050 ft
+  trailhead → 12 mi to Andrews Pass → +2 mi to the Spanish Creek junction →
+  +1 mi to the guard station → +3 mi to Upper Cathedral Lake, ≈18-19 mi
+  total), a Gaia GPS "19.1 mile" trail listing for the same hike, and a
+  "42-mile roundtrip" figure to Cathedral Pass (≈21 mi one-way, used by the
+  North Ridge route specifically) — converges on a real one-way distance in
+  the 18-21 mile range, roughly 10-20% above the stored value. This feeds the
+  Planner tab's distance-based time estimates on all 5 routes. Sourcing is
+  rounded, guidebook-style segment mileage rather than one precise figure, so
+  not confident enough to write a specific corrected km value — noted rather
+  than fixed.
+
+**Clean / confirmed accurate (6):**
+`wa_alpine_lookout_round_mountain_trail` (elevation 6,237 ft, one-way distance
+~5.2 mi, gain 2,600 ft all match AllTrails/Wenatchee Outdoors exactly — this
+route's own `corrections` field already documents the same research from an
+earlier pass); `wa_american_border_peak_northeast_face` and
+`wa_american_border_peak_southeast_face` (peak elevation 7,998 ft confirmed
+via Wikipedia; SE Face/South Ridge's 1930 FA credit confirmed word-for-word);
+`wa_amphitheater_mountain_finger_of_fatwa` (FA — Scott Bennett and Blake
+Herrington, August 2011 — confirmed via web search; the row's own
+`detailed_rack` field separately cites "the AAC Publications first-ascent
+note ... 2012," which is very likely the AAJ publication year for a 2011
+ascent rather than a contradiction, so not flagged); `wa_amphitheater_mountain_middle_finger_buttress_right_side`
+(grade 5.9, Grade III, 7 pitches all match Mountain Project); `wa_amphitheater_mountain_north_ridge`
+and `wa_amphitheater_mountain_pilgrimage_to_mecca` (peak elevation 8,358 ft
+confirmed via Wikipedia/PeakVisor; Pilgrimage to Mecca's FA — Darin Berdinka
+and Owen Lunz, July 2004 — confirmed word-for-word via Climbing magazine).
+
+**Unable to independently confirm (not flagged — no contradicting evidence,
+just thin sourcing):** FA dates for `wa_amphitheater_mountain_middle_finger_buttress_left_side`
+(August 1971), `..._right_side` (July 15, 1973), and `..._north_ridge`
+(August 29, 1973) — web search corroborates only that the buttress's routes
+date to "the late 1960s and early '70s" generally, with no source giving the
+specific day/month figures to check against.
+
+Area hierarchy spot-checked for all three peaks in this batch (Alpine Lookout
+under Nason Ridge/Chiwaukum; American Border Peak under Shuksan/Baker
+neighbors; Amphitheater Mountain under Pasayten) — all correctly filed, and
+each area row's own lat/lng matches the coordinates independently stored on
+its routes.
+
+Next batch continues from `wa_amphitheater_mountain_pilgrimage_to_mecca`
+onward alphabetically (pass 4).

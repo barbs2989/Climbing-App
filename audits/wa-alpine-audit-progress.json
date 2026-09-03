@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_agnes_mountain_west_route",
+    "last_processed_id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3671,6 +3671,25 @@
             "clean": 5,
             "sql_file": "audits/sql/2026-09-03-batch-176.sql",
             "note": "Closes pass 3 (4 routes: wa_whitehorse_mountain_r1, wa_windy_peak_iron_gate_trail, wa_windy_peak_windy_creek_trail, wa_witches_tower_south_face) and opens pass 4 from the top of scope (4 routes: wa_a_servant_to_liberty, wa_abernathy_peak_south_ridge, wa_action_potential, wa_agnes_mountain_west_route)."
+        },
+        {
+            "batch_number": 177,
+            "date": "2026-09-03",
+            "route_ids": [
+                "wa_alpine_lookout_round_mountain_trail",
+                "wa_american_border_peak_northeast_face",
+                "wa_american_border_peak_southeast_face",
+                "wa_amphitheater_mountain_finger_of_fatwa",
+                "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+                "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+                "wa_amphitheater_mountain_north_ridge",
+                "wa_amphitheater_mountain_pilgrimage_to_mecca"
+            ],
+            "confirmed_errors_fixed": 2,
+            "flagged_for_human_review": 2,
+            "clean": 6,
+            "sql_file": "audits/sql/2026-09-03-batch-177.sql",
+            "note": "wa_amphitheater_mountain_finger_of_fatwa and wa_amphitheater_mountain_middle_finger_buttress_left_side both had a null `grade` despite a populated, agreeing grade_system/grade_num/rock_grade -- filled from rock_grade, matching the mirroring already present on every sibling route on the same buttress. Flagged: wa_american_border_peak_southeast_face's beta text credits the standard line's first ascent to Baker/Beckey/Dudra in 1952, which conflicts with (or duplicates, unclear) the row's own already-confirmed 1930 fa credit for the same line; and dist_km (27.4, shared across all 5 Amphitheater Mountain routes) looks low against multiple sourced Andrews Creek Trail #504 mileage figures (~18-21mi one-way vs the stored ~17mi), but sourcing is too approximate to write a precise fix. WebFetch was blocked for every route-database/guidebook domain attempted this batch (summitpost.org, mountainproject.com, mountaineers.org, en.wikipedia.org, peakbagger.com); all research relied on WebSearch synthesis."
         }
     ]
 }
