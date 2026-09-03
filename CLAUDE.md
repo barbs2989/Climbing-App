@@ -4335,6 +4335,39 @@ the correction knows the screen is wrong, and they have no way to report it.
     **799** gated routes that do, **0** have a high point under 3,000 ft
     (`measure-camping-gate-lowland.mjs`). Widening or narrowing the gate would have been a fix to
     nothing, and narrowing it risks suppressing correct data.
+  - **THE 50 "NO FEATURE ANYWHERE IN WA" REFUSALS ARE REAL — 42 of 50 MEASURED, not assumed.**
+    That bucket had been *read* as climbers' names and never tested, and this repo has been burned
+    by exactly that shape: an ArcGIS `LIKE` was case-sensitive, GNIS matched nothing for 25 of 39
+    pins, and the run reported every one as *"a climbers' name, not a federal one"* — uniform,
+    plausible and wrong. `diagnose-unfound-camp-names.mjs` asks the gazetteer directly for every
+    refused name and prints what came back:
+
+        ABSENT  the gazetteer holds nothing of this name : 42
+        EXACT   an exact name match, in Washington       :  2
+        NEAR    hits in WA, no exact name match          :  2
+        FAR     best hit is outside Washington           :  4
+
+    So the reading was right, and now it is evidence. *Lower Lena Lake*, *Chiwaukum Chain Lakes*,
+    *Upper Ice Lake* and *Upper Horseshoe Basin* return **nothing** — these are climbers' and
+    descriptive names, and no amount of querying finds a place that is not mapped.
+    - **The 4 FAR entries are the namesake gate working**: *Chicago Camp* resolves to California,
+      *Bearpaw Lake* to Wyoming, *Moose Creek bridge* to New York, *Colonnade Ridge* to the Grand
+      Canyon.
+    - **ONE was a gate gap and is fixed**: `roadhead` was missing from `TAIL`, so the search was the
+      whole phrase — *"Trinity trailhead roadhead"* returned nothing while *"Trinity trailhead"*
+      matches exactly. Added, and it **composes with the gates rather than bypassing them**:
+      *"Bedal Creek roadhead"* now reaches *"Bedal Creek"* and is refused as LINEAR, which is the
+      right answer for a stream. One row filled: Trinity Trailhead, 2,764 ft.
+    - **TWO ARE REPORTED, NOT SWEPT.** *"Sulphide Camp, end of the Baker River trail"* → *"Sulphide
+      Creek Camp"*, and *"Cat Basin"* → *"Cat Basin Stock Camp"*. Both are plausibly the same place
+      — Sulphide Creek Camp really is on the Baker River trail the row names — but accepting them
+      means letting an INSERTED WORD through the identity gate, and this catalog already records
+      that a feature type discriminates: Whatcom Pass is not Whatcom Camp. Two rows are not worth
+      loosening the rule that keeps 855 wrong matches out.
+    - **So the remaining camp-name work is genuinely unavailable, not merely undone.** 42 names have
+      no mapped feature, 66 more are dispersed zones where no single height exists, and 31 name
+      several places at once. That is the answer to *"can this be finished?"* — no, and the refusals
+      are the result.
   - **NOT-COMPUTED IS NOT NOT-MISPLACED, and conflating them nearly wrote a WRONG number with a
     measurement to justify it.** The five camps stored at two elevations were taken back to the
     ground — the method that settled Skagit Queen — and the first pass "settled" Sahale Glacier
