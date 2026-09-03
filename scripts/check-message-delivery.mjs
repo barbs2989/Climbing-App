@@ -240,12 +240,11 @@ try {
     const d = await fetch(`${SUPA}/rest/v1/messages?id=eq.${msgId}`, {
       method: "DELETE", headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` },
     }).catch(() => null);
-    // A 204 IS NOT EVIDENCE THE ROW WENT. `messages` has no DELETE policy at all (0042 grants
-    // select, insert and update only), so RLS refuses this and PostgREST answers 204 with res.ok
-    // true — measured: insert, delete, re-read, and the row is still there. An earlier version
-    // printed "removed the message: ok" off that status and was reporting a success it did not
-    // have, which is the class this repo records as "a 200 is not evidence the data changed".
-    // Read the row back instead of trusting the code.
+    // A 204 IS NOT EVIDENCE THE ROW WENT, and the read-back stays even though 0176 gave `messages`
+    // a delete policy. It is what caught the absence of one: RLS refused the delete, PostgREST
+    // answered 204, res.ok was true, and this guard printed "removed the message: ok" while the
+    // row sat there — the class recorded as "a 200 is not evidence the data changed", which is
+    // also why patchRow exists. A policy can be dropped again; the read-back cannot be fooled.
     const still = await fetch(`${SUPA}/rest/v1/messages?id=eq.${msgId}&select=id`, {
       headers: { apikey: ANON, Authorization: `Bearer ${mateTok}` },
     }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
