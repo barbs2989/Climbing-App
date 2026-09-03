@@ -12769,3 +12769,84 @@ Publications). Colfax Peak's elevation (9,440 ft) and Cutthroat Peak's (8,066 ft
 `wa_complete_south_buttress`) were both independently confirmed as well.
 
 Next batch continues from `wa_complete_south_buttress` onward alphabetically (pass 4).
+
+## 2026-09-03 — Pass 4, Batch 185
+
+Routes: `wa_concord_tower_north_face`, `wa_copper_peak_south_route`,
+`wa_corteo_peak_southwest_ridge`, `wa_crater_mountain_standard_route`,
+`wa_crooked_thumb_peak_east_face`, `wa_crooked_thumb_peak_south_route`,
+`wa_cutthroat_peak_cauthorn_wilson_couloir`, `wa_cutthroat_peak_northeast_face`,
+`wa_cutthroat_peak_southeast_buttress`, `wa_cutthroat_south_buttress`.
+
+**Fixed:**
+Found a real contamination bug: `wa_cutthroat_south_buttress`, `wa_cutthroat_peak_southeast_buttress`,
+`wa_cutthroat_peak_northeast_face` (East Face) and `wa_cutthroat_peak_cauthorn_wilson_couloir`
+all carried the byte-identical `beta` string ("Grade II, 5.7 climbing. Short approach from
+highway. Rock improves significantly higher on ridge...Uncrowded route."), which actually
+describes Cutthroat Peak's *West Ridge* (Grade II, Class 5+/5.5-5.7 crux per SummitPost/
+Mountaineers — confirmed via search) and is wrong for all four: South Buttress is a 12-pitch
+5.7-5.8 route, Southeast Buttress is Grade III 5.8, East Face is Grade III 5.10 rock (Bard/
+Chouinard/Cunningham, 1976), and Cauthorn-Wilson Couloir is a Grade III+ WI3-WI4 snow/ice
+couloir — the claim of "fair granite" cannot describe an ice route at all. A catalog-wide
+search turned up the same string on `wa_cutthroat_west_ridge` (its likely rightful home, not
+touched — first up next batch) and on two out-of-state, out-of-scope crag routes
+(`az_cutthroat_trout`, `ar_cutthroat`), also left untouched. Nulled the four in-scope rows
+rather than inventing replacement prose per route. `wa_cutthroat_peak_northeast_face`'s `grade`
+was bare "III" with no YDS number and null `grade_num`/`grade_system`, even though its own
+`corrections` field already (incorrectly) asserted the grade was "III 5.10" — a prior pass
+believed this was fixed and it wasn't; corrected to match both the correction note and
+external sources (III, 5.10, 6 pitches — Bard/Chouinard/Cunningham 1976). `wa_cutthroat_peak_southeast_buttress`
+had the same bare-"III" gap; the Mountaineers' own route page gives Grade III, 5.8 —
+unambiguous, single-sourced, filled in. `wa_crooked_thumb_peak_east_face` had a completely
+null grade despite its own `beta` field already quoting the source verbatim ("class 3-4," from
+the July 31 1963 Mountaineers FA, confirmed independently via AAC Publications) — filled in as
+Class 3-4. `wa_crater_mountain_standard_route` had a completely null grade; multiple trip-report
+sources independently describe the one technical step (a 300-400 ft ridge step near the summit)
+as "class 2-3 (with exposure)" / "no more than exposed class 3" — filled in as Class 2-3.
+`wa_copper_peak_south_route`'s `corrections` field was a stale peak-identity-ambiguity flag from
+a prior pass, asking whether this route belongs to the Olympics' Copper Mountain or the Entiat
+Mountains' Copper Peak. Now resolved: elevation (8,965 ft), FA (Bennet/Courtwright/Hagman,
+August 1937) and the area's own coordinates (48.17N/-120.80W, path through
+`wa_chiwawa_entiat_region`) all independently confirm the Entiat Mountains peak, matching what
+the row already stores — the ambiguity the note raised no longer exists. Removed.
+
+**Flagged for human review:**
+`wa_crooked_thumb_peak_south_route`'s `beta` field opens by calling the route a "classic
+Beckey-era first ascent," but its own `fa` field credits a completely different four-person
+1963 Mountaineers party (Ardussi, Magnusson, Mech, Swanson) — not Fred Beckey. Wikipedia
+independently states Crooked Thumb Peak's overall first ascent was in 1940 by Fred and Helmi
+Beckey, but via an unrecorded route, so it's unclear whether "Beckey-era" is a loose reference
+to the peak's early climbing history or an actual (undocumented) mix-up with the 1940 line.
+Not confident enough to correct either field without knowing which route the Beckeys used.
+`wa_cutthroat_south_buttress`'s `grade` ("5.8") lacks a Roman-numeral commitment grade; most
+sources (SummitPost, Mountaineers, NC Mountain Guides) call it "Grade III," but one
+(spokalpine.com) calls it "Grade III+" — small enough disagreement, and low enough stakes, that
+it's left alone rather than picking one.
+
+**Clean / confirmed accurate:**
+`wa_concord_tower_north_face`: FA (Fred Beckey & John Parrott, June 12 1956) confirmed exactly;
+elevation (7,611 ft) is within 1 ft of ListsOfJohn's more current 7,612 ft figure (an older
+SummitPost page gives 7,560 ft, but the closer, LiDAR-based source is the better match).
+`wa_corteo_peak_southwest_ridge`: elevation (8,107 ft) and FA (John Lehmann & Hermann Ulrichs,
+July 1935) both confirmed exactly; its existing `corrections` note about a mismatched id slug
+("southeast_face" vs. this being the Southwest Ridge) was reviewed in a prior pass and remains
+accurate — left alone. `wa_crater_mountain_standard_route`: elevation (8,132 ft) confirmed
+(Wikipedia); gain_ft (6,400) is consistent with the row's own trailhead (1,900 ft) to summit
+net rise of 6,232 ft, plus real trail undulation/creek fords. `wa_crooked_thumb_peak_south_route`:
+elevation (8,129 ft) confirmed; its stored gain_ft/loss_ft (13,300/13,200) are far above the
+~7,600 ft one-way rise implied by summing only its own sparse waypoints, but that's expected —
+this is the well-documented, notoriously brutal multi-pass Whatcom Pass approach to the
+Southern/Northern Pickets, and real terrain between waypoints (glacier travel, notches) adds
+real elevation that 8 waypoints can't capture; not flagged. `wa_cutthroat_peak_cauthorn_wilson_couloir`:
+its stored season ("Apr-May") independently matches every source's description of the ideal
+timing (as soon as possible after Highway 20's spring opening, before the face gets too much
+sun). `wa_cutthroat_peak_northeast_face` (East Face): FA and pitch count (6) both confirmed.
+`wa_cutthroat_south_buttress`: FA (Fred Beckey and Don Gordon, 1958) confirmed; its detailed
+12-entry `pitch_detail` (chimney, false summit, crux at pitch 8) is internally consistent and
+matches route descriptions, even though some external sources give a coarser "6-7 pitch" count
+— normal pitch-splitting variance, not an error. `wa_cutthroat_peak_southeast_buttress`: Grade
+III 5.8 confirmed via the Mountaineers' own route description.
+
+Next batch continues from `wa_cutthroat_south_buttress` onward alphabetically (pass 4) —
+`wa_cutthroat_west_ridge` is next, and is worth checking against the shared beta string found
+this batch.
