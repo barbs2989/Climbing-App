@@ -135,7 +135,13 @@ const CASES = [
       { pitch: "P2", grade: "5.10a", notes: "Thin face past a small roof.", bolts: 4 },
     ]),
     expect: [["pitch", "P1"], ["pitch", "P2"]],
-    expectText: ["The route lists 6 pitches and 2 sections are described here."],
+    /* The sentence STATES THE GAP rather than restating both totals. It used to read "The route
+       lists 6 pitches and 2 sections are described here." — a run-on whose "and" joins a noun
+       phrase to a clause, and which repeats the count the intro has just given under a different
+       noun. `expectNoText` keeps that form out, so this case pins the SHAPE as well as the fact
+       that a shortfall is claimed at all. */
+    expectText: ["The route lists 6 pitches, so 4 are not described here."],
+    expectNoText: ["sections are described here"],
   },
   {
     name: "wa_baldy_standard — bare numbers on a walk-up are stages, not pitches",
