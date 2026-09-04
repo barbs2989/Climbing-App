@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-03",
+  "generatedAt": "2026-09-04",
   "tables": {
     "areas": [
       "area_type",
@@ -375,7 +375,9 @@
       "photos",
       "photos_public",
       "primary_account_id",
+      "resume_public",
       "show_name",
+      "show_on_ranks",
       "sport_grade",
       "terms_accepted_at",
       "terms_accepted_version",
