@@ -7,7 +7,10 @@ import { fileURLToPath } from "url";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const IDS = ["wa_del_campo_peak_standard", "wa_cathedral_rock_standard", "wa_burnt_boot_peak_north_ridge"];
+// Route ids on the command line; the batch-1 sample is the default so a bare run still means
+// something.
+const IDS = process.argv.slice(2).filter((a) => a.startsWith("wa_"));
+if (!IDS.length) IDS.push("wa_del_campo_peak_standard", "wa_cathedral_rock_standard", "wa_burnt_boot_peak_north_ridge");
 
 const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=in.(${IDS.join(",")})&select=*`, { headers: headers(anonKey()) });
 const rows = await r.json();

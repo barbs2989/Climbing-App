@@ -58,6 +58,7 @@ npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty 
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
+npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:float-plan-persistence # a filed float plan survives leaving the tab (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -88,6 +89,7 @@ npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
+npm run check:overlay-width-cap # a full-screen view must be drawn in the app's own 520px column (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
@@ -589,7 +591,9 @@ the total when deciding where a new guard belongs.
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
-  ITSELF IS A SCREEN.** 13 opaque full-screen views exist (`position:fixed` + `inset:0` +
+  ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
+  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
+  which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -1989,12 +1993,80 @@ the total when deciding where a new guard belongs.
     `check:policy-claims` and `check:profile-claims` were each promoted: the repair changes
     **strings and no name**, and `audit:silent-reverts` says in its own closing caveat that it
     cannot see that. A stale-base squash could restore all twelve claims with every gate green.
+    Costs **~2.3s wall / 3.7s CPU** measured on a quiet box (load 3.8), against
+    `check:policy-claims`' 1.31s on the same box — well under the 6-10s Babel guards. **The
+    first timing of it read 0.34s and was FICTION**: the guard was copied to the project root
+    to time it, its `ROOT` is `dirname(import.meta.url) + ".."`, so `..` resolved to
+    `.claude/worktrees/` and it exited instantly on ENOENT. Run a guard from `scripts/`, or the
+    number measures a failed file open.
   - Injection-tested **9/9** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Four are the real
     historical defects restored verbatim; one is the sixth surface the guard itself found; two must
     stay silent; two pin the per-file floors. **`renamed-cm` was a HARNESS bug first** — ClimbMatch
     carries *two* triggers, so renaming one is correctly not a miss, and the guard's right answer
     read as a defect until the case renamed the state as well.
+- **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
+  database**, and that a column governing what OTHERS see rides every climber-object select.
+  Static (no browser, no DB), so it sits in `npm run build`.
+  - **THE PROMISE IS ABOUT SOMEBODY ELSE, WHICH IS WHY A COLUMN IS WHAT MAKES IT TRUE.** *"Off keeps
+    you out of every ranking."* *"When public, other climbers can open your résumé from your
+    profile."* With the state in `useState`, the setting resets on the next load **and no other
+    climber's app can ever read it** — so the control is a promise to nobody.
+  - **TWO SWITCHES WERE INERT AND VISIBLE, AND 0177 MADE BOTH REAL.** `showOnRanks` and
+    `resumePublic` had **no column, no write, and defaulted to `true`** — so a climber who turned
+    either OFF got it back ON at the next load, silently. Measured against the live schema:
+    `profiles` had `discoverable`, `photos_public` and `show_name`, and nothing for these two under
+    any name.
+  - **THE RÉSUMÉ ONE FAILED IN THE DANGEROUS DIRECTION, and that is rule 2's whole reason.**
+    `FullProfile` renders its button on `climber.resumePublic !== false`, so an **absent** field
+    reads as **PUBLIC**. A DB-derived climber carried no such field, so the button rendered for
+    every real climber whatever they had set — and the same shape returns the moment a new
+    `profiles` select forgets the column. Hence `PARTNER_COLS` and the connections select both
+    carry it, and hydration uses `!!p.resume_public` rather than `!== false`: an omitted column
+    then **hides a button** instead of exposing a résumé. The two mistakes do not cost the same,
+    so the default is not symmetric.
+  - **THE OWNER'S OWN READ-BACK USES `!== false`, DELIBERATELY THE OTHER WAY.** Until 0177 is
+    applied the column is simply absent, and reading that as *private* would silently withdraw a
+    résumé the account has always shown. **An absent column must not look like a choice.**
+  - **THE CLASS RECURRED, WHICH IS WHY IT IS A GUARD.** #1535 hid five controls that could not work
+    behind `PRIVACY_CONTROLS_LIVE`; #1540 made `show_name` real (0175) and gated
+    `visibleWhileBrowsing`, whose every reference was its own knob. These two were left outside the
+    gate while being just as inert — the *an instance fixed by hand is not a class closed* shape.
+  - **DECLARED, NOT DERIVED, and that is a correction to this guard's own first draft.** It mapped
+    a flag to a column by camelCase→snake_case and demanded ONE persistence shape, then reported
+    **four healthy controls**: `showRealName` is `show_name`, not `show_real_name`; and
+    `discoverable`/`photosPublic` use a **better** pattern than the one it required — derived
+    straight off `myProfileRowQ.data` every render rather than hydrated into state, so they need no
+    read-back at all. *A guard that flags correct work teaches people to ignore it.* `SWITCHES`
+    fails **stale in both directions**, so the declaration cannot rot.
+  - **`NOT_VISIBILITY` holds one entry with a reason**: the notification-preference toggles, which
+    render from a `.map` over `notifPrefs` and are a claim about what THIS phone shows its owner,
+    not about what others see. They do not persist either — recorded as a separate, lesser defect,
+    because it costs a re-toggle rather than an exposure.
+  - **A WRITE NAMES THE COLUMN AS A KEY; A SELECT NAMES IT INSIDE A STRING.** That distinction is
+    the persistence test, and **only the injection found it**: the first version accepted the
+    column merely *appearing* in `lib/db.js`, where it appears in a **select** — so deleting the
+    write left the guard satisfied by a read, and the `resume-write` case reported the real
+    pre-0177 defect as a pass.
+  - **RULE 3 — A SWITCH THAT PERSISTS IS STILL A FALSE PROMISE IF A SECOND ENTRY POINT IGNORES IT,
+    and that was live in this very change.** There are TWO ways into another climber's résumé and
+    only one was gated: the profile's *"open résumé"* button, and a **STAT TILE** — the *climbs*
+    chip on a partner card — which called `onResume()` unconditionally. Gating the button alone
+    would have left a private résumé reachable **by tapping a number**. Found by asking what else
+    calls `onResume`, not by reading the fix.
+    - A **COUNT**, never a proximity window: this file packs a whole component onto one physical
+      line, so *"near the call"* is not a scope — the trap recorded for the camping panel, the
+      Logbook badge and the seed-route discipline read. A third entry point makes the count
+      disagree and must be declared, which is the loud outcome.
+    - Your OWN résumé is out of scope (`setResumeFor(meLive)`): you may always read your own.
+  - Fails **closed**: a missing `PRIVACY_CONTROLS_LIVE`, no gated block found (every switch would
+    read as ungated), fewer than 7 switches parsed, fewer than 3 ungated, or either climber-select
+    anchor going missing.
+  - Injection-tested **11/11** (`scripts/oneoff/inject-visibility-switch-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Five are the
+    real pre-0177 defects, two pin rule 2 and two pin rule 3 — including the stat tile exactly as
+    it shipped. **Two must stay SILENT** — a `derived` switch that is genuinely derived, and an
+    undeclared flag inside a gated block, which promises nothing.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -3309,6 +3381,63 @@ the total when deciding where a new guard belongs.
     attributes are present.
   - Injection-tested: reverting one `{...clickable(…)}` to a bare `onClick` fails naming the
     file and line. Gated by `npm run build`.
+- **`check:overlay-width-cap`** asserts that every **opaque full-screen view is drawn in the app's
+  own 520px column**. Static, so it sits in `npm run build`.
+  - **THE APP HAS NO RESPONSIVE LAYOUT, and that is the finding this rests on.** Measured across
+    `index.html` and the three app files: **one** width media query in the whole codebase — and it
+    is `prefers-reduced-motion` — and **zero** `:hover` rules (the single `hover` hit in core is a
+    comment recording a tooltip that was *removed* for phones). The app is one 520px column,
+    centred, declared twice: `maxWidth:520,margin:"0 auto"` on App's root and `max-width: 520px` on
+    `#cm-boot`. On a phone it fills the screen; on a 1440px monitor it is the identical column with
+    ~460px of bare `C.bg` each side.
+  - **`position:fixed` is positioned against the VIEWPORT, not that column**, so an opaque
+    full-screen view with no cap stretches the whole window while the app behind it is a strip.
+    **21 did** — Manage areas, Edit profile, Guide dashboard, Calendar, Messages, Become a listed
+    guide, All areas, Challenges and lists, Moderators, Event, Blocked climbers, Past crews, and
+    the guide screens' own loading and error states.
+  - **THE CLASS IS 23, NOT THE 13 THIS FILE USED TO RECORD, and the difference is SCOPE.** The
+    "13 opaque full-screen views" counted elsewhere in this document is scoped to the three app
+    files; **`lib/*.jsx` holds nine more**, several of them the loading and error states of screens
+    whose wrapper lives in core. Capping a wrapper and not its loading state makes the screen
+    visibly **jump width** as the lazy chunk lands. Same [[grep-the-app-not-just-the-db-layer]]
+    shape, applied to a layout census.
+  - **THREE properties are required and the third is the one that was missed.** `max-width` sizes
+    the **content** box, and this app sets no global `* { box-sizing: border-box }` — `index.html`'s
+    reset covers html/body/button only. So a capped view that also carries padding renders at
+    **520 + padding*2**. Measured in Chrome: `DbGuideDashboard` and `DbGuideApply` came back at
+    **552px** (520 + 16 + 16) while a scan checking only `maxWidth`+`margin` reported them capped.
+    **The static check only agrees with the rendered box once `boxSizing` is required.**
+  - **The same defect was already live on a panel nobody had touched.** `PolicyUpdateNotice`
+    carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
+    rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
+    Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
+  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+    full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
+    whole window, and its **Suspense fallback** is exempt with it because the two must match or the
+    screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
+    is a variable (`zIndex: Z`) and there is no literal to key on.
+  - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
+    `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
+    so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
+    put all 21 back to full-bleed with no name moved and every other guard green.
+  - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
+    test actually dies, which `check:control-names` already records. Reformatting **one** file's
+    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
+    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
+    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
+    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
+    holding a *single* view can be reformatted without tripping either floor; a per-file
+    expectation would catch it and would be bookkeeping that rots.
+  - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
+    measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
+    390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
+    had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
+    indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
+    caught that.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+    stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
+    carries its own cap, and a capped view that gains an unrelated property is still capped.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a

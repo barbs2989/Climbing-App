@@ -100,7 +100,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" }}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
         <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
       </div>

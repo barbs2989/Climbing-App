@@ -898,7 +898,15 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
      mechanism — everything described is in this list — but the rule stays the rule, and passing
      `rows.length` is what says so: a shortfall may only be claimed when the route claims more
      pitches than the page describes ANYWHERE. */
-  const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches and "+rows.length+" section"+(rows.length!==1?"s are":" is")+" described here."):"";
+  /* STATE THE GAP, not both totals. This read "The route lists 20 pitches and 18 sections are
+     described here." — a run-on whose "and" joins a noun phrase to a clause, and which then
+     REPEATS the count the intro has just given ("18 roped pitches, in route order.") under a
+     different noun. Captured verbatim on CI's demo walk. What a climber wants from this line is
+     the number of pitches with no description; `pitchCount` is the described roped pitches, so
+     the subtraction is in one unit. It cannot go zero or negative here: pitchShortfall only
+     fires when route.pitches exceeds pitchDetail.length, and pitchCount is at most that. */
+  const _undesc=route.pitches-pitchCount;
+  const short=pitchShortfall(route,rows.length)?(" The route lists "+route.pitches+" pitches, so "+_undesc+(_undesc===1?" is":" are")+" not described here."):"";
   const intro=(pitchCount&&stageCount)
     ?("The whole climb in order — "+rows.length+" sections, of which "+pitchCount+" are roped pitches and "+stageCount+" are travel or route-finding legs."+short)
     :(pitchCount
