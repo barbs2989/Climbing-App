@@ -59,6 +59,7 @@ npm run check:topo-outage-copy # the topo box must not invite the FIRST topo whe
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
+npm run check:float-plan-persistence # a filed float plan survives leaving the tab (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1598,6 +1599,62 @@ the total when deciding where a new guard belongs.
     climber taps Edit; **LegalView** asserts no absence at all; **AuthModal**'s *"no account to
     federate yet"* is explanatory OAuth copy, not a claim about stored data; and **Inbox** was
     already gated. *Ask what fills a list before treating its empty state as an outage lie.*
+- **`check:float-plan-persistence`** asserts that a filed float plan survives leaving the tab.
+  `FloatPlan` holds **eleven** fields and both its render sites are conditional branches —
+  `{tab==="safety"?…:null}` on the route page and `{view==="float"?…}` on the crew safety screen —
+  so React discarded the state on the way out and tapping **Plan** to check the descent wiped
+  route, partner, party size, vehicle, parking, depart, turnaround, hard return, comms, emergency
+  contact and notes. The copy invites exactly that workflow: *"File a float plan below before you
+  lose cell service."* Static (esbuild + SSR + a source read, **0.9s** against
+  `check:policy-claims`' 1.6s beside it), so it sits in `npm run build`.
+  - **IT IS A GATE BECAUSE THE FIX'S OWN DESIGN MAKES THE REGRESSION SILENT.** `plan`/`onPlan` are
+    **optional**, with the component's internal state kept as the fallback so an un-migrated call
+    site still renders. Drop `plan={…}` from a tag and FloatPlan quietly reverts to that fallback:
+    the screen looks identical, **every render assertion still passes**, and the form starts being
+    lost again. *A prop that is optional by design cannot be caught by its absence.*
+  - **Three sibling guards are each blind to it, for three different reasons.**
+    `check:dead-props` asks whether a component reads a prop it declares and whether a call site
+    passes one nothing reads — both directions are satisfied here, because the prop **is** read and
+    when it stops being passed there is no call site left to complain about.
+    `audit:silent-reverts` tracks named **definitions**, and removing `plan={floatPlan}` from a JSX
+    tag removes no name, so it reports **0** — the gap its own closing caveat states. And no
+    browser guard reaches either surface: the route one needs a route opened *and* a sub-tab
+    clicked, the crew one a crew with the Float Plan view selected.
+  - **IT HAS ALREADY BEEN INCOMPLETE ONCE, WHICH IS THE ARGUMENT RATHER THAN A HYPOTHETICAL.**
+    #1577 lifted the route tab; the crew `SafetyTab` call site *"never opted in"* and kept losing
+    the form until #1581 — two PRs, the same day, the second titled *"still lost eleven fields"*.
+    A fix whose second half was missed on the first attempt, on a **safety** record, verified only
+    by a `scripts/oneoff/` probe that nothing runs. The promotion is the
+    *a verification nobody runs is not a verification* rule this file records for `check:overflow`,
+    `check:pitch-discount` and `check:policy-claims`.
+  - **THE TAG MATCH WAS ASYMMETRIC AND AN INJECTION CASE CAUGHT IT.** Section 8 stripped comments
+    before matching the crew tag — core carries **three** comments quoting `<FloatPlan/>` to
+    explain the defect — while section 6 read **raw** `RouteDetail` source. So a comment mentioning
+    the tag above the real call site would make the guard match the **explanation** and report a
+    correctly wired app as broken: a guard failing on its own documentation, the trap
+    `check:ci-cancel` records from the other side. RouteDetail carries no such comment *today*,
+    which is exactly why nothing else would have found it. Both sides strip now.
+  - Fails **closed** five ways, each printing identically to a clean tree: a thin controlled render
+    (every *must contain* assertion passes against markup that rendered nothing), a missing
+    `<FloatPlan>` at either call site, a crew declaration that cannot be read back, and **fewer
+    than 16 assertions RUN** — a guard that quietly stops asking half its questions still exits 0.
+    Raise that floor when you add an assertion; never lower it to make a run pass.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-float-plan-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically. Cases 1 and 2 are the real
+    shape once per call site, case 2 being the historical miss. **Two must stay SILENT** — a
+    comment naming the gate, and an extra unrelated prop on the tag, which is ordinary work a
+    wiring assertion must not forbid.
+  - **Three harness bugs read as guard misses first, and all three are the same lesson:** the edit
+    must land on the thing the guard *reads*. Targeting the first `<FloatPlan` hit a **comment** in
+    core and moved no byte the guard looks at; the crew seed is a **lazy** initialiser
+    (`useState(()=>floatPlanState())`) so a regex expecting the eager form matched nothing; and the
+    ordering case inserted the declaration before the **first** `tab==="safety"`, which is inside
+    the fix's own explanatory comment, leaving it correctly above the real gate once comments were
+    stripped. *Checksum movement proves an edit happened, not that it was the right one.*
+  - **The A/B that makes the cases mean something was CONFOUNDED on the first attempt.** Sections 6
+    and 7 share one stripped `rd`, so disabling the stripping broke both and **two** cases flipped.
+    Isolating section 6 flips **exactly one** — `comment-naming-the-gate` — with the other five
+    unmoved. *When an A/B moves more than the thing under test, it is measuring the harness.*
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
