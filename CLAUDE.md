@@ -57,6 +57,9 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
+npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
+npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
+npm run check:float-plan-persistence # a filed float plan survives leaving the tab (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -97,6 +100,7 @@ npm run check:gain-floor-stated # a gain the route's own PINS contradict is stat
 npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
+npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
@@ -894,7 +898,7 @@ the total when deciding where a new guard belongs.
     `seed-ci-test-fixture.mjs`.
   - The durable pair is only acceptable because both profiles are **`discoverable=false`**, so
     they cannot appear in partner browse — the objection against a permanent QA account.
-    `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
+    `scripts/lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
   - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
     the transferable half. All three fixture paths made their group `visibility:"public"`, and
@@ -1230,10 +1234,12 @@ the total when deciding where a new guard belongs.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
     sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
-    surface behind an **overlay** is still out of frame, and **13 of the 25 `lib/db.js` query handles
-    called in `App` carry a flag** (plus 2 in `RouteDetail`) — re-measure rather than quoting this, it has
-    moved twice — the rest are mostly lookups where emptiness is
-    never asserted, but that is a list to READ, not a coverage claim.
+    surface behind an **overlay** is still out of frame, and the flag coverage is **measured, not quoted**:
+    run `scripts/oneoff/measure-outage-flag-coverage.mjs`, which reads the handles and the flags out
+    of the source. It said **41 handles, 21 flagged, 20 not** on 2026-09-03. **This file carried the
+    number in THREE places and they disagreed** — "13 of the 25", "4 of 28" and "34 handles, 14
+    flagged" — which is why it is a script now. The unflagged rest are mostly lookups where
+    emptiness is never asserted, and that is a list to READ, not a coverage claim.
     - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
       re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
       so a missing reporter degrades to a generic label rather than printing `undefined` or
@@ -1593,6 +1599,62 @@ the total when deciding where a new guard belongs.
     climber taps Edit; **LegalView** asserts no absence at all; **AuthModal**'s *"no account to
     federate yet"* is explanatory OAuth copy, not a claim about stored data; and **Inbox** was
     already gated. *Ask what fills a list before treating its empty state as an outage lie.*
+- **`check:float-plan-persistence`** asserts that a filed float plan survives leaving the tab.
+  `FloatPlan` holds **eleven** fields and both its render sites are conditional branches —
+  `{tab==="safety"?…:null}` on the route page and `{view==="float"?…}` on the crew safety screen —
+  so React discarded the state on the way out and tapping **Plan** to check the descent wiped
+  route, partner, party size, vehicle, parking, depart, turnaround, hard return, comms, emergency
+  contact and notes. The copy invites exactly that workflow: *"File a float plan below before you
+  lose cell service."* Static (esbuild + SSR + a source read, **0.9s** against
+  `check:policy-claims`' 1.6s beside it), so it sits in `npm run build`.
+  - **IT IS A GATE BECAUSE THE FIX'S OWN DESIGN MAKES THE REGRESSION SILENT.** `plan`/`onPlan` are
+    **optional**, with the component's internal state kept as the fallback so an un-migrated call
+    site still renders. Drop `plan={…}` from a tag and FloatPlan quietly reverts to that fallback:
+    the screen looks identical, **every render assertion still passes**, and the form starts being
+    lost again. *A prop that is optional by design cannot be caught by its absence.*
+  - **Three sibling guards are each blind to it, for three different reasons.**
+    `check:dead-props` asks whether a component reads a prop it declares and whether a call site
+    passes one nothing reads — both directions are satisfied here, because the prop **is** read and
+    when it stops being passed there is no call site left to complain about.
+    `audit:silent-reverts` tracks named **definitions**, and removing `plan={floatPlan}` from a JSX
+    tag removes no name, so it reports **0** — the gap its own closing caveat states. And no
+    browser guard reaches either surface: the route one needs a route opened *and* a sub-tab
+    clicked, the crew one a crew with the Float Plan view selected.
+  - **IT HAS ALREADY BEEN INCOMPLETE ONCE, WHICH IS THE ARGUMENT RATHER THAN A HYPOTHETICAL.**
+    #1577 lifted the route tab; the crew `SafetyTab` call site *"never opted in"* and kept losing
+    the form until #1581 — two PRs, the same day, the second titled *"still lost eleven fields"*.
+    A fix whose second half was missed on the first attempt, on a **safety** record, verified only
+    by a `scripts/oneoff/` probe that nothing runs. The promotion is the
+    *a verification nobody runs is not a verification* rule this file records for `check:overflow`,
+    `check:pitch-discount` and `check:policy-claims`.
+  - **THE TAG MATCH WAS ASYMMETRIC AND AN INJECTION CASE CAUGHT IT.** Section 8 stripped comments
+    before matching the crew tag — core carries **three** comments quoting `<FloatPlan/>` to
+    explain the defect — while section 6 read **raw** `RouteDetail` source. So a comment mentioning
+    the tag above the real call site would make the guard match the **explanation** and report a
+    correctly wired app as broken: a guard failing on its own documentation, the trap
+    `check:ci-cancel` records from the other side. RouteDetail carries no such comment *today*,
+    which is exactly why nothing else would have found it. Both sides strip now.
+  - Fails **closed** five ways, each printing identically to a clean tree: a thin controlled render
+    (every *must contain* assertion passes against markup that rendered nothing), a missing
+    `<FloatPlan>` at either call site, a crew declaration that cannot be read back, and **fewer
+    than 16 assertions RUN** — a guard that quietly stops asking half its questions still exits 0.
+    Raise that floor when you add an assertion; never lower it to make a run pass.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-float-plan-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically. Cases 1 and 2 are the real
+    shape once per call site, case 2 being the historical miss. **Two must stay SILENT** — a
+    comment naming the gate, and an extra unrelated prop on the tag, which is ordinary work a
+    wiring assertion must not forbid.
+  - **Three harness bugs read as guard misses first, and all three are the same lesson:** the edit
+    must land on the thing the guard *reads*. Targeting the first `<FloatPlan` hit a **comment** in
+    core and moved no byte the guard looks at; the crew seed is a **lazy** initialiser
+    (`useState(()=>floatPlanState())`) so a regex expecting the eager form matched nothing; and the
+    ordering case inserted the declaration before the **first** `tab==="safety"`, which is inside
+    the fix's own explanatory comment, leaving it correctly above the real gate once comments were
+    stripped. *Checksum movement proves an edit happened, not that it was the right one.*
+  - **The A/B that makes the cases mean something was CONFOUNDED on the first attempt.** Sections 6
+    and 7 share one stripped `rd`, so disabling the stripping broke both and **two** cases flipped.
+    Isolating section 6 flips **exactly one** — `comment-naming-the-gate` — with the other five
+    unmoved. *When an A/B moves more than the thing under test, it is measuring the harness.*
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already
@@ -1805,6 +1867,134 @@ the total when deciding where a new guard belongs.
     quietly losing a promise. **`flaglive` must stay SILENT** — flipping `PRIVACY_CONTROLS_LIVE`
     to true makes the controls real, so describing them becomes correct, and a guard that still
     fired would forbid the fix.
+- **`check:profile-claims`** asserts that the **Profile tab and the résumé it opens claim only what
+  the app can support**. Three invariants, all fixed on 2026-09-03 (#1573, #1579, #1580). Static
+  (one esbuild bundle + one SSR render, plus a Babel parse), **~1.5s**, so it sits in `npm run build`.
+  - **THE RÉSUMÉ IS A SHARED AND EXPORTED DOCUMENT** — *Share résumé* and *Export PDF* sit on it —
+    and it claimed *"partner- and community-corroborated"* **unconditionally**, so on the CI
+    fixture's own résumé, with nothing logged and no courses, it was false of everything on the
+    page. The same claim was also made **twice**, once in the header and once in the footer.
+  - **`extra` RENDERED AS `live`, THROUGH THE SAME ROW.** EXPERIENCE is
+    `[...baked, ...live, ...extra]`, where `live` is `climb_logs` rows against a route id and
+    `extra` is the *Add to résumé* form — six free-text/select inputs, **no route id, no
+    verification, no source marker**. Type "The Nose / El Capitan / 5.9 / Lead" and it sat there
+    looking like a logged ascent.
+  - **THE MARK IS "added by hand", DELIBERATELY NOT "self-reported".** A logged climb is
+    self-reported too, so reusing the courses vocabulary would imply `live` rows are corroborated
+    — fixing one false claim by making another. It is tagged at **composition**
+    (`...((extra)||[]).map(e=>({...e,selfAdded:true}))`) rather than in `addClimb`, because
+    `extra={resumeFor.id===0?resumeAdds:null}` means everything arriving that way is hand-typed by
+    construction and a future caller of `onAddExtra` cannot forget the flag.
+  - **THE DEMO TICK.** `onVerifyCourse` is a pure client-state flip on `resumeCourses`
+    (`useState(ME.courses||[])`, never persisted) — nothing is checked — and its button already
+    read **"Verify (demo)"**. What it PRODUCED did not: a green `✓ verified` chip identical to a
+    real one, over a toast asserting *"Credential verified"* as fact, on avalanche and
+    wilderness-first-responder certs. **It was the one outlier to a convention the app already
+    has** — seven-plus toasts say *"this preview doesn't route requests to …"* or *"(simulated in
+    this preview)"*, including its own two siblings on that screen — and the app has a **real**
+    credential flow elsewhere (`guide_documents` + `isGuideVerified`, which re-checks expiry at
+    render), so two different things wore the same ✓.
+  - **THE DEMO CHIP KEEPS A LEADING ✓ AND THE GUARD ASSERTS THE CHARACTER, NOT THE WORDING.**
+    Dropping it produced *"AIARE 1verified (demo)"* in the announced text — the glued-name defect
+    `check:a11y-badges` exists for, since the course name is the previous inline span. The greying
+    and the "(demo)" suffix carry the honesty instead. Same reasoning put the "added by hand" mark
+    as plain text inside the existing muted sub-line rather than a chip after the grade.
+  - **"RAISE IT WITH:" OFFERED A STEP ALREADY DONE.** The trust card renders a fixed row of three
+    — Log a route / Verify email / Add a cert — and it was unconditional, so an already-verified
+    climber was told verifying would raise their score. **The app knew**: the handler opens
+    `if(verified){showToast("You're already verified.");return;}`, and the résumé two inches away
+    reads *"✓ Email verified"* off the same value (`ME.verified=verified`; `Resume` takes
+    `const ver=climber.verified` off `meLive`). **HOME ALREADY DID THIS CORRECTLY** — its setup
+    checklist pushes the verify row only `if(!ME.verified)` and every other row there is
+    conditional too — so this list was the outlier, not the rule.
+  - **The gate is ONE, deliberately.** A third array element carries the condition and the list is
+    filtered on it; "Log a route" and "Add a cert" stay unconditional, because both are always
+    worth doing and hiding them would remove real advice. An injection that gates "Log a route"
+    must FAIL, or a guard asserting only that the gate exists is satisfied by gating everything.
+  - **SECTION 3 IS PARSED WITH BABEL, NOT MATCHED WITH A REGEX, and that is this session's most
+    expensive lesson made structural.** Three separate checkers were fooled the same day by the
+    comment written to explain the fix they were checking — `check:fire` and a float-plan probe
+    each went RED on a correct tree from one comment quoting `{tab==="safety"?…}`, and a
+    demo-verify probe went the other way, **passing on a fully-restored defect** because the
+    comment contained `demo:true`. An AST does not see comments at all. Where source must be read
+    textually here (the `onVerifyCourse` handler), comments are stripped first.
+  - Fails **closed**: fewer than 5 app sources resolved (via `appSources`, which names any missing
+    required file rather than quietly reading fewer), a render under 900 chars — every *"must NOT
+    contain"* assertion passes against a page that rendered nothing — fewer than 200 array
+    literals parsed, and the list or handler anchors going missing.
+  - **A BUILD GATE RATHER THAN THREE PROBES, and the reason is the shape of the fixes.** All three
+    change **strings and conditions, not names**, which `audit:silent-reverts` says in its own
+    closing caveat it cannot see; a stale-base squash could restore every one of them with each
+    existing gate green. Same argument that promoted `check:verification-fallback` and
+    `check:topo-outage-copy`. It supersedes `probe-resume-self-reported-rows.mjs`,
+    `probe-resume-demo-verify-says-so.mjs` and `probe-raise-it-with-hides-done-steps.mjs` —
+    *a verification nobody runs is not a verification*.
+  - Injection-tested **10/10**, each case proving its edit landed **by checksum** and restoring
+    every file byte-identically. Cases 1, 4, 5, 7 are the real historical defects. **Three cases
+    are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
+    and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
+    a guard that only ever demands MORE marking would drive exactly that.
+- **`check:offline-claims`** asserts that **a route is never on the device; only a downloaded state
+  is**. Static (Babel over the two app files), so it sits in `npm run build`.
+  - **THE APP HAS TWO THINGS CALLED "OFFLINE" AND ONLY ONE IS REAL.** `downloadStateOffline()` in
+    `lib/offline.js` writes a state's whole areas+routes subtree into **IndexedDB**, and four
+    `lib/db.js` hooks fall back to its readers through `orOffline` — a genuine offline catalog,
+    reached from **Manage areas**. The other is `offline`, a `useState([])` list of route ids in
+    `ClimbMatch.jsx` that is **never persisted** (that file contains no `localStorage`, no
+    `sessionStorage` and no `indexedDB`) and is cleared by the sign-in reset. It is a **flag on a
+    route**, and nothing about that route is stored.
+  - **FIVE SURFACES RENDER THE FLAG AND FOUR DESCRIBED IT AS THE CATALOG.** A toast — *"Saved for
+    offline — works with no signal"*; a header button labelled **"Download"** (*"Save offline for
+    no-signal days"*); an Overview sidebar button *"Save to offline"* / *"Work without cell
+    service"*; and the Profile section *"Offline library"*, reading *"N routes bundled —
+    descriptions, topos & tracks ready with no signal"* over an empty state instructing the
+    climber to *"bundle the description, topo, gear, GPX and a conditions snapshot for the
+    backcountry"*. **Five things named, none stored.**
+  - **THE FIFTH SURFACE WAS ALREADY CORRECT, which is what makes this a class rather than a typo.**
+    The Plan tab's *Trip pack* says outright: *"Nothing here is cached on your device yet — the app
+    still needs a signal. Capture what you need before you go: tap **Download GPX** and open it in
+    a dedicated GPS/mapping app."* Somebody fixed one surface and left four — the *an instance
+    fixed by hand is not a class closed* shape, and the reason the repair **propagates that
+    surface's own vocabulary** rather than inventing wording.
+  - **IT IS THE DANGEROUS DIRECTION, and that is why it is worth a gate rather than a note.** A
+    climber taps a button that says **Download**, is told five things are bundled for the
+    backcountry, and may therefore **not** download the state — the one thing that would have
+    worked. They find out at the trailhead, where it cannot be checked. Over-claiming availability
+    is worse than offering nothing, and the word *Download* collided directly with the Plan tab's
+    **real** `Download GPX`.
+  - **THE GUARD FOUND A SIXTH SURFACE THE MANUAL SWEEP MISSED**, which is the whole argument for
+    it: a Logbook nav row rendering `bookmarks.length+" saved"+(offline.length?" · "+offline.length+" offline":"")`
+    — *"3 saved · 2 offline"*. Twelve strings were rewritten by hand across five surfaces and that
+    one still stood; the first run of the guard failed on it.
+  - **SCOPED STRUCTURALLY, MATCHED BY PHRASE, and the scoping is what makes the phrases safe.**
+    Regions come from the AST — the **innermost function or JSX element** enclosing a reference to
+    the trip-pack state — so the run asks about this feature's own surfaces rather than about the
+    file. Taking the nearest JSX element *unconditionally* lands on `<RouteDetail/>`, one element
+    carrying 59 props and 18,190 characters, which would sweep in every unrelated string in it;
+    preferring whichever of a function or an element comes first walking up is what bounds it.
+  - **The needles are a DENY-LIST and will be short again one day; that is stated rather than
+    hidden.** What keeps them honest is that they fire on an **assertion** only: a **negated**
+    sentence (*"Nothing here is cached"*, *"not cached"*) is correct copy, and a sentence naming
+    **Manage areas** is about the real feature. Both are injection cases that must stay **SILENT** —
+    a guard firing on either would tell an author to delete the honest wording it exists to protect.
+  - **SECTION 2 IS THE LOAD-BEARING HALF.** A guard that only ever *removes* claims is satisfied by
+    deleting the real feature's copy too, so the state-download surfaces must **keep** saying the
+    catalog works with no signal — for them it is **true**. `killreal` pins it.
+  - **THE FLOOR IS PER FILE, and a global one let a whole file go blind.** Renaming the trigger in
+    `RouteDetail.jsx` left ClimbMatch's 15 regions standing, so the first version reported a clean
+    sweep having inspected one file of two — the `check:control-names` defect exactly, whose floor
+    was *"at least one"* and which a **partial** restyle left checking 1 of 9. Measured 2026-09-03:
+    ClimbMatch **15 regions / 143 strings**, RouteDetail **23 / 45**; a blinded file yields 0.
+  - **A BUILD GATE RATHER THAN A PROBE**, for the reason `check:topo-outage-copy`,
+    `check:policy-claims` and `check:profile-claims` were each promoted: the repair changes
+    **strings and no name**, and `audit:silent-reverts` says in its own closing caveat that it
+    cannot see that. A stale-base squash could restore all twelve claims with every gate green.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. Four are the real
+    historical defects restored verbatim; one is the sixth surface the guard itself found; two must
+    stay silent; two pin the per-file floors. **`renamed-cm` was a HARNESS bug first** — ClimbMatch
+    carries *two* triggers, so renaming one is correctly not a miss, and the guard's right answer
+    read as a defect until the case renamed the state as well.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -2844,6 +3034,46 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **`check:doc-paths`** asserts that every file path THIS DOCUMENT names still exists. The ~133
+  paths under `scripts/`, `lib/`, `.github/workflows/` and `supabase/migrations/` are not
+  decoration — they are the **evidence** for the claims around them (*"proven by
+  `scripts/oneoff/probe-gain-caveat-on-live-rows.mjs`"*), so a path that has gone is a claim
+  nobody can check. Static, no
+  browser, no DB, milliseconds, so it sits in `npm run build`.
+  - **THE DOMINANT CAUSE IS PROMOTION, AND THE WORST OUTCOME IS REBUILDING SOMETHING THAT EXISTS.**
+    A probe proves a class, gets promoted to a `check:` and **renamed in the same commit**, and the
+    citation keeps the dead path. Measured when this was written: **5 of 108 `scripts/` paths were
+    stale and FOUR were promotions** — `probe-overlays-that-assert-absence` → `check-overlay-absence`
+    (#1319), `probe-inbox-outage-copy` and `probe-friends-outage-copy` → `check-outage-copy`
+    (#1293), `probe-verification-survives-its-own-read` → `check-verification-fallback` (#1289).
+    A reader chasing any of them finds nothing and may write it again, which this file records
+    happening to `DbAreaTree`. The failure message therefore **names that cause first and suggests
+    the successor by basename**, rather than only reporting the absence — the lesson
+    `check:column-drift` paid for, where the remedy was the half nothing tested.
+  - **`check:guard-wiring` asks the REVERSE direction and cannot see this**: it proves every guard
+    on disk is *named* in the command block. These are ordinary script paths in prose, not
+    `npm run` names.
+  - **The roots are limited deliberately.** `catalog/` is gitignored (~52MB of regenerable JSON,
+    `cc1461f3`) and `research-data/` holds triage dumps, so a path there is legitimately absent
+    from a fresh checkout and flagging it would be reporting correct work. Scoped to what git
+    always carries, an absence is always a defect.
+  - **ORDER AN EXTENSION ALTERNATION LONGEST-FIRST — the measurement behind this guard got it
+    wrong TWICE.** `(?:mjs|js|json)` matches `.js` inside `.json` and reported
+    `schema-snapshot.js` missing; `(?:…|js|jsx)` did the same to every `.jsx`. Both printed a
+    confident wrong count. *A count is only as good as its tokeniser*, which this file already
+    records for `audit:approach-scope` — arriving here in a doc scan.
+  - `GONE` records paths named deliberately though absent, and a **stale** entry fails, so it
+    cannot rot into a description of files that are back. One today: the notice that reads *"It
+    replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818)"*, where the sentence is
+    ABOUT the file being gone and deleting the citation would delete why `check:overflow` exists.
+  - **IT CAUGHT ITS OWN DOCUMENTATION ON THE FIRST RUN, and that is a constraint rather than a
+    bug**: this entry originally illustrated the point with a made-up `probe-x` path under
+    `scripts/oneoff/` — written out in full, which is why it matched — and a
+    guard that asserts every named path exists cannot tell an illustration from a citation.
+    **Name a REAL file when you need an example** — there is always one, and a real name is more
+    useful to a reader than a placeholder. The failure message says so.
+  - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
+    prints the same clean result as a correct one.
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
@@ -8239,8 +8469,9 @@ one click past where the probe walks, so nothing had reported it at all.
     the table, which holds exactly one row — the fixture's own. Deliberately not "fixed" by
     lowercasing the reader: that is changing app behaviour to suit a fixture, and it would move
     what `check:signed-in` sees.
-  - **Not closed, and not made a guard.** 4 of 28 query handles in `App` carry a flag (crews #1124,
-    lists #1147, objectives and logs here); the other 24 are a **list to READ**, not a defect count — most are lookups
+  - **Not closed, and not made a guard.** the counts have moved several times since and live in
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than here (crews #1124, lists #1147,
+    objectives and logs were the first four); the unflagged rest are a **list to READ**, not a defect count — most are lookups
     (profiles by id, area names) where emptiness is never asserted to the user. A guard for the
     strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
     which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
@@ -8332,7 +8563,8 @@ their own Résumé showed an amber **"Unverified"** chip.
     reads only that query's rows — there is no non-DB branch to strand. Mechanically:
     `myVerificationQ` is the **only** effect in `App` whose dependency array names `session`. So
     this is a closed class, not a backlog.
-  - Proven by `scripts/oneoff/probe-verification-survives-its-own-read.mjs` — **no browser, no
+  - Proven by **`check:verification-fallback`** (`scripts/check-verification-fallback.mjs`, which
+    is this probe promoted and renamed in #1289) — **no browser, no
     database**, which is the point: its five cases include ones live data cannot produce on demand
     (an unconfirmed session, a stale session). It **extracts the effect body from `ClimbMatch.jsx`
     with `ANCHOR LOST`** rather than copying it, and fails closed on a short slice — every case
@@ -8450,7 +8682,7 @@ genuinely no threads takes that early return and a flag left set there swaps one
 for another.
   - **`check:outage` cannot measure this, twice over.** It is behind an **overlay**, which no
     outage walk opens; and the fixture has no DM threads, so the section is empty in the healthy
-    run too and rule 2 sees nothing introduced. `scripts/oneoff/probe-inbox-outage-copy.mjs`
+    run too and rule 2 sees nothing introduced. **`check:outage-copy`** (this probe promoted in #1293)
     renders the real `Inbox` instead — 3 cases, injection-tested by reverting the gate (exactly one
     case fails, the other two stay green), with a **1,818-character** render asserted so the
     negative cases cannot pass vacuously.
@@ -8463,7 +8695,8 @@ for another.
     *"No crew chats yet"* is driven by `crewMsgs`, hydrated per **opened crew** rather than by a
     bulk read, so an account that has never opened a crew chat is legitimately empty there. One
     query at a time, as this file's outage entries already insist.
-  - **`scripts/oneoff/probe-overlays-that-assert-absence.mjs` sizes the remaining gap**, and its
+  - **`check:overlay-absence` (`scripts/check-overlay-absence.mjs`, this probe promoted and renamed
+    in #1319) sizes the remaining gap**, and its
     version history is the useful part because every earlier version printed a SMALL, reassuring
     number and was blind:
     - **v1 said 1 of 53** — an overlay rendered `if(x)return <>…` has no `x&&`/`x?` marker at all,
@@ -8516,8 +8749,22 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     a rule about "what `useProfilesByIds` does on a miss" cannot be stated once.
   - **THE STATED WORKLIST IS NOW READ, AND IT WAS ONE DEFECT IN TWENTY.** This entry's own header
     used to say *"10 of 28 query handles in `App` carry a flag … the rest are a list to READ"*.
-    Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
-    catches one above) and 19 are non-findings, each for its own reason. The ones worth not
+    Measured **that day**: 34 handles, 14 flagged, 20 not — of which exactly **one** was a real
+    defect (the catches one above) and 19 are non-findings, each for its own reason. **That count is
+    HISTORY — it read 41/21/20 on 2026-09-03**; re-run
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than quoting either figure.
+    - **TWO HANDLES THE EARLIER SWEEPS NEVER NAMED were read on 2026-09-03 and are NON-FINDINGS**,
+      recorded so the next census does not re-derive them. `myVouchesGivenQ` looks like the
+      catches defect and is not: `givenVouches` initialises to **seed** data, so a failed
+      hydration falls back to a seed vouch rather than to an empty list — the concern there is
+      seed-shown-to-a-real-account, which `check:seed-history` covers, not an emptiness lie. And
+      `adminQueueQ` yields `(…data.total)||0`, which renders as `adminQueueN ? badge : null` — a
+      failed read **hides a badge** rather than claiming a clean queue. It is structurally the
+      `myGuideInquiriesQ` shape this file already cleared, it is admin-only, and it self-corrects
+      on the next load. **The stakes are higher (an unseen safety report), so it was read rather
+      than waved through** — but the same shape cannot be a non-finding in one place and a defect
+      in another.
+    The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
     at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
     on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
@@ -8635,7 +8882,7 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
 mutual-friends sheet renders *"No mutual friends yet."*, so an outage told a climber with partners
 that they had none — on the one screen whose whole subject is who you climb with.
   - **Found by the overlay measurement, not by grep**
-    (`scripts/oneoff/probe-overlays-that-assert-absence.mjs`): `friendsOpen` came out ungated, and
+    (the probe now shipped as **`check:overlay-absence`**): `friendsOpen` came out ungated, and
     following its component into `ClimbMatchCore.jsx` confirmed both the empty state and a prop
     list with no flag in it. Adding a flag is not the same as *delivering* it, and the delivery is
     what a per-screen measurement asks about.
@@ -8654,7 +8901,7 @@ that they had none — on the one screen whose whole subject is who you climb wi
       **never carries**. Those lists are empty for a real profile always, not because of an
       outage — the `check:real-profile-rows` class, which already has a guard. **An empty section
       is not evidence of this defect; ask what fills it.**
-  - `scripts/oneoff/probe-friends-outage-copy.mjs` renders the real `FriendsList`: 3 cases plus
+  - **`check:outage-copy`** (this probe promoted in #1293) renders the real `FriendsList`: 3 cases plus
     the filter assertion, injection-tested (reverting the gate fails exactly one case), with a
     1,036-character render asserted so the negative cases cannot pass vacuously. Same two bundling
     traps as the Inbox probe — the provider, and `@tanstack/react-query` as `--external`.
@@ -8883,6 +9130,33 @@ Read it in three bands:
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
 - `compat(a, b)` (~L335) — partner compatibility score (clamped 20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap.
+  - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
+    Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
+    overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
+    5.12b all reading 99%**. Measured with `scripts/oneoff/measure-compat-saturation.mjs`
+    (report-only, no DB, no browser): **11 of 20 ordered seed pairs (55%) sit on the 99 ceiling**,
+    the highest uncapped score is **157**, and **3 of the 5** climbers on the demo's My-Objectives
+    pane are pinned.
+  - **The cause is that TWO terms are UNCAPPED while every other one is bounded.** Shared
+    disciplines score **×16** and shared objectives **×14** with no ceiling, against grade 28,
+    availability 12, pace 10 and verified 8. So 3 shared disciplines plus 2 shared objectives is
+    `20 + 48 + 28 = 96` **before grade, pace or availability contribute anything**.
+  - **The consequence is that grade stops mattering for exactly the climbers the search
+    surfaces.** Holding 3 shared disciplines and 2 shared objectives and varying only the
+    partner's grade, **5.6 and 5.14a both read 99%** (uncapped 122 vs 116 — the arithmetic moves,
+    the clamp eats it). Thin the profile to one shared discipline and no shared objectives and
+    grade discriminates properly: 62 / 68 / 80 / 65 / 56. **The mechanism works; the saturation
+    hides it**, and a 5.6 climber reading as a 99% match to a 5.11a leader is partner-safety
+    adjacent.
+  - **REPORTED, NOT FIXED — and the reason is scope, not doubt.** Every candidate repair changes
+    who ranks top of a partner search: capping the two loose terms still totals 138 against a 99
+    ceiling, so it needs a rebalance, and rescaling by the maximum is a different algorithm. That
+    is a product decision. What is NOT in doubt is the measurement, and that the copy currently
+    promises a blend the displayed number does not deliver.
+  - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
+    re-typing it — a copy would agree with itself whatever the app did, which is the whole
+    question — and keeps a deliberate second, unclamped transcription beside it purely to show
+    how far past 99 a pair lands.
 - `buildConsensus(activity)` (~L344) — distills a route's trip reports into a conditions summary, weighting each report by the author's `trustScore` and recency; separates all-time vs recent tags and surfaces hazards.
 - `datesAgreed(c)` / `agreedDate(c)` (~L382/384) — a crew reaches "Ready" only when every confirmed member (including ME = id `0`) has acked the same proposed day (`dayAcks`).
 - `scarfHrs(...)` + `techHrs(...)` (~L336/337) — planner time estimates: Naismith-style approach time (fitness tier + pack weight) plus pitch-by-pitch climbing time (exponential slowdown by grade).
