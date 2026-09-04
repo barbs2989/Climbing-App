@@ -129,5 +129,34 @@ const decl = bare.indexOf("const [floatPlan,setFloatPlan]");
 if (decl >= 0 && gate >= 0 && decl < gate) ok("the state is declared ABOVE the tab===\"safety\" branch");
 else fail("the float plan state is not declared above the branch that unmounts the form");
 
+// ---- 8. THE SECOND CALL SITE. SafetyTab (the crew safety screen) has the same shape and is the
+// WORSE of the two: "Team Alignment" and "Float Plan" are a two-button pair, so the control most
+// likely to be tapped mid-fill is the one that clears the form. It is asserted HERE rather than in
+// a second probe so the two call sites cannot drift — FloatPlan's internal fallback means a site
+// that quietly stops opting in still renders perfectly.
+const coreBare = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8")
+  .replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
+
+const crewTag = coreBare.match(/<FloatPlan\b[^>]*>/);
+if (!crewTag) fail("ANCHOR LOST: SafetyTab no longer renders <FloatPlan …>");
+else if (/\bplan=\{/.test(crewTag[0]) && /\bonPlan=\{/.test(crewTag[0]))
+  ok("SafetyTab passes BOTH plan and onPlan");
+else fail(`SafetyTab's call site does not pass plan/onPlan — the crew form is still lost: ${crewTag[0]}`);
+
+const crewDecl = coreBare.indexOf("[floatPlan,setFloatPlan]");
+const crewGate = coreBare.indexOf('view==="float"');
+if (crewDecl >= 0 && crewGate >= 0 && crewDecl < crewGate)
+  ok('the crew state is declared ABOVE the view==="float" branch');
+else fail("the crew float plan state is not declared above the branch that unmounts the form");
+
+// Both sites must seed from the SAME exported initialiser, or the eleven-key shape has two copies.
+// SCOPED TO THE DECLARATION, not a file-wide count: `floatPlanState` also appears as its own
+// definition and inside FloatPlan's fallback, so a >=2 threshold is still met after the crew site
+// stops using it — injection case 2 MISSED on exactly that before this was tightened.
+const crewSeed = coreBare.match(/\[floatPlan,setFloatPlan\]\s*=\s*useState\(([^;]{0,120})/);
+if (!crewSeed) fail("could not read the crew declaration back");
+else if (/floatPlanState\(/.test(crewSeed[1])) ok("the crew site seeds from floatPlanState()");
+else fail(`the crew site does not seed from floatPlanState() — the eleven-key shape is duplicated: ${crewSeed[1].trim()}`);
+
 console.log(bad ? `\n${bad} problem(s).` : "\nall assertions passed");
 process.exit(bad ? 1 : 0);
