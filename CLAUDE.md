@@ -165,6 +165,21 @@ a build error, but a screen that renders wrong or not at all.
 **WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
 **71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
 the total when deciding where a new guard belongs.
+- **THE COUNT IS STALE — 81 GUARDS TODAY, NOT 71 — AND THE TOOL THAT REFRESHES IT HAD BEEN BROKEN
+  BY #1546, WHICH IS WHY NOBODY NOTICED.** That change moved the `&&` chain to `build:guards` so
+  the concurrent runner could read it, leaving `build` as `node scripts/run-build-guards.mjs &&
+  vite build`. `measure-build-gate-cost.mjs` parsed `pkg.scripts.build`, so it found **one** guard
+  and **failed closed on every run** — correct behaviour, and invisible, because nothing runs
+  `scripts/oneoff/`. `check:guard-wiring` was taught to read both keys in the same PR; the
+  measurer was not. It reads both now. *A verification nobody runs is not a verification* — here
+  the un-run thing was the instrument that keeps a documented number true.
+- **DO NOT QUOTE A TOTAL TAKEN ON A LOADED BOX, and there is now direct evidence of the factor.**
+  A run at load ~110 reported **320s across 81 guards**, which is not comparable to the 161s above:
+  `check:offline-claims` measures **3.7s CPU at load 3.8** and **12.06s** in that same run, on
+  identical code — about **3x inflation from contention alone**. CPU time is more load-robust than
+  wall clock, which is why this script reports it, but it is not load-*proof*: the same work costs
+  more cycles when the caches are being thrashed. **The RANKING survives a loaded run; the TOTAL
+  does not.** Re-measure on a genuinely quiet box before writing a new figure here.
 - **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
   between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
   same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
