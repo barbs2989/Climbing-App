@@ -6013,6 +6013,45 @@ the correction knows the screen is wrong, and they have no way to report it.
     says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
     waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
     left the check **green**. The same two-surfaces trap this file records for `rappels`.
+  - **A LINE THAT GOES NOWHERE IS A THIRD CLASS, and the READER was the only layer that did not
+    know.** `trackCoverage` returns null below **500 m** of extent because measuring pins against a
+    dot manufactures huge distances out of nothing, and the waypoint audits carry the same gate —
+    but the route page drew those lines under ROUTE TRACK with **Download GPX** beneath them and
+    said nothing. **Five routes**, spanning **7, 18, 55, 69 and 451 m** end to end;
+    `wa_sky_mountain_s_route` is NINE points across SEVEN METRES, so a climber tapping that button
+    gets a seven-metre file. `trackStubCaveat` says so and quotes the span.
+    - **500 m is the existing gate, not a new number**, and it lands in a real void — the next line
+      up is well clear of it.
+    - **EXCLUSIVE BY CONSTRUCTION rather than by the caller remembering**: ten of the fifteen
+      sub-500 m lines already caption as waypoint joins, and two sentences on one section read as
+      two problems when it is one problem twice. Proven on live rows: 5 gained, **0 carrying two
+      captions**.
+    - **The span needs a SHORT formatter.** `_gapDist` rounds to 0.1 km, which renders seven metres
+      as *"0 km"* and reads as a bug rather than as the point; `_shortDist` gives metres or feet.
+      `uImp()` is the real boolean there too — `uDistMi` is a FORMATTER and always truthy, the #641
+      trap. A guard case pins that the span does not round away.
+  - **THE DIFFERENT-APPROACH TEST WAS UNREACHABLE IN HALF THE CASES IT EXISTS FOR.** It asks
+    whether the line passes ANY of the route's own pins, and it sat **below** `if (!missingApproach
+    && !missingSummit) return null` — so it could only ever speak about a line that was ALSO short
+    at one end. Those are independent questions: a line can cover both ends and still pass none of
+    the places the pins name. Moved above the early return; **GAINED 1, LOST 0, CHANGED 0** across
+    the catalog. Same ordering defect `check:outage-copy` records for `DbGuideApply`: *a guard
+    placed after the branch that returns is unreachable in the case it exists for.*
+  - **A SPACING-BASED CAPTION WAS RE-MEASURED AND REJECTED AGAIN, AND THE OLD REASON HAD EXPIRED.**
+    The recorded rejection was that 62 of 66 such lines were already reachable by the one-vertex
+    slack — true then, and stale once the slack widened. The new reason is stronger and is a
+    property of the data: among the **354** uncaptioned lines the median vertex spacing is
+    **continuous** — 92, 93, 100, 106, 124, 145, 153, 189, 205, 262, 267, 291, 328, 446, 521, 538,
+    594 … with **123 lines between 48 m and 499 m** — so any cut is fitted rather than derived, and
+    a coarse or simplified recording is not separable from a drawn line by spacing.
+    `measure-drawn-lines-posing-as-tracks.mjs` is that measurement.
+    - **Its FIRST version was the instructive part**: pointed at gpx vertices,
+      `coordinateIsComputed` reported **976 of 976 points** on `wa_old_snowy_mountain_r1`. That is
+      not a fabricated track — it is a real recording whose coordinates went through a numeric
+      transform, which leaves a full float tail on EVERY point. **The decimal rule was calibrated
+      against a HAND-TYPED waypoint and does not transfer to a machine-written vertex**; what made
+      the #1572 vertices fabricated was a MINORITY carrying one, on the chord between hand-placed
+      neighbours.
   - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
     either predicate true (which must fail the *genuine*-track assertions — a false warning on good
     data is the direction that teaches people to ignore it), and renaming the heading.
