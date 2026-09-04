@@ -30,7 +30,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
-import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage } from "../lib/track.js";
+import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage } from "../lib/track.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -269,6 +269,47 @@ else ok("the stops-short caveat renders");
 if (/walk in is not in this line|short of the summit/i.test(covText(route({ gpxPts: REAL, waypoints: WPS }))))
   fail("a complete track renders a partial-coverage caveat — a false warning on good data");
 else ok("a complete track renders no partial-coverage caveat");
+
+
+// ── 5. A LINE THAT GOES NOWHERE. `trackCoverage` refuses to speak about a line under 500 m across,
+//    because measuring pins against a dot manufactures huge distances — and until now the SCREEN
+//    did not know that, so five routes drew a "track" spanning 7 m to 451 m under a ROUTE TRACK
+//    heading with Download GPX beneath it and said nothing. Both directions, since a rule that only
+//    ever fires is satisfied by captioning every route.
+const STUB = [[48.4926, -121.1176], [48.49264, -121.11766]];      // ~7 m end to end
+if (!trackStubCaveat(STUB, WPS)) fail("predicate: a 7 m line is not reported as a placeholder");
+else ok("predicate: a line spanning metres is reported as a placeholder");
+
+if (trackStubCaveat(REAL, WPS)) fail("predicate: a genuine track is called a placeholder — a false warning on good data");
+else ok("predicate: a real track is not called a placeholder");
+
+// EXCLUSIVE BY CONSTRUCTION, not by the caller remembering. Ten of the fifteen sub-500 m lines in
+// the catalog already caption as waypoint joins, and two sentences on one section read as two
+// problems when it is one problem twice.
+if (trackStubCaveat(SYNTH, WPS)) fail("predicate: a stub caveat stacks on top of the waypoint-line caveat");
+else ok("predicate: the placeholder caveat yields to the waypoint-line one");
+
+// IT MUST STATE THE SPAN. "This is a placeholder" is not checkable by a reader; the number is what
+// makes it so, and a caveat that quietly loses it is how this degrades.
+{
+  const said = trackStubCaveat(STUB, WPS, (m) => Math.round(m) + " m");
+  if (!/\d+ m end to end/.test(said)) fail(`the placeholder caveat does not state the span: ${said}`);
+  else ok("the placeholder caveat states how far the line actually spans");
+  // and the DEFAULT formatter must not round it away — _gapDist renders 7 m as "0 km".
+  if (/\b0 (km|mi)\b/.test(trackStubCaveat(STUB, WPS))) fail("the placeholder span rounds to zero — the one fact it carries is gone");
+  else ok("the placeholder span survives formatting");
+}
+
+// AND IT REACHES THE SCREEN. A predicate proves the sentence; only a render proves the route page
+// asks for it — the split check:outage-copy and check:topo-outage-copy both record.
+{
+  const html = text(render(route({ gpxPts: STUB, waypoints: WPS }), "planner"));
+  if (!/placeholder, not this route's track/.test(html)) fail("the placeholder caveat does not render on the route page");
+  else ok("the placeholder caveat renders on the route page");
+  const real = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner"));
+  if (/placeholder, not this route's track/.test(real)) fail("the placeholder caveat renders on a route with a genuine track");
+  else ok("a genuine track renders no placeholder caveat");
+}
 
 console.log();
 if (failures) { console.error(`check:track-caveat FAILED — ${failures} problem(s).`); process.exit(1); }
