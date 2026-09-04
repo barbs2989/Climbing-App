@@ -13639,3 +13639,106 @@ re-read from the live DB immediately before writing the file (confirmed to match
 WHERE guard), and it is an idempotent no-op if the row has already changed.
 
 Next batch continues from `wa_himmelhorn_southeast_route` onward alphabetically (pass 4).
+
+## Batch 195 — 2026-09-04 (pass 4)
+
+Checked: wa_honeymoon_route, wa_hourglass_gully_winter,
+wa_hozomeen_mountain_north_peak_north_route, wa_hozomeen_mountain_southeast_face,
+wa_hurry_up_peak_south_ridge, wa_icy_peak_ruth_icy_traverse,
+wa_icy_peak_southwest_route, wa_ingalls_peak_east_route.
+
+**Fixed (4 corrections across 3 routes):**
+- `wa_hurry_up_peak_south_ridge`: `gain_ft`/`loss_ft` (1700) were far below the
+  floor implied by the row's own waypoints (Cascade Pass Trailhead 3,600 ft →
+  Hurry-up Peak Summit 7,821 ft = 4,221 ft minimum; both elevations confirmed
+  externally). The route's own approach text goes further and states explicit
+  cumulative figures — "about 3,300 ft" trailhead-to-camp plus "1,400-1,500 ft"
+  camp-to-summit — so corrected to 4750 (the midpoint), traceable to the row's
+  own prose rather than a bare computed minimum. Loss set equal to gain since
+  the descent explicitly reverses the ascent.
+- `wa_icy_peak_ruth_icy_traverse`: `high_point_ft` corrected 7073→7115. The
+  route summits Ruth Mountain (7,115 ft) en route to Icy Peak (7,073 ft) —
+  Ruth is higher, confirmed via Wikipedia and independently via a WTA trip
+  report titled "Ruth Mtn. (7115') Icy Peak (7073')". Also filled `loss_ft`
+  (null→8000) and `dist_km` (null→12.9) directly from the row's own itinerary
+  text: "a documented outing totaled about 16 miles and roughly 8,000 ft of
+  cumulative elevation gain/loss round trip" (16mi round trip ÷ 2 = 8mi/12.9km
+  one-way, matching the app's dist_km convention).
+- `wa_hozomeen_mountain_southeast_face`: two corrections, both because the
+  row had been populated with the NORTH Peak's facts despite climbing the
+  SOUTH Peak (its own summit waypoint says "Hozomeen Mountain, South Peak" at
+  8003 ft). `high_point_ft` corrected 8071→8003. `fa` corrected from
+  "September 6, 1904 (Sledge Tatum and George E. Loudon Jr., Boundary
+  Survey)" — which the row's own overview explicitly attributes to the North
+  Peak — to "May 30, 1947 (Fred Beckey, Melvin Marcus, Jerry O'Neil, Ken
+  Prestrud, Herb Staley & Charles Welsh, via the Southwest Route)", the South
+  Peak's FA per the row's own overview (which frames this route as one of
+  exactly three known lines, the other two accounted for by different FAs)
+  and independently confirmed via WebSearch (matches "five companions"
+  exactly, and the "standard/most commonly used route" framing matches this
+  route's own "(Standard)" name).
+
+**Flagged for human review (2):**
+- `wa_hourglass_gully_winter`: `season` ("Late Apr-Oct for the general
+  scramble; best as a snow climb roughly May-Jun...") and `best_season`
+  ("optimal window is early March through early May... Winter ascents
+  (December-February) are possible...") give contradictory timing windows
+  for what reads as the same objective. WebSearch corroborates both halves
+  for different use-cases of the same gully — general/summer scramble
+  ("Late Apr-Oct... early season typically May or June... snow bridge")
+  vs. a documented March 2019 winter/early-spring technical ascent
+  ("not recommended any later than May") — so this may be two legitimate
+  route styles conflated across two fields rather than one field being
+  simply wrong. Not auto-fixed: determining which field (if either) needs
+  rewording is an editorial judgment beyond what search snippets settle.
+- `wa_hozomeen_mountain_southeast_face`: the Trailhead waypoint ("Ross Dam
+  Trailhead (SR-20) / East Bank Trail to Lightning Creek") sits near the END
+  of the `waypoints` array (position 6 of 7, right before the Summit) rather
+  than first, and carries no `elev`/`distMi` value at all, while every other
+  waypoint in the array does. Per this app's own documented waypoint-ordering
+  logic, a list where not every pin has a finite `distMi` renders in stored
+  (here: backwards) order. Not auto-fixed: filling the trailhead's elevation
+  and correct position needs a researched value (Ross Dam-area elevation is
+  in the ~1,600-2,000 ft range depending on exact parking location) rather
+  than a guess, and reordering a jsonb array by hand from this audit is
+  higher-risk than the column-level fixes above.
+
+**Clean (2):** wa_icy_peak_southwest_route, wa_ingalls_peak_east_route.
+Both checked in depth (waypoint elevation chain, gain/loss floor, FA,
+permits, road status) with no confirmed defects. `wa_ingalls_peak_east_route`'s
+FA ("Gene Prater, Bill Prater & Stan Butchart, Nov 1952") is independently
+confirmed via WebSearch, matching exactly.
+
+Also spot-checked and confirmed accurate (no changes needed): Mount Index
+elevation (5,991 ft) and King/Snohomish county boundary
+(`wa_hourglass_gully_winter`); Hozomeen North/South Peak elevations (8,071 ft
+/ 8,003 ft, Wikipedia) and the current Hozomeen border-gate/Silver-Skagit
+Road closure status (`wa_hozomeen_mountain_north_peak_north_route` and
+`wa_hozomeen_mountain_southeast_face` — both independently describe the same
+closure, and a July 2026 wildfire-closure news item corroborates it); Cascade
+Pass Trailhead (3,600 ft) and Cascade Pass (5,392 ft) elevations
+(`wa_hurry_up_peak_south_ridge`); Ingalls Peak East Peak elevation (7,480 ft).
+Also checked and left alone as *not* a defect: `wa_hurry_up_peak_south_ridge`'s
+Cache Col (6,903 ft) and Kool-Aid Lake waypoints — computed bearing between
+them (156°) matches this catalog's own previously-documented "corroborated"
+value for that pair, confirming this row already has the good coordinates
+rather than the outlier ones seen elsewhere in the catalog.
+
+`npm run check:sql` was not run this batch — this is a fresh clone with no
+`node_modules` and no `.env`/`.env.local` credentials. All three UPDATE
+statements were instead hand-verified: current stored values re-read from
+the live DB via curl/anon-key REST immediately before writing the file
+(confirmed to match each WHERE guard exactly), and each statement is an
+idempotent no-op if the row has already changed.
+
+WebSearch was available and used extensively this batch (unlike several
+recent batches where it appeared blocked); WebFetch to primary route-beta/
+land-manager sites (hike2hike.com, home.nps.gov) remains blocked by the
+network egress proxy, so verification relied on WebSearch result snippets
+(citing SummitPost, Mountain Project, Wikipedia, WTA, AAC, NWHikers/
+CascadeClimbers trip reports, and BC/WA news coverage of the July 2026
+Hozomeen-area wildfire closures) cross-checked against each row's own
+internal fields and its waypoints' internal geometry/elevations.
+
+Next batch continues from `wa_ingalls_peak_east_route` onward alphabetically
+(pass 4; index 170 of 529 in-scope routes).
