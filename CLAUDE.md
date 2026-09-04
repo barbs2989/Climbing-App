@@ -89,6 +89,7 @@ npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
+npm run check:overlay-width-cap # a full-screen view must be drawn in the app's own 520px column (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
@@ -590,7 +591,9 @@ the total when deciding where a new guard belongs.
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
-  ITSELF IS A SCREEN.** 13 opaque full-screen views exist (`position:fixed` + `inset:0` +
+  ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
+  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
+  which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -3378,6 +3381,63 @@ the total when deciding where a new guard belongs.
     attributes are present.
   - Injection-tested: reverting one `{...clickable(…)}` to a bare `onClick` fails naming the
     file and line. Gated by `npm run build`.
+- **`check:overlay-width-cap`** asserts that every **opaque full-screen view is drawn in the app's
+  own 520px column**. Static, so it sits in `npm run build`.
+  - **THE APP HAS NO RESPONSIVE LAYOUT, and that is the finding this rests on.** Measured across
+    `index.html` and the three app files: **one** width media query in the whole codebase — and it
+    is `prefers-reduced-motion` — and **zero** `:hover` rules (the single `hover` hit in core is a
+    comment recording a tooltip that was *removed* for phones). The app is one 520px column,
+    centred, declared twice: `maxWidth:520,margin:"0 auto"` on App's root and `max-width: 520px` on
+    `#cm-boot`. On a phone it fills the screen; on a 1440px monitor it is the identical column with
+    ~460px of bare `C.bg` each side.
+  - **`position:fixed` is positioned against the VIEWPORT, not that column**, so an opaque
+    full-screen view with no cap stretches the whole window while the app behind it is a strip.
+    **21 did** — Manage areas, Edit profile, Guide dashboard, Calendar, Messages, Become a listed
+    guide, All areas, Challenges and lists, Moderators, Event, Blocked climbers, Past crews, and
+    the guide screens' own loading and error states.
+  - **THE CLASS IS 23, NOT THE 13 THIS FILE USED TO RECORD, and the difference is SCOPE.** The
+    "13 opaque full-screen views" counted elsewhere in this document is scoped to the three app
+    files; **`lib/*.jsx` holds nine more**, several of them the loading and error states of screens
+    whose wrapper lives in core. Capping a wrapper and not its loading state makes the screen
+    visibly **jump width** as the lazy chunk lands. Same [[grep-the-app-not-just-the-db-layer]]
+    shape, applied to a layout census.
+  - **THREE properties are required and the third is the one that was missed.** `max-width` sizes
+    the **content** box, and this app sets no global `* { box-sizing: border-box }` — `index.html`'s
+    reset covers html/body/button only. So a capped view that also carries padding renders at
+    **520 + padding*2**. Measured in Chrome: `DbGuideDashboard` and `DbGuideApply` came back at
+    **552px** (520 + 16 + 16) while a scan checking only `maxWidth`+`margin` reported them capped.
+    **The static check only agrees with the rendered box once `boxSizing` is required.**
+  - **The same defect was already live on a panel nobody had touched.** `PolicyUpdateNotice`
+    carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
+    rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
+    Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
+  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+    full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
+    whole window, and its **Suspense fallback** is exempt with it because the two must match or the
+    screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
+    is a variable (`zIndex: Z`) and there is no literal to key on.
+  - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
+    `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
+    so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
+    put all 21 back to full-bleed with no name moved and every other guard green.
+  - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
+    test actually dies, which `check:control-names` already records. Reformatting **one** file's
+    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
+    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
+    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
+    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
+    holding a *single* view can be reformatted without tripping either floor; a per-file
+    expectation would catch it and would be bookkeeping that rots.
+  - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
+    measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
+    390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
+    had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
+    indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
+    caught that.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+    stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
+    carries its own cap, and a capped view that gains an unrelated property is still capped.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
@@ -6082,6 +6142,45 @@ the correction knows the screen is wrong, and they have no way to report it.
     says *"Anything marked on the track is also a pin under ROUTE TRACK."* whenever a campsite
     waypoint is on the track. A stripped-text anchor matched that sentence, so renaming the heading
     left the check **green**. The same two-surfaces trap this file records for `rappels`.
+  - **A LINE THAT GOES NOWHERE IS A THIRD CLASS, and the READER was the only layer that did not
+    know.** `trackCoverage` returns null below **500 m** of extent because measuring pins against a
+    dot manufactures huge distances out of nothing, and the waypoint audits carry the same gate —
+    but the route page drew those lines under ROUTE TRACK with **Download GPX** beneath them and
+    said nothing. **Five routes**, spanning **7, 18, 55, 69 and 451 m** end to end;
+    `wa_sky_mountain_s_route` is NINE points across SEVEN METRES, so a climber tapping that button
+    gets a seven-metre file. `trackStubCaveat` says so and quotes the span.
+    - **500 m is the existing gate, not a new number**, and it lands in a real void — the next line
+      up is well clear of it.
+    - **EXCLUSIVE BY CONSTRUCTION rather than by the caller remembering**: ten of the fifteen
+      sub-500 m lines already caption as waypoint joins, and two sentences on one section read as
+      two problems when it is one problem twice. Proven on live rows: 5 gained, **0 carrying two
+      captions**.
+    - **The span needs a SHORT formatter.** `_gapDist` rounds to 0.1 km, which renders seven metres
+      as *"0 km"* and reads as a bug rather than as the point; `_shortDist` gives metres or feet.
+      `uImp()` is the real boolean there too — `uDistMi` is a FORMATTER and always truthy, the #641
+      trap. A guard case pins that the span does not round away.
+  - **THE DIFFERENT-APPROACH TEST WAS UNREACHABLE IN HALF THE CASES IT EXISTS FOR.** It asks
+    whether the line passes ANY of the route's own pins, and it sat **below** `if (!missingApproach
+    && !missingSummit) return null` — so it could only ever speak about a line that was ALSO short
+    at one end. Those are independent questions: a line can cover both ends and still pass none of
+    the places the pins name. Moved above the early return; **GAINED 1, LOST 0, CHANGED 0** across
+    the catalog. Same ordering defect `check:outage-copy` records for `DbGuideApply`: *a guard
+    placed after the branch that returns is unreachable in the case it exists for.*
+  - **A SPACING-BASED CAPTION WAS RE-MEASURED AND REJECTED AGAIN, AND THE OLD REASON HAD EXPIRED.**
+    The recorded rejection was that 62 of 66 such lines were already reachable by the one-vertex
+    slack — true then, and stale once the slack widened. The new reason is stronger and is a
+    property of the data: among the **354** uncaptioned lines the median vertex spacing is
+    **continuous** — 92, 93, 100, 106, 124, 145, 153, 189, 205, 262, 267, 291, 328, 446, 521, 538,
+    594 … with **123 lines between 48 m and 499 m** — so any cut is fitted rather than derived, and
+    a coarse or simplified recording is not separable from a drawn line by spacing.
+    `measure-drawn-lines-posing-as-tracks.mjs` is that measurement.
+    - **Its FIRST version was the instructive part**: pointed at gpx vertices,
+      `coordinateIsComputed` reported **976 of 976 points** on `wa_old_snowy_mountain_r1`. That is
+      not a fabricated track — it is a real recording whose coordinates went through a numeric
+      transform, which leaves a full float tail on EVERY point. **The decimal rule was calibrated
+      against a HAND-TYPED waypoint and does not transfer to a machine-written vertex**; what made
+      the #1572 vertices fabricated was a MINORITY carrying one, on the chord between hand-placed
+      neighbours.
   - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
     either predicate true (which must fail the *genuine*-track assertions — a false warning on good
     data is the direction that teaches people to ignore it), and renaming the heading.
