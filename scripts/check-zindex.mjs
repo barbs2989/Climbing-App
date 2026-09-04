@@ -23,7 +23,9 @@ const SKIP = new Set(["node_modules", "dist", ".git", ".claude", "catalog", "scr
 
 const walk = (dir, out = []) => {
   for (const name of readdirSync(dir)) {
-    if (SKIP.has(name)) continue;
+    if (SKIP.has(name) || name.startsWith(".")) continue; // a dot entry is never app source,
+    // and a guard temp file that vanishes between this readdir and the stat below would
+    // otherwise kill this walk — the guards now run concurrently.
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
     else if (/\.(jsx?|tsx?)$/.test(name)) out.push(p);
