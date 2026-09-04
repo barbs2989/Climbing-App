@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_gunsight_peak_standard",
+    "last_processed_id": "wa_himmelhorn_southeast_route",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -4011,6 +4011,25 @@
             "flagged_for_human_review": 2,
             "clean": 4,
             "note": "wa_gunrunner: dist_km (16.1 km) is below the physical floor -- straight-line trailhead-to-summit distance (haversine, Downey Creek Trailhead 48.2595,-121.2229 to the route's own Middle Peak endpoint 48.30571,-120.99439) is 17.67 km, exceeding the stored one-way trail distance, which is a geometric impossibility for a real approach that the route's own text describes as a winding cross-country line (Itswoot Ridge/Cub Lake/Bachelor Creek). Not auto-fixed: this is a multi-peak ridge traverse (not a simple out-and-back like its wa_gunsight_peak_standard sibling, whose 27.35 km IS well corroborated by its own 7-point waypoint chain), loss_ft is also null, and no comparably detailed waypoint chain exists for this route to derive a confident specific replacement number -- flagging for a human with route-specific research rather than guessing. wa_gunsight_peak_standard / wa_gunrunner: filed under area wa_middle_peak ('Middle Peak', elevation_ft 8185), but both routes' own text and high_point_ft (8198) describe the real, separately-named 'Gunsight Peak' -- confirmed via web search as a real, commonly-referenced 8,198 ft summit in this exact massif (dual summit, guarded by the Chikamin/Blue Glaciers, per Wenatchee Outdoors/Alpinist sources). The 13 ft elevation gap is within normal survey variance and not itself an error, but whether the area should be named/split differently (is 'Middle Peak' the DB's positional placeholder for the peak most climbers call 'Gunsight Peak', or a distinct nearby bump?) is an area-hierarchy/naming judgment call outside this audit's scope of row-level fact fixes -- flagged for human review, not touched. Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org, Wikipedia via WebFetch) remain blocked by the network egress proxy; verification relied on WebSearch result snippets, cross-checked against the routes' own internal data, sibling routes sharing a trailhead/summit, and independent geometry (haversine distance floors)."
+        },
+        {
+            "batch_number": 194,
+            "date": "2026-09-04",
+            "route_ids": [
+                "wa_guye_peak_improbable_traverse",
+                "wa_guye_peak_r1",
+                "wa_guye_peak_r2",
+                "wa_guye_peak_southeast_gully",
+                "wa_hadley_peak_cougar_divide",
+                "wa_hadley_peak_skyline_divide",
+                "wa_helmet_butte_standard_route",
+                "wa_himmelhorn_southeast_route"
+            ],
+            "confirmed_errors_fixed": 1,
+            "flagged_for_human_review": 1,
+            "clean": 6,
+            "sql_file": "audits/sql/2026-09-04-batch-194.sql",
+            "note": "wa_himmelhorn_southeast_route flagged: ~5 approach waypoints (Terror-Crescent Divide Saddle through Himmel-Otto Col Gully) appear misplaced ~6km south of the verified-correct summit coordinate; needs a real topo/GPS reference to correct, not auto-fixed."
         }
     ]
 }

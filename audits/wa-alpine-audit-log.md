@@ -13573,3 +13573,69 @@ re-read from the live DB immediately before writing the file (confirmed to match
 WHERE guards), and both are idempotent no-ops if the row has already changed.
 
 Next batch continues from `wa_gunsight_peak_standard` onward alphabetically (pass 4).
+
+## Batch 194 (2026-09-04, pass 4)
+
+Checked (8): wa_guye_peak_improbable_traverse, wa_guye_peak_r1, wa_guye_peak_r2,
+wa_guye_peak_southeast_gully, wa_hadley_peak_cougar_divide,
+wa_hadley_peak_skyline_divide, wa_helmet_butte_standard_route,
+wa_himmelhorn_southeast_route.
+
+**Fixed (1):**
+- `wa_hadley_peak_skyline_divide`: `gain_ft`/`loss_ft` (2818) were below the physical
+  floor implied by the row's own waypoints (Skyline Divide Trailhead 4,250 ft → Hadley
+  Peak Summit 7,515 ft = 3,265 ft minimum net gain), with no recorded high point between
+  them to explain the shortfall. Corrected to the floor value (3265). The true cumulative
+  gain across the ~3-mile undulating Chowder Ridge traverse the route describes is
+  probably somewhat higher, but no source gives a precise figure, so the fix is the
+  defensible mathematical minimum rather than an estimate.
+
+**Flagged for human review (1):**
+- `wa_himmelhorn_southeast_route`: the approach's final ~5 waypoints (Terror-Crescent
+  Divide Saddle, Crescent Creek Basin Streams/Camp, Himmel-Otto Col Gully — all clustered
+  around 48.72°N, -121.29°W) appear to be misplaced roughly 6 km south of where they
+  should be. The row's own Himmelhorn Summit waypoint (48.77639, -121.31472) matches both
+  this catalog's own `areas` table for `wa_himmelhorn` and Wikipedia's coordinate for the
+  peak exactly (elevation and first-ascent party/date also match Wikipedia verbatim), so
+  the summit point is solid. But straight-line distance from the "Himmel-Otto Col Gully"
+  waypoint to that (verified-correct) summit is ~6 km, while the row's own cumulative
+  `distMi` only advances 0.3 mi (~0.5 km) between those two waypoints — physically
+  impossible for a trail/scramble distance to be shorter than the straight line it
+  covers. A web search independently describes Crescent Creek Basin as sitting on "the
+  south side of Mount Terror" (i.e. immediately adjacent to the Terror/Himmelhorn/
+  Ottohorn/Frenzel Spitz cluster at ~48.775°N), not 6 km south of it as the stored camp
+  coordinates would place it. Approach distance/elevation figures (dist_km, waypoint
+  elevations, mileage) all look reasonable and are NOT part of this flag — only the
+  lat/lng of those ~5 intermediate waypoints. Not auto-fixed: correcting 5 coordinates
+  with confidence needs a real topo/GPS reference for Crescent Creek Basin and the
+  Himmel-Otto col, which wasn't available via search snippets alone; writing plausible-
+  looking replacement coordinates without one would be fabrication.
+
+**Clean (6):** wa_guye_peak_improbable_traverse, wa_guye_peak_r1, wa_guye_peak_r2,
+wa_guye_peak_southeast_gully, wa_hadley_peak_cougar_divide, wa_helmet_butte_standard_route.
+
+Independently confirmed this batch via WebSearch: the November 2021 Guye Peak West Face
+rockfall (30x40 ft section, 5.9-10- unprotected downclimb ~20 ft from an old pin) matches
+`wa_guye_peak_improbable_traverse`'s watch_out/hazards fields closely. Three road-closure
+claims were checked against current USFS alerts and all three are accurate and still in
+effect as stated: FS Road 37/Deadhorse (Skyline Divide access) closed at mile 0.03 per
+the 1 June 2026 alert; Chiwawa River Road/FR 6200 (Helmet Butte's Trinity Trailhead
+access) closed beyond Atkinson Flats per the 20 May 2026 order (effective through
+31 Dec 2027); FS Road 33/Wells Creek Road (Cougar Divide) seasonal Nov 1–Jul 7 wildlife
+closure. Hadley Peak's stored `high_point_ft` (7522) and the two routes' summit waypoint
+elevations (7470, 7515) sit within normal cross-source survey variance of external
+figures found (7415–7470 ft) and were left alone.
+
+Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) and Wikipedia
+(via WebFetch) remain blocked by the network egress proxy; WebSearch result snippets were
+used instead, cross-checked against the routes' own internal fields, the live `areas`
+table, sibling routes sharing a trailhead/summit, and independent geometry (haversine
+straight-line distance floors).
+
+`npm run check:sql` was not run this batch — this fresh clone/worktree has no
+`node_modules` and no `.env`/`.env.local` credentials configured, so the script cannot
+reach the DB. The one SQL statement was instead hand-verified: current stored value
+re-read from the live DB immediately before writing the file (confirmed to match the
+WHERE guard), and it is an idempotent no-op if the row has already changed.
+
+Next batch continues from `wa_himmelhorn_southeast_route` onward alphabetically (pass 4).
