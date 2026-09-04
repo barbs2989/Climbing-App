@@ -13393,3 +13393,118 @@ current stored values re-read from the live DB immediately before writing this f
 to still match the WHERE guards.
 
 Next batch continues from `wa_gilbert_peak_conrad_glacier` onward alphabetically (pass 4).
+
+## Batch 192 (2026-09-04, pass 4)
+
+Routes: wa_gilbert_peak_meade_glacier, wa_gilbert_peak_west_route,
+wa_glacier_peak_cool_glacier_gerdine, wa_glacier_peak_disappointment_peak_cleaver,
+wa_glacier_peak_frostbite_ridge, wa_glacier_peak_kennedy_glacier,
+wa_glacier_peak_sitkum_glacier, wa_goat_mountain_south_ridge.
+
+**Fixed (5):**
+
+- `wa_gilbert_peak_west_route`: `loss_ft` was null; filled to 4,000 to match `gain_ft`,
+  since the route's own descent_text/bail describe reversing the ascent back to Snowgrass
+  Flats camp (an out-and-back).
+- `wa_goat_mountain_south_ridge`: `gain_ft` (4,300) was below the trailhead(2,500 ft)-to-
+  summit(6,891 ft) floor of 4,391 ft. Raised to 4,800 to match the existing `loss_ft`,
+  consistent with the route's own described drop-and-regain between the West Peak false
+  summit and the true East summit (independently corroborated via web search: leaving the
+  trail after ~3,200 ft of gain, losing ~300 ft, then regaining ~1,400 ft to the true
+  summit — more total climbing than the simple net figure). Goat Mountain's 6,891 ft
+  figure (already on file) was checked against Wikipedia's newer NAVD88 remeasurement
+  (6,844 ft) — both are legitimate, sourced values for the same summit (older topo vs.
+  modern datum); 6,891 ft is the one commonly cited by SummitPost/trip reports and matches
+  the route's own `watch_out` text, so it was left as-is.
+- `wa_glacier_peak_cool_glacier_gerdine` and `wa_glacier_peak_kennedy_glacier`: both
+  carried an identical 9-entry `bivy` array. A containment query (`bivy=cs.`) found the
+  same exact array, byte-for-byte, on 10 other WA routes spanning Buck Mountain, Chalangin
+  Peak, Clark Mountain, Helmet Butte, Mount Berge, Luahna Peak (x2) and Tenpeak Mountain
+  (x2) — all genuinely served by the Buck Creek Pass / Chiwawa River Road / Napeequa
+  corridor the list describes (confirmed internally consistent: one entry names each of
+  those seven peaks explicitly). One entry states outright that it describes "three peaks
+  in this zone that have nothing to do with Glacier Peak's own approaches." Both Glacier
+  Peak routes' own approach/beta/pitch_detail/bail describe entirely different approaches
+  (North Fork Sauk via White Pass/Glacier Gap for Cool Glacier/Gerdine; White Chuck via
+  Kennedy Ridge for Kennedy Glacier) on the opposite side of the range. Trimmed each
+  route's `bivy` down to the subset of the *same* 9-entry array that matches its own
+  documented approach (3 entries — Mackinaw Shelter, White Pass, Glacier Gap — for Cool
+  Glacier/Gerdine; 1 entry — "Kennedy Ridge and the Glacier Creek camps, Suiattle side",
+  which names both this route and Frostbite Ridge by name — for Kennedy Glacier). Content
+  re-homed verbatim via `jsonb_agg`/`jsonb_array_elements` filtering on `name`, nothing
+  retyped or invented.
+- `wa_glacier_peak_kennedy_glacier`: `gain_ft` (8,200) was below the row's own stated
+  computation basis. Its `corrections` field says gain_ft/dist_km were derived from "the
+  North Fork Sauk Trailhead elevation (2,070 ft, FS-sourced) and summit elevation (10,541
+  ft)" — i.e. 8,471 ft — yet the stored value was 271 ft short of that, and the same field
+  goes on to say the true cumulative gain is *higher* than this net figure (undulating PCT
+  approach). Raised to 8,471 ft. `loss_ft` was null; filled to 8,471 to match, since the
+  row's own descent_text opens "Besides reversing the ascent line, the standard alternate
+  descent goes via Frostbite Ridge..." — i.e. reversing the ascent (out-and-back) is the
+  *standard* descent, not the alternate.
+
+**Flagged for human review (3, not fixed):**
+
+- `wa_glacier_peak_disappointment_peak_cleaver` is internally contradictory in a way this
+  audit is not equipped to safely repair by editing individual numbers. Its `waypoints`,
+  `gpx`, `itinerary` and `pitch_detail` fields describe an entirely different, EASTERN
+  approach — Trinity Trailhead, Buck Creek Pass (9.5 mi), Cool/Gerdine Basin camp (14 mi)
+  — while `overview`, `approach`, `descent_text`, `bail`, `approach_variants[0]` and
+  `bivy` all independently and consistently describe the SOUTHERN North Fork Sauk / White
+  Pass / Glacier Gap approach (matching its two sibling Glacier Peak routes in this same
+  batch). The mislabeled waypoint's own `note` field admits the contradiction outright:
+  "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the
+  Trinity Trailhead... The North Fork Sauk River trailhead is 20.2 mi away on a different
+  approach." Properly fixing this needs either replacing the four eastern-approach fields
+  with accurate North-Fork-Sauk-based waypoints/gpx/itinerary/pitch_detail (research/
+  content work beyond a fact correction) or establishing that the eastern approach is a
+  genuine historic variant deserving its own correctly-populated fields — a reconciliation
+  decision, not a number to correct.
+- `wa_glacier_peak_sitkum_glacier`: `approach`, `descent_text` and `bail` describe a full
+  White Chuck River Trailhead (2,350 ft) walk-in in detail (fording Pumice/Glacier/Kennedy
+  Creeks, past the old Kennedy Hot Springs site), while the row's primary listed waypoint
+  pin is labeled "North Fork Sauk River Trailhead" at a different elevation (2,100 ft) —
+  the trailhead-pin-vs-prose mismatch this catalog is known for. White Chuck Road (FR 23)
+  is confirmed still closed at milepost 3.7 (2026 USFS alert, road-damage order, matching
+  this batch's sibling routes' `road` fields), so a human needs to decide which trailhead
+  this row should treat as canonical before its distance/gain figures can be trusted; the
+  numeric discrepancy this creates (gain_ft 8,300 clears the floor from a 2,350 ft start
+  but falls ~140 ft short from a 2,100 ft start) is small enough that guessing a fix felt
+  worse than flagging it.
+- Out of this batch's alphabetical range but discovered via the containment query above:
+  `wa_sitkum_spire_standard` (area `wa_sitkum_spire`) carries the identical 9-entry
+  Buck-Creek-Pass/Chiwawa corridor `bivy` list. Recommend the same trim — keep only
+  "Boulder Basin above Sitkum Creek — and the White Chuck situation," which is explicitly
+  about this location — when the route is next audited in its own batch, or sooner by a
+  maintainer.
+- Not flagged as a hard finding but worth a note: `wa_glacier_peak_frostbite_ridge`'s
+  `dist_km` (51.5) would render as a ~64-mile round trip under this app's one-way×2
+  display convention, well above the route's own `watch_out` text ("Total mileage 40+
+  miles"). No verified one-way mileage figure was found to correct it against, so it was
+  left alone rather than guessed.
+
+Area hierarchy spot-checked for all five peaks (Gilbert Peak/Goat Rocks Wilderness,
+Glacier Peak/Glacier Peak Wilderness, Goat Mountain/Mount Baker Wilderness) — all
+correctly filed, each area row's own lat/lng matching the routes' own stored peak
+coordinates exactly.
+
+Glacier Peak's elevation (10,541 ft) confirmed via USGS (web search). Goat Mountain's FA
+(1904, Frank Calkins and George Otis Smith) confirmed via web search, matching the row
+exactly. Both the North Fork Sauk Road (FR 49, washouts at mile 1 and mile 6) and White
+Chuck Road (FR 23, closed at MP 3.7 per a 2025/2026 storm-damage forest order) closure
+descriptions on file across this batch's five Glacier Peak routes were independently
+confirmed still current via a 2026 USFS alerts search.
+
+Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) and Wikipedia
+(via WebFetch) remain blocked by the network egress proxy in this environment; WebSearch
+result snippets were used instead, cross-checked against the routes' own internal fields
+and against sibling routes for corroboration.
+
+`npm run check:sql -- audits/sql/2026-09-04-batch-192.sql` passed: 5 write targets across
+5 statements, every target id confirmed to exist, no destructive statements. The script
+warned the file (6.0 KB) exceeds the SQL Editor's ~4 KB safe-paste size — split into
+per-statement chunks and verify each before pasting the next. All current stored values
+re-read from the live DB immediately before writing this file and confirmed to still
+match the WHERE guards.
+
+Next batch continues from `wa_goat_mountain_south_ridge` onward alphabetically (pass 4).
