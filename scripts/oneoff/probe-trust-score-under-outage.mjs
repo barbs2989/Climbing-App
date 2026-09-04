@@ -157,7 +157,13 @@ for (const [needle, why] of [
 // The two group-join handlers are byte-identical, so this one is asserted at a count of 2: fixing
 // one and not the other leaves half the app refusing a join on a score it could not compute.
 {
-  const needle = 'showToast(_trustPartial?"Couldn’t check your trust score just now';
+  // KEYED ON _trustUnsure, NOT _trustPartial, and the move is the point rather than a rename:
+  // once the gate reads the score the app DISPLAYS, the three client-side flags only make that
+  // number unreliable while the locally-computed fallback is what is showing. Refusing on a
+  // server-supplied score because an unrelated client read failed would be a false refusal.
+  // The COUNT of 2 is what matters and it stays: the two join handlers are byte-identical, so
+  // fixing one leaves half the app refusing on a score it could not compute.
+  const needle = 'showToast(_trustUnsure?"Couldn’t check your trust score just now';
   const n = app.split(needle).length - 1;
   if (n === 2) ok("both group-join handlers refuse on an unknown score rather than quoting one");
   else bad(`the group-join refusal is honest in ${n} handler(s), expected 2`);

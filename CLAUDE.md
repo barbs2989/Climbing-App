@@ -4645,13 +4645,28 @@ the correction knows the screen is wrong, and they have no way to report it.
     takes both rows; in the client model *"Conditions reported"* is a separate, untracked input, and
     marking it *"Couldn't load"* there would be a false statement about a row that reads *"Not yet
     tracked"*. Same flag, two models, two correct answers.
-  - **THE GROUP-JOIN GATE IS DELIBERATELY LEFT ON THE CLIENT SCORE, and that is a decision rather
-    than an oversight.** `groupTrustShortfall(cl, meLive)` refuses a *"Trust 55+ only"* group off
-    `vScore`, so a climber the group sees at server-14 can still join. Switching it would be
-    correct-looking and is **not polish**: the server model is the stricter of the two (1 point a
-    vouch against 4), so it changes **who can join groups** — locking out climbers the app admits
-    today. That is the group owners' call, not a display fix's. Recorded in
-    [[two-trust-scores-client-and-server]] as the remaining axis.
+  - **THE GROUP-JOIN GATE NOW READS THE DISPLAYED SCORE, and the SIGNATURE is the fix rather than
+    the call site.** `groupTrustShortfall` took `meLive` and called `vScore` itself — the CLIENT
+    model — while the Profile and every other climber see the SERVER one. So a group's *"Trust 55+
+    only"* policy was enforced on a number that appears nowhere, and the app could tell you that you
+    are trust 14 and then admit you. It takes a **number** now, so a second derivation is impossible
+    rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
+    - **THE BAR MOVES, AND THAT IS STATED RATHER THAN DISCOVERED LATER.** The two models are scaled
+      differently — a vouch is 4 points in one and 1 in the other — so the same 55 is a different
+      threshold. Measured over five example profiles
+      (`scripts/oneoff/measure-group-trust-gate-scale.mjs`), **one changes side**: *a year in,
+      active* reads **57** on the client model and **37** on the server one. On the server scale even
+      email plus two years' tenure plus twenty vouches comes to **45**.
+    - **WHETHER 55 IS STILL THE RIGHT NUMBER is an open product question** about how exclusive a
+      trust-gated group should be, and nothing here answers it. What was never in question is that
+      the gate must use the number the app shows.
+    - **The honest-refusal branch keys on `_trustUnsure`, not `_trustPartial`.** Once the gate reads
+      the displayed score, the three client-side flags only make it unreliable while the
+      locally-computed fallback is showing; refusing a join because an unrelated client read failed
+      would be a false refusal.
+    - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
+      two**, and two injection cases pin both halves — deriving a score again, and leaving one of
+      the two identical handlers behind.
   - Injection-tested **7/7** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. The cases drift
     the two sides in **both** directions on purpose — a comparison that only ever read the JS would
