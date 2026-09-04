@@ -1,4 +1,4 @@
-// Is probe-profile-photo-remove.mjs measuring anything?
+// Is check:photo-removal measuring anything?
 //
 // Its healthy output is "every assertion passed", which is exactly what a probe with a broken
 // scan prints. So each defect it claims to catch is put back, one at a time, and the probe has
@@ -72,7 +72,7 @@ for (const c of CASES) {
 
   let out = "", code = 0;
   try {
-    out = execFileSync("node", [path.join(ROOT, "scripts/oneoff/probe-profile-photo-remove.mjs")], { cwd: ROOT, encoding: "utf8" });
+    out = execFileSync("node", [path.join(ROOT, "scripts/check-photo-removal.mjs")], { cwd: ROOT, encoding: "utf8" });
   } catch (e) {
     out = (e.stdout || "") + (e.stderr || "");
     code = e.status || 1;
