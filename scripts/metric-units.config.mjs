@@ -1,11 +1,15 @@
 // Vite config used only by probe-weather-honours-the-unit-setting-onscreen.mjs.
 //
-// The unit setting is `useState("imperial")` in App with NO persistence, so it cannot be
-// carried across a page load -- and `?zr=1` opens the route page by page load. Driving the
-// toggle in-session does not work either: Settings renders over the nav, and leaving the
-// Climbs tab clears `selRoute`, so by the time the units are metric the route page is gone.
-// (`window.__routeOpen` stays true once set, so it reports the route as open when it is not
-// -- a scaffold flag is not live state.)
+// The unit setting IS persisted now (lib/units-pref.js, localStorage), so it does survive the
+// page load `?zr=1` needs -- the sentence here used to say the opposite and was true when it was
+// written. Seeding storage would therefore work, and this still rewrites the initial value in
+// memory instead, deliberately: seeding depends on the probe and the app agreeing about a KEY,
+// which is a second thing to keep in step, while the anchor fails LOUDLY when it drifts. Driving
+// the toggle in-session remains impossible for the reasons below.
+//
+// Settings renders over the nav, and leaving the Climbs tab clears `selRoute`, so by the time the
+// units are metric the route page is gone. (`window.__routeOpen` stays true once set, so it
+// reports the route as open when it is not -- a scaffold flag is not live state.)
 //
 // So the initial value is rewritten IN MEMORY, the way zero-state.config.mjs replays the
 // sign-in reset and anniversary.config.mjs dates a log. The source is never edited.
@@ -14,7 +18,7 @@
 import base from "../vite.config.js";
 import { buildOpener, lazyChunks, routeDetailTransform } from "./lib/overlay-scaffold.mjs";
 
-const UNITS_ANCHOR = '[units,setUnits]=useState("imperial")';
+const UNITS_ANCHOR = '[units,setUnits]=useState(loadUnits)';
 const OPENER_ANCHOR = "  const prevUidRef=useRef(uid);";
 
 function metricScaffold() {

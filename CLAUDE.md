@@ -89,6 +89,7 @@ npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:ci-cancel # can a guard running on main be cancelled by the next merge? (in build)
 npm run check:overlays # every overlay inside #appscroll is portalled to document.body (in build)
+npm run check:overlay-width-cap # a full-screen view must be drawn in the app's own 520px column (in build)
 npm run check:disc-labels # one spelling per discipline, everywhere (in build)
 npm run check:claims # no success toast for a write that only runs signed-in (in build)
 npm run check:a11y-names # every control a screen reader reaches has a name (in build)
@@ -590,7 +591,9 @@ the total when deciding where a new guard belongs.
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
-  ITSELF IS A SCREEN.** 13 opaque full-screen views exist (`position:fixed` + `inset:0` +
+  ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
+  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
+  which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -3310,6 +3313,63 @@ the total when deciding where a new guard belongs.
     attributes are present.
   - Injection-tested: reverting one `{...clickable(…)}` to a bare `onClick` fails naming the
     file and line. Gated by `npm run build`.
+- **`check:overlay-width-cap`** asserts that every **opaque full-screen view is drawn in the app's
+  own 520px column**. Static, so it sits in `npm run build`.
+  - **THE APP HAS NO RESPONSIVE LAYOUT, and that is the finding this rests on.** Measured across
+    `index.html` and the three app files: **one** width media query in the whole codebase — and it
+    is `prefers-reduced-motion` — and **zero** `:hover` rules (the single `hover` hit in core is a
+    comment recording a tooltip that was *removed* for phones). The app is one 520px column,
+    centred, declared twice: `maxWidth:520,margin:"0 auto"` on App's root and `max-width: 520px` on
+    `#cm-boot`. On a phone it fills the screen; on a 1440px monitor it is the identical column with
+    ~460px of bare `C.bg` each side.
+  - **`position:fixed` is positioned against the VIEWPORT, not that column**, so an opaque
+    full-screen view with no cap stretches the whole window while the app behind it is a strip.
+    **21 did** — Manage areas, Edit profile, Guide dashboard, Calendar, Messages, Become a listed
+    guide, All areas, Challenges and lists, Moderators, Event, Blocked climbers, Past crews, and
+    the guide screens' own loading and error states.
+  - **THE CLASS IS 23, NOT THE 13 THIS FILE USED TO RECORD, and the difference is SCOPE.** The
+    "13 opaque full-screen views" counted elsewhere in this document is scoped to the three app
+    files; **`lib/*.jsx` holds nine more**, several of them the loading and error states of screens
+    whose wrapper lives in core. Capping a wrapper and not its loading state makes the screen
+    visibly **jump width** as the lazy chunk lands. Same [[grep-the-app-not-just-the-db-layer]]
+    shape, applied to a layout census.
+  - **THREE properties are required and the third is the one that was missed.** `max-width` sizes
+    the **content** box, and this app sets no global `* { box-sizing: border-box }` — `index.html`'s
+    reset covers html/body/button only. So a capped view that also carries padding renders at
+    **520 + padding*2**. Measured in Chrome: `DbGuideDashboard` and `DbGuideApply` came back at
+    **552px** (520 + 16 + 16) while a scan checking only `maxWidth`+`margin` reported them capped.
+    **The static check only agrees with the rendered box once `boxSizing` is required.**
+  - **The same defect was already live on a panel nobody had touched.** `PolicyUpdateNotice`
+    carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
+    rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
+    Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
+  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+    full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
+    whole window, and its **Suspense fallback** is exempt with it because the two must match or the
+    screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
+    is a variable (`zIndex: Z`) and there is no literal to key on.
+  - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
+    `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
+    so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
+    put all 21 back to full-bleed with no name moved and every other guard green.
+  - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
+    test actually dies, which `check:control-names` already records. Reformatting **one** file's
+    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
+    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
+    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
+    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
+    holding a *single* view can be reformatted without tripping either floor; a per-file
+    expectation would catch it and would be bookkeeping that rots.
+  - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
+    measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
+    390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
+    had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
+    indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
+    caught that.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+    stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
+    carries its own cap, and a capped view that gains an unrelated property is still capped.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
