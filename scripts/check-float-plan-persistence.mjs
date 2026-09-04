@@ -1,28 +1,46 @@
 #!/usr/bin/env node
-// A float plan must not be thrown away when you look at another tab.
+// check:float-plan-persistence — a float plan must not be thrown away when you look at another tab.
 //
-// FloatPlan held all eleven fields in its own useState, and BOTH its render sites are
-// conditional branches:
+// FloatPlan holds eleven fields, and BOTH its render sites are conditional branches:
 //
-//   RouteDetail   {tab==="safety"?<div>…<FloatPlan/>…</div>:null}
-//   SafetyTab     {view==="float"?<FloatPlan/>:<div>…}
+//   RouteDetail   {tab==="safety"?<div>...<FloatPlan/>...</div>:null}
+//   SafetyTab     {view==="float"?<FloatPlan/>:<div>...}
 //
 // React discards the state of a branch it leaves, so tapping Plan to check the descent — the
 // obvious thing to do while filling a float plan in — wiped route, partner, party size, vehicle,
 // parking, depart, turnaround, hard return, comms, emergency contact and notes. The copy invites
 // exactly that workflow: "File a float plan below before you lose cell service."
 //
-// The fix lifts `form`/`saved`/`checkedIn` into an OPTIONAL `plan`/`onPlan` pair owned by
-// RouteDetail, with the internal state kept as the fallback so SafetyTab is untouched.
+// The fix lifts `form`/`saved`/`checkedIn` into an OPTIONAL `plan`/`onPlan` pair owned by the
+// caller, with the internal state kept as the fallback so an un-migrated site still renders.
 //
-// TWO HALVES, AND THE SECOND IS THE ONE A MERGE TAKES. Rendering proves the controlled path
-// works; it CANNOT prove RouteDetail still passes the props, because dropping them makes
-// FloatPlan fall back to its own state and every render assertion still passes — the app quietly
-// returns to losing the form. So the wiring is asserted as SOURCE, the way
-// check:topo-outage-copy does for its prop chain.
+// WHY THIS IS A GATE RATHER THAN THE PROBE IT WAS BORN AS, and the reason is the design of the
+// fix itself: THE FALLBACK MAKES THE REGRESSION SILENT. Drop `plan={...}` from a call site and
+// FloatPlan quietly reverts to its own state — the component still renders, every render
+// assertion below still passes, and the form starts being lost again with nothing on screen and
+// nothing in CI to say so. A prop that is optional BY DESIGN cannot be caught by its absence.
+//   - `check:dead-props` asks whether a component reads a prop it declares, and whether a call
+//     site passes one nothing reads. Both directions are satisfied here: the prop IS read, and
+//     when it stops being passed there is simply no call site left to complain about.
+//   - `audit:silent-reverts` tracks named DEFINITIONS. Removing `plan={floatPlan}` from a JSX tag
+//     removes no name, so it reports 0 — the gap its own closing caveat states.
+//   - No browser guard reaches it: the route Safety tab needs a route opened AND a sub-tab
+//     clicked, and the crew one needs a crew with the Float Plan view selected.
 //
-//   node scripts/oneoff/probe-float-plan-survives-unmount.mjs
-
+// AND IT HAS ALREADY BEEN INCOMPLETE ONCE. #1577 lifted the route tab; the crew SafetyTab call
+// site "never opted in" and kept losing the form until #1581 — two PRs, the same day, the second
+// titled "still lost eleven fields". A fix whose second half was missed on the first attempt, on
+// a SAFETY record, verified only by a script in scripts/oneoff/ that nothing runs.
+//
+// Static — esbuild + renderToStaticMarkup + a source read, ~0.9s against check:policy-claims'
+// 1.6s beside it — so it sits in `npm run build`.
+//
+// Fails CLOSED, and each way prints identically to a clean tree: a thin controlled render (every
+// "must contain" assertion passes against markup that rendered nothing), a missing <FloatPlan>
+// tag at either call site, a declaration that cannot be read back, and fewer than EXPECTED
+// assertions run — a guard that quietly stops asking half its questions still exits 0.
+//
+// Injection-tested; the cases are named at the bottom of scripts/oneoff/inject-float-plan-cases.mjs.
 import { build } from "esbuild";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -30,7 +48,7 @@ import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
 
 const ENTRY = `
@@ -52,9 +70,14 @@ await build({
 });
 const { render, floatPlanState } = require_(out);
 
-let bad = 0;
-const ok = (m) => console.log("  ok    " + m);
-const fail = (m) => { console.log("  FAIL  " + m); bad++; };
+let bad = 0, ran = 0;
+const ok = (m) => { ran++; console.log("  ok    " + m); };
+const fail = (m) => { ran++; console.log("  FAIL  " + m); bad++; };
+
+/* Every assertion below is "this string IS present" or "this prop IS passed", so a guard that
+   stops RUNNING half of them prints a shorter, entirely green list and exits 0. The floor is the
+   count today; raise it when you add an assertion, and never lower it to make a run pass. */
+const EXPECTED = 16;
 
 // ---- 1. The shape is declared in ONE place.
 const init = floatPlanState({ route: "North Ridge" });
@@ -107,7 +130,15 @@ else fail("the uncontrolled path starts already saved");
 // ---- 6. THE WIRING, AS SOURCE. A merge that keeps the component and drops the props at the call
 // site is silent: FloatPlan falls back, every assertion above still passes, and the form is lost
 // again. Nothing else in the repo can see that.
-const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+//
+// COMMENTS ARE STRIPPED BEFORE THE TAG IS MATCHED, and this was ASYMMETRIC until an injection
+// case caught it: section 8 stripped for the crew site (core carries three comments quoting
+// `<FloatPlan/>` to explain the defect) while this one read RAW source. So a comment mentioning
+// the tag ABOVE the real call site made the guard match the EXPLANATION and report a correctly
+// wired app as broken — a guard failing on its own documentation, the trap check:ci-cancel
+// records. RouteDetail happens to carry no such comment today; the case pins that it may.
+const rdRaw = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+const rd = rdRaw.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
 const site = rd.match(/<FloatPlan\b[^>]*>/);
 if (!site) fail("ANCHOR LOST: RouteDetail no longer renders <FloatPlan …> — nothing above is wired");
 else {
@@ -123,7 +154,7 @@ else fail("RouteDetail does not use floatPlanState() — the field list is dupli
 // verbatim (`{tab==="safety"?<div>...</div>:null}`) to explain itself, so a raw search finds the
 // EXPLANATION before the code and the probe fails on its own documentation — caught by this
 // assertion going red on a correct tree. Same trap check:ci-cancel records from the other side.
-const bare = rd.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^[ \t]*\/\/.*$/gm, "");
+const bare = rd;   // already comment-stripped above
 const gate = bare.indexOf('tab==="safety"');
 const decl = bare.indexOf("const [floatPlan,setFloatPlan]");
 if (decl >= 0 && gate >= 0 && decl < gate) ok("the state is declared ABOVE the tab===\"safety\" branch");
@@ -158,5 +189,11 @@ if (!crewSeed) fail("could not read the crew declaration back");
 else if (/floatPlanState\(/.test(crewSeed[1])) ok("the crew site seeds from floatPlanState()");
 else fail(`the crew site does not seed from floatPlanState() — the eleven-key shape is duplicated: ${crewSeed[1].trim()}`);
 
-console.log(bad ? `\n${bad} problem(s).` : "\nall assertions passed");
+if (ran < EXPECTED) {
+  console.log(`  FAIL  only ${ran} of ${EXPECTED} assertions RAN — this guard reports presence, so a`);
+  console.log("        shortened run is a broken scan printing a clean sweep, not a clean tree.");
+  bad++;
+}
+
+console.log(bad ? `\n${bad} problem(s).` : `\ncheck:float-plan-persistence: ok — ${ran} assertions; a filed float plan survives leaving the tab.`);
 process.exit(bad ? 1 : 0);
