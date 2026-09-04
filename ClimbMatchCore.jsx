@@ -3330,7 +3330,17 @@ function CrewCard({blocked,crew,onAccept,onDisband,onLeave,onDismiss,onOpenClimb
   const tp=tripOf(route);
   const mem=crew.members.filter(m=>m.climberId!==0).map(m=>{const c=CLIMBERS.find(x=>x.id===m.climberId)||((memberProfilesQ.data||[]).find(p=>p.id===m.climberId));return c?{...c,_status:m.status}:null;}).filter(Boolean);
   const roster=[{...ME,riskTolerance:meRisk||ME.riskTolerance,_status:crew._myStatus||"confirmed",_me:true},...mem];
-  const allConfirmed=roster.every(p=>p._status==="confirmed");
+  /* A PENDING JOIN REQUEST IS NOT SOMEBODY THE CREW IS WAITING ON. #1554 introduced the third
+     status — `invited` is the organiser's ask, `pending` is the climber's — and excluded it
+     from FOUR readers (pendCrew and the three "Remind all N" expressions) and not from this
+     one. The result was a dangling label: `pendCrew` came back EMPTY while allConfirmed was
+     false, so "Waiting on "+_nm([])+" to confirm." rendered as **"Waiting on  to confirm."**
+     — captured on CI's demo walk, where the roster is you plus one climber who has only
+     ASKED to join. It also drove two sentences that read the request as a crew problem:
+     "Waiting on the crew to all join" and the amber "1 OF 2 CONFIRMED".
+     Someone who has asked to join is not in the crew yet — the organiser accepts or declines
+     them in the block above — so readiness is about the people who ARE in it. */
+  const allConfirmed=roster.filter(p=>p._status!=="pending").every(p=>p._status==="confirmed");
   const need=tp.ready.filter(k=>k!=="confirm");
   const meetSet=!!(crew.meetPlace&&crew.meetTime);const ready=isReady(crew,hasMessages);
   const kit=tp.modules.includes("gear")?[...new Set(roster.flatMap(p=>p.gear||[]))]:[];
