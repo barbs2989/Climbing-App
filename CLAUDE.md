@@ -1172,6 +1172,14 @@ the total when deciding where a new guard belongs.
     it would leak one per run forever, exactly as `check:message-delivery` records.
   - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
     `crew_members`.
+  - **RE-RUN 2026-09-04 after `0176` gave `messages` a DELETE policy — all three hold**, and that
+    migration is exactly the trigger this line names. Controls fired first (B could read, message
+    and crew-invite A **before** the block, so the refusals are attributable), neither refusal
+    disclosed the block to the blocked party, and unblocking restored the profile read. Teardown
+    was verified from **outside** rather than trusted: the guard prints no teardown line at all, so
+    the auth users were counted afterwards — **0 on the `.invalid` QA domain**. That is the
+    `check:outage` lesson, which threw its leak report away and made a teardown failure invisible
+    until somebody counted rows by hand.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
