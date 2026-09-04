@@ -96,6 +96,39 @@ const CASES = [
     silent: true,
     edit: (s) => s.replace(/<FloatPlan\b/, '<FloatPlan data-x="1"'),
   },
+
+  /* SECTION 9 — <Calculator/>, the second member of this class. Its calc/onCalc props are optional
+     BY DESIGN, exactly like plan/onPlan, so each of these reverts it to local state SILENTLY: the
+     component still renders and every render assertion still passes. */
+  {
+    name: "calc-site-drops-props",
+    file: RD,
+    why: "the call site stops passing calc/onCalc, so Calculator falls back to its own state and the planner inputs are lost on a sub-tab switch again.",
+    edit: (s) => s.replace(
+      "<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs}/>",
+      "<Calculator route={route} activity={activity}/>"),
+  },
+  {
+    name: "calc-owner-removed",
+    file: RD,
+    why: "RouteDetail stops OWNING the planner inputs, so they sit inside the branch a sub-tab switch unmounts.",
+    edit: (s) => s.replace(
+      'const [calcInputs,setCalcInputs]=useState({fit:"intermediate",pack:10,party:2,depart:6});', ""),
+  },
+  {
+    name: "calc-local-copy-returns",
+    file: RD,
+    why: "a local pack/party/depart declaration comes back and shadows the lifted one — the exact pre-fix shape.",
+    edit: (s) => s.replace('  const pack=st.pack,setPack=setK("pack");',
+                           "  const [pack,setPack]=useState(10);"),
+  },
+  {
+    name: "calc-extra-prop",
+    file: RD,
+    why: "MUST PASS. Adding an unrelated prop to the Calculator tag is ordinary work; a wiring assertion that fired on any edit would tell authors to stop touching it.",
+    silent: true,
+    edit: (s) => s.replace("<Calculator route={route}", '<Calculator data-x="1" route={route}'),
+  },
 ];
 
 let pass = 0;

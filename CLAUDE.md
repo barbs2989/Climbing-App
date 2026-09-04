@@ -63,7 +63,7 @@ npm run check:policy-claims # no legal surface claims a control or a capability 
 npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
-npm run check:float-plan-persistence # a filed float plan survives leaving the tab (in build)
+npm run check:float-plan-persistence # a form on a sub-tab must survive leaving it — float plan AND planner (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1698,7 +1698,31 @@ the total when deciding where a new guard belongs.
   - **The A/B that makes the cases mean something was CONFOUNDED on the first attempt.** Sections 6
     and 7 share one stripped `rd`, so disabling the stripping broke both and **two** cases flipped.
     Isolating section 6 flips **exactly one** — `comment-naming-the-gate` — with the other five
-    unmoved. *When an A/B moves more than the thing under test, it is measuring the harness.*
+    unmoved. *When an A/B moves more than the thing under test, it is measuring the harness.*  - **THE SAME DEFECT ONE SUB-TAB OVER, and the guard's name is now narrower than its contents.**
+    `<Calculator/>` — the planner's fitness, pack weight, party size and departure — renders ~17k
+    characters inside the `tab==='planner'` branch, so tapping **Safety** to check the hazards
+    unmounted it and reverted all four to `pack 10kg, party 2, depart 06:00`. The climber came back
+    to a **different estimated summit time** than the one they had just read, with nothing on screen
+    saying it had changed — and a lighter pack reads **faster**, the optimistic direction #641
+    records for the return tile. The rename is deliberately not done in the same change, the
+    precedent `check:topo-outage-copy` records.
+    - **ONE OF THE FOUR WAS ALREADY LIFTABLE AND NOBODY HAD WIRED IT.** `fit`/`setFit` props existed
+      on `Calculator` and the single call site passed **neither**, so `fitProp` was undefined and
+      fitness fell back to local state like the rest. **A lift nothing hands state to is not a
+      lift** — and its presence made the component *look* migrated, which is why the other three
+      were never questioned.
+    - The fix is this entry's own shape: `calc`/`onCalc`, optional, with the local state as the
+      fallback, and the state owned by `RouteDetail` beside `floatPlan` — outside the branch a
+      sub-tab switch unmounts, keyed per route by its own `key={selRoute.id}`.
+    - **Section 9 is SOURCE-ONLY, and deliberately so.** The props are optional *by design*, so
+      dropping them at the call site reverts Calculator to local state **silently**: it still
+      renders and every render assertion still passes. That is this file's own header reasoning,
+      applied to the second member of the class — and the reason a render probe would not have
+      caught it.
+    - Three cases added (10/10), one of which must stay **SILENT**: adding an unrelated prop to the
+      tag is ordinary work, and a wiring assertion that fired on any edit would tell authors to
+      stop touching it.
+
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
     than paying for a second 400,000-character esbuild run**, which is the cost this entry already

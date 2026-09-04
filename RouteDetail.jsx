@@ -1391,10 +1391,24 @@ function sectionsCoveredByItinerary(route){
    seed reports + the reader's own logs + OTHER CLIMBERS' logs from the DB (#787), and only that
    third source makes "what parties actually took" mean more than "what I took". Defaulted so a
    caller that omits it renders the estimate exactly as before rather than throwing. */
-function Calculator({route,activity,fit:fitProp,setFit:setFitProp}){
-  const [fitLocal,setFitLocal]=useState("intermediate");
-  const fit=fitProp||fitLocal,setFit=setFitProp||setFitLocal;
-  const [pack,setPack]=useState(10),[party,setParty]=useState(2),[depart,setDepart]=useState(6);
+function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
+  /* THE PLANNER INPUTS SURVIVE A SUB-TAB SWITCH, which is the same fix #1581 gave FloatPlan one
+     sub-tab over. <Calculator/> renders ~17k characters inside the `tab==='planner'` branch, so
+     tapping Safety to check the hazards unmounted it and every input reverted: pack 10kg, party 2,
+     depart 06:00. The climber came back to a DIFFERENT estimated summit time than the one they had
+     just read, with nothing on screen saying it had changed — and a lighter pack reads FASTER, the
+     optimistic direction #641 records for the return tile.
+     ONE OF THE FOUR WAS ALREADY LIFTABLE AND THE MECHANISM WAS NEVER WIRED: `fit`/`setFit` props
+     existed and the single call site passed neither, so `fitProp` was undefined and it fell back to
+     local state like the other three. A lift nothing hands state to is not a lift. The props are
+     kept so a caller can still drive fitness alone; `calc`/`onCalc` carry all four. */
+  const [own,setOwn]=useState({fit:"intermediate",pack:10,party:2,depart:6});
+  const st=calc||own,setSt=onCalc||setOwn;
+  const setK=k=>v=>setSt(x=>({...x,[k]:v}));
+  const fit=fitProp||st.fit,setFit=setFitProp||setK("fit");
+  const pack=st.pack,setPack=setK("pack");
+  const party=st.party,setParty=setK("party");
+  const depart=st.depart,setDepart=setK("depart");
   const hasPublishedSummitH=route.timing&&route.timing.summitTimeHrs!=null;
   const derivedSummitH=(!hasPublishedSummitH&&route.timing&&route.timing.totalHrs!=null)?Math.max(0,route.timing.totalHrs-(route.timing.approachTimeHrs||0)-(route.timing.descentTimeHrs||0)):null;
   const hasDerivedSummitH=derivedSummitH!=null&&derivedSummitH>0;
@@ -2792,6 +2806,9 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
      a branch it leaves — so eleven typed fields went with it every time somebody tapped Plan to
      check the descent. Keyed per route by RouteDetail's own `key={selRoute.id}`. */
   const [floatPlan,setFloatPlan]=useState(()=>floatPlanState({route:route.name}));
+  /* The planner's own inputs, held here for the reason floatPlan is: a sub-tab switch unmounts the
+     component that renders them. Keyed per route by RouteDetail's own `key={selRoute.id}`. */
+  const [calcInputs,setCalcInputs]=useState({fit:"intermediate",pack:10,party:2,depart:6});
   const [tab,setTab]=useState(initialSubTab||"overview");useEffect(function(){if(onSubTab)onSubTab(tab);},[tab]);useEffect(()=>{if(tab==="planner"&&!showPlan)setTab("overview");},[route&&route.id,showPlan,tab]);const [fixOpen,setFixOpen]=useState(false);const [fixOpenSection,setFixOpenSection]=useState(null);/* Values to seed the fix form with, so a shortcut elsewhere (the bolt-problem chips) can carry its choice into the real contribute flow instead of asserting it filed something. */const [fixPrefill,setFixPrefill]=useState(null);useEffect(function(){if(autoFix&&route&&autoFix===route.id){setFixOpen(true);onAutoFixDone&&onAutoFixDone();}},[autoFix,route&&route.id]);const [trackOpen,setTrackOpen]=useState(null);const [shareOpen,setShareOpen]=useState(false);const [showGpsModal,setShowGpsModal]=useState(false);const [shareSearch,setShareSearch]=useState("");const [partnersExpand,setPartnersExpand]=useState(false),[crewsExpand,setCrewsExpand]=useState(false),[sibsExpand,setSibsExpand]=useState(false);const [trackHistOpen,setTrackHistOpen]=useState(false);const [photoLightbox,setPhotoLightbox]=useState(null);const [photoLikes,setPhotoLikes]=useState({});const [quickPhotoOpen,setQuickPhotoOpen]=useState(false);const [quickPhotos,setQuickPhotos]=useState([]);const [quickPhotoPick,setQuickPhotoPick]=useState([]);const [photoBusy,setPhotoBusy]=useState(false);const [photoRemoving,setPhotoRemoving]=useState(false);const [photoReporting,setPhotoReporting]=useState(false);useEffect(()=>{try{if(topRef.current&&topRef.current.scrollIntoView)topRef.current.scrollIntoView({block:"start"});if(typeof window!=="undefined"&&window.scrollTo)window.scrollTo(0,0);}catch(e){}},[tab]);const shareLink=(typeof window!=="undefined"?window.location.origin+window.location.pathname:"")+"?debugRoute="+route.id;const [linkCopied,setLinkCopied]=useState(false);
   return <div ref={topRef}>{fixOpen?<SuggestFix route={route} pending={route._pendingEdits||{}} scrollTo={fixOpenSection} prefill={fixPrefill} peakCoord={mtn.lat!=null?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null} onClose={()=>{setFixOpen(false);setFixOpenSection(null);}} onSubmit={onContribute} onLog={onLog?function(){setFixOpen(false);setFixOpenSection(null);onLog(route);}:undefined}/>:null}
     <div style={{minHeight:188,overflow:"hidden",position:"relative",display:"flex",flexDirection:"column",justifyContent:"space-between",padding:"11px 11px 14px",boxSizing:"border-box"}}>
@@ -2951,7 +2968,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     </>}
     {(hasTable&&note)?<div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`,marginTop:8}}><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.7}}>{note}</div></div>:null}
   </div>;
-})()}{!cragOnly?<div style={{marginBottom:14}}><ItineraryView route={route} onContribute={()=>{setFixOpenSection("itinerary");setFixOpen(true);}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} myItin={myItin} onSaveMyItin={onSaveMyItin} crewsForRoute={crewsForRoute} onShareItinToCrew={onShareItinToCrew}/></div>:null}{!cragOnly?<Calculator route={route} activity={activity}/>:null}{/* CAMPING & BIVY, moved off the Safety tab (see the note on the safety line). It sits directly
+})()}{!cragOnly?<div style={{marginBottom:14}}><ItineraryView route={route} onContribute={()=>{setFixOpenSection("itinerary");setFixOpen(true);}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}} myItin={myItin} onSaveMyItin={onSaveMyItin} crewsForRoute={crewsForRoute} onShareItinToCrew={onShareItinToCrew}/></div>:null}{!cragOnly?<Calculator route={route} activity={activity} calc={calcInputs} onCalc={setCalcInputs}/>:null}{/* CAMPING & BIVY, moved off the Safety tab (see the note on the safety line). It sits directly
     after the time estimate because the two answer one question together — how long this takes,
     and where you stop if it takes longer. SCRAMBLING is in the gate: it was the one discipline
     excluded before, and a scramble that overruns benights a party exactly like an alpine route.
