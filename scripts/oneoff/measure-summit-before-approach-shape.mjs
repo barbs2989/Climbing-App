@@ -18,6 +18,28 @@
 // the route does.
 //
 // So this is a measurement, not a worklist. Report-only, read-only, anon key.
+//
+// THE SWEEP IS DONE, AND THE NUMBER THIS PRINTS IS NOW AN ADJUDICATED RESIDUE RATHER THAN A
+// BACKLOG. All 81 were read individually across six batches (#1588, #1590, #1594, #1599, #1600,
+// #1602): 62 reordered, 19 left alone with a reason recorded in the batch script that skipped
+// them. Do not read the remaining count as work.
+//
+// The 19 are five kinds, and NONE is separable by shape — which is what this script measured in
+// the first place:
+//   * a DESCENT leg correctly after the summit (both Chair Peak routes, Davis Peak, Forbidden's
+//     East Ledges, Curtis Ridge, Soviet Route)
+//   * a DUPLICATION, the same place either side of the summit (both Dragontail routes, Le Conte,
+//     and West Face's two spellings of one col)
+//   * a MISTYPED pin — a "Topout" named as the base of the wall (Flight of the Falcon, both Roan
+//     Wall routes, Waterfall Buttress)
+//   * a distance-less pin among dated ones, where its slot would be a GUESS (Cutthroat West Ridge,
+//     Luna Peak, This My Friend)
+//   * one declared PARTIAL, Enchantment Peak, which stays here on purpose
+//
+// TWO OF THE RESIDUE ARE ALREADY CORRECT AND STILL COUNTED: Burgner-Stanley and Soviet Route trail
+// a DESCENT pin typed `Hazard`, and `Hazard` is in this script's APPROACH set. That is deliberate
+// over-inclusion — narrowing it would need the script to tell a descent rappel from an approach
+// hazard, which is exactly the judgement it cannot make and the reason the sweep was read.
 import { selectAll } from "../lib/supabase-env.mjs";
 
 const APPROACH = new Set(["Trailhead", "Junction", "Water", "Campsite", "Hazard", "Approach", "Pass", "Camp"]);
