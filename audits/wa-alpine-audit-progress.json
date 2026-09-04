@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_east_twin_needle_thread_of_ice",
+    "last_processed_id": "wa_fish_whistle",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3910,6 +3910,28 @@
             "flagged_for_human_review": 1,
             "clean": 6,
             "note": "wa_east_ridge_3's correct Cedar Creek Trailhead GPS coordinate is still unsourced -- two web searches turned up two DIFFERENT, geographically distinct 'Cedar Creek Trail' trailheads near Mazama (one Sawtooth Wilderness/Cedar Falls via Sandy Butte Rd #200, unrelated; one on SR-20 near MP 175-176 via FR 5310-200, which matches this row's own waypoint note and is the more likely candidate), and primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) are blocked by the network egress proxy so the exact pin could not be confirmed. The wrong/contaminated waypoint was removed rather than replaced with a guessed coordinate."
+        },
+        {
+            "batch_number": 189,
+            "date": "2026-09-04",
+            "route_ids": [
+                "wa_eldorado_peak_east_ridge",
+                "wa_eldorado_peak_eldorado_glacier_nw",
+                "wa_eldorado_peak_north_ridge",
+                "wa_eldorado_peak_northeast_face",
+                "wa_eldorado_peak_west_arete",
+                "wa_elephant_butte_standard_route",
+                "wa_elephant_head_standard",
+                "wa_energizer_bunny",
+                "wa_fire_on_the_mountain",
+                "wa_fish_whistle"
+            ],
+            "findings_summary": "wa_eldorado_peak_eldorado_glacier_nw: gain_ft corrected 4000->6712 (below gain-floor and itinerary sum). wa_eldorado_peak_northeast_face and wa_fire_on_the_mountain: dist_km each halved (19.47->9.74, 16.09->8.05) -- both were storing round-trip mileage where the app's one-way convention applies. wa_elephant_butte_standard_route: loss_ft corrected 1788->9700 to match gain_ft for an out-and-back route. wa_elephant_head_standard: permit re-homed from the row's own trailhead waypoint note (was null). wa_fire_on_the_mountain: pitches corrected 8->7 (matches pitch_detail count and 3 external sources). wa_energizer_bunny and wa_fish_whistle: watch_out array-shape bug (newline-joined string instead of JSON array) converted; wa_fish_whistle also had 2 boilerplate hazard items removed that contradicted the row's own descent_text and high_point_ft. wa_fish_whistle gain_ft corrected 4115->4400 to match its own itinerary/loss_ft. 3 routes clean (East Ridge, North Ridge, West Arete on Eldorado Peak), FAs confirmed via web search.",
+            "sql_file": "audits/sql/2026-09-04-batch-189.sql",
+            "confirmed_errors_fixed": 7,
+            "flagged_for_human_review": 1,
+            "clean": 3,
+            "note": "wa_eldorado_peak_eldorado_glacier_nw's `season` field (Oct-Apr) conflicts with its own `best_season` prose (May-June/summer/Oct-Nov cold snap) and with published trip-report consensus found via web search (late-fall-before-mid-Nov and mid-March-to-early-May windows with a dead zone between) -- none of the three descriptions agree cleanly, so this needs deeper research rather than a guessed fix. check:sql passed (8 of 9 targets independently checkable; the wa_fish_whistle watch_out UPDATE's WHERE guard has to contain real semicolons from the original stored value, which the preflight tool's naive statement splitter can't parse around -- Postgres itself handles it fine)."
         }
     ]
 }

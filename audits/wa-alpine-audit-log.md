@@ -13103,5 +13103,95 @@ line is what published accounts might informally call the East Arête.
 FA (Abegg & Wallace, June 2009) and season/conditions notes cohere with a
 narrow early-summer ice couloir.
 
-Next batch continues from `wa_east_twin_needle_thread_of_ice` onward
-alphabetically (pass 4).
+## Batch 189 — 2026-09-04
+
+Continuing pass 4 alphabetically from `wa_east_twin_needle_thread_of_ice`.
+Batch: `wa_eldorado_peak_east_ridge`, `wa_eldorado_peak_eldorado_glacier_nw`,
+`wa_eldorado_peak_north_ridge`, `wa_eldorado_peak_northeast_face`,
+`wa_eldorado_peak_west_arete`, `wa_elephant_butte_standard_route`,
+`wa_elephant_head_standard`, `wa_energizer_bunny`, `wa_fire_on_the_mountain`,
+`wa_fish_whistle`.
+
+**Fixed:** `wa_eldorado_peak_eldorado_glacier_nw` (Eldorado Peak, NW
+Couloir) stored `gain_ft: 4000`, below the gain-floor test (high point 8872
+minus its own trailhead waypoint 2160 = 6712) and contradicting its own
+structured `itinerary`, whose three days sum to 6700/6700 gain/loss.
+Corrected `gain_ft` to 6712 to match the already-correct `loss_ft`.
+
+**Fixed:** `wa_eldorado_peak_northeast_face` stored `dist_km: 19.47`
+(= 12.10 mi), which is already the row's own itinerary round-trip total
+(3.9+4.3+3.9 mi, and the itinerary's own `totalNote` says "~12 mi round
+trip") rather than the one-way figure the app convention expects (confirmed
+against the sibling `wa_eldorado_peak_east_ridge`, whose `dist_km` matches
+its own one-way waypoint chain and whose `totalNote` "~10 mi round trip" is
+exactly double it). Halved to 9.74 km.
+
+**Fixed:** `wa_elephant_butte_standard_route` stored `loss_ft: 1788`
+against `gain_ft: 9700` for a route whose own `descent_text` explicitly
+reverses the ascent ridge back to the same Diablo trailhead — for a true
+out-and-back trip cumulative gain must equal cumulative loss. Corrected
+`loss_ft` to 9700.
+
+**Fixed:** `wa_elephant_head_standard` had `permit: null` even though its
+own trailhead waypoint note already states the requirement ("self-issue
+Glacier Peak Wilderness permit and NW Forest Pass/day-fee kiosk at the
+trailhead"). Re-homed that fact into the empty `permit` column.
+
+**Fixed:** `wa_fire_on_the_mountain` (Sloan Peak SW Face) stored
+`pitches: 8`, but its own `pitch_detail` lists exactly 7 pitches (matching
+`overview`'s "7 pitches") and three independent sources (AAC Publications,
+StephAbegg.com, Mountaineers.org) all describe it as a "seven pitch 5.10d"
+route. Corrected to 7 — this field feeds the app's climbing-time estimate
+directly. Same route: `dist_km: 16.09` (= 10.0 mi) matched its own 2-day
+itinerary's round-trip total (4.5+5.5 mi) rather than the one-way figure;
+the row's own waypoint chain gives the summit at 4.5 mi one-way. Halved to
+8.05 km (same bug class as the Eldorado NE Face fix above).
+
+**Fixed:** `wa_energizer_bunny` (Prusik Peak) had the recurring `watch_out`
+array-shape bug (a single string joined with literal `\n` instead of a
+5-item JSON array — the pattern already logged for Sharkfin Tower, Mount
+Shuksan SE Ridge, Chockstone Route, Colchuck Peak NE Couloir, Dark Side of
+Liberty, Dolphin Chimney in prior batches). Converted to a proper array;
+also corrected one item's altitude figure ("8,900+ ft") which contradicted
+the row's own `high_point_ft` (8008 ft) — changed to "8,000+ ft."
+
+**Fixed:** `wa_fish_whistle` (Vesper Peak) had the same `watch_out`
+array-shape bug. Converting it also surfaced two items that directly
+contradict the row's own other fields, dropped rather than reformatted: one
+claiming a rappel descent with established anchors, when the row's own
+`descent_text` explicitly documents this as a walk-off with no rappel
+anchors found in any published or trip-report account; and one claiming
+"8000+ feet," when the row's own `high_point_ft` is 6214 — boilerplate that
+reads as copied from a much higher peak's hazard list. Kept the other 6,
+route-appropriate items. Same route: `gain_ft: 4115` contradicted its own
+single-day itinerary entry (`gainFt: 4400`, matching the already-correct
+`loss_ft: 4400` for this symmetric out-and-back day route); corrected to
+4400.
+
+**Flagged for human review:** `wa_eldorado_peak_eldorado_glacier_nw`'s
+`season` field ("Oct-Apr") appears to conflict with its own `best_season`
+prose (which emphasizes May-June, summer, and an Oct-Nov cold snap) and
+with published trip-report consensus found via web search (best conditions
+are described as late fall before mid-November, then a dead window until
+mid-March, then spring through early May) — none of the three descriptions
+agree cleanly with each other. Not fixed; needs deeper research to
+reconcile rather than a guessed value.
+
+**Clean / confirmed accurate:** `wa_eldorado_peak_east_ridge` — gain/loss
+match the gain-floor test and its own itinerary sum (6716/6712 vs. an
+8872−2160=6712 floor); FA (Blair, Grigg, Winder, Wilson, Aug 27 1933)
+confirmed via search. `wa_eldorado_peak_north_ridge` — gain matches the
+gain-floor test; sparse but internally consistent, FA honestly marked
+unknown. `wa_eldorado_peak_west_arete` — gain matches the gain-floor test;
+FA (Richard Emerson, Walter Gove, Aug 24 1969) confirmed nearly verbatim via
+search, including the historic ten-hour base-to-summit time and three-piton
+protection.
+
+`npm run check:sql -- audits/sql/2026-09-04-batch-189.sql` passed (8 of 9
+write targets independently checkable — the `wa_fish_whistle` watch_out
+UPDATE's WHERE guard necessarily contains real semicolons from the original
+stored value, which this project's lightweight preflight tool's naive
+statement splitter cannot parse around; Postgres itself is quote-aware and
+unaffected). All target ids confirmed to exist; no destructive statements.
+
+Next batch continues from `wa_fish_whistle` onward alphabetically (pass 4).
