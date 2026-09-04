@@ -57,6 +57,7 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
+npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:log  # BOTH climb_logs hydrations keep every column worth showing (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
@@ -1808,6 +1809,73 @@ the total when deciding where a new guard belongs.
     quietly losing a promise. **`flaglive` must stay SILENT** — flipping `PRIVACY_CONTROLS_LIVE`
     to true makes the controls real, so describing them becomes correct, and a guard that still
     fired would forbid the fix.
+- **`check:profile-claims`** asserts that the **Profile tab and the résumé it opens claim only what
+  the app can support**. Three invariants, all fixed on 2026-09-03 (#1573, #1579, #1580). Static
+  (one esbuild bundle + one SSR render, plus a Babel parse), **~1.5s**, so it sits in `npm run build`.
+  - **THE RÉSUMÉ IS A SHARED AND EXPORTED DOCUMENT** — *Share résumé* and *Export PDF* sit on it —
+    and it claimed *"partner- and community-corroborated"* **unconditionally**, so on the CI
+    fixture's own résumé, with nothing logged and no courses, it was false of everything on the
+    page. The same claim was also made **twice**, once in the header and once in the footer.
+  - **`extra` RENDERED AS `live`, THROUGH THE SAME ROW.** EXPERIENCE is
+    `[...baked, ...live, ...extra]`, where `live` is `climb_logs` rows against a route id and
+    `extra` is the *Add to résumé* form — six free-text/select inputs, **no route id, no
+    verification, no source marker**. Type "The Nose / El Capitan / 5.9 / Lead" and it sat there
+    looking like a logged ascent.
+  - **THE MARK IS "added by hand", DELIBERATELY NOT "self-reported".** A logged climb is
+    self-reported too, so reusing the courses vocabulary would imply `live` rows are corroborated
+    — fixing one false claim by making another. It is tagged at **composition**
+    (`...((extra)||[]).map(e=>({...e,selfAdded:true}))`) rather than in `addClimb`, because
+    `extra={resumeFor.id===0?resumeAdds:null}` means everything arriving that way is hand-typed by
+    construction and a future caller of `onAddExtra` cannot forget the flag.
+  - **THE DEMO TICK.** `onVerifyCourse` is a pure client-state flip on `resumeCourses`
+    (`useState(ME.courses||[])`, never persisted) — nothing is checked — and its button already
+    read **"Verify (demo)"**. What it PRODUCED did not: a green `✓ verified` chip identical to a
+    real one, over a toast asserting *"Credential verified"* as fact, on avalanche and
+    wilderness-first-responder certs. **It was the one outlier to a convention the app already
+    has** — seven-plus toasts say *"this preview doesn't route requests to …"* or *"(simulated in
+    this preview)"*, including its own two siblings on that screen — and the app has a **real**
+    credential flow elsewhere (`guide_documents` + `isGuideVerified`, which re-checks expiry at
+    render), so two different things wore the same ✓.
+  - **THE DEMO CHIP KEEPS A LEADING ✓ AND THE GUARD ASSERTS THE CHARACTER, NOT THE WORDING.**
+    Dropping it produced *"AIARE 1verified (demo)"* in the announced text — the glued-name defect
+    `check:a11y-badges` exists for, since the course name is the previous inline span. The greying
+    and the "(demo)" suffix carry the honesty instead. Same reasoning put the "added by hand" mark
+    as plain text inside the existing muted sub-line rather than a chip after the grade.
+  - **"RAISE IT WITH:" OFFERED A STEP ALREADY DONE.** The trust card renders a fixed row of three
+    — Log a route / Verify email / Add a cert — and it was unconditional, so an already-verified
+    climber was told verifying would raise their score. **The app knew**: the handler opens
+    `if(verified){showToast("You're already verified.");return;}`, and the résumé two inches away
+    reads *"✓ Email verified"* off the same value (`ME.verified=verified`; `Resume` takes
+    `const ver=climber.verified` off `meLive`). **HOME ALREADY DID THIS CORRECTLY** — its setup
+    checklist pushes the verify row only `if(!ME.verified)` and every other row there is
+    conditional too — so this list was the outlier, not the rule.
+  - **The gate is ONE, deliberately.** A third array element carries the condition and the list is
+    filtered on it; "Log a route" and "Add a cert" stay unconditional, because both are always
+    worth doing and hiding them would remove real advice. An injection that gates "Log a route"
+    must FAIL, or a guard asserting only that the gate exists is satisfied by gating everything.
+  - **SECTION 3 IS PARSED WITH BABEL, NOT MATCHED WITH A REGEX, and that is this session's most
+    expensive lesson made structural.** Three separate checkers were fooled the same day by the
+    comment written to explain the fix they were checking — `check:fire` and a float-plan probe
+    each went RED on a correct tree from one comment quoting `{tab==="safety"?…}`, and a
+    demo-verify probe went the other way, **passing on a fully-restored defect** because the
+    comment contained `demo:true`. An AST does not see comments at all. Where source must be read
+    textually here (the `onVerifyCourse` handler), comments are stripped first.
+  - Fails **closed**: fewer than 5 app sources resolved (via `appSources`, which names any missing
+    required file rather than quietly reading fewer), a render under 900 chars — every *"must NOT
+    contain"* assertion passes against a page that rendered nothing — fewer than 200 array
+    literals parsed, and the list or handler anchors going missing.
+  - **A BUILD GATE RATHER THAN THREE PROBES, and the reason is the shape of the fixes.** All three
+    change **strings and conditions, not names**, which `audit:silent-reverts` says in its own
+    closing caveat it cannot see; a stale-base squash could restore every one of them with each
+    existing gate green. Same argument that promoted `check:verification-fallback` and
+    `check:topo-outage-copy`. It supersedes `probe-resume-self-reported-rows.mjs`,
+    `probe-resume-demo-verify-says-so.mjs` and `probe-raise-it-with-hides-done-steps.mjs` —
+    *a verification nobody runs is not a verification*.
+  - Injection-tested **10/10**, each case proving its edit landed **by checksum** and restoring
+    every file byte-identically. Cases 1, 4, 5, 7 are the real historical defects. **Three cases
+    are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
+    and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
+    a guard that only ever demands MORE marking would drive exactly that.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
