@@ -13,7 +13,15 @@ import { readFileSync } from "node:fs";
 import { cpuUsage } from "node:process";
 
 const pkg = JSON.parse(readFileSync(new URL("../../package.json", import.meta.url), "utf8"));
-const guards = [...pkg.scripts.build.matchAll(/node (scripts\/[\w./-]+\.mjs)/g)].map((m) => m[1]);
+// READS `build:guards`, NOT `build`. #1546 moved the chain there so scripts/run-build-guards.mjs
+// could run it concurrently, and `build` became `node scripts/run-build-guards.mjs && vite build`
+// — ONE match. This script then failed closed on every run, which is the design working and is
+// also why the figure in CLAUDE.md went stale: the tool that refreshes it was broken by the same
+// change. check:guard-wiring was taught to read both keys at the time; this was not. Both keys
+// are read here so it cannot break again from either direction.
+const chain = (pkg.scripts["build:guards"] || "") + " " + (pkg.scripts.build || "");
+const guards = [...chain.matchAll(/node (scripts\/[\w./-]+\.mjs)/g)].map((m) => m[1])
+  .filter((g) => g !== "scripts/run-build-guards.mjs");
 if (guards.length < 20) {
   console.error(`FAIL — found only ${guards.length} guard(s) in the build chain; the parse is broken.`);
   process.exit(1);

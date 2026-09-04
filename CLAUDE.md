@@ -24,6 +24,7 @@ npm run check:seed-history # seed climbs must never be attributed to a real acco
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
+npm run check:sample-content-removable # the sample content really does come out with the flag (in build)
 npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
@@ -52,6 +53,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
+npm run check:photo-removal # a climber can take their OWN photo down, and only their own (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
@@ -165,6 +167,21 @@ a build error, but a screen that renders wrong or not at all.
 **WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
 **71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
 the total when deciding where a new guard belongs.
+- **THE COUNT IS STALE — 81 GUARDS TODAY, NOT 71 — AND THE TOOL THAT REFRESHES IT HAD BEEN BROKEN
+  BY #1546, WHICH IS WHY NOBODY NOTICED.** That change moved the `&&` chain to `build:guards` so
+  the concurrent runner could read it, leaving `build` as `node scripts/run-build-guards.mjs &&
+  vite build`. `measure-build-gate-cost.mjs` parsed `pkg.scripts.build`, so it found **one** guard
+  and **failed closed on every run** — correct behaviour, and invisible, because nothing runs
+  `scripts/oneoff/`. `check:guard-wiring` was taught to read both keys in the same PR; the
+  measurer was not. It reads both now. *A verification nobody runs is not a verification* — here
+  the un-run thing was the instrument that keeps a documented number true.
+- **DO NOT QUOTE A TOTAL TAKEN ON A LOADED BOX, and there is now direct evidence of the factor.**
+  A run at load ~110 reported **320s across 81 guards**, which is not comparable to the 161s above:
+  `check:offline-claims` measures **3.7s CPU at load 3.8** and **12.06s** in that same run, on
+  identical code — about **3x inflation from contention alone**. CPU time is more load-robust than
+  wall clock, which is why this script reports it, but it is not load-*proof*: the same work costs
+  more cycles when the caches are being thrashed. **The RANKING survives a loaded run; the TOTAL
+  does not.** Re-measure on a genuinely quiet box before writing a new figure here.
 - **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
   between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
   same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
@@ -2085,11 +2102,26 @@ the total when deciding where a new guard belongs.
   - Fails **closed**: a missing `PRIVACY_CONTROLS_LIVE`, no gated block found (every switch would
     read as ungated), fewer than 7 switches parsed, fewer than 3 ungated, or either climber-select
     anchor going missing.
-  - Injection-tested **11/11** (`scripts/oneoff/inject-visibility-switch-cases.mjs`), each case
+  - **IT READ ONE FILE AND THE PREFERENCE HAS A CONTROL IN TWO, which is a reach limitation found
+    by measuring rather than by reading.** `show_name` also has a switch in the profile EDITOR, in
+    `ClimbMatchCore.jsx` — a file the first version did not open. **Not a defect**: `openEdit` seeds
+    `showRealName: showRealName` from live state and `saveEdit` writes the column *and* calls
+    `setShowRealName`, so the pair round-trips. Verified rather than assumed. But a guard that
+    cannot SEE it would not notice a future editor switch doing none of that.
+    - A third persistence kind, `draft`, with its own rule: the draft must be **seeded from the live
+      value on open** (or opening the editor and saving silently resets the preference — the shape
+      #1581 records for the float plan losing eleven fields) and **pushed back on save** (or Settings
+      and the editor disagree until reload).
+    - Core carries no `PRIVACY_CONTROLS_LIVE` ternary — that is an App construct — so a Core switch
+      is always rendered and always has to be declared. A `role="checkbox"` is deliberately not
+      collected: an attestation or an also-block tickbox is a form input, not a claim about what
+      others can see.
+  - Injection-tested **14/14** (`scripts/oneoff/inject-visibility-switch-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Five are the
-    real pre-0177 defects, two pin rule 2 and two pin rule 3 — including the stat tile exactly as
-    it shipped. **Two must stay SILENT** — a `derived` switch that is genuinely derived, and an
-    undeclared flag inside a gated block, which promises nothing.
+    real pre-0177 defects, two pin rule 2, two pin rule 3 — including the stat tile exactly as it
+    shipped — and three pin the `draft` kind and the Core scope. **Two must stay SILENT** — a
+    `derived` switch that is genuinely derived, and an undeclared flag inside a gated block, which
+    promises nothing.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -8857,6 +8889,60 @@ their own Résumé showed an amber **"Unverified"** chip.
     defect apart one link at a time, so the guard cannot pass on the strength of its neighbours;
     **case 5 must stay SILENT** — a comment naming the flag is documentation.
   - What it does **not** prove: that the toast is legible, or that a climber ever meets the refusal.
+
+- **`check:photo-removal`** asserts that a climber can take their **own** profile photo back down,
+  that **only** their own strip offers the control, and that a **failed** removal does not destroy
+  the file. Static (a source read plus one execution against a stubbed transport), **1.15s**, so it
+  sits in `npm run build`.
+  - **THE FEATURE EXISTS BECAUSE HIDING WAS NEVER A REMOVAL.** `PhotoStrip` offered `onAdd` and
+    nothing to undo it, so a climber who regretted a photo could only **hide** it — and `0174` says
+    in its own header that `photos_public` is **surfacing only, not access control**, so the row
+    was still served to anyone holding the anon key. #1521 shipped the remove path; this is what
+    stops it going quietly.
+  - **BOTH INVARIANTS ARE INVISIBLE TO EVERY OTHER GUARD, and they fail in opposite directions**, so
+    they are asked separately.
+    - **WHO GETS THE CONTROL is the ABSENCE of a prop at two of three call sites.** `PhotoStrip`
+      renders three different people's photos — your own profile, `FullProfile` (somebody else's),
+      `TripReport` (a report author's) — and exactly one passes `onRemove`. Adding it to another
+      lets one climber take down another's photo. Dropping it from your own removes **no
+      identifier**, so `audit:silent-reverts` is blind to it by its own closing caveat; and
+      `check:dead-props` asks whether a prop is *read* (it is) and whether a call site passes one
+      nothing reads (the opposite direction). Static, because the gate is an absence and a render
+      can only ever show the sites that DO pass it.
+    - **WHAT THE REMOVAL DOES is a property of two awaits in one function**: drop the **reference**
+      first, then the storage object — `deleteRoutePhoto`'s ordering. Reversed, a refused write
+      leaves the profile listing a file that is gone: a broken image, and an **unrecoverable** one,
+      because the object was deleted before anything knew the reference survived. Executed rather
+      than read, because the dangerous case is a **failed write**, which a live database will not
+      produce on demand.
+  - **It asserts the array WRITTEN, not the array returned**, which is not pedantry: a function that
+    returns the right list and persists a different one satisfies every return-value assertion while
+    losing the climber's change. And it asserts a no-op removal **throws before writing anything** —
+    a removal matching nothing that writes the array back and reports success is the
+    `check:writes` shape on a delete.
+  - **`photoStorageKey` was extracted rather than re-typed**, so the public-URL → object-key
+    reversal has one implementation. A second copy is how this codebase ended up with four grade
+    parsers.
+  - **A `blob:` preview is a REAL case, not an edge one**: a photo added and removed before the
+    upload settles has no object of ours, so the strip must drop it and ask storage to delete
+    **nothing**. Both halves are asserted.
+  - **READ-ONLY**: it writes to no database and uploads nothing — every request is answered by a
+    stub — so it is safe in the build chain and on a contributor's machine with no credentials.
+  - It ran nowhere as a `scripts/oneoff/` probe, which is the *a verification nobody runs is not a
+    verification* promotion this file records for `check:overflow`, `check:pitch-discount` and
+    `check:policy-claims`. **Promotion changed its DEPTH** — `ROOT` was `../..` — the trap
+    `check:pitch-discount` records; a promoted one-off that resolves the wrong tree measures a
+    different branch's code, as `measure-which-tab-renders-each-field` did for weeks.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean app: fewer
+    than the three `<PhotoStrip>` call sites this app has (with none, every *must not offer
+    removal* assertion passes **vacuously**), an unterminated tag, a moved `PhotoStrip` signature,
+    a bundle esbuild cannot build, and either export missing from `lib/db.js`. **A missing
+    `onRemove` is a FAILURE, not a broken scan** — the distinction matters, because the two want
+    opposite repairs.
+  - Injection-tested **4/4** (`scripts/oneoff/inject-photo-removal-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
+    drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
+    removal report success.
 
 - **`check:overlay-absence` was CREDITING AN OVERLAY WITH ITS NEIGHBOUR'S FLAG**, and it had written
   the reason down itself. Its closing note says *"an overlay rendered NEXT TO others picks up their
