@@ -101,6 +101,14 @@ for (const src of sources.values()) {
 }
 
 // 2. Constants seeded only by such a flag: `const X = FLAG ? ... : []` (or {} / null).
+//
+// Factored into a function because it is now run TWICE: once for the false flags (the real
+// subject of this guard) and once for the flags that are currently TRUE. A flag that can be
+// true genuinely populates its constants, so there is nothing to report about them -- but the
+// coverage this guard would otherwise give them is suspended for as long as it stays true, and
+// a silent loss of coverage is the failure mode this repo keeps recording. Naming them makes
+// the gap visible and it clears itself the moment the flag goes back to false.
+function constsGatedBy(flags, sources) {
 const emptyConsts = new Map(); // name -> flag
 for (const src of sources.values()) {
   // SCREAMING_CASE only. These seed constants are all module-level and named that way, and
@@ -108,7 +116,7 @@ for (const src of sources.values()) {
   // ? … : ""` made the first draft flag every `objectFit:"cover"` in the file.
   for (const m of src.matchAll(/\bconst\s+([A-Z][A-Z0-9_]{2,})\s*=\s*([A-Z][A-Z0-9_]*)\s*\?/g)) {
     const [, name, flag] = m;
-    if (!deadFlags.has(flag)) continue;
+    if (!flags.has(flag)) continue;
     // Find the else-branch: scan forward for the matching ":" at depth 0 and read what follows.
     const rest = src.slice(m.index + m[0].length);
     let depth = 0, i = 0;
@@ -122,9 +130,31 @@ for (const src of sources.values()) {
     if (/^(\[\s*\]|\{\s*\}|null|undefined|""|''|0\b)/.test(tail)) emptyConsts.set(name, flag);
   }
 }
+return emptyConsts;
+}
+
+const emptyConsts = constsGatedBy(deadFlags, sources);
+
+// Flags that are literally TRUE, and the constants they populate. Reported, never failed on:
+// with the flag true those constants hold data, so no UI gated on them is dead today.
+const liveFlags = new Set();
+for (const src of sources.values()) {
+  for (const m of src.matchAll(/\bconst\s+([A-Z][A-Z0-9_]*)\s*=\s*true\s*[;,]/g)) liveFlags.add(m[1]);
+}
+const suspended = constsGatedBy(liveFlags, sources);
+function reportSuspended() {
+  if (!suspended.size) return;
+  const byFlag = new Map();
+  for (const [name, flag] of suspended) (byFlag.get(flag) || byFlag.set(flag, []).get(flag)).push(name);
+  for (const [flag, names] of byFlag) {
+    console.log(`  NOTE: ${flag} is currently TRUE, so ${names.length} constant(s) it gates are NOT checked here: ${names.join(", ")}`);
+    console.log(`        They hold sample data while the flag is true, so nothing is dead today. Set ${flag}=false to re-arm this guard.`);
+  }
+}
 
 if (!emptyConsts.size) {
   console.log("check:dead-flag-gates: ok — no constant is seeded only by a permanently-false flag.");
+  reportSuspended();
   process.exit(0);
 }
 
@@ -164,6 +194,7 @@ if (!findings.length) {
   if (additiveNames.length) console.log(`  read additively (real data still flows through): ${additiveNames.join(", ")}`);
   // Not a failure: harmless, but it is how a constant ends up looking load-bearing later.
   if (unusedNames.length) console.log(`  no longer read at all — candidates for deletion: ${unusedNames.join(", ")}`);
+  reportSuspended();
   process.exit(0);
 }
 

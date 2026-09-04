@@ -199,7 +199,12 @@ if (/edit or clear anything/.test(sheet)) {
 // rendered on none -- so this reads the markup rather than the source.
 console.log("\n--- the Location section describes processing, not a switch ---");
 
-const out = path.join(ROOT, `.policy-claims-${process.pid}.mjs`);
+// NOT the repo root: the guards run concurrently and seven of them walk it, statting every
+// entry, so a temp file that exists at readdir and is gone by the stat kills a sibling guard.
+// node_modules is skipped by all of them, is gitignored, and is where a build cache belongs.
+const cacheDir = path.join(ROOT, "node_modules", ".cache");
+fs.mkdirSync(cacheDir, { recursive: true });
+const out = path.join(cacheDir, `policy-claims-${process.pid}.mjs`);
 try {
   execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--loader:.jsx=jsx",

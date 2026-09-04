@@ -105,6 +105,8 @@ const VOCAB = [
 const files = [];
 const walk = (d) => {
   for (const e of readdirSync(d).sort()) {
+    if (e.startsWith(".")) continue; // never a guard; and a temp file that vanishes
+    // between this readdir and the stat below would otherwise kill the walk.
     const p = path.join(d, e);
     if (statSync(p).isDirectory()) { if (e !== "oneoff" && e !== "node_modules") walk(p); }
     else if (e.endsWith(".mjs")) files.push(p);

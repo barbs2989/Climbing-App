@@ -1231,10 +1231,12 @@ the total when deciding where a new guard belongs.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
     sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
-    surface behind an **overlay** is still out of frame, and **13 of the 25 `lib/db.js` query handles
-    called in `App` carry a flag** (plus 2 in `RouteDetail`) — re-measure rather than quoting this, it has
-    moved twice — the rest are mostly lookups where emptiness is
-    never asserted, but that is a list to READ, not a coverage claim.
+    surface behind an **overlay** is still out of frame, and the flag coverage is **measured, not quoted**:
+    run `scripts/oneoff/measure-outage-flag-coverage.mjs`, which reads the handles and the flags out
+    of the source. It said **41 handles, 21 flagged, 20 not** on 2026-09-03. **This file carried the
+    number in THREE places and they disagreed** — "13 of the 25", "4 of 28" and "34 handles, 14
+    flagged" — which is why it is a script now. The unflagged rest are mostly lookups where
+    emptiness is never asserted, and that is a list to READ, not a coverage claim.
     - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
       re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
       so a missing reporter degrades to a generic label rather than printing `undefined` or
@@ -5268,6 +5270,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **3 of the 8 have a decidable half and 5 do not** (`measure-stranded-vertex-pairings.mjs`),
       and a route needs only its confident half repaired because the predicate tolerates one adrift.
       Left as follow-up: the measurement is committed, the write is not.
+    - **AND THE REPAIR PATH HAD THE SAME HOLE AS THE AUDIT, IN A SECOND CONSUMER.**
+      `fix-stranded-track-vertices` asserted its post-condition by asking the app's predicate to
+      return true after the move — exact while the predicate demanded every vertex be on a pin, and
+      **vacuous** once it tolerated two: on precisely the routes the script exists to repair it now
+      returns true BEFORE the move as well. It measures the repair instead — strictly fewer adrift
+      vertices and no newly-orphaned pin — neither of which a future widening can weaken.
+    - **ALL-OR-NOTHING PAIRING WAS REFUSING UNARGUABLE WORK.** Every one of the 17 was refused
+      because ONE of its vertices could not be placed, including a vertex **26 m** from Anderson
+      Pass at 776x. An unplaceable pair now stops the pairing rather than condemning the route.
+    - **THE MOST USEFUL FINDING: THREE OF THE SIX CANDIDATES WERE NOT STRANDED VERTICES AT ALL.**
+      A stranded vertex sits where a pin used to be; these were **interpolated along the line**
+      — 14-decimal coordinate tails, **0.00 m** off the straight chord between their own
+      neighbours, at fractions of exactly **3/5** and **2/5**. Moving one onto a pin would invent a
+      shape the line never had, which is the fabrication class `audit:synthetic-waypoints` already
+      documents for pins, arriving on a gpx VERTEX. **The confidence ratio did not catch them —
+      `wa_mount_lyall_south_route` scored 18.4x** — because distance from a pin says nothing about
+      where a point came from. `lib/track.js` now exports `coordinateIsComputed` per point so the
+      repair path and the audit ask its rule rather than copying it.
+    - **A computed vertex is EXCLUDED FROM PAIRING, not route-fatal**, and the first version got
+      that wrong: refusing the whole route threw away `wa_inner_constance_standard`'s 85 m / 80x
+      repair because its *other* vertex was computed.
+    - **ELIMINATION IS ONLY SOUND WITH ONE ORPHAN LEFT, and excluding a vertex broke that
+      silently.** With fewer candidates than orphans the "last vertex" branch took `os[0]` — an
+      arbitrary pick wearing elimination's clothes. It proposed Mushroom Tower at 1,520 m to the
+      first orphan when the confidence test had correctly refused that route at 2.3x. **Found by
+      reading the dry run, not by any check.**
+    - **A PARTIAL PAIR HAS NO ELIMINATION BEHIND IT, so its bar is 500 m rather than 3 km — and
+      that number sits in a measured VOID rather than being fitted.** Across all 17 routes the
+      move distances are 26, 85, 2103, 3156, 3546, 4583, 6257, 6257, 6258, 12430, 15682: a
+      refinement is tens of metres, a replacement is kilometres, and **85 to 2,103 is empty**. It
+      matters on `wa_mount_rainier_liberty_ridge`, whose vertex would move 2,103 m onto the Liberty
+      Cap pin while its own 3-decimal coordinate sits closer to Rainier's MAIN summit.
+    - **Applied: 2 routes** (26 m and 85 m, both onto a coordinate the row already holds), verified
+      by read-back on the repaired property rather than on the caption — re-checking the caption
+      would have the identical hole, since it is already true of those rows.
+    - **The audit names the CAUSE now, because the two want opposite repairs**: 23 adrift vertices
+      across 17 routes, **8 of them computed**. Telling somebody to carry a computed vertex onto a
+      pin is wrong advice, and the report used to give it for all of them.
     - Injection-tested **4/4** (`scripts/oneoff/inject-majority-slack-cases.mjs`), each proving its
       edit landed **by checksum**. **Two cases came back WRONG FAILURE first and the guard was
       innocent both times**: the three-point case was written against the FIVE-pin fixture, where
@@ -8242,8 +8282,9 @@ one click past where the probe walks, so nothing had reported it at all.
     the table, which holds exactly one row — the fixture's own. Deliberately not "fixed" by
     lowercasing the reader: that is changing app behaviour to suit a fixture, and it would move
     what `check:signed-in` sees.
-  - **Not closed, and not made a guard.** 4 of 28 query handles in `App` carry a flag (crews #1124,
-    lists #1147, objectives and logs here); the other 24 are a **list to READ**, not a defect count — most are lookups
+  - **Not closed, and not made a guard.** the counts have moved several times since and live in
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than here (crews #1124, lists #1147,
+    objectives and logs were the first four); the unflagged rest are a **list to READ**, not a defect count — most are lookups
     (profiles by id, area names) where emptiness is never asserted to the user. A guard for the
     strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
     which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
@@ -8521,8 +8562,22 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     a rule about "what `useProfilesByIds` does on a miss" cannot be stated once.
   - **THE STATED WORKLIST IS NOW READ, AND IT WAS ONE DEFECT IN TWENTY.** This entry's own header
     used to say *"10 of 28 query handles in `App` carry a flag … the rest are a list to READ"*.
-    Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
-    catches one above) and 19 are non-findings, each for its own reason. The ones worth not
+    Measured **that day**: 34 handles, 14 flagged, 20 not — of which exactly **one** was a real
+    defect (the catches one above) and 19 are non-findings, each for its own reason. **That count is
+    HISTORY — it read 41/21/20 on 2026-09-03**; re-run
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than quoting either figure.
+    - **TWO HANDLES THE EARLIER SWEEPS NEVER NAMED were read on 2026-09-03 and are NON-FINDINGS**,
+      recorded so the next census does not re-derive them. `myVouchesGivenQ` looks like the
+      catches defect and is not: `givenVouches` initialises to **seed** data, so a failed
+      hydration falls back to a seed vouch rather than to an empty list — the concern there is
+      seed-shown-to-a-real-account, which `check:seed-history` covers, not an emptiness lie. And
+      `adminQueueQ` yields `(…data.total)||0`, which renders as `adminQueueN ? badge : null` — a
+      failed read **hides a badge** rather than claiming a clean queue. It is structurally the
+      `myGuideInquiriesQ` shape this file already cleared, it is admin-only, and it self-corrects
+      on the next load. **The stakes are higher (an unseen safety report), so it was read rather
+      than waved through** — but the same shape cannot be a non-finding in one place and a defect
+      in another.
+    The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
     at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
     on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
@@ -8888,6 +8943,33 @@ Read it in three bands:
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
 - `compat(a, b)` (~L335) — partner compatibility score (clamped 20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap.
+  - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
+    Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
+    overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
+    5.12b all reading 99%**. Measured with `scripts/oneoff/measure-compat-saturation.mjs`
+    (report-only, no DB, no browser): **11 of 20 ordered seed pairs (55%) sit on the 99 ceiling**,
+    the highest uncapped score is **157**, and **3 of the 5** climbers on the demo's My-Objectives
+    pane are pinned.
+  - **The cause is that TWO terms are UNCAPPED while every other one is bounded.** Shared
+    disciplines score **×16** and shared objectives **×14** with no ceiling, against grade 28,
+    availability 12, pace 10 and verified 8. So 3 shared disciplines plus 2 shared objectives is
+    `20 + 48 + 28 = 96` **before grade, pace or availability contribute anything**.
+  - **The consequence is that grade stops mattering for exactly the climbers the search
+    surfaces.** Holding 3 shared disciplines and 2 shared objectives and varying only the
+    partner's grade, **5.6 and 5.14a both read 99%** (uncapped 122 vs 116 — the arithmetic moves,
+    the clamp eats it). Thin the profile to one shared discipline and no shared objectives and
+    grade discriminates properly: 62 / 68 / 80 / 65 / 56. **The mechanism works; the saturation
+    hides it**, and a 5.6 climber reading as a 99% match to a 5.11a leader is partner-safety
+    adjacent.
+  - **REPORTED, NOT FIXED — and the reason is scope, not doubt.** Every candidate repair changes
+    who ranks top of a partner search: capping the two loose terms still totals 138 against a 99
+    ceiling, so it needs a rebalance, and rescaling by the maximum is a different algorithm. That
+    is a product decision. What is NOT in doubt is the measurement, and that the copy currently
+    promises a blend the displayed number does not deliver.
+  - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
+    re-typing it — a copy would agree with itself whatever the app did, which is the whole
+    question — and keeps a deliberate second, unclamped transcription beside it purely to show
+    how far past 99 a pair lands.
 - `buildConsensus(activity)` (~L344) — distills a route's trip reports into a conditions summary, weighting each report by the author's `trustScore` and recency; separates all-time vs recent tags and surfaces hazards.
 - `datesAgreed(c)` / `agreedDate(c)` (~L382/384) — a crew reaches "Ready" only when every confirmed member (including ME = id `0`) has acked the same proposed day (`dayAcks`).
 - `scarfHrs(...)` + `techHrs(...)` (~L336/337) — planner time estimates: Naismith-style approach time (fitness tier + pack weight) plus pitch-by-pitch climbing time (exponential slowdown by grade).
