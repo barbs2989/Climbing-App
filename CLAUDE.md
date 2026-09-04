@@ -1722,6 +1722,25 @@ the total when deciding where a new guard belongs.
     - Three cases added (10/10), one of which must stay **SILENT**: adding an unrelated prop to the
       tag is ordinary work, and a wiring assertion that fired on any edit would tell authors to
       stop touching it.
+  - **THIRD MEMBER, AND THE FIRST WHERE THE WORK IS LOST TO A DISMISSAL RATHER THAN AN UNMOUNT:
+    `<SuggestFix/>`'s BACKDROP.** The contribute form holds up to **35 inputs** and its backdrop
+    closed unconditionally — `createPortal(<div onClick={onClose} role="dialog" …>` — so **one tap
+    beside the panel discarded everything a climber had written**, with no warning and no undo. On
+    an app whose whole value is contributed beta.
+    - The inner panel already calls `stopPropagation`, so only a **genuine outside tap** reaches it.
+    - Gated on the form's OWN emptiness signal, `canSubmit` (`totalUpdates > 0`), which the submit
+      button already computes — **not a second notion of "dirty" that could drift from it**. An
+      untouched form still dismisses on a backdrop tap, which is what keeps an accidental open cheap
+      to leave; once there is work to lose, leaving is a deliberate act via the ✕ or Cancel.
+    - **`check:dialog-dismiss` is satisfied either way** (63 dialogs, every one still leavable),
+      which is what makes gating the backdrop safe rather than a way of trapping somebody. Checked,
+      not assumed.
+    - Section 10 is source-only for section 9's reason: removing the condition restores a working,
+      *rendering* dialog that simply throws work away, so no render assertion can see it.
+  - **The guard's SUBJECT is now "a form must not lose your work", across three mechanisms** — a
+    sub-tab unmount (FloatPlan), a sibling sub-tab unmount (Calculator) and an accidental dismissal
+    (SuggestFix). The name still says float plan; the rename stays deliberately out of these
+    changes, the precedent `check:topo-outage-copy` records.
 
 - **`check:topo-outage-copy`** asserts the TOPO box tells a failed read from a route with no topo.
   - **IT COVERS A SECOND SURFACE IN THE SAME FILE NOW — PITCH COMMENTS — and shares the bundle rather
