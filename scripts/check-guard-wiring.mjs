@@ -84,6 +84,13 @@ const wfText = wfFiles
 
 // Declared exemptions. A name here must be a real file, and must genuinely be unwired.
 const EXCLUDED = {
+  "check-new-climber-journey.mjs":
+    "drives a BRAND-NEW real account through onboarding and then asks the DATABASE whether what " +
+    "it typed survived — the question four static censuses each answered a different half of. It " +
+    "creates a real account AND REWRITES ITS PROFILE, so it needs the SERVICE key, which CI must " +
+    "never hold; and the durable CI pair is not a substitute, because a concurrent guard signed " +
+    "in as that account would be walking a profile this blanks mid-run. Hand-run, like " +
+    "check:block-guarantees and for the same credential rule.",
   "check-block-guarantees.mjs":
     "creates TWO real accounts to prove a blocked climber cannot read, message or crew-invite " +
     "the blocker — and creating them needs the SERVICE key, which CI must never hold (the same " +
