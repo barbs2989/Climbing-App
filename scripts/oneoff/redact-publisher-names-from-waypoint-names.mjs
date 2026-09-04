@@ -37,6 +37,12 @@ const EDITS = new Map([
   ["Little Sister West Face (Mountain Project reference point)", "Little Sister West Face (reference point)"],
   ["Northwest Face/Corner (Mountain Project route pin)", "Northwest Face/Corner (route pin)"],
   ["Lexington Tower / Tooth and Claw (Mountain Project marker)", "Lexington Tower / Tooth and Claw (marker)"],
+  // FOUND BY WIDENING THE AUDIT, NOT BY THE CENSUS THAT DROVE THIS SCRIPT. The census lifted the
+  // audit's `NAMED` publisher regex and found 17; the audit ALSO carries a separate SOURCING-ACT
+  // needle ("per source", "sources describe"), and this name trips that one instead. Lifting one of
+  // two rules is not lifting the rule. The repair is identical in kind -- drop the attribution, keep
+  // the fact that this is the route high point.
+  ["Liberty Cap (explicit route high point per source)", "Liberty Cap (explicit route high point)"],
 ]);
 // EVERY REPLACEMENT MUST KEEP A HEDGE OR DROP A REDUNDANT ONE -- never turn a disclosed reference pin
 // into a bare claim about where the route is. Asserted here so a future edit cannot quietly do that.

@@ -145,6 +145,15 @@ for (const r of rows) {
   }
   if (Array.isArray(r.waypoints)) r.waypoints.forEach((w, i) => {
     if (w && typeof w.note === "string" && w.note.trim()) values.push({ id: r.id, field: `waypoints[${i}].note`, kind: "waypoint note", text: w.note.replace(/\s+/g, " ").trim() });
+    // A PIN'S NAME RENDERS AS MUCH AS ITS NOTE, and reading only the note left 17 breaches ONE FIELD
+    // OVER in the same array while this audit reported the waypoint-NOTE class closed at 0. Every one
+    // named Mountain Project ("Little Sister North Face (Mountain Project reference point)", "Route
+    // GPS pin (Mountain Project, SW Face)") -- that site's AREA markers, so they were never route
+    // locations either. Names label the map marker, are the row a climber reads under WAYPOINTS, and
+    // gpxDownload writes them into the GPX file carried into the field. Swept in
+    // scripts/oneoff/redact-publisher-names-from-waypoint-names.mjs; scanned here so they cannot
+    // come back unseen.
+    if (w && typeof w.name === "string" && w.name.trim()) values.push({ id: r.id, field: `waypoints[${i}].name`, kind: "waypoint name", text: w.name.replace(/\s+/g, " ").trim() });
   });
 }
 // ROUTE PROSE — the other 20+ climber-facing columns. This audit read road/access/waypoints only,
@@ -199,6 +208,7 @@ if (proseCols !== PROSE_COLS.length) { console.error(`FAIL — read ${proseCols}
 
 if (!values.length) { console.error(`FAIL — ${rows.length} ${STATE} routes and 0 prose values. Every test below would be vacuous.`); process.exit(1); }
 if (!values.some(v => v.kind === "route prose")) { console.error("FAIL — 0 route-prose values across every column. The widened scan is not reading."); process.exit(1); }
+if (!values.some(v => v.kind === "waypoint name")) { console.error("FAIL — 0 waypoint-name values. Pin names render (map marker, WAYPOINTS row, GPX file) and are scanned here; reading none means the collector broke."); process.exit(1); }
 
 if (INJECT === "cite") { values[0].text = "The road is open to the trailhead, per SummitPost and several trip reports."; console.log(`[inject] a citation onto ${values[0].id} ${values[0].field}`); }
 if (INJECT === "commonnoun") { for (const v of values) v.text = "Rarely climbed; occasional peakbagger visits, and Bulger-list peakbaggers tag it from a shared high camp."; console.log("[inject] every value uses the COMMON NOUN peakbagger(s) and cites nobody; the citation count must be 0"); }
@@ -219,12 +229,17 @@ for (const v of values) {
 const stale = EXEMPT.filter(e => !hitKeys.has(e[0] + "\0" + e[1]));
 
 const group = k => hits.filter(h => h.kind === k);
-console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${values.filter(v => v.kind === "road/access").length} road/access, ${values.filter(v => v.kind === "waypoint note").length} waypoint notes, ${values.filter(v => v.kind === "route prose").length} route prose).`);
+// DERIVE THE KINDS FROM THE VALUES, never restate them. Both the summary line and the section loop
+// below used to hold a hardcoded list, so adding `waypoint name` to the COLLECTOR left its rows
+// collected and never printed -- the widening read as a clean result while 17 breaches sat in the
+// array. A vocabulary written twice is a vocabulary that drifts; this one is now written once.
+const KINDS = [...new Set(values.map(v => v.kind))];
+console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${KINDS.map(k => `${values.filter(v => v.kind === k).length} ${k}`).join(", ")}).`);
 console.log(`${hits.length} value(s) on ${new Set(hits.map(h => h.id)).size} route(s) name a third party as the source of a claim.`);
 console.log(`${live.length} value(s) on ${new Set(live.map(h => h.id)).size} route(s) carry a LIVE land-manager reference — operational, and NOT a finding.`);
 console.log(`${EXEMPT.length} exempt, ${stale.length} stale.\n`);
 
-for (const kind of ["road/access", "waypoint note", "route prose"]) {
+for (const kind of KINDS) {
   const g = group(kind);
   console.log(`── ${kind.toUpperCase()}: ${g.length} value(s) on ${new Set(g.map(h => h.id)).size} route(s)`);
   const show = FULL ? g : g.slice(0, 10);
