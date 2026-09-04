@@ -54,6 +54,7 @@ npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:photo-removal # a climber can take their OWN photo down, and only their own (in build)
+npm run check:preview-claims # a control that changes only CLIENT STATE must not claim a real outcome (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
@@ -1171,6 +1172,14 @@ the total when deciding where a new guard belongs.
     it would leak one per run forever, exactly as `check:message-delivery` records.
   - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
     `crew_members`.
+  - **RE-RUN 2026-09-04 after `0176` gave `messages` a DELETE policy — all three hold**, and that
+    migration is exactly the trigger this line names. Controls fired first (B could read, message
+    and crew-invite A **before** the block, so the refusals are attributable), neither refusal
+    disclosed the block to the blocked party, and unblocking restored the profile read. Teardown
+    was verified from **outside** rather than trusted: the guard prints no teardown line at all, so
+    the auth users were counted afterwards — **0 on the `.invalid` QA domain**. That is the
+    `check:outage` lesson, which threw its leak report away and made a teardown failure invisible
+    until somebody counted rows by hand.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
@@ -2022,7 +2031,14 @@ the total when deciding where a new guard belongs.
     and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
     a guard that only ever demands MORE marking would drive exactly that.
 - **`check:offline-claims`** asserts that **a route is never on the device; only a downloaded state
-  is**. Static (Babel over the two app files), so it sits in `npm run build`.
+  is**. Static (Babel over the two app files), so it sits in `npm run build`, at **1.65x
+  `check:policy-claims`** — comfortably under the 6-10s Babel guards.
+  - **QUOTED AS A RATIO, NOT A CLOCK, and that is not hedging.** Both numbers above were taken
+    back to back with `check:policy-claims` on one box, best of three; the individual readings
+    for that baseline were 3.3s, 5.0s and 8.6s, because several sessions build here at once.
+    A wall-clock figure from such a box is fiction — this file records a profile taken at load
+    450 that was off by 4x, and a guard read at 110s that measures 10.4s quiet. **What survives
+    load is where a guard sits relative to a sibling measured in the same minute.**
   - **THE APP HAS TWO THINGS CALLED "OFFLINE" AND ONLY ONE IS REAL.** `downloadStateOffline()` in
     `lib/offline.js` writes a state's whole areas+routes subtree into **IndexedDB**, and four
     `lib/db.js` hooks fall back to its readers through `orOffline` — a genuine offline catalog,
@@ -8986,6 +9002,70 @@ their own Résumé showed an amber **"Unverified"** chip.
     edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
+
+- **`check:preview-claims`** asserts that a control changing only **client state** does not report
+  a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
+  `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
+  - **NINE CONTROLS TOLD A CLIMBER SOMETHING HAPPENED TO ANOTHER PERSON, AND NOTHING DID.**
+    *"Joined Alpine Start"*, *"Approved — Reed added"*, *"Invited Sam"* (twice — the group sheet and
+    the event sheet), *"You're in — see you there"*, *"RSVP cancelled"*, **"Event created — 4
+    occurrences scheduled"**, *"Kudos sent to Maya"*, *"Nudged Alex"*. Every handler sets a
+    `useState` — `groupMembers`, `groupReqs`, `events`, `crews[].nudged` — and there is no write
+    behind any of them. Nobody is told, and a reload loses it.
+  - **THE APP ALREADY HAD THE VOCABULARY, AND THESE WERE THE OUTLIERS — which is what makes this a
+    convention violation rather than a design question.** *"Marked as requested — this preview
+    doesn't send it to a moderator yet"*, *"Reported — this preview doesn't route group reports to a
+    moderator yet"*, *"this preview doesn't deliver invites to example climbers"*: the app says this
+    **27 times**. Kudos is the sharpest case — *"Kudos noted — this preview doesn't deliver it to
+    X"* already existed on a **sibling** control, so one kudos path was honest and the other was
+    not. Same shape as the résumé demo-verify tick, which this file records as *"the one outlier to
+    a convention the app already has"*.
+  - **REACHABLE TODAY, PROVEN FROM A CI CAPTURE RATHER THAN REASONED ABOUT.** `ui-screens` for
+    `Crew:Requests` on main renders **GROUP INVITES (1)** — *"Alex invited you to join Alpine
+    Start"*, Accept/Decline — and **REQUESTS TO JOIN YOUR GROUPS (1)** — *"Reed wants to join"*,
+    Approve/Decline. Those two are on screen for every user because `DEMO_FILLERS` is on. **The
+    other seven are not sample-gated at all**: kudos, nudge, both invite sheets, RSVP and event
+    creation are ordinary controls on real groups and real crews that simply have no write.
+  - **A PREVIOUS SESSION BUILT THE WRITE FOR ONE OF THESE AND THREW IT AWAY, correctly, and that is
+    why the repair is COPY rather than wiring.** Accepting a group invite has the `joinGroupRow`
+    fork, and wiring it would be dead code: `groupReqs` is seeded **only** by `DEMO_FILLERS` and
+    nothing else ever pushes to it, so a real DB-group invite never lands there. Approving is worse
+    than dead — **a group owner cannot add a member at all** (RLS 403; the member seats themselves),
+    so there is no write to call. **Check reachability before wiring a fork.**
+  - **"On this device — sign in to keep it" would have been a SECOND false claim**, and copying the
+    sibling Join button blindly is the tempting mistake. That wording is right where a write exists
+    behind a session; here signing in would not keep it either, because there is no write. The
+    caveats say what the preview **does not do**, never what signing in would fix.
+  - **THE SECTION HEADING MADE THE SAME CLAIM AND IS ON SCREEN THE WHOLE TIME** — *"Climbers asking
+    to join a group you moderate — approving adds them"* is what a moderator reads **before**
+    tapping, so a toast-only fix would have left the more visible half standing.
+  - **Keyed on the HANDLER, never on the message**, so a reword passes and a revert fails: each
+    control is located by a distinctive fragment of its own `onClick`, and the `showToast` argument
+    is read by **balancing parens** from there — never a character window, the trap
+    `check:camping` records three times over on a file whose longest line is 20,000 characters.
+    An anchor matching **twice** fails as ambiguous rather than checking a control it was not
+    aimed at.
+  - **The convention is READ from the app, not restated here.** A list of accepted phrasings inside
+    the guard would be a second copy of a convention that already exists — the four-grade-parsers
+    shape. It fails **closed** if the app uses *"this preview"* fewer than 8 times: with the
+    convention gone every assertion passes vacuously.
+  - **A stale entry FAILS, and that matters more than usual here.** Each caveat is correct *until*
+    the feature gains a write; when one does, its entry comes out in the same change. Without that
+    this guard would rot into a demand that a working feature apologise for itself — the
+    guard-argues-with-correct-work failure this file records under half a dozen names.
+  - **A GATE rather than a probe** for the reason `check:topo-outage-copy`, `check:policy-claims`,
+    `check:profile-claims` and `check:offline-claims` were each promoted: the repair changes
+    **strings and no identifier**, and `audit:silent-reverts` says in its own closing caveat it
+    cannot see that. **`check:claims` and `check:writes` are blind by construction** — one forbids
+    a success message in front of a session-gated write, the other in front of a write whose failure
+    is unobservable, and **both presume a write EXISTS**. A toast in front of no write at all passes
+    both, which is the census-4 shape recorded for *"Remove friend"*.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-preview-claim-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. Five restore the real
+    historical strings verbatim; one renames a handler parameter and must fail **ANCHOR LOST**
+    rather than quietly dropping a control; one **must stay SILENT** (a different honest wording);
+    and one blanks the convention and must fail **CLOSED**. The harness also refuses any expectation
+    matching the healthy run.
 
 - **`check:overlay-absence` was CREDITING AN OVERLAY WITH ITS NEIGHBOUR'S FLAG**, and it had written
   the reason down itself. Its closing note says *"an overlay rendered NEXT TO others picks up their
