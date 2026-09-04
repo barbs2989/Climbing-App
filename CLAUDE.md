@@ -97,6 +97,7 @@ npm run check:gain-floor-stated # a gain the route's own PINS contradict is stat
 npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
+npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
@@ -894,7 +895,7 @@ the total when deciding where a new guard belongs.
     `seed-ci-test-fixture.mjs`.
   - The durable pair is only acceptable because both profiles are **`discoverable=false`**, so
     they cannot appear in partner browse — the objection against a permanent QA account.
-    `lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
+    `scripts/lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
   - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
     the transferable half. All three fixture paths made their group `visibility:"public"`, and
@@ -2846,6 +2847,46 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **`check:doc-paths`** asserts that every file path THIS DOCUMENT names still exists. The ~133
+  paths under `scripts/`, `lib/`, `.github/workflows/` and `supabase/migrations/` are not
+  decoration — they are the **evidence** for the claims around them (*"proven by
+  `scripts/oneoff/probe-gain-caveat-on-live-rows.mjs`"*), so a path that has gone is a claim
+  nobody can check. Static, no
+  browser, no DB, milliseconds, so it sits in `npm run build`.
+  - **THE DOMINANT CAUSE IS PROMOTION, AND THE WORST OUTCOME IS REBUILDING SOMETHING THAT EXISTS.**
+    A probe proves a class, gets promoted to a `check:` and **renamed in the same commit**, and the
+    citation keeps the dead path. Measured when this was written: **5 of 108 `scripts/` paths were
+    stale and FOUR were promotions** — `probe-overlays-that-assert-absence` → `check-overlay-absence`
+    (#1319), `probe-inbox-outage-copy` and `probe-friends-outage-copy` → `check-outage-copy`
+    (#1293), `probe-verification-survives-its-own-read` → `check-verification-fallback` (#1289).
+    A reader chasing any of them finds nothing and may write it again, which this file records
+    happening to `DbAreaTree`. The failure message therefore **names that cause first and suggests
+    the successor by basename**, rather than only reporting the absence — the lesson
+    `check:column-drift` paid for, where the remedy was the half nothing tested.
+  - **`check:guard-wiring` asks the REVERSE direction and cannot see this**: it proves every guard
+    on disk is *named* in the command block. These are ordinary script paths in prose, not
+    `npm run` names.
+  - **The roots are limited deliberately.** `catalog/` is gitignored (~52MB of regenerable JSON,
+    `cc1461f3`) and `research-data/` holds triage dumps, so a path there is legitimately absent
+    from a fresh checkout and flagging it would be reporting correct work. Scoped to what git
+    always carries, an absence is always a defect.
+  - **ORDER AN EXTENSION ALTERNATION LONGEST-FIRST — the measurement behind this guard got it
+    wrong TWICE.** `(?:mjs|js|json)` matches `.js` inside `.json` and reported
+    `schema-snapshot.js` missing; `(?:…|js|jsx)` did the same to every `.jsx`. Both printed a
+    confident wrong count. *A count is only as good as its tokeniser*, which this file already
+    records for `audit:approach-scope` — arriving here in a doc scan.
+  - `GONE` records paths named deliberately though absent, and a **stale** entry fails, so it
+    cannot rot into a description of files that are back. One today: the notice that reads *"It
+    replaces `scripts/oneoff/measure-horizontal-overflow.mjs` (#818)"*, where the sentence is
+    ABOUT the file being gone and deleting the citation would delete why `check:overflow` exists.
+  - **IT CAUGHT ITS OWN DOCUMENTATION ON THE FIRST RUN, and that is a constraint rather than a
+    bug**: this entry originally illustrated the point with a made-up `probe-x` path under
+    `scripts/oneoff/` — written out in full, which is why it matched — and a
+    guard that asserts every named path exists cannot tell an illustration from a citation.
+    **Name a REAL file when you need an example** — there is always one, and a real name is more
+    useful to a reader than a placeholder. The failure message says so.
+  - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
+    prints the same clean result as a correct one.
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
@@ -5229,6 +5270,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **3 of the 8 have a decidable half and 5 do not** (`measure-stranded-vertex-pairings.mjs`),
       and a route needs only its confident half repaired because the predicate tolerates one adrift.
       Left as follow-up: the measurement is committed, the write is not.
+    - **AND THE REPAIR PATH HAD THE SAME HOLE AS THE AUDIT, IN A SECOND CONSUMER.**
+      `fix-stranded-track-vertices` asserted its post-condition by asking the app's predicate to
+      return true after the move — exact while the predicate demanded every vertex be on a pin, and
+      **vacuous** once it tolerated two: on precisely the routes the script exists to repair it now
+      returns true BEFORE the move as well. It measures the repair instead — strictly fewer adrift
+      vertices and no newly-orphaned pin — neither of which a future widening can weaken.
+    - **ALL-OR-NOTHING PAIRING WAS REFUSING UNARGUABLE WORK.** Every one of the 17 was refused
+      because ONE of its vertices could not be placed, including a vertex **26 m** from Anderson
+      Pass at 776x. An unplaceable pair now stops the pairing rather than condemning the route.
+    - **THE MOST USEFUL FINDING: THREE OF THE SIX CANDIDATES WERE NOT STRANDED VERTICES AT ALL.**
+      A stranded vertex sits where a pin used to be; these were **interpolated along the line**
+      — 14-decimal coordinate tails, **0.00 m** off the straight chord between their own
+      neighbours, at fractions of exactly **3/5** and **2/5**. Moving one onto a pin would invent a
+      shape the line never had, which is the fabrication class `audit:synthetic-waypoints` already
+      documents for pins, arriving on a gpx VERTEX. **The confidence ratio did not catch them —
+      `wa_mount_lyall_south_route` scored 18.4x** — because distance from a pin says nothing about
+      where a point came from. `lib/track.js` now exports `coordinateIsComputed` per point so the
+      repair path and the audit ask its rule rather than copying it.
+    - **A computed vertex is EXCLUDED FROM PAIRING, not route-fatal**, and the first version got
+      that wrong: refusing the whole route threw away `wa_inner_constance_standard`'s 85 m / 80x
+      repair because its *other* vertex was computed.
+    - **ELIMINATION IS ONLY SOUND WITH ONE ORPHAN LEFT, and excluding a vertex broke that
+      silently.** With fewer candidates than orphans the "last vertex" branch took `os[0]` — an
+      arbitrary pick wearing elimination's clothes. It proposed Mushroom Tower at 1,520 m to the
+      first orphan when the confidence test had correctly refused that route at 2.3x. **Found by
+      reading the dry run, not by any check.**
+    - **A PARTIAL PAIR HAS NO ELIMINATION BEHIND IT, so its bar is 500 m rather than 3 km — and
+      that number sits in a measured VOID rather than being fitted.** Across all 17 routes the
+      move distances are 26, 85, 2103, 3156, 3546, 4583, 6257, 6257, 6258, 12430, 15682: a
+      refinement is tens of metres, a replacement is kilometres, and **85 to 2,103 is empty**. It
+      matters on `wa_mount_rainier_liberty_ridge`, whose vertex would move 2,103 m onto the Liberty
+      Cap pin while its own 3-decimal coordinate sits closer to Rainier's MAIN summit.
+    - **Applied: 2 routes** (26 m and 85 m, both onto a coordinate the row already holds), verified
+      by read-back on the repaired property rather than on the caption — re-checking the caption
+      would have the identical hole, since it is already true of those rows.
+    - **The audit names the CAUSE now, because the two want opposite repairs**: 23 adrift vertices
+      across 17 routes, **8 of them computed**. Telling somebody to carry a computed vertex onto a
+      pin is wrong advice, and the report used to give it for all of them.
     - Injection-tested **4/4** (`scripts/oneoff/inject-majority-slack-cases.mjs`), each proving its
       edit landed **by checksum**. **Two cases came back WRONG FAILURE first and the guard was
       innocent both times**: the three-point case was written against the FIVE-pin fixture, where
@@ -8297,7 +8376,8 @@ their own Résumé showed an amber **"Unverified"** chip.
     reads only that query's rows — there is no non-DB branch to strand. Mechanically:
     `myVerificationQ` is the **only** effect in `App` whose dependency array names `session`. So
     this is a closed class, not a backlog.
-  - Proven by `scripts/oneoff/probe-verification-survives-its-own-read.mjs` — **no browser, no
+  - Proven by **`check:verification-fallback`** (`scripts/check-verification-fallback.mjs`, which
+    is this probe promoted and renamed in #1289) — **no browser, no
     database**, which is the point: its five cases include ones live data cannot produce on demand
     (an unconfirmed session, a stale session). It **extracts the effect body from `ClimbMatch.jsx`
     with `ANCHOR LOST`** rather than copying it, and fails closed on a short slice — every case
@@ -8415,7 +8495,7 @@ genuinely no threads takes that early return and a flag left set there swaps one
 for another.
   - **`check:outage` cannot measure this, twice over.** It is behind an **overlay**, which no
     outage walk opens; and the fixture has no DM threads, so the section is empty in the healthy
-    run too and rule 2 sees nothing introduced. `scripts/oneoff/probe-inbox-outage-copy.mjs`
+    run too and rule 2 sees nothing introduced. **`check:outage-copy`** (this probe promoted in #1293)
     renders the real `Inbox` instead — 3 cases, injection-tested by reverting the gate (exactly one
     case fails, the other two stay green), with a **1,818-character** render asserted so the
     negative cases cannot pass vacuously.
@@ -8428,7 +8508,8 @@ for another.
     *"No crew chats yet"* is driven by `crewMsgs`, hydrated per **opened crew** rather than by a
     bulk read, so an account that has never opened a crew chat is legitimately empty there. One
     query at a time, as this file's outage entries already insist.
-  - **`scripts/oneoff/probe-overlays-that-assert-absence.mjs` sizes the remaining gap**, and its
+  - **`check:overlay-absence` (`scripts/check-overlay-absence.mjs`, this probe promoted and renamed
+    in #1319) sizes the remaining gap**, and its
     version history is the useful part because every earlier version printed a SMALL, reassuring
     number and was blind:
     - **v1 said 1 of 53** — an overlay rendered `if(x)return <>…` has no `x&&`/`x?` marker at all,
@@ -8614,7 +8695,7 @@ the app's own lifted expressions, **4 of 5 cases disagreed**
 mutual-friends sheet renders *"No mutual friends yet."*, so an outage told a climber with partners
 that they had none — on the one screen whose whole subject is who you climb with.
   - **Found by the overlay measurement, not by grep**
-    (`scripts/oneoff/probe-overlays-that-assert-absence.mjs`): `friendsOpen` came out ungated, and
+    (the probe now shipped as **`check:overlay-absence`**): `friendsOpen` came out ungated, and
     following its component into `ClimbMatchCore.jsx` confirmed both the empty state and a prop
     list with no flag in it. Adding a flag is not the same as *delivering* it, and the delivery is
     what a per-screen measurement asks about.
@@ -8633,7 +8714,7 @@ that they had none — on the one screen whose whole subject is who you climb wi
       **never carries**. Those lists are empty for a real profile always, not because of an
       outage — the `check:real-profile-rows` class, which already has a guard. **An empty section
       is not evidence of this defect; ask what fills it.**
-  - `scripts/oneoff/probe-friends-outage-copy.mjs` renders the real `FriendsList`: 3 cases plus
+  - **`check:outage-copy`** (this probe promoted in #1293) renders the real `FriendsList`: 3 cases plus
     the filter assertion, injection-tested (reverting the gate fails exactly one case), with a
     1,036-character render asserted so the negative cases cannot pass vacuously. Same two bundling
     traps as the Inbox probe — the provider, and `@tanstack/react-query` as `--external`.
