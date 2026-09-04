@@ -77,7 +77,7 @@ const fail = (m) => { ran++; console.log("  FAIL  " + m); bad++; };
 /* Every assertion below is "this string IS present" or "this prop IS passed", so a guard that
    stops RUNNING half of them prints a shorter, entirely green list and exits 0. The floor is the
    count today; raise it when you add an assertion, and never lower it to make a run pass. */
-const EXPECTED = 16;
+const EXPECTED = 19;
 
 // ---- 1. The shape is declared in ONE place.
 const init = floatPlanState({ route: "North Ridge" });
@@ -188,6 +188,40 @@ const crewSeed = coreBare.match(/\[floatPlan,setFloatPlan\]\s*=\s*useState\(([^;
 if (!crewSeed) fail("could not read the crew declaration back");
 else if (/floatPlanState\(/.test(crewSeed[1])) ok("the crew site seeds from floatPlanState()");
 else fail(`the crew site does not seed from floatPlanState() — the eleven-key shape is duplicated: ${crewSeed[1].trim()}`);
+
+// ---- 9. THE SAME DEFECT ONE SUB-TAB OVER: <Calculator/>.
+// The planner's own inputs — fitness, pack weight, party size, departure — lived in local state
+// inside a component rendered ~17k characters into the `tab==='planner'` branch. Tapping Safety to
+// check the hazards unmounted it and reverted all four (pack 10kg, party 2, depart 06:00), so the
+// climber came back to a DIFFERENT estimated summit time than the one they had just read, with
+// nothing on screen saying it had changed. A lighter pack reads FASTER — the optimistic direction
+// #641 records for the return tile.
+//
+// ONE OF THE FOUR WAS ALREADY LIFTABLE AND NOBODY HAD WIRED IT: `fit`/`setFit` props existed and
+// the single call site passed neither, so `fitProp` was undefined and fitness fell back to local
+// state like the rest. A lift nothing hands state to is not a lift, and its presence made the
+// component LOOK migrated.
+//
+// SOURCE-ONLY, and that is the half that matters: `calc`/`onCalc` are optional by design, exactly
+// like `plan`/`onPlan`, so dropping them at the call site makes Calculator revert to its own state
+// silently — the component still renders and every render assertion still passes. That is the
+// reasoning in this file's own header, applied to the second member of the class.
+//
+// THE GUARD'S NAME IS NOW NARROWER THAN ITS CONTENTS. The rename is deliberately not done in the
+// same change — the precedent check:topo-outage-copy records.
+const calcSite = rd.match(/<Calculator\b[^>]*>/);
+if (!calcSite) fail("ANCHOR LOST: RouteDetail no longer renders <Calculator …> — the planner wiring is unchecked");
+else {
+  const tag = calcSite[0];
+  if (/\bcalc=\{/.test(tag) && /\bonCalc=\{/.test(tag)) ok("RouteDetail passes BOTH calc and onCalc to <Calculator/>");
+  else fail(`Calculator's call site does not pass calc/onCalc — the planner inputs will be lost again: ${tag}`);
+}
+if (/\[calcInputs,\s*setCalcInputs\]\s*=\s*useState\(/.test(rd))
+  ok("the planner inputs are held by RouteDetail, outside the branch a sub-tab switch unmounts");
+else fail("RouteDetail does not own the planner inputs — a sub-tab switch will discard them again");
+if (!/const \[pack,setPack\]=useState\(/.test(rd))
+  ok("...and Calculator keeps no second, local copy of them");
+else fail("Calculator still declares its own pack/party/depart state — the lifted copy is shadowed");
 
 if (ran < EXPECTED) {
   console.log(`  FAIL  only ${ran} of ${EXPECTED} assertions RAN — this guard reports presence, so a`);
