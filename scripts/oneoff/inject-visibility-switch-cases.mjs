@@ -61,6 +61,23 @@ const CASES = [
     find: "{climber.resumePublic!==false?<button onClick={()=>onResume&&onResume(climber)}",
     repl: "{true?<button onClick={()=>onResume&&onResume(climber)}" },
 
+  /* Rule for the DRAFT kind. The profile editor has a SECOND control for `show_name`, in a file
+   * this guard did not read until now. It is honest today — openEdit seeds it and saveEdit pushes
+   * it back — and these two cases are what keep it that way. */
+  { name: "draft-seed", file: CM, must: "fail",
+    why: "openEdit stops seeding the draft — the editor would reset the preference on save",
+    find: "skills:[...(ME.skills||[])],showRealName:showRealName}",
+    repl: "skills:[...(ME.skills||[])],showRealName:false}" },
+
+  { name: "draft-pushback", file: CM, must: "fail",
+    why: "saveEdit stops pushing it back — Settings and the editor would disagree until reload",
+    find: "setShowRealName(!!d.showRealName);", repl: "" },
+
+  { name: "core-undeclared", file: "ClimbMatchCore.jsx", must: "fail",
+    why: "a NEW editor switch in Core must be declared, not silently unchecked",
+    find: 'aria-checked={draft.showRealName}',
+    repl: 'aria-checked={draft.brandNewEditorFlag}' },
+
   /* MUST STAY SILENT — both are correct work the first draft flagged. */
   { name: "derived-ok", file: CM, must: "pass", why: "SILENT: `discoverable` is derived, not hydrated — correct",
     find: "const toggleDiscoverable=function(){", repl: "const toggleDiscoverable=function(){/* unchanged */" },
@@ -85,7 +102,7 @@ for (const c of CASES) {
   const orig = fs.readFileSync(P(c.file), "utf8");
   const n = orig.split(c.find).length - 1;
   if (n !== 1) {
-    console.log("  " + c.name.padEnd(15) + "HARNESS BUG — " + n + " matches for its find string");
+    console.log("  " + c.name.padEnd(17) + "HARNESS BUG — " + n + " matches for its find string");
     fail++; continue;
   }
   fs.writeFileSync(P(c.file), orig.replace(c.find, c.repl));
@@ -96,7 +113,7 @@ for (const c of CASES) {
 
   const want = c.must === "fail" ? !r.ok : r.ok;
   const good = landed && restored && want;
-  console.log("  " + c.name.padEnd(15) + (good ? "OK   " : "BAD  ")
+  console.log("  " + c.name.padEnd(17) + (good ? "OK   " : "BAD  ")
     + "(landed " + landed + ", restored " + restored + ", guard "
     + (r.ok ? "passed" : "failed") + ", wanted " + c.must + ") — " + c.why);
   if (!good && r.out) console.log("      " + r.out.trim().split("\n").slice(0, 3).join("\n      "));

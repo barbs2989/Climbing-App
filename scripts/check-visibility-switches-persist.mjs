@@ -45,11 +45,17 @@ const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
  *   derived — no useState at all: the value is read off a profiles query every render, so there
  *             is nothing to hydrate and nothing that can go stale on reload. */
 const SWITCHES = {
-  showOnRanks:  { col: "show_on_ranks", how: "state"   },
-  resumePublic: { col: "resume_public", how: "state"   },
-  showRealName: { col: "show_name",     how: "state"   },
-  discoverable: { col: "discoverable",  how: "derived" },
-  photosPublic: { col: "photos_public", how: "derived" },
+  showOnRanks:  { col: "show_on_ranks", how: "state",   file: "app"  },
+  resumePublic: { col: "resume_public", how: "state",   file: "app"  },
+  showRealName: { col: "show_name",     how: "state",   file: "app"  },
+  discoverable: { col: "discoverable",  how: "derived", file: "app"  },
+  photosPublic: { col: "photos_public", how: "derived", file: "app"  },
+  // THE SAME PREFERENCE HAS A SECOND CONTROL, in the profile EDITOR, and it lives in a file this
+  // guard did not read. It is not a duplicate defect -- it round-trips correctly: `openEdit` seeds
+  // `showRealName: showRealName` from live state and `saveEdit` writes `show_name:!!d.showRealName`
+  // AND calls `setShowRealName`. Verified rather than assumed. But a guard that cannot SEE it would
+  // not notice a future editor switch that does none of that, which is why the scope widened.
+  "draft.showRealName": { col: "show_name", how: "draft", file: "core" },
 };
 
 /* Rendered switches that are NOT a visibility claim. An entry here is a CLAIM about the control,
@@ -84,7 +90,17 @@ const isGated = (i) => gatedRanges.some(([a, b]) => i >= a && i <= b);
 
 const found = [];
 for (const m of app.matchAll(/aria-checked=\{([A-Za-z_$][\w$]*)\}/g)) {
-  found.push({ flag: m[1], at: m.index, gated: isGated(m.index) });
+  found.push({ flag: m[1], at: m.index, gated: isGated(m.index), file: "app" });
+}
+/* ClimbMatchCore.jsx renders the profile EDITOR, whose switches read a DRAFT (`draft.showRealName`)
+ * rather than app state. Nothing in Core is inside a PRIVACY_CONTROLS_LIVE block -- that ternary is
+ * an App construct -- so a Core switch is always rendered and always has to be declared. A
+ * `role="checkbox"` is deliberately not collected: an attestation or an also-block tickbox is a form
+ * input, not a claim about what others can see. */
+for (const m of core.matchAll(/aria-checked=\{(draft\.[A-Za-z_$][\w$]*|[A-Za-z_$][\w$]*)\}/g)) {
+  const before = core.slice(Math.max(0, m.index - 400), m.index);
+  if (/role="checkbox"/.test(before)) continue;
+  found.push({ flag: m[1], at: m.index, gated: false, file: "core" });
 }
 if (found.length < 7) dead("parsed only " + found.length + " switch(es) — the shape moved, and a run that inspected nothing is not a pass");
 const ungated = found.filter((s) => !s.gated);
@@ -124,9 +140,20 @@ for (const [flag, { col, how }] of Object.entries(SWITCHES)) {
     const setter = "set" + flag[0].toUpperCase() + flag.slice(1);
     if (!new RegExp(setter + "\\s*\\([^)]*\\b" + col + "\\b").test(app))
       problems.push("`" + flag + "` is a `state` switch but nothing hydrates it — no `" + setter + "(… " + col + " …)`, so it resets to its useState default on reload.");
-  } else {
+  } else if (how === "derived") {
     if (!new RegExp("\\.data[^;]{0,80}\\b" + col + "\\b").test(app))
       problems.push("`" + flag + "` is declared `derived` but is not read off a profiles query row (`…\\.data…" + col + "`). If it became a useState, it now needs hydrating: change `how` to \"state\".");
+  } else {
+    /* A DRAFT switch is only honest if the draft is SEEDED from the live value when the editor
+     * opens. Without that, opening the editor and saving silently resets the preference to the
+     * draft's default — the shape #1581 records for the float plan losing eleven fields. */
+    const bare = flag.replace(/^draft\./, "");
+    if (!new RegExp("\\b" + bare + "\\s*:\\s*" + bare + "\\b").test(app))
+      problems.push("`" + flag + "` is a `draft` switch but openEdit does not seed it from live state "
+        + "(`" + bare + ": " + bare + "`). Opening the editor and saving would reset the preference.");
+    if (!new RegExp("set" + bare[0].toUpperCase() + bare.slice(1) + "\\(!!d\\." + bare).test(app))
+      problems.push("`" + flag + "` is a `draft` switch but saveEdit does not push it back to app state, "
+        + "so Settings and the editor would disagree until reload.");
   }
 }
 
@@ -186,6 +213,7 @@ if (problems.length) {
 
 console.log("ok — " + Object.keys(SWITCHES).length + " rendered visibility switch(es) reach the database ("
   + Object.values(SWITCHES).filter((x) => x.how === "state").length + " hydrated, "
-  + Object.values(SWITCHES).filter((x) => x.how === "derived").length + " derived), "
+  + Object.values(SWITCHES).filter((x) => x.how === "derived").length + " derived, "
+  + Object.values(SWITCHES).filter((x) => x.how === "draft").length + " draft), "
   + (found.length - ungated.length) + " gated one(s) exempt, and " + OUTWARD.length
   + " outward-facing column(s) ride every climber-object select");
