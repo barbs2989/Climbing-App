@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_ingalls_peak_east_route",
+  "last_processed_id": "wa_johannesburg_mountain_cj_couloir",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4050,6 +4050,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-04-batch-195.sql",
       "note": "wa_hurry_up_peak_south_ridge: gain_ft/loss_ft raised 1700->4750 (below own-waypoint floor, and inconsistent with the route's own approach prose). wa_icy_peak_ruth_icy_traverse: high_point_ft corrected 7073->7115 (route summits Ruth Mtn en route, which is higher than Icy Peak); loss_ft and dist_km filled from the row's own itinerary text (both null before). wa_hozomeen_mountain_southeast_face: high_point_ft corrected 8071->8003 and fa corrected from the North Peak's 1904 FA to the South Peak's 1947 Beckey-party FA (this route climbs the South Peak, not the North Peak). Flagged: wa_hourglass_gully_winter (season vs best_season give contradictory timing windows, both partially corroborated externally for different use-cases of the same gully -- general scramble vs technical winter ascent); wa_hozomeen_mountain_southeast_face (Trailhead waypoint is out of order in the array and missing an elevation value, which the app's own orderWaypoints logic would render as-is since not every waypoint has a finite distMi)."
+    },
+    {
+      "batch_number": 196,
+      "date": "2026-09-04",
+      "pass": 4,
+      "route_ids": [
+        "wa_ingalls_peak_south_ridge",
+        "wa_inner_constance_northwest_buttress",
+        "wa_inner_constance_standard",
+        "wa_inspiration_peak_west_ridge",
+        "wa_jack_mountain_nohokomeen_headwall",
+        "wa_jack_mountain_northeast_glacier",
+        "wa_jack_mountain_south_face",
+        "wa_johannesburg_mountain_cj_couloir"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 4,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-04-batch-196.sql",
+      "note": "wa_jack_mountain_south_face: high_point_ft corrected 9075->9069 to match its own Summit waypoint and the area's own canonical elevation_ft (9069), though external sources on Jack Mountain's true elevation are themselves split 9066/9069/9075 -- flagged as a 3-way catalog disagreement rather than swept to one number. wa_jack_mountain_northeast_glacier: gain_ft/loss_ft raised 4501/null->7275/7275 (own-waypoint floor); dist_km (5.6km) flagged as shorter than the trailhead-summit chord (7.38km) but not auto-corrected, no source for a specific replacement. wa_jack_mountain_nohokomeen_headwall: loss_ft filled null->10000 and dist_km corrected 17.7->24.14, both sourced from the row's own overview text stating 'round trip is rated at 30 miles and 10,000 ft of gain' (17.7km had only captured the approach-to-camp leg, not the full round trip). Flagged: wa_inner_constance_northwest_buttress (gain_ft/loss_ft/pitches/grade all null, only one waypoint -- essentially unenriched, no source found to fill from); wa_ingalls_peak_south_ridge FA name spelling (Rankin vs Wikipedia's 'Lankin', our stored spelling matches the majority of other sources)."
     }
   ]
 }

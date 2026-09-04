@@ -13742,3 +13742,100 @@ internal fields and its waypoints' internal geometry/elevations.
 
 Next batch continues from `wa_ingalls_peak_east_route` onward alphabetically
 (pass 4; index 170 of 529 in-scope routes).
+
+## Batch 196 — 2026-09-04 (pass 4)
+
+Eight routes, five peaks (Ingalls Peak 1, Inner Constance 2, Inspiration Peak 1, Jack Mountain
+3, Johannesburg Mountain 1): South Ridge (Ingalls); Northwest Buttress, Standard Route (Inner
+Constance); West Ridge (Inspiration); Nohokomeen Glacier and Headwall, Northeast Glacier, South
+Face/Southeast Ridge (Jack Mountain); Cascade-Johannesburg Couloir (Johannesburg).
+
+**Confirmed errors → fixes in `sql/2026-09-04-batch-196.sql`:**
+- `wa_jack_mountain_south_face`: `high_point_ft` was 9075 but this route's own Summit waypoint
+  says 9,069 ft, and the `wa_jack_mountain` area's own canonical `elevation_ft` also says 9069
+  — corrected to bring the row into agreement with its own waypoint and the catalog's own area
+  record (see flagged item below; this does not settle the external elevation question).
+- `wa_jack_mountain_northeast_glacier`: `gain_ft` (4501) was below the physical floor implied
+  by this route's own trailhead (1,800 ft) and summit (9,075 ft, matching its own
+  `high_point_ft`) — minimum net gain is 7,275 ft. `loss_ft` was NULL. Both set to the bare
+  floor (7,275); no richer corroborating text exists in this route's (very thin) approach/
+  overview to source a more specific total. Separately, this route's `dist_km` (5.6 km) is
+  *shorter than the straight-line chord* between its own trailhead and summit coordinates
+  (7.38 km, computed via haversine) — a physical impossibility per this app's own
+  `audit:waypoint-distances` invariant — but not auto-fixed, since any specific replacement
+  distance beyond "more than the chord" would be a guess this route's sparse data can't
+  support; flagged below instead.
+- `wa_jack_mountain_nohokomeen_headwall`: `loss_ft` was NULL; filled to match `gain_ft`
+  (10000), both sourced from this route's own `overview` sentence — "The round trip is rated
+  at 30 miles and 10,000 ft of gain" — and corroborated by `descent_text`, which reverses the
+  ascent line back to the same trailhead with no lower alternate exit. `dist_km` (17.7 km) only
+  matched the approach-to-camp leg described in `descent_text` (8 mi trail + 3 mi bushwhack =
+  11 mi = 17.7 km); corrected to 24.14 km (= 15 mi one-way), so that this app's dist_km*2
+  round-trip rendering reproduces the row's own stated "30 miles round trip" for the whole
+  climb rather than just the walk to camp.
+
+**Flagged for human review (not auto-fixed):**
+- Jack Mountain summit elevation: this catalog's three routes on the peak and its own area
+  record now read 9069/9069/9075/9075 (south_face + area vs. nohokomeen_headwall +
+  northeast_glacier) — each internally self-consistent with its own waypoint, but disagreeing
+  with each other. External sources are themselves split: Wikipedia/PeakVisor give 9,075 ft,
+  peakery.com's own URL slug and some WA prominence lists give 9,066 ft. No authoritative
+  USGS/NGS source was found this pass to adjudicate a single correct figure across all three
+  routes, so the two 9075 rows were left as-is rather than guessed at.
+- `wa_jack_mountain_northeast_glacier`: `dist_km` (5.6 km) is shorter than the chord between
+  its own trailhead and summit (7.38 km) — see above. Needs a researched approach-mileage
+  figure; this route shares a trailhead with the Nohokomeen Headwall route but the two lines
+  diverge above May Creek and the northeast-glacier line has, per its own `watch_out`,
+  "effectively no public beta," so headwall's mileage can't safely be assumed to carry over.
+- `wa_inner_constance_northwest_buttress`: `gain_ft`, `loss_ft`, `pitches`, and `grade` are all
+  NULL, and `waypoints` holds only a single Trailhead pin (no Summit, no intermediate points) —
+  this route is essentially unenriched relative to its sibling `wa_inner_constance_standard`.
+  `high_point_ft` (7670) itself is fine (matches Wikipedia's 7,670 ft almost exactly; the
+  sibling route's more precise 7,672 ft is independently sourced in its own `overview` as "by
+  LiDAR," so the 2 ft gap between the two routes is not a defect). WebSearch found no
+  route-specific grade/gain/pitch-count data for this specific buttress line to fill the gaps
+  from, so left for a proper enrichment pass rather than fabricated.
+- `wa_ingalls_peak_south_ridge`: `fa` names "Keith Rankin & Ken Solberg, May 30, 1941."
+  WebSearch found the date and second climber's name consistently corroborated everywhere, but
+  Wikipedia's own article text spells the first climber "Keith Lankin" while every other source
+  checked (Mountaineers, SummitPost, guidebook-derived pages) uses "Rankin," matching what this
+  row already stores. Left as-is (matches the majority spelling) but noting the Wikipedia
+  variant in case it turns out to be the corrected/researched spelling.
+
+**Also verified accurate, no changes needed:** Ingalls Peak (North) elevation 7,662 ft
+(Wikipedia); Johannesburg Mountain CJ Couloir FA (Calder Bressler, Bill Cox, Ray W. Clough, Tom
+Myers, July 26, 1938 — names and date match exactly, confirmed as the peak's actual first
+ascent via its standard East Ridge/CJ Couloir line); Inspiration Peak West Ridge FA (Fred &
+Helmy Beckey, August 29, 1940, part of their well-documented 1940 Picket Range summer);
+Inner Constance elevation 7,672 ft (LiDAR, per the row's own overview, matching Wikipedia's
+7,670 ft within normal rounding); gain/loss floors and `high_point_ft` vs. own-waypoint
+agreement for `wa_ingalls_peak_south_ridge`, `wa_inner_constance_standard`,
+`wa_inspiration_peak_west_ridge`, and `wa_jack_mountain_south_face` (post-fix); Dosewallips
+River Road's indefinite closure since the 2002 flood (consistent with this catalog's existing
+treatment of that closure elsewhere); Ross Lake Resort water-taxi access and the SR-20 MP
+134–171 winter closure gate, both consistent with how this catalog already describes them on
+other Ross Lake/Jack Mountain-area routes.
+
+Also noted, not flagged as a defect: `wa_inspiration_peak_west_ridge`'s `dist_km` (11.9 km =
+7.4 mi one-way) is shorter than the cumulative `distMi` recorded on its own Summit waypoint
+(10.6 mi), but the chord between the row's own trailhead and summit coordinates (9.92 km) is
+still comfortably below the stored `dist_km`, so this is not a hard geometric violation — just
+a soft disagreement between two independently-estimated fields, with no corroborating "round
+trip is X miles" sentence in this row (unlike the Nohokomeen Headwall case above) to settle it
+one way or the other.
+
+`npm run check:sql` was not run — this environment has no `node_modules` and no
+`.env`/`.env.local` credentials. All three UPDATE statements were instead hand-verified:
+current stored values re-read from the live DB via curl/anon-key REST immediately before
+writing the file (confirmed to match each WHERE guard exactly), and each statement is an
+idempotent no-op if the row has already changed. Both `gain_ft`-below-floor and
+`dist_km`-below-chord checks were computed directly from each row's own stored coordinates via
+a local haversine calculation, not asserted from memory.
+
+WebSearch was available and used throughout this batch; WebFetch to primary route-beta sites
+remained unavailable, so verification relied on WebSearch result snippets (citing Wikipedia,
+PeakVisor, peakery, SummitPost, the Mountaineers, and general trip-report aggregation)
+cross-checked against each row's own internal fields, its waypoints' internal geometry, and
+(for Jack Mountain) the catalog's own `areas` table record.
+
+Next batch continues from `wa_johannesburg_mountain_cj_couloir` onward alphabetically (pass 4).
