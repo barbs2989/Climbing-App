@@ -13896,3 +13896,79 @@ partner name unresolved rather than confirmed either way.
 
 Next batch continues from `wa_kyes_peak_glaciated_scramble` onward alphabetically
 (pass 4).
+
+## Batch 198 (pass 4) — 2026-09-04
+
+Checked: `wa_kyes_peak_northeast_ridge`, `wa_labor_pains`, `wa_lane_peak_r1`,
+`wa_lane_peak_r2`, `wa_lane_peak_r3`, `wa_le_conte_mountain_northern_aspect`,
+`wa_lemah_mountain_east_route`, `wa_lemah_two_goatshead_spire`.
+
+**Fixed (5):**
+- `wa_labor_pains` — its "Blue Lake TH" waypoint stored 5,200 ft; USFS/WTA/
+  Mountaineers/AllTrails agree the real trailhead is 5,380 ft. Also explains why
+  this route and three siblings on the same face (Chockstone, West Face, Early
+  Winter Couloir) all appeared to store a `gain_ft` below their trailhead-to-summit
+  geometric floor — the trailhead pin was the wrong number, not `gain_ft`. Fixed
+  the waypoint only for the route in scope this batch; the identical stale pin
+  likely exists on the other three (out of scope this batch, noted for later).
+- `wa_le_conte_mountain_northern_aspect` — `fa` named the 1938 Ptarmigan Traverse
+  party's fourth member "Ralph W. Clough"; Wikipedia and a UC Berkeley Academic
+  Senate in-memoriam (for the same person, later a UC Berkeley engineering
+  professor and FEM co-developer) both give "Ray W. Clough."
+- `wa_lane_peak_r1`, `wa_lane_peak_r2` — top-level `permit` column (read by the
+  app's own "Permit-free" search filter) was an empty string on both, silently
+  excluding two genuinely permit-free routes from that filter. Their own
+  `access.permit` text and sibling `wa_lane_peak_r3` already state the real fact
+  (NPS's Rainier climbing fee/permit applies only above 10,000 ft or on glacier
+  travel — confirmed via nps.gov — which doesn't reach Lane Peak's non-glaciated
+  6,012 ft summit); copied r3's exact wording into both blanks.
+- `wa_lemah_two_goatshead_spire` — its one Trailhead waypoint had lat/lng but no
+  elevation. Confirmed it's the same physical Pete Lake Trailhead as sibling
+  `wa_lemah_mountain_east_route`'s waypoint (coordinates ~120m apart, both
+  matching the trailhead's real coordinates), which already records elev 2800 —
+  independently within the trailhead's actual 2,799-2,904 ft range. Copied the
+  figure across rather than leaving the map with no elevation start point.
+
+**Flagged for human review (1):**
+- `wa_kyes_peak_northeast_ridge` — `fa` states "Mike Heath, September 14, 1968."
+  Found the AAC Publications article "Kyes Peak, Northeast Ridge" whose visible
+  search snippet confirms the exact date (September 14) and route description
+  (Curry Gap approach, Class 3 rock on the glacier's left edge to the SE corner)
+  word-for-word against this row's own `approach`/`overview` text — strong
+  corroboration the row was sourced from this AAJ note — but WebFetch to
+  publications.americanalpineclub.org is blocked in this environment, so the
+  climber's name on the byline itself couldn't be independently confirmed. Left
+  as-is; date and route description are solid, only the name is unconfirmed.
+
+Also noted but not fixed: `wa_le_conte_mountain_northern_aspect`'s `gain_ft`
+(1500) is far below the trailhead-to-summit floor (4102 ft from its own
+waypoints), but its overview/itinerary describe climbing from a high camp at
+Yang Yang Lakes rather than from the trailhead — a documented convention in this
+catalog, not automatically an error. The implied camp elevation (7762-1500 =
+6262 ft) is in the right neighborhood for Yang Yang Lakes (search sources put it
+around 6,500 ft, with the same published-elevation disagreement this row's own
+`bivy` entries note for several nearby cols/passes), so this reads as the
+high-camp convention working as intended rather than a defect — left alone
+rather than "corrected" into agreement with an uncertain published figure.
+
+**Clean (2):** `wa_lane_peak_r3` (all facts checked plausible, no discrepancies
+found); `wa_lemah_mountain_east_route` (FA — Wallace Burr, July 7 1923 — and
+Goatshead Spire's own FA — Donald Goodman/John Mason, August 8 1982 — both
+independently confirmed via search).
+
+`npm run check:sql` was not run — this environment has no `node_modules` and no
+`.env`/`.env.local` credentials, same as recent batches. All five UPDATE
+statements were hand-verified instead: current stored values re-read from the
+live DB via curl/anon-key REST immediately before writing the file, matching each
+WHERE guard exactly, and each statement is an idempotent no-op if the row has
+already changed.
+
+WebSearch was available and used throughout, including for several primary/
+official sources reachable only via search snippets (nps.gov, a UC Berkeley
+in-memoriam page, USFS trail pages). WebFetch was attempted on wta.org,
+climberkyle.com, and publications.americanalpineclub.org and blocked by the
+network egress proxy on all three — same class of gap recent batches have hit
+with AAC Publications specifically.
+
+Next batch continues from `wa_lemah_two_goatshead_spire` onward alphabetically
+(pass 4).
