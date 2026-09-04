@@ -13508,3 +13508,68 @@ re-read from the live DB immediately before writing this file and confirmed to s
 match the WHERE guards.
 
 Next batch continues from `wa_goat_mountain_south_ridge` onward alphabetically (pass 4).
+
+## Batch 193 (pass 4) — 2026-09-04
+
+Routes: wa_golden_horn_north_face, wa_goode_mountain_megalodon_ridge,
+wa_goode_mountain_northeast_face, wa_goode_mountain_southwest_couloir,
+wa_gorillas_direct, wa_gunnshy_peak_standard_route, wa_gunrunner,
+wa_gunsight_peak_standard.
+
+**Fixed (2):**
+- `wa_goode_mountain_southwest_couloir`: `dist_km` halved (59.5 → 29.75 km). The stored
+  value was ~4.35x the trailhead-to-summit straight-line distance, against 1.32x/1.88x
+  for two sibling routes sharing the identical Rainy Pass trailhead and Goode summit, and
+  the row's own approach text states a ~15-16 mile one-way hike to high camp. The app
+  doubles `dist_km` for round-trip display, so the old value implied a ~74-mile round
+  trip against a real one closer to 33-37 miles.
+- `wa_gunnshy_peak_standard_route`: `access.notes` claimed Gunn Peak and Baring Mountain
+  sit outside designated wilderness — false (Gunn Peak is the Wild Sky Wilderness's
+  highest summit; Baring is also inside it) and contradicted this same row's own
+  `overview`/`permit`/`landManager` fields, which correctly treat Gunnshy as inside the
+  wilderness. Only neighboring Mount Persis, of the three peaks the note named, is
+  actually outside it. Corrected.
+
+**Flagged for human review (2):**
+- `wa_gunrunner`: `dist_km` (16.1 km) is below the physical floor — shorter than the
+  straight-line trailhead-to-summit distance (17.67 km via haversine), which is
+  impossible for a real winding approach. Not auto-fixed: this is a multi-peak ridge
+  traverse (not a simple out-and-back like its `wa_gunsight_peak_standard` sibling, whose
+  27.35 km IS well corroborated by a detailed 7-point waypoint chain), and no comparably
+  detailed chain exists here to derive a confident replacement number.
+- `wa_gunsight_peak_standard` / `wa_gunrunner`: both filed under area `wa_middle_peak`
+  ("Middle Peak", 8,185 ft), but the routes' own text and `high_point_ft` (8,198)
+  describe the real, separately-named "Gunsight Peak" — confirmed via web search as a
+  distinct, commonly-referenced 8,198 ft summit in the same massif. The 13 ft gap is
+  within normal survey variance and not itself wrong, but whether the area is
+  mis-labeled ("Middle Peak" as a positional stand-in for the peak most climbers call
+  Gunsight) is an area-hierarchy judgment call outside this audit's row-level scope —
+  not touched.
+
+**Clean (4):** wa_golden_horn_north_face, wa_goode_mountain_megalodon_ridge,
+wa_goode_mountain_northeast_face, wa_gorillas_direct.
+
+First-ascent claims independently confirmed via web search for 5 routes this batch:
+wa_golden_horn_north_face (Beckey, 1958, North Face), wa_goode_mountain_northeast_face
+(Beckey & Parrott, 1954 — exact match, including the row's own passing cross-reference
+to the *different*, later 1966 Northeast Buttress route, also confirmed correct),
+wa_goode_mountain_megalodon_ridge, wa_gorillas_direct (Wertkin/Holsten/Westman, Aug
+2011), wa_gunrunner (Herrington & Hilden, July 9 2007). Suiattle River Road FR-26
+closure status (referenced by wa_gunrunner and wa_gunsight_peak_standard, both via
+Downey Creek Trailhead) independently confirmed current via a USFS alerts search
+(closure order 4/2/2026 through 1/1/2028, washout at MP 4-4.5) — matches both rows
+exactly.
+
+Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) and Wikipedia
+(via WebFetch) remain blocked by the network egress proxy; WebSearch result snippets
+were used instead, cross-checked against the routes' own internal fields, sibling routes
+sharing a trailhead/summit, and independent geometry (haversine straight-line distance
+floors).
+
+`npm run check:sql` was not run this batch — this fresh clone/worktree has no
+`node_modules` and no `.env`/`.env.local` credentials configured, so the script cannot
+reach the DB. Both SQL statements were instead hand-verified: current stored values
+re-read from the live DB immediately before writing the file (confirmed to match the
+WHERE guards), and both are idempotent no-ops if the row has already changed.
+
+Next batch continues from `wa_gunsight_peak_standard` onward alphabetically (pass 4).

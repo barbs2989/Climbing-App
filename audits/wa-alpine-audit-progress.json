@@ -1,8 +1,8 @@
 {
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+    "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_goat_mountain_south_ridge",
+    "last_processed_id": "wa_gunsight_peak_standard",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -80,7 +80,7 @@
             "flagged_for_human_review": 15,
             "clean": 0,
             "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+            "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
         },
         {
             "batch_number": 5,
@@ -3319,7 +3319,7 @@
             "flagged_for_human_review": 0,
             "clean": 2,
             "sql_file": "audits/sql/2026-08-27-batch-158.sql",
-            "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review — both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed — the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
+            "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review \u2014 both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed \u2014 the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
         },
         {
             "batch_number": 159,
@@ -3338,7 +3338,7 @@
             "flagged_for_human_review": 2,
             "clean": 4,
             "sql_file": "audits/sql/2026-08-27-batch-159.sql",
-            "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) — could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
+            "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) \u2014 could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
         },
         {
             "batch_number": 160,
@@ -3991,6 +3991,26 @@
             "flagged_for_human_review": 3,
             "clean": 2,
             "note": "wa_glacier_peak_disappointment_peak_cleaver: internally contradictory -- its waypoints/gpx/itinerary/pitch_detail describe a Buck Creek Pass/Trinity eastern approach (the waypoint's own note field admits this: 'The North Fork Sauk River trailhead is 20.2 mi away on a different approach'), while overview/approach/descent_text/bail/approach_variants/bivy all consistently and independently describe the North Fork Sauk southern approach instead. Needs reconciliation (likely replacing the 4 contaminated structured fields with accurate North-Fork-Sauk-based content) rather than a guessed numeric fix -- flagged, not fixed. wa_glacier_peak_sitkum_glacier: approach/descent_text/bail describe a full White Chuck River Trailhead (2,350 ft) walk-in in detail, while the row's primary waypoint pin is labeled 'North Fork Sauk River Trailhead' at a different elevation (2,100 ft) -- a trailhead name/coordinate mismatch; White Chuck is currently closed (confirmed via USFS alerts) so the row needs a decision on which trailhead is canonical before its distance/gain figures can be trusted. Also flagged, out of this batch's route range: wa_sitkum_spire_standard (area wa_sitkum_spire) carries the identical 9-entry corridor-wide bivy list found and trimmed above -- recommend the same trim (keep only 'Boulder Basin above Sitkum Creek', which matches its own location) when this route is next audited or by a maintainer now. Separately unresolved: wa_glacier_peak_frostbite_ridge's dist_km (51.5 km) would display as a ~64-mile round trip under the app's one-way*2 convention, well above the route's own stated '40+ mile round trip' -- not corrected here since no verified one-way figure was available; noted for a future pass. Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) remain blocked by the network egress proxy; WebFetch on Wikipedia is also blocked. Verification relied on WebSearch result snippets, cross-checked against the routes' own internal data and against each other."
+        },
+        {
+            "batch_number": 193,
+            "date": "2026-09-04",
+            "route_ids": [
+                "wa_golden_horn_north_face",
+                "wa_goode_mountain_megalodon_ridge",
+                "wa_goode_mountain_northeast_face",
+                "wa_goode_mountain_southwest_couloir",
+                "wa_gorillas_direct",
+                "wa_gunnshy_peak_standard_route",
+                "wa_gunrunner",
+                "wa_gunsight_peak_standard"
+            ],
+            "findings_summary": "wa_goode_mountain_southwest_couloir: dist_km halved 59.5->29.75km -- the row's own approach text states a ~15-16mi one-way hike to high camp, and its stored dist_km/straight-line ratio (4.35x) was far out of line with its two Rainy-Pass-trailhead/Goode-summit siblings (1.32x, 1.88x); the app doubles dist_km for round-trip display, so the old value implied a ~74mi round trip against a real one of roughly 33-37mi. wa_gunnshy_peak_standard_route: access.notes falsely claimed Gunn Peak and Baring Mountain sit outside Wild Sky Wilderness, contradicting this same row's own overview/permit/landManager fields (which correctly place Gunnshy inside the wilderness) and confirmed wrong via web search (Gunn Peak is the wilderness's highest summit; only neighboring Mount Persis, of the three peaks named, is actually outside it) -- corrected. 5 routes independently corroborated clean via web search: wa_golden_horn_north_face FA (Beckey, 1958, North Face -- 'Duke' Watson as partner plausible/uncontradicted), wa_goode_mountain_northeast_face FA (Beckey & Parrott, 1954, matches exactly, including the row's own passing 1966-Northeast-Buttress cross-reference to a DIFFERENT Goode route), wa_goode_mountain_megalodon_ridge FA, wa_gorillas_direct FA (Wertkin/Holsten/Westman, Aug 2011, exact match), wa_gunrunner FA (Herrington & Hilden, July 9 2007, exact match). Suiattle River Road FR-26 closure status (referenced by wa_gunrunner and wa_gunsight_peak_standard, both via Downey Creek Trailhead) independently confirmed current via USFS alerts (closure order 4/2/2026 through 1/1/2028, washout at MP 4-4.5) -- matches both rows exactly.",
+            "sql_file": "audits/sql/2026-09-04-batch-193.sql",
+            "confirmed_errors_fixed": 2,
+            "flagged_for_human_review": 2,
+            "clean": 4,
+            "note": "wa_gunrunner: dist_km (16.1 km) is below the physical floor -- straight-line trailhead-to-summit distance (haversine, Downey Creek Trailhead 48.2595,-121.2229 to the route's own Middle Peak endpoint 48.30571,-120.99439) is 17.67 km, exceeding the stored one-way trail distance, which is a geometric impossibility for a real approach that the route's own text describes as a winding cross-country line (Itswoot Ridge/Cub Lake/Bachelor Creek). Not auto-fixed: this is a multi-peak ridge traverse (not a simple out-and-back like its wa_gunsight_peak_standard sibling, whose 27.35 km IS well corroborated by its own 7-point waypoint chain), loss_ft is also null, and no comparably detailed waypoint chain exists for this route to derive a confident specific replacement number -- flagging for a human with route-specific research rather than guessing. wa_gunsight_peak_standard / wa_gunrunner: filed under area wa_middle_peak ('Middle Peak', elevation_ft 8185), but both routes' own text and high_point_ft (8198) describe the real, separately-named 'Gunsight Peak' -- confirmed via web search as a real, commonly-referenced 8,198 ft summit in this exact massif (dual summit, guarded by the Chikamin/Blue Glaciers, per Wenatchee Outdoors/Alpinist sources). The 13 ft elevation gap is within normal survey variance and not itself an error, but whether the area should be named/split differently (is 'Middle Peak' the DB's positional placeholder for the peak most climbers call 'Gunsight Peak', or a distinct nearby bump?) is an area-hierarchy/naming judgment call outside this audit's scope of row-level fact fixes -- flagged for human review, not touched. Primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org, Wikipedia via WebFetch) remain blocked by the network egress proxy; verification relied on WebSearch result snippets, cross-checked against the routes' own internal data, sibling routes sharing a trailhead/summit, and independent geometry (haversine distance floors)."
         }
     ]
 }
