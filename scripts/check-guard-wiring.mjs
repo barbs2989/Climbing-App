@@ -259,6 +259,59 @@ for (const name of Object.keys(UNDOCUMENTED)) {
          `block. Remove the entry — a stale exemption is room for a real one to hide in.`);
 }
 
+// ── 5. CLAUDE.md must not contradict EXCLUDED about WHICH CREDENTIAL a guard needs ─────────
+//
+// EXCLUDED above states, per guard, which privileged credential keeps it out of CI. CLAUDE.md
+// states the same fact again in prose, in the paragraph telling a reader how to RUN these guards
+// by hand. That is a hand-copy, and it drifted: from 2026-09-02 to 2026-09-04 this document said
+//
+//     `check:column-drift` needs no link (anon key)
+//
+// while the guard has called requireServiceKey() since 2026-08-27 and its own EXCLUDED reason says
+// so in as many words. Half right — it genuinely needs no CLI link — which is the most misleading
+// shape, and it sat two sentences after the rule that CI must never hold the service key. Somebody
+// acting on it either wires the guard into CI (putting that credential where every other note in
+// the file forbids) or watches it fail closed and chases a phantom.
+//
+// The same argument section 4 of check:screen-lists makes for a stated VOCABULARY: a fact restated
+// in prose is a copy wherever it lives, and the document is not exempt from its own rules.
+//
+// Scoped tightly, because CLAUDE.md legitimately says "anon key" about other guards in sentences
+// that also name these ones — check:signed-in's two durable anon-key accounts are cited as the
+// precedent for several of these exemptions. So the rule is per LINE and requires the anon
+// attribution to be about THIS guard: a line naming exactly one privileged guard, and the anon
+// key, and no other guard to attribute it to. Measured before shipping: across the whole document
+// that is 1 line today, and it is the defect.
+const CRED = /\bSERVICE key\b|\bMANAGEMENT API token\b/i;
+const privileged = Object.entries(EXCLUDED)
+  .filter(([, why]) => CRED.test(why))
+  .map(([file]) => file);
+if (!privileged.length)
+  dead("no EXCLUDED entry names a privileged credential — section 5 could not be scoped, and " +
+       "would pass vacuously about every guard");
+
+const allGuardNames = new Set(onDisk.flatMap((file) => aliasesOf(file)));
+const mdLines = fs.readFileSync(mdPath, "utf8").split("\n");
+let credChecked = 0, credLines = 0;
+for (const file of privileged) {
+  const names = aliasesOf(file);
+  if (!names.length) continue;
+  credChecked++;
+  for (let i = 0; i < mdLines.length; i++) {
+    const line = mdLines[i];
+    if (!/anon[- ]key|anon\b/i.test(line)) continue;
+    if (!names.some((n) => line.includes(n))) continue;
+    // A line naming a SECOND guard is citing a precedent, not describing this one.
+    const named = [...allGuardNames].filter((n) => line.includes(n));
+    if (named.some((n) => !names.includes(n))) continue;
+    credLines++;
+    fail(`CLAUDE.md:${i + 1} attributes the ANON key to ${names[0]}, which check:guard-wiring's ` +
+         `own EXCLUDED reason says needs a privileged credential. One of the two is wrong, and ` +
+         `the EXCLUDED reason is the one beside the code. Line: ${line.trim().slice(0, 120)}`);
+  }
+}
+if (!credLines) ok(`no CLAUDE.md line calls any of the ${credChecked} privileged guards anon-safe`);
+
 if (failures) {
   console.error(`\ncheck:guard-wiring FAILED — ${failures} problem(s).\n`);
   process.exit(1);

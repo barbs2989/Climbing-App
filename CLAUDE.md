@@ -106,7 +106,7 @@ npm run check:return-leg      # a walk that already covers the day is not re-add
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
-npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
@@ -9484,8 +9484,36 @@ that the slashless form still ignores the real directory in the main checkout.
 
 Both guards were run this way on 2026-09-02 and both are clean — 45 of 46 live functions match
 their newest migration (1 declared benign), and every column the 11 writing functions touch exists.
-`check:column-drift` needs no link (anon key) and also agrees: 41 tables / 480 columns, snapshot
+`check:column-drift` needs **no link** — it does not shell out to the CLI — but it is **not**
+anon-safe: it fetches PostgREST's OpenAPI root, which answers the anon key **401**, so it needs
+the **service key**, exactly as its own `EXCLUDED` reason in `check:guard-wiring` says. This
+file carried *"needs no link (anon key)"* from 2026-09-02 until 2026-09-04 — half right, which
+is the most misleading shape, and it sat in the paragraph telling you how to run the three
+hand-run guards, two sentences after the rule that CI must never hold that credential. Section 5
+of `check:guard-wiring` now reads this document against those reasons, because **a stated
+credential is a hand-copy wherever it lives** — the argument section 4 of `check:screen-lists`
+already makes for a stated vocabulary. Injection-tested **4/4**
+(`scripts/oneoff/inject-credential-claim-cases.mjs`), each case proving its edit landed **by
+checksum** and restoring the file byte-identically; the first case is the real sentence restored
+verbatim, and **two must stay SILENT** — citing `check:signed-in`'s anon-key accounts as the
+PRECEDENT for an exemption is correct prose, and so is saying `check:counts` is anon-key, which
+it genuinely is. The harness also refuses any expectation matching the HEALTHY run, because a
+case written against the text an assertion prints when it PASSES reports MISSED against a guard
+firing correctly — a mistake I made twice in one day before making it structural. Re-run
+2026-09-04 with the key: **41 tables / 484
+columns** (0174 and 0175 account for the growth from 480), all three sections clean, snapshot
 current.
+
+**A worktree has no `.env` either, and that is the same trap one file over.** The instruction
+above says to fix the link *"the way `.env` and `.env.local` already are"* — which presumes they
+are symlinked, and in a fresh worktree they are not, so every DB-touching guard and audit dies on
+`SUPABASE_SERVICE_KEY missing`. Symlink all three:
+
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/.env       .env
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/.env.local .env.local
+
+Both patterns are in `.gitignore` and a symlink is not a directory to git, so neither shows up as
+untracked.
 
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
