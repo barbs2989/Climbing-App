@@ -382,8 +382,22 @@ console.log("\n--- the panel is actually reachable, on every route ---");
     const iifes = [...before.matchAll(/const\s+(\w+)\s*=\s*\(function\s*\(\)\s*\{/g)];
     const el = iifes.length ? iifes[iifes.length - 1][1] : null;
     const sym = el || "FireNearRoute";
-    const safetyAt = h.search(/tab===["']safety["']\s*\?/);
-    const overviewAt = h.search(/tab===["']overview["']\s*\?/);
+    /* SKIP BLOCK COMMENTS, exactly as realTagAt above already does for the tag — this locator
+       did not, and that asymmetry is a latent false FAILURE rather than a false pass. A comment
+       explaining this area naturally quotes the branch it is about (`{tab==="safety"?<div>…`),
+       and because it sits ABOVE the code it explains, a raw search returns the PROSE; the segment
+       taken from there holds no mount and the guard reports the fire panel as missing from a tab
+       it is plainly on. Met for real when a comment was added above the Safety branch. Same rule
+       check:ci-cancel states from the other side: a guard must not fail on documentation. */
+    const firstOutsideComment = (re) => {
+      for (const m of h.matchAll(new RegExp(re.source, re.flags.includes("g") ? re.flags : re.flags + "g"))) {
+        const open = h.lastIndexOf("/*", m.index), close = h.lastIndexOf("*/", m.index);
+        if (open === -1 || close > open) return m.index;   // not inside a block comment
+      }
+      return -1;
+    };
+    const safetyAt = firstOutsideComment(/tab===["']safety["']\s*\?/);
+    const overviewAt = firstOutsideComment(/tab===["']overview["']\s*\?/);
     if (safetyAt < 0 || overviewAt < 0) {
       fail(`${HOST}: could not find both the safety and overview sub-tab branches — this reachability check has gone blind`);
     } else {
