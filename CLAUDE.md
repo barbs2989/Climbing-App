@@ -1980,7 +1980,14 @@ the total when deciding where a new guard belongs.
     and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
     a guard that only ever demands MORE marking would drive exactly that.
 - **`check:offline-claims`** asserts that **a route is never on the device; only a downloaded state
-  is**. Static (Babel over the two app files), so it sits in `npm run build`.
+  is**. Static (Babel over the two app files), so it sits in `npm run build`, at **1.65x
+  `check:policy-claims`** — comfortably under the 6-10s Babel guards.
+  - **QUOTED AS A RATIO, NOT A CLOCK, and that is not hedging.** Both numbers above were taken
+    back to back with `check:policy-claims` on one box, best of three; the individual readings
+    for that baseline were 3.3s, 5.0s and 8.6s, because several sessions build here at once.
+    A wall-clock figure from such a box is fiction — this file records a profile taken at load
+    450 that was off by 4x, and a guard read at 110s that measures 10.4s quiet. **What survives
+    load is where a guard sits relative to a sibling measured in the same minute.**
   - **THE APP HAS TWO THINGS CALLED "OFFLINE" AND ONLY ONE IS REAL.** `downloadStateOffline()` in
     `lib/offline.js` writes a state's whole areas+routes subtree into **IndexedDB**, and four
     `lib/db.js` hooks fall back to its readers through `orOffline` — a genuine offline catalog,
@@ -8946,7 +8953,8 @@ their own Résumé showed an amber **"Unverified"** chip.
     removal report success.
 
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
-  a **real outcome**. Static (one source read), so it sits in `npm run build`.
+  a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
+  `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
   - **NINE CONTROLS TOLD A CLIMBER SOMETHING HAPPENED TO ANOTHER PERSON, AND NOTHING DID.**
     *"Joined Alpine Start"*, *"Approved — Reed added"*, *"Invited Sam"* (twice — the group sheet and
     the event sheet), *"You're in — see you there"*, *"RSVP cancelled"*, **"Event created — 4
