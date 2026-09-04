@@ -57,6 +57,7 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
+npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:float-plan-persistence # a filed float plan survives leaving the tab (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -1933,6 +1934,67 @@ the total when deciding where a new guard belongs.
     are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
     and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
     a guard that only ever demands MORE marking would drive exactly that.
+- **`check:offline-claims`** asserts that **a route is never on the device; only a downloaded state
+  is**. Static (Babel over the two app files), so it sits in `npm run build`.
+  - **THE APP HAS TWO THINGS CALLED "OFFLINE" AND ONLY ONE IS REAL.** `downloadStateOffline()` in
+    `lib/offline.js` writes a state's whole areas+routes subtree into **IndexedDB**, and four
+    `lib/db.js` hooks fall back to its readers through `orOffline` — a genuine offline catalog,
+    reached from **Manage areas**. The other is `offline`, a `useState([])` list of route ids in
+    `ClimbMatch.jsx` that is **never persisted** (that file contains no `localStorage`, no
+    `sessionStorage` and no `indexedDB`) and is cleared by the sign-in reset. It is a **flag on a
+    route**, and nothing about that route is stored.
+  - **FIVE SURFACES RENDER THE FLAG AND FOUR DESCRIBED IT AS THE CATALOG.** A toast — *"Saved for
+    offline — works with no signal"*; a header button labelled **"Download"** (*"Save offline for
+    no-signal days"*); an Overview sidebar button *"Save to offline"* / *"Work without cell
+    service"*; and the Profile section *"Offline library"*, reading *"N routes bundled —
+    descriptions, topos & tracks ready with no signal"* over an empty state instructing the
+    climber to *"bundle the description, topo, gear, GPX and a conditions snapshot for the
+    backcountry"*. **Five things named, none stored.**
+  - **THE FIFTH SURFACE WAS ALREADY CORRECT, which is what makes this a class rather than a typo.**
+    The Plan tab's *Trip pack* says outright: *"Nothing here is cached on your device yet — the app
+    still needs a signal. Capture what you need before you go: tap **Download GPX** and open it in
+    a dedicated GPS/mapping app."* Somebody fixed one surface and left four — the *an instance
+    fixed by hand is not a class closed* shape, and the reason the repair **propagates that
+    surface's own vocabulary** rather than inventing wording.
+  - **IT IS THE DANGEROUS DIRECTION, and that is why it is worth a gate rather than a note.** A
+    climber taps a button that says **Download**, is told five things are bundled for the
+    backcountry, and may therefore **not** download the state — the one thing that would have
+    worked. They find out at the trailhead, where it cannot be checked. Over-claiming availability
+    is worse than offering nothing, and the word *Download* collided directly with the Plan tab's
+    **real** `Download GPX`.
+  - **THE GUARD FOUND A SIXTH SURFACE THE MANUAL SWEEP MISSED**, which is the whole argument for
+    it: a Logbook nav row rendering `bookmarks.length+" saved"+(offline.length?" · "+offline.length+" offline":"")`
+    — *"3 saved · 2 offline"*. Twelve strings were rewritten by hand across five surfaces and that
+    one still stood; the first run of the guard failed on it.
+  - **SCOPED STRUCTURALLY, MATCHED BY PHRASE, and the scoping is what makes the phrases safe.**
+    Regions come from the AST — the **innermost function or JSX element** enclosing a reference to
+    the trip-pack state — so the run asks about this feature's own surfaces rather than about the
+    file. Taking the nearest JSX element *unconditionally* lands on `<RouteDetail/>`, one element
+    carrying 59 props and 18,190 characters, which would sweep in every unrelated string in it;
+    preferring whichever of a function or an element comes first walking up is what bounds it.
+  - **The needles are a DENY-LIST and will be short again one day; that is stated rather than
+    hidden.** What keeps them honest is that they fire on an **assertion** only: a **negated**
+    sentence (*"Nothing here is cached"*, *"not cached"*) is correct copy, and a sentence naming
+    **Manage areas** is about the real feature. Both are injection cases that must stay **SILENT** —
+    a guard firing on either would tell an author to delete the honest wording it exists to protect.
+  - **SECTION 2 IS THE LOAD-BEARING HALF.** A guard that only ever *removes* claims is satisfied by
+    deleting the real feature's copy too, so the state-download surfaces must **keep** saying the
+    catalog works with no signal — for them it is **true**. `killreal` pins it.
+  - **THE FLOOR IS PER FILE, and a global one let a whole file go blind.** Renaming the trigger in
+    `RouteDetail.jsx` left ClimbMatch's 15 regions standing, so the first version reported a clean
+    sweep having inspected one file of two — the `check:control-names` defect exactly, whose floor
+    was *"at least one"* and which a **partial** restyle left checking 1 of 9. Measured 2026-09-03:
+    ClimbMatch **15 regions / 143 strings**, RouteDetail **23 / 45**; a blinded file yields 0.
+  - **A BUILD GATE RATHER THAN A PROBE**, for the reason `check:topo-outage-copy`,
+    `check:policy-claims` and `check:profile-claims` were each promoted: the repair changes
+    **strings and no name**, and `audit:silent-reverts` says in its own closing caveat that it
+    cannot see that. A stale-base squash could restore all twelve claims with every gate green.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. Four are the real
+    historical defects restored verbatim; one is the sixth surface the guard itself found; two must
+    stay silent; two pin the per-file floors. **`renamed-cm` was a HARNESS bug first** — ClimbMatch
+    carries *two* triggers, so renaming one is correctly not a miss, and the guard's right answer
+    read as a defect until the case renamed the state as well.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
