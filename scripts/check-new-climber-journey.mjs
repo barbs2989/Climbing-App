@@ -25,7 +25,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
 import { createFixture, sweepOrphans, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
-import { SUPABASE_URL, requireServiceKey } from "./lib/supabase-env.mjs";
+import { SUPABASE_URL, requireServiceKey, anonKey } from "./lib/supabase-env.mjs";
 import { settledText } from "./lib/render-settle.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -49,6 +49,11 @@ const waitForServer = async (base) => {
   }
   return false;
 };
+
+// The route the phase-2 crew is opened on. A REAL catalog row, so CrewFinder can resolve its
+// name -- a crew on an id the routes table lacks would render blank and read as the defect.
+const JOURNEY_ROUTE = "wa_mount_baker_north_ridge";
+const JOURNEY_ROUTE_NAME = "North Ridge";
 
 const key = requireServiceKey();
 const H = { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
@@ -277,6 +282,66 @@ try {
   if (!(await clickText("Set up my profile"))) ok("onboarding does not re-open — the account is set up");
   else bad("onboarding re-opened after a reload, so nothing it collected was remembered");
 
+  // ---- PHASE 2: A CREW ONE REAL CLIMBER OPENS, FOUND BY ANOTHER --------------------------------
+  // The question that started this whole thread, and the ONLY test of it with two real accounts.
+  // probe-crewfinder-shows-a-real-crew.mjs renders the component over a SYNTHETIC crew; this walks
+  // a row that actually exists, read through crew_listings by a DIFFERENT signed-in account.
+  //
+  // The crew must contain NEITHER climber: App excludes crews you organise or are already in, so
+  // reusing a fixture crew would assert on a row the finder is right to hide. It is created here,
+  // owned by the OWNER, and torn down explicitly.
+  let crewId = null;
+  try {
+    const mk = await fetch(`${SUPABASE_URL}/rest/v1/crews`, {
+      method: "POST", headers: { ...H, Prefer: "return=representation" },
+      body: JSON.stringify({ created_by: uid, route_id: JOURNEY_ROUTE, dates: [], cap: 4 }),
+    });
+    if (!mk.ok) dead(`could not create the findable crew: ${mk.status} ${await mk.text()}`);
+    crewId = (await mk.json())[0].id;
+    ok(`the owner opened a crew (${crewId.slice(0, 8)}) on ${JOURNEY_ROUTE}`);
+
+    // Sign in as the MATE. Over the auth API rather than the sign-in modal, for the reason
+    // ui-fixture states: deterministic, and not coupled to that modal's markup.
+    const tok = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+      method: "POST", // anonKey(), not process.env: supabase-env loads the credentials from the DOTFILES, so the
+      // environment does not carry them and the token endpoint answers 401 "Invalid API key".
+      headers: { apikey: anonKey(), "Content-Type": "application/json" },
+      body: JSON.stringify({ email: fixture.mate.email, password: fixture.mate.password }),
+    });
+    const mateBody = await tok.json();
+    if (!tok.ok || !mateBody.access_token) dead(`could not sign in as the mate: ${tok.status} ${JSON.stringify(mateBody).slice(0, 200)}`);
+
+    const mp = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
+    await mp.addInitScript(({ k, v }) => { try { window.localStorage.setItem(k, v); } catch {} },
+      { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(mateBody)) });
+    await mp.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await settledText(mp);
+
+    const mateClick = async (t) => mp.evaluate((txt) => {
+      const el = [...document.querySelectorAll("button,a,[role=button]")]
+        .find((e) => (e.innerText || "").trim() === txt);
+      if (!el) return false; el.click(); return true;
+    }, t);
+
+    if (!(await mateClick("Partners"))) dead("the mate could not open the Partners tab");
+    await settledText(mp);
+    if (!(await mateClick("Join a crew"))) dead("no 'Join a crew' control on Partners");
+    await settledText(mp);
+    // "My Objectives" is the default mode and filters to the VIEWER's objectives; the mate has
+    // none on this route, so a crew correctly absent there would read as a defect. Ask "Any Crew".
+    if (!(await mateClick("Any Crew"))) dead("no 'Any Crew' mode button in CrewFinder");
+    await settledText(mp);
+
+    const seenByMate = await mp.evaluate(() => document.body.innerText || "");
+    if (seenByMate.includes(JOURNEY_ROUTE_NAME)) ok(`the mate FINDS the owner's crew ("${JOURNEY_ROUTE_NAME}") in Join a crew`);
+    else bad(`the mate cannot find the owner's crew — "${JOURNEY_ROUTE_NAME}" is absent from Join a crew, so a real climber's crew is invisible to another real climber`);
+    if (/undefined/.test(seenByMate)) bad("the crew list contains the word undefined — a row resolved against the wrong store");
+    else ok("no undefined in the mate's crew list");
+    await mp.close().catch(() => {});
+  } finally {
+    if (crewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${crewId}`, { method: "DELETE", headers: H }).catch(() => {});
+  }
+
   if (pageErrors.length) bad(`uncaught page errors: ${pageErrors.slice(0, 3).join(" | ")}`);
   else ok("no uncaught page errors during the journey");
 } finally {
@@ -289,5 +354,5 @@ try {
 }
 
 console.log(fails ? `\ncheck:new-climber-journey FAILED — ${fails} problem(s) a new climber would hit.`
-                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload.");
+                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, and the crew they open is found by another real climber.");
 process.exit(fails ? 1 : 0);
