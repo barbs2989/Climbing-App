@@ -1231,10 +1231,12 @@ the total when deciding where a new guard belongs.
   - What it does **not** prove: that the wording is good, or that a screen the walk never reaches
     is honest. It covers **all seven tabs**, the Logbook's Completed sub-tab, the three Crew
     sub-views, the Home revisit, the **route page** and its **Photos** sub-tab — 14 screens; a
-    surface behind an **overlay** is still out of frame, and **13 of the 25 `lib/db.js` query handles
-    called in `App` carry a flag** (plus 2 in `RouteDetail`) — re-measure rather than quoting this, it has
-    moved twice — the rest are mostly lookups where emptiness is
-    never asserted, but that is a list to READ, not a coverage claim.
+    surface behind an **overlay** is still out of frame, and the flag coverage is **measured, not quoted**:
+    run `scripts/oneoff/measure-outage-flag-coverage.mjs`, which reads the handles and the flags out
+    of the source. It said **41 handles, 21 flagged, 20 not** on 2026-09-03. **This file carried the
+    number in THREE places and they disagreed** — "13 of the 25", "4 of 28" and "34 handles, 14
+    flagged" — which is why it is a script now. The unflagged rest are mostly lookups where
+    emptiness is never asserted, and that is a list to READ, not a coverage claim.
     - **The two unflagged ones that were CHECKED rather than assumed** (2026-08-26), so nobody
       re-derives them as defects: `useProfilesByIds` falls back to `user: p&&p.name||"A climber"`,
       so a missing reporter degrades to a generic label rather than printing `undefined` or
@@ -8280,8 +8282,9 @@ one click past where the probe walks, so nothing had reported it at all.
     the table, which holds exactly one row — the fixture's own. Deliberately not "fixed" by
     lowercasing the reader: that is changing app behaviour to suit a fixture, and it would move
     what `check:signed-in` sees.
-  - **Not closed, and not made a guard.** 4 of 28 query handles in `App` carry a flag (crews #1124,
-    lists #1147, objectives and logs here); the other 24 are a **list to READ**, not a defect count — most are lookups
+  - **Not closed, and not made a guard.** the counts have moved several times since and live in
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than here (crews #1124, lists #1147,
+    objectives and logs were the first four); the unflagged rest are a **list to READ**, not a defect count — most are lookups
     (profiles by id, area names) where emptiness is never asserted to the user. A guard for the
     strong form needs caller analysis across two 400kB files and would flag correct guard clauses,
     which is worse than the hole it closes. The probe is the mechanism, and it is now per-query.
@@ -8559,8 +8562,22 @@ stays `undefined` forever, so with the rows up and the profiles down that line r
     a rule about "what `useProfilesByIds` does on a miss" cannot be stated once.
   - **THE STATED WORKLIST IS NOW READ, AND IT WAS ONE DEFECT IN TWENTY.** This entry's own header
     used to say *"10 of 28 query handles in `App` carry a flag … the rest are a list to READ"*.
-    Measured: **34 handles, 14 flagged, 20 not** — of which exactly **one** was a real defect (the
-    catches one above) and 19 are non-findings, each for its own reason. The ones worth not
+    Measured **that day**: 34 handles, 14 flagged, 20 not — of which exactly **one** was a real
+    defect (the catches one above) and 19 are non-findings, each for its own reason. **That count is
+    HISTORY — it read 41/21/20 on 2026-09-03**; re-run
+    `scripts/oneoff/measure-outage-flag-coverage.mjs` rather than quoting either figure.
+    - **TWO HANDLES THE EARLIER SWEEPS NEVER NAMED were read on 2026-09-03 and are NON-FINDINGS**,
+      recorded so the next census does not re-derive them. `myVouchesGivenQ` looks like the
+      catches defect and is not: `givenVouches` initialises to **seed** data, so a failed
+      hydration falls back to a seed vouch rather than to an empty list — the concern there is
+      seed-shown-to-a-real-account, which `check:seed-history` covers, not an emptiness lie. And
+      `adminQueueQ` yields `(…data.total)||0`, which renders as `adminQueueN ? badge : null` — a
+      failed read **hides a badge** rather than claiming a clean queue. It is structurally the
+      `myGuideInquiriesQ` shape this file already cleared, it is admin-only, and it self-corrects
+      on the next load. **The stakes are higher (an unseen safety report), so it was read rather
+      than waved through** — but the same shape cannot be a non-finding in one place and a defect
+      in another.
+    The ones worth not
     re-deriving: `dbBookmarkNamesQ` renders `{nm||"Saved area"}`; `resumeLogsQ` has no absence copy
     at all **— WRONG, and corrected by RENDERING it.** That is true of `AscentPyramid`, which gates
     on `logs.length` before falling back to the stored pyramid, and the sweep stopped there.
