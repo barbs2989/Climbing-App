@@ -28,21 +28,21 @@ const ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
 
 // The controls the Settings screen actually offers, and what each is called on screen.
 const SETTINGS = [
-  // [state getter, label on screen, profiles column if it is an ACCOUNT setting]
-  ["units", "Units (ft·mi / m·km)", null],
-  ["dateFmt", "Date format (auto / US / intl)", null],
-  ["showOnRanks", "Show me on leaderboards", null],
-  ["notifPrefs", "Notification preferences", null],
-  ["discoverable", "Listed in partner search", "discoverable"],
-  ["showRealName", "Show my real name", "show_name"],
+  ["units", "Units (ft·mi / m·km)"],
+  ["dateFmt", "Date format (auto / US / intl)"],
+  ["showOnRanks", "Show me on leaderboards"],
+  ["notifPrefs", "Notification preferences"],
+  ["discoverable", "Listed in partner search"],
+  ["showRealName", "Show my real name"],
 ];
-// Written as an object KEY in a payload, i.e. actually sent, not merely mentioned.
+// Written as an object KEY in a payload, i.e. actually sent rather than merely mentioned.
 const dbSrc = src + fs.readFileSync(path.join(ROOT, "lib", "db.js"), "utf8");
 const columnIsWritten = (col) => new RegExp("[{,]\\s*" + col + "\\s*:").test(dbSrc);
 
 // Every useState in App, by the name it binds.
 const states = new Map();
 const calls = new Set();
+const hydratedFrom = new Map(); // setter name -> the column it is restored from
 traverse(ast, {
   VariableDeclarator(p) {
     const { id, init } = p.node;
@@ -53,7 +53,26 @@ traverse(ast, {
     const arg = init.arguments[0];
     states.set(get, { init: arg ? src.slice(arg.start, arg.end) : "undefined", node: arg });
   },
-  CallExpression(p) { if (p.node.callee.name) calls.add(p.node.callee.name); },
+  CallExpression(p) {
+    const name = p.node.callee.name;
+    if (!name) return;
+    calls.add(name);
+    // setX(row.some_column ...) is the restore-on-reload link, derived rather than declared.
+    if (/^set[A-Z]/.test(name)) {
+      const cols = [];
+      const scan = (n) => {
+        if (!n || typeof n !== "object") return;
+        if (n.type === "MemberExpression" && n.property && n.property.name && /_/.test(n.property.name)) cols.push(n.property.name);
+        for (const k of Object.keys(n)) {
+          const v = n[k];
+          if (Array.isArray(v)) v.forEach(scan);
+          else if (v && typeof v === "object" && v.type) scan(v);
+        }
+      };
+      p.node.arguments.forEach(scan);
+      if (cols.length) hydratedFrom.set(name, cols[0]);
+    }
+  },
 });
 
 // A loader is any function the initialiser CALLS or NAMES -- `useState(loadDateFmt)` passes it
@@ -76,15 +95,22 @@ const loaderIn = (info) => {
 
 console.log("SETTING                            INITIALISER              PERSISTS?  HOW");
 let volatile_ = 0, persisted = 0, other = 0;
-for (const [get, label, column] of SETTINGS) {
+for (const [get, label] of SETTINGS) {
   const info = states.get(get);
-  // An ACCOUNT setting persists through its column, whatever its useState default looks like.
+  // ACCOUNT path, derived: the setter is called with an expression reading a snake_case column.
+  const column = hydratedFrom.get("set" + get[0].toUpperCase() + get.slice(1));
   if (column) {
     if (columnIsWritten(column)) { console.log(label.padEnd(34), (info ? "(hydrated)" : "(not App useState)").padEnd(24), "YES        profiles." + column); persisted++; }
-    else { console.log(label.padEnd(34), "".padEnd(24), "BROKEN     declared profiles." + column + " is never written — this declaration is stale, or the write was lost"); other++; }
+    else { console.log(label.padEnd(34), "".padEnd(24), "HALF       restored from profiles." + column + ", but nothing writes it — the choice is read and never saved"); other++; }
     continue;
   }
-  if (!info) { console.log(label.padEnd(34), "(not App useState)".padEnd(24), "?          neither a loader nor a declared column — read it"); other++; continue; }
+  if (!info) {
+    // Derive the likely column from the getter, then require it to be WRITTEN somewhere.
+    const guess = get.replace(/[A-Z]/g, (c) => "_" + c.toLowerCase());
+    if (columnIsWritten(guess)) { console.log(label.padEnd(34), "(read from the row)".padEnd(24), "YES        profiles." + guess + " (read at its render site, not via a setter)"); persisted++; }
+    else { console.log(label.padEnd(34), "(not App useState)".padEnd(24), "?          no App state and no profiles." + guess + " write found — read it before trusting this row"); other++; }
+    continue;
+  }
   const loader = loaderIn(info);
   // A loader with no matching saver is half a feature: it would read a value nothing writes.
   const saver = loader ? [...calls].find((c) => /^(save|write)[A-Z]/.test(c) && c.toLowerCase().includes(loader.toLowerCase().replace(/^(load|read)/, ""))) : null;
@@ -95,15 +121,20 @@ for (const [get, label, column] of SETTINGS) {
 }
 console.log(`\n${persisted} persisted, ${volatile_} volatile, ${other} needing a look`);
 
+// No hard-coded count in the prose: this file has now been caught three times by a number or a
+// declaration that was true when it was written. Say it per row, from what was measured.
+if (volatile_) {
+  console.log("\nStill volatile:");
+  for (const [get, label] of SETTINGS) {
+    const info = states.get(get);
+    if (!info || hydratedFrom.get("set" + get[0].toUpperCase() + get.slice(1)) || loaderIn(info)) continue;
+    console.log(`  ${label} — client-only. It needs a profiles column to survive a reload for an
+  ACCOUNT, or a lib/*-pref module if it is really a DEVICE display preference. Which one it wants
+  is a question about who the setting is FOR, not about storage.`);
+  }
+}
 console.log(`
-The two that are still volatile are DELIBERATE, and they only look like the same defect:
-
-  showOnRanks is \`showOnRanks?[me]:[]\` — it decides whether YOU are appended to a leaderboard
-  built CLIENT-SIDE from seed CLIMBERS. It hides you from nobody, while its label reads as a
-  claim about what other people see, so storing it would durably keep a promise the app cannot
-  keep. It also defaults to true, so turning it off is undone on the next load.
-
-  notifPrefs is client-only for the same reason.
-
-Both need a profiles column to mean what their labels say — migration, RLS, and a read that can
-fail. That is feature work, not polish. See memory/display-settings-now-persist-account-ones-do-not.md.`);
+Read a NO here as "nothing restores this", not as "somebody forgot". showOnRanks was volatile for
+one afternoon and #1595 gave it profiles.show_on_ranks; this script reported it as still resetting
+because the column was DECLARED here rather than derived. It derives it now.
+See memory/display-settings-now-persist-account-ones-do-not.md.`);
