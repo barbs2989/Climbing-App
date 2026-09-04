@@ -28,7 +28,7 @@
 //
 // Report-only, read-only, fails closed on an empty read.
 import { selectAll } from "./lib/supabase-env.mjs";
-import { trackIsJustTheWaypoints } from "../lib/track.js";
+import { trackIsJustTheWaypoints, coordinateIsComputed } from "../lib/track.js";
 
 const NEAR_M = 5;           // the predicate's own tolerance
 const MAX_VERTICES = 40;    // the predicate's own cap: past this it is a real recording
@@ -64,8 +64,28 @@ for (const r of rows) {
   if (!off.length || off.length > 2) continue;
   if (line.length - off.length < 3) continue;         // too short to call a sketch at all
 
+  // WHICH KIND OF ADRIFT VERTEX, because the two want OPPOSITE repairs and this report used to
+  // prescribe one of them for both. A STRANDED vertex sits where a pin used to be, and the fix is
+  // to carry it onto the pin. A COMPUTED one was interpolated along the line itself — a 14-decimal
+  // tail, or sitting on the straight chord between its own neighbours — and moving it would invent
+  // a shape the line never had. Measured: of the six routes the repair script proposed before this
+  // distinction existed, THREE were computed, and the confidence ratio did not catch them (one
+  // scored 18.4x). Same rule as lib/track.js's, imported rather than re-implemented.
+  const onChord = (v) => {
+    const j = line.indexOf(v), a = line[j - 1], b = line[j + 1];
+    if (j < 1 || !a || !b) return false;               // an endpoint has no chord — says nothing
+    const T = Math.PI / 180, k = Math.cos(a.lat * T), R = 6371000 * T;
+    const px = (v.lng - a.lng) * k * R, py = (v.lat - a.lat) * R;
+    const bx = (b.lng - a.lng) * k * R, by = (b.lat - a.lat) * R;
+    const L2 = bx * bx + by * by;
+    if (!L2) return false;
+    const t = Math.max(0, Math.min(1, (px * bx + py * by) / L2));
+    return Math.hypot(px - t * bx, py - t * by) < 1;
+  };
+  const computed = off.filter((v) => coordinateIsComputed([v.lat, v.lng]) || onChord(v));
+
   stranded.push({
-    id: r.id, verts: line.length, off, captioned,
+    id: r.id, verts: line.length, off, captioned, computed,
     orphanPins: pins.filter((p) => !line.some((v) => metres(v, p) < NEAR_M)),
   });
 }
@@ -95,11 +115,16 @@ if (!stranded.length) {
     : "All are still captioned, so no route poses as a recorded track — but each carries a vertex drawn where a pin used to be.\n");
   for (const s of stranded) {
     console.log(`  ${s.id}  (${s.verts} vertices, ${s.off.length} adrift)${s.captioned ? "  [captioned — accuracy only]" : "  [CAVEAT LOST]"}`);
-    for (const v of s.off) console.log(`      vertex at ${v.lat},${v.lng} sits on no pin`);
+    for (const v of s.off) console.log(`      vertex at ${v.lat},${v.lng} sits on no pin${s.computed.includes(v) ? "  [COMPUTED — leave it: it was interpolated along the line, not left behind by a pin]" : ""}`);
     for (const p of s.orphanPins) console.log(`      pin "${p.name}" @ ${p.lat},${p.lng} is on no vertex`);
   }
-  console.log("\nA vertex adrift and a pin orphaned in the same route is the fingerprint of a pin");
-  console.log("repair that did not carry its sketched line with it. The fix is to move the vertex");
-  console.log("onto the pin — copying a coordinate the row already holds, inventing nothing.");
+  const nOff = stranded.reduce((a, s) => a + s.off.length, 0);
+  const nComp = stranded.reduce((a, s) => a + s.computed.length, 0);
+  console.log(`\n${nOff} adrift vertex/vertices across ${stranded.length} route(s); ${nComp} of them COMPUTED.`);
+  console.log("A STRANDED vertex — adrift while a pin sits orphaned — is the fingerprint of a pin repair");
+  console.log("that did not carry its sketched line with it, and the fix is to move it onto the pin,");
+  console.log("copying a coordinate the row already holds. A COMPUTED one is the opposite: it was");
+  console.log("interpolated along the line, so there is no old pin position to carry it to and moving");
+  console.log("it would invent a shape the line never had. Leave those alone.");
 }
 console.log("\nreport-only");
