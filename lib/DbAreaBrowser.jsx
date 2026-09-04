@@ -176,6 +176,15 @@ function StatePicker({ onPick, C }) {
   // The catalog ran on a single root for its whole life and would have shown a pointless
   // "pick a country" select the entire time.
   const only = countries && countries.length === 1 ? countries[0].id : null;
+  // A country step that cannot LOAD must not GATE the step below it. `useCountries` has no
+  // offline fallback while `useStates` does, so with a downloaded state the climber had the
+  // whole catalog in IndexedDB and a greyed-out select in front of it: `country` is "" here,
+  // and "" was in the state select's `disabled`. Storing countries would not help -- the
+  // download filters `path cd st.path` (ltree `<@`), which stores the state and its
+  // DESCENDANTS, and a country is an ancestor. Same reasoning as `only` one line up: when the
+  // step cannot be offered it must not be required. `inCountry` already falls through to every
+  // state when `country` is "", so the list below is correct as it stands.
+  const noCountryStep = !!only || !!ec;
   const country = countryId || only || "";
   const noun = subdivisionNoun(country);
   // `path` is the materialized ltree and its first label is the root, so this needs no
@@ -201,7 +210,7 @@ function StatePicker({ onPick, C }) {
           forever, directly above the error message saying it could not load. Two statements
           contradicting each other, and the app looks hung rather than broken. This is the
           poor-signal path, which for a climbing app is not an edge case. */}
-      <select aria-label={`Select a ${noun}`} value="" disabled={isLoading || !states || !country} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ ...selStyle, opacity: country ? 1 : 0.55, cursor: isLoading || !states || !country ? "default" : "pointer" }}>
+      <select aria-label={`Select a ${noun}`} value="" disabled={isLoading || !states || (!country && !noCountryStep)} onChange={e => { const s = (states || []).find(x => x.id === e.target.value); if (s) onPick(s); }} style={{ ...selStyle, opacity: (country || noCountryStep) ? 1 : 0.55, cursor: isLoading || !states || (!country && !noCountryStep) ? "default" : "pointer" }}>
         {/* Data outranks error. A failed REFETCH leaves the previous list intact, so the
             options below are still listed and still work — saying "Couldn’t load states"
             above a populated dropdown contradicts what the user can plainly see, and
