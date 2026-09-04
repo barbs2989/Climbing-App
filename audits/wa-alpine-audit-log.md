@@ -13195,3 +13195,96 @@ statement splitter cannot parse around; Postgres itself is quote-aware and
 unaffected). All target ids confirmed to exist; no destructive statements.
 
 Next batch continues from `wa_fish_whistle` onward alphabetically (pass 4).
+
+## Batch 190 — 2026-09-04
+
+Continuing pass 4 alphabetically from `wa_fish_whistle`. Batch: `wa_flora_mountain_southwest_slope`,
+`wa_flycatcher_buttress`, `wa_forbidden_peak_east_ridge`, `wa_forbidden_peak_north_ridge`,
+`wa_forbidden_peak_northeast_face`, `wa_forbidden_peak_northwest_face`,
+`wa_forbidden_peak_west_ridge`, `wa_fortress_mountain_east_ridge`. (`wa_flight_of_the_falcon`,
+alphabetically between `wa_fish_whistle` and `wa_flora_mountain_southwest_slope`, was skipped —
+its area `wa_waterfall_basin` is `area_type: crag`, out of scope.)
+
+This batch turned up a small cluster of the same defect on five of Forbidden Peak's six routes:
+`gain_ft` (and in two cases `loss_ft`) stored well below the floor the row's own waypoints/text
+establish. All five are `auto_generated: true`; the one Forbidden Peak route in this batch that
+was *not* auto-generated the same way, East Ridge Direct, was already correct.
+
+**Fixed (5 UPDATEs across 5 routes) — see `audits/sql/2026-09-04-batch-190.sql`:**
+
+- `wa_flora_mountain_southwest_slope` (Flora Mountain) — `gain_ft`/`loss_ft` (3150/3150) sit far
+  below the floor its own text establishes. `beta`/`approach`/`pitch_detail` all independently
+  state Bird Creek Camp at 4,200 ft, and `high_point_ft` is 8,323 ft (externally confirmed via
+  Wikipedia/trailcatjim's lidar re-survey) — a one-way rise of 4,123 ft. The row's own `itinerary`
+  scopes gain_ft/loss_ft to just the summit day ("Day 2: Round-trip summit push from Bird Creek
+  Camp ... to the summit and back"), matching `timing.totalHrs` (6, only plausible for one day, not
+  the full 3-day trip) — the same high-camp/summit-day-only scoping convention already documented
+  for the `wa_austera_peak` family in batch 178. For that out-and-back day the floor is
+  2 x 4123 = 8246 ft. Corrected both fields to that provable floor.
+- `wa_forbidden_peak_north_ridge` — `gain_ft` (4500) is below the floor implied by the row's own
+  7-point waypoint chain walked in order (3200 -> 6400 -> 7720 -> [rappel down to] 7570 -> [glacier
+  traverse down to] 7000 -> 8100 -> 8815), which sums to 6335 ft of cumulative climbing once the
+  two descending legs (the rappel off Sharkfin Col and the glacier traverse) are excluded — the
+  route genuinely dips and re-climbs, so even the simple net-rise floor (5615) understates it.
+  Corrected to 6335. `loss_ft` (5700) already clears the separate West Ridge descent floor
+  (8815-3200=5615) and was left as-is — ascent and descent use different lines here.
+- `wa_forbidden_peak_northeast_face` — `gain_ft` (4600) is below the floor from the row's own
+  waypoint chain (3200 -> 6400 -> 7000 -> 7300 -> 8000 -> 8815, a monotonic climb summing to
+  5615 ft, matching the simple trailhead-to-summit floor exactly). `loss_ft` (5200) is below that
+  same floor: the row's own `descent_text` states this route does not reverse itself and instead
+  descends the West Ridge/"Cat Scratch Gullies" system fully back to the 3200 ft trailhead, for
+  which the descent floor is identically 5615 ft. Corrected both to 5615.
+- `wa_forbidden_peak_northwest_face` — `gain_ft` (4800) is below the floor from the row's own
+  waypoint chain (3200 -> 6400 -> 6900 -> 7100 -> 7700 -> 8100 -> 8815, monotonic, summing to
+  5615 ft), which already matches the row's own correct `loss_ft` (5615, for the same West Ridge
+  descent back to the trailhead). Corrected gain_ft to 5615.
+- `wa_forbidden_peak_west_ridge` — `gain_ft` (6640) disagreed with `loss_ft` (5700) by 940 ft on a
+  route whose own `descent_text` is explicit that there is no separate descent line ("There is no
+  walk-off — descend the same West Ridge/couloir line"): for a route reversing its own ascent, gain
+  must equal loss (the gain-loss = net-elevation-change identity this audit has applied
+  repeatedly). The row's own waypoint chain (3200 -> 6200 -> 8265 -> 8815, monotonic, summing to
+  5615 ft) supports the loss_ft side — loss_ft's existing 5700 is a plausible 85 ft of real-terrain
+  padding above that floor, while gain_ft's 6640 has no support anywhere in the row. Lowered
+  gain_ft to match loss_ft (5700).
+
+**Clean / confirmed accurate (3):** `wa_flycatcher_buttress` (Flycatcher Buttress, North Early
+Winters Spire) — trailhead is described only as "about 5,100 ft" in prose (no structured `elevFt`),
+and the resulting gain-floor gap (~260 ft against the stored 2400) is within the imprecision of
+that figure; web search corroborates the hairpin-turn trailhead sitting just below 5,477 ft
+Washington Pass, consistent with "about 5,100 ft" — not flagged. `wa_forbidden_peak_east_ridge` —
+`gain_ft` (5615) already matches the trailhead(3200)-to-summit(8815) floor exactly; `loss_ft`
+(5215) sits close to it via a different (East Ledges) descent option and was left alone, consistent
+with how this same kind of small ascent/descent asymmetry has been treated elsewhere in this audit
+when the two paths genuinely differ. FA (Beckey, Hieb, Cooper, Claunch, 1958) confirmed via
+multiple sources (SummitPost, Mountaineers.org, alpinedave.com).
+
+**Flagged for human review (1, not fixed):** `wa_fortress_mountain_east_ridge` — `gain_ft` (5884)
+and `loss_ft` (7900) disagree by over 2,000 ft. Unlike the Forbidden Peak cases above, the
+trailhead(2800)-to-summit(8679) arithmetic here actually supports the *existing* `gain_ft` (net
+rise 5879, matching 5884 almost exactly), so gain_ft is not itself in violation of the floor test.
+`loss_ft` (7900) has no comparable support: no itinerary total, waypoint chain, or prose figure in
+this row states a specific descent total, and the approach text's mention of "traversing diagonally
+up toward Chiwawa Mountain's east ridge, descending to the ~7,200 ft col" implies some extra
+up-and-down beyond the simple trailhead-summit floor, but not a number a fix could be built on. Per
+this audit's established practice for an unsupported figure (see e.g. `wa_kololo_peaks_standard` in
+an earlier batch), left unfixed rather than guessing a replacement.
+
+Area hierarchy spot-checked for all four peaks touched (Flora Mountain under Stehekin, Forbidden
+Peak under Boston Basin, North Early Winters Spire under Liberty Bell Group, Fortress Mountain
+under Chiwawa/Entiat region) — all correctly filed, each area row's own lat/lng matching the
+routes' own stored coordinates.
+
+Elevations and FAs independently corroborated via web search for all four peaks: Forbidden Peak
+8,815 ft (Wikipedia) with all five of its routes' FA credits/dates confirmed exactly (West Ridge
+1940 Anderson/Beckey/Beckey/Crooks/Lind; North Ridge 1952 Beckey/Schwabland/Wilde; Northwest Face
+1959 Beckey/Cooper; Northeast Face 1961 Cooper/Ferguson; East Ridge Direct 1958
+Beckey/Hieb/Cooper/Claunch); Flora Mountain 8,323 ft (lidar-revised, matching this row's own
+`corrections` field); Fortress Mountain 8,679 ft (lidar-revised, also matching its own
+`corrections` field).
+
+`npm run check:sql -- audits/sql/2026-09-04-batch-190.sql` passed: 5 write targets across 5
+statements, every target id confirmed to exist, no destructive statements. All five current
+stored values re-read from the live DB immediately before writing this file and confirmed to
+still match the WHERE guards.
+
+Next batch continues from `wa_fortress_mountain_east_ridge` onward alphabetically (pass 4).

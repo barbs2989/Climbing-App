@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_fish_whistle",
+    "last_processed_id": "wa_fortress_mountain_east_ridge",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3932,6 +3932,24 @@
             "flagged_for_human_review": 1,
             "clean": 3,
             "note": "wa_eldorado_peak_eldorado_glacier_nw's `season` field (Oct-Apr) conflicts with its own `best_season` prose (May-June/summer/Oct-Nov cold snap) and with published trip-report consensus found via web search (late-fall-before-mid-Nov and mid-March-to-early-May windows with a dead zone between) -- none of the three descriptions agree cleanly, so this needs deeper research rather than a guessed fix. check:sql passed (8 of 9 targets independently checkable; the wa_fish_whistle watch_out UPDATE's WHERE guard has to contain real semicolons from the original stored value, which the preflight tool's naive statement splitter can't parse around -- Postgres itself handles it fine)."
+        },
+        {
+            "batch": 190,
+            "date": "2026-09-04",
+            "pass": 4,
+            "route_ids": [
+                "wa_flora_mountain_southwest_slope",
+                "wa_flycatcher_buttress",
+                "wa_forbidden_peak_east_ridge",
+                "wa_forbidden_peak_north_ridge",
+                "wa_forbidden_peak_northeast_face",
+                "wa_forbidden_peak_northwest_face",
+                "wa_forbidden_peak_west_ridge",
+                "wa_fortress_mountain_east_ridge"
+            ],
+            "fixed_count": 5,
+            "flagged_count": 1,
+            "sql_file": "audits/sql/2026-09-04-batch-190.sql"
         }
     ]
 }
