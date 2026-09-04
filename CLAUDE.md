@@ -3311,6 +3311,33 @@ the total when deciding where a new guard belongs.
   - So the class is **ONE**, already fixed, and a detector for it would report ~6 rows of which ~0
     are actionable. *A detector for a class of one is what this repo keeps refusing to build.*
     `scripts/oneoff/` holds no probe for this deliberately — the measurement is this bullet.
+- **A FOURTH ROPE DETECTOR, MEASURED AND REJECTED THE SAME DAY — and the two rejections together
+  give the rule that matters.** This one asked a genuinely different question from the third: not
+  *how many ropes*, but whether the **packing list names a SHORTER rope than the same row says the
+  descent requires**. It had a real founding instance —
+  `wa_huckleberry_mountain_east_ridge`'s `gear` offered a *"50-60m rope"* while three of its own
+  fields said 60 m is needed and that 40 m is too short — and it is outside both existing guards:
+  `check:rappel-lengths` needs `rappel_detail[].lengthM`, which that row has **null**.
+  - **Measured: 26 WA rows name a rope in the packing list AND state a required length; 5 were
+    flagged; ALL FIVE are false positives.** `wa_garfield_mountain_infinite_bliss` carries *"Two
+    60m ropes"*, exactly what it requires — the needle read the **negation** *"70 m or 80 m single
+    is not long enough"* as a 70 m requirement. `wa_mix_up_peak_east_face` says *"older 30m-rope
+    beta is outdated"* and carries a *20m accessory line*. `wa_mount_challenger_challenger_glacier`
+    says *"30-40m is enough"*. `wa_sinister_peak_southwest_route` says *"50m single or 60m double
+    rope"* — two correct options. And **Huckleberry was flagged by the repair that fixed it**: its
+    corrected text now reads *"a 40 m rope is too short for a full rappel"*, and the needle read
+    that disclaimer as offering 40 m.
+  - **THE RULE BOTH REJECTIONS SHARE: rope prose is written in OPTIONS, NEGATIONS, SUPERSEDED
+    FIGURES and HALVED REACHES, and no needle separates those from requirements.** A doubled 60 m
+    rope *is* 30 m of rappel, so "30" and "60" appear in one correct sentence; "not long enough",
+    "too short", "is enough" and "outdated" all put a number beside a requirement word while
+    meaning its opposite. Both founding defects were found by **reading the row**, not by a scan,
+    and both were decidable only because a THIRD field stated the shortfall outright.
+  - So: **do not build a rope-prose detector.** The arithmetic ones (`check:rappel-lengths`,
+    `check:rappel-single-rope`) work because they compare NUMBERS in structured columns. Every
+    attempt to read the requirement out of English has now been measured twice and returned ~0
+    real findings out of 11 candidates. `scripts/oneoff/` holds no probe for either, deliberately —
+    the measurement is this bullet and the one above it.
 - **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
   only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
   catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
