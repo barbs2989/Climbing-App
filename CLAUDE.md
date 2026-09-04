@@ -24,6 +24,7 @@ npm run check:seed-history # seed climbs must never be attributed to a real acco
 npm run check:overlay-discovery # every modal the app declares is still reachable by the guards (in build)
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
+npm run check:sample-content-removable # the sample content really does come out with the flag (in build)
 npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
@@ -1059,6 +1060,27 @@ the total when deciding where a new guard belongs.
     **its own** message. Without that last part run A passes on run B's row — a **false pass in the
     exact window this guard watches**. It had all of that while it sat in `scripts/oneoff/`; the
     only missing piece was the ability to clean up, and `0176` supplied it.
+  - **...AND ONE ASSERTION WAS NEVER IN THAT ENUMERATION, which is how a concurrency hole hid in
+    the half of the guard that is ABOUT concurrency.** The three named above really are safe. The
+    **thread-list preview** was a fourth, and a preview **cannot** be run-attributable: both runs
+    send mate→owner, so there is **one thread**, and its preview shows only the **newest** message.
+    A second run inserting between this run's insert and its assertion makes the run assert on its
+    own `GITHUB_RUN_ID` and see the other's body.
+    - **Observed rather than theorised**: on #1595 `render-guards` started **06:06:09** on a branch
+      and **06:12:23** on main, and this was the **only one of nine** assertions to fail, with main
+      green on that workflow either side. A re-run went green.
+    - The fix keeps both properties by splitting them. `BODY_PROSE` is the shared, distinctive
+      sentence and the **preview** asserts that — delivery is still provable before anything is
+      opened. This run's own tag stays pinned by the **OPEN THREAD**, which lists *every* message,
+      so `thread.includes(BODY)` was concurrency-safe all along.
+    - **Loosening an assertion is only correct if it can still FAIL**, so that is what is tested:
+      `scripts/oneoff/probe-message-preview-concurrency.mjs` lifts the strings from source with
+      `ANCHOR LOST` and checks the raced inbox passes **and** that an empty inbox and an unrelated
+      conversation still fail. A change that made the assertion unfailable would be worse than the
+      flake it cures.
+    - **The lesson is the enumeration.** The header listed what holds under concurrency and the
+      code had one more assertion than the list. When adding one here, check it against that list
+      rather than assuming the header covers it.
   - **THE PRODUCT QUESTION WAS ANSWERED, AND NOT FOR THE TEST'S SAKE — which is the distinction
     this bullet used to be about.** It read *"a climber cannot delete a message they sent or
     received, ever … adding a policy to make a test tidy would be the wrong reason to answer it"*,
@@ -6160,6 +6182,27 @@ the correction knows the screen is wrong, and they have no way to report it.
       as *"0 km"* and reads as a bug rather than as the point; `_shortDist` gives metres or feet.
       `uImp()` is the real boolean there too — `uDistMi` is a FORMATTER and always truthy, the #641
       trap. A guard case pins that the span does not round away.
+  - **AND A SECOND BRANCH FOR A LINE WITH TOO FEW POINTS TO BE A RECORDING OF ANYTHING — a
+    CATEGORICAL claim rather than a threshold.** Fifteen routes store a "track" of exactly **TWO**
+    points; `wa_mount_rainier_edmunds_headwall` is a single straight segment across **16.4 km** of
+    Mount Rainier, drawn under ROUTE TRACK with Download GPX and no caption. N points make N-1
+    straight segments; at two that is one chord, and no reading makes a chord a recording of a walk.
+    **16 routes** (15 two-point, 1 three-point).
+    - **FOUR IS THIS FILE'S OWN FLOOR, not a new number**: `trackCoverage` already returns null
+      below it for the same reason. And the data has a void either side — among the lines the app
+      says nothing about, vertex counts run 2, 3, 4, 6, 7, 8, 10, 11 and then **jump to 20**.
+    - **DELIBERATELY NOT WIDER, and the guard pins the floor as hard as the finding.** An
+      eight-point line across 18 km is equally implausible, and saying so needs an argument about
+      how coarse a SIMPLIFIED track may be — which the continuous spacing distribution does not
+      support. `floor-widened-to-eight` must fail.
+    - **The vertex-count axis has a void where SPACING does not**, which is why it was worth asking
+      after concluding spacing could not separate. Two different axes; one measurement does not
+      settle the other.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-not-a-track-cases.mjs`). **The STUB fixture
+      was two points and had to be widened to four**: a two-point stub also satisfies the
+      too-few-points branch, so killing the placeholder branch left it captioned anyway and the case
+      came back WRONG FAILURE — the same wrong-half mistake the two-point cases already record,
+      caught only because each case is judged on its own failure text.
   - **THE DIFFERENT-APPROACH TEST WAS UNREACHABLE IN HALF THE CASES IT EXISTS FOR.** It asks
     whether the line passes ANY of the route's own pins, and it sat **below** `if (!missingApproach
     && !missingSummit) return null` — so it could only ever speak about a line that was ALSO short
