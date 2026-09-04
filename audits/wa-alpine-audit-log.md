@@ -13972,3 +13972,111 @@ with AAC Publications specifically.
 
 Next batch continues from `wa_lemah_two_goatshead_spire` onward alphabetically
 (pass 4).
+
+## Batch 199 (2026-09-04, pass 4)
+
+Routes: `wa_lena_lake_to_mt_stone_traverse`, `wa_lewis_creek_route`,
+`wa_lexington_tower_east_face`, `wa_liberty_and_injustice_for_all`,
+`wa_liberty_bell_beckey_route`, `wa_liberty_bell_east_face`,
+`wa_liberty_bell_independence_route`, `wa_liberty_bell_nw_face`.
+
+**Confirmed errors fixed (5):**
+- `wa_lewis_creek_route` — `timing.sectionBreakdown[0].note` was truncated
+  mid-word (ended "...now-standard Barclay Lake clim…" with a literal
+  ellipsis character). Completed the obviously-intended word and closed the
+  sentence; no new facts introduced.
+- `wa_lexington_tower_east_face` — the Trailhead waypoint ("SR-20 Hairpin /
+  Pond Pullout (east of Washington Pass)", 48.51454,-120.64332) stored
+  elev/elevFt 5450. Querying every route on the adjacent `wa_liberty_bell`
+  area with a Trailhead waypoint found 6 sibling routes using this *exact*
+  name and coordinate (`wa_liberty_crack`, `wa_liberty_crack_free`,
+  `wa_liberty_bell_thin_red_line`, `wa_liberty_bell_east_face`,
+  `wa_liberty_and_injustice_for_all`, plus `wa_liberty_bell_independence_route`
+  at 5160) and all converge on 5200 ft; this route alone said 5450. Web
+  sources describing the pullout ("just east of Washington Pass," itself at
+  5,477 ft) are consistent with ~5,100-5,200 ft. Corrected to 5200 to match
+  the corroborated value, and recomputed gain_ft/loss_ft (was 2171 = notch
+  7621 − old TH 5450) to 2421 = 7621 − 5200.
+- `wa_liberty_bell_east_face` (Liberty Bell's own moderate 4-pitch 5.6 East
+  Face — a different route from `wa_lexington_tower_east_face`, a much
+  harder 10-pitch 5.9+ line on the neighboring Lexington Tower) had two
+  contamination bugs:
+  - `beta` read "Ten pitches of varied crack, chimney and face climbing on
+    the East Face, with a difficult-to-protect slopey pitch 1 traverse and
+    an offwidth crux (pitch 6) passing a fixed 2x4 and two bolts to an
+    alcove" — this is verbatim Lexington Tower's East Face pitch 6, and
+    directly contradicts this row's own `pitches` (4, not 10) and its own
+    internally-consistent `pitch_detail` array (4 pitches: 5.4/5.6/5.5/5.4,
+    no offwidth, no 2x4, no bolts). Re-homed a corrected beta summary built
+    from this route's own `pitch_detail`, rather than inventing new facts.
+  - The Trailhead waypoint's `note` said "Signed pullout on SR-20 about 1.5
+    mi **west** of Washington Pass" — the Blue Lake Trailhead description,
+    copied from the Beckey Route/NW Face waypoints at a different coordinate
+    — while this same waypoint's own `directions` field (and the route's
+    name/hazards) correctly describe the **east**-side hairpin pullout and
+    explicitly say "not the Blue Lake Trailhead." Replaced `note` with the
+    correct east-side wording already used by sibling
+    `wa_liberty_bell_independence_route` at the identical coordinate.
+- `wa_liberty_bell_nw_face` — `loss_ft` was null despite `gain_ft` (2520)
+  being populated. The route's own descent text says it follows "the
+  standard Liberty Bell descent," identical to sibling
+  `wa_liberty_bell_beckey_route`, whose `loss_ft` is 2546. Filled from that
+  sibling's value rather than inventing a new number.
+
+**Flagged for human review (2 routes, 3 items):**
+- `wa_lexington_tower_east_face`:
+  - `dist_km` (10.46 km) is far larger than the route's own
+    waypoint-recorded one-way distance (1.2 mi = 1.93 km to the notch), and
+    every external description (Mountain Madness, SummitPost) calls the
+    approach short. But surveying `dist_km` across all 20 routes on the
+    `wa_liberty_bell` wall found it varies widely (1.6-8.69 km) for routes
+    with similar-length approaches, so the column's convention here isn't
+    fully understood and no specific replacement was written.
+  - The "Lexington Tower notch" waypoint (7621 ft) exceeds Lexington
+    Tower's confirmed true-summit elevation (7,560 ft, matching this row's
+    own `high_point_ft`) despite the route's own hazards text stating "you
+    do not tag the true summit" — the notch is described as below the
+    summit but stored above it. Small (61 ft) but logically impossible; no
+    sourced replacement elevation for the notch was found.
+- `wa_liberty_and_injustice_for_all` — `dist_km` (8.05 km) is an exact
+  duplicate value shared with two unrelated routes on the same wall
+  (`wa_live_free_or_die`, `wa_a_servant_to_liberty`) and roughly double the
+  ~4 km typical for comparable East Face lines here. Possibly a copy-paste
+  artifact, but the same convention ambiguity noted above means no
+  confident replacement value was determined.
+
+**Clean (3):** `wa_lena_lake_to_mt_stone_traverse` (all facts — waypoint
+elevations, gain/loss, permit requirements, hazards — checked plausible and
+internally consistent, no discrepancies found); `wa_liberty_bell_beckey_route`
+(FA — Fred Beckey, Jerry O'Neil, Charles Welsh, September 27, 1946 — confirmed
+exactly via web search, along with Liberty Bell's summit elevation 7,720+ ft
+matching this row's own waypoint); `wa_liberty_bell_independence_route` (FA —
+Alex Bertulis & Don McPherson, 1966, 180 pitons + 5 bolts, F8 A4; FFA Steve
+Risse & Keith Hertel, 1991 — both confirmed via web search matching exactly,
+including the piton/bolt count).
+
+Also confirmed via web search but not otherwise actionable: Gunn Peak's FA
+(`wa_lewis_creek_route`, "Dr. H.B. Hinman, Walter Eriksen, Louis Lesh, July 18
+1915, fifth attempt, via Lewis Creek") matches published sources exactly;
+Barclay Lake Trailhead's Northwest Forest Pass requirement confirmed via
+USFS. `wa_liberty_bell_nw_face`'s primary FA (Hans Kraus & John Rupley, 1956)
+confirmed; its secondary "Free FA: Sandy Bill, Ron Burgner, Ian Martin & Frank
+Tarver, 1966" claim could not be independently corroborated or contradicted
+(AAC Publications full text inaccessible) and was left as-is.
+
+`npm run check:sql` was not run — this environment has no `node_modules` and
+no `.env`/`.env.local` credentials, same as recent batches. All four UPDATE
+statements were hand-verified instead: current stored values re-read from the
+live DB via curl/anon-key REST immediately before writing the file, matching
+each WHERE guard exactly, and each statement is an idempotent no-op if the row
+has already changed.
+
+WebSearch was used throughout and returned useful snippet-level confirmation
+for FA parties/dates and elevations even where full pages were blocked.
+WebFetch was attempted on en.wikipedia.org, chossclimbers.com,
+mountainproject.com, supertopo.com, and stephabegg.com and blocked by the
+network egress proxy on all five — the same class of gap recent batches have
+hit (WTA, climberkyle.com, AAC Publications).
+
+Next batch continues from `wa_liberty_bell_nw_face` onward alphabetically
+(pass 4).
