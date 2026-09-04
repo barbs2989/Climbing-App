@@ -10,8 +10,8 @@
 //     letter grades (5.11c etc) carrying a grade_num : 2444
 //        2090  store a FRACTION   (5.11c -> 11.75)      <- 98% of those that store either
 //          32  store the INTEGER  (5.11c -> 11)
-//     Class grades carrying a grade_num              :  264
-//         225  store the LOW end  ("Class 3-4" -> 3)    <- 85%
+//     Class RANGES ("Class 3-4") whose two ends DIFFER :  149
+//         129  store the LOW end   ("Class 3-4" -> 3)     <- 89% of those storing either
 //          16  store the HIGH end
 //
 // So the fractional/low-end answers ARE the convention, the integer rows are the outliers, and
@@ -25,10 +25,16 @@
 // where the parser's answer is WORSE than the null, and no amount of catalog convention changes it.
 //
 // AND A CLASS RANGE RAISES A SECOND QUESTION THIS DECISION DID NOT SETTLE: which END does grade_num
-// store? The catalog says the LOW end 225 times and the HIGH end 16. That is a lean, not a
+// store? The catalog says the LOW end 129 times and the HIGH end 16. That is a lean, not a
 // convention, and nothing like the 98/2 the letter grades give — so a row storing the HIGH end of
 // its own range is REPORTED, not repaired. It is doing what 16 other rows do, and choosing between
 // them is a separate call. A row storing NEITHER end has no such defence and IS repaired.
+//
+// THAT FIGURE READ 225/16 WHEN THIS SHIPPED, AND THE DENOMINATOR OF MY OWN COUNT WAS THE PROBLEM:
+// it tested `n === lo` first, so all 74 SINGLE Class grades — where lo and hi are the same value —
+// tallied as "stores the LOW end". A single grade cannot vote on a question about ranges. The
+// conclusion is unchanged, since 89% is still nothing like the letter grades' 98%, but the dissent
+// is 1-in-9 rather than 1-in-15. Ask what a number is a number OF, including your own.
 //
 // Every new value is COMPUTED by the app's own `gradeNumFrom` — nothing is typed, so a row needing a
 // number the parser cannot produce cannot be expressed here.
@@ -77,9 +83,9 @@ for (const [k, list] of [...by].sort((a, b) => b[1].length - a[1].length)) {
 console.log(`\n${skippedNumeral.length} row(s) skipped as carrying a ROMAN NUMERAL — commitment, not technical,`);
 console.log(`so the parser's answer would be worse than what is stored.`);
 console.log(`\n${rangeEnd.length} row(s) REPORTED, NOT REPAIRED: they store one END of their own Class range.`);
-console.log(`The catalog stores the LOW end 225 times and the HIGH end 16 — a lean, not a convention,`);
-console.log(`and nothing like the 98/2 the letter grades give. Which end a RANGE stores is its own`);
-console.log(`decision, and these rows are doing what 16 others do.`);
+console.log(`Of the 149 ranges whose ends differ, 129 store the LOW end and 16 the HIGH — a lean,`);
+console.log(`not a convention, and nothing like the 98/2 the letter grades give. Which end a RANGE`);
+console.log(`stores is its own decision, and these rows are doing what 16 others do.`);
 for (const x of rangeEnd.slice(0, 6)) console.log(`  ${x.grade.padEnd(12)} stored ${String(x.was).padEnd(5)} parser ${x.now}   ${x.id}`);
 
 if (!fix.length) { console.log("\nNothing to do."); process.exit(0); }
