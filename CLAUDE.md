@@ -2085,11 +2085,26 @@ the total when deciding where a new guard belongs.
   - Fails **closed**: a missing `PRIVACY_CONTROLS_LIVE`, no gated block found (every switch would
     read as ungated), fewer than 7 switches parsed, fewer than 3 ungated, or either climber-select
     anchor going missing.
-  - Injection-tested **11/11** (`scripts/oneoff/inject-visibility-switch-cases.mjs`), each case
+  - **IT READ ONE FILE AND THE PREFERENCE HAS A CONTROL IN TWO, which is a reach limitation found
+    by measuring rather than by reading.** `show_name` also has a switch in the profile EDITOR, in
+    `ClimbMatchCore.jsx` — a file the first version did not open. **Not a defect**: `openEdit` seeds
+    `showRealName: showRealName` from live state and `saveEdit` writes the column *and* calls
+    `setShowRealName`, so the pair round-trips. Verified rather than assumed. But a guard that
+    cannot SEE it would not notice a future editor switch doing none of that.
+    - A third persistence kind, `draft`, with its own rule: the draft must be **seeded from the live
+      value on open** (or opening the editor and saving silently resets the preference — the shape
+      #1581 records for the float plan losing eleven fields) and **pushed back on save** (or Settings
+      and the editor disagree until reload).
+    - Core carries no `PRIVACY_CONTROLS_LIVE` ternary — that is an App construct — so a Core switch
+      is always rendered and always has to be declared. A `role="checkbox"` is deliberately not
+      collected: an attestation or an also-block tickbox is a form input, not a claim about what
+      others can see.
+  - Injection-tested **14/14** (`scripts/oneoff/inject-visibility-switch-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Five are the
-    real pre-0177 defects, two pin rule 2 and two pin rule 3 — including the stat tile exactly as
-    it shipped. **Two must stay SILENT** — a `derived` switch that is genuinely derived, and an
-    undeclared flag inside a gated block, which promises nothing.
+    real pre-0177 defects, two pin rule 2, two pin rule 3 — including the stat tile exactly as it
+    shipped — and three pin the `draft` kind and the Core scope. **Two must stay SILENT** — a
+    `derived` switch that is genuinely derived, and an undeclared flag inside a gated block, which
+    promises nothing.
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
