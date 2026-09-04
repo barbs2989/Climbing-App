@@ -13839,3 +13839,60 @@ cross-checked against each row's own internal fields, its waypoints' internal ge
 (for Jack Mountain) the catalog's own `areas` table record.
 
 Next batch continues from `wa_johannesburg_mountain_cj_couloir` onward alphabetically (pass 4).
+
+## Batch 197 (pass 4) — 2026-09-04
+
+Checked: `wa_johannesburg_mountain_northeast_buttress`, `wa_kimtah_peak_scramble`,
+`wa_king_kong_gorillas_direct_direct`, `wa_klawatti_peak_southeast_face`,
+`wa_klawatti_peak_sw_buttress`, `wa_koala_krack`, `wa_kololo_peaks_standard`,
+`wa_kyes_peak_glaciated_scramble`.
+
+**Fixed (2):**
+- `wa_king_kong_gorillas_direct_direct` — `fa` named the free-ascent partner as "Tyree
+  Johnson"; AAC Publications and the FA climber's own blog (solclimbs.blogspot.com)
+  both confirm it was Jon Gleason (Sept 9, 2016). The row's own `beta` field already
+  had the correct name — only `fa` was wrong.
+- `wa_kyes_peak_glaciated_scramble` — `loss_ft` (707 ft) was far below the geometric
+  floor. `descent_text` states the descent reverses the identical ascent trail back to
+  the same trailhead (a single car-to-car day, per `timing`/`itinerary`), so total
+  descent must equal total ascent. Set `loss_ft = gain_ft` (6023).
+
+**Flagged for human review (2):**
+- `wa_johannesburg_mountain_northeast_buttress` — two issues, neither auto-fixed: (1)
+  `fa` names Tom Miller's 1951 partner only as "and partner" while `beta` names "David
+  Harrah"; search snippets alone couldn't confirm the second name (AAC Publications
+  full text was inaccessible). (2) `dist_km` (1.6 km) is shorter than the
+  trailhead-summit chord (1.72 km, haversine from the row's own waypoints) and
+  disagrees with the row's own Summit waypoint cumulative `distMi` (1.8 mi = 2.9 km) —
+  a real geometric floor violation, but which convention `dist_km` is meant to follow
+  here is ambiguous, so no auto-fix.
+- `wa_kimtah_peak_scramble` — `bivy` array carries 7 entries; at least 3 (Wing Lake,
+  Lewis Lake, "Rainy Pass trailhead lots") are explicitly described in their own notes
+  as Black Peak/Corteo camps reached via Rainy Pass, a different trailhead entirely
+  from this route's own Easy Pass access. Looks like a shared/propagated corridor camp
+  list not trimmed to what this route actually uses. Flagged rather than swept —
+  deciding which of the 7 genuinely serve Kimtah needs careful per-entry reading, and
+  this catalog's own audit notes explicitly warn against sweeping this class of
+  defect. (Its `fa` field was independently confirmed correct via search despite a
+  stale `data_quality.gaps` note claiming no FA was found; left as-is since it's an
+  internal documentation gap, not a fact rendered on screen.)
+
+**Clean (4):** `wa_klawatti_peak_southeast_face` and `wa_klawatti_peak_sw_buttress`
+(FA and elevation both confirmed — Lloyd Anderson/Karl Boyer/Tom Gorton, July 7 1940,
+8,485 ft); `wa_koala_krack` (already self-flags its own low confidence in
+`corrections`, nothing new found); `wa_kololo_peaks_standard` (road-status field
+already correctly reflects the Mountain Loop Highway reopening from this branch's
+earlier fix).
+
+`npm run check:sql` was not run — this environment has no `node_modules` and no
+`.env`/`.env.local` credentials. Both UPDATE statements were hand-verified instead:
+current stored values re-read from the live DB via curl/anon-key REST immediately
+before writing the file (matching each WHERE guard exactly), and each statement is an
+idempotent no-op if the row has already changed.
+
+WebSearch was available and used throughout; WebFetch to primary route-beta/AAC
+Publications pages remained unavailable, which is what left the Johannesburg FA
+partner name unresolved rather than confirmed either way.
+
+Next batch continues from `wa_kyes_peak_glaciated_scramble` onward alphabetically
+(pass 4).
