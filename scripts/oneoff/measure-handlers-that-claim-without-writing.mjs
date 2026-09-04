@@ -49,7 +49,35 @@ for (const rel of FILES) {
     for (const s of p.node.specifiers)
       if (s.type === "ImportSpecifier" && s.imported && writes.has(s.imported.name)) alias[s.local.name] = s.imported.name;
   }});
-  const isWrite = (n) => writes.has(n) || !!alias[n];
+  // A LOCAL WRAPPER AROUND A WRITE IS A WRITE, and not resolving one is how this scan reported
+  // several correct log/report handlers. `syncLogToDb` is declared in App and calls createClimbLog
+  // / updateClimbLog inside itself; a handler calling it persists, and a scan that only knows
+  // lib/db.js exports sees no write at all. Closed to a fixpoint, so a wrapper of a wrapper counts.
+  const localWriters = new Set();
+  const fnBodies = new Map();                 // local function name -> its source text
+  traverse(ast, {
+    VariableDeclarator(p) {
+      if (p.node.id.type !== "Identifier" || !p.node.init) return;
+      const t = p.node.init.type;
+      if (t !== "ArrowFunctionExpression" && t !== "FunctionExpression") return;
+      fnBodies.set(p.node.id.name, src.slice(p.node.init.start, p.node.init.end));
+    },
+    FunctionDeclaration(p) {
+      if (p.node.id) fnBodies.set(p.node.id.name, src.slice(p.node.start, p.node.end));
+    },
+  });
+  const namesWrite = (text) => [...writes, ...Object.keys(alias)].some((w) => new RegExp(`\\b${w}\\s*\\(`).test(text));
+  for (let pass = 0; pass < 5; pass++) {
+    let grew = false;
+    for (const [name, text] of fnBodies) {
+      if (localWriters.has(name)) continue;
+      if (namesWrite(text) || [...localWriters].some((w) => new RegExp(`\\b${w}\\s*\\(`).test(text))) {
+        localWriters.add(name); grew = true;
+      }
+    }
+    if (!grew) break;
+  }
+  const isWrite = (n) => writes.has(n) || !!alias[n] || localWriters.has(n);
 
   traverse(ast, {
     "ArrowFunctionExpression|FunctionExpression"(p) {
