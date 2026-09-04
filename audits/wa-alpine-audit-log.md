@@ -13288,3 +13288,108 @@ stored values re-read from the live DB immediately before writing this file and 
 still match the WHERE guards.
 
 Next batch continues from `wa_fortress_mountain_east_ridge` onward alphabetically (pass 4).
+
+## 2026-09-04 — Pass 4, Batch 191
+
+Nine routes across seven peaks (Fortress Mountain 2, Fortune Peak 2, South Early Winters Spire 1,
+Frenzel Spitz 1, Little Tahoma 1, Ghost Peak 1, Gilbert Peak 1): Northeast Ridge, Southwest Face
+(Fortress); East Slope Route, Standard Route (Fortune); Free Mojo (SEWS); South Route (Frenzel
+Spitz); Frying Pan/Whitman Glaciers (Little Tahoma); South Route (Ghost Peak); Conrad Glacier
+(Gilbert Peak).
+
+**Fixed (4):**
+
+- `wa_free_mojo` — `gain_ft`/`loss_ft` (2200/2200) are below the floor set by the row's own two
+  waypoints: Blue Lake Trailhead at 5,200 ft and the South Early Winters Spire summit at 7,807 ft
+  (elevation independently confirmed via web search as the Liberty Bell Group's high point). Net
+  rise = 2,607 ft, and the row's own `descent_text` confirms the route fully reverses itself (finish
+  via the South Arete to the summit, then descend the South Arete) — so gain must equal loss and
+  both must clear that floor. Corrected both to 2607. Separately, `dist_km` (8.37) converts to
+  exactly 5.2 mi, the same figure the row's own `itinerary` gives for the whole car-to-car day
+  (i.e. round trip, not the app's one-way convention) — halved to 4.19 km, consistent with this
+  route's own waypoint `distMi` of 2.3 mi one-way to the summit.
+- `wa_frying_pan_whitman_glaciers` — `gain_ft` (7600) disagreed with the row's own `loss_ft` (7338)
+  on a route whose `descent_text` is explicit that the descent fully reverses the ascent back to the
+  same trailhead. The row's own day-by-day `itinerary` breakdown sums to exactly 7338 ft for BOTH
+  cumulative gain and cumulative loss, matching the existing `loss_ft` precisely and giving no
+  support to the stored `gain_ft`. Lowered `gain_ft` to 7338 to match.
+- `wa_ghost_peak_south_route` — `dist_km` (70.81) converts to exactly 44 mi, matching this route's
+  own itinerary `totalNote` ("~44-mile round trip") and the sum of its six day-by-day itinerary
+  `miles` values (43.7 mi) — i.e. it is storing the round-trip figure, not the app's one-way
+  convention. The row's own waypoint chain independently gives the one-way distance to the summit
+  as `distMi: 22`, matching half the round trip almost exactly. Halved `dist_km` to 35.41 km.
+- `wa_gilbert_peak_conrad_glacier` — `road.name`/`status`/`seasonalGate` were all null, with only a
+  Mazamas driving-distance-from-Portland note in `driveNote`. Filled in the road name and WA-side
+  driving directions (from Naches via US-12, Forest Road 1200/Tieton Reservoir Road, then Forest
+  Road 1000/South Fork Tieton Road to the Conrad Meadows trailhead) from multiple independently
+  agreeing sources (USFS Okanogan-Wenatchee National Forest trail page, multiple hiking guides),
+  preserving the existing Mazamas note rather than overwriting it. `status`/`seasonalGate` left null
+  — no current-condition source was found, and inventing one would be a guess.
+
+**Clean / confirmed accurate (3):** `wa_fortune_peak_east_slope` and `wa_fortune_peak_standard_route`
+— both `gain_ft` values clear the trailhead(4,269 ft)-to-summit(7,382 ft) floor with reasonable
+padding; `dist_km`/waypoints are self-consistent; Fortune Peak's 7,382 ft elevation independently
+confirmed via web search (Wikipedia/PeakVisor), matching the row's own `corrections` note comparing
+its stored peak coordinate to Wikipedia's. `wa_frenzel_spitz_south_route` — `gain_ft` (7700) matches
+its own itinerary day-by-day sum (5200+800+1300+400=7700) exactly; `dist_km` (14.48) correctly
+represents the one-way distance (half of the itinerary's own confirmed 18-mile round trip); FA (Ed
+Cooper, Glen Denny, Joan Firey, Joe Firey, George Whitmore, Sept 10 1961) and elevation (7,440 ft)
+both independently confirmed via web search (rhinoclimbs.com peak history, AAC Publications). Minor
+unfixed note: the row's own itinerary prose describes the Crescent Creek Basin camp as "~6,200 ft"
+while its `waypoints` array lists the same camp at 5,900 ft — a ~300 ft discrepancy between two
+hedged ("~") figures, too small and imprecise to correct with confidence.
+
+**Flagged for human review (2, not fixed):**
+
+- `wa_fortress_mountain_northeast_face` and `wa_fortress_mountain_southwest_face` both carry an
+  identical 9-entry `bivy` array that is shared verbatim across at least 19 WA routes spanning
+  Fortress Mountain, Bonanza Peak, Chiwawa Mountain, Carne Mountain, Cloudy Peak, North Star
+  Mountain, Dumbell Mountain, Mount Maude, Martin Peak, Buckskin Mountain, Copper Peak and Seven
+  Fingered Jack — a shared Chiwawa/Railroad Creek/Entiat corridor camp list of the kind this
+  catalog is known to sometimes apply too broadly. Most of the list (Holden Village, Holden
+  Ballpark Campground, Holden Lake, Holden Pass, Lyman Lakes/Cloudy Pass, Spider Meadow/Phelps
+  Basin, Leroy Basin, Ice Lakes) describes camps reached via an entirely different, non-connecting
+  trailhead system (the Lake Chelan ferry + Railroad Creek Road to Holden, or the Phelps Creek
+  trailhead/Spider Gap) than Fortress Mountain's own stated approach (Trinity Trailhead via Chiwawa
+  River Road/Buck Creek Trail) — only the final entry ("Phelps Creek Campground and the Chiwawa
+  River road campgrounds") directly names Fortress Mountain's own trailhead. Not fixed here: sorting
+  out which of the ~9 camps genuinely fits each of the ~19 affected routes (several of which, like
+  Chiwawa Mountain and Bonanza Peak, plausibly DO belong with some of these camps) needs the kind of
+  per-route distance/elevation/prose-corroboration review this catalog's own camp-fit auditing does,
+  across routes well outside this batch — a partial fix touching only the 2 Fortress routes here
+  risks being inconsistent with whatever the other ~17 routes eventually need.
+- `wa_frying_pan_whitman_glaciers` — this route's own `data_quality.gaps` field already flags that
+  it appears to describe the same physical route as `wa_little_tahoma_east_shoulder` (identical FA,
+  approach, and glacier crossings), and comparing the two live rows confirms this: same FA, same
+  Fryingpan/Whitman/East-Shoulder line, same trailhead. Whether these should be merged or
+  cross-referenced is a catalog-structure decision, not a fact fix, so left to a human maintainer as
+  the row's own note already suggests. (Also worth noting: the sibling row's `gain_ft`/`loss_ft` are
+  both 7600, matching this row's PRE-fix `gain_ft` rather than the itinerary-supported value applied
+  above — since the two records may share data lineage rather than being independent, this was not
+  treated as corroboration for either value.)
+
+Area hierarchy spot-checked for all seven peaks (Fortress Mountain/Chiwawa-Entiat region, Fortune
+Peak/Teanaway, South Early Winters Spire/Liberty Bell Group, Frenzel Spitz/Southern Pickets, Little
+Tahoma/Southwest Cascades, Ghost Peak/Northern Pickets, Gilbert Peak/Southwest Cascades) — all
+correctly filed, each area row's own lat/lng matching the routes' own stored peak coordinates
+exactly or near-exactly.
+
+Elevations and FAs independently corroborated via web search for six of seven peaks (South Early
+Winters Spire 7,807 ft; Fortune Peak 7,382 ft; Frenzel Spitz 7,440 ft, FA Sept 10 1961; Little
+Tahoma 11,138 ft, FA Aug 29 1894 Flett/Garrison; Ghost Peak 8,000+ ft — Wikipedia's own "0.30 mi NNE
+of Phantom Peak, 0.20 mi south of Crooked Thumb Peak" phrasing matches this row's waypoint note
+verbatim, FA July 17 1970 Firey/Firey/Knudson/Renz; Gilbert Peak 8,184 ft, also confirming Conrad
+Glacier is on the peak's north slope as this row's `aspect`/`face` state). Primary route-beta sites
+(SummitPost, Mountain Project, Mountaineers.org, individual trip-report blogs) remain blocked by the
+network egress proxy in this environment, so verification relied on independently-agreeing search
+snippets and secondary sources (Wikipedia, PeakVisor, rhinoclimbs.com, AAC Publications) rather than
+primary guidebook text — consistent with prior batches' experience of this limitation.
+
+`npm run check:sql -- audits/sql/2026-09-04-batch-191.sql` passed: 4 write targets across 4
+statements, every target id confirmed to exist, no destructive statements. Note: the script also
+warned that the file (5.2 KB) exceeds the SQL Editor's ~4 KB safe-paste size — split into per-
+statement chunks (the file's own `===` dividers) and verify each before pasting the next. All four
+current stored values re-read from the live DB immediately before writing this file and confirmed
+to still match the WHERE guards.
+
+Next batch continues from `wa_gilbert_peak_conrad_glacier` onward alphabetically (pass 4).
