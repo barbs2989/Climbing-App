@@ -42,7 +42,14 @@
 // probe, because the durable accounts are SHARED between runs:
 //   THIS ONE IS SAFE, and that is why it is the one promoted. Two concurrent runs each insert a
 //   row mate->owner and every assertion holds with either or both present: the inbox is not empty,
-//   the sender is identified, the body is on screen. Teardown deletes BY ID, never by sender, so
+//   the sender is identified, the body is on screen.
+//   THE ENUMERATION WAS ACCURATE AND THE CODE HAD ONE MORE ASSERTION THAN IT, which is how a
+//   concurrency hole hid in a file whose header is about concurrency. Those three are safe; the
+//   THREAD-LIST PREVIEW was a fourth, and a preview cannot be run-attributable — both runs send
+//   mate->owner, so there is ONE thread and its preview shows only the NEWEST message. It now
+//   asserts the shared prose, and this run's own tag is pinned by the OPEN THREAD, which lists
+//   every message. When adding an assertion here, check it against the enumeration rather than
+//   assuming the header covers it. Teardown deletes BY ID, never by sender, so
 //   one run cannot tear down another's evidence. The body carries GITHUB_RUN_ID, so a run asserts
 //   on ITS OWN message rather than on whatever happens to be in the thread — without that, run A
 //   passes on run B's row, a false pass in exactly the window this guard watches.
@@ -111,7 +118,10 @@ const ANON = envVal("VITE_SUPABASE_ANON_KEY");
 // assertion pass on run B's message — a false pass in exactly the window this guard is meant to
 // watch. The run id makes each message attributable to the run that sent it.
 const RUN_TAG = process.env.GITHUB_RUN_ID || `${process.pid}-${Date.now().toString(36)}`;
-const BODY = `Bringing the 60m and a light rack — meet at the pullout at five? [${RUN_TAG}]`;
+// The prose and the tag are SEPARATE because they prove different things, and only one of them
+// survives a second concurrent run. See the preview assertion below.
+const BODY_PROSE = "Bringing the 60m and a light rack — meet at the pullout at five?";
+const BODY = `${BODY_PROSE} [${RUN_TAG}]`;
 
 let fixture = null, server = null, browser = null, msgId = null, mateTok = null;
 
@@ -186,16 +196,33 @@ try {
   // copy — so this is asserted on text, never on length.
   must(!/No friend chats yet/i.test(inbox), 'the inbox does not say "No friend chats yet" with a message waiting in it');
   // IDENTIFIED, not NAMED. The Inbox renders the sender through `pubName`, which falls back to the
-  // handle unless `showName` is set — and a DB profile can never carry it (`profiles` has no
-  // `show_name` column). So "@robinbelay" is what the app correctly does today, and asserting the
-  // display name would be asserting a defect as though it were the contract. Same correction the
-  // profile walk needed, in a different component.
+  // handle unless `showName` is set.
+  //
+  // THIS COMMENT USED TO SAY "a DB profile can never carry it (`profiles` has no `show_name`
+  // column)". That was true when written and 0175 added the column; #1540 made the switch real,
+  // so a climber CAN now publish their display name. The conclusion survives the correction, for
+  // a better reason: `show_name` defaults FALSE, so a fixture account that never set it still
+  // renders as a handle — and this guard must not depend on a preference the fixture could flip.
+  // Accepting either is what keeps it a test of DELIVERY rather than of the mate's own setting.
   const mateHandle = "@" + mateName.toLowerCase().replace(/[^a-z0-9]/g, "");
   const identified = inbox.includes(mateName) || inbox.includes(mateHandle);
   must(identified, `the sender is identified ("${mateName}" or "${mateHandle}")`);
   must(!/\bClimber\b/.test(inbox), 'the sender did not degrade to the "Climber" fallback useProfilesByIds uses at this call site');
   // The preview carries the message itself, so delivery is provable before any thread is opened.
-  must(inbox.includes(BODY), "the message body is previewed in the thread list");
+  //
+  // ASSERTED ON THE PROSE, NOT ON THIS RUN'S TAG, and that is forced rather than lax. Both runs
+  // send from the same mate to the same owner, so there is ONE thread, and a thread-list preview
+  // shows only its NEWEST message. If the other run inserts between this run's insert and this
+  // line, this run asserts on its own tag and sees the other run's body. Observed on #1595:
+  // render-guards started 06:06:09 on a branch and 06:12:23 on main, and this was the only one of
+  // nine assertions to fail. The file header's claim that "every assertion holds with either or
+  // both present" was true of the rest and could never be true of a preview.
+  //
+  // The RUN-SPECIFIC proof is not lost — it moves to where it is already safe. The OPEN THREAD
+  // lists every message in it, so `thread.includes(BODY)` below still pins this run's own tag.
+  // What the preview proves is what a preview can prove: a fixture message reached the thread
+  // list without anything being opened.
+  must(inbox.includes(BODY_PROSE), "a message body is previewed in the thread list");
 
   if (/No friend chats yet/i.test(inbox) || !identified) {
     log("\n  --- the inbox, with a message waiting (first 700 chars) ---");
