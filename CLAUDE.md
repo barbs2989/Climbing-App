@@ -44,6 +44,7 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:gpx-caveats  # ...and the DOWNLOADED file must carry that same caveat (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
@@ -6286,6 +6287,40 @@ the correction knows the screen is wrong, and they have no way to report it.
         it exists to separate as the very thing it had just stopped calling them. Order the
         branches with the new state first. *A probe that misreports its own fix is the shape this
         file keeps recording.*
+- **`check:gpx-caveats`** asserts that **the caveat survives the download**. Static (one esbuild
+  bundle, no browser, no DB), so it sits in `npm run build`.
+  - **EVERY HONESTY CAPTION THIS REPO HAS BUILT FOR A ROUTE'S LINE LIVED ON A WEB PAGE.** The screen
+    says a line is straight segments between waypoints, or a placeholder, or short at one end — and
+    then offers **Download GPX**. `gpxDownload` wrote `<wpt>` entries and a `<trk><name>` with **no
+    `<desc>` anywhere**, so the file loaded into Gaia or CalTopo as a track named after the route
+    with nothing attached. **The disclaimer stopped at the browser, and the file is the one place
+    the reader cannot go back and re-read the page.**
+  - **393 of 581 drawn lines now export a description** — 208 waypoint joins, 55 partial-coverage,
+    16 too-few-points, 5 placeholders, 3 different-approach, plus 198 carrying a manufactured-pin
+    note at file level. **0 files carry two contradictory track sentences**
+    (`measure-gpx-files-gaining-a-caveat.mjs`, which exits 1 if any does).
+  - **`buildGpx` was SPLIT OUT of `gpxDownload` so the file can be asserted on.** The download half
+    calls `Blob` and `document` inside a `try/catch`, so anything calling it in node had the
+    exception swallowed and could never see what was written. *A writer whose output nothing can
+    read is a writer nothing can guard.*
+  - **ONLY THE ROUTE'S OWN LINE CARRIES THESE.** With `overridePts` the export is a climber's
+    recorded track, whose provenance is different and about which none of these sentences is true.
+    Injection case `community-track-inherits` pins it.
+  - **GPX 1.1 IS A SEQUENCE** — metadata before wpt before trk, and inside a trk, name before desc
+    before trkseg. Out of order is an invalid file that some readers reject outright, and the order
+    is asserted rather than assumed.
+  - **THE ESCAPING ASSERTION WAS VACUOUS AND ONLY THE INJECTION SAID SO.** A description is a
+    SENTENCE, so `& < >` are escaped rather than deleted the way a route title safely can be — but
+    nothing reaching `<desc>` contains one today: every caveat is plain English and the names are
+    stripped upstream. The first version built a route called *"A & B"* with a waypoint *"Camp <1>
+    & 2"*, asserted no bare ampersand, and **passed against escaping that had been deleted**. It
+    pins the escape **as source** now and says plainly that it does not observe the result.
+  - Fails **closed**: a bundle that does not build, `buildGpx` missing, a file under 200 characters
+    (against which every *must contain* passes), or a file carrying no track points at all.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-gpx-caveat-cases.mjs`). **`reordered-composition`
+    must stay SILENT** — the notes are composed in `lib/track.js` and the file only carries them, so
+    reordering changes nothing a reader sees, and a guard firing on it would pin an implementation
+    detail rather than the promise.
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
