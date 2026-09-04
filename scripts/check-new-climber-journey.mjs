@@ -109,6 +109,15 @@ try {
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
   await settledText(page);
 
+  // READ THE FLAG BEFORE DESCRIBING ANYTHING. `onboarded` and `authed` are BOTH
+  // useState(DEMO_AUTOLOGIN), so this one value decides whether onboarding auto-opens and whether
+  // the Home "Set up your climbing profile" card renders. journey.config.mjs publishes it; two
+  // earlier runs guessed at it and were wrong both times.
+  const demoFlag = await page.evaluate(() => globalThis.__DEMO_AUTOLOGIN);
+  if (demoFlag === undefined) dead("journey.config did not publish __DEMO_AUTOLOGIN — the walk would be reasoning about a flag it cannot see");
+  if (demoFlag === true) bad("DEMO_AUTOLOGIN is TRUE in this walk, so a brand-new REAL account is treated as already onboarded (onboarded = useState(DEMO_AUTOLOGIN)). Nothing below is a statement about a new climber.");
+  else ok("DEMO_AUTOLOGIN is false — this really is a new-climber walk");
+
   const clickText = async (t) => page.evaluate((txt) => {
     const el = [...document.querySelectorAll("button,a,[role=button]")]
       .find((e) => (e.innerText || "").trim() === txt);
@@ -130,6 +139,44 @@ try {
   // is false on every page load for everybody. A correct fix derives "has this climber onboarded"
   // from their profile having disciplines, which only became possible once #1576 gave onboarding
   // somewhere to write. That changes when a modal appears, so it is a product call.
+  // IS THERE A VISIBLE WAY IN AT ALL? Asked of the page TEXT, not of my control selector -- an
+  // earlier pass concluded "the card is absent" from a list of controls, which cannot tell a card
+  // that did not render from one my selector did not match. Both gates are measured above:
+  // DEMO_AUTOLOGIN is false so `onboarded` is false, and homeDismiss starts [], so
+  // (!onboarded && !dismissed) is TRUE and the card is supposed to be here.
+  const homeText = await page.evaluate(() => document.body.innerText || "");
+  const cardVisible = homeText.includes("Set up your climbing profile");
+  if (cardVisible) bad("STALE DECLARATION: the setup card now renders on Home. That is the fix this guard records as NOT done — drop the KNOWN below and make this an ok().");
+  else {
+    // NOT ON HOME. Where is it? The JSX sits immediately after the DbAreaBrowser Suspense block
+    // and the area comments -- i.e. inside the CLIMBS tab region, not Home. Checked rather than
+    // asserted, because an earlier brace-balance "proved" it was inside tab==="today" by finding
+    // the outer SCROLL CONTAINER (349672->526500) rather than the Home-only block. Balancing to a
+    // container and calling it a screen is how that went wrong.
+    const onClimbs = await (async () => {
+      if (!(await clickText("Climbs"))) return null;
+      await settledText(page);
+      const t = await page.evaluate(() => document.body.innerText || "");
+      return t.includes("Set up your climbing profile");
+    })();
+    if (onClimbs === null) bad("could not open the Climbs tab to locate the setup card");
+    else if (onClimbs) {
+      // A SECOND DECLARED KNOWN, and it FAILS AS STALE the day the card appears on Home.
+      // Reported rather than moved: the Home layout is a locked product decision, and this is a
+      // placement change a climber sees, not polish. The evidence that Home was the intent is the
+      // dismiss state's own name -- `homeDismiss`, keyed "climbsetup" -- and Home already carries
+      // the sibling setup checklist ("Add your climbing grades", "Set your availability").
+      console.log("  KNOWN the 'Set up your climbing profile' card renders on the CLIMBS tab, not Home.");
+      console.log("        A new climber lands on Home, so the one prompt to set up their profile is on");
+      console.log("        a screen they have no reason to open first. Its JSX sits immediately after the");
+      console.log("        DbAreaBrowser Suspense block, inside the Climbs region. Both its gates are");
+      console.log("        satisfied (!onboarded && !dismissed) -- it is placement, not a dead gate.");
+    }
+    else bad("'Set up your climbing profile' renders on neither Home nor Climbs, though !onboarded && !dismissed are both true");
+    await clickText("Home");
+    await settledText(page);
+  }
+
   // HOW A CLIMBER REACHES ONBOARDING, established by walking rather than by reading.
   // 1. It does NOT auto-open. `useEffect(()=>{if(authed&&!onboarded)setOnboardOpen(true);},[authed])`
   //    and setAuthed(true) is called in exactly ONE place -- LoginScreen's onAuth, the !realAuthGate
