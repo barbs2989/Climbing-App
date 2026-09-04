@@ -2,7 +2,7 @@
     "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
     "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
     "pass": 4,
-    "last_processed_id": "wa_east_face",
+    "last_processed_id": "wa_east_twin_needle_thread_of_ice",
     "total_in_scope_last_count": 529,
     "total_wa_alpine_or_mountaineering_tagged": 579,
     "batches": [
@@ -3888,6 +3888,28 @@
             "clean": 7,
             "sql_file": "audits/sql/2026-09-03-batch-187.sql",
             "note": "wa_dragontail_peak_r1: dist_km corrected 20->10.1, contradicted by its own waypoint-chain distance (6.3mi/10.14km) and matching sibling wa_dragontail_peak_east_ridge_aasgard_pass. wa_east_face: permit populated (was null) per Mt Baker-Snoqualmie NF Downey Creek Trailhead requirements. Flagged: wa_dragontail_peak_backbone_ridge and wa_dragontail_peak_serpentine_arete both store an identical, ~4x-too-large dist_km (26.55, which doubles to almost exactly 33.00 mi -- the documented half-round-trip tell) plus duplicated/misordered Colchuck Lake and Aasgard Pass waypoint entries apparently templated from the unrelated Aasgard Pass scramble route; wa_east_face has an internal distMi-vs-dist_km mismatch on a self-acknowledged-imprecise remote approach, plus a Main-vs-Middle Gunsight naming ambiguity and an FA-partner name-spelling discrepancy (Martins vs Mahting Putelis) that primary sources (blocked by egress proxy) could not resolve."
+        },
+        {
+            "batch_number": 188,
+            "date": "2026-09-04",
+            "route_ids": [
+                "wa_east_face_6",
+                "wa_east_mcmillan_spire_west_ridge",
+                "wa_east_ridge_2",
+                "wa_east_ridge_3",
+                "wa_east_ridge_4",
+                "wa_east_ridge_6",
+                "wa_east_ridge_8",
+                "wa_east_slope",
+                "wa_east_twin_needle_south_route",
+                "wa_east_twin_needle_thread_of_ice"
+            ],
+            "findings_summary": "wa_east_ridge_3 (Silver Star Mtn): waypoints/gpx were contaminated with a sibling route's (NE Ridge/Glacier) trailhead, contradicting this row's own overview/approach/descent_text (all agree on the Cedar Creek Trailhead, confirmed by DB cross-check against wa_silver_star_ne_ridge's stored coordinate); wrong data removed, correct trailhead coordinate not sourced strongly enough to write in (flagged). wa_east_ridge_2 (Snowking) and wa_east_ridge_6 (Mount Thomson): top-level gain_ft/loss_ft each disagreed sharply with the row's own itinerary day-by-day breakdown for an explicit out-and-back route; corrected to match. FA facts spot-checked against AAC Publications/search snippets (Inspiration Peak East Ridge, Beckey/Cooper/Collins 1958) confirmed accurate. 6 routes clean.",
+            "sql_file": "audits/sql/2026-09-04-batch-188.sql",
+            "confirmed_errors_fixed": 3,
+            "flagged_for_human_review": 1,
+            "clean": 6,
+            "note": "wa_east_ridge_3's correct Cedar Creek Trailhead GPS coordinate is still unsourced -- two web searches turned up two DIFFERENT, geographically distinct 'Cedar Creek Trail' trailheads near Mazama (one Sawtooth Wilderness/Cedar Falls via Sandy Butte Rd #200, unrelated; one on SR-20 near MP 175-176 via FR 5310-200, which matches this row's own waypoint note and is the more likely candidate), and primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org) are blocked by the network egress proxy so the exact pin could not be confirmed. The wrong/contaminated waypoint was removed rather than replaced with a guessed coordinate."
         }
     ]
 }

@@ -13021,3 +13021,87 @@ Tower): waypoint chain, permit, and hazards all coherent; FA honestly marked
 chain, dist_km matches its own waypoint-derived distance exactly.
 
 Next batch continues from `wa_east_face` onward alphabetically (pass 4).
+
+## Batch 188 — 2026-09-04
+
+Continuing pass 4 alphabetically from `wa_east_face`. Batch:
+`wa_east_face_6`, `wa_east_mcmillan_spire_west_ridge`, `wa_east_ridge_2`,
+`wa_east_ridge_3`, `wa_east_ridge_4`, `wa_east_ridge_6`, `wa_east_ridge_8`,
+`wa_east_slope`, `wa_east_twin_needle_south_route`,
+`wa_east_twin_needle_thread_of_ice`.
+
+**Fixed:** `wa_east_ridge_3` (Silver Star Mountain, Okanogan) stored a
+`waypoints`/`gpx` trailhead that belongs to a *different* route on the same
+peak. Every prose field on the row (`overview`, `beta`, `approach`,
+`approach_logistics`, `descent_text`) independently and consistently
+describes the Childs/Goldie complete East Ridge traverse (FA Sept 14, 2000),
+starting at "the Cedar Creek trailhead near Mazama" — explicitly called out
+in `approach_variants` as "THIS ROUTE'S DEFINING LOGISTICAL FACT: IT USES A
+DIFFERENT TRAILHEAD FROM EVERY OTHER ROUTE ON THE PEAK" — and descending via
+the Silver Star Glacier/Burgundy Col back to Highway 20 near milepost 166,
+"several miles of highway from the Cedar Creek Trailhead used for the
+approach." The stored `waypoints[0]` instead placed the trailhead at the
+"Silver Star Creek Trailhead (Hwy 20 pullout, ~MP 165-166)" — and its own
+embedded note says that pullout is used by "the North-East Ridge and Glacier
+routes," i.e. a sibling route. Confirmed by DB cross-check:
+`wa_silver_star_ne_ridge.approach_logistics` stores a trailhead coordinate
+(48.549, -120.630965) essentially identical to this row's wrong waypoint
+(48.552069, -120.630763). `gpx` was just a straight 2-point line between
+that wrong trailhead and the summit, not a real recorded track. Removed the
+contaminated trailhead waypoint and gpx; kept the (independently correct)
+summit waypoint. Could not source a confident replacement coordinate for the
+real Cedar Creek Trailhead — web search turned up two different, unrelated
+"Cedar Creek Trail" trailheads near Mazama (one Sawtooth Wilderness/Cedar
+Falls via Sandy Butte Rd #200; one on SR-20 near MP 175-176 via FR 5310-200,
+which matches this row's own waypoint note and is the likelier candidate),
+and primary route-beta sites (SummitPost, Mountain Project, Mountaineers.org)
+were all blocked by the egress proxy, so no fetch could settle it. Flagged
+for human follow-up rather than guessed.
+
+**Fixed:** `wa_east_ridge_2` (Snowking Mountain, East Ridge) stored
+`loss_ft: 1100` against `gain_ft: 6800` for an explicit out-and-back route
+(same trailhead in and out, per its own `descent`/`bail` text) — the row's
+own two-day `itinerary` breakdown sums to 4700+2600=7300 ft gain and
+300+6100=6400 ft loss, and every other route in this batch has gain_ft and
+loss_ft within a few percent of each other for out-and-back lines. Corrected
+`loss_ft` to 6400 to match the row's own itinerary sum; left `gain_ft`
+(6800, ~7% off the itinerary's 7300) as within normal noise.
+
+**Fixed:** `wa_east_ridge_6` (Mount Thomson, East Ridge) stored
+`gain_ft: 3600` against the row's own single-day `itinerary` entry, which
+states `gainFt: 4900` — matching the already-correct, symmetric `loss_ft`
+(4900) for this out-and-back route. 4900 also falls inside the row's own
+`partner_requirements.fitnessSpec.hiking` figure ("3,550-5,000 ft gain
+depending on trailhead/variation"). Corrected `gain_ft` to 4900.
+
+**Clean / confirmed accurate:** `wa_east_face_6` (Chimney Rock East Face) —
+`dist_km`/`gain_ft` check out against its own waypoint chain (9.3 mi final
+waypoint vs. 15.3 km = 9.5 mi stored). `wa_east_mcmillan_spire_west_ridge` —
+gain/loss symmetric and matches its own itinerary sum exactly (8500/8500);
+FA (Beckey brothers, 1940) consistent with well-documented Southern Pickets
+history. `wa_east_ridge_4` (Inspiration Peak East Ridge) — FA (Fred Beckey,
+Ed Cooper, Dave Collins, 1958, weekend of Oct 5) confirmed nearly verbatim
+against an AAC Publications trip account found via search; gain/loss
+symmetric (7291/7291). `wa_east_ridge_8` (Pinnacle Peak East Ridge, Tatoosh)
+— gain/loss symmetric (2150/2150) and consistent with net rise; its own
+`corrections` field already resolved an earlier grade mismatch (5.5 vs. a
+mis-implied 5.8) in a prior enrichment pass — note that field's reasoning
+("the routeId implies a 5.8 grade") is a misunderstanding of this catalog's
+id-numbering scheme (the trailing `_8` is a dedup counter across all
+same-named "East Ridge" routes, unrelated to grade, per CLAUDE.md), but the
+*value* it landed on (5.5, sourced from Mountain Project/Mazamas/
+Mountaineers) is correct, so left as-is — not a user-facing error, and not
+worth a schema-breaking rewrite of a settled correction note. `wa_east_slope`
+(Primus Peak) — three-day itinerary sums to 7350/7350 gain/loss, matching
+the stored 7300/7350 within rounding. `wa_east_twin_needle_south_route` —
+grade already self-corrected in a prior pass (III,5.7 → II,5.10a) to match
+its own FA/beta text (2003 Southern Pickets enchainment, Wallace/Haley/
+Bunker); no separate "East Arête" route exists on this peak to be confused
+with, so the "South Route" name is not a duplicate/misfile even though the
+line is what published accounts might informally call the East Arête.
+`wa_east_twin_needle_thread_of_ice` — sparse but internally consistent;
+FA (Abegg & Wallace, June 2009) and season/conditions notes cohere with a
+narrow early-summer ice couloir.
+
+Next batch continues from `wa_east_twin_needle_thread_of_ice` onward
+alphabetically (pass 4).
