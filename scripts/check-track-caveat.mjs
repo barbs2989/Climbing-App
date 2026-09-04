@@ -276,7 +276,11 @@ else ok("a complete track renders no partial-coverage caveat");
 //    did not know that, so five routes drew a "track" spanning 7 m to 451 m under a ROUTE TRACK
 //    heading with Download GPX beneath it and said nothing. Both directions, since a rule that only
 //    ever fires is satisfied by captioning every route.
-const STUB = [[48.4926, -121.1176], [48.49264, -121.11766]];      // ~7 m end to end
+// FOUR points, not two, and that is what makes the case isolate the branch it names: a two-point
+// stub also satisfies the too-few-points branch, so killing the placeholder branch left it
+// captioned anyway and the injection came back WRONG FAILURE. Real stubs look like this —
+// wa_luna_peak_southeast_slopes is 4 points across 18 m, wa_sky_mountain_s_route 9 across 7 m.
+const STUB = [[48.4926, -121.1176], [48.49262, -121.11762], [48.49263, -121.11765], [48.49264, -121.11766]];  // ~7 m end to end
 if (!trackStubCaveat(STUB, WPS)) fail("predicate: a 7 m line is not reported as a placeholder");
 else ok("predicate: a line spanning metres is reported as a placeholder");
 
@@ -300,6 +304,35 @@ else ok("predicate: the placeholder caveat yields to the waypoint-line one");
   else ok("the placeholder span survives formatting");
 }
 
+// TOO FEW POINTS TO BE A RECORDING. Fifteen routes store a two-point "track" spanning up to 16 km,
+// drawn under ROUTE TRACK with Download GPX and no caption. N points make N-1 straight segments; at
+// two that is one chord. Categorical, not a threshold — which is why the cases below pin the FLOOR
+// as hard as they pin the finding.
+const CHORD = [[48.4926, -121.1176], [48.5543, -121.1043]];       // two points, ~7 km apart
+if (!trackStubCaveat(CHORD, [WPS[1], WPS[2]])) fail("predicate: a two-point line across kilometres is not reported");
+else ok("predicate: a two-point line across kilometres is reported as not a recording");
+{
+  const said = trackStubCaveat(CHORD, [WPS[1], WPS[2]]);
+  if (!/single straight segment/.test(said)) fail(`the two-point caveat does not say what the line IS: ${said}`);
+  else ok("the two-point caveat says the line is a single straight segment");
+  if (/placeholder/.test(said)) fail("a 7 km chord is described as a placeholder — that is the other branch's sentence");
+  else ok("a long chord and a metres-wide stub get different sentences");
+}
+
+// THE FLOOR MUST HOLD. Four is trackCoverage's own floor and the data has a void either side of it
+// (counts run 2,3,4,6,7,8,10,11 then jump to 20). A four-point line is NOT captioned here: saying
+// it is not a recording needs an argument about how coarse a simplified track may be, and the
+// spacing distribution is continuous, so that argument has no evidence behind it.
+const FOUR = [[48.4926, -121.1176], [48.51, -121.12], [48.53, -121.12], [48.5543, -121.1043]];
+if (trackStubCaveat(FOUR, [WPS[1], WPS[2]])) fail("predicate: a four-point line is captioned — the floor has moved past what the evidence supports");
+else ok("predicate: a four-point line is left alone");
+
+// EXCLUSIVE with the waypoint-line caveat, like the placeholder branch. A two-point line whose ends
+// ARE both pins is a waypoint join and already says so; captioning it twice is one problem told
+// twice.
+if (trackStubCaveat([SYNTH[0], SYNTH[3]], [WPS[0], WPS[3]])) fail("predicate: a two-point waypoint join is captioned twice");
+else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat");
+
 // AND IT REACHES THE SCREEN. A predicate proves the sentence; only a render proves the route page
 // asks for it — the split check:outage-copy and check:topo-outage-copy both record.
 {
@@ -309,6 +342,13 @@ else ok("predicate: the placeholder caveat yields to the waypoint-line one");
   const real = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner"));
   if (/placeholder, not this route's track/.test(real)) fail("the placeholder caveat renders on a route with a genuine track");
   else ok("a genuine track renders no placeholder caveat");
+  // The SECOND branch has its own sentence, so the render above proves nothing about it: a route
+  // page could ask for the caveat and still never show the chord wording.
+  const chord = text(render(route({ gpxPts: CHORD, waypoints: [WPS[1], WPS[2]] }), "planner"));
+  if (!/single straight segment/.test(chord)) fail("the two-point caveat does not render on the route page");
+  else ok("the two-point caveat renders on the route page");
+  if (/single straight segment/.test(real)) fail("the two-point caveat renders on a route with a genuine track");
+  else ok("a genuine track renders no two-point caveat");
 }
 
 console.log();

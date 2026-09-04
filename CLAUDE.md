@@ -6182,6 +6182,27 @@ the correction knows the screen is wrong, and they have no way to report it.
       as *"0 km"* and reads as a bug rather than as the point; `_shortDist` gives metres or feet.
       `uImp()` is the real boolean there too — `uDistMi` is a FORMATTER and always truthy, the #641
       trap. A guard case pins that the span does not round away.
+  - **AND A SECOND BRANCH FOR A LINE WITH TOO FEW POINTS TO BE A RECORDING OF ANYTHING — a
+    CATEGORICAL claim rather than a threshold.** Fifteen routes store a "track" of exactly **TWO**
+    points; `wa_mount_rainier_edmunds_headwall` is a single straight segment across **16.4 km** of
+    Mount Rainier, drawn under ROUTE TRACK with Download GPX and no caption. N points make N-1
+    straight segments; at two that is one chord, and no reading makes a chord a recording of a walk.
+    **16 routes** (15 two-point, 1 three-point).
+    - **FOUR IS THIS FILE'S OWN FLOOR, not a new number**: `trackCoverage` already returns null
+      below it for the same reason. And the data has a void either side — among the lines the app
+      says nothing about, vertex counts run 2, 3, 4, 6, 7, 8, 10, 11 and then **jump to 20**.
+    - **DELIBERATELY NOT WIDER, and the guard pins the floor as hard as the finding.** An
+      eight-point line across 18 km is equally implausible, and saying so needs an argument about
+      how coarse a SIMPLIFIED track may be — which the continuous spacing distribution does not
+      support. `floor-widened-to-eight` must fail.
+    - **The vertex-count axis has a void where SPACING does not**, which is why it was worth asking
+      after concluding spacing could not separate. Two different axes; one measurement does not
+      settle the other.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-not-a-track-cases.mjs`). **The STUB fixture
+      was two points and had to be widened to four**: a two-point stub also satisfies the
+      too-few-points branch, so killing the placeholder branch left it captioned anyway and the case
+      came back WRONG FAILURE — the same wrong-half mistake the two-point cases already record,
+      caught only because each case is judged on its own failure text.
   - **THE DIFFERENT-APPROACH TEST WAS UNREACHABLE IN HALF THE CASES IT EXISTS FOR.** It asks
     whether the line passes ANY of the route's own pins, and it sat **below** `if (!missingApproach
     && !missingSummit) return null` — so it could only ever speak about a line that was ALSO short
