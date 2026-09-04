@@ -8845,6 +8845,33 @@ Read it in three bands:
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
 - `compat(a, b)` (~L335) — partner compatibility score (clamped 20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap.
+  - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
+    Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
+    overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
+    5.12b all reading 99%**. Measured with `scripts/oneoff/measure-compat-saturation.mjs`
+    (report-only, no DB, no browser): **11 of 20 ordered seed pairs (55%) sit on the 99 ceiling**,
+    the highest uncapped score is **157**, and **3 of the 5** climbers on the demo's My-Objectives
+    pane are pinned.
+  - **The cause is that TWO terms are UNCAPPED while every other one is bounded.** Shared
+    disciplines score **×16** and shared objectives **×14** with no ceiling, against grade 28,
+    availability 12, pace 10 and verified 8. So 3 shared disciplines plus 2 shared objectives is
+    `20 + 48 + 28 = 96` **before grade, pace or availability contribute anything**.
+  - **The consequence is that grade stops mattering for exactly the climbers the search
+    surfaces.** Holding 3 shared disciplines and 2 shared objectives and varying only the
+    partner's grade, **5.6 and 5.14a both read 99%** (uncapped 122 vs 116 — the arithmetic moves,
+    the clamp eats it). Thin the profile to one shared discipline and no shared objectives and
+    grade discriminates properly: 62 / 68 / 80 / 65 / 56. **The mechanism works; the saturation
+    hides it**, and a 5.6 climber reading as a 99% match to a 5.11a leader is partner-safety
+    adjacent.
+  - **REPORTED, NOT FIXED — and the reason is scope, not doubt.** Every candidate repair changes
+    who ranks top of a partner search: capping the two loose terms still totals 138 against a 99
+    ceiling, so it needs a rebalance, and rescaling by the maximum is a different algorithm. That
+    is a product decision. What is NOT in doubt is the measurement, and that the copy currently
+    promises a blend the displayed number does not deliver.
+  - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
+    re-typing it — a copy would agree with itself whatever the app did, which is the whole
+    question — and keeps a deliberate second, unclamped transcription beside it purely to show
+    how far past 99 a pair lands.
 - `buildConsensus(activity)` (~L344) — distills a route's trip reports into a conditions summary, weighting each report by the author's `trustScore` and recency; separates all-time vs recent tags and surfaces hazards.
 - `datesAgreed(c)` / `agreedDate(c)` (~L382/384) — a crew reaches "Ready" only when every confirmed member (including ME = id `0`) has acked the same proposed day (`dayAcks`).
 - `scarfHrs(...)` + `techHrs(...)` (~L336/337) — planner time estimates: Naismith-style approach time (fitness tier + pack weight) plus pitch-by-pitch climbing time (exponential slowdown by grade).
