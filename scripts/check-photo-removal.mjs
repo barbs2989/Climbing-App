@@ -1,5 +1,20 @@
 // CAN A CLIMBER TAKE A PROFILE PHOTO BACK DOWN, AND DOES A FAILED REMOVAL DESTROY THE FILE?
 //
+// WHY THIS IS A BUILD GATE. Both invariants it holds are invisible to every other guard:
+//   - the WRITE ORDER is a property of two awaits in one function. Reversed, a refused write
+//     leaves a profile listing a file that is gone — a broken image, and an UNRECOVERABLE one,
+//     because the object is deleted before anything knows the reference survived.
+//   - WHO GETS THE CONTROL is the ABSENCE of a prop at two of three call sites. Dropping
+//     `onRemove=` from a JSX tag removes no NAME, so `audit:silent-reverts` is blind to it by its
+//     own closing caveat; and `check:dead-props` asks whether a prop is read, which it is, and
+//     whether a call site passes one nothing reads, which is the opposite direction. Adding it to
+//     another climber's strip lets one person remove another's photo.
+// It ran nowhere as a `scripts/oneoff/` probe — the *a verification nobody runs is not a
+// verification* shape this file records for check:overflow and check:pitch-discount.
+//
+// 1.15s CPU, measured against check:policy-claims' 1.6s and check:topo-outage-copy's 1.69s, both
+// already in the chain.
+//
 // PhotoStrip has offered `onAdd` and nothing to undo it, so the only thing a climber could do
 // about a photo they regretted was HIDE it -- and 0174 is explicit that `photos_public` is
 // SURFACING ONLY, not access control, so hiding never stopped the row being served to anyone
@@ -24,7 +39,7 @@ import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let failed = 0;
 const ok = (m) => console.log("  ok   " + m);
 const bad = (m) => { failed++; console.log("  FAIL " + m); };

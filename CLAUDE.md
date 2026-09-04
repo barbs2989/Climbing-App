@@ -52,6 +52,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
+npm run check:photo-removal # a climber can take their OWN photo down, and only their own (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
@@ -8838,6 +8839,60 @@ their own Résumé showed an amber **"Unverified"** chip.
     defect apart one link at a time, so the guard cannot pass on the strength of its neighbours;
     **case 5 must stay SILENT** — a comment naming the flag is documentation.
   - What it does **not** prove: that the toast is legible, or that a climber ever meets the refusal.
+
+- **`check:photo-removal`** asserts that a climber can take their **own** profile photo back down,
+  that **only** their own strip offers the control, and that a **failed** removal does not destroy
+  the file. Static (a source read plus one execution against a stubbed transport), **1.15s**, so it
+  sits in `npm run build`.
+  - **THE FEATURE EXISTS BECAUSE HIDING WAS NEVER A REMOVAL.** `PhotoStrip` offered `onAdd` and
+    nothing to undo it, so a climber who regretted a photo could only **hide** it — and `0174` says
+    in its own header that `photos_public` is **surfacing only, not access control**, so the row
+    was still served to anyone holding the anon key. #1521 shipped the remove path; this is what
+    stops it going quietly.
+  - **BOTH INVARIANTS ARE INVISIBLE TO EVERY OTHER GUARD, and they fail in opposite directions**, so
+    they are asked separately.
+    - **WHO GETS THE CONTROL is the ABSENCE of a prop at two of three call sites.** `PhotoStrip`
+      renders three different people's photos — your own profile, `FullProfile` (somebody else's),
+      `TripReport` (a report author's) — and exactly one passes `onRemove`. Adding it to another
+      lets one climber take down another's photo. Dropping it from your own removes **no
+      identifier**, so `audit:silent-reverts` is blind to it by its own closing caveat; and
+      `check:dead-props` asks whether a prop is *read* (it is) and whether a call site passes one
+      nothing reads (the opposite direction). Static, because the gate is an absence and a render
+      can only ever show the sites that DO pass it.
+    - **WHAT THE REMOVAL DOES is a property of two awaits in one function**: drop the **reference**
+      first, then the storage object — `deleteRoutePhoto`'s ordering. Reversed, a refused write
+      leaves the profile listing a file that is gone: a broken image, and an **unrecoverable** one,
+      because the object was deleted before anything knew the reference survived. Executed rather
+      than read, because the dangerous case is a **failed write**, which a live database will not
+      produce on demand.
+  - **It asserts the array WRITTEN, not the array returned**, which is not pedantry: a function that
+    returns the right list and persists a different one satisfies every return-value assertion while
+    losing the climber's change. And it asserts a no-op removal **throws before writing anything** —
+    a removal matching nothing that writes the array back and reports success is the
+    `check:writes` shape on a delete.
+  - **`photoStorageKey` was extracted rather than re-typed**, so the public-URL → object-key
+    reversal has one implementation. A second copy is how this codebase ended up with four grade
+    parsers.
+  - **A `blob:` preview is a REAL case, not an edge one**: a photo added and removed before the
+    upload settles has no object of ours, so the strip must drop it and ask storage to delete
+    **nothing**. Both halves are asserted.
+  - **READ-ONLY**: it writes to no database and uploads nothing — every request is answered by a
+    stub — so it is safe in the build chain and on a contributor's machine with no credentials.
+  - It ran nowhere as a `scripts/oneoff/` probe, which is the *a verification nobody runs is not a
+    verification* promotion this file records for `check:overflow`, `check:pitch-discount` and
+    `check:policy-claims`. **Promotion changed its DEPTH** — `ROOT` was `../..` — the trap
+    `check:pitch-discount` records; a promoted one-off that resolves the wrong tree measures a
+    different branch's code, as `measure-which-tab-renders-each-field` did for weeks.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean app: fewer
+    than the three `<PhotoStrip>` call sites this app has (with none, every *must not offer
+    removal* assertion passes **vacuously**), an unterminated tag, a moved `PhotoStrip` signature,
+    a bundle esbuild cannot build, and either export missing from `lib/db.js`. **A missing
+    `onRemove` is a FAILURE, not a broken scan** — the distinction matters, because the two want
+    opposite repairs.
+  - Injection-tested **4/4** (`scripts/oneoff/inject-photo-removal-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
+    drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
+    removal report success.
 
 - **`check:overlay-absence` was CREDITING AN OVERLAY WITH ITS NEIGHBOUR'S FLAG**, and it had written
   the reason down itself. Its closing note says *"an overlay rendered NEXT TO others picks up their
