@@ -45,6 +45,7 @@ npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both sto
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:track-caveat # a line drawn between waypoints must not pose as a GPS track (in build)
+npm run check:gpx-caveats  # ...and the DOWNLOADED file must carry that same caveat (in build)
 npm run check:waypoint-caveat # manufactured waypoint COORDINATES must say so — incl. vs the GROUND (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
@@ -52,6 +53,7 @@ npm run check:suggestion-discs # suggestions cover EVERY discipline you climb (i
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
+npm run check:photo-removal # a climber can take their OWN photo down, and only their own (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
@@ -105,7 +107,7 @@ npm run check:return-leg      # a walk that already covers the day is not re-add
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
-npm run check:guard-wiring # every guard on disk actually RUNS, and is named here (in build)
+npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:writes # no success message in front of a write whose failure is unobservable (in build)
@@ -165,6 +167,21 @@ a build error, but a screen that renders wrong or not at all.
 **WHAT THE GUARD CHAIN COSTS, measured 2026-09-02 rather than guessed.** `npm run build` runs
 **71 guards for ~161s of CPU** before vite starts, and the shape of that number matters more than
 the total when deciding where a new guard belongs.
+- **THE COUNT IS STALE — 81 GUARDS TODAY, NOT 71 — AND THE TOOL THAT REFRESHES IT HAD BEEN BROKEN
+  BY #1546, WHICH IS WHY NOBODY NOTICED.** That change moved the `&&` chain to `build:guards` so
+  the concurrent runner could read it, leaving `build` as `node scripts/run-build-guards.mjs &&
+  vite build`. `measure-build-gate-cost.mjs` parsed `pkg.scripts.build`, so it found **one** guard
+  and **failed closed on every run** — correct behaviour, and invisible, because nothing runs
+  `scripts/oneoff/`. `check:guard-wiring` was taught to read both keys in the same PR; the
+  measurer was not. It reads both now. *A verification nobody runs is not a verification* — here
+  the un-run thing was the instrument that keeps a documented number true.
+- **DO NOT QUOTE A TOTAL TAKEN ON A LOADED BOX, and there is now direct evidence of the factor.**
+  A run at load ~110 reported **320s across 81 guards**, which is not comparable to the 161s above:
+  `check:offline-claims` measures **3.7s CPU at load 3.8** and **12.06s** in that same run, on
+  identical code — about **3x inflation from contention alone**. CPU time is more load-robust than
+  wall clock, which is why this script reports it, but it is not load-*proof*: the same work costs
+  more cycles when the caches are being thrashed. **The RANKING survives a loaded run; the TOTAL
+  does not.** Re-measure on a genuinely quiet box before writing a new figure here.
 - **The top of the list is FLAT, and that is the finding.** The 14 most expensive guards all sit
   between 6.5s and 10.4s — not because they do proportionally more work, but because each pays the
   same fixed cost: a node start (~0.8s) plus a Babel parse of the app (**2.10s** for all three
@@ -6302,6 +6319,40 @@ the correction knows the screen is wrong, and they have no way to report it.
         it exists to separate as the very thing it had just stopped calling them. Order the
         branches with the new state first. *A probe that misreports its own fix is the shape this
         file keeps recording.*
+- **`check:gpx-caveats`** asserts that **the caveat survives the download**. Static (one esbuild
+  bundle, no browser, no DB), so it sits in `npm run build`.
+  - **EVERY HONESTY CAPTION THIS REPO HAS BUILT FOR A ROUTE'S LINE LIVED ON A WEB PAGE.** The screen
+    says a line is straight segments between waypoints, or a placeholder, or short at one end — and
+    then offers **Download GPX**. `gpxDownload` wrote `<wpt>` entries and a `<trk><name>` with **no
+    `<desc>` anywhere**, so the file loaded into Gaia or CalTopo as a track named after the route
+    with nothing attached. **The disclaimer stopped at the browser, and the file is the one place
+    the reader cannot go back and re-read the page.**
+  - **393 of 581 drawn lines now export a description** — 208 waypoint joins, 55 partial-coverage,
+    16 too-few-points, 5 placeholders, 3 different-approach, plus 198 carrying a manufactured-pin
+    note at file level. **0 files carry two contradictory track sentences**
+    (`measure-gpx-files-gaining-a-caveat.mjs`, which exits 1 if any does).
+  - **`buildGpx` was SPLIT OUT of `gpxDownload` so the file can be asserted on.** The download half
+    calls `Blob` and `document` inside a `try/catch`, so anything calling it in node had the
+    exception swallowed and could never see what was written. *A writer whose output nothing can
+    read is a writer nothing can guard.*
+  - **ONLY THE ROUTE'S OWN LINE CARRIES THESE.** With `overridePts` the export is a climber's
+    recorded track, whose provenance is different and about which none of these sentences is true.
+    Injection case `community-track-inherits` pins it.
+  - **GPX 1.1 IS A SEQUENCE** — metadata before wpt before trk, and inside a trk, name before desc
+    before trkseg. Out of order is an invalid file that some readers reject outright, and the order
+    is asserted rather than assumed.
+  - **THE ESCAPING ASSERTION WAS VACUOUS AND ONLY THE INJECTION SAID SO.** A description is a
+    SENTENCE, so `& < >` are escaped rather than deleted the way a route title safely can be — but
+    nothing reaching `<desc>` contains one today: every caveat is plain English and the names are
+    stripped upstream. The first version built a route called *"A & B"* with a waypoint *"Camp <1>
+    & 2"*, asserted no bare ampersand, and **passed against escaping that had been deleted**. It
+    pins the escape **as source** now and says plainly that it does not observe the result.
+  - Fails **closed**: a bundle that does not build, `buildGpx` missing, a file under 200 characters
+    (against which every *must contain* passes), or a file carrying no track points at all.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-gpx-caveat-cases.mjs`). **`reordered-composition`
+    must stay SILENT** — the notes are composed in `lib/track.js` and the file only carries them, so
+    reordering changes nothing a reader sees, and a guard firing on it would pin an implementation
+    detail rather than the promise.
 - **`check:no-rendered-sources`** asserts that no screen prints a field named `source`. The app
   carries no sources — nothing asks a climber where their information came from, and nothing tells
   them where ours did. **That rule was swept by hand twice and missed three surfaces both times**,
@@ -8839,6 +8890,60 @@ their own Résumé showed an amber **"Unverified"** chip.
     **case 5 must stay SILENT** — a comment naming the flag is documentation.
   - What it does **not** prove: that the toast is legible, or that a climber ever meets the refusal.
 
+- **`check:photo-removal`** asserts that a climber can take their **own** profile photo back down,
+  that **only** their own strip offers the control, and that a **failed** removal does not destroy
+  the file. Static (a source read plus one execution against a stubbed transport), **1.15s**, so it
+  sits in `npm run build`.
+  - **THE FEATURE EXISTS BECAUSE HIDING WAS NEVER A REMOVAL.** `PhotoStrip` offered `onAdd` and
+    nothing to undo it, so a climber who regretted a photo could only **hide** it — and `0174` says
+    in its own header that `photos_public` is **surfacing only, not access control**, so the row
+    was still served to anyone holding the anon key. #1521 shipped the remove path; this is what
+    stops it going quietly.
+  - **BOTH INVARIANTS ARE INVISIBLE TO EVERY OTHER GUARD, and they fail in opposite directions**, so
+    they are asked separately.
+    - **WHO GETS THE CONTROL is the ABSENCE of a prop at two of three call sites.** `PhotoStrip`
+      renders three different people's photos — your own profile, `FullProfile` (somebody else's),
+      `TripReport` (a report author's) — and exactly one passes `onRemove`. Adding it to another
+      lets one climber take down another's photo. Dropping it from your own removes **no
+      identifier**, so `audit:silent-reverts` is blind to it by its own closing caveat; and
+      `check:dead-props` asks whether a prop is *read* (it is) and whether a call site passes one
+      nothing reads (the opposite direction). Static, because the gate is an absence and a render
+      can only ever show the sites that DO pass it.
+    - **WHAT THE REMOVAL DOES is a property of two awaits in one function**: drop the **reference**
+      first, then the storage object — `deleteRoutePhoto`'s ordering. Reversed, a refused write
+      leaves the profile listing a file that is gone: a broken image, and an **unrecoverable** one,
+      because the object was deleted before anything knew the reference survived. Executed rather
+      than read, because the dangerous case is a **failed write**, which a live database will not
+      produce on demand.
+  - **It asserts the array WRITTEN, not the array returned**, which is not pedantry: a function that
+    returns the right list and persists a different one satisfies every return-value assertion while
+    losing the climber's change. And it asserts a no-op removal **throws before writing anything** —
+    a removal matching nothing that writes the array back and reports success is the
+    `check:writes` shape on a delete.
+  - **`photoStorageKey` was extracted rather than re-typed**, so the public-URL → object-key
+    reversal has one implementation. A second copy is how this codebase ended up with four grade
+    parsers.
+  - **A `blob:` preview is a REAL case, not an edge one**: a photo added and removed before the
+    upload settles has no object of ours, so the strip must drop it and ask storage to delete
+    **nothing**. Both halves are asserted.
+  - **READ-ONLY**: it writes to no database and uploads nothing — every request is answered by a
+    stub — so it is safe in the build chain and on a contributor's machine with no credentials.
+  - It ran nowhere as a `scripts/oneoff/` probe, which is the *a verification nobody runs is not a
+    verification* promotion this file records for `check:overflow`, `check:pitch-discount` and
+    `check:policy-claims`. **Promotion changed its DEPTH** — `ROOT` was `../..` — the trap
+    `check:pitch-discount` records; a promoted one-off that resolves the wrong tree measures a
+    different branch's code, as `measure-which-tab-renders-each-field` did for weeks.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean app: fewer
+    than the three `<PhotoStrip>` call sites this app has (with none, every *must not offer
+    removal* assertion passes **vacuously**), an unterminated tag, a moved `PhotoStrip` signature,
+    a bundle esbuild cannot build, and either export missing from `lib/db.js`. **A missing
+    `onRemove` is a FAILURE, not a broken scan** — the distinction matters, because the two want
+    opposite repairs.
+  - Injection-tested **4/4** (`scripts/oneoff/inject-photo-removal-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
+    drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
+    removal report success.
+
 - **`check:overlay-absence` was CREDITING AN OVERLAY WITH ITS NEIGHBOUR'S FLAG**, and it had written
   the reason down itself. Its closing note says *"an overlay rendered NEXT TO others picks up their
   copy … the count is an upper bound"* — then fed that same 3000-char window to `gated`, and fed
@@ -9414,8 +9519,36 @@ that the slashless form still ignores the real directory in the main checkout.
 
 Both guards were run this way on 2026-09-02 and both are clean — 45 of 46 live functions match
 their newest migration (1 declared benign), and every column the 11 writing functions touch exists.
-`check:column-drift` needs no link (anon key) and also agrees: 41 tables / 480 columns, snapshot
+`check:column-drift` needs **no link** — it does not shell out to the CLI — but it is **not**
+anon-safe: it fetches PostgREST's OpenAPI root, which answers the anon key **401**, so it needs
+the **service key**, exactly as its own `EXCLUDED` reason in `check:guard-wiring` says. This
+file carried *"needs no link (anon key)"* from 2026-09-02 until 2026-09-04 — half right, which
+is the most misleading shape, and it sat in the paragraph telling you how to run the three
+hand-run guards, two sentences after the rule that CI must never hold that credential. Section 5
+of `check:guard-wiring` now reads this document against those reasons, because **a stated
+credential is a hand-copy wherever it lives** — the argument section 4 of `check:screen-lists`
+already makes for a stated vocabulary. Injection-tested **4/4**
+(`scripts/oneoff/inject-credential-claim-cases.mjs`), each case proving its edit landed **by
+checksum** and restoring the file byte-identically; the first case is the real sentence restored
+verbatim, and **two must stay SILENT** — citing `check:signed-in`'s anon-key accounts as the
+PRECEDENT for an exemption is correct prose, and so is saying `check:counts` is anon-key, which
+it genuinely is. The harness also refuses any expectation matching the HEALTHY run, because a
+case written against the text an assertion prints when it PASSES reports MISSED against a guard
+firing correctly — a mistake I made twice in one day before making it structural. Re-run
+2026-09-04 with the key: **41 tables / 484
+columns** (0174 and 0175 account for the growth from 480), all three sections clean, snapshot
 current.
+
+**A worktree has no `.env` either, and that is the same trap one file over.** The instruction
+above says to fix the link *"the way `.env` and `.env.local` already are"* — which presumes they
+are symlinked, and in a fresh worktree they are not, so every DB-touching guard and audit dies on
+`SUPABASE_SERVICE_KEY missing`. Symlink all three:
+
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/.env       .env
+    ln -s /ABSOLUTE/PATH/TO/Climbing-App/.env.local .env.local
+
+Both patterns are in `.gitignore` and a symlink is not a directory to git, so neither shows up as
+untracked.
 
 Import `scripts/lib/supabase-env.mjs` — do not hand-roll env loading. The
 credentials are split across two gitignored files (`SUPABASE_SERVICE_KEY` in
