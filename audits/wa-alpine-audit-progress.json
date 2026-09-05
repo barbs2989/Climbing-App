@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_liberty_bell_nw_face",
+  "last_processed_id": "wa_liberty_traverse",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4129,6 +4129,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-04-batch-199.sql",
       "note": "wa_lewis_creek_route: timing.sectionBreakdown[0].note was truncated mid-word ending in a literal ellipsis; completed the word and closed the sentence, no new facts. wa_lexington_tower_east_face: Trailhead waypoint elevation (5450) corrected to 5200 -- 6 sibling routes on the adjacent Liberty Bell wall use the identical name+coordinate and all agree on 5200, matching web sources for this SR-20 pullout; gain_ft/loss_ft recomputed 2171->2421 against the corrected trailhead. wa_liberty_bell_east_face: fixed two contamination bugs -- `beta` field was verbatim describing wa_lexington_tower_east_face's 10-pitch route (contradicted this row's own pitches=4 and self-consistent pitch_detail), re-homed a corrected summary from this route's own pitch_detail; and the Trailhead waypoint's `note` field described the Blue Lake Trailhead (copied from a different coordinate) while contradicting its own `directions` field and the route name, replaced with the correct east-side description already used by a sibling route at the identical coordinate. wa_liberty_bell_nw_face: loss_ft filled null->2546 from sibling wa_liberty_bell_beckey_route, whose identical 'standard Liberty Bell descent' the route's own text says it follows. Flagged: wa_lexington_tower_east_face's dist_km (10.46km) is far larger than the route's own waypoint-recorded one-way distance (1.2mi=1.93km) and every external description calls this a short approach, but dist_km convention varies widely (1.6-8.69km) across sibling routes on the same wall for reasons not fully understood, so no specific replacement was written; also its notch waypoint (7621ft) exceeds Lexington Tower's confirmed true-summit elevation (7560ft) despite the route explicitly not tagging the true summit -- a small (61ft) but logically-impossible ceiling violation with no sourced replacement found. wa_liberty_and_injustice_for_all's dist_km (8.05km) is an exact duplicate value shared with two unrelated routes on the same wall (wa_live_free_or_die, wa_a_servant_to_liberty) and roughly double the ~4km typical for similar East Face lines here -- possible copy-paste artifact, but the dist_km convention ambiguity noted above means no confident replacement value was determined."
+    },
+    {
+      "batch_number": 200,
+      "date": "2026-09-05",
+      "pass": 4,
+      "route_ids": [
+        "wa_liberty_bell_overexposure",
+        "wa_liberty_bell_serpentine_crack",
+        "wa_liberty_bell_thin_red_line",
+        "wa_liberty_cap_liberty_ridge_finish",
+        "wa_liberty_cap_ptarmigan_ridge_finish",
+        "wa_liberty_crack",
+        "wa_liberty_crack_free",
+        "wa_liberty_traverse"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 3,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-09-05-batch-200.sql",
+      "note": "wa_liberty_bell_thin_red_line/wa_liberty_crack/wa_liberty_crack_free: same contamination class at the shared SR-20 hairpin/pond trailhead coordinate (48.51454,-120.64332) -- a waypoint/itinerary note wrongly describing the west-side Blue Lake trailhead, plus gain_ft/loss_ft below the trailhead-to-summit floor (corrected using this batchs own 20-route Liberty Bell sibling survey, which found wa_liberty_cracks high_point_ft=7746 was the sole outlier against 14 other routes + Wikipedia agreeing on 7720). wa_liberty_bell_serpentine_crack: approach field was a bare duplicate of approach_logistics.trailheadDirection; rebuilt from the rows own itinerary/beta text. wa_liberty_traverse: gain_ft (2001) was below the floor set by its own Summit waypoint; corrected to match the fuller figure already stored in itinerary.days[0].gainFt/lossFt (3500). Flagged rather than swept: a Liberty Cap elevation disagreement between this batchs own two Rainier routes (14112 traditional vs 14097 per the 2024-2025 GPS resurvey, both externally corroborated); wa_liberty_bell_thin_red_lines waypoint array (4 of 6 entries are copy-pasted west-side Blue Lake Trail/notch geometry on an east-side route); and bivy-list cross-contamination on wa_liberty_crack (west-side bivy options on an east-side route) and wa_liberty_cap_ptarmigan_ridge_finish (camps for OTHER Rainier routes -- Thumb Rock, Camp Muir -- with no entry for this routes own documented high camp). WebSearch confirmed 5 external facts (FAs for Liberty Crack/Liberty Ridge/Ptarmigan Ridge, the 2026 NPS $82 climbing fee, the SR-165 Fairfax Bridge permanent closure) and none needed correcting. check:sql ran successfully (unlike recent batches, node_modules + credentials were available this session); 2 of 5 UPDATEs were directly checkable, the other 3 hit a false-negative in its naive semicolon-based statement splitter (traced to a genuine semicolon inside jsonb prose being written) and were manually re-verified against a fresh read instead."
     }
   ]
 }

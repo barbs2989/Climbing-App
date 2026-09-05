@@ -14080,3 +14080,87 @@ hit (WTA, climberkyle.com, AAC Publications).
 
 Next batch continues from `wa_liberty_bell_nw_face` onward alphabetically
 (pass 4).
+
+## Batch 200 (2026-09-05, pass 4)
+
+Routes: wa_liberty_bell_overexposure, wa_liberty_bell_serpentine_crack,
+wa_liberty_bell_thin_red_line, wa_liberty_cap_liberty_ridge_finish,
+wa_liberty_cap_ptarmigan_ridge_finish, wa_liberty_crack, wa_liberty_crack_free,
+wa_liberty_traverse.
+
+**5 confirmed fixes, 3 flagged for human review, 1 clean (Liberty Ridge finish).**
+
+- wa_liberty_bell_thin_red_line: fixed a Trailhead-waypoint `note` describing the wrong
+  (west-side Blue Lake) trailhead at the east-side hairpin/pond coordinate, plus the same
+  "Blue Lake TH" error repeated in `itinerary`/`timing` (which also completes a
+  mid-sentence truncation); raised gain_ft/loss_ft (1312/2400 -> 2520/2520), both below the
+  physical floor set by this row's own trailhead (5200) and summit (7720) waypoints.
+- wa_liberty_crack: high_point_ft (7746) was the sole outlier across all 20 routes sharing
+  area_id=wa_liberty_bell — the other 14 with a stored value, this row's own Summit
+  waypoint, and Wikipedia all agree on 7720. Corrected to 7720 and recomputed gain_ft
+  (2546->2520) against the corroborated trailhead/summit; loss_ft left at 2546, matching
+  sibling wa_liberty_bell_beckey_route's descent-profile value. Also fixed the same
+  "Blue Lake TH" contradiction in itinerary/timing text (this route's own `approach` field
+  says explicitly it does NOT start from Blue Lake).
+- wa_liberty_crack_free: identical three-part fix as thin_red_line/liberty_crack at the
+  same hairpin/pond coordinate (waypoint note + itinerary/timing text + gain_ft/loss_ft
+  floor, 2546/null -> 2520/2546).
+- wa_liberty_bell_serpentine_crack: `approach` field was a bare duplicate of
+  `approach_logistics.trailheadDirection` ("West, from Washington Pass area near Winthrop,
+  Washington") rather than a real approach description, unlike every sibling route. Rebuilt
+  it from this row's own `itinerary.days[0].note` and `beta` text (both already describe
+  the real approach) — no new facts introduced.
+- wa_liberty_traverse: gain_ft (2001) is below the floor implied by its own Summit waypoint
+  (trailhead 5200 -> Liberty Bell 7720 = 2520 minimum, before the four additional towers).
+  Corrected gain_ft/loss_ft to 3500/3500, matching the fuller figure already stored in this
+  row's own `itinerary.days[0].gainFt/lossFt`.
+
+External verification (WebSearch): Liberty Crack FA (Marts/McPherson/Stanley, July 1965)
+and the Lithuanian Lip/Bertulis story confirmed; Liberty Ridge FA (Daiber/Campbell/Borrow,
+Sept 28-Oct 1 1935) and Ptarmigan Ridge FA (Bauer/Hossack, 1935) confirmed; Mount Rainier's
+2026 Climbing Cost Recovery Fee ($82/person) confirmed current; the SR-165 Fairfax Bridge
+permanent closure (April 2025, no detour, no funded reopening) confirmed exactly as stored;
+the 2024-2025 GPS resurvey narrative in wa_liberty_cap_liberty_ridge_finish's overview
+(SW crater rim ~14,406 ft overtaking Columbia Crest; Liberty Cap ~14,095 ft and still
+thinning) matches a University-published 2025 survey closely — nothing here needed fixing.
+
+Flagged, not swept:
+- **Liberty Cap elevation disagreement between this batch's own two routes**: Liberty
+  Ridge finish stores high_point_ft=14112 (the long-standing traditional/USGS figure,
+  matches Liberty Ridge's own Summit waypoint); Ptarmigan Ridge finish stores 14097 (closer
+  to the 2024-2025 GPS resurvey's ~14,095 ft). Both are defensible depending on which era's
+  survey is treated as canonical; recommend a human decide the catalog-wide convention
+  before either is changed, rather than picking a side here.
+- **wa_liberty_bell_thin_red_line waypoint contamination**: 4 of 6 waypoints (idx 1-4 —
+  "Stream crossing near meadow", "Climbers' path junction", "West face base / sloping
+  bench", "Sustained thin-crack pitches") are copy-pasted west-side Blue Lake Trail/notch
+  geometry (identical coordinates to Overexposure/Serpentine Crack's waypoints) on a route
+  whose own `face`, `approach`, `road`, and `approach_variants` fields all agree it is
+  approached from the east-side hairpin/pond pullout and never touches the Blue Lake Trail.
+  One entry ("West face base") is explicitly mislabeled for an East Face route. Not swept:
+  no sourced replacement for the true east-side mid-route waypoints was found, and
+  deleting 4 of 6 entries outright felt like more surgery than this pass should do
+  unreviewed.
+- **wa_liberty_crack / wa_liberty_cap_ptarmigan_ridge_finish bivy-list contamination**:
+  wa_liberty_crack's `bivy` array is the same west-side "Blue Lake trailhead roadside bivy"
+  + "Liberty Bell basin dispersed sites" list used by the Blue-Lake-approach routes, despite
+  this route's own fields insisting it is NOT approached from Blue Lake. Separately,
+  wa_liberty_cap_ptarmigan_ridge_finish's `bivy` array (Camp Muir, Ingraham Flats, Cougar
+  Rock Campground, White River Campground, Thumb Rock) is almost entirely camps for OTHER
+  Rainier routes — Thumb Rock's own note even says it is "the standard and effectively
+  only bivouac on Liberty Ridge" (a different route) — while this route's own
+  `approach_variants` describes a specific, well-defined high camp (10,200-10,300 ft on the
+  Ptarmigan crest below Observation Rock) that appears nowhere in the bivy array. Per this
+  catalog's established caution around camp-list cross-contamination, flagged rather than
+  swept.
+
+`npm run check:sql` ran successfully this time (`node_modules` installed, credentials from
+the task prompt). It reported 2 of 5 UPDATE statements as directly checkable (id exists,
+no destructive delete) and 3 as "no literal id predicate — not checkable" — traced this to
+the checker's naive `.split(";")` statement splitter cutting those three UPDATEs apart at a
+genuine semicolon inside the jsonb prose being written (e.g. "...for fit parties; some
+bivy..."), which strands the WHERE clause in a different fragment than the SET clause. Not
+a defect in the SQL: manually re-read all five target rows' current values immediately
+before finalizing and confirmed every WHERE-clause guard still matches live data.
+
+Next batch continues from `wa_liberty_traverse` onward alphabetically (pass 4).
