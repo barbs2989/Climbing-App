@@ -14164,3 +14164,106 @@ a defect in the SQL: manually re-read all five target rows' current values immed
 before finalizing and confirmed every WHERE-clause guard still matches live data.
 
 Next batch continues from `wa_liberty_traverse` onward alphabetically (pass 4).
+
+## Batch 201 — 2026-09-05 (pass 4)
+
+Routes: wa_lichtenberg_mountain_west_face_west_rib, wa_lincoln_peak_north_ridge,
+wa_lincoln_peak_standard, wa_little_big_chief_mountain_northeast_face,
+wa_little_mac_spire_southwest_route, wa_little_sister_north_face,
+wa_little_sister_west_face, wa_little_tahoma_cowlitz_ingraham_glaciers
+
+3 confirmed errors fixed, 2 flagged for human review, 3 clean.
+
+Fixed (see `audits/sql/2026-09-05-batch-201.sql`):
+- wa_lincoln_peak_north_ridge / wa_lincoln_peak_standard: both routes stored
+  `high_point_ft = 9101` for Lincoln Peak, but this app's own `areas.elevation_ft`
+  for wa_lincoln_peak is 9085, and the north_ridge route's own pre-existing
+  `corrections` field already said "Wikipedia's Black Buttes article gives a precise
+  9,085ft for Lincoln Peak ... 9,085 is the more precise figure" — a correction that
+  had apparently been written into that note field but never actually applied to
+  `high_point_ft` or the summit waypoints. WebSearch corroborated 9,085/9,080ft from
+  two independent sources: Wikipedia's "Lincoln Peak (Washington)" and "Black Buttes"
+  articles, and AAC Publications' own trip report for this exact route ("Lincoln Peak,
+  Northwest Face, Wilkes-Booth", which cites "Lincoln Peak (9,080')"). Corrected
+  `high_point_ft` and each route's summit waypoint elev/elevFt from 9101 to 9085 on
+  both routes.
+- wa_lichtenberg_mountain_west_face_west_rib: `bivy` held 7 entries; only 2 (Lake
+  Valhalla, Lichtenwasser Lake) are actually about Lichtenberg Mountain, corroborated
+  by their own notes text ("the natural base for both Lichtenberg Mountain and Mount
+  McCausland" / "The direct camp for Lichtenberg Mountain"). The other 5 — "Smithbrook
+  trailhead and Union Gap" (Union Peak/Mount McCausland), "Skyline Lake" (Sky
+  Mountain/Tye Peak), "The basin between Tye Peak and Spinnaker Peak" (Spinnaker/Martin
+  Peak), "Trap Lake", "Surprise Lake and Glacier Lake" (Slippery Slab Tower/Thunder
+  Mountain) — are camps for entirely different Stevens Pass-corridor peaks, none of
+  which mention Lichtenberg. WebSearch confirmed Skyline Lake's trailhead is the
+  Stevens Pass ski-area lot, a different trailhead from Lichtenberg's Smithbrook
+  access, and Trap Lake/Surprise Lake are reached via Tunnel Creek/Surprise Creek at
+  Scenic — a third, unrelated trailhead system. This is the same "Stevens Pass
+  corridor zone file slapped onto every route near the pass" shape CLAUDE.md already
+  documents for the Mountain Loop Highway peaks; trimmed to the 2 corroborated entries
+  rather than deleted outright.
+
+Flagged, not swept:
+- **wa_little_tahoma_cowlitz_ingraham_glaciers bivy contamination**: this route's own
+  `approach_logistics`/waypoints describe a Paradise-side ascent crossing the Paradise,
+  Cowlitz, and Ingraham glaciers (its own `best_season` text even contrasts itself with
+  "the Frying Pan/Whitman (East Shoulder) route" once White River Road opens) — but its
+  `bivy` array is entirely camps for that *other*, White-River-side East Shoulder route
+  (Summerland Camp, Meany Crest, toe of the Fryingpan Glacier, Whitman Glacier notch
+  camp, Silver Springs Campground — all reached via the Fryingpan Creek/White River Road
+  trailhead, not Paradise). Same shape as batch 200's flagged
+  `wa_liberty_cap_ptarmigan_ridge_finish` bivy contamination (camps for other Rainier
+  routes with no entry for this route's own documented camp). No sourced replacement
+  for a specific Cowlitz/Ingraham glacier bivy site was found this pass (the route's own
+  itinerary only vaguely names "a camp on the Cowlitz/Ingraham glacier or Cathedral
+  Rocks cleaver" with no coordinate), so left for a human to decide whether to clear or
+  research a proper high-camp entry.
+- **wa_little_sister elevation figure**: the peak's own `areas.blurb` states "some older
+  sources ... list the summit at ~6,600 ft rather than the more precise 6,536 ft used
+  here" — but `elevation_ft` and both routes' `high_point_ft` actually store 6,600 ft,
+  not 6,536 ft, i.e. the blurb's own claim about which figure is "used here" is false of
+  the stored data. Unlike the Lincoln Peak case, WebSearch did not corroborate 6,536 ft:
+  one source gave 6,600 ft and another gave 6,627 ft (2020m), neither matching the
+  blurb's claimed precise figure. Left the numeric fields untouched and flagged the
+  inconsistency for a human to resolve, rather than picking a side with two disagreeing,
+  non-authoritative web sources.
+
+Checked and clean: wa_little_big_chief_mountain_northeast_face (elevation, FA, and
+`corrections` field's own reasoning all agree; its large "western Alpine Lakes" bivy
+corridor list — Pete Lake, Hardscrabble Horse Camp, Williams Lake — reads as a
+legitimate shared-zone file, and two of its entries are directly named in this route's
+own `approach` text); wa_little_mac_spire_southwest_route (elevation/FA/grade already
+self-flagged as uncertain in its own `data_quality.gaps` rather than stated as fact —
+appropriately hedged, not something to "fix"; its Terror Basin bivy list matches its own
+stated Goodell Creek approach); wa_little_sister_north_face and
+wa_little_sister_west_face (Green Creek Circuit bivy list — Dailey Prairie, Orsino Creek
+Basin, South Twin Sister summit bivies — checked against this catalog's own documented
+precedent that "South Twin Sister summit bivies correctly serves four lower Sisters
+because it IS the range high point," so not contamination; the FR-38 washout closure
+note on both routes carries its own `access_checked_at: 2026-08-27`, 9 days before this
+audit, and was not re-verified given how recently it was dated).
+
+External verification (WebSearch): Lincoln Peak elevation (~9,080-9,085ft, Wikipedia +
+AAC Publications) and its Wilkes-Booth FA (Coltrane/Rynkiewicz, March 13 2015, AAC
+Publications) confirmed exactly as stored; Lichtenberg Mountain's 5,844ft summit
+elevation confirmed exactly (Wikipedia); Little Tahoma's 1963 rockfall figures ("14
+million cubic yards," "about 4 miles down the glacier and the White River valley,"
+matching USGS Bulletin 1221-A) and its 1894 FA (Flett/Garrison, Aug 29 1894, east
+shoulder from Summerland) both confirmed exactly as stored in the area blurb; Little Big
+Chief's 1939 FA party (Beckey/Swift/Barto/Brooks) confirmed. wa_little_sister_west_face's
+FA (Darin Berdinka, June 21 2013) could not be corroborated or contradicted by web
+search — an obscure enough route that this isn't unexpected; left as-is per the
+"don't fix what you can't verify" rule rather than treated as suspect.
+
+`npm run check:sql` ran successfully (node_modules installed fresh this run). It
+reported the bivy-array UPDATE as "no literal id predicate — not checkable" — the same
+`.split(";")`-splitter artifact from long jsonb string content with escaped quotes that
+was already noted in batch 200's log entry, not a defect in the statement itself
+(its `WHERE id = '...' AND jsonb_array_length(bivy) = 7` guard is intact and was
+manually re-checked against live data immediately before finalizing). It also flagged
+a paste-size risk (file is 6.6KB against its 4KB soft limit) since the bivy statement
+is one long line — split it into ~1.5KB chunks when pasting into the SQL Editor. All
+four write targets confirmed to exist; no DELETE in this batch.
+
+Next batch continues from `wa_little_tahoma_cowlitz_ingraham_glaciers` onward
+alphabetically (pass 4).
