@@ -14546,3 +14546,110 @@ targets in this batch's SQL file as existing, with no DELETE present -- checked 
 the first pass.
 
 Next batch continues from `wa_mount_adams_northwest_ridge` onward alphabetically (pass 4).
+
+## Batch 205 (2026-09-05, pass 4)
+
+Routes: wa_mount_adams_south_climb, wa_mount_adams_wilson_glacier_headwall,
+wa_mount_anderson_eel_glacier, wa_mount_baker_boulder_glacier,
+wa_mount_baker_boulder_park_cleaver, wa_mount_baker_cockscomb_ridge,
+wa_mount_baker_coleman_deming, wa_mount_baker_coleman_headwall.
+
+Four confirmed fixes, three flagged for human review, one clean.
+
+**wa_mount_baker_coleman_deming** stored `dist_km: 4.7`, which is geometrically
+impossible for this route: it is shorter than the straight-line chord between the
+route's own trailhead and summit waypoints (6.52 km). The route's own summit waypoint
+independently carries `distMi: 5.5` (= 8.85 km), and that exact figure ("gains 7,000
+feet in a distance of 5.5 miles") is corroborated by multiple external route
+descriptions for the standard Coleman-Deming line (commonly cited as ~5.5 mi one-way /
+11.8 mi round trip). Corrected `dist_km` to 8.85. `gain_ft` (7080) already matches the
+externally-cited ~7,000 ft and needed no change; the Aug 17, 1868 Edmund
+Coleman-party first-ascent-of-Mount-Baker date was independently confirmed via
+HistoryLink.org and left as stored.
+
+**wa_mount_baker_boulder_glacier** had two independent numeric errors. `dist_km: 25.7`
+contradicted the route's own summit waypoint (`distMi: 6.35`, explicitly tagged
+`"distFrom": "track"` -- i.e. already computed by this app's own pipeline from this
+route's own stored 252-point gpx track). Re-summing that same gpx track by hand gives
+10.23 km, matching the waypoint value almost exactly, so `dist_km` was corrected to
+10.22 to agree with data the row already carried. Separately, `gain_ft`/`loss_ft` were
+both stored as 7000/7000, which does not match this route's own trailhead (2,200 ft)
+and summit (10,781 ft) waypoints -- straightforward subtraction gives 8,581 ft, not
+7,000. 7000/7000 looks like a filler value shared with unrelated Baker routes on
+different trailheads (Coleman Headwall's very different 3,437 ft trailhead genuinely
+does net to ~7,000 ft). Corrected to 8581/8581 (loss set equal to gain since this is an
+out-and-back route).
+
+**wa_mount_baker_cockscomb_ridge**'s `overview` field claimed the route is "approached
+from the Heliotrope Ridge Trailhead across the Coleman and Roosevelt Glaciers" --
+directly contradicting three other fields on the same row: its own `waypoints` array
+(trailhead named "Artist Point (Ptarmigan Ridge Trailhead)"), its `beta` field
+("Ascend Ptarmigan Ridge Trail to Camp Kiser..."), and its `descent` field ("...retrace
+the boot path and Ptarmigan Ridge Trail to Artist Point"). An external, authoritative
+source (The Mountaineers, mountaineers.org, on Camp Kiser along the Ptarmigan Ridge
+Trail) independently confirms that approach "provides access to the Park Glacier
+route, the Cockscomb, and the Roosevelt Headwall" -- i.e. Ptarmigan Ridge/Artist Point,
+not Heliotrope Ridge (the opposite, west side of the mountain, used by Coleman-Deming
+and Coleman Headwall). `overview` corrected to match the other three fields and the
+external source. NOT fixed: this route's `gpx` track and its second waypoint
+("Heliotrope Ridge Camp", at Heliotrope-side coordinates 48.795,-121.885) still
+describe the wrong side of the mountain -- flagged rather than patched, since a correct
+fix needs real Ptarmigan Ridge/Camp Kiser-area coordinates this session doesn't have a
+verified source for, not a guess.
+
+Flagged for human review, not auto-fixed:
+
+- **wa_mount_adams_wilson_glacier_headwall**: `season` ("Jul-Sep"), `best_season`
+  ("May to June"), and `permit` (generic Forest-Service South-Climb boilerplate, no
+  Yakama Nation language) all disagree with each other. The route's own `overview`
+  says it sits "on the reservation side of the mountain," and external research
+  confirms non-tribal-member climbing access on Mount Adams' Yakama Reservation side is
+  legally restricted to July 1-October 1 -- which would make `season`/"Jul-Sep" the
+  legally-correct window and `best_season`/"May to June" a real trespass risk, exactly
+  opposite to what internal signals (rockfall/cold-conditions language) suggested at
+  first read. But the row's `permit` field doesn't carry the Yakama-specific tribal
+  permit language its sibling `wa_mount_adams_mazama_glacier_headwall` correctly has,
+  so it isn't confirmed this route's approach actually crosses reservation land. Given
+  the legal/access stakes, left for a human decision rather than guessed.
+- **wa_mount_baker_cockscomb_ridge**: see above -- gpx/waypoint coordinates still wrong
+  after the overview text fix.
+- **wa_mount_anderson_eel_glacier**: `dist_km` (45.9) disagrees with a one-way length
+  derived from the route's own apparently-real, detailed out-and-back gpx track
+  (~30.8 km, computed by finding the track's closest point to the summit and summing
+  from the trailhead) and with the row's own hazards-field hedge ("~16+ mi one-way" =~
+  25.75 km). Three disagreeing numbers with no clear tiebreaker; flagged rather than
+  picked, following the same-shaped `wa_mount_adams_north_ridge` precedent from batch
+  204.
+
+Checked and clean: **wa_mount_adams_south_climb** -- elevation (12,276 ft, matches the
+area row and the rest of the Adams cluster), trailhead/summit coordinates, gain_ft
+(6,676, exactly matches the row's own trailhead/summit elevations), and the hedged
+"Unknown; undocumented" FA are all internally consistent; its permit/access text
+already correctly separates the Forest-Service South Climb route from the
+Yakama-tract Mazama Glacier route (unlike the Wilson Glacier Headwall row above).
+
+Also spot-checked and left as stored: Coleman Headwall's "Ed Cooper... August 1957" FA
+(no corroborating or contradicting external source found; left per absence-is-not-
+evidence). Boulder-Park Cleaver's "Joe Morovits and party, July 2, 1894" FA turned up
+an ambiguous WebSearch snippet (Morovits soloed the NE face/Park Glacier Headwall in
+1892, and a Mountaineers party climbed a Morovits-pioneered Boulder/Park route in
+1908) that neither confirms nor clearly contradicts a distinct 1894 ascent -- too thin
+to flag with confidence, so left alone rather than manufacture a finding from one
+AI-synthesized search summary.
+
+`npm run check:sql` (via `node scripts/check-sql-targets.mjs`) reported all four UPDATE
+targets in this batch's SQL file as existing, no DELETE present. It also warned the
+file (4316 bytes) is over its 4000-byte soft paste-size limit for the Supabase SQL
+Editor UI -- split into ~1.5KB chunks and verify each before pasting.
+
+External verification (WebSearch throughout -- WebFetch was not attempted this batch
+given it has returned EGRESS_BLOCKED on every URL tried in recent batches; relied on
+WebSearch's synthesized snippets): Cockscomb Ridge's Ptarmigan Ridge Trail/Camp Kiser
+approach (mountaineers.org), Coleman-Deming's mileage and 1868 Coleman-party first
+ascent of Mount Baker (HistoryLink.org, AllTrails/guide-service route descriptions),
+Mount Adams Yakama Reservation non-tribal climbing-season restriction (Jul 1-Oct 1),
+Wilson Glacier Headwall's general severity/rockfall reputation (AAC Publications
+snippet), and the inconclusive Joe Morovits 1892/1894/1908 search noted above.
+
+Next batch continues from `wa_mount_baker_coleman_headwall` onward alphabetically
+(pass 4).
