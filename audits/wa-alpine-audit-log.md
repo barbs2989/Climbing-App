@@ -14853,3 +14853,117 @@ status; SR-20 western-section seasonal-closure geography.
 
 Next batch continues from `wa_mount_crowder_southwest_route` onward alphabetically
 (pass 4).
+
+---
+
+## 2026-09-05 — Pass 4, Batch 208
+
+Six peaks, 8 routes (Mount Cruiser 2, Mount Custer 1, Mount Daniel 2, Mount Deception 1,
+Mount Degenhardt 1, Mount Despair 1): Northwest Face/Corner, South Corner (Cruiser);
+Standard Route/South Side (Custer); Daniel Glacier/Southeast Slopes, Lynch Glacier (Daniel);
+Standard Scramble/Royal Basin (Deception); Southwest Route (Degenhardt); East Route/Standard
+(Despair).
+
+**Fixed (7 UPDATE statements, 5 routes):**
+
+- **wa_mount_cruiser_nw_face_corner** — `road.status`/`access.closures` were stale, describing
+  Lake Cushman Rd/FR-24 and the Staircase entrance as closed under a Bear Gulch Fire order
+  "through at least Oct 1, 2026." Confirmed via WebSearch (USFS newsroom release, King5,
+  Yahoo/AP, Chronline) that Olympic NF/NP jointly reopened FS-24, the Lake Cushman recreation
+  sites, and the Staircase developed area to vehicles on July 8, 2026 — well before today. This
+  route's own sibling on the identical approach, `wa_mount_cruiser_south_corner`, already carried
+  the correct, current text (road open since 7/8, but the North Fork Skokomish/Flapjack Lakes
+  trail beyond Staircase still closed for backcountry repairs — matching the USFS's own caveat).
+  Brought NW Face/Corner's road+closures into agreement with its already-correct sibling — the
+  `audit:trailhead-road`-class defect this project's own engineering notes describe at length:
+  two routes sharing one trailhead disagreeing about current road status.
+- **wa_mount_cruiser_nw_face_corner** and **wa_mount_cruiser_south_corner** — both stored
+  `dist_km=12.4` (7.7 mi), which matches this route's own approach text as the one-way distance
+  to Flapjack Lakes CAMP (3.8mi old roadbed + 4.1mi Flapjack Lakes Trail), not to the summit
+  (which continues 1.5mi further to Needle Pass plus ridge scrambling). Two independent sources
+  (SummitPost: "18 miles round-trip, 5500 ft gain"; a Jim Brisbine/trailcatjim trip report for
+  this exact route: "approximately 18.0 miles traveled; 5700 feet gained & lost") confirm an
+  18-mile round trip. Corrected both routes' `dist_km` to 14.48 (9.0mi one-way, so the app's
+  `distKm*2` display reproduces the confirmed 18-mile round trip); NW Face/Corner explicitly
+  shares "Same approach as the South Corner" per its own text.
+- **wa_mount_custer_standard** — `dist_km=31.4` (19.5mi) matched nothing in the approach text and
+  was roughly double an authoritative figure for reaching this summit. SummitPost gives "car to
+  summit by direct route ... 8-9 miles ... 6,100 ft gain" for a related, slightly more direct line
+  to the same peak. The route's OWN summit waypoint independently records `distMi=8.2` (13.2km),
+  corroborating the external figure and evidently not consulted when `dist_km` was populated.
+  Corrected to 13.2.
+- **wa_mount_deception_standard** — `dist_km=32.2` (20.0mi) does not fit as a one-way figure (the
+  approach text gives ~7-8mi one-way to Upper Royal Basin camp, with the summit further still —
+  20mi one-way would double to a 40-mile round trip). Multiple external sources instead confirm
+  this AS the round trip: "a 20+ mile round-trip," "19 miles round trip, 6,000 ft gain," "22 miles
+  traveled, 6,900 ft gained/lost" — all clustering tightly on the stored value. Halved to 16.1
+  (one-way) so the app's doubling reproduces the confirmed ~20-mile round trip instead of ~40.
+- **wa_mount_despair_east_route** — `dist_km=38.62` (24.0mi). The row's OWN approach text states
+  outright that trip reports log "roughly 24 miles and 12,000+ ft of cumulative gain and loss ...
+  consistent with this route's ~38.6 km on-file distance" — i.e. the writer already understood
+  38.6km to BE the round trip, not the one-way figure the app's display logic doubles.
+  Independently confirmed via WebSearch (a Jim Brisbine/trailcatjim trip report for this exact
+  route line — Thornton Creek/Ridge/Pass, Triumph Pass, Lake Regret, Upper Despair Lake):
+  "approximately 24 miles traveled and 12,000 feet of elevation gained and lost," matching both
+  the round-trip mileage and the row's own (unchanged, already-correct) `gain_ft`/`loss_ft` of
+  12000/12000 exactly. Halved to 19.31 (one-way) so doubling reproduces the confirmed 24-mile
+  round trip rather than overstating it at 48.
+
+**Verified clean (external corroboration, no fix needed):**
+
+- Elevations confirmed exactly against listsofjohn.com/Wikipedia-sourced figures: Mount Custer
+  8,630 ft; Mount Daniel 7,960 ft (West/true summit; East Peak 7,899, Middle Summit 7,959 — both
+  match the row's own `overview` prose on the five-summits hazard); Mount Deception 7,788 ft
+  (confirmed second-highest Olympic summit after Olympus); Mount Degenhardt 8,107 ft (a "8,000+"
+  Wikipedia figure was too coarse to confirm the precise stored value, but listsofjohn.com gives
+  8,107 exactly); Mount Despair 7,296 ft NAVD88 (also confirms Beckey/Anderson/Kelley FA party,
+  age 16, July 2 1939, exactly as stored).
+- First ascents corroborated: Mount Custer (Dawe/Mason/Teichman, 1958, named for surveyor Henry
+  Custer); Mount Daniel (The Mountaineers, 1925, via Lynch Glacier — matches both Daniel routes'
+  `fa` fields); Mount Degenhardt (Degenhardt/Strandberg, 1931 — AAC Publications). Mount Cruiser's
+  peak-level 1937 FA (Crews/Layton) is not claimed by either route row, so nothing to check there;
+  `wa_mount_cruiser_nw_face_corner`'s specific 2004 Wallace/Parker FA claim for that one-pitch
+  variant could not be independently confirmed or contradicted (Wayne Wallace is a real,
+  well-documented PNW first-ascensionist, so the claim is plausible but unverifiable from search
+  results alone) — left as-is per audit policy (not fixing/flagging what cannot be verified either
+  way).
+- `dist_km` already correct as one-way: Mount Daniel Daniel Glacier route (12.1km=7.52mi one-way,
+  doubles to 15.04mi — a source states "if climbing to the full summit, the round trip is 15
+  miles" almost exactly) and Mount Degenhardt Southwest Route (15.04km=9.35mi one-way, doubles to
+  18.7mi — matches "18.7 miles round trip" and "19 miles round trip" sources for the Goodell
+  Creek/Terror Creek/Chopping Block Camp approach almost exactly). These two serve as a control
+  showing the dist_km convention bug found elsewhere this batch is not universal — some rows are
+  populated correctly.
+- Area/route coordinate placement: all six peaks' route-table or waypoint summit coordinates
+  match their parent `areas` row's lat/lng exactly or within a few metres (Cruiser, Daniel x2,
+  Deception, Degenhardt, Despair) — no cross-region contamination, no misfiled area hierarchy.
+- Aspect/face fields checked against route names for the class of defect this project's
+  engineering notes call out (`audit:aspect-name`) — no mismatches found (Cruiser NW Face/Corner
+  N/NW, South Corner S; Degenhardt SW/"Southwest Route"; Custer S/SW/"South Side"; Deception,
+  Daniel routes all internally consistent between `aspect`/`face` and route name/overview).
+- Mount Despair's `gain_ft=12000`/`loss_ft=12000` (unusually large relative to a 7,296 ft summit)
+  is genuine, not a fabrication artifact: it is externally corroborated exactly by a real trip
+  report and matches the route's own approach text, which crosses two named passes (Thornton
+  Ridge/Pass, Triumph Pass) with substantial intervening elevation loss and regain before reaching
+  the summit — consistent with the `audit:gain-floor-stated` class of check (a floor, not a
+  ceiling; this route legitimately exceeds it by a wide margin for a physically explained reason).
+- `wa_mount_daniel_lynch_glacier` carries no `grade`/`pitches`/`high_point_ft`/`gain_ft`/
+  `loss_ft`/`dist_km` at all — a data-completeness gap (sparse enrichment), not a wrong fact.
+  Left untouched: nothing here asserts a fact confidently enough to be wrong, and there is no
+  authoritative figure being contradicted.
+
+`npm run check:sql` reported all 7 UPDATE targets across 5 routes as existing; no DELETE present
+this batch. File exceeds the 4000-byte SQL Editor paste-size soft limit (6.8KB) — split into
+chunks before pasting, per the script's own warning.
+
+External verification (WebSearch throughout; WebFetch returned EGRESS_BLOCKED on
+en.wikipedia.org, peakvisor.com, stevensong.com this batch, consistent with prior batches — all
+corroboration here comes from WebSearch's synthesized snippets rather than a directly fetched
+page): Bear Gulch Fire / FS-24 / Staircase reopening (USFS, King5, Yahoo/AP, Chronline); Mount
+Custer elevation/FA/naming; Mount Daniel elevation/summits/FA; Mount Deception elevation; Mount
+Degenhardt elevation/FA; Mount Despair elevation/FA; round-trip mileage for Cruiser (SummitPost,
+trailcatjim), Custer (SummitPost), Deception (Mountaineers/WTA-sourced aggregation, multiple trip
+reports), Degenhardt (peakery/WTA-sourced aggregation), Daniel Glacier route (komoot/AllTrails-
+sourced aggregation), Despair (trailcatjim).
+
+Next batch continues from `wa_mount_despair_east_route` onward alphabetically (pass 4).
