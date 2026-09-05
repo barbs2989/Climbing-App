@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_challenger_challenger_glacier",
+  "last_processed_id": "wa_mount_crowder_southwest_route",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4267,6 +4267,25 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-05-batch-206.sql",
       "note": "A systematic pattern across the Mount Baker cluster: dist_km stored the trailhead-to-CAMP distance instead of trailhead-to-summit on 3 of 4 Baker routes plus Mount Carrie, each confirmed by the row's own approach prose explicitly stating the camp mileage; corrected using each route's own summit waypoint distance. wa_mount_buckindy_scramble had the round-trip figure stored directly in the one-way dist_km field (exactly double its own waypoint distance) and a wrong North Cascades NP permit block for a route actually in the Glacier Peak Wilderness (MBS National Forest). wa_mount_baker_north_ridge also had a stale road-closure claim (Glacier Creek Road reopened Aug 20 2026, well before its stated Oct 2026 end date). Flagged rather than fixed: wa_mount_baker_park_glacier_headwall's dist_km (confirmed impossible via chord math but no confident single replacement figure) and its grade/commitment mismatch; wa_mount_baker_north_ridge's grade/commitment mismatch (external sources disagree with each other too); wa_mount_buckindy_scramble's FA (a search snippet raised a Beckey-guidebook footnote suggesting the 1955 FA party may have actually climbed neighboring Mount Misch, conflicting with Wikipedia's attribution to Buckindy)."
+    },
+    {
+      "batch_number": 207,
+      "date": "2026-09-05",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_christie_west",
+        "wa_mount_constance_finger_traverse",
+        "wa_mount_constance_north_chimney",
+        "wa_mount_constance_north_chute",
+        "wa_mount_constance_terrible_traverse",
+        "wa_mount_constance_west_arete",
+        "wa_mount_crowder_northeast_ridge",
+        "wa_mount_crowder_southwest_route"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-09-05-batch-207.sql"
     }
   ]
 }

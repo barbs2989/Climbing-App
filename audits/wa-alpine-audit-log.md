@@ -14766,3 +14766,90 @@ Publications via search snippet); Mount Carrie's Bailey Range/Catwalk mileage.
 
 Next batch continues from `wa_mount_challenger_challenger_glacier` onward alphabetically
 (pass 4).
+
+## Batch 207 (2026-09-05, pass 4)
+
+Routes checked: wa_mount_christie_west, wa_mount_constance_finger_traverse,
+wa_mount_constance_north_chimney, wa_mount_constance_north_chute,
+wa_mount_constance_terrible_traverse, wa_mount_constance_west_arete,
+wa_mount_crowder_northeast_ridge, wa_mount_crowder_southwest_route.
+
+Confirmed error, fixed:
+
+- **wa_mount_christie_west**: `dist_km` (25.7 km, implying 15.97 mi one-way) understates
+  the route's own summit waypoint distance. The row's own waypoint chain (North Fork
+  Quinault Trailhead -> Wolf Bar -> Halfway House -> Elip Creek -> Trapper Shelter -> Low
+  Divide -> North Saddle/Christie Glacier crossing -> summit) carries an explicit
+  `distMi=20.3` at the summit waypoint — a definitive internal record this audit has
+  corrected against before (Mount Carrie, Mount Buckindy). Corrected to 32.67 km
+  (20.3 mi * 1.60934 km/mi), matching the row's own data with no external research
+  needed.
+
+Flagged for human review, not auto-fixed:
+
+- **wa_mount_crowder_southwest_route**: `dist_km` (61.15 km, implying a ~38 mi one-way /
+  76 mi round-trip approach) is identical to the decimal place to `wa_luna_glacier`'s
+  `dist_km` — a different route on the neighboring Phantom Peak (area `wa_phantom_peak`)
+  that uses a completely different, much longer trailhead corridor (Ross Dam/Big Beaver
+  Trail, straight-line chord ~22.9 km to Phantom Peak's summit). Mount Crowder's own
+  `approach_logistics` points to the much closer Goodell Creek trailhead (straight-line
+  chord only ~13.7 km to its own summit), and its own waypoint chain gives the first leg
+  (Terror Basin Camp) at just 4.5 mi from that trailhead — consistent with the short
+  southern corridor its own approach text leads with, not the long northern one. This
+  reads as copy/duplication contamination between two neighboring peaks' routes rather
+  than a genuine shared-approach convention (unlike, e.g., routes on one peak sharing one
+  trailhead's road prose). No authoritative external source publishes a specific one-way
+  mileage for this extremely obscure objective, so no corrected figure was derived —
+  flagging the internal contradiction rather than guessing a replacement number.
+
+Checked and clean: **wa_mount_constance_north_chimney** (FA — R. Schellin & A.E. Smith,
+1922 — confirmed via Wikipedia/SummitPost search snippets, and matches the peak's own
+`areas.blurb`; elevation 7,756 ft cross-checked against the row's own honest
+`corrections` note that older sources cite 7,743 ft while Wikipedia/PeakVisor give
+7,756 ft, choosing the latter — an appropriately hedged, already-resolved ambiguity, not
+something to re-litigate from a web search); **wa_mount_constance_finger_traverse**,
+**wa_mount_constance_north_chute**, **wa_mount_constance_terrible_traverse**,
+**wa_mount_constance_west_arete** (all five Constance routes share consistent
+elevation/coordinates/trailhead data and cross-reference each other correctly — e.g.
+Finger Traverse and North Chimney both correctly describe themselves as alternatives to
+the Terrible Traverse; West Arête's own `corrections` field already discloses a genuine
+5.4-vs-5.5 rock-grade source disagreement rather than picking a side silently);
+**wa_mount_crowder_southwest_route**'s first-ascent claim (1962, "Old Brownie", party
+surnames Magnusson/Ardussi/Mech/Schmechel) — corroborated via WebSearch (Wikipedia,
+AAC Publications) for the year, elevation (7,082 ft), prominence (1,042 ft), and
+namesake (USGS geologist Dwight F. Crowder); **wa_mount_crowder_northeast_ridge**
+(honestly sparse — no grade/gain/loss/distance recorded for this rarely-documented
+descent-only line, consistent with its own `overview` describing it as "not... a
+recommended way to reach Crowder's summit" and its `watch_out` noting the published
+description "has been reported by climbers as vague or inaccurate"; nothing here
+asserts a fact confidently enough to be wrong). Mount Christie's own elevation
+(6,181 ft NAVD88) confirmed exactly against the route's `high_point_ft=6181`.
+
+Also verified and left untouched: the Dosewallips River Road (FS 2610) closure affecting
+all five Mount Constance routes — still washed out/closed to vehicles since the January
+2002 event with no funded repair, confirmed current via WebSearch (Peninsula Daily News,
+dangerousroads.org, USFS project archive showing the reroute project "Cancelled") —
+matches the stored `road.status` text on all five rows. The North Fork Quinault River
+Road (North Shore Road) used by wa_mount_christie_west — a 2026-07 trip report confirms
+it is open (potholed dirt) to the North Fork trailhead/campground 17 miles in, matching
+the row's already-hedged `road.status` ("subject to multi-month construction closures
+and washouts; verify current status before driving") rather than a stale specific claim.
+SR-20's western section near Newhalem (used by both Crowder routes) is confirmed to stay
+open essentially year-round, well west of the seasonal Washington Pass closure gate —
+matches the stored `road.status` text. None of these were re-stamped with
+`access_checked_at`, consistent with this audit's practice in prior batches of leaving
+that column to the dedicated enrichment pipeline rather than writing it from here.
+
+`npm run check:sql` reported the 1 UPDATE target in this batch's SQL file as existing,
+no DELETE present.
+
+External verification (WebSearch throughout; WebFetch returned EGRESS_BLOCKED on
+en.wikipedia.org again this batch, consistent with prior batches — all corroboration
+here comes from WebSearch's synthesized snippets of Wikipedia/SummitPost/AAC
+Publications/news-source content rather than a directly fetched page): Mount Constance
+FA and elevation-source disagreement; Mount Crowder FA party, elevation, prominence, and
+namesake; Mount Christie elevation; Dosewallips Road and North Fork Quinault Road current
+status; SR-20 western-section seasonal-closure geography.
+
+Next batch continues from `wa_mount_crowder_southwest_route` onward alphabetically
+(pass 4).
