@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+  "last_processed_id": "wa_magic_mountain_north_face",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4169,6 +4169,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-05-batch-201.sql",
       "note": "wa_lincoln_peak_north_ridge/standard: high_point_ft (9101) and the summit waypoint's elev/elevFt corrected to 9085, confirmed via Wikipedia and the AAC Publications FA writeup for this exact route, both against this app's own areas.elevation_ft (9085) which the north_ridge route's own pre-existing corrections field already flagged as more precise but which had never been propagated to the routes table. wa_lichtenberg_mountain_west_face_west_rib: bivy array trimmed from 7 entries to the 2 that are actually about Lichtenberg (Lake Valhalla, Lichtenwasser Lake) -- the other 5 were a Stevens Pass/US-2 corridor zone list describing camps for Union Peak/Mount McCausland, Sky Mountain/Tye Peak (confirmed via web search to sit at the Stevens Pass ski-area trailhead, not Smithbrook), Spinnaker/Martin Peak, and Slippery Slab Tower/Thunder Mountain (reached via Tunnel Creek/Surprise Creek at Scenic) -- none of which mention Lichtenberg anywhere in their own text. Flagged rather than swept: wa_little_tahoma_cowlitz_ingraham_glaciers's bivy array (Summerland Camp, Meany Crest, Fryingpan Glacier toe, Whitman Glacier notch, Silver Springs Campground) is entirely camps for the East Shoulder/Frying Pan-Whitman route on the OPPOSITE (White River/Fryingpan) side of the mountain, while this specific route is a Paradise-side glacier traverse (Cowlitz/Ingraham Glaciers) with no shared trailhead -- same shape as the Ptarmigan Ridge finish bivy contamination flagged in batch 200, no sourced replacement camp found this pass; and wa_little_sister's area blurb states 'the more precise 6,536 ft used here' while elevation_ft/high_point_ft on both Little Sister routes actually store 6,600 ft -- web search found two external sources giving 6,600 ft and 6,627 ft, neither corroborating 6,536 ft, so left as-is pending a human decision rather than picking a side. wa_little_big_chief_mountain, wa_little_mac_spire, wa_little_sister (both routes) checked clean otherwise -- their large bivy corridor lists (western Alpine Lakes / Terror Basin / Green Creek Circuit) read as legitimate multi-peak zone files on inspection, matching the pattern this catalog documents as normal rather than contamination."
+    },
+    {
+      "batch_number": 202,
+      "date": "2026-09-05",
+      "pass": 4,
+      "route_ids": [
+        "wa_little_tahoma_east_shoulder",
+        "wa_live_free_or_die",
+        "wa_lizard_mountain_south_route",
+        "wa_luahna_peak_southwest_slope_southeast_ridge",
+        "wa_luna_glacier",
+        "wa_luna_peak_southeast_slopes",
+        "wa_lundin_peak_south_face_left",
+        "wa_magic_mountain_north_face"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 3,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-05-batch-202.sql",
+      "note": "wa_lizard_mountain_south_route: high_point_ft 7420->7399, matching its own Summit waypoint and areas.elevation_ft for wa_lizard_mountain. wa_luahna_peak (area): elevation_ft 8450->8445, matching Wikipedia/PeakVisor and this app's own two Luahna routes. wa_luna_glacier: dropped a stale \"No elevation is recorded\" claim on the Luna Camp bivy entry, which does carry an elevation (2432) matching the fuller sourced entry on sibling route wa_luna_peak_southeast_slopes. Flagged rather than swept: wa_lizard_mountain_south_route's waypoints array describes a north (Cascade Pass) approach that contradicts six other fields on the row (approach_logistics/road/access/bail/descent/descent_text/bivy) all describing a south (Downey Creek) approach instead -- needs an editorial decision on which narrative is canonical, not a field patch; wa_luahna_peak_southwest_slope_southeast_ridge's 9-entry bivy array is a Glacier Peak/Chiwawa-region corridor list shared verbatim across at least 12 routes on 9 different peaks (confirmed via DB query), at least 5 entries unambiguously belonging to Glacier Peak alone -- needs a dedicated multi-route split like the documented Mountain Loop/Goat Rocks precedents, out of scope for a single-row patch; wa_live_free_or_die's bivy list opens with a west-side Blue Lake bivy on an explicitly east-side route, the same defect class already flagged (unfixed) for sibling wa_liberty_crack in batch 200."
     }
   ]
 }

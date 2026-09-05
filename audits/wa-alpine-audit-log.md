@@ -14267,3 +14267,100 @@ four write targets confirmed to exist; no DELETE in this batch.
 
 Next batch continues from `wa_little_tahoma_cowlitz_ingraham_glaciers` onward
 alphabetically (pass 4).
+
+## Batch 202 — 2026-09-05 (pass 4)
+
+Routes: wa_little_tahoma_east_shoulder, wa_live_free_or_die, wa_lizard_mountain_south_route,
+wa_luahna_peak_southwest_slope_southeast_ridge, wa_luna_glacier, wa_luna_peak_southeast_slopes,
+wa_lundin_peak_south_face_left, wa_magic_mountain_north_face. 3 fixes, 3 flagged, 4 clean.
+
+Fixed: wa_lizard_mountain_south_route's high_point_ft (7420) contradicted both its own
+Summit waypoint (7399) and areas.elevation_ft for wa_lizard_mountain (7399) — corrected to
+7399. wa_luahna_peak's areas.elevation_ft (8450) was the outlier against Wikipedia and
+PeakVisor (8,445ft) and against this app's own two Luahna routes, both of which store
+high_point_ft=8445 — corrected to 8445. wa_luna_glacier's "Luna Camp" bivy entry carried a
+populated elev (2432) but its own notes text still said "No elevation is recorded because no
+confident figure was sourced" — stale, since the sibling route wa_luna_peak_southeast_slopes
+independently stores the identical camp at the identical 2432ft with a full sourced
+description; dropped the now-false trailing sentence.
+
+Flagged for human review: (1) wa_lizard_mountain_south_route's `waypoints` array describes a
+NORTH approach (Cascade Pass Trailhead -> Cache Col -> Kool-Aid Lake -> Middle Cascade
+Glacier -> Yang Yang Lakes -> White Rock Lakes) that contradicts six other fields on the same
+row -- `approach_logistics`, `road`, `access`, `bail`, `descent`, `descent_text`, and `bivy` --
+which all independently and consistently describe a SOUTH approach instead (Downey Creek
+Trailhead -> Bachelor Creek -> Cub Lake -> Itswoot Ridge -> South Cascade Glacier col). The
+`waypoints[0]` elevation (3600ft) and its "End of Cascade River Road, 23 mi from Marblemount"
+note match a SIBLING route in this same batch (wa_magic_mountain_north_face's own Cascade
+Pass Trailhead entry, identical elev/coordinates) almost exactly, and the next waypoint's own
+directions text ("from the road-end parking... about 3.7 miles... gaining roughly 1,800 ft")
+only makes sense starting from that same 3600ft trailhead -- so the `waypoints` array itself
+is internally self-consistent as the Cascade Pass line, it just disagrees with the majority
+of the row's other fields about which approach this specific route documents. Deciding which
+narrative is canonical (or whether the whole `waypoints` array needs a from-scratch rewrite to
+match the Downey Creek/south-side approach the other six fields describe) is an editorial call
+beyond a field patch. (2) wa_luahna_peak_southwest_slope_southeast_ridge's 9-entry `bivy` array
+is a "Chiwawa/Glacier Peak region" corridor list shared byte-for-byte across at least 12 routes
+on 9 different peaks/areas (confirmed via DB query on the array's first entry alone):
+wa_glacier_peak_cool_glacier_gerdine, wa_buck_mountain_south_ridge,
+wa_chalangin_peak_little_giant_pass_luahna_col, wa_clark_mountain_west_ridge,
+wa_helmet_butte_standard_route, wa_tenpeak_mountain_southeast, wa_mount_berge_southwest_route,
+wa_luahna_peak_southwest_slope_southeast_ridge, wa_glacier_peak_kennedy_glacier,
+wa_sitkum_spire_standard, wa_luahna_peak_east_slopes, wa_tenpeak_mountain_north_couloir. Five
+of the nine entries (Mackinaw Shelter, White Pass/Foam Creek, Glacier Gap, Kennedy Ridge/
+Glacier Creek, Boulder Basin above Sitkum Creek) are unambiguously and self-describedly camps
+for GLACIER PEAK's three different approaches, entirely unrelated to Luahna (whose own route
+text approaches via White River Trailhead/Boulder-Clark-Luahna basins, ~50 miles from Glacier
+Peak's trailheads) -- this is the same "shared list propagated across a whole corridor" shape
+this audit's SQL history has split apart before (Mountain Loop Highway, Goat Rocks/St Helens),
+but resolving it properly means reading and re-splitting all 12 affected routes together in
+one dedicated pass, not a single-row patch inside this batch. Two of the remaining four
+entries (Napeequa Valley floor, Butterfly Butte/Pilz Glacier) do explicitly name "Luahna Peak"
+but for the OTHER (glaciated, Napeequa-side) route on the same peak per this route's own text
+("deliberately glacier-free... beside the other route on the peak"); the last two (Buck Creek
+Pass, Boulder Pass/Thunder Basin-White River) describe peaks/routes sharing parts of the same
+broader trailhead corridor without clearly serving this specific route. Recommend a follow-up
+pass across all 12 routes rather than a partial fix here. (3) wa_live_free_or_die's `bivy`
+list opens with "Blue Lake trailhead roadside bivy" (west side of the Liberty Bell group,
+~half a mile west of Washington Pass) even though this route's own approach explicitly says
+"Same East Face approach as Liberty Crack" (east side, SR-20 hairpin/pond pullout) -- the
+identical west-side-bivy-on-an-east-side-route defect already flagged (and left unfixed
+pending research into the correct east-side list) for sibling route wa_liberty_crack in
+batch 200.
+
+Checked and clean: wa_little_tahoma_east_shoulder (11,138ft elevation and 1894 Flett/Garrison
+FA both confirmed via WebSearch against Wikipedia/PeakVisor/Mountaineers.org; $82/person 2026
+climbing registration fee confirmed current via NPS climbing-fee-FAQ search results); the
+9-entry Cascade Pass corridor `bivy` list on wa_magic_mountain_north_face reads as a genuinely
+well-differentiated shared list -- each entry names which peaks it serves (Forbidden/Sharkfin
+via Boston Basin, Sahale/Boston Peak via Sahale Glacier Camp, "Mixup Peak, Magic Mountain and
+the..." via Pelton Basin, Johannesburg via Johannesburg Camp) and all are genuinely reachable
+from the single shared Cascade Pass Trailhead, unlike the Luahna list above; wa_luna_peak_
+southeast_slopes (1938 Cox/Thompson FA for Luna Peak confirmed via WebSearch, matching this
+app's own stored fa field exactly; internally consistent throughout); wa_lundin_peak_south_
+face_left (internally consistent; FA "Mike Preiss & Don Preiss, 2004" could not be
+corroborated or contradicted by web search -- an obscure enough 4-pitch alpine rock route
+that this isn't unexpected, left as-is per the "don't fix what you can't verify" rule).
+
+External verification (WebSearch): Little Tahoma's 1894 FA and 11,138ft elevation, Mount
+Rainier NP's $82/person 2026 climbing fee, Downey Creek Trailhead's ~1,450ft elevation and
+Suiattle River Road/Darrington access (confirming the wa_lizard_mountain_south_route flag
+above), Luahna Peak's 8,445ft elevation (Wikipedia/PeakVisor vs. this app's outlier
+areas.elevation_ft=8450), Phantom Peak's 1940 Beckey/Beckey FA and ~8,000+ft elevation
+(consistent with stored data, not flagged), and Luna Peak's 1938 Cox/Thompson FA all
+confirmed or reconciled as noted above. Most gov domains (nps.gov, fs.usda.gov, wta.org,
+wikipedia.org) returned EGRESS_BLOCKED on direct WebFetch in this environment; relied on
+WebSearch's synthesized snippet answers instead, which worked throughout.
+
+`npm run check:sql` (via `node scripts/check-sql-targets.mjs`, run against both
+`--table routes` and `--table areas` since this batch writes to both) initially warned "no
+literal id predicate — not checkable" on the wa_luna_glacier UPDATE: the replacement notes
+string contained a literal semicolon ("Access Creek confluence; whether...") which the
+checker's naive `.split(";")` statement-splitter cut mid-string, orphaning the WHERE clause
+into what looked like a second, id-less statement. Real SQL parsers are quote-aware and would
+have executed the original statement correctly, but rephrased the sentence to remove the
+semicolon rather than rely on that — the checker now reports both targets cleanly and the
+file is easier to paste in chunks besides. All three write targets confirmed to exist; no
+DELETE in this batch.
+
+Next batch continues from `wa_magic_mountain_northeast_couloir` onward alphabetically (pass 4).
