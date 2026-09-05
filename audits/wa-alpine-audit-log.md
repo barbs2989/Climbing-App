@@ -14364,3 +14364,77 @@ file is easier to paste in chunks besides. All three write targets confirmed to 
 DELETE in this batch.
 
 Next batch continues from `wa_magic_mountain_northeast_couloir` onward alphabetically (pass 4).
+
+## Batch 203 — 2026-09-05 (pass 4)
+
+Routes: wa_magic_mountain_northeast_couloir, wa_magic_mountain_south_ridge,
+wa_magic_mountain_west_ridge, wa_martin_peak_west_ridge, wa_marvin_s_ear,
+wa_mcmillan_spire_west_southwest_ridge, wa_mcmillan_spire_west_west_ridge,
+wa_mesahchie_peak_west_ridge. 3 fixes, 1 flagged, 4 clean.
+
+Fixed: wa_martin_peak_west_ridge credited its fa as a joint ascent, "Everett Darr and Ida
+Zacher, July 1936". Two independent sources (a WebSearch-surfaced Wikipedia summary for
+Martin Peak (Washington), and a separate 2025 Mazama Bulletin profile, "She Climbs High!")
+agree Ida Zacher soloed the first ascent in July 1936 after leaving camp during a Bonanza
+Peak scouting trip -- Everett Darr was not on the summit with her; she married him later
+that year and later climbed as Ida Zacher Darr, which is the likely source of the false
+joint credit. Rewrote fa to state the solo ascent and explain the name.
+
+Fixed: wa_mcmillan_spire_west_southwest_ridge and wa_mcmillan_spire_west_west_ridge both
+stored an identical road.name/road.status describing "Ross Lake water taxi ... to Big
+Beaver/Access Creek" -- multiple independent trip-report/guidebook-style sources (WTA, The
+Mountaineers, climberkyle.com, Dr. Dirtbag) confirm that approach serves the NORTHERN
+Pickets (Mount Fury, Luna Peak, Mount Challenger), not West McMillan Spire, which sits in
+the Southern Pickets and is reached via the Goodell Creek trailhead at Newhalem -- exactly
+what this app's own approach_logistics.trailhead field, and (on the southwest-ridge row
+only) road.driveNote, already say for these same two routes. The west-ridge row's
+road.driveNote was contaminated with the same wrong approach too, so it was replaced with
+the correct text already stored, uncontaminated, on its southwest-ridge sibling at the same
+trailhead. road.seasonalGate on both rows was left untouched -- it correctly describes
+SR-20's winter closure east of Newhalem without naming a specific (wrong) approach.
+
+Flagged for human review: wa_marvin_s_ear's fa already hedges "Morgan Zentler and Sheila
+Zentler, September 16, 2017 ... Another record gives Sept. 2016." WebSearch corroborated the
+climbers, the date (Sept 16), the venue (Vega Tower, a subsummit of Morning Star Peak -- the
+row's own area_id) and the route stats (800ft/244m, III 5.10b, matching this row's length_m
+and grade), but the exact year could not be resolved: the two primary sources that would
+settle it (AAC Publications, Mountain Project) both returned EGRESS_BLOCKED. No fix applied
+since the row already states its own uncertainty honestly; noting here so a human with
+direct access to those two pages can pin the year down.
+
+Checked and clean (elevation, coordinates and/or FA cross-checked via WebSearch against
+Wikipedia/PeakVisor snippets and found to match this app's stored values, or internally
+consistent with no external claim to check): wa_magic_mountain_northeast_couloir (7,610ft
+high point, matching its own peak's confirmed Wikipedia elevation; internally consistent
+with its two sibling Magic Mountain routes below); wa_magic_mountain_south_ridge (7,610ft
+elevation and 48.446,-121.0414 peak coordinates both confirmed via WebSearch; fa "Calder
+Bressler, Ray Clough, Bill Cox, Tom Myers, July 1938" independently confirmed as the real
+first-Ptarmigan-Traverse party and date); wa_magic_mountain_west_ridge (7,610ft high point
+consistent with siblings; no fa stored, nothing to check or fabricate); wa_mesahchie_peak_
+west_ridge (8,795ft elevation and 48.5786,-120.8803 peak coordinates both confirmed via
+WebSearch against Wikipedia).
+
+External verification (WebSearch, since WebFetch returned EGRESS_BLOCKED for every
+wikipedia.org/summitpost.org/mountainproject.com/americanalpineclub.org URL tried this
+batch -- relied on WebSearch's synthesized snippets throughout, consistent with recent
+batches): Magic Mountain's 7,610ft elevation and 48.446/-121.041 coordinates, the 1938
+Ptarmigan Traverse FA party, Martin Peak's 8,509ft elevation, 48.2417/-120.8159
+coordinates, and Ida Zacher's solo 1936 FA, Marvin's Ear / Vega Tower's identity as a
+Morning Star Peak subsummit plus its FA party/date/stats, West McMillan Spire's 8,004ft
+elevation and 1940 Beckey/Beckey West Ridge FA, the Goodell-Creek-not-Ross-Lake approach for
+West McMillan Spire, and Mesahchie Peak's 8,795ft elevation and coordinates.
+
+`npm run check:sql` (via `node scripts/check-sql-targets.mjs`) initially warned all three
+UPDATEs were "no literal id predicate -- not checkable": the replacement strings used a
+literal semicolon as a sentence separator ("...further east); from the Goodell Creek...")
+which the checker's naive `.split(";")` statement-splitter cut mid-string, the same class of
+bug batch 202's log recorded for a different string. Also caught before that: this app's own
+prose convention uses an em dash (—) rather than "--", and the checker treats any "--"
+as starting a line comment, so an early draft using "--" as a clause separator inside the
+replacement strings got silently truncated by the checker's own comment-stripper. Rewrote
+both replacement strings to avoid embedded semicolons and to use em dashes/periods instead
+of "--", after which all three write targets checked cleanly (ids exist, no DELETE in this
+batch). File is 4,273 bytes, over the checker's 4,000-byte paste-size soft limit like
+several recent batches -- split into chunks when pasting into the SQL Editor.
+
+Next batch continues from `wa_mesahchie_peak_west_ridge` onward alphabetically (pass 4).
