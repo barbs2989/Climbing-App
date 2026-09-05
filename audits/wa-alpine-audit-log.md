@@ -15105,3 +15105,85 @@ threshold the checker warns about — split it into smaller chunks if pasting
 through the web editor rather than psql/another SQL client.
 
 Next batch continues from `wa_mount_logan_r1` onward alphabetically (pass 4).
+
+## Batch 211 (2026-09-05, pass 4)
+
+Scope: `wa_mount_logan_r2` .. `wa_mount_persis_the_hexorcist` (8 routes).
+
+**4 fixed, 3 flagged for human review (one row carries both), 2 clean.**
+
+- `wa_mount_mathias_scramble`: `dist_km` stored as 91.73 km — exactly double
+  the row's own summit waypoint distance (distMi=28.5 one-way = 45.87 km).
+  Same round-trip-stored-as-one-way bug already fixed twice in batch 210.
+  Corrected to 45.87 km.
+  - **Flagged, not fixed**: this row describes two different, only partly
+    reconciled approaches. `approach`/`pitch_detail` describe the Hoh River
+    Trail → Glacier Meadows → Blue Glacier line as primary; `waypoints[1:]`,
+    `itinerary`, `timing.sectionBreakdown` and `bivy` instead describe the
+    Sol Duc Trailhead → High Divide → Bailey Range Traverse line as primary
+    (and `approach_variants` explicitly files the Hoh route as a named
+    "variant", implying Sol Duc was meant to be primary). Compounding this,
+    `waypoints[0]` is labeled "Hoh River Trailhead", sits at the real Hoh
+    coordinates, but carries `elev: 1950` — contradicted by both this row's
+    own approach text (578 ft) and external sources (Hoh trailhead area is
+    ~530-650 ft per WebSearch), and its very next waypoint ("High Divide",
+    9 mi away) is a Sol Duc-side landmark unreachable from Hoh at that
+    mileage. Needs an editorial call on which approach is primary and a
+    coordinated rewrite, not a targeted UPDATE — same class as batch 209's
+    `wa_mount_fairchild_standard`.
+- `wa_mount_maude_r1` (North Face): `dist_km` stored as 6.4 km — geometrically
+  impossible, less than the 6.52 km straight-line chord between this row's
+  own trailhead and peak coordinates. The row's own summit waypoint
+  independently records distMi=8 (one-way) = 12.87 km, consistent with its
+  own 4-point gpx track and approach text. Corrected to 12.9 km.
+- `wa_mount_olympus_blue_glacier`: two fixes.
+  1. `dist_km` stored as 28 km — this is actually the row's own distance to
+     the Glacier Meadows *camp* (17.5 mi ≈ 28.2 km per its own waypoint),
+     not to the summit. The summit waypoint independently records distMi=22
+     (one-way) = 35.4 km, matching a WebSearch-confirmed synthesis of guide
+     sources ("17.2 miles to Glacier Meadows", "44 miles round trip") and
+     this row's own totalNote ("~41-44 mi round trip") almost exactly.
+     Corrected to 35.4 km.
+  2. `loss_ft` stored as 400 against `gain_ft`=7500, despite `descent_text`
+     saying to reverse the ascent line — an out-and-back via the same Hoh
+     River Trail both ways, which physically requires round-trip loss to
+     equal round-trip gain. `gain_ft`=7500 is externally corroborated
+     ("7,400 feet of elevation gain" per the same WebSearch synthesis), and
+     the row's own itinerary already shows losses over 400 ft in the first
+     two approach days alone. Corrected `loss_ft` to 7500 to match.
+- `wa_mount_olympus_west_ridge`: the identical pair of issues as its sibling
+  above (both routes evidently share one un-updated template value).
+  1. `dist_km` stored as 28 km; this row's own summit waypoint independently
+     records distMi=19.68, explicitly flagged `distFrom:"track"` (computed
+     from this route's own gpx), = 31.67 km, matching its own gpx track
+     length exactly. Corrected to 31.7 km.
+  2. `loss_ft` stored as 400 against `gain_ft`=7500, despite the descent
+     being "the standard Blue Glacier route" back to the same trailhead —
+     same physical-symmetry argument as above. Corrected `loss_ft` to 7500.
+- Flagged, no fix: `wa_mount_logan_r2` (Douglas Glacier) has three
+  disagreeing round-trip mileage figures on file (itinerary days sum to
+  19 mi; itinerary.totalNote says "~28-mile round trip"; its own 3-point gpx
+  sums to 13.85 km one-way ≈ 17.2 mi round trip) plus a fourth, different
+  figure from a WebSearch trip report ("~24 miles, 6,800 ft gained & lost").
+  No majority; needs an editorial read rather than a guessed UPDATE.
+- Flagged, no fix: `wa_mount_maude_r2` (Entiat Ice Fall) has the identical
+  geometrically-impossible `dist_km`=6.4 km as its sibling r1 above (chord is
+  6.52 km), but records no summit waypoint distMi to correct it to and no
+  external source was found for this rarely-climbed variation's exact
+  mileage. Flagged per the same reasoning as batch 206's
+  `wa_mount_baker_park_glacier_headwall`.
+- Clean, verified against external sources, no issues: `wa_mount_mystery_standard`
+  (dist_km matches its own summit waypoint exactly; symmetric gain/loss
+  consistent with its explicit out-and-back descent; 7,639 ft elevation and
+  rappel details cross-check against the cited Mountaineers trip-report
+  language already embedded in the row) and `wa_mount_persis_the_hexorcist`
+  (sparse but honestly labeled — nearly every technical field is explicitly
+  null with a candid "no published beta exists" caveat rather than a
+  fabricated value; its 5,464 ft elevation was already cross-checked against
+  Wikipedia/WTA in a prior pass).
+
+`npm run check:sql` confirmed all 6 UPDATE targets exist; no DELETE
+statements in this batch. File is ~7.5KB, over the SQL Editor's ~4KB
+safe-paste threshold — split into chunks if pasting through the web editor.
+
+Next batch continues from `wa_mount_logan_r2` onward alphabetically (pass 4).
