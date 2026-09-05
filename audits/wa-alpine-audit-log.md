@@ -14653,3 +14653,116 @@ snippet), and the inconclusive Joe Morovits 1892/1894/1908 search noted above.
 
 Next batch continues from `wa_mount_baker_coleman_headwall` onward alphabetically
 (pass 4).
+
+---
+
+## 2026-09-05 — Pass 4, Batch 206
+
+Eight routes across five Mount Baker/North Cascades/Olympics peaks: Easton Glacier, North
+Ridge, Park Glacier Headwall, Squak Glacier (Mount Baker); North Ridge (Mount Blum);
+Buckindy Glacier/Scramble Route (Mount Buckindy); Standard Route/Carrie Glacier (Mount
+Carrie); Challenger Glacier (Mount Challenger).
+
+**A systematic pattern across the Mount Baker cluster**: three of the four Baker routes'
+own `dist_km` values turned out to be their own trailhead-to-CAMP distance, not
+trailhead-to-summit — confirmed not by guesswork but by the row's OWN `approach` prose,
+which states the camp mileage explicitly and stops there ("high camp... roughly 3.75
+miles from the trailhead", "Crag View camp... about 3.5 mi from the trailhead", "up the
+Hogsback moraine to the standard high camp... about 2.5 mi"), each matching the stored
+`dist_km` almost exactly once converted. `dist_km` is meant to be the one-way distance to
+the route's endpoint (the app doubles it for round-trip display). The same prose-confirmed
+pattern also explained Mount Carrie's `dist_km` ("One-way distance from the trailhead to
+Boston Charlie's Camp/Cat Basin is roughly 13 miles" — matches the stored value almost
+exactly, and the row's own text says the summit is "a long day from there").
+
+**Confirmed errors → fixes in `sql/2026-09-05-batch-206.sql`:**
+- **wa_mount_baker_easton_glacier**: `dist_km` 6.4→14.16 km (to-camp bug above; corrected
+  to the route's own summit waypoint, distMi=8.8, corroborated by multiple external route
+  descriptions citing "around 8 miles"/"16 miles round trip" to the summit). Also
+  `commitment` 'I'→'II' to agree with the route's own `grade` text ("Grade II glacier
+  climb") — a full-day glacier push from camp is squarely NCCS Grade II, not I.
+- **wa_mount_baker_squak_glacier**: `dist_km` 5.5→14.48 km (same to-camp bug; corrected to
+  the route's own summit waypoint, distMi=9).
+- **wa_mount_baker_north_ridge**: `dist_km` 4→19.31 km (same to-camp bug — also physically
+  impossible as stored, shorter than the trailhead/summit chord; corrected to the route's
+  own summit waypoint, distMi=12). Also `road.status`/`road.driveNote`: the stored text
+  described an ongoing Glacier Creek Road (FR 39) closure "through the end of October
+  2026" — external sources (Cascadia Daily News, citing a Forest Service announcement)
+  confirm the road actually reopened August 20, 2026, well before both today's audit date
+  and the row's own stated end date. A stale transient-closure claim; corrected to note
+  the reopening while keeping the historical washout context.
+- **wa_mount_carrie_standard**: `dist_km` 20.9→23.34 km (same to-camp bug, confirmed by
+  the row's own `approach` text quoted above; corrected to the route's own summit
+  waypoint, distMi=14.5).
+- **wa_mount_buckindy_scramble**: `dist_km` 21.89→10.94 km — a different variant of the
+  same field-misuse class: 21.89 km is exactly double (to rounding) the route's own summit
+  waypoint (distMi=6.8 → 10.94 km), i.e. the round-trip figure was stored directly in the
+  one-way field instead of the app's own convention of doubling a one-way value. Also
+  `permit`: stored text claimed "North Cascades NP complex" jurisdiction, but Mount
+  Buckindy sits in the Glacier Peak Wilderness (Mount Baker-Snoqualmie National Forest),
+  not North Cascades National Park (confirmed via Wikipedia and the Forest Service's own
+  Glacier Peak Wilderness page) — this also contradicted the row's own trailhead waypoint
+  note ("Northwest Forest Pass needed to park", a USFS pass, not an NPS one). Corrected to
+  the applicable USFS wilderness-permit framework, matching phrasing this database already
+  uses for other Mount Baker-Snoqualmie National Forest routes.
+
+Flagged for human review, not auto-fixed:
+
+- **wa_mount_baker_park_glacier_headwall**: `dist_km` (8.0 km) is mathematically
+  impossible — shorter than the 11.82 km straight-line chord between the route's own
+  trailhead and summit coordinates — but unlike the four routes above this row has no
+  intermediate camp waypoint to anchor a corrected figure against, and external sources
+  gave inconsistent aggregate estimates (roughly 9-11 miles one-way depending on how the
+  Artist Point→Ptarmigan Ridge junction→Camp Kiser→summit segments are combined). Also
+  `grade`='IV'/`grade_num`=4 vs `commitment`='III' — an internal mismatch with no external
+  source found this pass to say which is right.
+- **wa_mount_baker_north_ridge**: `grade` text says "Grade III(+)" while `commitment`
+  stores 'II' — this mismatches internally, but external sources disagree with each other
+  too (one calls the route "Nooksack Grade II Ice", another "Grade III, AI2-3"), so left
+  unresolved rather than picking a side. The row's `gain_ft`/`loss_ft` (7150/7081) are
+  also slightly below the strict net elevation difference implied by its own strictly-
+  increasing trailhead/summit waypoints (7344 ft) — a small (~200 ft) discrepancy,
+  plausibly just differing elevation-source rounding; noted rather than separately flagged.
+- **wa_mount_buckindy_scramble**: a WebSearch synthesis surfaced a secondary claim (citing
+  Beckey's Cascade Alpine Guide Vol 2) that the well-known August 28, 1955 first ascent by
+  Don Grimlund, Dave Nicholson, and Win Trueblood — the FA already stored on this row and
+  matching Wikipedia's own infobox — may actually have been of neighboring Mount Misch
+  rather than Mount Buckindy, a claimed historical peak-identity mix-up between two nearby,
+  similarly-obscure North Cascades summits. Genuinely conflicting sources (Wikipedia vs. a
+  guidebook footnote); left as stored and flagged rather than resolved from a search
+  synthesis alone.
+
+Checked and clean: **wa_mount_blum_north_ridge** (FA — Dave Hutchinson, Phil Leatherman,
+Mark Weigelt, Sept 16 1972 — directly confirmed via an AAC Publications record; elevation
+7,685 ft confirmed via multiple sources; coordinates match); **wa_mount_challenger_challenger_glacier**
+(FA — Philip Dickert, Jack Hossack, George MacGowan, Sept 7 1936 — confirmed, also the
+peak's overall FA; `dist_km` 30.5 km and the route's own summit waypoint distMi=19.5 both
+corroborated by an independent "37 miles round trip" source; elevation and coordinates
+match). All five peaks' own area-level coordinates were also sanity-checked against known
+real-world locations and are correct.
+
+Also verified and left untouched: Mount Buckindy's `road`/access text describing the
+Suiattle River Road (FR 26) closed to all vehicles at milepost 4 under Forest Service
+order #06-05-26-01 (effective through January 1, 2028) — confirmed current and accurate
+via the Forest Service's own alert page. Park Glacier Headwall's and Mount Adams-cluster
+FAs from prior batches were not revisited.
+
+`npm run check:sql` reported all 8 UPDATE targets in this batch's SQL file as existing,
+no DELETE present. It warned the file (7.9 KB) is over its 4 KB soft paste-size limit for
+the Supabase SQL Editor UI (as several earlier large-fix-count batches have been) — split
+into ~1.5 KB chunks and verify each before pasting.
+
+External verification (WebSearch throughout; WebFetch returned EGRESS_BLOCKED on every
+domain attempted this batch — mountaineers.org, alpineinstitute.com, rmiguides.com,
+backcountrysights.com, fs.usda.gov, wta.org, jeffreyjhebert.com, en.wikipedia.org — so all
+external corroboration here comes from WebSearch's synthesized snippets rather than a
+directly fetched and read primary source): Mount Baker route mileages/elevation gains for
+Easton, Squak, North Ridge, and Park Glacier Headwall (multiple guide-service and
+trip-report sources); the Glacier Creek Road reopening (Cascadia Daily News); Mount
+Buckindy's Glacier Peak Wilderness land-manager status and USFS permit framework
+(Wikipedia, fs.usda.gov via search snippet); the Suiattle River Road FR 26 closure order
+and its January 2028 end date; Mount Blum North Ridge and Mount Challenger FAs (AAC
+Publications via search snippet); Mount Carrie's Bailey Range/Catwalk mileage.
+
+Next batch continues from `wa_mount_challenger_challenger_glacier` onward alphabetically
+(pass 4).
