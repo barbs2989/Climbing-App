@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mesahchie_peak_west_ridge",
+  "last_processed_id": "wa_mount_adams_northwest_ridge",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4208,6 +4208,25 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-09-05-batch-203.sql",
       "note": "wa_martin_peak_west_ridge: fa wrongly credited a joint ascent (Everett Darr + Ida Zacher); corrected to Ida Zacher's solo 1936 ascent per Wikipedia + a 2025 Mazama Bulletin profile. wa_mcmillan_spire_west_southwest_ridge and wa_mcmillan_spire_west_west_ridge both stored a road block describing the Ross Lake water taxi / Big Beaver / Access Creek approach, which is the Northern Pickets approach (Mount Fury, Luna Peak), not West McMillan Spire's actual Goodell Creek approach -- corrected on both rows to match this app's own approach_logistics.trailhead field and the southwest-ridge row's own (correct) road.driveNote. wa_marvin_s_ear's fa year (2016 vs 2017) remains unresolved -- flagged for human review since it already hedges and both primary sources (AAC Publications, Mountain Project) were EGRESS_BLOCKED to WebFetch in this environment."
+    },
+    {
+      "batch_number": 204,
+      "date": "2026-09-05",
+      "route_ids": [
+        "wa_mix_up_peak_east_face",
+        "wa_mojo_rising",
+        "wa_mount_adams_adams_glacier",
+        "wa_mount_adams_lava_glacier_headwall",
+        "wa_mount_adams_lyman_glacier",
+        "wa_mount_adams_mazama_glacier_headwall",
+        "wa_mount_adams_north_ridge",
+        "wa_mount_adams_northwest_ridge"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 2,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-05-batch-204.sql",
+      "note": "Both fixes correct a grade-vs-commitment-column internal contradiction (wa_mix_up_peak_east_face, wa_mount_adams_lyman_glacier). Flagged: wa_mount_adams_lava_glacier_headwall and wa_mount_adams_lyman_glacier both carry a waypoint note claiming Muddy Meadows (not Killen Creek) is the trailhead for this route, directly contradicting the same rows own approach/waypoints text which describes Killen Creek throughout -- Muddy Meadows is a real, separate trailhead for this glacier cluster per external sources, but which one is standard for these specific routes needs a human call. wa_mount_adams_north_ridge stores dist_km=5.6, which is smaller than the straight-line trailhead-to-summit chord computed from its own waypoints (10.68 km) and contradicted by its own waypoints distMi=11.5 (=18.5 km); an external source instead suggests ~17 mi round trip (~13.7 km one-way) -- two disagreeing candidate corrections, so left unfixed and flagged with both numbers."
     }
   ]
 }

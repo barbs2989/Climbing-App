@@ -14438,3 +14438,111 @@ batch). File is 4,273 bytes, over the checker's 4,000-byte paste-size soft limit
 several recent batches -- split into chunks when pasting into the SQL Editor.
 
 Next batch continues from `wa_mesahchie_peak_west_ridge` onward alphabetically (pass 4).
+
+## Batch 204 — 2026-09-05 (pass 4)
+
+Routes: wa_mix_up_peak_east_face, wa_mojo_rising, wa_mount_adams_adams_glacier,
+wa_mount_adams_lava_glacier_headwall, wa_mount_adams_lyman_glacier,
+wa_mount_adams_mazama_glacier_headwall, wa_mount_adams_north_ridge,
+wa_mount_adams_northwest_ridge. 2 fixes, 2 flagged, 4 clean.
+
+Fixed: wa_mix_up_peak_east_face's `grade` field already reads "Grade II, Class 4 / low
+5th" but the separate `commitment` column stored "I". The two are meant to encode the
+same NCCS commitment grade and disagreed on the same row; a 7-9 hour car-to-car climb
+with two roped 5th-class pitches and a multi-rappel descent is squarely a Grade II day,
+not a Grade I (a few hours), so `commitment` was corrected to "II" to agree with the
+route's own stated grade -- no route-specific external source pinned the letter grade
+directly, but nothing found contradicts Grade II and the row's own free-text grade
+(evidently the more deliberately researched of the two fields) already states it.
+
+Fixed: wa_mount_adams_lyman_glacier had the identical mismatch the other way around --
+`grade` said "III" while `commitment` already said "II". The Mountaineers' own trip
+listing for this exact climb ("Intermediate Alpine Climb - Mount Adams/North Lyman
+Glacier") independently calls it a Grade II ice climb, agreeing with `commitment` rather
+than `grade`. Rewrote `grade` to "II" to match both the external source and the row's own
+commitment field. (Caught only because this one was checked externally rather than
+assumed to resolve the same way as the Mix-up Peak mismatch -- the two rows disagreed in
+opposite directions, so guessing a single rule for "which field wins" would have gotten
+one of them wrong.)
+
+Flagged for human review: wa_mount_adams_lava_glacier_headwall and
+wa_mount_adams_lyman_glacier both carry a Killen Creek Trailhead waypoint whose own
+`note` field says "Muddy Meadows is the more specific, closer approach for the northeast
+glacier cluster (Lava/Lyman/Wilson/Rusk)" (Lava Glacier Headwall row) or "Muddy Meadows is
+the trailhead for this approach, not Killen Creek" (Lyman Glacier row) -- yet both routes'
+own `approach` prose describes hiking in via the Killen Creek Trailhead and Killen Creek
+Trail #113 throughout, with no mention of Muddy Meadows at all. WebSearch confirms Muddy
+Meadows Trailhead (~4,400ft, off FR-2329) is a real, separate trailhead that does serve
+this same north-side glacier cluster (a 2005 trip report titled "Mt Adams, Lava-Lyman-
+Wilson-Rusk" approaches via it, and a Highline-Trail description notes hikers from Muddy
+Meadows proceeding to the base of the Lyman Glacier), so the contradiction is real rather
+than a phantom -- but sources describe both trailheads in combination (e.g. an approach-
+one/exit-the-other loop via the connecting Highline Trail) often enough that which one is
+"the" standard single approach for these two specific routes isn't resolvable from search
+snippets alone. No fix applied; a human with a topo or current trip reports for this
+specific cluster should decide whether the approach text or the waypoint note is stale.
+
+Flagged for human review: wa_mount_adams_north_ridge stores `dist_km: 5.6`, which fails a
+basic physical-possibility check against the row's own data -- the straight-line
+(haversine) distance from its own Killen Creek Trailhead waypoint (46.2885,-121.5525) to
+its own Summit waypoint (46.2024,-121.4909) is already 10.68 km, nearly double the stored
+value, and the actual hiking distance can only be longer than that straight line. The
+row's own waypoints list independently states `"distMi": 11.5` at the summit (=18.5 km
+one-way), which would be the obvious fix if the app's one-way-distance convention holds
+(the same 11.5 mi figure and the same Killen Creek -> High Camp -> [ridge base] -> Summit
+waypoint chain is reused verbatim on the sibling wa_mount_adams_adams_glacier row). But an
+external source (a WTA-style route description) instead gives "approximately 17 miles"
+round trip for the Killen Creek North Ridge climb, which is close to 8.5 mi (13.7 km)
+one-way -- a different number from the row's own 11.5 mi. With the current value clearly
+wrong but two disagreeing candidate replacements (18.5 km from the row's own data vs. 13.7
+km from an outside source), and given this feeds the app's trip-time estimator, this was
+left unfixed and flagged with both candidate numbers rather than picking one. Also noted
+for the same reviewer: the row's `descent` field ("Retrace route via North Ridge and Lava
+Glacier back to high camp") and its `descent_text` field (most parties instead descend the
+South Climb to Cold Springs, a different trailhead requiring a shuttle, treating a North
+Ridge reversal as merely "possible") describe different primary descents, and `loss_ft:
+3500` doesn't cleanly match either reading (a return to High Camp implies ~5,276 ft of
+loss, a return to the Killen Creek trailhead ~7,876 ft) -- likely the same underlying data
+problem as the dist_km mismatch rather than a separate one, so grouped into this one flag
+rather than raised twice.
+
+Checked and clean (elevation, coordinates, and/or FA cross-checked via WebSearch and found
+to match, or internally consistent with nothing external to check): wa_mojo_rising
+(South Early Winters Spire's 7,807 ft elevation confirmed via Wikipedia snippet and
+matches the peak's own area row; the Oct 13-14, 2006 Mojo Rising FA at III 5.11 A1 is
+independently corroborated by a CascadeClimbers trip-report title and a SuperTopo route
+page, and the row's own note about a later free ascent lifting the grade to 5.11b is
+consistent with a 2016 Wayne Wallace blog post titled "'Free' Mojo, S. Early Winter
+Spire"); wa_mount_adams_adams_glacier (12,276 ft high point matches the USFS's own figure
+for Mount Adams -- Wikipedia's infobox gives a differing NAVD88 figure of 12,281 ft, but
+12,276 ft is the land manager's own number and the one in wide common use, so not treated
+as an error; the July 1945 Beckey/Lind/Mulhall FA is independently confirmed by an AAC
+Publications "Cascade Climbs, 1945" article naming all three climbers on this exact
+route); wa_mount_adams_mazama_glacier_headwall (internally consistent Yakama Nation
+Tract-D/Bird Creek Meadows access story, correctly distinct from the Forest-Service-land
+permit boilerplate on this route's north-side siblings; FA already stored as
+unknown/undocumented, nothing to check); wa_mount_adams_northwest_ridge (12,276 ft high
+point consistent with the rest of the Mount Adams cluster; the September 1960
+Molenaar/Johnson/Ostro/Startzell FA could not be independently corroborated by name in
+WebSearch -- no contradicting source found either, so left as stored rather than flagged
+on the strength of an absence).
+
+External verification (WebSearch throughout -- WebFetch returned EGRESS_BLOCKED for every
+URL tried this batch, including non-Wikipedia domains such as cascadeclimbers.com,
+alpenglow.org and fs.usda.gov, so this batch relied on WebSearch's synthesized snippets
+exclusively, consistent with recent batches): Mix-up Peak's 7,440 ft elevation and the
+1947 Grande/Kendrick FA, South Early Winters Spire's 7,807 ft elevation and the Mojo
+Rising FA/free-ascent history, Mount Adams' 12,276 ft elevation (USFS) vs. 12,281 ft
+(Wikipedia infobox), the July 1945 Adams Glacier FA party, the Lava Glacier Headwall's AAC
+Publications article and Ed Cooper/Mike Swayne's joint July 1961 Cascades activity (Mount
+Terror North Face, July 8-11, 1961) as corroboration for a nearby-dated Lava Glacier
+Headwall FA, the 1854 Aiken/Allen/Burge first ascent of Mount Adams overall via the North
+Ridge, the existence and approximate location of the Muddy Meadows Trailhead and its use
+for the Lava/Lyman/Wilson/Rusk glacier cluster, and the Mountaineers' own "Grade II"
+classification of the North Lyman Glacier route.
+
+`npm run check:sql` (via `node scripts/check-sql-targets.mjs`) reported both UPDATE
+targets in this batch's SQL file as existing, with no DELETE present -- checked cleanly on
+the first pass.
+
+Next batch continues from `wa_mount_adams_northwest_ridge` onward alphabetically (pass 4).
