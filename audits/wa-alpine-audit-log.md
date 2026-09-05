@@ -15021,3 +15021,87 @@ wa_mount_hardy_snow_scramble, wa_mount_hinman_hinman_glacier.
 `npm run check:sql` confirmed the one UPDATE target exists and is not a destructive DELETE.
 
 Next batch continues from `wa_mount_hinman_hinman_glacier` onward alphabetically (pass 4).
+
+## Batch 210 (2026-09-05, pass 4)
+
+Routes: wa_mount_howard_south_slope, wa_mount_index_north_peak_traverse,
+wa_mount_index_northeast_buttress, wa_mount_johnson_standard,
+wa_mount_lago_south_slope_south_face, wa_mount_larrabee_south_ridge,
+wa_mount_logan_fremont_glacier, wa_mount_logan_r1.
+
+**4 confirmed errors fixed, 0 flagged as a standalone route (one additional
+sub-issue noted below), 4 clean.**
+
+- **Fixed — `wa_mount_johnson_standard`**: `dist_km` stored the full 19.2-mile
+  round-trip distance (30.9 km) rather than the one-way approach distance the
+  app expects (it doubles `dist_km` for round-trip display and feeds it
+  directly, un-doubled, into the planner's time estimate). The route's own
+  summit waypoint independently records `distMi: 9.6` (exactly half of 19.2),
+  and the itinerary's day-by-day breakdown (8 + 3.2 + 8 mi) agrees. Corrected
+  to 15.4 km (9.6 mi).
+- **Fixed — `wa_mount_larrabee_south_ridge`**: two related numbers, both
+  settled by the row's own data plus one external source. (1) `dist_km` was
+  6.4 km (4.0 mi), while the route's own summit waypoint records `distMi: 5.0`
+  one-way — corrected to 8.0 km. (2) `gain_ft`/`loss_ft` were 3900/3900 against
+  the row's own itinerary sum of 4225/4225 and its own totalNote ("about
+  4,200 ft of gain") — externally corroborated by The Mountaineers' route page
+  ("roughly 10 miles and 4,400 feet of elevation gain"). Corrected to
+  4225/4225, matching the row's own most granular internal source.
+- **Fixed — `wa_mount_logan_fremont_glacier`**: `gain_ft` (8900) disagreed with
+  the already-correct `loss_ft` (9600) despite `descent_text` stating this is
+  a true out-and-back (gain must equal loss for a round trip that reverses its
+  own approach). The row's own totalNote already says "~9,600 ft gain",
+  externally corroborated by a WebSearch-found detailed trip report for this
+  exact route stating "approximately 36 miles traveled with 9,600 feet of
+  elevation gain and loss" (consistent with the app's own round-trip mileage
+  display of dist_km 29 km * 2 = 36.0 mi). Corrected gain_ft to 9600.
+- **Fixed — `wa_mount_logan_r1` (Banded Glacier)**, two issues on one row:
+  (1) `gain_ft`/`loss_ft` (7027/13000) were both wrong and mutually
+  inconsistent, again contradicting a "Reverse the route" out-and-back
+  descent. The row's own totalNote already says "~29-mile round trip
+  (~12,500 ft gain)", externally corroborated by a WebSearch-found trip
+  report specifically titled "Logan (Banded Glacier, 29 mi, 12,500 ft,
+  13h35)" — matching the row's own ~29-31 mile itinerary total almost
+  exactly. Corrected both to the symmetric, corroborated 12,500 ft.
+  (2) `gpx` still held a 58-point track running from the Thunder Creek
+  Trailhead directly to the summit, even though the row's own
+  `data_quality.gaps` note explicitly (and falsely) claims this exact
+  Thunder-Creek track "was previously attached but removed since it depicts
+  the alternate approach, not the primary line." Every other current field
+  (road, descent_text, itinerary) agrees Easy Pass is the primary approach and
+  Thunder Creek only a longer alternate exit — so the map/GPX-download was
+  drawing and exporting the superseded approach as "ROUTE TRACK". Nulled out
+  per the row's own stated (but never executed) intent; no replacement track
+  is invented, since none exists on file for the Easy Pass line.
+  - **Additional note, not a SQL fix**: this same row's `approach` column
+    still describes the superseded Thunder Creek approach as the way in,
+    contradicting its own itinerary/descent_text/road (all Easy-Pass-primary).
+    This needs an editorial rewrite of the `approach` prose (the itinerary's
+    day-1 note already describes the Easy Pass line correctly, in less formal
+    language) rather than a targeted UPDATE — the same class of issue as
+    batch 209's `wa_mount_fairchild_standard` flag.
+- Elevation and first-ascent claims externally verified this batch (WebSearch,
+  corroborating Wikipedia/AAC Publications/other primary sources), all
+  confirmed correct as stored, no fix needed: Mount Howard (7,063 ft, already
+  self-corrected by a prior pass); Mount Index Main Peak (5,991 ft) and the
+  1950 Beckey/Schoening first traverse of North-Middle-Main (weather-turned-
+  back earlier attempt with Widrig/Hieb, then the Aug 12-13 success —
+  confirmed against the primary AAC Publications account; the "Bill (Wolf)"
+  first name for Schoening could not be independently confirmed or refuted
+  and was left as-is); Mount Index North Peak's genuinely disputed 1929 FA
+  (Chute + Kaartinen vs. Chute + Tepley — the row's own hedged phrasing
+  matches the real historical uncertainty); Mount Johnson (7,680 ft; disputed
+  1935/1940 FA, matching the row's own hedge); Mount Lago (8,745 ft; FA
+  Ulrichs/Alt 1933); Mount Larrabee (7,865 ft; FA James J. McArthur party,
+  Sept 11 1908); Mount Logan (9,087 ft; FA Lage Wernstedt, 1926, solo).
+  North Cascades NP's current backcountry permit fee structure ("$10/person
+  + $6 nonrefundable reservation fee, mid-May-early Oct, free the rest of the
+  year") was also independently verified current and correct as stored on
+  both Mount Logan routes.
+
+`npm run check:sql` confirmed all 6 UPDATE targets exist; no DELETE statements
+in this batch. The file is ~6.7KB, over the SQL Editor's ~4KB safe-paste
+threshold the checker warns about — split it into smaller chunks if pasting
+through the web editor rather than psql/another SQL client.
+
+Next batch continues from `wa_mount_logan_r1` onward alphabetically (pass 4).
