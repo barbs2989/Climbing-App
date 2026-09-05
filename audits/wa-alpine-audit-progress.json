@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_despair_east_route",
+  "last_processed_id": "wa_mount_hinman_hinman_glacier",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4305,6 +4305,26 @@
       "flagged_for_human_review": 0,
       "clean": 3,
       "sql_file": "audits/sql/2026-09-05-batch-208.sql"
+    },
+    {
+      "batch_number": 209,
+      "date": "2026-09-05",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_fairchild_standard",
+        "wa_mount_formidable_south_face",
+        "wa_mount_fury_east_mongo_ridge",
+        "wa_mount_fury_east_southeast_glaciers",
+        "wa_mount_fury_west_west_ridge",
+        "wa_mount_goode_northeast_buttress",
+        "wa_mount_hardy_snow_scramble",
+        "wa_mount_hinman_hinman_glacier"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-09-05-batch-209.sql",
+      "note": "wa_mount_fury_west_west_ridge: cleared a stale corrections note contradicted by the row's own current fa/elevation_ft data. wa_mount_fairchild_standard flagged: timing/itinerary/gain_ft/loss_ft describe an entirely different Whiskey Bend/Elwha/Long Ridge/Mount Fitzhenry approach than approach/descent_text/waypoints/gpx/bivy, which describe the standard Sol Duc/Appleton Pass/Cat Basin/Catwalk/Mount Carrie approach -- needs an editorial call, not a targeted UPDATE. Remaining 6 routes verified clean against external sources (elevation, FA, naming history all confirmed)."
     }
   ]
 }

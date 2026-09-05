@@ -14967,3 +14967,57 @@ reports), Degenhardt (peakery/WTA-sourced aggregation), Daniel Glacier route (ko
 sourced aggregation), Despair (trailcatjim).
 
 Next batch continues from `wa_mount_despair_east_route` onward alphabetically (pass 4).
+
+## Batch 209 (2026-09-05, pass 4)
+
+Routes: wa_mount_fairchild_standard, wa_mount_formidable_south_face,
+wa_mount_fury_east_mongo_ridge, wa_mount_fury_east_southeast_glaciers,
+wa_mount_fury_west_west_ridge, wa_mount_goode_northeast_buttress,
+wa_mount_hardy_snow_scramble, wa_mount_hinman_hinman_glacier.
+
+**1 confirmed error fixed, 1 flagged for human review, 6 clean.**
+
+- **Fixed**: `wa_mount_fury_west_west_ridge`'s `corrections` column was a stale provenance
+  note contradicted by the row's own current data. It claimed the `fa` field was "left null
+  rather than guessed" (it is not — it holds a fully verified FA record) and that
+  "elevationFt is currently null in the database" (it is not — `high_point_ft`/area
+  `elevation_ft` = 8303, populated and consistent with the cited 2022 survey). A later
+  research pass evidently filled both gaps this note describes without clearing the note
+  itself, leaving it actively misleading. Cleared it.
+- **Flagged for human review**: `wa_mount_fairchild_standard` merges two real but different
+  approaches to the peak into one route record with contradictory numbers. `approach`,
+  `descent_text`, `waypoints`, `gpx`, and most of `bivy`/`access` describe the standard
+  Sol Duc -> Appleton Pass -> Cat Basin -> Catwalk -> Mount Carrie approach (one-way ~15.5 mi
+  per the waypoints, 3-5 day trip per the prose). `timing` and `itinerary` instead describe an
+  entirely different Whiskey Bend -> Elwha River -> Long Ridge -> Long Creek ford -> Mount
+  Fitzhenry traverse approach (a real, verified peak and approach, per Wikipedia and
+  willhiteweb — but a different one), and `gain_ft`/`loss_ft` (9300/9200) are summed directly
+  from that second itinerary's day-by-day figures rather than from the Sol Duc route the rest
+  of the row describes. So the planner's time/gain estimates are built on an approach the row's
+  own text and map data never mention. This needs an editorial call on which approach the
+  route record should describe (or a split into two routes) rather than a targeted UPDATE.
+- FA and elevation claims externally verified this batch (WebSearch, corroborating Wikipedia/
+  AAC Publications/other trip-report sources): Mount Fairchild (6,899-6,900 ft; FA Pruitt/
+  Baker/Christiansen/Etten 1963); Mount Formidable (8,325 ft; FA Bressler/Clough/Cox/Myers,
+  July 25 1938, Ptarmigan Traverse); Mongo Ridge / Mount Fury West Peak (8,301-8,320 ft
+  depending on source, all within normal survey variance; FA Wayne Wallace solo, Aug 2006, 12
+  rappels/25 pitches — matches the row's own pitch_detail/rappel_detail counts exactly); Mount
+  Fury West Peak's ORIGINAL 1958 FA (Duke Watson, Vic Josendal, Warren Spickard, Maurice Muzzy,
+  Phil Sharpe — AAC Publications); Mount Goode (9,206-9,220 ft depending on source; FA Beckey/
+  Stewart, Aug 6 1966; confirmed as the highest point in North Cascades National Park); Mount
+  Hardy (8,099 ft; FA Schmerling/Ulrichs 1933; summit on the Okanogan-Skagit county line);
+  Mount Hinman (7,492 ft; named 1934 for Dr. Harry B. Hinman; Hinman Glacier confirmed
+  declared non-flowing/gone in an August 2022 survey per multiple 2023 news reports). East
+  Fury's 1960 FA (Don Keller/Joan Firey/Joe Firey) and a cited June 2025 bergschrund
+  fall/rescue on East Fury could not be confirmed or contradicted from available search
+  results — left as-is (neither wrong, per the audit's own rule against flagging what can't
+  be verified).
+- Also noted, not fixed: `wa_mount_fury_east_mongo_ridge` is filed under area_id
+  `wa_mount_fury_west` (correctly — its content is entirely about the West Peak's southwest
+  buttress) despite `east` appearing in the route id string itself. This is the legacy-id
+  naming pattern this project's engineering notes describe (ids are rarely renamed once data
+  moves); the route is correctly parented, so no fix is warranted.
+
+`npm run check:sql` confirmed the one UPDATE target exists and is not a destructive DELETE.
+
+Next batch continues from `wa_mount_hinman_hinman_glacier` onward alphabetically (pass 4).
