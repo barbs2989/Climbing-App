@@ -15968,3 +15968,78 @@ and North Cascades NP backcountry ($10/person + $6 reservation fee) permit costs
 current Recreation.gov/NPS pricing. No changes needed on the other seven routes.
 
 `access_checked_at` stamped 2026-09-06 on all 8 routes reviewed.
+
+## Batch 223 — 2026-09-06 (pass 4)
+
+Routes checked: Mount Olympus Traverse (`wa_olympus_traverse`), Unicorn Peak's Open Book
+(`wa_open_book_2`), Ottohorn's Southeast Route and West Ridge, Overcoat Peak's Southeast
+Route, Pernod Spire's Standard Rock Route, and Phantom Peak's South Route and West Ridge.
+
+**Found and fixed (5 routes):**
+
+- `wa_olympus_traverse` repeated the exact Upper Hoh Road defect fixed on its sibling
+  `wa_olympus_blue_glacier_east_ramps` in batch 222 — but independently, in three fields
+  this time (`road.status`, `road.seasonalGate`, `access.closures`), all claiming the
+  Dec 2024 storm-damage closure ran until May 2026 (~17 months). Jefferson County WA's
+  own announcements, Washington State Standard and NPS Olympic news releases all agree it
+  reopened May 8, 2025, after about 5 months. Corrected all three fields.
+- `wa_open_book_2` (Unicorn Peak): the `rappels` summary offered "a block with tat and
+  rings, or the bleached snag" as anchor options — but this row's own `descent_text` and
+  `approach_variants[0].baseFinding` both explicitly warn to avoid the old dead snag, which
+  is "no longer trustworthy." Removed it from the rappels line so it doesn't contradict the
+  fuller descent instructions.
+- `wa_ottohorn_west_ridge`: the `fa` field credited this route's first ascent to the 1961
+  party that climbed Ottohorn's *East* Ridge (Cooper/Denny/J. Firey/J. Firey/Whitmore) and
+  even asserted "This route IS the first-ascent line" — flatly contradicting this row's own
+  overview/beta/hazards, which correctly describe a separate, unnamed 2017 first ascent
+  (same outing that put up nearby new routes "Beep" and "Honk"). Confirmed the 2017 date
+  externally via a cascadeclimbers.com trip report titled "FAs of Beep, Honk, and the West
+  Ridge of Ottohorn 7/25/2017." Corrected `fa`; left the climbing party unnamed since their
+  identities weren't recoverable (WebFetch is egress-blocked for that domain).
+- `wa_overcoat_peak_southeast_route`: `access.land_manager` and `access.parking_pass` each
+  held a stray pair of literal double-quote characters wrapping the entire string — a
+  formatting artifact from this row's own 2026-07-31 correction (confirmed by comparing
+  against the clean, unquoted parallel camelCase fields). Stripped the stray quotes; content
+  unchanged.
+- `wa_phantom_peak_south_route`: `approach_logistics.trailheadDirection` named "the Nooksack
+  Cirque Trailhead" — a real trailhead, but for the unrelated Mount Shuksan/Nooksack Cirque
+  area — while `approach_logistics.trailhead`, the matching waypoint pin, and this row's own
+  approach-Option-2 narrative all agree on the Hannegan Pass Trailhead (end of Ruth Creek
+  Rd/FR-32). This row's own `approach_variants[0].notes` had already flagged the mismatch in
+  passing but nothing had corrected the field itself. Corrected to match.
+
+**Flagged for human review:** `wa_pernod_spire_standard`'s `aspect` (N) and `face` ("North
+... between Pernod and Chianti") both contradict its own `approach`/`descent_text` (climbs
+the *west* face, rappels the *east* side into the Silver Star Glacier basin) — and a third
+direction ("South Face description") plus an unexplained "1989 first-ascent note" turn up in
+`rappel_count_note`, which hints this row may be conflating the 1952-FA "Standard Rock
+Route" with a distinct, unnamed "South Face" route. No authoritative external source was
+found pinning the exact compass orientation, and this repo's own aspect-vs-name audit
+treats this class of question as not decidable from the columns alone — flagged rather than
+guessed.
+
+**Checked and clean:** Mount Olympus's three summit elevations (West 7,980 ft / Middle
+7,929 ft / East 7,762 ft) and Olympic NP wilderness permit fees ($6 + $8/person/night)
+match NPS/pay.gov; Unicorn Peak's elevation (6,971 ft) matches Wikipedia; Ottohorn's
+elevation (7,840 ft) and 1961 peak FA match AAC Publications; Overcoat Peak's elevation
+(7,432 ft) and July 1897 FA (Charlton/Sylvester) match Wikipedia; Phantom Peak's elevation
+(~8,000–8,016 ft, within survey rounding) and both its routes' FAs (1940 Beckey brothers
+South/Southwest Route; 2021 Wehrly/Larson West Ridge) match AAC Publications almost
+verbatim.
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-223.sql` — 10 write targets across 15
+statements, every target id exists, no DELETEs. 4 statements couldn't be structurally
+verified by that script because their own prose contains a semicolon, which the script's
+naive statement-splitter treats as a statement boundary (a limitation of that tool, not of
+this SQL); all affected field values were independently byte-compared against a fresh DB
+fetch and matched exactly before writing the fix. `access_checked_at` stamped 2026-09-06
+on all 8 routes reviewed.
+
+WebFetch remained egress-blocked for every domain tried this run (cascadeclimbers.com);
+all external verification is from WebSearch result summaries.
+
+Next batch continues alphabetically from `wa_pernod_spire_standard`/`wa_phantom_peak_west_ridge`
+onward (pass 4); the next id in scope order is `wa_plan_9_from_outer_space`'s area is a crag
+(out of scope) — the next in-scope id is `wa_playing_not_spraying`'s area (also a crag, out
+of scope); the next in-scope peak-area route after `wa_phantom_peak_west_ridge` is
+`wa_point_success_south_side`.
