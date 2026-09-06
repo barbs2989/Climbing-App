@@ -15735,3 +15735,74 @@ no DELETEs, file is 2.6KB (inside the ~4KB safe-paste threshold).
 
 Next batch continues alphabetically from `wa_mount_tom_scramble` onward (pass 4) —
 174 routes remain this pass, starting with `wa_mount_torment_south_ridge`.
+
+## Batch 219 (2026-09-06, pass 4)
+
+Checked 9 routes across 7 peaks: Mount Torment (South Ridge, Torment-Forbidden
+Traverse), Mount Triumph (Northeast Ridge), Cathedral Peak/Pasayten (NE Ridge),
+Needle Peak (North Ridge), Snowfield Peak (Neve Glacier/West Ridge), North Early
+Winters Spire (Northwest Corner), and both of Nooksack Tower's routes (Beckey
+Route, South Face).
+
+**5 confirmed errors fixed** (`audits/sql/2026-09-06-batch-219.sql`), 4 of them on
+Nooksack Tower South Face, found by cross-referencing it against its sibling route
+sharing the same trailhead and summit:
+
+- South Face `fa`: "July 2002" → "July 2001". The AAC's American Alpine Journal
+  published this first-ascent report in its 2002 annual volume, but the climb
+  itself happened in July 2001 — the source page's own URL path
+  (`.../SouthFace/Summer01/`) and a biographical account calling it "the summer
+  of Manfredi's senior year" both independently date the ascent to 2001. The
+  classic AAJ-publication-year-vs-ascent-year mixup. Climber names (Jens
+  Klubberud, Ben Manfredi) were already correct.
+- South Face `access.landManager` said only "National Park Service (North
+  Cascades National Park)" — directly contradicting this same row's own
+  `access.land_manager` field, which correctly states joint jurisdiction
+  ("Mt. Baker-Snoqualmie National Forest ... with some upper routes crossing
+  into North Cascades National Park"). The sibling Beckey Route, sharing this
+  exact trailhead and summit, already has the correct joint-jurisdiction
+  statement in its own `landManager` field. Externally corroborated (the
+  summit sits inside NCNP; the Nooksack Cirque approach is MBS-NF/Wilderness
+  land). Corrected to match the sibling.
+- South Face `rappels` was NULL, even though this row's own `rappel_count_note`
+  already concludes "10 is used as the representative count" for the standard
+  descent, and its own `descent_text` already states the first-ascent party
+  descended via the north-side route rather than reversing the face. Filled by
+  re-homing those two on-file statements into the column — nothing researched.
+- South Face `waypoints`: both the trailhead and summit points were missing
+  `elev`/`elevFt` entirely. Filled from the identical-coordinate points on the
+  sibling Beckey Route (trailhead 2200 ft) and this row's own `high_point_ft`
+  (summit 8285 ft, also matching the sibling and this project's own area
+  coordinate for Nooksack Tower).
+- Needle Peak North Ridge `high_point_ft` was NULL. Filled to 7896 to match this
+  row's own summit waypoint, externally corroborated by listsofjohn.com (Needle
+  Peak, WA: 7,897 ft — 1 ft rounding difference, not a conflict).
+
+`access_checked_at` stamped on both Nooksack Tower routes (land-manager,
+permit, and FA facts were independently checked against external sources this
+session).
+
+**0 items flagged; 4 routes confirmed clean.** Notable non-findings, checked and
+left alone: Mount Torment's two routes' elevations/FAs (Cooper & Sellers, July
+1958, matches both South Ridge and the traverse); Mount Triumph NE Ridge's
+elevation (7270 ft sits inside Wikipedia/Peakbagger's imprecise "7,240+" contour
+reading — not a conflict, just more precise than the rounded source); Cathedral
+Peak NE Ridge's elevation (8606, exact external match) and `dist_km` (27.4 km /
+17 mi sits inside the row's own approach text's "~18 mi" estimate, not the
+waypoint note's less-precise "~19-20 mi" — no defensible single fix, same
+reasoning as batch 218's Teneriffe Kamikaze case); Snowfield Peak's FA
+(Degenhardt & Strandberg, Aug 1, 1931) and elevation (8351, the more widely
+cited of two published figures); North Early Winters Spire Northwest Corner's
+FA (Boving & Pollack/Pollock, Sept 25, 1976) and its `pitch_detail` (5 pitches
+summing exactly to the stored `length_m` of 180 — internally exact).
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-219.sql` — all 7 write
+targets exist, no DELETEs; file is 5.8KB (above the ~4KB safe-paste threshold —
+split into chunks when pasting into the SQL Editor).
+
+WebFetch remains egress-blocked for every domain tried (confirmed again this
+run against en.wikipedia.org); all external verification is from WebSearch
+result summaries.
+
+Next batch continues alphabetically from `wa_nooksack_tower_south_face` onward
+(pass 4), starting with `wa_north_face_3` (Lexington Tower).

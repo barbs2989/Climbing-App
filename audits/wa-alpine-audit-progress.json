@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_tom_scramble",
+  "last_processed_id": "wa_nooksack_tower_south_face",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4500,6 +4500,27 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-09-06-batch-218.sql",
       "note": "Re-audit of the pass-3 batch 153/154 route set. Two dist_km corrections, both derived from the row's own waypoint mileage and externally corroborated: Stuart West Ridge 32.2 -> 9.7 km (own waypoints give 6.0 mi one-way; external trip reports ~10-11 mi round trip via Esmeralda/Longs Pass), and Terror North Face 28.97 -> 12.9 km (own waypoints give 8.0 mi one-way; upgrades batch 154's flag-only note now that a mechanically-derived value exists). Three pass-3 fixes re-confirmed STILL UNAPPLIED in the live DB and deliberately not duplicated here: batch-153's Stuart summit waypoint lng (-120.9022 -> -120.903144, two routes) and Teneriffe I-90 Exit 31 -> 32, and batch-154's Terror gain_ft 6000 -> 7551 on all four Terror routes. Flagged, not fixed: Stoddard Buttress fa (fresh AAJ-1985 evidence now strongly suggests the 'July 14-17, 1985 variant' is the SAME 1984 solo ascent duplicated with a wrong year, but WebFetch is egress-blocked so the primary text could not be read); Thomson West Ridge fa still unverifiable (found the peak's overall 1917 Hazard/French FA, which is a different claim); Terror East Ridge dist_km 32.99 still has no per-waypoint mileage of its own to derive from; Teneriffe Kamikaze dist_km 5.95 vs its own summit waypoint at 4.1 mi is a ~10% internal disagreement inside the external spread (6.4-8 mi RT), so no defensible single value. Confirmed correct: Stuart West Ridge grade range 5.4-5.6 (external sources split exactly that way), Gendarme 2 pitches/5.9, Terror West Ridge II 5.6, Thomson gain_ft 5200 (exact external match) and dist_km 13, Teneriffe Standard dist_km 10.46 (= its own 6.5 mi waypoint exactly), Mount Tom dist_km 33.8 and gain_ft 7100 (both self-consistent), Teneriffe Discover Pass statement, Enchantment permit rules, and all five peaks' coordinates/hierarchy placement."
+    },
+    {
+      "batch_number": 219,
+      "date": "2026-09-06",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_torment_south_ridge",
+        "wa_mount_torment_torment_forbidden_traverse",
+        "wa_mount_triumph_northeast_ridge",
+        "wa_ne_ridge",
+        "wa_needle_peak_north_ridge",
+        "wa_neve_glacier_west_ridge",
+        "wa_news_nw_corner",
+        "wa_nooksack_tower_beckey_route",
+        "wa_nooksack_tower_south_face"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 0,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-06-batch-219.sql",
+      "note": "Nooksack Tower's two routes (Beckey Route / South Face) share one trailhead and summit, which is what surfaced most of this batch's findings by cross-reference. South Face fa corrected 'July 2002' -> 'July 2001' (the AAJ published the report in its 2002 volume, but two independent sources -- the source page's own URL path 'Summer01' and a biographical account calling it 'the summer of Manfredi's senior year' -- date the actual climb to 2001; the classic AAJ-publication-year-vs-ascent-year mixup). South Face access.landManager corrected to match its own access.land_manager field and its sibling Beckey Route (it said NPS-only, contradicting the row's own dual-jurisdiction land_manager field and its sibling's correct joint-jurisdiction statement -- externally corroborated: the summit is inside North Cascades NP, the Nooksack Cirque approach is Mount Baker-Snoqualmie NF/Wilderness). South Face rappels (null) filled by re-homing its own rappel_count_note conclusion and descent_text into the column, matching the sibling's wording for the same descent line -- nothing researched. South Face waypoints (both missing elev/elevFt) filled from the identical-coordinate points on the sibling Beckey Route and this row's own high_point_ft. Needle Peak North Ridge high_point_ft (null) filled to 7896 to match its own summit waypoint, externally corroborated by listsofjohn.com (7,897 ft). Checked and confirmed correct, no action: Torment/Forbidden peak elevations and FA (Cooper/Sellers, July 1958, both routes), Triumph NE Ridge FA and elevation (7270 falls inside Wikipedia's imprecise '7240+' contour reading, not a conflict), Cathedral Peak NE Ridge elevation (8606, exact external match) and dist_km (27.4km/17mi sits inside the row's own approach text's '~18mi' estimate, not the waypoint note's less-precise '~19-20mi' -- no defensible single fix, same as batch 218's Teneriffe Kamikaze precedent), Snowfield Peak/Neve Glacier FA (Degenhardt/Strandberg, Aug 1931) and elevation, NEWS Northwest Corner (Boving-Pollack) FA and pitch_detail (5 pitches summing exactly to length_m=180)."
     }
   ]
 }
