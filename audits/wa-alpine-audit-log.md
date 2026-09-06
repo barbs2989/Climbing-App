@@ -15939,3 +15939,32 @@ summaries.
 
 Next batch continues alphabetically from `wa_northwest_ridge` onward
 (pass 4); the next id in scope order is `wa_northwest_ridge_2`.
+
+## Batch 222 — 2026-09-06 (pass 4)
+
+Routes checked: Boston Peak NW Ridge (`wa_northwest_ridge_2`), Liberty Bell NW Face
+Remsberg Variation (`wa_nw_face_var_remsberg_variation`), Colchuck Balanced Rock NW Ridge
+(`wa_nw_ridge_2`), Old Guard Peak East Side Route and Southwest Route, Old Snowy Mountain
+South Ridge/PCT approach, and both Mount Olympus West Peak routes (Blue Glacier/Snow Dome
+East Face Ramps, Summit Block Northwest Edge Finish).
+
+**Found and fixed:** `wa_olympus_blue_glacier_east_ramps`'s `road.status` and
+`road.seasonalGate` both claimed the Upper Hoh Road's Dec 2024 storm-damage closure ran
+until "May 2026" (~17 months). Jefferson County WA's own announcements, Washington State
+Standard, and NPS Olympic news releases all agree the road actually reopened May 8, 2025 —
+about 5 months, not 17. Looks like a straight off-by-one-year error. Corrected both fields
+to say May 2025 / ~5-month.
+
+**Checked and clean:** cross-checked all six peaks' summit elevations against
+Wikipedia/PeakVisor/listsofjohn.com/Peakbagger (Boston Peak 8,894 ft, Liberty Bell 7,720 ft,
+Colchuck Balanced Rock 8,240 ft, Old Guard Peak ~8,260 ft, Old Snowy Mountain 7,880 ft,
+Mount Olympus West Peak 7,980 ft — all match). Boston Peak NW Ridge's FA attribution
+(Boyce-Willis) and the row's own July-vs-August 2018 hedge both check out against the AAJ
+account. Mount Olympus's 1907 FA (L.A. Nelson party, Aug 13) matches HistoryLink.org and
+AAC sources. The 1993 fatal-fall-near-Snow-Dome hazard note matches a real recorded
+accident. Suiattle River Road/FR-26 and FR-21 washout/closure details (MP ~4, order through
+Jan 1 2028; MP 3 washout) match current USFS alerts. Enchantment ($5/day + $6 lottery fee)
+and North Cascades NP backcountry ($10/person + $6 reservation fee) permit costs match
+current Recreation.gov/NPS pricing. No changes needed on the other seven routes.
+
+`access_checked_at` stamped 2026-09-06 on all 8 routes reviewed.
