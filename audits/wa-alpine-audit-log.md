@@ -15873,3 +15873,69 @@ external verification is from WebSearch result summaries.
 
 Next batch continues alphabetically from `wa_northeast_face_direct` onward
 (pass 4); the next id in scope order is `wa_northeast_ridge_1963_route`.
+
+---
+
+## 2026-09-06 — Pass 4, Batch 221
+
+Eight routes: wa_northeast_ridge_1963_route (Johannesburg Mountain),
+wa_northwest_arete (Argonaut Peak), wa_northwest_buttress (Sloan Peak),
+wa_northwest_face_2 (Kangaroo Temple), wa_northwest_face_4 (Little Big Chief
+Mountain), wa_northwest_face_boving_pollock (South Early Winters Spire),
+wa_northwest_mox_peak_standard, wa_northwest_ridge (Dorado Needle).
+
+Confirmed errors fixed (2): two summit-waypoint elevations each contradicted
+this same row's own `high_point_ft` AND external sources — Johannesburg
+Mountain's Northeast Ridge (1963 Route) stored waypoint elev/elevFt 8066
+against its own high_point_ft of 8200 (external: Wikipedia/listsofjohn/
+PeakVisor all cite 8,200-8,212 ft); Kangaroo Temple's Northwest Face stored
+waypoint elev 7238 against its own high_point_ft of 7572 (external: The
+Mountaineers and others cite 7,572 ft exactly). Both corrected to match.
+
+Flagged for human review, not fixed (4): Johannesburg's Northeast Ridge
+(1963 Route) has a road/trailhead identity split — `road.name` says
+"...to Boston Basin trailhead" while four other fields on the same row
+(waypoint name, approach_logistics.trailhead, approach text,
+access.closures) all say "Cascade Pass Trailhead". External sources
+describe the actual standard approach to Johannesburg's NE Face/C-J-Couloir
+routes as starting from the Boston Basin pullout (~MP 22, ~3,200 ft,
+explicitly "beneath the Northeast Face of Johannesburg Mountain"), a mile
+short of and 400 ft below the Cascade Pass trailhead (MP 23, 3,600 ft) the
+majority of fields name — so the agreeing majority may be one propagated
+claim rather than independent confirmation. Untangling it means rewriting
+waypoint coordinates from a pullout location not pinned down here, so left
+for a human call rather than guessed. Same route also says nothing about
+the Cascade River Road closure at milepost 20 (Eldorado) that NPS and news
+sources confirm was in effect as of at least June 2026 (spring flood/
+landslide damage) and would block vehicle access to either candidate
+trailhead; current (September 2026) status not confirmed by anything found,
+so nothing was added on spec. Two gain_ft-vs-own-waypoints "impossible gain"
+shortfalls flagged rather than corrected, since no authoritative source
+states either route's true total elevation gain: Kangaroo Temple's Northwest
+Face gain_ft (1900) is below the net rise its own trailhead/summit imply
+(2412, using the corrected elevation) by ~512 ft; Northwest Mox Peak's
+standard route gain_ft (5450) is below its own implied net rise (6057) by
+~607 ft.
+
+Externally verified clean: Argonaut Peak elevation (8,457 ft); Sloan Peak
+elevation (7,835 ft) — the Northwest Buttress's specific FA (Preiss/Bunker,
+2000) couldn't be independently corroborated but nothing contradicts it;
+Little Big Chief Mountain elevation (7,225 ft) and its Falcon Route FA
+(Volken/Hansell, Sept 10 2001, matching an AAC Publications result); South
+Early Winters Spire elevation (7,807 ft) and the existence of its Northwest
+Face (Boving-Pollock) route (confirmed via Mountain Project; the specific
+1976 aid FA/1977 free-ascent detail wasn't independently corroborated but
+isn't contradicted either); Northwest Mox Peak elevation (8,407 ft) and FA
+(Fred & Helmy Beckey, June 1941, West Ridge); Dorado Needle elevation
+(8,440+ ft) and FA (Anderson/Boyer/Gorton, July 1940, Northwest Ridge).
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-221.sql` — 10 write
+targets across 3 statements, all resolve to existing ids, no DELETEs.
+access_checked_at stamped on all 8 routes.
+
+WebFetch remained egress-blocked for every domain tried this run (Mountain
+Project, Wikipedia); all external verification is from WebSearch result
+summaries.
+
+Next batch continues alphabetically from `wa_northwest_ridge` onward
+(pass 4); the next id in scope order is `wa_northwest_ridge_2`.
