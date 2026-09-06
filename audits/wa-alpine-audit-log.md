@@ -15424,3 +15424,56 @@ File is ~7.5KB, well over the SQL Editor's ~4KB safe-paste threshold -- split in
 Next batch continues from `wa_mount_rainier_willis_wall` onward alphabetically (pass 4)
 -- Mount Rainier is now fully audited this pass; the next batch moves to Mount Redoubt,
 Mount Seattle, and Mount Sefrit.
+
+## Batch 215 (2026-09-06, pass 4)
+
+Routes: `wa_mount_redoubt_south_face`, `wa_mount_seattle_noyes_basin`,
+`wa_mount_seattle_seattle_creek`, `wa_mount_sefrit_bloody_head_couloir`,
+`wa_mount_sefrit_southeast_ridge`, `wa_mount_sefrit_southwest_ridge`,
+`wa_mount_shuksan_fisher_chimneys`, `wa_mount_shuksan_hanging_glacier`.
+
+3 confirmed errors fixed, 0 flagged, 5 clean.
+
+- `wa_mount_sefrit_bloody_head_couloir`: `high_point_ft` was null. Mount Sefrit's
+  elevation (7,191 ft) is confirmed by this project's own `areas` row and externally
+  (Wikipedia, WTA, PeakVisor all agree), and both sibling routes on the same peak
+  already store 7191 -- this route was simply missed. Filled in.
+- `wa_mount_sefrit_southwest_ridge`: `approach_logistics.trailheadDirection` was
+  truncated mid-sentence ("From Glacier, drive Mt."). Completed by re-homing this same
+  row's own full `approach` text (Nooksack Cirque Trailhead, FR-34, Ruth Creek ford) --
+  no new research, just repairing an obvious truncation.
+- `wa_mount_shuksan_hanging_glacier`: `season` said "Jul-Aug", directly contradicting
+  this row's own `best_season` ("May to June") and `seasonal_guidance` (which only
+  covers May/June). A serac/steep-ice route is climbed cold/early for good reason (the
+  row's own hazard notes agree), so Jul-Aug reads as an unedited template default.
+  Corrected to "May-Jun" to match the row's own other seasonal fields.
+
+Checked closely and left CLEAN (initially looked suspicious, turned out fine on full
+inspection): `wa_mount_seattle_noyes_basin` and `wa_mount_seattle_seattle_creek` both
+carry a large shared Olympic-interior `bivy` list (Graves Creek, several Elwha camps,
+Low Divide, Anderson Pass/Enchanted Valley, Dodger Point) that at first glance reads
+like contamination copied in from an unrelated Anderson's Thumb/Elwha route. On full
+read, the list's own "Low Divide" entry explicitly names both of these routes ("Mount
+Seattle has three established scramble lines from here, by Noyes Basin, by Seattle
+Creek Basin and by the south slopes") and states the same 16-mile North Fork Quinault
+distance this row's own `approach_logistics` gives -- externally confirmed via WTA/
+ProTrails (North Fork Quinault Trail is 16.1 mi to Low Divide). This is a legitimate
+shared corridor camp list (the peak is reachable from either the Quinault or Elwha
+side), not foreign data, so nothing was changed.
+
+`wa_mount_shuksan_fisher_chimneys`'s first-ascent field already discloses "year not
+confirmed by available sources" for its named FA party. WebSearch only surfaced the
+1906 Curtis/Price first ascent of Shuksan overall via a different, easier route, which
+doesn't resolve the Fisher Chimneys line's own FA date -- left as the row's own honest
+disclosed uncertainty rather than guessed at.
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-215.sql` confirmed all 3 UPDATE
+targets exist and no DELETEs are present. File is ~5.1KB, over the SQL Editor's ~4KB
+safe-paste threshold -- split into per-statement chunks if pasting through the web
+editor.
+
+Next batch continues from `wa_mount_shuksan_hanging_glacier` onward alphabetically
+(pass 4) -- six more Mount Shuksan routes remain (`north_face`, `northeast_ridge`,
+`northwest_arete`, `price_glacier`, `sulphide_glacier`, `white_salmon_glacier`), then
+Mount Spickard and on through the rest of the alphabet (~200 routes remaining this
+pass).
