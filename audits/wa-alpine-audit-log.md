@@ -15806,3 +15806,70 @@ result summaries.
 
 Next batch continues alphabetically from `wa_nooksack_tower_south_face` onward
 (pass 4), starting with `wa_north_face_3` (Lexington Tower).
+
+## Batch 220 — 2026-09-06 (pass 4)
+
+Routes: wa_north_face_3 (Lexington Tower), wa_north_face_left_buttress
+(Castle Peak, Pasayten), wa_north_face_var_right_directisimo (Concord Tower),
+wa_north_gardner_mountain_nw_couloir, wa_north_ridge_2 (Whatcom Peak),
+wa_north_ridge_3 (Cutthroat Peak), wa_north_ridge_4 (Primus Peak),
+wa_northeast_buttress_4 (Colchuck Peak), wa_northeast_face_direct (Mount
+Formidable).
+
+Confirmed errors fixed (3): Colchuck Peak Northeast Buttress's `watch_out`
+was a raw string (every sibling in this batch stores it as an array)
+describing an unrelated winter mixed/ice route — "mixed climbing (M4)",
+"Steep ice bulge (A2-3 rating)", "wind-loaded terrain near Snoqualmie Pass" —
+on a route that is a dry summer 5.8+/5.9 granite climb at the Enchantments,
+~100 miles from Snoqualmie Pass, externally corroborated (Mountain Project,
+SummitPost) as having no ice or mixed pitches at all. Replaced with a proper
+array re-homed from this same row's own hazards/obj_haz/pitch_detail data
+(routefinding, the moat crossing, loose rock, the crux corner, the long day)
+— nothing researched or invented. Also: two internally contradictory Blue
+Lake Trailhead elevations, both externally corroborated (WTA/Mountaineers:
+5,400 ft) — wa_north_face_var_right_directisimo's waypoint stored 5200
+against its own road/approach_logistics/approach fields (all 5400) and its
+sibling wa_north_face_3's identical-coordinate waypoint (5400); wa_north_face_3's
+own waypoint stored elev 5400 but that same waypoint's nested `directions`
+text said "roughly 5,200 feet" — corrected to match.
+
+Flagged for human review, not fixed: wa_north_ridge_4 (Primus Peak) has an
+internal contradiction on its FA — `fa` and `overview` both say Mark Bebie
+climbed the North Ridge in 1986 (matching two independent web searches), but
+`beta` gives a specific "September 7, 1987" date with a same-day Austera Peak
+ascent story that appears in no external source found. Likely conflation
+with a different 1987 Bebie trip in the same area (AAJ 1987 lower-48 report
+names a Subak/Bebie/Gallagher/Barbee/Skoog party nearby that year), but
+tooling (WebFetch) could not reach a primary source (AAJ/SummitPost pages all
+egress-blocked) to confirm which date is right, so left unresolved rather than
+guessed. wa_north_ridge_2 (Whatcom Peak)'s FA-vs-route-line question, already
+flagged in a prior pass, remains unresolved for the same reason (no accessible
+source ties the 1936 Berry/Buchanan FA specifically to the North Ridge line).
+
+Externally verified clean, no correction needed: Lexington Tower North Face
+FA (Kelley/McGowan, 7/5/1954) and summit elevation (7,560 ft, exact); Castle
+Peak's "Fight or Flight" FA (Herrington/Hirst, 8/3/2008 — grade, length and
+line description all matched a detailed secondary account almost verbatim)
+and Castle Peak's elevation (8,343 ft, exact); Whatcom Peak's elevation
+(7,574 ft, exact); Cutthroat Peak's elevation (8,065 ft vs. 8,066 ft
+externally — 1 ft rounding, not a conflict); North Gardner Mountain's
+elevation (8,956 ft, exact); Mount Formidable's Direct NE Face FA
+(Klubberud/Campbell, 2002) and its 2013 second ascent (matched this row's own
+"two large blocks" hazard note almost verbatim, independent corroboration).
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-220.sql` — 11 write targets
+across the file all resolve to existing ids, no DELETEs. One UPDATE (the
+watch_out fix) isn't machine-checkable by that script because the literal old
+value being matched contains several semicolons and the script's statement
+splitter is a naive `split(";")` — a known, pre-existing limitation seen
+across dozens of earlier batches, not specific to this file; the id/value
+were independently confirmed by direct REST query before writing the fix.
+File is 7.6KB (above the ~4KB safe-paste threshold — split into chunks when
+pasting into the SQL Editor).
+
+WebFetch remains egress-blocked for every domain tried this run (SummitPost,
+AAC Publications, cascadeclimbers.com, Wikipedia, an AAJ PDF host); all
+external verification is from WebSearch result summaries.
+
+Next batch continues alphabetically from `wa_northeast_face_direct` onward
+(pass 4); the next id in scope order is `wa_northeast_ridge_1963_route`.

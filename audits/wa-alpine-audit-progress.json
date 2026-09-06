@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_nooksack_tower_south_face",
+  "last_processed_id": "wa_northeast_face_direct",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4521,6 +4521,27 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-09-06-batch-219.sql",
       "note": "Nooksack Tower's two routes (Beckey Route / South Face) share one trailhead and summit, which is what surfaced most of this batch's findings by cross-reference. South Face fa corrected 'July 2002' -> 'July 2001' (the AAJ published the report in its 2002 volume, but two independent sources -- the source page's own URL path 'Summer01' and a biographical account calling it 'the summer of Manfredi's senior year' -- date the actual climb to 2001; the classic AAJ-publication-year-vs-ascent-year mixup). South Face access.landManager corrected to match its own access.land_manager field and its sibling Beckey Route (it said NPS-only, contradicting the row's own dual-jurisdiction land_manager field and its sibling's correct joint-jurisdiction statement -- externally corroborated: the summit is inside North Cascades NP, the Nooksack Cirque approach is Mount Baker-Snoqualmie NF/Wilderness). South Face rappels (null) filled by re-homing its own rappel_count_note conclusion and descent_text into the column, matching the sibling's wording for the same descent line -- nothing researched. South Face waypoints (both missing elev/elevFt) filled from the identical-coordinate points on the sibling Beckey Route and this row's own high_point_ft. Needle Peak North Ridge high_point_ft (null) filled to 7896 to match its own summit waypoint, externally corroborated by listsofjohn.com (7,897 ft). Checked and confirmed correct, no action: Torment/Forbidden peak elevations and FA (Cooper/Sellers, July 1958, both routes), Triumph NE Ridge FA and elevation (7270 falls inside Wikipedia's imprecise '7240+' contour reading, not a conflict), Cathedral Peak NE Ridge elevation (8606, exact external match) and dist_km (27.4km/17mi sits inside the row's own approach text's '~18mi' estimate, not the waypoint note's less-precise '~19-20mi' -- no defensible single fix, same as batch 218's Teneriffe Kamikaze precedent), Snowfield Peak/Neve Glacier FA (Degenhardt/Strandberg, Aug 1931) and elevation, NEWS Northwest Corner (Boving-Pollack) FA and pitch_detail (5 pitches summing exactly to length_m=180)."
+    },
+    {
+      "batch_number": 220,
+      "date": "2026-09-06",
+      "pass": 4,
+      "route_ids": [
+        "wa_north_face_3",
+        "wa_north_face_left_buttress",
+        "wa_north_face_var_right_directisimo",
+        "wa_north_gardner_mountain_nw_couloir",
+        "wa_north_ridge_2",
+        "wa_north_ridge_3",
+        "wa_north_ridge_4",
+        "wa_northeast_buttress_4",
+        "wa_northeast_face_direct"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-09-06-batch-220.sql",
+      "note": "Colchuck Peak Northeast Buttress's watch_out was a raw string (every sibling in this batch stores it as an array) describing an unrelated winter mixed/ice route -- 'mixed climbing (M4)', 'Steep ice bulge (A2-3 rating)', 'wind-loaded terrain near Snoqualmie Pass' -- on a dry summer 5.8+/5.9 Enchantments granite climb ~100 miles from Snoqualmie Pass with no ice/mixed pitches per external sources; replaced with an array re-homed from this row's own hazards/obj_haz/pitch_detail (nothing researched). Two internally-contradictory Blue Lake Trailhead elevations corrected to the externally-confirmed 5,400 ft: wa_north_face_var_right_directisimo's waypoint elev (was 5200, vs. its own road/approach_logistics/approach fields and its sibling's identical-coordinate waypoint, all 5400) and wa_north_face_3's own waypoint directions text (said 'roughly 5,200 feet' against that same waypoint's own elev=5400). Flagged, not fixed: wa_north_ridge_4 (Primus Peak) FA internally disagrees -- fa/overview say Bebie climbed the North Ridge in 1986 (2 external sources agree), beta gives a specific but externally-unconfirmed Sept 7 1987 date with a same-day Austera Peak story, likely conflated with a different 1987 Bebie trip in the AAJ; wa_north_ridge_2 (Whatcom Peak) FA-vs-line question from a prior pass remains unresolved for the same reason. Verified clean: Lexington Tower North Face FA and elevation, Castle Peak 'Fight or Flight' FA and Castle Peak elevation, Whatcom Peak elevation, Cutthroat Peak elevation (1 ft rounding, not a conflict), North Gardner Mountain elevation, Mount Formidable Direct NE Face FA and its 2013 second ascent. access_checked_at stamped on all 9 routes. WebFetch egress-blocked for every domain tried (SummitPost, AAC Publications, cascadeclimbers.com, Wikipedia, an AAJ PDF host); verification via WebSearch result synthesis only."
     }
   ]
 }
