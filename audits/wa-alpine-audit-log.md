@@ -15328,3 +15328,99 @@ editor.
 
 Next batch continues from `wa_mount_rainier_liberty_ridge` onward alphabetically
 (pass 4).
+
+## 2026-09-06 — Pass 4, Batch 214
+
+Six Mount Rainier routes, finishing the peak's alpine/mountaineering route set on this
+pass: Mowich Face, Nisqually Icefall, Ptarmigan Ridge, Sunset Ridge, Tahoma Glacier,
+Willis Wall.
+
+**Confirmed errors -> fixes in `sql/2026-09-06-batch-214.sql`:**
+- `wa_mount_rainier_ptarmigan_ridge`: the "White River Campground" trailhead waypoint
+  stores `elevFt` 4930, contradicting its own `elev` field (4400) and WebSearch-confirmed
+  published elevations for White River Campground (4,232-4,440 ft across several
+  camping-info sources). 4930 is not a random number -- it exactly matches the correct,
+  independently-verified elevation of Mowich Lake Trailhead used elsewhere in this same
+  route set (`wa_mount_rainier_mowich_face`'s own Trailhead waypoint: elev 4930, elevFt
+  4930), consistent with this route's trailhead having been switched from Mowich Lake to
+  White River Campground (the row's own `approach` text explains the Mowich-road-opens-
+  late reasoning for that switch) without updating the stale `elevFt`. Corrected to 4400.
+- `wa_mount_rainier_willis_wall`: the same "White River Campground" waypoint has the
+  identical shape of defect, worse: `elevFt` 2320 AND the waypoint's own `directions`
+  text both say "about 2,320 feet," contradicting `elev` (4400, matching White River
+  Campground's real elevation and this row's own gain_ft/high_point_ft math) and every
+  external source. 2,320 ft is exactly Ipsut Creek Campground's published elevation
+  (2,300-2,320 ft, confirmed via WebSearch) -- the historical Carbon River-side
+  trailhead this row's own `approach` text says was replaced by White River Campground
+  after the Fairfax Bridge closure. Corrected `elevFt` and the `directions` text's
+  elevation figure to 4,400 ft.
+- `wa_mount_rainier_tahoma_glacier`: two independent errors on one row. (1) `gain_ft`
+  stored as 5007, but this row's own two waypoints (Trailhead 2900 ft, Summit/Columbia
+  Crest 14406 ft) imply a net rise of 11,506 ft, more than double the stored figure, with
+  no recorded high camp on this row to explain the shortfall. Sibling route
+  `wa_mount_rainier_sunset_ridge` shares this exact trailhead and a nearly identical
+  summit yet stores `gain_ft` 11500, matching its own net rise almost exactly --
+  confirming the convention on this mountain's route set is full trailhead-to-summit net
+  rise. Corrected to 11500. (2) `access.notes` says "Northwest Forest Pass required ...
+  No specific climbing permit," directly contradicted by this same row's own
+  `access.permit` ("Mount Rainier Climbing Permit"), `access.fees` ($82 fee), and
+  `access.parking_pass` ("Northwest Forest Pass does not apply inside the park").
+  Sibling `wa_mount_rainier_sunset_ridge` has an identical `access` block in every other
+  field, using the standard NPS registration text instead -- copied that verbatim rather
+  than inventing new content.
+- Flagged, no fix written (insufficient confidence for a specific replacement number):
+  `dist_km` on `wa_mount_rainier_nisqually_icefall` (24.94 km / 15.5 mi one-way) is
+  suspicious because it is byte-identical to Fuhrer Finger's pre-correction value from
+  batch 213, which was independently determined wrong and corrected to 11.3 km -- no
+  authoritative source found pinning Nisqually Icefall's own one-way mileage, though
+  every source describes it as one of Rainier's more direct/steep lines, which argues
+  against 15.5 mi. `dist_km` on `wa_mount_rainier_mowich_face` (28.97 km) and
+  `wa_mount_rainier_ptarmigan_ridge` (28.97 km) are identical to two decimal places
+  despite different named trailheads (Mowich Lake vs White River) and different climbing
+  route lengths (`length_m` 1219 vs 1554) -- essentially impossible as a real coincidence
+  and consistent with copied/duplicated data, but no authoritative one-way mileage was
+  found for either route to write a specific corrected value. `dist_km` on
+  `wa_mount_rainier_tahoma_glacier` (12 km / 7.46 mi one-way) may also be too short: this
+  same row's own `descent_text` cites "a documented recent trip" logging a 21.5-mile
+  car-to-car itinerary for an ascend-Tahoma/descend-Disappointment-Cleaver traverse, and
+  subtracting DC's own one-way distance (11.3 km / 7.02 mi, this table's own value)
+  implies the Tahoma ascent leg alone should be closer to 14-15 mi -- but that is a
+  chained inference through another route's figure rather than a direct source, so no
+  fix was written.
+- Clean, verified against external sources, no issues: `wa_mount_rainier_willis_wall`'s
+  overview text (Bailey Willis / 1881 Carbon Glacier trail naming, Charlie Bell's 1961
+  solo West Rib FA later corroborated by Jim Wickwire via photo/notes comparison,
+  Wickwire's 1963 East Rib ascent and 1970 first winter ascent, ~3,600 ft wall height --
+  all independently confirmed via WebSearch); `wa_mount_rainier_nisqually_icefall`'s
+  first-ascent claim (Bob Craig and Dee Molenaar, July 15, 1948, reaching ~13,000 ft on
+  Wapowety Cleaver -- confirmed via an AAC Publications summary); grade values, area
+  hierarchy placement (all six correctly filed under `wa_mount_rainier`, `area_type`
+  peak), and all other waypoint coordinates for this batch (Mowich Lake TH, Paradise,
+  White River Campground, Camp Schurman, West Side Road/Dry Creek gate, and the Liberty
+  Cap / Columbia Crest summit points all checked against known real-world coordinates
+  and are correctly placed).
+- Noted but not acted on: three of the six rows in this batch (`wa_mount_rainier_
+  ptarmigan_ridge`, `wa_mount_rainier_willis_wall`, `wa_mount_rainier_tahoma_glacier`)
+  store a full explanatory sentence in `season` rather than a short window (the
+  documented "season is a window, not an explanation" defect class in CLAUDE.md,
+  previously fixed in a dedicated batch). This is a shape/display issue rather than a
+  factual error, and inventing a specific replacement window without a clean external
+  or duplicated-elsewhere source for one of the three (`willis_wall`) risks losing
+  real content, so this was left as an observation rather than a SQL fix, to stay
+  within this audit's scope of verifying facts rather than reformatting fields.
+
+`npm run check:sql -- --table routes audits/sql/2026-09-06-batch-214.sql` confirmed all
+3 UPDATE targets exist and no DELETEs are present. One of the five statements (the
+`wa_mount_rainier_tahoma_glacier` access.notes fix) could not be fully parsed by the
+checker because the copied text contains a real semicolon inside a quoted value ("...
+White River); roughly half...") -- the checker splits statements on bare `;` and warns
+"not checkable" rather than silently passing; manually verified against a fresh read of
+the live row immediately before writing that statement (both the target id and the
+guarded `access.notes`/`access.permit` values matched exactly). Split the Tahoma row's
+two fixes into separate UPDATE statements so the `gain_ft` fix stays fully checkable.
+File is ~7.5KB, well over the SQL Editor's ~4KB safe-paste threshold -- split into
+~1.5KB chunks if pasting through the web editor.
+
+Next batch continues from `wa_mount_rainier_willis_wall` onward alphabetically (pass 4)
+-- Mount Rainier is now fully audited this pass; the next batch moves to Mount Redoubt,
+Mount Seattle, and Mount Sefrit.
