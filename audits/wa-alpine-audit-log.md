@@ -15251,3 +15251,80 @@ caught before commit, but worth writing around).
 
 Next batch continues from `wa_mount_rainier_edmunds_headwall` onward alphabetically
 (pass 4).
+
+---
+
+## 2026-09-06 — Pass 4, Batch 213
+
+Eight Mount Rainier routes: Emmons–Winthrop Glacier, Fuhrer Finger, Fuhrer Thumb,
+Gibraltar Ledges, Ingraham Direct, Kautz Glacier, Kautz Headwall, Liberty Ridge.
+
+**Confirmed errors → fixes in `sql/2026-09-06-batch-213.sql`:**
+- `wa_mount_rainier_emmons_glacier`: the "Glacier Basin Camp Site Area" waypoint stored
+  elev 6,800 ft, contradicting this same row's own `approach` prose two sentences
+  earlier ("Glacier Basin Campground (5,935 ft)") and WTA's independent 5,935 ft figure.
+  Corrected to 5,935.
+- `wa_mount_rainier_ingraham_direct`: `dist_km` stored 6.8 km (4.2 mi one-way), but this
+  row's own `waypoints` array gives the Summit a distMi of 8 — a route cannot be
+  shorter than its own last waypoint says it is. Corrected to 12.9 km (8 mi), also
+  consistent with an externally-sourced ~7.4 mi one-way figure for the Disappointment
+  Cleaver route Ingraham Direct shares almost its entire approach with (same gain_ft).
+- `wa_mount_rainier_kautz_glacier`: two independent errors on one row. (1) The "Camp
+  Hazard" waypoint stored elev 12,500 ft, contradicting this row's own `approach` text
+  ("Camp Hazard (10,800 ft, at the base of the Turtle Snowfield ...)") — corrected to
+  10,800. (2) `dist_km` stored 19 km (11.8 mi), contradicting this row's own Summit
+  waypoint distMi of 13 — corrected to 20.9 km.
+- `wa_mount_rainier_kautz_headwall`: the trailhead waypoint is named "Paradise (Skyline
+  Trail)" and carries lat/lng identical to the real Paradise trailhead (copy-pasted from
+  elsewhere in the catalog), but its own `elev` (3,600) and its own `note` field
+  ("Distinct from Paradise lot; route goes via Van Trump Park...") both describe the
+  separate Comet Falls/Van Trump Park Trailhead this row's `approach` text names as an
+  alternative start. WTA's page for that trailhead gives 46.7790, -121.7823 at 3,650 ft
+  — matching this row's stated elevation almost exactly. Corrected the lat/lng/name;
+  left elev/note/type alone since they were already right.
+- `wa_mount_rainier_fuhrer_finger`: `dist_km` stored 24.94 km (15.5 mi one-way) — longer
+  one-way than every other route in this batch, including the much longer
+  Emmons-Winthrop. Contradicts multiple independent sources (Mazamas, Mountaineers)
+  calling it "one of the shortest routes on Rainier," climbable "in one day from
+  Paradise," with one source giving a 14-mile round-trip loop figure (~7 mi one-way).
+  Corrected to 11.3 km.
+- `wa_mount_rainier_liberty_ridge`: three of five `waypoints` entries were wholesale
+  contamination from an unrelated route on the opposite side of the mountain — "Mowich
+  Lake Camp," "Puyallup Winthrop Junction Camp," and "Puyallup Glacier Serac Zone" all
+  belong to the Mowich Face/Sunset Ridge approaches on Rainier's NW/W side. None of
+  those names, nor "Mowich" or "Puyallup," appear anywhere in this row's own
+  `approach`/`beta`/`overview` text, which instead names only the real approach (White
+  River → Glacier Basin → St. Elmo Pass → Winthrop Glacier → Curtis Ridge → Carbon
+  Glacier). The contaminated points' distMi values were also geometrically impossible
+  (e.g. "Mowich Lake Camp" listed at 0.5 mi from White River, though the real Mowich
+  Lake sits ~8 mi away by any path). Removed the three contaminated waypoints rather
+  than inventing coordinates for the real intermediate camps, which weren't
+  independently verified. Also corrected the trailhead's own elev (4,800 → 4,400 ft):
+  multiple external sources put White River Campground at 4,400 ft, which is also
+  exactly what this row's own `gain_ft` (9,708) implies against its own Summit
+  elevation (14,112 − 9,708 = 4,404). Cleared the Summit waypoint's now-meaningless
+  distMi (was 15, computed along the removed contaminated path).
+- Flagged, no fix (insufficient confidence for a specific number): `dist_km` on
+  `wa_mount_rainier_fuhrer_thumb` (4.97 mi one-way; no internal waypoint distance to
+  check against, and no external source pinning this specific variant's mileage — its
+  sibling Fuhrer Finger's corrected ~7 mi figure suggests this may also be too low, but
+  that's an inference, not a source), `wa_mount_rainier_gibraltar_ledges` (12.49 mi
+  one-way; historically described as more direct/shorter than the Disappointment
+  Cleaver's ~7.4 mi, but the only external figure found was an ambiguous "12.33 mi"
+  combined ascend-Gibraltar/descend-DC loop, which doesn't cleanly convert to a
+  Gibraltar-only one-way figure), `wa_mount_rainier_kautz_headwall` (11.2 mi one-way;
+  no internal waypoint distance and no external figure found), and
+  `wa_mount_rainier_liberty_ridge` (5.97 mi one-way; an external "~10 mi" estimate and
+  this row's own now-removed contaminated waypoint both suggested this figure is too
+  low, but they disagree with each other on by how much, so no single number was
+  confident enough to write).
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-213.sql` confirmed all 7 UPDATE
+targets exist, and every WHERE-clause guard value was independently re-verified against
+a fresh read of the live row before writing the file (each guard matches the live data
+exactly at time of audit). File is ~7.6KB, well over the SQL Editor's ~4KB safe-paste
+threshold — split into chunks (the script suggests ~1.5KB) if pasting through the web
+editor.
+
+Next batch continues from `wa_mount_rainier_liberty_ridge` onward alphabetically
+(pass 4).

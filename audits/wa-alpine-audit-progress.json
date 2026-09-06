@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_rainier_edmunds_headwall",
+  "last_processed_id": "wa_mount_rainier_liberty_ridge",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4385,6 +4385,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-06-batch-212.sql",
       "note": "wa_mount_pilchuck_east_ridge/standard_route: permit column contradicted own access blob (Discover Pass vs Northwest Forest Pass); wa_mount_pilchuck_standard_route: access.rules also falsely claimed Glacier Peak Wilderness group-size/campfire rules apply (Pilchuck is not in any designated wilderness) -- cleared rather than replaced; wa_mount_price_hester_lake_route: dist_km 8->10.5, matched externally corroborated 13mi RT / 4,100ft gain (gain_ft already matched exactly). Flagged: wa_mount_rainier_disappointment_cleaver has an internal mileage disagreement between its own waypoints/dist_km (~7.25mi one-way) and its own itinerary day-by-day total (18mi RT = 9mi one-way), and external sources split across both figures -- no confident single fix."
+    },
+    {
+      "batch_number": 213,
+      "date": "2026-09-06",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_rainier_emmons_glacier",
+        "wa_mount_rainier_fuhrer_finger",
+        "wa_mount_rainier_fuhrer_thumb",
+        "wa_mount_rainier_gibraltar_ledges",
+        "wa_mount_rainier_ingraham_direct",
+        "wa_mount_rainier_kautz_glacier",
+        "wa_mount_rainier_kautz_headwall",
+        "wa_mount_rainier_liberty_ridge"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 4,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-09-06-batch-213.sql",
+      "note": "wa_mount_rainier_emmons_glacier: waypoint 'Glacier Basin Camp Site Area' elev 6800->5935, matching this row's own approach prose and WTA. wa_mount_rainier_ingraham_direct: dist_km 6.8->12.9, matched to its own summit waypoint distMi=8mi. wa_mount_rainier_kautz_glacier: waypoint 'Camp Hazard' elev 12500->10800 matching this row's own approach prose; dist_km 19->20.9 matched to its own summit waypoint distMi=13mi. wa_mount_rainier_kautz_headwall: trailhead waypoint lat/lng/name corrected from a copy-pasted Paradise coordinate to the real Comet Falls Trailhead (46.7790,-121.7823), which its own elev(3600)/note already described; also flagged (dist_km unconfirmed, no internal or external figure found). wa_mount_rainier_fuhrer_finger: dist_km 24.94->11.3, corroborated by external sources calling it one of Rainier's shortest routes (~14mi RT loop) against a stored value longer one-way than every other route in the batch. wa_mount_rainier_liberty_ridge: removed 3 wholesale-contaminated waypoints (Mowich Lake Camp / Puyallup Winthrop Junction Camp / Puyallup Glacier Serac Zone) copied in from an unrelated NW-side Rainier route, none of which appear in this row's own approach/beta/overview text describing the real White River/St.Elmo Pass/Winthrop Glacier/Curtis Ridge/Carbon Glacier approach; also corrected trailhead elev 4800->4400 (matches gain_ft's implied trailhead elevation and external White River Campground figures) and cleared the now-meaningless summit distMi; also flagged (dist_km unconfirmed -- external ~10mi estimate and the row's own now-removed contaminated waypoint disagreed on the correct figure). Flagged, no fix: wa_mount_rainier_fuhrer_thumb (dist_km, no internal or confident external figure) and wa_mount_rainier_gibraltar_ledges (dist_km, only an ambiguous mixed-route external figure found)."
     }
   ]
 }
