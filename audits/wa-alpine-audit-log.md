@@ -15544,3 +15544,95 @@ them, per the file-level note already in these SQL files.)
 Next batch continues alphabetically from `wa_mount_spickard_southwest` onward (pass
 4) -- 192 routes remain this pass, starting with `wa_mount_st_helens_monitor_ridge`
 and on through the rest of the alphabet.
+
+## Batch 217 (2026-09-06)
+
+Routes: `wa_mount_st_helens_monitor_ridge`, `wa_mount_st_helens_worm_flows`,
+`wa_mount_steel_first_divide`, `wa_mount_stuart_girth_pillar`,
+`wa_mount_stuart_ice_cliff_glacier`, `wa_mount_stuart_north_face`,
+`wa_mount_stuart_north_ridge`, `wa_mount_stuart_stuart_glacier_couloir`.
+
+6 confirmed errors fixed (2 more rows filled in for consistency once verified), 2
+flagged for human review, 2 clean (St. Helens Monitor Ridge; Girth Pillar's own
+first-ascent/pitch/grade facts). `wa_mount_stuart_north_face` needed no new
+checking -- its own `corrections`/`beta`/`verif` fields already document, from a
+prior session (2026-07-28), that this is very likely a fabricated duplicate of
+Ice Cliff Glacier with no real "North Face" route on Stuart; that finding still
+stands and nothing here changes it.
+
+Confirmed and fixed (`audits/sql/2026-09-06-batch-217.sql`):
+- Worm Flows: `gain_ft` stored 5563 against this same row's own `loss_ft` (5700)
+  and its own overview text ("about 5,700 ft of gain") -- disagreeing with itself.
+  Mountaineers.org/WTA/AllTrails all independently give 5,700 ft. Corrected to match.
+- Worm Flows: `dist_km` (8, = 4.97 mi one-way) disagreed with this row's own summit
+  waypoint (`distMi: 5.4`), and 4.97 mi one-way was well short of the ~6 mi one-way
+  implied by the commonly cited 12-mile-round-trip figure. Corrected dist_km to 8.69
+  km to match the row's own waypoint chain.
+- First Divide (Mount Steel): `approach`/`beta`/`dist_km` all agreed on 12.7 mi for
+  the North Fork Skokomish Trail to First Divide, but three independent sources
+  (WTA, ProTrails, Willhite Web) consistently give 13.1 mi for this same segment.
+  First Divide's own elevation (4,688 ft) and the Staircase trailhead coordinates
+  already on file both checked out exactly. Corrected the mileage in all three
+  places (13.1 mi / 21.08 km).
+- Girth Pillar: summit waypoint stored elev/elevFt 9416, one foot off this row's
+  own `high_point_ft` (9415) and off Mount Stuart's externally confirmed 9,415 ft
+  elevation, and disagreeing with all four sibling Stuart routes in this batch
+  (which all store 9415 both places). Corrected to 9415.
+- Ice Cliff Glacier and Stuart Glacier Couloir: both rows' `access.notes` said "...
+  No specific climbing permit," directly contradicting their own `permit` column
+  (and their own `access.rules`, which already describes the permit boundary's
+  8-person group cap) -- both routes require an overnight bivy inside the
+  Enchantment Permit Area, which needs a Recreation.gov quota permit May 15-Oct 31.
+  Their Stuart Lake trailhead siblings (Girth Pillar, North Face) already had the
+  correct 2026 lottery window in this field; verified that window is still current
+  against Recreation.gov, then corrected both rows to match.
+- North Ridge: `access` had no `notes` key at all describing the same lottery
+  requirement its own `permit` column states -- the mountain's most popular
+  technical route, so filled in (verified, not guessed) rather than left silent.
+
+Also stamped `access_checked_at = 2026-09-06` on all 8 routes in this batch: this
+session independently re-verified the St. Helens permit quota/fee schedule against
+the Mount St. Helens Institute and Recreation.gov, Mount Steel's Olympic NP
+wilderness-permit policy against NPS's current guidance, and (once the three fixes
+above were applied) all five Mount Stuart routes' Enchantment lottery window against
+Recreation.gov -- all now agree with their own on-file text.
+
+Flagged for human review, not fixed:
+- Girth Pillar's own `descent` field frames returning to camp via the Sherpa
+  Glacier as the quickest/standard way down and calls continuing over the summit to
+  the Cascadian Couloir "a penalty rather than the plan" (it exits 70 road miles
+  from camp) -- while this same row's `descent_text` and `turnaround` fields instead
+  call the Cascadian Couloir "the standard south-side line"/"the standard descent"
+  and never mention the Sherpa Glacier option at all. External search confirms both
+  descents are genuinely used (Sherpa Glacier "is commonly used after climbs of Ice
+  Cliff Glacier," a closely related neighboring route; Cascadian Couloir "has become
+  the standard descent route from the mountain" in general) -- so this reads as a
+  real disagreement in emphasis between two fields on the same row rather than a
+  clean factual error, and reconciling it is an editorial call, not a lookup.
+- North Ridge's `fa` column credits the 1956 first ascent to "Don Claunch & John
+  Rupley," while this same row's `overview` field instead credits "John Rupley and
+  Don Gordon." External sources are themselves split the same way (a
+  Mountaineers.org-derived source says "Don Gordon"; a climbing.com "50 Classic
+  Climbs" source says "Don Claunch") -- but one further search result suggests
+  "Don Gordon (Claunch)" may be one person's two names in the historical record
+  (both names appear elsewhere for the same 1950s Cascades climbing partnership of
+  John Rupley's), rather than two different people or a typo. Genuinely unresolved
+  in the sources available; left both fields as-is rather than guess which name to
+  standardize on.
+
+Precision note on scope: the Mount St. Helens/Mount Stuart `bivy` arrays in this
+batch all carry the same "Dana Yelverton Shelter site" (Goat Rocks/Old Snowy) entry
+CLAUDE.md already documents as a deliberate, unresolved leftover from an earlier
+cross-peak camp-list contamination fix (it could not be geocoded to either side, so
+the repair script left it on all seven affected routes rather than guess). Not a
+new finding -- left alone.
+
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-06-batch-217.sql` confirmed
+all 17 write targets exist and no DELETEs are present; every WHERE-clause guard was
+also independently re-checked against the fetched row data before writing the file.
+File is ~9.7KB, over the SQL Editor's ~4KB safe-paste threshold -- split into
+per-statement chunks if pasting through the web editor.
+
+Next batch continues alphabetically from `wa_mount_stuart_stuart_glacier_couloir`
+onward (pass 4) -- 184 routes remain this pass, starting with
+`wa_mount_stuart_the_gendarme`.

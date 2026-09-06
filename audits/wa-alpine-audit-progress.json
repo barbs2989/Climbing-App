@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_spickard_southwest",
+  "last_processed_id": "wa_mount_stuart_stuart_glacier_couloir",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4458,6 +4458,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-06-batch-216.sql",
       "note": "Two internal contradictions found via the rows own approach_variants/corrections fields calling out errors in their own approach/fa/waypoint fields that were never applied (White Salmon Glacier trailhead was mis-described as Lake Ann/Austin Pass; Spickard SW fa field populated despite corrections field saying it was left null); plus three Shuksan/Spickard summit-elevation waypoints off by 4ft from external + internal consensus. Flagged for human review rather than fixed: Warren Spickard naming details (conflicting sources) and a possibly-stale Ruth Creek/FR-32 washout distance (cannot confirm current state)."
+    },
+    {
+      "batch_number": 217,
+      "date": "2026-09-06",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_st_helens_monitor_ridge",
+        "wa_mount_st_helens_worm_flows",
+        "wa_mount_steel_first_divide",
+        "wa_mount_stuart_girth_pillar",
+        "wa_mount_stuart_ice_cliff_glacier",
+        "wa_mount_stuart_north_face",
+        "wa_mount_stuart_north_ridge",
+        "wa_mount_stuart_stuart_glacier_couloir"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 2,
+      "clean": 2,
+      "sql_file": "audits/sql/2026-09-06-batch-217.sql",
+      "note": "Worm Flows gain_ft/dist_km corrected to match its own loss_ft/overview text and its own summit waypoint respectively (both externally corroborated); First Divide (Mount Steel) trail mileage 12.7mi -> 13.1mi across approach/beta/dist_km (three independent trail sources); Girth Pillar summit waypoint 9416 -> 9415 to match its own high_point_ft, four sibling Stuart routes, and the externally confirmed 9,415 ft summit; Ice Cliff Glacier and Stuart Glacier Couloir access.notes corrected (contradicted their own permit column, said no specific permit exists when one does), North Ridge access.notes filled in (was missing entirely) -- all three verified against the current 2026 Enchantment lottery window. access_checked_at stamped on all 8 routes. Flagged for human review rather than fixed: Girth Pillar descent/descent_text/turnaround fields disagree on which descent is standard (both are real options per external sources, this is a framing disagreement not a clean error); North Ridge fa field says Don Claunch, overview field says Don Gordon for the 1956 FA partner -- external sources are themselves split, with one hint that Don Gordon (Claunch) may be one persons two names rather than an error."
     }
   ]
 }
