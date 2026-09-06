@@ -15477,3 +15477,70 @@ Next batch continues from `wa_mount_shuksan_hanging_glacier` onward alphabetical
 `northwest_arete`, `price_glacier`, `sulphide_glacier`, `white_salmon_glacier`), then
 Mount Spickard and on through the rest of the alphabet (~200 routes remaining this
 pass).
+
+## Batch 216 (2026-09-06)
+
+Routes: `wa_mount_shuksan_north_face`, `wa_mount_shuksan_northeast_ridge`,
+`wa_mount_shuksan_northwest_arete`, `wa_mount_shuksan_price_glacier`,
+`wa_mount_shuksan_sulphide_glacier`, `wa_mount_shuksan_white_salmon_glacier`,
+`wa_mount_spickard_silver_glacier`, `wa_mount_spickard_southwest`.
+
+5 confirmed errors fixed, 2 flagged for human review, 3 clean (North Face, Northeast
+Ridge, Sulphide Glacier -- all cross-checked, nothing to fix).
+
+Confirmed and fixed (`audits/sql/2026-09-06-batch-216.sql`):
+- Two Shuksan waypoints (Northwest Arete's and White Salmon Glacier's own summit pins)
+  stored 9127 ft against Mount Shuksan's externally confirmed 9,131 ft summit
+  elevation, disagreeing with 4 sibling routes' own waypoints in the same batch and,
+  for White Salmon Glacier, with its own `high_point_ft` column. Corrected both to
+  9131.
+- White Salmon Glacier's `approach` column and its own waypoints[0] Trailhead both
+  described reaching the route via Lake Ann Trail/Austin Pass -- but this row's own
+  `approach_variants[0].notes` field explicitly flags that as wrong ("That is not the
+  way parties reach the White Salmon Glacier"), and `descent_text`/`road.name`/
+  `road.driveNote` on the same row all independently agree the real trailhead is the
+  White Salmon Road pull-off. External search confirmed it too (Mountaineers.org: "The
+  White Salmon glacier route begins at the White Salmon day lodge in the Mt. Baker ski
+  area"). Rewrote `approach` (re-homed from the row's own approach_variants text) and
+  corrected the trailhead waypoint to the coordinates already verified on the sibling
+  North Face route (same physical trailhead).
+- Mount Spickard Southwest's `fa` column stored an unconfirmed 1941 Beckey-brothers
+  claim, while this same row's own `corrections` field says in as many words that the
+  first ascent of this specific line "is not clearly established... so `fa` has been
+  left null rather than guessed." The field was populated anyway, contradicting its
+  own documented decision. Nulled to match.
+- Same row's summit waypoint stored elev 8983, contradicting its own `high_point_ft`
+  (8979), its own `corrections` field ("this page uses 8,979 ft"), and the sibling
+  Silver Glacier route's summit waypoint (8979). Corrected to 8979.
+
+Flagged for human review, not fixed (sources genuinely conflict or can't be pinned
+down):
+- Spickard Southwest's overview says the peak was renamed in 1963 for "Warren J.
+  Spickard Jr."; a period AAC obituary is titled "Warren B. Spickard, 1918-1961" (no
+  Jr.), and other sources repeat both the "J. ... Jr." form and give the renaming year
+  as 1964 instead. Genuinely conflicting sources on a name -- left alone.
+- Price Glacier's `road.status` describes a longstanding FR-32 washout ~2.3 mi in near
+  Ruth Creek. A completed USFS "Hannegan Pass Washout Bypass" project (decision signed
+  2024-09-24) restored vehicle access somewhere on this same road system, but
+  available sources don't make clear whether it addressed this exact spot (vs. the
+  separate Hannegan Pass Trailhead further up FR-32) or what the current drivable
+  distance is. Not confident enough to write a replacement distance/status.
+
+Everything else in this batch (FA claims for North Face, Price Glacier, White Salmon
+Glacier; the Northwest Arete/"Northwest Arayete" 5.9-vs-5.7 distinction; NPS
+backcountry permit fees; Mount Spickard's elevation/prominence/rankings) checked out
+against external sources and/or the rows' own careful `corrections`/`data_quality`
+fields, which are unusually well-sourced on this batch (explicit confidence ratings,
+lastVerified dates, documented source disagreements already hedged in prose).
+
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-06-batch-216.sql` confirmed all
+5 UPDATE targets exist and no DELETEs are present. File is ~8.9KB, over the SQL
+Editor's ~4KB safe-paste threshold -- split into per-statement chunks if pasting
+through the web editor. (Needed one round of fixing the SQL itself first: an escaped
+apostrophe in a draft sentence and, separately, a bare semicolon inside a string
+literal each broke the checker's naive statement-splitting -- reworded both to avoid
+them, per the file-level note already in these SQL files.)
+
+Next batch continues alphabetically from `wa_mount_spickard_southwest` onward (pass
+4) -- 192 routes remain this pass, starting with `wa_mount_st_helens_monitor_ridge`
+and on through the rest of the alphabet.
