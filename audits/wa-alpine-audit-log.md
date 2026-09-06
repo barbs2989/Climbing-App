@@ -15636,3 +15636,102 @@ per-statement chunks if pasting through the web editor.
 Next batch continues alphabetically from `wa_mount_stuart_stuart_glacier_couloir`
 onward (pass 4) -- 184 routes remain this pass, starting with
 `wa_mount_stuart_the_gendarme`.
+
+## 2026-09-06 — Pass 4, Batch 218
+
+Five peaks, 10 routes (Mount Stuart 2: The Gendarme, West Ridge; Mount Teneriffe 2:
+Kamikaze Trail, Standard Route; Mount Terror 4: North Face, East Ridge [id
+southeast_face], Stoddard Buttress, West Ridge; Mount Thomson 1: West Ridge;
+Mount Tom 1: Glacier/Scramble Route). Same route set pass 3 covered in batches
+153-154, re-audited per the new-pass policy. Two confirmed fixes, both `dist_km`
+values contradicted by their own row's waypoint mileage; one pass-3 flag upgraded
+toward resolution; three pass-3 fixes re-confirmed as still unapplied.
+
+- **wa_mount_stuart_west_ridge** (new this pass — pass 3 checked this row's FA and
+  coordinates but not its distance): `dist_km` 32.2 km implies ~40 mi round trip
+  under the app's `dist_km*2` convention, while the row's own waypoint chain
+  (Esmeralda Basin Trailhead distMi 0 → Longs Pass → ridge crest → summit at
+  distMi 6) gives 6.0 mi = 9.66 km one-way. External trip reports for this exact
+  Esmeralda/Longs Pass approach independently give ~10-11 mi round trip (~5-5.5 mi
+  one-way). Two independent lines, same order of magnitude, both far below the
+  stored value. Corrected to 9.7 (the row's own waypoint-derived figure). `gain_ft`
+  5175 separately checks out against this trailhead (9415 − 4243 = 5172 ft) and was
+  left alone.
+- **wa_mount_terror_north_face**: batch 154 flagged this `dist_km` (28.97 km, ~36 mi
+  RT) as looking roughly double an external ~19-mi-RT trip report but had no
+  mechanically-derived value to fix to. The row's own waypoint chain supplies one —
+  Goodell Creek Trailhead (distMi 0) through the Terror Basin notch/bivy, glacier
+  crossing and 5.7 crux to the summit at distMi 8 = 8.0 mi = 12.87 km one-way.
+  Corrected to 12.9. (Its sibling `wa_mount_terror_southeast_face`, stored 32.99 km,
+  has no per-waypoint mileage of its own, so it stays flagged-not-fixed as before —
+  its East Ridge approach continues past Crescent Creek Basin and the Chopping Block,
+  so it is plausibly somewhat longer than the north face's 8 mi, but nothing in that
+  row supports a specific number.)
+
+Pass-3 fixes re-confirmed as STILL OUTSTANDING in the live DB (not repeated in this
+batch's SQL — apply the earlier files): `2026-08-27-batch-153.sql` (Mount Stuart
+summit waypoint `lng` −120.9022 → −120.903144 on The Gendarme and North Face;
+Teneriffe I-90 "Exit 31" → "Exit 32" in `road.driveNote` ×2 and the standard route's
+`approach`/`approach_logistics`) and `2026-08-27-batch-154.sql` (all four Mount
+Terror routes still store the physically impossible `gain_ft` 6000 against a
+600 ft → 8151 ft net rise).
+
+Moved closer to resolution (still not fixed): `wa_mount_terror_stoddard_buttress`'s
+`fa` describes two events — "John Stoddard, solo, July 16, 1984" plus an "extended/
+left-side finish variant … climbed by Stoddard July 14-17, 1985 … known as 'North
+Face, Left Side' (5.8+)". Fresh searches this run surfaced the AAJ 1985 account
+itself ("From July 14 to 17, Stoddard soloed a new route on the north face of Mount
+Terror that follows the prominent buttress left of the original 1961 route") and the
+AAC Publications index entry literally titled "Mount Terror, North Face, Left Side" —
+i.e. July 14-17 and the "North Face, Left Side" name both belong to the *same* solo
+ascent, reported in the 1985 AAJ but climbed in 1984, with July 16 plausibly the
+summit day inside that window. No source anywhere describes a second, 1985 ascent.
+That makes the second clause look like one event duplicated with a wrong year rather
+than a real variant — but WebFetch is still egress-blocked for every domain tried
+(nps.gov, the AAJ PDF host, AAC publications), so the primary text could not be read
+directly and this rests on search snippets. Left as-is per policy; a human with AAJ
+or Beckey access can settle it in a minute.
+
+Still unverified after a second attempt: `wa_mount_thomson_west_ridge`'s `fa` ("Fred
+Beckey, Helmy Beckey, Robert Craig & William Ford, 1940"). This run did turn up the
+peak's overall FA (Joe Hazard & B. French, 1917), which is a different claim and does
+not contradict a later first ascent of the West Ridge route specifically; no source
+found confirms or refutes the stored party.
+
+Minor, flagged not fixed: `wa_mount_teneriffe_kamikaze_trail` stores `dist_km` 5.95
+(~3.7 mi one-way) while its own summit waypoint sits at distMi 4.1 (6.6 km) — an
+internal ~10% disagreement. External sources are themselves spread (6.4, 6.5 and 8 mi
+round trip all cited for this route), and the stored value's implied 7.4 mi RT falls
+inside that spread, so there is no defensible single correction here.
+
+Confirmed correct and left unchanged: Mount Stuart West Ridge grade ("III, 5.4-5.6" —
+external sources split exactly this way, Beckey rating the crux 5.4 and modern
+accounts 5.6, so the stored range captures the real disagreement rather than being
+wrong); The Gendarme's 2 pitches at 5.9 (externally: "5.8 lieback then 5.9+ offwidth",
+two pitches, direct finish on the North Ridge); Mount Terror West Ridge grade
+(II, 5.6 — externally "low 5th class … about 5.0" over the Terror/The Rake notch,
+matching the row's own overview); Mount Thomson `gain_ft` 5200 (external trip report
+gives "5,200 feet gained and lost" — exact match) and `dist_km` 13 (implying 16.2 mi
+RT, inside the 16.2-20 mi external spread); Mount Teneriffe Standard Route `dist_km`
+10.46 (= 6.500 mi, exactly its own summit waypoint's distMi 6.5); Mount Tom `dist_km`
+33.8 vs its own waypoints' 21.5 mi (34.6 km, 2% apart) and `gain_ft` 7100 against a
+578 → 7076 ft net rise; Teneriffe's Discover Pass / no-climbing-permit statement
+(Mount Si NRCA is WA DNR land); the Enchantment permit rules on the Stuart routes
+(re-confirmed, unchanged since batch 153); all five peaks' area coordinates and
+hierarchy placement (Stuart Range, North Bend vicinity, Southern Pickets, western
+Alpine Lakes, central Olympics — each inside a plausible bounding box for its peak).
+
+Not a finding: `routes.lat`/`routes.lng` are null on all 10 routes, but they are null
+across the whole catalog — coordinates live on `areas` and in each row's `waypoints`,
+per CLAUDE.md. Also not a finding: the `southeast_face` id vs its "East Ridge" name,
+already validated in batch 154 and an instance of the id-naming pattern CLAUDE.md
+documents.
+
+Note: WebFetch remains egress-blocked for every domain tried, same limitation batches
+153-154 recorded; all external verification here is from WebSearch results.
+
+`npm run check:sql -- audits/sql/2026-09-06-batch-218.sql` — both write targets exist,
+no DELETEs, file is 2.6KB (inside the ~4KB safe-paste threshold).
+
+Next batch continues alphabetically from `wa_mount_tom_scramble` onward (pass 4) —
+174 routes remain this pass, starting with `wa_mount_torment_south_ridge`.
