@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_mount_persis_the_hexorcist",
+  "last_processed_id": "wa_mount_rainier_edmunds_headwall",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4365,6 +4365,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-05-batch-211.sql",
       "note": "wa_mount_mathias_scramble: dist_km 91.73->45.87, exactly double its own summit waypoint's one-way distance (distMi=28.5mi). wa_mount_maude_r1: dist_km 6.4->12.9, was less than its own trailhead-summit chord (impossible); corrected to its own summit waypoint distMi=8mi. wa_mount_olympus_blue_glacier: dist_km 28->35.4 (was storing distance to the Glacier Meadows camp, not the summit -- externally corroborated at 17.2mi/22mi via WebSearch); loss_ft 400->7500 to match gain_ft (explicit out-and-back descent requires round-trip gain=loss). wa_mount_olympus_west_ridge: same two fixes as its sibling (dist_km 28->31.7 matching its own track-derived waypoint; loss_ft 400->7500). Flagged rather than fixed: wa_mount_logan_r2 (three disagreeing round-trip mileage figures on file, plus a fourth from external trip reports, no majority); wa_mount_mathias_scramble also flagged separately for describing two different, only partly reconciled approaches (Hoh River vs. Sol Duc/Bailey Range) in one row; wa_mount_maude_r2 (same impossible dist_km=6.4 as r1 but no internal or external figure to replace it with). wa_mount_mystery_standard and wa_mount_persis_the_hexorcist verified clean."
+    },
+    {
+      "batch_number": 212,
+      "date": "2026-09-06",
+      "pass": 4,
+      "route_ids": [
+        "wa_mount_persis_west_ridge",
+        "wa_mount_pilchuck_east_ridge",
+        "wa_mount_pilchuck_standard_route",
+        "wa_mount_price_hester_lake_route",
+        "wa_mount_rahm_standard",
+        "wa_mount_rainier_curtis_ridge",
+        "wa_mount_rainier_disappointment_cleaver",
+        "wa_mount_rainier_edmunds_headwall"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-06-batch-212.sql",
+      "note": "wa_mount_pilchuck_east_ridge/standard_route: permit column contradicted own access blob (Discover Pass vs Northwest Forest Pass); wa_mount_pilchuck_standard_route: access.rules also falsely claimed Glacier Peak Wilderness group-size/campfire rules apply (Pilchuck is not in any designated wilderness) -- cleared rather than replaced; wa_mount_price_hester_lake_route: dist_km 8->10.5, matched externally corroborated 13mi RT / 4,100ft gain (gain_ft already matched exactly). Flagged: wa_mount_rainier_disappointment_cleaver has an internal mileage disagreement between its own waypoints/dist_km (~7.25mi one-way) and its own itinerary day-by-day total (18mi RT = 9mi one-way), and external sources split across both figures -- no confident single fix."
     }
   ]
 }

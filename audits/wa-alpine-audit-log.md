@@ -15187,3 +15187,67 @@ statements in this batch. File is ~7.5KB, over the SQL Editor's ~4KB
 safe-paste threshold — split into chunks if pasting through the web editor.
 
 Next batch continues from `wa_mount_logan_r2` onward alphabetically (pass 4).
+
+## Batch 212 (pass 4) — 2026-09-06
+
+Routes: `wa_mount_persis_west_ridge`, `wa_mount_pilchuck_east_ridge`,
+`wa_mount_pilchuck_standard_route`, `wa_mount_price_hester_lake_route`,
+`wa_mount_rahm_standard`, `wa_mount_rainier_curtis_ridge`,
+`wa_mount_rainier_disappointment_cleaver`, `wa_mount_rainier_edmunds_headwall`.
+
+- `wa_mount_pilchuck_east_ridge` and `wa_mount_pilchuck_standard_route`: both rows'
+  top-level `permit` column said "a Discover Pass is required to park on Washington
+  State lands" — contradicting each row's own `access.fees`/`access.passRequired`
+  (and, on the standard route, `access.parking_pass` too), which all correctly say
+  Northwest Forest Pass. WebSearch of the Forest Service's own page for the Mount
+  Pilchuck Trailhead confirms a Northwest Forest Pass is required and states plainly
+  that a WA Discover Pass is *not* valid at this fee site. Corrected `permit` on both
+  rows to match the row's own access data and the external source.
+- `wa_mount_pilchuck_standard_route`: separately, `access.rules` claimed a group-size
+  cap of 12 and a campfire ban above 3,500 ft "inside Glacier Peak Wilderness" — both
+  standard Wilderness Act boilerplate. Glacier Peak Wilderness is a large, separate
+  designated wilderness well to the north/east; Mount Pilchuck is not in any
+  designated wilderness at all (Wikipedia: Mount Pilchuck State Park is "completely
+  surrounded by" — not part of — Mount Baker-Snoqualmie National Forest, no wilderness
+  mentioned), and this row's own `access.landManager` already correctly says the
+  summit/upper trail sits in the state park. Reads as copy-paste contamination from a
+  Glacier Peak-area route. Cleared the field rather than inventing a replacement rule
+  set that wasn't independently verified.
+- `wa_mount_price_hester_lake_route`: `dist_km` stored as 8 km one-way, but this row's
+  own approach/beta text already says the trail alone runs "roughly 5-6 miles" just to
+  reach Hester Lake, before the off-trail scramble to the summit — inconsistent with an
+  8 km (4.97 mi) total one-way figure on its face. WebSearch synthesis of SummitPost/
+  Yellowleaf trip-report descriptions of this exact route gives "13 miles round trip,
+  4,100 ft gain" and "5.5 miles to Hester Lake." The 4,100 ft figure matches this row's
+  own `gain_ft` exactly, giving high confidence in the source. Corrected `dist_km` from
+  8 to 10.5 km (13 mi RT / 2 = 6.5 mi one-way).
+- Flagged, no fix: `wa_mount_rainier_disappointment_cleaver` has an internal
+  disagreement between its own summit waypoint/`dist_km` (~7.25 mi one-way, matching
+  a "14.5 mi RT" external figure) and its own `itinerary` day-by-day mileage total
+  (4.5 mi + 13.5 mi = 18 mi RT, i.e. 9 mi one-way, matching a different external
+  "~9 mi from Paradise to the summit" figure). Both brackets are independently
+  corroborated by real guide/route sources that themselves disagree by roughly 20%, so
+  there's no confident single number to write — needs an editorial call rather than a
+  guessed UPDATE. ($82 climbing cost-recovery fee and 14,406 ft summit elevation on
+  this row both checked out fine against current NPS/external sources.)
+- Clean, verified against external sources, no issues: `wa_mount_persis_west_ridge`
+  (5,464 ft summit confirmed via Wikipedia; dist_km/gain_ft self-consistent with its
+  own trailhead/summit waypoints), `wa_mount_rahm_standard` (8,485-8,486 ft confirmed
+  via Wikipedia; remote/multi-day route with no single distance figure clean enough to
+  cross-check further), `wa_mount_rainier_curtis_ridge` (13,800 ft ridge-top elevation
+  matches a Mountaineers/RMI-guide description of the route's top-out point exactly;
+  SR-165 Fairfax Bridge permanent-closure language confirmed still current per WSDOT's
+  own 2026 status update), `wa_mount_rainier_edmunds_headwall` (14,112 ft Liberty Cap
+  confirmed; SR-165/Mowich Lake closure language confirmed current and accurate).
+
+`npm run check:sql -- --table routes audits/sql/2026-09-06-batch-212.sql` confirmed
+all 4 UPDATE targets exist and match the guarded WHERE-clause values exactly; no
+DELETE statements in this batch. File is ~4.7KB, over the SQL Editor's ~4KB safe-paste
+threshold — split into chunks if pasting through the web editor. Note for future
+batches: avoid embedded semicolons inside string literal values in these files — the
+checker splits statements on bare `;` and a semicolon inside a quoted value truncates
+the statement before its own WHERE clause is reached (harmless here since it was
+caught before commit, but worth writing around).
+
+Next batch continues from `wa_mount_rainier_edmunds_headwall` onward alphabetically
+(pass 4).
