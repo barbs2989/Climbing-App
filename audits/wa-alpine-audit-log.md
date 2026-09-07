@@ -16043,3 +16043,75 @@ onward (pass 4); the next id in scope order is `wa_plan_9_from_outer_space`'s ar
 (out of scope) — the next in-scope id is `wa_playing_not_spraying`'s area (also a crag, out
 of scope); the next in-scope peak-area route after `wa_phantom_peak_west_ridge` is
 `wa_point_success_south_side`.
+
+## 2026-09-07 — Pass 4, Batch 224
+
+Eight routes, six peaks (Point Success, Mount Challenger/Poltergeist Pinnacle, Primus Peak,
+Prusik Peak x3, Vesper Peak): Point Success via Success Cleaver; Poltergeist Pinnacle (East
+Face, filed under Mount Challenger) and its near-duplicate `wa_poltergeist_pinnacle_north_route`
+(also called East Face, filed under the separate `wa_poltergeist_pinnacle` area); South Ridge /
+McAllister Glacier (Primus); Der Sportsman, South Face (Burgner-Stanley), West Ridge (Prusik);
+Ragged Edge (Vesper).
+
+**Confirmed and fixed:**
+- `wa_poltergeist_pinnacle`: `road.name` said the Ross Lake Resort water taxi runs to "Little
+  Beaver" — but this row's own `approach` text names "Big Beaver Trail landing" / "Big Beaver
+  Landing" / "Big Beaver valley" three times, and Ross Lake Resort's own water-taxi service
+  (rosslakeresort.com) is documented as running specifically to Big Beaver landing for the Big
+  Beaver Trail (Little Beaver is a real, different trail/creek further up the lake). Corrected
+  `road.name` to match; left `road.status`'s mention of "the Big Beaver/Little Beaver trail
+  system" alone since that's legitimate general context about the area.
+
+**Flagged for human review:**
+- `wa_poltergeist_pinnacle`: beyond the road-name fix above, this row's `waypoints` array is
+  internally incoherent. It opens with "Ross Dam Trailhead" (matching `road`/
+  `approach_logistics.trailhead`, the Big Beaver/Wiley Ridge approach), then continues with
+  "Hannegan Pass" at only 4.2 mi, "Boundary Camp" (8 mi), "Whatcom Pass" (12 mi), "Challenger
+  Glacier Crossing" (14.5 mi) — a sequence that is geographically impossible starting from Ross
+  Dam Trailhead (Hannegan Pass is a separate trailhead network off SR-542, not SR-20, roughly
+  25+ miles away with no connecting trail on that timeline) and that closely mirrors the sibling
+  route `wa_poltergeist_pinnacle_north_route`'s own Hannegan-Pass-based waypoint sequence and
+  mileages. Corroborating the confusion: the actual 2004 first-ascent account of this exact route
+  (AAC Publications / Northwest Mountaineering Journal) describes the FA party approaching via
+  Hannegan Pass → Easy Ridge → Perfect Pass, not via Ross Dam/Big Beaver. Ross Dam/Big Beaver/
+  Wiley Ridge is a real, separately-documented way to reach Mount Challenger's cirque too, so this
+  isn't simply "the wrong trailhead" — it needs a human decision about which approach this route
+  row should canonically describe, and a full waypoint-list rebuild either way, not a single-field
+  correction.
+- `wa_primus_peak_south_ridge`: this row conflates two distinct, real approaches/routes to Primus
+  Peak. Its `overview`, `approach`, `descent_text`, and `approach_variants` all describe, in
+  long, self-consistent detail, the Eldorado Creek Trailhead (Cascade River Rd) approach across
+  the Eldorado/Inspiration/McAllister/Klawatti glaciers to a short rappel/downclimb at the
+  McAllister-Klawatti col notch — and the `overview` explicitly contrasts this with an approach
+  "via Thunder Creek." Yet `approach_logistics.trailhead`, the `waypoints` array, and half of
+  `pitch_detail` ("Trailhead to McAllister Camp", "McAllister Camp to high camp", "Borealis
+  Glacier crossing") instead describe exactly that Thunder Creek/Lucky Ridge/Borealis Lake/Lucky
+  Pass approach — which this row's own `beta` field separately names as a different route (the
+  "East Slope"). `approach_logistics.trailheadDirection` also contains a leaked pipeline/QA
+  comment referencing "the previous entry" and Dorado Needle that never should have reached a
+  live field. Not a fact I can safely correct without a human call on which approach this route
+  is meant to describe.
+
+**Checked and clean:** Point Success's elevation (14,158 ft, within the range multiple sources
+cite) and Mount Rainier NP's climbing registration ($82/person) and wilderness camping ($12/
+person/night + $6 reservation fee) both match current NPS-sourced figures; Primus Peak's
+elevation (8,508 ft) matches Wikipedia; Prusik Peak's elevation (8,008 ft, consistent across all
+three routes) matches Wikipedia; the South Face's 1968 Burgner-Stanley (Ron Burgner/Fred Stanley)
+first ascent and Der Sportsman's Brooke Sandahl 1990s development both corroborate externally;
+the West Ridge's "1957, FA party not recorded" is correct as stored — external sources confirm
+Prusik's actual 1948 first ascent (Beckey/Holben, the famous "lassoed the summit" story) went via
+a different line (the East Route, traversing Temple Ridge), with the West Ridge established
+separately in 1957 by an unnamed party; Vesper Peak's elevation (6,214 ft, within normal survey
+variance of Wikipedia's 6,221 ft) and Ragged Edge's exact 2013-08-18 Berdinka/Pires first ascent
+both check out.
+
+`npm run check:sql -- audits/sql/2026-09-07-batch-224.sql` (run with the anon key set manually,
+since this worktree has no `.env.local`) — 1 write target, 1 statement, target id exists, no
+DELETEs. `access_checked_at` stamped 2026-09-07 on all 8 routes reviewed.
+
+WebFetch remained egress-blocked for every domain tried this run (nps.gov, en.wikipedia.org); all
+external verification is from WebSearch result summaries, cross-checked against this repo's own
+data where results conflicted.
+
+Next batch continues alphabetically from `wa_ragged_edge` (pass 4); 124 in-scope routes remain
+this pass.
