@@ -16829,3 +16829,77 @@ elevation delta for all 8 routes; all fall within ordinary approach-terrain vari
 "impossible gain" findings this batch.
 
 Next batch continues alphabetically after `wa_the_hitchhiker` (pass 4).
+
+## Batch 235 — 2026-09-07 (pass 4)
+
+`wa_the_monk_le_gibet`, `wa_the_monk_odine`, `wa_the_monk_scabo`,
+`wa_the_monk_west_cracks_left_crack`, `wa_the_monk_west_cracks_right_crack` (five routes
+on The Monk, a subsidiary tower next to Cathedral Peak, Pasayten Wilderness),
+`wa_the_needle_neve_glacier` (Snowfield Peak group), `wa_the_pleiades_scramble`
+(Mount Baker Wilderness), `wa_the_pyramid_picket_south_route` (Southern Pickets).
+
+**Fixed (4 distinct issues across the five Monk routes):**
+- `high_point_ft`: all five stored 8,606 ft — Cathedral Peak's own summit elevation
+  (matches the area row exactly). But every one of the five routes' own waypoint lists
+  names its "Topout" point "The Monk (tower top)" at elev 8,300, and
+  `wa_the_monk_le_gibet`'s waypoint note spells out why: "The Monk is a semi-detached
+  ~1000' tower leaning against Cathedral Peak's flank." The Monk is a shorter, distinct
+  formation, not Cathedral's summit. Corrected all five to 8,300 to match their own
+  waypoint data. Mountain Project (the usual source for this formation's route grades)
+  is blocked by network egress and general web search didn't surface an independent
+  figure specific to The Monk, so this is a same-row internal-contradiction fix rather
+  than an externally-sourced one.
+- `dist_km`: all five stored 27.4 km (17.03 mi one-way). The shared approach text says
+  "a 17 to 20 mile hike to Upper Cathedral Lake, then ~40 min to the base of The Monk" —
+  i.e. 17-20 mi covers only the hike to the lake, with more distance beyond it to the
+  actual climb. The row's own waypoint chain is more specific: the Topout waypoint
+  carries `distMi: 20`, the full cumulative one-way mileage to the summit. Corrected to
+  match (20 mi = 32.2 km), same precedent as batch 231's South Twin Sister fixes.
+- `loss_ft`: `wa_the_monk_scabo` (5,450) and `wa_the_monk_west_cracks_right_crack`
+  (5,200) were outliers against their three siblings (all 1,300), despite all five
+  sharing an identical trailhead/waypoint chain and near-identical descent text
+  ("rappel the NE gully, three 75-ft raps, back to the base"). Scabo's own descent field
+  goes further and explicitly contrasts its short gully descent against "the main summit
+  walk-off used by the SE Buttress and OTHER routes" — its own text disclaims the long
+  walk-out that only the 5,450 figure would be consistent with. West Cracks Right
+  Crack's descent text is word-for-word the same shape as Left Crack's, yet only Right
+  Crack stored the outlier. Corrected both to 1,300 to match their siblings and their
+  own stated descent.
+- `wa_the_monk_odine`'s `corrections` field read "Mountain Project lists this route at
+  5.9, not 5.8 as given in the route table — flagging for correction upstream," but the
+  row's own `grade`/`grade_num` are already 5.9/9 — the correction the note describes
+  has already been applied, and the stale note risks a future pass reverting a correct
+  grade to match a premise that's no longer true. Reworded to state the current,
+  already-corrected status, matching the phrasing convention of its four sibling routes'
+  corrections fields.
+
+**Verified clean via external corroboration:**
+- `wa_the_needle_neve_glacier`: FA claim (Degenhardt & Strandberg, August 1, 1931, same
+  day as their Snowfield Peak FA) and the specific detail that "USGS maps mislabel it
+  immediately west of Snowfield [Peak]" both confirmed near-verbatim against SummitPost's
+  route page. Waypoint elevation chain checked: the stored 7,200 ft gain exceeds the net
+  trailhead-to-summit rise (6,948 ft) by almost exactly the 200-250 ft drop the row's own
+  Colonial-Neve col waypoint note describes crossing to reach the glacier — internally
+  consistent, not an "impossible gain" case.
+- `wa_the_pyramid_picket_south_route`: FA claim (Don Gordon, 1951) corroborated against
+  Don Gordon's 2016 AAC obituary, which states he made the first ascent of the Pyramid in
+  the Picket Range in 1951 (route/grade specifics remain unconfirmed by any source found,
+  same open gap the row's own `data_quality.gaps` already states). Waypoint elevation
+  chain (600 ft trailhead → 7,920 ft summit, monotonically increasing through Terror
+  Basin/Barrier/Degenhardt-Pyramid col) is consistent with the stored 7,500 ft gain.
+
+**Already appropriately flagged, no action:** `wa_the_pleiades_scramble`'s own
+`corrections`/`data_quality.gaps` already document the open uncertainty over which
+specific Pleiades summit this route_id refers to and the source disagreement on Peak 3's
+exact elevation (7,346-7,371 ft) — left as documented uncertainty. Its stored gain_ft
+(3,400) exceeds the sparse 7-waypoint chain's own cumulative rise (~2,241 ft) by more than
+other routes checked this batch, but the route crosses a multi-spire ridge (per its own
+overview, "four jagged spires... numbered 1 through 4") with only 7 waypoints recorded
+for the whole traverse, so extra undocumented ridge undulation is a plausible, non-"too
+little" explanation — not flagged as an error.
+
+Checked all eight routes' top-level `permit` field against `access.permit` for
+self-contradiction (the class that caught the Brothers Traverse fix in batch 234) — no
+disagreements found this batch.
+
+Next batch continues alphabetically after `wa_the_pyramid_picket_south_route` (pass 4).
