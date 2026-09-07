@@ -16561,3 +16561,85 @@ limitation as recent batches), but WebSearch snippets were substantive enough th
 to resolve every question raised without needing the full pages.
 
 Next batch continues alphabetically after `wa_southeast_ridge_se_corner` (pass 4).
+
+## Batch 232 — 2026-09-07 (pass 4)
+
+Eight routes: `wa_southern_man` (South Early Winters Spire), `wa_southwest_buttress`
+(Dorado Needle), `wa_southwest_face` (The Tooth), `wa_southwest_scramble` (Pinnacle
+Peak, Tatoosh), `wa_soviet_route` (Bonanza Peak), `wa_spectre_peak_south_route`
+(Spectre Peak, "Spirited Away"), `wa_spider_mountain_north_face` /
+`wa_spider_mountain_north_ridge` (Spider Mountain). Skipped as out-of-scope:
+`wa_southwest_rib_2` (Crystal Lake Tower — crag-type area, not a peak).
+
+**Fixed (2):**
+- `wa_southwest_buttress` — `dist_km` stored as 6.44, exactly half of 12.88. This
+  row's own `corrections` history documents a 2026-08-05 fix setting `dist_km` to
+  12.88 to match the row's own approach text ("On-file round-trip distance is about
+  25.75 km") and its own itinerary day-mileage sum (5.7+4+5.7 = 15.4 mi round trip,
+  matching `itinerary.totalNote`'s "~16 mi round trip"). The live value has regressed
+  back to half that figure, so the row currently contradicts its own approach-text
+  sentence under the app's `dist_km*2` one-way convention. Re-applied the same fix the
+  row's own history already documents; no new source needed.
+- `wa_southern_man` — `pitch_detail`'s crux pitch (P6) states as flat fact that it was
+  "freed by Bryan Burdo at 5.12a in 2009," but this row's own `overview` and
+  `data_quality.gaps` fields say that exact claim is an unresolved discrepancy (a
+  single secondhand blog mention conflicting on both year and free grade with the
+  on-file FA credit) that could not be confirmed, and that the on-file free-ascent
+  credit was deliberately left as "B. Matthews, B. Burdo (2010)" at 5.11d because of
+  it. `pitch_detail` asserting the unconfirmed 2009/5.12a claim as settled fact
+  contradicts the row's own documented editorial decision. Corrected to match the
+  hedged wording the row already uses in `overview`.
+
+**Verified clean via external corroboration:**
+- `wa_soviet_route` (Bonanza Peak): FA team and date (Vyacheslav Onishchenko, Valentin
+  Grakovich, Anatoly Nepomnyashchy, Sergei Bershov [USSR], Alex Bertulis [USA], Sept
+  10-12, 1975) confirmed via AAC Publications search results and a period 1976 AAJ
+  Bertulis account referenced in the row's own data_quality. Southwest Peak elevation
+  (9,320 ft, distinct from the main summit's commonly-cited 9,516 ft) independently
+  corroborated. The dated FR 8301/Holden Village closure (order #06-17-05-26-04, in
+  effect through Dec 31 2027, following the Dec 2025 flood) remains accurate per
+  current news coverage — Holden Village is confirmed still closed for summer 2026.
+- `wa_southwest_face` (The Tooth): FA (Fred & Helmy Beckey and Louis Graham, Oct 1942),
+  grade (5.5), length (350 ft/4 pitches) already independently corroborated per this
+  row's own prior corrections note citing Mountain Project's dedicated route page;
+  gain_ft (2500) matches trailhead-to-summit elevation difference (3,100 → 5,606 ft)
+  almost exactly.
+- `wa_southwest_scramble` (Pinnacle Peak): gain_ft (1682) matches the row's own
+  waypoint elevation difference (4,880 ft trailhead → 6,562 ft summit) exactly; no
+  external route-specific source exists for this unnamed scramble line, consistent
+  with the row's own honest "no beta specifically named... inferred" corrections note.
+- `wa_spectre_peak_south_route` (Spectre Peak): gain_ft/loss_ft (8100/8100) and dist_km
+  (37.02) remain internally consistent with the row's own 4-day itinerary day-sums —
+  no regression here, unlike the sibling case above.
+- `wa_spider_mountain_north_face` — FA (Dallas Kloke, Reed Tindall, 1972) and first ski
+  descent (Martin Volken, Peter Avolio, June 17, 2003) both confirmed; a search summary
+  initially suggested the ski descent might be of a separate "1976 route," but the
+  primary-source page title itself ("Spider Mountain, North Face (Kloke/Tindall 1972
+  Route) Ski Descent") directly ties the two together, matching this row. Spider
+  Mountain's elevation (8,317 ft) independently confirmed.
+- `wa_spider_mountain_north_ridge` — peak FA (Calder Bressler/Bessler [spelling varies
+  by source], Ralph Clough, Bill Cox, Tom Myers, Ptarmigan Club, July 25, 1938)
+  confirmed via multiple sources describing the 1938 Ptarmigan Club first-ascent spree
+  (Spider, Formidable, Le Conte, Magic, Johannesburg, Boston, Buckner north face); the
+  row's own FA field already correctly hedges that this is the peak's FA, not
+  necessarily this specific standard-route line's FA.
+
+**Checked, not flagged (1):** Spider Mountain's `access`/`road`/`permit` fields on both
+routes name North Cascades National Park as land manager. One AI search summary cited a
+Wikipedia infobox calling Spider Mountain part of "Glacier Peak Wilderness." Not acted
+on — both routes' own approach text is unambiguous (Cascade Pass Trailhead → Cache
+Col → Middle Cascade Glacier, all definitively within North Cascades NP/Stephen Mather
+Wilderness boundary), which is stronger evidence than a possibly-imprecise infobox
+mediated through an AI search summary, and the stored permit system (Recreation.gov,
+Marblemount Wilderness Information Center) is the NCNP system, not a National Forest
+one. Recorded here rather than silently dropped in case a future pass finds a clearer
+source either way.
+
+WebFetch remained egress-blocked for every domain tried this run (stephabegg.com,
+publications.americanalpineclub.org, en.wikipedia.org, cascadeclimbers.com,
+skisickness.com) — same limitation as recent batches; relied on WebSearch snippets
+only, cross-checking page titles and multiple independent snippets against the row's
+own internal-consistency signals (waypoint math, itinerary sums, corrections history)
+before writing any fix.
+
+Next batch continues alphabetically after `wa_spider_mountain_north_ridge` (pass 4).
