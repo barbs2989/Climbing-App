@@ -16493,3 +16493,71 @@ pages.uoregon.edu) — same limitation as batches 163/227/228/229; relied on Web
 snippets only.
 
 Next batch continues alphabetically after `wa_south_ridge_3` (pass 4).
+
+## Batch 231 — 2026-09-07 (pass 4)
+
+Eight routes: `wa_south_ridge_4` (Eldorado Peak, South Ridge), `wa_south_spur`
+(Whatcom Peak), `wa_south_twin_sister_north_ridge`/`_scramble`/`_west_ridge` (South
+Twin Sister), `wa_southeast_face` (Sharkfin Tower), `wa_southeast_mox_peak_se_rib`
+(Southeast Mox Peak, West Ridge/Beckey Route), `wa_southeast_ridge_se_corner` (Mount
+Shuksan). Skipped as out-of-scope: `wa_south_ridge_6` (Aiguille de l'M — crag-type
+area, not a peak).
+
+**Fixed (3):**
+- `wa_south_twin_sister_north_ridge` — `dist_km` (33.8 km) implied a one-way distance
+  nearly 2.2x the route's own waypoint chain (trailhead → summit, distMi 9.5 = 15.3
+  km). No route-specific external source exists to independently corroborate either
+  figure, but the row's own waypoint chain is the more granular, purpose-built value.
+  Corrected to 15.3, per the batch-218 precedent for this shape of error.
+- `wa_south_twin_sister_scramble` — `dist_km` (10.05 km) disagreed with its own summit
+  waypoint, which carries `"distFrom": "track"` (i.e. GPS-track-derived) giving 7.45
+  mi = 12.0 km one-way. The route's approach text says it's "Identical to the West
+  Ridge approach" up to the basin, and the West Ridge sibling's `dist_km` already
+  agrees closely with its own waypoint chain — no reason this route should be roughly
+  half that distance. Corrected to 12.0.
+- `wa_southeast_ridge_se_corner` (Mount Shuksan) — `pitch_detail`'s final entry
+  (pitch "P4-6") flatly stated the climbing "stays at or below 5.3 throughout," which
+  contradicts the *same row's* `rock_grade` field ("5.3 (guide services describe two
+  steps at 5.6/5.7)") and `beta` field ("Grade 5.3-5.7"). External sources confirm the
+  real variance: Mountaineers.org describes a selective line staying at/below 5.3-5.4,
+  while a second independent source describes two unavoidable 5.6/5.7 steps. Corrected
+  `pitch_detail` to state the same variance already present elsewhere on the row,
+  rather than the flat, unqualified claim. Top-level `grade`/`rock_grade` left as-is —
+  they already state this honestly.
+
+**Verified clean via external corroboration:**
+- `wa_southeast_face`'s account of the July 10, 2005 Sharkfin Tower accident (wrong
+  gully, rockfall injury, fatal boulder-anchor failure on the retreat rappel, 3 killed
+  / 1 seriously injured) matches AAC Publications, Mountaineers.org, and contemporary
+  news coverage in every detail the row states.
+- `wa_southeast_mox_peak_se_rib`'s FA ("Fred Beckey and Helmy Beckey, June 21, 1941")
+  is an exact match to Beckey's own account. Its cited first winter ascent (Eric
+  Gilbertson and Nick Roy, Dec 2023, 5 pitches WI2 M5) matches AAC Publications'
+  "Hard Mox, First Winter Ascent" record exactly (Dec 29, 2023).
+- `wa_south_twin_sister_west_ridge`'s cited hazard — a hiker who went missing on South
+  Twin in "late June 2026" prompting a multi-day Whatcom County SAR response — is a
+  real, verified event (Gursimran Singh, missing from June 28, body recovered July 12
+  on the north face of South Twin), matching Whatcom County Sheriff's Office reporting
+  and multiple news outlets.
+- `wa_south_twin_sister_north_ridge`/`_west_ridge`'s road block describing FR-38
+  (Middle Fork Nooksack Road) as closed since the December 2025 Whatcom floods with
+  "no announced repair timeline as of mid-2026" remains accurate against the most
+  recent source found (a July 2026 USFS alert / Cascadia Daily News piece confirming
+  the closure at MP 7, still no reopening date) — not stale, though this run could not
+  independently confirm the MP 7 washout is on the same stretch of road as the
+  Twin Sisters climbers' gate versus further upstream toward Elbow Lake/Ridley Creek.
+
+**Flagged for human review (1):**
+- `wa_southeast_face` (Sharkfin Tower): `dist_km` (9.3 km) disagrees with its sibling
+  `wa_sharkfin_tower_southeast_ridge`'s own waypoint-implied one-way distance (4.2 mi
+  = 6.76 km) by ~38%. Both routes share the shared-approach rationale and the
+  identical stored `dist_km` value, but `wa_sharkfin_tower_southeast_ridge` was
+  already processed in an earlier batch this pass and is out of scope here — a
+  one-sided fix to just `wa_southeast_face` would break their current cross-route
+  consistency. Needs a joint fix across both rows in a future batch.
+
+WebFetch remained egress-blocked for mountainproject.com and mountaineers.org (same
+limitation as recent batches), but WebSearch snippets were substantive enough this run
+to resolve every question raised without needing the full pages.
+
+Next batch continues alphabetically after `wa_southeast_ridge_se_corner` (pass 4).

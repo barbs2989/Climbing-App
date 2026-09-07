@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_south_ridge_3",
+  "last_processed_id": "wa_southeast_ridge_se_corner",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4735,6 +4735,26 @@
       "sql_file": "audits/sql/2026-09-07-batch-230.sql",
       "pass": 4,
       "note": "Same eight routes as pass 3 batch 166 (2026-09-02); re-checked as usual for a new pass. Fixed: wa_south_headwall's grade/rock_grade (5.8 -> 5.7, grade_num 8 -> 7) -- the row's own pitch_detail already breaks the climb down as 4th/low-5th plus two 5.7 crux sections, corroborated near-verbatim by Mountain Project's route description; this settles the 5.7-vs-5.8 question batch 166 flagged but left open. Re-proposed (not new): wa_south_face_5's fa hedge removal -- batch 166's identical fix does not appear to have been applied to the live DB yet (row still shows the pre-fix hedged value), so the same UPDATE was re-included this batch after re-confirming the two corroborating sources. Flagged, not fixed: wa_south_face_center's FA (\"Fielding & Tarver, 1966\") remains unresolved a third pass running -- SummitPost/AAC primary sources still egress-blocked, WebSearch snippets tie that FA party to *a* Concord Tower route in 1966 but not decisively to this specific South Face Center variation; left as the already-honest \"Not Known\". wa_south_ridge_3 (Black Peak)'s dist_km (17.4 km) still disagrees with its own waypoint chain (cumulative 6.0 mi/~9.7 km to the summit) by close to 2x -- this is the same open ambiguity noted in pass 2 batch 103 (\"three on-file figures... no clear single value to fix blindly\"); no new source resolved it this run, left alone per that standing caution against guessing on this column. Clean (re-confirmed, no changes): wa_south_face_4 (Kangaroo Temple -- SuperTopo independently confirms \"III 5.8\", matching stored grade/commitment exactly), wa_south_gully_south_spur and wa_south_rib (Guye Peak -- no new contradicting source), wa_south_ridge_2 (Luna Peak -- gain/loss/dist_km from the prior pass's fix remain internally consistent). Mount Stuart's Longs Pass/Esmeralda Basin Trailhead waypoints (renamed/fixed in pass 1) independently re-confirmed via WebSearch this run (Esmeralda Trailhead ~4,243 ft, Longs Pass ~6,200-6,300 ft -- both within normal survey variance of stored values). WebFetch remained egress-blocked for every domain tried (mountainproject.com, pages.uoregon.edu) -- same limitation as batches 163/227/228/229; relied on WebSearch snippets only."
+    },
+    {
+      "batch_number": 231,
+      "date": "2026-09-07",
+      "route_ids": [
+        "wa_south_ridge_4",
+        "wa_south_spur",
+        "wa_south_twin_sister_north_ridge",
+        "wa_south_twin_sister_scramble",
+        "wa_south_twin_sister_west_ridge",
+        "wa_southeast_face",
+        "wa_southeast_mox_peak_se_rib",
+        "wa_southeast_ridge_se_corner"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-07-batch-231.sql",
+      "pass": 4,
+      "note": "Skipped as out-of-scope (crag-type area, not peak): wa_south_ridge_6 (Aiguille de l'M). Fixed: wa_south_twin_sister_north_ridge's dist_km (33.8km, ~2.2x its own waypoint-chain mileage of 9.5mi/15.3km) and wa_south_twin_sister_scramble's dist_km (10.05km vs its own track-derived waypoint mileage of 7.45mi/12.0km), both corrected to match the row's own waypoint chain per the batch-218 precedent. wa_southeast_ridge_se_corner (Mount Shuksan)'s pitch_detail P4-6 notes flatly claimed the climbing 'stays at or below 5.3 throughout', contradicting the SAME row's own rock_grade field ('guide services describe two steps at 5.6/5.7') and beta field ('Grade 5.3-5.7'); external sources (Mountaineers.org, a second independent route description) confirm the real variance -- a selective line stays 5.3-5.4, but some sources report two unavoidable 5.6/5.7 steps -- so pitch_detail was corrected to match what the row already states elsewhere rather than picking a side. Verified clean via WebSearch corroboration: wa_southeast_face's 2005 Sharkfin Tower fatal accident account (AAC Publications/Mountaineers.org/contemporary news all confirm the wrong-gully/boulder-anchor-failure/3-killed account); wa_southeast_mox_peak_se_rib's FA (Fred & Helmy Beckey, June 21 1941, exact match) and its cited Dec 2023 winter FA (Gilbertson/Roy, exact match); wa_south_twin_sister_west_ridge's cited June-July 2026 South Twin Sister SAR incident (real -- Gursimran Singh, matches Whatcom County SO/Cascadia Daily/CBC reporting). Flagged, not fixed: wa_southeast_face's dist_km (9.3km) disagrees with its own sibling wa_sharkfin_tower_southeast_ridge's waypoint-implied one-way distance (4.2mi/6.76km) by ~38%, but that sibling route was already processed in an earlier batch this pass (out of scope here) and both routes share the identical stored value, so a one-sided fix would break their current internal consistency -- needs a joint fix across both rows in a future batch. WebFetch remained egress-blocked for mountainproject.com and mountaineers.org (same limitation as recent batches); relied on WebSearch snippets, which were substantive enough this run to resolve every question raised."
     }
   ]
 }
