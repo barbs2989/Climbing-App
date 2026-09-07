@@ -16115,3 +16115,78 @@ data where results conflicted.
 
 Next batch continues alphabetically from `wa_ragged_edge` (pass 4); 124 in-scope routes remain
 this pass.
+
+## Batch 225 (pass 4) — 2026-09-07
+
+`wa_rapple_grapple`, `wa_raven_ridge_southeast_ridge_crater_lake`, `wa_remmel_mountain_nw_ridge`,
+`wa_ridge_traverse_from_east_fury`, `wa_robinson_mountain_north_couloir`,
+`wa_rock_mountain_northeast_ridge`, `wa_ruth_icy_traverse`, `wa_ruth_mountain_south_slopes`.
+
+**Fixed (6 errors across 5 routes):**
+
+- `wa_rapple_grapple` — waypoint elev for Blue Lake Trailhead was 5200; this row's own `bivy`
+  entry for the identical spot already says 5400, and two sibling Liberty Bell routes had the
+  same 5200→5400 fix applied in batch 220. External: The Mountaineers/WTA both give the
+  trailhead as 5,400 ft. Same wrong value (5200) is still live on ~15+ *other* routes sharing
+  this coordinate under different area_ids (Concord Tower, Lexington Tower, South Early Winters
+  Spire, etc.) — out of scope for this batch, noted in the SQL comments for whoever reaches those
+  areas in a later batch.
+- `wa_ridge_traverse_from_east_fury` (East Fury↔West Fury connecting ridge) — two separate
+  defects on one row: (1) `overview` stated East Fury at 8,280 ft, disagreeing with this
+  catalog's own area record (`areas.wa_mount_fury_east.elevation_ft` = 8356) and with the
+  published theodolite/LIDAR re-survey (AAC Publications / Country Highpoints) that found East
+  Fury 8,356 ft ± 8 ft — actually the tallest point of the Fury massif, taller than West Fury and
+  Luna Peak, correcting older USGS-map figures. (2) `approach`'s closing sentences described
+  reaching Beaver Pass, then diverging onto Wiley Ridge or Whatcom Pass/Easy Ridge/Perfect Pass to
+  the crevassed Challenger Glacier — that is Mount Challenger's approach, a different peak in the
+  Northern Pickets. Every other field on this row (waypoints, descent_text, itinerary, road,
+  emergency) describes only Access Creek → Access Col → Luna Col, with zero other mention of
+  Challenger Glacier; a sibling route on the same peak, `wa_mount_fury_east_north_buttress`,
+  separately and correctly documents the Whatcom Pass/Challenger Glacier line as a one-off
+  historical alternate approach by a named 1980s climber coming from Canada — not this route's
+  standard line. External trip reports (WTA, trailcatjim.com, stevensong.com) confirm the
+  standard/only approach to East Fury/West Fury is Ross Lake → Big Beaver → Access Creek → Access
+  Col → Luna Col. Repaired by re-homing this row's own waypoint names/elevations into the tail of
+  `approach`; nothing researched or invented.
+- `wa_ruth_icy_traverse` — `approach_logistics.trailheadDirection` was truncated mid-sentence,
+  ending "...Hannegan Pass (5,066 ft, ~4 miles, ~2,000 ft gain), then " with nothing after "then".
+  Trimmed the dangling clause to a complete sentence.
+- `wa_ruth_mountain_south_slopes` — same field truncated mid-word: "...end of FR-32, ~5.3 miles
+  off Mt." Completed using the identical opening clause already present in this row's own
+  `approach` text.
+- `wa_remmel_mountain_nw_ridge` — `approach_logistics` named "Andrews Creek Trailhead" as this
+  route's trailhead, but the row's own waypoints (with an explicit note: "this is the line of the
+  2011 ascent"), `beta`, and `itinerary` all describe the Thirtymile Trailhead / Chewuch River
+  Trail #510 / Remmel Lake / Four Point Lake approach, matching the row's own `fa` date (Aug 10,
+  2011, independently confirmed via SummitPost's climbers' log for this exact ascent). External
+  sources (trailcatjim.com, hike2hike.com) describe Andrews Creek as a separate, largely-abandoned
+  gully line to the summit and confirm "the now-standard way up Remmel is from the Thirtymile
+  Trailhead." Corrected trailhead/coordinates/direction to match this row's own waypoint; the
+  generic `road` field (which already lists both trailheads as valid access points for the peak
+  generally) was left untouched.
+
+**Checked and clean:** `wa_raven_ridge_southeast_ridge_crater_lake` — confirmed externally
+(peakery, Wikipedia, listsofjohn) that "Corax Peak" really is the name of Raven Ridge's 8,572 ft
+high point, matching this row's own waypoint naming exactly; its Crater Creek Trail/Crater Lake
+approach and permit/fee details also check out.
+`wa_robinson_mountain_north_couloir` and `wa_rock_mountain_northeast_ridge` — elevations,
+approach corridors, and internal cross-references all consistent, no external contradictions
+found.
+
+**Left as documented gaps, not treated as errors** (a prior research pass already searched and
+recorded the gap; nothing found this session resolves either): `wa_rapple_grapple`'s FA
+attribution to Bryan Burdo carries no confirmable year (Mountain Project egress-blocked this
+session, consistent with prior sessions); Icy Peak's exact elevation/prominence on
+`wa_ruth_icy_traverse`.
+
+`npm run check:sql -- audits/sql/2026-09-07-batch-225.sql` (anon key set manually, no
+`.env.local` in this worktree) — 14 write targets across 8 statements, all target ids exist, no
+DELETEs. Paste-size WARN only (file exceeds the 4000-byte soft limit; split before pasting into
+the SQL Editor). `access_checked_at` stamped 2026-09-07 on all 8 routes reviewed.
+
+WebFetch was egress-blocked for mountainproject.com, summitpost.org, and countryhighpoints.com
+this run; all external verification is from WebSearch result summaries, cross-checked against
+each other and against this catalog's own area-hierarchy records where they disagreed.
+
+Next batch continues alphabetically from `wa_ruth_mountain_south_slopes` (pass 4); 116 in-scope
+routes remain this pass.
