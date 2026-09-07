@@ -16413,3 +16413,38 @@ reporting — still accurate, not stale.
 
 Next batch continues alphabetically after `wa_south_arete` (pass 4); 92 in-scope routes
 remain this pass.
+
+## Batch 229 — 2026-09-07 (pass 4)
+
+Checked (8): `wa_south_early_winter_spire_direct_east_buttress`,
+`wa_south_early_winter_spire_east_buttress`, `wa_south_early_winter_spire_passenger`,
+`wa_south_early_winter_spire_southwest_couloir`, `wa_south_face_10` (Cathedral Peak),
+`wa_south_face_12` (Argonaut Peak), `wa_south_face_2` (Pernod Spire),
+`wa_south_face_3` (Concord Tower). Skipped `wa_south_face` (Vasiliki Tower) — crag-type
+area, out of scope.
+
+**Fixed (1):** `wa_south_face_10` — `watch_out[0]` dated the FA account to "1969" while
+this row's own `fa`/`overview` fields (and AAC Publications) correctly date the 1968
+Beckey/Wagner/Brottem/Leen first ascent — internal date inconsistency, corrected to 1968.
+
+**Clean (5):** Direct East Buttress, Passenger, and Southwest Couloir on South Early
+Winters Spire all had their FA parties/dates independently confirmed (Beckey/Leen 1968;
+Burdo/Doorish/White Oct 1991; Adam/Bedayn/Davis Jul 20 1937). Cathedral Peak's two
+elevation figures (8601/8606) are both legitimate — different vertical datums, not a
+conflict. Pernod Spire's FA and elevation checked out. Argonaut Peak was checked in a
+prior batch (2026-08-27) so only spot-checked here.
+
+**Flagged for human review (2):**
+- `wa_south_early_winter_spire_east_buttress`: `beta` field is pipeline meta-commentary
+  ("not clearly distinguished from the Direct East Buttress") rather than real beta.
+  Couldn't find independent documentation of a distinct plain "East Buttress" either —
+  may be a route-identity/duplicate question rather than a factual error to fix.
+- `wa_south_face_3` (Concord Tower): elevation conflicts three ways (7560/7569/7612 ft)
+  with no clear winner, and its `fa` field names a 4th party member ("Bruce Schuler") two
+  independent secondary sources don't corroborate. AAC's primary record was
+  egress-blocked, so left unfixed rather than guess.
+
+WebFetch remained egress-blocked for every domain tried (AAC Publications, Wikipedia) —
+same limitation as batches 163/227/228; audit relied on WebSearch summaries only.
+
+Next batch continues alphabetically after `wa_south_face_3` (pass 4).

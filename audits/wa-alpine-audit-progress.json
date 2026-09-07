@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_south_arete",
+  "last_processed_id": "wa_south_face_3",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4695,6 +4695,26 @@
       "sql_file": null,
       "pass": 4,
       "note": "Two in-scope-by-discipline routes between wa_silver_star_ne_ridge and this batch (wa_skeena26, wa_slippery_slab_tower_ne_face) were skipped: both area_id resolve to a crag-type area, out of scope per the peak-area_type scope note. All eight audited routes checked out on elevation, coordinates, and FA against external sources (Sinister Peak 8,440+ ft/48.30000,-121.00972; Sitkum Spire 9,355 ft/~92 ft prominence; Sloan Peak 7,835 ft, FA Bedal & Skaar 1921; Snowfield Peak 8,351 ft, FA Degenhardt & Strandberg Aug 1931; Snowking Mountain 7,433 ft/48.408385,-121.278165; South Early Winters Spire 7,807 ft, South Arete FA Fred & Helmy Beckey June 1942). Both Sinister Peak routes' road/access blocks (Suiattle River Road FR-26 washout at MP 4/4.5, closed Apr 2026-Jan 2028) and Sitkum Spire's (FS Road 23 closure order #06-05-25-02, MP 3.7) were independently re-checked against current sources and remain accurate, not stale. Flagged, not fixed: wa_sinister_peak_southwest_route's waypoint-chain mileage to Cub Lake (11.0 mi) runs ~3 mi short of two independently-styled external sources both giving ~14 mi, but WebFetch was egress-blocked for every domain this run so the exact figures couldn't be pinned down precisely enough to correct a detailed, internally-consistent 8-point waypoint chain; wa_sloan_peak_corkscrew and wa_sloan_peak_r1 appear to be duplicate rows for one physical route (identical FA/coordinates/gain/dist, r1's own beta text says it's 'the same standard mountaineering line as the Corkscrew Route') -- both individually accurate, so this is a dedup/identity question outside this audit's SQL-UPDATE-only scope, noted for audit:identity rather than fixed here."
+    },
+    {
+      "batch_number": 229,
+      "date": "2026-09-07",
+      "route_ids": [
+        "wa_south_early_winter_spire_direct_east_buttress",
+        "wa_south_early_winter_spire_east_buttress",
+        "wa_south_early_winter_spire_passenger",
+        "wa_south_early_winter_spire_southwest_couloir",
+        "wa_south_face_10",
+        "wa_south_face_12",
+        "wa_south_face_2",
+        "wa_south_face_3"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-09-07-batch-229.sql",
+      "pass": 4,
+      "note": "Skipped as out-of-scope (crag-type area, not peak): wa_south_face (Vasiliki Tower). Fixed: wa_south_face_10 (Cathedral Peak South Face) watch_out[0] misdated the FA account to 1969 when the row's own fa/overview fields (and AAC Publications) date it to Sept 1968. Verified clean: wa_south_early_winter_spire_direct_east_buttress (elev 7807ft, FA Beckey/Leen 1968 confirmed), wa_south_early_winter_spire_passenger (FA Burdo/Doorish/White Oct 1991 confirmed; grade variance 5.11b A0 vs stored 5.11d is normal cross-source drift on a progressively-freed testpiece, not an error), wa_south_early_winter_spire_southwest_couloir (FA Adam/Bedayn/Davis July 20 1937 confirmed as first ascent of the peak), wa_south_face_10 elevation (8601/8606 both valid -- different vertical datums, not a conflict), wa_south_face_2 /Pernod Spire (FA Jewitt/Leight/Waters July 10 1988 confirmed; elevation 8507 consistent with Pernod being the tallest Wine Spire at >8400ft). wa_south_face_12/Argonaut Peak was checked in a prior batch (access_checked_at 2026-08-27, 11 days old) so only spot-checked this run. Flagged, not fixed: wa_south_early_winter_spire_east_buttress beta field reads as pipeline meta-commentary (\"This route designation appears in the database but is not clearly distinguished from the Direct East Buttress\") rather than climbing beta -- my own research could not find a distinct, separately-documented plain \"East Buttress\" route apart from the Direct variant either, so this may be a genuine route-identity/duplicate question (same shape as the Sloan Peak dupe flagged in batch 228) rather than a fixable factual error; leaving for a duplicate-route sweep rather than fabricating beta. wa_south_face_3/Concord Tower has an elevation conflict across three sources (7560ft SummitPost, matching this row's own waypoint; 7569ft in high_point_ft; 7612ft ListsOfJohn/LIDAR) with no clear winner, plus its fa field names a 4th FA party member (\"Bruce Schuler\") that two independent secondary sources (SummitPost, Mountaineers.org) do not include alongside Cramer/Anderson/Stanley -- AAC Publications (the primary source) was egress-blocked so this could not be pinned down confidently enough to change either field. WebFetch was egress-blocked for every domain tried this run (publications.americanalpineclub.org, en.wikipedia.org), same limitation as batches 163/227/228 -- relied on WebSearch summaries only."
     }
   ]
 }
