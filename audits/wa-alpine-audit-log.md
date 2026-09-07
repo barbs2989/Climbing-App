@@ -16274,3 +16274,79 @@ WebSearch result synthesis only.
 
 Next batch continues alphabetically after `wa_sherman_peak_baker_route` (pass 4); 108 in-scope
 routes remain this pass.
+
+## Batch 227 — 2026-09-07 (pass 4)
+
+Routes: `wa_sherman_peak_baker_squak_glacier`, `wa_sherpa_balanced_rock_ne_couloir`,
+`wa_sherpa_glacier`, `wa_sherpa_peak_east_ridge`, `wa_sherpa_peak_north_ridge`,
+`wa_sherpa_peak_west_ridge`, `wa_silver_star_glacier`, `wa_silver_star_ne_ridge`.
+
+Same eight routes covered in batch 41 (pass 1, 2026-07-31) and batch 163 (pass 3,
+2026-09-01); re-checked as usual for a new pass rather than skipped, on the theory that
+facts (especially road/access status) go stale between passes even when the peak data
+doesn't.
+
+**Fixed:** `wa_silver_star_glacier`'s `access._raw` block carried
+`seasonal_closures: "Year-round access with winter vehicle pass requirement; snow typically
+Nov-April"` and `parking_pass: "...Washington State Sno-Park Permit required Dec 1 -
+Mar 31"` — both describing this pullout (SR-20 near MP 165-166) as accessible year-round
+with the right winter pass. That directly contradicts this same row's own (correct)
+`road.seasonalGate` field, which already says SR-20 is gated shut with a closure point at
+the MP 171 Silver Star gate. Confirmed against WSDOT: the North Cascades Highway closes
+completely each winter between Ross Dam (MP 134) and the Silver Star gate (MP 171),
+typically early December through April/May — there's no vehicle access of any kind at this
+pullout during that window, Sno-Park permit or not, because the highway itself is
+impassable. Reads like a generic "winter recreation area" access template that doesn't fit
+a highway segment WSDOT closes outright. Corrected both fields to match the already-correct
+`road.seasonalGate` wording on the same row.
+
+**Checked, not fixed — internal numbers don't cleanly resolve either way:**
+`wa_sherpa_peak_west_ridge` stores `dist_km: 7.2` (one-way, per this app's `distKm*2`
+round-trip convention), but this row's own `itinerary.days[].miles` sum to 14.5 mi
+(7 + 7.5) for what its day-2 note describes as a full there-and-back including "descend all
+the way back over Longs Pass to the trailhead" — i.e. itself a round-trip figure, implying
+~7.25 mi (11.7 km) one-way, not 4.5 mi (7.2 km). Went to the row's own 102-point `gpx` track
+as a third, hopefully-disambiguating source (same method used on `wa_sahale_mountain_r1` in
+batch 226): the track only covers Longs Pass to the summit (its first point sits ~0.5 km
+from the Long's Pass waypoint, its last point ~16 m from the summit waypoint), summing to
+3.9 km (2.4 mi) for that stretch. Added to the ~2.3-2.5 mi trailhead-to-Longs-Pass leg (per
+this row's own approach text and waypoint `distMi`), that puts the GPX-corroborated one-way
+distance at roughly 7.6-7.9 km — within ~5-10% of the stored 7.2, i.e. closer to
+corroborating `dist_km` than contradicting it. The itinerary's day-mileage figures look like
+generous guidebook-style rounding for an approach whose own text calls the final stretch an
+unmaintained, hard-to-follow boot path ("the tapeworm trail"), not a clean disagreement with
+a discrete stored number. Left `dist_km` alone rather than picking from three sources that
+don't fully agree, consistent with how `wa_sahale_mountain_r1`'s three-way dist_km
+disagreement was handled last batch.
+
+**Re-checked, remain open from prior passes (no new source found either way):**
+`wa_sherpa_peak_north_ridge`'s FA ("Rick La Belle and Pat Derr, 1971") — still no source
+found naming either person on this route; the two best-corroborated North Ridge ascents
+found by search are Beckey/Marts 1963 (the original, looser upper gully to the North Ridge
+Notch) and Harris/Ossiander 1970 (the sustained, fully-pitched "Direct North Ridge" variant
+this row's own 13-pitch/5.7-5.8/mostly-simulclimbed description more closely resembles).
+`wa_sherpa_peak_west_ridge`'s FA ("Fred Dunham, Ray Lilleby, and James Wick, August 13,
+1961") — the one secondary source found (Wenatchee Outdoors) again names only Dunham and
+gives 1962, not enough to override or confirm the full stored party/date. WebFetch was
+egress-blocked for every domain tried this run (Wikipedia, Mountain Project, Wenatchee
+Outdoors), so both remain WebSearch-snippet-only, same limitation as batch 163.
+
+**Confirmed correct this session, independent of prior passes:** Silver Star Mountain's
+elevation (8,876 ft) and summit coordinates (48.547945, -120.585127) both match Wikipedia
+almost exactly (48°32.88'N 120°35.11'W converts to 48.548, -120.585); its 1926 Lage Wernstedt
+FA also reconfirmed. Mount Stuart's stored elevation (9,415 ft) and coordinates likewise
+check out. Area hierarchy for all four peaks in this batch (Sherman Peak under Shuksan/Baker
+Neighbors, Mount Stuart and both Sherpa peaks under the Stuart Range, Silver Star under
+Silver Star and Wine Spires) is sane. `bivy`/camp entries for this batch (Squak Glacier camp,
+the shared Ingalls Creek valley camps, Burgundy Col high camp) are internally consistent with
+their routes' own waypoints and read as honestly hedged rather than fabricated (e.g. Burgundy
+Col explicitly flags a couple-hundred-foot spread in published elevations rather than
+asserting one number).
+
+`npm run check:sql -- audits/sql/2026-09-07-batch-227.sql --table routes` (anon key set
+manually, no `.env`/`.env.local` in this checkout) — 2 write targets checked across 5
+statements, all target ids exist, no DELETEs. File is 2,772 bytes, under the 4,000-byte
+paste-size soft limit.
+
+Next batch continues alphabetically after `wa_silver_star_ne_ridge` (pass 4); 100 in-scope
+routes remain this pass.
