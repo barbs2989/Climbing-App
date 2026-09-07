@@ -16350,3 +16350,66 @@ paste-size soft limit.
 
 Next batch continues alphabetically after `wa_silver_star_ne_ridge` (pass 4); 100 in-scope
 routes remain this pass.
+
+## Batch 228 — 2026-09-07 (pass 4)
+
+Routes: `wa_sinister_peak_north_face`, `wa_sinister_peak_southwest_route`,
+`wa_sitkum_spire_standard`, `wa_sloan_peak_corkscrew`, `wa_sloan_peak_r1`,
+`wa_snowfield_peak_neve_glacier`, `wa_snowking_mountain_standard`, `wa_south_arete`. Two
+routes in scope between `wa_silver_star_ne_ridge` and this batch (`wa_skeena26`,
+`wa_slippery_slab_tower_ne_face`) were skipped — both carry an alpine/mountaineering
+discipline tag but their `area_id` resolves to a crag-type area (`wa_south_face`,
+`wa_thunder_mountain_and_slippery_slab_tower`), out of scope per this audit's own scope
+note.
+
+**0 confirmed errors this batch — no SQL file.** All eight routes checked out on every
+verifiable fact: Sinister Peak's elevation (8,440+ ft) and summit coordinates
+(48.30000°N, 121.00972°W) match Wikipedia essentially exactly on the North Face route's
+summit waypoint; Sitkum Spire's elevation (9,355 ft) and prominence (~92 ft) match a
+2,851 m/28 m secondary source to the foot; Sloan Peak's elevation (7,835 ft) and FA
+(Harry Bedal & Nels Skaar, July 30, 1921) are confirmed on both of its two rows (see
+below); Snowfield Peak's elevation (8,351 ft) and FA (William Degenhardt & Herbert
+Strandberg, Aug 1931) match Wikipedia; Snowking Mountain's elevation (7,433 ft) and
+summit coordinates (48.408385, -121.278165) match Wikipedia within ~10 m; South Early
+Winters Spire's elevation (7,807 ft) and the South Arete's FA (Fred & Helmy Beckey, June
+1942) both confirmed.
+
+Also checked and already correct: both Sinister Peak routes' `road`/`access` blocks
+document the Suiattle River Road (FR 26) washout at MP 4/4.5 with a specific closure
+order, effective dates (Apr 2, 2026-Jan 1, 2028) and the ~16-mile round-trip road-walk
+penalty it adds — corroborated against multiple current sources (fs.usda.gov alert page,
+WTA, Seattle Times/HeraldNet coverage of the Dec 2025 atmospheric-river flood damage).
+North Face's cited closure order number (06-05-26-03) could not be independently
+confirmed via search (search only surfaced the superseded 06-05-26-01, which the current
+order explicitly supersedes), but the dates and mileage are corroborated and internally
+consistent with the superseding order's known effective window, so left as-is.
+Sitkum Spire's FS Road 23 closure block (order #06-05-25-02, MP 3.7, "still active per
+spring 2026 NF alerts") was independently re-verified against the live fs.usda.gov alert
+text word-for-word on the order number, milepost and effective dates, and against a
+broader search confirming the road remains closed as of the most recent (July 2026)
+reporting — still accurate, not stale.
+
+**Flagged for human review (not auto-fixed — sources don't cleanly resolve either way):**
+- `wa_sinister_peak_southwest_route`: its own waypoint chain puts Cub Lake at 11.0 mi and
+  Cub Lake Pass at 10.7 mi from the Downey Creek Trailhead (`dist_km` 24.1, i.e. ~15 mi
+  one-way to the 13.5 mi summit waypoint plus slack). Two independently-styled external
+  sources (a Mountaineers.org club route page and what appears to be a Steph Abegg-style
+  route description republished elsewhere) both put Cub Lake at ~14 mi and the pass at
+  ~12.5 mi — roughly 3 mi (worse than 25%) further than this row's own figures. Notable
+  because it's corroborated by two sources rather than one, but neither could be directly
+  fetched (WebFetch was egress-blocked for every domain tried, including fs.usda.gov,
+  Wikipedia, and lemkeclimbs.com — same limitation as batch 163/227) so the exact per-leg
+  mileage couldn't be pinned down precisely enough to write a confident correction to a
+  detailed, internally-consistent 8-point waypoint chain on a remote, no-bail-out route.
+  Left unfixed rather than guess which numbers move.
+- `wa_sloan_peak_corkscrew` and `wa_sloan_peak_r1` appear to be duplicate rows for the
+  same physical route (identical FA party/date, identical trailhead and summit
+  coordinates to 4 decimals, identical `high_point_ft`/`gain_ft`/`loss_ft`/`dist_km`,
+  `r1`'s own `beta` field explicitly describes itself as "the same standard
+  mountaineering line as the Corkscrew Route"). Both rows are individually accurate, so
+  this is a dedup/identity question rather than a factual error, and outside this audit's
+  SQL-UPDATE-only, no-delete scope — noting for whoever next runs `audit:identity` or a
+  duplicate-route sweep rather than proposing a fix here.
+
+Next batch continues alphabetically after `wa_south_arete` (pass 4); 92 in-scope routes
+remain this pass.

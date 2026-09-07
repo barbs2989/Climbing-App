@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_silver_star_ne_ridge",
+  "last_processed_id": "wa_south_arete",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -3319,7 +3319,7 @@
       "flagged_for_human_review": 0,
       "clean": 2,
       "sql_file": "audits/sql/2026-08-27-batch-158.sql",
-      "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review — both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed — the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
+      "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review \u2014 both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed \u2014 the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
     },
     {
       "batch_number": 159,
@@ -3338,7 +3338,7 @@
       "flagged_for_human_review": 2,
       "clean": 4,
       "sql_file": "audits/sql/2026-08-27-batch-159.sql",
-      "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) — could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
+      "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) \u2014 could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
     },
     {
       "batch_number": 160,
@@ -4675,6 +4675,26 @@
       "note": "Same eight routes as batch 41 (pass 1) and batch 163 (pass 3); re-checked as usual for a new pass. \n\nFixed: wa_silver_star_glacier's access._raw.seasonal_closures ('Year-round access with winter vehicle pass requirement; snow typically Nov-April') and access._raw.parking_pass (adding a Washington State Sno-Park Permit requirement) contradicted this same row's own correct road.seasonalGate field, which already says SR-20 is gated shut with a closure point at the MP 171 Silver Star gate. Confirmed against WSDOT: SR-20 closes completely each winter between Ross Dam (MP 134) and the Silver Star gate (MP 171), typically early December through April/May -- no vehicle access of any kind exists at this pullout (MP 165-166, inside that closed zone) during that window. Reads like a generic winter-recreation-area template, not something specific to a highway segment WSDOT closes outright. Corrected both fields to match the already-correct road.seasonalGate wording on the same row. \n\nChecked, not fixed: wa_sherpa_peak_west_ridge's dist_km (7.2, one-way per app convention) sits against an itinerary whose own day-mileage sums to 14.5 mi round trip (implying ~7.25 mi/11.7 km one-way) -- but a GPX-track check (same method used on wa_sahale_mountain_r1 in batch 226) found the row's 102-point gpx only covers Longs Pass to the summit (3.9 km), and adding the ~2.3-2.5 mi trailhead-to-Longs-Pass leg from the row's own waypoints/approach text puts the GPX-corroborated one-way distance at ~7.6-7.9 km -- within ~5-10% of the stored 7.2, i.e. closer to corroborating dist_km than contradicting it. Itinerary mileage reads as generous guidebook rounding for an approach the row's own text calls an unmaintained 'tapeworm trail'; left dist_km alone rather than picking from three imperfectly-agreeing sources. \n\nRe-checked, remain open from prior passes (no new source found): wa_sherpa_peak_north_ridge's FA (Rick La Belle and Pat Derr, 1971) and wa_sherpa_peak_west_ridge's FA (Fred Dunham, Ray Lilleby, and James Wick, Aug 13 1961) -- WebFetch egress-blocked for every domain tried again this run, so both remain WebSearch-snippet-only, same limitation as batch 163. \n\nConfirmed correct independent of prior passes: Silver Star Mountain's elevation (8,876 ft) and summit coordinates both matched Wikipedia almost exactly; Mount Stuart's elevation/coordinates also checked out. Area hierarchy for all four peaks in this batch is sane. bivy/camp entries read as internally consistent and honestly hedged rather than fabricated.",
       "sql_file": "audits/sql/2026-09-07-batch-227.sql",
       "pass": 4
+    },
+    {
+      "batch_number": 228,
+      "date": "2026-09-07",
+      "route_ids": [
+        "wa_sinister_peak_north_face",
+        "wa_sinister_peak_southwest_route",
+        "wa_sitkum_spire_standard",
+        "wa_sloan_peak_corkscrew",
+        "wa_sloan_peak_r1",
+        "wa_snowfield_peak_neve_glacier",
+        "wa_snowking_mountain_standard",
+        "wa_south_arete"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 6,
+      "sql_file": null,
+      "pass": 4,
+      "note": "Two in-scope-by-discipline routes between wa_silver_star_ne_ridge and this batch (wa_skeena26, wa_slippery_slab_tower_ne_face) were skipped: both area_id resolve to a crag-type area, out of scope per the peak-area_type scope note. All eight audited routes checked out on elevation, coordinates, and FA against external sources (Sinister Peak 8,440+ ft/48.30000,-121.00972; Sitkum Spire 9,355 ft/~92 ft prominence; Sloan Peak 7,835 ft, FA Bedal & Skaar 1921; Snowfield Peak 8,351 ft, FA Degenhardt & Strandberg Aug 1931; Snowking Mountain 7,433 ft/48.408385,-121.278165; South Early Winters Spire 7,807 ft, South Arete FA Fred & Helmy Beckey June 1942). Both Sinister Peak routes' road/access blocks (Suiattle River Road FR-26 washout at MP 4/4.5, closed Apr 2026-Jan 2028) and Sitkum Spire's (FS Road 23 closure order #06-05-25-02, MP 3.7) were independently re-checked against current sources and remain accurate, not stale. Flagged, not fixed: wa_sinister_peak_southwest_route's waypoint-chain mileage to Cub Lake (11.0 mi) runs ~3 mi short of two independently-styled external sources both giving ~14 mi, but WebFetch was egress-blocked for every domain this run so the exact figures couldn't be pinned down precisely enough to correct a detailed, internally-consistent 8-point waypoint chain; wa_sloan_peak_corkscrew and wa_sloan_peak_r1 appear to be duplicate rows for one physical route (identical FA/coordinates/gain/dist, r1's own beta text says it's 'the same standard mountaineering line as the Corkscrew Route') -- both individually accurate, so this is a dedup/identity question outside this audit's SQL-UPDATE-only scope, noted for audit:identity rather than fixed here."
     }
   ]
 }
