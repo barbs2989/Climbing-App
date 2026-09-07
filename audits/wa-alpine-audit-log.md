@@ -16738,3 +16738,94 @@ own internal figures (waypoint elevations, documented elevation ranges, prior
 corrections history) that cross-check was preferred over a single external figure.
 
 Next batch continues alphabetically after `wa_tenpeak_mountain_southeast` (pass 4).
+
+## Batch 234 — 2026-09-07 (pass 4)
+
+Eight routes: `wa_tepeh_towers` (Main Peak / Eldorado group), `wa_the_brothers_south_couloir`
+and `wa_the_brothers_traverse` (The Brothers), `wa_the_cave_route` (Concord Tower),
+`wa_the_chopping_block_south_route` (The Chopping Block), `wa_the_devils_club`
+(Southeast Mox Peak), `wa_the_direct_north_ridge_w_gendarme` (Mount Stuart),
+`wa_the_hitchhiker` (South Early Winters Spire).
+
+**Fixed (3):**
+- `wa_the_devils_club` — the `waypoints` array mixed in three landmarks from a
+  *different, undescribed* approach corridor: "Depot Creek Falls", "Ouzel Lake"
+  (5,700 ft), and "Redoubt Glacier Camp" (7,300 ft). These are all landmarks on the
+  Canadian "Depot Creek" approach to the Mox massif, reached from Chilliwack Lake, BC
+  via a 4x4 road and a border crossing (confirmed against countryhighpoints.com's
+  route descriptions: Perry Creek and Redoubt Creek are both reached from the Little
+  Beaver landing on Ross Lake — the US side — while Depot Creek/Ouzel Lake/Redoubt
+  Glacier is the separate BC route; "the flat area on the Redoubt Glacier at ~7,300 ft"
+  is cited there as a camp on that Canadian approach, matching this row's elevation
+  exactly). This route's own `approach`/`approach_variants`/`overview` text describes
+  *only* the US-side Ross Lake → Little Beaver dock → Perry Creek approach, and the
+  row's own Trailhead waypoint note makes the distinction explicit in its own words:
+  "US-side approach, **opposite** the Depot Creek approach used for the West
+  Ridge/Beckey route." A party following the waypoint list in order would have been
+  sent from the Ross Dam trailhead (US) to Depot Creek Falls/Ouzel Lake/Redoubt Glacier
+  (Canada) with no border crossing or alternate approach ever mentioned in the prose —
+  the row contradicts itself as strongly as external sourcing does. Removed the three
+  contaminated waypoints; the remaining Trailhead → Junction (Base of East Face
+  Headwall) → Summit sequence matches the row's own text.
+- `wa_the_brothers_south_couloir` — `grade_num` stored as 3 for grade "Grade II" (a
+  bare commitment grade, no YDS technical component). The app's own `gradeNumFrom()`
+  parser (`lib/grade.js`) has no branch that matches a roman numeral preceded by the
+  word "Grade" (its roman-numeral fallback is anchored to the start of the string), so
+  it computes `null` for this exact string — and that already is the dominant
+  convention live in the catalog: of the 10 WA routes graded plain "Grade II", 7 store
+  `grade_num = null`; only this row and one other outside this batch's scope store 3.
+  Corrected to `null` to match both the parser's own output and the in-catalog
+  convention for the identical grade string.
+- `wa_the_brothers_traverse` — this row's own `access.permit` field directly
+  contradicted its own top-level `permit` field on the same row. Top-level: "Free
+  self-issue The Brothers Wilderness permit at the trailhead; Northwest Forest Pass to
+  park." `access.permit`: "No permit for day climbs..." — omitting the Forest Service
+  wilderness self-issue day permit the row's own top-level field says is required. The
+  sibling South Couloir route (identical trailhead, identical Olympic National
+  Forest/The Brothers Wilderness land manager) already states this correctly and
+  without self-contradiction. Aligned this row's `access.permit` with its own
+  top-level statement and its sibling's wording, keeping the separately-correct note
+  about NPS backcountry permits for any overnight stay crossing into the adjacent
+  Olympic National Park.
+
+**Verified clean via external corroboration:**
+- `wa_the_direct_north_ridge_w_gendarme` (Mount Stuart): the row's own `corrections`
+  field states the FA history as "1956 original ascent (Claunch & Rupley, bypassing
+  the Great Gendarme)... 1963 Beckey/Marts re-labeled as the first ascent climbing
+  directly over the Gendarme" — confirmed independently via WebSearch (Don Claunch and
+  John Rupley climbed the ridge in one day in 1956 but skirted the Gendarme with a
+  short rappel; Fred Beckey and Steve Marts made the first ascent including the direct
+  Great Gendarme climb in 1963). Elevation (9,415 ft) matches the area row exactly.
+- `wa_the_brothers_south_couloir` — FA claim ("1912 (south summit/Mt. Edward): I.
+  Collier, O. Corkenill, W. Dehn, W. Fish, E. Goldsmith, and H. Trumbull; north summit
+  climbed 1908 by C. Hill and W. Hill") confirmed verbatim via WebSearch against
+  CascadeClimbers' First Ascents Wiki. Elevation gap between this row (6,866 ft) and
+  the area row (6,868 ft) is already flagged in the row's own `data_quality.gaps` as a
+  genuine source disagreement (6,842 ft older USGS vs 6,866-6,868 ft newer) — left as
+  documented uncertainty, not treated as an error.
+- `wa_the_cave_route` (Concord Tower): `high_point_ft` (7,569) vs the area's own
+  `elevation_ft` (7,611) is within the area's own documented dispute — its `blurb`
+  states elevation is cited both "~7,560 ft (Mountain Project, WTA, older trip
+  reports)" and "~7,611-7,612 ft (ListsOfJohn/LIDAR-derived data)" with neither
+  definitive; this row's figure sits within the first cited range. Not an error.
+  FA (Burgner & McPherson, 1968) already carries an appropriate `corrections` caveat
+  about limited independent verification; left as-is.
+- `wa_the_chopping_block_south_route`: elevation (6,819 ft) matches the area row
+  exactly; grade/pitch-count correction history in `corrections` (Grade II, 5.5,
+  5 pitches per Mountaineers.org, corroborated by Beckey's Cascade Alpine Guide) is
+  self-consistent with the stored `grade_num` (5).
+- `wa_tepeh_towers`, `wa_the_hitchhiker`: elevations, gain/loss profiles against their
+  own waypoint chains, and FA/grade fields are internally consistent and, where
+  checkable, consistent with the area's own elevation record. No external contradiction
+  found.
+
+Checked all 8 routes' top-level `permit` field against the nested `access.permit`
+field for self-contradiction (the class of defect that caught the Brothers Traverse
+fix above) — only that one row disagreed with itself; the other 7 are consistent.
+
+Sanity-checked `gain_ft`/`loss_ft` against each route's own trailhead→summit waypoint
+elevation delta for all 8 routes; all fall within ordinary approach-terrain variance
+(under ~110 ft) of the minimum required rise, except where genuinely `NULL`. No
+"impossible gain" findings this batch.
+
+Next batch continues alphabetically after `wa_the_hitchhiker` (pass 4).
