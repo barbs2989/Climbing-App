@@ -16643,3 +16643,98 @@ own internal-consistency signals (waypoint math, itinerary sums, corrections his
 before writing any fix.
 
 Next batch continues alphabetically after `wa_spider_mountain_north_ridge` (pass 4).
+
+## Batch 233 — 2026-09-07 (pass 4)
+
+Eight routes: `wa_spire_point_southwest_face` (Spire Point), `wa_stanley_burgner`
+(Prusik Peak), `wa_storm_king_north_face` / `wa_storm_king_southwest_scramble` (Storm
+King), `wa_sw_ridge` (Middle Peak, Gunsight Range), `wa_swiss_peak_standard_route`
+(Swiss Peak, Northern Pickets), `wa_tenpeak_mountain_north_couloir` /
+`wa_tenpeak_mountain_southeast` (Tenpeak Mountain).
+
+**Fixed (0).** Nothing this batch cleared the bar for a confirmed, sourced error.
+
+**Flagged for human review (2):**
+- `wa_spire_point_southwest_face` — still the three/four-way name-vs-fields
+  contradiction this row has carried since batch 45/104, but narrower than previously
+  recorded: `name` ("Southeast Face"), `aspect` ("SE"), `face` ("Southeast Face"),
+  `beta`, and `pitch_detail` (all four sub-pitches describe the "southeast face") are
+  now internally consistent with each other and with the Dana-Glacier/southeast-ridge
+  approach CLAUDE.md's batch-59 research favored. Only two fields still carry the
+  older southwest/west language: `descent_text` ("Descend the same southwest face
+  line...") and `watch_out` ("Severe exposure on the west-face ledges above the Spire
+  Glacier"). Did not touch either, because a plausible non-contradictory reading
+  exists — the row's own `overview` independently says "roughly 1,000+ vertical feet
+  of exposure below the west-side ledges," which reads as a general summit-exposure
+  note rather than a claim about which side is climbed, and it is entirely normal for
+  a technical summit tower to be climbed via one face/ridge and downclimbed/rappelled
+  via a different one. Given three prior audit passes on this exact row have already
+  gone looking for a clean resolution and found none, this is recorded as a narrower
+  flag rather than guessed at a third time.
+- `wa_swiss_peak_standard_route` (Swiss Peak) — the `areas` row for `wa_swiss_peak`
+  has `lat`/`lng` both `NULL`. Route-level fields (elevation 7,988 ft, aspect SW/south
+  side, Class 3 scrambling) all corroborate cleanly against external sources (see
+  below), but no accessible source returned decimal coordinates precise enough to
+  write with confidence — Peakbagger (two distinct listing IDs turned up for "Swiss
+  Peak," which itself wants disambiguating) and Peakery were both egress-blocked, and
+  WebSearch snippets for either gave no lat/lng. Flagging the gap rather than
+  fabricating a coordinate.
+
+**Verified clean via external corroboration:**
+- `wa_stanley_burgner` (Prusik Peak, Stanley-Burgner route): FA (Fred Stanley & Ron
+  Burgner, 1968, nearly free save two points of aid for the leader) confirmed across
+  multiple sources. Grade is the one field that looked suspect at first glance — the
+  route's classic/guidebook rating is commonly cited as "III, 5.9+" (Climbing.com's
+  dedicated route page, Mountaineers.org, StephAbegg's trip report all use this
+  figure) while the row stores `5.10a`. Checked Mountain Project specifically (the
+  source this project's own audit notes treat as the crowd-consensus grade of
+  record): Mountain Project itself lists the route as **5.10a**, with search summaries
+  of climber discussion explicitly noting "most people feel a 5.9 rating is a major
+  sandbag... 5.10- might be more accurate." So the row already matches the
+  currently-consensus MP grade rather than the older Beckey-era 5.9+; left as-is.
+  Pitches (6) and length (183 m / ~600 ft) both match multiple sources' 6p/600-650 ft.
+- `wa_storm_king_north_face`: FA (Dick Emerson and Walt Grove, 1978) confirmed via
+  search (a 2018 trip report referencing the route by name and year). Approach via
+  Goodell Creek Trail (Newhalem) is consistent with the row's North Cascades core
+  placement and dist_km (21.6).
+- `wa_storm_king_southwest_scramble`: the row's own FA field already hedges correctly
+  — "Presumed Forrest Farr and Art Winder, 1933 (peak's first ascent...)" — and search
+  confirms Storm King's peak FA was indeed Farr and Winder in 1933, with no
+  route-specific attribution available for the standard line, matching the row's own
+  caveat. Storm King's elevation (DB: 8,565 ft) sits inside the range SummitPost
+  itself describes as ambiguous/disputed for this peak (a triangulated 8,515 ft
+  sub-summit "often incorrectly supplied as the height of the peak," with "two
+  8,520+ tops to the east... definitely higher") — not flagged, since no single
+  cleaner figure is available and the row's value is within the documented spread.
+  Area coordinates (48.4913, -120.9228) independently confirmed against a
+  Wikipedia-cited figure for Storm King (48.49444, -120.93917, "~1 mile NW of Goode
+  Mountain") — within a few tenths of a mile, consistent with ordinary
+  summit-point-vs-GNIS-point variance.
+- `wa_sw_ridge` (Middle Peak, Gunsight Range): checked carefully against a same-named
+  but unrelated Wikipedia "Middle Peak (Washington)" article (Whatcom County, North
+  Cascades NP, 7,464 ft, ~48.99°N) — that is a different peak roughly 45 miles from
+  this row's area coordinates (48.3057°N, -120.9944°W) and was **not** used. The
+  correct identity is "Middle Gunsight," one of four named Gunsight Range summits
+  (Northeast/North/Middle/South Gunsight, all cited as "between 8,000 and 8,200 ft");
+  the row's `high_point_ft` (8,200) sits exactly at the top of that documented range,
+  and a trip-report description of the SW-ridge route ("loose blocky climbing
+  initially, but the last two pitches offer wonderful easy climbing up cracks and
+  knobs on an exposed ridge") is consistent with the row's 5-pitch count.
+- `wa_swiss_peak_standard_route` (route-level fields only — see coordinate gap above):
+  elevation independently confirmed at 7,988 ft, matching `high_point_ft` exactly.
+- `wa_tenpeak_mountain_southeast`: FA (Lloyd Anderson and Tom Campbell, September 21,
+  1940) and elevation (8,312 ft) both confirmed precisely, including via a source
+  identifying Lloyd Anderson as REI's co-founder — a well-documented, notable FA.
+- `wa_tenpeak_mountain_north_couloir`: no external route-specific source found either
+  confirming or contradicting the stored grade (5.4), pitch count (2), or length
+  (366 m); the row's peak-level elevation (8,312 ft) matches the confirmed figure
+  above. Left as-is — absence of corroboration is not evidence of an error, and
+  `gain_ft`/`loss_ft`/`dist_km` are honestly `NULL` rather than a guessed value.
+
+WebFetch remained egress-blocked for every domain tried this run (mountainproject.com,
+peakery.com, peakbagger.com) — same limitation as recent batches; relied on WebSearch
+snippets only, and where a snippet's numbers could be cross-checked against the row's
+own internal figures (waypoint elevations, documented elevation ranges, prior
+corrections history) that cross-check was preferred over a single external figure.
+
+Next batch continues alphabetically after `wa_tenpeak_mountain_southeast` (pass 4).
