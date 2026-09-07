@@ -16190,3 +16190,87 @@ each other and against this catalog's own area-hierarchy records where they disa
 
 Next batch continues alphabetically from `wa_ruth_mountain_south_slopes` (pass 4); 116 in-scope
 routes remain this pass.
+
+## 2026-09-07 — Pass 4, Batch 226
+
+Eight routes across seven peaks: Sahale Mountain (Quien Sabe Glacier, Sahale Arm/Sahale
+Glacier), Eagle Peak (Scramble Route), Mount Washington Olympic (SE Ridge AKA Shield Wall),
+Sentinel Peak (Standard Route), South Early Winter Spire (Southwest Rib), Sharkfin Tower
+(Southeast Ridge), and Sherman Peak/Baker (Crater Rim Scramble) — the same eight routes
+covered by batch 162 (pass 3, 2026-09-01).
+
+**Confirmed error → fix in `sql/2026-09-07-batch-226.sql`:**
+- `wa_sentinel_peak_standard`: `road.status` and `access.closures` both stated Cascade River
+  Road is "currently closed at MP 8 (Marble Creek) due to the Pincer Two Fire ... as of
+  mid-2026." The Pincer Two Fire is real, but it started July 17, 2024 near Mineral Park
+  Campground east of Marblemount, and Mt. Baker-Snoqualmie NF lifted that closure in
+  September 2024 (goskagit.com) — the claim is describing a resolved 2024 event as a current
+  2026 fact, off by two years. Corrected using what multiple 2026 sources (NPS news releases;
+  Spokesman-Review, June 17, 2026) actually document about this road: a separate, real spring
+  2026 flood/landslide closure near MP 20 (Eldorado Trailhead) — repairs to MP 18 completed
+  by June 10, 2026, but the MP 20 vehicle gate still closed as of mid-June 2026 (foot/bike
+  travel permitted past it). No source found this session confirms the road's status past
+  mid-June 2026, so the current (September 2026) state is left unconfirmed rather than
+  guessed at — the same treatment this road got on `wa_northeast_ridge_1963_route` in batch
+  221. `road.seasonalGate`'s trailing "independent of the fire closure" clause, now referring
+  to a claim that no longer exists on the row, was trimmed to match. The row's separate
+  Suiattle River Road (FSR 26) closure-order text (No. 06-05-26-03, effective through January
+  1, 2028) was left untouched — it is corroborated by identical wording already used
+  correctly elsewhere in this catalog and CLAUDE.md's own notes.
+
+**Re-examined, remains correctly flagged rather than fixed (no new source found to settle
+it):** `wa_se_ridge_aka_shield_wall`'s pitch-count question, open since pass 1 — external
+sources genuinely disagree on how many pitches follow the Shield Wall proper (Mountaineers.org
+says 2-3, for 9-10 total; Simmons Mountain Works/Mountain Project say 6, for 13 total). The
+stored value (13 pitches) matches the second source exactly and is internally consistent with
+this row's own `beta` text and `pitch_detail` breakdown, but the disagreement between external
+sources is real and unresolved — noted rather than "fixed" toward either side.
+
+**Given the specific check pass 1 asked for, still unresolved:** `wa_sahale_mountain_r1`'s
+`dist_km` (16.9) was flagged in pass 1 as needing "a GPX-track check, not a bulk fix." Summing
+haversine distances across all 175 points of this row's own stored `gpx` polyline gives 6.04
+km one-way (3.75 mi) — a number that agrees with *neither* this row's own waypoint/itinerary-
+implied one-way distance (5.2 mi = 8.37 km, internally consistent between the waypoints array
+and the itinerary's day-by-day mileage) *nor* the stored `dist_km` read as one-way or halved.
+The GPX check produces a third, still-disagreeing figure rather than a resolution — left
+flagged for a human rather than picked from three numbers that don't agree with each other.
+
+**Checked and independently confirmed correct, no change needed:** `wa_sahale_mountain_
+sahale_glacier`'s FA (August 1897, John Charlton and Albert H. Sylvester) — re-verified this
+session against external sources independent of the ones used when it was first entered, exact
+match including name order. Sahale Mountain's 8,680 ft elevation (used throughout both routes
+and the area row) also checks out against Wikipedia, despite a LiDAR-based third-party listing
+(listsofjohn.com) citing a different, higher 8,759 ft figure for the same peak — read as a
+resurvey discrepancy rather than an error in this catalog, consistent with how this repo treats
+other disputed LiDAR-vs-consensus elevations.
+
+**Process note, not a data fix:** six of this batch's eight routes were already reviewed and
+corrected across three prior passes (batches ~40-41 in pass 1, ~99-100 in pass 2, and 162 in
+pass 3 — a `bivy` corridor-zone-file contamination sweep). Re-checking the *live* database this
+session found that batch 162's proposed fixes do not appear to have been applied yet:
+`wa_sherman_peak_baker_route` still carries all 6 of its original `bivy` entries rather than
+the 2 batch 162 proposed keeping, `wa_sahale_mountain_sahale_glacier`'s `bivy[0]` elevation is
+still 7,500 rather than the corrected 7,600, and `wa_scramble_route`'s `access._raw.
+permit_location` phone number still has the transposed digits batch 162 flagged. `audits/sql/
+2026-09-01-batch-162.sql` looks like a live, still-open fix rather than a stale one — it is not
+re-proposed here, to avoid duplicating an already-correct pending SQL file. Flagging this in
+case it is useful context for whoever next applies these batches: several of the SQL files this
+audit has produced may be queued rather than run.
+
+Everything else checked on all eight routes this pass — elevations against area records, gain/
+loss-floor arithmetic, waypoint sequencing, the already-verified FAs on `wa_sews_sw_rib` and
+`wa_sharkfin_tower_southeast_ridge` from pass 3 — came back clean.
+
+`npm run check:sql -- audits/sql/2026-09-07-batch-226.sql` (anon key set manually, no
+`.env.local` in this worktree) — 2 write targets checked across 5 statements (the first
+UPDATE's long multi-line string value was not checkable by that script's statement-splitter,
+a known limitation per batch 223's note, not a defect in the SQL); all target ids exist, no
+DELETEs. Paste-size WARN only (file is 5,173 bytes against the 4,000-byte soft limit — split
+before pasting into the SQL Editor).
+
+WebFetch remained egress-blocked for every domain tried this run (Wikipedia, Mountain Project,
+Simmons Mountain Works, goskagit.com, nps.gov, spokesman.com); all external verification via
+WebSearch result synthesis only.
+
+Next batch continues alphabetically after `wa_sherman_peak_baker_route` (pass 4); 108 in-scope
+routes remain this pass.
