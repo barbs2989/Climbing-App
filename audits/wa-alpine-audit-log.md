@@ -16448,3 +16448,48 @@ WebFetch remained egress-blocked for every domain tried (AAC Publications, Wikip
 same limitation as batches 163/227/228; audit relied on WebSearch summaries only.
 
 Next batch continues alphabetically after `wa_south_face_3` (pass 4).
+
+## Batch 230 — 2026-09-07 (pass 4)
+
+Same eight routes as pass 3 batch 166 (2026-09-02): `wa_south_face_4` (Kangaroo Temple),
+`wa_south_face_5` (Inspiration Peak), `wa_south_face_center` (Concord Tower),
+`wa_south_gully_south_spur` and `wa_south_rib` (Guye Peak), `wa_south_headwall` (Mount
+Stuart), `wa_south_ridge_2` (Luna Peak), `wa_south_ridge_3` (Black Peak).
+
+**Fixed (1):** `wa_south_headwall` — `grade`/`rock_grade` were "5.8", but the row's own
+`pitch_detail` already breaks the climb down as 4th/low-5th class plus two "5.7" crux
+sections — nothing in the row's own pitch data reaches 5.8. Mountain Project's route
+description for this exact route corroborates near-verbatim ("two 20- or 30-foot sections
+of 5.7 ... lots of 4th Class and low 5th Class"). This settles the 5.7-vs-5.8 question
+batch 166 flagged but left open — that flag only cited the external MP source; the row's
+own internal pitch breakdown is the decisive argument. `grade_num` updated 8 → 7 to match.
+
+**Re-proposed, not new:** `wa_south_face_5`'s `fa` hedge removal. Batch 166 proposed this
+exact fix five days ago with two corroborating sources, but the live row still carries the
+pre-fix hedged value — the SQL doesn't appear to have been applied yet. Re-confirmed the
+sources and re-included the same UPDATE.
+
+**Flagged for human review (2):**
+- `wa_south_face_center` (Concord Tower): FA ("Fielding & Tarver, 1966") remains unresolved
+  a third pass running. SummitPost/AAC primary sources are still egress-blocked; WebSearch
+  ties "Mark Fielding & Frank Tarver, May 1966" to *a* Concord Tower route but not decisively
+  to this specific South Face Center variation. Left as the already-honest "Not Known".
+- `wa_south_ridge_3` (Black Peak): `dist_km` (17.4 km) still disagrees with the row's own
+  waypoint chain (cumulative 6.0 mi / ~9.7 km one-way to the summit) by close to 2x. Same
+  open ambiguity noted in pass 2 batch 103 ("three on-file figures... no clear single value
+  to fix blindly") — no new source resolved it this run, left alone per that standing
+  caution against guessing on this column.
+
+**Clean, re-confirmed (4):** `wa_south_face_4` (Kangaroo Temple) — SuperTopo independently
+confirms "III 5.8", matching stored `grade`/`commitment` exactly. `wa_south_gully_south_spur`
+and `wa_south_rib` (Guye Peak) — no new contradicting source. `wa_south_ridge_2` (Luna Peak)
+— gain/loss/dist_km from the pass-1 fix remain internally consistent. Mount Stuart's
+Longs Pass / Esmeralda Basin Trailhead waypoints (renamed/corrected in pass 1) independently
+re-confirmed this run: Esmeralda Trailhead ~4,243 ft and Longs Pass ~6,200-6,300 ft across
+sources, both within normal survey variance of the stored values.
+
+WebFetch remained egress-blocked for every domain tried (mountainproject.com,
+pages.uoregon.edu) — same limitation as batches 163/227/228/229; relied on WebSearch
+snippets only.
+
+Next batch continues alphabetically after `wa_south_ridge_3` (pass 4).

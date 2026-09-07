@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_south_face_3",
+  "last_processed_id": "wa_south_ridge_3",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4715,6 +4715,26 @@
       "sql_file": "audits/sql/2026-09-07-batch-229.sql",
       "pass": 4,
       "note": "Skipped as out-of-scope (crag-type area, not peak): wa_south_face (Vasiliki Tower). Fixed: wa_south_face_10 (Cathedral Peak South Face) watch_out[0] misdated the FA account to 1969 when the row's own fa/overview fields (and AAC Publications) date it to Sept 1968. Verified clean: wa_south_early_winter_spire_direct_east_buttress (elev 7807ft, FA Beckey/Leen 1968 confirmed), wa_south_early_winter_spire_passenger (FA Burdo/Doorish/White Oct 1991 confirmed; grade variance 5.11b A0 vs stored 5.11d is normal cross-source drift on a progressively-freed testpiece, not an error), wa_south_early_winter_spire_southwest_couloir (FA Adam/Bedayn/Davis July 20 1937 confirmed as first ascent of the peak), wa_south_face_10 elevation (8601/8606 both valid -- different vertical datums, not a conflict), wa_south_face_2 /Pernod Spire (FA Jewitt/Leight/Waters July 10 1988 confirmed; elevation 8507 consistent with Pernod being the tallest Wine Spire at >8400ft). wa_south_face_12/Argonaut Peak was checked in a prior batch (access_checked_at 2026-08-27, 11 days old) so only spot-checked this run. Flagged, not fixed: wa_south_early_winter_spire_east_buttress beta field reads as pipeline meta-commentary (\"This route designation appears in the database but is not clearly distinguished from the Direct East Buttress\") rather than climbing beta -- my own research could not find a distinct, separately-documented plain \"East Buttress\" route apart from the Direct variant either, so this may be a genuine route-identity/duplicate question (same shape as the Sloan Peak dupe flagged in batch 228) rather than a fixable factual error; leaving for a duplicate-route sweep rather than fabricating beta. wa_south_face_3/Concord Tower has an elevation conflict across three sources (7560ft SummitPost, matching this row's own waypoint; 7569ft in high_point_ft; 7612ft ListsOfJohn/LIDAR) with no clear winner, plus its fa field names a 4th FA party member (\"Bruce Schuler\") that two independent secondary sources (SummitPost, Mountaineers.org) do not include alongside Cramer/Anderson/Stanley -- AAC Publications (the primary source) was egress-blocked so this could not be pinned down confidently enough to change either field. WebFetch was egress-blocked for every domain tried this run (publications.americanalpineclub.org, en.wikipedia.org), same limitation as batches 163/227/228 -- relied on WebSearch summaries only."
+    },
+    {
+      "batch_number": 230,
+      "date": "2026-09-07",
+      "route_ids": [
+        "wa_south_face_4",
+        "wa_south_face_5",
+        "wa_south_face_center",
+        "wa_south_gully_south_spur",
+        "wa_south_headwall",
+        "wa_south_rib",
+        "wa_south_ridge_2",
+        "wa_south_ridge_3"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-07-batch-230.sql",
+      "pass": 4,
+      "note": "Same eight routes as pass 3 batch 166 (2026-09-02); re-checked as usual for a new pass. Fixed: wa_south_headwall's grade/rock_grade (5.8 -> 5.7, grade_num 8 -> 7) -- the row's own pitch_detail already breaks the climb down as 4th/low-5th plus two 5.7 crux sections, corroborated near-verbatim by Mountain Project's route description; this settles the 5.7-vs-5.8 question batch 166 flagged but left open. Re-proposed (not new): wa_south_face_5's fa hedge removal -- batch 166's identical fix does not appear to have been applied to the live DB yet (row still shows the pre-fix hedged value), so the same UPDATE was re-included this batch after re-confirming the two corroborating sources. Flagged, not fixed: wa_south_face_center's FA (\"Fielding & Tarver, 1966\") remains unresolved a third pass running -- SummitPost/AAC primary sources still egress-blocked, WebSearch snippets tie that FA party to *a* Concord Tower route in 1966 but not decisively to this specific South Face Center variation; left as the already-honest \"Not Known\". wa_south_ridge_3 (Black Peak)'s dist_km (17.4 km) still disagrees with its own waypoint chain (cumulative 6.0 mi/~9.7 km to the summit) by close to 2x -- this is the same open ambiguity noted in pass 2 batch 103 (\"three on-file figures... no clear single value to fix blindly\"); no new source resolved it this run, left alone per that standing caution against guessing on this column. Clean (re-confirmed, no changes): wa_south_face_4 (Kangaroo Temple -- SuperTopo independently confirms \"III 5.8\", matching stored grade/commitment exactly), wa_south_gully_south_spur and wa_south_rib (Guye Peak -- no new contradicting source), wa_south_ridge_2 (Luna Peak -- gain/loss/dist_km from the prior pass's fix remain internally consistent). Mount Stuart's Longs Pass/Esmeralda Basin Trailhead waypoints (renamed/fixed in pass 1) independently re-confirmed via WebSearch this run (Esmeralda Trailhead ~4,243 ft, Longs Pass ~6,200-6,300 ft -- both within normal survey variance of stored values). WebFetch remained egress-blocked for every domain tried (mountainproject.com, pages.uoregon.edu) -- same limitation as batches 163/227/228/229; relied on WebSearch snippets only."
     }
   ]
 }
