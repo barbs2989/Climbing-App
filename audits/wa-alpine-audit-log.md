@@ -17486,3 +17486,87 @@ true, still open.
 SQL: `audits/sql/2026-09-08-batch-243.sql` (validated with `check:sql` — every target id exists,
 no destructive delete; flagged as a paste-size risk, ~8.3KB against the ~4KB soft paste limit, so
 split into chunks when applying).
+
+## 2026-09-08 — Batch 244 (pass 5): Beckey-Tate, Beyond Redlining, Big Four Mountain (x2), Big Kangaroo West Face, Big Snow Mountain (x2), Black Peak (x2), Bonanza Peak (Mary Green Glacier)
+
+Checked 10 routes. This exact set was already covered in depth by batches 115/179/180
+(2026-08-13 through 2026-09-03), so this pass focused on (a) re-verifying and re-proposing SQL
+for still-unapplied fixes those batches already found, and (b) checking whether anything on the
+rows has changed or been missed since. All fixes below independently re-confirmed this session
+before being re-proposed.
+
+**Confirmed errors, re-proposed for fix (4, across 3 routes):**
+- **wa_beyond_redlining**: `high_point_ft` is still NULL. Its own `overview`/`descent_text` say
+  it tops out on the same summit as the sibling route `wa_mile_high_club`, which already stores
+  `high_point_ft = 5280` for that shared top and independently names the same Vegan/Vega Tower
+  group approach. Same finding batch 179 made, still unapplied. Filled from the sibling's value.
+- **wa_big_four_mountain_northwest_ridge** and **wa_big_four_mountain_spindrift_couloir**: both
+  still store their shared trailhead waypoint ("Big Four Picnic Area / Ice Caves Trailhead") at
+  1,640 ft. Re-verified independently: web search converges on 1,750 ft for this well-documented
+  USFS trailhead (a secondary source gives 1,700 ft; nothing found supports 1,640). Same finding
+  batch 179 made, still unapplied. Fixed to 1,750 ft on both routes. This also resolves a
+  gain_ft-floor violation on both (net rise to the unchanged, externally-corroborated 6,170 ft
+  summit was 4,530 ft against a stored `gain_ft` of 4,450 — impossible by 80 ft; with the
+  corrected trailhead it's 4,420 ft, which the existing `gain_ft` satisfies, so `gain_ft` itself
+  was left alone). Two more sibling routes on this peak not in this batch still carry the same
+  stale value per batch 179's note and will need the identical fix on a future pass.
+- **wa_big_kangaroo_west_face**: `grade_num` is still NULL despite this row's own `rock_grade`
+  ("5.6") and its crux pitch in `pitch_detail` (also 5.6). The catalog's grade_num convention
+  (digits after the decimal) is confirmed by the sibling route on the same peak, `wa_beckey_tate`
+  (5.9+ → grade_num 9, already correct live). Same finding batch 115 made, still unapplied.
+  Corrected to 6.
+
+**New finding this batch (1):**
+- **wa_big_kangaroo_west_face**: `data_quality.gaps[0]` is a stale note. It says the row's `id`
+  is `wa_big_kangaroo_southwest_rib` — a mismatch with a real, distinct route of that name on
+  South Early Winter Spire — and recommends renaming it to `wa_big_kangaroo_west_face`. Checked
+  directly: the row's live `id` is already `wa_big_kangaroo_west_face`. This has been an open
+  item since batch 3 (repeatedly re-flagged as "needs a human decision, not a mechanical fix" —
+  see log lines ~188-192, 410, 528, 866, 984, 3153), and at some point a human evidently did make
+  that call and rename the row outside this audit's own SQL proposals (no batch here documents
+  doing it), but the `data_quality.gaps` entry describing the now-resolved problem was never
+  cleaned up, so the row has been carrying a false "this id is wrong" claim about itself for
+  several passes. Removed the resolved entry; left the other four `gaps` entries (pitch-count
+  sourcing, unconfirmed-by-phone emergency contacts, GPS-track sourcing, computed difficulty
+  breakdown) in place — all still accurate.
+
+**Re-affirmed still open, not re-derived (2):** `wa_bonanza_peak_mary_green_glacier`'s `fa` field
+still credits the 1937 Ijames/James/Leuthold Mazamas ascent to this specific route ("this easiest
+line is widely regarded as the original route"), and independent search results this session
+again describe that 1937 ascent's approach as via Company Glacier, a separate named glacier on
+the peak — same ambiguity batch 180 flagged and left open (WebFetch to mountaineers.org,
+summitpost.org, AAC publications, and Wikipedia all still blocked from this environment). The
+sibling `wa_big_kangaroo_west_face`/`wa_beckey_tate` `dist_km` values (1.9 and 6.92) still don't
+reconcile against their shared 91-point gpx track or either route's own approach-text mileage —
+same tangle batch 115 flagged as unresolvable without a primary-source GPX reaching each route's
+own base; still true, left open rather than guessed at.
+
+**Investigated and NOT re-proposed:** `wa_beyond_redlining`'s `fa` date ("Rad Roberts and Kurt
+Hicks, May 2020"). Batch 179 proposed correcting this to "July 11, 2020" citing AAC
+Publications/2021 AAJ. Re-attempting independent verification this session, WebSearch synthesis
+was internally inconsistent across two separate queries about the same AAC article — one framed
+"July 11" as tied to a snow-condition observation rather than the send date, the other did the
+same for "May 29" — and direct WebFetch to the AAC article itself is blocked in this environment,
+same as batch 179's own stated limitation. Given the row's own `overview` field says "July 2020"
+and `fa` says "May 2020," an internal inconsistency clearly exists and one of the two is wrong,
+but this session could not independently confirm which with the sourcing available, so batch
+179's proposed fix was not re-verified and is left as-is in that earlier SQL file pending a human
+with direct AAC/AAJ access, rather than re-endorsed here on uncertain grounds.
+
+**Confirmed clean, no change since batch 180 (5 routes, reconfirmed rather than re-researched
+given the exhaustive coverage 5 days ago):** `wa_beckey_tate` (elevation 8,326 ft, 1967 FA,
+5.9+ grade all unchanged and previously confirmed); `wa_big_snow_mountain_east_ridge_hardscrabble_route`
+and `wa_big_snow_mountain_north_slope_dingford_route` (elevation 6,680 ft, gain_ft floors, dist_km
+internal consistency all unchanged); `wa_black_peak_east_buttress` and `wa_black_peak_northeast_ridge`
+(elevation 8,970 ft — independently re-checked this session, within normal 5 ft cross-datum
+variance against the 8,975 ft figure some sources use; FA and trailhead unchanged).
+
+Also independently re-verified this session and confirmed accurate: Big Four Ice Caves fatality
+years (1998, 2010, 2015) exactly match the row's `watch_out` claim; Bonanza Peak elevation
+(9,511 ft) and the Holden Village/FR 8301 Dec-2025-landslide closure detail in the Bonanza routes'
+`access` field (closed through the 2026 season, repair funding pending) both confirmed against
+current 2026 news coverage.
+
+SQL: `audits/sql/2026-09-08-batch-244.sql` (validated with `check:sql` — 5 write targets across 5
+statements, every target id exists, no destructive delete; flagged as a paste-size risk, ~6.1KB
+against the ~4KB soft paste limit, so split into chunks when applying).
