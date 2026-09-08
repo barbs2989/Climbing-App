@@ -17249,3 +17249,75 @@ scope, so this batch is smaller than usual — pass 4 is now complete (529 route
   issue flagged in batch 4.
 
 SQL: `audits/sql/2026-09-08-batch-240.sql` (validated against live schema with `check:sql`).
+
+## Batch 241 (pass 5, first batch) — 2026-09-08
+
+Pass 4 finished with batch 240; this starts pass 5 from the top of the scope
+(discipline IN alpine/mountaineering, id LIKE 'wa_%', area_type='peak', ordered by id ASC).
+Re-counted scope size before picking the batch: 529 routes, matching pass 4's final count.
+First 8 routes in order: `wa_a_servant_to_liberty`, `wa_abernathy_peak_south_ridge`,
+`wa_action_potential`, `wa_agnes_mountain_west_route`, `wa_alpine_lookout_round_mountain_trail`,
+`wa_american_border_peak_northeast_face`, `wa_american_border_peak_southeast_face`,
+`wa_amphitheater_mountain_finger_of_fatwa`.
+
+6 confirmed fixes/fix-sets, 1 flagged for human review, 2 fully clean.
+
+- **wa_a_servant_to_liberty** (Liberty Bell East Face, "A Servant To Liberty"): `fa` and
+  `pro_tips[0]` both claimed the Aug 2016 FA was rope-soloed. Two independent sources
+  (Climbing.com, an AAC Publications summary) confirm Mikey Schaefer rope-soloed the 2015
+  *exploration/equipping* of the line, but the actual free-ascent send on Aug 6, 2016 was led
+  with Shanjean Lee belaying — matching this row's own `overview` text and its own
+  `data_quality.gaps` note, which already flagged the FA credit as needing a follow-up review.
+  Corrected both fields. Also `dist_km` halved 8.05→4.03 (matches `itinerary.miles`=5 exactly,
+  the same doubling-bug shape found repeatedly in prior batches).
+- **wa_abernathy_peak_south_ridge**: `bivy` trimmed from 8 entries to 1. Only "Scatter Lake
+  basin" is this route's own camp (its note says so outright); the other 7 are, by their own
+  text, camps for Reynolds Peak, Oval Peak, Raven Ridge/Hoodoo, Switchback Mountain, Star/
+  Courtney Peak, and Devore/Tupshin Peak — a whole-Sawtooth-range camping guide attached
+  wholesale to one route. Elevation (8,321 ft) and mileage independently confirmed clean.
+- **wa_action_potential** (Burgundy Spire East Face): `dist_km` halved 10.62→5.31 — exactly the
+  same doubling-bug numbers already fixed on sibling route `wa_ultramega_ok`, which shares this
+  route's Burgundy Col approach. Summit waypoint elevation corrected 8483→8492 to match this
+  row's own (already-correct) `high_point_ft` and the same external figure (listsofjohn.com)
+  already applied to `wa_ultramega_ok`. `bivy` trimmed: two entries explicitly labelled "EAST
+  side, Silver Star only" / "no use for the Wine Spires" removed. FA (Layton/Allen, 2004)
+  independently confirmed, unchanged.
+- **wa_agnes_mountain_west_route**: several corrections on one of this pass's most heavily
+  enriched rows. Summit waypoint elevation corrected 8131→8119 to match this row's own
+  (correct) `high_point_ft` and Wikipedia's cited NAVD88 figure. `gain_ft` corrected 4000→6500
+  to match `loss_ft`, the row's own 4-day itinerary totals (~6,700 ft), and its own trailhead/
+  summit elevation difference — a round-trip route with gain far below loss was internally
+  implausible. `dist_km` corrected 13.7→23.59 km to match this route's own track-derived
+  waypoint distance (14.66 mi one-way), corroborated by the itinerary's own ~34 mi round-trip
+  total. `bivy` trimmed: two entries explicitly for Needle Peak/Mount Lyall and for Flora
+  Mountain (a peak the note says isn't even reached from this route's own trailhead) removed.
+  FA (Frazier/O'Brien, 1936, via West Fork Agnes Creek) independently confirmed, unchanged.
+  **Flagged, not fixed**: this row's own `data_quality.gaps` already says "No source confirms
+  a distinct 'West Route' name" — independent search confirms Beckey's guide describes the
+  documented line as Asa Peak's NE ridge traversing to Agnes's south ridge, which reads more
+  like a "South Ridge" route than a "West Route." Whether to rename is a naming/identity
+  decision, not a field patch — same class as the wa_cascade_peak_east_ridge flag in batch 4.
+- **wa_alpine_lookout_round_mountain_trail**: `bivy` trimmed from 6 entries to 3. "Rock Lake"
+  (for Rock Mountain), "Crescent Lake" (for Mount Howard/Mastiff), and "Mount Howard
+  summit-area bivouac" removed as camps for other Nason Ridge summits; kept Merritt Lake
+  (explicitly reaches Alpine Lookout), the lookout itself, and the general drive-in
+  campground. Otherwise clean and internally well-corroborated (waypoint distance, gain, and
+  elevation all agree with each other and with the route's own bivy note).
+- **wa_american_border_peak_northeast_face**: clean — sparse row, nothing populated
+  contradicts anything else.
+- **wa_american_border_peak_southeast_face**: `beta` opened by crediting the peak's first
+  ascent to "Baker, Beckey, and Dudra in 1952," directly contradicting this row's own `fa`
+  field (Dalgleish/Fyles/Henderson/Fraser, Sept 14 1930, "peak's first ascent, via this
+  line"). Independent search confirms 1930 as the actual first ascent; corrected beta's
+  opening clause to match. Rest of the route description unaffected.
+- **wa_amphitheater_mountain_finger_of_fatwa**: clean. FA (Bennett/Herrington, 2011)
+  independently confirmed via Herrington's own trip-report blog. `dist_km` (27.4 km / 17 mi
+  one-way) looked implausible for a 5-pitch route at first glance but is corroborated: the
+  Andrews Creek approach to Cathedral Lakes/Amphitheater is genuinely ~18-19 mi one-way per
+  external sources. Noted but not fixed: three waypoints share one identical coordinate with
+  overlapping meaning (Topout / Junction / Climbing area all at the same point) — likely
+  redundant rather than wrong; left for a human de-duplication call.
+
+SQL: `audits/sql/2026-09-08-batch-241.sql` (validated with `check:sql` — every target id
+exists, no destructive delete; flagged as a paste-size risk for the SQL Editor, ~15.7KB
+against the ~4KB soft paste limit, so split into chunks when applying).
