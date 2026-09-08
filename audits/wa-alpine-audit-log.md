@@ -17651,3 +17651,79 @@ SQL: `audits/sql/2026-09-08-batch-245.sql` (validated with `check:sql` — 9 wri
 9 statements, every target id exists, no destructive delete; every WHERE guard independently
 verified against the live row before writing the file. Flagged as a paste-size risk, ~12.5KB
 against the ~4KB soft paste limit, so split into chunks when applying).
+
+## 2026-09-08 — Pass 5, Batch 246
+
+Eight routes: North Face (Burgundy Spire); North Ridge (Burnt Boot Peak); Northwest
+Couloir–North Ridge (Cardinal Peak); East Ridge and NW Chimney (Cascade Peak); Southeast
+Face (Castle Peak, Tatoosh); Southeast Buttress (Cathedral Peak, Pasayten); Chair-Bryant
+Traverse and East Face (Chair Peak).
+
+**Four fixes applied:**
+
+- **wa_cascade_peak_east_ridge**: `approach_variants[0].notes` (the C-J Couloir approach
+  description) ended with "The East Ridge by way of the C-J Couloir was first climbed in
+  1938 and is the most-used line on the peak" — this is **Johannesburg Mountain's**
+  history, not Cascade Peak's. Independent WebSearch (a Mountaineers.org trip report,
+  Wikipedia, and a CascadeClimbers.com TR literally titled "Johannesburg Mountain and
+  Cascade Peak — CJ Couloir to East Ridge and NW Chimney") confirms Johannesburg
+  Mountain — the other peak flanking the shared C-J col — was first climbed July 26,
+  1938 by Calder Bressler, Bill Cox, Ray W. Clough and Tom Myers via its own East
+  Ridge/C-J Couloir line ("Doug's Direct"). This row's own `fa` field already correctly
+  credits Cascade Peak's real FA to Beckey/Schoening/Sharpe, July 23 1950 (independently
+  confirmed via Wikipedia), so the 1938 sentence directly contradicted the row's own
+  verified FA — and matches exactly what the row's own `data_quality.gaps` entry already
+  warned about ("...may still reference the prior conflated Johannesburg Mountain
+  content" from an earlier consolidation pass that merged the East Ridge and NW Chimney
+  into one Cascade Peak entry). Removed the one erroneous sentence; the rest of the
+  approach description is unchanged.
+- **wa_castle_peak_tatoosh_southeast_face** (two fixes on one row):
+  1. The `waypoints` summit entry stored elev/elevFt of 6,640 ft — 200 ft above this
+     row's own `high_point_ft` of 6,440. WebSearch (Wikipedia, "The Castle
+     (Washington)") independently confirms The Castle, Tatoosh Range, Mount Rainier NP,
+     is 6,440 ft, matching `high_point_ft` exactly. Corrected the waypoint's elev/elevFt
+     to 6,440.
+  2. `access._raw` was a scratch/source sub-object describing a **completely different
+     peak**: altitude "8,343 feet" (vs. this row's real 6,440 ft), land manager "USFS
+     Okanogan-Wenatchee National Forest - north Cascades Ranger District" (vs. this
+     row's correct top-level `access.landManager`, "National Park Service (Mount
+     Rainier National Park)"), access routes "Provincial Park (north), PCT (west),
+     Freezeout Creek (east)", and hazards "Glacial terrain and ice sheets" / "North Face
+     granite walls" — none of which describes a small, non-glaciated Tatoosh volcanic
+     scramble peak reached from Reflection Lakes. Reads as leftover enrichment data from
+     an unrelated northern-Cascades/Pasayten-area peak. The row's own correctly
+     populated top-level `access.*` fields (landManager, land_manager, parking_pass,
+     notes, permit) were already right and untouched. Removed the contaminated `_raw`
+     sub-object rather than inventing a replacement.
+- **wa_chair_bryant_traverse**: `disciplines` was `["alpine", "aid"]`. Nothing on the row
+  (`gear`, `pitch_detail` [null], `detailed_rack`, `what_to_bring`, or the row's own
+  `corrections` note, which explains at length that no dedicated source for this exact
+  route name exists) mentions aid climbing anywhere — the route is described throughout
+  as 4th-to-low-5th-class ridge scrambling with a single ~50 ft rappel. No external
+  source exists to adjudicate this either way (same reason the row's numeric grade/FA
+  fields are already left null), so this is an internal-consistency-only fix: removed
+  the unsupported "aid" tag, leaving `["alpine"]` matching the row's own top-level
+  `discipline` field.
+
+**Confirmed clean, no change (4):** wa_burgundy_spire_north_face (FA — Beckey party,
+1953, 3-day aid/fixed-rope ascent later free-climbed at 5.8 through a discovered
+"tunnel" — independently confirmed via SummitPost/LemkeClimbs; 551-point gpx track,
+waypoints, and rappel/pitch detail all internally consistent); wa_burnt_boot_peak_north_ridge
+(FA party and first-ascent account independently confirmed via an AAC Publications
+article titled "Burnt Boot Peak, North Ridge"; peak elevation 6,540 ft and summit
+coordinates confirmed via listsofjohn.com to 4-5 decimal places); wa_cardinal_peak_nw_couloir_north_ridge
+(sparse by design — FA/grade/pitches/gain-loss correctly left null; sole waypoint
+matches approach_logistics trailhead coordinates exactly); wa_cathedral_peak_pasayten_se_buttress
+(peak elevation 8,606 ft and the peak's 1901 overall FA — Carl W. Smith and George O.
+Smith, distinct from this row's own 1973 Southeast Buttress FA — independently confirmed
+via Wikipedia; access._raw content correctly matches this row's own Pasayten/Andrews
+Creek approach, unlike the contaminated Castle Peak block above); wa_chair_peak_east_face
+(FA — Don Blair and Art Winder, September 30 1933 — independently confirmed via
+SummitPost; Chair Peak's 6,238 ft elevation confirmed via Wikipedia, matching this row
+and the sibling Chair-Bryant Traverse's summit waypoint exactly).
+
+SQL: `audits/sql/2026-09-08-batch-246.sql` (validated with `check:sql` — 4 write targets
+across 4 statements, every target id exists, no destructive delete, all four `WHERE`
+guard conditions independently re-verified against the live rows via direct PostgREST
+queries before writing this entry. Flagged as a paste-size risk, ~9.4KB against the
+~4KB soft paste limit, so split into chunks when applying).
