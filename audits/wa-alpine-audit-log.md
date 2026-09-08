@@ -17218,3 +17218,34 @@ Next batch continues alphabetically after `wa_whitehorse_mountain_nw_shoulder` �
 routes remain in pass 4 (`wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
 `wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`), so the next run will
 finish pass 4 and begin pass 5.
+
+## Batch 240 (pass 4, final batch) — 2026-09-08
+
+Last batch of pass 4: `wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
+`wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`. Only 4 routes remained in
+scope, so this batch is smaller than usual — pass 4 is now complete (529 routes audited across
+240 batches). Pass 5 starts fresh on the next run.
+
+4 confirmed fixes, 3 flagged for human review, 0 fully clean.
+
+- **wa_whitehorse_mountain_r1**: `gain_ft`/`loss_ft` corrected 7000→6400, matching the row's own
+  itinerary (which states 6400 twice, independently of the top-level column) and its own waypoint
+  elevation chain. Flagged rather than fixed: a genuine 3-way disagreement about the best season
+  window (Apr–Jun vs Feb–Apr, stated in different fields) and a 3-way self-contradiction about
+  permit/pass requirements (one field names "Mountain Loop Highway," a road this route doesn't
+  use at all — likely contamination from an unrelated nearby route, but the underlying
+  fee/permit question itself is genuinely ambiguous from available sources).
+- **wa_windy_peak_trail**: `approach_logistics.trailhead` was naming a sibling route's trailhead
+  ("Cathedral Driveway") despite this row's own waypoints, name, and approach text all agreeing
+  it starts at Long Swamp Campground — corrected, with trailheadLat/Lng added. Corroborated
+  externally: USFS Trail #342 is 11.5mi, matching this row's own distance chain closely.
+- **wa_windy_peak_iron_gate_trail**: filled a null trailhead elevation (6160ft), confirmed by two
+  independent sources and consistent with the row's own driving directions.
+- **wa_witches_tower_south_face**: `length_m` corrected 488→40 to match the row's own 2-pitch
+  breakdown (25m+15m) — the stored value was off by more than 10x. Flagged separately: this
+  route's beta/descent text substantially duplicate sibling route `wa_witches_tower_southwest_corner`
+  almost verbatim, suggesting content conflation between two of the tower's four catalogued
+  routes — needs a human comparative rewrite, same class as the wa_boston_peak_southwest_face
+  issue flagged in batch 4.
+
+SQL: `audits/sql/2026-09-08-batch-240.sql` (validated against live schema with `check:sql`).
