@@ -17570,3 +17570,84 @@ current 2026 news coverage.
 SQL: `audits/sql/2026-09-08-batch-244.sql` (validated with `check:sql` — 5 write targets across 5
 statements, every target id exists, no destructive delete; flagged as a paste-size risk, ~6.1KB
 against the ~4KB soft paste limit, so split into chunks when applying).
+
+## 2026-09-08 — Pass 5, Batch 245
+
+Eight routes: North Ridge, Northeast Buttress (Bonanza Peak); Northeast Face (Booker Mountain);
+Southeast Face (Boston Peak); Boving-Christensen, Boving Roofs (Prusik Peak / South Early
+Winters Spire); North Face, Southwest Face (Buckner Mountain).
+
+**Six fixes applied:**
+
+- **wa_bonanza_peak_north_ridge**: `beta` described "the Middle Fork Snoqualmie trailhead" —
+  a different mountain range roughly 100+ miles from Bonanza Peak, never mentioned anywhere
+  else on the row, while `approach`, `waypoints`, `bivy`, `access`, and `road` all consistently
+  and in detail describe the real approach via Holden Village (Lake Chelan ferry + shuttle),
+  Railroad Creek Trail, Holden Lake/Pass, and the Mary Green Glacier. Rewrote `beta` using only
+  facts already present on this row (approach text + pitch_detail's glacier/rock-band/summit-
+  ridge breakdown) — a re-home, not new research.
+- **wa_boston_peak_southeast_face**: `waypoints` and `gpx` carried a "Cascade Pass" point
+  (5,392 ft, 48.4683/-121.06) coordinate-for-coordinate identical to the sibling Buckner
+  Mountain routes' own Cascade Pass Trailhead waypoint — a copy-paste collision, not part of
+  this route's own documented Boston Basin approach (confirmed by `approach`,
+  `approach_variants`, and `itinerary`, none of which mention Cascade Pass). Its presence also
+  made the gpx track descend ~2,800 ft to Cascade Pass then jump to a different trailhead
+  before climbing back to the summit. Removed the contaminated waypoint/gpx point from both
+  arrays; the remaining 4-point chain (Trailhead → Boston Basin → Sahale-Boston col → Summit)
+  is this route's actual line.
+- **wa_boving_christensen**: `fa` said "year not given by available sources" while this row's
+  own `overview` states specifically "put up by Paul Boving and Matt Christensen in 1977 using
+  nuts and hexes." WebSearch (Mountain Project, SummitPost, StephAbegg.com, CascadeClimbers.com,
+  AAC Publications) could not independently confirm or refute 1977, so this fix rests on
+  internal corroboration only (overview's gear-specific detail suggests it was drawn from a
+  real source rather than invented) — noted as such rather than claimed externally verified.
+  Also fixed `timing.sectionBreakdown`, whose three `section` labels were shifted one position
+  from their own `fromTo` text (entry 0 "Approach to Gnome Tarn camp" was labelled "Climb";
+  entry 1 "Climb Boving-Christensen" was labelled "Descent") — corrected both; entry 2 was
+  already right.
+- **wa_boving_roofs**: `timing.sectionBreakdown[0].note` and `itinerary.days[0].note` both
+  claimed "most parties rappel the route back to the base rather than continuing to the
+  summit" — directly contradicted by THREE other fields on the same row: `descent_text`
+  ("rappelling back through an overhanging roof feature is awkward and not the documented
+  practice"), `approach_variants[0].baseFinding` ("parties do not reverse this pitch... Most
+  continue up the remaining Southwest Rib pitches to the true summit"), and the structured
+  `rappel_detail` array, whose three rappels are explicitly reached "after continuing up to the
+  true summit." Corrected both contradicting fields to match the corroborated account.
+- **wa_buckner_mountain_north_face**: `season` said "Jul-Sep" while `best_season` ("Late May
+  through early July"), `seasonal_guidance.optimalWindow`, `overview` ("best shape in late
+  spring and early summer"), and `pro_tips` ("Climb in late spring for the most reliable neve")
+  all describe a non-overlapping, earlier window; `watch_out` also flags "thin late-season ice."
+  Corrected `season` to match.
+
+**Flagged for human review, not fixed (1):**
+
+- **wa_buckner_mountain_north_face**: `approach_logistics.trailhead` ("Cascade Pass Trailhead")
+  and the first 3 `waypoints` are coordinate-for-coordinate identical to sibling
+  wa_buckner_mountain_southwest_face's own trailhead/waypoints (which genuinely does approach
+  via Cascade Pass) — but this North Face route's `approach`, `approach_variants[0]` (titled
+  "Boston Basin, Sharkfin Col rappel, and south across the Boston Glacier..."), `itinerary`, and
+  `timing` all instead describe Boston Basin as the route's real approach. Independent WebSearch
+  this session (Mountain Madness, The Mountaineers, a jeffreyjhebert.com trip report) confirms
+  the documented standard approach to Buckner's North Face is via Boston Basin/Sharkfin Col, not
+  Cascade Pass — corroborating that approach_logistics/waypoints[0-2] were likely copied from
+  the Southwest Face sibling. The row also contradicts itself about which approach is primary
+  (one waypoint's directions call Boston Basin "this route's alternate approach"; the
+  approach_variants entry calls the Sahale/Cascade-Pass line "a second way in"). Fixing this
+  properly needs real Boston Basin/Quien Sabe Glacier/Sharkfin Col coordinates from an
+  authoritative source, which this session does not have — a researcher rewrite, not a field
+  patch. Left unfixed; the map pin currently points a climber to Cascade Pass while the written
+  approach describes starting from Boston Basin.
+
+**Confirmed clean, no change (2):** wa_bonanza_peak_northeast_buttress (waypoints/gpx/timing/
+itinerary all internally consistent; FA properly qualified in its own `corrections` field);
+wa_booker_mountain_northeast_face (FA — Dan Davis and John Holland, August 22, 1964 —
+independently confirmed via AAC Publications, matching this row's approach narrative and pitch
+sequence exactly); wa_buckner_mountain_southwest_face (monotonic, geographically coherent
+waypoint chain with increasing distMi; high_point_ft matches the summit waypoint; gain_ft/
+loss_ft self-consistent; timing section labels correctly matched, unlike the Boving-Christensen
+defect above; FA properly hedged).
+
+SQL: `audits/sql/2026-09-08-batch-245.sql` (validated with `check:sql` — 9 write targets across
+9 statements, every target id exists, no destructive delete; every WHERE guard independently
+verified against the live row before writing the file. Flagged as a paste-size risk, ~12.5KB
+against the ~4KB soft paste limit, so split into chunks when applying).
