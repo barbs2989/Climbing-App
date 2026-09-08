@@ -17100,5 +17100,61 @@ Routes: `wa_three_fingers_r2`, `wa_three_fingers_south_peak_lookout`,
   genuinely ambiguous here. No waypoint distMi chain or gpx track to settle
   it either way.
 
-Next batch continues alphabetically after `wa_tower_mountain_southwest_route`
-(pass 4).
+## 2026-09-08 — Pass 4, Batch 238
+
+Eight routes across seven peaks (Trapper Mountain 2, Main Peak/Mount Index 1, Tricouni
+Peak 1, Vesper Peak 1, Burgundy Spire 1, Mount Stuart 1, Vasiliki Ridge 1): North Couloir,
+South Slopes (Trapper Mountain); Traverse of Mount Index; Southwest Slopes / Lucky Pass
+(Tricouni); True Grit (Vesper); Ultramega OK (Burgundy Spire); Upper North Ridge w/Great
+Gendarme (Stuart); Standard Route/Ares Tower (Vasiliki Ridge).
+
+**Confirmed errors, SQL written:**
+- `wa_trapper_mountain_north_couloir` and `wa_trapper_mountain_south_slopes`: both routes
+  on this peak carried an identical six-entry `bivy` array that is wholesale contamination
+  from Mount Buckner/Horseshoe Basin — the entries' own text names "Buckner's north
+  aspect" and "the Horseshoe Basin trail junction," and none of them is Trapper Lake, the
+  camp this peak's own approach text actually describes. Nulled rather than replaced.
+- `wa_trapper_mountain_south_slopes`: `dist_km` halved 30.58→15.29 km. The stored value
+  matched the row's own itinerary's ROUND-TRIP total (19 mi) exactly, where the app
+  expects a one-way distance it doubles for display — the same doubling bug already fixed
+  on the neighboring Three Fingers massif in batches 236/237.
+- `wa_true_grit_2`: `dist_km` halved 13.68→6.84 km, same doubling bug (the stored value
+  matched Vesper's well-documented ~8.8 mi round trip almost exactly, and the halved
+  figure lines up with the route's own waypoint chain to its start). `bivy` array trimmed
+  from 6 entries to 2: four camps' own note text says outright they serve Sloan Peak,
+  Gothic Basin, or the Monte Cristo group instead (one reads "climbers use it ... rather
+  than for Vesper or Sloan"), leaving only the two entries that name Vesper/Sunrise Mine.
+- `wa_ultramega_ok` (Burgundy Spire): `high_point_ft` and its own summit waypoint
+  corrected 8483→8492 ft, matching listsofjohn.com's survey-grade entry and general web
+  consensus (no source found supports 8483). `dist_km` halved 10.62→5.31 km, same doubling
+  bug — the halved value matches the route's own one-way waypoint distance to the summit
+  exactly (3.3 mi).
+- `wa_vasiliki_ridge_standard`: `dist_km` halved 11.27→5.64 km, same doubling bug; shares
+  its trailhead with `wa_ultramega_ok` above and the halved value matches its own
+  waypoint's one-way distance to the summit (3.5 mi).
+- `wa_upper_north_ridge_w_great_gendarme` (Mount Stuart): `fa` field corrected. Two
+  independent sources agree the 1956 Rupley/Gordon ascent of the North Ridge BYPASSED the
+  Great Gendarme via a rappel around its base, and that Wickwire/Stanley made the Gendarme's
+  first ascent in 1964. The stored field had this backwards, crediting the Gendarme's FA to
+  the party that avoided it.
+
+**Clean:** `wa_tricouni_peak_southwest_slopes` — peak identity, FA (Elerding/Elerding/
+Carlson, 1951), and `dist_km` all independently corroborated.
+
+**Flagged for human review, no SQL written:**
+- `wa_traverse_of_mount_index`: the "North Peak" waypoint (first summit climbed on the
+  traverse) carries coordinates identical to five decimal places to the AREA record's own
+  Main Peak coordinate (and to Wikipedia's Main Peak coordinate) — Main Peak is the
+  southernmost and LAST summit on this traverse, not the first, so this looks like a
+  copy-paste error, but North Peak's own correct coordinates could not be confirmed from an
+  accessible source. Separately, `dist_km` (5.8 km / 3.6 mi) is smaller than the 4.1 mi the
+  route's own waypoints already give for reaching Lake Serene alone, before any of the
+  three-summit traverse — internally inconsistent under either a one-way or round-trip
+  reading, with no confirmed correct total available for this different-line-descent route.
+- `wa_upper_north_ridge_w_great_gendarme`: `dist_km` (6.4 km / 4.0 mi) is smaller than the
+  6.5 mi the route's own waypoints already give for reaching just the Sherpa Glacier notch,
+  before the summit push — same kind of internal inconsistency, no confirmed one-way total
+  available for this specific long approach variant.
+
+Next batch continues alphabetically after `wa_vasiliki_ridge_standard` (pass 4, ~11
+routes remain before this pass completes and pass 5 begins).
