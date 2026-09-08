@@ -17394,3 +17394,95 @@ actually describes.
 SQL: `audits/sql/2026-09-08-batch-242.sql` (validated with `check:sql` — every target id
 exists, no destructive delete; flagged as a paste-size risk for the SQL Editor, ~10.2KB
 against the ~4KB soft paste limit, so split into chunks when applying).
+
+## Batch 243 — 2026-09-08 (Pass 5, batch 22)
+
+8 routes across 6 peaks: Austera Peak (3 routes: standard, Chockstone, Southwest Ridge/McAllister
+Glacier), Bacon Peak (Diobsud Creek/Green Lake Glacier), Baring Mountain (2 routes: Northwest
+Ridge, North Face), Bear Mountain/Chilliwack Range (North Buttress), Prusik Peak (Beckey-Davis).
+This batch overlaps heavily with **batch 54** (pass 2, 2026-08-06), which researched these same
+seven peaks in depth via seven parallel agents. Checking the current live DB against batch 54's
+proposed fixes found several **still unapplied** — presumably the earlier SQL was never run — so
+those are re-verified against fresh sources and re-proposed here rather than assumed stale.
+Baring Mountain is new to this pass (not covered by batch 54).
+
+**Confirmed errors → fixes in `sql/2026-09-08-batch-243.sql`:**
+- **wa_bacon_peak** (area row): `elevation_ft` (7067) and `prominence_ft` (2512) disagree with
+  Wikipedia/PeakVisor, which converge on 7,070 ft / 2,505 ft — the same figures batch 54 already
+  found on 2026-08-06, re-confirmed independently here. `elevation_ft` was also self-inconsistent
+  with the route's own `high_point_ft`/summit waypoint (already 7070). Fixed.
+- **wa_bacon_peak_diobsud**: waypoints[0] ("Watson Lakes Trailhead") carried `elev`=4300 and
+  `elevFt`=800 for the same point. Confirmed via web search that the real trailhead sits at
+  ~4,300 ft (matching this row's own `elev` and its approach text's "~4,360 ft"); `elevFt` was
+  the stale/wrong field, corrected to match — same pattern as batch 242's Anderson's Thumb fix.
+- **wa_bacon_peak_diobsud**: `dist_km` (25.75) converts to almost exactly 16.0 miles, and this
+  row's own `itinerary.totalNote` independently states "roughly 16 miles round trip" — the
+  well-documented round-trip-stored-as-one-way `dist_km` bug. The row's own waypoint chain
+  corroborates the correct one-way figure closely (last pre-summit waypoint at cumulative
+  distMi=8.0 mi = 12.87 km). Fixed to 12.87.
+- **wa_bacon_peak_diobsud**: `access` had no `closures` key and `access_checked_at` was null.
+  Web search against USFS-adjacent sources confirms FSR 1107 (Anderson-Watson Road) washed out
+  at approximately MP 3.8-3.86 after a Dec 11, 2025 atmospheric-river event and remained closed
+  as of this check, blocking the Watson Lakes Trailhead this route's entire approach depends on
+  — a safety-relevant access fact the row said nothing about. Added with a check-current-status
+  hedge (no assumed reopening date) and `access_checked_at` stamped to today.
+- **wa_austera_peak_southwest_ridge**: `data_quality.gaps` still claimed "No public GPS track
+  found for this route" despite this row's own `gpx` field holding a populated 325-point track —
+  the exact stale claim batch 54 flagged on 2026-08-06, still present in the live row (proposed
+  removal apparently never applied). Removed.
+- **wa_beckey_davis**: `length_m` (198, ~650 ft) contradicted this row's own `rope_note` ("6
+  pitches, 700ft..."). Same finding batch 54 made, still unapplied. Re-verified independently: a
+  StephAbegg trip-report title for this exact route reads "Prusik Peak, Beckey-Davis (5.9, 700',
+  6p)." Fixed to 213 m (700 ft).
+- **wa_beckey_davis**: `access._raw.group_size_limits` said "Maximum party 12 people,"
+  contradicting this same row's own `access.rules`/`group_limit` (8). Same finding batch 54
+  made, still unapplied. Re-verified independently via Recreation.gov: the Enchantment Permit
+  Area's maximum group size is 8. Fixed.
+- **wa_beckey_davis**: waypoints[0] is correctly named/located as "Stuart Lake Trailhead" (its
+  coordinates and this row's own `approach`/`approach_logistics` text agree it's the standard
+  access), but its `note` field described it backwards — "Alternate access only, used when the
+  standard Stuart Lake Trailhead / Aasgard Pass approach is closed." A point cannot both BE
+  Stuart Lake Trailhead and be the alternate used when Stuart Lake Trailhead is closed; this
+  reads like a leftover from an earlier fix that corrected the name/coordinates (likely batch
+  54's "relabeled" waypoint fix) without updating the note text. Rewritten to state plainly that
+  this is the standard trailhead, keeping the real information about the longer Snow Lakes/Lake
+  Viviane alternate used during closures (already documented in this row's own `approach` field).
+
+**Confirmed clean** (checked against external sources, no error found): Austera Peak's
+elevation/prominence (8,339 ft / 414 ft) and the 1965 Firey/Meulemans/Hovey FA both matched
+exactly; Bear Mountain's elevation (7,931 ft) and parent-peak placement (Mount Redoubt) both
+matched exactly; Baring Mountain's elevation (6,127 ft, confirmed against the more commonly
+rounded "6,125 ft" figure some trip reports use, and against an older "6,200 ft" figure in a
+vintage AAC Journal article, neither of which displaced the modern NAVD88 6,127 ft already on
+file); wa_baring_mountain_r1's FA ("Don Gordon (Claunch) and Ed Cooper, July 9-13, 1960, with
+Fred Beckey on the final summit team; built on attempts dating to Pete Schoening and Richard
+Berge in 1951") matched a detailed AAC-sourced history across three independent searches,
+including the specific 1951 Schoening/Berge attempt and the 1952 Berge fatality already described
+separately in this row's own `partner_requirements.experienceLevel` — both internally-consistent
+and externally corroborated; wa_baring_mountain_northwest_ridge's waypoints/gain_ft/dist_km are
+all internally consistent with each other (trailhead 2,280 ft → summit 6,127 ft nets exactly to
+the stored 3,847 ft gain; stored dist_km of 5.6 matches the waypoint chain's one-way 3.5 mi
+almost exactly) and its Class 2-3 character matches external route descriptions; the route
+carries no numeric grade on file, which was left alone (sources disagree between Class 2 and
+Class 3 for the summit scramble section — not a clear enough external consensus to assign one).
+
+**Flagged, not fixed** (re-affirming batch 54's still-outstanding items rather than re-deriving):
+Austera Peak (standard) and Austera Peak Southwest Ridge continue to share byte-identical
+`gain_ft`/`loss_ft`/`dist_km` (1280/592/4.5) despite different waypoint chains and different
+routes up the peak. Batch 54's hand-check found this plausibly matches a "high-camp-to-summit
+segment only" convention for at least one of the two routes (a 2.8 mi camp-to-summit span
+converts to ~4.5 km almost exactly), which argues against simply overwriting both with a
+trailhead-to-summit floor — but the two routes sharing the value byte-for-byte remains odd enough
+that a fresh independent-derivation attempt here reached a different, contradicting floor
+(~6,200-6,300 ft gain from the trailhead-to-summit net rise). Given the ambiguity and that a
+careful prior pass already chose to flag rather than guess, left as an open item for human
+review rather than re-fixed on a differing theory. Bear Mountain North Buttress's `gain_ft`/
+`loss_ft` (5950/5950) still doesn't reconcile against its own `itinerary` day-by-day sums (7300
+gain / 6250 loss), and the `waypoints` distMi chain (cumulative one-way 23 mi to the summit)
+still contradicts the itinerary's day-by-day total (~21 mi round trip, implying ~10.5 mi
+one-way) — batch 54 already flagged this as too structurally messy for a single-field fix; still
+true, still open.
+
+SQL: `audits/sql/2026-09-08-batch-243.sql` (validated with `check:sql` — every target id exists,
+no destructive delete; flagged as a paste-size risk, ~8.3KB against the ~4KB soft paste limit, so
+split into chunks when applying).
