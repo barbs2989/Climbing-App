@@ -17023,3 +17023,82 @@ Checked all eight routes' top-level `permit` field against `access.permit`
 for self-contradiction — no disagreements found this batch.
 
 Next batch continues alphabetically after `wa_three_fingers_r1` (pass 4).
+
+## Batch 237 (2026-09-08, pass 4)
+
+Routes: `wa_three_fingers_r2`, `wa_three_fingers_south_peak_lookout`,
+`wa_three_queens_middle_peak`, `wa_three_queens_west_peak`,
+`wa_tomyhoi_peak_southeast_ridge`, `wa_tooth_and_claw`,
+`wa_tooth_chair_traverse`, `wa_tower_mountain_southwest_route`.
+
+**Confirmed errors, SQL written** (`audits/sql/2026-09-08-batch-237.sql`):
+- `wa_three_fingers_r2`: `dist_km` stored 23.5 (would display as a ~29 mi
+  round trip) against the row's own itinerary stating "roughly 14.5 mi"
+  round trip overall — halved to 11.7. Same doubling-bug shape already fixed
+  on this massif's North Peak sibling (`wa_three_fingers_r1`, batch 236).
+  Also rewrote a stale `corrections` note recommending the area's
+  elevationFt be set to the South Peak/lookout height (6,854 ft); the
+  `wa_three_fingers` area row has since been populated (elevation_ft = 6865)
+  with a blurb clarifying the true high point is the North Peak (~6,870 ft)
+  — the note's own recommendation is superseded.
+- `wa_three_fingers_south_peak_lookout`: trailhead waypoint elevation
+  (2650) contradicted the identical coordinate on both sibling routes on
+  this massif (3020 each) — confirmed via web search against the USFS trail
+  page for this exact trail (#641), which states "trailhead elevation is
+  3,020 feet." Corrected. `gain_ft` (5750) contradicted the row's own
+  `loss_ft` (4200), its own itinerary day-sum (also 4200), and the same USFS
+  page's "cumulative vertical gain of 4,000+ feet" — corrected to 4200.
+  `dist_km` (24.9, ~15.5 mi one-way) was roughly double the row's own gpx
+  track length, measured directly at 11.35 km one-way with the track's
+  endpoint within 18 m of the row's own summit coordinate — corrected to
+  11.35. Third instance of the same dist_km-doubling defect on this one
+  massif across two consecutive batches.
+- `wa_tooth_and_claw`: `high_point_ft` was null; filled to 7560 from the
+  row's own agreeing waypoint (Topout, elev 7560) and `access._raw.elevation`
+  ("7,560 feet") — confirmed via Wikipedia, which gives Lexington Tower's
+  elevation as 7,560 ft.
+- `wa_tower_mountain_southwest_route`: `data_quality.gaps` claimed "No
+  public GPS track found for this route as of this research pass," but the
+  row carries a populated, detailed 1,112-point `gpx` track. Checked every
+  one of the route's own named waypoints against that track directly — all
+  fall within 2-100 m of it (Cutthroat Pass, Granite Pass, the Snowy Lakes
+  spur/camp, the headwall cave-ledge bypass, the summit gully, and the
+  summit itself) — i.e. it is a real track of this route. Removed the stale
+  gap. Also filled `loss_ft` (null) to match `gain_ft` (4400): the row's own
+  descent_text says this route is a walk-off that "revers[es] the ascent
+  line," so gain and loss should match on a route that is not a loop.
+
+**Clean** (extensively cross-checked, no discrepancies found):
+- `wa_three_queens_west_peak`: elevation, gain/loss, and dist_km all
+  self-consistent, and the "16 miles round trip" figure is independently
+  repeated four times across separate fields and matches dist_km*2 to
+  within 0.1 mi.
+- `wa_tomyhoi_peak_southeast_ridge`: elevation, dist_km (confirmed against
+  both the row's own waypoint distMi chain and its gpx track), and gain/loss
+  all agree with the row's own itinerary and approach text.
+- `wa_tooth_chair_traverse`: all three named elevations on this ridge
+  traverse (The Tooth 5,606 ft; Bryant Peak 5,801 ft; Chair Peak 6,238 ft)
+  independently confirmed via web search (Wikipedia).
+
+**Flagged for human review, no SQL written:**
+- `wa_three_queens_middle_peak`: `dist_km` (4.3 km, one-way) implies a ~5.3
+  mi round trip, but the row's own itinerary text separately states
+  "roughly 10 miles round trip" for the same day. Unlike every other
+  dist_km discrepancy fixed this batch, this one points the WRONG direction
+  to be the usual doubling bug (dist_km reads too low relative to the
+  itinerary, not too high), and the row's own approach-mileage arithmetic
+  (~2.7 mi hiking to the base of the talus, plus more terrain above) is
+  roughly consistent with the stored value, not the itinerary's "10 miles."
+  No waypoint distMi chain or gpx track exists to settle which is right.
+- `wa_tooth_and_claw`: `dist_km` (10.14 km, ~6.3 mi one-way) implies a
+  ~12.6 mi round trip against an approach described as "30-45 minutes
+  total from the car to the base" (straight-line trailhead-to-tower
+  distance measured at only ~0.65 mi). However this route offers a walk-off
+  descent via a *different* trail system ending at the Blue Lake trailhead,
+  ~1.7 road-miles from the approach's SR-20 pullout, so a car-to-car day
+  taking that option is not a simple out-and-back and "one-way distance" is
+  genuinely ambiguous here. No waypoint distMi chain or gpx track to settle
+  it either way.
+
+Next batch continues alphabetically after `wa_tower_mountain_southwest_route`
+(pass 4).

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_three_fingers_r1",
+  "last_processed_id": "wa_tower_mountain_southwest_route",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4853,6 +4853,26 @@
       "flagged_for_human_review": 2,
       "clean": 1,
       "sql_file": "audits/sql/2026-09-08-batch-236.sql"
+    },
+    {
+      "batch_number": 237,
+      "date": "2026-09-08",
+      "pass": 4,
+      "route_ids": [
+        "wa_three_fingers_r2",
+        "wa_three_fingers_south_peak_lookout",
+        "wa_three_queens_middle_peak",
+        "wa_three_queens_west_peak",
+        "wa_tomyhoi_peak_southeast_ridge",
+        "wa_tooth_and_claw",
+        "wa_tooth_chair_traverse",
+        "wa_tower_mountain_southwest_route"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 2,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-08-batch-237.sql",
+      "note": "wa_three_fingers_r2: dist_km halved to match itinerary's stated round-trip mileage (same doubling bug as sibling wa_three_fingers_r1 in batch 236); stale corrections note rewritten now that the area's own elevation/blurb resolved differently. wa_three_fingers_south_peak_lookout: trailhead waypoint elevation corrected to match two sibling routes at the identical coordinate plus USFS trail page (3020, not 2650); gain_ft corrected to match loss_ft/itinerary/USFS (4200, not 5750); dist_km corrected to match the row's own gpx track length (11.35, not 24.9) -- same doubling pattern a third time on this massif. wa_tooth_and_claw: high_point_ft filled from the row's own agreeing waypoint + access._raw fields, confirmed via Wikipedia (7560 ft). wa_tower_mountain_southwest_route: stale 'no GPS track found' data_quality gap removed (the row has a 1,112-point track matching every one of its own waypoints); loss_ft filled to match gain_ft for a route whose own descent_text says it reverses the ascent. wa_three_queens_west_peak, wa_tomyhoi_peak_southeast_ridge, wa_tooth_chair_traverse: clean, extensively cross-checked (all cited elevations independently confirmed externally). wa_three_queens_middle_peak and wa_tooth_and_claw's dist_km each flagged for human review rather than fixed -- internal signals conflict and neither route has a waypoint distMi chain or gpx track precise enough to settle which figure is wrong."
     }
   ]
 }
