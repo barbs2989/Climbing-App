@@ -16903,3 +16903,123 @@ self-contradiction (the class that caught the Brothers Traverse fix in batch 234
 disagreements found this batch.
 
 Next batch continues alphabetically after `wa_the_pyramid_picket_south_route` (pass 4).
+
+## Batch 236 (2026-09-08, pass 4)
+
+Routes: `wa_the_rake_traverse_route`, `wa_the_roof`, `wa_the_tooth_fairy`,
+`wa_the_tooth_r1`, `wa_the_tooth_south_face`, `wa_the_triad_east_peak`,
+`wa_the_west_face`, `wa_three_fingers_r1`.
+
+**Confirmed errors, fixed** (see `audits/sql/2026-09-08-batch-236.sql`):
+
+- `wa_the_rake_traverse_route` (The Rake, Southern Pickets): `high_point_ft`
+  stored 7869 against the row's own waypoint summit elevation (7840) and three
+  independent external sources (Peakbagger, StephAbegg, and a Wikipedia-style
+  peak-list synthesis) all agreeing on 7,840 ft — none found supporting 7869.
+  Also `dist_km` stored as 25.7 (a round-trip figure, per the row's own
+  itinerary.totalNote stating "roughly 16 miles ... round trip" and the
+  summit waypoint's own one-way distMi of 8.07 mi), which the app would have
+  doubled again to a false 31.9 mi round trip; corrected to the one-way 13.0
+  km. Also `grade_num` stored 7 for "IV, 5.9" (yds) against ~30 sibling WA
+  routes carrying rock_grade 5.9 that all store grade_num 9, including
+  identically-shaped "<grade>, 5.9" strings.
+- `wa_the_roof` (Unicorn Peak, Tatoosh Range): `gain_ft`/`loss_ft` both
+  stored 2397 — below the row's own trailhead (4400 ft) to summit (6971 ft)
+  net rise of 2571 ft, an impossible-gain violation. The stored figure is
+  suspiciously exactly 6971 minus 4574, the trailhead elevation of a
+  *different* sibling route on the same peak (`wa_unicorn_peak_r1`), not this
+  route's own 4400 ft trailhead. External search corroborates a fuller
+  standard-route gain figure of ~2,667 ft, well above the corrected 2571.
+  Corrected both fields to the row's own net rise.
+- `wa_the_tooth_r1` (Northeast Slabs, The Tooth): the Trailhead waypoint's own
+  `note` still read "...for NE Face/Catscratch Couloir" — a name this row's
+  own `beta`, `overview`, and `data_quality.gaps` all explicitly say is
+  uncorroborated and has already been corrected to "Northeast Slabs"
+  everywhere else (including the top-level `name` field). Updated the one
+  remaining stale reference. Also `dist_km` (10.46, a round-trip figure per
+  the row's own itinerary stating "roughly ... 6.5 miles" round trip)
+  corrected to the one-way 5.23 km, same pattern as the Rake fix above. Also
+  `gain_ft`/`loss_ft` (2500/2500) corrected to 3000/3000 to match the row's
+  own itinerary.days[0] figures and totalNote.
+- `wa_the_tooth_south_face` (South Face, The Tooth): `loss_ft` (2500) against
+  `gain_ft` (2700) — an asymmetric pair for a there-and-back route whose own
+  descent_text says it reverses the same up-and-down approach terrain.
+  Corrected both to 2800, matching the row's own itinerary.days[0]
+  gainFt/lossFt and its totalNote ("about 6 miles and 2,800 ft of gain").
+- `wa_the_triad_east_peak`: `gain_ft` stored 3920 — exactly the bare
+  trailhead-to-summit net rise, disagreeing with the row's own `loss_ft`
+  (5410) and its own itinerary.days[0], which independently states
+  `gainFt: 5410` for the same round-trip day (the approach text describes
+  real up-and-down terrain crossing the Triad Glacier past three summits,
+  consistent with the higher figure). Corrected gain_ft to 5410.
+- `wa_the_west_face` (North Early Winters Spire): the Trailhead waypoint's
+  `elev` read 5200 against this row's own `approach` text and
+  `approach_logistics.trailheadDirection`, both independently stating "5,400
+  ft" for the Blue Lake Trailhead — confirmed externally (WTA, The
+  Mountaineers). Corrected the waypoint elevation to 5400.
+- `wa_three_fingers_r1` (Three Fingers, North Peak): `dist_km` stored 22.53
+  (14.0 mi one-way per the app's convention, i.e. a 28 mi round trip display)
+  against the row's own waypoint chain, whose summit carries a cumulative
+  one-way distMi of 7.3 mi — doubled, 14.6 mi, far closer to the row's own
+  itinerary figures (18.5 mi summed across days, "roughly 14.5 mi" in
+  totalNote) than 28 mi. Corrected to the one-way 11.75 km.
+
+**Verified clean via external corroboration:**
+- `wa_the_rake_traverse_route`: FA (Wayne Wallace, Colin Haley, Mark Bunker,
+  July 26 2003, during the "Walking the Fence" Southern Pickets enchainment)
+  confirmed against web search results referencing the AAC publication.
+  Permit fee structure ($10/person + $6 nonrefundable, replacing a flat
+  ~$20-26 fee since March 2024) confirmed verbatim against nps.gov's own news
+  release.
+- `wa_the_roof`: Unicorn Peak elevation (6,971 ft, highest in the Tatoosh
+  Range) confirmed against Wikipedia.
+- `wa_the_tooth_fairy`: FA (Jim Nelson & David Whitelaw, 2019, seven-pitch
+  bolted line) and the six-pitch-plus-scramble pitch count confirmed against
+  multiple sources (Cascade Climbers trip report, BC Adventure Guides). The
+  Tooth's own summit elevation (5,606 ft) confirmed against Wikipedia; its
+  own dist_km/gain/loss were already internally consistent with its waypoint
+  chain and needed no correction.
+- `wa_the_tooth_south_face`: FA (Lloyd Anderson & Herman Wunderling, 1928)
+  and the route's status as one of Washington's most popular alpine rock
+  climbs confirmed via web search (Mountaineers, Mountain Project title
+  match). High point (5,606 ft) and grade (5.4, grade_num 4) both already
+  correct.
+- `wa_the_triad_east_peak`: East Peak elevation (7,520+ ft) confirmed against
+  a peak-list search result distinguishing all three Triad summits.
+- `wa_the_west_face`: aid FA (Fred Beckey & Dave Beckstad/Beckstead, June 17
+  1965) confirmed via web search. Blue Lake Trailhead elevation (5,400 ft)
+  confirmed against WTA/Mountaineers, corroborating the waypoint fix above.
+- `wa_three_fingers_r1`: North Peak elevation (6,870 ft) and the Tupso Pass
+  trailhead elevation (3,020 ft) both confirmed against web search results
+  (a Gaia GPS trail-info aggregation citing the same trail #641 figures used
+  in this row's own approach text).
+
+**Flagged for human review, no action taken:**
+- `wa_the_tooth_r1`: FA is stored as "Jim Nelson & Paul Stevenson, 1982" for
+  the Northeast Slabs line. Could not corroborate this specific pairing/date
+  against any source found (search results for the route's history discussed
+  Jim Nelson's guidebook coverage but not first-ascent specifics). The row's
+  own `data_quality.gaps` already flags "First-ascent history unconfirmed,"
+  so this is consistent with documented uncertainty rather than a
+  contradiction — left as-is rather than guessed at.
+- `wa_the_west_face`: the FFA is stored as "Steve Risse and Dave Tower,
+  1985." Search results surfaced a different, seemingly unrelated route on
+  the same peak (Labor Pains, 5.11a, FA Steve Risse & Donna McBain,
+  September 1988) and an AI-synthesized answer that appeared to conflate the
+  two. Could not obtain a clean, directly-sourced confirmation or refutation
+  for the West Face's specific FFA pairing/date (guidebook-hosting sites for
+  this route were blocked by network egress). Left as-is; worth a follow-up
+  check against Beckey's Cascade Alpine Guide or a source not blocked here.
+
+**Noted for a future batch (not in this batch's scope, no SQL written):**
+`wa_the_roof`'s exact defect (gain_ft/loss_ft = 2397, computed against a
+sibling route's trailhead elevation rather than its own) is also present,
+byte-for-byte identical, on two Unicorn Peak siblings not in this batch:
+`wa_open_book_2` and `wa_classic_route_2` (both also 4400 ft trailhead / 6971
+ft summit / stored gain_ft=loss_ft=2397). Worth fixing to 2571 when either
+comes up in a future pass, or as a standalone follow-up.
+
+Checked all eight routes' top-level `permit` field against `access.permit`
+for self-contradiction — no disagreements found this batch.
+
+Next batch continues alphabetically after `wa_three_fingers_r1` (pass 4).
