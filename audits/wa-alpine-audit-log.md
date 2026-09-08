@@ -17727,3 +17727,88 @@ across 4 statements, every target id exists, no destructive delete, all four `WH
 guard conditions independently re-verified against the live rows via direct PostgREST
 queries before writing this entry. Flagged as a paste-size risk, ~9.4KB against the
 ~4KB soft paste limit, so split into chunks when applying).
+
+---
+
+## 2026-09-08 — Pass 5, Batch 247
+
+Ten routes across seven peaks: Chair Peak (North Face, Northeast Buttress, Northwest
+Ridge), Chalangin Peak (Little Giant Pass–Luahna Col), Chianti Spire (East Face / Rebel
+Yell), Chimney Rock (East Face Direct, West Face/South Summit), Chiwawa Mountain
+(Southwest Route), North Early Winters Spire (Chockstone Route), Clark Mountain (West
+Ridge/Walrus Glacier).
+
+**Confirmed errors → fixes in `sql/2026-09-08-batch-247.sql`:**
+- Chianti Spire East Face: `high_point_ft` stored 8,400 ft, contradicting this row's own
+  "Chianti Spire Summit" waypoint (elev 8,420) — independently confirmed via
+  listsofjohn.com's precise peak-list entry (8,420 ft), matching the row's own waypoint.
+  Fixed to 8,420.
+- Chianti Spire East Face: `dist_km` stored 12.55 km — exactly the round-trip mileage
+  (2 × 3.9 mi, per the route's own itinerary day breakdown) doubled again by the app for
+  display, the same "round-trip figure stored where one-way is expected" bug already
+  found on this trailhead's neighbor routes (Ultramega OK, Ares Tower) in a prior batch.
+  Fixed to the one-way distance, 6.28 km.
+- Chimney Rock West Face: `dist_km` stored 29.77 km — the same doubling bug, confirmed
+  by the route's own 3-day itinerary (6.5 + 5 + 7 mi = 18.5 mi round trip = 29.77 km) and
+  corroborated by the summit waypoint's own one-way distMi (9.3 mi ≈ half). Fixed to
+  14.89 km.
+- North Early Winters Spire, Chockstone Route: `road.seasonalGate` stated SR-20 closed
+  "Dec 12, 2025" for the 2025-26 season — independently confirmed via WSDOT's own press
+  release ("SR 20 North Cascades Highway closes for season Thursday, Dec. 4 at 6 p.m.")
+  that the real closure date was Dec 4, not Dec 12 (the stated June 14, 2026 reopening
+  date was already correct). Fixed the closure start date only.
+- Chiwawa Mountain Southwest Route: `gain_ft`/`loss_ft` stored 5,659 ft each (simple net
+  trailhead-to-summit elevation change), contradicting the route's own itinerary day
+  breakdown (7,200 ft cumulative) and its own `totalNote` ("roughly 7,300 ft cumulative
+  gain/loss") — both of which agree with each other and disagree with the stored value.
+  Fixed to 7,200.
+- Chiwawa Mountain Southwest Route: `dist_km` stored 30.58 km — the same doubling bug,
+  confirmed by the route's own `totalNote` ("~19-20 miles round trip") and day-by-day
+  breakdown (7+6+7=20 mi). Coincidentally the identical stored value (30.58) already
+  found and fixed the same way on wa_trapper_mountain_south_slopes in a prior batch.
+  Fixed to half the stored value, 15.29 km.
+- Chair Peak Northwest Ridge: `fa` was "unknown." Independently confirmed via two
+  sources (Mountaineers.org, a Beckey Cascade Alpine Guide-sourced summary): the
+  Northwest Ridge's first winter ascent was Kit Lewis and Rob Harris, 1975 — the same
+  core pairing this row's sibling North Face route currently credits (with two
+  additional names) for a January 1975 North Face first ascent instead, though neither
+  source ties Lewis/Harris's winter FA to the North Face. Filled this row's fa with the
+  well-corroborated fact (see flag below re: the sibling route).
+- Clark Mountain West Ridge/Walrus Glacier: `loss_ft` was NULL while `gain_ft` (6,500 ft)
+  was populated, for a round trip returning to the same trailhead — filled from the
+  row's own gain_ft, matching this catalog's consistent round-trip convention.
+- Clark Mountain West Ridge/Walrus Glacier: `itinerary.totalNote`'s closing tally read
+  "roughly 26 miles and 7,300 ft gained/lost total," contradicting the SAME field's own
+  day-by-day breakdown two sentences earlier (~8+5+8 ≈ 21 mi, not 26) and the itinerary's
+  `days` array (7.5+5+7.5=20 mi; day gainFt/lossFt sum to 6,100 ft, close to the row's
+  own persisted 6,500). Self-contained arithmetic error, verifiable from the row's own
+  data with no external source needed. Corrected the tally to 20 miles / 6,500 ft.
+
+**Flagged for human review (not auto-fixed):**
+- Chair Peak North Face: `fa` credits "Kit Lewis, Charlie Hampson, Rob Harris, Greg
+  Jacobson (January 1975)." Both sources found for the 1975 Lewis/Harris winter first
+  ascent tie it specifically to the Northwest Ridge (now recorded there, above), and
+  neither confirms a distinct North Face first ascent by this four-person party. It's
+  plausible a larger party split into two rope teams and climbed both routes the same
+  winter (which would make this row correct as written), but nothing confirms or
+  contradicts it directly — left unchanged.
+- Chimney Rock East Face Direct: `fa` ("Cornelius Molenaar, Elvis R. Johnson, 1954") for
+  this specific technical variant could be neither confirmed nor contradicted — Wikipedia
+  documents only the peak's overall 1930 first ascent via a different line (already
+  correctly cited, as a contrast, on the sibling West Face route). Left as-is.
+
+**Confirmed clean:** Chair Peak North Face and Northeast Buttress (peak elevation 6,238
+ft matches all three Chair Peak routes and both trailhead/summit waypoint pairs, per
+Wikipedia); Chalangin Peak — Little Giant Pass/Luahna Col (peak elevation 8,371 ft, and
+the Butterfly Butte camp/Napeequa Valley approach figures, all independently confirmed
+and consistent with the row's own approach text); Chimney Rock East Face Direct (main
+summit elevation 7,727 ft matches high_point_ft and waypoint); North Early Winters Spire
+elevation (7,760 ft, confirmed via SummitPost/Mountain Project) and Chockstone Route's
+FA (Wesley Grande, Pete Schoening, Dick Widrig, May 28 1950 — independently confirmed);
+Clark Mountain's elevation (8,602 ft) and Walrus/Clark Glacier identity, confirmed via
+Wikipedia.
+
+SQL: `audits/sql/2026-09-08-batch-247.sql` (validated with `check:sql` — 9 write targets
+across 9 statements, every target id exists, no destructive delete. Flagged as a
+paste-size risk, ~10.7KB against the ~4KB soft paste limit — split into chunks when
+applying).
