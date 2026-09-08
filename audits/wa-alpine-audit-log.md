@@ -17156,5 +17156,65 @@ Carlson, 1951), and `dist_km` all independently corroborated.
   before the summit push — same kind of internal inconsistency, no confirmed one-way total
   available for this specific long approach variant.
 
-Next batch continues alphabetically after `wa_vasiliki_ridge_standard` (pass 4, ~11
-routes remain before this pass completes and pass 5 begins).
+## Batch 239 — 2026-09-08 (pass 4)
+
+Eight routes across eight peaks (Vesper Peak, Warrior Peak, Mount Washington/Ellinor,
+West Craggy Peak, North Peak/Gunsight Range, West Twin Needle, Whatcom Peak, Whitehorse
+Mountain): North Face/Ragged Edge (Vesper); Southeast Peak Standard (Warrior); Washington
+Ellinor Traverse; Standard Route/Copper Glance Basin (West Craggy); West Face (North
+Peak); South Route (West Twin Needle); Southwest Route/Whatcom Glacier (Whatcom);
+Northwest Shoulder (Whitehorse).
+
+**Confirmed errors, SQL written:**
+- `wa_vesper_peak_north_face_ragged_edge`: `dist_km` halved 13.7→6.85 km. Shares Vesper's
+  Sunrise Mine Trailhead with `wa_true_grit_2` (batch 238) and carried essentially the
+  same stored value that route's fix identified as a round-trip figure sitting in the
+  one-way slot the app doubles for display — corroborated here by the route's own
+  waypoint chain to Headlee Pass and the ~4.4 mi one-way figure already established for
+  this trailhead.
+- `wa_warrior_peak_standard`: `dist_km` corrected 32.99→16.9 km. The route's own waypoint
+  chain gives a one-way summit distance of 10.5 mi, matching its own approach text's
+  stated mileage to the cirque; the stored value was almost exactly double this — the
+  same doubling bug, now confirmed on a different massif (Olympics) than where it was
+  mostly found before (Mountain Loop Highway/SR-20 corridor).
+- `wa_west_face_2` (North Peak, confirmed as "North Gunsight" via Mountain Project's "The
+  Gunsight Range" area page and a matching stephabegg.com trip report for the identical
+  grade/pitch count): `approach` text corrected twice. Removed a self-flagged note
+  claiming the area's stored coordinates are a "geocoding error" placing it at Washington
+  Pass — verified false: the coordinates (48.3068, -120.994) match Gunsight Peak's
+  published location (48.30667N, 120.99389W) to four decimal places, ~34 km from
+  Washington Pass and already correctly filed under Glacier Peak Wilderness in the area
+  hierarchy. Also fixed "South Peak's granite faces" to "North Peak's," which contradicted
+  the route's own name, area, and overview text.
+- `wa_whitehorse_mountain_nw_shoulder`: filled a null `elev` on the Niederprum Trailhead
+  waypoint (918 ft) directly from the route's own approach text.
+
+**Clean:** `wa_west_craggy_peak_standard_route` (elevation 8,372 ft and `dist_km`
+independently corroborated) and `wa_west_twin_needle_south_route` (FA — Degenhardt/
+Martin/Strandberg, Aug 17 1932 — elevation, and `dist_km` all confirmed; the route's own
+approach text states its 19.5 mi round-trip total outright, matching double the stored
+one-way figure almost exactly). Also confirmed and left unchanged: `wa_warrior_peak_
+standard`'s 1945 solo Fred Beckey FA, and `wa_whitehorse_mountain_nw_shoulder`'s 1909
+Nels Bruseth FA.
+
+**Checked, not confidently fixable (no SQL written):**
+- `wa_washington_ellinor_traverse_ridge`: external sources disagree with each other on
+  this traverse's total distance (one gives ~12.8 mi point-to-point, another ~8 mi round
+  trip while flagging that it "may refer to a different variation"). The stored `dist_km`
+  (9.7 km / 6.03 mi one-way) falls within that conflicting range — left unchanged.
+
+**Flagged for human review, no SQL written:**
+- `wa_whatcom_peak_southwest_route`: `dist_km` (13.7 km / 8.5 mi one-way) is confidently
+  wrong by more than 2x. The route's own approach text states "roughly 14 trail miles"
+  just to reach an intermediate camp (Graybeal), and its own waypoint chain gives Whatcom
+  Pass at 16.5 mi and the glacier traverse point at 18 mi — both already past double the
+  stored figure before the summit is even reached. Independently corroborated: external
+  sources describe "the main trail system to Whatcom Pass" as 17 mi one-way from the same
+  trailhead. No source pins an exact one-way mileage to the summit itself (likely
+  ~18-20 mi), so left unfixed; this also means the app's Est. summit/return estimates on
+  this route are currently built on roughly half the real approach distance.
+
+Next batch continues alphabetically after `wa_whitehorse_mountain_nw_shoulder` — only 4
+routes remain in pass 4 (`wa_whitehorse_mountain_r1`, `wa_windy_peak_iron_gate_trail`,
+`wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`), so the next run will
+finish pass 4 and begin pass 5.

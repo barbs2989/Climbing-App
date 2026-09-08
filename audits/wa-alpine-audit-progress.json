@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 4,
-  "last_processed_id": "wa_vasiliki_ridge_standard",
+  "last_processed_id": "wa_whitehorse_mountain_nw_shoulder",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4893,6 +4893,26 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-09-08-batch-238.sql",
       "note": "wa_trapper_mountain_north_couloir + wa_trapper_mountain_south_slopes: both routes on this peak carried an identical bivy array that is wholesale contamination from Mount Buckner/Horseshoe Basin (own notes explicitly reference Buckner and Ripsaw Ridge); nulled out since the actual camp (Trapper Lake) is already fully described in each route's own approach/waypoints. wa_trapper_mountain_south_slopes: dist_km halved 30.58->15.29 (stored the itinerary's round-trip total of 19mi where the app expects one-way, same doubling bug as the Three Fingers massif in batches 236/237). wa_true_grit_2: dist_km halved 13.68->6.84 (same doubling bug, cross-checked against the route's own waypoint chain and Vesper's known round-trip mileage); bivy array trimmed from 6 to 2 entries -- four camps' own note text says outright they serve Sloan Peak, Gothic Basin, or the Monte Cristo group (one literally says \"rather than for Vesper or Sloan\"), leaving only the two entries that name Vesper/Sunrise Mine. wa_ultramega_ok: high_point_ft (and its own summit waypoint) corrected 8483->8492ft, matching listsofjohn.com and general web consensus; dist_km halved 10.62->5.31 (matches the route's own one-way waypoint distance to the summit exactly). wa_vasiliki_ridge_standard: dist_km halved 11.27->5.64, same doubling bug, shares this trailhead with Ultramega OK. wa_upper_north_ridge_w_great_gendarme: fa field corrected -- two independent sources agree the 1956 Rupley/Gordon ascent BYPASSED the Great Gendarme via rappel, while Wickwire/Stanley made its first ascent in 1964; the stored field had this backwards, crediting the Gendarme's FA to the party that avoided it. wa_tricouni_peak_southwest_slopes: clean, extensively cross-checked (peak identity, FA, and dist_km all independently corroborated). wa_traverse_of_mount_index's North Peak waypoint coordinates (identical to the Main Peak's own coordinates) and dist_km, and wa_upper_north_ridge_w_great_gendarme's dist_km, each flagged for human review -- internally inconsistent with the routes' own data but no source-backed replacement value could be confirmed from this audit's accessible references."
+    },
+    {
+      "batch_number": 239,
+      "date": "2026-09-08",
+      "pass": 4,
+      "route_ids": [
+        "wa_vesper_peak_north_face_ragged_edge",
+        "wa_warrior_peak_standard",
+        "wa_washington_ellinor_traverse_ridge",
+        "wa_west_craggy_peak_standard_route",
+        "wa_west_face_2",
+        "wa_west_twin_needle_south_route",
+        "wa_whatcom_peak_southwest_route",
+        "wa_whitehorse_mountain_nw_shoulder"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-08-batch-239.sql",
+      "note": "wa_vesper_peak_north_face_ragged_edge: dist_km halved 13.7->6.85 (shares Vesper's Sunrise Mine Trailhead with wa_true_grit_2 -- same round-trip-stored-as-one-way doubling bug fixed on that route in batch 238; corroborated by the route's own waypoint chain to Headlee Pass plus the ~4.4mi one-way figure already established for this trailhead). wa_warrior_peak_standard: dist_km corrected 32.99->16.9 (the route's own waypoint chain gives a one-way summit distance of 10.5mi/16.9km, cross-checked against the approach text's own stated mileage to the cirque; the stored value was almost exactly double this -- same doubling bug on a different massif (Olympics, not the Mountain Loop/SR-20 corridor where it has mostly been found so far). Its 1945 solo Fred Beckey FA (both summits, named the peak) was independently confirmed, no change. wa_west_face_2 (North Peak / Gunsight Range, confirmed via Mountain Project's 'The Gunsight Range' and stephabegg.com's matching 'North Gunsight Peak, West Face 5.11+ 6p' trip report): approach text corrected on two counts. First, removed a self-flagged claim that the area's coordinates are a 'geocoding error' placing it at Washington Pass -- verified false: the stored coordinates (48.3068,-120.994) match published Gunsight Peak coordinates (48.30667N,120.99389W) to 4 decimal places and the area is already correctly filed under Glacier Peak Wilderness, ~34km from Washington Pass, not at it -- an obsolete artifact from an apparently already-corrected data state. Second, fixed 'South Peak's granite faces' to 'North Peak's', an internal inconsistency contradicting the route's own name, area, and overview text. wa_whitehorse_mountain_nw_shoulder: filled a null waypoint elevation (Niederprum Trailhead, 918ft) directly from the route's own approach text; its 1909 Nels Bruseth FA and dist_km (matches its own summit waypoint distance closely) both independently confirmed, no other changes. wa_whatcom_peak_southwest_route: flagged, not fixed -- dist_km (13.7km/8.5mi one-way) is confidently wrong by more than 2x. The route's own approach text states 'roughly 14 trail miles' just to an intermediate camp (Graybeal), well short of Whatcom Pass (16.5mi per its own waypoint chain) or the glacier traverse point (18mi); externally, Mountaineers/trip-report sources independently give 'the main trail system to Whatcom Pass' as 17mi one-way from the same trailhead. No source pins an exact one-way mileage to the summit itself (likely ~18-20mi), so left unfixed pending a confirmed replacement value; this also means the route's Est. summit/return time estimates are currently built on roughly half the actual approach distance. wa_washington_ellinor_traverse_ridge: checked, not confidently fixable -- external sources disagree with each other on this traverse's total distance (one gives ~12.8mi, another ~8mi round trip 'may refer to a different variation'); the stored value falls within that conflicting range, so left unchanged. wa_west_craggy_peak_standard_route and wa_west_twin_needle_south_route: both clean, extensively cross-checked (peak elevations, FA history, and dist_km all independently corroborated -- West Twin Needle's own approach text states its 19.5mi round-trip total outright, matching double the stored one-way figure almost exactly)."
     }
   ]
 }
