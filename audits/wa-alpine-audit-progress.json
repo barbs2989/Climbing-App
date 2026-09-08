@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_amphitheater_mountain_finger_of_fatwa",
+  "last_processed_id": "wa_argonaut_peak_northeast_couloir",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -4949,6 +4949,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-08-batch-241.sql",
       "note": "First batch of pass 5. wa_a_servant_to_liberty: fa/pro_tips corrected to remove an incorrect 'rope-solo' claim about the Aug 2016 FA send (Schaefer rope-soloed the 2015 equipping only; the actual send was led with Shanjean Lee belaying, per two independent sources and matching this row's own overview/data_quality.gaps, which had already flagged the discrepancy) -- dist_km halved 8.05->4.03, doubling bug matching itinerary.miles exactly. wa_abernathy_peak_south_ridge: bivy trimmed 8->1 entries, removing a whole-Sawtooth-range camping guide that had been attached wholesale (each removed entry names a different specific peak as its own, none of them Abernathy). wa_action_potential: dist_km halved 10.62->5.31 and summit waypoint elevation corrected 8483->8492, both exactly matching prior fixes already applied to sibling route wa_ultramega_ok (same Burgundy Col approach); bivy trimmed of two entries explicitly labelled 'Silver Star only'/'no use for the Wine Spires'. wa_agnes_mountain_west_route: summit waypoint elevation corrected 8131->8119 to match this row's own correct high_point_ft; gain_ft corrected 4000->6500 to match loss_ft and the row's own itinerary totals; dist_km corrected 13.7->23.59 to match this route's own track-derived waypoint distance, corroborated by the itinerary's ~34mi round-trip total; bivy trimmed of two entries for different peaks (Needle Peak/Mount Lyall, Flora Mountain). wa_alpine_lookout_round_mountain_trail: bivy trimmed 6->3 entries, removing camps explicitly for Rock Mountain and Mount Howard/Mastiff; otherwise clean, internally well-corroborated. wa_american_border_peak_northeast_face: clean, sparse row. wa_american_border_peak_southeast_face: beta's opening first-ascent credit ('Baker, Beckey, and Dudra in 1952') corrected to match this row's own (externally-confirmed-correct) fa field of the actual 1930 first ascent. wa_amphitheater_mountain_finger_of_fatwa: clean -- FA and the surprisingly-large dist_km (17mi one-way) both independently confirmed externally (the Andrews Creek approach really is ~18-19mi one-way); noted but not fixed, three waypoints share one identical coordinate. FLAGGED for human review: wa_agnes_mountain_west_route's own name ('West Route') is questioned by its own data_quality.gaps note and by independent search of Beckey's guide, which describes the documented line as approaching via Asa Peak's NE ridge to Agnes's south ridge -- a naming/identity question, not a field patch, same class as the batch-4 wa_cascade_peak_east_ridge flag."
+    },
+    {
+      "batch_number": 242,
+      "date": "2026-09-08",
+      "pass": 5,
+      "route_ids": [
+        "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+        "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+        "wa_amphitheater_mountain_north_ridge",
+        "wa_amphitheater_mountain_pilgrimage_to_mecca",
+        "wa_amphitheater_mountain_west_route",
+        "wa_andersons_thumb_standard",
+        "wa_argonaut_peak_east_ridge",
+        "wa_argonaut_peak_northeast_couloir"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-09-08-batch-242.sql",
+      "note": "wa_amphitheater_mountain_west_route: gain_ft (3000->5308) and loss_ft (null->5308) corrected -- below the floor implied by the route's own trailhead/summit waypoints (net rise 5308ft) with no pitches to credit away; corroborated against sibling routes' gain_ft=4800 and external Andrews Creek approach-gain figures (~4200-4600ft to the lakes plus ~750-1000ft on summit day). wa_andersons_thumb_standard: `corrections` field rewritten -- it wrongly claimed no documentation exists for a 'Washington North Cascades' peak (this route is in the OLYMPICS, a different range) and a Jim Brisbine/trailcatjim.com trip report was found independently corroborating the route's existence and matching its own hazards/watch_out text closely; also fixed an internal elev(700)/elevFt(1600) disagreement on the same waypoint (elevFt corrected to match elev, closer to the externally-reported ~520-600ft washout-parking figure). Four Amphitheater Mountain technical routes (Middle Finger Buttress L/R, North Ridge, Pilgrimage to Mecca) and wa_argonaut_peak_northeast_couloir checked clean -- FAs, grades, elevations, dist_km, and the shared 6-entry Cathedral Pass/Andrews Creek bivy corridor list all corroborated externally and internally, unlike contaminated whole-region lists found on other routes. FLAGGED for human review: wa_argonaut_peak_east_ridge is a half-corrected row (same class as batch-4 wa_cascade_peak_east_ridge) -- its name/grade/pitches were renamed 2026-07-15 to the real, documented 'Southeast Ridge, Grade II 5.6, 8 pitches' per its own data_quality.gaps, but approach/beta/pitch_detail/descent_text/rappel_detail/detailed_rack still describe the previously-conflated 'East Ridge via the Argonaut-Colchuck col' (6 pitches, ending at a plain 'true summit' with no SE-spire false-summit structure), and this row's own bivy list states outright that camp 'serves only Argonaut's north side... there is no reasonable way to link' it to the Southeast Ridge's real Ingalls Creek approach in a day. Needs a researcher rewrite, not a field patch; no source-backed pitch-by-pitch description of the real route was available to safely substitute."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

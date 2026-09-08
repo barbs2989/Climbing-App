@@ -17321,3 +17321,76 @@ First 8 routes in order: `wa_a_servant_to_liberty`, `wa_abernathy_peak_south_rid
 SQL: `audits/sql/2026-09-08-batch-241.sql` (validated with `check:sql` — every target id
 exists, no destructive delete; flagged as a paste-size risk for the SQL Editor, ~15.7KB
 against the ~4KB soft paste limit, so split into chunks when applying).
+
+---
+
+## 2026-09-08 — Pass 5, Batch 242
+
+Two peaks plus one spire, 8 routes: Amphitheater Mountain (Middle Finger Buttress Left Side,
+Middle Finger Buttress Right Side, North Ridge, Pilgrimage to Mecca, West Route), Anderson's
+Thumb (Standard Route), Argonaut Peak (East Ridge, Northeast Couloir).
+
+- **wa_amphitheater_mountain_west_route**: `gain_ft` corrected 3000→5308, `loss_ft` NULL→5308.
+  This route's own two waypoints (trailhead 3,050 ft, summit 8,358 ft) give a net rise of
+  5,308 ft with nothing to credit away (no pitches — it's a walk-up), so 3,000 ft was below
+  the floor its own data implies. Corroborated two ways: all four sibling technical routes on
+  this peak store gain_ft=4800, which — backed out through this route's own convention of
+  crediting ~35m per roped pitch against a shared walking-gain baseline — implies a baseline
+  of ~5,260-5,600 ft; and external sources put the Andrews Creek approach-to-the-lakes gain
+  alone at ~4,200-4,600 ft, plus another ~750-1,000 ft on summit day, landing in the same
+  ~5,300-5,900 ft range. Set to the row's own directly-derivable floor.
+- **wa_amphitheater_mountain_middle_finger_buttress_left_side/right_side, north_ridge,
+  pilgrimage_to_mecca**: otherwise clean. Shared 6-entry `bivy` corridor list (Upper Cathedral
+  Lake, Cathedral Pass benches, Andrews Pass, Remmel Lake/Spanish Camp, Amphitheater upper
+  basin, Tungsten Mine) checked entry-by-entry — every one is genuinely on or just off this
+  same Andrews Creek/Cathedral Pass approach system (unlike the contaminated whole-region
+  lists found on other routes), so left as-is. Route existence, FA-era plausibility (all four
+  FAs fall in 1971-2004, matching external confirmation of technical routes on this buttress
+  dating to the late 1960s/early '70s), and dist_km (27.4 km/17 mi one-way via Andrews Creek)
+  all check out against Wikipedia/theCrag/Mountain Project/climbing.com search results —
+  dist_km matches the same externally-confirmed one-way figure already verified for the
+  sibling Finger of Fatwa route in batch 241.
+- **wa_andersons_thumb_standard**: `corrections` field rewritten. It claimed exhaustive
+  searching "turned up no trip report... for a Washington North Cascades peak/route named
+  'Anderson's Thumb'" and recommended flagging the route's existence/location — but this
+  route is in the central OLYMPICS (a different range), and a public source does exist: a
+  Mount Anderson trip report by Jim Brisbine (trailcatjim.com) independently describes this
+  exact spire near Flypaper Pass/the Eel Glacier as "a fun rock climb on good sandstone,"
+  turned back by rain — both details already matching this row's own hazards/watch_out text
+  closely. The route's existence/location are corroborated; the note now says so, while
+  preserving the still-real gaps (no confirmed grade, FA, or GPS track) that live in
+  data_quality.gaps. Also fixed: waypoints[0] (the Trailhead) carried elev=700 and
+  elevFt=1600 for the same point — every other waypoint in this row's own array that carries
+  both fields has them agree, and public figures for the Dosewallips Road washout parking
+  area (~520-600 ft) sit far closer to 700 than 1600, so elevFt was corrected to match elev.
+- **wa_argonaut_peak_northeast_couloir**: clean. Elevation, approach (Stuart Lake/Mountaineer
+  Creek trailhead), and descent-line detail (rappels into the east gully / Colchuck Glacier
+  glissade) are all internally consistent and consistent with a genuine north-side Argonaut
+  line; no contradiction found.
+
+**Flagged, not fixed**: **wa_argonaut_peak_east_ridge**. This row's own data_quality.gaps
+already records a 2026-07-15 rename from a stored "East Ridge, Grade III, 6 pitches" (no
+corroborating source) to the real, documented "Southeast Ridge, Grade II, 5.6, 8 pitches" —
+but that rename only touched the top-level name/grade/pitches columns (and one nested field).
+Every other body field — approach, beta, pitch_detail (only 6 entries, ending at "the true
+summit" with no mention of the SE spire false-summit structure data_quality.gaps says the real
+route has), descent_text, rappel_detail, detailed_rack (which describes the OLD route as a
+rappel *descent* off a *different* climb, the Northwest Arete) — still describes the
+previously-conflated route via the Argonaut-Colchuck col (the peak's north side). This row's
+own `seasonal_hazards.exposure` field says "6 pitches" while `partner_requirements` two fields
+over says "8-pitch," within the same row. And this row's own bivy list (shared with the
+Northeast Couloir route) states outright that the Colchuck-Argonaut col camp "serves only
+Argonaut's north side; the South Face and Southeast Ridge are approached from Ingalls Creek
+and there is no reasonable way to link the two in a day" — i.e. the row's own bivy data
+contradicts the approach its own beta describes. Same "half-corrected row" shape as batch 4's
+wa_cascade_peak_east_ridge: needs a human/researcher rewrite of the body text to actually
+describe the real 8-pitch Southeast Ridge (via Beverly Turnpike/Porcupine Creek, topping the
+SE spire), not a piecemeal patch — no source-backed pitch-by-pitch description of that route
+was available to safely write in its place. dist_km (8 km ≈ 5 mi one-way) is also worth a
+second look in that same pass — well under the ~9 mi one-way this row's own itinerary.days
+totals suggest — but resolving it cleanly depends on first settling which route this row
+actually describes.
+
+SQL: `audits/sql/2026-09-08-batch-242.sql` (validated with `check:sql` — every target id
+exists, no destructive delete; flagged as a paste-size risk for the SQL Editor, ~10.2KB
+against the ~4KB soft paste limit, so split into chunks when applying).
