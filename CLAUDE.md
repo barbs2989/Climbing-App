@@ -39,6 +39,7 @@ npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up t
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
+npm run check:waypoint-dedupe # a route has ONE summit, MORE THAN ONE trailhead, and an upper AND a lower (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -2165,6 +2166,56 @@ the total when deciding where a new guard belongs.
     carry it, and hydration uses `!!p.resume_public` rather than `!== false`: an omitted column
     then **hides a button** instead of exposing a résumé. The two mistakes do not cost the same,
     so the default is not symmetric.
+  - **THAT PREDICTION CAME TRUE AND NAMED THE WRONG MECHANISM — IT WAS THE MAPPING, NOT THE
+    SELECT, AND IT HAD TWO INSTANCES.** *"The same shape returns the moment a new `profiles` select
+    forgets the column"* is what the bullet above says to watch for; both selects still carry it and
+    the leak was live anyway, because a row has to be *mapped* onto a climber before anything reads
+    it and **two mappings dropped the field the select had gone to the trouble of fetching**.
+    - **`RealClimberRow`** — the row in partner BROWSE *and* in a name SEARCH, so every signed-in
+      climber. Its `_cand` carried no `resumePublic`, so `undefined !== false` offered the résumé of
+      a climber who had made it private. It also printed a **bare `{p.name}`**, showing the real
+      name of a climber who had turned *"Show my real name publicly"* off — with their handle
+      rendered underneath it — and dropped `username`, so opening that profile put it through
+      `pubName`, which then derives a handle **from the real name** (`"Robin Belay"` →
+      `@robinbelay`, which need not be theirs). #1619's second defect, one surface over.
+    - **`FullProfile`'s own real-profile memo**, which is the general case. It re-hydrates `name`,
+      `username`, `bio`, `location`, grades and disciplines from an authoritative `select("*")` and
+      re-hydrated **neither privacy field** — so `climber.resumePublic` was whatever the CALL SITE
+      happened to carry, and the component's own comment says call sites arrive with *"only a few
+      fields (id/name/avatar from a member chip or search row)"*. Reading both there closes it for
+      every caller at once rather than one chip at a time.
+    - **The fallback is asymmetric on purpose**, and it is the half a reviewer should check:
+      `p.resume_public != null ? !!p.resume_public : !!climber.resumePublic`. While the row is
+      loading `p` is `{}`, so an unknown column degrades to **hide**. Being briefly wrong about a
+      button costs a reload; being wrong the other way publishes a résumé somebody made private.
+      Reachable rather than permanent — `profiles public read` is `using (true)` (`0009`, refined
+      by `0095`), so the loaded branch really does arrive.
+    - **TWO FIXES THAT MASK EACH OTHER READ AS TWO UNNECESSARY FIXES.** Reverting `_cand` alone
+      leaves the screen correct (the memo catches it) and reverting the memo alone leaves it
+      correct (`_cand` catches it), so a suite testing them one at a time reports **both** as
+      redundant. Defence in depth is invisible to a one-at-a-time suite **by construction** — that
+      is what depth means. Two things fix it: the historical case reverts **every** half at once,
+      and there is a fixture only ONE guard can protect — a bare member chip carrying
+      `{id,name,avatar}`, where `_cand` is out of the picture and the memo is all that is left.
+      Without that fixture the memo half is untestable and reads as dead code.
+    - Proven by `scripts/oneoff/probe-partner-browse-row-honours-privacy.mjs`, which asserts the
+      mapping as SOURCE and then **renders** `FullProfile` to prove the consequence — the source
+      half alone rests on a reading of a gate rather than on its behaviour. It executes the row's
+      own `_cand` literal with `new Function` rather than re-typing it, because a hand-typed copy
+      would agree with itself whatever `RealClimberRow` does, which is the entire question.
+      Injection-tested **9/9**, each edit proven **by checksum** and the file restored
+      byte-identically; **two cases must stay SILENT** (a reordered field list and the fallback
+      written longhand are both correct work).
+    - **Three SSR traps, all recorded elsewhere in this file and all met again here.** `react` and
+      `@tanstack/react-query` must be **external** or esbuild inlines a second copy and every hook
+      throws *"Invalid hook call"*; the bundle must be written **inside the project**, because with
+      react external node resolves it from the nearest `node_modules` and a temp dir has none; and
+      `FullProfile` ends in `createPortal(…, document.body)`, which SSR cannot do — the portal is
+      flattened and `document` stubbed, since portals are PLACEMENT (`check:overlays`' subject) and
+      this probe asks about CONTENT. **The 400-char floor is what exposed the first of those**: it
+      reported a 68-char render *while the next assertion printed a vacuous `ok`*.
+    - **Scope the assertion to the BUTTON's own label, not the word.** A profile says *"résumé"* in
+      several places, so a whole-markup match reported a correct render as broken.
   - **THE OWNER'S OWN READ-BACK USES `!== false`, DELIBERATELY THE OTHER WAY.** Until 0177 is
     applied the column is simply absent, and reading that as *private* would silently withdraw a
     résumé the account has always shown. **An absent column must not look like a choice.**
@@ -5013,6 +5064,66 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
     both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
     pattern, not the guard, was wrong.
+- **`check:waypoint-dedupe`** asserts that `dedupeWaypoints` merges a **SINGLETON** type — two
+  "Summit" pins are the same summit whatever they are called — and that **`trailhead` is not one**.
+  It was: the rule read `/^(summit|topout|trailhead)$/i` and merged two trailhead pins on **TYPE
+  ALONE**, ignoring both their names and their coordinates. Static, no browser, no DB — it executes
+  the real exported function over constructed pins, so it costs a module import.
+  - **THE MERGE IS WORSE THAN A DROP, because `mergePair` keeps the FIRST pin's coordinate and the
+    LONGER name.** `wa_remmel_mountain_southeast_slope` stores *Thirtymile Trailhead*
+    (48.8228,-120.0197) and *Andrews Creek Trailhead* (48.7837,-120.1086), **7,829 m apart**, and
+    rendered as **"Andrews Creek Trailhead" AT THIRTYMILE** — one start's label on the other's
+    position. Not cosmetic: that pin drives the Directions button through `trailheadPoint()`, and
+    `gpxDownload` writes waypoints into the file a climber carries into the field.
+  - **CLAUDE.md ALREADY NAMED THE PEAK, TWICE.** `audit:trailhead-agreement` records Remmel among
+    the four WA peaks with two GENUINE approaches (with Carru, Howard and Stuart's North Ridge) and
+    says outright **"do not sweep these"** — while the render path was sweeping one of them on every
+    page load. *A rule written for summits was applied to trailheads without asking whether the
+    reasoning transferred.*
+  - **Nothing could see it, and the reason is the shape of the merge.** Every coverage guard asks
+    whether a column reaches a screen, and this one did — with the wrong number of pins.
+    `audit:waypoint-order` reported it as a "duplicate", which is what it looks like from a count.
+    The pin that survives looks like an ordinary correct pin.
+  - **Removing `trailhead` costs nothing a trailhead needs, measured rather than argued.** Two pins
+    for ONE start still merge on `sameSpot()` (~30 m) or on `nameKey()`, the way every non-singleton
+    type is handled. Behaviour-diffed through `tidyWaypoints` across all **1,011 WA routes carrying
+    waypoints: exactly ONE renders a different list, and NONE renders fewer pins** — the reference
+    being the pre-change file **extracted from git**, never a retyped copy. Confirmed on screen
+    afterwards; both trailheads render, in stored order.
+  - **A GATE FOR A CLASS OF ONE, on the two grounds `check:bottom-panels` records.** *Anti-revert*:
+    the fix removes one word from a regex alternation, so it changes **no identifier** and
+    `audit:silent-reverts` is blind to a stale-base squash putting it back — that audit says so in
+    its own closing caveat. Nothing else in the repo gates `lib/waypoints.js`; its two importers are
+    report-only DB audits outside the build. *Class growth*: the class is one route today only
+    because one route stores two trailhead pins, and the next one to record a second start is eaten
+    in silence.
+  - **ORDER IS LOAD-BEARING AND THE INJECTION SUITE IS WHAT PROVED IT.** The fail-closed floor was
+    written first and exited first, so gutting `SINGLETON` reported *"this run proved nothing"*
+    rather than naming the summit rule that broke. The named assertions report first now; the floor
+    only has a job on a clean run. Same mistake `check:clickable` and `check:field-renders` record.
+  - **A SECOND WAY THE SAME FUNCTION ATE A GENUINE PIN, found by asking the neighbouring rule the
+    same question.** `nameKey()` strips words that "carry no distinguishing information", and
+    **eight of the sixteen were POSITIONAL** — `upper|lower|west|east|north|south|true|main`. A
+    positional word is usually the *whole* distinction: `wa_bedal_peak_standard` stores **"Upper
+    Boulder Field"** and **"Lower Boulder Field"** as two Hazard pins **435 m apart**, and they
+    collapsed to one key and one pin; `wa_davis_peak_nc_southwest` the same with **"Upper cliff
+    band"** / **"Lower cliff band"**, 184 m apart. Both are **hazards**, so a climber saw one marker
+    where the route records two.
+  - **The defect the STOP list exists for is not handled by the STOP list at all**, which is what
+    makes the removal safe: *"Forbidden Peak summit"* vs *"Summit"* is a **SINGLETON**, merged on
+    TYPE before any name is compared. So the generic nouns still earn their place and the positional
+    adjectives do not. Behaviour-diffed across all 1,011 WA routes carrying waypoints: **exactly TWO
+    render a different list, both gaining the eaten pin, and NONE renders fewer.**
+  - **Both directions are asserted**, because a guard that only ever demands MORE pins is satisfied
+    by gutting `STOP` entirely: two spellings of one junction (an article, a case difference, a
+    generic noun) must still merge. `no-name-merge` is that case.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-waypoint-dedupe-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `lib/waypoints.js` byte-identically. Cases 1 and 5 are the two
+    real historical rules. **TWO cases must stay SILENT** — either list with its members reordered is
+    not a change. **A case reported `WRONG FAILURE` while the guard was innocent**: it
+    matched `"FAIL - " + expect`, and the guard prefixes each line with the assertion's own label,
+    so a guard firing on exactly the right rule read as a miss. Match on a FAIL **line**, not from
+    its start.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
