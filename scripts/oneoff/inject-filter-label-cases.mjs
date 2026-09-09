@@ -1,6 +1,9 @@
-// Injection cases for probe-filter-labels-honour-units.mjs.
+// Injection cases for check-units.mjs, the `filters` section.
 //
-// The probe's healthy output is "24/24 passed", which is also what a probe asserting nothing
+// Run with `--only=filters`, which prints a PARTIAL banner and can never read as a pass -- so a
+// case here can only ever be judged on a failure, never credited with the guard's own verdict.
+//
+// The section's healthy output is a column of "ok", which is also what a section asserting nothing
 // prints. Each case reverts ONE half of the fix, proves the edit landed BY CHECKSUM, restores the
 // file byte-identically, and is judged on the probe's OWN failure text rather than on an exit code
 // — several cases perturb more than one assertion, so an exit status cannot tell them apart.
@@ -68,7 +71,7 @@ for (const c of CASES) {
   let out = "", code = 0;
   try {
     fs.writeFileSync(FILE, mutated);
-    try { out = execSync("node scripts/oneoff/probe-filter-labels-honour-units.mjs 2>&1", { encoding: "utf8" }); }
+    try { out = execSync("node scripts/check-units.mjs --only=filters 2>&1", { encoding: "utf8" }); }
     catch (e) { out = String(e.stdout || "") + String(e.stderr || ""); code = e.status || 1; }
   } finally {
     fs.writeFileSync(FILE, original);
