@@ -2233,8 +2233,13 @@ the total when deciding where a new guard belongs.
     fails **stale in both directions**, so the declaration cannot rot.
   - **`NOT_VISIBILITY` holds one entry with a reason**: the notification-preference toggles, which
     render from a `.map` over `notifPrefs` and are a claim about what THIS phone shows its owner,
-    not about what others see. They do not persist either — recorded as a separate, lesser defect,
-    because it costs a re-toggle rather than an exposure.
+    not about what others see. **That exemption is still right and the SENTENCE THAT FOLLOWED IT
+    WAS READ AS A WORKLIST, which is what it should be.** It used to close *"they do not persist
+    either — a separate, lesser defect, because it costs a re-toggle rather than an exposure"*.
+    They persist now (`lib/notif-pref.js`), and the lesser defect turned out not to be the
+    interesting one: **one of the four switches suppressed nothing at all**, which no persistence
+    question could have found. See `check:notification-switches`, and note that an exemption
+    recording a KNOWN defect beside its reason is how the next reader finds it.
   - **A WRITE NAMES THE COLUMN AS A KEY; A SELECT NAMES IT INSIDE A STRING.** That distinction is
     the persistence test, and **only the injection found it**: the first version accepted the
     column merely *appearing* in `lib/db.js`, where it appears in a **select** — so deleting the
