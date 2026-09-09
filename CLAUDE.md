@@ -7607,6 +7607,23 @@ the correction knows the screen is wrong, and they have no way to report it.
         (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
         25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
         that is not the summit either.
+    - **A PIN REPAIR HAS TO CARRY ITS SKETCHED LINE, and this one did not — checked afterwards
+      rather than assumed.** 203 of 578 WA routes with a track store a line drawn THROUGH their
+      own waypoints, so moving a pin leaves a vertex at the position it used to hold. Measured on
+      the 13 moved pins: 6 of the 10 routes carrying a track had their summit pin end up **110 m
+      from their own line**. `fix-stranded-track-vertices.mjs` carried 4 of them (adrift vertices
+      **28 -> 24**, routes **21 -> 18**); the other 3 fall outside `audit:stranded-track-vertices`'
+      candidate shape and are left, because their line is short enough that one adrift vertex is
+      not a minority.
+      - **No route lost its caveat, and that was verified rather than hoped.** All six still say
+        their line is not a recorded track — the three the fixer could not reach simply swapped
+        one honest caption for another (*"straight lines between this route's waypoints"* becomes
+        *"two straight segments drawn across 4,128 m"*), because `trackIsJustTheWaypoints` went
+        false and the segment caveat took over.
+      - **AND A `NaN` I THOUGHT I HAD FOUND WAS MY OWN PROBE.** `trackCoverageCaveat(route)`
+        returns *"stops NaN km short of the summit"* — because the app calls it as
+        `trackCoverageCaveat(_cov, _gapDist)` and guards on `_cov`, and my probe passed a route
+        object. Checked before reporting it; nothing reaches a screen.
     - **GUYE'S MECHANISM IS VISIBLE.** `wa_blood_sport` carries a correctly-typed Topout,
       *"Blood Sport crag"* at 3,400 ft, at exactly `47.442,-121.411` — and two other routes put
       their *"Guye Peak"* SUMMIT pin on that same coordinate. Two routes' summit is the crag's
