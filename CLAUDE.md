@@ -64,6 +64,7 @@ npm run check:topo-outage-copy # the topo box must not invite the FIRST topo whe
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
+npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:float-plan-persistence # a form on a sub-tab must survive leaving it — float plan AND planner (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -644,8 +645,8 @@ the total when deciding where a new guard belongs.
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
   ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
-  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
-  which reads both scopes — (`position:fixed` + `inset:0` +
+  is **24** once `lib/*.jsx` is included and the detector can read a TERNARY style, re-measured
+  2026-09-09; see `check:overlay-width-cap`, which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -2298,8 +2299,13 @@ the total when deciding where a new guard belongs.
     fails **stale in both directions**, so the declaration cannot rot.
   - **`NOT_VISIBILITY` holds one entry with a reason**: the notification-preference toggles, which
     render from a `.map` over `notifPrefs` and are a claim about what THIS phone shows its owner,
-    not about what others see. They do not persist either — recorded as a separate, lesser defect,
-    because it costs a re-toggle rather than an exposure.
+    not about what others see. **That exemption is still right and the SENTENCE THAT FOLLOWED IT
+    WAS READ AS A WORKLIST, which is what it should be.** It used to close *"they do not persist
+    either — a separate, lesser defect, because it costs a re-toggle rather than an exposure"*.
+    They persist now (`lib/notif-pref.js`), and the lesser defect turned out not to be the
+    interesting one: **one of the four switches suppressed nothing at all**, which no persistence
+    question could have found. See `check:notification-switches`, and note that an exemption
+    recording a KNOWN defect beside its reason is how the next reader finds it.
   - **A WRITE NAMES THE COLUMN AS A KEY; A SELECT NAMES IT INSIDE A STRING.** That distinction is
     the persistence test, and **only the injection found it**: the first version accepted the
     column merely *appearing* in `lib/db.js`, where it appears in a **select** — so deleting the
@@ -2339,6 +2345,87 @@ the total when deciding where a new guard belongs.
     shipped — and three pin the `draft` kind and the Core scope. **Two must stay SILENT** — a
     `derived` switch that is genuinely derived, and an undeclared flag inside a gated block, which
     promises nothing.
+- **`check:notification-switches`** asserts that a switch under **Settings > Notifications**
+  **governs something it names**, and **remembers what it was told**. Static (two source reads, no
+  Babel, no browser, no DB), so it sits in `npm run build`.
+  - **THE WHOLE EFFECT OF THAT CONTROL GROUP IS ONE LINE**, and reading it is what makes the defect
+    obvious: `const notifAllowed = n => !n.cat || notifPrefs[n.cat] !== false`. A switch therefore
+    reaches exactly those notifications tagged with **its own key**, an untagged notification is
+    shown whatever the switches say, and **a switch whose key no notification carries suppresses
+    nothing at all**.
+  - **ONE OF THE FOUR WAS INERT AND HAD ALWAYS BEEN.** `cat:"messages"` appears on **no notification
+    anywhere in the app**, signed in or signed out — unread direct and crew messages surface as
+    **badges** on the Crew tab, never as entries in this list — so *"Messages / New direct & crew
+    messages"* was a switch that animated, announced its state through `aria-checked`, and did
+    nothing. It is gone: a control offered for a delivery the app does not have is the
+    *appears to work and silently does not* shape `lib/units-pref.js` was written to remove,
+    wearing a settings label.
+  - **AND THE OTHER THREE REACHED ONLY YOUR OWN RECEIPTS.** Measured with
+    `scripts/oneoff/measure-notification-switch-reach.mjs` (no DB, no browser — every notification
+    in the merged list is an object literal): *"Requests & vouches — Friend / crew requests and
+    vouches"* reached **1** notification, *"You vouched for X"*, i.e. the receipt for something you
+    had just done — while the actual **friend request**, **crew invite** and **received vouch**
+    carried no `cat` and showed with the switch off. Those three are tagged now (1 → 4, three of
+    them incoming), and *"Condition reports"* — which reaches only your own report and log receipts
+    and has no incoming trip-report notification to reach — now **says so** rather than promising
+    *"New trip reports on your saved climbs"*. That is the #1625 repair: **make the label describe
+    what the control does**, the same move that made the inbox filter safe to remember.
+  - **THE ORDER IS THE POINT: HONESTY BEFORE PERSISTENCE.** `lib/inbox-pref.js` records the rule —
+    it is safe to remember a preference only once the control is honest, because remembering a
+    switch that governs nothing **durably keeps a promise the app cannot keep**. So the inert switch
+    came out in the same change that gave the survivors a home in `lib/notif-pref.js`.
+  - **FOUR SIBLING GUARDS ARE EACH BLIND TO IT, and the near misses are the argument.**
+    `check:dead-props` asks about props and this is a local. `check:visibility-switches` asks
+    whether a switch governing what **others** see persists — and these govern only what this
+    browser shows its owner, so that guard excludes them **by name** in `NOT_VISIBILITY`, with a
+    reason that says outright they do not persist either. `check:dead-flag-gates` asks whether a
+    constant a false flag empties feeds some UI; `notifPrefs` is neither. And `check:preview-claims`
+    asks whether a control **claims a real outcome** — this one claims nothing in words, it just
+    silently fails to act.
+  - **THE CENSUS THAT EXISTS FOR EXACTLY THIS QUESTION REPORTED `0 volatile`, and its blind spot is
+    the transferable half.** `measure-settings-that-do-not-persist.mjs` had already been *"confidently
+    wrong four times"* by its own header, and the fourth fix replaced a hand-typed setting list with
+    a list **derived off the screen**. The derivation reads controls **one JSX site at a time** and
+    keys on a **string-literal `aria-label`** — and these four are `[[key,label,sub],…].map(…)` with
+    `aria-label={"Toggle "+o[1]}`, so the whole GROUP was dropped by an early return and nothing in
+    the output said a group had been skipped. **A control group rendered from a loop is one site and
+    several controls**, which is invisible to every scan of that shape. Mechanism 5, and the first
+    that is a hole in the derivation rather than in somebody's list. It reports groups now — members,
+    state and storage — and it was proven non-vacuous by reverting the fix, where it reports the
+    three as volatile rather than printing the same clean summary.
+  - **`lib/inbox-pref.js` CLAIMED IT HAD CLOSED "THE LAST SETTING" that did not survive a page load**,
+    on the strength of that census. It had not; the claim is corrected in the file rather than left
+    to be read as true. Stale bookkeeping in a comment is the class this document keeps recording.
+  - **`defineFlagSet` is a SECOND function in `lib/prefs.js`, not a widening of `definePref`**, and
+    the difference is what validating-on-read is for: a scalar preference is one of a short list,
+    while this one is an **object** whose keys are known and whose values must each be a **boolean**
+    — reading a stored `{crew:"yes"}` back as truthy would persist junk as a preference. An unknown
+    key is **dropped** on read, so the `messages` key already sitting in a returning climber's
+    `localStorage` stops being read back rather than lingering as a preference for a switch that no
+    longer exists.
+  - **UNSET MEANS SHOWN, and it is asserted.** A default of `false` would mute alerts for every
+    climber who has never opened the screen — the one failure of this feature nobody would report,
+    because they would simply never learn a crew invite had arrived.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean run: a moved
+    Notifications heading, a control group that is no longer an array followed by `.map`, fewer than
+    two switches parsed (with none, every *governs something* assertion passes **vacuously**), **no
+    notification carrying a `cat` at all**, and a `notifAllowed` that no longer treats an untagged
+    notification as always-shown. The wiring assertion balances braces rather than using a character
+    class — the handler body contains `Object.assign({},p)`, and a `[^}]*` stops at that brace and
+    reports a **correct** toggle as unwired, which is what the first version did.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-notification-switch-cases.mjs`), each case
+    proving its edit landed **by checksum**, restoring the file byte-identically, and judged on the
+    guard's **own failure text** rather than on an exit code. Case 1 is the real defect, the
+    `messages` switch restored verbatim. **Two must stay SILENT** — an app prompt that no switch
+    names is correctly untagged and always shown, and tagging one more notification into an existing
+    category is ordinary work; a guard that fired on either would tell authors to break it.
+  - **CASE 5 WAS TESTING THE WRONG RULE AND REPORTED A MISS AGAINST A WORKING GUARD.** It added a
+    switch whose key no notification carried, which trips *rule 1* — so the run said nothing about
+    the stored-keys comparison the case was named for. It tags a notification with the new key too
+    now, which is what an author adding a switch properly would do, leaving the module as the only
+    thing out of step. **Checksum movement proves an edit happened, not that it was the right one** —
+    the fourth time this file records that.
+
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
@@ -3683,33 +3770,67 @@ the total when deciding where a new guard belongs.
     carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
     rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
     Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
-  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+  - **THREE exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
     full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
     whole window, and its **Suspense fallback** is exempt with it because the two must match or the
     screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
-    is a variable (`zIndex: Z`) and there is no literal to key on.
+    is a variable (`zIndex: Z`) and there is no literal to key on. The third is the **full-screen
+    route map** (`GPXMap`'s fullscreen branch), and the reason it is exempt rather than capped is
+    **consistency**: capping it would put two maps in one app at two different widths, which is a
+    worse desktop/phone difference than the one the cap exists to fix.
+  - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
+    That matches a **literal** style object, and `GPXMap` writes
+    `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
+    guard reported *"23 views, 21 capped, 2 exempt"* while the app has **24**, and the missing one
+    was a genuine member of the class carrying `inset:0` and `background:C.bg`. **A coverage hole in
+    a guard prints identically to a clean tree**, which is the `check:overlay-discovery` shape
+    arriving inside a guard I had shipped four days earlier.
+    - **It was found by asking the geometric question INDEPENDENTLY, not by reading the guard.**
+      `scripts/oneoff/census-fixed-position-elements.mjs` classifies **every** `position:fixed`
+      style object in the app — 83 of them, by balancing braces from the declaration rather than
+      relying on any attribute shape — into CAPPED / SCRIM / CENTRED-NARROW / FULL-BLEED. Six of
+      the seven full-bleed ones are documented scrims, lightboxes or the fire map; the seventh was
+      the route map. **A guard's own census cannot be the thing that audits the guard's reach.**
+    - The anchor is `style={` now, and each top-level object inside the expression is judged
+      **separately**. Judging the **union** of a ternary's branches would be wrong in the dangerous
+      direction: one branch can carry the cap while the other is the full-bleed one, and the union
+      would read as capped.
+    - **Strictly additive, measured before shipping**
+      (`scripts/oneoff/measure-ternary-style-blind-spot.mjs`): fixed style objects **81 → 82**,
+      views **23 → 24**, and **exactly one** newly reachable view. Nothing that was passing starts
+      failing, so the widening cannot be hiding a regression behind a bigger number.
+    - Brace balancing now **skips string and template contents**, so a `` `1px solid ${C.border}` ``
+      cannot desynchronise the depth counter. The old scanner survived that by luck — `${` and `}`
+      happen to balance — and would have broken on a brace inside a plain string.
   - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
     `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
     so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
     put all 21 back to full-bleed with no name moved and every other guard green.
   - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
     test actually dies, which `check:control-names` already records. Reformatting **one** file's
-    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
-    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
-    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
-    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
-    holding a *single* view can be reformatted without tripping either floor; a per-file
-    expectation would catch it and would be bookkeeping that rots.
+    `style={{` to `style = {{` renders identically in React — whitespace around a JSX attribute's
+    `=` is legal — is invisible to `check:refs`, and drops that file's views silently; on
+    `ClimbMatchCore` alone that is **24 → 17** views, so the view floor trips. The first draft had
+    a single floor of 15 and the injection **MISSED**, which is what sized them. **Residual, stated
+    rather than papered over:** a file holding a *single* view can be reformatted without tripping
+    either floor; a per-file expectation would catch it and would be bookkeeping that rots.
+    - **The mutation the case injects HAD to change with the anchor.** It used to be
+      `style={{` → `style={ {`, and the widened anchor **survives that**, so the case started
+      reporting MISSED against a guard that had just got stricter. It is kept, expectation flipped
+      to **must stay SILENT**, so the robustness is asserted rather than incidental: a future
+      rewrite back to the literal shape fails it. **When a detector is widened, its injection cases
+      are claims about the OLD detector until they are re-aimed.**
   - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
     measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
     390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
     had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
     indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
     caught that.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+  - Injection-tested **8/8** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Three must
     stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
-    carries its own cap, and a capped view that gains an unrelated property is still capped.
+    carries its own cap, a capped view that gains an unrelated property is still capped, and the
+    inner-brace reformat above is one the widened anchor now survives.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
