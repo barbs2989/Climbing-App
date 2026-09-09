@@ -109,6 +109,15 @@ if (calls === 2) ok("both meetup surfaces call nextMeetup( — the card and the 
 else fail(`expected 2 nextMeetup call sites in ClimbMatch.jsx, found ${calls}. A surface that stopped ` +
           `calling it shows a past date again, and every branch assertion above stays green.`);
 
+// IMPORTED, not merely called. A merge kept both helpers and all three call sites and dropped
+// this line -- the wiring half again, one level below the call sites, and every assertion above
+// stayed green while the app would have blank-screened. check:refs caught it; this should not
+// have needed it to.
+const imported = /daysUntil,\s*nextMeetup,\s*groupEventsEmptyLine,/.test(app);
+if (imported) ok("both helpers are imported into App, not just called");
+else fail("App calls the helpers without importing them — this blank-screens the app at runtime, " +
+          "and it is what a merge takes while leaving every call site in place");
+
 const empties = (app.match(/groupEventsEmptyLine\(/g) || []).length;
 if (empties === 1) ok("the calendar's empty state goes through groupEventsEmptyLine(");
 else fail(`expected 1 groupEventsEmptyLine call site, found ${empties}`);
