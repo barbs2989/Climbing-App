@@ -64,6 +64,7 @@ npm run check:topo-outage-copy # the topo box must not invite the FIRST topo whe
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
+npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:float-plan-persistence # a form on a sub-tab must survive leaving it — float plan AND planner (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -2233,8 +2234,13 @@ the total when deciding where a new guard belongs.
     fails **stale in both directions**, so the declaration cannot rot.
   - **`NOT_VISIBILITY` holds one entry with a reason**: the notification-preference toggles, which
     render from a `.map` over `notifPrefs` and are a claim about what THIS phone shows its owner,
-    not about what others see. They do not persist either — recorded as a separate, lesser defect,
-    because it costs a re-toggle rather than an exposure.
+    not about what others see. **That exemption is still right and the SENTENCE THAT FOLLOWED IT
+    WAS READ AS A WORKLIST, which is what it should be.** It used to close *"they do not persist
+    either — a separate, lesser defect, because it costs a re-toggle rather than an exposure"*.
+    They persist now (`lib/notif-pref.js`), and the lesser defect turned out not to be the
+    interesting one: **one of the four switches suppressed nothing at all**, which no persistence
+    question could have found. See `check:notification-switches`, and note that an exemption
+    recording a KNOWN defect beside its reason is how the next reader finds it.
   - **A WRITE NAMES THE COLUMN AS A KEY; A SELECT NAMES IT INSIDE A STRING.** That distinction is
     the persistence test, and **only the injection found it**: the first version accepted the
     column merely *appearing* in `lib/db.js`, where it appears in a **select** — so deleting the
@@ -2274,6 +2280,87 @@ the total when deciding where a new guard belongs.
     shipped — and three pin the `draft` kind and the Core scope. **Two must stay SILENT** — a
     `derived` switch that is genuinely derived, and an undeclared flag inside a gated block, which
     promises nothing.
+- **`check:notification-switches`** asserts that a switch under **Settings > Notifications**
+  **governs something it names**, and **remembers what it was told**. Static (two source reads, no
+  Babel, no browser, no DB), so it sits in `npm run build`.
+  - **THE WHOLE EFFECT OF THAT CONTROL GROUP IS ONE LINE**, and reading it is what makes the defect
+    obvious: `const notifAllowed = n => !n.cat || notifPrefs[n.cat] !== false`. A switch therefore
+    reaches exactly those notifications tagged with **its own key**, an untagged notification is
+    shown whatever the switches say, and **a switch whose key no notification carries suppresses
+    nothing at all**.
+  - **ONE OF THE FOUR WAS INERT AND HAD ALWAYS BEEN.** `cat:"messages"` appears on **no notification
+    anywhere in the app**, signed in or signed out — unread direct and crew messages surface as
+    **badges** on the Crew tab, never as entries in this list — so *"Messages / New direct & crew
+    messages"* was a switch that animated, announced its state through `aria-checked`, and did
+    nothing. It is gone: a control offered for a delivery the app does not have is the
+    *appears to work and silently does not* shape `lib/units-pref.js` was written to remove,
+    wearing a settings label.
+  - **AND THE OTHER THREE REACHED ONLY YOUR OWN RECEIPTS.** Measured with
+    `scripts/oneoff/measure-notification-switch-reach.mjs` (no DB, no browser — every notification
+    in the merged list is an object literal): *"Requests & vouches — Friend / crew requests and
+    vouches"* reached **1** notification, *"You vouched for X"*, i.e. the receipt for something you
+    had just done — while the actual **friend request**, **crew invite** and **received vouch**
+    carried no `cat` and showed with the switch off. Those three are tagged now (1 → 4, three of
+    them incoming), and *"Condition reports"* — which reaches only your own report and log receipts
+    and has no incoming trip-report notification to reach — now **says so** rather than promising
+    *"New trip reports on your saved climbs"*. That is the #1625 repair: **make the label describe
+    what the control does**, the same move that made the inbox filter safe to remember.
+  - **THE ORDER IS THE POINT: HONESTY BEFORE PERSISTENCE.** `lib/inbox-pref.js` records the rule —
+    it is safe to remember a preference only once the control is honest, because remembering a
+    switch that governs nothing **durably keeps a promise the app cannot keep**. So the inert switch
+    came out in the same change that gave the survivors a home in `lib/notif-pref.js`.
+  - **FOUR SIBLING GUARDS ARE EACH BLIND TO IT, and the near misses are the argument.**
+    `check:dead-props` asks about props and this is a local. `check:visibility-switches` asks
+    whether a switch governing what **others** see persists — and these govern only what this
+    browser shows its owner, so that guard excludes them **by name** in `NOT_VISIBILITY`, with a
+    reason that says outright they do not persist either. `check:dead-flag-gates` asks whether a
+    constant a false flag empties feeds some UI; `notifPrefs` is neither. And `check:preview-claims`
+    asks whether a control **claims a real outcome** — this one claims nothing in words, it just
+    silently fails to act.
+  - **THE CENSUS THAT EXISTS FOR EXACTLY THIS QUESTION REPORTED `0 volatile`, and its blind spot is
+    the transferable half.** `measure-settings-that-do-not-persist.mjs` had already been *"confidently
+    wrong four times"* by its own header, and the fourth fix replaced a hand-typed setting list with
+    a list **derived off the screen**. The derivation reads controls **one JSX site at a time** and
+    keys on a **string-literal `aria-label`** — and these four are `[[key,label,sub],…].map(…)` with
+    `aria-label={"Toggle "+o[1]}`, so the whole GROUP was dropped by an early return and nothing in
+    the output said a group had been skipped. **A control group rendered from a loop is one site and
+    several controls**, which is invisible to every scan of that shape. Mechanism 5, and the first
+    that is a hole in the derivation rather than in somebody's list. It reports groups now — members,
+    state and storage — and it was proven non-vacuous by reverting the fix, where it reports the
+    three as volatile rather than printing the same clean summary.
+  - **`lib/inbox-pref.js` CLAIMED IT HAD CLOSED "THE LAST SETTING" that did not survive a page load**,
+    on the strength of that census. It had not; the claim is corrected in the file rather than left
+    to be read as true. Stale bookkeeping in a comment is the class this document keeps recording.
+  - **`defineFlagSet` is a SECOND function in `lib/prefs.js`, not a widening of `definePref`**, and
+    the difference is what validating-on-read is for: a scalar preference is one of a short list,
+    while this one is an **object** whose keys are known and whose values must each be a **boolean**
+    — reading a stored `{crew:"yes"}` back as truthy would persist junk as a preference. An unknown
+    key is **dropped** on read, so the `messages` key already sitting in a returning climber's
+    `localStorage` stops being read back rather than lingering as a preference for a switch that no
+    longer exists.
+  - **UNSET MEANS SHOWN, and it is asserted.** A default of `false` would mute alerts for every
+    climber who has never opened the screen — the one failure of this feature nobody would report,
+    because they would simply never learn a crew invite had arrived.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean run: a moved
+    Notifications heading, a control group that is no longer an array followed by `.map`, fewer than
+    two switches parsed (with none, every *governs something* assertion passes **vacuously**), **no
+    notification carrying a `cat` at all**, and a `notifAllowed` that no longer treats an untagged
+    notification as always-shown. The wiring assertion balances braces rather than using a character
+    class — the handler body contains `Object.assign({},p)`, and a `[^}]*` stops at that brace and
+    reports a **correct** toggle as unwired, which is what the first version did.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-notification-switch-cases.mjs`), each case
+    proving its edit landed **by checksum**, restoring the file byte-identically, and judged on the
+    guard's **own failure text** rather than on an exit code. Case 1 is the real defect, the
+    `messages` switch restored verbatim. **Two must stay SILENT** — an app prompt that no switch
+    names is correctly untagged and always shown, and tagging one more notification into an existing
+    category is ordinary work; a guard that fired on either would tell authors to break it.
+  - **CASE 5 WAS TESTING THE WRONG RULE AND REPORTED A MISS AGAINST A WORKING GUARD.** It added a
+    switch whose key no notification carried, which trips *rule 1* — so the run said nothing about
+    the stored-keys comparison the case was named for. It tags a notification with the new key too
+    now, which is what an author adding a switch properly would do, leaving the module as the only
+    thing out of step. **Checksum movement proves an edit happened, not that it was the right one** —
+    the fourth time this file records that.
+
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
   document that is still scrollable — the Crew tab is ~5,600px — so with the default
