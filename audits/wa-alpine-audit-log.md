@@ -17812,3 +17812,103 @@ SQL: `audits/sql/2026-09-08-batch-247.sql` (validated with `check:sql` — 9 wri
 across 9 statements, every target id exists, no destructive delete. Flagged as a
 paste-size risk, ~10.7KB against the ~4KB soft paste limit — split into chunks when
 applying).
+
+## 2026-09-09 — Batch 248 (pass 5): Unicorn Peak, Lane Peak, Colchuck Peak (x5),
+Colfax Peak
+
+Checked 8 routes: `wa_classic_route_2` (Unicorn Peak), `wa_classic_route_3` (Lane Peak),
+`wa_colchuck_peak_colchuck_glacier`, `wa_colchuck_peak_east_ridge`,
+`wa_colchuck_peak_holsten_hilden`, `wa_colchuck_peak_north_buttress_couloir`,
+`wa_colchuck_peak_northeast_couloir` (Colchuck Peak), `wa_colfax_peak_cosley_houston`
+(Colfax Peak).
+
+**Important note found this run: several previously-proposed fixes are still live-broken.**
+Live-querying the database today turned up the exact pre-fix values for three defects
+that earlier batches had already correctly diagnosed and written SQL for:
+`wa_classic_route_2`'s bleached-snag rappel anchor (proposed 2026-08-06, re-proposed
+2026-08-14 batch 119) and `wa_colchuck_peak_east_ridge`/`wa_colchuck_peak_north_
+buttress_couloir`'s outlier `gain_ft` values (proposed 2026-08-19, batch 120). None of
+those field values have changed in the live DB since. This suggests earlier batches'
+`.sql` files are not being run against the live database. Re-verified each against the
+same internal-consistency reasoning (unchanged) and re-included in this batch's SQL,
+with `loss_ft` now also corrected on the two Colchuck Peak routes (batch 120 only
+touched `gain_ft`, leaving `loss_ft` at the same wrong value it shared with `gain_ft`).
+
+**Fixed (SQL in `audits/sql/2026-09-09-batch-248.sql`):**
+- `wa_classic_route_2`: `rappels`, `watch_out[0]`, and `pitch_detail[0].notes` still
+  described the deprecated "bleached snag" rappel anchor, contradicted by this row's own
+  `descent_text`, which already documents that anchor is unsound and the current anchor
+  is a rock horn. Propagated to all three (re-proposal, see note above). `length_m` (122,
+  ~400 ft) was also still inconsistent with the row's own single 15 m pitch — corrected.
+- `wa_colchuck_peak_east_ridge`: `gain_ft` (2800) and `loss_ft` (2800) didn't reconcile
+  with this row's own trailhead (Stuart Lake, 3400 ft) and summit (Colchuck Peak, 8705
+  ft) waypoints (5305 ft net), and every sibling Colchuck Peak route sharing that exact
+  pair carries ~5300-5305. Corrected both to 5305 (re-proposal for `gain_ft`, see note
+  above; `loss_ft` newly caught this run).
+- `wa_colchuck_peak_holsten_hilden`: `grade` ("Grade IV, M6, AI3+") is the opposite of
+  what this row's own `corrections` field documents as the decided value ("Kept Mountain
+  Project's III/WI3 as the primary listed value... with the AAC account's IV/AI3+ noted
+  here as the FA party's own grading"). Corrected to "Grade III, WI3, M6" to match the
+  row's own documented decision (re-proposal, see note above).
+- `wa_colchuck_peak_north_buttress_couloir`: `gain_ft` (6600) and `loss_ft` (6600) were
+  outliers against the same trailhead/summit pair (5305 ft net, matching every sibling);
+  no elevation loss/regain described in the approach would explain the extra ~1,300 ft,
+  and an independent Wenatchee Outdoors trip report ("3,300 ft tent-to-tent" from a camp
+  near Colchuck Lake, 5574 ft) corroborates a total near 5,300-5,500 ft. Corrected both to
+  5305 (re-proposal for `gain_ft`, see note above; `loss_ft` newly caught this run).
+- `wa_colchuck_peak_northeast_couloir`: `watch_out` was a newline-joined string (8 hazard
+  sentences) instead of a JSON array — the same schema defect previously found and fixed
+  on `wa_chockstone_route`. Converted to an array; content unchanged (each internal
+  semicolon normalized to a comma so the fix statement itself would stay parseable by
+  the SQL precheck tool, which does not respect string-literal boundaries around `;`).
+- `wa_colfax_peak_cosley_houston`: `access.closures`, `road.status`, `road.driveNote`,
+  and `road.seasonalGate` all stated Glacier Creek Road (FR 39) was closed to vehicles at
+  MP 3.0 for flood-damage repairs "starting June 30, 2026, expected through October
+  2026." Confirmed via WebSearch (Cascadia Daily News, "Glacier Creek Road reopens
+  following washout repairs," 2026-08-20; corroborated by an official USFS release,
+  "Forest Service Has Opened Glacier Creek Road") that repairs completed and the road
+  reopened to vehicle traffic on August 20, 2026 — three weeks before this audit. All
+  four fields updated to state the reopening while preserving the washout history and a
+  caution to check current conditions given the repeated pattern. This is the same class
+  of defect CLAUDE.md documents under `audit:expiring-closures`: a dated closure claim
+  that was correct when written and became false once the window passed.
+
+**Confirmed clean / no issues found:** `wa_classic_route_3` (Lane Peak) — all fields
+still consistent with prior-pass fixes, gain_ft/waypoint floor within normal noise
+(1400 vs. 1448 ft implied); `wa_colchuck_peak_colchuck_glacier` — fully clean, matches
+its batch-58/119 "audited fully clean" findings, waypoints/gain_ft/season/FA all
+consistent; Colfax Peak's elevation (9,440 ft) independently confirmed via WTA trip
+report. Colchuck Peak's 1948 FA and the Feb 19, 2023 Northeast Couloir avalanche fatality
+count/date were not re-verified this run — both were already independently corroborated
+in batch 120 (SummitPost/Beckey; NWAC + news sources) and nothing on file contradicts
+them.
+
+**Needs human verification (not fixed — flagged only):**
+- **Likely duplicate route pair, not touched (guardrails forbid deletes):**
+  `wa_colchuck_peak_east_ridge` ("East Ridge (Non-Technical)") and
+  `wa_colchuck_peak_colchuck_glacier` ("Colchuck Glacier") still describe the same
+  physical line under two ids — this row's own `corrections` field says as much
+  ("It is the peak's original 1948 first-ascent line and standard non-technical
+  route... same physical route as implied by the given name"), and SummitPost/Beckey
+  describe Colchuck's "East Route" as commonly called the "Colchuck Glacier Route." Same
+  flag as batch 120, unresolved: needs a human dedup decision (canonical id/name,
+  merge vs. redirect), not a field patch.
+
+Web access this run: WebSearch was reachable and useful for both the Glacier Creek Road
+closure status and the Colfax Peak elevation/Holsten-Hilden grade cross-checks.
+WebFetch was blocked by the network egress proxy for cascadiadaily.com and
+fs.usda.gov (same limitation as every prior batch) — relied on WebSearch's aggregated
+snippets, which cited the same USFS release by name and were internally consistent
+across two independent outlets.
+
+SQL: `audits/sql/2026-09-09-batch-248.sql` (validated with `check:sql` — 14 write
+targets across 14 statements, every target id exists, no destructive delete. Flagged as
+a paste-size risk, ~13.5KB against the ~4KB soft paste limit — split into chunks when
+applying). Five WHERE clauses match on a distinctive prefix of the stored value via
+`LIKE` rather than full-string equality, because the full stored text contains a `;` or
+`--` that the precheck tool's line-based comment/statement splitter does not parse
+correctly inside string literals; each prefix was independently verified against the
+live row's exact stored value before being used.
+
+Next batch continues alphabetically after `wa_colfax_peak_cosley_houston` (see progress
+file).
