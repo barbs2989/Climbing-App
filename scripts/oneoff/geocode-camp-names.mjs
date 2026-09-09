@@ -24,7 +24,9 @@
 import dns from "node:dns";
 dns.setDefaultResultOrder("ipv4first"); // AAAA records here are unroutable.
 import fs from "fs";
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/camping-section-and-nearby-peaks";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const { SUPABASE_URL, anonKey, headers } = await import(`${ROOT}/scripts/lib/supabase-env.mjs`);
 const { unresolvable, searchCandidates, LINEAR } = await import(`${ROOT}/scripts/lib/camp-names.mjs`);
 const { elevationAt } = await import(`${ROOT}/scripts/lib/terrain.mjs`);

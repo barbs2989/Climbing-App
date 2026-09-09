@@ -13,8 +13,9 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from "node:url";
 
-const WORKTREE = '/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/photos-topo-waypoints';
+const WORKTREE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
 console.log('='.repeat(80));
 console.log('MASTER CONSOLIDATION: PHASES 5-10 CLIMBING RESEARCH');

@@ -7,8 +7,9 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { createRequire } from "module";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/wa-area-parent-audit";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 
 const ENTRY = `

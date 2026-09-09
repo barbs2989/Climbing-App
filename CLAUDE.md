@@ -12,6 +12,7 @@ npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
+npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
@@ -713,9 +714,10 @@ the total when deciding where a new guard belongs.
     the name says nothing. That is the point of discovering these by behaviour.
   - Whether the payload can actually resolve is **measured at runtime, not declared**,
     because the answer differs per guard: `check:zero` has nothing, `check:overlay-scroll`
-    has the seeded demo (a crew — but `events` and the club `GROUPS` sit behind
-    `DEMO_FILLERS`, permanently false), and `check:signed-in` has a real account owning a
-    crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
+    has the seeded demo (a crew — `events` and the club `GROUPS` sit behind `DEMO_FILLERS`,
+    which was permanently FALSE when this was written and is **TRUE since #1566**, so those
+    payloads resolve now where they used to be skipped), and `check:signed-in` has a real
+    account owning a crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
     *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
     to render, so this cannot excuse a broken one.
   - **`postMenuFor` and `reactPickerFor` were exempt as unreachable, and were not.** They
@@ -3307,8 +3309,8 @@ the total when deciding where a new guard belongs.
       together is what the first CI run got wrong: `load()` returns on `__overlaysReady`,
       which says nothing about whether the navigation has happened yet.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
-  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
-  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` emptied **while
+  that flag was false**, so `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
   `mergedNotifs` beside four live sources hid that completely: the notification list worked,
   so nothing looked wrong. It now derives from the user's real `logs`.
   - **Nothing rendered it afterwards, and nothing easily could, because the feature is
@@ -3700,6 +3702,59 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
+  worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
+  - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
+    `measure-which-tab-renders-each-field.mjs` hardcoding `ROOT` to the
+    `rappels-rack-filter-class-audit` worktree, *"so it silently measured a different branch's code
+    than the one you ran it in"*. Measured: **SIXTEEN scripts across ELEVEN worktrees**, all now
+    fixed. *A documented instance is not a measured class* — the same discipline this file applies
+    to audits, applied to its own bug reports.
+  - **SILENT WHILE THE WORKTREE EXISTS, LOUD ONLY ONCE IT IS DELETED.** That asymmetry is the whole
+    danger: the script runs, prints numbers, and every one of them is about another branch. Eleven
+    of these had gone loud (`ENOENT`), which is the only reason they were findable at all — and a
+    NEW worktree with the same name silently revives the quiet failure.
+  - **FOUND BY RUNNING `scripts/oneoff/`, WHICH NOTHING RUNS.** Of **77 static probes** there (no
+    DB, no browser, no network), **71 passed and 6 did not**: two pinned to dead worktrees, three
+    stale, one a CLI tool that wants arguments. This file already says an extracted-from-source
+    probe with a fail-closed anchor **is** a behaviour-revert detector and *"is worth nothing in
+    `scripts/oneoff/`, which nothing runs"*. Running them is the cheapest way to collect that.
+  - **THE FIRST SWEEP MEASURED NOTHING AND SAID SO UNIFORMLY: all 77 exited 127.** macOS has no
+    `timeout(1)`. *When every case in a sweep shares one result, suspect the sweep* — the rule this
+    file already records for a case-sensitive `LIKE` that refused 25 of 39 pins.
+  - **`node --check` PROVES A FILE PARSES, NOT THAT IT RUNS**, and the repair relied on that
+    distinction twice. Inserting the two imports after the last `import` line put them **after
+    first use**, because these probes carry an `ENTRY` template literal full of `import` lines
+    further down — every file parsed, and `path is not defined` at runtime. The applier anchors on
+    the last import ABOVE the pinned path and then asserts, structurally, that both bindings are
+    declared before first use.
+  - **AND CHECK WHAT THE CONSTANT IS CONCATENATED WITH.** One pinned root ended in a slash, so
+    `ROOT + "ClimbMatchCore.jsx"` became `/repoClimbMatchCore.jsx` the moment it was replaced with
+    the slashless module-relative form — including once inside a template literal that esbuild
+    resolved. `path.join`, and run the file.
+  - **The guard would fire on its own injection harness, and that is the harness's problem.** A
+    literal pinned path in `inject-script-root-cases.mjs` is exactly what the guard forbids, so the
+    case builds the string from parts. Comments are stripped before matching, so this entry and the
+    guard's own header do not trip it. Injection-tested **5/5**; **two cases must stay SILENT** — a
+    comment naming the shape is documentation, and the module-relative form is the prescribed
+    repair.
+  - Fails **closed** on a walk that finds fewer than 200 scripts: a walk that matched almost nothing
+    prints the same clean line as a clean tree.
+- **`DEMO_FILLERS` IS `true`, AND FOUR ENTRIES IN THIS FILE STILL SAID IT WAS AN UNCONDITIONAL
+  `false`.** #1566 (*"Sample content ON: every empty surface now shows one example, behind one
+  flag"*) flipped it, and nothing propagated that to the four guard entries that REASON from it —
+  `check:dead-flag-gates` (*"an unconditional `false`"*), `check:overlay-discovery` (*"`events` and
+  the club `GROUPS` … permanently false"*), `check:toast-reachable` (*"`GROUPS` is empty behind
+  `DEMO_FILLERS`"*) and `check:anniversary`. All four corrected.
+  - **IT HAD ALREADY COST SOMETHING, WHICH IS HOW IT WAS FOUND.**
+    `probe-leaderboard-example-caveat` empties `CLIMBERS` to ask whether the *"Example profiles are
+    included"* caveat goes quiet on an all-real board. With the flag on, **twelve `FILLER_CLIMBERS`
+    with numeric ids survive that**, so the caveat correctly stayed — and the probe reported the app
+    as *"unconditional, not counted"* when the app was right. It empties both pools now.
+  - The flip also silently widened `check:overlay-discovery`'s payload coverage: `events` and
+    `GROUPS` resolve where the entry says they are skipped. **A flag flip is a change to every
+    conclusion that was reasoned from the old value**, and this file's own entries are where those
+    conclusions live.
 - **`check:doc-paths`** asserts that every file path THIS DOCUMENT names still exists. The ~133
   paths under `scripts/`, `lib/`, `.github/workflows/` and `supabase/migrations/` are not
   decoration — they are the **evidence** for the claims around them (*"proven by
@@ -5782,9 +5837,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     and the toast still could not render); the guide application's **submit failure and only the
     failure** (its success path calls `onClose()` so its toast appears, the `catch` does not);
     and **"Join a group to create events"**, which is the *default* outcome of the Calendar's
-    "+ Create an event" button — `GROUPS` is empty behind `DEMO_FILLERS` and `joinedGroups`
-    starts empty, and the early `return` skips `setCalOpen(false)`. That is the **zero state**,
-    not an edge case.
+    "+ Create an event" button — `GROUPS` was empty behind `DEMO_FILLERS` **and that flag is TRUE
+    since #1566**, so today it is `joinedGroups` starting empty that produces this, and the early
+    `return` skips `setCalOpen(false)`. Still the **zero state**, not an edge case; the toast
+    fix is unaffected either way.
   - The fix is **one** `const _toastEl` hoisted above the early returns and referenced by all
     nine — one definition, nine renderers, nothing to drift. The nine returns were edited **by
     condition, never by line number**: this file packs many declarations onto one physical line,
@@ -9318,8 +9374,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     gate** — a property of the DB, not the checkout. Injection-tested, 2 cases; `--inject=liveonly`
     must report **0 citations and every value as live**, which is the destructive direction.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
-  it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
-  `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
+  it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` was an unconditional
+  `false` when this was written — **#1566 flipped it to TRUE** ("Sample content ON"), so the
+  constants below are no longer empty and this guard's subject is now the SHAPE rather than that
+  particular flag. #704/#707 found **three** surfaces gated on such a constant with no other
   writer: the Year in Climbing modal (its one opener read `MY_CLIMBS.length`), climb
   anniversaries (`_anniv` mapped over `MY_CLIMBS`), and the Local Legend badge. None looked
   like a bug — each sat beside live code that worked, so the screen was fine and the feature
