@@ -18816,3 +18816,93 @@ sufficient to reach a flag-vs-fix decision in both cases where it mattered).
 
 Next batch continues alphabetically after `wa_fortress_mountain_southwest_face`
 (see progress file).
+
+---
+
+## 2026-09-09 — Pass 5, Batch 257
+
+Eight routes across six peaks: Fortune Peak East Slope + Standard Route (Teanaway/Ingalls);
+Free Mojo (South Early Winters Spire, Washington Pass); Frenzel Spitz South Route (Southern
+Pickets); Frying Pan/Whitman Glaciers (Little Tahoma); Ghost Peak South Route (Northern
+Pickets); Gilbert Peak Conrad Glacier + Meade Glacier (Goat Rocks).
+
+**Fixed (5):**
+- `wa_ghost_peak_south_route`: `dist_km` (70.81 -> 35.41) was almost exactly double the
+  one-way distance the row's own waypoint chain already states (summit waypoint `distMi: 22`,
+  22 mi = 35.41 km) — the round-trip figure had been stored in the one-way field, so the app
+  would have doubled it again to a bogus ~88 mi round trip. Same doubling-bug shape as the
+  Hidden Couloir and Witches Tower fixes in batches 252/253. FA/history (Firey/Firey/Knudson/
+  Renz, July 17 1970, "Carpetbaggers Traverse", 8,000 ft) independently confirmed via AAC
+  Publications and Wikipedia — left untouched, it's correct.
+- `wa_frying_pan_whitman_glaciers`: `loss_ft` (7,338 -> 7,600) contradicted its own gain_ft and
+  its own descent_text, which explicitly reverses the ascent to the same trailhead (zero net
+  elevation change for a closed out-and-back). Corroborated by the near-identical duplicate
+  route entry on this same peak, `wa_little_tahoma_east_shoulder` (see flag below), which
+  already stores loss_ft = gain_ft = 7,600 with no inconsistency.
+- `wa_fortune_peak_east_slope` and `wa_fortune_peak_standard_route`: both had NULL `loss_ft`
+  despite each row's own descent_text explicitly describing a full reversal back to the same
+  trailhead. Populated to match each route's own gain_ft (3,422 and 3,150 respectively) — same
+  pattern as batch 254's Eldorado Peak North Ridge fix.
+- `wa_gilbert_peak_conrad_glacier`: trailhead waypoint (no elevation, coordinates ~1.6 km from
+  the real trailhead), `road` (name/status both NULL), `approach_logistics` (entirely NULL),
+  and `emergency` (wrong ranger district/hospital/dispatch) all corrected to the row's own
+  already-verified sibling, `wa_gilbert_peak_meade_glacier`'s South Fork Tieton Trailhead
+  (#1120, 46.508793/-121.280865, 4,044 ft, Naches Ranger District) — this row's own approach
+  text already says it starts from "the South Tieton Creek/Conrad Meadows trailhead", and
+  Mazamas/Mountaineers.org confirm that's the same physical trailhead as the Meade Glacier
+  route, whose own `road.driveNote` names it explicitly. Only the shared trailhead/access
+  fields were touched; nothing about the climb itself (Conrad Glacier ascent, saddle traverse,
+  summit) was changed.
+
+**Flagged for human review (4), not fixed:**
+- `wa_frying_pan_whitman_glaciers` appears to be a near-duplicate of `wa_little_tahoma_east_
+  shoulder` on the same peak — identical FA, identical gain_ft/dist_km, and nearly word-for-word
+  identical approach text (Summerland -> Meany Crest -> Fryingpan Glacier -> Whitman Notch ->
+  Whitman Glacier -> summit). This row's own `overview` and `data_quality.gaps` already say so
+  outright ("modern route guides describe... as the same standard route... See the East
+  Shoulder route entry on this peak for the closely related (likely identical) line"). Whether
+  to merge/consolidate these two route records is an editorial catalog decision beyond a fact
+  correction — recommend the catalog maintainer decide.
+- `wa_free_mojo`: internal self-contradiction on Blue Lake Trailhead elevation — the waypoint
+  stores 5,200 ft while the same row's `approach_logistics.trailheadDirection` prose says
+  "5,400 ft" (WebSearch corroborates 5,400 ft as the commonly-cited figure). Checked against
+  ~30 other WA routes sharing this exact trailhead: about two-thirds already use 5,200 ft and
+  the rest 5,400 ft, so this is a pre-existing catalog-wide split, not unique to Free Mojo.
+  Fixing one row out of 30 in this shape would be arbitrary; recommend a dedicated sweep of the
+  whole Blue Lake Trailhead cluster rather than a piecemeal fix here.
+- `wa_fortune_peak_east_slope`: `dist_km` (14) looks like it may be roughly double the plausible
+  round-trip mileage implied by trip-report beta for this approach (Esmeralda TH -> Ingalls
+  Pass is ~3.3 mi one-way per WTA/Mountaineers trip reports, plus a further stretch into
+  Headlight Basin and up the ridge) — but WebFetch to wta.org, summitpost.org, and
+  mountaineers.org was blocked by this environment's egress proxy on every domain tried
+  (matching the same restriction noted in batch 255), so no exact authoritative figure could be
+  pulled to confirm a specific correction. Left unwritten; a human with normal web access
+  should check the WTA "Fortune Peak via Esmeralda Basin" page directly.
+- `wa_fortune_peak_standard_route`: `dist_km` is entirely missing (NULL). Likely a similar
+  order of magnitude to the East Slope route above; same WebFetch blockage prevented pulling a
+  precise figure to fill it in with confidence rather than guessing.
+
+**Clean:** `wa_free_mojo` (grade/FA/pitches/rack — FA independently confirmed via WebSearch:
+Blake Herrington & Graham Zimmerman's free variation of Mojo Rising), `wa_frenzel_spitz_south_
+route` (FA date 9/10/1961 confirmed via WebSearch against AAC-era Southern Pickets history;
+already heavily self-hedged/marked `auto_generated`/`inferred` for an extremely obscure
+objective — no further correction attempted), `wa_gilbert_peak_meade_glacier` (used as the
+well-documented sibling reference for the Conrad Glacier fix above; no issues of its own found).
+
+SQL: `audits/sql/2026-09-09-batch-257.sql` (validated with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-09-batch-257.sql`: all 4 checkable write
+targets exist, no DELETE; the compound Gilbert Peak Conrad Glacier UPDATE spans too many lines
+for the tool's literal-id regex to check automatically, so its four-part WHERE guard was
+verified by hand against a fresh read of the live row — all four conditions matched the row's
+current state. File is 6.3KB, over the tool's ~4KB paste-size soft limit — split before pasting
+into the SQL Editor. No destructive statement.)
+
+Web access this run: WebSearch worked throughout and was the only usable source — WebFetch was
+blocked by the environment's egress proxy for every domain attempted this run (wta.org,
+summitpost.org, mountaineers.org, mountainproject.com, wikipedia.org, rhinoclimbs.com,
+waynewallace.wordpress.com), not just nps.gov as noted in batch 255. Facts that needed a precise
+page-sourced number rather than a WebSearch-synthesized answer (Fortune Peak mileage) were
+flagged rather than guessed.
+
+Next batch continues in sorted-id order after `wa_gilbert_peak_meade_glacier` (see progress
+file).
