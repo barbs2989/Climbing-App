@@ -1073,12 +1073,23 @@ the total when deciding where a new guard belongs.
     reach. This is the rule `check:signed-in` already records from the other side, where seeding as
     the users found that RLS refuses an `accepted` connection written directly.
   - **IDENTIFIED, NOT NAMED, and getting that wrong is how this walk nearly asserted a defect as
-    the contract.** The inbox renders the sender through `pubName()`, which falls back to the
-    handle unless `showName` is set — and a DB profile can never carry it, because **`profiles` has
-    no `show_name` column** and nothing anywhere writes one. An assertion on the display name fails
-    against a correct app. It accepts either, and the naming inconsistency that sits behind it
-    (profile and inbox gate through `pubName`; the friends list and crew roster do not) is recorded
-    in memory as a product question rather than fixed here.
+    the contract.** The inbox renders the sender through `pubName()`, which falls back to the handle
+    unless `showName` is set. An assertion on one specific form fails against a correct app, so it
+    accepts **either** — and that is now MORE necessary than when it was written, not less, because
+    which form appears is a per-climber choice.
+    - **THIS BULLET USED TO SAY `profiles` HAS NO `show_name` COLUMN AND THAT NOTHING WRITES ONE.
+      BOTH HALVES ARE FALSE**, and the correction matters because the sentence argued against a
+      setting the app really has. `0175` added the column, the Settings switch persists to it, and
+      `pubName` honours it. It also said the friends list and crew roster do not gate through
+      `pubName` — they were unified on it once `0175` made the setting real.
+    - **What replaced the inconsistency is a subtler one, fixed in #1619**: `useProfilesByIds`
+      returned RAW postgrest rows, so `pubName` read `showName` against a `show_name` field and
+      every consumer silently answered "no" — while `vouchRowsFrom`, which skipped `pubName`
+      entirely, published the real name whatever the switch said. The hook maps `showName` and
+      selects `username` now, additively.
+    - The general lesson is the one this file records elsewhere as stale bookkeeping: **a claim
+      about the schema is only true relative to a migration.** When one lands, the prose that
+      reasoned from its absence has to move too.
   - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
     different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
     and not a name either: a climber cannot tell which of their partners wrote to them.
