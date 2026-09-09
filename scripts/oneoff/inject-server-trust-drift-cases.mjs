@@ -43,6 +43,17 @@ const CASES = [
     why: "TrustBreakdown ignores `rows` and falls back to the client model — a silent revert that changes no number", says: /FAIL\s+the panel does not render the supplied server rows/,
     from: "return <div>{(rows||trustContributions(climber)).map(",
     to:   "return <div>{trustContributions(climber).map(" },
+  { name: "gate-derives-its-own-score", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "the join gate goes back to deriving vScore — a group's policy enforced on a number the app never shows",
+    says: /FAIL\s+groupTrustShortfall derives its own score/,
+    from: "  const mine=Number(score);", to: "  const mine=vScore(score);" },
+
+  { name: "one-handler-left-behind", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "one of the two byte-identical join handlers keeps the old score, so half the app gates on something else",
+    says: /FAIL\s+the join gate reads the displayed score in 1 handler/,
+    from: "var _tShort=groupTrustShortfall(cl,myTrustScore);", to: "var _tShort=groupTrustShortfall(cl,vScore(meLive));",
+    once: true },
+
   // MUST STAY SILENT. A comment in the migration that names a different number is documentation:
   // 0038's own header lists component RANGES ("verification (0-20)") that are not the weights, and a
   // guard reading those would fail on the file explaining itself.
@@ -60,8 +71,12 @@ for (const c of CASES) {
     console.log(`  BROKEN CASE ${c.name}: its anchor is not in the file — the case tests nothing`);
     fail++; continue;
   }
-  if (before.split(c.from).length - 1 !== 1) {
-    console.log(`  BROKEN CASE ${c.name}: anchor is not unique — the edit could land anywhere`);
+  // A CASE MAY DELIBERATELY EDIT ONE OF TWO IDENTICAL SITES. `one-handler-left-behind` reproduces
+  // exactly that defect — half the app gating on a different score — so uniqueness is required
+  // unless the case says it means to hit only the first.
+  const hits = before.split(c.from).length - 1;
+  if (c.once ? hits < 2 : hits !== 1) {
+    console.log(`  BROKEN CASE ${c.name}: anchor appears ${hits} time(s) — the edit could land anywhere`);
     fail++; continue;
   }
   fs.writeFileSync(c.file, before.replace(c.from, c.to));

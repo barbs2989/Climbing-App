@@ -39,6 +39,7 @@ npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up t
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
+npm run check:waypoint-dedupe # a route has ONE summit, MORE THAN ONE trailhead, and an upper AND a lower (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -132,6 +133,7 @@ npm run audit:gain         # is a route gaining LESS than its own waypoints dema
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
+npm run audit:summit-splits # ...and do a peak's OWN routes agree where it is? (SIXTH pin audit — the ground decides)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
 npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the tolerance, not a constant
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
@@ -2165,6 +2167,56 @@ the total when deciding where a new guard belongs.
     carry it, and hydration uses `!!p.resume_public` rather than `!== false`: an omitted column
     then **hides a button** instead of exposing a résumé. The two mistakes do not cost the same,
     so the default is not symmetric.
+  - **THAT PREDICTION CAME TRUE AND NAMED THE WRONG MECHANISM — IT WAS THE MAPPING, NOT THE
+    SELECT, AND IT HAD TWO INSTANCES.** *"The same shape returns the moment a new `profiles` select
+    forgets the column"* is what the bullet above says to watch for; both selects still carry it and
+    the leak was live anyway, because a row has to be *mapped* onto a climber before anything reads
+    it and **two mappings dropped the field the select had gone to the trouble of fetching**.
+    - **`RealClimberRow`** — the row in partner BROWSE *and* in a name SEARCH, so every signed-in
+      climber. Its `_cand` carried no `resumePublic`, so `undefined !== false` offered the résumé of
+      a climber who had made it private. It also printed a **bare `{p.name}`**, showing the real
+      name of a climber who had turned *"Show my real name publicly"* off — with their handle
+      rendered underneath it — and dropped `username`, so opening that profile put it through
+      `pubName`, which then derives a handle **from the real name** (`"Robin Belay"` →
+      `@robinbelay`, which need not be theirs). #1619's second defect, one surface over.
+    - **`FullProfile`'s own real-profile memo**, which is the general case. It re-hydrates `name`,
+      `username`, `bio`, `location`, grades and disciplines from an authoritative `select("*")` and
+      re-hydrated **neither privacy field** — so `climber.resumePublic` was whatever the CALL SITE
+      happened to carry, and the component's own comment says call sites arrive with *"only a few
+      fields (id/name/avatar from a member chip or search row)"*. Reading both there closes it for
+      every caller at once rather than one chip at a time.
+    - **The fallback is asymmetric on purpose**, and it is the half a reviewer should check:
+      `p.resume_public != null ? !!p.resume_public : !!climber.resumePublic`. While the row is
+      loading `p` is `{}`, so an unknown column degrades to **hide**. Being briefly wrong about a
+      button costs a reload; being wrong the other way publishes a résumé somebody made private.
+      Reachable rather than permanent — `profiles public read` is `using (true)` (`0009`, refined
+      by `0095`), so the loaded branch really does arrive.
+    - **TWO FIXES THAT MASK EACH OTHER READ AS TWO UNNECESSARY FIXES.** Reverting `_cand` alone
+      leaves the screen correct (the memo catches it) and reverting the memo alone leaves it
+      correct (`_cand` catches it), so a suite testing them one at a time reports **both** as
+      redundant. Defence in depth is invisible to a one-at-a-time suite **by construction** — that
+      is what depth means. Two things fix it: the historical case reverts **every** half at once,
+      and there is a fixture only ONE guard can protect — a bare member chip carrying
+      `{id,name,avatar}`, where `_cand` is out of the picture and the memo is all that is left.
+      Without that fixture the memo half is untestable and reads as dead code.
+    - Proven by `scripts/oneoff/probe-partner-browse-row-honours-privacy.mjs`, which asserts the
+      mapping as SOURCE and then **renders** `FullProfile` to prove the consequence — the source
+      half alone rests on a reading of a gate rather than on its behaviour. It executes the row's
+      own `_cand` literal with `new Function` rather than re-typing it, because a hand-typed copy
+      would agree with itself whatever `RealClimberRow` does, which is the entire question.
+      Injection-tested **9/9**, each edit proven **by checksum** and the file restored
+      byte-identically; **two cases must stay SILENT** (a reordered field list and the fallback
+      written longhand are both correct work).
+    - **Three SSR traps, all recorded elsewhere in this file and all met again here.** `react` and
+      `@tanstack/react-query` must be **external** or esbuild inlines a second copy and every hook
+      throws *"Invalid hook call"*; the bundle must be written **inside the project**, because with
+      react external node resolves it from the nearest `node_modules` and a temp dir has none; and
+      `FullProfile` ends in `createPortal(…, document.body)`, which SSR cannot do — the portal is
+      flattened and `document` stubbed, since portals are PLACEMENT (`check:overlays`' subject) and
+      this probe asks about CONTENT. **The 400-char floor is what exposed the first of those**: it
+      reported a 68-char render *while the next assertion printed a vacuous `ok`*.
+    - **Scope the assertion to the BUTTON's own label, not the word.** A profile says *"résumé"* in
+      several places, so a whole-markup match reported a correct render as broken.
   - **THE OWNER'S OWN READ-BACK USES `!== false`, DELIBERATELY THE OTHER WAY.** Until 0177 is
     applied the column is simply absent, and reading that as *private* would silently withdraw a
     résumé the account has always shown. **An absent column must not look like a choice.**
@@ -4727,13 +4779,28 @@ the correction knows the screen is wrong, and they have no way to report it.
     takes both rows; in the client model *"Conditions reported"* is a separate, untracked input, and
     marking it *"Couldn't load"* there would be a false statement about a row that reads *"Not yet
     tracked"*. Same flag, two models, two correct answers.
-  - **THE GROUP-JOIN GATE IS DELIBERATELY LEFT ON THE CLIENT SCORE, and that is a decision rather
-    than an oversight.** `groupTrustShortfall(cl, meLive)` refuses a *"Trust 55+ only"* group off
-    `vScore`, so a climber the group sees at server-14 can still join. Switching it would be
-    correct-looking and is **not polish**: the server model is the stricter of the two (1 point a
-    vouch against 4), so it changes **who can join groups** — locking out climbers the app admits
-    today. That is the group owners' call, not a display fix's. Recorded in
-    [[two-trust-scores-client-and-server]] as the remaining axis.
+  - **THE GROUP-JOIN GATE NOW READS THE DISPLAYED SCORE, and the SIGNATURE is the fix rather than
+    the call site.** `groupTrustShortfall` took `meLive` and called `vScore` itself — the CLIENT
+    model — while the Profile and every other climber see the SERVER one. So a group's *"Trust 55+
+    only"* policy was enforced on a number that appears nowhere, and the app could tell you that you
+    are trust 14 and then admit you. It takes a **number** now, so a second derivation is impossible
+    rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
+    - **THE BAR MOVES, AND THAT IS STATED RATHER THAN DISCOVERED LATER.** The two models are scaled
+      differently — a vouch is 4 points in one and 1 in the other — so the same 55 is a different
+      threshold. Measured over five example profiles
+      (`scripts/oneoff/measure-group-trust-gate-scale.mjs`), **one changes side**: *a year in,
+      active* reads **57** on the client model and **37** on the server one. On the server scale even
+      email plus two years' tenure plus twenty vouches comes to **45**.
+    - **WHETHER 55 IS STILL THE RIGHT NUMBER is an open product question** about how exclusive a
+      trust-gated group should be, and nothing here answers it. What was never in question is that
+      the gate must use the number the app shows.
+    - **The honest-refusal branch keys on `_trustUnsure`, not `_trustPartial`.** Once the gate reads
+      the displayed score, the three client-side flags only make it unreliable while the
+      locally-computed fallback is showing; refusing a join because an unrelated client read failed
+      would be a false refusal.
+    - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
+      two**, and two injection cases pin both halves — deriving a score again, and leaving one of
+      the two identical handlers behind.
   - Injection-tested **7/7** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. The cases drift
     the two sides in **both** directions on purpose — a comparison that only ever read the JS would
@@ -4998,6 +5065,66 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
     both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
     pattern, not the guard, was wrong.
+- **`check:waypoint-dedupe`** asserts that `dedupeWaypoints` merges a **SINGLETON** type — two
+  "Summit" pins are the same summit whatever they are called — and that **`trailhead` is not one**.
+  It was: the rule read `/^(summit|topout|trailhead)$/i` and merged two trailhead pins on **TYPE
+  ALONE**, ignoring both their names and their coordinates. Static, no browser, no DB — it executes
+  the real exported function over constructed pins, so it costs a module import.
+  - **THE MERGE IS WORSE THAN A DROP, because `mergePair` keeps the FIRST pin's coordinate and the
+    LONGER name.** `wa_remmel_mountain_southeast_slope` stores *Thirtymile Trailhead*
+    (48.8228,-120.0197) and *Andrews Creek Trailhead* (48.7837,-120.1086), **7,829 m apart**, and
+    rendered as **"Andrews Creek Trailhead" AT THIRTYMILE** — one start's label on the other's
+    position. Not cosmetic: that pin drives the Directions button through `trailheadPoint()`, and
+    `gpxDownload` writes waypoints into the file a climber carries into the field.
+  - **CLAUDE.md ALREADY NAMED THE PEAK, TWICE.** `audit:trailhead-agreement` records Remmel among
+    the four WA peaks with two GENUINE approaches (with Carru, Howard and Stuart's North Ridge) and
+    says outright **"do not sweep these"** — while the render path was sweeping one of them on every
+    page load. *A rule written for summits was applied to trailheads without asking whether the
+    reasoning transferred.*
+  - **Nothing could see it, and the reason is the shape of the merge.** Every coverage guard asks
+    whether a column reaches a screen, and this one did — with the wrong number of pins.
+    `audit:waypoint-order` reported it as a "duplicate", which is what it looks like from a count.
+    The pin that survives looks like an ordinary correct pin.
+  - **Removing `trailhead` costs nothing a trailhead needs, measured rather than argued.** Two pins
+    for ONE start still merge on `sameSpot()` (~30 m) or on `nameKey()`, the way every non-singleton
+    type is handled. Behaviour-diffed through `tidyWaypoints` across all **1,011 WA routes carrying
+    waypoints: exactly ONE renders a different list, and NONE renders fewer pins** — the reference
+    being the pre-change file **extracted from git**, never a retyped copy. Confirmed on screen
+    afterwards; both trailheads render, in stored order.
+  - **A GATE FOR A CLASS OF ONE, on the two grounds `check:bottom-panels` records.** *Anti-revert*:
+    the fix removes one word from a regex alternation, so it changes **no identifier** and
+    `audit:silent-reverts` is blind to a stale-base squash putting it back — that audit says so in
+    its own closing caveat. Nothing else in the repo gates `lib/waypoints.js`; its two importers are
+    report-only DB audits outside the build. *Class growth*: the class is one route today only
+    because one route stores two trailhead pins, and the next one to record a second start is eaten
+    in silence.
+  - **ORDER IS LOAD-BEARING AND THE INJECTION SUITE IS WHAT PROVED IT.** The fail-closed floor was
+    written first and exited first, so gutting `SINGLETON` reported *"this run proved nothing"*
+    rather than naming the summit rule that broke. The named assertions report first now; the floor
+    only has a job on a clean run. Same mistake `check:clickable` and `check:field-renders` record.
+  - **A SECOND WAY THE SAME FUNCTION ATE A GENUINE PIN, found by asking the neighbouring rule the
+    same question.** `nameKey()` strips words that "carry no distinguishing information", and
+    **eight of the sixteen were POSITIONAL** — `upper|lower|west|east|north|south|true|main`. A
+    positional word is usually the *whole* distinction: `wa_bedal_peak_standard` stores **"Upper
+    Boulder Field"** and **"Lower Boulder Field"** as two Hazard pins **435 m apart**, and they
+    collapsed to one key and one pin; `wa_davis_peak_nc_southwest` the same with **"Upper cliff
+    band"** / **"Lower cliff band"**, 184 m apart. Both are **hazards**, so a climber saw one marker
+    where the route records two.
+  - **The defect the STOP list exists for is not handled by the STOP list at all**, which is what
+    makes the removal safe: *"Forbidden Peak summit"* vs *"Summit"* is a **SINGLETON**, merged on
+    TYPE before any name is compared. So the generic nouns still earn their place and the positional
+    adjectives do not. Behaviour-diffed across all 1,011 WA routes carrying waypoints: **exactly TWO
+    render a different list, both gaining the eaten pin, and NONE renders fewer.**
+  - **Both directions are asserted**, because a guard that only ever demands MORE pins is satisfied
+    by gutting `STOP` entirely: two spellings of one junction (an article, a case difference, a
+    generic noun) must still merge. `no-name-merge` is that case.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-waypoint-dedupe-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `lib/waypoints.js` byte-identically. Cases 1 and 5 are the two
+    real historical rules. **TWO cases must stay SILENT** — either list with its members reordered is
+    not a change. **A case reported `WRONG FAILURE` while the guard was innocent**: it
+    matched `"FAIL - " + expect`, and the guard prefixes each line with the assertion's own label,
+    so a guard firing on exactly the right rule read as a miss. Match on a FAIL **line**, not from
+    its start.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
@@ -6936,6 +7063,78 @@ the correction knows the screen is wrong, and they have no way to report it.
       a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
+- **`audit:summit-splits`** asks whether a peak's OWN routes agree where its summit is. Each route
+  carries a summit waypoint, so those pins are independent recordings of ONE point and a
+  disagreement means at least one is wrong. **28 WA peaks carry two or more, 60 m or further
+  apart**, and nothing could see them: `audit:cross-route-pins`' `MIN_KM` is **2**, and
+  `audit:summit-pins`' `DIST_TOL` is **300 m** — and that one compares each pin against the AREA
+  ROW rather than against the peak's other pins, so it can never notice a peak has two summits,
+  only that one pin is far from the area. Verified rather than argued: both print **zero**
+  mentions of North Early Winters Spire, the worst instance. Read-only, anon key, report-only;
+  **not** a build gate (a property of the DB, plus one network call per coordinate).
+  - **DISTANCE CANNOT SAY WHETHER A SPLIT MATTERS, WHICH IS WHY NEITHER SIBLING SCOPE IS WRONG.**
+    110 m across Mount Baker's summit dome is a rounding worth nothing; 128 m on a spire is
+    **613 ft of ground between the two pins**, one of them standing on the flank. So the
+    instrument is the **ground** — the USGS 3DEP reading under each coordinate, which neither pin
+    derives from — and the finding is a cluster standing materially lower than its sibling.
+  - **It does NOT pick a winner**, the same restraint `audit:cross-route-pins` records for the same
+    reason: a majority can be one enrichment pass counted many times. It says the two cannot both
+    be right and prints what the terrain holds under each, plus the distance to the area row as a
+    third record, so a reader settles it in a minute instead of re-deriving the geometry.
+  - **THE PRECISION RULE IS THE PIN'S OWN CLAIM AND IT IS DELIBERATELY NOT A DENY-LIST.** A peak
+    legitimately has named sub-summits — Liberty Cap on Rainier, Poltergeist Pinnacle, Hozomeen's
+    South Peak, Bonanza's Southwest Peak — and a pin naming one is correct data that
+    `audit:summit-pins` already classifies as NOT a finding. Keeping a vocabulary of sub-summit
+    words is the shape one more adjective defeats, so two pins count as ONE CLAIM when they share
+    a **name** or a **stated elevation**. **Both are needed and neither is enough**, measured:
+    name alone misses **Mount Baker**, where six routes say *"Mount Baker Summit"* against
+    *"Mt. Baker summit (Grant Peak)"* — one summit spelled two ways, 369 ft apart on the ground;
+    elevation alone misses **Burgundy Spire**, whose two pins are both *"Burgundy Spire Summit"*
+    and state 8,483 against 8,400.
+  - **PAIRWISE, NOT PER-PEAK, and the first version got that wrong in a way that HID a real
+    finding.** Asking whether ALL of a peak's clusters share a name lets one correctly-named
+    sub-summit decide the verdict for the others — Tepeh Towers sitting beside three Eldorado
+    summit pins — and it drives the reported drop from a cluster that is part of no disagreement.
+    Every pair is considered and the finding is the same-claim pair furthest apart. Reclassifying
+    that way moved Mount Baker and Gilbert Peak out of the context bucket, where a reader would
+    have had to spot them by eye.
+  - **A cluster is grouped by COORDINATE ALONE, so compare its names and elevations as SETS.**
+    Routes really do disagree inside one: Guye Peak has three routes on `47.442,-121.411`, two
+    calling it *"Guye Peak"* at 5,168 ft and one *"Blood Sport crag"* at 3,400. Reading the first
+    pin of each cluster made the verdict depend on row order and **hid that finding entirely** —
+    the worst of the six, at 939 ft. The printout lists every distinct name/elevation for the same
+    reason: with only the first shown, the row read as a mismatch the reader could not see.
+  - **The result on WA: 28 splits -> 6 findings, 7 context, 15 under the ground threshold.**
+    That tail moves run to run — a later run on a loaded box read **14 quiet and 1 NOT MEASURED**
+    (Glacier Peak, 0 of 2 coordinates read) because 3DEP timed out. That is the fail-closed path
+    working, not a change in the catalog: the findings and the context bucket were identical.
+    Guye Peak 939 ft (two routes putting the 5,168 ft summit on ground of 4,227), North Early
+    Winters Spire 613 ft, Mount Stuart 546 ft (SIX distinct coordinates for one summit), Mount
+    Baker 369 ft on six routes, Burgundy Spire 315 ft, Gilbert Peak 259 ft.
+  - **Both thresholds are borrowed rather than fitted.** 60 m is roughly the placement slop
+    `audit:waypoint-elevations` already allows a pin; 250 ft is that audit's own `FLOOR_FT`, where
+    it means *inside the 3DEP grid's noise*. Neither was chosen against these findings.
+  - **AND `audit:peak-coords` HAS ALREADY MEASURED WHY 250 CANNOT GO MUCH LOWER**, which is worth
+    reading before anyone tightens it hoping for more. Its `TOL` comment records that at 150 ft
+    the WA tail is 21 peaks and **17 are Stuart, Shuksan, Forbidden, Goode, Little Tahoma and
+    friends** — sharp summits whose coordinate sits 35-100 m off the top on very steep ground and
+    therefore reads a couple of hundred feet low while being *essentially right*. One phenomenon,
+    not 17 defects, and precisely what a lower threshold here would re-report as summit splits.
+    It also disposes of a tempting hypothesis this work produced: Mount Stuart's `areas` row
+    stands on 9,208 ft against a stated 9,415, which looks like a wrong peak coordinate and is
+    **not** — that audit found the DEM maximum 70 m away matching the stored elevation, and
+    rejected snapping to it because it would DERIVE a coordinate rather than copy a record.
+  - **SCOPE ON THE AREA, NEVER ON THE ROUTE ID.** `id like wa_*` is the reflex filter and it drops
+    the four legacy route ids this catalog still carries (`rainier_*`, `adams_*`) — **both legacy
+    Rainier routes carry a summit pin on `wa_mount_rainier`**. On a COMPARATIVE audit that is not
+    a lost row, it is a lost *witness*: the siblings are then judged against less evidence, which
+    is the false-pass direction `audit:trailhead-road-agreement` already records. Filtering AREAS
+    that way is safe and was measured rather than assumed — every one of the 2,525 areas under
+    `washington` is `wa_`-prefixed except the state row itself. Corrected before shipping: 1,012
+    routes and 830 pins became **1,016 and 832**.
+  - Fails **closed** four ways — zero areas, zero routes, zero placed summit pins, and a split
+    whose ground could not be read is reported as **NOT MEASURED** rather than as agreement. That
+    last one is the reason `terrain.mjs` returns `null` and never `0`.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
