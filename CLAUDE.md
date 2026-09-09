@@ -9039,6 +9039,37 @@ their own Résumé showed an amber **"Unverified"** chip.
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
 
+- **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
+  the group calendar contradicted its own heading.** Both group surfaces rendered
+  `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
+  whether it had happened, so a group whose meetups are all behind it advertised its **oldest** as
+  upcoming. Seen on a CI `ui-screens` capture as **"Next meet Jun 27"** and **"Next meet Jun 28"**,
+  rendered on **4 September**.
+  - **The upcoming rule was NOT invented here.** `daysUntil(d) >= 0` is the app's own test, already
+    used for crews in `upcomingClimbs` two hundred lines away. `nextMeetup(evs)` in core is that
+    rule applied to events, and **today counts as upcoming** — a meet this evening has not gone.
+  - **A THIRD COPY EXISTED AND THE PROBE FOUND IT, NOT THE SWEEP.** The group's
+    **"Calendar · upcoming events"** listed **every** event oldest-first, so an upcoming calendar
+    opened with a meetup from June. The probe asserts the pre-fix expression is gone from the file
+    rather than only that the two known sites were fixed, and that assertion failed on its first
+    run. *A fix keyed on the sites you found is not a fix for the expression.*
+  - **FILTERING THE CALENDAR MADE THE EMPTY STATE FALSE, so the copy gained a branch in the same
+    change.** *"No events scheduled yet — plan the first one"* is true of a group that has never
+    held one and false of a group that has held four; `groupEventsEmptyLine(total, upcoming)`
+    returns *"No upcoming events — plan the next one."* for the second. **A fix that trades one
+    wrong claim for another is not a fix**, which is why both branches are asserted and asserted to
+    DIFFER — a rewrite collapsing them satisfies any test that only checks one.
+  - **Both helpers are pure functions in core for the reason `stateCatalogLine` is**: all three call
+    sites live inside `App`, which no SSR guard stands up, so the branches are **executed** while
+    the wiring is asserted as **source** beside them. That split matters here — a merge keeping the
+    helpers and dropping a call site restores the defect with every branch assertion green, and
+    `audit:silent-reverts` says in its own closing caveat that it cannot see a change of this shape.
+  - **Not made a build gate.** The class is a date claim on ONE feature, the surfaces are gated on
+    group events (client state today), and the probe needs an esbuild bundle it does not share with
+    a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
+    database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
+    if a second date-labelled surface joins the class.
+
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
   `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
