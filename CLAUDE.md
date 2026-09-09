@@ -9249,6 +9249,32 @@ their own Résumé showed an amber **"Unverified"** chip.
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
 
+- **A CLIMBER WHO HAD ONLY ASKED TO JOIN COUNTED AS A CREW MEMBER, AND HELD A SPOT.** `#1554`
+  introduced the third crew status and the comment beside `allConfirmed` states the rule outright
+  — *"Someone who has asked to join is not in the crew yet"* — and **enumerates the four readers it
+  was applied to** (`pendCrew` and three *"Remind all N"* expressions). Three more read the roster
+  whole, and the enumeration is what made them findable: *an instance fixed by hand is not a class
+  closed*, with the author's own list as the evidence.
+  - **The heading** read *"Crew · 2 members"* for you plus one requester — live on CI's demo
+    capture, beside a roster row saying *"Asked to join"*.
+  - **`size` drives capacity**, so a requester consumed a spot. **At enough requests a crew reads
+    "✓ Crew full — 3/3" while nobody has been accepted**, which stops other climbers asking — the
+    worst of the three, and the one that is not merely cosmetic.
+  - **The amber denominator** (*"1 of 2 confirmed"*) is latent: it needs an **invited** member and
+    a **requester** at once, because `allConfirmed` — already fixed — gates whether it renders at
+    all. #1554 identified that sentence as a symptom and fixed it by gating rather than at the
+    count, which is why it survived.
+  - **Fixed through ONE list**, `inCrew`, with `allConfirmed` expressed from it, so *who is in the
+    crew* has a single definition. Three filters saying the same thing is how this codebase ended
+    up with four grade parsers.
+  - **The requester stays VISIBLE in the roster.** Only the counting changed — the organiser has to
+    see somebody to accept or decline them, so dropping the row would be worse than counting it.
+    The probe asserts that directly.
+  - `scripts/oneoff/probe-pending-requester-is-not-a-member.mjs` — 12 assertions. It **lifts the
+    predicate out of the source** rather than retyping it (a copy agrees with itself whatever the
+    app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
+    `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
+    assertion still green. That is the shape that bit #1643's own merge an hour earlier.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
