@@ -129,6 +129,22 @@ const CASES = [
     silent: true,
     edit: (s) => s.replace("<Calculator route={route}", '<Calculator data-x="1" route={route}'),
   },
+
+  /* SECTION 10 — the contribute form's backdrop. Removing the condition restores a working,
+     rendering dialog that simply throws typed beta away; no render assertion can see that. */
+  {
+    name: "backdrop-dismisses-dirty-form",
+    file: RD,
+    why: "the backdrop closes unconditionally again, so one tap beside the panel discards up to 35 typed fields.",
+    edit: (s) => s.replace("onClick={canSubmit?undefined:onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\"",
+                           "onClick={onClose} role=\"dialog\" aria-modal=\"true\" aria-label=\"Contribute info\""),
+  },
+  {
+    name: "backdrop-uses-a-second-dirty-signal",
+    file: RD,
+    why: "MUST PASS is NOT the point here — keying the gate on something other than the form's own canSubmit is a drift risk, and the guard should say so.",
+    edit: (s) => s.replace("const canSubmit=totalUpdates>0", "const canSubmit2=totalUpdates>0"),
+  },
 ];
 
 let pass = 0;

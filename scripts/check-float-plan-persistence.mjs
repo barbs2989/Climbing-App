@@ -77,7 +77,7 @@ const fail = (m) => { ran++; console.log("  FAIL  " + m); bad++; };
 /* Every assertion below is "this string IS present" or "this prop IS passed", so a guard that
    stops RUNNING half of them prints a shorter, entirely green list and exits 0. The floor is the
    count today; raise it when you add an assertion, and never lower it to make a run pass. */
-const EXPECTED = 19;
+const EXPECTED = 21;
 
 // ---- 1. The shape is declared in ONE place.
 const init = floatPlanState({ route: "North Ridge" });
@@ -222,6 +222,29 @@ else fail("RouteDetail does not own the planner inputs — a sub-tab switch will
 if (!/const \[pack,setPack\]=useState\(/.test(rd))
   ok("...and Calculator keeps no second, local copy of them");
 else fail("Calculator still declares its own pack/party/depart state — the lifted copy is shadowed");
+
+// ---- 10. A STRAY TAP MUST NOT DESTROY TYPED BETA: <SuggestFix/>'s backdrop.
+// Third member of this class, and the first where the work is lost to a DISMISSAL rather than to
+// an unmount. The contribute form holds up to 35 inputs and its backdrop closed unconditionally,
+// so one tap beside the panel discarded everything a climber had written — no warning, no undo.
+// The inner panel already stops propagation, so only a genuine outside tap reaches it.
+//
+// Gated on the form's OWN emptiness signal, `canSubmit` (= totalUpdates > 0), which the submit
+// button already computes — not a second notion of "dirty" that could drift from it. An untouched
+// form still dismisses on a backdrop tap, which is what keeps an accidental open cheap to leave.
+//
+// SOURCE-ONLY and for the same reason as section 9: removing the condition restores a working,
+// rendering dialog that simply throws work away, so no render assertion can see it. check:dialog-
+// dismiss is satisfied either way — the ✕ and Cancel are untouched, which is what makes gating the
+// backdrop safe rather than a way of trapping somebody.
+const fixTag = rd.match(/createPortal\(<div onClick=\{[^}]*\} role="dialog" aria-modal="true" aria-label="Contribute info"/);
+if (!fixTag) fail("ANCHOR LOST: SuggestFix's backdrop tag moved — the contribute form's dismissal is unchecked");
+else if (/onClick=\{canSubmit\?undefined:onClose\}/.test(fixTag[0]))
+  ok("SuggestFix's backdrop only dismisses an EMPTY form — typed beta survives a stray tap");
+else fail(`SuggestFix's backdrop dismisses unconditionally — a tap beside the panel discards up to 35 typed fields: ${fixTag[0].slice(0, 120)}`);
+if (/const canSubmit=totalUpdates>0/.test(rd))
+  ok("...and it reuses the form's own emptiness signal rather than a second one that could drift");
+else fail("`canSubmit` is gone — the backdrop gate is keyed on something that no longer exists");
 
 if (ran < EXPECTED) {
   console.log(`  FAIL  only ${ran} of ${EXPECTED} assertions RAN — this guard reports presence, so a`);

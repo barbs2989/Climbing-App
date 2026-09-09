@@ -204,9 +204,22 @@ try {
   // a better reason: `show_name` defaults FALSE, so a fixture account that never set it still
   // renders as a handle — and this guard must not depend on a preference the fixture could flip.
   // Accepting either is what keeps it a test of DELIVERY rather than of the mate's own setting.
-  const mateHandle = "@" + mateName.toLowerCase().replace(/[^a-z0-9]/g, "");
-  const identified = inbox.includes(mateName) || inbox.includes(mateHandle);
-  must(identified, `the sender is identified ("${mateName}" or "${mateHandle}")`);
+  /* IDENTIFIED means any of the three things pubName() can legitimately render, and pinning one
+     of them is what broke this. pubName returns the display name when the climber has asked for
+     it, `@username` when they have one, and only otherwise a handle DERIVED from the name. This
+     line used to compute that derived form and assert on it ALONE — which passed only because
+     `useProfilesByIds` was not selecting `username`, so every profile fell through to the
+     fallback. #1619 selects the column, the inbox began rendering the mate's real handle
+     (@climbmatch-ci-mate), and the guard failed on a correct app: it had pinned a value that
+     existed only because of the defect being fixed. The fixture now reads the mate's username
+     from their own profile, the way it already read the name, so this asserts on the identity
+     the account actually has rather than on a re-derivation of the app's own rule — see
+     [[a-lifted-rule-fossilises-the-moment-it-is-copied]]. */
+  const mateUser = fixture.mate.username ? "@" + fixture.mate.username : null;
+  const mateDerived = "@" + mateName.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const forms = [mateName, mateUser, mateDerived].filter(Boolean);
+  const identified = forms.some((f) => inbox.includes(f));
+  must(identified, `the sender is identified (${forms.map((f) => `"${f}"`).join(" or ")})`);
   must(!/\bClimber\b/.test(inbox), 'the sender did not degrade to the "Climber" fallback useProfilesByIds uses at this call site');
   // The preview carries the message itself, so delivery is provable before any thread is opened.
   //
@@ -233,16 +246,17 @@ try {
   // ---- open the thread and look for the words the mate actually wrote ----
   // Match the HANDLE as well as the name: the row is labelled by pubName, so a selector demanding
   // the display name finds nothing and reports a thread that cannot be opened when it can.
-  const openThread = await page.evaluate(([nm, hd]) => {
+  // Same three forms: the thread is found by whichever one the inbox actually rendered.
+  const openThread = await page.evaluate((fs) => {
     const hit = [...document.querySelectorAll('[role="button"],button')]
       .find((b) => {
         const t = (b.getAttribute("aria-label") || "") + " " + (b.textContent || "");
-        return t.includes(nm) || t.includes(hd);
+        return fs.some((f) => t.includes(f));
       });
     if (!hit) return false;
     hit.click();
     return true;
-  }, [mateName, mateHandle]);
+  }, forms);
   must(openThread, "the thread could be opened");
   if (openThread) {
     await settledText(page);

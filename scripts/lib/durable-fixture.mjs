@@ -69,11 +69,18 @@ export async function durableFixture(log) {
   const session = await signIn(ownerEmail, process.env.CI_TEST_OWNER_PASSWORD);
   const mateSession = await signIn(mateEmail, process.env.CI_TEST_MATE_PASSWORD);
 
-  // Read the mate's display name from their own profile rather than hardcoding it here: the
-  // walk asserts the crew roster renders that name, and a constant in two files is a constant
-  // that will disagree with itself.
+  // Read the mate's display name AND USERNAME from their own profile rather than hardcoding
+  // either here: the walk asserts the crew roster renders that name, and a constant in two files
+  // is a constant that will disagree with itself.
+  //   The username is selected for the same reason the name is, and #1619 is why it had to be.
+  // pubName() renders `@username` when the climber has one and falls back to a handle DERIVED
+  // from the name when they do not. `useProfilesByIds` did not select `username`, so every
+  // consumer got the derived fallback — and check:message-delivery re-derived that same fallback
+  // and asserted on it. Selecting the column made the app render the mate's REAL handle
+  // (@climbmatch-ci-mate) and the guard failed, having pinned a value that existed only because
+  // of the defect. A fixture that reads the identity it asserts on cannot make that mistake.
   const res = await readBody(await fetch(
-    `${SUPABASE_URL}/rest/v1/profiles?id=eq.${mateSession.user.id}&select=id,name,discoverable`,
+    `${SUPABASE_URL}/rest/v1/profiles?id=eq.${mateSession.user.id}&select=id,name,username,discoverable`,
     { headers: { apikey: ANON, Authorization: `Bearer ${session.access_token}` } },
   ));
   assertHealthy(res, "reading the mate's profile");
@@ -312,7 +319,7 @@ export async function durableFixture(log) {
 
   return {
     owner: { id: session.user.id, email: ownerEmail, name: "CI Fixture Owner" },
-    mate: { id: mateSession.user.id, email: mateEmail, name: mate.name },
+    mate: { id: mateSession.user.id, email: mateEmail, name: mate.name, username: mate.username || null },
     // THE SECOND ACCOUNT'S SESSION, which this fixture has held all along and did not hand back.
     // Three merged PRs stated that CI could not run a two-account walk because "the durable pair
     // does not expose the mate's password" — and the password was never the point: signIn() above

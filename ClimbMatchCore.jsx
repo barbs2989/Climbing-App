@@ -160,7 +160,11 @@ export function vouchRowsFrom(rows,authors){
   return (rows||[]).map(function(row){
     var parsed={};try{parsed=JSON.parse(row.reason)||{};}catch(e){parsed={text:row.reason||""};}
     var a=(authors||[]).find(function(x){return x.id===row.from_id;});
-    return {from:(a&&a.name)||"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:parsed.skills||[],text:parsed.text||"",wouldClimbAgain:parsed.wouldClimbAgain!==false};
+    /* pubName, not the raw name: a vouch names the person who GAVE it, and FullProfile builds
+       another climber's vouch rows with this — so a bare `.name` published every voucher's real
+       name on somebody else's profile, whatever their own "Show my real name publicly" setting
+       said. The friends list and crew roster were unified on this gate when 0175 made the
+       setting real; this surface was missed. The missing-author fallback is unchanged. */return {from:a?pubName(a):"A ClimbMatch member",avatar:a&&a.avatar,route:parsed.route||"",date:row.created_at?row.created_at.slice(0,10):"",ratings:parsed.ratings||{},skills:parsed.skills||[],text:parsed.text||"",wouldClimbAgain:parsed.wouldClimbAgain!==false};
   });
 }
 function trustContributions(c){
