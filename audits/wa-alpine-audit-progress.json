@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_crater_mountain_standard_route",
+  "last_processed_id": "wa_dark_peak_dark_glacier_route",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5087,6 +5087,26 @@
       "clean_count": 4,
       "sql_file": "audits/sql/2026-09-09-batch-249.sql",
       "note": "Kimchi Suicide Volcano duplicates the Glacier Creek Road closure defect fixed in batch 248 on its sibling route wa_colfax_peak_cosley_houston -- that batch ran less than 2 hours before this one and the sibling was simply missed, not a re-verification of an unapplied fix this time. Colonial Peak West Ridge flagged only (stale/unexplained corrections-field note referencing a nonexistent route id). Recurring operational concern about unapplied SQL across many batches restated in the log entry."
+    },
+    {
+      "batch": 250,
+      "date": "2026-09-09",
+      "pass": 5,
+      "route_ids": [
+        "wa_crooked_thumb_peak_east_face",
+        "wa_crooked_thumb_peak_south_route",
+        "wa_cutthroat_peak_cauthorn_wilson_couloir",
+        "wa_cutthroat_peak_northeast_face",
+        "wa_cutthroat_peak_southeast_buttress",
+        "wa_cutthroat_south_buttress",
+        "wa_cutthroat_west_ridge",
+        "wa_dark_peak_dark_glacier_route"
+      ],
+      "fixed_count": 7,
+      "flagged_count": 2,
+      "clean_count": 1,
+      "sql_file": "audits/sql/2026-09-09-batch-250.sql",
+      "note": "Batch is 87.5% a re-verification of Batch 60 (2026-08-06, pass 2): 7 of these 8 routes were already audited then, and EVERY confirmed error from that batch (Cutthroat area elevation, a stale-elevation waypoint + pitch note, two rock_grade errors, Crooked Thumb high_point_ft/landManager/lottery-date) is still present in the live DB today, unchanged, proving the batch-60 SQL was never applied rather than any fact having drifted back -- the recurring operational concern restated in batches 248/249 is no longer a suspicion, it is now directly confirmed with a concrete example spanning 5+ weeks and 190 intervening batches. Re-issued all of batch 60's fixes (one, the South Buttress summit-waypoint path, was corrected in the reissue: batch 60 targeted array index 1, which is not the summit entry in the row as it stands today -- index 2 is). One genuinely new finding this pass: Dark Peak's area elevation_ft (8,518) and its Dark Glacier Route's high_point_ft (8,507) both disagree with the peak's own summit waypoint (8,504) and with external sources (SummitPost, PeakVisor, Mountaineers.org, Bulger List); also re-confirmed batch 60's flagged-but-unconfirmed-that-session prominence_ft finding (273->264) via a source that session could not reach. Flagged only: the 5-way identical templated beta field ('Grade II, 5.7 climbing... Rainy Pass') and matching approach/approach_logistics block shared verbatim across all 5 Cutthroat Peak routes in this batch -- still present, still needs authored per-route replacement text rather than a find-replace, exactly as batch 60 already concluded; not re-researched from scratch since nothing about a granite peak's access story changes in 5 weeks. wa_crooked_thumb_peak_east_face (new to this audit, not covered by batch 60) checked clean -- no external or internal contradictions found."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

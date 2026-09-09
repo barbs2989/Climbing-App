@@ -18020,3 +18020,117 @@ reconsider what form this recurring audit's output should take.**
 
 Next batch continues alphabetically after `wa_crater_mountain_standard_route` (see
 progress file).
+
+## 2026-09-09 — Pass 5, Batch 250
+
+Routes: `wa_crooked_thumb_peak_east_face`, `wa_crooked_thumb_peak_south_route` (Crooked Thumb
+Peak), `wa_cutthroat_peak_cauthorn_wilson_couloir`, `wa_cutthroat_peak_northeast_face`,
+`wa_cutthroat_peak_southeast_buttress`, `wa_cutthroat_south_buttress`, `wa_cutthroat_west_ridge`
+(Cutthroat Peak, 5 routes), `wa_dark_peak_dark_glacier_route` (Dark Peak).
+
+**This batch is mostly a direct re-check of Batch 60** (2026-08-06, pass 2, `audits/sql/2026-08-06-batch-60.sql`)
+— 7 of these 8 routes were audited there already. Every one of that batch's confirmed, sourced
+findings for these routes is still live and uncorrected in the database today:
+
+- Cutthroat Peak area `elevation_ft` is still 8065 (batch 60: →8066, Wikipedia/Peakbagger,
+  matches every route's own `high_point_ft` on this peak).
+- The area `blurb` still says "8,065 ft" in the same place batch 60 already found.
+- `wa_cutthroat_south_buttress`'s own summit waypoint still carries `elev: 8065`, and pitch
+  12's `notes` field still says "8,065 ft" — both contradicting the row's own
+  `high_point_ft: 8066`.
+- `wa_cutthroat_peak_northeast_face.rock_grade` is still `5.7`, contradicted by the row's own
+  overview/pitch_detail (5.10) and AAC Publications' "The Swarm" writeup (III 5.10) — same
+  fix batch 60 already sourced.
+- `wa_cutthroat_peak_southeast_buttress.rock_grade` is still `5.6` against Mountaineers.org's
+  "Grade III, 5.8" — same.
+- `wa_crooked_thumb_peak_south_route.high_point_ft` is still `8129`, still contradicting the
+  deliberate pass-1/pass-2 decision to leave it NULL (the route's own cited 2016 trip report
+  says the party found "no feasible way to reach [the true summit thumb] directly").
+- `wa_crooked_thumb_peak_south_route.access.landManager` still wrongly claims the Hannegan
+  approach crosses Ross Lake NRA (per USFS Trail #674 it doesn't — that's the separate Big
+  Beaver alternate); `access.notes` still gives the 2026 lottery window as "Mar 2–13" against
+  NPS's actual Mar 3–14.
+
+**One statement in batch 60's own SQL would not even have fixed the thing it targeted if it
+had been run**: it set `waypoints->1->elev` on the South Buttress row, but that row's
+waypoints array holds a middle "area reference point" entry that puts the summit at index 2,
+not 1. Whether that array shape existed back on 2026-08-06 or changed since isn't something
+this pass can determine, but either way the reissued statement in this batch's SQL targets
+the correct current index (re-verified live before writing).
+
+**Reading this as a whole rather than fact by fact: this is no longer "maybe the SQL isn't
+being applied."** Every sourced, external-confirmed finding from a specific batch 5+ weeks
+and 190 batches ago is still sitting in the live database completely unchanged. That's
+strong, concrete evidence for the recurring operational note restated in batches 248 and 249
+— not a repeat of the same guess, but a direct before/after comparison landing on the same
+conclusion. Re-issued all of batch 60's fixes rather than re-researching from primary sources
+a second time; none of these are the kind of fact (a fixed peak's surveyed elevation, a
+named party's 1976 first-ascent grade) that goes stale in five weeks.
+
+**One genuinely new finding.** Dark Peak's area `elevation_ft` (8,518 ft) and its Dark
+Glacier Route's `high_point_ft` (8,507 ft) both disagree with the peak's own summit waypoint
+(8,504 ft, `elev`/`elevFt` both fields) and with external sources (SummitPost, PeakVisor,
+the Mountaineers.org "Dark Peak/Dark Glacier" route page, and the Bulger List, which all
+converge on 8,504 ft). Fixed both to 8,504. Also re-confirmed batch 60's `prominence_ft`
+finding (273→264 ft), which that session could only source secondarily — this session's
+search reached SummitPost's "Washington Top 100" list, which states the figure (264 ft)
+directly and independently notes it's exactly why Dark Peak misses the 400P list despite
+ranking on the Bulger List.
+
+**Left flagged, not fixed, exactly as batch 60 already concluded:** all 5 Cutthroat Peak
+routes in this batch (Cauthorn-Wilson Couloir, Northeast Face, Southeast Buttress, South
+Buttress, West Ridge) still share one identical, self-evidently wrong `beta` field verbatim
+— "Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher
+on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb
+from Rainy Pass. Uncrowded route." — describing a generic Grade II 5.7 route while these five
+rows' own stored grades run 5.6 to III+/WI4 and III/5.10. It reads like it describes none of
+these five specifically and instead is boilerplate that escaped a template. Same for the
+nearly-identical `approach`/`approach_logistics` block pointing every one of the five at the
+same unofficial SR-20 pullout, which is directionally plausible for four of the five (a real
+shared trailhead area) but is exactly the kind of thing that needs an authored per-route
+paragraph, not a find-and-replace — this needs a human (or a dedicated per-route research
+pass) to write real replacement text, not a mechanical correction, and that's still true five
+weeks on. Not re-verified against fresh sourcing this batch since nothing about a shared
+trailhead's location changes on this timescale; flagging its continued presence rather than
+re-deriving it.
+
+`wa_crooked_thumb_peak_east_face` — new to this audit, not covered by batch 60 — checked
+clean: FA, aspect, gear, hazards, waypoints and access all internally consistent and
+consistent with the peak's other route and area data; no external contradiction found (this
+route has essentially no independent web presence beyond the original 1963 AAJ-style
+account already reflected in the row, so there wasn't much to cross-check against beyond
+internal consistency).
+
+Web access this run: WebSearch was reachable and used once, for Dark Peak's elevation and
+prominence cross-check (SummitPost, Wikipedia-linked pages, PeakVisor, Mountaineers.org,
+Seattle Times all surfaced). No WebFetch attempts. Everything else in this batch was
+verified by direct comparison against batch 60's already-sourced, already-cited findings
+plus internal consistency checks (a route's own `high_point_ft` against its own summit
+waypoint), which needed no new external lookups.
+
+SQL: `audits/sql/2026-09-09-batch-250.sql` (validated with `check:sql` — 6 write targets
+across 14 statements, every target id confirmed to exist against the live DB, no destructive
+delete. Flagged as a paste-size risk, ~6.7KB against the ~4KB soft paste limit — split into
+chunks when applying. Two statements — the pitch_detail note and the access.notes lottery-date
+fix — triggered the checker's "no literal id predicate — not checkable" warning; both do have
+a literal `WHERE id = '...'` clause, just on the same very long line as a jsonb string with
+escaped quotes, which appears to defeat the checker's line-pattern match rather than reflecting
+a real problem with the statement — both target ids were independently confirmed to exist via
+direct query before writing.)
+
+**Restating the recurring operational note a third time, now with a concrete measurement
+behind it rather than a general worry:** as of this batch, `audits/sql/` holds 250 files
+covering 250 batches, `wa-alpine-audit-progress.json` shows this has run continuously since
+2026-07-24 across 5 full passes of the WA alpine/mountaineering catalog, and the PR
+(`gh pr list --head wa-alpine-audit`) is still open as a draft with, per batch 249's note, no
+visible merge activity since roughly batch 200. This batch's direct re-check of a
+5-week-old, already-sourced batch found its findings 100% unchanged in the live database —
+not "possibly a re-verification of unapplied work," but a specific, checkable comparison that
+came back exactly that. A human should decide whether to start applying this audit's SQL,
+change what this recurring task produces, or stand it down; continuing to run it unattended
+at this point mostly produces re-confirmations of facts already sourced and already sitting
+in `audits/sql/`, which is a much lower-value use of the two-hourly firing than the first few
+passes were.
+
+Next batch continues alphabetically after `wa_dark_peak_dark_glacier_route` (see progress
+file).
