@@ -748,7 +748,9 @@ the total when deciding where a new guard belongs.
     namespaced **`rd:`** for that reason. Any future second component needs the same treatment —
     a bare name is not unique across files.
   - Every vite config that calls `buildOpener` **must** also call `routeDetailTransform`, and the
-    guard asserts it (all 5 do). Wiring that a config can forget is wiring that one eventually
+    guard asserts it (**11** today — the guard DISCOVERS them with a readdir, so this number is
+    a fact about the tree rather than a list to maintain; it read 5 for months after the tree had
+    moved on). Wiring that a config can forget is wiring that one eventually
     will: the configs already drifted once on which files they transformed.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
@@ -1237,14 +1239,38 @@ the total when deciding where a new guard belongs.
     local state renders perfectly — which is precisely why each needed its own census to find.
     `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
     performs an action and then asks whether it survived.
-  - **THREE of the six are covered, and the count is stated in the script so the gap cannot quietly
+  - **FOUR of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
     opens, found by a **different** real account through `crew_listings` — the only test of that
     with two accounts, where `probe-crewfinder-shows-a-real-crew.mjs` proves the component over a
-    synthetic crew. Remove-friend (#1563): a connection removed in the real overlay, asked of
+    synthetic crew. The route share (#1576): a route sent from the real share sheet, asked of
+    `messages`. Remove-friend (#1563): a connection removed in the real overlay, asked of
     `connections` and then of the screen after a reload, where
     `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+  - **THE SHARE PHASE MUST PRECEDE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing
+    rather than tidy.** The share sheet's pool is `connections` **plus seed `CLIMBERS`**, and a
+    seed climber's id is an **integer** — `sendMsg` gates its write on `isDbId(pid)`, so sending
+    to one correctly takes the honest *"Demo profile — messages here stay on this device"* branch
+    and writes nothing. **Only the mate exercises the real write**, and the mate is in that pool
+    only while the connection exists. Appended after remove-friend, the phase would filter an empty
+    pool and pass having sent nothing — the vacuous shape this walk has now produced twice.
+  - **The sheet is FILTERED to the mate by name before the click**, for the same
+    attributability reason phase 4 demands exactly one Remove control: every climber in the pool
+    carries a `Send` button, and the first one belongs to a seed integer id. The name comes from
+    the fixture, not from a string typed into the guard.
+  - **The message must NAME THE ROUTE THAT WAS OPEN**, cross-checked against that page's own
+    rendered text rather than against a name written into the walk — a share carrying somebody
+    else's route is a defect that *"a row exists"* cannot see. `check:message-delivery` proves a DM
+    renders in the recipient's inbox and never touches the share control, so this asserts the
+    **write** and leaves the render to that guard rather than covering it twice.
+  - **THE ROUTE PAGE IS REACHED WITH THE SHARED `?zr=1` OPENER, never by driving the browse
+    navigation.** `scripts/journey.config.mjs` gained `buildOpener` for this, and
+    `routeDetailTransform` with it because `check:overlay-discovery` requires every config calling
+    one to call the other. Driving the drill-in instead is the path this file records costing
+    **four consecutive browser attempts** on `AreaLatest`; `?zr=1` calls the app's own
+    `openRoute()`, and the walk waits on `window.__routeOpen` as well as on the text settling —
+    settling says nothing about whether the navigation has happened yet.
   - **EVERY BASELINE IS LOAD-BEARING and each is asserted before the thing it makes meaningful.**
     The fixture seeds disciplines and grades (it serves `check:signed-in`, whose account is meant to
     own things), so this walk **blanks them and re-reads them as empty**; the connection is counted
@@ -1289,8 +1315,19 @@ the total when deciding where a new guard belongs.
     `OPEN_CREWS` fails **exactly** the crew assertion;
     `scripts/oneoff/inject-remove-friend-journey-case.mjs` makes `removeConnection` unreachable —
     the real #1563 defect, leaving the optimistic filter and the success toast in place — and
-    requires phase 3 to fail on the removal assertion **and nothing else**. Both edit the app in
-    place, so **do not commit while one is running**.
+    requires phase 4 to fail on the removal assertion **and nothing else**;
+    `scripts/oneoff/inject-share-route-journey-case.mjs` does the same to `sendMsg` for #1576,
+    and phase 3 then fails on **exactly one** assertion while *"shared the open route with …"*
+    still passes — which is the defect's own shape, the click landing and only the write missing.
+    All of them edit the app in place, so **do not commit while one is running**.
+    - **THAT INJECTION CAUGHT A VACUOUS ASSERTION IN THE GUARD ITSELF, which is the whole reason
+      for judging on WHICH assertions fired rather than on an exit code.** Phase 4's third
+      assertion counted controls reading `Remove` — and those live in the **overlay**, which is not
+      open after a reload, so it printed a cheerful `ok` beside two failures and **could not have
+      failed in that position**. Dead code in a guard reads as coverage, the shape
+      `check:screen-lists` already records, committed in a guard written the same hour. Replaced
+      with the `See all` opener, which renders only on `connections.length > 0`, and re-verified
+      in BOTH directions: absent on a clean run, present under the injection.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
@@ -4653,6 +4690,20 @@ the total when deciding where a new guard belongs.
     subtraction is meaningless anyway; this catches those without a second rule. It also covers
     the 3 routes storing a BACKWARDS pair, since the app prints `Math.abs(segMi)` and the
     magnitude is what has to be possible — the ordering is `audit:waypoint-order`'s subject.
+  - **AND THE SAME RULE ON A CUMULATIVE DISTANCE — `cumMi` — because three surfaces print one.**
+    A waypoint's `distMi` is measured from the trailhead, so it cannot be less than the straight
+    line from the trailhead PIN either. Measured: **197 of the 2,567 cumulative distances the
+    waypoint row prints, across 112 routes**, and **35 of the 412 in CAMPING & BIVY**, where
+    `wa_poltergeist_pinnacle` printed *"Boundary Camp · 8.0 mi"* for a camp **21.8 miles** from its
+    trailhead. That one matters most: it is the number a party uses to decide whether they can
+    reach camp on day one. The trailhead's own `distMi` is 0 by convention, so `|wp − trailhead|`
+    IS the cumulative distance and `cumMi` is `legMi` applied with the trailhead as the previous
+    pin — **one rule, not a second copy of it**.
+    - **A SELF-COMPARISON GUARD WAS WRITTEN HERE AND THE INJECTION PROVED IT DEAD.** `th===wp`
+      looks necessary and is not: the chord from a point to itself is 0, so `legMi` already
+      returns the trailhead's own 0 mi. The case reported MISS, the clause came out, and the
+      reason is recorded in the source so nobody re-adds it. Dead code in a guard reads as
+      coverage and is not.
   - **20% OF PRINTED LEG DISTANCES DISAPPEAR, AND THE SHAPE OF THAT IS MEASURED RATHER THAN
     WAVED AT.** 473 of 2,405 is a lot of information to remove from a product, so: **23 routes
     lose EVERY leg distance and 16 of those have only one leg**; three lose 6-7, and they are the
@@ -4665,9 +4716,9 @@ the total when deciding where a new guard belongs.
     flagging correct work, which is the failure this file records under a dozen other names.
   - Fails **closed** on a missing `legMi` export and on a waypoint list that did not render, so an
     absent distance can never read as a suppressed one.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
+  - Injection-tested **7/7** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring `ClimbMatchCore.jsx` byte-identically. Case 1 is
-    the real defect (`return seg`) and fails 2; **case 2 makes it suppress EVERYTHING** and fails
+    the real defect (`return seg`) and fails 5; **case 2 makes it suppress EVERYTHING** and fails
     6, because a guard that only ever asserts absence is satisfied by deleting the feature; case 4
     flags legs LONGER than the chord and fails, pinning the one-sidedness. **Two must stay
     SILENT** — a comment naming the forbidden shape, and a widened tolerance that still catches the
@@ -4791,6 +4842,30 @@ the total when deciding where a new guard belongs.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+  - **DO NOT BUILD THE PITCH-COUNT SIBLING OF THIS AUDIT — measured 2026-09-09 and refused.**
+    *"Does a route's stored `pitches` disagree with a count in its own prose?"* is the same
+    question this audit answers for `rappels`, and the founding observation is real and on screen:
+    **Mount Stuart's North Ridge stores 20 pitches** while its own overview says *"roughly 18
+    pitches and 3,000 ft total"* and its PRO TIPS say *"a full day for ~18 pitches"* — three
+    numbers for one route on one page. `scripts/oneoff/measure-pitch-count-claims.mjs` sizes it
+    across all 8,365 WA routes: **115 state a count, 24 disagree with the stored value, and
+    reading them gives roughly THREE real** — ~15% precision, worse than `audit:area-parents`'
+    first draft, which this file already records as a mistake.
+    - **Prose states a pitch count for at least six reasons and only one is the route total**: a
+      **section** (*"the Runnels — roughly 3 pitches of steep ice"*), a **shared** section
+      (*"shares its first 3 pitches with A Servant To Liberty"*), a **different route named to warn
+      you off it** (*"a distinct, harder variation called 'North Face Direct' (5.9, 5 pitches) …
+      should not be confused"*), a **descent** (*"rappel the first 3 pitches"*), a **historical**
+      state (*"when the route reportedly had 9 pitches of ice; today's icefall is shorter"*), and a
+      **linked** count (*"many parties link it into just 4-5 pitches"*).
+    - And a **sum** can agree while no single number does — *"8 pitches to M&M Ledge, then shares
+      its final 3-4 pitches"* against a stored 11. Flagged, and correct.
+    - *A distinction that defeats a regex is a distinction a sweep will get wrong* — the same
+      conclusion this file reaches for the `guidebook` citation family. What survives is two or
+      three per-route data questions needing a **source**, not a transform:
+      `wa_cathedral_rock_northeast_buttress` (*"Overall grade III, 6 pitches"* against a stored 7),
+      `wa_chair_peak_east_face` (*"Rated 5.2 (PG13) over 3 pitches, 600 ft"* against 4), and
+      Stuart's 20-vs-18. **Report, do not sweep.**
 - **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
   only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
   catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
@@ -7511,6 +7586,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     stated elevation is left alone. What remains is exactly what the script declined: **Mount
     Stuart** (six coordinates, no single wrong cluster) and **Burgundy Spire** (a climbers' name
     the gazetteer does not hold, so the third record does not exist).
+    - **MOUNT STUART IS DIAGNOSED BUT NOT REPAIRED, and the diagnosis is worth reading before
+      anyone tries.** `scripts/oneoff/probe-mount-stuart-summit-split.mjs` measures all four of
+      its summit coordinates against the ground and the gazetteer:
+      **9,416 ft and a LOCAL MAXIMUM** at `wa_mount_stuart_girth_pillar`'s pin (17 m from GNIS,
+      matching its own stated 9,416 to a foot); 9,333 and a local maximum on two more routes;
+      **9,208 and NOT a maximum — 2 of 8 neighbours higher by up to 182 ft — where the peak's own
+      `areas` row and EIGHT routes sit**; and 8,870 with 5 of 8 higher on Cascadian Couloir, North
+      Ridge and West Ridge, the three most-climbed lines on the peak.
+      - **`audit:peak-coords` has a recorded decision on this exact peak**: its `TOL` comment says
+        the DEM maximum is "70 m away matching the stored elevation" and that snapping was
+        REJECTED because it would DERIVE a coordinate rather than copy a record. The new fact is
+        that **a stored route pin sits on a local maximum 58 m from the area row**, matching its
+        own stated elevation to a foot — near enough that it is very likely the same high point
+        that grid search found, though the two were sampled differently and this does not claim
+        they are identical. So COPYING is available where deriving was not — which changes the calculus that decision rested on. That makes it a
+        decision to RE-TAKE, not one to overturn quietly.
+      - **Every repair path trips a gate in `fix-summit-pins-on-the-flank.mjs`**, which is the
+        gates saying Stuart is unsettled: the dominant cluster is 207 ft from the stated elevation
+        (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
+        25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
+        that is not the summit either.
+    - **A PIN REPAIR HAS TO CARRY ITS SKETCHED LINE, and this one did not — checked afterwards
+      rather than assumed.** 203 of 578 WA routes with a track store a line drawn THROUGH their
+      own waypoints, so moving a pin leaves a vertex at the position it used to hold. Measured on
+      the 13 moved pins: 6 of the 10 routes carrying a track had their summit pin end up **110 m
+      from their own line**. `fix-stranded-track-vertices.mjs` carried 4 of them (adrift vertices
+      **28 -> 24**, routes **21 -> 18**); the other 3 fall outside `audit:stranded-track-vertices`'
+      candidate shape and are left, because their line is short enough that one adrift vertex is
+      not a minority.
+      - **No route lost its caveat, and that was verified rather than hoped.** All six still say
+        their line is not a recorded track — the three the fixer could not reach simply swapped
+        one honest caption for another (*"straight lines between this route's waypoints"* becomes
+        *"two straight segments drawn across 4,128 m"*), because `trackIsJustTheWaypoints` went
+        false and the segment caveat took over.
+      - **AND A `NaN` I THOUGHT I HAD FOUND WAS MY OWN PROBE.** `trackCoverageCaveat(route)`
+        returns *"stops NaN km short of the summit"* — because the app calls it as
+        `trackCoverageCaveat(_cov, _gapDist)` and guards on `_cov`, and my probe passed a route
+        object. Checked before reporting it; nothing reaches a screen.
     - **GUYE'S MECHANISM IS VISIBLE.** `wa_blood_sport` carries a correctly-typed Topout,
       *"Blood Sport crag"* at 3,400 ft, at exactly `47.442,-121.411` — and two other routes put
       their *"Guye Peak"* SUMMIT pin on that same coordinate. Two routes' summit is the crag's
@@ -9242,6 +9355,52 @@ the correction knows the screen is wrong, and they have no way to report it.
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*
+- **MUTUAL FRIENDS IS A STUB, AND EVERY ENTRY POINT IS CORRECTLY GATED OFF IT — so the feature is
+  ABSENT rather than lying, which is the opposite of the usual defect here.** `mutualIds()` takes
+  **no arguments** and returns a literal `[]`, so `mutualCount()` is 0 for every climber, always.
+  All five consumers render as `mutualCount(...) ? control : null`, so the *"N mutual friends ›"*
+  row never appears and the **Mutual friends** sheet is unreachable in the app — only
+  `?z=mutualModal`, the overlay guards' own opener, can mount it. `fedge()` beside it returns
+  `false` and has **zero** callers.
+  - **NOT a regression:** `git log -S "function mutualIds"` returns only the original upload and
+    the monolith split (#497). Never implemented, never reverted, so `audit:silent-reverts` has
+    nothing to say about it and is right not to.
+  - **The cost is a session polishing copy no user can read, and that has already happened once.**
+    #1637 corrected the sheet's subtitle (*"You and Alex both know 0"*), a real string defect on a
+    surface with no reachable entry point. The walk that found it opens overlays by name, which is
+    exactly how an unreachable modal looks reachable. **Before fixing copy found by an overlay
+    walk, check the surface has an entry point that can render.**
+  - **Proven by EXECUTION, not by reading**
+    (`scripts/oneoff/probe-mutual-friends-is-a-stub.mjs`): it bundles Core and calls the real
+    exports over five inputs chosen to overlap as much as possible, and reports
+    `mutualIds.length` — the declared parameter count, which is **0** and is the structural tell.
+    It **exits 1 if the function ever starts returning something**, so this note fails as stale
+    rather than rotting into a description of code that has moved on.
+  - **Implementing it or deleting the UI are both product decisions, not polish** — one is a
+    feature, the other removes a built screen — so neither was done.
+- **WITH `DEMO_FILLERS` ON, 7 OF 60 ABSENCE CLAIMS ARE STILL ON SCREEN, AND THAT IS THE RIGHT
+  NUMBER.** `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57
+  overlays and reports which *"No X yet"* sentence actually renders — the question the sample-data
+  request poses, and the one to re-run when the examples come **out** before launch. Measured
+  2026-09-09: **64 screens walked, 0 unmounted.** Reading all seven:
+  - **Three are the Crew tab, and they are CORRECT DATA.** *"No days proposed yet"*, *"No meeting
+    spot or time set yet"*, *"No weekly slot works for the whole crew yet"* all come from
+    `crew_seed_octo` — the **only** one of the five seed crews with no `dates` and no `meetPlace`,
+    and the only one carrying an `openNote`. It is the still-recruiting crew, so a crew that has
+    proposed nothing is the state being demonstrated. Four of five crews are fully planned; having
+    both stages on screen is the better example, not a gap. **Do not "fix" this by seeding dates.**
+  - **Two are a payload artifact, not a surface.** *"No events scheduled yet"* appears only under
+    `postMenuFor`/`reactPickerFor`, whose payload injects a **synthetic** group into
+    `createdGroups`; the seeded events belong to `group_wasatch_trad`, so the synthetic group
+    correctly has none. No climber can reach that state.
+  - **One is `"No topo yet"`** — topos are DB-backed (`topos`), not seed content, so `DEMO_FILLERS`
+    cannot supply one.
+  - **One is the mutual-friends sheet**, i.e. the stub above.
+  - A **static** version of this was written first and discarded: it tried to resolve each claim
+    back to its state variable through 400kB of single-line JSX and reported *"0 of 61 seeded"*,
+    which is plainly wrong. Whether a sentence is ON SCREEN needs no resolution at all — the
+    [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
+    disagreed with a fact already known.
 
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
@@ -9781,6 +9940,45 @@ their own Résumé showed an amber **"Unverified"** chip.
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
 
+- **TWO STAT SURFACES STATED LESS THAN THEY KNEW, and both were found by READING a CI capture
+  rather than by any guard.** Neither is a wiring fault — the column is populated, the identifier
+  is bound, the number is a number — which is why nothing sees them.
+  - **`1 vouches` on a partner card**, live on the `ui-screens` capture
+    (*"27 catches · 74 climbs · 1 vouches"*). The three stat chips carried a fixed plural in a
+    tuple and rendered `st[1]+" "+st[2]`, so a single catch, climb or vouch all read wrong.
+    **A CONVENTION VIOLATION, NOT A NEW RULE**: the app already singularises in **59** places —
+    54 as `!==1?"s":""` and 5 as `!==1?"es":""`, including `"catch"+(_slCaught===1?"":"es")` for
+    this exact word. The singulars are **declared** rather than derived, because dropping a
+    trailing `s` from *catches* gives *catche*; slot `[2]` stays the plural, since it is also the
+    React key and the discriminator in the `act` ternary beside it.
+  - **THE CLASS IS ONE SITE, MEASURED BY TWO SHAPES, AND THE OBVIOUS SCAN IS BLIND TO IT.** A scan
+    for a count welded to a **literal** plural returns **45** candidates and **none is reachable
+    at 1**: constants that can never be 1 (`RECENT_DAYS`, `MAX_WAYPOINTS`), `.toLocaleString()`
+    counts of thousands, `sibs.length+1` which is always ≥2, aria-labels built from an **index**
+    (*"Pitch 3 notes"*) rather than a count, and the *"Show all N …"* family, which is gated above
+    1 — alerts at `length>8`, friends at `length>5`. A scan for a count welded to a noun held in a
+    **variable** returns 21, of which **exactly one** is a count and a noun: this one. **The first
+    scan cannot see the defect that was actually on screen**, because the plural lives in `st[2]`
+    rather than in a string literal. *A single scan reporting 45 candidates while missing the one
+    real instance is worth more as a warning than as a worklist.*
+  - **A LABEL WITH NO VALUE UNDER IT: `High-factor catch ratio`.** The ratio existed only as the
+    **width of a `<Bar>`** — two nested divs with a percentage width, no role, no text, no aria —
+    so a screen reader read the label and stopped, and a sighted reader got a bar with no number.
+    The **#654** dangling-label shape, on a safety record.
+    - **Also a class of one, measured**: 8 `<Bar>` uses across the app and **seven state their
+      value in adjacent text** (*"COMPATIBILITY WITH YOU — 74%"*, `{cur}/5`, `{avg.toFixed(1)}`,
+      `{t.pct}%`). The eighth is this. No detector.
+    - **Computed ONCE (`_hfr`) so the sentence and the bar cannot disagree**, and `null`
+      distinguishes *"no catches, so there is no ratio"* from a genuine **0%**. A failed
+      `belay_catches` read keeps the **—** the three tiles above already show: printing *"0%"*
+      there would state a measurement the app does not have, which is the defect `unavailable`
+      exists to prevent, committed one line lower.
+  - Probes: `scripts/oneoff/probe-stat-chip-singulars.mjs` and
+    `scripts/oneoff/probe-catch-ratio-states-its-number.mjs`. Both **lift the expression out of
+    the source** with `ANCHOR LOST` rather than retyping it, and both assert the **negative**
+    direction — the plural must still render at 0 and 2, and the ratio must stay silent with no
+    catches — because a fix that singularised or captioned unconditionally passes any suite that
+    only checks the interesting case.
 - **A CLIMBER WHO HAD ONLY ASKED TO JOIN COUNTED AS A CREW MEMBER, AND HELD A SPOT.** `#1554`
   introduced the third crew status and the comment beside `allConfirmed` states the rule outright
   — *"Someone who has asked to join is not in the crew yet"* — and **enumerates the four readers it
@@ -9807,6 +10005,53 @@ their own Résumé showed an amber **"Unverified"** chip.
     app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
     `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
     assertion still green. That is the shape that bit #1643's own merge an hour earlier.
+  - **AND THE SAME ENUMERATION FOUND SEVEN MORE, WHICH IS THE PART WORTH READING.** #1647 named
+    the three readers it fixed; reading *that* list and looking for what it did not name found
+    seven others still counting a climber who had only asked to join. **The count on the heading was
+    the mildest of them** — the three worst are not counts at all:
+    - **`risks` LISTED a requester's risk tolerance as the crew's**, and could flip an aligned crew
+      to *"Risk tolerance: … — mixed; talk through your turnaround before you commit."* in an amber
+      box. A **false warning on a safety surface**, which this file records everywhere else as how a
+      real warning stops being read.
+    - **The backcountry safety brief compared `done` against `roster.length`**, and a requester can
+      never be in `safetyDone`. So *"Whole crew has reviewed the safety plan"* was **unreachable**
+      for as long as any request stood — a readiness state a non-member could hold shut
+      indefinitely, with the amber *"not everyone has reviewed"* standing in its place.
+    - **`pendDay` — the variable IMMEDIATELY RIGHT of the `pendCrew` #1554 did fix, on the same
+      line** — named a requester as somebody the crew was waiting on to pick a day.
+    The other four are counts and control gates: the collapsed card's *"Ready · N climbers"* and its
+    *"N/M confirmed"* denominator, the *"Usually free for everyone"* / *"No weekly slot works for the
+    whole crew yet"* banner, *"Nudge N to pick a day"*, and the `roster.length>2` gate that decides
+    whether a two-person crew is offered a removal **vote** instead of *"Just the two of you — use
+    Leave below instead of voting someone out."*
+  - **A NON-ORGANISER SEES THE WRONG NUMBERS WITH NO WAY TO UNDERSTAND THEM.** `dbJoinReqs` only
+    surfaces the Accept/Decline card on crews **I organise**, while the pending roster row and every
+    one of these counts renders for **every** member. So an ordinary member read *"3/4 confirmed"*
+    above a row saying *"Asked to join"* and no control anywhere explaining it.
+  - **SO THE USEFUL ENUMERATION IS THE OTHER ONE, and the comment beside `inCrew` now carries it.**
+    Listing what was *fixed* is what left seven behind twice over; listing what deliberately keeps
+    the whole roster is a **closed set**, so a new `roster` reader that is not one of these is a
+    defect. Five: the member LIST, the weekly-availability **grid rows**, name resolution in the day
+    chips and inside `GearTiers`, and the itinerary numerator — which counts people who HAVE an
+    itinerary rather than measuring against the crew.
+  - **The grid ROWS keep the requester and the banner above them does not count them**, and that
+    asymmetry is the point rather than an inconsistency: seeing when somebody is free is how you
+    decide whether to accept them, while *"works for the whole crew"* is a claim about the crew.
+  - **Two measured NON-findings, recorded so they are not re-derived.** `GearTiers` takes `roster`
+    only for `nameOf(id)`, so resolving a name maximally is correct. And `kit` — `roster.flatMap(p
+    => p.gear || [])` — is **defined and read by nothing**: dead, not wrong.
+  - **A SECOND `inCrew` SHADOWS THIS ONE, and it is an id-PREDICATE rather than the array.** The
+    invite-member block declares `const inCrew=id=>crew.members.some(...)`, spanning ~730243-732906.
+    None of the seven sites falls inside it — **checked by brace-matching before any edit**, not
+    assumed, because this file already records `clickable` being shadowed by a boolean and taking
+    out a whole panel with *"clickable2 is not a function"* while `check:refs` stayed green.
+  - The probe grew to **27 assertions** across five sections, and **section 5 is the load-bearing
+    one**: a fix that only ever moves readers onto `inCrew` is satisfied by sweeping the deliberate
+    four as well, which would hide a requester from the organiser who has to accept them.
+    Injection-tested **6/6** (`scripts/oneoff/inject-roster-reader-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically; the over-reach case
+    must fail on section 5, and a comment quoting the pre-fix expression must stay **SILENT**.
+    The harness captures the clean run first and refuses any expectation that already matches it.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
