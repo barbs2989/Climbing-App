@@ -17,6 +17,31 @@
 // see. So this reports only routes gaining less than their own geometry demands, and says nothing
 // about the rest.
 //
+// WHAT IS LEFT IS PER-ROUTE RESEARCH, AND THAT IS A MEASURED CONCLUSION RATHER THAN A SHRUG.
+// Three ways to narrow the remainder mechanically were built and all three were REJECTED — each
+// for a different reason, so none of them should be re-derived:
+//
+//   1. CLASSIFY BY rise/dist AS AN AVERAGE GRADE. If the trailhead-to-summit rise is impossibly
+//      steep over the stored distance but the stored gain is not, then both stored numbers agree
+//      with each other and disagree with the trailhead pin — i.e. the row measures the whole
+//      approach from higher up. Plausible, and defeated by the base rate: over the routes that
+//      PASS this audit, rise/dist is p50 364 and p90 748 ft/km with a CONTINUOUS tail — 8.9% are
+//      already over 800, and 26.9% of findings are. A 3x lean is not a separator, and any
+//      threshold that splits the findings mislabels ~57 correct routes.
+//   2. ASK THE ROW WHICH PIN dist_km STARTS FROM. Waypoints carry `distMi`, so the distance from
+//      each pin to the summit is computable and one of those segments may match `dist_km` — no
+//      threshold fitted, the row's own second record. It is DECISIVE where it applies:
+//      wa_austera_peak stores dist_km 4.5 against 4.51 km from its own "Eldorado (East Ridge)
+//      camp", a match to ten metres. It reaches 3 of 61, because 33 findings carry no usable
+//      `distMi` at all. Worth re-running if that column ever fills.
+//   3. EXCUSE BY CUMULATIVE ASCENT RATHER THAN NET RISE. Gain is cumulative and the convention
+//      test below compares it against a NET height, so a traverse that drops to a col and climbs
+//      again has its implied start pushed too low and the pin at the real start is missed —
+//      Austera again: camp 7,600 -> col 7,900 -> crevasses 7,700 -> summit 8,339 is 939 ft of
+//      ascent against a net 739, so a stored 1,280 reads as starting at 7,059 and misses the camp
+//      by 541 ft. Correct in principle, and it moves exactly ONE finding. A detector for a class
+//      of one is the thing this repo keeps refusing to build.
+//
 // Read-only, anon key, fails closed on an empty read. NOT a build gate — a property of the DB, not
 // the checkout, so no code change can cause or fix it; same reasoning as check:counts.
 import { SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
@@ -49,7 +74,7 @@ const elevFt = (w) => {
 };
 
 async function readAll() {
-  const sel = "id,name,area_id,discipline,gain_ft,dist_km,waypoints,high_point_ft";
+  const sel = "id,name,area_id,discipline,gain_ft,dist_km,waypoints,bivy,high_point_ft";
   const out = []; let last = "";
   for (;;) {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=${sel}&id=like.${STATE}_*&waypoints=not.is.null&gain_ft=not.is.null&id=gt.${encodeURIComponent(last)}&order=id.asc&limit=1000`, { headers: headers(k) });
@@ -72,11 +97,44 @@ for (const r of rows) {
   const withElev = wps.map((w) => ({ w, ft: elevFt(w) })).filter((x) => x.ft != null);
   if (withElev.length < 2) { noElev++; continue; }
 
+  /* Every elevation the ROW records anywhere, for the convention test below. Deliberately NOT
+     folded into `withElev`: that list decides the trailhead→summit rise, and a camp is neither
+     endpoint — letting one set `lo` or `hi` would change what the audit is measuring. */
+  const camps = (Array.isArray(r.bivy) ? r.bivy : []).filter(Boolean);
+  const anchors = withElev.map((x) => x.ft).concat(camps.map(elevFt).filter((n) => n != null));
+
   /* Prefer the NAMED endpoints — a trailhead-to-summit rise is the claim `gain_ft` is making.
      Falling back to min/max across all waypoints is weaker but still a lower bound on the climb,
      and it keeps routes that label their pins unusually from dropping out of the audit. */
-  const th = withElev.find((x) => /trailhead/i.test(String(x.w.type || "")));
-  const sum = withElev.find((x) => /summit|topout/i.test(String(x.w.type || "")));
+  /* WHICH summit, and which trailhead? `.find()` takes whichever the enrichment happened to list
+     FIRST, so on the 24 WA routes carrying more than one summit-typed pin the audit's answer
+     depended on row order — one of them by 1,815 ft. Row order is not a record.
+
+     THE CONSERVATIVE ENDPOINTS ARE THE ONES THIS AUDIT CAN DEFEND: the LOWEST summit-typed pin
+     and the HIGHEST trailhead, which give the smallest rise. `rise` is used as a LOWER BOUND on
+     the gain — the whole one-sidedness rests on it — so a smaller rise can only ever under-report,
+     never accuse a correct row.
+
+     "HIGHEST SUMMIT" WAS MEASURED AND REJECTED, and the measurement is the point. It adds 5
+     findings and loses none, which looks like strictly better coverage until you read them:
+     FOUR are Squire Creek Wall south-face routes whose own Topout pin says they end at the
+     3,249 ft grassy saddle, while a Summit pin records the FORMATION's 4,958 ft high point that
+     those routes never reach. Only `wa_sherpa_glacier` is genuine. One real in five is the
+     precision that teaches people to ignore an audit.
+     Preferring the route's own Topout does not rescue it either: `wa_sherpa_glacier` carries
+     "Top of Sherpa Glacier" (7,600) as an INTERMEDIATE topout on the way to Stuart's 9,415 ft
+     summit, so the same field means "where the route ends" on one route and "a milestone" on the
+     other. The endpoint cannot be resolved from the pin TYPES, and this records that rather than
+     trading an arbitrary rule for a wrong one.
+     KNOWN MISS, stated rather than hidden: `wa_sherpa_glacier` stores 6,000 ft against a
+     trailhead-to-Stuart rise of 6,485 and is not reported here, because its lowest summit-typed
+     pin is that intermediate topout. */
+  const lowest = (a, b) => (!a || b.ft < a.ft ? b : a);
+  const highest = (a, b) => (!a || b.ft > a.ft ? b : a);
+  const sums = withElev.filter((x) => /summit|topout/i.test(String(x.w.type || "")));
+  const ths = withElev.filter((x) => /trailhead/i.test(String(x.w.type || "")));
+  const sum = sums.reduce(lowest, null);
+  const th = ths.reduce(highest, null);
   let lo, hi, basis;
   if (th && sum && sum.ft > th.ft) { lo = th; hi = sum; basis = "trailhead→summit"; }
   else {
@@ -94,15 +152,31 @@ for (const r of rows) {
   /* ONE ALTERNATIVE HAD TO DIE FIRST, and it is half true — which is why it is a filter here
      rather than a footnote. `gain_ft` may legitimately be measured not from the trailhead but
      from somewhere higher: a high camp on a multi-day route, or the base of the climb on a rock
-     route. Measured over the 112 routes that fail the raw test, 24 have a waypoint at exactly the
+     route. Of the 104 routes that fail the raw test, 24 have a WAYPOINT at exactly the
      elevation the stored gain implies — `wa_mount_adams_adams_glacier` stores 5,150 against a
      "High Camp" pin at 7,000 ft, and 12,276 − 5,150 = 7,126. Those are a CONVENTION, not an
      error, and reporting them would be reporting correct data.
-     The remaining 88 imply a starting elevation the row records nothing at. Same shape as
+     The remaining imply a starting elevation the row records nothing at. Same shape as
      `dist_km` holding one-way and half-round-trip values at once — this column has two readings
-     too, and only one of them is wrong. */
+     too, and only one of them is wrong.
+
+     AND "RECORDS SOMETHING" MEANS EITHER STORE. Most high camps live in `bivy`, not in
+     `waypoints` — they are the same fact filed in the two columns `campSites()` already merges
+     for CAMPING & BIVY. Reading waypoints alone overstated this audit by 19 of 80 findings
+     (80 -> 61), and the identical blind spot in the app's own `gainBelowOwnPins` was rendering
+     a caveat on 12 routes whose gain is correct.
+
+     THE 19 ARE NOT ALL EQUALLY STRONG, and saying so is the honest form. Most name the approach
+     camp or the base of the climb outright — "Cutthroat Wall base terrace" on four Cutthroat
+     routes, "Boston Basin lower camp" matching to the FOOT, the Goodell Creek roadbed on two
+     Pickets routes. A few match a camp on the WRONG SIDE of the same peak: Tahoma Glacier
+     (south-west) is excused by Camp Schurman (north-east), 41 ft away. That is a real weakness
+     and it belongs to `audit:camp-route-fit`, not here — the camp is filed on a route it does
+     not serve, which is the propagated-zone-list shape, and reporting it as an impossible GAIN
+     would send somebody to fix the wrong column. Being excused wrongly is a false negative on a
+     reading list; being REPORTED wrongly is what teaches people to ignore one. */
   const impliedStart = hi.ft - gain;
-  const anchored = withElev.some((x) => Math.abs(x.ft - impliedStart) <= START_TOL_FT && x.ft > lo.ft + SLACK_FT);
+  const anchored = anchors.some((ft) => Math.abs(ft - impliedStart) <= START_TOL_FT && ft > lo.ft + SLACK_FT);
   if (anchored) { conventionally++; continue; }
 
   findings.push({
@@ -127,7 +201,7 @@ console.log(`\n=== gain_ft that the route's own waypoints say is impossible ===`
 console.log(`${rows.length} ${STATE.toUpperCase()} routes carry both waypoints and a gain`);
 console.log(`  ${noElev} have fewer than two waypoint elevations — nothing to compare, so they are NOT judged`);
 console.log(`  ${comparable} comparable`);
-console.log(`  ${conventionally} measure their gain from an intermediate point the row RECORDS (high camp, base of the climb) — a convention, not an error`);
+console.log(`  ${conventionally} measure their gain from an intermediate point the row RECORDS — a high camp in \`waypoints\` OR in \`bivy\`, or the base of the climb. A convention, not an error`);
 console.log(`  ${findings.length} store a gain below their own net rise with NOTHING recorded at the implied start (slack ${SLACK_FT} ft)\n`);
 for (const f of findings.slice(0, LIMIT)) {
   console.log(`  short by ${String(f.shortBy).padStart(5)} ft  ${f.id.padEnd(46)} [${String(f.disc).padEnd(7)}]`);

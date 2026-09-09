@@ -45,12 +45,20 @@ if (end - open < 5000) { console.error(`the settings region parsed as ${end - op
 //    that renders the control rather than from a mapping somebody wrote down.
 const CHROME = new Set(["Settings", "Close", "Back"]);
 const controls = [];
+const grouped = [];   // control sites whose label is computed -- one site, several controls
 traverse(ast, {
   JSXOpeningElement(p) {
     const { start } = p.node;
     if (start < open || start > end) return;
     const attr = (n) => p.node.attributes.find((a) => a.name && a.name.name === n);
     const label = attr("aria-label");
+    // A CONTROL GROUP RENDERED FROM A LOOP HAS ONE JSX SITE AND MANY CONTROLS, and dropping it
+    // here is how this census reported "0 volatile" with FOUR volatile switches on the screen.
+    // The four under Notifications are `[[key,label,sub],...].map(...)` with a computed
+    // `aria-label={"Toggle "+o[1]}`, so the early return below swallowed the whole group and
+    // nothing in the output said a group had been skipped. Mechanism 5 -- and the first that is a
+    // hole in the DERIVATION rather than in a list somebody typed.
+    if (label && label.value && label.value.type === "JSXExpressionContainer") { grouped.push(p); return; }
     if (!label || !label.value || label.value.type !== "StringLiteral") return;
     if (CHROME.has(label.value.value)) return;
     // Does an ENCLOSING conditional gate this control off? Ancestors, never character distance.
@@ -186,7 +194,7 @@ for (const c of controls) {
   console.log(pad(c.label, 42), pad(c.state, 21), "NO         resets on reload");
   volatile_++; stillVolatile.push(c);
 }
-console.log(`\n${persisted} persisted, ${volatile_} volatile, ${unknown} needing a look, ${gatedOff} not rendered`);
+const TOTALS = () => console.log(`\n${persisted} persisted, ${volatile_} volatile, ${unknown} needing a look, ${gatedOff} not rendered`);
 if (gatedOff) {
   console.log(`
 ${gatedOff} control(s) are behind a build flag that is FALSE, so they render as null. They are not
@@ -199,6 +207,47 @@ if (stillVolatile.length) {
   console.log("the setting is FOR, and choosing a storage mechanism does not answer it:");
   for (const c of stillVolatile) console.log(`  ${c.label}  (${c.state})`);
 }
+// -- CONTROL GROUPS. One JSX site, several controls, so the per-site classification above cannot
+//    speak for them. Report the members and how the group's state is stored rather than dropping
+//    the site: a census that silently omits a group prints the same clean summary as one with
+//    nothing to find.
+if (grouped.length) {
+  console.log(`\n${grouped.length} control GROUP(s) rendered from a loop -- one JSX site, several switches:`);
+  for (const p of grouped) {
+    // The array that feeds the .map, by walking UP to it rather than by a character window.
+    let arr = null, cb = null;
+    for (let up = p.parentPath; up; up = up.parentPath) {
+      const n = up.node;
+      if (n && n.type === "CallExpression" && n.callee && n.callee.type === "MemberExpression"
+          && n.callee.property && n.callee.property.name === "map"
+          && n.callee.object && n.callee.object.type === "ArrayExpression") { arr = n.callee.object; cb = n; break; }
+    }
+    if (!arr) { console.log("  a group whose .map source could not be resolved -- READ IT"); unknown++; continue; }
+    const members = arr.elements.map((e) => (e && e.type === "ArrayExpression" && e.elements[1] && e.elements[1].value) || "?");
+    // The state the group reads, from the computed member access inside the callback.
+    const body = src.slice(cb.start, cb.end);
+    const st = (body.match(/([A-Za-z_$][\w$]*)\[[a-zA-Z_$]/) || [])[1] || null;
+    const info = st ? states.get(st) : null;
+    const loader = info ? loaderIn(info) : null;
+    const saver = loader && [...calls].find((x) => /^(save|write)[A-Z]/.test(x) && x.toLowerCase().includes(loader.toLowerCase().replace(/^(load|read)/, "")));
+    const how = !st ? "?          no state resolved -- READ IT"
+      : loader && saver ? "YES        " + loader + "/" + saver
+      : loader ? "HALF       " + loader + " with no saver"
+      : "NO         resets on reload";
+    if (!st) unknown += members.length;
+    else if (loader && saver) persisted += members.length;
+    else if (loader) unknown += members.length;
+    else volatile_ += members.length;
+    console.log(`  ${members.length} switch(es) over ${st || "?"}: ${members.join(", ")}`);
+    console.log(`      ${how}`);
+  }
+  console.log(`
+A group is only as honest as its members. Persistence is not the only question one can fail:
+check:notification-switches asserts separately that each switch there governs a category some
+notification actually carries -- one of them did not, and no persistence census could see that.`);
+}
+
+TOTALS();
 console.log(`
 The units toggle carries no aria-label — it is a pair of buttons reading "ft · mi" / "m · km" —
 so it is absent from this table by construction. It persists (loadUnits/saveUnits, #1589).

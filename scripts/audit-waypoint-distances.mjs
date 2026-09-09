@@ -71,7 +71,7 @@ const coordOf = (w) => {
 
 async function page(after) {
   const key = anonKey();
-  let url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,waypoints&waypoints=not.is.null` +
+  let url = `${SUPABASE_URL}/rest/v1/routes?select=id,name,dist_km,waypoints&waypoints=not.is.null` +
     (after ? `&id=gt.${encodeURIComponent(after)}` : "") +
     (STATE ? `&id=like.${STATE}_*` : "") + `&order=id.asc&limit=1000`;
   for (let a = 0; a < 4; a++) {
@@ -225,7 +225,8 @@ for (const r of inject(rows)) {
     // downstream of it look wrong, so listing all of them buries the routes with a single bad
     // pin under the ones with a single bad ORIGIN.
     hits.sort((a, b) => b.short - a.short);
-    findings.push({ id: r.id, name: r.name, n: hits.length, of: w.length - 1, worst: hits[0] });
+    findings.push({ id: r.id, name: r.name, n: hits.length, of: w.length - 1, worst: hits[0],
+      distKm: r.dist_km, w });
   }
 }
 
@@ -255,6 +256,51 @@ if (findings.length > LIST) console.log(`\n… ${findings.length - LIST} more (u
 // leg mistaken for a cumulative total, or the route can store one approach's mileage against
 // another's pins. Read the row before touching either half — the same rule audit:aspect-name
 // records after its first reported repair turned out to be backwards.
+/* WHICH COLUMN, THOUGH? `dist_km` IS A THIRD RECORD AND IT IS THE ONE NOT CONTAMINATED.
+   On a route with the displaced-origin signature the tempting corroboration is
+   `approach_logistics.trailheadLat/Lng` — a second copy of the trailhead, written by a different
+   pass. It is NOT independent here: 25 `fix-*trailhead*.mjs` scripts in this repo name 179 route
+   ids, and every one of those fixes "declares a winner and copies it", so afterwards the two
+   records agree BY CONSTRUCTION. Measured: of the 620 WA routes whose two trailhead records agree
+   within 500 m, **160 (26%) are named in a repair script**, and of the 334 that agree EXACTLY,
+   **152 (46%)** are. Reading that as corroboration is one claim counted twice.
+   `dist_km` has never been touched by any of those repairs, and CLAUDE.md forbids bulk-normalising
+   it, so it is genuinely separate. If it covers the longest straight line from the trailhead pin,
+   the trailhead is compatible with the route's own total distance and only the per-pin `distMi`
+   values need work; if it does not, more than one column is wrong and the row needs reading.
+   ONE-SIDED, and the asymmetry is the point: `dist_km` holds two conventions (one-way and half a
+   round trip, which CLAUDE.md records), and the half-round-trip reading is the LARGER of the two.
+   So "too small even for the larger convention" is robust, while "large enough" is the weaker
+   half of the verdict. */
+const KM_MI = 0.621371;
+const displaced = findings.filter((f) => {
+  const pts = f.w.map(coordOf);
+  if (!pts[0]) return false;
+  const rest = f.w.map((x, i) => ({ i, mi: x && x.distMi != null ? Number(x.distMi) : null }))
+    .filter((x) => x.i > 0 && pts[x.i] && Number.isFinite(x.mi) && x.mi > 0);
+  if (rest.length < 2) return false;
+  const bad = rest.filter((x) => haversineMi(pts[0], pts[x.i]) > x.mi * 1.02);
+  f._chord = Math.max(...rest.map((x) => haversineMi(pts[0], pts[x.i])));
+  f._bad = bad.length; f._of = rest.length;
+  return bad.length >= Math.ceil(rest.length / 2);
+});
+if (displaced.length) {
+  const one = [], many = [], noDk = [];
+  for (const f of displaced) {
+    const dk = f.distKm == null || f.distKm === "" ? null : Number(f.distKm);
+    if (!Number.isFinite(dk)) noDk.push(f);
+    else (dk * KM_MI >= f._chord ? one : many).push(f);
+  }
+  console.log(`\n=== WHICH COLUMN? \`dist_km\` as a third record (${displaced.length} route(s) with the displaced-origin signature) ===`);
+  console.log(`  ${one.length} where dist_km covers the longest straight line — the trailhead is compatible with`);
+  console.log(`     the route's own total, so only the per-pin distMi values need work`);
+  for (const f of one.slice(0, LIST)) console.log(`       ${f.id.padEnd(46)} ${f._bad}/${f._of} impossible   dist_km ${f.distKm} (${(Number(f.distKm) * KM_MI).toFixed(1)} mi) >= chord ${f._chord.toFixed(1)} mi`);
+  console.log(`  ${many.length} where dist_km is ALSO too short — more than one column is wrong; read the row`);
+  for (const f of many.slice(0, LIST)) console.log(`       ${f.id.padEnd(46)} ${f._bad}/${f._of} impossible   dist_km ${f.distKm} (${(Number(f.distKm) * KM_MI).toFixed(1)} mi) <  chord ${f._chord.toFixed(1)} mi`);
+  if (noDk.length) console.log(`  ${noDk.length} carry no dist_km, so the third record is missing: ${noDk.map((f) => f.id).join(", ")}`);
+  console.log(`  Do NOT read this as a verdict on the trailhead. It says how many columns have to move.`);
+}
+
 if (findings.length) {
   console.log(`\nThe CONTRADICTION is certain; WHICH half is wrong is not. A pin may be misplaced,`);
   console.log(`or a leg distance may have been stored where a cumulative one belongs. Read the row.`);
