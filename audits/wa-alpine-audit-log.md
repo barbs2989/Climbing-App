@@ -18134,3 +18134,129 @@ passes were.
 
 Next batch continues alphabetically after `wa_dark_peak_dark_glacier_route` (see progress
 file).
+
+## 2026-09-09 — Pass 5, Batch 251
+
+Routes: `wa_dark_side_of_liberty` (Liberty Bell), `wa_diamond_in_the_rough` (Sloan Peak),
+`wa_direct_north_buttress` (Bear Mountain), `wa_direct_southwest_buttress` (Dorado Needle),
+`wa_direct_west_face` (Pernod Spire), `wa_dolphin_chimney` (South Early Winters Spire),
+`wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer` (Dome Peak, 2 routes).
+
+**Six confirmed fixes, all internal-consistency findings rather than fresh research.**
+
+- `wa_dark_side_of_liberty.watch_out` and `wa_dolphin_chimney.watch_out` are both stored as a
+  single jsonb *string* with embedded `\n` characters instead of the array-of-strings shape
+  every other route in the catalog uses (e.g. this batch's own `wa_diamond_in_the_rough`
+  stores a proper array). Content unchanged, just re-homed into the correct type. Checking
+  whether this was isolated found it is not: a query across the two peaks these two routes
+  sit in (Liberty Bell + South Early Winters Spire, 51 routes total) found **19** rows with
+  the identical string-shaped `watch_out` — noted below as systemic, not swept here since it
+  reaches well past this batch's 8 routes.
+- `wa_direct_north_buttress.ice_grade` was `"WI5+"` — a hard vertical water-ice grade — on a
+  route this row's own overview/beta/pitch_detail describe entirely as rock climbing (5.8 to
+  5.10-, roof/chimney/off-width/ridge terrain), with a snow/glacier *approach* only (already
+  separately covered by `gear`'s crampons/axe entries). Nothing in `hazards`, `watch_out`,
+  `pro_needs` or any pitch note mentions ice terrain, and this is the **only** row in the
+  entire WA catalog carrying `ice_grade = 'WI5+'` — a genuinely shared value copied from a
+  real ice route would appear elsewhere too. Cross-checked the route itself (a well-documented
+  1980 Kearney/Knight FA, later freed by Burdo/Merrand in 1985) against AAC Publications,
+  Mountain Project, CascadeClimbers and StephAbegg's trip report: all confirm Grade V, 5.10-,
+  21 pitches, 670 m (matching this row exactly) and none mention ice. Cleared to NULL rather
+  than guessing a replacement value.
+- `wa_direct_southwest_buttress.rope_note` claimed "~13 pitches", contradicting this same
+  row's own `pitches` column (8) and its own `beta` field ("8-pitch..."). It also doesn't
+  match the sibling standard route on this peak — queried directly, `wa_southwest_buttress`
+  is 9 pitches, 5.8 — which is the very route this same sentence goes on to describe for
+  comparison. Corrected the pitch count to the row's own verified value; left the rest of the
+  note (grade comparison, rope length, glacier-approach detail) alone since nothing else in it
+  is contradicted.
+- Both Dome Peak routes' `high_point_ft` (8920) disagreed with three independent things at
+  once: the peak's own area record (`elevation_ft: 8926`), `wa_dome_peak_dome_glacier`'s own
+  summit waypoint (`elev: 8926`, name "Dome Peak"), and listsofjohn.com's precise summit
+  figure (8,926 ft) — the standard high-resolution reference for Cascades peak elevations,
+  cited over Wikipedia's older, rounded "8,920+" contour-based figure. Corrected both to 8926.
+
+**Flagged, not fixed — a systemic gpx-track quality problem, found while checking one row and
+confirmed to reach well beyond it.** `wa_dark_side_of_liberty`'s `gpx` is a genuine
+491-point recorded track, but it starts at the Blue Lake Trailhead (48.5191, -120.6742) while
+this route's own `approach` text and `approach_logistics` explicitly describe parking at a
+different, real place — the "SR-20 hairpin/pond pullout east of Washington Pass"
+(48.51454, -120.64332), about 2.3 km away — and the track's easternmost point never gets
+anywhere near that pullout. Querying every route on `wa_liberty_bell` found this is not one
+row's mistake: **at least 8** routes whose `approach_logistics` explicitly cite the east-side
+hairpin pullout (`wa_dark_side_of_liberty`, `wa_live_free_or_die`, `wa_liberty_crack`,
+`wa_liberty_crack_free`, `wa_liberty_bell_east_face`, `wa_a_servant_to_liberty`,
+`wa_liberty_bell_thin_red_line`, `wa_liberty_and_injustice_for_all`,
+`wa_liberty_bell_independence_route`) all carry the identical Blue-Lake-side 491-point track
+regardless. Reads as one generic "approach to Liberty Bell" recording applied uniformly across
+the whole peak's route set, correct for the West-side routes it also covers but wrong for the
+East Face lines that use a documented, different, shorter approach. Not something a
+single-route SQL patch can respons­ibly fix — nulling the track would delete a real recording
+that IS correct for most of this peak's routes, and there is no real GPS data on file for the
+east-side approach to substitute. Needs either a dedicated re-tracking pass or an app-side
+fix, not a per-route correction from this audit.
+
+Two smaller instances of the same broader "gpx isn't a real recording of this route's own
+approach" class, left alone for the same reason (no real track data to substitute, and
+CLAUDE.md's own guidance is explicit that inventing corrected coordinates or interpolated
+tracks is a worse defect than the one it would replace): `wa_direct_north_buttress`'s `gpx` is
+a 2-point chord from trailhead straight to summit spanning ~18.5 km — a placeholder rather
+than a recording, the exact "two-point stub" class CLAUDE.md documents elsewhere in this
+catalog — and `wa_direct_west_face`'s is the same shape at a smaller ~3 km scale.
+`wa_diamond_in_the_rough`'s 4-point `gpx` also revisits its own summit coordinate out of
+sequence relative to its own `waypoints` list order (TH → summit → intermediate junction →
+summit again), which reads like a sketch-line built from waypoints in the wrong order rather
+than a real track.
+
+**Checked clean, sourced rather than assumed:**
+
+- `wa_dark_side_of_liberty` — FA (Schaefer/Lee, Aug 2019, 10 pitches, 5.13+, NE-facing "dark
+  side" of the East Face) confirmed against Climbing.com's own feature story on the route and
+  the AAC Publications entry.
+- `wa_diamond_in_the_rough` — FA date confirmed precisely (Workman/Roberts, **Sept 11, 2011**,
+  matching this row's own `rope_note`) against a CascadeClimbers trip report titled with that
+  exact date and the AAC Publications first-ascent writeup; 1,100 ft / 9 pitches / 5.10 all
+  agree.
+- `wa_direct_north_buttress` — Bear Mountain's own elevation (7,931 ft) independently
+  confirmed against Wikipedia, PeakVisor and a trailcatjim.com peak-list page titled "Bear
+  Mountain (7931 ft)" — a search result summary briefly suggested 7,942 ft from an AAC
+  Publications page, but every other source, and the more careful re-check, converges on
+  7,931 ft, so no change made.
+- `wa_direct_southwest_buttress` — the road field's claim that Cascade River Road is closed to
+  vehicles at mile 20 (Eldorado) "as of June 2026" is still accurate: confirmed against an NPS
+  news release on the Eldorado Creek closure and a June 2026 Spokesman-Review piece on the
+  region's road-damage recovery, both describing an ongoing, multi-season closure at that exact
+  point.
+- `wa_direct_west_face` — FA (Bentley/Peritore, 2006, 8 pitches, III/IV 5.10+) confirmed; no
+  contradiction found for the specific July 15, 2006 date this row cites.
+- `wa_dolphin_chimney` — beta content matches Mountain Project's own route description closely
+  enough to be clearly sourced from it; the specific FA attribution (Beckey/Madsen, 1967) could
+  be neither confirmed nor contradicted in this pass (not unusual for a minor 1960s Beckey-era
+  variation with little independent web presence) — left as-is per the "don't flag what you
+  can't verify wrong" rule, not treated as an error.
+
+Web access this run: WebSearch reachable and used for all FA/elevation/road-status checks
+above (Climbing.com, AAC Publications, CascadeClimbers, Mountain Project, StephAbegg,
+Wikipedia, PeakVisor, trailcatjim.com, listsofjohn.com, NPS, Spokesman-Review). No WebFetch
+attempts.
+
+SQL: `audits/sql/2026-09-09-batch-251.sql` (validated with `check:sql` — 3 of 6 write targets
+directly checkable, all 6 confirmed to exist by direct query before writing; no destructive
+delete. Flagged as a paste-size risk, ~5.2KB against the ~4KB soft limit — split into chunks
+when applying. 3 statements triggered the checker's "no literal id predicate — not checkable"
+warning for the same reason batch 250's did: the `WHERE id = '...'` clause sits on its own
+line after a long jsonb string literal, which defeats the checker's same-line pattern match
+rather than reflecting a real problem — all three do have a literal id predicate, confirmed by
+reading the file.)
+
+**Restating the recurring operational note.** `audits/sql/` now holds 251 files across 251
+batches and 5 full passes since 2026-07-24. PR #811 (`gh`-equivalent lookup via the GitHub
+API) is still open as a **draft**, last updated only by this branch's own pushes, with no
+review or merge activity visible since it was opened 2026-08-12 — batch 250's direct
+before/after comparison against its own 5-week-old batch 60 already showed every one of that
+batch's sourced findings sitting unapplied and unchanged in the live database. This run did
+not re-run that specific comparison, but nothing about the situation it described has an
+obvious reason to have changed in the few hours since. A human should decide whether to start
+applying this audit's SQL, change what it produces, or stand it down.
+
+Next batch continues alphabetically after `wa_dome_peak_indian_summer` (see progress file).
