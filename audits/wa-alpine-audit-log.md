@@ -18480,3 +18480,104 @@ this batch, to avoid repeating batch 250's full check every time — but nothing
 changed).
 
 Next batch continues alphabetically after `wa_east_ridge_6` (see progress file).
+
+## Batch 254 (pass 5) — 2026-09-09
+
+Routes: `wa_east_ridge_8`, `wa_east_slope`, `wa_east_twin_needle_south_route`,
+`wa_east_twin_needle_thread_of_ice`, `wa_eldorado_peak_east_ridge`,
+`wa_eldorado_peak_eldorado_glacier_nw`, `wa_eldorado_peak_north_ridge`,
+`wa_eldorado_peak_northeast_face`.
+
+**Fixed:**
+
+- `wa_eldorado_peak_eldorado_glacier_nw` (Eldorado Peak, Northwest Couloir /
+  Eldorado Glacier): top-level `gain_ft` was 4000 — physically impossible
+  for a route whose own trailhead waypoint (2,160 ft) and summit (8,872 ft)
+  imply a bare net rise of 6,712 ft, already matched by this row's own
+  `loss_ft`=6712. The row's own `itinerary` field settles the correct
+  number without any external research: its three-day breakdown gives
+  gainFt 5400 + 1300 + 0 = 6700, and `itinerary.totalNote` states outright
+  "~6,700 ft gain, ~10 mi round trip." Corrected `gain_ft` to 6700 to match
+  the row's own more detailed, internally-consistent data.
+- `wa_eldorado_peak_north_ridge` (Eldorado Peak, North Ridge): three related
+  fixes on one row. (1) `permit` was NULL; populated with the same standard
+  North Cascades NP complex permit text every sibling route on this peak
+  already carries, consistent with this row's own `access.permit`/
+  `access.landManager`. (2) The Summit waypoint's `elev` was 8868 ft — the
+  stale USGS-benchmark value a sibling route on this exact peak (Northeast
+  Face) already researched and rejected in its own `corrections` field in
+  favor of the true summit's 8,872–8,873 ft. This row's own `high_point_ft`
+  was already 8872; only the waypoints array lagged. Corrected to 8872.
+  (3) `loss_ft` was NULL; populated to match `gain_ft` (6800), consistent
+  with the row's own out-and-back `descent_text` and the strong gain≈loss
+  pattern every other route in this batch shows for a round trip returning
+  to its own trailhead — a NULL here risks the documented app pattern where
+  a missing gain/loss value silently reads as zero.
+
+**Flagged for human review:**
+
+- `wa_east_twin_needle_south_route` (East Twin Needle, South Route): the row
+  is internally self-contradictory. Its own `overview` text explicitly
+  distinguishes "the moderate line described here" from "a notably harder,
+  more direct East Arête (rated II 5.10a, climbed during the 2003 Southern
+  Picket Range enchainment)" — but this row's own `grade`/`fa` fields were
+  changed by an earlier pass in this same audit (resolved 2026-07-28,
+  visible in this row's own `corrections` field) to *exactly* match that
+  harder East Arête's stats (Grade II, 5.10a; Wayne Wallace, Colin Haley,
+  Mark Bunker, July 27 2003), apparently on the strength of a beta-text
+  quote ("It is graded II 5.10a") that may in fact have been describing the
+  East Arête rather than this row's own line. This row's own
+  `data_quality.gaps` is also stale, still warning readers not to rely on a
+  "5.7" grade that is no longer the stored value. WebSearch corroborated
+  only that *some* southeast-ridge-ish line on this peak carries grade II
+  5.10a; it could not settle whether "South Route" and "East Arête" are the
+  same climb or two distinct named lines, and WebFetch to primary sources
+  (SummitPost, CascadeClimbers, Wikipedia) was again blocked by the
+  environment's egress proxy this run. Left unchanged; recommend a human
+  check Beckey's Cascade Alpine Guide or the actual CascadeClimbers trip
+  report for this peak.
+
+**Checked clean, sourced rather than assumed:** `wa_east_ridge_8` (Pinnacle
+Peak East Ridge) — elevation and permit/land-manager consistent across
+area/route/waypoint/access; grade already corrected by a prior pass with
+documented reasoning. `wa_east_slope` (Primus Peak) — elevation consistent;
+noted but did not flag a ~13% variance between the row's stored `dist_km`
+and its own waypoint-chain cumulative mileage, which sits within ordinary
+estimation noise for a route this row's own `data_quality.gaps` says has no
+public GPS track. `wa_east_twin_needle_thread_of_ice` — FA (Steph Abegg and
+Wayne Wallace, June 27, 2009) confirmed via external search, including the
+detail that the line's name traces to a 1981 John Roper naming of unclimbed
+couloirs. `wa_eldorado_peak_east_ridge` — elevation, coordinates, and permit
+all consistent; a prior pass's note about an approximated trailhead
+coordinate is reasonable and left unchanged. `wa_eldorado_peak_northeast_face`
+— the 8872-vs-8868 elevation question is already well-resolved in this row's
+own `corrections` field; FA and technical grade remain honestly
+null/undocumented rather than fabricated — external search found only an
+unattributed "Grade III" or "Grade II+, 50° snow and ice" characterization,
+no specific first-ascent party, so left as-is.
+
+Web access this run: WebSearch reachable and used throughout, and it did
+resolve one question outright this time (the Thread of Ice FA). **WebFetch
+was again blocked by this environment's egress proxy** for every
+third-party site attempted this run (en.wikipedia.org, www.summitpost.org)
+— confirming batch 253's finding was not a one-off. This is the second
+consecutive batch where the binding constraint on source-checking was
+network access to primary sources, not the SQL checker or the data itself.
+
+SQL: `audits/sql/2026-09-09-batch-254.sql` (validated with `check:sql` — 1
+of 2 write targets directly checkable by its same-line heuristic, the other
+(the bundled `wa_eldorado_peak_north_ridge` UPDATE, which sets three columns
+across a multi-line WHERE clause) triggering the known "no literal id
+predicate — not checkable" false positive; that id and every value in its
+WHERE guard were independently confirmed against the live table by direct
+query before writing. File is 3.7KB, under the ~4KB soft limit. No DELETE,
+no destructive statement.)
+
+Operational note: same recurring caveat as prior batches — the
+unapplied-SQL-backlog concern raised in batches 248–250 has not been
+independently re-verified this batch (not re-checked every run, to avoid
+repeating batch 250's full audit each time), and nothing this run suggests
+it has changed.
+
+Next batch continues alphabetically after `wa_eldorado_peak_northeast_face`
+(see progress file).
