@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_dome_peak_indian_summer",
+  "last_processed_id": "wa_dragontail_peak_serpentine_arete",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5127,6 +5127,26 @@
       "clean_count": 2,
       "sql_file": "audits/sql/2026-09-09-batch-251.sql",
       "note": "Six confirmed fixes across watch_out shape (string-with-newlines instead of a jsonb array, on Dark Side of Liberty and Dolphin Chimney -- found to affect 19 of 51 routes across this peak group, flagged as systemic in the log, not swept here), an unsupported WI5+ ice_grade on the purely-rock Direct North Buttress, a self-contradicting pitch count in Direct Southwest Buttress's own rope_note (~13 vs its own pitches=8 and the sibling standard route's real 9), and a high_point_ft disagreement (8920 vs 8926) on both Dome Peak routes against the peak's own summit waypoint, the area record, and listsofjohn.com. Flagged only: a catalog-wide gpx/approach_logistics trailhead mismatch across at least 8 Liberty Bell East Face routes (shared generic Blue-Lake-side track vs a stated, real, different east-side pullout ~2.3km away), plus two-point/misordered gpx stubs on Direct North Buttress, Direct West Face and Diamond in the Rough -- systemic track-quality issues needing real GPS data or an app-side fix, not a single-route SQL patch. Diamond in the Rough and Direct West Face checked clean (FA facts, grades, pitch counts, road/closure status all corroborated against AAC Publications, Mountain Project, CascadeClimbers, StephAbegg and current NPS/news reporting on the Cascade River Road closure)."
+    },
+    {
+      "batch": 252,
+      "date": "2026-09-09",
+      "pass": 5,
+      "route_ids": [
+        "wa_dorado_needle_east_ridge",
+        "wa_dragontail_peak_backbone_ridge",
+        "wa_dragontail_peak_east_ridge_aasgard_pass",
+        "wa_dragontail_peak_r1",
+        "wa_dragontail_peak_r2",
+        "wa_dragontail_peak_r3",
+        "wa_dragontail_peak_r4",
+        "wa_dragontail_peak_serpentine_arete"
+      ],
+      "fixed_count": 6,
+      "flagged_count": 4,
+      "clean_count": 2,
+      "sql_file": "audits/sql/2026-09-09-batch-252.sql",
+      "note": "Six confirmed fixes, all on Dorado Needle and Dragontail Peak (Colchuck Lake/Stuart Range): two gain_ft floor violations (Pandora's Box 4700->5440, Dorado Needle East Ridge 6000->6340, both below the net trailhead-to-summit rise every sibling route or an external source corroborates), a dist_km doubling-bug on Hidden Couloir (20->10.14 km, matched almost exactly to double its own summit waypoint's distMi=6.3mi), a misfiled commitment field on the Aasgard Pass route holding trip-stats prose duplicating its own gain_ft/dist_km instead of a grade (cleared to NULL), a self-contradicting rappel-station coordinate on Backbone Ridge's descent_text that its own rappel_count_note already explicitly debunks (the coordinate sits on the peak's own summit position, not a real station fix), and a now-resolved FA hedge on Dorado Needle East Ridge (Wikipedia/SummitPost independently confirm the exact party/date, so the row's own '(not certain)' caveat came out). Flagged only: Backbone Ridge and Serpentine Arete both store dist_km=26.55 (16.5mi one-way, doubling to a suspiciously round 33.0mi trip) against an approach text of ~4-5mi and an external comparable-route round trip of ~15-16mi -- clearly wrong in shape but no row-internal or external figure precise enough to write a confident replacement; and Gerber-Sink/Pandora's Box both store dist_km=6.4, matching only the distance to Colchuck Lake and undershooting each row's own waypoint-chain distance to its technical start by roughly a mile -- a softer signal, since it's plausible the app's convention for these routes measures to basecamp rather than to the route, not something this audit can settle alone. Dragontail's own elevation (8,840 ft) and Dorado Needle's (8,440+ ft), plus every checkable FA in the batch (Triple Couloirs, Serpentine Arete, Backbone Ridge, Dorado Needle East Ridge), were independently corroborated and needed no change; Gerber-Sink and Pandora's Box's own unsigned FAs could not be verified either way and were left alone per the audit's own rule."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

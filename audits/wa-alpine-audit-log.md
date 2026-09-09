@@ -18259,4 +18259,123 @@ not re-run that specific comparison, but nothing about the situation it describe
 obvious reason to have changed in the few hours since. A human should decide whether to start
 applying this audit's SQL, change what it produces, or stand it down.
 
-Next batch continues alphabetically after `wa_dome_peak_indian_summer` (see progress file).
+## 2026-09-09 — Pass 5, Batch 252
+
+Routes, all on two adjoining peaks reached from the Stuart Lake Trailhead / Colchuck Lake:
+`wa_dorado_needle_east_ridge` (Dorado Needle), `wa_dragontail_peak_backbone_ridge`,
+`wa_dragontail_peak_east_ridge_aasgard_pass`, `wa_dragontail_peak_r1` (Hidden Couloir),
+`wa_dragontail_peak_r2` (Gerber-Sink), `wa_dragontail_peak_r3` (Pandora's Box / W Couloir),
+`wa_dragontail_peak_r4` (Triple Couloirs), `wa_dragontail_peak_serpentine_arete` (Dragontail
+Peak, 6 routes).
+
+**Two gain_ft floor violations, same class CLAUDE.md documents at length
+(`check:gain-floor-stated`): a party that starts at the trailhead and stands on the summit has
+gained at least summit − trailhead, and these two stored less.**
+
+- `wa_dragontail_peak_r3` (Pandora's Box) stored `gain_ft = 4700` with `loss_ft` null. Its own
+  waypoint chain gives the Trailhead at 3,400 ft and — per its own `beta` ("drop down and
+  traverse northeast to the true summit") — reaches the same 8,840 ft summit every other route
+  on this peak reaches from this same trailhead: a net rise of 5,440 ft, which every sibling
+  route in this batch (Backbone Ridge, Gerber-Sink, Triple Couloirs, Serpentine Arête)
+  independently stores as `gain_ft = 5440`. Corrected to 5,440 for both `gain_ft` and
+  `loss_ft`, matching the row's own waypoints and the sibling convention.
+- `wa_dorado_needle_east_ridge` stored `gain_ft = 6000` / `loss_ft = 6000`. Its own approach
+  text gives the Eldorado Creek Trailhead at ~2,100 ft, independently confirmed via WebSearch
+  (a WTA-style Cascade River Road guide states the mile-20 Eldorado Creek trailhead sits at
+  "2,100 feet"), and its own Summit waypoint gives 8,440 ft — a floor of 6,340 ft, 340 ft above
+  what was stored, before any credit for the documented rappel-into-a-notch dip near the top
+  (which would only add to the true total). Corrected to 6,340 for both columns.
+
+**A dist_km doubling bug, the pattern CLAUDE.md documents and prior batches (236-238) have
+fixed elsewhere on this same corridor.** `wa_dragontail_peak_r1` (Hidden Couloir) stored
+`dist_km = 20` (12.43 mi one-way, doubling to a displayed 24.86 mi round trip) against its own
+approach text ("hike... about 4 miles to Colchuck Lake... ascend talus to the base") and its
+own waypoint chain, whose "Dragontail Peak summit" waypoint carries `distMi = 6.3`. 20 km is
+within 1% of exactly double that one-way figure (2 × 10.14 = 20.28 km) — the round-trip total
+stored where the app expects the one-way distance it doubles. Corrected to 10.14 km.
+
+**An internal self-contradiction, not a research question.** `wa_dragontail_peak_backbone_ridge.descent_text`
+named "a documented rappel station near 47.479°N, 120.832°W" — but this same row's own
+`rappel_count_note` already and correctly says the opposite: "No verifiable coordinate is
+published for the rappel station — the one that circulates sits almost exactly on the peak's
+own summit coordinates, which is not a real station fix — so none is given here." The
+coordinate `descent_text` states is, in fact, within ~0.001° of this row's own Dragontail Peak
+Summit waypoint (47.4789, -120.83318) — precisely the debunked non-fix the other field warns
+against. Rewrote `descent_text` to drop the bogus coordinate and match the honest framing
+already established elsewhere in the same row.
+
+**A misfiled-content defect, the "wrong shape for this column" class CLAUDE.md describes for
+`season`/`grade`/`rappels`.** `wa_dragontail_peak_east_ridge_aasgard_pass.commitment` held
+trip-stats prose — `"12.5 miles, 5,600 ft gain, 8-10 hours"` — where every other route in this
+batch stores a roman-numeral commitment grade (III, IV, II-III...). Not new information
+either: this row's own `gain_ft` (5,600, exact match) and `dist_km` (10.1 km → 12.55 mi round
+trip, matching "12.5 miles" almost exactly) already carry the same two facts correctly.
+Cleared the duplicate to NULL rather than inventing a numeral grade with no source for one.
+
+**One resolved hedge.** `wa_dorado_needle_east_ridge.fa` carried a self-imposed
+"(this attribution is not certain)" caveat after crediting Joan and Joe Firey, Hans Hoesli,
+Dave Knudson and Peter Renz, July 4, 1971. Both Wikipedia's Dorado Needle article and
+SummitPost independently give the identical party and date for the East Ridge FA — the
+uncertainty this row was carrying about its own fact is resolved, so the now-unsupported hedge
+came out.
+
+**Flagged, not fixed:**
+
+- `wa_dragontail_peak_backbone_ridge` and `wa_dragontail_peak_serpentine_arete` both store
+  `dist_km = 26.55` (16.5 mi one-way, doubling to a suspiciously round 33.0 mi trip — itself
+  the documented dist_km-bug tell). Wildly larger than either route's own approach text (~4 mi
+  one-way to Colchuck Lake, per both `approach_variants` entries) and than external sourcing —
+  a Mountaineers.org trip report for the comparable, longer Colchuck Peak + Dragontail Peak
+  combination via Colchuck Col/Pandora's Box gives a round trip of "approximately 15-16
+  miles." Unlike `r1` above, neither row's Summit waypoint (or anything else in either row)
+  carries a distMi that would pin a specific replacement — the true one-way distance to each
+  route's technical start could plausibly be anywhere from ~4.5 to ~6 mi, and guessing a
+  precise figure would just substitute one invented number for another. Needs a human with a
+  guidebook mileage or a real GPS track.
+- `wa_dragontail_peak_r2` (Gerber-Sink) and `wa_dragontail_peak_r3` (Pandora's Box) both store
+  `dist_km = 6.4` (3.98 mi one-way) — smaller than each route's own waypoint chain gives for
+  reaching its own technical start (r2's "Face low point / route start" waypoint carries
+  `distMi = 5.2`; r3's Colchuck Col/Pandora's Box notch waypoints carry 5.6/5.8), and matching
+  almost exactly the `distMi = 4` both rows separately give for reaching Colchuck Lake alone.
+  Reads like dist_km may have been set to "distance to the lake" rather than "distance to the
+  route," but this is a softer signal than the r1 doubling bug (no round-number tell, and it's
+  plausible the convention for these winter/glacier routes intentionally measures to
+  basecamp) — flagged rather than fixed, since settling which reading is correct here is a
+  product/convention question, not something this audit can determine on its own.
+
+**Checked clean, sourced rather than assumed:** Dragontail Peak's own elevation (8,840 ft,
+confirmed via Wikipedia and matching every route's own waypoint chain) and Dorado Needle's
+(8,440+ ft, Wikipedia) both needed no change. Every checkable FA in the batch was confirmed
+independently: Triple Couloirs (Bill Joiner, Leslie Nelson, Dave Seman, May 1974 — AAC/Alpine
+Institute), Serpentine Arête (Tom Hargis, Jay Ossiander, 1973 — multiple independent route
+pages), Backbone Ridge (Mark Weigelt, John Bonneville, 1970, Fin Direct by Pat Cruver/Kit
+Lewis, 1975 — AAC Publications/SummitPost). Gerber-Sink's and Pandora's Box's own unsigned FAs
+(the former hedges its own party's given names/year as unrecorded) could not be confirmed or
+contradicted from an accessible source and were left as-is, per the "don't flag what you can't
+verify" rule. The Enchantment Permit Area's stated May 15-Oct 31 overnight quota season,
+repeated verbatim across all six Dragontail routes' `permit` fields, was independently
+confirmed (USFS Okanogan-Wenatchee's own Enchantments Overnight Permits page).
+
+Web access this run: WebSearch reachable and used throughout (Wikipedia, AAC Publications/
+Alpine Institute, SummitPost, Mountainproject-adjacent route pages, Mountaineers.org,
+USFS/WTA-style trailhead references). No WebFetch attempts.
+
+SQL: `audits/sql/2026-09-09-batch-252.sql` (validated with `check:sql` — 5 of 6 write targets
+directly checkable, all 6 confirmed to exist by direct query before writing; no destructive
+delete. ~10.3KB, well over the ~4KB soft limit — split into chunks when applying. 1 statement
+(the `descent_text` rewrite on Backbone Ridge) triggered the checker's "no literal id
+predicate — not checkable" warning; this is the same known false-positive shape prior batches'
+logs already describe — the WHERE clause's `id = '...'` predicate is present, just on a line
+the checker's same-line heuristic doesn't associate with a long string-literal statement.
+Confirmed by direct comparison against the live row's current `descent_text` (byte-for-byte,
+including the em-dash and degree-sign characters) before writing the statement.)
+
+**Restating the recurring operational note, since nothing about it has changed.** `audits/sql/`
+now holds 252 files across 252 batches and 5 full passes since 2026-07-24. PR #811 remains
+open as a **draft** with no review or merge activity visible since it was opened 2026-08-12.
+This run did not re-run batch 250's before/after unapplied-SQL comparison, but there is no
+reason to think the backlog situation it described has resolved on its own. A human should
+decide whether to start applying this audit's SQL, change what it produces, or stand it down.
+
+Next batch continues alphabetically after `wa_dragontail_peak_serpentine_arete` (see progress
+file).
