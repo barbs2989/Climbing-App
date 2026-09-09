@@ -729,6 +729,30 @@ export function legMi(prev,wp){
   if(!Number.isFinite(chord))return seg;
   return seg<chord*0.98?null:seg;
 }
+/* THE SAME RULE ON A CUMULATIVE DISTANCE. `distMi` on a waypoint is measured from the trailhead,
+   so it cannot be less than the straight line from the trailhead PIN either — and three surfaces
+   print it: the waypoint row, the bail-point rows, and CAMPING & BIVY. Measured on the camping
+   panel alone, 35 of the 412 distances it prints are impossible; `wa_poltergeist_pinnacle` printed
+   "Boundary Camp - 8.0 mi" for a camp 21.8 miles from its trailhead. It matters most there,
+   because that is the number a party uses to decide whether they can reach camp on day one.
+   The trailhead's own `distMi` is 0 by convention, so |wp - trailhead| IS the cumulative
+   distance and `legMi` is exactly the right test — one rule, not a second copy of it. A route
+   with no trailhead pin has nothing to contradict, so the stored number stands. */
+export function cumMi(waypoints,wp){
+  if(!wp)return null;
+  const mi=_uNum(wp.distMi);
+  if(mi===null)return null;
+  const ws=Array.isArray(waypoints)?waypoints:[];
+  let th=null;
+  for(let i=0;i<ws.length;i++){if(wpIs(ws[i],"Trailhead")){th=ws[i];break;}}
+  /* NO SELF-COMPARISON GUARD, and that is measured rather than assumed: `th===wp` was written
+     here and an injection case proved it DEAD — the chord from a point to itself is 0, so
+     `legMi` already returns the trailhead's own 0 mi. Dead code in a guard reads as coverage and
+     is not. Two DIFFERENT pins sharing the trailhead's coordinates behave the same way, for the
+     same reason. */
+  if(!th)return mi;
+  return legMi(Object.assign({},th,{distMi:0}),Object.assign({},wp,{distMi:mi}));
+}
 export function wpPlaced(w){if(!w)return false;const la=w.lat,ln=w.lng;if(la==null||ln==null||la===""||ln==="")return false;return Number.isFinite(Number(la))&&Number.isFinite(Number(ln));}
 function wpType(w){const raw=String((w&&w.type)||"").trim();if(!raw)return "";const k=raw.toLowerCase();return WP_TYPE_MAP[k]||(raw.charAt(0).toUpperCase()+raw.slice(1));}
 function wpIs(w,t){return wpType(w)===t;}

@@ -4690,6 +4690,20 @@ the total when deciding where a new guard belongs.
     subtraction is meaningless anyway; this catches those without a second rule. It also covers
     the 3 routes storing a BACKWARDS pair, since the app prints `Math.abs(segMi)` and the
     magnitude is what has to be possible — the ordering is `audit:waypoint-order`'s subject.
+  - **AND THE SAME RULE ON A CUMULATIVE DISTANCE — `cumMi` — because three surfaces print one.**
+    A waypoint's `distMi` is measured from the trailhead, so it cannot be less than the straight
+    line from the trailhead PIN either. Measured: **197 of the 2,567 cumulative distances the
+    waypoint row prints, across 112 routes**, and **35 of the 412 in CAMPING & BIVY**, where
+    `wa_poltergeist_pinnacle` printed *"Boundary Camp · 8.0 mi"* for a camp **21.8 miles** from its
+    trailhead. That one matters most: it is the number a party uses to decide whether they can
+    reach camp on day one. The trailhead's own `distMi` is 0 by convention, so `|wp − trailhead|`
+    IS the cumulative distance and `cumMi` is `legMi` applied with the trailhead as the previous
+    pin — **one rule, not a second copy of it**.
+    - **A SELF-COMPARISON GUARD WAS WRITTEN HERE AND THE INJECTION PROVED IT DEAD.** `th===wp`
+      looks necessary and is not: the chord from a point to itself is 0, so `legMi` already
+      returns the trailhead's own 0 mi. The case reported MISS, the clause came out, and the
+      reason is recorded in the source so nobody re-adds it. Dead code in a guard reads as
+      coverage and is not.
   - **20% OF PRINTED LEG DISTANCES DISAPPEAR, AND THE SHAPE OF THAT IS MEASURED RATHER THAN
     WAVED AT.** 473 of 2,405 is a lot of information to remove from a product, so: **23 routes
     lose EVERY leg distance and 16 of those have only one leg**; three lose 6-7, and they are the
@@ -4702,9 +4716,9 @@ the total when deciding where a new guard belongs.
     flagging correct work, which is the failure this file records under a dozen other names.
   - Fails **closed** on a missing `legMi` export and on a waypoint list that did not render, so an
     absent distance can never read as a suppressed one.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
+  - Injection-tested **7/7** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring `ClimbMatchCore.jsx` byte-identically. Case 1 is
-    the real defect (`return seg`) and fails 2; **case 2 makes it suppress EVERYTHING** and fails
+    the real defect (`return seg`) and fails 5; **case 2 makes it suppress EVERYTHING** and fails
     6, because a guard that only ever asserts absence is satisfied by deleting the feature; case 4
     flags legs LONGER than the chord and fails, pinning the one-sidedness. **Two must stay
     SILENT** — a comment naming the forbidden shape, and a widened tolerance that still catches the

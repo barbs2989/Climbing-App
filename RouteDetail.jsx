@@ -34,7 +34,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
-import {wpType,wpIs,wpPlaced,legMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
+import {wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -489,7 +489,7 @@ function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
     const placed=wpPlaced(wp);
     const card={background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:7,border:`1px solid ${C.border}`,display:"flex",gap:10};
     const act=(placed&&onFocus)?{...clickable(function(){onFocus(i);}),"aria-label":"Show "+(wp.name||_wt||"this waypoint")+" on the map"}:{};
-    return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div {...act} style={(placed&&onFocus)?{...card,cursor:"pointer"}:card}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(wp.distMi)}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}{placed?null:<div style={{fontSize:11,color:C.textMuted,marginTop:6,lineHeight:1.45}}>No coordinate on file — this point is not on the map above. Know where it is? Add it with the edit pencil.</div>}</div></div></div>;
+    return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div {...act} style={(placed&&onFocus)?{...card,cursor:"pointer"}:card}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(cumMi(waypoints,wp))}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}{placed?null:<div style={{fontSize:11,color:C.textMuted,marginTop:6,lineHeight:1.45}}>No coordinate on file — this point is not on the map above. Know where it is? Add it with the edit pencil.</div>}</div></div></div>;
   })}</>;
 }
 function RouteGearEssentialsBox({route,essentials,onEdit}){const [gearTier,setGearTier]=useState("midweight");const disc=catOf(route);const _itDays=(route&&route.itinerary&&route.itinerary.days&&route.itinerary.days.length)||0;const _multiDay=_itDays>1;const assumed=assumedFor(route,disc).concat(["First aid kit"]).concat(_multiDay?["Tent / shelter","Sleeping bag","Sleeping pad","Stove + fuel","Extra food (overnight)"]:[]);const cond=conditionalFor(route,disc);const _hasOwn=!!(essentials&&essentials.length);const items=mergeGearList(assumed,essentials,cond?cond.items:[]);if(!items.length)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginBottom:3}}><span style={{fontSize:13,fontWeight:700,color:C.text}}>GEAR & ESSENTIALS</span>{onEdit?<EditIconButton onClick={function(){onEdit();}} title={_hasOwn?"Suggest a correction to this route's essentials":"Add gear this route needs beyond the standard kit"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{_hasOwn?("Standard kit for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+", merged with what this route's own notes add. Check it against the notes above, which take precedence."):("Standard kit for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+" — check it against this route's own notes above, which take precedence.")}</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:11}}>{items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>{(function(){const cond=conditionalFor(route,disc);if(!cond)return null;return <div style={{paddingTop:10,borderTop:`1px solid ${C.borderLight}`,marginBottom:11}}><div style={{fontSize:11.5,fontWeight:700,color:C.amber,marginBottom:3}}>Only if there is snow</div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:7,lineHeight:1.45}}>This route mentions snow gear conditionally, not as standard kit — check current conditions before you carry it.</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:cond.quote?8:0}}>{cond.items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.amber,flexShrink:0}}>?</span><span>{gi}</span></div>)}</div>{cond.quote?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,background:C.surface,borderRadius:8,padding:"7px 9px",fontStyle:"italic"}}>{"“"+cond.quote+"”"}</div>:null}</div>;})()}{/* The "Specific to this route" section used to sit here. It is gone deliberately: its
@@ -1195,10 +1195,14 @@ function campElevFt(s){
    depend on which record happened to be read. The other way this silently goes wrong is a route
    with TWO trailheads, where "the" trailhead is arbitrary; measured at 0 of 757 camping routes,
    so taking the first is safe here in a way it would not be catalog-wide. */
-function trailheadFt(route){
+function trailheadPin(route){
   const ws=Array.isArray(route.waypoints)?route.waypoints:[];
-  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return campElevFt(ws[i]);
+  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return ws[i];
   return null;
+}
+function trailheadFt(route){
+  const w=trailheadPin(route);
+  return w?campElevFt(w):null;
 }
 /* TRAIL distance, and only trail distance. A campsite WAYPOINT records distMi/distKm — the walked
    path — on 410 of 445 sites. The researched `bivy` store records no distance under any spelling
@@ -1244,6 +1248,18 @@ function campSites(route){
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
   const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
+  /* AND THE SAME TEST THE WAYPOINT LIST APPLIES TO A LEG, applied to the whole walk in. A camp's
+     `distMi` is cumulative from the trailhead, so it cannot be less than the straight line from
+     the trailhead PIN either — and 35 of the 412 distances this panel prints are.
+     `wa_poltergeist_pinnacle` printed "Boundary Camp · 8.0 mi" for a camp 21.8 miles out. It
+     matters more here than in the list above: this is the number a party uses to decide whether
+     they can reach camp on day one. `legMi` is the same one-sided rule — the trailhead's own
+     `distMi` is 0, so |camp - trailhead| IS the cumulative distance. A site whose number cannot
+     be true shows none, never a substituted chord. */
+  const _campMi=function(w){
+    const mi=campDistMi(w);
+    return mi==null?null:cumMi(route.waypoints,Object.assign({},w,{distMi:mi}));
+  };
   /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
      WHICH of the two things this section merges you are looking at, so it earns a chip. */
   /* The label for `camp` is deliberately the neutral "Camp", NOT "Established camp": a dispersed
@@ -1255,7 +1271,7 @@ function campSites(route){
      no elevation for the sites that use the other — and an elevation missing is also a GAIN
      missing, so the defect compounds now rather than merely showing one blank. */
   return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:campDistMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1684,7 +1700,7 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
       {bail.map((wp,i)=><div key={i} style={{padding:"7px 0",borderBottom:i<bail.length-1?`1px solid ${C.borderLight}`:"none"}}>
         <div style={{display:"flex",alignItems:"baseline",gap:7,flexWrap:"wrap"}}>
           <span style={{fontSize:13,fontWeight:600}}>{wp.name}</span>
-          {wp.distMi!=null?<span style={{fontSize:12,color:C.textMuted}}>{uDistMi(wp.distMi)+(wp.timeToSafety?" · "+wp.timeToSafety:"")+" from TH"}</span>:null}
+          {cumMi(route.waypoints,wp)!=null?<span style={{fontSize:12,color:C.textMuted}}>{uDistMi(cumMi(route.waypoints,wp))+(wp.timeToSafety?" · "+wp.timeToSafety:"")+" from TH"}</span>:null}
         </div>
         {wp.anchorType?<div style={{fontSize:12,color:C.textSub,marginTop:2}}>{wp.anchorType}</div>:null}
         {wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:2}}>{wp.note}</div>:null}
