@@ -32,7 +32,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require_ = createRequire(import.meta.url);
 
-const ENTRY = `export { pubName, vouchRowsFrom } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`;
+const ENTRY = `export { pubName, pubNameRow, vouchRowsFrom } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`;
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-pubname-")), "b.cjs");
 await build({
   stdin: { contents: ENTRY, resolveDir: ROOT, loader: "js" },
@@ -40,7 +40,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { pubName, vouchRowsFrom } = require_(out);
+const { pubName, pubNameRow, vouchRowsFrom } = require_(out);
 
 let bad = 0;
 const ok = (m) => console.log("  ok    " + m);
@@ -101,6 +101,48 @@ if (none[0].from === "A ClimbMatch member") ok("a vouch whose author did not loa
 else fail(`a missing author renders as ${JSON.stringify(none[0].from)}`);
 if (none.length === 1) ok("...and the vouch itself is not dropped");
 else fail("a vouch with an unresolved author disappeared");
+
+// ---- 6. CHAT IS THE OTHER PATH, and the one with the widest audience. MessageRow prints
+// `{showName && !mine ? m.name : null}` above every message from somebody else in a CREW chat, so
+// a bare `.name` there showed the real name of a climber who had turned the setting off — to every
+// member of the crew. The message embeds did not even SELECT show_name, so the reader could not
+// have honoured it.
+const embeds = db.match(/(user:user_id|sender:sender_id)\([^)]*\)/g) || [];
+if (embeds.length >= 4) ok(`found ${embeds.length} message profile embed(s)`);
+else fail(`only ${embeds.length} message embed(s) found — this section has gone blind`);
+for (const e of embeds) {
+  for (const need of ["show_name", "username"]) {
+    if (!e.includes(need)) { fail(`a message embed does not fetch ${need}: ${e}`); break; }
+  }
+}
+if (!bad) ok("every message embed fetches show_name and username");
+
+// pubNameRow must accept BOTH spellings — a raw embed row (`show_name`) and a mapped one
+// (`showName`) — or a third reader invents a fourth answer.
+if (pubNameRow({ name: "Robin Belay", username: "robinb", show_name: false }) === "@robinb")
+  ok("pubNameRow honours a RAW row's show_name (off)");
+else fail(`pubNameRow(raw off) = ${JSON.stringify(pubNameRow({ name: "Robin Belay", username: "robinb", show_name: false }))}`);
+
+if (pubNameRow({ name: "Robin Belay", username: "robinb", show_name: true }) === "Robin Belay")
+  ok("...and a RAW row that chose to show it");
+else fail("pubNameRow does not honour a raw show_name:true");
+
+if (pubNameRow({ name: "Robin Belay", username: "robinb", showName: false }) === "@robinb")
+  ok("...and a MAPPED row too, so one helper serves both paths");
+else fail("pubNameRow does not honour a mapped showName");
+
+if (pubNameRow(null) === "") ok("pubNameRow(null) is empty, so the caller's || fallback fires");
+else fail("pubNameRow(null) is not empty — the 'Unknown' fallback would be dead");
+
+// THE READERS, AS SOURCE. Executing pubNameRow proves the gate; only source proves chat uses it.
+const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8")
+  .replace(/\/\*[\s\S]*?\*\//g, " ");
+if (/name:pubNameRow\(r\.user\)/.test(app)) ok("crew chat renders the sender through the gate");
+else fail("crew chat still builds the sender name from a bare .name");
+if (/name:pubNameRow\(r\.sender\)/.test(app)) ok("DM threads render the sender through the gate");
+else fail("DM threads still build the sender name from a bare .name");
+if (!/name:\(r\.(user|sender)&&r\.\1\.name\)/.test(app)) ok("neither reader keeps the raw-name form");
+else fail("a message reader still carries the raw-name form");
 
 console.log(bad ? `\n${bad} problem(s).` : "\nall assertions passed");
 process.exit(bad ? 1 : 0);

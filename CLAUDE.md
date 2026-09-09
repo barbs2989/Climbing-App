@@ -598,7 +598,37 @@ the total when deciding where a new guard belongs.
       and stopping would have left it.
     - The rule is exact rather than a keyword sweep: a comparison whose two sides are a `.name`
       and a seed row's `.user` is **always** an identity claim, and nothing else in this codebase
-      compares those two fields. The gate must be in the **same expression**, not merely somewhere
+      compares those two fields.
+    - **AND THE COUNT DISAGREEMENT THAT FOUND THIS BUG IS STILL ON SCREEN, MEASURED 2026-09-04.**
+      The entry above records Home saying *"Recent friend activity · 11 updates"* while Crew:Friends
+      says *"Show all 14"*; the identity bug beneath it was fixed and **the numbers were never
+      reconciled**, so a fresh CI capture still reads 11 and 14. They are **different lists behind
+      near-identical headings**: Home's `_friendFeed` is seed route `activity` authored by your
+      connections, filtered to `isRecent` and capped at 12; `FriendsFeed`'s rows are
+      `seedHistoryFor(f)` **plus that friend's vouches**, unfiltered by date. Neither is wrong
+      about its own list — do not "fix" one to match the other.
+    - **BOTH ARE SEED-ONLY, AND THAT IS THE FINDING THE COUNTS POINT AT.** `seedHistoryFor` is
+      `seedIdentity(c) ? ticksFor(c.name) : []`, and `seedIdentity` requires `typeof c.id ===
+      "number"` — a DB-derived connection carries a **uuid string**, so it returns `[]`. Measured
+      by rendering (`scripts/oneoff/probe-friends-feed-reads-seed-history.mjs`, no browser, no DB):
+      a seed friend renders **8,179 characters**, the *same person* as a real connection renders
+      **0**, and attaching real `logs` to that connection changes nothing. **A real friend's logged
+      climb cannot reach either feed.**
+      - It renders **nothing at all** rather than an empty section, so no false claim is made —
+        which is why no honesty guard sees it and why this is reported rather than captioned.
+      - **`TickList` two hundred characters away does it correctly**: `base = seedHistoryFor(climber)`
+        **plus** `extra` built from real `logs`. So the app already has the pattern and this surface
+        simply never gained it — the same asymmetry as *PEOPLE YOU'VE CLIMBED WITH* directly above
+        it on Crew:Friends, which #713 revived onto real `logs`.
+      - **NOT BUILT, deliberately.** Showing a real friend's climbs needs a hook reading **other
+        users'** `climb_logs` — a query, an RLS question and a visibility rule that do not exist —
+        and `climb_logs` holds **1 row catalog-wide**, so it would render an empty feed for
+        everybody. That is the `three-climbs-tab-sections-dead-in-production` shape: feature work
+        gated on data that does not exist, not a wiring fix.
+      - **It also corrects a recorded census verdict.** The discovery-surface census filed
+        `FriendsFeed` as *healthy* because its `connections` prop is DB-backed. That is a verdict
+        about what feeds the **list**, not about what feeds the **rows**. *Ask what fills the rows,
+        not what fills the list.* The gate must be in the **same expression**, not merely somewhere
       in the file.
     - **The probe that proved it RETYPED the predicate instead of lifting it**, so it kept failing
       after the fix landed — the exact trap its own header warns about. Its extraction also cut at
@@ -1043,12 +1073,23 @@ the total when deciding where a new guard belongs.
     reach. This is the rule `check:signed-in` already records from the other side, where seeding as
     the users found that RLS refuses an `accepted` connection written directly.
   - **IDENTIFIED, NOT NAMED, and getting that wrong is how this walk nearly asserted a defect as
-    the contract.** The inbox renders the sender through `pubName()`, which falls back to the
-    handle unless `showName` is set — and a DB profile can never carry it, because **`profiles` has
-    no `show_name` column** and nothing anywhere writes one. An assertion on the display name fails
-    against a correct app. It accepts either, and the naming inconsistency that sits behind it
-    (profile and inbox gate through `pubName`; the friends list and crew roster do not) is recorded
-    in memory as a product question rather than fixed here.
+    the contract.** The inbox renders the sender through `pubName()`, which falls back to the handle
+    unless `showName` is set. An assertion on one specific form fails against a correct app, so it
+    accepts **either** — and that is now MORE necessary than when it was written, not less, because
+    which form appears is a per-climber choice.
+    - **THIS BULLET USED TO SAY `profiles` HAS NO `show_name` COLUMN AND THAT NOTHING WRITES ONE.
+      BOTH HALVES ARE FALSE**, and the correction matters because the sentence argued against a
+      setting the app really has. `0175` added the column, the Settings switch persists to it, and
+      `pubName` honours it. It also said the friends list and crew roster do not gate through
+      `pubName` — they were unified on it once `0175` made the setting real.
+    - **What replaced the inconsistency is a subtler one, fixed in #1619**: `useProfilesByIds`
+      returned RAW postgrest rows, so `pubName` read `showName` against a `show_name` field and
+      every consumer silently answered "no" — while `vouchRowsFrom`, which skipped `pubName`
+      entirely, published the real name whatever the switch said. The hook maps `showName` and
+      selects `username` now, additively.
+    - The general lesson is the one this file records elsewhere as stale bookkeeping: **a claim
+      about the schema is only true relative to a migration.** When one lands, the prose that
+      reasoned from its absence has to move too.
   - It also asserts the sender did **not** degrade to `"Climber"`. `useProfilesByIds` has a
     different miss behaviour at every call site and this one is `{id, name:"Climber"}` — not a lie,
     and not a name either: a climber cannot tell which of their partners wrote to them.
@@ -4174,8 +4215,14 @@ the total when deciding where a new guard belongs.
       height must still let the caveat fire, or any route recording a camp anywhere would be
       silenced. Both directions are cases, and the new one was proven non-vacuous by reverting the
       predicate and watching it fail.
-    - **`audit:gain` has the same blind spot and is REPORT-ONLY, so it is left**: 24 of its 80
-      findings are this. Read its count as an upper bound until somebody widens it too.
+    - **`audit:gain` had the same blind spot and is NOW WIDENED TOO — its count is 61, not 80.**
+      This bullet used to say the audit "is left" and to read its 80 as an upper bound; a stated
+      limitation is a worklist, and leaving it would have had the next reader work 19 routes whose
+      gain is correct. Measured: **19 of the 80 record their implied start in `bivy`** — four
+      Cutthroat routes at the "Cutthroat Wall base terrace", `wa_south_ridge_6` matching Boston
+      Basin lower camp to the FOOT. The audit's own comment records that a few of the 19 are
+      excused by a camp on the WRONG SIDE of the same peak (Tahoma Glacier by Camp Schurman),
+      which is `audit:camp-route-fit`'s question and not this one.
   - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
     **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
     while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
