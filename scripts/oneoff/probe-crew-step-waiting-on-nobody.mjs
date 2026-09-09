@@ -45,9 +45,13 @@ const die = (m) => { console.error("ANCHOR LOST: " + m + " — nothing below is 
 // has closed and the next char is the terminator. Strings are skipped so a brace or a semicolon
 // inside one cannot end it early — `pendCrew`'s predicate contains a `;`, so a naive indexOf(";")
 // cuts it in half.
-function liftFrom(anchor, terminator) {
-  if (src.split(anchor).length - 1 !== 1) die(`\`${anchor}\` is not present exactly once`);
-  let i = src.indexOf(anchor) + anchor.length;
+function liftFrom(anchor, terminator, startsWith) {
+  const hits = [];
+  for (let k = src.indexOf(anchor); k !== -1; k = src.indexOf(anchor, k + 1)) {
+    if (!startsWith || src.startsWith(startsWith, k + anchor.length)) hits.push(k);
+  }
+  if (hits.length !== 1) die(`\`${anchor}\`${startsWith ? " followed by `" + startsWith + "`" : ""} is not present exactly once (found ${hits.length})`);
+  let i = hits[0] + anchor.length;
   let depth = 0, q = null;
   const start = i;
   for (; i < src.length; i++) {
@@ -66,14 +70,19 @@ function liftFrom(anchor, terminator) {
   return out;
 }
 
+const inCrewExpr = liftFrom("const inCrew=", ";", "roster");
 const allConfExpr = liftFrom("const allConfirmed=", ";");
 const pendCrewExpr = liftFrom("var pendCrew=", ";");
-const nmExpr = liftFrom("var _nm=", ";");
+// QUALIFIED, because a SECOND `var _nm=` appeared in RealClimberRow (a name STRING, not this
+// name-list joiner) and the bare anchor stopped being unique -- the probe failed closed, which is
+// correct, and this is the re-anchor. Tied to dayOk so it still breaks LOUDLY if the block moves.
+const nmExpr = liftFrom("crew.dateForced);var _nm=", ";");
 const labelExpr = liftFrom('["Crew",allConfirmed,', "]");
 
-ok(`lifted allConfirmed (${allConfExpr.length}), pendCrew (${pendCrewExpr.length}), _nm (${nmExpr.length}), label (${labelExpr.length})`);
+ok(`lifted inCrew (${inCrewExpr.length}), allConfirmed (${allConfExpr.length}), pendCrew (${pendCrewExpr.length}), _nm (${nmExpr.length}), label (${labelExpr.length})`);
 
 const step = new Function("roster", `
+  const inCrew=${inCrewExpr};
   const allConfirmed=${allConfExpr};
   const pendCrew=${pendCrewExpr};
   const _nm=${nmExpr};
