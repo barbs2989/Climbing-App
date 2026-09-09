@@ -13,15 +13,18 @@
 // performs and then asks the DATABASE, not the screen. A screen assertion cannot see this class:
 // the optimistic local state renders perfectly, which is exactly why six defects survived.
 //
-// WHAT IT COVERS TODAY -- THREE of the six, stated as a count so it cannot quietly stall.
+// WHAT IT COVERS TODAY -- FOUR of the six, stated as a count so it cannot quietly stall.
 //   1. onboarding (#1576): disciplines and a grade typed in, then read back out of `profiles`
 //      and off the screen after a reload.
 //   2. the crew (#1554): a row a real account opens, found by a DIFFERENT real account through
 //      crew_listings.
-//   3. remove-friend (#1563): a connection a real account removes, asked of `connections` and
+//   3. the route share (#1576): a route shared from the real share sheet, asked of `messages` --
+//      and it runs BEFORE 4, because the sheet can only reach the mate while they are connected.
+//   4. remove-friend (#1563): a connection a real account removes, asked of `connections` and
 //      then of the screen after a reload.
-// The three still uncovered are #1569's reliability ratio and connect button and #1576's route
-// share. Each needs its own two-account or reload shape; none is covered by a screen assertion.
+// The two still uncovered are #1569's halves -- the reliability ratio and the connect button.
+// Neither is covered by a screen assertion; the connect button is the natural phase 5, because
+// phase 4 leaves the pair disconnected and a re-request must land as PENDING, never accepted.
 //
 //   node scripts/check-new-climber-journey.mjs
 //
@@ -40,6 +43,21 @@ import { settledText } from "./lib/render-settle.mjs";
 import { tapByName } from "./lib/tap-by-name.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// ONE NAVIGATION BUDGET, AND IT IS MEASURED RATHER THAN PICKED.
+// The FIRST page load pays for vite transforming the app on request, and journey.config's route
+// opener adds to that: buildOpener discovers overlays by balancing braces over 400kB of source
+// INSIDE the transform hook, so the cost lands on the first module request rather than at server
+// start. Measured back to back on a loaded box (load ~650), same minute:
+//
+//   baseline config      server 92.5s | first goto  74.3s
+//   with the opener      server 88.7s | first goto 136.7s
+//
+// So 180s was inside the noise of this box rather than a margin, and a run duly died on
+// `page.goto: Timeout 180000ms exceeded` — which reads as a broken app and is a statement about
+// contention. On a quiet machine both numbers are seconds. Raised with the measurement attached so
+// the next reader can tell a slow box from a real hang instead of re-deriving it.
+const GOTO_MS = 420000;
 const log = (m) => console.log(m);
 let fails = 0;
 const ok = (m) => console.log("  ok    " + m);
@@ -53,12 +71,21 @@ const freePort = () => new Promise((res, rej) => {
   s.on("error", rej);
   s.listen(0, "127.0.0.1", () => { const p = s.address().port; s.close(() => res(p)); });
 });
+// SIX MINUTES, NOT ONE, AND THE NUMBER IS MEASURED RATHER THAN PICKED.
+// This waited 60s and reported "dev server never came up" — which reads as a broken config and
+// sent a session inspecting one that was fine. Measured back to back on a loaded box (load ~575
+// and ~660): this config starts in 169.5s and the PREVIOUS one in 214.6s, so the wait was already
+// short of the tree as it stood before any change here. Same asymmetry db-preflight records:
+// waiting longer for a slow box costs a few minutes, giving up early costs a false diagnosis
+// pointed at the wrong file. It reports the elapsed time either way, so "slow" and "broken" are
+// distinguishable from the failure line rather than only from a rerun.
 const waitForServer = async (base) => {
-  for (let i = 0; i < 120; i++) {
-    try { const r = await fetch(base, { signal: AbortSignal.timeout(2000) }); if (r.ok) return true; } catch {}
+  const t0 = Date.now();
+  for (let i = 0; i < 720; i++) {
+    try { const r = await fetch(base, { signal: AbortSignal.timeout(2000) }); if (r.ok) return ((Date.now() - t0) / 1000).toFixed(1); } catch {}
     await new Promise((r) => setTimeout(r, 500));
   }
-  return false;
+  return null;
 };
 
 // The route the phase-2 crew is opened on. A REAL catalog row, so CrewFinder can resolve its
@@ -84,7 +111,9 @@ try {
     { cwd: ROOT, stdio: "ignore", env: { ...process.env, VITE_DEMO_AUTOLOGIN: "false" } });
   let died = false;
   server.on("exit", () => { died = true; });
-  if (!(await waitForServer(base)) || died) dead("dev server never came up");
+  const upIn = await waitForServer(base);
+  if (upIn === null || died) dead("the dev server never answered within 360s" + (died ? " and the process exited" : "") + " — that is a broken config or a box too loaded to serve, NOT a verdict about the app");
+  log("  dev server up in " + upIn + "s");
 
   log("creating a brand-new account...");
   fixture = await createFixture(log);
@@ -122,7 +151,7 @@ try {
     { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(fixture.session)) },
   );
 
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
   await settledText(page);
 
   // READ THE FLAG BEFORE DESCRIBING ANYTHING. `onboarded` and `authed` are BOTH
@@ -279,7 +308,7 @@ try {
 
   // ---- AND DOES THE SCREEN SHOW IT AFTER A RELOAD? ----------------------------------------------
   // The DB write is necessary and not sufficient: the sign-in hydration has to read it back.
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
   await settledText(page);
   // ON THE PROFILE TAB, not Home. Home does not display your disciplines at all, so the first
   // version of this assertion searched a screen that never shows them and reported a false
@@ -325,7 +354,7 @@ try {
     const mp = await browser.newPage({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
     await mp.addInitScript(({ k, v }) => { try { window.localStorage.setItem(k, v); } catch {} },
       { k: STORAGE_KEY, v: JSON.stringify(sessionForStorage(mateBody)) });
-    await mp.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+    await mp.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
     await settledText(mp);
 
     const mateClick = async (t) => mp.evaluate((txt) => {
@@ -353,7 +382,108 @@ try {
     if (crewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${crewId}`, { method: "DELETE", headers: H }).catch(() => {});
   }
 
-  // ---- PHASE 3: A FRIEND A REAL CLIMBER REMOVES STAYS REMOVED ----------------------------------
+  // ---- PHASE 3: A ROUTE ONE CLIMBER SHARES REACHES THE OTHER ------------------------------------
+  // #1576. `onShareRoute` pushed the message into the local `msgs` map and NOWHERE ELSE, so the
+  // climber you shared a route with never received it -- while `sendMsg()`, declared in the same
+  // component, had always done the optimistic push AND the `sendDirectMessage` write. The toast
+  // said "Shared X with Y" either way.
+  //
+  // IT RUNS BEFORE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing rather than tidy.
+  // The share sheet's pool is `connections` PLUS seed CLIMBERS, and a seed climber's id is an
+  // INTEGER -- `sendMsg` gates its write on `isDbId(pid)`, so sending to one correctly takes the
+  // honest "Demo profile — messages here stay on this device" branch and writes nothing. Only the
+  // MATE exercises the real write, and the mate is in that pool only while the connection exists.
+  // Phase 4 deletes it. Appended after phase 4 this would assert against an empty pool and pass
+  // having sent nothing.
+  //
+  // check:message-delivery proves a DM RENDERS in the recipient's inbox and never touches the
+  // share control, which is where #1576 broke. So this asserts the WRITE and leaves the render to
+  // that guard rather than covering it twice.
+  const msgFilter = `or=(and(sender_id.eq.${uid},recipient_id.eq.${fixture.mate.id}),and(sender_id.eq.${fixture.mate.id},recipient_id.eq.${uid}))`;
+  const msgRows = async () => {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/messages?select=id,sender_id,recipient_id,body&${msgFilter}`, { headers: H });
+    if (!r.ok) dead(`could not read the messages table: ${r.status} ${await r.text()}`);
+    return r.json();
+  };
+
+  let sharedIds = [];
+  try {
+    // THE BASELINE, for the third time and the same reason: "a message exists afterwards" proves
+    // nothing unless none existed before. The fixture seeds no messages.
+    const msgBefore = await msgRows();
+    if (msgBefore.length === 0) ok("no messages between the two accounts yet");
+    else bad(`expected 0 messages before the share, found ${msgBefore.length} — the assertion below would be vacuous`);
+
+    // ?zr=1 calls the app's OWN openRoute(), so no browse drill-in can defeat it. Waiting on
+    // __routeOpen as WELL as on the text settling: settling says nothing about whether the
+    // navigation has happened yet, which is what check:selected-state's first CI run got wrong.
+    await page.goto(base + "?zr=1", { waitUntil: "domcontentloaded", timeout: GOTO_MS });
+    await page.waitForFunction(() => window.__routeOpen === true, null, { timeout: 60000 })
+      .catch(() => dead("the route page never opened — ?zr=1 did not land, so there is no share sheet to reach"));
+    await settledText(page);
+
+    const openedShare = await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")]
+        .filter((e) => /Share$/.test((e.innerText || "").trim()) && (e.innerText || "").trim().length <= 10);
+      if (b.length !== 1) return b.length;
+      b[0].click(); return -1;
+    });
+    if (openedShare !== -1) dead(`expected exactly 1 Share control on the route page, found ${openedShare}`);
+    await settledText(page);
+
+    // FILTER TO THE MATE BY NAME, because the pool also holds every seed climber and each row
+    // carries its own Send button — clicking the first would send to a seed integer id and take
+    // the demo branch, which writes nothing and would read as the defect. The name comes from the
+    // FIXTURE rather than being typed here.
+    await page.fill('[aria-label="Search climbers by name"]', fixture.mate.name);
+    await settledText(page);
+
+    const sendCount = await page.evaluate(() =>
+      [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Send").length);
+    if (sendCount !== 1) {
+      dead(`expected exactly 1 Send control after filtering the share sheet to the mate, found ${sendCount} — the send would not be attributable`);
+    }
+    const routeText = await page.evaluate(() => document.body.innerText || "");
+    await page.evaluate(() => {
+      const b = [...document.querySelectorAll("button")].filter((x) => (x.innerText || "").trim() === "Send");
+      b[0].click();
+    });
+    await settledText(page);
+    await new Promise((r) => setTimeout(r, 2500));
+    ok(`shared the open route with ${fixture.mate.name} from the route page`);
+
+    // ---- THE ACTUAL QUESTION: DID THE SHARE REACH THE DATABASE? --------------------------------
+    const msgAfter = await msgRows();
+    sharedIds = msgAfter.map((m) => m.id);
+    if (msgAfter.length === 1) ok("the shared route reached the database as a real message");
+    else if (msgAfter.length === 0) bad("\"Shared X with Y\" was toasted and NO message row exists — the climber you shared with never receives it");
+    else bad(`expected exactly 1 message after one share, found ${msgAfter.length}`);
+
+    if (msgAfter.length) {
+      const m = msgAfter[0];
+      if (m.sender_id === uid && m.recipient_id === fixture.mate.id) ok("it is addressed from the owner to the mate");
+      else bad(`the message is addressed ${m.sender_id} -> ${m.recipient_id}, not owner -> mate`);
+      // NAMES THE ROUTE THE CLIMBER WAS LOOKING AT, cross-checked against that page's own text
+      // rather than against a name typed in here — a share carrying somebody else's route is a
+      // defect a bare "a row exists" assertion cannot see.
+      const nm = /^Check out this route: (.+?) \(/.exec(String(m.body || ""));
+      if (!nm) bad(`the message body does not read as a shared route: ${JSON.stringify(String(m.body || "").slice(0, 80))}`);
+      else if (routeText.includes(nm[1])) ok(`the message names the route that was open (${nm[1]})`);
+      else bad(`the message names "${nm[1]}", which is not on the route page it was shared from`);
+    }
+  } finally {
+    for (const id of sharedIds) {
+      await fetch(`${SUPABASE_URL}/rest/v1/messages?id=eq.${id}`, { method: "DELETE", headers: H }).catch(() => {});
+    }
+    // A 204 IS NOT EVIDENCE THE ROW WENT -- check:message-delivery records PostgREST answering a
+    // zero-row DELETE with 204 and res.ok true while the row stood. Read it back.
+    if (sharedIds.length) {
+      const left = await msgRows().catch(() => []);
+      if (left.length) { console.log("  FAIL  could not remove the shared message(s) — " + left.length + " left behind"); fails++; }
+    }
+  }
+
+  // ---- PHASE 4: A FRIEND A REAL CLIMBER REMOVES STAYS REMOVED ----------------------------------
   // #1563. "Remove friend" filtered local state and toasted success while `removeConnection` sat
   // imported and called from NOWHERE -- so a climber tapped Remove, was told it worked, the row
   // vanished, and the connection was still there on the next load.
@@ -447,7 +577,7 @@ try {
   // ---- AND IS THE FRIEND STILL GONE AFTER A RELOAD? --------------------------------------------
   // The delete is necessary and not sufficient: a hydration that re-adds them would put the
   // friend back on screen with the row already gone.
-  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
   await settledText(page);
   if (!(await tapByName(page, "Crew"))) dead("no Crew tab after the reload");
   await settledText(page);
@@ -481,5 +611,5 @@ try {
 }
 
 console.log(fails ? `\ncheck:new-climber-journey FAILED — ${fails} problem(s) a new climber would hit.`
-                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, the crew they open is found by another real climber, and a friend they remove stays removed.");
+                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, the crew they open is found by another real climber, the route they share reaches that climber, and a friend they remove stays removed.");
 process.exit(fails ? 1 : 0);
