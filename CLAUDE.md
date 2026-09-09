@@ -134,6 +134,7 @@ npm run audit:gain         # is a route gaining LESS than its own waypoints dema
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
+npm run audit:summit-splits # ...and do a peak's OWN routes agree where it is? (SIXTH pin audit — the ground decides)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
 npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the tolerance, not a constant
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
@@ -7067,6 +7068,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     *different byte on every run*, which reads as "this script emits broken JSON" when the output
     is fine and the exit is the bug. The two modes are branches now. **Any script here that grows a
     machine-readable mode inherits this trap.**
+  - **WHICH summit, and which trailhead? `.find()` took whichever the enrichment listed FIRST**,
+    so on the **24 WA routes carrying more than one summit-typed pin** the audit's answer depended
+    on row order — one of them by **1,815 ft**. Row order is not a record. It now takes the LOWEST
+    summit-typed pin and the HIGHEST trailhead, which give the smallest rise: `rise` is used as a
+    LOWER BOUND and the whole one-sidedness rests on it, so a smaller rise can only under-report,
+    never accuse a correct row. **Proven behaviour-neutral on today's catalog** — the finding set
+    and every `rise` are byte-identical, so this removes a dependence on row order without moving
+    a single verdict.
+    - **"HIGHEST SUMMIT" WAS MEASURED AND REJECTED, and the measurement is the whole point.** It
+      adds 5 findings and loses none, which reads as strictly better coverage until you open
+      them: **four are Squire Creek Wall south-face routes** whose own Topout pin says they end
+      at the 3,249 ft grassy saddle, while a Summit pin records the FORMATION's 4,958 ft high
+      point they never reach. Only `wa_sherpa_glacier` is genuine. **One real in five** is the
+      precision that teaches people to ignore an audit.
+    - **Preferring the route's own Topout does not rescue it either**, and that is why the
+      endpoint cannot be resolved from the pin TYPES at all: `wa_sherpa_glacier` carries *"Top of
+      Sherpa Glacier"* (7,600) as an INTERMEDIATE topout on the way to Stuart's 9,415 ft summit,
+      so the same field means *where the route ends* on one route and *a milestone* on the other.
+    - **KNOWN MISS, stated rather than hidden**: `wa_sherpa_glacier` stores 6,000 ft against a
+      trailhead-to-Stuart rise of 6,485 and is NOT reported, because its lowest summit-typed pin
+      is that intermediate topout.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:cross-route-pins`** asks whether **two routes place the same named point in two different
@@ -7149,6 +7171,78 @@ the correction knows the screen is wrong, and they have no way to report it.
       a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
+- **`audit:summit-splits`** asks whether a peak's OWN routes agree where its summit is. Each route
+  carries a summit waypoint, so those pins are independent recordings of ONE point and a
+  disagreement means at least one is wrong. **28 WA peaks carry two or more, 60 m or further
+  apart**, and nothing could see them: `audit:cross-route-pins`' `MIN_KM` is **2**, and
+  `audit:summit-pins`' `DIST_TOL` is **300 m** — and that one compares each pin against the AREA
+  ROW rather than against the peak's other pins, so it can never notice a peak has two summits,
+  only that one pin is far from the area. Verified rather than argued: both print **zero**
+  mentions of North Early Winters Spire, the worst instance. Read-only, anon key, report-only;
+  **not** a build gate (a property of the DB, plus one network call per coordinate).
+  - **DISTANCE CANNOT SAY WHETHER A SPLIT MATTERS, WHICH IS WHY NEITHER SIBLING SCOPE IS WRONG.**
+    110 m across Mount Baker's summit dome is a rounding worth nothing; 128 m on a spire is
+    **613 ft of ground between the two pins**, one of them standing on the flank. So the
+    instrument is the **ground** — the USGS 3DEP reading under each coordinate, which neither pin
+    derives from — and the finding is a cluster standing materially lower than its sibling.
+  - **It does NOT pick a winner**, the same restraint `audit:cross-route-pins` records for the same
+    reason: a majority can be one enrichment pass counted many times. It says the two cannot both
+    be right and prints what the terrain holds under each, plus the distance to the area row as a
+    third record, so a reader settles it in a minute instead of re-deriving the geometry.
+  - **THE PRECISION RULE IS THE PIN'S OWN CLAIM AND IT IS DELIBERATELY NOT A DENY-LIST.** A peak
+    legitimately has named sub-summits — Liberty Cap on Rainier, Poltergeist Pinnacle, Hozomeen's
+    South Peak, Bonanza's Southwest Peak — and a pin naming one is correct data that
+    `audit:summit-pins` already classifies as NOT a finding. Keeping a vocabulary of sub-summit
+    words is the shape one more adjective defeats, so two pins count as ONE CLAIM when they share
+    a **name** or a **stated elevation**. **Both are needed and neither is enough**, measured:
+    name alone misses **Mount Baker**, where six routes say *"Mount Baker Summit"* against
+    *"Mt. Baker summit (Grant Peak)"* — one summit spelled two ways, 369 ft apart on the ground;
+    elevation alone misses **Burgundy Spire**, whose two pins are both *"Burgundy Spire Summit"*
+    and state 8,483 against 8,400.
+  - **PAIRWISE, NOT PER-PEAK, and the first version got that wrong in a way that HID a real
+    finding.** Asking whether ALL of a peak's clusters share a name lets one correctly-named
+    sub-summit decide the verdict for the others — Tepeh Towers sitting beside three Eldorado
+    summit pins — and it drives the reported drop from a cluster that is part of no disagreement.
+    Every pair is considered and the finding is the same-claim pair furthest apart. Reclassifying
+    that way moved Mount Baker and Gilbert Peak out of the context bucket, where a reader would
+    have had to spot them by eye.
+  - **A cluster is grouped by COORDINATE ALONE, so compare its names and elevations as SETS.**
+    Routes really do disagree inside one: Guye Peak has three routes on `47.442,-121.411`, two
+    calling it *"Guye Peak"* at 5,168 ft and one *"Blood Sport crag"* at 3,400. Reading the first
+    pin of each cluster made the verdict depend on row order and **hid that finding entirely** —
+    the worst of the six, at 939 ft. The printout lists every distinct name/elevation for the same
+    reason: with only the first shown, the row read as a mismatch the reader could not see.
+  - **The result on WA: 28 splits -> 6 findings, 7 context, 15 under the ground threshold.**
+    That tail moves run to run — a later run on a loaded box read **14 quiet and 1 NOT MEASURED**
+    (Glacier Peak, 0 of 2 coordinates read) because 3DEP timed out. That is the fail-closed path
+    working, not a change in the catalog: the findings and the context bucket were identical.
+    Guye Peak 939 ft (two routes putting the 5,168 ft summit on ground of 4,227), North Early
+    Winters Spire 613 ft, Mount Stuart 546 ft (SIX distinct coordinates for one summit), Mount
+    Baker 369 ft on six routes, Burgundy Spire 315 ft, Gilbert Peak 259 ft.
+  - **Both thresholds are borrowed rather than fitted.** 60 m is roughly the placement slop
+    `audit:waypoint-elevations` already allows a pin; 250 ft is that audit's own `FLOOR_FT`, where
+    it means *inside the 3DEP grid's noise*. Neither was chosen against these findings.
+  - **AND `audit:peak-coords` HAS ALREADY MEASURED WHY 250 CANNOT GO MUCH LOWER**, which is worth
+    reading before anyone tightens it hoping for more. Its `TOL` comment records that at 150 ft
+    the WA tail is 21 peaks and **17 are Stuart, Shuksan, Forbidden, Goode, Little Tahoma and
+    friends** — sharp summits whose coordinate sits 35-100 m off the top on very steep ground and
+    therefore reads a couple of hundred feet low while being *essentially right*. One phenomenon,
+    not 17 defects, and precisely what a lower threshold here would re-report as summit splits.
+    It also disposes of a tempting hypothesis this work produced: Mount Stuart's `areas` row
+    stands on 9,208 ft against a stated 9,415, which looks like a wrong peak coordinate and is
+    **not** — that audit found the DEM maximum 70 m away matching the stored elevation, and
+    rejected snapping to it because it would DERIVE a coordinate rather than copy a record.
+  - **SCOPE ON THE AREA, NEVER ON THE ROUTE ID.** `id like wa_*` is the reflex filter and it drops
+    the four legacy route ids this catalog still carries (`rainier_*`, `adams_*`) — **both legacy
+    Rainier routes carry a summit pin on `wa_mount_rainier`**. On a COMPARATIVE audit that is not
+    a lost row, it is a lost *witness*: the siblings are then judged against less evidence, which
+    is the false-pass direction `audit:trailhead-road-agreement` already records. Filtering AREAS
+    that way is safe and was measured rather than assumed — every one of the 2,525 areas under
+    `washington` is `wa_`-prefixed except the state row itself. Corrected before shipping: 1,012
+    routes and 830 pins became **1,016 and 832**.
+  - Fails **closed** four ways — zero areas, zero routes, zero placed summit pins, and a split
+    whose ground could not be read is reported as **NOT MEASURED** rather than as agreement. That
+    last one is the reason `terrain.mjs` returns `null` and never `0`.
 - **`audit:waypoint-order`** asks the two LIST questions — is the order sensible, is the same
   place listed twice — as distinct from the three pin-POSITION audits. The duplicate half is small
   and real (**10 WA routes, 11 pins**, none with two summits). The ordering half was reporting
@@ -9262,6 +9356,63 @@ their own Résumé showed an amber **"Unverified"** chip.
     edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
+
+- **A CLIMBER WHO HAD ONLY ASKED TO JOIN COUNTED AS A CREW MEMBER, AND HELD A SPOT.** `#1554`
+  introduced the third crew status and the comment beside `allConfirmed` states the rule outright
+  — *"Someone who has asked to join is not in the crew yet"* — and **enumerates the four readers it
+  was applied to** (`pendCrew` and three *"Remind all N"* expressions). Three more read the roster
+  whole, and the enumeration is what made them findable: *an instance fixed by hand is not a class
+  closed*, with the author's own list as the evidence.
+  - **The heading** read *"Crew · 2 members"* for you plus one requester — live on CI's demo
+    capture, beside a roster row saying *"Asked to join"*.
+  - **`size` drives capacity**, so a requester consumed a spot. **At enough requests a crew reads
+    "✓ Crew full — 3/3" while nobody has been accepted**, which stops other climbers asking — the
+    worst of the three, and the one that is not merely cosmetic.
+  - **The amber denominator** (*"1 of 2 confirmed"*) is latent: it needs an **invited** member and
+    a **requester** at once, because `allConfirmed` — already fixed — gates whether it renders at
+    all. #1554 identified that sentence as a symptom and fixed it by gating rather than at the
+    count, which is why it survived.
+  - **Fixed through ONE list**, `inCrew`, with `allConfirmed` expressed from it, so *who is in the
+    crew* has a single definition. Three filters saying the same thing is how this codebase ended
+    up with four grade parsers.
+  - **The requester stays VISIBLE in the roster.** Only the counting changed — the organiser has to
+    see somebody to accept or decline them, so dropping the row would be worse than counting it.
+    The probe asserts that directly.
+  - `scripts/oneoff/probe-pending-requester-is-not-a-member.mjs` — 12 assertions. It **lifts the
+    predicate out of the source** rather than retyping it (a copy agrees with itself whatever the
+    app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
+    `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
+    assertion still green. That is the shape that bit #1643's own merge an hour earlier.
+- **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
+  the group calendar contradicted its own heading.** Both group surfaces rendered
+  `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
+  whether it had happened, so a group whose meetups are all behind it advertised its **oldest** as
+  upcoming. Seen on a CI `ui-screens` capture as **"Next meet Jun 27"** and **"Next meet Jun 28"**,
+  rendered on **4 September**.
+  - **The upcoming rule was NOT invented here.** `daysUntil(d) >= 0` is the app's own test, already
+    used for crews in `upcomingClimbs` two hundred lines away. `nextMeetup(evs)` in core is that
+    rule applied to events, and **today counts as upcoming** — a meet this evening has not gone.
+  - **A THIRD COPY EXISTED AND THE PROBE FOUND IT, NOT THE SWEEP.** The group's
+    **"Calendar · upcoming events"** listed **every** event oldest-first, so an upcoming calendar
+    opened with a meetup from June. The probe asserts the pre-fix expression is gone from the file
+    rather than only that the two known sites were fixed, and that assertion failed on its first
+    run. *A fix keyed on the sites you found is not a fix for the expression.*
+  - **FILTERING THE CALENDAR MADE THE EMPTY STATE FALSE, so the copy gained a branch in the same
+    change.** *"No events scheduled yet — plan the first one"* is true of a group that has never
+    held one and false of a group that has held four; `groupEventsEmptyLine(total, upcoming)`
+    returns *"No upcoming events — plan the next one."* for the second. **A fix that trades one
+    wrong claim for another is not a fix**, which is why both branches are asserted and asserted to
+    DIFFER — a rewrite collapsing them satisfies any test that only checks one.
+  - **Both helpers are pure functions in core for the reason `stateCatalogLine` is**: all three call
+    sites live inside `App`, which no SSR guard stands up, so the branches are **executed** while
+    the wiring is asserted as **source** beside them. That split matters here — a merge keeping the
+    helpers and dropping a call site restores the defect with every branch assertion green, and
+    `audit:silent-reverts` says in its own closing caveat that it cannot see a change of this shape.
+  - **Not made a build gate.** The class is a date claim on ONE feature, the surfaces are gated on
+    group events (client state today), and the probe needs an esbuild bundle it does not share with
+    a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
+    database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
+    if a second date-labelled surface joins the class.
 
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
