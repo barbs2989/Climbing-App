@@ -7511,6 +7511,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     stated elevation is left alone. What remains is exactly what the script declined: **Mount
     Stuart** (six coordinates, no single wrong cluster) and **Burgundy Spire** (a climbers' name
     the gazetteer does not hold, so the third record does not exist).
+    - **MOUNT STUART IS DIAGNOSED BUT NOT REPAIRED, and the diagnosis is worth reading before
+      anyone tries.** `scripts/oneoff/probe-mount-stuart-summit-split.mjs` measures all four of
+      its summit coordinates against the ground and the gazetteer:
+      **9,416 ft and a LOCAL MAXIMUM** at `wa_mount_stuart_girth_pillar`'s pin (17 m from GNIS,
+      matching its own stated 9,416 to a foot); 9,333 and a local maximum on two more routes;
+      **9,208 and NOT a maximum — 2 of 8 neighbours higher by up to 182 ft — where the peak's own
+      `areas` row and EIGHT routes sit**; and 8,870 with 5 of 8 higher on Cascadian Couloir, North
+      Ridge and West Ridge, the three most-climbed lines on the peak.
+      - **`audit:peak-coords` has a recorded decision on this exact peak**: its `TOL` comment says
+        the DEM maximum is "70 m away matching the stored elevation" and that snapping was
+        REJECTED because it would DERIVE a coordinate rather than copy a record. The new fact is
+        that **a stored route pin sits on a local maximum 58 m from the area row**, matching its
+        own stated elevation to a foot — near enough that it is very likely the same high point
+        that grid search found, though the two were sampled differently and this does not claim
+        they are identical. So COPYING is available where deriving was not — which changes the calculus that decision rested on. That makes it a
+        decision to RE-TAKE, not one to overturn quietly.
+      - **Every repair path trips a gate in `fix-summit-pins-on-the-flank.mjs`**, which is the
+        gates saying Stuart is unsettled: the dominant cluster is 207 ft from the stated elevation
+        (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
+        25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
+        that is not the summit either.
     - **GUYE'S MECHANISM IS VISIBLE.** `wa_blood_sport` carries a correctly-typed Topout,
       *"Blood Sport crag"* at 3,400 ft, at exactly `47.442,-121.411` — and two other routes put
       their *"Guye Peak"* SUMMIT pin on that same coordinate. Two routes' summit is the crag's
