@@ -4518,6 +4518,13 @@ the total when deciding where a new guard belongs.
     subtraction is meaningless anyway; this catches those without a second rule. It also covers
     the 3 routes storing a BACKWARDS pair, since the app prints `Math.abs(segMi)` and the
     magnitude is what has to be possible — the ordering is `audit:waypoint-order`'s subject.
+  - **20% OF PRINTED LEG DISTANCES DISAPPEAR, AND THE SHAPE OF THAT IS MEASURED RATHER THAN
+    WAVED AT.** 473 of 2,405 is a lot of information to remove from a product, so: **23 routes
+    lose EVERY leg distance and 16 of those have only one leg**; three lose 6-7, and they are the
+    badly-broken rows `audit:waypoint-distances` already reports (`wa_garfield_mountain_scramble`
+    7/7, `wa_mount_buckindy_scramble` 6/6). The other 238 lose some and keep the rest. The panel
+    keeps most of its distances on most routes, which is what makes suppression proportionate
+    rather than a blanket.
   - **An UNPLACED pin cannot contradict anything**, so the stored number stands. Suppressing it
     there would remove a distance from every route whose pins carry no coordinate — a guard
     flagging correct work, which is the failure this file records under a dozen other names.

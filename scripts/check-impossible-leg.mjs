@@ -21,6 +21,11 @@
  * distance — and it would trade a number a climber can see is wrong for one they cannot. The
  * elevation change on the same row is untouched; only the mileage goes.
  *
+ * 20% OF PRINTED LEG DISTANCES DISAPPEAR, and the shape of that is measured: 23 routes lose
+ * EVERY leg distance and 16 of those have only ONE leg; three lose 6-7, and they are the badly
+ * broken rows audit:waypoint-distances already reports. The other 238 lose some and keep the
+ * rest. Suppression is proportionate rather than a blanket.
+ *
  * PURELY GEOMETRIC, so it needs no knowledge of which convention the row uses. 57 of 653 WA
  * routes store a `distMi` that is not cumulative from the trailhead, where the app's own
  * subtraction is meaningless anyway; this catches those without a second rule.
