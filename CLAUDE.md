@@ -9194,6 +9194,52 @@ the correction knows the screen is wrong, and they have no way to report it.
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*
+- **MUTUAL FRIENDS IS A STUB, AND EVERY ENTRY POINT IS CORRECTLY GATED OFF IT — so the feature is
+  ABSENT rather than lying, which is the opposite of the usual defect here.** `mutualIds()` takes
+  **no arguments** and returns a literal `[]`, so `mutualCount()` is 0 for every climber, always.
+  All five consumers render as `mutualCount(...) ? control : null`, so the *"N mutual friends ›"*
+  row never appears and the **Mutual friends** sheet is unreachable in the app — only
+  `?z=mutualModal`, the overlay guards' own opener, can mount it. `fedge()` beside it returns
+  `false` and has **zero** callers.
+  - **NOT a regression:** `git log -S "function mutualIds"` returns only the original upload and
+    the monolith split (#497). Never implemented, never reverted, so `audit:silent-reverts` has
+    nothing to say about it and is right not to.
+  - **The cost is a session polishing copy no user can read, and that has already happened once.**
+    #1637 corrected the sheet's subtitle (*"You and Alex both know 0"*), a real string defect on a
+    surface with no reachable entry point. The walk that found it opens overlays by name, which is
+    exactly how an unreachable modal looks reachable. **Before fixing copy found by an overlay
+    walk, check the surface has an entry point that can render.**
+  - **Proven by EXECUTION, not by reading**
+    (`scripts/oneoff/probe-mutual-friends-is-a-stub.mjs`): it bundles Core and calls the real
+    exports over five inputs chosen to overlap as much as possible, and reports
+    `mutualIds.length` — the declared parameter count, which is **0** and is the structural tell.
+    It **exits 1 if the function ever starts returning something**, so this note fails as stale
+    rather than rotting into a description of code that has moved on.
+  - **Implementing it or deleting the UI are both product decisions, not polish** — one is a
+    feature, the other removes a built screen — so neither was done.
+- **WITH `DEMO_FILLERS` ON, 7 OF 60 ABSENCE CLAIMS ARE STILL ON SCREEN, AND THAT IS THE RIGHT
+  NUMBER.** `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57
+  overlays and reports which *"No X yet"* sentence actually renders — the question the sample-data
+  request poses, and the one to re-run when the examples come **out** before launch. Measured
+  2026-09-09: **64 screens walked, 0 unmounted.** Reading all seven:
+  - **Three are the Crew tab, and they are CORRECT DATA.** *"No days proposed yet"*, *"No meeting
+    spot or time set yet"*, *"No weekly slot works for the whole crew yet"* all come from
+    `crew_seed_octo` — the **only** one of the five seed crews with no `dates` and no `meetPlace`,
+    and the only one carrying an `openNote`. It is the still-recruiting crew, so a crew that has
+    proposed nothing is the state being demonstrated. Four of five crews are fully planned; having
+    both stages on screen is the better example, not a gap. **Do not "fix" this by seeding dates.**
+  - **Two are a payload artifact, not a surface.** *"No events scheduled yet"* appears only under
+    `postMenuFor`/`reactPickerFor`, whose payload injects a **synthetic** group into
+    `createdGroups`; the seeded events belong to `group_wasatch_trad`, so the synthetic group
+    correctly has none. No climber can reach that state.
+  - **One is `"No topo yet"`** — topos are DB-backed (`topos`), not seed content, so `DEMO_FILLERS`
+    cannot supply one.
+  - **One is the mutual-friends sheet**, i.e. the stub above.
+  - A **static** version of this was written first and discarded: it tried to resolve each claim
+    back to its state variable through 400kB of single-line JSX and reported *"0 of 61 seeded"*,
+    which is plainly wrong. Whether a sentence is ON SCREEN needs no resolution at all — the
+    [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
+    disagreed with a fact already known.
 
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
