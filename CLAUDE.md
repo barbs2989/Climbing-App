@@ -39,6 +39,7 @@ npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up t
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
+npm run check:waypoint-dedupe # a route has ONE summit and MORE THAN ONE trailhead (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -4951,6 +4952,50 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Injection-tested **7/7**, each case proving its edit landed by checksum and the harness asserting
     both sources are byte-identical afterwards. Case 6 initially reported **EDIT NEVER LANDED** — the
     pattern, not the guard, was wrong.
+- **`check:waypoint-dedupe`** asserts that `dedupeWaypoints` merges a **SINGLETON** type — two
+  "Summit" pins are the same summit whatever they are called — and that **`trailhead` is not one**.
+  It was: the rule read `/^(summit|topout|trailhead)$/i` and merged two trailhead pins on **TYPE
+  ALONE**, ignoring both their names and their coordinates. Static, no browser, no DB — it executes
+  the real exported function over constructed pins, so it costs a module import.
+  - **THE MERGE IS WORSE THAN A DROP, because `mergePair` keeps the FIRST pin's coordinate and the
+    LONGER name.** `wa_remmel_mountain_southeast_slope` stores *Thirtymile Trailhead*
+    (48.8228,-120.0197) and *Andrews Creek Trailhead* (48.7837,-120.1086), **7,829 m apart**, and
+    rendered as **"Andrews Creek Trailhead" AT THIRTYMILE** — one start's label on the other's
+    position. Not cosmetic: that pin drives the Directions button through `trailheadPoint()`, and
+    `gpxDownload` writes waypoints into the file a climber carries into the field.
+  - **CLAUDE.md ALREADY NAMED THE PEAK, TWICE.** `audit:trailhead-agreement` records Remmel among
+    the four WA peaks with two GENUINE approaches (with Carru, Howard and Stuart's North Ridge) and
+    says outright **"do not sweep these"** — while the render path was sweeping one of them on every
+    page load. *A rule written for summits was applied to trailheads without asking whether the
+    reasoning transferred.*
+  - **Nothing could see it, and the reason is the shape of the merge.** Every coverage guard asks
+    whether a column reaches a screen, and this one did — with the wrong number of pins.
+    `audit:waypoint-order` reported it as a "duplicate", which is what it looks like from a count.
+    The pin that survives looks like an ordinary correct pin.
+  - **Removing `trailhead` costs nothing a trailhead needs, measured rather than argued.** Two pins
+    for ONE start still merge on `sameSpot()` (~30 m) or on `nameKey()`, the way every non-singleton
+    type is handled. Behaviour-diffed through `tidyWaypoints` across all **1,011 WA routes carrying
+    waypoints: exactly ONE renders a different list, and NONE renders fewer pins** — the reference
+    being the pre-change file **extracted from git**, never a retyped copy. Confirmed on screen
+    afterwards; both trailheads render, in stored order.
+  - **A GATE FOR A CLASS OF ONE, on the two grounds `check:bottom-panels` records.** *Anti-revert*:
+    the fix removes one word from a regex alternation, so it changes **no identifier** and
+    `audit:silent-reverts` is blind to a stale-base squash putting it back — that audit says so in
+    its own closing caveat. Nothing else in the repo gates `lib/waypoints.js`; its two importers are
+    report-only DB audits outside the build. *Class growth*: the class is one route today only
+    because one route stores two trailhead pins, and the next one to record a second start is eaten
+    in silence.
+  - **ORDER IS LOAD-BEARING AND THE INJECTION SUITE IS WHAT PROVED IT.** The fail-closed floor was
+    written first and exited first, so gutting `SINGLETON` reported *"this run proved nothing"*
+    rather than naming the summit rule that broke. The named assertions report first now; the floor
+    only has a job on a clean run. Same mistake `check:clickable` and `check:field-renders` record.
+  - Injection-tested **5/5** (`scripts/oneoff/inject-waypoint-dedupe-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `lib/waypoints.js` byte-identically. Case 1 is the
+    real historical rule. **Case 5 must stay SILENT** — the same alternation with its members
+    swapped is not a change. **A case reported `WRONG FAILURE` while the guard was innocent**: it
+    matched `"FAIL - " + expect`, and the guard prefixes each line with the assertion's own label,
+    so a guard firing on exactly the right rule read as a miss. Match on a FAIL **line**, not from
+    its start.
 - **`check:wp-styles`** asks whether the app can *draw* every kind of waypoint it *recognises*.
   Two maps in `ClimbMatchCore.jsx` describe waypoint types and were maintained separately:
   `WP_TYPE_MAP` turns ~30 raw spellings into a canonical type (`"lake"` → `Water`), and
