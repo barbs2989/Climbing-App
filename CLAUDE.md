@@ -9424,6 +9424,11 @@ one click past where the probe walks, so nothing had reported it at all.
       client-only `useState` with no DB hydration at all, reset on sign-in, so there is no read to
       fail. That it never persists for a real account is a separate gap, not an outage lie. Check
       whether a count has a query behind it before flagging it.
+      - **THAT SEPARATE GAP IS CLOSED and the verdict above is unchanged**, which is why the note
+        is amended rather than deleted. Bookmarks persist to IndexedDB keyed by account
+        (`savedAreaIds`/`saveAreaIds`, guarded by `check:offline-claims` §7), so the tile no longer
+        reads 0 after a reload — and it is still not a query, so an outage still cannot make it
+        lie. A stated gap that has since closed sits in the worklist looking like work.
     - **Two neighbouring strings on that screen were checked and deliberately left alone.**
       *"Loading climbers…"* is not a defect — the real-accounts panel already branches on
       `browseRes.error` with honest copy, and react-query was still retrying at settle time, so
