@@ -9231,11 +9231,41 @@ the correction knows the screen is wrong, and they have no way to report it.
       read *"NOT fixed here"* while `rackLines()` in `RouteDetail.jsx` had already replaced the one
       *"Slings —"* heading with a label per key, keeping "Slings" only for the ARRAY shape where it
       is genuinely a sling list. A stated gap that has since closed reads as work; that is the same
-      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half is
-      a separate question and has not been re-measured since** — splitting by key shortens each
-      bullet but a single key's value can still be a paragraph.
+      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half
+      was a separate question, and it is answered below** — splitting by key shortens each bullet,
+      and the question was whether a single key's value can still be a paragraph.
       `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
-      lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
+      lifting from source with `ANCHOR LOST` rather than copying — the second lifts `rackLines`,
+      and the entry below is what that correction cost.
+      - **RE-MEASURED 2026-09-09, AND THE INSTRUMENT WAS THE STALE HALF — it lifted a function the
+        app no longer calls for the 84% majority, so it reported a FIXED defect as live.**
+        `rackLines()` is the renderer and it calls `fmtSlingRack` **only for the ARRAY shape**,
+        sending the object shape down the label-per-key branch; the script called `fmtSlingRack`
+        directly on every value, so it kept printing a `"Slings —"` heading the app had stopped
+        emitting, at a length it had stopped producing:
+
+              lifting fmtSlingRack   p50 83   p90 171   max 396   over-120 23.1%   "Slings" 84.3%
+              lifting rackLines      p50 26   p90  79   max 252   over-120  2.2%   "Slings" 74/590
+
+        **So the LENGTH half was largely closed by the label fix and nothing had noticed** — 13
+        bullets of 590 exceed 120 characters. The script lifts `rackLines` now, measures the
+        BULLET rather than a string no screen shows, and self-tests the lift.
+      - **Its "84.3% mislabelled" was the same fossil one level down, and my own first rewrite
+        reproduced it at 48.** Two different things produce a `Slings` label: an **array**, where
+        the heading covers the whole value, and an object with a `slings` **key**, where it covers
+        that key alone with the cams in their own bullet beside it — correct, and the entire point
+        of the split. Measured: **21 from the array shape** (matching the 21 arrays-of-object
+        recorded above, which is independent corroboration the lift is right) and **53 from a key**.
+        The old `NOT_SLINGS` list was **deleted rather than left unused**: with one bullet per key
+        there is no heading covering foreign gear for it to test, so it could only ever return 0,
+        and *a counter that cannot fire reads as coverage*.
+      - **The 13 long bullets are not one class**, so there is nothing to sweep: 8 are genuine long
+        gear prose, 2 read a nested object out loud (`Crevasse rescue kit — pulley: 1, prusiks: 2,
+        purpose: …`), and **3 are commentary rather than gear** — which is where the real finding
+        was. `wa_rapple_grapple` renders *"fresh **MP source** broadens this to 'pro to 4 inches' —
+        retain the #1-3 structured list as primary, add one #4 as optional"* into a climber's RACK
+        box: an editor instructing the next editor, over a citation `audit:prose-citations` could
+        not see. See that audit's `MP` entry.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
@@ -9350,6 +9380,32 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Injection-tested as a **PAIR**, and the pair is the point: `--inject=commonnoun` must report
       **0** and `--inject=thesite` must report **every** value. The precision case alone is
       satisfied by a needle that matches nothing.
+  - **AND THE MIRROR OF IT: "MP" IS MOUNTAIN PROJECT AND IT IS ALSO MILEPOST.** `NAMED` knew only
+    the spelled-out `Mountain ?Project`, so **24 WA values citing Mountain Project by its
+    abbreviation were invisible to the audit whose entire subject they are** — *"Confirmed on MP:"*,
+    *"Not explicit on MP"*, *"per MP route description"*, *"MP's route notes"*. The count went
+    **34 → 67** on the widening.
+    - **Peakbagger's problem is a common noun and this one is a UNIT OF ROAD DISTANCE**, which is
+      worse: a bare `\bMP\b` would not MISS, it would fire on **256 milepost occurrences** in road
+      prose (*"closed at MP 3.7"*, *"MP~4.5"*) — ten times more correct values than findings. The
+      deny-list trap inverted.
+    - **The discriminator is that a milepost is ALWAYS followed by a number and a publisher never
+      is**, so the rule is `\bMP\b(?!\s*~?\s*\d)`. **Stated from the data rather than fitted to
+      it**: all 24 candidates were read, and all 24 are Mountain Project — no false positive, and
+      no milepost-shaped string appears anywhere in the widened output.
+    - **THREE OF THE 24 ARE WORSE THAN A CITATION.** `wa_django`'s *"MP average ~3.3 stars"* and
+      `wa_kendall_peak_cliff_north_face`'s *"MP notes very low page views"* are the **analytics**
+      class this file already records for `crowds` — *page views are not ascents*, precision
+      borrowed from the wrong subject. `wa_rapple_grapple`'s *"retain the #1-3 structured list as
+      primary, add one #4 as optional"* is **pipeline voice**, an editor instructing the next
+      editor, rendered into a climber's RACK box.
+    - Injection-tested as a **PAIR** for the reason above: `--inject=mpmilepost` must report **0**
+      and `--inject=mppublisher` must report **every** value. All ten pre-existing cases were
+      re-run after the widening — the five precision ones still report 0.
+    - **Found sideways, from a stale instrument.** Re-measuring the `sling_rack` bullet length sent
+      me to a script lifting a function the app no longer calls; correcting it left 13 long
+      bullets, and reading those found this. *When an instrument disagrees with a fixed defect,
+      suspect the instrument — and then read what it was pointing at anyway.*
   - **A WARNING THAT A MAPPING APP IS WRONG IS NOT A CITATION, AND CUTTING IT DESTROYS NAVIGATION
     CONTENT.** *"Do not trust AllTrails/Gaia GPX tracks that keep the route on the ridge crest
     between the first and second gendarme — there's a real gap"*, *"Don't trust the road line on
