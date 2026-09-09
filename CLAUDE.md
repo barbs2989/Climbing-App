@@ -9805,6 +9805,53 @@ their own Résumé showed an amber **"Unverified"** chip.
     app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
     `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
     assertion still green. That is the shape that bit #1643's own merge an hour earlier.
+  - **AND THE SAME ENUMERATION FOUND SEVEN MORE, WHICH IS THE PART WORTH READING.** #1647 named
+    the three readers it fixed; reading *that* list and looking for what it did not name found
+    seven others still counting a climber who had only asked to join. **The count on the heading was
+    the mildest of them** — the three worst are not counts at all:
+    - **`risks` LISTED a requester's risk tolerance as the crew's**, and could flip an aligned crew
+      to *"Risk tolerance: … — mixed; talk through your turnaround before you commit."* in an amber
+      box. A **false warning on a safety surface**, which this file records everywhere else as how a
+      real warning stops being read.
+    - **The backcountry safety brief compared `done` against `roster.length`**, and a requester can
+      never be in `safetyDone`. So *"Whole crew has reviewed the safety plan"* was **unreachable**
+      for as long as any request stood — a readiness state a non-member could hold shut
+      indefinitely, with the amber *"not everyone has reviewed"* standing in its place.
+    - **`pendDay` — the variable IMMEDIATELY RIGHT of the `pendCrew` #1554 did fix, on the same
+      line** — named a requester as somebody the crew was waiting on to pick a day.
+    The other four are counts and control gates: the collapsed card's *"Ready · N climbers"* and its
+    *"N/M confirmed"* denominator, the *"Usually free for everyone"* / *"No weekly slot works for the
+    whole crew yet"* banner, *"Nudge N to pick a day"*, and the `roster.length>2` gate that decides
+    whether a two-person crew is offered a removal **vote** instead of *"Just the two of you — use
+    Leave below instead of voting someone out."*
+  - **A NON-ORGANISER SEES THE WRONG NUMBERS WITH NO WAY TO UNDERSTAND THEM.** `dbJoinReqs` only
+    surfaces the Accept/Decline card on crews **I organise**, while the pending roster row and every
+    one of these counts renders for **every** member. So an ordinary member read *"3/4 confirmed"*
+    above a row saying *"Asked to join"* and no control anywhere explaining it.
+  - **SO THE USEFUL ENUMERATION IS THE OTHER ONE, and the comment beside `inCrew` now carries it.**
+    Listing what was *fixed* is what left seven behind twice over; listing what deliberately keeps
+    the whole roster is a **closed set**, so a new `roster` reader that is not one of these is a
+    defect. Five: the member LIST, the weekly-availability **grid rows**, name resolution in the day
+    chips and inside `GearTiers`, and the itinerary numerator — which counts people who HAVE an
+    itinerary rather than measuring against the crew.
+  - **The grid ROWS keep the requester and the banner above them does not count them**, and that
+    asymmetry is the point rather than an inconsistency: seeing when somebody is free is how you
+    decide whether to accept them, while *"works for the whole crew"* is a claim about the crew.
+  - **Two measured NON-findings, recorded so they are not re-derived.** `GearTiers` takes `roster`
+    only for `nameOf(id)`, so resolving a name maximally is correct. And `kit` — `roster.flatMap(p
+    => p.gear || [])` — is **defined and read by nothing**: dead, not wrong.
+  - **A SECOND `inCrew` SHADOWS THIS ONE, and it is an id-PREDICATE rather than the array.** The
+    invite-member block declares `const inCrew=id=>crew.members.some(...)`, spanning ~730243-732906.
+    None of the seven sites falls inside it — **checked by brace-matching before any edit**, not
+    assumed, because this file already records `clickable` being shadowed by a boolean and taking
+    out a whole panel with *"clickable2 is not a function"* while `check:refs` stayed green.
+  - The probe grew to **27 assertions** across five sections, and **section 5 is the load-bearing
+    one**: a fix that only ever moves readers onto `inCrew` is satisfied by sweeping the deliberate
+    four as well, which would hide a requester from the organiser who has to accept them.
+    Injection-tested **6/6** (`scripts/oneoff/inject-roster-reader-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically; the over-reach case
+    must fail on section 5, and a comment quoting the pre-fix expression must stay **SILENT**.
+    The harness captures the clean run first and refuses any expectation that already matches it.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
