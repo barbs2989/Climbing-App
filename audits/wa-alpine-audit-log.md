@@ -18906,3 +18906,134 @@ flagged rather than guessed.
 
 Next batch continues in sorted-id order after `wa_gilbert_peak_meade_glacier` (see progress
 file).
+
+## Batch 258 (2026-09-09, pass 5)
+
+Checked: `wa_gilbert_peak_west_route`, `wa_glacier_peak_cool_glacier_gerdine`,
+`wa_glacier_peak_disappointment_peak_cleaver`, `wa_glacier_peak_frostbite_ridge`,
+`wa_glacier_peak_kennedy_glacier`, `wa_glacier_peak_sitkum_glacier`,
+`wa_goat_mountain_south_ridge`, `wa_golden_horn_north_face`.
+
+**Fixed (4 routes, 5 statements):**
+
+- `wa_glacier_peak_disappointment_peak_cleaver` — a genuine cross-route data
+  contamination. This row's prose fields (`approach`, `approach_logistics`,
+  `approach_variants`, `descent_text`, `beta`, `overview`, `bivy`) all
+  consistently and in detail describe the North Fork Sauk Trailhead ->
+  White Pass -> Glacier Gap approach, but its structured `waypoints`/`gpx`/
+  `timing.sectionBreakdown` fields instead described an entirely different
+  approach via "Trinity Trailhead" and "Buck Creek Pass" — which the row's
+  own sibling route on this peak (`wa_glacier_peak_cool_glacier_gerdine`)
+  explicitly states in its own bivy text serves peaks that "have nothing to
+  do with Glacier Peak's own approaches." The trailhead waypoint's own
+  `note` field already half-diagnosed this ("Coordinate and elevation as
+  published...for the Trinity Trailhead...The North Fork Sauk River
+  trailhead is 20.2 mi away on a different approach"). Confirmed
+  independently via WebSearch: 48.05832,-121.28793 (already correctly used
+  for this waypoint's/approach_logistics' lat/lng) is the real North Fork
+  Sauk River Trailhead coordinate, while Trinity Trailhead's own published
+  elevation is 2,800 ft — exactly the wrong figure sitting on this
+  waypoint in place of the ~2,050 ft this row's own approach text states.
+  Rebuilt the waypoint chain using only facts already stated in this row's
+  own prose (White Pass ~5,900 ft/~9 mi per this row's own `hazards` field,
+  Glacier Gap ~7,250 ft per this row's own `approach_variants`), reusing
+  the sibling route's already-verified coordinates for these same shared,
+  named trail landmarks rather than inventing new ones. Cleared `gpx` to
+  NULL rather than fabricate a track — the prior value wasn't a real
+  polyline, just the four wrong waypoints strung together out of
+  geographic order. Corrected the two contaminated `timing.sectionBreakdown`
+  entries to describe the real stops instead of Buck Creek Pass/"eastern
+  high camp" (hour allocations left untouched — they were never shown to
+  be wrong, and still sum to the existing `totalHrs`). Also fixed this same
+  row's `crowds.estimatePerSeason`, which shared the "standard Sitkum
+  approach" language flagged below.
+- `wa_glacier_peak_cool_glacier_gerdine` — `crowds.peakTraffic` called
+  Sitkum "the standard route" in the present tense, contradicting this
+  same row's own bivy entry ("The approach that made it popular no longer
+  exists...Parties wanting the north and west sides of the mountain now go
+  in from the Suiattle instead") and the area's own blurb ("the North Fork
+  Sauk River Trail on the south side has become the de facto standard
+  approach for most parties"). Sitkum access has been effectively cut off
+  for two decades since the White Chuck River Trail washed out in 2003, so
+  it can no longer be described as the current standard this route is a
+  secondary alternative to. Reworded using only facts already stated
+  elsewhere on this same row and on the area record.
+- `wa_glacier_peak_kennedy_glacier` — the trailhead waypoint's own `note`
+  named the wrong access road ("Suiattle River Rd (FR 26)"). This same
+  row's `road.name` ("White Chuck Road (FR 23)"), `approach_logistics.
+  trailheadDirection`, and `approach` text all consistently agree the
+  White Chuck River Trailhead is reached via FR-23, not FR-26 (which
+  serves a different trailhead entirely, used by other routes on this
+  peak). Corrected the waypoint note to match.
+- `wa_goat_mountain_south_ridge` — `beta` described the West Peak
+  (~6,600-6,721 ft) as effectively the route's objective ("the more
+  commonly accessed summit...good trail access to within 50 vertical
+  feet"), with no mention it is a false summit — flatly contradicting five
+  other fields on this same row (`watch_out`, `hazards`, `approach`,
+  `approach_variants`' baseFinding, `descent_text`, `overview`), all of
+  which independently and consistently state the West Peak is a corniced
+  false summit that must be bypassed rather than climbed, and that the
+  true, named summit is the East Peak at 6,891 ft, reached only after a
+  further ~300 ft drop into a notch and a ~1,400 ft class 2-3 scramble with
+  an exposed knife-edge crux. `pitch_detail`'s final pitch had the
+  identical error ("Final 100-150 vertical feet to West Peak summit" as
+  the route's last pitch). A party reading only `beta` — the field the app
+  surfaces on the route Overview tab — could reasonably believe the false
+  summit was the top, or arrive unprepared for the harder ground beyond
+  it. Rewrote both fields using only facts already stated elsewhere on
+  this same row; no new research, no invented figures.
+
+**Flagged for human review (not written to SQL):**
+
+- `wa_gilbert_peak_west_route` — already carries its own `corrections`
+  field hedging that "West Route" may refer to either the Snowgrass Flat
+  (west-side) approach this row otherwise fully describes, or Mazamas'
+  distinct Klickton Divide route (South Fork Tieton trailhead, same 4,000
+  ft gain figure) — sources don't cross-reference the Mountain Project
+  route name against a specific guidebook line, so both were preserved
+  rather than merged. Already correctly self-hedged by a prior pass; no
+  further action taken.
+- `wa_glacier_peak_frostbite_ridge` — `dist_km` (51.5 km / ~32 mi) is high
+  but plausibly consistent with this row's own `watch_out` field, which
+  states "Total mileage 40+ miles (up Frostbite, down Cool Glacier)" for a
+  one-way traverse-style route with a different entry and exit trailhead —
+  the usual round-trip-vs-one-way doubling check doesn't cleanly apply to
+  a through-route. Left unwritten rather than guess which figure (if
+  either) needs correcting.
+
+**Clean:** `wa_glacier_peak_sitkum_glacier` (its `road`/`approach_logistics`
+naming the North Fork Sauk trailhead while its main `approach` prose opens
+from the White Chuck River Trailhead is CLAUDE.md's own documented,
+deliberately-untouched case — the row already carries a second
+`approach_variants` entry for the North Fork Sauk alternative, and its
+waypoints correctly match that alternative; not re-litigated here).
+`wa_golden_horn_north_face` (1958 North Face FA by Fred Beckey confirmed
+independently via WebSearch, consistent with this row and distinct from
+the peak's own 1946 Southwest Route FA recorded on the area; elevation
+corrections field already well cross-checked against four independent
+sources).
+
+Web access this run: WebSearch worked throughout, including confirming
+the real North Fork Sauk River Trailhead coordinate (independently
+matched against this repo's own already-used value) and Trinity
+Trailhead's published elevation, which is what identified the
+Disappointment Peak Cleaver contamination as fixable without guessing.
+WebFetch was blocked by the environment's egress proxy for every domain
+attempted (fs.usda.gov, wta.org) — consistent with every prior batch this
+pass.
+
+SQL: `audits/sql/2026-09-09-batch-258.sql` (validated with
+`node scripts/check-sql-targets.mjs`: 2 of 5 write targets directly
+checkable by the tool and both pass "target id exists, no DELETE"; the
+other 3 trip its known "no literal id predicate" false positive because
+their `WHERE id = '...'` guard sits several lines below a multi-line
+jsonb_set/jsonb literal the tool's regex doesn't parse past — all 5
+statements' `WHERE id = 'wa_...'` values and every literal-match guard
+condition were independently confirmed by hand against a fresh read of
+the live rows before writing, and every guarded value matched exactly.
+File is 10.9KB, well over the tool's ~4KB paste-size soft limit — split
+into chunks before pasting into the SQL Editor. No DELETE, no destructive
+statement.)
+
+Next batch continues in sorted-id order after `wa_golden_horn_north_face`
+(see progress file).
