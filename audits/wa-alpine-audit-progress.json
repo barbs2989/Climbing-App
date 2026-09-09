@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_flycatcher_buttress",
+  "last_processed_id": "wa_fortress_mountain_southwest_face",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5206,6 +5206,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-09-batch-255.sql",
       "note": "wa_elephant_butte_standard_route flagged: WebSearch gave conflicting signals on whether the Sourdough Mountain Trail closure (stated as resolved May 12 2026) has since been re-closed by a new 2026 fire; WebFetch to nps.gov was blocked by the environment's egress proxy so this could not be settled and was left unwritten pending a human checking nps.gov/noca/planyourvisit/fire-closures.htm directly."
+    },
+    {
+      "batch_number": 256,
+      "date": "2026-09-09",
+      "pass": 5,
+      "route_ids": [
+        "wa_forbidden_peak_east_ridge",
+        "wa_forbidden_peak_north_ridge",
+        "wa_forbidden_peak_northeast_face",
+        "wa_forbidden_peak_northwest_face",
+        "wa_forbidden_peak_west_ridge",
+        "wa_fortress_mountain_east_ridge",
+        "wa_fortress_mountain_northeast_face",
+        "wa_fortress_mountain_southwest_face"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 2,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-09-batch-256.sql",
+      "note": "Fixed: Forbidden Peak East Ridge Direct's watch_out (generic glaciated-boilerplate string contradicting the row's own seasonal_hazards.crevasses='N/A', re-homed to a jsonb array using the row's own hazards field) plus its itinerary day-1 gainFt (2800->3200, forced by day-2's own math and the day's own '6,400 ft' camp note, converging exactly on the row's existing top-level gain_ft of 5615); Forbidden Peak North Ridge's watch_out (winter-ice-climbing boilerplate on a summer glaciated-rock route, re-homed using the row's own obj_haz field); Fortress Mountain East Ridge's loss_ft (7900->5884, since descent_text explicitly reverses the ascent to the same trailhead so loss must equal gain, and gain_ft already matches trailhead-to-summit almost exactly). Flagged only: North Ridge also carries a beta-vs-grade 5.7/5.6 split mirrored by conflicting external guide-service sources (fixed row, secondary flag); Northwest Face and West Ridge both have gain_ft/loss_ft pairs that violate the closed-loop-trailhead identity (loss should equal gain for an out-and-back) by 800-1000+ ft, but no single corrected number could be confidently derived from the itinerary breakdown or (for West Ridge) a web search estimate without inventing one. Clean: Northeast Face (already extensively self-corrected with documented FA/grade fixes) and both remaining Fortress Mountain routes (Northeast Ridge already renamed/corrected; Southwest Face's own gain/loss gap is only ~2%, within normal estimation noise). Noted but not swept: several bivy entries shared verbatim across Forbidden Peak and Fortress Mountain describe camps for unrelated distant peaks (Bonanza, Maude, Fernow) -- likely the same corridor-wide shared-list propagation documented elsewhere in this repo, out of scope for this batch."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

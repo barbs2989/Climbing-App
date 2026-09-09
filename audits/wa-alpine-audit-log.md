@@ -18699,3 +18699,120 @@ checker's own advice. No DELETE, no destructive statement.)
 
 Next batch continues alphabetically after `wa_flycatcher_buttress` (see
 progress file).
+
+---
+
+## 2026-09-09 — Pass 5, Batch 256
+
+Two peaks, 8 routes — all of Forbidden Peak (East Ridge Direct, North Ridge,
+Northeast Face, Northwest Face, West Ridge) and all of Fortress Mountain
+(East Ridge, Northeast Ridge, Southwest Face).
+
+**Confirmed errors → fixes in `sql/2026-09-09-batch-256.sql`:**
+- Forbidden Peak East Ridge Direct: `watch_out` was a single string of generic
+  glaciated-mountaineering boilerplate ("Glacier approach with crevasse
+  field—continuous rope essential... bergschrund crossing required at ridge
+  base", "Moat crossing at ridge base", "7000+ ft elevation gain to base")
+  that directly contradicts this same row's own `seasonal_hazards.crevasses`
+  ("N/A - no glacier travel documented for this approach/ridge line") and its
+  own approach/approach_variants text, which describes a non-glaciated talus/
+  slab/snow-gully approach with no rope-team travel, bergschrund or moat
+  anywhere. Reads as boilerplate carried over from a much bigger glaciated
+  objective — the same shape documented systemically in batches 251/255.
+  Re-homed into the standard jsonb array shape using this row's own already-
+  accurate `hazards` field verbatim; nothing invented.
+- Forbidden Peak East Ridge Direct: `itinerary.days[0].gainFt` (2,800 ft)
+  contradicted this same row's own day-1 note text ("camping near 6,400 ft" —
+  3,200 ft above the 3,200 ft trailhead, not the 6,000 ft that 2,800 ft
+  implies). Independently, day 2's own `gainFt` (2,415) only works out as
+  summit (8,815) minus a 6,400 ft camp. Correcting day 1 to 3,200 ft makes
+  the two days sum to exactly 5,615 ft — this row's own top-level `gain_ft`,
+  already correct and untouched. Three independent numbers converge to zero
+  residual once this one field is fixed. Also corrected the two figures the
+  itinerary's own `totalNote` quotes ("2,800 ft" and "~5,200 ft total gain")
+  so the prose doesn't contradict the numbers beside it.
+- Forbidden Peak North Ridge: `watch_out` was a newline-joined string of
+  generic winter-ice-climbing boilerplate ("Winter route requiring ice
+  climbing or snow climbing skills", "Short ice pitch potential in winter
+  conditions") that contradicts every other field on the row — this is a
+  summer glaciated-rock route (best_season "Mid to late summer", season
+  "Jul-Sep", approach crosses the Quien Sabe/Boston glaciers roped for
+  crevasses in July-August). Same shape/cause as the East Ridge Direct fix
+  above and the Energizer Bunny/Fish & Whistle/Flycatcher Buttress fixes in
+  batch 255. Re-homed into a jsonb array using this row's own already-
+  accurate `obj_haz` field verbatim.
+- Fortress Mountain East Ridge: `loss_ft` (7,900) was wildly inconsistent
+  with this same row's own `gain_ft` (5,884, itself matching summit minus
+  trailhead almost exactly: 8,679 − 2,800 = 5,879) and with this row's own
+  `descent_text`, which explicitly reverses the ascent step by step back to
+  the same trailhead. A route documented as descending the line it climbed
+  must have loss equal gain (a closed loop back to the same point has zero
+  net elevation change) — 7,900 is 2,016 ft too high with no support
+  anywhere else in the row. Corrected to match `gain_ft` (5,884).
+
+**Flagged for human review (not written):**
+- `wa_forbidden_peak_north_ridge` — separately from the watch_out fix above,
+  this row's `beta` field states "Grade III, 5.7 climbing" while `grade`
+  ("Grade III, 5.6"), `grade_num` (6), `rock_grade` ("5.6") and the crux
+  entry in `pitch_detail` all agree on 5.6 — 4 fields against 1. External
+  sources split the same way: WebSearch turned up one guide-service page
+  summarizing the route as "grade 3, 5.6" in one sentence and "the moderate
+  rock rating shouldn't fool you (5.7)" in the next, i.e. real-world sources
+  disagree with each other on this exact route the same way this row does
+  internally. Left both readings in place rather than picking one.
+- `wa_forbidden_peak_northwest_face` — `gain_ft` (4,800) and `loss_ft`
+  (5,615) can't both be right for a route whose own `descent_text` returns
+  to the same Boston Basin trailhead it started from (a closed loop has
+  equal total gain and total loss); this row's `loss_ft` matches the simple
+  net trailhead-to-summit figure (8,815 − 3,200 = 5,615) while `gain_ft`
+  does not, but the itinerary's day-by-day breakdown doesn't cleanly
+  corroborate either number once the route's actual up-and-down glacier/
+  notch profile is accounted for, so no confident single correction could
+  be derived without inventing one.
+- `wa_forbidden_peak_west_ridge` — same shape, larger gap: `gain_ft` (6,640)
+  vs. `loss_ft` (5,700) for another route whose own descent explicitly
+  retraces the ascent to the same trailhead. A WebSearch estimate for this
+  specific (Fifty Classic Climbs) route gave "total of 6,300 feet of
+  elevation gain... for the complete route," which sits closer to the
+  stored `gain_ft` than to a simple net-elevation calculation — suggesting
+  `loss_ft` may be the undercounted figure rather than `gain_ft` being
+  wrong, but a single web estimate isn't enough to pin an exact corrected
+  number, and this row's own itinerary breakdown doesn't resolve it either.
+
+**Clean:** `wa_forbidden_peak_northeast_face` (extensively self-documented —
+`corrections` field already records a 2026-07-28/29 FA fix, a restored-
+after-corruption approach/access repair, and a cleared misattributed
+grade_num; `watch_out` is already a correctly-shaped, accurate array; no
+new defect found). `wa_fortress_mountain_northeast_face` (already renamed
+2026-07-29 from "Northeast Face" to reflect what every source actually
+calls it, with a detailed corrections note; `gain_ft`/`loss_ft` are
+honestly left null rather than guessed — no fabrication to catch).
+`wa_fortress_mountain_southwest_face` (elevation/permit/access all
+consistent; `gain_ft` 5,884 vs `loss_ft` 6,000 is only a 116 ft / 2% gap on
+an explicit same-path out-and-back — ordinary estimation noise, not the
+kind of outlier seen on the East Ridge sibling above, so left untouched).
+
+Both Fortress Mountain routes and the Forbidden Peak group share several
+near-identical `bivy` entries (Holden Village/Ballpark/Lake, Ice Lakes,
+Spider Meadow, etc.) that describe camps for entirely different, distant
+peaks (Bonanza, Maude, Fernow) rather than anything reachable from either
+Trinity Trailhead or Boston Basin — almost certainly the same corridor-wide
+shared-bivy-list propagation this file's own audit notes describe for the
+Mountain Loop/Goat Rocks corridors. Not touched: sizing and adjudicating
+that class needs the same area-by-area read those fixes required, which is
+out of scope for a single 8-route batch, and CLAUDE.md is explicit that
+these lists are not to be swept mechanically.
+
+SQL: `audits/sql/2026-09-09-batch-256.sql` (validated with
+`npm run check:sql -- audits/sql/2026-09-09-batch-256.sql`: all 4 write
+targets exist, no DELETE. File is 5.0KB, over the tool's ~4KB paste-size
+soft limit — split before pasting into the SQL Editor. No destructive
+statement.)
+
+Web access this run: WebSearch worked and was used to corroborate/contrast
+the North Ridge grade split and the West Ridge total-gain figure above;
+WebFetch was not attempted this run (WebSearch's synthesized results were
+sufficient to reach a flag-vs-fix decision in both cases where it mattered).
+
+Next batch continues alphabetically after `wa_fortress_mountain_southwest_face`
+(see progress file).
