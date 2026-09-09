@@ -34,7 +34,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
-import {wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
+import {wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -2342,7 +2342,13 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      here, one per line, because 4,644 stored hazards are 96% unique prose. */
   const routeVars=(Array.isArray(route.approachVariants)&&route.approachVariants.length)
     ? route.approachVariants.map(function(v){return {name:v.name||"",season:v.season||"",
-        distMi:v.distMi!=null?String(v.distMi):"",gainFt:v.gainFt!=null?String(v.gainFt):"",
+        /* SEEDED IN THE CLIMBER'S OWN UNITS, and _orig carries the numbers the boxes were
+           seeded FROM: converting on both edges makes an UNTOUCHED field lossy (4.8 km back
+           to 2.98 mi), so editing one variant's notes would move every distance on the
+           route. The APPROACHES panel already renders these through uDistMi/uElev, so before
+           this the card said 4.8 km and the box under it said 3. */
+        distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),
+        _orig:{distMi:v.distMi,gainFt:v.gainFt},
         hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",
         hazards:(Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[])).join("\n")};})
     :[blankVar()];
@@ -2446,8 +2452,8 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           A text box here would make the same fact unagreeable. `hours` stays text: 27% of its
           values are ranges ("3-4", "1-1.5"), which a single number cannot express. */}
       <div style={{display:"flex",gap:7,marginBottom:7}}>
-        <input aria-label={"Approach "+(idx+1)+" distance in miles"} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder="miles" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
-        <input aria-label={"Approach "+(idx+1)+" gain in feet"} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder="gain ft" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" distance in "+(uImp()?"miles":"kilometres")} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder={uDistMiUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" gain in "+(uImp()?"feet":"metres")} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder={"gain "+uElevUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
         <input aria-label={"Approach "+(idx+1)+" hours"} value={av.hours} onChange={function(e){setAvar(idx,"hours",e.target.value);}} placeholder="hrs, e.g. 3-4" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
       <input aria-label={"Approach "+(idx+1)+" season"} value={av.season} onChange={function(e){setAvar(idx,"season",e.target.value);}} placeholder="Window, e.g. Jul-Sep" style={Object.assign({},fld,{marginBottom:7})}/>
@@ -2510,8 +2516,14 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     /* Numbers go in as NUMBERS, matching the 123 gainFt and 120 distMi rows already stored that
        way. A numeric string here would break the tolerant comparison and read as a different
        value from the identical measurement. */
-    var d=parseFloat(x.distMi);if(isFinite(d))o.distMi=d;
-    var g=parseInt(x.gainFt,10);if(isFinite(g))o.gainFt=g;
+    /* WHAT WAS TYPED IS READ IN THE CLIMBER'S OWN UNITS. The columns stay canonical (miles,
+       feet) -- sameEditValue compares these numerically with a tolerance, so a stored
+       kilometre would not merely display wrong, it would fail to cluster with the identical
+       measurement taken by somebody on the other setting, and the 3-agree gate could never
+       be reached. Same conversion-at-the-edges shape as the itinerary builder, and the same
+       one this very function already applies to a contributed waypoint's elev and distMi. */
+    var d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;
+    var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;
     var h=String(x.hours||"").trim();if(h)o.hours=h;
     return o;}).filter(function(x){return x.name||x.notes;});
   if(f.type==="sections")return (vals.climbingRoute||[]).map(function(x,i){return {n:i+1,label:String(x.label||"").trim(),class:String(x.cls||"").trim(),notes:String(x.notes||"").trim()};}).filter(function(x){return x.label||x.notes;});
