@@ -63,6 +63,7 @@ npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty 
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
+npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -2375,6 +2376,101 @@ the total when deciding where a new guard belongs.
       exists to have fixed. `useCountries` still has none either, and a naive one would be **dead
       code**: `downloadStateOffline` stores only DESCENDANTS of the state, so no country row is
       ever on the device.
+- **`check:units`** asserts that **a surface renders in the climber's chosen units, and that a
+  control which WRITES converts before it stores**. Static (one shared esbuild bundle, six SSR
+  renders through three render functions, two Babel parses and two lifted-and-executed source
+  expressions), so it sits in `npm run build`.
+  - **IT IS SIX PROBES PROMOTED AT ONCE, AND PROMOTING ONE WOULD HAVE BEEN THE WRONG SHAPE.** All
+    six lived in `scripts/oneoff/`, **which nothing runs**, and each proved a fix that changes
+    **strings and no identifier** — a label, a unit word, a conversion at a call site.
+    `audit:silent-reverts` says in its own closing caveat it cannot see that, so a stale-base squash
+    could restore every one of these with each existing gate green. That is the argument that
+    promoted `check:topo-outage-copy`, `check:policy-claims`, `check:profile-claims` and
+    `check:offline-claims`. Promoting one would have left five still running nowhere — *an instance
+    fixed by hand is not a class closed*, which this file records under a dozen names.
+  - **IT WAS FIVE UNTIL THE SIXTH LANDED MID-BUILD, and that is the reason to re-check rather than
+    quote.** #1671 merged while this guard was being written, adding another unit probe that ran
+    nowhere — so a guard shipping as *"the five"* would have been **stale on arrival**. The finding
+    that exposed it looked like a live defect (the approach-variants editor storing raw under a
+    "miles" label) and was **my own branch being behind main**, which is the `check:column-drift`
+    lesson exactly: *a stale tree is indistinguishable from an undescribed defect.* **Re-read
+    `git log origin/main` before believing a finding in a long-running branch.**
+  - **ONE BUNDLE, NOT SIX.** Each probe built its own esbuild bundle of the same 400kB file and two
+    of them bundled `RouteDetail` separately. Merging is the `check:outage-copy` precedent, which
+    folded two probes together for exactly this reason. Measured back-to-back on one box: the five
+    probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
+    over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
+    at load average 488, where this file already records a profile being off by 4x.
+  - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
+    one reader; a form that stores what was typed corrupts the record for **every** reader — a
+    metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
+    report told everyone else the route was at -12°C. **Four** writes are covered: the trip-report
+    temperature, the itinerary builder, the bail form's distance, and the approach-variants editor.
+  - **THE VARIANTS WRITE IS THE WORST OF THE FOUR, and not because it is the biggest.** Its two
+    numbers are the ones `sameEditValue` compares **numerically with a tolerance** (0.1/0.2 on
+    `distMi`, 0.1/50 on `gainFt`) so two climbers who measure 4.8 and 4.9 miles count as agreeing. A
+    stored kilometre does not merely display wrong: it lands **1.6x away** from the same measurement
+    taken on the other setting, so the two never cluster and **the 3-agree merge gate can never be
+    reached** — the correction sits pending forever.
+  - **THE COLUMN STAYS CANONICAL AND THE CONVERSION HAPPENS AT THE EDGES**, and that is asserted
+    rather than assumed. Re-fetching or re-storing in the climber's own units reads as tidier and is
+    wrong twice over: `wxTempColor`'s 85/70/50/32 and `wxWindColor`'s 30/15 are calibrated in
+    Fahrenheit and mph, and the forecast response is **cached per coordinate**, so the unit setting
+    would leak into the cache key. Injection case `fetch-converts-at-the-source` pins it.
+  - **A DIFFERENCE IS NOT A TEMPERATURE.** The panel prints two of them, comparing Open-Meteo
+    against NWS and MET. Converting one uses the **scale** and never the 32-degree offset: a 4
+    degree disagreement is 2°C, not **-16**. That is the historical defect and it is case 1 of the
+    weather suite.
+  - **SIX SECTIONS, each seeing something the others cannot**: `persist` (the preference survives a
+    reload at all, and a throwing `localStorage` cannot take a screen down), `weather` (the forecast
+    helpers, and the colour thresholds still receiving RAW imperial), `reports` (a climber's own
+    temperature, on screen and on the way into the column), `itinerary` (the builder, the downloaded
+    `.txt`, and the bail form's second writer of the same column), `variants` (the approach-variants
+    editor, on both boundaries and in its two labels), `filters` (the chips, and whether a length
+    LABEL agrees with the predicate it labels).
+  - **FLOORS ARE PER SECTION, because ONE TOTAL CANNOT SEE A SECTION THAT STOPPED ASKING** — five
+    healthy sections carry the number while the sixth contributes nothing and the run prints the
+    same `ok`. That is the per-file floor lesson `check:control-names` paid for, where a **partial**
+    restyle left it checking 1 file of 2. Each floor sits two below what a clean tree produces
+    (15/16/17/18/15/30). **Raise one when you add an assertion; never lower one to make a run pass.**
+  - **`--only=<section>` PRINTS A PARTIAL BANNER AND CAN NEVER READ AS A PASS**, the contract
+    `check:a11y-badges`' `--only=route` already sets. It exists so an injection case pays for one
+    section rather than five; a flag that let a partial run look complete would be the false pass
+    this whole file is built to refuse.
+  - **THE TEXTUAL CHECKS READ A MASKED COPY AND THE AST CHECK DOES NOT, and the asymmetry is
+    deliberate.** A comment explaining the colour rule names the very call it forbids — but an AST
+    does not see comments, so that test needs no mask. The fetch and bare-unit tests are string
+    matches and do, or the guard fails on its own documentation (the `check:ci-cancel` trap). **The
+    line-comment pattern protects `://`**: the forecast fetch is an https URL, and a naive `//`
+    strip would delete the exact line the canonical-units check is looking for. Two injection cases
+    must stay SILENT to pin both halves.
+  - **PROMOTING IT FOUND TWO INJECTION ANCHORS THAT HAD ALREADY ROTTED, and nothing had said so.**
+    The guarded read/write moved out of `lib/units-pref.js` into `definePref` in `lib/prefs.js` when
+    a third stored preference appeared; two cases kept naming the old file and reported **HARNESS
+    BUG** on every run — of which there were none. **A suite nobody runs rots exactly like a guard
+    nobody runs**, and the only thing that surfaced it was running the suite in order to re-point
+    it. Two dead citations in neighbouring comments went the same way, one of them naming a file
+    that has never existed under that name.
+  - **The `weather` section had NO suite at all** — the one of the five whose assertions had never
+    been shown to fail on anything. It has 8 cases now.
+  - Fails **closed** four ways, each of which otherwise prints identically to a clean run: the app
+    not bundling, any of 25 expected exports missing, a section falling under its floor, and each
+    section's own `ANCHOR LOST` (the CONDITIONS NOW chip, the units toggle's option list, a thin
+    render, a source file that does not parse).
+  - **`process.exit()` SKIPS `finally`**, so every fail-closed path sets the problem and throws a
+    sentinel the runner swallows; the bundle directory is removed in `finally`. That trap is
+    recorded under `check:block-guarantees`, and one probe folded in here leaked nine directories
+    into `git status` before it was fixed.
+  - Injection-tested **47/47** across six suites (`inject-units-preference-cases`,
+    `inject-weather-unit-cases`, `inject-report-temp-cases`, `inject-itinerary-unit-cases`,
+    `inject-approach-variant-unit-cases`, `inject-filter-label-cases`), each case proving its edit
+    landed **by checksum** and restoring every file byte-identically. **Eight must stay SILENT** — a
+    cosmetic dash, two renamed locals, a reworded placeholder, a deliberately bare degree sign on
+    the forecast, and the two comment cases above.
+  - What it does **not** prove, stated in the guard rather than implied: that the forecast panel
+    renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
+    the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
+    chain.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.

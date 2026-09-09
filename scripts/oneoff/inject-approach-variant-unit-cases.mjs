@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Injection suite for probe-approach-variants-honour-units.mjs.
+// Injection suite for check-units.mjs, the `variants` section (run with --only=variants).
 //
 // The fix has four separable parts — seed, store, the accessible name and the placeholder — and a
 // change that moved some of them reads as finished. Each is reverted here on its own, so the probe
@@ -83,7 +83,7 @@ for (const c of CASES) {
 
   let out = "", code = 0;
   try {
-    out = execFileSync("node", [path.join(ROOT, "scripts", "oneoff", "probe-approach-variants-honour-units.mjs")],
+    out = execFileSync("node", [path.join(ROOT, "scripts", "check-units.mjs"), "--only=variants"],
       { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   } catch (e) { code = e.status || 1; out = String(e.stdout || "") + String(e.stderr || ""); }
   fs.writeFileSync(abs, before);
