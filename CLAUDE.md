@@ -6981,6 +6981,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     *different byte on every run*, which reads as "this script emits broken JSON" when the output
     is fine and the exit is the bug. The two modes are branches now. **Any script here that grows a
     machine-readable mode inherits this trap.**
+  - **WHICH summit, and which trailhead? `.find()` took whichever the enrichment listed FIRST**,
+    so on the **24 WA routes carrying more than one summit-typed pin** the audit's answer depended
+    on row order — one of them by **1,815 ft**. Row order is not a record. It now takes the LOWEST
+    summit-typed pin and the HIGHEST trailhead, which give the smallest rise: `rise` is used as a
+    LOWER BOUND and the whole one-sidedness rests on it, so a smaller rise can only under-report,
+    never accuse a correct row. **Proven behaviour-neutral on today's catalog** — the finding set
+    and every `rise` are byte-identical, so this removes a dependence on row order without moving
+    a single verdict.
+    - **"HIGHEST SUMMIT" WAS MEASURED AND REJECTED, and the measurement is the whole point.** It
+      adds 5 findings and loses none, which reads as strictly better coverage until you open
+      them: **four are Squire Creek Wall south-face routes** whose own Topout pin says they end
+      at the 3,249 ft grassy saddle, while a Summit pin records the FORMATION's 4,958 ft high
+      point they never reach. Only `wa_sherpa_glacier` is genuine. **One real in five** is the
+      precision that teaches people to ignore an audit.
+    - **Preferring the route's own Topout does not rescue it either**, and that is why the
+      endpoint cannot be resolved from the pin TYPES at all: `wa_sherpa_glacier` carries *"Top of
+      Sherpa Glacier"* (7,600) as an INTERMEDIATE topout on the way to Stuart's 9,415 ft summit,
+      so the same field means *where the route ends* on one route and *a milestone* on the other.
+    - **KNOWN MISS, stated rather than hidden**: `wa_sherpa_glacier` stores 6,000 ft against a
+      trailhead-to-Stuart rise of 6,485 and is NOT reported, because its lowest summit-typed pin
+      is that intermediate topout.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:cross-route-pins`** asks whether **two routes place the same named point in two different
