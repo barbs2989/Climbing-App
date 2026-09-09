@@ -55,7 +55,14 @@ const STATE = String(arg("--state", "wa")).toLowerCase();
    audit:waypoint-elevations already allows a non-summit pin before it will speak. */
 const MIN_M = Number(arg("--min-m", 60));
 /* And below THIS the ground does not separate them. Borrowed from audit:waypoint-elevations'
-   own FLOOR_FT, where it means "inside the 3DEP grid's noise" — not a threshold fitted here. */
+   own FLOOR_FT, where it means "inside the 3DEP grid's noise" — not a threshold fitted here.
+
+   AND audit:peak-coords HAS ALREADY MEASURED WHY IT CANNOT GO MUCH LOWER. Its TOL comment
+   records that at 150 ft the WA tail is 21 peaks, 17 of them Stuart, Shuksan, Forbidden, Goode,
+   Little Tahoma and friends — sharp summits whose coordinate sits 35-100 m off the top on very
+   steep ground, reading a couple of hundred feet low while being essentially right. That is ONE
+   phenomenon, not 17 defects, and it is exactly what a lower threshold here would re-report as
+   summit splits. */
 const MIN_DROP_FT = Number(arg("--min-drop", 250));
 
 const k = anonKey();

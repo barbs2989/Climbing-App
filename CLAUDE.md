@@ -7049,6 +7049,16 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Both thresholds are borrowed rather than fitted.** 60 m is roughly the placement slop
     `audit:waypoint-elevations` already allows a pin; 250 ft is that audit's own `FLOOR_FT`, where
     it means *inside the 3DEP grid's noise*. Neither was chosen against these findings.
+  - **AND `audit:peak-coords` HAS ALREADY MEASURED WHY 250 CANNOT GO MUCH LOWER**, which is worth
+    reading before anyone tightens it hoping for more. Its `TOL` comment records that at 150 ft
+    the WA tail is 21 peaks and **17 are Stuart, Shuksan, Forbidden, Goode, Little Tahoma and
+    friends** — sharp summits whose coordinate sits 35-100 m off the top on very steep ground and
+    therefore reads a couple of hundred feet low while being *essentially right*. One phenomenon,
+    not 17 defects, and precisely what a lower threshold here would re-report as summit splits.
+    It also disposes of a tempting hypothesis this work produced: Mount Stuart's `areas` row
+    stands on 9,208 ft against a stated 9,415, which looks like a wrong peak coordinate and is
+    **not** — that audit found the DEM maximum 70 m away matching the stored elevation, and
+    rejected snapping to it because it would DERIVE a coordinate rather than copy a record.
   - **SCOPE ON THE AREA, NEVER ON THE ROUTE ID.** `id like wa_*` is the reflex filter and it drops
     the four legacy route ids this catalog still carries (`rainier_*`, `adams_*`) — **both legacy
     Rainier routes carry a summit pin on `wa_mount_rainier`**. On a COMPARATIVE audit that is not
