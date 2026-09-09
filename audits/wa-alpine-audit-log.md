@@ -18379,3 +18379,104 @@ decide whether to start applying this audit's SQL, change what it produces, or s
 
 Next batch continues alphabetically after `wa_dragontail_peak_serpentine_arete` (see progress
 file).
+
+## 2026-09-09 — Pass 5, Batch 253
+
+Routes: `wa_e_se_face`, `wa_east_face`, `wa_east_face_6`,
+`wa_east_mcmillan_spire_west_ridge`, `wa_east_ridge_2`, `wa_east_ridge_3`,
+`wa_east_ridge_4`, `wa_east_ridge_6`.
+
+**Fixed:**
+
+- `wa_east_ridge_2` (Snowking Mountain, East Ridge): the top-level `permit` field held North
+  Cascades National Park backcountry-permit boilerplate ("no permit for day climbs; all
+  overnight backcountry stays require a backcountry permit... Marblemount Wilderness
+  Information Center"). Snowking Mountain is not in the park — it's in the Glacier Peak
+  Wilderness, Mount Baker-Snoqualmie National Forest, confirmed via web search and matching
+  this row's own `access.landManager`/`access.land_manager` fields ("Mount Baker-Snoqualmie
+  National Forest"). The top-level field contradicted the row's own `access` block and named
+  the wrong agency entirely. Corrected to match the row's own (already-correct)
+  `access.permit` content.
+- `wa_east_face` (Middle Peak / "Middle Gunsight", East Face): top-level `permit` was `NULL`
+  while `access.permit` already stated "Free self-issued wilderness permit required for
+  Glacier Peak Wilderness." Populated from the row's own access block; no new research needed.
+- `wa_e_se_face` (Witches Tower, E/SE Face): `dist_km` was stored as 24.14 (15.00 mi one-way,
+  doubling to a displayed 30 mi round trip). The row's own waypoint chain gives the one-way
+  distance to its Summit waypoint as `distMi = 5.7` (Stuart Lake Trailhead → Colchuck Lake at
+  4 mi → Aasgard Pass at 5 mi → summit at 5.7 mi = 9.17 km), independently corroborated by an
+  external trip report (Wenatcheeoutdoors.org) describing the standard approach — 8.0 mi round
+  trip to Colchuck Lake alone (= 4.0 mi one-way, matching this row's own Colchuck Lake
+  waypoint `distMi = 4` exactly), then under a mile more to Aasgard Pass and a short traverse
+  to the tower. No loop or alternate return exists for this climb, so 24.14 km corresponds to
+  no real feature of the route. Corrected to the row's own waypoint-derived one-way distance.
+
+**Flagged, not fixed:**
+
+- `wa_east_face` (Middle Peak): three-way elevation disagreement. `areas.elevation_ft = 8185`,
+  the route's own `high_point_ft = 8200` (a 15 ft gap between the area and route records for
+  the same summit), and the route's own Summit waypoint states `elev = 8000` (185-200 ft below
+  both other records). External sourcing only turned up a fuzzy description of "Middle
+  Gunsight" as "one of the Gunsight peaks located between 8,000' and 8,200'" — not precise
+  enough to confirm or confidently replace any of the three stored values. WebFetch access to
+  primary sources (Wikipedia, SummitPost, CascadeClimbers) was blocked by this environment's
+  egress proxy for every domain attempted, so this could not be resolved further this run.
+- `wa_east_face_6` (Chimney Rock, East Face): a genuine three-way internal contradiction. The
+  row's own `climbing_route` pitch-by-pitch narrative (step 4, "Summit pitches") states "the
+  hardest moves around 5.4 to 5.6 — Grade II overall," directly disagreeing with this same
+  row's header fields (`alpine_grade = "Grade IV"`, `commitment = "IV"`,
+  `rock_grade`/`grade = "5.3"`), its own `pitch_detail` array (three pitches at 5.3/4th/5.3,
+  max 5.3), and its own `corrections` field, which states "None — grade matches the standard
+  (non-Direct) East Face route in available sources." So two DB-internal records support the
+  current 5.3/Grade IV header and one (the climbing_route prose) contradicts it. External
+  search attributes "Grade II, 5.6" to a Chimney Rock East Face route (Mountaineers.org) whose
+  structural details closely match this row (3 pitches, a 60 m rope needed for the rappel
+  descent, Chimney Glacier/moat approach, ~16-19 mi round trip, ~4,900-6,000 ft gain — all
+  matching or close to this row's own stored figures), but the same search also attributes
+  "Grade II, 5.6" to a separately-named "East Face Direct" variant, and WebFetch to the
+  primary Mountaineers.org pages was blocked, so it could not be determined whether the
+  externally-sourced grade describes this exact (non-Direct) line or is being conflated with
+  Direct by the search summary. Left unchanged; recommend a human check Beckey's Cascade
+  Alpine Guide or the Mountaineers.org pages directly.
+
+**Checked clean, sourced rather than assumed:** `wa_east_mcmillan_spire_west_ridge` (FA — Fred
+and Helmy Beckey, 1940 — consistent with independently-confirmed Southern Pickets first-ascent
+history and the peak's own data_quality note; elevation 7,992 ft agrees exactly across the
+area record, route `high_point_ft`, and the summit waypoint). `wa_east_ridge_3` (Silver Star
+Mountain East Ridge): the row's detailed multi-clause FA history (Childs & Goldie's first
+continuous roped ascent, Sept 14 2000; earlier 1986 Beckey/Beckstead solo; a 1932
+Ulrichs/Pennington south-face/east-ridge combination) is corroborated by the row's own
+data_quality note, which states its crowds/partner-requirements findings rest on "a
+first-person 2006 Northwest Mountaineering Journal account by one of the FA climbers" — i.e.
+already checked against a primary source by an earlier research pass; elevation 8,876 ft
+agrees exactly across area/route/waypoint. `wa_east_ridge_4` (Inspiration Peak East Ridge): FA
+(Fred Beckey, Ed Cooper, Dave Collins, 1958) confirmed exactly via external search; elevation
+(area/route 7,891 ft vs. waypoint 7,880 ft) sits within ordinary survey-source variance — both
+figures are independently in real use for this peak (Wikipedia gives 7,891 ft; trailcatjim.com
+and others use 7,880 ft) — not flagged. `wa_east_ridge_6` (Mount Thomson East Ridge): own
+`corrections` field already states "None — consistent across sources"; elevation and FA
+(Joe Hazard & B. French, 1917) plausible for the era and left unchanged.
+
+Web access this run: WebSearch reachable and used throughout. **WebFetch was blocked by this
+environment's egress proxy for every third-party site attempted** — en.wikipedia.org,
+cascadeclimbers.com, www.summitpost.org, www.mountainproject.com, listsofjohn.com,
+www.fs.usda.gov, www.alpenglow.org — all returned `EGRESS_BLOCKED` (confirmed at the network
+level with `curl`, not just the tool's own allowlist: `CONNECT tunnel failed, response 403`).
+This meant every fact this run checked externally relied solely on WebSearch's own synthesized
+summaries rather than being independently re-read from the primary page, which is part of why
+two items above were flagged rather than resolved with higher confidence — a prior batch's
+`check:sql` note about a false-positive "not checkable" warning notwithstanding, source access
+itself was the binding constraint this time, not the SQL checker.
+
+SQL: `audits/sql/2026-09-09-batch-253.sql` (validated with `check:sql` — 1 of 3 write targets
+directly checkable by its same-line heuristic, the other 2 (`permit` UPDATEs) triggering the
+known "no literal id predicate — not checkable" false positive from long multi-line string
+literals; both ids independently confirmed to exist by direct `curl` query against the live
+table before writing. File is 6.9KB, over the ~4KB soft limit — split into chunks when
+applying. No DELETE, no destructive statement.)
+
+Restating the recurring operational note once more, briefly: the unapplied-SQL-backlog concern
+raised in batches 248-250 has not been addressed as of this run (not independently re-verified
+this batch, to avoid repeating batch 250's full check every time — but nothing suggests it has
+changed).
+
+Next batch continues alphabetically after `wa_east_ridge_6` (see progress file).
