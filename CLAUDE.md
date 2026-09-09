@@ -598,7 +598,37 @@ the total when deciding where a new guard belongs.
       and stopping would have left it.
     - The rule is exact rather than a keyword sweep: a comparison whose two sides are a `.name`
       and a seed row's `.user` is **always** an identity claim, and nothing else in this codebase
-      compares those two fields. The gate must be in the **same expression**, not merely somewhere
+      compares those two fields.
+    - **AND THE COUNT DISAGREEMENT THAT FOUND THIS BUG IS STILL ON SCREEN, MEASURED 2026-09-04.**
+      The entry above records Home saying *"Recent friend activity · 11 updates"* while Crew:Friends
+      says *"Show all 14"*; the identity bug beneath it was fixed and **the numbers were never
+      reconciled**, so a fresh CI capture still reads 11 and 14. They are **different lists behind
+      near-identical headings**: Home's `_friendFeed` is seed route `activity` authored by your
+      connections, filtered to `isRecent` and capped at 12; `FriendsFeed`'s rows are
+      `seedHistoryFor(f)` **plus that friend's vouches**, unfiltered by date. Neither is wrong
+      about its own list — do not "fix" one to match the other.
+    - **BOTH ARE SEED-ONLY, AND THAT IS THE FINDING THE COUNTS POINT AT.** `seedHistoryFor` is
+      `seedIdentity(c) ? ticksFor(c.name) : []`, and `seedIdentity` requires `typeof c.id ===
+      "number"` — a DB-derived connection carries a **uuid string**, so it returns `[]`. Measured
+      by rendering (`scripts/oneoff/probe-friends-feed-reads-seed-history.mjs`, no browser, no DB):
+      a seed friend renders **8,179 characters**, the *same person* as a real connection renders
+      **0**, and attaching real `logs` to that connection changes nothing. **A real friend's logged
+      climb cannot reach either feed.**
+      - It renders **nothing at all** rather than an empty section, so no false claim is made —
+        which is why no honesty guard sees it and why this is reported rather than captioned.
+      - **`TickList` two hundred characters away does it correctly**: `base = seedHistoryFor(climber)`
+        **plus** `extra` built from real `logs`. So the app already has the pattern and this surface
+        simply never gained it — the same asymmetry as *PEOPLE YOU'VE CLIMBED WITH* directly above
+        it on Crew:Friends, which #713 revived onto real `logs`.
+      - **NOT BUILT, deliberately.** Showing a real friend's climbs needs a hook reading **other
+        users'** `climb_logs` — a query, an RLS question and a visibility rule that do not exist —
+        and `climb_logs` holds **1 row catalog-wide**, so it would render an empty feed for
+        everybody. That is the `three-climbs-tab-sections-dead-in-production` shape: feature work
+        gated on data that does not exist, not a wiring fix.
+      - **It also corrects a recorded census verdict.** The discovery-surface census filed
+        `FriendsFeed` as *healthy* because its `connections` prop is DB-backed. That is a verdict
+        about what feeds the **list**, not about what feeds the **rows**. *Ask what fills the rows,
+        not what fills the list.* The gate must be in the **same expression**, not merely somewhere
       in the file.
     - **The probe that proved it RETYPED the predicate instead of lifting it**, so it kept failing
       after the fix landed — the exact trap its own header warns about. Its extraction also cut at
