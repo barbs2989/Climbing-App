@@ -644,8 +644,8 @@ the total when deciding where a new guard belongs.
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
   ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
-  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
-  which reads both scopes — (`position:fixed` + `inset:0` +
+  is **24** once `lib/*.jsx` is included and the detector can read a TERNARY style, re-measured
+  2026-09-09; see `check:overlay-width-cap`, which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -3618,33 +3618,67 @@ the total when deciding where a new guard belongs.
     carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
     rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
     Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
-  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+  - **THREE exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
     full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
     whole window, and its **Suspense fallback** is exempt with it because the two must match or the
     screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
-    is a variable (`zIndex: Z`) and there is no literal to key on.
+    is a variable (`zIndex: Z`) and there is no literal to key on. The third is the **full-screen
+    route map** (`GPXMap`'s fullscreen branch), and the reason it is exempt rather than capped is
+    **consistency**: capping it would put two maps in one app at two different widths, which is a
+    worse desktop/phone difference than the one the cap exists to fix.
+  - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
+    That matches a **literal** style object, and `GPXMap` writes
+    `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
+    guard reported *"23 views, 21 capped, 2 exempt"* while the app has **24**, and the missing one
+    was a genuine member of the class carrying `inset:0` and `background:C.bg`. **A coverage hole in
+    a guard prints identically to a clean tree**, which is the `check:overlay-discovery` shape
+    arriving inside a guard I had shipped four days earlier.
+    - **It was found by asking the geometric question INDEPENDENTLY, not by reading the guard.**
+      `scripts/oneoff/census-fixed-position-elements.mjs` classifies **every** `position:fixed`
+      style object in the app — 83 of them, by balancing braces from the declaration rather than
+      relying on any attribute shape — into CAPPED / SCRIM / CENTRED-NARROW / FULL-BLEED. Six of
+      the seven full-bleed ones are documented scrims, lightboxes or the fire map; the seventh was
+      the route map. **A guard's own census cannot be the thing that audits the guard's reach.**
+    - The anchor is `style={` now, and each top-level object inside the expression is judged
+      **separately**. Judging the **union** of a ternary's branches would be wrong in the dangerous
+      direction: one branch can carry the cap while the other is the full-bleed one, and the union
+      would read as capped.
+    - **Strictly additive, measured before shipping**
+      (`scripts/oneoff/measure-ternary-style-blind-spot.mjs`): fixed style objects **81 → 82**,
+      views **23 → 24**, and **exactly one** newly reachable view. Nothing that was passing starts
+      failing, so the widening cannot be hiding a regression behind a bigger number.
+    - Brace balancing now **skips string and template contents**, so a `` `1px solid ${C.border}` ``
+      cannot desynchronise the depth counter. The old scanner survived that by luck — `${` and `}`
+      happen to balance — and would have broken on a brace inside a plain string.
   - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
     `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
     so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
     put all 21 back to full-bleed with no name moved and every other guard green.
   - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
     test actually dies, which `check:control-names` already records. Reformatting **one** file's
-    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
-    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
-    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
-    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
-    holding a *single* view can be reformatted without tripping either floor; a per-file
-    expectation would catch it and would be bookkeeping that rots.
+    `style={{` to `style = {{` renders identically in React — whitespace around a JSX attribute's
+    `=` is legal — is invisible to `check:refs`, and drops that file's views silently; on
+    `ClimbMatchCore` alone that is **24 → 17** views, so the view floor trips. The first draft had
+    a single floor of 15 and the injection **MISSED**, which is what sized them. **Residual, stated
+    rather than papered over:** a file holding a *single* view can be reformatted without tripping
+    either floor; a per-file expectation would catch it and would be bookkeeping that rots.
+    - **The mutation the case injects HAD to change with the anchor.** It used to be
+      `style={{` → `style={ {`, and the widened anchor **survives that**, so the case started
+      reporting MISSED against a guard that had just got stricter. It is kept, expectation flipped
+      to **must stay SILENT**, so the robustness is asserted rather than incidental: a future
+      rewrite back to the literal shape fails it. **When a detector is widened, its injection cases
+      are claims about the OLD detector until they are re-aimed.**
   - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
     measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
     390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
     had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
     indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
     caught that.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+  - Injection-tested **8/8** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Three must
     stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
-    carries its own cap, and a capped view that gains an unrelated property is still capped.
+    carries its own cap, a capped view that gains an unrelated property is still capped, and the
+    inner-brace reformat above is one the widened anchor now survives.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
