@@ -20,6 +20,9 @@
 //   {kind:"jsonedit", route, column, expect, find, repl, count, why}
 //        serialise a jsonb column, replace a plain substring inside its string values, reparse.
 //        Safe only for needles containing no quote/backslash — asserted.
+//   {kind:"drop",  route, path, expect, drop:[{i,name},...], why}
+//        remove array elements by index, each asserted by its own `name` first, so the entries
+//        that STAY are never retyped and a reordered array is refused.
 import crypto from "crypto";
 import { selectAll, patchRow } from "../../lib/supabase-env.mjs";
 
@@ -112,6 +115,20 @@ export async function runRepairs(REPAIRS, opts = {}) {
         const n = s.split(rep.find).length - 1;
         if (n !== rep.count) { console.log(`REFUSE ${rep.route}.${path}: find matched ${n}x, declared ${rep.count}x`); refused++; continue; }
         col = path; next = JSON.parse(s.split(rep.find).join(rep.repl));
+      } else if (rep.kind === "drop") {
+        // Remove array elements BY INDEX, asserting each one's name first. Nothing is retyped,
+        // so the entries that STAY cannot be altered by the repair, and a reordered or edited
+        // array is refused rather than having the wrong element removed from it.
+        if (!Array.isArray(cur)) { console.log(`REFUSE ${rep.route}.${path}: not an array`); refused++; continue; }
+        let mismatch = null;
+        for (const d of rep.drop) {
+          const el = cur[d.i];
+          const got = el && (el.name != null ? el.name : el.title);
+          if (got !== d.name) { mismatch = `index ${d.i} is ${JSON.stringify(got)}, declared ${JSON.stringify(d.name)}`; break; }
+        }
+        if (mismatch) { console.log(`REFUSE ${rep.route}.${path}: ${mismatch}`); refused++; continue; }
+        const kill = new Set(rep.drop.map(d => d.i));
+        ({ col, next } = withPath(view, path, cur.filter((_, i) => !kill.has(i))));
       } else { console.log(`REFUSE ${rep.route}.${path}: unknown kind ${rep.kind}`); refused++; continue; }
     } catch (e) { console.log(`REFUSE ${rep.route}.${path}: ${e.message}`); refused++; continue; }
 
