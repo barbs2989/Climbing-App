@@ -2276,6 +2276,68 @@ the total when deciding where a new guard belongs.
     whether the fact is stated, and a guard pinned to one phrasing forbids improving it.
     `read-gone` is the one to keep: it leaves write, copy and hydration intact and removes only the
     fallback.
+  - **§8 — A DOWNLOADED CATALOG YOU COULD BROWSE AND NOT SEARCH.** The browse chain (states ->
+    children -> an area's own routes) has had an offline fallback since the state download
+    shipped. **Search had none**: `useSubtreeRoutes`, `useSubtreeRouteCount` and `useAreaSearch`
+    are RPCs, so with no signal *"View all N"*, the in-area route finder and the area filter box
+    each threw — you could drill down through a catalog on your own phone and never look anything
+    up. The three now fall back to `offlineSubtreeRoutes` / `offlineSubtreeRouteCount` /
+    `offlineAreaSearch`.
+    - **NO SCHEMA CHANGE, and measuring is what established that.** The plan of record was a
+      `_path` field on stored route rows plus an index, i.e. DB_VER 2 -> 3 and existing downloads
+      lacking the field. Unnecessary: `areas` rows are stored with their ltree `path` already
+      (`select("*")`), and routes carry `area_id`, so a subtree is a prefix test over rows the
+      device has. **Every existing download gains search without being re-downloaded.** Check
+      what the store already holds before costing a migration.
+    - **THEY ARE A SECOND IMPLEMENTATION OF THREE STORED FUNCTIONS, and that is stated rather
+      than hidden** — an offline reader cannot call an RPC, so the choice is mirroring one or
+      having no search. What they must not do is DISAGREE: a filter that admits different rows
+      offline is a catalog that changes when the signal drops. Four places a naive transcription
+      diverges, each one a line the migrations were explicit about:
+      - **`null <= 10` is NULL in SQL and TRUE in JS.** `Number(null)` is 0, so the minimum test
+        happens to agree and the MAXIMUM does not — every ungraded route floods a "5.9 and under"
+        search. Same for `length_m`.
+      - **`pitches: 0` means "unknown" for a roped route and "no pitches" for a boulder problem**
+        (0074, which exists because reading them alike hid 86% of the catalog).
+      - **`desc nulls last` is not Postgres's default for `desc`.** Miss it and every unrated
+        route leads a "best first" list.
+      - **`path <@ root.path` is a LABEL boundary, not a string prefix** — `wa_index` must not
+        swallow `wa_index_town_wall`.
+    - **`orOfflineExact` IS A SIBLING OF `orOffline`, NOT A WIDENING OF IT.** That helper treats
+      an empty offline result as *"nothing is stored"*, which is right for the unfiltered readers
+      already using it and wrong for a filtered search: *"no route here is under 5.6"* and *"this
+      area was never downloaded"* are different facts, and reporting the first as a failed read is
+      a false claim of its own kind. **The COUNT is the sharpest case** — the honest answer `0` is
+      falsy, so `orOffline` would rethrow on it every single time. The new helper signals absence
+      with `undefined`, so `[]` and `0` are real answers. Loosening `orOffline` itself would let
+      an undownloaded area serve an empty catalog as though it were the whole one.
+    - **§8 IS IN THE GUARD BECAUSE THE PROBE STRUCTURALLY CANNOT SEE THE WIRING.**
+      `scripts/oneoff/probe-offline-subtree-search.mjs` proves the READERS — 29 assertions that
+      the offline filters admit exactly the rows the SQL admits, including all four traps above.
+      It says nothing about whether `lib/db.js` still calls them. Drop one wrapper and the readers
+      stay correct, the probe stays green, **no identifier moves**, and the finder throws at the
+      trailhead again — the §2 silent half, one feature over, and the shape `audit:silent-reverts`
+      says in its own closing caveat it cannot see. `search-fallback-gone` is that case.
+    - The probe's own suite is `scripts/oneoff/inject-offline-subtree-cases.mjs`, **8/8**, each
+      case proving its edit landed **by checksum** and restoring `lib/offline.js`
+      byte-identically, with the lockfile / green-tree / tree-checksum safeguards the overlapping
+      run of 2026-09-09 paid for. **Two cases must stay SILENT** — a comment quoting the forbidden
+      shape, and the same null rule written longhand. **One case reported WRONG FAILURE against a
+      correctly-firing probe**, because its expectation was the text an assertion prints when it
+      PASSES; the harness now refuses any expectation that appears in the GREEN run, which is the
+      structural version of a mistake this file already records twice.
+    - **The IndexedDB shim moved to `scripts/lib/idb-shim.mjs`** rather than being copied into a
+      second probe — two hand-maintained IndexedDBs would disagree the first time either grew a
+      method. Proven behaviour-neutral: `probe-offline-pack-roundtrip` still reports 13/13.
+      Re-run BOTH after touching it; a shim defect one probe does not exercise leaves that probe
+      green.
+    - **WHAT THIS STILL DOES NOT DO**, since it is the part a reader would otherwise assume: the
+      global search box (`useRouteSearch`) has no fallback and deliberately gets none here — it
+      searches the whole catalog, so an offline answer drawn from downloaded states only would be
+      a truncated result presented as a complete one, which is the silent alphabetical cut 0147
+      exists to have fixed. `useCountries` still has none either, and a naive one would be **dead
+      code**: `downloadStateOffline` stores only DESCENDANTS of the state, so no country row is
+      ever on the device.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
