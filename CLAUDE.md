@@ -73,7 +73,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
-npm run check:new-climber-journey # a NEW account onboards — did what it typed reach the DB? (hand-run)
+npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -645,8 +645,8 @@ the total when deciding where a new guard belongs.
     activity) rather than a length threshold that a résumé shell would satisfy anyway.
 - **A FULL-SCREEN VIEW THAT RENDERS OVER THE APP IS A DIALOG; ONE THE APP RETURNS INSTEAD OF
   ITSELF IS A SCREEN.** 13 opaque full-screen views exist **in the three app files** — the count
-  is **23** once `lib/*.jsx` is included, measured 2026-09-04; see `check:overlay-width-cap`,
-  which reads both scopes — (`position:fixed` + `inset:0` +
+  is **24** once `lib/*.jsx` is included and the detector can read a TERNARY style, re-measured
+  2026-09-09; see `check:overlay-width-cap`, which reads both scopes — (`position:fixed` + `inset:0` +
   `background:C.bg`) across the three app files and only **one** carried `role="dialog"`, so the
   rest announced as nothing and `check:overlay-discovery` — which finds overlays *behaviourally*,
   by a dialog role as the region's own first element — could not see them. That blind spot is what
@@ -1224,6 +1224,71 @@ the total when deciding where a new guard belongs.
     the auth users were counted afterwards — **0 on the `.invalid` QA domain**. That is the
     `check:outage` lesson, which threw its leak report away and made a teardown failure invisible
     until somebody counted rows by hand.
+- **`check:new-climber-journey`** performs what a brand-new climber actually does and then asks the
+  **DATABASE**, not the screen. Hand-run: it creates a real account and rewrites its profile, so it
+  needs the service key — which CI must never hold — and the durable CI pair is **not** a
+  substitute, because a concurrent guard signed in as that account would be walking a profile this
+  rewrites mid-run. Declared in `check:guard-wiring`'s `EXCLUDED`.
+  - **WHY A WALK RATHER THAN A GATE.** Four static censuses found six defects a real account hits in
+    its first hour (#1554, #1563, #1569, #1576), and every one shared ONE shape: state changed on
+    screen and nothing was stored. **Every screen assertion passed throughout** — the optimistic
+    local state renders perfectly — which is precisely why each needed its own census to find.
+    `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
+    performs an action and then asks whether it survived.
+  - **THREE of the six are covered, and the count is stated in the script so the gap cannot quietly
+    stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
+    `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
+    opens, found by a **different** real account through `crew_listings` — the only test of that
+    with two accounts, where `probe-crewfinder-shows-a-real-crew.mjs` proves the component over a
+    synthetic crew. Remove-friend (#1563): a connection removed in the real overlay, asked of
+    `connections` and then of the screen after a reload, where
+    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+  - **EVERY BASELINE IS LOAD-BEARING and each is asserted before the thing it makes meaningful.**
+    The fixture seeds disciplines and grades (it serves `check:signed-in`, whose account is meant to
+    own things), so this walk **blanks them and re-reads them as empty**; the connection is counted
+    as exactly 1 before Remove. *"The column is populated afterwards"* and *"the row is gone
+    afterwards"* both pass **vacuously** against an account that never had the thing.
+  - **THE CREW MUST CONTAIN NEITHER CLIMBER, which is why it is created rather than reused.** App
+    excludes crews you organise or are already in — correctly, a row you can never act on is noise —
+    and both fixture crews seat both accounts, so asserting on one would assert on a row the finder
+    is **right** to hide. It is torn down in a `finally`.
+  - **EXACTLY ONE Remove control is required before the click, so the removal is ATTRIBUTABLE.**
+    With two friends on screen the walk would remove an arbitrary one and then assert about the
+    pair. The friend's name is read **as the app renders it** rather than derived: `pubName()` gates
+    the display name on `show_name` and otherwise builds a handle, so a walk that computed the
+    expected string would be re-implementing a rule that can move and would then agree with itself
+    whatever the app did.
+  - **NAVIGATION GOES BY ACCESSIBLE NAME WHEREVER A BADGE CAN APPEAR.** The **Crew nav button**
+    renders `crewBadgeN` inside itself, and this fixture seats the owner as INVITED in a second
+    crew — so `innerText` is not `"Crew"` for exactly the account this walk uses. The Crew sub-tab
+    bar labels itself `"Friends, 1"`. `tapByName`'s `^label(,|$)` anchoring accepts both spellings,
+    and a click that does not land is **fatal** rather than a quietly shorter walk that reports on
+    whatever screen stayed up.
+  - **THE FLAG IS READ, NEVER ASSUMED.** `scripts/journey.config.mjs` publishes `__DEMO_AUTOLOGIN`
+    and the walk asserts it is defined and **false** before describing anything. Two earlier runs
+    reasoned about that flag from the config and were wrong both times — and a vite `define` on
+    `import.meta.env.X` substitutes **nothing**, so adding one changes nothing, which reads
+    identically to *"the override already worked"*.
+  - **TWO DECLARED KNOWNS, each of which FAILS AS STALE the day it is fixed** rather than passing
+    quietly — the standard `check:field-renders`' `KNOWN` map is held to. Onboarding does not
+    auto-open for a real account (`authed` is `useState(DEMO_AUTOLOGIN)` and `setAuthed(true)` is
+    called in exactly one place, LoginScreen's DEMO branch, so the effect written to onboard a new
+    climber can never fire for one); and the *"Set up your climbing profile"* card renders on
+    **Climbs**, not Home. Both are reported rather than repaired because both are product calls: the
+    obvious fix for the first nags every climber on every load, since `onboarded` is not persisted
+    either, and the second moves a card on a **locked** Home layout.
+  - Fails **closed** throughout: a dev server that never came up, a fixture that already carries the
+    columns under test, a nav or sub-tab click that did not land, a `Crew:Friends` view that
+    rendered under 200 characters (against which every *"is absent"* assertion passes), and a crew
+    on a route id `routes` lacks — which renders blank and is indistinguishable from a crew that
+    never loaded, so `JOURNEY_ROUTE` is a real catalog row.
+  - Injection-tested per phase, because the healthy output here is *"everything passed"*, which is
+    also what a walk asserting nothing prints. Reverting `CrewFinder`'s `_crewPool` merge back to
+    `OPEN_CREWS` fails **exactly** the crew assertion;
+    `scripts/oneoff/inject-remove-friend-journey-case.mjs` makes `removeConnection` unreachable —
+    the real #1563 defect, leaving the optimistic filter and the success toast in place — and
+    requires phase 3 to fail on the removal assertion **and nothing else**. Both edit the app in
+    place, so **do not commit while one is running**.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
@@ -3705,33 +3770,67 @@ the total when deciding where a new guard belongs.
     carried `maxWidth:520,margin:"0 auto"` **and** `padding:"14px 16px …"`, so it had been
     rendering at 552px — overhanging the column it was meant to line up with by 16px each side.
     Its height is unaffected (no height is set), so `check:bottom-panels`' reservation is untouched.
-  - **Two exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
+  - **THREE exemptions, each with a reason, and a STALE one FAILS.** A **media** surface is
     full-bleed on purpose here — the photo lightboxes already are — so `lib/FireMap.jsx` keeps the
     whole window, and its **Suspense fallback** is exempt with it because the two must match or the
     screen jumps width the moment the chunk lands. The map is matched **by file**, since its zIndex
-    is a variable (`zIndex: Z`) and there is no literal to key on.
+    is a variable (`zIndex: Z`) and there is no literal to key on. The third is the **full-screen
+    route map** (`GPXMap`'s fullscreen branch), and the reason it is exempt rather than capped is
+    **consistency**: capping it would put two maps in one app at two different widths, which is a
+    worse desktop/phone difference than the one the cap exists to fix.
+  - **THE DETECTOR ANCHORED ON `style={{` AND THE ROUTE MAP WAS OUTSIDE ITS CENSUS ENTIRELY.**
+    That matches a **literal** style object, and `GPXMap` writes
+    `style={fullscreen?{position:"fixed",inset:0,…}:{position:"relative"}}` — a **ternary**. So the
+    guard reported *"23 views, 21 capped, 2 exempt"* while the app has **24**, and the missing one
+    was a genuine member of the class carrying `inset:0` and `background:C.bg`. **A coverage hole in
+    a guard prints identically to a clean tree**, which is the `check:overlay-discovery` shape
+    arriving inside a guard I had shipped four days earlier.
+    - **It was found by asking the geometric question INDEPENDENTLY, not by reading the guard.**
+      `scripts/oneoff/census-fixed-position-elements.mjs` classifies **every** `position:fixed`
+      style object in the app — 83 of them, by balancing braces from the declaration rather than
+      relying on any attribute shape — into CAPPED / SCRIM / CENTRED-NARROW / FULL-BLEED. Six of
+      the seven full-bleed ones are documented scrims, lightboxes or the fire map; the seventh was
+      the route map. **A guard's own census cannot be the thing that audits the guard's reach.**
+    - The anchor is `style={` now, and each top-level object inside the expression is judged
+      **separately**. Judging the **union** of a ternary's branches would be wrong in the dangerous
+      direction: one branch can carry the cap while the other is the full-bleed one, and the union
+      would read as capped.
+    - **Strictly additive, measured before shipping**
+      (`scripts/oneoff/measure-ternary-style-blind-spot.mjs`): fixed style objects **81 → 82**,
+      views **23 → 24**, and **exactly one** newly reachable view. Nothing that was passing starts
+      failing, so the widening cannot be hiding a regression behind a bigger number.
+    - Brace balancing now **skips string and template contents**, so a `` `1px solid ${C.border}` ``
+      cannot desynchronise the depth counter. The old scanner survived that by luck — `${` and `}`
+      happen to balance — and would have broken on a brace inside a plain string.
   - **A GATE rather than a probe**, for the reason `check:verification-fallback` and
     `check:topo-outage-copy` record: this fix changes only style **properties** and no identifier,
     so `audit:silent-reverts` is blind to it by its own closing caveat. A stale-base squash could
     put all 21 back to full-bleed with no name moved and every other guard green.
   - **TWO floors, because ONE cannot see a PARTIAL break** — and a partial break is how a shape
     test actually dies, which `check:control-names` already records. Reformatting **one** file's
-    `style={{` to `style={ {` renders identically in React, is invisible to `check:refs`, and drops
-    that file's views silently; on `ClimbMatchCore` alone that is 23 → 16 views and 81 → 45 fixed
-    style objects, so both floors trip. The first draft had a single floor of 15 and the injection
-    **MISSED**, which is what sized them. **Residual, stated rather than papered over:** a file
-    holding a *single* view can be reformatted without tripping either floor; a per-file
-    expectation would catch it and would be bookkeeping that rots.
+    `style={{` to `style = {{` renders identically in React — whitespace around a JSX attribute's
+    `=` is legal — is invisible to `check:refs`, and drops that file's views silently; on
+    `ClimbMatchCore` alone that is **24 → 17** views, so the view floor trips. The first draft had
+    a single floor of 15 and the injection **MISSED**, which is what sized them. **Residual, stated
+    rather than papered over:** a file holding a *single* view can be reformatted without tripping
+    either floor; a per-file expectation would catch it and would be bookkeeping that rots.
+    - **The mutation the case injects HAD to change with the anchor.** It used to be
+      `style={{` → `style={ {`, and the widened anchor **survives that**, so the case started
+      reporting MISSED against a guard that had just got stricter. It is kept, expectation flipped
+      to **must stay SILENT**, so the robustness is asserted rather than incidental: a future
+      rewrite back to the literal shape fails it. **When a detector is widened, its injection cases
+      are claims about the OLD detector until they are re-aimed.**
   - **Proven in a browser rather than argued.** `scripts/oneoff/probe-overlay-width-cap.mjs`
     measures the rendered rect at 1440 and 390: **14 measurements, 520px at left 460 on desktop,
     390px on a phone.** It waits on the overlay APPEARING rather than on a timer — the first run
     had one overlay mount on a phone and not on desktop at a flat 1400ms, and *a skipped overlay is
     indistinguishable from a passing one*. It fails closed under 6 measurements, which is what
     caught that.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. **Two must
+  - Injection-tested **8/8** (`scripts/oneoff/inject-overlay-width-cap-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. **Three must
     stay SILENT** — a backdrop scrim is *meant* to cover the whole window and its inner panel
-    carries its own cap, and a capped view that gains an unrelated property is still capped.
+    carries its own cap, a capped view that gains an unrelated property is still capped, and the
+    inner-brace reformat above is one the widened anchor now survives.
 - **`check:icons`** asserts the app declares an icon at all, and that every icon it names
   exists and is the size it claims. Vite does **not** verify references into `public/` — a
   missing or renamed file there is emitted as a rewritten href and 404s at runtime, with a
@@ -7464,6 +7563,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     to ship, with `scripts/oneoff/verify-slice-ac-fixes-reference-the-row.mjs` measuring which
     recommendations actually referenced the row (26 of 34; the 8 that did not were one group, all
     off by exactly 454 m).
+  - **A QUARTER OF THE HEADLINE AGREEMENT IS AGREEMENT BY CONSTRUCTION, and anything downstream
+    that treats the second copy as corroboration is counting one claim twice.** Every repair in
+    this family "declares a winner and copies it" — which is what makes inventing a coordinate
+    impossible, and it also means the two records agree afterwards *because* a script made them.
+    Measured 2026-09-09: **25 `fix-*trailhead*.mjs` scripts name 179 route ids**; of the **620**
+    WA routes whose two trailhead records agree within 500 m, **160 (26%)** are named in one, and
+    of the **334** that agree EXACTLY, **152 (46%)** are.
+    - This entry already records the principle for a single fix (*"the resulting agreement is NOT
+      evidence … one claim counted twice"*). The count is the part that was missing, and without
+      it the caveat reads as a footnote about one route rather than as a property of a quarter of
+      the population.
+    - **It caught a wrong instrument mid-build.** `audit:waypoint-distances` reports routes whose
+      stored mileages are impossible from their own trailhead pin, and the obvious way to say
+      which half is wrong is to check the pin against `approach_logistics` — which "corroborated"
+      19 of 27, **8 of them repaired rows**. `dist_km` is the record to use instead: no trailhead
+      repair has ever touched it, and CLAUDE.md forbids bulk-normalising it.
+    - **0 m is NOT the discriminator**, checked rather than assumed: several genuinely
+      independent pairs also agree exactly, because both came from one enrichment pass. The only
+      reliable test is whether the route id appears in a repair script.
   - Read-only and fails closed on an empty read. **Not a build gate** — a property of the DB, not
     the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
     the service key only because the anon role's 3s `statement_timeout` cannot complete a read of

@@ -56,23 +56,72 @@ const EXEMPT = [
     why: "its Suspense fallback, which MUST match it or the screen jumps width as the chunk lands",
     match: (style) => /zIndex:3000/.test(style) && /alignItems:"center"/.test(style),
   },
+  {
+    key: "route-map",
+    // GPXMap's fullscreen branch. Same reason as the fire map, and the CONSISTENCY is the point:
+    // capping this one would put two maps in one app at two different widths, which is a worse
+    // desktop/phone difference than the one the cap exists to fix. Reached only since the detector
+    // learned to read a ternary style -- it was outside this guard's census entirely before that.
+    why: "the route map is a MAP -- spatial content, full-bleed like the fire map and the lightboxes",
+    match: (style) => /zIndex:9700/.test(style) && /flexDirection:"column"/.test(style),
+  },
 ];
 
 // A style object is an opaque full-screen view when it is fixed, stretched to every edge, and
 // painted with the app background. A SCRIM (rgba(...)) is deliberately not one: it is meant to
 // cover the whole window, and its inner panel carries its own maxWidth.
+//
+// IT ANCHORS ON `style={`, NOT ON `style={{`, AND THAT ONE BRACE WAS A BLIND SPOT. The first
+// version matched a LITERAL style object, so a style written as a TERNARY --
+// `style={fullscreen?{position:"fixed",inset:0,...}:{position:"relative"}}` -- was invisible to
+// it. The full-screen route map is written exactly that way, so this guard's census read 23 views
+// when the app has 24, and the missing one was a genuine member of the class. A coverage hole in a
+// guard prints identically to a clean tree, which is why it was found by asking the geometric
+// question independently (scripts/oneoff/measure-ternary-style-blind-spot.mjs) rather than by
+// reading the guard. Measured: the widening is strictly additive -- 81 fixed style objects to 82,
+// 23 views to 24, and exactly one newly reachable view.
+//
+// Each top-level object inside the expression is judged SEPARATELY. Judging the union of a
+// ternary's branches would be wrong in the dangerous direction: one branch can carry the cap while
+// the other is the full-bleed one, and the union would read as capped.
+function balance(src, at) {
+  let d = 0, q = null;
+  for (let i = at; i < src.length; i++) {
+    const c = src[i], p = src[i - 1];
+    if (q) { if (c === q && p !== "\\") q = null; continue; }
+    if (c === '"' || c === "'" || c === "`") { q = c; continue; }   // `1px solid ${C.border}`
+    if (c === "{") d++;
+    else if (c === "}") { d--; if (!d) return i; }
+  }
+  return -1;
+}
+
+function objectsIn(expr) {
+  const out = [];
+  let q = null;
+  for (let i = 0; i < expr.length; i++) {
+    const c = expr[i], p = expr[i - 1];
+    if (q) { if (c === q && p !== "\\") q = null; continue; }
+    if (c === '"' || c === "'" || c === "`") { q = c; continue; }
+    if (c === "{") { const e = balance(expr, i); if (e < 0) return out; out.push({ style: expr.slice(i + 1, e), at: i }); i = e; }
+  }
+  return out;
+}
+
 function fullScreenViews(src, fixedSeen) {
   const out = [];
-  const re = /style=\{\{/g; let m;
-  while ((m = re.exec(src))) {
-    let i = m.index + m[0].length, depth = 2; const start = i;
-    while (i < src.length && depth > 0) { const c = src[i]; if (c === "{") depth++; else if (c === "}") depth--; i++; }
-    const style = src.slice(start, i - 2);
-    if (!/position:\s*["']fixed["']/.test(style)) continue;   // lib/ writes styles with spaces
-    fixedSeen.push(1);
-    if (!/inset:\s*0/.test(style)) continue;
-    if (!/background:\s*C\.bg\b/.test(style)) continue;
-    out.push({ style, line: src.slice(0, m.index).split("\n").length });
+  for (const m of src.matchAll(/style=\{/g)) {
+    const open = m.index + m[0].length - 1;
+    const end = balance(src, open);
+    if (end < 0) continue;                                    // unterminated: nothing to judge
+    for (const o of objectsIn(src.slice(open + 1, end))) {
+      const style = o.style;
+      if (!/position:\s*["']fixed["']/.test(style)) continue;  // lib/ writes styles with spaces
+      fixedSeen.push(1);
+      if (!/inset:\s*0/.test(style)) continue;
+      if (!/background:\s*C\.bg\b/.test(style)) continue;
+      out.push({ style, line: src.slice(0, m.index).split("\n").length });
+    }
   }
   return out;
 }
@@ -102,12 +151,12 @@ for (const f of FILES) {
 // Fail CLOSED. "No view was uncapped" is also exactly what a scan that matched nothing prints,
 // and this one matches on a style-object shape that a reformat could change wholesale.
 // TWO floors, because ONE cannot see a PARTIAL break -- and a partial break is how a shape test
-// actually dies. Injection-measured: reformatting ONE file's `style={{` to `style={ {` renders
-// identically in React and is invisible to check:refs, and it drops that file's views silently.
-// Reformatting ClimbMatchCore alone takes 23 -> 16 views and 81 -> 45 fixed objects, so both
-// floors trip on it.
+// actually dies. Injection-measured: reformatting ONE file's `style={{` to `style = {{` renders
+// identically in React (whitespace around a JSX attribute's `=` is legal) and is invisible to
+// check:refs, and it drops that file's views silently. Reformatting ClimbMatchCore alone takes
+// 24 -> 17 views, so the view floor trips on it.
 //
-// 20 sits just under today's 23: tight enough that losing one big file trips it, loose enough
+// 20 sits just under today's 24: tight enough that losing one big file trips it, loose enough
 // that removing a view or two does not. It is a RATCHET -- if views are deliberately deleted
 // below it, move the floor in the same commit and say why.
 //
