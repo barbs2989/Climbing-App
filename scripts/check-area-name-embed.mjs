@@ -67,8 +67,19 @@ const FILES = appSources(ROOT, GUARD);
 // The exemption is verified against the file, not trusted: if that drop disappears, the
 // exemption fails as stale and the embed is reported. Same standard as check:field-renders'
 // KNOWN map — an exemption nothing re-checks is a description of code that has moved on.
+//
+// KEYED ON THE EMBED, NOT ON THE FILE, and that distinction earned itself: lib/offline.js gained
+// a SECOND embed when the trip pack started storing a route row, and that one deliberately
+// carries the full area fields. A file-wide exemption reported the correct new embed as a STALE
+// exemption — a guard arguing with the fix, and the same failure check:bottom-panels records
+// from the other side, where a file-wide declaration let a brand-new panel inherit an existing
+// one and pass silently. An exemption is a claim about ONE query.
+//
+// The stale check still holds in both directions: if `areas(path)` ever gains `name`, this entry
+// matches nothing, `exemptUsed` stays empty, and the run fails on the unused exemption below.
 const EXEMPT = new Map([
   ["lib/offline.js", {
+    embed: "path",
     why: "embeds areas!inner(path) to filter by ltree, then drops the key before storing",
     proof: /const\s*\{\s*areas:\s*\w+\s*,\s*\.\.\.\w+\s*\}\s*=/,
   }],
@@ -96,7 +107,8 @@ for (const rel of FILES) {
       // `parent:parent_id(name)` is a NESTED embed; its `name` says nothing about the area's own.
       const topLevel = inner.split(/\bparent\b/)[0];
       const line = code.slice(0, em.index).split("\n").length;
-      const ex = EXEMPT.get(rel);
+      const exFile = EXEMPT.get(rel);
+      const ex = exFile && inner.trim() === exFile.embed ? exFile : null;
       if (/(^|[,\s(])name([,\s)]|$)/.test(topLevel)) {
         pass(`${rel}:${line} areas(${inner.slice(0, 40)}…) carries name`);
         if (ex) fail(`${rel} is exempt but its embed now carries name — STALE exemption, remove it`);
