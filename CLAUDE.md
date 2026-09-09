@@ -748,7 +748,9 @@ the total when deciding where a new guard belongs.
     namespaced **`rd:`** for that reason. Any future second component needs the same treatment —
     a bare name is not unique across files.
   - Every vite config that calls `buildOpener` **must** also call `routeDetailTransform`, and the
-    guard asserts it (all 5 do). Wiring that a config can forget is wiring that one eventually
+    guard asserts it (**11** today — the guard DISCOVERS them with a readdir, so this number is
+    a fact about the tree rather than a list to maintain; it read 5 for months after the tree had
+    moved on). Wiring that a config can forget is wiring that one eventually
     will: the configs already drifted once on which files they transformed.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
@@ -1237,14 +1239,38 @@ the total when deciding where a new guard belongs.
     local state renders perfectly — which is precisely why each needed its own census to find.
     `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
     performs an action and then asks whether it survived.
-  - **THREE of the six are covered, and the count is stated in the script so the gap cannot quietly
+  - **FOUR of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
     opens, found by a **different** real account through `crew_listings` — the only test of that
     with two accounts, where `probe-crewfinder-shows-a-real-crew.mjs` proves the component over a
-    synthetic crew. Remove-friend (#1563): a connection removed in the real overlay, asked of
+    synthetic crew. The route share (#1576): a route sent from the real share sheet, asked of
+    `messages`. Remove-friend (#1563): a connection removed in the real overlay, asked of
     `connections` and then of the screen after a reload, where
     `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+  - **THE SHARE PHASE MUST PRECEDE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing
+    rather than tidy.** The share sheet's pool is `connections` **plus seed `CLIMBERS`**, and a
+    seed climber's id is an **integer** — `sendMsg` gates its write on `isDbId(pid)`, so sending
+    to one correctly takes the honest *"Demo profile — messages here stay on this device"* branch
+    and writes nothing. **Only the mate exercises the real write**, and the mate is in that pool
+    only while the connection exists. Appended after remove-friend, the phase would filter an empty
+    pool and pass having sent nothing — the vacuous shape this walk has now produced twice.
+  - **The sheet is FILTERED to the mate by name before the click**, for the same
+    attributability reason phase 4 demands exactly one Remove control: every climber in the pool
+    carries a `Send` button, and the first one belongs to a seed integer id. The name comes from
+    the fixture, not from a string typed into the guard.
+  - **The message must NAME THE ROUTE THAT WAS OPEN**, cross-checked against that page's own
+    rendered text rather than against a name written into the walk — a share carrying somebody
+    else's route is a defect that *"a row exists"* cannot see. `check:message-delivery` proves a DM
+    renders in the recipient's inbox and never touches the share control, so this asserts the
+    **write** and leaves the render to that guard rather than covering it twice.
+  - **THE ROUTE PAGE IS REACHED WITH THE SHARED `?zr=1` OPENER, never by driving the browse
+    navigation.** `scripts/journey.config.mjs` gained `buildOpener` for this, and
+    `routeDetailTransform` with it because `check:overlay-discovery` requires every config calling
+    one to call the other. Driving the drill-in instead is the path this file records costing
+    **four consecutive browser attempts** on `AreaLatest`; `?zr=1` calls the app's own
+    `openRoute()`, and the walk waits on `window.__routeOpen` as well as on the text settling —
+    settling says nothing about whether the navigation has happened yet.
   - **EVERY BASELINE IS LOAD-BEARING and each is asserted before the thing it makes meaningful.**
     The fixture seeds disciplines and grades (it serves `check:signed-in`, whose account is meant to
     own things), so this walk **blanks them and re-reads them as empty**; the connection is counted
@@ -1289,8 +1315,19 @@ the total when deciding where a new guard belongs.
     `OPEN_CREWS` fails **exactly** the crew assertion;
     `scripts/oneoff/inject-remove-friend-journey-case.mjs` makes `removeConnection` unreachable —
     the real #1563 defect, leaving the optimistic filter and the success toast in place — and
-    requires phase 3 to fail on the removal assertion **and nothing else**. Both edit the app in
-    place, so **do not commit while one is running**.
+    requires phase 4 to fail on the removal assertion **and nothing else**;
+    `scripts/oneoff/inject-share-route-journey-case.mjs` does the same to `sendMsg` for #1576,
+    and phase 3 then fails on **exactly one** assertion while *"shared the open route with …"*
+    still passes — which is the defect's own shape, the click landing and only the write missing.
+    All of them edit the app in place, so **do not commit while one is running**.
+    - **THAT INJECTION CAUGHT A VACUOUS ASSERTION IN THE GUARD ITSELF, which is the whole reason
+      for judging on WHICH assertions fired rather than on an exit code.** Phase 4's third
+      assertion counted controls reading `Remove` — and those live in the **overlay**, which is not
+      open after a reload, so it printed a cheerful `ok` beside two failures and **could not have
+      failed in that position**. Dead code in a guard reads as coverage, the shape
+      `check:screen-lists` already records, committed in a guard written the same hour. Replaced
+      with the `See all` opener, which renders only on `connections.length > 0`, and re-verified
+      in BOTH directions: absent on a clean run, present under the injection.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
