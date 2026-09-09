@@ -7040,6 +7040,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     the worst of the six, at 939 ft. The printout lists every distinct name/elevation for the same
     reason: with only the first shown, the row read as a mismatch the reader could not see.
   - **The result on WA: 28 splits -> 6 findings, 7 context, 15 under the ground threshold.**
+    That tail moves run to run — a later run on a loaded box read **14 quiet and 1 NOT MEASURED**
+    (Glacier Peak, 0 of 2 coordinates read) because 3DEP timed out. That is the fail-closed path
+    working, not a change in the catalog: the findings and the context bucket were identical.
     Guye Peak 939 ft (two routes putting the 5,168 ft summit on ground of 4,227), North Early
     Winters Spire 613 ft, Mount Stuart 546 ft (SIX distinct coordinates for one summit), Mount
     Baker 369 ft on six routes, Burgundy Spire 315 ft, Gilbert Peak 259 ft.
