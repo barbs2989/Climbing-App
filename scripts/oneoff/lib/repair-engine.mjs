@@ -20,6 +20,8 @@
 //   {kind:"jsonedit", route, column, expect, find, repl, count, why}
 //        serialise a jsonb column, replace a plain substring inside its string values, reparse.
 //        Safe only for needles containing no quote/backslash — asserted.
+//   {kind:"copyRow", route, path, expect, from:{route, path, expect}, why}
+//        copy a value from ANOTHER row's path; the donor is declared by hash too
 //   {kind:"drop",  route, path, expect, drop:[{i,name},...], why}
 //        remove array elements by index, each asserted by its own `name` first, so the entries
 //        that STAY are never retyped and a reordered array is refused.
@@ -73,6 +75,13 @@ export async function runRepairs(REPAIRS, opts = {}) {
       const r = byId.get(rep.route);
       const path = rep.path || rep.column;
       console.log(`  ${rep.route}  ${path}: "${r ? sha(getPath(r, path)) : "ROW NOT FOUND"}"`);
+      // a copyRow declares its DONOR by hash as well, so print that too - otherwise the donor
+      // constant has to be computed by a sibling script, which is exactly the drift that made
+      // the first repair harness refuse two correct rows.
+      if (rep.from && rep.from.route) {
+        const d = byId.get(rep.from.route);
+        console.log(`  ${rep.route}  ${path} DONOR ${rep.from.route}.${rep.from.path}: "${d ? sha(getPath(d, rep.from.path)) : "DONOR NOT FOUND"}"`);
+      }
     }
     return { planned: 0, refused: 0 };
   }
@@ -115,6 +124,24 @@ export async function runRepairs(REPAIRS, opts = {}) {
         const n = s.split(rep.find).length - 1;
         if (n !== rep.count) { console.log(`REFUSE ${rep.route}.${path}: find matched ${n}x, declared ${rep.count}x`); refused++; continue; }
         col = path; next = JSON.parse(s.split(rep.find).join(rep.repl));
+      } else if (rep.kind === "copyRow") {
+        // Copy a value from ANOTHER ROW's path — for a fact that belongs to a place rather than
+        // to a route, where a sibling on the same peak already records it. The donor is named
+        // and its value is READ, never typed, so this cannot mint a coordinate; and the donor's
+        // own value is declared by hash too, so a donor that has itself moved is refused rather
+        // than propagated. A majority is NOT evidence on its own (agreeing rows can be one
+        // enrichment pass counted many times), so use this only where something independent —
+        // the row's own track, the ground — has already picked the winner.
+        const donor = byId.get(rep.from.route);
+        if (!donor) { console.log(`REFUSE ${rep.route}.${path}: donor row ${rep.from.route} not found`); refused++; continue; }
+        const src = getPath(donor, rep.from.path);
+        if (src === undefined || src === null) { console.log(`REFUSE ${rep.route}.${path}: donor value is empty`); refused++; continue; }
+        if (rep.from.expect && sha(src) !== rep.from.expect) {
+          console.log(`REFUSE ${rep.route}.${path}: DONOR has moved (expected ${rep.from.expect}, found ${sha(src)})`);
+          refused++; continue;
+        }
+        ({ col, next } = withPath(view, path, src));
+        rep._copied = src;
       } else if (rep.kind === "drop") {
         // Remove array elements BY INDEX, asserting each one's name first. Nothing is retyped,
         // so the entries that STAY cannot be altered by the repair, and a reordered or edited
