@@ -3810,11 +3810,18 @@ the total when deciding where a new guard belongs.
     danger: the script runs, prints numbers, and every one of them is about another branch. Eleven
     of these had gone loud (`ENOENT`), which is the only reason they were findable at all — and a
     NEW worktree with the same name silently revives the quiet failure.
-  - **FOUND BY RUNNING `scripts/oneoff/`, WHICH NOTHING RUNS.** Of **77 static probes** there (no
-    DB, no browser, no network), **71 passed and 6 did not**: two pinned to dead worktrees, three
-    stale, one a CLI tool that wants arguments. This file already says an extracted-from-source
-    probe with a fail-closed anchor **is** a behaviour-revert detector and *"is worth nothing in
-    `scripts/oneoff/`, which nothing runs"*. Running them is the cheapest way to collect that.
+  - **FOUND BY RUNNING `scripts/oneoff/`, WHICH NOTHING RUNS.** Of the **77 static probes** there
+    (no DB, no browser, no network), **71 passed and 6 did not**: two pinned to dead worktrees,
+    three stale, one a CLI tool that wants arguments. This file already says an
+    extracted-from-source probe with a fail-closed anchor **is** a behaviour-revert detector and
+    *"is worth nothing in `scripts/oneoff/`, which nothing runs"*. Running them is the cheapest way
+    to collect that.
+    - **QUOTE THE RUN, NEVER THIS LINE.** The denominator moves with ordinary work: #1677 promoted
+      six of these into `check:units` in the same hour and deleted them, so the same sweep against
+      the merged tree reads **73 static probes, 72 passing** — the one remaining being that CLI
+      tool. Both numbers are correct about their own tree. Re-derive it:
+      run every `scripts/oneoff/probe-*.mjs` that mentions no supabase, browser or network.
+    - **`timeout(1)` DOES NOT EXIST ON macOS**, which is what made the first attempt useless.
   - **THE FIRST SWEEP MEASURED NOTHING AND SAID SO UNIFORMLY: all 77 exited 127.** macOS has no
     `timeout(1)`. *When every case in a sweep shares one result, suspect the sweep* — the rule this
     file already records for a case-sensitive `LIKE` that refused 25 of 39 pins.
