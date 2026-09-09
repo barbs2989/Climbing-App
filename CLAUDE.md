@@ -7377,6 +7377,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     to ship, with `scripts/oneoff/verify-slice-ac-fixes-reference-the-row.mjs` measuring which
     recommendations actually referenced the row (26 of 34; the 8 that did not were one group, all
     off by exactly 454 m).
+  - **A QUARTER OF THE HEADLINE AGREEMENT IS AGREEMENT BY CONSTRUCTION, and anything downstream
+    that treats the second copy as corroboration is counting one claim twice.** Every repair in
+    this family "declares a winner and copies it" — which is what makes inventing a coordinate
+    impossible, and it also means the two records agree afterwards *because* a script made them.
+    Measured 2026-09-09: **25 `fix-*trailhead*.mjs` scripts name 179 route ids**; of the **620**
+    WA routes whose two trailhead records agree within 500 m, **160 (26%)** are named in one, and
+    of the **334** that agree EXACTLY, **152 (46%)** are.
+    - This entry already records the principle for a single fix (*"the resulting agreement is NOT
+      evidence … one claim counted twice"*). The count is the part that was missing, and without
+      it the caveat reads as a footnote about one route rather than as a property of a quarter of
+      the population.
+    - **It caught a wrong instrument mid-build.** `audit:waypoint-distances` reports routes whose
+      stored mileages are impossible from their own trailhead pin, and the obvious way to say
+      which half is wrong is to check the pin against `approach_logistics` — which "corroborated"
+      19 of 27, **8 of them repaired rows**. `dist_km` is the record to use instead: no trailhead
+      repair has ever touched it, and CLAUDE.md forbids bulk-normalising it.
+    - **0 m is NOT the discriminator**, checked rather than assumed: several genuinely
+      independent pairs also agree exactly, because both came from one enrichment pass. The only
+      reliable test is whether the route id appears in a repair script.
   - Read-only and fails closed on an empty read. **Not a build gate** — a property of the DB, not
     the checkout, so no code change can cause or fix it; same reasoning as `check:counts`. It uses
     the service key only because the anon role's 3s `statement_timeout` cannot complete a read of
