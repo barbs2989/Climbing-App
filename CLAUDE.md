@@ -7548,6 +7548,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     stated elevation is left alone. What remains is exactly what the script declined: **Mount
     Stuart** (six coordinates, no single wrong cluster) and **Burgundy Spire** (a climbers' name
     the gazetteer does not hold, so the third record does not exist).
+    - **MOUNT STUART IS DIAGNOSED BUT NOT REPAIRED, and the diagnosis is worth reading before
+      anyone tries.** `scripts/oneoff/probe-mount-stuart-summit-split.mjs` measures all four of
+      its summit coordinates against the ground and the gazetteer:
+      **9,416 ft and a LOCAL MAXIMUM** at `wa_mount_stuart_girth_pillar`'s pin (17 m from GNIS,
+      matching its own stated 9,416 to a foot); 9,333 and a local maximum on two more routes;
+      **9,208 and NOT a maximum — 2 of 8 neighbours higher by up to 182 ft — where the peak's own
+      `areas` row and EIGHT routes sit**; and 8,870 with 5 of 8 higher on Cascadian Couloir, North
+      Ridge and West Ridge, the three most-climbed lines on the peak.
+      - **`audit:peak-coords` has a recorded decision on this exact peak**: its `TOL` comment says
+        the DEM maximum is "70 m away matching the stored elevation" and that snapping was
+        REJECTED because it would DERIVE a coordinate rather than copy a record. The new fact is
+        that **a stored route pin sits on a local maximum 58 m from the area row**, matching its
+        own stated elevation to a foot — near enough that it is very likely the same high point
+        that grid search found, though the two were sampled differently and this does not claim
+        they are identical. So COPYING is available where deriving was not — which changes the calculus that decision rested on. That makes it a
+        decision to RE-TAKE, not one to overturn quietly.
+      - **Every repair path trips a gate in `fix-summit-pins-on-the-flank.mjs`**, which is the
+        gates saying Stuart is unsettled: the dominant cluster is 207 ft from the stated elevation
+        (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
+        25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
+        that is not the summit either.
     - **GUYE'S MECHANISM IS VISIBLE.** `wa_blood_sport` carries a correctly-typed Topout,
       *"Blood Sport crag"* at 3,400 ft, at exactly `47.442,-121.411` — and two other routes put
       their *"Guye Peak"* SUMMIT pin on that same coordinate. Two routes' summit is the crag's
@@ -9231,6 +9252,52 @@ the correction knows the screen is wrong, and they have no way to report it.
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*
+- **MUTUAL FRIENDS IS A STUB, AND EVERY ENTRY POINT IS CORRECTLY GATED OFF IT — so the feature is
+  ABSENT rather than lying, which is the opposite of the usual defect here.** `mutualIds()` takes
+  **no arguments** and returns a literal `[]`, so `mutualCount()` is 0 for every climber, always.
+  All five consumers render as `mutualCount(...) ? control : null`, so the *"N mutual friends ›"*
+  row never appears and the **Mutual friends** sheet is unreachable in the app — only
+  `?z=mutualModal`, the overlay guards' own opener, can mount it. `fedge()` beside it returns
+  `false` and has **zero** callers.
+  - **NOT a regression:** `git log -S "function mutualIds"` returns only the original upload and
+    the monolith split (#497). Never implemented, never reverted, so `audit:silent-reverts` has
+    nothing to say about it and is right not to.
+  - **The cost is a session polishing copy no user can read, and that has already happened once.**
+    #1637 corrected the sheet's subtitle (*"You and Alex both know 0"*), a real string defect on a
+    surface with no reachable entry point. The walk that found it opens overlays by name, which is
+    exactly how an unreachable modal looks reachable. **Before fixing copy found by an overlay
+    walk, check the surface has an entry point that can render.**
+  - **Proven by EXECUTION, not by reading**
+    (`scripts/oneoff/probe-mutual-friends-is-a-stub.mjs`): it bundles Core and calls the real
+    exports over five inputs chosen to overlap as much as possible, and reports
+    `mutualIds.length` — the declared parameter count, which is **0** and is the structural tell.
+    It **exits 1 if the function ever starts returning something**, so this note fails as stale
+    rather than rotting into a description of code that has moved on.
+  - **Implementing it or deleting the UI are both product decisions, not polish** — one is a
+    feature, the other removes a built screen — so neither was done.
+- **WITH `DEMO_FILLERS` ON, 7 OF 60 ABSENCE CLAIMS ARE STILL ON SCREEN, AND THAT IS THE RIGHT
+  NUMBER.** `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57
+  overlays and reports which *"No X yet"* sentence actually renders — the question the sample-data
+  request poses, and the one to re-run when the examples come **out** before launch. Measured
+  2026-09-09: **64 screens walked, 0 unmounted.** Reading all seven:
+  - **Three are the Crew tab, and they are CORRECT DATA.** *"No days proposed yet"*, *"No meeting
+    spot or time set yet"*, *"No weekly slot works for the whole crew yet"* all come from
+    `crew_seed_octo` — the **only** one of the five seed crews with no `dates` and no `meetPlace`,
+    and the only one carrying an `openNote`. It is the still-recruiting crew, so a crew that has
+    proposed nothing is the state being demonstrated. Four of five crews are fully planned; having
+    both stages on screen is the better example, not a gap. **Do not "fix" this by seeding dates.**
+  - **Two are a payload artifact, not a surface.** *"No events scheduled yet"* appears only under
+    `postMenuFor`/`reactPickerFor`, whose payload injects a **synthetic** group into
+    `createdGroups`; the seeded events belong to `group_wasatch_trad`, so the synthetic group
+    correctly has none. No climber can reach that state.
+  - **One is `"No topo yet"`** — topos are DB-backed (`topos`), not seed content, so `DEMO_FILLERS`
+    cannot supply one.
+  - **One is the mutual-friends sheet**, i.e. the stub above.
+  - A **static** version of this was written first and discarded: it tried to resolve each claim
+    back to its state variable through 400kB of single-line JSX and reported *"0 of 61 seeded"*,
+    which is plainly wrong. Whether a sentence is ON SCREEN needs no resolution at all — the
+    [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
+    disagreed with a fact already known.
 
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
@@ -9796,6 +9863,53 @@ their own Résumé showed an amber **"Unverified"** chip.
     app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
     `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
     assertion still green. That is the shape that bit #1643's own merge an hour earlier.
+  - **AND THE SAME ENUMERATION FOUND SEVEN MORE, WHICH IS THE PART WORTH READING.** #1647 named
+    the three readers it fixed; reading *that* list and looking for what it did not name found
+    seven others still counting a climber who had only asked to join. **The count on the heading was
+    the mildest of them** — the three worst are not counts at all:
+    - **`risks` LISTED a requester's risk tolerance as the crew's**, and could flip an aligned crew
+      to *"Risk tolerance: … — mixed; talk through your turnaround before you commit."* in an amber
+      box. A **false warning on a safety surface**, which this file records everywhere else as how a
+      real warning stops being read.
+    - **The backcountry safety brief compared `done` against `roster.length`**, and a requester can
+      never be in `safetyDone`. So *"Whole crew has reviewed the safety plan"* was **unreachable**
+      for as long as any request stood — a readiness state a non-member could hold shut
+      indefinitely, with the amber *"not everyone has reviewed"* standing in its place.
+    - **`pendDay` — the variable IMMEDIATELY RIGHT of the `pendCrew` #1554 did fix, on the same
+      line** — named a requester as somebody the crew was waiting on to pick a day.
+    The other four are counts and control gates: the collapsed card's *"Ready · N climbers"* and its
+    *"N/M confirmed"* denominator, the *"Usually free for everyone"* / *"No weekly slot works for the
+    whole crew yet"* banner, *"Nudge N to pick a day"*, and the `roster.length>2` gate that decides
+    whether a two-person crew is offered a removal **vote** instead of *"Just the two of you — use
+    Leave below instead of voting someone out."*
+  - **A NON-ORGANISER SEES THE WRONG NUMBERS WITH NO WAY TO UNDERSTAND THEM.** `dbJoinReqs` only
+    surfaces the Accept/Decline card on crews **I organise**, while the pending roster row and every
+    one of these counts renders for **every** member. So an ordinary member read *"3/4 confirmed"*
+    above a row saying *"Asked to join"* and no control anywhere explaining it.
+  - **SO THE USEFUL ENUMERATION IS THE OTHER ONE, and the comment beside `inCrew` now carries it.**
+    Listing what was *fixed* is what left seven behind twice over; listing what deliberately keeps
+    the whole roster is a **closed set**, so a new `roster` reader that is not one of these is a
+    defect. Five: the member LIST, the weekly-availability **grid rows**, name resolution in the day
+    chips and inside `GearTiers`, and the itinerary numerator — which counts people who HAVE an
+    itinerary rather than measuring against the crew.
+  - **The grid ROWS keep the requester and the banner above them does not count them**, and that
+    asymmetry is the point rather than an inconsistency: seeing when somebody is free is how you
+    decide whether to accept them, while *"works for the whole crew"* is a claim about the crew.
+  - **Two measured NON-findings, recorded so they are not re-derived.** `GearTiers` takes `roster`
+    only for `nameOf(id)`, so resolving a name maximally is correct. And `kit` — `roster.flatMap(p
+    => p.gear || [])` — is **defined and read by nothing**: dead, not wrong.
+  - **A SECOND `inCrew` SHADOWS THIS ONE, and it is an id-PREDICATE rather than the array.** The
+    invite-member block declares `const inCrew=id=>crew.members.some(...)`, spanning ~730243-732906.
+    None of the seven sites falls inside it — **checked by brace-matching before any edit**, not
+    assumed, because this file already records `clickable` being shadowed by a boolean and taking
+    out a whole panel with *"clickable2 is not a function"* while `check:refs` stayed green.
+  - The probe grew to **27 assertions** across five sections, and **section 5 is the load-bearing
+    one**: a fix that only ever moves readers onto `inCrew` is satisfied by sweeping the deliberate
+    four as well, which would hide a requester from the organiser who has to accept them.
+    Injection-tested **6/6** (`scripts/oneoff/inject-roster-reader-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically; the over-reach case
+    must fail on section 5, and a comment quoting the pre-fix expression must stay **SILENT**.
+    The harness captures the clean run first and refuses any expectation that already matches it.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
