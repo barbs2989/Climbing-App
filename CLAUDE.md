@@ -4204,8 +4204,14 @@ the total when deciding where a new guard belongs.
       height must still let the caveat fire, or any route recording a camp anywhere would be
       silenced. Both directions are cases, and the new one was proven non-vacuous by reverting the
       predicate and watching it fail.
-    - **`audit:gain` has the same blind spot and is REPORT-ONLY, so it is left**: 24 of its 80
-      findings are this. Read its count as an upper bound until somebody widens it too.
+    - **`audit:gain` had the same blind spot and is NOW WIDENED TOO — its count is 61, not 80.**
+      This bullet used to say the audit "is left" and to read its 80 as an upper bound; a stated
+      limitation is a worklist, and leaving it would have had the next reader work 19 routes whose
+      gain is correct. Measured: **19 of the 80 record their implied start in `bivy`** — four
+      Cutthroat routes at the "Cutthroat Wall base terrace", `wa_south_ridge_6` matching Boston
+      Basin lower camp to the FOOT. The audit's own comment records that a few of the 19 are
+      excused by a camp on the WRONG SIDE of the same peak (Tahoma Glacier by Camp Schurman),
+      which is `audit:camp-route-fit`'s question and not this one.
   - **`elevM` was checked, not assumed.** `normalizeWaypoints` coerces `elev`/`elevFt`/`elev_ft` and
     **not** `elevM`, so a waypoint carrying only the legacy spelling would be invisible to the app
     while visible to a raw-column measurement. Measured: **0 of 4,228 WA waypoints use `elevM`**;
