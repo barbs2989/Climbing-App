@@ -3155,9 +3155,15 @@ function _stableJson(v){if(v===null||typeof v!=="object")return JSON.stringify(v
 // it is saved (500 ft shows as 152 m and comes back as 499 ft) — so editing one day's note would
 // quietly move every figure on the plan. An imperial climber takes neither branch: the value is
 // passed through and parsed exactly as it always was, so nothing about that reading changes.
-const _itinDisp={gainFt:uElevN,lossFt:uElevN,miles:uDistMiN,packLb:uMassN};
-const _itinStore={gainFt:uElevIn,lossFt:uElevIn,miles:uDistMiIn,packLb:uMassIn};
-const _itinParse={gainFt:parseInt,lossFt:parseInt,miles:parseFloat,packLb:parseInt};
+/* `distMi` is the APPROACH-VARIANTS editor's distance field, not an itinerary key. These
+   three maps and the two functions under them are not itinerary-specific in behaviour --
+   they answer "what does a canonical-unit number show in a draft box, and what does that box
+   store back" -- so the variants editor uses them rather than carrying a second copy of the
+   rule. The NAMES are now narrower than the contents; the rename is deliberately not done in
+   the same change, the precedent check:topo-outage-copy records. */
+const _itinDisp={gainFt:uElevN,lossFt:uElevN,miles:uDistMiN,distMi:uDistMiN,packLb:uMassN};
+const _itinStore={gainFt:uElevIn,lossFt:uElevIn,miles:uDistMiIn,distMi:uDistMiIn,packLb:uMassIn};
+const _itinParse={gainFt:parseInt,lossFt:parseInt,miles:parseFloat,distMi:parseFloat,packLb:parseInt};
 const itinDraftVal=(d,k)=>d[k]!=null?(uImp()?String(d[k]):String(_itinDisp[k](d[k]))):"";
 function itinStoreVal(d,k){if(!d[k])return null;if(uImp())return _itinParse[k](d[k]);
   const o=d._orig&&d._orig[k];

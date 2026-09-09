@@ -100,16 +100,30 @@ for (const c of CONTROLS) {
             `device"). Message: ${msg.slice(0, 110)}`);
 }
 
-// The section heading makes the same claim the toast did, and it is on screen the whole time rather
-// than for 2.6 seconds — a moderator reads it BEFORE tapping Approve.
+// THE SECTION HEADING IS ON SCREEN THE WHOLE TIME rather than for 2.6 seconds — a moderator reads
+// it BEFORE tapping Approve — so it was held to the same standard as the toast beneath it.
+//
+// SINCE 0178 THE SECTION HOLDS TWO KINDS OF ROW AT ONCE and one sentence cannot describe both.
+// Approving a REAL request now writes (`approveGroupMember`, pending -> active); approving a SEED
+// one still only sets client state, and DEMO_FILLERS is on, so both are listed together. The old
+// heading — "Approving adds them on this device — this preview doesn't tell them or the group" —
+// became false for half the rows the day the write landed, and the caveat moved to the CARD, which
+// is the only level that knows which kind of row it is.
+//
+// So the rule is no longer "carry the caveat" but "make no claim about what approving DOES".
+// Stating what the section HOLDS is always true; promising an outcome is true for only one kind.
 const HEADING = "Climbers asking to join a group you moderate";
+const CLAIMS_AN_OUTCOME = /\b(approv\w*|accept\w*)\b[^"]*\b(adds?|joins?|tells?|notif\w*)\b/i;
 const hAt = src.indexOf(HEADING);
 if (hAt < 0) fail(`ANCHOR LOST: the join-requests section heading is gone, so its claim went unchecked`);
 else {
   const line = src.slice(hAt, src.indexOf('"', hAt + HEADING.length + 1) + 1);
-  if (CAVEAT.test(line)) ok("the join-requests section heading says approving is device-local");
-  else fail(`the join-requests section heading promises approving adds them, which this preview ` +
-            `does not do: ${line.slice(0, 130)}`);
+  if (!CLAIMS_AN_OUTCOME.test(line)) ok("the join-requests section heading states what the section holds, and claims no outcome");
+  else if (CAVEAT.test(line)) ok("the join-requests section heading says approving is device-local");
+  else fail(`the join-requests section heading promises an outcome of approving, and the section ` +
+            `now lists BOTH real requests (which write) and seed ones (which do not), so one ` +
+            `sentence cannot be true of both — say what the section holds and let each card ` +
+            `speak for itself: ${line.slice(0, 130)}`);
 }
 
 if (failures) {

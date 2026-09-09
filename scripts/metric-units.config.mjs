@@ -1,4 +1,5 @@
-// Vite config used only by probe-weather-honours-the-unit-setting-onscreen.mjs.
+// Vite config used only by scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs. (The name it
+// carried before named no file at all -- the citation rotted through a rename and nothing read it.)
 //
 // The unit setting IS persisted now (lib/units-pref.js, localStorage), so it does survive the
 // page load `?zr=1` needs -- the sentence here used to say the opposite and was true when it was

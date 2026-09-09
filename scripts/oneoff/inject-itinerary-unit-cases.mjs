@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Injection suite for probe-itinerary-builder-honours-units.mjs.
+// Injection suite for check-units.mjs, the `itinerary` section (run with --only=itinerary).
 //
 // The fix has four separable parts — seed, store, the visible label and the accessible name — and
 // a change that moved some of them reads as finished. Each is reverted here on its own, so the
@@ -100,7 +100,7 @@ for (const c of CASES) {
   if (sum() === beforeSum) { console.log(`  BROKEN CASE  ${c.name}: edit did not change the file`); fs.writeFileSync(abs, before); bad++; continue; }
 
   let out = "", code = 0;
-  try { out = execFileSync("node", [path.join(ROOT, "scripts", "oneoff", "probe-itinerary-builder-honours-units.mjs")],
+  try { out = execFileSync("node", [path.join(ROOT, "scripts", "check-units.mjs"), "--only=itinerary"],
     { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }); }
   catch (e) { code = e.status || 1; out = String(e.stdout || "") + String(e.stderr || ""); }
   fs.writeFileSync(abs, before);
