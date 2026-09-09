@@ -7669,6 +7669,25 @@ the correction knows the screen is wrong, and they have no way to report it.
         (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
         25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
         that is not the summit either.
+    - **`audit:summit-pins` SECTION 1 IS DOWN TO ONE, and the other of its two was correctly
+      refused.** That section reports a route whose summit pin and its peak's own `areas` row
+      disagree while stating the same elevation, and neither peak has a second route to donate a
+      coordinate — so the two records ARE the pin and the area row.
+      `probe-summit-pin-contradictions.mjs` takes both to the ground.
+      - **The Pyramid (Southern Pickets) is decided and repaired.** The records are 479 m apart,
+        both state 7,920 ft, and the ground separates them by **1,275 ft**: the area row stands on
+        **7,984 ft and is a LOCAL MAXIMUM** (64 ft from the stated elevation) while the pin stands
+        on **6,709 ft with 4 of 8 ring neighbours higher**. The pin is also the only
+        three-decimal coordinate on a route whose other six carry five or six — the coarse
+        fingerprint recorded for "the eight 3-decimal Picket summits".
+        `fix-the-pyramid-summit-pin.mjs` copies the area row onto the pin and carries the line
+        with it (that route's 20-point track turned out to be a real recording with 0 vertices on
+        any pin, so nothing moved — checked before writing, which #1660 did not do).
+      - **Reynolds Peak is REFUSED and that is the result.** Its two records are 340 m apart and
+        **both are local maxima**, 194 ft apart on the ground — under the 250 ft bar, which is
+        `audit:waypoint-elevations`' own `FLOOR_FT` for *inside the 3DEP grid's noise*. Its pin is
+        named *"Reynolds Peak (true/south summit)"*, which is what a genuine two-summit peak looks
+        like. A verdict there would be the instrument reading its own noise.
     - **A PIN REPAIR HAS TO CARRY ITS SKETCHED LINE, and this one did not — checked afterwards
       rather than assumed.** 203 of 578 WA routes with a track store a line drawn THROUGH their
       own waypoints, so moving a pin leaves a vertex at the position it used to hold. Measured on
