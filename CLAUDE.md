@@ -4529,8 +4529,22 @@ the total when deciding where a new guard belongs.
     there would remove a distance from every route whose pins carry no coordinate — a guard
     flagging correct work, which is the failure this file records under a dozen other names.
   - Fails **closed** on a missing `legMi` export and on a waypoint list that did not render, so an
-    absent distance can never read as a suppressed one. Proven non-vacuous by reverting `legMi` to
-    the old subtraction: exactly **2** assertions fail, and the file is restored byte-identically.
+    absent distance can never read as a suppressed one.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `ClimbMatchCore.jsx` byte-identically. Case 1 is
+    the real defect (`return seg`) and fails 2; **case 2 makes it suppress EVERYTHING** and fails
+    6, because a guard that only ever asserts absence is satisfied by deleting the feature; case 4
+    flags legs LONGER than the chord and fails, pinning the one-sidedness. **Two must stay
+    SILENT** — a comment naming the forbidden shape, and a widened tolerance that still catches the
+    fixture, which pins that the cases test BEHAVIOUR rather than the constant.
+  - **And it is verified on LIVE ROWS, not only the fixture** — `dbRouteToCamel` and
+    `normalizeWaypoints` both sit between the column and the screen, and either could have made the
+    suppression reach nothing.
+    `scripts/oneoff/probe-legmi-on-live-rows.mjs` **counts** rather than spot-checking, because
+    `wa_lizard_mountain_south_route` prints 3.7 mi for a 16.3 mi leg and a search for a literal
+    *"0.0 mi"* would call it clean: it derives the expected number of printed legs from the same
+    geometry and asserts it exactly. Non-vacuous both ways — 3 of 4 routes fail on the old code,
+    and the clean control `wa_mount_baker_coleman_deming` stays green either way.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
   three contributors must land in the same cluster or the correction sits pending **forever** —
