@@ -24,6 +24,18 @@
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { orderWaypoints, dedupeWaypoints } from "../lib/waypoints.js";
 
+// Two pins this far apart are not one place however alike their names. Deliberately far LOOSER
+// than dedupeWaypoints' own ~30 m sameSpot test: the question here is not "is this pin precise"
+// but "did the merge delete somewhere a climber has to go", and the three real cases stood
+// 184 m, 435 m and 7,829 m apart.
+const FAR_M = 100;
+const _rad = (d) => (d * Math.PI) / 180;
+function metresApart(a, b) {
+  const dLat = _rad(b.lat - a.lat), dLng = _rad(b.lng - a.lng);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(_rad(a.lat)) * Math.cos(_rad(b.lat)) * Math.sin(dLng / 2) ** 2;
+  return 2 * 6371000 * Math.asin(Math.sqrt(h));
+}
+
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
 const STATE = arg("--state", null);
@@ -43,8 +55,8 @@ async function page(after) {
 }
 
 const t = { rows: 0, withWp: 0, wp: 0, reordered: 0, deduped: 0, dupPins: 0,
-  allHaveDist: 0, partialDist: 0, dupSummits: 0 };
-const outOrder = [], outDup = [];
+  allHaveDist: 0, partialDist: 0, dupSummits: 0, dupFar: 0, dupUnplaced: 0 };
+const outOrder = [], outDup = [], outFar = [];
 
 let after = "";
 for (;;) {
@@ -64,6 +76,23 @@ for (;;) {
       t.deduped++; t.dupPins += wps.length - dd.length;
       const sums = wps.filter(w => w && /^(summit|topout)$/i.test(String(w.type || ""))).length;
       if (sums > 1) t.dupSummits++;
+      // "THE SAME PLACE TWICE" IS A CLAIM THIS AUDIT DID NOT CHECK, and twice it was false.
+      // dedupeWaypoints merged `trailhead` on TYPE ALONE and stripped POSITIONAL words in
+      // nameKey(), so three pins standing 184-7,829 m apart were reported here as duplicates
+      // being tidied when they were places being deleted. Both rules are fixed and gated by
+      // check:waypoint-dedupe; this measures the claim so a third way cannot hide in the count.
+      // Only placed pins can be judged — a pair with no coordinate is counted as unmeasurable
+      // rather than waved through.
+      for (let i = 0; i < wps.length; i++) for (let j = i + 1; j < wps.length; j++) {
+        const a = wps[i], b = wps[j];
+        if (!a || !b || String(a.type || "").toLowerCase() !== String(b.type || "").toLowerCase()) continue;
+        if (dedupeWaypoints([a, b]).length !== 1) continue;      // this pair is not what collapsed
+        if (a.lat == null || b.lat == null || a.lng == null || b.lng == null) { t.dupUnplaced++; continue; }
+        const d = metresApart(a, b);
+        if (d <= FAR_M) continue;
+        t.dupFar++;
+        if (outFar.length < LIST) outFar.push({ id: r.id, type: a.type, a: a.name, b: b.name, d });
+      }
       if (outDup.length < LIST) outDup.push({ id: r.id, name: r.name, was: wps.length, now: dd.length,
         types: wps.map(w => (w && w.type) || "?").join(",") });
     }
@@ -84,6 +113,15 @@ console.log("routes read (waypoints not null):", t.rows, " with a non-empty list
 console.log("routes where every waypoint has distMi:", t.allHaveDist, " partial:", t.partialDist);
 console.log("\nroutes listing the same place twice:", t.deduped, " duplicate pins removed:", t.dupPins,
   " of which had 2+ summit/topout pins:", t.dupSummits);
+// "the same place" is now MEASURED rather than asserted — see the note beside the loop.
+if (t.dupFar) {
+  console.log(`  ${t.dupFar} of those merged pairs stand MORE THAN ${FAR_M} m apart — that is not a`);
+  console.log(`  duplicate being tidied, it is a place being DELETED before it reaches the screen.`);
+} else {
+  console.log(`  every merged pair stands within ${FAR_M} m — so these really are duplicates, not`);
+  console.log(`  two places collapsed into one.`);
+}
+if (t.dupUnplaced) console.log(`  (${t.dupUnplaced} pair(s) carry no coordinate, so their separation is unmeasurable.)`);
 // This number is ONLY about the routes orderWaypoints can actually order, and saying so is the
 // whole point of printing it this way. `orderWaypoints` sorts by distMi and returns the list
 // UNTOUCHED unless every pin has a finite one — so for a route missing a single distance the
@@ -104,6 +142,11 @@ console.log(`routes the app REORDERS at render time (stored order differs, scree
 console.log(`  ${unsortable} more cannot be ordered (a pin is missing distMi), so they render in` +
   ` STORED order and are counted as in-order here whatever that order is.`);
 console.log("  scripts/oneoff/probe-waypoint-order-coverage.mjs measures what is sitting in that gap.");
+if (outFar.length) {
+  console.log("\nMERGED BUT NOT THE SAME PLACE:");
+  outFar.sort((x, y) => y.d - x.d).forEach(o =>
+    console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
+}
 if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 process.exit(0);
