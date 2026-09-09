@@ -73,7 +73,7 @@ npm run check:fire # the wildfire surfaces cannot claim what they don't know (in
 npm run check:signed-in # walks a REAL signed-in account that owns a crew and a group
 npm run check:message-delivery # a message from a SECOND real account arrives, and names its sender
 npm run check:block-guarantees # blocked: cannot read, message or crew-invite you (2 real accounts; hand-run)
-npm run check:new-climber-journey # a NEW account onboards — did what it typed reach the DB? (hand-run)
+npm run check:new-climber-journey # a new climber onboards, opens a crew, removes a friend — did any of it reach the DB? (hand-run)
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -1224,6 +1224,71 @@ the total when deciding where a new guard belongs.
     the auth users were counted afterwards — **0 on the `.invalid` QA domain**. That is the
     `check:outage` lesson, which threw its leak report away and made a teardown failure invisible
     until somebody counted rows by hand.
+- **`check:new-climber-journey`** performs what a brand-new climber actually does and then asks the
+  **DATABASE**, not the screen. Hand-run: it creates a real account and rewrites its profile, so it
+  needs the service key — which CI must never hold — and the durable CI pair is **not** a
+  substitute, because a concurrent guard signed in as that account would be walking a profile this
+  rewrites mid-run. Declared in `check:guard-wiring`'s `EXCLUDED`.
+  - **WHY A WALK RATHER THAN A GATE.** Four static censuses found six defects a real account hits in
+    its first hour (#1554, #1563, #1569, #1576), and every one shared ONE shape: state changed on
+    screen and nothing was stored. **Every screen assertion passed throughout** — the optimistic
+    local state renders perfectly — which is precisely why each needed its own census to find.
+    `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
+    performs an action and then asks whether it survived.
+  - **THREE of the six are covered, and the count is stated in the script so the gap cannot quietly
+    stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
+    `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
+    opens, found by a **different** real account through `crew_listings` — the only test of that
+    with two accounts, where `probe-crewfinder-shows-a-real-crew.mjs` proves the component over a
+    synthetic crew. Remove-friend (#1563): a connection removed in the real overlay, asked of
+    `connections` and then of the screen after a reload, where
+    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+  - **EVERY BASELINE IS LOAD-BEARING and each is asserted before the thing it makes meaningful.**
+    The fixture seeds disciplines and grades (it serves `check:signed-in`, whose account is meant to
+    own things), so this walk **blanks them and re-reads them as empty**; the connection is counted
+    as exactly 1 before Remove. *"The column is populated afterwards"* and *"the row is gone
+    afterwards"* both pass **vacuously** against an account that never had the thing.
+  - **THE CREW MUST CONTAIN NEITHER CLIMBER, which is why it is created rather than reused.** App
+    excludes crews you organise or are already in — correctly, a row you can never act on is noise —
+    and both fixture crews seat both accounts, so asserting on one would assert on a row the finder
+    is **right** to hide. It is torn down in a `finally`.
+  - **EXACTLY ONE Remove control is required before the click, so the removal is ATTRIBUTABLE.**
+    With two friends on screen the walk would remove an arbitrary one and then assert about the
+    pair. The friend's name is read **as the app renders it** rather than derived: `pubName()` gates
+    the display name on `show_name` and otherwise builds a handle, so a walk that computed the
+    expected string would be re-implementing a rule that can move and would then agree with itself
+    whatever the app did.
+  - **NAVIGATION GOES BY ACCESSIBLE NAME WHEREVER A BADGE CAN APPEAR.** The **Crew nav button**
+    renders `crewBadgeN` inside itself, and this fixture seats the owner as INVITED in a second
+    crew — so `innerText` is not `"Crew"` for exactly the account this walk uses. The Crew sub-tab
+    bar labels itself `"Friends, 1"`. `tapByName`'s `^label(,|$)` anchoring accepts both spellings,
+    and a click that does not land is **fatal** rather than a quietly shorter walk that reports on
+    whatever screen stayed up.
+  - **THE FLAG IS READ, NEVER ASSUMED.** `scripts/journey.config.mjs` publishes `__DEMO_AUTOLOGIN`
+    and the walk asserts it is defined and **false** before describing anything. Two earlier runs
+    reasoned about that flag from the config and were wrong both times — and a vite `define` on
+    `import.meta.env.X` substitutes **nothing**, so adding one changes nothing, which reads
+    identically to *"the override already worked"*.
+  - **TWO DECLARED KNOWNS, each of which FAILS AS STALE the day it is fixed** rather than passing
+    quietly — the standard `check:field-renders`' `KNOWN` map is held to. Onboarding does not
+    auto-open for a real account (`authed` is `useState(DEMO_AUTOLOGIN)` and `setAuthed(true)` is
+    called in exactly one place, LoginScreen's DEMO branch, so the effect written to onboard a new
+    climber can never fire for one); and the *"Set up your climbing profile"* card renders on
+    **Climbs**, not Home. Both are reported rather than repaired because both are product calls: the
+    obvious fix for the first nags every climber on every load, since `onboarded` is not persisted
+    either, and the second moves a card on a **locked** Home layout.
+  - Fails **closed** throughout: a dev server that never came up, a fixture that already carries the
+    columns under test, a nav or sub-tab click that did not land, a `Crew:Friends` view that
+    rendered under 200 characters (against which every *"is absent"* assertion passes), and a crew
+    on a route id `routes` lacks — which renders blank and is indistinguishable from a crew that
+    never loaded, so `JOURNEY_ROUTE` is a real catalog row.
+  - Injection-tested per phase, because the healthy output here is *"everything passed"*, which is
+    also what a walk asserting nothing prints. Reverting `CrewFinder`'s `_crewPool` merge back to
+    `OPEN_CREWS` fails **exactly** the crew assertion;
+    `scripts/oneoff/inject-remove-friend-journey-case.mjs` makes `removeConnection` unreachable —
+    the real #1563 defect, leaving the optimistic filter and the success toast in place — and
+    requires phase 3 to fail on the removal assertion **and nothing else**. Both edit the app in
+    place, so **do not commit while one is running**.
 - **`check:outage`** asks what a signed-in climber sees when the database is down, and asserts
   one sentence: **if an outage changes what a screen renders, that screen must SAY something went
   wrong.** It layers PostgREST interception under `check:signed-in`'s fixture and runs the same
