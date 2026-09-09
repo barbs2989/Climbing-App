@@ -13,6 +13,16 @@
 // performs and then asks the DATABASE, not the screen. A screen assertion cannot see this class:
 // the optimistic local state renders perfectly, which is exactly why six defects survived.
 //
+// WHAT IT COVERS TODAY -- THREE of the six, stated as a count so it cannot quietly stall.
+//   1. onboarding (#1576): disciplines and a grade typed in, then read back out of `profiles`
+//      and off the screen after a reload.
+//   2. the crew (#1554): a row a real account opens, found by a DIFFERENT real account through
+//      crew_listings.
+//   3. remove-friend (#1563): a connection a real account removes, asked of `connections` and
+//      then of the screen after a reload.
+// The three still uncovered are #1569's reliability ratio and connect button and #1576's route
+// share. Each needs its own two-account or reload shape; none is covered by a screen assertion.
+//
 //   node scripts/check-new-climber-journey.mjs
 //
 // HAND-RUN, and the reason is a credential rule rather than a preference. It creates a REAL
@@ -27,6 +37,7 @@ import { chromium } from "playwright-core";
 import { createFixture, sweepOrphans, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.mjs";
 import { SUPABASE_URL, requireServiceKey, anonKey } from "./lib/supabase-env.mjs";
 import { settledText } from "./lib/render-settle.mjs";
+import { tapByName } from "./lib/tap-by-name.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const log = (m) => console.log(m);
@@ -342,6 +353,116 @@ try {
     if (crewId) await fetch(`${SUPABASE_URL}/rest/v1/crews?id=eq.${crewId}`, { method: "DELETE", headers: H }).catch(() => {});
   }
 
+  // ---- PHASE 3: A FRIEND A REAL CLIMBER REMOVES STAYS REMOVED ----------------------------------
+  // #1563. "Remove friend" filtered local state and toasted success while `removeConnection` sat
+  // imported and called from NOWHERE -- so a climber tapped Remove, was told it worked, the row
+  // vanished, and the connection was still there on the next load.
+  //
+  // NOTHING COULD SEE IT, and the near misses are why this belongs in a walk rather than a static
+  // gate: check:writes forbids a success message in front of a write whose FAILURE is
+  // unobservable, and check:claims one for a write that only runs signed-in -- neither can see a
+  // toast in front of NO WRITE AT ALL. Every screen assertion passed throughout, because the
+  // optimistic local state rendered perfectly. That is the shape all six defects shared.
+  //
+  // probe-remove-friend-persists.mjs is scoped to the HANDLER's source; this is the round trip --
+  // a real account taps Remove in the real overlay, and then the DATABASE is asked whether the row
+  // actually went, and a RELOAD asked whether the friend stays gone.
+  const connFilter = `or=(and(requester.eq.${uid},addressee.eq.${fixture.mate.id}),and(requester.eq.${fixture.mate.id},addressee.eq.${uid}))`;
+  const connRows = async () => {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/connections?select=id,status&${connFilter}`, { headers: H });
+    if (!r.ok) dead(`could not read the connections table: ${r.status} ${await r.text()}`);
+    return r.json();
+  };
+
+  // THE BASELINE IS LOAD-BEARING, exactly as it is for onboarding above. "the row is gone after
+  // Remove" proves nothing unless it was there first, and an account with no connection would
+  // satisfy every assertion below whatever Remove did.
+  const connBefore = await connRows();
+  if (connBefore.length === 1) ok("the owner and the mate are connected — 1 row in `connections`");
+  else bad(`expected exactly 1 connection row before removal, found ${connBefore.length} — every assertion below would be vacuous`);
+
+  // THE CREW NAV BUTTON CARRIES A BADGE, so an exact-text click misses it. crewBadgeN renders an
+  // unread/invite count INSIDE the button, and this fixture seats the owner as INVITED in a second
+  // crew -- so innerText is not "Crew" for exactly the account this walk uses. The aria-label is
+  // authored and does not move with the count, which is what tapByName's anchoring is for. Same
+  // lesson as the Crew SUB-tab bar one line down, one level up the nav.
+  if (!(await tapByName(page, "Crew"))) dead("no Crew tab");
+  await settledText(page);
+  // BY ACCESSIBLE NAME, never by text: the Crew sub-tab buttons render their badge count INSIDE
+  // the control, so textContent is "Friends1" and every exact-text strategy misses. tapByName's
+  // `^label(,|$)` anchoring is what accepts both "Friends" and "Friends, 1".
+  if (!(await tapByName(page, "Friends"))) dead("no Friends sub-view on the Crew tab");
+  await settledText(page);
+  const friendsViewBefore = await page.evaluate(() => document.body.innerText || "");
+  if (friendsViewBefore.length < 200) dead(`the Crew:Friends view rendered ${friendsViewBefore.length} chars — nothing below would mean anything`);
+
+  // The Remove control lives in the FriendsList OVERLAY, not on the inline list, and the overlay
+  // opens from "See all (N) →" -- matched by PREFIX because the count is inside the label, the
+  // same reason tapByName exists.
+  const openedList = await page.evaluate(() => {
+    const el = [...document.querySelectorAll("button")].find((b) => /^See all\b/.test((b.innerText || "").trim()));
+    if (!el) return false;
+    el.click(); return true;
+  });
+  if (!openedList) dead("no 'See all' control on Crew:Friends — the friends overlay could not be opened");
+  await settledText(page);
+
+  // Read the friend's name AS THE APP RENDERS IT rather than deriving it. pubName() gates the
+  // display name on show_name and otherwise falls back to a handle built from the name, so a
+  // walk that computed the expected string would be re-implementing a rule that can move -- and
+  // would then agree with itself whatever the app did.
+  const rowNames = await page.evaluate(() => {
+    return [...document.querySelectorAll("button")]
+      .filter((b) => (b.innerText || "").trim() === "Remove")
+      .map((b) => {
+        const row = b.parentElement;
+        const lines = ((row && row.innerText) || "").split("\n").map((s) => s.trim()).filter(Boolean);
+        return lines[0] || "";
+      });
+  });
+  // EXACTLY ONE, so the click is attributable. With two friends on screen this walk would remove
+  // an arbitrary one and then assert about the pair, which is how a guard reports a pass for the
+  // wrong reason.
+  if (rowNames.length !== 1) {
+    dead(`expected exactly 1 friend row with a Remove control, found ${rowNames.length} — the click would not be attributable`);
+  }
+  const friendName = rowNames[0];
+  if (!friendName) dead("the friend row rendered no name — Remove would be asserted against a blank row");
+  ok(`the friends list shows 1 friend (${friendName}) with a Remove control`);
+
+  const clickedRemove = await page.evaluate(() => {
+    const b = [...document.querySelectorAll("button")].filter((x) => (x.innerText || "").trim() === "Remove");
+    if (b.length !== 1) return false;
+    b[0].click(); return true;
+  });
+  if (!clickedRemove) dead("the Remove control could not be clicked");
+  await settledText(page);
+  await new Promise((r) => setTimeout(r, 2500));
+
+  // ---- THE ACTUAL QUESTION: DID THE REMOVAL REACH THE DATABASE? --------------------------------
+  const connAfter = await connRows();
+  if (connAfter.length === 0) ok("the connection row is GONE from the database");
+  else bad(`"Remove" changed the screen and left the connection in the database (${connAfter.length} row(s) still there) — the climber is told it worked and the friend is back on the next load`);
+
+  // ---- AND IS THE FRIEND STILL GONE AFTER A RELOAD? --------------------------------------------
+  // The delete is necessary and not sufficient: a hydration that re-adds them would put the
+  // friend back on screen with the row already gone.
+  await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
+  await settledText(page);
+  if (!(await tapByName(page, "Crew"))) dead("no Crew tab after the reload");
+  await settledText(page);
+  if (!(await tapByName(page, "Friends"))) dead("no Friends sub-view after the reload");
+  await settledText(page);
+  const friendsViewAfter = await page.evaluate(() => document.body.innerText || "");
+  // FAIL CLOSED: a screen that rendered nothing satisfies every "is absent" assertion below.
+  if (friendsViewAfter.length < 200) dead(`the Crew:Friends view rendered ${friendsViewAfter.length} chars after the reload — its silence is not evidence`);
+  if (!friendsViewAfter.includes(friendName)) ok(`after a reload ${friendName} is no longer in the friends list`);
+  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive`);
+  const removeControlsAfter = await page.evaluate(() =>
+    [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Remove").length);
+  if (removeControlsAfter === 0) ok("no friend rows remain — the account really has no connections");
+  else bad(`${removeControlsAfter} friend row(s) still offer Remove after the reload`);
+
   if (pageErrors.length) bad(`uncaught page errors: ${pageErrors.slice(0, 3).join(" | ")}`);
   else ok("no uncaught page errors during the journey");
 } finally {
@@ -354,5 +475,5 @@ try {
 }
 
 console.log(fails ? `\ncheck:new-climber-journey FAILED — ${fails} problem(s) a new climber would hit.`
-                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, and the crew they open is found by another real climber.");
+                  : "\ncheck:new-climber-journey: ok — what a new climber enters survives a reload, the crew they open is found by another real climber, and a friend they remove stays removed.");
 process.exit(fails ? 1 : 0);
