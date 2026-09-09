@@ -106,6 +106,7 @@ npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
+npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
 npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
@@ -4489,6 +4490,40 @@ the total when deciding where a new guard belongs.
     on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
     alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
     on a count alone. Routes with no estimate are counted and reported, never scored.
+- **`check:impossible-leg`** asserts that the waypoint list never prints a leg distance its own
+  two pins make impossible. The route page renders *"N.N mi from last"* between consecutive pins
+  as `wp.distMi - prev.distMi`, and **473 of the 2,405 legs the app prints, on 261 routes, are
+  shorter than the great-circle distance between the two pins they span** — counted through the
+  hydration the app uses (`normalizeWaypoints` then `tidyWaypoints`, which reorders and
+  de-duplicates, so the raw array order is not what renders) — `wa_luna_glacier` printed **0.0 mi**
+  for a leg whose pins are **14.2 miles** apart, `wa_lizard_mountain_south_route` 3.7 mi for one
+  that is 16.3. A trail cannot be shorter than its own chord, so this needs no prose and no
+  judgement. Static SSR, so it sits in `npm run build`.
+  - **IT IS THE PER-LEG FORM OF `audit:waypoint-distances`, WHICH IS WHY IT IS LARGER.** That
+    audit measures the CUMULATIVE distance from the trailhead and reports 211 pins on 118 routes.
+    A route can be clean cumulatively and still print an impossible leg, and that audit's skip
+    rules — a placeholder coordinate, a `distMi` that does not start at 0, a non-monotonic list —
+    put routes out of its frame that still render a leg distance to a climber.
+  - **THE HONEST ANSWER IS NO NUMBER, NOT A DIFFERENT ONE.** Substituting the straight line is
+    forbidden for the reason `campDistMi` already records in core — a chord is not a trail
+    distance — and it would trade a number a climber can see is wrong for one they cannot. The
+    **elevation** on the same row is a separate record and is untouched; dropping it too would be
+    the [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **ONE-SIDED, like every audit in this family.** A leg LONGER than the chord is every real
+    trail; only shorter is impossible. Flagging the other direction would suppress almost every
+    distance on the site, which is why two of the cases assert that a 40-mile leg across a 4-mile
+    chord is kept.
+  - **PURELY GEOMETRIC, so it needs no knowledge of which convention the row uses.** 57 of 653 WA
+    routes store a `distMi` that is not cumulative from the trailhead, where the app's own
+    subtraction is meaningless anyway; this catches those without a second rule. It also covers
+    the 3 routes storing a BACKWARDS pair, since the app prints `Math.abs(segMi)` and the
+    magnitude is what has to be possible — the ordering is `audit:waypoint-order`'s subject.
+  - **An UNPLACED pin cannot contradict anything**, so the stored number stands. Suppressing it
+    there would remove a distance from every route whose pins carry no coordinate — a guard
+    flagging correct work, which is the failure this file records under a dozen other names.
+  - Fails **closed** on a missing `legMi` export and on a waypoint list that did not render, so an
+    absent distance can never read as a suppressed one. Proven non-vacuous by reverting `legMi` to
+    the old subtraction: exactly **2** assertions fail, and the file is restored byte-identically.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
   three contributors must land in the same cluster or the correction sits pending **forever** —

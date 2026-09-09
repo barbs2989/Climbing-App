@@ -702,6 +702,33 @@ const WP_TYPE_MAP={trailhead:"Trailhead","trailhead/pass":"Trailhead",summit:"Su
    already records, where a missing blob coordinate produced a 12,215 km "disagreement".
    A row that says "not on the map above" while a pin sits there, or offers a tap that pans to
    nothing, is the failure this prevents. Requires BOTH coordinates and rejects a blank. */
+/* A LEG CANNOT BE SHORTER THAN THE STRAIGHT LINE BETWEEN ITS OWN TWO PINS, and the route page was
+   printing 473 that are. `RouteDetail` renders "N.N mi from last" between waypoints as
+   `wp.distMi - prev.distMi`, and 473 of the 2,405 legs it prints, on 261 routes, are smaller
+   than the great-circle distance between the two pins — `wa_luna_glacier` prints **0.0 mi** for a
+   leg whose pins are 14.2 miles apart. That is impossible rather than merely suspicious, and it
+   needs no prose and no judgement to know it: it is the per-LEG form of what
+   audit:waypoint-distances measures cumulatively from the trailhead.
+
+   THE HONEST ANSWER IS NO NUMBER, NOT A DIFFERENT ONE. Substituting the straight line is
+   forbidden for the reason `campDistMi` already records two hundred lines down — a chord is not
+   a trail distance, and printing one as the other trades a number a climber can see is wrong for
+   one they cannot. The elevation change on the same row is untouched; only the mileage goes.
+
+   PURELY GEOMETRIC, so it does not have to know which convention the row uses. 57 of 653 WA
+   routes store a `distMi` that is not cumulative from the trailhead, where the app's own
+   subtraction is meaningless anyway; this catches those too without a second rule. 2% of slack
+   for a value stored to a tenth of a mile, the same tolerance audit:waypoint-distances uses. */
+export function legMi(prev,wp){
+  if(!prev||!wp)return null;
+  const a=_uNum(prev.distMi),b=_uNum(wp.distMi);
+  if(a===null||b===null)return null;
+  const seg=Math.abs(b-a);
+  if(!wpPlaced(prev)||!wpPlaced(wp))return seg;
+  const chord=distMiles({lat:Number(prev.lat),lng:Number(prev.lng)},{lat:Number(wp.lat),lng:Number(wp.lng)});
+  if(!Number.isFinite(chord))return seg;
+  return seg<chord*0.98?null:seg;
+}
 export function wpPlaced(w){if(!w)return false;const la=w.lat,ln=w.lng;if(la==null||ln==null||la===""||ln==="")return false;return Number.isFinite(Number(la))&&Number.isFinite(Number(ln));}
 function wpType(w){const raw=String((w&&w.type)||"").trim();if(!raw)return "";const k=raw.toLowerCase();return WP_TYPE_MAP[k]||(raw.charAt(0).toUpperCase()+raw.slice(1));}
 function wpIs(w,t){return wpType(w)===t;}
