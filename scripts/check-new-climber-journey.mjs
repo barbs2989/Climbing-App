@@ -458,10 +458,16 @@ try {
   if (friendsViewAfter.length < 200) dead(`the Crew:Friends view rendered ${friendsViewAfter.length} chars after the reload — its silence is not evidence`);
   if (!friendsViewAfter.includes(friendName)) ok(`after a reload ${friendName} is no longer in the friends list`);
   else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive`);
-  const removeControlsAfter = await page.evaluate(() =>
-    [...document.querySelectorAll("button")].filter((b) => (b.innerText || "").trim() === "Remove").length);
-  if (removeControlsAfter === 0) ok("no friend rows remain — the account really has no connections");
-  else bad(`${removeControlsAfter} friend row(s) still offer Remove after the reload`);
+  // THE OPENER IS THE FALSIFIABLE TEST HERE, AND A REMOVE-CONTROL COUNT IS NOT.
+  // "See all (N)" renders only on `connections.length > 0`, so its absence is a direct
+  // consequence of the removal having stuck. Counting Remove controls instead passes
+  // VACUOUSLY: they live in the OVERLAY, which is not open after a reload, so that count is
+  // 0 whatever the database holds. Found by reading the injected run, where it printed a
+  // cheerful `ok` beside two failures — the assertion could not fail in this position.
+  const openerAfter = await page.evaluate(() =>
+    [...document.querySelectorAll("button")].filter((b) => /^See all\b/.test((b.innerText || "").trim())).length);
+  if (openerAfter === 0) ok("Crew:Friends offers no 'See all' — the account really has no connections");
+  else bad("Crew:Friends still offers 'See all' after the reload — the connection list is not empty");
 
   if (pageErrors.length) bad(`uncaught page errors: ${pageErrors.slice(0, 3).join(" | ")}`);
   else ok("no uncaught page errors during the journey");
