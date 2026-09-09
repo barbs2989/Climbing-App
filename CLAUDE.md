@@ -2135,6 +2135,56 @@ the total when deciding where a new guard belongs.
     carry it, and hydration uses `!!p.resume_public` rather than `!== false`: an omitted column
     then **hides a button** instead of exposing a résumé. The two mistakes do not cost the same,
     so the default is not symmetric.
+  - **THAT PREDICTION CAME TRUE AND NAMED THE WRONG MECHANISM — IT WAS THE MAPPING, NOT THE
+    SELECT, AND IT HAD TWO INSTANCES.** *"The same shape returns the moment a new `profiles` select
+    forgets the column"* is what the bullet above says to watch for; both selects still carry it and
+    the leak was live anyway, because a row has to be *mapped* onto a climber before anything reads
+    it and **two mappings dropped the field the select had gone to the trouble of fetching**.
+    - **`RealClimberRow`** — the row in partner BROWSE *and* in a name SEARCH, so every signed-in
+      climber. Its `_cand` carried no `resumePublic`, so `undefined !== false` offered the résumé of
+      a climber who had made it private. It also printed a **bare `{p.name}`**, showing the real
+      name of a climber who had turned *"Show my real name publicly"* off — with their handle
+      rendered underneath it — and dropped `username`, so opening that profile put it through
+      `pubName`, which then derives a handle **from the real name** (`"Robin Belay"` →
+      `@robinbelay`, which need not be theirs). #1619's second defect, one surface over.
+    - **`FullProfile`'s own real-profile memo**, which is the general case. It re-hydrates `name`,
+      `username`, `bio`, `location`, grades and disciplines from an authoritative `select("*")` and
+      re-hydrated **neither privacy field** — so `climber.resumePublic` was whatever the CALL SITE
+      happened to carry, and the component's own comment says call sites arrive with *"only a few
+      fields (id/name/avatar from a member chip or search row)"*. Reading both there closes it for
+      every caller at once rather than one chip at a time.
+    - **The fallback is asymmetric on purpose**, and it is the half a reviewer should check:
+      `p.resume_public != null ? !!p.resume_public : !!climber.resumePublic`. While the row is
+      loading `p` is `{}`, so an unknown column degrades to **hide**. Being briefly wrong about a
+      button costs a reload; being wrong the other way publishes a résumé somebody made private.
+      Reachable rather than permanent — `profiles public read` is `using (true)` (`0009`, refined
+      by `0095`), so the loaded branch really does arrive.
+    - **TWO FIXES THAT MASK EACH OTHER READ AS TWO UNNECESSARY FIXES.** Reverting `_cand` alone
+      leaves the screen correct (the memo catches it) and reverting the memo alone leaves it
+      correct (`_cand` catches it), so a suite testing them one at a time reports **both** as
+      redundant. Defence in depth is invisible to a one-at-a-time suite **by construction** — that
+      is what depth means. Two things fix it: the historical case reverts **every** half at once,
+      and there is a fixture only ONE guard can protect — a bare member chip carrying
+      `{id,name,avatar}`, where `_cand` is out of the picture and the memo is all that is left.
+      Without that fixture the memo half is untestable and reads as dead code.
+    - Proven by `scripts/oneoff/probe-partner-browse-row-honours-privacy.mjs`, which asserts the
+      mapping as SOURCE and then **renders** `FullProfile` to prove the consequence — the source
+      half alone rests on a reading of a gate rather than on its behaviour. It executes the row's
+      own `_cand` literal with `new Function` rather than re-typing it, because a hand-typed copy
+      would agree with itself whatever `RealClimberRow` does, which is the entire question.
+      Injection-tested **9/9**, each edit proven **by checksum** and the file restored
+      byte-identically; **two cases must stay SILENT** (a reordered field list and the fallback
+      written longhand are both correct work).
+    - **Three SSR traps, all recorded elsewhere in this file and all met again here.** `react` and
+      `@tanstack/react-query` must be **external** or esbuild inlines a second copy and every hook
+      throws *"Invalid hook call"*; the bundle must be written **inside the project**, because with
+      react external node resolves it from the nearest `node_modules` and a temp dir has none; and
+      `FullProfile` ends in `createPortal(…, document.body)`, which SSR cannot do — the portal is
+      flattened and `document` stubbed, since portals are PLACEMENT (`check:overlays`' subject) and
+      this probe asks about CONTENT. **The 400-char floor is what exposed the first of those**: it
+      reported a 68-char render *while the next assertion printed a vacuous `ok`*.
+    - **Scope the assertion to the BUTTON's own label, not the word.** A profile says *"résumé"* in
+      several places, so a whole-markup match reported a correct render as broken.
   - **THE OWNER'S OWN READ-BACK USES `!== false`, DELIBERATELY THE OTHER WAY.** Until 0177 is
     applied the column is simply absent, and reading that as *private* would silently withdraw a
     résumé the account has always shown. **An absent column must not look like a choice.**
