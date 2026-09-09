@@ -279,6 +279,38 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   fail("the vouch row's points do not reach the markup");
 } else ok(`the server rows' points render (they total ${serverTotal})`);
 
+
+// ---- 5. ONE CLIMBER, ONE SCORE — INCLUDING WHERE IT GATES AN ACTION ----
+// SECTION 5. Sections 1-4 are about what the Profile DISPLAYS. This is the other half: a group with
+// a "Trust 55+ only" policy REFUSES A JOIN on that number, and `groupTrustShortfall` used to take
+// the climber and call vScore itself — the CLIENT model — while the Profile and every other climber
+// see the SERVER one. The app enforced a group's policy on a number that appears nowhere, and could
+// tell you that you are trust 14 and then admit you to a 55+ group.
+//
+// ASSERTED AS SOURCE because the call sites are click handlers: standing up a group screen to drive
+// a join is far more than the question is worth, and the property is structural — the function must
+// take a NUMBER, so a second derivation is impossible rather than merely absent.
+//
+// AND AT A COUNT OF TWO. The two join handlers are byte-identical; fixing one leaves half the app
+// gating on a different score, which is the split this whole change exists to remove.
+{
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+
+  cases++;
+  const i = app.indexOf("function groupTrustShortfall");
+  const body = i < 0 ? "" : app.slice(i, app.indexOf("}", app.indexOf("return", i)) + 1);
+  if (!body) dead("groupTrustShortfall not found in ClimbMatch.jsx — the assertions below are vacuous");
+  if (/vScore\s*\(/.test(body)) {
+    fail("groupTrustShortfall derives its own score — a group's policy would be enforced on a number the app never shows");
+  } else ok("the group-join gate does not derive a second score");
+
+  cases++;
+  const n = app.split("groupTrustShortfall(cl,myTrustScore)").length - 1;
+  if (n !== 2) fail(`the join gate reads the displayed score in ${n} handler(s), expected 2 — the two are byte-identical, so half the app would gate on something else`);
+  else ok("both join handlers gate on the score the app displays");
+}
+
+
 clean();
 if (failures) {
   console.error(`\ncheck:trust-breakdown: ${failures} failure(s) across ${cases} case(s).`);
