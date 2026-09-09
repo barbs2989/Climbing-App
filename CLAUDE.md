@@ -7502,7 +7502,28 @@ the correction knows the screen is wrong, and they have no way to report it.
     pin of each cluster made the verdict depend on row order and **hid that finding entirely** —
     the worst of the six, at 939 ft. The printout lists every distinct name/elevation for the same
     reason: with only the first shown, the row read as a mismatch the reader could not see.
-  - **The result on WA: 28 splits -> 6 findings, 7 context, 15 under the ground threshold.**
+  - **FOUR OF THE SIX ARE REPAIRED, AND THE AUDIT CONFIRMS IT: 6 -> 2.**
+    `scripts/oneoff/fix-summit-pins-on-the-flank.mjs` moved **13 summit pins on 4 peaks** — North
+    Early Winters Spire (4 routes), Mount Baker (6), Gilbert Peak (1), Guye Peak (2) — each gated
+    on three records that share no input: the donor's ground within 200 ft of the peak's stated
+    elevation, a 250 ft+ drop to the coordinate being replaced, that coordinate NOT a local maximum
+    on the ground, and the GNIS feature closer to the donor. Only the coordinate moves; every
+    stated elevation is left alone. What remains is exactly what the script declined: **Mount
+    Stuart** (six coordinates, no single wrong cluster) and **Burgundy Spire** (a climbers' name
+    the gazetteer does not hold, so the third record does not exist).
+    - **GUYE'S MECHANISM IS VISIBLE.** `wa_blood_sport` carries a correctly-typed Topout,
+      *"Blood Sport crag"* at 3,400 ft, at exactly `47.442,-121.411` — and two other routes put
+      their *"Guye Peak"* SUMMIT pin on that same coordinate. Two routes' summit is the crag's
+      topout, copied. The repair moves pins **by name**, so the crag pin is untouched.
+    - **THREE APPLY ATTEMPTS REFUSED AND WROTE NOTHING, on different peaks each time**, and the
+      cause was measured with curl rather than guessed: `epqs.nationalmap.gov` was returning HTTP
+      500s and connection failures — 2 of 5, then 0 of 6. That is the fail-closed path working
+      (`terrain.mjs` returns null, never 0), not a finding about the catalog. `summitProbe` gained
+      a `tries` budget for it (default 4 unchanged; the repair passes 12) — a **more patient
+      measurement, not a looser gate**. With ~40 readings needed and each failing independently,
+      the odds of a clean pass collapse, which is why three runs in a row refused.
+  - **The result on WA before that repair: 28 splits -> 6 findings, 7 context, 15 under the
+    ground threshold.**
     That tail moves run to run — a later run on a loaded box read **14 quiet and 1 NOT MEASURED**
     (Glacier Peak, 0 of 2 coordinates read) because 3DEP timed out. That is the fail-closed path
     working, not a change in the catalog: the findings and the context bucket were identical.
@@ -9477,6 +9498,11 @@ one click past where the probe walks, so nothing had reported it at all.
       client-only `useState` with no DB hydration at all, reset on sign-in, so there is no read to
       fail. That it never persists for a real account is a separate gap, not an outage lie. Check
       whether a count has a query behind it before flagging it.
+      - **THAT SEPARATE GAP IS CLOSED and the verdict above is unchanged**, which is why the note
+        is amended rather than deleted. Bookmarks persist to IndexedDB keyed by account
+        (`savedAreaIds`/`saveAreaIds`, guarded by `check:offline-claims` §7), so the tile no longer
+        reads 0 after a reload — and it is still not a query, so an outage still cannot make it
+        lie. A stated gap that has since closed sits in the worklist looking like work.
     - **Two neighbouring strings on that screen were checked and deliberately left alone.**
       *"Loading climbers…"* is not a defect — the real-accounts panel already branches on
       `browseRes.error` with honest copy, and react-query was still retrying at settle time, so

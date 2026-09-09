@@ -2499,7 +2499,18 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     var h=String(x.hours||"").trim();if(h)o.hours=h;
     return o;}).filter(function(x){return x.name||x.notes;});
   if(f.type==="sections")return (vals.climbingRoute||[]).map(function(x,i){return {n:i+1,label:String(x.label||"").trim(),class:String(x.cls||"").trim(),notes:String(x.notes||"").trim()};}).filter(function(x){return x.label||x.notes;});
-  if(f.type==="pitches")return (vals.pitchDetail||[]).map(function(p,i){return {n:i+1,grade:p.grade||"",lengthM:parseInt(p.len)||null,gear:p.gear||"",note:p.notes||"",bolts:0,anchor:"",crux:false,photos:[],comments:[]};}).filter(function(p){return p.grade||p.gear||p.note||p.lengthM;});if(f.type==="waypoints")return (vals.waypoints||[]).filter(function(w){return w.name||w.lat||w.note||w.directions;}).map(function(w){return {type:w.type,name:w.name||w.type,lat:w.lat?parseFloat(w.lat):null,lng:w.lng?parseFloat(w.lng):null,elev:w.elev?(uImp()?parseInt(w.elev):Math.round(parseInt(w.elev)*3.28084)):null,distMi:w.distMi?(uImp()?parseFloat(w.distMi):Math.round(parseFloat(w.distMi)/1.60934*100)/100):null,note:w.note||"",directions:w.directions||""};});if(f.type==="itinerary")return itinDraftToStructured(vals.itinerary);if(f.type==="bivy")return (vals.bivy||[]).filter(function(b){return b.name&&String(b.name).trim();}).map(function(b){
+  if(f.type==="pitches")return (vals.pitchDetail||[]).map(function(p,i){
+    /* IT READ `p.len`, A KEY NO EDITOR ROW HAS EVER CARRIED. Every row is
+       {pitch,grade,lengthM,gear,notes,anchor,bolts,crux}, so parseInt(undefined)||null
+       dropped every length a climber typed — and because the filter below tests the
+       OUTPUT lengthM, a pitch carrying only a length vanished ENTIRELY, under a success
+       toast. The comment above the editor records this private {grade,len,notes} shape
+       being removed from the SUMMARY strings; the submit path kept it.
+       bolts/anchor/crux were hardcoded empty over whatever was entered. Numbers go in as
+       NUMBERS, matching the stored rows and the variants branch above. */
+    var _len=parseInt(p.lengthM,10),_bolts=parseInt(p.bolts,10);
+    return {n:i+1,grade:p.grade||"",lengthM:isFinite(_len)?_len:null,gear:p.gear||"",note:p.notes||"",bolts:isFinite(_bolts)?_bolts:0,anchor:String(p.anchor||"").trim(),crux:!!p.crux,photos:[],comments:[]};
+  }).filter(function(p){return p.grade||p.gear||p.note||p.lengthM||p.anchor||p.bolts||p.crux;});if(f.type==="waypoints")return (vals.waypoints||[]).filter(function(w){return w.name||w.lat||w.note||w.directions;}).map(function(w){return {type:w.type,name:w.name||w.type,lat:w.lat?parseFloat(w.lat):null,lng:w.lng?parseFloat(w.lng):null,elev:w.elev?(uImp()?parseInt(w.elev):Math.round(parseInt(w.elev)*3.28084)):null,distMi:w.distMi?(uImp()?parseFloat(w.distMi):Math.round(parseFloat(w.distMi)/1.60934*100)/100):null,note:w.note||"",directions:w.directions||""};});if(f.type==="itinerary")return itinDraftToStructured(vals.itinerary);if(f.type==="bivy")return (vals.bivy||[]).filter(function(b){return b.name&&String(b.name).trim();}).map(function(b){
   /* elev goes to the DB in FEET, converted from whatever the reader's units are — the same
      handling as a waypoint elevation two branches up. This matters more than it looks: the
      column already holds two conventions (`elev` feet, legacy `elevM` metres) and writing a
