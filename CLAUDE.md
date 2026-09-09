@@ -25,7 +25,7 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:sample-content-removable # the sample content really does come out with the flag (in build)
-npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
+npm run check:seed-only-surfaces # a component reachable ONLY on the seed path renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
@@ -9337,6 +9337,58 @@ the correction knows the screen is wrong, and they have no way to report it.
     `RouteFinderPanel`, `DbSuggestedClimbs`), so they are superseded rather than lost — but *"it
     was replaced"* and *"we forgot to wire it"* are the two things a reader cannot tell apart
     without a reason written down, which is what `SEED_ONLY` is for.
+  - **AND TEN WAS ITSELF SHORT, BECAUSE THE GUARD COULD SEE ONLY ONE SPELLING OF THE SEED BRANCH.
+    It is FOURTEEN.** The pruning anchored on `!USE_DB && …`, and there is exactly **one** of those
+    in `ClimbMatch.jsx` — against **22 `USE_DB ? live : SEED` ternaries and 6 `if`/`else` branches**
+    across the three app files, measured by
+    `scripts/oneoff/measure-usedb-branch-spellings.mjs`. A component rendered only in a
+    ternary's **alternate** is exactly as dead as one inside the `&&` region, and four were counted
+    **live**: `Guides`, `GuideDashboard`, `GuideApply`, and `AvailCal` transitively through
+    `Guides`. Its own header described the Climbs tab as a ternary while its code matched the `&&`
+    form — *the shape it was written to catch, one level up, in the guard itself.*
+  - **THE HOLE COST SOMETHING WITHIN THE HOUR, WHICH IS WHY IT EARNS THE ENTRY.** The units work
+    left *"the FILTER labels"* open and named the guide radius chips — `Within 50 / 100 / 250 mi` —
+    among them. Those chips are inside `Guides`. **This guard's green output was the evidence they
+    were reachable**, so converting them would have been a change no climber could ever see: the
+    exact failure the guard exists to prevent, arrived at by trusting the guard. Check the branch
+    before polishing a control, and check that the guard can SEE the branch.
+    `scripts/oneoff/measure-imperial-control-labels.mjs` is what asked the question — it classifies
+    every imperial unit written as a string LITERAL by the component that owns it, which is how the
+    RouteFinder length buckets turned out to be dead and the live ones turned out to be elsewhere.
+    Re-running it after the widening moves the guide radius chips from *reachable* to *dead*,
+    101 → 98: the same instrument, a different answer, because the census under it got wider.
+  - **AND IT HAD ALREADY HAPPENED, IN A PR MERGED THE SAME AFTERNOON.** #1670 opens *"the units
+    question is what put me in the file"* — the identical open item — and fixes a real off-by-one in
+    the length-bucket labels plus a genuine two-copy consolidation into `ROUTE_LENGTHS` /
+    `routeLengthLabel()`. Every one of those sites is in **`RouteFinder`** and `passesFilters`, i.e.
+    the seed path, and `lib/DbAreaBrowser.jsx` — which owns the **live** length filter — never
+    imports either helper and still carries its own `LEN_BUCKETS` vocabulary. Correct work, on a
+    surface no climber reaches, from an author the census told was reachable.
+    **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
+    half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
+    label claims. What is still open there is only the units question — those labels are imperial
+    whatever the setting.
+  - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
+    LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
+    *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
+    had the fact in its own declaration list while the guard whose entire subject is that fact
+    reported the component live. Nothing reconciles two guards' vocabularies, and a census is only
+    as good as the branches it can see.
+  - **STRICTLY ADDITIVE, asserted rather than assumed.** Pruning more edges can only move a
+    component from live to seed-only, because `seedOnly` filters on `!live.has(n)` — a component
+    with any live path is untouched, including one rendered in **both** halves of a ternary.
+    Measured before and after: all ten already-declared entries still report `ok` and the four new
+    ones are the entire difference.
+  - **THE FOUR ARE DECLARED, NOT REVIVED, and `AvailCal` is the one worth reading.** The other
+    three are superseded (`DbGuides`, `DbGuideDashboard`, `DbGuideApply`, all in `lib/`). `AvailCal`
+    has no counterpart and **could not have one**: the live inquiry flow in `lib/DbGuides.jsx`
+    takes dates as a **free-text field** (`placeholder="Dates you're thinking of"`) rather than from
+    a guide's published availability, and **no availability, calendar, slot or booking column exists
+    anywhere in `scripts/schema-snapshot.json`** — so a revived calendar would have nothing to draw
+    and would render empty for every guide. The `AreaLatest` shape exactly: feature work gated on
+    data that does not exist, not a wiring fix. **Checked by reading the live form rather than by
+    grepping for "calendar"** — a first pass concluded "no date picker" and nearly wrote a negative
+    claim that was half wrong.
   - **REACHABILITY MUST BE TRANSITIVE, and a one-hop version is wrong in BOTH directions.**
     Measured while writing it: a direct *"is it rendered outside the region?"* test called
     `SearchSplit` and `ViewToggle` dead, and both are live — the
@@ -9359,13 +9411,22 @@ the correction knows the screen is wrong, and they have no way to report it.
     `GettingThere` needs no counterpart: its one unique capability — a directions link to the crag
     — is already ported into `DbAreaBrowser`, and the rest showed one arbitrary representative
     route's `access` as the **area's** fact.
-  - Fails **closed** five ways, each of which prints identically to a clean app: a missing or
-    duplicated `!USE_DB` branch (`ANCHOR LOST`), a file that does not parse, fewer than 100
-    components, fewer than 100 render sites, and a located-but-empty seed region.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-seed-only-cases.mjs`), each case proving its
-    edit landed **by checksum** and restoring byte-identically. **Case 6 must stay SILENT** — a
-    component rendered on *both* paths is correct work, and a guard flagging it would tell authors
-    to un-wire live code. Case 5 pins the transitivity. Two harness bugs read as guard misses
+  - Fails **closed** six ways, each of which prints identically to a clean app: a missing or
+    duplicated `!USE_DB &&` branch (`ANCHOR LOST`), **no `USE_DB ? … : …` conditional found at
+    all**, a file that does not parse, fewer than 100 components, fewer than 100 render sites, and
+    a located-but-empty seed region. The ternary floor matters for the same reason the `&&` anchor
+    does: with that recogniser broken, four dead components read as live and the run prints a clean
+    sweep — which is exactly what it did for this guard's whole life before the widening.
+  - Injection-tested **12/12** (`scripts/oneoff/inject-seed-only-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring byte-identically. **Cases 6 and 9 must stay SILENT** —
+    a component rendered on *both* paths, or in the LIVE half of a ternary, is correct work, and a
+    guard flagging either would tell authors to un-wire live code. Case 5 pins the transitivity.
+    Cases 7 and 8 are the two spellings the widening closed. **Cases 11 and 12 edit the GUARD
+    rather than the app, because that is where the defect was**: 11 removes the ternary pruning and
+    requires the four new declarations to go **stale**, which is the A/B proving the widening is
+    load-bearing rather than decorative, and 12 breaks the recogniser and requires a **closed**
+    failure. The first six were **re-run after the traversal change** before anything else was
+    believed — this file's own rule for `check:dead-props`, applied here. Two harness bugs read as guard misses
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*
