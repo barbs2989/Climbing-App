@@ -65,6 +65,7 @@ npm run check:policy-claims # no legal surface claims a control or a capability 
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
+npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
 npm run check:profile-claims # the résumé and the trust card claim only what they can support (in build)
 npm run check:float-plan-persistence # a form on a sub-tab must survive leaving it — float plan AND planner (in build)
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
@@ -2487,6 +2488,79 @@ the total when deciding where a new guard belongs.
     now, which is what an author adding a switch properly would do, leaving the module as the only
     thing out of step. **Checksum movement proves an edit happened, not that it was the right one** —
     the fourth time this file records that.
+
+- **`check:count-matches-its-list`** asserts that **a count agrees with the list under it**, on one
+  screen. Static (one source read), so it sits in `npm run build`.
+  - **`check:ui` ALREADY ASSERTS THIS ACROSS TWO SCREENS** — #1203, where the Profile said *"3
+    active"* and the Logbook *"4 climbs to go"* about one list. **Home does it to ITSELF, twice**,
+    and no browser walk can see either: both surfaces are correct in isolation, and only their
+    combination is a lie.
+  - **HOME SAID "NOTHING NEEDS YOU RIGHT NOW" WHILE LISTING WHAT DID.** Its *UNFINISHED BUSINESS*
+    list builds from **eight** sources; the empty-state gate tested **five**. The two that were
+    missing are the ones a real account actually has: **`myCrewInvitesQ`**, the DB-backed crews
+    another climber has invited you to, and **`crewsNeedingMyDay`**, a crew waiting on you to
+    confirm a date. So a climber with a pending invite got *"Nothing needs you right now"* rendered
+    **directly above the invite that needed them**.
+  - **THREE SURFACES DERIVE "WHAT NEEDS YOU" AND ONLY ONE WAS COMPLETE.** `crewBadgeN` (the Crew tab
+    badge) counted all five request kinds plus the day confirmations; the bell counted three of
+    them; Home's `reqN` counted four. Three longhand expressions, written out separately, agreeing
+    by luck where they agreed at all. `_pendingForMe` is now the one definition the Crew badge and
+    Home's gate both use — **a hoist is not a single source of truth until every site uses it**,
+    the lesson the group roster's `_memN` already records, where the heading held a second copy of
+    the expression it was hoisted to remove.
+  - **AND THE BELL BADGED A NUMBER ITS PANEL DOES NOT LIST.** The badge counted
+    `friendReqIn.length+crewReqIn.length+groupReqs.length+<unread notifs>`, while `NotifPanel`
+    renders only `requests` and `notifs` — **neither crew invites nor group requests**. On the
+    seeded demo that is three phantom items, and with only those pending the bell reads **3** over
+    a panel whose own `empty` test says you have nothing. `_reqClimber` returns **null** for a seed
+    id absent from `CLIMBERS`, so even the friend half could exceed its own list. The badge counts
+    `_notifRequests.length` now — **the same array the panel is handed**, so the number and the list
+    cannot disagree by construction.
+  - **WIDENING THE PANEL WOULD BE THE OTHER FIX AND IS NOT THIS ONE.** Making `NotifPanel` list crew
+    invites and group requests is a change to what that screen is; making the badge stop promising
+    them is not. Recorded so the smaller fix is not read as a verdict on the larger question.
+  - **THE RULE IS ONE-DIRECTIONAL, and that is what keeps it quiet.** A gate may legitimately cover
+    MORE than the list beneath it — Home also tests unread notifications and the friend feed, which
+    *UNFINISHED BUSINESS* does not build from. What it may never do is cover **less**: claim
+    emptiness while something it renders is waiting. Injection case
+    `SILENT-gate-covers-more-than-the-list` pins that, and without it this guard would fire on
+    correct work.
+  - **THE SOURCES ARE READ OFF THE LIST, never listed in the guard** — so a source added to
+    *UNFINISHED BUSINESS* is covered without editing this file, which is the whole point, since
+    every one of the live defects was a source added to the list and not to the gate. The
+    `(x.data||[]).forEach` shape is matched as well as the bare identifier: matching only the
+    identifier misses **exactly** the react-query list that was the defect.
+  - **IT FOUND ITS THIRD INSTANCE BEFORE IT WAS WRITTEN.** Two were found by reading; enumerating
+    the list's sources mechanically produced `crewsNeedingMyDay`, which nobody had noticed. *Ask the
+    list what it builds from rather than reading the gate for what looks missing.*
+  - **ITS FIRST VERSION REPORTED COVERAGE IT DID NOT HAVE, and only the injection said so.** It
+    appended `reqN`'s and `_pendingForMe`'s definitions to the gate text **unconditionally** — so
+    with `reqN` reverted to its longhand the gate no longer reached `_pendingForMe`, and the guard
+    still credited it with everything `_pendingForMe` counts. It printed a clean sweep over a gate
+    that had just lost a source. Expansion is **transitive from what the gate actually names** now,
+    bounded by a short-definition cap so an arithmetic helper is followed and a component never is.
+  - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a moved
+    *UNFINISHED BUSINESS* builder, one that parses short, fewer than five sources out of it (with
+    none, every comparison passes **vacuously**), a moved empty-state gate, a `requests` prop that
+    does not close, and a missing bell. It also fails if the *"Nothing needs you"* copy is gone —
+    a gate guarding nothing is not a gate.
+  - **A WIDER DETECTOR WAS MEASURED AND REJECTED — do not re-derive it.**
+    `scripts/oneoff/measure-controls-rendered-from-a-loop.mjs` sizes the general blind spot this
+    came from: **349 of 1,133 interactive JSX sites (31%) sit inside a `.map`**, so a scan reading
+    controls one site at a time sees one control where the screen has several. The tempting
+    generalisation is *"a looped control whose accessible name cannot vary with the member
+    announces identically for every member"* — built, measured, **137 findings and almost all
+    correct work**: a row's *Accept* / *Decline* / *Message* button is named by its own text and is
+    ordinary, ubiquitous UI. The class is not separable from correct code by that test, so no
+    detector was shipped. **Visiting a looped site once is the RIGHT answer for "does this control
+    have a name"; it is the wrong answer only for a question about the MEMBERS**, and a census is
+    the case where that bites.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-count-matches-its-list-cases.mjs`), each case
+    proving its edit landed **by checksum**, restoring byte-identically, and judged on the guard's
+    **own failure text**. Cases 1-3 are the three real defects. **Case 5 invents a source nobody has
+    thought of** and adds it to the list only, which is what shows the rule generalises past the
+    three it was written from. **Two must stay SILENT** — a source added to both, and a gate that
+    covers more than its list.
 
 - **`check:overlay-scroll`** opens every overlay and asserts that no scrollable region
   inside one chains its scroll to the page behind it. An overlay is `position:fixed` over a
