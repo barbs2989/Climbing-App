@@ -18581,3 +18581,121 @@ it has changed.
 
 Next batch continues alphabetically after `wa_eldorado_peak_northeast_face`
 (see progress file).
+
+## Batch 255 (2026-09-09, pass 5)
+
+Checked: `wa_eldorado_peak_west_arete`, `wa_elephant_butte_standard_route`,
+`wa_elephant_head_standard`, `wa_energizer_bunny`, `wa_fire_on_the_mountain`,
+`wa_fish_whistle`, `wa_flora_mountain_southwest_slope`, `wa_flycatcher_buttress`.
+
+**Fixed (5 routes, 7 statements):**
+
+- `wa_elephant_head_standard` — `high_point_ft` (7990) disagreed with this
+  same row's own summit waypoint (7995), its own approach prose ("the
+  peak's high point at 7,995 ft"), and the `areas` table's own
+  `elevation_ft` for `wa_elephant_head` (7995); corrected to 7995. Its
+  top-level `permit` column was also blank while the row's own `access`
+  jsonb already carried the correct, fully-researched answer (free
+  self-issue Glacier Peak Wilderness permit, Downey Creek trailhead
+  kiosk); re-homed that into the scalar column.
+- `wa_energizer_bunny` — `watch_out` was a bare newline-joined string
+  instead of the jsonb array the rest of the catalog uses (same shape
+  defect batch 251 found systemic on the Liberty Bell group). Re-homed
+  into an array, and corrected one internal number while doing so:
+  "Altitude weather hazard (8,900+ ft)" doesn't match Prusik Peak's
+  summit, which this same row's `high_point_ft`, its own summit waypoint,
+  the `areas` table's `elevation_ft` (8008), and Wikipedia (8,008 ft) all
+  agree on — corrected to "(8,000+ ft)".
+- `wa_fish_whistle` — same string-vs-array shape defect; re-homed, and one
+  bullet dropped rather than kept verbatim: "Altitude and sustained
+  climbing—8000+ feet... altitude sickness possible" is not this route.
+  Vesper Peak's summit is 6,214–6,221 ft by every record this row and
+  Wikipedia carry, nowhere near 8,000 ft, and altitude sickness is not a
+  credible hazard at that elevation — reads as boilerplate stranded from a
+  much higher peak's template. Removed rather than re-numbered, since a
+  corrected number wouldn't make the underlying claim true either.
+- `wa_flora_mountain_southwest_slope` — top-level `permit` stated generic
+  "North Cascades NP complex ... backcountry permit" boilerplate that
+  contradicts this same row's own carefully researched `access` jsonb: the
+  Stehekin corridor is NPS, but Bird Creek Camp and the summit — where a
+  party actually camps and climbs — sit in the Glacier Peak Wilderness
+  (Okanogan-Wenatchee NF, USFS), which needs no permit at all. Corroborated
+  externally (Mountaineers/SummitPost/trip-report route descriptions for
+  Devore Creek Trail / Bird Creek Camp independently confirm the Glacier
+  Peak Wilderness boundary and the approach details). Re-homed the row's
+  own `access.permit` language into the scalar column.
+- `wa_flycatcher_buttress` — same `watch_out` shape defect, content
+  unchanged. Separately, `road.name` said "Blue Lake Trailhead" while this
+  same row's own trailhead waypoint explicitly warns "NOT Blue Lake TH...
+  two trailheads on opposite sides of the pass serve this same summit...
+  getting that wrong costs you an hour," and `approach_logistics.trailhead`
+  independently agrees on "SR-20 Hairpin / Pond Pullout (east of Washington
+  Pass)". The road block was naming the wrong one of two trailheads —
+  exactly the mistake its own waypoint note exists to warn a climber away
+  from. Corrected to match the row's own waypoint/approach_logistics; the
+  seasonal SR-20 pass-closure note was preserved.
+
+**Flagged for human review (not written to SQL):**
+
+- `wa_elephant_butte_standard_route` — its `access.closures` states the
+  Sourdough Mountain Trail (the standard approach from Diablo) "was closed
+  from the 2023 Sourdough Fire until reopening on May 12, 2026," phrased as
+  already resolved. WebSearch results were inconsistent about whether a
+  *new* fire closed the same SR-20/Diablo corridor again later in 2026 —
+  one synthesized answer claimed an "August 2026" re-closure, a follow-up
+  search clarified the underlying articles it was drawing on were actually
+  from 2023, not 2026. I could not reach nps.gov's fire-closures page
+  (blocked by this environment's egress proxy, see below) to settle it
+  either way. Given wildfire closures recur seasonally in this exact
+  corridor and the stakes of getting it wrong, flagging rather than
+  guessing: a human should check
+  https://www.nps.gov/noca/planyourvisit/fire-closures.htm directly before
+  trusting this row's closure text this season.
+- `wa_elephant_head_standard` — its approach prose never actually narrates
+  crossing the Dana Glacier, though `hazards`/`watch_out` and a `Hazard`
+  waypoint both call it out as a likely crux. Not a factual error (nothing
+  it says is wrong), just an editorial completeness gap; left for a human
+  rather than auto-rewriting prose from other fields.
+
+**Clean:** `wa_eldorado_peak_west_arete` (elevation 8,872 ft confirmed via
+Wikipedia and the `areas` table; gain/dist/permit all consistent — the
+waypoint's 8868 vs. stored 8872 is a 4 ft difference, noise-level, not
+touched). `wa_fire_on_the_mountain` (its `dist_km`, when doubled by the
+app's own round-trip rendering, lands on a suspiciously round 20.0 mi —
+looked like the dist_km "doubling bug" CLAUDE.md warns about, but running
+`audit-distances.mjs` against the live catalog shows it's classified as the
+documented "half-round-trip" convention, which the audit's own header says
+displays correctly and must not be swept; left alone).
+
+Ran `npm run audit:distances -- --state wa` against the live catalog as a
+sanity check (the repo copy currently references a dropped `routes.source`
+column and 400s — patched a scratch copy outside the repo to drop that
+column from the query rather than editing anything under `scripts/`,
+per this audit's guardrails). None of this batch's 8 routes appear in its
+"long approach" or "misfiled non-alpine" findings.
+
+Web access this run: WebSearch worked throughout and settled Prusik Peak,
+Vesper Peak, Eldorado Peak, North Early Winters Spire, and Flora Mountain's
+elevations, plus the Devore Creek Trail / Glacier Peak Wilderness
+jurisdiction question. **WebFetch was blocked by this environment's egress
+proxy for every domain attempted this run** (en.wikipedia.org, nps.gov,
+ncascades.org) — same finding as batches 253–254, now four consecutive
+batches where WebFetch has been unusable and WebSearch's synthesized
+answers are the only source, which is worth a human's attention if a
+future batch needs primary-source text rather than a search summary (as
+the Sourdough Fire flag above did).
+
+SQL: `audits/sql/2026-09-09-batch-255.sql` (validated with `check:sql` — 6
+of 7 write targets directly checkable, all passing "target id exists"; the
+7th (`wa_fish_whistle`'s `watch_out` update) trips the checker's known
+"no literal id predicate" false positive because its re-homed content is
+verbatim-preserved prose that itself contains semicolons, which the
+checker's naive semicolon-based statement splitter cannot see past — real
+SQL parses it fine since the semicolons sit inside a quoted string literal.
+Manually confirmed that row's id and current `watch_out` shape against the
+live table before writing. File is 9.1KB, over the tool's ~4KB paste-size
+soft limit — split into chunks before pasting into the SQL Editor, per the
+checker's own advice. No DELETE, no destructive statement.)
+
+Next batch continues alphabetically after `wa_flycatcher_buttress` (see
+progress file).
