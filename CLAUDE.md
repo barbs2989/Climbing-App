@@ -39,7 +39,7 @@ npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up t
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
-npm run check:waypoint-dedupe # a route has ONE summit and MORE THAN ONE trailhead (in build)
+npm run check:waypoint-dedupe # a route has ONE summit, MORE THAN ONE trailhead, and an upper AND a lower (in build)
 npm run check:logged-times # a climber’s logged time reaches the planner (in build)
 npm run check:pitch-discount # the climbing-time discount is bounded, and the planner SAYS it applied (in build)
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -4989,10 +4989,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     written first and exited first, so gutting `SINGLETON` reported *"this run proved nothing"*
     rather than naming the summit rule that broke. The named assertions report first now; the floor
     only has a job on a clean run. Same mistake `check:clickable` and `check:field-renders` record.
-  - Injection-tested **5/5** (`scripts/oneoff/inject-waypoint-dedupe-cases.mjs`), each case proving
-    its edit landed **by checksum** and restoring `lib/waypoints.js` byte-identically. Case 1 is the
-    real historical rule. **Case 5 must stay SILENT** — the same alternation with its members
-    swapped is not a change. **A case reported `WRONG FAILURE` while the guard was innocent**: it
+  - **A SECOND WAY THE SAME FUNCTION ATE A GENUINE PIN, found by asking the neighbouring rule the
+    same question.** `nameKey()` strips words that "carry no distinguishing information", and
+    **eight of the sixteen were POSITIONAL** — `upper|lower|west|east|north|south|true|main`. A
+    positional word is usually the *whole* distinction: `wa_bedal_peak_standard` stores **"Upper
+    Boulder Field"** and **"Lower Boulder Field"** as two Hazard pins **435 m apart**, and they
+    collapsed to one key and one pin; `wa_davis_peak_nc_southwest` the same with **"Upper cliff
+    band"** / **"Lower cliff band"**, 184 m apart. Both are **hazards**, so a climber saw one marker
+    where the route records two.
+  - **The defect the STOP list exists for is not handled by the STOP list at all**, which is what
+    makes the removal safe: *"Forbidden Peak summit"* vs *"Summit"* is a **SINGLETON**, merged on
+    TYPE before any name is compared. So the generic nouns still earn their place and the positional
+    adjectives do not. Behaviour-diffed across all 1,011 WA routes carrying waypoints: **exactly TWO
+    render a different list, both gaining the eaten pin, and NONE renders fewer.**
+  - **Both directions are asserted**, because a guard that only ever demands MORE pins is satisfied
+    by gutting `STOP` entirely: two spellings of one junction (an article, a case difference, a
+    generic noun) must still merge. `no-name-merge` is that case.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-waypoint-dedupe-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `lib/waypoints.js` byte-identically. Cases 1 and 5 are the two
+    real historical rules. **TWO cases must stay SILENT** — either list with its members reordered is
+    not a change. **A case reported `WRONG FAILURE` while the guard was innocent**: it
     matched `"FAIL - " + expect`, and the guard prefixes each line with the assertion's own label,
     so a guard firing on exactly the right rule read as a miss. Match on a FAIL **line**, not from
     its start.

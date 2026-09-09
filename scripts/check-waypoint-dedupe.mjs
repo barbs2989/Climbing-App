@@ -91,6 +91,38 @@ function check(label, pass, detail) {
   check("two TOPOUT pins still merge", out.length === 1, out.length === 1 ? "" : `left ${out.length}`);
 }
 
+// ---------------------------------------------------------------- a positional word disambiguates
+// nameKey() strips words that "carry no distinguishing information". Eight POSITIONAL ones were in
+// that list, and they are usually the whole distinction: "Upper Boulder Field" and "Lower Boulder
+// Field" on wa_bedal_peak_standard are two Hazard pins 435 m apart, and they merged into one. Both
+// pairs below are the real stored names, at their real separation.
+{
+  const out = dedupeWaypoints([
+    { type: "Hazard", name: "Lower Boulder Field", lat: 48.1234, lng: -121.4321 },
+    { type: "Hazard", name: "Upper Boulder Field", lat: 48.1273, lng: -121.4321 }, // ~435 m
+  ]);
+  check("UPPER and LOWER of one feature are two places", out.length === 2,
+    out.length === 2 ? "" : `merged to ${out.length}: ${out.map((w) => w.name).join(" | ")}`);
+}
+{
+  const out = dedupeWaypoints([
+    { type: "Junction", name: "North Fork crossing", lat: 48.5, lng: -121.5 },
+    { type: "Junction", name: "South Fork crossing", lat: 48.52, lng: -121.5 },
+  ]);
+  check("NORTH and SOUTH of one feature are two places", out.length === 2,
+    out.length === 2 ? "" : `merged to ${out.length}`);
+}
+// ...and the stripping that remains still earns its place: an article, a case difference and a
+// generic noun are noise, so two spellings of ONE junction still collapse.
+{
+  const out = dedupeWaypoints([
+    { type: "Junction", name: "the Cascade Pass Trail junction" },
+    { type: "Junction", name: "Cascade Pass trail junction" },
+  ]);
+  check("two spellings of ONE junction still merge", out.length === 1,
+    out.length === 1 ? "" : `left ${out.length}`);
+}
+
 // ---------------------------------------------------------------- ordinary types are untouched
 {
   const out = dedupeWaypoints([
@@ -114,7 +146,9 @@ if (fails.length) {
   console.error("`trailhead` is back in SINGLETON in lib/waypoints.js, or the merge rules moved.");
   console.error("A route has one summit; it does not have one trailhead. Two stored trailhead pins");
   console.error("mean two genuine approaches — merging them puts one start's NAME on the other's");
-  console.error("COORDINATE, which is the pin the Directions button drives to.");
+  console.error("COORDINATE, which is the pin the Directions button drives to. And a positional word");
+  console.error("(upper/lower/north/south/...) is not noise in a name: it is usually the whole");
+  console.error("distinction, so stripping it in nameKey() deletes one of two real places.");
   process.exit(1);
 }
 
@@ -135,9 +169,10 @@ if (fails.length) {
     process.exit(1);
   }
 }
-if (ok.length < 6) {
+if (ok.length < 9) {
   console.error(`FAIL - only ${ok.length} assertion(s) ran. A short run is a broken guard.`);
   process.exit(1);
 }
 console.log(`ok - waypoint dedupe: ${ok.length} assertions.`);
-console.log("  a route has ONE summit and MORE THAN ONE trailhead; both still merge on place and on name.");
+console.log("  a route has ONE summit and MORE THAN ONE trailhead, and upper/lower name two places;");
+console.log("  two pins for one place still merge, on the spot or on the name.");
