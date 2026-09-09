@@ -17912,3 +17912,111 @@ live row's exact stored value before being used.
 
 Next batch continues alphabetically after `wa_colfax_peak_cosley_houston` (see progress
 file).
+
+## 2026-09-09 — Pass 5, Batch 249
+
+Eight routes across seven peaks (Colfax Peak 2, Colonial Peak 1, Cutthroat Peak 1,
+Concord Tower 1, Copper Peak 1, Corteo Peak 1, Crater Mountain 1): Kimchi Suicide
+Volcano, Polish Route (Colfax); West Ridge / Colonial Glacier (Colonial); Complete South
+Buttress (Cutthroat); North Face (Concord Tower); South Route (Copper); Southwest
+Ridge / Standard Route (Corteo); Standard Route (Crater Mountain).
+
+**Fixed (SQL in `audits/sql/2026-09-09-batch-249.sql`):**
+- `wa_colfax_peak_kimchi_suicide_volcano`: `access.closures`, `road.status`, and
+  `road.driveNote` all still said Glacier Creek Road (FS-39) was closed to vehicles at
+  mile 3 "as of July 2026." This is the identical stale closure this audit fixed one
+  batch ago (2026-09-09, batch 248) on this route's sibling
+  `wa_colfax_peak_cosley_houston` — and the third sibling sharing this exact approach,
+  `wa_colfax_peak_polish_route`, already carries the corrected text (fixed in an earlier
+  batch, `access_checked_at` 2026-08-27). This route was simply missed at the time.
+  Re-confirmed via WebSearch (Cascadia Daily News, "Glacier Creek Road reopens following
+  washout repairs," 2026-08-20; a Snowater Resort trailhead-status page and an
+  AllTrails-adjacent trip-report mention both describe the road as drivable, with
+  potholes, as of 2026-08-25) that the road reopened to vehicles three weeks before this
+  audit, with no evidence of a new closure since. Updated all three fields to match the
+  now-corrected sibling language.
+- `wa_copper_peak_south_route`: the row's own `corrections` field recorded an unresolved
+  identity ambiguity between "Olympics Copper Mountain" (Class 2-3) and "North Cascades
+  Copper Peak" (glaciated, roped) and said it had been "treated as non-technical" to
+  match the Olympics peak — but every other field on the row (overview, hazards, gear,
+  gpx track near Holden Village/Railroad Creek, the `lists` field) already describes the
+  glaciated North Cascades/Entiat peak with roped Southeast Glacier travel and Class 3-4
+  terrain, contradicting the note. The area row (`wa_copper_peak`) is unambiguously
+  placed in the Entiat Mountains by its own path/coordinates, not the Olympics.
+  Confirmed via WebSearch (Wikipedia, "Copper Peak (Washington)") that this peak's
+  elevation is exactly 8,965 ft — matching the row's stored `high_point_ft` (8965) to the
+  foot — in the Entiat Mountains, Chelan County, 19th on the Bulger List, matching the
+  row's own `lists` entry ("Washington Bulger List (100 Highest) - #19") and consistent
+  with Wikipedia's stated Class 4-5 climbing. Rewrote `corrections` to record the
+  resolution rather than leave it describing a decision the row's own content
+  contradicts.
+- `wa_crater_mountain_standard_route`: `grade`, `grade_system`, and `grade_num` were all
+  null while `rock_grade` already held "Class 3, with one short Class 4 move (exposed)"
+  — the recurring null-top-level-grade-despite-populated-and-internally-consistent-
+  subfields defect this log has hit many times before (batches 6/10/17/19/26/30/31 and
+  others). Filled using the same compact "Class N-N" convention already used by this
+  exact batch's other Class 3-4 scrambles (Colonial Peak, Corteo Peak): `grade` = "Class
+  3-4", `grade_system` = "class", `grade_num` = 3. Not research — reconciling the row's
+  own already-populated `rock_grade` into the field the header grade pill actually reads,
+  per CLAUDE.md's rule that `grade` must hold a short grade rather than an explanation.
+
+**Confirmed clean / no issues found:**
+- `wa_colfax_peak_polish_route`: fully clean — the Glacier Creek Road closure text is
+  already correctly updated (fixed in an earlier batch), waypoints/timing/pitch_detail
+  internally consistent, high_point_ft (9,440 ft, Colfax Peak) matches WTA/general
+  sources.
+- `wa_complete_south_buttress` (Cutthroat Peak): gain_ft/loss_ft (3300/3300) reconcile
+  within normal noise against the shared South Buttress trailhead (4,947 ft) and summit
+  (8,066 ft); rack/rope fields internally consistent with the row's own `corrections`
+  note (spokalpine.com rack cross-check, already documented).
+- `wa_concord_tower_north_face`: the elevation dispute already flagged in `data_quality`
+  (7,560 ft Mountain Project/WTA/StephAbegg vs. ~7,611-7,612 ft this file/ListsOfJohn) is
+  an existing, appropriately-documented "needs a clearer authoritative source" note, not
+  a new finding — left unchanged per the prior pass's own decision. Rappel/descent detail
+  internally consistent.
+- `wa_corteo_peak_southwest_ridge`: the id/name mismatch ("southeast_face" in the id vs.
+  Southwest Ridge content) is an already-reviewed, already-documented legacy naming
+  artifact (2026-07-28) — not touched, per guardrails and the row's own note.
+- `wa_crater_mountain_standard_route`: `road.status` claims SR-20 "fully reopened June
+  14, 2026 after emergency repairs" following the December 2025 washout at mileposts
+  142-148 — confirmed via WebSearch (WSDOT project page; Cascadia Daily News, "North
+  Cascades Highway reopens ahead of schedule") that the highway did fully reopen June 14,
+  2026, and found no evidence of a subsequent closure through this audit's date.
+
+**Needs human verification (not fixed — flagged only):**
+- `wa_colonial_peak_west_ridge`: `corrections` field reads "The routeId
+  'wa_colonial_peak_northeast' does not match the route's actual west-facing
+  aspect/name..." — but this route's actual id is `wa_colonial_peak_west_ridge`, and a
+  full-table search found no route with id `wa_colonial_peak_northeast` anywhere in the
+  catalog, past or present. The note does not describe any real discrepancy in the
+  current row (the aspect stored is "N," not "W," and a Northeast-vs-West-Ridge/North
+  mismatch would in any case be within the ridge-route tolerance CLAUDE.md's
+  `audit:aspect-name` documents — a ridge legitimately faces either side). Left this note
+  alone rather than guessing at its intent or clearing what might be a legitimate
+  artifact of a research process not visible from the row alone; a human should look at
+  whether this is a stale/misattributed note that should simply be deleted.
+
+Web access this run: WebSearch was reachable and used for the Glacier Creek Road
+reopening cross-check (Colfax Peak, corroborating batch 248's finding one batch later),
+the Copper Peak identity/elevation resolution, and the SR-20/Canyon Creek Trailhead
+reopening confirmation (Crater Mountain). No WebFetch attempts this run.
+
+SQL: `audits/sql/2026-09-09-batch-249.sql` (validated with `check:sql` — 5 write targets
+across 5 statements, every target id exists, no destructive delete. Flagged as a
+paste-size risk, ~7.4KB against the ~4KB soft paste limit — split into chunks when
+applying.)
+
+**Recurring operational note, repeated from batch 248 and several earlier batches
+(e.g. lines noting batch-80, and gain-floor/area-parent findings from around
+2026-08-08/09): this audit has now completed 249 batches across 5 passes and the SQL
+files in `audits/sql/` appear to accumulate rather than get applied — the Colfax Peak
+fix in this very batch is a case in point, needed only because the immediately prior
+batch's identical fix to a sibling route was never run against the live DB, so the
+sibling's stale data was still there to duplicate the diagnosis on. PR #811 has been
+open (as a draft) since roughly batch 200+ with no visible merge activity. A human
+should confirm whether any of this audit's proposed SQL is being applied to the live
+database, and if not, decide whether to start applying it, change the review cadence, or
+reconsider what form this recurring audit's output should take.**
+
+Next batch continues alphabetically after `wa_crater_mountain_standard_route` (see
+progress file).
