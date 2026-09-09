@@ -256,9 +256,46 @@ else fail("nothing calls saveAreaIds() — bookmarks are back to being lost on e
 if (/savedAreaIds\(/.test(cmS)) ok("...and reads them back through savedAreaIds()");
 else fail("nothing calls savedAreaIds() — saved areas are written and never read back");
 
+/* ── 8. SEARCH, NOT JUST BROWSE. ─────────────────────────────────────────────────────────────
+ * The browse chain (states -> children -> an area's own routes) has worked offline since the
+ * state download shipped. SEARCH went through three RPCs and had no fallback at all, so with no
+ * signal you could drill down through a downloaded catalog and never look anything up — "View
+ * all N", the in-area route finder and the area filter box each threw.
+ *
+ * THIS IS §2's SILENT HALF AGAIN, one feature over, and it is why the assertion lives here
+ * rather than only in the probe. probe-offline-subtree-search proves the READERS: 29 assertions
+ * that the offline filters admit exactly the rows the SQL admits. It says nothing about whether
+ * lib/db.js still CALLS them. Drop one `orOfflineExact` wrapper and the readers stay correct,
+ * every probe assertion stays green, no identifier moves — and the finder goes back to throwing
+ * at the trailhead. audit:silent-reverts says in its own closing caveat it cannot see that.
+ *
+ * orOfflineExact rather than orOffline, deliberately: these are FILTERED queries, so "no route
+ * matched" and "this area was never downloaded" are different facts. orOffline treats an empty
+ * result as absence — right for a route list, wrong here, and wrong twice for the COUNT, where
+ * the honest answer 0 is falsy and would rethrow every time. */
+console.log("\n8. SEARCH — the in-area finder and the area filter box read the device:");
+const SEARCH = [
+  ["useSubtreeRoutes", "offlineSubtreeRoutes", "the “View all N” finder"],
+  ["useSubtreeRouteCount", "offlineSubtreeRouteCount", "the finder's result count"],
+  ["useAreaSearch", "offlineAreaSearch", "the area filter box"],
+];
+if (/async function orOfflineExact\s*\(/.test(dbS)) ok("lib/db.js defines orOfflineExact()");
+else fail("lib/db.js no longer defines orOfflineExact() — the search hooks have no fallback helper");
+for (const [hookName, reader, what] of SEARCH) {
+  const body = dbS.match(new RegExp("export function " + hookName + "[\\s\\S]*?\\n}"));
+  if (!body) { dead("ANCHOR LOST: " + hookName + " is gone from lib/db.js — " + what + "'s offline path is unchecked"); continue; }
+  if (/orOfflineExact\(/.test(body[0])) ok(hookName + " is wrapped in orOfflineExact()");
+  else fail(hookName + " is NOT wrapped in orOfflineExact() — with no signal " + what + " throws again,\n"
+    + "       on a catalog that is sitting on the device.");
+  if (new RegExp(reader + "\\(").test(body[0])) ok("...with " + reader + " as its fallback");
+  else fail(hookName + "'s fallback is not " + reader + " — " + what + " reads nothing local");
+  if (new RegExp("export async function " + reader + "\\s*\\(").test(offS)) ok("...which lib/offline.js still defines");
+  else fail("lib/offline.js no longer defines " + reader + "()");
+}
+
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 18;
+const EXPECTED = 28;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");
@@ -269,5 +306,6 @@ if (bad) {
     + "the app actually stores. Over-claiming is the direction a climber cannot check.");
   process.exit(1);
 }
-console.log("\ncheck:offline-claims: ok — the trip pack really writes, reads and survives a reload ("
-  + ran + " assertions), and the surfaces still say what is NOT on the device.");
+console.log("\ncheck:offline-claims: ok — the trip pack really writes, reads and survives a reload, a\n"
+  + "downloaded state is searchable as well as browsable (" + ran + " assertions), and the surfaces\n"
+  + "still say what is NOT on the device.");

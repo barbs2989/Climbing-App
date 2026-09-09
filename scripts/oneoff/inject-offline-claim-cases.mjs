@@ -105,6 +105,14 @@ const CASES = [
     why: "§2 — the reader itself is renamed out from under lib/db.js",
     find: "export async function offlineRoutesByIds(", repl: "export async function offlineRoutesById2(" },
 
+  /* §8's silent half, and the reason that section is in the GUARD rather than only in
+   * probe-offline-subtree-search: the reader stays correct, the probe stays green at 29/29, and
+   * the in-area finder throws again the moment there is no signal. */
+  { name: "search-fallback-gone", file: DB, must: "fail", expect: "is NOT wrapped in orOfflineExact",
+    why: "§8 — the downloaded catalog can be browsed and no longer searched",
+    find: "queryFn: () => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
+    repl: "queryFn: (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
+
   { name: "hydration-gone", file: CM, must: "fail", expect: "never calls packedRouteIds",
     why: "§3 — the pack is empty after every reload however well the write worked",
     find: "packedRouteIds().then(", repl: "Promise.resolve([]).then(" },
