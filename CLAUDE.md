@@ -4791,6 +4791,30 @@ the total when deciding where a new guard belongs.
     fitted to these three — the *tightened until it no longer fires* failure `audit:silent-reverts`
     records. The audit is report-only and says so; three candidates a reader can settle in a
     minute is the intended cost, and the fix for a stale one is a line here, not a stricter regex.
+  - **DO NOT BUILD THE PITCH-COUNT SIBLING OF THIS AUDIT — measured 2026-09-09 and refused.**
+    *"Does a route's stored `pitches` disagree with a count in its own prose?"* is the same
+    question this audit answers for `rappels`, and the founding observation is real and on screen:
+    **Mount Stuart's North Ridge stores 20 pitches** while its own overview says *"roughly 18
+    pitches and 3,000 ft total"* and its PRO TIPS say *"a full day for ~18 pitches"* — three
+    numbers for one route on one page. `scripts/oneoff/measure-pitch-count-claims.mjs` sizes it
+    across all 8,365 WA routes: **115 state a count, 24 disagree with the stored value, and
+    reading them gives roughly THREE real** — ~15% precision, worse than `audit:area-parents`'
+    first draft, which this file already records as a mistake.
+    - **Prose states a pitch count for at least six reasons and only one is the route total**: a
+      **section** (*"the Runnels — roughly 3 pitches of steep ice"*), a **shared** section
+      (*"shares its first 3 pitches with A Servant To Liberty"*), a **different route named to warn
+      you off it** (*"a distinct, harder variation called 'North Face Direct' (5.9, 5 pitches) …
+      should not be confused"*), a **descent** (*"rappel the first 3 pitches"*), a **historical**
+      state (*"when the route reportedly had 9 pitches of ice; today's icefall is shorter"*), and a
+      **linked** count (*"many parties link it into just 4-5 pitches"*).
+    - And a **sum** can agree while no single number does — *"8 pitches to M&M Ledge, then shares
+      its final 3-4 pitches"* against a stored 11. Flagged, and correct.
+    - *A distinction that defeats a regex is a distinction a sweep will get wrong* — the same
+      conclusion this file reaches for the `guidebook` citation family. What survives is two or
+      three per-route data questions needing a **source**, not a transform:
+      `wa_cathedral_rock_northeast_buttress` (*"Overall grade III, 6 pitches"* against a stored 7),
+      `wa_chair_peak_east_face` (*"Rated 5.2 (PG13) over 3 pitches, 600 ft"* against 4), and
+      Stuart's 20-vs-18. **Report, do not sweep.**
 - **A CARD MUST NOT ADVERTISE A TOTAL IT CANNOT REACH.** Colorado 14ers rendered `0 / 53` while
   only **52** are tickable, and the gap printed *"+ 1 more on the full list — fills in as the
   catalog grows."* That 1 is **Mount Bross**, whose summit is privately owned and closed to the
@@ -9779,6 +9803,45 @@ their own Résumé showed an amber **"Unverified"** chip.
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
 
+- **TWO STAT SURFACES STATED LESS THAN THEY KNEW, and both were found by READING a CI capture
+  rather than by any guard.** Neither is a wiring fault — the column is populated, the identifier
+  is bound, the number is a number — which is why nothing sees them.
+  - **`1 vouches` on a partner card**, live on the `ui-screens` capture
+    (*"27 catches · 74 climbs · 1 vouches"*). The three stat chips carried a fixed plural in a
+    tuple and rendered `st[1]+" "+st[2]`, so a single catch, climb or vouch all read wrong.
+    **A CONVENTION VIOLATION, NOT A NEW RULE**: the app already singularises in **59** places —
+    54 as `!==1?"s":""` and 5 as `!==1?"es":""`, including `"catch"+(_slCaught===1?"":"es")` for
+    this exact word. The singulars are **declared** rather than derived, because dropping a
+    trailing `s` from *catches* gives *catche*; slot `[2]` stays the plural, since it is also the
+    React key and the discriminator in the `act` ternary beside it.
+  - **THE CLASS IS ONE SITE, MEASURED BY TWO SHAPES, AND THE OBVIOUS SCAN IS BLIND TO IT.** A scan
+    for a count welded to a **literal** plural returns **45** candidates and **none is reachable
+    at 1**: constants that can never be 1 (`RECENT_DAYS`, `MAX_WAYPOINTS`), `.toLocaleString()`
+    counts of thousands, `sibs.length+1` which is always ≥2, aria-labels built from an **index**
+    (*"Pitch 3 notes"*) rather than a count, and the *"Show all N …"* family, which is gated above
+    1 — alerts at `length>8`, friends at `length>5`. A scan for a count welded to a noun held in a
+    **variable** returns 21, of which **exactly one** is a count and a noun: this one. **The first
+    scan cannot see the defect that was actually on screen**, because the plural lives in `st[2]`
+    rather than in a string literal. *A single scan reporting 45 candidates while missing the one
+    real instance is worth more as a warning than as a worklist.*
+  - **A LABEL WITH NO VALUE UNDER IT: `High-factor catch ratio`.** The ratio existed only as the
+    **width of a `<Bar>`** — two nested divs with a percentage width, no role, no text, no aria —
+    so a screen reader read the label and stopped, and a sighted reader got a bar with no number.
+    The **#654** dangling-label shape, on a safety record.
+    - **Also a class of one, measured**: 8 `<Bar>` uses across the app and **seven state their
+      value in adjacent text** (*"COMPATIBILITY WITH YOU — 74%"*, `{cur}/5`, `{avg.toFixed(1)}`,
+      `{t.pct}%`). The eighth is this. No detector.
+    - **Computed ONCE (`_hfr`) so the sentence and the bar cannot disagree**, and `null`
+      distinguishes *"no catches, so there is no ratio"* from a genuine **0%**. A failed
+      `belay_catches` read keeps the **—** the three tiles above already show: printing *"0%"*
+      there would state a measurement the app does not have, which is the defect `unavailable`
+      exists to prevent, committed one line lower.
+  - Probes: `scripts/oneoff/probe-stat-chip-singulars.mjs` and
+    `scripts/oneoff/probe-catch-ratio-states-its-number.mjs`. Both **lift the expression out of
+    the source** with `ANCHOR LOST` rather than retyping it, and both assert the **negative**
+    direction — the plural must still render at 0 and 2, and the ratio must stay silent with no
+    catches — because a fix that singularised or captioned unconditionally passes any suite that
+    only checks the interesting case.
 - **A CLIMBER WHO HAD ONLY ASKED TO JOIN COUNTED AS A CREW MEMBER, AND HELD A SPOT.** `#1554`
   introduced the third crew status and the comment beside `allConfirmed` states the rule outright
   — *"Someone who has asked to join is not in the crew yet"* — and **enumerates the four readers it
