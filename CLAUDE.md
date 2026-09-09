@@ -62,7 +62,7 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
-npm run check:offline-claims # a ROUTE is never on the device; only a downloaded STATE is (in build)
+npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -107,6 +107,7 @@ npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
+npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
 npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
@@ -1567,6 +1568,23 @@ the total when deciding where a new guard belongs.
     was committed mid-suite and captured whichever revert happened to be live, shipping to main
     without the crew-invites gate — the branch was not what the green run measured. Check
     `git status` is clean *and* that no injection job is in flight before `git add`.
+    - **AND TWO RUNS OF ONE SUITE MUST NEVER OVERLAP, which is the same hazard and strictly
+      worse.** Both snapshot, edit and restore the same files, so run B's snapshot can capture
+      run A's injected text and then **"restore" it permanently**. Met for real on 2026-09-09:
+      a second `inject-offline-claim-cases` run was started while the first was still going, and
+      the working tree ended up holding `setTripPack`, `tripPack`, `dlPending`, a gutted
+      `saveAreaIds` call, the hydration effect **moved above the sign-in reset**, and one
+      reworded sentence in `RouteDetail.jsx` — each written back as though it were the original.
+    - **The RESULTS being worthless is the harmless half.** Cases reported `HARNESS BUG — 0
+      matches for its find string` and `MISSED` against a guard that was fine, which reads as a
+      guard defect and sends you editing correct code; the run before it had reported 12/15 for
+      the same reason. The corrupt **working tree** is the part that outlives the run, and one
+      leftover was found only because a later case's find string stopped matching.
+    - **A note was not enough, so it is now a LOCK.** `inject-offline-claim-cases.mjs` takes an
+      exclusive `wx` lockfile (released on exit, throw and SIGINT), **refuses to start unless the
+      guard is already green** — a dirty tree makes every case unattributable — and checksums
+      every file it may touch before and after, reporting `TREE NOT RESTORED` rather than
+      exiting 0 on a tree it has damaged. Copy those three when writing the next suite.
   - **THE PROFILE TAB'S OWN SECTIONS ARE NOW ASKED AND PROVEN, and this entry used to say the
     opposite in two different ways.** It read *"NOTHING HAS YET ASKED … `MyFiledReports` and
     `CatchLedger` are DB-backed and **unflagged** … an absence the fixture happens to share is
@@ -2140,80 +2158,124 @@ the total when deciding where a new guard belongs.
     are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
     and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
     a guard that only ever demands MORE marking would drive exactly that.
-- **`check:offline-claims`** asserts that **a route is never on the device; only a downloaded state
-  is**. Static (Babel over the two app files), so it sits in `npm run build`, at **1.65x
-  `check:policy-claims`** — comfortably under the 6-10s Babel guards.
-  - **QUOTED AS A RATIO, NOT A CLOCK, and that is not hedging.** Both numbers above were taken
-    back to back with `check:policy-claims` on one box, best of three; the individual readings
-    for that baseline were 3.3s, 5.0s and 8.6s, because several sessions build here at once.
-    A wall-clock figure from such a box is fiction — this file records a profile taken at load
-    450 that was off by 4x, and a guard read at 110s that measures 10.4s quiet. **What survives
-    load is where a guard sits relative to a sibling measured in the same minute.**
-  - **THE APP HAS TWO THINGS CALLED "OFFLINE" AND ONLY ONE IS REAL.** `downloadStateOffline()` in
-    `lib/offline.js` writes a state's whole areas+routes subtree into **IndexedDB**, and four
-    `lib/db.js` hooks fall back to its readers through `orOffline` — a genuine offline catalog,
-    reached from **Manage areas**. The other is `offline`, a `useState([])` list of route ids in
-    `ClimbMatch.jsx` that is **never persisted** (that file contains no `localStorage`, no
-    `sessionStorage` and no `indexedDB`) and is cleared by the sign-in reset. It is a **flag on a
-    route**, and nothing about that route is stored.
-  - **FIVE SURFACES RENDER THE FLAG AND FOUR DESCRIBED IT AS THE CATALOG.** A toast — *"Saved for
-    offline — works with no signal"*; a header button labelled **"Download"** (*"Save offline for
-    no-signal days"*); an Overview sidebar button *"Save to offline"* / *"Work without cell
-    service"*; and the Profile section *"Offline library"*, reading *"N routes bundled —
-    descriptions, topos & tracks ready with no signal"* over an empty state instructing the
-    climber to *"bundle the description, topo, gear, GPX and a conditions snapshot for the
-    backcountry"*. **Five things named, none stored.**
-  - **THE FIFTH SURFACE WAS ALREADY CORRECT, which is what makes this a class rather than a typo.**
-    The Plan tab's *Trip pack* says outright: *"Nothing here is cached on your device yet — the app
-    still needs a signal. Capture what you need before you go: tap **Download GPX** and open it in
-    a dedicated GPS/mapping app."* Somebody fixed one surface and left four — the *an instance
-    fixed by hand is not a class closed* shape, and the reason the repair **propagates that
-    surface's own vocabulary** rather than inventing wording.
-  - **IT IS THE DANGEROUS DIRECTION, and that is why it is worth a gate rather than a note.** A
-    climber taps a button that says **Download**, is told five things are bundled for the
-    backcountry, and may therefore **not** download the state — the one thing that would have
-    worked. They find out at the trailhead, where it cannot be checked. Over-claiming availability
-    is worse than offering nothing, and the word *Download* collided directly with the Plan tab's
-    **real** `Download GPX`.
-  - **THE GUARD FOUND A SIXTH SURFACE THE MANUAL SWEEP MISSED**, which is the whole argument for
-    it: a Logbook nav row rendering `bookmarks.length+" saved"+(offline.length?" · "+offline.length+" offline":"")`
-    — *"3 saved · 2 offline"*. Twelve strings were rewritten by hand across five surfaces and that
-    one still stood; the first run of the guard failed on it.
-  - **SCOPED STRUCTURALLY, MATCHED BY PHRASE, and the scoping is what makes the phrases safe.**
-    Regions come from the AST — the **innermost function or JSX element** enclosing a reference to
-    the trip-pack state — so the run asks about this feature's own surfaces rather than about the
-    file. Taking the nearest JSX element *unconditionally* lands on `<RouteDetail/>`, one element
-    carrying 59 props and 18,190 characters, which would sweep in every unrelated string in it;
-    preferring whichever of a function or an element comes first walking up is what bounds it.
-  - **The needles are a DENY-LIST and will be short again one day; that is stated rather than
-    hidden.** What keeps them honest is that they fire on an **assertion** only: a **negated**
-    sentence (*"Nothing here is cached"*, *"not cached"*) is correct copy, and a sentence naming
-    **Manage areas** is about the real feature. Both are injection cases that must stay **SILENT** —
-    a guard firing on either would tell an author to delete the honest wording it exists to protect.
-  - **SECTION 2 IS THE LOAD-BEARING HALF.** A guard that only ever *removes* claims is satisfied by
-    deleting the real feature's copy too, so the state-download surfaces must **keep** saying the
-    catalog works with no signal — for them it is **true**. `killreal` pins it.
-  - **THE FLOOR IS PER FILE, and a global one let a whole file go blind.** Renaming the trigger in
-    `RouteDetail.jsx` left ClimbMatch's 15 regions standing, so the first version reported a clean
-    sweep having inspected one file of two — the `check:control-names` defect exactly, whose floor
-    was *"at least one"* and which a **partial** restyle left checking 1 of 9. Measured 2026-09-03:
-    ClimbMatch **15 regions / 143 strings**, RouteDetail **23 / 45**; a blinded file yields 0.
-  - **A BUILD GATE RATHER THAN A PROBE**, for the reason `check:topo-outage-copy`,
-    `check:policy-claims` and `check:profile-claims` were each promoted: the repair changes
-    **strings and no name**, and `audit:silent-reverts` says in its own closing caveat that it
-    cannot see that. A stale-base squash could restore all twelve claims with every gate green.
-    Costs **~2.3s wall / 3.7s CPU** measured on a quiet box (load 3.8), against
-    `check:policy-claims`' 1.31s on the same box — well under the 6-10s Babel guards. **The
-    first timing of it read 0.34s and was FICTION**: the guard was copied to the project root
-    to time it, its `ROOT` is `dirname(import.meta.url) + ".."`, so `..` resolved to
-    `.claude/worktrees/` and it exited instantly on ENOENT. Run a guard from `scripts/`, or the
-    number measures a failed file open.
-  - Injection-tested **9/9** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
-    its edit landed **by checksum** and restoring the file byte-identically. Four are the real
-    historical defects restored verbatim; one is the sixth surface the guard itself found; two must
-    stay silent; two pin the per-file floors. **`renamed-cm` was a HARNESS bug first** — ClimbMatch
-    carries *two* triggers, so renaming one is correctly not a miss, and the guard's right answer
-    read as a defect until the case renamed the state as well.
+- **`check:offline-claims`** asserts that **an offline promise is backed by the write that makes it
+  true**. Static (Babel over the two app files plus a source read of `lib/db.js` and
+  `lib/offline.js`), so it sits in `npm run build`, at **1.34x `check:policy-claims`**.
+  - **QUOTED AS A RATIO, NOT A CLOCK, and that is not hedging.** Taken back to back with
+    `check:policy-claims` on one box, best of three. A wall-clock figure from this machine is
+    fiction — the three readings for this guard alone were **30.5s, 40.9s and 45.6s** while it
+    measures ~2.3s on a quiet box, and this file already records a profile taken at load 450 that
+    was off by 4x. **What survives load is where a guard sits relative to a sibling measured in the
+    same minute.**
+    - **THE RATIO IS MORE ROBUST THAN THE CLOCK AND IS NOT LOAD-PROOF EITHER**, which is worth
+      knowing before treating one as a fact. The pre-rewrite guard was recorded at **1.65x** by the
+      same method; this one measures **1.34x** having gained two source reads and lost nothing.
+      Some of that gap is real and some is contention, and the measurement cannot separate them.
+      Read a ratio as an order of magnitude, not a regression.
+  - **THIS GUARD NOW ASSERTS THE OPPOSITE OF WHAT IT USED TO, AND THE REVERSAL IS THE ENTRY.** Its
+    subject was *"a route is never on the device; only a downloaded state is"*, because the app had
+    two things called offline and one was a lie: `downloadStateOffline()` writes a state's whole
+    subtree to IndexedDB and four `lib/db.js` hooks read it back, while `offline` in
+    `ClimbMatch.jsx` was `useState([])` — a list of route ids, never persisted, cleared by the
+    sign-in reset, with **nothing about the route stored**. #1585 rewrote twelve strings to say so.
+    **The trip pack is a real download now**, so the copy that guard protected became false in the
+    other direction and a rule still forbidding those claims would forbid the fix. Same shape as
+    `check:policy-claims` §3, where gating a control made a policy sentence true and un-gating it
+    made the replacement false again: **a promise is only true relative to a build**, and a guard
+    pinning one has to move with it. The old assertions were *removed*, not reworded — an
+    assertion kept past the fact it describes is stale bookkeeping, including inside a guard.
+  - **WHAT PACKING ACTUALLY STORES, measured rather than described.** `packRouteOffline()` fetches
+    the route's own row with the same `areas` embed `useRoutesByIds` asks for and puts it in an
+    IndexedDB `pack` store: description, beta, approach, descent, pitch-by-pitch, gear, hazards,
+    waypoints, grades and the GPX track. **NOT** photos or topo images (`contributions`/`topos` plus
+    storage), **not** other climbers' condition reports (`contributions`/`climb_logs`), and **not**
+    map tiles — the service worker deliberately does not touch cross-origin requests. So the card
+    that lists what you have must keep naming what you do not, which is §4 and is the load-bearing
+    half: **a guard that only ever demands the mechanism EXISTS is satisfied by claiming
+    everything.**
+  - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
+    twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
+    the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
+    a thin embed both prints the word and suppresses `openRoute`'s backfill. That is a defect this
+    repo has already shipped once from exactly this kind of drift, recorded under
+    `check:area-name-embed`.
+  - **§2 IS THE SILENT HALF AND IS WHY THIS IS A GATE.** Every route the pack, the wishlist and the
+    logbook resolve comes through `useRoutesByIds`, which had **no offline fallback** — so with no
+    signal it threw, `dbRouteById` was empty, `routeById()` returned undefined for every packed
+    climb, and the list dropped the rows. Remove that one fallback and the write still works, the
+    copy still reads correctly, nothing renders differently, **no identifier moves** — and the pack
+    empties at the trailhead. `audit:silent-reverts` says in its own closing caveat that it cannot
+    see a change of that shape.
+  - **§3 ASSERTS AN ORDER, NOT A CALL.** The pack list is a mirror of the store, and the sign-in
+    reset clears `offline` on every `uid` transition — so a hydration effect declared **above** that
+    reset fills the list and is wiped microseconds later, leaving a signed-in climber with an empty
+    pack whose routes are on disk. That is precisely the defect `check:verification-fallback`
+    exists for, arriving on a second feature, and no render can see it. It is also why the effect is
+    keyed on `[uid]` rather than `[]`: the reset fires on the transition, so a mount-only hydration
+    loses the race by construction.
+  - **TWO OF THE OLD GUARD'S SIX NEEDLES WERE DEAD, and it went unnoticed for the life of the
+    rule.** It excused any sentence matching `\b(?:not|no|nothing|never|…)\b` as negated — and its
+    own `with no signal` and `no-signal days` needles **cannot match a sentence that does not
+    contain the word "no"**. Every claim phrased the most natural way excused itself, and a clean
+    run looked identical to a working one. Found by the guard passing on copy it should have caught,
+    not by reading it. §5 strips the no-signal idioms **before** testing for negation so the same
+    trap cannot return, and the surviving deny-list is narrowed to the things that genuinely are
+    still not stored. *A dead branch in a guard reads as coverage*, which this file records for
+    `check:policy-claims` and `check:screen-lists` and which arrives here a third time.
+  - **`indexedDB.open` WENT 1 → 2 AND THE UPGRADE IS IDEMPOTENT PER STORE, which is not
+    defensiveness.** Installs in the wild hold v1 (`areas`/`routes`/`meta`) and a fresh one starts
+    at 0, so a bare `createObjectStore` for the v1 set throws `ConstraintError` on the upgrade path
+    — that aborts the version-change transaction, fails the open, and takes the
+    **already-downloaded catalog** away from somebody who is offline. The one moment this database
+    is load-bearing is the one moment a botched upgrade would break it.
+    - **PROVEN, not reasoned about**: `scripts/oneoff/probe-offline-pack-roundtrip.mjs` builds a
+      **v1** database by hand — the shipped v1 shape, not whatever today's code creates — fills it
+      with a complete state, then reads it back through `lib/offline.js`'s own `openDb()` at v2.
+      13 assertions: the catalog survives, the pack round-trips, a seed marker never leaks into
+      `offlineRoutesByIds`, a packed row carries its area embed and NOT its `packedAt`, the pack
+      outlives `removeStateOffline`, and the completeness gate still refuses a half-downloaded
+      state by id. **No new dependency**: there is no `fake-indexeddb` here, so it ships a shim
+      implementing exactly the surface `lib/offline.js` uses — deliberately STRICT where the real
+      API is (`createObjectStore` on an existing name throws), because a lenient shim would pass
+      the upgrade whatever the code did and be testing itself. The real `packRouteOffline` runs:
+      `./supabase` is replaced by an esbuild plugin rather than the write being re-typed.
+    - Nothing else in the repo could have asked this. Every offline guard here is static, and the
+      browser guards walk a healthy network against a database they never downloaded to.
+  - **§7 IS THE SAME DEFECT ONE LIST OVER.** Saved areas were a `useState` seeded with two seed
+    ids, cleared on sign-in and written nowhere, so Home's *"Saved areas · N areas"* tile read **0**
+    after every reload however many you had saved. Now device-local and keyed by account, through
+    ONE `toggleBookmark` — there were two call sites holding two copies of the same three lines,
+    which is exactly how the persistence would have ended up on one of them. `savedAreaIds()`
+    returns **null** for "nothing was ever stored" as distinct from an empty list, or a bookmark you
+    had deliberately removed comes back on the next load.
+  - **The demo pack entry came OUT**, on the argument the `downloadedStates` comment beside it
+    already makes: now that packing really writes, a seeded entry claims a climb is on the device
+    when nothing is, and it is the one claim a climber cannot check until they are somewhere with
+    no signal.
+  - **A packed id the app cannot resolve now RENDERS**, rather than being dropped by
+    `if(!r)return null`. The heading counts `offline.length`; a filtered list under it is one fact
+    derived two ways on one screen, the defect recorded under the group roster. The placeholder row
+    stays removable, or an unreadable entry is stuck in the pack forever.
+  - Fails **closed**: an unreadable or unparseable source, a missing `useRoutesByIds` (`ANCHOR
+    LOST`), a sign-in reset that no longer clears `offline` (which would make the ordering test
+    vacuous), per-file region/string floors, and fewer than **18 assertions RUN** — a guard that
+    quietly stops asking half its questions still exits 0. That floor caught its own author
+    miscounting on the first run.
+  - **The floors are PER FILE.** A global floor is satisfied by the other file: renaming the trigger
+    in `RouteDetail.jsx` alone leaves ClimbMatch's regions standing, so the guard would report a
+    clean sweep having inspected one file of two — the `check:control-names` defect, whose floor was
+    *"at least one"* and which a **partial** restyle left checking 1 of 9.
+  - Injection-tested **15/15** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
+    its edit landed **by checksum**, restoring the file byte-identically, and **naming the text its
+    own failure must carry** — a case judged on the exit code alone is satisfied by a run that died
+    for an unrelated reason. Expectations are matched against **FAIL lines only**, never against the
+    text an assertion prints when it passes, which is a mistake this repo has made twice.
+    **`honest-claim` must stay SILENT and is the case the rewrite turns on**: before the pack was
+    real that sentence was the defect and now it is the feature, so a guard still firing on it would
+    tell an author to delete a true statement. `disclaimer-reworded` must stay silent too — §4 asks
+    whether the fact is stated, and a guard pinned to one phrasing forbids improving it.
+    `read-gone` is the one to keep: it leaves write, copy and hydration intact and removes only the
+    fallback.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
@@ -4563,6 +4625,61 @@ the total when deciding where a new guard belongs.
     on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
     alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
     on a count alone. Routes with no estimate are counted and reported, never scored.
+- **`check:impossible-leg`** asserts that the waypoint list never prints a leg distance its own
+  two pins make impossible. The route page renders *"N.N mi from last"* between consecutive pins
+  as `wp.distMi - prev.distMi`, and **473 of the 2,405 legs the app prints, on 261 routes, are
+  shorter than the great-circle distance between the two pins they span** — counted through the
+  hydration the app uses (`normalizeWaypoints` then `tidyWaypoints`, which reorders and
+  de-duplicates, so the raw array order is not what renders) — `wa_luna_glacier` printed **0.0 mi**
+  for a leg whose pins are **14.2 miles** apart, `wa_lizard_mountain_south_route` 3.7 mi for one
+  that is 16.3. A trail cannot be shorter than its own chord, so this needs no prose and no
+  judgement. Static SSR, so it sits in `npm run build`.
+  - **IT IS THE PER-LEG FORM OF `audit:waypoint-distances`, WHICH IS WHY IT IS LARGER.** That
+    audit measures the CUMULATIVE distance from the trailhead and reports 211 pins on 118 routes.
+    A route can be clean cumulatively and still print an impossible leg, and that audit's skip
+    rules — a placeholder coordinate, a `distMi` that does not start at 0, a non-monotonic list —
+    put routes out of its frame that still render a leg distance to a climber.
+  - **THE HONEST ANSWER IS NO NUMBER, NOT A DIFFERENT ONE.** Substituting the straight line is
+    forbidden for the reason `campDistMi` already records in core — a chord is not a trail
+    distance — and it would trade a number a climber can see is wrong for one they cannot. The
+    **elevation** on the same row is a separate record and is untouched; dropping it too would be
+    the [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+  - **ONE-SIDED, like every audit in this family.** A leg LONGER than the chord is every real
+    trail; only shorter is impossible. Flagging the other direction would suppress almost every
+    distance on the site, which is why two of the cases assert that a 40-mile leg across a 4-mile
+    chord is kept.
+  - **PURELY GEOMETRIC, so it needs no knowledge of which convention the row uses.** 57 of 653 WA
+    routes store a `distMi` that is not cumulative from the trailhead, where the app's own
+    subtraction is meaningless anyway; this catches those without a second rule. It also covers
+    the 3 routes storing a BACKWARDS pair, since the app prints `Math.abs(segMi)` and the
+    magnitude is what has to be possible — the ordering is `audit:waypoint-order`'s subject.
+  - **20% OF PRINTED LEG DISTANCES DISAPPEAR, AND THE SHAPE OF THAT IS MEASURED RATHER THAN
+    WAVED AT.** 473 of 2,405 is a lot of information to remove from a product, so: **23 routes
+    lose EVERY leg distance and 16 of those have only one leg**; three lose 6-7, and they are the
+    badly-broken rows `audit:waypoint-distances` already reports (`wa_garfield_mountain_scramble`
+    7/7, `wa_mount_buckindy_scramble` 6/6). The other 238 lose some and keep the rest. The panel
+    keeps most of its distances on most routes, which is what makes suppression proportionate
+    rather than a blanket.
+  - **An UNPLACED pin cannot contradict anything**, so the stored number stands. Suppressing it
+    there would remove a distance from every route whose pins carry no coordinate — a guard
+    flagging correct work, which is the failure this file records under a dozen other names.
+  - Fails **closed** on a missing `legMi` export and on a waypoint list that did not render, so an
+    absent distance can never read as a suppressed one.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-impossible-leg-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `ClimbMatchCore.jsx` byte-identically. Case 1 is
+    the real defect (`return seg`) and fails 2; **case 2 makes it suppress EVERYTHING** and fails
+    6, because a guard that only ever asserts absence is satisfied by deleting the feature; case 4
+    flags legs LONGER than the chord and fails, pinning the one-sidedness. **Two must stay
+    SILENT** — a comment naming the forbidden shape, and a widened tolerance that still catches the
+    fixture, which pins that the cases test BEHAVIOUR rather than the constant.
+  - **And it is verified on LIVE ROWS, not only the fixture** — `dbRouteToCamel` and
+    `normalizeWaypoints` both sit between the column and the screen, and either could have made the
+    suppression reach nothing.
+    `scripts/oneoff/probe-legmi-on-live-rows.mjs` **counts** rather than spot-checking, because
+    `wa_lizard_mountain_south_route` prints 3.7 mi for a 16.3 mi leg and a search for a literal
+    *"0.0 mi"* would call it clean: it derives the expected number of printed legs from the same
+    geometry and asserts it exactly. Non-vacuous both ways — 3 of 4 routes fail on the old code,
+    and the clean control `wa_mount_baker_coleman_deming` stays green either way.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
   as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
   three contributors must land in the same cluster or the correction sits pending **forever** —
@@ -7422,21 +7539,55 @@ the correction knows the screen is wrong, and they have no way to report it.
   **0 by construction**, and that is the entry worth reading.
   - `orderWaypoints` sorts by `distMi` **only if every pin has a finite one**, else it returns the
     list untouched. So a route missing a single distance renders in **stored order however wrong**,
-    and the audit compared that order against itself and found no difference. **482 of 1,012 WA
-    routes are orderable; 530 are not** — the "0" covered 48% of the catalog. The verdict was true
-    and its scope unstated; it now prints the denominator with it.
-  - **64 of the unsortable routes list an approach marker AFTER the summit** — a junction, water,
-    a campsite or a climbing area below the summit in a list read top to bottom. Five routes on
-    Amphitheater Mountain are identical: `Trailhead, Summit, Topout, Junction, Climbing area`.
+    and the audit compared that order against itself and found no difference. **483 of 1,015 routes
+    carrying waypoints are orderable; 532 are not** — the "0" covered half the catalog. The verdict
+    was true and its scope unstated; it now prints the denominator with it, and separately the
+    **434** of those that carry 2+ pins, since a lone pin has no order to be wrong about. Quote the
+    run, not this line: every count here has moved with the repairs.
+  - **THAT GAP IS MEASURED ON EVERY RUN NOW, and the figure this bullet used to carry was a
+    hand-count that had gone wrong by more than 2x.** It read *"64 of the unsortable routes list an
+    approach marker AFTER the summit"*, against a live 39 — a number nothing re-derived, sitting in
+    a comment, inviting a re-sweep of work that had since been done. A semantic invariant in a
+    comment rots; the audit now prints it, with its denominator, beside the refusals.
+  - **THE ROUTE'S OWN DESCENT PROSE IS THE SECOND RECORD THAT SEPARATES A RETURN LEG FROM A
+    MISORDERING**, and without it this class reports correct data. Four Dragontail-area routes list
+    Aasgard Pass after the summit and every one of their descent paragraphs says outright that
+    Aasgard is the way down — *"the standard descent is southeast to a saddle, then east across a
+    long snow slope to Aasgard Pass"*. #1644 established that for `wa_dragontail_peak_r3` by hand;
+    the audit now refuses **23 of the 46 after-summit pins** on that evidence. The match is
+    deliberately hard to satisfy (a token of 5+ characters, not a generic feature word, not taken
+    from the route's own name) because refusing wrongly DROPS a finding while keeping a correct
+    route merely adds a line — *"North Side wall (GPS pin)"* must not match any paragraph
+    containing the word "wall", and *"Slippery Slab Tower NE Face"* must not match its own prose.
+  - **A SMALLER, UNARGUABLE TIER SITS UNDERNEATH IT: the row contradicts ITSELF.** A route the app
+    cannot sort may still carry SOME distances, and on **5** of them those run backwards in the
+    stored order — `wa_true_grit_2` lists its *Route start* at 0.3 mi LAST, behind a topout at 4 mi.
+    `orderWaypoints` sorts ascending, so ascending is the app's own model: the order on screen is
+    one the app itself would reject the moment the gap were filled. No prose and no research.
+  - **"Cannot sort" is tested BEHAVIOURALLY, not by copying `orderWaypoints`' gate**: that function
+    returns the SAME ARRAY REFERENCE when it declines and a fresh one when it sorts, so `ord === dd`
+    asks the function rather than restating its rule, and cannot fossilise when the rule changes.
   - **A summit that is not last is NOT automatically wrong**, and both exclusions are measured:
     a **descent** route legitimately starts at the top (`wa_forbidden_peak_east_ledges` is
     Forbidden's standard way down, so summit-first is the correct reading order — judged on what
     the pins AFTER the summit are called, since a descent line is rarely named one), and a **loop**
     legitimately ends back at the trailhead.
-  - **Reported, never reordered.** The information that would justify a reordering is `distMi`,
-    which is exactly what these routes lack — most carry none at all. Reordering without it
-    replaces an order nobody chose with an order the author chose. The real fix is per-route
-    research to populate the distances.
+  - **"REPORTED, NEVER REORDERED" WAS TRUE WHEN WRITTEN AND IS NOW FALSE — the class was SWEPT.**
+    All 81 routes of that shape were read individually across six batches (#1588, #1590, #1594,
+    #1599, #1600, #1602): **62 reordered, 19 left with a recorded reason.** So the count this audit
+    prints is an **adjudicated residue, not a backlog**, and the audit says so in its own output.
+    `scripts/oneoff/measure-summit-before-approach-shape.mjs` holds the adjudication and proves a
+    bulk transform unsafe — 83% of the class shares one fingerprint, and BOTH known descent routes
+    sit inside it, so nothing in the shape separates correct from wrong. The five keeps are: a
+    descent leg correctly after the summit; the same place pinned either side of it; a mistyped
+    `Topout` naming the base of a wall; a distance-less pin whose slot would be a guess; and one
+    declared partial.
+  - **The reasoning that survives is about the REPAIR, not the report**: an order must not be
+    invented where `distMi` is absent, which is why `reorder-waypoints-by-distance.mjs` refuses a
+    tie, refuses to promote anything above the stored first pin, and skips
+    `wa_smears_jugs_and_rock_roll` outright as *"two approaches spliced together"* rather than a
+    scrambled sequence. **Before working any count from this audit, check whether the route is
+    already named in that script's skip list.**
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
@@ -8764,7 +8915,14 @@ the correction knows the screen is wrong, and they have no way to report it.
       **"Slings —"** while carrying cams, nuts, pickets and pitons — 162 objects have a `cams` key
       — and the bullet runs to **p50 85, p90 172, max 454** characters, e.g. *"Slings — cams: note:
       single rack, primary sizes, size: purple C3 to #3 BD, count: 1; …"*. A wrong label over a
-      paragraph in a bullet: the `check:token-boxes` question one element over, and NOT fixed here.
+      paragraph in a bullet: the `check:token-boxes` question one element over.
+      **THE LABEL HALF IS FIXED AND THIS BULLET SAID OTHERWISE FOR LONGER THAN IT WAS TRUE** — it
+      read *"NOT fixed here"* while `rackLines()` in `RouteDetail.jsx` had already replaced the one
+      *"Slings —"* heading with a label per key, keeping "Slings" only for the ARRAY shape where it
+      is genuinely a sling list. A stated gap that has since closed reads as work; that is the same
+      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half is
+      a separate question and has not been re-measured since** — splitting by key shortens each
+      bullet but a single key's value can still be a paragraph.
       `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
       lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
