@@ -19037,3 +19037,81 @@ statement.)
 
 Next batch continues in sorted-id order after `wa_golden_horn_north_face`
 (see progress file).
+
+## Batch 259 (pass 5) — 2026-09-09
+
+Checked 8 routes on 5 Mount Goode / Mount Stuart / Gunnshy Peak / Guye
+Peak / Gunsight Range peaks: `wa_goode_mountain_megalodon_ridge`,
+`wa_goode_mountain_northeast_face`, `wa_goode_mountain_southwest_couloir`,
+`wa_gorillas_direct`, `wa_gunnshy_peak_standard_route`, `wa_gunrunner`,
+`wa_gunsight_peak_standard`, `wa_guye_peak_improbable_traverse`.
+
+**Fixed:**
+
+- `wa_gunrunner` — `access._raw` (a leftover sub-object, confirmed via
+  `git grep` to be read by no code path in the app) described the *Lake
+  Serene / Bridal Veil Falls Trailhead* off US-2 near Gold Bar/Index —
+  verified via WebSearch as its own well-known, distinct trailhead in
+  the Skykomish Ranger District. This route's real approach, confirmed
+  consistently by every other field on the row (`approach`, `road`,
+  `waypoints`, `emergency`, and the outer `access.*` keys), is Downey
+  Creek Trailhead off Suiattle River Road into the Glacier Peak
+  Wilderness (Darrington Ranger District) — over 100 miles away and a
+  different land manager. Removed the contaminated `_raw` key rather
+  than editing the (already-correct) fields around it.
+- `wa_goode_mountain_southwest_couloir` — `dist_km` was 59.5, which the
+  app doubles to render an approximate round-trip distance. The route's
+  own `itinerary` field states in its own words "the standard 3-day
+  trip: ~35-37 mi round trip," and independently gives its day-1 and
+  day-3 one-way approach legs as 15 mi each (a genuine symmetric
+  out-and-back on the PCT/North Fork Bridge Creek Trail — checked that
+  ascent and descent mileage matched before treating this as a clean
+  doubling case, unlike sibling `wa_goode_mountain_megalodon_ridge`,
+  whose descent uses a different, asymmetric line and was left alone
+  for that reason, same as `wa_glacier_peak_frostbite_ridge` in an
+  earlier batch). Corrected to 24.14 km (15 mi), matching the row's own
+  stated numbers and consistent with `wa_goode_mountain_northeast_face`
+  sharing nearly the same approach, whose existing 25.7 km already
+  doubles cleanly against its own "~33 mi round trip" claim.
+
+**Clean, cross-checked against external sources:** `wa_gorillas_direct`
+(FA team Sol Wertkin/Jens Holsten/Mark Westman, 2011, confirmed via
+WebSearch against Mountain Project/AAC/Alpinist coverage of Mount
+Stuart's West Face Wall routes — matches this row). `wa_gunnshy_peak_
+standard_route` (elevation 6,218 ft and status as the second-highest
+summit in Wild Sky Wilderness, 22 ft below neighboring Gunn Peak,
+confirmed via WebSearch against SummitPost/trip-report sources).
+`wa_guye_peak_improbable_traverse` (the November 2021 rockfall —
+30x40 ft section collapse, resulting 5.9-5.10- unprotected downclimb —
+confirmed via WebSearch against a Mountaineers trip account matching
+this row's `hazards`/`watch_out` almost verbatim; also confirmed the
+row's cited "Mount Stuart Climb Project" blog is a real, independent
+source with its own Guye Peak Improbable Traverse writeup, not
+contamination from an unrelated peak as the name might suggest).
+`wa_goode_mountain_northeast_face` (dist_km already well-calibrated,
+see above). `wa_gunsight_peak_standard` (already self-adjudicated by an
+earlier pass: its own `rappel_count_note` explicitly documents and
+discards a 4-station rappel sequence that actually belongs to a
+different, unrelated summit — North Gunsight's West Face — rather than
+carrying it into `rappels`; its `data_quality.gaps` already flags an
+unresolved prominence-figure conflict between sources. Both are correct
+prior work, not re-litigated here).
+
+**Not flagged:** `_raw`'s "special_hazards" line (a Fred Beckey
+difficulty quote) was not preserved anywhere else on `wa_gunrunner`,
+since it could not be independently confirmed as being specifically
+about this peak rather than more contamination from the same source;
+simplest safe action was to drop the whole `_raw` object rather than
+selectively keep an unverified fragment.
+
+Web access this run: WebSearch worked throughout. WebFetch was not
+attempted (WebSearch alone was sufficient to confirm every claim
+checked this batch).
+
+SQL: `audits/sql/2026-09-09-batch-259.sql` (2 UPDATE statements, no
+DELETE; validated with `node scripts/check-sql-targets.mjs`: both write
+targets exist live and neither is a DELETE of an only copy. File is
+2.2KB, well under the paste-size limit.)
+
+Next batch continues in sorted-id order after
+`wa_guye_peak_improbable_traverse` (see progress file).

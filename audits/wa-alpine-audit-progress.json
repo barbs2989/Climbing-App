@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_golden_horn_north_face",
+  "last_processed_id": "wa_guye_peak_improbable_traverse",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5266,6 +5266,26 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-09-09-batch-258.sql",
       "note": "Fixed: Disappointment Peak Cleaver's waypoints/gpx/timing (cross-route contamination from Trinity Trailhead/Buck Creek Pass data belonging to a different Chiwawa-side approach; rebuilt from this row's own prose plus sibling route's verified shared-landmark coordinates), Cool Glacier/Gerdine's and Disappointment Peak Cleaver's crowds text (stale 'Sitkum is the standard route' claim contradicted by the peak's own area blurb and bivy notes), Kennedy Glacier's trailhead waypoint note (wrong access road, FR 26 instead of FR 23), Goat Mountain South Ridge's beta + pitch_detail (described the corniced false West Peak as effectively the summit, contradicting 5 other fields on the same row about the true East Peak). Flagged: Gilbert Peak West Route (already self-hedged route-name ambiguity, no action needed), Frostbite Ridge dist_km (plausibly consistent with its own one-way-traverse mileage note, not a clear doubling bug). Clean: Sitkum Glacier (matches CLAUDE.md's documented deliberately-untouched case), Golden Horn North Face."
+    },
+    {
+      "batch_number": 259,
+      "date": "2026-09-09",
+      "route_ids": [
+        "wa_goode_mountain_megalodon_ridge",
+        "wa_goode_mountain_northeast_face",
+        "wa_goode_mountain_southwest_couloir",
+        "wa_gorillas_direct",
+        "wa_gunnshy_peak_standard_route",
+        "wa_gunrunner",
+        "wa_gunsight_peak_standard",
+        "wa_guye_peak_improbable_traverse"
+      ],
+      "pass": 5,
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-09-09-batch-259.sql",
+      "note": "Fixed: Gunrunner's access._raw sub-object (dead, unread-by-app contamination describing the unrelated Lake Serene/Bridal Veil Falls Trailhead near Index, removed rather than merged into the correct surrounding fields), Southwest Couloir's dist_km (59.5 -> 24.14, was storing ~2x its own itinerary's stated round-trip mileage; verified this is a clean symmetric out-and-back unlike sibling Megalodon Ridge, which was left alone for the same reason Frostbite Ridge was in batch 258). Clean: Megalodon Ridge, Northeast Face (dist_km already well-calibrated against its own stated round trip), Gorillas Direct (FA confirmed via WebSearch), Gunnshy Peak Standard Route (elevation/prominence confirmed via WebSearch), Gunsight Peak Standard (already self-adjudicated by an earlier pass -- its own rappel_count_note documents and discards a rappel sequence belonging to a different, unrelated summit), Guye Peak Improbable Traverse (Nov 2021 rockfall damage confirmed via WebSearch almost verbatim)."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
