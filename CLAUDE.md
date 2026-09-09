@@ -9293,6 +9293,19 @@ the correction knows the screen is wrong, and they have no way to report it.
     `scripts/oneoff/measure-imperial-control-labels.mjs` is what asked the question — it classifies
     every imperial unit written as a string LITERAL by the component that owns it, which is how the
     RouteFinder length buckets turned out to be dead and the live ones turned out to be elsewhere.
+    Re-running it after the widening moves the guide radius chips from *reachable* to *dead*,
+    101 → 98: the same instrument, a different answer, because the census under it got wider.
+  - **AND IT HAD ALREADY HAPPENED, IN A PR MERGED THE SAME AFTERNOON.** #1670 opens *"the units
+    question is what put me in the file"* — the identical open item — and fixes a real off-by-one in
+    the length-bucket labels plus a genuine two-copy consolidation into `ROUTE_LENGTHS` /
+    `routeLengthLabel()`. Every one of those sites is in **`RouteFinder`** and `passesFilters`, i.e.
+    the seed path, and `lib/DbAreaBrowser.jsx` — which owns the **live** length filter — never
+    imports either helper and still carries its own `LEN_BUCKETS` vocabulary. Correct work, on a
+    surface no climber reaches, from an author the census told was reachable.
+    **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
+    half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
+    label claims. What is still open there is only the units question — those labels are imperial
+    whatever the setting.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
