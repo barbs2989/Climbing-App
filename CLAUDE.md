@@ -7068,21 +7068,55 @@ the correction knows the screen is wrong, and they have no way to report it.
   **0 by construction**, and that is the entry worth reading.
   - `orderWaypoints` sorts by `distMi` **only if every pin has a finite one**, else it returns the
     list untouched. So a route missing a single distance renders in **stored order however wrong**,
-    and the audit compared that order against itself and found no difference. **482 of 1,012 WA
-    routes are orderable; 530 are not** — the "0" covered 48% of the catalog. The verdict was true
-    and its scope unstated; it now prints the denominator with it.
-  - **64 of the unsortable routes list an approach marker AFTER the summit** — a junction, water,
-    a campsite or a climbing area below the summit in a list read top to bottom. Five routes on
-    Amphitheater Mountain are identical: `Trailhead, Summit, Topout, Junction, Climbing area`.
+    and the audit compared that order against itself and found no difference. **483 of 1,015 routes
+    carrying waypoints are orderable; 532 are not** — the "0" covered half the catalog. The verdict
+    was true and its scope unstated; it now prints the denominator with it, and separately the
+    **434** of those that carry 2+ pins, since a lone pin has no order to be wrong about. Quote the
+    run, not this line: every count here has moved with the repairs.
+  - **THAT GAP IS MEASURED ON EVERY RUN NOW, and the figure this bullet used to carry was a
+    hand-count that had gone wrong by more than 2x.** It read *"64 of the unsortable routes list an
+    approach marker AFTER the summit"*, against a live 39 — a number nothing re-derived, sitting in
+    a comment, inviting a re-sweep of work that had since been done. A semantic invariant in a
+    comment rots; the audit now prints it, with its denominator, beside the refusals.
+  - **THE ROUTE'S OWN DESCENT PROSE IS THE SECOND RECORD THAT SEPARATES A RETURN LEG FROM A
+    MISORDERING**, and without it this class reports correct data. Four Dragontail-area routes list
+    Aasgard Pass after the summit and every one of their descent paragraphs says outright that
+    Aasgard is the way down — *"the standard descent is southeast to a saddle, then east across a
+    long snow slope to Aasgard Pass"*. #1644 established that for `wa_dragontail_peak_r3` by hand;
+    the audit now refuses **23 of the 46 after-summit pins** on that evidence. The match is
+    deliberately hard to satisfy (a token of 5+ characters, not a generic feature word, not taken
+    from the route's own name) because refusing wrongly DROPS a finding while keeping a correct
+    route merely adds a line — *"North Side wall (GPS pin)"* must not match any paragraph
+    containing the word "wall", and *"Slippery Slab Tower NE Face"* must not match its own prose.
+  - **A SMALLER, UNARGUABLE TIER SITS UNDERNEATH IT: the row contradicts ITSELF.** A route the app
+    cannot sort may still carry SOME distances, and on **5** of them those run backwards in the
+    stored order — `wa_true_grit_2` lists its *Route start* at 0.3 mi LAST, behind a topout at 4 mi.
+    `orderWaypoints` sorts ascending, so ascending is the app's own model: the order on screen is
+    one the app itself would reject the moment the gap were filled. No prose and no research.
+  - **"Cannot sort" is tested BEHAVIOURALLY, not by copying `orderWaypoints`' gate**: that function
+    returns the SAME ARRAY REFERENCE when it declines and a fresh one when it sorts, so `ord === dd`
+    asks the function rather than restating its rule, and cannot fossilise when the rule changes.
   - **A summit that is not last is NOT automatically wrong**, and both exclusions are measured:
     a **descent** route legitimately starts at the top (`wa_forbidden_peak_east_ledges` is
     Forbidden's standard way down, so summit-first is the correct reading order — judged on what
     the pins AFTER the summit are called, since a descent line is rarely named one), and a **loop**
     legitimately ends back at the trailhead.
-  - **Reported, never reordered.** The information that would justify a reordering is `distMi`,
-    which is exactly what these routes lack — most carry none at all. Reordering without it
-    replaces an order nobody chose with an order the author chose. The real fix is per-route
-    research to populate the distances.
+  - **"REPORTED, NEVER REORDERED" WAS TRUE WHEN WRITTEN AND IS NOW FALSE — the class was SWEPT.**
+    All 81 routes of that shape were read individually across six batches (#1588, #1590, #1594,
+    #1599, #1600, #1602): **62 reordered, 19 left with a recorded reason.** So the count this audit
+    prints is an **adjudicated residue, not a backlog**, and the audit says so in its own output.
+    `scripts/oneoff/measure-summit-before-approach-shape.mjs` holds the adjudication and proves a
+    bulk transform unsafe — 83% of the class shares one fingerprint, and BOTH known descent routes
+    sit inside it, so nothing in the shape separates correct from wrong. The five keeps are: a
+    descent leg correctly after the summit; the same place pinned either side of it; a mistyped
+    `Topout` naming the base of a wall; a distance-less pin whose slot would be a guess; and one
+    declared partial.
+  - **The reasoning that survives is about the REPAIR, not the report**: an order must not be
+    invented where `distMi` is absent, which is why `reorder-waypoints-by-distance.mjs` refuses a
+    tie, refuses to promote anything above the stored first pin, and skips
+    `wa_smears_jugs_and_rock_roll` outright as *"two approaches spliced together"* rather than a
+    scrambled sequence. **Before working any count from this audit, check whether the route is
+    already named in that script's skip list.**
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
@@ -8391,7 +8425,14 @@ the correction knows the screen is wrong, and they have no way to report it.
       **"Slings —"** while carrying cams, nuts, pickets and pitons — 162 objects have a `cams` key
       — and the bullet runs to **p50 85, p90 172, max 454** characters, e.g. *"Slings — cams: note:
       single rack, primary sizes, size: purple C3 to #3 BD, count: 1; …"*. A wrong label over a
-      paragraph in a bullet: the `check:token-boxes` question one element over, and NOT fixed here.
+      paragraph in a bullet: the `check:token-boxes` question one element over.
+      **THE LABEL HALF IS FIXED AND THIS BULLET SAID OTHERWISE FOR LONGER THAN IT WAS TRUE** — it
+      read *"NOT fixed here"* while `rackLines()` in `RouteDetail.jsx` had already replaced the one
+      *"Slings —"* heading with a label per key, keeping "Slings" only for the ARRAY shape where it
+      is genuinely a sling list. A stated gap that has since closed reads as work; that is the same
+      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half is
+      a separate question and has not been re-measured since** — splitting by key shortens each
+      bullet but a single key's value can still be a paragraph.
       `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
       lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
