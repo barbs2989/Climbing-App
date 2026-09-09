@@ -34,7 +34,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
-import {wpType,wpIs,wpPlaced,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
+import {wpType,wpIs,wpPlaced,legMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -484,7 +484,7 @@ function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
     const _wt=wpType(wp),col=wpColor(_wt),ic=wpIs(wp,"Hazard")?<ActionIcon name="alert" size={16} color={col}/>:wpGlyph(_wt);
     const prevWp=i>0?waypoints[i-1]:null;
     const _samePt=!!(prevWp&&prevWp.lat!=null&&prevWp.lng!=null&&wp.lat!=null&&wp.lng!=null&&Number(prevWp.lat)===Number(wp.lat)&&Number(prevWp.lng)===Number(wp.lng));
-    const segMi=(!_samePt&&prevWp&&wp.distMi!=null&&prevWp.distMi!=null)?(wp.distMi-prevWp.distMi):null;
+    const segMi=(!_samePt&&prevWp)?legMi(prevWp,wp):null;
     const segFt=(!_samePt&&prevWp&&wp.elev!=null&&prevWp.elev!=null)?(wp.elev-prevWp.elev):null;
     const placed=wpPlaced(wp);
     const card={background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:7,border:`1px solid ${C.border}`,display:"flex",gap:10};
