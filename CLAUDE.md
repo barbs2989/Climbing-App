@@ -7046,6 +7046,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     *different byte on every run*, which reads as "this script emits broken JSON" when the output
     is fine and the exit is the bug. The two modes are branches now. **Any script here that grows a
     machine-readable mode inherits this trap.**
+  - **WHICH summit, and which trailhead? `.find()` took whichever the enrichment listed FIRST**,
+    so on the **24 WA routes carrying more than one summit-typed pin** the audit's answer depended
+    on row order — one of them by **1,815 ft**. Row order is not a record. It now takes the LOWEST
+    summit-typed pin and the HIGHEST trailhead, which give the smallest rise: `rise` is used as a
+    LOWER BOUND and the whole one-sidedness rests on it, so a smaller rise can only under-report,
+    never accuse a correct row. **Proven behaviour-neutral on today's catalog** — the finding set
+    and every `rise` are byte-identical, so this removes a dependence on row order without moving
+    a single verdict.
+    - **"HIGHEST SUMMIT" WAS MEASURED AND REJECTED, and the measurement is the whole point.** It
+      adds 5 findings and loses none, which reads as strictly better coverage until you open
+      them: **four are Squire Creek Wall south-face routes** whose own Topout pin says they end
+      at the 3,249 ft grassy saddle, while a Summit pin records the FORMATION's 4,958 ft high
+      point they never reach. Only `wa_sherpa_glacier` is genuine. **One real in five** is the
+      precision that teaches people to ignore an audit.
+    - **Preferring the route's own Topout does not rescue it either**, and that is why the
+      endpoint cannot be resolved from the pin TYPES at all: `wa_sherpa_glacier` carries *"Top of
+      Sherpa Glacier"* (7,600) as an INTERMEDIATE topout on the way to Stuart's 9,415 ft summit,
+      so the same field means *where the route ends* on one route and *a milestone* on the other.
+    - **KNOWN MISS, stated rather than hidden**: `wa_sherpa_glacier` stores 6,000 ft against a
+      trailhead-to-Stuart rise of 6,485 and is NOT reported, because its lowest summit-typed pin
+      is that intermediate topout.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
 - **`audit:cross-route-pins`** asks whether **two routes place the same named point in two different
@@ -9313,6 +9334,63 @@ their own Résumé showed an amber **"Unverified"** chip.
     edit landed **by checksum** and restoring the file byte-identically: reverse the write order,
     drop `onRemove` from the profile call site, add it to somebody **else's**, and make a no-op
     removal report success.
+
+- **A CLIMBER WHO HAD ONLY ASKED TO JOIN COUNTED AS A CREW MEMBER, AND HELD A SPOT.** `#1554`
+  introduced the third crew status and the comment beside `allConfirmed` states the rule outright
+  — *"Someone who has asked to join is not in the crew yet"* — and **enumerates the four readers it
+  was applied to** (`pendCrew` and three *"Remind all N"* expressions). Three more read the roster
+  whole, and the enumeration is what made them findable: *an instance fixed by hand is not a class
+  closed*, with the author's own list as the evidence.
+  - **The heading** read *"Crew · 2 members"* for you plus one requester — live on CI's demo
+    capture, beside a roster row saying *"Asked to join"*.
+  - **`size` drives capacity**, so a requester consumed a spot. **At enough requests a crew reads
+    "✓ Crew full — 3/3" while nobody has been accepted**, which stops other climbers asking — the
+    worst of the three, and the one that is not merely cosmetic.
+  - **The amber denominator** (*"1 of 2 confirmed"*) is latent: it needs an **invited** member and
+    a **requester** at once, because `allConfirmed` — already fixed — gates whether it renders at
+    all. #1554 identified that sentence as a symptom and fixed it by gating rather than at the
+    count, which is why it survived.
+  - **Fixed through ONE list**, `inCrew`, with `allConfirmed` expressed from it, so *who is in the
+    crew* has a single definition. Three filters saying the same thing is how this codebase ended
+    up with four grade parsers.
+  - **The requester stays VISIBLE in the roster.** Only the counting changed — the organiser has to
+    see somebody to accept or decline them, so dropping the row would be worse than counting it.
+    The probe asserts that directly.
+  - `scripts/oneoff/probe-pending-requester-is-not-a-member.mjs` — 12 assertions. It **lifts the
+    predicate out of the source** rather than retyping it (a copy agrees with itself whatever the
+    app does), executes it over rosters, and asserts every reader as **source**: a merge keeping
+    `inCrew` and leaving one reader on `roster` restores that reader's defect with every expression
+    assertion still green. That is the shape that bit #1643's own merge an hour earlier.
+- **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
+  the group calendar contradicted its own heading.** Both group surfaces rendered
+  `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
+  whether it had happened, so a group whose meetups are all behind it advertised its **oldest** as
+  upcoming. Seen on a CI `ui-screens` capture as **"Next meet Jun 27"** and **"Next meet Jun 28"**,
+  rendered on **4 September**.
+  - **The upcoming rule was NOT invented here.** `daysUntil(d) >= 0` is the app's own test, already
+    used for crews in `upcomingClimbs` two hundred lines away. `nextMeetup(evs)` in core is that
+    rule applied to events, and **today counts as upcoming** — a meet this evening has not gone.
+  - **A THIRD COPY EXISTED AND THE PROBE FOUND IT, NOT THE SWEEP.** The group's
+    **"Calendar · upcoming events"** listed **every** event oldest-first, so an upcoming calendar
+    opened with a meetup from June. The probe asserts the pre-fix expression is gone from the file
+    rather than only that the two known sites were fixed, and that assertion failed on its first
+    run. *A fix keyed on the sites you found is not a fix for the expression.*
+  - **FILTERING THE CALENDAR MADE THE EMPTY STATE FALSE, so the copy gained a branch in the same
+    change.** *"No events scheduled yet — plan the first one"* is true of a group that has never
+    held one and false of a group that has held four; `groupEventsEmptyLine(total, upcoming)`
+    returns *"No upcoming events — plan the next one."* for the second. **A fix that trades one
+    wrong claim for another is not a fix**, which is why both branches are asserted and asserted to
+    DIFFER — a rewrite collapsing them satisfies any test that only checks one.
+  - **Both helpers are pure functions in core for the reason `stateCatalogLine` is**: all three call
+    sites live inside `App`, which no SSR guard stands up, so the branches are **executed** while
+    the wiring is asserted as **source** beside them. That split matters here — a merge keeping the
+    helpers and dropping a call site restores the defect with every branch assertion green, and
+    `audit:silent-reverts` says in its own closing caveat that it cannot see a change of this shape.
+  - **Not made a build gate.** The class is a date claim on ONE feature, the surfaces are gated on
+    group events (client state today), and the probe needs an esbuild bundle it does not share with
+    a sibling. `scripts/oneoff/probe-next-meetup-is-ahead.mjs` — 14 assertions, no browser, no
+    database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
+    if a second date-labelled surface joins the class.
 
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
