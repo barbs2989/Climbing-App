@@ -3347,6 +3347,19 @@ the total when deciding where a new guard belongs.
     its edit landed **by checksum** and restoring `lib/DbAreaBrowser.jsx` byte-identically. Case 1 is
     the real historical rule, restored verbatim. **Two must stay SILENT** — a comment quoting the
     forbidden prefix shape, and the `ALIAS` table reordered — because both are correct work.
+  - **A THIRD MEASURED NON-FINDING, on the one row nothing had examined.** The `Rock difficulty`
+    span uses `rock_grade` deliberately — the entry above records that `grade_num` would rank a
+    Roman COMMITMENT grade on the same scale as class — and what it still conflates is **class
+    against YDS**: `class 3` and `5.3` are both 3, so where the span's ends tie numerically the row
+    prints ONE grade, chosen by input order. Measured
+    (`scripts/oneoff/measure-rock-difficulty-scale-tie.mjs`): 166 panels render the row, **53 tie
+    numerically, and 3** of those are on different scales — `wa_chimney_peak` and
+    `wa_klawatti_peak` print *"Class 3"* on peaks that also hold a 5.3, `wa_ottohorn` prints
+    *"5.7"* on one that also holds a Class 4. **Recorded rather than fixed:** separating them means
+    a LEXICAL scale test inside a display helper, against strings like *"Class 3-4 (scrambling)"*
+    and *"Class 3 (Class 4 in spots)"*, and three peaks does not buy the fragility this file
+    records for every regex over grade prose. If it is ever worth doing, the honest render is a
+    **span** — *"Class 3 to 5.3"* — never a different single grade.
   - **THE PANEL'S RENDERED COPY IS CLEAN CATALOG-WIDE, which nothing had asked.** #1672 swept the
     ROUTE page for broken copy and found it clean; the AREA page had never been swept, and this
     panel is the part of it that DERIVES rather than displays.
