@@ -2873,13 +2873,71 @@ the total when deciding where a new guard belongs.
   - Comments are stripped before every SOURCE test, because this guard's own subject is explained
     in a comment beside `compat()` that quotes the forbidden `Math.min(99,` shape. A guard that
     fails on its own documentation is a trap this file records more than once.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
+  - **SECTION 6 — THE BROWSE ROW CALLED EVERY REAL CLIMBER A "New profile", AND HAS SINCE #612.**
+    Sections 1-5 are about the number; this is about the sentence shown when there is none, and it
+    needed a separate section because the row that renders it **can never reach those signals**.
+    `RealClimberRow`'s own projection `_cand` hardcodes `objectiveIds:[]`, and `profiles` has **no
+    availability and no pace column for anyone** — so of the four signals `compatUnknown` counts,
+    exactly one can arrive. `_unk` is **>= 3 for a maximally-complete profile and a bare one
+    alike**, measured by executing the row's own literal
+    (`scripts/oneoff/measure-browse-row-match-percent.mjs`): 4 rows of increasing completeness,
+    **0 of 4 showed a percentage**.
+    - **So the score branch has NEVER rendered, `_pct` is computed and read by nothing, and the
+      "· based on limited info" caveat is unreachable** — it needs `_unk` in 1..2. #612's commit
+      message states the intended three states in as many words (*"A thin profile is labelled …
+      rather than dressed up as a confident percentage; a partial one says 'based on limited
+      info'"*), and its 8 tests exercised `compatUnknown` **directly** rather than through `_cand`,
+      which is why the cap went unseen. **A fixture that can express a state the app cannot reach
+      proves nothing about the app** — the trap this file already records for `check:units`' area
+      type and `check:token-boxes`' tick-list id.
+    - **The sentence was false TWICE.** *"New profile"* is said about an established account with
+      every field filled in — the gap is the projection's, not the climber's. And *"yet"* promises
+      a resolution **nothing the climber does can bring about**, since three of the four signals
+      have no column. Meanwhile the **seed** partner card beside it renders a big `{score}%`, so
+      the contrast is on screen: example climbers get a percentage and real ones never do.
+    - **THE REFUSAL ITSELF IS CORRECT AND MUST NOT BE "FIXED" BY MOVING THE THRESHOLD.** `compat()`
+      scores an absent objectives list as **ZERO, not a neutral partial**, and #612 chose that
+      deliberately — it had just removed the mirror defect from **pace**, where two absences were
+      collecting a *perfect* match (*"agreement invented out of two absences"*). Absence of shared
+      objectives is not evidence of sharing. So a real climber sits ~20 points below a comparable
+      seed climber **legitimately**, and surfacing that as a "% match" is exactly the
+      confident-percentage-over-thin-data this branch exists to refuse. The repair is the
+      **sentence**, and the reason is recorded beside the code so the next reader does not undo it.
+    - **6a IS THE STRUCTURAL FACT AND IT FAILS AS STALE, NOT AS A DEFECT.** It lifts `_cand`'s
+      literal and **executes** it — a hand-typed copy would agree with itself whatever the row does
+      — and requires `compatUnknown >= 3`. Widening `_cand` (a column arrives) is correct work, and
+      the failure says so while pointing at the measurement, the standard `KNOWN` and
+      `PARTIAL_ON_PURPOSE` are held to.
+    - **6b/6c test the LIFTED TEXT for two forbidden claims and a length, never for today's
+      phrasing** — a guard pinned to one sentence forbids improving it, which this file records for
+      `check:offline-claims`' `disclaimer-reworded`. And 6c exists because **a rule that only
+      forbids is satisfied by deleting the line**, which would leave the seed card's percentage
+      unexplained beside a row that has none.
+    - **THE INJECTION FOUND A DEFECT IN THIS SECTION RATHER THAN IN THE APP.** An **empty** refusal
+      still MATCHES the anchor, and a falsiness test read that as `ANCHOR LOST` — so the deletion
+      case reported a broken guard where the sentence had been removed. *"The anchor moved,
+      re-point the guard"* and *"you deleted the sentence, put it back"* want opposite repairs, so
+      it distinguishes `null` from `""`.
+    - A **gate** rather than a probe for the reason `check:policy-claims` and `check:profile-claims`
+      were promoted: the fix changes **strings and no identifier**, which `audit:silent-reverts`
+      says in its own closing caveat it cannot see.
+    - **THE FLOOR HAD TO RISE WITH THE SECTION, AND 18 WOULD HAVE HIDDEN IT ENTIRELY.** Section 6
+      contributes exactly **4** assertions against a clean run's 22, so at the old `FLOOR = 18`
+      deleting the whole section landed on **exactly 18** and `ran < FLOOR` was false — measured,
+      not reasoned: the gutted guard printed a **clean green `ok — … (18 assertions)`** and exited
+      **0**, while at 20 it fails *"this run proved nothing"*. **A floor two below a clean run is
+      the convention precisely because a floor set to the new total cannot see its own newest
+      section stop asking.** Raise it when you add an assertion here; never lower it to make a run
+      pass.
+  - Injection-tested **14/14** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
     its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and judged on
     the guard's **own failure text** matched against FAIL lines only. The harness also **refuses any
     expectation that already appears in the GREEN run** — it caught one on the first run, where the
     needle was the text an assertion prints when it PASSES. Case 1 is the real defect restored
-    verbatim. **Two must stay SILENT**: a legitimate rebalance (`CMAX_DISC` 16 -> 18) and a comment
-    quoting the forbidden shape.
+    verbatim. **Four must stay SILENT**: a legitimate rebalance
+    (`CMAX_DISC` 16 -> 18), a comment quoting the forbidden `Math.min(99,` shape, a comment naming
+    the old refusal wording, and **the refusal reworded truthfully and differently** — the
+    load-bearing one, since it is what proves 6b/6c are not pinned to a phrase.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
