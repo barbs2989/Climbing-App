@@ -35,10 +35,11 @@ import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
 import {wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn} from "./ClimbMatchCore.jsx";
+import { recShapeOf, effDistIsWholeTrip, effDistKm } from "./lib/outing.js";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
-const recShapeOf=route=>(route&&(route.outingShape||route.outing_shape))||null;
+
 /* The stored vocabulary is exactly three codes — measured against the live catalog, where
    outing_shape is populated on 172 routes and holds only outback (141), loop (20), point (11).
    These labels are the ones the planner already uses in prose a few hundred lines down
@@ -46,11 +47,9 @@ const recShapeOf=route=>(route&&(route.outingShape||route.outing_shape))||null;
    a different trailhead"), so the contribute form names each shape the same way the screen
    explains it. A code with no entry falls through to "—" rather than rendering the raw token. */
 const SHAPE_LABEL={outback:"Out and back",loop:"Loop",point:"Point to point"};
-const itinTotalMi=route=>{const days=route&&route.itinerary&&route.itinerary.days;return (days&&days.length)?days.reduce((a,d)=>a+(d.miles||0),0):null;};
-// A recorded loop/point does not retrace its approach, so its itinerary total is the
-// whole outing rather than a doubled walk-in. Only halve when the trip really is there-and-back.
-const effDistIsWholeTrip=route=>{const sh=recShapeOf(route);return !!itinTotalMi(route)&&(sh==="loop"||sh==="point");};
-const effDistKm=route=>{const totMi=itinTotalMi(route);if(!totMi)return route&&route.distKm;return effDistIsWholeTrip(route)?totMi*1.60934:(totMi*1.60934)/2;};
+/* MOVED TO lib/outing.js, unchanged, so the peak page's ACROSS EVERY ROUTE HERE panel can ask the
+   same question this page does. It read `dist_km` raw and therefore showed a different approach
+   distance for the same climb — on 128 of the 198 WA peak pages, usually by a factor of two. */
 /* FORMATS what uLenN converts, so the metre<->foot arithmetic exists once. */
 const uLen=m=>{const n=uLenN(m);return n===null?NOVAL:n+" "+uLenUnit();};
 function needsRopedGlacierTravel(r){const parts=[r.proNeeds,(r.gear||[]).join(" "),(r.rack||[]).join(" "),Array.isArray(r.detailedRack)?r.detailedRack.join(" "):(r.detailedRack||"")].filter(Boolean).join(" ").toLowerCase();if(!parts)return true;if(/\b(no|not|non-technical|none)\b[^.]{0,40}(rope|roped|technical protection)/.test(parts))return false;return /\brope\b|crevasse[- ]?rescue/.test(parts);}

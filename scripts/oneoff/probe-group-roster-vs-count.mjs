@@ -74,6 +74,22 @@ const aEnd = balanced(SRC, SRC.indexOf("{", SRC.indexOf("function(id)", aStart))
 if (aEnd < 0) lost("could not balance _asMember's body");
 const ASMEMBER = SRC.slice(aStart, aEnd);              // ends at `}` — supply the `;` when joining
 
+// `_asMember` GAINED A DEPENDENCY AND THE INJECTED SCOPE DID NOT, so this probe died with
+// `pubNameRow is not defined` -- a probe defect reading exactly like an app one. Both are LIFTED
+// from core rather than stubbed, for the same reason the expressions above are: a retyped copy
+// agrees with itself whatever the app does, and `pubName` carries a real rule (it derives a
+// handle unless `showName` is set) that a stub would quietly get wrong.
+const CORE = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+function coreFn(name) {
+  const i = CORE.indexOf("function " + name + "(");
+  if (i < 0) lost("ClimbMatchCore.jsx no longer declares " + name);
+  const e = balanced(CORE, CORE.indexOf("{", i));
+  if (e < 0) lost("could not balance " + name);
+  return CORE.slice(i, e);
+}
+const PUBNAME = coreFn("pubName");
+const PUBNAMEROW = coreFn("pubNameRow");
+
 const ROSTER_IDS = stmt("var _rosterIds=", "var _rosterIds=");
 const ROSTER = stmt("var _roster=", "var _roster=");
 const COUNT = stmt("var _memN=", "var _memN=");
@@ -93,7 +109,7 @@ function run(args) {
   const cById = (id) => climbers.find((c) => c.id === id);
   // eslint-disable-next-line no-new-func
   const f = new Function("cl", "mem", "modIds", "_profMap", "cById", "ME", "isMod", "_meGid",
-    `${ASMEMBER}; ${ROSTER_IDS} ${ROSTER} ${COUNT} ${MODS}
+    `${PUBNAME} ${PUBNAMEROW} ${ASMEMBER}; ${ROSTER_IDS} ${ROSTER} ${COUNT} ${MODS}
      return { count: _memN, rows: _roster.length, ids: _rosterIds.length,
               names: _roster.map(function(m){return m&&m.name;}),
               // A row without _profile falls to the subtitle branch c.level + " · " + vScore(c).

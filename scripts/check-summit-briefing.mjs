@@ -36,6 +36,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
 import { SUPABASE_URL, headers, anonKey } from "./lib/supabase-env.mjs";
+import { effDistKm } from "../lib/outing.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -153,6 +154,24 @@ if (adams.length < 5) dead(`wa_mount_adams returned ${adams.length} routes`);
 const adamsLmValues = new Set(adams.map(r => ((r.access && typeof r.access === "object") ? r.access : {}).land_manager || ((r.access && typeof r.access === "object") ? r.access : {}).landManager).filter(Boolean));
 const adamsHtml = render({ id: "wa_mount_adams", name: "Mount Adams", area_type: "peak", elevation_ft: 12281 }, adams);
 console.log(`\nMount Adams — ${adams.length} routes, ${adamsLmValues.size} distinct land managers`);
+/* THE APPROACH RANGE MUST BE THE ONE THE ROUTE PAGE SHOWS. This row read `dist_km` raw while
+   RouteDetail has always preferred the route's own itinerary, so one climb had two approach
+   distances depending on the screen — usually by a FACTOR OF TWO, because on those rows `dist_km`
+   holds the round trip. Reverting it changes no identifier and every other assertion here stays
+   green, which is why it is pinned: `audit:silent-reverts` says in its own closing caveat it
+   cannot see a change of that shape. Mount Adams is the fixture because its two readings are
+   furthest apart. */
+const miOf = (km) => Math.round(km * 0.621371 * 100) / 100;
+const span = (vals) => { const v = vals.filter((x) => Number.isFinite(x) && x > 0).sort((a, b) => a - b); return v.length ? [v[0], v[v.length - 1]] : null; };
+const rawSpan = span(adams.map((r) => Number(r.dist_km)));
+const effSpan = span(adams.map((r) => Number(effDistKm(r))));
+ok(!!rawSpan && !!effSpan && (miOf(rawSpan[0]) !== miOf(effSpan[0]) || miOf(rawSpan[1]) !== miOf(effSpan[1])),
+   "fixture: the raw and effective approach ranges DIFFER (else the next two are vacuous)");
+const adamsAp = row(adamsHtml, "Approach");
+ok(!!adamsAp && adamsAp.includes(miOf(effSpan[1]) + " mi"),
+   `the Approach row shows the route page's own distance (${miOf(effSpan[1])} mi)`);
+ok(!!adamsAp && !adamsAp.includes(miOf(rawSpan[1]) + " mi"),
+   `and NOT the raw dist_km column (${miOf(rawSpan[1])} mi)`);
 ok([...adamsLmValues].some(v => /Yakama/i.test(v)), "fixture really does carry Yakama Nation land (else the next assertion is vacuous)");
 const adamsLm = row(adamsHtml, "Land manager");
 ok(!!adamsLm && adamsLm.includes(HEDGE), "refuses to name one land manager where the routes name different LAND");
@@ -195,7 +214,7 @@ ok(render({ id: "y", name: "Solo Peak", area_type: "peak" }, [baker[0]]) === "",
 
 // A guard that quietly stops asking half its questions still exits 0. Raise this when you
 // add an assertion; never lower it to make a run pass.
-if (ran < 26) dead(`only ${ran} assertions RAN — this guard has ${ran} of its questions left`);
+if (ran < 29) dead(`only ${ran} assertions RAN — this guard has ${ran} of its questions left`);
 
 console.log(fails ? `\n${fails} FAILED` : `\nall ${ran} assertions passed`);
 process.exit(fails ? 1 : 0);
