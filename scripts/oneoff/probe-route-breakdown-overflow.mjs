@@ -15,6 +15,7 @@
 // It renders the real component to markup and lays it out in Chrome at 390x844. No dev server and
 // no database: the widths come from the same inline styles the app ships, which is the whole
 // reason this measurement is worth anything.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -23,6 +24,11 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-route-breakdown-overflow.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const dir = fs.mkdtempSync(path.join(ROOT, ".cm-bdov-"));

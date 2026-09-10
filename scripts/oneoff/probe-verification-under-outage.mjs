@@ -24,11 +24,17 @@
 // was measured" rather than as a verdict. A probe whose expected output is a small object is
 // exactly the kind that reads as working when it is broken.
 
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import { chromium } from "playwright-core";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { durableFixture, durableCredsPresent } from "../lib/durable-fixture.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-verification-under-outage.mjs");
 
 const freePort = () => new Promise((res, rej) => {
   const s = net.createServer();

@@ -758,6 +758,38 @@ the total when deciding where a new guard belongs.
     a fact about the tree rather than a list to maintain; it read 5 for months after the tree had
     moved on). Wiring that a config can forget is wiring that one eventually
     will: the configs already drifted once on which files they transformed.
+    - **ARE ANY OF THOSE ANCHORS ALREADY ROTTED? NO — 17 anchors across 12 files, 0 LOST, 0
+      AMBIGUOUS** (`scripts/oneoff/measure-config-anchor-rot.mjs`, 2026-09-09). Worth asking
+      because **five configs are exercised by no wired guard at all** — `camping-expand`,
+      `derived-trailhead`, `group-trust`, `metric-units`, `policy-notice` — so a rotted anchor
+      there throws only when somebody remembers to run the probe, and this file already records
+      the scaffold as a STRING no static gate reads. It needs **no browser**: whether an anchor
+      still occurs in the source is deterministic, so it can be answered honestly on a box too
+      loaded for a walk to be evidence.
+    - **THE CONTROLS ARE THE RESULT, NOT THE HEADLINE.** Seven of the twelve are exercised by a
+      guard that runs in CI, and the run **fails closed** unless all nine of their anchors resolve
+      **exactly once** — because "0 LOST" is precisely what a broken scan prints. It earned that
+      four times over: the first four versions each printed a plausible number while being wrong,
+      and every failure is a different way a text scan lies about the source it is reading.
+      **(1)** Bounding a declaration at the first raw `;` cuts INSIDE the anchor — an anchor is a
+      fragment of JavaScript — so two CONTROL configs read as UNPARSED and journey's single-quoted
+      anchor yielded the `"true"` nested within it. **(2)** A COMMENT inside `zero-state`'s
+      `ANCHORS` array contributes literals of its own, which shifted the from/to parity so the TO
+      halves — replacements, correctly absent from the app — were counted and reported LOST.
+      **(3)** Counting across every app file answers the wrong question: `code.split(ANCHOR)` runs
+      on the ONE file the transform admits, so it is scoped to the files the config's own
+      `id.endsWith` names. **(4)** Discovery by NAME missed `policy-notice`, which calls its anchor
+      **`GATE`** — the too-narrow-proxy failure a third time, so anchors are discovered by **use**
+      (`code.split`/`code.replace` is handed it) as well as by name, the argument this guard
+      already makes for discovering overlays by behaviour rather than by a name shape.
+    - Proven **non-vacuous in both directions** rather than trusted: a fixture config carrying a
+      deliberately rotted anchor is reported LOST while every control stays clean, and one that
+      splits the app with no findable declaration **fails as a hole in the instrument** rather than
+      printing a reassuring *"rewrites nothing"* — which is exactly how `GATE` went unseen twice.
+    - **Not promoted to a build gate.** It answers a question about `scripts/oneoff/` probes rather
+      than about the app, every config already fails loudly with ANCHOR LOST the moment it runs,
+      and a class with zero findings is the detector this repo keeps declining to build. Re-run it
+      after any edit to the two dense app lines these anchors sit on.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
@@ -1443,6 +1475,24 @@ the total when deciding where a new guard belongs.
     `climb_logs` holds exactly one row, owned by **CI Fixture Owner**, on
     `wa_mount_baker_north_ridge`, noted *"CI fixture log."* — inserted by
     `seed-ci-test-fixture.mjs`, which has done so all along.
+    - **THAT CORRECTION WAS TRUE OF THE TABLE AND FALSE OF WHAT THE APP COUNTS, so #1467's original
+      reason was right after all.** Measured 2026-09-09: the row carries **`stars: null`**, and the
+      hydration splits `climb_logs` on exactly that column —
+      `if (row.stars == null) dbConds.push(item); else dbAscents.push(item);` — with only
+      `dbAscents` reaching `logs`. So the fixture's "logged climb" was a CONDITIONS REPORT,
+      `logs.length` was 0, and Profile read **"0 Climbs logged"** on a healthy run. *"0 logged"
+      really did appear in BOTH runs*, which is what makes it unmeasurable, exactly as that commit
+      said. **Having a ROW is not having a LOGGED CLIMB** — the correction settled the wrong
+      artifact, which is this file's own *ask what a count is a count OF* lesson landing on a
+      correction rather than on an audit.
+    - **The fixture was writing a state the app's own form cannot produce**, which is why nothing
+      noticed: `LogAscent` defaults `stars` to 5 and sends `undefined` only for a scout/"Conditions"
+      report, so a `tick_type:"lead"` with null stars is unreachable through the UI. The seeder now
+      writes `stars: 5`. **An existing fixture row is NOT updated by re-running the seeder** (it
+      skips on its `user_id`+`route_id` filter), so the LIVE row was patched by hand at the same
+      time (`stars: 5`, verified by read-back — a 200 is not evidence the data changed). The durable
+      account now has a real logged climb, which is what makes the Profile tile measurable at all. Same class as
+      [[the-fixture-manufactured-a-state-signup-cannot]].
     - **So the disagreement is REAL and its cause is UNKNOWN.** Recording it that way is the point:
       a plausible mechanism that has not been measured is a hypothesis, and this file already
       records three of those shipping as facts. The likeliest remaining candidate is the settle —
@@ -6037,9 +6087,34 @@ the correction knows the screen is wrong, and they have no way to report it.
       (`scripts/oneoff/measure-group-trust-gate-scale.mjs`), **one changes side**: *a year in,
       active* reads **57** on the client model and **37** on the server one. On the server scale even
       email plus two years' tenure plus twenty vouches comes to **45**.
-    - **WHETHER 55 IS STILL THE RIGHT NUMBER is an open product question** about how exclusive a
-      trust-gated group should be, and nothing here answers it. What was never in question is that
-      the gate must use the number the app shows.
+    - **THAT OPEN QUESTION IS ANSWERED, AND 55 WAS NOT MERELY STRICT — IT WAS A CLOSED DOOR.** This
+      bullet read *"whether 55 is still the right number is an open product question … nothing here
+      answers it"*, which is the [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape sitting on
+      a live gate. Measured (`scripts/oneoff/measure-real-trust-scores.mjs`, service key — an anon
+      count on `verification_records` returns 0 whatever the table holds): **every real account in
+      the project scores 0, 5 or 6**, and catalog-wide there are **0 vouches, 0 belay catches and 1
+      climb log**, so five of the eight components are zero for everyone.
+    - **THE EARNABLE CEILING IS 84, NOT 99, and that is what made 55 impossible rather than
+      demanding.** `compute_trust_score` pays 10 for a government ID and 10 for club/guide
+      credentials, and **nothing in the app can grant either**: `0085` pins every client write to
+      `'pending'`, `verify_my_email()` is the one definer that writes `'verified'` and it hardcodes
+      `'email'`, and `addVerification` is imported by both app files and **called by neither**. So
+      20 of the model's 104 points are unreachable, and 55 sat **one point above the 54** a climber
+      with no vouches and no belay catches can ever reach — i.e. "trust" had quietly become "somebody
+      has spoken for you", which is the state every new climber starts in.
+    - **20 IS NOT FITTED TO A CASE.** The verdict-preserving range for the profiles both models were
+      measured over is **17..37**, and 20 sits at the end that keeps the gate walkable for the
+      population that exists: a day-old verified account is 5 and is turned away, three months is 8,
+      half a year of real participation clears it.
+      `scripts/oneoff/measure-group-trust-threshold-candidates.mjs` re-derives all of it and prints
+      what each candidate demands in things a climber can actually do — **do not quote the figures
+      here without re-running it.**
+    - **Section 6 BOUNDS the threshold and deliberately asserts NO particular number**, because
+      where it sits between those bounds is a product decision and a guard pinning today's value
+      would argue with the next one. Both bounds are derived from the model and from
+      `scripts/lib/verification-reach.mjs`, so they move by themselves when the weights change or
+      when a verification the app cannot currently grant becomes earnable — the direction that
+      otherwise goes stale silently, since it makes the bar look more attainable than it is.
     - **The honest-refusal branch keys on `_trustUnsure`, not `_trustPartial`.** Once the gate reads
       the displayed score, the three client-side flags only make it unreliable while the
       locally-computed fallback is showing; refusing a join because an unrelated client read failed
@@ -6047,8 +6122,15 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
       two**, and two injection cases pin both halves — deriving a score again, and leaving one of
       the two identical handlers behind.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. The cases drift
+  - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
+    four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),
+    and **`id-verification-becomes-earnable` must stay SILENT** — giving the database a definer that
+    can attest a government ID lifts the partnerless ceiling to 64 by itself, so 55 stops being a
+    finding. A guard holding a hardcoded 54 would still fail there and would be **wrong** to; that
+    case is what proves the bound is derived rather than typed. `threshold-quoted-in-prose` pins the
+    line-anchored, unique declaration match, since the comment above the constant explains where the
+    number came from and names the one it replaced. The cases drift
     the two sides in **both** directions on purpose — a comparison that only ever read the JS would
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
@@ -8270,6 +8352,62 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Read the jump from 63 to 199 as coverage that was missing, never as data that got worse.**
     Nothing changed in the catalog. The same lesson as `trackIsJustTheWaypoints` correcting a
     denominator rather than a finding: *overstated coverage is the false-pass direction.*
+- **`gain_ft` BELOW `loss_ft` ON A ROUTE THAT RETURNS TO ITS OWN TRAILHEAD — you cannot finish
+  lower than you started.** The same kind of claim `check:impossible-leg` makes: no prose, no
+  judgement, the row contradicts itself. And the app already knows the pairing — `gainCoversWholeOuting`
+  is |loss − gain| / gain ≤ 3% and relabels the TECH STATS tile *"On foot"* when it holds.
+  `scripts/oneoff/measure-gain-vs-loss-on-an-out-and-back.mjs`.
+  - **`audit:gain` IS BLIND TO IT, and that is why it is worth having.** That audit compares
+    `gain_ft` against the rise between the route's own PINS, so a route whose pins agree — or whose
+    implied start happens to coincide with a recorded waypoint — never reaches its output. All
+    three routes repaired here were EXCUSED by its recorded-start rule, not flagged.
+  - **ONE-SIDED, for `audit:gain`'s reason.** Loss SMALLER than gain is ordinary: 135 of these 640
+    rows differ by more than 3% and the bulk have a tiny `loss_ft`, because that column also holds
+    the APPROACH's net descent rather than the outing's — **two conventions in one column**, the
+    shape recorded for `dist_km`. Only the other direction is a contradiction.
+  - **A TRAVERSE IS ALLOWED TO FINISH LOWER, and that is most of the raw count**: 45 of the 52 say
+    traverse / point-to-point / one-way / shuttle in their own prose.
+  - **OF THE SEVEN LEFT, FOUR ARE A CONVENTION AND NOT A DEFECT, and separating them is the whole
+    precision.** Where `gain_ft` matches the trailhead-to-summit PIN RISE almost exactly while
+    `loss_ft` is larger, gain is the RISE and loss is the total descent **including re-gains over
+    intermediate bumps** — two true numbers answering different questions, which is what five of the
+    seven pairs in the facts-stored-twice census also turned out to be.
+    `wa_spinnaker_peak_s_route` (2,045 against a 2,054 rise), `wa_mount_saul_se_route` (4,993 against
+    4,993), `wa_mount_lincoln_standard` and `wa_buckhorn_marmot_pass` are those, and they are left
+    alone.
+  - **THREE WERE BELOW BOTH `loss_ft` AND THE PIN RISE**, so that reading cannot explain them, and
+    each had a third and fourth record agreeing: `wa_wilmans_peak_scramble` (2,300 against loss 4,500,
+    rise 4,518 and a totalNote saying *"4,500 ft of gain"*), `wa_union_peak_se_route` (1,096 against
+    loss and rise agreeing **to the foot** at 1,696) and `wa_mount_rainier_curtis_ridge` (7,000
+    against loss 9,500, a totalNote saying *"~9,500 ft gain"*, and a 10,006 ft rise). Repaired by
+    `scripts/oneoff/fix-gain-below-its-own-loss.mjs`, which **copies `loss_ft` rather than typing a
+    number** — the declare-a-donor contract the trailhead and summit-pin repairs use, so a fix
+    needing a figure the row does not hold cannot be expressed. Contradictions **3 → 0**.
+  - **It is not cosmetic.** `gain_ft` becomes `gainM`, `scarfHrs` turns it into the approach
+    estimate, and that feeds Est. summit, Est. return and the After dark warning — so an understated
+    gain makes the app **optimistic**, the #641 direction.
+  - **A NINTH PAIR MEASURED ON THE WAY AND LEFT AS A READING LIST:** `gain_ft` against the trip
+    total stated in the route's own `itinerary.totalNote`
+    (`scripts/oneoff/measure-gain-vs-itinerary-total.mjs`). **192 comparable, 17 disagree** — but
+    only the **8** with a ONE-DAY itinerary are decidable, because where the trip has a camp *"the
+    trip total"* and *"the gain this column holds"* are different questions by the documented
+    high-camp convention. Two narrowings carry that precision, and the first draft got both wrong:
+    the figure must be one the note itself calls a TOTAL (a first version took the first number it
+    found and read a per-day LEG as the total, reporting 44, several with `gain_ft` LARGER than the
+    "total" it had picked), and the comparison is one-sided with the climbing vertical credited
+    first. **Read the row before repairing one** — `wa_grotto_mountain_e_route` stores `dist_km`
+    7.72 against a note saying 4.8 miles ROUND TRIP, i.e. that row is also carrying the two
+    `dist_km` conventions this file forbids normalising in bulk.
+  - **AND A NARROWING OF `audit:gain`'s OWN EXCLUSION WAS MEASURED AND REJECTED — do not
+    re-derive it.** That rule excuses a route which RECORDS something at the height its stored gain
+    implies, and on a one-day car-to-car itinerary there is no high camp, so the exclusion is
+    sometimes satisfied by a junction, a stream crossing or a roadside campground. Measured: of the
+    **29** excused, **23 are excused by a CAMP** and **1 by the BASE of the climb** — the convention
+    working — and only **5 by something else**. Reading those five, three are marginal (334–576 ft
+    over a 300 ft slack), one is a three-day trip where a camp may legitimately apply, and one is a
+    genuine 642 ft shortfall. So tightening buys **~1 real finding and risks 4 false warnings** on a
+    caveat this file already records #1533 widening precisely to stop false accusations. *A false
+    warning is how a real one stops being read.*
 - **`audit:gain`** asks whether a route's stored `gain_ft` is even POSSIBLE given its own
   waypoints. A party that starts at a trailhead at X ft and stands on a summit at Y ft has gained
   at least Y − X, so a row storing less than its own net rise is storing a number that cannot be
@@ -10416,8 +10554,53 @@ the correction knows the screen is wrong, and they have no way to report it.
     surface no climber reaches, from an author the census told was reachable.
     **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
     half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
-    label claims. What is still open there is only the units question — those labels are imperial
-    whatever the setting.
+    label claims.
+    - **AND THE UNITS QUESTION THAT WAS LEFT OPEN THERE IS NOW CLOSED**, on the filter every
+      DB-catalog climber actually uses. The bucket table carries **numbers** now — label bounds in
+      feet, query bounds in the metres the column is stored in — and `lenLabel()` renders them
+      through `uElevN`/`uElevUnit`, which arrive **as props** because this file must not import core
+      (core lazy-imports it, and a static import would make that cycle static — the file's own
+      recorded rule, the same reason `C` and `ActionIcon` are props).
+    - **The imperial rendering is byte-for-byte what it was**, asserted rather than eyeballed: this
+      is a units fix, not a copy change. Metric now reads `< 61 m / 61–183 m / 183–457 m / 457+ m`,
+      which are **the filter's own half-open cut points** rather than a re-rounding of the feet.
+    - **DELIBERATELY NOT consolidated onto `routeLengthLabel`**, and the measurement is why: that
+      helper's bounds are **inclusive FEET** (201–599, 600–1499) while these are **half-open
+      METRES**, so it would label a 600 ft route — which IS in this bucket — as `201–599 ft`.
+      Sharing the vocabulary would trade a units defect for an off-by-one one. Reconciling the two
+      bound sets is a separate change, and the seed twin is dead code either way.
+    - **`check:units` had the same blind spot and now has section 5 of `filters`.** Sections 1-4 all
+      assert `ROUTE_LENGTHS`/`routeLengthLabel`, whose every call site is in seed-only `RouteFinder`
+      — so the guard could report the units class green while the only reachable length filter said
+      `600–1500 ft` to a metric climber. The section lifts the table and the formatter from
+      `lib/DbAreaBrowser.jsx` rather than bundling it (that file drags in supabase and the whole DB
+      layer, and the question needs neither), and its load-bearing assertion is that **each metric
+      label states the bucket's own metre bounds** — converting the unit word while leaving the
+      numbers is the half a units fix most easily half-does.
+      - **SECTION 6 IS THE PROP CHAIN, and it is not ceremony.** Executing the formatter proves it
+        CONVERTS and says nothing about whether the helpers reach it — they are props, `lenLabel`
+        calls `uElevUnit()`, and a merge dropping them from any of the four links leaves that call
+        undefined and takes the whole panel down. **Neither direction of `check:dead-props` sees
+        it**: the component references the prop, and the call site passes nothing unread — the exact
+        hole this file records for the float plan.
+      - **A JSX tag here cannot be sliced with `[^>]*`**, and that failed on a correct app before it
+        was fixed: these props hold ARROW FUNCTIONS, so `=>` puts a `>` inside the tag and the match
+        stops mid-way. It slices to the `/>` that closes the tag at brace depth 0 — never a fixed
+        window, which this file records as encoding a guess about the size of the thing sought.
+      - Injection-tested **8/8** (`scripts/oneoff/inject-live-length-filter-cases.mjs`), a sibling
+        suite because the existing one's `FILE` is a single constant pointing at core. **Two must
+        stay SILENT** — a comment quoting the forbidden literal, and a renamed local. The floor
+        rises 28 → 38 with the section: a floor left at the old count cannot see the new half stop
+        asking.
+    - **STILL OPEN, measured and reported rather than half-fixed:** `AddRoute`'s approach buckets
+      (`< 1 mi / 1–3 mi / 3–6 mi / 6+ mi`, `ClimbMatchCore.jsx`) are imperial whatever the setting.
+      They are display-only — the control stores the KEY (`"u1"`) beside a separately canonicalised
+      numeric `dist` — so nothing is written wrong. The reason they are not converted here is that
+      the only distance helper available returns **two decimals**, and `1.61–4.83 km` on a coarse
+      bucket states a precision the bucket does not have; a second rounding vocabulary is how this
+      codebase got four grade parsers. `scripts/oneoff/measure-imperial-control-labels.mjs` is the
+      census — **91 literals, and after this change exactly one control group remains**, the rest
+      being prose or already unit-aware.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
@@ -11751,6 +11934,52 @@ per column.
   - It fails **closed**, and it claims nothing about rendering — only "could the data have
     arrived at all".
 
+**Is the box quiet enough for a browser result to MEAN anything?** `scripts/lib/quiet-box.mjs`
+asks before a probe spends anything, and it is the fourth precondition in this family — after
+"when is a screen finished", "did the guard read the app" and "can the database answer".
+  - **THE RULE EXISTED IN PROSE IN FOUR PLACES AND NOTHING ASKED THE MACHINE.** `check:outage`
+    records its `ranks` case reporting **MISSED at load ~450 and CAUGHT at ~260 on the same
+    commit**; `check:waypoint-placement` records a profile at ~450 being **off by 4x** *and
+    blaming the wrong two suspects*; `check:wp-styles`' cost was quoted at 2m29s against a real
+    37s; and memory carries *"browser/build failures = the box is oversubscribed"*. Every one is
+    a sentence somebody has to remember, which is the argument this file makes for a script over
+    a comment everywhere else.
+  - **BOTH DIRECTIONS ARE UNSAFE, which is why it REFUSES rather than warning.** A probe that
+    MISSES on a loaded box reads as a live defect and sends somebody to edit correct code. One
+    that PASSES can be **vacuous** — `probe-overlay-width-cap` already records that *"a skipped
+    overlay is indistinguishable from a passing one"* when nothing settles. A loaded run is
+    worthless both ways, so the honest output is no verdict at all.
+  - **THE THRESHOLDS COME FROM THIS FILE'S OWN RECORDED RUNS, NOT FROM A BAD NIGHT.** This box has
+    **4 cores**, so load-per-core is the meaningful figure: the runs CLAUDE.md calls quiet are load
+    **3.8 and 4.7 (~1x)**, and the ones it says invalidated a result are **110, 227, 250, 450 —
+    27x, 57x, 62x, 112x**. There is a wide empty band between them. It is quiet at **≤2x**, stamps
+    the output between 2x and 6x, and refuses above **6x** — an order of magnitude below the
+    cheapest recorded bad run, so it cannot fire on a borderline-fine machine.
+  - **SCOPED TO HAND-RUN PROBES, AND CI-NEUTRAL BY CONSTRUCTION.** No workflow executes anything
+    under `scripts/oneoff/` — both mentions in `.github/workflows/` are comments — and
+    `package.json` names no probe. **Do NOT wire this into a `check:` guard**: a CI runner is small
+    and legitimately busy, and a guard that declines to run is a guard you do not have.
+  - Wired into the **10 cited browser probes**, which are the ones this file points at as the proof
+    of a claim. The import goes first (ESM imports hoist, so their order cannot matter) and the
+    CALL after the leading contiguous import block — never after *"the last import line"*, which is
+    the trap `check:script-roots` records, where a probe's `ENTRY` template literal carries import
+    lines far below the real ones. Verified per file: parses, exactly one call, and the call
+    precedes `chromium.launch`.
+  - **`--anyway` (or `QUIET_BOX=0`) runs regardless and STAMPS the output** *"NOT EVIDENCE"*, so a
+    forced run cannot be read back later as a clean result. An override that left no trace would
+    just move the defect into the transcript.
+  - **`box` is a TEST SEAM** — the `--fixture`/`--known` idiom — because two of the three branches
+    could otherwise only be exercised on a quiet machine, which is exactly the machine this repo
+    does not reliably have. All five branches are proven: quiet, degraded-stamp, unknown-load
+    (fail-OPEN, since a platform that cannot report load must not block everybody), forced, and the
+    real refusal.
+  - **WHAT IT DOES NOT DO**: it says nothing about whether a probe is correct, only whether this
+    machine can produce a believable answer. And the **11 cited browser probes remain UN-SWEPT** —
+    #1678 swept the 77 static one-offs and #1695 the 202 DB-reading ones, and neither could reach
+    a browser probe. They could not be swept the night this landed either: the box measured
+    **116x oversubscribed**, which is the load this file already records as producing a wrong
+    answer. *Sweep them from a quiet box; the refusal is what stops that run being wasted.*
+
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
 tests `merge(head, base)` as base stood **when that run started**. So a PR that went green
@@ -12197,6 +12426,18 @@ value, put the reasoning somewhere else.**
   ever needed it has to be a new, explicitly-nullable column, and `null` must mean
   "depends on the descent chosen" rather than defaulting to 0. See
   [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
+  - **"Every WA value is a sentence" is MEASURED NOW, and understated: it is every value in the
+    CATALOG.** `scripts/oneoff/measure-rappels-column-shape.mjs` reads the whole column rather than
+    the WA subtree — **733 of 733 rows are strings**, no objects, no numbers, no arrays.
+  - **That is what makes `fmtRappels`' unit branch DEAD, and it is why the unit census flags it.**
+    That helper returns early on `typeof r!=="object"` and otherwise renders `r.lengthM+"m"` or
+    `r.lengthFt+"ft"` — a unit chosen by WHICH COLUMN the value came from rather than by the
+    climber's setting — reaching `rappelNoteText` and the TECH STATS *Rappels* tile. It is a
+    **false positive** of `measure-imperial-unit-literals.mjs`, not a defect to convert, because no
+    row can reach it. **The measurement is the tripwire**: the day something writes an object here,
+    the branch arms itself and shows metres to an imperial climber, so re-run the script rather
+    than re-reading this sentence. Same discipline as the `sling_rack` shapes — *a claim about the
+    stored shape is a claim about the DATA*, and this file records being wrong about that before.
 
 - **`bivy[].capacity` / `.water` / `.permit` are CHIPS, and the camping enrichment filled all
   three with paragraphs.** Measured on the live catalog: median **130 / 136 / 297** characters
