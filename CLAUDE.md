@@ -69,6 +69,7 @@ npm run check:policy-claims # no legal surface claims a control or a capability 
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
+npm run check:profile-draft-persists # a profile field the editor collects and the DB can hold must be SENT (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -3122,6 +3123,79 @@ the total when deciding where a new guard belongs.
     (`CMAX_DISC` 16 -> 18), a comment quoting the forbidden `Math.min(99,` shape, a comment naming
     the old refusal wording, and **the refusal reworded truthfully and differently** — the
     load-bearing one, since it is what proves 6b/6c are not pinned to a phrase.
+- **`check:profile-draft-persists`** asserts that **a profile field the editor collects, and the
+  database can hold, is actually SENT**. Static (two source reads plus the committed schema
+  snapshot — no browser, no database), so it sits in `npm run build`.
+  - **THE DEFECT: THE EDITOR COLLECTED CERTIFICATIONS AND SKILLS AND NOTHING STORED THEM.** Both
+    have been offered since the profile screen existed — *"No certifications added yet"*, *"No
+    skills added yet"* — `openEdit` seeds the draft from live state, the Profile renders them under
+    **CERTIFICATIONS & SKILLS**, and `trustFactors` pays **3 points per certification up to 10**.
+    Everything except storage: `saveEdit` set them on local state and its DB payload carried
+    neither, because `profiles` had **no column for either under any spelling** — confirmed three
+    ways (the snapshot, every migration, and `lib/db.js`, whose only `certification` hits are
+    GUIDE comments for a different feature).
+  - **SILENT, AND REACHABLE.** The save itself succeeds, since every other field in the payload is
+    real, so there is no error and no false success toast — the two fields simply vanish on the
+    next load. And the sign-in reset clears both to `[]`, so a real account cannot inherit the seed
+    values: it starts empty, fills them in, and reloads to empty again. `0181` added
+    `certifications text[]` and `skills text[]` and wired both ends.
+  - **NULLABLE WITH NO DEFAULT, deliberately.** A default of `'{}'` would rewrite every existing
+    row to assert *"this climber has no certifications"*; NULL says nobody has been asked. The app
+    already reads both through `|| []`, so an absent value renders as empty either way — checked
+    rather than assumed, and pinned by the round-trip probe.
+  - **THE RULE IS GENERAL RATHER THAN A PAIR OF NAMES, which is what makes it worth a gate:** every
+    key in `openEdit`'s draft that has a matching `profiles` column must appear in `saveEdit`'s
+    payload. It would have caught this the day the field was added, and it covers the **12**
+    storable fields today. A draft key with **no** column says nothing, so the rule cannot nag
+    about a field the schema cannot hold.
+  - **`NOT_A_COLUMN` records the two that genuinely have none** — `availWeek` (there is no
+    availability column for anyone, which is *also* why `compatUnknown` caps the browse row at 3
+    unknowns) and `level` (`check:real-profile-rows` exists because rendering one invents a value a
+    real account does not have). **A stale entry fails in BOTH directions**: a key the editor stops
+    collecting, and — the useful one — a key that GAINS a column, where the guard flips from silent
+    to demanding it be wired.
+  - **`ALIAS` is declared, never derived.** `showRealName` stores as `show_name`, and
+    `check:visibility-switches` records getting exactly this wrong: it derived `show_real_name`,
+    found no column, and reported a healthy control as broken.
+  - **THE PAYLOAD IS THE LITERAL *PLUS* THE CONDITIONAL ADDS.** `name` and `username` are appended
+    as `f.name=…` only when non-blank, so a literal-only scan calls two live fields unsent — the
+    guard would have manufactured two findings on correct code.
+  - **SECTION 6 ASKS THE READ-BACK, because a write with no reader round-trips to nothing.** The
+    sign-in hydration is an **allow-list**, so a column it does not name never reaches state however
+    faithfully it was stored — the write and the read are two separate ways for this to be broken.
+  - **A GATE rather than a probe**, for the reason `check:policy-claims` and `check:profile-claims`
+    were promoted: the fix is a **key in an object literal**, so dropping it changes **no
+    identifier** and `audit:silent-reverts` is blind to it by its own closing caveat.
+  - **THE FIVE UNWIRED-WRITE CENSUSES ARE BLIND TO THIS BY CONSTRUCTION**, which is why it survived
+    them. Census 4 looks for a handler that claims with **no write anywhere in it**, and `saveEdit`
+    contains a real `saveProfile` call. **A PARTIAL write — a payload missing two of the fields its
+    own form collects — is a sixth shape none of the five asks about.**
+  - **Proven end to end against the live database, under RLS, with a real account's own JWT**
+    (`scripts/oneoff/probe-certifications-round-trip.mjs`, 7 assertions). The service key bypasses
+    RLS entirely, so a service-key probe reports success either way — `0095`'s own header records
+    that trap. It creates a throwaway account, signs in **as them with the anon key**, writes what
+    `saveEdit` now sends, reads it back the way `getProfile` does, and tears the account down (QA
+    accounts verified at **0** afterwards). It also pins the two directions a naive fix gets wrong:
+    **clearing your last certification must stick** (which is why the payload sends `|| []` rather
+    than omitting the key — an omitted key leaves the stored value standing, so the deletion would
+    be silently ignored), and **a brand-new account must read NULL on both**.
+  - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a moved
+    `openEdit` or `saveEdit`, a draft literal that does not close, fewer than 8 draft keys or 5
+    payload keys parsed (with none, every comparison passes **vacuously**), a `profiles` that
+    parsed short, fewer than 6 storable fields actually compared, and a missing hydration.
+  - **Its own first run parsed ZERO draft keys**, because the slice began at `setEditDraft(` — the
+    call's own paren opens a level, so the keys sat at depth 2 and a depth-1 scan found none. The
+    fail-closed floor caught it rather than the guard printing a clean sweep over nothing.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-profile-draft-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `ClimbMatch.jsx` byte-identically. Case 1 is the
+    real defect; case 2 drops **only** `skills`, so one field of a pair cannot hide behind the
+    other; case 3 keeps the write and drops the READ BACK. **Two must stay SILENT** — a comment
+    naming the forbidden shape, and a no-op that leaves `level`/`availWeek` undeclared, which is
+    the load-bearing one: a rule that fired on a draft key with no column would demand a migration
+    for every field the editor collects.
+  - It supersedes `probe-certifications-are-never-persisted.mjs`, which is deleted rather than left
+    green — *a verification nobody runs is not a verification*, and a probe whose NAME describes a
+    fixed defect is stale bookkeeping.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
