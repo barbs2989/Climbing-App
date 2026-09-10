@@ -182,7 +182,9 @@ if (offered.length) ok(`${offered.length} entr(ies) name a control the app now O
 /* The sheet also claimed a CAPABILITY rather than a control: "You can edit or clear anything from
    your profile and settings at any time." Measured false in two places -- `saveEdit` guards name
    and username with `if (d.x && d.x.trim())`, so a blank is skipped and the old value survives,
-   and the avatar has a change control and deliberately no remove. Asserted as SOURCE rather than
+   and the avatar had a change control and no remove -- #1733 ADDED one, so that half of the
+   sentence is now true and the sheet says so; the saveEdit blank-guard is what this assertion
+   still rests on. Asserted as SOURCE rather than
    rendered, because this sheet is inline in App rather than in LegalView, and standing up App is
    far more than this question is worth. */
 const sheet = surfaces[2][1];

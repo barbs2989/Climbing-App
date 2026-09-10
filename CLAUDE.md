@@ -57,6 +57,7 @@ npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:photo-removal # a climber can take their OWN photo down, and only their own (in build)
+npm run check:mutual-friends # a mutual friend is real, named as they asked, and counted as the list that renders (in build)
 npm run check:preview-claims # a control that changes only CLIENT STATE must not claim a real outcome (in build)
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
@@ -12250,29 +12251,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*
-- **MUTUAL FRIENDS IS A STUB, AND EVERY ENTRY POINT IS CORRECTLY GATED OFF IT — so the feature is
-  ABSENT rather than lying, which is the opposite of the usual defect here.** `mutualIds()` takes
-  **no arguments** and returns a literal `[]`, so `mutualCount()` is 0 for every climber, always.
-  All five consumers render as `mutualCount(...) ? control : null`, so the *"N mutual friends ›"*
-  row never appears and the **Mutual friends** sheet is unreachable in the app — only
-  `?z=mutualModal`, the overlay guards' own opener, can mount it. `fedge()` beside it returns
-  `false` and has **zero** callers.
-  - **NOT a regression:** `git log -S "function mutualIds"` returns only the original upload and
-    the monolith split (#497). Never implemented, never reverted, so `audit:silent-reverts` has
-    nothing to say about it and is right not to.
-  - **The cost is a session polishing copy no user can read, and that has already happened once.**
-    #1637 corrected the sheet's subtitle (*"You and Alex both know 0"*), a real string defect on a
-    surface with no reachable entry point. The walk that found it opens overlays by name, which is
-    exactly how an unreachable modal looks reachable. **Before fixing copy found by an overlay
-    walk, check the surface has an entry point that can render.**
-  - **Proven by EXECUTION, not by reading**
-    (`scripts/oneoff/probe-mutual-friends-is-a-stub.mjs`): it bundles Core and calls the real
-    exports over five inputs chosen to overlap as much as possible, and reports
-    `mutualIds.length` — the declared parameter count, which is **0** and is the structural tell.
-    It **exits 1 if the function ever starts returning something**, so this note fails as stale
-    rather than rotting into a description of code that has moved on.
-  - **Implementing it or deleting the UI are both product decisions, not polish** — one is a
-    feature, the other removes a built screen — so neither was done.
+- **MUTUAL FRIENDS WAS A STUB FOR THE LIFE OF THE APP, AND RLS IS WHY — IMPLEMENTED IN 0182, so
+  read this as history.** `mutualIds()` took **no arguments** and returned a literal `[]`, so
+  `mutualCount()` was 0 for every climber, always. Every consumer renders as
+  `mutualCount(...) ? control : null`, so the *"N mutual friends ›"* row never appeared and the
+  **Mutual friends** sheet had no reachable entry point in the app — only `?z=mutualModal`, the
+  overlay guards' own opener, could mount it.
+  - **NOT a regression, which is why `audit:silent-reverts` was right to say nothing:**
+    `git log -S "function mutualIds"` returned only the original upload and the monolith split
+    (#497). Never implemented, never reverted.
+  - **The cost was a session polishing copy no user could read.** #1637 corrected the sheet's
+    subtitle (*"You and Alex both know 0"*), a real string defect on a surface with no reachable
+    entry point. The walk that found it opens overlays **by name**, which is exactly how an
+    unreachable modal looks reachable. **Before fixing copy found by an overlay walk, check the
+    surface has an entry point that can render.**
+  - **IT COULD NEVER HAVE BEEN DONE FROM THE APP.** `0087` says it outright — *"Read: only the
+    two people involved. A connection is not public."* — so the other climber's edges are
+    unreadable from the client **by construction**, and no amount of app code computes the
+    intersection. That is why the stub sat there: not an oversight, a wall. `0182` supplies a
+    `SECURITY DEFINER` function, the same escape `0095` took. See `check:mutual-friends`.
+  - **CLOSING IT BROKE THE GUARD THAT WATCHED FOR IT, correctly, and the repair generalises.**
+    `check:crew-member-readers` anchored section 2's non-vacuity on a LIVE instance — the
+    mutualIds stub was the only `.map(cById)` left — so removing it made that guard fail on a
+    **clean** app. A floor whose only anchor is a live defect stops working the day the defect is
+    fixed, which is the one day it must not. It exercises the pattern on **constructed samples**
+    now, positive and negative, so *"the pattern broke"* and *"the class is empty"* stop being
+    the same verdict. `probe-mutual-friends-is-a-stub.mjs` is deleted: it was built to fail the
+    day this shipped, and it did.
 - **WITH `DEMO_FILLERS` ON, 7 OF 60 ABSENCE CLAIMS ARE STILL ON SCREEN, AND THAT IS THE RIGHT
   NUMBER.** `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57
   overlays and reports which *"No X yet"* sentence actually renders — the question the sample-data
@@ -13171,6 +13176,102 @@ their own Résumé showed an amber **"Unverified"** chip.
     database, dates built relative to today so it cannot rot into a fixture about 2026. Promote it
     if a second date-labelled surface joins the class.
 
+- **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
+  and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
+  parses — no browser, no database), so it sits in `npm run build`.
+  - **THE FEATURE WAS A STUB AND EVERY ENTRY POINT WAS CORRECTLY GATED OFF IT, which is why nothing
+    ever reported it.** `mutualIds()` took **no arguments** and returned a literal `[]`, so
+    `mutualCount()` was 0 for every climber, always. Every consumer renders as
+    `mutualCount(...) ? control : null`, so the *"N mutual friends"* row never drew and the **Mutual
+    friends sheet had no reachable entry point in the app** — only `?z=mutualModal`, the overlay
+    guards' own opener, could mount it. The feature was **ABSENT rather than lying**, so no honesty
+    guard could see it, and `audit:silent-reverts` correctly says nothing: `git log -S` shows it was
+    never implemented, so nothing was reverted.
+  - **IT HAD ALREADY COST A PR.** #1637 corrected the sheet's subtitle — a real string defect, on a
+    surface with no reachable entry point. The walk that found it opens overlays **by name**, which
+    is exactly how an unreachable modal looks reachable. *Before fixing copy found by an overlay
+    walk, check the surface has an entry point that can render.*
+  - **IT COULD NOT BE DONE CLIENT-SIDE, AND THAT IS THE WHOLE DESIGN.** `0087` says it outright —
+    *"Read: only the two people involved. A connection is not public."* — so the other climber's
+    edges are unreadable from the app by construction and **no client-side query can compute the
+    intersection**. `0182` supplies a `SECURITY DEFINER` function, the same escape `0095` took.
+  - **THE SAFETY PROPERTY IS INHERENT RATHER THAN BOLTED ON.** Whatever ids are passed, the result
+    is a subset of the CALLER's own accepted connections — the function can never return a climber
+    the caller does not already know. So the most a caller learns by passing many ids is *which of
+    their own friends know those people*, which is what a mutual-friends feature IS. The array is
+    capped at 64 so a friend list cannot be swept in one call.
+  - **BLOCKS ARE HONOURED OR THIS IS A WAY AROUND ONE**, and `profile_owner_blocked_me` is reused
+    rather than re-implemented — a second copy of a block test is how two of them drift.
+  - **`set search_path = public, pg_temp`, never `= public`**, which READS AS PINNED AND IS NOT.
+  - **REVOKING FROM `public` LEFT `anon=X` STANDING, and reading the ACL back is what showed it.**
+    Postgres grants EXECUTE to PUBLIC and Supabase's default privileges ALSO grant it explicitly to
+    `anon` — an explicit role grant a revoke from PUBLIC does not touch. A signed-out caller could
+    not have learned anything (`auth.uid()` is null, so the caller's own friend set is empty), but
+    *"it happens to return nothing"* is the wrong footing for a definer. **Read `proacl` after
+    applying one; a `grant` that looks right in the file may not be what landed.**
+  - **PROVEN WITH THREE REAL ACCOUNTS, because two is not enough to have a mutual friend.**
+    `scripts/oneoff/probe-mutual-connections-with-three-real-accounts.mjs` — 9 assertions, service
+    key for account creation only, every read and write under test on the anon key plus that
+    climber's own JWT. Connections are made the way the app makes them (request, then accept), never
+    written as `accepted` with the service key, which would manufacture a state RLS refuses.
+    **The CONTROL runs first and is the non-vacuity proof**: with nothing connected the same call
+    returns nothing, so the later result is attributable. It also asserts the block is
+    **one-directional** — the climber who did the blocking still sees theirs — because every
+    deny-side assertion is equally satisfied by a function that quietly returns nothing.
+  - **THE HELPERS TAKE RESOLVED FRIEND OBJECTS, NOT IDS, and that removed a latent defect rather
+    than merely tidying.** `mutualFirstNames` did `CLIMBERS.find(x => x.id === f)` — an INTEGER seed
+    lookup that matches no uuid — so on a real account every mutual friend would have silently lost
+    their name. Names now go through **`pubFirst`**, or the feature publishes the real name of a
+    climber who asked to be shown as a handle: the *named the way they asked* class, which has
+    already caught four mappings.
+  - **A MUTUAL FRIEND'S PROFILE IS ALREADY IN HAND**, so nothing is refetched: by definition they
+    are one of the caller's own accepted connections, and `useMyConnections` already selects
+    `show_name`. Resolving from that list is what lets the helpers name them without re-deriving
+    the show-name rule somewhere new.
+  - **SEED IDS MUST NEVER REACH A `uuid[]` RPC.** PostgREST answers a type mismatch with a **400**,
+    so an unfiltered ask set does not degrade for the seed rows — it takes mutual friends down for
+    every real account too. The guard asserts a **COUNT EQUALITY** (every id added to the ask set is
+    string-checked) rather than the presence of one such test: with four sources feeding it,
+    *"at least one is guarded"* is satisfied while three are not, and the injection case reported
+    **MISSED** against the presence version.
+  - **IT PARSES RATHER THAN STRIPS, AND THAT IS A DEFECT THIS GUARD SHIPPED WITH FOR ONE
+    ITERATION.** The first version blanked comments with the obvious `/\/\*[\s\S]*?\*\//g`. A
+    comment-opening sequence inside a **string literal** starts a phantom comment running to the
+    next real terminator, so that strip removed **23.7% of `ClimbMatch.jsx` and 49.1% of
+    `lib/db.js`**, took `<FullProfile` from 2 occurrences to **0**, and reported a correctly-wired
+    call site as MISSING — the direction that sends an author to "fix" working code. CLAUDE.md
+    already records the identical strip eating 21% of `RouteDetail.jsx` and calling a live flag
+    dead. **An AST does not see comments at all.** One injection case is a comment quoting the
+    forbidden shapes and must stay SILENT, which is what pays for the rewrite.
+  - **`fedge()` IS REMOVED**: declared, exported, and called by nothing.
+  - Fails **closed**: a bundle that does not build, any of the five helpers missing from core's
+    exports, either app source unparseable, a missing `useMutualConnections` or `_mutualAsk`
+    (`ANCHOR LOST`), a migration that strips to nothing, and fewer than **23** assertions run.
+  - Injection-tested **10/10** (`scripts/oneoff/inject-mutual-friends-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring the file byte-identically. **Two must stay
+    SILENT.** The harness's usual *refuse an expectation that matches the clean run* check is
+    **inverted here**, and the reason is a property of this guard rather than a weakening: it prints
+    the same LABEL on its `ok` and `FAIL` lines, so every legitimate expectation appears in a green
+    run and the blanket refusal rejects all of them — it fired on the first case. Judging matches
+    **FAIL lines only**, and the refusal is turned round: an expectation must NAME an assertion the
+    guard actually makes, which still catches the typo'd case that can never fire.
+  - **A CASE REPORTED MISSED WHILE THE GUARD WAS INNOCENT**, for the reason this file records
+    elsewhere: `String.replace` with a STRING pattern replaces only the FIRST occurrence, and the
+    first `set search_path = public, pg_temp` in that migration is inside its own header. The
+    checksum moved, the case reported `landed=true`, and the function was untouched. *Checksum
+    movement proves an edit happened, not that it was the right one.*
+  - **THE DOCUMENTS MOVED IN THE SAME CHANGE**, because this is an un-gating: a fact that reached
+    nobody now reaches other climbers. What is disclosed, stated precisely rather than glossed: that
+    **a climber the reader is already connected to is also connected to the climber whose profile
+    they are viewing**. No identity is revealed that the reader did not already have — every name
+    shown is one of their own connections — but the EDGE is, and neither party published it to them.
+  - **NO PRIVACY SWITCH WAS INVENTED, and that is flagged rather than decided.** Every other
+    visibility fact in this app has a control (`discoverable`, `show_name`, `photos_public`,
+    `resume_public`, `showOnRanks`); mutual friends would be the only disclosure without one.
+    Building it is a product decision beyond *"implement mutual friends"*, and it is not free — a
+    switch suppressing only the reader's own side would be misleading, and one suppressing a
+    climber's appearance in OTHER people's mutual lists needs the definer to filter on a column that
+    does not exist.
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
   `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.

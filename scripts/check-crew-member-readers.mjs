@@ -110,16 +110,11 @@ const BY_REF = /\.(map|filter|find|some|every|flatMap)\(\s*(cById|CLIMBERS\.find
 // else, so passing one by reference over any list is a seed resolution of people ids. A site
 // that really is seed-only goes in ALLOW_REF with a measured reason.
 
-const ALLOW_REF = [
-  {
-    key: "mutualIds(",
-    why:
-      "mutualIds() is a STUB -- it takes no arguments and returns a literal [], so the sheet " +
-      "is unreachable and there is no id to resolve. Proven by execution in " +
-      "scripts/oneoff/probe-mutual-friends-is-a-stub.mjs, which exits 1 the day it starts " +
-      "returning something, so this entry cannot rot into a description of live code.",
-  },
-];
+// EMPTY, AND THAT IS THE CLASS BEING CLOSED RATHER THAN A LIST THAT ROTTED. The one entry here
+// exempted the mutualIds() stub -- "no arguments, returns a literal [], so there is no id to
+// resolve". Mutual friends is implemented now (0182), the sheet resolves real friends, and the
+// site is gone; the stale-exemption check below is what required this entry to go with it.
+const ALLOW_REF = [];
 const usedRef = new Set();
 const refFindings = [];
 let refSites = 0;
@@ -173,14 +168,35 @@ if (!sites) {
   process.exit(1);
 }
 
-// Section 2's own floor. It is satisfied today by ONE site -- the mutualIds() stub -- and
-// that is exactly what makes it a real anchor: if the by-reference scan ever matches nothing,
-// the pattern has been narrowed until it cannot fire, which prints identically to a clean app.
-if (!refSites) {
-  console.error(`${GUARD} FAILED - the by-reference scan matched NO roster resolver at all.`);
-  console.error("It should still find mutualIds(...).map(cById). The pattern or ROSTER_ID broke,");
-  console.error("and a scan that cannot fire reports a clean app either way.");
-  process.exit(1);
+// SECTION 2'S NON-VACUITY IS A SELF-TEST NOW, NOT A LIVE INSTANCE, AND THE REASON IS THAT THE
+// CLASS CLOSED. This floor used to require refSites > 0, satisfied by the ONE remaining site --
+// the mutualIds() stub, which this guard also exempted. Implementing mutual friends (0182)
+// removed that site, and the floor then failed on a CLEAN app: it could not tell "the pattern
+// has been narrowed until it cannot fire" from "there is nothing left to find", and those want
+// OPPOSITE repairs. A floor whose only anchor is a live defect stops working the day the defect
+// is fixed -- which is the one day it must not.
+//
+// Exercising the pattern on CONSTRUCTED samples separates them, and is what this repo already
+// does for measure-optimistic-writes-by-handler: the classifier is run against fixed shapes
+// first and refuses to report on the app unless it reproduces them. The negative cases matter
+// as much as the positive: a pattern widened until it matches a call inside a callback would
+// double-report section 1's findings.
+const BY_REF_SELFTEST = [
+  ["cl.memberIds.map(cById)", true],
+  ["ids.filter(CLIMBERS.find)", true],
+  ["xs.flatMap(FILLER_CLIMBERS.find)", true],
+  ["cl.memberIds.map(function(id){return cById(id);})", false],
+  ["xs.map(cByIdish)", false],
+  ["xs.map(byId)", false],
+];
+for (const [sample, want] of BY_REF_SELFTEST) {
+  // A fresh RegExp per sample: BY_REF carries the g flag, so .test is stateful.
+  const got = new RegExp(BY_REF.source).test(sample);
+  if (got !== want) {
+    console.error(`${GUARD} FAILED - the by-reference pattern no longer behaves: ${JSON.stringify(sample)} matched ${got}, expected ${want}.`);
+    console.error("A scan that cannot fire, or one that fires on everything, reports a clean app either way.");
+    process.exit(1);
+  }
 }
 
 const staleRef = ALLOW_REF.filter((a) => !usedRef.has(a.key));
