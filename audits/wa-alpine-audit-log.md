@@ -19895,3 +19895,124 @@ before sending the next.
 
 Next batch continues in sorted-id order after `wa_little_tahoma_east_shoulder` (see
 progress file).
+
+## Batch 268 (2026-09-10)
+
+Routes: `wa_live_free_or_die`, `wa_lizard_mountain_south_route`,
+`wa_luahna_peak_southwest_slope_southeast_ridge`, `wa_luna_glacier`,
+`wa_luna_peak_southeast_slopes`, `wa_lundin_peak_south_face_left`,
+`wa_magic_mountain_north_face`, `wa_magic_mountain_northeast_couloir`.
+
+**Fixed (8 SQL statements, 6 routes):**
+
+- `wa_live_free_or_die` — `dist_km` (8.05 → 4.023). This peak's routes have shown a
+  round-trip-stored-as-one-way bug across batches 265-266 (the app doubles `dist_km` for
+  round-trip display, so it expects a one-way figure); this route shares its exact
+  approach with `wa_liberty_crack` ("Same East Face approach as Liberty Crack"), whose own
+  one-way `dist_km` is already correct at 4.02, and its own itinerary states `"miles": 5`
+  for the round trip. 8.05 is also the *exact* pre-fix value batch 265 corrected on
+  `wa_liberty_and_injustice_for_all` — same peak, same bug, same erroneous number, strongly
+  suggesting a shared origin. Also `loss_ft` (NULL → 2700): this is a rappel-descent
+  out-and-back returning to the same East Face base (per its own `descent_text`), so
+  `loss_ft` should track `gain_ft`; used the row's own top-level `gain_ft` (2700) rather
+  than the itinerary's `gainFt` (2400), since the itinerary's own `totalNote` explicitly
+  flags that figure as "estimated."
+- `wa_lizard_mountain_south_route` — removed a stale `data_quality.gaps` entry ("No
+  standalone gain/distance figures exist since the peak has no independent trailhead
+  approach"), contradicted by this row's own current `gain_ft`=5980, `dist_km`=23.34, and
+  a full 8-point waypoint chain from the Downey Creek Trailhead to the summit (14.5 mi ×
+  1.60934 = 23.335 km, matching `dist_km` almost exactly). This gap note predates whatever
+  pass populated those fields.
+- `wa_luna_glacier` — `dist_km` (61.15 → 30.575), the same round-trip bug: this row's own
+  6-day itinerary sums to 11+6+2+2+8+11=40 miles, matching its own `totalNote` ("roughly
+  38-40 miles round trip") almost exactly (61.15 km = 38.0 mi). Also its Phantom Peak
+  summit waypoint's `distMi` (0 → 19.0): it was identical to the trailhead's `distMi`=0,
+  which cannot both be true for a documented 6-day, ~19-20-mile one-way approach; set to
+  match the corrected one-way `dist_km`.
+- `wa_luna_peak_southeast_slopes` — one `bivy` entry ("Access Creek headwaters basin")
+  stored its elevation under the key `elevM` (1341, metres) while its sibling entry and
+  every other bivy entry in this catalog use `elev` in feet. 1341 m = 4400.4 ft, matching
+  this row's own approach text ("~4,400ft") almost exactly, so only the key was wrong —
+  corrected to `elev: 4400`. (`gain_ft`/`loss_ft`/`dist_km` on this route were independently
+  cross-checked against its own structured itinerary object and matched to the foot/mile —
+  no fix needed there.)
+- `wa_lundin_peak_south_face_left` — the top-level `descent` field read as generic
+  boilerplate ("Be aware of loose rock and snow bridge hazards") that does not fit this
+  route: "snow bridge hazards" describes glacier travel, and Lundin Peak (6,057 ft, Alpine
+  Lakes Wilderness) is non-glaciated. This row's own `itinerary` field already gives the
+  real descent ("descend via the West Ridge or Southeast Ridge and hike out") — replaced
+  `descent` with route-specific wording drawn from that field. (Its `fa` — Mike Preiss &
+  Don Preiss, 2004 — could not be independently confirmed via WebSearch but was not
+  contradicted either; left as-is. Its hazards field's claim of "a fatal fall on descent...
+  documented (1980)" WAS confirmed: AAC Publications records a fatal 600-ft fall by Jerry
+  Pruitt on Lundin Peak on October 11, 1980.)
+- `wa_magic_mountain_north_face` — `best_season` ("Jul-Sep, with route conditions...")
+  disagreed with this same row's own `season` field ("Jun-Aug") and its own
+  `climate.summer` text ("Late June to early August gives the best combination... By late
+  summer the glacier goes to bare ice at its margins and the schrund opens"), which both
+  independently point the other way and explicitly say the route gets *worse*, not better,
+  late in the season. Corrected `best_season` to match.
+
+**Flagged, not fixed — two systemic bivy-list cross-contamination findings, both larger
+than a single batch:**
+
+- `wa_luahna_peak_southwest_slope_southeast_ridge`'s `bivy` array (9 entries) is dominated
+  (7 of 9) by camps belonging to an entirely different mountain — Glacier Peak, across
+  three of its own separate approaches (Cool Glacier/Gerdine Ridge via North Fork Sauk,
+  Kennedy Glacier/Frostbite Ridge via Suiattle, Sitkum Glacier via White Chuck) — plus Buck
+  Creek Pass (Helmet Butte/Buck Mountain/Mount Berge, not Luahna) and Boulder Pass/Thunder
+  Basin (Clark Mountain/Tenpeak, not Luahna). None of the 9 entries describes this route's
+  own documented approach camp (Boulder Basin near 5,800 ft via the White River
+  Trailhead). Confirmed this is not isolated to one row: queried the DB directly and found
+  the same 9-entry list byte-identical on the peak's other route
+  (`wa_luahna_peak_east_slopes`) and on `wa_clark_mountain_west_ridge`, and two Glacier
+  Peak routes (`wa_glacier_peak_cool_glacier_gerdine`, `wa_glacier_peak_kennedy_glacier`)
+  carry an identically-sized 9-entry list. This is a wide regional shared-list
+  contamination spanning well beyond this batch and needs the same kind of dedicated,
+  carefully-verified multi-route reconciliation this project's
+  `fix-mountain-loop-camp-split.mjs` and `fix-goat-rocks-st-helens-camp-split.mjs` scripts
+  did for two earlier, similarly-shaped cross-peak camp-list contaminations — not a
+  single-row edit folded into a routine 8-route batch.
+- `wa_lundin_peak_south_face_left`'s `bivy` array (8 entries) is a broad Snoqualmie
+  Pass/Alpine Lakes Wilderness regional camp guide spanning Lundin, Red Mountain, Kaleetan
+  Peak, Bryant Peak, Kendall Peak, Huckleberry Mountain, Chikamin Peak, Alta Mountain and
+  Hibox Mountain. Only the first entry (Commonwealth Basin and Red Pond) is specific to
+  Lundin/Red Mountain, and this route is documented as a single-day car-to-car climb in
+  its own `itinerary` field, so almost the whole list has no bearing on it.
+- As a control showing this judgment isn't over-eager: `wa_magic_mountain_north_face` and
+  `wa_magic_mountain_northeast_couloir` share an identical 6-entry `bivy` list (Boston
+  Basin lower/upper camp, Sahale Glacier Camp, Pelton Basin, Johannesburg Camp, informal
+  bivouacs) that IS legitimate — every entry is a genuinely nearby Cascade-Pass-corridor
+  camp serving one of several peaks reached from the same trailhead, and Pelton Basin is
+  this specific route's own documented camp. That's the shape a correctly-shared zone file
+  takes, and it's the contrast that makes the Luahna/Lundin lists read as contaminated
+  rather than merely broad.
+
+**Clean, cross-checked:** `wa_magic_mountain_northeast_couloir` — every distance, gain,
+loss, season and waypoint figure is internally self-consistent and matches its sibling
+North Face route exactly where the two share ground (they share the approach up to the
+Magic-Pelton col); `season` ("Apr-Jul"), `best_season`, and `climate` all independently
+agree on an April-to-early-July snow window, and the row's own `approach_variants.baseFinding`
+text is thorough and internally coherent about how to distinguish this couloir line from
+the sibling North Face route and from other similarly-named lines on the same peak.
+
+**Tooling note:** `check-sql-targets.mjs` reports all 8 write targets exist (no silent
+no-op risk) and confirms no DELETE. Re-verified each WHERE-clause guard value against a
+fresh read of the live DB immediately before finalizing the SQL — no drift from when the
+batch was first pulled. File is 7.6KB, over the SQL Editor's ~4KB safe-paste soft limit —
+split into ~1.5–2KB chunks and verify each before sending the next.
+
+WebSearch (not WebFetch) was used for external verification this session: Blake
+Herrington's own blog post and an AAC Publications article confirmed
+`wa_live_free_or_die`'s 8-pitch structure to M&M Ledge (matching this row's own
+`pitch_detail` array and `beta`/`descent_text` fields exactly — initially misread as
+contradicting the row's `pitches: 11`, until the row's own `beta` field turned out to
+already explain the extra 3 pitches as the shared Thin Red Line finish to the summit, so
+`pitches` was left alone rather than "corrected" on a hasty read); an AAC Publications
+accident report confirmed the 1980 Lundin Peak fatality cited in
+`wa_lundin_peak_south_face_left`'s `hazards` field. Neither search needed WebFetch.
+
+SQL: `audits/sql/2026-09-10-batch-268.sql` (8 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_magic_mountain_northeast_couloir` (see
+progress file).

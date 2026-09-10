@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_little_tahoma_east_shoulder",
+  "last_processed_id": "wa_magic_mountain_northeast_couloir",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5438,6 +5438,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-11-batch-267.sql",
       "notes": "3 SQL fixes across 3 rows (2 wrong-permit-template fixes on Lincoln Peak, 1 missing-permit fill on Little Tahoma). Flagged rather than fixed: 2 likely-duplicate route pairs (Lincoln Peak north_ridge/wilkes_booth; Little Tahoma east_shoulder/frying_pan_whitman_glaciers) each already self-flagged by an earlier pass's data_quality.gaps field and never resolved -- no DELETE per audit guardrails, so left for human merge decision. Also flagged: Little Sister 5-route aspect/grade/FA tangle, insufficient sourcing (Mountain Project blocked by WebFetch egress proxy)."
+    },
+    {
+      "batch_number": 268,
+      "date": "2026-09-10",
+      "route_ids": [
+        "wa_live_free_or_die",
+        "wa_lizard_mountain_south_route",
+        "wa_luahna_peak_southwest_slope_southeast_ridge",
+        "wa_luna_glacier",
+        "wa_luna_peak_southeast_slopes",
+        "wa_lundin_peak_south_face_left",
+        "wa_magic_mountain_north_face",
+        "wa_magic_mountain_northeast_couloir"
+      ],
+      "pass": 5,
+      "confirmed_errors_fixed": 8,
+      "flagged_for_human_review": 3,
+      "clean": 1,
+      "sql_file": "audits/sql/2026-09-10-batch-268.sql",
+      "note": "8 SQL fixes across 6 routes. Fixed: wa_live_free_or_die's dist_km (8.05 -> 4.023, the round-trip-stored-as-one-way bug this same peak's routes have shown in batches 265-266 -- 8.05 is the exact pre-fix value batch 265 corrected on wa_liberty_and_injustice_for_all) and loss_ft (NULL -> 2700, matching its own gain_ft for this rappel-descent out-and-back); wa_lizard_mountain_south_route's stale data_quality.gaps entry claiming no standalone gain/distance figures exist, contradicted by this row's own gain_ft/dist_km/waypoints; wa_luna_glacier's dist_km (61.15 -> 30.575, same round-trip bug -- 61.15 km = 38.0 mi, matching this row's own itinerary totalNote of \"roughly 38-40 miles round trip\" almost exactly) and its Phantom Peak summit waypoint's distMi (0 -> 19.0, was identical to the trailhead's distMi=0 despite a documented 6-day, ~19-20-mile one-way approach); wa_luna_peak_southeast_slopes's bivy entry storing its elevation under the wrong key (elevM: 1341 -> elev: 4400, matching the row's own approach text and its sibling bivy entry's feet convention -- the app's schema reads elev, not elevM); wa_lundin_peak_south_face_left's generic/templated descent field (mentioned irrelevant glacier \"snow bridge hazards\" on a non-glaciated 6,057 ft rock climb) replaced with the route-specific West Ridge/Southeast Ridge descent already stated in this row's own itinerary; wa_magic_mountain_north_face's best_season (\"Jul-Sep...\") corrected to match this same row's own season field (\"Jun-Aug\") and its own climate.summer text, which both say the glacier/bergschrund crux is best in late June-early August and explicitly gets WORSE (bare ice, open schrund) by late summer -- the opposite of what best_season implied.\n\nFlagged, not fixed -- two systemic bivy-list cross-contamination findings. wa_luahna_peak_southwest_slope_southeast_ridge's bivy array (9 entries) is dominated (7 of 9) by camps for an entirely different mountain -- Glacier Peak, across three of its own separate approaches (Cool Glacier/Gerdine Ridge via North Fork Sauk, Kennedy Glacier/Frostbite Ridge via Suiattle, Sitkum Glacier via White Chuck) -- plus Buck Creek Pass (Helmet Butte/Buck Mountain/Berge, not Luahna) and Boulder Pass/Thunder Basin (Clark Mountain/Tenpeak, not Luahna). None of the 9 entries describes this route's own documented approach camp (Boulder Basin near 5,800 ft via the White River Trailhead). Confirmed this is not isolated to one row: the same 9-entry list appears byte-identical on the peak's other route (wa_luahna_peak_east_slopes) and on wa_clark_mountain_west_ridge, and at least two Glacier Peak routes carry an identically-sized 9-entry list. This spans well beyond one batch and needs the same kind of dedicated, multi-route reconciliation this project's fix-mountain-loop-camp-split.mjs and fix-goat-rocks-st-helens-camp-split.mjs scripts did for two earlier, similar cross-peak camp-list contaminations -- not a single-row edit inside a routine batch. wa_lundin_peak_south_face_left's bivy array (8 entries) is a broad Snoqualmie Pass/Alpine Lakes Wilderness regional camp guide spanning Lundin, Red Mountain, Kaleetan Peak, Bryant Peak, Kendall Peak, Huckleberry Mountain, Chikamin Peak, Alta Mountain and Hibox Mountain; only the first entry (Commonwealth Basin and Red Pond) is specific to Lundin/Red Mountain, and this route is documented as a single-day car-to-car climb in its own itinerary field, so most of this list has no bearing on it at all. As a control, wa_magic_mountain_north_face and wa_magic_mountain_northeast_couloir share an identical 6-entry bivy list (Boston Basin lower/upper camp, Sahale Glacier Camp, Pelton Basin, Johannesburg Camp, informal bivouacs) that IS legitimate -- every entry is a genuinely nearby Cascade-Pass-corridor camp serving one of several peaks reached from the same trailhead, and Pelton Basin is this route's own documented camp -- which is the contrast that made the Luahna/Lundin lists read as contaminated rather than merely broad.\n\nClean, cross-checked: wa_magic_mountain_northeast_couloir -- every distance/gain/loss/season/waypoint figure is internally self-consistent (dist_km and both waypoints' distMi match the North Face route's shared approach exactly, as expected since the two routes share it up to the Magic-Pelton col; season, best_season and climate.summer all agree on an April-early July window).\n\nTooling note: check-sql-targets.mjs reports all 8 write targets exist (no silent no-op risk) and confirms no DELETE. The file is 7.6KB, over the SQL Editor's ~4KB safe-paste soft limit -- split into ~1.5-2KB chunks and verify each before sending the next. WebSearch (not WebFetch) was used for external verification this session (Blake Herrington's route beta for wa_live_free_or_die's pitch structure, an AAC Publications accident report confirming the 1980 Lundin Peak fatality cited in wa_lundin_peak_south_face_left's hazards field) and both returned usable synthesized results without needing WebFetch."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
