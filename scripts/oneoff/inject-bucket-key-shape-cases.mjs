@@ -70,11 +70,15 @@ const CASES = [
     expect: null,
   },
   {
-    name: "5-outingShape-chips-removed",
-    why: "the rule must be TARGETED — a CHECK-constrained key column is the model and must survive",
+    // The rule must be TARGETED: a CHECK-constrained key column is the model, so sweeping the
+    // CORRECT control away with the wrong ones has to be loud. The whitelist reports this twice
+    // over — the mutated group is undeclared AND the declaration is now stale — and either message
+    // is a catch; this case is judged on the staleness one, which is the half that cannot rot.
+    name: "5-the-correct-control-swept-away-goes-stale",
+    why: "a whitelist that cannot rot: removing the one group that is RIGHT must fail, not pass",
     file: CORE, find: '["outback","Out and back"]',
     repl: '["OUTBACK_REMOVED","Out and back"]',
-    expect: /outingShape chips are gone/,
+    expect: /chip group \[outback\/loop\/point\] is declared here but is no longer in AddRoute/,
   },
   {
     name: "6-SILENT-the-same-pair-shape-outside-AddRoute",
@@ -84,6 +88,23 @@ const CASES = [
     // file on the BARE key, which is right for it — u1/1to3/3to6/6plus are unique tokens that
     // occur nowhere else — so including one would trip that rule and say nothing about this one.
     repl: 'const DECOY=[["rappel","Rappel"],["single","Single-pitch"],["multi","Multi-pitch"]];' + OUT_OF_FORM,
+    expect: null,
+  },
+  {
+    // THE CASE THE BLACKLIST CANNOT CATCH, and the whole reason the whitelist exists. Brand-new
+    // keys, same defect: the three-key FORBIDDEN list above matches nothing here, so without the
+    // group whitelist this run would be GREEN on a fresh bucket control.
+    name: "7-a-NOVEL-bucket-group-the-blacklist-cannot-see",
+    why: "REAL CLASS: a new chip group with unknown keys is invisible to a list of known keys",
+    file: CORE, find: IN_FORM,
+    repl: '{sf("comms")?<div>{[["shady","Mostly shady"],["mixed","Mixed"],["sunny","Mostly sunny"]].map(o=>o[1])}</div>:null}' + IN_FORM,
+    expect: /chip group \[shady\/mixed\/sunny\] in AddRoute is not declared/,
+  },
+  {
+    name: "8-SILENT-a-bare-two-string-list-is-not-a-group",
+    why: 'MUST PASS — ["cams","nuts"] is a list of gear kinds, character-identical to a pair; only an array OF ARRAYS is a group',
+    file: CORE, find: IN_FORM,
+    repl: '{["cams","nuts","screws","pads"].map(x=>x).length?null:null}' + IN_FORM,
     expect: null,
   },
 ];
