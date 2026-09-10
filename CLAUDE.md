@@ -10465,8 +10465,53 @@ the correction knows the screen is wrong, and they have no way to report it.
     surface no climber reaches, from an author the census told was reachable.
     **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
     half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
-    label claims. What is still open there is only the units question — those labels are imperial
-    whatever the setting.
+    label claims.
+    - **AND THE UNITS QUESTION THAT WAS LEFT OPEN THERE IS NOW CLOSED**, on the filter every
+      DB-catalog climber actually uses. The bucket table carries **numbers** now — label bounds in
+      feet, query bounds in the metres the column is stored in — and `lenLabel()` renders them
+      through `uElevN`/`uElevUnit`, which arrive **as props** because this file must not import core
+      (core lazy-imports it, and a static import would make that cycle static — the file's own
+      recorded rule, the same reason `C` and `ActionIcon` are props).
+    - **The imperial rendering is byte-for-byte what it was**, asserted rather than eyeballed: this
+      is a units fix, not a copy change. Metric now reads `< 61 m / 61–183 m / 183–457 m / 457+ m`,
+      which are **the filter's own half-open cut points** rather than a re-rounding of the feet.
+    - **DELIBERATELY NOT consolidated onto `routeLengthLabel`**, and the measurement is why: that
+      helper's bounds are **inclusive FEET** (201–599, 600–1499) while these are **half-open
+      METRES**, so it would label a 600 ft route — which IS in this bucket — as `201–599 ft`.
+      Sharing the vocabulary would trade a units defect for an off-by-one one. Reconciling the two
+      bound sets is a separate change, and the seed twin is dead code either way.
+    - **`check:units` had the same blind spot and now has section 5 of `filters`.** Sections 1-4 all
+      assert `ROUTE_LENGTHS`/`routeLengthLabel`, whose every call site is in seed-only `RouteFinder`
+      — so the guard could report the units class green while the only reachable length filter said
+      `600–1500 ft` to a metric climber. The section lifts the table and the formatter from
+      `lib/DbAreaBrowser.jsx` rather than bundling it (that file drags in supabase and the whole DB
+      layer, and the question needs neither), and its load-bearing assertion is that **each metric
+      label states the bucket's own metre bounds** — converting the unit word while leaving the
+      numbers is the half a units fix most easily half-does.
+      - **SECTION 6 IS THE PROP CHAIN, and it is not ceremony.** Executing the formatter proves it
+        CONVERTS and says nothing about whether the helpers reach it — they are props, `lenLabel`
+        calls `uElevUnit()`, and a merge dropping them from any of the four links leaves that call
+        undefined and takes the whole panel down. **Neither direction of `check:dead-props` sees
+        it**: the component references the prop, and the call site passes nothing unread — the exact
+        hole this file records for the float plan.
+      - **A JSX tag here cannot be sliced with `[^>]*`**, and that failed on a correct app before it
+        was fixed: these props hold ARROW FUNCTIONS, so `=>` puts a `>` inside the tag and the match
+        stops mid-way. It slices to the `/>` that closes the tag at brace depth 0 — never a fixed
+        window, which this file records as encoding a guess about the size of the thing sought.
+      - Injection-tested **8/8** (`scripts/oneoff/inject-live-length-filter-cases.mjs`), a sibling
+        suite because the existing one's `FILE` is a single constant pointing at core. **Two must
+        stay SILENT** — a comment quoting the forbidden literal, and a renamed local. The floor
+        rises 28 → 38 with the section: a floor left at the old count cannot see the new half stop
+        asking.
+    - **STILL OPEN, measured and reported rather than half-fixed:** `AddRoute`'s approach buckets
+      (`< 1 mi / 1–3 mi / 3–6 mi / 6+ mi`, `ClimbMatchCore.jsx`) are imperial whatever the setting.
+      They are display-only — the control stores the KEY (`"u1"`) beside a separately canonicalised
+      numeric `dist` — so nothing is written wrong. The reason they are not converted here is that
+      the only distance helper available returns **two decimals**, and `1.61–4.83 km` on a coarse
+      bucket states a precision the bucket does not have; a second rounding vocabulary is how this
+      codebase got four grade parsers. `scripts/oneoff/measure-imperial-control-labels.mjs` is the
+      census — **91 literals, and after this change exactly one control group remains**, the rest
+      being prose or already unit-aware.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
