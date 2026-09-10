@@ -288,6 +288,49 @@ the total when deciding where a new guard belongs.
     edit landed **by checksum** and restoring every file it touched byte-identically. Fails
     **closed** on a renamed `feats`, an array that does not close, or fewer than 5 entries parsed —
     a tour the guard cannot read must never report as a tour with nothing missing.
+- **THE SEED-IDENTITY DEFECT CAME BACK IN `FriendsList`, AND `check:seed-history` IS BLIND TO A
+  THIRD OF THE APP — the second half is the serious one.** The friends overlay's FRIENDS' RECENT
+  ACTIVITY section does exactly what #735 fixed on Home, both halves:
+
+      friends.some(function(c){return c.name===x.a.user;})          // which rows to show
+      var fr=friends.find(function(c){return c.name===x.a.user;});  // Kudos / Message / VOUCH
+
+  `friends` is the DB-backed connections list and `a.user` is a seed author's DISPLAY NAME, so a
+  real climber called "Maya Chen" is shown that seed climber's 11 climbs as her own activity — and
+  `fr` drives the row's **Vouch** button, so she could be vouched for off somebody else's climb.
+  `seedIdentity` appeared **zero** times within 4,000 characters of either site.
+  - **THE GATE COULD NOT SEE IT, and that is measured rather than inferred.** `blank()` wipes
+    comments and strings in one stateful pass, treating **every quote as a string delimiter** — and
+    JSX body text is full of apostrophes (`don't`), so it desynchronises and wipes real code:
+
+        ClimbMatchCore.jsx   41.4% of the file wiped   54 of 283 `function NAME` declarations GONE
+        RouteDetail.jsx      46.2% wiped               33 of 129 GONE
+        ClimbMatch.jsx       37.4% wiped                2 of  10 GONE
+
+    Those 54 sit at **column 0** — `GearTiers`, `CatchLedger`, `EmergencyRescueCard`, `SpeedProfile`,
+    `ReportStats`, `BailoutForm` — and a declaration at column 0 cannot be inside a string or a
+    comment. **Wiping comment text is the point; wiping CODE is a false pass**, and finding that
+    code is this gate's entire job. `check:overlay-discovery`'s entry already records the same
+    blanker returning *"0 overlays where raw returns 22"*.
+  - **SO A GREEN RUN HERE IS A STATEMENT ABOUT TWO THIRDS OF THE APP**, and `FriendsList` is in the
+    wiped third. That is why the defect survived the gate built for it.
+  - **IT WAS FOUND BY ACCIDENT, WHICH IS THE PART TO INTERNALISE.** An apostrophe in an unrelated
+    comment shifted where the desync lands and the two sites became visible for the first time.
+    **Rewording the comment made the guard green again — the tempting fix, and the wrong one**: it
+    would have hidden a live defect and left the gate reporting a clean sweep. The apostrophe was
+    kept until the sites were genuinely gated.
+  - **The gate goes AFTER the comparison** (`c.name===x.a.user&&seedIdentity(c)`), matching the form
+    `ClimbMatch.jsx` uses, because the scan tests the **90 characters following** the match. A gate
+    written *before* it is correct code the guard rejects — worth knowing before "fixing" a red by
+    reordering the wrong way.
+  - **Verified on RAW source, not through the gate**, because a green from the gate proves nothing
+    here: `scripts/oneoff/probe-friendslist-activity-is-seed-gated.mjs` asserts both gated forms and
+    that the two UNGATED strings are absent, plus a non-vacuity check that the 43 seed activity
+    authors still exist. Nothing it reads is blanked, so nothing can be silently skipped.
+  - **THE BLANKER IS NOT REWRITTEN HERE, deliberately.** It is shared with `check:dead-flag-gates`,
+    whose own entry records that a regex strip *"ate real code"* there, so a careless fix is worse
+    than the hole. It needs a JSX-aware pass and its own injection suite — and until it has one,
+    treat this gate's verdict as partial.
 - **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
   has SEVEN tabs and five browser guards walked six.** `NAV` is
   today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
