@@ -9456,12 +9456,24 @@ the correction knows the screen is wrong, and they have no way to report it.
       is**, so the rule is `\bMP\b(?!\s*~?\s*\d)`. **Stated from the data rather than fitted to
       it**: all 24 candidates were read, and all 24 are Mountain Project — no false positive, and
       no milepost-shaped string appears anywhere in the widened output.
-    - **THREE OF THE 24 ARE WORSE THAN A CITATION.** `wa_django`'s *"MP average ~3.3 stars"* and
-      `wa_kendall_peak_cliff_north_face`'s *"MP notes very low page views"* are the **analytics**
-      class this file already records for `crowds` — *page views are not ascents*, precision
-      borrowed from the wrong subject. `wa_rapple_grapple`'s *"retain the #1-3 structured list as
-      primary, add one #4 as optional"* is **pipeline voice**, an editor instructing the next
-      editor, rendered into a climber's RACK box.
+    - **THREE OF THE 24 ARE WORSE THAN A CITATION, AND THOSE THREE ARE REPAIRED — 67 → 64**
+      (`scripts/oneoff/redact-mp-abbreviation-citations.mjs`). `wa_django`'s *"MP average ~3.3
+      stars"* and `wa_kendall_peak_cliff_north_face`'s *"MP notes very low page views"* are the
+      **analytics** class this file already records for `crowds` — *page views are not ascents*,
+      precision borrowed from the wrong subject, so the qualitative verdict survives and the figure
+      goes. `wa_rapple_grapple`'s *"retain the #1-3 structured list as primary, add one #4 as
+      optional"* is **pipeline voice**, an editor instructing the next editor, rendered into a
+      climber's RACK box; both climber-facing facts survive as *"Optionally one #4 to cover pro to
+      4 inches; no pitons needed"*, which also takes that bullet under the 120-character line
+      (13 → 12).
+    - **THE OTHER 21 ARE NOT SWEPT, and that is the standing rule rather than a shortage of time.**
+      They are ordinary attributions welded into sentences that also carry the fact, and this file
+      records that only ~4% of this backlog was ever mechanical. **Report, do not sweep.**
+    - **The applier's post-condition is what makes a batch in this family safe, and here it is
+      sharper than usual**: every rewritten leaf is re-run through the audit's OWN needle, lifted by
+      anchor — and that needle now knows MP, so a rewrite that merely moved the abbreviation is
+      refused. It also asserts the lifted needle **does** match MP-as-publisher and **does not**
+      match a milepost, or the post-condition would be vacuous for exactly the class it exists for.
     - Injection-tested as a **PAIR** for the reason above: `--inject=mpmilepost` must report **0**
       and `--inject=mppublisher` must report **every** value. All ten pre-existing cases were
       re-run after the widening — the five precision ones still report 0.
