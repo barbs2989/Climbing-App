@@ -10507,6 +10507,85 @@ their own Résumé showed an amber **"Unverified"** chip.
     its edit landed **by checksum** and restoring the file byte-identically; the over-reach case
     must fail on section 5, and a comment quoting the pre-fix expression must stay **SILENT**.
     The harness captures the clean run first and refuses any expectation that already matches it.
+- **...AND THE ENUMERATION STOPPED AT THE COMPONENT WHILE THE RULE DID NOT: TEN MORE READERS, IN
+  TWO FILES, OUTSIDE `CrewCard`.** Every sweep above was scoped to that component's local `roster`
+  — #1554 named four readers, #1647 read that list and found three, #1664 read THAT list and found
+  seven — so all fourteen fixes landed inside one component while `crew.members` is read whole in
+  ten other places — four in core (the Partners chip, the invite-to-your-crew cap filter, the inbox
+  preview, `isReady`) and six in `ClimbMatch.jsx`. **A closed list is only closed over the SCOPE somebody actually swept**, and
+  the scope was never stated. Fixed by exporting the rule (`crewInCrew` / `crewSize` /
+  `crewAskedToJoin`), the `seedIdentity()` shape this file already records: *it was inline before,
+  so it existed in exactly one place and every other reader had to re-derive it — and one did not.*
+  Here ten did.
+  - **FOUND BY READING A FRESH `ui-screens` CAPTURE, NOT BY DIFFING ONE**, which is what the note
+    on that technique says to do. Partners rendered Sam as **"✓ On crew"** for the Octopussy crew
+    while the Crew tab one tap away rendered Sam as **"Asked to join"** — two screens, one crew,
+    two answers, both from the same `crews` array. Nothing in the repo compares them.
+  - **THE WORST IS NOT A COUNT, and it is the twin of the `risks` fix #1664 made one component
+    over.** `safetyMembers` fed `analyzeAlignment`, which raises a **critical** flag —
+    *"Conservative and Aggressive members in same party. Explicit conversation required before
+    confirming."* — from every listed member's risk tolerance, and gates *"Team Ready to Climb"* on
+    all of them having answered the questionnaire. So **a stranger's REQUEST to join could put a
+    critical safety flag on your crew naming a conflict with somebody who is not on the trip, and
+    hold the ready state shut for as long as the request stood.** A false warning is how a real one
+    stops being read. Different screen, different variable, different FILE — which is precisely why
+    a sweep scoped to `roster` could not reach it.
+  - **`isReady` HAD IT TOO, so the Crew tab disagreed with itself.** The crew card's STEPS panel
+    read *"✓ Crew — Everyone has confirmed they're in"* off `inCrew` while `isReady` required every
+    `members` row to be `confirmed`, so the same crew badged **"Forming"** in the quick list. It has
+    the widest reach of any consumer here (the Ready badge, the profile invite list, the archive
+    test), which is why one line moved the most.
+  - **THE SIZE WAS WRONG TWICE OVER, and writing the rule once is what removed the second half.**
+    `members` carries a `climberId: 0` row on a DB-hydrated or app-created crew and **not** on three
+    of the five seed crews, so `members.length` is one convention and `members.length+1` is the
+    other and **each is wrong for half the data**. The invite prompt used the second: for
+    `crew_seed_octo` it read *"3/3 climbers"* — a requester counted, and **you counted twice** — for
+    a crew of one. The comment beside `activeCrewOthers` records fixing exactly that double-count in
+    the chat header (*"a crew of two people announced three"*) and it survived here. `crewSize()`
+    counts YOU once plus the others who are in, which is what every call site meant; every caller is
+    a crew you are in (*"one of your crews"*, *"crews you run"*), and that is asserted.
+  - **A REFUSAL WITH A FALSE REASON is worse than a wrong number.** The invite prompt answered
+    *"Sam is already in your crew for this climb"* and offered **Go to crew** — and the ACTION is
+    right, because accepting them is what you do there. Only the sentence was false, so only the
+    sentence changed. Same shape as `check:preview-claims`: make the copy describe what is true
+    rather than rewiring a control that already works.
+  - **THE INVITE BUTTON STAYS SUPPRESSED FOR A REQUESTER, DELIBERATELY.** The tempting reading of
+    this rule is *"they are not a member, so offer to invite them"*. Inviting somebody who has
+    already asked is the wrong action; accepting them is. So the chip says **"Asked to join"** in
+    amber — the crew card's own wording — and no new control was invented. **The same expression
+    does two different jobs** (*is this person on the crew* versus *should I offer to invite them*),
+    which is exactly why the enumeration matters more than the fix.
+  - **The CLOSED list is the useful one**, and it is written beside the helper rather than as a list
+    of what was fixed — the fixed list is what left readers behind three times. Five readers keep
+    the whole roster on purpose: the crew card's member **LIST**, the invite sheet's own pool and the
+    `addable` connections beside it (you must not be offered somebody who has already asked), the
+    per-crew **profile lookups** (you need their profile to draw the roster row), and the organiser's
+    **join-request** surface. Probe section 4 pins all five, and it is the load-bearing half: a rule
+    that only ever removes requesters is satisfied by removing them everywhere, which would hide a
+    requester from the organiser who has to accept them.
+  - **TWO THINGS ARE REPORTED, NOT FIXED, because each is a DIFFERENT rule and mixing them in would
+    make this change unreviewable.** The crew **chat** participant strip and header (`"You + N
+    climbers"`) list everyone, and `crews_messages`' select policy — read from `0042`, not from
+    prose — is `m.status = 'confirmed'` **or the creator**, so an `invited` member cannot read the
+    chat either. That is a stricter rule than *non-pending* and it is a claim about privacy, so it
+    wants its own change with the migration cited. And the **"Crew ready!" celebration** is a second
+    derivation of readiness sitting beside `isReady` with different guards; only its pending
+    blindness is fixed here, because consolidating it would change WHEN the celebration fires.
+  - `scripts/oneoff/probe-a-requester-is-not-on-the-crew.mjs` — 26 assertions, no browser, no DB. It
+    **lifts the three helpers from source** by balancing braces (a retyped copy would agree with
+    itself whatever the app did, which is the whole question), executes the rule, and asserts all
+    twelve readers as **SOURCE** beside it: a merge that keeps the helper and leaves one reader on
+    `crew.members` restores that reader's defect with every execution assertion still green.
+  - **The injection found a real robustness hole in the probe rather than in the app**, which is
+    what a suite is for. The lift anchored on `^function` at the start of a LINE, so a comment
+    written beside the helper made the probe report **ANCHOR LOST** — a probe refusing to run
+    because somebody documented the thing it checks, the `check:ci-cancel` trap. It balances braces
+    now, skipping string contents. Injection-tested **9/9**
+    (`scripts/oneoff/inject-requester-not-on-crew-cases.mjs`), each case proving its edit landed **by
+    checksum** and restoring the file byte-identically. **Two must stay SILENT**, and one case had
+    to be re-aimed at the probe's FAIL text rather than the text an assertion prints when it PASSES
+    — the mistake this file already records twice, made a third time and caught by the harness's own
+    refusal to accept an expectation that matches the clean run.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for
