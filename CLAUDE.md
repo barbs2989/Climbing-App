@@ -11211,6 +11211,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
     disagreed with a fact already known.
 
+- **THE NWS CROSS-CHECK ROW PUT A MACHINE TOKEN ON THE SAFETY TAB.** The forecast panel prints
+  three sources side by side, and the NWS line read:
+
+      NWS  High 53° · Low 45° · Wind 9 mph · Rain_showers
+
+  MET's condition goes through `metWxLabel()`; NWS's went through `cap()`, which only uppercases
+  the first letter — so NWS's snake_case gridpoint vocabulary reached the climber intact. **The
+  asymmetry is the defect, not a missing map entry**: two sibling sources on one row, one labelled
+  and one not.
+  - **A MAP IS RIGHT FOR MET AND WRONG FOR NWS, which is why this is not "add a table".**
+    `clearsky` and `partlycloudy` are not English, so that source genuinely needs one. NWS ships
+    English words joined by underscores (`rain_showers`, `freezing_rain`, `blowing_snow`), so
+    replacing the separator labels the **whole vocabulary** — where a table would be a second list
+    to maintain whose first unlisted code puts the raw token straight back on screen.
+  - **FOUND BY READING A CI CAPTURE**, on the tab a climber opens to decide whether to go. Every
+    other condition on that panel reads as prose, which is what made the one token visible.
+  - **A NUMBER ON THE SAME ROW LOOKED WRONG AND WAS NOT — checked before reporting it.** The
+    *"differs N°"* tag appeared not to match the highs beside it. It compares day **midpoints**:
+    Sep 12's Open-Meteo mid is 56.5 against NWS's 49, i.e. 7.5 → *"differs 8°"*, and today's 4.5 is
+    correctly below the threshold and untagged. Reading it as a defect would have "fixed" a correct
+    comparison.
+  - `scripts/oneoff/probe-nws-condition-is-prose.mjs` — 9 assertions, no browser, no DB, both
+    helpers lifted from source. It tests **every value NWS publishes** rather than the one code that
+    was noticed, and its non-vacuity case keeps `cap("rain_showers") === "Rain_showers"` so the rest
+    cannot pass against a vocabulary that never had underscores.
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
   verified by hand in a browser against live federal services, and every one of those runs
