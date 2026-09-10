@@ -78,3 +78,28 @@ export function partnerlessCeiling(scoreOf, reachable) {
 export function dayOneScore(scoreOf, reachable) {
   return scoreOf({ emailVerified: reachable.has("email") });
 }
+
+/**
+ * The highest score ANY climber can reach, with every earnable component at full stretch and no
+ * limit on partners. This is the bound that matters for a NAMED TIER or a stated goal: a tier above
+ * it is shown to nobody ever, and a goal above it can never read "goal met" — which is what 90 was
+ * against a reachable 84, on a card whose whole purpose is telling a climber how to raise a number.
+ *
+ * Distinct from `partnerlessCeiling`, which asks a different question (what can you reach ALONE)
+ * and is the right bound for a gate that calls itself trust. Both exist; they are not
+ * interchangeable, and using the partnerless one here would forbid a tier that is legitimately
+ * reachable by a well-vouched climber.
+ */
+export function earnableCeiling(scoreOf, reachable, cap) {
+  const s = scoreOf({
+    emailVerified: reachable.has("email"),
+    idVerified: reachable.has("id"),
+    certCount: (reachable.has("member_club") || reachable.has("guide_certified")) ? 2 : 0,
+    tenureDays: 40 * 30,
+    vouches: 10000,
+    catches: 10000,
+    logs: 10000,
+    reports: 10000,
+  });
+  return cap == null ? s : Math.min(s, cap);
+}

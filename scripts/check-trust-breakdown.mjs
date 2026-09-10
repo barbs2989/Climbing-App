@@ -32,7 +32,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { reachableVerificationTypes, partnerlessCeiling, dayOneScore } from "./lib/verification-reach.mjs";
+import { reachableVerificationTypes, partnerlessCeiling, dayOneScore, earnableCeiling } from "./lib/verification-reach.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.trustbreakdown-${process.pid}.mjs`);
@@ -361,6 +361,69 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   if (MIN <= dayOne) {
     fail(`GROUP_TRUST_MIN is ${MIN}, which a day-old account scores on confirming its email (${dayOne}) — the group promises an exclusivity it does not have`);
   } else ok(`GROUP_TRUST_MIN (${MIN}) turns away a day-old verified account (${dayOne})`);
+
+  // -------------------------------------------------------------------------
+  // 7. EVERY NAMED TIER, AND THE CARD'S GOAL, MUST BE REACHABLE BY SOMEBODY.
+  //
+  // The ladder was 90/70/50 against the model's cap of 99, and the earnable ceiling is 84 — so
+  // "Highly Trusted" and the "/ 90 goal" were shown to NOBODY, ever, on the one card whose whole
+  // purpose is telling a climber how to raise the number. A climber four years in with 25 vouches,
+  // 150 logs and 15 belay catches read "Trusted"; every real account read "New" in red.
+  //
+  // THIS ASSERTS THE PROPERTY, NEVER THE NUMBERS, for the reason section 6 gives about the group
+  // gate: where the bars sit between the bounds is a product decision, and a guard pinning today's
+  // 70/45/15 would argue with the next one. It is also TWO-DIRECTIONAL by construction — ship a
+  // definer that can attest a government ID and the ceiling rises, so the guard follows the model
+  // instead of going stale. That is the same derived-not-typed rule check:profile-claims uses for
+  // the "Add a cert" row.
+  const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  if (core.length < 100000) dead(`ClimbMatchCore.jsx read back only ${core.length} characters — the read broke, and every match below would report ANCHOR LOST`);
+  const full = earnableCeiling(serverTrustScore, reachable, SERVER_TRUST_CAP);
+  if (!(full >= ceiling)) dead(`the full ceiling (${full}) is below the partnerless one (${ceiling}) — the model did not load`);
+
+  // LINE-ANCHORED AND UNIQUE, the way section 6 reads GROUP_TRUST_MIN — and for a reason an
+  // injection found rather than a reason anyone predicted from reading it. The comment directly
+  // above this declaration explains where 70/45/15 came from and NAMES the ladder they replaced;
+  // an unanchored `.exec` takes the FIRST match, so quoting `TRUST_TIERS={high:90,...}` in that
+  // prose made the guard report on a ladder the app does not have — flagging correct work, which
+  // is how a guard gets ignored. `ladder-quoted-in-prose` is that case and it must stay silent.
+  const tds = core.match(/^export var TRUST_TIERS\s*=\s*\{\s*high:\s*\d+\s*,\s*trusted:\s*\d+\s*,\s*building:\s*\d+\s*\}/gm) || [];
+  if (tds.length !== 1) dead(`ANCHOR LOST: TRUST_TIERS is declared as a literal at the start of a line ${tds.length} time(s) in ClimbMatchCore.jsx, expected 1`);
+  const tm = /high:\s*(\d+)\s*,\s*trusted:\s*(\d+)\s*,\s*building:\s*(\d+)/.exec(tds[0]);
+  if (!tm) dead("ANCHOR LOST: TRUST_TIERS matched but its three tiers did not parse");
+  const TIERS = { high: Number(tm[1]), trusted: Number(tm[2]), building: Number(tm[3]) };
+
+  cases++;
+  if (!(TIERS.high > TIERS.trusted && TIERS.trusted > TIERS.building)) {
+    fail(`the trust ladder is not descending: ${TIERS.high}/${TIERS.trusted}/${TIERS.building}`);
+  } else ok(`the trust ladder descends (${TIERS.high}/${TIERS.trusted}/${TIERS.building})`);
+
+  cases++;
+  if (TIERS.high > full) {
+    fail(`"Highly Trusted" needs ${TIERS.high}, above the ${full} ANY climber can reach — it can be shown to nobody, ever`);
+  } else ok(`every named tier is reachable — the top one needs ${TIERS.high} against a ceiling of ${full}`);
+
+  // The goal is DERIVED from the top tier rather than being a fifth number. "goal met" and
+  // "Highly Trusted" naming different scores on one card is the disagreement this section exists
+  // for, so the guard forbids them being separately typed rather than merely comparing them.
+  cases++;
+  // Line-anchored for the same reason as the ladder above: this file's own comments quote the
+  // declaration while explaining it, and a first-match read of prose is a verdict about nothing.
+  const gds = core.match(/^export var TRUST_GOAL\s*=\s*([A-Za-z_.]+|\d+)/gm) || [];
+  const gm = gds.length === 1 ? /TRUST_GOAL\s*=\s*([A-Za-z_.]+|\d+)/.exec(gds[0]) : null;
+  if (!gm) {
+    fail(`ANCHOR LOST: TRUST_GOAL is declared at the start of a line ${gds.length} time(s) in ClimbMatchCore.jsx, expected 1`);
+  } else if (!/TRUST_TIERS\.high/.test(gm[1])) {
+    fail(`TRUST_GOAL is ${gm[1]} rather than TRUST_TIERS.high — the card's goal and the top tier can drift, which is how "goal met" and "Highly Trusted" came to name different scores`);
+  } else ok("the card's goal is derived from the top tier, so the two cannot disagree");
+
+  // A rule that only ever demands the bars come DOWN is satisfied by putting every tier at zero,
+  // which would call a day-old account "Highly Trusted". The bottom of the ladder has to keep
+  // meaning something.
+  cases++;
+  if (TIERS.building <= dayOne) {
+    fail(`"Building Trust" starts at ${TIERS.building}, which a day-old account scores on confirming its email (${dayOne}) — nobody would ever read "New"`);
+  } else ok(`"New" still means new — "Building Trust" starts at ${TIERS.building}, above the day-one ${dayOne}`);
 }
 
 

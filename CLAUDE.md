@@ -2556,18 +2556,27 @@ the total when deciding where a new guard belongs.
     can move, or "corrected by deletion" passes) and **no hardcoded range** — a literal scale bound
     typed into a title string is a hand-copy nobody re-derives, which is how the old one came to
     describe a scale that had never been measured.
-  - **THE TIERS ARE MEASURED AND DELIBERATELY NOT TOUCHED.**
-    `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles the app's own model and parses
-    the migrations: **ceiling 84, day one 5, partnerless 54**, with `ID verified 0/10` and
-    `Certifications 0/10` unfillable. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its
-    *"✓ Well-trusted — partners can rely on your record"* and the badge's *"Highly Trusted"* (≥90)
-    are **all unreachable — no climber can ever be shown any of them**, and the progress bar caps at
-    93%. *"Trusted"* (≥70) is barely better: a climber with two years, 12 vouches, 60 logs, 20
-    reports and 9 catches scores **65**, so they read *"Building Trust"*. **Where those four bars
-    belong is a product decision with app-wide visible effect** — it changes what every climber is
-    *called* on every screen — so it is raised rather than swept, the same shape the group-trust
-    threshold was put to the user as. The guard asserts none of them; a guard failing on today's
-    tiers would only break the build while the question is open.
+  - **THE TIERS WERE MEASURED, RAISED, AND ARE NOW CLOSED AT 70/45/15 — this paragraph read "and
+    DELIBERATELY NOT TOUCHED" until the question was put to the user, which is the staleness this
+    file records everywhere else.** `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles
+    the app's own model and parses the migrations: **ceiling 84, day one 5, partnerless 54**, with
+    `ID verified 0/10` and `Certifications 0/10` unfillable. Against that, the card's *"/ 90 goal"*,
+    its *"goal met"*, its *"✓ Well-trusted — partners can rely on your record"* and the badge's
+    *"Highly Trusted"* (≥90) were **all unreachable — no climber could ever be shown any of them**,
+    and the progress bar capped at 93%. *"Trusted"* (≥70) was barely better: a climber with two
+    years, 12 vouches, 60 logs, 20 reports and 9 catches scores **65**, so they read *"Building
+    Trust"*, and every real account read *"New"* in red.
+    - **It is a product decision with app-wide visible effect** — it changes what every climber is
+      *called* on every screen — so it was **put to the user with the candidates measured** rather
+      than swept, the shape the group-trust threshold decision took. They chose **70/45/15, goal
+      70**. `scripts/oneoff/measure-trust-tiers-against-the-ceiling.mjs` is what the choice was made
+      against: it prints what each candidate **CALLS six plausible paths** rather than a percentage
+      of the scale, because the components are not interchangeable — tenure cannot be hurried and a
+      vouch needs another person, so a proportion says nothing about whether anybody can walk the
+      ladder.
+    - **`check:trust-breakdown` section 7 asserts the PROPERTY, never the numbers**, and this entry
+      is why: a guard pinned to today's 70/45/15 would argue with the next re-balance. See that
+      guard for the four bounds and the two-directional case that proves the ceiling is derived.
   - Injection-tested **10/10** for these two sections
     (`scripts/oneoff/inject-profile-claims-reach-cases.mjs`), each case proving its edit landed **by
     checksum**, restoring byte-identically, and judged on the guard's **own FAIL lines** — the
@@ -6926,7 +6935,39 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
       two**, and two injection cases pin both halves — deriving a score again, and leaving one of
       the two identical handlers behind.
-  - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
+  - **SECTION 7 — EVERY NAMED TIER, AND THE CARD'S GOAL, MUST BE REACHABLE BY SOMEBODY.** Section 6
+    bounds a **gate**; this bounds the **names**. The ladder was `90/70/50` against the model's cap
+    of 99 while the earnable ceiling is **84**, so *"Highly Trusted"* and the *"/ 90 goal"* could be
+    shown to **nobody, ever** — on the one card whose whole purpose is telling a climber how to raise
+    the number. A climber four years in with 25 vouches, 150 logs and 15 belay catches read
+    *"Trusted"*; every real account read *"New"* in red. Now 70/45/15, chosen by the user against the
+    measured candidates.
+    - **`earnableCeiling` and `partnerlessCeiling` are NOT interchangeable, and using the wrong one
+      here would forbid correct work.** Section 6's bound asks what you can reach **alone** (54),
+      which is right for a gate calling itself trust; a *named tier* is legitimately reachable by a
+      well-vouched climber, so this one asks what **anybody** can reach (84). Both live in
+      `scripts/lib/verification-reach.mjs` with a comment saying they are not substitutes.
+    - **FOUR ASSERTIONS, AND THE FOURTH IS THE NON-VACUITY HALF.** The ladder descends; the top tier
+      is at or under the ceiling; `TRUST_GOAL` is **textually derived** from `TRUST_TIERS.high`
+      rather than being a fifth number that can drift — *"goal met"* and *"Highly Trusted"* naming
+      different scores on one card is the disagreement this exists for, so it forbids them being
+      separately typed rather than merely comparing them; and **`building` stays above the day-one
+      score**, because *a rule that only ever demands the bars come DOWN is satisfied by zeroing
+      them*, which would call a day-old account "Highly Trusted" and mean nobody ever reads "New".
+    - **DERIVED, NOT TYPED, IN BOTH DIRECTIONS.** Ship a definer that can attest a government ID and
+      the ceiling rises to 94 by itself, so a 90 tier stops being a finding — that is
+      `id-verification-makes-a-90-tier-legitimate`, and a guard holding a hardcoded 84 would still
+      fail there and would be **wrong** to.
+    - **ONE DEFINITION, because the ladder was written out FOUR times.** `trustTier()` is hoisted
+      beside `SERVER_TRUST_CAP`; `TrustBadge` and `FullProfile` both call it, and `ClimbMatch.jsx`
+      reads `TRUST_GOAL` for the goal label, the progress bar and the *"✓ Well-trusted"* gate. That
+      follows this file's own recorded lesson from `seedIdentity` and `crewInCrew`: **a hoist is not
+      a single source of truth until every reader uses it.**
+    - **THE NEARBY MATCH % BADGE CARRIES THE SAME 90/70/50 AND MUST NOT BE CHANGED WITH IT.** A blind
+      replace would have recoloured every partner card: compat is a different quantity on a 20–99
+      scale whose green really is reachable. Confirmed by dumping every site with context before
+      editing — four ternary chains carried those numbers and one set was not this ladder.
+  - Injection-tested **20/20** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
     four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),
     and **`id-verification-becomes-earnable` must stay SILENT** — giving the database a definer that
@@ -6939,6 +6980,30 @@ the correction knows the screen is wrong, and they have no way to report it.
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
     reading those would fail on the file explaining itself.
+    - **Section 7's seven are the same discipline one bound out.** Four fire — `90` restored
+      **verbatim**, a ladder that does not descend, `TRUST_GOAL` typed as a literal, and `building`
+      dropped to the day-one score — and **three must stay SILENT**: a legitimate re-balance
+      (80/50/20), a comment quoting the old ladder in declaration form, and the two-file
+      `id-verification-makes-a-90-tier-legitimate`, which is the only proof the ceiling is derived.
+    - **`ladder-quoted-in-prose` FIRED ON THE FIRST RUN, and the guard was the half that was
+      wrong.** Section 7 read `TRUST_TIERS` with an unanchored `.exec`, which takes the FIRST match
+      anywhere in the file — so a comment quoting `TRUST_TIERS={high:90,...}` while explaining where
+      the numbers came from made the guard report on a ladder the app does not have, i.e. **fail on
+      its own documentation**. Section 6 had already closed exactly this for `GROUP_TRUST_MIN` and
+      nothing carried it across, which is the *an instance fixed by hand is not a class closed*
+      shape **inside one guard**. Both matches are now `^export var …` line-anchored and asserted
+      **unique**, in the guard and in the measurement script the decision rests on — a second copy
+      of the rule is how those two end up disagreeing about which ladder is live.
+    - **DO NOT PIPE THIS SUITE THROUGH `tail`.** A pipeline exits with the status of its LAST
+      command, so `node inject-… | tail -25` reported **exit 0** over a run whose own summary line
+      said *"1 did not"*. The per-case verdicts are the deliverable and the exit code is the
+      backstop; piping discards the backstop. Same family as the `--json` + `process.exit()` trap
+      recorded for `audit:gain`.
+    - **The harness takes MULTI-FILE cases for that last one**, because moving the ladder and
+      shipping the definer that lifts the ceiling under it are two halves of one claim and **neither
+      means anything alone**: the ladder edit on its own is simply the failing case, and the definer
+      on its own changes no verdict. Every file is checksummed before and after, and a restore that
+      is not byte-identical is fatal.
 - **`check:untracked-factors`** asserts that **a factor nobody has measured does not read as ZERO**.
   Static (one esbuild bundle plus a source read, no browser and no database), so it sits in
   `npm run build`.

@@ -99,36 +99,105 @@ end; $$;` },
     why: "a comment quoting the old declaration is documentation, not the declaration",
     from: "const GROUP_TRUST_MIN=20;",
     to: "/* it read `const GROUP_TRUST_MIN=55;` until the scale under it changed */\nconst GROUP_TRUST_MIN=20;" },
+
+  // ---- SECTION 7: can a climber ever be shown the tier the badge names? ----
+  // Its healthy output is four `ok` lines, which is also what a section that never read the ladder
+  // would print, so none of the four is worth anything until it has been made to fire.
+  { name: "tier-above-the-ceiling", file: CORE, expect: "fail",
+    why: "90 restored verbatim — the real historical top tier, six points above what ANY climber can reach",
+    says: /FAIL\s+"Highly Trusted" needs 90, above the 84/,
+    from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+    to: "export var TRUST_TIERS={high:90,trusted:70,building:50};" },
+  { name: "ladder-not-descending", file: CORE, expect: "fail",
+    why: '"Trusted" set above "Highly Trusted", so a score between them is called both and neither',
+    says: /FAIL\s+the trust ladder is not descending/,
+    from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+    to: "export var TRUST_TIERS={high:40,trusted:45,building:15};" },
+  { name: "goal-typed-as-a-literal", file: CORE, expect: "fail",
+    why: "the card's goal becomes a fifth number that can drift from the tier it is meant to name — which is how \"goal met\" and \"Highly Trusted\" came to disagree",
+    says: /FAIL\s+TRUST_GOAL is 70 rather than TRUST_TIERS\.high/,
+    from: "export var TRUST_GOAL=TRUST_TIERS.high;",
+    to: "export var TRUST_GOAL=70;" },
+  { name: "building-at-day-one", file: CORE, expect: "fail",
+    why: 'a rule that only demands the bars come DOWN is satisfied by zeroing them — here "New" stops meaning new',
+    says: /FAIL\s+"Building Trust" starts at 5, which a day-old account scores/,
+    from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+    to: "export var TRUST_TIERS={high:70,trusted:45,building:5};" },
+
+  // MUST STAY SILENT. Where the bars sit between the bounds is a product decision, and a guard
+  // pinned to today's 70/45/15 would argue with the next re-balance — which is how a guard gets
+  // ignored. This one is legitimate: descending, top tier under the ceiling, bottom above day one.
+  { name: "legitimate-rebalance", file: CORE, expect: "pass",
+    why: "80/50/20 sits inside every bound the section asserts, so a re-balance must not read as a defect",
+    from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+    to: "export var TRUST_TIERS={high:80,trusted:50,building:20};" },
+
+  // MUST STAY SILENT. The comment above the declaration explains where these numbers came from and
+  // names the ladder they replaced; a section reading the FIRST match rather than the line-anchored,
+  // unique one would take 90/70/50 out of that prose and report on a ladder the app does not have —
+  // the same hole section 6 already closed for GROUP_TRUST_MIN.
+  { name: "ladder-quoted-in-prose", file: CORE, expect: "pass",
+    why: "a comment quoting the old declaration is documentation, not the declaration",
+    from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+    to: "/* it read `TRUST_TIERS={high:90,trusted:70,building:50}` until the scale under it was measured */\nexport var TRUST_TIERS={high:70,trusted:45,building:15};" },
+
+  // MUST STAY SILENT, AND IT IS WHAT PROVES THE CEILING IS DERIVED RATHER THAN 84 BEING TYPED. Ship
+  // a definer that can attest a government ID and the 10 points the model already scores it at
+  // become earnable, the ceiling rises to 94, and a top tier of 90 stops being a finding. A guard
+  // holding a hardcoded ceiling would still fail here and would be WRONG to.
+  { name: "id-verification-makes-a-90-tier-legitimate", expect: "pass",
+    why: "an ID-verification definer lifts the ceiling by itself, so a tier that was unreachable becomes reachable",
+    edits: [
+      { file: CORE,
+        from: "export var TRUST_TIERS={high:70,trusted:45,building:15};",
+        to: "export var TRUST_TIERS={high:90,trusted:70,building:15};" },
+      { file: SQL,
+        from: "grant execute on function compute_trust_score(uuid) to authenticated;",
+        to: `grant execute on function compute_trust_score(uuid) to authenticated;
+create or replace function verify_my_id() returns verification_records
+language plpgsql security definer set search_path = public as $$
+declare rec verification_records;
+begin
+  insert into verification_records (user_id, verification_type, status, verified_at)
+       values (auth.uid(), 'id', 'verified', now())
+  on conflict (user_id, verification_type) do update set status = 'verified' returning * into rec;
+  return rec;
+end; $$;` },
+    ] },
 ];
 
 let pass = 0, fail = 0;
 for (const c of CASES) {
-  const before = fs.readFileSync(c.file, "utf8");
-  const beforeSum = sum(c.file);
-  if (!before.includes(c.from)) {
-    console.log(`  BROKEN CASE ${c.name}: its anchor is not in the file — the case tests nothing`);
-    fail++; continue;
+  // A CASE MAY SPAN TWO FILES. `id-verification-makes-a-90-tier-legitimate` has to move the ladder
+  // AND ship the definer that lifts the ceiling under it — the one case that proves the bound is
+  // derived rather than 84 being typed somewhere — and neither half means anything alone.
+  const edits = c.edits || [{ file: c.file, from: c.from, to: c.to, once: c.once }];
+  const originals = edits.map((e) => ({ text: fs.readFileSync(e.file, "utf8"), sum: sum(e.file) }));
+  const restore = () => edits.forEach((e, i) => fs.writeFileSync(e.file, originals[i].text));
+
+  let broken = null;
+  for (const [i, e] of edits.entries()) {
+    const before = originals[i].text;
+    if (!before.includes(e.from)) { broken = `its anchor is not in ${path.basename(e.file)} — the case tests nothing`; break; }
+    // A CASE MAY DELIBERATELY EDIT ONE OF TWO IDENTICAL SITES. `one-handler-left-behind` reproduces
+    // exactly that defect — half the app gating on a different score — so uniqueness is required
+    // unless the case says it means to hit only the first.
+    const hits = before.split(e.from).length - 1;
+    if (e.once ? hits < 2 : hits !== 1) { broken = `anchor appears ${hits} time(s) in ${path.basename(e.file)} — the edit could land anywhere`; break; }
+    fs.writeFileSync(e.file, before.replace(e.from, e.to));
+    if (sum(e.file) === originals[i].sum) { broken = `edit did not change ${path.basename(e.file)}`; break; }
   }
-  // A CASE MAY DELIBERATELY EDIT ONE OF TWO IDENTICAL SITES. `one-handler-left-behind` reproduces
-  // exactly that defect — half the app gating on a different score — so uniqueness is required
-  // unless the case says it means to hit only the first.
-  const hits = before.split(c.from).length - 1;
-  if (c.once ? hits < 2 : hits !== 1) {
-    console.log(`  BROKEN CASE ${c.name}: anchor appears ${hits} time(s) — the edit could land anywhere`);
-    fail++; continue;
-  }
-  fs.writeFileSync(c.file, before.replace(c.from, c.to));
-  if (sum(c.file) === beforeSum) {
-    console.log(`  BROKEN CASE ${c.name}: edit did not change the file`);
-    fs.writeFileSync(c.file, before); fail++; continue;
-  }
+  if (broken) { console.log(`  BROKEN CASE ${c.name}: ${broken}`); restore(); fail++; continue; }
+
   let out = "", code = 0;
   try {
     out = execFileSync("node", [path.join(ROOT, "scripts", "check-trust-breakdown.mjs")],
       { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   } catch (e) { code = e.status || 1; out = (e.stdout || "") + (e.stderr || ""); }
-  fs.writeFileSync(c.file, before);
-  if (sum(c.file) !== beforeSum) { console.log(`  FATAL ${c.name}: restore was not byte-identical`); process.exit(1); }
+  restore();
+  for (const [i, e] of edits.entries()) {
+    if (sum(e.file) !== originals[i].sum) { console.log(`  FATAL ${c.name}: restore of ${path.basename(e.file)} was not byte-identical`); process.exit(1); }
+  }
 
   const fired = code !== 0;
   // JUDGED ON THE CASE'S OWN FAILURE TEXT. A first version tested /SERVER MODEL/ against the whole

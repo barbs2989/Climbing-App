@@ -1618,11 +1618,11 @@ function DiscBadges({route,sm}){const ds=(route&&route.disciplines&&route.discip
    It now names what a climber can actually move, and states no range rather than a false one --
    measure it with scripts/oneoff/measure-trust-goal-against-ceiling.mjs rather than quoting a
    number here, which is how the old copy came to describe a scale nobody had re-derived.
-   THE TIERS BELOW ARE STILL SET AGAINST THAT SCALE and are deliberately NOT touched here: "Highly
-   Trusted" at 90 sits above the 84 ceiling, so no climber can ever be shown it, and 70 is above
-   what a two-year climber with 12 vouches, 60 logs, 20 reports and 9 catches scores (65). Where
-   those bars belong is a product decision, not polish -- raised rather than swept. */
-function TrustBadge({score,compact}){const col=score>=90?C.green:score>=70?C.blue:score>=50?C.amber:C.red;const bg=score>=90?C.greenBg:score>=70?C.blueBg:score>=50?C.amberBg:C.redBg;const lbl=score>=90?"Highly Trusted":score>=70?"Trusted":score>=50?"Building Trust":"New";return <span title="Trust score: built from a verified email, time on ClimbMatch, partner vouches, belay catches logged, and climbs and conditions logged. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={col}/>} label={compact?`${score}`:`${score} — ${lbl}`} color={col} bg={bg} sm/></span>;}
+   THE TIERS THIS PARAGRAPH SAID WERE "deliberately NOT touched" ARE NOW 70/45/15, decided by the
+   user against the measured candidates -- see TRUST_TIERS below, which is the ONE definition this
+   badge now reads through trustTier(). Leaving that sentence standing would be the stale bookkeeping
+   this file records everywhere else: a stated open question that has since been closed reads as work. */
+function TrustBadge({score,compact}){const _t=trustTier(score);const col=_t.color;const bg=_t.bg;const lbl=_t.label;return <span title="Trust score: built from a verified email, time on ClimbMatch, partner vouches, belay catches logged, and climbs and conditions logged. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={col}/>} label={compact?`${score}`:`${score} — ${lbl}`} color={col} bg={bg} sm/></span>;}
 
 
 
@@ -2058,6 +2058,25 @@ export function serverTrustFactors(x){
    the two it is showing; collapsing them is how a breakdown stops adding up to its own headline. */
 export function serverTrustRaw(x){return serverTrustFactors(x).reduce(function(s,f){return s+f.pts;},0);}
 export var SERVER_TRUST_CAP=99;
+/* THE LADDER WAS WRITTEN OUT FOUR TIMES AND CALIBRATED AGAINST A SCALE THAT DOES NOT EXIST. It was
+   90/70/50 against the model's cap of 99 -- but `compute_trust_score` pays 10 for a government ID
+   and 10 for club/guide credentials, and NOTHING IN THE APP CAN GRANT EITHER (0085 pins every client
+   write to 'pending'; `verify_my_email()` is the one definer that writes 'verified' and it hardcodes
+   'email'). So 20 of the 104 points are unreachable, the earnable ceiling is 84, and "Highly Trusted"
+   at 90 could be shown to NOBODY, ever -- while a climber four years in with 25 vouches, 150 logs and
+   15 belay catches, i.e. the absolute maximum, read "Trusted". Every real account read "New" in red.
+   70/45/15 is measured rather than picked: see scripts/oneoff/measure-trust-tiers-against-the-ceiling.mjs,
+   which prints what each candidate CALLS a set of plausible paths. `check:trust-breakdown` section 7
+   asserts the PROPERTY (every tier reachable, the goal derived from the top tier, "Building Trust"
+   still above the day-one score) rather than these numbers, so shipping an ID-verification definer
+   lifts the ceiling and the guard follows it instead of going stale.
+   ONE definition, because the four copies are exactly the drift this file records for seedIdentity
+   and crewInCrew: a hoist is not a single source of truth until every reader uses it. The MATCH %
+   badge nearby carries the same 90/70/50 for its own colours and is deliberately NOT this -- compat
+   is a different quantity on a 20..99 scale whose green really is reachable. */
+export var TRUST_TIERS={high:70,trusted:45,building:15};
+export var TRUST_GOAL=TRUST_TIERS.high;
+export function trustTier(s){var t=TRUST_TIERS;return s>=t.high?{label:"Highly Trusted",color:C.green,bg:C.greenBg,dim:C.greenDim}:s>=t.trusted?{label:"Trusted",color:C.blue,bg:C.blueBg,dim:C.blueDim}:s>=t.building?{label:"Building Trust",color:C.amber,bg:C.amberBg,dim:C.border}:{label:"New",color:C.red,bg:C.redBg,dim:C.border};}
 export function serverTrustScore(x){return Math.min(serverTrustRaw(x),SERVER_TRUST_CAP);}
 function trustFactors(c){var cl=c.catchLedger||{};var v=(c.communityVouches||0)+(VOUCH_BOOST[c.id]||0);var certs=(c.certifications||[]).length;var rl=c.routesLogged||0;var catchPts=Math.round(Math.min(cl.totalCatches||0,14)+Math.min((cl.highFactorCatches||0)*1.5,6));var lastM=cl.lastCatch?(Date.now()-new Date(cl.lastCatch+"T12:00:00").getTime())/(86400000*30.4):99;var recLbl=!cl.lastCatch?"none logged":lastM<2?"this month":lastM<12?Math.round(lastM)+" mo ago":(lastM/12).toFixed(lastM<24?1:0)+" yr ago";var isMe=c.id===0;var _rel=c.reliability!=null?c.reliability:null;var _rr=RESPONSE_RATES[c.id];var _resp=c.responseRate!=null?c.responseRate:_rr;var _pn=c.partnerCount!=null?c.partnerCount:null;var _fp=c.floatPlans!=null?c.floatPlans:null;var _cr=c.conditionsReported!=null?c.conditionsReported:null;var _yr=c.years!=null?c.years:null;return [{label:"Email verified",sub:c.verified?"confirmed via account email":"not verified — the single biggest boost",pts:c.verified?20:0,max:20,met:!!c.verified},{label:"Reliability",sub:_rel!=null?(_rel+"% of confirmed crews honored — no-shows hurt this"):"Not yet tracked",pts:_rel!=null?Math.round(_rel/100*18):0,max:_rel!=null?18:0,met:_rel!=null&&_rel>=85},{label:"Response rate",sub:_resp!=null?(_resp+"% — replies to partner & crew requests"):"Not yet tracked",pts:_resp!=null?Math.round(_resp/100*10):0,max:_resp!=null?10:0,met:_resp!=null&&_resp>=80},{label:"Peer vouches",sub:v+" received · weighted by each voucher’s trust",pts:Math.min(v*4,22),max:22,met:v>0},{label:"Verified belay catches",sub:(cl.totalCatches||0)+" total · "+(cl.highFactorCatches||0)+" high-factor"+(cl.lastCatch?" · last "+recLbl:""),pts:catchPts,max:20,met:(cl.totalCatches||0)>0},{label:"Logged climbs",sub:rl+" recorded",pts:Math.min(Math.floor(rl/5),16),max:16,met:rl>=12},{label:"Partner network",sub:_pn!=null?(_pn+" distinct partner"+(_pn===1?"":"s")+" climbed with"):"Not yet tracked",pts:_pn!=null?Math.min(Math.floor(_pn/3),12):0,max:_pn!=null?12:0,met:_pn!=null&&_pn>=8},{label:"Conditions reported",sub:_cr!=null?(_cr+" trip report"+(_cr===1?"":"s")+" shared with the community"):"Not yet tracked",pts:_cr!=null?Math.min(Math.floor(_cr/2),10):0,max:_cr!=null?10:0,met:_cr!=null&&_cr>0},{label:"Float plans filed",sub:_fp!=null?(_fp+" filed before heading out"):"Not yet tracked",pts:_fp!=null?Math.min(_fp*2,8):0,max:_fp!=null?8:0,met:_fp!=null&&_fp>0},{label:"Experience",sub:_yr!=null?(_yr+" yr climbing"):"Not yet tracked",pts:_yr!=null?Math.min(Math.round(_yr*1.6),14):0,max:_yr!=null?14:0,met:_yr!=null&&_yr>=3},{label:"Certifications",sub:certs+" on file",pts:Math.min(certs*3,10),max:10,met:certs>0}];}
 /* TWO CALLERS, TWO THINGS THEY NEED TO SAY, AND ONE RENDERER. `rows` lets a caller supply an
@@ -2099,7 +2118,7 @@ function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,on
   },[climber,_realId,realProfileQ.data,realVouchesQ.data,vAuthorsQ.data]);
   const [pt,setPt]=useState(climber._tab||"overview");const [invOpen,setInvOpen]=useState(false);
   const isSelf=climber.id===ME.id;
-  const score=climber._real?null:compat(ME,climber),dist=climber._real?null:distMiles(ME,climber),avgVouch=climber.vouches.length?climber.vouches.reduce((s,v)=>s+Object.values(v.ratings).reduce((a,b)=>a+b,0)/Object.keys(v.ratings).length,0)/climber.vouches.length:0;const ts=climber._real?(realTrust!=null?realTrust:0):vScore(climber),tcol=ts>=90?C.green:ts>=70?C.blue:ts>=50?C.amber:C.red,tlbl=ts>=90?"Highly Trusted":ts>=70?"Trusted":ts>=50?"Building Trust":"New";
+  const score=climber._real?null:compat(ME,climber),dist=climber._real?null:distMiles(ME,climber),avgVouch=climber.vouches.length?climber.vouches.reduce((s,v)=>s+Object.values(v.ratings).reduce((a,b)=>a+b,0)/Object.keys(v.ratings).length,0)/climber.vouches.length:0;const ts=climber._real?(realTrust!=null?realTrust:0):vScore(climber),_tt=trustTier(ts),tcol=_tt.color,tlbl=_tt.label;
   return createPortal(<div onClick={onClose} role="dialog" aria-label="Climber profile" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9800,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:480,border:`1px solid ${C.border}`,overflow:"hidden"}}>
       <div style={{background:HERO_BG,boxShadow:HERO_SHEEN,padding:16}}>
