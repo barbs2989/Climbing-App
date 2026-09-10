@@ -1917,15 +1917,33 @@ the total when deciding where a new guard belongs.
     three that do not are non-findings: both crew-invite sites pass `done`, which is
     `()=>emailInvitesQ.refetch()` at the call site, and `reportPhoto`'s toast is the only sensible
     feedback for a write that goes to a moderation queue the reporter cannot see.
-  - **THE REST OF THAT SCAN IS NOT MEASURABLE THIS WAY, and saying so beats reporting it.** It also
-    flagged 13 writes with no `.then` and no optimistic update "before" the call — including
-    `saveObjective`, `addComment` and `createClimbLog`. Every one is a false positive: the
-    optimistic `setUserLists(...)` for `saveObjective` sits **~700 characters earlier on the same
-    physical line**, outside the 260-character window the scan used. On a file whose longest line
-    is 58,365 characters, *"before the call"* is not a scope, and answering this properly needs the
-    enclosing HANDLER resolved rather than a window. Same failure as
-    [[a-partial-measurement-agrees-with-what-you-expect]], and the reason those 13 are recorded as
-    unmeasured rather than as findings.
+  - **THE REST OF THAT SCAN WAS RECORDED AS UNMEASURABLE THIS WAY, AND IT IS MEASURED NOW: 70 write
+    call sites, ZERO with the result unhandled.** It also flagged 13 writes with no `.then` and no
+    optimistic update "before" the call — including `saveObjective`, `addComment` and
+    `createClimbLog` — and concluded *"every one is a false positive"* **while admitting the
+    instrument could not tell**: the optimistic `setUserLists(...)` for `saveObjective` sits **~700
+    characters earlier on the same physical line**, outside the 260-character window the scan used.
+    On a file whose longest line is 58,365 characters, *"before the call"* is not a scope — the same
+    failure as [[a-partial-measurement-agrees-with-what-you-expect]] — and answering it properly
+    needs the enclosing HANDLER resolved rather than a window.
+    `scripts/oneoff/measure-optimistic-writes-by-handler.mjs` resolves it with Babel, and **the
+    claim holds**: 5 of the 13 have their optimistic setter in the same handler and simply sat
+    outside the window, and the climb-log pair is handled downstream through `op.catch(...)` /
+    `return op.then(...)`, which the source says in its own comment. *A plausible mechanism nobody
+    measured is a hypothesis*, and this one survived the measurement.
+  - **TWO THINGS IN THAT MEASUREMENT ARE WORTH MORE THAN ITS COUNT.** **A NAME IS NOT THE
+    FUNCTION**: v1 matched the callee's name against the write vocabulary and reported **10
+    `addComment` sites** as unhandled, because `ClimbMatch.jsx` declares a LOCAL wrapper whose
+    `.then(cmRefetch)` / `.catch(cmFail)` — including a *"Could not save your comment"* toast —
+    lives one level in, with the db function imported under an **alias** the name test could never
+    see. Only `scope.getBinding` separates the two, the trap this file already records for
+    `clickable`, where a local boolean shadowed the helper while `check:refs` stayed green because
+    the identifier WAS bound. And **a report of 0 is exactly what a scan that can no longer fire
+    prints** — a risk that grew the moment `handled()` learned to follow a variable, since every
+    widening of *handled* shrinks what can be reported — so the classifier is exercised on **four
+    constructed shapes first** and refuses to report on the app unless it reproduces them.
+    Fixtures rather than live code, deliberately: three of the four do not exist in the tree, which
+    is the finding, and a self-test drawn from the code under test cannot show that.
   - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
     and both defects were the guide pair above. The other seven are non-findings with reasons, so
     nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
