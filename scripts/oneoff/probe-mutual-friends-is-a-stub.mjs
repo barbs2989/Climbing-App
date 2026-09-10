@@ -60,6 +60,37 @@ try {
   console.log("\nSo mutualCount() is 0 for every climber, and every entry point renders as");
   console.log("`mutualCount(...) ? control : null`. The Mutual friends sheet is unreachable in the");
   console.log("app. Nothing on screen is false -- the feature is absent, not lying.");
+
+  /* WHY "implement or delete" IS NOT A COIN FLIP, and the reason is a POLICY rather than effort.
+     Mutual friends is the intersection of two people's connections, and `connections` is readable
+     only by the two parties to it -- 0087, whose own comment is "A connection is not public." So
+     this CANNOT be computed client-side at all: a climber cannot read the other climber's
+     connections, and no amount of wiring changes that. Implementing it means a SECURITY DEFINER
+     RPC that returns the intersection, which is a deliberate privacy decision rather than a
+     feature-completion task -- even a COUNT discloses something about a third party's social
+     graph to somebody outside it.
+     Asserted from the migration rather than written in a comment, so it fails as STALE the day
+     that policy is widened -- which is exactly when somebody would want to know this note exists. */
+  const pol = fs.readFileSync(path.join(ROOT, "supabase", "migrations", "0087_connections.sql"), "utf8");
+  const sel = pol.match(/create policy "connections read own"[\s\S]*?;/);
+  if (!sel) {
+    console.log("\nANCHOR LOST: 0087 no longer declares a \"connections read own\" select policy.");
+    console.log("Re-point this before trusting the blocker below.");
+    process.exit(1);
+  }
+  const partyOnly = /auth\.uid\(\)\s*=\s*requester\s+or\s+auth\.uid\(\)\s*=\s*addressee/.test(sel[0]);
+  console.log("\n--- why this is a POLICY decision, not a wiring one ---");
+  if (partyOnly) {
+    console.log("`connections` is readable by the two parties ONLY (0087: \"A connection is not public.\"),");
+    console.log("so the intersection cannot be computed client-side by anyone. Implementing mutual");
+    console.log("friends needs a SECURITY DEFINER RPC, and that is a privacy call: even a COUNT tells");
+    console.log("you something about a third party's social graph. Deleting the unreachable UI needs");
+    console.log("no migration and no policy change.");
+  } else {
+    console.log("STALE: 0087's select policy is no longer party-only, so the blocker recorded here has");
+    console.log("moved. Re-read it before quoting this probe.");
+    process.exit(1);
+  }
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
 }
