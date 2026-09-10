@@ -6923,9 +6923,41 @@ the correction knows the screen is wrong, and they have no way to report it.
       `[captioned — accuracy only]`, and only an uncaptioned one is the honesty defect. Today that
       reads **0 uncaptioned, 17 accuracy** — which is the correct state, since *the slack restores
       the honesty and the repair restores the accuracy*, as this entry already says one bullet up.
-    - **3 of the 8 have a decidable half and 5 do not** (`measure-stranded-vertex-pairings.mjs`),
-      and a route needs only its confident half repaired because the predicate tolerates one adrift.
-      Left as follow-up: the measurement is committed, the write is not.
+    - **THAT FOLLOW-UP WAS MEASURED BY A SECOND CLASSIFIER, AND IT NAMED A FABRICATION AS THE
+      ANSWER WHILE BEING BLIND TO THE ONE REAL REPAIR.** The bullet here used to read *"3 of the 8
+      have a decidable half and 5 do not"*, citing `measure-stranded-vertex-pairings.mjs` — a
+      read-only triage sitting beside the applier and re-implementing its rules. It got **all three
+      different**, and the one that matters is the first:
+      - **It never consulted `coordinateIsComputed`**, which the applier imports from
+        `lib/track.js`. So `wa_mount_lyall_south_route`'s v0 scored `CONFIDENT — 15x clear` on a
+        vertex that is **computed** — interpolated along the line, with no old pin position to
+        carry it to. The audit's own closing text says moving one *"would invent a shape the line
+        never had"*. **The headline said `1 decidable`, which is a worklist entry**, and acting on
+        it by hand is the fabrication class this whole family exists to refuse. The applier refuses
+        the same route correctly (`best is 1.7x, needs 3x`) because it excludes that vertex first.
+      - **`ROUTES` was a hardcoded list of EIGHT ids**, frozen when it was written, while the class
+        grew to **28** as more pin repairs landed. `wa_guye_peak_improbable_traverse` — the ONE
+        genuinely repairable route, a vertex **70 m** from the summit pin it was left behind by —
+        was not in that list at all. *A hardcoded scope cannot see a class it was not told about*,
+        and here it made the instrument wrong in both directions at once.
+      - **Its `FAR` threshold was 1200 m against the applier's 500 m**, whose reasoning is recorded
+        four bullets down: a refinement is tens of metres, a replacement is kilometres, and **85 to
+        2,103 is empty**. So a 1,071 m move read CONFIDENT there and is refused here.
+    - **IT RAN CLEAN, WHICH IS SHARPER THAN #1695's SIX RED PROBES.** That sweep found six
+      DB-reading one-offs erroring and recorded that *"an exit code is not evidence a probe is
+      telling the truth"*. This one exits **0** and prints plausible per-leg distances, so it
+      survived the sweep and kept publishing a wrong worklist. **A probe that fails loudly is
+      cheaper than one that answers confidently.**
+    - **THE REPAIR IS TO COLLAPSE, NEVER TO MAKE THE TWO BODIES MATCH** — the rule this file
+      already states for `useMyHomeStatePath`, since matching restarts the drift. The measurement
+      is **deleted**; `fix-stranded-track-vertices.mjs` with no `--apply` IS the triage and is
+      strictly better: it discovers its routes rather than listing them, excludes computed
+      vertices, uses one bar, and prints a per-route reason for every refusal plus the move-distance
+      distribution. **Run the dry run; do not write a second classifier for it.**
+    - **Guye Peak applied and reconciled by read-back** (70 m, the only candidate pair, the same
+      refinement band as the 26 m and 85 m already applied): **35 adrift across 28 routes → 34
+      across 27**, 12 of them computed, and **0 uncaptioned** throughout — so this was accuracy
+      only, with the honesty half already intact.
     - **AND THE REPAIR PATH HAD THE SAME HOLE AS THE AUDIT, IN A SECOND CONSUMER.**
       `fix-stranded-track-vertices` asserted its post-condition by asking the app's predicate to
       return true after the move — exact while the predicate demanded every vertex be on a pin, and
