@@ -226,6 +226,15 @@ const CHECKED = {
   profileModal: "FullProfile's vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   eventInvite: "renders FullProfile; same reason",
   crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
+  /* The Help FAQ answers "Can I see other people's recorded GPX tracks?" and has to say that
+     almost none exist -- `communityTracks` is a SEED-ONLY field and `routes` has no track column
+     under any spelling, so on production the answer really is "hardly ever" (measured by
+     scripts/oneoff/measure-recorded-tracks-heading.mjs). That sentence is STATIC PROSE about the
+     catalog, not a count of anything the reader owns: there is no query behind it to fail, which
+     is the same reason `legal` is here. It used to answer "Yes." instead, which was the defect. */
+  helpOpen: 'the Help FAQ\'s "almost no route carries one yet" is static prose about the CATALOG, not a read of the climber\'s own data -- communityTracks is seed-only and has no column, so no query stands behind the sentence',
+  aboutOpen: 'renders no such copy of its own -- it sits beside <Help> at the same render site, so the 3000-char window attributes Help\'s FAQ to it; see helpOpen',
+
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
 
   /* The two below were EXPOSED by the attribution fix — each had been counted as gated on the

@@ -42,12 +42,12 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
-export function render(route, tab) {
+export function render(route, tab, myReports) {
   return renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
       React.createElement(RouteDetail, {
         route, initialSubTab: tab, onBack: noop, onSubTab: noop,
-        contribs: [], myReports: [], connections: [], comments: {},
+        contribs: [], myReports: myReports || [], connections: [], comments: {},
         hzVotes: {}, sunReports: {}, gearEdits: {}, diffRatings: {},
         crewsForRoute: [], myStars: {}, presence: null,
       })));
@@ -351,6 +351,95 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
   else ok("a genuine track renders no two-point caveat");
 }
 
+
+// -- 5. A SECTION HEADING MUST NOT NAME A KIND ITS LIST CANNOT CONTAIN.
+//    Sections 1-4 are about the LINE on the map. This is the same subject one block down: the
+//    list beneath ROUTE TRACK merges `route.communityTracks` (real recorded lines) with the
+//    route's TRIP REPORTS, and it was headed "Recent recorded tracks" while every report row
+//    reads "Trip report - no recorded track."
+//
+//    `communityTracks` is SEED-ONLY -- two seed ROUTES carry it and `routes` has no track column
+//    under any spelling, so dbRouteToCamel's spread cannot deliver one (that spread is why a zero
+//    grep in lib/db.js proves nothing by itself). Production sets VITE_USE_DB=true, so on every
+//    route a real climber opens the list is trip reports and nothing else, under a heading
+//    asserting all of them are recorded tracks. Measured by
+//    scripts/oneoff/measure-recorded-tracks-heading.mjs, which renders both shapes side by side.
+//
+//    BOTH DIRECTIONS, because a rule that only forbids the old wording is satisfied by deleting
+//    the section -- and one demanding "trip reports" alone would be false on a seed route, which
+//    really does carry a recorded line.
+{
+  const REPORTS = [{ user: "Maya Chen", date: "2026-07-12", text: "Snow to the notch.", avatar: "" }];
+  // A DB route: no `activity` key and no `communityTracks`, reports arriving as a prop.
+  const dbBody = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner", REPORTS));
+  // ANCHOR ON THE CAPTION, NEVER ON THE HEADING. The heading is the thing under test, so anchoring
+  // there makes every edit to it report ANCHOR LOST -- and "the anchor moved, re-point the guard"
+  // and "you changed the heading, change it back" want opposite repairs. The caption below it
+  // describes the section and is not what these assertions are about.
+  const CAP = "Recorded lines other parties walked";
+  const ci = dbBody.indexOf(CAP);
+  // The heading is the text immediately above the caption; bounded by it rather than by a guess
+  // at how big the section is.
+  const headSeg = ci < 0 ? "" : dbBody.slice(Math.max(0, ci - 160), ci);
+
+  if (ci < 0) fail("ANCHOR LOST: the tracks section's caption could not be found - section 5 proved nothing");
+  else {
+    ok("the tracks section renders on the planner tab");
+
+    if (/Recent recorded tracks/.test(headSeg))
+      fail('the heading reads "Recent recorded tracks" over rows that say "no recorded track" - on a DB route the list can hold nothing else');
+    else ok("the heading does not assert that every row is a recorded track");
+
+    // It must still name TRACKS: a seed route carries a real one, and a heading that dropped the
+    // word would hide it.
+    if (!/tracks/i.test(headSeg)) fail("the heading no longer names tracks at all - a seed route really does carry a recorded line");
+    else ok("the heading still names tracks");
+
+    if (!/trip reports/i.test(headSeg)) fail("the heading does not name trip reports, which is what the list actually holds on a DB route");
+    else ok("the heading names trip reports too");
+
+    // Non-vacuity: the rows must really be there, or every assertion above is about an empty box.
+    if (!/Trip report/.test(dbBody.slice(ci, ci + 900))) fail("no trip-report row rendered - section 5's heading assertions would be vacuous");
+    else ok("a trip report really does render under that heading");
+  }
+
+  // THE HELP FAQ NAMES THIS SECTION, so the two drift. It answered "Can I see other people's
+  // recorded GPX tracks?" with "Yes." and pointed at the section by its old name -- a flat promise
+  // that production cannot keep, since communityTracks is seed-only. The heading is DERIVED from
+  // RouteDetail's source rather than restated here: a restated vocabulary is how this codebase got
+  // four grade parsers, and a rename should have to update the FAQ rather than this guard.
+  {
+    const rdSrc = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+    const capAt = rdSrc.indexOf(CAP);
+    const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
+    const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
+    const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+    const faqAt = core.indexOf("recorded GPX tracks?");
+
+    if (!heading) fail("ANCHOR LOST: could not read the tracks section's heading out of RouteDetail.jsx");
+    else if (faqAt < 0) fail("ANCHOR LOST: the Help FAQ entry about recorded tracks could not be found");
+    else {
+      const faq = core.slice(faqAt, faqAt + 700);
+      ok("the Help FAQ entry about recorded tracks was located");
+      if (/^["\u201d,\s]*Yes\./.test(faq.slice("recorded GPX tracks?".length)))
+        fail('the Help FAQ still answers "Can I see other people\'s recorded GPX tracks?" with "Yes." - communityTracks is seed-only, so production has none');
+      else ok("the Help FAQ does not promise recorded tracks outright");
+      if (!faq.includes(heading))
+        fail(`the Help FAQ does not name the section by its rendered heading ("${heading}") - the two have drifted`);
+      else ok("the Help FAQ names the section by the heading the page actually renders");
+    }
+  }
+
+  // The empty state must describe the same two kinds, or it and the heading name different sets.
+  const emptyBody = text(render(route({ gpxPts: REAL, waypoints: WPS }), "planner", []));
+  if (/No recent tracks yet/.test(emptyBody))
+    fail('the empty state still says "No recent tracks yet" - it covers less than the heading above it');
+  else ok("the empty state does not claim to be only about tracks");
+  if (!/No recent tracks or trip reports yet/.test(emptyBody))
+    fail("the empty state does not name both kinds the section can hold");
+  else ok("the empty state names both kinds");
+}
+
 console.log();
 if (failures) { console.error(`check:track-caveat FAILED — ${failures} problem(s).`); process.exit(1); }
 console.log("ok — a line drawn between waypoints says so, a partial one says which end is missing, and a real track is left alone");
@@ -362,3 +451,9 @@ console.log("ok — a line drawn between waypoints says so, a partial one says w
 //   delete the coverage caveat from the ROUTE TRACK block   -> section 3's two render tests fail
 //   make trackCoverage always report missingApproach        -> the false-warning assertions fail
 //   drop the different-approach branch                      -> a line passing no pin reads as partial
+//
+// Section 5 has its own suite, scripts/oneoff/inject-tracks-heading-cases.mjs, 9/9 across TWO
+// files because the claim spans them (the heading in RouteDetail.jsx, the FAQ naming it in
+// ClimbMatchCore.jsx). Three must stay SILENT. The load-bearing case renames the heading and
+// leaves the FAQ behind -- that is what proves the heading is DERIVED from the source rather than
+// restated in the guard, so a rename has to update the FAQ instead of this file.
