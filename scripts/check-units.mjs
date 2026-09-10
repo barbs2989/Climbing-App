@@ -71,7 +71,7 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // run pass.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 20, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 13 };
+const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 13 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -475,6 +475,75 @@ async function runWeather() {
     RAW.map((r) => `      ${r.f}  owner=${r.owner}  ...${r.ctx}`).join("\n") +
     `\n      A NEW one renders a raw imperial figure to a metric climber — convert it with uElev/uDistMi/uMass.` +
     `\n      One FEWER means a declared-dead site was fixed or removed: lower RAW_IMPERIAL_OK and say which.`);
+
+  // -- AND THE SAME FAMILY ONE STEP OUT: TWO QUANTITIES THAT LOOK COMPARABLE AND ARE MEASURED AT
+  //    DIFFERENT HEIGHTS. The wind tile's sustained figure is `wind_speed_80m` -- a ridge-level
+  //    proxy -- while the only gust Open-Meteo publishes is `wind_gusts_10m`, a SURFACE figure.
+  //    The gust line was gated on `gustMax > windMax`, i.e. across 70 m of altitude, and an 80 m
+  //    sustained routinely exceeds a 10 m gust: measured against the live API over 168 hours,
+  //    51% of hours suppressed the gust against 8% on the honest same-height comparison. So the
+  //    gust vanished on the windy days, which is the one time a climber needs it.
+  //    THE HEADLINE MUST STAY AT 80 m and that is asserted as hard as the gate: moving it to
+  //    10 m satisfies every gust assertion below AND takes a 27 mph AMBER day to GREEN while a
+  //    29 mph gust stands. A rule that only ever demands the gust appear is satisfied by the
+  //    change that under-warns.
+  const gwSrc = /function gustWorthShowing\(dy\)\{.*?\}\n/.exec(src);
+  if (!gwSrc) dead("ANCHOR LOST: gustWorthShowing is gone from RouteDetail.jsx — the gust gate cannot be executed, so nothing below would be proved");
+  let gustWorthShowing;
+  try { gustWorthShowing = new Function(gwSrc[0] + ";return gustWorthShowing;")(); }
+  catch (e) { dead("gustWorthShowing did not lift cleanly: " + (e && e.message)); }
+
+  // Every case is a real day off the live API on 2026-09-10, except the two fail-open ones.
+  const GUST = [
+    [{ gustMax: 29, windMax: 27, wind10Max: 13 }, true,  "gust well over the surface sustained"],
+    [{ gustMax: 22, windMax: 22, wind10Max: 12 }, true,  "THE DEFECT: an 80 m sustained equal to the gust hid a 22 mph gust on an AMBER day"],
+    [{ gustMax: 5,  windMax: 5,  wind10Max: 4  }, true,  "the same shape on a calm day"],
+    [{ gustMax: 6,  windMax: 8,  wind10Max: 7  }, false, "GENUINE: the gust really is below the surface sustained"],
+    [{ gustMax: 12, windMax: 9,  wind10Max: 12 }, false, "a gust equal to the surface sustained adds nothing"],
+    [{ gustMax: 20, windMax: 36, wind10Max: null }, true, "no 10 m series: SHOW it — withholding a gust is the dangerous failure"],
+    [{ gustMax: 20, windMax: 36, wind10Max: undefined }, true, "same, undefined"],
+    [{ gustMax: 20, windMax: 36, wind10Max: -Infinity }, true, "same, Math.max over an empty bucket"],
+  ];
+  for (const [dy, want, why] of GUST) {
+    const got = !!gustWorthShowing(dy);
+    if (got === want) ok(`gust gate ${want ? "SHOWS" : "hides"} (gust ${dy.gustMax}, 80m ${dy.windMax}, 10m ${dy.wind10Max}) — ${why}`);
+    else fail(`gust gate returned ${got} for gust ${dy.gustMax} / 80m ${dy.windMax} / 10m ${dy.wind10Max}, expected ${want} — ${why}`);
+  }
+
+  // The WIRING, as source: executing the rule proves the rule and says nothing about whether the
+  // tile still calls it, or whether the 10 m series it reads is still fetched and bucketed. A
+  // stale-base squash takes exactly that half and moves NO identifier, which audit:silent-reverts
+  // says in its own closing caveat it cannot see.
+  if (mask.includes("wind_speed_10m,")) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
+  else fail("the forecast fetch no longer asks for wind_speed_10m — wind10Max is null on every day and the gate degrades to always-show");
+  if (/if\(h\.wind_speed_10m\)dd\.winds10\.push\(h\.wind_speed_10m\[i\]\);/.test(mask)) ok("the hourly loop buckets the 10 m series");
+  else fail("the hourly loop no longer buckets wind_speed_10m into winds10 — the fetched field reaches nothing");
+  if (/wind10Max:d\.winds10\.length\?Math\.round\(Math\.max\.apply\(null,d\.winds10\)\):null/.test(mask)) ok("wind10Max is null on an absent series, never -Infinity");
+  else fail("wind10Max is no longer derived from winds10 with a null on empty");
+  if (/\{gustWorthShowing\(dy\)\?/.test(mask)) ok("the gust line is gated on gustWorthShowing(dy)");
+  else fail("the wind tile no longer calls gustWorthShowing — the gust gate is back inline");
+  if (/dy\.gustMax\s*>\s*dy\.windMax/.test(mask)) fail("the gust is compared against dy.windMax again — that is the 80 m figure, so this is the cross-height comparison restored");
+  else ok("nothing compares the gust against the 80 m sustained");
+
+  // THE HEADLINE STAYS AT 80 m. This is the over-reach direction, and it is the load-bearing half.
+  if (/dd\.winds\.push\(h\.wind_speed_80m\[i\]\);/.test(mask)) ok("the sustained figure is still the 80 m wind — the ridge-level proxy that keeps a gusty day AMBER");
+  else fail("the sustained figure is no longer wind_speed_80m — a 10 m headline takes a 27 mph AMBER day to GREEN with a 29 mph gust standing, which is the #641 under-warning direction");
+  if (/dd\.winds\.push\(h\.wind_speed_10m/.test(mask)) fail("winds is being filled from the 10 m series — see above, this de-escalates gusty days");
+  else ok("the 10 m series feeds the gust gate only, never the headline or its colour");
+  if (/wxWindColor\(dy\.windMax\)/.test(mask)) ok("the colour threshold still reads the 80 m sustained");
+  else fail("wxWindColor no longer reads dy.windMax — the amber/red banding has moved off the ridge-level figure");
+
+  // AND THE PANEL SAYS SO. A tile can now legitimately read "22 mph" above "gusts to 22", and the
+  // NWS/MET winds beside each day are surface figures against an 80 m headline -- on the seeded
+  // capture that is 36 mph against NWS's 10. Without a sentence naming the heights the reader
+  // sees a 3.6x disagreement between forecasters that is not one.
+  const capt = /Elevation-aware via Open-Meteo[\s\S]{0,900}?<\/div>/.exec(mask);
+  if (!capt) fail("ANCHOR LOST: the forecast panel caption moved — the height caveat cannot be checked");
+  else {
+    const c = capt[0];
+    if (/80\s*m/.test(c) && /10\s*m/.test(c)) ok("the panel caption names BOTH heights");
+    else fail("the forecast caption no longer names the two wind heights — the tile shows a gust equal to its sustained, and NWS's wind beside it, with nothing saying why");
+  }
 }
 
 // =======================================================================================

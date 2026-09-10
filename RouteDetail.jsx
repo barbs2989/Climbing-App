@@ -3074,6 +3074,20 @@ function circMeanDeg(arr){if(!arr||!arr.length)return null;let sx=0,sy=0;arr.for
 function modeOf(arr){if(!arr||!arr.length)return null;const c={};let best=arr[0],bc=0;arr.forEach(function(v){c[v]=(c[v]||0)+1;if(c[v]>bc){bc=c[v];best=v;}});return best;}
 function wxTempColor(f){return f>=85?C.red:f>=70?C.amber:f>=50?C.green:f>=32?C.teal:C.blue;}
 function wxWindColor(mph){return mph>=30?C.red:mph>=15?C.amber:C.green;}
+/* THE SUSTAINED FIGURE ON THE WIND TILE IS THE 80 m WIND -- a ridge-level proxy -- while the
+   only gust Open-Meteo publishes is a 10 m SURFACE figure. Gating the gust line on
+   `gustMax > windMax` therefore compared two different HEIGHTS, and an 80 m sustained
+   routinely exceeds a 10 m gust: measured against the live API over 168 hours, 51% of hours
+   had the gust at or below the 80 m sustained and rendered NO gust line, against 8% on the
+   honest same-height comparison. So the gust vanished on the windy days -- 2026-09-11 read a
+   22 mph sustained with a 22 mph gust and showed nothing.
+   Compare like with like: a gust is worth showing when it exceeds the SURFACE sustained.
+   THE HEADLINE STAYS AT 80 m, and that is measured rather than assumed -- moving it to 10 m
+   takes 2026-09-10 from AMBER to GREEN while a 29 mph gust stands, which is the #641
+   under-warning direction on a safety panel.
+   With no 10 m series at all (a partial response) it SHOWS the gust rather than hiding it:
+   withholding a gust figure is the dangerous way for this to fail. */
+function gustWorthShowing(dy){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}
 function wxCondColor(code){if(code==null)return C.blue;if(code>=95)return C.red;if(code===0||code===1)return C.green;if(code===2||code===3||code===45||code===48)return C.textSub;return C.blue;}
 function wxUvColor(uv){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
 function wxUvLabel(uv){return uv>=11?"Extreme":uv>=8?"Very High":uv>=6?"High":uv>=3?"Moderate":"Low";}
@@ -3126,7 +3140,7 @@ function WeatherPanel({waypoints,showPlan}){
       // canonical value to the climber's own unit is a different operation
       // from the re-conversion this warns about, and skipping it is what left
       // the Freezing level tile reading feet to a metric climber.
-      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height,uv_index&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
+      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height,uv_index&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
       // Open-Meteo, NWS, and MET Norway run different models from different
       // organizations and can legitimately disagree by several degrees over
       // complex mountain terrain — fetch both secondary sources' own series too
@@ -3161,12 +3175,13 @@ function WeatherPanel({waypoints,showPlan}){
         const byDay={},byPart={};
         h.time.forEach(function(t,i){
           const date=t.slice(0,10),hr=parseInt(t.slice(11,13),10);
-          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[]};
+          if(!byDay[date])byDay[date]={temps:[],feels:[],codes:[],winds:[],winds10:[],gusts:[],pops:[],precips:[],snows:[],fz:[],uvs:[],hours:[]};
           const dd=byDay[date];
           dd.temps.push(h.temperature_2m[i]);
           dd.feels.push(h.apparent_temperature[i]);
           dd.codes.push(h.weather_code[i]);
           dd.winds.push(h.wind_speed_80m[i]);
+          if(h.wind_speed_10m)dd.winds10.push(h.wind_speed_10m[i]);
           dd.gusts.push(h.wind_gusts_10m[i]);
           dd.pops.push(h.precipitation_probability[i]);
           dd.precips.push(h.precipitation[i]);
@@ -3224,7 +3239,7 @@ function WeatherPanel({waypoints,showPlan}){
           const md=metByDay[date];
           const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
           const wxCode=modeOf(d.codes);
-          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
+          return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
         });
         setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
       }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
@@ -3238,7 +3253,7 @@ function WeatherPanel({waypoints,showPlan}){
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware via Open-Meteo, broken into AM/PM/Night with an hourly view on tap — cross-checked against NWS and MET Norway. Read it yourself: mountain terrain can differ sharply from the forecast, and sources can legitimately disagree.</div>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware via Open-Meteo, broken into AM/PM/Night with an hourly view on tap — cross-checked against NWS and MET Norway. Read it yourself: mountain terrain can differ sharply from the forecast, and sources can legitimately disagree. The wind figure is the modelled ridge-level (~80 m) speed; gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.</div>
     <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
@@ -3277,7 +3292,7 @@ function WeatherPanel({waypoints,showPlan}){
             <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{uWind(p.wind)+(p.dir?" "+p.dir:"")}</div>
           </div>;})}</div>:null}
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:dy.nws||dy.met?10:0}}>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{dy.gustMax>dy.windMax?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWindN(dy.gustMax)}</div>:null}</div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWindN(dy.gustMax)}</div>:null}</div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.popMax>=50?C.blue:C.text}}>{dy.popMax+"%"}</div>{hasRain?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{uPrecip(dy.precipIn)+" expected"}</div>:null}</div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>

@@ -3115,6 +3115,59 @@ the total when deciding where a new guard belongs.
       `dead()`, which prints `- BROKEN: …` on a line carrying no `FAIL`, so a filter matching only
       `FAIL` read two correctly-firing cases as misses — the mirror of the *match a FAIL line, never
       the word* trap.
+  - **SECTION `weather` ALSO COVERS THE HEIGHT MISMATCH, WHICH IS THE SAME FAMILY ONE STEP OUT:
+    two quantities that look comparable and are not.** The wind tile's sustained figure is
+    `wind_speed_80m` — a ridge-level proxy — while the only gust Open-Meteo publishes is
+    `wind_gusts_10m`, a SURFACE figure. The gust line was gated on `gustMax > windMax`, i.e.
+    **across 70 m of altitude**, and an 80 m sustained routinely exceeds a 10 m gust.
+    - **MEASURED AGAINST THE LIVE API RATHER THAN REASONED ABOUT: 51% of 168 hours had the gust at
+      or below the 80 m sustained and rendered NO gust line, against 8% on the honest same-height
+      comparison.** So the suppression is overwhelmingly an ARTEFACT, and 8% is the real physical
+      case (a gust barely above a steady wind). On the seeded CI capture **15 of 36 day tiles show
+      no gust**, including the windiest tile in the whole capture — the gust vanished exactly when
+      a climber needs it.
+    - **THE OBVIOUS FIX IS WRONG, AND MEASURING IS WHAT KILLED IT.** Standardising the panel on
+      10 m makes the gate coherent and makes the NWS/MET cross-check rows compare like with like —
+      and it takes **2026-09-10 from AMBER to GREEN while a 29 mph gust stands**, and 09-11
+      likewise with a 22 mph gust, because the 80 m figure runs 39% higher at the median (2.86x at
+      p90) and `wxWindColor`'s 30/15 cut-offs are crossed by the 80 m number. That is the **#641
+      under-warning direction** on a safety panel. **The headline stays at 80 m**, and section
+      `weather` asserts that as hard as it asserts the gate: injection case `headline-moves-to-10m`
+      satisfies every gust assertion and must FAIL, because *a rule that only ever demands the gust
+      appear is satisfied by the change that under-warns.*
+    - The fix is therefore the **GATE**, not the headline: fetch `wind_speed_10m` in the same
+      request and compare the gust against the SURFACE sustained. With no 10 m series at all it
+      **shows** the gust — withholding a gust figure is the dangerous way for this to fail — and
+      `wind10Max` is `null` rather than `-Infinity` on an empty bucket so that branch is explicit.
+    - **AND THE PANEL SAYS WHICH HEIGHT EACH NUMBER IS**, because the fix creates a legible-looking
+      oddity of its own: a tile can now correctly read *"22 mph"* above *"gusts to 22"*. The same
+      sentence explains the other half of the mismatch, which no code change reaches — the NWS and
+      MET winds printed beside each day are **10 m** figures against an 80 m headline, so the
+      capture shows **36 mph against NWS's 10** and a reader sees a 3.6x disagreement between
+      forecasters that is not one. The panel's own comment states its purpose as flagging
+      divergence *"instead of presenting one number as gospel"*, and that only works where the
+      three are the same quantity: they are for temperature (the `differs` tag is `uTempDelta` and
+      fires on temperature ALONE, checked rather than assumed) and they are not for wind.
+    - **The 80 m choice was UNDOCUMENTED**, which is how it survived: the comment block above the
+      fetch explains `forecast_days` and the freezing-level unit in detail and says nothing about
+      wind height. **This is the only weather fetch in the app**, so there was no internal
+      inconsistency to trip over either.
+    - **A GATE rather than a probe**, and folded into `check:units` rather than given its own file:
+      the fix changes a URL field, a comparison and a string, so reverting the gate to
+      `dy.gustMax>dy.windMax` moves **no identifier** and `audit:silent-reverts` is blind to it by
+      its own closing caveat. The section already loads the bundle, reads `RouteDetail.jsx` and
+      keeps a comment-masked copy, so it costs no second node start and no second Babel parse —
+      the cheap version this file records taking three times already.
+    - The rule is **lifted from source and executed** with `ANCHOR LOST`, never retyped: a copy
+      would agree with itself whatever the app did, which is the whole question. The floor rises
+      **20 -> 37**, two below a clean 39.
+    - Injection-tested **16/16** (`scripts/oneoff/inject-weather-unit-cases.mjs`, 8 pre-existing
+      re-run plus 8 new), each case proving its edit landed **by checksum** and restoring the file
+      byte-identically. `gust-compared-across-heights` is the defect restored verbatim;
+      `gate-hides-on-a-missing-series` pins the fail-OPEN direction, which no wiring test can see.
+      **Two must stay SILENT** — a comment naming the forbidden cross-height comparison (this fix's
+      own documentation) and a reworded caption, since the rule is that the caption NAMES both
+      heights rather than uses one phrasing.
   - What it does **not** prove, stated in the guard rather than implied: that the forecast panel
     renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
     the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
