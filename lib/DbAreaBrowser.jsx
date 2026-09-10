@@ -700,8 +700,34 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // silently exclude routes it shouldn't. Sorting by grade still works safely
 // since unparsed routes just sort last, so it's offered once a single
 // discipline is picked (where the comparison is at least meaningful). ──
-const LEN_BUCKETS = [["any", "Any", null, null], ["u200", "< 200 ft", null, 61], ["200", "200–600 ft", 61, 183], ["600", "600–1500 ft", 183, 457], ["1500", "1500+ ft", 457, null]];
-function RouteFinderPanel({ scope, onOpen, onBack, C }) {
+// [key, labelLoFt, labelHiFt, queryLoM, queryHiM]. THE LABEL NUMBERS ARE FEET AND THE QUERY BOUNDS
+// ARE METRES, and that is not a muddle — it is what makes the label true in both units. The stored
+// column is metric and the bounds are half-open (61/183/457), which are exactly 200/600/1500 ft
+// through `uElevN`, so the imperial rendering is byte-for-byte what it has always been and the
+// metric one states the real cut points rather than a re-rounded approximation of them.
+//
+// These labels were imperial WHATEVER THE SETTING until now, on the LIVE filter every DB-catalog
+// climber uses. #1670 fixed the same defect in `RouteFinder`'s twin and consolidated it onto core's
+// `ROUTE_LENGTHS`/`routeLengthLabel` — but that twin is SEED-ONLY and reaches nobody, so the fix
+// landed on dead code while this stayed wrong. CLAUDE.md recorded the gap; this closes it.
+//
+// DELIBERATELY NOT consolidated onto `routeLengthLabel`: its bounds are INCLUSIVE FEET (201-599,
+// 600-1499) while these are HALF-OPEN METRES, so a 600 ft (182.88 m) route is in this bucket and
+// that helper would label it "201–599 ft". Sharing the vocabulary would trade a units defect for an
+// off-by-one one. Reconciling the two bound sets is a separate change.
+const LEN_BUCKETS = [["any", null, null, null, null], ["u200", null, 200, null, 61], ["200", 200, 600, 61, 183], ["600", 600, 1500, 183, 457], ["1500", 1500, null, 457, null]];
+
+// `uElevN`/`uElevUnit` arrive as PROPS, like `C` and `ActionIcon`, because this file must not
+// import ClimbMatchCore — core lazy-imports this module, and a static import would make that cycle
+// static. That is this file's own recorded rule, not a new one.
+const lenLabel = (o, uElevN, uElevUnit) => {
+  if (o[0] === "any") return "Any";
+  const u = uElevUnit();
+  if (o[1] == null) return "< " + uElevN(o[2]) + " " + u;
+  if (o[2] == null) return uElevN(o[1]) + "+ " + u;
+  return uElevN(o[1]) + "–" + uElevN(o[2]) + " " + u;
+};
+function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
   const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any" };
   const [q, setQ] = useState("");
   const [af, setAf] = useState(DEF);
@@ -712,7 +738,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   const [page, setPage] = useState(0);
   const [all, setAll] = useState([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
-  const queryArgs = { q, disc: af.disc, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[2], maxLengthM: lenRange[3], sortBy: af.sortBy, page };
+  const queryArgs = { q, disc: af.disc, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
   const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
 
@@ -744,7 +770,9 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
   if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
   if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
-  if (af.len !== "any") afChips.push({ k: "len", label: lenRange[1], clear: () => setAf(a => ({ ...a, len: "any" })) });
+  // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
+  // the filter bar and the chip that says what you filtered by disagree about units.
+  if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
   if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
 
   const chip = (label, on, fn) => <button key={label} onClick={fn} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
@@ -821,7 +849,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C }) {
             {lab("Pitches")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [1, "1+ (single)"], [2, "2+ (multi-pitch)"], [3, "3+"], [5, "5+"], [10, "10+"]].map(o => chip(o[1], df.minPitches === o[0], () => setDf(d => ({ ...d, minPitches: o[0] }))))}</div>
             {lab("Length")}
-            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(o[1], df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
+            <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
             <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
               <button onClick={() => setDf(DEF)} style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Clear all</button>
               <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blueSolid, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
@@ -1190,7 +1218,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uDistMi, onAreaContext, onAddClimb, TopContributors }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onAddClimb, TopContributors }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1314,7 +1342,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       {!stateNode ? (
         <StatePicker onPick={pickState} C={C} />
       ) : screen === "finder" ? (
-        <RouteFinderPanel scope={current} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} />
+        <RouteFinderPanel scope={current} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} uElevN={uElevN} uElevUnit={uElevUnit} />
       ) : screen === "objectives" ? (
         <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} onBack={() => setScreen("areas")} C={C} />
       ) : screen === "near" ? (
