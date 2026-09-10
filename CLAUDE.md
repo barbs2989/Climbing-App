@@ -1169,6 +1169,39 @@ the total when deciding where a new guard belongs.
       other two are properties of **who is looking**. A concurrent run signed in as the same
       owner cannot strip that owner's own creator status. Two runs starting 61 seconds apart
       was correlation, and it was believed twice before the assertion detail settled it.
+    - **CONFIRMED 2026-09-10, and the confirming artifact is a controlled same-commit PAIR.**
+      #969's *"identity hydration lagging"* stood for months as a diagnosis nothing could
+      reproduce. It is now executed rather than inferred: with `_profMap` (the
+      `useProfilesByIds` result) still unresolved, `_asMember` returns null for **every** id, so
+      the roster's fallbacks fire — your own row falls back to `ME`, whose `id` is **0 signed in
+      or out**, and every other row to the `"A climber"` placeholder. That is one cause producing
+      all four `Group:detail` symptoms at once: the creator labelled `Member`, no `MOD` badge,
+      `+ Mod` and remove `✕` on **your own row**, and the whole `Moderators` strip gone (`mods`
+      is `modIds.map(_asMember).filter(Boolean)` with **no** fallback, so an unresolved read
+      empties it).
+      - **THE OBJECTION THAT KEPT THIS OPEN WAS A FALSE PREMISE, and it was written into the
+        fix's own comment.** That comment said the fallback fires *"by CONSTRUCTION … only when
+        `mem` does NOT contain you"* — true of the APPEND path, where your row is **last**, and
+        read as if it were the only path. It is not: an unresolved read misses your id too, so
+        the fallback fires on a row that came out of `mem`, **in `mem` order**. The failing
+        dump's owner row is FIRST, which is exactly what that path predicts and what the append
+        path cannot produce. *When a comment says a branch fires "only when X", ask whether the
+        thing it depends on can be empty for an unrelated reason.*
+      - Proven by executing the app's own lifted `_roster` **and** `mods`
+        (`scripts/oneoff/probe-group-self-row-is-not-only-the-append-path.mjs`, 9 assertions,
+        with a resolved control so none of it passes vacuously), injection-tested **2/2**
+        (`inject-group-self-row-non-append-cases.mjs`): reverting the fallback to bare `ME`
+        reproduces the failing dump's signature **in the dump's row order**. The sibling probe
+        is NOT superseded — it pins the append path, this one the unresolved-read path.
+      - **`0178`'s `status` column is RULED OUT as the trigger**, which matters because this
+        file's own pointer sent the next reader there. Two arguments: `add_group_creator_as_owner`
+        is an **AFTER INSERT trigger in the same transaction**, so there is no window in which a
+        group is visible without its owner row, and it inserts no status so it takes the
+        `'active'` default; and `group_members` carries a `read own` policy
+        (`auth.uid() = user_id`) that is unconditional on status, role and visibility, so the
+        owner's own row cannot be filtered out of the owner's own read. Measured alongside, with
+        four fixture groups caught **mid-run**: every group in the project has exactly one
+        `active` owner row.
     - So each run **creates its own group**, named from `GITHUB_RUN_ID` (or pid+time locally),
       seats the mate in it, and **deletes it in teardown**. Groups are safe to make per-run
       because an owner can delete their own — measured: create 201, mate-joins 201,
