@@ -5223,7 +5223,40 @@ the total when deciding where a new guard belongs.
       `TIME_BUDGETS`, a crag filter and `RouteDetail`'s `PIN_CATEGORIES`. **The fingerprint is the
       pair shape inside that one component**, and the older `approach` rule stays file-wide because
       `u1`/`1to3`/`3to6`/`6plus` are unique tokens that occur nowhere else.
-    - Injection-tested **6/6** (`scripts/oneoff/inject-bucket-key-shape-cases.mjs`), each case
+    - **THAT CENSUS'S OWN GUARD WAS A BLACKLIST, WHICH IS BEATEN BY ONE MORE CONTROL — so it now
+      carries a WHITELIST over chip GROUPS as well.** The rule above names the three key sets that
+      were actually wrong, so a BRAND-NEW bucket group — different keys, same defect — is invisible
+      to it. That is the too-narrow-proxy trap this file records under a dozen names, arriving
+      inside the guard written to close this very class. Every chip group in `AddRoute` must now be
+      **declared** with its target column and why the shape fits; an undeclared group fails, and a
+      **stale** declaration fails too, so the correct control cannot be swept away in silence.
+      - **THE GROUP SHAPE IS WHAT MAKES IT PRECISE, AND THE KEYS CANNOT CARRY THE RULE.**
+        `["cams","nuts"]` is a bare two-string list and is **character-identical** to a
+        `[key,"Label"]` pair — the same ambiguity that made an injection case inject the forbidden
+        shape while claiming to be innocent. An array **of arrays** is unambiguous. Measured:
+        exactly **2** groups in AddRoute, both legitimate (`rockStyle`, `outingShape`), with
+        `["cams","nuts"]` correctly not matched.
+      - The two rules are **complementary, not duplicated**: the blacklist gives a specific message
+        naming the historical defect and the column it corrupted, the whitelist catches the next one.
+      - **PROVEN LOAD-BEARING BY A/B rather than asserted.** With the whitelist neutered and nothing
+        else changed, **exactly the two cases it adds go MISS** (a novel group, and the correct
+        control swept away) while the other six are unmoved — so it is not decorative, and it is not
+        firing on anything the blacklist already covered. *When an A/B moves more than the thing
+        under test, it is measuring the harness.*
+    - **AND THE SIBLING FORM NEEDS NO SUCH RULE, measured 2026-09-10 — a NEGATIVE result worth
+      recording so nobody re-derives it.** `check:contrib-fields` guards `SuggestFix` and asks the
+      same one-layer-too-shallow question (*is the field APPLIED*, *is the sub-key READ*), so the
+      class could have been there too. It is not, and the reason is **structural**: SuggestFix
+      builds its 15 `single` controls as `.map(x => [x, x])`, so key EQUALS label and the stored
+      value IS the display string — safe by construction. Its one key-not-label control is
+      `outingShape`, targeting the same CHECK-constrained key column. **The two forms use different
+      conventions for one control type, and only AddRoute's can be wrong.**
+      - `ropeLen` looks like a counter-example and is **already handled**: it is the contributed
+        spelling (`"60 m"`) against the enrichment column `rope_length_m`, they can disagree because
+        nothing mirrors one onto the other, and the reader gates on `_ropeEdited` with a comment
+        ending *"Never print two rope lines."* — the `check:correction-readers` pattern already
+        applied.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-bucket-key-shape-cases.mjs`), each case
       proving its edit landed **by checksum** and restoring byte-identically. **Three must stay
       SILENT**, and **two of them failed as HARNESS BUGS first** — which is the same
       *checksum movement proves an edit happened, not that it was the right one* lesson: a decoy

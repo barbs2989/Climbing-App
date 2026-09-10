@@ -216,13 +216,61 @@ if (unpinned.length) {
   }
   if (!back) ok(`no bucket-key chip group writes into a column of another shape (${FORBIDDEN.length} censused)`);
 
-  // ...and the rule is TARGETED, not a ban on chip groups. If this stops being true the guard has
-  // been over-applied and the correct control was swept with the wrong ones.
-  const shapeOk = ["outback", "loop", "point"].filter(pair);
-  if (shapeOk.length === 3) ok("the outingShape chips are still offered — a CHECK-constrained key column is the model");
-  else fail(`the outingShape chips are gone (found ${shapeOk.length}/3 of outback, loop, point). Its ` +
-    `column carries a CHECK constraint naming exactly those keys (0087), so a bucket key is the ` +
-    `RIGHT shape there. If it was removed on purpose, drop it from this assertion in the same commit.`);
+  // ...AND THE LIST ABOVE IS A BLACKLIST, WHICH IS BEATEN BY ONE MORE CONTROL. It names the three
+  // key sets that were actually wrong, so a BRAND-NEW bucket group — different keys, same defect —
+  // is invisible to it. That is the too-narrow-proxy trap this repo records under a dozen names, and
+  // it was in the guard written to close this very class. So the durable rule is a WHITELIST over
+  // chip GROUPS: every one of them must be declared, and an undeclared group fails.
+  //
+  // A GROUP is an array OF pair-arrays, and that shape is what makes this precise. The KEYS cannot
+  // carry the rule — `["cams","nuts"]` is a bare two-string list and is CHARACTER-IDENTICAL to a
+  // [key,"Label"] pair, which is exactly what made one injection case inject the forbidden shape
+  // while claiming to be innocent. An array of ARRAYS is unambiguous. Measured: exactly 2 groups in
+  // AddRoute, both legitimate, with `["cams","nuts"]` correctly not matched.
+  //
+  // The two rules are complementary rather than duplicated: the blacklist gives a specific message
+  // naming the historical defect and the column it corrupted, the whitelist catches the next one.
+  //
+  // WHY SuggestFix NEEDS NO SUCH RULE, measured 2026-09-10: its 15 `single` fields build options as
+  // `.map(x => [x, x])`, so key EQUALS label and the stored value IS the display string — safe by
+  // construction. Its one key-not-label field is `outingShape`, targeting the same key column. The
+  // two forms use different conventions for one control type, and only AddRoute's can be wrong.
+  const GROUPS = {
+    "trad/sport/bouldering":
+      "rockStyle — 0135 declares it the one form key with NO column at all, so nothing is stored " +
+      "and no shape can be wrong.",
+    "outback/loop/point":
+      "outingShape — routes.outing_shape carries a CHECK constraint naming exactly these keys " +
+      "(0087), so here the key IS the storable value. This is the model a bucket control should " +
+      "follow, and it must not be swept away with the wrong ones.",
+  };
+  const GROUP_RE = /\[\s*(?:\[\s*"[^"]{1,30}"\s*,\s*"[^"]{1,40}"\s*\]\s*,\s*)+\[\s*"[^"]{1,30}"\s*,\s*"[^"]{1,40}"\s*\]\s*\]/g;
+  const found = new Map();
+  for (const m of bodyNC.matchAll(GROUP_RE)) {
+    const keys = [...m[0].matchAll(/\[\s*"([^"]{1,30})"\s*,/g)].map((x) => x[1]);
+    found.set(keys.join("/"), m[0].slice(0, 90));
+  }
+  if (!found.size) anchorLost("no chip group parsed in AddRoute at all — the shape test matches nothing");
+
+  const undeclared = [...found.keys()].filter((k) => !(k in GROUPS));
+  if (undeclared.length) {
+    for (const k of undeclared) {
+      fail(`the chip group [${k}] in AddRoute is not declared. A group whose key differs from its ` +
+        `label stores a KEY, and a key only fits a column that holds keys. Say which column this ` +
+        `one lands in and why the shape fits — or, if it lands in a prose or numeric column, give ` +
+        `the control that column's own shape instead. Three controls got this wrong (approach, ` +
+        `descentText, pitchCount) and one got it right (outingShape, CHECK-constrained in 0087).`);
+    }
+  } else ok(`all ${found.size} chip group(s) in AddRoute are declared with a column that fits`);
+
+  const stale = Object.keys(GROUPS).filter((k) => !found.has(k));
+  if (stale.length) {
+    for (const k of stale) {
+      fail(`the chip group [${k}] is declared here but is no longer in AddRoute. Declared reason: ` +
+        `${GROUPS[k]} If it was removed on purpose, drop the declaration in the same commit; if it ` +
+        `was swept away with the bucket controls that were wrong, put it back.`);
+    }
+  } else ok(`no stale chip-group declaration (${Object.keys(GROUPS).length} declared, all present)`);
 }
 
 // 1. every submitted key is one SS knows about, or is explicitly provenance
