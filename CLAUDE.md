@@ -66,6 +66,7 @@ npm run check:topo-outage-copy # the topo box must not invite the FIRST topo whe
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
+npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -2713,6 +2714,44 @@ the total when deciding where a new guard belongs.
     renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
     the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
     chain.
+- **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
+  blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
+  `npm run build`.
+  - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
+    while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
+    BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated
+    before grade contributed anything: **16 of 30 seed pairs sat exactly on 99**, a rich profile
+    scored partner **5.6 and partner 5.14a identically at 99%**, and the My-Objectives pane showed
+    5.10a, 5.11a and 5.12b all at 99. Three surfaces meanwhile promised a blend of five signals.
+  - **THE INVARIANT IS THE EXECUTABLE FORM OF THAT SENTENCE: every signal the screen NAMES must be
+    able to move the number.** That is deliberately not a check on any WEIGHT — pinning weights
+    would fail on any future rebalance, which is how a guard teaches people to ignore it. It builds
+    a base pair and one variant per signal and requires the score to differ; then it parses the
+    on-screen list and requires every item to be a signal it just proved moves. **Reword the copy
+    and the guard follows it; add a promise without wiring it and the guard fails.**
+  - **ONE-DIRECTIONAL on purpose.** Everything named must be real; the reverse is not required,
+    because the sentence is a summary and legitimately leaves `pace` out. Demanding equality would
+    forbid that.
+  - **A MAXIMAL-PAIR ASSERTION CANNOT CATCH A SINGLE UNCAPPED TERM, and the injections are what
+    established that** rather than reading. With one cap reverted the rescale OVERSHOOTS and
+    re-clamps to exactly the top, so *"a maximal pair scores 99"* still passes. What catches it is
+    the saturation count and the swamped-signal test. Two cases were written expecting the wrong
+    assertion and reported `wrong failure` against a guard firing correctly — **the third time this
+    repo has recorded that verdict meaning the NEEDLE was wrong, not the guard.**
+  - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a moved
+    `compat()` (`ANCHOR LOST`), a body that lifted short, core not exporting one of the ten names it
+    needs, a seed population too thin to judge saturation, fewer than three copy surfaces found —
+    which would make the copy-to-behaviour tie vacuous — and fewer than **14 assertions RUN**.
+  - Comments are stripped before every SOURCE test, because this guard's own subject is explained
+    in a comment beside `compat()` that quotes the forbidden `Math.min(99,` shape. A guard that
+    fails on its own documentation is a trap this file records more than once.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
+    its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and judged on
+    the guard's **own failure text** matched against FAIL lines only. The harness also **refuses any
+    expectation that already appears in the GREEN run** — it caught one on the first run, where the
+    needle was the text an assertion prints when it PASSES. Case 1 is the real defect restored
+    verbatim. **Two must stay SILENT**: a legitimate rebalance (`CMAX_DISC` 16 -> 18) and a comment
+    quoting the forbidden shape.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
@@ -12058,7 +12097,7 @@ Read it in three bands:
 
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
-- `compat(a, b)` (~L335) — partner compatibility score (clamped 20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap.
+- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
     overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
@@ -12077,11 +12116,33 @@ Four functions do the real work; everything else is UI around them. The code is 
     grade discriminates properly: 62 / 68 / 80 / 65 / 56. **The mechanism works; the saturation
     hides it**, and a 5.6 climber reading as a 99% match to a 5.11a leader is partner-safety
     adjacent.
-  - **REPORTED, NOT FIXED — and the reason is scope, not doubt.** Every candidate repair changes
-    who ranks top of a partner search: capping the two loose terms still totals 138 against a 99
-    ceiling, so it needs a rebalance, and rescaling by the maximum is a different algorithm. That
-    is a product decision. What is NOT in doubt is the measurement, and that the copy currently
-    promises a blend the displayed number does not deliver.
+  - **FIXED, and this bullet used to say REPORTED-NOT-FIXED — read the design before re-opening
+    it.** Every term is now BOUNDED, the maxima are NAMED constants (`CMAX_*`), `COMPAT_MAX` is
+    DERIVED by summing them, and the return RESCALES the above-base portion onto 20..99 instead of
+    clamping. Measured after: the ceiling went **16 of 30 seed pairs to 0**, the rich-profile grade
+    sweep went from **spread 0 to spread 20**, and the My-Objectives pane went from **3 distinct
+    values across 5 climbers to 5**, ordered by grade proximity to ME's 5.10c.
+  - **THE TWO CAPS ARE STATEMENTS, NOT NUMBERS.** Disciplines are a **yes/no** (`CMAX_DISC` 16):
+    the 4th shared discipline does not make somebody a better partner than the 3rd. Objectives keep
+    a little count-sensitivity and stop at 20: a second shared objective adds, a tenth does not.
+  - **THE DESIGN WAS MEASURED RATHER THAN ARGUED**
+    (`scripts/oneoff/measure-compat-designs.mjs`, report-only). Seven candidates were run over the
+    seed population, and two results decided it. **Capping alone does not work** — bounding both
+    terms while keeping the clamp still left 14 of 30 on the ceiling with grade spread **0**,
+    because the bounded maxima summed to 138 against a ceiling of 99. And **the aggregate is not
+    the test**: three candidates removed the ceiling while still ranking the pane by something
+    other than grade proximity. Only the two tightest orderings put Sam (5.10a, closest to ME's
+    5.10c) top and Maya (5.13a) bottom; the shipped one does it with **16 order flips against the
+    alternative's 29**.
+  - **RESCALING IS MONOTONIC, so it reorders nobody who was not already tied on the ceiling** —
+    the flips come from the CAPS, and are reported per candidate so the cost is visible rather than
+    implied. That script also **asserts the shipped `compat()` reproduces the chosen candidate on
+    every pair**, so it stays a live check that the design measured is the design running.
+  - **THE FIX MADE THE EXISTING COPY TRUE RATHER THAN NEEDING NEW COPY.** Three surfaces (the
+    glossary, the Partners explainer and the score tooltip) already said the number *"blends your
+    shared objectives, grade range, disciplines, availability overlap and verified trust"*. That
+    sentence was false while the blend was swamped and is now accurate — and `check:match-percent`
+    ties it to behaviour so it cannot drift again.
   - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
     re-typing it — a copy would agree with itself whatever the app did, which is the whole
     question — and keeps a deliberate second, unclamped transcription beside it purely to show
