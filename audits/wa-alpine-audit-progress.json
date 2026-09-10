@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_kyes_peak_northeast_ridge",
+  "last_processed_id": "wa_lena_lake_to_mt_stone_traverse",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5359,6 +5359,26 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-09-10-batch-263.sql",
       "note": "Fixed: wa_kimtah_peak_scramble dist_km stored the round-trip figure where the app expects one-way (23.17km -> 11.59km, per the row's own waypoints/itinerary), road.driveNote mileage (20mi -> 45mi to Marblemount, WebSearch-confirmed), itinerary.days[].miles (didn't match own waypoints/totalNote), gain_ft/loss_ft (4950 -> 4650, matching the row's own day-by-day breakdown), and two stale data_quality.gaps entries contradicted by the row's own populated fields. wa_king_kong_gorillas_direct_direct: fa/beta conflated the actual FA (Wertkin & Tyree Johnson, with a fall) with the FFA (Wertkin & Jon Gleason) per Wertkin's own trip report -- this also corrects an unapplied batch-197 fix that had itself gotten this wrong; commitment grade (III -> IV, matching the row's own beta and external sourcing); approach named the wrong pass (Longs Pass -> Ingalls Pass, matching the row's own waypoint and the route's continuation past Ingalls Lake). wa_kyes_peak_northeast_ridge approach/descent_text/road conflated two distinct real trails on opposite sides of the range that both reach Curry Gap (Quartz Creek Trail, Skykomish side, vs. Bald Eagle/Curry Gap Trail #650, Sauk/Darrington side) -- corrected trail/trailhead names, mileage, and which trail is met at the junction, per USFS/WTA/Mountaineers sourcing and Beckey's own approach description. IMPORTANT PROCESS NOTE: several of these fixes re-propose findings from batch-70 (2026-08-07, pass 3) and batch-197 (2026-09-04, pass 4) that were confirmed via fresh live-DB reads to have NEVER been applied -- the live rows still held the pre-fix values. Re-verified each independently this session (not just copied forward) before re-including in this batch's SQL; see the SQL file's own header note. Clean, cross-checked against external sources: wa_klawatti_peak_southeast_face and wa_klawatti_peak_sw_buttress (elevation 8485ft and 1940 FA both confirmed exactly via WebSearch; SW Buttress descent text matches Mountain Project near-verbatim); wa_koala_krack (Kangaroo Temple elevation 7572ft and approach confirmed); wa_kololo_peaks_standard (elevation ~8240ft within cited range); wa_kyes_peak_glaciated_scramble (elevation and 1920 FA -- Kyes/Bachelder, Everett Boy Scouts -- both confirmed)."
+    },
+    {
+      "batch_number": 264,
+      "date": "2026-09-10",
+      "route_ids": [
+        "wa_labor_pains",
+        "wa_lane_peak_r1",
+        "wa_lane_peak_r2",
+        "wa_lane_peak_r3",
+        "wa_le_conte_mountain_northern_aspect",
+        "wa_lemah_mountain_east_route",
+        "wa_lemah_two_goatshead_spire",
+        "wa_lena_lake_to_mt_stone_traverse"
+      ],
+      "pass": 5,
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 2,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-10-batch-264.sql",
+      "note": "Fixed: wa_labor_pains' rope_length_m/gear (60m -> 70m, matching the row's own rappel_count_note and CascadeClimbers-documented bolted West Face rappel line); wa_lane_peak_r1/r2/r3 (The Zipper/The Fly/Lover's Lane) top-level gain_ft/loss_ft (2000/2000 -> 1500/1500, confirmed against Dasherton Climbs and Mountaineers.org sources and matching r1/r2's own itinerary fields), plus r1/r2 approach-text sentences repeating the same wrong 2,000 ft figure. Flagged: wa_labor_pains' descent/descent_text/rappel_detail describe only the older Chockstone Route rap line as primary, while the row's own rappel_count_note and external sourcing indicate a separate bolted West Face line (needing the corrected 70m rope) is probably the descent actually used -- too large a rewrite (full station-by-station beta) to attempt without direct access to the primary MP/CascadeClimbers pages, which were blocked this session. wa_le_conte_mountain_northern_aspect's gain_ft (1500) is confirmed badly understated for its 3-day Ptarmigan-Traverse glacier approach (own itinerary text states ~9,000+ ft for the approach day alone), but no single authoritative source gives an exact round-trip total -- flagged rather than writing an unsourced estimate. Clean: Le Conte's elevation/FA (7,762 ft, 1938 Ptarmigan Climbing Club party) and route description; Lemah Mountain East Route's FA (Wallace Burr, July 7 1923) and elevation (7,519 ft, within the row's own already-documented 7,463-7,520 ft source range); Lemah Two's Goatshead Spire (FA/elevation verbatim-matched Wikipedia); Lena Lake to Mt Stone Traverse (Mount Stone South Summit 6,612 ft confirmed, and its gain_ft/loss_ft -- 9000/6550 -- left alone after an internal-consistency hunch favoring the itinerary's day-sum instead was checked against a likely primary source, trailcatjim.com, whose own +7,400/-6,550 figure matches the row's stored loss_ft almost exactly; a fix based on internal arithmetic alone would have been wrong here)."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

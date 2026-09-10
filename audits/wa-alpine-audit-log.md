@@ -19539,3 +19539,91 @@ verify each before sending the next.
 
 Next batch continues in sorted-id order after `wa_kyes_peak_northeast_ridge` (see
 progress file).
+
+## Batch 264 (2026-09-10, pass 5)
+
+`wa_labor_pains`, `wa_lane_peak_r1`, `wa_lane_peak_r2`, `wa_lane_peak_r3`,
+`wa_le_conte_mountain_northern_aspect`, `wa_lemah_mountain_east_route`,
+`wa_lemah_two_goatshead_spire`, `wa_lena_lake_to_mt_stone_traverse`.
+
+**Fixed:**
+
+- `wa_labor_pains` (North Early Winters Spire) — `rope_length_m` (60) and `gear[2]`
+  ("60m rope") both understated the rope the route's descent actually needs. The row's
+  own `rappel_count_note` (already written by an earlier pass) states outright that
+  "Labor Pains' own published gear note calls for a 70 m rope specifically to take
+  advantage of [the bolted] West Face rappels" — but the primary gear fields were never
+  updated to match. Confirmed via WebSearch: a dedicated bolted rappel line ("West Face
+  NEWS rappel route," CascadeClimbers forum, established ~2011-2013) runs between the
+  West Face route and Labor Pains and is explicitly documented as needing a 70m rope
+  ("a 60m just barely works"). Corrected both fields to 70m.
+- `wa_lane_peak_r1`/`r2`/`r3` (The Zipper / The Fly / Lover's Lane, Tatoosh Range) —
+  top-level `gain_ft`/`loss_ft` (2000/2000 on all three) overstated the route's actual
+  car-to-car gain. r1 and r2 already carry a structured `itinerary` object stating
+  1500/1500 and a `totalNote` reading "roughly ... 1,500 ft car-to-car" — an internal
+  contradiction with the top-level fields that nothing had reconciled. Confirmed via
+  WebSearch against two independent sources (Dasherton Climbs: "5.0 miles with
+  elevation gain of 1,500 feet"; multiple Mountaineers.org route listings), both
+  converging on ~1,500 ft; no source supports the stored ~2,000 ft figure. Corrected
+  `gain_ft`/`loss_ft` to 1500/1500 on all three (r3 shares the identical trailhead/
+  approach with r1/r2 though it has no structured itinerary of its own to check against
+  internally), and corrected the matching "~2,000 ft" sentences in r1's and r2's own
+  `approach` prose to "~1,500 ft" so the fixed number doesn't sit beside a
+  self-contradicting sentence.
+
+**Flagged for human review, not auto-fixed:**
+
+- `wa_labor_pains` — `descent`/`descent_text`/`rappel_detail` describe only the older
+  Chockstone Route rappel line as the route's descent. The row's own `rappel_count_note`
+  (and this session's external sourcing) indicates a separate, more likely-used bolted
+  line down the West Face is probably the actual descent — consistent with the 70m rope
+  fix above — but rewriting `rappel_detail` needs full station-by-station beta that I
+  could not confirm: Mountain Project and the CascadeClimbers trip report were both
+  blocked by network egress rules this session, so the West Face line's beta is
+  corroborated only by secondary/aggregated search snippets, not a primary source I
+  could read directly.
+- `wa_le_conte_mountain_northern_aspect` — `gain_ft` (1500) is confirmed badly
+  understated: this is a 2-3 day Ptarmigan-Traverse glacier approach (Cascade Pass ->
+  Cache Col -> Kool-Aid Lake -> Middle Cascade Glacier -> Yang Yang Lakes camp -> summit
+  scramble), and the row's own itinerary prose states "~9,000+ ft cumulative gain" for
+  the approach day ALONE. External sourcing confirms the terrain profile and elevations
+  (Cascade Pass 5,392 ft, Cache Col 6,903 ft, summit 7,762 ft all check out) but no
+  single authoritative source gives one round-trip cumulative-gain figure for this
+  specific peak (as opposed to the full multi-peak Ptarmigan Traverse, variously cited
+  at 11,000-18,000 ft for a much longer trip). Not fixed, since any specific replacement
+  number would be an unsourced estimate rather than a citation.
+
+**Confirmed clean, cross-checked against external sources:** `wa_le_conte_mountain_
+northern_aspect` — summit elevation (7,762 ft) and first ascent (the four-member 1938
+Ptarmigan Climbing Club party: Bressler, Clough, Cox, Myers) both confirmed via
+WebSearch; standard-route description (glacier travel + class 3-4 ledge scramble,
+bypassing "Peak 7004") independently confirmed by an NWHikers.net trip report titled
+"Le Conte Mtn & Pk 7004." `wa_lemah_mountain_east_route` — first ascent (Wallace Burr's
+party, July 7, 1923) confirmed with no conflicting sources; summit elevation (7,519 ft)
+falls within the row's own already-documented 7,463-7,520 ft cross-source range (a minor,
+already-hedged discrepancy — Wikipedia/SummitPost give 7,512 ft — not worth "fixing" to
+one source when the row already states the range honestly); its itinerary day-by-day
+gain/loss sums (4700/4700) already agree closely with the top-level fields (4680/4680).
+`wa_lemah_two_goatshead_spire` — first ascent, date, and elevation (Donald Goodman and
+John Mason, August 8, 1982, 7,000 ft) matched Wikipedia's Lemah Mountain article
+verbatim. `wa_lena_lake_to_mt_stone_traverse` — Mount Stone's South (true) Summit
+elevation (6,612 ft) confirmed by four independent sources. Its top-level `gain_ft`/
+`loss_ft` (9000/6550) were initially suspected (an internal-consistency read favored
+the itinerary's own day-by-day sum instead, which totals 8400/7550) — but external
+research found the likely primary source for this row, trailcatjim.com, independently
+reproduces this route's exact Lena Lake TH elevation (750 ft) and St. Peter's Gate
+elevation (5,950 ft), and states "+7,400 ft / -6,550 ft" for the version of the
+traverse that includes the Mount Stone summit side-trip — an almost exact match to the
+row's own stored `loss_ft` (6550). Left `gain_ft`/`loss_ft` unchanged: this is a case
+where an internal-consistency-only fix would have overwritten a value that turned out
+to be the better-sourced one.
+
+**Tooling note:** none this batch — all statements checked cleanly against
+`check-sql-targets.mjs` with literal `id =` predicates.
+
+SQL: `audits/sql/2026-09-10-batch-264.sql` (7 UPDATE statements, no DELETE). File is
+4.6KB, over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and
+verify each before sending the next.
+
+Next batch continues in sorted-id order after `wa_lena_lake_to_mt_stone_traverse` (see
+progress file).
