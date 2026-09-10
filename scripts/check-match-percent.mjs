@@ -240,7 +240,7 @@ if (refusal.trim().length >= 15) ok(`...and still explains why there is no perce
 else fail(`the browse row no longer explains the missing match % (${JSON.stringify(refusal)}) — the seed card beside it renders one, so the absence needs a sentence`);
 
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 18;
+const FLOOR = 20;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);

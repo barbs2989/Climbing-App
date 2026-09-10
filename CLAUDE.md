@@ -2849,6 +2849,14 @@ the total when deciding where a new guard belongs.
     - A **gate** rather than a probe for the reason `check:policy-claims` and `check:profile-claims`
       were promoted: the fix changes **strings and no identifier**, which `audit:silent-reverts`
       says in its own closing caveat it cannot see.
+    - **THE FLOOR HAD TO RISE WITH THE SECTION, AND 18 WOULD HAVE HIDDEN IT ENTIRELY.** Section 6
+      contributes exactly **4** assertions against a clean run's 22, so at the old `FLOOR = 18`
+      deleting the whole section landed on **exactly 18** and `ran < FLOOR` was false — measured,
+      not reasoned: the gutted guard printed a **clean green `ok — … (18 assertions)`** and exited
+      **0**, while at 20 it fails *"this run proved nothing"*. **A floor two below a clean run is
+      the convention precisely because a floor set to the new total cannot see its own newest
+      section stop asking.** Raise it when you add an assertion here; never lower it to make a run
+      pass.
   - Injection-tested **14/14** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
     its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and judged on
     the guard's **own failure text** matched against FAIL lines only. The harness also **refuses any
