@@ -19769,3 +19769,129 @@ verify each before sending the next.
 
 Next batch continues in sorted-id order after `wa_lichtenberg_mountain_west_face_west_rib`
 (see progress file).
+
+## Batch 267 (2026-09-11, pass 5)
+
+`wa_lincoln_peak_north_ridge`, `wa_lincoln_peak_standard`,
+`wa_little_big_chief_mountain_northeast_face`, `wa_little_mac_spire_southwest_route`,
+`wa_little_sister_north_face`, `wa_little_sister_west_face`,
+`wa_little_tahoma_cowlitz_ingraham_glaciers`, `wa_little_tahoma_east_shoulder`.
+
+**Two likely-duplicate route pairs found and flagged, not fixed.** Both were caught by
+pulling every route on the parent area rather than trusting the batch's own discipline
+filter, which is what surfaced them — neither duplicate's second half would have appeared
+in a routes query scoped to `discipline IN ('alpine','mountaineering')` alone.
+
+- **Lincoln Peak.** `wa_lincoln_peak_north_ridge` (named "North Ridge / Standard", grade
+  "IV WI4 (AI4+)", 5 pitches) and a third row on the same peak outside this batch's
+  discipline filter, `wa_lincoln_peak_wilkes_booth` (discipline `ice`, named "Wilkes-Booth
+  (Northwest Face)", 4 pitches, 610 m), both describe the identical March 13, 2015 first
+  ascent by Daniel Coltrane and Michal Rynkiewicz (confirmed via WebSearch against AAC
+  Publications' "Lincoln Peak, Northwest Face, Wilkes-Booth" and a CascadeClimbers trip
+  report titled "Wilkes-Booth Route (NW Face) Grade 4+ AI4+ 3/13/2015" — same climbers,
+  same date, same grade). `north_ridge`'s own `data_quality.gaps` field, written by an
+  earlier enrichment pass, already says outright: *"This slot corresponds to 'Wilkes-Booth,'
+  a ~2,000-ft ice/mixed line on Lincoln Peak's NW Face"* and separately flags its own
+  `rock_grade` (5.4) as a stale leftover inconsistent with the newly-sourced WI4 ice grade,
+  "should be reviewed/cleared separately" — a defect an earlier pass found and never acted
+  on. "North Ridge" is not this peak's route at all (it is the name of a famous, unrelated
+  Grade III route on Mount Baker itself, the volcano next door — confirmed via WebSearch).
+  So `north_ridge`'s `name` field is wrong and its content otherwise duplicates
+  `wilkes_booth`'s. Not renamed here: renaming it to match `wilkes_booth` would leave two
+  identically-named rows for one route, and reconciling which one is canonical (merge one
+  into the other, keep both with a cross-reference, or something else) is a structural
+  decision this audit's SQL-only, no-DELETE remit can't make. The peak's `areas.blurb`
+  independently corroborates the whole picture, already correctly describing "only two
+  documented technical routes (the historic SW Face 'X Couloir/Emancipation Proclamation'
+  and the 2015 'Wilkes-Booth' NW Face)" — i.e. the catalog's own area-level data has known
+  the right name the whole time; only the two route rows disagree with it and each other.
+
+- **Little Tahoma.** `wa_little_tahoma_east_shoulder` and a third row on the same peak
+  outside this batch (`wa_frying_pan_whitman_glaciers`, discipline `mountaineering`, so
+  it *would* have been in scope — it wasn't picked up this batch only because its id sorts
+  alphabetically before this pass's current position, meaning it was very likely already
+  audited in an earlier batch/pass) carry identical FA text ("J.B. Flett and Henry H.
+  Garrison, August 29, 1894"), identical grade ("Grade II+, Class 3-4"), identical
+  `gain_ft` (7600) and `dist_km` (11.3). `wa_frying_pan_whitman_glaciers`'s own overview
+  states outright: *"modern route guides describe 'Fryingpan/Whitman Glaciers' and 'East
+  Shoulder' as the same standard route — same Summerland approach, same Whitman Notch
+  crossing, same Class 3-4 summit block"*, and its `data_quality.gaps` (confidence HIGH,
+  last verified 2026-07-09) already says: *"This entry appears to describe the same
+  physical route as 'wa_little_tahoma_east_shoulder' ... worth confirming with the catalog
+  maintainer whether these two route records should be merged or clearly cross-referenced"*
+  — a second instance of an earlier pass flagging exactly this and nobody following up.
+  Flagged again here rather than resolved, for the same no-DELETE reason as Lincoln Peak.
+
+**Confirmed error, fixed (SQL Fix 1 & 2):** `wa_lincoln_peak_standard` and
+`wa_lincoln_peak_wilkes_booth` both claimed "Free self-issue Mount Baker Wilderness permit
+... no quota or fee," which two independent WebSearch queries this session (against
+fs.usda.gov/recreation.gov content) say is wrong: the Forest Service explicitly does not
+require a wilderness permit for the Mount Baker Wilderness or a climbing permit for Mount
+Baker, unlike neighboring Alpine Lakes/Norse Peak/Pasayten Wildernesses which do use
+self-issue permits. The wording on both rows was templated near-identically to the Alpine
+Lakes Wilderness permit text this session independently confirmed correct on
+`wa_little_big_chief_mountain_northeast_face` — a generic-wilderness template applied
+without checking this specific wilderness's actual rule. `wa_lincoln_peak_north_ridge`
+already had it right; both wrong rows corrected to match.
+
+**Confirmed error, fixed (SQL Fix 3):** `wa_little_tahoma_east_shoulder`'s `permit` field
+was an empty string. Confirmed via WebSearch that this route crosses the Fryingpan Glacier
+(~7,000 ft) and the Whitman Glacier via a notch at ~9,000 ft en route to an 11,138 ft
+summit, entirely within Mount Rainier National Park — the same above-10,000-ft/glacier
+climbing-registration requirement that this peak's other routes already state. Filled from
+two same-peak siblings that already carry the correct text independently (including the
+likely-duplicate `wa_frying_pan_whitman_glaciers` flagged above, whose own permit text was
+written by a separate, HIGH-confidence research pass — independent corroboration of the
+wording even though the two rows may describe one physical route).
+
+**Flagged, not fixed — insufficient sourcing:** the Little Sister routes
+(`wa_little_sister_north_face`, `wa_little_sister_west_face`, plus three more on the same
+peak outside this batch: `wa_little_sister_scramble`, `wa_little_sister_southeast_ridge`,
+`wa_little_sister_south_couloir`) show a tangled aspect/grade/FA-attribution pattern that
+external sourcing available this session couldn't cleanly resolve. `north_face` (aspect N,
+grade 5.4, no FA) and `west_face` (aspect W, no grade, FA "Darin Berdinka, June 21, 2013")
+each have half of what looks like it should be one fact set — WebSearch on the Green Creek
+Circuit traverse Berdinka established that day describes him climbing "a route he coined
+the Northwest Rib, eventually leading to the right side of the North Face," and separately
+describes "two aretes on the NW Face of Little Sister ... offering one of the longer
+climbs in the range (5.4)" — suggesting the 5.4 grade may belong with Berdinka's FA rather
+than sitting unattributed on `north_face`. Compounding this, `wa_little_sister_scramble`
+(aspect S/SE, "Twin Sisters Olivine Scramble," grade Class 3-4, 7 pitches) carries the
+identical FA text "Darin Berdinka, June 21, 2013 (West Face)" and identical pitch count (7)
+to `west_face`, despite a different name and a contradictory aspect (its own text says
+"West Face" while its own `aspect` field says S/SE) — a third possible duplicate. Resolving
+this needs the actual Mountain Project route pages (the two relevant hits —
+`mountainproject.com/route/126696768/green-creek-circuit` and
+`mountainproject.com/area/126693811/little-sister` — both surfaced in search results but
+WebFetch was blocked for the domain both sessions this was attempted), so nothing was
+written; flagged for a human with direct MP access.
+
+**Clean, cross-checked against external sources:** `wa_little_big_chief_mountain_northeast_face`
+(elevation 7,225 ft and FA — Fred Beckey, Wayne Swift, Joe Barto, Campbell Brooks, August
+1939 — both confirmed exactly via WebSearch; permit text for the Alpine Lakes Wilderness
+self-issue permit matches known USFS policy); `wa_little_mac_spire_southwest_route`
+(elevation 7,680 ft and 1969 FA year both confirmed; area `route_count` = 1 matches exactly
+one route row, no identity issue on this peak); `wa_little_tahoma_cowlitz_ingraham_glaciers`
+(elevation 11,138 ft confirmed; permit text already correct and complete).
+
+**Tooling note:** `check-sql-targets.mjs` initially reported one UPDATE (Fix 3) as
+unparseable ("no UPDATE/DELETE statements with literal ids found") because its SET value's
+string literal contained a semicolon, and the checker's statement-splitter (`code.split(";")`,
+which does not respect string literals) cut the statement in two, separating the WHERE
+clause from the UPDATE. Reworded the SET value (compound sentence split into two sentences,
+no information lost) rather than leave that write unverified; re-ran clean afterward (3/3
+write targets checked, no DELETE). Confirmed via manual query before the rewording that the
+target id existed regardless. WebFetch was blocked by the network egress proxy for every
+climbing-specific and land-manager domain tried this session (Wikipedia, PeakVisor, Mountain
+Project, AAC Publications, LemkeClimbs, CascadeClimbers, turns-all-year.com, fs.usda.gov) —
+all research relied on WebSearch's own synthesized results, cross-checked against this
+catalog's own `areas.blurb`/`areas.elevation_ft`/`data_quality.gaps` fields where available,
+which this batch found unusually rich and in two cases already contained the correct
+answer to a discrepancy an earlier pass had flagged but nobody had acted on.
+
+SQL: `audits/sql/2026-09-11-batch-267.sql` (3 UPDATE statements, no DELETE). File is 5.7KB,
+over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and verify each
+before sending the next.
+
+Next batch continues in sorted-id order after `wa_little_tahoma_east_shoulder` (see
+progress file).

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_lichtenberg_mountain_west_face_west_rib",
+  "last_processed_id": "wa_little_tahoma_east_shoulder",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5419,6 +5419,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-09-11-batch-266.sql",
       "note": "Fixed: two Liberty Cap (Mount Rainier) routes' high_point_ft (14112 -> 14097 on both wa_liberty_cap_liberty_ridge_finish and wa_liberty_cap_ptarmigan_ridge_finish), which disagreed with the areas table's own canonical elevation_ft=14097 for wa_liberty_cap and, on the Ptarmigan Ridge row, with that route's own waypoint stating elev \"14097\" for the same summit; wa_liberty_crack's high_point_ft (7746 -> 7720), which contradicted its own \"Liberty Bell Mountain summit\" waypoint (elev \"7720\"), the areas table's canonical elevation_ft=7720 for wa_liberty_bell, and every sibling route on the peak, all WebSearch-confirmed against Wikipedia (7,720+ ft); wa_liberty_bell_serpentine_crack's dist_km (2.5 -> 4.184, too low under the app's one-way/doubled-for-display convention -- corrected from its own itinerary.miles=5.2 round trip, corroborated by external sources describing the shared Beckey-route/Blue Lake Trailhead approach as \"a short 5 miles round trip\"); wa_liberty_bell_thin_red_line's dist_km (1.6 -> 4.023, same too-low pattern, corrected from its own itinerary.miles=5 round trip and matching its same-trailhead sibling wa_liberty_crack's unflagged dist_km=4.02 almost exactly); and three fields on wa_liberty_traverse -- high_point_ft (NULL -> 7720, filled from its own \"Liberty Bell Mountain\" waypoint) and gain_ft/loss_ft (2001/NULL -> 3500/3500, filled from its own itinerary.days[0] object, since the stored gain_ft of 2001 was physically impossible: less than the 2520 ft net elevation change between this row's own trailhead and final-summit waypoints). Flagged for human review, not auto-fixed: wa_liberty_bell_thin_red_line's top-level gain_ft (1312) also disagrees with its own itinerary.gainFt (2400), which would bring it in line with all three sibling routes on this trailhead (whose top-level gain_ft exactly equals their own itinerary.gainFt) -- but CLAUDE.md documents gain_ft as meaning approach-only gain (trailhead to base of climb) rather than trailhead-to-summit, so unlike the elevation/dist_km fixes above this one turns on which semantic convention this specific field is following, and 1312 is not implausible under the approach-only reading; left unfixed rather than guess which convention applies. wa_liberty_traverse's dist_km (3.2) also disagrees with its own itinerary.miles=7, but this is a 5-summit traverse (\"outback\" shape) rather than a simple out-and-back, so it's unclear whether the app's one-way-doubled convention even applies to a multi-summit linkup's total distance -- flagged rather than guessed. wa_liberty_cap_ptarmigan_ridge_finish carries many NULL fields (dist_km, loss_ft, crowds, partner_requirements, seasonal_guidance, seasonal_hazards, data_quality, difficulty) that look like an earlier/thinner enrichment pass than its neighbors; a data-completeness gap, not a factual error, so left alone rather than filled with unsourced estimates. Clean, cross-checked against external sources: wa_liberty_crack (FA -- Steve Marts, Don McPherson & Fred Stanley, July 16-18 1965 -- WebSearch-confirmed including the 1964 Bertulis/Marts attempt story); wa_liberty_bell_thin_red_line (FA -- Jim Madsen & Kim Schmitz, July 29 1967 -- and FFA -- Kate Rutherford & Mikey Schaefer, Sept 15 2008 -- both dates WebSearch-confirmed exactly); wa_liberty_crack_free (FFA history -- Brooke Sandahl 1991 original free ascent, Schaefer/Lee/Herrington 2016 free variation of the bolt-ladder pitch -- WebSearch-confirmed); wa_liberty_cap_liberty_ridge_finish (FA -- Ome Daiber, Arnie Campbell, Jim Borrow, Sept 28-Oct 1 1935 -- WebSearch-confirmed via AAC Publications; 2026 NPS climbing fee of $82/person and the SR-165 Fairfax Bridge permanent closure both confirmed); wa_liberty_cap_ptarmigan_ridge_finish (FA -- Wolf Bauer & Jack Hossack, 1935 -- WebSearch-confirmed the climbers/year, though the specific Sept 8 date could not be independently confirmed or contradicted); wa_lichtenberg_mountain_west_face_west_rib (high_point_ft=5844 WebSearch-confirmed via Wikipedia/SummitPost; its stated trailhead elevation of ~4,000-4,150 ft runs a bit high against one external estimate of 3,800 ft, but within normal source-to-source variance and consistent across this row's own approach/road/waypoint fields, so not flagged)."
+    },
+    {
+      "batch_number": 267,
+      "date": "2026-09-11",
+      "route_ids": [
+        "wa_lincoln_peak_north_ridge",
+        "wa_lincoln_peak_standard",
+        "wa_little_big_chief_mountain_northeast_face",
+        "wa_little_mac_spire_southwest_route",
+        "wa_little_sister_north_face",
+        "wa_little_sister_west_face",
+        "wa_little_tahoma_cowlitz_ingraham_glaciers",
+        "wa_little_tahoma_east_shoulder"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 4,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-11-batch-267.sql",
+      "notes": "3 SQL fixes across 3 rows (2 wrong-permit-template fixes on Lincoln Peak, 1 missing-permit fill on Little Tahoma). Flagged rather than fixed: 2 likely-duplicate route pairs (Lincoln Peak north_ridge/wilkes_booth; Little Tahoma east_shoulder/frying_pan_whitman_glaciers) each already self-flagged by an earlier pass's data_quality.gaps field and never resolved -- no DELETE per audit guardrails, so left for human merge decision. Also flagged: Little Sister 5-route aspect/grade/FA tangle, insufficient sourcing (Mountain Project blocked by WebFetch egress proxy)."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
