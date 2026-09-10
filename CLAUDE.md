@@ -3046,6 +3046,21 @@ the total when deciding where a new guard belongs.
     its edit landed **by checksum** and restoring `lib/DbAreaBrowser.jsx` byte-identically. Case 1 is
     the real historical rule, restored verbatim. **Two must stay SILENT** — a comment quoting the
     forbidden prefix shape, and the `ALIAS` table reordered — because both are correct work.
+  - **THE PANEL'S RENDERED COPY IS CLEAN CATALOG-WIDE, which nothing had asked.** #1672 swept the
+    ROUTE page for broken copy and found it clean; the AREA page had never been swept, and this
+    panel is the part of it that DERIVES rather than displays.
+    `scripts/oneoff/measure-summit-briefing-copy.mjs` renders **all 198** WA peak briefings and
+    scans for `NaN` / `undefined` / `Infinity` / `[object Object]`, and for a value row holding
+    prose: **0 findings.** It fails closed under 100 renders, since a short sweep reports a clean
+    catalog. A measurement rather than a guard — the contract is already proven on five fixtures,
+    and rendering all 198 every run buys a catalog read for a question whose answer moves only when
+    the catalog does.
+  - **Three more measured NON-findings from the same sitting, recorded so they are not re-derived.**
+    Every live `areas.area_type` has an `ATYPE` label (0 fall through to the generic *"Area"*) and
+    every live `routes.discipline` has a `DISC_LABELS` entry (0 print the raw column value). And
+    the heading **ACROSS EVERY ROUTE HERE** is computed from the area's DIRECT routes while
+    `route_count` on the strap above is a SUBTREE aggregate — measured, **0 of the 198** panels
+    differ, so the heading is not over-claiming.
   - **A measured NON-finding, so it is not re-derived.** The `High point` row is the one row with no
     denominator caveat and no majority gate, unlike its four siblings. Measured: it prints on **15**
     WA peak pages, **1** of them backed by a minority of the peak's routes, and **none** below the
