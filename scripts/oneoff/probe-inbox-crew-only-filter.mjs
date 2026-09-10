@@ -107,10 +107,19 @@ ok("a stranger is still filtered out", !friends.includes(STRANGER_MSG),
 // claim and nothing blocks — sendDirectMessage's policy is `auth.uid() = sender_id` with no test of
 // the recipient's preference, so the row is written and the thread reaches dmThreads.
 const settings = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-if (settings.indexOf("WHO CAN MESSAGE ME") < 0) dead("ClimbMatch.jsx no longer renders WHO CAN MESSAGE ME — ANCHOR LOST");
+// ANCHOR ON THE CONTROL, NOT ITS LABEL. This anchored on the heading "WHO CAN MESSAGE ME" and
+// went red the day #1625 renamed it to "WHICH MESSAGES REACH MY INBOX" -- a rename that IS the
+// fix, because the old heading claimed a restriction the app cannot impose. So the probe demanded
+// the false heading, and its failure read as a regression: acting on it would have restored the
+// very claim #1625 removed. `value={msgFrom}` is the select itself, so a reword passes and the
+// control going missing still fails.
+if (settings.indexOf("value={msgFrom}") < 0) dead("ClimbMatch.jsx no longer renders the inbox-filter select — ANCHOR LOST");
 ok("the setting no longer claims strangers are blocked",
   settings.indexOf("can't reach your inbox") < 0,
   "a message from a non-friend is hidden from the reader, not withheld from the sender");
+ok("its heading does not claim to gate who can MESSAGE you",
+  settings.indexOf("WHO CAN MESSAGE ME") < 0,
+  "#1625 removed that heading precisely because nothing gates sending -- the insert policy is auth.uid() = sender_id");
 ok("it still names both categories it filters on",
   settings.indexOf("Only your friends and crew members") >= 0,
   "the replacement copy dropped the promise the filter now keeps");
