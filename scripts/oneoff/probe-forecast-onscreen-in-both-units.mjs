@@ -76,9 +76,58 @@ async function walk(config, label) {
       wind: (t.match(/(\d+) (mph|km\/h)/) || []).slice(1),
       precip: (t.match(/([\d.]+)("| mm) expected/) || []).slice(1),
       delta: (t.match(/differs (-?\d+)°/) || [])[1],
+      // The label and the value are separate divs, so innerText puts a newline between them.
+      // CASE-INSENSITIVE, and that is not defensiveness: the label div carries
+      // textTransform:"uppercase", and innerText returns the CSS-TRANSFORMED text -- so the
+      // screen reads "FREEZING LEVEL". A case-sensitive needle matched nothing and reported the
+      // tile as REMOVED FROM THE PANEL on a perfectly correct app. CLAUDE.md already records
+      // this trap twice (check:ui's PEOPLE YOU'VE CLIMBED WITH, and "CREW · 2 MEMBERS").
+      freeze: (t.match(/Freezing level\s*([\d,]+)\s*(ft|m)\b/i) || []).slice(1),
+      freezeLabel: /Freezing level/i.test(t),
     };
   } finally { stop(); }
 }
+
+// ===== THE FREEZING-LEVEL COMPARISON, SELF-TESTED BEFORE ANY BROWSER RUNS =====================
+// This probe's healthy output is "everything converted", which is also what a comparison that can
+// no longer fire prints. Worse here than usual: on a loaded box the METRIC leg routinely produces
+// no figures at all, so the happy path can go unexercised for a whole session and a green run
+// would prove nothing about it. The classifier is therefore exercised on constructed pairs FIRST
+// -- the same non-vacuity contract measure-optimistic-writes-by-handler.mjs uses -- and one
+// implementation serves the self-test and the real comparison, so the two cannot drift.
+//
+// A BAND RATHER THAN EQUALITY, SIZED BY THE DEFECT AND NOT FITTED TO THE DATA. The two runs are
+// SEPARATE page loads making SEPARATE forecast fetches, so the value can legitimately move
+// between them -- observed on this probe as a provider delta of 12°F in one run against 6°C in
+// the other, which is drift rather than a conversion error. Demanding exact equality turns that
+// into a red probe. An UNCONVERTED figure is 3.28x out, which no 10% band can hide.
+const FT_PER_M = 3.28084;
+function freezeVerdict(impFreeze, metFreeze) {
+  const out = [];
+  if (impFreeze[1] !== "ft") out.push(`imperial freezing level unit is ${impFreeze[1]}, expected ft`);
+  if (metFreeze[1] !== "m") out.push(`metric freezing level unit is ${metFreeze[1]}, expected m`);
+  const impFt = Number(String(impFreeze[0]).replace(/,/g, ""));
+  const metM = Number(String(metFreeze[0]).replace(/,/g, ""));
+  const want = Math.round(impFt / FT_PER_M);
+  const ratio = metM > 0 ? want / metM : 0;
+  if (!(ratio > 0.9 && ratio < 1.1)) out.push(`freezing level: imperial ${impFt} ft is ~${want} m, screen says ${metM} — that is not a conversion (an unconverted figure would read ${impFt})`);
+  return out;
+}
+for (const [a, b, want, why] of [
+  [["16,404", "ft"], ["5,000", "m"], 0, "a clean conversion"],
+  [["16,404", "ft"], ["16,404", "m"], 1, "THE DEFECT: the number never moved, only the unit word"],
+  [["16,404", "ft"], ["4,900", "m"], 0, "ordinary drift between two independent fetches still passes"],
+  [["16,404", "ft"], ["3,000", "m"], 1, "a figure that is neither the value nor its conversion"],
+  [["16,404", "ft"], ["5,000", "ft"], 1, "the metric run still showing feet"],
+]) {
+  const got = freezeVerdict(a, b).length ? 1 : 0;
+  if (got !== want) {
+    console.error(`SELF-TEST FAIL (${why}): ${JSON.stringify(a)} vs ${JSON.stringify(b)} -> ${got}, want ${want}`);
+    console.error("the freezing comparison does not reproduce its own known shapes, so a clean report about the app would prove nothing");
+    process.exit(1);
+  }
+}
+console.log("  self-test: the freezing comparison accepts a real conversion and rejects three wrong ones.");
 
 const imp = await walk("scripts/overlay-scroll.config.mjs", "imperial");
 const met = await walk("scripts/metric-units.config.mjs", "metric");
@@ -107,6 +156,31 @@ if (imp.delta && met.delta) {
   const want = Math.round(Number(imp.delta) * 5 / 9);
   if (Number(met.delta) !== want) problems.push(`provider disagreement: ${imp.delta}°F apart should read ${want}°C apart, screen says ${met.delta}° (an offset conversion gives ${F2C(Number(imp.delta))})`);
   else console.log(`  -> the provider disagreement converts as a DIFFERENCE: ${imp.delta}° -> ${met.delta}°, not ${F2C(Number(imp.delta))}°`);
+}
+
+// THE FREEZING LEVEL WAS THE ONE TILE IN THIS PANEL THAT DID NOT CONVERT, and this probe did
+// not read it -- so the browser half of that defect had no witness at all while the seven
+// siblings around it were covered. It is the tile that decides whether an ice route is frozen.
+//
+// ABSENCE IS SPLIT IN TWO, because the two want opposite reactions. No LABEL means the tile was
+// removed from the panel, which is a defect. A label with no NUMBER means the provider returned
+// no freezing level for this run -- `uElev(null)` renders NOVAL -- which is not our defect and
+// must not fail a correct app. Saying "not measured" is the honest answer there.
+// GATED ON THE PANEL HAVING RENDERED AT ALL, and that is not belt-and-braces: when the metric
+// run produced no forecast figures (a slow fetch on a loaded box), the checks below reported
+// "the tile was removed from the panel" ON TOP of the NOT MEASURED above — a second, WRONG
+// diagnosis of a run that simply never loaded. Nothing about this tile is knowable from a walk
+// whose forecast never arrived, so it says nothing rather than accusing the app.
+const forecastRendered = imp.hiLo.length && imp.wind.length && met.hiLo.length && met.wind.length;
+if (!forecastRendered) {
+  console.log("  -> the freezing level was NOT MEASURED: a run produced no forecast figures at all");
+} else if (!imp.freezeLabel) problems.push("the imperial run shows no Freezing level tile at all — it was removed from the panel");
+else if (!met.freezeLabel) problems.push("the metric run shows no Freezing level tile at all — it was removed from the panel");
+else if (imp.freeze.length !== 2 || met.freeze.length !== 2) {
+  console.log("  -> note: the Freezing level tile carried no number this run (the provider gave none), so its conversion was NOT MEASURED");
+} else {
+  for (const p of freezeVerdict(imp.freeze, met.freeze)) problems.push(p);
+  if (!freezeVerdict(imp.freeze, met.freeze).length) console.log(`  -> the freezing level converts: ${imp.freeze.join(" ")} -> ${met.freeze.join(" ")}`);
 }
 
 if (problems.length) { console.error("\nFAIL:"); problems.forEach((p) => console.error("  - " + p)); process.exit(1); }
