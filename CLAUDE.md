@@ -9412,6 +9412,28 @@ the correction knows the screen is wrong, and they have no way to report it.
           the branch every other column's current-value line shares — the thing this repo keeps
           refusing to build. Inverting the pairs to *"1 pulley"* is worse still: the generic branch
           is column-blind, so it would render *"60cm length"* elsewhere.
+      - **AND THE RENDERER IS NOT THE SCREEN**, so `probe-rack-quantity-reads-as-prose.mjs` renders
+        the real `RouteDetail` over the ten changed rows and matches every bullet `rackLines`
+        produces — **14 bullets across 10 RACK boxes** — mimicking `dbRouteToCamel` (`slingRack`,
+        never the column name). Two traps this file already records were met head-on writing it:
+        - **`indexOf("RACK")` MATCHES THE `RACK` INSIDE `ROUTE TRACK`.** The first version sliced
+          its panel from there, so all ten routes "rendered a RACK box" whose contents were the
+          GPS-track panel — and every *is-absent* assertion passed on text that was never the rack.
+          The landmark is `/\bRACK\b/`, which is the substring rule `check:ui` states for exactly
+          this word.
+        - **A NEGATIVE-ONLY PROBE IS SATISFIED BY A BOX THAT RENDERED NOTHING.** *"No key name in
+          the panel"* was green before the positive assertion existed. Each row must now show the
+          text the renderer actually produces for it, and the run fails closed on zero bullets
+          checked.
+        - **WHICH TAB the box sits on is discipline-dependent** — `cragOnly` puts it on Overview
+          for a crag and on **Planner** for these alpine and scrambling rows — so the probe finds
+          it rather than asserting a tab. Asserting Overview reported 10 of 10 as missing.
+      - **A MEASURED NON-FINDING, so it is not re-derived**: every panel in that probe prints
+        *"Standard rack for this discipline — nobody has recorded what this route itself takes"*
+        above the route's own webbing, which reads as a caption contradicting its own list.
+        `rackGeneric` is `!routeRackFor(route)` and **routeRackFor never reads `slingRack`** — so
+        it is real in the fixture and unreachable in production: `measure-sling-rack-only-routes.mjs`
+        reports **0 of 242** sling_rack routes with nothing else feeding it. Do not "fix" it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
