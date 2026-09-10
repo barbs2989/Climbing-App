@@ -1258,6 +1258,19 @@ the total when deciding where a new guard belongs.
     it would leak one per run forever, exactly as `check:message-delivery` records.
   - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
     `crew_members`.
+  - **RE-RUN 2026-09-10 after `0180` put a new INSERT policy on `crew_members` — all three still
+    hold.** That is this entry's own trigger firing (*"any policy on `profiles`, `messages` or
+    `crew_members`"*) and being answered rather than noted: `0178`/`0179`/`0180` landed in one day,
+    all three are policy work, and `0180`'s `crew_members` insert gate is the one that arms this.
+    Controls fired first — B could read, message AND crew-invite A **before** the block — so the
+    refusals are attributable; neither refusal disclosed the block; unblocking restored the read.
+    **Teardown verified from OUTSIDE again** rather than trusted, since this guard still prints no
+    teardown line: **0** accounts on the `.invalid` QA domain afterwards, 3 auth users total.
+    - **The three hand-run DB guards were clean in the same sweep** (they have no CI to run them):
+      `check:column-drift` ok, `check:function-columns` ok over 11 writing functions,
+      `check:function-drift` 46 agreeing with 1 declared benign. `check:rls` (static, in the build)
+      ok too — worth running by hand anyway when three policy migrations land at once, because it
+      is the guard those migrations are most likely to break.
   - **RE-RUN 2026-09-04 after `0176` gave `messages` a DELETE policy — all three hold**, and that
     migration is exactly the trigger this line names. Controls fired first (B could read, message
     and crew-invite A **before** the block, so the refusals are attributable), neither refusal
