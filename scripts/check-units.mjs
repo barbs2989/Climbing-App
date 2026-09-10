@@ -64,11 +64,11 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
 // restyle left the guard checking 1 file of 2 and reporting `ok`.
 //
-// Each sits two below what a clean tree produces (15/16/17/18/15/30 today) -- close enough that a
+// Each sits two below what a clean tree produces (15/16/17/18/15/30/14/10 today) -- close enough that a
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
-const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 5, pitches: 9 };
+const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 12, pitches: 9 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -108,8 +108,10 @@ async function loadBundle() {
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
-import { ItineraryEditor, BailoutForm } from ${JSON.stringify(CORE_PATH)};
+import { ItineraryEditor, BailoutForm, FullProfile } from ${JSON.stringify(CORE_PATH)};
+export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,
   uTempU, uTempIn, buildConsensus,
@@ -136,6 +138,28 @@ export function renderEditor(itin) {
 export function renderBailout() {
   return renderToStaticMarkup(React.createElement(BailoutForm, { onSubmit: noop, onCancel: noop, peakCoord: null }));
 }
+// FullProfile ends in createPortal(..., document.body), which the server renderer refuses --
+// portals are PLACEMENT and check:overlays owns that. The patch is SCOPED TO THIS CALL and
+// restored in a finally, deliberately: flattening createPortal for the whole bundle would change
+// what the sections above render (RouteDetail portals its lightbox), so a shared patch could
+// quietly move assertions that have nothing to do with units. core does
+// \`import { createPortal } from "react-dom"\`, which esbuild emits as a property access at CALL
+// time, which is what makes the scoping possible. \`document.body\` is stubbed with it, because the
+// container ARGUMENT is evaluated before createPortal is ever called.
+export function renderProfile(climber) {
+  const orig = ReactDOM.createPortal;
+  const hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try {
+    return renderToStaticMarkup(
+      React.createElement(QueryClientProvider, { client: qc },
+        React.createElement(FullProfile, {
+          climber, onClose: noop, onResume: noop, catchCredits: [], myCrews: [],
+          myFriendIds: [], vouched: false, mySpeedFtHr: 0, routeById: () => null,
+        })));
+  } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
 `;
   tmpdir = fs.mkdtempSync(path.join(os.tmpdir(), "cm-units-"));
   const out = path.join(tmpdir, "bundle.cjs");
@@ -154,7 +178,8 @@ export function renderBailout() {
     "uTempIn", "buildConsensus", "itinDaysToDraft", "itinDraftToStructured", "itinToText",
     "uDistMiIn", "itinDraftVal", "itinStoreVal", "uElev", "ROUTE_LENGTHS",
     "routeLengthLabel", "uDistMi", "uDistMiUnitLong",
-    "passesFilters", "__set_UNITS", "renderRoute", "renderEditor", "renderBailout"];
+    "passesFilters", "__set_UNITS", "renderRoute", "renderEditor", "renderBailout",
+    "renderProfile", "distMiles", "ME"];
   for (const n of NEED) if (M[n] === undefined) dead(`${n} is not exported — nothing below was checked.`);
   return M;
 }
@@ -936,13 +961,26 @@ async function runPitches() {
 // FireNearRoute converts every individual fire's distance two lines above the one it did not.
 // Two spellings of one unit inside FullProfile alone.
 //
-// SOURCE-ONLY, deliberately. FullProfile ends in `createPortal(..., document.body)`, which the
-// server renderer refuses, and this guard bundles react-dom IN — so the portal cannot be
-// flattened from outside the bundle the way a standalone probe does it. The RENDER proof lives in
-// scripts/oneoff/probe-full-profile-distance-honours-units.mjs (both units, 195.8 mi -> 315.1 km,
-// injection-tested 4/4). What is asserted here is the half a stale-base squash takes: a STRING
-// and no identifier, which audit:silent-reverts cannot see.
-function runProfile() {
+// IT WAS SOURCE-ONLY, AND THE STATED REASON TURNED OUT TO BE WRONG — recorded rather than
+// quietly deleted, because it is the useful half. It read: FullProfile ends in
+// `createPortal(..., document.body)`, which the server renderer refuses, and this guard bundles
+// react-dom IN, "so the portal cannot be flattened from outside the bundle the way a standalone
+// probe does it". The first clause is right and the conclusion does not follow: it can be
+// flattened from INSIDE the generated entry, where `renderProfile` patches the module object and
+// restores it in a `finally`. core does `import { createPortal } from "react-dom"`, which esbuild
+// emits as a property access at CALL time, which is what makes the patch possible and scopable.
+// A STATED BLOCKER THAT HAS NOT BEEN TRIED IS A HYPOTHESIS.
+//
+// That matters because source-only left a real gap, MEASURED rather than argued: swapping
+// `uDistMi(+dist.toFixed(1))` for `uDistMi(dist)` at BOTH readouts produced 0 FAIL lines on
+// main's own tree, while moving every imperial reader from "756.7 mi away" to "756.72 mi away".
+// The static half cannot see it — `uDistMi(` is still there, and no bare unit follows a brace.
+// The render half below pins it, and injection case 5 flips from MUST PASS to MUST FAIL.
+//
+// What the SOURCE half asserts is still exactly right and is kept whole: the half a stale-base
+// squash takes, a STRING and no identifier, which audit:silent-reverts cannot see. The render
+// half is additive — it proves what the screen SAYS, which no source read can.
+async function runProfile() {
   section = "profile";
 
   // ── the general rule, which is what makes this more than three hand-picked sites. A NUMBER
@@ -990,6 +1028,76 @@ function runProfile() {
   const fire = fs.readFileSync(path.join(ROOT, "lib", "FireNearRoute.jsx"), "utf8");
   if (/more within \{uDistMi\(/.test(fire)) ok("the fire panel's radius converts");
   else fail('the fire panel prints its radius unconverted ("and N more within X miles") while converting every fire beside it');
+
+  // -- THE STATIC HALF ABOVE PROVES THE HELPER IS CALLED; IT CANNOT PROVE WHAT THE SCREEN SAYS,
+  //    AND THE GAP IS MEASURED RATHER THAN ASSERTED. Injecting `uDistMi(dist)` in place of
+  //    `uDistMi(+dist.toFixed(1))` at BOTH readouts leaves every assertion above green -- verified
+  //    on main's own tree, 0 FAIL lines before and after -- because `uDistMi(` is still there and
+  //    no bare unit follows a brace. That regression is silent, and it moves EVERY imperial
+  //    reader from 1dp to 2dp.
+  //
+  //    The comment above is right that pinning the EXPRESSION would forbid improving it. This
+  //    pins the PROPERTY instead: rounding to 1dp in MILES first is what keeps the imperial
+  //    string byte-identical to what the line printed before it was converted, and that is the
+  //    whole reason the conversion was safe to ship. A rewrite that keeps imperial unchanged
+  //    passes; one that moves it fails. Same distinction as `disclaimer-reworded` -- assert the
+  //    fact, never the phrasing.
+  await loadBundle();
+
+  // `dist` IS NOT A PROP -- it is `climber._real ? null : distMiles(ME, climber)` -- so the
+  // fixture has to be a SEED-shaped climber carrying coordinates and a `vouches` array, which the
+  // component reads unconditionally. A `_real` climber renders no distance at all, so a
+  // plausible-looking fixture makes every assertion below pass VACUOUSLY.
+  const CLIMBER = {
+    id: 7, name: "Robin Belay", username: "robinbelay", location: "Bellingham, WA",
+    lat: 48.7519, lng: -122.4787, level: "Intermediate", avatar: null,
+    disciplines: ["sport"], vouches: [], photos: [], objectiveIds: [],
+  };
+  const D = M.distMiles(M.ME, CLIMBER);
+  if (!isFinite(D) || D <= 0) dead(`the profile fixture produced no distance (${D}) -- the render assertions would be vacuous`);
+  ok(`the profile fixture is ${D.toFixed(1)} mi from ME, so the distance line is reachable at all`);
+
+  M.__set_UNITS("imperial");
+  let imp = "";
+  try { imp = M.renderProfile(CLIMBER); } catch (e) { dead("the imperial profile render threw: " + (e && e.message)); }
+  if (imp.length < 400) dead(`the profile rendered ${imp.length} chars -- too thin to assert against`);
+  // COUNTED, NEVER `includes`, and their own case 5 is what proved that necessary: the header
+  // and the compatibility card print the SAME string, so a whole-markup `includes` is satisfied
+  // by whichever readout was left alone -- a change to one of the two reads as clean. That is
+  // the "count inside the panel, never across the tab" trap, and the first draft of this
+  // assertion walked straight into it. Measured on a clean render: exactly 2.
+  const WAS = D.toFixed(1) + " mi away"; // exactly what the line emitted before it was converted
+  const nImp = imp.split(WAS).length - 1;
+  if (nImp === 2) ok(`both imperial readouts still say "${WAS}", byte-identical to the pre-conversion line`);
+  else fail(`${nImp} of 2 imperial readouts say "${WAS}" -- a units fix must not move what the default setting shows`);
+
+  M.__set_UNITS("metric");
+  let met = "";
+  try { met = M.renderProfile(CLIMBER); } catch (e) { dead("the metric profile render threw: " + (e && e.message)); }
+  if (met.length < 400) dead(`the metric profile rendered ${met.length} chars -- too thin to assert against`);
+  const want = M.uDistMi(+D.toFixed(1)) + " away";
+  if (want === WAS) dead("the metric and imperial strings are identical -- __set_UNITS did not take, so this proves nothing");
+  const nMet = met.split(want).length - 1;
+  if (nMet === 2) ok(`both metric readouts read "${want}" on the rendered profile`);
+  else fail(`${nMet} of 2 metric readouts read "${want}" -- one of them is not converting`);
+  if (!/\d\s*mi away/.test(met)) ok("no raw mile figure survives anywhere on the metric profile");
+  else fail('the metric profile still prints a number followed by "mi away"');
+  M.__set_UNITS("imperial");
+
+  // -- THE TWO REMAINING " mi away" STRINGS ARE LEFT ON PURPOSE, and this asserts the DECLARATION
+  //    rather than a note: OverviewMap and QuickMatch are declared SEED-ONLY, so they render for
+  //    nobody (deploy.yml sets VITE_USE_DB=true). The sweep above cannot see them either way --
+  //    its needle wants a bare unit AFTER a brace and these are `{... + " mi away"}` -- so
+  //    reviving one would put a raw mile figure on a live screen with nothing saying so.
+  const seedGuard = fs.readFileSync(path.join(ROOT, "scripts", "check-seed-only-surfaces.mjs"), "utf8");
+  for (const name of ["OverviewMap", "QuickMatch"]) {
+    if (new RegExp("^\\s*" + name + ':\\s*"', "m").test(seedGuard))
+      ok(`${name} is still declared seed-only, so its " mi away" renders for nobody`);
+    else fail(`${name} is NO LONGER declared seed-only -- its raw " mi away" is on a live screen now, so convert it and drop this case`);
+  }
+  const rawAway = (core.match(/ mi away/g) || []).length;
+  if (rawAway === 2) ok('exactly 2 raw " mi away" strings remain in core, both in declared-dead components');
+  else fail(`${rawAway} raw " mi away" strings in core -- expected the 2 dead ones; a live one may have been added, or a comment now quotes it`);
 }
 
 // =======================================================================================
