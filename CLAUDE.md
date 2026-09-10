@@ -37,6 +37,7 @@ npm run check:correction-readers # no enrichment column out-votes an agreed corr
 npm run check:crew-member-readers # no crew member id resolved against seed CLIMBERS (in build)
 npm run check:real-profile-rows # no row prints a level/trust a real profile lacks (in build)
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
+npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:wp-styles    # the app can DRAW every waypoint type it recognises (in build)
 npm run check:waypoint-placement # an undrawable waypoint says so, and one test decides (in build)
@@ -5573,6 +5574,64 @@ the correction knows the screen is wrong, and they have no way to report it.
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
     reading those would fail on the file explaining itself.
+- **`check:untracked-factors`** asserts that **a factor nobody has measured does not read as ZERO**.
+  Static (one esbuild bundle plus a source read, no browser and no database), so it sits in
+  `npm run build`.
+  - **IT IS #1569's OTHER HALF, AND THE ONE `check:new-climber-journey` STRUCTURALLY CANNOT REACH.**
+    That walk performs an action and then asks the DATABASE whether it survived; this defect leaves
+    no trace in any table, because it is a claim the breakdown computes at render time. Five of the
+    six defects that census found are covered by the walk; this is the sixth, and it needed a
+    different instrument rather than a sixth phase.
+  - **THE DEFECT.** The sign-in reset sets `relLedger` to `{honored:0, committed:0}` — correct, since
+    the demo's 23/24 must not follow a real account — and App then computed
+    `Math.round(relLedger.honored / Math.max(1, relLedger.committed) * 100)`, which turns *nothing
+    tracked* into the NUMBER 0. `trustFactors` already had the right branch
+    (`_rel != null ? … : "Not yet tracked"`, with `max: 0` so an untracked factor leaves the
+    denominator), and **a 0 is not null**, so it took the tracked branch. A climber who has never
+    committed to a crew was told they honour **0% of them**, on the card whose whole purpose is
+    telling them how to raise their score. `relLedger` has **no persistence anywhere** — no column,
+    no read, no write — so it is 0/0 for every real signed-in account.
+  - **Measured rather than asserted: it costs 9 points and holds 18 points of goal the climber
+    cannot fill** (denominator 120 against 102, score 53 against 62), because `max` stays 18 for a
+    measurement nobody made.
+  - **BOTH DIRECTIONS ARE ASSERTED, and the second is what keeps the rule honest.** A guard
+    demanding only *"Not yet tracked"* is satisfied by making the row **always** untracked, which
+    would hide a genuine no-show record — the *a rule that only ever suppresses is satisfied by
+    deleting the feature* shape this file records for `pitchShortfall` and the impossible-leg
+    suppression. So a **real** 0% must still be stated and must still count: 0 of 4 honored is a
+    measurement, not a blank.
+  - **THE SIBLING FACTORS ARE ASSERTED TOO, so this is a rule rather than one row's special case.**
+    Four other factors already read *"Not yet tracked"* and Reliability was the **outlier** — the
+    census recorded them as *"the correct twin that already existed"*. The guard requires at least
+    four, and requires that anything saying *"Not yet tracked"* carries `max: 0`; without that the
+    convention Reliability was measured against could erode and leave the rule resting on nothing.
+  - **A COUNT OF ZERO MUST STAY A NUMBER.** *"0 trip reports shared"* is TRUE, and nulling it would
+    swap one wrong answer for another by hiding a real, fillable goal. The rule is about a **ratio
+    with no denominator**, never about every zero on the card, and `routesLogged`/`conditionsReported`
+    are asserted to stay counts so a future sweep cannot over-apply it.
+  - **SECTION 2 ASSERTS THE WIRING AS SOURCE, because executing `trustFactors` proves the BRANCH and
+    not that App still hands it null.** A stale-base squash takes exactly that half: the ternary goes
+    back to `Math.max(1,committed)`, every executed assertion still passes, and the accusation
+    returns with **no identifier moved** — which `audit:silent-reverts` says in its own closing caveat
+    it cannot see.
+  - **IT ALSO CARRIES #1569's CONNECT-BUTTON HALF, and the walk does NOT cover that one.**
+    `check:new-climber-journey` phase 5 drives **`FullProfile`'s** connect button, which the census
+    names as the correct **TWIN** that already called `connect()`. The forked one was the **TRIP
+    REPORT's**: it pushed the climber into local `connections` and toasted *"you are now friends"*,
+    claiming a **MUTUAL** state the real flow cannot create, since `connect()` opens ConnectModal and
+    sends a request the other person must accept. So the walk exercises the path that was always
+    right, and this guard is the only thing watching the one that was wrong.
+  - **PROMOTED from `scripts/oneoff/probe-reliability-zero-vs-untracked.mjs`, which ran NOWHERE** —
+    the *a verification nobody runs is not a verification* shape this file records for
+    `check:overflow`, `check:pitch-discount`, `check:policy-claims`, `check:offline-claims` and
+    `check:photo-removal`. **The promotion is not a move: the probe PRINTED its core comparison and
+    asserted only the wiring**, so the rule it exists for could not fail. Section 1 is assertions
+    now. Promotion also changed its DEPTH, the trap `check:pitch-discount` records — paths are
+    ROOT-anchored rather than cwd-relative, so it cannot silently measure another tree.
+  - Fails **closed** four ways, each of which otherwise prints identically to a clean run: a missing
+    `trustFactors` or `vScore` export, fewer than 6 factors parsed (with none, every assertion passes
+    **vacuously**), a missing Reliability label, and an `app` source that read short.
+
 - **`check:crew-member-readers`** enforces one sentence: **a crew member's id must never be
   resolved against the seed `CLIMBERS` array.** Seed climbers carry integer ids; a DB crew's
   other members carry uuids, which `CLIMBERS.find` matches never. It does not throw and does
