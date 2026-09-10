@@ -3,14 +3,16 @@
 import { readFileSync, mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/route-page-cleanup/";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const t0 = Date.now();
 const mark = (label, since) => console.log(`${String(Date.now() - since).padStart(7)} ms  ${label}`);
 
 let t = Date.now();
-const core = readFileSync(ROOT + "ClimbMatchCore.jsx", "utf8");
-const rd = readFileSync(ROOT + "RouteDetail.jsx", "utf8");
+const core = readFileSync(join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const rd = readFileSync(join(ROOT, "RouteDetail.jsx"), "utf8");
 mark(`read both sources (${(core.length / 1024 | 0)}kB + ${(rd.length / 1024 | 0)}kB)`, t);
 
 t = Date.now();
@@ -41,7 +43,7 @@ try {
   writeFileSync(join(tmp, "e.jsx"), `
 import React from "react";
 import {renderToStaticMarkup} from "react-dom/server";
-import RouteDetail from "${ROOT}RouteDetail.jsx";
+import RouteDetail from "${join(ROOT, "RouteDetail.jsx")}";
 console.log(typeof RouteDetail);
 `);
   t = Date.now();

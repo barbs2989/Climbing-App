@@ -11,8 +11,10 @@
 import fs from "node:fs";
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/top-contributors-photo-crew-resume";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const DB = ROOT + "/lib/db.js";
 const original = fs.readFileSync(DB, "utf8");
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);

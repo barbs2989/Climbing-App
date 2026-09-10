@@ -85,7 +85,19 @@ const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
 // about who climbs a peak. But "The Mountaineers route page: 'Descend by rappelling and
 // downclimbing the route'" is a citation. Same word, both kinds, so this stays a READING LIST -
 // which is what this audit is - and must not be swept on the pattern alone.
-const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|\bThe Mountaineers\b|WenatcheeOutdoors|\bAAJ\b|American Alpine Journal|\bAAC\b|American Alpine Club|Climber'?s Guide|Cascade Alpine Guide|Cascade ?Climbers|NWHikers|TrailCatJim|SuperTopo|SpokAlpine|SkiSickness|Steph ?Abegg|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
+// "MP" IS MOUNTAIN PROJECT AND IT IS ALSO MILEPOST, and until 2026-09-09 this list knew only the
+// spelled-out form — so 24 WA values citing Mountain Project by its abbreviation were invisible to
+// the audit whose whole subject they are. A bare \bMP\b is refused on sight: this catalog writes
+// road prose in mileposts throughout ("closed at MP 3.7", "MP 4.5"), so the bare form would not
+// MISS, it would fire on hundreds of correct values — the deny-list trap inverted, and the
+// [[a-name-is-not-an-identity]] problem in two characters.
+//   The discriminator is that a milepost is ALWAYS followed by a number and a publisher never is.
+//   Measured over every column this audit walks: 256 milepost occurrences, 24 candidates, and ALL
+//   24 read as Mountain Project — "Confirmed on MP:", "Not explicit on MP", "per MP route
+//   description", "MP's route notes", "MP average ~3.3 stars". No false positive, so the rule is
+//   stated from the data rather than fitted to it. Injection cases `mpmilepost`/`mppublisher` pin
+//   both directions, because a precision case alone is satisfied by a needle that matches nothing.
+const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|\bThe Mountaineers\b|WenatcheeOutdoors|\bAAJ\b|American Alpine Journal|\bAAC\b|American Alpine Club|Climber'?s Guide|Cascade Alpine Guide|Cascade ?Climbers|NWHikers|TrailCatJim|SuperTopo|SpokAlpine|SkiSickness|Steph ?Abegg|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)|\bMP\b(?!\s*~?\s*\d)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
 // HERE: waypoint notes say "reliable water source" and "Source Lake" (a real place in the Alpental
@@ -271,6 +283,8 @@ if (INJECT === "thesite") { for (const v of values) v.text = "Peakbagger lists f
    in whether the thing after "per" is a category or a masthead. */
 if (INJECT === "tripcategory") { for (const v of values) v.text = "Expect 3-5 rappels per trip reports, and treat the count as approximate."; console.log("[inject] every value says 'per trip reports' and names NO third party; citations must be 0"); }
 if (INJECT === "tripnamed") { for (const v of values) v.text = "Expect 3-5 rappels per SummitPost, and treat the count as approximate."; console.log("[inject] the same sentence naming a PUBLISHER; every value must be reported"); }
+if (INJECT === "mpmilepost") { for (const v of values) v.text = "The road is gated at MP 3.7 and washed out near MP~4.5; park at MP 3 and walk."; console.log("[inject] every value uses MP as a MILEPOST and cites nobody; the citation count must be 0"); }
+if (INJECT === "mppublisher") { for (const v of values) v.text = "Confirmed on MP: 5.9, sport, single pitch; MP's route notes warn the rappel runs the ends off."; console.log("[inject] every value uses MP as the PUBLISHER Mountain Project; every value must be reported"); }
 if (INJECT === "facredit") { for (const v of values) { v.field = "fa[0]"; v.text = "The Mountaineers, 1925 - the first recorded ascent of Mount Daniel used this Lynch Glacier line."; } console.log("[inject] every value is an fa CREDIT naming a club; citations must be 0"); }
 if (INJECT === "facite") { for (const v of values) { v.field = "fa[0]"; v.text = "First ascent party is given as Beckey and Schmidtke, corroborated by multiple sources."; } console.log("[inject] every value is an fa value carrying a sourcing ACT; every one must still be reported"); }
 if (INJECT === "notfa") { for (const v of values) { v.field = "beta[0]"; v.text = "The Mountaineers describe this as the standard line."; } console.log("[inject] the SAME club name outside fa; every value must still be reported"); }
@@ -340,6 +354,12 @@ if (stale.length) {
 //   --inject=thesite     every value names the SITE Peakbagger -> every value reported. Pairs
 //                        with commonnoun: without it, a needle that matched nothing would also
 //                        satisfy the precision case.
+//   --inject=mpmilepost  every value uses MP as a MILEPOST -> citations 0. The precision case for
+//                        the abbreviation, and the one that matters: this catalog holds 256
+//                        milepost occurrences against 24 citations, so a bare \bMP\b would report
+//                        ten times more correct values than findings.
+//   --inject=mppublisher every value uses MP as Mountain Project -> every value reported. Pairs
+//                        with mpmilepost for the reason thesite pairs with commonnoun.
 //                      This is the precision rule: the destructive failure of this audit is
 //                      reporting the 589 operational references as findings. It exits 1, correctly:
 //                      overwriting every value also makes the exemption stale, and stale bookkeeping

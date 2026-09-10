@@ -45,7 +45,10 @@ function sources(dir, acc = []) {
 
 // Copy that is NOT a success claim: failures, refusals, and messages that already say
 // the change is local only.
-const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|not allowed|on this device|locally only|won.t be saved|sign in|log in/i;
+// `invite only` is a REFUSAL — the branch it sits in performs no write at all, it tells a climber
+// why the tap did nothing. The category was already documented on the line above; the vocabulary
+// simply had no phrasing for a group that admits nobody without an invitation (0178).
+const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|invite only|not allowed|on this device|locally only|won.t be saved|sign in|log in/i;
 
 function scan() {
   const found = new Map();
