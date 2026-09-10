@@ -9416,13 +9416,21 @@ the correction knows the screen is wrong, and they have no way to report it.
         The old `NOT_SLINGS` list was **deleted rather than left unused**: with one bullet per key
         there is no heading covering foreign gear for it to test, so it could only ever return 0,
         and *a counter that cannot fire reads as coverage*.
-      - **The 13 long bullets are not one class**, so there is nothing to sweep: 8 are genuine long
-        gear prose, 2 read a nested object out loud (`Crevasse rescue kit — pulley: 1, prusiks: 2,
-        purpose: …`), and **3 are commentary rather than gear** — which is where the real finding
-        was. `wa_rapple_grapple` renders *"fresh **MP source** broadens this to 'pro to 4 inches' —
-        retain the #1-3 structured list as primary, add one #4 as optional"* into a climber's RACK
-        box: an editor instructing the next editor, over a citation `audit:prose-citations` could
-        not see. See that audit's `MP` entry.
+      - **The 13 long bullets were not one class**, so there was nothing to sweep: 8 genuine long
+        gear prose, 2 reading a nested object out loud (`Crevasse rescue kit — pulley: 1,
+        prusiks: 2, purpose: …`), and **3 commentary rather than gear** — which is where the real
+        finding was. `wa_rapple_grapple` **rendered** *"fresh **MP source** broadens this to 'pro
+        to 4 inches' — retain the #1-3 structured list as primary, add one #4 as optional"* into a
+        climber's RACK box: an editor instructing the next editor, over a citation
+        `audit:prose-citations` could not see. See that audit's `MP` entry.
+        - **PAST TENSE BECAUSE IT IS FIXED, and this bullet read as live work for as long as it
+          was not.** #1680 replaced that value with *"Optionally one #4 to cover pro to 4 inches;
+          no pitons needed"* — verified against the live row, not inferred from the PR title — and
+          the citations entry records it. **13 → 12 there, and → 11 once the synonym widening
+          below shortened `wa_washington_ellinor_traverse_ridge`'s 123-character webbing bullet.**
+          A count quoted in prose is a hand-copy of a measurement: re-run
+          `measure-sling-rack-onscreen-quality.mjs` rather than trusting the number here, which
+          has now been stale twice in one day.
       - **THE SAME SCRIPT PRINTED `bullets reading out a raw key: 15` AND THE ENTRY ABOVE
         ACCOUNTED FOR 2, because it triaged the LONG bullets and these are SHORT.** *"Webbing —
         length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2"* is 88 characters,
