@@ -45,6 +45,7 @@
 // Read-only, anon key, fails closed on an empty read. NOT a build gate — a property of the DB, not
 // the checkout, so no code change can cause or fix it; same reasoning as check:counts.
 import { SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
+import fs from "node:fs";
 
 const argv = process.argv.slice(2);
 const arg = (kk, d) => { const i = argv.indexOf(kk); return i >= 0 ? (argv[i + 1] ?? true) : d; };
@@ -59,6 +60,7 @@ const SLACK_FT = Number(arg("--slack", 300));
    gain is read as measured FROM there. A camp elevation and a published gain are both round
    numbers, so this is looser than SLACK_FT. */
 const START_TOL_FT = Number(arg("--start-tol", 400));
+const FIXTURE = arg("--fixture", null);
 
 const k = anonKey();
 const num = (v) => { if (v == null || v === "") return null; const n = Number(v); return Number.isFinite(n) ? n : null; };
@@ -74,7 +76,7 @@ const elevFt = (w) => {
 };
 
 async function readAll() {
-  const sel = "id,name,area_id,discipline,gain_ft,dist_km,waypoints,bivy,high_point_ft";
+  const sel = "id,name,area_id,discipline,gain_ft,dist_km,waypoints,bivy,high_point_ft,pitches";
   const out = []; let last = "";
   for (;;) {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=${sel}&id=like.${STATE}_*&waypoints=not.is.null&gain_ft=not.is.null&id=gt.${encodeURIComponent(last)}&order=id.asc&limit=1000`, { headers: headers(k) });
@@ -87,7 +89,11 @@ async function readAll() {
   return out;
 }
 
-const rows = await readAll();
+/* `--fixture <path>` reads a synthetic catalog instead of the live one. It exists because the
+   faults this audit reports live in the DATA, so a case cannot be injected by editing code, and
+   this must never write to the live project to make one. Same mechanism `audit:trailhead-road`
+   uses, and the reason its rules are testable at all. */
+const rows = FIXTURE ? JSON.parse(fs.readFileSync(FIXTURE, "utf8")) : await readAll();
 if (!rows.length) { console.error(`FAIL — read 0 routes for state "${STATE}". That is a broken query, not a clean catalog.`); process.exit(1); }
 
 let comparable = 0, noElev = 0, conventionally = 0;
@@ -147,7 +153,34 @@ for (const r of rows) {
   comparable++;
   const gain = num(r.gain_ft);
   if (gain == null) continue;
-  if (gain >= rise - SLACK_FT) continue;
+
+  /* CREDIT THE CLIMBING VERTICAL FIRST — the rule the app's own `gainBelowOwnPins` has had since
+     #1533 and this audit did not, so the two disagreed about one question for as long as both
+     existed. `scarfHrs` is the HIKE leg and `techHrs` the climbing leg, so `gain_ft` is the
+     APPROACH gain — trailhead to the base — and a trailhead→summit rise therefore includes
+     vertical the PITCHES already account for. Subtract what the app itself attributes to them
+     (count x 35 m, its own default) before judging.
+
+     THE DISAGREEMENT WAS LIVE AND THE GUARD'S OWN SUITE NAMED THE CASE: `check:gain-floor-stated`
+     pins `wa_liberty_traverse` — 26 pitches over a 2,520 ft rise — as a route that must NOT be
+     accused, and this audit was accusing it. Measured across the whole WA catalog, the credit
+     removes 26 of 60 findings and adds none; every one it removes is a row where the pitch count
+     alone explains the gap.
+
+     IT CANNOT HIDE A FINDING BY MOVING THE HIGH PIN, which is the failure worth guarding against:
+     crediting the climb against a rise whose high pin is the BASE of the route would excuse a row
+     wrongly, and that is the false-pass direction. Measured before shipping — 0 of the 26 has a
+     base-like high pin; every one tops out at a named summit. Re-check that if the endpoint rule
+     above ever changes.
+
+     A route with no pitch count subtracts NOTHING, which matches what the app credits it for time,
+     and keeps this one-sided: a smaller walk rise can only ever under-report, never accuse a row
+     whose gain is fine. */
+  const pitches = num(r.pitches);
+  const climbFt = (pitches != null && pitches > 0) ? pitches * 35 * 3.28084 : 0;
+  const walkRise = rise - climbFt;
+  if (walkRise <= 0) continue;
+  if (gain >= walkRise - SLACK_FT) continue;
 
   /* ONE ALTERNATIVE HAD TO DIE FIRST, and it is half true — which is why it is a filter here
      rather than a footnote. `gain_ft` may legitimately be measured not from the trailhead but
@@ -175,13 +208,25 @@ for (const r of rows) {
      not serve, which is the propagated-zone-list shape, and reporting it as an impossible GAIN
      would send somebody to fix the wrong column. Being excused wrongly is a false negative on a
      reading list; being REPORTED wrongly is what teaches people to ignore one. */
+  /* THE CONVENTION TEST IS SUMMIT-BASED AND MUST STAY SO, even though the impossibility test
+     above now credits the climb. That looks inconsistent and is not: this column holds TWO
+     readings, the way `dist_km` holds one-way and half-round-trip at once. A row storing the
+     APPROACH gain is what the credit is for; a row storing a CAMP-TO-SUMMIT gain is what this
+     test is for, and the audit's own worked example is the second kind —
+     `wa_mount_adams_adams_glacier` stores 5,150 against a "High Camp" pin at 7,000 ft, and
+     12,276 - 5,150 = 7,126. Subtracting `climbFt` here looks for a camp that much lower and
+     stops matching it.
+     Measured rather than reasoned: crediting here as well moved TWO routes INTO the findings
+     (`wa_colchuck_balanced_rock_west_face`, `wa_mount_terror_southeast_face`) by un-excusing a
+     convention they legitimately use, which a credit must never do. */
   const impliedStart = hi.ft - gain;
   const anchored = anchors.some((ft) => Math.abs(ft - impliedStart) <= START_TOL_FT && ft > lo.ft + SLACK_FT);
   if (anchored) { conventionally++; continue; }
 
   findings.push({
     id: r.id, name: r.name, disc: r.discipline, gain, rise: Math.round(rise), basis,
-    shortBy: Math.round(rise - gain), distKm: r.dist_km, impliedStart: Math.round(impliedStart),
+    shortBy: Math.round(walkRise - gain), distKm: r.dist_km, impliedStart: Math.round(impliedStart),
+    pitches: pitches || 0, climbFt: Math.round(climbFt), walkRise: Math.round(walkRise),
     lo: `${lo.w.name} ${Math.round(lo.ft)}ft`, hi: `${hi.w.name} ${Math.round(hi.ft)}ft`,
   });
 }
@@ -206,6 +251,7 @@ console.log(`  ${findings.length} store a gain below their own net rise with NOT
 for (const f of findings.slice(0, LIMIT)) {
   console.log(`  short by ${String(f.shortBy).padStart(5)} ft  ${f.id.padEnd(46)} [${String(f.disc).padEnd(7)}]`);
   console.log(`      stores gain_ft ${f.gain}, but ${f.basis} is ${f.rise} ft:  ${f.lo}  ->  ${f.hi}${f.distKm != null ? `   (dist_km ${f.distKm})` : ""}`);
+  if (f.climbFt > 0) console.log(`      ${f.pitches} pitches credited as ${f.climbFt} ft of climbing, leaving ${f.walkRise} ft for the walk`);
   console.log(`      that gain would imply starting at ${f.impliedStart} ft, and this route records no waypoint there`);
 }
 if (findings.length > LIMIT) console.log(`  … ${findings.length - LIMIT} more (raise --limit)`);

@@ -9421,6 +9421,38 @@ the correction knows the screen is wrong, and they have no way to report it.
     number that quietly makes the return tile optimistic.
   - **ONE-SIDED BY DESIGN.** Too little gain is impossible; too much is not, because a real route
     rolls over intermediate bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **IT ACCUSED 26 ROUTES THE APP'S OWN PREDICATE CALLS FINE, FOR AS LONG AS BOTH EXISTED — the
+    four-grade-parsers shape, in a guard/audit PAIR rather than in two functions.**
+    `gainBelowOwnPins` has credited the climbing vertical since #1533 (`scarfHrs` is the HIKE leg
+    and `techHrs` the climbing leg, so `gain_ft` is the APPROACH gain and a trailhead→summit rise
+    includes vertical the PITCHES already account for); this audit never gained that rule and was
+    still comparing against the raw rise. **60 findings → 34.**
+    - **THE GUARD'S OWN SUITE NAMED THE CASE THE AUDIT WAS GETTING WRONG.**
+      `check:gain-floor-stated` pins `wa_liberty_traverse` — 26 pitches over a 2,520 ft rise — as a
+      route that must **not** be accused, and `audit:gain` was accusing it. When two things ask one
+      question, the one with a test suite is the one to believe.
+    - **A CREDIT CAN ONLY EVER EXCUSE, and asserting that caught a real error in the fix.** The
+      first version also credited the climb inside the CONVENTION test, which moved **two** routes
+      INTO the findings (`wa_colchuck_balanced_rock_west_face`, `wa_mount_terror_southeast_face`)
+      by un-excusing a convention they legitimately use. The convention test stays **summit-based**
+      — this column holds two readings, and the audit's own worked example is the second kind
+      (`wa_mount_adams_adams_glacier`, 12,276 − 5,150 = 7,126, a camp-to-summit gain). Diff the
+      finding SETS, never the counts: the totals alone read as a clean 60 → 34 either way.
+    - **THE FALSE-PASS DIRECTION WAS MEASURED BEFORE SHIPPING.** Crediting the climb against a rise
+      whose high pin is the BASE of the route would excuse a row wrongly — `wa_smears_jugs_and_rock_roll`'s
+      high pin is *"Base of Prusik Peak south face"*, where the pitches sit above it. **0 of the 26
+      excused rows has a base-like high pin**; every one tops out at a named summit. Re-check that
+      if the endpoint rule ever changes.
+    - Two independent methods agreed on the same 26 (a standalone join against `pitches`, and the
+      audit itself after the edit), with **0** disagreements either way.
+    - `--fixture <path>` reads a synthetic catalog, because these faults live in the DATA and a
+      checker must not write to the live project to make one — the mechanism `audit:trailhead-road`
+      already sets. Injection-tested **6/6**
+      (`scripts/oneoff/inject-gain-credit-cases.mjs`), judged on the audit's own `--json` rather
+      than on text, so a case cannot be written against the wording of a PASS. **Three must stay
+      SILENT** — the credit firing, a correct gain, and a camp-to-summit convention — because a
+      credit that excused everything satisfies every must-fire case. Proven **non-vacuous** by A/B:
+      with the credit neutered, the load-bearing case reports the finding again.
   - **The obvious alternative explanation is HALF TRUE, which is why it is a filter and not a
     footnote.** `gain_ft` may legitimately be measured from a high camp or the base of the climb
     rather than from the trailhead. Of the 112 routes that fail the raw test, **24 have a waypoint
