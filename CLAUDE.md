@@ -4984,6 +4984,55 @@ the total when deciding where a new guard belongs.
       `check:ci-cancel` records. Injection-tested **4/4**
       (`scripts/oneoff/inject-approach-bucket-cases.mjs`); **case 3 must stay SILENT** and is that
       near-miss.
+    - **AND `approach` WAS NOT THE ONLY ONE — CENSUSED 2026-09-10, IT IS THREE OF THE FIVE CHIP
+      CONTROLS IN THE FORM.** Asking the same question of every one of them rather than stopping at
+      the instance found:
+
+          approach     u1/1to3/3to6/6plus      -> routes.approach      PROSE   removed  #1713
+          descentText  rappel/walkoff          -> routes.descent_text  PROSE   LIVE, now free text
+          pitchCount   single/multi            -> routes.pitches       INT     LIVE, now a number
+          outingShape  outback/loop/point      -> routes.outing_shape  KEY + CHECK   CORRECT
+          rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135
+
+      *An instance fixed by hand is not a class closed*, on the very guard whose entry records that
+      lesson — and the two live ones reached **further than the one already fixed**: `descent` is
+      offered on **7 of 9** disciplines and `pitches` on **4 of 9**.
+    - **`pitchCount` WAS THE WORSE OF THE TWO, and it is a shape this file has no other example
+      of: a REQUIRED question that stores NOTHING.** `proposal_num` returns NULL for anything not
+      matching `^-?\d+(\.\d+)?$`, so `"single"` became NULL on the DB path, while the seed path's
+      `parseInt(pitch)||1` made **every multi-pitch route 1 pitch**. The completeness gate
+      (`sf("pitches")?!!pitch:null`) meant the form *insisted* on an answer it then discarded. It
+      is a number input now, which is what the column holds; the `||1` fallback is correct again
+      rather than a silent constant.
+    - **`descentText` is the same shape as `approach` and lands somewhere worse-measured.**
+      `descent_text` is populated on **1,013 live routes at a median of 530 characters** and the
+      shortest is **129** (`scripts/oneoff/probe-descent-bucket-keys-in-prose-column.mjs`, service
+      key), so it is unambiguously prose — and `descentBeta()` returns the longer of `descent` and
+      `descentText`, so an approved contribution would have rendered a **Descent card containing
+      the single lowercase word `rappel`**. Catalog **clean**: 0 rows hold a bucket key. Latent,
+      exactly like `approach`, which by `check:field-renders`' own `SENTINELS` lesson is the best
+      moment to fix a writer.
+    - **`outing_shape` IS THE MODEL, AND IT IS THE LOAD-BEARING NEGATIVE OF THE NEW ASSERTION.**
+      `0087` gives it `check (outing_shape is null or outing_shape in ('outback','loop','point'))`
+      — the exact keys its chips write — so there the bucket key is the RIGHT shape and the app
+      already had the pattern. A rule that merely forbade chip groups would forbid the correct one,
+      which is this file's *a rule demanding only ABSENCE is satisfied by deleting the feature*
+      lesson; the guard therefore asserts those chips are **still offered**.
+    - **SCOPED TO `AddRoute`'s BODY, because the bare keys are ordinary English elsewhere.**
+      `"rappel"` occurs **8 times in core alone** — a vouch `skills` array, and `passesFilters`'
+      own **FINDER** filter (`f.descent==="rappel"`, which derives from `r.rappels != null` and
+      reads nothing this control stored). The `["key","Label"]` pair shape also occurs correctly in
+      `TIME_BUDGETS`, a crag filter and `RouteDetail`'s `PIN_CATEGORIES`. **The fingerprint is the
+      pair shape inside that one component**, and the older `approach` rule stays file-wide because
+      `u1`/`1to3`/`3to6`/`6plus` are unique tokens that occur nowhere else.
+    - Injection-tested **6/6** (`scripts/oneoff/inject-bucket-key-shape-cases.mjs`), each case
+      proving its edit landed **by checksum** and restoring byte-identically. **Three must stay
+      SILENT**, and **two of them failed as HARNESS BUGS first** — which is the same
+      *checksum movement proves an edit happened, not that it was the right one* lesson: a decoy
+      written as a bare array of keys (`["rappel","walkoff"]`) is **character-identical to a pair
+      head**, so it injected the forbidden shape while claiming to be innocent; and an
+      outside-the-form decoy that included `u1` tripped the older file-wide rule instead, saying
+      nothing about the new one. **A case that fails for its own reasons proves nothing.**
 - **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
   rule 1 asks about one function: **does every column a stored function WRITES still exist?**
   #1020 dropped `routes.source`, swept the five call sites its header names, and missed
