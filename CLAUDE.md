@@ -3031,6 +3031,19 @@ the total when deciding where a new guard belongs.
       `a._mi.toFixed(1) + " mi · "` **18 lines from a correctly-guarded sibling** using the same
       `uDistMi` prop, in the LIVE DB area browser. No targeted assertion covers it, and the
       injection proves it: reverting that one line fires the ratchet and **nothing else**.
+    - **THE MIRROR CLASS IS EMPTY, MEASURED, SO THE RATCHET IS SCOPED TO IMPERIAL ON PURPOSE.** A
+      hardcoded METRIC unit shown to an imperial climber is the same defect, so the same AST test
+      was run over `km|kg|cm|m`: **30 concatenations, 13 raw, and NOT ONE is a units defect.**
+      **Six are `m` for MINUTES** — `"9h 30m"` on the car-to-car line, `fmtDurMin`, `relTime` —
+      two are the comment-id prefix `"cm"`, two are the documented-dead `rappels` object branches,
+      and **three are metric BY CLIMBING CONVENTION**: sling sizes in cm and rope length in
+      metres, which American climbers use too (a 60 m rope is a 60 m rope). Converting those
+      would be the guard arguing with correct work. *A detector for a class of zero is the thing
+      this repo keeps refusing to build* — so no metric ratchet was shipped.
+    - **AND THE TOKENISER TRAP LANDED A FOURTH TIME IN THAT ONE SCAN.** `" in"`, `key={"lb"+i}`
+      and the default parameter were the first three; `"m"` is **minutes far more often than
+      metres** in this codebase, and a scan that read it as a unit would have reported six
+      correct duration strings as defects. **Read the hits, never the count.**
     - Injection-tested by reverting each fix in place and restoring **byte-identically by
       checksum**: the tile, both hydrations and the ratchet each fire naming their own defect, and
       the area-browser revert fires the ratchet alone. The weather floor rises **14 → 20** — a
@@ -3163,6 +3176,40 @@ the total when deciding where a new guard belongs.
     renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
     the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
     chain.
+    - **IT READ FOUR VALUES AND THE FREEZING LEVEL WAS NOT ONE**, so the tile this guard's ninth
+      finding fixed had no browser witness at all while its seven siblings did. It reads five now.
+    - **THE LABEL IS `textTransform:"uppercase"` AND `innerText` RETURNS THE CSS-TRANSFORMED
+      TEXT**, so the screen says `FREEZING LEVEL`. A case-sensitive needle matched nothing and the
+      probe reported *"the tile was removed from the panel"* **on a completely correct app** —
+      a guard flagging correct work, from a trap this file already records twice (`check:ui`'s
+      `PEOPLE YOU'VE CLIMBED WITH`, and `"CREW · 2 MEMBERS"`). Match case-insensitively here.
+      - **A STATIC SELF-TEST OF THE NEEDLE PASSED ALL FOUR SHAPES AND WAS CIRCULAR**: it tested
+        the regex against the markup *as imagined*, not as the browser renders it. Only the run
+        disagreed. **A regex test written from the source is not a test of what is on screen.**
+    - **THE TWO RUNS ARE SEPARATE PAGE LOADS MAKING SEPARATE FETCHES, so the underlying forecast
+      can move between them** — observed as a provider delta of 12°F in one run against 6°C in
+      the other, which is drift rather than a conversion error. So the freezing assertion is a
+      **10% band, sized by the DEFECT** (an unconverted figure is 3.28x out, which no 10% band
+      can hide) rather than an equality that ordinary drift turns red. The existing hi/lo and
+      delta assertions still demand exact equality and inherit that flakiness; that is
+      pre-existing and worth knowing before reading a lone red from this probe as a defect.
+    - **ABSENCE IS SPLIT THREE WAYS, because they want different reactions**: no forecast figures
+      at all is the run failing (already NOT MEASURED — and the freezing checks are gated behind
+      it, after a first version piled *"the tile was removed"* on top of a metric run that had
+      simply never loaded); a label with no number is the provider giving none; and a missing
+      label is the tile actually going.
+    - **THE COMPARISON IS SELF-TESTED BEFORE ANY BROWSER RUNS**, and on this probe that matters
+      more than usual: the metric leg routinely produces no figures on a loaded box, so the happy
+      path can go unexercised for a whole session while the run still prints green. `freezeVerdict`
+      is exercised on five constructed pairs first — it must ACCEPT a real conversion and REJECT
+      the unconverted number, a wrong figure, and a metric run still showing feet — and one
+      implementation serves the self-test and the live comparison so they cannot drift.
+    - **WHAT HAS AND HAS NOT BEEN OBSERVED, stated rather than implied.** Observed: the self-test
+      (5/5), the imperial leg capturing the tile (`16,404 ft`, label found), and the not-rendered
+      gate printing NOT MEASURED instead of accusing the app. **NOT observed: a live METRIC
+      render of this tile** — every attempt hit a box at 51x-103x where the metric leg returned no
+      forecast at all. The remaining gap is a property of the box, not of the code, and it closes
+      with one run on a quiet one.
 - **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
   blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
   `npm run build`.
