@@ -12232,6 +12232,16 @@ firing correctly — a mistake I made twice in one day before making it structur
 columns** (0174 and 0175 account for the growth from 480), all three sections clean, snapshot
 current.
 
+**ALL THREE RE-RUN 2026-09-10, AFTER 0176-0180 LANDED — CLEAN, and the point of recording it is
+that the numbers above had gone stale.** Five migrations merged since that run, four of them RLS
+and policy work, and `check:rls` is **static** — it replays the migration FILES and never asks the
+live database — so these three are the only things that compare the two. Results:
+`check:column-drift` **41 tables / 485 columns**, all three sections clean and the committed
+snapshot matching; `check:function-columns` **11 writing functions, 6 insert lists, 9 update
+lists**, every column exists; `check:function-drift` **47 live functions, 46 agreeing** plus the
+one declared `handle_new_user`. A negative result, which is what these exist to produce — and it
+is worth writing down, because otherwise the next session either re-derives it or quotes 484.
+
 **A worktree has no `.env` either, and that is the same trap one file over.** The instruction
 above says to fix the link *"the way `.env` and `.env.local` already are"* — which presumes they
 are symlinked, and in a fresh worktree they are not, so every DB-touching guard and audit dies on
