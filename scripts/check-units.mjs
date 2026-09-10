@@ -51,7 +51,7 @@ import { createRequire } from "module";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 
@@ -59,19 +59,19 @@ const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
 
-const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters", "profile", "pitches"];
+const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters", "profile", "pitches", "keyed"];
 // FLOORS ARE PER SECTION, because ONE total cannot see a section that quietly stopped asking:
 // five healthy sections carry the number while the sixth contributes nothing, and the run prints
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
 // restyle left the guard checking 1 file of 2 and reporting `ok`.
 //
-// Each sits two below what a clean tree produces (15/16/17/18/15/30/14/10 today) -- close enough that a
+// Each sits two below what a clean tree produces (15/22/17/18/15/40/14/10/15 today) -- close enough that a
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 20, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9 };
+const FLOOR = { persist: 13, weather: 20, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 13 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -1315,7 +1315,100 @@ async function runProfile() {
 }
 
 // =======================================================================================
-const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters, profile: runProfile, pitches: runPitches };
+
+// ---------------------------------------------------------------------------------------------
+// keyed -- THE ELEVEN KEYED-OBJECT EDITORS, THE ONE CONTRIBUTE PATH WITH NO CONVERSION AT ALL.
+//
+// Sections `itinerary`, `variants` and `pitches` cover the ARRAY editors, which convert at the
+// edges through itinStoreVal. The KEYED editors (road, access, timing, crowds, ...) do not go
+// through structuredVal at all: `submit` coerces them with a bare `parseFloat(v)` for
+// `k[3]==="num"`, and CANON/UNCANON cannot reach them because those maps are keyed by the
+// TOP-LEVEL `f.k` while these keys sit one level down inside the object.
+//
+// THAT MISSING CONVERSION IS HARMLESS TODAY, AND THE REASON IS A FACT ABOUT THE VOCABULARY RATHER
+// THAN ABOUT THE CODE: every key on that path that stores a NUMBER is unit-invariant -- four are
+// hours, and an hour is an hour on both settings, and the rest are unitless rating scales. So
+// there is no unit-bearing number there to get wrong.
+//
+// A PARAGRAPH SAYING THAT WOULD ROT, WHICH IS WHY IT IS A SECTION. It is a claim about
+// `lib/objKeys.js`, so the day somebody adds a distance or an elevation key it arms itself --
+// stored raw in whatever the climber typed, into a canonical column, exactly the shape #1654 and
+// #1671 fixed on the array editors.
+//
+// AN UNDECLARED NUMERIC KEY IS A QUESTION, NOT AUTOMATICALLY A DEFECT, and the failure says so:
+// a new unit-invariant number is declared here in one line, while a real measurement needs
+// conversion at the edges. A guard that called every new number a defect would flag correct work.
+//
+// SCOPED TO KEYS THAT STORE A NUMBER, and that scoping was MEASURED rather than chosen. The
+// tempting wider rule -- flag any entry whose label or placeholder names a unit -- fires on FOUR
+// entries and all four are free-text PROSE, where the unit only appears in an example
+// ("e.g. last 4 mi rough, high clearance helps"). The app cannot convert a sentence, so that rule
+// would argue with correct work.
+const UNIT_INVARIANT = {
+  totalHrs: "hours — an hour is an hour on both settings, so there is nothing to convert",
+  approachTimeHrs: "hours",
+  summitTimeHrs: "hours",
+  descentTimeHrs: "hours",
+  solitudeRating: "a unitless 1-5 rating scale, not a measurement",
+  physical: "a unitless grade scale",
+  technical: "a unitless grade scale",
+  exposure: "a unitless grade scale",
+  commitment: "a unitless grade scale",
+  routefinding: "a unitless grade scale",
+};
+
+async function runKeyed() {
+  section = "keyed";
+  // The registry is READ from the app, never restated here: a twelfth keyed editor added to
+  // OBJ_KEYS must come into frame by itself, or this section silently stops covering it.
+  const rd = fs.readFileSync(RD_PATH, "utf8");
+  const m = rd.match(/const OBJ_KEYS\s*=\s*\{([^}]*)\}/);
+  if (!m) dead("ANCHOR LOST: `const OBJ_KEYS={` is gone from RouteDetail.jsx — the keyed editors could not be enumerated, so this section proved nothing");
+  const registered = [...m[1].matchAll(/([A-Za-z]+)\s*:\s*([A-Z_]+)/g)].map((x) => [x[1], x[2]]);
+  if (registered.length < 8) dead(`only ${registered.length} keyed editor(s) parsed out of OBJ_KEYS — with none, every assertion below passes vacuously`);
+  ok(`${registered.length} keyed-object editor(s) read from the app's own OBJ_KEYS registry`);
+
+  const KEYS = await import(pathToFileURL(path.join(ROOT, "lib", "objKeys.js")).href);
+
+  // Fail closed on a vocabulary the registry names but the module does not export: reading that
+  // as "no numeric keys here" is the false-pass direction.
+  const missing = registered.filter(([, c]) => !Array.isArray(KEYS[c]));
+  if (missing.length) dead(`OBJ_KEYS names ${missing.map(([t, c]) => `${t}:${c}`).join(", ")}, which lib/objKeys.js does not export as an array`);
+  ok("every vocabulary the registry names is exported by lib/objKeys.js");
+
+  // An entry stores a NUMBER when it is `num`, or an `enum` whose options are numeric — which is
+  // exactly what `submit`'s own coercion tests, so this mirrors the store path rather than
+  // guessing at it.
+  const numeric = [];
+  let entries = 0;
+  for (const [type, constName] of registered) {
+    for (const e of KEYS[constName]) {
+      entries++;
+      const isNum = e[3] === "num";
+      const isNumEnum = e[3] === "enum" && (e[4] || []).some((o) => typeof o[0] === "number");
+      if (isNum || isNumEnum) numeric.push({ type, key: String(e[0]), label: String(e[1] || ""), kind: isNum ? "num" : "enum" });
+    }
+  }
+  if (entries < 30) dead(`only ${entries} keyed entries walked — the vocabularies parsed short, so a numeric key could be out of frame`);
+  ok(`${entries} keyed entries walked across ${registered.length} vocabularies`);
+  if (!numeric.length) dead("no numeric keyed entry found at all — the store path coerces `num` and numeric `enum`, so matching none means this scan cannot fire");
+  ok(`${numeric.length} keyed entr(ies) store a number and are in scope`);
+
+  for (const n of numeric) {
+    if (UNIT_INVARIANT[n.key]) ok(`${n.type}.${n.key} (${n.kind}) is declared unit-invariant — ${UNIT_INVARIANT[n.key]}`);
+    else fail(`${n.type}.${n.key} (${n.kind}, "${n.label}") stores a NUMBER on the keyed path, which does NOT convert units — CANON/UNCANON are keyed by the top-level f.k and cannot reach a nested key. If it is unit-invariant (hours, a count, a rating) declare it in UNIT_INVARIANT with the reason. If it is a MEASUREMENT it has to convert at the edges the way itinStoreVal does for the array editors, or it stores raw miles from one climber and raw km from the next into one column.`);
+  }
+
+  // A declaration that no longer describes a live key fails, so the list cannot rot into a
+  // description of a vocabulary that has moved on — the standard KNOWN and PARTIAL_ON_PURPOSE
+  // are already held to.
+  const live = new Set(numeric.map((n) => n.key));
+  const stale = Object.keys(UNIT_INVARIANT).filter((k) => !live.has(k));
+  if (stale.length) for (const k of stale) fail(`UNIT_INVARIANT declares "${k}", which no longer stores a number in any keyed editor — stale bookkeeping; drop the entry`);
+  else ok(`no stale declaration (${Object.keys(UNIT_INVARIANT).length} declared, all still live)`);
+}
+
+const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters, profile: runProfile, pitches: runPitches, keyed: runKeyed };
 
 try {
   for (const s of RUN) await RUNNERS[s]();

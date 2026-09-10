@@ -3023,6 +3023,58 @@ the total when deciding where a new guard belongs.
     landed **by checksum** and restoring every file byte-identically. **Eight must stay SILENT** — a
     cosmetic dash, two renamed locals, a reworded placeholder, a deliberately bare degree sign on
     the forecast, and the two comment cases above.
+  - **SECTION 9 (`keyed`) COVERS THE ONE CONTRIBUTE PATH WITH NO CONVERSION AT ALL, and sections
+    1-8 are blind to it by construction.** `itinerary`, `variants` and `pitches` cover the ARRAY
+    editors, which convert at the edges through `itinStoreVal`. The **eleven KEYED-object** editors
+    (`road`, `access`, `timing`, `crowds`, `partnerRequirements`, `seasonalGuidance`, `emergency`,
+    `approachLogistics`, `difficulty`, `climate`, `seasonalHazards`) never reach `structuredVal` at
+    all: `submit` coerces them with a bare `parseFloat(v)` for `k[3]==="num"`, and **`CANON`/`UNCANON`
+    cannot reach them** because those maps are keyed by the TOP-LEVEL `f.k` while these keys sit one
+    level down inside the object.
+    - **THAT MISSING CONVERSION IS HARMLESS TODAY, AND THE REASON IS A FACT ABOUT THE VOCABULARY
+      RATHER THAN ABOUT THE CODE.** `lib/objKeys.js` declares exactly **10** entries that store a
+      number and every one is unit-invariant: **four are HOURS** (`totalHrs`, `approachTimeHrs`,
+      `summitTimeHrs`, `descentTimeHrs`) — an hour is an hour on both settings — and six are
+      unitless rating scales. So there is **no unit-bearing number on that path to get wrong**, and
+      the units WRITE class really is closed, now over the **fifth** path, which this entry's own
+      list of four (temp #1578, itinerary + bail form #1654, variants #1671) never named.
+    - **A PARAGRAPH SAYING THAT WOULD ROT, WHICH IS WHY IT IS A SECTION.** It is a claim about
+      `lib/objKeys.js`, so the day somebody adds a distance or an elevation key it **arms itself** —
+      stored raw in whatever the climber typed, into a canonical column, exactly the shape #1654 and
+      #1671 fixed on the array editors. The class-growth argument `check:bottom-panels` records.
+    - **THE REGISTRY IS READ FROM THE APP, never restated**, so a twelfth keyed editor added to
+      `OBJ_KEYS` comes into frame by itself rather than silently falling outside the section.
+    - **AN UNDECLARED NUMERIC KEY IS A QUESTION, NOT AUTOMATICALLY A DEFECT**, and the failure says
+      so: a new unit-invariant number is one declared line, while a real measurement needs conversion
+      at the edges. A guard that called every new number a defect would flag correct work.
+    - **THE SCOPE WAS MEASURED, NOT CHOSEN, and the wider rule is the one that would have shipped
+      noise.** *"Flag any entry whose label or placeholder names a unit"* fires on **four** live
+      entries and **all four are free-text PROSE**, where the unit appears only in an example
+      (*"e.g. last 4 mi rough, high clearance helps"*). The app cannot convert a sentence. Scoped
+      instead to entries that actually **store** a number — `num`, or an `enum` with numeric options,
+      which is exactly what `submit`'s own coercion tests, so the section mirrors the store path
+      rather than guessing at it.
+    - **A `mi` SUBSTRING SCAN IS USELESS HERE**: `com`**mi**`tment`, `per`**mi**`t`, `sum`**mi**`t`
+      and `group_li`**mi**`t` all match and none is a measurement — the *Weston Wall matched "west"*
+      trap. And the vocabularies live in **`lib/objKeys.js`**, not in the two files that consume
+      them, so a grep scoped to `RouteDetail.jsx`/`ClimbMatchCore.jsx` returns a confident **zero for
+      every vocabulary at once** — the *when every case in a sweep shares one result, suspect the
+      sweep* tell.
+    - Fails **closed** four ways, each of which otherwise prints identically to a clean run: a moved
+      `OBJ_KEYS` (`ANCHOR LOST`), fewer than 8 editors parsed out of it, a vocabulary the registry
+      names that the module does not export (reading it as *"no numeric keys here"* is the
+      false-pass direction), and **zero numeric entries matched at all** — the store path coerces
+      both shapes, so matching none means the scan cannot fire.
+    - **ITS OWN FLOOR CAUGHT THE SECTION'S FIRST DEFECT**: every runner sets `section` as its first
+      line and this one did not, so 15 assertions printed while counting against a section that was
+      not running and the floor reported `0`. The per-section floor working exactly as designed.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-keyed-unit-cases.mjs`), each case proving its
+      edit landed **by checksum** and restoring the file byte-identically. **Three must stay
+      SILENT** — a new hours key, a prose key whose placeholder names a unit, and a rating scale.
+      **Two cases reported MISS while the guard was INNOCENT**: the fail-closed path goes through
+      `dead()`, which prints `- BROKEN: …` on a line carrying no `FAIL`, so a filter matching only
+      `FAIL` read two correctly-firing cases as misses — the mirror of the *match a FAIL line, never
+      the word* trap.
   - What it does **not** prove, stated in the guard rather than implied: that the forecast panel
     renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
     the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
