@@ -10737,15 +10737,28 @@ the correction knows the screen is wrong, and they have no way to report it.
         stay SILENT** — a comment quoting the forbidden literal, and a renamed local. The floor
         rises 28 → 38 with the section: a floor left at the old count cannot see the new half stop
         asking.
-    - **STILL OPEN, measured and reported rather than half-fixed:** `AddRoute`'s approach buckets
-      (`< 1 mi / 1–3 mi / 3–6 mi / 6+ mi`, `ClimbMatchCore.jsx`) are imperial whatever the setting.
-      They are display-only — the control stores the KEY (`"u1"`) beside a separately canonicalised
-      numeric `dist` — so nothing is written wrong. The reason they are not converted here is that
-      the only distance helper available returns **two decimals**, and `1.61–4.83 km` on a coarse
-      bucket states a precision the bucket does not have; a second rounding vocabulary is how this
-      codebase got four grade parsers. `scripts/oneoff/measure-imperial-control-labels.mjs` is the
-      census — **91 literals, and after this change exactly one control group remains**, the rest
-      being prose or already unit-aware.
+    - **`AddRoute`'s approach buckets were the one control group left, AND I RECORDED A FALSE
+      REASON FOR LEAVING THEM.** This entry read *"they are display-only — the control stores the
+      KEY (`u1`) beside a separately canonicalised numeric `dist` — so nothing is written wrong"*.
+      **The second half is wrong, and the wrong reason is the dangerous half.** The key WAS written
+      wrong: it went into the proposal as `approach`, and `approve_new_route` (`0135`) inserts
+      `v->>'approach'` straight into `routes.approach`, **which is PROSE** — the walk-in narrative
+      the Planner renders. So an approved contribution put `u1` where a paragraph belongs.
+      - **I traced the submit payload and stopped there.** `approach: approach||null` really is
+        unit-neutral at the call site, and that is exactly as far as I looked; what the RPC then
+        does with it is where the defect lived. *Read the whole writer* — the rule this file already
+        records for `descentText`, where three sessions in a row derived a rule from one line of
+        `var M` without reading the fix-ups below it.
+      - Another session **removed the chips** rather than relabelling them, which is the right fix:
+        a units conversion would have left an opaque key going into a prose column. A defect can be
+        hidden by a worse defect in the same control — the shape `check:a11y-badges` records for
+        `AreaLatest`, where a glued name was masked by the row not being a control at all.
+      - What survives of my reasoning is only the narrow part, and it is now moot: converting them
+        would have needed a **two-decimal** distance helper, and `1.61–4.83 km` on a coarse bucket
+        states a precision the bucket does not have.
+      - `scripts/oneoff/measure-imperial-control-labels.mjs` is the census. **91 → 86 literals, and
+        ZERO control groups remain** — every survivor is prose, an object key, or already
+        unit-aware. Read its output before treating a count here as work.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
