@@ -967,6 +967,31 @@ the total when deciding where a new guard belongs.
     they cannot appear in partner browse — the objection against a permanent QA account.
     `scripts/lib/durable-fixture.mjs` **re-asserts that on every run**, not just at setup: a later
     migration or column-default change could flip it.
+  - **AND THE TWO FIXTURE MODES DESCRIBED DIFFERENT ACCOUNTS, WHICH IS HOW A CI-ONLY RED ARRIVES
+    ON A CHANGE THAT IS GREEN LOCALLY.** `ui-fixture.mjs` patches the per-run pair into an
+    established shape — a location, `disciplines`, a grade — and the durable pair had **never**
+    been given one, so `profiles.disciplines` was empty on the very accounts every guard here
+    calls ESTABLISHED. Nothing read that column until the onboarding sheet keyed on it (see
+    `check:onboarding-reach`), and then the sheet auto-opened over **every screen of every CI
+    walk**: `check:outage` measured a uniform **+633 characters** on all seven tabs and both Crew
+    sub-views, against **0** on the three route-page screens. Being an overlay it also swallowed
+    the Logbook's *Areas* sub-tab click, so the HEALTHY capture was the default Logbook view while
+    the FAILING one — no sheet, because a failed profile read refuses to onboard — was the real
+    Areas view, and rule 2 correctly reported as *introduced* two empty states that are on screen
+    in **both** runs. `durable-fixture.mjs` re-asserts the onboarded shape on every run now, on the
+    account's own JWT, idempotently, exactly as the policy stamp above it does.
+    - **The local run cannot see it, by construction**, which is the part to carry forward: these
+      two guards use per-run accounts locally and the durable pair in CI, so an account PROPERTY
+      that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
+      read it. When adding a fixture property, ask which mode gets it.
+    - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB IS VACUOUS, so the red named the wrong
+      screen.** Its landmark is `/saved areas|offline library|saved searches/i`, and the Logbook's
+      **header** — which sits ABOVE the sub-tab bar and therefore renders on all four sub-tabs —
+      reads *"Your objectives, completed climbs, challenges and saved areas — all in one place."*
+      So a capture that never left the default view passes the landing check: precisely the
+      outcome the comment directly above that landmark warns against, produced by the
+      case-insensitivity added to it. Measured, not inferred — healthy `Logbook:Areas` came back
+      **byte-identical in length to healthy `Logbook`** on two consecutive runs.
   - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
     the transferable half. All three fixture paths made their group `visibility:"public"`, and
     `groups read public or member` plus `useMyGroups()` — which selects **every** group with no

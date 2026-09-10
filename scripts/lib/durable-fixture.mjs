@@ -128,6 +128,56 @@ export async function durableFixture(log) {
 
   log(`  signed in as the durable CI accounts (anon key only, no service key)`);
 
+  // ...AND THEY HAD NEVER ONBOARDED, WHICH IS THE POLICY STAMP'S TWIN ONE COLUMN OVER. These
+  // accounts own a crew, a group and a logged climb, so every guard that walks them calls them
+  // ESTABLISHED — and their `profiles.disciplines` was empty, because nothing had ever written
+  // it. The PER-RUN fixture does write it (scripts/lib/ui-fixture.mjs patches both profiles with
+  // a location, disciplines and a grade), so the two fixtures described DIFFERENT accounts:
+  // locally a climber who has onboarded, in CI one the app cannot tell from a brand-new signup.
+  //
+  // Nothing depended on that difference until the onboarding sheet started keying on the durable
+  // ACCOUNT fact rather than on `authed` — which for a real session was never true, so the sheet
+  // could not fire at all. Then it auto-opened over every screen of every CI walk, and the shape
+  // of that is worth recording because it is how this was found: `check:outage` reported a
+  // uniform +633 characters on all seven tabs and both Crew sub-views against the same commit's
+  // parent. Being an overlay, the sheet also swallowed the Logbook's "Areas" sub-tab click, so
+  // the HEALTHY capture was the default Logbook view while the FAILING one (no sheet — a failed
+  // profile read refuses to open a blank editor over a profile it could not read) was the real
+  // Areas view. The guard then correctly reported that the outage had "introduced" two empty
+  // states which are in fact on screen in BOTH runs.
+  //
+  // Asserted on every run rather than at setup, for the reason the discoverable check above
+  // gives: these accounts are permanent, so a property has to KEEP being true. Idempotent — it
+  // reads first and writes only when the column the predicate reads is empty — and on the
+  // account's OWN JWT, which is what a climber finishing onboarding does.
+  for (const acct of [session, mateSession]) {
+    const who = acct === session ? "owner" : "mate";
+    const cur = await readBody(await fetch(
+      `${SUPABASE_URL}/rest/v1/profiles?id=eq.${acct.user.id}&select=disciplines`,
+      { headers: { apikey: ANON, Authorization: `Bearer ${acct.access_token}` } },
+    ));
+    assertHealthy(cur, `reading the durable ${who}'s disciplines`);
+    if (!(cur.json?.[0]?.disciplines || []).length) {
+      const shape = await readBody(await fetch(
+        `${SUPABASE_URL}/rest/v1/profiles?id=eq.${acct.user.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            apikey: ANON, Authorization: `Bearer ${acct.access_token}`,
+            "Content-Type": "application/json", Prefer: "return=representation",
+          },
+          // The SAME shape ui-fixture.mjs gives the per-run pair, deliberately: the point is that
+          // one account is described one way, so a guard cannot mean different things locally and
+          // in CI. Every field here is one onboarding itself writes.
+          body: JSON.stringify({ location: "Bellingham, WA", disciplines: ["alpine", "trad"], trad_grade: "5.9" }),
+        },
+      ));
+      assertHealthy(shape, `giving the durable ${who} the profile of a climber who has onboarded`);
+      log(`  gave the durable ${who} the profile of a climber who has onboarded (disciplines, grade, location)`);
+    }
+  }
+
+
   // A GROUP PER RUN, not one shared group — this is the isolation the durable-account design
   // was missing, and its absence produced non-deterministic reds on other people's PRs.
   //
