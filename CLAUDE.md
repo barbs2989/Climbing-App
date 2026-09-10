@@ -6766,6 +6766,77 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
       two**, and two injection cases pin both halves — deriving a score again, and leaving one of
       the two identical handlers behind.
+  - **SECTION 7 BOUNDS THE FOUR BARS THAT ONLY EVER SPEAK, and they were miscalibrated the same way
+    for the same reason section 6's threshold was.** Fixing the group gate left them: the Profile
+    card's **`/ 90 goal`**, its **progress denominator**, its **`✓ Well-trusted`** line and
+    `TrustBadge`'s **`Highly Trusted` (90)** all sat at or above the **84** a climber can earn, so
+    *"goal met"* and *"Highly Trusted"* were states **no account could ever be shown**, the progress
+    bar capped at **93%** for the best possible climber, and every real account in the live project
+    (0, 5 and 6) read **"New"** in red. `Trusted` at 70 was barely better — two years, 60 logs, 12
+    vouches, 20 reports and 9 catches scores **65**, so that climber read *"Building Trust"*.
+    - **SAME CONTRACT AS SECTION 6, and that is what keeps it from arguing with the next product
+      decision:** it asserts every bar is **REACHABLE** and that none is handed out for confirming
+      an email, and it deliberately pins **no particular number**. Both bounds are **DERIVED** — the
+      ceiling from `earnableCeiling()` in `scripts/lib/verification-reach.mjs`, the floor from
+      `dayOneScore()` — so they move by themselves the day a verification the app cannot currently
+      grant becomes earnable. A guard holding today's 65 would go red on the next rebalance, which is
+      how a guard teaches people to ignore it.
+    - **`SERVER_TRUST_EARNABLE` MUST BE THE DERIVED CEILING, not a number typed into core once.**
+      Without that assertion the constant is the hand-copy this whole section exists to remove, and
+      it would go stale in the direction that makes a bar look **attainable** — the safe-looking
+      direction, which is why it needs asserting rather than reading right.
+    - **THE LADDER WAS WRITTEN TWICE AND THE GOAL FOUR TIMES, and no number could see it.**
+      `TrustBadge` and `FullProfile` each carried their own `90/70/50` copy, so one climber could be
+      called two different things depending which screen you were on; the card's goal, its
+      denominator and its `Well-trusted` gate were three more literals. Every bound above is
+      satisfied by a second copy that happens to agree **today**. They are one exported
+      `TRUST_TIERS` table now with `TRUST_GOAL` derived from its top tier, and the count of copies is
+      asserted separately. Same shape as the group roster's `_memN`, where *a hoist is not a single
+      source of truth until every site uses it*.
+    - **THE ONE-COPY RULE IS A BABEL AST SHAPE TEST, AND A STRING COUNT WAS MEASURABLY WRONG.** The
+      first version counted the tier LABEL and reported two findings, **both correct code**: this
+      guard's own comment quoting `"Highly Trusted"` while explaining the fix, and the Leaderboards
+      board category `{id:"trust",label:"Trusted",val:pp=>vScore(pp)}` — a working control that
+      merely shares a word. It would have told an author to delete its documentation or rename a
+      control. The rule is *a `>=` comparison choosing a tier label*, and an AST sees neither a
+      comment nor an object property. That is the instrument `check:profile-claims` section 3
+      reaches for after three separate checkers were fooled in one day by a comment written to
+      explain the fix they were checking.
+    - **THE NUMBERS ARE ANCHORED TO DESCRIBED CLIMBER STATES, never to a fraction of the scale** —
+      the method that produced `GROUP_TRUST_MIN` 55 → 20. `Building Trust` **15** is email + six
+      months + 20 climbs (5+6+4); `Trusted` **33** is a year + 40 climbs + 3 vouches + 2 catches;
+      `Highly Trusted` **65** is two years + 60 climbs + 12 vouches + 9 catches + 20 reports. Each is
+      recorded in the source beside the table, because a bar justified by a fraction of a scale is a
+      bar nobody can re-derive. **A score cannot guarantee CORROBORATION** and the comment says so:
+      tenure plus logs plus reports reach 54 with no vouch and no catch, so the top tier is *"a long
+      and full record"*, not *"somebody has spoken for you"*.
+    - **THE PRODUCT CALL WAS THE USER'S, and a parallel session had explicitly deferred it.** The
+      comment that stood in core said the tiers were *"deliberately NOT touched here … a product
+      decision, not polish — raised rather than swept"*, and the memory entry said the same. It was
+      raised; the answer came back **fix them**. What changed is only where the reachable bars sit;
+      the reasoning that they were unreachable is unchanged.
+    - **PROVEN ON SCREEN SEPARATELY**, because the table can be perfect while `trustTier` is wired to
+      nothing: `scripts/oneoff/probe-trust-tiers-onscreen.mjs` renders the real `TrustBadge` at each
+      tier's own minimum **and at one point below it** (the boundary is where an off-by-one lives,
+      and a ladder wired to the bottom tier passes any test that only checks the minimum), asserts
+      the progress bar can reach **100%** at the ceiling, and pins the tooltip in **both**
+      directions — it must not name a scale the model lacks, and it must still say what the score is
+      built from, since a rewrite that stops over-claiming and also stops saying anything would pass
+      a test that only looks for the old text.
+    - **The measurement is `scripts/oneoff/measure-trust-tiers-against-ceiling.mjs`**, which reads
+      the bars **out of the source** rather than restating them and prints the milestone table the
+      numbers were chosen from. Its sibling `measure-trust-goal-against-ceiling.mjs` answers the
+      narrower *which components can nobody fill* question; both take the ceiling from the shared lib
+      rather than computing it locally, since two copies of that arithmetic is how this repo ended up
+      with four grade parsers.
+    - Injection-tested **9/9** (`scripts/oneoff/inject-trust-tier-cases.mjs`), each case proving its
+      edit landed **by checksum** and restoring the file byte-identically, judged on the guard's
+      **own failure text** matched against FAIL lines only. Four are the historical defect restored
+      verbatim (the 90 tier, the second ladder in `FullProfile`, the card's literal 90, a ceiling
+      typed rather than derived). **`ladder-declared-and-unused` is the non-vacuity case** — every
+      bound above is satisfied by a `trustTier` that ignores the table entirely. **Two must stay
+      SILENT** and they are the two the string count got wrong: a comment quoting the forbidden
+      shape, and an unrelated control labelled `Trusted`.
   - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
     four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),

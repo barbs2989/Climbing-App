@@ -32,7 +32,8 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { reachableVerificationTypes, partnerlessCeiling, dayOneScore } from "./lib/verification-reach.mjs";
+import { reachableVerificationTypes, partnerlessCeiling, dayOneScore, earnableCeiling } from "./lib/verification-reach.mjs";
+import { parse } from "@babel/parser";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.trustbreakdown-${process.pid}.mjs`);
@@ -363,6 +364,135 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   } else ok(`GROUP_TRUST_MIN (${MIN}) turns away a day-old verified account (${dayOne})`);
 }
 
+
+// ---- 7. A TIER NOBODY CAN REACH IS NOT A TIER ----
+// SECTION 7. Section 6 bounds the ONE threshold that gates an action. This bounds the four that
+// only ever SPEAK -- the Profile card's goal, its progress denominator, its "Well-trusted" line and
+// TrustBadge's ladder -- and they were calibrated the same wrong way for the same reason. Fixing
+// the group gate left them: 90 sat above the 84 a climber can earn, so "Highly Trusted" and
+// "goal met" were states no account could ever be shown, the progress bar capped at 93%, and every
+// real account in the live project (0, 5 and 6) read "New" in red.
+//
+// SAME CONTRACT AS SECTION 6: it asserts that every bar is REACHABLE and that none of them is
+// handed out for confirming an email, and it deliberately pins no particular number -- where a
+// reachable tier then sits is a product call, and a guard holding today's 65 would argue with the
+// next one. Both bounds are DERIVED from the model and the migrations, so they move by themselves
+// the day a verification the app cannot currently grant becomes earnable.
+//
+// AND IT PINS THE SHAPE, WHICH THE NUMBERS CANNOT. TrustBadge and FullProfile each carried their
+// own copy of the 90/70/50 ladder, so one climber could be called two different things depending
+// which screen you were on; the card's goal was a third and fourth copy. A ladder written twice is
+// the group roster's count shape, and the bound above is satisfied by a second copy that happens to
+// agree today -- so the count of copies is asserted separately.
+{
+  const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const { TRUST_TIERS, TRUST_GOAL, SERVER_TRUST_EARNABLE, serverTrustScore, trustTier } = mod;
+
+  if (!Array.isArray(TRUST_TIERS) || TRUST_TIERS.length < 3) dead("ClimbMatchCore.jsx does not export a TRUST_TIERS ladder of at least 3 tiers — ANCHOR LOST, and with none every bound below passes vacuously");
+  if (typeof trustTier !== "function") dead("ClimbMatchCore.jsx does not export trustTier — ANCHOR LOST");
+  if (typeof serverTrustScore !== "function") dead("ClimbMatchCore.jsx does not export serverTrustScore — ANCHOR LOST");
+
+  const { types: reachable, scanned } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
+  if (scanned < 20) dead(`only ${scanned} migration(s) scanned — the walk broke, and an unscanned tree reports every verification as unreachable`);
+  if (!reachable.size) dead("no verification type parsed as reachable at all — a broken scan, not a finding");
+
+  const dayOne = dayOneScore(serverTrustScore, reachable);
+  const ceiling = earnableCeiling(serverTrustScore, reachable);
+  if (!(ceiling > dayOne)) dead(`the earnable ceiling (${ceiling}) is not above the day-one score (${dayOne}) — the model did not load`);
+
+  // The constant the app displays against must BE the derived ceiling. Without this the ceiling is
+  // a number typed into core once and left there, which is the hand-copy this whole section exists
+  // to remove — and it would go stale in the direction that makes a bar look attainable.
+  cases++;
+  if (SERVER_TRUST_EARNABLE !== ceiling) {
+    fail(`SERVER_TRUST_EARNABLE is ${SERVER_TRUST_EARNABLE} and the model's earnable ceiling is ${ceiling} — if a verification became earnable, move the constant; if the weights changed, this is the drift it exists to catch`);
+  } else ok(`SERVER_TRUST_EARNABLE (${SERVER_TRUST_EARNABLE}) is the ceiling the model actually allows`);
+
+  for (const t of TRUST_TIERS) {
+    if (t.min === 0) continue;   // the bottom tier is what everybody starts in; it bounds nothing.
+    cases++;
+    if (t.min > ceiling) {
+      fail(`the "${t.label}" tier starts at ${t.min}, above the ${ceiling} anyone can ever earn — no climber can be shown it`);
+    } else ok(`"${t.label}" (${t.min}) is reachable — the ceiling is ${ceiling}`);
+
+    cases++;
+    if (t.min <= dayOne) {
+      fail(`the "${t.label}" tier starts at ${t.min}, which an account scores on the day it confirms its email (${dayOne}) — a tier handed out for signing up says nothing`);
+    } else ok(`"${t.label}" (${t.min}) is above a day-old verified account (${dayOne})`);
+  }
+
+  // Strictly descending, or two tiers collapse and one label becomes unreachable by construction —
+  // which is the same defect as a bar above the ceiling, arrived at from inside the ladder.
+  cases++;
+  const mins = TRUST_TIERS.map((t) => t.min);
+  const descending = mins.every((m, i) => i === 0 || m < mins[i - 1]);
+  if (!descending) fail(`the tier ladder is not strictly descending (${mins.join(", ")}) — a tier that is not above the one below it can never be reached`);
+  else ok(`the ladder descends strictly (${mins.join(", ")})`);
+
+  // ONE LADDER, AND A LADDER IS A SHAPE RATHER THAN A STRING. A tier is chosen in exactly one
+  // place; a second copy is what this change removed, and every bound above is satisfied by one
+  // that happens to agree today. But counting the LABEL is far too blunt, measured rather than
+  // reasoned about: the first version reported two, and both were correct code. One was this
+  // guard's own explanatory comment quoting "Highly Trusted" while describing the fix — a guard
+  // failing on its own documentation, the trade check:ci-cancel records. The other is the
+  // Leaderboards board `{id:"trust",label:"Trusted",val:pp=>vScore(pp)}`, a board CATEGORY that
+  // happens to share a word; flagging it would tell an author to rename a working control.
+  //
+  // So it matches the ladder's own shape — a score compared against a number choosing a tier name
+  // — through BABEL, which sees neither comments nor a coincidental object property. That is the
+  // instrument check:profile-claims section 3 reaches for after three separate checkers were fooled
+  // in one day by a comment written to explain the fix they were checking.
+  {
+    const LABELS = new Set(TRUST_TIERS.map((t) => t.label));
+    const found = [];
+    for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app]]) {
+      let ast;
+      try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+      catch (e) { dead(`${name} does not parse (${e && e.message}) — a ladder cannot be counted in a file that did not parse`); }
+      const seen = new Set();
+      (function walk(n) {
+        if (!n || typeof n !== "object") return;
+        if (Array.isArray(n)) { for (const c of n) walk(c); return; }
+        if (n.type === "ConditionalExpression" && n.consequent && n.consequent.type === "StringLiteral"
+            && LABELS.has(n.consequent.value) && n.test && n.test.type === "BinaryExpression" && n.test.operator === ">=") {
+          found.push(`${name}: ${n.consequent.value} chosen by a >= comparison`);
+        }
+        for (const k of Object.keys(n)) { if (k === "loc" || k === "leadingComments" || k === "trailingComments") continue; const v = n[k]; if (v && typeof v === "object" && !seen.has(v)) { seen.add(v); walk(v); } }
+      })(ast.program);
+    }
+    cases++;
+    if (found.length) {
+      fail(`${found.length} tier ladder(s) live outside TRUST_TIERS — ${found.join("; ")}. A second ladder calls one climber something the badge does not`);
+    } else ok("the tier ladder exists in exactly one place (no score-compared tier label outside TRUST_TIERS)");
+  }
+
+  // The Profile card's three numbers must READ the top tier rather than restate it. A literal here
+  // is how the card and the badge came to disagree about what "well-trusted" means.
+  const cardSites = [
+    ["the card's goal", /myTrustScore>=TRUST_GOAL\?"· goal met"/],
+    ["the progress denominator", /myTrustScore\/TRUST_GOAL\*100/],
+    ["the '✓ Well-trusted' gate", /!_trustUnsure&&myTrustScore<TRUST_GOAL/],
+  ];
+  for (const [what, re] of cardSites) {
+    cases++;
+    if (!re.test(app)) fail(`${what} does not read TRUST_GOAL — a number typed there is a fourth copy of the top tier and drifts from the badge silently`);
+    else ok(`${what} reads TRUST_GOAL (${TRUST_GOAL})`);
+  }
+
+  cases++;
+  if (TRUST_GOAL !== TRUST_TIERS[0].min) fail(`TRUST_GOAL is ${TRUST_GOAL} and the top tier starts at ${TRUST_TIERS[0].min} — the card would promise a goal the badge does not recognise`);
+  else ok(`TRUST_GOAL is the top tier (${TRUST_GOAL})`);
+
+  // NON-VACUITY. Every assertion above is satisfied by a trustTier that returns the bottom tier for
+  // everything, so the ladder is exercised: each tier's own minimum must select that tier.
+  for (const t of TRUST_TIERS) {
+    cases++;
+    const got = trustTier(t.min);
+    if (!got || got.label !== t.label) fail(`trustTier(${t.min}) returned ${got && got.label} rather than "${t.label}" — the ladder is declared and not used`);
+    else ok(`trustTier(${t.min}) selects "${t.label}"`);
+  }
+}
 
 clean();
 if (failures) {
