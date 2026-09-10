@@ -19337,3 +19337,100 @@ exist live, none is a DELETE of an only copy).
 
 Next batch continues in sorted-id order after `wa_ingalls_peak_south_ridge`
 (see progress file).
+
+## Batch 262 (pass 5) — 2026-09-10
+
+Checked 8 routes on 5 peaks: `wa_inner_constance_northwest_buttress`,
+`wa_inner_constance_standard` (Inner Constance), `wa_inspiration_peak_west_ridge`
+(Inspiration Peak), `wa_jack_mountain_nohokomeen_headwall`,
+`wa_jack_mountain_northeast_glacier`, `wa_jack_mountain_south_face` (Jack Mountain),
+`wa_johannesburg_mountain_cj_couloir`, `wa_johannesburg_mountain_northeast_buttress`
+(Johannesburg Mountain).
+
+**Fixed:**
+
+- Bivy-field contamination (CLAUDE.md's documented `audit:camp-route-fit` corridor
+  zone-file pattern, found independently four times in this batch): `wa_inner_
+  constance_northwest_buttress` and `wa_inner_constance_standard` both carried an
+  identical 6-entry bivy array where 5 entries describe camps for Buckhorn Mountain,
+  Mount Worthington, Mount Townsend and Warrior Peak — unrelated peaks in the same
+  Buckhorn Wilderness corridor. Trimmed the Northwest Buttress route to its one
+  genuinely relevant entry ("Home Lake," whose own text names Inner Constance's
+  northwest side and 7,670 ft summit directly); cleared the Standard Route's bivy
+  entirely, since that route's own approach is the Dosewallips/Constance Pass side and
+  none of the 6 entries — including Home Lake, which is on the Upper Dungeness side —
+  describe its actual camp. Similarly, `wa_jack_mountain_nohokomeen_headwall` and
+  `wa_jack_mountain_northeast_glacier` (both north-side Jack Mountain routes) carried
+  an identical 6-entry bivy array for Colonial Peak, Snowfield Peak, Cosho Peak, Crater
+  Mountain and "Jerry Lakes basin, Jack Mountain SOUTH side" — a different corridor
+  and, for Jerry Lakes, explicitly the wrong side of the mountain. Cleared both.
+  `wa_johannesburg_mountain_cj_couloir` carried a 6-entry bivy array where 5 entries
+  describe Boston Basin/Sahale Glacier Camp/Pelton Basin — camps for Forbidden Peak,
+  Sahale Peak, Boston Peak etc. reached from the same Cascade River Road trailhead but
+  serving different objectives. Trimmed to the one relevant entry ("Johannesburg
+  Camp," named in its own text as the staging camp for this exact route).
+- `wa_jack_mountain_nohokomeen_headwall` — `dist_km` (17.7, rendering as a 22 mi round
+  trip) contradicted the row's own overview text ("rated at 30 miles and 10,000 ft of
+  gain") and Mountaineers.org's official listing for this route (30.0 mi RT / 10,000
+  ft gain, matching this row's `gain_ft` exactly). 17.7 km actually matched only the
+  one-way distance to camp (8 mi trail + 3 mi bushwhack), not to the summit and back.
+  Corrected to 24.14 km (15.0 mi one-way).
+- `wa_jack_mountain_south_face` — same `dist_km` shape: 35 km (implying a 43.5 mi
+  round trip) contradicted the row's own waypoints (11.5 mi cumulative one-way to the
+  summit) and its own itinerary.totalNote ("~22-24 mile round trip"). Corrected to
+  18.51 km (11.5 mi one-way).
+- `wa_jack_mountain_south_face` — overview text ("Jack Mountain (9,069 ft)") and its
+  own summit waypoint disagreed with its own `high_point_ft` (9075) and with both
+  sibling Jack Mountain routes in this batch, which store 9075 — matching Wikipedia's
+  cited NAVD88 figure (confirmed via WebSearch; a commonly-cited older figure of
+  9,066-9,069 ft also exists but is the less current datum). The row's own
+  `data_quality.gaps` already flagged this exact 9,066-9,075 ft variance as an open
+  item "pending a clearer source"; aligned all three fields to 9075 and removed the
+  now-resolved gap entry.
+
+**Flagged, not fixed:** `wa_inner_constance_standard` has a deeper content-identity
+problem than the bivy fix above addresses. Its name ("...via Crystal Pass") and its
+primary narrative fields (`approach`, `descent_text`, `itinerary`, `climbing_route`)
+describe the long Dosewallips/Constance Pass/Crystal Pass approach — but external
+sourcing (SummitPost's "West Arete 5.5" article) indicates Crystal Pass is actually the
+approach to the *neighboring* Mount Constance's West Arete route, not to Inner
+Constance. Meanwhile this row's own `waypoints`, `beta`, and `approach_variants[0]`
+correctly describe Inner Constance's actual documented standard line (Lake Constance →
+Avalanche Canyon → the Thumb → South Gully → East Ridge), matching the peak's own
+`corrections` field, which already flags this tension in narrower form. Resolving this
+would mean rewriting `approach`/`descent_text`/`itinerary`/`road`/`climbing_route`
+against sourcing (trailcatjim.com, willhiteweb) not fully accessible this session —
+left for human review rather than guessing at a rewrite. `wa_jack_mountain_northeast_
+glacier`'s FA ("Fred Beckey, Dallas Kloke and Reed Tindall, July 19, 1978") could not
+be independently corroborated via WebSearch (no contradiction found either) — left
+unchanged per the "don't fix what can't be verified" rule, not flagged as suspect.
+
+**Confirmed clean, cross-checked against external sources:** `wa_inspiration_peak_
+west_ridge` — elevation (7,891 ft), FA (Fred Beckey and Helmy Beckey, Aug 29, 1940),
+and the Feb 8, 2003 Colin Haley/Forrest Murphy first winter ascent all confirmed via
+WebSearch (Wikipedia/Mountainproject); bivy list (Terror Basin only) is correctly
+scoped. `wa_johannesburg_mountain_cj_couloir` FA (Bressler/Cox/Clough/Myers, July 26,
+1938, during the Ptarmigan Traverse — also the peak's own FA) confirmed verbatim via
+WebSearch. `wa_johannesburg_mountain_northeast_buttress` bivy list (7,100 ft buttress
+bivy, upper-glacier platforms) is correctly scoped to this route; no other issues
+found. Johannesburg Mountain's summit elevation (8,200 ft, appearing in both
+Johannesburg routes) is within the commonly-cited 8,200-8,212 ft range and matches
+Wikipedia's rounded figure — no fix needed.
+
+**Tooling note:** two of this batch's fixes replace a `bivy` jsonb array whose prose
+contains an internal semicolon (e.g. "...toward the 7,670 ft summit on loose alpine
+rock; the northeast summit..."). `check-sql-targets.mjs` splits statements on every
+literal `;` in the file, including ones inside quoted string literals, so it reports
+these two UPDATEs as "no literal id predicate — not checkable" even though the
+generated SQL is valid Postgres (a `;` inside a single-quoted string is not a statement
+terminator) and the WHERE clause is present and correct. Verified independently with a
+quote-aware statement splitter that correctly parses all 8 statements and their target
+ids; all 6 checkably-parsed targets passed `check-sql-targets.mjs` (ids exist live, no
+DELETE of an only copy).
+
+SQL: `audits/sql/2026-09-10-batch-262.sql` (8 UPDATE statements, no DELETE). File is
+10.4KB, over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and
+verify each before sending the next, per the checker's own warning.
+
+Next batch continues in sorted-id order after `wa_johannesburg_mountain_northeast_
+buttress` (see progress file).

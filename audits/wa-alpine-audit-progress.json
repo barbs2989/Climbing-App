@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_ingalls_peak_south_ridge",
+  "last_processed_id": "wa_johannesburg_mountain_northeast_buttress",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5319,6 +5319,26 @@
         "wa_ingalls_peak_east_route",
         "wa_ingalls_peak_south_ridge"
       ]
+    },
+    {
+      "batch_number": 262,
+      "date": "2026-09-10",
+      "route_ids": [
+        "wa_inner_constance_northwest_buttress",
+        "wa_inner_constance_standard",
+        "wa_inspiration_peak_west_ridge",
+        "wa_jack_mountain_nohokomeen_headwall",
+        "wa_jack_mountain_northeast_glacier",
+        "wa_jack_mountain_south_face",
+        "wa_johannesburg_mountain_cj_couloir",
+        "wa_johannesburg_mountain_northeast_buttress"
+      ],
+      "pass": 5,
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-10-batch-262.sql",
+      "note": "Fixed: bivy-field corridor contamination on 4 routes (Inner Constance NW Buttress trimmed to its one relevant entry, Inner Constance Standard cleared entirely, Jack Mountain Nohokomeen Headwall and Northeast Glacier both cleared entirely, Johannesburg CJ Couloir trimmed to its one relevant entry); Jack Mountain Nohokomeen Headwall's and South Face's dist_km (both contradicted their own stated round-trip mileage); Jack Mountain South Face's overview/waypoint elevation (9069 -> 9075, aligning with high_point_ft, sibling routes, and Wikipedia's NAVD88 figure, resolving a gap the row's own data_quality field had already flagged). Flagged: Inner Constance Standard's approach/descent_text/itinerary describe the Crystal Pass route to Mount Constance's West Arete (a different peak) rather than Inner Constance's own documented standard line, which only its waypoints/beta correctly describe -- too large a rewrite to attempt without fuller sourcing. Clean: Inspiration Peak West Ridge (elevation, FA, first winter ascent all confirmed), Johannesburg CJ Couloir's FA, Johannesburg NE Buttress (bivy correctly scoped, no other issues)."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
