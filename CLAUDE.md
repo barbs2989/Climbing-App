@@ -2573,7 +2573,10 @@ the total when deciding where a new guard belongs.
     component takes its `else if(pyramid)` branch and totals `climber.pyramid`, a stored career
     summary — under a caption reading *"Climbs logged at each grade"*, with `Logged Climbs · N`
     printed a few lines below off `seedHistoryFor`.
-    - **MEASURED ACROSS EVERY CLIMBER THAT RENDERS IT, rather than spotted on one:** 5 seed
+    - **MEASURED ACROSS EVERY CLIMBER THAT RENDERS IT, rather than spotted on one**
+      (`scripts/oneoff/measure-pyramid-vs-logged-climbs.mjs`, which composes the unexported
+      `seedHistoryFor` out of the two exports it is built from rather than retyping the rule, and
+      fails closed on an empty side — re-run it rather than quoting the figures here): 5 seed
       climbers carry a pyramid and **0 of 5 agree** with their own logged count — Sam Rivera **26
       against 4**, Riley Nguyen 42/4, Alex Torres 74/7, Maya Chen 113/9, Jordan Park **126 against
       6**. A systematic 10-20x gap is not inconsistent seed data, it is two different records, and
