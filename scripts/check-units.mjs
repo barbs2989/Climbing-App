@@ -35,7 +35,8 @@
 //
 // SECTIONS, and what each can see that the others cannot:
 //   persist    the preference survives a reload at all, and cannot take a screen down
-//   weather    the forecast helpers convert, and the colour thresholds still get RAW imperial
+//   weather    the forecast helpers convert, the colour thresholds still get RAW imperial, and
+//              -- APP-WIDE -- no new hard-coded imperial unit is welded on with `+`
 //   reports    a climber's OWN temperature, on screen and on the way into the column
 //   itinerary  the plan builder, the downloaded .txt, and the bail form's second writer
 //   variants   the approach-variants editor: both boundaries, and its two labels
@@ -70,7 +71,7 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // run pass.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9 };
+const FLOOR = { persist: 13, weather: 20, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -94,6 +95,72 @@ const dead = (m) => { problems.push("BROKEN: " + m); throw new Error(STOP); };
 const CORE_PATH = path.join(ROOT, "ClimbMatchCore.jsx");
 const RD_PATH = path.join(ROOT, "RouteDetail.jsx");
 const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
+
+// ===== HARD-CODED IMPERIAL UNITS, APP-WIDE =============================================
+// A unit word welded to a number with `+` can never convert. The weather section's own check
+// was `+" mph"` and nothing else, and the profile section records why the wider needle misses
+// this shape: it wants a bare unit AFTER a brace, so `x + " ft"` is invisible to it.
+//
+// The six that remain are unreachable or reported, NOT overlooked -- lowering this number
+// without saying which one went is how a ratchet rots:
+//   1  App's area search  -- renders the SEED `MOUNTAINS` tree, so its distance is a different
+//      defect entirely (the AddRoute area-picker class) and converting it would polish a
+//      surface that is showing the wrong data.
+//   2  rapStr (core) and fmtRappels (RouteDetail) -- the object branch of the rappels column.
+//      Measured: 733 of 733 rows are STRINGS, so neither branch can be reached. The unit there
+//      is chosen by WHICH COLUMN the value came from rather than by the climber, which is why
+//      it is recorded as a tripwire: the day something writes an object, this arms itself.
+//   3  OverviewMap and QuickMatch -- declared seed-only, asserted as such by the profile
+//      section below, so their " mi away" renders for nobody.
+//   4  GettingThere -- one of the three Climbs-tab components gated on `selArea`, which is
+//      written only on the seed path. Dead in production by a closed decision.
+const RAW_IMPERIAL_OK = 6;
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx"];
+// " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
+// reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
+// good as its tokeniser.
+const RAW_UNIT = /^\s*(ft|mi|mph|lb)\b/;
+// A unit is legitimate when the expression CHOSE it -- a `uImp()` ternary, or the defensive
+// `uElev ? uElev(x) : <fallback>+" ft"` a lib component uses when a caller omits the helper.
+const RAW_GUARD = /\b(uImp|uElev|uDistMi|uDist|uMass|uLen)\b/;
+function rawImperialUnits() {
+  const out = [];
+  let total = 0;
+  for (const f of RAW_FILES) {
+    const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+    let ast;
+    try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+    catch (e) { dead(`${f} did not parse while scanning for hard-coded units: ` + (e && e.message)); }
+    traverse(ast, {
+      StringLiteral(p) {
+        if (!RAW_UNIT.test(p.node.value)) return;
+        if (!p.parentPath.isBinaryExpression() || p.parentPath.node.operator !== "+") return;
+        // A REACT KEY IS NOT A UNIT: `key={"lb"+i}` on the long-beta rows read as pounds.
+        if (p.findParent((a) => a.isJSXAttribute() && a.node.name && a.node.name.name === "key")) return;
+        // A DEFAULT PARAMETER IS THE DEFENSIVE FALLBACK, chosen by the ABSENCE of the helper.
+        if (p.findParent((a) => a.isObjectPattern() && a.parentPath && a.parentPath.isFunction())) return;
+        total++;
+        // Did anything up the chain actually choose this unit?
+        let cur = p;
+        for (let i = 0; i < 14 && cur; i++) {
+          const parent = cur.parentPath;
+          if (!parent) break;
+          if (parent.isConditionalExpression() && RAW_GUARD.test(JSON.stringify(parent.node.test))) return;
+          cur = parent;
+        }
+        let fn = p.getFunctionParent(); let owner = null;
+        while (fn) {
+          let nm = fn.node.id && fn.node.id.name;
+          if (!nm && fn.parentPath && fn.parentPath.isVariableDeclarator() && fn.parentPath.node.id.type === "Identifier") nm = fn.parentPath.node.id.name;
+          if (nm && /^[A-Z]/.test(nm)) { owner = nm; break; }
+          fn = fn.getFunctionParent();
+        }
+        out.push({ f, owner: owner || "(module scope)", ctx: src.slice(Math.max(0, p.node.start - 70), p.node.end).replace(/\s+/g, " ").slice(-85) });
+      },
+    });
+  }
+  return { raw: out, total };
+}
 
 let tmpdir = null;
 let M = null;
@@ -368,6 +435,46 @@ async function runWeather() {
   const bare = (mask.match(/\+" mph"/g) || []).length;
   if (bare) fail(`${bare} display site(s) still append " mph" directly — use uWind()`);
   else ok('no display site appends " mph" directly');
+
+  // -- THE FREEZING LEVEL WAS THE ONE TILE IN THIS PANEL THAT DID NOT CONVERT, and its seven
+  //    siblings are what make that a MISS rather than a missing convention: uTemp x4, uWind,
+  //    uPrecip and uSnowfall all go through a helper, while the eighth rendered
+  //    `dy.freezeMax.toLocaleString()+" ft"`. So a metric climber read the freezing level in
+  //    FEET on the one panel that decides whether an ice route is frozen.
+  //    uElev() is the CONVERSION here, not a re-conversion: `precipitation_unit=inch` makes
+  //    Open-Meteo return freezing_level_height in feet, so the value arrives canonical and the
+  //    fetch comment beside it warns only against scaling it by 3.28 a second time.
+  for (const [input, imp, met] of [[11000, "11,000 ft", "3,353 m"], [5000, "5,000 ft", "1,524 m"]]) {
+    const [a, b] = both("uElev", input);
+    if (a === imp && b === met) ok(`uElev(${input})  imperial ${JSON.stringify(a)}  metric ${JSON.stringify(b)}`);
+    else fail(`uElev(${input}): got ${JSON.stringify(a)}/${JSON.stringify(b)}, expected ${JSON.stringify(imp)}/${JSON.stringify(met)}`);
+  }
+  if (/uElev\(dy\.freezeMax\)/.test(mask)) ok("the forecast Freezing level tile converts through uElev()");
+  else fail('the forecast Freezing level tile no longer calls uElev(dy.freezeMax) — it is back to hard-coded feet');
+
+  // -- THE SAME COLUMN IS HYDRATED TWICE, and CLAUDE.md records that this pair DRIFTS whenever
+  //    only one half is touched, so both are asserted. `climb_logs.freezing_level_ft` is a
+  //    number and both hydrations rendered it as `+" ft"`, which is another climber's report
+  //    read in the wrong unit. check:log guards which COLUMNS each hydration carries and is
+  //    blind to what unit one of them is rendered in.
+  const appMask = fs.readFileSync(APP_PATH, "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  for (const [label, m] of [["RouteDetail", mask], ["ClimbMatch", appMask]]) {
+    if (/uElev\((?:r|row)\.freezing_level_ft\)/.test(m)) ok(`${label}'s climb_logs hydration converts the freezing level through uElev()`);
+    else fail(`${label}'s climb_logs hydration no longer converts freezing_level_ft — a metric climber reads another climber's report in feet`);
+  }
+
+  // -- AND THE GENERAL RULE, APP-WIDE, BECAUSE THE CHECK ABOVE COULD ONLY SEE ` mph`. This
+  //    guard's own profile section records the gap in as many words: its needle "wants a bare
+  //    unit AFTER a brace", so a CONCATENATION is invisible to it -- and a concatenation is
+  //    exactly where the freezing level and the Near-me distance both sat. A stated limitation
+  //    is a worklist, so this walks the AST and asks whether anything CHOSE the unit.
+  const { raw: RAW, total: RAW_TOTAL } = rawImperialUnits();
+  if (RAW.length === RAW_IMPERIAL_OK) ok(`${RAW_TOTAL} imperial-unit concatenations, ${RAW.length} of them raw — all in unreachable or declared code`);
+  else fail(`${RAW.length} hard-coded imperial concatenation(s) of ${RAW_TOTAL}, expected ${RAW_IMPERIAL_OK}:\n` +
+    RAW.map((r) => `      ${r.f}  owner=${r.owner}  ...${r.ctx}`).join("\n") +
+    `\n      A NEW one renders a raw imperial figure to a metric climber — convert it with uElev/uDistMi/uMass.` +
+    `\n      One FEWER means a declared-dead site was fixed or removed: lower RAW_IMPERIAL_OK and say which.`);
 }
 
 // =======================================================================================
