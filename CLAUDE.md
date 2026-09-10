@@ -2577,6 +2577,46 @@ the total when deciding where a new guard belongs.
     entry (section 3 reads the list through Babel, so comments are invisible — three checkers here
     have been fooled by the comment explaining the very fix they were checking), and an unrelated
     new row.
+  - **SECTION 5 — THE GRADE PYRAMID ON SOMEBODY ELSE'S PROFILE CLAIMED TO BE LOGGED CLIMBS, AND
+    CONTRADICTED THE HEADING DIRECTLY BENEATH IT.** `FullProfile` renders one section two ways.
+    Viewing **yourself**, `AscentPyramid` is handed `climber.__selfLogs` — real logs — and *"Your
+    sends by grade"* is true of them. Viewing **anyone else** that prop is undefined, so the
+    component takes its `else if(pyramid)` branch and totals `climber.pyramid`, a stored career
+    summary — under a caption reading *"Climbs logged at each grade"*, with `Logged Climbs · N`
+    printed a few lines below off `seedHistoryFor`.
+    - **MEASURED ACROSS EVERY CLIMBER THAT RENDERS IT, rather than spotted on one**
+      (`scripts/oneoff/measure-pyramid-vs-logged-climbs.mjs`, which composes the unexported
+      `seedHistoryFor` out of the two exports it is built from rather than retyping the rule, and
+      fails closed on an empty side — re-run it rather than quoting the figures here): 5 seed
+      climbers carry a pyramid and **0 of 5 agree** with their own logged count — Sam Rivera **26
+      against 4**, Riley Nguyen 42/4, Alex Torres 74/7, Maya Chen 113/9, Jordan Park **126 against
+      6**. A systematic 10-20x gap is not inconsistent seed data, it is two different records, and
+      the caption named the wrong one. *Compare a suspect against the rows that pass* — here none
+      passed, which is what settles it.
+    - **FOUND BY READING A CI `ui-screens` CAPTURE, not by a scan**, the technique this file
+      already credits for the seed-identity bug and the glued `Recently climbed` row. Nothing could
+      have flagged it otherwise: the column is populated, the section renders, every number is a
+      number, and both halves are individually correct — only their combination is a lie.
+    - **DERIVED, NOT A WORD BAN, and the SILENT cases are what prove it.** The rule holds only
+      while the non-self branch is fed by `pyramid` rather than by logs; hand that branch real logs
+      and *"logged"* becomes a true description and the guard goes quiet, without anyone editing the
+      rule. Same shape as sections 3 and 4, which re-derive from the migrations. A guard that
+      forbade the word outright would forbid the fix.
+    - **NON-VACUITY, because a rule that only forbids is satisfied by deleting the sentence:** the
+      caption must still run past 20 characters and still say it is about grades or sends. Two
+      injection cases pin that — an emptied caption and a bare *"Grades."* both fail.
+    - **THE SIBLING WAS MEASURED AND IS CLEAN, so this is a CLASS OF ONE rather than one of N.**
+      Three Leaderboards badges are `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
+      notes say *"logged"* — but **no seed climber carries a stored `classics`, `highpoints` or
+      `peaks` number**, so every badge value is entirely real ticks and the wording is correct
+      there. The `+(pp.X||0)` term is inert today. *A detector for a class of one is the thing this
+      repo keeps refusing to build*, which is why this is an assertion inside the guard whose
+      subject it already is rather than a new one.
+    - Injection-tested **6/6** (`scripts/oneoff/inject-pyramid-caption-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and
+      judged on FAIL lines only; the harness refuses any expectation already present in the green
+      run. Case 1 is the real caption restored **verbatim**. **Two must stay SILENT** — a different
+      honest wording, and *"logged"* once the branch really is fed logs.
 - **`check:offline-claims`** asserts that **an offline promise is backed by the write that makes it
   true**. Static (Babel over the two app files plus a source read of `lib/db.js` and
   `lib/offline.js`), so it sits in `npm run build`, at **1.34x `check:policy-claims`**.
