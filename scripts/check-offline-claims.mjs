@@ -293,9 +293,44 @@ for (const [hookName, reader, what] of SEARCH) {
   else fail("lib/offline.js no longer defines " + reader + "()");
 }
 
+/* ── 9. OPENING WHAT THE SEARCH FOUND. ───────────────────────────────────────────────────────
+ * §8 made the area filter box searchable offline and left the thing you DO with a hit
+ * throwing, which is worse than no search: `areas_in_subtree` returns a narrow projection
+ * with no ltree `path`, so `jumpToArea` hydrates the row and then builds a breadcrumb from
+ * it. Both calls have a `.catch` that swallows the failure, so the handler bailed AFTER
+ * switching screens — a tap that visibly goes somewhere and lands nowhere.
+ *
+ * A SEQUENCE, so both links are asserted separately: either one alone still dead-ends the
+ * tap, and a guard demanding only one would report the other as unnecessary. */
+console.log("\n9. OPENING A HIT — the row and its breadcrumb come off the device too:");
+const JUMP = [
+  ["fetchArea", "offlineArea", "hydrating the hit (the search projection has no `path`)"],
+  ["fetchAreaBreadcrumb", "offlineAreasByIds", "its breadcrumb, which jumpToArea needs a state from"],
+];
+for (const [fnName, reader, what] of JUMP) {
+  const body = dbS.match(new RegExp("export async function " + fnName + "[\\s\\S]*?\\n}"));
+  if (!body) { dead("ANCHOR LOST: " + fnName + " is gone from lib/db.js — " + what + " is unchecked"); continue; }
+  if (/orOffline\(/.test(body[0])) ok(fnName + " falls back to the device");
+  else fail(fnName + " has no offline fallback — with no signal " + what + " throws, and\n"
+    + "       jumpToArea returns AFTER it has already switched screens.");
+  if (new RegExp(reader + "\\(").test(body[0])) ok("...through " + reader);
+  else fail(fnName + " no longer reads " + reader + " — the rows are on the device and unread");
+}
+if (/export async function offlineAreasByIds\s*\(/.test(offS)) ok("lib/offline.js still defines offlineAreasByIds()");
+else fail("lib/offline.js no longer defines offlineAreasByIds()");
+/* The names map is orOfflineExact rather than orOffline, and that is not interchangeable: an
+ * empty map is TRUTHY, so orOffline would substitute it for a failed read and every name
+ * would degrade to its placeholder as though it had been resolved. */
+const namesHook = dbS.match(/export function useAreaNamesByIds[\s\S]*?\n}/);
+if (!namesHook) dead("ANCHOR LOST: useAreaNamesByIds is gone from lib/db.js");
+else if (/orOfflineExact\(/.test(namesHook[0]) && /offlineAreaNamesByIds\(/.test(namesHook[0]))
+  ok("useAreaNamesByIds resolves names from the device, through orOfflineExact");
+else fail("useAreaNamesByIds does not fall back through orOfflineExact/offlineAreaNamesByIds —\n"
+  + "       with no signal every area name degrades to its placeholder.");
+
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 28;
+const EXPECTED = 34;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");

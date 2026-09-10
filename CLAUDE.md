@@ -2440,6 +2440,62 @@ the total when deciding where a new guard belongs.
       exists to have fixed. `useCountries` still has none either, and a naive one would be **dead
       code**: `downloadStateOffline` stores only DESCENDANTS of the state, so no country row is
       ever on the device.
+  - **§9 — AND THE SEARCH COULD FIND SOMETHING YOU COULD NOT OPEN, WHICH IS WORSE THAN NOT
+    SEARCHING.** §8 shipped the area filter box working offline and left the thing you *do*
+    with a hit throwing. `areas_in_subtree` returns a **narrow projection with no ltree
+    `path`**, so `jumpToArea` runs a SEQUENCE: hydrate the full row with `fetchArea`, build
+    the breadcrumb from its path with `fetchAreaBreadcrumb`, find the state in that
+    breadcrumb. Neither call had a fallback, both have a `.catch` that swallows the failure,
+    the breadcrumb came back `[]` — and the handler **returned after `setScreen("areas")` and
+    `setStateNode(a)` had already fired**. A tap that visibly goes somewhere and lands on an
+    area with no ancestors and no panels.
+    - **A DEFECT INTRODUCED BY THE FIX ABOVE, not a pre-existing one.** Before §8 the offline
+      area search returned nothing, so there was no hit to tap. **Ask what a newly-reachable
+      surface leads to**; making a list reachable makes everything downstream of it reachable
+      too, and that half is easy to leave behind.
+    - **THE ASSERTION HAS TO BE THE SEQUENCE.** Either link is enough on its own to dead-end
+      the tap — with no `fetchArea` the breadcrumb has no path to walk — so a guard demanding
+      only one would report the other as unnecessary, and a probe testing them separately
+      would pass while the tap stayed broken. §9 asserts both links, and
+      `scripts/oneoff/probe-offline-area-jump.mjs` **runs the handler's own steps in order**
+      against the real exports.
+    - **NO SCHEMA CHANGE HERE EITHER, and the reason is an alignment worth stating.** The one
+      ancestor `downloadStateOffline` never stores is the **root country** — it keeps only
+      descendants of the state — and that is *exactly* the label `fetchAreaBreadcrumb` drops
+      before it looks anything up, because the breadcrumb does not show the country. So every
+      id that survives the slice is on the device. A future breadcrumb that kept the country
+      would break offline only.
+    - **`useAreaNamesByIds` uses `orOfflineExact` and that is NOT interchangeable with
+      `orOffline`.** Its answer is a **map**, and an empty map is **truthy** — so `orOffline`
+      would substitute it for a failed read and every area name would degrade to its
+      placeholder *as though it had been looked up*. `offlineAreaNamesByIds` returns
+      `undefined` for a complete miss and a **partial** map otherwise, because a partial map
+      is a real answer.
+    - **A `fetchArea` MISS STILL REJECTS, deliberately, rather than resolving null.** That is
+      what it did before, and `jumpToArea`'s own `.catch(() => null)` already handles it.
+      Resolving null instead is a quieter kind of wrong: it reports a definite *"no such
+      area"* for what is really a failed read.
+    - **THE PROBE HAD A VACUOUS ASSERTION AND A CRASH, AND THE INJECTION SUITE FOUND BOTH.**
+      *"The country is not among the crumbs"* **cannot fail**: the lookup ends in
+      `.filter(Boolean)`, so an unstored id drops out whether or not the slice removing it is
+      still there — it would have passed against a breadcrumb that had stopped dropping the
+      country. It asserts the **fixture** instead (the country really is absent), which is
+      what makes the full-breadcrumb assertion mean something. And two `await`s were unguarded,
+      so the un-wrapped case killed the run at assertion 1 with **no FAIL line to match on** —
+      reported as `WRONG FAILURE` against a probe that was right.
+    - **A THIRD CASE CAUGHT A REAL GAP RATHER THAN A HARNESS BUG**: `offlineAreasByIds` carries
+      its **own** completeness gate, and nothing reached it — section 1's half-downloaded case
+      goes through `offlineArea`, a different function — so the gate could have been deleted
+      with every assertion still green.
+    - 13 assertions, injection suite **6/6** (`scripts/oneoff/inject-offline-area-jump-cases.mjs`),
+      across **two files**, which is the point: the sequence spans `lib/db.js` and
+      `lib/offline.js`. **Two cases must stay SILENT.** The breadcrumb case **guts the
+      fallback rather than removing the wrapper** — deleting `orOffline(` leaves its second
+      argument dangling, the file stops parsing, and the probe dies on the BUNDLE, which is a
+      different failure and one this repo has twice read as a catch.
+    - **Section 4 asserts the NETWORK still wins**, on the same module the offline sections
+      just exercised: a fallback consulted unconditionally would pass every other assertion
+      while serving a stale local row to somebody who has a signal.
 - **`check:units`** asserts that **a surface renders in the climber's chosen units, and that a
   control which WRITES converts before it stores**. Static (one shared esbuild bundle, six SSR
   renders through three render functions, two Babel parses and two lifted-and-executed source

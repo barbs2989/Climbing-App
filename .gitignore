@@ -57,4 +57,12 @@ camp-elevation-proposals.json
 .camp-geocode-cache.json
 .inject-offline-claims.lock
 .inject-offline-subtree.lock
+.inject-offline-area-jump.lock
+# The offline probes bundle INSIDE the project (node resolves react from the nearest
+# node_modules, and a temp dir has none). Each removes its own dir on the way out, but a run
+# that crashes or is killed leaves one — and it is then one `git add .` away from being
+# committed. Same reason .wpplace-*/ is here.
+.probe-jump-*/
+.probe-subtree-*/
+.probe-offline-*/
 .inject-reviewed-gate.lock
