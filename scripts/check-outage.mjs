@@ -493,15 +493,35 @@ async function walk(browser, base, session, fail) {
   const areas = page.locator(`text="Areas"`).last();
   if (await areas.count()) await areas.click({ timeout: 5000 }).catch(() => {});
   const areasText = await waitOutFetch(page, fail);
-  // Landmarks from the view's own cards, never from the copy under test: asserting on "saved
-  // searches" would make the landing check pass or fail for the same reason the VERDICT does,
-  // and a stop that cannot tell "did not land" from "landed and said nothing" is worse than none.
+  // Landmarks from the view's own CARDS, never from the copy under test: a stop asserting on an
+  // empty state would pass or fail for the same reason the VERDICT does, and one that cannot tell
+  // "did not land" from "landed and said nothing" is worse than none. Both survivors are headings
+  // rendered UNCONDITIONALLY inside the logbookTab==="lists" region, so neither moves with the
+  // data or with the outage.
+  //
+  // "saved areas" AND "offline library" CAME OUT, and the first is why this stop was VACUOUS.
+  // The Logbook's own header prose reads "Your objectives, completed climbs, challenges and saved
+  // areas — all in one place." and sits ABOVE the sub-tab bar, so it renders on all four sub-tabs:
+  // a capture that never left the default Objectives view matched it, which is exactly the outcome
+  // the rule above warns against. Measured rather than reasoned about — healthy Logbook:Areas came
+  // back BYTE-IDENTICAL IN LENGTH to healthy Logbook on two consecutive runs, and the red that
+  // followed named two empty states that are on screen in BOTH runs. "offline library" appears
+  // ZERO times anywhere in the app, so a third of the alternation had never matched once.
+  //
+  // "saved searches" is unique app-wide — 0 occurrences outside this region, in either app file.
+  // "trip pack" also heads two cards on the PROFILE tab, which a Logbook capture cannot contain;
+  // it is kept as a second landmark so a single rename fails CLOSED rather than silently.
+  //
+  // The `/i` is NOT what made the old landmark vacuous, and it would be the tempting thing to
+  // remove instead: the HEADINGS are uppercased in CSS but the header PROSE is not, so a
+  // case-sensitive `/saved areas/` matched it too. Dropping the flag would have fixed nothing and
+  // broken the replacement, because:
   // CASE-INSENSITIVE, and that is not defensive tidying: these headings are uppercased in CSS and
   // `innerText` returns the TRANSFORMED text, so the screen says "SAVED SEARCHES" where the source
   // says "Saved searches". A case-sensitive match reported this stop as never landing while the
   // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
   // WITH`. Matching either case also survives someone dropping the text-transform later.
-  out[SUBTAB2] = /saved areas|offline library|saved searches/i.test(areasText)
+  out[SUBTAB2] = /saved searches|trip pack/i.test(areasText)
     ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Areas view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an

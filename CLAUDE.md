@@ -64,6 +64,7 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:onboarding-reach # a climber who has not onboarded is ASKED; one who has is left alone (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
+npm run check:outage-landmark # ...and check:outage's own sub-tab landmark must identify that view (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
@@ -1060,14 +1061,50 @@ the total when deciding where a new guard belongs.
       two guards use per-run accounts locally and the durable pair in CI, so an account PROPERTY
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
-    - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB IS VACUOUS, so the red named the wrong
-      screen.** Its landmark is `/saved areas|offline library|saved searches/i`, and the Logbook's
-      **header** — which sits ABOVE the sub-tab bar and therefore renders on all four sub-tabs —
-      reads *"Your objectives, completed climbs, challenges and saved areas — all in one place."*
-      So a capture that never left the default view passes the landing check: precisely the
-      outcome the comment directly above that landmark warns against, produced by the
-      case-insensitivity added to it. Measured, not inferred — healthy `Logbook:Areas` came back
+    - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
+      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
+      on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
+      — all in one place."* One alternative matching is enough, so a capture that never left the
+      default view passed the landing check: precisely the outcome the comment directly above that
+      landmark warns against. Measured, not inferred — healthy `Logbook:Areas` came back
       **byte-identical in length to healthy `Logbook`** on two consecutive runs.
+      - **THE RECORDED CAUSE WAS WRONG, AND THE CORRECTION IS THE USEFUL HALF.** This entry used to
+        blame *"the case-insensitivity added to it"*. It is not that: the HEADINGS are uppercased in
+        CSS, but the **header prose is not**, and it is written lowercase in the source — so a
+        case-SENSITIVE `/saved areas/` matches it just as well. **The vacuity predates the `/i` flag
+        and would have survived removing it**, which is why the repair had to be the TERM rather
+        than the flag. A plausible mechanism nobody measured is a hypothesis, and this one would
+        have sent the next reader to delete a flag that is doing real work — `innerText` returns
+        `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
+      - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
+        had never matched once and could only ever report a false miss.
+      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
+        the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
+        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
+        than silently.
+      - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
+        two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
+        changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own
+        closing caveat and a stale-base squash could restore the vacuous landmark with every other
+        guard green. *Class growth*: `check:outage` has other landing checks and the rule
+        generalises — **a landmark must not appear outside the view it identifies**. It is in the
+        chain rather than in `scripts/oneoff/` because this file already records that an
+        extracted-from-source probe with a fail-closed anchor **is** the behaviour-revert detector
+        for exactly this shape, and *"is worth nothing in `scripts/oneoff/`, which nothing runs"*.
+        **No browser and no database**,
+        because which region of the source a string lives in is answerable statically and therefore
+        on a box too loaded for a walk to be evidence. It **lifts the landmark out of the guard**
+        with `ANCHOR LOST` rather than retyping it (a copy would agree with itself whatever the
+        guard did, which is the entire question), and it is proven non-vacuous the only way that
+        counts: against the old landmark it reports **5 failures**, one per defect. Its floors are
+        **measured, not guessed** — a first draft put the Logbook region at 20,000 characters and
+        failed on a correct carve, because that tab renders most of its content through components
+        and its own JSX is ~7.7k. The floor that actually matters is on **rest-of-Logbook**: were
+        the two regions ever to carve to the same span, every *"appears nowhere else"* assertion
+        would pass **vacuously**.
   - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
     the transferable half. All three fixture paths made their group `visibility:"public"`, and
     `groups read public or member` plus `useMyGroups()` — which selects **every** group with no
