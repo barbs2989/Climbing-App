@@ -68,7 +68,9 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
-const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 12, pitches: 9 };
+// `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
+// its floor rises with it: a floor left at the old count cannot see the new half stop asking.
+const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -118,6 +120,7 @@ export {
   itinDaysToDraft, itinDraftToStructured, itinToText, uDistMiIn,
   itinDraftVal, itinStoreVal, uElev, uLenN, uLenIn, uLenUnit,
   ROUTE_LENGTHS, routeLengthLabel, uDistMi, uDistMiUnitLong, passesFilters,
+  uElevN, uElevUnit,
   __set_UNITS,
 } from ${JSON.stringify(CORE_PATH)};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
@@ -177,7 +180,7 @@ export function renderProfile(climber) {
   const NEED = ["uTemp", "uTempN", "uTempDelta", "uWind", "uPrecip", "uSnowfall", "uTempU",
     "uTempIn", "buildConsensus", "itinDaysToDraft", "itinDraftToStructured", "itinToText",
     "uDistMiIn", "itinDraftVal", "itinStoreVal", "uElev", "ROUTE_LENGTHS",
-    "routeLengthLabel", "uDistMi", "uDistMiUnitLong",
+    "routeLengthLabel", "uDistMi", "uDistMiUnitLong", "uElevN", "uElevUnit",
     "passesFilters", "__set_UNITS", "renderRoute", "renderEditor", "renderBailout",
     "renderProfile", "distMiles", "ME"];
   for (const n of NEED) if (M[n] === undefined) dead(`${n} is not exported — nothing below was checked.`);
@@ -689,6 +692,110 @@ async function runFilters() {
   else fail("no aria-label still hardcodes miles");
   if ((mask.match(/uDistMiUnitLong\(\)/g) || []).length >= 5) ok("every distance aria-label takes the unit word from the setting");
   else fail("every distance aria-label takes the unit word from the setting");
+
+  // 5. THE *LIVE* LENGTH FILTER, WHICH EVERY ASSERTION ABOVE IS BLIND TO. Sections 1-4 are about
+  //    `ROUTE_LENGTHS`/`routeLengthLabel` in core -- and every one of those call sites is in
+  //    `RouteFinder`, which is SEED-ONLY and reaches nobody. `lib/DbAreaBrowser.jsx` owns the
+  //    filter a real DB-catalog climber uses, carries its OWN bucket vocabulary, and its labels
+  //    were imperial whatever the setting. So this guard could report the units class green while
+  //    the only length filter anybody can reach said "600–1500 ft" to a metric climber.
+  //
+  //    Lifted from source rather than bundled: DbAreaBrowser pulls in supabase and the whole DB
+  //    layer, and the question here needs neither -- only the bucket table and its formatter.
+  const dbSrc = fs.readFileSync(path.join(ROOT, "lib/DbAreaBrowser.jsx"), "utf8");
+  const dbMask = dbSrc.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  const bm = dbMask.match(/const LEN_BUCKETS = (\[[^\n]*\]);/);
+  if (!bm) dead("ANCHOR LOST: LEN_BUCKETS in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
+  const li = dbMask.indexOf("const lenLabel = (");
+  if (li < 0) dead("ANCHOR LOST: lenLabel in lib/DbAreaBrowser.jsx — the live filter went unchecked.");
+  // It takes (bucket, uElevN, uElevUnit) — the helpers are PARAMETERS, because the app passes them
+  // as props. Injecting them as a closure instead lets the arrow's own params shadow them to
+  // undefined, which is how the first version of this died.
+  const lenLabel = new Function("return " + dbMask.slice(li + "const lenLabel = ".length).split("\n};")[0] + "\n};")();
+  const lbl = (b) => lenLabel(b, M.uElevN, M.uElevUnit);
+  const LB = JSON.parse(bm[1].replace(/'/g, '"'));
+  if (LB.length < 4) dead("fewer than 4 live length buckets — the table moved.");
+  const real = LB.filter((b) => b[0] !== "any");
+
+  // The imperial rendering must not move. This is a units fix, not a copy change, and a climber on
+  // the default setting should see exactly what they saw before.
+  M.__set_UNITS("imperial");
+  const liveImp = real.map(lbl);
+  if (JSON.stringify(liveImp) === JSON.stringify(["< 200 ft", "200–600 ft", "600–1500 ft", "1500+ ft"]))
+    ok("the live filter's imperial labels are unchanged");
+  else fail("the live filter's imperial labels are unchanged  (got " + JSON.stringify(liveImp) + ")");
+
+  M.__set_UNITS("metric");
+  const liveMet = real.map(lbl);
+  if (liveMet.every((s) => / m\b/.test(s))) ok("every live metric length label carries m");
+  else fail("every live metric length label carries m  (got " + JSON.stringify(liveMet) + ")");
+  if (!liveMet.some((s) => /\bft\b/.test(s))) ok("no live metric length label still says ft");
+  else fail("no live metric length label still says ft  (got " + JSON.stringify(liveMet) + ")");
+
+  // THE LOAD-BEARING ONE: the metric label must state the filter's ACTUAL cut points. The stored
+  // column is metric and the query bounds are half-open metres, so a label re-rounded from feet
+  // would name a boundary the filter does not use -- the off-by-one this deliberately did NOT
+  // inherit by consolidating onto routeLengthLabel, whose bounds are inclusive FEET.
+  const boundsAgree = real.every((b) => {
+    const lo = b[3], hi = b[4], s = lbl(b);
+    const nums = (s.match(/\d+/g) || []).map(Number);
+    if (lo == null) return nums.length === 1 && nums[0] === hi;
+    if (hi == null) return nums.length === 1 && nums[0] === lo;
+    return nums.length === 2 && nums[0] === lo && nums[1] === hi;
+  });
+  if (boundsAgree) ok("every metric label states the filter's own half-open metre bounds");
+  else fail("every metric label states the filter's own half-open metre bounds  (got " + JSON.stringify(liveMet) + ")");
+
+  // Anti-revert: the table must carry NUMBERS, not baked strings. A squash restoring the literal
+  // labels changes no identifier, which audit:silent-reverts says it cannot see.
+  if (!/"\s*<?\s*\d+[^"]*\bft\b[^"]*"/.test(bm[1])) ok("the live bucket table bakes in no imperial label");
+  else fail("the live bucket table bakes in no imperial label");
+  // TWO, not three: the definition reads `const lenLabel = (`, which this pattern does not match.
+  // The count is of CALL sites — the bucket chips and the applied-filter chip — and it is 2 because
+  // both must go through the formatter or the filter bar and the chip saying what you filtered by
+  // disagree about units.
+  if ((dbMask.match(/lenLabel\(/g) || []).length >= 2) ok("both live label sites go through lenLabel");
+  else fail("both live label sites go through lenLabel (the chips and the applied-filter chip)");
+
+  // 6. THE PROP CHAIN, because executing the formatter proves it CONVERTS and says nothing about
+  //    whether the helpers reach it. They are props — `lenLabel` calls `uElevUnit()`, so a merge
+  //    that drops them from any link leaves that call undefined and takes the whole panel down.
+  //    NEITHER DIRECTION OF check:dead-props SEES THIS: the component references the prop, and the
+  //    call site passes nothing unread — the exact hole this file records for the float plan. Four
+  //    links, asserted as source, the way check:topo-outage-copy pins its own.
+  const appMask = fs.readFileSync(APP_PATH, "utf8")
+    .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  // A JSX tag here cannot be sliced with [^>]*: these props hold ARROW FUNCTIONS, so `=>` puts a
+  // `>` inside the tag and the match stops in the middle of it. That is not hypothetical — it
+  // failed on a correct app first. Slice to the `/>` that closes the tag at brace depth 0, never a
+  // fixed window, which this file records as encoding a guess about the size of the thing sought.
+  const tagOf = (src, name) => {
+    const i = src.indexOf("<" + name);
+    if (i < 0) return "";
+    let d = 0;
+    for (let k = i; k < src.length; k++) {
+      const c = src[k];
+      if (c === "{") d++;
+      else if (c === "}") d--;
+      else if (c === "/" && src[k + 1] === ">" && d === 0) return src.slice(i, k + 2);
+    }
+    return "";
+  };
+  const dbTag = tagOf(appMask, "DbAreaBrowser"), rfTag = tagOf(dbMask, "RouteFinderPanel");
+  if (!dbTag) dead("ANCHOR LOST: the <DbAreaBrowser> tag — the live filter's wiring went unchecked.");
+  if (!rfTag) dead("ANCHOR LOST: the <RouteFinderPanel> tag — the live filter's wiring went unchecked.");
+  if (/uElevN=\{uElevN\}/.test(dbTag) && /uElevUnit=\{uElevUnit\}/.test(dbTag))
+    ok("App hands the live filter its unit helpers");
+  else fail("App hands the live filter its unit helpers  (link 1: <DbAreaBrowser uElevN= uElevUnit=)");
+  if (/function DbAreaBrowser\(\{[^}]*\buElevN\b[^}]*\buElevUnit\b/.test(dbMask))
+    ok("DbAreaBrowser destructures them");
+  else fail("DbAreaBrowser destructures them  (link 2)");
+  if (/uElevN=\{uElevN\}/.test(rfTag) && /uElevUnit=\{uElevUnit\}/.test(rfTag))
+    ok("...and passes them down to the finder panel");
+  else fail("...and passes them down to the finder panel  (link 3 — the panel would throw on undefined)");
+  if (/function RouteFinderPanel\(\{[^}]*\buElevN\b[^}]*\buElevUnit\b/.test(dbMask))
+    ok("RouteFinderPanel destructures them");
+  else fail("RouteFinderPanel destructures them  (link 4)");
   M.__set_UNITS("imperial");
 }
 

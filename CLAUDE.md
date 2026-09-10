@@ -66,6 +66,7 @@ npm run check:topo-outage-copy # the topo box must not invite the FIRST topo whe
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
+npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -287,6 +288,49 @@ the total when deciding where a new guard belongs.
     edit landed **by checksum** and restoring every file it touched byte-identically. Fails
     **closed** on a renamed `feats`, an array that does not close, or fewer than 5 entries parsed —
     a tour the guard cannot read must never report as a tour with nothing missing.
+- **THE SEED-IDENTITY DEFECT CAME BACK IN `FriendsList`, AND `check:seed-history` IS BLIND TO A
+  THIRD OF THE APP — the second half is the serious one.** The friends overlay's FRIENDS' RECENT
+  ACTIVITY section does exactly what #735 fixed on Home, both halves:
+
+      friends.some(function(c){return c.name===x.a.user;})          // which rows to show
+      var fr=friends.find(function(c){return c.name===x.a.user;});  // Kudos / Message / VOUCH
+
+  `friends` is the DB-backed connections list and `a.user` is a seed author's DISPLAY NAME, so a
+  real climber called "Maya Chen" is shown that seed climber's 11 climbs as her own activity — and
+  `fr` drives the row's **Vouch** button, so she could be vouched for off somebody else's climb.
+  `seedIdentity` appeared **zero** times within 4,000 characters of either site.
+  - **THE GATE COULD NOT SEE IT, and that is measured rather than inferred.** `blank()` wipes
+    comments and strings in one stateful pass, treating **every quote as a string delimiter** — and
+    JSX body text is full of apostrophes (`don't`), so it desynchronises and wipes real code:
+
+        ClimbMatchCore.jsx   41.4% of the file wiped   54 of 283 `function NAME` declarations GONE
+        RouteDetail.jsx      46.2% wiped               33 of 129 GONE
+        ClimbMatch.jsx       37.4% wiped                2 of  10 GONE
+
+    Those 54 sit at **column 0** — `GearTiers`, `CatchLedger`, `EmergencyRescueCard`, `SpeedProfile`,
+    `ReportStats`, `BailoutForm` — and a declaration at column 0 cannot be inside a string or a
+    comment. **Wiping comment text is the point; wiping CODE is a false pass**, and finding that
+    code is this gate's entire job. `check:overlay-discovery`'s entry already records the same
+    blanker returning *"0 overlays where raw returns 22"*.
+  - **SO A GREEN RUN HERE IS A STATEMENT ABOUT TWO THIRDS OF THE APP**, and `FriendsList` is in the
+    wiped third. That is why the defect survived the gate built for it.
+  - **IT WAS FOUND BY ACCIDENT, WHICH IS THE PART TO INTERNALISE.** An apostrophe in an unrelated
+    comment shifted where the desync lands and the two sites became visible for the first time.
+    **Rewording the comment made the guard green again — the tempting fix, and the wrong one**: it
+    would have hidden a live defect and left the gate reporting a clean sweep. The apostrophe was
+    kept until the sites were genuinely gated.
+  - **The gate goes AFTER the comparison** (`c.name===x.a.user&&seedIdentity(c)`), matching the form
+    `ClimbMatch.jsx` uses, because the scan tests the **90 characters following** the match. A gate
+    written *before* it is correct code the guard rejects — worth knowing before "fixing" a red by
+    reordering the wrong way.
+  - **Verified on RAW source, not through the gate**, because a green from the gate proves nothing
+    here: `scripts/oneoff/probe-friendslist-activity-is-seed-gated.mjs` asserts both gated forms and
+    that the two UNGATED strings are absent, plus a non-vacuity check that the 43 seed activity
+    authors still exist. Nothing it reads is blanked, so nothing can be silently skipped.
+  - **THE BLANKER IS NOT REWRITTEN HERE, deliberately.** It is shared with `check:dead-flag-gates`,
+    whose own entry records that a regex strip *"ate real code"* there, so a careless fix is worse
+    than the hole. It needs a JSX-aware pass and its own injection suite — and until it has one,
+    treat this gate's verdict as partial.
 - **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
   has SEVEN tabs and five browser guards walked six.** `NAV` is
   today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
@@ -1257,6 +1301,19 @@ the total when deciding where a new guard belongs.
     it would leak one per run forever, exactly as `check:message-delivery` records.
   - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
     `crew_members`.
+  - **RE-RUN 2026-09-10 after `0180` put a new INSERT policy on `crew_members` — all three still
+    hold.** That is this entry's own trigger firing (*"any policy on `profiles`, `messages` or
+    `crew_members`"*) and being answered rather than noted: `0178`/`0179`/`0180` landed in one day,
+    all three are policy work, and `0180`'s `crew_members` insert gate is the one that arms this.
+    Controls fired first — B could read, message AND crew-invite A **before** the block — so the
+    refusals are attributable; neither refusal disclosed the block; unblocking restored the read.
+    **Teardown verified from OUTSIDE again** rather than trusted, since this guard still prints no
+    teardown line: **0** accounts on the `.invalid` QA domain afterwards, 3 auth users total.
+    - **The three hand-run DB guards were clean in the same sweep** (they have no CI to run them):
+      `check:column-drift` ok, `check:function-columns` ok over 11 writing functions,
+      `check:function-drift` 46 agreeing with 1 declared benign. `check:rls` (static, in the build)
+      ok too — worth running by hand anyway when three policy migrations land at once, because it
+      is the guard those migrations are most likely to break.
   - **RE-RUN 2026-09-04 after `0176` gave `messages` a DELETE policy — all three hold**, and that
     migration is exactly the trigger this line names. Controls fired first (B could read, message
     and crew-invite A **before** the block, so the refusals are attributable), neither refusal
@@ -1474,6 +1531,24 @@ the total when deciding where a new guard belongs.
     `climb_logs` holds exactly one row, owned by **CI Fixture Owner**, on
     `wa_mount_baker_north_ridge`, noted *"CI fixture log."* — inserted by
     `seed-ci-test-fixture.mjs`, which has done so all along.
+    - **THAT CORRECTION WAS TRUE OF THE TABLE AND FALSE OF WHAT THE APP COUNTS, so #1467's original
+      reason was right after all.** Measured 2026-09-09: the row carries **`stars: null`**, and the
+      hydration splits `climb_logs` on exactly that column —
+      `if (row.stars == null) dbConds.push(item); else dbAscents.push(item);` — with only
+      `dbAscents` reaching `logs`. So the fixture's "logged climb" was a CONDITIONS REPORT,
+      `logs.length` was 0, and Profile read **"0 Climbs logged"** on a healthy run. *"0 logged"
+      really did appear in BOTH runs*, which is what makes it unmeasurable, exactly as that commit
+      said. **Having a ROW is not having a LOGGED CLIMB** — the correction settled the wrong
+      artifact, which is this file's own *ask what a count is a count OF* lesson landing on a
+      correction rather than on an audit.
+    - **The fixture was writing a state the app's own form cannot produce**, which is why nothing
+      noticed: `LogAscent` defaults `stars` to 5 and sends `undefined` only for a scout/"Conditions"
+      report, so a `tick_type:"lead"` with null stars is unreachable through the UI. The seeder now
+      writes `stars: 5`. **An existing fixture row is NOT updated by re-running the seeder** (it
+      skips on its `user_id`+`route_id` filter), so the LIVE row was patched by hand at the same
+      time (`stars: 5`, verified by read-back — a 200 is not evidence the data changed). The durable
+      account now has a real logged climb, which is what makes the Profile tile measurable at all. Same class as
+      [[the-fixture-manufactured-a-state-signup-cannot]].
     - **So the disagreement is REAL and its cause is UNKNOWN.** Recording it that way is the point:
       a plausible mechanism that has not been measured is a hypothesis, and this file already
       records three of those shipping as facts. The likeliest remaining candidate is the settle —
@@ -2695,6 +2770,44 @@ the total when deciding where a new guard belongs.
     renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
     the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
     chain.
+- **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
+  blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
+  `npm run build`.
+  - **THE DEFECT WAS A CLAMP DOING THE WORK OF A FORMULA.** `compat()` ended `Math.min(99, …)`
+    while two of its terms were UNCAPPED — shared disciplines ×16, shared objectives ×14 — and the
+    BOUNDED terms alone summed to **78 of that 99**. So a climber with a broad profile saturated
+    before grade contributed anything: **16 of 30 seed pairs sat exactly on 99**, a rich profile
+    scored partner **5.6 and partner 5.14a identically at 99%**, and the My-Objectives pane showed
+    5.10a, 5.11a and 5.12b all at 99. Three surfaces meanwhile promised a blend of five signals.
+  - **THE INVARIANT IS THE EXECUTABLE FORM OF THAT SENTENCE: every signal the screen NAMES must be
+    able to move the number.** That is deliberately not a check on any WEIGHT — pinning weights
+    would fail on any future rebalance, which is how a guard teaches people to ignore it. It builds
+    a base pair and one variant per signal and requires the score to differ; then it parses the
+    on-screen list and requires every item to be a signal it just proved moves. **Reword the copy
+    and the guard follows it; add a promise without wiring it and the guard fails.**
+  - **ONE-DIRECTIONAL on purpose.** Everything named must be real; the reverse is not required,
+    because the sentence is a summary and legitimately leaves `pace` out. Demanding equality would
+    forbid that.
+  - **A MAXIMAL-PAIR ASSERTION CANNOT CATCH A SINGLE UNCAPPED TERM, and the injections are what
+    established that** rather than reading. With one cap reverted the rescale OVERSHOOTS and
+    re-clamps to exactly the top, so *"a maximal pair scores 99"* still passes. What catches it is
+    the saturation count and the swamped-signal test. Two cases were written expecting the wrong
+    assertion and reported `wrong failure` against a guard firing correctly — **the third time this
+    repo has recorded that verdict meaning the NEEDLE was wrong, not the guard.**
+  - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a moved
+    `compat()` (`ANCHOR LOST`), a body that lifted short, core not exporting one of the ten names it
+    needs, a seed population too thin to judge saturation, fewer than three copy surfaces found —
+    which would make the copy-to-behaviour tie vacuous — and fewer than **14 assertions RUN**.
+  - Comments are stripped before every SOURCE test, because this guard's own subject is explained
+    in a comment beside `compat()` that quotes the forbidden `Math.min(99,` shape. A guard that
+    fails on its own documentation is a trap this file records more than once.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
+    its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and judged on
+    the guard's **own failure text** matched against FAIL lines only. The harness also **refuses any
+    expectation that already appears in the GREEN run** — it caught one on the first run, where the
+    needle was the text an assertion prints when it PASSES. Case 1 is the real defect restored
+    verbatim. **Two must stay SILENT**: a legitimate rebalance (`CMAX_DISC` 16 -> 18) and a comment
+    quoting the forbidden shape.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
@@ -4935,6 +5048,41 @@ the total when deciding where a new guard belongs.
   - It does **not** overlap `check:add-route-fields`, which guards the other end: what the form
     asks and whether its keys are in `SS`. A key can be in `SS` — so session-state merging
     works — and still be dropped by approval. That gap is exactly what shipped.
+  - **AND THERE IS A THIRD GAP BETWEEN THEM, WHICH `approach` FELL INTO: A KEY CAN BE IN `SS`,
+    SURVIVE APPROVAL, AND STILL BE THE WRONG SHAPE FOR THE COLUMN IT LANDS IN.** Add-a-climb's
+    Approach control was four chips writing an opaque bucket key — `u1` / `1to3` / `3to6` /
+    `6plus` — and this function inserts `v->>'approach'` **straight into `routes.approach`**,
+    which is **prose**: the walk-in narrative the Planner renders, and the column
+    `audit:approach-scope` and the whole `climbing_route` re-homing work are about. An approved
+    contribution would have rendered its APPROACH section as the literal text **`3to6`**.
+    - **`check:add-route-fields` asks whether a field is STORABLE — a column exists — never
+      whether the value FITS it.** That is the same distinction `check:field-renders` draws
+      against `check:token-boxes`: reaching a screen and fitting the element it reaches are
+      different questions, and here it is *having a column* versus *being the kind of thing that
+      column holds*.
+    - **Measured before acting, and the answer is why it was worth fixing NOW:** those four keys
+      appeared at **exactly one place in the whole app** — the chip array itself — and nothing
+      read them back; and the live catalog is **clean** (0 rows hold a bucket key, and 0 of 1,069
+      populated approaches are 8 characters or shorter,
+      `scripts/oneoff/probe-approach-bucket-keys-in-prose-column.mjs`). Latent, not yet damaging
+      — which by `check:field-renders`' own `SENTINELS` lesson is the best moment to fix a writer
+      and the worst moment to assume it is fine.
+    - **The control was REMOVED, not relabelled**, and that follows from `check:add-route-fields`
+      existing at all: it forbids asking a question you cannot store, so a chip left as a "hint"
+      that submits nothing fails it by design. Nothing is lost — no reader existed, and the
+      disciplines that need a number already have `dist`. **No migration is needed**: with the key
+      absent, `nullif(btrim(coalesce(v->>'approach','')),'')` is simply NULL.
+    - The **imperial labels** on those chips (`< 1 mi` … `6+ mi`) were the reason I opened the
+      file, and they are the smaller half — a control whose value lands in the wrong column is not
+      worth relabelling.
+    - **`source`/`sourceNote` are caught for free by the `SS` test and `approach` is NOT**, because
+      `approach` genuinely is in `SS`. So a re-added chip group would satisfy every other assertion
+      in that guard; it now has a dedicated one, and **that assertion fired on its own explanation
+      first** — the JSX comment left where the control used to be names all four keys, so a raw
+      scan reads the removal as a re-introduction. Comments are stripped, the trap
+      `check:ci-cancel` records. Injection-tested **4/4**
+      (`scripts/oneoff/inject-approach-bucket-cases.mjs`); **case 3 must stay SILENT** and is that
+      near-miss.
 - **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
   rule 1 asks about one function: **does every column a stored function WRITES still exist?**
   #1020 dropped `routes.source`, swept the five call sites its header names, and missed
@@ -10540,8 +10688,53 @@ the correction knows the screen is wrong, and they have no way to report it.
     surface no climber reaches, from an author the census told was reachable.
     **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
     half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
-    label claims. What is still open there is only the units question — those labels are imperial
-    whatever the setting.
+    label claims.
+    - **AND THE UNITS QUESTION THAT WAS LEFT OPEN THERE IS NOW CLOSED**, on the filter every
+      DB-catalog climber actually uses. The bucket table carries **numbers** now — label bounds in
+      feet, query bounds in the metres the column is stored in — and `lenLabel()` renders them
+      through `uElevN`/`uElevUnit`, which arrive **as props** because this file must not import core
+      (core lazy-imports it, and a static import would make that cycle static — the file's own
+      recorded rule, the same reason `C` and `ActionIcon` are props).
+    - **The imperial rendering is byte-for-byte what it was**, asserted rather than eyeballed: this
+      is a units fix, not a copy change. Metric now reads `< 61 m / 61–183 m / 183–457 m / 457+ m`,
+      which are **the filter's own half-open cut points** rather than a re-rounding of the feet.
+    - **DELIBERATELY NOT consolidated onto `routeLengthLabel`**, and the measurement is why: that
+      helper's bounds are **inclusive FEET** (201–599, 600–1499) while these are **half-open
+      METRES**, so it would label a 600 ft route — which IS in this bucket — as `201–599 ft`.
+      Sharing the vocabulary would trade a units defect for an off-by-one one. Reconciling the two
+      bound sets is a separate change, and the seed twin is dead code either way.
+    - **`check:units` had the same blind spot and now has section 5 of `filters`.** Sections 1-4 all
+      assert `ROUTE_LENGTHS`/`routeLengthLabel`, whose every call site is in seed-only `RouteFinder`
+      — so the guard could report the units class green while the only reachable length filter said
+      `600–1500 ft` to a metric climber. The section lifts the table and the formatter from
+      `lib/DbAreaBrowser.jsx` rather than bundling it (that file drags in supabase and the whole DB
+      layer, and the question needs neither), and its load-bearing assertion is that **each metric
+      label states the bucket's own metre bounds** — converting the unit word while leaving the
+      numbers is the half a units fix most easily half-does.
+      - **SECTION 6 IS THE PROP CHAIN, and it is not ceremony.** Executing the formatter proves it
+        CONVERTS and says nothing about whether the helpers reach it — they are props, `lenLabel`
+        calls `uElevUnit()`, and a merge dropping them from any of the four links leaves that call
+        undefined and takes the whole panel down. **Neither direction of `check:dead-props` sees
+        it**: the component references the prop, and the call site passes nothing unread — the exact
+        hole this file records for the float plan.
+      - **A JSX tag here cannot be sliced with `[^>]*`**, and that failed on a correct app before it
+        was fixed: these props hold ARROW FUNCTIONS, so `=>` puts a `>` inside the tag and the match
+        stops mid-way. It slices to the `/>` that closes the tag at brace depth 0 — never a fixed
+        window, which this file records as encoding a guess about the size of the thing sought.
+      - Injection-tested **8/8** (`scripts/oneoff/inject-live-length-filter-cases.mjs`), a sibling
+        suite because the existing one's `FILE` is a single constant pointing at core. **Two must
+        stay SILENT** — a comment quoting the forbidden literal, and a renamed local. The floor
+        rises 28 → 38 with the section: a floor left at the old count cannot see the new half stop
+        asking.
+    - **STILL OPEN, measured and reported rather than half-fixed:** `AddRoute`'s approach buckets
+      (`< 1 mi / 1–3 mi / 3–6 mi / 6+ mi`, `ClimbMatchCore.jsx`) are imperial whatever the setting.
+      They are display-only — the control stores the KEY (`"u1"`) beside a separately canonicalised
+      numeric `dist` — so nothing is written wrong. The reason they are not converted here is that
+      the only distance helper available returns **two decimals**, and `1.61–4.83 km` on a coarse
+      bucket states a precision the bucket does not have; a second rounding vocabulary is how this
+      codebase got four grade parsers. `scripts/oneoff/measure-imperial-control-labels.mjs` is the
+      census — **91 literals, and after this change exactly one control group remains**, the rest
+      being prose or already unit-aware.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
@@ -12038,7 +12231,7 @@ Read it in three bands:
 
 Four functions do the real work; everything else is UI around them. The code is the source of truth for the exact constants/formulas — these are just pointers.
 
-- `compat(a, b)` (~L335) — partner compatibility score (clamped 20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap.
+- `compat(a, b)` (~L335) — partner compatibility score (20–99) from shared disciplines, grade closeness, shared objectives, verification, pace (`hikingSpeedFtHr`), and availability overlap. Every term is BOUNDED and the total is RESCALED onto that range; it does not clamp.
   - **IT SATURATES, AND THE SCREEN'S OWN COPY IS FALSE EXACTLY WHERE THE SEARCH POINTS YOU.**
     Partners says *"Match % blends your shared objectives, grade range, disciplines, availability
     overlap and verified trust"* — and the demo walk shows three climbers at **5.10a, 5.11a and
@@ -12057,11 +12250,33 @@ Four functions do the real work; everything else is UI around them. The code is 
     grade discriminates properly: 62 / 68 / 80 / 65 / 56. **The mechanism works; the saturation
     hides it**, and a 5.6 climber reading as a 99% match to a 5.11a leader is partner-safety
     adjacent.
-  - **REPORTED, NOT FIXED — and the reason is scope, not doubt.** Every candidate repair changes
-    who ranks top of a partner search: capping the two loose terms still totals 138 against a 99
-    ceiling, so it needs a rebalance, and rescaling by the maximum is a different algorithm. That
-    is a product decision. What is NOT in doubt is the measurement, and that the copy currently
-    promises a blend the displayed number does not deliver.
+  - **FIXED, and this bullet used to say REPORTED-NOT-FIXED — read the design before re-opening
+    it.** Every term is now BOUNDED, the maxima are NAMED constants (`CMAX_*`), `COMPAT_MAX` is
+    DERIVED by summing them, and the return RESCALES the above-base portion onto 20..99 instead of
+    clamping. Measured after: the ceiling went **16 of 30 seed pairs to 0**, the rich-profile grade
+    sweep went from **spread 0 to spread 20**, and the My-Objectives pane went from **3 distinct
+    values across 5 climbers to 5**, ordered by grade proximity to ME's 5.10c.
+  - **THE TWO CAPS ARE STATEMENTS, NOT NUMBERS.** Disciplines are a **yes/no** (`CMAX_DISC` 16):
+    the 4th shared discipline does not make somebody a better partner than the 3rd. Objectives keep
+    a little count-sensitivity and stop at 20: a second shared objective adds, a tenth does not.
+  - **THE DESIGN WAS MEASURED RATHER THAN ARGUED**
+    (`scripts/oneoff/measure-compat-designs.mjs`, report-only). Seven candidates were run over the
+    seed population, and two results decided it. **Capping alone does not work** — bounding both
+    terms while keeping the clamp still left 14 of 30 on the ceiling with grade spread **0**,
+    because the bounded maxima summed to 138 against a ceiling of 99. And **the aggregate is not
+    the test**: three candidates removed the ceiling while still ranking the pane by something
+    other than grade proximity. Only the two tightest orderings put Sam (5.10a, closest to ME's
+    5.10c) top and Maya (5.13a) bottom; the shipped one does it with **16 order flips against the
+    alternative's 29**.
+  - **RESCALING IS MONOTONIC, so it reorders nobody who was not already tied on the ceiling** —
+    the flips come from the CAPS, and are reported per candidate so the cost is visible rather than
+    implied. That script also **asserts the shipped `compat()` reproduces the chosen candidate on
+    every pair**, so it stays a live check that the design measured is the design running.
+  - **THE FIX MADE THE EXISTING COPY TRUE RATHER THAN NEEDING NEW COPY.** Three surfaces (the
+    glossary, the Partners explainer and the score tooltip) already said the number *"blends your
+    shared objectives, grade range, disciplines, availability overlap and verified trust"*. That
+    sentence was false while the blend was swamped and is now accurate — and `check:match-percent`
+    ties it to behaviour so it cannot drift again.
   - The script **lifts `compat()` from source with a fail-closed `ANCHOR LOST`** rather than
     re-typing it — a copy would agree with itself whatever the app did, which is the whole
     question — and keeps a deliberate second, unclamped transcription beside it purely to show
@@ -12115,6 +12330,16 @@ firing correctly — a mistake I made twice in one day before making it structur
 2026-09-04 with the key: **41 tables / 484
 columns** (0174 and 0175 account for the growth from 480), all three sections clean, snapshot
 current.
+
+**ALL THREE RE-RUN 2026-09-10, AFTER 0176-0180 LANDED — CLEAN, and the point of recording it is
+that the numbers above had gone stale.** Five migrations merged since that run, four of them RLS
+and policy work, and `check:rls` is **static** — it replays the migration FILES and never asks the
+live database — so these three are the only things that compare the two. Results:
+`check:column-drift` **41 tables / 485 columns**, all three sections clean and the committed
+snapshot matching; `check:function-columns` **11 writing functions, 6 insert lists, 9 update
+lists**, every column exists; `check:function-drift` **47 live functions, 46 agreeing** plus the
+one declared `handle_new_user`. A negative result, which is what these exist to produce — and it
+is worth writing down, because otherwise the next session either re-derives it or quotes 484.
 
 **A worktree has no `.env` either, and that is the same trap one file over.** The instruction
 above says to fix the link *"the way `.env` and `.env.local` already are"* — which presumes they
