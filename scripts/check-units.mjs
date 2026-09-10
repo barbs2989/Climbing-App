@@ -58,7 +58,7 @@ const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
 
-const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters"];
+const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters", "profile"];
 // FLOORS ARE PER SECTION, because ONE total cannot see a section that quietly stopped asking:
 // five healthy sections carry the number while the sixth contributes nothing, and the run prints
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
@@ -68,7 +68,7 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
-const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28 };
+const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 5 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -821,7 +821,80 @@ async function runVariants() {
 }
 
 // =======================================================================================
-const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters };
+// =======================================================================================
+// PROFILE — A DISTANCE BETWEEN TWO PEOPLE, AND A WILDFIRE RADIUS.
+//
+// A SEVENTH MEMBER, found the day the other six were promoted. This guard's own header says an
+// instance fixed by hand is not a class closed and to re-check for new members; this is that.
+// Three sites rendered a raw number beside a hardcoded imperial unit:
+//
+//   FullProfile header             {dist.toFixed(1)} mi away
+//   FullProfile compatibility card {dist.toFixed(1)} miles away
+//   FireNearRoute overflow line    and N more within {radiusMi} miles
+//
+// EACH HAD A CORRECT SIBLING BESIDE IT, which is what makes them misses rather than a missing
+// convention: the partner card has always written `uDistMi(+dist.toFixed(1))+" away"`, and
+// FireNearRoute converts every individual fire's distance two lines above the one it did not.
+// Two spellings of one unit inside FullProfile alone.
+//
+// SOURCE-ONLY, deliberately. FullProfile ends in `createPortal(..., document.body)`, which the
+// server renderer refuses, and this guard bundles react-dom IN — so the portal cannot be
+// flattened from outside the bundle the way a standalone probe does it. The RENDER proof lives in
+// scripts/oneoff/probe-full-profile-distance-honours-units.mjs (both units, 195.8 mi -> 315.1 km,
+// injection-tested 4/4). What is asserted here is the half a stale-base squash takes: a STRING
+// and no identifier, which audit:silent-reverts cannot see.
+function runProfile() {
+  section = "profile";
+
+  // ── the general rule, which is what makes this more than three hand-picked sites. A NUMBER
+  //    rendered immediately before a literal distance unit cannot convert, whatever the setting
+  //    says. Measured across every app + lib source: exactly these three, and zero today.
+  const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
+    .concat(fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.jsx$/.test(f)).map((f) => "lib/" + f))
+    .filter((f) => fs.existsSync(path.join(ROOT, f)));
+  if (files.length >= 10) ok(`${files.length} source files walked for hardcoded units`);
+  else fail(`only ${files.length} source file(s) found — the sweep below would be vacuous`);
+
+  let raw = [];
+  for (const rel of files) {
+    const s = fs.readFileSync(path.join(ROOT, rel), "utf8");
+    for (const m of s.matchAll(/\{[^{}]{0,80}\}\s*(?:mi|miles|ft|feet|lb)\b/g)) {
+      if (/u(DistMi|Elev|Mass)\s*\(/.test(m[0])) continue;   // already converted
+      raw.push(`${rel}: ${JSON.stringify(m[0].replace(/\s+/g, " "))}`);
+    }
+  }
+  if (!raw.length) ok("no rendered value sits beside a hardcoded mi/ft/lb");
+  else fail(`${raw.length} rendered value(s) print a hardcoded unit and cannot convert: ${raw.join("; ")}`);
+
+  // ── FullProfile: both readouts. Matched on the HELPER, never on one spelling of its argument —
+  //    `uDistMi(dist)` is a different rounding, not a units defect, and pinning the expression
+  //    would forbid improving it (the `disclaimer-reworded` lesson).
+  const core = fs.readFileSync(CORE_PATH, "utf8");
+  const a = core.indexOf("function FullProfile");
+  const b = core.indexOf("\nfunction ", a + 10);
+  const fp = a < 0 ? "" : core.slice(a, b < 0 ? core.length : b);
+  if (fp.length > 4000) ok(`FullProfile lifted (${fp.length} chars)`);
+  else fail(`ANCHOR LOST: FullProfile lifted ${fp.length} chars — the assertions below would be vacuous`);
+
+  const nHelper = (fp.match(/uDistMi\(/g) || []).length;
+  if (nHelper >= 2) ok(`FullProfile routes ${nHelper} distance readouts through uDistMi`);
+  else fail(`FullProfile calls uDistMi ${nHelper} time(s) — the header and the compatibility card both render one`);
+
+  // A rule that only ever demands ABSENCE is satisfied by deleting the feature, so both sites
+  // must still be REACHABLE.
+  if (/dist!=null&&isFinite\(dist\)/.test(fp)) ok("the header still renders a distance when one resolves");
+  else fail("FullProfile's header distance gate is gone — the readout may have been deleted rather than converted");
+  if (/COMPATIBILITY WITH YOU/.test(fp)) ok("the compatibility card is still on the profile");
+  else fail("the compatibility card is gone — its distance readout cannot be checked");
+
+  // ── FireNearRoute: the overflow line, whose sibling two lines up was always correct.
+  const fire = fs.readFileSync(path.join(ROOT, "lib", "FireNearRoute.jsx"), "utf8");
+  if (/more within \{uDistMi\(/.test(fire)) ok("the fire panel's radius converts");
+  else fail('the fire panel prints its radius unconverted ("and N more within X miles") while converting every fire beside it');
+}
+
+// =======================================================================================
+const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters, profile: runProfile };
 
 try {
   for (const s of RUN) await RUNNERS[s]();
