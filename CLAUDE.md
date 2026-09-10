@@ -4115,6 +4115,51 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **FOUR MORE MAPPINGS NAMED A CLIMBER THE WAY THEY DID NOT ASK, AND THE OBVIOUS SWEEP WOULD HAVE
+  MISSED THE WORST ONE.** `PARTNER_COLS` states the contract in its own comment — *"`show_name` is on
+  every list that becomes a CLIMBER OBJECT, because `pubName()` decides between the display name and
+  the @handle from it — a select that omits it makes the column arrive undefined, which reads as
+  false, which silently ignores the climber's own setting."* #1619 fixed the HOOK and #1681 fixed
+  `_asMember` for groups. Four more mappings **had the fields and dropped or forged them**.
+  - **THE SWEEP TO RUN IS "does this mapping carry the fields", NOT "does this call `pubName`".** The
+    four fail in three different directions and only one of them is a missing `pubName` call:
+    - **A — the crew INVITE SEARCH pool hardcoded `showName:true` and then called `pubName(c)`.** It
+      goes THROUGH the protective function with a forged input, so it publishes the real name of
+      every climber in the results who turned the switch off **while reading as compliant at the
+      call site**. Worse than skipping `pubName`, because nothing about the code looks wrong. This
+      is the one a grep for missing `pubName` calls cannot see, and it is the widest audience —
+      anyone can type a name into the crew invite search.
+    - **B — `crewMemberById` dropped `username` AND `showName`**, so `pubName` fell through to a
+      handle **derived from the real name**: *"Robin Belay"* → `@robinbelay`, which need not be
+      theirs. That object feeds the chat header, the avatar strip, the safety brief and the trip
+      recap. Same defect `RealClimberRow` already records, in a third place.
+    - **C — the crew JOIN-REQUEST card rendered a bare `{c.name}`** for a real profile. The requester
+      is a stranger to the organiser, which is exactly when a climber would have the switch off.
+    - **D — the open-crew ORGANISER chip carried `username` but not `showName`**, so a climber who
+      WANTS their name shown was always reduced to a handle. Under-claiming rather than a leak — and
+      the same field, the same contract, and the reason the rule must be stated as *carry the
+      fields* rather than *hide the name*.
+  - **THE TWO HOOKS HAVE DIFFERENT SHAPES AND THE FIX DEPENDS ON WHICH.** `useProfilesByIds` MAPS
+    camelCase (`showName: !!p.show_name`, additive since #1619), so B and D read `pr.showName`;
+    `useProfileSearch` returns **RAW** rows, so A reads `rp.show_name`. Get that backwards and the
+    field is `undefined`, reads as false, and **the fix is INERT while every call site still looks
+    correct**. The probe pins the hook's mapping for that reason, and `hook-stops-mapping` is the
+    injection case that matters most — it leaves all four call sites untouched and makes three of
+    the four fixes do nothing.
+  - **SECTION 4 IS THE LOAD-BEARING HALF.** A "fix" that made everything a handle satisfies every
+    leak assertion above and quietly deletes a feature climbers opted into, so a climber with the
+    switch ON must still be shown by **both** helpers, and a row with nothing usable must still
+    degrade to a label rather than to empty.
+  - `scripts/oneoff/probe-a-climber-is-named-the-way-they-asked.mjs` — 16 assertions, no browser, no
+    DB, `pubName`/`pubFirst` lifted from source by balancing braces. Injection-tested **8/8**
+    (`scripts/oneoff/inject-named-as-they-asked-cases.mjs`), each case proving its edit landed **by
+    checksum** and restoring byte-identically. **Two must stay SILENT** — a comment quoting the
+    forged constant, and the snake_case read in the invite pool, which is CORRECT there.
+  - The usual *"refuse an expectation that matches the clean run"* guard is deliberately NOT the
+    mechanism in that suite, and it says so: this probe prints the same LABEL on its ok line and its
+    FAIL line, so every expectation legitimately appears in a green run. What protects against the
+    mistake instead is matching **FAIL lines only** — an expectation written against passing text
+    then never matches and the case reports MISSED rather than a false catch.
 - **A REQUEST TO JOIN WAS A MEMBERSHIP, AND IT READ THE FLOAT PLAN.** `0036` writes the intended
   model into its own comment — *"crews holds float_plan/meet_place/meet_time (**sensitive** … 'shared
   with your emergency contact… can call for help if you're overdue'). **Base-table read is
