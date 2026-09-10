@@ -50,6 +50,20 @@ const dead = (what) => {
   process.exit(1);
 };
 
+// ONE PARSE PER FILE, SHARED BY SECTIONS 7 AND 8. These are 400 kB JSX files and a build gate is
+// paid by every author and every CI run; check:waypoint-placement records what two independent
+// traversals of the same source cost. A parse failure is fatal rather than skipped -- a file that
+// did not parse contributes no findings and would read as a clean one.
+const _asts = new Map();
+const astOf = (name, code) => {
+  if (_asts.has(name)) return _asts.get(name);
+  let ast;
+  try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  catch (e) { dead(`${name} does not parse (${e && e.message}) — a file that did not parse yields no findings and must never read clean`); }
+  _asts.set(name, ast);
+  return ast;
+};
+
 try {
   execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
@@ -447,9 +461,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     const LABELS = new Set(TRUST_TIERS.map((t) => t.label));
     const found = [];
     for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app]]) {
-      let ast;
-      try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
-      catch (e) { dead(`${name} does not parse (${e && e.message}) — a ladder cannot be counted in a file that did not parse`); }
+      const ast = astOf(name, code);
       const seen = new Set();
       (function walk(n) {
         if (!n || typeof n !== "object") return;
@@ -491,6 +503,108 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     const got = trustTier(t.min);
     if (!got || got.label !== t.label) fail(`trustTier(${t.min}) returned ${got && got.label} rather than "${t.label}" — the ladder is declared and not used`);
     else ok(`trustTier(${t.min}) selects "${t.label}"`);
+  }
+}
+
+// SECTION 8. Section 7 bounds the four bars that only ever SPEAK -- and it walks TRUST_TIERS, so a
+// bar stated in PROSE, outside that array, is invisible to it by construction. Not hypothetical:
+// the same change that swept the card's goal, its denominator, the "Well-trusted" line and the
+// badge ladder onto TRUST_TIERS left a notification reading "Finish verification to lift your
+// trust score to 90+" -- six above the 84 a climber can earn, twenty-five above the top tier, and
+// promised for an action worth five points. An instance fixed by hand is not a class closed, with
+// section 7's own enumeration of what it swept as the evidence for what it did not.
+//
+// THE DISCRIMINATOR IS THE SCALE, NOT A VOCABULARY OF THRESHOLD WORDS, and it was MEASURED rather
+// than chosen (scripts/oneoff/measure-trust-bars-stated-in-prose.mjs -- re-run it rather than
+// quoting these figures). Of 36,328 string literals across 50 rendering sources, 91 mention trust
+// and -- before this fix -- exactly TWO also carried a number. One of those is a DATE: "Did your
+// crew make Schoolroom on May 24? ... reliability feeds your trust score", so it is the ONE that
+// survives, and a rule firing on any number in a trust sentence now reports it and nothing else.
+// A deny-list of threshold phrasings (to N, N+, at least N) is no better: it is beaten by one more
+// phrasing, which this file records four separate times for check:outage's rule 2 alone.
+//   A trust SCORE lives on the model's own scale, so the band in which a number cannot be anything
+// else is (earnable ceiling, SERVER_TRUST_CAP]. A date or a reachable bar is at or below the
+// ceiling and stays silent; a year or a row count is off the scale entirely and stays silent;
+// 85..99 is score-shaped and unreachable. Both bounds are DERIVED from the model and the
+// migrations, so the band moves by itself the day a verification the app cannot currently grant
+// becomes earnable -- and a bar that becomes reachable stops being a finding with nobody editing
+// this rule, which is the contract sections 6 and 7 already hold.
+//
+// BABEL, AND THE CONCATENATION IS WHY THIS IS NOT A GREP. A comment quoting the defect must not
+// fire it -- three checkers here were fooled in one day by the comment written to explain the very
+// fix they were checking -- and the group gate's own repair, "Trust " + GROUP_TRUST_MIN + "+",
+// puts NO digit in any literal. So the derived form is invisible by CONSTRUCTION rather than by
+// exemption, which is what stops this rule forbidding the fix section 6 records.
+//
+// SCOPED TO EVERY FILE THAT RENDERS, not to the two the defect happened to be in: "a class is
+// closed only over the files somebody actually looked at" is what left the profile-wipe in
+// lib/auth.js outside a census scoped to lib/db.js.
+{
+  /* NO ANCHOR-LOST CHECK ON THESE TWO, AND THE INJECTION IS WHAT PROVED IT UNREACHABLE. Both
+     were guarded here first. Section 3 EXECUTES the model and section 7 reads the same cap, so a
+     missing SERVER_TRUST_CAP or serverTrustScore kills the run long before this block: the case
+     that renamed the export died in section 3 with "the cap is undefined in JS and 99 in 0038",
+     which is the better message anyway. An injection that produces a different failure is not a
+     catch, and dead code in a guard reads as coverage -- the shape check:waypoint-dedupe records
+     for a self-comparison it deleted for exactly this reason. Section 8's own fail-closed paths
+     are the three floors below, which nothing above it covers. */
+  const { SERVER_TRUST_CAP, serverTrustScore } = mod;
+
+  const { types: reach8, scanned: migs8 } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
+  if (migs8 < 20) dead(`only ${migs8} migration(s) scanned - an unscanned tree reports every verification as unreachable, which WIDENS the band and manufactures findings`);
+  if (!reach8.size) dead("no verification type parsed as reachable at all - a broken scan, not a finding");
+  const ceil8 = earnableCeiling(serverTrustScore, reach8);
+  if (!(ceil8 > 0) || ceil8 > SERVER_TRUST_CAP) dead(`the earnable ceiling (${ceil8}) is not inside the model's cap (${SERVER_TRUST_CAP}) - the model did not load`);
+
+  const files8 = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]
+    .concat(fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.(jsx|js)$/.test(f)).map((f) => "lib/" + f));
+
+  let scanned8 = 0, lits = 0, trustLits = 0;
+  const bars = [];
+  for (const rel of files8) {
+    let code;
+    try { code = fs.readFileSync(path.join(ROOT, rel), "utf8"); } catch { continue; }
+    const ast = astOf(rel, code);
+    scanned8++;
+    const seen = new Set();
+    (function walk(n) {
+      if (!n || typeof n !== "object") return;
+      if (Array.isArray(n)) { for (const c of n) walk(c); return; }
+      let v = null;
+      if (n.type === "StringLiteral") v = n.value;
+      else if (n.type === "TemplateElement") v = (n.value && n.value.cooked) || "";
+      if (v !== null) {
+        lits++;
+        if (/trust/i.test(v)) {
+          trustLits++;
+          for (const d of v.match(/\d+/g) || []) {
+            const num = Number(d);
+            if (num > ceil8 && num <= SERVER_TRUST_CAP) bars.push({ rel, num, v });
+          }
+        }
+      }
+      for (const k of Object.keys(n)) {
+        if (k === "loc" || k === "leadingComments" || k === "trailingComments" || k === "innerComments") continue;
+        const c = n[k];
+        if (c && typeof c === "object" && !seen.has(c)) { seen.add(c); walk(c); }
+      }
+    })(ast.program);
+  }
+
+  // FAIL CLOSED. A short walk prints the same reassuring "no bar found" as a clean tree.
+  if (scanned8 < 4) dead(`only ${scanned8} rendering source(s) walked - the file list broke`);
+  if (lits < 5000) dead(`only ${lits} string literal(s) walked across ${scanned8} file(s) - this app has tens of thousands, so the traversal broke`);
+  if (!trustLits) dead(`no string literal mentions trust at all across ${lits} literal(s) - the needle cannot fire, so a clean result means nothing`);
+
+  cases++;
+  if (ceil8 >= SERVER_TRUST_CAP) {
+    ok(`every score on the model's scale is earnable (ceiling ${ceil8}, cap ${SERVER_TRUST_CAP}), so there is no unreachable band and this rule is inert by construction`);
+  } else if (bars.length) {
+    fail(`${bars.length} copy string(s) name a trust bar in ${ceil8 + 1}..${SERVER_TRUST_CAP}, above the ${ceil8} any climber can earn - `
+      + bars.map((b) => `${b.rel}: ${b.num} in ${JSON.stringify(b.v.slice(0, 90))}`).join("; ")
+      + ". No account can ever be shown that number. State the effect rather than a destination, or read TRUST_GOAL if a reachable bar is meant");
+  } else {
+    ok(`no copy names a trust bar in the unreachable band ${ceil8 + 1}..${SERVER_TRUST_CAP} - ${trustLits} trust literal(s) of ${lits} across ${scanned8} file(s)`);
   }
 }
 
