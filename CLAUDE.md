@@ -2510,6 +2510,62 @@ the total when deciding where a new guard belongs.
     are over-reach in the other direction** — marking every row hand-added, gating "Log a route",
     and dropping the chip's leading glyph — because a mark applied to everything says nothing, and
     a guard that only ever demands MORE marking would drive exactly that.
+  - **A FOURTH INVARIANT, AND THE GUARD'S OWN ASSERTION WAS FORBIDDING IT.** Section 3 was written
+    for *a step already DONE*; **"Add a cert" is the same defect arriving by the other route — a
+    step that CANNOT BE TAKEN.** The server model scores club/guide credentials off
+    `verification_records` at `status='verified'`, and **nothing in this app can write one**: `0085`
+    pins every client write to `'pending'` and `verify_my_email()` is the only definer that writes
+    `'verified'`, hardcoding `'email'`. So under *"Raise it with:"* a signed-in climber was told to
+    do something that could not move the number above it.
+    - **IT WAS TRUE WHEN IT WAS WRITTEN, which is the whole lesson.** The card then showed
+      `vScore`, and the **CLIENT** model scores `(c.certifications||[]).length` — the very array
+      `openEdit` edits — so the row genuinely raised it. **#1676 pointed the card at the SERVER
+      score and falsified the advice beside it without touching this file.** *A promise is only
+      true relative to a build*, which this file already records for `check:policy-claims` §3 —
+      arriving here as a claim broken by a change to a **different** subsystem.
+    - **AND THE GUARD HAD GONE STALE WITH IT.** Section 3 asserted *"Add a cert stays
+      unconditional"*, correct under the client score and, once the card moved, **an assertion
+      keeping a false claim alive and failing the fix**. That is the shape `check:policy-claims`
+      records (*"the stale assertion was REMOVED, not reworded"*), this time **inside a guard**.
+      When a guard argues with a repair, ask what its assertion was written against.
+    - **DERIVED, NEVER TYPED.** The rule asks `scripts/lib/verification-reach.mjs` which types some
+      definer can set to `'verified'`, so it is **two-directional by construction**: while nothing
+      can attest a credential the row must be gated, and **the day one can, the guard demands the
+      row back**. `credential-becomes-verifiable` is that case — a guard holding a hardcoded *"certs
+      are impossible"* stays quiet there and is wrong.
+    - **`!uid` is exactly the line between the two models** (`myTrustScore` is the server score
+      whenever there is a uid and `vScore` otherwise), so the **demo keeps the row** — a cert really
+      does raise the number there. Gating it globally would have removed correct advice.
+  - **SECTION 4 — THE BADGE BESIDE EVERY CLIMBER NAMED A SCALE THAT DOES NOT EXIST.** `TrustBadge`'s
+    tooltip read *"Trust score (0–100): built from **ID verification**, partner vouches, belay
+    catches logged, climbs logged and **certifications**"* — leading with the two components that
+    are 0 for everybody forever, and stating a range wrong twice over: the model caps at **99**, and
+    only **84** of its 104 points can be earned at all. The rule is the same derived one, plus two
+    that keep it honest: a **non-vacuity** floor (the tooltip must still name ≥3 inputs a climber
+    can move, or "corrected by deletion" passes) and **no hardcoded range** — a literal scale bound
+    typed into a title string is a hand-copy nobody re-derives, which is how the old one came to
+    describe a scale that had never been measured.
+  - **THE TIERS ARE MEASURED AND DELIBERATELY NOT TOUCHED.**
+    `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles the app's own model and parses
+    the migrations: **ceiling 84, day one 5, partnerless 54**, with `ID verified 0/10` and
+    `Certifications 0/10` unfillable. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its
+    *"✓ Well-trusted — partners can rely on your record"* and the badge's *"Highly Trusted"* (≥90)
+    are **all unreachable — no climber can ever be shown any of them**, and the progress bar caps at
+    93%. *"Trusted"* (≥70) is barely better: a climber with two years, 12 vouches, 60 logs, 20
+    reports and 9 catches scores **65**, so they read *"Building Trust"*. **Where those four bars
+    belong is a product decision with app-wide visible effect** — it changes what every climber is
+    *called* on every screen — so it is raised rather than swept, the same shape the group-trust
+    threshold was put to the user as. The guard asserts none of them; a guard failing on today's
+    tiers would only break the build while the question is open.
+  - Injection-tested **10/10** for these two sections
+    (`scripts/oneoff/inject-profile-claims-reach-cases.mjs`), each case proving its edit landed **by
+    checksum**, restoring byte-identically, and judged on the guard's **own FAIL lines** — the
+    harness captures the clean run first and **refuses any expectation already present in it**, the
+    structural form of a mistake this repo has made twice. **Three must stay SILENT**: a reworded
+    tooltip (a guard pinned to one phrasing forbids improving it), a comment quoting the pre-fix
+    entry (section 3 reads the list through Babel, so comments are invisible — three checkers here
+    have been fooled by the comment explaining the very fix they were checking), and an unrelated
+    new row.
 - **`check:offline-claims`** asserts that **an offline promise is backed by the write that makes it
   true**. Static (Babel over the two app files plus a source read of `lib/db.js` and
   `lib/offline.js`), so it sits in `npm run build`, at **1.34x `check:policy-claims`**.
