@@ -1047,7 +1047,15 @@ function TrailheadCard({route,onEdit}){
   if(!name&&!hasCoord)return null;
   const tiles=[];
   if(elev!=null)tiles.push(["Elevation",uElev(elev),C.blue]);
-  if(route.distKm!=null&&route.distKm>0)tiles.push(["Approach (one way)",uDist(route.distKm),C.green]);
+  /* effDistKm, NOT the raw column, and the label is why: this tile says "one way" while
+     `dist_km` holds two conventions at once — on 215 of the 335 WA routes where the two figures
+     differ, the stored value is the ROUND TRIP, so the raw read labelled a there-and-back total
+     as a one-way walk. The TECH STATS tile on this same route already reads effDistKm, so the
+     page was printing two different one-way approaches for one climb. This changes only WHICH
+     SOURCE a reader prefers — lib/outing.js's own contract — and settles nothing about the
+     column, which CLAUDE.md forbids normalising in bulk. */
+  const _appKm=effDistKm(route);
+  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);
   if(toPeak)tiles.push(["To the peak",toPeak.dir+" "+uDistMi(Math.round(toPeak.mi*10)/10),C.orange]);
   const dir=al.trailheadDirection;
   const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
