@@ -49,10 +49,21 @@
 // prints: a synthetic probe asserting a phrase the app does not contain is reported as
 // want-TRUE and named, then deleted. Re-do that before believing a future zero.
 //
-// COVERAGE IS 41 OF 79 AND THE REST ARE NOT CLEAN. Most of the 38 measure geometry, control
-// names, console output or counts rather than copy -- but some asserts on accessible NAMES
-// (aria-label), which this does not read, so do not quote the zero as a statement about the
-// whole corpus. `--why=<file>` says what the extractor saw in any one of them.
+// COVERAGE IS 41 OF 79 AND THE REST ARE NOT CLEAN, so do not quote the zero as a statement
+// about the whole corpus. `--why=<file>` says what the extractor saw in any one of them.
+//
+// THE 38 ARE CLASSIFIED RATHER THAN DESCRIBED, and that is a correction to this header. It
+// used to say "some asserts on accessible NAMES (aria-label), which this does not read" --
+// true, and an invitation to widen the extractor to cover them. MEASURE THE CLASS BEFORE
+// BUILDING THE DETECTOR: that widening reaches 3 probes and 6 anchors. 15 more read
+// aria-label GENERICALLY (query every [aria-label], then dump or count) so they carry no
+// anchor to rot, and 20 never touch it. A detector for a class of three is the thing this
+// repo keeps refusing to build, so the report NAMES the three instead -- six anchors is
+// cheaper to check by hand, which is what was done: `aria-label="Primary"`, `"Help"` and
+// `"Photo viewer"` are verbatim in source; the crew sub-tab bar builds `label` or
+// `label + ", " + count`, both matched by its probe's `^(Crews|Friends|Groups|Requests)(,|$)`;
+// and the waypoint row's `"Show " + name + " on the map"` sits inside a clickable() spread,
+// which supplies the role its selector also demands. ZERO rotted, 2026-09-10.
 //
 //   node scripts/oneoff/measure-browser-probe-anchor-rot.mjs
 //   node scripts/oneoff/measure-browser-probe-anchor-rot.mjs --all
@@ -413,6 +424,28 @@ if (WHY) {
 
 const isProse = (s) => s.trim().split(/\s+/).length >= 3 && !/^[A-Z][a-z]+ [A-Z]/.test(s.trim());
 
+// WHAT THE UNMEASURED BUCKET IS, rather than a guess about it. This block used to print a
+// sentence saying "some asserts on accessible NAMES (aria-label), which this does not read"
+// -- which invites a widening of the extractor to cover them. Measured, that widening would
+// reach THREE probes and six anchors, and a detector for a class that small is the thing this
+// repo keeps refusing to build. So it classifies instead and NAMES the three, which is what
+// lets a reader settle them by hand in minutes (all six were: zero rotted, 2026-09-10).
+//
+// MENTIONING IS NOT ASSERTING, and that is the whole distinction: 19 of the 38 mention
+// aria-label and only these three carry a literal, checkable name. The rest query every
+// [aria-label] element and dump or count them, so there is no anchor there to rot.
+const nameAnchors = (src) => {
+  const hits = [];
+  for (const m of src.matchAll(/\[aria-label(?:\^|\*|\$)?=\s*["'`]([^"'`]{2,})["'`]\]/g)) hits.push(m[1]);
+  for (const m of src.matchAll(/tapByName\s*\(\s*[A-Za-z_$][\w$]*\s*,\s*["'`]([^"'`]{2,})["'`]/g)) hits.push(m[1]);
+  for (const m of src.matchAll(/\/\^?\(([A-Za-z ,|]{4,})\)[^/]*\/[gimsuy]*\.test\([^)]*aria-label/g)) hits.push(m[1]);
+  if (hits.length) return { kind: "literal", names: [...new Set(hits)] };
+  const generic =
+    /querySelectorAll\(\s*["'`]\[aria-label\]["'`]\s*\)/.test(src) ||
+    /getAttribute\(\s*["']aria-label["']\s*\)/.test(src);
+  return { kind: generic ? "generic" : "none", names: [] };
+};
+
 const rows = [];          // one entry per assertion SITE
 const notMeasured = [];
 const didNotParse = [];
@@ -423,7 +456,7 @@ for (const f of probes) {
   if (sites === null) { didNotParse.push(f); continue; }
   if (!sites.length) {
     // FAIL CLOSED: extracting nothing is not the same as finding nothing wrong.
-    notMeasured.push(f);
+    notMeasured.push({ file: f, ...nameAnchors(src) });
     continue;
   }
   for (const s of sites) {
@@ -492,10 +525,22 @@ if (didNotParse.length) {
   didNotParse.forEach((f) => console.log("  " + f));
 }
 if (notMeasured.length) {
+  // CLASSIFIED, NOT DESCRIBED. A sentence saying "some of these assert on accessible names"
+  // is an invitation to widen the extractor; the counts say what that would actually buy.
+  const lit = notMeasured.filter((x) => x.kind === "literal");
+  const gen = notMeasured.filter((x) => x.kind === "generic");
+  const non = notMeasured.filter((x) => x.kind === "none");
   console.log(`\nNOT MEASURED - no rendered-text anchor could be extracted, so these are NOT clean.`);
   console.log(`Most measure geometry, control names, console output or counts rather than copy;`);
   console.log(`--why=<file> says what the extractor saw before believing that of any one of them.`);
-  notMeasured.forEach((f) => console.log("  " + f));
+  console.log(`  carries a LITERAL aria-label anchor : ${lit.length}   <- checkable BY HAND, named below`);
+  console.log(`  reads aria-label GENERICALLY only   : ${gen.length}   <- queries every [aria-label]: no anchor to rot`);
+  console.log(`  no accessible-name anchor at all    : ${non.length}`);
+  notMeasured.forEach((x) => console.log("  " + x.file));
+  if (lit.length) {
+    console.log(`\nThe literal accessible-name anchors, so they can be settled without widening this:`);
+    lit.forEach((x) => console.log(`  ${x.file}\n      ${x.names.map((n) => JSON.stringify(n)).join("  ")}`));
+  }
 }
 
 console.log(`\nThis is a READING LIST, not a defect count. A phrase can be absent from the app`);
