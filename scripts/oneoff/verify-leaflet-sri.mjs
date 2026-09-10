@@ -11,9 +11,11 @@ import { spawn } from "node:child_process";
 import net from "node:net";
 import fs from "node:fs";
 import pwPkg from "/Users/nathanbarber/dev/Climbing-App/node_modules/playwright-core/index.js";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 const { chromium } = pwPkg;
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/top-contributors-photo-crew-resume";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PAGE = ROOT + "/sri-probe.html";
 const MAPKIT = ROOT + "/lib/mapKit.jsx";
 const original = fs.readFileSync(MAPKIT, "utf8");

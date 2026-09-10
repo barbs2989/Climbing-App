@@ -41,11 +41,17 @@ export const offset = (lat, lng, m, bearing) => {
 };
 
 /** { centre, isMax, note } — isMax is null when there is not enough data to say. */
-export async function summitProbe(lat, lng) {
-  const centre = await elevationAt(lat, lng);
+/** `tries` is passed straight through to every reading. A caller that REFUSES on a null — a
+    repair script, say — wants a more patient measurement than a sweep does: 3DEP goes
+    intermittently unavailable under load, and a nine-point probe needs all nine, so the odds of
+    a clean pass fall off fast. Measured while applying one: at the default four tries, three
+    consecutive runs refused on DIFFERENT peaks while the service was answering ~2 requests in 5.
+    Being more patient does not weaken the gate — the gate is still "no reading, no write". */
+export async function summitProbe(lat, lng, tries = 4) {
+  const centre = await elevationAt(lat, lng, tries);
   if (centre == null) return { centre: null, isMax: null, note: "no elevation data" };
   const ring = [];
-  for (const b of BEARINGS) { const [y, x] = offset(lat, lng, RING_M, b); ring.push(await elevationAt(y, x)); }
+  for (const b of BEARINGS) { const [y, x] = offset(lat, lng, RING_M, b); ring.push(await elevationAt(y, x, tries)); }
   const known = ring.filter(v => v != null);
   if (known.length < 6) return { centre, isMax: null, note: `incomplete ring (${known.length}/8)` };
   const above = known.filter(v => v > centre + NOISE_FT);

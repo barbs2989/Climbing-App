@@ -75,6 +75,23 @@ const SEED_ONLY = {
   GettingThere:    "no DB counterpart, and does not need one: its only unique capability — a " +
                    "directions link to the crag — was ported into DbAreaBrowser. The rest showed " +
                    "an arbitrary representative route's `access` as the AREA's fact.",
+  // ── found only once the TERNARY spelling of the seed branch was pruned. All three are the
+  //    seed half of `USE_DB ? <Db…/> : <…/>` in ClimbMatch.jsx, so they were counted live for
+  //    this guard's whole life while rendering for nobody.
+  Guides:          "seed guide directory, the seed half of `USE_DB ? <DbGuides/> : <Guides/>`. " +
+                   "Superseded by DbGuides in lib/DbGuides.jsx.",
+  GuideDashboard:  "seed guide dashboard, the seed half of a USE_DB ternary. Superseded by " +
+                   "DbGuideDashboard in lib/DbGuideDashboard.jsx.",
+  GuideApply:      "seed guide application, the seed half of a USE_DB ternary. Superseded by " +
+                   "DbGuideApply in lib/DbGuideApply.jsx.",
+  // TRANSITIVELY dead: its only render site is inside Guides. Worth its own entry because the
+  // reason differs — there is nothing to supersede it WITH.
+  AvailCal:        "no DB counterpart, and could not have one. The live inquiry flow in " +
+                   "lib/DbGuides.jsx takes dates as a FREE-TEXT field (placeholder \"Dates you're " +
+                   "thinking of\") rather than from a guide's published availability, and no " +
+                   "availability/calendar/slot/booking column exists anywhere in " +
+                   "scripts/schema-snapshot.json — so a revived calendar would have nothing to " +
+                   "draw and would render empty for every guide. Reached only from Guides.",
 };
 
 // Files that can render a component. lib/*.jsx matters: DbAreaBrowser is where the live
@@ -93,9 +110,17 @@ const dead = (what) => {
 
 const defs = new Map();      // component name -> file it is defined in
 const edges = new Map();     // host -> Set(component names it renders)
-const seedDirect = new Set();// rendered directly inside the !USE_DB region
-let region = null;
-let regionCount = 0;
+const seedDirect = new Set();// rendered directly inside a seed-only region
+// Spans, per file, that only execute when USE_DB is false. There are FOUR spellings and the
+// guard used to prune one of them; see the header. A region is keyed by file because an offset
+// means nothing without one.
+const regionsByFile = new Map();
+const addRegion = (f, node) => {
+  if (!node) return;
+  if (!regionsByFile.has(f)) regionsByFile.set(f, []);
+  regionsByFile.get(f).push([node.start, node.end]);
+};
+let andCount = 0, ternaryCount = 0, ifCount = 0;
 let edgeCount = 0;
 
 const isComp = (n) => /^[A-Z]/.test(n);
@@ -127,12 +152,31 @@ for (const f of FILES) {
   catch (e) { dead(`${f} did not parse (${String(e.message).slice(0, 120)})`); }
 
   traverse(ast, {
+    // ── the four spellings of "this half only runs on the seed path" ──────────────────────
     LogicalExpression(p) {
-      if (f !== "ClimbMatch.jsx") return;
       const n = p.node, l = n.left;
       if (n.operator === "&&" && l.type === "UnaryExpression" && l.operator === "!" &&
           l.argument.type === "Identifier" && l.argument.name === "USE_DB") {
-        region = [n.start, n.end]; regionCount++;
+        addRegion(f, n);
+        if (f === "ClimbMatch.jsx") andCount++;
+      }
+    },
+    ConditionalExpression(p) {
+      const n = p.node, t = n.test;
+      // USE_DB ? live : SEED   — the ALTERNATE is the dead half
+      if (t.type === "Identifier" && t.name === "USE_DB") { addRegion(f, n.alternate); ternaryCount++; return; }
+      // !USE_DB ? SEED : live  — the CONSEQUENT is
+      if (t.type === "UnaryExpression" && t.operator === "!" &&
+          t.argument.type === "Identifier" && t.argument.name === "USE_DB") {
+        addRegion(f, n.consequent); ternaryCount++;
+      }
+    },
+    IfStatement(p) {
+      const n = p.node, t = n.test;
+      if (t.type === "Identifier" && t.name === "USE_DB") { if (n.alternate) { addRegion(f, n.alternate); ifCount++; } return; }
+      if (t.type === "UnaryExpression" && t.operator === "!" &&
+          t.argument.type === "Identifier" && t.argument.name === "USE_DB") {
+        addRegion(f, n.consequent); ifCount++;
       }
     },
     FunctionDeclaration(p) {
@@ -149,24 +193,30 @@ for (const f of FILES) {
       if (nm.type !== "JSXIdentifier" || !isComp(nm.name)) return;
       edgeCount++;
       const host = hostOf(p) || "(toplevel:" + f + ")";
-      if (f === "ClimbMatch.jsx") { pending.push([p.node.start, p.node.end, nm.name, host]); return; }
-      if (!edges.has(host)) edges.set(host, new Set());
-      edges.get(host).add(nm.name);
+      // EVERY file is held aside now, not just ClimbMatch.jsx: a seed branch is spelled the same
+      // way wherever it lives, and a render site inside one is dead wherever it lives.
+      pending.push([f, p.node.start, p.node.end, nm.name, host]);
     },
   });
 }
 
 // ── fail closed ─────────────────────────────────────────────────────────────────────────
 // Each of these prints identically to a clean app, which is why every one is fatal.
-if (!region) dead("could not find the `!USE_DB && …` branch in ClimbMatch.jsx — ANCHOR LOST");
-if (regionCount !== 1) dead(`expected exactly one \`!USE_DB && …\` branch, found ${regionCount}. ` +
+if (!andCount) dead("could not find the `!USE_DB && …` branch in ClimbMatch.jsx — ANCHOR LOST");
+if (andCount !== 1) dead(`expected exactly one \`!USE_DB && …\` branch in ClimbMatch.jsx, found ${andCount}. ` +
   "With more than one, the region this guard prunes is only part of the seed half");
+// The ternary spelling is the one this guard was blind to for its whole life, and its floor
+// matters for the same reason the `&&` anchor's does: with the recogniser broken, three dead
+// components read as live and the run prints a clean sweep.
+if (!ternaryCount) dead("found no `USE_DB ? … : …` conditional at all — the second spelling of the " +
+  "seed branch stopped being recognised, and everything behind it would read as live");
 if (defs.size < 100) dead(`only ${defs.size} components parsed across ${FILES.length} files — the scan broke`);
 if (edgeCount < 100) dead(`only ${edgeCount} render sites found — the scan broke`);
 // Classified now that the region is known. Pruning these edges IS the mechanism: an edge
 // from App into the seed branch is exactly the edge production does not have.
-for (const [start, end, name, host] of pending) {
-  if (start >= region[0] && end <= region[1]) { seedDirect.add(name); continue; }
+for (const [f, start, end, name, host] of pending) {
+  const regions = regionsByFile.get(f) || [];
+  if (regions.some(([a, b]) => start >= a && end <= b)) { seedDirect.add(name); continue; }
   if (!edges.has(host)) edges.set(host, new Set());
   edges.get(host).add(name);
 }
@@ -194,11 +244,18 @@ let failures = 0;
 const fail = (m) => { console.log("  FAIL  " + m); failures++; };
 
 console.log(`walked ${FILES.length} files · ${defs.size} components · ${edgeCount} render sites`);
-console.log(`seed branch: ${region[1] - region[0]} chars, renders ${seedDirect.size} components directly\n`);
+{
+  let n = 0, chars = 0;
+  for (const rs of regionsByFile.values()) for (const [a, b] of rs) { n++; chars += b - a; }
+  console.log(`seed branches: ${n} region(s) across ${regionsByFile.size} file(s), ${chars} chars ` +
+    `(${andCount} \`!USE_DB &&\`, ${ternaryCount} ternary, ${ifCount} if), ` +
+    `rendering ${seedDirect.size} components directly\n`);
+}
 
 for (const name of seedOnly) {
   if (SEED_ONLY[name]) { console.log(`  ok    ${name.padEnd(16)} ${defs.get(name)}`); continue; }
-  fail(`${name} (${defs.get(name)}) is reachable ONLY through the \`!USE_DB\` branch.\n` +
+  fail(`${name} (${defs.get(name)}) is reachable ONLY through a seed branch (\`!USE_DB && …\`, ` +
+       `\`USE_DB ? … : HERE\`, or an if/else on USE_DB).\n` +
        `        It renders in a local demo and for no real climber — deploy.yml sets VITE_USE_DB=true.\n` +
        `        Either render it on the DB path too, or declare it in SEED_ONLY with the reason\n` +
        `        and what supersedes it.`);

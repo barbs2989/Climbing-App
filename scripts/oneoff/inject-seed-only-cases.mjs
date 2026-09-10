@@ -5,9 +5,16 @@
 // silently matched nothing reports as "guard missed" and sends you editing a correct file.
 // Files are restored byte-identically and the restore is asserted.
 //
-// Cases 5 and 6 must stay SILENT. A guard that fires on a component rendered on BOTH paths
-// would be telling authors to un-wire live code, which is the direction that teaches people
-// to ignore it.
+// Cases 6 and 9 must stay SILENT. A guard that fires on a component rendered on BOTH paths, or
+// on the LIVE half of a ternary, would be telling authors to un-wire live code — the direction
+// that teaches people to ignore it.
+//
+// Cases 7-12 cover the spellings the guard was blind to until the seed branch was measured:
+// there is ONE `!USE_DB && …` in ClimbMatch.jsx and 22 `USE_DB ? live : SEED` ternaries beside
+// it, and four components lived only in the second kind. 11 and 12 edit the GUARD rather than
+// the app, because that is where the defect was — 11 removes the ternary pruning and requires
+// the four declarations to go stale, which is what proves the widening is load-bearing rather
+// than decorative.
 import fs from "fs";
 import crypto from "crypto";
 import { execFileSync } from "child_process";
@@ -18,8 +25,11 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 // anchors, each asserted to occur exactly once
 const SEED_ANCHOR = "{!USE_DB&&<>";
 const LIVE_ANCHOR = "<DbAreaBrowser";
+const IF_ANCHOR = "if(!USE_DB){";           // the third spelling: a statement block
+const GUARD = "scripts/check-seed-only-surfaces.mjs";
 const AL_INNER = "Latest from this area</div>";
-const CORE_TAIL = "\nfunction InjA(){return null;}\nfunction InjB(){return null;}\nfunction InjC(){return null;}\n";
+const CORE_TAIL = "\nfunction InjA(){return null;}\nfunction InjB(){return null;}\nfunction InjC(){return null;}\n" +
+                  "function InjD(){return null;}\nfunction InjE(){return null;}\nfunction InjF(){return null;}\n";
 
 const CASES = [
   { name: "1-undeclared-in-seed-branch", expect: "fail", want: /InjA/,
@@ -36,6 +46,25 @@ const CASES = [
   { name: "6-rendered-on-BOTH-paths-must-stay-silent", expect: "pass", want: null,
     edits: [[APP, SEED_ANCHOR, SEED_ANCHOR + "<InjC/>"],
             [APP, LIVE_ANCHOR, "<InjC/>" + LIVE_ANCHOR], [CORE, null, CORE_TAIL]] },
+
+  // ── the spellings beyond `!USE_DB &&` ───────────────────────────────────────────────────
+  { name: "7-undeclared-in-a-USE_DB-ternary-alternate", expect: "fail", want: /InjD/,
+    edits: [[APP, LIVE_ANCHOR, "{USE_DB?null:<InjD/>}" + LIVE_ANCHOR], [CORE, null, CORE_TAIL]] },
+  { name: "8-undeclared-in-an-if-not-USE_DB-block", expect: "fail", want: /InjE/,
+    edits: [[APP, IF_ANCHOR, IF_ANCHOR + "const _inj=<InjE/>;"], [CORE, null, CORE_TAIL]] },
+  { name: "9-LIVE-half-of-a-ternary-must-stay-silent", expect: "pass", want: null,
+    edits: [[APP, LIVE_ANCHOR, "{USE_DB?<InjF/>:null}" + LIVE_ANCHOR], [CORE, null, CORE_TAIL]] },
+  { name: "10-a-newly-declared-guide-component-wired-live-goes-stale", expect: "fail",
+    want: /Guides is declared seed-only but is now reachable/,
+    edits: [[APP, LIVE_ANCHOR, "<Guides/>" + LIVE_ANCHOR]] },
+
+  // ── guard-side: the defect lived HERE, so these two revert it ────────────────────────────
+  { name: "11-ternary-pruning-removed-so-the-four-go-stale", expect: "fail",
+    want: /declared seed-only but is now reachable/,
+    edits: [[GUARD, "addRegion(f, n.alternate); ternaryCount++;", "ternaryCount++;"]] },
+  { name: "12-ternary-recogniser-broken-must-fail-CLOSED", expect: "fail",
+    want: /second spelling of the seed branch stopped being recognised/,
+    edits: [[GUARD, "ConditionalExpression(p) {", "ConditionalExpression(p) { return;"]] },
 ];
 
 let pass = 0, fails = [];

@@ -56,12 +56,24 @@ const CASES = [
   {
     name: "brokenscan",
     file: "ClimbMatchCore.jsx",
-    why: "ONE file's `style={{` is reformatted to `style={ {`. React renders it IDENTICALLY and " +
-         "check:refs cannot see it, so this is the genuinely SILENT way the scan dies -- and it " +
-         "is partial, which is how a shape test actually fails. Must report a BROKEN SCAN.",
-    edit: (s) => s.split("style={{").join("style={ {"),
+    why: "ONE file's `style={{` is reformatted to `style = {{` — whitespace around a JSX attribute's " +
+         "`=` is legal, React renders it IDENTICALLY and check:refs cannot see it, so this is the " +
+         "genuinely SILENT way the scan dies. It is partial, which is how a shape test actually " +
+         "fails. Must report a BROKEN SCAN.",
+    edit: (s) => s.split("style={{").join("style = {{"),
     expect: "fail",
     must: /NOT a clean result/,
+  },
+  {
+    name: "innerbracereformat",
+    file: "ClimbMatchCore.jsx",
+    why: "MUST STAY SILENT — this WAS the brokenscan case, and the detector now survives it. " +
+         "Anchoring on `style={` instead of `style={{` (the change that let the guard see the " +
+         "route map's ternary style) also made it immune to a space between the two braces. Kept " +
+         "so the robustness is asserted rather than incidental: if a future rewrite goes back to " +
+         "matching the literal shape, this case fails and says so.",
+    edit: (s) => s.split("style={{").join("style={ {"),
+    expect: "pass",
   },
   {
     name: "brokenscan-firstdraft",

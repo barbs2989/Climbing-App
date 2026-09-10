@@ -106,8 +106,35 @@ for (const r of rows) {
   /* Prefer the NAMED endpoints — a trailhead-to-summit rise is the claim `gain_ft` is making.
      Falling back to min/max across all waypoints is weaker but still a lower bound on the climb,
      and it keeps routes that label their pins unusually from dropping out of the audit. */
-  const th = withElev.find((x) => /trailhead/i.test(String(x.w.type || "")));
-  const sum = withElev.find((x) => /summit|topout/i.test(String(x.w.type || "")));
+  /* WHICH summit, and which trailhead? `.find()` takes whichever the enrichment happened to list
+     FIRST, so on the 24 WA routes carrying more than one summit-typed pin the audit's answer
+     depended on row order — one of them by 1,815 ft. Row order is not a record.
+
+     THE CONSERVATIVE ENDPOINTS ARE THE ONES THIS AUDIT CAN DEFEND: the LOWEST summit-typed pin
+     and the HIGHEST trailhead, which give the smallest rise. `rise` is used as a LOWER BOUND on
+     the gain — the whole one-sidedness rests on it — so a smaller rise can only ever under-report,
+     never accuse a correct row.
+
+     "HIGHEST SUMMIT" WAS MEASURED AND REJECTED, and the measurement is the point. It adds 5
+     findings and loses none, which looks like strictly better coverage until you read them:
+     FOUR are Squire Creek Wall south-face routes whose own Topout pin says they end at the
+     3,249 ft grassy saddle, while a Summit pin records the FORMATION's 4,958 ft high point that
+     those routes never reach. Only `wa_sherpa_glacier` is genuine. One real in five is the
+     precision that teaches people to ignore an audit.
+     Preferring the route's own Topout does not rescue it either: `wa_sherpa_glacier` carries
+     "Top of Sherpa Glacier" (7,600) as an INTERMEDIATE topout on the way to Stuart's 9,415 ft
+     summit, so the same field means "where the route ends" on one route and "a milestone" on the
+     other. The endpoint cannot be resolved from the pin TYPES, and this records that rather than
+     trading an arbitrary rule for a wrong one.
+     KNOWN MISS, stated rather than hidden: `wa_sherpa_glacier` stores 6,000 ft against a
+     trailhead-to-Stuart rise of 6,485 and is not reported here, because its lowest summit-typed
+     pin is that intermediate topout. */
+  const lowest = (a, b) => (!a || b.ft < a.ft ? b : a);
+  const highest = (a, b) => (!a || b.ft > a.ft ? b : a);
+  const sums = withElev.filter((x) => /summit|topout/i.test(String(x.w.type || "")));
+  const ths = withElev.filter((x) => /trailhead/i.test(String(x.w.type || "")));
+  const sum = sums.reduce(lowest, null);
+  const th = ths.reduce(highest, null);
   let lo, hi, basis;
   if (th && sum && sum.ft > th.ft) { lo = th; hi = sum; basis = "trailhead→summit"; }
   else {
