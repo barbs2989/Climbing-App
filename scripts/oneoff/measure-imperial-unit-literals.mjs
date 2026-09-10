@@ -7,19 +7,26 @@
 // cannot convert, so if it reaches the screen it says "ft" to a metric climber whatever the
 // setting is. Perfect precision by construction, like the helper-argument rule.
 //
-// RESULT, 2026-09-09: 109 unit literals, 71 in a scope with no unit awareness at all. Most of the
-// 71 are SEED PROSE ("Summit — Kings Peak, 13,528 ft") and are correctly left alone — an itinerary
-// written into a seed array is content, not a control. What the run is for is the controls:
+// RESULT, re-measured 2026-09-09 after the approach-variants fix: 103 unit literals, 60 in a scope
+// with no unit awareness at all (was 109/71 before #1654 and #1671). QUOTE THE RUN, NOT THIS LINE —
+// it has already been stale once. Most of the 60 are SEED PROSE ("Summit — Kings Peak, 13,528 ft")
+// and are correctly left alone: an itinerary written into a seed array is content, not a control.
+// What the run is for is the controls, and the WRITE half of that list is now closed:
 //
-//   FIXED here — the itinerary builder's GAIN (FT) / LOSS (FT) / DISTANCE (MI) / PACK WEIGHT (LB),
-//   which were also seeded with the raw stored number and STORED WHAT WAS TYPED.
+//   FIXED — the log form's TEMP (#1578); the itinerary builder's GAIN (FT) / LOSS (FT) /
+//   DISTANCE (MI) / PACK WEIGHT (LB) and the bail form's DIST. TO SAFETY (MI) (#1654); the
+//   approach-variants editor's distance and gain (#1671). Every one of them was ALSO seeded with
+//   the raw stored number and STORED WHAT WAS TYPED, which is why they mattered more than a label.
 //
-//   STILL OPEN, and deliberately not swept in a change about a write path:
-//     Guides       "Within 50 mi" / "Within 100 mi" / "Within 250 mi"
-//     RouteFinder  "200 ft or less" / "201-600 ft" / "600-1500 ft" / "1500+ ft" — and that map is
-//                  HAND-COPIED TWICE, once for the chips and once for the applied-filter chips
-//     PartnerSearch / Leaderboards  aria-labels "Search radius in miles", "Maximum distance in miles"
-//     BailoutForm  "Distance to safety (mi)" — another INPUT, so the same write class as above
+//   STILL OPEN, and all DISPLAY-ONLY — no write path remains:
+//     Guides       "Within 50 mi" / "Within 100 mi" / "Within 250 mi" — untouched by any PR
+//     PartnerSearch / Leaderboards  five aria-labels: 4x "Search radius in miles", 1x "Maximum
+//                  distance in miles"
+//
+//   RouteFinder's length map ("200 ft or less" / "201-600 ft" / ...) was on this list and LANDED in
+//   #1670 while this branch was building — it is derived from passesFilters' own bounds now. The
+//   count above predates that merge by minutes, which is the second time in one session a figure
+//   here went stale: RE-RUN IT rather than quoting it.
 //
 // Read-only, static.
 import fs from "node:fs";

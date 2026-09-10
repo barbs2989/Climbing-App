@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Injection suite for probe-report-temps-honour-units.mjs.
+// Injection suite for check-units.mjs, the `reports` section (run with --only=reports).
 //
 // The probe's healthy output is a page of "ok" lines, which is exactly what a probe that has
 // stopped asking anything prints. Each case below reverts ONE link of the chain, asserts by
@@ -64,7 +64,7 @@ for (const c of CASES) {
   }
   let outText = "", code = 0;
   try {
-    outText = execFileSync("node", [path.join(ROOT, "scripts", "oneoff", "probe-report-temps-honour-units.mjs")],
+    outText = execFileSync("node", [path.join(ROOT, "scripts", "check-units.mjs"), "--only=reports"],
       { cwd: ROOT, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] });
   } catch (e) { code = e.status || 1; outText = String(e.stdout || "") + String(e.stderr || ""); }
   fs.writeFileSync(c.file, before);

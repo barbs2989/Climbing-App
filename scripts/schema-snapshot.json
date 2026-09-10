@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-04",
+  "generatedAt": "2026-09-09",
   "tables": {
     "areas": [
       "area_type",
@@ -249,6 +249,7 @@
       "id",
       "joined_at",
       "role",
+      "status",
       "user_id"
     ],
     "groups": [

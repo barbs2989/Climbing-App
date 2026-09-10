@@ -30,6 +30,12 @@
  * routes store a `distMi` that is not cumulative from the trailhead, where the app's own
  * subtraction is meaningless anyway; this catches those without a second rule.
  *
+ * WHAT IT DOES NOT COVER, stated rather than implied: the BAIL-POINT rows in SafetyMatrix take
+ * the same `cumMi` treatment, and no fixture here reaches them — those rows need a route carrying
+ * bail data, and this guard's fixtures do not. `cumMi` is executed directly, so the rule is
+ * proven; what is unproven is that THAT call site is wired. Treat it as covered by
+ * `check:dead-props` and by review, not by this.
+ *
  * Static SSR (no browser, no DB), so it sits in `npm run build`.
  */
 import { build } from "esbuild";
@@ -47,7 +53,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { legMi } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+export { legMi, cumMi } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -69,8 +75,8 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, legMi } = require_(out);
-if (typeof legMi !== "function") { console.error("check:impossible-leg: legMi is not exported from ClimbMatchCore.jsx"); process.exit(1); }
+const { render, legMi, cumMi } = require_(out);
+for (const [n, f] of [["legMi", legMi], ["cumMi", cumMi]]) if (typeof f !== "function") { console.error(`check:impossible-leg: ${n} is not exported from ClimbMatchCore.jsx`); process.exit(1); }
 
 const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ")
   .replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
@@ -124,6 +130,50 @@ eq("an impossible leg prints NO distance", /mi from last/.test(bad), false);
    the mileage would be the changing-which-record-wins failure this repo records elsewhere. */
 eq("...and the elevation on that row survives", /4,000 ft|4000 ft/.test(bad), true);
 eq("...and the row itself still renders", /True summit/.test(bad), true);
+
+/* AND THE WAYPOINT ROW'S OWN CUMULATIVE DISTANCE, which is a third surface printing the same
+   contradiction: 197 of the 2,567 cumulative distances the list prints are less than the straight
+   line from the route's own trailhead pin, across 112 routes. `cumMi` is `legMi` applied with the
+   trailhead as the previous pin — the trailhead's distMi is 0 by convention, so the difference IS
+   the cumulative distance and there is one rule rather than a second copy of it. */
+console.log("\ncumMi, executed directly");
+const th0 = pin({ type: "Trailhead", name: "Road gate", distMi: 0 });
+const far = pin({ name: "Camp", distMi: 6, lat: B.lat, lng: B.lng });
+const near = pin({ name: "Camp", distMi: 0.5, lat: B.lat, lng: B.lng });
+eq("a possible cumulative distance stands", cumMi([th0, far], far), 6);
+eq("an impossible one is null", cumMi([th0, near], near), null);
+/* A route with no trailhead pin has nothing to contradict, so the number stands. */
+eq("no trailhead pin leaves it alone", cumMi([near], near), 0.5);
+/* The trailhead compared against ITSELF is a zero-length leg, which must not read as impossible. */
+eq("the trailhead's own row is untouched", cumMi([th0, far], th0), 0);
+
+console.log("\nthe waypoint row prints no cumulative distance it cannot support");
+const rowBad = planOf([
+  { n: 1, type: "Trailhead", name: "Road gate", elev: 3000, lat: A.lat, lng: A.lng, distMi: 0 },
+  { n: 2, type: "Junction", name: "Notch", elev: 5000, lat: B.lat, lng: B.lng, distMi: 0.5 },
+]);
+eq("ANCHOR: the row rendered", /Notch/.test(rowBad), true);
+eq("...and prints no impossible cumulative distance", /0\.5 mi/.test(rowBad), false);
+
+/* THE SAME RULE ON THE WHOLE WALK IN. A campsite's distMi is cumulative from the trailhead, so
+   CAMPING & BIVY cannot print a number smaller than the straight line from the trailhead pin
+   either — 35 of the 412 it prints were. It matters more there than in the leg list: this is the
+   number a party uses to decide whether they can reach camp on day one. */
+console.log("\nand the same rule on a campsite's whole walk in");
+const CAMP = (mi) => [
+  { n: 1, type: "Trailhead", name: "Road gate", elev: 3000, lat: A.lat, lng: A.lng, distMi: 0 },
+  { n: 2, type: "Campsite", name: "Basin camp", elev: 5000, lat: B.lat, lng: B.lng, distMi: mi },
+  { n: 3, type: "Summit", name: "True summit", elev: 7000, lat: B.lat, lng: B.lng, distMi: mi + 1 },
+];
+const campOf = (wps) => text(render(route(wps), "planner"));
+const okCamp = campOf(CAMP(6));
+eq("ANCHOR: the camping panel rendered", /CAMPING &amp; BIVY|CAMPING & BIVY/.test(okCamp), true);
+eq("a possible camp distance prints", /6(\.0)? mi/.test(okCamp), true);
+const badCamp = campOf(CAMP(0.5));
+eq("an impossible camp distance prints NO distance", /0\.5 mi/.test(badCamp), false);
+/* The elevation and the gain from the trailhead are separate records and are not in question. */
+eq("...and the camp's elevation survives", /5,000 ft|5000 ft/.test(badCamp), true);
+eq("...and the camp row itself still renders", /Basin camp/.test(badCamp), true);
 
 console.log(fail
   ? `\ncheck:impossible-leg: ${fail} FAILURE(S)`

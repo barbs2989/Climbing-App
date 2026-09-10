@@ -34,7 +34,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { mergeHazards } from "./lib/hazards";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
-import {wpType,wpIs,wpPlaced,legMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip} from "./ClimbMatchCore.jsx";
+import {wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,FloatPlan,floatPlanState,missingFacts,Comments,shapeOf,gainCoversWholeOuting,ProvChip,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit} from "./ClimbMatchCore.jsx";
 const GpsSubmissionModal = lazy(() => import("./lib/GpsSubmissionModal"));
 const SZ4={display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:8};
 const uGain=m=>uImp()?Math.round(m*3.28084).toLocaleString()+" ft":Math.round(m).toLocaleString()+" m";
@@ -394,7 +394,7 @@ function gearReadout(route,owners){
   return base.map(label=>{const c=GEAR_CATS.find(x=>x.label===label)||{kw:[label.toLowerCase()]};return {label:label,have:owned.some(t=>c.kw.some(k=>t.includes(k)))};});
 }
 const GEAR_MARGIN_TIERS=[["ultralight","Ultralight",[]],["midweight","Midweight",["Extra insulating layer","Headlamp + spare batteries"]],["cautious","Extra cautious",["Extra insulating layer","Headlamp + spare batteries","First aid kit","Emergency bivy / space blanket","Extra food & water","Backup navigation (paper map/compass)"]]];
-function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){/* A {size,count} pair is a QUANTITY, and the generic branch below read it out as the   pipeline's own shape: "size: #0 C3 to 0.75 in, count: 2". 16 of 242 stored values   rendered that way in the RACK box. A count of 1 adds nothing, and a NON-numeric count   ("a few extra") cannot be a multiplier, so it goes in brackets after the size rather   than in front of it. *//* A `note` RIDES ALONG WITH size/count ON 8 OF THE 242, and requiring the object to hold nothing else let all 8 fall through to the generic branch — so half the machine text survived a fix aimed at exactly it. The note is folded into the SAME bracket as a non-numeric count rather than given its own, because two parentheticals in a row read worse than the thing they replaced. */if(v.size!=null&&Object.keys(v).every(function(k){return k==="size"||k==="count"||k==="note"||k==="notes";})){var _sz=fmtSlingVal(v.size);if(!_sz)return null;var _ct=v.count,_no=fmtSlingVal(v.note!=null?v.note:v.notes),_n=Number(_ct),_hasCt=(_ct!=null&&_ct!=="");var _head=(_hasCt&&isFinite(_n)&&_n>1)?(_n+"× "+_sz):_sz;var _ex=[];if(_hasCt&&!isFinite(_n))_ex.push(String(_ct));if(_no)_ex.push(_no);return _ex.length?(_head+" ("+_ex.join("; ")+")"):_head;}var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
+function fmtSlingVal(v){if(v==null||v===false||v==="")return null;if(typeof v==="string"||typeof v==="number")return String(v);if(Array.isArray(v)){var items=v.map(fmtSlingVal).filter(Boolean);return items.length?items.join("; "):null;}if(typeof v==="object"){/* A {size,count} pair is a QUANTITY, and the generic branch below read it out as the   pipeline's own shape: "size: #0 C3 to 0.75 in, count: 2". 16 of 242 stored values   rendered that way in the RACK box. A count of 1 adds nothing, and a NON-numeric count   ("a few extra") cannot be a multiplier, so it goes in brackets after the size rather   than in front of it. *//* A `note` RIDES ALONG WITH size/count ON 8 OF THE 242, and requiring the object to hold nothing else let all 8 fall through to the generic branch — so half the machine text survived a fix aimed at exactly it. The note is folded into the SAME bracket as a non-numeric count rather than given its own, because two parentheticals in a row read worse than the thing they replaced. *//* THE SAME SHAPE UNDER A SECOND SPELLING, and the allow-list above was what hid it. That branch recognised size/count/note; 15 bullets across 12 routes store the identical fact as length/quantity/purpose and fell through to the generic pair dump, so a climber read "Webbing — length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2" — the pipeline's own key names, with the quantity LAST when it is the first thing somebody packing wants. A deny-list beaten by one more spelling, which is why the vocabulary is a list of synonyms rather than four literal comparisons. *//* A QUANTITY WITH NO SIZE now fires too (5 of the 15: "Cordelette", "Prusik cord", "Fixed gear draws"). Requiring a size was correct while the only known shape carried one, and it is exactly what left those five reading out their keys. With no size the count IS the head — the label beside it supplies the noun, so "Prusik cord — 2" reads as two of them. */var _SZK=["size","length"],_CTK=["count","quantity"],_NOK=["note","notes","purpose"];var _all=_SZK.concat(_CTK,_NOK);var _pick=function(ks){for(var _i=0;_i<ks.length;_i++){var _w=v[ks[_i]];if(_w!=null&&_w!=="")return _w;}return null;};if(Object.keys(v).every(function(k){return _all.indexOf(k)>=0;})&&(_pick(_SZK)!=null||_pick(_CTK)!=null||_pick(_NOK)!=null)){var _sz=fmtSlingVal(_pick(_SZK)),_ct=_pick(_CTK),_no=fmtSlingVal(_pick(_NOK)),_n=Number(_ct),_hasCt=(_ct!=null&&_ct!=="");/* A count of 1 adds nothing — the rule the size branch already applied by only multiplying above 1 — so with no size it must not become a bare "1" either. */var _mult=(_hasCt&&isFinite(_n)&&_n>1),_bare=(_hasCt&&!isFinite(_n));var _head=_sz?(_mult?(_n+"× "+_sz):_sz):(_mult?String(_n):(_bare?String(_ct):null));var _ex=[];if(_sz&&_bare)_ex.push(String(_ct));if(!_head)return _no||null;if(_no)_ex.push(_no);return _ex.length?(_head+" ("+_ex.join("; ")+")"):_head;}var parts=Object.keys(v).map(function(k){var sub=fmtSlingVal(v[k]);return sub?(k.replace(/_/g," ")+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}return null;}
 function fmtSlingRack(sr){if(!sr)return null;if(Array.isArray(sr)){if(!sr.length)return null;if(sr[0]&&typeof sr[0]==="object"&&"sizeCm" in sr[0])return sr.map(function(s){return s.qty+"× "+s.sizeCm+"cm";}).join(", ");return sr.map(fmtSlingVal).filter(Boolean).join("; ");}if(typeof sr!=="object")return null;var parts=Object.keys(sr).map(function(k){var v=sr[k];if(v===false||v==null||v==="")return null;var label=k.replace(/_/g," ");if(/^\d+(\.\d+)?(cm|in|mm)$/i.test(k)&&(typeof v==="number"||/^\d+$/.test(v)))return v+"× "+k;var sub=fmtSlingVal(v);return sub?(label+": "+sub):null;}).filter(Boolean);return parts.length?parts.join(", "):null;}
 /* The Edit button used to open a textarea whose Save wrote to `gearEdits`, a bare
    useState({}) in App. It never reached `contributions`, never hit the DB, was invisible to
@@ -489,7 +489,7 @@ function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
     const placed=wpPlaced(wp);
     const card={background:C.card,borderRadius:11,padding:"10px 12px",marginBottom:7,border:`1px solid ${C.border}`,display:"flex",gap:10};
     const act=(placed&&onFocus)?{...clickable(function(){onFocus(i);}),"aria-label":"Show "+(wp.name||_wt||"this waypoint")+" on the map"}:{};
-    return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div {...act} style={(placed&&onFocus)?{...card,cursor:"pointer"}:card}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(wp.distMi)}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}{placed?null:<div style={{fontSize:11,color:C.textMuted,marginTop:6,lineHeight:1.45}}>No coordinate on file — this point is not on the map above. Know where it is? Add it with the edit pencil.</div>}</div></div></div>;
+    return <div key={i}>{prevWp&&(segMi!=null||segFt!=null)?<div style={{display:"flex",alignItems:"center",gap:6,padding:"1px 0 6px 17px",fontSize:11,color:C.textMuted}}><span style={{color:C.border}}>│</span><span>{[segMi!=null?uDistMi(Math.abs(segMi))+" from last":null,segFt!=null?((segFt>=0?"+":"−")+uElev(Math.abs(segFt))+(segFt>=0?" gain":" loss")):null].filter(Boolean).join(" · ")}</span></div>:null}<div {...act} style={(placed&&onFocus)?{...card,cursor:"pointer"}:card}><div style={{width:34,height:34,borderRadius:"50%",background:`${col}22`,border:`1.5px solid ${col}`,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0,fontSize:15}}>{ic}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:2}}><span style={{fontWeight:700,fontSize:13.5}}>{wp.name}</span><div style={{textAlign:"right"}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>{uDistMi(cumMi(waypoints,wp))}</div><div style={{fontSize:12,color:C.textMuted}}>{uElev(wp.elev)}</div></div></div><Pill label={_wt} color={col} bg={`${col}22`} sm/>{wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:4,lineHeight:1.5}}>{wp.note}</div>:null}{wp.directions?<div style={{fontSize:12,color:C.textSub,marginTop:6,lineHeight:1.5,paddingLeft:8,borderLeft:"2px solid "+col}}><span style={{fontWeight:700,color:C.text}}>{"Getting here — "}</span>{wp.directions}</div>:null}{placed?null:<div style={{fontSize:11,color:C.textMuted,marginTop:6,lineHeight:1.45}}>No coordinate on file — this point is not on the map above. Know where it is? Add it with the edit pencil.</div>}</div></div></div>;
   })}</>;
 }
 function RouteGearEssentialsBox({route,essentials,onEdit}){const [gearTier,setGearTier]=useState("midweight");const disc=catOf(route);const _itDays=(route&&route.itinerary&&route.itinerary.days&&route.itinerary.days.length)||0;const _multiDay=_itDays>1;const assumed=assumedFor(route,disc).concat(["First aid kit"]).concat(_multiDay?["Tent / shelter","Sleeping bag","Sleeping pad","Stove + fuel","Extra food (overnight)"]:[]);const cond=conditionalFor(route,disc);const _hasOwn=!!(essentials&&essentials.length);const items=mergeGearList(assumed,essentials,cond?cond.items:[]);if(!items.length)return null;return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginTop:12}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginBottom:3}}><span style={{fontSize:13,fontWeight:700,color:C.text}}>GEAR & ESSENTIALS</span>{onEdit?<EditIconButton onClick={function(){onEdit();}} title={_hasOwn?"Suggest a correction to this route's essentials":"Add gear this route needs beyond the standard kit"}/>:null}</div><div style={{fontSize:12,color:C.textMuted,marginBottom:10,lineHeight:1.45}}>{_hasOwn?("Standard kit for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+", merged with what this route's own notes add. Check it against the notes above, which take precedence."):("Standard kit for "+(DISC[disc]&&DISC[disc].label?DISC[disc].label.toLowerCase():disc)+" — check it against this route's own notes above, which take precedence.")}</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:11}}>{items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.blue,flexShrink:0}}>•</span><span>{gi}</span></div>)}</div>{(function(){const cond=conditionalFor(route,disc);if(!cond)return null;return <div style={{paddingTop:10,borderTop:`1px solid ${C.borderLight}`,marginBottom:11}}><div style={{fontSize:11.5,fontWeight:700,color:C.amber,marginBottom:3}}>Only if there is snow</div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:7,lineHeight:1.45}}>This route mentions snow gear conditionally, not as standard kit — check current conditions before you carry it.</div><div style={{display:"flex",flexDirection:"column",gap:5,marginBottom:cond.quote?8:0}}>{cond.items.map((gi,i)=><div key={i} style={{display:"flex",gap:8,fontSize:12.5,color:C.text,lineHeight:1.45}}><span style={{color:C.amber,flexShrink:0}}>?</span><span>{gi}</span></div>)}</div>{cond.quote?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,background:C.surface,borderRadius:8,padding:"7px 9px",fontStyle:"italic"}}>{"“"+cond.quote+"”"}</div>:null}</div>;})()}{/* The "Specific to this route" section used to sit here. It is gone deliberately: its
@@ -1195,10 +1195,14 @@ function campElevFt(s){
    depend on which record happened to be read. The other way this silently goes wrong is a route
    with TWO trailheads, where "the" trailhead is arbitrary; measured at 0 of 757 camping routes,
    so taking the first is safe here in a way it would not be catalog-wide. */
-function trailheadFt(route){
+function trailheadPin(route){
   const ws=Array.isArray(route.waypoints)?route.waypoints:[];
-  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return campElevFt(ws[i]);
+  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],"Trailhead"))return ws[i];
   return null;
+}
+function trailheadFt(route){
+  const w=trailheadPin(route);
+  return w?campElevFt(w):null;
 }
 /* TRAIL distance, and only trail distance. A campsite WAYPOINT records distMi/distKm — the walked
    path — on 410 of 445 sites. The researched `bivy` store records no distance under any spelling
@@ -1244,6 +1248,18 @@ function campSites(route){
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
   const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
+  /* AND THE SAME TEST THE WAYPOINT LIST APPLIES TO A LEG, applied to the whole walk in. A camp's
+     `distMi` is cumulative from the trailhead, so it cannot be less than the straight line from
+     the trailhead PIN either — and 35 of the 412 distances this panel prints are.
+     `wa_poltergeist_pinnacle` printed "Boundary Camp · 8.0 mi" for a camp 21.8 miles out. It
+     matters more here than in the list above: this is the number a party uses to decide whether
+     they can reach camp on day one. `legMi` is the same one-sided rule — the trailhead's own
+     `distMi` is 0, so |camp - trailhead| IS the cumulative distance. A site whose number cannot
+     be true shows none, never a substituted chord. */
+  const _campMi=function(w){
+    const mi=campDistMi(w);
+    return mi==null?null:cumMi(route.waypoints,Object.assign({},w,{distMi:mi}));
+  };
   /* `type` is camp | bivy | hut on the 77 sites that carry it. It is the one field that says
      WHICH of the two things this section merges you are looking at, so it earns a chip. */
   /* The label for `camp` is deliberately the neutral "Camp", NOT "Established camp": a dispersed
@@ -1255,7 +1271,7 @@ function campSites(route){
      no elevation for the sites that use the other — and an elevation missing is also a GAIN
      missing, so the defect compounds now rather than merely showing one blank. */
   return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:campDistMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1684,7 +1700,7 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
       {bail.map((wp,i)=><div key={i} style={{padding:"7px 0",borderBottom:i<bail.length-1?`1px solid ${C.borderLight}`:"none"}}>
         <div style={{display:"flex",alignItems:"baseline",gap:7,flexWrap:"wrap"}}>
           <span style={{fontSize:13,fontWeight:600}}>{wp.name}</span>
-          {wp.distMi!=null?<span style={{fontSize:12,color:C.textMuted}}>{uDistMi(wp.distMi)+(wp.timeToSafety?" · "+wp.timeToSafety:"")+" from TH"}</span>:null}
+          {cumMi(route.waypoints,wp)!=null?<span style={{fontSize:12,color:C.textMuted}}>{uDistMi(cumMi(route.waypoints,wp))+(wp.timeToSafety?" · "+wp.timeToSafety:"")+" from TH"}</span>:null}
         </div>
         {wp.anchorType?<div style={{fontSize:12,color:C.textSub,marginTop:2}}>{wp.anchorType}</div>:null}
         {wp.note?<div style={{fontSize:12,color:C.textSub,marginTop:2}}>{wp.note}</div>:null}
@@ -2326,7 +2342,13 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
      here, one per line, because 4,644 stored hazards are 96% unique prose. */
   const routeVars=(Array.isArray(route.approachVariants)&&route.approachVariants.length)
     ? route.approachVariants.map(function(v){return {name:v.name||"",season:v.season||"",
-        distMi:v.distMi!=null?String(v.distMi):"",gainFt:v.gainFt!=null?String(v.gainFt):"",
+        /* SEEDED IN THE CLIMBER'S OWN UNITS, and _orig carries the numbers the boxes were
+           seeded FROM: converting on both edges makes an UNTOUCHED field lossy (4.8 km back
+           to 2.98 mi), so editing one variant's notes would move every distance on the
+           route. The APPROACHES panel already renders these through uDistMi/uElev, so before
+           this the card said 4.8 km and the box under it said 3. */
+        distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),
+        _orig:{distMi:v.distMi,gainFt:v.gainFt},
         hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",
         hazards:(Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[])).join("\n")};})
     :[blankVar()];
@@ -2430,8 +2452,8 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           A text box here would make the same fact unagreeable. `hours` stays text: 27% of its
           values are ranges ("3-4", "1-1.5"), which a single number cannot express. */}
       <div style={{display:"flex",gap:7,marginBottom:7}}>
-        <input aria-label={"Approach "+(idx+1)+" distance in miles"} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder="miles" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
-        <input aria-label={"Approach "+(idx+1)+" gain in feet"} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder="gain ft" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" distance in "+(uImp()?"miles":"kilometres")} inputMode="decimal" value={av.distMi} onChange={function(e){setAvar(idx,"distMi",e.target.value.replace(/[^0-9.]/g,""));}} placeholder={uDistMiUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
+        <input aria-label={"Approach "+(idx+1)+" gain in "+(uImp()?"feet":"metres")} inputMode="numeric" value={av.gainFt} onChange={function(e){setAvar(idx,"gainFt",e.target.value.replace(/[^0-9]/g,""));}} placeholder={"gain "+uElevUnit()} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
         <input aria-label={"Approach "+(idx+1)+" hours"} value={av.hours} onChange={function(e){setAvar(idx,"hours",e.target.value);}} placeholder="hrs, e.g. 3-4" style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
       <input aria-label={"Approach "+(idx+1)+" season"} value={av.season} onChange={function(e){setAvar(idx,"season",e.target.value);}} placeholder="Window, e.g. Jul-Sep" style={Object.assign({},fld,{marginBottom:7})}/>
@@ -2494,8 +2516,14 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     /* Numbers go in as NUMBERS, matching the 123 gainFt and 120 distMi rows already stored that
        way. A numeric string here would break the tolerant comparison and read as a different
        value from the identical measurement. */
-    var d=parseFloat(x.distMi);if(isFinite(d))o.distMi=d;
-    var g=parseInt(x.gainFt,10);if(isFinite(g))o.gainFt=g;
+    /* WHAT WAS TYPED IS READ IN THE CLIMBER'S OWN UNITS. The columns stay canonical (miles,
+       feet) -- sameEditValue compares these numerically with a tolerance, so a stored
+       kilometre would not merely display wrong, it would fail to cluster with the identical
+       measurement taken by somebody on the other setting, and the 3-agree gate could never
+       be reached. Same conversion-at-the-edges shape as the itinerary builder, and the same
+       one this very function already applies to a contributed waypoint's elev and distMi. */
+    var d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;
+    var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;
     var h=String(x.hours||"").trim();if(h)o.hours=h;
     return o;}).filter(function(x){return x.name||x.notes;});
   if(f.type==="sections")return (vals.climbingRoute||[]).map(function(x,i){return {n:i+1,label:String(x.label||"").trim(),class:String(x.cls||"").trim(),notes:String(x.notes||"").trim()};}).filter(function(x){return x.label||x.notes;});

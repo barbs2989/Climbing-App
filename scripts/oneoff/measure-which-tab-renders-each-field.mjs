@@ -4,8 +4,9 @@
 import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/rappels-rack-filter-class-audit";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";

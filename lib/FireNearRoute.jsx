@@ -110,7 +110,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
           </div>
         ))}
         {fires.length > 4 ? (
-          <div style={{ fontSize: 11.5, color: C.textMuted }}>and {fires.length - 4} more within {radiusMi} miles</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted }}>and {fires.length - 4} more within {uDistMi(radiusMi)}</div>
         ) : null}
       </div>
 
