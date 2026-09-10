@@ -2400,7 +2400,81 @@ the total when deciding where a new guard belongs.
     because it opens from Settings **and from partner search**, carries no review disclaimer and
     is not versioned. It is an inline array rather than a named constant, so it is lifted by
     balancing brackets from its first heading, with the same skip-string-contents care the other
-    two get. **Surface 4 (scattered copy) is still by hand.**
+    two get. **Surface 4 (scattered copy) is covered too now — see the section below.**
+  - **SURFACE 4 — SCATTERED COPY: A DESTINATION MUST EXIST.** This entry read *"still by hand"*
+    for the life of the guard, which is the
+    [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape sitting inside the guard that records
+    it. Reading it as a worklist found **three** wrong claims at once, and **not one is a legal
+    surface** — an ordinary sentence anywhere in the app can send a climber to a Settings section
+    or a profile field, and nothing checked that the place it names is there.
+    - **The FAQ promised a Settings control with three states.** *"Is my emergency contact
+      private?" → "Yes. You control who can see it in Settings — keep it private, share with your
+      crew only, or show it to partners."* Three claims and no control. Measured: `profiles` has
+      **no `*contact*` column** (24 columns), `openEdit`'s draft has **14 keys and none is a
+      contact**, and `emergencyContact` is **READ once** — the crew float plan — and **WRITTEN by
+      nothing**. The sign-in reset sets it to `""`, so for every real account it is empty and
+      unfillable, and the four privacy controls that DO exist are behind `PRIVACY_CONTROLS_LIVE`
+      (false), i.e. **absent**, not disabled.
+    - **A toast pointed at that same absent field.** *"Float plan saved. Add an emergency contact
+      in your profile…"* is the branch that fires for **every real signed-in climber**, because
+      `_contact` is `ME.emergencyContact` and nothing can set it. That is
+      `check:profile-claims` §3's *"Raise it with: a step that CANNOT BE TAKEN"* class, arriving in
+      a safety toast — and it is the **residue of a correct fix**: the handler's own comment
+      records W8 refusing to store placeholder prose (*"Store what is true or store null"*), and
+      having correctly stored `null` it then told the climber to go and fill in a field that does
+      not exist.
+    - **THE THIRD IS WHAT MAKES THIS A CLASS RATHER THAN A CLASS OF ONE, and it supplies the
+      general rule.** Partner browse said *"you can list yourself under Settings → Privacy"* — the
+      control is **real and works** (`List me in partner browse`, gated on
+      `USE_DB&&uid&&myProfileRowQ.data`, not on the flag); the **section** is called *"Privacy &
+      safety"*. A true statement about a heading that is not there is still a dead end, and it is
+      the member that turns *"do not promise an absent emergency-contact control"* into
+      **a Settings path must name a destination Settings renders**.
+    - **THE DESTINATION VOCABULARY IS READ FROM THE APP, never restated** — the `<SL>` headings
+      plus the row labels harvested from the Settings region. A restated vocabulary is how this
+      codebase ended up with four grade parsers, and here it is also what keeps the rule SHARP in
+      both directions: *"Privacy"* is a **prefix of** the section *"Privacy & safety"* and matches
+      no label, so it fails; *"Delete my account"* is a prefix of the button *"Delete my account &
+      data"*, so it passes. **A path may legitimately name a control rather than a section**, and a
+      rule that demanded a section would have flagged correct copy.
+    - **SETTABILITY IS DERIVED, IN BOTH DIRECTIONS, so 4b cannot rot.** The day an emergency
+      contact becomes settable — a `profiles` column or an editor field — directing a climber to
+      set one is **correct**, and the section reports a **MOVED PREMISE** rather than going on
+      forbidding a claim that would then be true. A hardcoded *"there is no such field"* would be a
+      guard forbidding the fix, which is the shape this file records for `check:profile-claims`'
+      own stale assertion.
+    - **4c IS THE LOAD-BEARING HALF: a rule that only forbids is satisfied by deleting the line.**
+      The FAQ must still ANSWER the question a climber asked **and still name where a contact
+      actually goes** (the float plan, whose own copy already says *"Nothing leaves your phone
+      until you share it"* — a verified claim rather than a minted one), and the toast must still
+      say plainly that ClimbMatch will not raise the alarm.
+    - **THREE FALSE POSITIVES IN THE FIRST DRAFT, all flagging CORRECT work**, which is the
+      direction that teaches people to ignore a guard. A greedy path match read *"Settings → Your
+      data to export your data"* as a section called *"Your data to export your data"* (longest
+      known prefix fixes it); the control-vs-section distinction above was missing, so a stored
+      **provenance note** (`raiseDataRequest(…, "Requested from Settings → Delete my account")`,
+      never shown to a climber) read as broken copy; and 4b's own skip test matched `m[0]`, which
+      begins at *"emergency"*, so the **negation that makes the honest form honest sits BEFORE the
+      match** and *"There is **no** emergency-contact field on your profile"* flagged itself.
+    - **The window and the match must share a string.** The second attempt at that skip sliced its
+      window out of the RAW source while matching on the comment-stripped one, so it printed inline
+      **markup** at you instead of the sentence. One string, or the window describes a different
+      file.
+    - **A PREFIX-OF-A-QUOTED-STRING TEST WAS MEASURED AND REJECTED** rather than reasoned about:
+      accepting a phrase that is a prefix of any quoted string would have been vacuous here,
+      because `"Privacy` appears **twice** in `ClimbMatch.jsx` as an ordinary quoted string.
+    - Fails **closed** four ways, each of which otherwise prints identically to a clean run: fewer
+      than 5 section headings, fewer than 3 row labels (a path naming a control would then read as
+      naming nothing and the section would flag correct copy), a missing `setEditDraft({…})` anchor
+      or a draft that parsed short, and **zero Settings paths found anywhere** — a scan that matched
+      nothing proved nothing.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-scattered-copy-cases.mjs`), each case proving
+      its edit landed **by checksum**, restoring the file byte-identically, and judged on the
+      guard's **own FAIL lines**; the harness captures the clean run first and refuses any
+      expectation already present in it. Three cases are the real historical strings restored
+      verbatim. **Three must stay SILENT** — a comment quoting the forbidden path (section 4 strips
+      comments, or it fails on its own documentation), a path naming a **control**, and the FAQ
+      answer **reworded honestly**, since a guard pinned to one phrasing forbids improving it.
   - **THE FIX IT GUARDS CHANGES STRINGS AND NO IDENTIFIER, which is exactly the revert nothing else
     can see.** #1522 rewrote Privacy §4 and §1; `audit:silent-reverts` tracks named definitions and
     says in its own closing caveat that *"a merge that kept a name and dropped its guard clause is

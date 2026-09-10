@@ -282,6 +282,114 @@ const label = policyVersionLabel(POLICY_VERSION);
 if (text.includes(label)) ok(`the screen shows "${label}", the version stamped on a profile at acceptance`);
 else bad(`the Privacy Policy renders no "${label}" — a reader cannot see which version they are being asked to accept`);
 
+// ── 4. SCATTERED COPY — A DESTINATION MUST EXIST ────────────────────────────────────────────
+// This guard's own header has said "Surface 4 (scattered copy) is still by hand" since it was
+// written. It is not the documents that are the whole risk: an ordinary sentence anywhere in the
+// app can send a climber to a Settings section or a profile field, and nothing checked that the
+// place it names is there. Three were wrong at once, and none of them is a legal surface:
+//
+//   the FAQ    "Is my emergency contact private?" -> "Yes. You control who can see it in Settings
+//              — keep it private, share with your crew only, or show it to partners."  THREE
+//              claims and no control: `profiles` has no *contact* column, openEdit's draft has 15
+//              keys and none is a contact, and `emergencyContact` is READ once (the crew float
+//              plan) and WRITTEN by nothing. The sign-in reset sets it to "", so for every real
+//              account it is empty and unfillable.
+//   a toast    "Float plan saved. Add an emergency contact in your profile ..." — the branch that
+//              fires for every real signed-in climber, pointing at that same absent field. The
+//              "Raise it with: a step that CANNOT BE TAKEN" shape check:profile-claims records,
+//              arriving in a safety toast.
+//   browse     "you can list yourself under Settings → Privacy" — the control is real and works;
+//              the SECTION is called "Privacy & safety". A true statement about a heading that is
+//              not there is still a dead end.
+//
+// The third is what makes this a CLASS rather than a class of one, and it supplies the general
+// rule: a Settings path must name a section the app renders. The heading vocabulary is READ from
+// ClimbMatch.jsx, never restated here — a restated vocabulary is how this codebase ended up with
+// four grade parsers.
+console.log("\n--- 4. scattered copy: a Settings path names a section that exists ---");
+
+const SECTIONS = [...app.matchAll(/<SL>([^<]{2,60})<\/SL>/g)].map((m) => m[1].trim());
+if (SECTIONS.length < 5) dead(`only ${SECTIONS.length} Settings section heading(s) parsed out of ClimbMatch.jsx — with none, every path below passes vacuously`);
+
+/* A path may legitimately name a CONTROL rather than a section ("Settings → Delete my account"),
+   so the destination set is sections PLUS the row labels Settings actually renders. Harvesting
+   the labels is what keeps this from flagging correct copy — and it is also what keeps it sharp:
+   "Privacy" is a PREFIX of the section "Privacy & safety" and matches no label, so it still
+   fails, while "Delete my account" is a prefix of the button "Delete my account & data" and
+   passes. Both are read from the app; neither is restated here. */
+const settingsRegion = (() => {
+  const at = [...app.matchAll(/<SL>/g)].map((m) => m.index);
+  return app.slice(Math.min(...at), Math.max(...at) + 4000);
+})();
+const LABELS = [...new Set([
+  ...[...settingsRegion.matchAll(/fontWeight:600\}\}>([A-Z][^<{]{2,45})<\/div>/g)].map((m) => m[1].trim()),
+  ...[...settingsRegion.matchAll(/<span style=\{\{flex:1\}\}>\{?[^<]*?"([A-Z][^"]{2,45})"/g)].map((m) => m[1].trim()),
+])];
+if (LABELS.length < 3) dead(`only ${LABELS.length} Settings row label(s) harvested — a path naming a control would then read as naming nothing, and this section would flag correct copy`);
+
+// Comments are stripped first: this file's own header names "Settings → Privacy" while explaining
+// why it is wrong, and a guard that fails on its own documentation is a trap this repo records.
+const stripLine = (t) => t.replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+let paths = 0;
+for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]]) {
+  for (const m of stripLine(src).matchAll(/Settings\s*(?:→|›|>)\s*(?=[A-Z])([^.,;:"<{}]{2,60})/g)) {
+    const phrase = m[1].trim();
+    paths++;
+    if (SECTIONS.some((sec) => phrase.startsWith(sec))) continue;          // names a section
+    if (LABELS.some((l) => l.startsWith(phrase) || phrase.startsWith(l))) continue;  // names a control
+    bad(`${name} sends a climber to "Settings → ${phrase}", and Settings renders no such section or control. Sections: ${SECTIONS.map((x) => `"${x}"`).join(", ")}`);
+  }
+}
+if (!paths) dead("no 'Settings → <destination>' path found anywhere in the app — the scan matched nothing, so it proved nothing");
+ok(`${paths} Settings path(s) in app copy, every one naming a section or a control Settings renders`);
+
+// 4b. A CONTROL OVER A FIELD THE APP CANNOT SET.
+// Settability is DERIVED, in both directions, so this cannot rot: the day an emergency contact
+// becomes settable, directing a climber to set it is CORRECT and the rule stands down by itself.
+// A hardcoded "there is no such field" would then be a guard forbidding the fix.
+console.log("\n--- 4b. no copy claims a control over a field nothing can write ---");
+const snapshot = JSON.parse(fs.readFileSync(path.join(ROOT, "scripts", "schema-snapshot.json"), "utf8"));
+const profileCols = (snapshot.tables && snapshot.tables.profiles) || [];
+if (profileCols.length < 10) dead(`the schema snapshot lists ${profileCols.length} profiles column(s) — too few to judge whether a field is storable`);
+const draftM = /setEditDraft\(\{([\s\S]{40,1200}?)\}\);/.exec(app);
+if (!draftM) dead("ANCHOR LOST: openEdit's setEditDraft({...}) — without the editor's own field list this section cannot say what is settable");
+const draftKeys = [...draftM[1].matchAll(/(?:^|[,{])\s*([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
+if (draftKeys.length < 5) dead(`only ${draftKeys.length} key(s) parsed out of the profile editor's draft — every settability verdict below would be wrong`);
+
+const contactStorable = profileCols.some((c) => /contact/i.test(c));
+const contactEditable = draftKeys.some((k) => /contact/i.test(k));
+const settable = contactStorable || contactEditable;
+
+if (settable) {
+  bad(`an emergency contact is settable now (${contactStorable ? "a profiles column" : "the profile editor"} carries it), so section 4b's premise has moved. Re-read the FAQ and the float-plan toast: copy directing a climber to set one is CORRECT now, and this rule must be re-aimed rather than left standing.`);
+} else {
+  ok(`nothing can set an emergency contact — ${profileCols.length} profiles columns and ${draftKeys.length} editor fields, none a contact`);
+  for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]]) {
+    const t = stripLine(src);   // ONE string: match and window must share offsets, or the window
+                                // slices a different file and prints markup at you.
+    for (const m of t.matchAll(/emergency[- ]contact[^"<]{0,80}?(in Settings|in your profile|on your profile|under Settings)/gi)) {
+      const before = t.slice(Math.max(0, m.index - 24), m.index);
+      // "There is NO emergency-contact field on your profile" is the honest form and must pass.
+      // The negation sits BEFORE the match, so the window has to look behind it.
+      if (/\bno\b[^.]{0,20}$/i.test(before)) continue;
+      bad(`${name} points a climber at a place to set or control an emergency contact, and there is none: …${(before + m[0]).replace(/\s+/g, " ")}…`);
+    }
+    for (const m of t.matchAll(/(?:control|choose) who can see it in Settings/gi)) {
+      bad(`${name} claims a Settings control over an emergency contact's visibility, and no such control exists: …${m[0]}…`);
+    }
+  }
+}
+
+// 4c. THE POSITIVE HALF, and it is the load-bearing one: a rule that only forbids is satisfied by
+// deleting the line. The FAQ must still ANSWER the question a climber asked, and the toast must
+// still say plainly that the app will not raise the alarm for them.
+console.log("\n--- 4c. ...and the honest answer is still there ---");
+if (!/Is my emergency contact private\?/.test(core)) bad(`the FAQ no longer answers "Is my emergency contact private?" — the question is a climber's, and deleting it is not an answer`);
+else if (!/float plan/i.test(/Is my emergency contact private\?","([^"]*)"/.exec(core)?.[1] || "")) bad(`the FAQ's emergency-contact answer no longer says where a contact actually goes — a refusal with no destination is worse than the false claim it replaced`);
+else ok(`the FAQ still answers the question, and names the float plan as where a contact goes`);
+if (!/ClimbMatch can't alert anyone for you/.test(app)) bad(`the float-plan toast no longer says ClimbMatch cannot alert anyone — that sentence is the whole safety point of the toast`);
+else ok(`the float-plan toast still says plainly that ClimbMatch will not raise the alarm`);
+
 console.log(failed
   ? `\ncheck:policy-claims FAILED — ${failed} problem(s).`
   : `\ncheck:policy-claims: ok — no legal surface claims a control or a capability the app lacks, and the version shown is the version recorded.`);
