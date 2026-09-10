@@ -78,3 +78,27 @@ export function partnerlessCeiling(scoreOf, reachable) {
 export function dayOneScore(scoreOf, reachable) {
   return scoreOf({ emailVerified: reachable.has("email") });
 }
+
+/**
+ * The highest score ANY climber can reach — every earnable component at full stretch, partners
+ * included. This is the number a goal, a tier or a progress denominator has to sit under, and it
+ * is NOT the model's cap: `SERVER_TRUST_CAP` is 99 while the ID and credential components are
+ * unreachable, so a bar set anywhere in that gap is one nobody can ever be shown.
+ *
+ * Kept beside `partnerlessCeiling` rather than derived from it because the two answer different
+ * questions and are used by different guards: that one bounds a policy labelled "trust" (above it
+ * the policy really means "somebody has vouched for you"), this one bounds what the app may
+ * DISPLAY as attainable. Both move by themselves when a verification becomes earnable.
+ */
+export function earnableCeiling(scoreOf, reachable) {
+  return scoreOf({
+    emailVerified: reachable.has("email"),
+    idVerified: reachable.has("id"),
+    certCount: (reachable.has("member_club") || reachable.has("guide_certified")) ? 2 : 0,
+    tenureDays: 40 * 30,   // past the 20-month cap
+    vouches: 10000,
+    catches: 10000,
+    logs: 10000,
+    reports: 10000,
+  });
+}

@@ -1616,13 +1616,15 @@ function DiscBadges({route,sm}){const ds=(route&&route.disciplines&&route.discip
    client write to 'pending'), so those two components are 0 for everybody, forever. The range was
    wrong twice over: the model caps at 99, and only 84 of its 104 points can be earned at all.
    It now names what a climber can actually move, and states no range rather than a false one --
-   measure it with scripts/oneoff/measure-trust-goal-against-ceiling.mjs rather than quoting a
+   measure it with scripts/oneoff/measure-trust-tiers-against-ceiling.mjs rather than quoting a
    number here, which is how the old copy came to describe a scale nobody had re-derived.
-   THE TIERS BELOW ARE STILL SET AGAINST THAT SCALE and are deliberately NOT touched here: "Highly
-   Trusted" at 90 sits above the 84 ceiling, so no climber can ever be shown it, and 70 is above
-   what a two-year climber with 12 vouches, 60 logs, 20 reports and 9 catches scores (65). Where
-   those bars belong is a product decision, not polish -- raised rather than swept. */
-function TrustBadge({score,compact}){const col=score>=90?C.green:score>=70?C.blue:score>=50?C.amber:C.red;const bg=score>=90?C.greenBg:score>=70?C.blueBg:score>=50?C.amberBg:C.redBg;const lbl=score>=90?"Highly Trusted":score>=70?"Trusted":score>=50?"Building Trust":"New";return <span title="Trust score: built from a verified email, time on ClimbMatch, partner vouches, belay catches logged, and climbs and conditions logged. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={col}/>} label={compact?`${score}`:`${score} — ${lbl}`} color={col} bg={bg} sm/></span>;}
+
+   THE TIERS WERE SET AGAINST THAT SAME DEAD SCALE, AND THIS IS WHERE THAT WAS SETTLED. The comment
+   that stood here said they were "deliberately NOT touched -- a product decision, not polish, raised
+   rather than swept". It was raised, and the decision came back FIX THEM, so the ladder moved: it is
+   TRUST_TIERS now, and nothing in this function chooses a label. What changed is only which numbers
+   the bars sit at; the reasoning that they were unreachable is unchanged and is recorded there. */
+function TrustBadge({score,compact}){const t=trustTier(score);return <span title="Trust score: built from a verified email, time on ClimbMatch, partner vouches, belay catches logged, and climbs and conditions logged. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={t.color}/>} label={compact?`${score}`:`${score} — ${t.label}`} color={t.color} bg={t.bg} sm/></span>;}
 
 
 
@@ -2058,6 +2060,38 @@ export function serverTrustFactors(x){
    the two it is showing; collapsing them is how a breakdown stops adding up to its own headline. */
 export function serverTrustRaw(x){return serverTrustFactors(x).reduce(function(s,f){return s+f.pts;},0);}
 export var SERVER_TRUST_CAP=99;
+/* THE EARNABLE CEILING, WHICH IS NOT THE CAP -- AND THE REASON FOUR BARS MOVED.
+   `compute_trust_score` pays 10 for a government ID and 10 for club/guide credentials, and NOTHING
+   IN THE APP CAN GRANT EITHER: 0085 pins every client write to 'pending', the one definer that
+   writes 'verified' hardcodes 'email', and `addVerification` is imported by both app files and
+   called by neither. So 20 of the model's 104 points are unreachable, 84 is the most anyone can
+   score, and a bar anywhere in that gap is not strict -- it is a number no climber can ever be
+   shown. The Profile card asked for 90 and this badge called 90 "Highly Trusted"; both were closed
+   doors, the same defect #1704 fixed one threshold over when the group gate sat at 55 against a
+   partnerless ceiling of 54. Declared once here; check:trust-breakdown DERIVES it from the
+   migrations and fails when the two disagree, so shipping an ID-verification RPC demands this move
+   rather than letting it go stale in the direction that makes a bar look more attainable. */
+export var SERVER_TRUST_EARNABLE=84;
+/* ONE LADDER, AND EACH BAR IS A DESCRIBED STATE RATHER THAN A FRACTION OF THE SCALE -- the method
+   that produced the group gate's 20, since a number read off a curve is fitted to whatever answer
+   was already wanted. Every bar is what a real climber's record actually scores:
+     Building Trust 15 -- email confirmed, six months here, 20 climbs logged (5+6+4).
+     Trusted        33 -- a year here, 40 climbs, three vouches, two belay catches (5+12+8+3+4+1).
+     Highly Trusted 65 -- two years, 60 climbs, twelve vouches, nine catches, twenty reports.
+   84 is the ceiling, so the top tier leaves real headroom rather than being the maximum wearing a
+   label -- which is what 90 was, and worse. WHAT A SCORE CANNOT DO, stated rather than implied: it
+   cannot GUARANTEE another climber has vouched for you, because tenure, logs and reports reach 54
+   alone. The model scores participation as trust-building on purpose; separating the two needs a
+   second input this badge is not handed, and inventing one here would be a feature, not a repair.
+   WRITTEN ONCE. TrustBadge and FullProfile each carried their own copy of the 90/70/50 ladder, so
+   a fix to one would have left the other calling one climber something else -- a hoist is not a
+   single source of truth until every site uses it, the group roster's shape exactly. */
+export var TRUST_TIERS=[{min:65,label:"Highly Trusted",hue:"green"},{min:33,label:"Trusted",hue:"blue"},{min:15,label:"Building Trust",hue:"amber"},{min:0,label:"New",hue:"red"}];
+/* The Profile card's goal, its progress denominator and its "Well-trusted" line were three further
+   copies of 90 that happened to agree with the badge. DERIVED from the top tier now, so the card
+   and the badge cannot say different things about one climber, and one number moves all four. */
+export var TRUST_GOAL=TRUST_TIERS[0].min;
+export function trustTier(score){var s=Math.max(0,Number(score)||0);var t=TRUST_TIERS.find(function(x){return s>=x.min;})||TRUST_TIERS[TRUST_TIERS.length-1];return {label:t.label,color:C[t.hue],bg:C[t.hue+"Bg"]};}
 export function serverTrustScore(x){return Math.min(serverTrustRaw(x),SERVER_TRUST_CAP);}
 function trustFactors(c){var cl=c.catchLedger||{};var v=(c.communityVouches||0)+(VOUCH_BOOST[c.id]||0);var certs=(c.certifications||[]).length;var rl=c.routesLogged||0;var catchPts=Math.round(Math.min(cl.totalCatches||0,14)+Math.min((cl.highFactorCatches||0)*1.5,6));var lastM=cl.lastCatch?(Date.now()-new Date(cl.lastCatch+"T12:00:00").getTime())/(86400000*30.4):99;var recLbl=!cl.lastCatch?"none logged":lastM<2?"this month":lastM<12?Math.round(lastM)+" mo ago":(lastM/12).toFixed(lastM<24?1:0)+" yr ago";var isMe=c.id===0;var _rel=c.reliability!=null?c.reliability:null;var _rr=RESPONSE_RATES[c.id];var _resp=c.responseRate!=null?c.responseRate:_rr;var _pn=c.partnerCount!=null?c.partnerCount:null;var _fp=c.floatPlans!=null?c.floatPlans:null;var _cr=c.conditionsReported!=null?c.conditionsReported:null;var _yr=c.years!=null?c.years:null;return [{label:"Email verified",sub:c.verified?"confirmed via account email":"not verified — the single biggest boost",pts:c.verified?20:0,max:20,met:!!c.verified},{label:"Reliability",sub:_rel!=null?(_rel+"% of confirmed crews honored — no-shows hurt this"):"Not yet tracked",pts:_rel!=null?Math.round(_rel/100*18):0,max:_rel!=null?18:0,met:_rel!=null&&_rel>=85},{label:"Response rate",sub:_resp!=null?(_resp+"% — replies to partner & crew requests"):"Not yet tracked",pts:_resp!=null?Math.round(_resp/100*10):0,max:_resp!=null?10:0,met:_resp!=null&&_resp>=80},{label:"Peer vouches",sub:v+" received · weighted by each voucher’s trust",pts:Math.min(v*4,22),max:22,met:v>0},{label:"Verified belay catches",sub:(cl.totalCatches||0)+" total · "+(cl.highFactorCatches||0)+" high-factor"+(cl.lastCatch?" · last "+recLbl:""),pts:catchPts,max:20,met:(cl.totalCatches||0)>0},{label:"Logged climbs",sub:rl+" recorded",pts:Math.min(Math.floor(rl/5),16),max:16,met:rl>=12},{label:"Partner network",sub:_pn!=null?(_pn+" distinct partner"+(_pn===1?"":"s")+" climbed with"):"Not yet tracked",pts:_pn!=null?Math.min(Math.floor(_pn/3),12):0,max:_pn!=null?12:0,met:_pn!=null&&_pn>=8},{label:"Conditions reported",sub:_cr!=null?(_cr+" trip report"+(_cr===1?"":"s")+" shared with the community"):"Not yet tracked",pts:_cr!=null?Math.min(Math.floor(_cr/2),10):0,max:_cr!=null?10:0,met:_cr!=null&&_cr>0},{label:"Float plans filed",sub:_fp!=null?(_fp+" filed before heading out"):"Not yet tracked",pts:_fp!=null?Math.min(_fp*2,8):0,max:_fp!=null?8:0,met:_fp!=null&&_fp>0},{label:"Experience",sub:_yr!=null?(_yr+" yr climbing"):"Not yet tracked",pts:_yr!=null?Math.min(Math.round(_yr*1.6),14):0,max:_yr!=null?14:0,met:_yr!=null&&_yr>=3},{label:"Certifications",sub:certs+" on file",pts:Math.min(certs*3,10),max:10,met:certs>0}];}
 /* TWO CALLERS, TWO THINGS THEY NEED TO SAY, AND ONE RENDERER. `rows` lets a caller supply an
@@ -2099,7 +2133,7 @@ function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,on
   },[climber,_realId,realProfileQ.data,realVouchesQ.data,vAuthorsQ.data]);
   const [pt,setPt]=useState(climber._tab||"overview");const [invOpen,setInvOpen]=useState(false);
   const isSelf=climber.id===ME.id;
-  const score=climber._real?null:compat(ME,climber),dist=climber._real?null:distMiles(ME,climber),avgVouch=climber.vouches.length?climber.vouches.reduce((s,v)=>s+Object.values(v.ratings).reduce((a,b)=>a+b,0)/Object.keys(v.ratings).length,0)/climber.vouches.length:0;const ts=climber._real?(realTrust!=null?realTrust:0):vScore(climber),tcol=ts>=90?C.green:ts>=70?C.blue:ts>=50?C.amber:C.red,tlbl=ts>=90?"Highly Trusted":ts>=70?"Trusted":ts>=50?"Building Trust":"New";
+  const score=climber._real?null:compat(ME,climber),dist=climber._real?null:distMiles(ME,climber),avgVouch=climber.vouches.length?climber.vouches.reduce((s,v)=>s+Object.values(v.ratings).reduce((a,b)=>a+b,0)/Object.keys(v.ratings).length,0)/climber.vouches.length:0;const ts=climber._real?(realTrust!=null?realTrust:0):vScore(climber),_tt=trustTier(ts),tcol=_tt.color,tlbl=_tt.label;
   return createPortal(<div onClick={onClose} role="dialog" aria-label="Climber profile" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9800,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:480,border:`1px solid ${C.border}`,overflow:"hidden"}}>
       <div style={{background:HERO_BG,boxShadow:HERO_SHEEN,padding:16}}>

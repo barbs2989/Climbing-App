@@ -1,9 +1,10 @@
-/* Is the trust card's "/ 90 goal" a bar a climber can actually reach?
+/* How high can a trust score actually go, and which components can nobody fill?
 
-   The card draws `myTrustScore / 90` as a progress bar and flips to "goal met" at 90. For a
-   signed-in climber that score is the SERVER model, and 20 of its 104 points sit behind
-   verifications no code path in this app can grant -- so the goal, and the bar, may be describing
-   a state nobody can arrive at. Measured rather than reasoned about: the score function is the
+   THE QUESTION THAT PROMPTED THIS IS ANSWERED: the card's goal was a literal 90, above the ceiling
+   below, so "goal met" and a full progress bar were states nobody could arrive at. It reads
+   TRUST_GOAL now (see TRUST_TIERS in ClimbMatchCore.jsx), and check:trust-breakdown section 7 keeps
+   every bar under the ceiling. What survives is the measurement itself, which is what any future bar
+   has to be judged against. Measured rather than reasoned about: the score function is the
    app's own (bundled, never re-typed), and which verifications are earnable is parsed out of the
    migrations by scripts/lib/verification-reach.mjs, so both halves move by themselves. */
 import { execFileSync } from "node:child_process";
@@ -31,17 +32,23 @@ try {
   const reach = await import(path.join(ROOT, "scripts", "lib", "verification-reach.mjs"));
   const { types, scanned } = reach.reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
 
-  /* Every non-verification component past its own cap, so only the verifications vary. */
+  /* Every non-verification component past its own cap, so only the verifications vary. THE
+     EARNABLE CASE GOES THROUGH THE SHARED LIB rather than being computed here: check:trust-breakdown
+     section 7 gates SERVER_TRUST_EARNABLE against reach.earnableCeiling, and a second local copy of
+     that arithmetic is how this repo ended up with four grade parsers. Only the counterfactual --
+     what the ceiling WOULD be if every type were grantable -- is local, because nothing else asks
+     it. */
   const MAXED = { tenureDays: 40 * 30, vouches: 10000, logs: 10000, reports: 10000, catches: 10000 };
-  const asIf = (all) => ({
+  const asIfAll = { ...MAXED, emailVerified: true, idVerified: true, certCount: 2 };
+  const asIfEarnable = {
     ...MAXED,
-    emailVerified: all || types.has("email"),
-    idVerified: all || types.has("id"),
-    certCount: (all || types.has("member_club") || types.has("guide_certified")) ? 2 : 0,
-  });
+    emailVerified: types.has("email"),
+    idVerified: types.has("id"),
+    certCount: (types.has("member_club") || types.has("guide_certified")) ? 2 : 0,
+  };
 
-  const earnable = app.serverTrustScore(asIf(false));
-  const ifAllGrantable = app.serverTrustScore(asIf(true));
+  const earnable = reach.earnableCeiling(app.serverTrustScore, types);
+  const ifAllGrantable = app.serverTrustScore(asIfAll);
 
   console.log("migrations scanned            :", scanned);
   console.log("verification types earnable   :", [...types].sort().join(", ") || "(none)");
@@ -52,7 +59,7 @@ try {
   console.log("day one (email confirmed)     :", reach.dayOneScore(app.serverTrustScore, types));
   console.log("");
   console.log("components a climber cannot fill, however long they climb:");
-  for (const f of app.serverTrustFactors(asIf(false)))
+  for (const f of app.serverTrustFactors(asIfEarnable))
     if (f.pts < f.max) console.log("   " + f.label.padEnd(24) + f.pts + " / " + f.max);
 } finally {
   fs.rmSync(out, { recursive: true, force: true });
