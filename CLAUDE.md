@@ -80,6 +80,7 @@ npm run check:new-climber-journey # a new climber onboards, opens a crew, remove
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:overlay-scroll # no overlay pane may chain its scroll to the page behind
 npm run check:field-renders # every enriched route column actually reaches a screen
+npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:a11y-badges # no control announces two fragments welded into one token
 npm run check:selected-state # a control that LOOKS selected must SAY it is selected
@@ -3047,6 +3048,90 @@ the total when deciding where a new guard belongs.
     wrong-advice path directly. Trap when doing that: `scripts/lib/supabase-env.mjs` makes the
     **dotfiles win over `process.env`**, so a `VITE_SUPABASE_URL=…` prefix is silently ignored
     if `.env.local` exists in the worktree and the injection quietly hits the real DB.
+- **`check:summit-briefing`** asserts that a peak page's **ACROSS EVERY ROUTE HERE** panel states
+  what its routes agree on and refuses where they do not. Renders the real `SummitBriefing`
+  (`lib/DbAreaBrowser.jsx`) over real catalog rows, so it reads the DB and is **not** a build gate;
+  it runs on every PR and every push to main via `render-guards.yml`, on the **anon key** — `routes`
+  is publicly readable and CI has no business holding a key that bypasses RLS, the same stance
+  `check:field-renders` takes one job over.
+  - **IT SHIPPED AS A `scripts/oneoff/` PROBE IN #943 AND WAS RED ON MAIN WHEN SOMEBODY FINALLY RAN
+    IT.** Two of its twenty assertions failed and both were real: **Mount Baker's peak page had
+    stopped naming its land manager and its parking pass**. Nothing about the app looked wrong,
+    because the panel's refusal — *"Differs by route — check the one you are climbing."* — is a
+    legitimate state that renders perfectly. *A verification nobody runs is not a verification*, on
+    a surface whose entire contract is when to speak and when not to. The promotion is the fix for
+    that; the rule change below is the fix for what it found.
+  - **AGREEMENT WAS A PREFIX TEST, AND A PREFIX IS ORDER-SENSITIVE.** `sharedFact` asked whether
+    every stated value was a prefix of the longest once spelling was normalised — so one agency
+    written **agency-first** and **place-first** read as a disagreement. Baker's nine routes carry
+    `"U.S. Forest Service"`, `"USDA Forest Service — Mount Baker-Snoqualmie National Forest, Mt.
+    Baker NRA"` and two leading `"Mt. Baker-Snoqualmie National Forest — Mt. Baker Wilderness
+    (USFS)"`: one agency, four levels of detail, and the page answered *"Differs by route"* to
+    both questions.
+  - **The rule is CONTAINMENT now — every version must say nothing the fullest one does not — and
+    the A/B is why it is safe.** Measured over the whole WA catalog
+    (`scripts/oneoff/measure-summit-briefing-refusals.mjs`, which **executes the panel's own
+    `normFact`/`sharedFact` rather than a copy**, with `ANCHOR LOST` if either moves): the panel
+    renders on **198 WA areas** and prefix agreed on **371 of 563** fact rows. Containment agrees on
+    **422** — **51 gained, 0 LOST, and the value displayed where it already agreed does not move.**
+    So no page loses a fact and no page changes one it already showed.
+  - **The four documented genuine conflicts all still refuse, and that was checked rather than
+    assumed**: Mount Stuart's and Argonaut's Enchantment-vs-Teanaway permits, **Mount Adams' Yakama
+    Nation land** (a different manager, not a fuller description of one), and Agnes Mountain's two
+    forests and two parking regimes.
+  - **All 51 gains were READ, not counted.** They are one fact at different specificity — *"National
+    Park Service"* against *"National Park Service — Mount Rainier National Park"*, *"Okanogan-Wenatchee
+    National Forest — Alpine Lakes Wilderness"* against the same with the ranger district. Several
+    are strictly better than the refusal they replace: Morning Star Peak's fullest string says in as
+    many words *"…not Glacier Peak Wilderness"*, correcting its sibling, and Bulls Tooth's names both
+    forests because the trailhead and the summit are in different ones.
+  - **WHAT CONTAINMENT IS LOOSER ABOUT, stated rather than glossed:** a short version can be
+    **contradicted** by the fullest rather than merely less specific than it — *"Northwest Forest
+    Pass"* sits inside *"Not a Northwest Forest Pass … standard NPS entrance fee applies"*. The
+    reader is not misled, because the fullest version is the one on screen and it is the one that
+    explains itself; what is lost is the refusal. A negation deny-list was considered and
+    **rejected**: it would withhold three correct facts (Little Tahoma, Morning Star, Mount Rainier
+    parking) to guard a hypothetical, and this file records four times over that a deny-list is
+    beaten by one more adjective.
+  - **TWO SYNTHETIC PEAKS BESIDE THE THREE REAL ONES, because the live defect is now FIXED** and a
+    case that can only exist while the tree is unhealthy is not a case. One pins the
+    order-insensitivity; its **negative** — two different national forests must still refuse — is
+    what stops the rule being widened until it agrees on anything.
+  - **Assertions are scoped to their own ROW, never to the panel.** The panel says *"Northwest
+    Forest Pass"* in more than one place, so a panel-wide match reads one row's copy as another's —
+    the count-inside-the-panel rule `check:camping` records three times over.
+  - Fails **closed**: an unreachable catalog, a fixture peak that returned too few routes, a panel
+    under 400 characters (against which every *"must NOT contain"* assertion passes), and fewer than
+    **26 assertions RUN**.
+  - Injection-tested **6/6** (`scripts/oneoff/inject-summit-briefing-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `lib/DbAreaBrowser.jsx` byte-identically. Case 1 is
+    the real historical rule, restored verbatim. **Two must stay SILENT** — a comment quoting the
+    forbidden prefix shape, and the `ALIAS` table reordered — because both are correct work.
+  - **THE PANEL'S RENDERED COPY IS CLEAN CATALOG-WIDE, which nothing had asked.** #1672 swept the
+    ROUTE page for broken copy and found it clean; the AREA page had never been swept, and this
+    panel is the part of it that DERIVES rather than displays.
+    `scripts/oneoff/measure-summit-briefing-copy.mjs` renders **all 198** WA peak briefings and
+    scans for `NaN` / `undefined` / `Infinity` / `[object Object]`, and for a value row holding
+    prose: **0 findings.** It fails closed under 100 renders, since a short sweep reports a clean
+    catalog. A measurement rather than a guard — the contract is already proven on five fixtures,
+    and rendering all 198 every run buys a catalog read for a question whose answer moves only when
+    the catalog does.
+  - **Three more measured NON-findings from the same sitting, recorded so they are not re-derived.**
+    Every live `areas.area_type` has an `ATYPE` label (0 fall through to the generic *"Area"*) and
+    every live `routes.discipline` has a `DISC_LABELS` entry (0 print the raw column value). And
+    the heading **ACROSS EVERY ROUTE HERE** is computed from the area's DIRECT routes while
+    `route_count` on the strap above is a SUBTREE aggregate — measured, **0 of the 198** panels
+    differ, so the heading is not over-claiming.
+  - **A measured NON-finding, so it is not re-derived.** The `High point` row is the one row with no
+    denominator caveat and no majority gate, unlike its four siblings. Measured: it prints on **15**
+    WA peak pages, **1** of them backed by a minority of the peak's routes, and **none** below the
+    peak's own stated elevation. A caveat there would be bookkeeping for a class of one. Two of the
+    15 state a high point ABOVE their peak, and **both are correct, checked rather than assumed**:
+    `wa_mount_torment` at 8,815 ft is Forbidden Peak's height on the **Torment-Forbidden Traverse**,
+    and `wa_the_tooth` at 6,238 ft is Chair Peak's on the **Tooth-Chair Traverse** — the peak's other
+    six routes all state 5,604-5,606. A traverse's high point is legitimately its far summit, which
+    is exactly what the row's own caption claims, so neither is a data question. *Read the route
+    that carries an outlier before filing it as one.*
 - **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
   the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
   researched string into an existing column, look at where that column renders* — which had been
