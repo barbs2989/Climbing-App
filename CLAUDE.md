@@ -757,6 +757,38 @@ the total when deciding where a new guard belongs.
     a fact about the tree rather than a list to maintain; it read 5 for months after the tree had
     moved on). Wiring that a config can forget is wiring that one eventually
     will: the configs already drifted once on which files they transformed.
+    - **ARE ANY OF THOSE ANCHORS ALREADY ROTTED? NO — 17 anchors across 12 files, 0 LOST, 0
+      AMBIGUOUS** (`scripts/oneoff/measure-config-anchor-rot.mjs`, 2026-09-09). Worth asking
+      because **five configs are exercised by no wired guard at all** — `camping-expand`,
+      `derived-trailhead`, `group-trust`, `metric-units`, `policy-notice` — so a rotted anchor
+      there throws only when somebody remembers to run the probe, and this file already records
+      the scaffold as a STRING no static gate reads. It needs **no browser**: whether an anchor
+      still occurs in the source is deterministic, so it can be answered honestly on a box too
+      loaded for a walk to be evidence.
+    - **THE CONTROLS ARE THE RESULT, NOT THE HEADLINE.** Seven of the twelve are exercised by a
+      guard that runs in CI, and the run **fails closed** unless all nine of their anchors resolve
+      **exactly once** — because "0 LOST" is precisely what a broken scan prints. It earned that
+      four times over: the first four versions each printed a plausible number while being wrong,
+      and every failure is a different way a text scan lies about the source it is reading.
+      **(1)** Bounding a declaration at the first raw `;` cuts INSIDE the anchor — an anchor is a
+      fragment of JavaScript — so two CONTROL configs read as UNPARSED and journey's single-quoted
+      anchor yielded the `"true"` nested within it. **(2)** A COMMENT inside `zero-state`'s
+      `ANCHORS` array contributes literals of its own, which shifted the from/to parity so the TO
+      halves — replacements, correctly absent from the app — were counted and reported LOST.
+      **(3)** Counting across every app file answers the wrong question: `code.split(ANCHOR)` runs
+      on the ONE file the transform admits, so it is scoped to the files the config's own
+      `id.endsWith` names. **(4)** Discovery by NAME missed `policy-notice`, which calls its anchor
+      **`GATE`** — the too-narrow-proxy failure a third time, so anchors are discovered by **use**
+      (`code.split`/`code.replace` is handed it) as well as by name, the argument this guard
+      already makes for discovering overlays by behaviour rather than by a name shape.
+    - Proven **non-vacuous in both directions** rather than trusted: a fixture config carrying a
+      deliberately rotted anchor is reported LOST while every control stays clean, and one that
+      splits the app with no findable declaration **fails as a hole in the instrument** rather than
+      printing a reassuring *"rewrites nothing"* — which is exactly how `GATE` went unseen twice.
+    - **Not promoted to a build gate.** It answers a question about `scripts/oneoff/` probes rather
+      than about the app, every config already fails loudly with ANCHOR LOST the moment it runs,
+      and a class with zero findings is the detector this repo keeps declining to build. Re-run it
+      after any edit to the two dense app lines these anchors sit on.
   - Injection-tested; the five cases are at the bottom of the script. Case 1 (rename an
     overlay off the convention) must **pass**, and it is the one that drove a fix.
 - **`check:ui`** spawns a dev server, walks 20 screens in headless Chrome, and
