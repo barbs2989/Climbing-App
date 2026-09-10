@@ -55,6 +55,13 @@ const CASES = [
     expect: "shows the MOST SPECIFIC of the agreeing land-manager strings",
   },
   {
+    name: "approach-reads-the-raw-column",
+    why: "THE ANTI-REVERT CASE. Reading `dist_km` raw instead of the route page's own effective distance changes NO identifier, so audit:silent-reverts cannot see it and every other assertion here stays green — while one climb goes back to having two approach distances depending on the screen.",
+    find: "    const ap = numericSpan(rs, effDistKm);",
+    repl: "    const ap = numericSpan(rs, r => r.dist_km);",
+    expect: "the Approach row shows the route page's own distance",
+  },
+  {
     name: "SILENT-comment-quoting-the-rule",
     why: "a comment naming the forbidden prefix shape is documentation; a guard flagging it would forbid explaining itself.",
     find: RULE,

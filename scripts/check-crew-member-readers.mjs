@@ -83,7 +83,7 @@ const ALLOW = [
   { key: "x.id===jq.climberId", why: "same crewJoinIn list, read again for the unfinished-business dropdown" },
   { key: "cById(rq.climberId)", why: "the seed crew-invite card; the DB invite path resolves its own profiles" },
   { key: "c.id===q.climberId", why: "GuideDashboard is the seed dashboard — DbGuideDashboard is the DB-backed one and resolves separately" },
-  { key: "x.id===n.climberId", why: "a notification's climberId, and the result is guarded by `if(c)` — a miss opens nothing rather than showing the wrong person" },
+  { key: "x.id===_t.climberId", why: "a notification's climberId, reached through notifTarget() so the affordance and the click cannot disagree (#1716); the descriptor deliberately keeps the field NAMED climberId so this lookup stays visible to this guard. The result is still guarded by `if(c)`, so a miss opens nothing rather than showing the wrong person" },
 ];
 const used = new Set();
 

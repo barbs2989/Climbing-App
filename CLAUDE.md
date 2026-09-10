@@ -288,6 +288,49 @@ the total when deciding where a new guard belongs.
     edit landed **by checksum** and restoring every file it touched byte-identically. Fails
     **closed** on a renamed `feats`, an array that does not close, or fewer than 5 entries parsed —
     a tour the guard cannot read must never report as a tour with nothing missing.
+- **THE SEED-IDENTITY DEFECT CAME BACK IN `FriendsList`, AND `check:seed-history` IS BLIND TO A
+  THIRD OF THE APP — the second half is the serious one.** The friends overlay's FRIENDS' RECENT
+  ACTIVITY section does exactly what #735 fixed on Home, both halves:
+
+      friends.some(function(c){return c.name===x.a.user;})          // which rows to show
+      var fr=friends.find(function(c){return c.name===x.a.user;});  // Kudos / Message / VOUCH
+
+  `friends` is the DB-backed connections list and `a.user` is a seed author's DISPLAY NAME, so a
+  real climber called "Maya Chen" is shown that seed climber's 11 climbs as her own activity — and
+  `fr` drives the row's **Vouch** button, so she could be vouched for off somebody else's climb.
+  `seedIdentity` appeared **zero** times within 4,000 characters of either site.
+  - **THE GATE COULD NOT SEE IT, and that is measured rather than inferred.** `blank()` wipes
+    comments and strings in one stateful pass, treating **every quote as a string delimiter** — and
+    JSX body text is full of apostrophes (`don't`), so it desynchronises and wipes real code:
+
+        ClimbMatchCore.jsx   41.4% of the file wiped   54 of 283 `function NAME` declarations GONE
+        RouteDetail.jsx      46.2% wiped               33 of 129 GONE
+        ClimbMatch.jsx       37.4% wiped                2 of  10 GONE
+
+    Those 54 sit at **column 0** — `GearTiers`, `CatchLedger`, `EmergencyRescueCard`, `SpeedProfile`,
+    `ReportStats`, `BailoutForm` — and a declaration at column 0 cannot be inside a string or a
+    comment. **Wiping comment text is the point; wiping CODE is a false pass**, and finding that
+    code is this gate's entire job. `check:overlay-discovery`'s entry already records the same
+    blanker returning *"0 overlays where raw returns 22"*.
+  - **SO A GREEN RUN HERE IS A STATEMENT ABOUT TWO THIRDS OF THE APP**, and `FriendsList` is in the
+    wiped third. That is why the defect survived the gate built for it.
+  - **IT WAS FOUND BY ACCIDENT, WHICH IS THE PART TO INTERNALISE.** An apostrophe in an unrelated
+    comment shifted where the desync lands and the two sites became visible for the first time.
+    **Rewording the comment made the guard green again — the tempting fix, and the wrong one**: it
+    would have hidden a live defect and left the gate reporting a clean sweep. The apostrophe was
+    kept until the sites were genuinely gated.
+  - **The gate goes AFTER the comparison** (`c.name===x.a.user&&seedIdentity(c)`), matching the form
+    `ClimbMatch.jsx` uses, because the scan tests the **90 characters following** the match. A gate
+    written *before* it is correct code the guard rejects — worth knowing before "fixing" a red by
+    reordering the wrong way.
+  - **Verified on RAW source, not through the gate**, because a green from the gate proves nothing
+    here: `scripts/oneoff/probe-friendslist-activity-is-seed-gated.mjs` asserts both gated forms and
+    that the two UNGATED strings are absent, plus a non-vacuity check that the 43 seed activity
+    authors still exist. Nothing it reads is blanked, so nothing can be silently skipped.
+  - **THE BLANKER IS NOT REWRITTEN HERE, deliberately.** It is shared with `check:dead-flag-gates`,
+    whose own entry records that a regex strip *"ate real code"* there, so a careless fix is worse
+    than the hole. It needs a JSX-aware pass and its own injection suite — and until it has one,
+    treat this gate's verdict as partial.
 - **`check:screen-lists`** asserts that a guard's list of screens matches the app's own. **The app
   has SEVEN tabs and five browser guards walked six.** `NAV` is
   today/routes/discover/crew/logbook/**ranks**/me, and `check:a11y-badges`, `check:overflow`,
@@ -1258,6 +1301,19 @@ the total when deciding where a new guard belongs.
     it would leak one per run forever, exactly as `check:message-delivery` records.
   - Run it after touching `0088`/`0094`/`0095`, or any policy on `profiles`, `messages` or
     `crew_members`.
+  - **RE-RUN 2026-09-10 after `0180` put a new INSERT policy on `crew_members` — all three still
+    hold.** That is this entry's own trigger firing (*"any policy on `profiles`, `messages` or
+    `crew_members`"*) and being answered rather than noted: `0178`/`0179`/`0180` landed in one day,
+    all three are policy work, and `0180`'s `crew_members` insert gate is the one that arms this.
+    Controls fired first — B could read, message AND crew-invite A **before** the block — so the
+    refusals are attributable; neither refusal disclosed the block; unblocking restored the read.
+    **Teardown verified from OUTSIDE again** rather than trusted, since this guard still prints no
+    teardown line: **0** accounts on the `.invalid` QA domain afterwards, 3 auth users total.
+    - **The three hand-run DB guards were clean in the same sweep** (they have no CI to run them):
+      `check:column-drift` ok, `check:function-columns` ok over 11 writing functions,
+      `check:function-drift` 46 agreeing with 1 declared benign. `check:rls` (static, in the build)
+      ok too — worth running by hand anyway when three policy migrations land at once, because it
+      is the guard those migrations are most likely to break.
   - **RE-RUN 2026-09-04 after `0176` gave `messages` a DELETE policy — all three hold**, and that
     migration is exactly the trigger this line names. Controls fired first (B could read, message
     and crew-invite A **before** the block, so the refusals are attributable), neither refusal
@@ -1917,15 +1973,33 @@ the total when deciding where a new guard belongs.
     three that do not are non-findings: both crew-invite sites pass `done`, which is
     `()=>emailInvitesQ.refetch()` at the call site, and `reportPhoto`'s toast is the only sensible
     feedback for a write that goes to a moderation queue the reporter cannot see.
-  - **THE REST OF THAT SCAN IS NOT MEASURABLE THIS WAY, and saying so beats reporting it.** It also
-    flagged 13 writes with no `.then` and no optimistic update "before" the call — including
-    `saveObjective`, `addComment` and `createClimbLog`. Every one is a false positive: the
-    optimistic `setUserLists(...)` for `saveObjective` sits **~700 characters earlier on the same
-    physical line**, outside the 260-character window the scan used. On a file whose longest line
-    is 58,365 characters, *"before the call"* is not a scope, and answering this properly needs the
-    enclosing HANDLER resolved rather than a window. Same failure as
-    [[a-partial-measurement-agrees-with-what-you-expect]], and the reason those 13 are recorded as
-    unmeasured rather than as findings.
+  - **THE REST OF THAT SCAN WAS RECORDED AS UNMEASURABLE THIS WAY, AND IT IS MEASURED NOW: 70 write
+    call sites, ZERO with the result unhandled.** It also flagged 13 writes with no `.then` and no
+    optimistic update "before" the call — including `saveObjective`, `addComment` and
+    `createClimbLog` — and concluded *"every one is a false positive"* **while admitting the
+    instrument could not tell**: the optimistic `setUserLists(...)` for `saveObjective` sits **~700
+    characters earlier on the same physical line**, outside the 260-character window the scan used.
+    On a file whose longest line is 58,365 characters, *"before the call"* is not a scope — the same
+    failure as [[a-partial-measurement-agrees-with-what-you-expect]] — and answering it properly
+    needs the enclosing HANDLER resolved rather than a window.
+    `scripts/oneoff/measure-optimistic-writes-by-handler.mjs` resolves it with Babel, and **the
+    claim holds**: 5 of the 13 have their optimistic setter in the same handler and simply sat
+    outside the window, and the climb-log pair is handled downstream through `op.catch(...)` /
+    `return op.then(...)`, which the source says in its own comment. *A plausible mechanism nobody
+    measured is a hypothesis*, and this one survived the measurement.
+  - **TWO THINGS IN THAT MEASUREMENT ARE WORTH MORE THAN ITS COUNT.** **A NAME IS NOT THE
+    FUNCTION**: v1 matched the callee's name against the write vocabulary and reported **10
+    `addComment` sites** as unhandled, because `ClimbMatch.jsx` declares a LOCAL wrapper whose
+    `.then(cmRefetch)` / `.catch(cmFail)` — including a *"Could not save your comment"* toast —
+    lives one level in, with the db function imported under an **alias** the name test could never
+    see. Only `scope.getBinding` separates the two, the trap this file already records for
+    `clickable`, where a local boolean shadowed the helper while `check:refs` stayed green because
+    the identifier WAS bound. And **a report of 0 is exactly what a scan that can no longer fire
+    prints** — a risk that grew the moment `handled()` learned to follow a variable, since every
+    widening of *handled* shrinks what can be reported — so the classifier is exercised on **four
+    constructed shapes first** and refuses to report on the app unless it reproduces them.
+    Fixtures rather than live code, deliberately: three of the four do not exist in the tree, which
+    is the finding, and a self-test drawn from the code under test cannot show that.
   - **THE EARLY-RETURN CLASS IS NOW CLOSED, 2 defects in 9.** `App` returns early for nine screens
     and both defects were the guide pair above. The other seven are non-findings with reasons, so
     nobody re-derives them: **Calendar**'s *"No events yet"* reads `events`, a `useState` seeded
@@ -3306,6 +3380,33 @@ the total when deciding where a new guard belongs.
     the heading **ACROSS EVERY ROUTE HERE** is computed from the area's DIRECT routes while
     `route_count` on the strap above is a SUBTREE aggregate — measured, **0 of the 198** panels
     differ, so the heading is not over-claiming.
+  - **THE APPROACH ROW STATED A DIFFERENT DISTANCE FROM THE ROUTE PAGE, on 126 of the 198 peak
+    pages, usually by a FACTOR OF TWO.** It read `dist_km` raw; `RouteDetail` has always read
+    `effDistKm`, which prefers the route's **own itinerary** — the sum of its days' miles — and
+    halves it unless the trip is recorded as a loop or point-to-point. On those rows `dist_km`
+    holds the ROUND TRIP while the itinerary agrees with half of it, so this panel labelled the
+    whole trip *"Approach"* while the route page for the same climb said half of it. The #1203
+    shape — one fact, two screens — arrived on a browse surface.
+    - Measured by `scripts/oneoff/measure-approach-distance-two-screens.mjs`: of the **543** WA
+      routes carrying both a `dist_km` and itinerary day-miles, **336 differ by more than 15%**.
+    - **THE FIX IS CONSISTENCY, NEVER A VERDICT ON `dist_km`.** That column holds two conventions
+      at once and this file forbids normalising it in bulk; nothing here touches it. What changed
+      is which SOURCE a reader prefers, and only where the route states an itinerary of its own —
+      with none, the stored column is returned untouched.
+    - The three helpers moved to **`lib/outing.js`** unchanged, for the reason `lib/rack.js` and
+      `lib/rappels.js` record: core cannot import `RouteDetail` and `lib/DbAreaBrowser.jsx` imports
+      only `lib/`. It reads **both spellings** of the column, because the route page's object has
+      been through `dbRouteToCamel` while the area browser holds RAW PostgREST rows — the
+      `land_manager`/`landManager` mistake, one module over.
+    - **Behaviour-neutral for the route page, proven rather than asserted.**
+      `scripts/oneoff/verify-outing-distance-equivalence.mjs` runs a VERBATIM copy of the pre-move
+      expression against the SHIPPED function over every WA route: **8,365 compared, 790 resolving,
+      0 differ**, plus seven synthetic cases pinning that the snake-case fallback only ADDS (the
+      camel spelling still wins where both are present).
+    - **Pinned by the guard, because reverting it changes NO identifier** — `audit:silent-reverts`
+      says in its own closing caveat it cannot see that. Mount Adams is the fixture, its two
+      readings being furthest apart (3.5–23.2 mi raw against 5.0–11.6 mi effective), and the
+      assertion first checks that they DIFFER so it cannot pass vacuously.
   - **A measured NON-finding, so it is not re-derived.** The `High point` row is the one row with no
     denominator caveat and no majority gate, unlike its four siblings. Measured: it prints on **15**
     WA peak pages, **1** of them backed by a minority of the peak's routes, and **none** below the
@@ -4204,6 +4305,49 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **A NOTIFICATION THAT NAVIGATES RENDERED AS INERT, because one screen derived "where does this
+  go" TWICE and the two disagreed.** `NotifPanel` had an if/else chain for the CLICK and a separate
+  boolean for the AFFORDANCE:
+
+      const tappable = n.climberId!=null || !!n.tab || !!n.route || !!n.group;
+
+  That list omits **`recap`** and **`goto`**, both of which the click chain immediately beside it
+  handled. So a recap notification **navigated on tap while rendering no `→` and
+  `cursor:"default"`** — a row that works and signposts itself as inert.
+  - **FOUND BY READING A CI CAPTURE, not by a scan**, which is what the technique is for. In
+    `Home:Unfinished-business-9` every ACTIVITY row is followed by `→` except one — *"Did your crew
+    make Schoolroom on May 24? Mark who showed"* — and that is the seed's only `recap` alert. The
+    one row without an arrow is the whole finding.
+  - **THERE ARE THREE DERIVATIONS OF THIS ONE FACT**, which is why the fix is a helper rather than
+    a longer list: NotifPanel's affordance test, NotifPanel's click chain, and **Home's own chain**.
+    `notifTarget(n)` now returns a destination or null, and NotifPanel derives **both** the
+    affordance and the dispatch from it, so they cannot disagree again.
+  - **HOME IS LEFT ALONE DELIBERATELY, and the reason is recorded rather than assumed.** Its rows
+    are `clickable()` unconditionally, which is honest ONLY because its chain ends in a fallback
+    that opens this panel — not because its list of kinds is complete. Lose that fallback and Home
+    inherits exactly this defect, so the probe pins it. It also navigates the app directly rather
+    than delegating through `onGo`, so it shares the DESTINATION question and not the acting on it.
+  - **The spread is CONDITIONAL now** (`{...(_t?clickable(…):{})}`), so a notification with no
+    destination is not announced as a control that does nothing — the inert-control class this file
+    holds at **zero**. None exists today (every seeded kind has a target), so that closes it
+    latently rather than fixing a live instance, and the probe says so.
+  - **THE INJECTION FOUND TWO HOLES IN THE PROBE RATHER THAN IN THE APP**, which is what a suite is
+    for. Its Home assertion used a bare `includes()` on a string that occurs **twice** in the file,
+    so deleting Home's fallback left the other occurrence and the case reported MISSED — this
+    probe's own *"matched N times, so the assertion is about an unknown site"* trap, in the one
+    assertion that had not guarded against it. It counts against Home's own chain now.
+  - **AND THE SUITE NOW REFUSES AN EXPECTATION THAT MATCHES THE CLEAN RUN, because I made that
+    mistake FIVE times in one session.** An expectation written against the text an assertion
+    prints when it PASSES reports MISSED against a probe firing correctly, and this file already
+    records the same error twice before today. Making it structural caught three of the five before
+    a single run was wasted. It is exact here only because the probe's wiring failures carry a
+    `[wiring]` marker so a failure never reads as its own pass — the sibling suite cannot use the
+    check for exactly that reason and says so instead.
+  - `scripts/oneoff/probe-a-notification-that-goes-somewhere-says-so.mjs` — 15 assertions, no
+    browser, no DB, `notifTarget` lifted from source. Injection-tested **8/8**
+    (`scripts/oneoff/inject-notif-target-cases.mjs`); case 1 is the shipped defect restored verbatim,
+    and **two must stay SILENT** — a comment quoting the old list, and adding a NEW destination kind,
+    which is ordinary work an affordance guard must not forbid.
 - **FOUR MORE MAPPINGS NAMED A CLIMBER THE WAY THEY DID NOT ASK, AND THE OBVIOUS SWEEP WOULD HAVE
   MISSED THE WORST ONE.** `PARTNER_COLS` states the contract in its own comment — *"`show_name` is on
   every list that becomes a CLIMBER OBJECT, because `pubName()` decides between the display name and
@@ -8790,6 +8934,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     that way is safe and was measured rather than assumed — every one of the 2,525 areas under
     `washington` is `wa_`-prefixed except the state row itself. Corrected before shipping: 1,012
     routes and 830 pins became **1,016 and 832**.
+  - **SECTION 3 — ONE PLACE, MANY NAMES: the gap BETWEEN sections 1 and 2, and the commonest
+    shape of all.** Section 1 keys on the NAME and only reports past `MIN_KM`, so pins metres apart
+    are invisible to it; section 2 keys on `name|lat4|lng4`, so it needs the name AND the coordinate
+    to match. A point stored under SEVERAL names at SLIGHTLY different coordinates falls between
+    them. **"Stuart Lake Trailhead" is stored 52 times under SIX names at about five coordinates**,
+    with elevations 1,300 / 2,930 / 3,200 / 3,400 (x37) / 3,500 / 3,540 — so two climbers reading
+    two routes off one trailhead get answers 2,100 ft apart. Keyed on the **coordinate cluster**
+    (200 m) alone: **41 findings across 295 clusters** of 3+ pins.
+    - **A FULL-NAME KEY CANNOT SEE IT EITHER, and that was measured rather than assumed.** Keyed on
+      the normalised name, the six variants each get their own tiny majority and NO outlier is
+      detectable — the census reported **4** findings and silently omitted the very case that
+      prompted it. *A detector's clustering key decides what it can see*, and one that misses its
+      own founding case is worth nothing. Both earlier keys were tried and both failed that test.
+    - **IT REPORTS THAT TWO ROWS DISAGREE AND NEVER PICKS.** The majority is not the truth: at
+      *"The Mole (Edward Peak) North Face topout"* three pins say 1,300 ft and one says 6,800, and
+      it is the **lone** pin that looks right for a topout. Section 2's own header already records
+      the SR-20 case where the ground admitted only the dissenter. Adjudicate against the terrain.
+    - The top hits are unarguable: **Cascade Pass Trailhead** has 21/25 at 3,600 ft and one at
+      **8,380**; a **Hwy 20 pullout** has one pin at **7,900 ft** on a highway that tops out at
+      5,477. Thresholds are borrowed rather than fitted — 250 ft is this file's own `FLOOR_FT`
+      for *inside the 3DEP grid's noise*, and a cluster with no clear majority is skipped because
+      there is nothing to call an outlier against.
+    - **A VACUOUS PASS, CAUGHT ONLY BY AN INDEPENDENT COUNT.** Wired in, the section first reported
+      **0 clusters examined** — because this file's `km()` takes **arrays** `[lat,lng]` and it was
+      handed objects, so every distance was `NaN`, every proximity test false, and no cluster ever
+      formed. A standalone measurement had already said 40, which is the only reason the zero was
+      not read as a clean catalog.
   - Fails **closed** four ways — zero areas, zero routes, zero placed summit pins, and a split
     whose ground could not be read is reported as **NOT MEASURED** rather than as agreement. That
     last one is the reason `terrain.mjs` returns `null` and never `0`.
@@ -10676,15 +10847,28 @@ the correction knows the screen is wrong, and they have no way to report it.
         stay SILENT** — a comment quoting the forbidden literal, and a renamed local. The floor
         rises 28 → 38 with the section: a floor left at the old count cannot see the new half stop
         asking.
-    - **STILL OPEN, measured and reported rather than half-fixed:** `AddRoute`'s approach buckets
-      (`< 1 mi / 1–3 mi / 3–6 mi / 6+ mi`, `ClimbMatchCore.jsx`) are imperial whatever the setting.
-      They are display-only — the control stores the KEY (`"u1"`) beside a separately canonicalised
-      numeric `dist` — so nothing is written wrong. The reason they are not converted here is that
-      the only distance helper available returns **two decimals**, and `1.61–4.83 km` on a coarse
-      bucket states a precision the bucket does not have; a second rounding vocabulary is how this
-      codebase got four grade parsers. `scripts/oneoff/measure-imperial-control-labels.mjs` is the
-      census — **91 literals, and after this change exactly one control group remains**, the rest
-      being prose or already unit-aware.
+    - **`AddRoute`'s approach buckets were the one control group left, AND I RECORDED A FALSE
+      REASON FOR LEAVING THEM.** This entry read *"they are display-only — the control stores the
+      KEY (`u1`) beside a separately canonicalised numeric `dist` — so nothing is written wrong"*.
+      **The second half is wrong, and the wrong reason is the dangerous half.** The key WAS written
+      wrong: it went into the proposal as `approach`, and `approve_new_route` (`0135`) inserts
+      `v->>'approach'` straight into `routes.approach`, **which is PROSE** — the walk-in narrative
+      the Planner renders. So an approved contribution put `u1` where a paragraph belongs.
+      - **I traced the submit payload and stopped there.** `approach: approach||null` really is
+        unit-neutral at the call site, and that is exactly as far as I looked; what the RPC then
+        does with it is where the defect lived. *Read the whole writer* — the rule this file already
+        records for `descentText`, where three sessions in a row derived a rule from one line of
+        `var M` without reading the fix-ups below it.
+      - Another session **removed the chips** rather than relabelling them, which is the right fix:
+        a units conversion would have left an opaque key going into a prose column. A defect can be
+        hidden by a worse defect in the same control — the shape `check:a11y-badges` records for
+        `AreaLatest`, where a glued name was masked by the row not being a control at all.
+      - What survives of my reasoning is only the narrow part, and it is now moot: converting them
+        would have needed a **two-decimal** distance helper, and `1.61–4.83 km` on a coarse bucket
+        states a precision the bucket does not have.
+      - `scripts/oneoff/measure-imperial-control-labels.mjs` is the census. **91 → 86 literals, and
+        ZERO control groups remain** — every survivor is prose, an object key, or already
+        unit-aware. Read its output before treating a count here as work.
   - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
     LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
     *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
