@@ -1597,7 +1597,21 @@ function ActionIcon({name,color,size}){const s=size||19;const p={width:s,height:
 
 function DiscBadge({id,sm}){const d=CAT[id]||DISC[id];if(!d)return null;return <Pill icon={<DiscIcon d={id} size={sm?11:13}/>} label={d.label} color={d.color} bg={d.bg} sm={sm}/>;}
 function DiscBadges({route,sm}){const ds=(route&&route.disciplines&&route.disciplines.length?route.disciplines:[catOf(route)]);return <span style={{display:"inline-flex",flexWrap:"wrap",gap:4,alignItems:"center"}}>{ds.map(function(d){return <DiscBadge key={d} id={d} sm={sm}/>;})}</span>;}
-function TrustBadge({score,compact}){const col=score>=90?C.green:score>=70?C.blue:score>=50?C.amber:C.red;const bg=score>=90?C.greenBg:score>=70?C.blueBg:score>=50?C.amberBg:C.redBg;const lbl=score>=90?"Highly Trusted":score>=70?"Trusted":score>=50?"Building Trust":"New";return <span title="Trust score (0–100): built from ID verification, partner vouches, belay catches logged, climbs logged and certifications. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={col}/>} label={compact?`${score}`:`${score} — ${lbl}`} color={col} bg={bg} sm/></span>;}
+/* THE TOOLTIP NAMED A SCALE THAT DOES NOT EXIST AND LED WITH TWO INPUTS NOBODY CAN SUPPLY. It read
+   "Trust score (0-100): built from ID verification, partner vouches, belay catches logged, climbs
+   logged and certifications" -- and for a signed-in climber this number is the SERVER model, whose
+   ID (10) and certification (10) points are scored off `verification_records` at status='verified'.
+   Nothing in the app writes one but `verify_my_email()`, which hardcodes 'email' (0085 pins every
+   client write to 'pending'), so those two components are 0 for everybody, forever. The range was
+   wrong twice over: the model caps at 99, and only 84 of its 104 points can be earned at all.
+   It now names what a climber can actually move, and states no range rather than a false one --
+   measure it with scripts/oneoff/measure-trust-goal-against-ceiling.mjs rather than quoting a
+   number here, which is how the old copy came to describe a scale nobody had re-derived.
+   THE TIERS BELOW ARE STILL SET AGAINST THAT SCALE and are deliberately NOT touched here: "Highly
+   Trusted" at 90 sits above the 84 ceiling, so no climber can ever be shown it, and 70 is above
+   what a two-year climber with 12 vouches, 60 logs, 20 reports and 9 catches scores (65). Where
+   those bars belong is a product decision, not polish -- raised rather than swept. */
+function TrustBadge({score,compact}){const col=score>=90?C.green:score>=70?C.blue:score>=50?C.amber:C.red;const bg=score>=90?C.greenBg:score>=70?C.blueBg:score>=50?C.amberBg:C.redBg;const lbl=score>=90?"Highly Trusted":score>=70?"Trusted":score>=50?"Building Trust":"New";return <span title="Trust score: built from a verified email, time on ClimbMatch, partner vouches, belay catches logged, and climbs and conditions logged. Higher means more proven." style={{display:"inline-flex",verticalAlign:"middle"}}><Pill icon={<ActionIcon name="shield" size={11} color={col}/>} label={compact?`${score}`:`${score} — ${lbl}`} color={col} bg={bg} sm/></span>;}
 
 
 
