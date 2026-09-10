@@ -84,8 +84,19 @@ const predict = (r) => {
   const p = Number(r.pitches) > 0 ? Number(r.pitches) : 0;
   const walkRise = rise - p * 35 * 3.28084;
   if (!(rise > 0) || !(walkRise > 0) || g >= walkRise - 300) return false;
+  /* A RECORDED START LIVES IN EITHER OF TWO COLUMNS, and this asked only `waypoints`.
+     #1533 widened the app to ask `bivy` too — where most high camps actually live — and this
+     prediction was never carried across, so it went on predicting the pre-#1533 rule while the
+     app implemented the post-#1533 one. It reported 12 MISSES on rows the app is RIGHT to leave
+     alone, wa_mount_rainier_tahoma_glacier among them: that row records a camp at 9,440 ft, 41 ft
+     from the implied start, and CLAUDE.md names it as the worst false accusation the widening
+     removed. Nothing runs scripts/oneoff/, so the probe had been red since.
+     This stays INDEPENDENT of the app helper — it re-derives from the raw row rather than calling
+     `gainBelowOwnPins` — which is the whole point of the probe; what it copies is the QUESTION,
+     asked of the same two stores, not the implementation. */
   const implied = top - g;
-  return !wps.map(ef).filter((n) => n !== null).some((n) => Math.abs(n - implied) <= 300);
+  const camps = Array.isArray(r.bivy) ? r.bivy : [];
+  return !wps.concat(camps).map(ef).filter((n) => n !== null).some((n) => Math.abs(n - implied) <= 300);
 };
 
 const NEEDLE = /between this route’s own trailhead and summit pins/;
@@ -132,14 +143,38 @@ for (const m of missedOnPredicted.slice(0, 10)) console.log(`   ${m}`);
 console.log(`fired on CLEAN rows (false alarms) : ${firedOnClean.length}`);
 for (const m of firedOnClean.slice(0, 10)) console.log(`   ${m}`);
 
-// One worked example, read back verbatim, so this cannot pass on a count alone.
-const tah = rows.find((r) => r.id === "wa_mount_rainier_tahoma_glacier");
-if (tah) {
-  const t = render(dbRouteToCamel(tah)).replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/\s+/g, " ");
+/* TWO worked examples read back verbatim, so this cannot pass on a count alone — and one of
+   them must be SILENT, because a probe that only ever demands the caveat is satisfied by an app
+   that shows it everywhere.
+
+   THE SILENT ONE USED TO BE THE FIRING ONE, which is why it is worth naming. This block asked
+   wa_mount_rainier_tahoma_glacier for the sentence and printed "-- caveat NOT found --" when it
+   was absent. #1533 made it correctly absent: that row records a camp at 9,440 ft, 41 ft from the
+   start its stored gain implies, and the caveat had been calling a correct value impossible. So
+   the example inverted, and the line went on reading like a failure on a passing run. */
+const sentenceOf = (r) => {
+  const t = render(dbRouteToCamel(r)).replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&#x2019;/g, "\u2019").replace(/\s+/g, " ");
   const m = t.match(/Lower bound[^.]*\.[^.]*\./);
-  console.log(`\nwa_mount_rainier_tahoma_glacier on screen:\n  ${m ? m[0].trim() : "-- caveat NOT found --"}`);
+  return m ? m[0].trim() : null;
+};
+let exampleBad = false;
+const firing = predicted.slice(0, LIMIT).find((r) => !noEstimate.includes(r.id) && !missedOnPredicted.includes(r.id));
+if (!firing) { console.log("\nNO firing example available — nothing was rendered to read back."); exampleBad = true; }
+else {
+  const sent = sentenceOf(firing);
+  console.log(`\nfires on ${firing.id}:\n  ${sent || "-- caveat NOT found, and this row is in the FIRED set --"}`);
+  if (!sent) exampleBad = true;
+}
+const tah = rows.find((r) => r.id === "wa_mount_rainier_tahoma_glacier");
+if (!tah) { console.log("\nwa_mount_rainier_tahoma_glacier is not in the catalog — the silent example is gone."); exampleBad = true; }
+else {
+  const camps = Array.isArray(tah.bivy) ? tah.bivy : [];
+  const sent = sentenceOf(tah);
+  console.log(`\nsilent on wa_mount_rainier_tahoma_glacier (${camps.length} camps recorded):\n  ${sent ? "STILL FIRING: " + sent : "no caveat — its own bivy records the start its gain implies"}`);
+  // Non-vacuous: it must be silent BECAUSE a camp is recorded, not because the row lost its pins.
+  if (sent || !camps.length) exampleBad = true;
 }
 
-const bad = missedOnPredicted.length || firedOnClean.length || !firedOnPredicted;
+const bad = missedOnPredicted.length || firedOnClean.length || !firedOnPredicted || exampleBad;
 console.log(bad ? "\nPROBE FAILED" : "\nok — the screen agrees with the arithmetic on every row rendered.");
 process.exit(bad ? 1 : 0);

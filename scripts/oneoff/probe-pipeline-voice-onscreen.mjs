@@ -88,7 +88,21 @@ for (const c of CASES) {
   const panel = page;
   if (panel.length < 2000) { console.log(`FAIL: ${c.route} rendered only ${panel.length} chars — a thin render proves nothing`); fail++; continue; }
   for (const g of c.gone) { checks++; if (panel.includes(g)) { console.log(`FAIL ${c.route}: removed camp "${g}" STILL renders`); fail++; } }
-  for (const k of c.keeps) { checks++; if (!panel.includes(k)) { console.log(`FAIL ${c.route}: kept camp "${k}" does NOT render`); fail++; } }
+  /* A KEEP THAT IS NO LONGER IN THE ROW IS STALE BOOKKEEPING, NOT A RENDER DEFECT, and the two
+     want opposite repairs: "the app stopped showing what the row says" is a bug in the app, while
+     "a later pass reworded the row" is a bug in this list. Reporting them alike is how a probe
+     sends somebody to edit correct code. wa_narcos is the case — a later prose sweep removed
+     "estimated rather than station-confirmed" from the row entirely, and this printed
+     "does NOT render" about a phrase the app was never given. Nothing runs scripts/oneoff/, so it
+     had said so unread ever since. */
+  const rowText = JSON.stringify(rows.find((r) => r.id === c.route) || {});
+  for (const k of c.keeps) {
+    checks++;
+    if (panel.includes(k)) continue;
+    if (!rowText.includes(k)) { console.log(`   STALE ${c.route}: "${k}" is no longer in the ROW — a later pass reworded it. Update this list, do not chase the app.`); continue; }
+    console.log(`FAIL ${c.route}: kept camp "${k}" is in the row and does NOT render`);
+    fail++;
+  }
   console.log(`   ${c.route}: panel ${panel.length} chars, ${c.gone.length} removed absent, ${c.keeps.length} kept present`);
 }
 for (const f of [out, html, path.join(ROOT, ".probe-pipeline-voice.bundle.mjs")]) { try { fs.unlinkSync(f); } catch {} }

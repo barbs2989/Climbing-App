@@ -81,15 +81,24 @@ function pitchEntryKind(p,route){
   if(PITCH_NUM_RE.test(lbl))return isPitched(route)?"pitch":"stage";
   return "stage";
 }
-// The PITCH-BY-PITCH heading reads "N of M". That comparison is only valid when N and M count
-// the same thing, and after splitPitchDetail they do not: N is the ROPED half, while M
-// (`route.pitches`) counts whatever the route was recorded as having. The rest of the entries
-// are not missing — they render on the SAME TAB under ROUTE BETA, a few hundred pixels up.
-// Measured on the live catalog 2026-09-02: 55 routes claimed a shortfall, and on 52 of them
-// `route.pitches` is EXACTLY the pitch_detail entry count, i.e. the denominator was itself
-// counting the stages the table removes. wa_monte_cristo_peak_scramble read "1 of 3" with all
-// three of its entries described on screen. So a shortfall may only be claimed when the route
-// claims more pitches than the page describes ANYWHERE.
+// A shortfall may only be claimed when the route claims more pitches than the page describes
+// ANYWHERE. The rule is older than the structure it now sits on, and the reasoning behind it is
+// worth keeping: while roped pitches and travel stages rendered in TWO boxes, the heading read
+// "N of M" with N the ROPED half and M whatever the route was recorded as having — two counts of
+// different things. Measured 2026-09-02: 55 routes claimed a shortfall and on 52 of them
+// `route.pitches` was EXACTLY the pitch_detail entry count, i.e. the denominator was counting
+// the very stages the table had removed. wa_monte_cristo_peak_scramble read "1 of 3" with all
+// three entries on screen.
+//
+// THE SPLIT IS GONE — ROUTE BREAKDOWN is one ordered list — so `shown` is now every entry and
+// this reduces to "the route claims more than it describes". That is a real question and it
+// still fires: measured 2026-09-09, 129 of the 904 routes carrying `pitch_detail` claim more
+// pitches than their own breakdown describes. Do not read the simplification as the rule
+// becoming vacuous.
+//
+// The paragraph this replaces still described the two boxes and named `splitPitchDetail`, a
+// function the merge removed — so it sent a reader looking for a structure that no longer
+// exists. `check:pitch-split` pins both directions of the surviving rule.
 function pitchShortfall(route,shown){const described=(route&&Array.isArray(route.pitchDetail))?route.pitchDetail.length:0;return !!(route&&route.pitches>described&&route.pitches>shown);}
 const ENV_HAZ_RE=/raptor|nesting closure|nesting season|bear activity|black bear|grizzly|mountain goat|rattlesnake|tick season|poison oak|poison ivy|wasp nest|hornet|hunting season|elk rut/i;
 const TYPICAL={

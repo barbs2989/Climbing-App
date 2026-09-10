@@ -4044,6 +4044,53 @@ the total when deciding where a new guard belongs.
       tool. Both numbers are correct about their own tree. Re-derive it:
       run every `scripts/oneoff/probe-*.mjs` that mentions no supabase, browser or network.
     - **`timeout(1)` DOES NOT EXIST ON macOS**, which is what made the first attempt useless.
+  - **THE STATIC SWEEP WAS ONE THIRD OF THE CORPUS, AND THE OTHER TWO THIRDS HAD NEVER BEEN RUN
+    EITHER.** *Static* was the scope that made the sweep cheap, not a claim about where the rot is.
+    Measured 2026-09-09: **202 probes read the DB without a browser and without writing**, and
+    running all of them found **six red** — plus nine CLI tools correctly wanting arguments, one
+    anon statement timeout and three scans slower than the sweep's 90s cap, **all four of which ran
+    clean when re-run alone**. A concurrent sweep against one Postgres will manufacture a 57014;
+    re-run a failure before believing it, the rule this file already records for a loaded box.
+    - **Five were STALE BOOKKEEPING and one was a probe out of step with a fix, and NOT ONE was an
+      app defect.** That matters more than the count: every one of the six *read* like a live
+      regression on the surface it watches, and following any of them would have sent somebody to
+      edit working code. `probe-gain-caveat-on-live-rows` predicted the pre-#1533 rule and reported
+      12 misses on a safety caveat; `probe-elev-above-summit`'s self-check demanded a route that
+      had since been **repaired** and printed *"the probe is broken"*; `probe-pipeline-voice-onscreen`
+      reported *"does NOT render"* about a phrase a later prose sweep had removed from the **row**;
+      `probe-trailhead-point-equivalence` died on `wpPlaced is not defined` because the function it
+      lifts gained a dependency; `probe-segment-times-from-absent-inputs` **crashed on the answer**
+      (`routes` has no `segments` column, so the shape it worried about is unreachable by
+      construction); and `probe-pitch-count-vs-what-renders` lost its `splitPitchDetail` anchor to
+      the ROUTE BREAKDOWN merge, which removed the split it was written to measure — deleted, since
+      `check:pitch-split` covers what survives.
+    - **THE REPAIR THAT GENERALISES IS TELLING THE TWO APART IN THE OUTPUT.** A `keeps` phrase that
+      is no longer in the ROW is stale bookkeeping; the same phrase present in the row and absent
+      from the screen is a render defect. They want opposite repairs, and reporting them alike is
+      how a probe sends somebody to edit correct code. `probe-pipeline-voice-onscreen` now checks
+      the row before it blames the app and prints `STALE …: update this list, do not chase the app`.
+    - Likewise a **pinned example** is a claim about one ROW and rots the day the row is fixed;
+      non-vacuity belongs on the SCAN (`probe-elev-above-summit` now asserts the population is
+      non-empty and reports its old example as repaired, naming the script that repaired it).
+    - **A SEVENTH WAS FOUND BY READING ITS OUTPUT, NOT ITS EXIT CODE, and that is the sharper
+      lesson.** `probe-terrain-corpus-blind-columns` exited **0** while printing
+      *"LIVE (the classifier is suppressing on that blind spot): 7"* — correct behaviour reported
+      as a live defect on a safety classifier. Its blind list was a hand copy of `CORPUS_COLUMNS`
+      taken **before** the blind-column repair, so it went on calling `climbing_route` unread after
+      that column joined the list, and `approach_variants` unread after the classifier learned to
+      read it BY KEY. Every one of the 7 quoted *"Roughly July through the first snow of October"*
+      out of `approach_variants.season` — the one key the repair excludes on purpose, because
+      reading it re-imports the Highway 20 mistake where a winter road closure made every route
+      read as avalanche terrain.
+      - It **imports** `CORPUS_COLUMNS` and `AV_PROSE_KEYS` now rather than restating them, so a
+        column the app starts reading leaves the blind set by itself, and it separates *a wholly
+        unread COLUMN* (a real blind spot) from *an excluded KEY* (a decision). Reads **0 LIVE**,
+        with the 7 reported as deliberate and flagged `(would flip)` so the cost of the exclusion
+        stays visible.
+      - Injection-tested by dropping `climbing_route` from `CORPUS_COLUMNS` in place: all 7 go
+        LIVE, so the probe still detects the revert the class exists for.
+      - **An exit code is not evidence a probe is telling the truth.** A sweep that judges on
+        status will pass over a probe whose every printed finding is wrong.
   - **THE FIRST SWEEP MEASURED NOTHING AND SAID SO UNIFORMLY: all 77 exited 127.** macOS has no
     `timeout(1)`. *When every case in a sweep shares one result, suspect the sweep* — the rule this
     file already records for a case-sensitive `LIKE` that refused 25 of 39 pins.
@@ -5101,9 +5148,25 @@ the total when deciding where a new guard belongs.
     caveat is correctly absent. Asserting the data-only form would have driven a "fix" to working
     code — the failure this file records under half a dozen other names.
   - So the invariant is **not** *"the data contradicts"* but *"the SCREEN quotes an estimate built
-    on the contradicted number"*. Corrected, the probe reports **80/80 fired, 0 missed, 0 false
-    alarms across 200 clean rows**, and reads Tahoma Glacier's line back verbatim so it cannot pass
-    on a count alone. Routes with no estimate are counted and reported, never scored.
+    on the contradicted number"*. Corrected, the probe reported **80/80 fired, 0 missed, 0 false
+    alarms across 200 clean rows**. Routes with no estimate are counted and reported, never scored.
+  - **THAT PROBE THEN WENT RED FOR TWO WEEKS AND NOBODY KNEW, AND THE APP WAS RIGHT THROUGHOUT.**
+    Run on 2026-09-09 it reported **12 MISSES of 42**, `wa_mount_rainier_tahoma_glacier` among
+    them — which reads as the caveat having stopped firing on a safety-adjacent surface. It had
+    not: the bullet above records #1533 widening the app's recorded-start exclusion to the **bivy**
+    store, *"the widening takes it to 37 with those 12 at zero"*, and **the probe's own prediction
+    was never carried across**. So it went on predicting the pre-#1533 rule against an app
+    implementing the post-#1533 one, and every one of the 12 was a row the app is RIGHT to leave
+    alone. Nothing runs `scripts/oneoff/`, so it said so unread. Fixed: **30/30 fired, 0 missed, 0
+    false alarms** over 36 predicted.
+  - **ITS WORKED EXAMPLE HAD INVERTED, AND STILL READ LIKE A FAILURE ON A PASSING RUN.** The probe
+    printed Tahoma Glacier's sentence back verbatim *"so it cannot pass on a count alone"* — and
+    #1533 made that row correctly SILENT, so the line printed `-- caveat NOT found --` about the
+    app working. It now reads back **two** examples: a route that fires, named from the fired set,
+    and Tahoma, which must be silent **and must have a camp recorded** — so the silence cannot come
+    from the row losing its pins. Injection-tested by reverting #1533 in place: the silent example
+    goes `STILL FIRING` and the probe fails. *When a fix inverts an example, the example is part of
+    the fix.*
 - **`check:impossible-leg`** asserts that the waypoint list never prints a leg distance its own
   two pins make impossible. The route page renders *"N.N mi from last"* between consecutive pins
   as `wp.distMi - prev.distMi`, and **473 of the 2,405 legs the app prints, on 261 routes, are
