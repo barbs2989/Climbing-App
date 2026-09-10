@@ -21,7 +21,7 @@ import AuthModal from "./lib/AuthModal";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
-import { shortGrade, gradeDetail } from "./lib/grade";
+import { shortGrade, gradeDetail, displayGrade, gradeSources } from "./lib/grade";
 import { useRecentRouteIds } from "./lib/recent";
 import { crewGearFor } from "./lib/rack";
 const DbAreaBrowser = lazy(() => import("./lib/DbAreaBrowser"));
@@ -320,8 +320,19 @@ const routeAscentFt=route=>{if(route.gainFt!=null&&route.gainFt>0)return route.g
 const uMass=lb=>uImp()?lb+" lb":Math.round(lb*0.4536)+" kg";
 function catOf(r){return r.discipline==="rock"?(r.style||"Trad").toLowerCase():r.discipline;}
 function rDiscs(r){return r.disciplines&&r.disciplines.length?r.disciplines:[catOf(r)];}
-function gradeLabelRaw(r){return r.rockGrade||r.rock_grade||r.iceGrade||r.ice_grade||r.alpineGrade||r.alpine_grade||r.grade||r.commitment||"";}
-function gradeLabel(r){return shortGrade(gradeLabelRaw(r));}
+/* The chain of columns a grade can come from lives in lib/grade.js now, as `gradeSources`. This
+   was a hand-copy of it — the area browser held the other one — and the two agreed on all 8,365
+   WA rows, which is what a hand-copy looks like before it drifts. Behaviour is unchanged here:
+   the same list in the same order, first non-empty wins. Its only consumer is now
+   scripts/oneoff/probe-crux-grade-tile.mjs, which uses it to argue about what the chain WOULD
+   have chosen for the crux tile — kept for that rather than removed, since the argument is the
+   reason cruxGrade() exists. */
+function gradeLabelRaw(r){return gradeSources(r)[0]||"";}
+/* NOT shortGrade(gradeLabelRaw(r)) any more: that showed the first column with ANYTHING in it,
+   and on 30 routes that column is an `alpine_grade` holding a bare NCCS roman numeral — a
+   COMMITMENT grade, not a difficulty. Slesse's NE Buttress read "V" in this pill while the CRUX
+   GRADE tile below it read "5.9 A2". See displayGrade() in lib/grade.js. */
+function gradeLabel(r){return displayGrade(r);}
 function routeGradeVal(r){var gl=ADDR_GRADES[catOf(r)]||ADDR_YDS;var i=gl.indexOf(gradeLabel(r));return i<0?-1:i/gl.length;}
 function suggGainFt(r){return r.gainFt!=null?r.gainFt:(r.gain_ft!=null?r.gain_ft:null);}
 /* One climber's grade/gain centre for ONE discipline. Split out because three callers now
@@ -2110,7 +2121,7 @@ function FullProfile({climber,onClose,onJoinCrew,onConnect,fstate,sharedRoute,on
           
           
           <SL>Disciplines</SL><div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:12}}>{climber.disciplines.map(d=><DiscBadge key={d} id={d} sm/>)}</div>
-          {((climber.__selfLogs&&climber.__selfLogs.length)||climber.pyramid)?<div style={{marginBottom:12}}><SL>Sends by grade</SL><div style={{fontSize:12,color:C.textMuted,margin:"-2px 0 8px",lineHeight:1.5}}>{climber.__selfLogs?"Your sends by grade — where you operate and what you can project.":"Climbs logged at each grade — a quick read on where they operate."}</div><AscentPyramid routeById={routeById} logs={climber.__selfLogs} pyramid={climber.pyramid}/></div>:null}<Challenges routeById={routeById} logs={seedHistoryFor(climber).map(t=>({routeId:t.route.id,tickType:t.tickType,stars:t.stars,date:t.date})).concat(climber.__selfLogs||[])} who={climber.name} onOpen={onOpenRoute} onOpenReport={onOpenReport}/>
+          {((climber.__selfLogs&&climber.__selfLogs.length)||climber.pyramid)?<div style={{marginBottom:12}}><SL>Sends by grade</SL><div style={{fontSize:12,color:C.textMuted,margin:"-2px 0 8px",lineHeight:1.5}}>{climber.__selfLogs?"Your sends by grade — where you operate and what you can project.":"Their sends by grade — a quick read on where they operate."}</div><AscentPyramid routeById={routeById} logs={climber.__selfLogs} pyramid={climber.pyramid}/></div>:null}<Challenges routeById={routeById} logs={seedHistoryFor(climber).map(t=>({routeId:t.route.id,tickType:t.tickType,stars:t.stars,date:t.date})).concat(climber.__selfLogs||[])} who={climber.name} onOpen={onOpenRoute} onOpenReport={onOpenReport}/>
           
           <div style={{marginBottom:12}}><SL>Logged Climbs · {seedHistoryFor(climber).length+(climber.__selfLogs?climber.__selfLogs.length:0)}</SL><div style={{background:C.surface,borderRadius:11,padding:"2px 13px",border:`1px solid ${C.border}`}}><TickList routeById={routeById} climber={climber} logs={climber.__selfLogs||[]} onOpen={onOpenReport} initial={6}/></div></div>
           
@@ -4177,7 +4188,7 @@ function DbClimbPicker({onPickRoute,selectedIds,onViewRoute}){
   const here=routesQ.data||[];
   const rowStyle={display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"11px 12px",borderRadius:10,marginBottom:8,background:C.card,border:"1px solid "+C.border,cursor:"pointer"};
   const climbRow={display:"flex",alignItems:"center",gap:10,padding:"9px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight};
-  const climbRowItem=function(r){var on=selectedIds?selectedIds.indexOf(r.id)>=0:false;return <div key={r.id} {...clickable(function(){onPickRoute(dbRouteToCamel(r));})} style={climbRow}>{selectedIds?<span style={{width:18,height:18,borderRadius:5,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueSolid:"transparent",color:"#fff",fontSize:12,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>{on?"✓":""}</span>:null}<div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div><div style={{fontSize:10.5,color:C.textMuted}}>{shortGrade(r.rock_grade||r.ice_grade||r.alpine_grade||r.grade||r.commitment||"")}</div></div>{onViewRoute?<button onClick={function(e){e.stopPropagation();onViewRoute(dbRouteToCamel(r));}} style={{flexShrink:0,fontSize:10.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 8px",cursor:"pointer",marginRight:selectedIds?8:0}}>{"Details"}</button>:null}{!selectedIds?<span style={{color:C.blue,fontSize:12,fontWeight:700,flexShrink:0}}>{"Log →"}</span>:null}</div>;};
+  const climbRowItem=function(r){var on=selectedIds?selectedIds.indexOf(r.id)>=0:false;return <div key={r.id} {...clickable(function(){onPickRoute(dbRouteToCamel(r));})} style={climbRow}>{selectedIds?<span style={{width:18,height:18,borderRadius:5,border:"1.5px solid "+(on?C.blue:C.border),background:on?C.blueSolid:"transparent",color:"#fff",fontSize:12,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>{on?"✓":""}</span>:null}<div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div><div style={{fontSize:10.5,color:C.textMuted}}>{displayGrade(r)}</div></div>{onViewRoute?<button onClick={function(e){e.stopPropagation();onViewRoute(dbRouteToCamel(r));}} style={{flexShrink:0,fontSize:10.5,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 8px",cursor:"pointer",marginRight:selectedIds?8:0}}>{"Details"}</button>:null}{!selectedIds?<span style={{color:C.blue,fontSize:12,fontWeight:700,flexShrink:0}}>{"Log →"}</span>:null}</div>;};
   if(!pArea){
     /* Until now the only way in was to scroll fifty states and drill state → region → crag →
        route. If you knew you wanted Liberty Bell you still had to know it was in Washington.

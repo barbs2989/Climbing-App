@@ -311,6 +311,49 @@ else {
   }
 }
 
+/* ---------------------- section 5: another climber's grade pyramid is not "climbs logged" */
+
+console.log("\n--- the pyramid on somebody else's profile does not claim to be logged climbs ---");
+
+/* FullProfile renders ONE section two ways. Viewing YOURSELF, AscentPyramid is handed
+   `climber.__selfLogs` -- real logs -- and "Your sends by grade" is true of them. Viewing ANYONE
+   ELSE that prop is undefined, so AscentPyramid takes its `else if(pyramid)` branch and totals
+   `climber.pyramid`, a stored career summary. The caption there read "Climbs logged at each
+   grade", and directly beneath it the same screen prints `Logged Climbs - N` off seedHistoryFor.
+   Measured across every seed climber that renders the section: 0 of 5 agree, and the pyramid runs
+   +22 to +120 ahead of the logged count (Sam Rivera 26 against 4, Jordan Park 126 against 6). So
+   the caption asserted a provenance the data does not have AND contradicted the heading below it.
+
+   DERIVED, NOT A PINNED PHRASE. The rule holds only while the non-self branch is fed by `pyramid`
+   rather than by logs; wire real logs for other climbers and the precondition stops holding and
+   this stops complaining, without anyone editing the rule. Same shape as sections 3 and 4, which
+   re-derive from the migrations. A guard pinned to today's wording would forbid improving it. */
+const pyr = coreSrc.match(/climber\.__selfLogs\s*\?\s*"([^"]*)"\s*:\s*"([^"]*)"([\s\S]{0,600}?)<AscentPyramid\b([\s\S]{0,300}?)\/>/);
+if (!pyr) fail("ANCHOR LOST: could not read the sends-by-grade caption beside <AscentPyramid> -- this section is blind");
+else {
+  const otherCap = un(pyr[2]);
+  const tag = pyr[4];
+  const pyramidFed = /logs=\{climber\.__selfLogs\}/.test(tag) && /pyramid=\{climber\.pyramid\}/.test(tag);
+
+  if (!pyramidFed) {
+    ok("the non-self pyramid is no longer fed by `climber.pyramid` -- this section's premise has moved, so it asserts nothing");
+  } else {
+    // THE CLAIM. With no logs prop, the numbers are the stored pyramid, so calling them logged
+    // climbs is false -- and the Logged Climbs heading underneath states the real figure.
+    if (/\blogg?ed\b|\blogs\b/i.test(otherCap))
+      fail(`the caption shown on somebody else's profile says "${otherCap}" -- that section renders climber.pyramid, a stored summary, not logged climbs`);
+    else ok("it does not describe another climber's stored pyramid as logged climbs");
+
+    /* NON-VACUITY. Every assertion above is satisfied by an empty caption, and a rule that only
+       forbids is satisfied by deleting the sentence -- so it must still say what the reader is
+       looking at. */
+    if (otherCap.trim().length >= 20 && /\bgrade|\bsend/i.test(otherCap))
+      ok("...and still tells the reader the section is sends by grade");
+    else
+      fail(`the caption has been emptied rather than corrected: "${otherCap}"`);
+  }
+}
+
 console.log(bad
   ? `\n${GUARD}: ${bad} problem(s) — a profile surface is claiming something the app knows is untrue.`
   : `\n${GUARD}: ok — the résumé and the trust card state only what they can support.`);

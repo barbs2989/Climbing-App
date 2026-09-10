@@ -12,14 +12,17 @@ import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade, gradeNumFrom } from "./grade";
+import { shortGrade, gradeNumFrom, displayGrade } from "./grade";
 import { clickable } from "./clickable";
 import { effDistKm } from "./outing";
 
-// Grade for a compact row. Catalog grades often carry a qualifier inline
-// ("Class 3 (short 4th-class crux)"); shortGrade drops it here, and the route
-// page's Composite Grade panel shows it instead.
-function rowGrade(r) { return shortGrade(r.rock_grade || r.ice_grade || r.alpine_grade || r.grade || r.commitment || "") || "—"; }
+// Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
+// ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
+// it instead; and a column holding a COMMITMENT grade rather than a difficulty is skipped when the
+// row has a real one — this used to write the column chain out again, snake_case only, and showed
+// a bare NCCS roman numeral on 30 routes. An area list is where a wrong grade is read fastest:
+// every row carries one.
+function rowGrade(r) { return displayGrade(r) || "—"; }
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";

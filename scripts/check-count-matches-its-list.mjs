@@ -19,6 +19,15 @@
 //    over a panel whose own `empty` test says you have nothing. `_reqClimber` also returns null
 //    for a seed id absent from CLIMBERS, so even the friend half could exceed its own list.
 //
+// 3. AND A THIRD CONTROL OPENED THAT SAME PANEL WHILE COUNTING HALF OF IT. Home's alerts
+//    dropdown lists `mergedNotifs.slice(0,8)` and closes with "View all N alerts", which does not
+//    expand the dropdown -- it calls `setNotifOpen(true)` and LEAVES for NotifPanel, which is
+//    handed BOTH `_notifRequests` and `mergedNotifs`. The N counted only the second. So on the
+//    seeded demo Home rendered a red 15 on the bell and "View all 14 alerts" inches below it,
+//    both leading to one 15-row panel. Section 2 fixed the badge and left this, because the two
+//    are different controls and only the badge was enumerated -- the same shape as the fix that
+//    named four readers and left three.
+//
 // THE RULE IS ONE-DIRECTIONAL, and that matters: a gate may legitimately cover MORE than the list
 // beneath it (Home also tests unread notifications and the friend feed, which UNFINISHED BUSINESS
 // does not build from). What it may never do is cover LESS -- claim emptiness while something it
@@ -101,16 +110,28 @@ const dead = (m) => { console.error("\nBROKEN GUARD: " + m + "\n(this run proved
 //    Asserted structurally rather than by comparing two expressions: the badge must count the
 //    SAME array the panel is handed. Two expressions that happen to agree today is what this
 //    whole guard exists to stop.
+// The panel's two lists are read once, here, and section 3 asserts against the same pair: a
+// second reading of "what the panel holds" is the drift this guard exists to stop.
+let panelProps = null;
 {
   const p = src.indexOf("<NotifPanel requests={");
   if (p < 0) dead("NotifPanel's call site moved — the badge cannot be compared against its list");
-  const open = src.indexOf("{", src.indexOf("requests=", p));
-  let d = 0, prop = null;
-  for (let k = open; k < src.length; k++) {
-    if (src[k] === "{") d++;
-    else if (src[k] === "}" && --d === 0) { prop = src.slice(open + 1, k).trim(); break; }
-  }
+  const readProp = (name) => {
+    const at = src.indexOf(name + "={", p);
+    if (at < 0 || at - p > 400) return null;
+    const open = src.indexOf("{", at);
+    let d = 0;
+    for (let k = open; k < src.length; k++) {
+      if (src[k] === "{") d++;
+      else if (src[k] === "}" && --d === 0) return src.slice(open + 1, k).trim();
+    }
+    return null;
+  };
+  const prop = readProp("requests");
   if (!prop) dead("the requests prop does not close");
+  const notifsProp = readProp("notifs");
+  if (!notifsProp) dead("NotifPanel's notifs prop could not be read — the panel's second list would go uncounted");
+  panelProps = { requests: prop, notifs: notifsProp };
 
   cases++;
   if (/^[A-Za-z_$][\w$]*$/.test(prop)) ok(`the panel's request list is one named array (${prop})`);
@@ -129,7 +150,64 @@ const dead = (m) => { console.error("\nBROKEN GUARD: " + m + "\n(this run proved
   }
 }
 
-if (cases < 6) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
+// ── 3. EVERY CONTROL THAT OPENS THAT PANEL MUST COUNT WHAT THE PANEL HOLDS.
+//
+//    Section 2 pins the badge. This is the other control that leaves for the same panel: Home's
+//    "View all N alerts", which printed the notifs count over a panel that also lists the
+//    requests. Its GATE is asserted alongside its COUNT, because a control whose condition asks
+//    about one list while its number describes another is this defect one level down.
+//
+//    SCOPED TO THE ALERTS BLOCK, not to whatever expression happens to wrap the control today.
+//    A first version searched backwards for the enclosing `(function(){`, which exists only
+//    because the fix put one there — so against the real historical defect it scoped the WRONG
+//    expression and died fail-closed instead of naming the defect. A guard that cannot fail on
+//    the defect it was written for is not a guard.
+{
+  if (!panelProps) dead("the panel's lists were never read — section 3 would compare nothing");
+  const b0 = src.indexOf("setAlertsOpen(o=>!o)");
+  if (b0 < 0) dead("Home's alerts block moved — the control that opens the panel cannot be read");
+  // Anchored on the NOUN, not on "View all " — that phrase is shared with the Past crews
+  // control, and an anchor matching two controls reads one while claiming the other.
+  const t = src.indexOf('" alerts"', b0);
+  if (t < 0) dead('Home\'s "View all N alerts" control moved — its count cannot be read');
+  if (src.indexOf('" alerts"', t + 1) >= 0) dead('the " alerts" label occurs more than once — the control this section reads is ambiguous');
+  const close = src.indexOf("</button>", t);
+  if (close < 0) dead('the "View all N alerts" control does not close');
+  const raw = src.slice(b0, close);
+  if (!raw.includes("setNotifOpen(true)")) dead('the control read for section 3 does not open NotifPanel — the wrong region was scoped');
+
+  // Comments are stripped: this control now EXPLAINS the defect in prose naming both arrays, so a
+  // guard reading them would pass on the strength of the explanation.
+  const ctl = raw.replace(/\/\*[\s\S]*?\*\//g, " ");
+
+  // The number the label prints, and — where that is a name — the definition behind it. Both
+  // shapes have to resolve, or the guard cannot speak about the defect's own form.
+  const lab = ctl.match(/\+([^+]+)\+" alerts"/);
+  if (!lab) dead('the "View all N alerts" label does not build its number by concatenation — it cannot be read');
+  const printed = lab[1].trim();
+  let expr = printed, via = "inline";
+  if (/^[A-Za-z_$][\w$]*$/.test(printed)) {
+    const d = ctl.match(new RegExp("(?:var|const|let)\\s+[^;]*?\\b" + printed + "\\s*=\\s*([^,;]+)"));
+    if (!d) dead(`the label prints ${printed} and nothing in the alerts block defines it — its coverage cannot be read`);
+    expr = d[1];
+    via = printed;
+  }
+
+  for (const [what, arr] of [["the requests", panelProps.requests], ["the activity", panelProps.notifs]]) {
+    cases++;
+    if (expr.includes(arr)) ok(`"View all N alerts" counts ${what} list the panel is handed (${arr})`);
+    else fail(`"View all N alerts" leaves for NotifPanel and never counts ${arr}, which that panel renders — so the number labels part of where it goes, and the bell above it says something else`);
+  }
+
+  // The gate and the count must be one derivation, or the control's condition and its number
+  // describe two different lists.
+  cases++;
+  const gateOf = (x) => new RegExp(x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\s*>").test(ctl);
+  if (gateOf(via === "inline" ? printed : via)) ok(`its gate asks about the same total it prints (${via === "inline" ? printed : via})`);
+  else fail(`"View all N alerts" prints ${printed} while its gate tests something else — the control's condition and its count describe two different lists`);
+}
+
+if (cases < 11) dead(`only ${cases} assertion(s) ran — a guard that quietly stops asking still exits 0`);
 console.log();
 if (failures) { console.log(`${failures} failure(s) across ${cases} assertions`); process.exit(1); }
 console.log(`ok — every count agrees with the list under it (${cases} assertions)`);

@@ -30,7 +30,7 @@ npm run check:seed-only-surfaces # a component reachable ONLY on the seed path r
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
-npm run check:grade-parser  # grade_num is parsed in exactly one place (in build)
+npm run check:grade-parser  # grade_num is parsed in one place, and so is the DISPLAYED grade (in build)
 npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:correction-readers # no enrichment column out-votes an agreed correction (in build)
@@ -2621,6 +2621,46 @@ the total when deciding where a new guard belongs.
     entry (section 3 reads the list through Babel, so comments are invisible — three checkers here
     have been fooled by the comment explaining the very fix they were checking), and an unrelated
     new row.
+  - **SECTION 5 — THE GRADE PYRAMID ON SOMEBODY ELSE'S PROFILE CLAIMED TO BE LOGGED CLIMBS, AND
+    CONTRADICTED THE HEADING DIRECTLY BENEATH IT.** `FullProfile` renders one section two ways.
+    Viewing **yourself**, `AscentPyramid` is handed `climber.__selfLogs` — real logs — and *"Your
+    sends by grade"* is true of them. Viewing **anyone else** that prop is undefined, so the
+    component takes its `else if(pyramid)` branch and totals `climber.pyramid`, a stored career
+    summary — under a caption reading *"Climbs logged at each grade"*, with `Logged Climbs · N`
+    printed a few lines below off `seedHistoryFor`.
+    - **MEASURED ACROSS EVERY CLIMBER THAT RENDERS IT, rather than spotted on one**
+      (`scripts/oneoff/measure-pyramid-vs-logged-climbs.mjs`, which composes the unexported
+      `seedHistoryFor` out of the two exports it is built from rather than retyping the rule, and
+      fails closed on an empty side — re-run it rather than quoting the figures here): 5 seed
+      climbers carry a pyramid and **0 of 5 agree** with their own logged count — Sam Rivera **26
+      against 4**, Riley Nguyen 42/4, Alex Torres 74/7, Maya Chen 113/9, Jordan Park **126 against
+      6**. A systematic 10-20x gap is not inconsistent seed data, it is two different records, and
+      the caption named the wrong one. *Compare a suspect against the rows that pass* — here none
+      passed, which is what settles it.
+    - **FOUND BY READING A CI `ui-screens` CAPTURE, not by a scan**, the technique this file
+      already credits for the seed-identity bug and the glued `Recently climbed` row. Nothing could
+      have flagged it otherwise: the column is populated, the section renders, every number is a
+      number, and both halves are individually correct — only their combination is a lie.
+    - **DERIVED, NOT A WORD BAN, and the SILENT cases are what prove it.** The rule holds only
+      while the non-self branch is fed by `pyramid` rather than by logs; hand that branch real logs
+      and *"logged"* becomes a true description and the guard goes quiet, without anyone editing the
+      rule. Same shape as sections 3 and 4, which re-derive from the migrations. A guard that
+      forbade the word outright would forbid the fix.
+    - **NON-VACUITY, because a rule that only forbids is satisfied by deleting the sentence:** the
+      caption must still run past 20 characters and still say it is about grades or sends. Two
+      injection cases pin that — an emptied caption and a bare *"Grades."* both fail.
+    - **THE SIBLING WAS MEASURED AND IS CLEAN, so this is a CLASS OF ONE rather than one of N.**
+      Three Leaderboards badges are `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
+      notes say *"logged"* — but **no seed climber carries a stored `classics`, `highpoints` or
+      `peaks` number**, so every badge value is entirely real ticks and the wording is correct
+      there. The `+(pp.X||0)` term is inert today. *A detector for a class of one is the thing this
+      repo keeps refusing to build*, which is why this is an assertion inside the guard whose
+      subject it already is rather than a new one.
+    - Injection-tested **6/6** (`scripts/oneoff/inject-pyramid-caption-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and
+      judged on FAIL lines only; the harness refuses any expectation already present in the green
+      run. Case 1 is the real caption restored **verbatim**. **Two must stay SILENT** — a different
+      honest wording, and *"logged"* once the branch really is fed logs.
 - **`check:offline-claims`** asserts that **an offline promise is backed by the write that makes it
   true**. Static (Babel over the two app files plus a source read of `lib/db.js` and
   `lib/offline.js`), so it sits in `npm run build`, at **1.34x `check:policy-claims`**.
@@ -3532,6 +3572,47 @@ the total when deciding where a new guard belongs.
     id absent from `CLIMBERS`, so even the friend half could exceed its own list. The badge counts
     `_notifRequests.length` now — **the same array the panel is handed**, so the number and the list
     cannot disagree by construction.
+  - **AND A THIRD CONTROL OPENED THAT SAME PANEL WHILE COUNTING HALF OF IT — the bell fix
+    enumerated one control and there were two.** Home's alerts dropdown lists
+    `mergedNotifs.slice(0,8)` and closes with **"View all N alerts"**, which does not expand the
+    dropdown: it calls `setNotifOpen(true)` and **leaves** for `NotifPanel`, which is handed
+    **both** `_notifRequests` and `mergedNotifs`. The N counted only the second. So on the seeded
+    demo Home rendered a red **15** on the bell and **"View all 14 alerts"** inches below it, both
+    leading to one 15-row panel. *An instance fixed by hand is not a class closed*, and the
+    enumeration that would have caught it is the one this file keeps recording: list the controls
+    that reach the thing, not the ones you fixed.
+    - **FOUND BY READING A FRESH CI `ui-screens` CAPTURE**, which is the third finding that
+      technique has produced. The tell was the header strip reading `★ 4 15 2` — the saved-climbs
+      badge, the **bell badge** and the calendar badge — against *"Alerts · 14 new"* on the same
+      screen. **Identify an unexplained number before dismissing it**: two of those three were
+      immediately explicable and the middle one was the defect.
+    - **THE COUNT DESCRIBES THE DESTINATION, because the control is a "go to the full list" one.**
+      Its handler closes the dropdown, so *"view all N of these"* is not a reading the app
+      supports — and the 8-row cap already means the number is promising more than is on screen.
+    - **THE GATE MOVED WITH IT, and that is the half a count-only fix leaves behind.** The
+      condition was `mergedNotifs.length>8` — one list — while the number now describes two, so
+      the control's condition and its count would have been about different things: this defect
+      one level down. Both are now the same derivation (`_all > _shown`).
+    - **Section 3 is SCOPED TO THE ALERTS BLOCK, not to the expression that happens to wrap the
+      control today.** A first version searched backwards for the enclosing `(function(){` — which
+      exists *only because the fix put one there* — so against the real historical defect it scoped
+      the wrong expression and died **fail-closed** instead of naming it. **A guard that cannot
+      fail on the defect it was written for is not a guard**, and only the injection said so.
+    - **The anchor is the NOUN (`" alerts"`), never `"View all "`** — that phrase is shared with
+      the *Past crews* control, and the first version died `ambiguous` on it. A SILENT case pins
+      that editing the sibling changes nothing here.
+    - **THE "refuse an expectation that matches the CLEAN run" GUARD IS DELIBERATELY ABSENT FROM
+      THIS SUITE, and trying it is what established why.** This guard prints the array's NAME on
+      its `ok` line and its `FAIL` line alike, so every correct expectation legitimately appears in
+      a green run — wired in, it refused a **pre-existing, correct** case. What protects against a
+      needle written against passing text is judging on **FAIL lines only**, which this harness
+      already did. Same reasoning `check:visibility-switches`' sibling suite records.
+    - The floor rose **6 → 11**, two below a clean run's 13: at 6, deleting section 3 landed on
+      **10** and passed, which is precisely what a floor is for.
+    - Injection-tested **12/12** (`scripts/oneoff/inject-count-matches-its-list-cases.mjs`), each
+      case proving its edit landed **by checksum** and restoring the file byte-identically. Case 4
+      is the real defect **spliced back verbatim**. **Two must stay SILENT** — a reworded label
+      (a guard pinned to one phrasing forbids improving the copy) and the Past crews control.
   - **WIDENING THE PANEL WOULD BE THE OTHER FIX AND IS NOT THIS ONE.** Making `NotifPanel` list crew
     invites and group requests is a change to what that screen is; making the badge stop promising
     them is not. Recorded so the smaller fix is not read as a verdict on the larger question.
@@ -5477,6 +5558,114 @@ the total when deciding where a new guard belongs.
   - Fails closed: fewer than 20 files walked means the walk broke, not that the tree is clean.
     Injection-tested (4 cases at the bottom of the script); re-inlining a parser fails naming
     the file and line, and renaming the export fails with "every importer is broken".
+  - **SECTION 2 GUARDS THE *DISPLAYED* GRADE, and the guard's name is now narrower than its
+    contents** — the rename is deliberately not done in the same change, the precedent
+    `check:topo-outage-copy` records. Section 1 is about the SORTABLE grade; this is the same
+    failure one column over. **Which column a route's grade comes from was written out THREE
+    times** — `gradeLabelRaw` in `ClimbMatchCore.jsx`, `rowGrade` in `lib/DbAreaBrowser.jsx`, and a
+    third inside `climbRowItem` that **only the new guard found**, before it shipped. All three
+    read `rock_grade || ice_grade || alpine_grade || grade || commitment`, they agreed on all
+    8,365 WA rows — which is what a hand-copy looks like before it drifts — and **all three were
+    wrong in the same way.**
+    - **A COMMITMENT GRADE IS NOT A CLIMBING GRADE, and it was the headline on 30 routes.** 517
+      routes carry an `alpine_grade`; **274 of those hold a bare NCCS roman numeral**, which says
+      how committing the day is rather than how hard the climbing is. On **30** no rock or ice
+      grade shadows it, so it was what the header pill, the stat strip, the sibling rows and every
+      area-list row displayed. **Slesse Mountain's NE Buttress read "V" in the header pill while
+      the CRUX GRADE tile a few inches below it read "5.9 A2"** — one screen stating the route's
+      grade twice and disagreeing with itself, which is the sentence `cruxGrade`'s own note opens
+      with. Mount Alberta's Japanese Route read **"V"** against a stored `5.6`, Bugaboo Spire's
+      East Ridge **"III"** against `5.7`, Eldorado's East Ridge **"Grade II"** against
+      `"Grade II, Class 3, glacier"`. Eleven of the thirty are Fifty Classics.
+    - **`cruxGrade` FIXED THE OTHER HALF OF THIS AND LEFT THE HEADLINE**, which is why the two
+      surfaces disagreed: that repair reads the remainder of a compound `grade` STRING, and this
+      one is about which COLUMN is consulted. Different questions, one defect. `displayGrade()`
+      does both — it takes the first column that carries a climbing grade and then hands it to
+      `cruxGrade` — so the pill and the tile cannot disagree again.
+    - **...AND `cruxGrade`'s OWN PATTERN WAS SHORT BY 20 VALUES, found by asking it the same
+      question from this side.** `COMMITMENT_ONLY` matched `^(Grade )?[IVX]+(-[IVX]+)?$` and missed
+      three shapes this catalog writes: a **`+`/`-` suffix** (`"IV+"`, `"III+"`, `"VI-"` — 15
+      routes), the NCCS **`"Alpine "` prefix** (`"Alpine IV"`, 3), and an **en-dash range**
+      (`"Grade IV–V"`), which appears as often as the hyphen. Widened, **six crux tiles gained a
+      real grade**: Goode's Megalodon Ridge showed `"IV+"` against a stored `"IV+, 5.10"`,
+      Eldorado's West Arete `"Alpine IV"` against `"Alpine IV, 5.8"`, Little Tahoma and Frying Pan
+      `"Grade II+"` against `"Grade II+, Class 3-4"`. Strictly a widening — anything the old
+      pattern matched still matches — and its own probe reports **112 → 116 fixed, 0 worse**.
+    - **THAT PROBE COULD NOT SEE THE WIDENING, BECAUSE IT RE-IMPLEMENTED THE RULE INSTEAD OF
+      CALLING IT.** `probe-crux-grade-tile.mjs` was written before `cruxGrade` shipped and kept its
+      `fixedB` and its own `isCommitmentOnly` — so once the app's pattern moved, the probe measured
+      a rule the app no longer ran and scored six real fixes as no change. The four-grade-parsers
+      shape, arriving in the **instrument** rather than the pipeline. `fixedB` is now
+      `cruxGrade(...)`. The verdict's `isCommitmentOnly` stays a deliberate copy — the thing under
+      test cannot also be the thing that judges it — but it was brought level, and the comment now
+      says which of the two it is and why.
+    - **THE TEST IS POSITIVE — does the value carry a CLIMBING grade — never a deny-list of
+      commitment spellings.** A deny-list is defeated by one more noun and this catalog has them:
+      `"Grade II glacier climb"`, `"Grade II–III glacier"`, `"Grade II, moderate snow"` are all
+      commitment grades wearing a terrain word, and a pattern anchored on the numeral misses every
+      one. The [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape, refused in advance.
+    - **IT IS NOT `gradeNumFrom`, DELIBERATELY, and that is the interesting part.** That parser has
+      a last-resort branch scoring a bare roman numeral, so a commitment-only route still SORTS
+      among the catalog rather than falling behind all of it — right for sorting, and exactly the
+      case display must reject. So the two lists are ALLOWED to disagree, and
+      `scripts/oneoff/verify-climbing-grade-vocabulary.mjs` is what says they disagree ONLY there
+      rather than a comment claiming it: over the **755 distinct grade values in the catalog** they
+      agree on **732** and the **23** they do not are every one roman-shaped. It also asserts the
+      one-way rule — a value the display list calls a climbing grade must be one the sortable
+      parser can read — so a fifth dialect cannot creep in.
+      - **Its first run accused the display list over EIGHT MIXED GRADES and the display list was
+        right.** `gradeNumFrom` is system-aware and has no system-agnostic `M` branch, so
+        `gradeNumFrom("M5", null)` is null while `gradeNumFrom("M5", "m")` is 5 — and the app
+        always calls it through `gradeNumFor(grade, discipline)`, which supplies one. **Compare
+        against the call the app makes, not the convenient one.**
+    - **A FRENCH ALPINE GRADE IS A REAL DIFFICULTY AND MUST KEEP WINNING.** `alpine_grade` also
+      holds `F`/`PD`/`AD`/`D`/`TD`/`ED` on 155 routes, and the contribute form offers that scale
+      **and** the six romans in one picker — which is the ambiguity that produced this. The app's
+      own form is the evidence that a bare roman is a commitment grade rather than a judgement
+      about climbing imported from outside: `commit`'s options are exactly `["I".."VI"]`.
+    - **MEASURED OVER THE WHOLE CATALOG BEFORE IT SHIPPED: 205,543 routes, 20 displayed grades
+      change, 0 lose the grade they had, 0 gain one from nowhere.** Two of the twenty were not
+      predicted and are both improvements — a `rock_grade` of `"3-4"` and one of
+      `"low fifth class"`, each losing to a `grade` that says `"Class 4 / low 5th"`.
+    - **THE 11 THAT DO NOT MOVE ARE THE LOAD-BEARING HALF.** A rule that only ever replaces a roman
+      numeral is satisfied by deleting the commitment grade from the app, so a route whose record
+      genuinely holds nothing else — Rainier's Emmons Glacier, Baker's Easton Glacier — must still
+      show it. And the labelled **ALPINE** pill in COMPOSITE GRADE keeps rendering the numeral on
+      every one of the twenty: that block is where a commitment grade belongs, and the probe
+      asserts it survived, or this "fix" would be a deletion.
+    - **SCOPE THE SCREEN ASSERTION TO THE HERO, never the whole page.** The first version forbade
+      the old value appearing anywhere in the markup and failed **7/7 against the correct fix** —
+      because COMPOSITE GRADE renders it, correctly, under its own label. Count inside the panel,
+      the rule `check:camping` records three times over.
+    - **A LINE IS NOT A SCOPE IN THIS CODEBASE, and rule A shipped wrong first because of it.**
+      `RouteDetail`'s COMPOSITE GRADE block is `var ag=route.alpineGrade||route.alpine_grade,
+      rg=route.rockGrade||route.rock_grade,…` — four columns on one physical line in four separate
+      and correct expressions, each merely the two SPELLINGS of one column. A per-line test
+      reported it as a chain. Column names are canonicalised (so two spellings read as one column)
+      and the line is segmented on the delimiters that end an expression.
+    - **TWO RULES, because a stale-base squash can take either half alone.** Rule A forbids the
+      chain being written again; rule B **executes** `displayGrade` over nine fixtures and asserts
+      both call sites still route through it — restoring `gradeLabel(r) = shortGrade(gradeLabelRaw(r))`
+      reinstates the whole defect while leaving exactly one chain in the tree, which rule A cannot
+      see. Injection case `header-pill-unwired` is exactly that.
+    - Scoped to what RENDERS (the three app files plus `lib/*.jsx|js`), because a display chain only
+      matters where a climber reads the result; `scripts/oneoff/` is excluded on the precedent
+      `check:screen-lists` sets, and three throwaway query scripts do print several grade columns
+      with `||` while promising nobody anything.
+    - Fails **closed**: fewer than 5 rendering sources found, a missing `displayGrade` export, or a
+      call site that no longer names it.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-grade-pill-cases.mjs`), each case proving its
+      edit landed **by checksum**, restoring the file byte-identically, and judged on the guard's
+      **own failure text**; the harness refuses any expectation that already appears in the clean
+      run. **Three must stay SILENT** — a comment quoting the chain is this guard's own
+      documentation, two spellings of one column is correct code, and a commitment-only route
+      keeping its numeral is the point. **One case reported FIRED ON CORRECT WORK and the guard was
+      innocent**: it changed `rowGrade`'s shape as well as adding a chain, so rule B's wiring anchor
+      fired instead. *An injection that produces a different failure is not a catch.*
+    - The live-catalog half is `scripts/oneoff/probe-grade-pill-is-not-a-commitment-grade.mjs`,
+      which needs the database: it renders the real `RouteDetail` over the real rows through the
+      real `dbRouteToCamel`, and is proven non-vacuous — reverting the rule fails **14** of its
+      assertions.
 - **`audit:grade-num-drift`** asks whether the **stored** `grade_num` still agrees with what
   `lib/grade.js` derives from the row's own `grade`. `check:grade-parser` asserts there is exactly
   ONE parser in the CODE and structurally cannot see this: the column was populated by importers,
