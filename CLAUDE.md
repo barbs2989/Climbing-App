@@ -8794,6 +8794,43 @@ the correction knows the screen is wrong, and they have no way to report it.
       against a HAND-TYPED waypoint and does not transfer to a machine-written vertex**; what made
       the #1572 vertices fabricated was a MINORITY carrying one, on the chord between hand-placed
       neighbours.
+  - **SECTION 5 — A HEADING MUST NOT NAME A KIND ITS LIST CANNOT CONTAIN, and the Help FAQ pointing
+    at it made the stronger version of the same claim.** Sections 1-4 are about the LINE on the map;
+    the list one block below it merges `route.communityTracks` with the route's TRIP REPORTS, and
+    was headed **"Recent recorded tracks"** while every report row reads *"Trip report — no recorded
+    track."* `communityTracks` is **seed-only** — two seed ROUTES carry it, `routes` has no track
+    column under any spelling, and `dbRouteToCamel`'s spread therefore cannot deliver one (that
+    spread is why a zero grep in `lib/db.js` proves nothing by itself). Production sets
+    `VITE_USE_DB=true`, so on **every route a real climber opens** the list is trip reports and
+    nothing else, under a heading asserting all of them are recorded tracks.
+    - **The FAQ was worse, and is why the class earned a gate.** It asked *"Can I see other people's
+      recorded GPX tracks?"* and answered **"Yes."**, naming the section by its old heading — a flat
+      promise production cannot keep. It now opens *"Rarely — almost no route carries one yet"* and
+      describes what the rows actually are.
+    - **The heading is DERIVED from `RouteDetail.jsx`, never restated in the guard**, so a rename has
+      to update the FAQ rather than this file — a restated vocabulary is how this codebase got four
+      grade parsers. The FAQ assertion is what catches the two drifting apart, and the injection case
+      that renames the heading and leaves the FAQ behind is what proves the derivation works.
+    - **ANCHOR ON THE CAPTION, NOT THE HEADING**, and the injection suite is what forced it: the
+      first version anchored on the heading itself, so **every** edit to it reported `ANCHOR LOST`
+      and the specific assertions never ran — three cases came back `wrong failure` against a guard
+      that was firing correctly. *"The anchor moved, re-point the guard"* and *"you changed the
+      heading, change it back"* want opposite repairs, which this file already records from
+      `check:match-percent`.
+    - **BOTH DIRECTIONS**, because a rule that only forbids the old wording is satisfied by deleting
+      the section, and one demanding *"trip reports"* alone would be false on a seed route, which
+      really does carry a recorded line. The heading must still name **tracks** as well.
+    - **Measured rather than reasoned** by `scripts/oneoff/measure-recorded-tracks-heading.mjs`,
+      which renders both shapes with a seed CONTROL — without it a null result would just mean the
+      section never rendered. **Its own first fixture was wrong**: it put the reports on
+      `route.activity`, which is the SEED shape, manufacturing a state a DB route cannot reach — the
+      trap this file records for the CI fixture. Corrected to reports arriving as a **prop** with no
+      `activity` key on the route at all; the verdict was unchanged.
+    - **A previous session had already fixed the ROW** (it claimed *"Recorded line — followed the
+      standard route"*) and another fixed this section reading the raw `route.activity` instead of
+      the page's merged list. Both probes are still green; the heading above them was what was left.
+      **Read `scripts/oneoff/` before re-deriving a finding here** — grepping the two existing probes
+      is what turned a heading rename into a measured defect and stopped a third rediscovery.
   - Injection-tested, 5 cases named at the bottom of the script; deleting either caveat, forcing
     either predicate true (which must fail the *genuine*-track assertions — a false warning on good
     data is the direction that teaches people to ignore it), and renaming the heading.
