@@ -19115,3 +19115,133 @@ targets exist live and neither is a DELETE of an only copy. File is
 
 Next batch continues in sorted-id order after
 `wa_guye_peak_improbable_traverse` (see progress file).
+
+## Batch 260 (pass 5) — 2026-09-10
+
+Checked 8 routes on 5 peaks: `wa_guye_peak_r1`, `wa_guye_peak_r2`,
+`wa_guye_peak_southeast_gully` (Guye Peak), `wa_hadley_peak_cougar_divide`,
+`wa_hadley_peak_skyline_divide` (Hadley Peak), `wa_helmet_butte_standard_route`
+(Helmet Butte), `wa_himmelhorn_southeast_route` (Himmelhorn, Southern
+Pickets), `wa_honeymoon_route` (Mount Deception, Olympics).
+
+**Fixed:**
+
+- `wa_guye_peak_r2` (North Route / "Hidden Ridge" variation) — `descent_text`
+  opened by calling the route "North Rib," contradicting this row's own name
+  field ("North Route") and its own overview, which explicitly distinguishes
+  this easier scramble from a separate, harder "5.6-5.8 technical rib route"
+  on the same peak (a route this row's own `data_quality.gaps` says could not
+  even be independently confirmed to exist as a distinct line). Self-inflicted
+  naming slip, not an external fact — replaced "North Rib tops out" with
+  "North Route tops out" (occurred exactly once, confirmed live before
+  writing).
+- `wa_hadley_peak_cougar_divide` and `wa_hadley_peak_skyline_divide` — both
+  had `approach_logistics.trailheadDirection` truncated mid-sentence to the
+  identical fragment "From Glacier, WA, drive Mt." The complete, correct
+  directions for each were already present verbatim in the same row's own
+  `road.driveNote` field (Mt. Baker Highway/FS-33 for Cougar Divide;
+  SR-542/Glacier Creek Rd/Deadhorse Rd for Skyline Divide, including the
+  current flood-repair gate closure). Completed both fields from the row's
+  own existing, uncut content — no outside research needed.
+- `wa_helmet_butte_standard_route` — `access` carried two differently-spelled
+  land-manager keys that directly contradicted each other: `landManager`
+  (kept) correctly names the Chelan Ranger District, Okanogan-Wenatchee
+  National Forest for the Trinity/Chiwawa River Road approach — confirmed via
+  the US Forest Service's own Okanogan-Wenatchee NF pages for Trinity
+  Trailhead and Buck Creek Trail #1513, and via WTA/Mountaineers.org route
+  descriptions. The snake_case duplicate `land_manager` instead named
+  "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)" — the
+  correct manager for the Mountain Loop Highway/North Fork Sauk side of
+  Glacier Peak Wilderness, an unrelated valley system 60+ miles away. The same
+  `access` object also carried a `parking_pass` key referencing "Mountain Loop
+  Highway trailheads," equally unrelated to this route's actual approach
+  (Coles Corner → WA-207 → Chiwawa River Road). Both contaminated keys
+  dropped; the correct `landManager`/`passRequired`/`fees` already cover the
+  same ground without the errors.
+- `wa_helmet_butte_standard_route` — this row's own `corrections` field
+  already resolved the summit elevation to 7,400 ft (Wikipedia; explicitly
+  rejecting ListsOfJohn's 7,420 ft as non-authoritative), and `high_point_ft`
+  was set to 7400 accordingly, but the "Helmet Butte Summit" waypoint's own
+  `elev`/`elevFt` were never updated and still stored the rejected 7,420 —
+  self-inconsistent with the row's own prior research. Brought into line.
+- `wa_honeymoon_route` (Mount Deception, NE Couloir) — `gain_ft` (7,861)
+  could not be reconciled with this row's own data: its own waypoints give a
+  2,900 ft trailhead and 7,788 ft summit (net rise 4,888 ft), and its own
+  approach text describes an essentially monotonic ascent with no
+  intermediate descent — nothing in the row accounts for ~3,000 ft of extra
+  gain. `loss_ft` (5,400) is a plausible ~10% over that same net rise, in
+  line with ordinary trail undulation, and close to the same peak's Standard
+  Route (`wa_mount_deception_standard`, corrected in an earlier pass to
+  gain_ft=loss_ft=5,500 for a *longer*, more circuitous line that explicitly
+  detours around Gilhooley Tower) — despite Honeymoon Route being described
+  as the shorter, more direct alternative, which should not need more total
+  gain than the longer route. `descent_text` confirms this is a closed
+  out-and-back to the same trailhead, so gain must equal loss; corrected
+  `gain_ft` to 5,400 to match the internally-corroborated `loss_ft`.
+- `wa_honeymoon_route` — `hazards` contained two entries that describe the
+  peak's separate Standard Route rather than this one. One explicitly names
+  "the standard gully" and terrain "north of the saddle" — this route's own
+  approach/descent never mentions a saddle at all (it climbs Deception Basin
+  directly to the east ridge), while the Standard Route's approach is built
+  around the Deception-Martin/Mystery saddle and Gilhooley Tower. The other
+  cited "a recent documented incident (May 2026): a climber took a 300 ft
+  fall and required a helicopter rescue" — independently confirmed via
+  multiple news outlets (Yahoo News, KING5, Tacoma News Tribune coverage of
+  the May 23, 2026 rescue of Rizka Budiati-Szkutnik and Rochelle Garcia) that
+  this specific accident happened in a couloir on the Standard Route, not on
+  Honeymoon Route. Both removed as misattributed; the remaining hazards
+  (loose pillow-lava rock, the unbridged Royal Basin stream crossing, and the
+  peak's cloud-cover-derived name) do genuinely apply here and were left
+  alone. (`wa_mount_deception_standard` was not modified — out of this
+  pass's scope, already audited in an earlier pass — but its own hazards
+  list does not yet name this specific incident by date; left as a note for
+  whichever future pass revisits that route rather than expanding this
+  batch's scope to touch it.)
+
+**Flagged for human review:** `wa_himmelhorn_southeast_route`'s `rappels`
+field is a bare count of "2," which is in tension with this row's own
+hedged descent_text ("in case the moat or upper gully requires a rappel...
+any anchors encountered or built ... are natural, climber-placed") and its
+own `corrections` field, which admits exact beta for this specific line
+was not found and that rope/rack sizing was inferred from comparable
+routes on the same range. No authoritative source located (Beckey's guide
+is cited elsewhere on this row only for the grade dispute, not a rappel
+count) to confirm whether "2" is correct, too high, or too low — left for a
+human with guidebook access rather than guessed at.
+
+**Clean, cross-checked against external sources:** `wa_guye_peak_r1` (West
+Face) — well-documented, self-flagging its own prior Mountain Project
+contamination correction, waypoint elevation profile and gain/loss internally
+consistent. `wa_guye_peak_southeast_gully` — gain/loss/waypoints internally
+consistent for a 45–70° snow gully with a walk-off descent; FA name (Julien
+Bacon/Lukas Speckhardt) matches an existing named Mountain Project entry for
+this exact route (exact FA claim not independently corroborated further, but
+nothing contradicts it and the route itself is confirmed real and named
+correctly). `wa_himmelhorn_southeast_route` — overview facts about the
+peak's *other* named routes (Wild Hair Crack: Roper/Wild/Kroeker, 1981,
+west face, 5.7; "Stonehenge" South Face: Schilling/Halder, July 2015,
+5.10-, 8 pitches) both confirmed via WebSearch against independent AAC/
+Alpinist/Mountain Project coverage, and this row's own 7,880 ft summit
+elevation matches the confirmed figure for the peak.
+
+**Not flagged:** Hadley Peak's `high_point_ft` (7,522 ft) sits a bit above
+externally-found figures (7,470–7,515 ft across Wikipedia/PeakVisor/
+SummitPost), and the two sibling routes' own waypoint summit pins disagree
+with each other by 45 ft (7,470 vs 7,515) — but the whole spread across all
+sources plus both waypoints is under 55 ft, well inside ordinary DEM/survey
+noise for a summit, not a clear error, so left alone rather than guessed at.
+
+Web access this run: WebSearch worked throughout. WebFetch was blocked by
+the network egress proxy for every external domain tried this run
+(mountainproject.com, cascadeclimbers.com, en.wikipedia.org,
+mountaineers.org) — consistent with prior batches; WebSearch snippets were
+sufficient for every claim checked.
+
+SQL: `audits/sql/2026-09-10-batch-260.sql` (7 UPDATE statements, no DELETE;
+validated with `node scripts/check-sql-targets.mjs`: all 7 write targets
+exist live, none is a DELETE of an only copy). File is 9.8KB, over the SQL
+Editor's ~4KB safe-paste soft limit — split it into ~1.5KB chunks and
+verify each before sending the next, per the checker's own warning.
+
+Next batch continues in sorted-id order after `wa_honeymoon_route` (see
+progress file).

@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_guye_peak_improbable_traverse",
+  "last_processed_id": "wa_honeymoon_route",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5286,6 +5286,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-09-09-batch-259.sql",
       "note": "Fixed: Gunrunner's access._raw sub-object (dead, unread-by-app contamination describing the unrelated Lake Serene/Bridal Veil Falls Trailhead near Index, removed rather than merged into the correct surrounding fields), Southwest Couloir's dist_km (59.5 -> 24.14, was storing ~2x its own itinerary's stated round-trip mileage; verified this is a clean symmetric out-and-back unlike sibling Megalodon Ridge, which was left alone for the same reason Frostbite Ridge was in batch 258). Clean: Megalodon Ridge, Northeast Face (dist_km already well-calibrated against its own stated round trip), Gorillas Direct (FA confirmed via WebSearch), Gunnshy Peak Standard Route (elevation/prominence confirmed via WebSearch), Gunsight Peak Standard (already self-adjudicated by an earlier pass -- its own rappel_count_note documents and discards a rappel sequence belonging to a different, unrelated summit), Guye Peak Improbable Traverse (Nov 2021 rockfall damage confirmed via WebSearch almost verbatim)."
+    },
+    {
+      "batch_number": 260,
+      "date": "2026-09-10",
+      "route_ids": [
+        "wa_guye_peak_r1",
+        "wa_guye_peak_r2",
+        "wa_guye_peak_southeast_gully",
+        "wa_hadley_peak_cougar_divide",
+        "wa_hadley_peak_skyline_divide",
+        "wa_helmet_butte_standard_route",
+        "wa_himmelhorn_southeast_route",
+        "wa_honeymoon_route"
+      ],
+      "confirmed_errors_fixed": 7,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-10-batch-260.sql",
+      "note": "wa_honeymoon_route (Mount Deception) had two hazards entries confirmed via news coverage to describe a real May 23, 2026 accident that occurred on the peak's separate Standard Route, not this route -- misattribution, removed. Same route's gain_ft (7861) was internally irreconcilable with its own waypoint elevations and approach narrative and was corrected to match loss_ft (5400). wa_himmelhorn_southeast_route's bare rappels count (\"2\") is in tension with its own hedged descent_text and its own admission that exact route beta wasn't found -- flagged, not auto-fixed, since no authoritative count could be confirmed."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
