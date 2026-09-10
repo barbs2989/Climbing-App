@@ -40,7 +40,7 @@ function before(route) {
 const rows = await selectAll("routes", "id,waypoints,approach_logistics", "waypoints.not.is.null", { pageSize: 1000 });
 if (!rows.length) { console.error("FAIL — read 0 routes. Refusing to report a clean result about data this never saw."); process.exit(1); }
 
-let compared = 0, differ = 0, resolved = 0;
+let compared = 0, differ = 0, resolved = 0, gainedAlt = 0;
 for (const r of rows) {
   // dbRouteToCamel's spelling: the app sees approachLogistics, not approach_logistics.
   const route = { waypoints: r.waypoints, approachLogistics: r.approach_logistics };
@@ -48,11 +48,20 @@ for (const r of rows) {
   compared++;
   const a = before(route), b = now(route);
   if (a) resolved++;
-  const same = JSON.stringify(a) === JSON.stringify(b);
+  /* COMPARE THE DESTINATION, NOT THE WHOLE OBJECT. #1231 gave `trailheadPoint()` an additive
+     `alt` — the OTHER record's point, where one exists and was not chosen — so a whole-object
+     JSON compare called all 940 resolving routes different while lat, lng, name and derived were
+     identical on every one of them. That is a field this verifier is not about: its question is
+     whether the shared helper sends the button to the same PLACE. Reported separately so the
+     addition stays visible rather than silently excused. */
+  const dest = (p) => p && { lat: p.lat, lng: p.lng, name: p.name, derived: p.derived };
+  const same = JSON.stringify(dest(a)) === JSON.stringify(dest(b));
+  if (b && Object.prototype.hasOwnProperty.call(b, "alt")) gainedAlt++;
   if (!same) { differ++; if (differ <= 20) console.log(`DIFFERS ${r.id}\n   before ${JSON.stringify(a)}\n   after  ${JSON.stringify(b)}`); }
 }
 console.log(`\n${compared} routes compared; ${resolved} resolve to a trailhead at all.`);
-console.log(`${differ} differ.`);
+console.log(`${differ} differ in the DESTINATION (lat/lng/name/derived).`);
+console.log(`${gainedAlt} carry the additive \`alt\` field #1231 added — not a destination change.`);
 
 // Synthetic cases: the whole reason for the change is data the catalog does not hold YET.
 console.log(`\nthe shapes the catalog does not hold today:\n`);

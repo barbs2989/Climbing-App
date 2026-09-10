@@ -49,6 +49,20 @@ const fail = (m) => { console.log("  FAIL  " + m); bad++; };
 //   node scripts/oneoff/verify-policy-edit.mjs "PRIVACY/What we collect" "SHEET/Age"
 const EXPECTED = new Set(process.argv.slice(2).length ? process.argv.slice(2)
   : ["PRIVACY/What we collect", "PRIVACY/Data retention", "PRIVACY/Sharing with others", "SHEET/What we don't do"]);
+/* ...AND THE COMMENT ABOVE PREDICTED ITS OWN FAILURE WITHOUT PREVENTING IT. The default set is
+   ONE historical edit's, so running this bare after that edit merged reports "was meant to change
+   and did not" about work that is already on main — the rotting baseline it warns of, committed by
+   its own default. Run with no arguments it is a SPENT one-shot, and that is a different verdict
+   from a defect: `origin/main` already contains the change, so there is nothing left to compare.
+   Saying so is not a pass either — the gone/present assertions below stay meaningful forever and
+   still run, and the "changed and was NOT meant to" direction is still fatal. */
+const SPENT = !process.argv.slice(2).length &&
+  [...EXPECTED].every((key) => {
+    const [k, ...rest] = key.split("/"); const title = rest.join("/");
+    const i = (now[k] || []).findIndex((x) => x[0] === title);
+    return i >= 0 && before[k] && before[k][i] && before[k][i][1] === now[k][i][1];
+  });
+if (SPENT) console.log("  SPENT origin/main already carries this edit — the before/after half has nothing to compare.\n        Pass the entry keys of a NEW edit to use it again.");
 for (const k of ["TERMS", "PRIVACY", "SHEET"]) {
   if (before[k].length === now[k].length) ok(`${k}: still ${now[k].length} entries`);
   else { fail(`${k}: ${before[k].length} entries -> ${now[k].length}`); continue; }
@@ -59,7 +73,7 @@ for (const k of ["TERMS", "PRIVACY", "SHEET"]) {
     const key = `${k}/${now[k][i][0]}`;
     const changed = before[k][i][1] !== now[k][i][1];
     if (changed && !EXPECTED.has(key)) fail(`${key} changed and was NOT meant to`);
-    if (!changed && EXPECTED.has(key)) fail(`${key} was meant to change and did not`);
+    if (!changed && EXPECTED.has(key) && !SPENT) fail(`${key} was meant to change and did not`);
   }
 }
 // The claims that were false must be gone, not merely outnumbered.
@@ -73,9 +87,19 @@ for (const live of DEFAULTS ? ["Deletion is not automated", "the mapping library
   if (flat.includes(live)) ok(`present: ${JSON.stringify(live)}`);
   else fail(`missing: ${JSON.stringify(live)}`);
 }
-const pol = fs.readFileSync(ROOT + "/lib/policy.js", "utf8");
-if (/POLICY_VERSION = "2026-08-19"/.test(pol)) ok("POLICY_VERSION bumped — the documents changed materially");
-else fail("POLICY_VERSION not bumped");
+/* THE VERSION IS COMPARED, NOT PINNED. This tested for the literal "2026-08-19" — the version at
+   the time of that one edit — so it reported "POLICY_VERSION not bumped" the moment the next edit
+   bumped it, which is the opposite of what it means. The durable claim is that a policy change
+   carries a NEWER version than the base has, so read both. */
+const verOf = (src) => { const m = /POLICY_VERSION\s*=\s*"([^"]+)"/.exec(src); return m ? m[1] : null; };
+const polNow = verOf(fs.readFileSync(ROOT + "/lib/policy.js", "utf8"));
+let polBefore = null;
+try { polBefore = verOf(execFileSync("git", ["show", "origin/main:lib/policy.js"], { cwd: ROOT, encoding: "utf8" })); } catch {}
+if (!polNow) fail("POLICY_VERSION could not be read from lib/policy.js");
+else if (SPENT) ok(`POLICY_VERSION is ${polNow} on both sides — nothing to bump on a spent run`);
+else if (!polBefore) fail("POLICY_VERSION could not be read from origin/main — the comparison proved nothing");
+else if (polNow > polBefore) ok(`POLICY_VERSION bumped ${polBefore} -> ${polNow} — the documents changed materially`);
+else fail(`POLICY_VERSION not bumped (still ${polNow}); a reader would accept words they have not been shown`);
 
 console.log(bad ? `\n${bad} FAILED` : "\nthe parsed documents changed exactly where intended, and nowhere else");
 process.exit(bad ? 1 : 0);

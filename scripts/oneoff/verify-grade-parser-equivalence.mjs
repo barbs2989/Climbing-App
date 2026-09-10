@@ -43,17 +43,38 @@ for (const [g, s] of [
   ["4th", "class"], ["3rd", "class"], ["Easy 5th", "class"], ["5.11b/c (6c+ French)", "yds"],
 ]) pairs.set(g + "\x00" + s, [g, s]);
 
-let diff = 0, n = 0;
-const examples = [];
+/* FOUR DIFFERENCES ARE THE POINT OF THE CHANGE, NOT A REGRESSION, and exiting 1 on them made this
+   report the improvement as a failure. CLAUDE.md records it: the bare-ordinal branch "differed on
+   exactly 4 inputs, all `null` -> a correct value", and agreement with the stored column went
+   98.09% -> 98.49%. The reference here is a VERBATIM copy of the pipeline parser and is meant to
+   stay a fossil, so these four are permanent.
+   Declared, so an UNEXPECTED difference is still loud — and a declared one that stops differing
+   fails as stale, the standard every `KNOWN` map in this repo is held to. */
+const INTENDED = new Map([
+  ['3rd\u0000class', "bare ordinal: the pipeline copy returns null, lib/grade.js reads it as class 3"],
+  ['4th\u0000class', "bare ordinal: null vs class 4"],
+  ['Easy 5th\u0000class', "bare ordinal: null vs 5"],
+  ['Easy 5th\u0000yds', "bare ordinal: null vs 5"],
+]);
+
+let diff = 0, n = 0, intended = 0;
+const examples = [], seenIntended = new Set();
 for (const [g, s] of pairs.values()) {
   n++;
   const a = gradeNumPipeline(g, s);
   const b = gradeNumFrom(g, s);
   const same = (a == null && b == null) || (a != null && b != null && Math.abs(a - b) < 1e-9);
-  if (!same) { diff++; if (examples.length < 20) examples.push({ g, s, pipeline: a, lib: b }); }
+  if (same) continue;
+  const key = g + "\u0000" + s;
+  if (INTENDED.has(key)) { intended++; seenIntended.add(key); continue; }
+  diff++; if (examples.length < 20) examples.push({ g, s, pipeline: a, lib: b });
 }
 
 console.log(`compared ${n} distinct (grade, system) inputs drawn from ${rows.length} live rows + edge cases`);
-console.log(diff ? `${diff} DIFFER` : "identical on every input");
+console.log(`${intended} INTENDED difference(s) — the bare-ordinal branch lib/grade.js gained`);
+for (const [k, why] of INTENDED) if (seenIntended.has(k)) console.log(`  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}]  ${why}`);
+const stale = [...INTENDED.keys()].filter((k) => !seenIntended.has(k));
+for (const k of stale) console.log(`  STALE  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}] no longer differs — remove the declaration`);
+console.log(diff ? `${diff} UNEXPECTED difference(s)` : "no unexpected difference — the two parsers agree everywhere else");
 for (const e of examples) console.log(`  ${JSON.stringify(e.g)} [${e.s}]  pipeline=${e.pipeline}  lib=${e.lib}`);
-process.exit(diff ? 1 : 0);
+process.exit(diff || stale.length ? 1 : 0);

@@ -1,6 +1,10 @@
 // Drive the REAL nearby-peaks selection against the LIVE areas table, using the exported pure
 // functions plus the same query shape useNearbyAreas issues.
-import { SUPABASE_URL, anonKey } from "./scripts/lib/supabase-env.mjs";
+/* The path was "./scripts/lib/supabase-env.mjs" — repo-root-relative, which ESM does not do:
+   it resolves against THIS FILE, so node looked for scripts/oneoff/scripts/lib/… and the script
+   died on import. Nothing runs scripts/oneoff/, so it had never resolved. Same family as the
+   pinned worktree roots check:script-roots was written for. */
+import { SUPABASE_URL, anonKey, requireServiceKey } from "../lib/supabase-env.mjs";
 import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
@@ -15,7 +19,12 @@ await build({
 });
 const { nearbyPeaksBounds, nearbyPeaksRows } = require_(out);
 
-const U = SUPABASE_URL, K = anonKey(), h = { apikey: K, Authorization: "Bearer " + K };
+/* Service key where available, ANON as the fallback, and read-only either way. The three peaks
+   are looked up by NAME, which is an unindexed filter over 47k areas and reliably trips the anon
+   role's 3s statement timeout — a fact about the lookup, not about the question this asks. The
+   bounding-box query underneath is the one the app issues and is fast on either key. */
+const U = SUPABASE_URL, K = (() => { try { return requireServiceKey(); } catch { return anonKey(); } })(),
+  h = { apikey: K, Authorization: "Bearer " + K };
 const get = async q => {
   const r = await fetch(`${U}/rest/v1/${q}`, { headers: h, signal: AbortSignal.timeout(60000) });
   if (!r.ok) throw new Error(r.status + " " + (await r.text()).slice(0, 160));

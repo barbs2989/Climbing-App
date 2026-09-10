@@ -4185,6 +4185,35 @@ the total when deciding where a new guard belongs.
         LIVE, so the probe still detects the revert the class exists for.
       - **An exit code is not evidence a probe is telling the truth.** A sweep that judges on
         status will pass over a probe whose every printed finding is wrong.
+    - **THE `verify-`/`audit-`/`test-` ONE-OFFS ARE A THIRD POPULATION AND 14 OF 61 DID NOT EXIT
+      0.** Nine are the same repairs one prefix over — two selecting `routes.source`, which #1020
+      DROPPED; one importing `dotenv`, which this repo does not depend on; one whose import path
+      was repo-root-relative (`./scripts/lib/…`), which ESM resolves against the FILE, so it had
+      never once loaded; one pinning a route id that has left the catalog; one comparing the whole
+      `trailheadPoint()` object and calling all 940 resolving routes different because #1231 added
+      an `alt` field the destination does not depend on. Two are spent for good and were deleted:
+      a Phase-3 import verifier written against `routes.state` and `routes.hazard_tags`, neither of
+      which exists, and a `grade_num` parity check superseded by `audit:grade-num-drift`, which
+      asks the same question and is REPORT-ONLY because most disagreements are not defects.
+    - **A ONE-SHOT BEFORE/AFTER VERIFIER MUST KNOW WHEN IT IS SPENT, and two did not.** These diff
+      the working tree against `origin/main`, so the day the change merges every *"was meant to
+      change and did not"* fires — about work that is already on main. `verify-policy-edit`'s own
+      header **predicted exactly this** (*"pinned to one edit's set, it goes stale the moment that
+      edit merges"*) and then shipped that edit's set as the default, so running it bare reproduced
+      the failure it warns of; it reports **SPENT** now, and the gone/present assertions, which are
+      true forever, still run. `verify-sling-rack-synonym-widening` guarded only against the whole
+      FILE being identical — so any unrelated edit to `RouteDetail.jsx` got past it and the run
+      ended on *"the widening changed nothing it was aimed at"*. It compares the three lifted
+      FUNCTIONS now. **Spent and failed want opposite reactions**, and a verifier that cannot tell
+      them apart sends somebody to look at a renderer that is fine.
+    - **AND A PINNED VALUE ROTS THE SAME WAY A PINNED ROW DOES.** `verify-policy-edit` tested for
+      the literal `POLICY_VERSION = "2026-08-19"` and so reported *"not bumped"* the moment the
+      NEXT policy edit bumped it — the exact opposite of what it means. It reads both sides and
+      requires the tree's version to be newer than the base's.
+      `verify-grade-parser-equivalence` exited 1 on **4 differences this file records as the
+      intended improvement** (*"differed on exactly 4 inputs, all `null` -> a correct value"*);
+      they are declared now, so an UNEXPECTED difference is still loud and a declared one that
+      stops differing fails as **stale**.
   - **THE FIRST SWEEP MEASURED NOTHING AND SAID SO UNIFORMLY: all 77 exited 127.** macOS has no
     `timeout(1)`. *When every case in a sweep shares one result, suspect the sweep* — the rule this
     file already records for a case-sensitive `LIKE` that refused 25 of 39 pins.
@@ -5405,6 +5434,35 @@ the total when deciding where a new guard belongs.
     say the figures *assume near-full-length double-rope rappels*, i.e. the lengths are derived from
     the two-rope conclusion rather than evidence for it — and each note renders directly beneath the
     warning, so the screen self-corrects. Do not "fix" these by dropping the number.
+- **`rappels` DENIED PER-STATION LENGTHS ITS OWN ROW STATED FIVE WAYS, on one panel.** The Plan
+  tab's RAPPELS section read, in this order: *"4 stations · two ropes (longest 50 m) · 558 ft
+  total"*, then *"the published descent is roughly 50 m, 50 m, 50 m and a short 20 m"*, then the
+  table — R1 164 ft, R2 164 ft, R3 164 ft, R4 66 ft — and then, last, **"per-station lengths
+  unconfirmed"**. One screen, two answers, on a rappel record.
+  - **THE MIRROR OF `audit:rappel-claims`, which asks whether `rappels` claims raps the descent
+    text DENIES.** Here it denied what the row states, so that audit is blind to it by construction.
+  - **Which half was stale needed no judgement.** #1043 nulled 50/50/50/20 on the reasoning that
+    this route's own `descent_text` then said *"~30 m each"* and its gear list named a single 60 m
+    rope. A later research pass reversed that **with a source** and updated every record except the
+    summary: `descent_text` now reads *"four consecutive double-rope rappels of roughly 50 m, 50 m,
+    50 m and 20 m"*, `rappel_count_note` cites two independent accounts, `gear` names *"Two 60m
+    dynamic ropes"*, and the header and 558 ft total are derived from the table. Five records
+    against one clause.
+  - **A CLASS OF ONE, MEASURED:** across the 113 WA routes whose `rappel_detail` states lengths,
+    exactly one had a `rappels` string denying them. No detector — that is the thing this repo keeps
+    declining to build. `scripts/oneoff/fix-west-face-rappels-deny-their-own-table.mjs` removes the
+    clause under a declared-state contract that re-asserts all four corroborating records at apply
+    time, so a further re-research refuses rather than being written over.
+  - **THE HEDGE IS NOT LOST WITH THE CLAUSE**, which is the rule this repo holds prose repairs to:
+    the count note's *"roughly"* and its two named accounts render directly above the summary. What
+    was removed is a claim the row contradicts, not an uncertainty it carries.
+  - **FOUND BY RUNNING A `scripts/oneoff/` VERIFIER, AND THE VERIFIER WAS ITSELF STALE.**
+    `verify-rappel-fix-renders` still asserted #1043's nulled state — *"no 50 m on screen"*, *"em
+    dashes for the nulled stations"*, *"the summary says lengths are unconfirmed"* — i.e. it demanded
+    the app contradict its own sourced row. Repointed rather than deleted, because the question
+    survives every re-research: **does the panel agree with itself?** It now asserts the row states
+    four lengths, that the 50 m station reaches the screen, and that the summary does not deny what
+    the table above it prints.
 - **`audit:rappel-claims`** asks whether a route's `rappels` field claims rappels its own
   `descent_text` says are not made. Both describe the same descent of the same climb, so a
   disagreement means one is wrong. `wa_mount_stuart_north_ridge` — the route `check:ui` pins as its

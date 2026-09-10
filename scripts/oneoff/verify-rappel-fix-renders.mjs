@@ -75,7 +75,19 @@ function findTab(route, needle) {
   return null;
 }
 
-// ── wa_west_face_2: the four lengths are gone; nothing shows 50 m as a rappel length.
+/* wa_west_face_2 — AND THE THING THIS VERIFIED WAS REVERSED, ON PURPOSE, WITH A SOURCE.
+   #1043 nulled 50/50/50/20 because the row's own `descent_text` then said "~30 m each" and its
+   gear list specified a single 60 m rope. A later research pass restored them: `descent_text`
+   now reads "four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m",
+   `rappel_count_note` cites two independent accounts, and `gear` names two 60 m ropes. So the
+   assertions below — "no 50 m on screen", "em dashes for the nulled stations", "the summary says
+   lengths are unconfirmed" — became demands that the app contradict its own sourced row, and
+   nothing runs scripts/oneoff/, so they said so unread.
+
+   They are replaced rather than deleted, because the QUESTION is still worth asking every time
+   this row is re-researched: does the panel agree with itself? It did not — the summary went on
+   saying "per-station lengths unconfirmed" beneath a table stating all four, which
+   fix-west-face-rappels-deny-their-own-table.mjs removed. */
 const w = dbRouteToCamel(await row("wa_west_face_2"));
 const wTab = findTab(w, "RAPPEL");
 if (!wTab) fail("ANCHOR LOST: no sub-tab renders a RAPPEL section for wa_west_face_2");
@@ -91,12 +103,20 @@ else {
   const nextHeading = rest.search(/>[A-Z][A-Z &]{4,}</);
   const around = text(html.slice(i, i + 6 + (nextHeading > 0 ? nextHeading : 4000)));
   console.log(`        section text: ${JSON.stringify(around.slice(0, 220))}`);
-  if (/\b50\s*m\b/.test(around)) fail("the superseded 50 m length is STILL on screen");
-  else ok("no 50 m rappel length on screen");
-  if (/—|—/.test(around)) ok("the table prints an em dash for the unknown lengths");
-  else fail("no em dash — RappelTable may not be showing the nulled stations as unknown");
-  if (/per-station lengths unconfirmed/i.test(text(html))) ok("the corrected `rappels` summary reaches the screen");
-  else fail("the corrected `rappels` summary does not render");
+  // The row states four lengths; the page must show them rather than em dashes.
+  const stated = (Array.isArray(w.rappelDetail) ? w.rappelDetail : []).map((x) => x && x.lengthM).filter((v) => typeof v === "number" && v > 0);
+  if (stated.length !== 4) fail(`ANCHOR LOST: rappel_detail states ${stated.length} lengths, not 4 — this row has been re-researched again; re-read it before trusting anything below`);
+  else {
+    ok("rappel_detail states all four station lengths");
+    if (/\b50\s*m\b/.test(around)) ok("the stated 50 m station reaches the screen");
+    else fail("the row states a 50 m station and the panel does not show it");
+    // The panel must not deny what it has just printed. One screen, one answer.
+    if (/lengths?\s+unconfirmed|lengths?\s+not\s+(?:published|recorded|confirmed)/i.test(around))
+      fail("the summary still denies per-station lengths the table above it states");
+    else ok("the summary does not contradict the station table");
+    if (/two 60 m ropes are needed|two ropes/i.test(around)) ok("the two-rope requirement reaches the screen");
+    else fail("the two-rope requirement does not render");
+  }
 }
 
 // ── wa_chimney_rock_west_face: the gear list no longer says a single 50 m rope suffices.

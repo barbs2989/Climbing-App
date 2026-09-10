@@ -11,6 +11,8 @@
 //
 // It checks BOTH halves deliberately. A cap that shortens the pill while dropping the remainder
 // would be a loss, and only gradeDetail can show that.
+import os from "node:os";
+import path from "node:path";
 import fs from "fs";
 import { shortGrade, gradeDetail } from "../../lib/grade.js";
 import { SUPABASE_URL, anonKey, headers } from "../lib/supabase-env.mjs";
@@ -60,6 +62,9 @@ for (const g of [
 
 const out = {};
 for (const g of grades) out[g] = { s: shortGrade(g), d: gradeDetail(g) };
-const file = arg("--out", "grade-dump.json");
+/* Default OUT OF THE TREE. Written to the repo root it leaves an untracked artifact behind on
+   every run — one turned up in `git status` mid-review here — and an artifact in the tree is one
+   `git add .` away from being committed. `--out` still takes a path when you want to keep one. */
+const file = arg("--out", path.join(os.tmpdir(), "grade-dump.json"));
 fs.writeFileSync(file, JSON.stringify(out, null, 0));
 console.log(`${grades.size} distinct grades evaluated -> ${file}`);
