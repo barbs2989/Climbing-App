@@ -8263,6 +8263,62 @@ the correction knows the screen is wrong, and they have no way to report it.
   - **Read the jump from 63 to 199 as coverage that was missing, never as data that got worse.**
     Nothing changed in the catalog. The same lesson as `trackIsJustTheWaypoints` correcting a
     denominator rather than a finding: *overstated coverage is the false-pass direction.*
+- **`gain_ft` BELOW `loss_ft` ON A ROUTE THAT RETURNS TO ITS OWN TRAILHEAD — you cannot finish
+  lower than you started.** The same kind of claim `check:impossible-leg` makes: no prose, no
+  judgement, the row contradicts itself. And the app already knows the pairing — `gainCoversWholeOuting`
+  is |loss − gain| / gain ≤ 3% and relabels the TECH STATS tile *"On foot"* when it holds.
+  `scripts/oneoff/measure-gain-vs-loss-on-an-out-and-back.mjs`.
+  - **`audit:gain` IS BLIND TO IT, and that is why it is worth having.** That audit compares
+    `gain_ft` against the rise between the route's own PINS, so a route whose pins agree — or whose
+    implied start happens to coincide with a recorded waypoint — never reaches its output. All
+    three routes repaired here were EXCUSED by its recorded-start rule, not flagged.
+  - **ONE-SIDED, for `audit:gain`'s reason.** Loss SMALLER than gain is ordinary: 135 of these 640
+    rows differ by more than 3% and the bulk have a tiny `loss_ft`, because that column also holds
+    the APPROACH's net descent rather than the outing's — **two conventions in one column**, the
+    shape recorded for `dist_km`. Only the other direction is a contradiction.
+  - **A TRAVERSE IS ALLOWED TO FINISH LOWER, and that is most of the raw count**: 45 of the 52 say
+    traverse / point-to-point / one-way / shuttle in their own prose.
+  - **OF THE SEVEN LEFT, FOUR ARE A CONVENTION AND NOT A DEFECT, and separating them is the whole
+    precision.** Where `gain_ft` matches the trailhead-to-summit PIN RISE almost exactly while
+    `loss_ft` is larger, gain is the RISE and loss is the total descent **including re-gains over
+    intermediate bumps** — two true numbers answering different questions, which is what five of the
+    seven pairs in the facts-stored-twice census also turned out to be.
+    `wa_spinnaker_peak_s_route` (2,045 against a 2,054 rise), `wa_mount_saul_se_route` (4,993 against
+    4,993), `wa_mount_lincoln_standard` and `wa_buckhorn_marmot_pass` are those, and they are left
+    alone.
+  - **THREE WERE BELOW BOTH `loss_ft` AND THE PIN RISE**, so that reading cannot explain them, and
+    each had a third and fourth record agreeing: `wa_wilmans_peak_scramble` (2,300 against loss 4,500,
+    rise 4,518 and a totalNote saying *"4,500 ft of gain"*), `wa_union_peak_se_route` (1,096 against
+    loss and rise agreeing **to the foot** at 1,696) and `wa_mount_rainier_curtis_ridge` (7,000
+    against loss 9,500, a totalNote saying *"~9,500 ft gain"*, and a 10,006 ft rise). Repaired by
+    `scripts/oneoff/fix-gain-below-its-own-loss.mjs`, which **copies `loss_ft` rather than typing a
+    number** — the declare-a-donor contract the trailhead and summit-pin repairs use, so a fix
+    needing a figure the row does not hold cannot be expressed. Contradictions **3 → 0**.
+  - **It is not cosmetic.** `gain_ft` becomes `gainM`, `scarfHrs` turns it into the approach
+    estimate, and that feeds Est. summit, Est. return and the After dark warning — so an understated
+    gain makes the app **optimistic**, the #641 direction.
+  - **A NINTH PAIR MEASURED ON THE WAY AND LEFT AS A READING LIST:** `gain_ft` against the trip
+    total stated in the route's own `itinerary.totalNote`
+    (`scripts/oneoff/measure-gain-vs-itinerary-total.mjs`). **192 comparable, 17 disagree** — but
+    only the **8** with a ONE-DAY itinerary are decidable, because where the trip has a camp *"the
+    trip total"* and *"the gain this column holds"* are different questions by the documented
+    high-camp convention. Two narrowings carry that precision, and the first draft got both wrong:
+    the figure must be one the note itself calls a TOTAL (a first version took the first number it
+    found and read a per-day LEG as the total, reporting 44, several with `gain_ft` LARGER than the
+    "total" it had picked), and the comparison is one-sided with the climbing vertical credited
+    first. **Read the row before repairing one** — `wa_grotto_mountain_e_route` stores `dist_km`
+    7.72 against a note saying 4.8 miles ROUND TRIP, i.e. that row is also carrying the two
+    `dist_km` conventions this file forbids normalising in bulk.
+  - **AND A NARROWING OF `audit:gain`'s OWN EXCLUSION WAS MEASURED AND REJECTED — do not
+    re-derive it.** That rule excuses a route which RECORDS something at the height its stored gain
+    implies, and on a one-day car-to-car itinerary there is no high camp, so the exclusion is
+    sometimes satisfied by a junction, a stream crossing or a roadside campground. Measured: of the
+    **29** excused, **23 are excused by a CAMP** and **1 by the BASE of the climb** — the convention
+    working — and only **5 by something else**. Reading those five, three are marginal (334–576 ft
+    over a 300 ft slack), one is a three-day trip where a camp may legitimately apply, and one is a
+    genuine 642 ft shortfall. So tightening buys **~1 real finding and risks 4 false warnings** on a
+    caveat this file already records #1533 widening precisely to stop false accusations. *A false
+    warning is how a real one stops being read.*
 - **`audit:gain`** asks whether a route's stored `gain_ft` is even POSSIBLE given its own
   waypoints. A party that starts at a trailhead at X ft and stands on a summit at Y ft has gained
   at least Y − X, so a row storing less than its own net rise is storing a number that cannot be
