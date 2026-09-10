@@ -2712,6 +2712,54 @@ the total when deciding where a new guard belongs.
       `scripts/oneoff/probe-pitch-contribution-keeps-what-was-typed.mjs` (11 assertions, 7/7),
       which asks a different question and runs the branch in metric where the conversion is the
       identity — **two homes for two questions, not two copies of one.**
+  - **AND A NINTH, FOUND BY READING THIS GUARD'S OWN STATED BLIND SPOT: THE FORECAST'S FREEZING
+    LEVEL.** The `profile` section records, in as many words, that the bare-unit needle *"wants a
+    bare unit AFTER a brace"* — so a JSX `{v} ft` is caught and a **concatenation** `v + " ft"` is
+    invisible. That is not a hypothetical gap: the *Freezing level* tile rendered
+    `{dy.freezeMax.toLocaleString()+" ft"}` and sat in it, on the one panel that decides whether an
+    ice route is frozen. **A stated limitation is a worklist**, for the fifth time in this file.
+    - **SEVEN OF THE EIGHT TILES IN THAT PANEL ALREADY CONVERTED** — `uTemp` ×4, `uWind`,
+      `uPrecip`, `uSnowfall` — which is what makes this a MISS rather than a missing convention,
+      the same argument the `profile` entry makes about its three sites.
+    - **`uElev()` IS THE CONVERSION, NOT THE RE-CONVERSION THE FETCH COMMENT FORBIDS.** That
+      comment read *"do not re-convert freezeMax below"*, meaning **never scale it by 3.28 again**
+      because `precipitation_unit=inch` already makes Open-Meteo return feet. Converting the
+      canonical value to the climber's unit is a different operation, and the comment now says so
+      — left as it was, the next reader would have read the fix as the thing being forbidden.
+    - **THE SAME COLUMN IS HYDRATED TWICE AND BOTH HALVES HAD IT.** `climb_logs.freezing_level_ft`
+      is a number, and `ClimbMatch.jsx` and `RouteDetail.jsx` each rendered it `+" ft"`, so a
+      metric climber read **another climber's report** in feet. This file already records that
+      this pair DRIFTS when only one half is touched, so both are fixed and both are asserted.
+      `check:log` guards which COLUMNS each hydration carries and is blind to the unit.
+    - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
+      `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
+      other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`
+      is already rounded.
+  - **THE GENERAL RULE IS A GATE NOW, AND IT IS A COUNT RATCHET BECAUSE THE FILE'S OWN IDIOM IS
+    ONE.** `rawImperialUnits()` walks the AST of the three app files and three `lib` ones and asks
+    whether anything CHOSE the unit — a `uImp()` ternary, or the defensive `uElev ? uElev(x) :
+    <fallback>` a lib component falls back to when a caller omits the helper. **28 concatenations,
+    6 raw**, and the six are enumerated beside the constant with a reason each, in the same shape
+    the `profile` section already uses for its *" mi away"* pair.
+    - **A COUNT IS ONLY AS GOOD AS ITS TOKENISER, three times over in one sitting.** `" in"` is
+      the English preposition far more often than inches and reported `"APPROACHES · "+n+" way"+
+      (s)+" in"` as a defect; `key={"lb"+i}` on the long-beta rows is a **React key**, not pounds;
+      and a **default parameter** (`uDistMi = mi => Math.round(mi)+" mi"`) is the documented
+      degrade-rather-than-crash fallback. All three are excluded structurally, not by a word list.
+    - **The six that remain are unreachable or reported, never overlooked**: the two dead
+      `rappels` object branches (733 of 733 rows are strings), `OverviewMap` and `QuickMatch`
+      (declared seed-only, asserted as such by the `profile` section), `GettingThere` (dead by a
+      closed decision), and App's area search — which renders the **seed `MOUNTAINS` tree**, so
+      its distance is the AddRoute area-picker class and converting it would polish a surface
+      showing the wrong data. **Check the branch before polishing a control.**
+    - **NearMePanel is what the ratchet caught that nothing else could.** Its distance read
+      `a._mi.toFixed(1) + " mi · "` **18 lines from a correctly-guarded sibling** using the same
+      `uDistMi` prop, in the LIVE DB area browser. No targeted assertion covers it, and the
+      injection proves it: reverting that one line fires the ratchet and **nothing else**.
+    - Injection-tested by reverting each fix in place and restoring **byte-identically by
+      checksum**: the tile, both hydrations and the ratchet each fire naming their own defect, and
+      the area-browser revert fires the ratchet alone. The weather floor rises **14 → 20** — a
+      floor left at the old count cannot see the new half stop asking.
   - **ONE BUNDLE, NOT SIX.** Each probe built its own esbuild bundle of the same 400kB file and two
     of them bundled `RouteDetail` separately. Merging is the `check:outage-copy` precedent, which
     folded two probes together for exactly this reason. Measured back-to-back on one box: the five
