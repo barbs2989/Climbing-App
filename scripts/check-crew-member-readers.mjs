@@ -87,6 +87,43 @@ const ALLOW = [
 ];
 const used = new Set();
 
+// ---------------------------------------------------------------- SECTION 2
+// A SEED RESOLVER PASSED BY REFERENCE, which section 1 cannot see for TWO reasons at once:
+// it scans for the literal `cById(` -- a CALL -- and it then filters on `climberId`. The site
+// that drew no faces on a real group's card is `cl.memberIds.map(cById)`: a REFERENCE, and an
+// id list called memberIds. So a group's roster resolved every uuid to null, the strip
+// rendered zero avatars, and the header beside it still said "7 members".
+//
+// The same trap CLAUDE.md records for `grep "toggleC()"`, which found one call site and
+// concluded a collapsed crew card could never be expanded -- the handler was passed by name.
+//
+// MEASURED BEFORE WIDENING: the whole class is TWO sites across the three app files. This is
+// a coverage hole in an existing guard, not a detector for a class of two -- the pattern was
+// simply too narrow, and closing it costs one regex.
+const BY_REF = /\.(map|filter|find|some|every|flatMap)\(\s*(cById|CLIMBERS\.find|FILLER_CLIMBERS\.find)\s*\)/g;
+
+// NO SCOPING BY THE LIST'S NAME, and its absence is deliberate. A first version required the
+// context to say memberIds/roster/climberIds -- and the floor immediately caught it, because
+// the OTHER site in the class reads `mutualIds(...).map(cById)` and names none of them. That
+// is the too-narrow proxy this whole section exists to close, committed inside the fix for it.
+// The honest rule needs no vocabulary: `cById` and CLIMBERS.find resolve a PERSON and nothing
+// else, so passing one by reference over any list is a seed resolution of people ids. A site
+// that really is seed-only goes in ALLOW_REF with a measured reason.
+
+const ALLOW_REF = [
+  {
+    key: "mutualIds(",
+    why:
+      "mutualIds() is a STUB -- it takes no arguments and returns a literal [], so the sheet " +
+      "is unreachable and there is no id to resolve. Proven by execution in " +
+      "scripts/oneoff/probe-mutual-friends-is-a-stub.mjs, which exits 1 the day it starts " +
+      "returning something, so this entry cannot rot into a description of live code.",
+  },
+];
+const usedRef = new Set();
+const refFindings = [];
+let refSites = 0;
+
 const findings = [];
 let scanned = 0, sites = 0;
 for (const rel of FILES) {
@@ -111,6 +148,21 @@ for (const rel of FILES) {
       findings.push({ rel, line, call: call.replace(/\s+/g, " ").slice(0, 110) });
     }
   }
+  // SECTION 2, over the same comment-stripped source.
+  BY_REF.lastIndex = 0;
+  let m;
+  while ((m = BY_REF.exec(src))) {
+    // The expression this reference belongs to: enough to see WHAT is being resolved and
+    // whether anything real is consulted alongside. A window, deliberately -- the receiver of
+    // a `.map` sits immediately to its left, so there is nothing to resolve through scope.
+    const ctx = src.slice(Math.max(0, m.index - 160), m.index + m[0].length + 220);
+    refSites++;
+    if (FALLBACK.test(ctx)) continue;
+    const hit = ALLOW_REF.find((a) => ctx.includes(a.key));
+    if (hit) { usedRef.add(hit.key); continue; }
+    const line = src.slice(0, m.index).split("\n").length;
+    refFindings.push({ rel, line, call: ctx.slice(120).replace(/\s+/g, " ").slice(0, 130) });
+  }
 }
 
 // FAIL CLOSED. Zero sites means the walk broke or the vocabulary moved — never that the app
@@ -118,6 +170,34 @@ for (const rel of FILES) {
 if (!sites) {
   console.error(`${GUARD} FAILED — scanned ${scanned} file(s) and found NO member-id lookups at all.`);
   console.error("That cannot be right: the crew screens resolve member ids everywhere. The walk broke.");
+  process.exit(1);
+}
+
+// Section 2's own floor. It is satisfied today by ONE site -- the mutualIds() stub -- and
+// that is exactly what makes it a real anchor: if the by-reference scan ever matches nothing,
+// the pattern has been narrowed until it cannot fire, which prints identically to a clean app.
+if (!refSites) {
+  console.error(`${GUARD} FAILED - the by-reference scan matched NO roster resolver at all.`);
+  console.error("It should still find mutualIds(...).map(cById). The pattern or ROSTER_ID broke,");
+  console.error("and a scan that cannot fire reports a clean app either way.");
+  process.exit(1);
+}
+
+const staleRef = ALLOW_REF.filter((a) => !usedRef.has(a.key));
+if (staleRef.length) {
+  console.error(`${GUARD} FAILED - ${staleRef.length} by-reference exemption(s) match nothing:`);
+  staleRef.forEach((a) => console.error(`    ${a.key}\n        (${a.why})`));
+  process.exit(1);
+}
+
+if (refFindings.length) {
+  console.error(`${GUARD} FAILED - ${refFindings.length} place(s) pass a SEED resolver by reference over a roster:\n`);
+  for (const f of refFindings) console.error(`  ${f.rel}:${f.line}\n      ${f.call}\n`);
+  console.error("`.map(cById)` is a REFERENCE, not a call, so section 1's `cById(` pattern walks past it");
+  console.error("-- which is how a real group's card came to draw zero avatars under a header saying");
+  console.error("\"7 members\". A DB roster carries uuids and cById searches seed CLIMBERS by integer id.");
+  console.error("Resolve through the group's profiles query (see _asCardMember), or declare it in");
+  console.error("ALLOW_REF with a measured reason.");
   process.exit(1);
 }
 
@@ -140,7 +220,7 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log(`${GUARD}: ok — ${sites} member-id lookup(s) across ${scanned} file(s), none resolved against seed data alone (${ALLOW.length} exempt, each with a reason).`);
+console.log(`${GUARD}: ok — ${sites} member-id lookup(s) and ${refSites} by-reference roster resolver(s) across ${scanned} file(s), none resolved against seed data alone (${ALLOW.length} + ${ALLOW_REF.length} exempt, each with a reason).`);
 
 // Injection cases (each must FAIL):
 //   1. revert safetyMembers to  members.map(m=>CLIMBERS.find(x=>x.id===m.climberId)).filter(Boolean)
@@ -149,3 +229,7 @@ console.log(`${GUARD}: ok — ${sites} member-id lookup(s) across ${scanned} fil
 //   4. delete an ALLOW entry whose site still exists  -> reported as a finding
 //   5. add an ALLOW entry that matches nothing        -> reported as stale
 //   6. break the scan (rename CLIMBERS.find)          -> "found NO member-id lookups at all"
+//   7. revert the card to  cl.memberIds.map(cById).filter(Boolean)  -> section 2 names it
+//   8. delete ALLOW_REF's mutualIds entry                           -> reported as a finding
+//   9. narrow BY_REF so it matches nothing                          -> "cannot fire" floor
+//  10. a `.map(cById)` site that ALSO consults real profiles         -> must stay SILENT
