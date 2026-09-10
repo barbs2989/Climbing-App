@@ -11867,6 +11867,52 @@ per column.
   - It fails **closed**, and it claims nothing about rendering — only "could the data have
     arrived at all".
 
+**Is the box quiet enough for a browser result to MEAN anything?** `scripts/lib/quiet-box.mjs`
+asks before a probe spends anything, and it is the fourth precondition in this family — after
+"when is a screen finished", "did the guard read the app" and "can the database answer".
+  - **THE RULE EXISTED IN PROSE IN FOUR PLACES AND NOTHING ASKED THE MACHINE.** `check:outage`
+    records its `ranks` case reporting **MISSED at load ~450 and CAUGHT at ~260 on the same
+    commit**; `check:waypoint-placement` records a profile at ~450 being **off by 4x** *and
+    blaming the wrong two suspects*; `check:wp-styles`' cost was quoted at 2m29s against a real
+    37s; and memory carries *"browser/build failures = the box is oversubscribed"*. Every one is
+    a sentence somebody has to remember, which is the argument this file makes for a script over
+    a comment everywhere else.
+  - **BOTH DIRECTIONS ARE UNSAFE, which is why it REFUSES rather than warning.** A probe that
+    MISSES on a loaded box reads as a live defect and sends somebody to edit correct code. One
+    that PASSES can be **vacuous** — `probe-overlay-width-cap` already records that *"a skipped
+    overlay is indistinguishable from a passing one"* when nothing settles. A loaded run is
+    worthless both ways, so the honest output is no verdict at all.
+  - **THE THRESHOLDS COME FROM THIS FILE'S OWN RECORDED RUNS, NOT FROM A BAD NIGHT.** This box has
+    **4 cores**, so load-per-core is the meaningful figure: the runs CLAUDE.md calls quiet are load
+    **3.8 and 4.7 (~1x)**, and the ones it says invalidated a result are **110, 227, 250, 450 —
+    27x, 57x, 62x, 112x**. There is a wide empty band between them. It is quiet at **≤2x**, stamps
+    the output between 2x and 6x, and refuses above **6x** — an order of magnitude below the
+    cheapest recorded bad run, so it cannot fire on a borderline-fine machine.
+  - **SCOPED TO HAND-RUN PROBES, AND CI-NEUTRAL BY CONSTRUCTION.** No workflow executes anything
+    under `scripts/oneoff/` — both mentions in `.github/workflows/` are comments — and
+    `package.json` names no probe. **Do NOT wire this into a `check:` guard**: a CI runner is small
+    and legitimately busy, and a guard that declines to run is a guard you do not have.
+  - Wired into the **10 cited browser probes**, which are the ones this file points at as the proof
+    of a claim. The import goes first (ESM imports hoist, so their order cannot matter) and the
+    CALL after the leading contiguous import block — never after *"the last import line"*, which is
+    the trap `check:script-roots` records, where a probe's `ENTRY` template literal carries import
+    lines far below the real ones. Verified per file: parses, exactly one call, and the call
+    precedes `chromium.launch`.
+  - **`--anyway` (or `QUIET_BOX=0`) runs regardless and STAMPS the output** *"NOT EVIDENCE"*, so a
+    forced run cannot be read back later as a clean result. An override that left no trace would
+    just move the defect into the transcript.
+  - **`box` is a TEST SEAM** — the `--fixture`/`--known` idiom — because two of the three branches
+    could otherwise only be exercised on a quiet machine, which is exactly the machine this repo
+    does not reliably have. All five branches are proven: quiet, degraded-stamp, unknown-load
+    (fail-OPEN, since a platform that cannot report load must not block everybody), forced, and the
+    real refusal.
+  - **WHAT IT DOES NOT DO**: it says nothing about whether a probe is correct, only whether this
+    machine can produce a believable answer. And the **11 cited browser probes remain UN-SWEPT** —
+    #1678 swept the 77 static one-offs and #1695 the 202 DB-reading ones, and neither could reach
+    a browser probe. They could not be swept the night this landed either: the box measured
+    **116x oversubscribed**, which is the load this file already records as producing a wrong
+    answer. *Sweep them from a quiet box; the refusal is what stops that run being wasted.*
+
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
 tests `merge(head, base)` as base stood **when that run started**. So a PR that went green
@@ -12291,6 +12337,18 @@ value, put the reasoning somewhere else.**
   ever needed it has to be a new, explicitly-nullable column, and `null` must mean
   "depends on the descent chosen" rather than defaulting to 0. See
   [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
+  - **"Every WA value is a sentence" is MEASURED NOW, and understated: it is every value in the
+    CATALOG.** `scripts/oneoff/measure-rappels-column-shape.mjs` reads the whole column rather than
+    the WA subtree — **733 of 733 rows are strings**, no objects, no numbers, no arrays.
+  - **That is what makes `fmtRappels`' unit branch DEAD, and it is why the unit census flags it.**
+    That helper returns early on `typeof r!=="object"` and otherwise renders `r.lengthM+"m"` or
+    `r.lengthFt+"ft"` — a unit chosen by WHICH COLUMN the value came from rather than by the
+    climber's setting — reaching `rappelNoteText` and the TECH STATS *Rappels* tile. It is a
+    **false positive** of `measure-imperial-unit-literals.mjs`, not a defect to convert, because no
+    row can reach it. **The measurement is the tripwire**: the day something writes an object here,
+    the branch arms itself and shows metres to an imperial climber, so re-run the script rather
+    than re-reading this sentence. Same discipline as the `sling_rack` shapes — *a claim about the
+    stored shape is a claim about the DATA*, and this file records being wrong about that before.
 
 - **`bivy[].capacity` / `.water` / `.permit` are CHIPS, and the camping enrichment filled all
   three with paragraphs.** Measured on the live catalog: median **130 / 136 / 297** characters
