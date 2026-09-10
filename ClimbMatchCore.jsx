@@ -14,7 +14,7 @@ import { fetchTrustScore } from "./lib/feedbackLoop";
 import { clickable } from "./lib/clickable"
 import { routeTerrain, fitGear, fitAdvice } from "./lib/terrain"
 import { routeInList, listPeaks, peakClimbed } from "./lib/lists";
-import { downloadStateOffline, offlineDownloads, removeStateOffline } from "./lib/offline";
+import { downloadStateOffline, offlineDownloads, removeStateOffline, savedFloatPlan, saveFloatPlan } from "./lib/offline";
 import { useSession, signOut, getProfile, saveProfile } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
 import AuthModal from "./lib/AuthModal";
@@ -2712,9 +2712,25 @@ function Questionnaire({onComplete}){
    form because losing them re-presents a filled plan as unsaved and an already-checked-in party
    as overdue. */
 function floatPlanState(defaults){return {form:Object.assign({route:"",partner:"",party:"",vehicle:"",lot:"",depart:"",turn:"",ret:"",comms:"",contact:"",notes:""},defaults||{}),saved:false,checkedIn:false};}
-function FloatPlan({defaults,coords,plan,onPlan}={}){
+function FloatPlan({defaults,coords,plan,onPlan,who,scope}={}){
   const [own,setOwn]=useState(()=>floatPlanState(defaults));
-  const st=plan||own,setSt=onPlan||setOwn;
+  const st=plan||own,_setSt=onPlan||setOwn;
+  /* IT SURVIVES A RELOAD NOW, WHICH IS NOT WHAT #1577/#1581 FIXED. Those lifted the state out of
+     a conditional branch so leaving the sub-tab stopped discarding it; the form still reached no
+     storage, so eleven fields of a safety document — vehicle, parking, depart, TURNAROUND, HARD
+     RETURN, comms, emergency contact — were gone on the next load. Device-local and keyed by
+     ACCOUNT (see lib/offline.js), because this form holds somebody's emergency contact.
+     `scope` is OPTIONAL and absent means exactly today's behaviour, so a call site that has not
+     opted in cannot be broken by this. */
+  const _dirty=useRef(false),_hyd=useRef(false);
+  const setSt=useCallback(function(fn){_dirty.current=true;_setSt(function(prev){const next=(typeof fn==="function")?fn(prev):fn;if(scope)saveFloatPlan(who,scope,next);return next;});},[_setSt,who,scope]);
+  useEffect(function(){if(!scope||_hyd.current)return;var alive=true;
+    /* The latch is set AFTER the read resolves, never before it — the check:profile-edit-gate
+       trap, where latching first made one transient failure permanent for the session. And a
+       stored plan must never clobber what somebody has already typed while the read was in
+       flight, which is what `_dirty` is for. */
+    savedFloatPlan(who,scope).then(function(v){if(!alive)return;_hyd.current=true;if(v&&!_dirty.current)_setSt(function(p){return {...p,form:{...p.form,...v.form},saved:v.saved};});}).catch(function(){});
+    return function(){alive=false;};},[who,scope,_setSt]);
   const form=st.form,saved=st.saved,checkedIn=st.checkedIn;
   const setSaved=v=>setSt(x=>({...x,saved:v})),setCheckedIn=v=>setSt(x=>({...x,checkedIn:v}));
   const [showShare,setShowShare]=useState(false),[copyState,setCopyState]=useState("");
@@ -2728,7 +2744,7 @@ function FloatPlan({defaults,coords,plan,onPlan}={}){
     </div>}
   </div>;
 }
-function SafetyTab({members,meAnswers,onComplete}){
+function SafetyTab({members,meAnswers,onComplete,who,scope}){
   /* THE OTHER HALF OF THE SAME DEFECT, and the worse half. `{view==="float"?<FloatPlan/>:…}`
      below is a conditional branch, so React discards the form when you leave it — and the
      button that leaves it, "Team Alignment", sits directly BESIDE the one that opens it. The
@@ -2740,7 +2756,7 @@ function SafetyTab({members,meAnswers,onComplete}){
   if(show)return <div><button onClick={()=>setShow(false)} style={{background:"transparent",border:"none",color:C.blue,fontSize:17,cursor:"pointer",fontWeight:600,marginBottom:6,padding:"8px 10px",marginLeft:-10}}>← Back</button><Questionnaire onComplete={a=>{onComplete(a);setShow(false);}}/></div>;
   return <div>
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:7,marginBottom:14}}>{[["alignment","Team Alignment"],["float","Float Plan"]].map(x=><button key={x[0]} onClick={()=>setView(x[0])} aria-current={view===x[0]?"true":undefined} style={{padding:"10px 6px",borderRadius:12,border:`1.5px solid ${view===x[0]?C.blue:C.border}`,background:view===x[0]?C.blueBg:C.surface,color:view===x[0]?C.blue:C.textSub,cursor:"pointer",fontSize:13,fontWeight:600}}>{x[1]}</button>)}</div>
-    {view==="float"?<FloatPlan plan={floatPlan} onPlan={setFloatPlan}/>:<div>
+    {view==="float"?<FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={scope}/>:<div>
       <div style={{background:readyBg,borderRadius:12,padding:"12px 14px",marginBottom:14,border:`1px solid ${readyCol}44`}}><div style={{fontSize:15,fontWeight:700,color:readyCol,marginBottom:4}}>{readyMsg}</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.6}}>{analysis.ready?"All members completed their questionnaire and no critical issues were flagged. This team is aligned.":analysis.discussion?`${analysis.crit} critical item${analysis.crit!==1?"s":""} and ${analysis.warn} warning${analysis.warn!==1?"s":""} need addressing before this climb proceeds.`:"Complete all questionnaires to unlock team alignment analysis."}</div></div>
       {!meAnswers?<div style={{background:C.amberBg,borderRadius:12,padding:"12px 14px",marginBottom:14,border:`1px solid ${C.amber}44`}}><div style={{fontSize:13,fontWeight:700,color:C.amber,marginBottom:6}}>You haven't completed your questionnaire</div><button onClick={()=>setShow(true)} style={{width:"100%",padding:9,background:C.blueChip,color:C.blue,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700}}>Complete Your Questionnaire →</button></div>:<div style={{background:C.greenBg,borderRadius:12,padding:"11px 14px",marginBottom:14,border:`1px solid ${C.greenDim}`}}><div style={{fontSize:13,fontWeight:700,color:C.green,marginBottom:4}}>Your questionnaire is complete</div><RiskBadge id={meAnswers.riskTolerance}/><button onClick={()=>setShow(true)} style={{marginTop:8,padding:"9px 12px",background:C.surface,color:C.textSub,border:`1px solid ${C.border}`,borderRadius:8,fontSize:12,cursor:"pointer"}}>Redo</button></div>}
       {analysis.flags.length>0?<div style={{marginBottom:14}}><SL>ALIGNMENT FLAGS</SL>{analysis.flags.map((f,i)=><div key={i} style={{background:f.severity==="critical"?C.redBg:f.severity==="warning"?C.amberBg:C.surface,borderRadius:11,padding:"10px 13px",marginBottom:7,border:`1px solid ${f.severity==="critical"?C.red+"44":f.severity==="warning"?C.amber+"44":C.border}`,display:"flex",gap:9,alignItems:"flex-start"}}><span style={{fontSize:17,flexShrink:0,display:"inline-flex"}}><ActionIcon name={f.severity==="critical"||f.severity==="warning"?"alert":"bulb"} size={17} color={f.severity==="critical"?C.red:f.severity==="warning"?C.amber:C.textMuted}/></span><div style={{flex:1}}><div style={{fontSize:12,fontWeight:700,color:f.severity==="critical"?C.red:f.severity==="warning"?C.amber:C.textMuted,marginBottom:2,textTransform:"uppercase",letterSpacing:0.5}}>{f.category} · {f.severity}</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.5}}>{f.msg}</div></div></div>)}</div>:null}

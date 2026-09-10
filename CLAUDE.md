@@ -2227,6 +2227,50 @@ the total when deciding where a new guard belongs.
       not assumed.
     - Section 10 is source-only for section 9's reason: removing the condition restores a working,
       *rendering* dialog that simply throws work away, so no render assertion can see it.
+  - **AND SURVIVING A SUB-TAB SWITCH IS NOT SURVIVING A RELOAD — the form reached NO STORAGE AT
+    ALL, which nothing had ever asked.** #1577 and #1581 lifted the state out of a conditional
+    branch so leaving the sub-tab stopped discarding it. Both call sites still held it in a plain
+    `useState`, so eleven fields of a safety document — vehicle, parking, depart, TURNAROUND, HARD
+    RETURN, comms, emergency contact — were gone on the next load. This guard's own name is about
+    persistence and its 21 assertions are all about the unmount; the second question was never put.
+    - **TWO DIFFERENT OBJECTS ARE CALLED "THE FLOAT PLAN", and only the small one was stored.**
+      `floatPlanState()` declares the **eleven**; `crews.float_plan` holds a **three**-field
+      `{filedAt, contact, returnBy}` written by a different control through `updateCrew`. The only
+      float-plan write in `lib/` was **`createCrew`'s parameter** — crew CREATION — with no update
+      path for the form, no localStorage and nothing in the offline store. Reading one object's
+      persistence as the other's is how this stayed invisible.
+    - **Device-local and KEYED BY ACCOUNT** (`savedFloatPlan`/`saveFloatPlan` in `lib/offline.js`),
+      following `savedAreaIds` exactly, and keyed by **scope** as well — `route:<id>` or
+      `crew:<id>` — because a float plan belongs to one trip. Account keying matters more here
+      than for bookmarks: this form holds somebody's **emergency contact**, so signing out must
+      not hand it to the next person on the same phone. Not a `profiles` column — that is a schema
+      change and a sync story, and the plan is for the phone you are carrying.
+    - **`checkedIn` IS DELIBERATELY NOT STORED, and the asymmetry is the reason.** It is a claim
+      about one trip's OUTCOME, so reviving it for a later trip on the same route would render
+      **"✓ Checked In Safe"** for a trip that has not happened. Losing it across a reload
+      under-claims and costs a tap. Those two are not equally bad, so the safe branch is not the
+      one that preserves more.
+    - **`scope` IS OPTIONAL AND ABSENT MEANS EXACTLY TODAY'S BEHAVIOUR**, so a call site that has
+      not opted in cannot be broken by this — the same additive shape `plan`/`onPlan` already use.
+    - Two ordering rules, both from traps this file already records: the hydrate latch is set
+      **AFTER** the read resolves (`check:profile-edit-gate`, where latching first made one
+      transient failure permanent for the session), and a stored plan **must not clobber what is
+      already typed** while the read is in flight.
+    - **THE ROUND TRIP PROVES THE STORE AND NOT THE WIRING**, so
+      `scripts/oneoff/probe-float-plan-survives-a-reload.mjs` asserts both — 25 assertions, no
+      browser and no database, running the REAL exports over `scripts/lib/idb-shim.mjs` rather
+      than a retyped copy. Dropping a prop at a call site changes **no identifier**, which
+      `audit:silent-reverts` says in its own closing caveat it cannot see, and every round-trip
+      assertion would stay green while the form went back to losing eleven fields.
+    - **ITS FIRST BROKEN-STORE CASE TOOK THE REST OF THE PROBE DOWN, and the cause is in
+      `lib/offline.js`'s own comment.** A stub throwing **synchronously** out of `open()` is
+      unfaithful — IndexedDB fails asynchronously via `req.onerror`, which is the only path that
+      resets the memoised `_dbPromise`. A synchronous throw leaves every later caller awaiting the
+      same dead promise. The stub fails async now, so it exercises the real error path AND leaves
+      the store usable for the sections below it.
+    - **It also leaked a bundle directory into `git status`** on the run that crashed mid-probe,
+      because the cleanup sat only on the happy path and the bundle-failure path — the trap
+      recorded for a sibling probe that leaked nine. Cleanup is on `process.on("exit")` now.
   - **The guard's SUBJECT is now "a form must not lose your work", across three mechanisms** — a
     sub-tab unmount (FloatPlan), a sibling sub-tab unmount (Calculator) and an accidental dismissal
     (SuggestFix). The name still says float plan; the rename stays deliberately out of these
