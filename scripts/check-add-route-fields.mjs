@@ -162,6 +162,69 @@ if (unpinned.length) {
     `APPROACH section. An approach control has to write a SENTENCE, not a bucket.`);
 }
 
+// A BUCKET-KEY CHIP GROUP MUST MATCH THE SHAPE OF THE COLUMN ITS VALUE LANDS IN, and `approach`
+// was not the only one. Censused 2026-09-10 across all five chip controls in AddRoute:
+//
+//   approach     u1/1to3/3to6/6plus      -> routes.approach      PROSE   removed  #1713
+//   descentText  rappel/walkoff          -> routes.descent_text  PROSE   free text
+//   pitchCount   single/multi            -> routes.pitches       INT     number
+//   outingShape  outback/loop/point      -> routes.outing_shape  KEY + CHECK   CORRECT
+//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135
+//
+// So it is a CLASS, not a one-off: three of five, and the two live ones were reachable on 7/9
+// and 4/9 disciplines. `pitchCount` was the worse of them — a REQUIRED question whose value
+// `proposal_num(...)::int` turns into NULL, so the form insisted on an answer and stored none.
+//
+// SCOPED TO AddRoute's BODY, because the bare keys are ordinary English elsewhere: `"rappel"`
+// occurs 8 times in core alone (a vouch skills array, `passesFilters`' own FINDER filter), and
+// the `["key","Label"]` pair shape occurs legitimately in TIME_BUDGETS, a crag filter and
+// RouteDetail's PIN_CATEGORIES. A guard that flagged those would be telling authors to break
+// correct code. The fingerprint is the pair shape INSIDE this one component.
+//
+// `outingShape` IS THE LOAD-BEARING NEGATIVE. A rule that merely forbids chip groups would
+// forbid the one that is right, and this file records that a rule demanding only ABSENCE is
+// satisfied by deleting the feature. Its column carries a CHECK constraint naming exactly those
+// three keys (0087), so the value fits by construction — it is the model, and it must stay.
+{
+  const nc = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
+  const i = core.indexOf("function AddRoute(");
+  if (i < 0) anchorLost("`function AddRoute(` — the form this section is about");
+  let d = 0, end = -1;
+  for (let j = core.indexOf("{", core.indexOf(")", i)); j < core.length; j++) {
+    if (core[j] === "{") d++;
+    else if (core[j] === "}" && --d === 0) { end = j; break; }
+  }
+  if (end < 0) anchorLost("AddRoute's body did not close — braces unbalanced");
+  const bodyNC = nc(core.slice(i, end + 1));
+  if (bodyNC.length < 20000) anchorLost(`AddRoute's body lifted short (${bodyNC.length} chars)`);
+
+  // A key is only reported when it appears as the HEAD of a [key,"Label"] pair — the chip shape.
+  const pair = (k) => new RegExp(`\\[\\s*"${k}"\\s*,`).test(bodyNC);
+  const FORBIDDEN = [
+    ["approach",    ["u1", "1to3", "3to6", "6plus"],   "routes.approach",     "PROSE — the walk-in narrative the Planner renders"],
+    ["descentText", ["rappel", "walkoff"],             "routes.descent_text", "PROSE — the block descentBeta() renders, median 530 chars across 1,013 live routes"],
+    ["pitchCount",  ["single", "multi"],               "routes.pitches",      "an INT — proposal_num()::int returns NULL for a non-numeric value, so the answer is discarded"],
+  ];
+  let back = 0;
+  for (const [field, keys, col, why] of FORBIDDEN) {
+    const hits = keys.filter(pair);
+    if (!hits.length) continue;
+    back++;
+    fail(`the ${field} bucket chips are back (${hits.join(", ")}). Their value lands in ${col}, ` +
+      `which is ${why}. Give the control the column's own shape — a sentence, a number, or a key ` +
+      `column with a CHECK constraint like routes.outing_shape — rather than a bucket key.`);
+  }
+  if (!back) ok(`no bucket-key chip group writes into a column of another shape (${FORBIDDEN.length} censused)`);
+
+  // ...and the rule is TARGETED, not a ban on chip groups. If this stops being true the guard has
+  // been over-applied and the correct control was swept with the wrong ones.
+  const shapeOk = ["outback", "loop", "point"].filter(pair);
+  if (shapeOk.length === 3) ok("the outingShape chips are still offered — a CHECK-constrained key column is the model");
+  else fail(`the outingShape chips are gone (found ${shapeOk.length}/3 of outback, loop, point). Its ` +
+    `column carries a CHECK constraint naming exactly those keys (0087), so a bucket key is the ` +
+    `RIGHT shape there. If it was removed on purpose, drop it from this assertion in the same commit.`);
+}
+
 // 1. every submitted key is one SS knows about, or is explicitly provenance
 // `source` and `sourceNote` were here until the Source step was removed from the form: the app
 // no longer asks a contributor where their information came from, and must not start again.
