@@ -106,6 +106,90 @@ const CASES = [
     append: '\n// https://example.invalid/v1/forecast?temperature_unit=celsius — a URL inside a comment.\n',
     expect: "pass",
   },
+
+  // ------------------------------------------------------------------------------------------
+  // THE WIND TILE COMPARED TWO HEIGHTS. Sustained is `wind_speed_80m` (a ridge-level proxy) and
+  // the only gust Open-Meteo publishes is `wind_gusts_10m` (surface), so `gustMax > windMax`
+  // suppressed the gust on 51% of hours against 8% on the honest same-height test.
+  {
+    name: "gust-compared-across-heights",
+    why: "THE REAL HISTORICAL DEFECT — the gust gated on the 80 m sustained, so a 22 mph gust on " +
+         "a 22 mph AMBER day rendered no gust line at all",
+    file: RD,
+    find: "{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>",
+    repl: "{dy.gustMax>dy.windMax?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>",
+    expect: "fail",
+    must: /compared against dy\.windMax again/,
+  },
+  {
+    name: "headline-moves-to-10m",
+    why: "THE OVER-REACH, and the load-bearing case: standardising on 10 m satisfies every gust " +
+         "assertion AND takes a 27 mph AMBER day to GREEN with a 29 mph gust standing. A rule " +
+         "that only ever demands the gust appear is satisfied by the change that under-warns",
+    file: RD,
+    find: "dd.winds.push(h.wind_speed_80m[i]);",
+    repl: "dd.winds.push(h.wind_speed_10m[i]);",
+    expect: "fail",
+    must: /under-warning direction|de-escalates gusty days/,
+  },
+  {
+    name: "fetch-drops-the-10m-series",
+    why: "the gate keeps its shape and loses its input — wind10Max is null every day, so the " +
+         "gust shows unconditionally and the same-height comparison is not happening at all",
+    file: RD,
+    find: "weather_code,wind_speed_10m,wind_speed_80m,",
+    repl: "weather_code,wind_speed_80m,",
+    expect: "fail",
+    must: /no longer asks for wind_speed_10m/,
+  },
+  {
+    name: "bucket-stops-filling",
+    why: "the field is fetched and reaches nothing — the silent half, where every execution " +
+         "assertion still passes because the rule itself is untouched",
+    file: RD,
+    find: "\n          if(h.wind_speed_10m)dd.winds10.push(h.wind_speed_10m[i]);",
+    repl: "",
+    expect: "fail",
+    must: /no longer buckets wind_speed_10m/,
+  },
+  {
+    name: "wind10max-can-be-minus-infinity",
+    why: "dropping the empty-bucket guard makes wind10Max -Infinity rather than null. The gate " +
+         "still fails OPEN there, so this is caught by the wiring rule and not by behaviour",
+    file: RD,
+    find: "wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,",
+    repl: "wind10Max:Math.round(Math.max.apply(null,d.winds10)),",
+    expect: "fail",
+    must: /no longer derived from winds10 with a null on empty/,
+  },
+  {
+    name: "gate-hides-on-a-missing-series",
+    why: "inverts the fail-open: with no 10 m series it now HIDES the gust. Withholding a gust " +
+         "figure is the dangerous way for this to fail, so the direction is asserted, not assumed",
+    file: RD,
+    find: 'function gustWorthShowing(dy){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}',
+    repl: 'function gustWorthShowing(dy){const surf=dy.wind10Max;return typeof surf==="number"&&isFinite(surf)&&dy.gustMax>surf;}',
+    expect: "fail",
+    must: /withholding a gust is the dangerous failure|10m null/,
+  },
+  {
+    name: "comment-quotes-the-forbidden-gate",
+    why: "MUST STAY SILENT — a comment naming the cross-height comparison is this fix's own " +
+         "documentation, and a guard failing on it would forbid explaining itself",
+    file: RD,
+    find: "function gustWorthShowing(dy){",
+    repl: "// the gate used to read dy.gustMax>dy.windMax, which spanned 70 m of altitude\nfunction gustWorthShowing(dy){",
+    expect: "pass",
+  },
+  {
+    name: "caption-reworded",
+    why: "MUST STAY SILENT — the caption must NAME the two heights, not use one phrasing. A " +
+         "guard pinned to a sentence forbids improving the copy",
+    file: RD,
+    find: "gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.",
+    repl: "the gust, and the NWS and MET winds beside each day, are surface (10 m) readings taken at a different height.",
+    expect: "pass",
+  },
 ];
 
 let bad = 0;
