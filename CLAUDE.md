@@ -3607,6 +3607,49 @@ the total when deciding where a new guard belongs.
     - It is **emphasis, never suppression**. Single-file removals are still printed in full, and the
       run still exits 0 — a removal is not a defect, and going red on a promotion would make the
       audit argue with correct work.
+    - **THE CONSOLIDATION ESCAPE DEPENDS ON THE COMMIT MESSAGE, AND ON 2026-09-09 THAT PUT MAIN RED
+      FOR THREE HOURS AND SIX MERGES.** The rule already excuses a commit that NAMES every file it
+      removes, on the stated reasoning that *"a consolidation names them because that is what its
+      commit message is FOR"* — so a consolidation that does **not** name them is indistinguishable
+      from a stale-base squash and trips the gate. **#1677 is that case**: it promoted six
+      `scripts/oneoff/` unit probes into `check:units` (852 lines, wired in `package.json` in the
+      same commit) and its message names **one** probe — the Chrome-driven one it KEPT. Every push
+      after it went red on a workflow whose own header exists to stop a red landing on *"whoever
+      merged next, which is whoever caused it"* — produced by the workflow, on six authors who had
+      not caused it.
+      - **It would not have cleared on its own.** The six adding commits sat at depth 8, 14, 30, 90,
+        107 and 117, and the fingerprint needs only **two** to survive — so it persists until the
+        shallowest leaves the 120-commit window, i.e. ~112 further merges.
+      - **`REVIEWED` is the escape for a commit already merged**, keyed on the **FULL sha** so an
+        entry can never reach a commit that has not happened yet. It **suppresses the gate and not
+        the row**: the finding still prints with its reason, because this rule is documented as
+        *emphasis, never suppression* and a reader who cannot see what was excused cannot check it.
+      - **An entry matching nothing is PRINTED AND NOT FATAL — a deliberate departure from this
+        file's own "a stale entry FAILS" idiom**, and the exception is worth reading before copying
+        either way. That idiom exists because a rotted declaration silently **excuses** something;
+        this one cannot, since it names one immutable sha and is inert the day its finding stops
+        being reported. What made a fatal version actually **wrong** rather than merely strict is
+        the **window**: run by hand at `--commits 20` the adding commits are out of frame, the
+        finding is correctly not reported, and a fatal rule then fails a **clean tree** for
+        bookkeeping. *"Not flagged"* and *"not in frame"* are indistinguishable from inside the
+        audit, so it says so rather than gating on it.
+      - **THE DURABLE CURE IS NOT THE MAP: name the files you delete in the commit message** and the
+        existing escape fires with no bookkeeping at all. The failure message now says so — it
+        printed the findings and **no repair**, which is the `check:column-drift` lesson (*it fired
+        correctly and prescribed the wrong repair*) in its harsher form, since the likeliest correct
+        answer here is the one a reader is least likely to reach for while looking at a message
+        about reverts. Three causes now, in likelihood order, with the promotion case second.
+      - Injection-tested **4/4** (`scripts/oneoff/inject-reviewed-gate-cases.mjs`), each case proving
+        its edit landed **by checksum** and restoring the file byte-identically. **The BASELINE case
+        is the load-bearing one** — this map makes a *passing* run the interesting one, so a suite
+        that only proved the gate can fail would say nothing about it. `entry-gone-gate-returns` is
+        the non-vacuity case, and `unmatched-entry-is-not-fatal` pins the paragraph above. The
+        harness refuses any expectation that already appears in the healthy run, the structural form
+        of a mistake this repo has made twice.
+      - Cases run at **`--commits 40`, measured rather than assumed**: three of the six adders sit
+        inside it, so *"several files added by several different commits"* still reproduces at a
+        third of the cost. If it stops reproducing, widen the window before believing the guard
+        changed.
   - **IT TRACKS `.yml` NOW, AND NOT DOING SO WAS A HOLE IN ITS OWN SUBJECT.** The extension list was
     `jsx|mjs|json|sql`, so a merge deleting a **workflow** was invisible — and CI wiring is the one
     kind of loss that reports nothing by itself: a guard whose workflow vanishes does not go red, the
