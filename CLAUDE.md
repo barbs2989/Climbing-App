@@ -5143,7 +5143,9 @@ the total when deciding where a new guard belongs.
   nothing: the harness reports *"edit never landed"* or `HARNESS BUG`, **nothing runs
   `scripts/oneoff/`**, and the guard goes on printing `ok` with one of its rules exercised by
   nobody. Static — one Babel parse per suite, no browser, no database, and **no guard executed** —
-  so it sits in `npm run build`.
+  so it sits in `npm run build`, at **0.86x `check:policy-claims`** taken back to back on one box,
+  best of two. **Quoted as a ratio because the clock here is fiction**: that reading was taken at
+  load average 446 on 4 cores, where this file already records a profile being off by 4x.
   - **THIS HAD HAPPENED FOUR TIMES AND EVERY ONE WAS FOUND BY ACCIDENT.** This file already records
     the `check:units` promotion finding **two** cases still naming `lib/units-pref.js` after the
     guarded read/write folded into `lib/prefs.js` — *"reported HARNESS BUG on every run, of which
