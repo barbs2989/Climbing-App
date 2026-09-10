@@ -65,4 +65,9 @@ camp-elevation-proposals.json
 .probe-jump-*/
 .probe-subtree-*/
 .probe-offline-*/
+# check:trailhead-directions bundles INSIDE the project for the same reason, and was missed when
+# the entries above were written. Found the way the comment above predicts: an OOM-killed build
+# left a 1.9 MB .cm-thdir-ZRgrwp/bundle.mjs sitting in `git status`. A SIGKILL never reaches a
+# finally, so the guard's own cleanup cannot be the only defence.
+.cm-thdir-*/
 .inject-reviewed-gate.lock
