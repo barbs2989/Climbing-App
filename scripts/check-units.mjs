@@ -58,7 +58,7 @@ const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
 
-const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters", "profile"];
+const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "filters", "profile", "pitches"];
 // FLOORS ARE PER SECTION, because ONE total cannot see a section that quietly stopped asking:
 // five healthy sections carry the number while the sixth contributes nothing, and the run prints
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
@@ -68,7 +68,7 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
-const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 5 };
+const FLOOR = { persist: 13, weather: 14, reports: 15, itinerary: 16, variants: 13, filters: 28, profile: 5, pitches: 9 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -114,7 +114,7 @@ export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,
   uTempU, uTempIn, buildConsensus,
   itinDaysToDraft, itinDraftToStructured, itinToText, uDistMiIn,
-  itinDraftVal, itinStoreVal, uElev,
+  itinDraftVal, itinStoreVal, uElev, uLenN, uLenIn, uLenUnit,
   ROUTE_LENGTHS, routeLengthLabel, uDistMi, uDistMiUnitLong, passesFilters,
   __set_UNITS,
 } from ${JSON.stringify(CORE_PATH)};
@@ -822,6 +822,105 @@ async function runVariants() {
 
 // =======================================================================================
 // =======================================================================================
+// PITCHES — THE LAST BOX IN THE CONTRIBUTE FORM THAT ASKED FOR A FIXED UNIT.
+//
+// AN EIGHTH MEMBER, and it is the `variants` story one row up the same form. `PitchTable` renders
+// a stored pitch length through `uLen`, so an imperial climber READS "148 ft" on the route page —
+// and the editor asked for `Length (m)` whatever the setting. Typing the number they had just
+// read stored 148 m, and the route then claimed 486 ft.
+//
+// CENSUSED, NOT SPOTTED: of the six unit-bearing inputs in SuggestFix, five were already
+// unit-aware and this was the only hardcoded one — a class of ONE with the convention two lines
+// BELOW it, because #1671 fixed the approach-variant boxes and left the pitch box above them.
+// That is this guard's own header again: an instance fixed by hand is not a class closed.
+//
+// FOUR EDGES, AND REVERTING ANY ONE IS SILENT — the value still flows, in the wrong unit, under a
+// success toast. Prefill, the box's label, the store, and the two SUMMARY strings. The summary is
+// the subtle one: `pitchStr` is fed the DRAFT by pendStr/filledStr and CANONICAL rows by
+// curRefStr, so converting only the draft would compare 55m against "180m".
+async function runPitches() {
+  section = "pitches";
+  console.log("\n== pitches — the pitch-length box, on both boundaries and in its labels\n");
+  await loadBundle();
+  const src = fs.readFileSync(RD_PATH, "utf8");
+
+  // ── Lift the two boundaries. SHAPE TESTS, never content ones: an anchor written from the FIX
+  //    refuses every change instead of judging it, which is the trap the variants section records.
+  const seedKey = "const routePitches=(route.pitchDetail&&route.pitchDetail.length)";
+  const seedAt = src.indexOf(seedKey);
+  if (seedAt < 0) dead("the routePitches seed is not where this section reads it — re-read RouteDetail.jsx");
+  const seedEnd = src.indexOf(":[blankPitch(1)];", seedAt);
+  if (seedEnd < 0) dead("could not bound the routePitches seed");
+  const seedExpr = src.slice(seedAt + "const routePitches=".length, seedEnd + ":[blankPitch(1)]".length);
+  if (!/\.map\(/.test(seedExpr) || !/lengthM:/.test(seedExpr)) dead("the seed is not the map-over-pitchDetail shape this section reads");
+  const seed = new Function("route", "uLenN", "blankPitch", "return " + seedExpr + ";");
+
+  const storeKey = 'if(f.type==="pitches")return (vals.pitchDetail||[])';
+  const storeAt = src.indexOf(storeKey);
+  if (storeAt < 0) dead("the pitches submit branch is not where this section reads it");
+  const storeEnd = src.indexOf('if(f.type==="waypoints")', storeAt);
+  if (storeEnd < 0) dead("could not bound the pitches submit branch");
+  const storeExpr = src.slice(storeAt + 'if(f.type==="pitches")return '.length, storeEnd).replace(/;\s*$/, "");
+  if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the pitches branch is not the map/filter shape this section reads");
+  const store = new Function("vals", "uLenIn", "return " + storeExpr + ";");
+
+  const blankPitch = (n) => ({ pitch: n, grade: "", lengthM: "", gear: "", notes: "", anchor: "", bolts: "", crux: false });
+  const STORED = { pitch: 1, n: 1, grade: "5.10a", lengthM: 45, gear: "Yellow C4", note: "Sustained hands", anchor: "2 bolts", bolts: 4, crux: true };
+  const draft = () => seed({ pitchDetail: [STORED] }, M.uLenN, blankPitch);
+  const roundTrip = () => store({ pitchDetail: draft() }, M.uLenIn)[0];
+
+  // 1. THE ROUND TRIP IS LOSSLESS IN BOTH SETTINGS. Correcting an anchor must not move the length.
+  //    This is the edge that matters most: without the prefill conversion an imperial climber
+  //    opens a 45 m pitch, sees "45" under a FEET label, changes nothing, saves, and it becomes 14 m.
+  for (const u of ["imperial", "metric"]) {
+    M.__set_UNITS(u);
+    const back = roundTrip();
+    if (back.lengthM === STORED.lengthM) ok(`${u}: an untouched pitch round-trips unchanged (${back.lengthM} m)`);
+    else fail(`${u}: an untouched pitch was rewritten — lengthM ${STORED.lengthM} -> ${back.lengthM}`);
+  }
+
+  // 2. THE BOX HOLDS WHAT THE ROUTE PAGE SHOWS. PitchTable renders uLen(lengthM), so the number in
+  //    the box must be the number the climber just read, or the editor contradicts the page.
+  for (const u of ["imperial", "metric"]) {
+    M.__set_UNITS(u);
+    const shown = String(M.uLenN(STORED.lengthM));
+    if (String(draft()[0].lengthM) === shown) ok(`${u}: the box is seeded with the length the route page shows (${shown} ${M.uLenUnit()})`);
+    else fail(`${u}: the box shows ${JSON.stringify(draft()[0].lengthM)} where the page shows ${shown} ${M.uLenUnit()}`);
+  }
+
+  // 3. WHAT WAS TYPED IS CANONICALISED. The column holds METRES whatever the climber set.
+  M.__set_UNITS("imperial");
+  const typedImp = store({ pitchDetail: [Object.assign(blankPitch(1), { lengthM: "148" })] }, M.uLenIn)[0];
+  M.__set_UNITS("metric");
+  const typedMet = store({ pitchDetail: [Object.assign(blankPitch(1), { lengthM: "148" })] }, M.uLenIn)[0];
+  if (typedImp && typedImp.lengthM === 45) ok("imperial: 148 typed in the box is stored as 45 m");
+  else fail(`imperial: 148 typed was stored as ${JSON.stringify(typedImp && typedImp.lengthM)} — the column holds metres`);
+  // NON-VACUITY: the two settings must DISAGREE on the same keystrokes, or nothing is converting.
+  if (typedMet && typedMet.lengthM === 148 && typedImp && typedImp.lengthM !== 148)
+    ok("the same keystrokes store different values on the two settings — the conversion is real");
+  else fail(`metric stored ${JSON.stringify(typedMet && typedMet.lengthM)} and imperial ${JSON.stringify(typedImp && typedImp.lengthM)} — one of them is not converting`);
+
+  // 4. THE LABELS AND THE SUMMARY, asserted as SOURCE. A render probe cannot see them, and each is
+  //    exactly what a stale-base squash takes: a string, and no identifier for audit:silent-reverts.
+  for (const [label, re, why] of [
+    ["the box asks in the climber's own units", /length in "\+\(uImp\(\)\?"feet":"metres"\)/,
+     "the label is what tells the climber which unit to type"],
+    // A SHAPE TEST, NOT THE EXACT STRING. The first version pinned the literal placeholder and the
+    // injection suite caught it flagging a REWORDED one — ordinary editorial work. What matters is
+    // that the expression consults the unit helper at all.
+    ["the placeholder follows the setting too", /placeholder=\{[^}]*uLenUnit\(\)/,
+     "a placeholder reading (m) over a feet box is the same lie in smaller type"],
+    ["the editor summary labels the unit it is showing", /pp\.lengthM\+uLenUnit\(\)/,
+     'a hardcoded "m" over a converted draft prints feet labelled metres'],
+    ["the current-value summary is fed the same convention as the draft", /pitchStr\(routePitches\)/,
+     "fed route.pitchDetail it would compare canonical metres against a display-unit draft"],
+  ]) {
+    if (re.test(src)) ok(label);
+    else fail(`${label} — NOT FOUND. ${why}`);
+  }
+}
+
+// =======================================================================================
 // PROFILE — A DISTANCE BETWEEN TWO PEOPLE, AND A WILDFIRE RADIUS.
 //
 // A SEVENTH MEMBER, found the day the other six were promoted. This guard's own header says an
@@ -894,7 +993,7 @@ function runProfile() {
 }
 
 // =======================================================================================
-const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters, profile: runProfile };
+const RUNNERS = { persist: runPersist, weather: runWeather, reports: runReports, itinerary: runItinerary, variants: runVariants, filters: runFilters, profile: runProfile, pitches: runPitches };
 
 try {
   for (const s of RUN) await RUNNERS[s]();

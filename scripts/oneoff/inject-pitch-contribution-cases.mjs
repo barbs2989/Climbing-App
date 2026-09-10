@@ -23,8 +23,9 @@ const sum = () => crypto.createHash("sha1").update(fs.readFileSync(abs)).digest(
 const CASES = [
   // THE REAL HISTORICAL DEFECT, restored verbatim: a key no editor row carries.
   { name: "length-read-from-a-key-nothing-writes", expect: "fail",
-    find: "var _len=parseInt(p.lengthM,10)", repl: "var _len=parseInt(p.len,10)",
+    find: "var _len=uLenIn(p.lengthM)", repl: "var _len=uLenIn(p.len)",
     says: /length was typed and the submitted row carries/ },
+
   { name: "bolts-hardcoded", expect: "fail",
     find: "bolts:isFinite(_bolts)?_bolts:0,", repl: "bolts:0,",
     says: /bolts was typed/ },

@@ -49,7 +49,23 @@ if (start < 0 || end < 0) { console.error("ANCHOR LOST: could not bound the pitc
 const branch = src.slice(start + 'if(f.type==="pitches")return '.length, end).replace(/;\s*$/, "");
 if (!/\.map\(/.test(branch) || !/\.filter\(/.test(branch)) { console.error("ANCHOR LOST: the pitches branch is not the map/filter shape this probe reads"); process.exit(1); }
 // `vals.pitchDetail` is the editor's rows; bind it and run the app's own expression.
-const run = new Function("vals", "return " + branch + ";");
+// ── The branch converts what was typed into the canonical metres the column holds, so the probe
+//    must supply that converter. It is LIFTED from ClimbMatchCore.jsx (where it lives beside
+//    uElevN/uElevIn) rather than re-typed: a copy would agree with itself whatever the app did.
+//    THIS PROBE'S SUBJECT IS FIELD RETENTION, so it runs METRIC, where the conversion is the
+//    identity and the assertions below mean exactly "what was typed is what is stored". The UNIT
+//    half lives in check:units' `pitches` section, which unlike scripts/oneoff/ actually runs.
+const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const unum = core.match(/const _uNum=([\s\S]*?);\n/);
+const uliSrc = core.match(/const uLenIn=([\s\S]*?\});\n/);
+if (!unum || !uliSrc) { console.error("ANCHOR LOST: _uNum/uLenIn are not in ClimbMatchCore.jsx where this probe reads them"); process.exit(1); }
+const mkRun = (imperial) => {
+  const uLenIn = new Function("uImp", "_uNum", "return " + uliSrc[1])(() => imperial, new Function("return " + unum[1])());
+  const f = new Function("vals", "uLenIn", "uImp", "return " + branch + ";");
+  return (vals) => f(vals, uLenIn, () => imperial);
+};
+// METRIC is the canonical case, so the assertions below read as "what was typed is what is stored".
+const run = mkRun(false);
 
 // ── The editor's OWN row shape, lifted too — a hand-written row could invent a key the editor
 //    never sets, which is exactly the defect under test.
