@@ -61,11 +61,22 @@ const CASES = [
     targets: { guard: /routes 1 distance readout|uDistMi 1 time/, probe: /number did not change between units/ },
   },
   {
-    name: "5-SILENT-different-rounding-through-the-same-helper",
-    why: "MUST PASS in both — uDistMi(dist) still honours the setting; only the decimals move",
+    name: "5-different-rounding-through-the-same-helper",
+    why: "MUST FAIL the guard — it honours the setting and still moves what the default shows",
+    // THIS CASE USED TO EXPECT A PASS, on the reasoning that uDistMi(dist) is not a UNITS defect.
+    // That reasoning is right about the category and wrong about the consequence: rounding to 1dp
+    // in MILES first is what keeps the imperial string byte-identical to what the line printed
+    // before it was converted, and that is the whole reason the conversion was safe to ship.
+    // Measured on main's own tree, this edit produced 0 FAIL lines before and after — silent,
+    // while moving every imperial reader from "756.7 mi away" to "756.72 mi away".
+    //
+    // The original objection stands and is answered rather than overruled: pinning the
+    // EXPRESSION would forbid improving it. The render assertion pins the PROPERTY instead, so a
+    // rewrite that keeps imperial unchanged still passes. The probe stays SILENT because it asks
+    // whether the number changes BETWEEN UNITS, which this edit does not break.
     file: CORE, find: HEADER,
     repl: '<span style={{color:C.blue}}>{uDistMi(dist)+" away"}</span>',
-    targets: { guard: null, probe: null },
+    targets: { guard: /imperial readouts say/, probe: null },
   },
 ];
 
