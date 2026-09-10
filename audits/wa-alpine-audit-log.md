@@ -19691,3 +19691,81 @@ verify each before sending the next.
 
 Next batch continues in sorted-id order after `wa_liberty_bell_overexposure` (see
 progress file).
+
+## Batch 266 (2026-09-11, pass 5)
+
+`wa_liberty_bell_serpentine_crack`, `wa_liberty_bell_thin_red_line`,
+`wa_liberty_cap_liberty_ridge_finish`, `wa_liberty_cap_ptarmigan_ridge_finish`,
+`wa_liberty_crack`, `wa_liberty_crack_free`, `wa_liberty_traverse`,
+`wa_lichtenberg_mountain_west_face_west_rib`.
+
+Seven of the eight sit on two well-documented peaks. On Liberty Bell (7,720 ft, WebSearch-
+confirmed via Wikipedia and matching the `areas` table's own `elevation_ft` for
+`wa_liberty_bell`), `wa_liberty_crack`'s `high_point_ft` (7746) contradicted its own
+"Liberty Bell Mountain summit" waypoint (which states 7720) — corrected to 7720. On Mount
+Rainier's Liberty Cap (`areas.wa_liberty_cap.elevation_ft` = 14097, and the area's own
+blurb explains why: an ice-dome summit whose GPS-measured height drifts as the cap thins),
+both `wa_liberty_cap_liberty_ridge_finish` and `wa_liberty_cap_ptarmigan_ridge_finish`
+stored `high_point_ft` = 14112 — an older/traditional topo figure that had drifted from the
+canonical area record and, on the Ptarmigan Ridge row, from that row's own waypoint (which
+already states 14097). Both corrected to 14097.
+
+Two routes shared the low-`dist_km` shape this series keeps finding on this same trailhead
+cluster: `wa_liberty_bell_serpentine_crack` (2.5 km, far too short against its own
+`itinerary.days[0].miles` = 5.2 round trip and external sources describing the shared
+Beckey-route/Blue Lake Trailhead approach as "a short 5 miles round trip") and
+`wa_liberty_bell_thin_red_line` (1.6 km, against its own `itinerary.miles` = 5 round trip
+and its same-trailhead sibling `wa_liberty_crack`'s unflagged 4.02 km). Both corrected by
+halving their own itinerary mileage. `wa_liberty_traverse` had three fields fixed from data
+already present elsewhere in the same row: `high_point_ft` (NULL, filled from its own
+"Liberty Bell Mountain" waypoint at 7720) and `gain_ft`/`loss_ft` (2001/NULL — the stored
+gain was physically impossible, less than the 2520 ft net gain implied by this row's own
+trailhead and summit waypoints — filled from its own `itinerary.days[0].gainFt`/`lossFt` of
+3500/3500).
+
+Flagged rather than fixed: `wa_liberty_bell_thin_red_line`'s top-level `gain_ft` (1312)
+also disagrees with its own `itinerary.gainFt` (2400), and 2400 would match the pattern of
+every sibling route on this trailhead (whose top-level `gain_ft` exactly equals their own
+`itinerary.gainFt`). But CLAUDE.md documents `gain_ft` as meaning the *approach-only* gain
+(trailhead to base of climb, with the climbing pitches' own vertical handled separately),
+under which 1312 is not implausible — unlike the elevation/`dist_km` fixes above, this one
+turns on which semantic convention the field is following rather than a clean internal
+contradiction, so it was left for a human to judge. `wa_liberty_traverse`'s `dist_km` (3.2)
+similarly disagrees with its own `itinerary.miles` (7), but this is a five-summit traverse
+(`outing_shape: "outback"`) rather than a simple out-and-back, so it's unclear whether the
+app's one-way/doubled-for-display convention even applies to a multi-summit linkup's total
+distance — flagged rather than guessed. `wa_liberty_cap_ptarmigan_ridge_finish` carries
+several NULL fields (`dist_km`, `loss_ft`, `crowds`, `partner_requirements`,
+`seasonal_guidance`, `seasonal_hazards`, `data_quality`, `difficulty`) that read like an
+earlier or thinner enrichment pass than its neighbors — a completeness gap rather than a
+wrong fact, so nothing was invented to fill it.
+
+Clean, cross-checked against external sources: `wa_liberty_crack` (FA — Steve Marts, Don
+McPherson & Fred Stanley, July 16–18 1965, including the 1964 Bertulis/Marts attempt —
+WebSearch-confirmed); `wa_liberty_bell_thin_red_line` (FA — Jim Madsen & Kim Schmitz, July
+29 1967 — and FFA — Kate Rutherford & Mikey Schaefer, Sept 15 2008 — both dates confirmed
+exactly); `wa_liberty_crack_free` (FFA history — Brooke Sandahl's 1991 original free
+ascent, the 2016 Schaefer/Lee/Herrington free variation of the bolt-ladder pitch —
+confirmed); `wa_liberty_cap_liberty_ridge_finish` (FA — Ome Daiber, Arnie Campbell & Jim
+Borrow, Sept 28–Oct 1 1935, confirmed via AAC Publications; the 2026 NPS climbing fee of
+$82/person and the SR-165 Fairfax Bridge's permanent closure both confirmed);
+`wa_liberty_cap_ptarmigan_ridge_finish` (FA climbers and year — Wolf Bauer & Jack Hossack,
+1935 — confirmed, though the specific Sept 8 date could be neither confirmed nor
+contradicted); `wa_lichtenberg_mountain_west_face_west_rib` (`high_point_ft` = 5844
+confirmed via Wikipedia/SummitPost; its stated ~4,000–4,150 ft trailhead elevation runs a
+little high against one external estimate of 3,800 ft, but within normal source-to-source
+variance and consistent across this row's own approach/road/waypoint fields, so left
+alone).
+
+**Tooling note:** `check-sql-targets.mjs` ran clean (8/8 write targets exist, no DELETE).
+WebFetch was again blocked by the network egress proxy for every climbing-specific domain
+tried (Wikipedia, Mountain Project, AAC Publications, HistoryLink) — all research this
+batch relied on WebSearch's own synthesized results, cross-checked against the `areas`
+table's own canonical elevation/blurb fields where available.
+
+SQL: `audits/sql/2026-09-11-batch-266.sql` (8 UPDATE statements, no DELETE). File is
+5.8KB, over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and
+verify each before sending the next.
+
+Next batch continues in sorted-id order after `wa_lichtenberg_mountain_west_face_west_rib`
+(see progress file).
