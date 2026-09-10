@@ -19627,3 +19627,67 @@ verify each before sending the next.
 
 Next batch continues in sorted-id order after `wa_lena_lake_to_mt_stone_traverse` (see
 progress file).
+
+## Batch 265 (2026-09-10, pass 5)
+
+`wa_lewis_creek_route`, `wa_lexington_tower_east_face`, `wa_liberty_and_injustice_for_all`,
+`wa_liberty_bell_beckey_route`, `wa_liberty_bell_east_face`, `wa_liberty_bell_independence_route`,
+`wa_liberty_bell_nw_face`, `wa_liberty_bell_overexposure`.
+
+Six of the eight are on Liberty Bell Mountain itself, so most of this batch cross-checked
+against a well-documented peak (7,720 ft, WebSearch-confirmed via Wikipedia) with a
+well-documented FA (Beckey/O'Neil/Welsh, 1946). Two routes shared an identical bug: the
+`dist_km` field held the round-trip distance where the app's own convention expects
+one-way (`RouteDetail.jsx` labels it "Approach (one way)" and doubles it for round trip).
+Both were caught by cross-checking the row's own `itinerary.days[0].miles` (a round-trip
+figure) against `dist_km` in kilometers — `wa_liberty_and_injustice_for_all` (8.05 km =
+5.00 mi exactly) and `wa_liberty_bell_overexposure` (8.69 km = 5.40 mi exactly), both
+halved to match their siblings' correctly-stored one-way figures (~4 km for the same
+approach corridor). `wa_liberty_bell_overexposure`'s `pitches` (4) was corrected to 2,
+confirmed by Mountain Project/NC Mountain Guides, whose "2 pitches, second pitch tops out
+at the start of the Liberty Bell rappels" matches this row's own `descent_text` almost
+verbatim. `wa_liberty_and_injustice_for_all`'s `high_point_ft` (NULL) and
+`wa_liberty_bell_nw_face`'s `loss_ft` (NULL) were both filled from data already present
+elsewhere in the same row (a waypoint's stated elevation; the itinerary's own `lossFt`).
+
+Flagged rather than fixed: `wa_lexington_tower_east_face`'s "Lexington Tower notch"
+waypoint states 7,621 ft, higher than the tower's own confirmed true summit (7,560 ft,
+exact Wikipedia match, and this row's own `high_point_ft`) — impossible for a point
+explicitly described (by this row's `descent_text` and by external sources) as below the
+true summit. The route's `gain_ft`/`loss_ft` (2171/2171) derive from the same inflated
+figure. No source found gives a specific notch elevation, so nothing was written.
+`wa_liberty_bell_east_face` looks like it might not be a real, distinct route: its grade,
+pitch count and gain figures are essentially identical to the Beckey Route (Grade II,
+5.6, 4 pitches) despite claiming a different aspect and trailhead (the east-side
+hairpin/pond pullout, which every source found actually serves much harder lines —
+Liberty Crack, Thin Red Line), `fa` is NULL, and no external source confirms a distinct
+5.6 East Face line on Liberty Bell. Recommend checking against a physical guidebook
+(Beckey's Cascade Alpine Guide or the Nelson/Potterfield Selected Climbs volume) before
+touching this row — it may be a genuine minor route this session's sources simply don't
+cover, or it may be a mislabeled/duplicate entry, and those need different fixes.
+`wa_lewis_creek_route`'s `gain_ft`/`loss_ft` (5200/5200) for this historic 1915 line look
+high against the documented *standard* Barclay Lake route's own gain (~3,938-4,380 ft,
+WTA/SummitPost/trip reports, to the same 6,244 ft summit — exact Wikipedia match), but
+the row's own `data_quality` field already discloses that sources treat the historic
+line and the modern approach as the same corridor, so there's no independent source to
+arbitrate a specific number for this route as distinct from the standard one.
+
+Clean, cross-checked against external sources: `wa_liberty_bell_beckey_route` (FA, grade,
+pitch count, elevation all confirmed); `wa_liberty_bell_independence_route` (FA/FFA and
+12-pitch count confirmed via AAC Publications/Mountain Project); `wa_liberty_bell_nw_face`
+(1956 FA confirmed; free-ascent party details unconfirmed but not contradicted);
+`wa_lexington_tower_east_face` (elevation and 10-pitch count both confirmed, the latter
+via a Mountain Project pitch-by-pitch breakdown that explicitly lists pitches 8-10).
+
+**Tooling note:** none this batch — all statements checked cleanly against
+`check-sql-targets.mjs` with literal `id =`/`IS NULL` predicates. WebFetch was blocked by
+the network egress proxy for every non-mainstream domain tried this session (Wikipedia,
+WTA, Mountaineers.org, climberkyle.com, ncmountainguides.com) — all research this batch
+relied on WebSearch's own synthesized results instead.
+
+SQL: `audits/sql/2026-09-10-batch-265.sql` (5 UPDATE statements, no DELETE). File is
+4.3KB, over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and
+verify each before sending the next.
+
+Next batch continues in sorted-id order after `wa_liberty_bell_overexposure` (see
+progress file).
