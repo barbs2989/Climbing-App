@@ -12302,6 +12302,18 @@ value, put the reasoning somewhere else.**
   ever needed it has to be a new, explicitly-nullable column, and `null` must mean
   "depends on the descent chosen" rather than defaulting to 0. See
   [[fail-open-coercion-hides-missing-data]] for why the 0 would be the dangerous part.
+  - **"Every WA value is a sentence" is MEASURED NOW, and understated: it is every value in the
+    CATALOG.** `scripts/oneoff/measure-rappels-column-shape.mjs` reads the whole column rather than
+    the WA subtree — **733 of 733 rows are strings**, no objects, no numbers, no arrays.
+  - **That is what makes `fmtRappels`' unit branch DEAD, and it is why the unit census flags it.**
+    That helper returns early on `typeof r!=="object"` and otherwise renders `r.lengthM+"m"` or
+    `r.lengthFt+"ft"` — a unit chosen by WHICH COLUMN the value came from rather than by the
+    climber's setting — reaching `rappelNoteText` and the TECH STATS *Rappels* tile. It is a
+    **false positive** of `measure-imperial-unit-literals.mjs`, not a defect to convert, because no
+    row can reach it. **The measurement is the tripwire**: the day something writes an object here,
+    the branch arms itself and shows metres to an imperial climber, so re-run the script rather
+    than re-reading this sentence. Same discipline as the `sling_rack` shapes — *a claim about the
+    stored shape is a claim about the DATA*, and this file records being wrong about that before.
 
 - **`bivy[].capacity` / `.water` / `.permit` are CHIPS, and the camping enrichment filled all
   three with paragraphs.** Measured on the live catalog: median **130 / 136 / 297** characters
