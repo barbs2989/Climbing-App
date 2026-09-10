@@ -120,6 +120,7 @@ npm run check:return-leg      # a walk that already covers the day is not re-add
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
+npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
 npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
@@ -5228,6 +5229,85 @@ the total when deciding where a new guard belongs.
     useful to a reader than a placeholder. The failure message says so.
   - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
     prints the same clean result as a correct one.
+- **`check:injection-anchors`** asks whether every **injection case still LANDS**. A suite is the
+  PROOF that a guard can fail, so a case whose anchor no longer occurs in its target file proves
+  nothing: the harness reports *"edit never landed"* or `HARNESS BUG`, **nothing runs
+  `scripts/oneoff/`**, and the guard goes on printing `ok` with one of its rules exercised by
+  nobody. Static — one Babel parse per suite, no browser, no database, and **no guard executed** —
+  so it sits in `npm run build`, at **0.86x `check:policy-claims`** taken back to back on one box,
+  best of two. **Quoted as a ratio because the clock here is fiction**: that reading was taken at
+  load average 446 on 4 cores, where this file already records a profile being off by 4x.
+  - **THIS HAD HAPPENED FOUR TIMES AND EVERY ONE WAS FOUND BY ACCIDENT.** This file already records
+    the `check:units` promotion finding **two** cases still naming `lib/units-pref.js` after the
+    guarded read/write folded into `lib/prefs.js` — *"reported HARNESS BUG on every run, of which
+    there were none"* — and `audit:rappel-claims`' `--inject=capacity` handing its guard a
+    self-contradictory route and printing `ok`. *A suite nobody runs rots exactly like a guard
+    nobody runs*, so the rot has to be visible from somewhere that DOES run.
+  - **FIRST RUN: 12 ROTTED ANCHORS ACROSS 6 SUITES, AND NOT ONE WAS AN APP DEFECT.** Every one was
+    a proof that had quietly stopped existing, and each rotted a different way — which is why no
+    single reading would have found them:
+    - **A FOLD.** `inject-date-format-cases` ×3 anchored on the validated read, the validated write
+      and the try/catch when all three were INLINE in `lib/date-pref.js`; that file's own comment
+      records the fold. **Superseded, not a coverage hole** — `inject-prefs-fold-cases` proves the
+      same three properties against `lib/prefs.js`, where the code now lives, so the three were
+      deleted with that citation rather than repointed. Re-adding them would be two suites
+      asserting one question, the four-grade-parsers shape.
+    - **A REFACTOR, three times.** The `toposUnavailable` inline ternary became the exported pure
+      `topoEmptyCopy()` (the change `check:topo-outage-copy` records), rotting **all four** cases in
+      `inject-outage-flag-reach-cases` at once, since they share one `READ` constant — so that
+      guard's entire rule set was proven by nobody. `trailheadFt()` split into
+      `trailheadPin()` + `trailheadFt()`. `TrustBreakdown` gained its `rows`/`failed` props,
+      changing both its signature and the expression it maps.
+    - **A UI TIER ADDED.** The compatibility card gained a third branch (*"Limited overlap"*), so a
+      two-branch anchor missed.
+    - **A RULE REWRITTEN, and this is the one to read.** `0178` gave approving a group request a
+      REAL write for real rows, so `check:preview-claims` stopped demanding the caveat and started
+      forbidding any CLAIM, and the caveat moved to the card. The heading correctly dropped its
+      claim — which left the case anchored on text that no longer exists, so **the new rule's FAIL
+      branch was proven by nothing**. Its `expect` had gone stale in the same way and would have
+      read `WRONG FAILURE` even had the anchor matched. **Rotted twice over**, which is why the
+      failure message says to check the case's expectation against the guard's CURRENT failure text.
+  - **WHAT IT DOES NOT PROVE, stated in the guard rather than implied:** that a case still
+    reproduces the defect it names. An anchor can match while the surrounding code has moved on —
+    the `--inject=capacity` shape — and only RUNNING the suite finds that. It is also silent about
+    a stale `expect`. It answers the mechanical half, which is the half answerable without running
+    anything; every repointed case here was then verified by running its suite.
+  - **MY OWN SCANNER REPORTED THE WRONG THING THREE TIMES, which is the entry's own subject
+    arriving in the instrument.** A first count of **28** rotted was **78% my own resolver** — the
+    suites address their targets through module consts, `path.join`, bare `join`, `new URL(…)`,
+    `FILES` maps and key strings, and every shape I had not handled read as a dead anchor.
+    **Babel's `traverse` never visits the node it is given**, so for the common
+    `edit: (s) => s.replace(A, B)` the OUTERMOST replace was skipped and its anchor silently
+    unchecked — it walks manually now, and that fix is what surfaced four of the twelve. And a
+    `ROOT + "lib/ground-checked-pins.js"` concatenation left the path sentinel glued to the front; stripping it
+    introduced a **TDZ** crash that made the guard exit non-zero while printing **0 rotted**, a
+    false clean caught only because a fixed count changing to zero was implausible.
+  - **DO NOT MEASURE WHILE A SUITE IS RUNNING.** This file already says not to COMMIT mid-injection
+    (#1190) and the same applies to reading: a run of this guard that overlapped a suite reported
+    **7 rotted** against an app file the suite had mid-edit. Both hazards are the same one.
+  - **AMBIGUITY IS A READING LIST, NOT A DEFECT, AND IT IS REPORTED RATHER THAN COUNTED.** 18
+    anchors match more than once. Anchors from `split`/`replaceAll` are excluded outright, being
+    global by construction; of the rest, the **7 present before the `edit:` shape was covered were
+    read** and every one is a first-match `replace` where any of the matches serves the case. The
+    other 11 are NOT claimed to have been read — which is exactly why they print as a list for a
+    person rather than failing the build. **A guard failing on these would argue with correct
+    work**, and a count here would imply a verdict nobody has reached.
+  - Fails **closed** three ways, each of which otherwise prints identically to a clean sweep: fewer
+    than 50 suites walked, fewer than 250 cases or 300 anchors parsed (the conventions could be
+    renamed out from under it), and any anchor it cannot resolve — an unreadable case is reported,
+    never skipped.
+  - **It prints what it does NOT cover**, the *a known quantity beats an absence nobody can see*
+    precedent `check:overlay-discovery` sets: **554 anchors across 535 cases in 86 of the 96
+    suites** on the day it shipped, plus the count of cases that replace a whole file and so have
+    no anchor to rot. The rest declare no case object it can read. **Quote the run, not this
+    line** — every one of those numbers moves with ordinary work.
+  - Injection-tested **7/7** (`scripts/oneoff/inject-injection-anchor-cases.mjs`). **Its corpus
+    cases use a DISPOSABLE FIXTURE suite rather than a real one, and that is forced rather than
+    tidy**: the guard scans every `inject-*.mjs`, so a case mutating a real suite mutates the very
+    anchor the guard reads out of it — the first version did that and the guard truthfully reported
+    the injecting suite as rotted on every case. The fixture is asserted absent before and after.
+    **Two cases must stay SILENT** (a comment quoting a dead anchor, and an anchor matching more
+    than once), and the harness refuses any expectation that already appears in the healthy run.
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said

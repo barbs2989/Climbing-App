@@ -41,8 +41,11 @@ const CASES = [
     name: "8. trailheadFt() returns a CONSTANT instead of null (a gain with no anchor)",
     want: /gain rendered with no trailhead elevation/i,
     edit: (s) => s.replace(
-      "  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],\"Trailhead\"))return campElevFt(ws[i]);\n  return null;",
-      "  for(let i=0;i<ws.length;i++)if(wpIs(ws[i],\"Trailhead\"))return campElevFt(ws[i]);\n  return 500;"),
+      // The lookup was split into trailheadPin() + trailheadFt(), so the old one-function
+      // anchor matched nothing. The case is unchanged in substance: make the "no trailhead
+      // recorded" answer a CONSTANT instead of null, and a gain is rendered against no anchor.
+      "  const w=trailheadPin(route);\n  return w?campElevFt(w):null;",
+      "  const w=trailheadPin(route);\n  return w?campElevFt(w):500;"),
   },
   {
     name: "9. revert campingGate() to the bare catOf() list (the Fury defect)",

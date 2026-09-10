@@ -23,8 +23,14 @@ const GUARD = path.join(ROOT, "scripts", "check-outage-flag-reach.mjs");
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 12);
 
 const DECL = "const toposUnavailable=!!(USE_DB&&dbTopos&&dbTopos.isError);";
-const READ = '{toposUnavailable?"Couldn’t load the topos":"No topo yet"}';
-const READ_GONE = '{"No topo yet"}';
+// THE READ MOVED, and every case here shares it. It was an inline ternary
+// (`{toposUnavailable?"Couldn’t load the topos":"No topo yet"}`) until the topo copy was lifted
+// into the exported pure `topoEmptyCopy()` — the refactor check:topo-outage-copy records, made so
+// the branches could be executed rather than rendered. All four cases anchored on the old form and
+// matched nothing, so every one reported "edit never landed" and this guard's whole rule set was
+// proven by nobody. Keep this pair pointing at whatever the single READ of the flag is.
+const READ = 'const topoCopy=topoEmptyCopy(toposUnavailable);';
+const READ_GONE = 'const topoCopy=topoEmptyCopy(false);';
 
 function runGuard() {
   try {

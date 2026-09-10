@@ -30,8 +30,8 @@ const CASES = [
     name: "renderer back on the raw factor list",
     expect: "fail",
     why: "trustFactors carries no `share`, so the panel has nothing apportioned to show",
-    find: "return <div>{trustContributions(climber).map(",
-    repl: "return <div>{trustFactors(climber).map(",
+    find: "return <div>{(rows||trustContributions(climber)).map(",
+    repl: "return <div>{(rows||trustFactors(climber)).map(",
   },
   {
     // NOT "change how the initial split rounds" — that is self-correcting and the first version of
@@ -55,8 +55,8 @@ const CASES = [
     name: "a comment naming the old expression",
     expect: "pass",
     why: "documentation, not a regression — a guard flagging it would forbid explaining itself",
-    find: "function TrustBreakdown({climber}){",
-    repl: 'function TrustBreakdown({climber}){/* this used to render {"+"+f.pts}, the raw points */',
+    find: "function TrustBreakdown({climber,rows,failed}){",
+    repl: 'function TrustBreakdown({climber,rows,failed}){/* this used to render {"+"+f.pts}, the raw points */',
   },
 ];
 

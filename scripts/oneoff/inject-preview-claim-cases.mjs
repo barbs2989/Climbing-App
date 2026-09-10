@@ -44,11 +44,18 @@ const CASES = [
     find: 'onKudos={it=>showToast("Kudos noted — this preview doesn’t deliver it to "+it.f.name.split(" ")[0]+".")}',
     repl: 'onKudos={it=>showToast("Kudos sent to "+it.f.name.split(" ")[0])}',
     expect: /kudos from the friends feed reports a real outcome/ },
+  // THE RULE THIS PINS CHANGED WITH 0178 and the case had to move with it. Approving a REAL
+  // request now writes, while a seed one still does not, so one heading cannot be true of both:
+  // the guard stopped demanding the caveat and started forbidding any CLAIM, and the caveat moved
+  // to the card. The heading correctly dropped its claim — which left this case anchored on text
+  // that no longer exists, so the new rule's FAIL branch was proven by nothing. Its expectation
+  // was stale in the same way and would have read WRONG FAILURE even if the anchor had matched.
   { name: "heading",
-    why: "the section heading claiming approving adds them — on screen the whole time, not for 2.6s",
-    find: '"Climbers asking to join a group you moderate. Approving adds them on this device — this preview doesn’t tell them or the group."',
+    why: "THE REAL HISTORICAL DEFECT — a heading promising an outcome of approving, on screen the " +
+         "whole time rather than for a toast's 2.6s, and now true of only half the rows it covers",
+    find: '"Climbers asking to join a group you moderate."',
     repl: '"Climbers asking to join a group you moderate — approving adds them."',
-    expect: /section heading promises approving adds them/ },
+    expect: /promises an outcome of approving/ },
   { name: "anchorlost",
     why: "a control whose handler is rewritten must fail LOUD, not silently stop being checked",
     find: 'onNudge={(cid,nm,mid)=>{showToast(',
