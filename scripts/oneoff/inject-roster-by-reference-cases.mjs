@@ -67,8 +67,8 @@ const CASES = [
   {
     name: "scan-cannot-fire",
     file: GUARD,
-    expect: "matched NO roster resolver at all",
-    why: "narrowing BY_REF until it matches nothing must fail CLOSED -- a scan that cannot fire prints identically to a clean app",
+    expect: "the by-reference pattern no longer behaves",
+    why: "narrowing BY_REF until it matches nothing must fail CLOSED -- a scan that cannot fire prints identically to a clean app. The message moved when the floor stopped depending on a LIVE instance: the mutualIds stub was the last one, and implementing mutual friends (0182) removed it, so the guard exercises constructed samples instead",
     edit: (s) => s.replace("(map|filter|find|some|every|flatMap)", "(thisMethodDoesNotExist)"),
   },
   {
@@ -76,7 +76,10 @@ const CASES = [
     file: GUARD,
     expect: "by-reference exemption(s) match nothing",
     why: "ALLOW_REF must fail when its site is gone, or the list rots into a description of code that does not exist",
-    edit: (s) => s.replace('key: "mutualIds(",', 'key: "aSiteThatDoesNotExist(",'),
+    // Inserts its own entry rather than editing a live one: ALLOW_REF is EMPTY now (the stub it
+    // exempted is implemented), and a case that needs a real exemption to exist rots the day the
+    // last one is cleared -- which is exactly what happened here.
+    edit: (s) => s.replace("const ALLOW_REF = [];", 'const ALLOW_REF = [{key:"aSiteThatDoesNotExist(",why:"injected by inject-roster-by-reference-cases"}];'),
   },
 ];
 
