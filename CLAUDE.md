@@ -5694,6 +5694,30 @@ the total when deciding where a new guard belongs.
     the camp-elevation and clickable-shield work.
   - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
     a broken scan rather than a clean catalog.
+  - **THE "WHICH END OF A RANGE" QUESTION IS CLOSED, AND IT WAS NEVER A DECISION — measured by
+    `scripts/oneoff/measure-class-range-end.mjs`.** It had been carried as an open product call
+    (*"`Class 3-4` → 3 or 4?, 129 low / 16 high"*), which reads as a catalog genuinely split down
+    the middle and waiting on somebody to pick. It is not: of **171** WA routes stating a range of
+    two grades in one system, **159 store the LOW end, 8 the high, 0 the midpoint** — a 93%
+    convention that `gradeNumFrom` already implements (169 low / 2 high), because its
+    `/class\s*(\d)/i` takes the first digit. **There is nothing to sweep and nothing to decide**;
+    what remains is 8 outlier rows to read.
+    - **The quoted 129/16 was wrong, and the shape of the error is the useful part**: a number
+      carried in prose rather than re-derived. Re-run the script rather than quoting this line,
+      which has now been wrong once.
+    - **HALF THE FIRST RUN'S "NEITHER" BUCKET WAS THE MEASUREMENT'S OWN REGEX.** A range mentioned
+      in a string is not the route's grade: `"Alpine IV, 5.8 (sustained 5.6-5.7)"` stores **8**,
+      which is correct, and a bare match reads the parenthetical; `"5.6-5.7 (2 technical pitches;
+      remainder Class 3-4 scrambling"` describes the ground BETWEEN the pitches. The range only
+      counts when the parser's own answer falls inside it — 10 unexplained rows became 4. *A count
+      is only as good as its tokeniser*, and a measurement that manufactures half its findings
+      would have sent somebody to "fix" correct rows.
+    - **2 of the 4 remaining are a NULL `grade_num` on a string the parser CAN read**
+      (`"Class 2-3 (3rd class with airy sections)"`, `"Grade III-IV, Class 4-5 (mixed rock and
+      snow)"`). That is a **missing** value rather than a wrong-end one — a different question, and
+      not evidence about the convention.
+    - Report only, for this audit's own reason: `gradeNumFrom` matches `load-state.mjs` **verbatim**
+      on purpose, and a fifth dialect is the problem rather than the fix.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
