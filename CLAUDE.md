@@ -5308,6 +5308,45 @@ the total when deciding where a new guard belongs.
     the injecting suite as rotted on every case. The fixture is asserted absent before and after.
     **Two cases must stay SILENT** (a comment quoting a dead anchor, and an anchor matching more
     than once), and the harness refuses any expectation that already appears in the healthy run.
+  - **READING ITS OWN "what it does NOT prove" AS A WORKLIST FOUND ONE SUITE SCORING ON THE EXIT
+    CODE ALONE.** The header above says it is silent about a case that fails for a different
+    reason, and this file records that rule twice over — *a case judged on the exit code alone is
+    satisfied by a run that died for an unrelated reason*, and *an injection that produces a
+    different failure is not a catch*. `inject-area-surface-cases.mjs` was that case: it ran
+    `check:area-surfaces` with `stdio: "pipe"` and **discarded the output** (`catch { failed =
+    true; }`), so its six failing cases — which cut six different links: the fetch, the render
+    gate, the world/country/state scope, the Directions link, its `area_type` gate, the caveat —
+    were all scored identically as *"the guard exited 1"*. That guard also fails **closed** with
+    its own exit 1 (*"Nothing below was actually checked"*), so a case that merely truncated the
+    source would have read `ok`.
+    - **LATENT, NOT LIVE, and saying which is the point.** Measured before anything was changed:
+      all six cases fired **exactly their own rule and exactly one rule each**, so nothing was
+      being mis-reported that day. What was missing was the harness's ability to TELL — the defect
+      arms itself the moment a case's edit starts tripping a neighbour, or the guard grows another
+      closed path. **A suite that cannot say WHICH rule it proved has not proved one.**
+    - Each case now names the guard's own sentence for its rule, and **EXACTLY ONE problem is
+      required** rather than *"mine is among them"*: a case tripping its own rule and something
+      else is not a clean attribution either, and demanding one is what makes the fail-closed
+      branch visible.
+    - **Non-vacuity proven three ways and every one OBSERVED, because a change that only ever
+      prints more `true` is worth nothing**: a deliberately mis-aimed expectation reports the rule
+      that really fired; an edit renaming the declaration outright is refused; and an edit that
+      truncates the source is reported as *"the guard hit its FAIL-CLOSED branch"*. **The old
+      harness printed `ok` for all three** — each exits 1, which was all it read.
+    - **A CLASS OF ONE, so no detector.** All 107 suites were swept for one that never reads the
+      guard's stdout: **2 hits, and one is a FALSE POSITIVE of the scan** —
+      `inject-strip-subquery-cases.mjs` lifts a pure function and asserts its return values
+      directly, so it spawns nothing and has no output to read, which is the *stronger* form.
+    - **AND THE DETECTOR THAT LOOKED BIGGER WAS MEASURED AND REJECTED — do not re-derive it.**
+      CLAUDE.md carries **85** `injection-tested N/N` citations, 60 of which name a suite, and a
+      guard comparing each N against that suite's case count sounds like the *a stated number is a
+      hand-copy* class. It is not worth building: **5 genuinely drifted and 4 of the 5 UNDERSTATE**
+      the coverage that exists, which is the harmless direction — a doc claiming 6 cases where the
+      suite runs 7 misleads nobody about a rule going unexercised. **The instrument was wrong on a
+      sixth**, which is the more useful half: `inject-nul-byte-cases.mjs` runs its fourth case
+      **written inline below the `CASES` array**, so a counter reading only the declared array
+      reports a correct citation as drifted. *Measure the class, and then measure the instrument,
+      before building the detector.*
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
