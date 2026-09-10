@@ -19245,3 +19245,95 @@ verify each before sending the next, per the checker's own warning.
 
 Next batch continues in sorted-id order after `wa_honeymoon_route` (see
 progress file).
+
+## Batch 261 (pass 5) — 2026-09-10
+
+Checked 8 routes on 6 peaks: `wa_hourglass_gully_winter` (Mount Index, Main
+Peak), `wa_hozomeen_mountain_north_peak_north_route`,
+`wa_hozomeen_mountain_southeast_face` (Hozomeen Mountain),
+`wa_hurry_up_peak_south_ridge` (Hurry-up Peak), `wa_icy_peak_ruth_icy_traverse`,
+`wa_icy_peak_southwest_route` (Icy Peak), `wa_ingalls_peak_east_route`,
+`wa_ingalls_peak_south_ridge` (Ingalls Peak). This set overlaps with prior-pass
+work on Hozomeen/Icy Peak/Ingalls Peak (batches 15/16/69, 2026-07-29/2026-08-07)
+— checked each row's own `corrections` field and the live state of previously
+proposed fixes before doing fresh research, per the standing convention of
+re-verifying and re-proposing rather than assuming stale.
+
+**Fixed:**
+
+- `wa_hourglass_gully_winter` — `approach` names Mount Index's Main Peak
+  (this route's own summit; matches its own `high_point_ft`=6,002 and its own
+  summit waypoint at 5,979 ft) as "(~5,502 ft)". That figure isn't Main Peak's
+  elevation at all — it's close to Mount Index's separate *Middle* Peak
+  (listsofjohn.com: "Mount Index-Middle Peak," 5,527 ft). External sources
+  (Wikipedia, PeakVisor) converge on 5,991 ft for Main/South Peak, which is
+  far closer to this row's own stored figures than 5,502 ft. Corrected the
+  approach text's parenthetical.
+- `wa_icy_peak_southwest_route` — three findings, all identical to
+  `audits/sql/2026-08-07-batch-69.sql` and still unapplied live (re-verified
+  independently rather than assumed correct): (1) `season` ("Jun-Aug")
+  excludes September despite this row's own `seasonal_guidance.monthBreakdown`
+  rating September "good" and June "risky," and despite its own
+  `seasonal_guidance.optimalWindow`/`best_season` both independently saying
+  "Mid-July through September" — fixed to "Jul-Sep". (2) `high_point_ft`
+  (7,073) and the final summit waypoint both claim this route reaches Icy
+  Peak's true, higher Southeast summit, but this row's own `approach` text
+  says the described 100-ft summit gully "leads to the northwest summit" and
+  states "the true high point is a separate southeast tower about 11 ft
+  higher... many parties only tag the northwest summit, which holds the
+  register" — Beckey's Cascade Alpine Guide gives the Northwest Peak at
+  7,062 ft, exactly matching this row's own stated 11-ft gap from 7,073 ft.
+  Fixed `high_point_ft` and the summit waypoint's `elev` to 7,062. (3)
+  `overview` claimed this specific route reaches the true Southeast summit;
+  reworded to say it reaches the lower Northwest/register summit, consistent
+  with fix (2).
+
+**Flagged, not fixed — re-affirming a still-outstanding item from a prior
+batch:** `wa_hozomeen_mountain_southeast_face` remains internally
+self-contradictory in exactly the way batch 69's log entry (2026-07-29)
+already documented in detail, including in the row's own `corrections`
+field: `fa` ("Sept 6, 1904... Boundary Survey"), `face` ("North Peak
+(main/highest summit)"), and `high_point_ft` (8,071) all describe Hozomeen's
+*North* Peak's Northeast Ridge/Buttress, while `overview`, `waypoints`
+(summit waypoint explicitly named "Hozomeen Mountain, South Peak," elev
+8,003), `approach`, and `descent_text` all describe the AAC-documented 1988
+Southeast Buttress route on the separate *South* Peak (8,003 ft), about a
+mile away. Both halves are internally consistent with themselves and
+externally corroborated for the peak they each describe — this is a content
+identity problem (which peak/route this row is actually about), not a
+field-level fact error, exactly as the row's own `corrections` field already
+concludes. No fix applied; still needs a human decision on whether to
+re-point this entry to the Northeast Buttress or split out a distinct South
+Peak entry.
+
+**Confirmed clean, cross-checked against external sources:**
+`wa_hozomeen_mountain_north_peak_north_route` — `high_point_ft` (8,071)
+matches Wikipedia/PeakVisor for Hozomeen's North Peak exactly; the dated
+road-closure claim ("Closed at km 6 as of 24 July 2026 for the Border 2
+Fire, which crossed into B.C. from Washington 2.4 km east of Hozomeen") is
+independently confirmed accurate against multiple 2026 news sources
+(Chilliwack Progress, Abbotsford News, goskagit.com) — the fire and closure
+are real, and per the most recent reporting found (Aug 20, 2026) the road
+remained closed, so this dated claim is not yet stale as of today.
+`wa_hurry_up_peak_south_ridge` — elevation (7,821 ft), county-line/Ptarmigan-
+Traverse location, and the peak-parent relationship (Spider Mountain as line
+parent, with Magic Mountain in turn a child of Hurry-up Peak) all match
+Wikipedia/PeakVisor exactly; `approach_logistics.peakLat/peakLng` (48.433,
+-121.0371) match the externally-sourced summit coordinate (48.433894,
+-121.037994) almost exactly. `wa_icy_peak_ruth_icy_traverse` — Icy Peak's
+elevation (7,073 ft) and its Southeast summit being the true/higher summit
+both confirmed via Wikipedia/SummitPost/PeakVisor; Ruth Mountain's cited
+elevation (7,115 ft) matches an independent WTA trip report. `wa_ingalls_
+peak_east_route` — `high_point_ft` (7,480 ft) and FA ("Gene Prater, Bill
+Prater & Stan Butchart, Nov 1952") both confirmed via WebSearch (Wikipedia/
+uoregon.edu Ingalls Peak history page). `wa_ingalls_peak_south_ridge` —
+`high_point_ft` (7,662 ft, main/North summit) confirmed via WebSearch; FA
+("Keith Rankin & Ken Solberg, May 30, 1941") already corrected in a prior
+batch (16, 2026-07-29) and remains correctly applied live.
+
+SQL: `audits/sql/2026-09-10-batch-261.sql` (5 UPDATE statements, no DELETE;
+validated with `node scripts/check-sql-targets.mjs`: both write targets
+exist live, none is a DELETE of an only copy).
+
+Next batch continues in sorted-id order after `wa_ingalls_peak_south_ridge`
+(see progress file).
