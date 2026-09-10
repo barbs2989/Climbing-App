@@ -31,9 +31,30 @@ import { selectAll } from "../lib/supabase-env.mjs";
 
 // Columns that RENDER. Taken from audit:prose-citations' own list rather than invented, so the two
 // cannot drift on what reaches a screen.
+// `sling_rack` was the one column feeding the RACK box that this list did not name — every other
+// input to that box (detailed_rack, pro_needs, rope_note, gear, what_to_bring) was already here,
+// and it renders 590 bullets through rackLines(). Adding it finds **0** new hits, which is the
+// useful part: the column is clean by this standard, measured rather than assumed.
+//
+// TWO TRAPS FROM WIDENING THIS, recorded because the obvious next widening walks into both.
+//
+// 1. "SOURCE" IS A WATER SOURCE AS OFTEN AS A CITATION. A trial needle matching a sourcing act in
+//    any word order reported 57 leaves; blanking the water sense first took it to 28. `gear` and
+//    `what_to_bring` are full of "plenty of water — no reliable water source on the north ridge",
+//    and every one of those matched. That is the trap audit:prose-citations already records (Source
+//    Lake, "reliable water source"), walked into again by a fresh needle. Strip the water sense
+//    before matching rather than trying to out-clever it in the pattern.
+// 2. THE REMAINING 28 ARE MOSTLY CORRECT WORK, so the widening was NOT shipped. "No trip report
+//    gives an exact cam/nut inventory … treat exact rack sizing as inferred" is an honest hedge on
+//    a safety-adjacent field and telling a climber the rack is inferred rather than published is
+//    content, not pipeline voice. The needles above stay narrow deliberately.
+//
+// The genuinely bad bullets in that box were found from the other end and are already swept —
+// see #1680 and the sling_rack entry in CLAUDE.md.
 const COLS = ["overview", "approach", "beta", "descent_text", "watch_out", "climbing_route",
   "hazards", "best_season", "rappels", "rappel_count_note", "rappel_detail", "detailed_rack",
-  "pro_needs", "rope_note", "what_to_bring", "gear", "crowds", "partner_requirements"];
+  "pro_needs", "rope_note", "what_to_bring", "gear", "crowds", "partner_requirements",
+  "sling_rack"];
 
 // Each needle is a phrase about THE RECORD, never about the route. Deliberately narrow: a bare
 // "estimated" or "unclear" is a climber-facing hedge and must not match.
