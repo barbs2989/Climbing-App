@@ -4147,6 +4147,49 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **A NOTIFICATION THAT NAVIGATES RENDERED AS INERT, because one screen derived "where does this
+  go" TWICE and the two disagreed.** `NotifPanel` had an if/else chain for the CLICK and a separate
+  boolean for the AFFORDANCE:
+
+      const tappable = n.climberId!=null || !!n.tab || !!n.route || !!n.group;
+
+  That list omits **`recap`** and **`goto`**, both of which the click chain immediately beside it
+  handled. So a recap notification **navigated on tap while rendering no `→` and
+  `cursor:"default"`** — a row that works and signposts itself as inert.
+  - **FOUND BY READING A CI CAPTURE, not by a scan**, which is what the technique is for. In
+    `Home:Unfinished-business-9` every ACTIVITY row is followed by `→` except one — *"Did your crew
+    make Schoolroom on May 24? Mark who showed"* — and that is the seed's only `recap` alert. The
+    one row without an arrow is the whole finding.
+  - **THERE ARE THREE DERIVATIONS OF THIS ONE FACT**, which is why the fix is a helper rather than
+    a longer list: NotifPanel's affordance test, NotifPanel's click chain, and **Home's own chain**.
+    `notifTarget(n)` now returns a destination or null, and NotifPanel derives **both** the
+    affordance and the dispatch from it, so they cannot disagree again.
+  - **HOME IS LEFT ALONE DELIBERATELY, and the reason is recorded rather than assumed.** Its rows
+    are `clickable()` unconditionally, which is honest ONLY because its chain ends in a fallback
+    that opens this panel — not because its list of kinds is complete. Lose that fallback and Home
+    inherits exactly this defect, so the probe pins it. It also navigates the app directly rather
+    than delegating through `onGo`, so it shares the DESTINATION question and not the acting on it.
+  - **The spread is CONDITIONAL now** (`{...(_t?clickable(…):{})}`), so a notification with no
+    destination is not announced as a control that does nothing — the inert-control class this file
+    holds at **zero**. None exists today (every seeded kind has a target), so that closes it
+    latently rather than fixing a live instance, and the probe says so.
+  - **THE INJECTION FOUND TWO HOLES IN THE PROBE RATHER THAN IN THE APP**, which is what a suite is
+    for. Its Home assertion used a bare `includes()` on a string that occurs **twice** in the file,
+    so deleting Home's fallback left the other occurrence and the case reported MISSED — this
+    probe's own *"matched N times, so the assertion is about an unknown site"* trap, in the one
+    assertion that had not guarded against it. It counts against Home's own chain now.
+  - **AND THE SUITE NOW REFUSES AN EXPECTATION THAT MATCHES THE CLEAN RUN, because I made that
+    mistake FIVE times in one session.** An expectation written against the text an assertion
+    prints when it PASSES reports MISSED against a probe firing correctly, and this file already
+    records the same error twice before today. Making it structural caught three of the five before
+    a single run was wasted. It is exact here only because the probe's wiring failures carry a
+    `[wiring]` marker so a failure never reads as its own pass — the sibling suite cannot use the
+    check for exactly that reason and says so instead.
+  - `scripts/oneoff/probe-a-notification-that-goes-somewhere-says-so.mjs` — 15 assertions, no
+    browser, no DB, `notifTarget` lifted from source. Injection-tested **8/8**
+    (`scripts/oneoff/inject-notif-target-cases.mjs`); case 1 is the shipped defect restored verbatim,
+    and **two must stay SILENT** — a comment quoting the old list, and adding a NEW destination kind,
+    which is ordinary work an affordance guard must not forbid.
 - **FOUR MORE MAPPINGS NAMED A CLIMBER THE WAY THEY DID NOT ASK, AND THE OBVIOUS SWEEP WOULD HAVE
   MISSED THE WORST ONE.** `PARTNER_COLS` states the contract in its own comment — *"`show_name` is on
   every list that becomes a CLIMBER OBJECT, because `pubName()` decides between the display name and
