@@ -3050,10 +3050,12 @@ the total when deciding where a new guard belongs.
     denominator caveat and no majority gate, unlike its four siblings. Measured: it prints on **15**
     WA peak pages, **1** of them backed by a minority of the peak's routes, and **none** below the
     peak's own stated elevation. A caveat there would be bookkeeping for a class of one. Two of the
-    15 state a high point ABOVE their peak — `wa_mount_torment` at 8,815 ft (Forbidden Peak's
-    height, which the Torment-Forbidden traverse really does reach) and `wa_the_tooth` at 6,238 ft
-    (Chair Peak's height, on all seven routes) — the second of which is a per-route data question,
-    not a reader one.
+    15 state a high point ABOVE their peak, and **both are correct, checked rather than assumed**:
+    `wa_mount_torment` at 8,815 ft is Forbidden Peak's height on the **Torment-Forbidden Traverse**,
+    and `wa_the_tooth` at 6,238 ft is Chair Peak's on the **Tooth-Chair Traverse** — the peak's other
+    six routes all state 5,604-5,606. A traverse's high point is legitimately its far summit, which
+    is exactly what the row's own caption claims, so neither is a data question. *Read the route
+    that carries an outlier before filing it as one.*
 - **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
   the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
   researched string into an existing column, look at where that column renders* — which had been
