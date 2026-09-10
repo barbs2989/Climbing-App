@@ -3362,6 +3362,33 @@ the total when deciding where a new guard belongs.
     the heading **ACROSS EVERY ROUTE HERE** is computed from the area's DIRECT routes while
     `route_count` on the strap above is a SUBTREE aggregate — measured, **0 of the 198** panels
     differ, so the heading is not over-claiming.
+  - **THE APPROACH ROW STATED A DIFFERENT DISTANCE FROM THE ROUTE PAGE, on 126 of the 198 peak
+    pages, usually by a FACTOR OF TWO.** It read `dist_km` raw; `RouteDetail` has always read
+    `effDistKm`, which prefers the route's **own itinerary** — the sum of its days' miles — and
+    halves it unless the trip is recorded as a loop or point-to-point. On those rows `dist_km`
+    holds the ROUND TRIP while the itinerary agrees with half of it, so this panel labelled the
+    whole trip *"Approach"* while the route page for the same climb said half of it. The #1203
+    shape — one fact, two screens — arrived on a browse surface.
+    - Measured by `scripts/oneoff/measure-approach-distance-two-screens.mjs`: of the **543** WA
+      routes carrying both a `dist_km` and itinerary day-miles, **336 differ by more than 15%**.
+    - **THE FIX IS CONSISTENCY, NEVER A VERDICT ON `dist_km`.** That column holds two conventions
+      at once and this file forbids normalising it in bulk; nothing here touches it. What changed
+      is which SOURCE a reader prefers, and only where the route states an itinerary of its own —
+      with none, the stored column is returned untouched.
+    - The three helpers moved to **`lib/outing.js`** unchanged, for the reason `lib/rack.js` and
+      `lib/rappels.js` record: core cannot import `RouteDetail` and `lib/DbAreaBrowser.jsx` imports
+      only `lib/`. It reads **both spellings** of the column, because the route page's object has
+      been through `dbRouteToCamel` while the area browser holds RAW PostgREST rows — the
+      `land_manager`/`landManager` mistake, one module over.
+    - **Behaviour-neutral for the route page, proven rather than asserted.**
+      `scripts/oneoff/verify-outing-distance-equivalence.mjs` runs a VERBATIM copy of the pre-move
+      expression against the SHIPPED function over every WA route: **8,365 compared, 790 resolving,
+      0 differ**, plus seven synthetic cases pinning that the snake-case fallback only ADDS (the
+      camel spelling still wins where both are present).
+    - **Pinned by the guard, because reverting it changes NO identifier** — `audit:silent-reverts`
+      says in its own closing caveat it cannot see that. Mount Adams is the fixture, its two
+      readings being furthest apart (3.5–23.2 mi raw against 5.0–11.6 mi effective), and the
+      assertion first checks that they DIFFER so it cannot pass vacuously.
   - **A measured NON-finding, so it is not re-derived.** The `High point` row is the one row with no
     denominator caveat and no majority gate, unlike its four siblings. Measured: it prints on **15**
     WA peak pages, **1** of them backed by a minority of the peak's routes, and **none** below the

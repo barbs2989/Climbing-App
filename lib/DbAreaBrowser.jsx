@@ -14,6 +14,7 @@ import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom } from "./grade";
 import { clickable } from "./clickable";
+import { effDistKm } from "./outing";
 
 // Grade for a compact row. Catalog grades often carry a qualifier inline
 // ("Class 3 (short 4th-class crux)"); shortGrade drops it here, and the route
@@ -417,7 +418,18 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
     // Approach and gain vary legitimately by trailhead — Mount Baker's routes run 4.0 km to
     // 25.7 km because they start on opposite sides of the mountain — so this is a range with
     // the short one NAMED, never an average. An average of two trailheads describes neither.
-    const ap = numericSpan(rs, r => r.dist_km);
+    /* THE SAME EFFECTIVE DISTANCE THE ROUTE PAGE SHOWS, not the raw column. This read `dist_km`
+       while RouteDetail has always preferred the route's own itinerary — the sum of its days'
+       miles, halved unless the trip is recorded as a loop or point-to-point. Measured over WA:
+       of the 543 routes carrying both, 336 differ by more than 15%, and this row moved on 128 of
+       the 198 peak pages, almost always by a FACTOR OF TWO, because on those rows `dist_km` holds
+       the round trip while the itinerary agrees with half of it. So this panel labelled the whole
+       trip "Approach" and the route page for the same climb said half of it — one climb, two
+       answers, the #1203 shape across two screens.
+       It changes WHICH SOURCE is preferred and never what `dist_km` means: with no itinerary the
+       stored column is returned untouched, and CLAUDE.md's rule that this column holds two
+       conventions and must not be normalised in bulk is unaffected. */
+    const ap = numericSpan(rs, effDistKm);
     if (ap) {
       const mi = km => uDistMi ? uDistMi(km * 0.621371) : (Math.round(km * 10) / 10) + " km";
       out.push(["Approach", ap.lo.v === ap.hi.v ? mi(ap.lo.v) : mi(ap.lo.v) + " to " + mi(ap.hi.v), "Shortest is " + ap.lo.r.name + (ap.said < ap.of ? " · " + ap.said + " of " + ap.of + " routes give a distance" : "")]);
