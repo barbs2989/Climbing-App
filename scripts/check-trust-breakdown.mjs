@@ -32,6 +32,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { reachableVerificationTypes, partnerlessCeiling, dayOneScore } from "./lib/verification-reach.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.trustbreakdown-${process.pid}.mjs`);
@@ -308,6 +309,58 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   const n = app.split("groupTrustShortfall(cl,myTrustScore)").length - 1;
   if (n !== 2) fail(`the join gate reads the displayed score in ${n} handler(s), expected 2 — the two are byte-identical, so half the app would gate on something else`);
   else ok("both join handlers gate on the score the app displays");
+}
+
+// ---- 6. THE THRESHOLD MUST BE A BAR SOMEBODY CAN WALK UP TO ----
+// SECTION 6. Section 5 pins WHICH number the gate reads. This pins that the bar set against it is
+// one a real climber can reach, which is a different question and was answered wrongly the moment
+// section 5's fix landed: 55 was chosen against the CLIENT model, where a vouch is worth 4 points,
+// and reading it against the SERVER model left it one point above the ceiling a climber with no
+// vouches and no belay catches can ever reach. Measured at the time: every real account in the
+// live project scored 0, 5 or 6, and the highest earnable score is 84 rather than 99, because
+// `compute_trust_score` awards 20 points for an ID and for club/guide credentials that nothing in
+// the app can grant.
+//
+// TWO-SIDED, AND DELIBERATELY WIDE. It does NOT assert a particular threshold — where the bar sits
+// between these bounds is a product decision, and a guard pinning today's number would argue with
+// the next one. It asserts only that the policy still means what its label says: above the upper
+// bound "trust" is really "somebody has vouched for you", which is the state every new climber
+// starts in; at or below the lower bound it admits anyone who confirmed an email, so the group is
+// promising an exclusivity it does not have.
+//
+// BOTH BOUNDS ARE DERIVED, neither typed. They move by themselves when the model is re-weighted or
+// when a verification the app cannot currently grant becomes earnable — which is the direction that
+// otherwise goes stale silently, since it makes the threshold look more attainable than it is.
+{
+  // ANCHORED TO THE START OF A LINE, and required to be unique. The comment above the declaration
+  // explains this threshold and names other numbers while doing so; an unanchored `.exec` takes the
+  // FIRST match, so a sentence quoting the declaration would silently hand this section a different
+  // number and it would report confidently on a threshold the app does not have.
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const decls = app.match(/^const GROUP_TRUST_MIN\s*=\s*\d+/gm) || [];
+  if (decls.length !== 1) dead(`ANCHOR LOST: GROUP_TRUST_MIN is declared ${decls.length} time(s) at the start of a line in ClimbMatch.jsx, expected 1`);
+  const MIN = Number(/(\d+)/.exec(decls[0])[1]);
+
+  const { serverTrustScore } = mod;
+  if (typeof serverTrustScore !== "function") dead("ClimbMatchCore.jsx does not export serverTrustScore — ANCHOR LOST");
+
+  const { types: reachable, scanned } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
+  if (scanned < 20) dead(`only ${scanned} migration(s) scanned — the walk broke, and an unscanned tree reports every verification as unreachable`);
+  if (!reachable.size) dead("no verification type parsed as reachable at all — a broken scan, not a finding; every ceiling below would collapse");
+
+  const dayOne = dayOneScore(serverTrustScore, reachable);
+  const ceiling = partnerlessCeiling(serverTrustScore, reachable);
+  if (!(ceiling > dayOne)) dead(`the partnerless ceiling (${ceiling}) is not above the day-one score (${dayOne}) — the model did not load`);
+
+  cases++;
+  if (MIN > ceiling) {
+    fail(`GROUP_TRUST_MIN is ${MIN}, above the ${ceiling} a climber with no vouches and no belay catches can ever reach — a "Trust ${MIN}+" group is gating on having been vouched for, not on trust`);
+  } else ok(`GROUP_TRUST_MIN (${MIN}) is reachable without a vouch or a catch (ceiling ${ceiling})`);
+
+  cases++;
+  if (MIN <= dayOne) {
+    fail(`GROUP_TRUST_MIN is ${MIN}, which a day-old account scores on confirming its email (${dayOne}) — the group promises an exclusivity it does not have`);
+  } else ok(`GROUP_TRUST_MIN (${MIN}) turns away a day-old verified account (${dayOne})`);
 }
 
 

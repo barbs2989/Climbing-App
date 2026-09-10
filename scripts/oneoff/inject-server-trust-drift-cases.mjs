@@ -61,6 +61,44 @@ const CASES = [
     why: "a comment naming other numbers is prose, not a weight",
     from: "-- Vouches: 1 point per unique vouch, capped at 20",
     to: "-- Vouches: 1 point per unique vouch, capped at 20 (was 44 before, and 77 in an older draft)" },
+
+  // ---- SECTION 6: is the bar one a real climber can walk up to? ----
+  // Its healthy output is two `ok` lines, which is also what a section that never computed a bound
+  // would print, so neither bound is worth anything until it has been made to fire.
+  { name: "threshold-above-partnerless-ceiling", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "55 restored verbatim — the real historical value, one point above what a climber with no vouches and no catches can reach",
+    says: /FAIL\s+GROUP_TRUST_MIN is 55, above the 54/,
+    from: "const GROUP_TRUST_MIN=20;", to: "const GROUP_TRUST_MIN=55;" },
+  { name: "threshold-at-day-one", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "a bar of 5 admits anyone who confirmed an email, so the group promises an exclusivity it does not have",
+    says: /FAIL\s+GROUP_TRUST_MIN is 5, which a day-old account scores/,
+    from: "const GROUP_TRUST_MIN=20;", to: "const GROUP_TRUST_MIN=5;" },
+
+  // THE BOUND IS DERIVED, AND THIS IS WHAT PROVES IT RATHER THAN 54 BEING TYPED SOMEWHERE. Give the
+  // database a definer that can attest a government ID and the 10 points it is already scored at
+  // become earnable, the partnerless ceiling rises to 64, and 55 stops being a finding. A guard
+  // holding a hardcoded ceiling would still fail here and would be wrong to.
+  { name: "id-verification-becomes-earnable", file: SQL, expect: "pass",
+    why: "an ID-verification definer lifts the ceiling by itself, so a threshold that was unreachable becomes reachable",
+    from: "grant execute on function compute_trust_score(uuid) to authenticated;",
+    to: `grant execute on function compute_trust_score(uuid) to authenticated;
+create or replace function verify_my_id() returns verification_records
+language plpgsql security definer set search_path = public as $$
+declare rec verification_records;
+begin
+  insert into verification_records (user_id, verification_type, status, verified_at)
+       values (auth.uid(), 'id', 'verified', now())
+  on conflict (user_id, verification_type) do update set status = 'verified' returning * into rec;
+  return rec;
+end; $$;` },
+
+  // MUST STAY SILENT. The comment above the declaration explains where the number came from and
+  // names the one it replaced; a section reading the first match rather than the line-anchored,
+  // unique one would take 55 out of that prose and report on a threshold the app does not have.
+  { name: "threshold-quoted-in-prose", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "pass",
+    why: "a comment quoting the old declaration is documentation, not the declaration",
+    from: "const GROUP_TRUST_MIN=20;",
+    to: "/* it read `const GROUP_TRUST_MIN=55;` until the scale under it changed */\nconst GROUP_TRUST_MIN=20;" },
 ];
 
 let pass = 0, fail = 0;
