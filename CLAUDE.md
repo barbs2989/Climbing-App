@@ -64,6 +64,7 @@ npm run check:profile-edit-gate # a failed profile read must not open an editor 
 npm run check:onboarding-reach # a climber who has not onboarded is ASKED; one who has is left alone (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
+npm run check:outage-landmark # ...and check:outage's own sub-tab landmark must identify that view (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
@@ -1060,14 +1061,50 @@ the total when deciding where a new guard belongs.
       two guards use per-run accounts locally and the durable pair in CI, so an account PROPERTY
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
-    - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB IS VACUOUS, so the red named the wrong
-      screen.** Its landmark is `/saved areas|offline library|saved searches/i`, and the Logbook's
-      **header** — which sits ABOVE the sub-tab bar and therefore renders on all four sub-tabs —
-      reads *"Your objectives, completed climbs, challenges and saved areas — all in one place."*
-      So a capture that never left the default view passes the landing check: precisely the
-      outcome the comment directly above that landmark warns against, produced by the
-      case-insensitivity added to it. Measured, not inferred — healthy `Logbook:Areas` came back
+    - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
+      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
+      on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
+      — all in one place."* One alternative matching is enough, so a capture that never left the
+      default view passed the landing check: precisely the outcome the comment directly above that
+      landmark warns against. Measured, not inferred — healthy `Logbook:Areas` came back
       **byte-identical in length to healthy `Logbook`** on two consecutive runs.
+      - **THE RECORDED CAUSE WAS WRONG, AND THE CORRECTION IS THE USEFUL HALF.** This entry used to
+        blame *"the case-insensitivity added to it"*. It is not that: the HEADINGS are uppercased in
+        CSS, but the **header prose is not**, and it is written lowercase in the source — so a
+        case-SENSITIVE `/saved areas/` matches it just as well. **The vacuity predates the `/i` flag
+        and would have survived removing it**, which is why the repair had to be the TERM rather
+        than the flag. A plausible mechanism nobody measured is a hypothesis, and this one would
+        have sent the next reader to delete a flag that is doing real work — `innerText` returns
+        `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
+      - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
+        had never matched once and could only ever report a false miss.
+      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
+        the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
+        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
+        than silently.
+      - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
+        two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
+        changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own
+        closing caveat and a stale-base squash could restore the vacuous landmark with every other
+        guard green. *Class growth*: `check:outage` has other landing checks and the rule
+        generalises — **a landmark must not appear outside the view it identifies**. It is in the
+        chain rather than in `scripts/oneoff/` because this file already records that an
+        extracted-from-source probe with a fail-closed anchor **is** the behaviour-revert detector
+        for exactly this shape, and *"is worth nothing in `scripts/oneoff/`, which nothing runs"*.
+        **No browser and no database**,
+        because which region of the source a string lives in is answerable statically and therefore
+        on a box too loaded for a walk to be evidence. It **lifts the landmark out of the guard**
+        with `ANCHOR LOST` rather than retyping it (a copy would agree with itself whatever the
+        guard did, which is the entire question), and it is proven non-vacuous the only way that
+        counts: against the old landmark it reports **5 failures**, one per defect. Its floors are
+        **measured, not guessed** — a first draft put the Logbook region at 20,000 characters and
+        failed on a correct carve, because that tab renders most of its content through components
+        and its own JSX is ~7.7k. The floor that actually matters is on **rest-of-Logbook**: were
+        the two regions ever to carve to the same span, every *"appears nowhere else"* assertion
+        would pass **vacuously**.
   - **That rule was applied to the ACCOUNTS and missed on what the accounts CREATE**, which is
     the transferable half. All three fixture paths made their group `visibility:"public"`, and
     `groups read public or member` plus `useMyGroups()` — which selects **every** group with no
@@ -1132,6 +1169,39 @@ the total when deciding where a new guard belongs.
       other two are properties of **who is looking**. A concurrent run signed in as the same
       owner cannot strip that owner's own creator status. Two runs starting 61 seconds apart
       was correlation, and it was believed twice before the assertion detail settled it.
+    - **CONFIRMED 2026-09-10, and the confirming artifact is a controlled same-commit PAIR.**
+      #969's *"identity hydration lagging"* stood for months as a diagnosis nothing could
+      reproduce. It is now executed rather than inferred: with `_profMap` (the
+      `useProfilesByIds` result) still unresolved, `_asMember` returns null for **every** id, so
+      the roster's fallbacks fire — your own row falls back to `ME`, whose `id` is **0 signed in
+      or out**, and every other row to the `"A climber"` placeholder. That is one cause producing
+      all four `Group:detail` symptoms at once: the creator labelled `Member`, no `MOD` badge,
+      `+ Mod` and remove `✕` on **your own row**, and the whole `Moderators` strip gone (`mods`
+      is `modIds.map(_asMember).filter(Boolean)` with **no** fallback, so an unresolved read
+      empties it).
+      - **THE OBJECTION THAT KEPT THIS OPEN WAS A FALSE PREMISE, and it was written into the
+        fix's own comment.** That comment said the fallback fires *"by CONSTRUCTION … only when
+        `mem` does NOT contain you"* — true of the APPEND path, where your row is **last**, and
+        read as if it were the only path. It is not: an unresolved read misses your id too, so
+        the fallback fires on a row that came out of `mem`, **in `mem` order**. The failing
+        dump's owner row is FIRST, which is exactly what that path predicts and what the append
+        path cannot produce. *When a comment says a branch fires "only when X", ask whether the
+        thing it depends on can be empty for an unrelated reason.*
+      - Proven by executing the app's own lifted `_roster` **and** `mods`
+        (`scripts/oneoff/probe-group-self-row-is-not-only-the-append-path.mjs`, 9 assertions,
+        with a resolved control so none of it passes vacuously), injection-tested **2/2**
+        (`inject-group-self-row-non-append-cases.mjs`): reverting the fallback to bare `ME`
+        reproduces the failing dump's signature **in the dump's row order**. The sibling probe
+        is NOT superseded — it pins the append path, this one the unresolved-read path.
+      - **`0178`'s `status` column is RULED OUT as the trigger**, which matters because this
+        file's own pointer sent the next reader there. Two arguments: `add_group_creator_as_owner`
+        is an **AFTER INSERT trigger in the same transaction**, so there is no window in which a
+        group is visible without its owner row, and it inserts no status so it takes the
+        `'active'` default; and `group_members` carries a `read own` policy
+        (`auth.uid() = user_id`) that is unconditional on status, role and visibility, so the
+        owner's own row cannot be filtered out of the owner's own read. Measured alongside, with
+        four fixture groups caught **mid-run**: every group in the project has exactly one
+        `active` owner row.
     - So each run **creates its own group**, named from `GITHUB_RUN_ID` (or pid+time locally),
       seats the mate in it, and **deletes it in teardown**. Groups are safe to make per-run
       because an owner can delete their own — measured: create 201, mate-joins 201,
@@ -2873,13 +2943,71 @@ the total when deciding where a new guard belongs.
   - Comments are stripped before every SOURCE test, because this guard's own subject is explained
     in a comment beside `compat()` that quotes the forbidden `Math.min(99,` shape. A guard that
     fails on its own documentation is a trap this file records more than once.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
+  - **SECTION 6 — THE BROWSE ROW CALLED EVERY REAL CLIMBER A "New profile", AND HAS SINCE #612.**
+    Sections 1-5 are about the number; this is about the sentence shown when there is none, and it
+    needed a separate section because the row that renders it **can never reach those signals**.
+    `RealClimberRow`'s own projection `_cand` hardcodes `objectiveIds:[]`, and `profiles` has **no
+    availability and no pace column for anyone** — so of the four signals `compatUnknown` counts,
+    exactly one can arrive. `_unk` is **>= 3 for a maximally-complete profile and a bare one
+    alike**, measured by executing the row's own literal
+    (`scripts/oneoff/measure-browse-row-match-percent.mjs`): 4 rows of increasing completeness,
+    **0 of 4 showed a percentage**.
+    - **So the score branch has NEVER rendered, `_pct` is computed and read by nothing, and the
+      "· based on limited info" caveat is unreachable** — it needs `_unk` in 1..2. #612's commit
+      message states the intended three states in as many words (*"A thin profile is labelled …
+      rather than dressed up as a confident percentage; a partial one says 'based on limited
+      info'"*), and its 8 tests exercised `compatUnknown` **directly** rather than through `_cand`,
+      which is why the cap went unseen. **A fixture that can express a state the app cannot reach
+      proves nothing about the app** — the trap this file already records for `check:units`' area
+      type and `check:token-boxes`' tick-list id.
+    - **The sentence was false TWICE.** *"New profile"* is said about an established account with
+      every field filled in — the gap is the projection's, not the climber's. And *"yet"* promises
+      a resolution **nothing the climber does can bring about**, since three of the four signals
+      have no column. Meanwhile the **seed** partner card beside it renders a big `{score}%`, so
+      the contrast is on screen: example climbers get a percentage and real ones never do.
+    - **THE REFUSAL ITSELF IS CORRECT AND MUST NOT BE "FIXED" BY MOVING THE THRESHOLD.** `compat()`
+      scores an absent objectives list as **ZERO, not a neutral partial**, and #612 chose that
+      deliberately — it had just removed the mirror defect from **pace**, where two absences were
+      collecting a *perfect* match (*"agreement invented out of two absences"*). Absence of shared
+      objectives is not evidence of sharing. So a real climber sits ~20 points below a comparable
+      seed climber **legitimately**, and surfacing that as a "% match" is exactly the
+      confident-percentage-over-thin-data this branch exists to refuse. The repair is the
+      **sentence**, and the reason is recorded beside the code so the next reader does not undo it.
+    - **6a IS THE STRUCTURAL FACT AND IT FAILS AS STALE, NOT AS A DEFECT.** It lifts `_cand`'s
+      literal and **executes** it — a hand-typed copy would agree with itself whatever the row does
+      — and requires `compatUnknown >= 3`. Widening `_cand` (a column arrives) is correct work, and
+      the failure says so while pointing at the measurement, the standard `KNOWN` and
+      `PARTIAL_ON_PURPOSE` are held to.
+    - **6b/6c test the LIFTED TEXT for two forbidden claims and a length, never for today's
+      phrasing** — a guard pinned to one sentence forbids improving it, which this file records for
+      `check:offline-claims`' `disclaimer-reworded`. And 6c exists because **a rule that only
+      forbids is satisfied by deleting the line**, which would leave the seed card's percentage
+      unexplained beside a row that has none.
+    - **THE INJECTION FOUND A DEFECT IN THIS SECTION RATHER THAN IN THE APP.** An **empty** refusal
+      still MATCHES the anchor, and a falsiness test read that as `ANCHOR LOST` — so the deletion
+      case reported a broken guard where the sentence had been removed. *"The anchor moved,
+      re-point the guard"* and *"you deleted the sentence, put it back"* want opposite repairs, so
+      it distinguishes `null` from `""`.
+    - A **gate** rather than a probe for the reason `check:policy-claims` and `check:profile-claims`
+      were promoted: the fix changes **strings and no identifier**, which `audit:silent-reverts`
+      says in its own closing caveat it cannot see.
+    - **THE FLOOR HAD TO RISE WITH THE SECTION, AND 18 WOULD HAVE HIDDEN IT ENTIRELY.** Section 6
+      contributes exactly **4** assertions against a clean run's 22, so at the old `FLOOR = 18`
+      deleting the whole section landed on **exactly 18** and `ran < FLOOR` was false — measured,
+      not reasoned: the gutted guard printed a **clean green `ok — … (18 assertions)`** and exited
+      **0**, while at 20 it fails *"this run proved nothing"*. **A floor two below a clean run is
+      the convention precisely because a floor set to the new total cannot see its own newest
+      section stop asking.** Raise it when you add an assertion here; never lower it to make a run
+      pass.
+  - Injection-tested **14/14** (`scripts/oneoff/inject-match-percent-cases.mjs`), each case proving
     its edit landed **by checksum**, restoring `ClimbMatchCore.jsx` byte-identically, and judged on
     the guard's **own failure text** matched against FAIL lines only. The harness also **refuses any
     expectation that already appears in the GREEN run** — it caught one on the first run, where the
     needle was the text an assertion prints when it PASSES. Case 1 is the real defect restored
-    verbatim. **Two must stay SILENT**: a legitimate rebalance (`CMAX_DISC` 16 -> 18) and a comment
-    quoting the forbidden shape.
+    verbatim. **Four must stay SILENT**: a legitimate rebalance
+    (`CMAX_DISC` 16 -> 18), a comment quoting the forbidden `Math.min(99,` shape, a comment naming
+    the old refusal wording, and **the refusal reworded truthfully and differently** — the
+    load-bearing one, since it is what proves 6b/6c are not pinned to a phrase.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
@@ -3419,6 +3547,19 @@ the total when deciding where a new guard belongs.
     its edit landed **by checksum** and restoring `lib/DbAreaBrowser.jsx` byte-identically. Case 1 is
     the real historical rule, restored verbatim. **Two must stay SILENT** — a comment quoting the
     forbidden prefix shape, and the `ALIAS` table reordered — because both are correct work.
+  - **A THIRD MEASURED NON-FINDING, on the one row nothing had examined.** The `Rock difficulty`
+    span uses `rock_grade` deliberately — the entry above records that `grade_num` would rank a
+    Roman COMMITMENT grade on the same scale as class — and what it still conflates is **class
+    against YDS**: `class 3` and `5.3` are both 3, so where the span's ends tie numerically the row
+    prints ONE grade, chosen by input order. Measured
+    (`scripts/oneoff/measure-rock-difficulty-scale-tie.mjs`): 166 panels render the row, **53 tie
+    numerically, and 3** of those are on different scales — `wa_chimney_peak` and
+    `wa_klawatti_peak` print *"Class 3"* on peaks that also hold a 5.3, `wa_ottohorn` prints
+    *"5.7"* on one that also holds a Class 4. **Recorded rather than fixed:** separating them means
+    a LEXICAL scale test inside a display helper, against strings like *"Class 3-4 (scrambling)"*
+    and *"Class 3 (Class 4 in spots)"*, and three peaks does not buy the fragility this file
+    records for every regex over grade prose. If it is ever worth doing, the honest render is a
+    **span** — *"Class 3 to 5.3"* — never a different single grade.
   - **THE PANEL'S RENDERED COPY IS CLEAN CATALOG-WIDE, which nothing had asked.** #1672 swept the
     ROUTE page for broken copy and found it clean; the AREA page had never been swept, and this
     panel is the part of it that DERIVES rather than displays.
@@ -11103,6 +11244,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     [[a-partial-measurement-agrees-with-what-you-expect]] shape, caught because the verdict
     disagreed with a fact already known.
 
+- **THE NWS CROSS-CHECK ROW PUT A MACHINE TOKEN ON THE SAFETY TAB.** The forecast panel prints
+  three sources side by side, and the NWS line read:
+
+      NWS  High 53° · Low 45° · Wind 9 mph · Rain_showers
+
+  MET's condition goes through `metWxLabel()`; NWS's went through `cap()`, which only uppercases
+  the first letter — so NWS's snake_case gridpoint vocabulary reached the climber intact. **The
+  asymmetry is the defect, not a missing map entry**: two sibling sources on one row, one labelled
+  and one not.
+  - **A MAP IS RIGHT FOR MET AND WRONG FOR NWS, which is why this is not "add a table".**
+    `clearsky` and `partlycloudy` are not English, so that source genuinely needs one. NWS ships
+    English words joined by underscores (`rain_showers`, `freezing_rain`, `blowing_snow`), so
+    replacing the separator labels the **whole vocabulary** — where a table would be a second list
+    to maintain whose first unlisted code puts the raw token straight back on screen.
+  - **FOUND BY READING A CI CAPTURE**, on the tab a climber opens to decide whether to go. Every
+    other condition on that panel reads as prose, which is what made the one token visible.
+  - **A NUMBER ON THE SAME ROW LOOKED WRONG AND WAS NOT — checked before reporting it.** The
+    *"differs N°"* tag appeared not to match the highs beside it. It compares day **midpoints**:
+    Sep 12's Open-Meteo mid is 56.5 against NWS's 49, i.e. 7.5 → *"differs 8°"*, and today's 4.5 is
+    correctly below the threshold and untagged. Reading it as a defect would have "fixed" a correct
+    comparison.
+  - `scripts/oneoff/probe-nws-condition-is-prose.mjs` — 9 assertions, no browser, no DB, both
+    helpers lifted from source. It tests **every value NWS publishes** rather than the one code that
+    was noticed, and its non-vacuity case keeps `cap("rain_showers") === "Rain_showers"` so the rest
+    cannot pass against a vocabulary that never had underscores.
 - **`check:fire`** enforces the honesty invariants of the wildfire surfaces (`lib/fire.js`,
   `lib/FireMap.jsx`, `lib/FireNearRoute.jsx`). It exists because those screens were each
   verified by hand in a browser against live federal services, and every one of those runs

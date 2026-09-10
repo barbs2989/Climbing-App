@@ -3206,11 +3206,16 @@ function WeatherPanel({waypoints,showPlan}){
           });
         }
         const cap=function(s){return s?s.charAt(0).toUpperCase()+s.slice(1):null;};
+        /* NWS ships its weather values as snake_case English (rain_showers, freezing_rain,
+           blowing_snow), so replacing the separator LABELS THE WHOLE VOCABULARY rather than
+           the codes somebody remembered -- unlike metWxLabel, which needs a map because
+           `clearsky` and `partlycloudy` are not words. */
+        const nwsWxLabel=function(s){return s?cap(String(s).replace(/_/g," ")):null;};
         const days=Object.keys(byDay).sort().map(function(date){
           const d=byDay[date];
           const parts=[buildPart("AM",date+"_am"),buildPart("PM",date+"_pm"),buildPart("Night",date+"_night")].filter(Boolean);
           const nd=nwsByDay[date];
-          const nws=(nd&&nd.length>=3)?{lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:cap(modeOf(nwsWxByDay[date]))}:null;
+          const nws=(nd&&nd.length>=3)?{lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:nwsWxLabel(modeOf(nwsWxByDay[date]))}:null;
           const md=metByDay[date];
           const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
           const wxCode=modeOf(d.codes);

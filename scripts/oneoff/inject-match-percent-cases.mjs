@@ -87,6 +87,44 @@ const cases = [
     expect: "which this guard cannot tie to any signal",
   },
   {
+    name: "THE REAL DEFECT: the browse row calls every real climber a NEW PROFILE",
+    edits: [['>Not enough shared info to score a match<', '>New profile — not enough shared info to score a match yet<']],
+    expect: 'calls every real climber a "New profile"',
+  },
+  {
+    name: "...and the other half of it: the refusal promises the score arrives YET",
+    // Separated deliberately. The two claims fail differently — one blames the climber, one
+    // promises a resolution nothing on `profiles` can deliver — and a case that restored both
+    // would pass on the strength of either.
+    edits: [['>Not enough shared info to score a match<', '>Not enough shared info to score a match yet<']],
+    expect: 'says the score is unavailable "yet"',
+  },
+  {
+    name: "the refusal is deleted, leaving the absence unexplained beside the seed card's big score",
+    edits: [['>Not enough shared info to score a match<', '><']],
+    expect: "no longer explains the missing match %",
+  },
+  {
+    name: "_cand widens, so the score branch can render and the refusal copy is no longer what shows",
+    // Not a defect — a column would have to be added first — but it invalidates section 6, so it
+    // must fail as STALE rather than pass quietly. The same standard KNOWN and PARTIAL_ON_PURPOSE
+    // are held to elsewhere in this repo.
+    edits: [['objectiveIds:[]};', 'objectiveIds:Array.isArray(p.objectiveIds)?p.objectiveIds:[],availability:p.availability,hikingSpeedFtHr:p.hikingSpeedFtHr};']],
+    expect: "signals unknown, so the score branch CAN render",
+  },
+  {
+    name: "SILENT: the refusal is REWORDED, truthfully and differently",
+    // The load-bearing negative. 6b/6c test the lifted TEXT for two forbidden claims and a
+    // length, never for today's phrasing — a guard pinned to one sentence forbids improving it.
+    edits: [['>Not enough shared info to score a match<', '>Match scores need objectives and availability, which a public profile does not carry<']],
+    expect: null,
+  },
+  {
+    name: "SILENT: a comment naming the old wording",
+    edits: [['function RealClimberRow({p,onOpen}){', '/* this used to read "New profile — …score a match yet" */\nfunction RealClimberRow({p,onOpen}){']],
+    expect: null,
+  },
+  {
     name: "SILENT: a legitimate REBALANCE — disciplines reweighted 16 -> 18",
     edits: [['const CMAX_DISC=16,', 'const CMAX_DISC=18,']],
     expect: null,
