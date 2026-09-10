@@ -27,7 +27,7 @@ const GUARD = ["node", ["scripts/check-units.mjs", "--only=profile"]];
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 
 const HEADER = '<span style={{color:C.blue}}>{uDistMi(+dist.toFixed(1))+" away"}</span>';
-const CARD = '{score>=80?"Excellent match":"Good match"} · {uDistMi(+dist.toFixed(1))+" away"}';
+const CARD = '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {uDistMi(+dist.toFixed(1))+" away"}';
 const FIRELINE = "and {fires.length - 4} more within {uDistMi(radiusMi)}";
 
 const CASES = [
@@ -42,7 +42,7 @@ const CASES = [
     name: "2-compatibility-card-prints-bare-miles",
     why: "REAL DEFECT: the card read `{dist.toFixed(1)} miles away`",
     file: CORE, find: CARD,
-    repl: '{score>=80?"Excellent match":"Good match"} · {dist.toFixed(1)} miles away',
+    repl: '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {dist.toFixed(1)} miles away',
     targets: { guard: /hardcoded unit/, probe: /hardcoded unit|metric still renders miles/ },
   },
   {

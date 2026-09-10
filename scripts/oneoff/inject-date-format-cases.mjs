@@ -32,20 +32,20 @@ const CASES = [
     find: '__set_DLOCALE(dateFmtToLocale(dateFmt));',
     repl: '__set_DLOCALE(dateFmt==="us"?"en-US":dateFmt==="intl"?"en-GB":undefined);',
     says: /written inline|set during render/ },
-  // A read that returns whatever is stored: the empty-string case is the one that throws at Intl.
-  { name: "read-does-not-validate", file: MOD, expect: "fail",
-    find: '    return VALID.indexOf(v) >= 0 ? v : DEFAULT_DATE_FMT;',
-    repl: '    return v === null ? DEFAULT_DATE_FMT : v;',
-    says: /EMPTY STRING|junk stored value is believed/ },
-  { name: "write-does-not-validate", file: MOD, expect: "fail",
-    find: '  if (VALID.indexOf(f) < 0) return;', repl: '  if (f === undefined) return;',
-    says: /accepted "klingon"/ },
-  // Unguarded access throws ReferenceError at module load under node — which is how every SSR
-  // guard renders this app, so it would take all of them down.
-  { name: "read-does-not-guard", file: MOD, expect: "fail",
-    find: '  try {\n    const v = localStorage.getItem(KEY);\n    return VALID.indexOf(v) >= 0 ? v : DEFAULT_DATE_FMT;\n  } catch {\n    // Includes the ReferenceError when `localStorage` does not exist at all (node, SSR).\n    return DEFAULT_DATE_FMT;\n  }',
-    repl: '  const v = localStorage.getItem(KEY);\n  return VALID.indexOf(v) >= 0 ? v : DEFAULT_DATE_FMT;',
-    says: /localStorage is not defined|falls back with NO localStorage/ },
+  // THREE CASES LIVED HERE AND ARE SUPERSEDED, NOT LOST — read-does-not-validate,
+  // write-does-not-validate and read-does-not-guard. They anchored on the validated read, the
+  // validated write and the try/catch when all three were INLINE in lib/date-pref.js; that file's
+  // own comment now records the fold ("the guarded read/write now lives once in lib/prefs.js"),
+  // so all three anchors matched nothing and reported HARNESS BUG on every run — of which, since
+  // nothing runs scripts/oneoff/, there were none.
+  //
+  // The properties ARE still proven, against the one place the code now lives:
+  // scripts/oneoff/inject-prefs-fold-cases.mjs covers them as guard-removed-from-the-shared-core,
+  // read-stops-validating and write-stops-validating. Re-adding them here would be two suites
+  // asserting one question — the four-grade-parsers shape.
+  //
+  // What stays below is what is still SPECIFIC to this module: the locale mapping, which did not
+  // fold and lives here alone.
   // MUST STAY SILENT — a valid rewrite of the mapping in the one place it may live.
   { name: "valid-refactor-of-the-mapping", file: MOD, expect: "pass",
     find: 'export const dateFmtToLocale = (f) => (f === "us" ? "en-US" : f === "intl" ? "en-GB" : undefined);',
