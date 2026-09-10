@@ -46,8 +46,25 @@ const Z_TOAST=1000000;
    the screen a climber actually uses, rather than not keeping it at all.
    The threshold lives here because the number was written out three times in three different
    phrasings ("Trust 55+ only", "Trust 55+", "Trust 55+ to join") with nothing tying them together
-   or to a check -- exactly the shape that drifts. */
-const GROUP_TRUST_MIN=55;
+   or to a check -- exactly the shape that drifts.
+   55 WAS A BAR ON A SCALE THAT NO LONGER EXISTS, AND IT CLOSED THE DOOR ON EVERYBODY. It was
+   chosen against the CLIENT model, where a vouch is worth 4 points; pointing the gate at the
+   number the app actually shows -- the right fix, and not a scale-preserving one -- left it ONE
+   point above the 54 a climber with no vouches and no belay catches can ever reach, so "trust"
+   had quietly become "somebody has spoken for you". Measured rather than reasoned about: the
+   highest EARNABLE score is 84 rather than 99, because compute_trust_score awards 10 for a
+   government ID and 10 for club/guide credentials that nothing in this app can grant (0085 pins
+   every client write to 'pending', and verify_my_email is the one definer that writes 'verified',
+   for 'email' alone); and every real account in the live project scored 0, 5 or 6.
+   20 IS NOT FITTED TO A CASE. The verdict-preserving range for the profiles both models were
+   measured over is 17..37, and 20 sits at the end of it that keeps the gate walkable for the
+   population that exists: a day-old verified account is 5 and is turned away, three months is 8,
+   while half a year of real participation clears it. Raise it once the social graph is real --
+   check:trust-breakdown section 6 bounds it at both ends and asserts no particular number, so
+   moving it is a one-digit product decision rather than a fight with a guard.
+   scripts/oneoff/measure-group-trust-threshold-candidates.mjs re-derives all of this; do not
+   quote the figures above without re-running it. */
+const GROUP_TRUST_MIN=20;
 /* IT TAKES THE SCORE, NOT THE CLIMBER, and that is the whole point of the signature.
 
    It used to take `meLive` and call vScore itself — the CLIENT model — while every other climber

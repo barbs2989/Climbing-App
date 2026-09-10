@@ -5842,9 +5842,34 @@ the correction knows the screen is wrong, and they have no way to report it.
       (`scripts/oneoff/measure-group-trust-gate-scale.mjs`), **one changes side**: *a year in,
       active* reads **57** on the client model and **37** on the server one. On the server scale even
       email plus two years' tenure plus twenty vouches comes to **45**.
-    - **WHETHER 55 IS STILL THE RIGHT NUMBER is an open product question** about how exclusive a
-      trust-gated group should be, and nothing here answers it. What was never in question is that
-      the gate must use the number the app shows.
+    - **THAT OPEN QUESTION IS ANSWERED, AND 55 WAS NOT MERELY STRICT — IT WAS A CLOSED DOOR.** This
+      bullet read *"whether 55 is still the right number is an open product question … nothing here
+      answers it"*, which is the [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape sitting on
+      a live gate. Measured (`scripts/oneoff/measure-real-trust-scores.mjs`, service key — an anon
+      count on `verification_records` returns 0 whatever the table holds): **every real account in
+      the project scores 0, 5 or 6**, and catalog-wide there are **0 vouches, 0 belay catches and 1
+      climb log**, so five of the eight components are zero for everyone.
+    - **THE EARNABLE CEILING IS 84, NOT 99, and that is what made 55 impossible rather than
+      demanding.** `compute_trust_score` pays 10 for a government ID and 10 for club/guide
+      credentials, and **nothing in the app can grant either**: `0085` pins every client write to
+      `'pending'`, `verify_my_email()` is the one definer that writes `'verified'` and it hardcodes
+      `'email'`, and `addVerification` is imported by both app files and **called by neither**. So
+      20 of the model's 104 points are unreachable, and 55 sat **one point above the 54** a climber
+      with no vouches and no belay catches can ever reach — i.e. "trust" had quietly become "somebody
+      has spoken for you", which is the state every new climber starts in.
+    - **20 IS NOT FITTED TO A CASE.** The verdict-preserving range for the profiles both models were
+      measured over is **17..37**, and 20 sits at the end that keeps the gate walkable for the
+      population that exists: a day-old verified account is 5 and is turned away, three months is 8,
+      half a year of real participation clears it.
+      `scripts/oneoff/measure-group-trust-threshold-candidates.mjs` re-derives all of it and prints
+      what each candidate demands in things a climber can actually do — **do not quote the figures
+      here without re-running it.**
+    - **Section 6 BOUNDS the threshold and deliberately asserts NO particular number**, because
+      where it sits between those bounds is a product decision and a guard pinning today's value
+      would argue with the next one. Both bounds are derived from the model and from
+      `scripts/lib/verification-reach.mjs`, so they move by themselves when the weights change or
+      when a verification the app cannot currently grant becomes earnable — the direction that
+      otherwise goes stale silently, since it makes the bar look more attainable than it is.
     - **The honest-refusal branch keys on `_trustUnsure`, not `_trustPartial`.** Once the gate reads
       the displayed score, the three client-side flags only make it unreliable while the
       locally-computed fallback is showing; refusing a join because an unrelated client read failed
@@ -5852,8 +5877,15 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Section 5 asserts it **as source** (the call sites are click handlers) and **at a count of
       two**, and two injection cases pin both halves — deriving a score again, and leaving one of
       the two identical handlers behind.
-  - Injection-tested **7/7** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. The cases drift
+  - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
+    four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),
+    and **`id-verification-becomes-earnable` must stay SILENT** — giving the database a definer that
+    can attest a government ID lifts the partnerless ceiling to 64 by itself, so 55 stops being a
+    finding. A guard holding a hardcoded 54 would still fail there and would be **wrong** to; that
+    case is what proves the bound is derived rather than typed. `threshold-quoted-in-prose` pins the
+    line-anchored, unique declaration match, since the comment above the constant explains where the
+    number came from and names the one it replaced. The cases drift
     the two sides in **both** directions on purpose — a comparison that only ever read the JS would
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
