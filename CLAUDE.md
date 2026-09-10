@@ -9549,9 +9549,36 @@ the correction knows the screen is wrong, and they have no way to report it.
       climber's RACK box; both climber-facing facts survive as *"Optionally one #4 to cover pro to
       4 inches; no pitons needed"*, which also takes that bullet under the 120-character line
       (13 → 12).
-    - **THE OTHER 21 ARE NOT SWEPT, and that is the standing rule rather than a shortage of time.**
-      They are ordinary attributions welded into sentences that also carry the fact, and this file
-      records that only ~4% of this backlog was ever mechanical. **Report, do not sweep.**
+    - **THE REST WERE THEN CLOSED AS A REVIEWED BATCH, AND THE CLASS IS NOW EMPTY — 67 → 34, which
+      is exactly the pre-widening baseline** (`scripts/oneoff/redact-mp-abbreviation-citations-2.mjs`,
+      30 values; `scripts/oneoff/redact-mp-abbreviation-citations-3.mjs`, 1 more). So the widening
+      added 33 findings and all 33 are repaired; **zero `MP` survives anywhere in the audit's
+      output.**
+      - **"Report, do not sweep" forbids a SWEEP, not a reviewed batch**, and the distinction is the
+        whole method: all 30 were dumped in FULL and read one at a time, and each carries its own
+        declared `find`→`repl` with a written reason. They were not one shape — **12 attribution as
+        the VERB** (the publisher is the sentence's subject, so there is no trailing tag to lift),
+        **7 a sourcing-act prefix** (*"Confirmed on MP:"*), **6 DOCUMENTED NEGATIVES**, **4 safety
+        warnings**, and **3 analytics**.
+      - **The documented negatives are the ones a sweep would have damaged.** *"Not explicit on MP;
+        inferred standard…"*, *"MP does not publish a separate elevation figure"*, *"no
+        route-specific beta found beyond MP grade listing"* — the admission IS the content, so every
+        one keeps its hedge and loses only the publisher. Deleting it makes the record read **more**
+        certain than it is, which is worse than the leak.
+      - **A quotation cannot survive its speaker**, so quoted phrases are unquoted rather than
+        orphaned — *"MP notes those bolts were 'in really bad shape'"* becomes *"those bolts were in
+        really bad shape as of a 2024 report"*, keeping the date and the second-hand nature, since
+        *a report* is a category this audit deliberately does not treat as a source.
+      - **PRINTING THE RESULTING SENTENCE CAUGHT TWO DEFECTS THE find/repl PAIRS HID**, which is
+        this family's own rule earning itself: one `find` began after a comma and left *"sub-area,
+        ) — no separate…"* stranded, and one replacement capitalised after a semicolon. **A
+        checksum-style match proves an edit landed, never that it reads.**
+      - **AND THE BATCH'S OWN DUMP REPORTED A FALSE ZERO.** It carried a hand-written list of 29
+        columns and printed *"TOTAL remaining MP leaves: 0"* while `wa_safety_dance.descent` still
+        held one — the audit walks **32**, and the list had `descent_text` but not `descent`, two
+        spellings this file already records as a mirrored pair. `-3.mjs` reads `PROSE_COLS` **out of
+        the audit** and fails closed if it parses short. *A repair script's column list is a
+        clustering key, and a restated vocabulary is how this codebase got four grade parsers.*
     - **The applier's post-condition is what makes a batch in this family safe, and here it is
       sharper than usual**: every rewritten leaf is re-run through the audit's OWN needle, lifted by
       anchor — and that needle now knows MP, so a rewrite that merely moved the abbreviation is
