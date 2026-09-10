@@ -4115,6 +4115,58 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **A REQUEST TO JOIN WAS A MEMBERSHIP, AND IT READ THE FLOAT PLAN.** `0036` writes the intended
+  model into its own comment — *"crews holds float_plan/meet_place/meet_time (**sensitive** … 'shared
+  with your emergency contact… can call for help if you're overdue'). **Base-table read is
+  organizer-or-confirmed-member ONLY, never public.**"* — and `0068_crews_readable_by_invited_members`
+  widened that SELECT to **any** `crew_members` row of **any** status, so an INVITED climber could see
+  the crew they were invited to. That intent is right. What it also admitted is `pending`, which is the
+  climber's **own request**, and `0086` let anybody insert one for themselves on **any** crew. `0180`
+  closes both halves.
+  - **THE COMMENT STATING THE MODEL STAYED IN `0036` WHILE THE POLICY MOVED AWAY FROM IT.** That is
+    this file's own stale-bookkeeping class landing on a security model: the sentence describing the
+    rule and the rule itself lived in different files, and only one of them was edited. When you widen
+    a policy, the comment that states its model is part of the change.
+  - **MEASURED WITH THREE REAL ACCOUNTS, never reasoned about**
+    (`scripts/oneoff/probe-a-stranger-can-read-your-float-plan.mjs`). `0095`'s header already records
+    why reading the SQL is not enough — an RLS subquery runs as the **calling** role, so a policy can
+    *"look present, pass review, and enforce nothing"*, and the service role bypasses RLS entirely, so
+    a service-key probe reports success either way. Before `0180`: control 0 rows, self-insert
+    `pending` **201**, self-insert `invited` **201**, and the crew row came back with `float_plan`,
+    `meet_place` and `meet_time`. Self-insert `confirmed` was **403**, which is the only reason the
+    **chat** never leaked (`crews_messages` is confirmed-or-creator).
+  - **THE CHAIN NEEDED NO INVITE AND NO OPEN CREW.** `crew_members` SELECT is `using (true)`, so crew
+    ids are enumerable; `0086`'s `invited_by = auth.uid()` is satisfied on a self-insert by naming
+    **yourself** as your own inviter, so on that branch it constrained nothing; and its `status <>
+    'confirmed'` let a stranger award themselves `invited`. So: pick any crew id, seat yourself, read
+    the safety document — vehicle, parking, emergency contact, departure and hard-return times.
+  - **EACH HALF ALONE IS DEFEATED BY THE OTHER, which is why `0180` changes two policies.** Narrowing
+    only the SELECT leaves a stranger claiming `invited`; constraining only the INSERT leaves them
+    reading as `pending`. The first draft of the fix was the SELECT alone, and **the test found the
+    hole, not the reading** — the `invited` self-insert walked straight through it.
+  - **The INSERT now pins the STATUS, not the inviter.** A self-insert may be `pending` and nothing
+    else: being *invited* is the organiser's act, and a climber who can write it for themselves has
+    invited themselves. The organiser branch is untouched.
+  - **The SELECT is now `status <> 'pending'`, which is the SAME predicate the app uses** (`crewInCrew`,
+    #1687) — so the database and the screen answer *"who is on this crew"* the same way, rather than
+    two derivations of one rule. Keeps `0036`'s organiser and confirmed member and `0068`'s invited
+    member; excludes the one status a climber can mint for themselves.
+  - **A POLICY CHANGE THAT ONLY DENIES IS SATISFIED BY DENYING EVERYTHING**, so the probe's sections
+    4-6 are the load-bearing half and were green **before and after**: the organiser reads their own
+    crew, a confirmed member reads the crew and the chat, an **invited** member reads the crew,
+    `useMyCrewInvites`' `status=eq.invited&select=*,crews(*)` embed still resolves, and the app's own
+    request-to-join (`dbAddCrewMember(id, uid, "pending")`) still returns 201. A requester loses the
+    crew ROW and keeps the finder, which is served by `crew_listings` — a safe column subset by
+    construction, untouched here.
+  - **Three harness bugs read as app findings first**, all in the probe: a `409` that was the probe's
+    own leftover membership row from the previous section colliding on the unique index (each attempt
+    now clears it, so a refusal is attributable); `text` where `crews_messages` stores **`body`**, which
+    returns 400 and reads as a policy refusal; and section 3 initially measuring the row left by section
+    2's *successful* `invited` insert rather than a pending one. *An injection that produces a different
+    failure is not a catch* — the same rule, applied to a live-database probe.
+  - Verified by reading the LIVE policy text back out of `pg_policies` afterwards, not by trusting the
+    apply: *existence is not agreement*, the rule `check:function-drift` exists for. `check:rls` green
+    (127 policies checked).
 - **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
   worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
   - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
