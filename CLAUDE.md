@@ -8741,6 +8741,33 @@ the correction knows the screen is wrong, and they have no way to report it.
     that way is safe and was measured rather than assumed — every one of the 2,525 areas under
     `washington` is `wa_`-prefixed except the state row itself. Corrected before shipping: 1,012
     routes and 830 pins became **1,016 and 832**.
+  - **SECTION 3 — ONE PLACE, MANY NAMES: the gap BETWEEN sections 1 and 2, and the commonest
+    shape of all.** Section 1 keys on the NAME and only reports past `MIN_KM`, so pins metres apart
+    are invisible to it; section 2 keys on `name|lat4|lng4`, so it needs the name AND the coordinate
+    to match. A point stored under SEVERAL names at SLIGHTLY different coordinates falls between
+    them. **"Stuart Lake Trailhead" is stored 52 times under SIX names at about five coordinates**,
+    with elevations 1,300 / 2,930 / 3,200 / 3,400 (x37) / 3,500 / 3,540 — so two climbers reading
+    two routes off one trailhead get answers 2,100 ft apart. Keyed on the **coordinate cluster**
+    (200 m) alone: **41 findings across 295 clusters** of 3+ pins.
+    - **A FULL-NAME KEY CANNOT SEE IT EITHER, and that was measured rather than assumed.** Keyed on
+      the normalised name, the six variants each get their own tiny majority and NO outlier is
+      detectable — the census reported **4** findings and silently omitted the very case that
+      prompted it. *A detector's clustering key decides what it can see*, and one that misses its
+      own founding case is worth nothing. Both earlier keys were tried and both failed that test.
+    - **IT REPORTS THAT TWO ROWS DISAGREE AND NEVER PICKS.** The majority is not the truth: at
+      *"The Mole (Edward Peak) North Face topout"* three pins say 1,300 ft and one says 6,800, and
+      it is the **lone** pin that looks right for a topout. Section 2's own header already records
+      the SR-20 case where the ground admitted only the dissenter. Adjudicate against the terrain.
+    - The top hits are unarguable: **Cascade Pass Trailhead** has 21/25 at 3,600 ft and one at
+      **8,380**; a **Hwy 20 pullout** has one pin at **7,900 ft** on a highway that tops out at
+      5,477. Thresholds are borrowed rather than fitted — 250 ft is this file's own `FLOOR_FT`
+      for *inside the 3DEP grid's noise*, and a cluster with no clear majority is skipped because
+      there is nothing to call an outlier against.
+    - **A VACUOUS PASS, CAUGHT ONLY BY AN INDEPENDENT COUNT.** Wired in, the section first reported
+      **0 clusters examined** — because this file's `km()` takes **arrays** `[lat,lng]` and it was
+      handed objects, so every distance was `NaN`, every proximity test false, and no cluster ever
+      formed. A standalone measurement had already said 40, which is the only reason the zero was
+      not read as a clean catalog.
   - Fails **closed** four ways — zero areas, zero routes, zero placed summit pins, and a split
     whose ground could not be read is reported as **NOT MEASURED** rather than as agreement. That
     last one is the reason `terrain.mjs` returns `null` and never `0`.

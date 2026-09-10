@@ -168,4 +168,87 @@ for (const f of sameSpot) {
   for (const p of [...f.pins].sort((a, b) => a.elev - b.elev)) console.log(`             ${String(p.elev).padStart(6)} ft  ${p.route}`);
 }
 
+/* -------------------------------------------------------------------------------------------
+ * SECTION 3 — ONE PLACE, MANY NAMES: the gap BETWEEN sections 1 and 2.
+ *
+ * Section 1 keys on the NAME and only reports past MIN_KM, so pins metres apart are invisible to
+ * it. Section 2 keys on `name|lat4|lng4`, so it needs the name AND the coordinate to match. A
+ * point stored under SEVERAL names at SLIGHTLY different coordinates falls between them, and that
+ * is the common case rather than an edge one: "Stuart Lake Trailhead" is stored 52 times under SIX
+ * names at about five coordinates, with elevations 1,300 / 2,930 / 3,200 / 3,400 (x37) / 3,500 /
+ * 3,540. Two climbers reading two routes off one trailhead get two answers, 2,100 ft apart.
+ *
+ * A FULL-NAME KEY CANNOT SEE IT EITHER, which is why this one keys on the COORDINATE CLUSTER
+ * ALONE. Measured while writing this: keyed on the normalised name, the six variants each get
+ * their own tiny majority and NO outlier is detectable -- the census reported 4 findings and
+ * silently omitted the very case that prompted it. A detector's clustering key decides what it
+ * can see, and a detector that misses its own founding case is worth nothing.
+ *
+ * IT REPORTS THAT TWO ROWS DISAGREE, AND NEVER PICKS. The majority is not the truth: at "The Mole
+ * (Edward Peak) North Face topout" three pins say 1,300 ft and one says 6,800, and it is the LONE
+ * pin that looks right for a topout. Section 2's own header already records the SR-20 case where
+ * the ground admitted only the dissenter. Adjudicate against the terrain, never the vote.
+ * ------------------------------------------------------------------------------------------- */
+const NEAR_M = 200;            // one trailhead, one col, one lake outlet
+const FLOOR_FT = 250;          // this repo's own "inside the 3DEP grid's noise" floor
+const CELL = 0.004;            // ~440 m of latitude; neighbouring cells are checked explicitly
+
+const allPins = [];
+for (const [, pins] of byName) for (const p of pins) {
+  if (Number.isFinite(p.elev) && Number.isFinite(p.lat) && Number.isFinite(p.lng)) allPins.push(p);
+}
+const cellKey = (p) => `${Math.round(p.lat / CELL)}:${Math.round(p.lng / CELL)}`;
+const grid = new Map();
+for (const p of allPins) {
+  const k = cellKey(p);
+  if (!grid.has(k)) grid.set(k, []);
+  grid.get(k).push(p);
+}
+const taken = new Set();
+const clusters = [];
+for (const p of allPins) {
+  if (taken.has(p)) continue;
+  const [cy, cx] = cellKey(p).split(":").map(Number);
+  const near = [];
+  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+    for (const q of grid.get(`${cy + dy}:${cx + dx}`) || []) {
+      if (!taken.has(q) && km([p.lat, p.lng], [q.lat, q.lng]) * 1000 <= NEAR_M) near.push(q);
+    }
+  }
+  for (const q of near) taken.add(q);
+  if (near.length >= 3) clusters.push(near);
+}
+
+const spread3 = [];
+for (const c of clusters) {
+  const counts = {};
+  for (const p of c) counts[p.elev] = (counts[p.elev] || 0) + 1;
+  const vals = Object.keys(counts).map(Number).sort((a, b) => counts[b] - counts[a]);
+  if (vals.length < 2) continue;
+  const majority = vals[0], majN = counts[majority];
+  // With no clear majority there is nothing to call an outlier AGAINST, and reporting the
+  // whole cluster would be noise rather than a finding.
+  if (majN < c.length * 0.6) continue;
+  const out = c.filter((x) => Math.abs(x.elev - majority) >= FLOOR_FT);
+  if (!out.length) continue;
+  spread3.push({ c, majority, majN, out, worst: Math.max(...out.map((o) => Math.abs(o.elev - majority))) });
+}
+spread3.sort((a, b) => b.worst - a.worst);
+
+console.log(`\n\n=== ONE PLACE, MANY NAMES, DIFFERENT HEIGHT: ${spread3.length} ===`);
+console.log(`Pins within ${NEAR_M} m of each other are the same place whatever they are called. Where most`);
+console.log(`of a cluster agrees on a height and one row is ${FLOOR_FT} ft or more away, the two cannot both be`);
+console.log(`right. ${clusters.length} clusters of 3+ pins examined.\n`);
+console.log(`THE MAJORITY IS NOT THE TRUTH — it is only what most rows say. Read the terrain before`);
+console.log(`changing anything: at "The Mole ... topout" three pins say 1,300 ft and the LONE pin at`);
+console.log(`6,800 is the one that looks right for a topout.\n`);
+for (const f of spread3) {
+  const names = [...new Set(f.c.map((x) => String(x.raw)))];
+  console.log(`  ${String(Math.round(f.worst)).padStart(5)} ft  "${names[0].slice(0, 46)}"${names.length > 1 ? `  (+${names.length - 1} other name(s))` : ""}`);
+  console.log(`             majority ${f.majority} ft (${f.majN}/${f.c.length})`);
+  for (const o of f.out.slice(0, 6)) {
+    console.log(`             ${String(o.elev).padStart(6)} ft  ${o.elev - f.majority > 0 ? "+" : ""}${o.elev - f.majority}  ${o.route}`);
+  }
+}
+
 console.log(`\nreport-only: exit 0`);
