@@ -88,7 +88,7 @@ const SITES = [
   ["...and the OLD hand-written list is gone",
     "const tappable=n.climberId!=null||!!n.tab||!!n.route||!!n.group;", true],
   ["the click dispatches from the same value",
-    'if(_t.kind==="profile"){const c=CLIMBERS.find(x=>x.id===_t.id);if(c)onOpenProfile(c);}else{onGo(_t.to);}'],
+    'if(_t.kind==="profile"){const c=CLIMBERS.find(x=>x.id===_t.climberId);if(c)onOpenProfile(c);}else{onGo(_t.to);}'],
   ["the spread is CONDITIONAL, so a target-less row is not announced as a control",
     "{...(_t?clickable("],
 ];
