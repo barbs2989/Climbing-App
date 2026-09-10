@@ -10766,6 +10766,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     having loaded nothing at all.
   - Injection-tested: reverting each of the three dead gates fails the run and names the
     line; restoring makes it green.
+- **`check:sample-content-removable`** asserts that the sample content really does come **out**
+  with the flag. `DEMO_FILLERS` was turned on temporarily and explicitly — *"I will eventually
+  remove the examples before the app goes live"* — and the flag's own comment states the removal
+  contract in one sentence: *"That is the whole switch."* Rules 1-3 check that: every promised
+  constant is initialised through a `DEMO_FILLERS` conditional whose OFF branch is **empty** (so
+  the gate is at the SOURCE and every consumer inherits it), the registry is not stale, and nothing
+  is gated that the guard does not know about. Static (Babel over the two app files), so it sits in
+  `npm run build`.
+  - **ALL THREE OF THOSE RULES KEY ON A `DEMO_FILLERS` MARKER, SO UNGATED SAMPLE CONTENT IS
+    INVISIBLE TO THEM BY CONSTRUCTION.** A constant that is ungated entirely has no marker for the
+    traversal to find, and that is not a hypothetical gap: `notifs`, `crews`, `logs`, `msgs`,
+    `friendReqIn`, `contribs` and sixteen more start populated and are gated by nothing.
+  - **They are not a defect, because there is a SECOND mechanism, and the app says so at the reset
+    itself**: *"STARTING VALUE of this app's state, gated by nothing (DEMO_FILLERS does not cover
+    them) … Keyed on the SESSION rather than on a build flag."* The flag covers a **logged-out
+    demo**; the `if(uid){…}` sign-in reset covers a **real account**. Two complementary mechanisms,
+    and only one of them was checked.
+  - **WHAT WOULD BE LIVE is a seeded `useState` that is ungated AND missing from the reset.** A
+    real signed-in climber would keep seeing it beside their own rows — every hydration path here
+    is **additive** (`concat`, `new Set([...seed, ...db])`), so no amount of real data displaces
+    it. That is the **#735** shape — seed history attributed to a real account — arriving through a
+    different door.
+  - **Section 4 ships GREEN and its whole job is the NEXT one.** Measured: **22** ungated seeded
+    declarations, **21** cleared by the sign-in reset, and **1** declared in `NOT_SEED_CONTENT`
+    (`filters` — route-search defaults, a UI starting position rather than sample data, which must
+    survive sign-in like any other preference). A stale entry there fails in both directions.
+  - **ITS OWN SUMMARY LINE FIRST CREDITED THE REGISTRY AS COVERAGE, and that is the vacuous
+    direction.** It printed *"22 cleared by the sign-in reset"* by computing `total - uncovered`,
+    which counts an **excused** declaration as a **cleared** one — so a growing exemption list
+    would have read as growing coverage. The two are counted separately now. *A count is only as
+    good as the thing it is a count OF*, applied to a guard's own output.
+  - The reset is located by **anchor**, fail-closed at three points (`setNotifs([])`, its `if(uid){`
+    head, and the brace walk closing), plus floors of 10 setters and 10 seeded declarations — with
+    a broken walk, every name reads as covered and the run prints a clean sweep.
+  - Injection-tested **2/2** (`scripts/oneoff/inject-sample-content-reset-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring `ClimbMatch.jsx` byte-identically: removing one setter from the reset fails naming the
+    declaration, and renaming the anchor fails **ANCHOR LOST** rather than passing over a reset it
+    could not read.
 - **`check:seed-only-surfaces`** asserts that every component reachable **only** through the
   `!USE_DB` branch is declared as production-dead. The Climbs tab is
   `USE_DB ? <DbAreaBrowser/> : <AreaView/>` and `deploy.yml` sets `VITE_USE_DB: "true"`, so the
