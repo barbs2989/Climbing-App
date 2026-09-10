@@ -16,7 +16,8 @@ const planLoose = (r) => plan(r) || obj(r.access);
 const safeLoose = (r) => safe(r) || arr(r.hazards).length > 0;
 
 const rows = await selectAll("routes",
-  "id,area_id,name,discipline,grade,source,road,access,approach,descent,approach_logistics,waypoints,rappels,hazards,obj_haz,watch_out,comms,bail",
+  // `source` was DROPPED from `routes` by #1020, and selecting a missing column is a 400.
+  "id,area_id,name,discipline,grade,road,access,approach,descent,approach_logistics,waypoints,rappels,hazards,obj_haz,watch_out,comms,bail",
   null, { pageSize: 1000 });
 console.log("routes scanned:", rows.length);
 const crag = rows.filter((r) => CRAG.has(catOf(r)));
@@ -33,8 +34,10 @@ console.log("[loose gate, for comparison] at least one:", crag.filter((r) => pla
 // WA subset, the state the product actually scopes to.
 const wa = either.filter((r) => /^wa_/.test(r.area_id) || /^wa_/.test(r.id));
 console.log("\nof those, WA:", wa.length);
-const enriched = either.filter((r) => r.source || (plan(r) && safe(r)));
-console.log("with a research `source` or both kinds of content:", enriched.length);
+/* The "has a research `source`" half of this test went with the column. What remains — carrying
+   BOTH kinds of content — is the half that was ever about the tab gate. */
+const enriched = either.filter((r) => plan(r) && safe(r));
+console.log("with both kinds of content:", enriched.length);
 console.log("\n--- 25 examples ---");
 for (const r of enriched.slice(0, 25)) {
   console.log([r.id.padEnd(46), r.name.slice(0, 34).padEnd(35), "disc=" + String(r.discipline).padEnd(6),

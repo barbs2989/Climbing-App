@@ -20,7 +20,9 @@ const catOf = (r) => r.discipline === "rock" ? String(r.style || "Trad").toLower
 console.log("scanning routes …");
 const rows = await selectAll(
   "routes",
-  "id,area_id,name,discipline,grade,grade_system,grade_num,rock_grade,pitches,length_m,gear,source,overview",
+  // `source` was DROPPED from `routes` by #1020 — "areas.source is not a source" — and selecting a
+  // column that does not exist is a 400, so this died on read. Nothing runs scripts/oneoff/.
+  "id,area_id,name,discipline,grade,grade_system,grade_num,rock_grade,pitches,length_m,gear,overview",
   null,
   { pageSize: 1000 }
 );
@@ -54,6 +56,5 @@ for (const r of hits.sort((a, b) => (amap[a.area_id]?.path || "").localeCompare(
     
     "gear=" + (Array.isArray(r.gear) ? r.gear.length : (r.gear ? 1 : 0)),
     "overview=" + (r.overview ? "yes" : "no"),
-    "src=" + r.source,
   ].join(" "));
 }

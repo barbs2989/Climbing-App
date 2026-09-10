@@ -41,6 +41,19 @@ try {
   baseSrc = execFileSync("git", ["show", "origin/main:RouteDetail.jsx"], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28 });
 } catch (e) { dead("could not read RouteDetail.jsx from origin/main: " + (e && e.message)); }
 if (baseSrc === nowSrc) dead("the working tree is byte-identical to origin/main — there is nothing to verify");
+/* ...AND THE WHOLE FILE BEING DIFFERENT IS NOT THE SAME AS THIS FUNCTION BEING DIFFERENT. Once
+   the widening merged, any unrelated edit to RouteDetail.jsx got past the check above and the run
+   ended on "the widening changed nothing it was aimed at" — a SPENT one-shot reported as a
+   VERIFY FAILED. Those want opposite reactions: one says go and look at the renderer, the other
+   says there is nothing left to compare. Compare the three lifted functions, not the file. */
+const SPENT = ["fmtSlingVal", "fmtSlingRack", "rackLines"]
+  .every((n) => lift(baseSrc, n, "origin/main") === lift(nowSrc, n, "working tree"));
+if (SPENT) {
+  console.log("SPENT — fmtSlingVal, fmtSlingRack and rackLines are identical to origin/main.");
+  console.log("The widening this verifies is already merged, so the before/after has nothing to");
+  console.log("compare. Re-run it against a base that PREDATES the next change to those three.");
+  process.exit(0);
+}
 
 const NOW = build(nowSrc, "working tree");
 const OLD = build(baseSrc, "origin/main");
