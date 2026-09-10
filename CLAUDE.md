@@ -4949,6 +4949,41 @@ the total when deciding where a new guard belongs.
   - It does **not** overlap `check:add-route-fields`, which guards the other end: what the form
     asks and whether its keys are in `SS`. A key can be in `SS` — so session-state merging
     works — and still be dropped by approval. That gap is exactly what shipped.
+  - **AND THERE IS A THIRD GAP BETWEEN THEM, WHICH `approach` FELL INTO: A KEY CAN BE IN `SS`,
+    SURVIVE APPROVAL, AND STILL BE THE WRONG SHAPE FOR THE COLUMN IT LANDS IN.** Add-a-climb's
+    Approach control was four chips writing an opaque bucket key — `u1` / `1to3` / `3to6` /
+    `6plus` — and this function inserts `v->>'approach'` **straight into `routes.approach`**,
+    which is **prose**: the walk-in narrative the Planner renders, and the column
+    `audit:approach-scope` and the whole `climbing_route` re-homing work are about. An approved
+    contribution would have rendered its APPROACH section as the literal text **`3to6`**.
+    - **`check:add-route-fields` asks whether a field is STORABLE — a column exists — never
+      whether the value FITS it.** That is the same distinction `check:field-renders` draws
+      against `check:token-boxes`: reaching a screen and fitting the element it reaches are
+      different questions, and here it is *having a column* versus *being the kind of thing that
+      column holds*.
+    - **Measured before acting, and the answer is why it was worth fixing NOW:** those four keys
+      appeared at **exactly one place in the whole app** — the chip array itself — and nothing
+      read them back; and the live catalog is **clean** (0 rows hold a bucket key, and 0 of 1,069
+      populated approaches are 8 characters or shorter,
+      `scripts/oneoff/probe-approach-bucket-keys-in-prose-column.mjs`). Latent, not yet damaging
+      — which by `check:field-renders`' own `SENTINELS` lesson is the best moment to fix a writer
+      and the worst moment to assume it is fine.
+    - **The control was REMOVED, not relabelled**, and that follows from `check:add-route-fields`
+      existing at all: it forbids asking a question you cannot store, so a chip left as a "hint"
+      that submits nothing fails it by design. Nothing is lost — no reader existed, and the
+      disciplines that need a number already have `dist`. **No migration is needed**: with the key
+      absent, `nullif(btrim(coalesce(v->>'approach','')),'')` is simply NULL.
+    - The **imperial labels** on those chips (`< 1 mi` … `6+ mi`) were the reason I opened the
+      file, and they are the smaller half — a control whose value lands in the wrong column is not
+      worth relabelling.
+    - **`source`/`sourceNote` are caught for free by the `SS` test and `approach` is NOT**, because
+      `approach` genuinely is in `SS`. So a re-added chip group would satisfy every other assertion
+      in that guard; it now has a dedicated one, and **that assertion fired on its own explanation
+      first** — the JSX comment left where the control used to be names all four keys, so a raw
+      scan reads the removal as a re-introduction. Comments are stripped, the trap
+      `check:ci-cancel` records. Injection-tested **4/4**
+      (`scripts/oneoff/inject-approach-bucket-cases.mjs`); **case 3 must stay SILENT** and is that
+      near-miss.
 - **`check:function-columns`** asks the general form of the question `check:approve-route-columns`
   rule 1 asks about one function: **does every column a stored function WRITES still exist?**
   #1020 dropped `routes.source`, swept the five call sites its header names, and missed
