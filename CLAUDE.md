@@ -5192,10 +5192,13 @@ the total when deciding where a new guard belongs.
   - **DO NOT MEASURE WHILE A SUITE IS RUNNING.** This file already says not to COMMIT mid-injection
     (#1190) and the same applies to reading: a run of this guard that overlapped a suite reported
     **7 rotted** against an app file the suite had mid-edit. Both hazards are the same one.
-  - **AMBIGUITY IS A READING LIST, NOT A DEFECT.** 18 anchors match more than once, and all were
-    read: each is either a deliberately global `split`/`replaceAll`, or a first-match `replace`
-    where any of the matches serves the case. A guard failing on those would argue with correct
-    work. Anchors from `split`/`replaceAll` are excluded outright, being global by construction.
+  - **AMBIGUITY IS A READING LIST, NOT A DEFECT, AND IT IS REPORTED RATHER THAN COUNTED.** 18
+    anchors match more than once. Anchors from `split`/`replaceAll` are excluded outright, being
+    global by construction; of the rest, the **7 present before the `edit:` shape was covered were
+    read** and every one is a first-match `replace` where any of the matches serves the case. The
+    other 11 are NOT claimed to have been read — which is exactly why they print as a list for a
+    person rather than failing the build. **A guard failing on these would argue with correct
+    work**, and a count here would imply a verdict nobody has reached.
   - Fails **closed** three ways, each of which otherwise prints identically to a clean sweep: fewer
     than 50 suites walked, fewer than 250 cases or 300 anchors parsed (the conventions could be
     renamed out from under it), and any anchor it cannot resolve — an unreadable case is reported,
