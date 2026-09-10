@@ -39,6 +39,7 @@ import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
 import { appSources } from "./lib/guard-sources.mjs";
+import { reachableVerificationTypes } from "./lib/verification-reach.mjs";
 
 const GUARD = "check:profile-claims";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -220,12 +221,39 @@ else {
   else if (/verified/.test(ve.cond)) ok(`"Verify email" is gated on ${ve.cond}`);
   else fail(`"Verify email" carries a condition that does not mention verified: ${ve.cond}`);
 
-  // Over-reach in the other direction: gating these would hide advice that is always valid.
-  for (const label of ["Log a route", "Add a cert"]) {
-    const e = entries.find((x) => x.label === label);
-    if (!e) fail(`the "${label}" entry is gone`);
-    else if (e.cond === null) ok(`"${label}" stays unconditional`);
-    else fail(`"${label}" gained a condition (${e.cond}) — it is always worth doing`);
+  // Over-reach in the other direction: gating this would hide advice that is always valid.
+  {
+    const e = entries.find((x) => x.label === "Log a route");
+    if (!e) fail('the "Log a route" entry is gone');
+    else if (e.cond === null) ok('"Log a route" stays unconditional');
+    else fail(`"Log a route" gained a condition (${e.cond}) — it is always worth doing`);
+  }
+
+  /* "ADD A CERT" IS DERIVED, NOT PINNED — and this replaces a STALE assertion rather than adding
+     one. Until #1676 this list sat under the CLIENT score, whose model counts
+     `(c.certifications||[]).length`, so the row genuinely raised the number and demanding it stay
+     unconditional was right. Pointing the card at the SERVER score falsified that without touching
+     this file, and the guard went on FORBIDDING THE FIX — an assertion kept past the fact it
+     describes, the shape check:policy-claims §3 already records, this time inside a guard.
+     The rule now asks the migrations: a certification is scored off `verification_records` at
+     status='verified', so the row may only be offered where something can actually write one. Ship
+     that definer and this flips by itself and demands the row back. */
+  const { types: reachable, scanned } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
+  if (scanned < 20) fail(`only ${scanned} migrations scanned — the reachability parse is broken`);
+  else if (!reachable.size) fail("no verification type parsed as reachable at all — a broken scan, not a finding");
+  else {
+    const certEarnable = reachable.has("member_club") || reachable.has("guide_certified");
+    const e = entries.find((x) => x.label === "Add a cert");
+    if (!e) fail('the "Add a cert" entry is gone');
+    else if (certEarnable && e.cond !== null)
+      fail(`a credential CAN now be verified (${[...reachable].join(", ")}) but "Add a cert" is gated on ${e.cond} — it raises the score again`);
+    else if (certEarnable) ok('"Add a cert" is unconditional, and a credential can now be verified');
+    else if (e.cond === null)
+      fail('"Add a cert" is UNCONDITIONAL while nothing in the app can verify a credential — under "Raise it with:" it names a step that cannot be taken');
+    else if (/uid/.test(e.cond))
+      ok(`"Add a cert" is gated on ${e.cond}, and no migration can verify a credential`);
+    else
+      fail(`"Add a cert" carries a condition that does not turn on the signed-in model: ${e.cond}`);
   }
 
   if (filtered) ok("the list is filtered on that condition before rendering");
@@ -237,6 +265,51 @@ else {
 if (/if\(!ME\.verified\)gaps\.push\(/.test(appSrc))
   ok("CONTROL — Home's setup checklist still gates its verify row on !ME.verified");
 else fail("CONTROL — Home no longer gates its verify row; re-check which surface is right");
+
+/* --------------------------------- section 4: the trust badge names inputs a climber can supply */
+
+console.log("\n--- the trust badge does not name an input nothing can grant ---");
+
+/* SAME ROOT CAUSE AS SECTION 3, ON THE BADGE SHOWN BESIDE EVERY CLIMBER. Its tooltip read
+   "Trust score (0-100): built from ID verification, partner vouches, belay catches logged, climbs
+   logged and certifications" — leading with the two components of the server model that are scored
+   off `verification_records` at status='verified' and are therefore 0 for everybody, forever.
+   Derived from the migrations for section 3's reason: the day a definer can attest an ID, naming it
+   becomes correct and this stops complaining without anyone editing the rule. */
+const badge = coreSrc.match(/function TrustBadge[\s\S]{0,400}?title="([^"]*)"/);
+if (!badge) fail("ANCHOR LOST: could not read TrustBadge's tooltip — this section is blind");
+else {
+  const tip = badge[1];
+  const { types: reach2, scanned: scanned2 } = reachableVerificationTypes(path.join(ROOT, "supabase", "migrations"));
+  if (scanned2 < 20 || !reach2.size) fail("the reachability parse is broken — section 4 proved nothing");
+  else {
+    const named = [
+      ["ID verification", /\bID verification\b/i, "id"],
+      ["certifications", /\bcertificat/i, "member_club"],
+    ];
+    for (const [what, re, type] of named) {
+      const earnable = reach2.has(type) || (type === "member_club" && reach2.has("guide_certified"));
+      if (re.test(tip) && !earnable)
+        fail(`the tooltip names ${what} as what builds the score, and nothing in the app can verify one`);
+      else if (re.test(tip)) ok(`the tooltip names ${what}, which IS now verifiable`);
+      else ok(`the tooltip does not name ${what}`);
+    }
+
+    /* NON-VACUITY. Every assertion above is satisfied by an empty tooltip, so the badge must still
+       say what the score is built from — at least three things a climber can actually move. */
+    const earnableWords = [/vouch/i, /belay|catch/i, /climb/i, /condition|report/i, /email/i, /time on/i];
+    const hits = earnableWords.filter((r) => r.test(tip)).length;
+    if (hits >= 3) ok(`...and still names ${hits} inputs a climber can move`);
+    else fail(`the tooltip names only ${hits} earnable input(s) — it has been emptied rather than corrected`);
+
+    /* A HAND-TYPED SCALE BOUND IS A HAND-COPY, and this one was wrong twice: the model caps at 99,
+       and only 84 of its 104 points can be earned at all. Any literal range typed here is a claim
+       nobody re-derives — measure it instead. */
+    const range = tip.match(/\(\s*0\s*[-‐-―]\s*\d+\s*\)/);
+    if (range) fail(`the tooltip states a hardcoded range ${range[0]} — the earnable maximum is derived and moves with the migrations`);
+    else ok("the tooltip states no hardcoded range");
+  }
+}
 
 console.log(bad
   ? `\n${GUARD}: ${bad} problem(s) — a profile surface is claiming something the app knows is untrue.`
