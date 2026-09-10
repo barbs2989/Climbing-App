@@ -2397,6 +2397,39 @@ the total when deciding where a new guard belongs.
     "miles" label) and was **my own branch being behind main**, which is the `check:column-drift`
     lesson exactly: *a stale tree is indistinguishable from an undescribed defect.* **Re-read
     `git log origin/main` before believing a finding in a long-running branch.**
+  - **AND A SEVENTH LANDED THE SAME DAY, WHICH IS THAT WARNING PAYING OUT IMMEDIATELY.** The entry
+    above says to re-check for new members rather than quote the count, and `profile` is one: three
+    sites rendered a raw number beside a hardcoded imperial unit — `FullProfile`'s header
+    (`{dist.toFixed(1)} mi away`), its COMPATIBILITY WITH YOU card (`… miles away`, a second
+    spelling of one unit inside one component), and `lib/FireNearRoute.jsx`'s overflow line
+    (*"and N more within {radiusMi} miles"*).
+    - **EACH HAD A CORRECT SIBLING BESIDE IT**, which is what makes them misses rather than a
+      missing convention: the partner card has always written `uDistMi(+dist.toFixed(1))+" away"`,
+      and the fire panel converts **every individual fire's distance two lines above** the one it
+      did not. `dist` is `distMiles(ME, climber)`, so it really is miles and nothing converted it.
+    - **The general rule is what earns the section**, rather than three hand-picked sites: *a value
+      rendered immediately before a literal `mi`/`ft`/`lb` cannot convert, whatever the setting
+      says.* Measured across all **17** app and `lib` sources — exactly these three, and **zero**
+      after. It is checked on every run, so the next one fails rather than being found by reading.
+    - **SOURCE-ONLY, and the reason is structural rather than laziness.** `FullProfile` ends in
+      `createPortal(…, document.body)`, which the server renderer refuses, and this guard bundles
+      react-dom **IN** — so the portal cannot be flattened from outside its bundle the way a
+      standalone probe does it. The RENDER proof therefore stays in
+      `scripts/oneoff/probe-full-profile-distance-honours-units.mjs`, which renders both units and
+      asserts **the number moves too** (195.8 mi → 315.1 km), not merely that a unit word swapped.
+    - **A rule that only demands ABSENCE is satisfied by deleting the feature**, so the section also
+      asserts both readouts are still REACHABLE — the header's `dist!=null&&isFinite(dist)` gate and
+      the compatibility card both have to survive.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-full-profile-distance-cases.mjs`), each case
+      naming **which** of the two checkers must react, because requiring both everywhere would be
+      wrong: the probe does not render the fire panel, and only the render can see a number that
+      failed to convert. **Case 5 must stay SILENT in both** — `uDistMi(dist)` is a different
+      rounding, not a units defect, and firing on it would forbid a correct refactor.
+    - **The probe's own non-vacuity check earned itself on its first run.** Its fixture picked the
+      first seed climber with coordinates, several of whom share Salt Lake City with `ME`, so
+      `distMiles` returned **0** — which renders `"0.0 mi away"` and `"0.0 km away"`, identical
+      strings, and would have failed the conversion assertion against a perfectly correct fix. It
+      takes the FARTHEST seed climber now.
   - **ONE BUNDLE, NOT SIX.** Each probe built its own esbuild bundle of the same 400kB file and two
     of them bundled `RouteDetail` separately. Merging is the `check:outage-copy` precedent, which
     folded two probes together for exactly this reason. Measured back-to-back on one box: the five
