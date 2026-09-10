@@ -120,7 +120,13 @@ const sentSet = new Set(sent);
 // entry -- that is the vacuous pass this block exists to prevent.
 const MUST_COVER = [
   "name", "discipline", "grade", "pitchCount", "length", "gain", "dist", "rock", "aspect",
-  "approach", "season", "commit", "descentText", "style", "haz", "gear", "beta",
+  // `approach` was REMOVED here deliberately, and must not come back as a bucket control. The
+  // form's Approach chips submitted an opaque key — "u1"/"1to3"/"3to6"/"6plus" — and
+  // approve_new_route (0135) inserts `v->>'approach'` straight into `routes.approach`, which is
+  // PROSE: the walk-in narrative the Planner renders. An approved contribution would have shown
+  // "3to6" as its APPROACH section. Nothing read those keys back, so nothing was lost. A future
+  // approach control has to write a SENTENCE, and then this name belongs here again.
+  "season", "commit", "descentText", "style", "haz", "gear", "beta",
   // the eight #794 added; every one of these was a question the form asked and could not store
   "protRating", "fa", "crux", "landing", "startType", "rap", "turn", "comms",
 ];
@@ -130,6 +136,31 @@ if (unpinned.length) {
        `collected, or it moved out of the top level where SS can apply it. If the removal ` +
        `was deliberate, drop the name from MUST_COVER in this file in the same commit.`);
 } else ok(`all ${MUST_COVER.length} pinned fields are still submitted at the top level`);
+
+// THE APPROACH BUCKET MUST NOT COME BACK, and nothing else here would notice if it did.
+// `source`/`sourceNote` above are caught for free because SS does not know them — but `approach`
+// IS in SS, so a re-added chip group would satisfy every other assertion in this file while
+// putting an opaque key back into a prose column. This is a STRING-level revert, which
+// audit:silent-reverts says in its own closing caveat it cannot see.
+//
+// The four keys are the fingerprint: they appeared at exactly ONE place in the whole app (the
+// chip array itself) and nothing ever read them back.
+{
+  // COMMENTS STRIPPED FIRST, and this fired on its own explanation before they were: the JSX
+  // comment left where the control used to be NAMES all four keys, so a raw scan reports the
+  // removal as a re-introduction. `check:ci-cancel` and `check:correction-readers` record the
+  // same trap. Block comments only — enough for four short quoted literals, and it cannot
+  // desynchronise on the apostrophes that make a full string-aware blanker unsafe here.
+  const nc = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
+  const [coreNC, appNC] = [nc(core), nc(app)];
+  const BUCKETS = ["u1", "1to3", "3to6", "6plus"];
+  const hits = BUCKETS.filter((k) => coreNC.includes(`"${k}"`) || appNC.includes(`"${k}"`));
+  if (!hits.length) ok("the approach bucket keys are gone (they wrote junk into a prose column)");
+  else fail(`the approach bucket key(s) ${hits.join(", ")} are back. They were removed because ` +
+    `approve_new_route inserts v->>'approach' straight into routes.approach, which is PROSE — the ` +
+    `walk-in narrative the Planner renders — so an approved contribution showed "3to6" as its ` +
+    `APPROACH section. An approach control has to write a SENTENCE, not a bucket.`);
+}
 
 // 1. every submitted key is one SS knows about, or is explicitly provenance
 // `source` and `sourceNote` were here until the Source step was removed from the form: the app
