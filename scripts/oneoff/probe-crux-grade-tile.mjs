@@ -18,7 +18,7 @@ import { createRequire } from "node:module";
 import os from "node:os";
 import path from "node:path";
 import { build } from "esbuild";
-import { shortGrade, gradeDetail } from "../../lib/grade.js";
+import { shortGrade, gradeDetail, cruxGrade } from "../../lib/grade.js";
 
 const root = new URL("../..", import.meta.url).pathname;
 
@@ -59,9 +59,16 @@ const rows = [...targeted, ...broad].filter(r => !seen.has(r.id) && seen.add(r.i
 // same shape it gets at runtime rather than the bare snake_case row.
 const camel = r => ({ ...r, rockGrade: r.rock_grade, iceGrade: r.ice_grade, alpineGrade: r.alpine_grade, cruxGrade: r.crux });
 
-// A commitment grade is a Roman numeral (optionally a range) with no climbing grade in it. That
-// is the shape the tile must never show, and it is what makes "worse" decidable rather than taste.
-const isCommitmentOnly = v => /^(Grade\s+)?[IVX]+(\s*[-\/]\s*[IVX]+)?$/i.test(String(v || "").trim());
+// A commitment grade is a Roman numeral — optionally a range, a "+"/"-" suffix, or the NCCS
+// "Alpine " prefix — with no climbing grade in it. That is the shape the tile must never show, and
+// it is what makes "worse" decidable rather than taste.
+//
+// This is the VERDICT's own copy and it is deliberately a copy: the thing under test cannot also
+// be the thing that judges it, or the measurement agrees with itself whatever the app does. What
+// it must NOT be is BEHIND the app — it was, for one commit: the shipped pattern was widened to
+// reach 20 more values ("IV+", "Alpine IV", an en-dash range) and this stayed narrow, so the probe
+// would have scored six real fixes as no change at all.
+const isCommitmentOnly = v => /^(?:Alpine\s+|Grade\s+)?[IVX]+[+-]?(\s*[-–—/]\s*[IVX]+[+-]?)?$/i.test(String(v || "").trim());
 
 const now = r => shortGrade(r.cruxGrade || r.grade);
 
@@ -80,13 +87,10 @@ const fixedA = r => (r.cruxGrade ? shortGrade(r.cruxGrade) : shortGrade(gradeLab
 // It cannot regress a route that already displays a climbing grade — the branch is only reachable
 // when the current value is commitment-only — and it introduces no new data source, so it cannot
 // inherit a disagreement between columns.
-const fixedB = r => {
-  const raw = r.cruxGrade || r.grade;
-  const s = shortGrade(raw);
-  if (!isCommitmentOnly(s)) return s;
-  const d = gradeDetail(raw);
-  return d ? shortGrade(d) : s;   // no remainder to show: keep what we had rather than blank it
-};
+// SHIPPED, so this now calls the REAL function rather than restating it. It was written out here
+// before `cruxGrade` existed; leaving the copy meant the probe measured a rule the app no longer
+// ran — the four-grade-parsers shape, in the instrument instead of the pipeline.
+const fixedB = r => cruxGrade(r.cruxGrade || r.grade);
 const fixed = fixedB;
 
 let changed = 0, betterN = 0, worseN = 0;
