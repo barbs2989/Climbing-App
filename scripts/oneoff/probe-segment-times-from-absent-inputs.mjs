@@ -19,7 +19,28 @@
 // missing? Report-only.
 import { selectAll } from "../lib/supabase-env.mjs";
 
-const rows = await selectAll("routes", "id,name,segments", "segments=not.is.null", { pageSize: 1000 });
+/* ASKED THE TABLE AND THE TABLE HAS NO SUCH COLUMN, which is a STRONGER answer than the one this
+   probe was written to look for — and it used to arrive as a crash. `routes` carries no
+   `segments`, `lib/db.js` never names it, and `scripts/schema-snapshot.json` does not list it;
+   the 14 hits in the source are all SEED route literals in ClimbMatchCore.jsx. `dbRouteToCamel`
+   spreads the raw row, so a column would reach the app if one existed — none does.
+
+   So the numbered segment timeline on the Planner, and both unguarded `scarfHrs` call sites
+   inside it, render for NOBODY in production: `deploy.yml` sets VITE_USE_DB=true, and every route
+   a real climber opens comes through that mapper. #641 one level down is unreachable rather than
+   merely unobserved. A 42703 is the answer here, not an error — it was the crash, and nothing
+   runs scripts/oneoff/, so it had been one since the probe was written. */
+let rows;
+try {
+  rows = await selectAll("routes", "id,name,segments", "segments=not.is.null", { pageSize: 1000 });
+} catch (e) {
+  if (!/42703|column .*segments.* does not exist/i.test(String(e.message))) throw e;
+  console.log("`routes` has no `segments` column at all — PostgREST answers 42703.");
+  console.log("So no DB route can carry one, the seed literals are the only source, and the two");
+  console.log("unguarded per-segment scarfHrs call sites are unreachable in production, where");
+  console.log("VITE_USE_DB=true. Latent by construction, not merely unobserved.");
+  process.exit(0);
+}
 if (!rows.length) {
   console.log("No route in the catalog carries a `segments` array at all.");
   console.log("The two unguarded call sites are therefore unreachable on real data — a latent shape,\nnot a live defect. Worth recording rather than fixing.");

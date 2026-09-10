@@ -31,8 +31,13 @@ function lift(name, anchor) {
 const WP_TYPE_MAP = lift("WP_TYPE_MAP", "const WP_TYPE_MAP=");
 const wpTypeSrc = lift("wpType", "function wpType(");
 const wpIsSrc = lift("wpIs", "function wpIs(");
+/* `trailheadPoint` gained a call to `wpPlaced()` after this probe was written (#1213/#1215 routed
+   every branch through it), so the lift stopped being self-contained and the run died with
+   "wpPlaced is not defined". Nothing runs scripts/oneoff/, so it had been red ever since — the
+   shape this repo records for its own one-off corpus. Lift the dependency too. */
+const wpPlacedSrc = lift("wpPlaced", "export function wpPlaced(").replace(/^export /, "");
 const thSrc = lift("trailheadPoint", "function trailheadPoint(");
-const mod = `${WP_TYPE_MAP}\n${wpTypeSrc}\n${wpIsSrc}\n${thSrc}\nexport {trailheadPoint,wpIs};`;
+const mod = `${WP_TYPE_MAP}\n${wpPlacedSrc}\n${wpTypeSrc}\n${wpIsSrc}\n${thSrc}\nexport {trailheadPoint,wpIs};`;
 const tmp = new URL("./.trailhead-lift.mjs", import.meta.url).pathname;
 fs.writeFileSync(tmp, mod);
 let trailheadPoint, wpIs;

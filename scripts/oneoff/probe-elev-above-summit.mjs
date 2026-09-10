@@ -90,6 +90,22 @@ console.log(`\nworst 25 by margin:`);
 for (const h of [...byRoute.values()].sort((a, b) => b.over - a.over).slice(0, 25))
   console.log(`  +${String(h.over).padStart(5)} ft  ${h.id.padEnd(44)} [${h.i}] ${String(h.type || "?").padEnd(10)} ${String(h.name || "").slice(0, 30).padEnd(30)} ${h.e} vs summit "${String(h.sName || "").slice(0, 22)}" ${h.sE}`);
 
+/* NON-VACUITY. This used to demand wa_soviet_route specifically, which was a claim about one ROW
+   rather than about the scan — and the row was REPAIRED (scripts/oneoff/fix-soviet-route-summit-order.mjs
+   put its Southwest Peak summit at index 6 and the Northeast Ridge traverse at 7, which is what
+   the prose always said). So the self-check began reporting "the probe is broken" about a probe
+   that was working and a route that had been fixed, and nothing runs scripts/oneoff/, so it said
+   so unread. A pinned example is stale bookkeeping the moment somebody acts on it.
+
+   What is durable is that the scan finds the population at all: with zero hits every sentence
+   above is vacuous, and this file exists to RECORD a rejected detector, so a reader has to be
+   able to see it firing. Of the two genuinely-misordered routes the header names, one is repaired
+   and wa_mount_fury_west_west_ridge (+53 ft) is not — a per-route data question, not a sweep. */
+if (!byRoute.size) {
+  console.log(`\nself-check — the scan found NOTHING. Either the catalog changed shape or this stopped`);
+  console.log(`reading it; either way the verdict above is about nothing. Not a clean catalog.`);
+  process.exit(1);
+}
 const soviet = byRoute.get("wa_soviet_route");
-console.log(`\nself-check — wa_soviet_route is ${soviet ? `CAUGHT (+${soviet.over} ft at index ${soviet.i})` : "NOT CAUGHT, the probe is broken"}`);
-if (!soviet) process.exit(1);
+console.log(`\nself-check — ${byRoute.size} route(s) hit the rejected gate, so the record above is legible.`);
+console.log(`  wa_soviet_route: ${soviet ? `still caught (+${soviet.over} ft at index ${soviet.i})` : "repaired — see fix-soviet-route-summit-order.mjs"}`);
