@@ -2346,8 +2346,18 @@ the total when deciding where a new guard belongs.
   - **A CAPABILITY claim is a different question from a CONTROL claim, and the sheet made one.**
     *"You can edit or clear anything from your profile and settings at any time"* was false twice
     over: `saveEdit` guards `name` and `username` with `if (d.x && d.x.trim())`, so a blank is
-    **skipped** and the old value survives, and the avatar has a change control and **deliberately**
-    no remove — so the sheet contradicted a product decision taken hours earlier. The assertion has
+    **skipped** and the old value survives, and the avatar had a change control and no remove — so
+    the sheet contradicted a product decision taken hours earlier.
+    - **THE AVATAR HALF IS CLOSED, AND THE PRODUCT DECISION WENT THE OTHER WAY.** The user was
+      asked directly and chose to **add the remove control** rather than narrow the sentence, so
+      *"clear anything"* is now true of the avatar. `removeProfileAvatar` is `removeProfilePhoto`'s
+      sibling — one column in, one column out, reference dropped before the storage object, throws
+      rather than resolving on a refusal — and `check:photo-removal` section 3 proves all of it by
+      EXECUTION plus the four-link control/prop chain by source. Injection-tested **6/6**
+      (`scripts/oneoff/inject-avatar-removal-cases.mjs`), one of which must stay SILENT.
+      **Do not re-record the absence as deliberate**; the `saveEdit` blank-guard half of this
+      sentence is untouched and is what the assertion still rests on.
+    The assertion has
     **two branches**, because a rewrite that stops over-claiming and also stops saying anything is
     the drift it exists to catch, and that would pass a test which only looked for the old
     sentence. Asserted as **source rather than rendered**: this sheet is inline in `App` rather
@@ -11923,6 +11933,33 @@ their own Résumé showed an amber **"Unverified"** chip.
   that **only** their own strip offers the control, and that a **failed** removal does not destroy
   the file. Static (a source read plus one execution against a stubbed transport), **1.15s**, so it
   sits in `npm run build`.
+  - **SECTION 3 COVERS THE AVATAR, WHICH IS THE PHOTO A CLIMBER CANNOT ESCAPE.** The strip gained a
+    remove control and the avatar did not — so the one image shown beside your name in partner
+    search, on every crew roster and against every comment could be REPLACED and never CLEARED.
+    The in-app privacy sheet meanwhile promises you can *"edit or clear anything from your profile
+    and settings at any time"*, which `check:policy-claims` already records as the sentence that
+    contradicted it. **The product decision went the other way when asked: add the control.**
+    - `removeProfileAvatar(userId, url)` is `removeProfilePhoto`'s sibling and inherits its whole
+      contract — **one column in, one column out** (never routed through `saveProfile`, which
+      PATCHes whatever object it is handed: the `check:profile-edit-gate` shape), the **reference
+      dropped before the storage object**, and a throw rather than a resolve on a refusal so no
+      "Photo removed" sits in front of a write that did not land. An RLS refusal rejects by matching
+      zero rows, which `.single()` surfaces as an error.
+    - **IT TAKES A userId RATHER THAN READING THE SESSION, and that was chosen FOR TESTABILITY.**
+      Mirroring `uploadProfilePhoto`'s own `auth.getSession()` read was the tidier-looking option
+      and would have made the function **unexecutable by this guard** — with no session in node it
+      throws "Sign in" before touching anything, so every property could only be asserted as source.
+      One prop on `EditProfileScreen` buys execution instead.
+    - **Removal acts IMMEDIATELY rather than on Save**, unlike every other field in that editor.
+      "Change photo" already uploads on selection, so the storage half was never drafted either —
+      and clearing your face off a partner-search screen is a PRIVACY action, where leaving it
+      pending behind a button the climber may never press fails in the wrong direction.
+    - Injection-tested **6/6** (`scripts/oneoff/inject-avatar-removal-cases.mjs`), each case proving
+      its edit landed by checksum and restoring byte-identically. **One must stay SILENT** — a
+      comment quoting the forbidden ordering. **Its first version matched the text the assertions
+      print when they PASS and reported WRONG FAILURE on all three cases against a guard firing
+      perfectly** — the mistake this file already records twice, made a third time. The harness now
+      **refuses any expectation that matches the clean run**, which is the structural fix.
   - **THE FEATURE EXISTS BECAUSE HIDING WAS NEVER A REMOVAL.** `PhotoStrip` offered `onAdd` and
     nothing to undo it, so a climber who regretted a photo could only **hide** it — and `0174` says
     in its own header that `photos_public` is **surfacing only, not access control**, so the row
