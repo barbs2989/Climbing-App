@@ -1239,7 +1239,7 @@ the total when deciding where a new guard belongs.
     local state renders perfectly — which is precisely why each needed its own census to find.
     `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
     performs an action and then asks whether it survived.
-  - **FOUR of the six are covered, and the count is stated in the script so the gap cannot quietly
+  - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
     opens, found by a **different** real account through `crew_listings` — the only test of that
@@ -1247,7 +1247,68 @@ the total when deciding where a new guard belongs.
     synthetic crew. The route share (#1576): a route sent from the real share sheet, asked of
     `messages`. Remove-friend (#1563): a connection removed in the real overlay, asked of
     `connections` and then of the screen after a reload, where
-    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source. The connect
+    button (#1569): a request one real account sends another, asked of `connections` — and it must be
+    **PENDING** — and then of the screen after a reload.
+  - **THE CONNECT PHASE MUST FOLLOW THE REMOVE-FRIEND PHASE, which is the ORDERING CONSTRAINT
+    INVERTED from the share phase's.** `friendState` reads `"friends"` while the connection exists,
+    so the profile renders a **disabled** *"✓ Friend"* and there is no Connect control to click at
+    all. Phase 3 must run while the pair is connected and phase 5 only once they are not, so the two
+    ordering constraints point in opposite directions and the sequence is forced rather than chosen.
+  - **PENDING IS THE HONESTY ASSERTION.** `0087`'s insert policy is
+    `auth.uid() = requester and status = 'pending'`, so a request landing as `accepted` would be one
+    climber putting themselves into another climber's friends without being asked. **The button is a
+    second, independent claim**: it must read *"Requested"* and be **disabled** after a reload,
+    because `friendState` is rebuilt from the database on every load and a control offering
+    *"+ Friend"* again tells a climber the request never happened.
+  - **THE SURFACE WAS CHOSEN BY A CONSTRAINT RATHER THAN BY CONVENIENCE.** `0110` defaults
+    `profiles.discoverable` to **false**, so the fixture's accounts are correctly absent from partner
+    browse and the obvious path is shut. The **crew roster** is the real one — you climbed with
+    somebody, you open them from the crew — and it needs no visibility flip, so nothing about the
+    fixture is manufactured to make this reachable.
+  - **THE ROSTER ROW IS FOUND STRUCTURALLY — the one member who is not "You" — and never by a name.**
+    It renders `p.name.split(" ")[0]`, the member's FIRST NAME, so the `@robinbelay` handle phase 4
+    read off the friends row matches nothing on this screen. That mix of `pubName` and a bare
+    `.name` across `FriendsList` and `CrewCard` is the **documented limit Privacy §3 states**, not a
+    defect this walk found. Re-deriving the rule (`fixture.mate.name.split(" ")[0]`) would make the
+    walk agree with itself whatever the app rendered, which is what reading a name off the screen
+    exists to avoid; "not me" needs no naming rule at all.
+  - **THREE RUNS WERE SPENT ON CONFIDENT WRONG READINGS OF THIS ONE SCREEN — the four-attempts shape
+    this file records for `AreaLatest`, and every one was a pattern too narrow to see what was
+    there.** Recorded individually because they are three different narrownesses, not one mistake:
+    - **A call site rendering `pubName` was assumed to be the roster and is the INVITE PICKER** —
+      `connections.filter(c => !inCrew(c.id))`, i.e. climbers explicitly NOT in the crew, collapsed
+      behind *"+ Add"*. Both surfaces call `onViewMember`; only one is the roster.
+    - **`grep "toggleC()"` found one call site and concluded a COLLAPSED crew card can never be
+      expanded** — which would have been a real defect. The collapsed card's control is
+      `onClick={toggleC}`, a **reference rather than a call**, labelled *"View plan ▾"*. A grep for
+      an invocation cannot see a handler passed by name.
+    - **The heading carries `textTransform:"uppercase"` and `innerText` returns the CSS-TRANSFORMED
+      text** — it reads `"CREW · 2 MEMBERS"`, so `/^Crew · \d+ member/` matched nothing while the
+      roster was on screen the whole time. This file already records that trap for `check:ui`'s
+      `PEOPLE YOU'VE CLIMBED WITH`, and it was walked into anyway.
+    - **And `find` took the FIRST heading when the fixture renders TWO crew cards** (the shared crew,
+      and the one the mate owns where this account is only INVITED), so a roster holding no other
+      member answered for a page where the mate's row sat further down. It reads every card now.
+  - **A MISS NOW CARRIES THE SCREEN, and the instrumentation gap was the expensive part.** The first
+    diagnostic was added to the no-heading branch and NOT to the zero-rows branch, so the next
+    failure cost a full run to learn almost nothing. Both paths now report the card count, the labels
+    they saw and 400 characters of what was rendered — a further miss arrives as evidence rather than
+    as a fourth guess.
+  - Injection-tested **2/2** (`scripts/oneoff/inject-connect-request-journey-cases.mjs`), each case
+    proving its edit landed **by checksum**, restoring byte-identically, and judged on **which
+    assertion fired**. `write-gone` makes `sendConnectionRequest` unreachable with the optimistic
+    state and toast standing — the #1569 shape. **`hydra-gone` is the one that earns the reload
+    half**: it drops only the OUTGOING side of the connection hydration, so the row is written,
+    addressed correctly and pending — **every database assertion passes** — while the profile offers
+    *"+ Friend"* again on the next load. No table check can see that.
+    - **ONE CASE IS DELIBERATELY NOT WRITTEN: forcing the row to `accepted`.** RLS refuses it
+      outright, so the injection would fire *"NO connection row exists"* and read as a catch while
+      proving something else. The policy makes that defect unreachable from a client, which is worth
+      recording rather than faking.
+    - **Do not pipe this suite through `tail`.** The per-case verdicts ARE the deliverable, and a
+      truncated view leaves the run's own accounting (`N/N behaved as declared`) as the only
+      evidence — which is sound, and is not the same as having read each verdict.
   - **THE SHARE PHASE MUST PRECEDE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing
     rather than tidy.** The share sheet's pool is `connections` **plus seed `CLIMBERS`**, and a
     seed climber's id is an **integer** — `sendMsg` gates its write on `isDbId(pid)`, so sending
