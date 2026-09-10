@@ -3248,6 +3248,47 @@ the total when deciding where a new guard belongs.
     id absent from `CLIMBERS`, so even the friend half could exceed its own list. The badge counts
     `_notifRequests.length` now — **the same array the panel is handed**, so the number and the list
     cannot disagree by construction.
+  - **AND A THIRD CONTROL OPENED THAT SAME PANEL WHILE COUNTING HALF OF IT — the bell fix
+    enumerated one control and there were two.** Home's alerts dropdown lists
+    `mergedNotifs.slice(0,8)` and closes with **"View all N alerts"**, which does not expand the
+    dropdown: it calls `setNotifOpen(true)` and **leaves** for `NotifPanel`, which is handed
+    **both** `_notifRequests` and `mergedNotifs`. The N counted only the second. So on the seeded
+    demo Home rendered a red **15** on the bell and **"View all 14 alerts"** inches below it, both
+    leading to one 15-row panel. *An instance fixed by hand is not a class closed*, and the
+    enumeration that would have caught it is the one this file keeps recording: list the controls
+    that reach the thing, not the ones you fixed.
+    - **FOUND BY READING A FRESH CI `ui-screens` CAPTURE**, which is the third finding that
+      technique has produced. The tell was the header strip reading `★ 4 15 2` — the saved-climbs
+      badge, the **bell badge** and the calendar badge — against *"Alerts · 14 new"* on the same
+      screen. **Identify an unexplained number before dismissing it**: two of those three were
+      immediately explicable and the middle one was the defect.
+    - **THE COUNT DESCRIBES THE DESTINATION, because the control is a "go to the full list" one.**
+      Its handler closes the dropdown, so *"view all N of these"* is not a reading the app
+      supports — and the 8-row cap already means the number is promising more than is on screen.
+    - **THE GATE MOVED WITH IT, and that is the half a count-only fix leaves behind.** The
+      condition was `mergedNotifs.length>8` — one list — while the number now describes two, so
+      the control's condition and its count would have been about different things: this defect
+      one level down. Both are now the same derivation (`_all > _shown`).
+    - **Section 3 is SCOPED TO THE ALERTS BLOCK, not to the expression that happens to wrap the
+      control today.** A first version searched backwards for the enclosing `(function(){` — which
+      exists *only because the fix put one there* — so against the real historical defect it scoped
+      the wrong expression and died **fail-closed** instead of naming it. **A guard that cannot
+      fail on the defect it was written for is not a guard**, and only the injection said so.
+    - **The anchor is the NOUN (`" alerts"`), never `"View all "`** — that phrase is shared with
+      the *Past crews* control, and the first version died `ambiguous` on it. A SILENT case pins
+      that editing the sibling changes nothing here.
+    - **THE "refuse an expectation that matches the CLEAN run" GUARD IS DELIBERATELY ABSENT FROM
+      THIS SUITE, and trying it is what established why.** This guard prints the array's NAME on
+      its `ok` line and its `FAIL` line alike, so every correct expectation legitimately appears in
+      a green run — wired in, it refused a **pre-existing, correct** case. What protects against a
+      needle written against passing text is judging on **FAIL lines only**, which this harness
+      already did. Same reasoning `check:visibility-switches`' sibling suite records.
+    - The floor rose **6 → 11**, two below a clean run's 13: at 6, deleting section 3 landed on
+      **10** and passed, which is precisely what a floor is for.
+    - Injection-tested **12/12** (`scripts/oneoff/inject-count-matches-its-list-cases.mjs`), each
+      case proving its edit landed **by checksum** and restoring the file byte-identically. Case 4
+      is the real defect **spliced back verbatim**. **Two must stay SILENT** — a reworded label
+      (a guard pinned to one phrasing forbids improving the copy) and the Past crews control.
   - **WIDENING THE PANEL WOULD BE THE OTHER FIX AND IS NOT THIS ONE.** Making `NotifPanel` list crew
     invites and group requests is a change to what that screen is; making the badge stop promising
     them is not. Recorded so the smaller fix is not read as a verdict on the larger question.

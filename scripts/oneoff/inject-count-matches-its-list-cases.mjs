@@ -16,6 +16,20 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const APP = path.join(ROOT, "ClimbMatch.jsx");
 const sum = () => crypto.createHash("sha256").update(fs.readFileSync(APP)).digest("hex");
 
+// The "View all N alerts" control exactly as it stood before the fix: the count is the notifs
+// array alone, over a panel that also renders the requests. Spliced back rather than paraphrased,
+// so case 4 reproduces the shipped defect rather than something that resembles it.
+const VIEW_ALL_STYLE = 'style={{width:"100%",background:"none",border:"none",color:C.blue,fontSize:12.5,fontWeight:700,cursor:"pointer",padding:"6px 0",textAlign:"left"}}';
+const PRE_FIX_VIEW_ALL = '{mergedNotifs.length>8?<button onClick={()=>{setAlertsOpen(false);setNotifOpen(true);}} '
+  + VIEW_ALL_STYLE + '>{"View all "+mergedNotifs.length+" alerts"}</button>:null}';
+const replaceViewAll = (s, withText) => {
+  const a = s.indexOf("{(function(){/* This button LEAVES");
+  if (a < 0) return s;
+  const e = s.indexOf(":null;})()}", a);
+  if (e < 0) return s;
+  return s.slice(0, a) + withText + s.slice(e + ":null;})()}".length);
+};
+
 const CASES = [
   {
     name: "reqn-misses-db-crew-invites",
@@ -68,7 +82,50 @@ const CASES = [
     edit: (s) => s.replace("{(!reqN&&", "{(!reqN&&!somethingElseEntirely.length&&"),
     expect: null,
   },
+  {
+    name: "view-all-counted-only-the-notifs",
+    why: "REAL DEFECT 4: the bell read 15 and the button below it said \"View all 14 alerts\" about the same panel",
+    edit: (s) => replaceViewAll(s, PRE_FIX_VIEW_ALL),
+    expect: /never counts _notifRequests/,
+  },
+  {
+    name: "gate-and-count-ask-about-different-lists",
+    why: "the number describes the panel while the condition beside it asks about one of its two lists",
+    edit: (s) => s.replace("return _all>_shown?", "return mergedNotifs.length>8?"),
+    expect: /describe two different lists/,
+  },
+  {
+    name: "requests-counted-only-in-a-comment",
+    why: "presence is not use — a comment naming the array must not read as counting it",
+    edit: (s) => s.replace("_all=_notifRequests.length+mergedNotifs.length",
+      "_all=mergedNotifs.length/* _notifRequests is what the bell adds */"),
+    expect: /never counts _notifRequests/,
+  },
+  {
+    name: "SILENT-label-reworded",
+    why: "MUST PASS — a guard pinned to one phrasing forbids improving the copy",
+    edit: (s) => s.replace('{"View all "+_all+" alerts"}', '{"See all "+_all+" alerts"}'),
+    expect: null,
+  },
+  {
+    name: "SILENT-the-past-crews-control-changed",
+    why: "MUST PASS — a sibling control sharing the words \"View all\" opens somewhere else entirely",
+    edit: (s) => s.replace('"View all "+pastCrews.length+" past crews"', '"Show all "+pastCrews.length+" past crews"'),
+    expect: null,
+  },
 ];
+
+// THE USUAL "refuse an expectation that matches the CLEAN run" GUARD IS DELIBERATELY NOT USED
+// HERE, and trying it is what established why: this guard prints the array's NAME on its ok line
+// and on its FAIL line alike ("accounts for myCrewInvitesQ" / "does not test it ... myCrewInvitesQ"),
+// so every correct expectation legitimately appears in a green run and the check refuses the whole
+// suite. What protects against writing a needle against PASSING text is that every case is judged
+// on FAIL lines only, which it is below.
+//
+// What IS checked first is that the guard is green on this tree at all: against a dirty tree no
+// case is attributable, and a MISS then reads as a guard defect.
+try { execFileSync("node", [path.join(ROOT, "scripts", "check-count-matches-its-list.mjs")], { cwd: ROOT, encoding: "utf8" }); }
+catch (e) { console.log("HARNESS BUG: the guard is not green on this tree, so no case is attributable"); process.exit(1); }
 
 let pass = 0, fail = 0;
 for (const c of CASES) {
