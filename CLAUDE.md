@@ -4147,45 +4147,6 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
-- **THE SEED-IDENTITY DEFECT IS BACK IN `FriendsList`, AND `check:seed-history` IS BLIND TO A THIRD
-  OF THE APP — the second half is the serious one.** The friends overlay's FRIENDS' RECENT ACTIVITY
-  section does exactly what #735 fixed on Home, both halves:
-
-      friends.some(function(c){return c.name===x.a.user;})   // which rows to show
-      var fr=friends.find(function(c){return c.name===x.a.user;});  // Kudos / Message / VOUCH
-
-  `friends` is the DB-backed connections list and `a.user` is a seed author's DISPLAY NAME, so a
-  real climber called "Maya Chen" is shown that seed climber's 11 climbs as her own activity — and
-  `fr` drives the row's **Vouch** button, so she could be vouched for off somebody else's climb.
-  `seedIdentity` appeared **zero** times within 4,000 characters of either site.
-  - **THE GUARD BUILT FOR THIS COULD NOT SEE IT, and that is measurable rather than inferred.**
-    `check:seed-history` blanks comments and strings in one stateful pass and then scans. That
-    blanker treats **every quote as a string delimiter**, and JSX body text is full of apostrophes
-    (`don't`), so it desynchronises — this file already records the same blanker returning *"0
-    overlays where raw returns 22"* for `check:overlay-discovery`. Measured on today's tree:
-
-        ClimbMatchCore.jsx   41.4% of the file wiped   54 of 283 `function NAME` declarations GONE
-        RouteDetail.jsx      46.2% wiped               33 of 129 GONE
-        ClimbMatch.jsx       37.4% wiped                2 of  10 GONE
-
-    Those 54 are at **column 0** — `GearTiers`, `CatchLedger`, `EmergencyRescueCard`, `SpeedProfile`,
-    `ReportStats`, `BailoutForm` — and a declaration at column 0 cannot be inside a string or a
-    comment. **Wiping comment text is the point; wiping CODE is a false pass**, and finding that
-    code is this gate's entire job.
-  - **IT WAS FOUND BY ACCIDENT, WHICH IS THE PART TO INTERNALISE.** An apostrophe in an unrelated
-    comment I had just written (`CI's own demo capture`) shifted where the desync lands, and the two
-    real sites became visible for the first time. Rewording my comment made the guard green again —
-    **the tempting fix, and the wrong one**: it would have hidden a live defect and left the gate
-    reporting a clean sweep. The apostrophe was kept until the sites were genuinely gated.
-  - **The gate goes AFTER the comparison** (`c.name===x.a.user&&seedIdentity(c)`), matching the form
-    `ClimbMatch.jsx` already uses, because the scan tests the **90 characters following** the match.
-    A gate written *before* it is correct code the guard rejects — worth knowing before "fixing" a
-    red by reordering the wrong way.
-  - **THE BLANKER IS NOT REWRITTEN HERE, deliberately.** It is shared with `check:dead-flag-gates`,
-    whose own entry records that a regex strip *"ate real code"* there, so a careless fix is worse
-    than the hole. It needs a JSX-aware pass and its own injection suite. Recorded as a measured
-    finding with the reproduction above rather than swept — and note what it implies: **every
-    verdict this gate has ever printed covers about two thirds of the app.**
 - **A NOTIFICATION THAT NAVIGATES RENDERED AS INERT, because one screen derived "where does this
   go" TWICE and the two disagreed.** `NotifPanel` had an if/else chain for the CLICK and a separate
   boolean for the AFFORDANCE:
