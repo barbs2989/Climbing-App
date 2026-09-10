@@ -1474,6 +1474,24 @@ the total when deciding where a new guard belongs.
     `climb_logs` holds exactly one row, owned by **CI Fixture Owner**, on
     `wa_mount_baker_north_ridge`, noted *"CI fixture log."* — inserted by
     `seed-ci-test-fixture.mjs`, which has done so all along.
+    - **THAT CORRECTION WAS TRUE OF THE TABLE AND FALSE OF WHAT THE APP COUNTS, so #1467's original
+      reason was right after all.** Measured 2026-09-09: the row carries **`stars: null`**, and the
+      hydration splits `climb_logs` on exactly that column —
+      `if (row.stars == null) dbConds.push(item); else dbAscents.push(item);` — with only
+      `dbAscents` reaching `logs`. So the fixture's "logged climb" was a CONDITIONS REPORT,
+      `logs.length` was 0, and Profile read **"0 Climbs logged"** on a healthy run. *"0 logged"
+      really did appear in BOTH runs*, which is what makes it unmeasurable, exactly as that commit
+      said. **Having a ROW is not having a LOGGED CLIMB** — the correction settled the wrong
+      artifact, which is this file's own *ask what a count is a count OF* lesson landing on a
+      correction rather than on an audit.
+    - **The fixture was writing a state the app's own form cannot produce**, which is why nothing
+      noticed: `LogAscent` defaults `stars` to 5 and sends `undefined` only for a scout/"Conditions"
+      report, so a `tick_type:"lead"` with null stars is unreachable through the UI. The seeder now
+      writes `stars: 5`. **An existing fixture row is NOT updated by re-running the seeder** (it
+      skips on its `user_id`+`route_id` filter), so the LIVE row was patched by hand at the same
+      time (`stars: 5`, verified by read-back — a 200 is not evidence the data changed). The durable
+      account now has a real logged climb, which is what makes the Profile tile measurable at all. Same class as
+      [[the-fixture-manufactured-a-state-signup-cannot]].
     - **So the disagreement is REAL and its cause is UNKNOWN.** Recording it that way is the point:
       a plausible mechanism that has not been measured is a hypothesis, and this file already
       records three of those shipping as facts. The likeliest remaining candidate is the settle —
