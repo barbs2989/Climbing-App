@@ -1242,7 +1242,7 @@ the total when deciding where a new guard belongs.
     local state renders perfectly — which is precisely why each needed its own census to find.
     `check:signed-in` walks an account that ALREADY OWNS THINGS and asserts what renders; this one
     performs an action and then asks whether it survived.
-  - **FOUR of the six are covered, and the count is stated in the script so the gap cannot quietly
+  - **FIVE of the six are covered, and the count is stated in the script so the gap cannot quietly
     stall.** Onboarding (#1576): disciplines and a grade typed into the real modal, read back out of
     `profiles` **and** off the Profile tab after a reload. The crew (#1554): a row one real account
     opens, found by a **different** real account through `crew_listings` — the only test of that
@@ -1250,7 +1250,68 @@ the total when deciding where a new guard belongs.
     synthetic crew. The route share (#1576): a route sent from the real share sheet, asked of
     `messages`. Remove-friend (#1563): a connection removed in the real overlay, asked of
     `connections` and then of the screen after a reload, where
-    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source.
+    `scripts/oneoff/probe-remove-friend-persists.mjs` is scoped to the handler's source. The connect
+    button (#1569): a request one real account sends another, asked of `connections` — and it must be
+    **PENDING** — and then of the screen after a reload.
+  - **THE CONNECT PHASE MUST FOLLOW THE REMOVE-FRIEND PHASE, which is the ORDERING CONSTRAINT
+    INVERTED from the share phase's.** `friendState` reads `"friends"` while the connection exists,
+    so the profile renders a **disabled** *"✓ Friend"* and there is no Connect control to click at
+    all. Phase 3 must run while the pair is connected and phase 5 only once they are not, so the two
+    ordering constraints point in opposite directions and the sequence is forced rather than chosen.
+  - **PENDING IS THE HONESTY ASSERTION.** `0087`'s insert policy is
+    `auth.uid() = requester and status = 'pending'`, so a request landing as `accepted` would be one
+    climber putting themselves into another climber's friends without being asked. **The button is a
+    second, independent claim**: it must read *"Requested"* and be **disabled** after a reload,
+    because `friendState` is rebuilt from the database on every load and a control offering
+    *"+ Friend"* again tells a climber the request never happened.
+  - **THE SURFACE WAS CHOSEN BY A CONSTRAINT RATHER THAN BY CONVENIENCE.** `0110` defaults
+    `profiles.discoverable` to **false**, so the fixture's accounts are correctly absent from partner
+    browse and the obvious path is shut. The **crew roster** is the real one — you climbed with
+    somebody, you open them from the crew — and it needs no visibility flip, so nothing about the
+    fixture is manufactured to make this reachable.
+  - **THE ROSTER ROW IS FOUND STRUCTURALLY — the one member who is not "You" — and never by a name.**
+    It renders `p.name.split(" ")[0]`, the member's FIRST NAME, so the `@robinbelay` handle phase 4
+    read off the friends row matches nothing on this screen. That mix of `pubName` and a bare
+    `.name` across `FriendsList` and `CrewCard` is the **documented limit Privacy §3 states**, not a
+    defect this walk found. Re-deriving the rule (`fixture.mate.name.split(" ")[0]`) would make the
+    walk agree with itself whatever the app rendered, which is what reading a name off the screen
+    exists to avoid; "not me" needs no naming rule at all.
+  - **THREE RUNS WERE SPENT ON CONFIDENT WRONG READINGS OF THIS ONE SCREEN — the four-attempts shape
+    this file records for `AreaLatest`, and every one was a pattern too narrow to see what was
+    there.** Recorded individually because they are three different narrownesses, not one mistake:
+    - **A call site rendering `pubName` was assumed to be the roster and is the INVITE PICKER** —
+      `connections.filter(c => !inCrew(c.id))`, i.e. climbers explicitly NOT in the crew, collapsed
+      behind *"+ Add"*. Both surfaces call `onViewMember`; only one is the roster.
+    - **`grep "toggleC()"` found one call site and concluded a COLLAPSED crew card can never be
+      expanded** — which would have been a real defect. The collapsed card's control is
+      `onClick={toggleC}`, a **reference rather than a call**, labelled *"View plan ▾"*. A grep for
+      an invocation cannot see a handler passed by name.
+    - **The heading carries `textTransform:"uppercase"` and `innerText` returns the CSS-TRANSFORMED
+      text** — it reads `"CREW · 2 MEMBERS"`, so `/^Crew · \d+ member/` matched nothing while the
+      roster was on screen the whole time. This file already records that trap for `check:ui`'s
+      `PEOPLE YOU'VE CLIMBED WITH`, and it was walked into anyway.
+    - **And `find` took the FIRST heading when the fixture renders TWO crew cards** (the shared crew,
+      and the one the mate owns where this account is only INVITED), so a roster holding no other
+      member answered for a page where the mate's row sat further down. It reads every card now.
+  - **A MISS NOW CARRIES THE SCREEN, and the instrumentation gap was the expensive part.** The first
+    diagnostic was added to the no-heading branch and NOT to the zero-rows branch, so the next
+    failure cost a full run to learn almost nothing. Both paths now report the card count, the labels
+    they saw and 400 characters of what was rendered — a further miss arrives as evidence rather than
+    as a fourth guess.
+  - Injection-tested **2/2** (`scripts/oneoff/inject-connect-request-journey-cases.mjs`), each case
+    proving its edit landed **by checksum**, restoring byte-identically, and judged on **which
+    assertion fired**. `write-gone` makes `sendConnectionRequest` unreachable with the optimistic
+    state and toast standing — the #1569 shape. **`hydra-gone` is the one that earns the reload
+    half**: it drops only the OUTGOING side of the connection hydration, so the row is written,
+    addressed correctly and pending — **every database assertion passes** — while the profile offers
+    *"+ Friend"* again on the next load. No table check can see that.
+    - **ONE CASE IS DELIBERATELY NOT WRITTEN: forcing the row to `accepted`.** RLS refuses it
+      outright, so the injection would fire *"NO connection row exists"* and read as a catch while
+      proving something else. The policy makes that defect unreachable from a client, which is worth
+      recording rather than faking.
+    - **Do not pipe this suite through `tail`.** The per-case verdicts ARE the deliverable, and a
+      truncated view leaves the run's own accounting (`N/N behaved as declared`) as the only
+      evidence — which is sound, and is not the same as having read each verdict.
   - **THE SHARE PHASE MUST PRECEDE THE REMOVE-FRIEND PHASE, and that ordering is load-bearing
     rather than tidy.** The share sheet's pool is `connections` **plus seed `CLIMBERS`**, and a
     seed climber's id is an **integer** — `sendMsg` gates its write on `isDbId(pid)`, so sending
@@ -3696,6 +3757,49 @@ the total when deciding where a new guard belongs.
     - It is **emphasis, never suppression**. Single-file removals are still printed in full, and the
       run still exits 0 — a removal is not a defect, and going red on a promotion would make the
       audit argue with correct work.
+    - **THE CONSOLIDATION ESCAPE DEPENDS ON THE COMMIT MESSAGE, AND ON 2026-09-09 THAT PUT MAIN RED
+      FOR THREE HOURS AND SIX MERGES.** The rule already excuses a commit that NAMES every file it
+      removes, on the stated reasoning that *"a consolidation names them because that is what its
+      commit message is FOR"* — so a consolidation that does **not** name them is indistinguishable
+      from a stale-base squash and trips the gate. **#1677 is that case**: it promoted six
+      `scripts/oneoff/` unit probes into `check:units` (852 lines, wired in `package.json` in the
+      same commit) and its message names **one** probe — the Chrome-driven one it KEPT. Every push
+      after it went red on a workflow whose own header exists to stop a red landing on *"whoever
+      merged next, which is whoever caused it"* — produced by the workflow, on six authors who had
+      not caused it.
+      - **It would not have cleared on its own.** The six adding commits sat at depth 8, 14, 30, 90,
+        107 and 117, and the fingerprint needs only **two** to survive — so it persists until the
+        shallowest leaves the 120-commit window, i.e. ~112 further merges.
+      - **`REVIEWED` is the escape for a commit already merged**, keyed on the **FULL sha** so an
+        entry can never reach a commit that has not happened yet. It **suppresses the gate and not
+        the row**: the finding still prints with its reason, because this rule is documented as
+        *emphasis, never suppression* and a reader who cannot see what was excused cannot check it.
+      - **An entry matching nothing is PRINTED AND NOT FATAL — a deliberate departure from this
+        file's own "a stale entry FAILS" idiom**, and the exception is worth reading before copying
+        either way. That idiom exists because a rotted declaration silently **excuses** something;
+        this one cannot, since it names one immutable sha and is inert the day its finding stops
+        being reported. What made a fatal version actually **wrong** rather than merely strict is
+        the **window**: run by hand at `--commits 20` the adding commits are out of frame, the
+        finding is correctly not reported, and a fatal rule then fails a **clean tree** for
+        bookkeeping. *"Not flagged"* and *"not in frame"* are indistinguishable from inside the
+        audit, so it says so rather than gating on it.
+      - **THE DURABLE CURE IS NOT THE MAP: name the files you delete in the commit message** and the
+        existing escape fires with no bookkeeping at all. The failure message now says so — it
+        printed the findings and **no repair**, which is the `check:column-drift` lesson (*it fired
+        correctly and prescribed the wrong repair*) in its harsher form, since the likeliest correct
+        answer here is the one a reader is least likely to reach for while looking at a message
+        about reverts. Three causes now, in likelihood order, with the promotion case second.
+      - Injection-tested **4/4** (`scripts/oneoff/inject-reviewed-gate-cases.mjs`), each case proving
+        its edit landed **by checksum** and restoring the file byte-identically. **The BASELINE case
+        is the load-bearing one** — this map makes a *passing* run the interesting one, so a suite
+        that only proved the gate can fail would say nothing about it. `entry-gone-gate-returns` is
+        the non-vacuity case, and `unmatched-entry-is-not-fatal` pins the paragraph above. The
+        harness refuses any expectation that already appears in the healthy run, the structural form
+        of a mistake this repo has made twice.
+      - Cases run at **`--commits 40`, measured rather than assumed**: three of the six adders sit
+        inside it, so *"several files added by several different commits"* still reproduces at a
+        third of the cost. If it stops reproducing, widen the window before believing the guard
+        changed.
   - **IT TRACKS `.yml` NOW, AND NOT DOING SO WAS A HOLE IN ITS OWN SUBJECT.** The extension list was
     `jsx|mjs|json|sql`, so a merge deleting a **workflow** was invisible — and CI wiring is the one
     kind of loss that reports nothing by itself: a guard whose workflow vanishes does not go red, the
@@ -9411,13 +9515,21 @@ the correction knows the screen is wrong, and they have no way to report it.
         The old `NOT_SLINGS` list was **deleted rather than left unused**: with one bullet per key
         there is no heading covering foreign gear for it to test, so it could only ever return 0,
         and *a counter that cannot fire reads as coverage*.
-      - **The 13 long bullets are not one class**, so there is nothing to sweep: 8 are genuine long
-        gear prose, 2 read a nested object out loud (`Crevasse rescue kit — pulley: 1, prusiks: 2,
-        purpose: …`), and **3 are commentary rather than gear** — which is where the real finding
-        was. `wa_rapple_grapple` renders *"fresh **MP source** broadens this to 'pro to 4 inches' —
-        retain the #1-3 structured list as primary, add one #4 as optional"* into a climber's RACK
-        box: an editor instructing the next editor, over a citation `audit:prose-citations` could
-        not see. See that audit's `MP` entry.
+      - **The 13 long bullets were not one class**, so there was nothing to sweep: 8 genuine long
+        gear prose, 2 reading a nested object out loud (`Crevasse rescue kit — pulley: 1,
+        prusiks: 2, purpose: …`), and **3 commentary rather than gear** — which is where the real
+        finding was. `wa_rapple_grapple` **rendered** *"fresh **MP source** broadens this to 'pro
+        to 4 inches' — retain the #1-3 structured list as primary, add one #4 as optional"* into a
+        climber's RACK box: an editor instructing the next editor, over a citation
+        `audit:prose-citations` could not see. See that audit's `MP` entry.
+        - **PAST TENSE BECAUSE IT IS FIXED, and this bullet read as live work for as long as it
+          was not.** #1680 replaced that value with *"Optionally one #4 to cover pro to 4 inches;
+          no pitons needed"* — verified against the live row, not inferred from the PR title — and
+          the citations entry records it. **13 → 12 there, and → 11 once the synonym widening
+          below shortened `wa_washington_ellinor_traverse_ridge`'s 123-character webbing bullet.**
+          A count quoted in prose is a hand-copy of a measurement: re-run
+          `measure-sling-rack-onscreen-quality.mjs` rather than trusting the number here, which
+          has now been stale twice in one day.
       - **THE SAME SCRIPT PRINTED `bullets reading out a raw key: 15` AND THE ENTRY ABOVE
         ACCOUNTED FOR 2, because it triaged the LONG bullets and these are SHORT.** *"Webbing —
         length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2"* is 88 characters,
@@ -9468,6 +9580,28 @@ the correction knows the screen is wrong, and they have no way to report it.
           the branch every other column's current-value line shares — the thing this repo keeps
           refusing to build. Inverting the pairs to *"1 pulley"* is worse still: the generic branch
           is column-blind, so it would render *"60cm length"* elsewhere.
+      - **AND THE RENDERER IS NOT THE SCREEN**, so `probe-rack-quantity-reads-as-prose.mjs` renders
+        the real `RouteDetail` over the ten changed rows and matches every bullet `rackLines`
+        produces — **14 bullets across 10 RACK boxes** — mimicking `dbRouteToCamel` (`slingRack`,
+        never the column name). Two traps this file already records were met head-on writing it:
+        - **`indexOf("RACK")` MATCHES THE `RACK` INSIDE `ROUTE TRACK`.** The first version sliced
+          its panel from there, so all ten routes "rendered a RACK box" whose contents were the
+          GPS-track panel — and every *is-absent* assertion passed on text that was never the rack.
+          The landmark is `/\bRACK\b/`, which is the substring rule `check:ui` states for exactly
+          this word.
+        - **A NEGATIVE-ONLY PROBE IS SATISFIED BY A BOX THAT RENDERED NOTHING.** *"No key name in
+          the panel"* was green before the positive assertion existed. Each row must now show the
+          text the renderer actually produces for it, and the run fails closed on zero bullets
+          checked.
+        - **WHICH TAB the box sits on is discipline-dependent** — `cragOnly` puts it on Overview
+          for a crag and on **Planner** for these alpine and scrambling rows — so the probe finds
+          it rather than asserting a tab. Asserting Overview reported 10 of 10 as missing.
+      - **A MEASURED NON-FINDING, so it is not re-derived**: every panel in that probe prints
+        *"Standard rack for this discipline — nobody has recorded what this route itself takes"*
+        above the route's own webbing, which reads as a caption contradicting its own list.
+        `rackGeneric` is `!routeRackFor(route)` and **routeRackFor never reads `slingRack`** — so
+        it is real in the fixture and unreachable in production: `measure-sling-rack-only-routes.mjs`
+        reports **0 of 242** sling_rack routes with nothing else feeding it. Do not "fix" it.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
@@ -9605,9 +9739,36 @@ the correction knows the screen is wrong, and they have no way to report it.
       climber's RACK box; both climber-facing facts survive as *"Optionally one #4 to cover pro to
       4 inches; no pitons needed"*, which also takes that bullet under the 120-character line
       (13 → 12).
-    - **THE OTHER 21 ARE NOT SWEPT, and that is the standing rule rather than a shortage of time.**
-      They are ordinary attributions welded into sentences that also carry the fact, and this file
-      records that only ~4% of this backlog was ever mechanical. **Report, do not sweep.**
+    - **THE REST WERE THEN CLOSED AS A REVIEWED BATCH, AND THE CLASS IS NOW EMPTY — 67 → 34, which
+      is exactly the pre-widening baseline** (`scripts/oneoff/redact-mp-abbreviation-citations-2.mjs`,
+      30 values; `scripts/oneoff/redact-mp-abbreviation-citations-3.mjs`, 1 more). So the widening
+      added 33 findings and all 33 are repaired; **zero `MP` survives anywhere in the audit's
+      output.**
+      - **"Report, do not sweep" forbids a SWEEP, not a reviewed batch**, and the distinction is the
+        whole method: all 30 were dumped in FULL and read one at a time, and each carries its own
+        declared `find`→`repl` with a written reason. They were not one shape — **12 attribution as
+        the VERB** (the publisher is the sentence's subject, so there is no trailing tag to lift),
+        **7 a sourcing-act prefix** (*"Confirmed on MP:"*), **6 DOCUMENTED NEGATIVES**, **4 safety
+        warnings**, and **3 analytics**.
+      - **The documented negatives are the ones a sweep would have damaged.** *"Not explicit on MP;
+        inferred standard…"*, *"MP does not publish a separate elevation figure"*, *"no
+        route-specific beta found beyond MP grade listing"* — the admission IS the content, so every
+        one keeps its hedge and loses only the publisher. Deleting it makes the record read **more**
+        certain than it is, which is worse than the leak.
+      - **A quotation cannot survive its speaker**, so quoted phrases are unquoted rather than
+        orphaned — *"MP notes those bolts were 'in really bad shape'"* becomes *"those bolts were in
+        really bad shape as of a 2024 report"*, keeping the date and the second-hand nature, since
+        *a report* is a category this audit deliberately does not treat as a source.
+      - **PRINTING THE RESULTING SENTENCE CAUGHT TWO DEFECTS THE find/repl PAIRS HID**, which is
+        this family's own rule earning itself: one `find` began after a comma and left *"sub-area,
+        ) — no separate…"* stranded, and one replacement capitalised after a semicolon. **A
+        checksum-style match proves an edit landed, never that it reads.**
+      - **AND THE BATCH'S OWN DUMP REPORTED A FALSE ZERO.** It carried a hand-written list of 29
+        columns and printed *"TOTAL remaining MP leaves: 0"* while `wa_safety_dance.descent` still
+        held one — the audit walks **32**, and the list had `descent_text` but not `descent`, two
+        spellings this file already records as a mirrored pair. `-3.mjs` reads `PROSE_COLS` **out of
+        the audit** and fails closed if it parses short. *A repair script's column list is a
+        clustering key, and a restated vocabulary is how this codebase got four grade parsers.*
     - **The applier's post-condition is what makes a batch in this family safe, and here it is
       sharper than usual**: every rewritten leaf is re-run through the audit's OWN needle, lifted by
       anchor — and that needle now knows MP, so a rewrite that merely moved the abbreviation is
@@ -10514,6 +10675,85 @@ their own Résumé showed an amber **"Unverified"** chip.
     its edit landed **by checksum** and restoring the file byte-identically; the over-reach case
     must fail on section 5, and a comment quoting the pre-fix expression must stay **SILENT**.
     The harness captures the clean run first and refuses any expectation that already matches it.
+- **...AND THE ENUMERATION STOPPED AT THE COMPONENT WHILE THE RULE DID NOT: TEN MORE READERS, IN
+  TWO FILES, OUTSIDE `CrewCard`.** Every sweep above was scoped to that component's local `roster`
+  — #1554 named four readers, #1647 read that list and found three, #1664 read THAT list and found
+  seven — so all fourteen fixes landed inside one component while `crew.members` is read whole in
+  ten other places — four in core (the Partners chip, the invite-to-your-crew cap filter, the inbox
+  preview, `isReady`) and six in `ClimbMatch.jsx`. **A closed list is only closed over the SCOPE somebody actually swept**, and
+  the scope was never stated. Fixed by exporting the rule (`crewInCrew` / `crewSize` /
+  `crewAskedToJoin`), the `seedIdentity()` shape this file already records: *it was inline before,
+  so it existed in exactly one place and every other reader had to re-derive it — and one did not.*
+  Here ten did.
+  - **FOUND BY READING A FRESH `ui-screens` CAPTURE, NOT BY DIFFING ONE**, which is what the note
+    on that technique says to do. Partners rendered Sam as **"✓ On crew"** for the Octopussy crew
+    while the Crew tab one tap away rendered Sam as **"Asked to join"** — two screens, one crew,
+    two answers, both from the same `crews` array. Nothing in the repo compares them.
+  - **THE WORST IS NOT A COUNT, and it is the twin of the `risks` fix #1664 made one component
+    over.** `safetyMembers` fed `analyzeAlignment`, which raises a **critical** flag —
+    *"Conservative and Aggressive members in same party. Explicit conversation required before
+    confirming."* — from every listed member's risk tolerance, and gates *"Team Ready to Climb"* on
+    all of them having answered the questionnaire. So **a stranger's REQUEST to join could put a
+    critical safety flag on your crew naming a conflict with somebody who is not on the trip, and
+    hold the ready state shut for as long as the request stood.** A false warning is how a real one
+    stops being read. Different screen, different variable, different FILE — which is precisely why
+    a sweep scoped to `roster` could not reach it.
+  - **`isReady` HAD IT TOO, so the Crew tab disagreed with itself.** The crew card's STEPS panel
+    read *"✓ Crew — Everyone has confirmed they're in"* off `inCrew` while `isReady` required every
+    `members` row to be `confirmed`, so the same crew badged **"Forming"** in the quick list. It has
+    the widest reach of any consumer here (the Ready badge, the profile invite list, the archive
+    test), which is why one line moved the most.
+  - **THE SIZE WAS WRONG TWICE OVER, and writing the rule once is what removed the second half.**
+    `members` carries a `climberId: 0` row on a DB-hydrated or app-created crew and **not** on three
+    of the five seed crews, so `members.length` is one convention and `members.length+1` is the
+    other and **each is wrong for half the data**. The invite prompt used the second: for
+    `crew_seed_octo` it read *"3/3 climbers"* — a requester counted, and **you counted twice** — for
+    a crew of one. The comment beside `activeCrewOthers` records fixing exactly that double-count in
+    the chat header (*"a crew of two people announced three"*) and it survived here. `crewSize()`
+    counts YOU once plus the others who are in, which is what every call site meant; every caller is
+    a crew you are in (*"one of your crews"*, *"crews you run"*), and that is asserted.
+  - **A REFUSAL WITH A FALSE REASON is worse than a wrong number.** The invite prompt answered
+    *"Sam is already in your crew for this climb"* and offered **Go to crew** — and the ACTION is
+    right, because accepting them is what you do there. Only the sentence was false, so only the
+    sentence changed. Same shape as `check:preview-claims`: make the copy describe what is true
+    rather than rewiring a control that already works.
+  - **THE INVITE BUTTON STAYS SUPPRESSED FOR A REQUESTER, DELIBERATELY.** The tempting reading of
+    this rule is *"they are not a member, so offer to invite them"*. Inviting somebody who has
+    already asked is the wrong action; accepting them is. So the chip says **"Asked to join"** in
+    amber — the crew card's own wording — and no new control was invented. **The same expression
+    does two different jobs** (*is this person on the crew* versus *should I offer to invite them*),
+    which is exactly why the enumeration matters more than the fix.
+  - **The CLOSED list is the useful one**, and it is written beside the helper rather than as a list
+    of what was fixed — the fixed list is what left readers behind three times. Five readers keep
+    the whole roster on purpose: the crew card's member **LIST**, the invite sheet's own pool and the
+    `addable` connections beside it (you must not be offered somebody who has already asked), the
+    per-crew **profile lookups** (you need their profile to draw the roster row), and the organiser's
+    **join-request** surface. Probe section 4 pins all five, and it is the load-bearing half: a rule
+    that only ever removes requesters is satisfied by removing them everywhere, which would hide a
+    requester from the organiser who has to accept them.
+  - **TWO THINGS ARE REPORTED, NOT FIXED, because each is a DIFFERENT rule and mixing them in would
+    make this change unreviewable.** The crew **chat** participant strip and header (`"You + N
+    climbers"`) list everyone, and `crews_messages`' select policy — read from `0042`, not from
+    prose — is `m.status = 'confirmed'` **or the creator**, so an `invited` member cannot read the
+    chat either. That is a stricter rule than *non-pending* and it is a claim about privacy, so it
+    wants its own change with the migration cited. And the **"Crew ready!" celebration** is a second
+    derivation of readiness sitting beside `isReady` with different guards; only its pending
+    blindness is fixed here, because consolidating it would change WHEN the celebration fires.
+  - `scripts/oneoff/probe-a-requester-is-not-on-the-crew.mjs` — 26 assertions, no browser, no DB. It
+    **lifts the three helpers from source** by balancing braces (a retyped copy would agree with
+    itself whatever the app did, which is the whole question), executes the rule, and asserts all
+    twelve readers as **SOURCE** beside it: a merge that keeps the helper and leaves one reader on
+    `crew.members` restores that reader's defect with every execution assertion still green.
+  - **The injection found a real robustness hole in the probe rather than in the app**, which is
+    what a suite is for. The lift anchored on `^function` at the start of a LINE, so a comment
+    written beside the helper made the probe report **ANCHOR LOST** — a probe refusing to run
+    because somebody documented the thing it checks, the `check:ci-cancel` trap. It balances braces
+    now, skipping string contents. Injection-tested **9/9**
+    (`scripts/oneoff/inject-requester-not-on-crew-cases.mjs`), each case proving its edit landed **by
+    checksum** and restoring the file byte-identically. **Two must stay SILENT**, and one case had
+    to be re-aimed at the probe's FAIL text rather than the text an assertion prints when it PASSES
+    — the mistake this file already records twice, made a third time and caught by the harness's own
+    refusal to accept an expectation that matches the clean run.
 - **THE "NEXT MEETUP" WAS THE EARLIEST ONE, NOT THE NEXT ONE — three copies of one expression, and
   the group calendar contradicted its own heading.** Both group surfaces rendered
   `(events[cl.id]||[]).slice().sort(byDate)[0]` under the label **"Next meet"**, with no test for

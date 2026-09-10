@@ -95,6 +95,57 @@ const FAIL_ON = new Set(String(arg("--fail-on", "")).split(",").map((x) => x.tri
    would argue with correct work — the exact failure this file warns about. */
 const FAIL_ON_SILENT = argv.includes("--fail-on-silent");
 const GATE = [];
+
+/* REVIEWED — a commit whose stale-base FINGERPRINT has been read and found to be correct work.
+   The file rule's discriminator is "several files added by several different PRs", and its own
+   comment already records the case it cannot separate structurally: a CONSOLIDATION removes
+   several files from several PRs too. That comment says what rescues one — "a consolidation names
+   them because that is what its commit message is FOR" — and on 2026-09-09 a consolidation did
+   not, so main went red on every push for three hours and six merges, each landing on an author
+   who had not caused it. That is the #724 shape this workflow's own header exists to prevent,
+   produced by the workflow.
+
+   Keyed on the FULL sha, so an entry can never pre-excuse a commit that has not happened yet and
+   cannot collide with another. It SUPPRESSES THE GATE AND NOT THE ROW: the finding still prints,
+   with its reason, because this rule is documented as "emphasis, never suppression" and a reader
+   who cannot see what was excused cannot check the excuse.
+
+   AN ENTRY THAT MATCHES NOTHING IS PRINTED AND NOT FATAL. The reasoning is at the check itself
+   below; the short form is that this map cannot rot dangerously (one immutable sha, so a dead
+   entry is inert rather than merely unused) and that a fatal version fails a CLEAN tree whenever
+   the window is too short to reach the finding.
+
+   THE DURABLE CURE IS NOT THIS MAP. Name the files you delete in the commit message and the
+   escape above fires by itself, with no bookkeeping at all. */
+const REVIEWED_SEEN = new Set();
+const REVIEWED = new Map([
+  ["9afff4eb84d5a417af540545079d8aace4399c2e",
+    "#1677 promoted six scripts/oneoff/ unit probes into check:units — one wired guard, 852 lines, " +
+    "and the six deleted files are the probes it supersedes. Verified: the commit ADDS " +
+    "scripts/check-units.mjs and its package.json entry in the same change. CLAUDE.md's check:units " +
+    "entry describes it as SIX PROBES PROMOTED AT ONCE. Its message names none of the six, so the " +
+    "consolidation escape could not fire."],
+]);
+
+/* One printer for both gate exits. The file-finding exit used to print the findings and NO repair,
+   which is the check:column-drift lesson — a guard that fires correctly and prescribes nothing
+   sends the reader to guess, and here the likeliest correct answer (this was a promotion) is the
+   one a reader is least likely to reach for while looking at a scary message about reverts. */
+function gateFail() {
+  console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
+  for (const g of GATE) console.log(`  ${g}`);
+  console.log(`\nThis is an ALARM, not a verdict: read the rows above before reverting anything.`);
+  console.log(`Three causes, in the order they are worth checking:`);
+  console.log(`  1. A STALE-BASE SQUASH really did carry an old tree forward — restore what it dropped.`);
+  console.log(`     This is the #776/#1248/#1267 shape and the reason this gate exists.`);
+  console.log(`  2. A PROMOTION or CONSOLIDATION removed the files it supersedes. The cure is to NAME`);
+  console.log(`     them in the commit message — the file rule already excuses a commit that names`);
+  console.log(`     every file it removes, and then no bookkeeping is needed.`);
+  console.log(`  3. It is already merged, so its message cannot be amended without rewriting main.`);
+  console.log(`     Add its FULL sha to REVIEWED in this script with the reason you verified.`);
+  console.log(`Run without --fail-on-silent for the report-only behaviour.`);
+  process.exit(1);
+}
 const N = Number(arg("--commits", 80));
 const REF = String(arg("--ref", "origin/main"));
 
@@ -509,8 +560,16 @@ if (goneFiles.length) {
     console.log(`\n  ** ONE COMMIT REMOVED FILES ADDED BY SEVERAL DIFFERENT ONES — the stale-base shape:`);
     for (const [sha, e] of multi) {
       console.log(`     ${sha.slice(0, 8)}  ${e.subject.slice(0, 88)}`);
-      console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — read this one FIRST`);
-      GATE.push(`${sha.slice(0, 8)} removed ${e.paths.length} file(s) added by ${e.adders.size} different commits`);
+      const why = REVIEWED.get(sha);
+      if (why) REVIEWED_SEEN.add(sha);
+      if (why) {
+        /* Printed, not hidden — "emphasis, never suppression" applies to a reviewed row too. */
+        console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — REVIEWED, not gated:`);
+        console.log(`       ${why}`);
+      } else {
+        console.log(`       removed ${e.paths.length} file(s) added by ${e.adders.size} different commits — read this one FIRST`);
+        GATE.push(`${sha.slice(0, 8)} removed ${e.paths.length} file(s) added by ${e.adders.size} different commits`);
+      }
     }
   } else {
     console.log(`  No commit removed files added by more than one other, so none has the stale-base`);
@@ -518,6 +577,28 @@ if (goneFiles.length) {
   }
   console.log(`\n  A file deleted on purpose is fine; one deleted by a merge about something else is`);
   console.log(`  the #1248 shape — four files across three merged PRs, and nothing reported it.\n`);
+}
+
+/* Does every REVIEWED entry still describe this tree? Printed on the PASSING path too, since a
+   declaration that has stopped being true matters most when nothing else is failing.
+
+   NEITHER OUTCOME IS FATAL, and that is a deliberate departure from this repo's usual "a stale
+   entry FAILS" idiom — the same idiom `KNOWN`, `PARTIAL_ON_PURPOSE` and `NEEDS_EXTRA_STATE` are
+   held to. That rule exists because a rotted declaration silently EXCUSES something. This one
+   cannot: it names a single immutable sha, so the day its finding stops being reported the entry
+   becomes inert rather than merely unused, and it can never reach a different commit.
+
+   What made the fatal version actually WRONG rather than merely strict is the WINDOW. Run by hand
+   at `--commits 20` the adding commits are out of frame, the finding is correctly not reported,
+   and a fatal rule would then fail a clean tree for bookkeeping — a guard arguing with correct
+   work, which is the failure this file spends a dozen paragraphs on. "Not flagged" and "not in
+   frame" are indistinguishable from here, so the honest thing is to say so and not gate on it. */
+for (const [sha, why] of REVIEWED) {
+  if (REVIEWED_SEEN.has(sha)) continue;
+  console.log(`\n   note: REVIEWED entry ${sha.slice(0, 8)} matched nothing in this run — either its`);
+  console.log(`   finding is gone, or the ${commits.length}-commit window does not reach it. Not gated`);
+  console.log(`   either way: the entry names one sha, so it can no longer excuse anything.`);
+  console.log(`   It said: ${why.slice(0, 110)}`);
 }
 
 if (!missing.length) {
@@ -531,11 +612,7 @@ if (!missing.length) {
      the file rule proves why: its single hit is #1229 PROMOTING a one-off probe into a guard
      (check-area-name-embed.mjs), which is a supersession, not a revert. Going red on that would
      make the audit argue with correct work, the failure its own header spends a paragraph on. */
-  if (FAIL_ON_SILENT && GATE.length) {
-    console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
-    for (const g of GATE) console.log(`  ${g}`);
-    process.exit(1);
-  }
+  if (FAIL_ON_SILENT && GATE.length) gateFail();
   process.exit(0);
 }
 
@@ -576,13 +653,7 @@ console.log(`A removal is not a defect. This separates "deleted on purpose" from
 console.log(`that was about something else", which is the shape #776 had when it reverted #778.`);
 
 if (silent) GATE.push(`${silent} definition(s) vanished in a commit that does not name them`);
-if (FAIL_ON_SILENT && GATE.length) {
-  console.log(`\nFAIL — ${GATE.length} finding(s) have the stale-base fingerprint:`);
-  for (const g of GATE) console.log(`  ${g}`);
-  console.log(`\nThis is an ALARM, not a verdict: read the rows above before reverting anything.`);
-  console.log(`Run without --fail-on-silent for the report-only behaviour.`);
-  process.exit(1);
-}
+if (FAIL_ON_SILENT && GATE.length) gateFail();
 
 const fatal = [...silentKinds].filter((k) => FAIL_ON.has(k));
 if (fatal.length) {
