@@ -305,7 +305,7 @@ export default function App(){
          CLIMBERS is the #569/#680/#734/#778/#826 defect check:crew-member-readers exists for. It
          carries no level and no vouches, so climberLine() is what the row may print about them. */
       return {id:r.id,_db:true,routeId:r.route_id,_route:rmap[r.route_id]||null,
-        organizer:r.created_by,_org:p?{id:p.id,name:p.name||"A climber",avatar:p.avatar||"",location:p.location||"",username:p.username||"",_profile:true}:null,
+        organizer:r.created_by,_org:p?{id:p.id,name:p.name||"A climber",avatar:p.avatar||"",location:p.location||"",username:p.username||"",showName:!!p.showName,_profile:true}:null,
         have:conf,spots:Math.max(0,cap-conf),date:((r.dates||[])[0])||"",pace:"",note:"",
         /* crew_listings exposes confirmed_count, not a member list, so the organiser is the only
            person a browsing climber can be shown -- and showing one real name beats showing none. */
@@ -757,7 +757,8 @@ const _anniv=useMemo(()=>logs.map(function(cl){var d=new Date((cl.date||"")+"T12
     var seed=CLIMBERS.find(function(x){return x.id===id;})||(FILLER_CLIMBERS?FILLER_CLIMBERS.find(function(x){return x.id===id;}):null);
     if(seed)return seed;
     var pr=(crewProfilesQ.data||[]).find(function(x){return x.id===id;});
-    return pr?{id:pr.id,name:pr.name||"A climber",avatar:pr.avatar||FALLBACK_AV,_real:true}:null;
+    /* username and showName ride along: useProfilesByIds selects and maps both, and without them pubName() falls through to a handle DERIVED from the real name ("Robin Belay" -> @robinbelay, which need not be theirs) -- the #1619 RealClimberRow defect, and this object feeds the chat header, the avatar strip, the safety brief and the trip recap. */
+    return pr?{id:pr.id,name:pr.name||"A climber",username:pr.username,showName:!!pr.showName,avatar:pr.avatar||FALLBACK_AV,_real:true}:null;
   },[crewProfilesQ.data]);
   const activeCrewMembers=useMemo(function(){
     if(!activeCrew)return [];
