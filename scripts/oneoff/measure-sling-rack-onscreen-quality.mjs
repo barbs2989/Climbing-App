@@ -56,7 +56,15 @@ if (!rows || !rows.length) dead("empty read");
 //
 // The pipeline's own shape read out loud. Widened past size/count/qty because the label-per-key
 // split exposed the same defect under other keys: "pulley: 1, prusiks: 2, purpose: ...".
-const MACHINEISH = /\b(size|count|qty|quantity|purpose|length)\s*:/i;
+// `notes?` is here for SYMMETRY with the renderer's synonym list, and it is INERT on today's data
+// — measured rather than assumed, because the obvious story was wrong. 24 sling_rack values do mix
+// an explanation key with real gear keys, and reading that as 24 missed bullets is a DEPTH
+// mistake: 23 of them are the TOP-LEVEL value, which `rackLines` splits into one labelled bullet
+// per key ("Note — three independent trip reports converge: …"), so no pair dump happens. Only a
+// NESTED object reaches the generic branch, and there is exactly one. Widening this counter moved
+// it 15 -> 15 and 1 -> 1. It stays as a sentinel for a nested `{gear, note}` that does not exist
+// yet — the argument check:field-renders' SENTINELS makes — not because it found anything.
+const MACHINEISH = /\b(size|count|qty|quantity|purpose|length|notes?)\s*:/i;
 
 let valsRendering = 0, valsEmpty = 0, bullets = 0, slingLabelled = 0, fromArray = 0, fromKey = 0;
 let machineish = 0, over60 = 0, over120 = 0;

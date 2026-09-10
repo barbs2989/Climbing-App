@@ -9329,6 +9329,56 @@ the correction knows the screen is wrong, and they have no way to report it.
         retain the #1-3 structured list as primary, add one #4 as optional"* into a climber's RACK
         box: an editor instructing the next editor, over a citation `audit:prose-citations` could
         not see. See that audit's `MP` entry.
+      - **THE SAME SCRIPT PRINTED `bullets reading out a raw key: 15` AND THE ENTRY ABOVE
+        ACCOUNTED FOR 2, because it triaged the LONG bullets and these are SHORT.** *"Webbing —
+        length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2"* is 88 characters,
+        so it clears every length threshold while reading out the pipeline's own key names — with
+        the quantity **last**, when it is the first thing somebody packing wants. A number the
+        instrument printed and nobody worked, which is [[a-stated-limitation-is-a-worklist]] one
+        line down from where the reading stopped.
+      - **IT IS THE SAME SHAPE UNDER A SECOND SPELLING, and the earlier fix's own allow-list is
+        what hid it.** `fmtSlingVal` already had a branch for this, added when *"16 of 242 stored
+        values"* read out `size: … count: …` — and it recognises **size/count/note**, while these
+        15 store the identical fact as **length/quantity/purpose**. A deny-list beaten by one more
+        spelling, the failure this file records for `check:outage`'s rule 2 four times over,
+        arriving inside the fix for the very same class. The vocabulary is a list of synonyms now
+        rather than four literal comparisons.
+      - **A QUANTITY WITH NO SIZE was 5 of the 15 and could not fire at all**, because the branch
+        opened `if(v.size!=null)`. Correct while the only known shape carried a size, and exactly
+        what left *"Cordelette — purpose: …, quantity: 1"* on screen. With no size the count is the
+        head — the label beside it supplies the noun, so *"Prusik cord — 2"* reads as two of them —
+        and the existing rule that **a count of 1 adds nothing** had to be carried across, or those
+        rows would have gained a bare `1`.
+      - **Behaviour-diffed across every stored value rather than asserted**
+        (`scripts/oneoff/verify-sling-rack-synonym-widening.mjs`): **590 bullets before and after,
+        0 lost, 15 machine-shaped → 1**, with the old renderer loaded **from `origin/main` via
+        `git show`** rather than retyped — a retyped reference agrees with itself whatever the app
+        does, which is the whole question. Both lifts are self-tested against the array branch this
+        change does not touch, so a broken lift cannot read as a clean diff.
+      - **SECTION 2 EXISTS BECAUSE `fmtSlingVal` IS NOT THE RACK BOX'S — it is the app's generic
+        leaf flattener**, and `objStr` sends arbitrary jsonb through it for the contribute form's
+        CURRENT-VALUE line. Measured rather than assumed: **10 objects across `access`,
+        `emergency` and `partner_requirements`** match the widened shape, every one a lone
+        `{notes:…}` or `{length:…}`, and all 10 change in the same direction — losing a
+        meaningless key prefix. The assertion is **content preservation** (every string the old
+        rendering showed must still appear in the new one), not an eyeball, because that is what
+        separates *dropped the `notes:` prefix* from *dropped the notes*.
+      - **THE LAST ONE IS DELIBERATELY LEFT, AND SIZING ITS CLASS TOOK TWO GOES.**
+        `wa_mount_tom_scramble`'s *"Crevasse rescue kit — pulley: 1, prusiks: 2, purpose: …,
+        cordelette: 1, locking carabiners: 4"* is a different shape: **sub-items with counts**,
+        where `pulley: 1` is legible and only `purpose:` sits oddly among them.
+        - **A scan for "an explanation key beside foreign keys" reported 24 in `sling_rack` and
+          that number is a DEPTH MISTAKE, not a backlog.** 23 of the 24 are the **top-level**
+          value, and `rackLines` splits a top-level object into one labelled bullet per key — so
+          `{cams, note, nuts}` renders as *"Cams — …"* / *"Note — three independent trip reports
+          converge: …"* / *"Nuts — …"*, which is correct and is the entire point of the label
+          split. **Only a NESTED object reaches the generic pair dump**, and there is one.
+          Verified by measurement rather than by reading: widening the counter to include
+          `note`/`notes` moves it **15 → 15 and 1 → 1**.
+        - So lifting a `purpose` out of the generic pair dump is **a rule for a class of one**, on
+          the branch every other column's current-value line shares — the thing this repo keeps
+          refusing to build. Inverting the pairs to *"1 pulley"* is worse still: the generic branch
+          is column-blind, so it would render *"60cm length"* elsewhere.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
