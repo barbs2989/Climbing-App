@@ -217,6 +217,81 @@ const next6 = await db.removeProfilePhoto("u1", A, [A, B, A]);
 if (JSON.stringify(next6) !== JSON.stringify([B])) bad(`duplicate removal returned ${JSON.stringify(next6)}`);
 else ok("a URL listed twice comes off entirely, leaving nothing pointing at the object");
 
+// =========================================================================================
+// 3. THE AVATAR — the same claim about the photo a climber cannot escape.
+//
+// The strip gained a remove control and the AVATAR did not, so the one photo shown beside your
+// name in partner search, on every crew roster and on every comment could be REPLACED and never
+// cleared. The in-app privacy sheet meanwhile says you can "edit or clear anything from your
+// profile and settings at any time" — check:policy-claims exists because a legal surface must not
+// claim a control the app lacks, and this was that sentence's missing control.
+//
+// Executed, not read: every property below is the one section 2 proves for the strip, and a
+// second implementation of a removal is exactly where the two would drift.
+console.log("\n3. removeProfileAvatar against the same stubbed transport\n");
+
+const AV = "https://probe.invalid/storage/v1/object/public/topo-photos/u1/ddd-face.jpg";
+
+// (a) the happy path: the column is cleared and the object goes with it.
+reset();
+await db.removeProfileAvatar("u1", AV);
+if (!patches().length) dead("no PATCH reached the stub — this section is measuring nothing");
+const avSent = patches()[0] ? JSON.parse(patches()[0].body || "{}") : {};
+if (avSent.avatar !== null) bad(`the write sent avatar=${JSON.stringify(avSent.avatar)} rather than null`);
+else ok("removing the avatar writes NULL to the column");
+// ONE COLUMN IN, ONE COLUMN OUT. saveProfile PATCHes whatever object it is handed, and
+// check:profile-edit-gate exists because a caller once sent fields it had never loaded — seven
+// columns emptied. A removal that widened its payload would be that defect with a new author.
+if (Object.keys(avSent).length !== 1) bad(`the write sent ${Object.keys(avSent).length} column(s): ${Object.keys(avSent).join(", ")}`);
+else ok("...and writes ONLY that column, never a partial profile object");
+if (storageDeletes().length !== 1) bad(`expected 1 storage delete, saw ${storageDeletes().length}`);
+else if (!storageDeletes()[0].body.includes("u1/ddd-face.jpg")) bad(`deleted the wrong object: ${storageDeletes()[0].body}`);
+else ok("the storage object deleted is the avatar that was cleared");
+
+// (b) THE ONE THAT MATTERS, and it is section 2's: a refused write must not destroy the file.
+// An RLS refusal rejects by matching zero rows, which `.single()` surfaces as an error — so this
+// also pins that the removal cannot report success on a write RLS declined.
+reset(500);
+let avThrew = null;
+try { await db.removeProfileAvatar("u1", AV); } catch (e) { avThrew = e; }
+if (!avThrew) bad("a refused avatar write resolved instead of throwing — the editor would clear the draft anyway");
+else ok("a refused write throws, so the editor cannot clear the photo on a write that failed");
+if (storageDeletes().length) bad(`a FAILED avatar removal deleted ${storageDeletes().length} storage object(s) — profiles.avatar still points at it`);
+else ok("a failed avatar removal leaves the storage object alone");
+
+// (c) signed out is refused BEFORE anything is written, or the caller reports a removal nobody made.
+reset();
+avThrew = null;
+try { await db.removeProfileAvatar(null, AV); } catch (e) { avThrew = e; }
+if (!avThrew) bad("removing an avatar with no user id resolved as success");
+else ok("no user id throws rather than reporting success");
+if (patches().length || storageDeletes().length) bad("it wrote or deleted before deciding it had no user");
+else ok("...and it does so before writing or deleting anything");
+
+// (d) a blob: preview has no object of ours behind it — the same case the strip carries.
+reset();
+await db.removeProfileAvatar("u1", BLOB);
+if (storageDeletes().length) bad("it asked storage to delete something for a blob: avatar");
+else ok("a blob: avatar asks storage to delete nothing");
+
+// (e) THE CONTROL EXISTS AND IS GATED, read from source: executing the function proves what it
+// DOES and says nothing about whether the editor offers it. Dropping the button changes no
+// identifier, which audit:silent-reverts says in its own caveat it cannot see.
+const avCore = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8")
+  .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+if (/removeProfileAvatar\(uid,/.test(avCore)) ok("the editor calls removeProfileAvatar with its uid");
+else bad("the editor no longer calls removeProfileAvatar(uid, …)");
+if (/\(avaPreview\|\|draft\.avatar\)\?<button onClick=\{removeAva\}/.test(avCore))
+  ok("the Remove control is GATED on there being a photo to remove");
+else bad("the Remove control is not gated on there being a photo (an empty avatar would offer one)");
+if (/function EditProfileScreen\(\{[^}]*\buid\b/.test(avCore)) ok("EditProfileScreen destructures uid");
+else bad("EditProfileScreen no longer destructures uid — the call above would pass undefined");
+const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8")
+  .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+if (/<EditProfileScreen[^]*?uid=\{uid\}/.test(app.slice(app.indexOf("<EditProfileScreen"), app.indexOf("<EditProfileScreen") + 400)))
+  ok("...and App hands it one");
+else bad("App no longer passes uid to EditProfileScreen — removal would refuse for every climber");
+
 globalThis.fetch = realFetch;
 console.log(`\n${failed ? "FAILED — " + failed + " assertion(s)" : "ok — every assertion passed"}`);
 process.exit(failed ? 1 : 0);
