@@ -5853,6 +5853,30 @@ the total when deciding where a new guard belongs.
     the camp-elevation and clickable-shield work.
   - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
     a broken scan rather than a clean catalog.
+  - **THE "WHICH END OF A RANGE" QUESTION IS CLOSED, AND IT WAS NEVER A DECISION — measured by
+    `scripts/oneoff/measure-class-range-end.mjs`.** It had been carried as an open product call
+    (*"`Class 3-4` → 3 or 4?, 129 low / 16 high"*), which reads as a catalog genuinely split down
+    the middle and waiting on somebody to pick. It is not: of **171** WA routes stating a range of
+    two grades in one system, **159 store the LOW end, 8 the high, 0 the midpoint** — a 93%
+    convention that `gradeNumFrom` already implements (169 low / 2 high), because its
+    `/class\s*(\d)/i` takes the first digit. **There is nothing to sweep and nothing to decide**;
+    what remains is 8 outlier rows to read.
+    - **The quoted 129/16 was wrong, and the shape of the error is the useful part**: a number
+      carried in prose rather than re-derived. Re-run the script rather than quoting this line,
+      which has now been wrong once.
+    - **HALF THE FIRST RUN'S "NEITHER" BUCKET WAS THE MEASUREMENT'S OWN REGEX.** A range mentioned
+      in a string is not the route's grade: `"Alpine IV, 5.8 (sustained 5.6-5.7)"` stores **8**,
+      which is correct, and a bare match reads the parenthetical; `"5.6-5.7 (2 technical pitches;
+      remainder Class 3-4 scrambling"` describes the ground BETWEEN the pitches. The range only
+      counts when the parser's own answer falls inside it — 10 unexplained rows became 4. *A count
+      is only as good as its tokeniser*, and a measurement that manufactures half its findings
+      would have sent somebody to "fix" correct rows.
+    - **2 of the 4 remaining are a NULL `grade_num` on a string the parser CAN read**
+      (`"Class 2-3 (3rd class with airy sections)"`, `"Grade III-IV, Class 4-5 (mixed rock and
+      snow)"`). That is a **missing** value rather than a wrong-end one — a different question, and
+      not evidence about the convention.
+    - Report only, for this audit's own reason: `gradeNumFrom` matches `load-state.mjs` **verbatim**
+      on purpose, and a fifth dialect is the problem rather than the fix.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
@@ -9617,6 +9641,38 @@ the correction knows the screen is wrong, and they have no way to report it.
     number that quietly makes the return tile optimistic.
   - **ONE-SIDED BY DESIGN.** Too little gain is impossible; too much is not, because a real route
     rolls over intermediate bumps its endpoints cannot see. A two-sided test would flag correct data.
+  - **IT ACCUSED 26 ROUTES THE APP'S OWN PREDICATE CALLS FINE, FOR AS LONG AS BOTH EXISTED — the
+    four-grade-parsers shape, in a guard/audit PAIR rather than in two functions.**
+    `gainBelowOwnPins` has credited the climbing vertical since #1533 (`scarfHrs` is the HIKE leg
+    and `techHrs` the climbing leg, so `gain_ft` is the APPROACH gain and a trailhead→summit rise
+    includes vertical the PITCHES already account for); this audit never gained that rule and was
+    still comparing against the raw rise. **60 findings → 34.**
+    - **THE GUARD'S OWN SUITE NAMED THE CASE THE AUDIT WAS GETTING WRONG.**
+      `check:gain-floor-stated` pins `wa_liberty_traverse` — 26 pitches over a 2,520 ft rise — as a
+      route that must **not** be accused, and `audit:gain` was accusing it. When two things ask one
+      question, the one with a test suite is the one to believe.
+    - **A CREDIT CAN ONLY EVER EXCUSE, and asserting that caught a real error in the fix.** The
+      first version also credited the climb inside the CONVENTION test, which moved **two** routes
+      INTO the findings (`wa_colchuck_balanced_rock_west_face`, `wa_mount_terror_southeast_face`)
+      by un-excusing a convention they legitimately use. The convention test stays **summit-based**
+      — this column holds two readings, and the audit's own worked example is the second kind
+      (`wa_mount_adams_adams_glacier`, 12,276 − 5,150 = 7,126, a camp-to-summit gain). Diff the
+      finding SETS, never the counts: the totals alone read as a clean 60 → 34 either way.
+    - **THE FALSE-PASS DIRECTION WAS MEASURED BEFORE SHIPPING.** Crediting the climb against a rise
+      whose high pin is the BASE of the route would excuse a row wrongly — `wa_smears_jugs_and_rock_roll`'s
+      high pin is *"Base of Prusik Peak south face"*, where the pitches sit above it. **0 of the 26
+      excused rows has a base-like high pin**; every one tops out at a named summit. Re-check that
+      if the endpoint rule ever changes.
+    - Two independent methods agreed on the same 26 (a standalone join against `pitches`, and the
+      audit itself after the edit), with **0** disagreements either way.
+    - `--fixture <path>` reads a synthetic catalog, because these faults live in the DATA and a
+      checker must not write to the live project to make one — the mechanism `audit:trailhead-road`
+      already sets. Injection-tested **6/6**
+      (`scripts/oneoff/inject-gain-credit-cases.mjs`), judged on the audit's own `--json` rather
+      than on text, so a case cannot be written against the wording of a PASS. **Three must stay
+      SILENT** — the credit firing, a correct gain, and a camp-to-summit convention — because a
+      credit that excused everything satisfies every must-fire case. Proven **non-vacuous** by A/B:
+      with the credit neutered, the load-bearing case reports the finding again.
   - **The obvious alternative explanation is HALF TRUE, which is why it is a filter and not a
     footnote.** `gain_ft` may legitimately be measured from a high camp or the base of the climb
     rather than from the trailhead. Of the 112 routes that fail the raw test, **24 have a waypoint
@@ -9625,6 +9681,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     **convention**, not an error, and reporting them would be reporting correct work. The other 88
     imply a start the row records nothing at. Same shape as `dist_km` holding two conventions at
     once — **this column has two readings too, and only one of them is wrong.**
+  - **AND THE REMAINDER IS 30 SOURCES, NOT 34 ROWS — `scripts/oneoff/triage-gain-findings.mjs`.**
+    It runs the audit rather than restating its rule, and separates what a row count hides: **2**
+    already adjudicated in the audit's own header (the Austera pair, whose reasons sat in a comment
+    while being reported as the top two findings by magnitude), **1** cluster where several routes
+    on one peak share one starting elevation and therefore one number, and **29** genuine
+    singletons. It also flags **2** roped routes storing ZERO pitches, where the missing record may
+    be the PITCH COUNT rather than the gain — repairing `gain_ft` there is the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+    - **A PEAK IS NOT AN APPROACH.** Keying on `area_id` alone put three Rainier routes in one
+      "cluster" while they start at Paradise, Mowich Lake and White River — three walks, three
+      numbers. A cluster counts as one fact only when the low pins agree within 200 ft; the rest
+      are printed as context and counted as singletons.
+    - **AND KEYING ON THE TRAILHEAD NAME WAS WORSE.** The first version keyed on `area_id` plus the
+      pin's rendered name and reported 1 cluster of 3 against a true 4: the two Austera routes are
+      one peak off one road, spelled *"Eldorado Creek / Cascade River Road TH"* and *"Eldorado Creek
+      trailhead (Cascade River Road mile 20)"*. **A name is not an identity**, and
+      [[a-detectors-clustering-key-decides-what-it-can-see]].
+    - **The clustering hypothesis mostly DIED and that is the result**: 5 of 34 are one fact
+      repeated, so it collapses the job by four rows, not by an order of magnitude. Report only —
+      it picks no column and writes nothing.
   - **THE 88 HAVE NO COMMON CAUSE — both stories were tested and BOTH DIED, so do not write a bulk
     repair.** The findings look systematic (57 of 88 share a `gain_ft` with another finding, and the
     shared values are round: 4000 six times, 4800 six, 1200 five, 2200 five), which reads as either a
