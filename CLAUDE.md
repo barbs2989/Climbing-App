@@ -9774,6 +9774,37 @@ the correction knows the screen is wrong, and they have no way to report it.
           A count quoted in prose is a hand-copy of a measurement: re-run
           `measure-sling-rack-onscreen-quality.mjs` rather than trusting the number here, which
           has now been stale twice in one day.
+        - **AND "2 reading a nested object out loud" WAS ITSELF ONE, NOW ZERO — the nested-object
+          question is CLOSED as a NON-FINDING, so do not re-derive it.** Measured across the whole
+          column rather than off the long-bullet triage: **27 of 242 values hold a nested object
+          and 26 of them render correctly**, because `fmtSlingVal` already knows the two
+          conventions the enrichment writes — `{size,count}` becomes *"2× #0 C3 to 0.75 in; #1 to
+          #3"* and `{length,purpose,quantity}` becomes *"4× 60cm (anchor building on ledges, tree
+          slings)"*. **A RENDERER FIX WAS THEREFORE REFUSED**: the class is one, and widening
+          `fmtSlingVal` to guess at arbitrary key sets would put 26 correct bullets at risk to
+          repair a single row.
+        - **The twenty-seventh was a DATA defect and is repaired**
+          (`scripts/oneoff/fix-crevasse-kit-rack-shape.mjs`). `wa_mount_tom_scramble` stored a KIT
+          of five components — `{pulley, prusiks, purpose, cordelette, locking_carabiners}` — which
+          matches neither convention, so the generic branch recited its keys with a sentence wedged
+          into the middle of a gear list. This file's own standing rule decides which half is
+          wrong: *before writing a researched string into an existing column, look at where that
+          column renders.* Reshaped to the string the other 26 use, **every token asserted present
+          in the stored value** so nothing could be invented, under the declared-state contract —
+          proven by re-running it, which now REFUSES with *"the row has moved since this was
+          written"* rather than overwriting.
+        - **`bullets reading out a raw key` is 1 → 0 across the column; the LENGTH is unchanged at
+          11**, and conflating those two was a mistake this repair made in its own output. The
+          bullet went **146 → 134** characters and is still over 120 — it simply joins the 8
+          genuine-long-prose rows legitimately, reading as a gear list rather than a recital.
+          Deliberately NOT shortened further: trimming *"crevasse rescue/"* would fit the 120 bar
+          by deleting words the label already carries, which is fitting the data to the
+          measurement's threshold.
+        - **THE REPAIR'S OWN FIRST OUTPUT UNDER-REPORTED BY 22 CHARACTERS**, and it is the lesson
+          this column already taught once. It printed **124 → 112** because it stringified `l.text`
+          alone, dropping the `Crevasse rescue kit — ` label the climber reads; the measurement
+          script composes `b.label + " — " + b.text` and is the standard to match. Two instruments
+          disagreeing about one bullet is how a fixed defect reads as live, or a live one as fixed.
       - **THE SAME SCRIPT PRINTED `bullets reading out a raw key: 15` AND THE ENTRY ABOVE
         ACCOUNTED FOR 2, because it triaged the LONG bullets and these are SHORT.** *"Webbing —
         length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2"* is 88 characters,
