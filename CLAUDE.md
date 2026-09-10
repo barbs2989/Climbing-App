@@ -693,6 +693,38 @@ the total when deciding where a new guard belongs.
       that stayed invisible while the copy was doing the deciding.
       `scripts/oneoff/probe-home-friend-feed-name-match.mjs` now executes the predicate from source
       and is injection-tested: removing `seedIdentity(c)` fails it, restoring passes.
+  - **AND THE MIRROR: THE VOUCH PICKER *OFFERED* A REAL CLIMBER THE SEED CATALOG.** Everything above
+    asks whether seed history is ATTRIBUTED to a real account. `GiveVouch` asks *"which climb did
+    you two do together?"* and its list was `ROUTES.filter(...)` — the seed demo catalog — while
+    `useRouteSearch(USE_DB ? q : "")` is **disabled on an empty query**, so the real catalog was
+    never consulted for the default view. With nothing typed the filter keeps everything, and even
+    a search put seed matches **ahead** of the real ones.
+    - **THE PICK IS PERSISTED, which is what makes it more than cosmetic.** The call site does
+      `giveVouch(uid, targetId, JSON.stringify({route: v.route, …}))` and `route` is the route's
+      **NAME** (`setRoute(sel?"":r.name)`) — so a demo climb was written onto a **vouch**, a trust
+      artefact about somebody else.
+    - **The empty state had to change with it.** Withholding the seed list leaves an empty picker,
+      and the existing copy said *"No climbs match."* — false when nothing has been searched, the
+      same class as everything else here. It now distinguishes the two.
+    - **The prompt is DERIVED from the source, never restated in the guard**, because both
+      alternatives fail: a loose `/search/i` is **vacuous** (the picker's own input placeholder is
+      *"Search by climb name or area…"*, 13 `earch` matches in that component) and pinning the exact
+      words would forbid rewording it. A reword now updates one place; deleting the branch fails
+      **closed**.
+    - **THE CONTROL IS THE LOAD-BEARING HALF.** *"No seed climb offered"* is equally true of a
+      component that rendered nothing, so the seed build must still list them — and a rule that only
+      ever withholds would be satisfied by emptying the picker for everyone, which is injection case
+      4. `USE_DB` is set by **stubbing `./lib/supabase`** through an esbuild plugin rather than
+      standing up a client, which on node 20 would also need the `WebSocket` constructor
+      RealtimeClient builds at construction.
+    - Measured by `scripts/oneoff/measure-vouch-picker-offers-demo-routes.mjs` and injection-tested
+      **6/6** (`scripts/oneoff/inject-vouch-picker-cases.mjs`), each edit proven by checksum and the
+      file restored byte-identically. **Two must stay SILENT.**
+    - **THE SECTION RUNS BEFORE THE SUMMARY, and the first version did not** — appended after the
+      `console.log`, a failure inside it was counted while the run had already printed *"ok"*. The
+      exit code stayed correct and the OUTPUT lied, which is the footgun `check:overlay-absence`
+      still has and which cost a wrong reading of a test on the same day. Put a new section above
+      the summary it is counted in.
   - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed

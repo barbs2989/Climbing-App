@@ -212,6 +212,94 @@ if (!demo.includes(MARK)) {
   else ok("a seed climber (numeric id, no session) keeps their history");
 }
 
+// ------------------------------------------- the vouch picker must not OFFER seed climbs
+// Everything above asks whether seed history is ATTRIBUTED to a real account. This asks the
+// mirror: is a real climber INVITED to claim a seed climb as their own?
+//
+// GiveVouch asks "which climb did you two do together?" and the answer is PERSISTED -- the call
+// site does giveVouch(uid, targetId, JSON.stringify({route: v.route, ...})) and `route` is the
+// route's NAME (setRoute(sel?"":r.name)). Its list was ROUTES.filter(...), the SEED demo catalog,
+// and with no query typed that filter keeps everything, while useRouteSearch(USE_DB ? q : "") is
+// disabled on an empty query -- so the real catalog was never consulted for the default view. A
+// real climber vouching for a partner picked from demo climbs, and the pick was written onto a
+// trust record about somebody else.
+//
+// USE_DB is a module constant read from import.meta.env, so it is set here by STUBBING
+// ./lib/supabase rather than standing up a client -- which on node 20 would also need the
+// WebSocket constructor RealtimeClient builds at construction.
+{
+  const VOUCH_ENTRY = `
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { GiveVouch } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+const noop = () => {};
+export function render(friend) {
+  return renderToStaticMarkup(
+    React.createElement(QueryClientProvider, { client: qc },
+      React.createElement(GiveVouch, { friend, onClose: noop, onSave: noop })));
+}
+`;
+  const stub = (useDb) => ({
+    name: "stub-supabase",
+    setup(b) {
+      b.onResolve({ filter: /lib\/supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
+      b.onLoad({ filter: /.*/, namespace: "sb" }, () => ({
+        contents: `export const USE_DB = ${useDb}; export const supabase = null;`, loader: "js",
+      }));
+    },
+  });
+  const bundleFor = async (useDb) => {
+    const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-vouch-")), "b.cjs");
+    await build({
+      stdin: { contents: VOUCH_ENTRY, resolveDir: ROOT, loader: "js" },
+      bundle: true, format: "cjs", platform: "node", jsx: "automatic",
+      loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
+      plugins: [stub(useDb)], outfile: out, logLevel: "error",
+    });
+    return require_(out).render;
+  };
+  const flat = (html) => html.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
+
+  // A DB-derived friend: a uuid id and NO objectiveIds, which is why the shared-objectives
+  // pinning in that picker can never fire for a real connection.
+  const dbFriend = { id: "8f14e45f-ce9a-4b0e-9c1a-2b3c4d5e6f70", name: "Robin Belay", avatar: "" };
+  // Seed route names READ FROM THE APP rather than typed, so this cannot pass on a stale guess.
+  const seedNames = [...core.matchAll(/\{id:"(?:kings_hf|olympus_wf|lcc_[a-z_]+)",[^]{0,400}?name:"([^"]{4,60})"/g)]
+    .map((m) => m[1]).slice(0, 6).filter(Boolean);
+
+  if (seedNames.length < 3) fail(`ANCHOR LOST: only ${seedNames.length} seed route name(s) parsed — the comparison below would be vacuous`);
+  else {
+    const dbBody = flat(await (await bundleFor(true))(dbFriend));
+    const seedBody = flat(await (await bundleFor(false))(dbFriend));
+    const hits = (b) => seedNames.filter((n) => b.includes(n));
+
+    // CONTROL FIRST. Without it, "no seed route offered" is equally true of a component that
+    // rendered nothing at all — the vacuous pass this file's case 4 already records.
+    if (!hits(seedBody).length) fail("the seed build offered no routes either, so the USE_DB assertion below proves nothing");
+    else {
+      ok(`the vouch picker still lists seed climbs on the seed path (${hits(seedBody).length} of ${seedNames.length} sampled)`);
+
+      const offered = hits(dbBody);
+      if (offered.length) fail(`the vouch picker offers DEMO climbs to a real climber (${offered.join(", ")}) — and the pick is written onto the vouch`);
+      else ok("no seed climb is offered under USE_DB");
+
+      // ...and the empty list must not claim a search found nothing when none was run.
+      if (/No climbs match\./.test(dbBody)) fail('the empty picker says "No climbs match." before anything has been searched');
+      else ok("the empty picker does not claim a search came back empty");
+      // The prompt is DERIVED from the source, never restated here: a loose /search/i test is
+      // vacuous (the picker's own input placeholder is "Search by climb name or area…", 13
+      // matches in that component), and pinning the exact words would forbid rewording it. A
+      // reword now updates one place and this follows; deleting the branch fails closed.
+      const promptM = core.match(/:!q\?"([^"]{8,80})":"No climbs match\./);
+      if (!promptM) fail("ANCHOR LOST: the picker's unsearched-yet branch could not be read out of ClimbMatchCore.jsx");
+      else if (!dbBody.includes(promptM[1])) fail(`the empty picker does not render its own prompt ("${promptM[1]}") — it is blank with no way forward`);
+      else ok(`the empty picker asks the climber to search ("${promptM[1]}")`);
+    }
+  }
+}
+
 console.log(fails
   ? `\ncheck:seed-history: ${fails} failure(s)`
   : "\ncheck:seed-history: ok — seed climbing history is only ever attributed to seed identities.");
@@ -225,6 +313,8 @@ process.exit(fails ? 1 : 0);
 //   5. re-point MARK at a route with no seed activity       -> ANCHOR LOST, not a silent pass
 //   6. restore one `a.user===ME.name?ME:CLIMBERS.find(…)`   -> the author scan, naming file:line
 //   7. remove seedAuthor from ClimbMatchCore                -> the seedAuthor presence check
+//   8. revert `seedMs=USE_DB?[]:ROUTES.filter(` to ROUTES.filter -> the vouch-picker section,
+//      which then names the demo climbs it offers a real climber
 //
 // Case 4 is the one that shaped the render half: gating on `!c.id` looks equivalent and
 // silently empties EVERY seed climber, and a fixed length threshold would not have caught it
