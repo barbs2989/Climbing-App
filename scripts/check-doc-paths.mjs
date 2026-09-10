@@ -37,6 +37,10 @@ const DOC = path.join(ROOT, "CLAUDE.md");
 // Deliberately named though gone. A STALE entry fails, so this cannot rot into a description of
 // files that are back.
 const GONE = {
+  "scripts/oneoff/probe-reliability-zero-vs-untracked.mjs":
+    "named BY its own promotion notice in check:untracked-factors' entry — the sentence records that " +
+    "the rule ran nowhere until it was promoted, and that the probe PRINTED its core comparison " +
+    "rather than asserting it. Dropping the citation would delete why that guard exists.",
   "scripts/oneoff/measure-horizontal-overflow.mjs":
     "named BY its own replacement notice — \"It replaces … (#818)\" — so the sentence is about the " +
     "file being gone. Removing the citation would delete the record of why check:overflow exists.",
