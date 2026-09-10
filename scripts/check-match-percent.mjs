@@ -81,7 +81,7 @@ await build({
   outfile: out, logLevel: "error",
 });
 const M = require_(out);
-for (const k of ["compat", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
+for (const k of ["compat", "compatUnknown", "CMAX_DISC", "CMAX_GRADE", "CMAX_OBJ", "CMAX_VERIF", "CMAX_PACE", "CMAX_AVAIL", "COMPAT_BASE", "COMPAT_TOP", "COMPAT_MAX"]) {
   if (M[k] === undefined) dead(`core does not export ${k} — this guard cannot judge the formula`);
 }
 const { compat, CLIMBERS, ME, COMPAT_BASE, COMPAT_TOP, COMPAT_MAX } = M;
@@ -173,8 +173,74 @@ for (const [i, sentence] of COPY_SITES.entries()) {
   else ok(`copy site ${i + 1} lists ${items.length} signals and every one of them moves the number`);
 }
 
+// ---- 6. THE BROWSE ROW MUST NOT BLAME THE CLIMBER FOR WHAT ITS OWN PROJECTION DROPS.
+//
+// Sections 1-5 are about the number. This is about the sentence shown when there is no number,
+// and it is a separate question because the row that renders it can never reach section 4's
+// signals: `_cand` -- RealClimberRow's own projection of a `profiles` row -- hardcodes
+// `objectiveIds:[]`, and `profiles` has no availability or pace column for anyone. So
+// compatUnknown is >= 3 for a complete profile and a bare one alike, the score branch has never
+// rendered, and every real climber on Partners reads the refusal. It used to say
+//
+//     "New profile — not enough shared info to score a match yet"
+//
+// which is false twice over: "New profile" is said about established accounts with every field
+// filled in, and "yet" promises a resolution nothing the climber does can bring about. Meanwhile
+// the SEED partner card beside it renders a big {score}%, so the contrast is on screen.
+//
+// This changes strings and no identifier, which audit:silent-reverts says in its own closing
+// caveat it cannot see — hence a gate rather than a probe.
+const rowStart = stripped.indexOf("function RealClimberRow");
+if (rowStart < 0) dead("ANCHOR LOST: `function RealClimberRow` — the browse row could not be found");
+const rowEnd = stripped.indexOf("\nfunction ", rowStart + 10);
+const row = stripped.slice(rowStart, rowEnd < 0 ? stripped.length : rowEnd);
+if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — every assertion below would be vacuous`);
+
+// 6a. THE STRUCTURAL FACT, executed rather than read. A hand-typed copy of `_cand` would agree
+// with itself whatever the row does, which is the whole question.
+const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
+if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
+// eslint-disable-next-line no-new-func
+const buildCand = new Function("p", "return {" + candSrc + "};");
+const richRow = {
+  id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb",
+  show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",
+  disciplines: ["sport", "trad", "alpine"], sport_grade: "5.11a", trad_grade: "5.10a",
+  boulder_grade: "V4",
+  // Fields a maximally-complete row could carry IF the columns existed. They do not; that is
+  // the point, and passing them proves the projection drops them rather than the fixture.
+  availability: ["weekends", "weekday_am"], hikingSpeedFtHr: 1000, objectiveIds: ["o1", "o2"],
+};
+const unkRich = M.compatUnknown(ME, buildCand(richRow));
+if (unkRich >= 3) ok(`the browse row cannot score even a complete profile (compatUnknown = ${unkRich}), so the refusal is what renders`);
+else fail(`_cand now leaves only ${unkRich} signals unknown, so the score branch CAN render. That may be correct work — a column was added — but it is not what the refusal copy below was written for. Re-derive with scripts/oneoff/measure-browse-row-match-percent.mjs and re-check this section.`);
+
+// 6b. THE REFUSAL'S OWN TEXT, lifted rather than matched in place, so the assertions below are
+// about the sentence a climber reads and not about anything else in the row.
+// `=== null` rather than a falsiness test, and the injection suite is what forced that: an EMPTY
+// refusal matches, and reading it as a lost anchor reported a DELETED sentence as a broken guard.
+// The two want opposite repairs — re-point the guard, versus put the sentence back.
+const refusalM = row.match(/_unk>=3\?<div[^>]*>([^<]{0,200})</);
+if (refusalM === null) dead("ANCHOR LOST: the refusal branch's text could not be lifted from RealClimberRow");
+const refusal = refusalM[1];
+
+// The two false claims. Keyed on what may not be SAID, never on today's exact wording — a guard
+// pinned to one phrasing forbids improving it, which this file already records for
+// check:offline-claims' `disclaimer-reworded`.
+if (!/new profile/i.test(refusal)) ok("the refusal does not call an established profile NEW");
+else fail(`the browse row calls every real climber a "New profile" — the gap is \`_cand\`'s projection, not the climber's account: ${JSON.stringify(refusal)}`);
+
+if (!/\byet\b/i.test(refusal)) ok("...and does not promise the score arrives once they fill something in");
+else fail(`the refusal says the score is unavailable "yet" — three of the four signals have no column on \`profiles\`, so nothing the climber does resolves it: ${JSON.stringify(refusal)}`);
+
+// 6c. ...AND IT MUST STILL SAY SOMETHING. A rule that only forbids is satisfied by deleting the
+// line, which would leave the seed card's big {score}% unexplained beside a row that has none.
+// Length, not wording, for the same reason as above.
+if (refusal.trim().length >= 15) ok(`...and still explains why there is no percentage (${refusal.trim().length} chars)`);
+else fail(`the browse row no longer explains the missing match % (${JSON.stringify(refusal)}) — the seed card beside it renders one, so the absence needs a sentence`);
+
 // ---- Fail closed on a run that quietly stopped asking.
-const FLOOR = 14;
+const FLOOR = 18;
 if (ran < FLOOR) dead(`only ${ran} assertions ran, expected at least ${FLOOR} — this run proved less than it claims`);
 
 console.log(bad ? `\n${bad} problem(s).` : `\nok — the match % blends what the screen says it blends (${ran} assertions)`);
