@@ -9461,6 +9461,26 @@ the correction knows the screen is wrong, and they have no way to report it.
     **convention**, not an error, and reporting them would be reporting correct work. The other 88
     imply a start the row records nothing at. Same shape as `dist_km` holding two conventions at
     once — **this column has two readings too, and only one of them is wrong.**
+  - **AND THE REMAINDER IS 30 SOURCES, NOT 34 ROWS — `scripts/oneoff/triage-gain-findings.mjs`.**
+    It runs the audit rather than restating its rule, and separates what a row count hides: **2**
+    already adjudicated in the audit's own header (the Austera pair, whose reasons sat in a comment
+    while being reported as the top two findings by magnitude), **1** cluster where several routes
+    on one peak share one starting elevation and therefore one number, and **29** genuine
+    singletons. It also flags **2** roped routes storing ZERO pitches, where the missing record may
+    be the PITCH COUNT rather than the gain — repairing `gain_ft` there is the
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]] shape.
+    - **A PEAK IS NOT AN APPROACH.** Keying on `area_id` alone put three Rainier routes in one
+      "cluster" while they start at Paradise, Mowich Lake and White River — three walks, three
+      numbers. A cluster counts as one fact only when the low pins agree within 200 ft; the rest
+      are printed as context and counted as singletons.
+    - **AND KEYING ON THE TRAILHEAD NAME WAS WORSE.** The first version keyed on `area_id` plus the
+      pin's rendered name and reported 1 cluster of 3 against a true 4: the two Austera routes are
+      one peak off one road, spelled *"Eldorado Creek / Cascade River Road TH"* and *"Eldorado Creek
+      trailhead (Cascade River Road mile 20)"*. **A name is not an identity**, and
+      [[a-detectors-clustering-key-decides-what-it-can-see]].
+    - **The clustering hypothesis mostly DIED and that is the result**: 5 of 34 are one fact
+      repeated, so it collapses the job by four rows, not by an order of magnitude. Report only —
+      it picks no column and writes nothing.
   - **THE 88 HAVE NO COMMON CAUSE — both stories were tested and BOTH DIED, so do not write a bulk
     repair.** The findings look systematic (57 of 88 share a `gain_ft` with another finding, and the
     shared values are round: 4000 six times, 4800 six, 1200 five, 2200 five), which reads as either a
