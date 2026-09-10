@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_johannesburg_mountain_northeast_buttress",
+  "last_processed_id": "wa_kyes_peak_northeast_ridge",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5339,6 +5339,26 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-10-batch-262.sql",
       "note": "Fixed: bivy-field corridor contamination on 4 routes (Inner Constance NW Buttress trimmed to its one relevant entry, Inner Constance Standard cleared entirely, Jack Mountain Nohokomeen Headwall and Northeast Glacier both cleared entirely, Johannesburg CJ Couloir trimmed to its one relevant entry); Jack Mountain Nohokomeen Headwall's and South Face's dist_km (both contradicted their own stated round-trip mileage); Jack Mountain South Face's overview/waypoint elevation (9069 -> 9075, aligning with high_point_ft, sibling routes, and Wikipedia's NAVD88 figure, resolving a gap the row's own data_quality field had already flagged). Flagged: Inner Constance Standard's approach/descent_text/itinerary describe the Crystal Pass route to Mount Constance's West Arete (a different peak) rather than Inner Constance's own documented standard line, which only its waypoints/beta correctly describe -- too large a rewrite to attempt without fuller sourcing. Clean: Inspiration Peak West Ridge (elevation, FA, first winter ascent all confirmed), Johannesburg CJ Couloir's FA, Johannesburg NE Buttress (bivy correctly scoped, no other issues)."
+    },
+    {
+      "batch_number": 263,
+      "date": "2026-09-10",
+      "route_ids": [
+        "wa_kimtah_peak_scramble",
+        "wa_king_kong_gorillas_direct_direct",
+        "wa_klawatti_peak_southeast_face",
+        "wa_klawatti_peak_sw_buttress",
+        "wa_koala_krack",
+        "wa_kololo_peaks_standard",
+        "wa_kyes_peak_glaciated_scramble",
+        "wa_kyes_peak_northeast_ridge"
+      ],
+      "pass": 5,
+      "confirmed_errors_fixed": 9,
+      "flagged_for_human_review": 0,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-09-10-batch-263.sql",
+      "note": "Fixed: wa_kimtah_peak_scramble dist_km stored the round-trip figure where the app expects one-way (23.17km -> 11.59km, per the row's own waypoints/itinerary), road.driveNote mileage (20mi -> 45mi to Marblemount, WebSearch-confirmed), itinerary.days[].miles (didn't match own waypoints/totalNote), gain_ft/loss_ft (4950 -> 4650, matching the row's own day-by-day breakdown), and two stale data_quality.gaps entries contradicted by the row's own populated fields. wa_king_kong_gorillas_direct_direct: fa/beta conflated the actual FA (Wertkin & Tyree Johnson, with a fall) with the FFA (Wertkin & Jon Gleason) per Wertkin's own trip report -- this also corrects an unapplied batch-197 fix that had itself gotten this wrong; commitment grade (III -> IV, matching the row's own beta and external sourcing); approach named the wrong pass (Longs Pass -> Ingalls Pass, matching the row's own waypoint and the route's continuation past Ingalls Lake). wa_kyes_peak_northeast_ridge approach/descent_text/road conflated two distinct real trails on opposite sides of the range that both reach Curry Gap (Quartz Creek Trail, Skykomish side, vs. Bald Eagle/Curry Gap Trail #650, Sauk/Darrington side) -- corrected trail/trailhead names, mileage, and which trail is met at the junction, per USFS/WTA/Mountaineers sourcing and Beckey's own approach description. IMPORTANT PROCESS NOTE: several of these fixes re-propose findings from batch-70 (2026-08-07, pass 3) and batch-197 (2026-09-04, pass 4) that were confirmed via fresh live-DB reads to have NEVER been applied -- the live rows still held the pre-fix values. Re-verified each independently this session (not just copied forward) before re-including in this batch's SQL; see the SQL file's own header note. Clean, cross-checked against external sources: wa_klawatti_peak_southeast_face and wa_klawatti_peak_sw_buttress (elevation 8485ft and 1940 FA both confirmed exactly via WebSearch; SW Buttress descent text matches Mountain Project near-verbatim); wa_koala_krack (Kangaroo Temple elevation 7572ft and approach confirmed); wa_kololo_peaks_standard (elevation ~8240ft within cited range); wa_kyes_peak_glaciated_scramble (elevation and 1920 FA -- Kyes/Bachelder, Everett Boy Scouts -- both confirmed)."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."

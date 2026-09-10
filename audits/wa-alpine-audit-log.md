@@ -19434,3 +19434,108 @@ verify each before sending the next, per the checker's own warning.
 
 Next batch continues in sorted-id order after `wa_johannesburg_mountain_northeast_
 buttress` (see progress file).
+
+## Batch 263 (pass 5) — 2026-09-10
+
+Routes: `wa_kimtah_peak_scramble`, `wa_king_kong_gorillas_direct_direct`,
+`wa_klawatti_peak_southeast_face`, `wa_klawatti_peak_sw_buttress`, `wa_koala_krack`,
+`wa_kololo_peaks_standard`, `wa_kyes_peak_glaciated_scramble`,
+`wa_kyes_peak_northeast_ridge`.
+
+**Process note up front:** several fixes below re-propose findings from batch-70
+(2026-08-07, pass 3) and batch-197 (2026-09-04, pass 4) that a fresh read of the live DB
+confirmed were never applied — the live rows still held the pre-fix values in every case.
+Each was re-verified independently this session (fresh WebSearch / re-derived from the
+row's own other fields) rather than just copied forward from the old SQL files. One of
+them — `wa_king_kong_gorillas_direct_direct`'s first-ascent field — corrects an
+*unapplied* batch-197 fix that had itself gotten the FA wrong (see below).
+
+**Fixed:**
+
+- `wa_kimtah_peak_scramble` — `dist_km` (23.17 km) is the ROUND-TRIP distance stored
+  where the app expects one-way (it renders round trip as `distKm * 2`). The row's own
+  waypoints give a one-way trailhead-to-summit distance of 7.2 mi, matching the approach
+  text's own "3.5-3.6 miles" to Easy Pass and the itinerary's own "roughly 15 miles...
+  round-trip" totalNote (7.2 × 2 = 14.4 ≈ 15). Corrected to 11.59 km (7.2 mi one-way) so
+  `distKm * 2` renders the correct ~14.4 mi round trip instead of doubling an
+  already-doubled figure to 28.8 mi.
+- `wa_kimtah_peak_scramble` — `road.driveNote` said Easy Pass Trailhead is "about 20
+  miles east of Marblemount"; WTA/Forest Service sourcing puts it at 45-46 miles (SR-20
+  milepost 151-152). Corrected to 45 miles.
+- `wa_kimtah_peak_scramble` — `itinerary.days[].miles` (7.5 / 5 / 7.5, summing to 20 mi)
+  contradicted the row's own waypoints (trailhead→camp = 5.3 mi per waypoints[3].distMi)
+  and its own totalNote ("roughly 15 miles... round-trip"). Corrected to 5.3 / 3.8 / 5.3
+  (14.4 mi total), matching both.
+- `wa_kimtah_peak_scramble` — top-level `gain_ft`/`loss_ft` (both 4950) disagreed with
+  the row's own `itinerary.days[].gainFt`/`lossFt`, which sum to 4650 each on this
+  out-and-back route, and with the itinerary's own totalNote ("~4,600 ft round-trip gain
+  overall"). Corrected both to 4650.
+- `wa_kimtah_peak_scramble` — `data_quality.gaps` listed "No confirmed GPS waypoints for
+  the gully/gendarme sections" and "No verified first-ascent date or party found", both
+  directly contradicted by the row's own populated `waypoints` (names "Grotesque
+  Gendarmes cliff band" and "Water-filled summit gully" with coordinates) and `fa`
+  (John Roper and Jerry Swanson, June 1970). Trimmed to the two gaps that still apply.
+- `wa_king_kong_gorillas_direct_direct` — `fa`/`beta` conflated two separate 2016 events.
+  Sol Wertkin's own first-hand trip report (solclimbs.blogspot.com, "First Ascent: King
+  Kong") states that Wertkin and Tyree Johnson "finally completed" the crux headwall
+  crack (with a fall) in early September 2016 — the actual first ascent — and that
+  Wertkin returned about a week later with Jon Gleason and led it clean on September 9,
+  2016 — the first FREE ascent. The row's `beta` already read "First ascent: September
+  9, 2016 by Sol Wertkin and Jon Gleason," mislabeling the FFA as the FA and dropping the
+  actual FA entirely; `fa` named only Tyree Johnson. Both corrected to state the FA/FFA
+  split explicitly. (This also corrects an unapplied batch-197 fix, which had instead
+  just rewritten `fa` to match `beta`'s already-wrong "Jon Gleason" framing — re-checking
+  against the primary source this session shows that isn't what happened.)
+- `wa_king_kong_gorillas_direct_direct` — `commitment` ("III") contradicted the row's own
+  `beta` ("Grade: IV 5.11+") and external sourcing (multiple sources describe King Kong
+  as "IV 5.11+"). Corrected to "IV".
+- `wa_king_kong_gorillas_direct_direct` — `approach` named "Longs Pass (6,200 ft)" at
+  mile 2.5, but the row's own waypoint at that same distance is named "Ingalls Pass"
+  (elev. 6,457 ft), and the approach text's own next clause ("continue past Ingalls Lake
+  toward Stuart Pass") only makes sense via Ingalls Pass/the Ingalls Way Trail — Longs
+  Pass is a separate trail branch that doesn't pass the lake. Longs Pass's actual
+  elevation (~6,300 ft, WebSearch-confirmed) is also a worse match for the stored
+  "6,200 ft" than Ingalls Pass is for its own 6,457 ft waypoint. Corrected the pass name.
+- `wa_kyes_peak_northeast_ridge` — `approach`/`descent_text`/`road` named the trail as
+  "Quartz Creek Trail" from a "North Fork Sauk River / Quartz Creek Trailhead," which
+  conflates two distinct real trails that happen to both meet at Curry Gap: Quartz Creek
+  Trail #1050 is reached from the SKYKOMISH side (Beckler Rd/FR-65/FR-63 near Index — the
+  same side as this peak's *standard* route, which the row's own driveNote already says
+  this route is NOT on). The Sauk-side trail that actually reaches Curry Gap from
+  FR-49/Sloan Creek Road near Darrington is Bald Eagle (Curry Gap) Trail #650 (USFS/
+  WTA/Mountaineers-confirmed: Bald Eagle Trailhead, ~2,400 ft, ~2.5 mi to Curry Gap — not
+  the ~4 mi this row stated, which is actually the Quartz Creek side's distance). Beckey's
+  own approach description for this exact route ("an extended logging road on the north
+  fork of the Sauk River... good trail two miles to Curry Gap") matches Bald Eagle Trail,
+  not Quartz Creek Trail. Corrected the trailhead/trail names, mileage, and which trail is
+  met at the Curry Gap junction (Quartz Creek Trail, arrived at from the other side — not
+  "the Bald Eagle Mountain Trail junction" as previously stated, since Bald Eagle is the
+  trail being walked in on).
+
+**Confirmed clean, cross-checked against external sources:** `wa_klawatti_peak_
+southeast_face` and `wa_klawatti_peak_sw_buttress` — Klawatti Peak's elevation (8,485 ft)
+and 1940 first ascent (Lloyd Anderson, Karl Boyer, Tom Gorton, July 7) both confirmed
+exactly via WebSearch; the SW Buttress route's "Smokestack" descent text matches Mountain
+Project's own description near-verbatim. `wa_koala_krack` — Kangaroo Temple's elevation
+(7,572 ft) and the Washington Pass hairpin/Kangaroo Pass approach confirmed; Koala Krack
+itself has no external route-specific source (already self-flagged in the row's own
+`corrections` field — left as is, nothing to verify against). `wa_kololo_peaks_standard`
+— elevation (8,240 ft) falls within the externally-cited 8,200-8,243 ft range. `wa_kyes_
+peak_glaciated_scramble` — elevation (7,280-7,282 ft) matches Wikipedia's "over 7,280
+ft"; the August 15, 1920 first ascent by James Kyes and Reginald Bachelder (Everett Boy
+Scouts) confirmed via WebSearch.
+
+**Tooling note:** the `fa` fix for `wa_king_kong_gorillas_direct_direct` sets a value
+containing a literal semicolon (`...with a fall on the headwall crack); FFA by...`).
+As in batch-262, `check-sql-targets.mjs` splits on every literal `;` including ones
+inside quoted string literals, so it reports that one statement as having "no literal
+id predicate — not checkable" even though the full statement (WHERE id = ... AND fa =
+...) is valid and was manually verified. All other 13 targets in the file checked clean
+(ids exist, no destructive DELETE).
+
+SQL: `audits/sql/2026-09-10-batch-263.sql` (13 UPDATE statements, no DELETE). File is
+11.4KB, over the SQL Editor's ~4KB safe-paste soft limit — split into ~1.5KB chunks and
+verify each before sending the next.
+
+Next batch continues in sorted-id order after `wa_kyes_peak_northeast_ridge` (see
+progress file).
