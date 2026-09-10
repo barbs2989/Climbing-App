@@ -7122,6 +7122,77 @@ the correction knows the screen is wrong, and they have no way to report it.
       bound above is satisfied by a `trustTier` that ignores the table entirely. **Two must stay
       SILENT** and they are the two the string count got wrong: a comment quoting the forbidden
       shape, and an unrelated control labelled `Trusted`.
+  - **SECTION 8 BOUNDS A BAR STATED IN PROSE, AND SECTION 7 IS BLIND TO ONE BY CONSTRUCTION.** That
+    section walks `TRUST_TIERS` — so the same sweep that moved the card's goal, its denominator, the
+    *"✓ Well-trusted"* line and the badge ladder onto that array left a **notification** reading
+    *"Finish verification to lift your trust score to 90+"*: **six above the 84 a climber can earn,
+    twenty-five above the top tier, and promised for an action worth five points**. *An instance
+    fixed by hand is not a class closed*, with section 7's own enumeration of what it swept standing
+    as the evidence for what it did not.
+    - **FOUND BY READING A CI `ui-screens` CAPTURE**, the technique this file already credits for
+      the seed-identity bug, the glued *Recently climbed* row and the pyramid caption. Nothing else
+      could have: the column is a string literal, it renders, and the number is a number — only
+      comparing it against the model says it is impossible.
+    - **THE DISCRIMINATOR IS THE SCALE, NOT A VOCABULARY OF THRESHOLD WORDS, and it was MEASURED
+      rather than chosen** (`scripts/oneoff/measure-trust-bars-stated-in-prose.mjs`, which
+      re-derives every figure below — **re-run it rather than quoting them**). Of **36,328 string
+      literals across 50 rendering sources, 91 mention trust** and, before the fix, exactly **two**
+      also carried a number. **One of those two is a DATE** — *"Did your crew make Schoolroom on May
+      24? … reliability feeds your trust score"* — so it is the one that survives, and a rule firing
+      on any number in a trust sentence now reports **it and nothing else**. A deny-list of
+      threshold phrasings (`to N`, `N+`, `at least N`) is no better: one more phrasing beats it,
+      which this file records four separate times for `check:outage`'s rule 2 alone.
+    - **A trust SCORE lives on the model's own scale**, so the band in which a number cannot be
+      anything else is **(earnable ceiling, `SERVER_TRUST_CAP`]** — today **85..99**. A date or a
+      reachable bar sits at or below the ceiling and stays silent; a year or a row count is off the
+      scale entirely and stays silent. Both bounds are **DERIVED** from the model and the
+      migrations, so the band moves by itself the day a verification the app cannot currently grant
+      becomes earnable — and a bar that becomes reachable stops being a finding with nobody editing
+      the rule, which is the contract sections 6 and 7 already hold.
+    - **THE REPAIR NAMES NO NUMBER AT ALL, AND DERIVING ONE WOULD HAVE BEEN A SECOND FALSE
+      PROMISE.** `email` is the one earnable verification type and it is worth **5 points**, so
+      *"lift your trust score to &lt;any bar&gt;"* is false whichever bar is substituted —
+      `TRUST_GOAL` included. The app already had the honest wording one surface over: Home's setup
+      card reads *"Verify to boost your trust / Verified climbers get more requests."* Same
+      convention-violation shape as the résumé's demo-verify tick, which this file records as *"the
+      one outlier to a convention the app already has"*.
+    - **ONE PARSE PER FILE, SHARED WITH SECTION 7.** These are 400 kB JSX files and a build gate is
+      paid by every author and every CI run; `check:waypoint-placement` records what two independent
+      traversals of one source cost. `astOf` memoises, and a parse failure is **fatal** rather than
+      skipped — a file that did not parse contributes no findings and would read as a clean one.
+    - **A MEASURED NON-FINDING BESIDE IT, recorded so it is not re-derived: the notification is also
+      UNGATED where its sibling is gated, and that half is UNREACHABLE.** `_raiseRows` gates
+      *"Verify email"* on `!verified` — section 3's own fix — and its handler even answers *"You're
+      already verified."*; nothing removes `n3`, where `profile_setup` and `nrem` are both removed
+      by id the moment they stop applying. It cannot bite today: the demo cannot verify without a
+      `uid`, and signing in calls `setNotifs([])`, so `n3` and `verified===true` never coexist. *A
+      detector for a class of zero is the thing this repo keeps refusing to build.*
+    - Fails **closed** six ways, each of which otherwise prints identically to a clean run: a
+      migration tree that parsed short — which **widens** the band and therefore manufactures
+      findings rather than losing them — no verification type parsed as reachable, a ceiling that
+      is not inside the cap, fewer than 4 rendering sources walked, fewer than 5,000 string
+      literals, and **no literal mentioning trust at all**, with which the needle cannot fire and a
+      clean result means nothing.
+    - **IT CARRIES NO `ANCHOR LOST` ON THE CAP OR THE MODEL, AND THE INJECTION IS WHAT PROVED THOSE
+      UNREACHABLE.** Both were guarded here first. Section 3 **executes** the model and section 7
+      reads the same cap, so a missing `SERVER_TRUST_CAP` kills the run long before section 8 — the
+      case that renamed the export died in **section 3** with *"the cap is undefined in JS and 99 in
+      0038"*, which is the better message anyway. *An injection that produces a different failure is
+      not a catch*, and following that verdict showed the two checks were **dead code, which reads
+      as coverage** — deleted rather than given a contrived case, the same call
+      `check:waypoint-dedupe` records for a self-comparison its own suite proved inert.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-trust-bar-prose-cases.mjs`), each case proving
+      its edit landed **by checksum** and restoring every file it touches byte-identically. Case 1 is
+      the real notification restored **verbatim**; a bar at **85** fires too, so the bound is the
+      ceiling rather than the literal 90; and the same bar written as a **template literal** fires,
+      or half the ways this app writes copy go unwatched. The eighth edits the **GUARD** rather
+      than the app — the precedent `check:seed-only-surfaces`' cases 11 and 12 set — and neuters the
+      trust needle, because with it matching nothing the walk still sees 36,328 literals and prints
+      a cheerful *"no bar found"*, which is exactly what a clean tree prints. **Four must stay
+      SILENT** — a bar **at** the ceiling is reachable and is correct work, a number **above** the
+      cap is not a trust score, a comment quoting the defect is documentation, and **a bar DERIVED
+      from the constant is the load-bearing one**: `"Trust "+GROUP_TRUST_MIN+"+"` puts no digit in
+      any literal, so a guard firing on it would forbid the very fix section 6 records.
   - Injection-tested **13/13** (`scripts/oneoff/inject-server-trust-drift-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Section 6's
     four are the ones to read: the two bounds each fire (55 restored **verbatim**, and a bar of 5),
