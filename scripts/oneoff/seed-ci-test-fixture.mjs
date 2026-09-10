@@ -165,7 +165,14 @@ async function run() {
   // ---- the owner's own logbook shape, and the connection the Crew tab renders ----
   const solo = [
     ["objectives", { user_id: owner.id, route_id: ROUTE_ID }, `user_id=eq.${owner.id}&route_id=eq.${ROUTE_ID}`],
-    ["climb_logs", { user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04", discipline: "alpine", tick_type: "lead", party_size: 2, notes: "CI fixture log." }, `user_id=eq.${owner.id}&route_id=eq.${ROUTE_ID}`],
+    // `stars` IS WHAT MAKES THIS AN ASCENT RATHER THAN A CONDITIONS REPORT, and without it this
+    // row was neither. The app splits climb_logs on exactly that column --
+    //   if (row.stars == null) dbConds.push(item); else dbAscents.push(item);
+    // -- and only `dbAscents` reach `logs`. So a tick_type of "lead" with null stars is a
+    // state LogAscent cannot produce (it defaults stars to 5 and sends undefined only for a
+    // scout/"Conditions" report), and the durable fixture's "logged climb" counted as none:
+    // Profile read "0 Climbs logged" on an account whose table plainly held a row.
+    ["climb_logs", { user_id: owner.id, route_id: ROUTE_ID, date_climbed: "2026-07-04", discipline: "alpine", tick_type: "lead", stars: 5, party_size: 2, notes: "CI fixture log." }, `user_id=eq.${owner.id}&route_id=eq.${ROUTE_ID}`],
     ["user_lists", { user_id: owner.id, name: "CI fixture ticklist", icon: "star", route_ids: [ROUTE_ID], shared: false }, `user_id=eq.${owner.id}&name=eq.CI%20fixture%20ticklist`],
   ];
   for (const [table, row, filter] of solo) {
