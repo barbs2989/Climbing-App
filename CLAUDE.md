@@ -61,6 +61,7 @@ npm run check:preview-claims # a control that changes only CLIENT STATE must not
 npm run check:toast-reachable # every screen App returns can SHOW a toast (in build)
 npm run check:verification-fallback # a failed verification read must not un-verify you (in build)
 npm run check:profile-edit-gate # a failed profile read must not open an editor that WIPES it (in build)
+npm run check:onboarding-reach # a climber who has not onboarded is ASKED; one who has is left alone (in build)
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
@@ -1363,14 +1364,42 @@ the total when deciding where a new guard belongs.
     reasoned about that flag from the config and were wrong both times — and a vite `define` on
     `import.meta.env.X` substitutes **nothing**, so adding one changes nothing, which reads
     identically to *"the override already worked"*.
-  - **TWO DECLARED KNOWNS, each of which FAILS AS STALE the day it is fixed** rather than passing
-    quietly — the standard `check:field-renders`' `KNOWN` map is held to. Onboarding does not
-    auto-open for a real account (`authed` is `useState(DEMO_AUTOLOGIN)` and `setAuthed(true)` is
-    called in exactly one place, LoginScreen's DEMO branch, so the effect written to onboard a new
-    climber can never fire for one); and the *"Set up your climbing profile"* card renders on
-    **Climbs**, not Home. Both are reported rather than repaired because both are product calls: the
-    obvious fix for the first nags every climber on every load, since `onboarded` is not persisted
-    either, and the second moves a card on a **locked** Home layout.
+  - **ITS TWO DECLARED KNOWNS ARE ASSERTIONS NOW, and the mechanism that retired them is the point.**
+    Each was written to **FAIL AS STALE the day it was fixed** — the standard `check:field-renders`'
+    `KNOWN` map is held to — so when the product decision was taken, the guard went red by itself
+    rather than quietly agreeing with whatever shipped. Nobody had to remember the declarations
+    existed, which is the whole argument for a declaration that fails when it stops being true.
+  - **ONBOARDING AUTO-OPENS FOR A NEW ACCOUNT, AND THE REPAIR THIS GUARD WARNED AGAINST IS STILL
+    WRONG.** The old effect keyed on `authed`, set true in exactly one place (LoginScreen's DEMO
+    branch), so it could never fire for a real session. Re-keying it on `signedIn` — the obvious
+    fix — would nag **every** climber on **every** load, because `onboarded` is
+    `useState(DEMO_AUTOLOGIN)` and does not persist either. What shipped splits the question:
+    - the **ACCOUNT** decides whether onboarding is still needed — `accountNeedsOnboarding` reads
+      the profile row, and onboarding's first question is required and its finish handler persists
+      `disciplines`, so an account with none never completed it. That is right on a second device,
+      and it self-heals if the write failed;
+    - a **DEVICE** preference (`lib/onboard-pref.js`) decides whether this browser has already
+      opened the sheet once, so it is an invitation rather than a nag.
+    - **IT WAITS FOR THE READ AND REFUSES A FAILED ONE.** `profileLoaded` separates *"no
+      disciplines"* from *"not asked yet"*; without it every established climber matches for the
+      moments before their profile arrives and the sheet flashes at them on every load. And a FAILED
+      read leaves exactly the empty profile a new account has, so the predicate gates on
+      `!profileReadFailed` — `check:profile-edit-gate`'s rule one surface over, since opening a
+      blank onboarding sheet over a profile the app could not load is how that profile gets
+      overwritten.
+  - **THE SETUP CARD MOVED TO HOME, AND ITS GATE WAS A SECOND DEFECT NOBODY HAD NAMED.** It was
+    gated on `!onboarded` — false forever for a real account — so **every established climber with
+    a complete profile was being offered *"Set up your climbing profile"* on every load**. It shares
+    `accountNeedsOnboarding` with the sheet now, so the number and the prompt cannot disagree. The
+    evidence Home was always the intent is the card's own dismiss state: `homeDismiss`, keyed
+    `"climbsetup"` — on Climbs its ✕ wrote to a list no Climbs surface reads. The walk asserts it is
+    on Home **and not on Climbs**, because a card in two places is worse than one in the wrong
+    place: both would read one dismissal key, so dismissing either would blank both.
+  - **The walk SKIPS the sheet rather than completing it**, which is what makes the card assertion
+    possible: `onSkip` is `()=>setOnboardOpen(false)` and does **not** mark them onboarded, so a
+    climber who skips still needs the card — exactly the state worth measuring. It then re-enters
+    through Settings, which is also the path on a second device, where the device preference stops
+    the sheet opening again.
   - Fails **closed** throughout: a dev server that never came up, a fixture that already carries the
     columns under test, a nav or sub-tab click that did not land, a `Crew:Friends` view that
     rendered under 200 characters (against which every *"is absent"* assertion passes), and a crew
@@ -10927,6 +10956,68 @@ their own Résumé showed an amber **"Unverified"** chip.
     **case 5 must stay SILENT** — a comment naming the flag is documentation.
   - What it does **not** prove: that the toast is legible, or that a climber ever meets the refusal.
 
+- **`check:onboarding-reach`** asserts that **a climber who has not onboarded is offered
+  onboarding, and one who has is left alone**. Static (one Babel parse plus two executions, no
+  browser and no database), so it sits in `npm run build`.
+  - **THE APP MANAGED TO ASK NOBODY AND EVERYBODY AT ONCE, which is why both halves are asserted.**
+    The effect written to onboard a new climber keyed on `authed` — set true in exactly ONE place,
+    LoginScreen's `!realAuthGate` DEMO branch — so with a real session it could **never fire**.
+    Meanwhile the *"Set up your climbing profile"* card was gated on `!onboarded`, which is
+    `useState(DEMO_AUTOLOGIN)` and therefore false on **every** load for a real account, so it was
+    offered forever to climbers whose profile had been complete for months. One defect was declared
+    as a KNOWN by `check:new-climber-journey`; **the other had never been named at all**, and was
+    found only by asking what the card's gate actually evaluates to.
+  - **THE PREDICATE SPLITS AN ACCOUNT FACT FROM A DEVICE PREFERENCE, and that split is the fix.**
+    *Has this climber onboarded?* is a property of the **account**, so `accountNeedsOnboarding`
+    reads the profile row — onboarding's first question is required and its finish handler persists
+    `disciplines` through `saveProfile`, so an account with none never completed it. That is right
+    on a second device and self-heals if the write failed. *Has this browser already opened the
+    sheet?* is a property of the **device**, so it lives in `lib/onboard-pref.js`. Keying the sheet
+    on the account fact alone would reopen it on **every page load** — the nag the journey walk
+    warned about when it declined to build this.
+  - **IT WAITS FOR THE READ AND REFUSES A FAILED ONE**, and those are separate assertions because
+    they fail differently. `profileLoaded` separates *"no disciplines"* from *"not asked yet"*;
+    without it every established climber matches for the moments before their profile arrives and
+    the sheet flashes at them on each load. And a **failed** read leaves exactly the empty profile a
+    new account has — so `!profileReadFailed` is `check:profile-edit-gate`'s rule one surface over:
+    opening a blank onboarding sheet over a profile the app could not load is how that profile gets
+    overwritten, since onboarding writes `location`, `disciplines` and all three grades.
+  - **THE PREDICATE IS LIFTED FROM SOURCE AND EXECUTED, never retyped** — a hand-typed copy would
+    agree with itself whatever the app did, which is the entire question — with `ANCHOR LOST` if it
+    moves and a **refusal if it is declared twice**, since then the guard cannot say which one is
+    deciding. It is executed over eight states rather than one, including the two that must stay
+    silent: the seed path, where `authed` is still the sign-in and no profile read ever happens.
+  - **PLACEMENT IS ASSERTED AS ORDER BETWEEN TWO ANCHORS**, never a character window — this file
+    packs a whole screen onto one physical line, so *"near the greeting"* is not a scope, the trap
+    `check:camping` records three times over.
+  - **A GATE RATHER THAN A PROBE, and `check:new-climber-journey` is why it is not enough on its
+    own.** That walk drives this for real and is the stronger test, but it is **hand-run**: it
+    creates a real account, so it needs the service key, which CI must never hold. What CI can see
+    is the wiring — and the wiring is exactly the half a stale-base squash takes, because re-keying
+    the effect back to `authed` or reverting the card's gate moves **no identifier**, which
+    `audit:silent-reverts` says in its own closing caveat it cannot see. Both reverts would leave
+    every render assertion green, so section 1 asserts the old forms are **gone** rather than merely
+    outnumbered.
+  - Fails **closed** five ways, each of which otherwise prints identically to a clean run: an app
+    source that read short, a missing or duplicated predicate declaration, a lifted expression that
+    parses under 40 characters or does not mention all seven of its inputs, a moved Home anchor, and
+    a preference module that does not export the pair.
+  - Injection-tested **8/8** (`scripts/oneoff/inject-onboarding-reach-cases.mjs`), each case proving
+    its edit landed **by checksum** and restoring `ClimbMatch.jsx` byte-identically. Two of the six
+    firing cases are the real historical defects restored verbatim. **Two must stay SILENT** — a
+    comment quoting the old effect (which is what the Babel masking is FOR, and what the sibling
+    guard next door does in its own header) and the predicate's two independent conjuncts written in
+    the other order, since a guard pinned to one spelling forbids a correct refactor.
+    - **The suite found three bugs in ITSELF before it found anything about the guard**, and all
+      three are traps this file already records. Four expectations were the text an assertion prints
+      when it **PASSES** — caught by the harness's own refusal to accept an expectation that already
+      matches the healthy run, which is the structural version of a mistake made three times before.
+      Both SILENT cases then reported *FIRED ON CORRECT WORK* against an **`ok` line**, because the
+      guard's own label reads *"a FAILED profile read"* and a bare `includes("FAIL")` matches it:
+      **match a FAIL LINE, never the word**, exactly as `check:waypoint-dedupe` records. And deleting
+      `profileLoaded` outright tripped the guard's fail-closed branch *before any assertion ran*, so
+      the case proved nothing about the semantics — the injection neuters the conjunct **in place**
+      now, keeping the name so the executed assertion is what fires.
 - **`check:photo-removal`** asserts that a climber can take their **own** profile photo back down,
   that **only** their own strip offers the control, and that a **failed** removal does not destroy
   the file. Static (a source read plus one execution against a stubbed transport), **1.15s**, so it

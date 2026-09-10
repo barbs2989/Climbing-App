@@ -173,72 +173,75 @@ try {
   }, t);
 
   // ---- ONBOARDING ------------------------------------------------------------------------------
-  // ONBOARDING DOES NOT AUTO-OPEN FOR A REAL ACCOUNT, AND THAT IS A FINDING THIS WALK MADE.
-  //   useEffect(()=>{if(authed&&!onboarded)setOnboardOpen(true);},[authed])
+  // THIS WALK FOUND THAT ONBOARDING COULD NOT AUTO-OPEN FOR A REAL ACCOUNT, AND CARRIED IT AS A
+  // DECLARED KNOWN UNTIL IT WAS A PRODUCT DECISION SOMEBODY TOOK. Both halves are now assertions.
+  //   was: useEffect(()=>{if(authed&&!onboarded)setOnboardOpen(true);},[authed])
   // `authed` is useState(DEMO_AUTOLOGIN) and setAuthed(true) is called in exactly ONE place --
   // LoginScreen's onAuth, the !realAuthGate DEMO branch. A real session renders <AuthModal
   // onAuthed={()=>{}}/> -- a NO-OP -- and the app is gated on `signedIn` instead. So `authed`
-  // stays false forever on the real path and that effect can never fire: the modal written to
-  // onboard a new climber never opens for one.
+  // stayed false forever on the real path and the effect written to onboard a new climber could
+  // never fire for one.
   //
-  // Reported, NOT auto-fixed. The obvious repair (fire on `signedIn`) would nag EVERY climber on
-  // EVERY load, because `onboarded` is useState(DEMO_AUTOLOGIN) and is not persisted either -- it
-  // is false on every page load for everybody. A correct fix derives "has this climber onboarded"
-  // from their profile having disciplines, which only became possible once #1576 gave onboarding
-  // somewhere to write. That changes when a modal appears, so it is a product call.
-  // IS THERE A VISIBLE WAY IN AT ALL? Asked of the page TEXT, not of my control selector -- an
-  // earlier pass concluded "the card is absent" from a list of controls, which cannot tell a card
-  // that did not render from one my selector did not match. Both gates are measured above:
-  // DEMO_AUTOLOGIN is false so `onboarded` is false, and homeDismiss starts [], so
-  // (!onboarded && !dismissed) is TRUE and the card is supposed to be here.
+  // WHY IT WAS NOT SIMPLY RE-KEYED ON `signedIn`, which is the repair this guard warned against:
+  // `onboarded` does not persist either, so that fires on EVERY page load for EVERYBODY. What
+  // shipped instead splits the question in two -- the ACCOUNT decides whether onboarding is still
+  // needed (no disciplines recorded, read from the profile row, so it is right on a second device
+  // and self-heals if the write failed), and a DEVICE preference decides whether this browser has
+  // already opened the sheet once. The Home card is what keeps the path open afterwards, so
+  // skipping the sheet costs nothing.
+  // ONBOARDING AUTO-OPENS FOR A NEW ACCOUNT NOW, AND THIS IS ASSERTED BEFORE THE CARD BECAUSE THE
+  // SHEET COVERS THE SCREEN THE CARD IS ON. Reading Home first would be reading the modal.
+  // The old effect keyed on `authed`, which is set true in exactly one place -- LoginScreen's
+  // !realAuthGate DEMO branch -- so it could never fire for a real session. It keys on the ACCOUNT
+  // now: no disciplines recorded means onboarding was never completed, which is durable and right
+  // on a second device, where the session-only `onboarded` flag said nothing at all.
+  const firstScreen = await page.evaluate(() => document.body.innerText || "");
+  const autoOpened = firstScreen.includes("Takes about 30 seconds.") || firstScreen.includes("WHAT DO YOU DO?");
+  if (autoOpened) ok("onboarding AUTO-OPENED for a brand-new real account");
+  else bad("onboarding did not auto-open for a brand-new real account. The account has no disciplines and the profile read resolved, so accountNeedsOnboarding should be true — check that the effect keys on it and that the device preference is not already set for this profile");
+
+  // SKIP RATHER THAN COMPLETE, because the card assertion below depends on still needing it.
+  // `onSkip` is ()=>setOnboardOpen(false) and does NOT mark them onboarded, so a climber who
+  // skips still needs the card — which is exactly the state worth measuring.
+  if (autoOpened) {
+    if (!(await clickText("Skip for now"))) dead("the onboarding sheet is open but offers no 'Skip for now' — cannot reach Home to check the card");
+    await settledText(page);
+  }
+
+  // THE CARD IS ON HOME. Asked of the page TEXT, not of a control selector -- an earlier pass
+  // concluded "the card is absent" from a list of controls, which cannot tell a card that did not
+  // render from one the selector did not match.
   const homeText = await page.evaluate(() => document.body.innerText || "");
-  const cardVisible = homeText.includes("Set up your climbing profile");
-  if (cardVisible) bad("STALE DECLARATION: the setup card now renders on Home. That is the fix this guard records as NOT done — drop the KNOWN below and make this an ok().");
-  else {
-    // NOT ON HOME. Where is it? The JSX sits immediately after the DbAreaBrowser Suspense block
-    // and the area comments -- i.e. inside the CLIMBS tab region, not Home. Checked rather than
-    // asserted, because an earlier brace-balance "proved" it was inside tab==="today" by finding
-    // the outer SCROLL CONTAINER (349672->526500) rather than the Home-only block. Balancing to a
-    // container and calling it a screen is how that went wrong.
-    const onClimbs = await (async () => {
-      if (!(await clickText("Climbs"))) return null;
+  if (homeText.includes("Set up your climbing profile"))
+    ok("the 'Set up your climbing profile' card is on HOME — the screen a new climber lands on");
+  else bad("the setup card is not on Home. It is gated on (accountNeedsOnboarding && !dismissed); the account has no disciplines and homeDismiss starts empty, so both are satisfied and it should be here");
+
+  // AND NOT ON CLIMBS, or the move left a copy behind. A card in two places is worse than a card
+  // in the wrong place: the dismiss button writes one key, so dismissing one would blank both.
+  {
+    if (!(await clickText("Climbs"))) bad("could not open the Climbs tab to confirm the setup card no longer renders there");
+    else {
       await settledText(page);
-      const t = await page.evaluate(() => document.body.innerText || "");
-      return t.includes("Set up your climbing profile");
-    })();
-    if (onClimbs === null) bad("could not open the Climbs tab to locate the setup card");
-    else if (onClimbs) {
-      // A SECOND DECLARED KNOWN, and it FAILS AS STALE the day the card appears on Home.
-      // Reported rather than moved: the Home layout is a locked product decision, and this is a
-      // placement change a climber sees, not polish. The evidence that Home was the intent is the
-      // dismiss state's own name -- `homeDismiss`, keyed "climbsetup" -- and Home already carries
-      // the sibling setup checklist ("Add your climbing grades", "Set your availability").
-      console.log("  KNOWN the 'Set up your climbing profile' card renders on the CLIMBS tab, not Home.");
-      console.log("        A new climber lands on Home, so the one prompt to set up their profile is on");
-      console.log("        a screen they have no reason to open first. Its JSX sits immediately after the");
-      console.log("        DbAreaBrowser Suspense block, inside the Climbs region. Both its gates are");
-      console.log("        satisfied (!onboarded && !dismissed) -- it is placement, not a dead gate.");
+      const climbsText = await page.evaluate(() => document.body.innerText || "");
+      if (climbsText.includes("Set up your climbing profile"))
+        bad("the setup card still renders on the CLIMBS tab as well as Home — the move left a copy behind");
+      else ok("...and it no longer renders on Climbs");
     }
-    else bad("'Set up your climbing profile' renders on neither Home nor Climbs, though !onboarded && !dismissed are both true");
     await clickText("Home");
     await settledText(page);
   }
 
   // HOW A CLIMBER REACHES ONBOARDING, established by walking rather than by reading.
-  // 1. It does NOT auto-open. `useEffect(()=>{if(authed&&!onboarded)setOnboardOpen(true);},[authed])`
-  //    and setAuthed(true) is called in exactly ONE place -- LoginScreen's onAuth, the !realAuthGate
-  //    DEMO branch. A real session renders <AuthModal onAuthed={()=>{}}/>, a NO-OP, and the app is
-  //    gated on `signedIn` instead.
-  // 2. The Home "Set up your climbing profile" card is NOT on screen either, and that is UNEXPLAINED
-  //    rather than diagnosed: it renders on tab==="today" gated on (!onboarded && !dismissed), and
-  //    `onboarded` is useState(DEMO_AUTOLOGIN) which this config forces false. All 28 Home controls
-  //    were dumped and it is absent. Recorded as a question, not a cause -- two runs were already
-  //    spent on a confident wrong story about the env flag.
-  // 3. Settings -> "Edit areas, disciplines & grades" DOES open it, and that is the path used here.
+  // 1. It AUTO-OPENS on the first load for an account that has not onboarded, asserted above.
+  // 2. The Home "Set up your climbing profile" card is the standing way back in, asserted above.
+  //    It used to render on the CLIMBS tab, which a new climber has no reason to open first; the
+  //    evidence that Home was always the intent is its own dismiss state's name -- `homeDismiss`,
+  //    keyed "climbsetup" -- so on Climbs its dismiss button wrote to a list nothing there reads.
+  // 3. Settings -> "Edit areas, disciplines & grades" opens it too, and that is the path walked
+  //    below, because the walk deliberately SKIPPED the sheet in order to check the Home card.
   let entered = "settings";
   if (await clickText("Set up my profile")) {
-    entered = "auto";
-    bad("STALE DECLARATION: onboarding now auto-opens for a real account. That is the fix this guard records as NOT done — drop the KNOWN block below and delete this branch.");
+    entered = "the sheet already on screen";
   } else {
     if (!(await clickText("Settings"))) dead("no Settings control on Home");
     await settledText(page);
@@ -253,18 +256,11 @@ try {
       const onStep1 = await page.evaluate(() => (document.body.innerText || "").includes("WHAT DO YOU DO?"));
       if (!onStep1) dead("Settings opened something that is not Onboarding");
     }
-    // A DECLARED KNOWN STATE, not a failure -- and it FAILS AS STALE the day it is fixed, which
-    // is the standard check:field-renders' KNOWN map is held to. Reported rather than repaired
-    // because the obvious fix is wrong: firing on `signedIn` would nag EVERY climber on EVERY
-    // load, since `onboarded` is useState(DEMO_AUTOLOGIN) and is not persisted either. A correct
-    // fix derives "has this climber onboarded" from their profile carrying disciplines, which only
-    // became possible once #1576 gave onboarding somewhere to write -- and it changes when a modal
-    // appears, so it is a product call rather than polish.
-    console.log("  KNOWN onboarding does not auto-open for a real account. authed is useState(DEMO_AUTOLOGIN)");
-    console.log("        and setAuthed(true) is called in exactly ONE place -- LoginScreen's onAuth, the");
-    console.log("        !realAuthGate DEMO branch. A real session renders <AuthModal onAuthed={()=>{}}/>,");
-    console.log("        a no-op, so the effect that exists to onboard a new climber can never fire.");
-    console.log("        Reachable only via Settings -> Edit areas, disciplines & grades.");
+    // THE SETTINGS PATH IS STILL THE ONE WALKED, and that is deliberate rather than left over: the
+    // walk SKIPPED the sheet above so it could check the Home card, so it has to come back in. It
+    // is also the path a climber uses on their second device, where the sheet has already been
+    // shown once and the device preference stops it opening again.
+    ok("onboarding is still reachable from Settings after the sheet has been dismissed");
   }
   await settledText(page);
   ok(`onboarding is open (entered via ${entered})`);
