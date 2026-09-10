@@ -4,8 +4,10 @@
 // a neighbouring entry renders identically to one that did not.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/top-contributors-photo-crew-resume";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const balanced = (src, start) => {
   let d = 0, q = null, esc = false;
   for (let i = start; i < src.length; i++) {

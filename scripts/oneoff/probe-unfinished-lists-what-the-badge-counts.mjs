@@ -34,11 +34,22 @@ const ALIASES = {
   dmUnread: "unreadDMs",
   crewUnread: "unreadCrews",
   crewNeedsMyDay: "crewsNeedingMyDay",
+  myCrewInvitesQ: "dbInvites",
 };
 
 const badgeM = /crewBadgeN=([^;]+)/.exec(src);
 if (!badgeM) dead("crewBadgeN is gone — ANCHOR LOST");
-const badgeExpr = badgeM[1];
+let badgeExpr = badgeM[1];
+
+// `_pendingForMe` is an AGGREGATE of five request kinds, hoisted so the badge and the array it is
+// derived from cannot disagree. The panel lists those five under their own names, so comparing the
+// aggregate's NAME against the panel reports a defect that is not there — and the source count
+// drops below this probe's own floor, which is what made it fail closed. Expand it in place and
+// the original question ("is every source the badge sums represented in the list?") is unchanged.
+const aggM = /const _pendingForMe=([^;]+);/.exec(src);
+if (!aggM) dead("`_pendingForMe` is gone — ANCHOR LOST (the badge's aggregate was renamed or inlined)");
+badgeExpr = badgeExpr.replace(/\b_pendingForMe\b/g, "(" + aggM[1] + ")");
+if (/\b_pendingForMe\b/.test(badgeExpr)) dead("could not expand `_pendingForMe` into its sources");
 
 const listStart = src.indexOf("var unfinished=[];");
 if (listStart < 0) dead("the unfinished list is gone — ANCHOR LOST");

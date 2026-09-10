@@ -1,7 +1,8 @@
 // The Leaderboards caveat — "Example profiles are included to show how the boards work" — was
-// gated on DEMO_FILLERS, an unconditional false, so it had never rendered. The seed climbers it
-// describes are NOT gated on that flag, so they render for everyone: the caveat was dead and its
-// subject was live. Every other surface in the app that shows seed climbers labels them
+// gated on DEMO_FILLERS, which was an unconditional false at the time, so it had never
+// rendered. The seed climbers it describes are NOT gated on that flag, so they render for
+// everyone: the caveat was dead and its subject was live. (#1566 has since flipped
+// DEMO_FILLERS ON, which adds a SECOND pool of example profiles -- see makeAllReal.) Every other surface in the app that shows seed climbers labels them
 // (PartnerSearch, the crew listings, the guide listings); this was the one that could not.
 //
 // It is counted from the rows actually drawn rather than from a flag, so this asserts BOTH
@@ -25,13 +26,18 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Leaderboards, CLIMBERS } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
+import { Leaderboards, CLIMBERS, FILLER_CLIMBERS } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
 const noop = () => {};
-export function seedCount() { return CLIMBERS.length; }
+export function seedCount() { return CLIMBERS.length + FILLER_CLIMBERS.length; }
 // Replace the seed pool with climbers carrying uuid ids — what a real profile looks like — so
 // the board can be asked the OTHER question: with nothing on it to apologise for, is it quiet?
+// FILLER_CLIMBERS too. #1566 flipped DEMO_FILLERS to TRUE ("Sample content ON"), so the board
+// carries 12 filler profiles with NUMERIC ids on top of CLIMBERS -- emptying only CLIMBERS left
+// twelve things for the caveat to be true about, and this case reported the app as unconditional
+// when the app was right. Both pools are example content; both have to go.
 export function makeAllReal(n) {
   CLIMBERS.length = 0;
+  FILLER_CLIMBERS.length = 0;
   for (let i = 0; i < n; i++) {
     CLIMBERS.push({
       id: "0f3a5c1e-0000-4000-8000-" + String(i).padStart(12, "0"),
@@ -42,7 +48,7 @@ export function makeAllReal(n) {
       ticks: [], objectiveIds: [], showOnRanks: true,
     });
   }
-  return CLIMBERS.length;
+  return CLIMBERS.length + FILLER_CLIMBERS.length;
 }
 export function render() {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });

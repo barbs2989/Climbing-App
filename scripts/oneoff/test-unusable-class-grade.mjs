@@ -4,7 +4,8 @@
 import { build } from "esbuild";
 import { createRequire } from "module";
 import fs from "fs"; import os from "os"; import path from "path";
-const ROOT = "/Users/nathanbarber/dev/Climbing-App/.claude/worktrees/rappels-rack-filter-class-audit";
+import { fileURLToPath } from "node:url";
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 const out = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "cm-grade-")), "b.cjs");
 await build({

@@ -12,6 +12,7 @@ npm run preview    # serve the built dist/ locally
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
 npm run check:jsx-comments # a comment in JSX children position renders to the USER (in build)
 npm run check:no-nul  # no source file git would treat as BINARY, so diffs stay readable (in build)
+npm run check:script-roots # no script reads the app files of somebody ELSE's worktree (in build)
 npm run check:dup-attrs # a declaration written TWICE: the later wins, the earlier is dead (in build)
 npm run check:bottom-panels # a fixed panel at the bottom must RESERVE the space it covers (in build)
 npm run check:hooks# React hooks-rules violations (runs in build + CI)
@@ -25,7 +26,7 @@ npm run check:overlay-discovery # every modal the app declares is still reachabl
 npm run check:zero # walks every tab and all 27 modals as a BRAND-NEW account sees them
 npm run check:dead-flag-gates # UI fed only by a constant a false flag empties (in build)
 npm run check:sample-content-removable # the sample content really does come out with the flag (in build)
-npm run check:seed-only-surfaces # a component reachable ONLY via !USE_DB renders for nobody (in build)
+npm run check:seed-only-surfaces # a component reachable ONLY on the seed path renders for nobody (in build)
 npm run check:icons # the app declares an icon, and every icon it names exists (in build)
 npm run check:contrib-fields # every field the contribute form offers is actually applied (in build)
 npm run check:contrib-summary # ...and its CURRENT-VALUE line never prints [object Object] (in build)
@@ -63,6 +64,7 @@ npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty 
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
+npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
 npm run check:visibility-switches # a rendered visibility switch must PERSIST, or it promises nobody (in build)
 npm run check:notification-switches # ...and a notification switch must SUPPRESS something, or it hides nobody (in build)
 npm run check:count-matches-its-list # a count and the list under it must agree — on ONE screen (in build)
@@ -713,9 +715,10 @@ the total when deciding where a new guard belongs.
     the name says nothing. That is the point of discovering these by behaviour.
   - Whether the payload can actually resolve is **measured at runtime, not declared**,
     because the answer differs per guard: `check:zero` has nothing, `check:overlay-scroll`
-    has the seeded demo (a crew — but `events` and the club `GROUPS` sit behind
-    `DEMO_FILLERS`, permanently false), and `check:signed-in` has a real account owning a
-    crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
+    has the seeded demo (a crew — `events` and the club `GROUPS` sit behind `DEMO_FILLERS`,
+    which was permanently FALSE when this was written and is **TRUE since #1566**, so those
+    payloads resolve now where they used to be skipped), and `check:signed-in` has a real
+    account owning a crew and a DB group. The opener records `window.__overlayNoPayload` and the guards report
     *skipped* rather than *mounted nothing*. A modal whose payload **did** resolve still has
     to render, so this cannot excuse a broken one.
   - **`postMenuFor` and `reactPickerFor` were exempt as unreachable, and were not.** They
@@ -2431,6 +2434,134 @@ the total when deciding where a new guard belongs.
     - **Section 4 asserts the NETWORK still wins**, on the same module the offline sections
       just exercised: a fallback consulted unconditionally would pass every other assertion
       while serving a stale local row to somebody who has a signal.
+- **`check:units`** asserts that **a surface renders in the climber's chosen units, and that a
+  control which WRITES converts before it stores**. Static (one shared esbuild bundle, six SSR
+  renders through three render functions, two Babel parses and two lifted-and-executed source
+  expressions), so it sits in `npm run build`.
+  - **IT IS SIX PROBES PROMOTED AT ONCE, AND PROMOTING ONE WOULD HAVE BEEN THE WRONG SHAPE.** All
+    six lived in `scripts/oneoff/`, **which nothing runs**, and each proved a fix that changes
+    **strings and no identifier** — a label, a unit word, a conversion at a call site.
+    `audit:silent-reverts` says in its own closing caveat it cannot see that, so a stale-base squash
+    could restore every one of these with each existing gate green. That is the argument that
+    promoted `check:topo-outage-copy`, `check:policy-claims`, `check:profile-claims` and
+    `check:offline-claims`. Promoting one would have left five still running nowhere — *an instance
+    fixed by hand is not a class closed*, which this file records under a dozen names.
+  - **IT WAS FIVE UNTIL THE SIXTH LANDED MID-BUILD, and that is the reason to re-check rather than
+    quote.** #1671 merged while this guard was being written, adding another unit probe that ran
+    nowhere — so a guard shipping as *"the five"* would have been **stale on arrival**. The finding
+    that exposed it looked like a live defect (the approach-variants editor storing raw under a
+    "miles" label) and was **my own branch being behind main**, which is the `check:column-drift`
+    lesson exactly: *a stale tree is indistinguishable from an undescribed defect.* **Re-read
+    `git log origin/main` before believing a finding in a long-running branch.**
+  - **AND A SEVENTH LANDED THE SAME DAY, WHICH IS THAT WARNING PAYING OUT IMMEDIATELY.** The entry
+    above says to re-check for new members rather than quote the count, and `profile` is one: three
+    sites rendered a raw number beside a hardcoded imperial unit — `FullProfile`'s header
+    (`{dist.toFixed(1)} mi away`), its COMPATIBILITY WITH YOU card (`… miles away`, a second
+    spelling of one unit inside one component), and `lib/FireNearRoute.jsx`'s overflow line
+    (*"and N more within {radiusMi} miles"*).
+    - **EACH HAD A CORRECT SIBLING BESIDE IT**, which is what makes them misses rather than a
+      missing convention: the partner card has always written `uDistMi(+dist.toFixed(1))+" away"`,
+      and the fire panel converts **every individual fire's distance two lines above** the one it
+      did not. `dist` is `distMiles(ME, climber)`, so it really is miles and nothing converted it.
+    - **The general rule is what earns the section**, rather than three hand-picked sites: *a value
+      rendered immediately before a literal `mi`/`ft`/`lb` cannot convert, whatever the setting
+      says.* Measured across all **17** app and `lib` sources — exactly these three, and **zero**
+      after. It is checked on every run, so the next one fails rather than being found by reading.
+    - **SOURCE-ONLY, and the reason is structural rather than laziness.** `FullProfile` ends in
+      `createPortal(…, document.body)`, which the server renderer refuses, and this guard bundles
+      react-dom **IN** — so the portal cannot be flattened from outside its bundle the way a
+      standalone probe does it. The RENDER proof therefore stays in
+      `scripts/oneoff/probe-full-profile-distance-honours-units.mjs`, which renders both units and
+      asserts **the number moves too** (195.8 mi → 315.1 km), not merely that a unit word swapped.
+    - **A rule that only demands ABSENCE is satisfied by deleting the feature**, so the section also
+      asserts both readouts are still REACHABLE — the header's `dist!=null&&isFinite(dist)` gate and
+      the compatibility card both have to survive.
+    - Injection-tested **5/5** (`scripts/oneoff/inject-full-profile-distance-cases.mjs`), each case
+      naming **which** of the two checkers must react, because requiring both everywhere would be
+      wrong: the probe does not render the fire panel, and only the render can see a number that
+      failed to convert. **Case 5 must stay SILENT in both** — `uDistMi(dist)` is a different
+      rounding, not a units defect, and firing on it would forbid a correct refactor.
+    - **The probe's own non-vacuity check earned itself on its first run.** Its fixture picked the
+      first seed climber with coordinates, several of whom share Salt Lake City with `ME`, so
+      `distMiles` returned **0** — which renders `"0.0 mi away"` and `"0.0 km away"`, identical
+      strings, and would have failed the conversion assertion against a perfectly correct fix. It
+      takes the FARTHEST seed climber now.
+  - **ONE BUNDLE, NOT SIX.** Each probe built its own esbuild bundle of the same 400kB file and two
+    of them bundled `RouteDetail` separately. Merging is the `check:outage-copy` precedent, which
+    folded two probes together for exactly this reason. Measured back-to-back on one box: the five
+    probes it started from cost **~3x `check:policy-claims`**, the merged guard **~1.5x** — a little
+    over half, for more assertions. **Quote the ratio, never the clock**: those readings were taken
+    at load average 488, where this file already records a profile being off by 4x.
+  - **THE CLASS IS ONE CLASS AND THE WRITE HALF IS THE SERIOUS END.** A display defect misinforms
+    one reader; a form that stores what was typed corrupts the record for **every** reader — a
+    metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
+    report told everyone else the route was at -12°C. **Four** writes are covered: the trip-report
+    temperature, the itinerary builder, the bail form's distance, and the approach-variants editor.
+  - **THE VARIANTS WRITE IS THE WORST OF THE FOUR, and not because it is the biggest.** Its two
+    numbers are the ones `sameEditValue` compares **numerically with a tolerance** (0.1/0.2 on
+    `distMi`, 0.1/50 on `gainFt`) so two climbers who measure 4.8 and 4.9 miles count as agreeing. A
+    stored kilometre does not merely display wrong: it lands **1.6x away** from the same measurement
+    taken on the other setting, so the two never cluster and **the 3-agree merge gate can never be
+    reached** — the correction sits pending forever.
+  - **THE COLUMN STAYS CANONICAL AND THE CONVERSION HAPPENS AT THE EDGES**, and that is asserted
+    rather than assumed. Re-fetching or re-storing in the climber's own units reads as tidier and is
+    wrong twice over: `wxTempColor`'s 85/70/50/32 and `wxWindColor`'s 30/15 are calibrated in
+    Fahrenheit and mph, and the forecast response is **cached per coordinate**, so the unit setting
+    would leak into the cache key. Injection case `fetch-converts-at-the-source` pins it.
+  - **A DIFFERENCE IS NOT A TEMPERATURE.** The panel prints two of them, comparing Open-Meteo
+    against NWS and MET. Converting one uses the **scale** and never the 32-degree offset: a 4
+    degree disagreement is 2°C, not **-16**. That is the historical defect and it is case 1 of the
+    weather suite.
+  - **SIX SECTIONS, each seeing something the others cannot**: `persist` (the preference survives a
+    reload at all, and a throwing `localStorage` cannot take a screen down), `weather` (the forecast
+    helpers, and the colour thresholds still receiving RAW imperial), `reports` (a climber's own
+    temperature, on screen and on the way into the column), `itinerary` (the builder, the downloaded
+    `.txt`, and the bail form's second writer of the same column), `variants` (the approach-variants
+    editor, on both boundaries and in its two labels), `filters` (the chips, and whether a length
+    LABEL agrees with the predicate it labels).
+  - **FLOORS ARE PER SECTION, because ONE TOTAL CANNOT SEE A SECTION THAT STOPPED ASKING** — five
+    healthy sections carry the number while the sixth contributes nothing and the run prints the
+    same `ok`. That is the per-file floor lesson `check:control-names` paid for, where a **partial**
+    restyle left it checking 1 file of 2. Each floor sits two below what a clean tree produces
+    (15/16/17/18/15/30). **Raise one when you add an assertion; never lower one to make a run pass.**
+  - **`--only=<section>` PRINTS A PARTIAL BANNER AND CAN NEVER READ AS A PASS**, the contract
+    `check:a11y-badges`' `--only=route` already sets. It exists so an injection case pays for one
+    section rather than five; a flag that let a partial run look complete would be the false pass
+    this whole file is built to refuse.
+  - **THE TEXTUAL CHECKS READ A MASKED COPY AND THE AST CHECK DOES NOT, and the asymmetry is
+    deliberate.** A comment explaining the colour rule names the very call it forbids — but an AST
+    does not see comments, so that test needs no mask. The fetch and bare-unit tests are string
+    matches and do, or the guard fails on its own documentation (the `check:ci-cancel` trap). **The
+    line-comment pattern protects `://`**: the forecast fetch is an https URL, and a naive `//`
+    strip would delete the exact line the canonical-units check is looking for. Two injection cases
+    must stay SILENT to pin both halves.
+  - **PROMOTING IT FOUND TWO INJECTION ANCHORS THAT HAD ALREADY ROTTED, and nothing had said so.**
+    The guarded read/write moved out of `lib/units-pref.js` into `definePref` in `lib/prefs.js` when
+    a third stored preference appeared; two cases kept naming the old file and reported **HARNESS
+    BUG** on every run — of which there were none. **A suite nobody runs rots exactly like a guard
+    nobody runs**, and the only thing that surfaced it was running the suite in order to re-point
+    it. Two dead citations in neighbouring comments went the same way, one of them naming a file
+    that has never existed under that name.
+  - **The `weather` section had NO suite at all** — the one of the five whose assertions had never
+    been shown to fail on anything. It has 8 cases now.
+  - Fails **closed** four ways, each of which otherwise prints identically to a clean run: the app
+    not bundling, any of 25 expected exports missing, a section falling under its floor, and each
+    section's own `ANCHOR LOST` (the CONDITIONS NOW chip, the units toggle's option list, a thin
+    render, a source file that does not parse).
+  - **`process.exit()` SKIPS `finally`**, so every fail-closed path sets the problem and throws a
+    sentinel the runner swallows; the bundle directory is removed in `finally`. That trap is
+    recorded under `check:block-guarantees`, and one probe folded in here leaked nine directories
+    into `git status` before it was fixed.
+  - Injection-tested **47/47** across six suites (`inject-units-preference-cases`,
+    `inject-weather-unit-cases`, `inject-report-temp-cases`, `inject-itinerary-unit-cases`,
+    `inject-approach-variant-unit-cases`, `inject-filter-label-cases`), each case proving its edit
+    landed **by checksum** and restoring every file byte-identically. **Eight must stay SILENT** — a
+    cosmetic dash, two renamed locals, a reworded placeholder, a deliberately bare degree sign on
+    the forecast, and the two comment cases above.
+  - What it does **not** prove, stated in the guard rather than implied: that the forecast panel
+    renders correctly in a BROWSER. `scripts/oneoff/probe-forecast-onscreen-in-both-units.mjs` is
+    the one unit probe left in `scripts/oneoff/` and it drives Chrome, so it stays out of the build
+    chain.
 - **`check:visibility-switches`** asserts that **a visibility switch the app RENDERS reaches the
   database**, and that a column governing what OTHERS see rides every climber-object select.
   Static (no browser, no DB), so it sits in `npm run build`.
@@ -3363,8 +3494,8 @@ the total when deciding where a new guard belongs.
       together is what the first CI run got wrong: `load()` returns on `__overlaysReady`,
       which says nothing about whether the navigation has happened yet.
 - **`check:anniversary`** asserts the climb-anniversary notification still reaches a screen.
-  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` empties, so
-  `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
+  #713 revived it — it used to map over `MY_CLIMBS`, a constant `DEMO_FILLERS` emptied **while
+  that flag was false**, so `_anniv` produced `[]` and no anniversary could **ever** fire. Being spread into
   `mergedNotifs` beside four live sources hid that completely: the notification list worked,
   so nothing looked wrong. It now derives from the user's real `logs`.
   - **Nothing rendered it afterwards, and nothing easily could, because the feature is
@@ -3756,6 +3887,66 @@ the total when deciding where a new guard belongs.
     database a day later anyway.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
+- **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
+  worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
+  - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
+    `measure-which-tab-renders-each-field.mjs` hardcoding `ROOT` to the
+    `rappels-rack-filter-class-audit` worktree, *"so it silently measured a different branch's code
+    than the one you ran it in"*. Measured: **SIXTEEN scripts across ELEVEN worktrees**, all now
+    fixed. *A documented instance is not a measured class* — the same discipline this file applies
+    to audits, applied to its own bug reports.
+  - **SILENT WHILE THE WORKTREE EXISTS, LOUD ONLY ONCE IT IS DELETED.** That asymmetry is the whole
+    danger: the script runs, prints numbers, and every one of them is about another branch. Eleven
+    of these had gone loud (`ENOENT`), which is the only reason they were findable at all — and a
+    NEW worktree with the same name silently revives the quiet failure.
+  - **FOUND BY RUNNING `scripts/oneoff/`, WHICH NOTHING RUNS.** Of the **77 static probes** there
+    (no DB, no browser, no network), **71 passed and 6 did not**: two pinned to dead worktrees,
+    three stale, one a CLI tool that wants arguments. This file already says an
+    extracted-from-source probe with a fail-closed anchor **is** a behaviour-revert detector and
+    *"is worth nothing in `scripts/oneoff/`, which nothing runs"*. Running them is the cheapest way
+    to collect that.
+    - **QUOTE THE RUN, NEVER THIS LINE.** The denominator moves with ordinary work: #1677 promoted
+      six of these into `check:units` in the same hour and deleted them, so the same sweep against
+      the merged tree reads **73 static probes, 72 passing** — the one remaining being that CLI
+      tool. Both numbers are correct about their own tree. Re-derive it:
+      run every `scripts/oneoff/probe-*.mjs` that mentions no supabase, browser or network.
+    - **`timeout(1)` DOES NOT EXIST ON macOS**, which is what made the first attempt useless.
+  - **THE FIRST SWEEP MEASURED NOTHING AND SAID SO UNIFORMLY: all 77 exited 127.** macOS has no
+    `timeout(1)`. *When every case in a sweep shares one result, suspect the sweep* — the rule this
+    file already records for a case-sensitive `LIKE` that refused 25 of 39 pins.
+  - **`node --check` PROVES A FILE PARSES, NOT THAT IT RUNS**, and the repair relied on that
+    distinction twice. Inserting the two imports after the last `import` line put them **after
+    first use**, because these probes carry an `ENTRY` template literal full of `import` lines
+    further down — every file parsed, and `path is not defined` at runtime. The applier anchors on
+    the last import ABOVE the pinned path and then asserts, structurally, that both bindings are
+    declared before first use.
+  - **AND CHECK WHAT THE CONSTANT IS CONCATENATED WITH.** One pinned root ended in a slash, so
+    `ROOT + "ClimbMatchCore.jsx"` became `/repoClimbMatchCore.jsx` the moment it was replaced with
+    the slashless module-relative form — including once inside a template literal that esbuild
+    resolved. `path.join`, and run the file.
+  - **The guard would fire on its own injection harness, and that is the harness's problem.** A
+    literal pinned path in `inject-script-root-cases.mjs` is exactly what the guard forbids, so the
+    case builds the string from parts. Comments are stripped before matching, so this entry and the
+    guard's own header do not trip it. Injection-tested **5/5**; **two cases must stay SILENT** — a
+    comment naming the shape is documentation, and the module-relative form is the prescribed
+    repair.
+  - Fails **closed** on a walk that finds fewer than 200 scripts: a walk that matched almost nothing
+    prints the same clean line as a clean tree.
+- **`DEMO_FILLERS` IS `true`, AND FOUR ENTRIES IN THIS FILE STILL SAID IT WAS AN UNCONDITIONAL
+  `false`.** #1566 (*"Sample content ON: every empty surface now shows one example, behind one
+  flag"*) flipped it, and nothing propagated that to the four guard entries that REASON from it —
+  `check:dead-flag-gates` (*"an unconditional `false`"*), `check:overlay-discovery` (*"`events` and
+  the club `GROUPS` … permanently false"*), `check:toast-reachable` (*"`GROUPS` is empty behind
+  `DEMO_FILLERS`"*) and `check:anniversary`. All four corrected.
+  - **IT HAD ALREADY COST SOMETHING, WHICH IS HOW IT WAS FOUND.**
+    `probe-leaderboard-example-caveat` empties `CLIMBERS` to ask whether the *"Example profiles are
+    included"* caveat goes quiet on an all-real board. With the flag on, **twelve `FILLER_CLIMBERS`
+    with numeric ids survive that**, so the caveat correctly stayed — and the probe reported the app
+    as *"unconditional, not counted"* when the app was right. It empties both pools now.
+  - The flip also silently widened `check:overlay-discovery`'s payload coverage: `events` and
+    `GROUPS` resolve where the entry says they are skipped. **A flag flip is a change to every
+    conclusion that was reasoned from the old value**, and this file's own entries are where those
+    conclusions live.
 - **`check:doc-paths`** asserts that every file path THIS DOCUMENT names still exists. The ~133
   paths under `scripts/`, `lib/`, `.github/workflows/` and `supabase/migrations/` are not
   decoration — they are the **evidence** for the claims around them (*"proven by
@@ -5838,9 +6029,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     and the toast still could not render); the guide application's **submit failure and only the
     failure** (its success path calls `onClose()` so its toast appears, the `catch` does not);
     and **"Join a group to create events"**, which is the *default* outcome of the Calendar's
-    "+ Create an event" button — `GROUPS` is empty behind `DEMO_FILLERS` and `joinedGroups`
-    starts empty, and the early `return` skips `setCalOpen(false)`. That is the **zero state**,
-    not an edge case.
+    "+ Create an event" button — `GROUPS` was empty behind `DEMO_FILLERS` **and that flag is TRUE
+    since #1566**, so today it is `joinedGroups` starting empty that produces this, and the early
+    `return` skips `setCalOpen(false)`. Still the **zero state**, not an edge case; the toast
+    fix is unaffected either way.
   - The fix is **one** `const _toastEl` hoisted above the early returns and referenced by all
     nine — one definition, nine renderers, nothing to drift. The nine returns were edited **by
     condition, never by line number**: this file packs many declarations onto one physical line,
@@ -7725,6 +7917,25 @@ the correction knows the screen is wrong, and they have no way to report it.
         (over the 200 ft donor bar) and girth_pillar's pin is 58 m from the area row (over the
         25 m bar). Moving the three outliers onto the dominant cluster would put them on a point
         that is not the summit either.
+    - **`audit:summit-pins` SECTION 1 IS DOWN TO ONE, and the other of its two was correctly
+      refused.** That section reports a route whose summit pin and its peak's own `areas` row
+      disagree while stating the same elevation, and neither peak has a second route to donate a
+      coordinate — so the two records ARE the pin and the area row.
+      `probe-summit-pin-contradictions.mjs` takes both to the ground.
+      - **The Pyramid (Southern Pickets) is decided and repaired.** The records are 479 m apart,
+        both state 7,920 ft, and the ground separates them by **1,275 ft**: the area row stands on
+        **7,984 ft and is a LOCAL MAXIMUM** (64 ft from the stated elevation) while the pin stands
+        on **6,709 ft with 4 of 8 ring neighbours higher**. The pin is also the only
+        three-decimal coordinate on a route whose other six carry five or six — the coarse
+        fingerprint recorded for "the eight 3-decimal Picket summits".
+        `fix-the-pyramid-summit-pin.mjs` copies the area row onto the pin and carries the line
+        with it (that route's 20-point track turned out to be a real recording with 0 vertices on
+        any pin, so nothing moved — checked before writing, which #1660 did not do).
+      - **Reynolds Peak is REFUSED and that is the result.** Its two records are 340 m apart and
+        **both are local maxima**, 194 ft apart on the ground — under the 250 ft bar, which is
+        `audit:waypoint-elevations`' own `FLOOR_FT` for *inside the 3DEP grid's noise*. Its pin is
+        named *"Reynolds Peak (true/south summit)"*, which is what a genuine two-summit peak looks
+        like. A verdict there would be the instrument reading its own noise.
     - **A PIN REPAIR HAS TO CARRY ITS SKETCHED LINE, and this one did not — checked afterwards
       rather than assumed.** 203 of 578 WA routes with a track store a line drawn THROUGH their
       own waypoints, so moving a pin leaves a vertex at the position it used to hold. Measured on
@@ -9172,11 +9383,91 @@ the correction knows the screen is wrong, and they have no way to report it.
       read *"NOT fixed here"* while `rackLines()` in `RouteDetail.jsx` had already replaced the one
       *"Slings —"* heading with a label per key, keeping "Slings" only for the ARRAY shape where it
       is genuinely a sling list. A stated gap that has since closed reads as work; that is the same
-      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half is
-      a separate question and has not been re-measured since** — splitting by key shortens each
-      bullet but a single key's value can still be a paragraph.
+      staleness this file records against `audit:waypoint-order`'s own comment. **The LENGTH half
+      was a separate question, and it is answered below** — splitting by key shortens each bullet,
+      and the question was whether a single key's value can still be a paragraph.
       `scripts/oneoff/measure-sling-rack-shapes.mjs` and `…-onscreen-quality.mjs` measure both,
-      lifting `fmtSlingRack` from source with `ANCHOR LOST` rather than copying it.
+      lifting from source with `ANCHOR LOST` rather than copying — the second lifts `rackLines`,
+      and the entry below is what that correction cost.
+      - **RE-MEASURED 2026-09-09, AND THE INSTRUMENT WAS THE STALE HALF — it lifted a function the
+        app no longer calls for the 84% majority, so it reported a FIXED defect as live.**
+        `rackLines()` is the renderer and it calls `fmtSlingRack` **only for the ARRAY shape**,
+        sending the object shape down the label-per-key branch; the script called `fmtSlingRack`
+        directly on every value, so it kept printing a `"Slings —"` heading the app had stopped
+        emitting, at a length it had stopped producing:
+
+              lifting fmtSlingRack   p50 83   p90 171   max 396   over-120 23.1%   "Slings" 84.3%
+              lifting rackLines      p50 26   p90  79   max 252   over-120  2.2%   "Slings" 74/590
+
+        **So the LENGTH half was largely closed by the label fix and nothing had noticed** — 13
+        bullets of 590 exceed 120 characters. The script lifts `rackLines` now, measures the
+        BULLET rather than a string no screen shows, and self-tests the lift.
+      - **Its "84.3% mislabelled" was the same fossil one level down, and my own first rewrite
+        reproduced it at 48.** Two different things produce a `Slings` label: an **array**, where
+        the heading covers the whole value, and an object with a `slings` **key**, where it covers
+        that key alone with the cams in their own bullet beside it — correct, and the entire point
+        of the split. Measured: **21 from the array shape** (matching the 21 arrays-of-object
+        recorded above, which is independent corroboration the lift is right) and **53 from a key**.
+        The old `NOT_SLINGS` list was **deleted rather than left unused**: with one bullet per key
+        there is no heading covering foreign gear for it to test, so it could only ever return 0,
+        and *a counter that cannot fire reads as coverage*.
+      - **The 13 long bullets are not one class**, so there is nothing to sweep: 8 are genuine long
+        gear prose, 2 read a nested object out loud (`Crevasse rescue kit — pulley: 1, prusiks: 2,
+        purpose: …`), and **3 are commentary rather than gear** — which is where the real finding
+        was. `wa_rapple_grapple` renders *"fresh **MP source** broadens this to 'pro to 4 inches' —
+        retain the #1-3 structured list as primary, add one #4 as optional"* into a climber's RACK
+        box: an editor instructing the next editor, over a citation `audit:prose-citations` could
+        not see. See that audit's `MP` entry.
+      - **THE SAME SCRIPT PRINTED `bullets reading out a raw key: 15` AND THE ENTRY ABOVE
+        ACCOUNTED FOR 2, because it triaged the LONG bullets and these are SHORT.** *"Webbing —
+        length: 60cm, purpose: tree-rap sling backup at the base, quantity: 2"* is 88 characters,
+        so it clears every length threshold while reading out the pipeline's own key names — with
+        the quantity **last**, when it is the first thing somebody packing wants. A number the
+        instrument printed and nobody worked, which is [[a-stated-limitation-is-a-worklist]] one
+        line down from where the reading stopped.
+      - **IT IS THE SAME SHAPE UNDER A SECOND SPELLING, and the earlier fix's own allow-list is
+        what hid it.** `fmtSlingVal` already had a branch for this, added when *"16 of 242 stored
+        values"* read out `size: … count: …` — and it recognises **size/count/note**, while these
+        15 store the identical fact as **length/quantity/purpose**. A deny-list beaten by one more
+        spelling, the failure this file records for `check:outage`'s rule 2 four times over,
+        arriving inside the fix for the very same class. The vocabulary is a list of synonyms now
+        rather than four literal comparisons.
+      - **A QUANTITY WITH NO SIZE was 5 of the 15 and could not fire at all**, because the branch
+        opened `if(v.size!=null)`. Correct while the only known shape carried a size, and exactly
+        what left *"Cordelette — purpose: …, quantity: 1"* on screen. With no size the count is the
+        head — the label beside it supplies the noun, so *"Prusik cord — 2"* reads as two of them —
+        and the existing rule that **a count of 1 adds nothing** had to be carried across, or those
+        rows would have gained a bare `1`.
+      - **Behaviour-diffed across every stored value rather than asserted**
+        (`scripts/oneoff/verify-sling-rack-synonym-widening.mjs`): **590 bullets before and after,
+        0 lost, 15 machine-shaped → 1**, with the old renderer loaded **from `origin/main` via
+        `git show`** rather than retyped — a retyped reference agrees with itself whatever the app
+        does, which is the whole question. Both lifts are self-tested against the array branch this
+        change does not touch, so a broken lift cannot read as a clean diff.
+      - **SECTION 2 EXISTS BECAUSE `fmtSlingVal` IS NOT THE RACK BOX'S — it is the app's generic
+        leaf flattener**, and `objStr` sends arbitrary jsonb through it for the contribute form's
+        CURRENT-VALUE line. Measured rather than assumed: **10 objects across `access`,
+        `emergency` and `partner_requirements`** match the widened shape, every one a lone
+        `{notes:…}` or `{length:…}`, and all 10 change in the same direction — losing a
+        meaningless key prefix. The assertion is **content preservation** (every string the old
+        rendering showed must still appear in the new one), not an eyeball, because that is what
+        separates *dropped the `notes:` prefix* from *dropped the notes*.
+      - **THE LAST ONE IS DELIBERATELY LEFT, AND SIZING ITS CLASS TOOK TWO GOES.**
+        `wa_mount_tom_scramble`'s *"Crevasse rescue kit — pulley: 1, prusiks: 2, purpose: …,
+        cordelette: 1, locking carabiners: 4"* is a different shape: **sub-items with counts**,
+        where `pulley: 1` is legible and only `purpose:` sits oddly among them.
+        - **A scan for "an explanation key beside foreign keys" reported 24 in `sling_rack` and
+          that number is a DEPTH MISTAKE, not a backlog.** 23 of the 24 are the **top-level**
+          value, and `rackLines` splits a top-level object into one labelled bullet per key — so
+          `{cams, note, nuts}` renders as *"Cams — …"* / *"Note — three independent trip reports
+          converge: …"* / *"Nuts — …"*, which is correct and is the entire point of the label
+          split. **Only a NESTED object reaches the generic pair dump**, and there is one.
+          Verified by measurement rather than by reading: widening the counter to include
+          `note`/`notes` moves it **15 → 15 and 1 → 1**.
+        - So lifting a `purpose` out of the generic pair dump is **a rule for a class of one**, on
+          the branch every other column's current-value line shares — the thing this repo keeps
+          refusing to build. Inverting the pairs to *"1 pulley"* is worse still: the generic branch
+          is column-blind, so it would render *"60cm length"* elsewhere.
   - **A CITATION IS FIVE DIFFERENT DEFECTS WEARING ONE PATTERN, AND ONLY ONE OF THEM IS A
     DELETION.** This is why ~4% of the backlog was ever mechanical, and why a bulk transform over
     it would do damage. Sorting a value into one of these decides the repair before you write it:
@@ -9291,6 +9582,44 @@ the correction knows the screen is wrong, and they have no way to report it.
     - Injection-tested as a **PAIR**, and the pair is the point: `--inject=commonnoun` must report
       **0** and `--inject=thesite` must report **every** value. The precision case alone is
       satisfied by a needle that matches nothing.
+  - **AND THE MIRROR OF IT: "MP" IS MOUNTAIN PROJECT AND IT IS ALSO MILEPOST.** `NAMED` knew only
+    the spelled-out `Mountain ?Project`, so **24 WA values citing Mountain Project by its
+    abbreviation were invisible to the audit whose entire subject they are** — *"Confirmed on MP:"*,
+    *"Not explicit on MP"*, *"per MP route description"*, *"MP's route notes"*. The count went
+    **34 → 67** on the widening.
+    - **Peakbagger's problem is a common noun and this one is a UNIT OF ROAD DISTANCE**, which is
+      worse: a bare `\bMP\b` would not MISS, it would fire on **256 milepost occurrences** in road
+      prose (*"closed at MP 3.7"*, *"MP~4.5"*) — ten times more correct values than findings. The
+      deny-list trap inverted.
+    - **The discriminator is that a milepost is ALWAYS followed by a number and a publisher never
+      is**, so the rule is `\bMP\b(?!\s*~?\s*\d)`. **Stated from the data rather than fitted to
+      it**: all 24 candidates were read, and all 24 are Mountain Project — no false positive, and
+      no milepost-shaped string appears anywhere in the widened output.
+    - **THREE OF THE 24 ARE WORSE THAN A CITATION, AND THOSE THREE ARE REPAIRED — 67 → 64**
+      (`scripts/oneoff/redact-mp-abbreviation-citations.mjs`). `wa_django`'s *"MP average ~3.3
+      stars"* and `wa_kendall_peak_cliff_north_face`'s *"MP notes very low page views"* are the
+      **analytics** class this file already records for `crowds` — *page views are not ascents*,
+      precision borrowed from the wrong subject, so the qualitative verdict survives and the figure
+      goes. `wa_rapple_grapple`'s *"retain the #1-3 structured list as primary, add one #4 as
+      optional"* is **pipeline voice**, an editor instructing the next editor, rendered into a
+      climber's RACK box; both climber-facing facts survive as *"Optionally one #4 to cover pro to
+      4 inches; no pitons needed"*, which also takes that bullet under the 120-character line
+      (13 → 12).
+    - **THE OTHER 21 ARE NOT SWEPT, and that is the standing rule rather than a shortage of time.**
+      They are ordinary attributions welded into sentences that also carry the fact, and this file
+      records that only ~4% of this backlog was ever mechanical. **Report, do not sweep.**
+    - **The applier's post-condition is what makes a batch in this family safe, and here it is
+      sharper than usual**: every rewritten leaf is re-run through the audit's OWN needle, lifted by
+      anchor — and that needle now knows MP, so a rewrite that merely moved the abbreviation is
+      refused. It also asserts the lifted needle **does** match MP-as-publisher and **does not**
+      match a milepost, or the post-condition would be vacuous for exactly the class it exists for.
+    - Injection-tested as a **PAIR** for the reason above: `--inject=mpmilepost` must report **0**
+      and `--inject=mppublisher` must report **every** value. All ten pre-existing cases were
+      re-run after the widening — the five precision ones still report 0.
+    - **Found sideways, from a stale instrument.** Re-measuring the `sling_rack` bullet length sent
+      me to a script lifting a function the app no longer calls; correcting it left 13 long
+      bullets, and reading those found this. *When an instrument disagrees with a fixed defect,
+      suspect the instrument — and then read what it was pointing at anyway.*
   - **A WARNING THAT A MAPPING APP IS WRONG IS NOT A CITATION, AND CUTTING IT DESTROYS NAVIGATION
     CONTENT.** *"Do not trust AllTrails/Gaia GPX tracks that keep the route on the ridge crest
     between the first and second gendarme — there's a real gap"*, *"Don't trust the road line on
@@ -9355,8 +9684,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     gate** — a property of the DB, not the checkout. Injection-tested, 2 cases; `--inject=liveonly`
     must report **0 citations and every value as live**, which is the destructive direction.
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
-  it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` is an unconditional
-  `false`, and #704/#707 found **three** surfaces gated on such a constant with no other
+  it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` was an unconditional
+  `false` when this was written — **#1566 flipped it to TRUE** ("Sample content ON"), so the
+  constants below are no longer empty and this guard's subject is now the SHAPE rather than that
+  particular flag. #704/#707 found **three** surfaces gated on such a constant with no other
   writer: the Year in Climbing modal (its one opener read `MY_CLIMBS.length`), climb
   anniversaries (`_anniv` mapped over `MY_CLIMBS`), and the Local Legend badge. None looked
   like a bug — each sat beside live code that worked, so the screen was fine and the feature
@@ -9393,6 +9724,58 @@ the correction knows the screen is wrong, and they have no way to report it.
     `RouteFinderPanel`, `DbSuggestedClimbs`), so they are superseded rather than lost — but *"it
     was replaced"* and *"we forgot to wire it"* are the two things a reader cannot tell apart
     without a reason written down, which is what `SEED_ONLY` is for.
+  - **AND TEN WAS ITSELF SHORT, BECAUSE THE GUARD COULD SEE ONLY ONE SPELLING OF THE SEED BRANCH.
+    It is FOURTEEN.** The pruning anchored on `!USE_DB && …`, and there is exactly **one** of those
+    in `ClimbMatch.jsx` — against **22 `USE_DB ? live : SEED` ternaries and 6 `if`/`else` branches**
+    across the three app files, measured by
+    `scripts/oneoff/measure-usedb-branch-spellings.mjs`. A component rendered only in a
+    ternary's **alternate** is exactly as dead as one inside the `&&` region, and four were counted
+    **live**: `Guides`, `GuideDashboard`, `GuideApply`, and `AvailCal` transitively through
+    `Guides`. Its own header described the Climbs tab as a ternary while its code matched the `&&`
+    form — *the shape it was written to catch, one level up, in the guard itself.*
+  - **THE HOLE COST SOMETHING WITHIN THE HOUR, WHICH IS WHY IT EARNS THE ENTRY.** The units work
+    left *"the FILTER labels"* open and named the guide radius chips — `Within 50 / 100 / 250 mi` —
+    among them. Those chips are inside `Guides`. **This guard's green output was the evidence they
+    were reachable**, so converting them would have been a change no climber could ever see: the
+    exact failure the guard exists to prevent, arrived at by trusting the guard. Check the branch
+    before polishing a control, and check that the guard can SEE the branch.
+    `scripts/oneoff/measure-imperial-control-labels.mjs` is what asked the question — it classifies
+    every imperial unit written as a string LITERAL by the component that owns it, which is how the
+    RouteFinder length buckets turned out to be dead and the live ones turned out to be elsewhere.
+    Re-running it after the widening moves the guide radius chips from *reachable* to *dead*,
+    101 → 98: the same instrument, a different answer, because the census under it got wider.
+  - **AND IT HAD ALREADY HAPPENED, IN A PR MERGED THE SAME AFTERNOON.** #1670 opens *"the units
+    question is what put me in the file"* — the identical open item — and fixes a real off-by-one in
+    the length-bucket labels plus a genuine two-copy consolidation into `ROUTE_LENGTHS` /
+    `routeLengthLabel()`. Every one of those sites is in **`RouteFinder`** and `passesFilters`, i.e.
+    the seed path, and `lib/DbAreaBrowser.jsx` — which owns the **live** length filter — never
+    imports either helper and still carries its own `LEN_BUCKETS` vocabulary. Correct work, on a
+    surface no climber reaches, from an author the census told was reachable.
+    **The live twin does NOT share the off-by-one, checked rather than assumed**: its bounds are
+    half-open in METRES (`61/183/457`), so 600 ft = 182.88 m lands in `200–600 ft` exactly as that
+    label claims. What is still open there is only the units question — those labels are imperial
+    whatever the setting.
+  - **THE ANSWER WAS ALREADY WRITTEN DOWN IN A SIBLING GUARD, WHICH IS THE SHARPEST FORM OF THIS
+    LESSON.** `check:crew-member-readers` carries an exemption reading, in as many words,
+    *"GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one"* — so one guard
+    had the fact in its own declaration list while the guard whose entire subject is that fact
+    reported the component live. Nothing reconciles two guards' vocabularies, and a census is only
+    as good as the branches it can see.
+  - **STRICTLY ADDITIVE, asserted rather than assumed.** Pruning more edges can only move a
+    component from live to seed-only, because `seedOnly` filters on `!live.has(n)` — a component
+    with any live path is untouched, including one rendered in **both** halves of a ternary.
+    Measured before and after: all ten already-declared entries still report `ok` and the four new
+    ones are the entire difference.
+  - **THE FOUR ARE DECLARED, NOT REVIVED, and `AvailCal` is the one worth reading.** The other
+    three are superseded (`DbGuides`, `DbGuideDashboard`, `DbGuideApply`, all in `lib/`). `AvailCal`
+    has no counterpart and **could not have one**: the live inquiry flow in `lib/DbGuides.jsx`
+    takes dates as a **free-text field** (`placeholder="Dates you're thinking of"`) rather than from
+    a guide's published availability, and **no availability, calendar, slot or booking column exists
+    anywhere in `scripts/schema-snapshot.json`** — so a revived calendar would have nothing to draw
+    and would render empty for every guide. The `AreaLatest` shape exactly: feature work gated on
+    data that does not exist, not a wiring fix. **Checked by reading the live form rather than by
+    grepping for "calendar"** — a first pass concluded "no date picker" and nearly wrote a negative
+    claim that was half wrong.
   - **REACHABILITY MUST BE TRANSITIVE, and a one-hop version is wrong in BOTH directions.**
     Measured while writing it: a direct *"is it rendered outside the region?"* test called
     `SearchSplit` and `ViewToggle` dead, and both are live — the
@@ -9415,13 +9798,22 @@ the correction knows the screen is wrong, and they have no way to report it.
     `GettingThere` needs no counterpart: its one unique capability — a directions link to the crag
     — is already ported into `DbAreaBrowser`, and the rest showed one arbitrary representative
     route's `access` as the **area's** fact.
-  - Fails **closed** five ways, each of which prints identically to a clean app: a missing or
-    duplicated `!USE_DB` branch (`ANCHOR LOST`), a file that does not parse, fewer than 100
-    components, fewer than 100 render sites, and a located-but-empty seed region.
-  - Injection-tested **6/6** (`scripts/oneoff/inject-seed-only-cases.mjs`), each case proving its
-    edit landed **by checksum** and restoring byte-identically. **Case 6 must stay SILENT** — a
-    component rendered on *both* paths is correct work, and a guard flagging it would tell authors
-    to un-wire live code. Case 5 pins the transitivity. Two harness bugs read as guard misses
+  - Fails **closed** six ways, each of which prints identically to a clean app: a missing or
+    duplicated `!USE_DB &&` branch (`ANCHOR LOST`), **no `USE_DB ? … : …` conditional found at
+    all**, a file that does not parse, fewer than 100 components, fewer than 100 render sites, and
+    a located-but-empty seed region. The ternary floor matters for the same reason the `&&` anchor
+    does: with that recogniser broken, four dead components read as live and the run prints a clean
+    sweep — which is exactly what it did for this guard's whole life before the widening.
+  - Injection-tested **12/12** (`scripts/oneoff/inject-seed-only-cases.mjs`), each case proving its
+    edit landed **by checksum** and restoring byte-identically. **Cases 6 and 9 must stay SILENT** —
+    a component rendered on *both* paths, or in the LIVE half of a ternary, is correct work, and a
+    guard flagging either would tell authors to un-wire live code. Case 5 pins the transitivity.
+    Cases 7 and 8 are the two spellings the widening closed. **Cases 11 and 12 edit the GUARD
+    rather than the app, because that is where the defect was**: 11 removes the ternary pruning and
+    requires the four new declarations to go **stale**, which is the A/B proving the widening is
+    load-bearing rather than decorative, and 12 breaks the recogniser and requires a **closed**
+    failure. The first six were **re-run after the traversal change** before anything else was
+    believed — this file's own rule for `check:dead-props`, applied here. Two harness bugs read as guard misses
     first: injected names beginning `_` are not matched by the `/^[A-Z]/` component test, and
     renaming a definition without renaming its entry in Core's export list makes the file
     unparseable — *an injection that produces a different failure is not a catch.*

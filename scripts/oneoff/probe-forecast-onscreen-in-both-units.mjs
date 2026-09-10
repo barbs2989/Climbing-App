@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // The forecast panel, rendered TWICE -- once imperial, once metric -- and the two compared.
 //
-// The sibling probe (probe-weather-honours-the-unit-setting.mjs) unit-tests the helpers and
+// The sibling check (check:units, the `weather` section) unit-tests the helpers and
 // asserts the wiring statically. Neither of those proves the setting reaches the screen: the
 // helpers could be perfect and every call site could still be passing the wrong variable.
 // This renders the real panel and checks that each metric figure IS the conversion of the

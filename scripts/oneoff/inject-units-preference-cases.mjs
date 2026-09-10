@@ -1,4 +1,4 @@
-// Is probe-units-preference-persists.mjs measuring anything?
+// Is check-units.mjs measuring anything? This is the `persist` section, run with --only=persist.
 //
 // Its healthy output is a column of "ok", which is what a probe with a broken scan prints too. So
 // each defect it claims to catch is put back and the probe has to fail with a message NAMING that
@@ -39,20 +39,25 @@ const CASES = [
     repl: `onClick={()=>setUnits(u[0])}`,
     expect: /does not call saveUnits/,
   },
+  // THESE TWO ANCHORS ROTTED AND NOTHING SAID SO, which is the argument for the promotion this
+  // suite now points at. The guarded read/write moved out of lib/units-pref.js into `definePref`
+  // in lib/prefs.js when a THIRD stored preference appeared; the cases kept naming the old file
+  // and reported HARNESS BUG on every run -- of which there were none, because nothing invokes
+  // scripts/oneoff/. A suite nobody runs rots exactly like a guard nobody runs.
   {
     name: "novalidate",
     why: "loadUnits stops shape-checking, so a value left by devtools or an older build is returned as a preference",
-    file: "lib/units-pref.js",
-    find: `    return VALID.indexOf(v) >= 0 ? v : DEFAULT_UNITS;`,
-    repl: `    return v || DEFAULT_UNITS;`,
+    file: "lib/prefs.js",
+    find: `      return valid.indexOf(v) >= 0 ? v : dflt;`,
+    repl: `      return v || dflt;`,
     expect: /tampered value/,
   },
   {
     name: "nowritecheck",
     why: "saveUnits stops refusing junk, so the app can write a value it cannot read back",
-    file: "lib/units-pref.js",
-    find: `  if (VALID.indexOf(u) < 0) return;`,
-    repl: `  if (u === undefined) return;`,
+    file: "lib/prefs.js",
+    find: `    if (valid.indexOf(v) < 0) return;`,
+    repl: `    if (v === undefined) return;`,
     expect: /refuses to write|wrote an invalid value/,
   },
   {
@@ -84,7 +89,7 @@ for (const c of CASES) {
   const landed = sum(c.file) !== beforeSum;
 
   let out = "", code = 0;
-  try { out = execFileSync("node", [path.join(ROOT, "scripts/oneoff/probe-units-preference-persists.mjs")], { cwd: ROOT, encoding: "utf8" }); }
+  try { out = execFileSync("node", [path.join(ROOT, "scripts/check-units.mjs"), "--only=persist"], { cwd: ROOT, encoding: "utf8" }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); code = e.status || 1; }
   fs.writeFileSync(p, before, "utf8");
   const restored = sum(c.file) === beforeSum;
