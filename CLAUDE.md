@@ -2441,7 +2441,7 @@ the total when deciding where a new guard belongs.
       ever on the device.
 - **`check:units`** asserts that **a surface renders in the climber's chosen units, and that a
   control which WRITES converts before it stores**. Static (one shared esbuild bundle, six SSR
-  renders through three render functions, two Babel parses and two lifted-and-executed source
+  renders through three render functions, two Babel parses and four lifted-and-executed source
   expressions), so it sits in `npm run build`.
   - **IT IS SIX PROBES PROMOTED AT ONCE, AND PROMOTING ONE WOULD HAVE BEEN THE WRONG SHAPE.** All
     six lived in `scripts/oneoff/`, **which nothing runs**, and each proved a fix that changes
@@ -2491,6 +2491,44 @@ the total when deciding where a new guard belongs.
       `distMiles` returned **0** — which renders `"0.0 mi away"` and `"0.0 km away"`, identical
       strings, and would have failed the conversion assertion against a perfectly correct fix. It
       takes the FARTHEST seed climber now.
+  - **AND AN EIGHTH, WHICH IS THE `variants` STORY ONE ROW UP THE SAME FORM.** #1671 made the
+    approach-variant boxes unit-aware and left the **pitch length** box directly above them asking
+    for `Length (m)` whatever the setting — while `PitchTable` renders that stored length back
+    through `uLen`, so an imperial climber READS *"148 ft"* on the route page. Typing the number
+    they had just read stored **148 m**, and the route then claimed **486 ft**.
+    - **CENSUSED, NOT SPOTTED, and the census is what makes it a finding rather than a lucky
+      catch.** Of the **six** unit-bearing inputs in `SuggestFix`, five were already unit-aware and
+      this was the only hardcoded one — a class of ONE with the convention two lines *below* it.
+      *An instance fixed by hand is not a class closed*, arriving inside the very form the previous
+      member was fixed in.
+    - **FOUR EDGES, AND REVERTING ANY ONE IS SILENT** — the value still flows, in the wrong unit,
+      under a success toast: the PREFILL (canonical → the climber's units), the BOX (label and
+      placeholder), the STORE (typed → canonical metres), and the two SUMMARY strings. **The
+      prefill is the dangerous one**: without it an imperial climber opens a 45 m pitch, sees `45`
+      under a feet label, changes nothing, saves, and the pitch becomes **14 m**.
+    - **THE SUMMARY IS THE SUBTLE ONE, and it is why converting the draft alone would have been
+      wrong.** `pitchStr` is fed the DRAFT by `pendStr`/`filledStr` and **canonical rows** by
+      `curRefStr`, so one formatter was carrying two conventions the moment the draft moved to
+      display units — the editor would have compared `55m` against `"180m"`. `curRefStr` is fed
+      `routePitches` now, so one convention flows through.
+    - **MEASURED, so it needs no `_orig` guard where `itinStoreVal` does:** every length
+      **1-200 m round-trips m→ft→m exactly**, so a box seeded from a stored length and saved
+      untouched cannot drift. Miles and pounds do not, which is what that guard exists for.
+    - **The converters live in `ClimbMatchCore.jsx` beside `uElevN`/`uElevIn`** — `uLenN`/`uLenIn`,
+      the MIRROR of that pair, since a pitch length's canonical unit is metres where an elevation's
+      is feet. `uLen` formats what they convert, so the metre↔foot arithmetic exists **once**.
+    - **THE INJECTION SUITE CAUGHT AN OVER-STRICTNESS IN THE SECTION'S OWN ASSERTION**, which is
+      the whole reason `placeholder-reworded` must stay silent: the first version pinned the
+      **exact** placeholder string, so a reworded one — ordinary editorial work — was flagged as a
+      defect. It is a shape test now (does the expression consult `uLenUnit()` at all), and still
+      catches the real revert, so it was not loosened into vacuity.
+    - Injection-tested **9/9** (`scripts/oneoff/inject-pitch-unit-cases.mjs`), each edit proven by
+      checksum and restored byte-identically. `metric-converts-too` is the over-reach in the other
+      direction — handing a metric climber their own typing back changed, worse than the defect it
+      replaces. The FIELD-RETENTION half stays in
+      `scripts/oneoff/probe-pitch-contribution-keeps-what-was-typed.mjs` (11 assertions, 7/7),
+      which asks a different question and runs the branch in metric where the conversion is the
+      identity — **two homes for two questions, not two copies of one.**
   - **ONE BUNDLE, NOT SIX.** Each probe built its own esbuild bundle of the same 400kB file and two
     of them bundled `RouteDetail` separately. Merging is the `check:outage-copy` precedent, which
     folded two probes together for exactly this reason. Measured back-to-back on one box: the five

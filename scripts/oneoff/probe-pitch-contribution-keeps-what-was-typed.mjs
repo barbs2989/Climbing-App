@@ -49,20 +49,20 @@ if (start < 0 || end < 0) { console.error("ANCHOR LOST: could not bound the pitc
 const branch = src.slice(start + 'if(f.type==="pitches")return '.length, end).replace(/;\s*$/, "");
 if (!/\.map\(/.test(branch) || !/\.filter\(/.test(branch)) { console.error("ANCHOR LOST: the pitches branch is not the map/filter shape this probe reads"); process.exit(1); }
 // `vals.pitchDetail` is the editor's rows; bind it and run the app's own expression.
-// ── UNITS. The branch now converts what was typed into the canonical metres the column holds, so
-//    the probe must supply that converter — LIFTED from source like everything else here, with an
-//    injectable uImp so BOTH settings are exercised. A re-typed converter would agree with itself
-//    whatever the app did, which is the whole question.
+// ── The branch converts what was typed into the canonical metres the column holds, so the probe
+//    must supply that converter. It is LIFTED from ClimbMatchCore.jsx (where it lives beside
+//    uElevN/uElevIn) rather than re-typed: a copy would agree with itself whatever the app did.
+//    THIS PROBE'S SUBJECT IS FIELD RETENTION, so it runs METRIC, where the conversion is the
+//    identity and the assertions below mean exactly "what was typed is what is stored". The UNIT
+//    half lives in check:units' `pitches` section, which unlike scripts/oneoff/ actually runs.
 const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
 const unum = core.match(/const _uNum=([\s\S]*?);\n/);
-if (!unum) { console.error("ANCHOR LOST: _uNum moved — the converters are built on it"); process.exit(1); }
-const uliSrc = src.match(/const uLenIn=([\s\S]*?\});\n/);
-const ulnSrc = src.match(/const uLenN=([\s\S]*?\});\n/);
-if (!uliSrc || !ulnSrc) { console.error("ANCHOR LOST: uLenN/uLenIn are not where this probe reads them — a pitch length is stored in METRES and the box asks in the climber's units, so the conversion is the thing under test"); process.exit(1); }
-const mk = (expr, imperial) => new Function("uImp", "_uNum", "return " + expr)(() => imperial, new Function("return " + unum[1])());
+const uliSrc = core.match(/const uLenIn=([\s\S]*?\});\n/);
+if (!unum || !uliSrc) { console.error("ANCHOR LOST: _uNum/uLenIn are not in ClimbMatchCore.jsx where this probe reads them"); process.exit(1); }
 const mkRun = (imperial) => {
+  const uLenIn = new Function("uImp", "_uNum", "return " + uliSrc[1])(() => imperial, new Function("return " + unum[1])());
   const f = new Function("vals", "uLenIn", "uImp", "return " + branch + ";");
-  return (vals) => f(vals, mk(uliSrc[1], imperial), () => imperial);
+  return (vals) => f(vals, uLenIn, () => imperial);
 };
 // METRIC is the canonical case, so the assertions below read as "what was typed is what is stored".
 const run = mkRun(false);
@@ -112,57 +112,6 @@ else fail(`a pitch carrying only a length is discarded (${lenOnly.length} rows, 
 const empties = run({ pitchDetail: [blank, blank] });
 if (empties.length === 0) ok("untouched blank pitches are still dropped");
 else fail(`${empties.length} blank pitch row(s) would be submitted`);
-
-// ── AN IMPERIAL CLIMBER TYPES FEET AND THE COLUMN MUST STILL HOLD METRES. Before this, the box
-//    was labelled "Length (m)" whatever the setting while PitchTable rendered the stored metres
-//    back through uLen as FEET — so a climber read "148 ft", opened the editor, and was asked for
-//    metres. Typing the feet they had just read stored 148 m and the route claimed 486 ft.
-const impRun = mkRun(true);
-const impOut = impRun({ pitchDetail: [Object.assign({}, blank, { lengthM: "148" })] });
-const impLen = (impOut[0] || {}).lengthM;
-if (impLen === 45) ok("148 typed by an imperial climber is stored as 45 m (canonical)");
-else fail(`an imperial climber typing 148 ft stored ${JSON.stringify(impLen)} — the column holds metres`);
-
-// NON-VACUITY: the two settings must DISAGREE on the same keystrokes, or nothing is converting.
-const metOut = run({ pitchDetail: [Object.assign({}, blank, { lengthM: "148" })] });
-if ((metOut[0] || {}).lengthM === 148 && impLen !== 148) ok("the same keystrokes store different values on the two settings — the conversion is real");
-else fail(`metric stored ${JSON.stringify((metOut[0] || {}).lengthM)} and imperial ${JSON.stringify(impLen)} — one of them is not converting`);
-
-// ── ROUND TRIP: what the box SHOWS for a stored length must store back unchanged, or simply
-//    opening the editor and saving would re-round every untouched pitch.
-const showImp = mk(ulnSrc[1], true), showMet = mk(ulnSrc[1], false);
-let drift = [];
-for (let m = 5; m <= 120; m++) {
-  if ((impRun({ pitchDetail: [Object.assign({}, blank, { lengthM: String(showImp(m)) })] })[0] || {}).lengthM !== m) drift.push(m);
-  if ((run({ pitchDetail: [Object.assign({}, blank, { lengthM: String(showMet(m)) })] })[0] || {}).lengthM !== m) drift.push(-m);
-}
-if (!drift.length) ok("every pitch length 5-120 m survives show->store unchanged on both settings");
-else fail(`${drift.length} length(s) drift when shown and stored back untouched: ${drift.slice(0, 8).join(", ")}`);
-
-// ── THE OTHER THREE EDGES ARE ASSERTED AS SOURCE, because a render/execute probe cannot see them
-//    and each is exactly what a stale-base squash drops: the value still flows, in the wrong unit.
-//    PREFILL is the dangerous one — without it an imperial climber opens a 45 m pitch, sees "45"
-//    in a box labelled ft, changes nothing, saves, and the pitch becomes 14 m.
-for (const [label, re, why] of [
-  ["the prefill converts a stored length into the climber's units",
-   /lengthM:p\.lengthM!=null\?uLenN\(p\.lengthM\):""/,
-   "without it the box shows metres under a feet label, and saving an untouched pitch shrinks it 3.28x"],
-  ["the box asks in the climber's own units",
-   /length in "\+\(uImp\(\)\?"feet":"metres"\)/,
-   "the label is what tells the climber which unit to type"],
-  ["the box's placeholder follows the setting too",
-   /placeholder=\{"Length \("\+uLenUnit\(\)\+"\)"\}/,
-   "a placeholder reading (m) over a feet box is the same lie in smaller type"],
-  ["the editor summary labels the unit it is showing",
-   /pp\.lengthM\+uLenUnit\(\)/,
-   "hardcoded \"m\" over a converted draft prints feet labelled metres"],
-  ["the current-value summary is fed the SAME convention as the draft",
-   /pitchStr\(routePitches\)/,
-   "fed route.pitchDetail it would compare canonical metres against a display-unit draft"],
-]) {
-  if (re.test(src)) ok(label);
-  else fail(`${label} — NOT FOUND. ${why}`);
-}
 
 if (problems.length) { console.error("\nFAIL:"); problems.forEach((p) => console.error("  - " + p)); process.exit(1); }
 console.log("\nok — what the pitch editor collects is what the contribution carries.");

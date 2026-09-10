@@ -26,25 +26,6 @@ const CASES = [
     find: "var _len=uLenIn(p.lengthM)", repl: "var _len=uLenIn(p.len)",
     says: /length was typed and the submitted row carries/ },
 
-  // UNITS: the box asks in the climber's units and the column holds METRES, so there are four
-  // separate edges, and reverting any ONE is silent -- the value still flows, in the wrong unit,
-  // under a success toast. Each is reverted on its own for the reason the header already gives.
-  { name: "stored-without-converting", expect: "fail",
-    find: "var _len=uLenIn(p.lengthM)", repl: "var _len=parseInt(p.lengthM,10)",
-    says: /the column holds metres|not converting/ },
-  // THE WORST ONE: open an imperial climber's 45 m pitch, touch nothing, save -> 14 m.
-  { name: "prefill-not-converted", expect: "fail",
-    find: 'lengthM:p.lengthM!=null?uLenN(p.lengthM):""', repl: 'lengthM:p.lengthM!=null?p.lengthM:""',
-    says: /prefill converts a stored length/ },
-  { name: "box-still-asks-for-metres", expect: "fail",
-    find: '"Pitch "+(idx+1)+" length in "+(uImp()?"feet":"metres")', repl: '"Pitch "+(idx+1)+" length in metres"',
-    says: /asks in the climber.s own units/ },
-  { name: "summary-hardcodes-metres", expect: "fail",
-    find: 'pp.lengthM?pp.lengthM+uLenUnit():""', repl: 'pp.lengthM?pp.lengthM+"m":""',
-    says: /labels the unit it is showing/ },
-  { name: "current-value-fed-canonical-rows", expect: "fail",
-    find: "pitchStr(routePitches)", repl: "pitchStr(route.pitchDetail)",
-    says: /SAME convention/ },
   { name: "bolts-hardcoded", expect: "fail",
     find: "bolts:isFinite(_bolts)?_bolts:0,", repl: "bolts:0,",
     says: /bolts was typed/ },
