@@ -277,6 +277,29 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
+  summit-briefing:
+    name: The peak summary says only what its routes agree on
+    runs-on: ubuntu-latest
+    # Three catalog reads and two SSR renders. A healthy run is seconds; the headroom is for
+    # a cold or degraded project, where the anon role's 3s statement timeout can bite.
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: The peak briefing speaks and refuses in the right places
+        run: npm run check:summit-briefing
+        env:
+          # Read-only, and the ANON key on purpose — `routes` is publicly readable, CI has no
+          # business holding a key that bypasses RLS, and a checker that could write is a
+          # checker that can corrupt what it is checking. Same stance as field-renders above.
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+
   horizontal-overflow:
     name: The app fits a 390px phone
     runs-on: ubuntu-latest

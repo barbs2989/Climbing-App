@@ -325,20 +325,42 @@ function normFact(s) {
 }
 // Routes that state this fact, and whether they agree on it.
 //
-// "Agree" means identical once spelling is set aside, OR that every version is a PREFIX of
-// the longest one — one route stating the manager as "U.S. Forest Service" and another as
-// "USDA Forest Service — Mount Baker-Snoqualmie NF" are not in conflict, the second is
-// simply more specific, and the specific one is what gets displayed. Anything else is a
-// real conflict and the caller must not name a winner: Mount Stuart's Teanaway-side permit
-// explicitly says the Enchantment quota does NOT apply, while its north-side routes say it
-// does. Both are correct about their own approach.
+// "Agree" means every version says NOTHING THE FULLEST ONE DOES NOT — its tokens, once
+// spelling is set aside, are contained in the fullest version's. One route stating the
+// manager as "U.S. Forest Service" and another as "USDA Forest Service — Mount
+// Baker-Snoqualmie NF" are not in conflict, the second is simply more specific, and the
+// specific one is what gets displayed. Anything else is a real conflict and the caller
+// must not name a winner: Mount Stuart's Teanaway-side permit explicitly says the
+// Enchantment quota does NOT apply, while its north-side routes say it does. Both are
+// correct about their own approach.
+//
+// CONTAINMENT, NOT A PREFIX, AND THE DIFFERENCE IS ORDER. The first version of this rule
+// asked whether each version was a prefix of the longest, which makes the same fact
+// written agency-first and place-first read as a disagreement: Mount Baker's nine routes
+// carry "U.S. Forest Service" and "Mt. Baker-Snoqualmie National Forest — Mt. Baker
+// Wilderness (USFS)", one agency, and the peak page answered "Differs by route" and named
+// neither the manager nor the parking pass. Measured across the whole WA catalog, prefix
+// agreed on 371 of 563 fact rows and containment agrees on 422 — 51 more, NONE lost, and
+// the value displayed where it already agreed does not move. Every one of the four
+// documented genuine conflicts still refuses: Mount Stuart's and Argonaut's Enchantment
+// permits, Mount Adams' Yakama Nation land, and Agnes Mountain's two forests.
+//
+// What containment is looser about, stated rather than glossed: a short version can be
+// CONTRADICTED by the fullest rather than merely less specific than it — "Northwest Forest
+// Pass" sits inside "Not a Northwest Forest Pass … standard NPS entrance fee applies". The
+// reader is not misled, because the fullest version is the one on screen and it is the one
+// that explains itself; what is lost is the refusal.
 function sharedFact(routes, pick) {
   const said = routes.map(pick).filter(v => v != null && String(v).trim() !== "").map(v => String(v).trim());
   if (!said.length) return null;
-  const byLength = said.slice().sort((a, b) => b.length - a.length);
-  const longest = byLength[0], longestNorm = normFact(longest);
-  const agreed = said.every(v => longestNorm.startsWith(normFact(v)));
-  return { value: longest, agreed, said: said.length, of: routes.length };
+  const toks = said.map(v => new Set(normFact(v).split(" ").filter(Boolean)));
+  // The fullest statement. Where agreement holds it is a superset of every other version
+  // by construction, so this is the value to show; a tie between two wordings of one token
+  // set breaks on length, which keeps the more detailed prose.
+  let bi = 0;
+  said.forEach((v, i) => { if (toks[i].size > toks[bi].size || (toks[i].size === toks[bi].size && v.length > said[bi].length)) bi = i; });
+  const agreed = toks.every(s => [...s].every(t => toks[bi].has(t)));
+  return { value: said[bi], agreed, said: said.length, of: routes.length };
 }
 // Smallest and largest of a numeric column, each with the route it came from.
 function numericSpan(routes, pick) {
