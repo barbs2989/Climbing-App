@@ -8383,11 +8383,49 @@ the correction knows the screen is wrong, and they have no way to report it.
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+  - **SECTION 7 — THE TILE SAID "ONE WAY" AND PRINTED THE STORED COLUMN, WHICH IS OFTEN THE ROUND
+    TRIP.** `lib/outing.js` exists because **two SCREENS** answered *how far is the approach*
+    differently — the peak page read `dist_km` raw while the route page preferred the route's own
+    itinerary. That fix landed on the route page's TECH STATS tile (`const distKm=effDistKm(route)`)
+    and **did not reach `TrailheadCard`**, whose tile is *labelled* `"Approach (one way)"` and read
+    `route.distKm`. So one page printed **two different one-way approaches for one climb**.
+    - **Measured rather than asserted** (`scripts/oneoff/measure-planner-distance-vs-the-tile.mjs`,
+      report-only, which re-derives every figure — **re-run it rather than quoting**): of the
+      **790** WA routes carrying both figures, **335 differ by more than 15%**, and on **215** of
+      those the stored column is the LARGER. `wa_mount_queets_south` showed **31.0 mi** on one tile
+      and **71.0 mi** on the other.
+    - **IT SETTLES NOTHING ABOUT THE COLUMN, and must not**: CLAUDE.md records that `dist_km` holds
+      two conventions at once and that a blanket transform breaks as many rows as it fixes. This
+      changes only **which SOURCE a reader prefers**, which is `lib/outing.js`'s own stated
+      contract, applied to the one reader that had been left behind.
+    - **TWO FIXTURES, because the rule is NOT "halve it".** An out-and-back halves its itinerary
+      total; a **recorded `point`** does not retrace, so its total IS the one-way distance and the
+      figure goes UP — `wa_mount_ferry_standard` moves **21.7 → 44.0 mi**. A guard rendering only
+      the first fixture is satisfied by an unconditional halving, which injection case 9 pins.
+    - **NON-VACUITY:** the tile must be **on screen** before it is judged, or *"does not show the
+      raw figure"* passes against a card that renders no approach at all.
+    - **THE FAILURE MESSAGE NAMES THE OBSERVATION, NOT A CAUSE.** Its first version said *"the tile
+      is halving unconditionally"* — which is a correct diagnosis of case 9 and **the wrong one on a
+      plain revert**, where the tile is not halving at all. *A guard that fires correctly can still
+      prescribe the wrong repair*, the trap `check:column-drift` records.
+    - **THE PLANNER HALF IS DELIBERATELY NOT TOUCHED, and it is the bigger one.** `scarfHrs` — which
+      feeds **Est. summit, Est. return and the After-dark warning** — is still called with raw
+      `route.distKm`, so on those same 335 routes the hours are computed from a distance the page
+      does not show. **215 of them would get SHORTER** (p50 **−0.98 hr**, worst **−13.4 hr**), and
+      erring short on *are you down before dark* is the **#641 direction that reads green**. Moving
+      a safety estimate for 335 routes is a product decision, so it is **raised rather than swept**
+      — the same call the trust tiers got.
+    - Proven on **real rows** as well as fixtures by
+      `scripts/oneoff/probe-trailhead-approach-is-one-way.mjs`, which renders the real `RouteDetail`
+      because `dbRouteToCamel` and the card's own gating sit between the column and the screen:
+      **8/8 with the fix, 8/8 FAILING without it.**
+  - Injection-tested **11/11** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
     neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
-    cannot quietly re-open.
+    cannot quietly re-open. Cases 8-10 are section 7 — the real defect, the unconditional-halving
+    over-reach, and a **SILENT** rename, since the rule is about which source is read rather than
+    what the local is called.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.

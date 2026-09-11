@@ -105,7 +105,7 @@ const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "cr
    that list, which is why a crag Overview can never carry a drive control — see section 1. */
 const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly;
+let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly, itinOutback, itinPoint;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
@@ -122,6 +122,12 @@ try {
   // A seasonal gate with NO road status — the one shape that could have lost the gate when
   // TrailheadCard's own road line was dropped.
   gateOnly = render(ROUTE({ road: { name: "Probe River Road (FR 99)", seasonalGate: "Gated 1 Nov to 1 Jun" } }), "planner");
+  /* Section 7's pair. The tile is LABELLED "one way" and `dist_km` holds two conventions at
+     once, so a raw read prints a there-and-back total under a one-way label. TWO fixtures,
+     because a fix that simply HALVED would satisfy the first and fail the second: an outback
+     trip halves its itinerary total, a recorded `point` does not. */
+  itinOutback = render(ROUTE({ distKm: 100, itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
+  itinPoint = render(ROUTE({ distKm: 30, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
 } catch (e) { dead(`RouteDetail threw while rendering: ${String(e && e.message).slice(0, 200)}`); }
 
 for (const [n, h] of [["planner", plan], ["no-coordinate", noCoord], ["crag overview", cragOv], ["crag duplicate-check", cragDup], ["crag planner", cragPlan], ["gate-only", gateOnly]]) {
@@ -243,6 +249,36 @@ else fail("a route with no trailhead coordinate says nothing about it");
 // ── 6. the seasonal gate survived losing its second render site ──────────────────────────────────
 if (/Gated 1 Nov to 1 Jun/.test(text(gateOnly))) ok("a seasonal gate with no road status still reaches the screen");
 else fail("a route whose road has a seasonal gate and NO status renders the gate nowhere — it lost its only other render site");
+
+/* -- 7. the Approach tile is the ONE-WAY figure, not the stored column --------------------------
+   The tile says "Approach (one way)" while `dist_km` holds two conventions at once -- measured,
+   215 of the 335 WA routes where the two figures differ store the ROUND TRIP -- so a raw read
+   labelled a there-and-back total as a one-way walk, while the TECH STATS tile on the SAME route
+   already read effDistKm. One page, two different one-way approaches for one climb.
+
+   This asserts which SOURCE the tile prefers and settles NOTHING about the column, which
+   CLAUDE.md forbids normalising in bulk. NON-VACUITY: the tile must be on screen at all, or
+   "does not show the raw figure" passes against a card that renders no approach. */
+const approachTile = (html) => {
+  const t = text(html);
+  const h = t.indexOf("TRAILHEAD");
+  if (h < 0) return null;
+  const after = t.slice(h + "TRAILHEAD".length);
+  const nx = after.search(/\b[A-Z][A-Z][A-Z &’'-]{4,}\b/);
+  const card = nx > 0 ? after.slice(0, nx) : after.slice(0, 600);
+  return /Approach \(one way\)/.test(card) ? card : null;
+};
+const obCard = approachTile(itinOutback), ptCard = approachTile(itinPoint);
+if (!obCard || !ptCard) dead("the Approach tile did not render on a route carrying an itinerary - ANCHOR LOST, so nothing in section 7 was checked");
+// 100 km stored against a 62 mi out-and-back itinerary -> 31.0 mi one way, not 62.1 mi.
+if (obCard.includes("31.0 mi")) ok("the Approach tile states the itinerary-derived one-way figure");
+else fail("the Approach tile does not state the route's own one-way approach");
+if (!obCard.includes("62.1 mi")) ok("...and not the stored round-trip column under a one-way label");
+else fail('the Approach tile prints the stored round-trip distance under the label "one way"');
+// A recorded point-to-point does NOT retrace, so its itinerary total IS the one-way distance:
+// 62.0 mi, not the stored 18.6. A fix that always halved would fail here.
+if (ptCard.includes("62.0 mi")) ok("a recorded point-to-point keeps its whole itinerary total, so the rule is not a blanket halving");
+else fail("a recorded point-to-point route does not state its whole itinerary total - either the tile is reading the stored column again, or it is halving unconditionally; the other two assertions above say which");
 
 console.log("");
 if (failures) {

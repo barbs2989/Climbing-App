@@ -10,6 +10,9 @@
 // consolidation could have stranded. Cases 6 and 7 must stay SILENT — they are the two false
 // positives the counting method was chosen to avoid, and a guard that fired on either would be
 // telling authors to rewrite real trailhead prose or to delete a working control.
+// Cases 8-10 are section 7: the Approach tile's SOURCE. 8 is the real defect (the raw column
+// under a one-way label), 9 is the over-reach that halves unconditionally, and 10 must stay
+// SILENT -- the rule is about which source is read, not what the local is named.
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 
@@ -81,6 +84,34 @@ const CASES = [
     repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700}}>Drive here</button>',
     expect: "pass",
   },
+  {
+    /* THE REAL HISTORICAL DEFECT. The tile is labelled "one way" and read the stored column,
+       which on 215 of the 335 differing WA routes holds the ROUND TRIP -- so the page printed
+       two different one-way approaches for one climb, this one and the TECH STATS tile. */
+    name: "8. the Approach tile reads the raw dist_km column again",
+    find: '  const _appKm=effDistKm(route);\n  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);',
+    repl: '  if(route.distKm!=null&&route.distKm>0)tiles.push(["Approach (one way)",uDist(route.distKm),C.green]);',
+    expect: "fail",
+  },
+  {
+    /* OVER-REACH IN THE OTHER DIRECTION, and the reason section 7 renders TWO fixtures. Halving
+       unconditionally satisfies the out-and-back assertion and is wrong for a recorded
+       point-to-point, which does not retrace its approach. A suite that only proved the guard
+       can fail would be satisfied by a rule that always halves. */
+    name: "9. the tile halves unconditionally, ignoring the recorded outing shape",
+    find: '  const _appKm=effDistKm(route);',
+    repl: '  const _appKm=(route.distKm!=null?route.distKm/2:null);',
+    expect: "fail",
+  },
+  {
+    /* SILENT. The rule is about which SOURCE the tile prefers, not what the local is called.
+       A guard pinned to the name would forbid an ordinary rename. */
+    name: "10. SILENT: the local is renamed, still reading effDistKm",
+    find: '  const _appKm=effDistKm(route);\n  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);',
+    repl: '  const _oneWayKm=effDistKm(route);\n  if(_oneWayKm!=null&&_oneWayKm>0)tiles.push(["Approach (one way)",uDist(_oneWayKm),C.green]);',
+    expect: "pass",
+  },
+
 ];
 
 const original = fs.readFileSync(FILE, "utf8");
