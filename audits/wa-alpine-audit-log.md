@@ -20016,3 +20016,114 @@ SQL: `audits/sql/2026-09-10-batch-268.sql` (8 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_magic_mountain_northeast_couloir` (see
 progress file).
+
+## Batch 269 (pass 5) — 2026-09-11
+
+Routes: `wa_magic_mountain_south_ridge`, `wa_magic_mountain_west_ridge`,
+`wa_martin_peak_west_ridge`, `wa_marvin_s_ear`,
+`wa_mcmillan_spire_west_southwest_ridge`, `wa_mcmillan_spire_west_west_ridge`,
+`wa_mesahchie_peak_west_ridge`, `wa_mix_up_peak_east_face`.
+
+**Fixed (4 SQL statements' worth of findings, 6 UPDATE statements total):**
+
+- `wa_magic_mountain_south_ridge` — the `approach` field's closing sentence states
+  "~19-20 mile round trip", contradicting this same row's own `itinerary.totalNote`
+  ("roughly 16-17 miles and 5,000+ ft of gain/loss total") and the itinerary's own
+  day-by-day mileage, which sums to exactly 16.5 mi (6.5 + 3.5 + 6.5). Two
+  independently-stated internal figures agree at ~16-17 mi; only the `approach`
+  text's "~19-20" was the outlier. Corrected to match.
+- `wa_martin_peak_west_ridge` — this row's own `data_quality.gaps` already flagged
+  an unresolved internal mismatch: "Route is documented in sources as a 'West
+  Ridge' line from Holden Pass — the on-file route name/aspect 'Southeast Slopes'
+  does not match any sourced description and may warrant renaming or further
+  verification against a primary guidebook." Checked against a SummitPost-sourced
+  description of Martin Peak (via WebSearch): the real route from Holden Pass
+  traverses east along the connecting ridge to Bonanza, over two small hills, down
+  to a saddle at the base of Martin's own west ridge, then climbs loose scree on
+  the ridge's south side to a Class 3-4 exit below an overhang — which matches
+  this row's own `timing.sectionBreakdown[1]`/`itinerary.days[1]` day-2 narrative
+  almost word for word. So the underlying route *description* was accurate; only
+  the "Southeast Slopes" *label* on that same day was wrong — the route's own
+  `name`, `face` and `aspect` fields all already say "West Ridge"/"W". Relabelled
+  `timing.sectionBreakdown[1].fromTo` and `itinerary.days[1].title` to "Summit day:
+  Martin Peak via West Ridge", and removed the now-resolved gap entry from
+  `data_quality.gaps`.
+- `wa_marvin_s_ear` (Vega Tower, off the Sunrise Mine Trailhead / Morning Star Peak
+  group) — `access.land_manager` and `access.permitZone` both claimed this route
+  sits within or adjacent to Glacier Peak Wilderness. Contradicted by this same
+  row's own `bivy` entry for "Vesper Creek basin and Lake Elan" — the camp closest
+  to and most directly relevant to this exact trail — which states plainly the
+  area is "Mt Baker-Snoqualmie National Forest but OUTSIDE any wilderness — no
+  permit of any kind to camp." Glacier Peak Wilderness is a different, more
+  southerly corridor reached via the Suiattle River Road, which this route does
+  not use (its real access, Mountain Loop Highway/FR-4065, is already correctly
+  described in this row's own `road` field). Corrected both fields to match the
+  row's own more specific, directly-relevant evidence.
+
+**Flagged for human review, not fixed:**
+
+- A systemic mislabel, found while checking `wa_marvin_s_ear`: querying the DB
+  directly for the exact phrase "— Glacier Peak Wilderness" in
+  `access.land_manager` returns **31 routes catalog-wide**, on peaks spanning
+  Bonanza Peak, Mount Maude, Snowking Mountain, Chiwawa Mountain, Fortress
+  Mountain, Vesper Peak and more — some of which may genuinely be near Glacier
+  Peak Wilderness, most of which (Bonanza/Holden-area peaks, Snowking near Baker
+  Lake) plainly are not. This is the same shape of issue as the bivy-list
+  cross-contamination this project has fixed with dedicated scripts before
+  (`fix-mountain-loop-camp-split.mjs`, `fix-goat-rocks-st-helens-camp-split.mjs`)
+  — it needs a per-route reconciliation pass, not a routine-batch sweep. Only
+  `wa_marvin_s_ear` (confirmed above via this row's own internal evidence) was
+  fixed here; the other 30 are unverified either way.
+- `wa_mcmillan_spire_west_southwest_ridge` and `wa_mcmillan_spire_west_west_ridge`
+  — sibling routes on the same peak sharing an identical `timing` object (they
+  share the same approach, per both routes' own notes): both carry
+  `timing.totalHrs: 10` while `approachTimeHrs`(7) + `summitTimeHrs`(4) +
+  `descentTimeHrs`(4) = 15, a 5-hour internal mismatch present identically on
+  both routes. Unlike the two findings above, nothing else on either row settles
+  which number is wrong, or whether `totalHrs` is even meant to equal that sum
+  (it may be intended as "one summit-push day" duration on a multi-day trip
+  rather than the sum of approach + climb + hike-out legs spread across separate
+  days) — left for human verification rather than guessed at.
+
+**Clean, cross-checked:**
+
+- `wa_magic_mountain_west_ridge` — `pitch_detail` segment lengths (180+15+61+46+
+  46+30+15) sum to exactly the row's own `length_m` (393); `dist_km` (12.9 km =
+  8.02 mi) matches the itinerary's stated one-way distance to camp ("about 8
+  miles").
+- `wa_mcmillan_spire_west_southwest_ridge` / `wa_mcmillan_spire_west_west_ridge`
+  — summit coordinates/elevations agree with the parent area (`wa_mcmillan_spire_
+  west`, lat 48.7732/lng -121.2784) and with each other; the West Ridge route's
+  own `corrections` field already transparently reconciles four disagreeing
+  published summit-elevation figures (Mountain Project 8,000 ft / Wikipedia-USGS
+  8,004 ft / ListsOfJohn LiDAR 8,041 ft) and states which it uses and why.
+- `wa_mesahchie_peak_west_ridge` — `dist_km` (24.1 km = 15.0 mi), the itinerary's
+  own `totalNote` ("~15 mi round trip, ~7,480 ft cumulative gain") and `gain_ft`
+  (7,480) all agree; `data_quality.gaps` already correctly hedges that its
+  approach stats are drawn from a common loop (East Ridge up / West Ridge down)
+  rather than a pure out-and-back on this specific route.
+- `wa_mix_up_peak_east_face` — `rappel_count_note` already transparently
+  reconciles two apparently-conflicting published rappel counts (a 3-station
+  breakdown vs. "5 rappels... a 60m rope is long enough") as the same descent
+  rigged two different ways; waypoints, `high_point_ft` (7,440) and the area's
+  own coordinates are self-consistent.
+
+**Tooling note:** `check-sql-targets.mjs` reports all 6 write targets exist (no
+silent no-op risk) and confirms no DELETE. Re-verified each WHERE-clause guard
+against a fresh read of the live DB immediately before finalizing the SQL — all
+5 guarded field values matched exactly 1 row each, no drift from when the batch
+was first pulled. File is 5.2KB, over the SQL Editor's ~4KB safe-paste soft
+limit — split into ~1.5-2KB chunks and verify each before sending the next.
+
+WebSearch (not WebFetch) was used for external verification this session: a
+SummitPost-sourced description of the Martin Peak West Ridge route from Holden
+Pass, which confirmed the on-file route narrative and settled the
+West-Ridge-vs-Southeast-Slopes naming question above. A second WebSearch on
+Magic Mountain/Cascade Pass/Kool-Aid Lake round-trip mileage returned no
+authoritative total distance figure, so the mileage fix above rests on the two
+agreeing internal figures rather than an external source.
+
+SQL: `audits/sql/2026-09-11-batch-269.sql` (6 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mix_up_peak_east_face` (see
+progress file).
