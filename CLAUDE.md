@@ -2707,18 +2707,30 @@ the total when deciding where a new guard belongs.
     can move, or "corrected by deletion" passes) and **no hardcoded range** — a literal scale bound
     typed into a title string is a hand-copy nobody re-derives, which is how the old one came to
     describe a scale that had never been measured.
-  - **THE TIERS ARE MEASURED AND DELIBERATELY NOT TOUCHED.**
+  - **THE TIERS WERE MEASURED, THE QUESTION WAS PUT TO THE USER, AND IT IS ANSWERED — this bullet
+    said "deliberately NOT touched" for longer than that was true, and it was the LAST surviving
+    copy of a claim two other entries had already recorded going stale.**
     `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles the app's own model and parses
     the migrations: **ceiling 84, day one 5, partnerless 54**, with `ID verified 0/10` and
-    `Certifications 0/10` unfillable. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its
-    *"✓ Well-trusted — partners can rely on your record"* and the badge's *"Highly Trusted"* (≥90)
-    are **all unreachable — no climber can ever be shown any of them**, and the progress bar caps at
-    93%. *"Trusted"* (≥70) is barely better: a climber with two years, 12 vouches, 60 logs, 20
-    reports and 9 catches scores **65**, so they read *"Building Trust"*. **Where those four bars
-    belong is a product decision with app-wide visible effect** — it changes what every climber is
-    *called* on every screen — so it is raised rather than swept, the same shape the group-trust
-    threshold was put to the user as. The guard asserts none of them; a guard failing on today's
-    tiers would only break the build while the question is open.
+    `Certifications 0/10` unfillable — all still true, and all still worth re-running rather than
+    quoting. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its *"✓ Well-trusted"* and
+    the badge's *"Highly Trusted"* (≥90) **were all unreachable — no climber could ever be shown
+    any of them** — and *"Trusted"* (≥70) was barely better.
+    - **#1740 FIXED THEM.** One derived `TRUST_TIERS` at **65 / 33 / 15**, `TRUST_GOAL` derived
+      from its top tier, and `check:trust-breakdown` **section 7**, which **BOUNDS** every bar
+      (reachable, and not handed out for confirming an email) while deliberately pinning no
+      particular number — so it cannot argue with the next rebalance. That entry records the
+      climber states each bar is anchored to; read it rather than re-deriving them here.
+    - **READING THIS PARAGRAPH AS LIVE WOULD HAVE RE-RAISED A CLOSED PRODUCT DECISION, and the
+      likeliest "fix" it invites is restoring 90 and 70** — which is the one outcome memory
+      records as explicitly forbidden. That is the stale-bookkeeping class this file names
+      everywhere else, sitting in its own pages: *a stated gap that has since closed sits in the
+      worklist looking like work.* Its own worked example had inverted too — at 33 the climber it
+      describes scoring **65** now reads *"Trusted"*, not *"Building Trust"*.
+    - **Nothing reconciles two entries that describe one fact**, which is why this survived while
+      `check:trust-breakdown` §6 and §7 both recorded the same claim expiring. **When a limitation
+      here is acted on, replace it with the measurement — and grep for the other copies**, because
+      a decision stated in prose is a hand-copy wherever it lives.
   - Injection-tested **10/10** for these two sections
     (`scripts/oneoff/inject-profile-claims-reach-cases.mjs`), each case proving its edit landed **by
     checksum**, restoring byte-identically, and judged on the guard's **own FAIL lines** — the
