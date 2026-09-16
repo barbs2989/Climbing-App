@@ -16,14 +16,20 @@
 // It supersedes scripts/oneoff/probe-privacy-location-onscreen.mjs and
 // scripts/oneoff/probe-policy-promises-vs-live-controls.mjs, both of which ran nowhere.
 //
-// Static: one esbuild bundle and two SSR renders. Measured at 1.6s CPU against 1.69s for
-// check:topo-outage-copy, which is already in the chain — so it is cheap enough to gate on.
+// Static: one esbuild bundle, two SSR renders, and — since section 5 — three Babel parses, which
+// are there to MASK COMMENTS rather than to walk an AST. QUOTED AS A RATIO, NOT A CLOCK: best of
+// three back-to-back runs against check:topo-outage-copy on the same box, it is 2.15x that sibling,
+// against ~0.95x before section 5. Those runs were taken at load average 378 on 4 cores, where an
+// absolute figure is fiction — this file records a profile at load ~450 being off by 4x, and even
+// the ratio is load-robust rather than load-proof. Re-measure the same way rather than trusting a
+// number here; what it says is that this sits well below the chain's 6.5-10.4s top tier.
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { parse } from "@babel/parser";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let failed = 0;
@@ -389,6 +395,123 @@ else if (!/float plan/i.test(/Is my emergency contact private\?","([^"]*)"/.exec
 else ok(`the FAQ still answers the question, and names the float plan as where a contact goes`);
 if (!/ClimbMatch can't alert anyone for you/.test(app)) bad(`the float-plan toast no longer says ClimbMatch cannot alert anyone — that sentence is the whole safety point of the toast`);
 else ok(`the float-plan toast still says plainly that ClimbMatch will not raise the alarm`);
+
+
+/* ── 5. THE CREW FLOAT PLAN: A LEGAL SURFACE PROMISED SOMETHING NO CREW MEMBER IS SHOWN ──────────
+   Section 4 covers scattered copy; this covers the same class one layer up, on the surfaces that
+   ARE legal. Three claims, on two documents, all false in the same two ways:
+
+     Privacy §"What we collect"      "...climbing logs, optional emergency contacts, ..."
+     Privacy §"What others can see"  "your emergency contact is shared with that crew so they can
+                                      raise the alarm if you do not return."
+     the in-app sheet §"Messages & crews"
+                                     "A float plan you share is seen by your crew so they know your
+                                      route and return time — it includes your emergency contact,
+                                      so they can raise the alarm if you do not come back."
+
+   MEASURED, twice. (1) Nothing can set an emergency contact — the same derivation 4b already makes
+   — so `onSetFloatPlan` writes `contact: null` for every real signed-in account. (2) The object it
+   writes to `crews.float_plan` is `{filedAt, contact, returnBy}` and NO SCREEN READS A PROPERTY OFF
+   IT: every `crew.floatPlan` access in the app is a truthiness test driving one button's label,
+   colour and cursor. So the crew is not shown the contact, the return day, or the route — and
+   `float_plan` carries no route at all, which is a third thing the sheet claimed.
+
+   The app's own safety copy already said the truth: the float-plan toast reads "ClimbMatch can't
+   alert anyone for you", and the form says what you type stays on your phone. It was the two LEGAL
+   surfaces that contradicted it — the opposite of the usual direction.
+
+   BOTH PREMISES ARE DERIVED, so this section INVERTS rather than rotting. The day a contact becomes
+   settable, or the day a screen renders the stored plan, saying so is CORRECT and the rule reports a
+   MOVED PREMISE instead of going on forbidding a claim that would then be true. A hardcoded "no crew
+   can see this" would be a guard forbidding the fix — the shape check:profile-claims records.
+
+   WHY THE MENTIONS ARE JUDGED PER SENTENCE RATHER THAN BANNED. "Emergency contacts are never shown
+   on your public profile" is TRUE and still misleading, because it implies there is one to withhold;
+   "there is no emergency contact on your profile" is the honest form and must pass. A word ban
+   cannot separate them and a required phrasing forbids improving the copy, so a sentence naming one
+   has to carry its own honesty — an absence, or where the thing actually lives.
+
+   COMMENTS ARE MASKED WITH BABEL for the renderer test, and that is not caution: three checkers in
+   this repo were fooled in one day by the comment written to explain the very fix they were
+   checking, and this section's own explanation names the property access it forbids. */
+console.log("\n--- 5. no legal surface promises a crew something no crew member is shown ---");
+
+/* The stored shape is READ FROM THE WRITE, never restated — a copy would agree with itself whatever
+   `onSetFloatPlan` does, which is the whole question. */
+const fpWrite = /updateCrew\(\s*cid\s*,\s*\{\s*floatPlan\s*:\s*\{([\s\S]{20,600}?)\}\s*\}\s*\)/.exec(app);
+if (!fpWrite) dead("ANCHOR LOST: onSetFloatPlan's updateCrew(cid,{floatPlan:{...}}) in ClimbMatch.jsx — without the write this section cannot say what a crew stores, and every claim below would pass unexamined");
+const fpKeys = [...fpWrite[1].matchAll(/(?:^|[,{])\s*([A-Za-z_$][\w$]*)\s*:/g)].map((m) => m[1]);
+/* `contact` is deliberately DROPPED from the renderer test: the eleven-field float plan FORM has a
+   field of that name too, so it is not distinctive to the stored object and would report the form's
+   own renderer as a crew-facing one. */
+const fpDistinct = fpKeys.filter((k) => !/^contact$/i.test(k));
+if (fpDistinct.length < 2) dead(`only ${fpDistinct.length} distinctive key(s) parsed out of the crew float-plan write (${fpKeys.join(", ") || "none"}) — with fewer than two the renderer test below cannot fire, and its silence would read as "no screen shows it"`);
+
+const parseComments = (src, label) => {
+  let ast;
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  catch (e) { dead(`could not parse ${label} for the renderer test: ${e.message}`); }
+  const cs = ast.comments || [];
+  if (cs.length < 50) dead(`${label} reported only ${cs.length} comments — a broken parse, not a terse file, and masking nothing would let this section's own documentation decide the verdict`);
+  const buf = src.split("");
+  for (const c of cs) for (let i = c.start; i < c.end; i++) if (buf[i] !== "\n") buf[i] = " ";
+  return buf.join("");
+};
+const rdSrc = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+const masked = [["ClimbMatch.jsx", parseComments(app, "ClimbMatch.jsx")], ["ClimbMatchCore.jsx", parseComments(core, "ClimbMatchCore.jsx")], ["RouteDetail.jsx", parseComments(rdSrc, "RouteDetail.jsx")]];
+
+/* A WRITE names the key; a READER takes it off something. That distinction is the whole test —
+   the write and the seed row both spell `filedAt:`, and only a screen writes `.filedAt`. */
+const accessRe = new RegExp(String.raw`[.\[]\s*["']?(` + fpDistinct.join("|") + String.raw`)\b`, "g");
+const renderers = [];
+for (const [name, src] of masked) for (const m of src.matchAll(accessRe)) renderers.push(`${name}: …${src.slice(Math.max(0, m.index - 50), m.index + m[0].length + 50).replace(/\s+/g, " ")}…`);
+const planRendered = renderers.length > 0;
+
+/* Judge each legal surface's own STRING LITERALS, never the lifted array source: a sentence split
+   across `"],["` would weld two entries together and could borrow a neighbour's honesty marker. */
+const HONEST_CONTACT = /\bno emergency contact\b|\bis no emergency\b|\bnot part of your profile\b|on your (own )?(device|phone)|stays on your|held on your own/i;
+const HONEST_ALARM = /\bno screen\b|nothing in the app|do not rely|cannot raise|can[’']t raise|will not raise|cannot alert|can[’']t alert/i;
+const ALARM = /raise the alarm|raise an alarm|alert (?:your|the) (?:contact|crew)/i;
+
+if (settable || planRendered) {
+  bad(`section 5's premise has MOVED — ${settable ? "an emergency contact is settable now" : `a screen reads the stored crew float plan (${renderers[0]})`}. Telling a climber their crew can see a float plan may be TRUE now: re-read the Privacy Policy and the in-app sheet and re-aim this rule rather than leaving it standing.`);
+} else {
+  ok(`nothing can set an emergency contact, and no screen reads the stored crew float plan (${fpDistinct.join("/")} are written and never taken off anything)`);
+
+  let sentences = 0;
+  for (const [sname, stext] of surfaces) {
+    for (const lit of stext.matchAll(/"((?:[^"\\]|\\.)*)"/g)) {
+      for (const sentence of lit[1].split(/(?<=[.!?])\s+/)) {
+        if (sentence.length < 12) continue;
+        sentences++;
+        if (/emergency contacts?/i.test(sentence) && !HONEST_CONTACT.test(sentence))
+          bad(`${sname} names an emergency contact as something the app has, and nothing can set one: …${sentence.trim()}…`);
+        if (ALARM.test(sentence) && !HONEST_ALARM.test(sentence))
+          bad(`${sname} says an alarm gets raised off a float plan, and no screen shows a crew the plan it stored: …${sentence.trim()}…`);
+      }
+    }
+  }
+  if (sentences < 60) dead(`only ${sentences} sentence(s) parsed out of the three legal surfaces — the scan matched almost nothing, so it proved nothing`);
+  ok(`${sentences} sentences across ${surfaces.length} legal surfaces, none claiming a contact the app cannot hold or an alarm it cannot raise`);
+}
+
+/* 5b. THE LOAD-BEARING HALF: a rule that only forbids is satisfied by DELETING the disclosure, and
+   the disclosure is the reason these sentences exist — something a climber types really does land on
+   a row other crew members can read. Saying less about that is a worse privacy policy, not a
+   more honest one. */
+const privacyDoc = surfaces[1][1], sheetDoc = surfaces[2][1];
+if (!/float plan/i.test(privacyDoc)) bad(`the Privacy Policy no longer mentions a float plan at all — filing one writes to a row other crew members can read, and a policy silent on that discloses less than the false version did`);
+else if (!/on your (own )?(device|phone)|stays on your|held on your own/i.test(privacyDoc)) bad(`the Privacy Policy no longer says the float plan you fill in stays on your own device — that is the fact the removed claim was wrong ABOUT, and dropping it leaves the reader with nothing`);
+/* The DISCLOSURE is the sentence about other people, and it is the one a forbid-only rule quietly
+   loses: the injection that deleted the crew clause left the device-local half standing, so an
+   earlier version of this check passed on a policy that had stopped saying anything about who else
+   can read what you filed. `crews` RLS is `status <> 'pending'` since 0180, so the other members
+   genuinely can. */
+else if (!/crew[^.]{0,140}can (read|see)|other members can read/i.test(privacyDoc)) bad(`the Privacy Policy no longer says the other members of a crew can read what filing a float plan stores — that is the DISCLOSURE, and a policy that drops it tells the reader LESS than the false version did`);
+else ok(`the Privacy Policy still discloses the float plan, still says the form itself stays on your device, and still says who else can read what filing one stores`);
+if (!/float plan/i.test(sheetDoc)) bad(`the in-app privacy sheet no longer mentions a float plan — the sheet is where the privacy decision is actually made, and deleting the subject is not correcting it`);
+else if (!HONEST_ALARM.test(sheetDoc)) bad(`the in-app privacy sheet no longer says the app cannot raise the alarm for you — that sentence is what stops a climber relying on their crew instead of telling a real person`);
+else ok(`the in-app privacy sheet still names the float plan and still says the app cannot raise the alarm`);
 
 console.log(failed
   ? `\ncheck:policy-claims FAILED — ${failed} problem(s).`
