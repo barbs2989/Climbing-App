@@ -10326,9 +10326,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     IS the trailhead**, and the drive ends there.
   - **`--ground` IS THE ADJUDICATOR, AND IT IS WHAT MAKES REPORT-ONLY HONEST RATHER THAN TIMID.**
     Both records are the pin's own, so neither is privileged; the USGS DEM derives from neither. On
-    the live catalog it settles **7 of 11** — `wa_cashmere_mountain_west_ridge`'s pin stores **4,650
-    ft** where the ground reads **3,303** and its own sentence says **3,300**, a 3 ft match against a
-    1,347 ft error.
+    the live catalog it settles **7 of 11** — `wa_cashmere_mountain_west_ridge`'s pin **stored 4,650
+    ft** where the ground reads **3,303** and its own sentence says **3,300** — a 3 ft match against a
+    1,347 ft error, since repaired.
   - **DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY** — the rule
     `fix-same-coordinate-elevation-disagreements.mjs` already records. A flat bar reads the
     instrument's own noise: at ±250 ft the DEM *"admits both"* on **six of eight** of these while
@@ -10341,7 +10341,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     `wa_prusik_peak_solid_gold`, whose sentence names the trailhead and states a height the ground
     refuses.
   - **THE FINDINGS CORROBORATE EACH OTHER, which is the strongest evidence available that this is
-    real drift rather than a reading error.** **Blue Lake Trailhead appears twice with the numbers
+    real drift rather than a reading error.** **Blue Lake Trailhead APPEARED twice with the numbers
     SWAPPED** — `wa_north_face_3` stores 5,400 with prose saying 5,200, and `wa_the_west_face` stores
     5,200 with prose saying 5,400 — and the ground reads **5,380** for both, so one route is wrong in
     its pin and the other in its sentence. Stuart Lake Trailhead does the same at 3,200/3,540 and
@@ -10350,6 +10350,49 @@ the correction knows the screen is wrong, and they have no way to report it.
     clean catalog: zero routes read, no pin typed `Trailhead`, no trailhead pin carrying prose, and
     **no trailhead pin whose own naming sentence states a height** — with which the scan cannot fire
     at all.
+  - **FIVE OF THE ELEVEN ARE REPAIRED, and the sentences above are written against the PRE-REPAIR
+    catalog deliberately — they are the measurement that justified the batch, not a description of
+    today's rows.** `scripts/oneoff/fix-trailhead-pin-vs-its-own-prose.mjs` is a **reviewed batch**:
+    every entry declares its own find→replace with a written reason, the ground is **re-measured at
+    apply time** rather than quoted, and each row must still say what the entry was written against.
+    The audit reads **6** afterwards.
+    - **NOTHING IS TYPED.** A pin repair copies the figure that pin's OWN sentence states; a prose
+      repair copies that pin's OWN stored elevation. So a fix needing a height the row does not hold
+      **cannot be expressed** — the declare-a-donor contract the trailhead-disagreement appliers use,
+      which is what makes a batch in this family safe to run at all.
+    - **TWO PIN REPAIRS AND THREE PROSE ONES, which is the unusual half**: on three routes the
+      SENTENCE is the wrong record, so the repair edits English. That is why each declares an exact
+      `find` and refuses unless it matches the live value **exactly once**.
+    - **THE NEIGHBOURING FIELD WAS CHECKED BEFORE ANYTHING WAS WRITTEN.** Lowering a trailhead
+      **raises** the trailhead-to-summit rise and can arm `gainBelowOwnPins` — the caveat that tells a
+      climber their route's stored gain is impossible — so a repair here is one step from minting a
+      finding in a sibling guard. Measured on both pin repairs: Cashmere's implied rise goes **3,864
+      → 5,214** against a stored `gain_ft` of **5,300**, so the caveat stays silent and the gain
+      becomes MORE consistent; Blue Lake's goes 2,560 → 2,360 against 2,400 with 689 ft of climbing
+      credited, also silent. [[changing-which-record-wins-leaves-the-neighbouring-field-behind]].
+    - **AND THAT CHECK PRODUCED A FOURTH INDEPENDENT RECORD FOR CASHMERE, which is worth more than
+      the repair.** Its `gain_ft` of 5,300 against a summit pin of 8,514 implies a start at **3,214
+      ft** — within 86 ft of the ground's 3,303 and the sentence's 3,300, and **1,436 ft** from the
+      stored 4,650. Written by a different enrichment pass from either, so it shares no input with
+      the two records already agreeing. *A side-effect check is also a measurement.*
+    - **SIX ARE DELIBERATELY LEFT AND THE SCRIPT'S HEADER NAMES EACH**, because a reviewed batch is
+      only a batch if the refusals are written down: **four** are a sentence correctly naming a
+      SECOND feature (Cascade Pass 5,392, Slate Pass 6,900, Longs Pass 6,200, a switchback ~5,600),
+      where the repair is nothing at all; and **two** the ground does not separate —
+      `wa_mount_stuart_north_ridge` at 3,399 is nearer neither 3,200 nor 3,540, and
+      `wa_mount_baker_easton_glacier`'s prose is 23 ft out against a pin 137 ft out, which is not the
+      separation this batch demands. **A threshold widened to admit the case it is judging proves
+      nothing** — the rule the trailhead chord-geometry probe already records.
+  - **A MEASURED NON-FINDING BESIDE IT, recorded so nobody builds the detector: a pin NAME that
+    embeds a height is a THIRD record inside the same object, and it never disagrees.** 73 WA pins
+    name one (`Point 4555'`, `Steep Heather/Meadow Ridge Below Point 6066`), **68 agree with their
+    own `elev` and the other 5 are all correct work** — a preposition (*"Below Point 6066"* stores
+    5,800; *"Saddle west of Point 7657"* stores 7,500), a RANGE whose stored value is the midpoint
+    (*"4,500-5,200 ft"* stores 4,900), or a distance ON ROUTE rather than a height (*"Lunch Ledge
+    belay (~300 ft on route)"* stores 3,900). **Zero findings**, and the reason generalises: a
+    name-embedded number is qualified by its own preposition, so separating them needs English read
+    rather than matched. *A detector for a class of zero is the thing this repo keeps refusing to
+    build.*
   - Injection-tested **9/9** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
     `--fixture` so the whole harness runs **offline** and nothing writes to the live project — the
     mechanism `audit:trailhead-road` sets, because these faults live in the DATA and a case cannot
