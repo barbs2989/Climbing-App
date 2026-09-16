@@ -223,8 +223,7 @@ const CHECKED = {
   logCatchWith: 'the copy is "No climbs match." — a statement about the filter the user just typed, true during an outage',
   giveVouchWith: 'same "No climbs match." filter copy',
   quickLogFor: 'same "No climbs match." filter copy',
-  profileModal: "FullProfile's vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
-  eventInvite: "renders FullProfile; same reason",
+  eventInvite: "renders FullProfile; its vouches/objectives come from `climber.vouches` and `climber.objectiveIds`, which a DB-derived profile NEVER carries — empty always, not because of an outage",
   crewListOpen: "\"no real organizer to respond yet\" is about OPEN_CREWS, the seed demo crews — no query behind it",
   /* The Help FAQ answers "Can I see other people's recorded GPX tracks?" and has to say that
      almost none exist -- `communityTracks` is a SEED-ONLY field and `routes` has no track column
