@@ -3717,7 +3717,11 @@ the total when deciding where a new guard belongs.
     résumé the account has always shown. **An absent column must not look like a choice.**
   - **THE CLASS RECURRED, WHICH IS WHY IT IS A GUARD.** #1535 hid five controls that could not work
     behind `PRIVACY_CONTROLS_LIVE`; #1540 made `show_name` real (0175) and gated
-    `visibleWhileBrowsing`, whose every reference was its own knob. These two were left outside the
+    `visibleWhileBrowsing` — whose every reference was **believed** to be its own knob, and is not:
+    `useRoutePresence` is handed it as `visible`, and it decides whether your name and photo ride
+    your presence entry. That switch is inert **because the flag hides it**, not because nothing
+    consumes it, and the claim stood here and in a comment beside the control at once. These two
+    were left outside the
     gate while being just as inert — the *an instance fixed by hand is not a class closed* shape.
   - **DECLARED, NOT DERIVED, and that is a correction to this guard's own first draft.** It mapped
     a flag to a column by camelCase→snake_case and demanded ONE persistence shape, then reported
@@ -13667,6 +13671,52 @@ their own Résumé showed an amber **"Unverified"** chip.
     switch suppressing only the reader's own side would be misleading, and one suppressing a
     climber's appearance in OTHER people's mutual lists needs the definer to filter on a column that
     does not exist.
+- **"1 VIEWING NOW" WAS COUNTING THE READER, on every DB-backed route, permanently.** The route
+  page's social strip is four chips, and `presence.count` was `entries.length` — every tracked
+  presence **including your own**, since you call `track()` — while the `viewers` list beside it
+  filtered you out. So **one strip carried two rules about whether the reader is in it**: the number
+  counted you and the avatars did not. A climber alone on a route read a pulsing green **"1 viewing
+  now"** with no avatar next to it, and the whole strip is `clickable(() => setTab("partners"))`, so
+  it is an invitation to go and find the person it just invented.
+  - **CONFIRMED ON A REAL RUN, not reasoned about.** CI's `ui-screens` capture of `route:Overview`
+    shows *"1 viewing now"* and **zero** viewer avatars, from a walk that is the only client on that
+    route. The chip is gated `{vw ? … : null}` and `vw` could not be 0 while the channel was
+    subscribed, so it was on for **every** climber on **every** route, always.
+  - **THE OTHER THREE CHIPS ARE ABOUT OTHER PEOPLE, WHICH IS WHAT MAKES THIS A MISS RATHER THAN A
+    MISSING CONVENTION** — the same argument the résumé's demo-verify tick turns on. `popInterest`
+    filters seed `CLIMBERS`, which `ME` is **not in**; open crews are ones you are not on; and an
+    ascent logged is an ascent logged. *"Viewing now"* was the outlier.
+  - **THE FIX IS ONE EXCLUSION, NOT A SUBTRACTION.** `presenceSplit(entries, myId)` in
+    `lib/presence.js` derives **both** halves from the same filter, so the count is the superset of
+    the avatars **by construction** and they can never disagree again — the
+    `check:count-matches-its-list` principle (*one definition rather than a matching rule*). A
+    `count - 1` would have been a matching rule, and wrong the moment you are not tracked.
+  - **IT IS A PURE EXPORTED FUNCTION FOR THE REASON `topoEmptyCopy` AND `stateCatalogLine` ARE: it
+    can be RUN.** Standing up a Realtime channel to ask *"does this count include me"* is far more
+    than the question is worth, and a decision taken inside a hook is unreachable to any static
+    check.
+  - **THE NEIGHBOURING PROMISE WAS CHECKED BEFORE THE CHANGE, and it is what stops the obvious
+    over-fix.** Settings says *"Off still counts you in 'climbers viewing now', just without your
+    name or photo"* — a claim about what **OTHERS** see. You are still `track()`ed when invisible, so
+    it stays true; a fix that stopped tracking you would have made that copy false.
+    [[changing-which-record-wins-leaves-the-neighbouring-field-behind]].
+  - **AND A COMMENT BESIDE THE GATED SWITCH ASSERTED THE OPPOSITE OF THE TRUTH FOR AS LONG AS BOTH
+    EXISTED.** It read *"`visibleWhileBrowsing` has NO consumer at all — nothing reads it but the
+    switch's own `aria-checked`, so it is announced and inert"*, while `useRoutePresence` is handed
+    it as `visible` two hundred thousand characters away and it decides whether your name and photo
+    ride your presence entry. The switch is inert **because the flag hides it**, not because nothing
+    consumes it. **CLAUDE.md repeated the claim** — `check:visibility-switches`' own entry said
+    *"whose every reference was its own knob"* — so the error was in two places at once, which is
+    how a session ends up deleting live wiring. Both corrected.
+  - **NOT A PRIVACY DEFECT, checked rather than assumed**: the flag is `useState(false)`, so a
+    climber is counted and never named, and a control nobody can reach could only ever make them
+    MORE visible. Recorded so it is not re-derived as one.
+  - Proven by `scripts/oneoff/probe-viewing-now-counts-others.mjs` — 18 assertions, **no browser, no
+    database, no Realtime channel**, executing the real `presenceSplit` out of an esbuild bundle with
+    the client stubbed (`lib/presence.js` imports `./supabase` **extensionless**, which vite resolves
+    and node does not). **Both halves are proven load-bearing by A/B**: reverting the exclusion fails
+    6 execution assertions, and reverting only the chip's field name fails 2 **while all 6 still
+    pass** — which is exactly why the wiring is asserted as source beside the behaviour.
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
   `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
