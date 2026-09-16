@@ -20542,3 +20542,141 @@ SQL: `audits/sql/2026-09-16-batch-272.sql` (3 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_christie_west` (see progress
 file).
+
+## 2026-09-16 — Batch 273 (pass 5)
+
+Eight routes on three Olympic/Picket-Range peaks: Finger Traverse, North Chimney,
+North Chute, Terrible Traverse, West Arête (Mount Constance); Northeast Ridge,
+Southwest Route (Mount Crowder); Northwest Face/Corner (Mount Cruiser).
+
+**Fixed (3 UPDATE statements, 1 route):**
+
+- `wa_mount_cruiser_nw_face_corner` — `road.status`/`access.closures` still describe
+  the 2025 Bear Gulch Fire closure of FR-24/Staircase as currently in effect. This is
+  the same fix pass 4 (batch 208, 2026-09-05) proposed and that a direct query this
+  session confirmed was never applied to the live DB. Re-verified rather than blindly
+  reapplied, since a fire closure is exactly the kind of fact that can change between
+  passes: a broad search for "Staircase status September 2026" first surfaced only an
+  outdated nps.gov page still citing the original "through at least Oct 1, 2026"
+  closure order, which read as though nothing had changed. A more targeted search for
+  the actual reopening event found the primary source — an Olympic National Forest
+  newsroom release titled "Olympic National Forest & Park to Reopen FS-24, Lake
+  Cushman Recreation Sites, and Staircase Area," corroborated by King5, Yahoo/AP, and
+  Chronline — confirming FS-24 and the Staircase developed area reopened to vehicles
+  July 8, 2026 and remain open today, while wilderness trails beyond Staircase
+  (including the North Fork Skokomish/Flapjack Lakes Trail this route's approach uses)
+  remain closed for backcountry-infrastructure repair with no stated reopening date.
+  This route's sibling on the identical approach, `wa_mount_cruiser_south_corner`,
+  already carries this corrected text live. Brought this row into agreement with it.
+- `wa_mount_cruiser_nw_face_corner` — `dist_km` (12.4 km/7.7mi) matches this route's
+  own approach text as the one-way distance to Flapjack Lakes camp only, not the
+  summit (the approach continues past Needle Pass and along the ridge). Also a batch
+  208 finding, confirmed still unapplied (this route and its sibling
+  `wa_mount_cruiser_south_corner` both still show 12.4 today). Two independent sources
+  (SummitPost: "18 miles round-trip, 5500 ft gain"; a Jim Brisbine/trailcatjim trip
+  report for this exact shared approach: "approximately 18.0 miles traveled") confirm
+  an 18-mile round trip; corrected to 14.48 (9.0mi one-way) so the app's `dist_km*2`
+  display reproduces it. Not re-touching the sibling here — it falls outside this
+  batch's route list and will come up in the next one.
+
+**Flagged for human review, not fixed:**
+
+- `wa_mount_crowder_southwest_route` — a genuine internal self-contradiction between
+  two fields on the same row, not previously caught (pass 4's batch 207 corroborated
+  the `fa` field's party names/year/peak-naming facts externally but did not check
+  them against this row's own `corrections` field). `fa` credits the peak's 1962 FA
+  party (Magnusson/Ardussi/Mech/Schmechel) to this specific route, hedged as "very
+  likely, but not explicitly confirmed in print, that this was the 1962 party's ascent
+  route" because the SW Flank is "the range's documented easiest/standard line."
+  `corrections`, on the same row, states flatly: "the peak's 1962 first ascent ...
+  climbed the NE Ridge line, not this Southwest Route/SW Flank — so no 'fa' credit is
+  attached to this route entry; the FA belongs to a different, undocumented-here
+  route." Those two fields cannot both be true. Tried to resolve it externally:
+  WebSearch confirms the 1962 party and year but no source found gives the specific
+  ridge/line they climbed. One found phrase — an AAC "First Ascents in the Southern
+  Pickets" snippet describing Crowder as reached from the Goodell Creek/Picket Creek
+  side (the same southern corridor this route's own approach text uses for the SW
+  Flank) — leans weakly toward the `fa` field's version, but a separate snippet about
+  the same party ("headed south to try for two first ascents" during a Northern
+  Pickets trip) is at least as consistent with an approach from the north, which would
+  favor the NE Ridge. AAC Publications pages themselves returned EGRESS_BLOCKED to
+  WebFetch, as in every prior batch. Sibling route `wa_mount_crowder_northeast_ridge`
+  carries `fa: null` either way, so currently neither route's `fa` field matches what
+  `corrections` asserts should be true. Not fixed because I can't determine with
+  confidence which field is wrong: pulling the credit from `fa` (per `corrections`)
+  and leaving both routes with no FA, or removing/rewriting the `corrections` note,
+  are both plausible and need a source with actual route-level detail (AAC Journal or
+  a Beckey guide) to settle.
+- `wa_mount_crowder_southwest_route` — `dist_km` (61.15 km) still matches
+  `wa_luna_glacier`'s `dist_km` (also 61.15, on the neighboring Phantom Peak,
+  re-confirmed via direct query) to the decimal place, the same cross-peak
+  contamination flagged unresolved in batch 207. No new authoritative one-way mileage
+  for this extremely obscure objective turned up this session either — still no fix
+  proposed, left flagged as before.
+
+**Clean, cross-checked:**
+
+- All five Mount Constance routes share one consistent waypoint chain (Dosewallips
+  Road trailhead 1,400 ft → Lake Constance camp 4,750 ft, 2.0 mi → summit 7,756 ft)
+  and a plausible, area-consistent `dist_km` for each (9.7 km one-way / ~12.06 mi
+  round trip for four of the five; 11.1 km / ~13.8 mi for West Arête's higher
+  Crystal Pass line). Freshly cross-checked the round-trip figure against external
+  sources this session (not just re-trusted from batch 207): one source gives "12.7
+  miles round trip" for the standard Lake Constance/South Chute line, matching the
+  stored figure closely; a second, much longer "18.5-mile round trip" figure is
+  explained by that source's more distant, washout-affected starting point, which
+  this row's own trailhead waypoint note already discloses ("road-end washout itself
+  is lower (~600ft)"). `high_point_ft`/summit elevation (7,756 ft) and the peninsula
+  bounding-box coordinates check out against the area row and against external
+  sources, as already established in batch 207 — not re-litigated. Hazard/gear lists
+  (Finger/Terrible Traverse exposure, North Chute avalanche hazard, West Arête's
+  loose granite and 5.4/5.5 grade-source disagreement, already appropriately hedged
+  in `corrections`) are internally consistent and not overstated or contradicted by
+  anything found.
+- `wa_mount_crowder_northeast_ridge` — sparse but honestly so: no grade, gain/loss, or
+  distance is asserted, and the route's own `overview`/`watch_out` explicitly frame it
+  as a descent-only line whose published description "has been reported by climbers
+  as vague or inaccurate" — consistent with everything else on this row. A 2012
+  down-climb account quoted in `beta` (chasm crossing, low-5th-class moves down to
+  Pickell Pass) matches, almost verbatim, an independently found Steph Abegg trip
+  report ("Mystery Ridge Enchainment") describing a "sketchy descent of the NE Ridge
+  to a camp at Pickell Pass" after ascending Crowder's SW Flank — real corroboration
+  for the modern SW-up/NE-down convention this row and its sibling both describe,
+  though it says nothing about the 1962 FA question flagged above.
+- `wa_mount_crowder_southwest_route` — aside from the two items flagged above,
+  elevation (7,082 ft), prominence (1,042 ft), and the 1970 renaming for USGS
+  geologist Dwight F. Crowder all independently confirmed via WebSearch, matching the
+  peak's own `areas.blurb` and batch 207's prior corroboration exactly. Permit/access
+  fields (North Cascades NP wilderness backcountry permit, $6 reservation fee + $10/
+  person/night, 60/40 reservable/walk-up split) match the current, well-known NCNP
+  backcountry permit structure — no staleness found. Area hierarchy placement (Picket
+  Range, under North Cascades NP) correct.
+- `wa_mount_cruiser_nw_face_corner` — aside from the two fixes above, elevation
+  (6,104 ft) and area hierarchy (Sawtooth Ridge, Mount Skokomish Wilderness, Southern
+  Olympics) already correct per batch 208; the row's own honest hedge about "north
+  face" (Mountain Project's wording) vs. "northwest" (this row's aspect field) is a
+  disclosed ambiguity, not an error. The 2004 Wallace/Parker FA claim for this
+  one-pitch variant remains unconfirmable either way (Wayne Wallace is a real,
+  documented PNW first-ascensionist, so it's plausible but not independently
+  verifiable from search results) — left as-is, consistent with batch 208's prior
+  finding on the same question.
+
+**Tooling note:** `check-sql-targets.mjs` reports all 3 write targets exist (no
+silent no-op risk) and confirms no DELETE. Re-verified the two guarded `road`/
+`access.closures` string matches and the `dist_km=12.4` guard against a fresh read of
+the live DB immediately before finalizing the SQL. File is 4.4KB, over the SQL
+Editor's ~4KB safe-paste soft limit — split before pasting, per the script's own
+warning.
+
+WebFetch returned `EGRESS_BLOCKED` for every external domain tried this session
+(en.wikipedia.org, publications.americanalpineclub.org) — all corroboration above
+comes from WebSearch's synthesized snippets. Where a WebSearch answer looked
+authoritative but turned out to describe a superseded state (the Staircase closure
+above), a second, more targeted search against the primary source resolved it —
+worth flagging as a general risk for anyone relying on a single search pass for a
+time-sensitive fact.
+
+SQL: `audits/sql/2026-09-16-batch-273.sql` (3 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_cruiser_nw_face_corner`
+(see progress file).
