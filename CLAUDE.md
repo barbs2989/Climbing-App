@@ -13717,6 +13717,45 @@ their own Résumé showed an amber **"Unverified"** chip.
     and node does not). **Both halves are proven load-bearing by A/B**: reverting the exclusion fails
     6 execution assertions, and reverting only the chip's field name fails 2 **while all 6 still
     pass** — which is exactly why the wiring is asserted as source beside the behaviour.
+- **THE PARTNERS FILTERS NARROW THE EXAMPLE PROFILES AND NOTHING ELSE, AND THE LIST OF REAL ACCOUNTS
+  SITS BETWEEN THE SENTENCE PROMISING THEM AND THE FILTERS THEMSELVES.** In *"Anyone"* mode the app
+  says **"Use the filters below to narrow by level, discipline, trust, and distance"** — and the very
+  next block is **"Climbers on ClimbMatch"**, the real accounts, which **none of those four narrows**.
+  Measured by source offset, the order is: intro sentence -> **REAL accounts** -> the example caveat
+  -> *Hide filters* -> the filter panel. **The first list below the promise is the one list the
+  promise does not cover**, and the filters are two lists further down.
+  - **IT IS NOT A WIRING BUG AND MUST NOT BE "FIXED" BY APPLYING THE FILTERS**, which is the tempting
+    reading and the damaging one. Most of them **cannot reach a real profile with the data that
+    exists**: `RealClimberRow`'s own `_cand` hardcodes `objectiveIds: []`, and `profiles` has no
+    availability, no pace and no `level` column for anyone — `check:real-profile-rows` exists because
+    rendering one invents a value a real account lacks. Applying them would **exclude every real
+    climber**: absence read as a mismatch, which is the defect #612 removed from pace and which the
+    comment directly above the speed filter still warns about in as many words (*"a pace nobody
+    recorded is UNKNOWN, not a mismatch"*).
+  - **SO THE FIX IS ONE SENTENCE, AT THE LIST IN QUESTION** rather than at the promise: the
+    real-accounts caption now ends *"The filters below narrow the example profiles, not this list."*
+    A reader meets it exactly where the question arises, and it resolves **both** intro sentences at
+    once — the objectives one (*"Climbers who share one of your saved objectives — your tightest
+    matches"*) mis-describes the interposed list for the same reason, since `_cand` cannot carry an
+    objective.
+  - **THE AVAILABILITY FILTER EXCLUDING UNKNOWNS IS A DOCUMENTED DECISION AND WAS DELIBERATELY LEFT
+    ALONE.** `if(!_av.length||!availMatch(...))return false` drops a climber whose availability is
+    unknown — the mirror of the pace defect — but #532 chose that, the comment above `dateFit` records
+    the reasoning, and **the list it governs is seed-only**, so it cannot empty a real search.
+    *Reversing a documented decision needs evidence*, and a measurement showing 12 of 13 example
+    climbers carry no availability is a product argument, not evidence of a defect. Recorded so it is
+    not re-derived as one — and note the five `availability:` fields that look like counter-examples
+    are **guides**, where it is a STRING (*"Booking ~2 weeks out"*) that `availOf` correctly refuses.
+  - Proven by `scripts/oneoff/probe-partner-filters-say-what-they-narrow.mjs` — 23 assertions,
+    **source-only**, and the reason is stated rather than implied: the real-accounts block is gated on
+    `USE_DB && DB_UID`, so reaching it means stubbing `./lib/supabase` to flip a module constant AND
+    standing up PartnerSearch's full prop set, which is far more than a copy claim is worth.
+    `check:policy-claims` takes the same decision for the in-app privacy sheet.
+    - **IT ASSERTS THE ORDER, because the order IS the defect** — a probe that only checked the
+      sentence would pass against a layout where the real list had moved out from under it.
+    - **AND IT ASSERTS THAT THE EXAMPLE LIST IS STILL NARROWED BY ALL SEVEN CHIPS.** A rule that only
+      says the real list is unfiltered is satisfied by a filter panel that narrows **nothing**, which
+      would make the new sentence false in the other direction.
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
   `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
