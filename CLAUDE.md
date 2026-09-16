@@ -65,7 +65,7 @@ npm run check:onboarding-reach # a climber who has not onboarded is ASKED; one w
 npm run check:outage-copy  # an OVERLAY must not read a failed read as an empty account (in build)
 npm run check:topo-outage-copy # the topo box must not invite the FIRST topo when the read failed (in build)
 npm run check:outage-landmark # ...and check:outage's own sub-tab landmark must identify that view (in build)
-npm run check:policy-claims # no legal surface claims a control or a capability the app lacks — 3 of 4 surfaces (in build)
+npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
@@ -2400,7 +2400,7 @@ the total when deciding where a new guard belongs.
     because it opens from Settings **and from partner search**, carries no review disclaimer and
     is not versioned. It is an inline array rather than a named constant, so it is lifted by
     balancing brackets from its first heading, with the same skip-string-contents care the other
-    two get. **Surface 4 (scattered copy) is covered too now — see the section below.**
+    two get. **Surface 4 (scattered copy) is covered too now, and section 5 covers what the two documents say about a crew's float plan — see the sections below.**
   - **SURFACE 4 — SCATTERED COPY: A DESTINATION MUST EXIST.** This entry read *"still by hand"*
     for the life of the guard, which is the
     [[a-stated-limitation-is-a-worklist-not-a-caveat]] shape sitting inside the guard that records
@@ -2475,6 +2475,95 @@ the total when deciding where a new guard belongs.
       verbatim. **Three must stay SILENT** — a comment quoting the forbidden path (section 4 strips
       comments, or it fails on its own documentation), a path naming a **control**, and the FAQ
       answer **reworded honestly**, since a guard pinned to one phrasing forbids improving it.
+  - **SURFACE 5 — THE CREW FLOAT PLAN: TWO LEGAL SURFACES PROMISED SOMETHING NO CREW MEMBER IS
+    SHOWN.** Section 4 covers scattered copy; this is the same class on the surfaces that ARE legal,
+    and it is the finding #1748 deliberately **reported rather than fixed** as feature work. It is
+    not: the *feature* would be showing a crew the plan, and the *defect* is three sentences of copy.
+    - **The Privacy Policy listed an emergency contact among what the app collects** (*"climbing
+      logs, optional emergency contacts, the home area you type in"*) — while §4b's own derivation
+      says nothing can set one, and while the FAQ #1748 shipped says in as many words *"There is no
+      emergency-contact field on your profile."* **One app, two documents, opposite claims.**
+    - **It then said the contact reaches your crew**: *"If you file a float plan with a crew, your
+      emergency contact is shared with that crew so they can raise the alarm if you do not return."*
+    - **The in-app sheet claimed MORE, including a field that does not exist in the record**: *"A
+      float plan you share is seen by your crew so they know your route and return time — it
+      includes your emergency contact, so they can raise the alarm if you do not come back."*
+      `crews.float_plan` is `{filedAt, contact, returnBy}` and **carries no route at all.**
+    - **MEASURED TWICE, and the second measurement is the one nothing had made.** `onSetFloatPlan`
+      writes `contact: ((ME.emergencyContact||"")+"").trim() || null`, so for **every real signed-in
+      account it stores null** — 24 `profiles` columns with no `*contact*`, 14 editor draft keys with
+      none, and the sign-in reset setting it to `""`. And **no screen reads a property off the stored
+      object**: `filedAt` and `returnBy` occur only in the write, the seed row and one comment, and
+      every `crew.floatPlan` access in the app is a **truthiness test** driving one button's label,
+      colour and cursor (`crew.floatPlan?"✓ Float plan set":"⚠ Set float plan"`).
+    - **THE APP'S OWN SAFETY COPY WAS ALREADY HONEST, which is the unusual direction here.** The
+      float-plan toast reads *"ClimbMatch can't alert anyone for you"* and the form says what you
+      type stays on your phone. The two **legal** surfaces were the ones contradicting it — so a
+      climber comparing them would trust the wrong one, since a policy reads as the authority.
+    - **BOTH PREMISES ARE DERIVED, so section 5 INVERTS rather than rotting** — the two-directional
+      shape `check:profile-claims` and §4b already use. Settability comes from the `profiles`
+      snapshot and the editor's own draft; *is the plan rendered* comes from **the write**: the
+      stored keys are lifted from `updateCrew(cid,{floatPlan:{…}})` and the rule asks whether any of
+      them is ever taken **off** something. **`contact` is deliberately dropped from that test** —
+      the eleven-field float plan FORM has a field of that name too, so it is not distinctive to the
+      stored object and would report the form's own renderer as a crew-facing one.
+    - **A WRITE NAMES THE KEY; A READER TAKES IT OFF SOMETHING.** That distinction is the whole
+      renderer test: the write and the seed row both spell `filedAt:`, and only a screen writes
+      `.filedAt`. The day one does, the section reports a **MOVED PREMISE** and stops forbidding a
+      claim that would then be true. Two injection cases pin the two halves separately, because a
+      settable contact and a rendered plan want **different repairs**.
+    - **MENTIONS ARE JUDGED PER SENTENCE, NEVER BANNED, and the sentence that forced it is TRUE.**
+      *"Emergency contacts are never shown on your public profile"* is accurate and still misleading,
+      because it implies there is one being withheld; *"there is no emergency contact on your
+      profile"* is the honest form and must pass. A word ban cannot separate them and a **required**
+      phrasing forbids improving the copy, so a sentence naming a contact — or naming an alarm — has
+      to carry its own honesty: an absence, a device-local destination, or a denial.
+    - **SENTENCES ARE SPLIT INSIDE EACH STRING LITERAL, never across the lifted array source.** A
+      split that ran over `"],["` would weld two policy entries together and could borrow a
+      **neighbour's** honesty marker — a false pass, which is the direction that matters.
+    - **THE DISCLOSURE IS THE LOAD-BEARING HALF, AND THE INJECTION FOUND MY RULE MISSING IT.** These
+      sentences exist because something a climber types really does land on a **row other crew
+      members can read** (`crews` RLS is `status <> 'pending'` since `0180`), and a policy silent on
+      that discloses **less** than the false version did. The first version of the non-vacuity check
+      asked only whether the Privacy Policy still named a float plan and still said the form is
+      device-local — so `disclosure-deleted`, which removes the CREW clause and leaves the
+      device-local half standing, came back **MISSED against a guard I had just written**: it had
+      stopped saying anything about who else can read what you filed, and every remaining assertion
+      passed. The rule now requires that sentence too. *A forbid-only rule loses the sentence about
+      OTHER PEOPLE first, because that is the only one the forbidding half does not touch.*
+    - **COMMENTS ARE MASKED WITH BABEL** rather than stripped by regex — this section's own
+      explanation names the property access it forbids, and this file records three checkers being
+      fooled in one day by the comment written to explain the fix they were checking. The
+      offsets-preserving blanker is unsafe here for the reason `check:overlay-discovery` records.
+      Injection case `SILENT-comment-quoting-the-access` is what proves the mask, and it is free only
+      because the mask is real.
+    - Fails **closed** four ways, each of which otherwise prints identically to a clean run: a moved
+      `updateCrew(cid,{floatPlan:{…}})` (**ANCHOR LOST** — without the write the section cannot say
+      what a crew stores), fewer than two distinctive keys parsed (the renderer test could not fire,
+      and its silence would read as *"no screen shows it"*), a file Babel cannot parse or that
+      reports under 50 comments, and fewer than 60 sentences lifted out of the three surfaces.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-crew-float-plan-claim-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring the file byte-identically, and judged on the
+      guard's **own FAIL lines**; the harness captures the clean run first and refuses any
+      expectation already present in it. Three cases are the real historical sentences restored
+      verbatim. **Two must stay SILENT** — the comment above, and the honest sentence **reworded**.
+    - **REPAIRING THE COPY ROTTED AN ANCHOR IN THE OLDER SUITE, AND `check:injection-anchors` IS WHAT
+      CAUGHT IT.** `inject-policy-claims-cases.mjs`' `collect` case is about **§1's absent location
+      enablement** and merely used the surrounding sentence — which happened to contain *"optional
+      emergency contacts"* — as its unique anchor. Taking that phrase out left the case matching
+      **0 times**, i.e. proving nothing, with its guard still printing `ok`. Re-anchored on the new
+      sentence with its `expect` untouched, because **the phrase was the anchor and never the
+      subject**; cause 1 of that guard's own message, *"the code MOVED — repoint the case"*.
+      *A case anchored on a NEIGHBOURING sentence rots when that sentence is repaired, even though
+      the property it proves has not moved an inch.*
+    - **AND MY OWN FIRST READING OF THAT FAILURE WAS WRONG IN THE EXPENSIVE DIRECTION.** I grepped
+      the guard's output for `fail` and the top hit was
+      `inject-read-failure-cases.mjs … -> 2 matches` — a line from the **informational**
+      multi-match section, matched only because the word *failure* is in the **filename**. On that
+      reading I nearly filed *"main's build is red and it is not mine"*, and went as far as
+      stashing the work to test a pristine tree. Pristine main exits **0**: multi-match anchors are
+      listed, not fatal. *A grep is only as good as its pattern* — read the guard's own FAIL
+      SECTION, never a line that merely contains the word.
   - **THE FIX IT GUARDS CHANGES STRINGS AND NO IDENTIFIER, which is exactly the revert nothing else
     can see.** #1522 rewrote Privacy §4 and §1; `audit:silent-reverts` tracks named definitions and
     says in its own closing caveat that *"a merge that kept a name and dropped its guard clause is
