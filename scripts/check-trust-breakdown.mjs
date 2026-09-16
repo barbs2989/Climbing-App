@@ -38,6 +38,11 @@ import { parse } from "@babel/parser";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.trustbreakdown-${process.pid}.mjs`);
 const clean = () => fs.rmSync(out, { force: true });
+// Cleanup on EXIT, not only on the two paths below: this is a BUILD GATE, so a throw anywhere
+// between the bundle and the end leaks a 2.4 MB copy of the app into the project root, where it
+// is untracked, unignored, and one careless stage-everything away from being committed. The same
+// trap is recorded for a sibling probe that leaked nine directories into the working tree.
+process.on("exit", clean);
 
 let failures = 0, cases = 0;
 const ok = (m) => console.log("  ok    " + m);
@@ -400,6 +405,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
 // agree today -- so the count of copies is asserted separately.
 {
   const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const { TRUST_TIERS, TRUST_GOAL, SERVER_TRUST_EARNABLE, serverTrustScore, trustTier } = mod;
 
@@ -460,7 +466,11 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   {
     const LABELS = new Set(TRUST_TIERS.map((t) => t.label));
     const found = [];
-    for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app]]) {
+    // RouteDetail.jsx is the THIRD app file and this rule is file-agnostic — a ladder there
+    // calls one climber something the badge does not, exactly as one here would. Measured
+    // additive before widening: RouteDetail carries 0 label ladders, so nothing that was
+    // passing starts failing and this is not hiding a regression behind a bigger number.
+    for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app], ["RouteDetail.jsx", rd]]) {
       const ast = astOf(name, code);
       const seen = new Set();
       (function walk(n) {
@@ -606,6 +616,147 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   } else {
     ok(`no copy names a trust bar in the unreachable band ${ceil8 + 1}..${SERVER_TRUST_CAP} - ${trustLits} trust literal(s) of ${lits} across ${scanned8} file(s)`);
   }
+}
+
+// ---- 9. A REPORTER'S TRUST IS MEASURED OR ABSENT, NEVER A CONSTANT ----
+// SECTION 9. Sections 1-8 are about the trust number on a climber's OWN profile. This is the
+// number printed beside SOMEBODY ELSE'S name on the route page, and it was not a number at all.
+//
+// `buildConsensus`, `kwScan` and `routeKw` each carried a LOCAL `trustOf` shadowing the
+// module-level one — the shadowing trap CLAUDE.md records for `clickable`, three times over:
+//
+//     const trustOf = n => { const a = seedAuthor(n); return a ? vScore(a) : 50; };
+//
+// `seedAuthor` matches seed CLIMBERS by display NAME, so every DB reporter fell through it and
+// got the literal 50, which RouteDetail rendered RAW beside their name and coloured AMBER — the
+// low-trust colour — on the HAZARD VOTES list, a safety surface.
+//
+// THE FIX IS A PAIR BECAUSE THE TWO JOBS NEED DIFFERENT ANSWERS. Weighting a consensus wants a
+// neutral prior for an author it cannot score, and the dbReports comment says so in as many
+// words. DISPLAY must not print a number nobody measured — and there is nothing real to print
+// instead: useProfilesByIds selects id/name/avatar/show_name/username and NO score of any kind.
+// So reporterTrust returns null, and the chip is dropped.
+//
+// THE COLOUR LADDERS WERE THE PRE-#1740 ONES, and section 7 could not see them twice over: it
+// scans core and ClimbMatch.jsx (RouteDetail is only in frame since this change), and it matches
+// a tier LABEL chosen by >=, where these chose a COLOUR. So `h.trust>=90?C.green:...` survived
+// #1740 with its green above the earnable ceiling of 84, unreachable for anybody.
+//   SECTION 8 CANNOT SEE IT EITHER, and for a third reason: it matches a number inside a STRING
+// LITERAL, and a colour ternary carries its 90 as a bare NumericLiteral in the test with no string
+// anywhere. The two rules are complementary rather than overlapping — a bar stated in PROSE and a
+// bar stated as a COLOUR are different shapes, and neither scan reaches the other's.
+//
+// A GATE rather than a probe for the reason check:verification-fallback records: the DISPLAY half
+// of this fix is a JSX condition and a colour expression, so reverting it moves NO identifier and
+// audit:silent-reverts says in its own closing caveat it cannot see that. The helpers themselves
+// are new names and would be visible; the render sites are not.
+{
+  const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const { reporterTrust, reporterWeightTrust, TRUST_PRIOR, seedAuthor, buildConsensus, trustTier,
+          TRUST_TIERS, SERVER_TRUST_EARNABLE } = mod;
+
+  for (const [n, v] of [["reporterTrust", reporterTrust], ["reporterWeightTrust", reporterWeightTrust],
+                        ["seedAuthor", seedAuthor], ["buildConsensus", buildConsensus], ["trustTier", trustTier]]) {
+    if (typeof v !== "function") dead(`ClimbMatchCore.jsx does not export ${n} — ANCHOR LOST`);
+  }
+  if (typeof TRUST_PRIOR !== "number") dead("ClimbMatchCore.jsx does not export a numeric TRUST_PRIOR — ANCHOR LOST");
+
+  const seedName = ((CLIMBERS || []).find((c) => c && c.name) || {}).name;
+  if (!seedName) dead("no seed climber with a name — the non-vacuity half of this section cannot run");
+  const dbName = "Robin Belay (a DB reporter, deliberately in no seed list)";
+  if (seedAuthor(dbName)) dead("the supposedly-unknown fixture name resolves to a seed climber — this section would prove nothing");
+
+  // The pair. A seed author keeps a real score; an unscoreable one yields null for DISPLAY and
+  // the neutral prior for WEIGHTING.
+  cases++;
+  const rtSeed = reporterTrust(seedName);
+  if (typeof rtSeed === "number" && rtSeed === vScore(seedAuthor(seedName)))
+    ok(`reporterTrust scores a seed author for real (${seedName}: ${rtSeed})`);
+  else fail(`reporterTrust gave ${JSON.stringify(rtSeed)} for a seed author — a real score must survive`);
+
+  cases++;
+  if (reporterTrust(dbName) === null) ok("reporterTrust answers an unscoreable reporter with null, not a constant");
+  else fail(`reporterTrust gave ${JSON.stringify(reporterTrust(dbName))} for a reporter nobody can score — that is a number nobody measured`);
+
+  cases++;
+  if (reporterWeightTrust(dbName) === TRUST_PRIOR) ok(`weighting still substitutes the neutral prior (${TRUST_PRIOR})`);
+  else fail(`reporterWeightTrust gave ${reporterWeightTrust(dbName)}, want TRUST_PRIOR ${TRUST_PRIOR} — the consensus arithmetic has moved`);
+
+  // TRUST_PRIOR is the app's own neutral value rather than a fresh constant. Pinned, or two
+  // neutral priors drift apart and one of them starts deciding a consensus on its own.
+  cases++;
+  if (vScore(null) === TRUST_PRIOR) ok(`TRUST_PRIOR agrees with vScore(null) (${TRUST_PRIOR}) — one neutral value, not two`);
+  else fail(`TRUST_PRIOR is ${TRUST_PRIOR} but vScore(null) is ${vScore(null)} — two neutral priors have drifted`);
+
+  // What buildConsensus actually hands the screen, in BOTH directions: a rule that only ever
+  // suppresses is satisfied by deleting the feature.
+  const mk = (user, i) => ({ user, date: new Date(Date.now() - (i + 1) * 86400000).toISOString().slice(0, 10),
+                             stars: 4, condTags: ["Rockfall"], crewId: null, avatar: "" });
+  const hz = (name) => {
+    const c = buildConsensus([mk(name, 0), mk(name, 1), mk(name, 2)]);
+    return (c && c.hazards) || [];
+  };
+  const hzDb = hz(dbName), hzSeed = hz(seedName);
+  if (!hzDb.length || !hzSeed.length) dead(`the fixture produced no hazard rows (db ${hzDb.length}, seed ${hzSeed.length}) — every assertion below would pass vacuously`);
+
+  cases++;
+  if (hzDb.every((h) => h.trust === null)) ok(`all ${hzDb.length} hazard rows from an unscoreable reporter carry trust === null`);
+  else fail(`a hazard row from an unscoreable reporter carries trust ${JSON.stringify(hzDb[0].trust)} — the HAZARD VOTES list is printing a constant`);
+
+  cases++;
+  if (hzSeed.every((h) => typeof h.trust === "number")) ok(`and a scoreable reporter still carries a number (${hzSeed[0].trust})`);
+  else fail("a scoreable reporter lost their trust number — this suppressed the feature rather than the lie");
+
+  // No shadowed copy anywhere. Scanned with BABEL, not text: this fix wants explaining, and a
+  // comment quoting the old shape would make a textual scan fail on its own documentation.
+  {
+    cases++;
+    const found = [];
+    for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app], ["RouteDetail.jsx", rd]]) {
+      let ast;
+      try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+      catch (e) { dead(`${name} does not parse (${e && e.message}) — a shadowed reporter score cannot be counted in a file that did not parse`); }
+      const seen = new Set();
+      (function walk(n) {
+        if (!n || typeof n !== "object") return;
+        if (Array.isArray(n)) { for (const c of n) walk(c); return; }
+        if (n.type === "ConditionalExpression" && n.consequent && n.consequent.type === "CallExpression"
+            && n.consequent.callee && n.consequent.callee.name === "vScore"
+            && n.alternate && n.alternate.type === "NumericLiteral") {
+          found.push(`${name}: a ? vScore(a) : ${n.alternate.value}`);
+        }
+        for (const k of Object.keys(n)) { if (k === "loc" || k === "leadingComments" || k === "trailingComments") continue; const v = n[k]; if (v && typeof v === "object" && !seen.has(v)) { seen.add(v); walk(v); } }
+      })(ast.program);
+    }
+    if (found.length) fail(`${found.length} reporter score(s) fall back to a literal — ${[...new Set(found)].join("; ")}. A constant printed beside a climber's name is not a measurement`);
+    else ok("no reporter score falls back to a literal (no `a ? vScore(a) : <number>` in any app file)");
+  }
+
+  // The two render sites, as SOURCE. Executing the helper proves the VALUE and says nothing about
+  // whether RouteDetail still consults it — and dropping it there moves no identifier at all.
+  for (const who of ["rp", "h"]) {
+    cases++;
+    if (rd.indexOf(`${who}.trust!=null`) >= 0) ok(`the ${who} trust chip is dropped when the score is unknown`);
+    else fail(`RouteDetail no longer gates the ${who} trust chip on a known score — an unscoreable reporter is being given a number again`);
+    cases++;
+    if (rd.indexOf(`trustTier(${who}.trust).color`) >= 0) ok(`the ${who} chip takes its colour from the shared trustTier`);
+    else fail(`the ${who} chip does not colour through trustTier — a hand-copied ladder has returned`);
+  }
+
+  cases++;
+  const colourLadder = rd.match(/(?:rp|h)\.trust\s*>=\s*\d+\s*\?/g) || [];
+  if (colourLadder.length) fail(`a hand-copied trust colour ladder is back in RouteDetail: ${colourLadder.join(" | ")}`);
+  else ok("no hand-copied trust colour ladder survives in RouteDetail");
+
+  // ...and the shared ladder a chip now uses must be one a climber can actually reach the top of,
+  // or "it goes through trustTier" says nothing.
+  cases++;
+  const top = trustTier(SERVER_TRUST_EARNABLE);
+  if (top && top.label === TRUST_TIERS[0].label)
+    ok(`a reporter at the earnable ceiling (${SERVER_TRUST_EARNABLE}) reaches "${top.label}" — the old >=90 green could not`);
+  else fail(`a reporter at the earnable ceiling lands on "${top && top.label}" — the top colour is still unreachable`);
 }
 
 clean();

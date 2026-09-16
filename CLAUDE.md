@@ -7567,6 +7567,70 @@ the correction knows the screen is wrong, and they have no way to report it.
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
     reading those would fail on the file explaining itself.
+  - **SECTION 9 — A REPORTER'S TRUST IS MEASURED OR ABSENT, NEVER A CONSTANT.** Sections 1-8 are
+    about YOUR score; this is the same class one surface over, on somebody else's. `buildConsensus`
+    carried a LOCAL `trustOf` shadowing the module-level one, returning a literal **50** for any
+    author `seedAuthor` could not match by display NAME — i.e. every real climber — which
+    `RouteDetail` rendered **raw** beside their name on the HAZARD VOTES list, coloured by a
+    hand-copied pre-#1740 `>=90/70` ladder whose green sits above the **84** earnable ceiling.
+    - **SECTION 8 CANNOT SEE IT EITHER, so the two rules are complementary rather than
+      overlapping.** That section bounds a bar stated in PROSE by matching a number inside a
+      **string literal**; a colour ternary carries its `90` as a bare NumericLiteral in the test
+      with no string anywhere. A bar stated in prose and a bar stated as a COLOUR are different
+      shapes, and neither scan reaches the other's.
+    - **THERE IS NOTHING REAL TO PRINT INSTEAD, which is what decides the repair.**
+      `useProfilesByIds` selects `id, name, avatar, show_name, username` and **no score of any
+      kind**; the server score is a per-account RPC. So the honest render is **no chip**, not a
+      different number, and both chips are now gated `!=null` and coloured through `trustTier`.
+    - **A TRUST SCORE HAS TWO JOBS NEEDING DIFFERENT ANSWERS, and collapsing them is the tempting
+      wrong fix.** WEIGHTING legitimately wants a neutral prior for an unscoreable author — the
+      `dbReports` comment says so in as many words — while DISPLAY must never print a number nobody
+      measured. `reporterTrust` returns a score **or null**; `reporterWeightTrust` falls back to
+      **`TRUST_PRIOR`**, which is `50` because that is what **`vScore(null)`** already returns, so
+      it is the app's own neutral value rather than an invented constant. The comment beside them
+      says *do NOT collapse these two back into one*.
+    - **A GREP FOR ONE SPELLING IS NOT A MEASUREMENT OF A CLASS.** A textual scan for the inline
+      shape found **3** shadows (`buildConsensus`, `kwScan`, `routeKw`); the **Babel AST** scan for
+      `a ? vScore(a) : <NumericLiteral>` found **two more in `ClimbMatch.jsx`**, written with an
+      intermediate `const cl=`/`const base=` the regex could not match. Scanned with an AST, not a
+      regex, for the reason section 3 records: **an AST does not see comments**, and this fix wants
+      explaining — while the blanker other guards use once ate 21% of `RouteDetail.jsx`.
+    - **The two `ClimbMatch.jsx` sites are WEIGHTING, not display** — `weightOf` helpers inside the
+      start-location and topo-annotation consensus builders, neither of which renders a number.
+      Both take `reporterWeightTrust` and the conversion is **value-identical** (50 == `TRUST_PRIOR`),
+      so **only the AST scan can see a revert**; `app-weighting-site` is that injection case, and it
+      is what proves the scan's third file is load-bearing rather than decorative.
+    - **A GATE rather than a probe**, and section 7's tier-ladder scan is **widened to
+      `RouteDetail.jsx`** in the same change (measured additive: **0** label ladders there today).
+      The DISPLAY half of this fix is a JSX condition and a colour expression, so reverting it moves
+      **NO identifier** and `audit:silent-reverts` says in its own closing caveat it cannot see that.
+    - **A rule that only ever suppresses is satisfied by deleting the feature**, so the non-vacuity
+      assertion is the load-bearing half: a SEED author must still carry a number, and a reporter at
+      the earnable ceiling must still reach the ladder's top colour.
+    - Probe: `scripts/oneoff/probe-reporter-trust-is-not-a-constant.mjs` (17 assertions, no browser,
+      no DB), whose section 3 asserts **equivalence against the pre-change core loaded via
+      `git show origin/main:`** — weighted `topTags`/`recentTags`/`confidence`/`avgStars`
+      byte-identical while the DISPLAYED trust moved `[50,94,50,94] -> [null,94,null,94]` — and
+      self-skips as spent once `origin/main` carries the fix.
+      - **THAT FIXTURE HAD TO VARY THE THING WHOSE WEIGHT IT MEASURES, and an injection found the
+        hole rather than a reading.** Every report initially carried the same tags, so every tag was
+        100% whatever the weights were and `prior-becomes-zero` reported a WRONG FAILURE against a
+        correctly-firing probe. **The fault was in the probe, not the app**: db authors are tagged
+        `["Rockfall"]` and seed authors `["Dry"]` now.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-reporter-trust-cases.mjs`), each case proving
+      its edit landed **by checksum** and restoring every file byte-identically, judged on FAIL
+      lines only, with the harness **refusing any expectation already present in the clean run**.
+      **Two must stay SILENT** — a comment quoting the forbidden shape, and the same rule written
+      longhand, since a probe pinned to one spelling forbids a correct refactor.
+      - **A SUITE'S OWN SHAPE DECIDES WHETHER ITS ANCHORS ARE CHECKED AT ALL, and this one was
+        written in a shape `check:injection-anchors` cannot read.** That guard resolves every
+        `find:` it meets, so `also: [{file, find, repl}]` — an array of OBJECTS where it expects
+        an array of PAIRS — and a harness building `{ file: c.file, find: c.find }` both reported
+        **UNPARSED**: four anchors it could not resolve, i.e. four rules nobody was proving while
+        the suite printed 8/8. `also` carries pairs now (its file was always the case's own, so
+        the key was redundant) and the harness passes `[file, find, repl]` tuples. **An anchor a
+        guard cannot parse is not a checked anchor** — the same false-coverage shape this file
+        records for a floor that counts work done rather than work verified.
 - **`check:untracked-factors`** asserts that **a factor nobody has measured does not read as ZERO**.
   Static (one esbuild bundle plus a source read, no browser and no database), so it sits in
   `npm run build`.
