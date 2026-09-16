@@ -7607,6 +7607,11 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **A rule that only ever suppresses is satisfied by deleting the feature**, so the non-vacuity
       assertion is the load-bearing half: a SEED author must still carry a number, and a reporter at
       the earnable ceiling must still reach the ladder's top colour.
+    - **THE PROBE BOUNDS THE LADDER RATHER THAN PINNING IT**, which is the contract sections 6 and
+      7 already hold: it reads `SERVER_TRUST_EARNABLE` out of core and asserts the top tier is at
+      or below it, so a rebalance — correct work — cannot turn it red, and the bound moves by
+      itself the day a verification the app cannot currently grant becomes earnable. Its first
+      version typed `=== 65` and `trustTier(84)`.
     - Probe: `scripts/oneoff/probe-reporter-trust-is-not-a-constant.mjs` (17 assertions, no browser,
       no DB), whose section 3 asserts **equivalence against the pre-change core loaded via
       `git show origin/main:`** — weighted `topTags`/`recentTags`/`confidence`/`avgStars`

@@ -73,10 +73,10 @@ try {
   if (coreSrc.length < 100000 || rdSrc.length < 100000) dead("an app source read short — this probe would prove nothing");
 
   const WANT = ["reporterTrust", "reporterWeightTrust", "TRUST_PRIOR", "vScore", "seedAuthor",
-                "buildConsensus", "trustTier", "TRUST_TIERS", "CLIMBERS", "ME"];
+                "buildConsensus", "trustTier", "TRUST_TIERS", "CLIMBERS", "ME", "SERVER_TRUST_EARNABLE"];
   const M = await bundleCore(corePath, "now.cjs", WANT);
   for (const k of WANT) if (M[k] === undefined) dead(`core does not export ${k}`);
-  const { reporterTrust, reporterWeightTrust, TRUST_PRIOR, vScore, seedAuthor, buildConsensus, trustTier, TRUST_TIERS, CLIMBERS } = M;
+  const { reporterTrust, reporterWeightTrust, TRUST_PRIOR, vScore, seedAuthor, buildConsensus, trustTier, TRUST_TIERS, CLIMBERS, SERVER_TRUST_EARNABLE } = M;
 
   // A seed climber to score, and a name that is deliberately in no seed list.
   const seedName = (CLIMBERS.find(c => c && c.name) || {}).name;
@@ -213,16 +213,25 @@ try {
   if (!oldLadder.length) ok("no hand-copied trust ladder survives in RouteDetail");
   else fail(`a hand-copied ladder is back: ${oldLadder.join(" | ")}`);
 
-  // The tiers really are the post-#1740 ones, or "uses trustTier" says nothing.
-  if (Array.isArray(TRUST_TIERS) && TRUST_TIERS[0] && TRUST_TIERS[0].min === 65)
-    ok(`trustTier is the post-#1740 ladder (top tier at ${TRUST_TIERS[0].min}, not 90)`);
-  else fail(`TRUST_TIERS top tier is ${TRUST_TIERS && TRUST_TIERS[0] && TRUST_TIERS[0].min} — expected 65`);
+  // THE LADDER IS BOUNDED, NEVER PINNED, which is the contract sections 6 and 7 of
+  // check:trust-breakdown already hold: a rebalance is correct work, and a probe holding today's
+  // 65 would go red on it — which is how a probe teaches people to ignore it. What must stay true
+  // is that the top tier is REACHABLE, and the ceiling is read from core rather than typed, so
+  // the bound moves by itself the day a verification the app cannot currently grant becomes
+  // earnable.
+  if (typeof SERVER_TRUST_EARNABLE !== "number") dead("core does not export a numeric SERVER_TRUST_EARNABLE — the bound below would be a typed constant");
+  if (!Array.isArray(TRUST_TIERS) || !TRUST_TIERS.length) dead("TRUST_TIERS did not load — every ladder assertion would pass vacuously");
 
-  // ...and a score at the earnable ceiling can actually reach the top colour.
-  const ceilingTier = trustTier(84);
+  const topMin = TRUST_TIERS[0].min;
+  if (topMin <= SERVER_TRUST_EARNABLE)
+    ok(`the top tier (${topMin}) is at or below the earnable ceiling (${SERVER_TRUST_EARNABLE}) — a reporter can reach it`);
+  else fail(`the top tier is ${topMin}, above the ${SERVER_TRUST_EARNABLE} any climber can earn — the top colour is unreachable, which is the pre-#1740 defect`);
+
+  // ...and the chip's own ladder really does hand that reporter the top colour.
+  const ceilingTier = trustTier(SERVER_TRUST_EARNABLE);
   if (ceilingTier && ceilingTier.label === TRUST_TIERS[0].label)
-    ok(`a climber at the earnable ceiling (84) reaches "${ceilingTier.label}" — the old >=90 green could not`);
-  else fail(`84 lands on "${ceilingTier && ceilingTier.label}", so the top colour is still unreachable`);
+    ok(`a reporter at the earnable ceiling (${SERVER_TRUST_EARNABLE}) reaches "${ceilingTier.label}"`);
+  else fail(`${SERVER_TRUST_EARNABLE} lands on "${ceilingTier && ceilingTier.label}", so the top colour is still unreachable`);
 
   const FLOOR = 16;
   if (ran < FLOOR) { console.log(`\nBROKEN: only ${ran} assertions ran (floor ${FLOOR}) — this run proved less than it claims`); process.exitCode = 1; }
