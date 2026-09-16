@@ -2708,18 +2708,30 @@ the total when deciding where a new guard belongs.
     can move, or "corrected by deletion" passes) and **no hardcoded range** — a literal scale bound
     typed into a title string is a hand-copy nobody re-derives, which is how the old one came to
     describe a scale that had never been measured.
-  - **THE TIERS ARE MEASURED AND DELIBERATELY NOT TOUCHED.**
+  - **THE TIERS WERE MEASURED, THE QUESTION WAS PUT TO THE USER, AND IT IS ANSWERED — this bullet
+    said "deliberately NOT touched" for longer than that was true, and it was the LAST surviving
+    copy of a claim two other entries had already recorded going stale.**
     `scripts/oneoff/measure-trust-goal-against-ceiling.mjs` bundles the app's own model and parses
     the migrations: **ceiling 84, day one 5, partnerless 54**, with `ID verified 0/10` and
-    `Certifications 0/10` unfillable. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its
-    *"✓ Well-trusted — partners can rely on your record"* and the badge's *"Highly Trusted"* (≥90)
-    are **all unreachable — no climber can ever be shown any of them**, and the progress bar caps at
-    93%. *"Trusted"* (≥70) is barely better: a climber with two years, 12 vouches, 60 logs, 20
-    reports and 9 catches scores **65**, so they read *"Building Trust"*. **Where those four bars
-    belong is a product decision with app-wide visible effect** — it changes what every climber is
-    *called* on every screen — so it is raised rather than swept, the same shape the group-trust
-    threshold was put to the user as. The guard asserts none of them; a guard failing on today's
-    tiers would only break the build while the question is open.
+    `Certifications 0/10` unfillable — all still true, and all still worth re-running rather than
+    quoting. Against that, the card's *"/ 90 goal"*, its *"goal met"*, its *"✓ Well-trusted"* and
+    the badge's *"Highly Trusted"* (≥90) **were all unreachable — no climber could ever be shown
+    any of them** — and *"Trusted"* (≥70) was barely better.
+    - **#1740 FIXED THEM.** One derived `TRUST_TIERS` at **65 / 33 / 15**, `TRUST_GOAL` derived
+      from its top tier, and `check:trust-breakdown` **section 7**, which **BOUNDS** every bar
+      (reachable, and not handed out for confirming an email) while deliberately pinning no
+      particular number — so it cannot argue with the next rebalance. That entry records the
+      climber states each bar is anchored to; read it rather than re-deriving them here.
+    - **READING THIS PARAGRAPH AS LIVE WOULD HAVE RE-RAISED A CLOSED PRODUCT DECISION, and the
+      likeliest "fix" it invites is restoring 90 and 70** — which is the one outcome memory
+      records as explicitly forbidden. That is the stale-bookkeeping class this file names
+      everywhere else, sitting in its own pages: *a stated gap that has since closed sits in the
+      worklist looking like work.* Its own worked example had inverted too — at 33 the climber it
+      describes scoring **65** now reads *"Trusted"*, not *"Building Trust"*.
+    - **Nothing reconciles two entries that describe one fact**, which is why this survived while
+      `check:trust-breakdown` §6 and §7 both recorded the same claim expiring. **When a limitation
+      here is acted on, replace it with the measurement — and grep for the other copies**, because
+      a decision stated in prose is a hand-copy wherever it lives.
   - Injection-tested **10/10** for these two sections
     (`scripts/oneoff/inject-profile-claims-reach-cases.mjs`), each case proving its edit landed **by
     checksum**, restoring byte-identically, and judged on the guard's **own FAIL lines** — the
@@ -5468,6 +5480,45 @@ the total when deciding where a new guard belongs.
     the injecting suite as rotted on every case. The fixture is asserted absent before and after.
     **Two cases must stay SILENT** (a comment quoting a dead anchor, and an anchor matching more
     than once), and the harness refuses any expectation that already appears in the healthy run.
+  - **READING ITS OWN "what it does NOT prove" AS A WORKLIST FOUND ONE SUITE SCORING ON THE EXIT
+    CODE ALONE.** The header above says it is silent about a case that fails for a different
+    reason, and this file records that rule twice over — *a case judged on the exit code alone is
+    satisfied by a run that died for an unrelated reason*, and *an injection that produces a
+    different failure is not a catch*. `inject-area-surface-cases.mjs` was that case: it ran
+    `check:area-surfaces` with `stdio: "pipe"` and **discarded the output** (`catch { failed =
+    true; }`), so its six failing cases — which cut six different links: the fetch, the render
+    gate, the world/country/state scope, the Directions link, its `area_type` gate, the caveat —
+    were all scored identically as *"the guard exited 1"*. That guard also fails **closed** with
+    its own exit 1 (*"Nothing below was actually checked"*), so a case that merely truncated the
+    source would have read `ok`.
+    - **LATENT, NOT LIVE, and saying which is the point.** Measured before anything was changed:
+      all six cases fired **exactly their own rule and exactly one rule each**, so nothing was
+      being mis-reported that day. What was missing was the harness's ability to TELL — the defect
+      arms itself the moment a case's edit starts tripping a neighbour, or the guard grows another
+      closed path. **A suite that cannot say WHICH rule it proved has not proved one.**
+    - Each case now names the guard's own sentence for its rule, and **EXACTLY ONE problem is
+      required** rather than *"mine is among them"*: a case tripping its own rule and something
+      else is not a clean attribution either, and demanding one is what makes the fail-closed
+      branch visible.
+    - **Non-vacuity proven three ways and every one OBSERVED, because a change that only ever
+      prints more `true` is worth nothing**: a deliberately mis-aimed expectation reports the rule
+      that really fired; an edit renaming the declaration outright is refused; and an edit that
+      truncates the source is reported as *"the guard hit its FAIL-CLOSED branch"*. **The old
+      harness printed `ok` for all three** — each exits 1, which was all it read.
+    - **A CLASS OF ONE, so no detector.** All 107 suites were swept for one that never reads the
+      guard's stdout: **2 hits, and one is a FALSE POSITIVE of the scan** —
+      `inject-strip-subquery-cases.mjs` lifts a pure function and asserts its return values
+      directly, so it spawns nothing and has no output to read, which is the *stronger* form.
+    - **AND THE DETECTOR THAT LOOKED BIGGER WAS MEASURED AND REJECTED — do not re-derive it.**
+      CLAUDE.md carries **85** `injection-tested N/N` citations, 60 of which name a suite, and a
+      guard comparing each N against that suite's case count sounds like the *a stated number is a
+      hand-copy* class. It is not worth building: **5 genuinely drifted and 4 of the 5 UNDERSTATE**
+      the coverage that exists, which is the harmless direction — a doc claiming 6 cases where the
+      suite runs 7 misleads nobody about a rule going unexercised. **The instrument was wrong on a
+      sixth**, which is the more useful half: `inject-nul-byte-cases.mjs` runs its fourth case
+      **written inline below the `CASES` array**, so a counter reading only the declared array
+      reports a correct citation as drifted. *Measure the class, and then measure the instrument,
+      before building the detector.*
 - **`check:ci-cancel`** asks whether a guard running on `main` can be **cancelled by the next
   merge**. It exists because the comment that promised it could not be was wrong, and stayed
   believed until somebody measured a run. `render-guards.yml` and `zero-state.yml` both said
@@ -7517,6 +7568,75 @@ the correction knows the screen is wrong, and they have no way to report it.
     pass when the **migration** moves, which is the case that actually happens. **Case 7 must stay
     SILENT**: `0038`'s own header lists component *ranges* that are not the weights, and a guard
     reading those would fail on the file explaining itself.
+  - **SECTION 9 — A REPORTER'S TRUST IS MEASURED OR ABSENT, NEVER A CONSTANT.** Sections 1-8 are
+    about YOUR score; this is the same class one surface over, on somebody else's. `buildConsensus`
+    carried a LOCAL `trustOf` shadowing the module-level one, returning a literal **50** for any
+    author `seedAuthor` could not match by display NAME — i.e. every real climber — which
+    `RouteDetail` rendered **raw** beside their name on the HAZARD VOTES list, coloured by a
+    hand-copied pre-#1740 `>=90/70` ladder whose green sits above the **84** earnable ceiling.
+    - **SECTION 8 CANNOT SEE IT EITHER, so the two rules are complementary rather than
+      overlapping.** That section bounds a bar stated in PROSE by matching a number inside a
+      **string literal**; a colour ternary carries its `90` as a bare NumericLiteral in the test
+      with no string anywhere. A bar stated in prose and a bar stated as a COLOUR are different
+      shapes, and neither scan reaches the other's.
+    - **THERE IS NOTHING REAL TO PRINT INSTEAD, which is what decides the repair.**
+      `useProfilesByIds` selects `id, name, avatar, show_name, username` and **no score of any
+      kind**; the server score is a per-account RPC. So the honest render is **no chip**, not a
+      different number, and both chips are now gated `!=null` and coloured through `trustTier`.
+    - **A TRUST SCORE HAS TWO JOBS NEEDING DIFFERENT ANSWERS, and collapsing them is the tempting
+      wrong fix.** WEIGHTING legitimately wants a neutral prior for an unscoreable author — the
+      `dbReports` comment says so in as many words — while DISPLAY must never print a number nobody
+      measured. `reporterTrust` returns a score **or null**; `reporterWeightTrust` falls back to
+      **`TRUST_PRIOR`**, which is `50` because that is what **`vScore(null)`** already returns, so
+      it is the app's own neutral value rather than an invented constant. The comment beside them
+      says *do NOT collapse these two back into one*.
+    - **A GREP FOR ONE SPELLING IS NOT A MEASUREMENT OF A CLASS.** A textual scan for the inline
+      shape found **3** shadows (`buildConsensus`, `kwScan`, `routeKw`); the **Babel AST** scan for
+      `a ? vScore(a) : <NumericLiteral>` found **two more in `ClimbMatch.jsx`**, written with an
+      intermediate `const cl=`/`const base=` the regex could not match. Scanned with an AST, not a
+      regex, for the reason section 3 records: **an AST does not see comments**, and this fix wants
+      explaining — while the blanker other guards use once ate 21% of `RouteDetail.jsx`.
+    - **The two `ClimbMatch.jsx` sites are WEIGHTING, not display** — `weightOf` helpers inside the
+      start-location and topo-annotation consensus builders, neither of which renders a number.
+      Both take `reporterWeightTrust` and the conversion is **value-identical** (50 == `TRUST_PRIOR`),
+      so **only the AST scan can see a revert**; `app-weighting-site` is that injection case, and it
+      is what proves the scan's third file is load-bearing rather than decorative.
+    - **A GATE rather than a probe**, and section 7's tier-ladder scan is **widened to
+      `RouteDetail.jsx`** in the same change (measured additive: **0** label ladders there today).
+      The DISPLAY half of this fix is a JSX condition and a colour expression, so reverting it moves
+      **NO identifier** and `audit:silent-reverts` says in its own closing caveat it cannot see that.
+    - **A rule that only ever suppresses is satisfied by deleting the feature**, so the non-vacuity
+      assertion is the load-bearing half: a SEED author must still carry a number, and a reporter at
+      the earnable ceiling must still reach the ladder's top colour.
+    - **THE PROBE BOUNDS THE LADDER RATHER THAN PINNING IT**, which is the contract sections 6 and
+      7 already hold: it reads `SERVER_TRUST_EARNABLE` out of core and asserts the top tier is at
+      or below it, so a rebalance — correct work — cannot turn it red, and the bound moves by
+      itself the day a verification the app cannot currently grant becomes earnable. Its first
+      version typed `=== 65` and `trustTier(84)`.
+    - Probe: `scripts/oneoff/probe-reporter-trust-is-not-a-constant.mjs` (17 assertions, no browser,
+      no DB), whose section 3 asserts **equivalence against the pre-change core loaded via
+      `git show origin/main:`** — weighted `topTags`/`recentTags`/`confidence`/`avgStars`
+      byte-identical while the DISPLAYED trust moved `[50,94,50,94] -> [null,94,null,94]` — and
+      self-skips as spent once `origin/main` carries the fix.
+      - **THAT FIXTURE HAD TO VARY THE THING WHOSE WEIGHT IT MEASURES, and an injection found the
+        hole rather than a reading.** Every report initially carried the same tags, so every tag was
+        100% whatever the weights were and `prior-becomes-zero` reported a WRONG FAILURE against a
+        correctly-firing probe. **The fault was in the probe, not the app**: db authors are tagged
+        `["Rockfall"]` and seed authors `["Dry"]` now.
+    - Injection-tested **8/8** (`scripts/oneoff/inject-reporter-trust-cases.mjs`), each case proving
+      its edit landed **by checksum** and restoring every file byte-identically, judged on FAIL
+      lines only, with the harness **refusing any expectation already present in the clean run**.
+      **Two must stay SILENT** — a comment quoting the forbidden shape, and the same rule written
+      longhand, since a probe pinned to one spelling forbids a correct refactor.
+      - **A SUITE'S OWN SHAPE DECIDES WHETHER ITS ANCHORS ARE CHECKED AT ALL, and this one was
+        written in a shape `check:injection-anchors` cannot read.** That guard resolves every
+        `find:` it meets, so `also: [{file, find, repl}]` — an array of OBJECTS where it expects
+        an array of PAIRS — and a harness building `{ file: c.file, find: c.find }` both reported
+        **UNPARSED**: four anchors it could not resolve, i.e. four rules nobody was proving while
+        the suite printed 8/8. `also` carries pairs now (its file was always the case's own, so
+        the key was redundant) and the harness passes `[file, find, repl]` tuples. **An anchor a
+        guard cannot parse is not a checked anchor** — the same false-coverage shape this file
+        records for a floor that counts work done rather than work verified.
 - **`check:untracked-factors`** asserts that **a factor nobody has measured does not read as ZERO**.
   Static (one esbuild bundle plus a source read, no browser and no database), so it sits in
   `npm run build`.
@@ -8345,11 +8465,49 @@ the correction knows the screen is wrong, and they have no way to report it.
     APPROACH heading, a `TrailheadCard` that did not render, or a control detector that matches
     nothing anywhere — every "exactly one" assertion here is satisfied by a page that rendered
     nothing at all.
-  - Injection-tested **8/8** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+  - **SECTION 7 — THE TILE SAID "ONE WAY" AND PRINTED THE STORED COLUMN, WHICH IS OFTEN THE ROUND
+    TRIP.** `lib/outing.js` exists because **two SCREENS** answered *how far is the approach*
+    differently — the peak page read `dist_km` raw while the route page preferred the route's own
+    itinerary. That fix landed on the route page's TECH STATS tile (`const distKm=effDistKm(route)`)
+    and **did not reach `TrailheadCard`**, whose tile is *labelled* `"Approach (one way)"` and read
+    `route.distKm`. So one page printed **two different one-way approaches for one climb**.
+    - **Measured rather than asserted** (`scripts/oneoff/measure-planner-distance-vs-the-tile.mjs`,
+      report-only, which re-derives every figure — **re-run it rather than quoting**): of the
+      **790** WA routes carrying both figures, **335 differ by more than 15%**, and on **215** of
+      those the stored column is the LARGER. `wa_mount_queets_south` showed **31.0 mi** on one tile
+      and **71.0 mi** on the other.
+    - **IT SETTLES NOTHING ABOUT THE COLUMN, and must not**: CLAUDE.md records that `dist_km` holds
+      two conventions at once and that a blanket transform breaks as many rows as it fixes. This
+      changes only **which SOURCE a reader prefers**, which is `lib/outing.js`'s own stated
+      contract, applied to the one reader that had been left behind.
+    - **TWO FIXTURES, because the rule is NOT "halve it".** An out-and-back halves its itinerary
+      total; a **recorded `point`** does not retrace, so its total IS the one-way distance and the
+      figure goes UP — `wa_mount_ferry_standard` moves **21.7 → 44.0 mi**. A guard rendering only
+      the first fixture is satisfied by an unconditional halving, which injection case 9 pins.
+    - **NON-VACUITY:** the tile must be **on screen** before it is judged, or *"does not show the
+      raw figure"* passes against a card that renders no approach at all.
+    - **THE FAILURE MESSAGE NAMES THE OBSERVATION, NOT A CAUSE.** Its first version said *"the tile
+      is halving unconditionally"* — which is a correct diagnosis of case 9 and **the wrong one on a
+      plain revert**, where the tile is not halving at all. *A guard that fires correctly can still
+      prescribe the wrong repair*, the trap `check:column-drift` records.
+    - **THE PLANNER HALF IS DELIBERATELY NOT TOUCHED, and it is the bigger one.** `scarfHrs` — which
+      feeds **Est. summit, Est. return and the After-dark warning** — is still called with raw
+      `route.distKm`, so on those same 335 routes the hours are computed from a distance the page
+      does not show. **215 of them would get SHORTER** (p50 **−0.98 hr**, worst **−13.4 hr**), and
+      erring short on *are you down before dark* is the **#641 direction that reads green**. Moving
+      a safety estimate for 335 routes is a product decision, so it is **raised rather than swept**
+      — the same call the trust tiers got.
+    - Proven on **real rows** as well as fixtures by
+      `scripts/oneoff/probe-trailhead-approach-is-one-way.mjs`, which renders the real `RouteDetail`
+      because `dbRouteToCamel` and the card's own gating sit between the column and the screen:
+      **8/8 with the fix, 8/8 FAILING without it.**
+  - Injection-tested **11/11** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
     proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
     neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
-    cannot quietly re-open.
+    cannot quietly re-open. Cases 8-10 are section 7 — the real defect, the unconditional-halving
+    over-reach, and a **SILENT** rename, since the rule is about which source is read rather than
+    what the local is called.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
