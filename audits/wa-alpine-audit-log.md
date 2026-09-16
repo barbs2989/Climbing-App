@@ -20127,3 +20127,145 @@ SQL: `audits/sql/2026-09-11-batch-269.sql` (6 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mix_up_peak_east_face` (see
 progress file).
+
+## 2026-09-16 — Batch 270 (pass 5)
+
+Checked: `wa_mojo_rising`, `wa_mount_adams_adams_glacier`,
+`wa_mount_adams_lava_glacier_headwall`, `wa_mount_adams_lyman_glacier`,
+`wa_mount_adams_mazama_glacier_headwall`, `wa_mount_adams_north_ridge`,
+`wa_mount_adams_northwest_ridge`, `wa_mount_adams_south_climb`. 6 SQL fixes
+across 4 routes.
+
+**Fixed:**
+
+- `wa_mojo_rising` — the `rappels` summary field ("Lower 3 pitches rappel with
+  a 60m rope") describes only the alternate bail option, while the structured
+  `rappel_detail` array (3 stations, anchors "Bolted/chain station in the
+  descent gully") documents the standard South Arete finish descent instead —
+  a different line on the mountain. This row's own `rappel_count_note`,
+  `descent_text`, and `approach_variants[0].baseFinding` all independently
+  describe both options consistently; `rappels` was the one field out of step.
+- `wa_mount_adams_adams_glacier` and `wa_mount_adams_north_ridge` — both
+  itinerary day-1 texts claim a "~9,000 ft high camp," contradicted by each
+  row's own `waypoints` entry for "High Camp" (elev 7000) and by sibling route
+  `wa_mount_adams_lyman_glacier`'s itinerary, which correctly states "~6,900
+  ft" for the identical shared Killen Creek high camp. Looks carried over from
+  Mount Adams' South Climb "Lunch Counter" camp (9,000-9,400 ft, a real camp
+  documented on `wa_mount_adams_south_climb`'s own `bivy` field) on the
+  opposite side of the mountain. Corrected both routes' itinerary text to
+  ~7,000 ft.
+- `wa_mount_adams_north_ridge` — `dist_km` (5.6 km = 3.48 mi) matched neither
+  this route's own itinerary (day totals sum to 21.2 mi = 34.1 km round trip)
+  nor any single leg of it. Every sibling Mount Adams route sharing this
+  Killen Creek trailhead cluster stores `dist_km` as the full round-trip
+  itinerary total, each already matching its own itinerary to within
+  rounding (Adams Glacier 28.16 km/17.5 mi vs. itinerary 17.5 mi; Lava Glacier
+  Headwall 26.55/16.5 vs. 17.0; Lyman Glacier 37.3/23.18 vs. 23.2) — corrected
+  to match that convention (34.12 km).
+- `wa_mount_adams_mazama_glacier_headwall` — `permit` carried the generic USFS
+  "Mt. Adams Climbing Pass (Cascade Volcano Pass)" boilerplate shared by the
+  Forest-Service-side Mount Adams routes, but this route starts from Bird
+  Creek Meadows on Yakama Nation land (Tract D). This row's own `access`
+  field (landManager: "Yakama Nation..."), `watch_out`, `approach`, and
+  `approach_variants` all independently and consistently describe the Yakama
+  tribal-use permit process and never mention the Forest Service pass.
+  Cross-checked via WebSearch (Mountaineers.org / Oregon Hikers Bird Creek
+  Meadows trip info): a Yakama Indian Reservation Tract-D tribal-use permit
+  bought at the Mirror Lake gate is what this approach actually requires, and
+  non-tribal-member access is seasonally restricted (roughly July 1-October
+  1, sometimes closed outright) because this land is not part of the USFS
+  Mount Adams Wilderness. Rewrote `permit` to state that instead.
+- `wa_mount_adams_south_climb` — `itinerary` is stored as a plain prose
+  string instead of the `{cal, days, totalNote}` structured object every
+  other route with a populated itinerary in this batch uses. The app's
+  itinerary-reading code (`ClimbMatchCore.jsx`'s
+  `itinDaysToDraft`/`itinDraftToStructured`/`routeAscentFt`) expects
+  `itinerary.days` to be an array, so a bare string reads as empty and this
+  content likely never reaches the Planner tab's day-by-day section.
+  Reshaped into the same object convention with the original text preserved
+  verbatim as `totalNote` — no day-by-day figures invented, since none were
+  stated in the source text.
+
+**Flagged for human review, not fixed:**
+
+- `wa_mount_adams_lava_glacier_headwall` — `fa` states "Edward Cooper and Mike
+  Swayne, July 3, 1961." WebSearch found that Cooper and Swayne's
+  well-documented 1961 first ascent that summer was of the North Face of
+  Mount Terror in the Southern Pickets (July 8-11, 1961) — a different peak
+  roughly 150+ miles away, not Mount Adams. Two independent WebSearch queries
+  instead turned up an AAC Publications entry titled exactly "Mount Adams,
+  Lava Glacier Headwall," describing Craig Eihlers, Clint Crocker, Matt
+  Kerns, and one unnamed climber hiking the Killen Creek Trail to
+  Mountaineers Camp and climbing the headwall via the same schrund-crossing/
+  diagonal-headwall line this row's own `overview` and `beta` describe nearly
+  verbatim — one search characterized this as the route's first ascent, on
+  June 21-22 of a year given inconsistently as 1975 or 1976 (AAJ publication
+  dates trail the climbing season by a year). This is a real suspected
+  misattribution (the Cooper/Swayne pairing plus 1961 looks like it may have
+  been cross-contaminated from the Mount Terror FA), but WebFetch to the
+  primary AAC source was blocked by this session's network egress proxy (as
+  was every other candidate source domain tried), so I could not pin down the
+  exact year or the fourth climber's name with enough confidence to write a
+  SQL fix rather than guess. Needs a human with direct AAC Journal / Beckey
+  guide access to confirm and correct.
+- `wa_mount_adams_adams_glacier` and `wa_mount_adams_north_ridge` — each
+  route's top-level `gain_ft`/`loss_ft` don't cleanly reconcile against
+  either its own itinerary day-by-day sums or a single "gain from high camp"
+  convention (e.g. Adams Glacier: `gain_ft` 5150 vs. itinerary day sums of
+  4780/7680; North Ridge: `gain_ft` 7691, `loss_ft` 3500 vs. itinerary day
+  sums of 6200/6200). Once the 9,000 ft high-camp text is corrected (see
+  above), these numbers land within a plausible range for more than one
+  reasonable convention (climb-only-from-camp vs. full-trip), so nothing on
+  either row points at one specific correct value strongly enough to fix
+  without guessing — left as-is.
+
+**Clean, cross-checked:**
+
+- `wa_mount_adams_lava_glacier_headwall` — aside from the flagged FA above,
+  route description (schrund crossing beneath the North Ridge, diagonal
+  headwall ascent using rock outcrops for rockfall protection) matches an AAC
+  Publications trip account found via WebSearch almost verbatim; `dist_km`
+  (26.55 km/16.5 mi) matches its own itinerary total (17.0 mi) to within
+  rounding.
+- `wa_mount_adams_lyman_glacier` — itinerary correctly states "~6,900 ft" for
+  the shared Killen Creek high camp (used as the correcting reference for the
+  two fixes above); `dist_km` (37.3 km/23.18 mi) matches its own 3-day
+  itinerary total (23.2 mi) almost exactly.
+- `wa_mount_adams_north_ridge` — `fa` ("A.G. Aiken, Edward J. Allen, and
+  Andrew J. Burge, 1854 ... believed to have followed this ridge/cleaver")
+  cross-checked via WebSearch against Mount Adams' documented first ascent:
+  matches the commonly cited party for Mount Adams' first ascent by the
+  Naches Pass wagon-road crew, with sources agreeing the climb likely
+  followed this same North Cleaver line. (Some sources give the third
+  climber's name as "Col. B.F. Shaw" rather than "Burge" — the row's own
+  "believed to have followed" hedge already covers the general uncertainty
+  here, so not flagged.)
+- `wa_mount_adams_adams_glacier` — `fa` ("Fred Beckey, Dave Lind, and Robert
+  Mulhall, July 1945") confirmed via WebSearch: matches the well-documented
+  1945 first ascent account (Killen Creek Trail approach, July 8 start date).
+- `wa_mount_adams_northwest_ridge` — `fa` ("Molenaar, Johnson, Ostro, and
+  Startzell, September 1960") not contradicted by anything found; Dee
+  Molenaar was an active, well-documented Cascades climber of that era, and
+  no alternate FA account turned up. `pitch_detail` segment lengths (5 x
+  121m) sum to exactly this row's own `length_m` (610).
+- `wa_mount_adams_south_climb` — aside from the itinerary-shape fix above,
+  `gain_ft` (6676) matches its own trailhead (5,600 ft) to summit (12,276 ft)
+  net rise exactly; `fa` is correctly hedged as undocumented.
+
+**Tooling note:** `check-sql-targets.mjs` reports all 6 write targets exist
+(no silent no-op risk) and confirms no DELETE. Re-verified all 5 guarded
+field values against a fresh read of the live DB immediately before
+finalizing the SQL — no drift from the initial pull. File is 7.6KB, over the
+SQL Editor's ~4KB safe-paste soft limit — split into ~1.5-2KB chunks and
+verify each before sending the next.
+
+WebFetch was blocked by this session's network egress proxy for every
+external domain tried (Mountaineers.org, Wikipedia, WTA, fs.usda.gov,
+mtadamsfriends.org, slideblast.com) — only WebSearch's synthesized snippets
+were usable this session, which is why the FA question above could not be
+fully resolved.
+
+SQL: `audits/sql/2026-09-16-batch-270.sql` (6 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_adams_south_climb`
+(see progress file).
