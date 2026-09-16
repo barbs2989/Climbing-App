@@ -117,7 +117,7 @@ npm run check:consensus-clustering # three climbers who agree must be COUNTED as
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
-npm run check:return-leg      # a walk that already covers the day is not re-added (in build)
+npm run check:return-leg      # a walk that already covers the day is not re-added, and each red warning names the DAY it lands on (in build)
 npm run check:flex-scroll # no scroll pane in a flex column that cannot actually scroll (in build)
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
@@ -6730,6 +6730,65 @@ the total when deciding where a new guard belongs.
     whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
     (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
     **49** one-way or pitched rows keep their leg, **0** lost.
+  - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
+    HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
+    day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
+    permanently — while `fmt`, declared on the line BETWEEN them, reduces the same value mod 1440 to
+    render a clock time and appends `(+Nd)`. The result was a red **"After dark" beside "Est. return
+    12:10 PM (+1d)"**, and **"Leave earlier" beside a 4:28 AM summit**, where leaving earlier makes
+    it DARKER.
+    - **MEASURED AT THE CALCULATOR'S OWN DEFAULTS, over the whole WA catalog
+      (`scripts/oneoff/measure-after-dark-on-a-multiday-estimate.mjs`): 168 of 495 "After dark"
+      labels annotated a return in broad DAYLIGHT — eight of them within 15 minutes of NOON — and 67
+      of 556 "Leave earlier" labels sat beside a MORNING summit.** One of the eight is
+      `wa_mount_stuart_north_ridge`, the route `check:ui` pins as its sample, so this was on the
+      app's most-walked route page in its most-reachable state.
+    - **NEITHER THRESHOLD MOVES, AND THAT IS WHAT MAKES THE CHANGE PROVABLE.** `retH > 18.5` is
+      exactly *"this outing runs past dusk"*, which is the right trigger however long the outing;
+      what it cannot say is which DAY the arrival lands on. So the trigger is untouched — **no
+      warning is added and none is suppressed** — and only the LABEL gains the day. The measurement
+      re-run after the fix reports the identical 495 and 556, which IS the behaviour diff.
+    - **"Overnight" is the STRONGER claim, not a softer one**, so this cannot under-warn in the #641
+      direction: a party out past a second dawn is told something larger than *"after dark"*, not
+      something smaller, and the tile stays red either way.
+    - **`dayOf` is the SAME function `fmt` uses for the `(+Nd)` suffix**, deliberately: a second
+      next-day test written beside the label could disagree with the suffix rendered inches away —
+      the *computed ONCE so the two cannot disagree* rule this file records for `_hfr` and `_memN`.
+      Section 2 asserts it is declared exactly once.
+    - **SECTION 2 PINS NO WORDING, and the SILENT case is what proves it.** A guard holding
+      `"Overnight"` would forbid improving the copy, which this file records as its own failure mode
+      more than once. The invariant is structural instead — a same-day tile and a next-day tile must
+      **both carry a label** and those labels must **DIFFER**. That catches the historical defect
+      (both said *"After dark"*), catches deleting the next-day label, and catches labelling
+      everything one way; and `SILENT-every-label-reworded` changes all four strings and stays green.
+    - **A COUNT, NOT A PROXIMITY WINDOW, AND THE LABEL IS READ FROM RAW MARKUP.** Stripping the tags
+      welds the warning to the next tile with no reliable right-hand boundary, so the reader anchors
+      on the tile's own `Est. summit`/`Est. return` caption and takes the div that follows it,
+      identified by a `margin-top` the caption does not carry. The colour is matched as `[^"]*`
+      rather than `C.red`'s hex, which would be a hand-copy of the palette. An ABSENT warning
+      returns `""` and a caption that never rendered returns `null`, because *"there is no
+      warning"* and *"the tile is missing"* want different repairs.
+    - The floor rises to **21**, two below a clean 23.
+    - Injection-tested **9/9** (`scripts/oneoff/inject-return-leg-day-cases.mjs`), each case proving
+      its edit landed **by checksum** and restoring `RouteDetail.jsx` byte-identically. Case 1 is the
+      defect restored verbatim; cases 2 and 3 revert one tile each so neither can pass on the
+      strength of the other. **`next-day-label-deleted` is the load-bearing one** — dropping the
+      label satisfies every *"must not reuse the same-day wording"* assertion while removing the
+      warning, so non-emptiness is asserted BEFORE difference. **`keyed-on-the-estimate-not-the-tile`
+      is the one only the split fixture can see**: a label asking whether the ESTIMATE is multi-day
+      rather than whether its OWN tile is passes every same-day and every next-day case.
+    - **THE HARNESS DELIBERATELY DOES NOT REFUSE AN EXPECTATION THAT APPEARS IN THE CLEAN RUN, and
+      trying it is what established why** — it refused all nine cases on its first run.
+      `check:return-leg` prints each assertion's LABEL on its `ok` line and its `FAIL` line alike, so
+      a correct expectation legitimately appears in a green run; applied to the clean run's FAIL
+      lines instead it is vacuous, since a green run has none. What protects against a needle written
+      against passing text is judging on **FAIL LINES ONLY** — never the word `FAIL`, because these
+      assertion labels are prose. Same conclusion, and the same reason, as the suite for
+      `check:count-matches-its-list`.
+    - **The MEASUREMENT was reworded once the fix landed**, so it prints the 168 and the 67 as a
+      CLASS SIZE — *the tiles a day-blind label gets wrong* — rather than as live findings. A script
+      that went on reporting a fixed defect as live is the stale instrument #1695 was caught by six
+      times over.
   - **THREE SIBLING SUSPICIONS WERE MEASURED AND ARE NON-FINDINGS — read this before re-deriving
     them.** The planner mixes conventions in several places and most of them turn out fine:
     - **`relief` falls back to `highPointFt - 0`** when a route has no `elevPts`, which would be
