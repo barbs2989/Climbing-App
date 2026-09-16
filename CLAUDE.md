@@ -147,6 +147,7 @@ npm run audit:note-voice   # a waypoint note RENDERS — is it written for a cli
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:summit-splits # ...and do a peak's OWN routes agree where it is? (SIXTH pin audit — the ground decides)
+npm run audit:pin-elev-vs-own-prose # ...and does a trailhead pin agree with the height its OWN prose states? (--ground adjudicates)
 npm run audit:waypoint-elevations # is EVERY waypoint at the height it claims? (no track needed)
 npm run audit:waypoint-elevations -- --ground # ...with the TERRAIN setting the tolerance, not a constant
 npm run audit:ground-index # is the SHIPPED ground measurement still describing this catalog?
@@ -10277,6 +10278,90 @@ the correction knows the screen is wrong, and they have no way to report it.
       a class closed* — including when you are the one who fixed it.
   - Fails **closed** four ways — zero routes, zero placed pins, no shared name, or a state filter
     matching nothing are each a broken scan, never a clean catalog.
+- **`audit:pin-elev-vs-own-prose`** asks whether a **trailhead pin's stored elevation agrees with the
+  elevation stated in its OWN prose**. The route page renders both **inches apart** — the elevation
+  chip on the waypoint row, and the *"Getting here —"* line directly beneath it, which is
+  `wp.directions` — so a disagreement is not a fact about a table: it is **one screen stating a
+  height twice and giving two answers**. Read-only, anon key, report-only; **not** a build gate — a
+  property of the DB rather than the checkout, the reasoning that keeps `check:counts` out.
+  - **FOUND BY READING A CI `ui-screens` CAPTURE**, which is the sixth defect that technique has
+    produced. `route:Plan` rendered *"Stuart Lake Trailhead · 0 mi · **3,200 ft**"* directly above
+    *"follow it to its end, around **3,540 feet**, where the Stuart Lake Trailhead … begin"*. Nothing
+    could have flagged it: the column is populated, the prose is well written, and both numbers are
+    numbers.
+  - **THREE SIBLING AUDITS ARE EACH BLIND TO IT BY CONSTRUCTION, and the near misses are the
+    argument.** `audit:waypoint-elevations` asks whether the **TERRAIN** admits a pin's height — one
+    record, not two. `audit:summit-splits` asks whether two **ROUTES** place one point apart — across
+    routes, where this is inside a single pin. `audit:trailhead-agreement` compares a route's two
+    trailhead **COORDINATES** and never looks at a height. A number written into the pin's own
+    sentence is outside all three.
+  - **AN ELEVATION IS NOT A GAIN, AND A BARE `N ft` CANNOT TELL THEM APART — this is the whole
+    precision story, measured rather than reasoned about.** This prose is full of amounts, so the
+    unrestricted form reported **466 findings** against a true **11**, and the readable ones were
+    nearly all *"gaining about 450 ft"*, *"a ~150-ft rappel"*, *"losing around 1,900 ft"*. **A count
+    is only as good as its tokeniser**, and four narrowings were each a distinct way this prose
+    defeats a needle:
+    - **POSITIONAL, never a deny-list of amount verbs** — an elevation is somewhere you ARE. A verb
+      list is beaten by one more verb, which this file records four times over for `check:outage`'s
+      rule 2 alone.
+    - **`to` is NOT positional.** *"walls to 120 ft"* is a **wall**, and admitting it reported nine
+      identical Dikes routes in a row.
+    - **A RATE wears a positional preposition.** *"at roughly 1,200 ft per mile"* matched `at` and is
+      a gradient; excluded on the trailing unit.
+    - **`around` serves BOTH**, which is the one no single rule settles: *"to its end, around 3,540
+      feet"* is a place and *"gaining around 4,500 ft"* is an amount. Admitting it bare re-imports
+      the gains and refusing it **loses the founding case**, so it counts only as an **APPOSITIVE**,
+      after a comma — structural rather than a verb list.
+  - **AND THE HEIGHT MUST BE STATED IN A SENTENCE THAT NAMES THE PIN.** Without that the prose's
+    other heights read as claims about the trailhead: *"hike the 3.7 miles of switchbacks to Cascade
+    Pass at 5,392 ft"* is about the **pass**, and firing on it accuses correct data. Name tokens are
+    filtered by a **GENERIC** stop-list first — a token every trailhead name shares (`trailhead`,
+    `trail`, `creek`, `lake`) makes the test vacuous in the **wide** direction, the mirror of a
+    too-narrow proxy.
+  - **SCOPED TO TRAILHEADS, MEASURED RATHER THAN CHOSEN.** Across **every** pin type the same rule
+    reports **50** and precision collapses, because an en-route pin's prose is a **NARRATIVE of the
+    leg** — *"breaks treeline near 4,600 ft, joins the Monitor Ridge route near 7,000 ft, then
+    follows the crater rim"* — so the heights belong to points along the way and naming the pin
+    proves nothing about them. A trailhead's `directions` is a *"Getting here"* line whose **subject
+    IS the trailhead**, and the drive ends there.
+  - **`--ground` IS THE ADJUDICATOR, AND IT IS WHAT MAKES REPORT-ONLY HONEST RATHER THAN TIMID.**
+    Both records are the pin's own, so neither is privileged; the USGS DEM derives from neither. On
+    the live catalog it settles **7 of 11** — `wa_cashmere_mountain_west_ridge`'s pin stores **4,650
+    ft** where the ground reads **3,303** and its own sentence says **3,300**, a 3 ft match against a
+    1,347 ft error.
+  - **DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY** — the rule
+    `fix-same-coordinate-elevation-disagreements.mjs` already records. A flat bar reads the
+    instrument's own noise: at ±250 ft the DEM *"admits both"* on **six of eight** of these while
+    separating every one of them **by ratio**. The surviving value must sit within 50 ft and the
+    other at least **3x** further out.
+  - **IT STILL DOES NOT LICENSE A SWEEP, and the ground is what shows why.** Three findings are a
+    sentence legitimately naming a **SECOND feature with its own height** — Cascade Pass at 5,392,
+    Slate Pass at 6,900, Longs Pass at 6,200 — where the ground correctly says *"the pin is right"*
+    and the repair is **nothing at all**. Only reading the sentence separates those from
+    `wa_prusik_peak_solid_gold`, whose sentence names the trailhead and states a height the ground
+    refuses.
+  - **THE FINDINGS CORROBORATE EACH OTHER, which is the strongest evidence available that this is
+    real drift rather than a reading error.** **Blue Lake Trailhead appears twice with the numbers
+    SWAPPED** — `wa_north_face_3` stores 5,400 with prose saying 5,200, and `wa_the_west_face` stores
+    5,200 with prose saying 5,400 — and the ground reads **5,380** for both, so one route is wrong in
+    its pin and the other in its sentence. Stuart Lake Trailhead does the same at 3,200/3,540 and
+    3,400/3,600 against a ground of ~3,390.
+  - Fails **closed** four ways, each of which otherwise prints the same reassuring small number as a
+    clean catalog: zero routes read, no pin typed `Trailhead`, no trailhead pin carrying prose, and
+    **no trailhead pin whose own naming sentence states a height** — with which the scan cannot fire
+    at all.
+  - Injection-tested **9/9** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
+    `--fixture` so the whole harness runs **offline** and nothing writes to the live project — the
+    mechanism `audit:trailhead-road` sets, because these faults live in the DATA and a case cannot
+    inject one by editing code. **SIX must stay SILENT** and they are the load-bearing half: a case
+    proving only that it fires is satisfied by a detector that flags everything, and each silent case
+    pins one of the narrowings above.
+    - **EVERY FIXTURE CARRIES A CONTROL — a trailhead pin that is comparable and AGREES — and
+      without it five cases reported MISSED against an audit behaving perfectly.** A one-pin fixture
+      whose pin is correctly excluded **IS** a scan that cannot fire, so the run died on the audit's
+      own fail-closed floor. With the control the floor is met and the silence is attributable to the
+      case's own pin rather than to the harness. The fail-closed case is deliberately the one
+      WITHOUT it, since the control would satisfy the very floor that case exists to trip.
 - **`audit:summit-splits`** asks whether a peak's OWN routes agree where its summit is. Each route
   carries a summit waypoint, so those pins are independent recordings of ONE point and a
   disagreement means at least one is wrong. **28 WA peaks carry two or more, 60 m or further

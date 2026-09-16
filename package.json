@@ -35,6 +35,7 @@
     "audit:waypoint-track": "node scripts/audit-waypoint-track.mjs",
     "audit:summit-pins": "node scripts/audit-summit-pins.mjs",
     "audit:summit-splits": "node scripts/audit-summit-splits.mjs",
+    "audit:pin-elev-vs-own-prose": "node scripts/audit-pin-elev-vs-own-prose.mjs",
     "audit:prose-citations": "node scripts/audit-prose-citations.mjs",
     "audit:expiring-closures": "node scripts/audit-expiring-closures.mjs",
     "audit:trailhead-agreement": "node scripts/audit-trailhead-agreement.mjs",
