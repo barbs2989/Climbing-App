@@ -20269,3 +20269,159 @@ SQL: `audits/sql/2026-09-16-batch-270.sql` (6 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_adams_south_climb`
 (see progress file).
+
+## 2026-09-16 — Batch 271 (pass 5)
+
+Eight routes: Wilson Glacier Headwall (Mount Adams); Eel Glacier/Flypaper Pass (Mount
+Anderson); Boulder Glacier, Boulder-Park Cleaver, Cockscomb Ridge, Coleman-Deming,
+Coleman Headwall, Easton Glacier (Mount Baker).
+
+**Five of these eight routes had already been examined in pass 4 (batches 205/206,
+2026-09-05), and re-checking the live database found every one of those pass-4 fixes
+still unapplied** — dist_km on Coleman-Deming was still 4.7, Boulder Glacier's dist_km/
+gain_ft/loss_ft were still 25.7/7000/7000, Easton Glacier's dist_km/commitment were
+still 6.4/'I', and Cockscomb Ridge's `overview` still said "Heliotrope Ridge Trailhead."
+The proposed SQL files from those batches appear never to have been run. All of these
+are re-proposed here rather than skipped, since the underlying facts have not changed
+and the live data is still wrong regardless of what a prior batch already wrote to a
+.sql file. (Batch 205's `wa_mount_baker_cockscomb_ridge` overview fix and the Coleman
+Headwall FA check are the same items; see below for what's new this pass on top of
+that.)
+
+**wa_mount_anderson_eel_glacier** (new this pass): dist_km 45.9 km is roughly 28.5 mi
+one-way, which would make this one of the longest single-day approaches in the
+Olympics and contradicts three independent figures that all cluster around 19 mi
+instead. Fetched the row's own 305-point gpx track and summed haversine distance by
+hand: 30.84 km (19.16 mi) from the track start to its closest point to the summit
+waypoint (within 11 m). That matches the row's own `hazards` hedge ("~16+ mi
+one-way") and an external route-guide segment sum (ranger station to Honeymoon
+Meadows 8 mi, plus ~1.9 mi more to Anderson Pass, plus more beyond to camp/summit —
+~17.5 mi). Corrected dist_km to 30.84, the row's own most granular internal record.
+gain_ft/loss_ft (7800/7800) were left alone: the net trailhead-to-summit elevation
+difference is only ~5,773 ft, but this app's own established practice (see
+CLAUDE.md's `audit:gain` notes) treats *excess* gain over the net figure as normal
+undulation, not evidence of an error, and this route's approach genuinely crosses a
+moraine, a tarn, and glaciated terrain with real ups and downs.
+
+**wa_mount_baker_boulder_glacier**: re-confirmed and re-proposed pass 4's fix
+(dist_km 25.7→10.22, gain_ft/loss_ft 7000/7000→8581/8581, all matching the row's own
+summit waypoint distMi=6.35 tagged distFrom="track" and its trailhead/summit
+elevations).
+
+**wa_mount_baker_boulder_park_cleaver** (new this pass — pass 4 only checked this
+route's FA and left it ambiguous, but never examined its numbers): dist_km was
+25.7 km, the *identical* value stored on the unrelated Boulder Glacier route above
+before its own fix — a strong sign of a copy-pasted filler rather than a real
+measurement, since this route has a different trailhead-to-summit profile entirely.
+The row's own summit waypoint independently gives distMi=11 (17.70 km), consistent
+with its own high-camp waypoint at distMi=8. Corrected. Also found the same
+grade-vs-commitment contradiction pass 4 already fixed on Easton Glacier: `grade`
+states "Grade II Snow" in words while `commitment` stored "I". Fixed to "II" to
+match the row's own stated grade.
+
+**wa_mount_baker_cockscomb_ridge**: re-confirmed and re-proposed pass 4's `overview`
+fix (still says "approached from the Heliotrope Ridge Trailhead across the Coleman
+and Roosevelt Glaciers," contradicted by this row's own `approach`/`beta`/`descent`
+fields and its primary Trailhead waypoint, all of which describe Ptarmigan Ridge
+Trail from Artist Point). **New this pass**: found the contamination runs deeper
+than pass 4 caught — the `road` field *also* described "Glacier Creek Road (FR 39)
+to Heliotrope Ridge Trailhead," an entirely different, unrelated trailhead on the
+wrong side of the mountain, evidently copy-pasted from a Heliotrope-side sibling
+(its status-text structure is near-identical to Coleman-Deming's and Coleman
+Headwall's). Replaced with State Route 542 (Mount Baker Highway) to Artist Point,
+matching the row's own `approach` text, and externally confirmed via WSDOT's own
+announcement that the final 2.7-mile stretch to Artist Point reopened for the 2026
+season on June 10, 2026 (typically closes with the season's first significant
+snowfall, late September to early November — so it should still be open as of this
+audit date). Two items remain flagged rather than fixed: waypoint index 1
+("Heliotrope Ridge Camp," 48.795/-121.885) is confirmed to be an exact copy of
+Coleman Headwall's own camp waypoint (identical name and coordinates) and still
+describes the wrong side of the mountain, but no verified real coordinate for the
+actual camp near Camp Kiser/The Portals was found this pass either (WebSearch found
+Camp Kiser's approximate stats — ~8 mi from Artist Point, ~1,400 ft gain — but no
+precise coordinate); and `grade`("III-IV")/`commitment`("II") disagree with no
+external source found to resolve it (same posture as the analogous flag pass 4 left
+on the sibling Park Glacier Headwall route).
+
+**wa_mount_baker_coleman_deming**: re-confirmed and re-proposed pass 4's dist_km fix
+(4.7→8.85 km, matching the row's own summit waypoint distMi=5.5, corroborated
+externally). **New this pass**: `road.status` and the trailhead waypoint's own
+`directions` text both still claim Glacier Creek Road (FR 39) is "closed to
+vehicles... through the end of October 2026." Re-verified the actual current status
+fresh rather than trusting pass 4's month-old citation — WSDOT/Forest Service
+confirm the road reopened August 20, 2026, and a HikeWA trail-conditions page
+updated September 13, 2026 (three days before this audit) describes it as currently
+drivable. Corrected both fields to reflect the reopening, matching the wording
+already used (correctly) on the sibling Coleman Headwall route below.
+
+**wa_mount_baker_coleman_headwall**: FA, dist_km (20.92 km, close to the row's own
+summit-waypoint-derived 20.12 km), and gain_ft/loss_ft (7000/7000, within normal
+range of the row's own 7,344 ft net trailhead-to-summit difference) all check out
+and are unchanged, exactly as pass 4 found. **New this pass**: this row's `road`
+field has already been correctly updated (by some other session, not this audit
+branch) to reflect the August 20, 2026 Glacier Creek Road reopening, but its
+`approach` text still describes the washout as an ongoing burden ("note the road
+washout adds ~9 mi/2,000 ft of extra approach"). Corrected `approach` to agree with
+the row's own already-updated `road` field.
+
+**wa_mount_baker_easton_glacier**: re-confirmed and re-proposed pass 4's fixes
+(dist_km 6.4→14.16 km, matching the row's own summit waypoint distMi=8.8;
+commitment 'I'→'II', matching the row's own "Grade II glacier climb" grade text).
+
+Flagged for human review, not fixed:
+
+- **wa_mount_adams_wilson_glacier_headwall**: `season`("Jul-Sep") vs
+  `best_season`("May to June") still disagree, as pass 4 found. This pass adds
+  corroboration: two independent WebSearch-synthesized sources confirm Wilson
+  Glacier itself sits within the Yakama Indian Reservation, consistent with this
+  row's own `beta` field ("descends to a terminus near 7,400 ft on the reservation
+  side of the mountain"). The sibling Mazama Glacier Headwall route's own trailhead
+  waypoint states non-tribal Yakama recreation access has historically opened around
+  the start of July, which would make `best_season`/"May to June" a real
+  access-legality risk rather than merely a technical-conditions preference. But
+  this route's approach starts on non-reservation land (Cold Springs/South Climb
+  trailhead) and only crosses onto reservation land during the traverse to the
+  glacier — a different access pattern from Mazama's dedicated Yakama-side
+  trailhead — and no authoritative primary source pinning the specific permit rule
+  for *this* route's border crossing was found. Left flagged; this is the fourth
+  pass this item has been examined and left unresolved for the same reason.
+- Two additional items on wa_mount_baker_cockscomb_ridge and one on
+  wa_mount_anderson_eel_glacier, both described above under those routes' fixed
+  entries (a still-uncorrected waypoint coordinate/grade-commitment mismatch on
+  Cockscomb Ridge, and a 5.5 mi vs 8.5 mi internal mileage disagreement on Eel
+  Glacier that doesn't affect the dist_km fix, since that fix is anchored on gpx
+  coordinates rather than either mileage figure).
+
+Checked and otherwise clean: Coleman Headwall's FA/dist_km/gain-loss (see above).
+
+`npm run check:sql` (via `node scripts/check-sql-targets.mjs`) reported all 12
+UPDATE targets in this batch's SQL file as existing, no DELETE present. Every
+text/jsonb substring WHERE guard was separately re-verified against a fresh
+re-fetch of the live rows before finalizing, since check:sql only validates id
+existence, not that a value-based WHERE clause will actually match. The file
+(16.2 KB) is well over the ~4 KB soft paste-size limit for the Supabase SQL Editor
+UI — split into ~1.5 KB chunks and verify each before pasting. Two SQL-string
+authoring traps worth recording for future batches: (1) a bare `--` used as a prose
+em-dash inside a JSON string value gets treated as a SQL line-comment by this
+checker's (and would be, by a naive human skim of) comment-stripping — use a plain
+hyphen, comma, or "and" instead; (2) a literal `;` inside a string value breaks the
+checker's (naive, non-quote-aware) statement splitter into two malformed fragments,
+which is what produced three false "no literal id predicate — not checkable"
+warnings on the first draft of this batch's SQL, fixed by rewording those three
+sentences to avoid mid-string semicolons.
+
+External verification (WebSearch only — WebFetch returned EGRESS_BLOCKED on every
+domain tried, consistent with every recent batch): Wilson Glacier's location within
+the Yakama Reservation (multiple synthesized sources including a Wikipedia summary);
+Wilson Headwall's general character and grade (Mountain Project via search
+synthesis); Mount Anderson/Eel Glacier's segment mileages (The Mountaineers' own
+route page, via search synthesis, matching this row's own approach text almost
+exactly); Glacier Creek Road (FR 39) reopening August 20, 2026 and current (Sep 13,
+2026) drivable status (Cascadia Daily News, HikeWA); SR 542/Road to Artist Point's
+2026 season reopening June 10 and typical fall closure window (WSDOT's own press
+release).
+
+SQL: `audits/sql/2026-09-16-batch-271.sql` (12 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_baker_easton_glacier` (see
+progress file).

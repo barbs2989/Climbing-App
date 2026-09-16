@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_adams_south_climb",
+  "last_processed_id": "wa_mount_baker_easton_glacier",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5498,6 +5498,25 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-16-batch-270.sql",
       "note": "6 SQL fixes across 4 routes. Fixed: wa_mojo_rising's `rappels` field (described only the P1-3 bail option, contradicting its own rappel_detail/rappel_count_note/descent_text, which document a different South Arete finish descent); wa_mount_adams_adams_glacier and wa_mount_adams_north_ridge's itinerary text (both claimed a \"~9,000 ft\" shared Killen Creek high camp, contradicted by their own waypoints (elev 7000) and sibling wa_mount_adams_lyman_glacier's correct \"~6,900 ft\" -- looks cross-contaminated from the South Climb's real 9,000-9,400ft Lunch Counter camp on the opposite side of the mountain); wa_mount_adams_north_ridge's dist_km (5.6km, matching neither its own itinerary total of 21.2mi/34.1km nor any leg of it, corrected to match); wa_mount_adams_mazama_glacier_headwall's permit field (generic USFS Cascade Volcano Pass boilerplate on a route that starts on Yakama Nation Tract-D land per its own access/watch_out/approach fields -- rewritten to describe the Yakama tribal-use permit this route actually requires, cross-checked via WebSearch); wa_mount_adams_south_climb's itinerary (stored as a bare prose string instead of the {cal,days,totalNote} structured object every sibling route uses, so it likely never reaches the app's day-by-day Planner rendering -- reshaped with the original text preserved verbatim as totalNote, no figures invented). Flagged rather than fixed: a suspected FA misattribution on wa_mount_adams_lava_glacier_headwall (\"Cooper and Swayne, 1961\" appears to be cross-contaminated from their real, well-documented 1961 Mount Terror FA in the Southern Pickets -- a different peak; WebSearch points to Eihlers/Crocker/Kerns as the likely actual party via an AAC Journal entry, but WebFetch to the primary source was blocked by the network egress proxy so the exact year/full roster couldn't be confirmed), and gain_ft/loss_ft mismatches on the two north-side routes that don't resolve cleanly to one convention even after the high-camp text fix."
+    },
+    {
+      "batch_number": 271,
+      "date": "2026-09-16",
+      "route_ids": [
+        "wa_mount_adams_wilson_glacier_headwall",
+        "wa_mount_anderson_eel_glacier",
+        "wa_mount_baker_boulder_glacier",
+        "wa_mount_baker_boulder_park_cleaver",
+        "wa_mount_baker_cockscomb_ridge",
+        "wa_mount_baker_coleman_deming",
+        "wa_mount_baker_coleman_headwall",
+        "wa_mount_baker_easton_glacier"
+      ],
+      "confirmed_errors_fixed": 7,
+      "flagged_for_human_review": 4,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-09-16-batch-271.sql",
+      "note": "Re-verified live DB state before proposing fixes; found that 5 of pass 4 batches 205/206 proposed fixes on these same 5 routes were never applied live (values unchanged since 2026-09-05). Re-proposed those plus 2 new findings (boulder_park_cleaver dist_km+commitment, cockscomb_ridge road field) and 2 fresh transient-closure corrections (coleman_deming, coleman_headwall) after re-verifying current Glacier Creek Road / Artist Point status."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count."
