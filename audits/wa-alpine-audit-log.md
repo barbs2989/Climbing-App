@@ -20425,3 +20425,120 @@ SQL: `audits/sql/2026-09-16-batch-271.sql` (12 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_baker_easton_glacier` (see
 progress file).
+
+## 2026-09-16 — Batch 272 (pass 5)
+
+Eight routes on eight peaks: North Ridge, Park Glacier Headwall, Squak Glacier (Mount
+Baker); North Ridge (Mount Blum); Buckindy Glacier/Scramble Route (Mount Buckindy);
+Standard Route (Mount Carrie); Challenger Glacier (Mount Challenger); North Couloir /
+Christie Glacier (Mount Christie).
+
+All eight were previously checked clean-on-hard-facts in pass 3 (batch 143, 2026-08-26)
+and five of them (Easton/Squak/North Ridge/Carrie/Buckindy plus Christie in the
+following batch) had `dist_km` to-camp-instead-of-to-summit bugs found and fixed in pass
+4 (batches 206-207, 2026-09-05). Re-reading the *live* rows this pass found none of
+those pass-4 fixes have been applied yet: `wa_mount_baker_north_ridge` still stores
+`dist_km=4` and the pre-reopening Glacier Creek Road text; `wa_mount_baker_squak_glacier`
+still `dist_km=5.5`; `wa_mount_carrie_standard` still `dist_km=20.9`;
+`wa_mount_buckindy_scramble` still `dist_km=21.89` and the "North Cascades NP complex"
+permit text; `wa_mount_christie_west` still `dist_km=25.7`. Same process note as batch
+226: these SQL files (`2026-09-05-batch-206.sql`, `2026-09-05-batch-207.sql`) read as
+live, still-open fixes rather than stale ones, so they are not re-proposed here to avoid
+duplicating an already-correct pending SQL file.
+
+**Confirmed error, fixed (`sql/2026-09-16-batch-272.sql`):**
+
+- **wa_mount_baker_park_glacier_headwall**: `watch_out` was stored as one
+  newline-joined string instead of a JSON array, like every other route's `watch_out`
+  (this row's own `hazards` field is a correctly-shaped array for comparison) — the
+  same schema defect this audit has fixed on several other routes (most recently
+  `wa_mount_shuksan_fisher_chimneys`, `wa_chockstone_route`). Converted to a 4-item
+  array; content unchanged.
+- **wa_mount_blum_north_ridge**: `road.status` and `access.closures` both stated the
+  Baker Lake Road (FR-11)/Shannon Creek Bridge closure was "expected through end of
+  August 2026." Batch 143 (2026-08-26) confirmed this as accurate and current at the
+  time; today is 2026-09-16, three weeks past that stated end date. WebSearch of the
+  Forest Service's own alert page ("Baker Lake Road (FSR11) Closure at Shannon Creek
+  Bridge," fs.usda.gov) — the same result surfaced identically across three separate
+  queries — states the closure actually runs "beginning around July 15 through
+  mid-September" for bridge-deck replacement, not "end of August." WebFetch to
+  fs.usda.gov itself returned EGRESS_BLOCKED as usual, so today's exact open/closed
+  state could not be directly confirmed either way; corrected the stated window to
+  match the authoritative source (mid-September, not end of August) and added a note
+  that the window is now at or past its end rather than asserting an unconfirmed
+  reopening date. This is the same "dated closure claim correct when written, stale
+  once the window passed" class already documented for Glacier Creek Road / North
+  Ridge in batch 206.
+
+**Re-examined, sources still genuinely disagree (left as-is, same conclusion as prior
+passes):**
+
+- `wa_mount_baker_north_ridge`: `grade` text ("Grade III(+)") vs `commitment` ('II').
+  Fresh search still turns up real spread across guide services: Mountaineers.org says
+  Grade II; Pacific Alpine Guides says Grade III; a Spokalpine trip-report titles it
+  "III+ AI3"; Mountain Bureau lists Grade IV. No authoritative consensus to pick a side
+  from, consistent with pass 4's finding.
+- `wa_mount_baker_park_glacier_headwall`: `grade`='IV'/`grade_num`=4 vs `commitment`
+  ='III'. No source found this pass (or last) states a specific NCCS commitment grade
+  for this route at all.
+- `wa_mount_baker_park_glacier_headwall`: `dist_km` (8.0 km) is mathematically
+  impossible — shorter than the trailhead/summit chord — but this row has no
+  intermediate waypoint to anchor a corrected figure against (only a trailhead and
+  summit waypoint, neither with `distMi`), and external aggregate mileage estimates for
+  the full Artist Point-Ptarmigan Ridge-Park Glacier approach still disagree with each
+  other (roughly 9-11 mi one-way). Left flagged rather than guessed.
+- `wa_mount_buckindy_scramble`: the FA (Grimlund/Nicholson/Trueblood, Aug 28 1955)
+  matches Wikipedia's current infobox exactly (re-confirmed this pass), but a
+  guidebook-sourced claim (Beckey's Cascade Alpine Guide Vol. 2, via a SummitPost page
+  for neighboring Mount Misch) says the original party's summit register reads Aug 27
+  and that 1950s-era maps imprecisely named the peak they were on, meaning their climb
+  may actually have been the first ascent of Mount Misch rather than Mount Buckindy.
+  Genuinely conflicting sources (mainstream Wikipedia vs. a guidebook footnote); left
+  as stored, same as batch 206's finding.
+
+**Not independently confirmed or contradicted, not flagged:**
+`wa_mount_baker_park_glacier_headwall`'s FA third climber ("Tim Keliher") — the AAC
+Publications article on this 1971 first ascent names Bodine and Friar plus "the
+author," and search snippets don't surface the article's own byline to confirm or
+deny that the author is Keliher. Plausible either way; not treated as a contradiction.
+
+**Confirmed correct, no fix needed:** Mount Challenger's elevation (8,207 ft) and
+coordinates (48.8357°N, 121.3422°W vs. stored 48.8365,-121.3419) both match
+Wikipedia/topo sources closely; Mount Baker North Ridge's 1948 FA (Beckey, Ralph &
+Dick Widrig, Aug 7) independently reconfirmed word-for-word via an AAC Publications
+search snippet, which also corroborates the "Grade III(+)" text (one source titles the
+same route "III+ AI3"). Hannegan Pass Road (FR-32, Mount Challenger's access) has no
+active 2026 closure beyond routine winter gating and a one-day May 24 event closure —
+re-confirmed, matching batch 143's finding three weeks on. Suiattle River Road (FR 26)
+closure order on `wa_mount_buckindy_scramble`'s `access.closures` correctly cites the
+current superseding order #06-05-26-03 (order #06-05-26-01, cited by this route in an
+earlier pass's notes, was itself superseded — consistent with this catalog's other
+FR-26 routes and CLAUDE.md's own record of that supersession).
+
+Checked and otherwise clean this pass: Mount Blum North Ridge's own elevation
+(7,685 ft) and FA were not re-verified (already independently confirmed in batch 143);
+Mount Carrie's `dist_km`-correction math and Mount Christie's `dist_km`-correction math
+were both re-verified directly against these rows' own summit-waypoint `distMi` values
+(23.34 km = 14.5 mi and 32.67 km = 20.3 mi respectively — both check out to the pending,
+unapplied batch-206/207 figures).
+
+`npm run check:sql` reported all 3 write targets in this batch's SQL file as existing,
+no DELETE present; the exact pre-image string for each WHERE clause (the `watch_out`
+scalar, `road.status`, and `access.closures`) was independently re-verified character-
+for-character against a fresh fetch of the live rows before finalizing, since check:sql
+only validates id existence, not that a value-based WHERE clause will match.
+
+External verification (WebSearch throughout; WebFetch returned EGRESS_BLOCKED on every
+domain tried this batch — fs.usda.gov, summitpost.org, en.wikipedia.org — consistent
+with every recent batch): Baker Lake Road/Shannon Creek Bridge closure window
+(fs.usda.gov alert page, via search synthesis, corroborated across 3 separate queries);
+Hannegan Pass Road current status (fs.usda.gov); Mount Baker North Ridge's 1948 FA and
+grade (AAC Publications, Spokalpine, Mountaineers.org, Pacific Alpine Guides, Mountain
+Bureau); Park Glacier Headwall's 1971 FA (AAC Publications); Mount Buckindy/Mount Misch
+FA identity question (SummitPost, Wikipedia); Mount Challenger's elevation and
+coordinates (Wikipedia, AllTrails, TopoZone).
+
+SQL: `audits/sql/2026-09-16-batch-272.sql` (3 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_christie_west` (see progress
+file).
