@@ -42,6 +42,17 @@ const TARGETS = [
   // there reads 2,682-2,842. They share their whole approach chain (Royal Creek Camp, Royal Lake, at
   // identical coordinates too), so one route's copy of one pin simply carries the wrong number.
   { route: "wa_mount_mystery_standard",         pin: "Royal Basin Trail junction", was: 1900, donor: "wa_mount_johnson_standard" },
+  // ELEVENTH, added 2026-09-16, and WHY THE ORIGINAL SWEEP COULD NOT SEE IT is the useful part.
+  // That sweep's scope is pins the TERRAIN REFUSES, and 3,200 against a ground of 3,399 is 199 ft —
+  // comfortably inside `audit:waypoint-elevations`' tolerance and inside this script's own 300 ft
+  // gate. It was surfaced instead by `audit:pin-elev-vs-own-prose`, because the pin's own "Getting
+  // here" line says 3,540: a route DISAGREEING WITH ITSELF is visible where a height the ground
+  // merely tolerates is not. Two instruments, different reach.
+  //
+  // Settled by the cross-route evidence rather than by the sentence, which the ground does not
+  // separate: 39 routes store this trailhead at 3,400 against this one row's 3,200, and the ground
+  // under its own pin reads 3,399 — a 1 ft match against a 199 ft error.
+  { route: "wa_mount_stuart_north_ridge",       pin: "Stuart Lake Trailhead",      was: 3200, donor: "wa_argonaut_peak_northeast_couloir" },
 ];
 
 const DRY = process.argv.includes("--dry");
