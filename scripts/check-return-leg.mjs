@@ -22,6 +22,31 @@
  * the descent of the CLIMB, which the walk never double-counted. Short-circuiting the whole
  * expression the way publishedIsWholeDay does would have stripped a real leg from 212 rows.
  *
+ * SECTION 2 IS THE SAME TILE'S OTHER HALF: the two red labels beside these clock times were
+ * compared against a CLOCK HOUR while sumH/retH are UNBOUNDED. Both are absolute hours from
+ * midnight of the departure day, so an estimate crossing midnight passes 18.5 (6:30 PM) and 13
+ * (1:00 PM) permanently -- and `fmt`, one line up, reduces the same value mod 1440 to render the
+ * time. A red "After dark" sat beside "Est. return 12:10 PM (+1d)", and "Leave earlier" beside a
+ * 4:28 AM summit, where leaving earlier makes it DARKER.
+ *
+ * Measured at the calculator's default settings over the WA catalog
+ * (scripts/oneoff/measure-after-dark-on-a-multiday-estimate.mjs): 168 of 495 "After dark" labels
+ * annotated a return in broad daylight, eight of them within 15 minutes of NOON -- including
+ * wa_mount_stuart_north_ridge, the route check:ui pins as its sample. 67 of 556 "Leave earlier"
+ * labels sat beside a morning summit.
+ *
+ * NEITHER THRESHOLD MOVES. `retH > 18.5` is exactly "this outing runs past dusk", which is the
+ * right trigger however long the outing; what it cannot say is which DAY the arrival lands on. So
+ * the trigger is untouched -- no warning added, none suppressed -- and only the LABEL gains the
+ * day.
+ *
+ * SECTION 2 PINS NO WORDING, and that is deliberate: a guard holding "Overnight" would forbid
+ * improving the copy, which this repo records as its own failure mode more than once. The
+ * invariant is structural instead -- a same-day tile and a next-day tile must both carry a label
+ * and those labels must DIFFER. That catches the historical defect (both said "After dark"), it
+ * catches deleting the label on the next-day tile, and it catches labelling everything the same
+ * way; and it survives a reword of either string.
+ *
  * Static SSR (no browser, no DB), so it sits in `npm run build`.
  */
 import { build } from "esbuild";
@@ -67,9 +92,10 @@ const route = (over) => Object.assign({
   _dbArea: { id: "probe_area", name: "Probe Area", areaType: "peak", region: "Washington" },
 }, over || {});
 
-let fail = 0;
+let fail = 0, ran = 0;
 const eq = (label, got, want) => {
   const ok = got === want;
+  ran++;
   if (!ok) fail++;
   console.log(`  ${ok ? "ok  " : "FAIL"} ${label}${ok ? "" : `  got ${JSON.stringify(got)} want ${JSON.stringify(want)}`}`);
 };
@@ -99,7 +125,72 @@ eq("a PITCHED whole-outing route keeps its climb descent", pitchedWhole ? pitche
 const nearMiss = times(route({ gainM: 7000 / FT, lossM: 6500 / FT }));
 eq("outside the 3% window still adds a return", nearMiss ? nearMiss.summit !== nearMiss.ret : null, true);
 
+/* The warning div sits immediately after the tile's own "Est. summit" / "Est. return" caption and
+   is identified by carrying a margin-top the caption does not. Read from the RAW markup rather
+   than the stripped text: stripping welds the label to the next tile, and there is no reliable
+   right-hand boundary for it there. The colour is matched as `[^"]*` on purpose -- pinning C.red's
+   hex would be a hand-copy of the palette. An ABSENT warning returns "" and a caption that never
+   rendered returns null, because "there is no warning" and "the tile is missing" want different
+   repairs and must not print alike. */
+const warning = (html, caption) => {
+  const cap = ">Est. " + caption + "</div>";
+  const i = html.indexOf(cap);
+  if (i < 0) return null;
+  const m = /^<div style="font-size:12px;color:[^"]*;margin-top:1px">([^<]*)<\/div>/
+    .exec(html.slice(i + cap.length));
+  return m ? m[1] : "";
+};
+const labels = (r) => {
+  const h = render(r);
+  return { summit: warning(h, "summit"), ret: warning(h, "return") };
+};
+
+console.log("\na warning names the DAY it lands on");
+/* Returns before dusk on the departure day: neither tile has anything to warn about. A rule that
+   always labels is satisfied by labelling everything, so this is asserted as hard as the rest. */
+const daylight = labels(route({ distKm: 4, gainM: 400 / FT, lossM: 100 / FT }));
+eq("ANCHOR: the same-day daylight route rendered both captions", daylight.summit !== null && daylight.ret !== null, true);
+eq("a daylight return carries NO warning", daylight.ret, "");
+eq("a daylight summit carries NO warning", daylight.summit, "");
+
+/* Same day, past the thresholds. Both warnings are correct here and must survive the fix. */
+const sameDay = labels(route({ distKm: 24, gainM: 5200 / FT, lossM: 500 / FT }));
+eq("ANCHOR: the same-day dusk route rendered both captions", sameDay.summit !== null && sameDay.ret !== null, true);
+eq("a same-day return after dusk is still warned about", sameDay.ret !== "", true);
+eq("a same-day summit after 1 PM is still warned about", sameDay.summit !== "", true);
+
+/* Crosses midnight and lands mid-morning. This is the historical defect: the SAME words as the
+   same-day case, on a tile whose own clock reads 10:51 AM (+1d). */
+const nextDay = labels(route({ distKm: 20, gainM: 6015 / FT, lossM: 500 / FT, pitches: 20, grade: "5.9" }));
+eq("ANCHOR: the next-day route rendered both captions", nextDay.summit !== null && nextDay.ret !== null, true);
+eq("ANCHOR: its return really is on a later day", /\(\+\d+d\)<\/div><div[^>]*>Est\. return/.test(render(route({ distKm: 20, gainM: 6015 / FT, lossM: 500 / FT, pitches: 20, grade: "5.9" }))), true);
+/* THE LOAD-BEARING PAIR. Deleting the label satisfies any "must not say After dark" assertion,
+   so non-emptiness is asserted before difference. */
+eq("a next-day return is still warned about at all", nextDay.ret !== "", true);
+eq("a next-day summit is still warned about at all", nextDay.summit !== "", true);
+eq("...and the next-day RETURN does not reuse the same-day wording", nextDay.ret !== sameDay.ret, true);
+eq("...and the next-day SUMMIT does not reuse the same-day wording", nextDay.summit !== sameDay.summit, true);
+
+/* The two tiles are judged INDEPENDENTLY: a long climb off a short walk summits late on the
+   departure day and returns the next, so one tile takes each wording. Without this, a fix keyed on
+   "is this estimate multi-day" rather than on each tile's own clock would pass everything above. */
+const split = labels(route({ distKm: 5, gainM: 800 / FT, lossM: 200 / FT, pitches: 20, grade: "5.9" }));
+eq("ANCHOR: the split-day route rendered both captions", split.summit !== null && split.ret !== null, true);
+eq("its same-day summit is worded like a same-day summit", split.summit, sameDay.summit);
+eq("...while its next-day return is worded like a next-day return", split.ret, nextDay.ret);
+
+/* The label and the "(+Nd)" suffix come from ONE function, so they cannot disagree. Asserted
+   rather than assumed: a second next-day test written beside the label is the drift this guards. */
+const dayOfDecls = (fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8").match(/const dayOf=/g) || []).length;
+eq("dayOf is declared exactly once", dayOfDecls, 1);
+
+const FLOOR = 21;
+if (ran < FLOOR) {
+  console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
+  fail++;
+}
+
 console.log(fail
   ? `\ncheck:return-leg: ${fail} FAILURE(S)`
-  : "\ncheck:return-leg: ok — a whole-day walk is not counted twice, and every other shape keeps its return.");
+  : `\ncheck:return-leg: ok — a whole-day walk is not counted twice, every other shape keeps its return, and each red label names the day it lands on (${ran} assertions).`);
 process.exit(fail ? 1 : 0);

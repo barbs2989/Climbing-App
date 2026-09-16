@@ -1481,7 +1481,28 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
   const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
-  const fmt=h=>{let total=Math.round(h*60);const day=Math.floor(total/1440);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
+  const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
+  /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
+     Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses
+     midnight passes 18.5 (6:30 PM) and 13 (1:00 PM) permanently -- while `fmt`, declared one line
+     up, reduces the same value mod 1440 to render a clock time and appends "(+Nd)". The result was
+     a red "After dark" beside "Est. return 12:10 PM (+1d)", and "Leave earlier" beside a 4:28 AM
+     summit, where leaving earlier makes it DARKER. Measured across the WA catalog at the
+     calculator's default settings: 168 of 495 "After dark" labels annotated a return in broad
+     daylight (eight within 15 minutes of NOON, one of them wa_mount_stuart_north_ridge -- the
+     route check:ui pins as its sample), and 67 of 556 "Leave earlier" labels sat beside a morning
+     summit.
+
+     THE TESTS ARE RIGHT AND THE WORDING WAS WRONG, which is why neither threshold moves. `retH >
+     18.5` is exactly "this outing runs past dusk", which is the correct trigger for a warning on
+     any outing however long; what it cannot say is WHICH DAY the arrival lands on. So the trigger
+     is untouched -- no warning is added and none is suppressed -- and the LABEL gains the day.
+     "Overnight" is the stronger claim of the two, not a softer one, so this cannot under-warn in
+     the #641 direction: a party out past a second dawn is being told something larger than "after
+     dark", not something smaller. The tile stays red either way.
+
+     `dayOf` is the SAME function `fmt` uses for the "(+Nd)" suffix, deliberately: a second
+     next-day test written here could disagree with the suffix rendered inches away. */
   const late=retH>18.5,sumLate=!publishedIsWholeDay&&sumH>13,multiDay=route.campOptions&&route.campOptions.some(c=>c.stars>0);
   // The N/A on the Approach tile was only half that fix. Total, Est. summit and Est. return
   // all still add hikeH, and hikeH is 0 whenever the approach inputs are missing -- 204,469
@@ -1538,8 +1559,8 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
       </div>
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
-        <div style={{textAlign:"center",background:sumLate?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:approachUnknown?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(approachUnknown?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>Leave earlier</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:approachUnknown?C.text:C.green}}>{hasAnyEstimate?(approachUnknown?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>After dark</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
+        <div style={{textAlign:"center",background:sumLate?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:approachUnknown?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(approachUnknown?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(sumH)>0?"Overnight":"Leave earlier"}</div>:null}</div>
+        <div style={{textAlign:"center",background:late?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:approachUnknown?C.text:C.green}}>{hasAnyEstimate?(approachUnknown?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
       </div>
     </div>
     {(route.segments||[]).map((seg,i)=>{
