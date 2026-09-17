@@ -20967,3 +20967,111 @@ SQL: `audits/sql/2026-09-17-batch-275.sql` (2 UPDATE statements, no DELETE).
 Next batch continues in sorted-id order after `wa_mount_howard_south_slope` (see
 progress file); `wa_mount_index_north_norwegian_buttress` is skipped as out of
 scope (crag, not peak) and the next route is `wa_mount_index_north_peak_traverse`.
+
+---
+
+## 2026-09-17 — Pass 5, Batch 276
+
+Six peaks, 8 routes (Mount Index 2, Mount Johnson 1, Mount Lago 1, Mount Larrabee 1,
+Mount Logan 3): Main Peak via North Approach, Northeast Buttress (Index); Standard
+Route (Johnson); South Slope - South Face (Lago); South Ridge (Larrabee); Fremont
+Glacier, Banded Glacier, Douglas Glacier (Logan).
+
+**Confirmed error → fix in `sql/2026-09-17-batch-276.sql`:**
+- `wa_mount_index_northeast_buttress` — every fact this row already stores (FA "July
+  1929, Lionel Chute and Victor Kaartinen," grade 5.7, 12 pitches, ~1,600 ft, and a
+  pitch_detail describing sustained brush-and-jungle climbing through a "North Face
+  bowl") matches, in detail, the one well-documented classic line on Mount Index's
+  North Peak — which every independent source found this session (Wikipedia's Mount
+  Index article, a Mountain Project excerpt quoting "Grade III, 5.7... vertical dirt,
+  somewhat rotten rock, and thick brush," a Cascadeclimbers.com trip-report titled
+  "Mount Index, North Peak - North Face," and a Mountaineers.org course listed as "Mt
+  Index North Peak/N Face") calls the **North Face** (or North Face Route). No source
+  anywhere names a distinct "Northeast Buttress" on Mount Index — the only other
+  named buttress feature on this massif is the unrelated, much harder Norwegian
+  Buttress(es) on a different face. Corrected `name`/`face` from "Northeast Buttress"
+  to "North Face" and `aspect` from "NE" to "N" (every source, plus this row's own
+  sibling `wa_mount_index_north_peak_traverse` — whose overview independently calls
+  this "the historic North Face line up the North Peak" — describes a north-facing
+  feature, not northeast). The route's `id` still encodes the old name and was left
+  untouched (same call as the `wa_mount_fury_east_mongo_ridge` id/content mismatch in
+  batch 275 — renaming a primary key is outside this audit's scope and risks breaking
+  FK references elsewhere).
+
+**Checked, no issue found (verified against external sources this session):**
+
+- `wa_mount_index_north_peak_traverse` — FA of the North/Middle/Main traverse (Fred
+  Beckey & Bill "Wolf" Schoening, August 12-13, 1950, after an earlier attempt with
+  Dick Widrig and Hieb was turned back by weather; the Middle Peak was unclimbed
+  before this ascent) confirmed nearly verbatim against an AAC Publications account
+  found via WebSearch. North Peak elevation (5,357 ft) and Main Peak elevation
+  (5,991 ft, matching this row's `high_point_ft`) both confirmed via Wikipedia.
+- `wa_mount_johnson_standard` — FA hedge ("Scott Osborn, Joe Halwax, John King, c.
+  1935... long credited instead to Elvin Johnson & George Martin, 1940") matches
+  Wikipedia's own "1935 or 1940" ambiguity and independently-found detail that Elvin
+  Johnson and George Martin's 1940 climbs in The Needles are documented (as the FA of
+  neighboring Martin Peak). Elevation (7,680 ft, 4th-highest in the Olympics, highest
+  in The Needles) confirmed via Wikipedia. Olympic NP wilderness fee ("$6
+  Recreation.gov reservation fee plus $8 per person per night, 16+, free 15 and
+  under") confirmed current via nps.gov-derived search results. Upper Dungeness
+  Trailhead access via FR-2880 then FR-2870 confirmed via USFS trail-directions
+  pages (mileages match within normal "roughly" rounding).
+- `wa_mount_lago_south_slope_south_face` — elevation (8,745 ft) and FA (Hermann
+  Ulrichs and Dick Alt, 1933) both confirmed via Wikipedia/WTA. Pasayten Wilderness
+  group-size cap ("12 people / 18 head of stock") and above-5,000-ft campfire ban
+  both confirmed current via USFS Okanogan-Wenatchee pages.
+- `wa_mount_larrabee_south_ridge` — elevation (7,865 ft) and FA (James J. McArthur
+  party, September 11, 1908) both confirmed via Wikipedia, as was the "1.4 miles
+  south of the border, immediately southeast of American Border Peak" geography.
+  Approach detail (Twin Lakes Trailhead/FS-3065, High Pass Trail #676, the gully
+  system with "two narrow channels 30 feet apart, take the right one" at the ~6,900
+  ft southwest spur) matches trailpeak.com/WTA-derived route descriptions almost
+  word for word.
+- `wa_mount_logan_r1`/`r2`/`fremont_glacier` — Mount Logan's summit elevation (9,087
+  ft, matching `high_point_ft` on all three rows) and FA (Lage Wernstedt, 1926, on
+  the Fremont Glacier route) both confirmed via Wikipedia. Each glacier's stated
+  aspect was checked against its own Wikipedia glacier article: Banded Glacier
+  (north side) and Douglas Glacier (southeast slopes) both confirmed exactly;
+  Fremont Glacier's aspect is flagged below (sources disagree). North Cascades NP
+  backcountry fee structure ("$10/person + $6 nonrefundable fee, mid-May–early
+  Oct, free otherwise," "60% reservable / 40% walk-up," 2026 lottery "Mar 2-13")
+  confirmed current via nps.gov-derived search results on all three rows. Colonial
+  Creek Trailhead's exemption from the SR-20 MP134-171 winter closure (stated on
+  `wa_mount_logan_fremont_glacier`'s `road.seasonalGate`) confirmed consistent with
+  Easy Pass Trailhead (MP151, inside the closure) being seasonal on the other two.
+
+**Not verifiable this session / internally inconsistent, flagged for human review
+(not fixed — no confirmed replacement value found, see the SQL file's closing
+comment for the same write-up):**
+
+- `wa_mount_logan_r1` (Banded Glacier) — `approach` describes only the long Colonial
+  Creek/Thunder Creek entry (9mi + 3mi from a 1,060 ft trailhead), while `beta` and
+  `road` both treat the much shorter Easy Pass Trailhead (3,700 ft) as primary
+  (`road.driveNote` itself calls Thunder Creek "a longer, year-round-accessible
+  alternate"). `gain_ft`=7,027 is below the minimum possible net rise (8,027 ft) if
+  the route truly starts at Colonial Creek's 1,060 ft, but is roughly consistent
+  with an Easy-Pass start once the Christmas Tree Col dip is accounted for.
+  `loss_ft`=13,000 doesn't clearly reconcile with either reading either. This needs
+  someone to settle which trailhead the row is actually describing before gain/loss
+  can be corrected without guessing.
+- `wa_mount_logan_r2` (Douglas Glacier) — `gain_ft`=7,000 against `loss_ft`=1,500 for
+  a route whose own `descent_text` says it either reverses the ascent or exits via
+  the Banded-Douglas col to Fisher Creek basin — neither reading supports a loss
+  anywhere near 1,500 ft; a same-trailhead round trip should have loss roughly
+  comparable to gain. No source found gives an exact figure to substitute.
+- `wa_mount_logan_fremont_glacier` — `aspect` is stored as "SW." WebSearch surfaced a
+  genuine cross-source disagreement on the named Fremont Glacier landform's own
+  aspect (southeast in one source, southwest in another, with the search engine
+  itself calling out the discrepancy). Route's own beta describes climbing onto the
+  south ridge/Hogsback above the glacier, which may explain why the broader route is
+  characterized differently from the glacier landform alone, but nothing found
+  settles it either way.
+
+**Tooling note:** `check-sql-targets.mjs` confirmed the one UPDATE target exists and
+no DELETE is present. File is 4.9KB, over the SQL Editor's ~4KB soft paste limit —
+split into chunks before pasting, per the script's own warning (same as batch 275).
+
+SQL: `audits/sql/2026-09-17-batch-276.sql` (1 UPDATE statement, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_logan_r2` (see progress
+file); the next route in scope is `wa_mount_mathias_scramble`.
