@@ -21352,3 +21352,72 @@ SQL: `audits/sql/2026-09-17-batch-280.sql` (5 UPDATE statements, no DELETE) — 
 
 Next batch continues in sorted-id order after `wa_mount_seattle_seattle_creek` (see progress
 file).
+
+## 2026-09-17 — Pass 5, Batch 281
+
+Eight routes across two peaks: Bloody Head Couloir, Southeast Ridge, Southwest Ridge (Mount
+Sefrit); Fisher Chimneys, Hanging Glacier, North Face, Northeast Ridge, Northwest Arete (Mount
+Shuksan). Continued in sorted-id order after batch 280's `wa_mount_seattle_seattle_creek`.
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-281.sql`:**
+- Hanging Glacier (Shuksan): `season` ("Jul-Aug") contradicted six of the row's own fields
+  describing a spring ice line — `best_season` ("May to June"),
+  `seasonal_guidance.optimalWindow` (which literally says "May to June, as already on file"),
+  `seasonal_guidance.monthBreakdown` (rates only May/June, no July or August at all),
+  `seasonal_hazards.avalanche.byMonth` (May/June only), and `climate.bySeason` (spring is
+  "prime ice-line season", summer brings "more crevasse and rockfall hazard"). The two
+  `approach_variants[].season` fields that do say "Jul-Aug" are answering a different
+  question — when the valley hike-in is snow-free, not when the glacier is safest to climb —
+  and both explicitly warn that going in later means the White Salmon Glacier's crevasses have
+  opened. Independent corroboration: published notes on Shuksan's north-side glacier routes
+  describe the bergschrund/crevasses opening and the route becoming broken by mid-late season.
+  Corrected `season` to the row's own best_season window; approach_variants left as-is since
+  it answers a different, not-wrong question.
+- North Face (Shuksan): same pattern. `season` ("Jun-Aug") contradicted `best_season`
+  ("Mid-May through early July"), `seasonal_guidance.optimalWindow` (identical to
+  best_season), its `monthBreakdown` (May optimal, June good, July already "risky" — no
+  August at all), `seasonal_hazards.avalanche.byMonth` (May/June/July only), and the route's
+  own primary `approach_variants[0].season` ("spring to early summer; needs snow cover").
+  Corrected `season` to match.
+- Sefrit Southwest Ridge: `gain_ft`/`loss_ft` (4,500/4,500) were mathematically impossible —
+  the row's own waypoint chain climbs monotonically (no recorded descent) from the Nooksack
+  Cirque Trailhead (2,140 ft) to the 7,191-ft summit, a net rise of 5,051 ft that gain_ft can
+  never be less than. The row's own `itinerary.days[0]` already states the correct figures —
+  gainFt: 5000, lossFt: 5000 — matching the waypoint-derived minimum almost exactly, and
+  `itinerary.totalNote` independently confirms "~5,000 ft gain." Corrected gain_ft/loss_ft to
+  5,000/5,000, taken from the row's own itinerary.
+
+**Verified clean, no changes:**
+- Mount Sefrit's first-ascent claim ("1930, Jim Irving and Brick Spouse") and summit elevation
+  (7,191 ft) both confirmed against Wikipedia's Mount Sefrit article. Route-level `fa` is
+  correctly left null on both Sefrit routes checked, since neither source ties the 1930 ascent
+  to a specific one of the peak's several lines — the row's own `corrections` field already
+  says so. Sefrit Southeast Ridge's gain_ft/loss_ft (4,500/4,500) are consistent with its own
+  itinerary text (a different trailhead, Hannegan CG at 2,950 ft, net rise 4,241 ft) — no
+  impossible-gain defect there.
+- Bloody Head Couloir (Sefrit): sparse entry with no grade/fa/gain_ft/season populated and
+  nothing invented to fill the gaps — appropriately left blank. No contradictions found.
+- Fisher Chimneys (Shuksan): fa list left appropriately hedged ("year not confirmed by
+  available sources") — could not be independently confirmed or refuted this session.
+  gain_ft (5,100) and loss_ft (4,700) both match the row's own itinerary day-sum exactly.
+  access.group_limit (12) confirmed against NPS's own published North Cascades cross-country
+  zone group-size limit for the Mount Shuksan zone.
+- Hanging Glacier's fa ("Unrecorded party, 1939 — first technical ascent of Mount Shuksan")
+  independently corroborated: the Hanging Glacier route is documented elsewhere as the line
+  used on Shuksan's 1939 first technical ascent (distinct from Asahel Curtis's 1906 first
+  ascent of the mountain overall via the Sulphide Glacier side); the specific climbers'
+  identities are likewise not confirmed by available sources. Not changed.
+- Northeast Ridge and Northwest Arete (Shuksan): both sparse, honestly-hedged entries
+  ("seldom-done variation," "little-traveled") with no fa claimed and no gain_ft/loss_ft
+  contradiction against their waypoints. Northwest Arete's beta claim ("Northwest Arayete,
+  5.9, established 2007 by Darin Berdinka and Matt Alford") confirmed via a contemporary
+  American Alpine Institute blog post and Alpinist's 2007 newswire — matches on climbers,
+  year, grade, and description.
+
+**Nothing flagged for human review this batch.**
+
+SQL: `audits/sql/2026-09-17-batch-281.sql` (3 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy).
+
+Next batch continues in sorted-id order after `wa_mount_shuksan_northwest_arete` (see progress
+file).

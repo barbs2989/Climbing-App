@@ -2,9 +2,9 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_seattle_seattle_creek",
+  "last_processed_id": "wa_mount_shuksan_northwest_arete",
   "total_in_scope_last_count": 524,
-  "total_wa_alpine_or_mountaineering_tagged": 579,
+  "total_wa_alpine_or_mountaineering_tagged": 574,
   "batches": [
     {
       "batch_number": 1,
@@ -5690,6 +5690,25 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-17-batch-280.sql",
       "note": "Tahoma Glacier's gain_ft (5,007) was mathematically impossible given its own trailhead/summit waypoints and contradicted its own itinerary total (~12,000 ft) -- corrected to 12,000. Willis Wall's descent field wrongly described the walk-off descent as using rappels, contradicting its own rappels/descent_text fields -- corrected. Sunset Ridge's season field (Jun-Aug) contradicted its own best_season/seasonal_guidance/approach_variants (May-Jun, out of condition by July) -- corrected. Ptarmigan Ridge's season and approach fields described the Mowich Lake approach as merely seasonally late, when its own road/approach_logistics fields (and an independent WSDOT source) confirm the Fairfax Bridge access is permanently closed since April 2025 -- corrected both fields. All four first-ascent claims checked this batch (Nisqually Icefall, Ptarmigan Ridge, Willis Wall, Mount Redoubt, Sunset Ridge) were confirmed against independent sources (AAC Publications, Wikipedia, HistoryLink, The Mountaineers). Mount Seattle's two scramble-approach routes (Noyes Basin, Seattle Creek Basin) are sparse and had nothing to contradict."
+    },
+    {
+      "batch_number": 281,
+      "date": "2026-09-17",
+      "route_ids": [
+        "wa_mount_sefrit_bloody_head_couloir",
+        "wa_mount_sefrit_southeast_ridge",
+        "wa_mount_sefrit_southwest_ridge",
+        "wa_mount_shuksan_fisher_chimneys",
+        "wa_mount_shuksan_hanging_glacier",
+        "wa_mount_shuksan_north_face",
+        "wa_mount_shuksan_northeast_ridge",
+        "wa_mount_shuksan_northwest_arete"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 0,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-09-17-batch-281.sql",
+      "note": "Hanging Glacier and North Face (Mount Shuksan) both had season fields (Jul-Aug, Jun-Aug) contradicting their own best_season/seasonal_guidance/seasonal_hazards fields, all of which describe these north-side glacier lines as spring/early-summer ice climbs that deteriorate through summer -- corrected both to match. Sefrit Southwest Ridge's gain_ft/loss_ft (4,500/4,500) were mathematically impossible given its own trailhead-to-summit waypoint chain (net rise 5,051 ft) and contradicted its own itinerary total (5,000 ft) -- corrected to 5,000/5,000. FA claims checked this batch (Mount Sefrit 1930, Shuksan's 1939 first technical ascent via the Hanging Glacier, the 2007 Northwest Arayete) were all confirmed against independent sources; Fisher Chimneys' FA list remains appropriately hedged as unconfirmed. Fisher Chimneys' access.group_limit (12) confirmed against NPS's published Shuksan cross-country zone limit."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."
