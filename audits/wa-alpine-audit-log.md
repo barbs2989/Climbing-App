@@ -20805,3 +20805,165 @@ SQL: `audits/sql/2026-09-17-batch-274.sql` (4 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_fairchild_standard` (see
 progress file).
+
+## Batch 275 (pass 5) — 2026-09-17
+
+Checked: `wa_mount_formidable_south_face`, `wa_mount_fury_east_mongo_ridge`,
+`wa_mount_fury_east_southeast_glaciers`, `wa_mount_fury_west_west_ridge`,
+`wa_mount_goode_northeast_buttress`, `wa_mount_hardy_snow_scramble`,
+`wa_mount_hinman_hinman_glacier`, `wa_mount_howard_south_slope`. One id in this
+range, `wa_mount_index_north_norwegian_buttress`, was skipped — its `area_id`
+(`wa_north_norwegian_buttress`) is `area_type: crag`, not `peak`, so it's out of this
+audit's scope (same "Dikes"/"Summertime Crag" exclusion the scope note already
+describes).
+
+**Fixed, applied to SQL:**
+
+- `wa_mount_fury_east_mongo_ridge` — `fa` hedged "(month uncertain: July or August)"
+  for Wayne Wallace's solo first ascent of Mongo Ridge (the southwest buttress of
+  Mount Fury's West Peak), directly contradicting this same row's own `overview`,
+  `beta`, and `best_season` fields, all of which already state a specific August 2006
+  date. Verified externally: multiple independent sources converge on August 24-28,
+  2006 — including Wallace's own first-ascent account published in the American
+  Alpine Club's American Alpine Journal ("he headed out at 4 a.m., August 24, 2006"),
+  and a Cascadeclimbers.com trip-report thread whose own title carries the date
+  "8/28/2006" (consistent with this row's `beta` field noting the climb ran Aug 24-27
+  with Wallace "exiting/reporting on the 28th"). Nothing found suggests July was ever
+  a real candidate. Corrected `fa` to state the well-documented date and drop the
+  false hedge.
+- `wa_mount_fury_east_southeast_glaciers` — `loss_ft=13000` against `gain_ft=6200`
+  for what is unambiguously an out-and-back route (ascend the Southeast Glacier to
+  East Fury's summit, descend the same way to the same trailhead — confirmed by this
+  row's own `waypoints`, its `descent` field ("Reverse the southeast glacier route"),
+  and `descent_text`; nothing describes a traverse or different exit). An out-and-back
+  route's cumulative gain and loss have to be close to equal, and this row's own
+  `itinerary` field sums to ~6,900 ft of gain and ~7,200 ft of loss across its 4 days
+  — consistent with `gain_ft=6200` and nowhere near `loss_ft=13000`. Likely cause:
+  `descent_text` quotes a published trip report describing "the full round trip (camp
+  to camp to trailhead) as a 4-day, ~42-mile, ~13,000 ft trip" — that ~13,000 ft is
+  plainly the TOTAL cumulative vertical for the whole round trip (gain+loss combined,
+  roughly 6,500 up and 6,500 down), not a loss figure on its own. Corrected `loss_ft`
+  to match this row's own `gain_ft`, since nothing on file gives a more precise
+  independent split and every cross-check on the row puts one-way gain/loss in the
+  6,200-7,200 ft range, not 13,000.
+
+**Flagged for human review, not fixed:**
+
+- `wa_mount_fury_east_mongo_ridge` — the route `id` contains "fury_east" but
+  `area_id` (`wa_mount_fury_west`), `high_point_ft` (8303, matching West Peak's
+  elevation, not East Peak's 8356), and every content field (`overview`, `beta`,
+  `waypoints`) unambiguously place this route on Mount Fury's WEST peak — the
+  `overview` field says so outright ("Mongo Ridge is the immense south-west buttress
+  of Mount Fury's West Peak"). This looks like a legacy id-naming artifact from the
+  route-id generation bug CLAUDE.md documents (ids derived from route name + counter
+  rather than reliably encoding peak identity) rather than a wrong `area_id` — the
+  actual foreign-key relationship the app relies on is correct. Renaming a route's
+  primary key is outside this audit's scope (guardrails: no schema changes; a PK
+  rename also risks breaking references from `contributions` or user bookmarks), so
+  this is flagged rather than fixed.
+- `wa_mount_fury_west_west_ridge` ("West Ridge / Northwest Route") — this single
+  route record merges at least two, and likely three, genuinely different and
+  non-interchangeable approaches to Mount Fury's West Peak. (1) The real 1958
+  first-ascent route via Hannegan Pass → Whatcom Pass → the Whatcom Icefall → cliffs
+  above the Challenger Glacier → a Perfect Pass base camp → two chimneys ~1,000 ft
+  below the summit — this is what `pitch_detail` describes, and it matches the
+  externally-verified FA: Duke Watson, Phil Sharpe, Warren Spickard, Vic Josendal, and
+  Maury Muzzy, August 19, 1958, approach via the "upper Challenger Glacier" (confirmed
+  via WebSearch — the `fa` field itself is correct). (2) A modern "standard route via
+  East Fury's connecting ridge," approached from Access Creek/Luna Col off the Big
+  Beaver Trail — this is what `overview`, `beta`, `approach`, `descent`, `waypoints`,
+  `gpx`, `itinerary`, and `approach_logistics` all describe, and it is a completely
+  different, much longer approach from a different trailhead (Ross Dam/Big Beaver
+  rather than Hannegan Pass). (3) A third "northwest glacier and ledges" variant in
+  `approach_variants`/`climbing_route`, whose own `baseFinding` text says it is
+  "documented mainly as a DESCENT by parties traversing the Northern Pickets," which
+  doesn't obviously match either of the other two. The numeric fields (`gain_ft`,
+  `loss_ft`, `dist_km`, `itinerary` totals) are drawn from approach (2) and are
+  roughly self-consistent with it in isolation, but the record as a whole describes
+  three incompatible ways up (and down) one peak under one grade/rating/gear profile.
+  Same class of defect as the already-flagged `wa_mount_fairchild_standard` (pass 4,
+  batch 209, still open): needs an editorial call on which approach this record
+  should describe, or a split into separate route records, not a targeted UPDATE.
+  Secondary note: this row's own `corrections` field (a prior data-QA annotation)
+  claims "fa is left null rather than guessed" and "the peak's elevationFt is
+  currently null in the database" — both are false today (`fa` and the area's
+  `elevation_ft` are both populated), so that field is itself stale, presumably
+  predating whichever later enrichment pass filled those two in.
+
+**Checked, no issue found (verified against external sources this session):**
+
+- `wa_mount_goode_northeast_buttress` — FA (Fred Beckey and Tom Stewart, August 6,
+  1966) and first winter ascent (Bill Pilling and Steve Mascioli, March 3-5, 1984)
+  both confirmed independently via WebSearch (AAC Publications' own "First Winter
+  Ascent" report and multiple guiding/climbing sites), matching this row exactly.
+- `wa_mount_hardy_snow_scramble` — FA (Sidney Schmerling and Hermann Ulrichs, 1933)
+  confirmed via Wikipedia and peakery.com, matching exactly. Elevation note
+  ("8,099 ft, or 8,097 ft depending on the survey") already correctly hedges the
+  2 ft discrepancy against the area row's own 8,097 ft.
+- `wa_mount_hinman_hinman_glacier` — FA year (1928) and 1934 naming for Dr. Harry B.
+  Hinman (a founder of The Mountaineers' Everett branch) both confirmed via Wikipedia
+  and mountaineers.org. The specific, checkable environmental claim that "Hinman
+  Glacier was declared dead (no longer flowing) by 2022" is independently confirmed
+  by multiple 2023 news reports (KUOW/KLCC/CNN/AccuWeather) covering glaciologist
+  Mauri Pelto's August 2022 survey finding the glacier gone — matches this row's text
+  closely, including the detail about the remaining ice being reduced to stagnant
+  patches.
+- `wa_mount_howard_south_slope` — no `fa` on file (correctly left null; nothing found
+  to fill it). `corrections` field's elevation fix (7,063 ft, matching lat/lng
+  47°48'52"N 120°57'17"W) confirmed against the area row's own coordinates
+  (47.8145374, -120.9545411), which match to within normal rounding.
+- `wa_mount_formidable_south_face` — FA (Calder Bressler, Ray Clough, Bill Cox, Tom
+  Myers, July 25, 1938, during the inaugural Ptarmigan Traverse) confirmed via
+  WebSearch. One name was worth double-checking: SummitPost spells the second
+  climber "Ralph Clough," but the dedicated Ptarmigan Traverse history piece at
+  alpenglow.org and a University of California in-memoriam page for the actual
+  person both independently confirm "Ray W. Clough" — the row's stored "Ray Clough"
+  is the better-corroborated spelling, so left as-is.
+- Area/route coordinate placement for all seven peaks checked against their parent
+  `areas` row this session (Mount Formidable, Mount Fury East, Mount Fury West,
+  Mount Goode, Mount Hardy, Mount Hinman, Mount Howard): all match their area row's
+  lat/lng and elevation within normal rounding, all correctly filed within their
+  named ranges (North Cascades Core, Northern Pickets, sub-Wapass area, Alpine Lakes,
+  Nason Ridge/Chiwaukum). No cross-region contamination, no misfiled hierarchy.
+
+**Not verifiable this session, noted for future re-check (not fixed, no confirmed
+replacement value found):**
+
+- `wa_mount_formidable_south_face` — `road.status` states "Currently gated to
+  vehicles at milepost 20 (Eldorado) for storm/flood repairs; foot and bike travel is
+  permitted beyond the gate." WebSearch found a Washington Trails Association trip
+  report from July 2, 2026 noting the gate was still closed that day but "Forest
+  Service personnel indicated it would open that day" — no September 2026
+  confirmation either way was found. Given ~2.5 months have passed and mid-September
+  is peak climbing season, this is plausibly stale (reopened), but I have no source
+  confirming current status, so left as-is per the audit's own rule against guessing.
+  Worth a direct check against nps.gov/noca or WSDOT next pass (this session's
+  WebFetch calls to nps.gov, alpinist.com, cascadeclimbers.com, summitpost.org,
+  alpenglow.org, and several other climbing/mountaineering domains were all blocked
+  by the network egress proxy — `EGRESS_BLOCKED` on essentially every direct fetch
+  attempted this session, though WebSearch itself worked normally and its synthesized
+  snippets — several quoting primary sources like AAC Publications and NPS press
+  releases directly — were the only way to verify facts this session).
+- `wa_mount_fury_east_southeast_glaciers` — `access.closures` for the Luna Fire (Big
+  Beaver Trail, Little Beaver Trail, Luna/Sourdough/Prophet cross-country zones) and
+  the separate hazard-tree closures of Whatcom Camp/Graybeal Camp were both
+  independently re-confirmed as still in effect as of this session (per NPS's own
+  August/September 2026 fire-closure updates found via WebSearch) — correctly no
+  fix needed today, but these are exactly the kind of undated, open-ended closure
+  text CLAUDE.md's `audit:expiring-closures` concept warns about and will need
+  re-verification once the fire season resolves.
+
+**Tooling note:** `check-sql-targets.mjs` initially flagged the `fa` UPDATE with
+"no literal id predicate — not checkable," for the exact same reason logged in
+batch 274: a semicolon inside the free-text replacement value (inside "...four-day
+solo ascent; departed the Ross Dam Trailhead...") fooled the script's naive
+semicolon-based statement splitter. Reworded to drop the internal semicolon; the
+script then confirmed both UPDATE targets exist and no DELETE is present. File is
+4.7KB, over the SQL Editor's ~4KB soft paste limit — split into chunks before
+pasting, per the script's own warning.
+
+SQL: `audits/sql/2026-09-17-batch-275.sql` (2 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_howard_south_slope` (see
+progress file); `wa_mount_index_north_norwegian_buttress` is skipped as out of
+scope (crag, not peak) and the next route is `wa_mount_index_north_peak_traverse`.
