@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_rainier_emmons_glacier",
+  "last_processed_id": "wa_mount_rainier_mowich_face",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5652,6 +5652,25 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-09-17-batch-278.sql",
       "note": "wa_mount_pilchuck_standard_route access.rules claimed a Glacier Peak Wilderness group-size/campfire rule that contradicts the same row's own access.landManager (Mount Pilchuck State Park) and is geographically wrong (Pilchuck sits ~50km west of Glacier Peak Wilderness); false claim removed rather than replaced with an unverified state-park-specific rule. Curtis Ridge's Camp Schurman waypoint looked like cross-route contamination at first read but is correct -- the route's own descent_text explains it is the standard descent via Emmons-Winthrop."
+    },
+    {
+      "batch_number": 279,
+      "date": "2026-09-17",
+      "route_ids": [
+        "wa_mount_rainier_fuhrer_finger",
+        "wa_mount_rainier_fuhrer_thumb",
+        "wa_mount_rainier_gibraltar_ledges",
+        "wa_mount_rainier_ingraham_direct",
+        "wa_mount_rainier_kautz_glacier",
+        "wa_mount_rainier_kautz_headwall",
+        "wa_mount_rainier_liberty_ridge",
+        "wa_mount_rainier_mowich_face"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-17-batch-279.sql",
+      "note": "Liberty Ridge waypoints/gpx were cross-route contamination from a different (Mowich/Puyallup side) Rainier route -- fixed by removing the contaminated entries rather than fabricating a replacement track. Fuhrer Thumb beta and Ingraham Direct season each contradicted their own row's best_season/overview fields; corrected to match. Fuhrer Finger fa was missing a fifth first-ascent party member (Peyton Farrer), added per three consistent web sources. Mowich Face season vs best_season contradiction flagged rather than fixed -- three non-overlapping candidate windows found across sources, none confirmed as definitive for this specific route."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."

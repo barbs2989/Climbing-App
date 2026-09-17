@@ -21204,3 +21204,93 @@ SQL: `audits/sql/2026-09-17-batch-278.sql` (1 UPDATE statement, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_rainier_emmons_glacier` (see
 progress file); the next route in scope is `wa_mount_rainier_fuhrer_finger`.
+
+## 2026-09-17 — Pass 5, Batch 279
+
+Eight routes, all on Mount Rainier: Fuhrer Finger, Fuhrer Thumb, Gibraltar Ledges,
+Ingraham Direct, Kautz Glacier, Kautz Headwall, Liberty Ridge, Mowich Face.
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-279.sql`:**
+- `wa_mount_rainier_fuhrer_finger` — `fa` names only four climbers. Three independently
+  worded web searches consistently return a five-person first-ascent party for July 2,
+  1920 (Hans Fuhrer, Heine Fuhrer, Joseph Hazard, Peyton Farrer, Thomas Hermans); "Peyton
+  Farrer" added.
+- `wa_mount_rainier_fuhrer_thumb` — `beta` contained a stray "best season
+  June-September" clause directly contradicting this row's own `season` ("Apr-Jun"),
+  `best_season` ("Spring (roughly April-June)..."), and `turnaround` ("descend before
+  south-aspect warming triggers rockfall") fields, plus external route-condition sources
+  describing Fuhrer Thumb/Finger as spring "corn season" lines that get dangerous with
+  rockfall once bare in summer. Reads like a boilerplate fragment from an unrelated
+  summer-season template; removed.
+- `wa_mount_rainier_ingraham_direct` — `season` claimed the route is "Typically climbed
+  January through end of May, often under winter-like conditions," contradicting this
+  row's own `overview`, `best_season`, and `seasonal_guidance.monthBreakdown` (all: late
+  May–June, before the headwall breaks up and parties switch to the Disappointment
+  Cleaver). External sources confirm this is specifically an early-summer (May–June)
+  alternative that becomes uncrossable as the season progresses, not a winter route.
+  Corrected to match the row's own overview/best_season window.
+- `wa_mount_rainier_liberty_ridge` — `waypoints` and `gpx` are cross-route contamination.
+  Liberty Ridge is approached exclusively from the northeast (White River → Glacier
+  Basin → St. Elmo Pass → Winthrop Glacier → Curtis Ridge → Carbon Glacier), stated
+  consistently and repeatedly elsewhere on the same row (`approach`,
+  `approach_logistics.trailheadDirection`, `bivy[0]` naming Curtis Ridge, `descent_text`,
+  every `itinerary.days[].note`) and matching the published route description (The
+  Mountaineers' Liberty Ridge page). Instead the stored waypoints/gpx traced through
+  "Mowich Lake Camp," "Puyallup Winthrop Junction Camp," and "Puyallup Glacier Serac
+  Zone" — real places, but on the opposite (northwest/southwest) side of the mountain
+  near the Mowich Face/Sunset Amphitheater, 12+ km from Liberty Ridge's own trailhead in
+  a direction the route never travels, and never mentioned anywhere else on the row.
+  Fixed by removing the three contaminated waypoints and clearing the wrong gpx track,
+  not by fabricating a corrected one — no source this run gave precise coordinates for
+  St. Elmo Pass/Curtis Ridge/Thumb Rock on this specific route to reconstruct a track.
+  The two waypoints kept (White River trailhead, Liberty Cap summit) are each
+  independently corroborated on the row (trailhead matches
+  `approach_logistics.trailheadLat/Lng` exactly; Liberty Cap is within ~30 m of an
+  independently published coordinate and matches `high_point_ft` exactly).
+
+**Clean (verified against independent sources, no changes):**
+- `wa_mount_rainier_gibraltar_ledges` — `fa` (Hazard Stevens and P.B. Van Trump, August
+  17, 1870) is the mountain's well-established documented first ascent; `season`
+  ("Winter through spring... into early June") and `best_season` ("December to April")
+  are consistent, not contradictory (best_season is the narrower optimal window inside
+  the broader climbable range).
+- `wa_mount_rainier_kautz_glacier` — `fa`'s two-part claim (Wapowety/A.V. Kautz/O.R.
+  Craig party reaching ~12,000 ft in July 1857 without summiting; first full ascent via
+  this line June 26–28, 1920 by Hans Fuhrer, Heinie Fuhrer, Roger Toll, and Harry Myers)
+  matches published accounts closely (this is the fix already applied in an earlier pass
+  per PR #468's notes — re-confirmed clean this pass).
+- `wa_mount_rainier_kautz_headwall` — `season`/`best_season` consistent (best_season a
+  narrower subset); no FA claim stored, so nothing to check there; other fields internally
+  consistent.
+- `wa_mount_rainier_liberty_ridge` (remaining fields) — `fa` (Ome Daiber, Will Borrow, and
+  Arnold Campbell, September 28–October 1, 1935) matches published accounts (AAC
+  Publications, explorersweb) exactly; `high_point_ft` 14112 and the Liberty Cap waypoint
+  match the published Liberty Cap elevation/coordinate.
+
+**Flagged for human review:**
+- `wa_mount_rainier_mowich_face` — `season` ("Jun-Aug") contradicts this row's own
+  `best_season` ("May to June"), and external sources add a third candidate: at least one
+  route-conditions source describes the Mowich Face specifically being "in" during
+  October–November shoulder season, when most other Rainier routes are out of condition.
+  With three non-overlapping candidate windows (Jun-Aug / May-Jun / Oct-Nov) and no
+  source this run confirming which is authoritative for this specific route (as opposed
+  to the broader Mowich/Edmunds/Ptarmigan Ridge routes on that side of the mountain),
+  this is left for a human to resolve rather than guessed at. The `fa` field's own
+  hedging ("exact years for these could not be confirmed in available sources") for the
+  North/South Mowich Face variants is appropriate as written and not changed.
+
+**Tooling note:** one statement in this batch's SQL file (`wa_mount_rainier_fuhrer_thumb`)
+triggered `check:sql`'s "no literal id predicate — not checkable" warning, because the
+`beta` field's text itself contains several literal semicolons, which the checker's
+naive semicolon-based statement splitter (documented in its own header as a known
+simplification) mis-parses as multiple statements. Manually re-verified via a direct API
+read immediately before finalizing that `id = 'wa_mount_rainier_fuhrer_thumb'` exists and
+its live `beta` value exactly matches the WHERE guard in the SQL file, so the statement
+is safe despite the checker being unable to confirm it automatically. All other 3
+statements passed `check:sql` cleanly (every target id exists; no DELETE removes an only
+copy).
+
+SQL: `audits/sql/2026-09-17-batch-279.sql` (4 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_rainier_mowich_face` (see
+progress file); the next route in scope is `wa_mount_redoubt_south_face`.
