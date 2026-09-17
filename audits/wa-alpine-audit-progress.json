@@ -2,8 +2,8 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_persis_west_ridge",
-  "total_in_scope_last_count": 529,
+  "last_processed_id": "wa_mount_rainier_emmons_glacier",
+  "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
     {
@@ -5633,6 +5633,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-09-17-batch-277.sql",
       "note": "Cross-route contradiction: wa_mount_mathias_scramble and wa_mount_olympus_blue_glacier both dated the Upper Hoh Road washout/closure to the wrong year (one said Dec 2025-May 2026, the other Dec 2024-May 2026); the sibling wa_mount_olympus_west_ridge already had the correct dates (Dec 2024, restored May 8 2025) and served as the cross-check, confirmed independently against Seattle Times/KOMO/Washington State Standard/Jefferson County reporting. Both fixed with replace() on the wrong date fragment. wa_mount_persis_west_ridge/wa_mount_persis_the_hexorcist's Hampton Resources FR-62 permit claim flagged for human review (broadly consistent with Hampton's published program but current fee/free status not pinned down). All other facts checked (peak elevations, coordinates, FA parties/dates) verified clean against independent sources."
+    },
+    {
+      "batch_number": 278,
+      "date": "2026-09-17",
+      "route_ids": [
+        "wa_mount_pilchuck_east_ridge",
+        "wa_mount_pilchuck_standard_route",
+        "wa_mount_price_hester_lake_route",
+        "wa_mount_rahm_standard",
+        "wa_mount_rainier_curtis_ridge",
+        "wa_mount_rainier_disappointment_cleaver",
+        "wa_mount_rainier_edmunds_headwall",
+        "wa_mount_rainier_emmons_glacier"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 0,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-09-17-batch-278.sql",
+      "note": "wa_mount_pilchuck_standard_route access.rules claimed a Glacier Peak Wilderness group-size/campfire rule that contradicts the same row's own access.landManager (Mount Pilchuck State Park) and is geographically wrong (Pilchuck sits ~50km west of Glacier Peak Wilderness); false claim removed rather than replaced with an unverified state-park-specific rule. Curtis Ridge's Camp Schurman waypoint looked like cross-route contamination at first read but is correct -- the route's own descent_text explains it is the standard descent via Emmons-Winthrop."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."

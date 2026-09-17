@@ -21136,3 +21136,71 @@ SQL: `audits/sql/2026-09-17-batch-277.sql` (2 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_persis_west_ridge` (see progress
 file); the next route in scope is `wa_mount_pilchuck_east_ridge`.
+
+## 2026-09-17 — Pass 5, Batch 278
+
+Eight routes across six peaks (Mount Pilchuck, Mount Price, Mount Rahm, Mount Rainier x4):
+East Ridge, Standard Route (Pilchuck); Hester Lake Route (Price); Standard Route/Glacier
+(Rahm); Curtis Ridge, Disappointment Cleaver, Edmunds Headwall, Emmons-Winthrop Glacier
+(Rainier).
+
+**Confirmed error → fix in `sql/2026-09-17-batch-278.sql`:**
+- `wa_mount_pilchuck_standard_route` — `access.rules` claimed a 12-person group-size cap
+  and a campfire ban above 3,500 ft "inside Glacier Peak Wilderness." This contradicts the
+  row's own `access.landManager` two keys over, which correctly says the upper trail and
+  summit lie within Mount Pilchuck State Park. Confirmed against Washington State Parks'
+  own Mount Pilchuck State Park page: it's a 1,893-acre state park (with a 1,897-acre
+  Natural Forest Area designated in 1990) surrounded by but distinct from Mount
+  Baker-Snoqualmie National Forest, carrying no federal wilderness designation at all.
+  Glacier Peak Wilderness is a separate federal Wilderness Area centered on Glacier Peak,
+  roughly 50 km east of Pilchuck's summit — the two don't overlap. Reads like boilerplate
+  wilderness-permit language copied onto the row from an actual Glacier-Peak-Wilderness
+  route elsewhere in the catalog. Fixed by removing the false claim rather than inventing
+  a replacement group-size/campfire rule for the state park, which wasn't confirmed from
+  an authoritative source this run.
+
+**Clean (verified against independent sources, no changes):**
+- `wa_mount_pilchuck_east_ridge` / `wa_mount_pilchuck_standard_route` — `high_point_ft`
+  5324 matches the published fire-lookout elevation; `approach_logistics` peak coordinates
+  (48.057974,-121.797918) match Wikipedia's 48°03'28.7"N 121°47'52.1"W to five decimal
+  places; Pinnacle Lake / FR 4020-4021 driving directions and the ~2,700 ft trailhead
+  elevation match published directions verbatim.
+- `wa_mount_price_hester_lake_route` — `high_point_ft` 5587 matches the published
+  elevation (1,703 m) exactly; Dingford Creek Trailhead coordinates in
+  `approach_logistics` (47.5172,-121.45437) match the USFS-derived coordinate exactly, and
+  the "18 miles from North Bend" driveNote matches published directions verbatim.
+- `wa_mount_rahm_standard` — `high_point_ft` 8485 is within 1 ft of Wikipedia's 8,486 ft;
+  `fa` "Joe Hutton, Peggy Hutton, Roy Mason; 1955" matches Wikipedia exactly; peak
+  coordinates are within ~160 m of Wikipedia's, ordinary cross-source variance; the "small
+  extinct caldera" claim is corroborated (the Mount Rahm Caldera is a documented
+  Eocene-age feature).
+- `wa_mount_rainier_curtis_ridge` — `high_point_ft` 13800 and the "point of no return"
+  rappel at 10,300 ft both match route beta describing a rappel off a boulder anchor at
+  10,300 ft, then easy snow to the top of the ridge at 13,800 ft (below the 14,406 ft true
+  summit); `fa` "Gene Prater and Marcel Schuster" matches the AAC's own account of the
+  first ascent. Its "Camp Schurman" waypoint looked like cross-route contamination from
+  the Emmons-Winthrop route at first read — it appears nowhere in this route's own
+  overview/beta/approach text — but `descent_text` explains it's the standard descent
+  point after finishing the ridge and continuing down Emmons-Winthrop, so the row is
+  internally consistent; no fix needed.
+- `wa_mount_rainier_disappointment_cleaver` — `fa` note (first climbed Aug 17, 1870 by
+  Hazard Stevens and P.B. Van Trump via Gibraltar Ledges, not the DC) is well-established
+  history; Paradise trailhead coordinates and `gain_ft` 9000 (Paradise 5,400 ft to summit
+  14,406 ft) both check out.
+- `wa_mount_rainier_edmunds_headwall` — `high_point_ft` 14112 matches Liberty Cap's
+  published elevation exactly, and external route descriptions confirm the route tops out
+  on the buttress below Liberty Cap rather than the true summit.
+- `wa_mount_rainier_emmons_glacier` — `fa` "Rev. J. Warner Fobes, George James, and
+  Richard O. Wells, August 20, 1884" and the parenthetical "first ski descent ... Roberts,
+  Bengtson, Welsh, Schmidtke, 1947" both match published accounts exactly.
+
+**Flagged for human review:** none this batch.
+
+**Tooling note:** file is 8.8KB, over the SQL Editor's ~4KB soft paste limit (the single
+UPDATE statement itself is small; the size is almost entirely the documentation comment
+block) — split into chunks before pasting, per the script's own warning.
+
+SQL: `audits/sql/2026-09-17-batch-278.sql` (1 UPDATE statement, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_rainier_emmons_glacier` (see
+progress file); the next route in scope is `wa_mount_rainier_fuhrer_finger`.
