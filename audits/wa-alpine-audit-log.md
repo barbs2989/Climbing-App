@@ -21075,3 +21075,64 @@ SQL: `audits/sql/2026-09-17-batch-276.sql` (1 UPDATE statement, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_logan_r2` (see progress
 file); the next route in scope is `wa_mount_mathias_scramble`.
+
+---
+
+## 2026-09-17 — Pass 5, Batch 277
+
+Eight routes on four peaks (Mount Mathias, Mount Maude, Mount Mystery, Mount Olympus,
+Mount Persis): Bailey Range Scramble (Mathias); North Face, Entiat Ice Fall (Maude);
+Standard Scramble (Mystery); Blue Glacier, West Ridge (Olympus); The Hexorcist, West Ridge
+(Persis).
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-277.sql`:**
+- `wa_mount_mathias_scramble` and `wa_mount_olympus_blue_glacier` both had `road.status`
+  dating the Upper Hoh Road washout/closure to the wrong year. All three routes on this
+  batch that share the Hoh River Trailhead (these two plus `wa_mount_olympus_west_ridge`)
+  describe the same real closure event but disagreed on when: Mathias said "Dec 2025 until
+  ... May 2026," Blue Glacier said "December 2024 until ... May 2026," and West Ridge said
+  "Dec 2024 ... restored as of May 8, 2025." Verified against multiple independent sources
+  (Seattle Times, KOMO News, Washington State Standard, Peninsula Daily News, Jefferson
+  County's own MP 9.8 repair page): there was exactly one closure — announced Dec 20, 2024
+  after a river-undercut washout near MP 9.7-9.9, reopened to all traffic May 8, 2025 after
+  $623k in state emergency funding. West Ridge already had it right (down to the exact
+  reopening date) and served as the cross-check. Fixed the other two with a surgical
+  `replace()` on just the wrong year fragment rather than retyping the full paragraph.
+
+**Clean (verified against independent sources, no changes):**
+- `wa_mount_mystery_standard` — `high_point_ft` 7639 matches Wikipedia exactly.
+- `wa_mount_persis_the_hexorcist` / `wa_mount_persis_west_ridge` — `high_point_ft` 5464
+  and `fa` "1917 ... Harry B. Hinman" both match Wikipedia exactly.
+- `wa_mount_maude_r1` — `fa` "Fred Beckey, Don Gordon, John Rupley, Herb Staley" matches
+  the AAC's own 1957 first-ascent account.
+- `wa_mount_olympus_blue_glacier` / `wa_mount_olympus_west_ridge` — `high_point_ft` 7980
+  and `fa` "Lorenz A. Nelson party (The Mountaineers), Aug 13, 1907" both match Wikipedia
+  and The Mountaineer's own 1907 account; `approach_logistics` peak coordinates match
+  published West Peak coordinates to five decimal places.
+- `wa_mount_mathias_scramble` — `high_point_ft` 7156 and peak coordinates both match
+  Wikipedia (7,156 ft; 47°48'18"N 123°40'37"W) closely.
+- `wa_mount_maude_r2` (Entiat Ice Fall) — thin 2-point gpx/waypoints is a data-completeness
+  gap consistent with many under-enriched rows in this catalog, not a factual error.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_mount_persis_west_ridge` / `wa_mount_persis_the_hexorcist` — both claim a Hampton
+  Resources recreational-access permit is required for FR-62. Broadly consistent with
+  Hampton Lumber's own published North Cascades Recreation FAQ (a free permit system,
+  formerly Weyerhaeuser-run, now via myoutdooragent.com), but the current fee/free status
+  specific to this road couldn't be pinned to one authoritative page this run — needs a
+  human with direct access to Hampton's permit portal to confirm current terms.
+
+**Tooling note:** the first draft of the SQL wrote each corrected paragraph out as a full
+literal string, which `check-sql-targets.mjs` could not validate for the Mathias row — the
+row's own pre-existing text contains a semicolon ("Paved to both trailheads; Upper Hoh
+Road...") that the checker's comment-stripped, naive `split(";")` mistook for a statement
+boundary, silently producing an unverifiable fragment. Rewritten to use `replace()` on just
+the wrong date substring instead of the whole paragraph, which sidesteps the issue and is
+also less error-prone to transcribe. Re-ran the checker after the rewrite: both targets now
+verify cleanly. File is 5.5KB, over the SQL Editor's ~4KB soft paste limit — split into
+chunks before pasting, per the script's own warning.
+
+SQL: `audits/sql/2026-09-17-batch-277.sql` (2 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_persis_west_ridge` (see progress
+file); the next route in scope is `wa_mount_pilchuck_east_ridge`.
