@@ -21517,3 +21517,115 @@ and one inside the *replacement* text (worked around by rephrasing with an em da
 
 Next batch continues in sorted-id order after `wa_mount_stuart_girth_pillar` (see
 progress file).
+
+## 2026-09-17 — Pass 5, Batch 283
+
+Eight routes across two peaks: Ice Cliff Glacier, North Face, North Ridge (Complete),
+Stuart Glacier Couloir, The Gendarme, West Ridge (Mount Stuart); Kamikaze Trail,
+Standard Route (Mount Teneriffe). Continued in sorted-id order after batch 282's
+`wa_mount_stuart_girth_pillar`.
+
+**Systemic finding this batch surfaces:** re-checking this exact 8-route Mount
+Stuart/Teneriffe cluster against the live DB found that essentially every fix
+previously *diagnosed* for it across three separate passes — batch 90 (pass 2,
+2026-08-09), batch 153 (pass 3, 2026-08-27), batch 217 (pass 4, 2026-09-06) — was still
+unapplied live. Same shape as the earlier, narrower note about batches 206-207
+(Mount Baker-area routes), now confirmed on a second, unrelated cluster: the diagnoses
+were correct, the SQL was written, but application appears to have silently stalled
+somewhere after batch review. This batch re-verified every prior finding against
+current live values before re-issuing guarded UPDATEs, rather than assuming the earlier
+SQL files were already applied and skipping ahead.
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-283.sql`:**
+- Ice Cliff Glacier (Stuart): `dist_km` (24.14 km) stores the already-doubled
+  round-trip figure instead of the one-way distance the app convention doubles for
+  display — the row's own `itinerary.totalNote` states "~6,000 ft gain over ~15 mi
+  round trip," so one-way is 7.5 mi = 12.07 km. Originally diagnosed batch 90 alongside
+  the identical bug on Girth Pillar (separately re-confirmed already fixed live).
+- Ice Cliff Glacier, Stuart Glacier Couloir (Stuart): both rows' `access.notes` says
+  "Northwest Forest Pass required... No specific climbing permit," contradicting each
+  row's own `permit` field and `access.rules` (Enchantment Permit Area 8-person group
+  cap), despite both routes' standard itinerary requiring an overnight bivy inside that
+  same permit boundary. Originally diagnosed batch 90/217; the 2026 lottery window
+  (Feb 15–Mar 1 application, results after Mar 17) independently re-confirmed current
+  via web search (explorewithalec.com, outdoorstatus.com, PermitSnag, all agreeing).
+- North Face, The Gendarme (Stuart): both rows' "Mount Stuart summit" waypoint stores
+  lng -120.9022, ~68 m off the peak's own established coordinate (47.475118,
+  -120.903144), which matches `areas.wa_mount_stuart` and the summit waypoint already
+  correct on the sibling Ice Cliff Glacier row. Externally re-confirmed against the
+  USGS-cited summit coordinate. Originally diagnosed batch 153.
+- North Ridge/Complete (Stuart): `pitches` (20) contradicts this row's own 18-entry
+  `pitch_detail` array and its own `overview`/`itinerary.totalNote` (both say "~18
+  pitches"). Originally diagnosed batch 90.
+- North Ridge/Complete (Stuart): `access` has no `notes` key at all, unlike its Stuart
+  Lake trailhead siblings — never states the Enchantment lottery requirement anywhere
+  in `access`, though `permit` states it correctly. Worth closing given this is one of
+  the mountain's Fifty Classic Climbs. Originally diagnosed batch 217.
+- Stuart Glacier Couloir (Stuart): `gain_ft` (6,015) doesn't sum from this row's own
+  itinerary days (2,600 + 3,400 = 6,000) and exactly matches the sibling North Ridge
+  row's figure — a likely copy-paste bleed. Corrected to match this row's own `loss_ft`
+  (6,000) and its own totalNote ("roughly 6,000 ft gain"). Originally diagnosed
+  batch 90.
+- The Gendarme (Stuart): `descent` said "retracing the ascent when possible," directly
+  contradicting this same row's own `descent_text` (false summit + Cascadian Couloir
+  to Ingalls Creek — consistent with every sibling Stuart North Ridge route, none of
+  which treat retracing above the Gendarme as an option). Rewritten to match
+  `descent_text`. Originally diagnosed batch 90.
+- The Gendarme (Stuart): `fa` was null, though this row's own `corrections` field notes
+  it describes only the Gendarme tower's own two pitches, and the first *direct* ascent
+  of the tower (distinct from the 1956 ascent that turned it on ledges to the west, per
+  this row's own `approach_variants` baseFinding) is James Wickwire & Fred Stanley,
+  1964 — consistent with the sibling North Ridge row's own overview and externally
+  corroborated batch 153.
+- Kamikaze Trail, Standard Route (Teneriffe): both rows' `road.driveNote` (and the
+  Standard Route's own `approach` text) cite "I-90 Exit 31 (North Bend)" for reaching
+  SE Mount Si Road. WSDOT's own interchange documentation identifies Exit 31 as
+  SR-202/Bendigo Blvd into downtown North Bend; WSDOT and iExit both identify Exit 32
+  (436th Ave SE) as the interchange for Mount Si Road and the Mount Si/Little
+  Si/Teneriffe trailheads, matching the driving directions this catalog's own text
+  describes under the wrong exit number. Originally diagnosed and externally confirmed
+  batch 153; independently re-confirmed here against WSDOT's exit-31 interchange
+  documentation and iExit's exit-32 listing.
+- Kamikaze Trail, Standard Route (Teneriffe): both rows' `bivy` array carried the
+  identical 7-entry list shared verbatim across five unrelated Exit-34 Middle
+  Fork/Taylor River corridor routes (Garfield Mountain, Mount Price ×2, Preacher
+  Mountain, Treen Peak — confirmed by direct query, all five carry the same array).
+  Teneriffe is not part of that corridor — its area's parent is `wa_north_bend_vicinity`,
+  not the Middle Fork/Taylor River area, and it's reached via SE Mount Si Road/DNR
+  Mount Si NRCA rather than the Middle Fork Road. Six of the seven entries describe
+  camps for Mount Price, Treen Peak, Preacher Mountain and Garfield Mountain
+  specifically and have no connection to a Teneriffe climb. Pruned to the one surviving
+  entry that is actually about this peak ("Mount Teneriffe and the Mount Si
+  conservation area, no overnight"), which is self-aware of exactly this — its own text
+  already states Teneriffe "has a different land manager, a different pass and
+  different rules" from "the other peaks here" and covers everything a Teneriffe party
+  needs (no legal overnight option on the mountain; nearest developed camp, Middle Fork
+  Campground, ~20 minutes' drive away). The five real Middle Fork corridor routes are
+  out of scope for this batch and untouched.
+
+**Flagged for human review, not fixed (matches prior-batch precedent):**
+- West Ridge (Stuart): `dist_km` ambiguity flagged in an earlier pass over this
+  cluster — re-checked and left unresolved this batch for the same reason (loop/return
+  geometry makes a simple one-way/round-trip halving unsafe without more research).
+- North Ridge/Complete (Stuart): FA attribution disagreement across sources flagged in
+  an earlier pass — re-checked and left unresolved this batch; sources still disagree
+  and no single authoritative account was found to settle it.
+
+**Verified clean, no changes:**
+- Peak elevation and summit coordinate for Mount Stuart (9,415 ft; 47.475118,
+  -120.903144) re-confirmed against `areas.wa_mount_stuart` and USGS.
+- 2026 Enchantment Permit Area lottery window (Feb 15–Mar 1 application, results after
+  Mar 17, accept/pay by Mar 31) independently re-confirmed current for the second time
+  this pass.
+
+SQL: `audits/sql/2026-09-17-batch-283.sql` (15 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy). One WARN:
+file is ~13.6KB, well over the SQL Editor's ~4KB silent-truncation soft limit — split
+into ~1.5KB chunks and verify each chunk lands before pasting the next. As with batch
+282, two statements' WHERE-clause/replacement text needed rewording around this
+checker's naive statement-splitter and comment-stripper (embedded semicolon and
+embedded double-hyphen inside string literals) — reworded using `LIKE` prefix matches
+and em dashes rather than semicolons/double-hyphens.
+
+Next batch continues in sorted-id order after `wa_mount_teneriffe_standard_route` (see
+progress file).
