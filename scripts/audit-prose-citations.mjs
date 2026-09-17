@@ -59,7 +59,21 @@ const ROAD_ACCESS = [["road", "status"], ["road", "seasonalGate"], ["road", "dri
 const COMMON_NOUN = /\bpeakbaggers\b|\bpeakbagger\b|\bPeakbaggers\b|\bpeakbagging\b|\bPeakbagging\b/g;
 const deCommonNoun = (t) => t.replace(COMMON_NOUN, (m) => "x".repeat(m.length));
 
-const NAMED = /\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
+// ADDED 2026-09-16, measured the same way the rack columns were: a COMMERCIAL FORECAST SITE was a
+// whole family this list could not name. `climate` has been scanned for weeks and
+// `climate.forecastZone` renders verbatim on the route page as "Forecast zone - <value>", yet 45 WA
+// values credited mountain-forecast.com there and NAMED matched none of them -- the deny-list-is-one-
+// adjective-short shape, arriving in the publisher list rather than in a rule.
+//
+// THE HYPHEN IS THE WHOLE PRECISION RULE, and a bare /mountain[- ]?forecast/i was measured and
+// REJECTED: it reports 55 values of which 10 are ORDINARY ENGLISH meaning "a forecast for the
+// mountain" -- "a summit-elevation mountain forecast", "NWS mountain forecast zone", Environment
+// Canada's "Fraser Valley/North Shore mountain forecast". Flagging those tells an author to delete
+// correct prose. Hyphenated it is the brand: 45 hits, 0 false positives on the live catalog
+// (scripts/oneoff/measure-forecast-site-citations.mjs). It UNDER-reports by one -- Remmel's
+// "Mountain Forecast weather predictions" spells the brand with a space -- which is the safe
+// direction, and this list has always been a floor rather than a total.
+const NAMED = /\bmountain-forecast\b|\bWTA\b|Washington Trails Association|AllTrails|SummitPost|Peakbagger|Mountain ?Project|Wikipedia|CalTopo|\bGaia\b|Mountaineers\.org|WenatcheeOutdoors|Beckey(?:'s)?\s+(?:guide|guidebook)|\bguidebooks?\b|trip[- ]report aggregator|OpenStreetMap|Google (?:Maps|Earth)/i;
 // The act of sourcing, even when the publisher is unnamed.
 // The act of sourcing, even when the publisher is unnamed. THE WORD "SOURCE" ON ITS OWN IS USELESS
 // HERE: waypoint notes say "reliable water source" and "Source Lake" (a real place in the Alpental
