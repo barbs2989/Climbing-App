@@ -21737,3 +21737,90 @@ Teneriffe cluster) were confirmed still unapplied to the live DB as of batch 283
 
 Next batch continues in sorted-id order after
 `wa_mount_torment_torment_forbidden_traverse` (see progress file).
+
+## Batch 285 (pass 5) — 2026-09-17
+
+Routes: wa_mount_triumph_northeast_ridge, wa_ne_ridge (Cathedral Peak, Pasayten),
+wa_needle_peak_north_ridge, wa_neve_glacier_west_ridge (Snowfield Peak),
+wa_news_nw_corner (North Early Winters Spire), wa_nooksack_tower_beckey_route,
+wa_nooksack_tower_south_face, wa_north_face_3 (Lexington Tower).
+
+**Fixed:**
+- Snowfield Peak (Neve Glacier/West Ridge): `gain_ft` was 7,400, disagreeing with this
+  row's own itinerary — day 1 gainFt (4,600) + day 2 gainFt (2,650) = 7,250, and
+  `itinerary.totalNote` independently restates "~7,250 ft gain round trip" in prose.
+  `loss_ft` (7,250) already matched that sum exactly; only `gain_ft` was off by 150 ft.
+  Both values clear the hard trailhead(1,150 ft)-to-summit(8,351 ft) floor of 7,201 ft,
+  so only reading the itinerary caught it, not the floor test. Corrected to 7,250.
+- Same route: `bivy` carried a 6-entry camp list (Neve Camp, Junction Camp, Skagit Queen
+  Camp, Thunder Basin Hiker Camp, Fremont Glacier moraine high camp, Five Mile Camp/Park
+  Creek trail) that is entirely the Thunder Creek Trail/Park Creek Pass corridor serving
+  Mount Logan, Buckner Mountain, Booker Mountain and Storm King — every entry says so in
+  its own text ("staging camp for Booker, Storm King and Buckner", etc.) — and is reached
+  from a different trailhead (Colonial Creek) than this route's own approach (Pyramid Lake
+  Trailhead → climbers' path → Colonial-Neve col). None of the six entries mentions
+  Pyramid Lake, the Colonial Glacier or the Neve Glacier. Cleared to NULL rather than
+  rewritten, since this route's own itinerary already states its actual camp location in
+  prose and nothing route-specific was in the contaminated list to preserve.
+- Same route: `access.rules` carried a misapplied Boston Basin camping-restriction clause
+  ("Boston Basin camping restricted to two designated sites...") — Boston Basin is the
+  approach basin for Forbidden Peak/Sahale/Torment via Cascade Pass, an unrelated valley;
+  nothing else on this row mentions it. Removed, keeping the surrounding generic NPS
+  backcountry rules (group size cap, bear canisters).
+- Nooksack Tower North Face (Beckey-Schmidtke): `pitch_detail[0]` (the ice-couloir
+  approach pitch) stored `lengthM: 50` (164 ft), contradicted by the same feature's length
+  stated identically three times elsewhere on this row: beta ("an 800-foot, 50-degree ice
+  couloir"), itinerary day 2's schedule, and approach_variants[0].baseFinding ("800 ft of
+  50-degree ice couloir above [the bergschrund]"). The row's own top-level `length_m`
+  (610) independently corroborates this: 800 ft (couloir) + 1,200 ft (the rock arete,
+  per beta/overview) = 2,000 ft = 609.6 m ≈ 610 — confirming the couloir pitch, not the
+  rock arete, carried the wrong figure. Corrected to 244 (800 ft).
+- Nooksack Tower South Face: `access.landManager` said "National Park Service (North
+  Cascades National Park)" only, disagreeing with this same row's own, more detailed
+  `land_manager` field and with the sibling North Face route on the identical peak (both
+  of which correctly describe Mt. Baker-Snoqualmie NF/Mount Baker Wilderness with some
+  upper routes crossing into the park). Corrected to match.
+
+**Flagged for human review, not fixed:**
+- Needle Peak: `access.landManager` (Okanogan-Wenatchee National Forest) sits oddly next
+  to a `permit` field describing North Cascades NP backcountry permits for the same route.
+  Web research corroborates this could be genuinely correct rather than an error — Bonanza
+  Peak, the ultimate destination of the connecting ridge this route's first ascent climbed
+  toward, is confirmed (Wikipedia) to sit in the Glacier Peak Wilderness of the Wenatchee
+  National Forest, and this row's own bivy entry for the neighboring Flora Mountain
+  explicitly describes the same pattern: the Stehekin/Agnes Creek approach corridor is
+  NP/Lake Chelan NRA land while a given peak beyond it may sit across the wilderness
+  boundary into national forest land. Left as-is rather than guessed at.
+- Snowfield Peak: `access.notes` claims a Northwest Forest Pass is required at the Pyramid
+  Lake Trailhead, while `access.passRequired` says none is (consistent with NPS/Ross Lake
+  NRA land having no entrance fee). Web sources themselves disagree on this specific
+  trailhead — some hiking sites say a Forest Pass is required, others say it's one of the
+  fee-free exceptions within the park complex — so this was left unresolved rather than
+  picking a side without a clean authoritative answer.
+
+**Verified clean, no changes:**
+- Mount Triumph Northeast Ridge: `emergency.county` "Whatcom" was initially suspected as
+  wrong (the Thornton Lakes trailhead reads as Skagit-adjacent on a map), but confirmed
+  correct via web search — Mount Triumph's summit itself is documented (Wikipedia,
+  PeakVisor) as being in Whatcom County.
+- Cathedral Peak NE Ridge (Pasayten): gain_ft/loss_ft/dist_km/waypoint coordinates/
+  approach_logistics all internally consistent with each other and with the approach text;
+  FA correctly recorded as "the first-ascent party is not recorded" rather than invented.
+- North Early Winters Spire, Northwest Corner: the May 10, 2025 rappel-anchor fatality (3
+  climbers died, one seriously injured, in the Early Winter Couloir) cited in this row's
+  `hazards` and `watch_out` fields was independently confirmed via multiple news sources
+  (CNN, Methow Valley News, Spokesman-Review, and the sheriff's office incident report) —
+  date, location, and mechanism (a single rusted piton pulled while multiple climbers were
+  clipped to it) all match.
+- Lexington Tower North Face: `emergency.county` "Chelan / Okanogan (the tower sits on the
+  county line)" confirmed correct via web search — Liberty Bell Mountain, the group's
+  namesake peak roughly a mile away, is documented as sitting on that exact county
+  boundary. All gain/loss/dist_km figures on this row exactly match its own itinerary and
+  approach text.
+
+SQL: `audits/sql/2026-09-17-batch-285.sql` (5 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy). One WARN:
+file is ~6.6KB, over the SQL Editor's ~4KB silent-truncation soft limit — split into
+~1.5KB chunks and verify each lands before pasting the next, as with recent batches.
+
+Next batch continues in sorted-id order after `wa_north_face_3` (see progress file).
