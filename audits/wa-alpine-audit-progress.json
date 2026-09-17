@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_shuksan_northwest_arete",
+  "last_processed_id": "wa_mount_stuart_girth_pillar",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 574,
   "batches": [
@@ -5709,6 +5709,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-09-17-batch-281.sql",
       "note": "Hanging Glacier and North Face (Mount Shuksan) both had season fields (Jul-Aug, Jun-Aug) contradicting their own best_season/seasonal_guidance/seasonal_hazards fields, all of which describe these north-side glacier lines as spring/early-summer ice climbs that deteriorate through summer -- corrected both to match. Sefrit Southwest Ridge's gain_ft/loss_ft (4,500/4,500) were mathematically impossible given its own trailhead-to-summit waypoint chain (net rise 5,051 ft) and contradicted its own itinerary total (5,000 ft) -- corrected to 5,000/5,000. FA claims checked this batch (Mount Sefrit 1930, Shuksan's 1939 first technical ascent via the Hanging Glacier, the 2007 Northwest Arayete) were all confirmed against independent sources; Fisher Chimneys' FA list remains appropriately hedged as unconfirmed. Fisher Chimneys' access.group_limit (12) confirmed against NPS's published Shuksan cross-country zone limit."
+    },
+    {
+      "batch_number": 282,
+      "date": "2026-09-17",
+      "route_ids": [
+        "wa_mount_shuksan_price_glacier",
+        "wa_mount_shuksan_sulphide_glacier",
+        "wa_mount_shuksan_white_salmon_glacier",
+        "wa_mount_spickard_silver_glacier",
+        "wa_mount_spickard_southwest",
+        "wa_mount_st_helens_monitor_ridge",
+        "wa_mount_st_helens_worm_flows",
+        "wa_mount_stuart_girth_pillar"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 4,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-17-batch-282.sql",
+      "note": "Fixed: wa_mount_shuksan_price_glacier access.fees falsely claimed the NCNP backcountry permit is free, contradicted by its own six bivy[].permit entries and four sibling routes on the same peak/area (all independently stating $10pp+$6, confirmed against NPS's own fee schedule via web search). wa_mount_st_helens_worm_flows access.parking_pass had the wrong trailhead's fee copied from Monitor Ridge (\"$5/day at Climber's Bivouac\") instead of describing its own Marble Mountain Sno-Park trailhead. wa_mount_spickard_southwest corrections field self-contradicted -- claimed fa was left null when fa is populated (stale text from before fa was added); fa claim externally corroborated (Beckey brothers, June 21 1941, same day as their NW Mox FA) so only the stale clause was corrected. wa_mount_spickard_silver_glacier had one clear corridor-list-contamination bivy entry (a Bear Mountain camp with no connection to this route) removed; four other Chilliwack-corridor camps on the same list were left as plausible-but-unconfirmed. Flagged for human review rather than fixed: Price Glacier's gain_ft is below its own waypoint-implied floor by 931 ft but its itinerary agrees with the (too-low) stored value, so no clean single correction exists; Price Glacier's season field conflicts with best_season/seasonal_guidance, but external sources confirm genuine real-world disagreement about this route's best window, so it was left rather than picking a side; White Salmon Glacier's approach/trailhead fields describe the wrong trailhead (the row's own approach_variants explicitly says so) but a safe fix needs a verified replacement coordinate this session could not obtain (nps.gov and mountaineers.org both blocked by network egress proxy); Girth Pillar's descent and descent_text fields directly contradict each other about which descent is standard (shuttle-planning relevant) and its permit field asserts confidently what the row's own bivy note calls a genuinely unclear zone-boundary question."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."

@@ -21421,3 +21421,99 @@ SQL: `audits/sql/2026-09-17-batch-281.sql` (3 UPDATE statements, no DELETE) — 
 
 Next batch continues in sorted-id order after `wa_mount_shuksan_northwest_arete` (see progress
 file).
+
+## 2026-09-17 — Pass 5, Batch 282
+
+Eight routes across four peaks: Price Glacier, Sulphide Glacier, White Salmon Glacier
+(Mount Shuksan); Silver Glacier, Southwest Route/Silver Lake (Mount Spickard); Monitor
+Ridge, Worm Flows (Mount St. Helens); Girth Pillar (Mount Stuart). Continued in
+sorted-id order after batch 281's `wa_mount_shuksan_northwest_arete`.
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-282.sql`:**
+- Price Glacier (Shuksan): `access.fees` claimed the North Cascades NP backcountry
+  permit is free ("free NPS permit only if camping overnight past the park boundary").
+  Contradicted by six of the row's own `bivy[].permit` entries (all say the permit is
+  "no longer free" with per-person/reservation fees) and by four sibling routes on the
+  same peak/area (Sulphide Glacier, White Salmon Glacier, Silver Glacier, Southwest
+  Route), which all independently state "$10 per person plus a $6 fee, youth 15 and
+  under free." Confirmed against NPS's own published fee schedule via web search: NCNP
+  backcountry permits carry a $10/person recreation fee plus a $6 non-refundable
+  reservation fee during the May-October quota season. Corrected to match.
+- Worm Flows (St. Helens): `access.parking_pass` read "$5/day/vehicle at Climber's
+  Bivouac" — that is Monitor Ridge's summer trailhead fee. Worm Flows is the
+  winter/spring route from Marble Mountain Sno-Park (its own `waypoints[0]` and its own
+  `access.fees` field both confirm this), so the field appears to have been copied from
+  the Monitor Ridge row without updating for the correct trailhead. Corrected to
+  describe the Sno-Park permit requirement instead.
+- Southwest Route (Spickard): `corrections` stated "'fa' has been left null rather than
+  guessed," but this row's `fa` column is populated (Beckey brothers, June 21 1941, an
+  already-hedged "first recorded ascent" claim). The corrections text is stale, written
+  before fa was added. Web search corroborates the fa claim independently, so fa itself
+  was left alone and only the self-contradicting clause in corrections was corrected.
+- Silver Glacier (Spickard): removed one bivy entry, "Basin below the Bear Mountain
+  saddle," whose own notes explicitly describe it as serving Bear Mountain (reached via
+  the Chilliwack River Trail from Hannegan Pass) — no connection to this route's own two
+  approaches (Silver Creek via Ross Lake boat, or Depot Creek from Canada). A single,
+  unambiguous corridor-list-contamination entry; four other Chilliwack-corridor camps on
+  the same list (Hannegan, Boundary, Copper Lake, US Cabin) were left as plausible but
+  unconfirmed rather than removed.
+
+**Flagged for human review, not fixed:**
+- Price Glacier: `gain_ft` (6,000) sits 931 ft below the hard floor implied by its own
+  monotonic waypoint chain (net rise 6,931 ft), but the row's own itinerary day-sum and
+  totalNote both independently agree with the (too-low) 6,000 figure — two internal
+  records disagree with a third by a non-trivial margin with no clean tiebreaker.
+  `season` ("Jun-Sep") appears to conflict with best_season/seasonal_guidance/
+  seasonal_hazards (all May-June) and with itinerary.cal (which says most trip reports
+  cluster July-August) — but external sources (SummitPost, trip reports) confirm this is
+  a genuine real-world disagreement about a serac/icefall-hazard route's best season, so
+  it was left rather than picking a side in an externally-corroborated debate.
+- White Salmon Glacier: this row's own `approach_variants[0]` explicitly states the
+  on-file `approach`/`approach_logistics`/`waypoints[0]` trailhead (Lake Ann/Austin
+  Pass) is wrong, and names the correct one (a White Salmon Road pull-off on Mount Baker
+  Highway near milepost 51, confirmed real via web search). No safe replacement
+  coordinate could be obtained this session (nps.gov and mountaineers.org are both
+  blocked by this environment's network egress proxy), and a prose-only fix would leave
+  the map/Directions-facing fields still wrong while adding a new internal
+  inconsistency, so nothing was changed.
+- Girth Pillar (Stuart): `descent` and `descent_text` directly contradict each other
+  about which descent is "standard" — one calls the Cascadian Couloir/Longs Pass exit
+  (which needs a car shuttle) "a penalty rather than the plan," the other calls it "the
+  standard descent." Shuttle-planning-relevant; needs a careful prose edit rather than a
+  value swap. Separately, the top-level `permit` field asserts with confidence that the
+  Enchantment lottery governs this route's overnight stays, while the row's own
+  `bivy[3]` ("Lake Stuart") entry says the permit-zone boundary for the actual camp this
+  route uses is "genuinely unclear." Both left for human review.
+
+**Verified clean, no changes:**
+- Sulphide Glacier (Shuksan): FA (Curtis/Price, 1906) matches general knowledge and is
+  corroborated by batch 281's own Hanging Glacier note. gain_ft clears its waypoint
+  floor; season fields are internally consistent (unlike Price Glacier above).
+  access.fees was one of the four sibling rows used to confirm the Price Glacier fix.
+- Silver Glacier (Spickard): FA appropriately left null; waypoints/gain fields
+  appropriately left null rather than guessed; season internally consistent.
+- Southwest Route (Spickard): exceptionally well-hedged row overall — its own
+  `data_quality.gaps` already flags elevation/FA/mileage variance by source. gain_ft is
+  ~100 ft below its waypoint floor but within its own acknowledged approximation
+  (data_quality.gaps explicitly calls the figure "approximate").
+- Monitor Ridge (St. Helens): FA appropriately hedged ("Unknown, 1853, pre-eruption
+  south-side route") — confirmed via web search that the mountain's actual 1853 first
+  ascent (Thomas J. Dryer's party) was indeed via the south side. gain_ft/season
+  internally consistent. The Goat Rocks/PCT shelter entry in its bivy list is a
+  previously-identified, deliberately-unresolved case (documented elsewhere in this
+  repo) rather than a new finding — not re-flagged.
+- Worm Flows: season/best_season internally consistent; gain_ft/loss_ft consistent with
+  its Marble Mountain Sno-Park start.
+- Girth Pillar: gain_ft matches its waypoint floor exactly; FA plausible but not
+  independently re-confirmed this session given time.
+
+SQL: `audits/sql/2026-09-17-batch-282.sql` (4 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy). Note: two
+of the four UPDATE statements needed their WHERE-clause literal reworked after
+`check:sql` caught the SQL Editor's naive statement-splitter (and this repo's own
+comment-stripping) breaking on a literal semicolon embedded in prose — one inside the
+*current* stored value (worked around with a LIKE match on a semicolon-free substring)
+and one inside the *replacement* text (worked around by rephrasing with an em dash).
+
+Next batch continues in sorted-id order after `wa_mount_stuart_girth_pillar` (see
+progress file).
