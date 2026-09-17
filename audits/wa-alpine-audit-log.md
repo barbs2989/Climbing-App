@@ -21629,3 +21629,111 @@ and em dashes rather than semicolons/double-hyphens.
 
 Next batch continues in sorted-id order after `wa_mount_teneriffe_standard_route` (see
 progress file).
+
+## Batch 284 (pass 5) — 2026-09-17
+
+Three peaks, 8 routes: Mount Terror (North Face, Southeast Face/"East Ridge",
+Stoddard Buttress, West Ridge), Mount Thomson (West Ridge), Mount Tom
+(Glacier/Scramble Route), and Mount Torment (South Ridge, Torment-Forbidden
+Traverse).
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-284.sql`:**
+- North Face, Southeast Face (Terror): all four Terror routes stored an identical
+  `gain_ft` of 6,000 — but the trailhead (Goodell Creek, 600 ft) to summit (8,151 ft,
+  matching `areas.wa_mount_terror`) rise is 7,551 ft, a hard floor no route to this
+  summit can be under. 6,000 ft matches only the two-day *approach-to-camp* figure each
+  route's own approach text states separately ("~6,000 ft gain" to Crescent Creek
+  Basin/Terror Camp), omitting the climbing day's further gain to the true summit.
+  North Face has a full 8-point waypoint elevation chain of its own (trailhead through
+  six intermediate points to the summit); its cumulative positive elevation change sums
+  to 7,951 ft, used as the correction. Southeast Face has no such chain but already
+  carries a companion `loss_ft` of 7,550 — effectively the same trailhead-to-summit rise
+  and the value its own descent accounting treats as correct — so `gain_ft` was
+  corrected to match it, the same "match the row's own companion field" fix already
+  used on `wa_mount_stuart_stuart_glacier_couloir` in batch 283.
+- Southeast Face (Terror): `watch_out` carried four generic/misapplied entries —
+  glaciated-approach language ("continuous rope essential ... bergschrund crossing
+  required"), a "moat crossing" entry, a spring-avalanche entry, and a wrong altitude
+  figure (8,400 ft vs. this row's own 8,151 ft summit) — none supported by this row's
+  own approach/beta/itinerary/hazards fields (which describe only slabs, talus and a
+  short ridge, a Jul-Sep dry-rock season, and list "loose rock" and an "exposed slab
+  traverse" as the actual hazards, no glacier travel at all). Web search corroborates
+  the East Ridge's actual character (SummitPost: talus/scree/snowfield approach,
+  watch for late-season snow "wells," not continuous glacier travel). Kept the four
+  entries independently consistent with this row's own fields (loose rock,
+  route-finding among false summits, weather exposure, descent complexity), fixing the
+  altitude figure in the weather-exposure entry.
+- Mount Thomson West Ridge: `gain_ft`/`loss_ft` (5,200/5,200) contradicted this row's
+  own itinerary, which states 3,600/3,600 for the single car-to-car day both in the
+  structured day entry and again in prose (`totalNote`: "~3,600 ft gain/loss").
+  Corrected to match.
+- Mount Thomson West Ridge: `bivy` carried an 8-entry corridor-wide camp list for the
+  whole Western Alpine Lakes/Snoqualmie Pass area — confirmed by reading each entry,
+  7 of the 8 explicitly describe camps for other peaks with no connection to Thomson
+  (Commonwealth Basin/Red Pond for Lundin Peak and Red Mountain, Melakwa Lake for
+  Kaleetan and Bryant, Rachel Lake for Alta and Hibox, Rampart Lakes for Alta, Alaska/
+  Joe Lake for Chikamin and Huckleberry, Park Lakes for Chikamin, Kachess Campground
+  for Alta/Hibox via a different trailhead entirely). Thomson's own itinerary frames it
+  as a single long day requiring no overnight, reached via a different approach
+  corridor (PCT North/Commonwealth Basin trailhead, Kendall Katwalk, Bumblebee Pass).
+  Pruned to the one entry geographically on this route's own approach (Ridge Lake/
+  Gravel Lake — both this row's own `approach` text and `waypoints` place it about a
+  mile past the Katwalk and just before the Bumblebee Pass climbers' path), and added
+  one sentence making the Thomson connection explicit, drawn only from this row's own
+  approach/waypoints fields.
+
+**Flagged for human review, not fixed:**
+- Stoddard Buttress, West Ridge (Terror): both also store `gain_ft` of 6,000 and fail
+  the identical 7,551 ft floor (same trailhead/summit pair) — but neither carries a
+  waypoint elevation chain, a structured day-by-day itinerary, or a companion loss_ft
+  to derive a specific corrected figure from, and their described climbs (a 2,500+ ft
+  buttress; a much shorter ~350 ft technical section per the row's own text) are too
+  different in scale to safely borrow North Face's or Southeast Face's numbers. A
+  human with a source giving each route's actual climbing-day gain should supply the
+  correction rather than this pass guessing one.
+- Southeast Face (Terror): this row's own `corrections` field already self-flags an
+  id/name mismatch ("Route list names this 'East Ridge' under the
+  wa_mount_terror_southeast_face id — flagging the id/name mismatch for DB review").
+  Re-confirmed the mismatch is real (route name is literally "East Ridge," id ends
+  `_southeast_face`) but left for human review since it may need an id-space or
+  display-name decision rather than a plain data UPDATE.
+
+**Verified clean, no changes:**
+- Mount Tom Scramble (Olympics): gain_ft (7,100) and loss_ft (6,900) both exactly match
+  the sum of this row's own 5-day itinerary; `bivy` entries (Glacier Meadows, Elk Lake,
+  Lewis Meadows, Snow Dome/Caltech Rocks) are all genuinely on this route's own stated
+  Hoh River approach; 1914 FA (Meany party/Thomas Martin) matches the row's own overview
+  text; the row's own `corrections` field already and correctly notes this peak has no
+  dedicated route page of its own (climbed as an Olympus/Bailey Range add-on).
+- Mount Torment South Ridge: gain_ft/loss_ft are within normal rounding of both the
+  waypoint chain and the itinerary's own stated total ("about 4,800 ft"); no hard
+  contradiction found.
+- Torment-Forbidden Traverse: high_point_ft (8,815 ft) correctly matches Forbidden
+  Peak's elevation, not Torment's (8,120 ft) — the traverse's own high point is on the
+  far peak, consistent with how this catalog handles other multi-summit traverses.
+  gain_ft (6,000) clears the hard trailhead(3,200)-to-high-point(8,815) floor of
+  5,615 ft. The itinerary's own day-by-day gain/loss figures look internally
+  inconsistent for a route this complex (a ridge traverse with real up-and-down), and a
+  gain_ft/loss_ft swap was suspected but not confirmed cleanly enough to act on — passes
+  the one test that can be verified without guessing (the floor), so left as-is.
+  FA (Ed Cooper, Walt Sellers, July 1958) externally confirmed via web search
+  (climbing.com/AAC coverage of the traverse's history).
+
+SQL: `audits/sql/2026-09-17-batch-284.sql` (5 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy). One WARN:
+file is ~8.8KB, over the SQL Editor's ~4KB silent-truncation soft limit — split into
+~1.5KB chunks and verify each lands before pasting the next. As with batches 282/283,
+the watch_out and bivy replacement values needed internal semicolons reworded to
+periods/em dashes so this checker's (and the SQL Editor's) naive statement-splitter
+would not fragment the UPDATE mid-value — no wording was removed by that rewording,
+only punctuation.
+
+Continuing the note from batches 281-283: this batch's own diagnoses are new
+(Mount Terror/Thomson/Tom/Torment had not been audited before this pass), so there is
+nothing here to re-check against a prior unapplied fix — but the standing
+recommendation stands: a human should review and run the accumulated
+`audits/sql/*.sql` files, since prior passes' fixes (Mount Baker area, Mount Stuart/
+Teneriffe cluster) were confirmed still unapplied to the live DB as of batch 283.
+
+Next batch continues in sorted-id order after
+`wa_mount_torment_torment_forbidden_traverse` (see progress file).
