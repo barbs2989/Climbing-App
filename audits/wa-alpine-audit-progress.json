@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_rainier_mowich_face",
+  "last_processed_id": "wa_mount_seattle_seattle_creek",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5671,6 +5671,25 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-09-17-batch-279.sql",
       "note": "Liberty Ridge waypoints/gpx were cross-route contamination from a different (Mowich/Puyallup side) Rainier route -- fixed by removing the contaminated entries rather than fabricating a replacement track. Fuhrer Thumb beta and Ingraham Direct season each contradicted their own row's best_season/overview fields; corrected to match. Fuhrer Finger fa was missing a fifth first-ascent party member (Peyton Farrer), added per three consistent web sources. Mowich Face season vs best_season contradiction flagged rather than fixed -- three non-overlapping candidate windows found across sources, none confirmed as definitive for this specific route."
+    },
+    {
+      "batch_number": 280,
+      "date": "2026-09-17",
+      "route_ids": [
+        "wa_mount_rainier_nisqually_icefall",
+        "wa_mount_rainier_ptarmigan_ridge",
+        "wa_mount_rainier_sunset_ridge",
+        "wa_mount_rainier_tahoma_glacier",
+        "wa_mount_rainier_willis_wall",
+        "wa_mount_redoubt_south_face",
+        "wa_mount_seattle_noyes_basin",
+        "wa_mount_seattle_seattle_creek"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 0,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-09-17-batch-280.sql",
+      "note": "Tahoma Glacier's gain_ft (5,007) was mathematically impossible given its own trailhead/summit waypoints and contradicted its own itinerary total (~12,000 ft) -- corrected to 12,000. Willis Wall's descent field wrongly described the walk-off descent as using rappels, contradicting its own rappels/descent_text fields -- corrected. Sunset Ridge's season field (Jun-Aug) contradicted its own best_season/seasonal_guidance/approach_variants (May-Jun, out of condition by July) -- corrected. Ptarmigan Ridge's season and approach fields described the Mowich Lake approach as merely seasonally late, when its own road/approach_logistics fields (and an independent WSDOT source) confirm the Fairfax Bridge access is permanently closed since April 2025 -- corrected both fields. All four first-ascent claims checked this batch (Nisqually Icefall, Ptarmigan Ridge, Willis Wall, Mount Redoubt, Sunset Ridge) were confirmed against independent sources (AAC Publications, Wikipedia, HistoryLink, The Mountaineers). Mount Seattle's two scramble-approach routes (Noyes Basin, Seattle Creek Basin) are sparse and had nothing to contradict."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."

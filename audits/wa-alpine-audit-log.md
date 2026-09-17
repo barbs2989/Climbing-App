@@ -21294,3 +21294,61 @@ SQL: `audits/sql/2026-09-17-batch-279.sql` (4 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_rainier_mowich_face` (see
 progress file); the next route in scope is `wa_mount_redoubt_south_face`.
+
+## 2026-09-17 — Pass 5, Batch 280
+
+Eight routes across five peaks: Nisqually Icefall, Ptarmigan Ridge, Sunset Ridge, Tahoma
+Glacier, Willis Wall (Mount Rainier); South Face/Redoubt Glacier (Mount Redoubt); Noyes Basin
+Route, Seattle Creek Basin Route (Mount Seattle). Continued in sorted-id order after batch
+279's `wa_mount_rainier_mowich_face` (Rainier's alpine/mountaineering routes run past `m` into
+`n`-`w`, so five more Rainier routes preceded Redoubt in scope order).
+
+**Confirmed errors → fixes in `sql/2026-09-17-batch-280.sql`:**
+- Tahoma Glacier: `gain_ft` (5,007) was mathematically impossible — the row's own two
+  waypoints (2,900 ft trailhead, 14,406 ft summit) imply a net rise of 11,506 ft alone, and
+  the row's own `itinerary` day-by-day gains sum to 12,000 ft, matching its own
+  `itinerary.totalNote` ("~12,000 ft gain") verbatim. Every sibling Rainier route audited
+  this batch has `gain_ft` matching its itinerary sum near-exactly; this was the one outlier.
+  Corrected to 12,000, taken from the row's own already-correct itinerary text.
+- Willis Wall: `descent` claimed the descent uses "rappels and downclimbing," directly
+  contradicting the row's own `rappels` ("0 on the descent... no fixed rappels") and
+  `descent_text` (explicit walk-off/downclimb via Emmons-Winthrop, no fixed rappels) fields.
+  Rewrote to match.
+- Sunset Ridge: `season` ("Jun-Aug") contradicted `best_season` ("May to June"),
+  `seasonal_guidance.optimalWindow`, and `approach_variants[0].season` (all May-June, with
+  July marked out of condition/risky). Corrected to match the row's own majority fields.
+- Ptarmigan Ridge: `season` and `approach` both described the shorter Mowich Lake approach
+  as merely "seasonal"/late-opening, contradicting the row's own `road.driveNote` and
+  `approach_logistics.trailheadDirection`, which correctly note the approach is currently
+  unreachable — SR-165's Fairfax/Carbon River Bridge, its sole public access, was
+  permanently closed by WSDOT in April 2025 with no detour or funded reopening timeline
+  (independently confirmed via WSDOT's own closure announcement). Corrected both fields;
+  left `approach_variants` (a larger nested jsonb array covering the same ground) for a
+  follow-up pass rather than risk a malformed edit to a large nested structure in this batch.
+
+**Verified clean, no changes:**
+- Nisqually Icefall, Ptarmigan Ridge, Willis Wall, Mount Redoubt, and Sunset Ridge's
+  first-ascent claims were each checked against independent sources this pass — AAC
+  Publications (Nisqually Icefall: Dee Molenaar/Bob Craig, July 15 1948), HistoryLink.org and
+  The Mountaineers (Ptarmigan Ridge: Wolf Bauer/Jack Hossack, 1935 — the specific day, Sept 8,
+  could not be independently confirmed or refuted, so left as-is), Wikipedia/AAC/a Yakima
+  Herald interview with Jim Wickwire (Willis Wall: Charlie Bell solo 1961, validity confirmed
+  by Wickwire), Wikipedia (Mount Redoubt: Jimmy Cherry/Bob Ross, 1930), and The Mountaineers'
+  own 1949 annual (Sunset Ridge: Lyman Boyer/Arnold Campbell/Don Woods, 1938 — the row omits
+  Woods but names no one incorrectly, so left as-is). Mount Redoubt's `high_point_ft` (8,969)
+  already carries a documented `corrections` note from a prior pass weighing several sources
+  against each other; a fourth source (Wikipedia's current snapshot, 8,956 ft) sits within
+  normal survey noise of the figures already reconciled there, so it was not re-litigated.
+  Mount Redoubt's $10/person + $6 reservation-fee backcountry permit fee was confirmed current
+  against NPS's own North Cascades permit fee page. Noyes Basin and Seattle Creek Basin are
+  both sparse, undocumented scramble approaches to Mount Seattle with essentially nothing to
+  cross-check beyond their shared summit waypoint (6,246 ft), which matches the USGS-listed
+  elevation for Mount Seattle.
+
+**Nothing flagged for human review this batch.**
+
+SQL: `audits/sql/2026-09-17-batch-280.sql` (5 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy).
+
+Next batch continues in sorted-id order after `wa_mount_seattle_seattle_creek` (see progress
+file).
