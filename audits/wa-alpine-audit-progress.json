@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_mount_cruiser_nw_face_corner",
+  "last_processed_id": "wa_mount_fairchild_standard",
   "total_in_scope_last_count": 529,
   "total_wa_alpine_or_mountaineering_tagged": 579,
   "batches": [
@@ -5557,6 +5557,26 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-09-16-batch-273.sql",
       "note": "wa_mount_cruiser_nw_face_corner: 2 fixes re-verified and re-applied from pass 4's unapplied batch-208 proposal -- road.status/access.closures (Bear Gulch Fire closure was lifted for FS-24/Staircase on July 8 2026 per USFS newsroom release, though wilderness trails beyond Staircase including this route's own approach remain closed; confirmed still current as of today via a second, more targeted search after an initial broad search surfaced only a stale pre-reopening nps.gov page) and dist_km (12.4->14.48, matching its sibling wa_mount_cruiser_south_corner and two external 18-mile-round-trip sources for the shared Flapjack Lakes/Needle Pass approach). wa_mount_crowder_southwest_route flagged for a genuine internal contradiction not caught in batch 207: its own fa field credits the peak's 1962 FA party to this route (hedged) while its own corrections field flatly says that credit is wrong and the FA actually climbed the sibling NE Ridge route instead -- neither route's fa field currently matches what corrections asserts, and no external source found specifies which line the 1962 party actually climbed, so left for human review rather than guessed. Also re-confirmed wa_mount_crowder_southwest_route's dist_km (61.15km, unresolved cross-peak match with wa_luna_glacier on neighboring Phantom Peak) remains flagged with no new source. All 5 Mount Constance routes and wa_mount_crowder_northeast_ridge checked clean, with fresh external corroboration this pass (external round-trip mileage sources for Constance; a Steph Abegg trip report independently matching the Crowder NE Ridge descent account) rather than only re-trusting batch 207's prior clean verdict."
+    },
+    {
+      "batch_number": 274,
+      "date": "2026-09-17",
+      "pass": 5,
+      "route_ids": [
+        "wa_mount_cruiser_south_corner",
+        "wa_mount_custer_standard",
+        "wa_mount_daniel_daniel_glacier",
+        "wa_mount_daniel_lynch_glacier",
+        "wa_mount_deception_standard",
+        "wa_mount_degenhardt_southwest_route",
+        "wa_mount_despair_east_route",
+        "wa_mount_fairchild_standard"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-09-17-batch-274.sql",
+      "note": "Re-verified live DB state before proposing fixes (per the batch-271/272/273 precedent). Found pass-4 batch 208 fixes for 3 of these routes were never applied live (wa_mount_cruiser_south_corner dist_km 12.4, wa_mount_custer_standard dist_km 31.4, wa_mount_despair_east_route dist_km 38.62 -- all unchanged since 2026-09-05); re-proposed all 3 after fresh WebSearch re-verification. wa_mount_cruiser_south_corner is the sibling batch 273 explicitly deferred to this batch. Batch 208's clean findings on wa_mount_daniel_daniel_glacier and wa_mount_degenhardt_southwest_route (dist_km already correct) and its applied fix on wa_mount_deception_standard (dist_km now 16.1) were re-confirmed unchanged. wa_mount_daniel_lynch_glacier remains a data-completeness gap (no grade/gain/dist_km), not an error -- left untouched, as batch 208 found. One new finding: wa_mount_custer_standard's road field (\"Remote approach (Silver Lake / border ridge)\", \"No direct road access\") contradicts its own waypoint data, which gives a precise Chilliwack Lake Road (BC)/Depot Creek Road approach with turn-by-turn directions -- rewrote road from the row's own already-verified waypoint text. wa_mount_fairchild_standard re-confirmed as the same unresolved structural conflation batch 209 flagged (two different real approaches -- Sol Duc vs. Whiskey Bend/Fitzhenry -- merged into one route record with mutually contradictory gain/loss/distance/itinerary) -- still needs an editorial split/rewrite decision, not a targeted UPDATE."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving."

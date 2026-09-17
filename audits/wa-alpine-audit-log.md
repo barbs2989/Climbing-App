@@ -20680,3 +20680,128 @@ SQL: `audits/sql/2026-09-16-batch-273.sql` (3 UPDATE statements, no DELETE).
 
 Next batch continues in sorted-id order after `wa_mount_cruiser_nw_face_corner`
 (see progress file).
+
+## 2026-09-17 — Batch 274 (pass 5)
+
+Eight routes on seven peaks: South Corner (Mount Cruiser); Standard Route/South Side
+(Mount Custer); Daniel Glacier/Southeast Slopes, Lynch Glacier (Mount Daniel);
+Standard Scramble/Royal Basin (Mount Deception); Southwest Route (Mount Degenhardt);
+East Route (Mount Despair); Standard Route (Mount Fairchild).
+
+**Fixed (4 UPDATE statements, 3 routes):**
+
+- `wa_mount_cruiser_south_corner` — `dist_km` (12.4 km/7.7mi) matches this route's
+  own approach text as the one-way distance to Flapjack Lakes camp only, not the
+  summit (the approach continues another 1.5mi past Needle Pass and along the ridge
+  to the South Corner start). This is the same pass-4 (batch 208, 2026-09-05) finding
+  already fixed on this route's sibling `wa_mount_cruiser_nw_face_corner` in batch 273
+  (2026-09-16) — that batch explicitly deferred this row to "the next batch" since it
+  fell outside its own route list, and a direct query this session confirmed it is
+  still unapplied (dist_km=12.4). Re-verified fresh rather than blindly reapplied:
+  summitpost.org still gives "18 miles round-trip, 5500 ft gain" for this Flapjack
+  Lakes/Needle Pass approach, and a Jim Brisbine/trailcatjim trip report for this
+  exact route independently states "approximately 18.0 miles traveled." Corrected to
+  14.48 (9.0mi one-way), matching the sibling's already-fixed value.
+- `wa_mount_custer_standard` — `dist_km` (31.4 km/19.5mi) matches nothing in the
+  approach text and is roughly double an authoritative figure. Same pass-4 (batch
+  208) finding, confirmed still unapplied live. Re-verified fresh: summitpost.org's
+  Mount Custer page gives, for the direct South Side route this row describes, "Time
+  from car to summit by direct route = 6-7 hours; Distance = 8-9 miles ...
+  Gain = ~6,100 ft" — matching this row's own gain_ft (6480) and its own summit
+  waypoint, which independently records distMi=8.2 (13.2km). Corrected to 13.2.
+- `wa_mount_custer_standard` — a second, new finding on the same route: the `road`
+  field ("Remote approach (Silver Lake / border ridge)", "No direct road access; long
+  approach from trailheads or the border area") is internally inconsistent with the
+  rest of this same row. "Silver Lake" appears nowhere else on this row or anywhere
+  near Mount Custer, and a direct query confirmed no other route in the catalog
+  carries that road name either — not a copy-paste-from-a-sibling contamination, just
+  generic placeholder text never reconciled against this route's own, much more
+  specific data. This row's own trailhead waypoint (unchanged, already present) gives
+  a precise coordinate and turn-by-turn directions starting on Chilliwack Lake Road in
+  BC and continuing up the unsigned Depot Creek Road spur to a washout — i.e. there
+  IS a real, driveable road to a trailhead, directly contradicting the field's "No
+  direct road access" claim. Independently corroborated via WebSearch (Mountaineers.
+  org's "The Chilliwacks Peaks" page; onehikeaweek.com and Gaia GPS both describe
+  reaching Ouzel Lake via the Depot Creek trail off Chilliwack Lake Road, BC, for this
+  same peak cluster). Rewrote `road` from this row's own waypoint text — no new
+  coordinate or fact introduced — keeping the existing, uncontradicted seasonalGate
+  note.
+- `wa_mount_despair_east_route` — `dist_km` (38.62 km/24.0mi) does not fit as a
+  one-way figure; the row's own approach text already says trip reports log "roughly
+  24 miles and 12,000+ ft of cumulative gain and loss," i.e. 38.62km was already
+  understood by the writer to BE the round trip. Same pass-4 (batch 208) finding,
+  confirmed still unapplied. Re-verified fresh: a Jim Brisbine/trailcatjim trip
+  report for this exact route independently states "approximately 24 miles traveled
+  with 12,000 feet of elevation gained and lost," matching both the round-trip
+  mileage and this row's own (unchanged, correct) gain_ft/loss_ft of 12000/12000
+  exactly. Halved to 19.31 (one-way).
+
+**Flagged for human review, not fixed (re-confirmed, unchanged since batch 209):**
+
+- `wa_mount_fairchild_standard` — merges two real but different approaches to the
+  peak into one route record with contradictory numbers, exactly as pass 4's batch
+  209 (2026-09-05) found and left flagged. `approach`, `descent_text`, `waypoints`,
+  `bivy`, and `access` describe the standard Sol Duc → Appleton Pass/High Divide →
+  Cat Basin → Catwalk → Mount Carrie approach (one-way ~12-15.5mi per the row's own
+  text). `timing` and `itinerary` instead describe an entirely different Whiskey
+  Bend → Elwha River → Long Ridge → Long Creek ford → Mount Fitzhenry traverse
+  approach (a real, separately-verified peak and route, per batch 209 — just a
+  different one), and `gain_ft`/`loss_ft`/`dist_km` (9300/9200/38.6) are summed
+  directly from that second itinerary's day-by-day figures. Re-read both halves of
+  the row in full this session rather than trusting the prior verdict blind — the
+  conflict is exactly as described and nothing has changed. Still needs an editorial
+  call on which approach the route record should describe (or a split into two
+  routes), not a targeted UPDATE.
+
+**Clean, cross-checked:**
+
+- `wa_mount_deception_standard` — the batch-208 `dist_km` fix (32.2→16.1) HAS been
+  applied live (confirmed by direct query: dist_km=16.1 today), unlike the three
+  routes above. Its own `corrections` field ("matches SummitPost/Mazamas/guidebook
+  descriptions") and gain_ft/loss_ft (5500/5500) are consistent with it. No further
+  issues found.
+- `wa_mount_daniel_daniel_glacier` and `wa_mount_degenhardt_southwest_route` —
+  `dist_km` (12.1km and 15.04km respectively) already correct as one-way per batch
+  208's prior finding; re-confirmed by direct query that both remain unchanged from
+  that batch and internally consistent with their own approach text and waypoint
+  distances (no re-verification needed, nothing here has any exposure to staleness).
+- `wa_mount_daniel_lynch_glacier` — still carries no grade/pitches/gain/loss/dist_km,
+  exactly as batch 208 noted. A data-completeness gap, not a wrong fact; its `fa`
+  field ("The Mountaineers, 1925 — the first recorded ascent of Mount Daniel used
+  this Lynch Glacier line") is internally consistent with its sibling route. Left
+  untouched.
+- `wa_mount_degenhardt_southwest_route` — `fa` is a bare "1931" while this row's own
+  `overview` field independently names the full party ("William Degenhardt ... with
+  Herbert Strandberg"), externally corroborated by AAC Publications per batch 208.
+  Thin but not wrong — not fixed (nothing here contradicts anything; filling in a
+  terse-but-correct field from the row's own prose is enrichment, not error
+  correction, and outside this audit's scope).
+- Area/route coordinate placement for all seven peaks checked against their parent
+  `areas` row this session: Mount Cruiser, Mount Custer, Mount Daniel, Mount
+  Deception, Mount Degenhardt, Mount Despair, and Mount Fairchild summit coordinates
+  all match their area row's lat/lng exactly or within a couple of feet of elevation
+  (Deception's waypoint gives 7786ft vs. the area row's 7788ft — trivial survey
+  rounding, not a finding). No cross-region contamination, no misfiled hierarchy.
+- Re-verified the Mount Cruiser road-closure text (already correct on
+  `wa_mount_cruiser_south_corner` and, since batch 273, on its sibling): fresh
+  WebSearch this session confirms FS-24/the Staircase developed area remain open
+  (reopened July 8, 2026) while the North Fork Skokomish trail beyond Staircase
+  remains closed with no stated reopening date — unchanged from yesterday's
+  (batch 273) finding, so this route's already-correct text needed no edit.
+
+**Tooling note:** `check-sql-targets.mjs` confirms all 4 UPDATE targets exist and no
+DELETE is present. One early draft of the `road` UPDATE tripped the script's "no
+literal id predicate — not checkable" warning because a semicolon inside a
+free-text string value (inside the quoted `status`/`driveNote` prose, not a SQL
+delimiter) fooled the script's naive semicolon-based statement splitter — real
+Postgres parses quoted strings correctly and would not have been fooled, but the
+prose was reworded to drop the internal semicolons anyway so the preflight check
+stays meaningful. File is 6.2KB, over the SQL Editor's ~4KB safe-paste soft limit —
+split into chunks before pasting, per the script's own warning.
+
+WebSearch worked normally this session (no EGRESS_BLOCKED errors on any query).
+
+SQL: `audits/sql/2026-09-17-batch-274.sql` (4 UPDATE statements, no DELETE).
+
+Next batch continues in sorted-id order after `wa_mount_fairchild_standard` (see
+progress file).
