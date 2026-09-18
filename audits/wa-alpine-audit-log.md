@@ -23238,3 +23238,126 @@ immediately before this file was finalized.
 
 Next batch continues in sorted-id order after `wa_south_face_2` (see
 progress file).
+
+## Batch 296 (pass 5) — 2026-09-18
+
+Continued in sorted-id order after `wa_south_face_2`: `wa_south_face_3`,
+`wa_south_face_4`, `wa_south_face_5`, `wa_south_face_center`,
+`wa_south_gully_south_spur`, `wa_south_headwall`, `wa_south_rib`,
+`wa_south_ridge_2`.
+
+**Fixed (7 UPDATE statements across 6 routes):**
+
+- Concord Tower's two South Face routes (`wa_south_face_3`,
+  `wa_south_face_center`) both stored their shared Blue Lake Trailhead
+  waypoint at 5,200 ft, contradicted by each row's own `approach` and
+  `approach_logistics.trailheadDirection` fields (both already say "~5,400
+  ft" / "5,400 ft") — the identical trailhead and identical defect batch 295
+  fixed one peak over on South Early Winters Spire, using the same
+  WTA-sourced figure (5,400 ft) established there. Fixed both waypoint
+  elevations.
+- `wa_south_face_center`'s `itinerary` described the route in the present
+  tense as a two-pitch aid climb ("5.7 A3... The A3 pitches are notably
+  slower going than the free lines nearby"), contradicted by this row's own
+  `overview` (which says outright the route was "historically climbed with a
+  short bit of aid... before being freed at its current, harder free grade"),
+  `beta`, `grade` (5.8+), `pitches` (1) and `pro_tips`. Confirmed against
+  Mountain Project's route description (one pitch, crack/bulge/two
+  right-facing corners to a tree below the summit block — no aid or A3
+  mentioned). Rewrote the itinerary's note/objective/totalNote to match this
+  row's own already-established free description; kept the historical-aid
+  fact (already present in `pro_tips`) rather than deleting it, invented
+  nothing, left the numeric day fields untouched.
+- `wa_south_face_5` (Inspiration Peak): `pitches` corrected 8 → 4. This row's
+  own `overview` ("about 600 ft (4 pitches) of clean rock"), its own
+  itinerary day-2 note ("climb just 4 pitches... the shortest of
+  Inspiration's three technical lines") and schedule ("Only 4 pitches of
+  5.8, a shorter climb than the East or West Ridge"), and its own
+  `pitch_detail` array (exactly 4 entries, base to summit) all independently
+  agree on 4 — only the bare top-level `pitches` scalar said 8. Same class of
+  fix as `wa_rapple_grapple`'s `pitches` 4→3 in an earlier batch.
+- Two more instances of the newline/bare-narrative-string schema-shape
+  defect documented repeatedly in prior batches: `wa_south_gully_south_spur`
+  and `wa_south_rib` (both Guye Peak) each had `itinerary` stored as a plain
+  narrative string instead of the standard `{cal,days,totalNote}` object —
+  converted, narrative preserved verbatim as `totalNote`, honest empty `days`
+  array, no content invented.
+- `wa_south_ridge_2` (Luna Peak, South Ridge): `outing_shape` filled
+  `null` → `'outback'`. This row's own 3-day itinerary is an explicit
+  out-and-back — day 3's gainFt/lossFt (700/3400) are the exact reverse of
+  day 1's (3400/700), day 3 is titled "Hike out to Ross Dam", and
+  `descent_text` says outright the descent "reverses the ascent line."
+
+**Flagged rather than fixed:**
+
+- `wa_south_face_4` (Kangaroo Temple, South Face): this row's own
+  `data_quality.gaps` already flags that its `approach` text is internally
+  self-contradictory about whether the route crosses Kangaroo Pass (the main
+  paragraph routes it up and over the pass to a shared north-side gully; an
+  appended "IMPORTANT" note says it never crosses the pass and uses a
+  separate creek-side line, matching this row's own detailed
+  `approach_variants[0]`, which repeatedly and emphatically states "NEVER
+  CROSS KANGAROO PASS"). Attempted to resolve externally: Mountain Project
+  and SuperTopo are both `EGRESS_BLOCKED`; a general WebSearch summary of
+  "the Southwest Face" (which this row's own `rope_note` says this route is
+  "also referenced as") describes reaching it *via* Kangaroo Pass, i.e. the
+  opposite of what `approach_variants` insists for this specific route. That
+  reads as genuinely conflicting evidence rather than a settled internal
+  contradiction, so left as-is per this row's own existing
+  `data_quality.gaps` note calling for "a fresh approach-beta research pass"
+  — not attempted here.
+- `wa_south_face_5` (Inspiration Peak): `gain_ft` (7291) is an exact match
+  to `high_point_ft` (7891) minus the trailhead elevation (600 ft) — a clean
+  net-gain figure — while the itinerary's own day-by-day sum and its
+  `totalNote` ("~7,800 ft total gain") both land about 500 ft higher,
+  presumably counting the up-and-down profile of the multi-day approach.
+  Both are plausible readings (net vs. cumulative gain) and neither source is
+  clearly wrong; no external corroboration available. Flagged, not changed.
+- `wa_south_headwall` (Mount Stuart): `gain_ft` (5009) matches a simple
+  net trailhead-to-summit difference only if the route never drops below the
+  Longs Pass crossing (6,200 ft) — but this row's own approach text has
+  parties dropping off the north side of the pass to Ingalls Creek (a
+  sibling bivy entry on this same row puts the valley floor there at roughly
+  4,800 ft) before climbing back up to the ~8,700 ft cirque. A rough
+  cumulative-gain estimate from the row's own stated waypoints runs roughly
+  1,500 ft higher than the stored `gain_ft`. No `loss_ft`, `outing_shape`, or
+  itinerary breakdown exists on this row to cross-check against, and no
+  precise sourced elevation for the actual creek crossing was found. Flagged
+  for a human to reconcile rather than guessed.
+- `wa_south_ridge_2` (Luna Peak, South Ridge): re-confirmed but did not
+  attempt to resolve the internal contradiction this row's own
+  `data_quality.gaps` already documents (descent_text scopes the route as
+  ending at the false/south summit with no rope work, while overview/
+  itinerary describe a roped pitch continuing to the true/north summit) —
+  the row itself already correctly says this "needs a fresh
+  scope-clarifying research pass rather than a guessed fix," which still
+  holds.
+
+**Clean, no change:** none this batch — every route had at least one
+flagged or fixed item.
+
+External web-search corroboration this batch: WTA (re-confirming Blue Lake
+Trailhead's 5,400 ft elevation, already established in batch 295), a general
+Mountain Project/SuperTopo search on Concord Tower's South Face Center (one
+pitch, no aid, matching this row's own already-freed description), and two
+searches on Kangaroo Temple's South Face approach that turned up conflicting
+rather than confirming evidence (see above). Mountain Project and SuperTopo
+route pages, and a trailcatjim.com trip report, were all `EGRESS_BLOCKED` on
+direct fetch, as in prior batches.
+
+SQL: `audits/sql/2026-09-18-batch-296.sql` (7 UPDATE statements across 6
+routes, wrapped in a single transaction, no DELETE/DROP/TRUNCATE/ALTER
+anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-18-batch-296.sql`:
+every target id exists live, no destructive statement; one large
+jsonb-literal UPDATE triggered the checker's benign "no literal id
+predicate — not checkable" warning (a known parser limitation on long
+multi-line literals, seen identically in several prior batches — that
+statement does carry its own `WHERE id = '...'` guard, confirmed by
+inspection). The file is 9.6KB, over the SQL Editor's ~4KB safe-paste size —
+split into smaller pastes if applying by hand. Every guarded `WHERE` clause
+was re-verified against the live row values immediately before this file was
+finalized.
+
+Next batch continues in sorted-id order after `wa_south_ridge_2` (see
+progress file).
