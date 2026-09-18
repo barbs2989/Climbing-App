@@ -22358,3 +22358,195 @@ and verify each lands before pasting the next.
 
 Next batch continues in sorted-id order after `wa_phantom_peak_west_ridge` (see progress
 file).
+
+## Batch 290 (pass 5) — 2026-09-18
+
+Routes checked: `wa_point_success_south_side`, `wa_poltergeist_pinnacle`,
+`wa_poltergeist_pinnacle_north_route`, `wa_primus_peak_south_ridge`,
+`wa_prusik_peak_der_sportsman`, `wa_prusik_peak_south_face_burgner_stanley`,
+`wa_prusik_peak_west_ridge`, `wa_ragged_edge`. Continues in sorted-id order after
+`wa_phantom_peak_west_ridge` (batch 289's stopping point).
+
+**Fixed (7 routes):**
+
+- **Point Success, via Success Cleaver** (Mount Rainier NP): `outing_shape` was stored
+  as `point` (car-shuttle / different trailhead), but this row's own `descent_text`
+  states the *standard* descent reverses the ascent line back to Longmire — the
+  Disappointment-Cleaver-to-Paradise shuttle is explicitly framed as an alternative
+  "some parties choose," not the default, and the row's own 3-day itinerary ends
+  "exit to Longmire," the same trailhead day 1 departs from. Corrected to `outback`.
+  That also meant `dist_km` (16.1) needed correcting: this row's own
+  `itinerary.days[].miles` sums to exactly 25 mi (10+3+12), matching
+  `itinerary.totalNote` word for word ("roughly 25 miles round trip and 11,500 ft of
+  gain"); corrected to the one-way half (20.12 km) so the app's own round-trip
+  doubling matches the row's own stated total. `loss_ft` was null; filled to 11,500
+  to match `gain_ft` (both already agreeing with `totalNote`), consistent with a
+  round trip that returns to the same elevation. Separately, `waypoints[0]` (the
+  trailhead pin) named "Westside Road / Dry Creek (Tahoma Creek) Trailhead" at
+  3,200 ft, while this row's own approach/road/access/itinerary fields all describe
+  departing from Longmire (2,762 ft) via the Wonderland Trail over the Rampart and
+  Kautz Creek — and this row's own `access.closures` field already states the
+  Westside Road/Tahoma Creek approach is closed to vehicles beyond Dry Creek due to
+  washouts. External corroboration (web search on Mountaineers.org/SummitPost-class
+  results for the Success Cleaver approach): "There is now only one approach to
+  Success Cleaver because the Tahoma Creek Trail is now closed due to flood hazards.
+  The only remaining approach is from Longmire via the Wonderland Trail" — matching
+  this row's own approach text almost verbatim. Corrected the waypoint to Longmire
+  Wilderness Information Center (elevation taken from this row's own already-stated
+  2,762 ft; coordinate ~46.7493,-121.8233 from web search). Also filled
+  `approach_logistics.trailheadLat/trailheadLng`, which were absent even though
+  `approach_logistics.trailhead` already named Longmire in text.
+
+- **Poltergeist Pinnacle** (filed under area `wa_mount_challenger`) — the most
+  interesting finding this batch. This row's *own* `data_quality.gaps` array already
+  contained a note diagnosing exactly this defect: "Approach text describes the Ross
+  Lake/Big Beaver Trail corridor used for southern Pickets objectives, but this
+  route's own waypoints show the Hannegan Pass/Whatcom Pass/Challenger Glacier
+  approach instead — needs a fresh approach-beta rewrite to match the waypoints."
+  That gap was correct and had never been acted on: `approach`, `road`,
+  `approach_logistics.trailhead*`, and `waypoints[0]` all still described the Ross
+  Dam Trailhead / Ross Lake water taxi / Big Beaver Trail approach, while
+  `waypoints[1]` onward (Hannegan Pass, Boundary Camp, Whatcom Pass, Challenger
+  Glacier Crossing) and this row's own `itinerary` text already correctly described
+  the Hannegan Pass route. External corroboration (web search on the 2004
+  first-ascent trip report, cascadeclimbers.com): "On July 3, Dan Aylward and
+  another climber hiked to Perfect Pass via Hannegan Pass/Easy Ridge. On July 4th,
+  they traversed around Challenger Arm and climbed a new route" — confirming Hannegan
+  Pass, not Ross Lake/Big Beaver (which serves the *southern* Pickets, a different
+  sub-range), and confirming the FA route is 4 pitches ("consists of four pitches
+  with ratings ranging from 5.7 to 5.9"), not the 6 this row stored (its own
+  `pitch_detail` array in fact has only 4 entries, the last one spanning the whole
+  simul-climbed ridge). This row is a known duplicate of the thoroughly
+  self-consistent `wa_poltergeist_pinnacle_north_route` (per that row's own
+  corrections field, which already calls this the "duplicate row"); copied that
+  row's verified `approach`/`road`/`gain_ft`/`loss_ft`/`dist_km` across (its
+  itinerary day-sums are exact: gain 5000+1600+2200+2300=11100, loss
+  2300+1000+2200+5200=10700), since this row's own numbers (dist_km 4.8 km, gain_ft
+  7066, no loss_ft) were too short for either the real Hannegan Pass approach
+  (17.5 mi one-way per both rows' own data) or the wrong Ross Lake/Big Beaver one.
+  Corrected `pitches` to 4, updated `approach_logistics.trailhead*`, and removed the
+  now-resolved `data_quality.gaps` entry (the other two gaps — a generic difficulty-
+  breakdown disclaimer, and thin post-FA ascent history — are untouched, still true).
+
+- **Poltergeist Pinnacle, East Face** (`wa_poltergeist_pinnacle_north_route`) — the
+  duplicate sibling above; already fully verified (gain/loss/dist_km match its own
+  itinerary exactly, approach matches the FA account). Only `outing_shape` was
+  missing (null); set to `outback` to match its own round-trip itinerary and
+  `totalNote` ("~35 mi round trip").
+
+- **Der Sportsman** (Prusik Peak): `watch_out` was stored as a plain JSON *string*
+  with embedded newlines, unlike every other route in this batch (and this app's own
+  rendering convention), where it's a JSON array of strings rendered as separate
+  bullets. Converted to a proper array by splitting on the newlines already present
+  — no wording changed. Also: `gain_ft`/`loss_ft` (6200/4500) disagreed with this
+  row's own 3-day itinerary sum (4000+700+700=5400 gain, 700+700+4000=5400 loss —
+  symmetric, as expected for a round trip back to Stuart Lake Trailhead). Notably,
+  the stored `gain_ft` (6200) was *identical* to the sibling West Ridge route's own
+  stale `gain_ft`, despite the two routes' itineraries implying different totals —
+  suggesting both were copied from one generic/stale figure rather than computed
+  per-route. The third sibling on this same approach, Burgner-Stanley, already had
+  `gain_ft`=`loss_ft`=5400 exactly matching its own itinerary — this fix brings Der
+  Sportsman in line with that already-correct sibling. `outing_shape` (null) set to
+  `outback`.
+
+- **South Face (Burgner-Stanley)** (Prusik Peak): `descent_text` and
+  `rappel_count_note` both said "3-4 single-rope rappels" with no hedge, directly
+  contradicting this *same* row's own `rope_note` ("5 single-rope rappels...
+  measured the rappels at roughly 30m each") and its 5-entry `rappel_detail` array
+  (n=1..5) — and this row's own `corrections` field already documents the
+  resolution: "2026-07-31: descent (5 single-rope raps off slung stations, ~30m
+  spacing) verified via Mountain Project and two independent trip reports
+  (climberkyle.com, stephabegg.com)." `descent_text`/`rappel_count_note` were simply
+  never updated to match that already-verified correction. Fixed both to say 5,
+  noting the final pair of stations is optional (station 4's own notes already
+  describe a 3rd/4th-class downclimb alternative). Contrast with the sibling West
+  Ridge, whose descent_text/rappel_count_note/corrections all consistently discuss
+  "4, some report 5" as an acknowledged range — not the same defect, not touched.
+  `outing_shape` (null) set to `outback` (gain_ft/loss_ft already correct at 5400
+  each, matching this row's own itinerary).
+
+- **West Ridge** (Prusik Peak): `waypoints[0]` (Stuart Lake Trailhead) had
+  `elev`=1300, contradicting both siblings' identical trailhead (3,400 ft at
+  essentially the same coordinate), this *same* row's own approach text ("elev.
+  ~3,400-3,600 ft"), and the real-world elevation of that well-documented trailhead.
+  Corrected to 3400. `gain_ft`/`loss_ft` (6200/4608) disagreed with this row's own
+  itinerary sum (4000+600+700=5300 gain, 700+600+4000=5300 loss); corrected to match
+  (same stale-6200 pattern as Der Sportsman above). `outing_shape` (null) set to
+  `outback`.
+
+- **Ragged Edge** (Vesper Peak): `gain_ft` (4115) disagreed with `loss_ft` (4400),
+  this row's own single-day itinerary (`gainFt`=`lossFt`=4400 for the car-to-car
+  day), and `itinerary.totalNote` ("~4,400 ft gain") — three independent fields
+  inside this same row agreeing at 4,400; corrected `gain_ft` to match.
+  Separately, `access.seasonal` carried a leftover sentence about the Suiattle
+  River Road (FSR 26) being "the primary Glacier Peak access" — unrelated to
+  Vesper Peak, which this *same* row's own `corrections` field already documents
+  was contaminated with Glacier Peak Wilderness boilerplate elsewhere
+  (`land_manager`, `rules`) and fixed on 2026-07-31; the same DB-wide contamination
+  pattern (first identified in batch 15) recurring in a field that prior fix didn't
+  touch. Stripped the Suiattle/Glacier Peak clause, kept the genuinely-relevant
+  Mountain Loop Highway seasonal gate sentence.
+
+**Flagged for human review (1 route):**
+
+- **South Ridge / McAllister Glacier** (Primus Peak): `gain_ft` (7300) and
+  `dist_km` (15.3) are *confirmed correct* by an external source (web search):
+  "Primus Peak is most often reached via the Thunder Creek Trailhead... a 19.0-mile
+  roundtrip hike with 7,300 feet of elevation gain" — matches `gain_ft` exactly, and
+  15.3 km is exactly the one-way half of 19.0 mi (30.58 km). No numeric fix needed.
+  But `approach`, `descent_text`, and `itinerary` all still describe the *wrong*
+  trailhead in full narrative detail: the Eldorado Creek climbers' trailhead on
+  Cascade River Road, then the Eldorado/Inspiration Glaciers to Klawatti Col — which
+  this *same* row's own `approach_logistics.trailheadDirection` field already states
+  outright belongs to Dorado Needle, 21.5 km away. `waypoints` and
+  `approach_logistics.trailhead/trailheadLat/trailheadLng` have already been
+  corrected (in an earlier pass) to the Thunder Creek Trailhead, but the three prose
+  fields were never rewritten to match. Not attempted here: I could not find
+  sourced, waypoint-level detail of the actual Thunder-Creek-based route (likely via
+  Fisher Creek/Park Creek Pass or the McAllister Glacier corridor) in sources
+  reachable from this environment, and a from-scratch rewrite without that detail
+  risks inventing plausible-sounding-but-wrong intermediate waypoints. Added a
+  `data_quality.gaps` entry documenting the full diagnosis (including the external
+  corroboration) so a future research pass with better access doesn't have to
+  re-derive it. Needs a human/deep-research pass.
+
+**Verified clean, no changes beyond what's listed above:** none this batch — every
+route in scope had at least one of the issues above.
+
+External web-search corroboration this batch: a general search on Primus Peak's
+elevation/approach (Wikipedia/PeakVisor/cascadeclimbers.com-class results, including
+a cascadeclimbers.com trip-report title citing "8508'"); a search on "Der Sportsman"
+Prusik Peak (Mountain Project, stephabegg.com, and a jensholsten.blogspot.com history
+piece — confirmed FA by Brooke Sandahl "over a three-year period in the 1990s" and the
+6-pitch 5.11+ grade, both already matching this row's own data, no change needed); a
+search on the Success Cleaver approach (Mountaineers.org/SummitPost-class results,
+confirming Longmire is now the *only* standard approach since the Tahoma Creek Trail's
+closure); a search on Ragged Edge's FA (SummitPost/CascadeClimbers.com trip-report
+results confirming Darin Berdinka & Gene Pires, August 18 2013, already matching this
+row's own data, no change needed); a search on Poltergeist Pinnacle's 2004 first ascent
+(cascadeclimbers.com trip report, confirming the Hannegan Pass approach and 4-pitch,
+5.7-5.9 route); and a search on Longmire's coordinates/elevation (visitrainier.com and a
+latlong.net-class aggregator). Note: direct WebFetch was not attempted this batch after
+the prior batch's `EGRESS_BLOCKED` results on several of these same domains; all
+corroboration came from WebSearch result snippets rather than fetched page content —
+where a claim rested on a vague or thin snippet (Primus Peak's exact Thunder-Creek
+route detail), it was flagged rather than acted on.
+
+SQL: `audits/sql/2026-09-18-batch-290.sql` (20 UPDATE statements, no DELETE).
+`check:sql` reported "OK — every target id exists; no DELETE removes an only copy"
+for 17 of the 20 statements; 3 (two full-text `approach`/`road` replacements on
+`wa_poltergeist_pinnacle`, and the combined `descent_text`/`rappel_count_note`
+`replace()` on Burgner-Stanley) were flagged "no literal id predicate — not
+checkable" — the same known naive-semicolon-splitter limitation documented in
+batches 286-289 (the checker's bare `split(";")` misreads ordinary sentence
+semicolons/structure inside long string literals as statement boundaries, even
+though Postgres's own quote-aware parser reads them correctly). Verified
+independently with a quote-aware statement splitter (tracking `''`-escaped string
+state rather than a bare semicolon split): all 20 statements confirmed to have a
+literal `WHERE id = 'wa_...'` predicate. Also round-tripped all 18 `'...'::jsonb`
+literals in the file through a JSON parser (undoing the `''` SQL-escaping) and
+confirmed all parse cleanly with no invented content. One WARN: file is ~23.9KB,
+well over the SQL Editor's ~4KB silent-truncation soft limit — split into ~1.5KB
+chunks and verify each lands before pasting the next, same as prior batches.
+
+Next batch continues in sorted-id order after `wa_ragged_edge` (see progress file).
