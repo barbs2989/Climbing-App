@@ -23101,3 +23101,140 @@ statement individually.
 
 Next batch continues in sorted-id order after `wa_snowking_mountain_standard`
 (see progress file).
+
+## Batch 295 — 2026-09-18
+
+Routes: South Early Winters Spire cluster (South Arete, Direct East Buttress,
+East Buttress, Passenger, Southwest Couloir), Cathedral Peak South Face,
+Argonaut Peak South Face, Pernod Spire South Face.
+
+**Trailhead-elevation cluster fix (South Early Winters Spire):** three of the
+five routes on this peak stored their Blue Lake Trailhead waypoint at
+~5,200 ft, contradicting each row's own `approach_logistics.
+trailheadDirection` field, which already correctly said "5,400 ft" for the
+identical coordinate. Confirmed via WTA (Blue Lake Trailhead sits at 5,400 ft;
+Blue Lake itself is 6,254 ft, 1,050 ft above it) and via this peak's own
+already-applied correction history — `wa_south_arete`'s gain_ft (2407, fixed
+in an earlier pass) only reconciles as `high_point_ft(7807) − 5,400`, not
+`− 5,200`, showing 5,400 was already the figure that correction actually used
+even though the waypoint's own `elev` field was never synced to match it.
+Fixed the waypoint on South Arete, East Buttress and Passenger, South Arete's
+own approach-text mention of "~5,200 ft", and Southwest Couloir's null
+waypoint elevation (filled from this same row's own already-correct
+`approach_logistics` and `bivy` fields, both already 5,400).
+
+That correction then exposed a round-trip gain/loss mismatch it had been
+masking: East Buttress stored 2400/2200 and Passenger 2200/2200 (internally
+consistent but ~200 ft short of `7807 − 5,400 = 2407`, the figure its now-
+corrected siblings share). Both are car-to-car out-and-back climbs
+(`descent_text` on both explicitly reverses down the South Arete gully back
+to Blue Lake), so gain must equal loss — corrected both to 2400/2400 and
+synced each row's own `itinerary.days[0]` gainFt/lossFt to match, so neither
+row is left carrying a third, disagreeing number.
+
+**`outing_shape` filled (null → `outback`)** on five routes this batch whose
+own `descent_text`/`itinerary` already describe a same-trailhead round trip
+but had never been tagged as one: South Arete, Southwest Couloir, Direct
+East Buttress, Argonaut Peak South Face, Pernod Spire South Face.
+
+**Schema shape:** South Arete's `watch_out` was a newline-delimited string
+instead of the standard JSON array — converted via `string_to_array`, no
+content changed (the same recurring defect class documented in many prior
+batches).
+
+**Cathedral Peak, South Face** (`wa_south_face_10`):
+- `itinerary` converted from a bare narrative string to the standard
+  `{cal, days, totalNote}` object, narrative preserved verbatim.
+- `gain_ft` corrected 4700 → 6700 to match `loss_ft` on this out-and-back.
+  AllTrails independently gives 38.6 mi round trip / 6,522 ft of gain for the
+  Andrews Creek Trail to Cathedral Lakes *alone* (not yet counting the
+  further summit push from camp) — closely matching `loss_ft` (6700) once
+  that additional leg is folded in, while `gain_ft` (4700) corresponded to no
+  leg of the trip and read as the same partial-figure-saved-as-the-total
+  pattern documented elsewhere in this audit.
+- `watch_out[0]` said "The 1969 FA account notes protection..." — this row's
+  own `fa`/`overview`/`corrections` fields already document a 2026-08-01
+  correction of the first-ascent year from 1969 to 1968 (confirmed via AAC
+  Publications and Mountain Project), but that pass missed this sibling
+  mention of the same stale year. Corrected and noted in `corrections`.
+- `bivy` pruned 6 → 5, removing "Tungsten Mine camp", which self-disqualifies
+  in its own text: "a party going in and out via Andrews Creek will never see
+  it" — exactly this route's own shape. Left "Amphitheater Mountain upper
+  basin" in place rather than pruning it: it names a different, adjacent
+  peak, but this row's own "Upper Cathedral Lake basin" entry documents that
+  camp as already shared between Cathedral's Southeast Buttress *and*
+  Amphitheater's ridges, so a combined-summit trip using this basin too is
+  plausible — judged too close a call to remove without a human decision.
+
+**Argonaut Peak, South Face** (`wa_south_face_12`): `bivy` pruned 8 → 2, the
+most contaminated corridor list found this batch. Six of the eight entries
+explicitly named a different peak or the wrong side of this same peak: two
+for Sherpa Peak's basin/ridge camps, one explicitly "the north-side base ...
+Argonaut's NORTH approaches" (this route is a *south*-side line via a
+different trailhead entirely), one explicitly the high camp for two of
+Argonaut's other, north-side routes, one explicitly Cashmere Mountain's
+Eightmile Lake approach ("does not belong to the ... Teanaway approaches at
+all"), and one explicitly the base for Cannon Mountain/Enchantment
+Peak/Witches Tower via Icicle Creek. Kept the two entries that name this
+route's own south-side Beverly Turnpike/Ingalls Creek approach.
+
+**Pernod Spire, South Face** (`wa_south_face_2`): `bivy` pruned 6 → 4,
+removing two entries explicitly labeled "EAST side, Silver Star only", one of
+which states outright "it is no use for the Wine Spires on the west side" —
+Pernod is one of the Wine Spires and this route's own approach text climbs it
+from the west, via Burgundy Col.
+
+**Flagged for human review:**
+- `wa_south_early_winter_spire_direct_east_buttress` has a genuine internal
+  contradiction: its `approach`/`waypoints` describe starting from the
+  Hairpin Turn Pullout (5,150 ft, "separate from the Blue Lake Trailhead"),
+  while its own `itinerary.days[0].schedule` describes leaving from and
+  returning to "Blue Lake trailhead". No external source was available to
+  settle which trailhead this route's car-to-car totals should be keyed to,
+  so `gain_ft`/`loss_ft` (2350/2350, internally consistent) were left
+  untouched pending a human call on which starting point is authoritative.
+- `wa_south_face_12` (6257/6157) and `wa_south_face_2` (3500/3700) each carry
+  a modest (100–200 ft, 1.6–5.4%) round-trip gain/loss mismatch that is
+  self-consistent with each row's own itinerary day-sum but has no external
+  source or stronger internal signal indicating which of the two figures is
+  the correct one — left as a reading list rather than an arbitrary pick.
+- `wa_south_face_10`'s "Amphitheater Mountain upper basin" bivy entry (see
+  above).
+
+**Verified clean via external search, no change needed:** `wa_south_face_12`'s
+`road.status` closure claim ("Labor Mountain Fire order, effective May 20
+through December 31, 2026" on Beverly Creek Road/FR-9737-112) matches the
+USFS Okanogan-Wenatchee alerts page exactly. `wa_south_face_2`'s
+`road.seasonalGate` claim that SR-20 "did not fully reopen until June 14,
+2026" after 2025-26 storm-damage repairs matches WSDOT's reporting exactly.
+Area-hierarchy/coordinate sanity: all four parent `areas` rows (Argonaut
+Peak, Cathedral Peak, Pernod Spire, South Early Winters Spire) have plausible
+real-world lat/lng, `area_type = 'peak'`, correct North Cascades/Pasayten/
+Stuart Range parent paths, and `elevation_ft` already matching each route's
+own `high_point_ft` exactly — no fix needed.
+
+Three external web searches were used this batch (WTA for Blue Lake
+Trailhead elevation, AllTrails for Andrews Creek Trail round-trip
+mileage/gain, and two follow-up searches confirming the Labor Mountain Fire
+closure order dates and the SR-20 2025-26 reopening date); everything else
+was resolved from each row's own internal fields, sibling routes on the same
+peak, and each row's own `corrections` history. One WebFetch attempt on a
+USFS alerts page returned `EGRESS_BLOCKED`, as in prior batches; resolved via
+WebSearch snippets instead.
+
+SQL: `audits/sql/2026-09-18-batch-295.sql` (24 UPDATE statements across 8
+routes, wrapped in a single transaction, no DELETE/DROP/TRUNCATE/ALTER
+anywhere). Pre-flighted with
+`npm run check:sql -- audits/sql/2026-09-18-batch-295.sql`: every target id
+exists live, no destructive statement; three large jsonb-literal UPDATEs
+triggered the checker's benign "no literal id predicate — not checkable"
+warning (a known parser limitation on long multi-line literals, seen
+identically in several prior batches' pre-flight runs — each such statement
+does carry its own `WHERE id = '...'` guard, confirmed by inspection). The
+file is 16.6KB, over the SQL Editor's ~4KB safe-paste size — split into
+smaller pastes if applying by hand, or run each UPDATE individually. Every
+guarded `WHERE` clause was re-verified against the live row values
+immediately before this file was finalized.
+
+Next batch continues in sorted-id order after `wa_south_face_2` (see
+progress file).
