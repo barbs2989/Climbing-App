@@ -23361,3 +23361,83 @@ finalized.
 
 Next batch continues in sorted-id order after `wa_south_ridge_2` (see
 progress file).
+
+## Batch 297 — 2026-09-18
+
+Continued after `wa_south_ridge_2` (Black Peak / Eldorado Peak / Whatcom
+Peak / South Twin Sister x3 / Sharkfin Tower / Southeast Mox Peak).
+
+Flagged rather than fixed: Black Peak's South Ridge (`wa_south_ridge_3`)
+has a gain_ft/loss_ft mismatch (3971/5100) that four of the row's own
+records (itinerary day sums, itinerary.totalNote, a waypoint
+dead-reckoning, and the row's own corrections-field claim about what
+loss_ft was set to) disagree about — no confident single number to pick.
+Filled its missing `outing_shape` ('outback') separately, which is
+unambiguous regardless.
+
+Fixed: Eldorado Peak's South Ridge (`wa_south_ridge_4`) — filled null
+lat/lng, filled null loss_ft to match gain_ft (same-trailhead round trip,
+different ascent/descent ridges), set outing_shape='loop', converted a
+bare-string itinerary to the standard object shape (narrative preserved
+verbatim). South Twin Sister's three routes — all had null lat/lng,
+filled from their own summit waypoints; North Ridge got outing_shape='loop'
+(descent_text explicitly avoids reversing it); the Olivine Scramble got
+'outback'; the West Ridge got 'outback' plus a dist_km fix (20.1→15.29 km,
+the same round-trip-stored-as-one-way shape already fixed on this peak's
+scramble sibling). Sharkfin Tower's Southeast Face — gain_ft/loss_ft
+corrected 4870→4920 to match its own waypoints and the identical figure
+already fixed on its Southeast Ridge sibling in batch 292; filled null
+lat/lng; set outing_shape='outback'; corrected a Northwest Forest Pass
+annual price ($35→$30, confirmed live at $30 via USFS/REI).
+
+Largest finding: Southeast Mox Peak's West Ridge / Beckey Route
+(`wa_southeast_mox_peak_se_rib`) had its `itinerary` AND
+`timing.sectionBreakdown[0]` describing a completely different, wrong
+approach — a Ross Lake water taxi and Perry Creek hike, which is the
+Picket Range's approach for other peaks, not this one. The row's own
+approach/descent_text/waypoints already correctly describe the real
+approach (Depot Creek trailhead off Chilliwack Lake Road in BC, crossing
+the border on foot at Monument 65, to a high camp on the Redoubt Glacier
+saddle) — confirmed via Mountain Project and a trip-report search. The
+same contamination had reached `road.driveNote`, which pointed climbers at
+the Hannegan Pass trailhead even though this row's own bivy notes say that
+approach can't reach the real camp. Rewrote itinerary/timing/road using
+only facts already present on the row (waypoint mileages/elevations, the
+row's own pre-existing approach/summit hour splits) — no new research, pure
+re-homing. Also fixed on this row: gain_ft/loss_ft (7400/6900→6154/6154,
+matching high_point_ft minus the trailhead elevation on a same-trailhead
+round trip), dist_km (24.1→16.58, one-way), null lat/lng, and
+outing_shape='outback'. Route id retains its pre-correction
+`_se_rib` slug from a 2026-08-05 name fix documented in the row's own
+corrections field; left alone per this project's route-identity
+convention (ids are stable, not renamed to chase a later-corrected display
+name).
+
+Clean: Whatcom Peak's South Spur (`wa_south_spur`) — already correctly
+fixed in a prior pass, nothing new found.
+
+External corroboration via WebSearch: South Twin Sister (7,004 ft) and
+Whatcom Peak (7,574 ft) both confirmed exactly against Peakbagger/
+Wikipedia; Sharkfin Tower confirmed at 8,120 ft, which also independently
+corroborated the Southeast Face's Sept 1990 FA already on file; the
+Beckey West Ridge route and Depot Creek approach for Southeast Mox Peak
+confirmed via Mountain Project/AAC; current Northwest Forest Pass annual
+price ($30) confirmed via USFS and REI. Two peaks' elevations (Eldorado
+8868 vs Wikipedia's 8,872.9/8873; Black Peak 8970 vs Wikipedia's 8,975)
+differ from this row's prose by ~5 ft — left alone as ordinary
+survey-rounding variance between sources, not a defect.
+
+SQL: `audits/sql/2026-09-18-batch-297.sql` (19 UPDATE statements across 7
+routes plus 1 flagged-only route, no DELETE/DROP/TRUNCATE/ALTER anywhere).
+Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-18-batch-297.sql`:
+every checkable target id exists live, no destructive statement; two large
+jsonb-literal UPDATEs on the Mox Peak row triggered the checker's benign
+"no literal id predicate — not checkable" warning (both do carry their own
+`WHERE id = '...'` guard alongside a jsonb-content guard; confirmed by
+inspection and by re-querying the live row immediately before finalizing).
+The file is 17.7KB, well over the SQL Editor's ~4KB safe-paste size — split
+into smaller pastes if applying by hand, or run it via `psql`/the CLI.
+
+67 remain after batch 297. Next batch continues in sorted-id order after
+`wa_southeast_mox_peak_se_rib` (see progress file).
