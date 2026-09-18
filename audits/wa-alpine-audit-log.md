@@ -22840,3 +22840,142 @@ anywhere.
 
 Next batch continues in sorted-id order after
 `wa_sharkfin_tower_southeast_ridge` (see progress file).
+
+## Batch 293 (pass 5) — 2026-09-18
+
+Routes checked: `wa_sherman_peak_baker_route`,
+`wa_sherman_peak_baker_squak_glacier`, `wa_sherpa_balanced_rock_ne_couloir`,
+`wa_sherpa_glacier`, `wa_sherpa_peak_east_ridge`,
+`wa_sherpa_peak_north_ridge`, `wa_sherpa_peak_west_ridge`,
+`wa_silver_star_glacier`. Continues in sorted-id order after
+`wa_sharkfin_tower_southeast_ridge` (batch 292's stopping point). Scope
+re-counted at 524 routes total.
+
+**Fixed (8 in-batch routes, 20 individual field corrections):**
+
+- **Mount Baker, Boulder Ridge / Park Glacier "Baker Route"**
+  (`wa_sherman_peak_baker_route`) and **Mount Baker, Squak Glacier**
+  (`wa_sherman_peak_baker_squak_glacier`): both rows' `bivy` arrays carried
+  the identical 6-entry corridor list shared across unrelated Mount Baker
+  approaches; pruned each to the 2 entries whose own prose actually names
+  this route's line ("Crag View, Squak Glacier" and "Upper Squak benches"),
+  removing four entries belonging to the Coleman-Deming, Park, and Boulder
+  Glacier sides.
+
+- **Mount Baker, Squak Glacier** (`wa_sherman_peak_baker_squak_glacier`):
+  `loss_ft` was null on a route whose `descent_text` states it reverses the
+  ascent to the same trailhead — filled to 6800, matching this row's own
+  `gain_ft`. `emergency.nearestHospital` was also null; filled by copying
+  the value from a sibling Mount Baker route on the same trailhead system
+  (no invented content — verbatim copy of an existing sibling field).
+
+- **Sherpa Balanced Rock, NE Couloir** (`wa_sherpa_balanced_rock_ne_couloir`)
+  and **Sherpa Peak, East Ridge** (`wa_sherpa_peak_east_ridge`) and
+  **Sherpa Peak, North Ridge** (`wa_sherpa_peak_north_ridge`): all three
+  carried the same 8-entry Ingalls Creek corridor `bivy` list; pruned to the
+  4 entries specific to this cluster of approaches (Ingalls Creek valley,
+  Sherpa south basin camp, Table Rock bivy, Upper Mountaineer Creek bench),
+  removing entries that belong to other Stuart-range trailheads sharing the
+  same corridor.
+
+- **Sherpa Peak, West Ridge** (`wa_sherpa_peak_west_ridge`): `bivy` pruned
+  from 4 to 3, removing one entry ("Beverly and De Roux campgrounds...")
+  that belongs to a different, unrelated trailhead system entirely, not
+  this cluster's corridor.
+
+- **Sherpa Peak, North Ridge** (`wa_sherpa_peak_north_ridge`):
+  `data_quality.gaps` contained a stale self-referential note claiming this
+  route "duplicates wa_north_ridge_9" — queried the DB directly and
+  confirmed no route with that id exists in the current catalog (it appears
+  to be dead cross-reference debris from an earlier, since-superseded
+  duplicate-detection pass). Rewrote `data_quality` to drop the false claim
+  while preserving the two other, still-accurate gap notes (no public GPS
+  track on file; difficulty breakdown is a computed estimate, not
+  crowd-sourced) verbatim.
+
+- **Sherpa Glacier** (`wa_sherpa_glacier`): `watch_out` was a plain string
+  instead of the standard JSON array — converted to an array, and corrected
+  one internal inconsistency in the process: the string called this a
+  "Class 4" route while every other field on the row (grade, `beta`,
+  `climbing_route`) consistently calls it Class 3 glacier terrain; the
+  stray "Class 4" was a copy-paste artifact and is now "Class 3," matching
+  the rest of the row. Separately, `waypoints[0]` (the trailhead) gave
+  2,930 ft while `approach_logistics.trailheadDirection` and this route's
+  own `gain_ft` arithmetic both independently implied ~3,400 ft for the
+  same Stuart Lake Trailhead — corroborated externally via WTA's Stuart
+  Lake Trail page (trailhead ~3,400 ft) — corrected the waypoint elevation
+  and the prose figure in `approach_logistics.trailheadDirection` to match.
+
+- **Silver Star Mountain (North Cascades), Silver Star Glacier**
+  (`wa_silver_star_glacier`): `access.passRequired` said "None" while five
+  other fields on the same row (`access.parkingNotes`, `road.notes`,
+  `emergency.rangerStation`, and two `climbing_route` mentions) all state a
+  Northwest Forest Pass is required at this trailhead — corrected
+  `passRequired` to match the pass text used consistently elsewhere on the
+  row. Also corrected a directional inconsistency: `waypoints[1]` (a creek
+  crossing on the approach) was listed at 4,450 ft, higher than the
+  trailhead at 4,200 ft it's reached from by a described *descent* — the
+  row's own prose is explicit that the route drops to cross this creek
+  before regaining elevation, so 4,450 ft was internally impossible;
+  corrected to 4,200 ft. `gain_ft` (4000) also undercounted this same
+  descend-then-reclimb segment relative to the row's own waypoint
+  elevations; corrected to 4400.
+
+**Fixed (5 out-of-batch routes, discovered via cross-peak comparison while
+diagnosing the bivy-corridor pattern above; not part of this batch's
+assigned scope, but the identical defect was visible on sight once the
+pattern was recognized, so fixed rather than left for a future pass to
+independently rediscover):**
+
+- **Colfax Peak, Cosley-Houston / Polish Route / Kimchi Suicide Volcano**
+  (`wa_colfax_peak_cosley_houston`, `wa_colfax_peak_polish_route`,
+  `wa_colfax_peak_kimchi_suicide_volcano`): all three carried the same
+  6-entry Mount Baker-area corridor `bivy` list; pruned each to the single
+  entry that actually serves Colfax Peak's own approach ("Coleman Glacier
+  bivy under the Black Buttes north faces"), removing five entries
+  belonging to unrelated Baker-massif approaches.
+
+- **Mount Hadley (Hadley Peak), Cougar Divide / Skyline Divide**
+  (`wa_hadley_peak_cougar_divide`, `wa_hadley_peak_skyline_divide`): both
+  carried the same 6-entry corridor list; pruned each to the 3 entries
+  specific to these two approaches (Cougar Divide meadow camps, Skyline
+  Divide crest camps, Deadhorse Creek basin below Chowder Ridge), removing
+  three entries belonging to other Baker-area trailheads.
+
+**Flagged for human review (2):**
+
+- **Sherpa Peak, East Ridge** (`wa_sherpa_peak_east_ridge`) and **Sherpa
+  Peak, West Ridge** (`wa_sherpa_peak_west_ridge`): both routes' itinerary
+  day-by-day gain/loss figures don't cleanly reconcile against their own
+  top-level `gain_ft`/`loss_ft`, nor against each other's implied
+  trailhead/summit deltas — there are multiple candidate numbers in
+  tension across `itinerary.days[]`, the top-level scalars, and the
+  waypoint list, with no single field clearly the authoritative source of
+  the discrepancy (unlike, e.g., this pass's Sherpa Glacier or Silver Star
+  fixes above, where one field was unambiguously the outlier against
+  several agreeing others). Needs a human/topo pass to determine which
+  number is actually wrong rather than a guess.
+
+**Verified clean, no changes needed:** Silver Star Glacier's `bivy` array
+was checked against the same corridor-contamination pattern found
+elsewhere this batch and confirmed to already be route-specific with no
+foreign entries.
+
+One external web search was used this batch (WTA's Stuart Lake Trail page,
+to corroborate the Sherpa Glacier trailhead elevation) — every other fix
+was resolved entirely from each row's own internal fields (waypoints,
+sibling routes on the same trailhead, and direct DB lookups to confirm a
+dead id reference).
+
+SQL: `audits/sql/2026-09-18-batch-293.sql` (20 UPDATE statements across 13
+routes — 8 in scope, 5 out-of-scope but fixed on sight — wrapped in a
+single transaction, no DELETE/DROP/TRUNCATE/ALTER anywhere). All 19
+`'...'::jsonb` literals round-tripped through a JSON parser cleanly; each
+bivy prune is a byte-identical subset of the original array, and every
+other change is either an exact re-shaping of existing content (the
+string-to-array `watch_out` conversions) or a specific field value copied
+from a corroborating sibling field/route or an authoritative external
+source — no invented content anywhere.
+
+Next batch continues in sorted-id order after `wa_silver_star_glacier`
+(see progress file).
