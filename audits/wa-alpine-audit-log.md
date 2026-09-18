@@ -22064,3 +22064,104 @@ Editor's ~4KB silent-truncation soft limit — split into ~1.5KB chunks and veri
 lands before pasting the next.
 
 Next batch continues in sorted-id order after `wa_northwest_ridge` (see progress file).
+
+---
+
+## 2026-09-18 — Pass 5, Batch 288
+
+Eight routes across six peaks: Boston Peak (Northwest Ridge), Liberty Bell Mountain (NW
+Face Var./Remsberg Variation), Colchuck Balanced Rock (NW Ridge), Old Guard Peak (East
+Side Route, Southwest Route), Old Snowy Mountain (South Ridge/PCT approach), Mount
+Olympus (Blue Glacier/East Face Ramps, Summit Block NW Edge variation).
+
+**Confirmed errors → fixes in `sql/2026-09-18-batch-288.sql`:**
+- Old Guard Peak Southwest Route: `loss_ft` (14,100) didn't match the sum of this row's
+  own 6-day itinerary `lossFt` values (300+1,800+2,200+1,400+2,500+4,200 = 12,400).
+  Corroborated externally — Downey Creek/Suiattle River Road, this route's own stated
+  exit trailhead, sits at ~1,450-1,500 ft (WTA, hikeoftheweek.com); with the stored
+  gain_ft (10,600, which DOES match the itinerary sum) the old loss_ft implies an
+  impossible end elevation (3,660 − 14,100 < 0) versus a plausible ~1,860 ft with the
+  corrected figure. An independent trip report (stephabegg.com) gives "~30 miles, 11,000
+  ft gain/loss" for this same Cascade Pass-to-Suiattle traverse, consistent with the fix.
+- Old Guard Peak Southwest Route: `dist_km` (26.23 km = 16.3 mi) was roughly HALF this
+  row's own itinerary mile total (6.5+4.5+5.5+4.5+5+9 = 35 mi one-way; the itinerary's
+  own `totalNote` separately says "roughly 33-mile"). This is a point-to-point traverse
+  ending at a different trailhead, not an out-and-back, so it should hold the full
+  one-way distance. External sources (Wenatchee Outdoors, SummitPost, stephabegg.com)
+  independently give 30-40 miles for Cascade Pass-to-Suiattle, matching the row's own
+  33-35 mi and contradicting the stored 16.3 mi. Corrected to the itinerary's own mile
+  sum (35 mi = 56.33 km).
+- Old Guard Peak Southwest Route: `outing_shape` was null; set to `'point'` — this row's
+  own itinerary day 6 states the exit trailhead differs from the Cascade Pass start, and
+  the Ptarmigan Traverse is externally documented as point-to-point, never an
+  out-and-back.
+- Old Snowy Mountain (South Ridge/PCT approach): two `waypoints[]` entries had the
+  Trail 96/97/PCT junction backwards, contradicting this row's OWN approach text and
+  itinerary schedule. The "Trail 97 junction" waypoint said "stay on 97 ... rather than
+  continuing on 96" — but this row's own approach ("Continue past the Trail 97
+  junction... staying on the main track") and itinerary schedule both describe staying
+  on Trail 96 to the PCT. The next waypoint ("PCT junction") stored elev 6,900 ft and
+  credited Trail 97 with reaching the PCT; this row's own approach text ("at about 4.7
+  miles the trail meets the PCT at roughly 7,100 ft") and itinerary schedule ("~7,100
+  ft") both say 7,100 ft via Trail 96 — matching Mountaineers.org ("hike the Snowgrass
+  Flat Trail [#96] to its intersection with the PCT (~7,100 ft)") and general
+  trail-network sources describing #97 as an alternate "Bypass Trail" connector, not the
+  through-route. Fixed both notes and the elevation. Also corrected the "Snowgrass Flats
+  meadows" waypoint's distMi from 3 to 3.9, matching this row's own more granular
+  approach narrative ("Just beyond the ford (~3.9-4 miles, ~6,400 ft) the trail breaks
+  out ... into ... Snowgrass Flat").
+
+**Verified clean, no changes (6 routes):**
+- Boston Peak Northwest Ridge: FA (Boyce/Willis, 2018 "Boston Marathon"), the "feta
+  cheese" rock-quality quote, and the July/August MP-vs-AAJ date discrepancy already
+  noted in this row's own `corrections` field all check out against AAC Publications and
+  general search corroboration. NPS North Cascades wilderness permit fee claim ("no
+  longer free... confirm current pricing") confirmed current ($10/person + $6
+  reservation fee, in-person pickup at Marblemount required for Cascade River Road
+  trailheads).
+- Liberty Bell NW Face Var. (Remsberg Variation): beta description (crack trending left
+  5.7 into a 5.10 flared groove past two bolts to the belay ledge) matches SuperTopo/
+  Mountain Project route descriptions almost verbatim. gain_ft (2,520) matches
+  trailhead-to-summit elevation exactly (7,720 − 5,200). Could not independently confirm
+  "Scott Stimpson" as co-FA beyond "Remsberg" himself, but nothing contradicts it either
+  — not flagged, too minor to be worth a human-review flag on its own.
+- Colchuck Balanced Rock NW Ridge: Enchantment Permit Area quota season ("May 15-Oct
+  31") confirmed exactly via Forest Service/Recreation.gov sources. FA note (peak's 1958
+  FA by Prater/Quin not attributed to this specific line) is honest and consistent with
+  `fa: null`.
+- Old Guard Peak East Side Route: sparse but internally consistent and appropriately
+  hedged ("no pitch-by-pitch grades or lengths are on record") — nothing to verify
+  further without inventing detail.
+- Mount Olympus Blue Glacier/East Face Ramps: FA ("1907, L.A. Nelson and party")
+  confirmed — Lorenz A. Nelson led the Mountaineers' first ascent of the true West Peak
+  on August 13, 1907. This row's own prior corrections (access.notes North-Cascades
+  copy-paste contamination fix; summit waypoint elevFt 7973→7980) hold up.
+- Mount Olympus Summit Block NW Edge (variation): elevation-source discrepancy note
+  (7,980 Wikipedia/USGS/Peakbagger vs 7,965 Willhiteweb vs 7,897 outdated MP) and the
+  7,500 vs ~8,300 ft gain-estimate note are both already well-hedged with sources cited;
+  `fa: null` for the variation (as distinct from the 1907 peak FA) is correctly reasoned.
+
+External web-search corroboration this batch: AAC Publications on the "Boston Marathon"
+traverse; NPS North Cascades backcountry permit fees (Recreation.gov); Enchantment
+Permit Area season dates (Forest Service/Recreation.gov); Mountaineers.org and general
+trail-network sources on the Snowgrass Flat/Old Snowy PCT junction; Downey Creek
+trailhead elevation and Ptarmigan Traverse total mileage (WTA, Wenatchee Outdoors,
+SummitPost, stephabegg.com, hikeoftheweek.com); Mount Olympus 1907 first ascent
+(Mountaineers club history, HistoryLink.org).
+
+SQL: `audits/sql/2026-09-18-batch-288.sql` (4 UPDATE statements, no DELETE). `check:sql`
+reported "OK — every target id exists; no DELETE removes an only copy" for the 3
+checkable statements; the 4th (the Old Snowy waypoints replacement) was flagged "no
+literal id predicate — not checkable" — the same known naive-semicolon-splitter
+limitation already documented in batch 287's note (the jsonb literal's note text
+contains ordinary sentence semicolons, which the checker's bare split(";") treats as
+statement boundaries even though Postgres's own parser reads the quoted string
+correctly). Manually confirmed the target id (`wa_old_snowy_mountain_r1`) exists via a
+direct REST query before writing the fix, and round-tripped the jsonb literal through a
+JSON parser (undoing the `''` SQL-escaping) to confirm it parses to the expected 7-item
+array with only the intended fields changed. One WARN: file is ~6.9KB, over the SQL
+Editor's ~4KB silent-truncation soft limit — split into ~1.5KB chunks and verify each
+lands before pasting the next.
+
+Next batch continues in sorted-id order after `wa_olympus_summit_block_west_edge` (see
+progress file).

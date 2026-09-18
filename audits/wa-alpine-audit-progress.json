@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_northwest_ridge",
+  "last_processed_id": "wa_olympus_summit_block_west_edge",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 574,
   "batches": [
@@ -5823,6 +5823,25 @@
       "clean": 1,
       "sql_file": "audits/sql/2026-09-18-batch-287.sql",
       "note": "Johannesburg Mountain NE Ridge (1963 Route): removed a misplaced 'Cascade Pass' waypoint that doesn't belong in this route's ascent chain (this route's own approach descends from near the trailhead to ford the Cascade River, confirmed against three independent web sources; Cascade Pass is 3.6mi up a different direction entirely); flagged the remaining waypoint distMi values as suspect but left unfixed absent a confident replacement figure. Argonaut Peak NW Arete: dist_km halved from 19.31 to 9.66 (stored value was the doubled round-trip figure, same tell/fix as batch 286's Concord Tower); bivy pruned 8->2, removing camps for Sherpa Peak/Ingalls Peak/Cashmere Mountain/Cannon Mountain that had nothing to do with this route's own north-side Mountaineer Creek approach. Sloan Peak NW Buttress: bivy pruned 6->2 (Mountain Loop Highway corridor contamination -- Vesper/Gothic/Monte Cristo entries, one of which explicitly self-excludes Sloan by name); flagged dist_km as a likely doubled-round-trip case too but left unfixed since the asymmetric ascent/descent paths don't cleanly reconcile with a simple halving. Kangaroo Temple NW Face: summit elevation corrected 7238->7572ft (verified via web search, matches this row's own high_point_ft), which armed a gain_ft floor violation corrected 1900->2500ft; bivy pruned 6->4 removing two entries for Vasiliki/Juno Tower and Big Kangaroo via different pullouts/approaches. Little Big Chief Mountain NW Face: bivy pruned 9->5, removing four entries (Lemah Mountain, Chimney Rock, Three Queens, Big Snow Mountain) with zero mention of this peak. South Early Winters Spire NW Face (Boving-Pollock): watch_out converted from a plain newline-delimited string to a proper JSON array (same defect class as batch 286's Northeast Buttress fix). Northwest Mox Peak Standard Route: gain_ft corrected 5450->7000 (this row's own itinerary day-by-day sum omits one leg in the stored total, arithmetically exact match once corrected); bivy pruned 6->1, removing five entries for the separate US-side Hannegan Pass approach (serving Bear Mountain/Copper Ridge) that this row's own kept entry explicitly says are not reachable from this route's actual BC-side Depot Creek approach. Dorado Needle NW Ridge verified clean -- extensively cross-checked already, bivy list genuinely shared across Eldorado-area objectives including this peak by name. check:sql reported 8 of 11 statements as 'not checkable' due to its naive semicolon-splitter choking on semicolons embedded inside JSON string values (same tool limitation batch 286 recorded) -- independently verified all 11 statements are well-formed and every jsonb literal parses to the expected shape before committing. File is ~32.9KB; split into ~1.5KB chunks when pasting into the SQL Editor."
+    },
+    {
+      "batch_number": 288,
+      "date": "2026-09-18",
+      "route_ids": [
+        "wa_northwest_ridge_2",
+        "wa_nw_face_var_remsberg_variation",
+        "wa_nw_ridge_2",
+        "wa_old_guard_peak_east_side_route",
+        "wa_old_guard_peak_southwest_route",
+        "wa_old_snowy_mountain_r1",
+        "wa_olympus_blue_glacier_east_ramps",
+        "wa_olympus_summit_block_west_edge"
+      ],
+      "confirmed_errors_fixed": 6,
+      "flagged_for_human_review": 0,
+      "clean": 6,
+      "sql_file": "audits/sql/2026-09-18-batch-288.sql",
+      "note": "Old Guard Peak Southwest Route: loss_ft (14100->12400) and dist_km (26.23->56.33, was ~half the route's own 35mi itinerary total) corrected to match this row's own itinerary day sums and external Ptarmigan Traverse mileage; outing_shape set to 'point' (was null) since this is a point-to-point traverse ending at a different trailhead. Old Snowy Mountain (South Ridge/PCT approach): two waypoints had the Trail 96/97/PCT junction backwards -- \"stay on 97\" and a 6900ft elevation both contradicted this row's own approach text and itinerary schedule (which both say Trail 96 reaches the PCT at ~7100 ft, matching Mountaineers.org), plus a distMi fix on the Snowgrass Flats meadows waypoint to match the row's own more granular mile-by-mile approach text. Six routes verified clean (Boston Peak NW Ridge, Liberty Bell NW Face Var./Remsberg Variation, Colchuck Balanced Rock NW Ridge, Old Guard Peak East Side Route, both Mount Olympus routes) -- FA claims, permit season dates, and prior-pass corrections all held up against AAC Publications, NPS/Recreation.gov, and Forest Service sources."
     }
   ],
   "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count; re-counted again at batch 283: 524 in scope. Batch 284 re-counted again: still 524 in scope, 170 remain unaudited this pass after batch 284. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving. Batch 283 found the SAME pattern is widespread, not just Mount Baker: every proposed fix from batches 90/153/217 for the Mount Stuart/Mount Teneriffe cluster (11 total fixes across three prior passes) was still unapplied when re-checked against the live rows this batch. A human should review and run the accumulated audits/sql/*.sql files -- the diagnoses are sound, they are simply not landing in the database."
