@@ -21934,3 +21934,133 @@ recent batches.
 
 Next batch continues in sorted-id order after `wa_northeast_face_direct` (see progress
 file).
+
+## 2026-09-18 — Batch 287 (pass 5)
+
+Routes: Johannesburg Mountain (Northeast Ridge/1963 Route), Argonaut Peak (Northwest
+Arête), Sloan Peak (Northwest Buttress), Kangaroo Temple (Northwest Face), Little Big
+Chief Mountain (Northwest Face/Falcon Route), South Early Winters Spire (Northwest
+Face/Boving-Pollock), Northwest Mox Peak (Standard Route), Dorado Needle (Northwest
+Ridge).
+
+**Fixed:**
+- Johannesburg Mountain NE Ridge (1963 Route): removed a "Cascade Pass" waypoint
+  (Junction, 5,392 ft, 3.6 mi up-trail) that had no business in this route's ascent
+  chain. This route's own approach/approach_variants text says the approach is East/NE
+  from the trailhead, descending to ford the Cascade River, with no mention of Cascade
+  Pass — confirmed against three independent web sources (SummitPost, the Dr. Dirtbag
+  NE Buttress trip report, and "Where is Kyle Miller"), which describe a ~quarter-mile
+  walk back down the road from a hairpin turn, then straight down to the river ford,
+  reaching serious ground at ~3,500 ft within about a half-hour. Going via Cascade Pass
+  first (up 1,800 ft, then back down to the river) contradicts "one of the shortest
+  approaches in the range." Flagged rather than fixed: the remaining waypoints' distMi
+  values (4.3/4.8/5.5 mi) also look too large for this characterization, but no clean
+  replacement figure was available, so left for human review. Elevation: high_point_ft
+  (8,200) disagrees with the summit waypoint's own elevFt (8,066) by 134 ft — left alone,
+  since both figures independently show up in reliable sources (Wikipedia infobox vs.
+  body text, PeakVisor, listsofjohn.com) with no clean resolution.
+- Argonaut Peak Northwest Arête: dist_km corrected from 19.31 to 9.66 — the stored value
+  (= 12.00 mi exactly) matched this row's own round-trip total (waypoint distMi=6 mi
+  one-way to the true summit; itinerary day1 6 mi + day2 6 mi = 12 mi round trip), i.e.
+  it stored the already-doubled figure rather than the one-way value the app's
+  distKm*2 display convention expects. Same tell and same fix as batch 286's Concord
+  Tower correction. Also pruned bivy from 8 entries to 2: the stored list mixed in
+  camps for Sherpa Peak's south/east side (Ingalls Creek valley camps, Sherpa south
+  basin, Table Rock/upper Sherpa basin — explicitly a different approach for a
+  different peak), Ingalls Peak (Beverly/De Roux/Teanaway roadside camps), Cashmere
+  Mountain (Lake Caroline, a different trailhead off Eightmile Lake Rd — its own text
+  says "Cashmere Mountain does not belong to the Stuart Lake ... approaches at all"),
+  and Cannon Mountain (Nada Lake via the Snow Lakes trail). Kept the two entries
+  explicit about this route's own north-side approach: "Upper Mountaineer Creek bench"
+  and "Argonaut north basin bivies," the latter naming the Northwest Arête by name.
+- Sloan Peak Northwest Buttress: pruned bivy from 6 entries to 2. This is the same
+  Mountain Loop Highway corridor-list contamination this file has recorded for
+  Pilchuck/Three Fingers/Big Four/Whitehorse — here the list mixed in Vesper Peak
+  (Vesper Creek basin/Lake Elan, via the separate Sunrise Mine trailhead), Del
+  Campo/Gothic (Foggy Lake, via Barlow Pass), and the Monte Cristo townsite, whose own
+  text says it is used "rather than for Vesper or Sloan" — i.e. it self-excludes.
+  Verlot corridor campgrounds explicitly list themselves as fallback for "Vesper,
+  Morning Star, Sperry and the Big Four side of the valley," omitting Sloan, so also
+  removed. Kept "Sloan Peak high camp" and "Bedal Campground," the latter naming Sloan
+  by name as "the standard place to sleep the night before a Sloan attempt." Flagged,
+  not fixed: dist_km (17.7 km = 11.0 mi, a suspiciously round figure) matches this
+  row's own itinerary total mileage (day1 5 mi + day2 6 mi), which is the same
+  doubled-round-trip tell seen elsewhere in this batch — but the ascent (Bedal
+  Creek/buttress) and descent (Corkscrew/SE Shelf) use genuinely different paths, so
+  halving it doesn't cleanly reconcile with the one-way waypoint distance (4.5 mi) the
+  way it did for Argonaut Peak; left unresolved rather than guessing at a number.
+- Kangaroo Temple Northwest Face: summit waypoint elevation corrected from 7,238 ft to
+  7,572 ft — confirmed via web search (matches this row's own high_point_ft field,
+  which the waypoint had disagreed with by 334 ft) and independently corroborated
+  (AllTrails/PeakVisor cite 7,572 ft for Kangaroo Temple). With the corrected summit
+  elevation, gain_ft (1,900) fell below the hard trailhead-to-summit floor (2,412 ft) by
+  512 ft; corrected to 2,500 ft to match this row's own loss_ft, consistent with a
+  round trip back to the same trailhead. Also pruned bivy from 6 entries to 4, removing
+  "Bench Camp" (explicitly the base for "Vasiliki Ridge and Vasiliki Tower... the WEST
+  side of Juno Tower," a different pullout further east with no mention of Kangaroo
+  Temple) and "Upper Cedar Creek basin" (explicitly for Big Kangaroo via "the Half Moon
+  north-ridge approach," a different trailhead/route). Kept the hairpin pullouts
+  (explicitly names Kangaroo Temple), Kangaroo Pass/meadows (this route's own approach),
+  Blue Lake fallback, and the developed campgrounds.
+- Little Big Chief Mountain Northwest Face (Falcon Route): pruned bivy from 9 entries to
+  5, removing four that describe entirely different peaks with zero mention of Little
+  Big Chief — Pete Lake/Lemah Meadows (Lemah Mountain, via the separate Cooper Lake
+  trailhead), Chimney Glacier hanging basin (explicitly "Chimney Rock's real base," and
+  its own text distinguishes itself from "the Dutch Miller Gap entry" — this route's
+  approach — for the same reason a different peak needs a different camp), Park Lakes
+  Basin (explicitly "the base for THREE QUEENS"), and Upper Hardscrabble Lake
+  (explicitly "the high camp for BIG SNOW MOUNTAIN's east ridge," a side trail off the
+  Middle Fork trail this route doesn't take). Kept Escondido Ridge tarns, Waptus
+  Lake/Spade Lake, Hardscrabble Horse Camp (directly named in this route's own approach
+  text), and Williams Lake — all of which name Little Big Chief specifically or sit on
+  this route's stated Middle Fork/Dutch Miller Gap corridor.
+- South Early Winters Spire Northwest Face (Boving-Pollock): watch_out was stored as a
+  plain newline-delimited string (5 items) instead of a JSON array — every sibling route
+  stores this field as an array; converted with content unchanged, matching the same
+  defect class fixed on wa_northeast_buttress_4 in batch 286.
+- Northwest Mox Peak Standard Route: gain_ft corrected from 5,450 to 7,000 — this row's
+  own itinerary day-by-day gainFt fields sum to 3,550 + 1,550 + 1,900 + 0 = 7,000, but the
+  top-level gain_ft omitted day 2's 1,550 ft leg (Lake Ouzel to the Redoubt Glacier
+  saddle high camp) — 7,000 minus 1,550 lands exactly on the stored 5,450. The
+  correction also clears the hard trailhead-to-summit floor (6,057 ft; 5,450 was 607 ft
+  short) and reconciles closely with this row's own loss_ft (7,050, off by only 50 ft).
+  Also pruned bivy from 6 entries to 1: five of the six entries (Hannegan Camp, Boundary
+  Camp, Copper Lake Camp, US Cabin Camp, Basin below the Bear Mountain saddle) describe
+  the separate US-side Hannegan Pass/Chilliwack River Trail approach serving Bear
+  Mountain and the Copper Ridge group, not this route's actual BC-side Depot Creek
+  approach. The kept entry, "Ouzel Lake basin, head of Depot Creek," is the exact camp
+  this row's own itinerary uses for day 1, and its own text states it is "NOT reachable
+  from the Hannegan Pass trailhead," confirming the other five don't belong on this row.
+
+**Verified clean, no changes:** Dorado Needle Northwest Ridge — extensively
+cross-checked already (its own `corrections` field records a prior trailhead-coordinate
+fix); gain_ft/loss_ft (7,000/7,000) clear the hard floor (6,340 ft) with reasonable
+margin; the bivy list is genuinely shared Eldorado-corridor camps used by "all
+Eldorado-area and Dorado Needle objectives" per its own text (one entry, Klawatti Col
+camp, names Dorado Needle explicitly), unlike the corridor-contamination found on other
+routes this batch. A minor gap between the stored gain_ft/loss_ft (7,000/7,000) and the
+itinerary's own day-by-day sum (6,400) was noted but not acted on — both figures clear
+the hard floor independently and there's no clean story for which one is "wrong."
+
+External web-search corroboration this batch: the Johannesburg Mountain NE-side approach
+description (SummitPost, Dr. Dirtbag, "Where is Kyle Miller" trip reports); Johannesburg
+Mountain's disputed elevation (8,066/8,100/8,200/8,212 ft across Wikipedia/USGS/PeakVisor/
+listsofjohn.com); Kangaroo Temple's elevation (7,572 ft, AllTrails/PeakVisor/SummitPost);
+the Labor Mountain Fire 2025 closures on Beverly Turnpike/Long's Pass/Ingalls Way
+(confirmed real and still relevant to Argonaut Peak's access.closures field, left as-is).
+
+SQL: `audits/sql/2026-09-18-batch-287.sql` (11 UPDATE statements, no DELETE). `check:sql`
+reported "OK — every target id exists; no DELETE removes an only copy" for everything it
+could parse, but flagged 8 of the 11 statements as having "no literal id predicate — not
+checkable." Verified this is the same naive-statement-splitter limitation recorded in
+batch 286's note (several of the jsonb replacement values contain semicolons inside JSON
+string text, which the checker's bare-semicolon splitter treats as statement boundaries,
+even though Postgres's own quote-aware parser reads them correctly) rather than an actual
+defect: independently re-parsed the file with a regex anchored on `UPDATE routes SET ...
+WHERE id = '...';` and confirmed all 11 statements are well-formed, then round-tripped
+every jsonb literal through a JSON parser (undoing the `''` SQL-escaping) and confirmed
+each parses to the expected item count. One WARN: file is ~32.9KB, well over the SQL
+Editor's ~4KB silent-truncation soft limit — split into ~1.5KB chunks and verify each
+lands before pasting the next.
+
+Next batch continues in sorted-id order after `wa_northwest_ridge` (see progress file).
