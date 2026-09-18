@@ -21824,3 +21824,113 @@ file is ~6.6KB, over the SQL Editor's ~4KB silent-truncation soft limit — spli
 ~1.5KB chunks and verify each lands before pasting the next, as with recent batches.
 
 Next batch continues in sorted-id order after `wa_north_face_3` (see progress file).
+
+## Batch 286 (pass 5) — 2026-09-18
+
+Routes: wa_north_face_left_buttress (Castle Peak, "Fight or Flight"),
+wa_north_face_var_right_directisimo (Concord Tower), wa_north_gardner_mountain_nw_couloir,
+wa_north_ridge_2 (Whatcom Peak), wa_north_ridge_3 (Cutthroat Peak),
+wa_north_ridge_4 (Primus Peak), wa_northeast_buttress_4 (Colchuck Peak),
+wa_northeast_face_direct (Mount Formidable).
+
+**Fixed:**
+- Castle Peak, "Fight or Flight" (North Face Left Buttress): `bivy` carried a 9-entry
+  camp list entirely along the Harts Pass Road (FR-5400) corridor — Harts Pass/Meadows
+  campgrounds, Windy Pass, Hopkins Lake and Castle Pass, Robinson Creek valley, Doris/
+  Freds Lake basins, Shellrock Pass, Lake of the Woods, Copper Glance Lake — serving
+  Robinson Mountain, Osceola Peak, Blackcap Mountain, Ptarmigan Peak, Dot Mountain,
+  Monument Peak, Lake Mountain, Big Craggy and West Craggy, none of which is Castle Peak.
+  Even the one entry that names Castle Peak ("Hopkins Lake and Castle Pass") describes
+  reaching it from the south via Harts Pass and the PCT — a different approach entirely
+  from this route's own two stated approaches (Manning Park, BC via Frosty Mountain, or
+  Ross Lake via Lightning Creek/Freezeout Creek Trail), both of which reach the peak's
+  north side via the approach glacier below the climbing. None of Harts Pass, Windy Pass,
+  Castle Pass, Robinson Creek, Doris Lake, Shellrock Pass, Lake of the Woods, or Copper
+  Glance Lake appears anywhere in this route's own approach/approach_variants/descent_text.
+  Cleared to NULL (same corridor-contamination class as wa_neve_glacier_west_ridge in
+  batch 285 and wa_mount_spickard_silver_glacier in batch 282). FA (Herrington/Hirst,
+  Aug 3 2008) and elevation (8,343 ft, GPS-surveyed) independently confirmed via web
+  search and left unchanged.
+- Concord Tower, North Face Var. Right (Directisimo): `dist_km` (9.7) matched this row's
+  own `itinerary.days[0].miles` (6 mi = 9.66 km) almost exactly — i.e. it stored the
+  round-trip mileage this row's own totalNote states, rather than the one-way value the
+  app's display convention doubles to render round trip (per CLAUDE.md's documented
+  "already-doubled" pattern, same class as wa_mount_stuart_ice_cliff_glacier in batch
+  283). Corrected to half (4.85). Concord Tower's summit elevation (7,560 ft) independently
+  confirmed via web search, corroborating the prior 2026-07-31 correction already recorded
+  on this row.
+- Cutthroat Peak, North Ridge: `gain_ft`/`loss_ft` (2,800/2,800) sat below the hard floor
+  implied by this route's own waypoints — Trailhead (4,947 ft) to Summit (8,050 ft, per
+  this row's own summit waypoint) is a minimum net rise of 3,103 ft, which a party cannot
+  summit having gained less than. (This row's separate `high_point_ft`, 8,065, differs
+  from the summit waypoint's 8,050 by a genuine, independently documented survey
+  discrepancy for this peak — Wikipedia gives 8,066 ft, SummitPost gives 8,050 ft for the
+  south/true summit — left alone rather than "resolved," since either figure still leaves
+  gain_ft short of the floor.) Corrected gain_ft/loss_ft to 3,103, along with the matching
+  itinerary.days[0] figures and the totalNote prose restating "~2,800 ft round trip."
+  Cutthroat Peak's Chelan/Skagit county line and the FA (Beckey/Crooks/Kenney, Aug 19
+  1940, already hedged as single-source in this row's own data_quality) both confirmed.
+- Primus Peak, North Ridge: this row disagreed with itself on the first-ascent year —
+  `fa` says "1986," `beta` says "First recorded climbed by Mark Bebie on September 7,
+  1987." External sources (SummitPost, AAC references) independently confirm 1986; the
+  1987 in beta is almost certainly the American Alpine Journal's publication year (that
+  report ran in the 1987 AAJ, which covers the prior season) bleeding into the stated
+  climb date. Corrected beta's year to 1986 to match fa and the external sources; the
+  day/month (September 7) is unverified beyond search snippets but not contradicted, so
+  left as-is. Primus Peak's elevation (8,508 ft) and the March 2026 Diablo Lake rockslide/
+  June 14 2026 SR-20 reopening cited in this row's `road` field were both independently
+  confirmed (the latter via WSDOT's own project page — dates, milepost and cause all
+  match this row's text exactly).
+- Colchuck Peak, Northeast Buttress: `watch_out` was stored as a single string — every
+  sibling row in this dataset stores watch_out as a JSON array — describing an entirely
+  different, unrelated climb: mixed M4 pitches, an "ice bulge (A2-3 rating)," an
+  "S-shaped gully," cornice-collapse risk, and "wind-loaded terrain near Snoqualmie
+  Pass." None of this has any connection to the Northeast Buttress, a dry granite alpine
+  rock route in the Enchantments (nowhere near Snoqualmie Pass) with no ice grade, no
+  mixed pitches and no cornices anywhere else on this row. Replaced with a proper array
+  built entirely from facts already stated elsewhere on this same row (hazards, beta,
+  approach_variants[0].baseFinding, climbing_route[2].notes), independently corroborated
+  via web search (American Alpine Institute and SummitPost trip reports both describe
+  loose rock throughout, a moat crossing guarding the buttress toe, rockfall, an icy
+  late-season glacier descent, and a crux dihedral frequently never located). No new
+  facts introduced.
+
+**Flagged for human review, not fixed:**
+- Whatcom Peak, North Ridge: the summit waypoint's `distMi` (13, to Whatcom Pass)
+  disagrees with the approach text's own stated mileage ("roughly 16-17 miles one-way")
+  to the same pass. Minor and not clearly resolvable to one specific corrected number
+  without guessing at which figure is measured which way (trail miles vs. a rounder
+  estimate), so left as a reading-list item. Everything else on this row — gain_ft/
+  loss_ft (7,700/7,700, matching the itinerary's three-day sum exactly), the peak's
+  elevation (7,574 ft) and county (Whatcom) — checked out via web search, and the FA
+  sourcing uncertainty is already well hedged in this row's own data_quality/corrections
+  fields, so nothing further was added there.
+
+**Verified clean, no changes:**
+- North Gardner Mountain, Northwest Couloir (Cedar Creek approach): gain_ft (6,019)
+  matches the trailhead-to-summit net rise (5,995 ft) closely; dist_km (21.1) matches
+  the summit waypoint's one-way distMi (13.1 mi = 21.08 km) almost exactly; the bivy list
+  (Cedar Creek meadow camps, Upper Cedar Creek head basin, Klipchuck/Highway 20 corridor
+  campgrounds) is genuinely this route's own approach corridor, unlike the contaminated
+  lists found elsewhere this batch.
+- Mount Formidable, Northeast Face Direct: FA (Loren/Jens, 2002, matching an independent
+  second-ascent trip report and this row's own careful data_quality hedge about unverified
+  surnames), elevation (8,325 ft) and county (Skagit) all confirmed via web search.
+  gain_ft (6,100) exceeds the straight trailhead-to-summit net rise (4,725 ft), which is
+  expected and correct for this route's multi-day traverse approach (Cascade Pass, Cache
+  Col, a descent to Kool-Aid Lake) that involves real elevation loss and regain before the
+  climb even starts, rather than a gain-floor violation.
+
+SQL: `audits/sql/2026-09-18-batch-286.sql` (5 UPDATE statements, no DELETE) — passed
+`check:sql` cleanly (every target id exists; no DELETE removes an only copy) after one
+revision: a semicolon embedded inside a JSON string value in the watch_out fix's
+replacement array confused the checker's naive statement-splitter and produced a false
+"no literal id predicate" warning on that one statement (a tool limitation — Postgres's
+own quote-aware parser handles an embedded semicolon inside a string literal correctly —
+not a defect in the SQL itself, but reworded to remove the ambiguity anyway and re-ran
+clean). One WARN: file is ~7.6KB, over the SQL Editor's ~4KB silent-truncation soft
+limit — split into ~1.5KB chunks and verify each lands before pasting the next, as with
+recent batches.
+
+Next batch continues in sorted-id order after `wa_northeast_face_direct` (see progress
+file).
