@@ -22165,3 +22165,196 @@ lands before pasting the next.
 
 Next batch continues in sorted-id order after `wa_olympus_summit_block_west_edge` (see
 progress file).
+
+## 2026-09-18 — Pass 5, Batch 289
+
+Eight routes across six peaks: Mount Olympus (West-Middle-East Traverse), Unicorn Peak
+(Open Book), Ottohorn (Southeast Route, West Ridge), Overcoat Peak (Southeast Route),
+Pernod Spire (Standard Rock Route), Phantom Peak (South Route, West Ridge).
+
+**Confirmed errors → fixes in `sql/2026-09-18-batch-289.sql`:**
+- Overcoat Peak Southeast Route: gain_ft (6,032) and loss_ft (5,800) both disagreed with
+  this row's own 3-day itinerary day-by-day sum (gain 5,200+900+100=6,200, loss
+  0+2,900+3,300=6,200 — symmetric, as required for a round trip back to the same
+  trailhead), which is independently corroborated by this row's own itinerary.totalNote
+  ("~40 miles round trip and ~6,000 ft net gain"). loss_ft additionally fell below the
+  hard floor implied by this row's own trailhead (1,450 ft) and high_point_ft (7,432 ft)
+  = 5,982 ft minimum. Corrected both to 6,200. outing_shape was null; set to 'outback'
+  (this row's own descent/approach text explicitly reverses back to the trailhead). FA
+  (July 1897, Sylvester & Charlton) and elevation (7,432 ft) independently confirmed via
+  web search (Wikipedia's Overcoat Peak article) and left unchanged.
+- Unicorn Peak Open Book: gain_ft/loss_ft (2,397/2,397) disagreed with this row's own
+  single-day itinerary (2,600/2,600 for the identical car-to-car day, internally symmetric
+  as required for a round trip). Corrected the top-level columns to match. Two siblings
+  sharing this exact approach (wa_the_roof, wa_classic_route_2 — both on wa_unicorn_peak,
+  out of scope for this batch, not touched) show the identical mismatch with the identical
+  numbers, which corroborates the direction of the fix rather than being incidental — see
+  the flagged item below for the wider unresolved picture on that peak.
+- Phantom Peak South Route: this was the batch's most serious finding. gain_ft (1,916)
+  and loss_ft (1,000) were far below the hard floor implied by this row's own waypoints
+  (Hannegan Pass Trailhead, 3,120 ft, to the 8,016 ft summit = 4,896 ft minimum for a
+  5-day, ~30-mile round trip) — and the stored gain_ft turned out to exactly equal this
+  row's OWN "Southwest buttress saddle" waypoint (6,100 ft) subtracted from the summit
+  (8,016 ft): only the final summit-push segment's gain appears to have been saved as if
+  it were the route's total. This row's own 5-day itinerary day-by-day sum is internally
+  consistent and gives the real total (gain 2,500+3,000+2,400+300+200=8,400, loss
+  200+300+2,400+3,000+2,500=8,400 — symmetric, well above the floor, and plausible for a
+  multi-day approach crossing Whatcom Pass, Perfect Pass and the Challenger Glacier).
+  Corrected gain_ft/loss_ft to 8,400/8,400. This affects the app's own Est. summit/Est.
+  return time estimates (scarfHrs/techHrs, per CLAUDE.md), which would previously have
+  been built on a wildly understated climb.
+- Phantom Peak South Route: dist_km (51.5 km = 32.0 mi) was roughly DOUBLE what this
+  row's own itinerary implies — itinerary.days[].miles sums to 30 mi (the round-trip
+  total, matching itinerary.totalNote's own "~30-32 mile round trip"), and the app's own
+  effDistKm() (RouteDetail.jsx) halves that sum for an out-and-back route to get the
+  one-way distance it actually displays: (30 mi × 1.60934) / 2 = 24.14 km. The stored
+  51.5 km reads as the round-trip figure having been saved directly instead of halved
+  first — same class already fixed for wa_north_face_var_right_directisimo (batch 286)
+  and wa_mount_stuart_ice_cliff_glacier (batch 283). Corrected to 24.14. outing_shape was
+  null; set to 'outback' (this row's own 5-day itinerary explicitly returns to the
+  trailhead — days 4-5 reverse days 2-1).
+- Phantom Peak South Route: waypoints[6] (the summit) stored elev/elevFt as 8,000 ft,
+  disagreeing with this row's own top-level high_point_ft (8,016 ft). External
+  corroboration (peakery.com lists 8,015 ft) favors 8,016 over the rounder 8,000.
+  Corrected the waypoint to match.
+- Phantom Peak South Route: descent_text names "the 1959 second-ascent party (Josendal,
+  Sharpe, Spickard)". External web search on the AAC's "New Climbs in the Northern
+  Pickets" article and independent trip-report summaries indicates the ascent itself was
+  made in 1958 — 18 years after the 1940 Fred & Helmy Beckey first ascent, per the summit
+  register — and was reported the following year in the 1959 American Alpine Journal.
+  Same AAJ-publication-year-vs-actual-climb-year confusion already documented and fixed
+  for wa_north_ridge_4 (batch 286). Corrected the year, kept the journal-year context.
+- Pernod Spire Standard Rock Route: waypoints[1] (Burgundy Col) and waypoints[2] (the
+  summit) both had no elev/elevFt at all. Burgundy Col's own note text already states its
+  elevation ("7,770-ft notch separating the Wine Spires from Vasiliki Ridge"); filled
+  elev/elevFt from that row's own figure. That same note also carried a leaked pair of
+  wrapping quote marks around the whole sentence, as if pasted from a quoted source —
+  stripped, matching the cleanup this row's own corrections field records already having
+  been done to its other waypoint note. The summit waypoint had no elev at all; filled
+  from this row's own high_point_ft (8,507 ft). outing_shape was null; set to 'outback'.
+- Ottohorn Southeast Route: waypoints[0] (Goodell Creek Trailhead) had lat/lng of
+  48.68276,-121.26928, which disagrees by roughly 450 m with this SAME row's own
+  approach_logistics.trailheadLat/trailheadLng (48.68664,-121.27121) for the identical
+  trailhead — and that second coordinate also matches the sibling wa_ottohorn_west_ridge's
+  own waypoint AND approach_logistics for the same trailhead (3 records agree, 1 is the
+  outlier). Corrected the waypoint's lat/lng to the agreeing value (copied from this row's
+  own approach_logistics — no coordinate invented). Also filled elev (previously absent)
+  from this row's own approach text, which states the trailhead is "at about 600 feet".
+- Ottohorn Southeast Route: dist_km (27.68 km = 17.2 mi) was roughly DOUBLE this row's own
+  itinerary-implied one-way distance — itinerary.days[].miles sums to 17.5 mi (7.5 out +
+  2.5 summit day + 7.5 return), which effDistKm() halves for this outing_shape='outback'
+  route to (17.5 × 1.60934) / 2 = 14.08 km. Same doubled-instead-of-halved class as this
+  batch's Phantom Peak South Route fix above. Corrected to 14.08.
+- Ottohorn West Ridge: waypoints[0] (the Goodell Creek trailhead) had no elev at all;
+  this row's own approach text states the trailhead elevation explicitly ("Trailhead at
+  48.6733, -121.2658, roughly 600 ft"). Filled elev = 600. That same approach-text
+  sentence's coordinate (48.6733,-121.2658) also disagreed with this row's OWN
+  waypoints[0] lat/lng and its OWN approach_logistics.trailheadLat/Lng (both
+  48.68664,-121.27121 — i.e. those two structured records already agree with each other)
+  for the identical trailhead. Corrected the approach-text coordinate to match.
+
+**Flagged for human review (not fixed — no clean single-value story, or missing the
+underlying data needed to compute one):**
+- Phantom Peak West Ridge: gain_ft (1,916) is identical to South Route's (also wrong,
+  now-corrected) value, and is far below the hard floor implied by high_point_ft (8,016
+  ft) against the shared Hannegan Pass Trailhead (3,120 ft, per South Route's own
+  waypoint) = 4,896 ft minimum. Almost certainly the same class of error as South Route's
+  fix above (and possibly copied from it directly, given the exact match), but this row
+  has no waypoints array, no itinerary, no loss_ft, no dist_km, no permit, no road, no
+  corrections and no data_quality field at all — there is no internal record to derive a
+  corrected total from, and its approach (a distinct, harder 2021 FA line via Easy Ridge/
+  Imperfect Impasse/Perfect Pass/Challenger Glacier to a bivy under Ghost Peak) is
+  described differently enough from South Route's that borrowing South Route's corrected
+  8,400 ft outright would be a guess rather than a derivation. Needs its own research pass.
+- Pernod Spire Standard Rock Route: gain_ft/loss_ft (4,000/4,000, both fixed at the
+  identical round number) don't cleanly reconcile with two OTHER numbers already on this
+  row: the approach text explicitly states "roughly 3,500-4,000 ft of gain over about 3
+  miles one-way" for the trailhead-to-Burgundy-Col leg alone (day 1), while the
+  itinerary's own day 1 states gainFt=2,600 for that identical leg — a direct
+  contradiction within the row. The itinerary's two-day sum (gain 3,500, loss 3,700) is
+  itself asymmetric by 200 ft, which should not happen for a round trip back to the same
+  trailhead. No single number among {4,000 stored, 2,600 itinerary day 1, 3,500-4,000
+  approach prose, 3,500/3,700 itinerary sum} stands out as the clean, sourced correction —
+  flagged rather than guessed.
+- Ottohorn West Ridge: gain_ft (7,240) sits EXACTLY at the hard floor (high_point_ft 7,840
+  minus the trailhead's own 600 ft) with zero credited for the Terror Basin
+  traverse/Barrier crossing/Crescent Creek Basin up-and-down terrain this row's own
+  itinerary text describes — its sibling Southeast Route, using much of the same
+  corridor, nets 760 ft above its own floor for essentially the same kind of terrain. This
+  route's itinerary is unstructured prose (no day-by-day miles/gainFt/lossFt fields to
+  sum), so there is no internal record to derive a precise corrected total from. Plausibly
+  understated but not confirmed; flagged rather than guessed at.
+- Mount Olympus Traverse: only 2 waypoints exist (Trailhead, West Peak) despite the route
+  explicitly summiting all three peaks (West 7,980 ft, Middle 7,929 ft, East 7,762 ft, per
+  this row's own `beta` text) and descending via Glacier Pass — no waypoint entries exist
+  for Middle Peak, East Peak, or Glacier Pass. gain_ft/loss_ft/dist_km all checked out
+  fine against this row's own itinerary (no numeric error found), so this is purely a
+  completeness gap. External web search independently confirms the elevations already
+  cited in this row's `beta` field (Middle Peak ~7,930 ft, East Peak 7,762 ft — Wikipedia's
+  "Middle Peak (Washington)" article), but coordinates for these two summits and for
+  Glacier Pass could not be sourced in this session (Wikipedia/AAC page fetches are
+  blocked by this environment's network egress proxy; WebSearch snippets gave elevations
+  only, no coordinates) — flagged rather than inventing lat/lng.
+- Unicorn Peak's Snow Lake Trailhead elevation disagrees across ALL FIVE of the peak's
+  routes, discovered while cross-checking Open Book's fix above against its siblings
+  (queried live: wa_unicorn_peak_r1, wa_the_roof, wa_open_book_2, wa_classic_route_2,
+  wa_fantasy_falls). Three candidate elevations: (a) wa_unicorn_peak_r1's own full
+  waypoint chain states 4,574 ft; (b) wa_the_roof, wa_open_book_2 and wa_classic_route_2
+  all state 4,400 ft; (c) this batch's own approach-text arithmetic on wa_open_book_2
+  ("~1 mile, about 700 ft gain, to Snow Lake", with Snow Lake externally confirmed at
+  4,688 ft) implies roughly 4,000 ft. wa_fantasy_falls' trailhead waypoint has no elev at
+  all. Separately, wa_unicorn_peak_r1 shows the INVERSE of this batch's gain_ft/loss_ft-
+  vs-itinerary mismatch: its own itinerary states 2,397/2,397 (matching its own 4,574 ft
+  floor exactly, with zero slack) while its top-level gain_ft/loss_ft are 2,600/2,600 (the
+  value this batch used to correct the other three siblings). Web search could not pin
+  down an authoritative trailhead-parking elevation (only Snow Lake's own 4,688 ft was
+  confirmed; WTA/NPS pages describing the actual pullout were not fetchable in this
+  environment). This is a genuine cross-route data-consistency question spanning a whole
+  peak, not a single-row error — needs a human pass across all 5 Unicorn Peak routes
+  together rather than a one-row patch.
+
+**Verified clean, no changes:**
+- Overcoat Peak Southeast Route: FA and elevation confirmed as above.
+- Phantom Peak South Route: FA ("1940", i.e. Fred & Helmy Beckey) confirmed via web
+  search — the Beckey brothers' 1940 Northern Pickets campaign is independently and
+  specifically documented (AAC obituary material for Helmy Beckey, Mountaineers.org). The
+  peak's own high_point_ft (8,016 ft) is corroborated by peakery.com (8,015 ft).
+- Pernod Spire: FA (1952, Beckey/Wilde/McGowan) already checked and documented in this
+  row's own `corrections` field from a prior pass; not re-derived.
+- Ottohorn Southeast Route / West Ridge: FA history (1961 peak FA via the east ridge,
+  correctly distinguished from this row's own separate route-specific FA note) already
+  corrected and documented in a prior pass; not re-derived. West Ridge's 2017 FA
+  attribution (Wehrly & Larson) was not independently re-verified this batch — nothing
+  contradicts it and it was not flagged.
+- Unicorn Peak Open Book: grade (Easy 5th / 5.0) already checked against a sourced
+  description per this row's own `corrections` field; not re-derived.
+
+External web-search corroboration this batch: Wikipedia's Overcoat Peak and Mount Olympus
+articles (elevations, FA); a general web search on Fred & Helmy Beckey's 1940 Northern
+Pickets campaign and the AAC's Helmy Beckey obituary (Phantom Peak FA); the AAC's "New
+Climbs in the Northern Pickets" article and independent trip-report summaries on Phantom
+Peak's 1958 second ascent / 1959 AAJ report (Josendal, Sharpe, Spickard); peakery.com
+(Phantom Peak elevation). Note: direct WebFetch of en.wikipedia.org,
+publications.americanalpineclub.org and trailcatjim.com all returned
+`EGRESS_BLOCKED` in this environment — all corroboration this batch came from WebSearch
+result snippets rather than fetched page content; where a claim rested on a vague or
+single-source snippet (e.g. Phantom Peak West Ridge's exact approach mileage), it was
+flagged rather than acted on instead of trusted at face value.
+
+SQL: `audits/sql/2026-09-18-batch-289.sql` (10 UPDATE statements, no DELETE). `check:sql`
+reported "OK — every target id exists; no DELETE removes an only copy" for the 8
+checkable statements; 2 (the Phantom Peak South Route descent_text replace() and the
+Ottohorn Southeast Route waypoints jsonb_set chain) were flagged "no literal id predicate
+— not checkable" — the same known naive-semicolon-splitter limitation documented in
+batches 286-288 (both statements' jsonb/text literals contain ordinary sentence
+semicolons, which the checker's bare split(";") treats as statement boundaries even
+though Postgres's own quote-aware parser reads them correctly). Verified independently:
+round-tripped every `'...'::jsonb` literal in the file through a JSON parser (undoing the
+`''` SQL-escaping) and confirmed all 11 parse to the exact intended value with no invented
+content; both flagged ids (`wa_phantom_peak_south_route`, `wa_ottohorn_southeast_route`)
+were already confirmed to exist via the initial batch fetch. One WARN: file is ~10.9KB,
+well over the SQL Editor's ~4KB silent-truncation soft limit — split into ~1.5KB chunks
+and verify each lands before pasting the next.
+
+Next batch continues in sorted-id order after `wa_phantom_peak_west_ridge` (see progress
+file).

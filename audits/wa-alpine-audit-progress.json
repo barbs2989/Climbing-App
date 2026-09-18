@@ -1,8 +1,8 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
-  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
+  "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives — out of scope per audit instructions.",
   "pass": 5,
-  "last_processed_id": "wa_olympus_summit_block_west_edge",
+  "last_processed_id": "wa_phantom_peak_west_ridge",
   "total_in_scope_last_count": 524,
   "total_wa_alpine_or_mountaineering_tagged": 574,
   "batches": [
@@ -80,7 +80,7 @@
       "flagged_for_human_review": 15,
       "clean": 0,
       "sql_file": "audits/sql/2026-07-28-batch-4.sql",
-      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route \u2014 internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
+      "note": "Two significant structural flags this batch, neither auto-fixed: wa_cascade_peak_east_ridge is a half-corrected row (overview rewritten to describe Cascade Peak's real NW Chimney route, but aspect/face/approach/corrections/seasonal_guidance still describe the previously-conflated Johannesburg Mountain East Ridge); wa_boston_peak_southwest_face duplicates its SE Face sibling's beta almost verbatim while its own fa/corrections fields describe a different, real West Face route — internally incoherent about which route it documents. Both need a human rewrite/split decision, not a field patch."
     },
     {
       "batch_number": 5,
@@ -3319,7 +3319,7 @@
       "flagged_for_human_review": 0,
       "clean": 2,
       "sql_file": "audits/sql/2026-08-27-batch-158.sql",
-      "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review \u2014 both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed \u2014 the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
+      "note": "wa_old_guard_peak_east_side_route (a full-length row, not a stub) and wa_olympus_summit_block_west_edge were clean on review — both already thoroughly researched, internally consistent, and honest about their gaps. wa_old_guard_peak_southwest_route's emergency.county / sheriffDispatch text disagreeing with its own east_side_route sibling about Skagit vs. Snohomish as the peak's other bordering county (both agree on Chelan) was read but NOT auto-fixed — the peak sits near a genuine three-county boundary area and neither claim could be confidently resolved against an authoritative source in this pass."
     },
     {
       "batch_number": 159,
@@ -3338,7 +3338,7 @@
       "flagged_for_human_review": 2,
       "clean": 4,
       "sql_file": "audits/sql/2026-08-27-batch-159.sql",
-      "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) \u2014 could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
+      "note": "wa_olympus_traverse (already carries a documented prior correction and is internally consistent) and wa_ottohorn_southeast_route, wa_overcoat_peak_southeast_route (previously audited in this project's own memory notes and confirmed correct) were clean on review. Two flagged for human review rather than fixed: wa_pernod_spire_standard's descent_text contradicts its own rappel_detail/rappel_count_note on rappel count (4-5 vs 3), first-rappel anchor type (natural vs bolted), and destination (direct to Silver Star Glacier basin vs via Chablis Spire's east-face route) — could not find an authoritative source resolving which narrative is correct. wa_open_book_2's stored Snow Lake trailhead elevation (waypoint 4,400 ft / approach text ~4,500 ft) looks too high by the row's own arithmetic (its own bivy field puts Snow Lake at 4,685 ft with the approach text citing ~700 ft of gain to reach it, implying a trailhead nearer 4,000 ft) and against secondary trail sources, but WTA/NPS pages were blocked by network egress and could not be fetched directly to confirm a precise figure."
     },
     {
       "batch_number": 160,
@@ -5842,7 +5842,25 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-09-18-batch-288.sql",
       "note": "Old Guard Peak Southwest Route: loss_ft (14100->12400) and dist_km (26.23->56.33, was ~half the route's own 35mi itinerary total) corrected to match this row's own itinerary day sums and external Ptarmigan Traverse mileage; outing_shape set to 'point' (was null) since this is a point-to-point traverse ending at a different trailhead. Old Snowy Mountain (South Ridge/PCT approach): two waypoints had the Trail 96/97/PCT junction backwards -- \"stay on 97\" and a 6900ft elevation both contradicted this row's own approach text and itinerary schedule (which both say Trail 96 reaches the PCT at ~7100 ft, matching Mountaineers.org), plus a distMi fix on the Snowgrass Flats meadows waypoint to match the row's own more granular mile-by-mile approach text. Six routes verified clean (Boston Peak NW Ridge, Liberty Bell NW Face Var./Remsberg Variation, Colchuck Balanced Rock NW Ridge, Old Guard Peak East Side Route, both Mount Olympus routes) -- FA claims, permit season dates, and prior-pass corrections all held up against AAC Publications, NPS/Recreation.gov, and Forest Service sources."
+    },
+    {
+      "batch_number": 289,
+      "date": "2026-09-18",
+      "route_ids": [
+        "wa_olympus_traverse",
+        "wa_open_book_2",
+        "wa_ottohorn_southeast_route",
+        "wa_ottohorn_west_ridge",
+        "wa_overcoat_peak_southeast_route",
+        "wa_pernod_spire_standard",
+        "wa_phantom_peak_south_route",
+        "wa_phantom_peak_west_ridge"
+      ],
+      "confirmed_errors_fixed": 11,
+      "flagged_for_human_review": 5,
+      "clean": 0,
+      "sql_file": "audits/sql/2026-09-18-batch-289.sql"
     }
   ],
-  "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count; re-counted again at batch 283: 524 in scope. Batch 284 re-counted again: still 524 in scope, 170 remain unaudited this pass after batch 284. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving. Batch 283 found the SAME pattern is widespread, not just Mount Baker: every proposed fix from batches 90/153/217 for the Mount Stuart/Mount Teneriffe cluster (11 total fixes across three prior passes) was still unapplied when re-checked against the live rows this batch. A human should review and run the accumulated audits/sql/*.sql files -- the diagnoses are sound, they are simply not landing in the database."
+  "pass_note": "Pass 5 in progress, started 2026-09-08 with batch 241. Re-counted scope at start of pass 5: 529 routes, matching pass 4's final count; re-counted again at batch 283: 524 in scope. Batch 284 re-counted again: still 524 in scope, 170 remain unaudited this pass after batch 284. Batch 289 re-counted again: still 524 in scope, 130 remain after batch 289. Several pass-4 (batches 206-207) proposed fixes for dist_km/permit/road fields on Mount Baker-area routes remain unapplied to the live DB as of batch 272 -- see per-batch notes rather than re-deriving. Batch 283 found the SAME pattern is widespread, not just Mount Baker: every proposed fix from batches 90/153/217 for the Mount Stuart/Mount Teneriffe cluster (11 total fixes across three prior passes) was still unapplied when re-checked against the live rows this batch. A human should review and run the accumulated audits/sql/*.sql files -- the diagnoses are sound, they are simply not landing in the database. Batch 289 found the same gain_ft/loss_ft-far-below-the-hard-floor class as several prior batches, worst case wa_phantom_peak_south_route (stored 1,916/1,000 ft against an itinerary-confirmed 8,400/8,400 ft for a 5-day, ~30-mile round trip) -- the stored value turned out to exactly equal a single sub-segment's gain (Southwest buttress saddle to summit), suggesting the wrong (partial) number was saved as if it were the route total. Batch 289 also found a cross-route data-consistency question spanning all 5 routes on Unicorn Peak (Snow Lake Trailhead elevation disagrees 4,000/4,400/4,574 ft across the peak's own rows, and one sibling -- wa_unicorn_peak_r1 -- has its gain_ft/loss_ft-vs-itinerary mismatch running in the OPPOSITE direction from the other three) -- see that batch's log entry rather than re-deriving; needs a whole-peak human pass, not a one-row patch."
 }
