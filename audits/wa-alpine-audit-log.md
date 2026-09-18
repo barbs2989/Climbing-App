@@ -22979,3 +22979,125 @@ source — no invented content anywhere.
 
 Next batch continues in sorted-id order after `wa_silver_star_glacier`
 (see progress file).
+
+---
+
+## 2026-09-18 — Pass 5, Batch 294
+
+Eight routes across six peaks (continuing sorted-id order after
+`wa_silver_star_glacier`): Northeast Ridge (Silver Star Mountain); North Face,
+Southwest Route (Sinister Peak); Standard Route (Sitkum Spire); Corkscrew
+Route, West Face/Corkscrew (Sloan Peak); Neve Glacier/Standard Route
+(Snowfield Peak); Standard Route/Snowking Glacier (Snowking Mountain).
+
+Every fix this batch corrects a stray/stale fragment left behind by an
+*earlier* correction pass that fixed the main record but missed a second
+place the same fact was restated — the recurring "facts stored twice"
+shape. Verified against each row's own other fields (waypoints, its own
+`corrections` field, a sibling route) and, for one, a live USFS source.
+
+**Confirmed errors → fixes in `sql/2026-09-18-batch-294.sql`:**
+
+- **Sinister Peak, North Face** (`wa_sinister_peak_north_face`) and
+  **Southwest Route** (`wa_sinister_peak_southwest_route`): both share an
+  identical Ptarmigan Traverse corridor `bivy` list, and both still say
+  "the Downey Creek trailhead at 1,440 ft" inside the "Bachelor Creek
+  forest and meadow camps" entry's prose notes. Each route's own
+  `corrections` field documents that the Downey Creek Trailhead *waypoint*
+  was already corrected to 1,450 ft (matching the USFS figure and this
+  route's own approach text, "elev. ~1,450'") — that earlier pass missed
+  this one leftover mention buried in the shared bivy corridor text.
+  Fixed the stray substring only, on both routes.
+
+- **Sloan Peak, West Face/Corkscrew route** (`wa_sloan_peak_r1`):
+  `approach_logistics.trailheadLat/trailheadLng` still held the
+  pre-correction coordinate (48.0719,-121.3764). This row's own
+  `corrections` field says that exact pair was already corrected to
+  (48.0701,-121.3753) "to match the same physical trailhead as recorded on
+  the sibling wa_sloan_peak_corkscrew route" — the sibling's waypoint and
+  this route's own `waypoints` array already carry the corrected value;
+  only `approach_logistics` was missed.
+
+- **Snowking Mountain, Standard Route** (`wa_snowking_mountain_standard`):
+  two more artifacts of an earlier fix recorded in this row's own
+  `corrections` field (which already corrected a stale 7,439 ft summit
+  figure to 7,433 ft inside this same `itinerary` object):
+  1. `itinerary.days[1].schedule[2].label` and `.objective` both had
+     literal double-quote characters baked into the stored text (e.g. the
+     label's actual content is the string `"Summit (7,433 ft)"`, quote
+     marks included) — every sibling label in the same schedule array has
+     no such quoting, so this reads as leftover double-quoting from that
+     earlier replacement. Stripped the leading/trailing literal quotes.
+  2. `itinerary.days[0].objective` says the Cyclone Lake camp is at
+     "(~4,800 ft)". This row's own data disagrees with itself: the
+     `waypoints` entry "Cyclone Lake meadows" is at 5,354 ft and the
+     `bivy` entry "Cyclone Lake and the lakes just north of it" gives
+     5,442 ft — both far from 4,800 ft and close to each other. 4,800 ft
+     instead belongs to a *different* camp: this row's own `waypoints`
+     names a separate "Boggy meadow low camp" at exactly 4,800 ft, and
+     `approach_variants[1]` explicitly says parties who split the
+     approach "use the boggy bench near 4,800 ft as a low camp" — not
+     Cyclone Lake. Corrected to match this row's own more precise Cyclone
+     Lake waypoint (~5,350 ft).
+
+- **Sitkum Spire, Standard Route** (`wa_sitkum_spire_standard`):
+  `itinerary.cal` still read "(in effect through at least Dec 2025, per
+  Mt. Baker-Snoqualmie NF alerts)" for the FS Road 23 (White Chuck River
+  Road) closure, while this same row's own `access.closures` and
+  `road.status` fields had already been updated to the fuller statement
+  "originally through Dec 31, 2025, and still active per spring 2026 NF
+  alerts" (Forest Order #06-05-25-02) — one field in the row was updated
+  and a second, more casually-worded field describing the identical fact
+  was not. Verified live rather than assumed: the USFS Mt. Baker-Snoqualmie
+  alerts page confirms Order #06-05-25-02 (effective March 19, 2025
+  through Dec 31, 2025, unless rescinded sooner) for FSR 23/FSR 27, and a
+  subsequent Mt. Baker-Snoqualmie release dated July 1, 2026 confirms FSR
+  23 from milepost 3.7 to its terminus remains closed (total road failure
+  at mile 4) — i.e. the closure is genuinely still in force as of this
+  audit date, and `itinerary.cal` is brought in line with the row's own
+  already-corrected, now externally-confirmed language.
+
+**Verified clean, no changes needed:** Silver Star Mountain Northeast Ridge
+(`wa_silver_star_ne_ridge`) — trailhead/glacier/col elevations,
+land-manager and county fields, and the bivy corridor list were all
+internally consistent and checked against the peak's real-world location
+near Washington Pass on SR-20; the historical claim on Sinister Peak's
+Southwest Route that it "was historically the final summit climbed by Russ
+Kroeker in October 1980 to complete the first-ever full Bulger List" was
+verified against a live web search (multiple sources place Kroeker's
+completion of the Bulger list on Sinister Peak on October 4, 1980); Sinister
+Peak's summit elevation (8,444 ft) and its position "just under a mile east
+of Dome Peak" were corroborated externally ("8,440+ ft", "not quite 1 mi
+east of Dome Peak"); Snowfield Peak, Sloan Peak Corkscrew, and Sitkum
+Spire's non-closure fields (waypoints, gain/loss, itinerary sums, area
+bounding-box/parent placement) were checked and found consistent with each
+route's own already-applied `corrections` history and with the parent
+`areas` table.
+
+**Flagged for human review:** none this batch — every candidate discrepancy
+found either resolved cleanly against the row's own other fields/history or
+an external source, or was judged not to rise to a confirmed error (e.g.
+Silver Star Mountain's area centroid sits ~2 mi from the route's stated
+trailhead pullout, which is plausible given the described multi-mile
+approach and was not pursued further without a stronger source).
+
+One external web search session was used this batch (USFS Mt.
+Baker-Snoqualmie alerts pages for the FSR 23/27 closure order, and a
+general search corroborating the Bulger-list/Sinister-Peak first-completion
+claim and Sinister Peak's elevation) — every other fix was resolved
+entirely from each row's own internal fields (waypoints, sibling routes on
+the same trailhead/peak, and each row's own `corrections` history).
+
+SQL: `audits/sql/2026-09-18-batch-294.sql` (7 UPDATE statements across 5
+routes, wrapped in a single transaction, no DELETE/DROP/TRUNCATE/ALTER
+anywhere). Pre-flighted with `npm run check:sql -- audits/sql/2026-09-18-batch-294.sql`:
+every target id exists live, no destructive statement. Every guarded
+`WHERE` clause was re-verified against the live row values immediately
+before this file was finalized, so none of these can silently no-op if
+another session has already touched the same fields. The file is 6.8KB,
+over the SQL Editor's ~4KB safe-paste size — the pre-flight check flags
+this; split into smaller pastes if applying by hand, or run each UPDATE
+statement individually.
+
+Next batch continues in sorted-id order after `wa_snowking_mountain_standard`
+(see progress file).
