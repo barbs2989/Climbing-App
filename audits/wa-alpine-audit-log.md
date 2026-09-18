@@ -22684,3 +22684,159 @@ lands before pasting the next, same as prior batches.
 
 Next batch continues in sorted-id order after `wa_ruth_icy_traverse` (see
 progress file).
+
+## Batch 292 (pass 5) — 2026-09-18
+
+Routes checked: `wa_ruth_mountain_south_slopes`, `wa_sahale_mountain_r1`,
+`wa_sahale_mountain_sahale_glacier`, `wa_scramble_route`,
+`wa_se_ridge_aka_shield_wall`, `wa_sentinel_peak_standard`, `wa_sews_sw_rib`,
+`wa_sharkfin_tower_southeast_ridge`. Continues in sorted-id order after
+`wa_ruth_icy_traverse` (batch 291's stopping point). Scope re-counted at 524
+routes total; 107 remain after this batch.
+
+**Fixed (6 routes, 14 individual field corrections):**
+
+- **Quien Sabe Glacier / Sahale Mountain, Boston Basin approach**
+  (`wa_sahale_mountain_r1`): `dist_km` (16.9) was already the round-trip
+  mileage — this row's own itinerary `totalNote` states "roughly 10.5 mi"
+  round trip and its waypoints give a one-way cumulative `distMi` of 5.2 mi
+  to the summit (5.2×2=10.4 mi, matching to within rounding) — so the app's
+  `dist_km*2` display convention was doubling an already-doubled figure into
+  a fabricated ~21-mile day. Corrected to 8.37 km (the one-way 5.2 mi).
+  `watch_out` was a plain newline-delimited string instead of the standard
+  JSON array — converted, content unchanged.
+
+- **Sahale Mountain, Sahale Arm / Sahale Glacier**
+  (`wa_sahale_mountain_sahale_glacier`): `gain_ft` (5020) didn't match
+  `loss_ft` (5080) for a route that starts and ends at the same Cascade Pass
+  Trailhead (`descent_text`: "descent is simply a reverse of the Sahale Arm
+  and Cascade Pass trails back to the trailhead"). The row's own waypoints
+  (trailhead 3,600 ft, summit 8,680 ft) independently give the same 5,080 ft
+  figure that `loss_ft` already had, so `gain_ft` was the outlier and is
+  corrected to 5080. Two itinerary sub-fields shared the identical 60 ft
+  undercount that had produced the stale `gain_ft` (`days[0].gainFt` 3940
+  and `days[1].lossFt` 5020, both implicitly using a trailhead-to-camp delta
+  60 ft short of the waypoint-derived 4,000 ft) and are synced to 4000/5080,
+  including the day-2 schedule line's "3,940 ft down" note. `totalNote`'s
+  "~5,000 ft gain" still rounds correctly either way and was left alone.
+  (Verified clean on first pass and re-examined while drafting this entry —
+  the mismatch had been missed the first time through.)
+
+- **Eagle Peak, Scramble Route** (`wa_scramble_route`): `bivy` pruned from 6
+  entries to 0 — every entry (Snow Lake Camp/Unicorn Peak, a Tatoosh
+  cross-country bivy zone, a Reflection Lakes winter camp staged for Lane
+  Peak/Pinnacle, Cougar Rock Campground, a Paradise winter group area, and
+  Ohanapecosh Campground) is explicitly about other Tatoosh Range peaks
+  reached from the Stevens Canyon Road/Paradise/Narada Falls corridor, not
+  one mentions Eagle Peak, and this row's own itinerary says the route is
+  "typically a single long day trip from Longmire" needing no camp at all —
+  the regional bivy-contamination pattern documented in many prior batches,
+  taken to its logical zero here. `itinerary` was a bare narrative string
+  instead of the standard `{cal, days, totalNote}` object — converted, the
+  narrative preserved verbatim as `totalNote`, `days` an honest empty array
+  since no day-by-day breakdown was ever recorded.
+
+- **Mount Washington (Olympics), SE Ridge AKA Shield Wall**
+  (`wa_se_ridge_aka_shield_wall`): `detailed_rack` was a stringified
+  JSON-array literal (literal brackets/quotes) instead of the plain prose
+  string every other route uses — converted, no content changed beyond
+  joining the four bracketed items into one sentence. `loss_ft` (null)
+  filled in to match `gain_ft` (3229): the route's own `descent_text` says
+  the standard descent reverses via the scramble route back to "the same
+  FR-2419/Big Creek trailhead used for the approach," a genuine round trip.
+  `bivy` pruned from 8 entries to 2, removing six entries for other
+  Hamma Hamma-corridor peaks (The Brothers, Mount Stone, Mount Skokomish via
+  the Putvin trail, Mount Pershing) reached from a different road/trailhead
+  system than this route's own FR-2419/Lake Cushman corridor — kept Big
+  Creek Campground and Staircase Campground, both of which name this peak
+  (and Mount Ellinor) directly.
+
+- **Sentinel Peak, Standard Route** (`wa_sentinel_peak_standard`):
+  `seasonal_guidance.optimalWindow` was truncated mid-sentence ("...consistent
+  with "); completed to "Late July through early September" rather than
+  left broken. `bivy[0]` (Cache Col/Cache Glacier shoulder) elevation
+  corrected 6400→6900 to match this row's own 2026-07-31 correction, which
+  fixed the same col's elevation in the approach text and waypoint but
+  missed this sibling `bivy` entry in that same pass. `emergency.county`
+  corrected: the sentence opened "Straddles the Snohomish/Chelan county
+  line" then described "Skagit County" and "Snohomish County" for the two
+  approaches — internally contradictory, since Chelan doesn't border this
+  stretch of the North Cascades crest — corrected the opening clause to
+  "Skagit/Snohomish," matching the rest of the same sentence and the row's
+  own `sheriffDispatch`/`rangerStation` fields.
+
+- **South Early Winter Spire, Southwest Rib** (`wa_sews_sw_rib`):
+  `itinerary.days[0].gainFt`/`lossFt` (2621) and `totalNote`'s "roughly
+  2,600 ft" were stale against this row's own already-corrected top-level
+  `gain_ft`/`loss_ft` (2407, fixed 2026-07-31 alongside the trailhead
+  elevation) — synced to 2407 and "roughly 2,400 ft."
+
+- **Sharkfin Tower, Southeast Ridge**
+  (`wa_sharkfin_tower_southeast_ridge`): `gain_ft`/`loss_ft` corrected
+  4870→4920, independently corroborated by this row's own waypoints
+  (trailhead 3,200 ft, summit 8,120 ft = 4,920 ft), its own itinerary
+  day-by-day sum (2500+2420 gain = 4920; 0+4920 loss = 4920), and its own
+  `totalNote` ("~4,900 ft total gain") — only the bare top-level scalars
+  disagreed. `bivy` pruned from 6 entries to 3, removing three entries
+  (Sahale Glacier Camp, Pelton Basin, Johannesburg Camp) reached from the
+  separate Cascade Pass Trailhead rather than this route's own Boston Basin
+  climbers' trailhead — kept the two Boston Basin camps and the informal
+  bivouacs entry, which names "the Sharkfin Col area" directly.
+
+**Flagged for human review (3):**
+
+- **Ruth Mountain** (`wa_ruth_mountain_south_slopes`): the id says
+  south_slopes, but every content field on the row — `name` ("North Face /
+  Ruth Glacier"), `aspect` (N), `face` ("North Glacier"),
+  `climbing_route`'s own pitch notes (the glacier's "north slope," a notch
+  "northwest of the summit"), and `descent_text` (the standard route is
+  named "North Face/Ruth Glacier") — describes the peak's north side via
+  the Ruth Glacier, not a south-slopes line. Same id/name-mismatch class as
+  prior batches (e.g. Big Kangaroo): the id is a slug of a route name that
+  no longer matches the row, and renaming a primary key isn't something to
+  auto-fix. Needs a human rename decision (something like
+  `wa_ruth_mountain_north_face` or `wa_ruth_mountain_ruth_glacier`).
+
+- **Eagle Peak** (`wa_scramble_route`): `emergency.county` says "Pierce
+  County, Washington," but Eagle Peak's own Wikipedia entry and a
+  Lewis-County tourism page featuring the Eagle Peak Trail both state Lewis
+  County; Longmire itself straddles the Lewis/Pierce line, so which county
+  the row should use is genuinely ambiguous, and `sheriffDispatch`/
+  `nearestHospital` would need re-verification alongside it rather than
+  being left mismatched with whichever county wins. Needs a human pass
+  rather than a guess.
+
+- **Sentinel Peak** (`wa_sentinel_peak_standard`): `gain_ft` (8500) and
+  `loss_ft` (9200) both correctly match the sum of this row's own
+  itinerary day-by-day gain/loss figures, but the route's waypoints show
+  both start and end at the same 3,600 ft Cascade Pass Trailhead, so total
+  gain must equal total loss — it cannot legitimately net -700 ft. Cannot
+  tell from the data on file which day segment's estimate is off; needs a
+  human/topo pass rather than a guess at which number to change.
+
+**Verified clean, no changes beyond what's listed above:** none this
+batch — every route in scope had at least one of the issues above (Sahale
+Glacier's `dist_km`/waypoints/itinerary were the only fields to check twice
+before finding the gain/loss mismatch; every other field on it checked out).
+
+No external web-search corroboration was needed this batch beyond a single
+confirmatory search for Eagle Peak's county (Wikipedia/Lewis-County tourism
+page, used only to establish that the ambiguity is real rather than to
+settle it, hence the flag rather than a fix) — every other fix was resolved
+entirely from each row's own internal fields (waypoints, itinerary sums,
+sibling prose, and this catalog's own prior correction notes from
+2026-07-31).
+
+SQL: `audits/sql/2026-09-18-batch-292.sql` (15 UPDATE statements across 7
+routes with changes, no DELETE; `wa_ruth_mountain_south_slopes` is
+comment-only, flagged with no accompanying UPDATE). All 10 `'...'::jsonb`
+literals round-tripped through a JSON parser cleanly; each matches either a
+byte-identical subset of the original data (the bivy prunes), an exact
+re-shaping of the original content (the two schema-shape fixes), or the
+original content with only the specific numeric/text fields named in the
+comments above changed (the itinerary syncs, the seasonal_guidance
+completion, the emergency.county corrections) — no invented content
+anywhere.
+
+Next batch continues in sorted-id order after
+`wa_sharkfin_tower_southeast_ridge` (see progress file).
