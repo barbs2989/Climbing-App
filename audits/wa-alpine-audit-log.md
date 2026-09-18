@@ -22550,3 +22550,137 @@ well over the SQL Editor's ~4KB silent-truncation soft limit — split into ~1.5
 chunks and verify each lands before pasting the next, same as prior batches.
 
 Next batch continues in sorted-id order after `wa_ragged_edge` (see progress file).
+
+## Batch 291 (pass 5) — 2026-09-18
+
+Routes checked: `wa_mount_fernow_southeast_face`, `wa_rapple_grapple`,
+`wa_raven_ridge_southeast_ridge_crater_lake`, `wa_remmel_mountain_nw_ridge`,
+`wa_ridge_traverse_from_east_fury`, `wa_robinson_mountain_north_couloir`,
+`wa_rock_mountain_northeast_ridge`, `wa_ruth_icy_traverse`. Continues in
+sorted-id order after `wa_ragged_edge` (batch 290's stopping point). Scope
+re-counted at 524 routes total; 115 remain after this batch.
+
+**Fixed (8 routes, 14 individual field corrections):**
+
+- **Mount Fernow, Southeast Face**: `dist_km` (8) was far short of half this
+  row's own `itinerary` round-trip total (17.6 mi). Corrected to 14.16 km (the
+  one-way half). `bivy` list pruned from 7 entries to 2 — removed 5 entries for
+  campsites belonging to other peaks along the same Phelps Creek/Entiat drainage
+  corridor, kept only Cottonwood Camp and Entiat Meadows, which this row's own
+  approach text names directly. Elevation/FA/access facts (Chiwawa River Road
+  closure order dated May 20 2026-Dec 31 2027) corroborated via web search
+  against Wikipedia and the USDA Forest Service Okanogan-Wenatchee alerts page
+  — already correct on file, no change needed there.
+
+- **Rapple Grapple**: `pitches` (4) contradicted this row's own 3-entry
+  `pitch_detail` array and two of its own prose fields. Corrected to 3
+  (external corroboration via Mountain Project search confirms sources are
+  genuinely split 3-vs-4, but this row's own internal fields had already
+  settled on 3). `watch_out` was a newline-delimited plain string instead of
+  the standard JSON array every other route uses — converted to a 5-element
+  array, content preserved verbatim, nothing invented.
+
+- **Raven Ridge, Southeast Ridge (Crater Lake)**: `itinerary` was a bare
+  narrative string instead of the standard `{cal, days, totalNote}` object.
+  Converted with the narrative moved verbatim into `totalNote` and an honest
+  empty `days` array (no day-by-day breakdown existed in the source text to
+  invent one from). `bivy` list pruned from 8 entries to 2 — kept only Libby
+  Lake and Upper Eagle Lake/Horsehead Pass, removed 6 entries for unrelated
+  peaks sharing the same regional trail corridor.
+
+- **Remmel Mountain, NW Ridge**: `loss_ft` (1200) matched only the
+  summit-to-camp partial descent (8685-7500=1185 ft), not the full
+  out-and-back loss, which should equal `gain_ft` (5265) — the same
+  partial-figure-saved-as-the-total pattern fixed on Phantom Peak in batch
+  289. Corrected `loss_ft` to 5265 and set `outing_shape` (null) to
+  `outback`. `bivy` pruned from 6 entries to 2 (Four Point Lake, lower
+  Chewuch River camps), removing entries for unrelated peaks along the same
+  corridor.
+
+- **Ridge Traverse from East Fury**: `access._raw` sub-object named "Elk Lake
+  and Glacier Meadows basecamp" permits and a "no camping between Glacier
+  Meadows and Blue Glacier" rule — all three are Mount Olympus/Olympic
+  National Park features, geographically impossible for Mount Fury in the
+  North Cascades' Picket Range. Removed the stale `_raw` sub-object; the
+  already-correct top-level `access` fields were left untouched.
+
+- **Robinson Mountain, North Couloir**: `dist_km` (null) derived from this
+  row's own itinerary-stated round-trip mileage and filled to 11.27 km.
+  `bivy` pruned from 8 entries to 1 (Robinson Creek valley campsites) —
+  notably, one of the removed entries self-disqualified in its own text
+  ("these camps do nothing for the Robinson Creek or Middle Fork peaks, which
+  go the other direction from the pass").
+
+- **Rock Mountain, Northeast Ridge**: `outing_shape` (null) set to `point` —
+  this row's own `descent_text` explicitly requires a car shuttle between two
+  different trailheads, a genuine point-to-point traverse.
+
+- **Ruth-Icy Traverse**: `bivy` pruned from 6 entries to 4, keeping only
+  Hannegan trailhead, Ruth Arm ridge camps, Ruth Mountain summit camp, and
+  the Notch bivy on the Ruth-Icy ridge itself — removed entries for
+  unrelated peaks along the same corridor.
+
+**Flagged for human review (2 routes):**
+
+- **Remmel Mountain, NW Ridge**: `waypoints` describes the Four Point
+  Lake/Thirtymile standard-SE-approach corridor, which this row's own
+  `corrections` field states is a *different*, non-technical route.
+  This row's own approach/itinerary/corrections text instead correctly
+  describes the historically-documented (2011, apparently the only known
+  ascent — confirmed via a WebSearch snippet of a SummitPost climbers-log
+  page, since direct WebFetch on summitpost.org again returned
+  EGRESS_BLOCKED) Remmel Lake bushwhack approach via Andrews Creek. Not
+  rewritten here for lack of a solid, sourced Remmel Lake coordinate to
+  substitute for the wrong waypoints.
+
+- **Ruth-Icy Traverse**: the Ruth-Icy saddle elevation is stated
+  inconsistently across this row's own fields. `approach`/`climbing_route`/
+  `approach_variants` (repeated across 3-4 separate JSON fields) say the
+  saddle sits at "roughly 6,600-6,800 ft" — inconsistent with this row's own
+  stated "1,600 ft total descent" from Ruth's 7,115 ft summit (computes to
+  ~5,515 ft), and contradicted by a third internal record (a `bivy` entry
+  placing the connecting ridge's low point "near 5,700 ft"). This likely also
+  explains why `itinerary`'s day-by-day gain/loss figures (5,500 ft
+  gain/6,400 ft loss) don't match the row's own top-level `gain_ft`/`loss_ft`
+  (8,000/8,000 each, independently corroborated twice more in `descent_text`
+  and `itinerary.totalNote`). Needs a topo/human pass to settle the true
+  saddle elevation before the day-by-day itinerary figures can be
+  reconciled — not attempted here, since the fix spans multiple prose fields
+  and the correct replacement number isn't fully settled.
+
+**Verified clean, no changes beyond what's listed above:** none this batch —
+every route in scope had at least one of the issues above.
+
+External web-search corroboration this batch: Mount Fernow's elevation, FA,
+and the Chiwawa River Road closure order (Wikipedia and the USDA Forest
+Service Okanogan-Wenatchee alerts page, confirming the exact closure dates
+already on file); Rapple Grapple's pitch count (Mountain Project, confirming
+sources are genuinely split 3-vs-4 and that this row's own internal fields
+had already resolved to 3); Remmel Mountain NW Ridge's 2011 first ascent
+(WebSearch snippet summarizing a SummitPost climbers-log page directly,
+since WebFetch on summitpost.org returned `EGRESS_BLOCKED` as in prior
+batches). No direct WebFetch was attempted this batch on domains previously
+found to be blocked; all corroboration came from WebSearch result snippets.
+
+SQL: `audits/sql/2026-09-18-batch-291.sql` (14 UPDATE statements across 8
+routes, no DELETE). `check:sql` reported "OK — every target id exists; no
+DELETE removes an only copy," alongside several "no literal id predicate —
+not checkable" WARNs on the JSON-heavy statements — the same known naive
+semicolon-splitter limitation documented in prior batches (long string/JSON
+literals containing apostrophes or unquoted semicolon-like structure desync
+a bare `split(";")`, even though Postgres's own parser reads them
+correctly). Verified independently with a custom quote-and-comment-aware
+statement splitter (tracking `''`-escaped string state *and* `--` line
+comments, since comment text like "this route's own approach" contains an
+apostrophe that a quote-only tracker misreads as opening a new string): all
+14 statements confirmed to have a literal `WHERE id = 'wa_...'` predicate.
+All 8 `'...'::jsonb` literals round-tripped through a JSON parser cleanly,
+each matching either a byte-identical subset of the original data (the bivy
+prunes) or an exact re-shaping of the original content (the two schema-shape
+fixes, and the East Fury `access` object minus `_raw`) — no invented
+content anywhere. File is ~32KB, well over the SQL Editor's ~4KB
+silent-truncation soft limit — split into small chunks and verify each
+lands before pasting the next, same as prior batches.
+
+Next batch continues in sorted-id order after `wa_ruth_icy_traverse` (see
+progress file).
