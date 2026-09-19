@@ -23839,3 +23839,142 @@ touched them in between.
 
 35 remain after batch 301. Next batch continues in sorted-id order after
 `wa_the_pleiades_scramble` (see progress file).
+
+## Batch 302 (2026-09-19, pass 5)
+
+Checked 8 routes across 7 peaks, sorted-id order continuing after
+`wa_the_pleiades_scramble`: The Pyramid (South Route), The Rake (Ridge
+Traverse Route), Unicorn Peak (The Roof), The Tooth (The Tooth Fairy,
+Northeast Slabs, South Face Standard), The Triad (East Peak), and North
+Early Winters Spire (The West Face).
+
+**wa_the_rake_traverse_route.** `grade_num` stored 7 against a `grade`/
+`rock_grade` of "5.9" — every other 5.9-rock-graded route sampled from
+the live catalog (15 of 15, including several combining an alpine
+commitment grade with 5.9 in the exact same "Grade IV, 5.9" format this
+row uses) stores `grade_num = 9`. This is the sole outlier in the sample
+and would sort/filter the route as roughly a 5.7 wherever the app orders
+by `grade_num`. Corrected to 9. External search independently confirmed
+the FA party/date already stored (Wallace, Haley, Bunker — July 26, 2003,
+during "Walking the Fence," the complete Southern Pickets enchainment).
+
+**wa_the_roof (Unicorn Peak) — and two sibling routes found in the
+process.** `length_m` was stored as 122, which matches neither this
+row's own single documented pitch (`pitch_detail` lists one 15 m pitch)
+nor its own descent text (a single-rope rappel of "roughly 40-50 ft").
+Querying Unicorn Peak's other summit-block routes for comparison found
+the SAME 122 value, identically, on `wa_classic_route_2` (Classic Route)
+and `wa_open_book_2` (Open Book) — both of which also independently
+document themselves as a single 15 m pitch in their own `pitch_detail`.
+122 m is the same figure copied across all three sibling routes rather
+than a route-specific measurement; corrected all three to 15 m, matching
+each row's own pitch_detail.lengthM. The other two routes were not part
+of this batch's assigned/tracked route list (both were audited multiple
+times already in earlier passes per the progress file) but were queried
+directly as necessary corroborating context for a defect discovered
+while auditing The Roof, and are fixed here rather than left
+inconsistent with it.
+
+**wa_the_west_face (North Early Winters Spire).** Three related fixes,
+all converging on the same conclusion: `pitches` stored 6 against this
+row's own `pitch_detail` array, which has only ever held 5 entries
+(P1-P5); two independently found external route descriptions (North
+Cascade Mountain Guides' route page and a similar summary) both describe
+the line as five roped pitches ("a couple of pitches of 5.7-5.8," then
+corner/layback climbing to the crux belay, the crux pitch, then "an easy
+pitch and some scrambling lead to the summit") with "half a dozen
+rappels" cited separately as the descent count, not the pitch count.
+Corrected `pitches` to 5. `overview` repeated the same wrong pitch count
+and also stated a route length ("roughly 500 ft / 152 m") that matches
+neither this row's own `length_m` (201 m) nor theCrag's independently
+listed "200m Alpine climb" for this exact route — corrected the overview
+text to "5-pitch, roughly 660 ft (201 m)" to match the figure already
+stored in `length_m`. Separately, `loss_ft` was NULL despite `gain_ft`
+= 2400 on a route whose own approach text describes a short (1-2 hour),
+same-trailhead car-to-base-and-back approach; two direct sibling routes
+on the same peak with the same trailhead (Early Winter Couloir, Flycatcher
+Buttress) both store `gain_ft = loss_ft = 2400` — filled `loss_ft` to
+2400 to match.
+
+**wa_the_triad_east_peak.** `overview` names four first-ascent climbers
+(Dick Eilertsen, Dick Lowery, Dick Scales, and Don Wilde) and then
+describes them as "a party of three climbers all named Dick" — a direct
+self-contradiction, since Don Wilde is not named Dick and four names are
+listed. External search confirms the real historical party (the 1949
+first ascent, source of the "Three Dicks" nickname the row already
+reports) was these same four people, three of whom shared the first name
+Dick. Corrected the description to "a four-person party, three of whom
+were named Dick," matching the four names already stored — no names
+added, removed, or changed.
+
+Flagged for human review (not fixed): this same route's `gain_ft`
+(3,920) and `loss_ft` (5,410) disagree by roughly 1,490 ft, despite its
+own `descent_text` explicitly saying "Reverse the route" — a same-path
+out-and-back, which by construction requires round-trip gain to equal
+round-trip loss (whatever is climbed on the way in must be descended on
+the way back). 3,920 ft is exactly `high_point_ft` minus the trailhead
+elevation with no allowance for the intermediate dip the route's own
+`approach` text describes (dropping from 6,200-ft Sibley Creek Pass onto
+the Triad Glacier before re-climbing to East Triad Col), which makes it
+look like the more likely of the two wrong numbers — but no authoritative
+source with an exact, isolated (not bundled with a multi-day Eldorado
+climb) round-trip gain/loss figure could be found for this rarely-climbed
+peak, so no number was guessed.
+
+**Clean.** wa_the_tooth_fairy (grade/pitch-count/length internally
+consistent — its `pitches` field of 7 correctly counts 6 roped pitches
+plus a documented unroped summit scramble, matching its own overview and
+7-entry pitch_detail; MP's authoritative 6-roped-pitch count is preserved
+inside pitch_detail rather than contradicted by it). wa_the_tooth_r1
+(Northeast Slabs) — its FA (Nelson/Stevenson, 1982) was not contradicted
+by any source found, and the "Catscratch Couloir" naming question this
+row's own `corrections` field already raised appears already resolved in
+the stored `name` ("Northeast Slabs"). wa_the_tooth_south_face — a
+model of internal consistency: 4 pitches, 4 rappel_detail entries, and
+the rappel_count_note/rappels summary field all agree exactly; FA (Lloyd
+Anderson & Herman Wunderling, 1928) matches general historical record and
+was not contradicted by search (one source independently confirms "first
+scrambled ... in 1928," without naming the climbers). wa_the_pyramid_
+picket_south_route — elevation (7,920 ft) externally confirmed; this
+row's `aspect` (W) appeared at first read to conflict with its own beta
+text ("the base of Pyramid's south side"), but the row's own `face` field
+independently agrees with `aspect` ("West/connecting ridge to Mt.
+Degenhardt"), so the mismatch is a 2-vs-1 internal split rather than a
+clean self-contradiction, and this row's `data_quality.gaps` already
+transparently flags its entire route identity/grade/FA as unconfirmed
+pending the print Beckey Cascade Alpine Guide — left as already
+self-documented uncertainty rather than re-adjudicated.
+
+A dubious data point surfaced and deliberately NOT acted on: one
+WebSearch result synthesis reported The Rake's elevation as "7,840 feet"
+rather than the stored 7,869 ft, but no dedicated Wikipedia article for
+"The Rake" could be located and 7,840 ft is the exact figure this
+project's own prior batches recorded for the unrelated peak Ottohorn —
+consistent with the search engine's summary conflating two pages from
+one query rather than reporting a real conflict. Left `high_point_ft`
+unchanged; not flagged, since the evidence against it was judged too
+weak/unreliable to constitute a genuine source conflict.
+
+**Environment note:** WebFetch and direct HTTPS access were both blocked
+by this session's network egress policy for every domain tried
+(stephabegg.com, summitpost.org, en.wikipedia.org, mountainproject.com,
+nps.gov, fs.usda.gov, wta.org, caltopo.com, americanalpineclub.org all
+refused the CONNECT). All external corroboration this batch came from
+WebSearch's own result-synthesis text rather than a directly fetched and
+read page. This is treated as a weaker source than prior batches'
+WebFetch-based verification — see the un-acted-on Rake elevation note
+above for how that weaker-evidence bar was applied.
+
+SQL: `audits/sql/2026-09-19-batch-302.sql` (8 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-302.sql`:
+8 write targets across 8 statements, every target id exists live, no
+DELETE removes an only copy. The script flagged the file's paste size
+(6.9 KB against a 4 KB soft limit) — split into smaller pastes when
+applying. All target rows were re-fetched fresh from the live DB twice
+(once before drafting the SQL, once immediately before finalizing it)
+and byte-compared against the values first read; no concurrent writes
+found in between.
+
+27 remain after batch 302. Next batch continues in sorted-id order after
+`wa_the_west_face` (see progress file).
