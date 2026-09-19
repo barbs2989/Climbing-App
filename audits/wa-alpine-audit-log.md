@@ -24188,3 +24188,138 @@ smaller pastes when applying in the SQL Editor.
 11 remain after batch 304. Next batch continues in sorted-id order after
 `wa_upper_north_ridge_w_great_gendarme` (see progress file). This is the tail of pass 5 —
 the current pass will finish within the next 1-2 batches.
+
+## Batch 305 (2026-09-19, pass 5)
+
+Continued in sorted-id order after `wa_upper_north_ridge_w_great_gendarme`. Re-derived
+scope directly from the live DB rather than trusting the prior batch's "11 remain" note
+(the note describes a state a few batches stale by the time this session started; the
+live count after filtering to `area_type = 'peak'` was in fact 11, confirming it, but
+the derivation — not the note — is what this batch is built on):
+`wa_vasiliki_ridge_standard`, `wa_vesper_peak_north_face_ragged_edge`,
+`wa_warrior_peak_standard`, `wa_washington_ellinor_traverse_ridge`,
+`wa_west_craggy_peak_standard_route`, `wa_west_face_2` (North Peak, Gunsight Range),
+`wa_west_twin_needle_south_route`, `wa_whatcom_peak_southwest_route`. Six of the eight
+routes I checked, plus another six pulled from the `wa_north_%`/`wa_whatcom_%` neighbor
+checks, land on the "Blue Lake/Kangaroo Ridge/Hamma Hamma/Harts Pass/Ross Lake regional
+corridor" bivy-list-contamination class this project has documented dozens of times
+before — the pattern held again here.
+
+**Vasiliki Ridge (Ares Tower)**: the row's own `corrections` field explicitly says
+"the more precise 8,203 ft figure is used here as highPointFt" — but `high_point_ft`
+still held 8,190, the value the note says was superseded. Confirmed by a third,
+independent internal record: this row's own waypoint chain sums its cumulative ascent
+to exactly the stored `gain_ft` (4,123) only if the final leg ends at 8,203, not 8,190.
+Fixed. Also filled `outing_shape` (NULL -> 'outback', matching `descent_text`'s
+same-trailhead round trip) and pruned bivy 6 -> 3 (three entries self-identify, in the
+row's own text, as serving Kangaroo Ridge objectives reached from "the hairpin" pullout
+rather than the Wine Spires pullout this route actually uses). Flagged rather than
+fixed: `loss_ft` is NULL, and `gain_ft` (waypoint-chain-derived, 4,123) disagrees with
+this row's own itinerary day-sum totals (5,800 gain-to-summit / 6,200 round-trip loss)
+by 30-40% — needs a human call per CLAUDE.md's documented caution on multi-day gain/loss
+ambiguity.
+
+**Vesper Peak (North Face / Ragged Edge)**: bivy pruned 6 -> 2. Four of six entries are
+for Sloan Peak (North Fork Sauk approach), Del Campo/Gothic (Barlow Pass), and the Monte
+Cristo group — one explicitly states "rather than for Vesper or Sloan." Kept the two
+entries naming Vesper Peak/Sunrise Mine Trailhead by name. Everything else on this route
+(gain_ft/loss_ft 4,115/4,115, pitches, length_m, grade) cross-checked cleanly against
+its own pitch_detail, waypoints and itinerary.
+
+**Warrior Peak**: `rock_grade` said "3rd class (YDS) scrambling", disagreeing with three
+other fields on the same row that all converge on "Class 4 to low 5th" (the `grade`
+column itself, the `description` field, and pitch_detail's own crux entry) — corrected
+to match the majority reading. Bivy pruned 6 -> 2 (four entries self-identify as serving
+Buckhorn Mountain x2, Mount Worthington, and Mount Townsend via a different
+trailhead/trail system; kept the two naming Warrior Peak explicitly). gain_ft/loss_ft
+(4,900/4,900) cross-checks exactly against this row's own itinerary day-sum totals —
+clean.
+
+**Mount Washington / Mount Ellinor Traverse**: bivy pruned 8 -> 2. Six entries serve The
+Brothers, Mount Stone, Mount Skokomish and Mount Pershing via the Hamma Hamma River Road
+corridor — a different road system from this route's own North Lake Cushman Road/
+FR-2419. This is the SAME bivy list already fixed on the sibling Mount Washington route
+`wa_se_ridge_aka_shield_wall` in `audits/sql/2026-09-01-batch-162.sql`, recurring
+verbatim on this route. gain_ft (4,250) matches the itinerary's own cited "roughly 6
+miles and 4,250 ft of cumulative gain" exactly.
+
+**West Craggy Peak**: bivy pruned 8 -> 1. Seven entries are Harts Pass/Pasayten-crest
+camps for Osceola, Blackcap, Castle, Blizzard, Robinson Mountain, Ptarmigan, Dot,
+Monument and Lake Mountain — reached via Forest Road 5400 from Mazama, a completely
+different drive from this route's own Copper Glance Trailhead off Eightmile Road from
+Winthrop. The one kept entry says so in its own text: "Copper Glance Lake... is the only
+camp that serves Big Craggy and West Craggy... Nothing here connects to Harts Pass on
+foot." gain_ft/loss_ft (4,600/4,600) matches the itinerary's day-by-day sum exactly
+(2,800 + 1,800 = 4,600); high_point_ft (8,372) matches this row's own `corrections`
+field, which explains the multi-source elevation spread and states which figure was
+chosen — already correctly applied, no fix needed there.
+
+**North Peak (Gunsight Range), West Face**: the largest finding this batch, three
+separate fields pointing at the wrong mountain. `access.parking_pass` named Vesper Peak
+outright ("Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g.
+Sunrise Mine TH for Vesper Peak)") — cross-contaminated from the Vesper Peak row also in
+this batch. `road` described "Barlow Pass Trailhead, then the gated Monte Cristo Road...
+toward the Gunsight Range" — the Monte Cristo group's own access, contradicting five
+other fields on this same row (waypoints, approach, approach_logistics,
+approach_variants, descent_text, itinerary) that all consistently describe the Downey
+Creek Trailhead / Suiattle River Road / Bachelor Creek / Itswoot Ridge approach instead.
+And `approach` opened with a self-flagged note claiming the area's stored coordinates
+"place it at Washington Pass on SR-20" — checked against the live `areas` row
+(`wa_north_peak`, 48.3068,-120.994): that point is ~35 km from Washington Pass and only
+~8 km from the well-documented neighboring Dome Peak, i.e. already in the right
+neighborhood. This reads as a stale leftover from before the area coordinate was
+corrected in an earlier pass; trimmed. All three fixed using only facts already present
+elsewhere on the row (no new mileage or driving detail invented). Bivy pruned 8 -> 5
+(three entries for Old Guard Peak/Sentinel Peak on the far end of the Ptarmigan Traverse,
+and Spire Point, have no Gunsight Range connection; kept the five that name the Gunsight
+Range or match this row's own documented approach).
+
+**West Twin Needle (South Route)**: flagged, not fixed — gain_ft/loss_ft (7,336/7,336,
+an exact match to this row's own waypoint-chain arithmetic) disagrees with the sum of
+this row's own 3-day itinerary's day-by-day figures (9,000/9,000) by ~18.5%. Bivy list
+(6 entries) checked against this route's Southern Pickets approach corridor and left
+alone — every entry is plausibly relevant to reaching West Twin Needle via the Goodell
+Creek/Barrier/Crescent Creek Basin corridor this row documents, unlike the other seven
+routes' clearly off-topic lists.
+
+**Whatcom Peak (Southwest Route)**: two flags, one fix. Flagged: `approach` states the
+Chilliwack River "is crossed via a hand-pulled cable car near US Cabin Camp rather than
+a ford" at the same point along the route where this row's own `waypoints` places a
+"Chilliwack River ford" hazard waypoint (thigh-deep, swift) and `hazards` independently
+lists the same ford — a cable car and an unbridged ford are not the same hazard, and
+this is safety-relevant enough to need a human research pass rather than a guess. Also
+flagged: `dist_km` (13.7 km / 8.5 mi) looks far too low against a well-documented
+~36-39 mi round trip cited in this row's own itinerary totalNote, but this route carries
+two different documented itinerary variants (a simple out-and-back via Whatcom Pass,
+whose gain_ft/loss_ft of 6,840/6,840 already matches this row's own waypoint-chain
+arithmetic exactly and needed no fix, and a longer Easy-Ridge-in/Whatcom-Pass-out loop),
+so there is no single obvious replacement value. Fixed: bivy pruned 13 -> 5 — eight
+entries serve Mount Fury, Luna Peak, Poltergeist Pinnacle and Spectre Peak via the
+Ross Lake/Big Beaver/Wiley Ridge approach on the opposite side of the range from this
+route's own Hannegan Pass Trailhead; kept the five that explicitly name Whatcom Peak or
+match this row's own documented Hannegan Pass/Easy Ridge/Whatcom Pass approaches.
+
+SQL: `audits/sql/2026-09-19-batch-305.sql` (13 UPDATE statements across 6 routes, no
+DELETE/DROP/TRUNCATE/ALTER anywhere; 2 routes carry flags only, no SQL). Every WHERE-clause
+guard and every `jsonb_build_array` bivy-index selection was independently re-verified
+against a fresh read of the live rows with a small Python check (quote-aware, unlike the
+preflight tool's naive splitter) before this log entry was written — all guards match
+live data exactly and every bivy prune keeps precisely the entries described above.
+Pre-flighted with `node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-305.sql`:
+11 write targets across 15 detected statements, all existing rows, no DELETE anywhere so
+no only-copy risk. Two statements (the `road` full-object replacement and the trimmed
+`approach` text for wa_west_face_2) print "no literal id predicate — not checkable" —
+the same known limitation batch 304's log already records: a mid-string semicolon inside
+a quoted JSON value ("Gravel Forest Service road; the standard access...") throws off the
+checker's naive semicolon-level statement splitter. Independently confirmed both
+statements are syntactically well-formed (properly balanced, doubled-apostrophe string
+literals, one WHERE clause each) with a proper quote-tracking tokenizer before relying on
+this. File is 21.9 KB against the checker's 4 KB paste-size soft limit — split into
+~1.5-2 KB chunks and verify each before sending the next.
+
+Re-counted scope after this batch: 3 in-scope routes remain
+(`wa_whitehorse_mountain_nw_shoulder`, `wa_whitehorse_mountain_r1`,
+`wa_witches_tower_south_face`) — confirmed live, `wa_wright_pond` and beyond are the
+last `wa_` alpine/mountaineering routes and its own area (`wa_cutthroat_creek_wall_or_
+little_liberty_bell`) is `area_type = 'crag'`, out of scope. Next batch continues in
+sorted-id order after `wa_whatcom_peak_southwest_route` and should finish pass 5.
