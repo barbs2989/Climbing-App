@@ -24496,3 +24496,64 @@ verify each before sending the next.
 
 Progress file's `pass` field bumped to `6`. Next batch continues in sorted-id order
 after `wa_action_potential`.
+
+## Batch 308 — 2026-09-19 (pass 6)
+
+Continuing pass 6 in sorted-id order after `wa_action_potential`: Agnes Mountain West
+Route, American Border Peak Northeast Face and Southeast Face/South Ridge, and four
+routes on Amphitheater Mountain's Middle Finger Buttress / Ka'aba Buttress area
+(Finger of Fatwa, Middle Finger Buttress Left Side, Middle Finger Buttress Right Side,
+North Ridge, Pilgrimage to Mecca — five Amphitheater routes total).
+
+All 8 routes checked out clean against authoritative sourcing. Nothing fixed, nothing
+flagged. Specifics, since this batch is a genuine "found nothing" rather than an
+unreviewed pass:
+
+- **Agnes Mountain** (`wa_agnes_mountain_west_route`): stored `high_point_ft` 8,119
+  matches Wikipedia/USGS-derived elevation exactly (one secondary source, listsofjohn.com,
+  gives 8,133 — a common small spread between elevation datasets, not evidence either is
+  wrong). FA (W. Ronald Frazier and Dan O'Brien, 1936, via West Fork of Agnes Creek)
+  confirmed independently. Approach narrative (High Bridge shuttle from Stehekin, Agnes
+  Creek Trail/PCT southbound, camps around mile 8-8.5) matches PCT Section K trail
+  descriptions closely enough that "about mile 8.5" for Swamp Creek Camp is ordinary
+  rounding against a sourced 8.1 mi. The route-level `high_point_ft` (8,119) sits 12 ft
+  below the waypoint list's own Summit pin (8,131) — well inside this app's own documented
+  DEM/GPS noise floor for this class of check, not touched.
+
+- **American Border Peak** (`_northeast_face`, `_southeast_face`): stored `high_point_ft`
+  7,998 confirmed against NAVD88 sourcing on both routes. Southeast Face/South Ridge's
+  `fa` field correctly separates two distinct facts it could easily have conflated: the
+  *peak's* first ascent (Dalgleish, Fyles, Henderson, R.A. Fraser — Sept 14, 1930,
+  confirmed independently including the exact date) versus the *route's* first ascent per
+  its own beta text (Baker, Beckey, Dudra, 1952) — both check out and are consistent with
+  each other rather than contradictory. Twin Lakes Trailhead coordinates, the High
+  Pass/Great Chimney/keyhole-squeeze route description, and the rappel count all matched
+  independent trip-report sourcing closely; the row's own `rappel_count_note` already
+  documents genuine disagreement between accounts (2 vs 3 vs 5 rappels) rather than
+  asserting a false precise number, which is the correct way to handle that spread.
+  Northeast Face's beta text (glacier approach, traverse to the ~45° snow gully, class
+  3-4 rock above) is close to verbatim to independently sourced route descriptions of this
+  same lesser-traveled line.
+
+- **Amphitheater Mountain** (5 routes): stored `high_point_ft` 8,358 confirmed exactly.
+  Andrews Creek Trailhead coordinates (48.7842, -120.1088) and elevation (3,050 ft) match
+  independent sourcing exactly, as does the FR-51 driving description. Upper Cathedral
+  Lake's independently-sourced elevation (~7,400 ft) against the 3,050 ft trailhead gives
+  a net gain of ~4,350 ft, close enough to the stored `gain_ft` of 4,800 (all 5 routes) to
+  read as ordinary cumulative-vs-net-elevation spread on an undulating ~17-mile trail
+  rather than an error. FA data confirmed independently for Finger of Fatwa (Scott Bennett
+  and Blake Herrington, 2012, including the exact 160 m route length) and Pilgrimage to
+  Mecca (Darin Berdinka and Owen Lunz, July 2004). Middle Finger Buttress Left Side
+  (5.10b, 4 pitches) and Right Side (5.9, Grade III, 7 pitches) both match Mountain
+  Project's independently-listed grade and pitch counts exactly. North Ridge (5.5, Grade
+  II, 6 pitches, FA Aug 29 1973) found no contradicting source but also no independent
+  confirmation of the exact FA date — an old, obscure alpine-rock FA of the kind that
+  mostly lives in guidebooks this session's blocked domains (SummitPost, theCrag,
+  CascadeClimbers, Mountaineers.org, AAJ archive) couldn't reach directly; nothing here
+  contradicts what's stored, so it wasn't flagged on the strength of an absence alone.
+
+SQL: none this batch — no confirmed errors found. `sql_file` recorded as `null`.
+
+Progress file's `last_processed_id` advanced to `wa_amphitheater_mountain_pilgrimage_to_mecca`.
+Next batch continues in sorted-id order after that id (pass 6 continues; the next area
+alphabetically is Andrews Peak / Anderson-family peaks and on toward the "Ap-"/"Ar-" ids).
