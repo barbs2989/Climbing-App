@@ -23519,3 +23519,83 @@ target id exists live, no destructive statement, no warnings.
 
 59 remain after batch 298. Next batch continues in sorted-id order after
 `wa_spider_mountain_north_face` (see progress file).
+
+## Batch 299 (2026-09-19)
+
+Spider Mountain North Ridge, Spire Point Southwest Face, Stanley-Burgner
+(Prusik Peak), Storm King North Face, Storm King Southwest Scramble, Middle
+Peak/"Middle Gunsight" Southwest Ridge, Swiss Peak Standard Route, Tenpeak
+Mountain North Couloir.
+
+**Largest finding: an earlier correction was left half-applied.**
+`wa_spire_point_southwest_face`'s own `corrections` field documents a
+2026-08-27 fix changing aspect/face/name from Southwest Face to Southeast
+Face (the original SW reading had rested on interpolated approach-bearing
+pins and a misquoted source; the row's own beta/pitch_detail/overview all
+say east/southeast). That fix touched only 4 fields. Nine more on the same
+row still said "southwest face" or "south face" -- `approach`,
+`descent_text`, `beta` (self-contradicting its own next sentence),
+`rope_note`, the Spire Col waypoint note, the Spire Col bivy note, the
+itinerary's day-3 objective (left as a hedged
+"southwest/southeast"), and both `partner_requirements.approachTime` and
+`seasonal_hazards.exposure`/`.crevasses`. Also dropped a now-stale
+`data_quality.gaps` hedge superseded by the same correction. Fixed all ten.
+
+The stale "Southwest Face" wording also recurs verbatim on the shared
+Ptarmigan Traverse corridor `bivy` list -- confirmed byte-identical across
+16 routes (a genuine shared zone file, not contamination). Fixed the one
+copy in this batch (`wa_sw_ridge`); at least 14 more routes carrying it sit
+outside today's alphabetical window, several already passed earlier this
+pass -- flagged in the progress file for whichever pass revisits them.
+
+**Second finding: a waypoint contradicted itself.**
+`wa_storm_king_southwest_scramble`'s Colonial Creek Campground trailhead
+waypoint had a `note` field asserting the stored trailhead was "a
+different, unconnected drainage... very likely wrong," while the SAME
+waypoint's own `directions` field, and this row's separate `approach`
+field, both independently describe Colonial Creek Campground as the
+correct trailhead for the Thunder Creek Trail approach to Park Creek Pass.
+External check (WTA, Hiking Project, Mountaineers.org): Thunder Creek Trail
+does start at Colonial Creek Campground and does reach Park Creek Pass via
+the exact camps this row names (McAllister, Junction, Skagit Queen, Thunder
+Basin). Removed the stale, disproven sentence; left the rest of the note
+(a Rainy Pass alternate-approach description) alone.
+
+**Re-verified, no change needed:** Storm King's disputed summit elevation
+(8,346/8,515/8,520+/8,564 ft across sources, already correctly disclosed as
+unresolved -- independently reproduced by this batch's own search); the FR
+26/Suiattle River Road washout closure and the December 2025
+Stehekin/Company Creek Road flood damage (both still accurate today); the
+Little Giant Fire and Luna Fire closure orders (both read from NPS/USFS
+pages two days before this batch ran, both spot-checked and still
+current); wa_stanley_burgner's 2026-08-05 corrections (600-ft route length,
+2026 Enchantment lottery fee schedule) and its already-flagged unresolved
+pitch_detail-length discrepancy; wa_spider_mountain_north_ridge's FA
+credit.
+
+**Flagged rather than fixed:** `wa_sw_ridge` and `wa_gunsight_peak_standard`
+(both filed under Middle Peak of "The Gunsight Range") describe what may be
+one summit two ways -- "Middle Gunsight" approached from the east
+(Stehekin/Agnes Creek) vs. unqualified "Gunsight Peak" approached from the
+west (Downey Creek), elevations 8200 ft vs. 8198 ft. Web research found
+The Gunsight Range genuinely has distinct North/Middle/South summits, and a
+Wikipedia figure for unqualified "Gunsight Peak" (8,198 ft, "tallest of a
+series of peaks") is close enough to plausibly be the same peak described
+from its two real approaches -- matching this project's own documented
+pattern of legitimate two-trailhead peaks. Not confident enough to touch
+either row's naming; needs a human call on whether these are one peak or
+two.
+
+SQL: `audits/sql/2026-09-19-batch-299.sql` (12 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-299.sql`:
+all 6 write targets exist live, no destructive statement. (The script's
+naive semicolon-based statement splitter miscounts statements/misses some
+id-predicate checks on this file because several field values legitimately
+contain literal semicolons as punctuation -- independently re-verified
+correct statement boundaries and quote balance with a proper SQL-string-
+aware parser: 12 statements, all closed, every `'...'::jsonb` cast valid
+JSON.)
+
+51 remain after batch 299. Next batch continues in sorted-id order after
+`wa_tenpeak_mountain_north_couloir` (see progress file).
