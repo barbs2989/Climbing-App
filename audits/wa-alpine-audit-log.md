@@ -24323,3 +24323,176 @@ Re-counted scope after this batch: 3 in-scope routes remain
 last `wa_` alpine/mountaineering routes and its own area (`wa_cutthroat_creek_wall_or_
 little_liberty_bell`) is `area_type = 'crag'`, out of scope. Next batch continues in
 sorted-id order after `wa_whatcom_peak_southwest_route` and should finish pass 5.
+
+## Batch 306 — 2026-09-19 (pass 5, FINAL — closes pass 5)
+
+Scope re-confirmed live before starting: exactly 3 routes remained in scope after
+`wa_whatcom_peak_southwest_route` — `wa_whitehorse_mountain_nw_shoulder`,
+`wa_whitehorse_mountain_r1`, `wa_witches_tower_south_face`. Confirmed `wa_wright_pond`
+(next id alphabetically) sits under `wa_cutthroat_creek_wall_or_little_liberty_bell`,
+`area_type = 'crag'` — out of scope, and no further `wa_` alpine/mountaineering route
+ids exist past it. This batch finishes pass 5.
+
+**Whitehorse Mountain (Northwest Shoulder) and Whitehorse Mountain (Northwest Shoulder /
+Northwest Face, ice/snow)**: both routes share one trailhead (Niederprum Trailhead /
+Boulder River Wilderness) and both carried the identical `access` blob with two internal
+contradictions. (1) `access.permit` said "No self-issue or quota wilderness permit
+required for Boulder River Wilderness" — directly contradicting each row's own
+top-level `permit` field ("Free self-issue Boulder River Wilderness permit or trailhead
+registration; no quota or fee"). Verified against USFS/WTA sourcing: Boulder River
+Wilderness uses the standard Region 6 self-issue permit system (free, at the trailhead,
+no quota) — the top-level `permit` field had it right. (2) `access.parking_pass` said a
+Northwest Forest Pass is required "at Mountain Loop Highway trailheads — $5/day or
+$30/year" — directly contradicting the same row's own `access.passRequired` ("None — no
+Northwest Forest Pass or Discover Pass needed"). Verified against USFS/trip-report
+sourcing specific to this trailhead: the Niederprum Trailhead is an undeveloped pullout
+at a boulder barricade with no fee station — no pass applies here. This reads as generic
+Mountain Loop Highway boilerplate (worded almost identically to a contamination fixed on
+a different peak's row in batch 305) wrongly carried onto a trailhead that isn't a
+developed fee site. Both fields corrected on both rows to match the field on each row
+that was independently confirmed correct, and `access_checked_at` stamped 2026-09-19.
+R1 additionally carried the same false "no self-issue box" claim a third time, inside
+`bivy[0].permit` — fixed there too, preserving the rest of that entry's text (its "no fee
+at the trailhead" claim about parking is independently correct and untouched).
+
+Both routes flagged (not fixed): each disagrees with its own `itinerary` day-1
+gainFt/lossFt by ~10-11% (NW Shoulder: gain_ft/loss_ft 7,000/7,000 vs itinerary
+6,300/6,300; R1: 7,000/7,000 vs itinerary 6,400/6,400). Both rows' own `data_quality`
+fields already document the ambiguity explicitly (NW Shoulder: "Published elevation gain
+figures vary (~6,300-7,000 ft) depending on whether the Lone Tree Pass/High Pass
+up-and-down is counted; no GPS-verified figure found"; R1: "No GPS-verified
+elevation-gain/distance figures found; the ~6,400 ft / 13 mi figures come from a single
+ski-touring trip report and should be treated as approximate") — no single obvious
+replacement value, needs a human call rather than a mechanical pick. Everything else
+checked clean: FA (Nels Bruseth, 1909) confirmed via Wikipedia/Nels Bruseth's own page;
+summit elevation (6,852 ft, matching the row's own `high_point_ft` and summit waypoint)
+confirmed via listsofjohn.com; the north face's "6,000 ft in under 2 miles" relief claim
+in `overview` confirmed verbatim via Wikipedia; the 2008 Moose Creek bridge
+closure/barricade date confirmed via multiple trip reports. Bivy lists on both rows (3
+and 2 entries respectively) are small and topically tight to this approach corridor — no
+contamination found, no pruning needed.
+
+**Witches Tower (South Face / Standard Route)**: `descent_text` twice called the
+technical crux move "the 5.5" move, but this row's own top-level `grade` field ("Grade
+II, 5.4") and its own `pitch_detail[0]` (`"grade": "5.4", "crux": true`, describing this
+exact move as "the short technical crux of this quick summit add-on") both agree on 5.4.
+Two fields agreeing against one; corrected `descent_text`'s two "5.5" mentions to "5.4"
+to match the row's own grade and pitch_detail rather than inventing a third figure —
+this only resolves the row's internal self-contradiction; it does not adjudicate
+external sourcing, since the row's own `data_quality` field already flags that published
+grade/route naming for Witches Tower is inconsistent across outside sources generally.
+Everything else on this row checked clean against authoritative sourcing: high_point_ft
+(8,566 ft) matches Wikipedia and SummitPost exactly, and the row's own `corrections`
+field already documents that verification; the "0.4 mi east-southeast of Dragontail
+Peak" relationship in `overview` matches Wikipedia's peak-relationship data exactly; the
+Enchantment Permit Area fee figures in `access` ($6 non-refundable lottery application
+fee, $5/person/day for successful overnight permits, Feb 15-Mar 1 2026 lottery window)
+all match current Recreation.gov/USFS-sourced reporting exactly, as does the
+`access.passRequired`/`access.parking_pass` claim (Northwest Forest Pass required at
+Stuart Lake Trailhead — this one is a developed fee trailhead, unlike Whitehorse's
+Niederprum Trailhead above, and both fields agree with each other here). Bivy list (6
+entries, genuine Enchantments-basin camps: Colchuck Lake, Perfection/Inspiration Lakes,
+Gnome Tarn, Shield Lake) checked and left alone — all plausibly relevant to this
+approach, no contamination.
+
+SQL: `audits/sql/2026-09-19-batch-306.sql` (4 UPDATE statements across 3 routes, no
+DELETE/DROP/TRUNCATE/ALTER anywhere; the two flagged gain/loss discrepancies carry no
+SQL). Pre-flighted with `node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-
+306.sql`: reported "every target id exists; no DELETE removes an only copy" for the one
+statement its naive semicolon/id-predicate detector could parse (the plain-text
+`descent_text` replace()); the other 3 statements (multi-line `jsonb_set` calls
+containing em-dash characters) printed the same "no literal id predicate — not
+checkable" warning this tool has printed on nested/multi-line jsonb_set statements in
+several recent batches. Independently verified all four statements with a quote-aware
+Python tokenizer (parenthesis-balance and unterminated-string checks on every
+statement — all balanced, no stray semicolons inside string literals) and confirmed
+every WHERE-clause guard value (the exact `access.permit`/`access.parking_pass`/
+`bivy[0].permit`/`descent_text` substrings each statement checks for) against a fresh
+read of the live rows before writing this entry — all four guards match live data
+exactly.
+
+Re-counted scope after this batch: **0** in-scope routes remain unaudited in pass 5 —
+this closes pass 5 out completely. Progress file's `pass` field stays `5` (recording the
+pass that just finished); the next batch starts pass 6 from the top of the sorted id
+list (`wa_a_servant_to_liberty`) and will bump `pass` to `6`.
+
+## Batch 307 — 2026-09-19 (pass 6, batch 1 — restarts the sweep)
+
+Pass 5 finished cleanly at batch 306 (0 in-scope routes remained). This batch restarts
+at the top of the sorted id list for pass 6.
+
+**A Servant To Liberty**: `access.fees` said "No climbing permit; NW Forest Pass $5
+(day) or $30 (annual)" — directly contradicting this same row's own
+`access.passRequired` and `access._raw.parking_pass_required`, both of which already
+correctly say no parking pass is needed at this route's actual approach (the free SR-20
+hairpin pullout used by all East Face Liberty Bell routes, distinct from the fee-based
+Blue Lake Trailhead used by the separate west-side Beckey route). Verified against
+Mountaineers/guidebook sourcing for this specific pullout, which confirms it is free
+roadside parking. Corrected `access.fees` to match the two fields on this row that were
+already right, and stamped `access_checked_at`.
+
+Flagged, not fixed: `dist_km` (8.05) disagrees by roughly 5x with this row's own
+approach text ("about a mile through forest," ≈1.6 km one-way). This is not an isolated
+slip — every route in `wa_liberty_bell` sharing this identical East Face approach
+carries one of three different `dist_km` values for the same walk-in (1.6, 4.02, or
+8.05), spread across at least 8 routes. Two of the other 8.05-valued routes
+(`wa_live_free_or_die`, `wa_liberty_and_injustice_for_all`) are outside this batch's
+scope. This looks like a genuine three-way convention split across a whole approach
+corridor that needs a dedicated systematic review rather than a single-row guess, per
+CLAUDE.md's standing caution against bulk-normalizing this column.
+
+**Abernathy Peak (South Ridge / Scatter Lake)**: the top-level `permit` field claimed a
+free self-issue Lake Chelan-Sawtooth Wilderness permit is required — directly
+contradicting this same row's own `bivy[0].permit`, which correctly states no wilderness
+permit is needed for this wilderness (only a Northwest Forest Pass/Interagency pass to
+park at the trailhead). Verified against USFS/WTA sourcing: Lake Chelan-Sawtooth
+Wilderness does not require the self-issue permit some other Washington wildernesses
+do (confirmed separately for Boulder River Wilderness in batch 306 — this is not a
+blanket assumption, each wilderness was checked on its own). Corrected the top-level
+`permit` field to match `bivy[0].permit` and the external sourcing. Everything else on
+this row checked clean: high_point_ft (8,321 ft) matches independent sourcing exactly;
+Scatter Lake's stored elevation is within normal rounding spread of sourced values;
+dist_km (8, one-way) is internally consistent with both this row's own itinerary
+("roughly 9-11 miles round trip") and independently sourced trail mileage to the lake.
+
+**Action Potential**: `access.passRequired` and `access._raw.parking_pass_required`
+both claimed a Northwest Forest Pass is required — but this row's own
+`access.parking_pass` field names the specific corridor trailheads that actually require
+one (Washington Pass Overlook, Blue Lake, Cutthroat), and this route's own trailhead
+(the unsigned SR-20 Burgundy Col pullout near milepost 166) is not among them. Verified
+against Mountaineers/guidebook sourcing specific to this pullout: "no red tape to climb
+this peak nor is a northwest forest pass required for parking at the pullout." Corrected
+both fields to match `access.parking_pass`'s own correct enumeration and the external
+sourcing, and stamped `access_checked_at`.
+
+Flagged, not fixed: gain_ft (4,170) and loss_ft (4,300) differ by ~3% on what this row's
+own descent_text describes as an out-and-back. This row's own `rappel_count_note` is
+unusually explicit that per-station distances aren't independently measured ("the
+figures given come from the route's own descent text rather than from measurement"), so
+a ~130 ft spread on a ~4,200 ft outing reads as ordinary rounding rather than a data
+error worth touching mechanically.
+
+Checked and deliberately left alone: `road.seasonalGate` names a dated 2025-26 SR-20
+winter closure window with an explicit "exact dates varying by year" hedge — this is the
+shape CLAUDE.md already documents as a known, deliberately-propagated pattern belonging
+to a separate future transient-closure sweep rather than to per-route content audits, and
+it meets this app's own "date it or drop the claim" bar for an acceptable seasonal note
+even though the named window has since passed.
+
+SQL: `audits/sql/2026-09-19-batch-307.sql` (3 UPDATE statements across 3 routes, no
+DELETE/DROP/TRUNCATE/ALTER anywhere; the two flagged discrepancies carry no SQL).
+Pre-flighted with `node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-
+307.sql`: reported "every target id exists; no DELETE removes an only copy" for the one
+statement its naive detector could parse (the plain `permit` column UPDATE); the other
+two (multi-line `jsonb_set` calls containing an em-dash and a doubled-apostrophe
+escape) printed the same "no literal id predicate — not checkable" warning this tool
+has printed on similar statements in prior batches. Independently verified all three
+statements with a quote-aware Python tokenizer (parenthesis-balance and
+unterminated-string checks — all balanced, no stray semicolons inside string literals)
+and confirmed every WHERE-clause guard value against a fresh read of the live rows
+before writing this entry — all three guards match live data exactly. File is 8.5 KB
+against the checker's 4 KB paste-size soft limit — split into ~1.5-2 KB chunks and
+verify each before sending the next.
+
+Progress file's `pass` field bumped to `6`. Next batch continues in sorted-id order
+after `wa_action_potential`.
