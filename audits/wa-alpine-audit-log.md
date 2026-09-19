@@ -23441,3 +23441,81 @@ into smaller pastes if applying by hand, or run it via `psql`/the CLI.
 
 67 remain after batch 297. Next batch continues in sorted-id order after
 `wa_southeast_mox_peak_se_rib` (see progress file).
+
+## Batch 298 — 2026-09-19
+
+Continued after `wa_southeast_mox_peak_se_rib`: Mount Shuksan's Southeast
+Ridge/SE Corner, South Early Winters Spire's Southern Man, Dorado Needle's
+Southwest Buttress, The Tooth's Southwest Face, Pinnacle Peak's Southwest
+Scramble, Bonanza Peak's Soviet Route, Spectre Peak's South Ridge
+("Spirited Away"), Spider Mountain's North Face (Kloke-Tindall Route).
+
+**Fixed (1 UPDATE statement, 1 route):**
+
+- Dorado Needle's Southwest Buttress (`wa_southwest_buttress`): live
+  `dist_km` (6.44) did not match what this row's own `corrections` field
+  documents as the fix already applied on 2026-08-05 (12.88) — 6.44 is
+  exactly half of 12.88, which reads like a later, unrelated pass mistaking
+  the already-corrected one-way figure for a round-trip figure and
+  re-halving it in the wrong direction. Re-derived 12.88 independently
+  rather than trusting the corrections text alone: this row's own `approach`
+  field states outright "The recorded round-trip distance is about 25.75
+  km" (25.75/2 = 12.88); the itinerary's three day-mile entries sum to 15.4
+  mi round trip (24.78 km, half = 12.39 km, agreeing within rounding); and
+  `itinerary.totalNote`'s "~16 mi round trip" (= 25.75 km) matches the
+  approach text exactly. Per this app's `distKm*2` display convention, the
+  live value would have shown this route's round-trip approach as ~8 mi —
+  half of what every other field on the same row says it actually is.
+  Restored to 12.88, guarded (`WHERE ... AND dist_km = 6.44`) so the UPDATE
+  is a no-op if a future pass has already re-fixed it.
+
+  Systematically checked every other "FIELD corrected from X to Y" claim in
+  this batch's seven other `corrections` fields against the live value
+  (script-driven, not spot-checked) — all matched; this was the only
+  drifted one.
+
+**Flagged rather than fixed:** none new this batch. Two pre-existing
+disclosed ambiguities were re-confirmed but not touched, since the row's
+own `data_quality.gaps` already correctly leaves them unresolved from a
+prior pass: Southern Man's free-ascent grade/year (5.11d on file vs. a
+5.12a/2009 report that can't be reconciled with the 2010/5.11d Mountain
+Project credit), and Spectre Peak South Ridge's grade (5.8 FA trip report
+vs. IV 5.9 in the AAJ) and elevation (7,880+ ft older sources vs. 7,952-53
+ft current listsofjohn.com figure on file).
+
+**Clean, no change:** Southeast Ridge/SE Corner; The Tooth's Southwest Face
+(FA/grade/pitch count already reconciled against Mountain Project in a
+prior pass); Southwest Scramble — its bivy list names Unicorn Peak, The
+Castle and Lane Peak alongside Pinnacle by name, but that's a genuine
+shared Tatoosh cross-country-zone bivy corridor serving several peaks off
+one trailhead system, not misattributed contamination (this project's own
+documented distinction between a real zone file and a foreign one); Soviet
+Route (its FR 8301/Holden Village closure note is dated and consistent,
+`access_checked_at` 2026-08-27).
+
+Spider Mountain's North Face (Kloke-Tindall Route) is unusually sparse — no
+`grade`, `pitches`, `commitment`, `timing`, `difficulty`, `data_quality`, or
+`partner_requirements` fields at all, unlike every other route this batch —
+but nothing on the row contradicts anything checkable, so nothing was
+changed. Reads as an enrichment gap (a separate pipeline from this audit's
+fact-verification job) rather than a wrong fact; noted rather than guessed
+at or filled in.
+
+Checked `pitch_detail[].lengthM` sums against each route's `length_m` field
+across the batch as a cheap internal-consistency probe: all differences
+were within measurement noise or explained by the row's own text (Spectre
+Peak's South Ridge explicitly separates ~1,600-1,800 ft of pitched climbing
+from ~600 ft of simul-climbed ridge crest not captured in `pitch_detail` —
+540 m pitched + 183 m simul = 723 m against a stated 732 m, well within
+rounding), so none were acted on. No new `gain_ft`/`loss_ft` mismatches
+found. Northwest Forest Pass pricing mentioned in two rows this batch ($5
+day / $30 annual) already matches the current USFS/REI figure confirmed in
+batch 297 — no stale $35 found here.
+
+SQL: `audits/sql/2026-09-19-batch-298.sql` (1 UPDATE statement, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-298.sql`:
+target id exists live, no destructive statement, no warnings.
+
+59 remain after batch 298. Next batch continues in sorted-id order after
+`wa_spider_mountain_north_face` (see progress file).
