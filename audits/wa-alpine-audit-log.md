@@ -24104,3 +24104,87 @@ concurrent writes found in between.
 
 19 remain after batch 303. Next batch continues in sorted-id order after
 `wa_tooth_chair_traverse` (see progress file).
+
+## Batch 304 (2026-09-19, pass 5)
+
+8 routes: `wa_tower_mountain_southwest_route`, `wa_trapper_mountain_north_couloir`,
+`wa_trapper_mountain_south_slopes`, `wa_traverse_of_mount_index`,
+`wa_tricouni_peak_southwest_slopes`, `wa_true_grit_2`, `wa_ultramega_ok`,
+`wa_upper_north_ridge_w_great_gendarme`. 2 confirmed errors fixed, 1 flagged for human
+review, 5 clean.
+
+**Fixed:** `wa_trapper_mountain_south_slopes` had two fields (`approach`, `best_season`)
+describing access via a Stehekin ferry/floatplane, Stehekin Valley Road, "Harlequin
+Campground," and "the Devore Creek approach" — a multi-day trip. Devore Creek Trail
+(confirmed via WebSearch) is the documented approach for Tupshin Peak/Devore Peak/Flora
+Mountain, a different Stehekin-area cluster, not Trapper Mountain. The real approach —
+Cascade Pass Trailhead (Cascade River Road) via Pelton Basin to Trapper Lake (~4,170 ft)
+— is independently confirmed by (1) a WTA trip report matching that route almost
+verbatim (~10+ hrs one-way, half-trail/half-bushwhack Pelton Basin to the lake), (2) this
+same row's own `beta` field, which already correctly describes the Cascade Pass/Pelton
+Basin approach to the identical lake and elevation, and (3) the sibling route on the same
+peak (`wa_trapper_mountain_north_couloir`), whose `approach` field independently and
+correctly states the same trailhead, basin, and lake elevation. Rewritten to match the
+already-correct fields rather than invented. Also trimmed a minor pipeline-voice
+artifact from `wa_traverse_of_mount_index.fa` (editorializing about a previous session's
+incorrect "Charles" value) without touching the substantive, already-sourced fact — a
+WebSearch summary suggested "Pete Schoening" for the 1950 Index traverse FA, but that
+reads as inferred from Schoening's general fame rather than a primary source naming him
+for this specific climb, and Wikipedia/Mountain Project (the sources this row's own text
+already cites) were both blocked by network egress this run, so the more specific
+existing claim (surname only, per AAC + MP) was left standing.
+
+**Flagged for human review:** `wa_upper_north_ridge_w_great_gendarme` (Mount Stuart,
+upper North Ridge via the Great Gendarme, joining from the Stuart Glacier notch).
+Elevation (9,415 ft) and pitch count (18) both externally confirmed — a WebSearch result
+independently described "an 18 or so pitch climb" for this exact variant. But
+`gain_ft` (2,998) and `dist_km` (6.4) both look substantially understated against the
+route's own approach text (trailhead via North Fork Teanaway Road → Lake Ingalls
+(~6,463 ft) → Goat Pass → Stuart Glacier (~7,800 ft) → notch (~8,200 ft) → summit
+9,415 ft), which implies roughly 5,000+ ft of cumulative gain from a ~4,300 ft trailhead
+and considerably more than 6.4 km of one-way approach distance. Not fixed: I could not
+find one authoritative source stating an exact gain/distance figure for this specific
+upper-ridge-only variant, and CLAUDE.md is explicit that this column should never be
+patched with a derived/estimated number — a wrong guess here is worse than the gap,
+since Est. summit/Est. return times read off it.
+
+**Clean (verified against external sources):** `wa_tower_mountain_southwest_route`
+(elevation 8,444 ft exact match via listsofjohn/countryhighpoints-style sources; PCT/Rainy
+Pass approach and Cutthroat/Granite/Methow Pass sequence all correctly ordered and real).
+`wa_trapper_mountain_north_couloir` (this is the sibling that already has the correct
+Cascade Pass/Pelton Basin approach — used as one of three corroborating sources for the
+south_slopes fix above). `wa_tricouni_peak_southwest_slopes` (elevation 8,102 ft and
+coordinates 48.5822/-121.0783 both exact matches; FA "Elwyn Elerding, Jeanne Elerding,
+Les Carlson — August 1951" exactly matches Wikipedia's "1951... Les Carlson, Elwyn
+Elerding, and Jeanne Elerding"; the Borealis/Klawatti/McAllister-glacier approach text,
+which initially looked like it might be contaminated from a different peak, turned out to
+be genuinely correct — Tricouni Peak really does sit north of the North Klawatti Glacier
+and southeast of the Borealis Glacier). `wa_true_grit_2` (Vesper Peak, elevation 6,221 ft
+exact match; Headlee Pass ~4,720 ft on its approach independently corroborated by this
+same repo's own prior DEM-based audit work per CLAUDE.md; Sunrise Mine Trail #707, Wirtz
+Basin, Vesper Lake/Lake Elan, Vesper-Wolf saddle all real, correctly-ordered landmarks).
+`wa_ultramega_ok` (Burgundy Spire Northeast Buttress; FA "Mark Allen and Tom Smith, 2004"
+exactly matches a Mountain Project trip-report search hit dated July 24, 2004; extremely
+detailed pitch-by-pitch and rappel-by-rappel data internally consistent, already through
+a prior self-adjudication pass per its own `rappel_count_note` reconciling conflicting
+rope-count sources — this route is explicitly cited in CLAUDE.md's own guard
+documentation as a deliberately-kept example of the rappel-honesty pattern).
+
+SQL: `audits/sql/2026-09-19-batch-304.sql` (3 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-304.sql`: 2 write targets
+(both existing rows) across the 3 statements; OK, every target id exists and no DELETE
+removes an only copy. One statement's WHERE guard necessarily reproduces the *old*,
+wrong `approach` value verbatim (it must match live data exactly to be a safe no-op
+otherwise), and that old text itself contains a mid-string semicolon — the checker's
+naive statement splitter mis-parses that one clause and prints a "no literal id
+predicate" warning for the resulting fragment, which is a known limitation of its
+line-level splitter (documented in its own header) rather than a real problem; every
+actual WHERE-clause guard string was independently byte-compared against a fresh DB read
+via a small Python check before and after drafting the SQL, with no drift found either
+time. File is 5.8 KB against the checker's 4 KB paste-size soft limit — split into
+smaller pastes when applying in the SQL Editor.
+
+11 remain after batch 304. Next batch continues in sorted-id order after
+`wa_upper_north_ridge_w_great_gendarme` (see progress file). This is the tail of pass 5 —
+the current pass will finish within the next 1-2 batches.
