@@ -23599,3 +23599,122 @@ JSON.)
 
 51 remain after batch 299. Next batch continues in sorted-id order after
 `wa_tenpeak_mountain_north_couloir` (see progress file).
+
+## Batch 300 (2026-09-19)
+
+Tenpeak Mountain Southeast Route, Eldorado Peak's Tepeh Towers, The
+Brothers' South Couloir, The Brothers Traverse, Concord Tower's The Cave
+Route, The Chopping Block's South Route, Southeast Mox Peak's The Devils
+Club, Mount Stuart's Direct North Ridge w/ Gendarme.
+
+**Fixed (4 issues, 4 UPDATE statements):**
+
+- `wa_tenpeak_mountain_southeast`: `descent_text` said "Reverse the glacier
+  and snow route to the basin," but no glacier crossing appears anywhere
+  else on this row — `approach`, `climbing_route`, `descent`, and
+  `waypoints` all agree the summit push is talus/snow to a col, then a
+  loose gully and a broken chimney (Class 4/low 5th). The small hanging
+  glaciers named in `hazards` (Moth, Ten Peak, Honeycomb) are general
+  geography near the peak, not part of this route's own line. Rewrote to
+  match this row's own, much more detailed `descent` field.
+
+- `wa_the_brothers_south_couloir`: `ascender` was stored as a literal
+  double-encoded JSON string — the text `{"type":"...","note":"..."}` —
+  rather than the plain descriptive sentence every other populated row in
+  the catalog uses for this column (checked ~15 other rows: all plain
+  text, e.g. "prusik cord for glacier approach"). Converted to plain text
+  combining the same two pieces of information the JSON blob held; nothing
+  invented.
+
+- `wa_the_cave_route`: `approach` states the Blue Lake Trailhead is at
+  "~5,400 ft," but this same row's own `waypoints[0]` already has it at
+  5,200 ft, and independent figures (Blue Lake itself at 6,254 ft per
+  Wikipedia/PeakVisor, reached via ~1,050-1,100 ft of trail gain per
+  USFS/WTA) put the trailhead at roughly 5,150-5,200 ft — agreeing with
+  this row's own waypoint, not its approach text. Corrected the approach
+  text to match.
+
+- `wa_the_devils_club` (Southeast Mox Peak, East Face): `grade`/
+  `rock_grade`/`grade_num` (5.11/5.11-/11) overstated the free-climbing
+  difficulty by two full number grades. Two independent sources
+  (Climbing.com's coverage of the 2005 first ascent and Mountain Project's
+  route page, both citing the 2007 AAC Journal/Alpinist #15 writeups) agree
+  the route is graded V+ 5.9+ A2- — matching this row's own already-correct
+  `alpine_grade` ("V+") and `aid_grade` ("A2-") exactly. Corrected the
+  free-climbing grade fields only; `alpine_grade`/`aid_grade`/`commitment`/
+  `pitches`/`fa` were already right and left untouched.
+
+**Flagged rather than fixed:** `wa_tenpeak_mountain_southeast`'s
+`gain_ft`/`loss_ft` (7300/7300) match neither this row's own waypoint-chain
+total (trailhead 2,300 ft to summit 8,312 ft = 6,012 ft) nor its own
+itinerary day-by-day sum (2,880 + 1,250 = 4,130 ft, which the itinerary's
+own `totalNote` independently states as "~4,100 ft"). Inside the itinerary
+itself, day 2's stated `gainFt` (1,250, camp to summit) doesn't match the
+~3,132 ft the waypoint chain implies once the camp elevation is taken from
+the approach text's own arithmetic (trailhead 2,300 ft + the approach
+text's own stated 2,880 ft of day-1 gain = 5,180 ft), nor does it match the
+~1,912 ft implied by the `waypoints` array's own, different camp elevation
+of 6,400 ft for that same landmark ("Thunder Basin high camp"). At least
+three internal numeric records disagree with each other and with the
+stored `gain_ft`, and none is clearly the outlier — needs a human pass
+rather than a guess between them, the same shape as several prior batches'
+flagged gain/loss clusters.
+
+**Clean, no change:** Eldorado Peak's Tepeh Towers — elevation (8,113 ft)
+confirmed via TopoZone, and the row's own approach text already explains,
+correctly and transparently, why this route is filed under Eldorado's area
+despite topping out on a separate summit reached by glacier traverse. The
+Brothers Traverse — mostly clean; noted but did not fix a completeness gap
+(`waypoints` holds only the bare trailhead, no summit/ridge points, no
+`elev`/`distMi`) since filling it in would mean inventing intermediate
+coordinates this row does not have verified elsewhere. The Chopping
+Block's South Route — its own `corrections` field already documents an
+open, previously-flagged gap (`pitch_detail` lists only 2 of the 5
+documented pitches) that this batch did not attempt to fill for lack of a
+specific pitch-by-pitch source. Mount Stuart's Direct North Ridge w/
+Gendarme — this is the route CLAUDE.md already cites as the model example
+of a genuinely two-trailhead peak (Stuart Lake/Mountaineer Creek side vs.
+Esmeralda Basin/Longs Pass side); the row's own waypoint note explicitly
+and correctly tells climbers to confirm which trailhead they and their
+partner mean before leaving town. FA history (1956 original bypass line,
+1963 direct-over-Gendarme, 1970 direct lower start) and summit elevation
+(9,415 ft) both check out.
+
+Read but did not touch `wa_tenpeak_mountain_southeast`'s 18KB `bivy`
+corridor list (9 shared Glacier Peak/Buck Creek Pass/Napeequa-zone camps).
+Several entries explicitly name Tenpeak by place ("Tenpeak's east end,"
+and the standard White River/Thunder Basin entry describes this route's
+own approach almost verbatim), consistent with genuine shared
+wilderness-zone camp data rather than corridor contamination — this
+project's own documented distinction between a real zone file and a
+foreign one.
+
+`wa_the_brothers_south_couloir`'s `data_quality.gaps` entry on the South
+Peak elevation conflict (6,842 ft older-USGS/Wikipedia vs. 6,866-6,868 ft
+used elsewhere on the row) was left untouched — it already transparently
+documents a genuine, unresolved source conflict, which is exactly the
+class of thing this audit should leave alone rather than pick a side on.
+
+Noted, not acted on: `wa_main_peak` (Eldorado Peak's "Main Peak" child
+area) shares essentially the same coordinates and elevation (8,872-8,873
+ft) as its own parent area `wa_eldorado_peak`. This looks like it may be
+the same summit represented at two levels of the area hierarchy, but
+restructuring area parentage is outside this audit's per-route scope and
+risks moving routes between areas without a clear rule for which level
+should hold them — worth a human look, possibly already covered by this
+project's existing `duplicate-peak-areas-2026-07-30.md` audit.
+
+SQL: `audits/sql/2026-09-19-batch-300.sql` (4 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-300.sql`:
+all target ids exist live, no DELETE removes an only copy. The script
+flagged one UPDATE (the Cave Route's `approach` text) as "no literal id
+predicate — not checkable," which is a parser limitation on that
+statement's long string value rather than a real problem — independently
+confirmed the guard clause matches exactly the live row (`id =
+'wa_the_cave_route'`) via a direct exact-match query before finalizing.
+Also flagged the file's paste size (4.7 KB against a 4 KB soft limit,
+same as most recent batches) — split into smaller pastes when applying.
+
+43 remain after batch 300. Next batch continues in sorted-id order after
+`wa_the_direct_north_ridge_w_gendarme` (see progress file).
