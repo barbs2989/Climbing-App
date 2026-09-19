@@ -24632,3 +24632,103 @@ passed `npm run check:sql`).
 Progress file's `last_processed_id` advanced to `wa_bacon_peak_diobsud`.
 Next batch continues in sorted-id order after that id (pass 6 continues toward the
 "Bar-"/"Be-" ids — Baring Mountain, Bear Mountain, Beckey-family routes, etc.).
+
+## Batch 310 (pass 6) — 2026-09-19
+
+8 routes: `wa_baring_mountain_r1`, `wa_bear_mountain_chilliwack_north_buttress`,
+`wa_beckey_davis`, `wa_beckey_tate`, `wa_beyond_redlining`,
+`wa_big_four_mountain_northwest_ridge`, `wa_big_four_mountain_spindrift_couloir`,
+`wa_big_kangaroo_west_face`. Continues in sorted-id order after
+`wa_bacon_peak_diobsud`.
+
+**Regional bivy-corridor contamination**, the pattern documented in most prior
+batches, on five of the eight routes:
+- Baring Mountain North Face: 8 → 2 (kept only entries naming Baring's north
+  face / "Baring and the Barclay Creek peaks"; removed Mount Index entries
+  reached from a different trailhead entirely, plus Merchant/Gunnshy and
+  Eagle Rock/Grotto entries via different roads).
+- Beckey-Davis (Prusik Peak): 6 → 2 (kept only the two South-Face-specific
+  camps; removed Dragontail-specific entries and the West-Ridge-only Shield
+  Lake entry, which is on the opposite side of Prusik Pass from this route).
+- Beyond Redlining (Vega North Tower): 6 → 2 (kept the two entries naming
+  Morning Star / this exact Sunrise Mine trailhead; removed Sloan Peak,
+  Foggy Lake/Gothic and Monte Cristo entries, all different trailheads).
+- Beckey-Tate and West Face (Big Kangaroo): 6 → 5 on both. Unlike the other
+  three clusters, most of this list genuinely serves several peaks sharing
+  ONE trailhead (this route's own entry 0 explicitly lists Kangaroo Temple/
+  Half Moon/Big Kangaroo/Poster Peak together) — only pruned "Bench Camp",
+  which is a different pullout (Wine Spires, not the Hairpin) for Vasiliki
+  Ridge/Tower and Juno Tower.
+
+**dist_km self-contradiction**: `wa_bear_mountain_chilliwack_north_buttress`'s
+own approach text states outright "(the route's recorded 30.58 km distance
+matches this ~19-mile one-way haul)" — a direct citation of the expected
+value — against a stored 14.5 km. Corrected to 30.58 to match the row's own
+statement; corroborated via WebSearch (Mountaineers/Mountain Project/AAC:
+"roughly 17 miles" to Bear Creek camp alone, consistent with the row's own
+~19-mile figure once the further stretch to the 6,480 ft saddle is added).
+
+**outing_shape filled** (NULL → 'outback') on five routes whose own
+descent_text already describes a same-trailhead round trip but had never
+been tagged: Bear Mountain North Buttress, Beckey-Davis, Beckey-Tate, Beyond
+Redlining, Big Kangaroo West Face.
+
+**Missing/wrong elevation on Beyond Redlining**: `high_point_ft` was null.
+WebSearch independently confirms (two unrelated sources — a Mountain
+Project-derived summary and a named trip report at francisbaileyh.com) that
+Eros Tower/Vega North Tower — this route's own shared summit with Mile High
+Club, per its own pitch_detail — sits at 5,280 ft. That makes gain_ft/loss_ft
+(stored 3,500/3,500, against the row's own 2,350 ft trailhead) wrong by
+570 ft; corrected to 2,930 and synced the itinerary's day-1 gainFt/lossFt and
+the totalNote's "3,500 ft of approach/return hiking" wording to match.
+
+**Two more schema-shape defects** in the established newline-string /
+bare-narrative-string class: `wa_big_kangaroo_west_face`'s `watch_out`
+(newline-delimited string → JSON array, no content changed) and
+`wa_big_four_mountain_spindrift_couloir`'s `itinerary` (bare narrative
+string → `{cal,days,totalNote}` object, narrative preserved verbatim).
+
+**Flagged, not fixed:**
+- `wa_bear_mountain_chilliwack_north_buttress`'s itinerary.days mileage
+  (9/3/9 = 21 mi, itinerary.totalNote calling that "round trip") appears to
+  conflate the ONE-WAY distance to camp — which this row's own waypoint
+  chain separately states as 21 mi one-way, 23 mi to the summit — with the
+  whole round trip. The itinerary's day gain/loss sums (7,300/6,250) also
+  disagree with the row's own top-level gain_ft/loss_ft (5,950/5,950). Needs
+  a fuller human pass on the day-by-day breakdown, not a one-row guess, per
+  CLAUDE.md's standing caution against bulk-normalizing this kind of field.
+- `wa_big_four_mountain_spindrift_couloir`'s high_point_ft (6,170, the true
+  summit — identical to the sibling Northwest Ridge route, which DOES reach
+  it) contradicts this row's own descent_text, which states the route "tops
+  out on the summit ridge well west of the true summit." WebSearch
+  corroborated the FA and descent (AAC Publications, cascadeclimbers.com:
+  down the NW ridge to a col toward Hall Peak, matching this row closely)
+  but turned up no sourced elevation for the actual topout point, and one
+  search summary conflated an unrelated Mount Shuksan route's descent
+  ("Fisher Chimneys") into its answer — not trusted. Needs a human pass with
+  a topo/guidebook.
+- `wa_big_four_mountain_northwest_ridge` was checked and left alone: every
+  gap on the row (no grade, empty descent_text, null dist_km/loss_ft/
+  outing_shape) is candidly documented by the row's own overview as
+  reflecting genuinely sparse published information for this specific 1931
+  historic line. WebSearch confirms the FA (Forest Farr & Art Winder, July
+  19 1931) and the peak's elevation (6,170 ft) but found detailed coverage
+  only of the mountain's OTHER routes (Dry Creek, Tower, Spindrift Couloir),
+  nothing on this ridge specifically.
+
+Also verified clean via external corroboration: Baring Mountain's elevation
+(6,127 ft) and FA (AAC Publications); Big Kangaroo's elevation (8,326 ft —
+Country Highpoints/SummitPost/Wikipedia note a more recent lidar re-survey
+at 8,318 ft, not acted on since 8,326 is what every route on the peak
+agrees on internally).
+
+SQL: `audits/sql/2026-09-19-batch-310.sql` — 15 `UPDATE` statements across
+the 8 routes, all gated on exact current values (checked live before
+writing) and passed `npm run check:sql` (15/15 targets verified to exist,
+no destructive deletes; file exceeds the 4KB paste-size soft limit like
+several prior multi-route batches, so should be applied in ~1.5KB chunks).
+
+Progress file's `last_processed_id` advanced to `wa_big_kangaroo_west_face`.
+Next batch continues in sorted-id order after that id (toward the Black
+Peak/Bonanza Peak ids — Poster Peak's crag-type area correctly excludes
+`wa_blue_s_buttress` from scope).
