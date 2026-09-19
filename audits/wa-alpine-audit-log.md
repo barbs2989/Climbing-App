@@ -24557,3 +24557,78 @@ SQL: none this batch — no confirmed errors found. `sql_file` recorded as `null
 Progress file's `last_processed_id` advanced to `wa_amphitheater_mountain_pilgrimage_to_mecca`.
 Next batch continues in sorted-id order after that id (pass 6 continues; the next area
 alphabetically is Andrews Peak / Anderson-family peaks and on toward the "Ap-"/"Ar-" ids).
+
+## Batch 309 (pass 6) — 2026-09-19
+
+Routes: `wa_amphitheater_mountain_west_route`, `wa_andersons_thumb_standard`,
+`wa_argonaut_peak_east_ridge`, `wa_argonaut_peak_northeast_couloir`, `wa_austera_peak`,
+`wa_austera_peak_chockstone_route`, `wa_austera_peak_southwest_ridge`,
+`wa_bacon_peak_diobsud`.
+
+- **Amphitheater Mountain — West Route**: summit elevation 8,358 ft confirmed exactly
+  (PeakVisor/SummitPost). Andrews Creek Trailhead coordinates/elevation and land manager
+  (Okanogan-Wenatchee NF, Methow Valley RD, Pasayten Wilderness) all check out. Clean.
+
+- **Anderson's Thumb — Standard Route**: this row already flags itself heavily
+  (`corrections`/`data_quality`) as an unverifiable, obscure spire with no published route
+  description — confirmed independently: a search for "Anderson's Thumb"/"Andersons
+  Thumb" turns up no dedicated source either, matching the row's own honest "could not
+  verify" stance. Dosewallips Road washout is confirmed still current and vehicle-closed
+  in 2026 (WTA: "WTA worked here in 2026... road remains closed"), matching the row's
+  hedged `road.status`. Left alone — the row is already correctly cautious, and nothing
+  found contradicts it. Clean.
+
+- **Argonaut Peak — East Ridge** (named "Southeast Ridge" in the `name` field, per its
+  own `data_quality.gaps` note documenting a 2026-07-15 correction from a bogus "East
+  Ridge" — id left as-is per this project's policy of not auto-renaming ids): coordinates
+  (47.470119, -120.861477) match Wikipedia's 47.4701186°N 120.8614768°W almost exactly.
+  Beverly Creek Road closure — "Closed under the 2025 Labor Mountain Fire order,
+  effective May 20 through December 31, 2026" — confirmed verbatim against the real USFS
+  Okanogan-Wenatchee closure order for the Cle Elum Ranger District, which explicitly
+  lists Beverly Turnpike Trail #1391 (the trail this route's approach uses) among the
+  closed trails. Clean.
+
+- **Argonaut Peak — Northeast Couloir**: same summit coordinates as above (8,457 ft here
+  vs 8,453 ft on the East Ridge route — not a discrepancy: Wikipedia notes Argonaut has a
+  southeast and a west summit "of almost identical height, with the west being the true
+  summit," so two routes reasonably reporting slightly different summit elevations is
+  real dual-summit ambiguity, not a data error). Stuart Lake Trailhead / FR 7601
+  (Eightmile Rd) off Icicle Creek Road, winter closure Nov-May, all confirmed against
+  USFS/WTA sourcing. Clean.
+
+- **Austera Peak** (all 3 routes: standard/East Ridge, Chockstone Route, Southwest
+  Ridge/McAllister Glacier): summit elevation 8,339 ft and coordinates
+  (48.56846°N 121.1015°W) confirmed exactly against Wikipedia. First ascent — September
+  16, 1965, Joe and Joan Firey, John and Irene Meulemans, Anthony Hovey — confirmed
+  verbatim, consistent across all three rows. `gain_ft`/`high_point_ft` spread between
+  the standard/SW-Ridge routes (measuring from the ~7,500 ft high camp) and the
+  Chockstone Route (measuring from the ~2,100 ft trailhead) reflects two different, both
+  internally-consistent scopes rather than an error — this specific pair is already
+  called out as previously adjudicated in `audit:gain`'s own header per CLAUDE.md, so not
+  re-litigated. All three clean.
+
+- **Bacon Peak — Diobsud Creek / Green Lake Glacier**: **confirmed error, fixed.** The
+  Watson Lakes Trailhead waypoint's own `note` claimed the trailhead "serves the
+  north-east side of the peak — the Green Lake Glacier and Watson Lakes approach — not
+  the Diobsud Creek Glacier side this route is named for." That is directly contradicted
+  by (1) the row's own `approach` field, which describes reaching the Diobsud Creek
+  Glacier from this exact trailhead via the Anderson Lakes ridge and Mt. Watson traverse;
+  (2) the row's own next five waypoints in the same array, which trace that identical
+  single-trailhead path step by step (saddle → Watson Lakes → Diobsud basin → access
+  gully → glacier crossing → summit), with no second trailhead anywhere in the sequence;
+  and (3) external sourcing — USFS Anderson-Watson Lakes Trail #611 descriptions and
+  independent trip reports (turns-all-year.com "Mount Watson-Bacon Peak"; onehikeaweek.com
+  "Bacon Peak by Salvation Peak via Diobsud Creek Glacier") — which both describe the
+  standard Diobsud Creek Glacier approach as starting from this same trailhead. Also
+  confirmed: `high_point_ft` 7,070 ft matches exactly; `road.status` describing the
+  FR-1107 washout at ~MP 3.8 (Dec 2025 atmospheric river, still closed) matches current
+  USFS reporting almost exactly (MP 3.86).
+
+SQL: `audits/sql/2026-09-19-batch-309.sql` — one `UPDATE` on `wa_bacon_peak_diobsud`
+correcting the Watson Lakes Trailhead waypoint's note, gated on the exact current (wrong)
+note text via `jsonb_set` + a matching `WHERE` clause (checked live before writing, and
+passed `npm run check:sql`).
+
+Progress file's `last_processed_id` advanced to `wa_bacon_peak_diobsud`.
+Next batch continues in sorted-id order after that id (pass 6 continues toward the
+"Bar-"/"Be-" ids — Baring Mountain, Bear Mountain, Beckey-family routes, etc.).
