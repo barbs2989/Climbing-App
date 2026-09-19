@@ -23718,3 +23718,124 @@ same as most recent batches) — split into smaller pastes when applying.
 
 43 remain after batch 300. Next batch continues in sorted-id order after
 `wa_the_direct_north_ridge_w_gendarme` (see progress file).
+
+## Batch 301 (2026-09-19)
+
+Continued in sorted-id order after `wa_the_direct_north_ridge_w_gendarme`. 8
+routes: The Hitchhiker (South Early Winters Spire), all five "The Monk"
+routes on Cathedral Peak (Pasayten Wilderness) — Le Gibet, Odine, Scabo, West
+Cracks Left Crack, West Cracks Right Crack — Neve Glacier Approach on The
+Needle, and Glacier/Scramble Route on The Pleiades.
+
+**The Monk cluster.** All five routes stored `high_point_ft = 8606`, which
+is Cathedral Peak's own summit elevation — confirmed via SummitPost,
+Mountain Project, and willhiteweb as ~8,601 ft; the on-file 8606 is close
+enough that it may be a legitimate datum variant of the *same* peak, and
+was left alone. What's wrong is applying it to these routes at all: none
+of the five reaches Cathedral Peak's summit. Every one tops out on "The
+Monk," a distinct, lower, semi-detached tower described in the row's own
+overview text as "leaning against Cathedral Peak's flank," and each row's
+own `Topout` waypoint already, consistently, records that tower's true top
+at 8300 ft. The shared itinerary text treats "Cathedral proper" (the
+Southeast Buttress or South Face) as a *separate* day's objective from The
+Monk routes, corroborating that these are different summits. Corrected
+`high_point_ft` on all five to 8300 ft, matching each row's own waypoint.
+
+Also on that cluster: Le Gibet, Odine, and West Cracks Left Crack all
+shared `loss_ft = 1300` against a shared `gain_ft = 6000`, on an identical
+approach, trailhead, and descent to their siblings — the same
+partial-figure-saved-as-the-total pattern this audit has documented
+repeatedly (Phantom Peak in batch 289, Remmel Mountain NW Ridge in batch
+291). Their two siblings on the exact same approach, Scabo (`loss_ft`
+5450) and West Cracks Right Crack (5200), both sit close to `gain_ft` —
+plausible trail-undulation variance for a round trip to the same
+trailhead — which is what settled the direction of the fix: corrected the
+three outliers to match `gain_ft` (6000) rather than leaving them at a
+number that cannot represent a genuine out-and-back descent. Filled
+`outing_shape` (NULL → `'outback'`) on all five routes, since every one
+returns to the Andrews Creek Trailhead via the shared NE-gully rappel or
+the route itself. Converted four of the five (`watch_out` was already a
+proper JSON array on Scabo) from a newline-delimited string to a JSON
+array — the schema-shape defect documented in many earlier batches, no
+content changed.
+
+**wa_the_hitchhiker (South Early Winters Spire).** The same Blue Lake
+Trailhead elevation defect batches 295 (three SEWS routes) and 296
+(Concord Tower's two South Face routes) already found and fixed elsewhere
+in this exact corridor recurred here: `waypoints[0]` stored 5150 ft,
+contradicting this same row's own `approach_logistics.trailheadDirection`
+("~1.5 miles west of Washington Pass, 5,400 ft") and its own `bivy[0]`
+entry (elev 5400). Corrected to 5400. That correction had a knock-on
+effect: with the trailhead at 5400 ft and the summit at 7807 ft (net rise
+2407 ft), the itinerary's stored day-1 `gainFt` (2200) fell below the
+physical floor for a round trip — cumulative gain on an ascending approach
+cannot be less than the net elevation change — while the row's own
+top-level `gain_ft` (2600) cleared it with a plausible undulation margin.
+Synced `loss_ft` and the itinerary's day-1 `gainFt`/`lossFt` to 2600 to
+match. Filled `outing_shape` (NULL → `'outback'`, matching the row's own
+descent_text ending at the same trailhead) and converted `watch_out` from
+a newline string to a JSON array.
+
+**wa_the_needle_neve_glacier — verified clean.** Every internal record
+agrees: the waypoint-chain net rise, the top-level `gain_ft`/`loss_ft`
+(7200/7200), and the itinerary's own two-day gain/loss sums (4900+2300 =
+7200 gained; 0+7200 = 7200 lost) all reconcile exactly. The route's stated
+FA (William A. Degenhardt & Herbert V. Strandberg, August 1, 1931, the
+same day as their first ascents of neighboring Snowfield Peak and
+Horsemans Pack) is internally consistent with the neighboring-peaks
+narrative elsewhere on the row, and its own `data_quality.gaps` entry
+already transparently documents an elevation-source disagreement and
+leaves it unresolved rather than guessing — exactly the class of
+self-documented uncertainty this audit should leave alone.
+
+**wa_the_pleiades_scramble.** Found a genuine cross-field contamination:
+`partner_requirements`, `crowds.peakTraffic`/`estimatePerSeason`, and
+`seasonal_hazards.exposure` all described a fundamentally different
+trip — a multi-day *glaciated* climb approached via Mount Baker's
+Ptarmigan Ridge to Camp Kiser, with glacier travel and crevasse rescue —
+while every other field on this row (waypoints, approach, descent_text,
+road, bivy, approach_variants, itinerary, gear, pro_needs) consistently
+and in detail describes a single-day, non-glaciated Class 3-4 rock
+scramble reached via the Twin Lakes Trailhead and the High Pass Trail,
+with no glacier crossing anywhere on it. This row's own `corrections`
+field already flagged the underlying oddity — "Could not confirm which
+specific Pleiades summit this route_id refers to, nor find a literal
+glacier crossing despite the 'Glacier/Scramble' naming" — but a prior
+research pass evidently never traced that finding through to the three
+contaminated fields, which read like they were copied wholesale from an
+actual Mount Baker glacier objective. Rewrote all three to match the
+approach, gear, and itinerary this row already, correctly, describes — no
+new facts invented, only re-homing this row's own established Twin
+Lakes/High Pass/loose-rock content into the fields that had disagreed
+with it. Left its `data_quality.gaps` entry on the high point's elevation
+variance (7,346–7,371 ft across sources) untouched — already correctly
+documented as an open, unresolved source conflict.
+
+External web-search corroboration this batch: Cathedral Peak's elevation
+(SummitPost, Mountain Project, willhiteweb agree on ~8,601 ft); the
+Andrews Creek Trailhead approach mileage (WTA, Gaia GPS confirm ~17–20 mi
+one-way to Upper Cathedral Lake, elevation ~3,050 ft trailhead / ~7,380 ft
+lake); Mountain Project route pages for The Monk's Scabo and West Cracks
+Right Crack (grade and pitch count both match this row's own values). Le
+Gibet and Odine could not be found on Mountain Project, SummitPost, or
+theCrag in this pass — treated as unconfirmed by independent source
+rather than wrong, since strong internal cross-route corroboration (five
+routes sharing one well-documented approach, two of them independently
+verified) was sufficient on its own for the fixes made here.
+
+SQL: `audits/sql/2026-09-19-batch-301.sql` (24 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-301.sql`:
+all target ids exist live, no DELETE removes an only copy. The script
+flagged one UPDATE (the Pleiades' `crowds` field) as "no literal id
+predicate — not checkable," the same parser limitation on a long string
+value noted in batch 300's log entry — independently confirmed the guard
+clause matches the live row exactly via a direct query before finalizing.
+Also flagged the file's paste size (14.8 KB against a 4 KB soft limit) —
+split into smaller pastes when applying. Before drafting the SQL, all
+seven target rows were re-fetched fresh from the live DB and diffed
+against the values first read, confirming no concurrent writes had
+touched them in between.
+
+35 remain after batch 301. Next batch continues in sorted-id order after
+`wa_the_pleiades_scramble` (see progress file).
