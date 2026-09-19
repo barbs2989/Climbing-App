@@ -23978,3 +23978,129 @@ found in between.
 
 27 remain after batch 302. Next batch continues in sorted-id order after
 `wa_the_west_face` (see progress file).
+
+## Batch 303 — 2026-09-19 (pass 5)
+
+Three Fingers (North Peak, Middle Peak, South Peak via Lookout), Three
+Queens (Middle Peak, West Peak), Tomyhoi Peak (Southeast Ridge), Lexington
+Tower (Tooth and Claw), The Tooth (Tooth-Chair Traverse).
+
+**2 confirmed errors fixed, 1 flagged for human review, 5 clean.**
+
+wa_three_fingers_r1 (North Peak) — three fields (`pro_tips`, `rope_note`,
+`ascender`) described fixed wooden ladders leading to a fire-lookout
+summit, directly contradicted by this same row's own `overview`, which
+states outright "Contrary to this route's name, the historic Three
+Fingers fire lookout actually sits on the South Peak, not here ... There
+is no maintained trail, no ladders, and no register cabin" — independently
+confirmed by this row's own `beta`, `descent_text`, `pitch_detail` (3
+entries) and `climbing_route` (3 entries), none of which mention ladders.
+The sibling South Peak route (wa_three_fingers_south_peak_lookout), which
+genuinely does have the ladders, carries `rope_note`/`ascender` = NULL on
+its own row, so this was not simple sibling duplication — three fields
+were just attached to the wrong route. `pro_tips`' ladder bullet removed
+(kept the correct ice-axe one); `rope_note` cleared (it described the
+South Peak's whole standard route start to finish and nothing was lost —
+`rope_type`/`rope_length_m` and `climbing_route[2].notes` already carry
+this route's own rope facts); `ascender` trimmed to a strict prefix of
+itself, dropping only the false "...not because ascenders are used on the
+fixed ladders" clause.
+
+wa_three_queens_middle_peak — `access.notes` named "Snoqualmie Ranger
+District: (425) 888-1421" for a fire-closure contact, contradicted by
+this same row's own `access.landManager` ("Okanogan-Wenatchee National
+Forest, Cle Elum Ranger District") and `emergency.rangerStation` ("Cle
+Elum Ranger District ... (509) 852-1100"). Snoqualmie Ranger District
+administers a different national forest (Mt. Baker-Snoqualmie NF, the
+I-90/North Bend corridor) — confirmed independently by this same batch's
+wa_tooth_chair_traverse row, whose own emergency contact for a genuine
+Snoqualmie-Pass-corridor route is that exact district/number, and by the
+sibling wa_three_queens_west_peak row, whose `access.notes` already
+correctly cites Cle Elum RD/(509) 852-1100 for this identical fire
+closure with a specific order number. The closure claim itself ("as of
+July 2026", open-ended) was also verified and re-dated: WebSearch against
+the US Forest Service's own alert page
+(fs.usda.gov/r06/okanogan-wenatchee/alerts/three-queens-fire-closure-cle-
+elum-ranger-district) confirms the closure order is in effect through
+October 31, 2026 unless rescinded sooner, and that access controls were
+tightened further in September 2026 (no new access permits/waivers being
+issued), per an updated Forest Service release covered by
+lakechelannow.com. Corrected to name the closure order number the
+sibling route already cites (06-17-03-2026-25) and the real through-date
+rather than an undated "currently"; `access_checked_at` stamped
+2026-09-19.
+
+**Flagged, not auto-fixed:** wa_three_fingers_south_peak_lookout —
+stored `gain_ft`/`loss_ft` (5750/4200) disagree with the sum of this same
+row's own `itinerary` day-by-day `gainFt`/`lossFt` fields (day 1: 3000/
+100; day 2: 1200/4200 — totals 4200/4300) by roughly 1550 ft (27%), on a
+route whose own `descent_text` says it is an exact reversal of the
+ascent line ("Downclimb the three fixed ladders in reverse... then
+reverse the rock/snow scramble... reverse Trail #641... to the
+trailhead"), where round-trip gain and loss should be closely equal.
+Not auto-fixed: CLAUDE.md explicitly cautions against bulk-normalizing
+gain_ft/loss_ft (two conventions coexist catalog-wide) and separately
+notes this exact class — a 2-day itinerary with a high camp — is *not*
+as cleanly decidable as a 1-day itinerary, where "the trip total" and
+"the gain this column holds" can be different questions. No single
+authoritative source was found giving a confident round-trip figure for
+this specific line; this needs a human call on which number (or a third
+one) is right rather than a mechanical fix.
+
+**Clean.** wa_three_fingers_r2 (Middle Peak, South Face) — internally
+consistent (gain/loss symmetric at 4600/4600 matching an out-and-back
+reversal descent; no ladder/lookout contamination like its North Peak
+sibling; rope/ascender/pro_tips all correctly blank or route-specific).
+wa_three_queens_west_peak — `access.notes` on this route already
+correctly cited Cle Elum Ranger District and the fire closure order
+number (used as the model for the Middle Peak fix above); gain/loss
+(5300/5300) symmetric and consistent with its own pitch_detail lengthM
+(182.9m ≈ stored length_m 183); `corrections`-style internal consistency
+throughout. wa_tomyhoi_peak_southeast_ridge — extensively researched and
+internally consistent (waypoint elevations, `high_point_ft` 7439 matching
+area elevation, gain/loss both inside the route's own stated 5,000-5,600
+ft range per its `itinerary.totalNote`, `data_quality.gaps` honestly
+documents remaining uncertainty incl. a disputed FA between Wernstedt
+(1927) and Thompson/Fisher (early 1930s) — externally confirmed via
+WebSearch as a genuine, still-unsettled historical dispute, not a data
+error; the `fa` field's hedge and `overview`'s simpler "First climbed by
+Lage Wernstedt in 1927" are the commonly-cited headline answer vs. the
+fuller nuance, not a contradiction). wa_tooth_and_claw — grade_num
+(12.25) verified against this app's own gradeNumFrom() convention in
+lib/grade.js (5.12a → 12 + (indexOf('a')+1)/4 = 12.25, exact match);
+8-pitch/244m stated length consistent with its own "800-ft" beta text
+and pitch_detail lengthM sum (~260m, within normal per-pitch rounding);
+extensive rappel_detail/rappel_count_note internally consistent with the
+rope-length requirement (two 70m ropes) stated three times over.
+wa_tooth_chair_traverse — already carries its own `corrections` field
+explaining why `high_point_ft` is set to Chair Peak's elevation (6238 ft)
+rather than The Tooth's (5606 ft), since the traverse continues past The
+Tooth; this row's `emergency.rangerStation`/`(425) 888-1421` (Snoqualmie
+Ranger District) is itself correct for this Alpental/I-90-corridor route
+— the same contact info that turned out to be *misfiled* onto the
+Three Queens routes above, which independently corroborated that finding.
+
+**Environment note:** unlike the immediately preceding session (batch
+302's log entry), WebSearch worked normally this run and was used for
+the Three Queens Fire closure-order verification and the Tomyhoi FA
+cross-check; WebFetch was not tried directly against any of the primary
+source URLs (WebSearch's own result-synthesis text was sufficient and is
+noted as such above).
+
+SQL: `audits/sql/2026-09-19-batch-303.sql` (4 UPDATE statements, no
+DELETE/DROP/TRUNCATE/ALTER anywhere). Pre-flighted with
+`node scripts/check-sql-targets.mjs audits/sql/2026-09-19-batch-303.sql`:
+4 write targets across 4 statements, every target id exists live, no
+DELETE removes an only copy (there are no DELETEs). One statement
+initially contained a semicolon inside a new string value, which the
+checker's line-level statement splitter mis-parsed as two statements
+(caught by its own "no literal id predicate" warning); reworded to avoid
+mid-string semicolons and re-verified clean. The script flagged the
+file's paste size (6.0 KB against a 4 KB soft limit) — split into
+smaller pastes when applying. All target rows were re-fetched fresh from
+the live DB twice (once before drafting the SQL, once immediately before
+finalizing it) and byte-compared against the values first read; no
+concurrent writes found in between.
+
+19 remain after batch 303. Next batch continues in sorted-id order after
+`wa_tooth_chair_traverse` (see progress file).
