@@ -25117,3 +25117,129 @@ With this batch's 8 added (51 audited total this pass), 524-51 = **473
 in-scope routes remain unaudited this pass**. Future batches should
 recompute this the same way (sum `route_ids` across `pass: 6` batch
 entries) rather than trust a decrementing count in prose.
+
+## Batch 314 (2026-09-20, pass 6)
+
+Routes: `wa_chalangin_peak_little_giant_pass_luahna_col`,
+`wa_chianti_spire_east_face`, `wa_chimney_rock_east_face_direct`,
+`wa_chimney_rock_west_face`, `wa_chiwawa_mountain_southwest`,
+`wa_chockstone_route`, `wa_clark_mountain_west_ridge`,
+`wa_classic_route_2` — continuing in sorted-id order after
+`wa_chair_peak_northwest_ridge`.
+
+**Regional bivy-corridor-contamination pattern, four of eight routes.**
+This is the same class documented in many prior batches: a route's
+`bivy` array carries a whole neighboring-wilderness camp corridor
+written for entirely different peaks, rather than the entries that
+actually serve this route's own trailhead/approach.
+
+- `wa_chalangin_peak_little_giant_pass_luahna_col` (9→2): the bivy list
+  was the full Glacier Peak Wilderness/Dakobed corridor — Mackinaw
+  Shelter, White Pass, Glacier Gap, Kennedy Ridge, Boulder Basin (all
+  Glacier Peak's own Cool Glacier/Sitkum/Kennedy Glacier camps), Buck
+  Creek Pass (Helmet Butte/Buck Mountain/Berge), and even Clark
+  Mountain's own White River bivy — none of which serve this route's
+  actual Little Giant Trailhead → Napeequa Valley → Butterfly Butte
+  approach. Pruned to the two entries that explicitly name Luahna/
+  Chalangin and this exact approach.
+- `wa_chimney_rock_east_face_direct` and `wa_chimney_rock_west_face`
+  (9→2 each) carried the byte-identical western-Alpine-Lakes-Wilderness
+  corridor blob — Pete Lake/Lemah Meadows, Escondido Ridge (Little Big
+  Chief Mountain), Waptus/Spade Lake (Little Big Chief), Park Lakes
+  Basin (Three Queens), Hardscrabble Horse Camp (Burnt Boot Peak), Upper
+  Hardscrabble Lake (Big Snow Mountain), Williams Lake (Iron Cap
+  Mountain), Peggy's Pond (Cathedral Rock) — seven unrelated peaks off
+  three different trailheads. Pruned both to the two entries naming
+  Chimney Rock directly, one of which states outright "THIS IS CHIMNEY
+  ROCK'S REAL BASE."
+- `wa_chiwawa_mountain_southwest` (9→1): the bivy list was the Holden
+  Village/Bonanza Peak/Lyman Lakes corridor. Two of the nine entries
+  *do* name Chiwawa Mountain, but only via the peak's other, glaciated
+  Lyman Glacier approach — this row's own overview text says outright
+  that is "a separate, more involved approach on the far side of the
+  mountain" from the non-glaciated southwest route documented here, so
+  keeping either would have sent a climber toward the wrong side of the
+  peak expecting to need glacier gear they don't. Pruned to the one
+  entry describing this row's own Trinity Trailhead staging without
+  misdirection.
+- `wa_clark_mountain_west_ridge` (9→1): same Glacier Peak/Dakobed
+  corridor as Chalangin above. Kept the one entry ("Boulder Pass and
+  Thunder Basin, White River") that states outright "This is the
+  standard base for Clark Mountain ... the Walrus Glacier route
+  traverses the basin ... for the east side of the mountain" — an exact
+  match for this row's own route. Pruned two Napeequa-side entries that
+  serve Clark's *other* (Little Giant Trailhead) approach, which this
+  row does not use.
+
+**Filled a null gain/loss/distance triple from a same-peak sibling.**
+`wa_chimney_rock_east_face_direct`'s `dist_km`/`gain_ft`/`loss_ft` were
+all null. Its own approach text says outright it "shares the same
+trailhead-to-basin approach as the East Face," and its overview
+describes it as a variation that "rejoin[s] the East Face about halfway
+up" to the same 7,727 ft summit. This peak's standard "East Face" route
+(`wa_east_face_6`) stores dist_km 15.3 / gain_ft 6000 / loss_ft 6000 for
+that identical approach+summit — copied verbatim rather than typed,
+since the row's own text names it as the same approach and no other
+figure for it exists anywhere on the row.
+
+**Filled three null `outing_shape` and one null `loss_ft`.**
+`wa_chimney_rock_west_face`, `wa_chiwawa_mountain_southwest`, and
+`wa_clark_mountain_west_ridge` all had `outing_shape` null despite each
+row's own `descent_text` explicitly reversing the ascent back to the
+same trailhead — filled `'outback'` on all three. Clark Mountain West
+Ridge's `loss_ft` was also null with `gain_ft` already 6,500; set equal
+to gain_ft for the same reason (a genuine out-and-back).
+
+**Verified clean via external corroboration (WebSearch), no changes
+needed:**
+
+- Chimney Rock's area elevation (7,727 ft) and first ascent (Aug 27,
+  1930, Forest Farr/Art Winder/Laurence Byington, no repeat ascent until
+  1940) — confirmed against Wikipedia.
+- Chiwawa Mountain's area elevation (8,459 ft) and first ascent (1921,
+  Mountaineers party led by Lorenz A. Nelson) — confirmed against
+  Wikipedia, which itself notes "no definite records exist" for that
+  1921 ascent. The row's own `fa` field already carries equivalent
+  hedging ("the peak's overall first ascent via its easiest scrambling
+  line; not explicitly named 'Southwest Route'"), so nothing to change.
+- `wa_chianti_spire_east_face`: the peak's original 1952 aid first
+  ascent (Joe Hieb/Art Maki, rappelling into the Burgundy-Chianti notch)
+  confirmed via AAC Publications' "The Environs of Silver Star," and the
+  East Face/"Rebel Yell" route's 1986 first ascent (Mark Bebie/Jim
+  Nelson) confirmed via SummitPost and Mountain Project. Its bivy list
+  (Burgundy Col/Wine Spires west-side camps plus the Silver Star Creek
+  east-side alternate) checked and found clean — both approaches
+  genuinely serve this peak/massif, no contamination.
+- `wa_chockstone_route` (North Early Winters Spire): first ascent
+  (Wesley Grande, Pete Schoening, Dick Widrig, May 28, 1950) confirmed
+  as the peak's original line via three independent trip-report sources
+  (gethighonaltitude.com, trailcatjim.com, spokalpine.com). Bivy list
+  (Blue Lake trailhead, Liberty Bell basin, Lone Fir/Klipchuck
+  campgrounds) is genuinely all Washington Pass/Liberty Bell Group —
+  clean.
+- `wa_classic_route_2` (Unicorn Peak): elevation (6,971 ft) and status
+  as the Tatoosh Range high point confirmed via Wikipedia and
+  Peakbagger.com. Bivy list (Snow Lake Camp, Tatoosh cross-country zone,
+  Reflection Lakes winter camp, Cougar Rock/Ohanapecosh campgrounds) is
+  genuinely all Tatoosh/Rainier NP — clean. The row's existing
+  `corrections` field already independently cleared a prior flagged 5.6
+  grade against Mountain Project's 5.4 — left untouched, nothing further
+  to verify there.
+
+SQL: `audits/sql/2026-09-20-batch-314.sql` — 9 `UPDATE` statements
+against `routes` (all gated on exact current values, checked live
+immediately before writing, plus the East Face Direct fill is gated on
+its sibling route's own stored figures rather than a hardcoded number).
+Passed `npm run check:sql`: 9 of 9 write targets confirmed to exist
+live, no destructive deletes. File is 11.8KB, over the 4KB paste-size
+soft limit, so should be applied in ~1.5KB chunks and verified as it
+goes.
+
+Progress file's `last_processed_id` advanced to `wa_classic_route_2`.
+Next batch continues in sorted-id order after that id (toward the
+Cloudy Peak/Colchuck Peak ids).
+
+Recomputed "remain this pass" by summing `route_ids` across all
+`pass: 6` batch entries (307 through 314): 51 audited through batch 313
++ 8 this batch = 59 audited, 524-59 = **465 in-scope routes remain
+unaudited this pass**.
