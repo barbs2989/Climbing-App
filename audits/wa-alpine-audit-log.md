@@ -24732,3 +24732,162 @@ Progress file's `last_processed_id` advanced to `wa_big_kangaroo_west_face`.
 Next batch continues in sorted-id order after that id (toward the Black
 Peak/Bonanza Peak ids — Poster Peak's crag-type area correctly excludes
 `wa_blue_s_buttress` from scope).
+
+## Batch 311 — 2026-09-20 (pass 6)
+
+Continued in sorted-id order after `wa_big_kangaroo_west_face`: Big Snow
+Mountain (East Ridge/Hardscrabble, North Slope/Dingford), Black Peak (East
+Buttress, Northeast Ridge), Bonanza Peak (Mary Green Glacier, North Ridge,
+Northeast Buttress), Booker Mountain (Northeast Face).
+
+**Regional bivy-corridor contamination**, the same class documented in
+dozens of prior batches, on six of the eight routes:
+- Both Big Snow Mountain routes carried an identical 9-entry list spanning
+  the whole western Alpine Lakes Wilderness (Pete Lake/Lemah Meadows,
+  Chimney Glacier, Escondido Ridge, Waptus/Spade Lake, Park Lakes Basin,
+  Williams Lake, Peggy's Pond) — all for Lemah Mountain, Chimney Rock,
+  Little Big Chief Mountain, Three Queens, and Iron Cap Mountain, none of
+  them Big Snow. The East Ridge (Hardscrabble) route's own two relevant
+  entries survive (9→2): "Hardscrabble Horse Camp" and "Upper Hardscrabble
+  Lake," the latter stating outright "The high camp for BIG SNOW
+  MOUNTAIN's east ridge." The North Slope (Dingford) route uses a
+  *different* trail from the same trailhead (the maintained Dingford
+  Creek Trail toward Myrtle Lake, not the gated FSR 56 road toward
+  Hardscrabble Lakes) — its own itinerary names Myrtle Lake/Big Snow Lake
+  as camps, neither of which is in the bivy list at all, so **none** of
+  the nine entries serves this route. Pruned to zero (9→0), matching the
+  established `wa_scramble_route` (Eagle Peak) precedent for a corridor
+  list with no entry that fits the row it sits on.
+- Both Black Peak routes carried an identical 7-entry list; the first
+  three (Wing Lake, Lewis Lake, Rainy Pass trailhead lots) serve Black
+  Peak's own Rainy Pass/Heather Pass/Lewis Lake/Wing Lake approach, and
+  the other four (Easy Pass trailhead, Mesahchie basin, Ragged Ridge crest
+  bivy, Fisher Camp) are explicitly for the separate Ragged Ridge cluster
+  (Mesahchie, Katsuk, Kimtah, Mount Arriva), reached from a different
+  trailhead. Pruned 7→3 on both.
+- Both Bonanza Peak routes audited for bivy (North Ridge, Northeast
+  Buttress) carried an identical 9-entry list; the first four (Holden
+  Village, Holden Ballpark Campground, Holden Lake, Holden Pass/slab
+  bivies) serve this peak's own Railroad Creek approach, and the other
+  five (Lyman Lakes/Cloudy Pass, Spider Meadow/Phelps Basin, Leroy Basin,
+  Ice Lakes, Phelps Creek Campground) are all for the separate Chiwawa
+  River/Phelps Creek corridor (North Star, Cloudy Peak, Chiwawa Mountain,
+  Dumbell Mountain, Mount Maude, Seven Fingered Jack, Mount Fernow),
+  reached via an entirely different road. Pruned 9→4 on both. (The third
+  Bonanza route in this batch, Mary Green Glacier, already carried a
+  clean 4-entry list scoped correctly to this peak — no fix needed.)
+- Booker Mountain's Northeast Face carried 6 entries along the Thunder
+  Creek/Park Creek Pass corridor; five explicitly serve this route (two —
+  Thunder Basin Hiker Camp, Five Mile Camp — name Booker by name), and
+  the sixth, "Fremont Glacier moraine high camp," is explicitly and
+  solely "the high camp for the Fremont Glacier side of MOUNT LOGAN," a
+  different peak reached from the far side of the same pass. Pruned 6→5.
+
+**A peak-wide elevation inconsistency on Bonanza Peak.** Two of its three
+routes here (Mary Green Glacier, Northeast Buttress) and the peak's own
+`areas` row cited "9,516 ft" for the true summit in prose and in a
+waypoint, while every route's own `high_point_ft` column already stores
+9,511 ft — and the third route, North Ridge, carries an explicit
+`corrections` note settling this: "Elevation is best sourced as 9,511 ft
+(matches AAC and most trip-report sources); a Wikipedia infobox figure of
+9,516 ft and a cited LIDAR re-survey figure of 9,503 ft also appear in
+circulation." Confirmed via WebSearch (SummitPost; trailcatjim.com titles
+its trip reports "Bonanza Peak (9511/9503 ft)") that 9,511 ft is the
+widely-cited figure and 9,516 ft traces to the Wikipedia infobox alone.
+Corrected every stray "9,516" occurrence found — Mary Green Glacier's
+overview text and summit waypoint; Northeast Buttress's overview text,
+summit waypoint, and one itinerary schedule detail line — plus the area
+row's `elevation_ft` and `blurb`, all to 9,511 ft, matching what the
+database already used everywhere else.
+
+**Bonanza Peak's Northeast Buttress had a copy-paste gain/loss figure and
+a doubled distance.** `gain_ft`/`loss_ft` (6,300/6,300) were an exact copy
+of the sibling Mary Green Glacier route's figures — but this row's own
+`approach` text explicitly says the route has "noticeably larger overall
+gain (~7,500 ft)" than that standard line, and its own itinerary's
+day-by-day `gainFt`/`lossFt` sum to exactly 7,300 both ways (day 1:
+4,000 gain; day 2: 3,300 gain / 3,300 loss; day 3: 4,000 loss). Corrected
+to 7,300/7,300. Separately, `dist_km` (23.34 km / 14.5 mi one-way) ran
+roughly double what this row's own records support: its waypoint chain's
+cumulative `distMi` to the summit totals exactly 7.0 mi (11.3 km), and its
+itinerary's own day-2 note (a 4-mile round trip from camp to summit and
+back, i.e. ~2 mi one-way, added to day 1's 5.5 mi) implies the same ~7.5
+mi one-way — both consistent with sibling Mary Green Glacier's own
+`dist_km` (12.8 km), as expected since the two routes share nearly the
+whole approach. Corrected to 11.3 km.
+
+**Filled `loss_ft`/`outing_shape` on three routes** whose own descent
+text already states the shape but had never been tagged: both Big Snow
+Mountain routes explicitly retrace the ascent ("outback," loss = gain);
+Black Peak's Northeast Ridge explicitly descends via the *separate* South
+Ridge gully back to the same Wing Lake trailhead ("loop," not "outback" —
+loss set equal to gain since a loop returning to the same trailhead
+implies zero net elevation change).
+
+**Flagged, not fixed — Bonanza Peak's North Ridge has a large,
+unresolved internal contradiction.** This row's own `corrections` field
+already states that "North Ridge" does not correspond to any
+independently documented technical line, and that primary sources
+describe this exact approach and summit as the "Mary Green Glacier"
+route — this entry says it is "document[ing] that standard/easiest route
+under the given name." Consistent with that, this row's approach/
+descent_text/pitch_detail/gear/itinerary all describe genuine roped
+glacier travel and Class 3-4 rock, closely matching the sibling Mary
+Green Glacier route. But this row's own `grade` field ("Class 2") and its
+`overview`/`beta`/`hazards`/`watch_out` fields instead describe an
+unrelated, generic, benign talus scramble ("straightforward Class 2
+scramble... solid rock and stable talus... well-marked by cairns") that
+directly contradicts the rest of the row — a climber reading the beta
+would expect an unroped walk-up, while the gear list (rope, glacier
+travel kit, pickets, harness) says otherwise. Its `gain_ft`/`loss_ft`
+(3,800/3,800) also exactly match Mary Green Glacier's own DAY-1
+hike-to-camp gain alone, not a full trailhead-to-summit round trip,
+suggesting a partial copy. This needs a human decision — merge/remove
+this route as a duplicate, or rewrite its overview/beta/grade/gain/loss
+wholesale to match its own approach/pitch_detail/gear — too large a
+rewrite for a mechanical SQL fix. Only its bivy contamination (see above)
+was corrected.
+
+**Flagged, not fixed — Mary Green Glacier's `dist_km` disagreement.**
+`dist_km` (12.8 km / 7.95 mi) runs about 13% ahead of this row's own
+waypoint chain, whose cumulative `distMi` to the summit totals exactly
+7.0 mi (11.27 km) — matching this row's own overview text ("roughly 14
+miles round trip," i.e. 7.0 mi one-way). But several plausible trip
+reports for this exact climb cite a 16-mile round trip (8.0 mi / 12.9 km
+one-way), which is what the stored value appears to track instead. Two
+internally-cited figures in tension; left for human review rather than
+picked without a stronger external tiebreaker.
+
+**No numeric fix attempted** on Black Peak's East Buttress or Booker
+Mountain's Northeast Face (`gain_ft`/`loss_ft`/`dist_km`/`grade` all
+null on the former; `gain_ft`/`loss_ft`/`dist_km` null on the latter).
+Both are candidly sparse, rarely-repeated lines: WebSearch found only
+qualitative mentions ("about 3 hours from Wing Lake" for East Buttress;
+no distance/gain of any kind in the AAC Publications first-ascent account
+for Booker's Northeast Face), with no source giving route-specific
+mileage or gain for either — same class as batch 310's Big Four Mountain
+Northwest Ridge. Not guessed.
+
+Verified clean via external corroboration: the FSR 56/Dingford Creek
+washout at milepost 17.3 and the Holden Village/FSR 8301 closure through
+December 31, 2027 (both already correctly and cautiously worded on file —
+confirmed current via USFS, KHQ, NWPB, and Spokesman-Review reporting, no
+change needed); Black Peak's Northeast Ridge FA (Roger Jackson and
+Michael Kennedy, September 1, 1973 — canyoneeringusa.com, spokalpine.com);
+Booker Mountain's Northeast Face FA (Dan Davis and John Holland, August
+22, 1964, via AAC Publications) and its county (Chelan, not Skagit).
+Direct WebFetch to summitpost.org, willhiteweb.com, fs.usda.gov, and
+publications.americanalpineclub.org all returned `EGRESS_BLOCKED`, as in
+prior batches; WebSearch summaries were relied on instead throughout.
+
+SQL: `audits/sql/2026-09-20-batch-311.sql` — 17 `UPDATE` statements
+against `routes` plus 2 against `areas`, all gated on exact current
+values (checked live before writing) and passed `npm run check:sql` (17
+routes targets + 2 areas targets, run with `--table areas` for the
+latter — all verified to exist, no destructive deletes; file exceeds the
+4KB paste-size soft limit like several prior multi-route batches, so
+should be applied in ~1.5KB chunks).
+
+Progress file's `last_processed_id` advanced to
+`wa_booker_mountain_northeast_face`. Next batch continues in sorted-id
+order after that id (toward the Buckner Mountain/Burgundy Spire ids).
