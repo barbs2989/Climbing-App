@@ -25396,3 +25396,143 @@ Recomputed "remain this pass" by summing `route_ids` across all
 `pass: 6` batch entries (307 through 315): 59 audited through batch 314
 + 8 this batch = 67 audited, 524-67 = **457 in-scope routes remain
 unaudited this pass**.
+
+## 2026-09-20 — Pass 6, Batch 316
+
+Eight routes on eight peaks, all first-time visits this pass: Polish Route (Colfax
+Peak), West Ridge/Colonial Glacier (Colonial Peak), Complete South Buttress (filed
+under Cutthroat Peak), North Face (Concord Tower), South Route (Copper Peak),
+Southwest Ridge/Standard Route (Corteo Peak), Standard Route (Crater Mountain),
+East Face (Crooked Thumb Peak).
+
+**Confirmed errors → fixes in `sql/2026-09-20-batch-316.sql`:**
+
+- **Colfax Peak, Polish Route** — `descent` directly contradicted the row's own
+  `rappels` and `descent_text` fields: `descent` claimed most parties rappel/downclimb
+  the ice route itself on V-thread anchors (walk-off framed as the alternative), while
+  `rappels` already said "No rappel descent is on record" and `descent_text`
+  independently said the same. Confirmed via WebSearch against two independent
+  first-hand trip reports (Colin Haley & Sarah Hart's repeat ascent, colinhaley.com;
+  Jeff Hebert's ascent, jeffreyjhebert.com) that the walk-off via the Colfax-Baker
+  saddle and the Coleman-Deming route is the standard/consensus descent, not a rappel
+  of the ice line — rewrote `descent` to match `rappels`/`descent_text`, folding in
+  the one sourced nuance (Haley/Hart's two short summit-area rappels before
+  downclimbing) rather than leaving the flatly wrong claim standing.
+- **Copper Peak, South Route** — the row's own `corrections` field flagged a
+  peak-identity ambiguity ("Olympics Copper Mountain" vs "North Cascades Copper
+  Peak") and then resolved it *incorrectly*, concluding the route should be treated
+  as the non-technical Olympics peak — while every other stored field on the row
+  (glaciated Southeast Glacier crossing, roped travel, Class 3-4, Holden
+  Village/Railroad Creek/Copper Creek Trail approach, Bulger List #19, "0.88 mile
+  north of Mount Fernow") already describes the real Entiat Mountains Copper Peak.
+  Confirmed via WebSearch (Wikipedia's "Copper Peak (Washington)" article,
+  Peakbagger, The Mountaineers' route page, and Wikipedia's separate "Copper
+  Mountain (Mason County, Washington)" article for the distinct Olympics peak): the
+  stored area coordinates match Peakbagger's Entiat Copper Peak coordinates to
+  within normal survey variance, and the 1937 FA (Bennet/Courtwright/Hagman) matches
+  Wikipedia exactly. Rewrote `corrections` to record the resolution instead of a
+  stale, self-contradicting ambiguity flag on a row whose own content already
+  answers the question.
+- **Crooked Thumb Peak, East Face** — `fa` gave only bare surnames ("Jackson,
+  Jensen, Marts, Schmechel"). Confirmed via the American Alpine Journal ("New Climbs
+  in the Northern Pickets", AAC Publications, covering the 1963 Mountaineers
+  Northern Pickets expedition based at Challenger Arm): on July 31, 1963, **Roger**
+  Jackson, **Stan** Jensen, **Steve** Marts, and **Don** Schmechel climbed directly
+  up Crooked Thumb's east face from the glacier — matching this row's beta almost
+  verbatim (rope of four, east face, class 3-4, same day as the peak's other new
+  route). Expanded to full first names from that primary source. (This is the FA of
+  this specific east-face line, not of the peak overall — Wikipedia gives the peak's
+  first ascent as 1940, Fred and Helmy Beckey — but the row's `fa`/`beta` never
+  claimed otherwise, so no further change needed.)
+- **Complete South Buttress (Cutthroat Peak)** — two defects on one duplicated
+  sentence: (1) `timing.sectionBreakdown[0].note` was truncated mid-word in
+  storage, literally ending "...making it a l…" — a data-pipeline truncation, not a
+  display artifact (confirmed by reading the raw stored string length/content). The
+  `itinerary.days[0].note` field on the same row carries the same sentence in full,
+  so the intended text was recoverable without inventing anything. (2) Both notes
+  claimed the standard/regular South Buttress is "commonly-linked" to ~12 pitches.
+  Confirmed via WebSearch (Mountain Project's route page/comments citing the
+  Supertopo guide, and Beckey's Cascade Alpine Guide: "as many as sixteen pitches if
+  you belay everything, about half that otherwise") that the commonly-cited figure
+  for the standard route is 16 pitches (or ~8 when linked/simul-climbed) — no source
+  supports 12. This row's own `itinerary.days[0].schedule[2].detail` already
+  independently said "Up to ~16 pitches", so the fix also resolves an internal
+  disagreement within the row rather than introducing a new claim. Restored the
+  truncated `timing` note to the itinerary's full wording and corrected
+  "~12-pitch" to "16-pitch" in both.
+
+**Flagged for human review, not fixed (not a checkable external fact):**
+
+`wa_colonial_peak_west_ridge`'s `corrections` field references a route id,
+`wa_colonial_peak_northeast`, that does not exist anywhere in the database (checked
+directly — no route of that id, and this route is the only one filed under
+`wa_colonial_peak`). The note appears to be a garbled/hallucinated cross-reference
+from whatever pass wrote it; the substantive concern it seems to be gesturing at
+(aspect "N" on a route named "West Ridge") is already resolved by the row's own
+`face` field, which explicitly states "final class 3 section on the north-facing
+upper slopes." Left as-is rather than guessed at, since fixing prose that references
+a phantom id isn't a fact checkable against an external source — flagging for a
+human to decide whether to clean it up or leave it as historical noise.
+
+**Verified clean via external corroboration (WebSearch), no changes needed:**
+
+- Colonial Peak's FA (William Degenhardt & Herbert Strandberg, Seattle
+  Mountaineers, July 31, 1931, via the West Ridge/Colonial Glacier) — confirmed
+  exact match against Wikipedia, corroborated by TrailCatJim and PeakVisor.
+- Concord Tower North Face's FA (Fred Beckey & John Parrott, June 12, 1956) —
+  confirmed via SummitPost, The Mountaineers' route page, and Mazamas; the specific
+  1956 ascent is independently identified as the North Face line described here (3
+  pitches, 5.6-5.7, from the Liberty Bell-Concord Tower notch).
+- Corteo Peak's FA (John Lehmann & Hermann Ulrichs, July 1935) — confirmed via
+  Wikipedia and Peakery. (Its own `corrections` note about the route id slug
+  ("southeast_face") not matching the actual Southwest Ridge content was already
+  reviewed and documented in a prior pass, 2026-07-28 — left as-is.)
+- Copper Peak's FA (Franklin Bennet, Edgar Courtwright, Toivo Hagman, August 1937)
+  — confirmed exact match via Wikipedia's "Copper Peak (Washington)" article.
+- Copper Peak South Route's Holden Village access-closure hazard note ("closed to
+  all guests... no confirmed reopening as of this writing") — confirmed still
+  accurate and current: multiple sources (KHQ, NWPB, Spokesman-Review, Holden
+  Village's own site) through the 2026 summer season say Holden Village remains
+  closed, repairs to FSR 8301 are estimated near $20M, and a full reopening may not
+  happen until 2027. Not stale.
+- Crater Mountain's SR-20 road status ("Open — fully reopened June 14, 2026 after
+  emergency repairs" following the December 2025 atmospheric-river washout at
+  mileposts 142-148) — confirmed accurate and current via WSDOT's own project page
+  plus independent news coverage (Methow Valley News, KIRO 7, MyNorthwest,
+  Spokesman-Review); no indication of any closure or new damage since the June 14
+  reopening.
+- Crooked Thumb Peak East Face's Hannegan Pass Trailhead waypoint (48.9101,
+  -121.5927, 3,100 ft) — cross-checked against The Mountaineers and the Forest
+  Service's own Road 32 page (~48.9102, -121.5941, ~3,100-3,120 ft): the difference
+  is under 300 ft, well within "same trailhead," not a meaningful discrepancy.
+- "Complete South Buttress" as a real, distinct named route/variation on Cutthroat
+  Peak (not fabricated) — confirmed via Mountain Project's own separate route page
+  for it, describing exactly the lower-ridge-extension-plus-rappels-into-notches
+  shape stored here.
+
+SQL: `audits/sql/2026-09-20-batch-316.sql` — 5 `UPDATE` statements against `routes`
+(all gated on exact current values, re-checked live immediately before writing and
+confirmed to match exactly one row apiece via a direct PostgREST equality query, not
+just via `check:sql`). Passed `npm run check:sql`: all 5 write targets confirmed to
+exist live, no destructive deletes. As in batch 315, several of the WHERE clauses'
+old-value predicates contain semicolons inherited from the stored text being
+matched against (unavoidable), which splits the checker's naive statement count
+(5 targets across 7 raw fragments) — verified by hand that every target id still
+falls inside a fragment the checker recognizes as an `UPDATE`, so the "OK" is
+trustworthy. This time the *new*-value replacement text was also written to avoid
+literal `--` sequences as well as semicolons: an em-dash-style `--` inside a new
+string value gets eaten by the checker's naive per-line comment stripper (which
+doesn't understand string-literal context) even though real SQL parses it fine
+inside a quoted string — caught by diffing the checker's fragment-by-fragment
+output against the file before trusting the "OK", not by re-running the checker
+alone. File is 9.3KB, over the 4KB paste-size soft limit, so should be applied in
+~1.5-2KB chunks and verified as it goes.
+
+Progress file's `last_processed_id` advanced to `wa_crooked_thumb_peak_east_face`.
+Next batch continues in sorted-id order after that id (starting with
+`wa_crooked_thumb_peak_south_route`, then toward the Cutthroat Peak
+Cauthorn-Wilson/Northeast Face/Southeast Buttress ids).
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch
+entries (307 through 316): 67 audited through batch 315 + 8 this batch = 75
+audited, 524-75 = **449 in-scope routes remain unaudited this pass**.
