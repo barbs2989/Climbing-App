@@ -25701,3 +25701,125 @@ Direct West Face ids).
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 317): 75 audited through batch 316 + 8 this batch
 = 83 audited, 524-83 = **441 in-scope routes remain unaudited this pass**.
+
+## Batch 318 (pass 6) -- 2026-09-20
+
+Routes: `wa_diamond_in_the_rough`, `wa_direct_north_buttress`,
+`wa_direct_southwest_buttress`, `wa_direct_west_face`, `wa_dolphin_chimney`,
+`wa_dome_peak_dome_glacier`, `wa_dome_peak_indian_summer`,
+`wa_dorado_needle_east_ridge`.
+
+**Fixed (4):**
+
+- Dome Peak's area `elevation_ft` (8926) disagreed with both of its own
+  route rows' `high_point_ft` (8920 on each). Wikipedia states "8,920+ ft
+  (2,720+ m)"; the FA date both route rows already carry (Freed & Larson,
+  August 1, 1936) matches Wikipedia's article exactly, and mountain-forecast
+  independently lists 2719m (~8921 ft). No source found supporting 8926 --
+  corrected the area row to 8920 to agree with the route rows and external
+  sourcing; left the (already-correct) route rows untouched.
+- `wa_direct_north_buttress` (Bear Mountain, Direct North Buttress) stored
+  `ice_grade: "WI5+"` -- a sustained vertical-ice grade -- while its own
+  `gear` field describes only "crampons, lightweight ice axe (helpful for a
+  steep snow section near the route base, not mandatory)". Mountain Project,
+  StephAbegg's trip report on the neighboring line on the same buttress, and
+  a WebSearch specifically for ice/WI content on this route all describe it
+  as a 21-pitch rock route (V, 5.10-) with at most a low-angle glacier
+  crossing done flat-footed in crampons on the approach -- nothing
+  resembling a graded ice pitch. Nulled rather than guessed at a value; no
+  source supports any ice grade here. (Confirmed the route's actual grade/
+  pitch-count/FA -- Kearney & Knight, Sept 9-11 1980, V 5.10- 21 pitches
+  670m, freed by Burdo -- exactly via a YouTube title and AAC's "Bear
+  Mountain's Forgotten Face" article; no change needed there.)
+- `wa_direct_west_face` (Pernod Spire) stored `alpine_grade: "UIAA VII+"`.
+  Every sibling route in this batch uses `alpine_grade` for either the NCCS
+  roman-numeral commitment grade (matching `commitment`) or the F/PD/AD/D/
+  TD/ED scale -- never a UIAA rock-difficulty grade. Mountain Project's own
+  multi-scale grade string for this route ("5.10+ 6b+ 21 VII+ 20 E3 5b R")
+  confirms "VII+" is simply the UIAA equivalent of the 5.10+ already stored
+  separately in `rock_grade` -- a duplicate of the rock grade sitting in the
+  wrong column. Brought `alpine_grade` into agreement with the row's own
+  `commitment` value ("III/IV"), matching every other route in this batch.
+- `wa_dorado_needle_east_ridge`'s `fa` carried a self-applied hedge, "(this
+  attribution is not certain)". Wikipedia's Dorado Needle article states the
+  identical four-person party and identical date -- "Joan and Joe Firey,
+  Hans Hoesli, Dave Knudson and Peter Renz on July 4, 1971" -- without
+  qualification. Removed the hedge now that a reliable secondary source
+  corroborates it verbatim.
+
+**Flagged, not fixed:**
+
+- `wa_direct_southwest_buttress`'s `fa` ("Mike Preiss and Mark Bunker,
+  September 2006"). Could not independently corroborate or contradict this
+  specific "Direct" variant's FA via WebSearch -- results returned plenty on
+  the *standard* Southwest Buttress (including its first-ascent story being
+  in "Selected Climbs in the Cascades Volume II") but nothing naming Preiss/
+  Bunker or a 2006 direct-start FA. The row's own `corrections` field
+  already discloses "No standalone source found for the 'Direct' 5.10a
+  variation specifically," so this is a known, self-disclosed gap rather
+  than a newly-found contradiction -- left alone rather than guessed at.
+- `wa_direct_southwest_buttress`'s `rope_note` reads "Grade III+ alpine rock
+  buttress, ~13 pitches over 1000+ ft; standard Southwest Buttress line is
+  5.7-5.8 (first pitch a full 55-57m rope length), the 'Direct' variant
+  follows a steeper/harder line to reach 5.10a." Read plainly this describes
+  *this* route (the Direct variant) as "~13 pitches, Grade III+" before
+  pivoting to compare it against "the standard line" -- but 13 pitches and
+  Grade III+ are the *standard* (non-Direct) Southwest Buttress's own
+  figures per SummitPost/Mountaineers.org (confirmed via WebSearch), while
+  this row's own `pitches` field says 8 and its `grade`/`commitment` say
+  5.10a/III. A climber skimming this note could reasonably read it as
+  describing the route they're on. Flagged rather than rewritten
+  speculatively -- the underlying facts (8 pitches, III) are correct
+  elsewhere on the row; only this one note's phrasing is ambiguous about
+  which route it's describing.
+
+**Verified clean via external corroboration (WebSearch), no changes
+needed:**
+
+- Sloan Peak's elevation (7,835 ft, matching `wa_diamond_in_the_rough`'s
+  `high_point_ft`) -- internally consistent, no external contradiction found.
+- Bear Mountain's elevation (7,931 ft) -- confirmed exactly via
+  trailcatjim.com trip-report titling ("Bear Mountain (7931 ft)").
+- Blue Lake Trailhead's elevation on `wa_dolphin_chimney` (waypoint: 5,200
+  ft) -- WebSearch confirms 5,200 ft as the majority-cited figure, with "one
+  source" giving 5,400 ft; the row's own bivy note separately mentions
+  "5,400," which is within ordinary between-source variance (compare the
+  row's own Burgundy Col high-camp note elsewhere in this dataset, which
+  explicitly flags a similar few-hundred-foot spread as approximate rather
+  than picking one number) -- not confident enough of a single correct value
+  to overwrite either figure.
+- North Cascades NP backcountry permit fee cited on `wa_direct_north_buttress`
+  and `wa_dorado_needle_east_ridge` ("$10 per person + $6 non-refundable
+  reservation fee") -- confirmed current via nps.gov.
+- Suiattle River Road (FR 26) closure status on both Dome Peak routes
+  (closed to vehicles beyond ~MP 4.5 per USFS closure order 06-05-26-03,
+  effective April 2, 2026 - January 1, 2028; foot/bike access continues
+  beyond the closure) -- confirmed current via the Forest Service's own
+  alert page; found a mention of planned bridge-repair construction
+  (July-August 2026) but no confirmation the road has since reopened to
+  vehicles, so left the "closed" status as-is rather than guessing it's
+  since cleared.
+- Dome Glacier / Indian Summer routes' own FA dates, grades, and general
+  route character on Dome Peak -- consistent with WebSearch results
+  throughout; only the area-level elevation (above) needed correction.
+
+SQL: `audits/sql/2026-09-20-batch-318.sql` -- 4 `UPDATE` statements against
+`areas` (1) and `routes` (3), all gated on exact current values re-checked
+live immediately before writing. Passed `npm run check:sql`: all 4 statement
+targets confirmed by the checker, no DELETEs. File is 4.7KB, just over the
+4KB paste-size soft limit -- split into ~1.5-2KB chunks and verify as you go.
+No destructive deletes.
+
+OPERATIONAL: did not re-check whether batches 315-317's fixes have landed in
+the live DB this run (no time spent on it this batch) -- see batches
+248/249/250/317 for the standing, still-unresolved concern about SQL
+application lag. Nothing here should be read as evidence it has cleared.
+
+Progress file's `last_processed_id` advanced to `wa_dorado_needle_east_ridge`.
+Next batch continues in sorted-id order after that id (toward `wa_e_se_face`
+/ `wa_east_face` / the "East Face"-named-route cluster spanning several
+peaks).
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 318): 83 audited through batch 317 + 8 this batch
+= 91 audited, 524-91 = **433 in-scope routes remain unaudited this pass**.
