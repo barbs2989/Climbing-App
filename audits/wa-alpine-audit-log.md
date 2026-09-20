@@ -25823,3 +25823,192 @@ peaks).
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 318): 83 audited through batch 317 + 8 this batch
 = 91 audited, 524-91 = **433 in-scope routes remain unaudited this pass**.
+
+## Batch 319 (pass 6) -- 2026-09-20
+
+Routes: `wa_dragontail_peak_backbone_ridge`,
+`wa_dragontail_peak_east_ridge_aasgard_pass`, `wa_dragontail_peak_r1` (Hidden
+Couloir), `wa_dragontail_peak_r2` (Gerber-Sink), `wa_dragontail_peak_r3`
+(Pandora's Box / W Couloir), `wa_dragontail_peak_r4` (Triple Couloirs),
+`wa_dragontail_peak_serpentine_arete`, `wa_e_se_face` (Witches Tower).
+
+Continued in sorted-id order after `wa_dorado_needle_east_ridge` (the full
+Dragontail Peak cluster -- 7 of its 7 in-scope routes -- plus Witches Tower,
+which sits immediately after it alphabetically). Two routes between them,
+`wa_east_face_2` (Chablis Spire) and `wa_east_face_3` (Minuteman Spire), were
+skipped: both areas are `area_type = 'crag'`, out of scope per this audit's
+own scope definition.
+
+**Fixed (2) -- both RE-ISSUES of fixes already found correct in earlier
+passes that have not landed live, re-verified directly against the table
+before and after writing:**
+
+- `wa_dragontail_peak_r1` (Hidden Couloir): `dist_km` still live at 20 km,
+  11 days after batch 187 (2026-09-03, pass 4) found and proposed the same
+  correction. Re-derived independently this run from the row's own live
+  `waypoints` array rather than trusting the old log entry: the chain climbs
+  monotonically from the Trailhead (0 mi) through Colchuck Lake (4/4.3 mi),
+  the lateral moraine crest (5 mi), the Hidden Couloir base (5.3 mi), and the
+  mid-face ice runnels (6 mi) to the Summit (6.3 mi = 10.14 km one-way) --
+  matching the corridor-sharing sibling `wa_dragontail_peak_east_ridge_aasgard_pass`,
+  whose own waypoint-derived one-way distance (6.25 mi) already equals its
+  live, correct `dist_km` of 10.1. Re-issued at 10.1.
+- `wa_e_se_face` (Witches Tower, E/SE Face): `dist_km` still live at 24.14 km
+  (15.00 mi one-way, doubling to a displayed 30 mi round trip), 11 days after
+  batch 253 (2026-09-09, pass 5) found and proposed the same correction.
+  Re-verified against the row's own live waypoint chain this run: Trailhead
+  (0 mi) -> Colchuck Lake (4 mi) -> Aasgard Pass (5 mi) -> Summit (5.7 mi =
+  9.17 km one-way), independently corroborated by Wenatcheeoutdoors.org's
+  Witches Tower trip report describing an ~8.0 mi round trip to Colchuck
+  Lake alone (= 4.0 mi one-way, matching this row's own waypoint exactly).
+  No loop or alternate return exists for this climb; 24.14 km corresponds to
+  no real feature of the route. Re-issued at 9.17.
+
+**Fixed (1) -- new this run:**
+
+- `wa_dragontail_peak_backbone_ridge`: `dist_km` stored 26.55 km, which
+  doubles (the app's round-trip display convention) to 53.1 km = 33.0006 mi
+  -- almost exactly a round-number mile figure, the documented "half a round
+  trip" `dist_km` tell CLAUDE.md records elsewhere in this catalog. Batch 187
+  had already flagged this exact figure as implausible on the same reasoning
+  but did not write a replacement, for lack of a route-specific source (this
+  row's own `waypoints` carry no `distMi` at Trailhead/Summit, so no internal
+  derivation was possible -- see below). Found one this run: Guided Exposure's
+  dedicated route guide for this specific route ("A Route Guide: Dragontail
+  Peak Backbone Ridge") states "This route is grade IV with a total of 11
+  miles round trip," with the Stuart Lake Trailhead at "about 3,400 ft"
+  ascending to "6,400 ft" before the technical climbing starts -- consistent
+  with this row's own `gain_ft` (5,440 ft, exactly `high_point_ft` 8,840 minus
+  3,400) and with the well-documented Stuart Lake Trailhead -> Colchuck Lake
+  approach mileage (2.5 mi + 1.8 mi = 4.3 mi one-way, per WTA/Mountaineers.org,
+  matching this row's own "Water: Colchuck Lake" waypoint at `distMi = 4.3`
+  exactly). 11 mi RT / 2 = 5.5 mi one-way = 8.85 km, which also sits
+  comfortably inside this route family's range of already-verified one-way
+  `dist_km` values (Gerber-Sink 6.4, Pandora's Box 6.4, Triple Couloirs 6.9,
+  corrected Hidden Couloir 10.1). Corrected to 8.85.
+
+**Flagged, not fixed:**
+
+- `wa_dragontail_peak_serpentine_arete`: `dist_km` is also 26.55 km --
+  identical to Backbone Ridge's (now-fixed) wrong value, and its own
+  `waypoints` array shares the same malformed/templated shape (duplicate
+  "Aasgard Pass" and "Colchuck Lake" entries, no `distMi` on Trailhead/
+  Summit -- see below). Almost certainly wrong for the same reason Backbone
+  Ridge's was, but no route-specific external source giving Serpentine
+  Arête's own round-trip or one-way mileage was found this run (the closest
+  hit, a Mountaineers.org page, gives 15-16 mi RT for a *combined*
+  Colchuck+Dragontail traverse, a materially different, longer objective --
+  not usable as this route's own figure). Restating batch 187's flag rather
+  than guessing a value by analogy to Backbone Ridge.
+- `wa_dragontail_peak_backbone_ridge` and `wa_dragontail_peak_serpentine_arete`'s
+  shared `waypoints` array defect, restated from batch 187: both carry a
+  duplicate "Aasgard Pass" (once typed `pass` with no `distMi`, once typed
+  `Junction` with no `distMi`) and a duplicate "Colchuck Lake" (once typed
+  `landmark` with no `distMi`, once typed `Water` with `distMi = 4.3`), and
+  both store Aasgard Pass *before* the Summit entry even though both routes'
+  own `descent_text` places Aasgard Pass only on the descent, after the
+  summit. Consistent with a generic ascent-route waypoint template (closely
+  matching the unrelated `wa_dragontail_peak_east_ridge_aasgard_pass` scramble
+  route) having been merged onto these two technical lines without removing
+  the redundant entries or fixing the order. Needs a human decision on which
+  entries to keep/reorder, not a value patch -- unchanged since batch 187,
+  17 days ago.
+- `wa_dragontail_peak_r1`'s `alpine_grade` is stored `"III"` -- not a value
+  on the documented French-adjectival scale (`supabase/migrations/0006_composite_grades.sql`:
+  "F/PD/AD/D/TD/ED"). Looks like an NCCS-style Roman-numeral commitment grade
+  landed in the wrong column (the dedicated `commitment` column already
+  separately holds `"II-III"`, and the top-level `grade` field already reads
+  "Grade III, alpine ice/mixed couloir"). Confident the stored value is
+  wrong-shaped; not confident enough in a specific correct French-adjective
+  replacement for this comparatively obscure, thinly-documented line (per
+  American Alpine Institute, "Hidden Couloir" appears to be this DB's name
+  for the entry couloir of the neighboring `wa_dragontail_peak_r4` (Triple
+  Couloirs) -- its `pitch_detail[0]` is a 244 m "Hidden Couloir (1st)" pitch,
+  exactly matching this row's own `length_m: 244` -- so the two DB rows
+  describe the same physical feature from two different scopes, which reads
+  as consistent rather than contradictory, but leaves no independent
+  French-grade citation for the standalone entry to check "III" against).
+  Flagged for human research rather than guessed at.
+- `wa_e_se_face`: `grade` is `"4th"` (4th class), directly contradicted by
+  this same row's own `itinerary` (twice -- the `cal` field: "a rope, small
+  rack, and helmet are needed in addition to scrambling gear for the roped
+  pitch"; and the Day-1 schedule: "Rope up and climb the pitch, then summit
+  -- One pitch, 5.6; rack up, climb, and top out") and by `descent_text`
+  ("most parties do not reverse the exposed 5.6 climbing unroped"). External
+  sourcing (SummitPost's Witches Tower page) independently confirms a
+  distinct, documented "Southeast Face" route on this peak -- matching this
+  row's own name/identity -- as "one pitch 5.6," clearly separate from the
+  peak's other, genuinely 4th-class/Class-3 line (SummitPost's "South
+  Route"). This exact contradiction was first flagged in pass 1 (batch 8/9)
+  and again in pass 2 (batch 62), each time as needing a human rewrite or
+  route-split decision (is this row the technical 5.6 Southeast Face, the
+  easier 4th-class variation, or a conflation of both) rather than a single-
+  field patch -- still unresolved three-plus passes and roughly 250 batches
+  later. Restating rather than attempting a guess at which content is
+  authoritative.
+
+**Verified clean via external corroboration (WebSearch), consistent with
+prior passes' findings, no changes needed:**
+
+- Dragontail Peak's and Witches Tower's own `areas` rows (elevation 8,840 ft
+  / 8,566 ft, coordinates 47.47873°N/-120.833421°W and 47.4766°N/-120.8255°W)
+  -- both fall squarely inside the Stuart Range and match Wikipedia/prior-
+  pass verification; re-checked this run rather than assumed.
+- `wa_dragontail_peak_r4` (Triple Couloirs): grade/FA/pitch-by-pitch
+  narrative (Bill Joiner, Leslie Nelson, Dave Seman, May 1974; AI3, 5.8,
+  Grade III-IV; `alpine_grade: "D"`) consistent across American Alpine
+  Institute, Mazamas, and spokalpine.com.
+- `wa_dragontail_peak_serpentine_arete`: FA (Tom Hargis, Jay Ossiander,
+  1973) and `length_m` (610 m = 2,001 ft, matching the commonly cited
+  "~2000 ft" route length) consistent with SummitPost/StephAbegg/Nature of
+  Motion trip reports.
+- `wa_dragontail_peak_backbone_ridge`: FA (Weigelt/Bonneville 1970, Fin
+  Direct variation Cruver/Lewis 1975) and elevation gain figures consistent
+  with Guided Exposure's route guide (see fix above) and Mountain Madness's
+  trip page.
+- `wa_dragontail_peak_r2` (Gerber-Sink) and `wa_dragontail_peak_r3`
+  (Pandora's Box): rope/rack/style details (70 m rope, season-split rack for
+  r2; unroped ascent on axe and crampons for r3) already carry citations in
+  their own `corrections`/`rope_note` fields (Mountain Project,
+  jeffreyjhebert.com, engineeredforadventure.com) -- spot-checked, no
+  contradiction found.
+- `wa_e_se_face`: FA honestly marked unknown in the row itself; no source
+  found this run to add one (consistent with three prior passes).
+
+**Considered and set aside without writing SQL:** `wa_dragontail_peak_r2`'s
+`access.notes` ("Free wilderness permit for overnight (Alpine Lakes
+Wilderness). Northwest Forest Pass optional.") does not mention the
+Enchantment Permit Area's May 15-Oct 31 overnight lottery/quota system that
+this same row's own top-level `permit` field, and sibling `wa_dragontail_peak_r3`'s
+more detailed `access.notes`, both describe for the identical trailhead and
+permit boundary. Initially read as a same-row internal contradiction worth
+fixing from the row's own better-documented sibling field, but Gerber-Sink's
+own `approach` text says it is "typically climbed in winter/spring ice
+conditions," i.e. largely outside the May 15-Oct 31 season the lottery
+applies to -- so the terser phrasing may be a deliberate, accurate
+simplification for this specific route's normal climbing window rather than
+an error. Left alone rather than guessed at either way; worth a human
+glance.
+
+SQL: `audits/sql/2026-09-20-batch-319.sql` -- 3 `UPDATE` statements against
+`routes` (all gated on the exact live `dist_km` value, re-checked directly
+against the table immediately before writing). Passed `npm run check:sql`:
+all 3 write targets confirmed to exist; no DELETEs. File is 4.7KB, just over
+the 4KB paste-size soft limit -- split into ~1.5KB chunks and verify as you
+go, same as recent batches.
+
+OPERATIONAL: two of this batch's three fixes are RE-ISSUES of fixes already
+found correct 11-17 days ago (batches 187 and 253) that are confirmed still
+not live -- the fourth-plus recurrence of the standing, unresolved SQL-
+application-lag concern first raised at batches 248/249/250 and restated at
+batch 317. A human should check whether these SQL files are being applied
+at all, and on what schedule.
+
+Progress file's `last_processed_id` advanced to `wa_e_se_face`. Next batch
+continues in sorted-id order after that id (toward `wa_east_face`,
+`wa_east_face_6`, `wa_east_mcmillan_spire_west_ridge`, `wa_east_ridge_2`,
+`wa_east_ridge_3`).
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 319): 91 audited through batch 318 + 8 this batch
+= 99 audited, 524-99 = **425 in-scope routes remain unaudited this pass**.
