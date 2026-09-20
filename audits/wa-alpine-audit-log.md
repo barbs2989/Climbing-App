@@ -24891,3 +24891,106 @@ should be applied in ~1.5KB chunks).
 Progress file's `last_processed_id` advanced to
 `wa_booker_mountain_northeast_face`. Next batch continues in sorted-id
 order after that id (toward the Buckner Mountain/Burgundy Spire ids).
+
+## Batch 312 (2026-09-20, pass 6)
+
+Routes: `wa_boston_peak_southeast_face`, `wa_boving_christensen`,
+`wa_boving_roofs`, `wa_buckner_mountain_north_face`,
+`wa_buckner_mountain_southwest_face`, `wa_burgundy_spire_north_face`,
+`wa_burnt_boot_peak_north_ridge`, `wa_cardinal_peak_nw_couloir_north_ridge`.
+Continued in sorted-id order after `wa_booker_mountain_northeast_face`.
+
+Fixed the regional bivy-corridor-contamination pattern on three of the
+eight routes: `wa_boving_christensen` (Prusik Peak, 6->3 — pruned two
+entries explicitly framed around Colchuck/Dragontail Peak routes plus one
+framed around them and Icicle Creek Road staging, kept the three that
+name Prusik Peak's own South Face/West Ridge camps, including Gnome Tarn,
+which the route's own itinerary already camps at); `wa_burnt_boot_peak_
+north_ridge` (9->1 — the identical 9-entry Alpine Lakes Wilderness
+corridor list documented in batch 311, here only "Hardscrabble Horse
+Camp" names Burnt Boot Peak by name; the sibling "Upper Hardscrabble
+Lake" entry kept for Big Snow Mountain's routes in batch 311 is pruned
+here since it explicitly serves that different peak); `wa_cardinal_peak_
+nw_couloir_north_ridge` (7->2 — an Entiat/Chelan-Mountains-crest zone list
+for Fifth of July Mountain/Mount Fernow/Spectacle Buttes reached from a
+different main-stem Entiat River trailhead than this route's own North
+Fork Entiat Trailhead; the row's own kept "Fox Camp" entry explicitly
+warns the two trailheads "are easy to confuse when planning").
+
+`wa_burgundy_spire_north_face`'s bivy list also names a different peak
+(Silver Star Mountain) in two of its six entries, but was left alone —
+both entries explicitly disclose the distinction ("it is no use for the
+Wine Spires on the west side") rather than silently misleading, and
+Silver Star is the same massif the Wine Spires sit on rather than an
+unrelated peak reached by a different corridor. Not the same defect
+class as the other three.
+
+One internal contradiction fixed: `wa_boving_christensen`'s `fa` field
+read "(year not given by available sources)" while its own `overview`
+field stated "put up by Paul Boving and Matt Christensen in 1977." 1977
+confirmed correct via WebSearch (stephabegg.com trip report, corroborated
+by cascadeclimbers.com's profile of Matt Christensen) — `fa` was the
+stale half and is now updated to match, with sourcing noted inline.
+
+One live safety-relevant gap filled: `wa_cardinal_peak_nw_couloir_north_
+ridge`'s `access.closures` was null despite an active closure covering
+its own approach. The North Fork Entiat Trailhead and Fox Camp (this
+route's kept bivy entry) fall inside the Little Giant Fire closure order
+(Okanogan-Wenatchee NF, order 06-17-07-2026-40, Wenatchee River/Entiat/
+Chelan Ranger Districts), effective September 3 through October 31, 2026
+— corroborated across the Forest Service's own alert page, InciWeb,
+Chelan County's notification page, and independent local news (KIRO 7,
+Cashmere Valley Record, deeparrival.com). Today's audit date (2026-09-20)
+falls inside that window. Written with the specific end date rather than
+an open-ended claim, per the standing convention for closures on file.
+
+Verified clean via external corroboration, no changes needed:
+`wa_boston_peak_southeast_face` (elevation 8,894 ft and 1938 FA party —
+Bressler/Clough/Cox/Myers — both match Wikipedia exactly; this row also
+appears to have already been corrected for the internal-coherence issue
+batch 4 originally flagged against a *different* row pairing — it reads
+coherently start to finish); `wa_boving_roofs` (South Early Winters
+Spire, 7,807 ft, clean bivy scoped to the shared Blue Lake/Washington
+Pass corridor); `wa_buckner_mountain_north_face` and `_southwest_face`
+(9,114 ft true-summit elevation matches Wikipedia's Peakbagger-sourced
+figure exactly, including the two-nearly-equal-summits detail this row's
+own overview already states; both bivy lists and both descent_texts are
+internally consistent with each other and with the row's own waypoints);
+`wa_burgundy_spire_north_face` (1953 Beckey-party FA matches WebSearch;
+elevation discrepancy — 8,400 ft climbing-literature vs 8,492 ft
+LIDAR/peakbagger — already disclosed honestly in `data_quality` rather
+than picked silently); `wa_burnt_boot_peak_north_ridge`'s own elevation
+(6,540 ft matches Wikipedia's current figure; the row's `beta` field
+quotes a 1970s FA note verbatim referring to "P 6480," which WebSearch
+confirms was the historical pre-revision figure for the same peak — an
+accurate quotation, not a contradiction).
+
+Checked but not independently confirmable: `wa_burnt_boot_peak_north_
+ridge`'s North Ridge FA (Williamson/Bucher/Oas, "reported 1972") — the
+peak's overall 1963 scramble FA is corroborated by WebSearch, but the
+specific technical North Ridge line's FA rests on a single AAC-style
+note the row already quotes directly and appropriately hedges ("exact
+climb date not recorded; the ascent may have been the preceding
+season"); left as-is rather than asserting independent confirmation that
+doesn't exist. Cascade River Road's current 2026 status (used by both
+Boston Peak and Buckner Mountain routes) returned only ambiguous/stale
+(2025-dated or unrelated spur-road) search results, so the row's already-
+general "has experienced washouts... in recent years" phrasing was left
+untouched rather than replaced with an unconfirmed specific claim.
+
+Direct WebFetch to stephabegg.com, en.wikipedia.org, lemkeclimbs.com,
+deeparrival.com, and inciweb.wildfire.gov all returned `EGRESS_BLOCKED`,
+as in prior batches; WebSearch summaries (cross-corroborated across
+multiple independent sources for both the FA-year fix and the fire-
+closure fix) were relied on instead throughout.
+
+SQL: `audits/sql/2026-09-20-batch-312.sql` — 5 `UPDATE` statements
+against `routes`, all gated on exact current values (checked live before
+writing) and passed `npm run check:sql` (5 targets, all verified to
+exist, no destructive deletes; file exceeds the 4KB paste-size soft
+limit, so should be applied in ~1.5KB chunks).
+
+Progress file's `last_processed_id` advanced to
+`wa_cardinal_peak_nw_couloir_north_ridge`. Next batch continues in
+sorted-id order after that id (toward the Cascade Peak/Castle Peak/
+Cathedral Peak ids).
