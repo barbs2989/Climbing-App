@@ -25243,3 +25243,156 @@ Recomputed "remain this pass" by summing `route_ids` across all
 `pass: 6` batch entries (307 through 314): 51 audited through batch 313
 + 8 this batch = 59 audited, 524-59 = **465 in-scope routes remain
 unaudited this pass**.
+
+## Batch 315 (pass 6) -- 2026-09-20
+
+Routes: `wa_classic_route_3`, `wa_colchuck_peak_colchuck_glacier`,
+`wa_colchuck_peak_east_ridge`, `wa_colchuck_peak_holsten_hilden`,
+`wa_colchuck_peak_north_buttress_couloir`,
+`wa_colchuck_peak_northeast_couloir`, `wa_colfax_peak_cosley_houston`,
+`wa_colfax_peak_kimchi_suicide_volcano`.
+
+**Fixed -- stale road closure (2 routes, 4 statements):**
+
+`wa_colfax_peak_cosley_houston` and `wa_colfax_peak_kimchi_suicide_volcano`
+(Colfax Peak, shared Heliotrope Ridge / Coleman Glacier trailhead) both
+described Glacier Creek Road (FS-39) as closed to vehicles for December
+2025 flood-damage washout repairs, "expected to last through October
+2026" / "as of July 2026" with no end date. Confirmed via WebSearch
+(official USFS press release "Forest Service Has Opened Glacier Creek
+Road," corroborated by Cascadia Daily News reporting and independent
+Aug/Sep 2026 trail-conditions posts on WTA/HikeWA) that the Forest
+Service actually completed repairs and reopened the road to vehicles on
+**August 20, 2026** -- a month ahead of the stored "expected" date, and
+about a month before this audit ran. Updated `road.status`,
+`road.driveNote`, `road.seasonalGate` (cosley-houston only; kimchi has no
+seasonalGate) and `access.closures` on both rows, keeping the washout
+history for context and adding the reopening date/note about the rough
+surface reported since. Grouse Butte Road (FS-36, a spur off FS-39) is
+still separately closed per the same USFS release, but neither route
+references it, so nothing there needed changing.
+
+**Fixed -- grade contradicting the row's own stated resolution (1 route):**
+
+`wa_colchuck_peak_holsten_hilden`'s `corrections` field already documents
+a decision: "Kept Mountain Project's III/WI3 as the primary listed value
+... with the AAC account's IV/AI3+ noted here as the FA party's own
+grading," and `alpine_grade` already reflects it ("Grade III (Alpine); FA
+account graded Grade IV"). But `grade` ("Grade IV, M6, AI3+"),
+`commitment` ("IV"), and `ice_grade` ("AI3") were never actually updated
+to match -- they still carried the AAC's numbers, directly contradicting
+the row's own stated decision. Confirmed the decision is still current
+(WebSearch: the route is "graded WI3 M6 Steep Snow on Mountain Project").
+Updated `grade`/`commitment`/`ice_grade` to `Grade III, WI3, M6` / `III` /
+`WI3`; left `alpine_grade` and `corrections` untouched since they were
+already correct.
+
+**Fixed -- internal contradiction in route description (1 route):**
+
+`wa_colchuck_peak_east_ridge`'s `overview`/`beta` described a rock "east
+ridge" scramble ("traverse south-west to the east ridge base... ridge
+crest... good friction" granite) that contradicts (a) this row's own
+`corrections` field, which already states the given name is wrong and
+that this is actually Beckey's "East Route" / the Colchuck Glacier Route,
+(b) every other populated field on this same row (`waypoints`,
+`pitch_detail`, `descent_text`, `gpx`, `approach`, `gear` -- all glacier
+travel: ice axe, crampons, moraine, glacier ascent to a col, short
+scramble), and (c) Mountain Project, SummitPost, and Wikipedia's
+descriptions of the route (confirmed via WebSearch: same FA party/date as
+`wa_colchuck_peak_colchuck_glacier` -- Johnson/Long, Aug 11 1948 -- "East
+Route... commonly called the Colchuck Glacier Route," reachable via
+glacier from the north or talus from the south, neither described as a
+rock ridge). Replaced `overview`/`beta` with text re-homed entirely from
+this row's own already-populated `approach`/`pitch_detail`/`descent_text`
+fields -- no new facts introduced, just reconciling the narrative fields
+with what the rest of the row (and the row's own prior-pass corrections)
+already say.
+
+**Flagged for human review, not fixed (probable duplicate route pair):**
+
+`wa_colchuck_peak_east_ridge` and `wa_colchuck_peak_colchuck_glacier`
+both describe the identical physical climb -- same peak, same FA party
+and date (Elvin R. Johnson, Norma Johnson, William A. Long, Kathy Long,
+Aug 11 1948), both explicitly Colchuck Peak's original non-technical
+route -- stored under two different route ids/names with materially
+different `gain_ft` (2800 vs 5300), `dist_km` (7.5 vs 8), and grade
+system. This looks like a genuine duplicate-route pair (the ~91% of route
+ids that aren't peak-scoped per CLAUDE.md's identity notes), but merging
+or retiring one needs a human decision on which id/name to keep and how
+to reconcile the differing numeric fields -- out of scope for this
+audit's guardrails (no deletes). Left both rows as-is; only fixed the
+internal overview/beta inconsistency on `east_ridge` above, independent
+of the eventual merge decision.
+
+**Verified clean via external corroboration (WebSearch), no changes
+needed:**
+
+- Colchuck Peak's area elevation (8,705 ft) and the 1948 first ascent
+  (Johnson/Long party) -- confirmed against SummitPost, Wikipedia, and
+  Mountain Project.
+- `wa_colchuck_peak_north_buttress_couloir`'s FA (Ray Lilleby and Jim
+  Wickwire, July 1962) -- confirmed against SummitPost, which gives the
+  precise date (July 15, 1962); the stored "July 1962" is consistent,
+  just less precise.
+- `wa_colfax_peak_cosley_houston`'s route facts (WI4, ~600 ft/4 pitches,
+  the easiest of Colfax's north-face ice lines) -- confirmed against
+  Mountain Project and The Mountaineers; the specific FA date/names
+  (Mark Houston/Kathy Cosley, April 1982) weren't independently
+  confirmed in available sources but nothing contradicts it (the route
+  is literally named after them), so left as-is.
+- `wa_colfax_peak_kimchi_suicide_volcano`'s FA (Colin Haley and Sarah
+  Hart, April 9 2015), length (300 m), and grade (M5 AI4+, AAC lists
+  "M5 R, AI4+") -- confirmed against AAC Publications and Colin Haley's
+  own trip report (colinhaley.com); exact match on every checkable
+  field.
+- `wa_classic_route_3` (Lane Peak, Classic Route/South Face): area
+  elevation (6,012 ft) confirmed against Wikipedia. Its shared
+  Tatoosh-corridor `bivy` list (Snow Lake Camp framed around Unicorn
+  Peak, plus Reflection Lakes winter camp, Cougar Rock, Paradise winter
+  group camp, Ohanapecosh) was checked for the propagated-camp-list
+  defect class documented in CLAUDE.md -- found legitimate: two of the
+  six entries name Lane Peak directly (its own north-face couloirs, "The
+  Zipper and Lover's Lane"), the rest are genuinely on the same road
+  corridor Lane Peak uses (Stevens Canyon Rd/Longmire/Narada
+  Falls/Paradise), not a cross-trailhead contamination. The Ohanapecosh
+  entry's "closed through 2026" claim was independently verified current
+  (still closed for rehabilitation, expected to reopen for the 2027
+  season) -- an already-correctly-hedged, self-limiting claim, no change
+  needed.
+- The Northeast Couloir's "CRITICAL AVALANCHE TERRAIN... 3 deaths in Feb
+  2023" claim -- fully confirmed against the NWAC final accident report,
+  AAC Publications, and multiple news outlets (Seattle Times, Spokesman,
+  ABC7/6abc): Feb 19, 2023, three climbers (Seong Cho, Jeannie Lee, Yun
+  Park) killed in a slab avalanche on this exact route, unroped, no
+  avalanche gear.
+- The Enchantment Permit Area 2026 lottery dates cited on all four
+  Colchuck routes in this batch ("Feb 15-Mar 1... results after Mar 17,
+  accept/pay by Mar 31") -- confirmed accurate against multiple current
+  permit-guide sources.
+
+SQL: `audits/sql/2026-09-20-batch-315.sql` -- 6 `UPDATE` statements
+against `routes` (all gated on exact current values, re-checked live
+immediately before writing). Passed `npm run check:sql`: all 5 write
+targets confirmed to exist live, no destructive deletes. Three of the
+early statements' WHERE clauses contain semicolons inherited from the
+stored *old* text (unavoidable -- can't rewrite text that's still live
+and being matched against), which is a previously-documented
+"no literal id predicate -- not checkable" false-positive shape in this
+checker for long multi-line jsonb string values; all new-value replacement
+text was written with zero semicolons specifically to avoid the checker
+silently absorbing a statement into a neighboring fragment (which is what
+happened on the first draft of this file before rewriting, for the
+kimchi road-field statement -- caught by re-running the checker and
+noticing only 5 of 6 statements produced an `isUpdate` fragment). File is
+10.8KB, over the 4KB paste-size soft limit, so should be applied in
+~1.5KB chunks and verified as it goes.
+
+Progress file's `last_processed_id` advanced to
+`wa_colfax_peak_kimchi_suicide_volcano`. Next batch continues in
+sorted-id order after that id (toward the Colonial Peak/Complete South
+Buttress/Concord Tower ids).
+
+Recomputed "remain this pass" by summing `route_ids` across all
+`pass: 6` batch entries (307 through 315): 59 audited through batch 314
++ 8 this batch = 67 audited, 524-67 = **457 in-scope routes remain
+unaudited this pass**.
