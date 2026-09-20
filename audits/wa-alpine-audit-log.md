@@ -25536,3 +25536,168 @@ Cauthorn-Wilson/Northeast Face/Southeast Buttress ids).
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch
 entries (307 through 316): 67 audited through batch 315 + 8 this batch = 75
 audited, 524-75 = **449 in-scope routes remain unaudited this pass**.
+
+## 2026-09-20 — Pass 6, Batch 317
+
+Eight routes, six peaks: South Route (Crooked Thumb Peak), Cauthorn-Wilson
+Couloir / East Face / Southeast Buttress / South Buttress / West Ridge (all
+Cutthroat Peak — the peak's full technical route set), Dark Glacier Route
+(Dark Peak), Dark Side of Liberty (Liberty Bell).
+
+**Housekeeping first:** the last two batch entries in
+`wa-alpine-audit-progress.json` (315, 316) were missing their
+`pass`/`confirmed_errors_fixed`/`flagged_for_human_review`/`clean`/`sql_file`
+fields even though their `wa-alpine-audit-log.md` entries are complete —
+backfilled from those log entries rather than re-auditing.
+
+**Headline finding — a systemic, byte-identical bad `beta` field across an
+entire peak's route set, and one this audit had already flagged once
+before:** all five Cutthroat Peak routes carried the exact same generic
+placeholder `beta` string — *"Grade II, 5.7 climbing. Short approach from
+highway. Rock improves significantly higher on ridge. Fair granite in
+approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy
+Pass. Uncrowded route."* — regardless of whether the actual route was a WI4
+ice couloir, a III 5.10 six-pitch face climb, or the peak's 12-pitch classic.
+Every one of the five contradicts its own `overview`/`grade`/`pitch_detail`.
+Checking `wa-alpine-audit-progress.json`'s own history turned up that pass
+5's batch 250 (2026-09-09) had *already found this exact defect* and
+explicitly deferred it: *"still needs authored per-route replacement text
+rather than a find-replace, exactly as batch 60 already concluded."* This
+batch writes that authored text — five route-specific paragraphs, each
+re-homed from that row's own `overview`/`approach`/`pitch_detail`/`fa`/
+`descent_text` fields (no facts invented beyond what each row, or an external
+source already cited elsewhere on the same row, already states).
+
+**Also fixed on three of the five, while rewriting `beta` made the
+inconsistency impossible to miss:** `commitment` held an hours-duration
+("13 hrs", "12.5 hrs", "12 hrs") instead of the roman-numeral commitment
+grade (III+/III/III) that the app's own `commit` filter vocabulary (I–VI)
+and the route-row grade chip expect — and that was already sitting,
+correctly, in each row's own `grade` field. And `rock_grade` on two of the
+five: East Face was 5.7 against the row's own `pitch_detail` ("Two pitches
+of 5.10 near the center of the face"), `overview` ("two 5.10 pitches"), and
+`corrections` field (which already documents "grade (III 5.10, 6 pitches)"
+as confirmed); Southeast Buttress was 5.6 against Mountaineers.org's
+dedicated route page ("Grade III, 5.8 rock climb"). Both rock_grade fixes
+turn out to be **re-derivations of fixes batch 250 already found and left
+unapplied** (see below) — confirmed independently this run via WebSearch
+(AAC Publications/Mountain Project for East Face; Mountaineers.org for
+Southeast Buttress) before comparing notes with the older batch, so this is
+two independent passes converging on the same numbers, not one pass copying
+the other.
+
+**Re-issued, not re-researched — 10 more statements found correct in
+earlier passes (batches 59/60/250) and left unapplied, all re-verified live
+immediately before writing this file, values unchanged from what those
+batches found:**
+- Cutthroat Peak's own area `elevation_ft`/`blurb` still say 8,065 ft;
+  Wikipedia (re-confirmed this run) and every route on the peak's own summit
+  waypoints/`high_point_ft` say 8,066 ft.
+- South Buttress's own summit waypoint (index 2 — batch 60 originally
+  targeted index 1, which batch 250 found was already wrong by the time it
+  ran; the index-2 targeting is re-verified correct now too) and its pitch
+  12 notes both still carry the stale 8,065 ft figure.
+- Crooked Thumb Peak South Route: `high_point_ft` is still 8129, regressing
+  a deliberate pass-1 decision to leave it NULL (unconfirmed whether the
+  route's south-ridge headwall actually reaches the true summit fin, per the
+  route's own cited 2016 trip report); `access.landManager` still wrongly
+  claims the approach crosses Ross Lake National Recreation Area (it
+  doesn't — Mt. Baker-Snoqualmie NF into NCNP directly, per USFS Trail
+  #674); the 2026 lottery window in `access.notes` is off by a day on both
+  ends (NPS: Mar 3–14, not Mar 2–13).
+- Dark Peak's area `prominence_ft` is still 273 ft; two independent passes
+  (batch 250, and this run) both land on SummitPost's "Washington Top 100"
+  list, which states 264 ft directly.
+
+**Flagged, not fixed:**
+- `wa_cutthroat_south_buttress`'s `fa` ("Fred Beckey and Donald (Don)
+  Gordon, 1958"). Two separate WebSearch queries both surfaced the same
+  phrase — "Beckey, Gordon, Cooper, and others" — specifically in connection
+  with this route, suggesting a third climber (likely Ed Cooper) may belong
+  in the FA party. Neither search reached a clean primary-source enumeration
+  of the full party, so not confident enough to add a name.
+- Dark Peak's area `elevation_ft` (currently 8518). Batch 250 proposed 8504,
+  citing "SummitPost, PeakVisor, Mountaineers.org, and the Bulger List." This
+  run's own WebSearch of PeakVisor's own page returned **"2,593 m (8,507
+  ft)"** for this exact peak — a different number, from a source batch 250
+  claims backs its own figure. The 3 ft / 1 m gap is small enough to be
+  ordinary rounding noise between sources, but two sessions citing the same
+  page for two different numbers isn't something a third citation resolves —
+  left unfixed pending someone checking a primary source (e.g. the USGS
+  quad) directly. The paired Dark Glacier Route `high_point_ft` (8507) was
+  correspondingly left alone too, since it depends on which area figure is
+  right.
+
+**Verified clean via external corroboration (WebSearch), no changes
+needed:**
+- Crooked Thumb Peak's elevation (8,129 ft) — confirmed via Wikipedia/
+  Wikidata; the South Route's `fa` ("Ardussi, Magnusson, Mech, Swanson —
+  July 31, 1963") checks out as the *other* half of the same 1963
+  Mountaineers eight-person Northern Pickets expedition whose other four
+  members (Jackson, Jensen, Marts, Schmechel) did the East Face that same
+  day, per the AAC's "New Climbs in the Northern Pickets" account — this
+  route's own waypoint chain (22.5 mi one-way to the summit) is also
+  internally consistent with its own `dist_km`.
+- Cutthroat Peak's West Ridge FA (Kenneth Adam, Raffi Bedayn, W. Kenneth
+  Davis, July 22, 1937 — also the peak's overall FA) — confirmed exact match
+  via WebSearch/Wikipedia.
+- Cauthorn-Wilson Couloir's FA (Dan Cauthorn, Tim Wilson) and its "Grade
+  III+" — consistent with climberkyle.com's Cascade alpine-ice survey
+  describing the route as "Grade III to IV."
+- Dark Peak's elevation as stated on its own route row (8,507 ft,
+  `high_point_ft`) and Dark Glacier Route's overall description (long,
+  brushy, multi-day boat-and-shuttle approach via Stehekin; roped glacier
+  travel; moat crossing) — confirmed via WebSearch (PeakVisor: 2,593 m /
+  8,507 ft). The row's `road.status` claiming the Stehekin Valley Road/High
+  Bridge shuttle is running for the 2026 season despite December 2025 flood
+  damage was independently confirmed current via WebSearch (NPS shuttle
+  service to High Bridge is operating summer 2026, though lodge services
+  remain suspended).
+- `wa_dark_side_of_liberty` in full — FA (Mikey Schaefer & Shanjean Lee,
+  August 2019, 2-season free project equipped by rappel off Barber Pole in
+  2018), grade (IV, 5.13+, 1,100 ft), pitch count (10, consistent with the
+  row's own "10-11 pitches" hedge in `hazards`), and descent (rappel the
+  route on an 80m rope, 8-9 raps, matching the row's own `rappels`/
+  `descent_text`) — all confirmed via AAC Publications and Climbing.com's
+  first-ascent feature.
+
+**Operational note, restated with fresh evidence:** batches 248/249/250
+(2026-09-09) already raised, and this run independently re-confirmed, that
+audit SQL is not reliably being applied to the live database. Checked
+directly against the live table before writing anything this batch: **none**
+of batch 315's or batch 316's fixes (both dated 2026-09-20, the two batches
+immediately before this one) are live yet, and batch 250's re-issue of batch
+60's Cutthroat/Crooked Thumb/Dark Peak fixes (2026-09-09) is **still**
+unapplied 11 days later. This is not uniform, though — batch 1's fixes from
+pass 1 (2026-07-27, the very first batch this audit ever ran) **are** live,
+so the backlog does eventually clear, just with a very long and unpredictable
+lag (weeks to months). This means several statements in this batch's SQL
+file are a *third* attempt at facts already found correct twice before
+(marked RE-ISSUE in the file), and a human should check whether these SQL
+files are being applied at all, and if so, on what schedule — the recurring
+concern raised four times now (batches 248, 249, 250, this one) across 67
+intervening batches without resolution is itself worth someone's attention
+independent of any single route fact.
+
+SQL: `audits/sql/2026-09-20-batch-317.sql` — 18 `UPDATE` statements against
+`routes` and `areas` (all gated on exact current values, re-checked live
+immediately before writing). Passed `npm run check:sql`: 13 of the 18 write
+targets directly confirmed by the checker; 2 statements flagged
+"no literal id predicate — not checkable" (the same previously-documented
+false-positive shape this file already records for long jsonb string values
+that happen to contain a semicolon in the matched *old* text, which cannot
+be rewritten since it has to match what's actually live) — both hand-verified
+against a fresh direct query immediately beforehand, confirming the target
+row exists and the old-value predicate matches exactly. No destructive
+deletes. File is 17.8KB, well over the 4KB paste-size soft limit, so should
+be applied in ~1.5-2KB chunks and verified as it goes, same as recent
+batches.
+
+Progress file's `last_processed_id` advanced to `wa_dark_side_of_liberty`.
+Next batch continues in sorted-id order after that id (toward the
+Diamond in the Rough / Direct North Buttress / Direct Southwest Buttress /
+Direct West Face ids).
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 317): 75 audited through batch 316 + 8 this batch
+= 83 audited, 524-83 = **441 in-scope routes remain unaudited this pass**.
