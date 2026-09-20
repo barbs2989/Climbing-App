@@ -24994,3 +24994,126 @@ Progress file's `last_processed_id` advanced to
 `wa_cardinal_peak_nw_couloir_north_ridge`. Next batch continues in
 sorted-id order after that id (toward the Cascade Peak/Castle Peak/
 Cathedral Peak ids).
+
+## Batch 313 (2026-09-20, pass 6)
+
+Continued in sorted-id order after `wa_cardinal_peak_nw_couloir_north_ridge`
+(Cascade Peak/Castle Peak (Tatoosh)/Cathedral Peak (Pasayten)/Chair Peak x5
+cluster — 8 routes: `wa_cascade_peak_east_ridge`,
+`wa_castle_peak_tatoosh_southeast_face`,
+`wa_cathedral_peak_pasayten_se_buttress`, `wa_chair_bryant_traverse`,
+`wa_chair_peak_east_face`, `wa_chair_peak_north_face`,
+`wa_chair_peak_northeast_buttress`, `wa_chair_peak_northwest_ridge`).
+
+Largest finding: Castle Peak's Southeast Face carried an `access._raw`
+sub-object describing an entirely different peak — land manager "USFS
+Okanogan-Wenatchee National Forest - north Cascades Ranger District",
+altitude "8,343 feet" (Castle's own is 6,440 ft), and access routes
+"Provincial Park (north), PCT (west), Freezeout Creek (east)" — all
+Pasayten-Wilderness-border-corridor content on a route that is inside
+Mount Rainier National Park's Tatoosh Range. Confirmed as contamination
+by comparing directly against this same batch's `wa_cathedral_peak_
+pasayten_se_buttress`, whose own (correct) `access._raw` independently
+uses the same "Provincial Park"/border-proximity phrasing for the actual
+Pasayten peak it belongs to. Removed the stale `_raw` sub-object; every
+other `access` field on the Castle Peak row already correctly described
+Mount Rainier NP and was left untouched — same shape as the
+`wa_ridge_traverse_from_east_fury` fix in batch 291.
+
+Fixed the regional-bivy-corridor-contamination pattern on two more
+routes: Castle Peak's Southeast Face (6 -> 5, pruning "Snow Lake Camp",
+which self-disqualifies in its own text as "the one Tatoosh objective
+where an overnight is genuinely worth the trouble" — i.e. explicitly not
+this route, a 4-6 hour day climb) and Cascade Peak's East Ridge/NW
+Chimney (6 -> 1, keeping only "Johannesburg Camp", the single entry that
+names Cascade Peak/the CJ Couloir outright; the other five each
+explicitly serve Forbidden Peak, Sharkfin Tower, Sahale Peak, Boston
+Peak, Mixup Peak, Magic Mountain or The Triad via different Cascade
+River Road pullouts/arms).
+
+Fixed a discipline self-contradiction on `wa_chair_bryant_traverse`:
+`disciplines` was `["alpine", "aid"]` though `aid_grade` is null,
+`pitches` is 0, `pitch_detail` is null, and every prose field (gear,
+what_to_bring, pro_tips, the row's own research note in `corrections`)
+describes only free-climbing ridge scrambling with one mandatory
+rappel — no mention of aid climbing anywhere. Corrected to
+`["alpine", "trad"]`, matching the sibling Chair Peak rock routes' own
+tagging (East Face, Northwest Ridge).
+
+Fixed a gain_ft-below-its-own-hard-floor case on Chair Peak's Northeast
+Buttress: gain_ft (3100) was 38 ft short of the round-trip physical
+floor implied by this route's own trailhead (3,100 ft) and high_point_ft
+(6,238 ft) — 6238-3100=3138, exactly matching the row's own loss_ft. The
+itinerary's Day 1 gainFt/lossFt mirrored the same short 3100 figure on
+both sides. Corrected gain_ft and the itinerary day figures to 3138 —
+same class of defect as Phantom Peak/Remmel Mountain NW Ridge/Beyond
+Redlining in earlier batches.
+
+Filled `outing_shape` (NULL -> 'outback') on five routes across this
+batch whose own descent_text/itinerary already describe a same-trailhead
+round trip but had never been tagged as one: Castle Peak Southeast Face,
+Cathedral Peak Southeast Buttress, and Chair Peak's North Face,
+Northeast Buttress and Northwest Ridge. Filled Cathedral Peak's null
+loss_ft to match its own gain_ft (4700), matching the established
+same-trailhead-round-trip convention — flagged rather than further
+corrected, since gain_ft itself does not fully reconcile against this
+route's own itinerary day-by-day sum (Day1 4350 + Day2 1300 = 5650
+excluding an optional Day3 bonus-summit, or 6650 including it); it is
+unclear whether the top-level field is meant to be approach-only,
+approach+summit-day, or the full multi-day trip, and left for a human
+call rather than guessed. Filled `wa_chair_peak_east_face`'s null
+top-level `permit` field to match its three Chair Peak siblings' shared
+Alpental-trailhead wording (this route's own `access.permit` sub-field
+already independently states the same free-self-issue, no-quota fact).
+
+Flagged rather than fixed: `wa_chair_peak_northeast_buttress`'s
+top-level `grade` ("Class 5.6", grade_system "class") disagrees with its
+own `rock_grade` ("5.4"), and `grade_num` (4) does not obviously derive
+from either under the numeral-suffix convention used elsewhere in this
+same batch (e.g. "5.2" -> grade_num 2, "5.7" -> grade_num 7). The row's
+own `pitch_detail` already documents the crux pitch as "5.4-5.6 (dry)",
+so both stored figures are plausibly sourced endpoints of one range
+rather than an outright error, but which should be canonical — and how
+this app's own grade parser is meant to resolve a hybrid "Class N.n"
+notation — needs a human/code review this DB-only audit is not
+positioned to make.
+
+Verified clean via external corroboration (WebSearch): Castle Peak
+(Tatoosh) elevation 6,440 ft; Chair Peak elevation 6,238 ft and 1913 FA
+(Hec Abel and L.F. Curtis); Cascade Peak elevation 7,428 ft and July 23,
+1950 FA (Beckey, Schoening, Sharpe); Cathedral Peak (Pasayten) elevation
+8,606 ft and 1901 FA (Carl W. Smith, George O. Smith) for the standard
+route — all four exactly matching what the DB already stored, no fixes
+needed on any of these facts. `wa_cathedral_peak_pasayten_se_buttress`'s
+own `access._raw` (Boundary/Chewuch River/Andrews Creek approach
+options, Okanogan-Wenatchee NF/Pasayten Wilderness land manager, US
+Border Patrol note) checked out as correctly describing that route's own
+peak, not contamination — used as the comparison point that confirmed
+Castle Peak's block was foreign.
+
+SQL: `audits/sql/2026-09-20-batch-313.sql` — 10 `UPDATE` statements
+against `routes` (13 individual field changes across 12 statements plus
+2 flag-only comment blocks), all gated on exact current values (checked
+live immediately before writing) and passed `npm run check:sql` (11 of
+12 targets auto-verified to exist with no destructive deletes; one
+statement — the East Face permit fill — could not be auto-parsed by the
+checker due to a long inline literal, so its target/current-value was
+confirmed directly via a live `SELECT` instead; file exceeds the 4KB
+paste-size soft limit, so should be applied in ~1.5KB chunks).
+
+Progress file's `last_processed_id` advanced to
+`wa_chair_peak_northwest_ridge`. Next batch continues in sorted-id order
+after that id (toward the Chalangin Peak/Chianti Spire ids).
+
+Re-derived the "remain this pass" count directly from the progress
+file's own `batches` array rather than trusting the hand-decremented
+figure carried in `pass_note`: summing the distinct route ids recorded
+against `pass: 6` across batches 307-312 gives 43 audited (3+8+8+8+8+8),
+not the 524-516=8 that the prior note's "516 remain after batch 311"
+would imply. That prior figure was stale/wrong by a wide margin — not
+something this batch can explain, just a hand-computed counter that had
+drifted at some point in pass 6 and was carried forward uncorrected.
+With this batch's 8 added (51 audited total this pass), 524-51 = **473
+in-scope routes remain unaudited this pass**. Future batches should
+recompute this the same way (sum `route_ids` across `pass: 6` batch
+entries) rather than trust a decrementing count in prose.
