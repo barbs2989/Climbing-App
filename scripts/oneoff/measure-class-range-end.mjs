@@ -51,6 +51,7 @@ const ydsVal = (n, l) => parseInt(n) + (l ? ("abcd".indexOf(l) + 1) / 4 : 0);
 let classRows = 0, ydsRows = 0, notHeadline = 0;
 const tally = { low: 0, high: 0, mid: 0, other: 0 };
 const others = [];
+const highs = [];
 const parserTally = { low: 0, high: 0, mid: 0, other: 0 };
 
 for (const r of rows) {
@@ -81,6 +82,7 @@ for (const r of rows) {
   const b = bucket(stored);
   tally[b]++;
   if (b === "other") others.push({ id: r.id, grade: g, stored, lo, hi });
+  if (b === "high") highs.push({ id: r.id, grade: g, stored, lo, hi });
 
   parserTally[bucket(gradeNumFrom(g, r.discipline))]++;
 }
@@ -101,9 +103,17 @@ console.log(`    the HIGH end  ${String(parserTally.high).padStart(4)}`);
 console.log(`    the MIDPOINT  ${String(parserTally.mid).padStart(4)}`);
 console.log(`    none of them  ${String(parserTally.other).padStart(4)}`);
 
+/* The HIGH end is the minority, so it is the bucket worth READING — and a count you cannot act on
+   is not a finding. Printed in full, no cap: a minority small enough to be the interesting one is
+   small enough to list. */
+if (highs.length) {
+  console.log(`\n  rows storing the HIGH end (all ${highs.length}):`);
+  for (const o of highs) console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`);
+}
+
 if (others.length) {
-  console.log(`\n  rows whose stored value is neither end nor the midpoint (first 25):`);
-  for (const o of others.slice(0, 25)) console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`);
+  console.log(`\n  rows whose stored value is neither end nor the midpoint (all ${others.length}):`);
+  for (const o of others) console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`);
 }
 
 console.log(`\nReport only. lib/grade.js records that gradeNumFrom matches load-state.mjs VERBATIM`);
