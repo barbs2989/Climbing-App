@@ -26012,3 +26012,148 @@ continues in sorted-id order after that id (toward `wa_east_face`,
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 319): 91 audited through batch 318 + 8 this batch
 = 99 audited, 524-99 = **425 in-scope routes remain unaudited this pass**.
+
+## Batch 320 (pass 6) -- 2026-09-23
+
+Routes: `wa_east_face` (Middle Peak, Gunsight Range), `wa_east_face_6`
+(Chimney Rock), `wa_east_mcmillan_spire_west_ridge` (East McMillan Spire),
+`wa_east_ridge_2` (Snowking Mountain), `wa_east_ridge_3` (Silver Star
+Mountain, Okanogan), `wa_east_ridge_4` (Inspiration Peak), `wa_east_ridge_6`
+(Mount Thomson), `wa_east_ridge_8` (Pinnacle Peak, Tatoosh Range).
+
+Continued in sorted-id order after `wa_e_se_face`. Live-queried the scope
+(discipline in alpine/mountaineering, `wa_*` id, `area_type='peak'` via an
+`areas!inner` embed) rather than trusting only the progress file's own
+"next ids" note, to catch any area-type reclassification since batch 319 --
+none found; the 8 ids matched the note exactly.
+
+No SQL this batch -- every specific, checkable claim that was tested came
+back either externally corroborated or already self-documented as uncertain
+in the row itself. Two items are flagged rather than fixed because they
+need a human read, not a value patch.
+
+**Verified clean via external corroboration (WebSearch; WebFetch was
+egress-blocked for every reference domain tried this run -- mountainproject.com,
+alpenglow.org, en.wikipedia.org -- consistent with prior batches' notes;
+snippet synthesis only):**
+
+- `wa_east_face`: FA (Sol Wertkin & Mahting Putelis, 2006) confirmed via
+  Salida del Sol's own first-ascent blog post for the East Face of Middle
+  (Main) Gunsight Peak.
+- `wa_east_face_6`: FA (Forest Farr, Art Winder, Laurence Byington, August
+  27 1930, via the south and east faces) and elevation (7,727 ft) confirmed
+  via Wikipedia's Chimney Rock (Washington) page.
+- `wa_east_ridge_4`: FA (Fred Beckey, Dave Collins, Ed Cooper, 1958) for
+  Inspiration Peak's East Ridge confirmed name-for-name (order differs, same
+  three climbers) via SummitPost/Alpinist coverage; distinguished correctly
+  in the row's own `fa` field from the peak's 1940 Beckey-brothers West
+  Ridge first ascent.
+- `wa_east_ridge_6`: FA (Joe Hazard, 1917) for Mount Thomson confirmed via
+  Peakbagger/SummitPost (specific route of that 1917 ascent not confirmable
+  from search snippets alone, but Mount Thomson's East Ridge is consistently
+  described elsewhere as the peak's easiest/standard line, consistent with
+  being the first-ascent route); row's own `corrections` field already says
+  "consistent across sources."
+- `wa_east_face`'s `road.status` ("Suiattle River Road (FR 26)...CLOSED to
+  vehicles at approximately milepost 4.5 under a closure order in effect
+  through January 1, 2028") confirmed verbatim-consistent against the live
+  USFS Mount Baker-Snoqualmie alert page via WebSearch: closure order
+  effective April 2 2026 through January 1 2028, MP 4.5, trail beyond the
+  gate still hikeable -- matches exactly, not stale.
+- `wa_east_ridge_2` (Snowking): peak elevation discrepancy (7,433 ft used
+  here vs. a stale 7,205 ft on Mountain Project) already resolved and
+  self-documented in the row's own `corrections` field, cross-checked
+  against Wikipedia/Peakbagger in a prior pass; re-confirmed this run,
+  no change needed.
+- `wa_east_ridge_8` (Pinnacle Peak): grade (5.5, not the route-id-implied
+  5.8) already self-corrected in the row's own `corrections` field, citing
+  Mountain Project/Mazamas/Mountaineers agreement; consistent with what
+  this route is commonly documented as. No change needed.
+- `wa_east_mcmillan_spire_west_ridge`: FA (Fred & Helmy Beckey, 1940) is
+  consistent with the general McMillan Spire first-ascent date confirmed by
+  Wikipedia (search snippets did not distinguish East vs. West Spire or
+  confirm Helmy specifically, but the Beckey brothers climbing together in
+  1940 in this exact range is unremarkable and well-precedented elsewhere in
+  this catalog). All eight `areas` rows for this batch's peaks (elevation +
+  coordinates) fall inside their documented ranges/subranges and match
+  search-corroborated figures where checkable.
+
+**Checked and NOT flagged -- a hypothesis this run tested and rejected,
+recorded so it isn't re-derived:** `wa_east_mcmillan_spire_west_ridge`'s
+`grade` field explicitly reads "Grade III, 5.6" while its `commitment`
+column holds `"II"` -- initially read as the same kind of internal grade
+self-contradiction this log has flagged elsewhere (e.g. `wa_e_se_face`,
+`wa_dragontail_peak_r1`). Checked against a live sample of 40 other WA
+routes whose `grade` field also starts "Grade <roman numeral>": 8 of 40
+(20%) show the identical shape of "disagreement" between the roman numeral
+embedded in `grade` and the separate `commitment` column, in both
+directions (commitment higher and lower than the grade-text numeral), and
+in several of those the `commitment` column instead agrees with
+`alpine_grade` when `alpine_grade` is itself roman-numeral-shaped (e.g.
+`wa_mount_terror_southeast_face`: `alpine_grade: "II"` = `commitment: "II"`
+while `grade` says "Grade III-IV"). At a 20% base rate across an unrelated
+sample, "the grade-embedded roman numeral disagrees with the commitment
+column" is not a reliable signal of an error in this schema -- it looks
+like `commitment` and the roman numeral inside a free-text `grade` string
+are allowed to come from different sourcing passes and are not guaranteed
+to be kept in lockstep. Not writing a fix off this pattern for this route.
+
+**Flagged for human review, not fixed:**
+
+- `wa_east_face` (Middle Peak, East Face): the `bivy` array carries all 8
+  standard camps of the *entire* ~30-mile Ptarmigan Traverse corridor (Kool-
+  Aid Lake 6,320 ft, Yang Yang Lakes 5,850 ft, White Rock Lakes 6,200 ft,
+  Itswoot Ridge 5,880 ft, Cub Lake 5,338 ft, Bachelor Creek camps 4,500 ft,
+  Spire Col bivouac, Dome Glacier/Dome-Chickamin col bivouacs), but this
+  specific route's own `approach` and 5-day `itinerary` describe only a
+  there-and-back trip from the *southern* end of that corridor (Downey Creek
+  Trailhead -> Bachelor Flats -> Dome-Chickamin Col base camp and back),
+  never reaching Cascade Pass. Kool-Aid Lake, Yang Yang Lakes and White Rock
+  Lakes sit near the *northern* end of the traverse, close to Cache Col/
+  Cascade Pass -- confirmed via WebSearch (Ptarmigan Traverse commonly
+  described as ~30 miles point-to-point, 6 days, with Cascade Pass the
+  northern trailhead and Downey Creek/Bachelor Meadow the southern one; Kool-
+  Aid Lake is reached via Cache Col from the Cascade Pass side). A party
+  doing this route's own stated itinerary would need the full multi-day
+  traverse to ever see those three camps, which its itinerary does not
+  describe. This matches the "one shared corridor camp list handed to every
+  route filed along it" pattern this catalog has elsewhere (documented in
+  CLAUDE.md's `check:camping`/`audit:camp-route-fit` entries) rather than a
+  route-specific defect list -- and per that same documentation this class
+  "must never become a sweep": which of the 8 entries (if any) to remove is
+  a judgment call an audit script structurally cannot make well, since a
+  through-hiking party legitimately using this peak as one objective along
+  a full traverse is not an impossible use case, just not what this row's
+  own approach/itinerary text describes. Left for a human to read and
+  decide rather than guessed at either way.
+- `wa_east_ridge_3` (Silver Star Mountain, East Ridge complete): the row's
+  own `corrections` field already discloses that its primary source
+  returned a 403/certificate error and that pitch-by-pitch/rack detail is
+  "inferred from the closely comparable...NE Ridge route character" (also
+  reflected in `gear_confidence: "inferred"`, `pitch_detail: null`) -- an
+  honest, already-flagged gap, not repeated here as a new finding. What
+  *is* new this run: WebSearch turned up a SummitPost-documented route on
+  this same peak, "SE Face & E Ridge," rated Grade II Class 4 (possibly
+  easy Class 5), also approached from Cedar Creek -- the same trailhead
+  this row's `approach_logistics` names for the much harder route stored
+  here (5.9+, `alpine_grade: "IV"`, `commitment: "V"`, first continuous
+  roped ascent credited to Geof Childs & Larry Goldie, Sept 14 2000). The
+  row's own `fa` field already distinguishes its harder line from an older,
+  presumably easier 1932 Ulrichs/Pennington "south-face/east-ridge
+  combination," which reads as deliberate and internally consistent rather
+  than confused -- but a full site fetch of the alpenglow.org Northwest
+  Mountaineering Journal articles specifically titled "Silver Star East
+  Ridge" (found by search, not readable this run -- WebFetch blocked) or
+  Beckey's Cascade Alpine Guide would settle whether SummitPost's "SE Face &
+  E Ridge, Grade II" is the same feature under a different/older name, a
+  genuinely separate easier line on the same ridge, or unrelated. Worth a
+  human look with working WebFetch/guidebook access rather than a guess.
+
+SQL: none this batch (`confirmed_errors_fixed: 0`).
+
+Progress file's `last_processed_id` advanced to `wa_east_ridge_8`. Next
+batch continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 320): 99 audited through batch 319 + 8 this batch
+= 107 audited, 524-107 = **417 in-scope routes remain unaudited this pass**.
