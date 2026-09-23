@@ -13,6 +13,7 @@
 import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
+import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -23,7 +24,28 @@ assertQuietBox("probe-drive-to-area-latest.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PORT = 5297;
-const base = `http://127.0.0.1:${PORT}`;
+
+// CLAIM a free port; never adopt whatever answers 5297. With --strictPort a collision kills vite
+// outright, and waitUp() below then succeeds against the FOREIGN server — so this walk reports
+// click paths, body lengths and MISS lines about somebody else's app, indistinguishable from a
+// real run. That is the #464 shape check:ui already paid for, and it is worse here than on a
+// one-page probe: every MISS reads as "the browse navigation cannot be driven", which is exactly
+// the conclusion this file exists to reach.
+async function claimPort(start, span = 40) {
+  for (let p = start; p < start + span; p++) {
+    const free = await new Promise((resolve) => {
+      const probe = net.createServer();
+      probe.once("error", () => resolve(false));
+      probe.once("listening", () => probe.close(() => resolve(true)));
+      probe.listen(p, "127.0.0.1");
+    });
+    if (free) return p;
+  }
+  return null;
+}
+const port = await claimPort(PORT);
+if (port === null) { console.error(`no free port in ${PORT}-${PORT + 39}`); process.exit(1); }
+const base = `http://127.0.0.1:${port}`;
 
 // Each candidate is a full click path below the state select. Measured seed reports in
 // brackets. Two shapes on purpose: a PEAK (direct routes) and a CANYON (subtree only), because
@@ -36,9 +58,13 @@ const CANDIDATES = [
 
 const server = spawn(
   "npx",
-  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(PORT), "--strictPort"],
+  ["vite", "--config", "scripts/a11y-badges.config.mjs", "--host", "127.0.0.1", "--port", String(port), "--strictPort"],
   { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"], detached: true, env: { ...process.env, VITE_DEMO_AUTOLOGIN: "true" } }
 );
+// A dead spawn is fatal. Without this flag the only symptom of a vite that never started is a
+// line on stderr nothing reads, and the walk carries on against whatever else is listening.
+let died = false;
+server.on("exit", () => { died = true; });
 const stop = () => { try { process.kill(-server.pid, "SIGTERM"); } catch { try { server.kill(); } catch {} } };
 for (const s of ["SIGINT", "SIGTERM"]) process.on(s, () => { stop(); process.exit(130); });
 
@@ -49,7 +75,10 @@ async function waitUp() {
   }
   return false;
 }
-if (!(await waitUp())) { console.error("dev server never answered"); stop(); process.exit(1); }
+if (!(await waitUp()) || died) {
+  console.error(died ? "the dev server exited during startup — port taken, or the config failed to apply" : "dev server never answered");
+  stop(); process.exit(1);
+}
 
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
@@ -84,7 +113,16 @@ const clickRow = (name) => page.evaluate((n) => {
 for (const cand of CANDIDATES) {
   console.log(`\n=== ${cand.label}: ${cand.path.join(" > ")} ===`);
   await page.goto(base + "?zt=routes", { waitUntil: "domcontentloaded", timeout: 300000 });
-  await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 90000 }).catch(() => {});
+  // Swallowing this made "the app never booted" and "that row is not on this screen" print the
+  // same MISS line — and a MISS here reads as "the browse navigation cannot be driven", which is
+  // the conclusion this file exists to reach. index.html's boot placeholder mirrors the real nav,
+  // so a blank app still looks plausible: the trap check:overlay-scroll records, where a broken
+  // scaffold exited 0 having verified nothing.
+  const booted = await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 90000 }).then(() => true).catch(() => false);
+  if (!booted) {
+    console.error("  the app never signalled __overlaysReady — it did not boot, so nothing below describes this app.");
+    await browser.close(); stop(); process.exit(1);
+  }
   await page.waitForTimeout(2500);
   console.log("  country:", await pickInSelect("Select a country", "United States"));
   await page.waitForTimeout(1600);
@@ -135,4 +173,10 @@ for (const cand of CANDIDATES) {
 
 await browser.close();
 stop();
+// Exit 0 means the walk COMPLETED, never that AreaLatest was reached. "Cannot reach it" is the
+// recorded correct answer — that section is dead in production (selArea is written only on the
+// seed path, and deploy.yml sets VITE_USE_DB=true), and check:a11y-badges' `arealatest`
+// injection case expects a PASS for exactly that reason. Do not "fix" this into a verdict; the
+// only thing that legitimately fails here is not describing this app at all, which the boot
+// guard above now does. READ THE OUTPUT.
 process.exit(0);
