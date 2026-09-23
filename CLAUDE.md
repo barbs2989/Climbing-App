@@ -13756,6 +13756,42 @@ their own Résumé showed an amber **"Unverified"** chip.
     - **AND IT ASSERTS THAT THE EXAMPLE LIST IS STILL NARROWED BY ALL SEVEN CHIPS.** A rule that only
       says the real list is unfiltered is satisfied by a filter panel that narrows **nothing**, which
       would make the new sentence false in the other direction.
+- **FIVE SURFACES RENDERED A RAW ISO DATE, IGNORING THE CLIMBER'S OWN dateFmt PREFERENCE.** The app
+  stores a date-format choice (`lib/date-pref.js`: auto / US / international) and formats through
+  `DLOCALE` in **19** places — a raw `2026-06-17` is neither of the two formats it offers, so these
+  were the outliers rather than the convention.
+  - **FOUND BY READING A CI `ui-screens` CAPTURE**, the seventh defect that technique has produced:
+    `Crew:Friends` renders **FRIENDS' RECENT ACTIVITY** over rows dated `2026-06-17`, while every
+    sibling shows *"84 days ago"* or *"Posted 12w ago"*.
+  - **A HAND-LISTED RECEIVER SET FOUND 4 AND THE TRUTH WAS 8 — the too-narrow-proxy trap, in the
+    instrument.** A first census matched `\{(?:it|x|a|r|c|n|v|p|e|w|m)\.date\}`, which is a guess
+    about what the variable is called; an AST sees every receiver and added `t.date`,
+    `ascent.date`, `dy.date`, `g.date`, `eventForm.date`. **Measure the shape, never the spelling.**
+  - **AND IT ALSO REPORTED ONE FALSE POSITIVE FROM ITS OWN COMMENT** — the explanation beside the
+    fix quotes the forbidden shape, so a textual scan fails on its own documentation. An AST does
+    not see comments at all; the reason `check:profile-claims` §3 is parsed rather than matched.
+  - **THREE OF THE EIGHT ARE JSX ATTRIBUTES AND MUST NOT BE TOUCHED**, which is the precision rule:
+    two are React `key={x.date}` (the `key={"lb"+i}` trap the units census already records) and the
+    third is **`value={eventForm.date}` on an `<input type="date">`, whose value MUST stay a raw ISO
+    string** — formatting it would break the control, so a scan that flagged it would tell an author
+    to do exactly that. Scoped to **children position**, which is structural rather than a name list.
+  - **THE `T12:00:00` IS LOAD-BEARING and every existing copy already had it**: `new Date("2026-06-17")`
+    parses as **UTC midnight**, which renders as the **16th** anywhere west of Greenwich.
+  - **THE OLD HELPER'S CATCH WAS DEAD, measured rather than read.** `RouteDetail` already carried
+    `shortDate` twenty lines from one of the raw sites, ending `catch(e){return d||"";}` — and
+    `toLocaleDateString` on an Invalid Date **RETURNS `"Invalid Date"` instead of throwing**, so that
+    fallback could never fire for the malformed input it was written for. Its single caller guarded
+    `t.date` at the **call site**, so nothing was on screen — but a vouch built from a row with no
+    `created_at` carries `date: ""`, and adding five callers without hardening it would have put
+    **"Invalid Date"** in front of a climber. Falsy in, empty out; unparseable in, the input back.
+  - **THE REPAIR IS TO COLLAPSE, not to add a sixth copy**: `shortDate` moved into core beside
+    `DLOCALE` and `RouteDetail` imports it. Two implementations of one date formatter is how this
+    codebase ended up with four grade parsers. **The five inline `fD`/`_fmt`/`fmt` copies elsewhere
+    are correct code and are deliberately NOT swept** — that is a behaviour-neutral refactor across a
+    dense file, and a separate change.
+  - Proven by `scripts/oneoff/probe-dates-honour-the-preference.mjs` — 15 assertions, no browser and
+    no database. **Both halves of the hardening are proven load-bearing by A/B**: dropping the falsy
+    guard fails 2, and removing the `T12:00:00` fails the off-by-one-day assertion and nothing else.
 - **`check:preview-claims`** asserts that a control changing only **client state** does not report
   a **real outcome**. Static (one source read — no Babel, no esbuild, no render), so it sits in
   `npm run build` at **0.04x `check:policy-claims`**, the cheapest thing in the chain.
