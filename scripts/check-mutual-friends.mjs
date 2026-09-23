@@ -251,7 +251,7 @@ if (/array_length\s*\(\s*others/i.test(mig)) ok("the array is capped, so a frien
 else bad("the array is capped");
 
 // 0182 EXISTS BECAUSE 0087 IS PARTY-ONLY, so that premise is asserted rather than assumed.
-// Carried from the probe this change deletes: a parallel session (#1747) reached the same
+// Carried from the probe this change deletes: a parallel session (#1663) reached the same
 // conclusion independently and asserted the blocker FROM the migration so it fails as STALE
 // the day the policy is widened. It means more here than it did there -- widen that select and
 // the definer stops being necessary AND the disclosure written into the privacy documents has
