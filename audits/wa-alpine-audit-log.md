@@ -26349,3 +26349,87 @@ Next batch continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 321): 107 audited through batch 320 + 8 this batch
 = 115 audited, 524-115 = **409 in-scope routes remain unaudited this pass**.
+
+## Batch 322 -- 2026-09-23
+
+Routes: wa_elephant_butte_standard_route, wa_elephant_head_standard,
+wa_energizer_bunny, wa_fire_on_the_mountain, wa_fish_whistle,
+wa_flora_mountain_southwest_slope, wa_flycatcher_buttress,
+wa_forbidden_peak_east_ridge.
+
+- `wa_fire_on_the_mountain` (Sloan Peak, SW Face): stored `pitches` was 8,
+  contradicting five other independent records that all agree on 7 -- this
+  row's own 7-entry `pitch_detail` array (real per-pitch descriptions, not
+  a stub), its own `overview` ("climbs 7 pitches..."), its own `rope_note`
+  ("7 pitches of 5.10d rock..."), and two external sources confirmed via
+  WebSearch this run: The Mountaineers' route page and Steph Abegg's FA
+  trip report (stephabegg.com), both describing a seven-pitch route. Only
+  `pitches` and the `beta` text ("...across 8 pitches...") said 8. The
+  row's own `data_quality.gaps` had already flagged the 7-vs-8 discrepancy
+  as an open, unresolved question -- corrected `pitches` to 7, fixed the
+  `beta` text to match, and resolved that gap. Also independently
+  re-confirmed the FA (Blake Herrington & Rad Roberts, 2009 -- matches
+  Mountaineers, AAC Publications, Steph Abegg, Mountain Project, and
+  Wikipedia) and removed the now-stale "First-ascent history not
+  confirmed" gap.
+- `wa_forbidden_peak_east_ridge` (East Ridge Direct): its own `corrections`
+  field, written 2026-07-29, says a sibling duplicate row
+  (`wa_forbidden_peak_east_ridge_direct`) "is a duplicate of this one,
+  flagged for deletion," and `data_quality.gaps` separately calls for
+  dedup against `wa_east_ridge_direct`. Queried the live table directly:
+  neither id exists, and `wa_forbidden_peak` now has exactly one
+  east-ridge route (this one). The duplicate has clearly already been
+  deleted -- by an intervening maintenance/audit pass outside this run's
+  visibility -- but nobody had gone back to update the note describing the
+  now-resolved problem, so it was still telling readers a dedup was
+  needed that had already happened. Rewrote both fields to record the
+  resolution; the SQL guards the change with a `NOT EXISTS` check against
+  both possible duplicate ids so it can only apply if the fact it asserts
+  is independently true at UPDATE time.
+- `wa_elephant_butte_standard_route`: investigated an apparent
+  gain_ft(9700)/loss_ft(1788) asymmetry -- a 5.4x gap, sharply out of line
+  with every other route in this batch (all exact matches or within
+  ~7%), and, on first principles, physically odd for a route whose own
+  `descent` field says "Reverse the ascent" back to the same trailhead
+  (over a closed loop, cumulative gain and loss should be close). WebSearch
+  resolved it as NOT an error: one source (via willhiteweb/SummitPost)
+  describes "nearly 10,000 feet of elevation gain and loss" for the
+  one-way approach to Elephant Butte over the undulating Stetattle Ridge
+  crest, consistent with `gain_ft`=9700 as a genuine cumulative-ascent
+  figure rather than a round-trip total; a second, more specific source
+  (a Cascade Climbers/trip-report synthesis) states "From Stetattle Ridge
+  summit, Elephant Butte requires a significant drop of 1,788 feet to its
+  base" -- an exact match for the stored `loss_ft`, and the same "significant
+  drop and reclimb" this row's own `overview` already calls out. So
+  `gain_ft` is total cumulative gain and `loss_ft` is one specific,
+  well-documented crux drop, not a mismatched pair describing the same
+  quantity -- both values independently confirmed correct. Also confirmed
+  via WebSearch/Wikipedia: `high_point_ft` (7,380 ft) matches Wikipedia
+  exactly (a secondary AI-summarized source's "7,340 ft" was the outlier),
+  and Flora Mountain's FA (Joe Leuthold & Eldon Metzger, September 11,
+  1940, already stored on `wa_flora_mountain_southwest_slope`) matches
+  Wikipedia exactly. Neither needed a fix.
+- Remaining five routes (`wa_elephant_head_standard`, `wa_energizer_bunny`,
+  `wa_fish_whistle`, `wa_flora_mountain_southwest_slope`,
+  `wa_flycatcher_buttress`) checked clean: coordinates plausible for their
+  named peaks/trailheads, gain/loss symmetric or closely matched, grade_num
+  values all correctly reproduce the app's own YDS-letter-grade formula
+  (confirmed by reading `scripts/pipeline/load-state.mjs`'s `gradeNum()`
+  directly rather than assumed -- e.g. 5.10b legitimately parses to 10.5),
+  and FAs for Flycatcher Buttress (Marts/McPherson party 1965, FFA Burdo
+  1990) and Fish & Whistle (Berdinka, 2017) are consistent with documented
+  Washington Pass/Vesper Peak development history. `watch_out` stored as a
+  newline-separated string rather than a JSON array on three of these
+  routes is a known, deliberately-handled shape (`toWarnArr()` in
+  `lib/db.js` already splits it correctly) -- not a defect, not flagged.
+
+SQL: 2 fixes this batch (`audits/sql/2026-09-23-batch-322.sql`), verified
+against the live table with `npm run check:sql` (both target ids exist;
+no DELETE involved).
+
+Progress file's `last_processed_id` advanced to `wa_forbidden_peak_east_ridge`.
+Next batch continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 322): 115 audited through batch 321 + 8 this batch
+= 123 audited, 524-123 = **401 in-scope routes remain unaudited this pass**.
