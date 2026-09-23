@@ -26157,3 +26157,195 @@ batch continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 320): 99 audited through batch 319 + 8 this batch
 = 107 audited, 524-107 = **417 in-scope routes remain unaudited this pass**.
+
+## Batch 321 (pass 6) -- 2026-09-23
+
+Routes: `wa_east_slope` (Primus Peak, North Cascades NP), `wa_east_twin_needle_south_route`
+and `wa_east_twin_needle_thread_of_ice` (East Twin Needle, Southern Pickets),
+`wa_eldorado_peak_east_ridge`, `wa_eldorado_peak_eldorado_glacier_nw`,
+`wa_eldorado_peak_north_ridge`, `wa_eldorado_peak_northeast_face`,
+`wa_eldorado_peak_west_arete` (all five in-scope Eldorado Peak / Main Peak routes).
+
+Continued in sorted-id order after `wa_east_ridge_8`. Live-queried the next 30
+alpine/mountaineering `wa_*` routes by id, then filtered to `area_type='peak'`
+via the `areas` table (excludes `wa_east_wilmans_spire`, `wa_easy_getaway`,
+`wa_ellation`, `wa_ellen_pea`, `wa_first_amendment`, `wa_flight_of_the_falcon` --
+all filed on crags/walls, out of scope) to reach these 8.
+
+Two confirmed errors fixed this batch, both internal-consistency defects
+(the row disagreeing with itself or with its own siblings) rather than
+external-source corrections, plus a strong external corroboration for
+Primus Peak's elevation/gain that made the bivy contamination easy to
+isolate confidently. Four items flagged for human review rather than
+guessed at -- three of them structural/editorial calls this audit's own
+documented policy says a script should not make.
+
+**Confirmed errors fixed (SQL in `audits/sql/2026-09-23-batch-321.sql`):**
+
+- `wa_east_slope` (Primus Peak): its `bivy` array carried a "Klawatti Col
+  camp, Eldorado ice-cap traverse approach" (7,800 ft) entry. This route's
+  own `approach`, `itinerary`, and all 7 `waypoints` describe exclusively
+  the Thunder Creek -> Lucky Ridge -> Borealis Glacier -> Lucky Pass line
+  out of Colonial Creek Campground on SR-20 -- nowhere near Cascade River
+  Road or the Eldorado/Inspiration/Klawatti glacier massif that Klawatti
+  Col belongs to. The identical entry (same name string, same elevation)
+  appears verbatim in all five `wa_eldorado_peak_*` routes audited this
+  same batch, where it is the correct, shared corridor camp for their
+  actual Eldorado Creek approach. This is the "one shared corridor camp
+  list handed to every route filed along it" pattern this project's own
+  CLAUDE.md documents (`check:camping`/`audit:camp-route-fit` entries) --
+  here narrow enough to fix directly: a single entry, self-labeled as
+  belonging to a different peak's approach, with no ambiguity about a
+  legitimate alternate/through-route use (unlike the wa_east_face bivy
+  flag in batch 320, which involved a genuine long-corridor through-hike
+  possibility and was correctly left for a human). Removed by matching on
+  the entry's own `name` field rather than array index, so a re-run against
+  an already-fixed row is a no-op.
+- `wa_eldorado_peak_eldorado_glacier_nw` (Northwest Couloir / Eldorado
+  Glacier): the compact `season` field read "Oct-Apr", contradicting this
+  same row's own `best_season` prose, which names two favorable windows --
+  "Early season (roughly May-June)" offering "steep, thin ice and moderate
+  mixed climbing," and "a good cold snap in early fall/winter (e.g., late
+  October-November)" -- with mid-to-late summer merely mediocre (mostly
+  snow-filled, "just a few ice steps"). "Oct-Apr" excludes the May-June
+  window entirely while including deep winter (Dec-Apr), which
+  `best_season` never describes as viable given the long glaciated
+  approach across the Eldorado/Inspiration Glaciers. Extended to "Oct-Jun"
+  -- a minimal, additive fix (removes nothing previously stated, adds only
+  the window the row's own prose already calls good) rather than a full
+  rewrite of a genuinely two-windows-with-a-gap season, which a compact
+  field cannot express without editorializing beyond what `best_season`
+  already carries.
+
+**Verified clean via external corroboration (WebSearch; WebFetch remains
+egress-blocked for every reference domain tried -- americanalpineclub.org,
+alpenglow.org, wikipedia.org, cascadeclimbers.com, stephabegg.com, nps.gov --
+snippet synthesis only):**
+
+- `wa_east_slope`: Primus Peak's elevation (8,508 ft) and the East Ridge/
+  Lucky Pass route's stated 19.0 mi roundtrip / 7,300 ft gain confirmed
+  verbatim via a CascadeClimbers.com trip-report title indexed in search
+  results ("PRIMUS PEAK (8508'), TRICOUNI PEAK (8102')") and a WTA-style
+  route-stat summary; row's own `gain_ft` (7,300) matches exactly.
+- `wa_eldorado_peak_east_ridge` and siblings: Eldorado/Main Peak's
+  elevation (8,872.9 ft, i.e. this row's `high_point_ft: 8872`) and FA
+  (Donald Blair, Norval Grigg, Arthur Winder, Arthur Wilson, Aug 27 1933)
+  both confirmed verbatim via Wikipedia snippet synthesis; the route's own
+  `corrections` field already documents the same 8,872.9 vs. 8,868 ft
+  distinction (true summit vs. a nearby USGS benchmark) independently.
+- `wa_eldorado_peak_west_arete`: FA (Richard Emerson, Walter Gove, Aug 24
+  1969) and grade (5.7/5.8, described as a "2800-foot arete") both
+  confirmed verbatim; row's `pitches: 19` is consistent with a ~2,800 ft
+  technical line at typical ~150 ft/pitch.
+- The `wa_east_slope` `access.closures` note (Dec 2025 SR-20 atmospheric-
+  river washout at MP 142-148 plus a March 2026 Diablo Lake-area rockslide
+  at MP 131, WSDOT reopening the highway June 14 2026) was checked against
+  live WSDOT/news search results as an unusually specific, checkable claim
+  and matched exactly, including the milepost and the June 14 2026 reopen
+  date -- a real event, correctly dated and self-bounded (the row directs
+  readers to check current conditions), not a stale permanent-field closure
+  claim.
+- `wa_east_twin_needle_thread_of_ice`: FA (Steph Abegg, Wayne Wallace, June
+  27 2009) confirmed via a CascadeClimbers.com trip-report title
+  ("Thread of Ice - Twin Needles - FA 6/27/2009") matching verbatim.
+
+**Checked and NOT flagged -- a hypothesis this run tested and rejected:**
+
+`wa_eldorado_peak_east_ridge`'s `grade` field ("Grade II, Class 3, glacier")
+rates the summit-ridge finish a notch harder than several external route
+descriptions, which converge on "class 2" for the route overall while
+separately calling out the knife-edge summit ridge as the most exposed,
+technical section. Given this project's own prior finding in batch 320
+(grade/commitment-style disagreements between sources sit at roughly a 20%
+base rate and are not on their own evidence of an error), and that every
+other detail here (elevation, FA, camp elevations at 5,400 ft/7,800 ft,
+approach description) matches external sources closely, read this as a
+defensible, more conservative class rating for the exposed crux rather than
+an error. Not fixed or flagged.
+
+**Flagged for human review, not fixed:**
+
+- `wa_east_twin_needle_south_route`: internally self-contradictory route
+  identity. The row's `overview`, `pro_tips`, and (stale) `data_quality.gaps`
+  text all describe this as "the moderate line described here," distinct
+  from and easier than "a notably harder, more direct East Arete (rated II
+  5.10a, climbed during the 2003 Southern Picket Range enchainment)" that
+  climbers are warned not to confuse it with. But this row's OWN `grade`
+  ("Grade II, 5.10a"), `fa` (Wayne Wallace, Colin Haley, Mark Bunker, July
+  27 2003, Southern Picket Range enchainment), and `beta` (which directly
+  quotes Wallace describing "the tremendously exposed east arete") are
+  themselves the 2003-enchainment ascent the overview claims is a
+  *different* route. The row's own `corrections` field already documents a
+  prior, partial fix (2026-07-28): the `grade` field was changed from
+  "Grade III, 5.7" to "Grade II, 5.10a" specifically because it
+  self-contradicted the row's own beta/FA -- but `overview`, `pro_tips`,
+  and `data_quality.gaps` were never updated to match, so the row now
+  simultaneously claims (via name/overview/pro_tips) to be a separate,
+  easier route AND (via grade/FA/beta) to be the exact climb it warns
+  readers not to confuse itself with. Checked live: no other route on
+  `wa_east_twin_needle` documents a distinct, independently-confirmed
+  5.7-ish "South Route" (only `north_buttress`/"Thread of Gneiss" 5.9 and
+  `thread_of_ice` 5.7 ice exist alongside this one) -- so no data appears
+  to have been lost or merged from elsewhere; the simplest reading is that
+  this route was always the 2003 East Arete ascent under a wrong working
+  name, and the identity fields were never brought in line with the
+  correction already applied to `grade`. WebSearch snippets (AAC
+  Publications article synthesis) corroborate a single documented technical
+  first ascent on East Twin Needle from that 2003 party (II, 5.10a,
+  "southeast ridge/face"), consistent with this reading, but full-text
+  confirmation from the AAC/alpenglow.org sources was not possible --
+  WebFetch is egress-blocked for both domains this run, as in prior
+  batches. This is the "half-corrected row, internally incoherent about
+  which route it documents" class this project's CLAUDE.md flags as
+  needing "a human rewrite/split decision, not a field patch" (see the
+  batch-4 note on `wa_cascade_peak_east_ridge`); left for a human with
+  working WebFetch or guidebook access to either rename the route (and
+  rewrite `overview`/`pro_tips`/`data_quality.gaps` to stop describing a
+  route that does not appear to exist) or, if a genuine separate moderate
+  line is confirmed, split the two apart properly.
+- `wa_east_twin_needle_south_route`: separately, its `high_point_ft` (7,868)
+  disagrees with its own summit `waypoints` entry, which states
+  `elev`/`elevFt: 7840` for the same point ("East Twin Needle"). External
+  sources (Wikipedia snippet) list the peak at "7,840+ ft," which is
+  consistent with either figure and does not resolve which is right.
+  Left for a human to settle against a firmer source (USGS benchmark,
+  Beckey's guide, or LiDAR-derived data) rather than guessed at.
+- `wa_eldorado_peak_east_ridge`: `dist_km` is stored as `8` (and `8.04` on
+  the sibling `eldorado_glacier_nw`, which shares the same lower approach).
+  Multiple independent external sources (route-guide search snippets)
+  consistently describe the East Ridge approach as "8 miles roundtrip"
+  with "6,800 ft" of gain -- the gain figure matches this row's own
+  `gain_ft` (6,716-6,800 across the five Eldorado routes) closely, which
+  increases confidence the mileage figure is also from a real source. But
+  if `8` was carried over directly from "8 miles" without a mile-to-km
+  conversion, and this app's convention is to store a ONE-WAY distance in
+  km and render round-trip as `dist_km * 2` (per CLAUDE.md), the app would
+  display a ~9.9 mi round trip against a real ~8 mi -- a meaningful
+  overstatement for trip planning. CLAUDE.md explicitly and repeatedly
+  warns that `dist_km` carries two live, non-interchangeable conventions in
+  this schema and must never be bulk-corrected; this project has its own
+  `audit:distances` tool specifically for adjudicating this column, which
+  a human should run rather than have this fact-audit guess at a
+  conversion. Not fixed.
+- `wa_east_twin_needle_thread_of_ice`: its `bivy` array is an exact copy of
+  `wa_east_twin_needle_south_route`'s 6-entry Goodell Creek/Barrier/Terror
+  Basin/Crescent Creek Basin corridor list -- but this route's own
+  `approach` text says it is "Approached from the north side of the Twin
+  Needles rather than the standard Crescent Creek Basin/Eye Col south
+  approach," and that "specific trailhead-to-base beta beyond the
+  first-ascent account has not been published." The inherited south-side
+  camps (Terror Basin camp, Crescent Creek Basin camp specifically) may not
+  actually apply to a route that explicitly does not use that basin, though
+  the lower Goodell Creek Trailhead/roadhead entries plausibly still do
+  (all approaches to this peak share the same road access). Which entries
+  (if any) to remove is exactly the judgment call CLAUDE.md says a script
+  should not make for the shared-corridor-list pattern; left flagged.
+
+SQL: 2 fixes this batch (`audits/sql/2026-09-23-batch-321.sql`).
+
+Progress file's `last_processed_id` advanced to `wa_eldorado_peak_west_arete`.
+Next batch continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
+batch entries (307 through 321): 107 audited through batch 320 + 8 this batch
+= 115 audited, 524-115 = **409 in-scope routes remain unaudited this pass**.
