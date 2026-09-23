@@ -2689,6 +2689,18 @@ the total when deciding where a new guard belongs.
     earlier in the day has a record pointing at slightly different words. Inherent to a date-based
     version, which `lib/policy.js` chose deliberately and for good reasons; worth knowing before a
     real launch, not worth inventing a counter for at three accounts.
+  - **THAT IS NOT A RULE AGAINST BUMPING, AND IT WAS READ AS ONE.** The paragraph above is about
+    an amendment a DATE version cannot express — two edits hours apart — so no bump could have
+    made those records true. It says nothing about a change on a LATER day, where the date moves
+    cleanly and the record becomes true by bumping. #1755 gave Privacy §3 a genuinely new
+    disclosure (opening a profile names the people you have both connected with) and left
+    `POLICY_VERSION` at `2026-09-03`, twenty days behind — so every stored
+    `terms_accepted_version` claimed the account had agreed to words it was never shown. Bumped
+    in #1767. **`lib/policy.js` states the rule in its own header — *"Bump this whenever either
+    document changes materially"* — and the test is whether the DATE can express the change, not
+    how many accounts exist.** The cost is real and is the mechanism working: `PolicyUpdateNotice`
+    renders for every signed-in account until they accept again, which is why `check:bottom-panels`
+    exists to keep it from covering the footer.
   - Injection-tested **11/11** (`scripts/oneoff/inject-policy-claims-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. Case 1 is the real
     historical §4 text, restored verbatim; `s3names` is the real §3 one. **`staleentry` pins the
