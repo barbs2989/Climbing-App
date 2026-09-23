@@ -6146,10 +6146,12 @@ the total when deciding where a new guard belongs.
     two grades in one system, **159 store the LOW end, 8 the high, 0 the midpoint** — a 93%
     convention that `gradeNumFrom` already implements (169 low / 2 high), because its
     `/class\s*(\d)/i` takes the first digit. **There is nothing to sweep and nothing to decide**;
-    what remains is 8 outlier rows to read.
+    what remained was 8 outlier rows to read, **and they have now been read — NONE is a defect.**
     - **The quoted 129/16 was wrong, and the shape of the error is the useful part**: a number
       carried in prose rather than re-derived. Re-run the script rather than quoting this line,
-      which has now been wrong once.
+      which has now been wrong once — **and then moved AGAIN inside a single session**, 8207 → 8212
+      graded routes, LOW 159 → 160, "none of them" 4 → 3, while HIGH held at 8. The catalog is live
+      and other sessions write to it; every figure here is a timestamp, not a fact.
     - **HALF THE FIRST RUN'S "NEITHER" BUCKET WAS THE MEASUREMENT'S OWN REGEX.** A range mentioned
       in a string is not the route's grade: `"Alpine IV, 5.8 (sustained 5.6-5.7)"` stores **8**,
       which is correct, and a bare match reads the parenthetical; `"5.6-5.7 (2 technical pitches;
@@ -6157,10 +6159,64 @@ the total when deciding where a new guard belongs.
       counts when the parser's own answer falls inside it — 10 unexplained rows became 4. *A count
       is only as good as its tokeniser*, and a measurement that manufactures half its findings
       would have sent somebody to "fix" correct rows.
-    - **2 of the 4 remaining are a NULL `grade_num` on a string the parser CAN read**
-      (`"Class 2-3 (3rd class with airy sections)"`, `"Grade III-IV, Class 4-5 (mixed rock and
-      snow)"`). That is a **missing** value rather than a wrong-end one — a different question, and
-      not evidence about the convention.
+    - **THE 8 HIGH-END ROWS WERE READ AGAINST THEIR OWN SECOND RECORD, AND THE ANSWER IS ZERO
+      REPAIRS — the shape said "sweep them to the low end" and the DATA says that would break
+      correct rows.** `rock_grade` is an independent record of the same route's difficulty, present
+      on 7 of the 8, and it **corroborates the stored value far more often than it contradicts it**:
+      `wa_mount_stuart_west_ridge` stores **6** and its rock_grade says **"5.6"**;
+      `wa_mount_logan_fremont_glacier` stores 4 and says **"4th class"**;
+      `wa_cathedral_rock_standard` stores 4 and says *"4th class, described by guidebook sources as
+      'probably low 5th to most'"* — i.e. 4 **or harder**. Three rows restate their own range
+      (`"Class 3-4"`, and one string shared verbatim by the two Little Tahoma routes) so they
+      disambiguate nothing, and `wa_primus_peak_south_ridge` has no second record at all.
+      **`wa_guye_peak_r2` looked like the one row whose own records disagree with it** — rock_grade
+      reads *"Class 3 (class 3-4 per WTA)"*, so its primary answer is 3 while it stores 4 — **and
+      asking the parser closed even that**: `gradeNumFrom` returns **4** for its grade string, so
+      stored == derived and it is not drift at all. Worth knowing WHY, because it is not the obvious
+      reason: the string is *"Class 3-4 scramble (NCCS Grade I, **optional 5.4** rappel/toprope
+      variation)"* and the YDS branch fires on the **optional variation's** 5.4 before the class
+      branch is reached. The number is defensible and its provenance is an accident — which is a
+      row to read, not a row to write. *(Its rock_grade also cites a third party, which is the
+      citations sweep's problem, not this one's.)*
+    - **THE DECIDING MEASUREMENT IS THE POPULATION THAT AGREES, and for CLASS grades there is no
+      convention to violate.** The `wa_shock_and_awe` precedent is *compare a suspect against the
+      rows in its own system that pass* — there, 2,277 of 2,278 V-graded rows stored the V number
+      and the one exception was a defect. Here the same query says the class catalog is **genuinely
+      split**: rows whose `rock_grade` is exactly **`"4th class"` store 4 three times and 3 three
+      times**, `"Class 4"` stores 4 six times and 3 twice, `"Class 3"` stores 3 thirteen times, 2
+      seven times and **4 twice**. *A convention with one exception is a defect; a 50/50 split is not
+      a convention at all*, so there is no majority for a high-end row to be wrong against. The
+      headline 93% is about ranges in the `grade` STRING and does not transfer down to the row.
+    - **AND `grade_num` IS NOT ALWAYS THE SAME QUESTION AS `rock_grade`, which is the trap in using
+      it as corroboration.** For a scramble `grade_num` is the CLASS while `rock_grade` may describe
+      a short harder step: rows whose rock_grade is exactly `"5.6"` store **6 forty-eight times and 3
+      or 4 four times**, all correctly. So corroboration is strong for a YDS-graded route
+      (`wa_mount_stuart_west_ridge`) and weak for a scramble, and a rule that read the two columns as
+      interchangeable would manufacture findings.
+    - **THE 3 "NEITHER" ROWS ARE THREE DIFFERENT QUESTIONS, and only one is even arguable.** Two are
+      a **NULL** `grade_num`, i.e. a missing value rather than a wrong end — and
+      `wa_mount_shuksan_northwest_arete` is the one where **filling it from the headline string would
+      be actively wrong**: `gradeNumFrom` returns **4** for `"Grade III-IV, Class 4-5 (mixed rock and
+      snow)"` while the row's own rock_grade says **5.7**, so the obvious fill understates the
+      route's own hardest recorded climbing by three grades. *When two candidate fills disagree by
+      that much, the NULL is the honest value.* `wa_dragontail_peak_east_ridge_aasgard_pass` is the
+      opposite and the only clean one — parser 2, `grade` `"Class 2-3"`, rock_grade `"Class 2-3"`,
+      every record agreeing — but filling NULLs is a different question from which end a range
+      stores, and it is not this measurement's.
+    - **`wa_soviet_route` IS THE ONE ROW NO RECORD SUPPORTS, AND IT IS STILL REFUSED.** It stores
+      **10** against a grade of `"V, 5.9-5.10a"` and a rock_grade of **`"5.10a"`** — and the
+      quarter-grade convention is near-unanimous (rows with rock_grade `"5.10a"` store **10.25 seven
+      times to 10 once**, and `"5.10b"` stores 10.5 **eleven of eleven**), so the stored 10 looks like
+      the letter being dropped in transcription. **THREE RECORDS GIVE THREE VALUES** —
+      `gradeNumFrom` says **9**, the column says **10**, rock_grade says **10.25** — and it is not
+      repaired, because **the quarter-grade repair's OWN contract already refuses it**, twice over:
+      that pass corroborates every row against `rock_grade` and *"a row where the two disagree is
+      refused rather than picked"*, and its fingerprint is `stored === Math.floor(parser)`, which
+      here is `10 === 9` — false, so it structurally cannot be selected. This is an existing rule
+      holding, not a fresh judgement. **It also explains why that sweep never saw it**: the
+      quarter-grade measurement is scoped to rows whose `grade` is *exactly* a lettered YDS grade,
+      and this one is a range. **It belongs to the quarter-grade class (`audit:grade-num-drift`
+      class D), not to this one** — and it is the row to start from if that class is reopened.
     - Report only, for this audit's own reason: `gradeNumFrom` matches `load-state.mjs` **verbatim**
       on purpose, and a fifth dialect is the problem rather than the fix.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
