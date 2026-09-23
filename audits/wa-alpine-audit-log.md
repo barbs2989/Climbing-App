@@ -26433,3 +26433,143 @@ Next batch continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6`
 batch entries (307 through 322): 115 audited through batch 321 + 8 this batch
 = 123 audited, 524-123 = **401 in-scope routes remain unaudited this pass**.
+
+## Batch 323 (pass 6) -- 2026-09-23
+
+Forbidden Peak's four remaining alpine routes (North Ridge, Northeast Face, Northwest
+Face, West Ridge), Fortress Mountain's three routes (East Ridge, Northeast Ridge/Face,
+Southwest Face), and Fortune Peak's East Slope route. Live-queried the scope filter
+(`discipline in (alpine,mountaineering)`, `id like 'wa_%'`, parent `areas.area_type =
+'peak'`) starting after `wa_forbidden_peak_east_ridge` to confirm these 8 are the correct
+next-in-order ids; matched.
+
+**Confirmed errors -> fixes in `sql/2026-09-23-batch-323.sql` (3 routes):**
+
+- `wa_forbidden_peak_north_ridge`: `watch_out` described this well-documented summer
+  III/5.6 glacier-and-rock route as a "Winter route requiring ice climbing or snow
+  climbing skills," entirely contradicting this same row's own `season` (Jul-Sep) and
+  `best_season` ("Mid to late summer for dry rock"), and every external source found
+  (The Mountaineers, spokalpine, secondary sources) confirming it as a standard
+  III 5.6 summer route with no winter-ascent characterization. Scanned the whole WA
+  catalog (8,365 routes) for a sibling sharing this exact wording to rule out an
+  identifiable copy-paste source -- found none, so this reads as a one-off content
+  error rather than traceable cross-contamination. Replaced with the row's own
+  already-correct hazards (Boston Glacier crevasse/bergschrund crossing, the long
+  exposed ridge, approach-gully rockfall, remoteness), re-homed from this row's own
+  `hazards`/`obj_haz` fields rather than inventing new content. Kept the existing
+  newline-separated string shape, which the app's `toWarnArr()` already handles
+  correctly (per this log's own established practice of not flagging that shape).
+
+- `wa_forbidden_peak_northeast_face`: two defects, both traced to this route's
+  documented history of confusion with the East Ledges descent (this row's own
+  `data_quality.gaps` notes East Ledges "was split into its own record on
+  2026-07-15"). First, `obj_haz` was still describing East Ledges, not this route:
+  it is near-verbatim `wa_forbidden_peak_east_ledges.obj_haz` ("extremely loose,
+  largely unprotectable rock" / "confusing route-finding across five rock ribs")
+  plus a reference to East Ledges' own documented 1975 fatality (Joe O'Coner, per
+  that row's `hazards`) -- while this row's own `hazards` field was correctly
+  updated at the split and explicitly warns "do not confuse this route with the
+  East Ledges ... that carries a documented 1975 fatality." `obj_haz` was simply
+  never brought current. Replaced it with a condensed version of this row's own
+  (already correct) `hazards` content. Second, `descent` told a climber to
+  "retrace the ascent when possible" -- directly contradicting this same row's own
+  `descent_text`, which opens "Do not reverse the Northeast Face" and directs a
+  West Ridge descent instead. Brought `descent` in line with `descent_text` and
+  with the pattern every sibling Forbidden Peak alpine-face route follows (their
+  short `descent` fields already correctly point to the West Ridge couloir).
+  Verified live via a guarded `EXISTS` check against `wa_forbidden_peak_east_ledges`
+  before writing, so the fix only applies if the contamination source's content is
+  independently confirmed live at UPDATE time.
+
+- `wa_fortress_mountain_northeast_face` (id slug retains the pre-rename "northeast_face"
+  name; this row itself was already correctly renamed to "Northeast Ridge" on
+  2026-07-29, per its own `corrections`): shares the identical Trinity Trailhead /
+  Chiwawa River Road (FR 6200) access as its two siblings on the same peak (this
+  row's own `approach` says "Same Trinity Trailhead approach as the East Ridge";
+  all three rows' trailhead waypoints sit within ~30 m of each other). Both
+  siblings (`wa_fortress_mountain_east_ridge`, `wa_fortress_mountain_southwest_face`)
+  already document, and still currently do, that FR 6200 is closed to vehicles
+  beyond Atkinson Flat Campground (~mile 16) under USFS order #06-17-07-2026-11,
+  effective May 20 2026 through Dec 31 2027, adding ~7 miles of road-walking each
+  way. This row's `road`/`access` fields never picked up that closure -- `road`
+  described only a "rough" gravel road with no mention vehicles can't pass Atkinson
+  Flat, and `access.closures` said just "Access road unplowed in winter," true but
+  incomplete. Independently reconfirmed the closure is real and current via
+  WebSearch against the U.S. Forest Service's own Okanogan-Wenatchee alert page
+  (fs.usda.gov/r06/okanogan-wenatchee/alerts/storm-damaged-roads-closure-wenatchee-
+  river-district), which cites the same order number and the same effective window
+  (the alert gives the closure point as milepost 18.2 "just past Atkinson Flat,"
+  close enough to the siblings' "~mile 16" to be normal source variance around the
+  same landmark, not a discrepancy worth adjudicating). Propagated the
+  already-verified closure fact from the two sibling rows -- no new figure was
+  invented -- and set `access_checked_at` to today, since access was just checked
+  against a primary source. SQL guards the write with `EXISTS` checks confirming
+  both sibling rows still carry the closure fact live at UPDATE time.
+
+**Flagged for human review, not fixed:**
+
+- `wa_forbidden_peak_northeast_face`: `grade` is a bare "IV" with `grade_num = NULL`.
+  Read literally through `scripts/pipeline/load-state.mjs`'s `gradeNum()`, the
+  fallback roman-numeral branch would score "IV" as 4 -- but "IV" here is a
+  Grade/commitment rating (this row also stores `commitment: "III-IV"` separately),
+  and CLAUDE.md documents at length that a bare commitment grade is deliberately
+  NOT the same thing as a numeric climbing-difficulty grade, with its own dedicated
+  `audit:grade-num-drift` tooling built specifically to adjudicate this class of
+  disagreement rather than have it hand-patched. Left alone rather than guessing
+  which convention should win here.
+
+- `wa_forbidden_peak_west_ridge`: `gain_ft` (6640) is ~21% higher than the sum of
+  its own `itinerary` days' `gainFt` (2800 + 2415 = 5215), the largest such gap in
+  this batch (Northwest Face has a smaller, ~7% version of the same pattern: 4800
+  vs. 4500). Net rise from the stored trailhead (3,200 ft) to the summit (8,815 ft)
+  is 5,615 ft, which sits between the two figures and doesn't clearly favor either.
+  Per CLAUDE.md's repeated caution against hand-normalizing `gain_ft`/`loss_ft`
+  (multiple legitimate conventions -- approach-only vs. whole-outing, high-camp
+  starts, undulating terrain -- and a documented `audit:gain`/
+  `check:gain-floor-stated` methodology for exactly this), left both fields as
+  stored; the itinerary total is very likely a rounded per-day estimate rather
+  than a full accounting, but nothing found rules that out or in with confidence.
+
+- `wa_fortress_mountain_east_ridge` and `wa_fortress_mountain_southwest_face` both
+  store an identical `dist_km` (14.5) despite being described as genuinely
+  different approach trails (Chiwawa River Trail via a col with Chiwawa Mountain,
+  vs. Buck Creek Trail over Pass No Pass) from the same trailhead. The identical
+  net elevation change (trailhead 2,800 ft to summit 8,679 ft) plausibly explains
+  identical `gain_ft` on both routes, but not identical one-way distance for two
+  differently-routed approaches; Southwest Face's own text states a 9-9.5 mile
+  approach to Pass No Pass while its own waypoint gives the summit at 11 mi one
+  way -- neither of which converts cleanly to the stored 14.5 km (9.0 mi). Per
+  CLAUDE.md's explicit instruction to never bulk-correct `dist_km` by hand (it
+  holds multiple conventions catalog-wide and is reserved for `audit:distances`),
+  left both values as stored and flagging here for that tool.
+
+**Checked and confirmed correct (no action):** peak elevations for Forbidden Peak
+(8,815 ft) and Fortress Mountain (8,679 ft, the row's own `corrections` already
+documents cross-source disagreement and picks the best-corroborated figure) and
+Fortune Peak (7,382 ft) all independently reconfirmed via WebSearch/Wikipedia.
+Forbidden Peak FAs: North Ridge (Beckey/Schwabland/Wilde, 1952), Northeast Face
+(Cooper/Ferguson, Sept 15 1961 -- this row's own `corrections` already documents
+this being fixed from a prior misattribution), Northwest Face (Beckey/Cooper, July
+1959, including the "an exceptional climb of purity" Beckey quote), and West Ridge
+(Anderson/Beckey/Beckey/Crooks/Lind, June 1940, also the peak's FA and one of the
+Fifty Classic Climbs of North America) -- all independently reconfirmed. Grade_num
+values for the three routes carrying a YDS grade string (North Ridge, Northwest
+Face, West Ridge) all correctly reproduce `load-state.mjs`'s `gradeNum()` formula.
+Fortune Peak's peak-identity note (coordinates matching Wikipedia) reconfirmed.
+`wa_forbidden_peak_northwest_face` and `wa_fortune_peak_east_slope` checked clean
+throughout (hazards, gear, itinerary, access/permit info all internally consistent
+and externally corroborated where checkable).
+
+SQL: 3 fixes this batch (`audits/sql/2026-09-23-batch-323.sql`), verified against
+the live table with `npm run check:sql` (all 3 target ids exist; no DELETE
+involved). Note for whoever applies this file: it is 9.3 KB, over the SQL Editor's
+~4 KB safe single-paste size that `check:sql` warns about -- paste the three
+`-- ====` delimited blocks separately (each is under 3.4 KB) rather than the whole
+file at once.
+
+Progress file's `last_processed_id` advanced to `wa_fortune_peak_east_slope`.
+Next batch continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch
+entries (307 through 323): 123 audited through batch 322 + 8 this batch = 131
+audited, 524 - 131 = **393 in-scope routes remain unaudited this pass**.
