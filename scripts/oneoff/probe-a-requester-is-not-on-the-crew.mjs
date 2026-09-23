@@ -113,8 +113,13 @@ const READERS = [
     'if(cr.cap&&crewSize(cr)>=cr.cap)return false;'],
   ["core", "the inbox crew-thread preview counts the crew, not the requests",
     'crewSize(t.cr)+" climber"'],
+  // isReady and the celebration BOTH resolve through `crewAllConfirmed` now (readiness was derived
+  // twice and the two disagreed about whose confirmation counts). So the requester rule reaches
+  // them one level deeper, and the link below is what keeps that chain asserted rather than assumed.
+  ["core", "crewAllConfirmed carries the rule to both readiness derivations",
+    'function crewAllConfirmed(c){var inC=crewInCrew(c);'],
   ["core", "isReady asks the same question",
-    'function isReady(c,hasMessages){return !!(c&&crewInCrew(c).filter(m=>m.climberId!==0).every(m=>m.status==="confirmed")'],
+    'function isReady(c,hasMessages){return !!(c&&crewAllConfirmed(c)&&'],
   ["app", "the crew-tab quick list denominator",
     'const otherMem=crewInCrew(cr).filter(m=>m.climberId!==0);'],
   ["app", "“Invite X to one of your crews” counts the crew",
@@ -128,7 +133,7 @@ const READERS = [
   ["app", "THE SAFETY BRIEF — a requester's risk answers no longer reach analyzeAlignment",
     'crewInCrew(safetyCrewObj).filter(m=>m.climberId!==0).map(m=>crewMemberById(m.climberId))'],
   ["app", "the “Crew ready!” celebration",
-    'crewInCrew(c).every(function(m){return m.status==="confirmed";})'],
+    'var rdy=crewAllConfirmed(c)'],
 ];
 for (const [file, what, needle] of READERS) {
   const src = file === "core" ? core : app;
