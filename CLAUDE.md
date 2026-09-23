@@ -6217,6 +6217,24 @@ the total when deciding where a new guard belongs.
       quarter-grade measurement is scoped to rows whose `grade` is *exactly* a lettered YDS grade,
       and this one is a range. **It belongs to the quarter-grade class (`audit:grade-num-drift`
       class D), not to this one** — and it is the row to start from if that class is reopened.
+    - **THE APP ALREADY ANSWERS THIS QUESTION TWICE, IN OPPOSITE DIRECTIONS — and that is a bigger
+      finding than the eight rows.** The grade FILTER does not read `grade_num` at all: `passesFilters`
+      calls `routeBandIdx(sys, r.grade)`, which parses the **string** and takes the **maximum** —
+      `hi()` walks every match and keeps the largest, and the YDS branch does the same with
+      `if(idx>best)best=idx`. So `"Class 3-4"` bands as **4** and `"III, 5.4-5.6"` bands as **5.6**,
+      deliberately: the commit that made it so says *"Difficulty=crux, so a range route surfaces when
+      you filter for its top grade"*. Meanwhile `grade_num` — which both finder RPCs rank and
+      range-filter on — stores the **LOW** end on 160 of 171 of the same rows. **One fact, two
+      derivations, disagreeing on exactly the rows this measurement is about.**
+      - **It reframes the outliers rather than condemning them.** A high-end `grade_num` row is
+        *consistent with the filter's stated convention* and *inconsistent with the column's* — so
+        "sweep them to the low end" would align them with one mechanism by moving them away from the
+        other. Another reason the answer here is zero repairs.
+      - **The open question is the DISAGREEMENT, not the eight rows**, and it is not settled here
+        because it is a product call with app-wide effect: whether the sortable column should mean
+        *the crux* (matching the filter, and matching how climbers quote a grade) or *the easiest
+        ground* (matching 93% of the catalog as loaded). Raised, not swept — and **not** to be
+        "reconciled" by rewriting `grade_num`, which would be the fifth dialect.
     - Report only, for this audit's own reason: `gradeNumFrom` matches `load-state.mjs` **verbatim**
       on purpose, and a fifth dialect is the problem rather than the fix.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
