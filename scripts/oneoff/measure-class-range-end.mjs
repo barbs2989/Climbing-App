@@ -24,7 +24,7 @@ const STATE = (argv.includes("--state") ? argv[argv.indexOf("--state") + 1] : "w
 async function readAll() {
   const out = []; let last = "";
   for (;;) {
-    const url = `${SUPABASE_URL}/rest/v1/routes?select=id,grade,grade_num,discipline&id=like.${STATE}_*&grade=not.is.null&id=gt.${encodeURIComponent(last)}&order=id.asc&limit=1000`;
+    const url = `${SUPABASE_URL}/rest/v1/routes?select=id,grade,grade_num,rock_grade,discipline&id=like.${STATE}_*&grade=not.is.null&id=gt.${encodeURIComponent(last)}&order=id.asc&limit=1000`;
     const res = await fetch(url, { headers: headers(k) });
     if (!res.ok) throw new Error(`read failed ${res.status} ${await res.text()}`);
     const rows = await res.json();
@@ -81,8 +81,8 @@ for (const r of rows) {
   const bucket = (v) => v == null ? "other" : (Math.abs(v - lo) < 1e-9 ? "low" : Math.abs(v - hi) < 1e-9 ? "high" : Math.abs(v - mid) < 1e-9 ? "mid" : "other");
   const b = bucket(stored);
   tally[b]++;
-  if (b === "other") others.push({ id: r.id, grade: g, stored, lo, hi });
-  if (b === "high") highs.push({ id: r.id, grade: g, stored, lo, hi });
+  if (b === "other") others.push({ id: r.id, grade: g, stored, lo, hi, rock: r.rock_grade });
+  if (b === "high") highs.push({ id: r.id, grade: g, stored, lo, hi, rock: r.rock_grade });
 
   parserTally[bucket(gradeNumFrom(g, r.discipline))]++;
 }
@@ -105,15 +105,24 @@ console.log(`    none of them  ${String(parserTally.other).padStart(4)}`);
 
 /* The HIGH end is the minority, so it is the bucket worth READING — and a count you cannot act on
    is not a finding. Printed in full, no cap: a minority small enough to be the interesting one is
-   small enough to list. */
+   small enough to list.
+
+   `rock_grade` IS PRINTED BESIDE EACH ONE BECAUSE IT IS A SECOND, INDEPENDENT RECORD of the same
+   route's difficulty, and reading it is what turned this list from eight suspects into zero. It
+   CORROBORATES the stored value on several — wa_mount_stuart_west_ridge stores 6 and its rock_grade
+   says "5.6" — so a sweep toward the low end would have made correct rows WRONG.
+   Read it with its SYSTEM in mind, which is the trap: for a YDS-graded route the two columns answer
+   the same question, but for a SCRAMBLE grade_num is the CLASS while rock_grade may describe a short
+   harder step — measured, rows whose rock_grade is exactly "5.6" store 6 forty-eight times and 3 or 4
+   four times, all correctly. Corroboration is strong in the first case and weak in the second. */
 if (highs.length) {
   console.log(`\n  rows storing the HIGH end (all ${highs.length}):`);
-  for (const o of highs) console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`);
+  for (const o of highs) { console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`); console.log(`           rock_grade  ${o.rock == null ? "(none — no second record)" : String(o.rock).slice(0, 90)}`); }
 }
 
 if (others.length) {
   console.log(`\n  rows whose stored value is neither end nor the midpoint (all ${others.length}):`);
-  for (const o of others) console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`);
+  for (const o of others) { console.log(`    ${String(o.stored).padStart(5)}  against ${o.lo}-${o.hi}   ${o.grade.slice(0, 60)}   ${o.id}`); console.log(`           rock_grade  ${o.rock == null ? "(none — no second record)" : String(o.rock).slice(0, 90)}`); }
 }
 
 console.log(`\nReport only. lib/grade.js records that gradeNumFrom matches load-state.mjs VERBATIM`);
