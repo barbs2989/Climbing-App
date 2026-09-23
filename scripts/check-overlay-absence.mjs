@@ -269,6 +269,11 @@ const CHECKED = {
    of the CHECKED reasons written against them were removed as stale by this file's own test. A
    count is only as good as what it is a count OF. */
 
+/* Every failing section records WHY here as well as setting the exit code. The final verdict
+   consults `process.exitCode` rather than this array — that is the value which actually decides
+   the run — so a section added later that sets it and forgets to push a reason still cannot be
+   followed by an `ok`. This only supplies the wording. */
+const FAILED = [];
 const ungatedAll = rows.filter((x) => !x.gated.length);
 const stale = Object.keys(CHECKED).filter((n) => rows.some((r) => r.name === n && r.gated.length));
 const ungated = ungatedAll.filter((r) => !CHECKED[r.name]);
@@ -284,6 +289,7 @@ if (stale.length) {
   console.error("describing code that has moved. Remove the entry — the flag now does that work.");
   console.error("If the flag belongs to a neighbouring overlay, the boundary scan is broken; fix");
   console.error("that instead, and do NOT delete a reason that is still true.\n");
+  FAILED.push(`${stale.length} CHECKED entry/entries now name a flag of their own (${stale.join(", ")})`);
   process.exitCode = 1;
 }
 console.log("CHECKED — ungated for a reason, verified by reading the component:");
@@ -297,6 +303,7 @@ for (const r of checked) {
 const vanished = Object.keys(CHECKED).filter((n) => !rows.some((r) => r.name === n));
 if (vanished.length) {
   console.error(`\n  STALE (no longer assert absence at all — remove): ${vanished.join(", ")}`);
+  FAILED.push(`${vanished.length} CHECKED entry/entries no longer assert absence at all (${vanished.join(", ")})`);
   process.exitCode = 1;
 }
 
@@ -345,7 +352,23 @@ if (ungated.length) {
   console.error("no flag and no recorded reason. Either gate the copy on the read that feeds it,");
   console.error("or add a CHECKED entry saying why that copy cannot be an outage lie (seed-backed,");
   console.error("filter text, or a field a DB-derived object never carries).");
+  FAILED.push(`${ungated.length} overlay(s) assert absence with no flag and no recorded reason`);
   process.exitCode = 1;
+}
+
+/* THE SUMMARY IS GATED ON THE WHOLE RUN, NOT ON ONE SECTION, and until now it was the `else` of
+   the ungated test alone. A STALE or VANISHED entry sets the exit code seventy lines above here,
+   so such a run exited 1 with `ok — N overlay(s) assert absence: … 0 unexamined.` as its LAST
+   line and the real failure on stderr near the top of a long output. Measured rather than
+   reasoned: injecting one stale entry gives EXIT=1 and exactly that final line, and "0 unexamined"
+   is TRUE at the same time — the sentence is not even wrong, it is answering a different question
+   from the one the run failed on. `tail` is how anybody checks a guard by hand, and this cost a
+   wrong reading of THIS file: a run was read as clean from its last five lines while it was red.
+   CLAUDE.md has recorded the rule in prose since the check:seed-history vouch section made the
+   same mistake; prose did not stop it recurring here. */
+if (process.exitCode) {
+  console.error(`\ncheck:overlay-absence: FAILED — ${FAILED.join("; ") || "see the lines above"}.`);
+  console.error("Nothing printed above this line is a pass.");
 } else {
   /* All three numbers come from one partition and sum to `rows.length`, so the line cannot claim
      more than it counted. `explained` is the CHECKED entries that ACTUALLY matched a row — not

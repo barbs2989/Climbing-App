@@ -725,8 +725,8 @@ the total when deciding where a new guard belongs.
     - **THE SECTION RUNS BEFORE THE SUMMARY, and the first version did not** — appended after the
       `console.log`, a failure inside it was counted while the run had already printed *"ok"*. The
       exit code stayed correct and the OUTPUT lied, which is the footgun `check:overlay-absence`
-      still has and which cost a wrong reading of a test on the same day. Put a new section above
-      the summary it is counted in.
+      had for its whole life — recorded here as unfixed, and fixed in #1753 once prose alone had
+      failed to stop it recurring. Put a new section above the summary it is counted in.
   - Injection-tested; the five cases are listed at the bottom of the script. Case 4 is the one
     that shaped it: gating on `!c.id` looks equivalent and silently empties every seed
     climber, so the seed-climber assertion is **comparative** (against a name with no seed
@@ -5503,6 +5503,19 @@ the total when deciding where a new guard belongs.
   so it sits in `npm run build`, at **0.86x `check:policy-claims`** taken back to back on one box,
   best of two. **Quoted as a ratio because the clock here is fiction**: that reading was taken at
   load average 446 on 4 cores, where this file already records a profile being off by 4x.
+  - **NEVER RUN `npm run build` WHILE AN INJECTION SUITE IS IN FLIGHT — this gate made a third
+    kind of overlap fatal.** This file already forbids **committing** mid-suite (#1190 shipped
+    whichever revert happened to be live) and forbids **two runs of one suite** overlapping. This
+    guard adds a build gate that reads the very files suites MUTATE, so an ordinary build now
+    collides with them: run concurrently with `inject-overlay-absence-cases`, it reported
+    `ROTTED … "  calOpen: 'Calendar" -> 0 matches` — on a tree where that string is present, because
+    case 2 replaces exactly that string and the scan read the file mid-edit.
+    - **A rotted anchor and a mid-edit read print IDENTICALLY**, and the failure message's three
+      causes cannot separate them, so it sends a reader to repoint a case that is fine. `grep` the
+      anchor on the clean tree before acting on this guard's verdict.
+    - Deliberately **not** fixed by having the guard detect concurrency: a lock would have to be
+      shared by 89 suites and this file already records a lock being the fix for the sibling
+      hazard. The rule is the repair — one at a time.
   - **THIS HAD HAPPENED FOUR TIMES AND EVERY ONE WAS FOUND BY ACCIDENT.** This file already records
     the `check:units` promotion finding **two** cases still naming `lib/units-pref.js` after the
     guarded read/write folded into `lib/prefs.js` — *"reported HARNESS BUG on every run, of which
@@ -13912,8 +13925,48 @@ their own Résumé showed an amber **"Unverified"** chip.
       `DbAreaBrowser`'s *"No areas match."* filter copy while the row was really about line 1072 —
       which is correctly gated, with `if (error)` returning **ahead of** the empty branch. *A weak
       locator is not merely imprecise; it accuses code that is fine.*
-  - Injection-tested 3/3 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
-    landed by checksum.
+  - **A FAILING RUN ENDED ON `ok`, AND THE SENTENCE WAS TRUE — which is what made it survive.** The
+    summary was the `else` of the ungated test **alone**, while the STALE and VANISHED sections set
+    the exit code seventy lines above it. So a stale CHECKED entry gave **EXIT=1 with
+    `ok — 18 overlay(s) assert absence: 5 gated, 13 explained, 0 unexamined.` as the LAST line**,
+    and the real failure on stderr near the top of a long output. Measured by injecting one entry,
+    not reasoned about.
+    - **The ok line is not even wrong**: *0 unexamined* really was true. It answers a different
+      question from the one the run failed on, so a reader cannot catch it by disbelieving the
+      sentence — only by reading the exit code, which is exactly what `tail` does not show.
+    - **It had already cost a wrong reading of this very file.** A run was read as clean from
+      `tail -5`; re-running and checking the status gave EXIT=1 and `STALE … helpOpen, aboutOpen`.
+    - **THE GATE CONSULTS `process.exitCode`, NOT A LOCAL TALLY**, so a section added later that
+      sets it and forgets to record a reason still cannot be followed by an `ok`; the `FAILED`
+      array only supplies the wording. Keying it on the tally would put the two back in a position
+      to disagree, which is the defect.
+    - **NO DETECTOR — THE CLASS IS ONE, MEASURED.** Seven guards assign `process.exitCode = 1`
+      rather than calling `process.exit(1)`, and **six were already correct**: `check:signed-in`
+      gates its success line on `else if (!fails.length)`, `check:outage-copy`'s `dead()` calls
+      `process.exit(1)` and terminates, `check:deploy-drift` is one if/else-if chain,
+      `audit:prose-citations` sets `exitCode = 0` in its else, and `audit:expiring-closures` ends
+      on `exitCode || 0`.
+    - **`check:outage` LOOKED LIKE A SECOND INSTANCE AND IS NOT, and reading the code rather than
+      the shape is what settled it.** Its NOTHING-WAS-BLOCKED section sets the exit code and then
+      an `ok` prints far below — but the `dead` chain in between tests `!bad.__blocked` **itself**
+      (one `else if` earlier than the screens-differed floor), so the `ok` is unreachable in that
+      state. A detector built on the first reading would have been a detector for a class of one
+      wearing a class of two's clothes.
+    - Injection-tested **4/4**, and **the count is the smaller half of the change**: every failing
+      case now asserts the run prints **no `ok` verdict**, judged on the OUTPUT rather than on the
+      exit code, because those two disagreed for this guard's whole life. Proven load-bearing by
+      A/B rather than asserted — against the pre-fix guard, cases 1 and 4 report `claimed ok: true`
+      and FAIL while cases 2 and 3 are unmoved, since those leave `ungated` non-empty and the old
+      `else` was skipped. **Case 1 passed the old suite while the run ended on `ok`**: it asked only
+      whether the exit code was non-zero and whether the message appeared, and an exit code says
+      nothing about what the output claims.
+    - Case 4 reproduces the STALE branch **directly** (a CHECKED entry for an overlay that already
+      names a flag of its own) rather than through case 1's wide-window revert, so the branch is
+      exercised by a case whose subject it is.
+    - **A green run's output is byte-identical to before**, checked by diff rather than by eye: this
+      changes what a FAILING run says and nothing else.
+  - Injection-tested 4/4 (`scripts/oneoff/inject-overlay-absence-cases.mjs`), each proving its edit
+    landed by checksum and restoring the file byte-identically.
 
 **THE INBOX SAID YOU HAD NO CHATS WHEN THE READ HAD FAILED, and it is the first OVERLAY found
 doing it.** `fetchMyDirectMessages` throws on a database error — `check:read-failures` made sure of
