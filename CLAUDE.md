@@ -23,7 +23,7 @@ The index is grouped by area; each heading names the notes file for the guards u
 # ── Build and run ──
 npm install        # install deps (React 18 + Vite)
 npm run dev        # local dev server with HMR
-npm run build      # production build to dist/ (runs check:refs + check:hooks first)
+npm run build      # production build to dist/ — runs every guard in build:guards first (concurrently), then vite
 npm run preview    # serve the built dist/ locally
 
 # ── Guard infrastructure — notes: docs/guards/infrastructure.md ──
@@ -249,7 +249,7 @@ the maskable icon is a separate, full-bleed file — so read
 
 ## Architecture
 
-This is **ClimbMatch**, a mobile-first social app for finding climbing partners, planning objectives, and sharing route conditions. The entire application is a single React component file.
+This is **ClimbMatch**, a mobile-first social app for finding climbing partners, planning objectives, and sharing route conditions. Nearly all of it lives in three dense JSX files — `ClimbMatch.jsx` (the `App` component), `ClimbMatchCore.jsx` (constants, helpers, presentational components) and `RouteDetail.jsx` (the route page) — plus `EnrichmentPanels.jsx` and the DB-backed modules in `lib/`.
 
 - `index.html` → loads `main.jsx` → renders `<App/>` from `ClimbMatch.jsx`.
 - **`ClimbMatch.jsx` + `ClimbMatchCore.jsx` are essentially the whole app.** `ClimbMatchCore.jsx` holds bands 1-2 (constants, seed data, pure helpers, presentational components — everything that used to sit above `App`); `ClimbMatch.jsx` holds the `App` component and imports the rest from core. Module globals that `App` reassigns (`UNITS`, `DLOCALE`, `RESPONSE_RATES`, toast/celebration timers) are written through `__set_*` shims exported by core, because ESM import bindings are read-only. Both files keep the deliberately dense, single-line-per-declaration style (many `const`s and components packed onto one physical line). Expect very long lines; use `grep -n` with the symbol name rather than scrolling.
