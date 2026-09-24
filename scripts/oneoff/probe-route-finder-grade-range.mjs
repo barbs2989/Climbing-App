@@ -39,7 +39,7 @@ for (const n of [10, 11, 12, 13]) {
   ok(gn >= at("5." + n + "a")[1] && gn <= at("5." + n + "d")[2], "bare 5." + n + " (" + gn + ") falls inside the 5." + n + "a–5." + n + "d range");
 }
 // Every discipline the finder lists either has a scale or is deliberately refused.
-const want = { sport: "yds", trad: "yds", rock: "yds", bouldering: "v", scrambling: "class", aid: "aid,yds", mixed: "m,yds", ice: "wi,yds" };
+const want = { sport: "yds", trad: "yds", toprope: "yds", bouldering: "v", scrambling: "class", aid: "aid,yds", mixed: "m,yds", ice: "wi,yds" };
 for (const [d, s] of Object.entries(want)) ok(gradeScalesFor(d).join(",") === s && Array.isArray(gradeScaleFor(d)), d + ": offers " + s + " (got " + gradeScalesFor(d).join(",") + ")");
 ok(gradeScaleFor("ice", "yds") === GRADE_SCALES.yds && gradeScaleFor("ice", "wi") === GRADE_SCALES.wi && gradeScaleFor("ice", "bogus") === GRADE_SCALES.wi, "ice: the scale toggle picks the option list, defaulting to WI");
 for (const d of ["", "alpine", "mountaineering"]) ok(gradeScaleFor(d) === null, (d || "All") + ": grade range refused (mixed scales / no discipline)");

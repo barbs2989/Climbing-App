@@ -8,7 +8,7 @@
 //      per level — the same rule import-ice-wi.mjs uses, since our areas came from OpenBeta, which
 //      came from this site. A level with zero or several same-named children refuses the route.
 //   2. MATCHED to an existing route (same area, same name): fill ice_grade / aid_grade and the
-//      per-scale numbers (0199) where they are EMPTY. An existing grade is never overwritten.
+//      per-scale numbers (0203) where they are EMPTY. An existing grade is never overwritten.
 //   3. NOT in our catalog but its area resolves: add it, discipline from the export's type.
 //   4. Anything else is refused and counted by reason.
 // Grade numbers come from lib/grade.js gradeNumFrom — the single parser.
