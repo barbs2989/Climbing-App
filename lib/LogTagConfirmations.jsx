@@ -26,7 +26,7 @@ export default function LogTagConfirmations({ uid, showToast }) {
     respondToLogTag(t.log_id, verdict)
       .then(() => {
         const who = pubName({ name: t.author_name, username: t.author_username, showName: true });
-        if (showToast) showToast(verdict === "confirmed" ? "Confirmed — " + who + "’s climb now counts fully on Ranks." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
+        if (showToast) showToast(verdict === "confirmed" ? "Confirmed — thanks for backing up " + who + "’s climb." : "Marked as not with you — " + who + "’s climb no longer counts on Ranks.");
         return q.refetch();
       })
       .catch(() => { if (showToast) showToast("Couldn’t save your answer — nothing changed. Try again."); })
