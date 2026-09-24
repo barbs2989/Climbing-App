@@ -26793,3 +26793,112 @@ batch continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries (307
 through 325): 139 audited through batch 324 + 8 this batch = 147 audited, 524 - 147 = **377
 in-scope routes remain unaudited this pass**.
+
+## Batch 326 (2026-09-24, pass 6)
+
+Checked 8 routes across 5 peaks: Mount Goode (Northeast Face, Southwest Couloir), Mount
+Stuart (Gorillas Direct), Gunnshy Peak (Standard Route), Middle Peak/Gunsight Range
+(Gunrunner, Standard Route), Guye Peak (Improbable Traverse, West Face).
+
+**Confirmed errors fixed — see `audits/sql/2026-09-24-batch-326.sql`:**
+
+- `wa_goode_mountain_northeast_face`: internal self-contradiction between the row's
+  top-level `gain_ft`/`loss_ft` (4,799 / 7,000 — a 2,201 ft mismatch) and its own
+  `itinerary`, which already sums to 7,200 ft of gain AND 7,200 ft of loss across its
+  three days. Since this route is an out-and-back loop returning to its own starting
+  trailhead (confirmed by the itinerary's own day-3 "Reverse the approach... to Highway
+  20"), total gain and total loss over the full trip must be exactly equal — it is not
+  possible to finish a closed loop higher or lower than you started. The itinerary's
+  7,200/7,200 already satisfies that identity (and is itself grounded in this row's own
+  waypoint elevation profile: trailhead ~4,500-4,855 ft, shared Goode-Glacier high camp
+  ~6,700-6,800 ft, summit 9,220 ft) while the top-level fields do not. Corrected both
+  top-level fields to 7,200 ft.
+- `wa_gunrunner`: `grade`/`rock_grade` read a bare "5.10", omitting an aid pitch.
+  Confirmed via two independent sources on the route's first ascent (Blake Herrington &
+  Dan Hilden, July 9, 2007) — the original American Alpine Journal 2008 writeup and
+  Alpinist.com's contemporaneous newswire report — both giving the published grade as
+  "IV 5.10 A1". This row's `commitment`/`alpine_grade` already correctly said "IV", so
+  only the technical grade fields needed the missing "A1". Corrected both to "5.10 A1".
+
+**Flagged for human review (not confirmed errors — no SQL written):**
+
+- `wa_gorillas_direct`: `approach` text names "Longs Pass (6,200 ft) at about mile 2.5"
+  as the shared landmark before Mount Stuart's south/west-side routes diverge, but this
+  row's own waypoint at the identical mile-2.5 mark is named "Ingalls Pass" (6,457 ft).
+  Confirmed via WTA/USFS (Longs Pass Trail #1229) that Longs Pass and Ingalls Pass are
+  reached via different forks of the same Esmeralda-trailhead trail system at roughly
+  mile 2 (right fork → Longs Pass Trail; straight/left → continue on Ingalls Way Trail
+  toward Ingalls Pass/Lake Ingalls), not one landmark en route to the other. Since this
+  specific route explicitly continues "past Ingalls Lake" (only reachable via the
+  Ingalls Way fork), "Longs Pass" in the shared opening sentence looks like a mix-up
+  with Ingalls Pass — worth noting a near-identical Longs Pass/Stuart-approach mix-up
+  was already flagged on a different route (West Ridge) back in batch 33, so this area
+  of the dataset has a history of this specific confusion. Not fixed here because the
+  same approach paragraph appears to be shared verbatim across several sibling Mount
+  Stuart routes not in this batch (Cascadian Couloir, South Headwall, West Ridge, North
+  Ridge, King Kong, Gorillas in the Mist) — a one-row edit could leave the others
+  contradicting it, and I have not verified whether "Longs Pass" is in fact the correct
+  landmark for the Cascadian Couloir/South Headwall half of the same sentence.
+- `wa_gunrunner`: separately from the grade fix above, `gain_ft` = 5,000 with `loss_ft`
+  entirely NULL. Both sources found for the FA describe the roped traverse across the
+  four Gunsight summits itself as gaining "approximately 1,500 feet" — well under the
+  stored 5,000 — but neither gives a trip-total figure that would include the two-day
+  glaciated approach from Downey Creek Trailhead (1,400 ft) to the high camp/ridge,
+  which on the sibling `wa_gunsight_peak_standard` row's own waypoints is itself a
+  plausible ~5,000-7,100 ft climb. Could not determine with confidence whether this
+  row's `gain_ft` is meant to represent the approach alone, the technical traverse
+  alone, or a combined total, so there is no single well-sourced number to write.
+  `loss_ft` being missing entirely is related: the route descends by rappel onto the
+  Blue Glacier (confirmed as a real, distinct glacier near Gunsight Peak in Chelan
+  County — not a mix-up with the far more famous Blue Glacier on Mount Olympus, as I
+  initially suspected before checking) rather than reversing the approach, and this row
+  has no hike-out description to derive a loss figure from at all.
+- `wa_goode_mountain_northeast_face`: `fa` reads "Fred Beckey and John Parrott, 1954".
+  Could not corroborate — every source found for a Mount Goode northeast-aspect route
+  describes only the well-documented Northeast Buttress (Fred Beckey and Tom Stewart,
+  August 6, 1966; already correctly recorded in this database under the separate
+  `wa_mount_goode_northeast_buttress` row), with no mention anywhere of a "Parrott" or a
+  1954 Goode ascent. Not confidently contradicted either — Beckey partnered with a huge
+  number of different climbers across a very prolific 1950s-60s Cascades career, so an
+  obscure, less-documented "Northeast Face" line distinct from the famous 1966 Buttress
+  route is plausible and may simply not be indexed online; this row's own text already
+  treats the two as separate routes rather than conflating them. Flagging as unverified
+  pending a source like Beckey's own Cascade Alpine Guide.
+- `wa_guye_peak_improbable_traverse` / `wa_guye_peak_r1`: possibly contradictory descent
+  guidance about a specific rappel tree between Guye Peak's south and middle summits.
+  Improbable Traverse's `rappels` field names a "slung tree on the east side below the
+  middle summit" as the standard rappel option; West Face's (r1) `descent_text`
+  explicitly warns "there is a tree at the top of the gully between the south and middle
+  summits that climbers should specifically NOT rappel from (flagged as unsound/
+  inadvisable in route notes)". These could describe the same anchor with contradictory
+  guidance, two different nearby trees, or a genuine before/after discrepancy — both
+  routes' own text notes the West Face was heavily altered by a November 2021 rockfall
+  event, so it's plausible one field reflects pre-2021 beta and the other post-2021.
+  Could not find an external, recent trip report confirming or denying this specific
+  tree's current soundness. This is anchor-reliability information, so flagging rather
+  than guessing which field is stale.
+
+**Checked and confirmed correct (no action):** Mount Goode's Southwest Couloir FA (Wolf
+Bauer, Philip Dickert, Joe Halwax, Jack Hossack, George MacGowan, July 5, 1936 — matches
+Wikipedia exactly, word for word including all five names). `wa_gunsight_peak_standard`'s
+gain_ft/loss_ft (14,000/14,000) audited initially as suspiciously high for an 8,198 ft
+summit but found to sum exactly from this row's own 6-day itinerary breakdown (3,800+
+5,000+2,100+2,200+800+100 = 14,000 both ways) and to match its own totalNote ("roughly
+14,000 ft of cumulative gain/loss") — this is a genuine 6-day loop that also climbs
+Sinister Peak, not a data error. `wa_gunrunner`'s four-summit traverse claim, its "Blue
+Glacier" rappel-descent detail, and its Downey Creek Trailhead approach were all
+independently confirmed via the AAJ/Alpinist sources above. `wa_guye_peak_r1` and
+`wa_guye_peak_improbable_traverse` summit waypoints (47.44203, -121.40875 / 5,168-5,169
+ft) are precise, matching six-decimal coordinates rather than the rounded/contaminated
+coordinate this same peak has previously been flagged for elsewhere in this codebase —
+that specific historical issue appears already resolved on these two rows.
+`wa_gunnshy_peak_standard_route` audited clean throughout (no grade/FA/pitches recorded,
+appropriate for an unmaintained off-trail scramble route; approach/descent/gain
+internally consistent).
+
+Progress file's `last_processed_id` advanced to `wa_guye_peak_r1`. Next batch continues
+in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries
+(307 through 326): 147 audited through batch 325 + 8 this batch = 155 audited,
+524 - 155 = **369 in-scope routes remain unaudited this pass**.
