@@ -67,8 +67,8 @@ const CASES = [
     name: "panel-stops-destructuring",
     why: "the other end of the same link — the panel stops taking the props while the call site " +
          "still sends them, which is silent to every other guard in the chain",
-    edit: (s) => s.replace("function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit })",
-      "function RouteFinderPanel({ scope, onOpen, onBack, C })"),
+    edit: (s) => s.replace("function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })",
+      "function RouteFinderPanel({ scope, onOpen, onJumpToArea, C })"),
     expect: "fail",
     must: /RouteFinderPanel destructures them/,
   },

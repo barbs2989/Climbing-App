@@ -7,6 +7,7 @@ import { useMemo, useState, lazy, Suspense } from "react";
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useSession } from "./auth";
+import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
   submitInquiry, submitReview,
@@ -185,7 +186,8 @@ export default function DbGuides({ onDash, notify, C }) {
 
   const guides = useMemo(() => {
     let list = (rows || []).map(g => ({ ...dbGuideToCamel(g), _verified: isGuideVerified(g.guide_credentials || []) }));
-    if (q.trim()) { const s = q.trim().toLowerCase(); list = list.filter(g => g.name.toLowerCase().includes(s) || (g.title || "").toLowerCase().includes(s) || g.regions.some(r => r.toLowerCase().includes(s))); }
+    // Same spelling rules as every other search box (lib/search.js): "mt hood" finds a guide who lists "Mount Hood".
+    if (q.trim()) list = list.filter(g => searchMatches(q, [g.name, g.title || "", ...g.regions].join(" ")));
     if (disc) list = list.filter(g => g.disciplines.includes(disc));
     list = list.slice().sort((a, b) => sort === "price" ? a.rate - b.rate : (b.rating || 0) - (a.rating || 0));
     return list;

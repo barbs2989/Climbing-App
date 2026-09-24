@@ -218,6 +218,7 @@ npm run check:grade-parser  # grade_num is parsed in one place, and so is the DI
 npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 
 # ── Database, migrations and git history — notes: docs/guards/database-and-history.md ──
+npm run check:search-norm # "mt baker" finds Mount Baker — the JS and SQL spelling rules are ONE table (in build)
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
