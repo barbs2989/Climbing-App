@@ -6,7 +6,7 @@
 // `routes.discipline` column stores "trad"/"sport" as direct values (verified
 // live: ~180 trad + ~135 sport areas), not a "rock" + separate `style` split —
 // both need their own color/icon here or crag routes fall back to plain blue.
-// `toprope` (0199) is what the catalog used to store as "rock": top-rope-only climbs.
+// `toprope` (0200) is what the catalog used to store as "rock": top-rope-only climbs.
 import { renderToStaticMarkup } from "react-dom/server";
 
 export const DISC_COLORS = {
