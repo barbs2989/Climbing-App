@@ -82,6 +82,7 @@ npm run check:overlay-absence # every overlay that claims you have none is gated
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:read-failures # no failed read that a caller reads as an empty one (in build)
 npm run check:outage-flag-reach # no outage flag that is computed and then read by nothing (in build)
+npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads once, not "This screen hit a bug" (in build)
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)

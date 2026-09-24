@@ -179,12 +179,19 @@ function groupWhere(cl,n){
   const where=(cl&&cl.location||"").trim();
   return "📍 "+(where?"Based in "+where+" · ":"")+n+(n===1?" member":" members");
 }
+/* main.jsx reloads the page when a lazy screen's file is gone after a deploy. Without this the
+   climber who tapped Partners landed back on Home and had to tap it again, so the tab is kept in
+   sessionStorage and reopened -- but ONLY right after that automatic reload (the marker main.jsx
+   writes), never on an ordinary visit, which still opens on Home. */
+const TAB_KEY="climbmatch:tab",TAB_IDS=["today","routes","discover","crew","logbook","ranks","me"];
+function tabAfterChunkReload(){try{var at=Number(window.sessionStorage.getItem("climbmatch:chunk-reload-at"))||0,t=window.sessionStorage.getItem(TAB_KEY);if(t&&TAB_IDS.includes(t)&&Date.now()-at<30*1000)return t;}catch(e){}return "today";}
 export default function App(){
   /* Every text box in the app grows as you type and gets a formatting bar on focus.
      Installed once here by delegation rather than wired into each of the 35 boxes — see the
      note on the implementation in ClimbMatchCore.jsx for why per-call-site would rot. */
   useRichTextareas();
-  const [tab,setTab]=useState("today"),[selRoute,setSelRoute]=useState(null),[routeFrom,setRouteFrom]=useState("routes"),[routeStack,setRouteStack]=useState([]),[msgBack,setMsgBack]=useState("crew"),[chatFromInbox,setChatFromInbox]=useState(false),[homeDismiss,setHomeDismiss]=useState([]),[condExpand,setCondExpand]=useState(false),[cragSort,setCragSort]=useState("grade"),[cragFilter,setCragFilter]=useState("all"),[dateFmt,setDateFmt]=useState(loadDateFmt),[selArea,setSelArea]=useState(null),[routeView,setRouteView]=useState("areas");const [areaTreeOpen,setAreaTreeOpen]=useState(false);const [localComments,setLocalComments]=useState(COMMENTS);const notifyMentions=(txt,candidates,extra)=>{const ids=extractMentionIds(txt,candidates||[]).filter(function(mid){return mid!==0;});if(!ids.length)return;const names=ids.map(function(mid){const c=(candidates||[]).find(function(x){return x.id===mid;});return c?c.name.split(" ")[0]:null;}).filter(Boolean);/* "Notified X" claimed a push that does not exist — there is no per-user notification table (0061 is GPS-only), so nothing reaches the mentioned climber. The mention itself is real and visible in the posted text, so say only that. */if(names.length)showToast("Mentioned "+names.join(", "));};
+  const [tab,setTab]=useState(tabAfterChunkReload),[selRoute,setSelRoute]=useState(null),[routeFrom,setRouteFrom]=useState("routes"),[routeStack,setRouteStack]=useState([]),[msgBack,setMsgBack]=useState("crew"),[chatFromInbox,setChatFromInbox]=useState(false),[homeDismiss,setHomeDismiss]=useState([]),[condExpand,setCondExpand]=useState(false),[cragSort,setCragSort]=useState("grade"),[cragFilter,setCragFilter]=useState("all"),[dateFmt,setDateFmt]=useState(loadDateFmt),[selArea,setSelArea]=useState(null),[routeView,setRouteView]=useState("areas");const [areaTreeOpen,setAreaTreeOpen]=useState(false);const [localComments,setLocalComments]=useState(COMMENTS);const notifyMentions=(txt,candidates,extra)=>{const ids=extractMentionIds(txt,candidates||[]).filter(function(mid){return mid!==0;});if(!ids.length)return;const names=ids.map(function(mid){const c=(candidates||[]).find(function(x){return x.id===mid;});return c?c.name.split(" ")[0]:null;}).filter(Boolean);/* "Notified X" claimed a push that does not exist — there is no per-user notification table (0061 is GPS-only), so nothing reaches the mentioned climber. The mention itself is real and visible in the posted text, so say only that. */if(names.length)showToast("Mentioned "+names.join(", "));};
+  useEffect(function(){try{window.sessionStorage.setItem(TAB_KEY,tab);}catch(e){}},[tab]);
   useEnrichmentDb();
   // RouteDetail is a lazy chunk so it stays out of the startup bundle, but a
   // cold fetch on the user's FIRST route-open would show the Suspense fallback
