@@ -1233,7 +1233,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onAddClimb, TopContributors }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onStatePicked, onAddClimb, TopContributors }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1266,6 +1266,14 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
       : null);
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
+
+  // Whether a state has been chosen at all. Reported separately from onAreaContext
+  // because that one goes null for any area without a coordinate, so it cannot say
+  // "the climber is still on the country/state picker". App uses this to keep the
+  // Fire map entry off the top of the Climbs tab until a state is picked.
+  useEffect(() => {
+    if (onStatePicked) onStatePicked(!!stateNode);
+  }, [onStatePicked, !!stateNode]);
 
   const jump = i => {
     setScreen("areas");
