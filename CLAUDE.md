@@ -8913,24 +8913,81 @@ the correction knows the screen is wrong, and they have no way to report it.
       is halving unconditionally"* — which is a correct diagnosis of case 9 and **the wrong one on a
       plain revert**, where the tile is not halving at all. *A guard that fires correctly can still
       prescribe the wrong repair*, the trap `check:column-drift` records.
-    - **THE PLANNER HALF IS DELIBERATELY NOT TOUCHED, and it is the bigger one.** `scarfHrs` — which
-      feeds **Est. summit, Est. return and the After-dark warning** — is still called with raw
-      `route.distKm`, so on those same 335 routes the hours are computed from a distance the page
-      does not show. **215 of them would get SHORTER** (p50 **−0.98 hr**, worst **−13.4 hr**), and
-      erring short on *are you down before dark* is the **#641 direction that reads green**. Moving
-      a safety estimate for 335 routes is a product decision, so it is **raised rather than swept**
-      — the same call the trust tiers got.
+    - **THE PLANNER HALF IS DONE — see section 8 — AND THE PARAGRAPH DEFERRING IT CARRIED THREE
+      WRONG FIGURES, WHICH IS THE MORE USEFUL HALF.** It read *"deliberately not touched … 215 of
+      them would get SHORTER (p50 −0.98 hr, worst −13.4 hr) … raised rather than swept"*. Re-run
+      against the live catalog rather than quoted, the move is **203 shorter and 118 LONGER**, p50
+      **−0.94**, worst **−10.39** — so the premise the deferral rested on, that the change errs
+      short on *are you down before dark*, was **not even one-directional**. A third of the
+      affected routes get a more conservative estimate.
+    - **AND THE #641 OBJECTION DOES NOT MATERIALISE AT ALL, measured rather than argued**
+      (`scripts/oneoff/measure-planner-distance-ab.mjs`): across 790 comparable WA routes, 326
+      estimates move and the "After dark" warning goes **464 → 465 — ZERO suppressed, one added**.
+      Robust rather than a knife-edge: the median mover sits **10.45 hr** from the 18.5 hr line and
+      only **14 of 326** are within two hours of it, because the routes that shorten are multi-day
+      walks estimated at 30-50 hr. The warning was never what moved — only the number a climber
+      reads.
+    - **A COUNT QUOTED IN PROSE IS A HAND-COPY OF A MEASUREMENT.** Those three figures sat here
+      long enough to be read back to a user as current, and every one was wrong. Re-run the script;
+      do not quote this line.
     - Proven on **real rows** as well as fixtures by
       `scripts/oneoff/probe-trailhead-approach-is-one-way.mjs`, which renders the real `RouteDetail`
       because `dbRouteToCamel` and the card's own gating sit between the column and the screen:
       **8/8 with the fix, 8/8 FAILING without it.**
-  - Injection-tested **11/11** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
-    proving its edit landed **by checksum** and restoring the file byte-identically. Cases 1-3 put
+  - **SECTION 8 — THE PLANNER WAS THE LAST READER ON THIS PAGE STILL ON THE RAW COLUMN.** Section 7
+    pins the TILE; the planner is a second reader of the same fact on the same page, so
+    `scarfHrs(route.distKm, …)` meant Est. summit, Est. return and the After-dark warning were
+    computed from a distance the page did not show. Four readers already used `effDistKm` — TECH
+    STATS, the header strap, the TrailheadCard tile and the area browser's span — and this was the
+    holdout, so the page stated the approach distance two ways.
+    - **THE CURRENT ARITHMETIC DOUBLE-COUNTED THE WALK OUT on the rows that move most.**
+      `wa_blizzard_peak_standard` is a 64-mile round trip whose `dist_km` holds the whole 63, so
+      the walk was charged once to reach the summit and **0.75 of it again** to get out — **110
+      miles of walking for a 64-mile trip, 72% over**. With `effDistKm` it charges 1.75 × 32 = 56
+      against that 64, and the shortfall is the deliberate downhill-is-faster factor rather than an
+      error. **72% over versus 12% under.**
+    - **BEHAVIOURAL, NOT A SPELLING, and that is what makes it an anti-revert gate.** Reverting the
+      call moves **no identifier** — `effDistKm` stays imported and four other readers keep calling
+      it — so `audit:silent-reverts` is blind to it by its own closing caveat, and a source match
+      would pin one way of writing the call and forbid a correct refactor. Each fixture is instead
+      rendered against a **CONTROL identical but for the itinerary**: read raw, the two are
+      byte-identical inputs and the estimate cannot move at all. The itinerary reaches that
+      estimate through `effDistKm` and nothing else (`gainCoversWholeOuting` reads gain/loss,
+      `publishedIsWholeDay` reads timing, `sectionsCoveredByItinerary` touches only the
+      published-times block), which is what makes the movement attributable.
+    - **BOTH DIRECTIONS, because a rule that only ever demands a SHORTER estimate is satisfied by
+      an unconditional halving** — section 7's own lesson, and why a recorded point-to-point
+      fixture exists here too: an out-and-back halves its itinerary total and gets shorter, a
+      `point` does not retrace, so its total IS the one-way distance and it gets LONGER.
+    - **THE INJECTION FOUND A WEAKNESS IN THE GUARD RATHER THAN IN THE APP, which is what a suite
+      is for.** Section 8's point-to-point control was section 7's **30 km**, and against that a
+      shape-blind halving (99.8 → 49.9 km) still reads LONGER — so case 13 **passed silently**
+      against exactly the over-reach it exists to reject, while section 7 correctly failed. The
+      control is **70 km** now, between the halved and the full figure, and only then does the case
+      fire. Section 8 keeps its own fixtures rather than widening section 7's, so an edit to one
+      section's data cannot silently weaken the other's assertion.
+    - **CASE 13 IS ALSO WHY THE SUITE NOW JUDGES ON THE GUARD'S OWN FAIL LINES.** It trips section
+      7 AND section 8, so a harness reading only the exit code would credit section 8 with its
+      neighbour's catch — *an injection that produces a different failure is not a catch*. Each
+      case may name the text its own failure must carry, matched against **FAIL lines only** (never
+      the word, since these assertion labels are prose and several contain it), and the harness
+      **refuses any expectation that already appears in the clean run**. It also snapshots every
+      file a case may touch — case 13 edits `lib/outing.js` — and reports **TREE NOT RESTORED**
+      rather than exiting 0 on a tree it has damaged.
+    - **WHAT IT DOES NOT CLAIM**: that `effDistKm` is the better number on every row. Among the 118
+      that get LONGER are routes where `dist_km` may correctly hold the one-way while the itinerary
+      covers more than the approach, and there it overstates — conservatively, and agreeing with
+      the tile above it, which is the property being bought.
+  - Injection-tested **14/14** (`scripts/oneoff/inject-trailhead-directions-cases.mjs`), each case
+    proving its edit landed **by checksum** and restoring every file it touches byte-identically. Cases 1-3 put
     the duplication back one piece at a time so the guard cannot pass on the strength of its
     neighbours; **case 4b reverts #1493's gate** and must fail on section 1b, so the closed gap
     cannot quietly re-open. Cases 8-10 are section 7 — the real defect, the unconditional-halving
     over-reach, and a **SILENT** rename, since the rule is about which source is read rather than
-    what the local is called.
+    what the local is called. **Cases 11-13 are section 8** — the planner reverted to the raw
+    column, a **SILENT** hoist to a local (section 8 is behavioural, so it cannot be defeated by
+    how the call is spelled), and the shape-blind halving, which is the one that edits
+    `lib/outing.js` rather than the app file.
 - **`check:camping`** asserts that **CAMPING & BIVY reaches the Planner tab**, on every
   discipline that can benight a party, and that it merges its **two** stores into one section.
   Static SSR, so it sits in `npm run build`.
