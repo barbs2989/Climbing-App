@@ -1,4 +1,4 @@
--- 0189 — a photo can carry a description of what it shows (WCAG 1.1.1).
+-- 0193 — a photo can carry a description of what it shows (WCAG 1.1.1).
 --
 -- A photo that IS the content needs a text alternative, and only the climber who took it knows
 -- what is in it. Most photo stores already have room: a route photo is a `contributions` row
