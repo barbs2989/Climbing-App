@@ -484,8 +484,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       caption must still run past 20 characters and still say it is about grades or sends. Two
       injection cases pin that — an emptied caption and a bare *"Grades."* both fail.
     - **THE SIBLING WAS MEASURED AND IS CLEAN, so this is a CLASS OF ONE rather than one of N.**
-      Three Leaderboards badges are `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
-      notes say *"logged"* — but **no seed climber carries a stored `classics`, `highpoints` or
+      The Classic climbs Leaderboards badge (the highpoints and peaks ones were removed) is `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
+      notes say *"logged"* — but **no seed climber carries a stored `classics` or
       `peaks` number**, so every badge value is entirely real ticks and the wording is correct
       there. The `+(pp.X||0)` term is inert today. *A detector for a class of one is the thing this
       repo keeps refusing to build*, which is why this is an assertion inside the guard whose

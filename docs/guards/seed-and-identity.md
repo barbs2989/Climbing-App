@@ -56,7 +56,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   in or out — while `ME.name` becomes the real account's profile name; and a **DB-backed
   friend**, a uuid that the friends list hands to `FullProfile`. Before #735 a real account
   named "Nathan Barber" saw *Angels Landing, Oct 2024, Summit, 5★* on its own résumé. Not
-  cosmetic: three `Leaderboards` badges (`classics_b`, `highpoints_b`, `peaks_b`) **count**
+  cosmetic: the `classics_b` Leaderboards badge **counts**
   those rows and `me` is in the pool whenever `showOnRanks` is set, so a collision **scores**.
   Gated by `npm run build`.
   - The id test alone cannot work, for the reason #680 records: **`0` is a real id.** The gate
