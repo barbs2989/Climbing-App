@@ -20,7 +20,7 @@
 //
 // Before the fix, signing in with a profile named "Nathan Barber" put **Angels Landing, Oct
 // 2024, Summit, 5 stars** on your own résumé — a Zion hike the account never logged. It is not
-// only cosmetic: three Leaderboards badges (classics_b, highpoints_b, peaks_b) COUNT these
+// only cosmetic: two Leaderboards badges (classics_b, peaks_b) COUNT these
 // rows, and `me` is in the leaderboard pool whenever showOnRanks is set, so a name collision
 // SCORES. That is the [[fabricated-activity-family]] lesson — check what the invented value
 // gates, not just what it prints.
