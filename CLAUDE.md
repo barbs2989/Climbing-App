@@ -6256,7 +6256,7 @@ the total when deciding where a new guard belongs.
       disagrees with the old parser too, so those rows were already drifting — `wa_sahale_mountain_r1`
       stores 3 where the old parser says 0, `wa_mount_challenger_challenger_glacier` stores 5 where
       it says 6. That is `audit:grade-num-drift`'s subject, not this sweep's.
-      - **READ, 2026-09-23 (#1780), AND THE LIST IS NOW SEVEN.** The count moved because the sweep
+      - **READ 2026-09-23, AND THE LIST IS NOW SEVEN.** The count moved because the sweep
         itself wrote 8,892 rows; re-derive it rather than quoting either figure.
         **`rock_grade` IS THE ADJUDICATOR** — an independent record of the same route's technical
         difficulty, written by a different pass — so where it and the parser AGREE and the stored
@@ -6298,7 +6298,7 @@ the total when deciding where a new guard belongs.
       row's own `rock_grade`, one applying a rule decided afterwards. The eighth,
       `wa_guye_peak_r2`, is unmoved by either.
     - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE** — both are now MEASURED
-      (#1780), and **only ONE of them was real**, which is the part worth reading.
+      (2026-09-23), and **only ONE of them was real**, which is the part worth reading.
       - **LOWERCASE `v11`/`v6` WAS REAL AND IS FIXED.** Those rows scored **null**, so they sorted
         behind the whole catalog and were dropped outright by any range filter. The V branch is
         case-insensitive now. Measured over all **205,382** graded routes: **12 RESCUED, 0 CHANGED,
@@ -6350,7 +6350,7 @@ the total when deciding where a new guard belongs.
       - **14 rows differ in total and 11 are MASKED by `route.timing`**, not immune: `techH` prefers
         a published or derived summit time, so those activate the day that column is dropped. The
         largest is `wa_liberty_crack` (12 pitches, `gn` 11.25 -> 13.5). Small **today**.
-      - **THE `pitches = 0` POINTER IS NOW MEASURED (#1780), AND THE COLUMN COUNT OVERSTATED IT BY
+      - **THE `pitches = 0` POINTER IS NOW MEASURED (2026-09-23), AND THE COLUMN COUNT OVERSTATED IT BY
         FOUR ORDERS OF MAGNITUDE: the answer is SIX ROUTES.** **128,020** roped routes store 0 or
         null against **617** with a real count, and `techHrs` returns **0** for those — `0074`'s
         *"0 means unknown for a roped route and no pitches for a boulder problem"* conflation
@@ -6403,7 +6403,7 @@ the total when deciding where a new guard belongs.
       the **invariant** instead — a highest-wins parser can only return a LARGER number than a
       first-match one — so `lib > pipeline` is intended and a lowering, a loss or a newly-parsed
       value still exits 1.
-      - **#1780 ADDED A SIXTH RULE, AND IT IS THE NARROWEST ONE THERE ON PURPOSE.** The V branch is
+      - **A SIXTH RULE WAS ADDED 2026-09-23, AND IT IS THE NARROWEST ONE THERE ON PURPOSE.** The V branch is
         case-insensitive now and the fossil is not, so `v11` goes null -> 11 — precisely the
         *newly-parsed* shape the sentence above leaves UNEXPECTED. **Declaring "a newly-parsed value
         is fine" would gut the check**, because that is exactly what a pattern widened beyond its

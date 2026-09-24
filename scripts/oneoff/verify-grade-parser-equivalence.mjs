@@ -71,7 +71,7 @@ const INTENDED = new Map([
    live catalog; this keeps the fossil copy meaningful rather than retiring it. */
 const raisedByRule = (a, b) => a != null && b != null && b > a;
 
-/* THE SIXTH IS ALSO A RULE, and it is the narrowest one here. Since #1780 lib/grade.js reads a
+/* THE SIXTH IS ALSO A RULE, and it is the narrowest one here. Since 2026-09-23 lib/grade.js reads a
    LOWERCASE V grade (`v11`, `v0`) and the frozen pipeline copy does not, so those inputs go
    null -> a value.
 

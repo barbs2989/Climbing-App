@@ -83,8 +83,8 @@ function build({ sp = "", vf = "" } = {}) {
 /* THE CONTROL COMES FIRST. `build()` with nothing changed must reproduce the SHIPPED parser on
    every row, or every "candidate X changes N rows" figure below is measuring my transcription
    rather than the widening. */
-/* WHICH WIDENINGS ARE ALREADY SHIPPED IS DERIVED FROM THE PARSER, never restated here. #1780
-   made the V branch case-insensitive, and a control hardcoded to the pre-#1780 shape failed
+/* WHICH WIDENINGS ARE ALREADY SHIPPED IS DERIVED FROM THE PARSER, never restated here. 2026-09-23
+   made the V branch case-insensitive, and a control hardcoded to the pre-2026-09-23 shape failed
    closed on the very next run — correctly, and that is a script that goes stale the moment its
    subject ships. Asking the shipped parser two one-line questions cannot rot. */
 const V_SHIPPED = gradeNumFrom("v1", "v") != null;
