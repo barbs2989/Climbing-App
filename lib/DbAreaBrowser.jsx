@@ -731,7 +731,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // ALPINE AND MOUNTAINEERING ARE STILL LEFT OUT. gradeNumFrom (lib/grade.js) takes a YDS number
 // wherever the grade string has one and otherwise falls back to Class, a French alpine grade
 // (AD = 3) or a commitment numeral (Grade III = 3), and their grade_system labels were never
-// corrected (0189 relabelled ice/mixed/aid only), so one number means different grades on
+// corrected (0196 relabelled ice/mixed/aid only), so one number means different grades on
 // different rows there.
 //
 // The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
@@ -787,7 +787,7 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice" };
 //     the older rows whose only grade is 5.x — so ice offers both and filters on grade_system.
 // Re-run the measurements before widening this.
 const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], rock: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["yds"], mixed: ["yds"], ice: ["wi", "yds"] };
-// The disciplines 0189 relabelled, where grade_system now says which scale grade_num is on, so a
+// The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
 // range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
 // corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
 // routes the range has always returned.

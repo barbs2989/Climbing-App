@@ -43,11 +43,11 @@ const want = { sport: "yds", trad: "yds", rock: "yds", bouldering: "v", scrambli
 for (const [d, s] of Object.entries(want)) ok(gradeScalesFor(d).join(",") === s && Array.isArray(gradeScaleFor(d)), d + ": offers " + s + " (got " + gradeScalesFor(d).join(",") + ")");
 ok(gradeScaleFor("ice", "yds") === GRADE_SCALES.yds && gradeScaleFor("ice", "wi") === GRADE_SCALES.wi && gradeScaleFor("ice", "bogus") === GRADE_SCALES.wi, "ice: the scale toggle picks the option list, defaulting to WI");
 for (const d of ["", "alpine", "mountaineering"]) ok(gradeScaleFor(d) === null, (d || "All") + ": grade range refused (mixed scales / no discipline)");
-// Exactly the disciplines 0189 relabelled send grade_sys; the others must not, or a range drops
+// Exactly the disciplines 0196 relabelled send grade_sys; the others must not, or a range drops
 // rows whose labels were never corrected (41 scrambling "4th" rows are labelled 'yds').
 ok(Object.keys(GRADE_SYS_FILTERED).sort().join(",") === "aid,ice,mixed", "grade_sys is sent for aid/ice/mixed only");
-const mig = fs.readFileSync(path.join(ROOT, "supabase/migrations/0189_route_finder_grade_scale.sql"), "utf8");
-ok(/discipline in \('ice', 'mixed', 'aid'\)/.test(mig), "0189 relabels the same three disciplines the sheet filters on");
+const mig = fs.readFileSync(path.join(ROOT, "supabase/migrations/0196_route_finder_grade_scale.sql"), "utf8");
+ok(/discipline in \('ice', 'mixed', 'aid'\)/.test(mig), "0196 relabels the same three disciplines the sheet filters on");
 
 if (ran < 100) { console.error("FAIL: only " + ran + " assertions ran — the lift is not exercising the scales"); process.exit(1); }
 console.log(fails ? fails + " of " + ran + " failed" : "ok — " + ran + " assertions");
