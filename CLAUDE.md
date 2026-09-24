@@ -6220,9 +6220,32 @@ the total when deciding where a new guard belongs.
       **THE DIRECTION IS THE WORRYING PART**: an easier grade means a FASTER climbing leg, so
       Est. summit and Est. return come out optimistic and the "After dark" warning fires less
       often. That is the #641 direction this file records throughout.
-      **Not changed here, deliberately.** It moves time estimates app-wide on a safety-adjacent
-      surface, so it needs its own before/after over the catalog rather than riding along on a
-      sorting change. Raised with the direction stated, which is what makes it actionable.
+      **Not changed here, deliberately** — and it is now MEASURED, which corrects this entry's own
+      first claim. It said *"it moves time estimates app-wide"*, written from the direction rather
+      than from a count, and that is wrong by five orders of magnitude:
+      `scripts/oneoff/measure-gn-highest-grade-rule.mjs` reports **3 routes**, worst **+0.50 h** on
+      Est. return, and **ZERO "After dark" warnings gained or lost**. The direction was right; the
+      blast radius was invented. *An unmeasured magnitude is a hypothesis wearing a finding's
+      clothes*, and this file forbids exactly that everywhere else.
+      - **THE REASON IT IS SO SMALL IS THAT `gn()` HAS NO CLASS BRANCH.** `"Class 3-4"` is not a
+        range it reads the wrong end of — it is a grade it cannot read **at all**, so it falls to
+        the `7.5` default. Class ranges are most of the 8,908 rows `grade_num` moved, which is why
+        one rule moved 8,908 there and 3 here. **Ask which branches a parser HAS before sizing a
+        class from a sibling parser's count.**
+      - **14 rows differ in total and 11 are MASKED by `route.timing`**, not immune: `techH` prefers
+        a published or derived summit time, so those activate the day that column is dropped. The
+        largest is `wa_liberty_crack` (12 pitches, `gn` 11.25 -> 13.5). Small **today**.
+      - **THE REAL OPTIMISM DEFECT IS TWO ORDERS OF MAGNITUDE BIGGER AND IS NOT `gn()`'S:**
+        **120,474** roped routes store `pitches = 0` against **611** with a real count, and
+        `techHrs` returns **0** for those — no climbing leg at all. That is `0074`'s documented
+        *"0 means unknown for a roped route and no pitches for a boulder problem"* conflation
+        landing on the time model. **NOT measured here: how many of those actually RENDER an
+        estimate** (the Plan tab is content-gated), so this is a pointer, not a finding.
+      - Two further `gn()` limits fall out of the same run and are reported, not fixed: **20 of the
+        394 routes it decides fall through every branch to the `7.5` default** (14 carry no usable
+        grade at all), and the app sees **`usableGrade(r)`**, not `routes.grade` — a bare class
+        grade on a crag discipline is NULLED at the `dbRouteToCamel` boundary, so measuring the raw
+        column measures a different input.
     - `scripts/oneoff/measure-highest-grade-rule.mjs` is the measurement,
       `scripts/oneoff/verify-highest-grade-equivalence.mjs` the check that the shipped parser only
       raises (its reference is loaded from **git**, never retyped), and
