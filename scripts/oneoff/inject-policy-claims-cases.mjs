@@ -71,7 +71,9 @@ const CASES = [
     name: "s3original",
     why: "§3 goes back to the original sentence, whose \"governed by your privacy settings\" still names a control the app withholds",
     file: "ClimbMatchCore.jsx",
-    find: `["What others can see","Other climbers see your public profile — your username, or your real name if you choose to show it — along with the profile you fill in and the trust signals built from your climbing activity. Signed-in climbers can also find you in the list of climbers on the Partners tab; you are listed from the moment you sign up, and you can take yourself off that list in Settings → Privacy & safety — your profile stays findable by anyone who searches your name either way. Climbers you have connected with see the name on your account either way, in your friends list and crew rosters.`,
+    // Anchored on the FIRST sentence only: the rankings/tagged-partner disclosure (0194) now sits
+    // between it and the connections sentence, and the case is about the opening clause.
+    find: `["What others can see","Other climbers see your public profile — your username, or your real name if you choose to show it — along with the profile you fill in and the trust signals built from your climbing activity.`,
     repl: `["What others can see","Other climbers see your public profile as governed by your privacy settings — your username or real name, and the fields you choose to make visible.`,
     expect: /governed by your privacy settings/,
   },
