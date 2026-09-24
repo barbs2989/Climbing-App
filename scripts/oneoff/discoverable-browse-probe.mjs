@@ -66,17 +66,17 @@ try {
 
   fixture = await createFixture(log);
   const { owner, mate } = fixture;
-  // 0110 makes listing strictly opt-IN, so a freshly created account must NOT be listed.
-  // Assert that first — it is the whole point of the default, and it is the one property
-  // that cannot be checked after something has opted in.
+  // 0195 makes listing opt-OUT (the user's decision; 0110 had made it opt-in), so a freshly
+  // created account must BE listed. Assert that first — it is the whole point of the default,
+  // and it is the one property that cannot be checked after something has changed the row.
   const freshDefault = await dbDiscoverable(mate.id);
-  if (freshDefault === false) {
-    rec("a brand-new account is not listed until it opts in", true, "profiles.discoverable defaults to false");
+  if (freshDefault === true) {
+    rec("a brand-new account is listed until it opts out", true, "profiles.discoverable defaults to true");
   } else {
-    rec("a brand-new account is not listed until it opts in", false, `a new account was created with discoverable=${JSON.stringify(freshDefault)} — migration 0110_discoverable_defaults_off.sql has not been applied, so every new climber is listed without choosing to be`);
+    rec("a brand-new account is listed until it opts out", false, `a new account was created with discoverable=${JSON.stringify(freshDefault)} — migration 0195_discoverable_defaults_on.sql has not been applied, so no new climber appears in partner browse`);
   }
-  // Opt the mate in explicitly. With an opt-in default, a fixture account is unlisted, so
-  // testing "a real climber appears in browse" against it would otherwise be testing nothing.
+  // Keep the mate listed explicitly. The default already did it, but the listing case below
+  // must not hinge on the assertion above — a failed default would otherwise fail it twice.
   await fetch(`${SUPABASE_URL}/rest/v1/profiles?id=eq.${mate.id}`, {
     method: "PATCH", headers: { ...headers(KEY), "Content-Type": "application/json" },
     body: JSON.stringify({ discoverable: true }),
@@ -132,8 +132,8 @@ try {
   }
 
   // ---- 1b) an unlisted viewer is told THEY are unlisted -------------------------------
-  // Listing is opt-in and defaults off, so "No other climbers are listed yet" is where every
-  // new account lands. Accurate, and a dead end unless it says the one thing the reader can
+  // A climber who turned listing off lands on "No other climbers are listed yet" whenever
+  // nobody else is listed. Accurate, and a dead end unless it says the one thing the reader can
   // act on. Shown only on an explicit false — never while the profile row is still loading,
   // which would tell someone they are unlisted when they are not.
   {
