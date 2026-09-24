@@ -11300,6 +11300,46 @@ the correction knows the screen is wrong, and they have no way to report it.
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
     it must fall to zero — `dup` alone would be passed by a detector that called everything a
     duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **AND A ROUTE CAN DESCRIBE ONE APPROACH TWICE AND NAME A DIFFERENT PASS EACH TIME.**
+  `audit:approach-scope` asks whether the `approach` text runs PAST the base of the climb; it
+  cannot see the `approach_variants` panel contradicting that same text. `wa_mount_stuart_north_ridge`
+  — the route `check:ui` pins as its sample — rendered both on one Plan tab: the variants panel
+  said *"South side — Esmeralda TH over **Ingalls Pass** and Goat Pass"* while the `approach`
+  prose a screen away said *"over **Longs Pass** and up Ingalls Creek to Goat Pass"*.
+  - **THAT THEY ARE ONE APPROACH RATHER THAN TWO OPTIONS NEEDS NO CLIMBING KNOWLEDGE**, which is
+    what makes this decidable at all: the variant states `distMi 9 / gainFt 4800 / hours 8` and the
+    prose states *"~9 miles, ~4,800 ft gain, ~8 hours"*. **Two genuinely different ways in do not
+    agree on all three figures.** Without that the page could simply be offering a choice, which is
+    what a variants panel is FOR, and there would be nothing to repair.
+  - **COUNT FIELDS, NOT MENTIONS.** Longs Pass appears in **five independent records** — a
+    waypoint pin NAMED "Longs Pass" (6,300 ft, distMi 3.5, with Goat Pass next at 5.0 and **no pin
+    anywhere for Ingalls Pass or Ingalls Lake**), the `approach` sentence, `descent_text` twice,
+    the `itinerary` schedule, and `bivy[2].notes`. Ingalls Pass appears in **one**: the variant's
+    own `name` and `notes`, which is one claim written twice.
+  - A sixth record agrees and it is **arithmetic rather than prose**: the variant's own hazard list
+    says *"~2,000 ft of descent on the way in"*, and a line from its Longs Pass pin (6,300) to its
+    Goat Pass pin (7,600) only GAINS. A 2,000 ft drop only makes sense falling off Longs Pass to
+    Ingalls Creek and climbing back — which is what the `approach` sentence describes, and what the
+    Ingalls Pass line (past Ingalls Lake at ~6,460, then contouring) does not.
+  - **A CLASS OF ONE, MEASURED BEFORE THE REPAIR.** Across the **872** routes carrying
+    `approach_variants`, **293** variants name a pass and **3** name one the row contradicts.
+    Reading them leaves one: `wa_cascade_peak_east_ridge` names Cache Col while pinning Cascade
+    Pass — two real places on one route; and `wa_mount_ann_scramble` names Maple Pass inside
+    *"NOTE ON THE NAME: this is the Lake Ann below Artist Point on SR-542, **not** the Lake Ann near
+    Maple Pass"* — **correct work**, flagged because *a negation is not a claim*, the trap this file
+    already records for road prose. **A detector for a class of one is the thing this repo keeps
+    refusing to build.**
+  - **THE FIRST RUN OF THAT MEASUREMENT REPORTED 13 AND TWELVE WERE MY OWN TOKENISER.** A greedy
+    two-word capture reads *"From Cascade Pass"* as a different place from the pinned *"Cascade
+    Pass"*. Stripping a leading preposition or article took it 13 → 3. **A count is only as good as
+    its tokeniser**, for the third time in this file.
+  - Repaired by `scripts/oneoff/fix-stuart-southern-approach-names-the-wrong-pass.mjs`. **Nothing is
+    typed**: the replacement phrase is lifted verbatim from the row's own `approach` field and the
+    pass name from its own waypoint, and the Ingalls-specific clause is REMOVED rather than
+    rewritten — the rest of the paragraph is common to either way in and is kept byte-for-byte. The
+    gate re-asserts all of the evidence at apply time, **including that the three figures still
+    agree**, so a row that has since been re-researched into two genuinely different approaches is
+    refused rather than written over.
 - **`audit:hazard-redundancy` reports a WORKING FEATURE, and its old wording read as a defect
   list.** It printed *"routes repeating at least one hazard: 661"* and *"repeated lines removed:
   1,281"*, which invites a sweep. There is nothing to sweep: `mergeHazards` runs at **render**
