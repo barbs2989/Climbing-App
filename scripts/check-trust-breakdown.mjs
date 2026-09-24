@@ -834,6 +834,43 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     fail("FullProfile hands vScore(climber) to a TrustBadge again — for a real climber that is the capped client model rather than their score");
   else
     ok("no TrustBadge in FullProfile is fed vScore(climber)");
+
+  // 10c. THE RESUME, which carries the same cap and matters more: it is SHARED and EXPORTED. It is
+  // opened from FullProfile (which holds a server score) and from PartnerSearch's stat tile (which
+  // does not), so it fetches its own rather than taking a prop only one caller can supply —
+  // otherwise the same climber's résumé states a different number depending which way you came in.
+  //
+  // The forbidden pattern requires `<TrustBadge` and `score={vScore(climber)}` with no `>` between
+  // them, so prose naming the old expression cannot satisfy it. That is why only {/* */} is
+  // stripped and no general comment blanker is used here.
+  const rStart = src.indexOf("function Resume(");
+  if (rStart < 0) dead("ClimbMatchCore.jsx has no Resume — ANCHOR LOST");
+  const rEnd = src.indexOf("\nfunction ", rStart + 1);
+  const rs = src.slice(rStart, rEnd < 0 ? src.length : rEnd).replace(/\{\/\*[\s\S]*?\*\/\}/g, "");
+
+  if (rs.indexOf("<TrustBadge") < 0)
+    dead("Resume renders no TrustBadge — ANCHOR LOST, so neither assertion below could fire");
+
+  cases++;
+  if (/rts!=null\?<TrustBadgescore=\{rts\}/.test(rs.replace(/\s+/g, "")))
+    ok("the résumé badge reads its own fetched score, gated on a known one");
+  else
+    fail("the résumé badge no longer reads the gated `rts` — a shared, exported document is stating a trust score it did not measure");
+
+  cases++;
+  if (/<TrustBadge[^>]*score=\{vScore\(climber\)\}/.test(rs))
+    fail("Resume hands vScore(climber) to a TrustBadge again — on the one trust surface a climber can export and send to somebody");
+  else
+    ok("no TrustBadge in Resume is fed vScore(climber)");
+
+  // 10d. ONE test for who is real. Two surfaces asking that question two ways is how they came to
+  // disagree in the first place; a re-inlined uuid regex in either is the drift this forbids.
+  cases++;
+  const inlined = [["FullProfile", fp], ["Resume", rs]].filter(([, body]) => /0-9a-f\]\{8\}-/.test(body));
+  if (inlined.length)
+    fail(`${inlined.map(([n]) => n).join(" and ")} re-inlined the real-id test instead of calling realProfileId — the two trust surfaces can now disagree about who counts as real`);
+  else
+    ok("FullProfile and Resume both ask realProfileId who is real — one derivation");
 }
 
 clean();
