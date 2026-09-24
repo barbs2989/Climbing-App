@@ -339,7 +339,10 @@ if (LABELS.length < 3) dead(`only ${LABELS.length} Settings row label(s) harvest
 // why it is wrong, and a guard that fails on its own documentation is a trap this repo records.
 const stripLine = (t) => t.replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 let paths = 0;
-for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]]) {
+// The three lib/ screens were core source until they moved out to load lazily; partner browse
+// (lib/PartnerSearch.jsx) holds one of this section's founding sentences, so they must stay scanned.
+const MOVED_FROM_CORE = ["lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]);
+for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core], ...MOVED_FROM_CORE]) {
   for (const m of stripLine(src).matchAll(/Settings\s*(?:→|›|>)\s*(?=[A-Z])([^.,;:"<{}]{2,60})/g)) {
     const phrase = m[1].trim();
     paths++;
