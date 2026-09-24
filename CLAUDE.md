@@ -7884,6 +7884,56 @@ the correction knows the screen is wrong, and they have no way to report it.
         your own résumé keeps the client model. Nothing is capped there — the memo is not involved —
         so it is the documented "4 screens, 3 trust scores" residue rather than a stand-in, and
         closing it means the sign-in reset rather than this badge. Stated rather than swept.
+    - **AND THE ENUMERATION WAS SHORT AGAIN: NINE badge sites, not seven, and TWO more were live —
+      the crew JOIN-REQUEST card and the CHAT HEADER.** Fixed in the change after the résumé. The
+      class is now closed with every site classified: FullProfile (`ts`) and Resume (`rts`) fixed;
+      TripReport already gated; CrewCard's invite-search row already **correct**; ShareCard
+      (`climber={meLive}`) and PartnerSearch's example card documented non-findings; and these two.
+      - **THE JOIN-REQUEST CARD HAD ITS NAME FIXED HOURS EARLIER AND THE BADGE BESIDE IT LEFT.** That
+        expression carries a comment recording the repair — *"this fell to a fallback that named them
+        'Climber' AND handed them a trustScore of 50 nobody earned"* — and the next JSX element along
+        was `<TrustBadge score={vScore(c)}/>`, which for a `useProfilesByIds` shape is **0, "New",
+        in red, on the card an organiser accepts or declines a stranger from**. *An instance fixed by
+        hand is not a class closed*, with the fixer's own comment as the evidence for what it missed.
+      - **THE CORRECT PATTERN WAS 200 CHARACTERS AWAY IN THE SAME COMPONENT**, on CrewCard's
+        invite-search row: `c._real?(realTrust[c.id]!=null?<badge/>:null):<badge score={vScore(c)}/>`,
+        served by a **batched, memoized `fetchTrustScore` map** that only the invite SEARCH fed. So
+        the repair is not a new mechanism — it widens that fetch to the requesters' ids and applies
+        the component's own gate. **The seed branch is kept and moved behind `seedIdentity`**, which
+        also catches the unresolvable `{name:"Climber"}` fallback: that scores 0 too, and its
+        `trustScore:50` is inert because `vScore` never reads that field.
+      - **THE CHAT HEADER** read `vScore(chatWith)`, and **four of its eight setters can hand it a
+        real profile** — FullProfile, FriendsList, Resume and an inbox thread partner. CLAUDE.md
+        already records FriendsList rendering **`undefined · 0`** for a real connection from exactly
+        that shape, so this is the same defect one surface over from a recorded one.
+      - **THREE COPIES OF ONE EFFECT COLLAPSED INTO `useRealTrustScore`, because the chat header
+        would have been a fourth.** FullProfile's and Resume's fetches were **byte-identical but for
+        the variable names** (222 and 204 characters) — the four-grade-parsers shape. The hook also
+        fixes something neither copy did: it **resets to null when the id changes**. Neither
+        `<FullProfile>` nor `<Resume>` is keyed, so reconciling either from climber A to climber B
+        keeps the same instance and **B's badge showed A's score until the fetch resolved** — a
+        measured number attributed to the wrong person. App's own `myServerTrust` already reset;
+        the two component copies did not.
+      - **CrewCard's batched map is deliberately NOT folded in**, and that is a distinction rather
+        than an exception: N rows cannot each call a hook, so a map is a different SHAPE of the
+        question, not a second answer to it. Section 10g counts the `fetchTrustScore(` calls — **2**,
+        the hook and that map — so a fifth surface writing its own copy fails rather than a list of
+        surface names that would rot.
+      - Sections **10e/10f/10g** pin all of it, and `inject-fullprofile-trust-ring-cases.mjs` goes
+        **11 → 20**, judged on the guard's own FAIL lines with the tree restored byte-identically.
+      - **A MEASURED NON-FINDING worth not re-deriving:** a server score of **0** is real and earned,
+        so every gate tests `!=null` rather than truthiness. An injection case pins it, because a
+        gate written `realTrust[c.id]?…` looks identical and silently suppresses a measured 0.
+    - **AND A BLANKER MEASUREMENT SHARPER THAN THE ONE THIS FILE ALREADY RECORDS: the `{/* */}`
+      strip removes 58.8% of `ClimbMatch.jsx`.** Section 10f reads that file RAW, and adding the
+      strip 10b/10c use looked like consistency. Measured: **329,776 characters gone, one phantom
+      match running 169,287**, because an opening JSX-comment sequence inside an ordinary JS comment
+      or a string runs to the next closing one thousands of lines away. It took `const chatTs=` and
+      `useRealTrustScore(` to **zero occurrences** and the guard failed on a correct app. The
+      existing entry records the same regex eating **21% of `RouteDetail.jsx`**; on a 560 kB file it
+      is nearly three times worse. **The strip is safe on a small SLICE of core, which is all
+      10b/10c apply it to, and never on a whole app file.** Reverted, with the measurement recorded
+      beside the read so nobody adds it back.
   - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
     through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
     to "On ClimbMatch" rather than to fabricated numbers).
