@@ -27257,3 +27257,51 @@ writes were proposed this batch, so `check:sql` was not run.
 Progress file's `last_processed_id` advanced to `wa_liberty_bell_serpentine_crack`. Next batch
 continues in sorted-id order after that id. 195 + 8 = 203 audited this pass through batch 332;
 524 - 203 = **321 in-scope routes remain unaudited this pass**.
+
+## Batch 333 (2026-09-24, pass 6)
+
+Routes: `wa_liberty_bell_sidewinder`, `wa_liberty_bell_thin_red_line`,
+`wa_liberty_cap_liberty_ridge_finish`, `wa_liberty_cap_ptarmigan_ridge_finish`,
+`wa_liberty_crack`, `wa_liberty_crack_free`, `wa_liberty_traverse`,
+`wa_lichtenberg_mountain_southeast_ridge`. Continues the Liberty Bell/Liberty Cap cluster
+batch 332 was mid-way through, plus the first Rainier north-side rows this pass and one
+unrelated Stevens Pass peak.
+
+**No confirmed errors — all 8 clean, no SQL file this batch.**
+
+**Checked and confirmed correct:** Liberty Ridge's Sept 28-Oct 1, 1935 first ascent (Ome
+Daiber, Arnie Campbell, Jim Borrow) matches AAC Publications and SummitPost exactly, as does
+Liberty Cap's 14,112 ft high point and its stored summit coordinate (46.8628/-121.7746 vs.
+Topozone's 46.8628855/-121.7750975 — a few meters apart). Liberty Crack's July 1965 first
+ascent (Steve Marts, Don McPherson, Fred Stanley) matches Wikipedia/SummitPost (which date it
+more precisely to July 16-18); the row's two different original-aid-grade mentions — "5.9 A3"
+in the `grade` field and `aid_grade: C2` — initially looked like a contradiction but both
+turned out to be real, independently sourced ratings for the same pitch (older accounts use
+A3, modern topos use C2), so left as stored rather than "fixed" into agreement. Thin Red
+Line's FFA (Kate Rutherford & Mikey Schaefer, September 2008, 5.12c, via a new pitch-5
+variation bypassing the original pendulum) matches climbing.com/AAC Publications, and its
+1967 Madsen/Schmitz aid FA matches too. Lichtenberg Mountain's 5,844 ft high point and its
+position relative to Lichtenwasser Lake match Wikipedia exactly.
+
+Also specifically checked given how recent and how consequential it is:
+`wa_liberty_cap_ptarmigan_ridge_finish`'s `road` field claims the SR-165 Fairfax/Carbon River
+Bridge was permanently closed by WSDOT in April 2025 with no detour and no funded reopening
+timeline — confirmed against WSDOT's own closure announcement; the row is accurate and still
+current. That same row's `bivy` list includes Camp Muir, Ingraham Flats and Cougar Rock
+Campground alongside the north-side camps actually on this route's approach (Thumb Rock, Camp
+Schurman, White River Campground) — on inspection this is a legitimate shared "camps around
+Mount Rainier" reference list (each entry's own notes correctly identify which route(s) it
+serves), the same shape as batch 331's Tatoosh-area bivy list, not a peak-mismatch bug.
+
+Waypoint coordinates, `high_point_ft`/`gain_ft`/`loss_ft` deltas, and pitch/length sums (Liberty
+Crack, Liberty Crack Free, Thin Red Line, Sidewinder) were internally consistent with each
+route's own trailhead-to-summit shape. `wa_liberty_traverse` has no `fa` field, correctly —
+it's a link-up of five already-named routes rather than a route with its own first ascent.
+
+**Verification note:** scheduled run, no `.env`/`.env.local` — read-only anon key only, as
+intended. WebSearch worked this batch (unlike several recent ones where WebFetch alone was
+blocked) and settled every fact checked; no writes were proposed, so `check:sql` was not run.
+
+Progress file's `last_processed_id` advanced to `wa_lichtenberg_mountain_southeast_ridge`.
+Next batch continues in sorted-id order after that id. 203 + 8 = 211 audited this pass through
+batch 333; 524 - 211 = **313 in-scope routes remain unaudited this pass**.
