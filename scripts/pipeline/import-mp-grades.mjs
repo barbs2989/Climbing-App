@@ -26,6 +26,9 @@ const KEY = requireServiceKey();
 const H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
 const DIR = "catalog/_mp";
 const norm = s => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&#0?39;|&apos;/g, "'").replace(/&amp;/g, "&").trim().toLowerCase();
+// Area names only: our Adirondack areas carry sorting prefixes ("D: Keene Valley and Chapel Pond",
+// "* Adirondack Ice & Mixed") that the export's location path does not.
+const areaNorm = s => norm(s).replace(/^(?:[a-z]\s*:\s*|\*\s*)/, "").trim();
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -67,16 +70,22 @@ function tokens(rating) {
 function resolver(stateId) {
   const rows = sql(`select a.id, a.name, a.parent_id from areas a where a.path <@ (select path from areas where id = ${q(stateId)})`);
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id));
-  for (const r of rows) { const k = r.parent_id + "|" + norm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
+  for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
+  // A level missing from OUR tree (Montana's "Bozeman Area" — its canyons hang straight off the
+  // region here) may be skipped, at most twice per route, but only when the NEXT name then matches
+  // exactly one child. The final area can never be skipped: the route must land in the area named.
   return chain => {
-    let cur = stateId;
-    for (const nm of chain) {
-      const c = kids.get(cur + "|" + norm(nm)) || [];
-      if (c.length !== 1) return { why: c.length ? "ambiguous area name" : "area not in our catalog" };
-      cur = c[0].id;
+    let cur = stateId, skips = 0;
+    for (let i = 0; i < chain.length; i++) {
+      const c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
+      if (c.length === 1) { cur = c[0].id; continue; }
+      if (c.length > 1) return { why: "ambiguous area name" };
+      const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
+      if (nxt.length === 1 && skips < 2) { skips++; continue; }
+      return { why: "area not in our catalog" };
     }
     if (hasKids.has(cur)) {
-      const c = (kids.get(cur + "|" + norm(chain[chain.length - 1])) || []).filter(r => r.id === cur + "_climbs");
+      const c = (kids.get(cur + "|" + areaNorm(chain[chain.length - 1])) || []).filter(r => r.id === cur + "_climbs");
       if (c.length !== 1) return { why: "area has sub-areas and no _climbs child" };
       cur = c[0].id;
       if (hasKids.has(cur)) return { why: "_climbs child is not a leaf" };
