@@ -291,13 +291,15 @@ if (!privileged.length)
        "would pass vacuously about every guard");
 
 const allGuardNames = new Set(onDisk.flatMap((file) => aliasesOf(file)));
-const mdLines = fs.readFileSync(mdPath, "utf8").split("\n");
+// docs/guards.md holds the per-guard notes that used to sit in CLAUDE.md, so the same prose
+// claims live there now — scan both, and name the file a finding comes from.
+const credDocs = ["CLAUDE.md", "docs/guards.md"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8").split("\n")]);
 let credChecked = 0, credLines = 0;
 for (const file of privileged) {
   const names = aliasesOf(file);
   if (!names.length) continue;
   credChecked++;
-  for (let i = 0; i < mdLines.length; i++) {
+  for (const [docName, mdLines] of credDocs) for (let i = 0; i < mdLines.length; i++) {
     const line = mdLines[i];
     if (!/anon[- ]key|anon\b/i.test(line)) continue;
     if (!names.some((n) => line.includes(n))) continue;
@@ -305,7 +307,7 @@ for (const file of privileged) {
     const named = [...allGuardNames].filter((n) => line.includes(n));
     if (named.some((n) => !names.includes(n))) continue;
     credLines++;
-    fail(`CLAUDE.md:${i + 1} attributes the ANON key to ${names[0]}, which check:guard-wiring's ` +
+    fail(`${docName}:${i + 1} attributes the ANON key to ${names[0]}, which check:guard-wiring's ` +
          `own EXCLUDED reason says needs a privileged credential. One of the two is wrong, and ` +
          `the EXCLUDED reason is the one beside the code. Line: ${line.trim().slice(0, 120)}`);
   }
