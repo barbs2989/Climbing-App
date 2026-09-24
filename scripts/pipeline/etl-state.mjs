@@ -31,7 +31,7 @@ function mapClimb(c, mid) {
   const t = c.type || {};
   let discipline = t.bouldering ? "bouldering" : t.ice ? "ice" : t.mixed ? "mixed" : t.alpine ? "alpine" : t.aid ? "aid" : "rock";
   const style = discipline === "rock" ? (t.trad ? "Trad" : t.sport ? "Sport" : null) : null;
-  // No "rock" type in the app (0200). A climb flagged neither trad nor sport is a top-rope-only
+  // No "rock" type in the app (0202). A climb flagged neither trad nor sport is a top-rope-only
   // one when OpenBeta flags `tr` (every crag probed matched exactly); with no flag at all there
   // is nothing to type it by, so it is dropped rather than guessed.
   if (discipline === "rock" && !style) { if (!t.tr) { dropped++; return; } discipline = "toprope"; }

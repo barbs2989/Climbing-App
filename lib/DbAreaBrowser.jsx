@@ -31,7 +31,7 @@ const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ra
 // These keys are sent verbatim to routes_in_subtree, which filters on the raw
 // `routes.discipline` column (`r.discipline = disc`) — so a discipline with no
 // entry here is unreachable by any filter, however well the rest of the app
-// understands it. "toprope" (7,437 rows) was stored as "rock" until 0200: they are
+// understands it. "toprope" (7,437 rows) was stored as "rock" until 0202: they are
 // OpenBeta's top-rope-only climbs (its count matched ours crag for crag), typed the way
 // Mountain Project types them. There is no "Rock" type anywhere (owner decision).
 const DISCIPLINES = [["", "All"], ["sport", DL.sport], ["trad", DL.trad], ["toprope", DL.toprope], ["bouldering", DS.bouldering], ["alpine", DL.alpine], ["ice", DL.ice], ["mixed", DL.mixed], ["mountaineering", DL.mountaineering], ["aid", DL.aid], ["scrambling", DS.scrambling]];
@@ -1040,7 +1040,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
-  // alpine; top rope is its own type since 0200), so a mostly-sport crag with trad lines shows under both.
+  // alpine; top rope is its own type since 0202), so a mostly-sport crag with trad lines shows under both.
   // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 

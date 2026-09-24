@@ -81,7 +81,7 @@ if (Array.isArray(areas) && Array.isArray(routes)) {
       err(`${where}: rock style must be "Trad"/"Sport" (got "${r.style}")`);
     // "rock" is only the catalog's carrier for a Trad/Sport style; load-state resolves it to
     // trad/sport. Without a style it would load as a "rock" type, which the app no longer has
-    // (0200) — a top-rope-only climb is "toprope".
+    // (0202) — a top-rope-only climb is "toprope".
     if (r.discipline === "rock" && r.style == null)
       err(`${where}: rock route missing style (Trad/Sport) — type it trad, sport or toprope`);
     if (r.discipline !== "rock" && r.style != null)

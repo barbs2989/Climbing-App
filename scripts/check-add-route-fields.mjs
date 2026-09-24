@@ -169,7 +169,7 @@ if (unpinned.length) {
 //   descentText  rappel/walkoff          -> routes.descent_text  PROSE   free text
 //   pitchCount   single/multi            -> routes.pitches       INT     number
 //   outingShape  outback/loop/point      -> routes.outing_shape  KEY + CHECK   CORRECT
-//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135; group removed 0200
+//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135; group removed 0202
 //
 // So it is a CLASS, not a one-off: three of five, and the two live ones were reachable on 7/9
 // and 4/9 disciplines. `pitchCount` was the worse of them — a REQUIRED question whose value
@@ -236,7 +236,7 @@ if (unpinned.length) {
   // construction. Its one key-not-label field is `outingShape`, targeting the same key column. The
   // two forms use different conventions for one control type, and only AddRoute's can be wrong.
   // The trad/sport/bouldering group ("What style of rock climbing?") was removed on purpose in
-  // 0200: there is no "Rock" type, so trad, sport, top rope and bouldering are picked directly in
+  // 0202: there is no "Rock" type, so trad, sport, top rope and bouldering are picked directly in
   // the discipline row, and that key is sent as `discipline` — the column that holds those keys.
   const GROUPS = {
     "outback/loop/point":
