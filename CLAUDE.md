@@ -13205,11 +13205,24 @@ the correction knows the screen is wrong, and they have no way to report it.
     now, positive and negative, so *"the pattern broke"* and *"the class is empty"* stop being
     the same verdict. `probe-mutual-friends-is-a-stub.mjs` is deleted: it was built to fail the
     day this shipped, and it did.
-- **WITH `DEMO_FILLERS` ON, 7 OF 60 ABSENCE CLAIMS ARE STILL ON SCREEN, AND THAT IS THE RIGHT
-  NUMBER.** `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57
-  overlays and reports which *"No X yet"* sentence actually renders — the question the sample-data
-  request poses, and the one to re-run when the examples come **out** before launch. Measured
-  2026-09-09: **64 screens walked, 0 unmounted.** Reading all seven:
+- **WITH `DEMO_FILLERS` ON, A HANDFUL OF ABSENCE CLAIMS ARE STILL ON SCREEN, AND THEY ARE THE
+  RIGHT ONES — RE-RUN THE PROBE RATHER THAN QUOTING A COUNT HERE.**
+  `scripts/oneoff/probe-surfaces-with-no-example.mjs` walks the 7 tabs and all 57 overlays and
+  reports which *"No X yet"* sentence actually renders — the question the sample-data request
+  poses, and the one to re-run when the examples come **out** before launch.
+  - **THIS HEADLINE USED TO CARRY "7 OF 60", AND THE NUMBER WENT STALE UNDER IT — which is the
+    class this file names everywhere else, committed by this entry.** A count quoted in prose is a
+    hand-copy of a measurement: the reading below was taken **2026-09-09** (64 screens walked, 0
+    unmounted), and the app has since gained `0182`'s real mutual-friends implementation, `0184`'s
+    visibility switch and #1780's privacy-flag correction — every one of which can move what an
+    empty surface says. The enumeration is the durable part; the total is not, so it is gone rather
+    than corrected to a second number that would go stale the same way.
+  - **THE PROBE REFUSES ON A LOUD BOX, BY DESIGN, and that is why this is not simply re-measured
+    here.** `quiet-box.mjs` declines above 6x oversubscribed because a browser result is evidence in
+    neither direction there — a miss reads as a live defect and a pass can be vacuous because
+    screens never settled. Forcing it with `--anyway` stamps the output NOT EVIDENCE, so it cannot
+    settle this. **Re-run it on a quiet box before writing any number back into this entry.**
+  Reading the items themselves:
   - **Three are the Crew tab, and they are CORRECT DATA.** *"No days proposed yet"*, *"No meeting
     spot or time set yet"*, *"No weekly slot works for the whole crew yet"* all come from
     `crew_seed_octo` — the **only** one of the five seed crews with no `dates` and no `meetPlace`,
@@ -13222,7 +13235,13 @@ the correction knows the screen is wrong, and they have no way to report it.
     correctly has none. No climber can reach that state.
   - **One is `"No topo yet"`** — topos are DB-backed (`topos`), not seed content, so `DEMO_FILLERS`
     cannot supply one.
-  - **One is the mutual-friends sheet**, i.e. the stub above.
+  - **One is the mutual-friends sheet — AND ITS REASON IS NOW STALE, which is the clearest evidence
+    the total above had to go.** It was listed as *"the stub above"*: `mutualIds()` returned a
+    literal `[]`, so the sheet had no reachable entry point and only the overlay walk's own `?z=`
+    opener could mount it. `0182` implements it behind a `SECURITY DEFINER` function, so it is a
+    real surface now and its empty state is an ordinary empty state — a demo account simply has no
+    mutual friends. **Whether the sentence still renders in the walk has NOT been re-measured**;
+    what is certain is that the explanation attached to it here no longer holds.
   - A **static** version of this was written first and discarded: it tried to resolve each claim
     back to its state variable through 400kB of single-line JSX and reported *"0 of 61 seeded"*,
     which is plainly wrong. Whether a sentence is ON SCREEN needs no resolution at all — the
