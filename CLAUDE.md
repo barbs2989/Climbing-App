@@ -7475,9 +7475,31 @@ the correction knows the screen is wrong, and they have no way to report it.
   - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
     through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
     to "On ClimbMatch" rather than to fabricated numbers).
-  - Five exemptions, each **measured** by reading the collection that feeds the row (the seed
-    crew-invite card, PartnerSearch's ALL_CLIMBERS example card, two rows of the seed
-    GuideDashboard, and the OPEN_CREWS organiser chip). A **stale** exemption fails.
+  - **THREE exemptions** — PartnerSearch's ALL_CLIMBERS example card and two rows of the seed
+    GuideDashboard — each **measured** by reading the collection that feeds the row. A **stale**
+    exemption fails.
+  - **THIS BULLET SAID "FIVE" AND NAMED A CARD THAT NEVER HAD THE SHAPE, and both halves of that
+    are the entry.** It listed the OPEN_CREWS organiser chip, whose exemption the guard had
+    already removed and *recorded removing in its own file*, so the doc was stale by one; and it
+    led with *"the seed crew-invite card"*, which was the `why` on an exemption keyed
+    `who?" · "+who.level`. **At the commit that ADDED that entry (#876) the key matched exactly
+    ONE site — the GROUP join-request card — byte-identical to today, and neither crew-invite card
+    has ever rendered a level or a score; both print a name and a route.** So the guard's own
+    header (*"Each reason MEASURED, not assumed"*) was false for that entry, the doc copied the
+    error, and **"a stale entry fails" never fired, because the key still matched — just a
+    DIFFERENT card.** *A key can outlive the surface it was written for, and matching is not
+    proof.*
+  - **The stated MECHANISM was wrong too, and that is the dangerous half.** *"crewReqIn is
+    seeded"* is false for a group join request: the Approve handler branches on `rq._db`, so
+    `rq.climberId` can be a uuid. The site was safe from a REAL profile only because `cById`
+    resolves against seed `CLIMBERS` by integer id, so a uuid made `who` null and the `who?`
+    ternary collapsed to `""` — an **accident**, and one `check:crew-member-readers` exists to
+    push authors into removing. And it was not safe from a SEED climber either: `cById` falls
+    back to `FILLER_CLIMBERS`, whose 12 generated objects carry **no `level` key**, so a request
+    naming one rendered `undefined`. Latent rather than live — today's seeded request names a
+    `CLIMBERS` entry — which by `check:field-renders`' `SENTINELS` reasoning is the best moment to
+    fix a writer, not the worst. The card calls `climberLine(who)` now, which is the remedy the
+    guard's **own failure message** prescribes, so the site is gated and the exemption is gone.
   - Fails **closed**: zero concatenations means the vocabulary moved, never a clean app.
   - Injection-tested 5/5. It found **9 unswept rows** when written, five reachable with a real
     profile — including `ConnectModal`'s own subtitle, which read "undefined · Bellingham, WA"
