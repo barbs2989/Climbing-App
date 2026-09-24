@@ -7660,11 +7660,29 @@ the correction knows the screen is wrong, and they have no way to report it.
       **fails as STALE** if the memo ever hydrates the rest (at which point the client model becomes
       defensible again), 10b is the wiring, which no execution can see because reverting it moves no
       identifier. Injection-tested in `inject-fullprofile-trust-ring-cases.mjs`.
-    - **`Resume` HAS THE SAME CAP AND IS DELIBERATELY NOT FIXED HERE.** `onResume(climber)` is
-      called with the memo-hydrated climber, so the shared, exported résumé shows the same capped
-      client score — and it receives **no server score**, so repairing it means threading a new prop
-      from two call sites (`FullProfile` and PartnerSearch's stat tile), neither of which has one.
-      That is plumbing across components rather than polish. Raised, not swept.
+    - **`Resume` HAD THE SAME CAP AND IS FIXED TOO — this bullet read "DELIBERATELY NOT FIXED HERE"
+      for as long as that was true, one bullet below a sentence this same entry records going stale
+      in the other direction.** `onResume(climber)` is called with the memo-hydrated climber, so the
+      **shared and exported** résumé printed the same capped client score — and it matters more
+      there than on the profile, because that document is the one a climber sends to somebody.
+      - **IT FETCHES ITS OWN SCORE RATHER THAN TAKING A PROP, and the two entry points are why.**
+        `Resume` is opened from `FullProfile` (which holds a server score) **and** from
+        PartnerSearch's stat tile (which does not), so a prop would leave the same climber's résumé
+        stating a different number depending which way you came in — the #1203 shape on a document
+        rather than a screen. Threading it from both call sites is the tidier-looking option and is
+        the one that reintroduces the defect.
+      - **ONE test for who is real, exported as `realProfileId(id)`.** `_real` is unreliable (a
+        browse row object need not carry it) and the id is the signal, so both trust surfaces ask one
+        function rather than each re-inlining the uuid shape. Deliberately **not** a sweep of
+        `ClimbMatch.jsx`'s own copies — App has its own `isDbId`, and that is a separate refactor.
+      - Sections **10c/10d** pin it: the résumé badge reads its gated `rts`, no `TrustBadge` in
+        `Resume` is fed `vScore(climber)`, and neither surface re-inlines the real-id test. 10c
+        strips only `{/* */}` for the reason 10b does.
+      - **The own-résumé path is UNCHANGED and is not this defect.** `setResumeFor(meLive)` passes
+        `ME`, whose `id` is the integer **0** signed in or out, so `realProfileId` returns null and
+        your own résumé keeps the client model. Nothing is capped there — the memo is not involved —
+        so it is the documented "4 screens, 3 trust scores" residue rather than a stand-in, and
+        closing it means the sign-in reset rather than this badge. Stated rather than swept.
   - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
     through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
     to "On ClimbMatch" rather than to fabricated numbers).

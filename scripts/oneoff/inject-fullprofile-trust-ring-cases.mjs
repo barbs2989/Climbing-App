@@ -41,6 +41,11 @@ const HISTORICAL = "const ts=climber._real?(realTrust!=null?realTrust:0):vScore(
 const BADGE = "{ts!=null?<TrustBadge score={ts} compact/>:null}";
 const BADGE_HISTORICAL = "<TrustBadge score={vScore(climber)} compact/>";
 
+// The résumé badge, and the shared real-id test both trust surfaces now ask.
+const RESUME_BADGE = "{rts!=null?<TrustBadge score={rts}/>:null}";
+const REALID = "const _realId=realProfileId(climber.id);";
+const REALID_INLINE = 'const _realId=(typeof climber.id==="string"&&/^[0-9a-f]{8}-/.test(climber.id))?climber.id:null;';
+
 // The widened shape test, and the one-sided one-level test it replaced.
 const WIDE_HEAD = 'if (n.type === "ConditionalExpression") {\n          const isV =';
 const NARROW = `if (n.type === "ConditionalExpression" && n.consequent && n.consequent.type === "CallExpression"
@@ -91,6 +96,24 @@ const CASES = [
     why: "the fix explains itself in a JSX comment naming the forbidden expression; section 10 strips {/* */} so it cannot fail on its own documentation",
     edits: [[CORE, BADGE, "{/* never: <TrustBadge score={vScore(climber)} compact/> */}" + BADGE]],
     silent: true,
+  },
+  {
+    name: "resume-badge-back-to-the-client-model",
+    why: "the same cap on the one trust surface a climber can export and send to somebody",
+    edits: [[CORE, RESUME_BADGE, "<TrustBadge score={vScore(climber)}/>"]],
+    expect: "Resume hands vScore(climber) to a TrustBadge again",
+  },
+  {
+    name: "resume-badge-ungated",
+    why: "the résumé is reached before its fetch resolves, so an ungated badge prints a score that has not arrived",
+    edits: [[CORE, RESUME_BADGE, "<TrustBadge score={rts}/>"]],
+    expect: "no longer reads the gated",
+  },
+  {
+    name: "realid-reinlined",
+    why: "two surfaces asking who is real in two ways is how they came to disagree; this is the historical inline test put back",
+    edits: [[CORE, REALID, REALID_INLINE]],
+    expect: "re-inlined the real-id test",
   },
   {
     name: "old-guard-is-blind",
