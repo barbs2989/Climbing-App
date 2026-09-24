@@ -43,7 +43,10 @@ const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 /* Every UNGATED switch, its column, and HOW it reaches the database.
  *   state   — useState, written to the column, and hydrated back from the profile read.
  *   derived — no useState at all: the value is read off a profiles query every render, so there
- *             is nothing to hydrate and nothing that can go stale on reload. */
+ *             is nothing to hydrate and nothing that can go stale on reload.
+ *   device  — stored in a browser preference rather than a column, which is honest ONLY where the
+ *             enforcement happens on this device. See the rule below for the four clauses that
+ *             stop it being a looser way to satisfy this guard. */
 const SWITCHES = {
   showOnRanks:  { col: "show_on_ranks", how: "state",   file: "app"  },
   mutualsVisible: { col: "mutuals_visible", how: "state", file: "app" },
@@ -57,6 +60,26 @@ const SWITCHES = {
   // AND calls `setShowRealName`. Verified rather than assumed. But a guard that cannot SEE it would
   // not notice a future editor switch that does none of that, which is why the scope widened.
   "draft.showRealName": { col: "show_name", how: "draft", file: "core" },
+  /* THE ONE SWITCH HERE WHOSE ENFORCEMENT IS STRONGER THAN A COLUMN, which is why it is the only
+   * one of the five #1535 gated that could be shipped. `useRoutePresence` is handed this as
+   * `visible` and calls `channel.track(visible ? {id,name,avatar,visible:true} : {id,visible:false})`,
+   * so with it off a climber's name and avatar are NEVER BROADCAST — there is no row anywhere for a
+   * policy to protect. Compare its column-backed siblings, where the value sits in a
+   * publicly-readable `profiles` row and the switch governs only whether a reader's app surfaces it.
+   *
+   * DEVICE-SCOPED rather than a column, and the cost is in the safe direction: the default is "no",
+   * so a second device starts INVISIBLE and the climber opts in again there. A column that
+   * travelled would carry an opt-in onto a device they had not thought about. lib/browse-visibility-pref.js
+   * states the rest of the reasoning. */
+  visibleWhileBrowsing: {
+    how: "device", file: "app",
+    pref: "lib/browse-visibility-pref.js",
+    load: "visibleWhileBrowsingPref",
+    save: "saveVisibleWhileBrowsing",
+    appliedAs: "visible",
+    consumer: "useRoutePresence",
+    enforcedIn: "lib/presence.js",
+  },
 };
 
 /* Rendered switches that are NOT a visibility claim. An entry here is a CLAIM about the control,
@@ -126,8 +149,110 @@ for (const f of Object.keys(NOT_VISIBILITY)) {
 }
 
 /* ── rule 1: each declared switch really does reach the database ─────────────────────────── */
-for (const [flag, { col, how }] of Object.entries(SWITCHES)) {
+for (const [flag, spec] of Object.entries(SWITCHES)) {
   if (!ungatedNames.has(flag)) continue;   // already reported stale
+  const { col, how } = spec;
+
+  /* A DEVICE switch has no column, so the write test below cannot speak for it. It is NOT a
+   * softer bar — these four clauses are what stop `how:"device"` becoming the escape hatch a
+   * future author reaches for when a column is inconvenient:
+   *   1. the value goes through `definePref`, so it is validated on READ as well as write and
+   *      cannot throw in private mode or under SSR;
+   *   2. it comes BACK on reload — the whole point of persisting it;
+   *   3. it is SAVED when toggled;
+   *   4. it reaches a consumer that is not the switch's own rendering, and that consumer really
+   *      does act on it.
+   * Clause 4 is the load-bearing one. Every control still behind PRIVACY_CONTROLS_LIVE would fail
+   * it: each is read by nothing but its own `aria-checked`, background and thumb offset, so
+   * persisting one would durably keep a promise the app cannot keep — which is precisely the
+   * failure lib/inbox-pref.js records and the reason the flag exists. */
+  if (how === "device") {
+    const { pref, load, save, appliedAs, enforcedIn } = spec;
+    const base = pref.replace(/^lib\//, "").replace(/\.js$/, "");
+    let mod = null;
+    try { mod = read(pref); } catch { /* reported below */ }
+    if (mod == null) {
+      problems.push("`" + flag + "` is declared `device` but its preference module " + pref + " does not exist.");
+    } else if (!/definePref\s*\(/.test(mod)) {
+      problems.push("`" + flag + "` — " + pref + " does not go through `definePref`, so the value is "
+        + "neither validated on read nor safe when localStorage throws (Safari private mode, quota) or is "
+        + "absent entirely (SSR, which a dozen guards render this app under). A privacy preference must "
+        + "not be able to take a screen down with it.");
+    }
+    const imp = new RegExp('import\\s*\\{([^}]*)\\}\\s*from\\s*"\\./lib/' + base + '"').exec(app);
+    if (!imp) {
+      problems.push("`" + flag + "` is declared `device` but ClimbMatch.jsx imports nothing from ./lib/"
+        + base + ", so nothing loads or saves it.");
+    } else {
+      if (!imp[1].includes(load)) problems.push("`" + flag + "` — `" + load + "` is not imported, so the switch cannot be seeded from the stored value.");
+      if (!imp[1].includes(save)) problems.push("`" + flag + "` — `" + save + "` is not imported, so the toggle cannot persist.");
+    }
+    if (!new RegExp("useState\\(\\s*" + load + "\\s*\\)").test(app))
+      problems.push("`" + flag + "` is a `device` switch but is not seeded from its stored value "
+        + "(`useState(" + load + ")`), so it resets to the useState default on every reload — which is "
+        + "the volatile-switch defect this guard exists for, with a preference module beside it that "
+        + "nothing reads.");
+    if (!new RegExp("\\b" + save + "\\s*\\(").test(app))
+      problems.push("`" + flag + "` is a `device` switch but nothing calls `" + save + "(`, so toggling it "
+        + "changes this session only.");
+    /* SCOPED TO THE CONSUMER CALL'S ARGUMENT LIST, because a whole-file match is satisfied by a
+     * COMMENT quoting the shape. That is measured rather than feared: the injection case that
+     * writes `visible:<flag>` into a comment while deleting the real wiring PASSED against the
+     * unscoped version, which is the "presence is not use" false pass this repo records elsewhere.
+     *
+     * The argument range is walked with a state machine that tracks strings AND comments, and that
+     * is safe HERE for a reason it is not safe over a whole file: a call's arguments are a pure JS
+     * expression, so every quote really is a string delimiter. The offsets-preserving blanker used
+     * elsewhere desynchronises precisely because JSX BODY TEXT is full of apostrophes — there is
+     * none inside a props object. */
+    const cOpen = app.indexOf(spec.consumer + "(");
+    if (cOpen < 0) {
+      problems.push("`" + flag + "` declares its consumer as `" + spec.consumer + "(`, which is not in "
+        + "ClimbMatch.jsx — ANCHOR LOST. Re-point the declaration, or the consumer really did go, in which "
+        + "case the switch now governs nothing.");
+    } else {
+      let d = 0, k = cOpen + spec.consumer.length, code = "", str = null, cm = null;
+      for (; k < app.length; k++) {
+        const ch = app[k], nx = app[k + 1];
+        if (cm) { if (cm === "*" && ch === "*" && nx === "/") { cm = null; k++; } else if (cm === "/" && ch === "\n") cm = null; continue; }
+        if (str) { if (ch === "\\") k++; else if (ch === str) str = null; continue; }
+        if (ch === "/" && nx === "*") { cm = "*"; k++; continue; }
+        if (ch === "/" && nx === "/") { cm = "/"; k++; continue; }
+        if (ch === '"' || ch === "'" || ch === "`") { str = ch; continue; }
+        if (ch === "(") d++;
+        else if (ch === ")" && --d === 0) break;
+        code += ch;
+      }
+      if (d !== 0) problems.push("`" + flag + "` — the `" + spec.consumer + "(` argument list does not close; the walk ran off the end of the file.");
+      else if (!new RegExp("\\b" + appliedAs + "\\s*:\\s*" + flag + "\\b").test(code))
+        problems.push("`" + flag + "` reaches no consumer — `" + spec.consumer + "(` is not passed `"
+          + appliedAs + ": " + flag + "`, so nothing but its own `aria-checked`, background and thumb "
+          + "offset reads it. A switch that governs nothing is a promise to nobody whether or not it "
+          + "persists, and persisting one makes that promise DURABLE — which is the one thing `device` "
+          + "must never be allowed to bless. A comment quoting the shape does not count: this test reads "
+          + "the call's arguments with comments and strings removed.");
+    }
+    let enf = null;
+    try { enf = read(enforcedIn); } catch { /* reported below */ }
+    if (enf == null) {
+      problems.push("`" + flag + "` names " + enforcedIn + " as where it is enforced, and that file does not exist.");
+    } else {
+      /* The enforcement IS the omission, so assert the omission rather than a mention: the branch
+       * taken when the switch is ON must carry the identity, and the OFF branch must not. A
+       * consumer that received the flag and broadcast the name anyway is the same false promise as
+       * a switch wired to nothing — and it would satisfy every clause above. */
+      const t = new RegExp("\\." + appliedAs + "\\s*\\?\\s*\\{([^}]*)\\}\\s*:\\s*\\{([^}]*)\\}").exec(enf);
+      if (!t) problems.push("`" + flag + "` — " + enforcedIn + " has no `." + appliedAs + " ? {…} : {…}` branch, "
+        + "so it does not visibly choose what to send on the strength of this switch. ANCHOR LOST, or the "
+        + "enforcement moved.");
+      else if (!/\bname\b/.test(t[1]) || /\bname\b/.test(t[2]))
+        problems.push("`" + flag + "` — " + enforcedIn + " does not OMIT the climber's identity when the "
+          + "switch is off: the on-branch must carry `name` and the off-branch must not. Broadcasting the "
+          + "name either way makes the switch cosmetic.");
+    }
+    continue;
+  }
+
   /* A WRITE names the column as an object KEY — `{resume_public:next}`, `update({ discoverable:
    * !!value })`. A SELECT names it inside a STRING, with no colon. That distinction is the whole
    * test, and getting it wrong is how the first version passed the `resume-write` injection: it
@@ -207,14 +332,17 @@ if (problems.length) {
   for (const p of problems) console.error("  - " + p);
   console.error("\n  Two ways to make a switch honest, both with precedent: make it REAL (0175 show_name,\n"
     + "  0177 resume_public/show_on_ranks — a column, a write with a revert-on-failure toast, and\n"
-    + "  either hydration or a derived read), or GATE it behind PRIVACY_CONTROLS_LIVE as five\n"
-    + "  siblings are. Gating changes the LEGAL DOCUMENTS too — see check:policy-claims.");
+    + "  either hydration or a derived read), or GATE it behind PRIVACY_CONTROLS_LIVE as " + gatedRanges.length + "\n"
+    + "  sibling(s) are. Gating changes the LEGAL DOCUMENTS too — see check:policy-claims.\n"
+    + "  A third way exists and is NARROW: a switch whose enforcement happens on this device can be\n"
+    + "  a `device` preference — but only if it reaches a consumer that acts on it. See the rule.");
   process.exit(1);
 }
 
 console.log("ok — " + Object.keys(SWITCHES).length + " rendered visibility switch(es) reach the database ("
   + Object.values(SWITCHES).filter((x) => x.how === "state").length + " hydrated, "
   + Object.values(SWITCHES).filter((x) => x.how === "derived").length + " derived, "
-  + Object.values(SWITCHES).filter((x) => x.how === "draft").length + " draft), "
+  + Object.values(SWITCHES).filter((x) => x.how === "draft").length + " draft, "
+  + Object.values(SWITCHES).filter((x) => x.how === "device").length + " device), "
   + (found.length - ungated.length) + " gated one(s) exempt, and " + OUTWARD.length
   + " outward-facing column(s) ride every climber-object select");
