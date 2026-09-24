@@ -92,6 +92,10 @@ const NOT_VISIBILITY = {
     + "preference about what THIS phone shows its owner, not a statement about what other "
     + "climbers can see, so a column is not what makes it honest. (It does not persist either; "
     + "that is a separate, lesser defect — it costs a re-toggle, not an exposure.)",
+  backedOnly: "the Ranks board's 'Backed climbs only' filter (#1843). It narrows which climbs THIS "
+    + "viewer's board counts; it says nothing about what other climbers can see of anyone. Found "
+    + "only once this guard read lib/Leaderboards.jsx through readCoreSource() — the board had "
+    + "moved out of core to load lazily before the switch was added, so a core-only read never saw it.",
 };
 
 /* ── which switches are hidden ─────────────────────────────────────────────────────────────
