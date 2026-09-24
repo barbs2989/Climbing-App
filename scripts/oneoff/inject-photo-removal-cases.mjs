@@ -42,8 +42,8 @@ const CASES = [
     name: "someoneelse",
     why: "another climber's strip gains a remove control — you could take down a photo that is not yours",
     file: "ClimbMatchCore.jsx",
-    find: "<PhotoStrip photos={climber.photos}/>",
-    repl: "<PhotoStrip photos={climber.photos} onRemove={function(){}}/>",
+    find: "<PhotoStrip photos={climber.photos} alts={climber.photoAlts}/>",
+    repl: "<PhotoStrip photos={climber.photos} alts={climber.photoAlts} onRemove={function(){}}/>",
     expect: /exactly one call site may offer removal; 2 do/,
   },
   {

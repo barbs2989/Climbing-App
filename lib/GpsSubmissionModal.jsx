@@ -336,7 +336,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
                   type="file"
                   accept=".gpx"
                   onChange={handleFileUpload}
-                  style={{display: 'none'}}
+                  className="cm-file-input"
                   id="gpxFileInput"
                 />
                 <label htmlFor="gpxFileInput" style={{...styles.uploadLabel}}>
