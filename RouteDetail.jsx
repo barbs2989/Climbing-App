@@ -1488,7 +1488,35 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
-  const hikeH=scarfHrs(route.distKm,route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
+  /* THE HIKE LEG READS effDistKm, NOT THE RAW COLUMN, AND IT WAS THE LAST READER ON THIS PAGE
+     THAT DID NOT. lib/outing.js exists because two SCREENS answered "how far is the approach"
+     differently; that fix landed on TECH STATS, on the header strap, on the TrailheadCard tile
+     and on the area browser's span, and the planner was left behind -- so one route page stated
+     the approach distance two ways and computed its times from the one it did not show.
+
+     `dist_km` holds two conventions at once and CLAUDE.md forbids normalising it in bulk. This
+     changes only WHICH SOURCE a reader prefers, which is lib/outing.js's own contract: with no
+     itinerary of its own a route gets the stored column back untouched.
+
+     THE CURRENT ARITHMETIC DOUBLE-COUNTS THE WALK OUT on the rows that move most.
+     wa_blizzard_peak_standard is a 64-mile round trip whose dist_km holds the whole 63, so the
+     walk is charged once to reach the summit and then 0.75 of it again to get out -- 110 miles
+     of walking for a 64-mile trip, 72% over. With effDistKm it charges 1.75 x 32 = 56 against
+     that 64, and the shortfall is the deliberate downhill-is-faster factor rather than an error.
+
+     MEASURED BEFORE IT SHIPPED, because erring short on "are you down before dark" is the #641
+     direction that reads green (scripts/oneoff/measure-planner-distance-ab.mjs, which LIFTS this
+     statement and executes it twice with only the distance changed). Of 790 comparable WA routes
+     326 estimates move -- 203 shorter and 118 LONGER, so it is not one-directional -- and the
+     "After dark" warning goes 464 -> 465: ZERO suppressed, one added. It is not a knife-edge
+     either: the median mover sits 10.45 hr from the 18.5 hr line and only 14 of 326 are within
+     two hours of it, because the routes that shorten are multi-day walks estimated at 30-50 hr.
+
+     WHAT IT DOES NOT CLAIM: that effDistKm is the better number on every row. Among the 118 that
+     get LONGER are routes where dist_km may correctly hold the one-way while the itinerary
+     covers more than the approach, and there it overstates -- conservatively, and agreeing with
+     the tile above it, which is the property being bought here. */
+  const hikeH=scarfHrs(effDistKm(route),route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
   const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
      Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses

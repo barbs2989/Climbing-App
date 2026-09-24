@@ -105,7 +105,7 @@ const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "cr
    that list, which is why a crag Overview can never carry a drive control — see section 1. */
 const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly, itinOutback, itinPoint;
+let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly, itinOutback, itinPoint, rawKm100, rawKm70, estPoint;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
@@ -128,6 +128,24 @@ try {
      trip halves its itinerary total, a recorded `point` does not. */
   itinOutback = render(ROUTE({ distKm: 100, itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
   itinPoint = render(ROUTE({ distKm: 30, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
+  /* Section 8's PAIRS: each fixture against a CONTROL identical but for the itinerary, which is
+     the state effDistKm hands back untouched. The itinerary reaches the estimate through
+     effDistKm and nothing else (gainCoversWholeOuting reads gain/loss, publishedIsWholeDay reads
+     timing, sectionsCoveredByItinerary touches only the published-times block), which is what
+     makes any movement attributable to this one change.
+
+     THE POINT-TO-POINT PAIR CARRIES ITS OWN STORED COLUMN, 70 rather than section 7's 30, AND
+     THAT NUMBER IS LOAD-BEARING -- the injection is what found it. Its itinerary totals 62 mi
+     (99.8 km), so a SHAPE-BLIND halving yields 49.9 km. Against a 30 km control that is still
+     LONGER, so the assertion below passed against exactly the over-reach it exists to reject
+     while section 7 correctly failed. A control BETWEEN the halved and the full figure separates
+     them: 99.8 > 70 only when the recorded trip shape is honoured.
+
+     Section 8 keeps its own fixture rather than widening section 7's, so a later edit to one
+     section's data cannot silently weaken the other's assertion. */
+  rawKm100 = render(ROUTE({ distKm: 100 }), "planner");
+  rawKm70 = render(ROUTE({ distKm: 70 }), "planner");
+  estPoint = render(ROUTE({ distKm: 70, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
 } catch (e) { dead(`RouteDetail threw while rendering: ${String(e && e.message).slice(0, 200)}`); }
 
 for (const [n, h] of [["planner", plan], ["no-coordinate", noCoord], ["crag overview", cragOv], ["crag duplicate-check", cragDup], ["crag planner", cragPlan], ["gate-only", gateOnly]]) {
@@ -279,6 +297,48 @@ else fail('the Approach tile prints the stored round-trip distance under the lab
 // 62.0 mi, not the stored 18.6. A fix that always halved would fail here.
 if (ptCard.includes("62.0 mi")) ok("a recorded point-to-point keeps its whole itinerary total, so the rule is not a blanket halving");
 else fail("a recorded point-to-point route does not state its whole itinerary total - either the tile is reading the stored column again, or it is halving unconditionally; the other two assertions above say which");
+
+/* -- 8. the PLANNER reads the same distance the tile shows ------------------------------------
+   Section 7 pins the TILE. The planner is a second reader of the same fact on the same page and
+   was the last one still on the raw column, so the page stated the approach two ways and computed
+   Est. summit / Est. return / the "After dark" warning from the one it did not show.
+
+   BEHAVIOURAL, NOT A SPELLING. Reverting `scarfHrs(effDistKm(route), ...)` to `route.distKm`
+   moves NO identifier -- effDistKm stays imported and four other readers keep calling it -- so
+   audit:silent-reverts is blind to it by its own closing caveat, and a source match would pin one
+   way of writing the call and forbid a correct refactor. Instead each fixture is rendered against
+   a CONTROL identical but for the itinerary: read raw, the two are byte-identical inputs and the
+   estimate cannot move at all.
+
+   BOTH DIRECTIONS, because a rule that only ever demands a SHORTER estimate is satisfied by an
+   unconditional halving -- the same trap section 7 records, and the reason a recorded point-to-
+   point fixture exists. An outback halves its itinerary total and gets SHORTER; a `point` does not
+   retrace, so its total IS the one-way distance and it gets LONGER. */
+const estSummit = (html) => {
+  const t = text(html);
+  const i = t.indexOf("Est. summit");
+  if (i < 0) return null;
+  // fmt() emits "3:41 PM", optionally "≥"-prefixed (approach inputs incomplete) and optionally
+  // suffixed "(+1d)". Read the LAST such time before the label, since the tile prints the value
+  // immediately above its own caption.
+  const before = t.slice(0, i);
+  const m = [...before.matchAll(/(\d{1,2}):(\d{2})\s+(AM|PM)(?:\s*\(\+(\d+)d\))?/g)].pop();
+  if (!m) return null;
+  let h = Number(m[1]) % 12;
+  if (m[3] === "PM") h += 12;
+  return h * 60 + Number(m[2]) + Number(m[4] || 0) * 1440;
+};
+const eOB = estSummit(itinOutback), eOBc = estSummit(rawKm100);
+const ePT = estSummit(estPoint), ePTc = estSummit(rawKm70);
+if (eOB == null || eOBc == null || ePT == null || ePTc == null) {
+  dead("an Est. summit time did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
+}
+if (eOB !== eOBc) ok("the planner's estimate moves with the route's own itinerary, so it reads the same source the tile does");
+else fail("the planner's estimate is UNCHANGED by the route's itinerary - it is reading the raw dist_km column, so this page states the approach distance one way and computes its times from another");
+if (eOB < eOBc) ok("...and an out-and-back whose column holds the ROUND TRIP gets a shorter walk, not a longer one");
+else fail("an out-and-back route whose stored column holds the round trip did not get a SHORTER estimate - the direction is inverted");
+if (ePT > ePTc) ok("a recorded point-to-point gets a LONGER walk, so the planner is not halving unconditionally");
+else fail("a recorded point-to-point route did not get a longer estimate - either the planner is reading the stored column again, or it halves unconditionally; the assertions above say which");
 
 console.log("");
 if (failures) {
