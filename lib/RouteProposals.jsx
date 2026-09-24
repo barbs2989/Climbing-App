@@ -14,6 +14,7 @@ import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRouteProposals, approveNewRoute, rejectNewRoute } from "./db";
 import { gradeNumFor } from "./grade";
+import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
 
 // Shown here because a reviewer should see everything the climber wrote, not only the part
@@ -114,7 +115,7 @@ export function RouteProposalQueue() {
         }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{v.name || "(no name given)"}</div>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, marginBottom: 6 }}>
-            {[v.areaName || r.area_id || "no area", v.discipline, v.grade].filter(Boolean).join(" · ")}
+            {[v.areaName || r.area_id || "no area", v.discipline && discLabel(v.discipline), v.grade].filter(Boolean).join(" · ")}
           </div>
 
           <Row label="Pitches">{v.pitchCount}</Row>
