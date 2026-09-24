@@ -32,7 +32,9 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const DOC = path.join(ROOT, "CLAUDE.md");
+// The per-guard notes moved to docs/guards.md so they stop loading into every session; the
+// citations moved with them, so both files are one document for this guard's purpose.
+const DOCS = ["CLAUDE.md", "docs/guards.md"].map((f) => path.join(ROOT, f));
 
 // Deliberately named though gone. A STALE entry fails, so this cannot rot into a description of
 // files that are back.
@@ -49,7 +51,7 @@ const GONE = {
 // Longest extension first. See the note above; this ordering is the guard, not a detail.
 const RE = /(?:scripts|lib|\.github\/workflows|supabase\/migrations)\/[A-Za-z0-9_./-]+\.(?:mjs|jsx|json|yml|sql|js)/g;
 
-const src = fs.readFileSync(DOC, "utf8");
+const src = DOCS.map((f) => fs.readFileSync(f, "utf8")).join("\n");
 const cited = [...new Set(src.match(RE) || [])].sort();
 
 // Fail closed: a regex that stopped matching would report a clean document having read nothing,
