@@ -436,7 +436,7 @@ the total when deciding where a new guard belongs.
   in or out — while `ME.name` becomes the real account's profile name; and a **DB-backed
   friend**, a uuid that the friends list hands to `FullProfile`. Before #735 a real account
   named "Nathan Barber" saw *Angels Landing, Oct 2024, Summit, 5★* on its own résumé. Not
-  cosmetic: three `Leaderboards` badges (`classics_b`, `highpoints_b`, `peaks_b`) **count**
+  cosmetic: the `classics_b` Leaderboards badge **counts**
   those rows and `me` is in the pool whenever `showOnRanks` is set, so a collision **scores**.
   Gated by `npm run build`.
   - The id test alone cannot work, for the reason #680 records: **`0` is a real id.** The gate
@@ -2697,8 +2697,8 @@ the total when deciding where a new guard belongs.
       caption must still run past 20 characters and still say it is about grades or sends. Two
       injection cases pin that — an emptied caption and a bare *"Grades."* both fail.
     - **THE SIBLING WAS MEASURED AND IS CLEAN, so this is a CLASS OF ONE rather than one of N.**
-      Three Leaderboards badges are `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
-      notes say *"logged"* — but **no seed climber carries a stored `classics`, `highpoints` or
+      The Classic climbs Leaderboards badge (the highpoints and peaks ones were removed) is `seedHistoryFor(pp).filter(…).length + (pp.X||0)` and their
+      notes say *"logged"* — but **no seed climber carries a stored `classics` or
       `peaks` number**, so every badge value is entirely real ticks and the wording is correct
       there. The `+(pp.X||0)` term is inert today. *A detector for a class of one is the thing this
       repo keeps refusing to build*, which is why this is an assertion inside the guard whose

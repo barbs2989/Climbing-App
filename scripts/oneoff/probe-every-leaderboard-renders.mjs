@@ -23,9 +23,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { Leaderboards, ROUTES, ME } from ${CORE};
 const noop = () => {};
 export { ROUTES, ME };
-export function render(disc, board, logs) {
+export function render(disc, board, logs, myTrust) {
   return renderToStaticMarkup(React.createElement(Leaderboards, {
-    meLive: ME, onView: noop, onClimb: noop, logs, connections: [], friendState: () => "none",
+    myTrust: myTrust == null ? null : myTrust, meLive: ME, onView: noop, onClimb: noop, logs, connections: [], friendState: () => "none",
     onFriend: noop, catchCredits: {}, onMessage: noop, showOnRanks: true, blocked: [],
     rankDisc: disc, setRankDisc: noop, rankBoard: board, setRankBoard: noop,
   }));
@@ -78,6 +78,24 @@ for (const disc of DISCS) {
   }
 }
 ok(!seen.has("highpoints_b"), "highpoints_b reachable on no discipline");
+ok(!seen.has("peaks_b"), "the duplicate Peaks board (peaks_b) is gone; Peaks all-time is the one peak ranking");
+for (const disc of ["all", "mountaineering", "alpine", "scrambling"]) {
+  const sel = render(disc, "points", logs).match(/aria-label="Ranking board"[\s\S]*?<\/select>/)[0];
+  ok(sel.includes(`value="peaksLife"`), `${disc}: Peaks all-time is still offered`);
+}
+
+// Signed in, your trust row must show YOUR real score (the one on your Profile), not the preview
+// formula the example climbers are scored on — and the board must say the two differ.
+const REAL = 99; // high enough that a board honouring it MUST put you first
+const signedIn = dec(render("all", "trust", logs, REAL));
+const myTrustRow = signedIn.match(/aria-label="#\d+, [^"]*, you, [^"]*, (\d+) trust"/);
+const youCard = signedIn.match(/You’re #(\d+)/);
+ok(!!myTrustRow && +myTrustRow[1] === REAL, `signed-in trust row shows your real score: ${myTrustRow ? myTrustRow[1] : "(not in top 15)"} (expected ${REAL})`);
+ok(/yours is your real score/.test(signedIn), "signed-in trust board says example scores are illustrative");
+const demo = dec(render("all", "trust", logs));
+ok(!/yours is your real score/.test(demo), "demo (no real score) does not add that note");
+const demoRank = +(demo.match(/You’re #(\d+)/) || [0, 0])[1], realRank = +(youCard || [0, 0])[1];
+ok(realRank === 1 && demoRank > 1, `your trust rank follows your real score (preview formula #${demoRank}, real score #${realRank})`);
 
 // Classic climbs is a count of ROUTES. Log one classic twice, plus a classic the demo climber's
 // seed history already holds, and your row must count each route once.
