@@ -29,6 +29,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
@@ -62,7 +63,7 @@ if (!/Climb<span>Match<\/span>/.test(html)) fail("the boot shell wordmark is mis
 
 
 // ---- section 2: the Help modal's tab tour must cover every tab ----------------
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const fi = core.indexOf("const feats=[");
 if (fi < 0) fail("could not find `const feats=[` in ClimbMatchCore.jsx — the Help tour was renamed; update this check.");
 // balance brackets rather than taking a fixed window: the entries are long prose

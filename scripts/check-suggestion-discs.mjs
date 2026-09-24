@@ -18,8 +18,9 @@
 // Static: the pure functions are lifted out of the real source and run with stubbed
 // dependencies, so this cannot drift from the app. No browser, no DB — it sits in the build.
 import { readFileSync } from "node:fs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
-const CORE = readFileSync(new URL("../ClimbMatchCore.jsx", import.meta.url), "utf8");
+const CORE = readCoreSource();
 const DBB = readFileSync(new URL("../lib/DbAreaBrowser.jsx", import.meta.url), "utf8");
 
 // Fail closed: an empty read makes every assertion below pass vacuously.

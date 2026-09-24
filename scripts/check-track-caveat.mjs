@@ -31,6 +31,7 @@ import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
 import { trackStubCaveat, trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, trackCoverage } from "../lib/track.js";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -413,7 +414,7 @@ else ok("predicate: a two-point waypoint join yields to the waypoint-line caveat
     const capAt = rdSrc.indexOf(CAP);
     const slMatches = capAt < 0 ? [] : [...rdSrc.slice(Math.max(0, capAt - 400), capAt).matchAll(/<SL>([^<]{4,60})<\/SL>/g)];
     const heading = slMatches.length ? slMatches[slMatches.length - 1][1] : null;
-    const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+    const core = readCoreSource();
     const faqAt = core.indexOf("recorded GPX tracks?");
 
     if (!heading) fail("ANCHOR LOST: could not read the tracks section's heading out of RouteDetail.jsx");

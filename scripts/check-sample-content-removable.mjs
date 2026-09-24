@@ -43,6 +43,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readAppFile } from "./lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -72,7 +73,7 @@ const src = {};
 for (const f of FILES) {
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) fail(`${f} is missing, so nothing was checked. Reporting nothing is not a pass.`);
-  src[f] = fs.readFileSync(p, "utf8");
+  src[f] = readAppFile(p);
 }
 
 // ---- the flag itself has to be a flag ----

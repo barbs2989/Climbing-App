@@ -22,6 +22,7 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import esbuild from "esbuild";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -120,7 +121,7 @@ else ok("a two-point chord says so in the file");
 // So this pins that the escape is APPLIED, which is the part a future caveat containing "&" would
 // depend on, and says plainly that it does not observe the result.
 {
-  const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const src = readCoreSource();
   const i = src.indexOf("function buildGpx");
   const body = i < 0 ? "" : src.slice(i, i + 4000);
   if (!body) dead("buildGpx not found in ClimbMatchCore — the source assertion below is vacuous");

@@ -38,6 +38,7 @@ import fs from "fs";
 import path from "path";
 import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 let failed = 0;
@@ -51,7 +52,7 @@ console.log("1. which PhotoStrip call sites can remove a photo\n");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
 const sites = [];
 for (const f of FILES) {
-  const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+  const src = readAppFile(path.join(ROOT, f));
   // Balance the tag rather than taking a fixed window: these files pack whole screens onto one
   // physical line, so a character budget encodes a guess about the size of the thing being read
   // -- the trap check:camping records three times over.
@@ -97,7 +98,7 @@ for (const s of sites) {
 
 // The component must actually consult the prop -- a call site that passes onRemove to a
 // component ignoring it is the dead-wiring shape, and reads as a shipped feature.
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const decl = core.match(/function PhotoStrip\(\{([^}]*)\}\)/);
 if (!decl) dead("PhotoStrip's signature moved — ANCHOR LOST");
 if (!/\bonRemove\b/.test(decl[1])) bad("PhotoStrip does not destructure onRemove");
@@ -277,7 +278,7 @@ else ok("a blob: avatar asks storage to delete nothing");
 // (e) THE CONTROL EXISTS AND IS GATED, read from source: executing the function proves what it
 // DOES and says nothing about whether the editor offers it. Dropping the button changes no
 // identifier, which audit:silent-reverts says in its own caveat it cannot see.
-const avCore = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8")
+const avCore = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 if (/removeProfileAvatar\(uid,/.test(avCore)) ok("the editor calls removeProfileAvatar with its uid");
 else bad("the editor no longer calls removeProfileAvatar(uid, …)");
