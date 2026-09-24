@@ -71,7 +71,22 @@ const INTENDED = new Map([
    live catalog; this keeps the fossil copy meaningful rather than retiring it. */
 const raisedByRule = (a, b) => a != null && b != null && b > a;
 
-let diff = 0, n = 0, intended = 0, raised = 0;
+/* THE SIXTH IS ALSO A RULE, and it is the narrowest one here. Since 2026-09-23 lib/grade.js reads a
+   LOWERCASE V grade (`v11`, `v0`) and the frozen pipeline copy does not, so those inputs go
+   null -> a value.
+
+   DECLARING "a newly-parsed value is fine" WOULD GUT THE CHECK — a newly-parsed value is exactly
+   what a pattern widened beyond its scope looks like, which is why the rule above deliberately
+   leaves it UNEXPECTED. So this rule is ATTRIBUTABLE rather than permissive: the difference is
+   intended only if the PIPELINE, handed the same string UPPERCASED, produces the very number
+   lib produced. A gain from anywhere else stays UNEXPECTED and still exits 1. */
+const caseOnly = (g, s, a, b) => {
+  if (!(a == null && b != null)) return false;
+  const u = gradeNumPipeline(g.toUpperCase(), s);
+  return u != null && Math.abs(u - b) < 1e-9;
+};
+
+let diff = 0, n = 0, intended = 0, raised = 0, cased = 0;
 const examples = [], seenIntended = new Set();
 for (const [g, s] of pairs.values()) {
   n++;
@@ -82,12 +97,14 @@ for (const [g, s] of pairs.values()) {
   const key = g + "\u0000" + s;
   if (INTENDED.has(key)) { intended++; seenIntended.add(key); continue; }
   if (raisedByRule(a, b)) { raised++; continue; }
+  if (caseOnly(g, s, a, b)) { cased++; continue; }
   diff++; if (examples.length < 20) examples.push({ g, s, pipeline: a, lib: b });
 }
 
 console.log(`compared ${n} distinct (grade, system) inputs drawn from ${rows.length} live rows + edge cases`);
 console.log(`${intended} INTENDED difference(s) — the bare-ordinal branch lib/grade.js gained`);
 console.log(`${raised} RAISED by the "highest wins" rule — intended, and a highest-wins parser can produce nothing else`);
+console.log(`${cased} newly parsed by the CASE rule — intended, and each proven to be case alone (the pipeline agrees on the uppercased string)`);
 if (!raised) console.log(`  NOTE: zero raised. Either the rule was reverted, or this sample holds no range grade.`);
 for (const [k, why] of INTENDED) if (seenIntended.has(k)) console.log(`  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}]  ${why}`);
 const stale = [...INTENDED.keys()].filter((k) => !seenIntended.has(k));

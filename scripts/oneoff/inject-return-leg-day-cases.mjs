@@ -113,6 +113,56 @@ const CASES = [
     ],
     expect: "pass",
   },
+  {
+    name: "multiday-gate-back-on-campoptions",
+    why: "THE REAL DEFECT. campOptions is SEED-ONLY — it survives dbRouteToCamel on 0 of 8,365 WA " +
+         "routes — so the amber disclaimer rendered for NOBODY in production while the gear box " +
+         "beside it packed a tent on 344 of them. Note what the seed-shaped fixture reports here: " +
+         "the reverted gate puts \"typically done over 1 days\" on a single-day route",
+    edits: [{ find: ",multiDay=isMultiDayOuting(route);", repl: ",multiDay=route.campOptions&&route.campOptions.some(c=>c.stars>0);" }],
+    expect: "fail",
+    must: /says it is a multi-day outing/,
+  },
+  {
+    name: "multiday-gate-ORs-the-seed-field-back-in",
+    why: "The tempting half-fix: keep the itinerary AND honour campOptions. It satisfies every " +
+         "must-appear case and re-admits a field no real route carries, so only the seed-shaped " +
+         "fixture can see it — which is why that fixture exists",
+    edits: [{ find: ",multiDay=isMultiDayOuting(route);", repl: ",multiDay=isMultiDayOuting(route)||!!(route.campOptions&&route.campOptions.some(c=>c.stars>0));" }],
+    expect: "fail",
+    must: /starred seed campOption does NOT drive it/,
+  },
+  {
+    name: "multiday-disclaimer-fires-on-everything",
+    why: "OVER-REACH. A rule that only demands the box APPEAR is satisfied by showing it always, " +
+         "which would print \"typically done over 1 days\" on a car-to-car scramble. The two " +
+         "must-stay-silent fixtures are what reject it",
+    edits: [{ find: ",multiDay=isMultiDayOuting(route);", repl: ",multiDay=true;" }],
+    expect: "fail",
+    must: /single-day itinerary does NOT get the multi-day disclaimer/,
+  },
+  {
+    name: "multiday-copy-points-at-the-tab-again",
+    why: "The copy defect that was invisible for as long as the gate was dead: it sent a reader to " +
+         "the Plan tab while sitting ON it, past the Trip plan rendered directly above. A gate fix " +
+         "that left this would have made a circular pointer visible for the first time",
+    edits: [{
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}',
+      repl: 'This route is typically done over multiple days. The single-push estimate below is a reference only — use the <b style={{color:C.amber}}>Plan</b> tab for a realistic day-by-day plan.',
+    }],
+    expect: "fail",
+    must: /already on/,
+  },
+  {
+    name: "SILENT-multiday-copy-reworded-but-still-honest",
+    why: "MUST STAY SILENT. Section 3 pins the day COUNT, the pointer's destination and the " +
+         "ordering — never one phrasing. A guard pinned to the sentence would forbid improving it",
+    edits: [{
+      find: '{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}',
+      repl: '{"Parties typically take "+itinDayCount(route)+" days on this route, so read the single-push estimate below as a reference only. The "}',
+    }],
+    expect: "pass",
+  },
 ];
 
 const runGuard = () => {
