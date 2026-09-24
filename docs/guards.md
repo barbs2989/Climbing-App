@@ -15013,9 +15013,35 @@ asks before a probe spends anything, and it is the fourth precondition in this f
     most damage, arriving as one unbelievable verdict per probe formatted as a reading list; and macOS has
     **no `timeout(1)`**, which made the first static sweep return exit 127 for all 77 — a uniform,
     plausible, catastrophic-looking result that measured nothing, so each probe gets its own
-    watchdog. `--dir` is a test seam: all four verdict branches (PASS/FAIL/TIMEOUT/BROKEN) are
-    proven against a fixture of four one-line probes, which is the only way to exercise them
-    without making the very run this refuses.
+    watchdog. `--dir` is a test seam: all **five** verdict branches (PASS/FAIL/TIMEOUT/BROKEN/
+    REFUSED) are proven against a fixture of one-line probes, which is the only way to exercise
+    them without making the very run this refuses.
+    - **ITS FIRST REAL RUN DEFEATED ITSELF, AND THE RUNNER REPORTED THE WRECKAGE AS FINDINGS.**
+      A sweep of browser probes **IS** the load: each spawns a dev server and a Chrome, so the box
+      went from **1.0x at probe 1 to 8.6x by probe 16**, after which every probe hit its own
+      refusal. The runner classified by **exit code**, and `assertQuietBox` exits 1 — so **42 of
+      the 45 "FAIL"s were refusals**, i.e. precisely the reading list of non-findings this whole
+      mechanism exists to prevent, manufactured by the tool built to collect it. *A refusal is the
+      ABSENCE of a result, never a result* — and an exit code cannot tell the two apart.
+    - Fixed two ways, both needed. The runner **waits for the box to come back under `QUIET_X`
+      before each probe**, so a sweep paces itself instead of eating its own threshold; and a
+      refusal is now its own verdict, **retried** rather than recorded, with the summary saying
+      outright that any survivor is not a finding.
+    - **The honest yield of that first partial run: 12 pass, 3 real failures, 42 refusals.** One of
+      the three is a setup fact rather than a finding — **7 browser probes expect a dev server on
+      `localhost:5199` and NOT ONE of them starts it**, so they die on `ERR_CONNECTION_REFUSED`
+      unless something else is already serving. Start one before sweeping; the other 38 spawn their
+      own.
+    - **The two real failures are BOTH STAMPED `DEGRADED BOX`, so neither is attributable** — and
+      the stamp is the mechanism working mid-sweep, since the load was already climbing when they
+      ran. Recorded as read, not as diagnosed: `probe-a-real-profile-seen-by-a-real-climber` fails
+      **3 of 14** assertions, all one cascade (the owner is not listed as a friend, so the row
+      cannot be tapped, so no profile dialog opens) at 2.0x; `probe-dead-controls-overlays` dies on
+      `page.evaluate: Execution context was destroyed, most likely because of a navigation` at
+      2.4x, which is a probe-side race of exactly the kind a loaded box produces. **Re-run both
+      alone on a quiet box before believing either.**
+    - **The sweep is STILL not complete.** This box ran at 1.0x for about fifteen minutes and was
+      back over 19x before the runner could be fixed and re-aimed.
 
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
