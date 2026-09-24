@@ -117,7 +117,7 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C }) {
 // list view and a map view of the same data.
 export function ViewToggle({ mode, onList, onMap, C }) {
   const seg = (k, lbl, onClick) => (
-    <button onClick={onClick} style={{ flex: 1, padding: "8px 0", borderRadius: 8, border: "none", background: mode === k ? C.blue : "transparent", color: mode === k ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{lbl}</button>
+    <button onClick={onClick} style={{ flex: 1, padding: "8px 0", borderRadius: 8, border: "none", background: mode === k ? C.blueSolid : "transparent", color: mode === k ? "#fff" : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>{lbl}</button>
   );
   return (
     <div style={{ display: "flex", gap: 3, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: 3, marginBottom: 12 }}>
@@ -128,8 +128,8 @@ export function ViewToggle({ mode, onList, onMap, C }) {
 }
 
 // Cluster/single-pin SVG builder — curved name text following the inside of
-// the circle's top arc (can't overlap a neighboring marker's label the way
-// free-floating text can), a center count badge, and an optional pre-rendered
+// the circle's top arc, and for a long name its bottom arc drawn upright (can't
+// overlap a neighboring marker's label the way free-floating text can), a center count badge, and an optional pre-rendered
 // discipline-icon markup string (a full <svg>...</svg> from
 // ReactDOMServer.renderToStaticMarkup) shown centered (single pins, replacing
 // the count) or as a small corner badge (cluster pins, alongside the count).
@@ -153,6 +153,7 @@ export function pinHtml(nm, n, d, color, brd, iconMarkup) {
   const numFs = Math.round(d * 0.32);
   const sw = brd === "#ffffff" ? 2.5 : 3; // non-white border (e.g. "on your list" amber) draws a touch thicker
   const cr = r - sw / 2 - 0.5;
+  const rb = rt + fs * 0.7;
 
   const showIconCenter = iconMarkup && (n == null || n <= 1);
   const showIconBadge = iconMarkup && n != null && n > 1;
@@ -165,7 +166,10 @@ export function pinHtml(nm, n, d, color, brd, iconMarkup) {
 
   return "<svg width='" + d + "' height='" + d + "' viewBox='0 0 " + d + " " + d + "' style='overflow:visible;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.45))' xmlns:xlink='http://www.w3.org/1999/xlink'>" +
     "<defs><path id='" + id + "' d='M " + (r - rt) + " " + r + " A " + rt + " " + rt + " 0 1 1 " + (r + rt) + " " + r + "'/>" +
-    (bottom ? "<path id='" + id + "b' d='M " + (r + rt) + " " + r + " A " + rt + " " + rt + " 0 1 1 " + (r - rt) + " " + r + "'/>" : "") +
+    // The second line runs left→right along the BOTTOM (sweep 0), so it reads upright rather
+    // than upside down. Upright glyphs there grow INWARD from the baseline, so the baseline sits
+    // one cap-height further out (rb) to occupy the same ring band as the top line.
+    (bottom ? "<path id='" + id + "b' d='M " + (r - rb) + " " + r + " A " + rb + " " + rb + " 0 1 0 " + (r + rb) + " " + r + "'/>" : "") +
     "</defs>" +
     "<circle cx='" + r + "' cy='" + r + "' r='" + cr + "' fill='" + color + "' stroke='" + brd + "' stroke-width='" + sw + "'/>" +
     centerMarkup +

@@ -122,10 +122,11 @@ if (dead.length) console.log(`  (each renders "0" forever: its objectives come o
 const totalGap = out.reduce((n, r) => n + (r.gap > 0 ? r.gap : 0), 0);
 console.log(`total advertised objectives not yet in the catalog: ${totalGap}`);
 
-// Keys that exist as per-route CHIP vocabulary but are no longer a card — state_hp, np_hp,
-// seven and triple were removed as tick lists and kept as chips, because "this route is a state
+// Keys that exist as per-route CHIP vocabulary but are no longer a card — np_hp, seven and
+// triple were removed as tick lists and kept as chips, because "this route is a national park
 // highpoint" stays true whether or not the app offers a list for it. Reported separately so
-// they are never counted as broken lists.
+// they are never counted as broken lists. (State highpoints were removed from the app outright —
+// chip, ranking board and badge — because many of them are not climbs.)
 const cardKeys = new Set(cards.map(c => c.k));
 const chipOnly = Object.keys(LIST_ALIASES).filter(k => !cardKeys.has(k));
 if (chipOnly.length) console.log(`\n${chipOnly.length} key(s) are per-route chip vocabulary with no list card, so they are not lists: ${chipOnly.join(", ")}`);

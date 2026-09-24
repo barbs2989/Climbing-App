@@ -1,4 +1,4 @@
-// Prove 0187's privacy contract with REAL accounts, under RLS, on each climber's own JWT.
+// Prove 0189's privacy contract with REAL accounts, under RLS, on each climber's own JWT.
 //
 // The service key bypasses RLS entirely, so a service-key probe reports success whatever the
 // policies say -- 0095's own header records that trap. The service key here CREATES and DELETES
@@ -61,7 +61,7 @@ const near = (u, lat, lng, mi) => as(u, "/rest/v1/rpc/partners_near", { method: 
 const ids = (r) => (Array.isArray(r.body) ? r.body.map((x) => x.id) : []);
 
 async function main() {
-  console.log("partners_near (0187) — five real accounts, anon key + each climber's own JWT\n");
+  console.log("partners_near (0189) — five real accounts, anon key + each climber's own JWT\n");
   const cen = await api("/rest/v1/zip_centroids?zip=in.(98101,98052,99201)&select=zip,lat,lng", {}, anonKey());
   const C0 = Object.fromEntries((cen.body || []).map((r) => [r.zip, r]));
   if (!C0["98101"] || !C0["98052"] || !C0["99201"]) throw new Error("zip_centroids is not loaded — run scripts/oneoff/load-zip-centroids.mjs");

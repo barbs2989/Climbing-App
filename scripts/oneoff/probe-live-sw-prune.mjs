@@ -15,7 +15,13 @@
 //
 // Step 3 is what makes this a test rather than an observation: without it a passing run only
 // says "the cache currently looks tidy", which is also true of a prune that never runs.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-live-sw-prune.mjs");
 
 const SITE = "https://barbs2989.github.io/Climbing-App/";
 const SCOPE = "/Climbing-App/";

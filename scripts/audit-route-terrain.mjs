@@ -1,8 +1,6 @@
 // Does the safety advice each route is shown actually match the terrain that route crosses?
 //
-// The panels ("Snow, weather & timing", "Watch out for on this type of climb") and the
-// packing checklist were keyed on discipline alone, so every alpine route was told to check
-// the avalanche forecast and every mountaineering route was handed a glacier/crevasse kit.
+// The packing checklist was keyed on discipline alone, so every mountaineering route was handed a glacier/crevasse kit.
 // This measures how many routes that misfires on, using the same lib/terrain.js the app now
 // renders through — so a green run here and the screen cannot disagree.
 //
@@ -13,7 +11,7 @@
 //   node scripts/audit-route-terrain.mjs --state wa       # ids under a state prefix
 //   node scripts/audit-route-terrain.mjs --list 40        # print offending routes
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
-import { routeTerrain, fitAdvice, fitGear, CORPUS_COLUMNS } from "../lib/terrain.js";
+import { routeTerrain, fitGear, CORPUS_COLUMNS } from "../lib/terrain.js";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
@@ -44,20 +42,8 @@ async function page(disc, after) {
   }
 }
 
-// The advice the app renders per discipline, copied from RouteDetail's SAFETY_ESSENTIALS and
-// WATCH. Only the terrain-bearing lines matter here, so the audit asks the same question the
-// screen does rather than re-deriving it.
-const ADVICE = {
-  alpine: ["Check the avalanche forecast and recent freeze-thaw history.",
-    "Start early to beat afternoon warming and thunderstorms.",
-    "Rockfall is worst late morning and in the evening as freeze-thaw loosens rock and ice.",
-    "Avoid lingering under seracs and icefall; they calve without warning."],
-  mountaineering: ["Travel roped on glaciers and know crevasse rescue.",
-    "Check avalanche danger and overnight snow stability.",
-    "Start in the dark for a firm freeze and turn around on time."],
-  ice: ["Test the ice and your screws."],
-  mixed: ["Falling ice and rock are constant."],
-};
+// The per-discipline advice PANELS were removed from the route page (too generic), so only
+// the packing checklist still renders through lib/terrain.js and only gear is measured here.
 const GEAR = {
   alpine: ["Rope", "Ice axe / tools", "Crampons", "Insulating layers & shell", "Navigation (map / GPS)"],
   mountaineering: ["Ice axe / tools", "Crampons", "Rope", "Glacier / crevasse kit", "Insulating layers & shell", "Navigation (map / GPS)"],
@@ -66,7 +52,7 @@ const GEAR = {
 };
 
 const tally = { scanned: 0, byDisc: {}, glacierNo: 0, snowNo: 0, unknown: 0,
-  adviceDropped: 0, gearDropped: 0, routesFixed: 0, explicit: 0 };
+  gearDropped: 0, routesFixed: 0, explicit: 0 };
 const offenders = [];
 
 for (const disc of DISCS) {
@@ -85,15 +71,13 @@ for (const disc of DISCS) {
       if (t.glacier === "no") tally.glacierNo++;
       if (t.snow === "no") tally.snowNo++;
       if (t.glacier === "unknown" || t.snow === "unknown") tally.unknown++;
-      const a = fitAdvice(ADVICE[disc] || [], t);
       const g = fitGear(GEAR[disc] || [], t);
-      if (a.dropped || g.dropped) {
-        tally.adviceDropped += a.dropped;
+      if (g.dropped) {
         tally.gearDropped += g.dropped;
         tally.routesFixed++;
         if (offenders.length < Math.max(LIST, 12)) {
           offenders.push({ id: r.id, name: r.name, disc, glacier: t.glacier, snow: t.snow,
-            avalanche: t.avalanche, dropAdvice: a.dropped, dropGear: g.dropped,
+            avalanche: t.avalanche, dropGear: g.dropped,
             why: t.evidence.explicitNoGlacier || t.evidence.explicitNoAvy ? "route says N/A" : "reads as rock" });
         }
       }
@@ -110,13 +94,12 @@ console.log("scanned (alpine/mountaineering/ice/mixed):", tally.scanned);
 console.log("  by discipline:", JSON.stringify(tally.byDisc));
 console.log("routes whose own row states N/A for glacier or avalanche:", tally.explicit);
 console.log("classified glacier=no:", tally.glacierNo, " snow=no:", tally.snowNo, " still unknown:", tally.unknown);
-console.log("\nroutes shown at least one line of advice or gear they do not need:", tally.routesFixed);
-console.log("  advice lines suppressed:", tally.adviceDropped);
+console.log("\nroutes shown at least one gear item they do not need:", tally.routesFixed);
 console.log("  gear items suppressed:", tally.gearDropped);
 if (offenders.length) {
   console.log("\nexamples:");
   for (const o of offenders.slice(0, Math.max(LIST, 12))) {
-    console.log(` ${o.id} — ${o.name} (${o.disc}) glacier=${o.glacier} snow=${o.snow} avy=${o.avalanche} · -${o.dropAdvice} advice -${o.dropGear} gear · ${o.why}`);
+    console.log(` ${o.id} — ${o.name} (${o.disc}) glacier=${o.glacier} snow=${o.snow} avy=${o.avalanche} · -${o.dropGear} gear · ${o.why}`);
   }
 }
 // --- Is there a column carrying terrain prose that the classifier cannot see? ------------

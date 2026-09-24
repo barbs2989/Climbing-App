@@ -3,8 +3,14 @@
 // probe-dead-controls' self-test reported its INERT injected button as live, which can only
 // mean the fingerprint moves on its own. If it does, every control reads as live and the
 // sweep's "18 live, 0 dead" is noise rather than a result. Measure which field moves.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-fingerprint-stability.mjs");
 
 const BASE = process.argv.find((a) => a.startsWith("--base="))?.slice(7) || "http://localhost:5199/Climbing-App/";
 const TAB = process.argv.find((a) => a.startsWith("--tab="))?.slice(6) || "Home";

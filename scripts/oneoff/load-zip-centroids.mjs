@@ -1,4 +1,4 @@
-// Load the 2020 Census ZCTA gazetteer into `zip_centroids` (migration 0187).
+// Load the 2020 Census ZCTA gazetteer into `zip_centroids` (migration 0189).
 //
 //   curl -sSfLO https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_Gaz_zcta_national.zip
 //   unzip 2020_Gaz_zcta_national.zip

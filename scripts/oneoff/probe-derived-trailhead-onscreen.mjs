@@ -16,12 +16,18 @@
 //
 // `showPlan` is CONTENT-GATED, so a route with no plan content has no Plan tab at all — asserted
 // below rather than assumed, because that case is indistinguishable from a failed click.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
 import { TH_NAME } from "../derived-trailhead.config.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-derived-trailhead-onscreen.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PORT = 5310;

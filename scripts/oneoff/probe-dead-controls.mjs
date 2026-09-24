@@ -16,8 +16,14 @@
 // Report-only. Precision has to be measured before any of this becomes a gate: a control can
 // legitimately change nothing visible (a toggle already in that state, a backdrop shield, a
 // copy-to-clipboard). The output separates what it measured from what it concluded.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-dead-controls.mjs");
 
 const BASE = process.argv.find((a) => a.startsWith("--base="))?.slice(7) || "http://localhost:5199/Climbing-App/";
 const TABS = (process.argv.find((a) => a.startsWith("--tabs="))?.slice(7) || "Home,Climbs,Discover,Crew,Logbook,Profile").split(",");

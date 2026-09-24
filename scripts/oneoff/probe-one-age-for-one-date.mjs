@@ -16,6 +16,7 @@
 // browser flake would take the whole run down before any structural regression was reported
 // -- the ordering trap check:clickable records, where whichever block exits first is the
 // only one anyone reads. Nothing exits early; both sections always run.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import fs from "node:fs";
 import net from "node:net";
 import path from "node:path";
@@ -26,6 +27,11 @@ import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { settledText } from "../lib/render-settle.mjs";
 import { tapByText } from "../lib/tap-by-text.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-one-age-for-one-date.mjs");
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");

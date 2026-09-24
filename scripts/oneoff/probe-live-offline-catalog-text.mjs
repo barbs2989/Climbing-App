@@ -3,7 +3,13 @@
 // The end-to-end probe found the tap navigates (576 -> 380 chars) but no downloaded area or
 // route name reaches the screen. That is either a broken promise ("keeps working with no
 // signal") or a screen I misread. Dump the text rather than infer.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-live-offline-catalog-text.mjs");
 
 const SITE = "https://barbs2989.github.io/Climbing-App/";
 const STATE = process.argv[2] || "Nebraska";

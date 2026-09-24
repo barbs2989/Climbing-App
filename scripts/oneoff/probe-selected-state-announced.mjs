@@ -16,8 +16,14 @@
 // profile] as tab bars with an unannounced selection. Those have no selected state to announce
 // and flagging them is how a report gets ignored. A real tab bar is identified by DOING it:
 // click a sibling, and the bar must survive with the highlight MOVED onto what you clicked.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-selected-state-announced.mjs");
 
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
 const BASE = arg("base", "http://localhost:5199/Climbing-App/");

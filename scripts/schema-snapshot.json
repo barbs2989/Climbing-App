@@ -388,6 +388,7 @@
       "name",
       "photos",
       "photos_public",
+      "pinned_states",
       "primary_account_id",
       "resume_public",
       "show_name",
@@ -416,6 +417,18 @@
       "copies",
       "route_ids",
       "route_name"
+    ],
+    "route_base_checkins": [
+      "accuracy_m",
+      "created_at",
+      "fixed_at",
+      "id",
+      "lat",
+      "lng",
+      "route_id",
+      "samples",
+      "updated_at",
+      "user_id"
     ],
     "routes": [
       "access",
@@ -547,6 +560,7 @@
     ],
     "user_lists": [
       "created_at",
+      "description",
       "icon",
       "id",
       "name",
