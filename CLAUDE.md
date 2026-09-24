@@ -13854,7 +13854,7 @@ their own Résumé showed an amber **"Unverified"** chip.
   - **`fedge()` IS REMOVED**: declared, exported, and called by nothing.
   - Fails **closed**: a bundle that does not build, any of the five helpers missing from core's
     exports, either app source unparseable, a missing `useMutualConnections` or `_mutualAsk`
-    (`ANCHOR LOST`), a migration that strips to nothing, and fewer than **23** assertions run.
+    (`ANCHOR LOST`), a migration that strips to nothing, no migration adding `mutuals_visible`, and fewer than **29** assertions run.
   - Injection-tested **10/10** (`scripts/oneoff/inject-mutual-friends-cases.mjs`), each case proving
     its edit landed **by checksum** and restoring the file byte-identically. **Two must stay
     SILENT.** The harness's usual *refuse an expectation that matches the clean run* check is
@@ -13873,13 +13873,61 @@ their own Résumé showed an amber **"Unverified"** chip.
     **a climber the reader is already connected to is also connected to the climber whose profile
     they are viewing**. No identity is revealed that the reader did not already have — every name
     shown is one of their own connections — but the EDGE is, and neither party published it to them.
-  - **NO PRIVACY SWITCH WAS INVENTED, and that is flagged rather than decided.** Every other
-    visibility fact in this app has a control (`discoverable`, `show_name`, `photos_public`,
-    `resume_public`, `showOnRanks`); mutual friends would be the only disclosure without one.
-    Building it is a product decision beyond *"implement mutual friends"*, and it is not free — a
-    switch suppressing only the reader's own side would be misleading, and one suppressing a
-    climber's appearance in OTHER people's mutual lists needs the definer to filter on a column that
-    does not exist.
+  - **THE PRIVACY SWITCH EXISTS NOW (`0184`), and this bullet used to say it did not.** It read
+    *"no privacy switch was invented … needs the definer to filter on a column that does not
+    exist"* — correct for one day, and exactly the stale-bookkeeping shape this file records
+    everywhere else: a stated gap that has since closed sits in the worklist looking like work.
+    The user approved it; `profiles.mutuals_visible` is that column.
+  - **ONE COLUMN, FILTERED AT TWO POINTS, because two different climbers have an edge revealed by
+    any row** — the person **NAMED** (they learn C knows B) and the profile being **OPENED** (they
+    learn B's connections). So `mutuals_visible` is joined twice in `mutual_connections`: turn it
+    off and you are not named as a mutual on anybody's profile, AND your own stops showing a reader
+    who you both know. Dropping either half leaves somebody who opted out exposed on one of the two
+    surfaces, and **no render can see it** — the map just comes back fuller, which looks like the
+    feature working. Both halves are asserted.
+  - **IT GOVERNS EXPOSURE, NOT ACCESS, and that asymmetry is deliberate rather than an oversight.**
+    Hiding yourself does not blind you, which is how `resume_public` and `show_on_ranks` already
+    behave. Reciprocity (*"hide yours and you lose theirs"*) is a defensible product rule and a
+    DIFFERENT one; it would need its own sentence in the documents, so it was not smuggled in.
+    Probe section 4 pins it, because it is the half most likely to be "fixed" into reciprocity by
+    somebody who has not read `0184`'s header.
+  - **DEFAULT TRUE, AND `0110` IS THE PRECEDENT THAT ARGUES THE OTHER WAY** — so the migration
+    states the comparison rather than asserting the answer. That one flipped `discoverable` to
+    default **false** because *"being listed is the direction that cannot be walked back"*; what
+    made it urgent was exposure level — production autologin put a real climber's **name, handle
+    and city in front of ANONYMOUS VISITORS on the open web**. This is not that: the RPC needs
+    `auth.uid() is not null` and is granted to `authenticated` only, and every name it returns is
+    already one of the reader's own connections. By exposure it sits with `resume_public`,
+    `show_on_ranks` and `photos_public`, all three `not null default true`. The one column that
+    defaults FALSE is `show_name`, where the default would publish a legal name. **If that trade is
+    ever judged wrong, `0110` is the model: change the default AND reset the existing rows**,
+    because the accounts that never opted in are precisely the ones at issue.
+  - **NOT NULL, so there is no third state** for the switch, the filter and the documents to
+    disagree about. `resume_public` needs its `!== false` / `!!` asymmetry precisely *because* it
+    can be absent. Were this ever made nullable the bare `pm.mutuals_visible` evaluates NULL as
+    false and **hides**, which is the safe direction by construction.
+  - **THE GUARD WAS READING THE WRONG MIGRATION THE MOMENT A SECOND ONE EXISTED.** It picked its
+    file with `.find((f) => /mutual/.test(f))` — the **oldest** match — and `create or replace`
+    means the live function is whichever migration defines it **last**. So once `0184` landed, a
+    first-match scan would have gone on asserting against `0182`: green, against a body the
+    database no longer runs. It filters to files that actually DEFINE the function, sorts, and
+    takes the last. **A guard that names its input by a substring has a clustering key, and a
+    second file changes what it can see.**
+  - **`read()`'s LENGTH FLOOR IS FOR A FILE YOU ASSERT AGAINST, NOT A DIRECTORY YOU SCAN.** Pointed
+    at all ~185 migrations it tripped on a 340-character one and killed the run. `readRaw` scans;
+    the file the scan SELECTS still goes through `read()`, so the protection is where it belongs.
+  - **THE DOCUMENTS NAME THE CONTROL, and the guard asserts it in both.** A privacy document that
+    describes the exposure and not the switch is the half-told version — and `check:policy-claims`
+    asks the **opposite** question (does a surface claim a control the app LACKS), so it is
+    structurally blind to a control the app HAS going undescribed.
+  - **PROVEN ON THE LIVE DATABASE WITH THREE REAL ACCOUNTS**
+    (`scripts/oneoff/probe-mutuals-visible-switch.mjs`, 8 assertions). The service key creates the
+    accounts and touches nothing else; every read and every write under test goes through the anon
+    key plus that climber's own JWT, because whether a climber can set their **own** preference
+    under RLS is part of the question. **Every suppression is sandwiched by a control** — the row
+    is asserted present, the switch goes off, the row is asserted gone, the switch goes back on and
+    the row is asserted returned — so the disappearance is attributable to the flag rather than to
+    a broken function, a connection that never landed or an expired JWT.
 - **"1 VIEWING NOW" WAS COUNTING THE READER, on every DB-backed route, permanently.** The route
   page's social strip is four chips, and `presence.count` was `entries.length` — every tracked
   presence **including your own**, since you call `track()` — while the `viewers` list beside it

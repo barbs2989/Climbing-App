@@ -46,6 +46,7 @@ const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
  *             is nothing to hydrate and nothing that can go stale on reload. */
 const SWITCHES = {
   showOnRanks:  { col: "show_on_ranks", how: "state",   file: "app"  },
+  mutualsVisible: { col: "mutuals_visible", how: "state", file: "app" },
   resumePublic: { col: "resume_public", how: "state",   file: "app"  },
   showRealName: { col: "show_name",     how: "state",   file: "app"  },
   discoverable: { col: "discoverable",  how: "derived", file: "app"  },

@@ -19,7 +19,10 @@ const run = () => {
   catch (e) { return { out: String(e.stdout || "") + String(e.stderr || ""), code: e.status || 1 }; }
 };
 
-const MIG = "supabase/migrations/0182_mutual_friends_needs_a_definer.sql";
+// 0184 SUPERSEDES 0182 -- `create or replace` means the live body is the LAST definition, and
+// the guard picks it that way. Pointed at 0182 these cases still edit a real file and prove
+// nothing, which is the quietest way for a suite to die.
+const MIG = "supabase/migrations/0184_mutual_friends_can_be_hidden.sql";
 
 const CASES = [
   {
@@ -109,6 +112,45 @@ const CASES = [
     edit: (s) => s.replace("var res=raw[k].map(", "var resolved=raw[k].map(")
                   .replace("if(res.length)out[k]=res;", "if(resolved.length)out[k]=resolved;"),
     expect: "pass",
+  },
+  {
+    file: MIG, name: "named-climber-filter-dropped",
+    why: "the person NAMED loses their suppression: somebody who turned the switch off is still " +
+         "named as a mutual on other people's profiles. No render can see it -- the map just comes " +
+         "back fuller, which looks like the feature working",
+    edit: (s) => s.replace("    and pm.mutuals_visible" + NL, ""),
+    expect: "fail", must: /not NAMED as a mutual to anyone/,
+  },
+  {
+    file: MIG, name: "opened-profile-filter-dropped",
+    why: "the OTHER half of the same column: a climber who hid themselves still leaks their own " +
+         "edges to anybody who opens their profile. Two filter points, two separate promises",
+    edit: (s) => s.replace(NL + "    and po.mutuals_visible;", ";"),
+    expect: "fail", must: /own profile stops showing a reader/,
+  },
+  {
+    file: MIG, name: "comment-cannot-substitute-for-the-filter",
+    why: "the filter removed but QUOTED in a comment. The guard strips SQL line comments before " +
+         "scanning, so this must still fail -- a scan that read comments would pass on the " +
+         "documentation, which is how three checkers here were fooled in one day",
+    edit: (s) => s.replace("    and pm.mutuals_visible" + NL, "    -- and pm.mutuals_visible" + NL),
+    expect: "fail", must: /not NAMED as a mutual to anyone/,
+  },
+  {
+    file: MIG, name: "column-made-nullable",
+    why: "a third state appears, and then the switch, the filter and the documents can each read " +
+         "an absent value differently -- which is exactly why resume_public needs its !== false / " +
+         "!! asymmetry spelled out at every reader",
+    edit: (s) => s.replace("mutuals_visible boolean not null default true", "mutuals_visible boolean"),
+    expect: "fail", must: /NOT NULL DEFAULT true/,
+  },
+  {
+    file: "ClimbMatchCore.jsx", name: "policy-stops-naming-the-control",
+    why: "the Privacy Policy discloses the exposure and not the switch -- the half-told version. " +
+         "check:policy-claims cannot see it: that guard asks whether a surface claims a control the " +
+         "app LACKS, never whether a control the app HAS goes undescribed",
+    edit: (s) => s.replace(" You can turn this off in Settings \u2192 Privacy & safety;", " Nothing here;"),
+    expect: "fail", must: /Privacy Policy points at the control/,
   },
 ];
 
