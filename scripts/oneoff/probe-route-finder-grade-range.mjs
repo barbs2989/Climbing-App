@@ -18,7 +18,7 @@ const a = src.indexOf("const GRADE_SCALES = (() => {");
 const b = src.indexOf("const gradeRangeLabel");
 if (a < 0 || b < 0 || b < a) { console.error("ANCHOR LOST: GRADE_SCALES / gradeRangeLabel moved in lib/DbAreaBrowser.jsx"); process.exit(1); }
 const block = src.slice(a, b).replace(/\/\/[^\n]*\n/g, "\n");
-const { GRADE_SCALES, gradeScaleFor } = new Function("gradeSystemForDiscipline", block + "\nreturn { GRADE_SCALES, gradeScaleFor };")(gradeSystemForDiscipline);
+const { GRADE_SCALES, gradeScaleFor, gradeScalesFor, GRADE_SYS_FILTERED } = new Function("gradeSystemForDiscipline", block + "\nreturn { GRADE_SCALES, gradeScaleFor, gradeScalesFor, GRADE_SYS_FILTERED };")(gradeSystemForDiscipline);
 
 let fails = 0, ran = 0;
 const ok = (cond, msg) => { ran++; if (!cond) { fails++; console.log("FAIL  " + msg); } };
@@ -39,8 +39,15 @@ for (const n of [10, 11, 12, 13]) {
   ok(gn >= at("5." + n + "a")[1] && gn <= at("5." + n + "d")[2], "bare 5." + n + " (" + gn + ") falls inside the 5." + n + "a–5." + n + "d range");
 }
 // Every discipline the finder lists either has a scale or is deliberately refused.
-for (const d of ["sport", "trad", "rock", "bouldering", "scrambling"]) ok(Array.isArray(gradeScaleFor(d)), d + ": grade range offered");
-for (const d of ["", "alpine", "mountaineering", "ice", "mixed", "aid"]) ok(gradeScaleFor(d) === null, (d || "All") + ": grade range refused (mixed scales / no discipline)");
+const want = { sport: "yds", trad: "yds", rock: "yds", bouldering: "v", scrambling: "class", aid: "yds", mixed: "yds", ice: "wi,yds" };
+for (const [d, s] of Object.entries(want)) ok(gradeScalesFor(d).join(",") === s && Array.isArray(gradeScaleFor(d)), d + ": offers " + s + " (got " + gradeScalesFor(d).join(",") + ")");
+ok(gradeScaleFor("ice", "yds") === GRADE_SCALES.yds && gradeScaleFor("ice", "wi") === GRADE_SCALES.wi && gradeScaleFor("ice", "bogus") === GRADE_SCALES.wi, "ice: the scale toggle picks the option list, defaulting to WI");
+for (const d of ["", "alpine", "mountaineering"]) ok(gradeScaleFor(d) === null, (d || "All") + ": grade range refused (mixed scales / no discipline)");
+// Exactly the disciplines 0189 relabelled send grade_sys; the others must not, or a range drops
+// rows whose labels were never corrected (41 scrambling "4th" rows are labelled 'yds').
+ok(Object.keys(GRADE_SYS_FILTERED).sort().join(",") === "aid,ice,mixed", "grade_sys is sent for aid/ice/mixed only");
+const mig = fs.readFileSync(path.join(ROOT, "supabase/migrations/0189_route_finder_grade_scale.sql"), "utf8");
+ok(/discipline in \('ice', 'mixed', 'aid'\)/.test(mig), "0189 relabels the same three disciplines the sheet filters on");
 
 if (ran < 100) { console.error("FAIL: only " + ran + " assertions ran — the lift is not exercising the scales"); process.exit(1); }
 console.log(fails ? fails + " of " + ran + " failed" : "ok — " + ran + " assertions");
