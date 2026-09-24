@@ -11304,6 +11304,29 @@ the correction knows the screen is wrong, and they have no way to report it.
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
     it must fall to zero — `dup` alone would be passed by a detector that called everything a
     duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **A MEASURED NON-FINDING BESIDE IT, AND IT OVERTURNED THE IMPRESSION THAT PROMPTED IT: the
+  `approach` prose does NOT restate the `approach_variants` panel.** Both render on the Plan tab
+  one under the other, and this audit measures `approach` against `climbing_route`, so that pair
+  had never been asked about. Reading a CI `ui-screens` capture of `wa_mount_stuart_north_ridge`,
+  the two sections plainly cover the same walk-in at length and it was reported as duplication
+  worth editing.
+  - **`scripts/oneoff/measure-approach-vs-variants-overlap.mjs` says otherwise.** Across the **794**
+    WA routes carrying both, the median overlap is **3%**, **649 sit below 20%**, and only **4**
+    exceed 80%. The route the impression came from measures **2% — rank 461 of 797, with ZERO
+    verbatim sentences.**
+  - **What reads as duplication is the same FACTS in different words for different purposes** — the
+    trailhead, the creek, the hours, the gain — because the variants panel is a per-option breakdown
+    carrying its own hazards and base-finding while `approach` is a continuous narrative. They share
+    almost no text. **An impression from one screen is not a measurement**, which is the same lesson
+    this file records for every headline count that overstated its work.
+  - **The tail is not a defect list either.** The four above 80% are a SHORT `approach` (100-203
+    characters) fully contained in a long panel — which is a summary as readily as a redundancy, and
+    which it is cannot be read off a number. 31 routes repeat a sentence verbatim, and the examples
+    are utility lines (*"Allow 1-2 hours car-to-base."*, *"No Northwest Forest Pass is required on
+    the highway shoulder."*) that are reasonable to state in both places.
+  - Report only, and the number is deliberately **not** written down here beyond this paragraph:
+    re-run the script rather than quoting it, the rule this file states wherever a count has gone
+    stale under its own reading.
 - **AND A ROUTE CAN DESCRIBE ONE APPROACH TWICE AND NAME A DIFFERENT PASS EACH TIME.**
   `audit:approach-scope` asks whether the `approach` text runs PAST the base of the climb; it
   cannot see the `approach_variants` panel contradicting that same text. `wa_mount_stuart_north_ridge`
