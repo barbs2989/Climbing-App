@@ -169,7 +169,7 @@ if (unpinned.length) {
 //   descentText  rappel/walkoff          -> routes.descent_text  PROSE   free text
 //   pitchCount   single/multi            -> routes.pitches       INT     number
 //   outingShape  outback/loop/point      -> routes.outing_shape  KEY + CHECK   CORRECT
-//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135
+//   rockStyle    trad/sport/bouldering   -> (no column)          declared in 0135; group removed 0199
 //
 // So it is a CLASS, not a one-off: three of five, and the two live ones were reachable on 7/9
 // and 4/9 disciplines. `pitchCount` was the worse of them — a REQUIRED question whose value
@@ -235,10 +235,10 @@ if (unpinned.length) {
   // `.map(x => [x, x])`, so key EQUALS label and the stored value IS the display string — safe by
   // construction. Its one key-not-label field is `outingShape`, targeting the same key column. The
   // two forms use different conventions for one control type, and only AddRoute's can be wrong.
+  // The trad/sport/bouldering group ("What style of rock climbing?") was removed on purpose in
+  // 0199: there is no "Rock" type, so trad, sport, top rope and bouldering are picked directly in
+  // the discipline row, and that key is sent as `discipline` — the column that holds those keys.
   const GROUPS = {
-    "trad/sport/bouldering":
-      "rockStyle — 0135 declares it the one form key with NO column at all, so nothing is stored " +
-      "and no shape can be wrong.",
     "outback/loop/point":
       "outingShape — routes.outing_shape carries a CHECK constraint naming exactly these keys " +
       "(0087), so here the key IS the storable value. This is the model a bucket control should " +
