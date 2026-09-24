@@ -56,7 +56,7 @@ export function PhotoReportQueue({ notify }) {
         return (
           <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: 10, display: "flex", gap: 10 }}>
             {url
-              ? <img loading="lazy" decoding="async" src={url} alt="" style={{ width: 68, height: 68, objectFit: "cover", borderRadius: 9, flexShrink: 0, background: C.surface }} />
+              ? <img loading="lazy" decoding="async" src={url} alt="Reported photo" style={{ width: 68, height: 68, objectFit: "cover", borderRadius: 9, flexShrink: 0, background: C.surface }} />
               /* The photo is gone but the report is still here: only possible if the row was
                  removed by something other than the cascade. Say so rather than render a gap. */
               : <div style={{ width: 68, height: 68, borderRadius: 9, flexShrink: 0, background: C.surface, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 10.5, color: C.textMuted, textAlign: "center", padding: 4 }}>photo missing</div>}
