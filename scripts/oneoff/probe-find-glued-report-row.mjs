@@ -2,10 +2,16 @@
 // climber's name to the report outcome, so the JSX can be located by its inline styles.
 // Spawn flags copied from check-a11y-badge-names.mjs rather than reinvented — the host and
 // the DEMO_AUTOLOGIN env are both load-bearing.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-find-glued-report-row.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PORT = 5294;

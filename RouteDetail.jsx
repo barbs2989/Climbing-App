@@ -1558,6 +1558,31 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   // Never paint one green either: a green "Est. return" asserts you are down before dark,
   // and with the walk in and the walk out both counted as zero we cannot assert that.
   const approachUnknown=hasAnyEstimate&&!hikeInputsComplete&&!publishedIsWholeDay;
+  /* THE SAME DEFECT ON THE OTHER LEG. `techHrs(0,...)` is 0, so a roped route with no recorded
+     pitch count and no published or derived summit time contributes a climbing leg of ZERO to
+     Total, Est. summit and Est. return -- "unknown" counted as "none", which is exactly what the
+     comment above says about the walk. The catalog makes it look enormous (128,020 roped routes
+     store 0 or null pitches) and the SCREEN is what decides: `cragOnly` means trad and sport
+     never mount this calculator at all, `hasAnyEstimate` ends in `!!route.pitches` which is FALSY
+     at 0, and the Climbing tile already renders N/A. Measured 2026-09-23 by
+     scripts/oneoff/measure-zero-pitch-estimate-reach.mjs: SIX routes reach this state, three of
+     which `approachUnknown` was already hedging for its own reasons. This is the other three.
+
+     climbKnown IS THE CLIMBING TILE'S OWN TEST, not a second one written beside it. That tile
+     renders `techH` when `(hasPublishedSummitH||hasDerivedSummitH||route.pitches)` and N/A
+     otherwise, so deriving the marker from the same expression means the "N/A" and the ">=" can
+     never disagree -- the rule this file already applies to `_hfr`, `_memN` and `dayOf`.
+
+     NO `!publishedIsWholeDay` CLAUSE, deliberately: `publishedIsWholeDay` requires
+     `summitTimeHrs != null`, which is precisely `hasPublishedSummitH`, so it is a SUBSET of
+     climbKnown and the guard could never fire. A redundant condition in a guard reads as
+     coverage and is not, so it is asserted in probe-climb-leg-lower-bound.mjs instead of
+     written here. */
+  const climbKnown=hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
+  const climbUnknown=hasAnyEstimate&&!climbKnown;
+  /* The AGGREGATES are lower bounds if EITHER leg is missing; the Approach tile keeps its own
+     flag, because an unrecorded pitch count says nothing about the walk. */
+  const lowerBound=approachUnknown||climbUnknown;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
     <div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>{["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"Time Estimate":route.discipline==="bouldering"?"Approach Time":"Time-to-Summit"}</div>
     {/* The heading used to read "PUBLISHED TIMES · CAR-TO-CAR", hardcoded on every route carrying a
@@ -1600,13 +1625,13 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
         <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?(approachUnknown?"≥":"")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{hikeCoversWholeDay?"On foot":"Approach"}</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{(hasPublishedSummitH||hasDerivedSummitH||route.pitches)?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(approachUnknown?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
       </div>
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>
-        <div style={{textAlign:"center",background:sumLate?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:approachUnknown?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(approachUnknown?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(sumH)>0?"Overnight":"Leave earlier"}</div>:null}</div>
-        <div style={{textAlign:"center",background:late?C.redBg:approachUnknown?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:approachUnknown?C.text:C.green}}>{hasAnyEstimate?(approachUnknown?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
+        <div style={{textAlign:"center",background:sumLate?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:sumLate?C.red:lowerBound?C.text:C.green}}>{publishedIsWholeDay?"N/A":hasAnyEstimate?(lowerBound?"≥":"")+fmt(sumH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. {route.discipline==="bouldering"?"top-out":["sport","trad","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"finish":"summit"}</div>{sumLate?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(sumH)>0?"Overnight":"Leave earlier"}</div>:null}</div>
+        <div style={{textAlign:"center",background:late?C.redBg:lowerBound?C.card:C.greenBg,borderRadius:8,padding:8}}><div style={{fontSize:17,fontWeight:700,color:late?C.red:lowerBound?C.text:C.green}}>{hasAnyEstimate?(lowerBound?"≥":"")+fmt(retH):"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Est. return</div>{late?<div style={{fontSize:12,color:C.red,marginTop:1}}>{dayOf(retH)>0?"Overnight":"After dark"}</div>:null}</div>{approachUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — this climb has no recorded "+missHikeLabel+", and anything missing counts as zero. Your real day will be longer."}</div>:null}{climbUnknown?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bounds only — nothing on file says how long the climbing takes on this route: no pitch count, no published summit time. It counts as zero in the figures above, so your real day will be longer."}</div>:null}{gainShort?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Lower bound — the recorded gain of "+uElev(gainShort.gainFt)+" is less than the "+uElev(gainShort.riseFt)+" between this route’s own trailhead and summit pins. The times above are figured on the smaller number, so your real day will be longer."}</div>:null}{(!hasPublishedSummitH&&!hasDerivedSummitH&&route.pitches&&pitchedFraction(gn(route.grade))<1)?<div style={{gridColumn:"1 / -1",fontSize:12,color:C.textMuted,lineHeight:1.5,marginTop:2}}>{"Climbing time assumes a party moving continuously on ground this easy rather than belaying every pitch. That is an assumption inside the estimate, not something this route reports — if you plan to pitch it out, roughly double that figure."}</div>:null}
       </div>
     </div>
     {(route.segments||[]).map((seg,i)=>{

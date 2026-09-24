@@ -5,8 +5,14 @@
 // behaviour, and CLAUDE.md records exactly that for Crew ("crewView defaults to crews, so it
 // is the Crew screen already captured"). Print each candidate's ancestry and aria state so
 // the two cases can be told apart.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-crew-dead-candidates.mjs");
 
 const BASE = process.argv.find((a) => a.startsWith("--base="))?.slice(7) || "http://localhost:5199/Climbing-App/";
 const browser = await chromium.launch({ channel: "chrome", headless: true });

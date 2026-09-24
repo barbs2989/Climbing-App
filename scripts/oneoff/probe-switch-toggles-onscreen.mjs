@@ -22,10 +22,16 @@
 // privacyOpen/notifOpen, which show none. The other is the profile editor's (editDraft). The two
 // empty screens are kept in the list deliberately: they say "no switch on screen" rather than
 // being silently absent, so a future move of those switches shows up as a change here.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import net from "node:net";
 import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-switch-toggles-onscreen.mjs");
 
 const ROOT = new URL("../..", import.meta.url).pathname;
 

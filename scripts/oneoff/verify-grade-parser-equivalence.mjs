@@ -41,6 +41,12 @@ for (const [g, s] of [
   ["M8", "m"], ["A3", "aid"], ["C2", "aid"], ["Class 4", "class"], ["4th class", "class"],
   ["III", "class"], ["TD+", null], ["F", null], ["D-", null], ["Grade III, 5.4", "yds"],
   ["4th", "class"], ["3rd", "class"], ["Easy 5th", "class"], ["5.11b/c (6c+ French)", "yds"],
+  /* V-BEGINNER IS AN EDGE CASE RATHER THAN A LIVE ROW HERE, and that is the point of listing it:
+     every VB route in the catalog is in California, Maine or Nevada, so the default WASHINGTON
+     sample contains NONE and the rule below would be a branch that cannot fire — which reads as
+     coverage and is not. "V3, VB start" pins that the VB rule does not preempt a real V grade.
+     (Writing those prefixes as glob patterns here would close this comment on the `*` + `/`.) */
+  ["VB", "v"], ["Vb", "v"], ["V3, VB start", "v"], ["VB", "yds"],
 ]) pairs.set(g + "\x00" + s, [g, s]);
 
 /* FOUR DIFFERENCES ARE THE POINT OF THE CHANGE, NOT A REGRESSION, and exiting 1 on them made this
@@ -86,7 +92,21 @@ const caseOnly = (g, s, a, b) => {
   return u != null && Math.abs(u - b) < 1e-9;
 };
 
-let diff = 0, n = 0, intended = 0, raised = 0, cased = 0;
+/* A SEVENTH RULE, for the V-Beginner branch, and ATTRIBUTABLE for the same reason the CASE rule
+   is: "a newly-parsed value is fine" would gut the check, since that is exactly what a pattern
+   widened past its scope looks like. The difference is intended only when all three hold — the
+   system is the V one, the string carries a STANDALONE VB token, and lib produced exactly the
+   constant the shipped parser scores for a bare "VB". Anything else stays UNEXPECTED and exits 1.
+
+   THE CONSTANT IS DERIVED, never typed: asking `gradeNumFrom("VB","v")` means this rule follows
+   the parser if somebody changes the value, instead of going on asserting a number the parser has
+   stopped producing — and it returns null if the branch is ever removed, at which point the rule
+   cannot fire at all and the stale-declaration path takes over. */
+const VBEG = gradeNumFrom("VB", "v");
+const vBeginner = (g, s, a, b) =>
+  a == null && b != null && VBEG != null && s === "v" && /\bVB\b/i.test(g) && Math.abs(b - VBEG) < 1e-9;
+
+let diff = 0, n = 0, intended = 0, raised = 0, cased = 0, vbeg = 0;
 const examples = [], seenIntended = new Set();
 for (const [g, s] of pairs.values()) {
   n++;
@@ -98,6 +118,7 @@ for (const [g, s] of pairs.values()) {
   if (INTENDED.has(key)) { intended++; seenIntended.add(key); continue; }
   if (raisedByRule(a, b)) { raised++; continue; }
   if (caseOnly(g, s, a, b)) { cased++; continue; }
+  if (vBeginner(g, s, a, b)) { vbeg++; continue; }
   diff++; if (examples.length < 20) examples.push({ g, s, pipeline: a, lib: b });
 }
 
@@ -105,6 +126,8 @@ console.log(`compared ${n} distinct (grade, system) inputs drawn from ${rows.len
 console.log(`${intended} INTENDED difference(s) — the bare-ordinal branch lib/grade.js gained`);
 console.log(`${raised} RAISED by the "highest wins" rule — intended, and a highest-wins parser can produce nothing else`);
 console.log(`${cased} newly parsed by the CASE rule — intended, and each proven to be case alone (the pipeline agrees on the uppercased string)`);
+console.log(`${vbeg} newly parsed by the V-BEGINNER rule \u2014 intended, and each a standalone VB token on the V system scoring ${VBEG}`);
+if (!vbeg) console.log(`  NOTE: zero V-Beginner. Either the branch was reverted, or the edge cases stopped reaching it.`);
 if (!raised) console.log(`  NOTE: zero raised. Either the rule was reverted, or this sample holds no range grade.`);
 for (const [k, why] of INTENDED) if (seenIntended.has(k)) console.log(`  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}]  ${why}`);
 const stale = [...INTENDED.keys()].filter((k) => !seenIntended.has(k));

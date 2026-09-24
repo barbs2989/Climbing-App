@@ -9,11 +9,17 @@
 // <div onClick> cannot be operated without a mouse, and this app's whole route list was
 // unreachable from a keyboard until that helper landed; a new control that only works for a
 // mouse would be the same defect again.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "child_process";
 import net from "net";
 import path from "path";
 import { fileURLToPath } from "url";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-waypoint-row-opens-its-pin.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PORT = 5290;

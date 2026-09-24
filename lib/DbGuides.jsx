@@ -21,7 +21,7 @@ function Check({ checked, onClick, children, C }) {
   // stop. Announcing it as a button would lose the state entirely.
   return (
     <div {...clickable(onClick, { role: "checkbox" })} aria-checked={!!checked} style={{ display: "flex", gap: 10, alignItems: "flex-start", padding: "9px 0", cursor: "pointer" }}>
-      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blue : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
+      <span style={{ flexShrink: 0, width: 20, height: 20, borderRadius: 5, border: "1px solid " + (checked ? C.blue : C.border), background: checked ? C.blueSolid : "transparent", color: "#fff", fontSize: 13, display: "flex", alignItems: "center", justifyContent: "center", marginTop: 1 }}>{checked ? "✓" : ""}</span>
       <span style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{children}</span>
     </div>
   );
@@ -149,7 +149,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
           <select aria-label="Star rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea aria-label="How did it go?" value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blue, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
+          <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
 
         <div style={label}>Send an inquiry</div>
@@ -168,7 +168,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
             <Check checked={disclaimerOk} onClick={() => setDisclaimerOk(v => !v)} C={C}>{DISCLAIMER_TEXT}</Check>
             <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>No payment now. You'll confirm dates and price directly with the guide.</div>
             {!uid ? <div style={{ fontSize: 12.5, color: C.textSub }}>Sign in to send an inquiry.</div> :
-              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blue : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
+              <button onClick={send} disabled={!disclaimerOk || sending} style={{ width: "100%", background: disclaimerOk ? C.blueSolid : C.border, color: "#fff", border: "none", borderRadius: 11, padding: 12, fontSize: 14, fontWeight: 700, cursor: disclaimerOk ? "pointer" : "default" }}>{sending ? "Sending…" : "Send inquiry"}</button>}
           </>
         )}
         <button onClick={() => { onClose(); onDash && onDash(); }} style={{ width: "100%", marginTop: 16, background: "none", border: "none", color: C.textMuted, fontSize: 12, cursor: "pointer" }}>Already listed? Open your guide dashboard →</button>

@@ -9,7 +9,13 @@
 // The app ships a `?debugRoute=<id>` deep link, which opens it without driving the browse tree.
 //
 // Read-only, one page load against the deployed site. No dev server, no local build.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-live-glued-name-fixed.mjs");
 
 const SITE = "https://barbs2989.github.io/Climbing-App/";
 const ROUTE = "wa_mount_baker_north_ridge";

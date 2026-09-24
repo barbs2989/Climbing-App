@@ -24,7 +24,13 @@
 // `?debugRoute=<id>` opens a DB route directly. It fetches by `id`, while useAreaRoutes fetches by
 // `area_id` — so failing ONLY requests carrying `area_id=eq.` isolates the sibling read and leaves
 // the page itself loading normally. That precision is the whole probe.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-sibling-list-under-outage.mjs");
 
 const SITE = process.env.SITE || "https://barbs2989.github.io/Climbing-App/";
 const ROUTE = process.env.ROUTE || "ak_fudgecicle_chimney";

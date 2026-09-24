@@ -9,8 +9,14 @@
 // wired guards build. If the drill-in does not complete, that is reported as NOT REACHED and
 // the run exits non-zero -- a screen this probe cannot open must not read as a screen with
 // nothing wrong.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-dead-controls-route.mjs");
 
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
 const BASE = arg("base", "http://localhost:5199/Climbing-App/");

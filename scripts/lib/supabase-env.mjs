@@ -101,6 +101,11 @@ export async function selectAll(table, select, filter, opts) {
     const rows = JSON.parse(text);
     if (!Array.isArray(rows)) throw new Error(`GET ${table} -> ${text.slice(0, 200)}`);
     if (!rows.length) break;
+    // The keyset cursor IS the id, so a select that omits it cannot advance: `last` goes undefined,
+    // the filter drops, and the loop re-reads page one until the guard — 5,000 pages of duplicates
+    // returned as though they were the table. Measured doing exactly that (5,000,000 "routes" from a
+    // 205k table, every count a round multiple). Fail closed rather than return it.
+    if (rows[rows.length - 1].id == null) throw new Error(`selectAll(${table}): the select must include id — it is the pagination cursor`);
     out.push(...rows);
     last = rows[rows.length - 1].id;
     if (rows.length < pageSize) break;

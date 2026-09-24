@@ -13,11 +13,17 @@
 // Negative control included: at STATE level the section must NOT appear and no comments request
 // may be made, because a country or a state is too broad to discuss. Without that, "the section is
 // on screen" would pass on a build that rendered it everywhere.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-area-comments-onscreen.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PORT = 5330;

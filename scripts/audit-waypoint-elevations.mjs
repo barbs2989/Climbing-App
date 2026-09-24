@@ -65,6 +65,7 @@
 //   npm run audit:waypoint-elevations -- --ground     # terrain sets the tolerance, not a constant
 import { readFileSync } from "node:fs";
 import { elevationAt, selfTest } from "./lib/terrain.mjs";
+import { boxGrid } from "./lib/ground-box.mjs";
 
 const root = new URL("..", import.meta.url).pathname;
 const env = {};
@@ -92,7 +93,6 @@ const FLOOR_FT = 250;        // below this a gap is inside the 9-point grid's ow
 const RELIEF_SHARE = 0.5;    // ...and inside terrain this rugged, the grid has missed the extremes
 const FLAT_ENOUGH = 800;     // a box rougher than this is not described by 9 points at all
 const MIN_GAP = 500;
-const dpOf = v => { const s = String(v); const i = s.indexOf("."); return i < 0 ? 0 : s.length - i - 1; };
 
 // Deliberately NOT exported. This file opens with top-level await against the database, so an
 // import to reach one pure function would run the whole audit — an attractive nuisance. The
@@ -109,14 +109,7 @@ function boxVerdict(elevRaw, samples) {
 }
 
 /** The 9 points bounding what rounding and placement slop together could explain. */
-function boxGrid(lat, lng, type) {
-  const M_LAT = 111320, cos = Math.cos(lat * Math.PI / 180);
-  const halfLat = (0.5 * 10 ** -dpOf(lat) * M_LAT + SLOP_M(type)) / M_LAT;
-  const halfLng = (0.5 * 10 ** -dpOf(lng) * M_LAT * cos + SLOP_M(type)) / (M_LAT * cos);
-  const pts = [];
-  for (const dy of [-1, 0, 1]) for (const dx of [-1, 0, 1]) if (dy || dx) pts.push([lat + dy * halfLat, lng + dx * halfLng]);
-  return pts;   // 8 — the centre is already read by the main pass
-}
+const boxOf = (lat, lng, type) => boxGrid(lat, lng, SLOP_M(type));
 
 async function get(p, tries = 5) {
   for (let a = 0; a < tries; a++) {
@@ -260,7 +253,7 @@ if (GROUND) {
   let n = 0;
   async function box(q) { for (;;) { const p = q.shift(); if (!p) return;
     const vals = [];
-    for (const [y, x] of boxGrid(Number(p.lat), Number(p.lng), p.type)) vals.push(await elevationAt(y, x, 3));
+    for (const [y, x] of boxOf(Number(p.lat), Number(p.lng), p.type)) vals.push(await elevationAt(y, x, 3));
     p.box = boxVerdict(p.elev, [...vals, p.ground]);
     if (++n % 25 === 0) process.stderr.write(`  ${n}/${cands.length}\r`); } }
   const bq = cands.slice();

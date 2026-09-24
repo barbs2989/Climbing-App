@@ -14,11 +14,17 @@
 //
 // This measures which is which, under the SAME config check:overlay-scroll uses, so the answer is
 // about that guard and not about a fixture built for this probe.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-overlay-scroll-not-reached.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const NAMES = ["trustOpen", "unfinishedOpen", "alertsOpen", "legal"];

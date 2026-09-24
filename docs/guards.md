@@ -6107,14 +6107,50 @@ the total when deciding where a new guard belongs.
         AWAY from its corroborating record: a question between two columns, not a `grade_num`
         defect. And the two `"5.8 A2 or 5.10"` big walls (Beckey-Chouinard, Lotus Flower Tower),
         where 10 is defensible and `rock_grade` is NULL, so nothing corroborates it.
-      - **THE MIRROR CLASS IS TWO ORDERS OF MAGNITUDE LARGER AND IS REPORTED, NOT SWEPT: 778 routes
-        store a NULL `grade_num` while carrying a grade the parser reads perfectly well.** Same
-        consequence as an unreadable grade — they sort behind the whole catalog and are dropped by
-        any range filter — and a different cause: nothing ever wrote the column (this file already
-        records one source, `approve_new_route` not setting it). A blanket fill from the parser is a
-        write with **no corroborating record**, which is exactly what the Shuksan refusal above
-        declines. Counted by `measure-unreadable-grades.mjs` section 4; **re-run it rather than
-        quoting 778**, which was 833 under a looser filter before it was measured cleanly.
+        - **THOSE LAST TWO WERE FILLED WITH 10 ON 2026-09-24, i.e. A RECORDED REFUSAL WAS
+          OVERRIDDEN — said plainly, because a silent reversal is the thing this file exists to
+          prevent.** The refusal was made by `fix-grade-num-corroborated-by-rock-grade.mjs`, whose
+          contract is *repair a row where `rock_grade` corroborates the parser*; with `rock_grade`
+          NULL those two were outside its EVIDENCE STANDARD, which is not the same as a judgement
+          that the column must stay NULL. **They are not the Shuksan shape**: Shuksan has two
+          candidate fills that CONTRADICT each other, so NULL is the honest third answer; these
+          have exactly ONE candidate, and leaving NULL sorts them behind the whole catalog, which
+          is strictly worse than a defensible number. 10 is also not merely defensible — it is
+          what the catalog's own DECIDED rule produces, since "the grade is the highest grade"
+          (2026-09-23) makes `"5.8 A2 or 5.10"` a 10. **Two refusals, two different standards:
+          check which contract refused a row before reading the refusal as a verdict.**
+      - **THE MIRROR CLASS WAS TWO ORDERS OF MAGNITUDE LARGER AND IS NOW SWEPT: 778 routes stored a
+        NULL `grade_num` while carrying a grade the parser reads perfectly well. 772 filled, 6
+        refused.** Same consequence as an unreadable grade — they sort behind the whole catalog —
+        and a different cause: nothing ever wrote the column (this file already records one source,
+        `approve_new_route` not setting it).
+        - **THE OBJECTION THAT DEFERRED IT WAS HALF RIGHT, AND MEASURING SPLIT THE HALVES.** It
+          read *"a blanket fill from the parser is a write with no corroborating record, which is
+          exactly what the Shuksan refusal declines"*. The Shuksan refusal is about a row whose
+          OWN RECORDS DISAGREE — `grade` implying 4 against a `rock_grade` of 5.7 — not about the
+          operation. `grade_num` is BY DEFINITION the parsed form of `grade`, and
+          `scripts/pipeline/load-state.mjs` computes it exactly this way at import. Measured
+          against the population that PASSES, the method that settled `wa_shock_and_awe`:
+          **204,529 of 204,565 populated rows (99.98%) store exactly what this parser reads**, and
+          **2,273 of 2,281 commitment-only rows (99.65%) store the roman numeral**. So the fill is
+          the catalog's own operation and the roman last-resort branch is its own convention.
+        - **THE SIX REFUSALS ARE THE RESULT, and the instrument found Shuksan BY ITSELF** — which
+          is what says the rule is right rather than fitted. Every one is a commitment-only or
+          ice `grade` against a technical `rock_grade`: two candidate fills, so NULL stays honest.
+        - **THE CORROBORATION RULE WAS WRONG TWICE BEFORE IT WAS RIGHT, and both are the same
+          class of error — comparing two DIFFERENT QUANTITIES.** First it used `alpine_grade` and
+          reported **11 disagreements, every one correct data**: `"5.7"` against `alpine_grade
+          "IV"` is a technical grade against a roman COMMITMENT grade, the distinction this file
+          records in half a dozen places. Then, with that removed, it never mapped the **`class`**
+          system — silently moving Shuksan itself out of REFUSE and into FILL, because class and
+          YDS are ONE numeric scale here (`class 3` and `5.3` both score 3) and the mapping was
+          missing. **A scale shared for SCORING is shared for CORROBORATION.**
+        - The rule lives in `scripts/lib/grade-corroboration.mjs`, shared by the measurement and
+          the sweep — the `scripts/lib/camp-names.mjs` precedent, because a sweep and an audit
+          that disagree about "the same row" either bless the sweep's mistakes or report correct
+          work as broken. **Re-run `measure-readable-but-unpopulated-grades.mjs` rather than
+          quoting any figure here**; 778 was 833 under a looser filter before it was measured
+          cleanly, and it is 6 today.
     - **AND THE EIGHT "OUTLIERS" BELOW WERE ALREADY RIGHT — SEVEN OF THEM STORE EXACTLY WHAT THE NEW
       RULE PRODUCES.** They appear in the sweep's SKIPPED list precisely because their stored value
       already equals the highest grade: `wa_mount_stuart_west_ridge` 6, `wa_cathedral_rock_standard`
@@ -6143,10 +6179,34 @@ the total when deciding where a new guard belongs.
         shape, as *"one-line fixes with their own before/after to measure"*. Measuring turned one
         into a shipped repair and the other into a refusal — and nothing about the original
         sentence distinguished them. *A deferred item is a hypothesis until somebody counts it.*
-      - **A THIRD shape surfaced from the same measurement and is REPORTED, not swept: `"Vb"`/`"VB"`
-        on 9 bouldering routes** score null. That is V-Beginner, which sits BELOW `V0` — and `v0`
-        already maps to `0`, so giving it a number means deciding whether `grade_num` admits values
-        under zero, which changes what the range filter's floor means. A product call, not polish.
+      - **A THIRD shape surfaced from the same measurement — `"Vb"`/`"VB"` on 9 bouldering routes —
+        AND IT IS FIXED, AT -1: THE FIRST VALUE THIS COLUMN HAS EVER HELD BELOW ZERO.** This entry
+        used to defer it as *"a product call, not polish"*, on the grounds that giving V-Beginner a
+        number means deciding whether `grade_num` admits values under zero. Measuring turned that
+        into an answerable question rather than a preference, and the answer is written into
+        `lib/grade.js` beside the branch.
+        - **THE CONSUMERS WERE READ, NOT ASSUMED** (`scripts/oneoff/measure-vb-grade-rows.mjs`).
+          The RPCs declare `min_grade`/`max_grade` as `numeric default null` and sort `nulls last`,
+          so a negative sorts correctly and is excluded only by a floor it is genuinely below; the
+          one live `queryArgs` (`lib/DbAreaBrowser.jsx`) passes NEITHER, so **the range filter is
+          unwired today and the live consequence of a null is the SORT**; `lib/offline.js` goes
+          through `numOrNull` + `cmpNullsLast`. **`techHrs(pitches,len,gradeNum)` is NOT a consumer
+          of this column** — its callers pass `gn(route.grade)`, a different parser over the grade
+          STRING — so no safety-adjacent time estimate is in frame, which the parameter's name
+          makes it very easy to believe otherwise.
+        - **-1 RATHER THAN 0, because 0 is taken.** `V0` maps to 0 and 10,159 rows hold it, so
+          reusing it would assert that VB and V0 are the same grade; -1 is what the scale claims.
+          Measured before choosing: the column holds **min 0, max 17 and ZERO negatives**, so this
+          really is a new class of value and nothing does arithmetic on the stored number.
+        - **SCOPED TO THE V SYSTEM, AND THAT COSTS NOTHING**: all 9 occurrences of a `VB` token in
+          `grade` are `bouldering`, and there are **0** in rock/ice/alpine/aid_grade or
+          `commitment`. So the safer scoping is also the complete one, and a system-agnostic
+          fallback would buy no row while putting "VB" in reach of a string meaning something else.
+        - **9 GAINED, 0 CHANGED, 0 LOST** over all 205,382 graded routes
+          (`verify-vb-branch.mjs`), which also asserts the branch's SCOPE on 12 declared cases
+          before reading a row — because "0 CHANGED" is equally true of a branch that never fires.
+          One of those cases pins that a bare `"V"` is **5**, the PRE-EXISTING roman last-resort
+          branch, so the new branch cannot be blamed for it later.
       - `scripts/oneoff/{measure-unreadable-grades,verify-v-case-widening,fix-grade-num-lowercase-v}.mjs`.
         The measurement **derives which widenings are already shipped** by asking the parser two
         one-line questions rather than restating them — a control hardcoded to the pre-fix shape
@@ -6200,10 +6260,30 @@ the total when deciding where a new guard belongs.
         `wa_colchuck_peak_north_buttress_couloir`, `wa_lane_peak_r3` — have COMPLETE hike inputs, so
         they present an **exact** Total beside a Climbing tile reading **N/A**, and *"Est. return"*
         equal to *"Est. summit"* (the walk branch of `retH` fires when `pitches` is falsy, so the
-        descent is zero too). **REPORTED, NOT FIXED**, for the reason this entry reaches one bullet
-        up about `gn()`: a handful of routes does not justify moving a safety-adjacent estimate.
-        The consistent repair, if it is ever taken, is to extend the **existing** `approachUnknown`
-        marker to an unknown CLIMBING leg — which can only ever make the app hedge MORE, never less.
+        descent is zero too).
+        - **THE REPAIR THIS ENTRY NAMED IS TAKEN, 2026-09-24, AND ALL SIX ARE HEDGED.** It read
+          *"REPORTED, NOT FIXED … a handful of routes does not justify moving a safety-adjacent
+          estimate"*, and closed by naming the consistent repair: extend the marker to an unknown
+          CLIMBING leg, *"which can only ever make the app hedge MORE, never less"*. That is the
+          argument that makes it polish rather than a product call — the change adds a caveat and
+          moves no number, so the objection about touching the estimate does not apply to it. The
+          measurement now reports **6 hedged, 0 bare** (was 3/3).
+        - **`climbKnown` IS THE CLIMBING TILE'S OWN TEST**, not a second one written beside it.
+          That tile already renders `N/A` on exactly this condition, so deriving the marker from
+          the same expression means the `N/A` and the `≥` cannot disagree — the rule this repo
+          applies to `_hfr`, `_memN` and `dayOf`. The aggregates take `lowerBound = approachUnknown
+          || climbUnknown`; **the Approach tile keeps its OWN flag**, because an unrecorded pitch
+          count says nothing about the walk, and that is the load-bearing assertion in the probe:
+          a rule that only ever ADDS a hedge is satisfied by hedging everything.
+        - **NO `!publishedIsWholeDay` CLAUSE, deliberately.** `publishedIsWholeDay` requires
+          `summitTimeHrs != null`, which IS `hasPublishedSummitH`, so it is a subset of
+          `climbKnown` and the guard could never fire. A redundant condition in a guard reads as
+          coverage and is not, so it is **asserted** in
+          `scripts/oneoff/probe-climb-leg-lower-bound.mjs` rather than written into the code.
+        - That probe renders the real `RouteDetail` over six fixtures, **37 assertions**, and is
+          proven non-vacuous by A/B: reverting the aggregates to `approachUnknown` fails **exactly
+          3**, all in the one case, with the other 34 green — so it is specific rather than firing
+          on any change. Four of the six cases must stay CLEAN.
       - **THE STATIC PREDICATE WAS WRONG AND THE RENDER VALIDATION IS WHAT CAUGHT IT.** The first
         version of `scripts/oneoff/measure-zero-pitch-estimate-reach.mjs` computed these buckets
         from columns alone and missed `cragOnly` entirely; rendering a sample through the real
@@ -10841,14 +10921,79 @@ the correction knows the screen is wrong, and they have no way to report it.
       ft** — within 86 ft of the ground's 3,303 and the sentence's 3,300, and **1,436 ft** from the
       stored 4,650. Written by a different enrichment pass from either, so it shares no input with
       the two records already agreeing. *A side-effect check is also a measurement.*
-    - **SIX ARE DELIBERATELY LEFT AND THE SCRIPT'S HEADER NAMES EACH**, because a reviewed batch is
+    - **FIVE ARE DELIBERATELY LEFT AND THE SCRIPT'S HEADER NAMES EACH**, because a reviewed batch is
       only a batch if the refusals are written down: **four** are a sentence correctly naming a
       SECOND feature (Cascade Pass 5,392, Slate Pass 6,900, Longs Pass 6,200, a switchback ~5,600),
-      where the repair is nothing at all; and **two** the ground does not separate —
-      `wa_mount_stuart_north_ridge` at 3,399 is nearer neither 3,200 nor 3,540, and
-      `wa_mount_baker_easton_glacier`'s prose is 23 ft out against a pin 137 ft out, which is not the
-      separation this batch demands. **A threshold widened to admit the case it is judging proves
-      nothing** — the rule the trailhead chord-geometry probe already records.
+      where the repair is nothing at all. A fifth, `wa_mount_stuart_north_ridge`, is left because the
+      terrain across that pin's own uncertainty runs **3,342-3,770 ft** and admits 3,400 and 3,540
+      alike — genuinely undecidable from the ground rather than merely below a bar.
+    - **`wa_mount_baker_easton_glacier` WAS a sixth and IS NOW REPAIRED, and the objection that
+      deferred it was right.** It read *"the prose is 23 ft out and the pin 137 ft out, which is not
+      the separation this batch demands. **A threshold widened to admit the case it is judging proves
+      nothing**"* — and nothing was widened. What changed is the instrument; see the entry below.
+  - **`--ground` ASSERTED A CONCLUSION THE GROUND CANNOT REACH, AND ITS SEPARATION BAR WAS FLAT
+    WHERE THE GROUND'S RESOLVING POWER IS NOT.** It compared ONE DEM reading against
+    `dS <= 50 && dP >= 3 * Math.max(dS, 50)` — a floor of 150 ft however the terrain behaves — and
+    over the six live findings it was **wrong twice, in opposite directions**. Neither was visible
+    from the code: a flat bar looks like conservatism, and this one was documented as exactly that.
+    - **The rule was also written TWICE**, in this audit's verdict and in
+      `scripts/oneoff/fix-trailhead-pin-vs-its-own-prose.mjs`'s apply-time gate — which is why
+      correcting one without the other would have left the repair still refusing.
+    - **TOO STRICT ON GENTLE GROUND.** `wa_mount_baker_easton_glacier`'s Park Butte trailhead: the
+      terrain across the pin's **whole uncertainty** spans **3,292-3,485 ft**, so the stored **3,200
+      is 92 ft below anything the ground holds there** while the sentence's 3,360 sits inside it.
+      The flat bar refused a verdict by **nine feet** (141 against a floor of 150) and the row sat on
+      the deferral list. **Repaired — the first time this audit has ever reached a verdict at all.**
+    - **TOO LOOSE ON STEEP GROUND, WHICH IS THE DANGEROUS HALF.** `wa_osceola_peak_scramble`'s box
+      spans **486 ft** and admits 7,170 and 6,900 alike, and the flat bar announced *"the PIN is
+      right — the sentence is the wrong half"* about a sentence reading *"Slate Pass, at about 6,900
+      feet, is at the second [switchback]"*. **This audit's own header and its repair batch's
+      refusal list BOTH record that sentence as correct**, and the verdict line contradicted them.
+      `wa_magic_mountain_northwest_ridge` is the same shape about Cascade Pass.
+    - **SO THE TWO VERDICTS ARE NOT SYMMETRIC, and that is the structural point rather than a
+      threshold nicety.** The ground can refuse the **PIN** — a pin IS the coordinate, so *"nothing
+      near this height exists here"* is a statement about the pin and nothing else. It cannot rule on
+      a refused **SENTENCE**, because a sentence legitimately names a second feature with its own
+      height, and **four of the six do**. The line now says so and asks the reader to read it.
+      **The one verdict the ground can actually support had never once fired; the one it cannot
+      support fired twice.**
+    - **Ask the terrain instead of a constant.** `scripts/lib/ground-box.mjs` samples the ground
+      across the pin's own **rounding box plus placement slop** and asks whether a claimed height is
+      something that box could innocently produce — the instrument `audit:waypoint-elevations
+      --ground` already uses, whose own comment says *"a flat bar reads its own noise"*. Measured
+      relief across the six findings: **193 ft** at Park Butte against **616 ft** under Magic
+      Mountain. A bar that cannot tell those apart is wrong in both directions at once.
+    - **EXTRACTED, NEVER COPIED.** `boxGrid` lived inside `scripts/audit-waypoint-elevations.mjs`
+      behind a comment apologising for not exporting it (*"an import to reach one pure function
+      would run the whole audit — an attractive nuisance"*). That is a reason to move it OUT, and
+      the new module has no top-level await, no database and no network of its own. **The repair is
+      to COLLAPSE, never to make two bodies match.** Proven behaviour-neutral by
+      `scripts/oneoff/verify-box-grid-extraction.mjs` — **42 assertions, 0 failed** — which lifts
+      the pre-change implementation **out of git** rather than retyping it, because a retyped
+      reference agrees with itself whatever the original did.
+    - **THE MARGIN IS DERIVED FROM THE CLAIM, NOT CHOSEN**, which is what answers the deferral's own
+      objection. A value written to the nearest hundred is consistent with any ground within 50 ft
+      of it; one written to the foot is consistent with almost nothing. `roundingSlack` reads the
+      step off the number itself, so **no threshold is fitted to the cases being judged** — and
+      3,200 is still refused at Park Butte with its full 50 ft of slack.
+    - **THE VERDICT HAD NO INJECTION CASE AT ALL.** The suite's nine cases prove the audit FINDS a
+      disagreement; none ran `--ground`, so the line telling a reader WHICH HALF is wrong was
+      unexercised for its whole life. Five cases added, offline via a `--ground-fixture` seam
+      carrying the real 3DEP readings. **A/B against the reinstated flat rule: four of the five
+      flip**, and two of them reproduce the live wrong verdicts by name — `forbid` is the
+      load-bearing half, since a case that only checks the right string appears is satisfied by a
+      line printing every verdict at once. The fifth (fail-closed on too few readings) passes under
+      both, which is honest rather than a catch.
+    - **The `readFileSync` the seam needed was missing and the suite caught it on the first run** —
+      all five cases died on a `ReferenceError` rather than on a verdict. A guard's own test seam is
+      code like any other.
+    - **A FIFTH, WEAK RECORD AGREES WITH THE REPAIR, and it is stated as weak.** Park Butte's route
+      stores `gain_ft` 7,600 against a summit pin of 10,781 — so the old trailhead left **19 ft** of
+      re-gain across a glacier route with the Railroad Grade in it, and the repaired one leaves
+      **179**. Written by a different pass from either record. Corroboration, not proof.
+    - **The neighbouring field was checked BEFORE the write**, as this batch's own header demands:
+      raising a trailhead LOWERS the trailhead-to-summit rise, so `gainBelowOwnPins` moves further
+      from firing rather than closer. Silent before and after.
   - **A MEASURED NON-FINDING BESIDE IT, recorded so nobody builds the detector: a pin NAME that
     embeds a height is a THIRD record inside the same object, and it never disagrees.** 73 WA pins
     name one (`Point 4555'`, `Steep Heather/Meadow Ridge Below Point 6066`), **68 agree with their
@@ -10859,7 +11004,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     name-embedded number is qualified by its own preposition, so separating them needs English read
     rather than matched. *A detector for a class of zero is the thing this repo keeps refusing to
     build.*
-  - Injection-tested **9/9** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
+  - Injection-tested **14/14** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
     `--fixture` so the whole harness runs **offline** and nothing writes to the live project — the
     mechanism `audit:trailhead-road` sets, because these faults live in the DATA and a case cannot
     inject one by editing code. **SIX must stay SILENT** and they are the load-bearing half: a case
@@ -11155,6 +11300,46 @@ the correction knows the screen is wrong, and they have no way to report it.
     in and the count must rise, `--inject=nodup` replaces `climbing_route` with unrelated prose and
     it must fall to zero — `dup` alone would be passed by a detector that called everything a
     duplicate. The two pre-existing cases (`clean`, `dirty`) still behave.
+- **AND A ROUTE CAN DESCRIBE ONE APPROACH TWICE AND NAME A DIFFERENT PASS EACH TIME.**
+  `audit:approach-scope` asks whether the `approach` text runs PAST the base of the climb; it
+  cannot see the `approach_variants` panel contradicting that same text. `wa_mount_stuart_north_ridge`
+  — the route `check:ui` pins as its sample — rendered both on one Plan tab: the variants panel
+  said *"South side — Esmeralda TH over **Ingalls Pass** and Goat Pass"* while the `approach`
+  prose a screen away said *"over **Longs Pass** and up Ingalls Creek to Goat Pass"*.
+  - **THAT THEY ARE ONE APPROACH RATHER THAN TWO OPTIONS NEEDS NO CLIMBING KNOWLEDGE**, which is
+    what makes this decidable at all: the variant states `distMi 9 / gainFt 4800 / hours 8` and the
+    prose states *"~9 miles, ~4,800 ft gain, ~8 hours"*. **Two genuinely different ways in do not
+    agree on all three figures.** Without that the page could simply be offering a choice, which is
+    what a variants panel is FOR, and there would be nothing to repair.
+  - **COUNT FIELDS, NOT MENTIONS.** Longs Pass appears in **five independent records** — a
+    waypoint pin NAMED "Longs Pass" (6,300 ft, distMi 3.5, with Goat Pass next at 5.0 and **no pin
+    anywhere for Ingalls Pass or Ingalls Lake**), the `approach` sentence, `descent_text` twice,
+    the `itinerary` schedule, and `bivy[2].notes`. Ingalls Pass appears in **one**: the variant's
+    own `name` and `notes`, which is one claim written twice.
+  - A sixth record agrees and it is **arithmetic rather than prose**: the variant's own hazard list
+    says *"~2,000 ft of descent on the way in"*, and a line from its Longs Pass pin (6,300) to its
+    Goat Pass pin (7,600) only GAINS. A 2,000 ft drop only makes sense falling off Longs Pass to
+    Ingalls Creek and climbing back — which is what the `approach` sentence describes, and what the
+    Ingalls Pass line (past Ingalls Lake at ~6,460, then contouring) does not.
+  - **A CLASS OF ONE, MEASURED BEFORE THE REPAIR.** Across the **872** routes carrying
+    `approach_variants`, **293** variants name a pass and **3** name one the row contradicts.
+    Reading them leaves one: `wa_cascade_peak_east_ridge` names Cache Col while pinning Cascade
+    Pass — two real places on one route; and `wa_mount_ann_scramble` names Maple Pass inside
+    *"NOTE ON THE NAME: this is the Lake Ann below Artist Point on SR-542, **not** the Lake Ann near
+    Maple Pass"* — **correct work**, flagged because *a negation is not a claim*, the trap this file
+    already records for road prose. **A detector for a class of one is the thing this repo keeps
+    refusing to build.**
+  - **THE FIRST RUN OF THAT MEASUREMENT REPORTED 13 AND TWELVE WERE MY OWN TOKENISER.** A greedy
+    two-word capture reads *"From Cascade Pass"* as a different place from the pinned *"Cascade
+    Pass"*. Stripping a leading preposition or article took it 13 → 3. **A count is only as good as
+    its tokeniser**, for the third time in this file.
+  - Repaired by `scripts/oneoff/fix-stuart-southern-approach-names-the-wrong-pass.mjs`. **Nothing is
+    typed**: the replacement phrase is lifted verbatim from the row's own `approach` field and the
+    pass name from its own waypoint, and the Ingalls-specific clause is REMOVED rather than
+    rewritten — the rest of the paragraph is common to either way in and is kept byte-for-byte. The
+    gate re-asserts all of the evidence at apply time, **including that the three figures still
+    agree**, so a row that has since been re-researched into two genuinely different approaches is
+    refused rather than written over.
 - **`audit:hazard-redundancy` reports a WORKING FEATURE, and its old wording read as a defect
   list.** It printed *"routes repeating at least one hazard: 661"* and *"repeated lines removed:
   1,281"*, which invites a sweep. There is nothing to sweep: `mergeHazards` runs at **render**
@@ -14791,12 +14976,59 @@ asks before a probe spends anything, and it is the fourth precondition in this f
     under `scripts/oneoff/` — both mentions in `.github/workflows/` are comments — and
     `package.json` names no probe. **Do NOT wire this into a `check:` guard**: a CI runner is small
     and legitimately busy, and a guard that declines to run is a guard you do not have.
-  - Wired into the **10 cited browser probes**, which are the ones this file points at as the proof
-    of a claim. The import goes first (ESM imports hoist, so their order cannot matter) and the
+  - **WIRED INTO EVERY BROWSER PROBE, AND IT WAS 10 OF 56 FOR TWO WEEKS.** The original scoping was
+    *"the ones this file points at as the proof of a claim"* — which is the wrong axis for the
+    failure this prevents. A stale verdict does not hurt because CLAUDE.md quotes it; it hurts
+    because a session months later runs a probe **by hand** while investigating a surface, reads a
+    MISS, and goes off to edit correct code. Whether that probe is cited has nothing to do with it.
+    Found by trying to run the sweep: **46 of the 56 then on disk** would have produced a verdict
+    at **14.6x**. Quote the guard's own line, not this one — it printed **57** within the hour,
+    because another session landed one while this sat in CI (already wired, which is the
+    convention holding; the gate is for the one that is not).
+    The import goes first (ESM imports hoist, so their order cannot matter) and the
     CALL after the leading contiguous import block — never after *"the last import line"*, which is
     the trap `check:script-roots` records, where a probe's `ENTRY` template literal carries import
     lines far below the real ones. Verified per file: parses, exactly one call, and the call
     precedes `chromium.launch`.
+  - **`check:quiet-box-wiring` is what stops that rotting**, and it is a gate rather than a note
+    for the reason this file gives everywhere else: the wiring is one call site per probe and one sentence of
+    reasoning, and a missing one is **invisible** — the probe runs, prints a verdict, and the
+    verdict is wrong in a way that reads exactly like a finding. It does **not** contradict the
+    *"do NOT wire this into a `check:` guard"* rule above: that forbids a guard **evaluating the
+    load**, and this one only asks whether the CALL IS PRESENT. It never declines anything, and no
+    workflow can reach the refusal because none executes `scripts/oneoff/`.
+    - Discovery is **behavioural** — a probe that launches a browser, never one whose NAME suggests
+      it — the rule `check:overlay-discovery` already pays for.
+    - **The sharpest assertion is the one nothing else could make**: the refusal message NAMES a
+      probe, and a copy-paste from a sibling makes it name the wrong one. That is silent — the
+      guard still refuses, and the message sends the next reader to a file they are not running.
+    - **ORDER, not merely presence.** The whole point is to spend nothing on an unbelievable run,
+      so a call placed below `chromium.launch` still refuses — after paying for Chrome, and on
+      several of these a dev server and an esbuild bundle too.
+    - Full-line comments are **masked before counting**, because this guard's own failure message
+      prescribes `assertQuietBox("probe-x.mjs");` and a probe quoting that repair in its header
+      would read as calling it twice — a guard failing on its own documentation, the trap
+      `check:ci-cancel` records. Full-line **only**: these probes are full of `https://localhost`,
+      and a mid-line strip is how the offsets-preserving blanker once ate 21% of a file. The
+      residual (a call quoted in a TRAILING same-line comment) is stated in the source.
+    - Fails **closed** four ways, each of which otherwise prints the same clean line as a clean
+      tree: `scripts/lib/quiet-box.mjs` missing, that module no longer exporting `assertQuietBox`
+      (with which every probe's import is dead while every call still parses), an unreadable
+      directory, and fewer than 40 browser probes discovered.
+    - Injection-tested **7/7** (`scripts/oneoff/inject-quiet-box-wiring-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring the file byte-identically, and judged on
+      the guard's **own FAIL lines** — never the word *"FAIL"*, which this guard's prose contains.
+      The harness refuses any expectation that already appears in the healthy run. Case 1 is the
+      real historical state of 46 files. **Two must stay SILENT**, and the comment one is proven
+      load-bearing by A/B: with the mask neutered **exactly that case flips** and the other six are
+      unmoved.
+    - **`check:injection-anchors` READS 6 OF THE 7, and that was checked rather than assumed** —
+      A/B by removing the suite: 97 → 96 suites, 650 → 644 cases. The seventh (`call-after-launch`)
+      moves a line rather than replacing one, so it declares no anchor that guard can resolve. It
+      is not unwatched: its edit returns the source **unchanged** if its string rots, and the
+      harness reports that as `HARNESS BUG — the edit changed nothing` and exits 1. Worth stating
+      because *a suite's own SHAPE decides whether its anchors are checked at all*, and this file
+      already records a suite whose four anchors were silently UNPARSED while it printed 8/8.
   - **`--anyway` (or `QUIET_BOX=0`) runs regardless and STAMPS the output** *"NOT EVIDENCE"*, so a
     forced run cannot be read back later as a clean result. An override that left no trace would
     just move the defect into the transcript.
@@ -14806,11 +15038,50 @@ asks before a probe spends anything, and it is the fourth precondition in this f
     (fail-OPEN, since a platform that cannot report load must not block everybody), forced, and the
     real refusal.
   - **WHAT IT DOES NOT DO**: it says nothing about whether a probe is correct, only whether this
-    machine can produce a believable answer. And the **11 cited browser probes remain UN-SWEPT** —
-    #1678 swept the 77 static one-offs and #1695 the 202 DB-reading ones, and neither could reach
-    a browser probe. They could not be swept the night this landed either: the box measured
-    **116x oversubscribed**, which is the load this file already records as producing a wrong
-    answer. *Sweep them from a quiet box; the refusal is what stops that run being wasted.*
+    machine can produce a believable answer. And **the whole browser corpus remains UN-SWEPT** — #1678
+    swept the 100 static one-offs and #1695 the 210 DB-reading ones, and neither could reach a
+    browser probe. Attempted again 2026-09-23 at **14.6x oversubscribed** and refused, which is the
+    guard working rather than a setback: the two previous sweeps each found probes that were red
+    and **not one was an app defect**, so a sweep run at this load would produce exactly that
+    reading list with no way to tell it from a real one. *Sweep them from a quiet box; the refusal
+    is what stops that run being wasted.*
+  - **THE RUNNER FOR THAT SWEEP IS `scripts/oneoff/run-browser-probe-sweep.mjs`**, so the next
+    quiet box does not start from nothing. It exists as a script rather than a shell one-liner for
+    three measured reasons: it **DERIVES** its list behaviourally (the first attempt carried a hand
+    list that was wrong in both directions — 7 entries launching no browser, and stale the day
+    probe #57 lands); it **refuses the box itself**, because a sweep is where a loaded run does the
+    most damage, arriving as one unbelievable verdict per probe formatted as a reading list; and macOS has
+    **no `timeout(1)`**, which made the first static sweep return exit 127 for all 77 — a uniform,
+    plausible, catastrophic-looking result that measured nothing, so each probe gets its own
+    watchdog. `--dir` is a test seam: all **five** verdict branches (PASS/FAIL/TIMEOUT/BROKEN/
+    REFUSED) are proven against a fixture of one-line probes, which is the only way to exercise
+    them without making the very run this refuses.
+    - **ITS FIRST REAL RUN DEFEATED ITSELF, AND THE RUNNER REPORTED THE WRECKAGE AS FINDINGS.**
+      A sweep of browser probes **IS** the load: each spawns a dev server and a Chrome, so the box
+      went from **1.0x at probe 1 to 8.6x by probe 16**, after which every probe hit its own
+      refusal. The runner classified by **exit code**, and `assertQuietBox` exits 1 — so **42 of
+      the 45 "FAIL"s were refusals**, i.e. precisely the reading list of non-findings this whole
+      mechanism exists to prevent, manufactured by the tool built to collect it. *A refusal is the
+      ABSENCE of a result, never a result* — and an exit code cannot tell the two apart.
+    - Fixed two ways, both needed. The runner **waits for the box to come back under `QUIET_X`
+      before each probe**, so a sweep paces itself instead of eating its own threshold; and a
+      refusal is now its own verdict, **retried** rather than recorded, with the summary saying
+      outright that any survivor is not a finding.
+    - **The honest yield of that first partial run: 12 pass, 3 real failures, 42 refusals.** One of
+      the three is a setup fact rather than a finding — **7 browser probes expect a dev server on
+      `localhost:5199` and NOT ONE of them starts it**, so they die on `ERR_CONNECTION_REFUSED`
+      unless something else is already serving. Start one before sweeping; the other 38 spawn their
+      own.
+    - **The two real failures are BOTH STAMPED `DEGRADED BOX`, so neither is attributable** — and
+      the stamp is the mechanism working mid-sweep, since the load was already climbing when they
+      ran. Recorded as read, not as diagnosed: `probe-a-real-profile-seen-by-a-real-climber` fails
+      **3 of 14** assertions, all one cascade (the owner is not listed as a friend, so the row
+      cannot be tapped, so no profile dialog opens) at 2.0x; `probe-dead-controls-overlays` dies on
+      `page.evaluate: Execution context was destroyed, most likely because of a navigation` at
+      2.4x, which is a probe-side race of exactly the kind a loaded box produces. **Re-run both
+      alone on a quiet box before believing either.**
+    - **The sweep is STILL not complete.** This box ran at 1.0x for about fifteen minutes and was
+      back over 19x before the runner could be fixed and re-aimed.
 
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
