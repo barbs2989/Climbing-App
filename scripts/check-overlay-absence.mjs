@@ -236,6 +236,13 @@ const CHECKED = {
 
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
 
+  /* SharedListView (0199) reads ONE list through useSharedList and branches on the query itself, not
+     on a named xUnavailable flag: q.isError renders "Couldn't load this list…", a null result (RLS
+     answers a private or deleted list with zero rows) renders "This list is private, or its owner has
+     deleted it.", and only a list that WAS read and holds no route ids reaches "No climbs on this list
+     yet". The other three phrases are FullProfile's, which renders beside it — see eventInvite. */
+  sharedListId: 'SharedListView says "No climbs on this list yet" only after the list was READ and holds no route ids — q.isError renders "Couldn’t load this list…" instead; the other three phrases are FullProfile\'s, attributed by the 3000-char window (see eventInvite)',
+
   /* The two below were EXPOSED by the attribution fix — each had been counted as gated on the
      Inbox's flags and so was dropped before anything examined it. Read one at a time.
 
