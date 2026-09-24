@@ -611,8 +611,8 @@ try {
   // is no Connect control to click at all. This phase's subject is reachable only in the state
   // phase 4 leaves behind -- placed anywhere earlier it would find nothing to tap and say so.
   //
-  // The mate is NOT reachable through partner browse: listing defaults ON since `0193`, but the
-  // CI fixture accounts are written `discoverable=false` and `0193` leaves them so, and
+  // The mate is NOT reachable through partner browse: listing defaults ON since `0195`, but the
+  // CI fixture accounts are written `discoverable=false` and `0195` leaves them so, and
   // durable-fixture.mjs asserts it -- so the fixture's accounts are correctly absent from it. The crew roster is the real
   // surface a climber uses here -- you climbed with somebody, you open them from the crew -- and it
   // needs no visibility flip, so nothing about the fixture is manufactured to make this reachable.

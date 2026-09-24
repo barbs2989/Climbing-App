@@ -66,14 +66,14 @@ try {
 
   fixture = await createFixture(log);
   const { owner, mate } = fixture;
-  // 0193 makes listing opt-OUT (the user's decision; 0110 had made it opt-in), so a freshly
+  // 0195 makes listing opt-OUT (the user's decision; 0110 had made it opt-in), so a freshly
   // created account must BE listed. Assert that first — it is the whole point of the default,
   // and it is the one property that cannot be checked after something has changed the row.
   const freshDefault = await dbDiscoverable(mate.id);
   if (freshDefault === true) {
     rec("a brand-new account is listed until it opts out", true, "profiles.discoverable defaults to true");
   } else {
-    rec("a brand-new account is listed until it opts out", false, `a new account was created with discoverable=${JSON.stringify(freshDefault)} — migration 0193_discoverable_defaults_on.sql has not been applied, so no new climber appears in partner browse`);
+    rec("a brand-new account is listed until it opts out", false, `a new account was created with discoverable=${JSON.stringify(freshDefault)} — migration 0195_discoverable_defaults_on.sql has not been applied, so no new climber appears in partner browse`);
   }
   // Keep the mate listed explicitly. The default already did it, but the listing case below
   // must not hinge on the assertion above — a failed default would otherwise fail it twice.

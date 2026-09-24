@@ -1,6 +1,6 @@
 -- Partner-browse listing becomes opt-OUT again (reverses the default half of 0110).
 --
--- APPLIED 2026-09-24 under the number 0192, before #1829 took 0192 on main; renumbered to 0193
+-- APPLIED 2026-09-24 under the number 0192, before #1829 took 0192 on main; renumbered to 0195 (0193 was also taken by #1832)
 -- afterwards. So the LIVE column comment reads "since 0192" — same migration, not a missed one.
 --
 -- The user's decision, 2026-09-24: a climber should be included in partner search
@@ -34,7 +34,7 @@ update profiles
     and username not like 'climbmatch-ci-%';
 
 comment on column profiles.discoverable is
-  'Opt-OUT listing preference for partner browse (default true since 0193; opt-in 0110-0193). NOT an access control: profiles are public-read by policy (0009/0095) and remain findable by name regardless. Governs only whether the app lists this climber in browse results, which render only to a signed-in viewer (#759).';
+  'Opt-OUT listing preference for partner browse (default true since 0195; opt-in 0110-0195). NOT an access control: profiles are public-read by policy (0009/0095) and remain findable by name regardless. Governs only whether the app lists this climber in browse results, which render only to a signed-in viewer (#759).';
 
 -- Confirm -- expect default true, and only the CI fixtures still false:
 --   select column_default from information_schema.columns

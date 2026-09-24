@@ -34,7 +34,7 @@ const _blockedIds=new Set(((blocked||[]).map(function(b){return String(b&&b.id);
 const realPeople=((peopleRes&&peopleRes.data)||[]).filter(function(p){return !_blockedIds.has(String(p.id));});
   /* Real climbers, listed rather than only findable by typing an exact name. This was
      deliberately search-only until profiles.discoverable existed (0104). Listing is on by
-     default since 0193 (the user's call; 0110 had made it opt-in while the list could still
+     default since 0195 (the user's call; 0110 had made it opt-in while the list could still
      reach anonymous visitors, which #759 closed) and a climber opts OUT in Settings. The hook asks for discoverable=true
      and excludes me; blocked climbers are filtered here on the same both-id-spaces rule as
      search, since a block that holds in one surface and not another means nothing. */
