@@ -181,7 +181,7 @@ try {
   if (typeof stateCatalogLine !== "function") {
     dead("stateCatalogLine is not exported from ClimbMatchCore.jsx — ANCHOR LOST");
   }
-  const SOON = "Catalog coming soon";
+  const SOON = "No climbs in the catalog"; /* the empty-catalog line; was "Catalog coming soon" */
 
   ran++;
   const broke = stateCatalogLine(0, "Montana", true, "");
