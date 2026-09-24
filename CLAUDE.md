@@ -6256,6 +6256,40 @@ the total when deciding where a new guard belongs.
       disagrees with the old parser too, so those rows were already drifting — `wa_sahale_mountain_r1`
       stores 3 where the old parser says 0, `wa_mount_challenger_challenger_glacier` stores 5 where
       it says 6. That is `audit:grade-num-drift`'s subject, not this sweep's.
+      - **READ 2026-09-23, AND THE LIST IS NOW SEVEN.** The count moved because the sweep
+        itself wrote 8,892 rows; re-derive it rather than quoting either figure.
+        **`rock_grade` IS THE ADJUDICATOR** — an independent record of the same route's technical
+        difficulty, written by a different pass — so where it and the parser AGREE and the stored
+        number is the odd one out, two records outvote one and no judgement is needed. **Three were
+        repaired on that rule** (`scripts/oneoff/fix-grade-num-corroborated-by-rock-grade.mjs`,
+        which COMPUTES every value from the row's own columns, so a repair needing a number the row
+        does not imply cannot be expressed): `wa_dragontail_peak_east_ridge_aasgard_pass` null→3,
+        `wa_sahale_mountain_r1` 3→4, and `wa_soviet_route` 10→**10.25**.
+      - **THAT LAST ONE IS A CLAIM IN THIS FILE THAT #1769 QUIETLY FALSIFIED.** The entry below
+        records `wa_soviet_route` as the row *"NO RECORD SUPPORTS"*, refused because the
+        quarter-grade repair's fingerprint is `stored === Math.floor(parser)` and *"here is
+        `10 === 9` — false, so it structurally cannot be selected"*. Under highest-wins the parser
+        reads `"V, 5.9-5.10a"` as **10.25**, so the floor is 10, **the fingerprint now MATCHES**,
+        and parser and `rock_grade` **agree** at 10.25 with the stored 10 being the dropped letter.
+        *A refusal justified by a parser's output expires when the parser changes* — and nothing
+        reconciles the two entries, so it sat as a standing refusal for a row that had become
+        decidable.
+      - **FOUR ARE READ AND DELIBERATELY LEFT**, each for its own reason, recorded in that script so
+        they are not re-derived. `wa_mount_shuksan_northwest_arete` — the recorded refusal STANDS;
+        #1769 narrowed the gap from 3 grades to 2 and did not close it, so the NULL is still honest.
+        `wa_mount_challenger_challenger_glacier` — **the stored 5 AGREES with `rock_grade` ("5.5")**
+        and it is the grade STRING that disagrees, so writing the parser's 7 would move the column
+        AWAY from its corroborating record: a question between two columns, not a `grade_num`
+        defect. And the two `"5.8 A2 or 5.10"` big walls (Beckey-Chouinard, Lotus Flower Tower),
+        where 10 is defensible and `rock_grade` is NULL, so nothing corroborates it.
+      - **THE MIRROR CLASS IS TWO ORDERS OF MAGNITUDE LARGER AND IS REPORTED, NOT SWEPT: 778 routes
+        store a NULL `grade_num` while carrying a grade the parser reads perfectly well.** Same
+        consequence as an unreadable grade — they sort behind the whole catalog and are dropped by
+        any range filter — and a different cause: nothing ever wrote the column (this file already
+        records one source, `approve_new_route` not setting it). A blanket fill from the parser is a
+        write with **no corroborating record**, which is exactly what the Shuksan refusal above
+        declines. Counted by `measure-unreadable-grades.mjs` section 4; **re-run it rather than
+        quoting 778**, which was 833 under a looser filter before it was measured cleanly.
     - **AND THE EIGHT "OUTLIERS" BELOW WERE ALREADY RIGHT — SEVEN OF THEM STORE EXACTLY WHAT THE NEW
       RULE PRODUCES.** They appear in the sweep's SKIPPED list precisely because their stored value
       already equals the highest grade: `wa_mount_stuart_west_ridge` 6, `wa_cathedral_rock_standard`
@@ -6263,12 +6297,36 @@ the total when deciding where a new guard belongs.
       repairs" and the rule change agree**, by two completely different routes — one reading each
       row's own `rock_grade`, one applying a rule decided afterwards. The eighth,
       `wa_guye_peak_r2`, is unmoved by either.
-    - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE**, because widening two things
-      at once makes a before/after unreadable: ~12 rows graded lowercase **`v11`/`v6`** score
-      **null** and therefore sort behind the whole catalog (the V branch is case-sensitive, and
-      making it insensitive is a second change), and **`"WI 2-3"`** — a space between the prefix and
-      the number — is unreadable to every branch. Both are one-line fixes with their own
-      before/after to measure.
+    - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE** — both are now MEASURED
+      (2026-09-23), and **only ONE of them was real**, which is the part worth reading.
+      - **LOWERCASE `v11`/`v6` WAS REAL AND IS FIXED.** Those rows scored **null**, so they sorted
+        behind the whole catalog and were dropped outright by any range filter. The V branch is
+        case-insensitive now. Measured over all **205,382** graded routes: **12 RESCUED, 0 CHANGED,
+        0 LOST** — strictly additive, which is the only shape a widening here may have, and each
+        gain **proven attributable to case** rather than assumed (the old parser, handed the same
+        string UPPERCASED, produces the same number). 10 rows needed the data sweep; 2 already
+        stored the right value. **`nv_back_crack` is graded `v0` and scores `0`, which is FALSY** —
+        every test in the sweep is `!= null`, never truthiness, or that row is silently skipped.
+      - **`"WI 2-3"` IS A CLASS OF ZERO — do NOT widen the parser for it.** It occurs **exactly
+        once catalog-wide**, and it is in **`ice_grade`, not `grade`**, on a route whose `grade` is
+        `"4th"` and whose `grade_num` is a correct **4**. So `gradeNumFrom` never sees it and the
+        row is not mis-sorted; the value already reaches a screen as a labelled ice grade, which
+        needs no parsing. A spaced-prefix widening rescues **0**, changes 0 and loses 0 — and it is
+        actively dangerous, because `V\s*(\d+)` then reads *"Grade V 5.9"* as a V5 boulder problem,
+        the roman-commitment-vs-technical conflation this column exists to avoid.
+      - **The lesson is the asymmetry.** Both were written down in the same sentence, in the same
+        shape, as *"one-line fixes with their own before/after to measure"*. Measuring turned one
+        into a shipped repair and the other into a refusal — and nothing about the original
+        sentence distinguished them. *A deferred item is a hypothesis until somebody counts it.*
+      - **A THIRD shape surfaced from the same measurement and is REPORTED, not swept: `"Vb"`/`"VB"`
+        on 9 bouldering routes** score null. That is V-Beginner, which sits BELOW `V0` — and `v0`
+        already maps to `0`, so giving it a number means deciding whether `grade_num` admits values
+        under zero, which changes what the range filter's floor means. A product call, not polish.
+      - `scripts/oneoff/{measure-unreadable-grades,verify-v-case-widening,fix-grade-num-lowercase-v}.mjs`.
+        The measurement **derives which widenings are already shipped** by asking the parser two
+        one-line questions rather than restating them — a control hardcoded to the pre-fix shape
+        failed closed on the very next run, correctly, and that is a script that rots the moment its
+        subject ships.
     - **AND A THIRD PARSER READS A GRADE FOR THE TIME MODEL AND STILL TAKES THE FIRST MATCH —
       `gn()` in `ClimbMatchCore.jsx`, 5 call sites.** It is NOT `grade_num` and not a fifth dialect
       of it: it maps every system onto one difficulty axis for `techHrs` (WI -> 6+n, M -> 7+0.6n,
@@ -6292,12 +6350,43 @@ the total when deciding where a new guard belongs.
       - **14 rows differ in total and 11 are MASKED by `route.timing`**, not immune: `techH` prefers
         a published or derived summit time, so those activate the day that column is dropped. The
         largest is `wa_liberty_crack` (12 pitches, `gn` 11.25 -> 13.5). Small **today**.
-      - **THE REAL OPTIMISM DEFECT IS TWO ORDERS OF MAGNITUDE BIGGER AND IS NOT `gn()`'S:**
-        **120,474** roped routes store `pitches = 0` against **611** with a real count, and
-        `techHrs` returns **0** for those — no climbing leg at all. That is `0074`'s documented
+      - **THE `pitches = 0` POINTER IS NOW MEASURED (2026-09-23), AND THE COLUMN COUNT OVERSTATED IT BY
+        FOUR ORDERS OF MAGNITUDE: the answer is SIX ROUTES.** **128,020** roped routes store 0 or
+        null against **617** with a real count, and `techHrs` returns **0** for those — `0074`'s
         *"0 means unknown for a roped route and no pitches for a boulder problem"* conflation
-        landing on the time model. **NOT measured here: how many of those actually RENDER an
-        estimate** (the Plan tab is content-gated), so this is a pointer, not a finding.
+        landing on the time model. That is a fact about a COLUMN. On screen:
+
+              121,860  are a CRAG discipline, so <Calculator/> is never mounted at all
+                6,098  have no Plan tab (hasPlanContent false)
+                   11  render "N/A"
+                   45  carry a published or derived summit time — THAT is the climbing leg
+                    6  render a number with a zero climbing leg   <- the defect
+
+      - **THE GATE THAT DECIDES IT IS `{!cragOnly ? <Calculator/> : null}`.** A trad or sport route
+        **never renders a time estimate at all**, and those two dominate the roped catalog — so
+        most of the 128,020 cannot make a false claim by construction. Two further things protect
+        it, both worth knowing: `hasAnyEstimate` ends in **`!!route.pitches`**, which is **FALSY at
+        0**, so a zero-pitch route does not claim an estimate on the strength of its pitch count
+        (a falsy-zero test that is normally a bug and here is the thing preventing one); and the
+        **Climbing tile already renders `N/A`** rather than `0.0hr`.
+      - **WHAT IS LEFT IS 6 ALPINE ROUTES, AND THE SHARP END IS 3.** Three already carry the **`≥`**
+        marker, because their hike inputs are incomplete and the app is already saying the number is
+        a lower bound. The other three — `wa_guye_peak_southeast_gully`,
+        `wa_colchuck_peak_north_buttress_couloir`, `wa_lane_peak_r3` — have COMPLETE hike inputs, so
+        they present an **exact** Total beside a Climbing tile reading **N/A**, and *"Est. return"*
+        equal to *"Est. summit"* (the walk branch of `retH` fires when `pitches` is falsy, so the
+        descent is zero too). **REPORTED, NOT FIXED**, for the reason this entry reaches one bullet
+        up about `gn()`: a handful of routes does not justify moving a safety-adjacent estimate.
+        The consistent repair, if it is ever taken, is to extend the **existing** `approachUnknown`
+        marker to an unknown CLIMBING leg — which can only ever make the app hedge MORE, never less.
+      - **THE STATIC PREDICATE WAS WRONG AND THE RENDER VALIDATION IS WHAT CAUGHT IT.** The first
+        version of `scripts/oneoff/measure-zero-pitch-estimate-reach.mjs` computed these buckets
+        from columns alone and missed `cragOnly` entirely; rendering a sample through the real
+        `RouteDetail` reported **21 of 28 rows disagreeing** because the tile was not on the page.
+        *A bucket count derived from columns is a claim about the renderer*, so that script renders
+        real rows and FAILS if the screen disagrees in either direction — including `absent` cases,
+        which are the load-bearing half, since a validation of only the rows that DO render would
+        have re-confirmed the very prediction that was wrong.
       - Two further `gn()` limits fall out of the same run and are reported, not fixed: **20 of the
         394 routes it decides fall through every branch to the `7.5` default** (14 carry no usable
         grade at all), and the app sees **`usableGrade(r)`**, not `routes.grade` — a bare class
@@ -6314,6 +6403,14 @@ the total when deciding where a new guard belongs.
       the **invariant** instead — a highest-wins parser can only return a LARGER number than a
       first-match one — so `lib > pipeline` is intended and a lowering, a loss or a newly-parsed
       value still exits 1.
+      - **A SIXTH RULE WAS ADDED 2026-09-23, AND IT IS THE NARROWEST ONE THERE ON PURPOSE.** The V branch is
+        case-insensitive now and the fossil is not, so `v11` goes null -> 11 — precisely the
+        *newly-parsed* shape the sentence above leaves UNEXPECTED. **Declaring "a newly-parsed value
+        is fine" would gut the check**, because that is exactly what a pattern widened beyond its
+        scope looks like. So the rule is **attributable** rather than permissive: a gain counts as
+        intended only if the FOSSIL, handed the same string UPPERCASED, produces the very number
+        `lib` produced. A gain from anywhere else still exits 1. Reads `2 newly parsed by the CASE
+        rule` and `no unexpected difference`.
   - **THE "WHICH END OF A RANGE" QUESTION WAS MEASURED FIRST, AND THE MEASUREMENT SAID THERE WAS
     NOTHING TO DECIDE — true of the catalog, and overtaken by the decision above — measured by
     `scripts/oneoff/measure-class-range-end.mjs`.** It had been carried as an open product call
