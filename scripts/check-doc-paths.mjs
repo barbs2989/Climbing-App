@@ -30,11 +30,17 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { projectDocs } from "./lib/doc-files.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-// The per-guard notes moved to docs/guards.md so they stop loading into every session; the
-// citations moved with them, so both files are one document for this guard's purpose.
-const DOCS = ["CLAUDE.md", "docs/guards.md"].map((f) => path.join(ROOT, f));
+// CLAUDE.md is split across docs/guards/*.md (the per-guard notes) and docs/codebase/*.md (the
+// working notes it summarises). The citations moved with the prose, so the whole set is one
+// document for this guard's purpose — DISCOVERED by doc-files.mjs, never listed here, so a new
+// notes file cannot fall outside the scan. It throws (fails closed) if the layout moved.
+let DOC_NAMES;
+try { DOC_NAMES = projectDocs(ROOT); }
+catch (e) { console.error(`FAIL: ${e.message}`); process.exit(1); }
+const DOCS = DOC_NAMES.map((f) => path.join(ROOT, f));
 
 // Deliberately named though gone. A STALE entry fails, so this cannot rot into a description of
 // files that are back.
@@ -49,7 +55,10 @@ const GONE = {
 };
 
 // Longest extension first. See the note above; this ordering is the guard, not a detail.
-const RE = /(?:scripts|lib|\.github\/workflows|supabase\/migrations)\/[A-Za-z0-9_./-]+\.(?:mjs|jsx|json|yml|sql|js)/g;
+// The second alternative covers the documentation's own cross-references: CLAUDE.md's "read this
+// before you…" table and the guard index point at docs/**/*.md, and a renamed notes file would
+// otherwise leave a pointer to nothing in the one file every session loads.
+const RE = /(?:scripts|lib|\.github\/workflows|supabase\/migrations)\/[A-Za-z0-9_./-]+\.(?:mjs|jsx|json|yml|sql|js)|docs\/[A-Za-z0-9_./-]+\.md/g;
 
 const src = DOCS.map((f) => fs.readFileSync(f, "utf8")).join("\n");
 const cited = [...new Set(src.match(RE) || [])].sort();
@@ -57,7 +66,7 @@ const cited = [...new Set(src.match(RE) || [])].sort();
 // Fail closed: a regex that stopped matching would report a clean document having read nothing,
 // which is the false-pass direction and the whole reason this is a guard rather than a grep.
 if (cited.length < 80) {
-  console.error(`FAIL: parsed only ${cited.length} path(s) from CLAUDE.md — the pattern broke.`);
+  console.error(`FAIL: parsed only ${cited.length} path(s) from ${DOC_NAMES.length} doc file(s) — the pattern broke.`);
   console.error("A doc scan that matches nothing prints the same clean result as a correct one.");
   process.exit(1);
 }
@@ -92,7 +101,7 @@ for (const p of cited) {
   if (GONE[p]) { console.log(`  gone  ${p} — ${GONE[p]}`); continue; }
   bad++;
   const s = suggest(p);
-  console.error(`FAIL  CLAUDE.md names ${p}, which does not exist.`);
+  console.error(`FAIL  the docs name ${p}, which does not exist.`);
   if (s) {
     console.error(`      Likeliest cause: it was PROMOTED and renamed. Candidate(s) on disk:`);
     for (const c of s) console.error(`        ${c}`);
@@ -111,9 +120,9 @@ for (const p of cited) {
 }
 
 for (const p of Object.keys(GONE)) {
-  if (!cited.includes(p)) { console.error(`FAIL  GONE declares ${p}, which CLAUDE.md no longer names — remove the entry.`); bad++; }
+  if (!cited.includes(p)) { console.error(`FAIL  GONE declares ${p}, which no doc names any more — remove the entry.`); bad++; }
 }
 
 console.log(`\ncheck:doc-paths — ${cited.length} path(s) cited under the tracked code roots, ${Object.keys(GONE).length} declared gone.`);
 if (bad) { console.error(`check:doc-paths FAILED — ${bad} finding(s).`); process.exit(1); }
-console.log("ok — every file CLAUDE.md names is on disk.");
+console.log(`ok — every file the ${DOC_NAMES.length} doc files name is on disk.`);

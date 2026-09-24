@@ -35,6 +35,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { projectDocs } from "./lib/doc-files.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -291,9 +292,14 @@ if (!privileged.length)
        "would pass vacuously about every guard");
 
 const allGuardNames = new Set(onDisk.flatMap((file) => aliasesOf(file)));
-// docs/guards.md holds the per-guard notes that used to sit in CLAUDE.md, so the same prose
-// claims live there now — scan both, and name the file a finding comes from.
-const credDocs = ["CLAUDE.md", "docs/guards.md"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8").split("\n")]);
+// The prose that used to sit in CLAUDE.md is split across docs/guards/*.md and docs/codebase/*.md
+// (the credential paragraph itself now lives in docs/codebase/supabase-scripts.md), so the same
+// claims can appear in any of them. The set is DISCOVERED by doc-files.mjs, which fails closed if
+// the layout moves — a new notes file must not fall outside this scan. Name the file a finding
+// comes from.
+let credDocNames;
+try { credDocNames = projectDocs(ROOT); } catch (e) { dead(e.message); }
+const credDocs = credDocNames.map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8").split("\n")]);
 let credChecked = 0, credLines = 0;
 for (const file of privileged) {
   const names = aliasesOf(file);
@@ -312,7 +318,7 @@ for (const file of privileged) {
          `the EXCLUDED reason is the one beside the code. Line: ${line.trim().slice(0, 120)}`);
   }
 }
-if (!credLines) ok(`no CLAUDE.md line calls any of the ${credChecked} privileged guards anon-safe`);
+if (!credLines) ok(`no line in the ${credDocs.length} doc files calls any of the ${credChecked} privileged guards anon-safe`);
 
 if (failures) {
   console.error(`\ncheck:guard-wiring FAILED — ${failures} problem(s).\n`);
