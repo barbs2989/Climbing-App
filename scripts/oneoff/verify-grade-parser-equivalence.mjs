@@ -57,7 +57,21 @@ const INTENDED = new Map([
   ['Easy 5th\u0000yds', "bare ordinal: null vs 5"],
 ]);
 
-let diff = 0, n = 0, intended = 0;
+/* THE FIFTH INTENDED DIFFERENCE IS A RULE, NOT A LIST, and it is far larger than the four above:
+   `gradeNumFrom` now resolves a grade to the HIGHEST grade in it rather than the first, by product
+   decision, so that the sortable column agrees with the grade FILTER — `routeBandIdx` has always
+   parsed the same string and taken the maximum ("Difficulty=crux"). 8,908 catalog rows move.
+
+   ENUMERATING THEM WOULD BE THE WRONG SHAPE. A 68-entry list of range strings is bookkeeping that
+   rots the first time a new range value is imported, and it would say nothing about whether the
+   change is SOUND. The rule states the invariant instead: a highest-wins parser can only ever
+   return a LARGER number than a first-match one. So `lib > pipeline` is intended, and everything
+   else — a lowering, a loss, a newly-parsed value — stays UNEXPECTED and still exits 1.
+   That is exactly what scripts/oneoff/verify-highest-grade-equivalence.mjs asserts against the
+   live catalog; this keeps the fossil copy meaningful rather than retiring it. */
+const raisedByRule = (a, b) => a != null && b != null && b > a;
+
+let diff = 0, n = 0, intended = 0, raised = 0;
 const examples = [], seenIntended = new Set();
 for (const [g, s] of pairs.values()) {
   n++;
@@ -67,11 +81,14 @@ for (const [g, s] of pairs.values()) {
   if (same) continue;
   const key = g + "\u0000" + s;
   if (INTENDED.has(key)) { intended++; seenIntended.add(key); continue; }
+  if (raisedByRule(a, b)) { raised++; continue; }
   diff++; if (examples.length < 20) examples.push({ g, s, pipeline: a, lib: b });
 }
 
 console.log(`compared ${n} distinct (grade, system) inputs drawn from ${rows.length} live rows + edge cases`);
 console.log(`${intended} INTENDED difference(s) — the bare-ordinal branch lib/grade.js gained`);
+console.log(`${raised} RAISED by the "highest wins" rule — intended, and a highest-wins parser can produce nothing else`);
+if (!raised) console.log(`  NOTE: zero raised. Either the rule was reverted, or this sample holds no range grade.`);
 for (const [k, why] of INTENDED) if (seenIntended.has(k)) console.log(`  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}]  ${why}`);
 const stale = [...INTENDED.keys()].filter((k) => !seenIntended.has(k));
 for (const k of stale) console.log(`  STALE  ${JSON.stringify(k.split("\u0000")[0])} [${k.split("\u0000")[1]}] no longer differs — remove the declaration`);
