@@ -722,10 +722,26 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
       (function walk(n) {
         if (!n || typeof n !== "object") return;
         if (Array.isArray(n)) { for (const c of n) walk(c); return; }
-        if (n.type === "ConditionalExpression" && n.consequent && n.consequent.type === "CallExpression"
-            && n.consequent.callee && n.consequent.callee.name === "vScore"
-            && n.alternate && n.alternate.type === "NumericLiteral") {
-          found.push(`${name}: a ? vScore(a) : ${n.alternate.value}`);
+        // A vScore branch may sit on EITHER side, and the constant beside it may be one
+        // conditional deeper. The one-sided, one-level test this replaces could not see
+        // `climber._real ? (realTrust!=null ? realTrust : 0) : vScore(climber)` — which was live
+        // in FullProfile, painting the bottom tier's red ring on every real profile while the
+        // server score was in flight and forever after a failed read. A grep for one spelling is
+        // not a measurement of a class, which is this section's own founding lesson.
+        if (n.type === "ConditionalExpression") {
+          const isV = (b) => b && b.type === "CallExpression" && b.callee && b.callee.name === "vScore";
+          const lit = (b, d) => {
+            if (!b || d > 2) return null;
+            if (b.type === "NumericLiteral") return b.value;
+            if (b.type === "ConditionalExpression") {
+              const c = lit(b.consequent, d + 1);
+              return c !== null ? c : lit(b.alternate, d + 1);
+            }
+            return null;
+          };
+          const other = isV(n.consequent) ? n.alternate : isV(n.alternate) ? n.consequent : null;
+          const v = other ? lit(other, 0) : null;
+          if (v !== null) found.push(`${name}: a vScore branch falls back to the constant ${v}`);
         }
         for (const k of Object.keys(n)) { if (k === "loc" || k === "leadingComments" || k === "trailingComments") continue; const v = n[k]; if (v && typeof v === "object" && !seen.has(v)) { seen.add(v); walk(v); } }
       })(ast.program);

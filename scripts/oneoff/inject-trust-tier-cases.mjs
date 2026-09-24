@@ -51,7 +51,7 @@ const CASES = [
     name: "second-ladder-in-fullprofile",
     why: "the real defect: FullProfile carried its own copy, so one climber had two labels",
     file: "ClimbMatchCore.jsx",
-    find: `_tt=trustTier(ts),tcol=_tt.color,tlbl=_tt.label`,
+    find: `tcol=ts!=null?trustTier(ts).color:C.border`,
     repl: `tcol=ts>=90?C.green:ts>=70?C.blue:ts>=50?C.amber:C.red,tlbl=ts>=90?"Highly Trusted":ts>=70?"Trusted":ts>=50?"Building Trust":"New"`,
     expect: "tier ladder(s) live outside TRUST_TIERS",
   },
