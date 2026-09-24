@@ -1,6 +1,7 @@
 // Injection harness for check:camping section 10 — the trailhead metrics.
 //
-// A guard that has never failed is a guard you believe you have. Each case edits RouteDetail.jsx,
+// A guard that has never failed is a guard you believe you have. Each case edits RouteDetail.jsx
+// (or ClimbMatchCore.jsx, where climbsAPeak() moved when catOf() began calling trad-on-a-peak alpine),
 // PROVES THE EDIT LANDED BY CHECKSUM before running the guard, then restores by checksum. That
 // order matters and this repo has paid for it twice: an injection that silently does not apply
 // reports "guard missed" when the guard is innocent.
@@ -15,9 +16,8 @@ import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILE = path.join(ROOT, "RouteDetail.jsx");
+const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const sum = (x) => crypto.createHash("sha1").update(x).digest("hex").slice(0, 10);
-const original = fs.readFileSync(FILE, "utf8");
-const ORIG = sum(original);
 
 const CASES = [
   {
@@ -56,24 +56,28 @@ const CASES = [
   },
   {
     name: "10. climbsAPeak() returns true unconditionally (the rule becomes 'always on')",
+    file: CORE,
     want: /trad on a CRAG renders camping|climbsAPeak returns true for a crag/i,
     edit: (s) => s.replace(
-      '  return String(a.areaType||"").toLowerCase()==="peak";',
-      '  return true;'),
+      'return String(a.areaType||"").toLowerCase()==="peak";}',
+      'return true;}'),
   },
 ];
 
 let pass = 0;
 for (const c of CASES) {
+  const target = c.file || FILE;
+  const original = fs.readFileSync(target, "utf8");
+  const ORIG = sum(original);
   const edited = c.edit(original);
   const landed = sum(edited) !== ORIG;
-  fs.writeFileSync(FILE, edited);
+  fs.writeFileSync(target, edited);
   let out = "";
   try { out = execSync("node scripts/check-camping-section.mjs", { cwd: ROOT, encoding: "utf8" }); }
   catch (e) { out = (e.stdout || "") + (e.stderr || ""); }
   finally {
-    fs.writeFileSync(FILE, original);
-    if (sum(fs.readFileSync(FILE, "utf8")) !== ORIG) { console.log("FATAL: RouteDetail.jsx was NOT restored"); process.exit(1); }
+    fs.writeFileSync(target, original);
+    if (sum(fs.readFileSync(target, "utf8")) !== ORIG) { console.log(`FATAL: ${path.basename(target)} was NOT restored`); process.exit(1); }
   }
   const fired = c.want.test(out);
   // An injection that never applied is not a missed catch — it is a broken case, and saying so

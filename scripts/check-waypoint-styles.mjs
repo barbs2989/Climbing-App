@@ -340,6 +340,19 @@ export function render(route, tab) {
     else ok("a crag route renders no \"What to expect\" card");
   }
   if (html && !/>WAYPOINTS</.test(html)) bad("the ALPINE probe renders no WAYPOINTS heading — the crag rule has over-reached");
+  /* "Trad that climbs a peak is called alpine, always" (user decision). catOf() folds it into
+     alpine, so the crag rule above must NOT reach it. A trad route filed on a peak-typed area
+     keeps its WAYPOINTS; the same route on a crag loses them — both directions, or a rule that
+     only ever admits is indistinguishable from having no rule. */
+  const tradPeak = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "peak" } };
+  const tradCrag = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "crag" } };
+  let tpHtml = "", tcHtml = "";
+  try { tpHtml = render(tradPeak, "planner"); tcHtml = render(tradCrag, "overview") + render(tradCrag, "planner"); }
+  catch (e) { bad(`RouteDetail threw rendering a trad probe: ${e.message.slice(0, 120)}`); }
+  if (tpHtml && !/>WAYPOINTS</.test(tpHtml)) bad("a TRAD route on a PEAK renders no WAYPOINTS — catOf() is not calling it alpine");
+  else if (tpHtml) ok("a trad route on a peak is treated as alpine and keeps its WAYPOINTS");
+  if (tcHtml && />WAYPOINTS</.test(tcHtml)) bad("a trad route on a CRAG still renders WAYPOINTS — the peak rule has over-reached");
+  else if (tcHtml) ok("a trad route on a crag stays a crag route (no WAYPOINTS)");
 }
 
 console.log();
