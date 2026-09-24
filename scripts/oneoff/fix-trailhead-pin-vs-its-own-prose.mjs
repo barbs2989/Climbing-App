@@ -1,18 +1,26 @@
-// A REVIEWED BATCH, never a sweep: five trailhead pins whose elevation chip and whose own
+// A REVIEWED BATCH, never a sweep: six trailhead pins whose elevation chip and whose own
 // "Getting here" line state two different heights, where the USGS DEM — which derives from neither
 // record — separates them by ratio.
 //
-// audit:pin-elev-vs-own-prose reports 11. SIX are deliberately left, and the reasons are the
-// reason this cannot be a transform:
+// audit:pin-elev-vs-own-prose reported 11 when this batch was written. RE-RUN IT rather than
+// quoting a number here; what is durable is the list of refusals, and FIVE are deliberately left
+// because the reasons are the reason this cannot be a transform:
 //   wa_magic_mountain_northwest_ridge   the sentence names CASCADE PASS at 5,392 ft
 //   wa_osceola_peak_scramble            ...SLATE PASS at 6,900 ft
 //   wa_sherpa_peak_east_ridge           ...LONGS PASS at 6,200 ft
 //   wa_esmeralda_peaks_scramble         ...a SWITCHBACK at ~5,600 ft
 //     -- four sentences that are CORRECT and merely name a second feature. The repair is nothing.
-//   wa_mount_stuart_north_ridge         ground 3,399: nearer neither 3,200 nor 3,540
-//   wa_mount_baker_easton_glacier       ground 3,337: the prose is 23 ft out and the pin 137, which
-//                                       is not the separation this batch demands. A threshold
-//                                       widened to admit the case it is judging proves nothing.
+//   wa_mount_stuart_north_ridge         the terrain runs 3,342-3,770 ft across this pin's own
+//                                       uncertainty, which admits 3,400 and 3,540 alike. Genuinely
+//                                       undecidable from the ground; still left.
+//
+// wa_mount_baker_easton_glacier WAS on that list, deferred because "the prose is 23 ft out and the
+// pin 137, which is not the separation this batch demands. A threshold widened to admit the case it
+// is judging proves nothing." That objection was right and is now SUPERSEDED — not by a widened
+// threshold, but by a better instrument. The gate below no longer compares one reading against a
+// flat bar; it samples the terrain across the pin's own uncertainty and asks what that box could
+// innocently produce. At Park Butte the box spans 3,292-3,485 ft, so 3,200 is 92 ft below anything
+// the ground holds there, while the sentence's 3,360 sits inside it. See scripts/lib/ground-box.mjs.
 //
 // NOTHING HERE IS TYPED. A pin repair copies the figure that pin's OWN sentence states; a prose
 // repair copies that pin's OWN stored elevation. So a fix needing a height the row does not hold
@@ -26,10 +34,17 @@
 // climber their route's stored gain is impossible. Measured on both pin repairs: Cashmere's implied
 // rise goes 3,864 -> 5,214 against a stored gain of 5,300, so the caveat stays silent and the gain
 // becomes MORE consistent rather than less; Blue Lake's goes 2,560 -> 2,360 against 2,400 with 689
-// ft of climbing credited, also silent. Changing which record wins must not strand the field
-// beside it.
+// ft of climbing credited, also silent. Park Butte RAISES its trailhead, which lowers the rise and
+// moves the caveat further from firing either way — and the headroom against that route's own
+// gain_ft of 7,600 goes 19 ft -> 179 ft, a fifth weak record agreeing with the repair. Changing
+// which record wins must not strand the field beside it.
 import { requireServiceKey, anonKey, selectAll, patchRow } from "../lib/supabase-env.mjs";
-import { elevationAt, selfTest } from "../lib/terrain.mjs";
+import { selfTest } from "../lib/terrain.mjs";
+import { groundBox, boxAdmits } from "../lib/ground-box.mjs";
+
+// The placement slop audit:waypoint-elevations measured for a hand-placed pin. Over-stating it
+// widens the box, which errs toward REFUSING a repair — the safe direction for a script that writes.
+const SLOP_M = 183;
 
 const APPLY = process.argv.includes("--apply");
 
@@ -59,6 +74,21 @@ const BATCH = [
     find: "west of Washington Pass at roughly 5,200 feet",
     repl: "west of Washington Pass at roughly 5,400 feet",
     why: "the ground reads 5,380 — 20 ft from the pin and 180 from the sentence" },
+
+  // ADDED after the gate above stopped being a flat bar. The Easton Glacier route's trailhead card
+  // renders "3,200 ft" in its elevation tile with "ends at ... about 3,360 feet" in the sentence
+  // directly beneath it — one card, one place, two heights.
+  //
+  // AND THE SIBLING IS DELIBERATELY NOT REPAIRED. wa_mount_baker_squak_glacier stores the same
+  // 3,200 for the same trailhead 43 m away, and the ground refuses it there too — but that row
+  // carries NO directions at all, so it holds no second record to copy from. A fix needing a height
+  // the row does not have cannot be expressed here, which is the whole point of the contract. The
+  // shared 3,200 is one enrichment claim counted twice, not two records agreeing.
+  { route: "wa_mount_baker_easton_glacier", pin: "Park Butte / Schreiber's Meadow", kind: "pin",
+    elev: 3200, stated: 3360,
+    find: "at about 3,360 feet",
+    why: "the ground under the pin reads 3,337 and never drops below 3,292 anywhere in its own\n"
+       + "          uncertainty, so 3,200 is 92 ft below anything the terrain there holds" },
 
   { route: "wa_prusik_peak_solid_gold", pin: "Stuart Lake Trailhead", kind: "prose",
     elev: 3400, stated: 3600,
@@ -96,13 +126,20 @@ for (const b of BATCH) {
   }
 
   // THE ARGUMENT MUST STILL HOLD AT APPLY TIME, not merely when it was written.
-  const g = await elevationAt(w.lat, w.lng, 10);
-  if (g == null) { console.log(`REFUSED ${b.route}: the ground could not be read — not a verdict`); refused++; continue; }
+  //
+  // This used to be one reading against a flat bar (within 50 ft, and the other 3x further,
+  // floored at 150). That bar cannot tell 193 ft of terrain relief from 616 ft, so it was
+  // simultaneously too strict at a road end and too loose on a headwall — and it is what deferred
+  // the Park Butte entry. Ask the terrain instead: sample the ground across the pin's own rounding
+  // box plus placement slop, and require the box to ADMIT the value being kept and REFUSE the one
+  // being dropped. Nothing is widened; the constant is replaced by a measurement.
+  const box = await groundBox(w.lat, w.lng, SLOP_M, { tries: 10 });
+  if (!box) { console.log(`REFUSED ${b.route}: the ground could not be read — not a verdict`); refused++; continue; }
+  const g = box.centre;
   const keep = b.kind === "pin" ? b.stated : b.elev;
   const drop = b.kind === "pin" ? b.elev : b.stated;
-  const dKeep = Math.abs(g - keep), dDrop = Math.abs(g - drop);
-  if (!(dKeep <= 50 && dDrop >= 3 * Math.max(dKeep, 50))) {
-    console.log(`REFUSED ${b.route}: ground ${Math.round(g)} does not separate ${keep} (off ${Math.round(dKeep)}) from ${drop} (off ${Math.round(dDrop)})`);
+  if (!(boxAdmits(box, keep) && !boxAdmits(box, drop))) {
+    console.log(`REFUSED ${b.route}: across this pin's own uncertainty the terrain runs ${Math.round(box.lo)}-${Math.round(box.hi)} ft, which does not admit ${keep} while refusing ${drop}`);
     refused++; continue;
   }
 
@@ -150,5 +187,5 @@ for (const b of BATCH) {
 }
 
 console.log(`\n${ok} ${APPLY ? "applied" : "would apply"}, ${refused} refused, of ${BATCH.length} declared.`);
-console.log("Six further findings are deliberately NOT in this batch; the header says why for each.");
+console.log("Five further findings are deliberately NOT in this batch; the header says why for each.");
 if (!APPLY) console.log("Dry run. Pass --apply to write.");
