@@ -6107,14 +6107,50 @@ the total when deciding where a new guard belongs.
         AWAY from its corroborating record: a question between two columns, not a `grade_num`
         defect. And the two `"5.8 A2 or 5.10"` big walls (Beckey-Chouinard, Lotus Flower Tower),
         where 10 is defensible and `rock_grade` is NULL, so nothing corroborates it.
-      - **THE MIRROR CLASS IS TWO ORDERS OF MAGNITUDE LARGER AND IS REPORTED, NOT SWEPT: 778 routes
-        store a NULL `grade_num` while carrying a grade the parser reads perfectly well.** Same
-        consequence as an unreadable grade — they sort behind the whole catalog and are dropped by
-        any range filter — and a different cause: nothing ever wrote the column (this file already
-        records one source, `approve_new_route` not setting it). A blanket fill from the parser is a
-        write with **no corroborating record**, which is exactly what the Shuksan refusal above
-        declines. Counted by `measure-unreadable-grades.mjs` section 4; **re-run it rather than
-        quoting 778**, which was 833 under a looser filter before it was measured cleanly.
+        - **THOSE LAST TWO WERE FILLED WITH 10 ON 2026-09-24, i.e. A RECORDED REFUSAL WAS
+          OVERRIDDEN — said plainly, because a silent reversal is the thing this file exists to
+          prevent.** The refusal was made by `fix-grade-num-corroborated-by-rock-grade.mjs`, whose
+          contract is *repair a row where `rock_grade` corroborates the parser*; with `rock_grade`
+          NULL those two were outside its EVIDENCE STANDARD, which is not the same as a judgement
+          that the column must stay NULL. **They are not the Shuksan shape**: Shuksan has two
+          candidate fills that CONTRADICT each other, so NULL is the honest third answer; these
+          have exactly ONE candidate, and leaving NULL sorts them behind the whole catalog, which
+          is strictly worse than a defensible number. 10 is also not merely defensible — it is
+          what the catalog's own DECIDED rule produces, since "the grade is the highest grade"
+          (2026-09-23) makes `"5.8 A2 or 5.10"` a 10. **Two refusals, two different standards:
+          check which contract refused a row before reading the refusal as a verdict.**
+      - **THE MIRROR CLASS WAS TWO ORDERS OF MAGNITUDE LARGER AND IS NOW SWEPT: 778 routes stored a
+        NULL `grade_num` while carrying a grade the parser reads perfectly well. 772 filled, 6
+        refused.** Same consequence as an unreadable grade — they sort behind the whole catalog —
+        and a different cause: nothing ever wrote the column (this file already records one source,
+        `approve_new_route` not setting it).
+        - **THE OBJECTION THAT DEFERRED IT WAS HALF RIGHT, AND MEASURING SPLIT THE HALVES.** It
+          read *"a blanket fill from the parser is a write with no corroborating record, which is
+          exactly what the Shuksan refusal declines"*. The Shuksan refusal is about a row whose
+          OWN RECORDS DISAGREE — `grade` implying 4 against a `rock_grade` of 5.7 — not about the
+          operation. `grade_num` is BY DEFINITION the parsed form of `grade`, and
+          `scripts/pipeline/load-state.mjs` computes it exactly this way at import. Measured
+          against the population that PASSES, the method that settled `wa_shock_and_awe`:
+          **204,529 of 204,565 populated rows (99.98%) store exactly what this parser reads**, and
+          **2,273 of 2,281 commitment-only rows (99.65%) store the roman numeral**. So the fill is
+          the catalog's own operation and the roman last-resort branch is its own convention.
+        - **THE SIX REFUSALS ARE THE RESULT, and the instrument found Shuksan BY ITSELF** — which
+          is what says the rule is right rather than fitted. Every one is a commitment-only or
+          ice `grade` against a technical `rock_grade`: two candidate fills, so NULL stays honest.
+        - **THE CORROBORATION RULE WAS WRONG TWICE BEFORE IT WAS RIGHT, and both are the same
+          class of error — comparing two DIFFERENT QUANTITIES.** First it used `alpine_grade` and
+          reported **11 disagreements, every one correct data**: `"5.7"` against `alpine_grade
+          "IV"` is a technical grade against a roman COMMITMENT grade, the distinction this file
+          records in half a dozen places. Then, with that removed, it never mapped the **`class`**
+          system — silently moving Shuksan itself out of REFUSE and into FILL, because class and
+          YDS are ONE numeric scale here (`class 3` and `5.3` both score 3) and the mapping was
+          missing. **A scale shared for SCORING is shared for CORROBORATION.**
+        - The rule lives in `scripts/lib/grade-corroboration.mjs`, shared by the measurement and
+          the sweep — the `scripts/lib/camp-names.mjs` precedent, because a sweep and an audit
+          that disagree about "the same row" either bless the sweep's mistakes or report correct
+          work as broken. **Re-run `measure-readable-but-unpopulated-grades.mjs` rather than
+          quoting any figure here**; 778 was 833 under a looser filter before it was measured
+          cleanly, and it is 6 today.
     - **AND THE EIGHT "OUTLIERS" BELOW WERE ALREADY RIGHT — SEVEN OF THEM STORE EXACTLY WHAT THE NEW
       RULE PRODUCES.** They appear in the sweep's SKIPPED list precisely because their stored value
       already equals the highest grade: `wa_mount_stuart_west_ridge` 6, `wa_cathedral_rock_standard`
@@ -6143,10 +6179,34 @@ the total when deciding where a new guard belongs.
         shape, as *"one-line fixes with their own before/after to measure"*. Measuring turned one
         into a shipped repair and the other into a refusal — and nothing about the original
         sentence distinguished them. *A deferred item is a hypothesis until somebody counts it.*
-      - **A THIRD shape surfaced from the same measurement and is REPORTED, not swept: `"Vb"`/`"VB"`
-        on 9 bouldering routes** score null. That is V-Beginner, which sits BELOW `V0` — and `v0`
-        already maps to `0`, so giving it a number means deciding whether `grade_num` admits values
-        under zero, which changes what the range filter's floor means. A product call, not polish.
+      - **A THIRD shape surfaced from the same measurement — `"Vb"`/`"VB"` on 9 bouldering routes —
+        AND IT IS FIXED, AT -1: THE FIRST VALUE THIS COLUMN HAS EVER HELD BELOW ZERO.** This entry
+        used to defer it as *"a product call, not polish"*, on the grounds that giving V-Beginner a
+        number means deciding whether `grade_num` admits values under zero. Measuring turned that
+        into an answerable question rather than a preference, and the answer is written into
+        `lib/grade.js` beside the branch.
+        - **THE CONSUMERS WERE READ, NOT ASSUMED** (`scripts/oneoff/measure-vb-grade-rows.mjs`).
+          The RPCs declare `min_grade`/`max_grade` as `numeric default null` and sort `nulls last`,
+          so a negative sorts correctly and is excluded only by a floor it is genuinely below; the
+          one live `queryArgs` (`lib/DbAreaBrowser.jsx`) passes NEITHER, so **the range filter is
+          unwired today and the live consequence of a null is the SORT**; `lib/offline.js` goes
+          through `numOrNull` + `cmpNullsLast`. **`techHrs(pitches,len,gradeNum)` is NOT a consumer
+          of this column** — its callers pass `gn(route.grade)`, a different parser over the grade
+          STRING — so no safety-adjacent time estimate is in frame, which the parameter's name
+          makes it very easy to believe otherwise.
+        - **-1 RATHER THAN 0, because 0 is taken.** `V0` maps to 0 and 10,159 rows hold it, so
+          reusing it would assert that VB and V0 are the same grade; -1 is what the scale claims.
+          Measured before choosing: the column holds **min 0, max 17 and ZERO negatives**, so this
+          really is a new class of value and nothing does arithmetic on the stored number.
+        - **SCOPED TO THE V SYSTEM, AND THAT COSTS NOTHING**: all 9 occurrences of a `VB` token in
+          `grade` are `bouldering`, and there are **0** in rock/ice/alpine/aid_grade or
+          `commitment`. So the safer scoping is also the complete one, and a system-agnostic
+          fallback would buy no row while putting "VB" in reach of a string meaning something else.
+        - **9 GAINED, 0 CHANGED, 0 LOST** over all 205,382 graded routes
+          (`verify-vb-branch.mjs`), which also asserts the branch's SCOPE on 12 declared cases
+          before reading a row — because "0 CHANGED" is equally true of a branch that never fires.
+          One of those cases pins that a bare `"V"` is **5**, the PRE-EXISTING roman last-resort
+          branch, so the new branch cannot be blamed for it later.
       - `scripts/oneoff/{measure-unreadable-grades,verify-v-case-widening,fix-grade-num-lowercase-v}.mjs`.
         The measurement **derives which widenings are already shipped** by asking the parser two
         one-line questions rather than restating them — a control hardcoded to the pre-fix shape
@@ -6200,10 +6260,30 @@ the total when deciding where a new guard belongs.
         `wa_colchuck_peak_north_buttress_couloir`, `wa_lane_peak_r3` — have COMPLETE hike inputs, so
         they present an **exact** Total beside a Climbing tile reading **N/A**, and *"Est. return"*
         equal to *"Est. summit"* (the walk branch of `retH` fires when `pitches` is falsy, so the
-        descent is zero too). **REPORTED, NOT FIXED**, for the reason this entry reaches one bullet
-        up about `gn()`: a handful of routes does not justify moving a safety-adjacent estimate.
-        The consistent repair, if it is ever taken, is to extend the **existing** `approachUnknown`
-        marker to an unknown CLIMBING leg — which can only ever make the app hedge MORE, never less.
+        descent is zero too).
+        - **THE REPAIR THIS ENTRY NAMED IS TAKEN, 2026-09-24, AND ALL SIX ARE HEDGED.** It read
+          *"REPORTED, NOT FIXED … a handful of routes does not justify moving a safety-adjacent
+          estimate"*, and closed by naming the consistent repair: extend the marker to an unknown
+          CLIMBING leg, *"which can only ever make the app hedge MORE, never less"*. That is the
+          argument that makes it polish rather than a product call — the change adds a caveat and
+          moves no number, so the objection about touching the estimate does not apply to it. The
+          measurement now reports **6 hedged, 0 bare** (was 3/3).
+        - **`climbKnown` IS THE CLIMBING TILE'S OWN TEST**, not a second one written beside it.
+          That tile already renders `N/A` on exactly this condition, so deriving the marker from
+          the same expression means the `N/A` and the `≥` cannot disagree — the rule this repo
+          applies to `_hfr`, `_memN` and `dayOf`. The aggregates take `lowerBound = approachUnknown
+          || climbUnknown`; **the Approach tile keeps its OWN flag**, because an unrecorded pitch
+          count says nothing about the walk, and that is the load-bearing assertion in the probe:
+          a rule that only ever ADDS a hedge is satisfied by hedging everything.
+        - **NO `!publishedIsWholeDay` CLAUSE, deliberately.** `publishedIsWholeDay` requires
+          `summitTimeHrs != null`, which IS `hasPublishedSummitH`, so it is a subset of
+          `climbKnown` and the guard could never fire. A redundant condition in a guard reads as
+          coverage and is not, so it is **asserted** in
+          `scripts/oneoff/probe-climb-leg-lower-bound.mjs` rather than written into the code.
+        - That probe renders the real `RouteDetail` over six fixtures, **37 assertions**, and is
+          proven non-vacuous by A/B: reverting the aggregates to `approachUnknown` fails **exactly
+          3**, all in the one case, with the other 34 green — so it is specific rather than firing
+          on any change. Four of the six cases must stay CLEAN.
       - **THE STATIC PREDICATE WAS WRONG AND THE RENDER VALIDATION IS WHAT CAUGHT IT.** The first
         version of `scripts/oneoff/measure-zero-pitch-estimate-reach.mjs` computed these buckets
         from columns alone and missed `cragOnly` entirely; rendering a sample through the real
