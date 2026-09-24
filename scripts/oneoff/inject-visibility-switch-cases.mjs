@@ -51,7 +51,7 @@ const CASES = [
   /* Rule 3 — the second way into a résumé. The stat tile really did call onResume()
    * unconditionally, so gating the profile BUTTON alone left a private résumé reachable by
    * tapping a climb count. */
-  { name: "stat-tile", file: "ClimbMatchCore.jsx", must: "fail",
+  { name: "stat-tile", file: "lib/PartnerSearch.jsx", must: "fail",
     why: "the real ungated stat-tile route into another climber's résumé",
     find: 'const act=st[2]==="climbs"?(c.resumePublic!==false?()=>onResume&&onResume(c):null)',
     repl: 'const act=st[2]==="climbs"?()=>onResume&&onResume(c)' },

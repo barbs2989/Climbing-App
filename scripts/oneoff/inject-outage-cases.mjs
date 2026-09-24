@@ -122,7 +122,9 @@ const CASES = {
   // and NAV's last two entries are "Ranks" and "Profile". So this case pins two things at once
   // -- that the fix works, and that the walk reaches a tab it used to skip entirely.
   ranks: {
-    file: "ClimbMatchCore.jsx",
+    // Leaderboards moved to lib/ (lazy-loaded); check:outage walks the rendered app, so it
+    // still sees this notice — only the file the injection edits changed.
+    file: "lib/Leaderboards.jsx",
     // The short form of this anchor matches TWICE: #1155 already put a logsUnavailable notice
     // with identical styling in MyAscents. The harness REFUSED the case and said so, which is
     // exactly what it is for -- an injection that edits the wrong one of two identical lines

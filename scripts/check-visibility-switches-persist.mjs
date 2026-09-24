@@ -314,10 +314,13 @@ for (const [name, re] of CLIMBER_SELECTS) {
  * and has to be declared, which is the loud outcome. Your OWN résumé is out of scope (ClimbMatch's
  * `setResumeFor(meLive)`): you may always read your own. */
 const RESUME_ENTRIES = 2;
-const entries = (core.match(/onResume&&onResume\(/g) || []).length;
-const gates = (core.match(/resumePublic!==false/g) || []).length;
+// The partner card's stat tile moved with PartnerSearch into lib/ (lazy-loaded). Counting core
+// alone would read it as a route that vanished, and stop checking that it is gated.
+const resumeSrc = core + "\n" + fs.readFileSync(path.join(ROOT, "lib/PartnerSearch.jsx"), "utf8");
+const entries = (resumeSrc.match(/onResume&&onResume\(/g) || []).length;
+const gates = (resumeSrc.match(/resumePublic!==false/g) || []).length;
 if (entries !== RESUME_ENTRIES) {
-  problems.push("ClimbMatchCore.jsx has " + entries + " route(s) into another climber's résumé, not the "
+  problems.push("ClimbMatchCore.jsx + lib/PartnerSearch.jsx have " + entries + " route(s) into another climber's résumé, not the "
     + RESUME_ENTRIES + " declared. A NEW one must consult `resumePublic!==false` before it opens — the "
     + "stat tile did not, so a private résumé stayed reachable by tapping a number — then update "
     + "RESUME_ENTRIES.");

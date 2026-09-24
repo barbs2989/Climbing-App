@@ -28,7 +28,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Leaderboards, CLIMBERS, ME } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
+import { CLIMBERS, ME } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
+import Leaderboards from "${path.join(ROOT, "lib", "Leaderboards.jsx")}";
 const noop = () => {};
 export function seed(n) {
   // Push climbers who all outrank ME, so meIdx lands past the 100 the your-rank card needs.

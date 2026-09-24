@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import App from "./ClimbMatch.jsx";
 import AppErrorBoundary from "./AppErrorBoundary.jsx";
+import { restoreQueryCache, persistQueryCache } from "./lib/query-persist.js";
 
 // networkMode "always" is load-bearing, not a tuning knob. React Query's default is
 // "online": when the browser reports itself offline it sets fetchStatus "paused" and
@@ -67,6 +68,15 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       networkMode: "always",
+      // A query answered in the last minute is not refetched just because a screen remounted
+      // or the tab regained focus. The default (0) refetched on every tab switch — most of
+      // the network traffic in a normal session, for data that had not changed. Writes do not
+      // depend on it: every write path updates its screen through a setter, refetch() or an
+      // invalidate, which ignore staleTime.
+      staleTime: 60 * 1000,
+      // Long enough that a restored catalog query (lib/query-persist.js) survives a session
+      // in which nothing happens to mount it.
+      gcTime: 30 * 60 * 1000,
       retry: (failureCount, error) => {
         if (typeof navigator !== "undefined" && navigator.onLine === false) return false;
         if (isTimeout(error)) return false;
@@ -78,13 +88,19 @@ const queryClient = new QueryClient({
 
 // The boundary wraps the provider too: a throw from a query-client consumer during render
 // is just as fatal, and outside it there is nothing left to render a fallback with.
-createRoot(document.getElementById("root")).render(
-  <AppErrorBoundary>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
-  </AppErrorBoundary>
-);
+//
+// Paint from the last visit's catalog if it is on the device (lib/query-persist.js), then
+// keep it current. The restore is capped at 150ms so a slow disk cannot hold the first paint.
+restoreQueryCache(queryClient).finally(() => {
+  persistQueryCache(queryClient);
+  createRoot(document.getElementById("root")).render(
+    <AppErrorBoundary>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </AppErrorBoundary>
+  );
+});
 
 // Registered only in production builds so it never interferes with Vite's
 // dev-server module graph / HMR.
