@@ -188,6 +188,12 @@ try {
   page.on("pageerror", (e) => pageErrors.push(String(e)));
 
   await page.goto(base + "?z=inboxOpen", { waitUntil: "domcontentloaded" });
+  // WAIT FOR THE OPENER, THEN FOR THE TEXT. The scaffold opens the overlay 1200ms after mount
+  // and only then sets __overlaysReady. settledText alone returns once the text holds still for
+  // ~1s — and on a fast load HOME is complete and still before the opener has fired, so this read
+  // the dashboard and failed "the Inbox opened" (run 36037441976). check:signed-in and
+  // check:zero-state already wait on the flag; this was the one browser guard that did not.
+  await page.waitForFunction(() => window.__overlaysReady === true, null, { timeout: 60000 }).catch(() => {});
   await settledText(page);
   const inbox = await page.evaluate(() => document.body.innerText);
 
