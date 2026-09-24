@@ -15,6 +15,8 @@ live DB and fails on:
 - target ids that do not exist — the statement would report success and do nothing
 - a `DELETE` removing the last row with that name on its peak — the only copy
 - files or statements large enough to be truncated on paste
+- a `trailheadDirection` value that describes the WALK rather than the way to the trailhead
+  (checked before any DB read; see `check:trailhead-direction-shape`)
 
 Pass `--table areas` for an area file. It **fails closed** if the file writes to a table it
 was not checked against, so a structural edit cannot be silently verified as "nothing to

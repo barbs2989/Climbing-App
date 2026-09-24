@@ -1,0 +1,1156 @@
+{
+ "what": "approach_logistics.trailheadDirection rows that described the walk from the trailhead instead of the way to it. `new` is the value to write: the drive part cut out of `old`, or null to remove the key (the approach section already carries the walk). `old` is the rollback.",
+ "reviewed": "2026-09-24, every distinct value read by hand; the detector lib/trailheadDirectionShape.js agrees with all 377 distinct live values",
+ "rows": [
+  {
+   "id": "adams_northwest_ridge",
+   "old": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake, via Killen Creek Trail #113 to the PCT and High Camp",
+   "new": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake"
+  },
+  {
+   "id": "wa_mount_adams_lyman_glacier",
+   "old": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake, via Killen Creek Trail #113 to the PCT and High Camp",
+   "new": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake"
+  },
+  {
+   "id": "wa_mount_adams_northwest_ridge",
+   "old": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake, via Killen Creek Trail #113 to the PCT and High Camp",
+   "new": "From the Killen Creek Trailhead on FR-2329 near Takhlakh Lake"
+  },
+  {
+   "id": "ak_redoubtable",
+   "old": "Direct walk from highway shoulder",
+   "new": null
+  },
+  {
+   "id": "co_cutthroat",
+   "old": "Short walk along Boulder Creek",
+   "new": null
+  },
+  {
+   "id": "co_cutthroat_2",
+   "old": "Cross US 285 directly to the base",
+   "new": null
+  },
+  {
+   "id": "ky_cutthroat",
+   "old": "Uphill hike to the Motherlode/GMC Wall sector",
+   "new": null
+  },
+  {
+   "id": "mt_cutthroats_don_t_wear_plaid",
+   "old": "Short walk from roadside pullout",
+   "new": null
+  },
+  {
+   "id": "rainier_central_mowich_face",
+   "old": "From Mowich Lake: Wonderland Trail to Spray Park, up lower Ptarmigan Ridge, then descend to the North Mowich Glacier (verify current road access)",
+   "new": "From Mowich Lake (verify current road access)"
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+  },
+  {
+   "id": "wa_east_face",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+  },
+  {
+   "id": "wa_gunrunner",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+  },
+  {
+   "id": "wa_south_ridge",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+  },
+  {
+   "id": "wa_west_face",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via Itswoot Ridge / Cub Lake / Bachelor Creek at the southern end of the Ptarmigan Traverse corridor",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road"
+  },
+  {
+   "id": "wa_action_potential",
+   "old": "North-facing approach; ascend Silver Star Creek east side 2 miles to basin at 4,800 ft, then scramble northeast toward Burgundy Col",
+   "new": null
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_caravan",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_chitlins_con_carne",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_django",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_hottentot",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_summertime",
+   "old": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass; cross Early Winters Creek and contour to the crag (~20-25 min)",
+   "new": "From a small pullout on the east side of SR-20 just before the larger Spires Gully parking east of Washington Pass"
+  },
+  {
+   "id": "wa_amphitheater_mountain_finger_of_fatwa",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_left_side",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_amphitheater_mountain_north_ridge",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_amphitheater_mountain_pilgrimage_to_mecca",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_amphitheater_mountain_west_route",
+   "old": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51, backpacking via Andrews Creek Trail #504 to Upper Cathedral Lake",
+   "new": "From the Andrews Creek Trailhead (~3,040 ft) on West Chewuch Road / FR-51"
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "old": "South to Southeast",
+   "new": null
+  },
+  {
+   "id": "wa_austera_peak",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_direct_southwest_buttress",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_eldorado_peak_east_ridge",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_eldorado_peak_eldorado_glacier_nw",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_eldorado_peak_north_ridge",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_eldorado_peak_west_arete",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_northwest_ridge",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_south_ridge_4",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_tepeh_towers",
+   "old": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft): cross the North Fork Cascade River on logs and follow the steep climbers' path up Eldorado Creek",
+   "new": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "old": "From the Cascade River Road trailhead, roughly 7 miles and 6,000 ft of gain to a high camp on the East Ridge of Eldorado, then across the Inspiration, McAllister and Klawatti Glaciers to the rock tower.",
+   "new": "From the Cascade River Road trailhead"
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "old": "Drive the Cascade River Road to the Eldorado Creek trailhead (roughly MP 20, ~2,100 ft) — see the on-file road note for driving specifics, including the flood-related closure near the park boundary that has, in recent years, added a bike or",
+   "new": "Drive the Cascade River Road to the Eldorado Creek trailhead (roughly MP 20, ~2,100 ft)"
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "old": "From the FR-68 pullout past the East Fork Foss bridge: no trail — pick up the toe of the north ridge at ~1,600 ft",
+   "new": "From the FR-68 pullout past the East Fork Foss bridge"
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "old": "From the FS-3160 road-end parking (via Canyon Creek Road FS-31): steep boot path ~0.7 mile to Church Lake, then up the scramble route",
+   "new": "From the FS-3160 road-end parking (via Canyon Creek Road FS-31)"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "old": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road), via Colchuck Lake and Aasgard Pass into the Core Enchantments",
+   "new": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road)"
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "old": "From the end of Bacon Creek Road: intermittent boot path onto Porkbelly Ridge, unofficial climbers' path/bushwhack",
+   "new": "From the end of Bacon Creek Road"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "old": "From the Big Four Picnic Area: the Ice Caves nature trail to the basin below the North Face, then right through a break in the lower cliffs",
+   "new": "From the Big Four Picnic Area"
+  },
+  {
+   "id": "wa_black_peak_northeast_ridge",
+   "old": "As for the South Ridge: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to a camp at Wing Lake (~6,900 ft).",
+   "new": "From the Rainy Pass/Lake Ann trailhead on SR-20"
+  },
+  {
+   "id": "wa_blizzard_peak_standard",
+   "old": "Blizzard Peak sits in a remote knot of peaks in the far northwestern Pasayten Wilderness, hard against the Canadian border in the Hozameen/Chuchuwanteen Range, and there is no trailhead anywhere close to its base - every ascent is a multi-day backpack before any scrambling even starts.",
+   "new": null
+  },
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "old": "A multi-day approach from the Thunder Creek Trail out of Colonial Creek Campground toward Park Creek Pass, camping near the base of the face for an alpine start.",
+   "new": "From Colonial Creek Campground (Thunder Creek Trailhead)"
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "old": "Winter approach: Cascade River Road to the Eldorado Trailhead gate, then bike/ski up Cascade Pass trail to the highest switchback (~6,400 ft), angle up and drop into the Soldier Boy drainage, then rising-traverse to the Quien Sabe Glacier's NW corner and rope up for the glacier crossing.",
+   "new": "Winter approach: Cascade River Road to the Eldorado Trailhead gate"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "old": "North/Northeast via Cascade Pass trail to Cascade Pass (3,700 ft), then up Sahale Arm path to moraine flats at 7,600 ft. Alternative approach via Boston Basin Trail to Boston-Sahale Col via Quien Sabe Glacier.",
+   "new": null
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "old": "From the Entiat River Trailhead (3,150 ft, end of Entiat River Road), follow the Entiat River Trail #1400, a well-graded but increasingly rough valley trail that parallels the Entiat River the entire way. At 2.2 miles (3,480 ft) the Anthem Creek Trail #1435 splits off; the crossing at 2.5 miles is on a solid wooden bridge.",
+   "new": "From the Entiat River Trailhead (3,150 ft, end of Entiat River Road)"
+  },
+  {
+   "id": "wa_burgundy_spire_north_face",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_chianti_spire_east_face",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_clean_break",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_gato_negro",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_rampage",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_south_face",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_the_chalice",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_ultramega_ok",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "old": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft): boot path down talus, log crossing of Early Winters Creek, then steeply up the timbered rib toward the Burgundy Col basin",
+   "new": "From the unsigned Wine Spires pullout on SR-20 near milepost 166 (~4,300 ft)"
+  },
+  {
+   "id": "wa_cardinal_peak_nw_couloir_north_ridge",
+   "old": "Via the North Fork Entiat Trail to Saska Basin and Saska Pass",
+   "new": null
+  },
+  {
+   "id": "wa_chikamin_peak_southeast_slopes",
+   "old": "Two established approaches reach the southeast-side gullies, and both are worth knowing since parties come at this route from either direction.",
+   "new": null
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 to the Coleman Glacier moraine (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft)"
+  },
+  {
+   "id": "wa_colfax_peak_fords_theatre",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 to the Coleman Glacier moraine (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft)"
+  },
+  {
+   "id": "wa_colfax_peak_kimchi_suicide_volcano",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 to the Coleman Glacier moraine (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft)"
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 to the Coleman Glacier moraine (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft)"
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "old": "Southeast from the Pyramid Lake Trailhead on SR-20 (6.4 miles past Newhalem; parking pullout on the left, ~6 cars, trail on the right side of the highway): Pyramid Lake Trail to the lake, then climbers' path up the forested rib toward the Colonial Glacier basin",
+   "new": "From the Pyramid Lake Trailhead on SR-20 (6.4 miles past Newhalem; parking pullout on the left, ~6 cars, trail on the right side of the highway)"
+  },
+  {
+   "id": "wa_cosho_peak_scramble",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151, over Easy Pass into Fisher Basin",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151, over Easy Pass into Fisher Basin",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151, over Easy Pass into Fisher Basin",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_mount_arriva_scramble",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151, over Easy Pass into Fisher Basin",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151, over Easy Pass into Fisher Basin",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_crater_mountain_standard_route",
+   "old": "From the Canyon Creek Trailhead (1,900 ft) on SR 20 (32.8 mi east of Marblemount / 55.1 mi west of Winthrop), take Jackita Ridge Trail #738, fording Canyon Creek and Granite Creek near the start.",
+   "new": "From the Canyon Creek Trailhead (1,900 ft) on SR 20 (32.8 mi east of Marblemount / 55.1 mi west of Winthrop)"
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "old": "Park at the hairpin turn on WA-20 east of Washington Pass and follow the cairned path from the pond toward the East Face, then contour onto the northeast aspect — the shortest approach of the major Liberty Bell lines.",
+   "new": "Park at the hairpin turn on WA-20 east of Washington Pass"
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "old": "From the Gorge Creek Overlook on SR-20 (~2.6 miles east of Newhalem): cross the footbridge, then off-trail by boot-track and cairns up the south spur",
+   "new": "From the Gorge Creek Overlook on SR-20 (~2.6 miles east of Newhalem)"
+  },
+  {
+   "id": "wa_direct_west_face",
+   "old": "Northeast from SR-20 pullout near milepost 166: trail drops steeply east through talus to Early Winters Creek crossing (4,080 ft), then climbs steeply northeast between feeder gullies to bench camp (6,500 ft), then continues east up broad talus/scree gully to base of Pernod's west face",
+   "new": null
+  },
+  {
+   "id": "wa_dirty_sanchez",
+   "old": "From US-12 past Rimrock Lake Dam onto Tieton Reservoir Road (FR-1200); park at the pullouts near the split-rail-fence spring and follow the climbers' trail to the cliffs",
+   "new": "From US-12 past Rimrock Lake Dam onto Tieton Reservoir Road (FR-1200); park at the pullouts near the split-rail-fence spring"
+  },
+  {
+   "id": "wa_ride_the_lightning_2",
+   "old": "From US-12 past Rimrock Lake Dam onto Tieton Reservoir Road (FR-1200); park at the pullouts near the split-rail-fence spring and follow the climbers' trail to the cliffs",
+   "new": "From US-12 past Rimrock Lake Dam onto Tieton Reservoir Road (FR-1200); park at the pullouts near the split-rail-fence spring"
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "old": "southwest",
+   "new": null
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft), via the Goodell Creek Trail and Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft)"
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft), via the Goodell Creek Trail and Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft)"
+  },
+  {
+   "id": "wa_south_face_5",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft), via the Goodell Creek Trail and Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem (~600 ft)"
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "old": "From the PCT North Trailhead at I-90 Exit 52 (~3,000 ft), follow the Pacific Crest Trail north through Commonwealth Basin and up onto the Kendall Ridge switchbacks.",
+   "new": "From the PCT North Trailhead at I-90 Exit 52 (~3,000 ft)"
+  },
+  {
+   "id": "wa_fish_whistle",
+   "old": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707 over Headlee Pass",
+   "new": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+  },
+  {
+   "id": "wa_ragged_edge",
+   "old": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707 over Headlee Pass",
+   "new": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+  },
+  {
+   "id": "wa_true_grit_2",
+   "old": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707 over Headlee Pass",
+   "new": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "old": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707 over Headlee Pass",
+   "new": "From the Sunrise Mine Trailhead (~2,340 ft) at the end of FR-4065 off the Mountain Loop Highway, via Trail #707"
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "old": "North-northeast via glacier traversals",
+   "new": null
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "old": "Quien Sabe Glacier to Sharkfin Col, rappel to Boston Glacier, traverse west to face base",
+   "new": null
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "old": "Boston Glacier traverse continuing to the Forbidden Glacier's north arm (longer, glacier-circling approach)",
+   "new": null
+  },
+  {
+   "id": "wa_fortune_peak_standard_route",
+   "old": "From the Esmeralda Trailhead (#1394, 4,269 ft), hike the Esmeralda Basin Trail (shared with the Lake Ingalls/Ingalls Way trail for the first 0.4 mi), then continue on the Ingalls Way trail toward Lake Ann. At the trail junction below the pass, head up toward Lake Ann and the saddle above it, then leave maintained trail and follow the ridge boot path to the summit.",
+   "new": "From the Esmeralda Trailhead (#1394, 4,269 ft)"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "old": "From the wide gravel-wash pullout on FR-56 past the Taylor River junction (~1,150 ft): no maintained trail; climbers' route directly up",
+   "new": "From the wide gravel-wash pullout on FR-56 past the Taylor River junction (~1,150 ft)"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "old": "Ghost Peak sits deep in the Northern Pickets, just south of Crooked Thumb Peak and about 0.3 mi NNE of Phantom Peak, so this is a multi-day wilderness approach, not a day hike to a base.",
+   "new": null
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "old": "Northeast/North through old-growth forest from trailhead; traverse east onto White Chuck Glacier basin, then northward across Suiattle and Cool Glaciers",
+   "new": null
+  },
+  {
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "old": "Southeast from North Fork Sauk Trailhead via Trail #649 to PCT, then southeast via PCT to Glacier Ridge and alpine access to Frostbite Ridge",
+   "new": "From the North Fork Sauk Trailhead"
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "old": "South on Pacific Crest Trail along Bridge Creek for 9.6 miles to North Fork Bridge Creek Trail junction; then north with final bushwhacking to glacier base camp",
+   "new": null
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "old": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail toward Longs Pass / Ingalls Lake",
+   "new": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "old": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail toward Longs Pass / Ingalls Lake",
+   "new": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "old": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail toward Longs Pass / Ingalls Lake",
+   "new": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "old": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail toward Longs Pass / Ingalls Lake",
+   "new": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+  },
+  {
+   "id": "wa_hagan_mountain_south",
+   "old": "Park at the Baker River Trailhead, the end of FR 11 (Baker Lake Highway), elevation roughly 800 ft. Start on Baker River Trail #606, which follows the true-right bank of the Baker River upstream through mossy old-growth forest - mostly flat, easy tread.",
+   "new": "Park at the Baker River Trailhead, the end of FR 11 (Baker Lake Highway), elevation roughly 800 ft"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "old": "From the Lake Serene Trailhead off Mount Index River Road: Trail #1068 ~4 miles to Lake Serene below the north face",
+   "new": "From the Lake Serene Trailhead off Mount Index River Road"
+  },
+  {
+   "id": "wa_icy_peak_ruth_icy_traverse",
+   "old": "From the Hannegan Trailhead and campground at the end of Ruth Creek Road (FR 32, ~3,100 ft), reached off the Mt. Baker Highway (SR 542); the Hannegan Pass Trail climbs about 4 miles to Hannegan Pass before the traverse over Ruth Mountain begins.",
+   "new": "From the Hannegan Trailhead and campground at the end of Ruth Creek Road (FR 32, ~3,100 ft), reached off the Mt. Baker Highway (SR 542)"
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "old": "No maintained trail reaches the summit — Indian Mountain is approached cross-country from the Hannegan Pass/Chilliwack River trail system, the only real access into this part of the park.",
+   "new": null
+  },
+  {
+   "id": "wa_ingalls_peak_south_scramble",
+   "old": "North via Ingalls Way Trail through Headlight Basin, passing Ingalls Pass before ascending to Lake Ingalls and the North/South Peak col",
+   "new": null
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "old": "North from May Creek; northeast face of mountain via glacier approach",
+   "new": null
+  },
+  {
+   "id": "wa_junior_s_farm",
+   "old": "From the spur-270 pullout: unmarked climbers' path up the boulder field past the Mossness sector to the upper bench",
+   "new": "From the spur-270 pullout"
+  },
+  {
+   "id": "wa_kyes_peak_northeast_ridge",
+   "old": "From the North Fork Sauk River / Quartz Creek Trailhead (Darrington Ranger District), about 4 miles and 1,450 ft up the Quartz Creek Trail to Curry Gap, then southwest along the ridge and across the Pride Glacier. Note this is NOT the Blanca Lake approach used by the peak's scramble route.",
+   "new": "From the North Fork Sauk River / Quartz Creek Trailhead (Darrington Ranger District)"
+  },
+  {
+   "id": "wa_lemah_two_goatshead_spire",
+   "old": "Same access as the Lemah group: Pete Lake Trail #1323 toward the PCT and the Lemah basin",
+   "new": null
+  },
+  {
+   "id": "wa_liberty_bell_serpentine_crack",
+   "old": "West, from Washington Pass area near Winthrop, Washington",
+   "new": null
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "old": "From the Old Lake Valhalla/Lake Janus Trailhead on Smith Brook Road (~4,150 ft), follow the trail toward Union Gap and continue to Lichtenberg Pass, then leave the trail to approach the base of the west face.",
+   "new": "From the Old Lake Valhalla/Lake Janus Trailhead on Smith Brook Road (~4,150 ft)"
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "old": "East",
+   "new": null
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "old": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601), follow the Stuart Lake Trail (#1599) about 2.5 miles to the signed fork where the Colchuck Lake Trail (#1599.1) splits left/south.",
+   "new": "From the Stuart Lake/Colchuck Lake Trailhead (~3,500 ft, end of Eightmile Road/FR-7601)"
+  },
+  {
+   "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+   "old": "From Paradise via the Camp Muir route, then traversing the Paradise, Cowlitz, and Ingraham Glaciers",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "old": "The East Face approach as for Liberty Crack: park at the hairpin turn on WA-20 east of Washington Pass, walk back to the pond, and follow the cairned climbers' path about a mile to the talus below the East Face.",
+   "new": "Park at the hairpin turn on WA-20 east of Washington Pass"
+  },
+  {
+   "id": "wa_lone_wolf",
+   "old": "From I-90 Exit 54 via Hyak Drive and NF-9070 (left fork at Ollallie Meadow) to the road-end turnaround; ~20-30 minutes to Silver Basin",
+   "new": "From I-90 Exit 54 via Hyak Drive and NF-9070 (left fork at Ollallie Meadow) to the road-end turnaround"
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "old": "West/Northwest from Easy Pass through Fisher Basin; descend 1,500 feet into Fisher Creek valley, then cross-country toward Mesahchie Col and southeast basin approach",
+   "new": null
+  },
+  {
+   "id": "wa_mount_adams_adams_glacier",
+   "old": "North (via Killen Creek Trail #113 entering Mt. Adams Wilderness from north side)",
+   "new": "From the Killen Creek Trailhead"
+  },
+  {
+   "id": "wa_mount_adams_lava_glacier_headwall",
+   "old": "south-southeast toward peak",
+   "new": null
+  },
+  {
+   "id": "wa_mount_adams_north_ridge",
+   "old": "North",
+   "new": null
+  },
+  {
+   "id": "wa_mount_adams_south_climb",
+   "old": "South (approached via WA SR-14 / I-84 from the south)",
+   "new": null
+  },
+  {
+   "id": "wa_mount_angeles_standard",
+   "old": "From the Hurricane Ridge Visitor Center lot: High Ridge / Klahhane Ridge Trail ~2.5 miles along the open ridge to the scramble path",
+   "new": "From the Hurricane Ridge Visitor Center lot"
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "old": "Start at Artist Point parking area (elevation 5,075 ft). Follow Ptarmigan Ridge Trail northwesterly for 5 miles to Camp Kiser (~5,800 ft), then head northeasterly across Coleman Glacier, then Roosevelt Glacier, ascending toward the ridge base at 7,500 ft",
+   "new": "Start at Artist Point parking area (elevation 5,075 ft)"
+  },
+  {
+   "id": "wa_mount_baker_coleman_deming",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 toward Hogsback Camp (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+  },
+  {
+   "id": "wa_mount_baker_coleman_headwall",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 toward Hogsback Camp (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+  },
+  {
+   "id": "wa_mount_baker_north_ridge",
+   "old": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677 toward Hogsback Camp (check current road status)",
+   "new": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677"
+  },
+  {
+   "id": "wa_mount_baker_easton_glacier",
+   "old": "West then North",
+   "new": null
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "old": "Southeast via Chain Lakes Trail to Ptarmigan Ridge",
+   "new": null
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "old": "Standard approach: drive Highway 20 to the Canyon Creek Trailhead near Mazama and follow the Mill Creek/Azurite Pass Trail (#755) up Canyon Creek then Mill Creek - about 5 miles to the site of the defunct Azurite Mine, then a further ~3 increasingly faint, brush-choked miles (slide alder and downed timber are common since the trail has seen little maintenance since the mine closed) to roughly the 14-mile mark, where a boot path continues about 1.5 more miles to Azurite Pass (6,680+ ft).",
+   "new": "Drive Highway 20 to the Canyon Creek Trailhead near Mazama"
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "old": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk or bike ~5 miles to the unsigned Lake Constance climbers' trail (~1,450 ft)",
+   "new": "From the Dosewallips Road (FR-2610) washout parking near Brinnon"
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "old": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk or bike ~5 miles to the unsigned Lake Constance climbers' trail (~1,450 ft)",
+   "new": "From the Dosewallips Road (FR-2610) washout parking near Brinnon"
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "old": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk or bike ~5 miles to the unsigned Lake Constance climbers' trail (~1,450 ft)",
+   "new": "From the Dosewallips Road (FR-2610) washout parking near Brinnon"
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "old": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk or bike ~5 miles to the unsigned Lake Constance climbers' trail (~1,450 ft)",
+   "new": "From the Dosewallips Road (FR-2610) washout parking near Brinnon"
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "old": "From the Dosewallips Road (FR-2610) washout parking near Brinnon: road-walk or bike ~5 miles to the unsigned Lake Constance climbers' trail (~1,450 ft)",
+   "new": "From the Dosewallips Road (FR-2610) washout parking near Brinnon"
+  },
+  {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "old": "Reached only by climbing Mount Crowder first (Southwest Route from Wild Lake) and continuing down the far side",
+   "new": null
+  },
+  {
+   "id": "wa_mount_custer_standard",
+   "old": "From the Depot Creek trailhead (reached via the unsigned dirt spur off Chilliwack Lake Road in BC), follow the old trail south into the US: about 200 yards through old growth to the border obelisk and trail register, then continue on the fading Depot Creek path up the valley.",
+   "new": "From the Depot Creek trailhead (reached via the unsigned dirt spur off Chilliwack Lake Road in BC)"
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "old": "From the Cathedral Rock/Deception Pass trailhead at the end of FR-4330 (elev. ~3400 ft), start on the signed Deception Pass Trail (also signed Cathedral Pass Trail), which climbs steadily through forest.",
+   "new": "From the Cathedral Rock/Deception Pass trailhead at the end of FR-4330 (elev. ~3400 ft)"
+  },
+  {
+   "id": "wa_mount_daniel_lynch_glacier",
+   "old": "From the Deception Pass Trailhead, via Marmot and Jade Lakes to Dip Top Gap, then west to the shoulder above the Foss River drainage.",
+   "new": "From the Deception Pass Trailhead"
+  },
+  {
+   "id": "wa_mount_ferry_standard",
+   "old": "There is no dedicated trailhead, road, or maintained path to Mount Ferry - reaching it means committing to 2-3 days of the Bailey Range Traverse, Olympic National Park's classic off-trail high route that links the Sol Duc River trailhead (via Sol Duc Falls Trail #630) in the north with the Elwha River/Whiskey Bend trailhead in the south, or with the North Fork Quinault trailhead via Dodwell-Rixon Pass on the longer loop variant.",
+   "new": null
+  },
+  {
+   "id": "wa_mount_howard_south_slope",
+   "old": "Two common trailheads on US-2 in Chelan County give access.",
+   "new": null
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "old": "Via the North Fork Quinault Trailhead (North Shore Road), hike the North Fork Quinault River Trail roughly 16 miles to Low Divide - fords at Wild Rose Creek, Elip Creek, and 16-Mile Creek can be difficult or impassable in high water - then follow the primitive, unmaintained Skyline Ridge Trail toward Promise Creek Pass before dropping off-trail onto Lawson's slopes.",
+   "new": "From the North Fork Quinault Trailhead (North Shore Road)"
+  },
+  {
+   "id": "wa_mount_olson_standard",
+   "old": "Multi-day: South Fork Skokomish Trail #873 to the Six Ridge Trail and Sundown Pass, then the primitive Mount Olson Way boot path",
+   "new": null
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "old": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft): ~17.4 miles up the Hoh River Trail to Glacier Meadows below the Blue Glacier",
+   "new": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft)"
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "old": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft): ~17.4 miles up the Hoh River Trail to Glacier Meadows below the Blue Glacier",
+   "new": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft)"
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "old": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft): ~17.4 miles up the Hoh River Trail to Glacier Meadows below the Blue Glacier",
+   "new": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft)"
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "old": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft): ~17.4 miles up the Hoh River Trail to Glacier Meadows below the Blue Glacier",
+   "new": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft)"
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "old": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft): ~17.4 miles up the Hoh River Trail to Glacier Meadows below the Blue Glacier",
+   "new": "From the Hoh River Trailhead at the Hoh Rain Forest Visitor Center (578 ft)"
+  },
+  {
+   "id": "wa_mount_persis_the_hexorcist",
+   "old": "From the West Ridge boot path or cross-country from the Anderson Creek drainage / FR-6220: sustained off-trail forest travel to the base of the north face",
+   "new": null
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "old": "Northeast side from White River Campground: Glacier Basin Trail to Glacier Basin, then toward St. Elmo Pass and Curtis Ridge",
+   "new": "From White River Campground"
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "old": "South side from Paradise: Skyline Trail to the Muir Snowfield and Camp Muir",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "old": "Northeast",
+   "new": null
+  },
+  {
+   "id": "wa_mount_rainier_fuhrer_finger",
+   "old": "From Paradise via the Skyline Trail toward Camp Muir, then west across the Nisqually Glacier to the Wilson Glacier",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_gibraltar_ledges",
+   "old": "From Paradise: Skyline Trail and Muir Snowfield to Camp Muir",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_ingraham_direct",
+   "old": "From Paradise: Skyline Trail to Camp Muir, then onto the Ingraham Glacier",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_glacier",
+   "old": "From Paradise: Skyline Trail to the Nisqually Moraine, crossing the Nisqually Glacier toward the Kautz route",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_kautz_headwall",
+   "old": "From Paradise via the Camp Muir route partway, cutting west; alternatively via the Comet Falls / Van Trump Park trail",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "old": "Northeast side of Mount Rainier; from trailhead proceed via Glacier Basin Trail, cross White River, ascend to St. Elmo Pass (7,400 ft), descend onto lower Winthrop Glacier, traverse Curtis Ridge, ascend Carbon Glacier to Liberty Ridge base",
+   "new": "From White River Campground"
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "old": "From Paradise: Skyline Trail past Glacier Vista, dropping onto the Nisqually Glacier",
+   "new": "From the Paradise parking lot"
+  },
+  {
+   "id": "wa_mount_rainier_sunset_ridge",
+   "old": "From the Westside Road gate at Dry Creek: walk the road to Round Pass, then the South Puyallup and Wonderland Trails toward St. Andrews Park",
+   "new": "From the Westside Road gate at Dry Creek"
+  },
+  {
+   "id": "wa_mount_rainier_tahoma_glacier",
+   "old": "West side from the Westside Road gate at Dry Creek: Tahoma Creek Trail to the Wonderland Trail (~5,600 ft), then onto the southern side of the Tahoma Glacier",
+   "new": "From the Westside Road gate at Dry Creek"
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "old": "North side; now practically approached from White River Campground over St. Elmo Pass to the Carbon Glacier (Carbon River Road permanently closed)",
+   "new": "From White River Campground (the Carbon River Road is permanently closed)"
+  },
+  {
+   "id": "wa_mount_seattle_noyes_basin",
+   "old": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101): ~16 miles up the North Fork Quinault Trail to Low Divide (river fords at Wild Rose, Elip, and 16-Mile creeks can be hazardous in high water), then the Noyes Basin scramble route",
+   "new": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+  },
+  {
+   "id": "wa_mount_seattle_seattle_creek",
+   "old": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101): ~16 miles up the North Fork Quinault Trail toward Low Divide, then the Seattle Creek Basin scramble route",
+   "new": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "old": "From the Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway; the route crosses Ruth Creek and bushwhacks to the base of the Wall Street couloir rather than following the pass trail.",
+   "new": "From the Hannegan Campground pullout at the end of Ruth Creek Road (~2,950 ft), off Hannegan Pass Road (FS 32) from the Mt. Baker Highway"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "old": "From Glacier, drive Mt.",
+   "new": null
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "old": "No independent start: the ridge is typically gained after climbing the North Face or Hanging Glacier route to the upper mountain, or via the NW Rib — both of those start from the White Salmon day-lodge area.",
+   "new": null
+  },
+  {
+   "id": "wa_mount_shuksan_white_salmon_glacier",
+   "old": "South to Lake Ann, then west to glacier camp",
+   "new": null
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "old": "From the Olney Creek Road gate: road-walk ~2.25 miles to the second switchback (~3,700 ft), then the climbers' route",
+   "new": "From the Olney Creek Road gate"
+  },
+  {
+   "id": "wa_mount_stone_putvin",
+   "old": "Park at the Putvin Trailhead (FST 813, ~1,565 ft) on Hamma Hamma Road (FR 25) — note that in recent years a slide/washout near mile 10.5 has at times blocked the final ~1.2 miles of road, forcing an extra road-walk to the actual trailhead, ",
+   "new": "Park at the Putvin Trailhead (FST 813, ~1,565 ft) on Hamma Hamma Road (FR 25)"
+  },
+  {
+   "id": "wa_mount_teneriffe_kamikaze_trail",
+   "old": "From the paved Mount Teneriffe Trailhead: standard trail to the Teneriffe Falls junction (~2.8 miles), then the Kamikaze boot track up the SW ridge",
+   "new": "From the paved Mount Teneriffe Trailhead"
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft), via the old roadbed and the cairned Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft), via the old roadbed and the cairned Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft), via the old roadbed and the cairned Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "old": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft), via the old roadbed and the cairned Terror Basin climbers' path",
+   "new": "From the Goodell Creek group-camp trailhead off SR-20 across from Newhalem Campground (~600 ft)"
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "old": "Southeast",
+   "new": null
+  },
+  {
+   "id": "wa_ne_couloir",
+   "old": "From Tiffany Springs Campground (6,760 ft) via Trail #373 past Tiffany Lake to Honeymoon Pass, then traverse to the North Face cirque",
+   "new": "From Tiffany Springs Campground (6,760 ft)"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "old": "From the Wolf Creek Trailhead (~2,950 ft, end of FS Road 5005 west of Winthrop) follow Wolf Creek Trail #527 roughly 10 miles up the Wolf Creek valley to Gardner Meadows, then continue off-trail north into Wolf Creek Basin (typical high camp ~6,200-6,400 ft) below the Gardner/North Gardner saddle.",
+   "new": "From the Wolf Creek Trailhead (~2,950 ft, end of FS Road 5005 west of Winthrop)"
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "old": "Same Thunder Creek Trailhead approach as the East Slope route (Colonial Creek Campground on SR 20, past McAllister and Tricouni Camps, up 'Lucky Ridge' to a bivy at ~6,000 ft near the toe of the Borealis Glacier) - the North Ridge is reached by traversing around the lake instead of climbing the glacier from camp.",
+   "new": "From the Thunder Creek Trailhead at Colonial Creek Campground on SR 20"
+  },
+  {
+   "id": "wa_north_tower_ridge_route",
+   "old": "From Tiffany Springs Campground (6,760 ft), hike trail #373 east past Tiffany Lake to Honeymoon Pass (7,150 ft, ~45 minutes).",
+   "new": "From Tiffany Springs Campground (6,760 ft)"
+  },
+  {
+   "id": "wa_north_twin_sister_scramble",
+   "old": "From the gate before the Clearwater Creek / Middle Fork Nooksack crossing: ~6+ miles of logging roads and ridge, ~5,500 ft car-to-summit",
+   "new": "From the gate before the Clearwater Creek / Middle Fork Nooksack crossing"
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "old": "East/Northeast from Cascade Pass trailhead; descend and cross Cascade River, then approach the northeast face via C-J couloir",
+   "new": "From the Cascade Pass Trailhead"
+  },
+  {
+   "id": "wa_osceola_peak_scramble",
+   "old": "From Slate Pass (~6,900 ft) at the end of Harts Pass Road: backpack ~13 miles via the Whistler Cutoff toward the Pasayten base camps",
+   "new": "From Slate Pass (~6,900 ft) at the end of Harts Pass Road"
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "old": "Same access as the Southern Pickets Crescent Creek Basin routes: Goodell Creek Trail and the Terror Basin climbers' path",
+   "new": null
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "old": "Northeast via Burgundy Creek drainage and talus/gully approach to Burgundy Col",
+   "new": null
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "old": "A two-day approach: about 10 miles over Hannegan Pass, wading the Chilliwack River, along Easy Ridge and the Imperfect Impasse, through Perfect Pass and over the Challenger Glacier to a bivy under Ghost Peak.",
+   "new": null
+  },
+  {
+   "id": "wa_pinnacle_mountain_entiat_scramble",
+   "old": "From the Entiat River/Cottonwood Camp Trailhead, follow the Entiat River Trail roughly 7 miles to the 45-Mile Sheep Driveway, then go off-trail into the Pinnacle Creek drainage toward the south slopes; alternatively, use the North Fork Entiat Trailhead (end of FR 5606, 3,940 ft) and approach from the north side via Trail #1437.",
+   "new": "From the Entiat River/Cottonwood Camp Trailhead"
+  },
+  {
+   "id": "wa_point_success_south_side",
+   "old": "From Longmire (2,762 ft): Wonderland Trail southwest ~3 miles to the Kautz Creek crossing (check current status), then the Success Cleaver approach",
+   "new": null
+  },
+  {
+   "id": "wa_prey",
+   "old": "From the roadside pullout: a short woods trail to the boulder field, then ~15 minutes up and left to the mossy ramp at the base of the wall",
+   "new": "From the roadside pullout"
+  },
+  {
+   "id": "wa_salish",
+   "old": "From the roadside pullout: a short woods trail to the boulder field, then ~15 minutes up and left to the mossy ramp at the base of the wall",
+   "new": "From the roadside pullout"
+  },
+  {
+   "id": "wa_traverse",
+   "old": "From the roadside pullout: a short woods trail to the boulder field, then ~15 minutes up and left to the mossy ramp at the base of the wall",
+   "new": "From the roadside pullout"
+  },
+  {
+   "id": "wa_ptarmigan_peak_pasayten_scramble",
+   "old": "There is no short trailhead-to-base approach for Ptarmigan Peak — it's a deep-interior Pasayten summit reached on a multi-day backpack, and the standard approach is the same trail system used to stage a high camp near Shellrock Pass.",
+   "new": null
+  },
+  {
+   "id": "wa_ptarmigan_traverse",
+   "old": "From Marblemount take Cascade River Road ~23 miles to its end at the Cascade Pass Trailhead. Hike the Cascade Pass Trail 3.7 miles to the pass, then leave the trail south toward Cache Col, where the traverse begins. Exit is the Downey Creek Trailhead on Suiattle River Road (car shuttle) unless returning out-and-back.",
+   "new": "From Marblemount take Cascade River Road ~23 miles to its end at the Cascade Pass Trailhead"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "old": "From the Easy Pass Trailhead on SR-20 near milepost 151: over Easy Pass toward Fisher Creek, then the cross-country traverse along Ragged Ridge (Mesahchie-Katsuk-Kimtah-Cosho)",
+   "new": "From the Easy Pass Trailhead on SR-20 near milepost 151"
+  },
+  {
+   "id": "wa_robinson_mountain_north_couloir",
+   "old": "Via the Robinson Creek Trail past Porcupine Camp, then ~2,000 ft cross-country to the Robinson-Devils saddle and east below the north face",
+   "new": null
+  },
+  {
+   "id": "wa_ruth_icy_traverse",
+   "old": "Shares its trailhead and lower approach with the South Slopes/Ruth Glacier route: Hannegan Pass Trail #674 from the Hannegan Pass Trailhead (end of FR-32) up the Ruth Creek valley to Hannegan Pass (5,066 ft, ~4 miles, ~2,000 ft gain), then ",
+   "new": "From the Hannegan Pass Trailhead (end of FR-32)"
+  },
+  {
+   "id": "wa_silver_star_glacier",
+   "old": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass), dropping to Early Winters Creek toward the Silver Star Creek / Burgundy Col climbers' paths",
+   "new": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass)"
+  },
+  {
+   "id": "wa_silver_star_northwest_face",
+   "old": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass), dropping to Early Winters Creek toward the Silver Star Creek / Burgundy Col climbers' paths",
+   "new": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass)"
+  },
+  {
+   "id": "wa_silver_star_west_face_couloir",
+   "old": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass), dropping to Early Winters Creek toward the Silver Star Creek / Burgundy Col climbers' paths",
+   "new": "From the broad SR-20 pullout near milepost 165-166 (~4 miles east of Washington Pass)"
+  },
+  {
+   "id": "wa_silver_star_ne_ridge",
+   "old": "As for the Silver Star Glacier route — see that route for the full trailhead-to-glacier detail — to Burgundy Col and onto the glacier, then trending to the northeast side of the west summit.",
+   "new": null
+  },
+  {
+   "id": "wa_sinister_peak_north_face",
+   "old": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via the Downey Creek / Bachelor Creek approach toward the Dome-Chickamin col",
+   "new": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via the Downey Creek / Bachelor Creek approach"
+  },
+  {
+   "id": "wa_slippery_slab_tower_ne_face",
+   "old": "Via either the Tunnel Creek Trail to Hope Lake or the Surprise Creek Trail, then the PCT south to Trap Pass and the ridgeline climbers' trail",
+   "new": null
+  },
+  {
+   "id": "wa_south_headwall",
+   "old": "Northeast via Longs Pass Trail #1229 and Ingalls Way Trail #1390; ascend first major clearing west of Ulrich's Couloir",
+   "new": null
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "old": "From the Depot Creek trailhead parking on the abandoned logging spur off Chilliwack Lake Road (BC) at roughly 2,350 ft, hike the old roadway grade uphill (left-hand fork) for about a mile to the Monument 65 border marker, where you cross into North Cascades National Park and should sign in at the wilderness-permit kiosk.",
+   "new": "From the Depot Creek trailhead parking on the abandoned logging spur off Chilliwack Lake Road (BC) at roughly 2,350 ft"
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "old": "East-northeast up Shannon Ridge, then traverse Sulphide Glacier to reach southeast ridge base",
+   "new": null
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "old": "\"Start at the Hannegan Pass Trailhead (elev. ~3,120 ft) at the end of Ruth Creek Road (FS-32), then follow the maintained Hannegan Pass Trail #674 up the Ruth Creek valley to 5,050 ft Hannegan Pass, then leave the trail toward Easy Ridge.\"",
+   "new": "Start at the Hannegan Pass Trailhead (elev. ~3,120 ft) at the end of Ruth Creek Road (FS-32)"
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "old": "From the Cascade Pass Trailhead at ~3,600 ft, at the end of the 23.1-mile Cascade River Road from Marblemount; the approach runs over Cascade Pass and Cache Col into the Kool-Aid Lake basin.",
+   "new": "From the Cascade Pass Trailhead at ~3,600 ft, at the end of the 23.1-mile Cascade River Road from Marblemount"
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "old": "East/Northeast from High Bridge via Park Creek drainage",
+   "new": null
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "old": "Storm King sits at the head of Thunder Creek in the North Cascades and is one of the range's most remote 'Bulger/Top 100' summits - a three-day car-to-car trip is the norm, and three separate trailhead approaches converge on the same high basin below Mount Goode's south side.",
+   "new": null
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "old": "From the drivable end of the Middle Fork Snoqualmie Road (NF-56): bike/hike the valley, crossing multiple braids of the river",
+   "new": "From the drivable end of the Middle Fork Snoqualmie Road (NF-56)"
+  },
+  {
+   "id": "wa_sw_ridge",
+   "old": "Via the Lady of the Lake ferry from Chelan to Stehekin, then the NPS shuttle ~11 miles to High Bridge; PCT/Agnes Creek Trail ~9-10 miles, then off-trail toward the Gunsight Range",
+   "new": "Via the Lady of the Lake ferry from Chelan to Stehekin, then the NPS shuttle ~11 miles to High Bridge"
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "old": "From the Foggy Dew Trailhead (3,400 ft): Foggy Dew Creek Trail #417 through Merchants Basin, then Cooney Lake Trail #434 to Cooney Lake",
+   "new": "From the Foggy Dew Trailhead (3,400 ft)"
+  },
+  {
+   "id": "wa_tenpeak_mountain_north_couloir",
+   "old": "From the White River Trailhead, as for the Southeast Route, reaching the Honeycomb Glacier via the PCT and the upper Whitechuck/Suiattle basin.",
+   "new": "From the White River Trailhead"
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "old": "From the Snow Lakes Trailhead at the end of Icicle Creek Road (about 4.3 mi from US-2, ~1,300 ft elevation), cross Icicle Creek on the trail bridge and begin the long, switchbacking climb up open, sun-baked slabs on Snow Lakes Trail No. 1553 - this lower stretch is notoriously hot with almost no shade, so carry more water than feels necessary for the first few miles.",
+   "new": "From the Snow Lakes Trailhead at the end of Icicle Creek Road (about 4.3 mi from US-2, ~1,300 ft elevation)"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "old": "From the Tupso Pass Trailhead via Trail #641 over Saddle Lake and Goat Flats to Tin Can Gap",
+   "new": "From the Tupso Pass Trailhead via Trail #641"
+  },
+  {
+   "id": "wa_three_queens_west_peak",
+   "old": "Northeast, 6.5 miles east-northeast of Snoqualmie Pass",
+   "new": null
+  },
+  {
+   "id": "wa_thunder_mountain_north_face",
+   "old": "Reached via the same Trap Pass approach used for Slippery Slab Tower (Tunnel Creek or Surprise Creek trailheads to the PCT at Trap Pass), continuing past Slippery Slab Meadows toward Thunder Mountain Pass and the Thunder Mountain Lakes basin, then approaching the peak's north side.",
+   "new": null
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "old": "From I-90 Exit 85, take Highway 970 east 7 miles to Teanaway Road, then bear right onto North Fork Teanaway Road continuing 22.5 miles total. From trailhead: northeast via Lake Ingalls to Goat Pass (east-northeast), then south to Stuart Glacier and North Ridge notch",
+   "new": "From I-90 Exit 85, take Highway 970 east 7 miles to Teanaway Road, then bear right onto North Fork Teanaway Road continuing 22.5 miles total"
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "old": "From the Hannegan Pass Trailhead (~3,100 ft, at the end of Ruth Creek Rd/FR 32 off the Mt. Baker Highway) follow the Hannegan Pass Trail (#674) 4.2-4.6 miles and about 2,000 ft of gain, alongside Ruth Creek through forest and subalpine meadows, to Hannegan Pass (5,066 ft) - the last easy, reliable water before dropping into North Cascades National Park.",
+   "new": "From the Hannegan Pass Trailhead (~3,100 ft, at the end of Ruth Creek Rd/FR 32 off the Mt. Baker Highway)"
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "old": "This is the same Northwest Shoulder line to High Pass and the Whitehorse (So-Bahli-Ahli) Glacier - same Niederprum Trailhead, same Moose Creek bridge barricade detour, same Trail #653 to 'the flat,' same couloir to Lone Tree Pass, same traverse to High Pass - climbed specifically as an early-season snow/ice ascent rather than the late-season rock-and-snow scramble.",
+   "new": "From the Niederprum Trailhead"
+  },
+  {
+   "id": "wy_cutthroat",
+   "old": "Steep switchback trail up south-facing slope",
+   "new": null
+  }
+ ]
+}

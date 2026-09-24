@@ -13,6 +13,7 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
 import { rackFromText, _rackEdited, _ropeEdited, contribRack, routeRackFor, DISC_RACK } from "./lib/rack";
 import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
+import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB, supabase } from "./lib/supabase";
 import {checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useRouteTripReports} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
@@ -1111,7 +1112,14 @@ function TrailheadCard({route,onEdit}){
   const _appKm=effDistKm(route);
   if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);
   if(toPeak)tiles.push(["To the peak",toPeak.dir+" "+uDistMi(Math.round(toPeak.mi*10)/10),C.orange]);
-  const dir=al.trailheadDirection;
+  /* A value that describes the WALK is not shown here. This line sits under the trailhead's name as
+     its driving directions, and 230 routes once carried "backpack ~13 miles via the Whistler Cutoff",
+     "Skyline Trail to Camp Muir" or a bare "North" in it. Those rows were repaired and
+     check:trailhead-direction-shape scans the catalog daily, so this is the reader-side defence for
+     a row written since: the card falls back to the name, the coordinates and "Drive here", and the
+     walk is still on the page in the approach section. The rule refuses none of the 302 reviewed
+     good values, which is what makes hiding safe (scripts/trailhead-directions-reviewed.json). */
+  const dir=trailheadDirectionProblem(al.trailheadDirection)?null:al.trailheadDirection;
   const dup=dir&&(route.approach||"").slice(0,80).indexOf(dir.slice(0,40))!==-1;
   const copy=function(){
     if(!hasCoord)return;
