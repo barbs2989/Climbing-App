@@ -97,7 +97,31 @@ const ALLOW = [
   // Each reason MEASURED, not assumed — the collection feeding the row was read before the
   // entry was written. A stale entry fails, so this cannot rot into a description of code
   // that has moved on.
-  { key: 'who?" · "+who.level', why: "the seed crew-invite card; `who` comes from cById(rq.climberId) and crewReqIn is seeded — real invites render from myCrewInvitesQ (#734)" },
+  // REMOVED, and worth more than the OPEN_CREWS note below, because this entry was WRONG THE DAY
+  // IT WAS WRITTEN. Its reason named "the seed crew-invite card", and at the commit that added it
+  // (#876) the key `who?" · "+who.level` matched exactly ONE site -- the GROUP join-request card,
+  // byte-identical to today. Neither crew-invite card has ever rendered a level or a score; both
+  // print a name and a route. So the header above ("Each reason MEASURED, not assumed") was false
+  // for this entry, and "a stale entry fails" never fired -- the key still matched, just a
+  // DIFFERENT card. A KEY CAN OUTLIVE THE SURFACE IT WAS WRITTEN FOR, and matching is not proof.
+  //
+  // The stated MECHANISM was wrong too, and that is the dangerous half. "crewReqIn is seeded" is
+  // false for a group join request: the Approve handler branches on `rq._db`, so `rq.climberId`
+  // can be a uuid. The site was safe from a REAL profile only because `cById` resolves against
+  // seed CLIMBERS by integer id, so a uuid made `who` null and the `who?` ternary collapsed to
+  // "". An ACCIDENT -- and `check:crew-member-readers` exists to push exactly such cById lookups
+  // toward resolving real profiles, which would have turned this card into "undefined · 0" while
+  // this exemption sat here pointing a reader at the wrong card entirely.
+  //
+  // And it was not safe from a SEED climber either: cById falls back to FILLER_CLIMBERS, whose 12
+  // generated objects carry no `level` key at all, so a request naming one rendered "undefined".
+  // Latent rather than live -- today's seeded request names a CLIMBERS entry -- which by
+  // check:field-renders' SENTINELS reasoning is the best moment to fix a writer, not the worst.
+  //
+  // The card calls climberLine(who) now -- the app's own single answer to what a row says under a
+  // name, and the very remedy this guard's own failure message prescribes. Its seed branch is
+  // `(c.level||"Climber")+" · "+vScore(c)`, byte-for-byte what the card hand-rolled except that it
+  // cannot print undefined. So the site is GATED and needs no exemption.
   { key: '+c.years+"yr · "', why: "PartnerSearch's example card, fed by ALL_CLIMBERS — seed climbers only; real profiles render through RealClimberRow" },
   { key: '" trust · "+cl.level', why: "GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one and resolves its own profiles" },
   { key: 'cl.years+" yrs · "+cl.level', why: "the same seed GuideDashboard, its inquiry stat grid — same cl, same seed source" },
