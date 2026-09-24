@@ -6256,6 +6256,40 @@ the total when deciding where a new guard belongs.
       disagrees with the old parser too, so those rows were already drifting — `wa_sahale_mountain_r1`
       stores 3 where the old parser says 0, `wa_mount_challenger_challenger_glacier` stores 5 where
       it says 6. That is `audit:grade-num-drift`'s subject, not this sweep's.
+      - **READ, 2026-09-23 (#1780), AND THE LIST IS NOW SEVEN.** The count moved because the sweep
+        itself wrote 8,892 rows; re-derive it rather than quoting either figure.
+        **`rock_grade` IS THE ADJUDICATOR** — an independent record of the same route's technical
+        difficulty, written by a different pass — so where it and the parser AGREE and the stored
+        number is the odd one out, two records outvote one and no judgement is needed. **Three were
+        repaired on that rule** (`scripts/oneoff/fix-grade-num-corroborated-by-rock-grade.mjs`,
+        which COMPUTES every value from the row's own columns, so a repair needing a number the row
+        does not imply cannot be expressed): `wa_dragontail_peak_east_ridge_aasgard_pass` null→3,
+        `wa_sahale_mountain_r1` 3→4, and `wa_soviet_route` 10→**10.25**.
+      - **THAT LAST ONE IS A CLAIM IN THIS FILE THAT #1769 QUIETLY FALSIFIED.** The entry below
+        records `wa_soviet_route` as the row *"NO RECORD SUPPORTS"*, refused because the
+        quarter-grade repair's fingerprint is `stored === Math.floor(parser)` and *"here is
+        `10 === 9` — false, so it structurally cannot be selected"*. Under highest-wins the parser
+        reads `"V, 5.9-5.10a"` as **10.25**, so the floor is 10, **the fingerprint now MATCHES**,
+        and parser and `rock_grade` **agree** at 10.25 with the stored 10 being the dropped letter.
+        *A refusal justified by a parser's output expires when the parser changes* — and nothing
+        reconciles the two entries, so it sat as a standing refusal for a row that had become
+        decidable.
+      - **FOUR ARE READ AND DELIBERATELY LEFT**, each for its own reason, recorded in that script so
+        they are not re-derived. `wa_mount_shuksan_northwest_arete` — the recorded refusal STANDS;
+        #1769 narrowed the gap from 3 grades to 2 and did not close it, so the NULL is still honest.
+        `wa_mount_challenger_challenger_glacier` — **the stored 5 AGREES with `rock_grade` ("5.5")**
+        and it is the grade STRING that disagrees, so writing the parser's 7 would move the column
+        AWAY from its corroborating record: a question between two columns, not a `grade_num`
+        defect. And the two `"5.8 A2 or 5.10"` big walls (Beckey-Chouinard, Lotus Flower Tower),
+        where 10 is defensible and `rock_grade` is NULL, so nothing corroborates it.
+      - **THE MIRROR CLASS IS TWO ORDERS OF MAGNITUDE LARGER AND IS REPORTED, NOT SWEPT: 778 routes
+        store a NULL `grade_num` while carrying a grade the parser reads perfectly well.** Same
+        consequence as an unreadable grade — they sort behind the whole catalog and are dropped by
+        any range filter — and a different cause: nothing ever wrote the column (this file already
+        records one source, `approve_new_route` not setting it). A blanket fill from the parser is a
+        write with **no corroborating record**, which is exactly what the Shuksan refusal above
+        declines. Counted by `measure-unreadable-grades.mjs` section 4; **re-run it rather than
+        quoting 778**, which was 833 under a looser filter before it was measured cleanly.
     - **AND THE EIGHT "OUTLIERS" BELOW WERE ALREADY RIGHT — SEVEN OF THEM STORE EXACTLY WHAT THE NEW
       RULE PRODUCES.** They appear in the sweep's SKIPPED list precisely because their stored value
       already equals the highest grade: `wa_mount_stuart_west_ridge` 6, `wa_cathedral_rock_standard`

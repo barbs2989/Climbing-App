@@ -180,6 +180,30 @@ for (const [g, rs] of byVal) {
   const sys = gradeSystemForDiscipline(rs[0].discipline);
   if (WIDEST(g, sys) == null) stillNull.set(g, rs);
 }
+/* SECTION 4 - THE MIRROR QUESTION, and it is the larger class by two orders of magnitude.
+   Sections 1-3 ask what the PARSER cannot read. This asks the opposite: rows the parser reads
+   perfectly well whose stored `grade_num` is NULL anyway. The consequence is identical - they sort
+   behind the whole catalog and are dropped by any range filter - but the cause is not a parser at
+   all: nothing ever populated the column. CLAUDE.md records one source ("#814 built the add-a-route
+   approval path and does not set it, so every community-approved route landed with a null").
+   REPORTED, NOT SWEPT: filling from the parser alone is a write with no corroborating record, and
+   this file already records refusing exactly that for wa_mount_shuksan_northwest_arete, where the
+   obvious fill understates the route's own hardest recorded climbing. */
+const unpopulated = rows.filter((r) => r.grade_num == null && gradeNumFrom(String(r.grade || ""), gradeSystemForDiscipline(r.discipline)) != null);
+const byState = new Map();
+for (const r of unpopulated) {
+  const st = String(r.id).split("_")[0];
+  byState.set(st, (byState.get(st) || 0) + 1);
+}
+console.log(`  --- READABLE BUT UNPOPULATED: ${unpopulated.length} routes store a NULL grade_num while`);
+console.log(`      carrying a grade this parser reads. Same consequence as an unreadable grade -`);
+console.log(`      they sort behind the whole catalog - and a different cause: nothing wrote the column.`);
+console.log(`      REPORTED, NOT SWEPT - a fill from the parser alone has no corroborating record.`);
+for (const [st, n] of [...byState.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12)) {
+  console.log(`        ${String(n).padStart(5)}  ${st}_*`);
+}
+console.log("");
+
 const stillN = [...stillNull.values()].reduce((a, b) => a + b.length, 0);
 console.log(`  --- STILL UNREADABLE after both widenings: ${stillN} routes, ${stillNull.size} distinct strings`);
 console.log(`      A reading list, NOT a backlog - most of these are genuinely not a grade.`);
