@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-23",
+  "generatedAt": "2026-09-24",
   "tables": {
     "areas": [
       "area_type",
@@ -379,6 +379,7 @@
       "id",
       "is_admin",
       "location",
+      "mutuals_visible",
       "name",
       "photos",
       "photos_public",

@@ -19,10 +19,47 @@ const run = () => {
   catch (e) { return { out: String(e.stdout || "") + String(e.stderr || ""), code: e.status || 1 }; }
 };
 
-// 0184 SUPERSEDES 0182 -- `create or replace` means the live body is the LAST definition, and
-// the guard picks it that way. Pointed at 0182 these cases still edit a real file and prove
-// nothing, which is the quietest way for a suite to die.
-const MIG = "supabase/migrations/0184_mutual_friends_can_be_hidden.sql";
+// LITERAL, AND VERIFIED AT RUNTIME. `create or replace` means the live body is the LAST
+// migration that defines the function, and this constant has gone stale twice already -- once
+// when 0184 landed beside 0182, again when 0185 landed beside 0184. Each time the cases still
+// edited a real file and still moved a checksum, so they reported `landed=true` and proved
+// nothing: the quietest way for a suite to die.
+//
+// DERIVING IT WAS TRIED AND REVERTED. `check:injection-anchors` works out which file each case
+// edits by READING this source, so a computed path made three cases UNPARSED -- it could no
+// longer tell whether their anchors still land, and reported so. That swaps a loud rot for a
+// silent blind spot. The literal keeps that guard working; the check below keeps the literal
+// honest and names the file to re-point to.
+const MIG_DIR = "supabase/migrations";
+const MIG = "supabase/migrations/0185_a_mutual_friend_who_blocked_you_is_not_named.sql";
+const COL_MIG = "supabase/migrations/0184_mutual_friends_can_be_hidden.sql";
+
+const stripSql = (t) => t.split(NL).map((l) => l.replace(/--.*$/, "")).join(NL);
+const lastMatching = (re) => {
+  const hits = fs.readdirSync(MIG_DIR)
+    .filter((f) => /\.sql$/.test(f))
+    .filter((f) => re.test(stripSql(fs.readFileSync(MIG_DIR + "/" + f, "utf8"))))
+    .sort();
+  return hits.length ? MIG_DIR + "/" + hits[hits.length - 1] : null;
+};
+for (const [label, want, re] of [
+  ["MIG", MIG, /create\s+or\s+replace\s+function\s+mutual_connections/i],
+  ["COL_MIG", COL_MIG, /mutuals_visible\s+boolean/i],
+]) {
+  const live = lastMatching(re);
+  if (!live) { console.error(label + ": no migration matches at all — ANCHOR LOST"); process.exit(1); }
+  if (live !== want) {
+    console.error(label + " is stale: the last migration that matches is now " + live + ", not " + want + ".");
+    console.error("Re-point " + label + " — until then these cases edit a superseded file and prove nothing.");
+    process.exit(1);
+  }
+}
+
+
+const PAIR = [
+  "    and not profile_owner_blocked_me(t.oid)",
+  "    and not profile_owner_blocked_me(t.fid)",
+];
 
 const CASES = [
   {
@@ -68,11 +105,38 @@ const CASES = [
     expect: "fail", must: /App hands FullProfile the map/,
   },
   {
-    file: MIG, name: "block-clause-dropped",
-    why: "a climber who blocked you becomes readable through this side door — 0095 closed that on " +
-         "the profile read and this would re-open it one function over",
-    edit: (s) => s.replace("    and not profile_owner_blocked_me(t.oid)", "    and true"),
-    expect: "fail", must: /blocked you is not readable/,
+    file: MIG, name: "opened-profile-block-dropped",
+    why: "0182's half: a climber who blocked you becomes readable through this side door. 0095 " +
+         "closed that on the profile read and this re-opens it one function over",
+    // ANCHORED ON THE TWO-LINE PAIR, never on one line. 0185's header QUOTES 0182's single
+    // check, so `profile_owner_blocked_me(t.oid)` occurs TWICE in the file and String.replace
+    // takes the FIRST -- the checksum moves, the body is untouched, and the case reports MISSED
+    // against a correct guard. Same trap `search-path-public-only` records below, armed by this
+    // migration's own documentation. The pair exists only in the function body.
+    edit: (s) => s.replace(PAIR.join(NL), PAIR[1]),
+    expect: "fail", must: /profile being OPENED is checked/,
+  },
+  {
+    file: MIG, name: "named-climber-block-dropped",
+    why: "0185's half, and the live defect it fixed: a climber who blocked YOU could still be " +
+         "NAMED to you as a mutual. Reachable because blocking severs no connection — no trigger, " +
+         "and blockUser() touches `connections` not at all",
+    edit: (s) => s.replace(PAIR.join(NL), PAIR[0]),
+    expect: "fail", must: /person being NAMED is checked/,
+  },
+  {
+    file: MIG, name: "comment-cannot-substitute-for-the-block",
+    why: "the filter commented out rather than deleted. A guard reading unstripped SQL would " +
+         "pass on the strength of the line still being in the file",
+    edit: (s) => s.replace(PAIR.join(NL), PAIR[0] + NL + "--" + PAIR[1]),
+    expect: "fail", must: /person being NAMED is checked/,
+  },
+  {
+    file: MIG, name: "SILENT-block-filter-respaced",
+    why: "the same filter with whitespace inside the parens. A guard pinned to one spelling " +
+         "would forbid an ordinary reformat, so this must stay green",
+    edit: (s) => s.replace(PAIR[1], "    and not profile_owner_blocked_me( t.fid )"),
+    expect: "pass",
   },
   {
     file: MIG, name: "search-path-public-only",
@@ -137,7 +201,7 @@ const CASES = [
     expect: "fail", must: /not NAMED as a mutual to anyone/,
   },
   {
-    file: MIG, name: "column-made-nullable",
+    file: COL_MIG, name: "column-made-nullable",
     why: "a third state appears, and then the switch, the filter and the documents can each read " +
          "an absent value differently -- which is exactly why resume_public needs its !== false / " +
          "!! asymmetry spelled out at every reader",
