@@ -35,6 +35,7 @@
 // Writes to the live project; per-run fixture, rows deleted, leaks reported. NOT wired as a guard,
 // same reason as its sibling: it writes, and the durable CI accounts are shared.
 
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -44,6 +45,11 @@ import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { settledText } from "../lib/render-settle.mjs";
 import { tapByText } from "../lib/tap-by-text.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-a-vouch-you-received-reaches-you.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PORT = 5330;

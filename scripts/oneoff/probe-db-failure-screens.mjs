@@ -29,9 +29,15 @@
 // configs. A plain `npx vite` has no scaffold, so `?zt=` does nothing and every request
 // renders the default tab — which is how the first run of this probe measured Home six times
 // and reported six identical screens. Tabs are driven by CLICKING the nav instead.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-db-failure-screens.mjs");
 
 const claim = (start) => new Promise((res, rej) => {
   let p = start;

@@ -15,9 +15,15 @@
 // Reading markup cannot tell these apart -- both are <button> with a conditional background.
 //
 // Report-only.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import net from "node:net";
 import { spawn } from "node:child_process";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-toggle-state-announced.mjs");
 
 const ONLY = (process.argv.find((a) => a.startsWith("--overlays=")) || "--overlays=onboardOpen").slice(11).split(",").filter(Boolean);
 const TABS = (process.argv.find((a) => a.startsWith("--tabs=")) || "--tabs=").slice(7).split(",").filter(Boolean);

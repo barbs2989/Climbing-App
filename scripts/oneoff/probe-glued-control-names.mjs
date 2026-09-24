@@ -43,6 +43,7 @@
 // A pass means: across six tabs and every overlay the app declares, no control a screen
 // reader can reach announces a count welded to its label.
 
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "../lib/overlay-scaffold.mjs";
 import { settledText } from "../lib/render-settle.mjs";
 import { chromium } from "playwright-core";
@@ -51,6 +52,11 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-glued-control-names.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const argv = process.argv.slice(2);

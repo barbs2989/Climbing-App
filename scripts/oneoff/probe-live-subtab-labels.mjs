@@ -1,6 +1,13 @@
 // What ARE the route page's sub-tab labels on a live bare route?
 // Two guesses ("Reports", "Send Reports") both failed to navigate. Ask the page.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-live-subtab-labels.mjs");
+
 const SITE = "https://barbs2989.github.io/Climbing-App/";
 const id = process.argv[2] || "wa_nebula";
 

@@ -14936,12 +14936,59 @@ asks before a probe spends anything, and it is the fourth precondition in this f
     under `scripts/oneoff/` — both mentions in `.github/workflows/` are comments — and
     `package.json` names no probe. **Do NOT wire this into a `check:` guard**: a CI runner is small
     and legitimately busy, and a guard that declines to run is a guard you do not have.
-  - Wired into the **10 cited browser probes**, which are the ones this file points at as the proof
-    of a claim. The import goes first (ESM imports hoist, so their order cannot matter) and the
+  - **WIRED INTO EVERY BROWSER PROBE, AND IT WAS 10 OF 56 FOR TWO WEEKS.** The original scoping was
+    *"the ones this file points at as the proof of a claim"* — which is the wrong axis for the
+    failure this prevents. A stale verdict does not hurt because CLAUDE.md quotes it; it hurts
+    because a session months later runs a probe **by hand** while investigating a surface, reads a
+    MISS, and goes off to edit correct code. Whether that probe is cited has nothing to do with it.
+    Found by trying to run the sweep: **46 of the 56 then on disk** would have produced a verdict
+    at **14.6x**. Quote the guard's own line, not this one — it printed **57** within the hour,
+    because another session landed one while this sat in CI (already wired, which is the
+    convention holding; the gate is for the one that is not).
+    The import goes first (ESM imports hoist, so their order cannot matter) and the
     CALL after the leading contiguous import block — never after *"the last import line"*, which is
     the trap `check:script-roots` records, where a probe's `ENTRY` template literal carries import
     lines far below the real ones. Verified per file: parses, exactly one call, and the call
     precedes `chromium.launch`.
+  - **`check:quiet-box-wiring` is what stops that rotting**, and it is a gate rather than a note
+    for the reason this file gives everywhere else: the wiring is one call site per probe and one sentence of
+    reasoning, and a missing one is **invisible** — the probe runs, prints a verdict, and the
+    verdict is wrong in a way that reads exactly like a finding. It does **not** contradict the
+    *"do NOT wire this into a `check:` guard"* rule above: that forbids a guard **evaluating the
+    load**, and this one only asks whether the CALL IS PRESENT. It never declines anything, and no
+    workflow can reach the refusal because none executes `scripts/oneoff/`.
+    - Discovery is **behavioural** — a probe that launches a browser, never one whose NAME suggests
+      it — the rule `check:overlay-discovery` already pays for.
+    - **The sharpest assertion is the one nothing else could make**: the refusal message NAMES a
+      probe, and a copy-paste from a sibling makes it name the wrong one. That is silent — the
+      guard still refuses, and the message sends the next reader to a file they are not running.
+    - **ORDER, not merely presence.** The whole point is to spend nothing on an unbelievable run,
+      so a call placed below `chromium.launch` still refuses — after paying for Chrome, and on
+      several of these a dev server and an esbuild bundle too.
+    - Full-line comments are **masked before counting**, because this guard's own failure message
+      prescribes `assertQuietBox("probe-x.mjs");` and a probe quoting that repair in its header
+      would read as calling it twice — a guard failing on its own documentation, the trap
+      `check:ci-cancel` records. Full-line **only**: these probes are full of `https://localhost`,
+      and a mid-line strip is how the offsets-preserving blanker once ate 21% of a file. The
+      residual (a call quoted in a TRAILING same-line comment) is stated in the source.
+    - Fails **closed** four ways, each of which otherwise prints the same clean line as a clean
+      tree: `scripts/lib/quiet-box.mjs` missing, that module no longer exporting `assertQuietBox`
+      (with which every probe's import is dead while every call still parses), an unreadable
+      directory, and fewer than 40 browser probes discovered.
+    - Injection-tested **7/7** (`scripts/oneoff/inject-quiet-box-wiring-cases.mjs`), each case
+      proving its edit landed **by checksum**, restoring the file byte-identically, and judged on
+      the guard's **own FAIL lines** — never the word *"FAIL"*, which this guard's prose contains.
+      The harness refuses any expectation that already appears in the healthy run. Case 1 is the
+      real historical state of 46 files. **Two must stay SILENT**, and the comment one is proven
+      load-bearing by A/B: with the mask neutered **exactly that case flips** and the other six are
+      unmoved.
+    - **`check:injection-anchors` READS 6 OF THE 7, and that was checked rather than assumed** —
+      A/B by removing the suite: 97 → 96 suites, 650 → 644 cases. The seventh (`call-after-launch`)
+      moves a line rather than replacing one, so it declares no anchor that guard can resolve. It
+      is not unwatched: its edit returns the source **unchanged** if its string rots, and the
+      harness reports that as `HARNESS BUG — the edit changed nothing` and exits 1. Worth stating
+      because *a suite's own SHAPE decides whether its anchors are checked at all*, and this file
+      already records a suite whose four anchors were silently UNPARSED while it printed 8/8.
   - **`--anyway` (or `QUIET_BOX=0`) runs regardless and STAMPS the output** *"NOT EVIDENCE"*, so a
     forced run cannot be read back later as a clean result. An override that left no trace would
     just move the defect into the transcript.
@@ -14951,11 +14998,24 @@ asks before a probe spends anything, and it is the fourth precondition in this f
     (fail-OPEN, since a platform that cannot report load must not block everybody), forced, and the
     real refusal.
   - **WHAT IT DOES NOT DO**: it says nothing about whether a probe is correct, only whether this
-    machine can produce a believable answer. And the **11 cited browser probes remain UN-SWEPT** —
-    #1678 swept the 77 static one-offs and #1695 the 202 DB-reading ones, and neither could reach
-    a browser probe. They could not be swept the night this landed either: the box measured
-    **116x oversubscribed**, which is the load this file already records as producing a wrong
-    answer. *Sweep them from a quiet box; the refusal is what stops that run being wasted.*
+    machine can produce a believable answer. And **the whole browser corpus remains UN-SWEPT** — #1678
+    swept the 100 static one-offs and #1695 the 210 DB-reading ones, and neither could reach a
+    browser probe. Attempted again 2026-09-23 at **14.6x oversubscribed** and refused, which is the
+    guard working rather than a setback: the two previous sweeps each found probes that were red
+    and **not one was an app defect**, so a sweep run at this load would produce exactly that
+    reading list with no way to tell it from a real one. *Sweep them from a quiet box; the refusal
+    is what stops that run being wasted.*
+  - **THE RUNNER FOR THAT SWEEP IS `scripts/oneoff/run-browser-probe-sweep.mjs`**, so the next
+    quiet box does not start from nothing. It exists as a script rather than a shell one-liner for
+    three measured reasons: it **DERIVES** its list behaviourally (the first attempt carried a hand
+    list that was wrong in both directions — 7 entries launching no browser, and stale the day
+    probe #57 lands); it **refuses the box itself**, because a sweep is where a loaded run does the
+    most damage, arriving as one unbelievable verdict per probe formatted as a reading list; and macOS has
+    **no `timeout(1)`**, which made the first static sweep return exit 127 for all 77 — a uniform,
+    plausible, catastrophic-looking result that measured nothing, so each probe gets its own
+    watchdog. `--dir` is a test seam: all four verdict branches (PASS/FAIL/TIMEOUT/BROKEN) are
+    proven against a fixture of four one-line probes, which is the only way to exercise them
+    without making the very run this refuses.
 
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
