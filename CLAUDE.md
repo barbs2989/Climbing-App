@@ -6263,12 +6263,36 @@ the total when deciding where a new guard belongs.
       repairs" and the rule change agree**, by two completely different routes — one reading each
       row's own `rock_grade`, one applying a rule decided afterwards. The eighth,
       `wa_guye_peak_r2`, is unmoved by either.
-    - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE**, because widening two things
-      at once makes a before/after unreadable: ~12 rows graded lowercase **`v11`/`v6`** score
-      **null** and therefore sort behind the whole catalog (the V branch is case-sensitive, and
-      making it insensitive is a second change), and **`"WI 2-3"`** — a space between the prefix and
-      the number — is unreadable to every branch. Both are one-line fixes with their own
-      before/after to measure.
+    - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE** — both are now MEASURED
+      (#1780), and **only ONE of them was real**, which is the part worth reading.
+      - **LOWERCASE `v11`/`v6` WAS REAL AND IS FIXED.** Those rows scored **null**, so they sorted
+        behind the whole catalog and were dropped outright by any range filter. The V branch is
+        case-insensitive now. Measured over all **205,382** graded routes: **12 RESCUED, 0 CHANGED,
+        0 LOST** — strictly additive, which is the only shape a widening here may have, and each
+        gain **proven attributable to case** rather than assumed (the old parser, handed the same
+        string UPPERCASED, produces the same number). 10 rows needed the data sweep; 2 already
+        stored the right value. **`nv_back_crack` is graded `v0` and scores `0`, which is FALSY** —
+        every test in the sweep is `!= null`, never truthiness, or that row is silently skipped.
+      - **`"WI 2-3"` IS A CLASS OF ZERO — do NOT widen the parser for it.** It occurs **exactly
+        once catalog-wide**, and it is in **`ice_grade`, not `grade`**, on a route whose `grade` is
+        `"4th"` and whose `grade_num` is a correct **4**. So `gradeNumFrom` never sees it and the
+        row is not mis-sorted; the value already reaches a screen as a labelled ice grade, which
+        needs no parsing. A spaced-prefix widening rescues **0**, changes 0 and loses 0 — and it is
+        actively dangerous, because `V\s*(\d+)` then reads *"Grade V 5.9"* as a V5 boulder problem,
+        the roman-commitment-vs-technical conflation this column exists to avoid.
+      - **The lesson is the asymmetry.** Both were written down in the same sentence, in the same
+        shape, as *"one-line fixes with their own before/after to measure"*. Measuring turned one
+        into a shipped repair and the other into a refusal — and nothing about the original
+        sentence distinguished them. *A deferred item is a hypothesis until somebody counts it.*
+      - **A THIRD shape surfaced from the same measurement and is REPORTED, not swept: `"Vb"`/`"VB"`
+        on 9 bouldering routes** score null. That is V-Beginner, which sits BELOW `V0` — and `v0`
+        already maps to `0`, so giving it a number means deciding whether `grade_num` admits values
+        under zero, which changes what the range filter's floor means. A product call, not polish.
+      - `scripts/oneoff/{measure-unreadable-grades,verify-v-case-widening,fix-grade-num-lowercase-v}.mjs`.
+        The measurement **derives which widenings are already shipped** by asking the parser two
+        one-line questions rather than restating them — a control hardcoded to the pre-fix shape
+        failed closed on the very next run, correctly, and that is a script that rots the moment its
+        subject ships.
     - **AND A THIRD PARSER READS A GRADE FOR THE TIME MODEL AND STILL TAKES THE FIRST MATCH —
       `gn()` in `ClimbMatchCore.jsx`, 5 call sites.** It is NOT `grade_num` and not a fifth dialect
       of it: it maps every system onto one difficulty axis for `techHrs` (WI -> 6+n, M -> 7+0.6n,
@@ -6314,6 +6338,14 @@ the total when deciding where a new guard belongs.
       the **invariant** instead — a highest-wins parser can only return a LARGER number than a
       first-match one — so `lib > pipeline` is intended and a lowering, a loss or a newly-parsed
       value still exits 1.
+      - **#1780 ADDED A SIXTH RULE, AND IT IS THE NARROWEST ONE THERE ON PURPOSE.** The V branch is
+        case-insensitive now and the fossil is not, so `v11` goes null -> 11 — precisely the
+        *newly-parsed* shape the sentence above leaves UNEXPECTED. **Declaring "a newly-parsed value
+        is fine" would gut the check**, because that is exactly what a pattern widened beyond its
+        scope looks like. So the rule is **attributable** rather than permissive: a gain counts as
+        intended only if the FOSSIL, handed the same string UPPERCASED, produces the very number
+        `lib` produced. A gain from anywhere else still exits 1. Reads `2 newly parsed by the CASE
+        rule` and `no unexpected difference`.
   - **THE "WHICH END OF A RANGE" QUESTION WAS MEASURED FIRST, AND THE MEASUREMENT SAID THERE WAS
     NOTHING TO DECIDE — true of the catalog, and overtaken by the decision above — measured by
     `scripts/oneoff/measure-class-range-end.mjs`.** It had been carried as an open product call
