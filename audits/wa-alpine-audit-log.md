@@ -26902,3 +26902,64 @@ in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries
 (307 through 326): 147 audited through batch 325 + 8 this batch = 155 audited,
 524 - 155 = **369 in-scope routes remain unaudited this pass**.
+
+## Batch 327 (2026-09-24, pass 6)
+
+Routes: `wa_guye_peak_r2`, `wa_guye_peak_southeast_gully`, `wa_hadley_peak_cougar_divide`,
+`wa_hadley_peak_skyline_divide`, `wa_helmet_butte_standard_route`,
+`wa_himmelhorn_southeast_route`, `wa_honeymoon_route`, `wa_hourglass_gully_winter`.
+
+**Fixed (4):**
+- `wa_hourglass_gully_winter`: `waypoints[1].elev` (the Mount Index Main Peak summit pin)
+  read 5,979 ft, contradicting this same row's own `high_point_ft` of 5,991 ft. Wikipedia's
+  "Mount Index" article and Peakbagger.com both independently give 5,991 ft for Main/South
+  Peak (5,979 ft isn't a plausible mix-up with North or Middle Peak either — those are
+  lower, ~5,502 ft and ~5,485 ft). Corrected the waypoint to 5,991 to match.
+- `wa_helmet_butte_standard_route`: `waypoints[1].elev`/`elevFt` (the "Helmet Butte Summit"
+  pin) still read 7,420 ft — the exact figure this row's own pre-existing `corrections`
+  note already explains was checked and rejected in favor of 7,400 ft (Wikipedia, "most
+  consistently corroborated topo/USGS figure", vs. ListsOfJohn's 7,420). `high_point_ft`
+  had already been updated to 7,400 but the waypoint was never brought in line. This is
+  applying a decision this row already made, not a fresh elevation judgment; re-checked
+  independently this run and found a third figure too (a WTA trip-report title gives
+  7,366 ft), which only reinforces that this is genuinely disputed across sources and the
+  earlier reasoning for picking 7,400 still holds.
+- `wa_hadley_peak_cougar_divide` / `wa_hadley_peak_skyline_divide`: both routes share
+  `high_point_ft = 7522`, a figure no source checked corroborates. ListsOfJohn.com gives
+  7,515 ft, echoed independently by a couple of informal peak-bagging pages. The
+  `skyline_divide` sibling's own `waypoints[1]` entry already has 7,515 baked in at the
+  peak's precise 6-decimal coordinate — only the shared `high_point_ft` field (copied
+  across both rows) was wrong. The `cougar_divide` sibling's own waypoint carries a THIRD
+  figure, 7,470 ft, at essentially the same coordinate — a likely coarse topo-contour
+  read rather than the summit spot. Standardized `high_point_ft` on both routes and the
+  `cougar_divide` waypoint to 7,515 ft; `skyline_divide`'s waypoint was already correct.
+
+**Flagged, not fixed (1):**
+- Hadley Peak's 7,515 ft figure rests on ListsOfJohn plus a couple of informal
+  peak-bagging pages — no Wikipedia article exists for this peak, and a USGS topo quad
+  was not directly checked (not reachable from this run). Fixed anyway given the pattern
+  already established elsewhere in this database (ListsOfJohn is the same class of source
+  this database's own prior corrections already lean on — see the Helmet Butte note
+  above), but flagging the single-source-class limitation for a future pass with topo
+  access, in case it should be revisited.
+
+**Checked and confirmed correct (no action):** Guye Peak's 5,168 ft (`wa_guye_peak_r2`
+and `wa_guye_peak_southeast_gully` agree with each other and with Wikipedia exactly).
+Himmelhorn's September 8, 1961 first-ascent party (Cooper, Denny, Joan Firey, Joe Firey,
+Whitmore) on `wa_himmelhorn_southeast_route` matches AAC Publications' "First Ascents in
+the Southern Pickets" and Alpinist's Whitmore obituary verbatim; this row's pre-existing
+`corrections`/`data_quality` gap about the technical grade (Grade IV 5.8 vs. Beckey's
+"class 4" description) was left as-is — no new source found either way, not re-litigated.
+Mount Deception's 7,788 ft (`wa_honeymoon_route`) matches Wikipedia's "Mount Deception
+(Washington)" article exactly.
+
+**Verification note:** this scheduled run has no `.env`/`.env.local` (no service key, as
+intended — read-only by design). Ran `check:sql` anyway by exporting `VITE_SUPABASE_URL`/
+`VITE_SUPABASE_ANON_KEY` directly into the shell rather than writing dotfiles, since
+`scripts/lib/supabase-env.mjs` falls back to `process.env`. It confirmed all 4 write
+targets in this batch's SQL file exist in the live DB, and warned that the file (~7KB)
+exceeds the SQL Editor's ~4KB safe-paste size — split it into ~1.5KB chunks when applying.
+
+Progress file's `last_processed_id` advanced to `wa_hourglass_gully_winter`. Next batch
+continues in sorted-id order after that id. 155 + 8 = 163 audited this pass through batch
+327; 524 - 163 = **361 in-scope routes remain unaudited this pass**.
