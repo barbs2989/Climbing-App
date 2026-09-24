@@ -17,10 +17,13 @@ import { fileURLToPath } from "url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const require_ = createRequire(import.meta.url);
 const CORE = JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"));
+// Leaderboards moved out of core to load lazily; it is lib/Leaderboards.jsx's default export.
+const LB = JSON.stringify(path.join(ROOT, "lib", "Leaderboards.jsx"));
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { Leaderboards, ROUTES, ME } from ${CORE};
+import { ROUTES, ME } from ${CORE};
+import Leaderboards from ${LB};
 const noop = () => {};
 export { ROUTES, ME };
 export function render(disc, board, logs, myTrust) {

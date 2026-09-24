@@ -26,9 +26,11 @@ import { appSources } from "./lib/guard-sources.mjs";
 const GUARD = "check:real-profile-rows";
 const ROOT = process.cwd();
 const all = appSources(ROOT, GUARD);
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
+// The three lib/ screens were moved out of ClimbMatchCore.jsx to load lazily; they render
+// climber rows, so dropping them from this list would silently stop checking those rows.
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
 for (const f of FILES) {
-  if (!all.some((p) => path.basename(p) === f)) {
+  if (!all.some((p) => p === f || path.basename(p) === f)) {
     console.error(`${GUARD} FAILED — ${f} was not among the app sources, so nothing was scanned.`);
     process.exit(1);
   }

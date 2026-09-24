@@ -24,6 +24,7 @@ const PROBE = path.join(ROOT, "scripts/oneoff/probe-a-requester-is-not-on-the-cr
 const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
+  ps: path.join(ROOT, "lib/PartnerSearch.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-requester-not-on-crew.lock");
 
@@ -49,7 +50,7 @@ if (!/ok — a climber who has only asked to join is not on the crew/.test(CLEAN
 }
 
 const CASES = [
-  { name: "partnersearch-chip", file: "core", expect: "PartnerSearch shared-objective chip",
+  { name: "partnersearch-chip", file: "ps", expect: "PartnerSearch shared-objective chip",
     find: 'const asked=crewAskedToJoin(ex,c.id);/* A climber who has ASKED',
     repl: 'const asked=false;/* A climber who has ASKED' },
 
