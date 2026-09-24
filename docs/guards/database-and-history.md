@@ -780,3 +780,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     current tree) and **each was proven non-vacuous** by
     breaking their mechanism and confirming they then fire. The `stale-known` case supplies its
     own declaration through `--known`, since there is no longer one in the file to make stale.
+
+- **`check:search-norm`** asserts that the two halves of "how a typed name is matched" are one
+  rule. Migration `0189` made every DB-backed search forgive spelling — before it, all of them
+  matched `name ilike '%q%'`, one verbatim substring, and the catalog spells one word several
+  ways: **243** area names start "Mount" and **149** start "Mt", **1,910** carry an apostrophe,
+  **118** a non-ASCII letter. "mt baker" returned one area, a highway ("Bellingham and Mt Baker
+  Hwy"), never the mountain; "mount st helens" returned nothing. The seed matcher `_norm` had
+  expanded mt → mount for months — the demo found what the real catalog could not.
+  - **The design: the NAME carries every spelling; the QUERY is only cleaned.** `name_search`
+    holds each word replaced by all its forms (`Mt Baker` → `mount mt baker`), and a query
+    matches when every one of its words occurs in it. Rewriting the query instead
+    (`st` → `saint`) is the obvious fix and is wrong: "mount st" stops finding Mount Stuart
+    halfway through the word. Word order, punctuation, apostrophes and accents stop mattering,
+    and **nothing that matched before stops matching**, because every form string contains the
+    word it came from.
+  - **Why it must be a guard.** The rule exists twice by necessity: SQL (`search_forms`,
+    `search_clean`) builds `name_search` and tokenises for the RPCs; `lib/search.js` tokenises
+    for the global route search, the offline fallbacks and the seed `fuzzyMatch`.
+    `useRouteSearch` filters the SQL-built column with JS-built words, and its exact-area leg is
+    an `eq` between `name_search` and a JS `searchNorm()` — so a spelling added on one side
+    only matches in one box and silently misses in the next, the defect `0189` exists to fix.
+  - Reads the NEWEST migration defining `search_forms()` and compares every row both ways,
+    compares `search_clean()`'s accent-fold strings with JS, then asserts behaviour (the
+    reported "mt baker" case among them) and that tokens never carry a LIKE metacharacter,
+    since they go into `ilike` patterns unescaped. Fails closed with `ANCHOR LOST` if it parses
+    fewer than 10 table rows.
+  - **Structurally cannot see** whether the live database runs that migration —
+    `check:function-drift` does.
+  - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold
+    drifts, JS stops folding mt), each restored byte-identically.
+  - **Traps met building 0189, recorded so they are not re-met.** A stored GENERATED column is
+    the obvious storage and cannot be applied here: it rewrites 205k routes under ACCESS
+    EXCLUSIVE, outlived the Management API's 100 s limit (HTTP 524), and blocked every live
+    read while it ran. Altering `areas` then `routes` in sequence deadlocked (40P01) against a
+    live reader holding them the other way round. And Supabase refuses
+    `set pg_trgm.word_similarity_threshold` on a function (42501), so the typo fallback
+    prefilters with `<%` OR `%` at their defaults and applies `word_similarity >= 0.5` itself —
+    measured: "shucksan" scores 0.55 (missed by `<%` alone), "stuard" 0.29 similarity (missed
+    by `%` alone).
