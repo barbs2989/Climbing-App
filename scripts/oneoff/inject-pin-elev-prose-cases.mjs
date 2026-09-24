@@ -99,6 +99,90 @@ for (const c of CASES) {
   }
   console.log(`        ${c.why}`);
 }
+// --- THE --ground VERDICT, which had no case behind it at all ---------------------------------
+//
+// The nine above prove the audit FINDS a disagreement. None of them ran `--ground`, so the line
+// that tells a reader WHICH HALF is wrong was unexercised — and it was wrong on two of the six live
+// findings, in opposite directions, for the whole time it existed.
+//
+// These run offline: `--ground-fixture` supplies the nine readings per route, so the box, the
+// admit test and the verdict all execute with no network. The readings are the REAL ones measured
+// against 3DEP on 2026-09-24, so a case is a statement about the live catalog rather than a
+// convenient shape.
+//
+// `forbid` is the load-bearing half. Four of these six sentences are CORRECT and merely name a
+// second feature, so a verdict blaming the sentence is the direction that has somebody edit good
+// prose. A case that only checks the right string appears is satisfied by a line that prints every
+// verdict at once.
+const GROUND_CASES = [
+  { name: "GROUND-pin-refused-is-a-verdict",
+    // Park Butte / Schreiber's Meadow. The old flat bar refused this one: the sentence was 23 ft
+    // out and the pin 137, "not the separation this batch demands". Across the pin's own
+    // uncertainty the terrain never drops below 3,292, so 3,200 is not innocent terrain variation.
+    pin: pin({ name: "Park Butte / Schreiber's Meadow", lat: 48.70681, lng: -121.81225, elev: 3200,
+      directions: "Drive to the end of Forest Road 13, which ends at the Park Butte / Schreiber's Meadow trailhead at about 3,360 feet." }),
+    ground: [3337, 3415, 3395, 3296, 3281, 3320, 3351, 3372, 3414],
+    expect: "the PIN is the wrong half",
+    why: "a pin IS the coordinate, so the ground refusing it is a statement about the pin and nothing else — this is the only verdict the ground can actually reach, and it had never once fired" },
+
+  { name: "GROUND-refused-sentence-is-NOT-a-verdict",
+    // Cascade Pass Trailhead. The sentence names CASCADE PASS at 5,392 ft — 3.7 miles away, so the
+    // ground is right to refuse 5,392 AT THIS COORDINATE and wrong to conclude the sentence errs.
+    pin: pin({ name: "Cascade Pass Trailhead", lat: 48.475, lng: -121.075, elev: 3600,
+      directions: "Park at the Cascade Pass Trailhead and hike the switchbacks to Cascade Pass at 5,392 ft." }),
+    ground: [3648, 3409, 3520, 3777, 4024, 3900, 3612, 3455, 3700],
+    expect: "READ it",
+    forbid: "the sentence is the wrong half",
+    why: "the ground cannot tell a wrong number from a number about somewhere else; the old rule asserted the first about a sentence this repo's own repair batch records as correct" },
+
+  { name: "GROUND-both-admitted-is-unsettled",
+    // Slate Pass / Buckskin Ridge. 486 ft of relief admits 7,170 and 6,900 alike — and the old bar
+    // called this "the PIN is right — the sentence is the wrong half" off a single centre reading.
+    pin: pin({ name: "Slate Pass / Buckskin Ridge Trailhead", lat: 48.7, lng: -120.68, elev: 7170,
+      directions: "The Slate Pass / Buckskin Ridge Trailhead sits high; Slate Pass, at about 6,900 feet, is at the second switchback." }),
+    ground: [7162, 6730, 6880, 7050, 7216, 7100, 6950, 6810, 7180],
+    expect: "UNSETTLED",
+    forbid: "the sentence is the wrong half",
+    why: "on steep ground the DEM cannot separate two heights 262 ft apart, and a flat bar asserted that it could" },
+
+  { name: "GROUND-both-refused-questions-the-pin-too",
+    pin: pin({ name: "Esmeralda Basin Trailhead", lat: 47.43, lng: -120.93, elev: 3800,
+      directions: "Follow FR-9737 to the Esmeralda Basin Trailhead, then climb to a gully leaving the trail near the last switchback at 5,600 ft." }),
+    ground: [4261, 4221, 4300, 4450, 4723, 4600, 4380, 4250, 4500],
+    expect: "the pin's own elevation is in question too",
+    why: "a box that admits neither figure is saying something about the PIN as well, which the old single-reading line could not express" },
+
+  { name: "GROUND-FAILS-CLOSED-too-few-readings",
+    pin: pin({ name: "Park Butte / Schreiber's Meadow", lat: 48.70681, lng: -121.81225, elev: 3200,
+      directions: "Drive to the end of Forest Road 13, which ends at the Park Butte / Schreiber's Meadow trailhead at about 3,360 feet." }),
+    ground: [3337, 3415, null, null, null, 3320, null, null, null],
+    expect: "NOT MEASURED",
+    forbid: "the PIN is the wrong half",
+    why: "a 3DEP outage must read as no verdict, never as a narrow box that settles everything — the direction that manufactures verdicts" },
+];
+
+const gdir = fs.mkdtempSync(path.join(os.tmpdir(), "pinelev-ground-"));
+let gpass = 0;
+console.log("");
+for (const c of GROUND_CASES) {
+  const f = path.join(gdir, c.name + ".json");
+  const g = path.join(gdir, c.name + ".ground.json");
+  fs.writeFileSync(f, JSON.stringify(cat(c.pin)));
+  fs.writeFileSync(g, JSON.stringify({ wa_fixture_route: c.ground }));
+  let out = "";
+  try { out = execFileSync("node", [AUDIT, `--fixture=${f}`, "--ground", `--ground-fixture=${g}`], { cwd: ROOT, encoding: "utf8" }); }
+  catch (e) { out = (e.stdout || "") + (e.stderr || ""); }
+
+  const hit = out.includes(c.expect);
+  const bad = c.forbid && out.includes(c.forbid);
+  if (hit && !bad) { console.log(`  ok    ${c.name}`); gpass++; }
+  else if (bad) console.log(`  WRONG VERDICT  ${c.name}: output contains the forbidden "${c.forbid}"\n${out}`);
+  else console.log(`  MISSED  ${c.name}: no "${c.expect}"\n${out}`);
+  console.log(`        ${c.why}`);
+}
+fs.rmSync(gdir, { recursive: true, force: true });
+
 fs.rmSync(dir, { recursive: true, force: true });
-console.log(`\n${pass}/${CASES.length}`);
-process.exit(pass === CASES.length ? 0 : 1);
+const total = CASES.length + GROUND_CASES.length;
+console.log(`\n${pass + gpass}/${total}`);
+process.exit(pass + gpass === total ? 0 : 1);

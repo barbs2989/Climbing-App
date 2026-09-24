@@ -10966,14 +10966,79 @@ the correction knows the screen is wrong, and they have no way to report it.
       ft** — within 86 ft of the ground's 3,303 and the sentence's 3,300, and **1,436 ft** from the
       stored 4,650. Written by a different enrichment pass from either, so it shares no input with
       the two records already agreeing. *A side-effect check is also a measurement.*
-    - **SIX ARE DELIBERATELY LEFT AND THE SCRIPT'S HEADER NAMES EACH**, because a reviewed batch is
+    - **FIVE ARE DELIBERATELY LEFT AND THE SCRIPT'S HEADER NAMES EACH**, because a reviewed batch is
       only a batch if the refusals are written down: **four** are a sentence correctly naming a
       SECOND feature (Cascade Pass 5,392, Slate Pass 6,900, Longs Pass 6,200, a switchback ~5,600),
-      where the repair is nothing at all; and **two** the ground does not separate —
-      `wa_mount_stuart_north_ridge` at 3,399 is nearer neither 3,200 nor 3,540, and
-      `wa_mount_baker_easton_glacier`'s prose is 23 ft out against a pin 137 ft out, which is not the
-      separation this batch demands. **A threshold widened to admit the case it is judging proves
-      nothing** — the rule the trailhead chord-geometry probe already records.
+      where the repair is nothing at all. A fifth, `wa_mount_stuart_north_ridge`, is left because the
+      terrain across that pin's own uncertainty runs **3,342-3,770 ft** and admits 3,400 and 3,540
+      alike — genuinely undecidable from the ground rather than merely below a bar.
+    - **`wa_mount_baker_easton_glacier` WAS a sixth and IS NOW REPAIRED, and the objection that
+      deferred it was right.** It read *"the prose is 23 ft out and the pin 137 ft out, which is not
+      the separation this batch demands. **A threshold widened to admit the case it is judging proves
+      nothing**"* — and nothing was widened. What changed is the instrument; see the entry below.
+  - **`--ground` ASSERTED A CONCLUSION THE GROUND CANNOT REACH, AND ITS SEPARATION BAR WAS FLAT
+    WHERE THE GROUND'S RESOLVING POWER IS NOT.** It compared ONE DEM reading against
+    `dS <= 50 && dP >= 3 * Math.max(dS, 50)` — a floor of 150 ft however the terrain behaves — and
+    over the six live findings it was **wrong twice, in opposite directions**. Neither was visible
+    from the code: a flat bar looks like conservatism, and this one was documented as exactly that.
+    - **The rule was also written TWICE**, in this audit's verdict and in
+      `scripts/oneoff/fix-trailhead-pin-vs-its-own-prose.mjs`'s apply-time gate — which is why
+      correcting one without the other would have left the repair still refusing.
+    - **TOO STRICT ON GENTLE GROUND.** `wa_mount_baker_easton_glacier`'s Park Butte trailhead: the
+      terrain across the pin's **whole uncertainty** spans **3,292-3,485 ft**, so the stored **3,200
+      is 92 ft below anything the ground holds there** while the sentence's 3,360 sits inside it.
+      The flat bar refused a verdict by **nine feet** (141 against a floor of 150) and the row sat on
+      the deferral list. **Repaired — the first time this audit has ever reached a verdict at all.**
+    - **TOO LOOSE ON STEEP GROUND, WHICH IS THE DANGEROUS HALF.** `wa_osceola_peak_scramble`'s box
+      spans **486 ft** and admits 7,170 and 6,900 alike, and the flat bar announced *"the PIN is
+      right — the sentence is the wrong half"* about a sentence reading *"Slate Pass, at about 6,900
+      feet, is at the second [switchback]"*. **This audit's own header and its repair batch's
+      refusal list BOTH record that sentence as correct**, and the verdict line contradicted them.
+      `wa_magic_mountain_northwest_ridge` is the same shape about Cascade Pass.
+    - **SO THE TWO VERDICTS ARE NOT SYMMETRIC, and that is the structural point rather than a
+      threshold nicety.** The ground can refuse the **PIN** — a pin IS the coordinate, so *"nothing
+      near this height exists here"* is a statement about the pin and nothing else. It cannot rule on
+      a refused **SENTENCE**, because a sentence legitimately names a second feature with its own
+      height, and **four of the six do**. The line now says so and asks the reader to read it.
+      **The one verdict the ground can actually support had never once fired; the one it cannot
+      support fired twice.**
+    - **Ask the terrain instead of a constant.** `scripts/lib/ground-box.mjs` samples the ground
+      across the pin's own **rounding box plus placement slop** and asks whether a claimed height is
+      something that box could innocently produce — the instrument `audit:waypoint-elevations
+      --ground` already uses, whose own comment says *"a flat bar reads its own noise"*. Measured
+      relief across the six findings: **193 ft** at Park Butte against **616 ft** under Magic
+      Mountain. A bar that cannot tell those apart is wrong in both directions at once.
+    - **EXTRACTED, NEVER COPIED.** `boxGrid` lived inside `scripts/audit-waypoint-elevations.mjs`
+      behind a comment apologising for not exporting it (*"an import to reach one pure function
+      would run the whole audit — an attractive nuisance"*). That is a reason to move it OUT, and
+      the new module has no top-level await, no database and no network of its own. **The repair is
+      to COLLAPSE, never to make two bodies match.** Proven behaviour-neutral by
+      `scripts/oneoff/verify-box-grid-extraction.mjs` — **42 assertions, 0 failed** — which lifts
+      the pre-change implementation **out of git** rather than retyping it, because a retyped
+      reference agrees with itself whatever the original did.
+    - **THE MARGIN IS DERIVED FROM THE CLAIM, NOT CHOSEN**, which is what answers the deferral's own
+      objection. A value written to the nearest hundred is consistent with any ground within 50 ft
+      of it; one written to the foot is consistent with almost nothing. `roundingSlack` reads the
+      step off the number itself, so **no threshold is fitted to the cases being judged** — and
+      3,200 is still refused at Park Butte with its full 50 ft of slack.
+    - **THE VERDICT HAD NO INJECTION CASE AT ALL.** The suite's nine cases prove the audit FINDS a
+      disagreement; none ran `--ground`, so the line telling a reader WHICH HALF is wrong was
+      unexercised for its whole life. Five cases added, offline via a `--ground-fixture` seam
+      carrying the real 3DEP readings. **A/B against the reinstated flat rule: four of the five
+      flip**, and two of them reproduce the live wrong verdicts by name — `forbid` is the
+      load-bearing half, since a case that only checks the right string appears is satisfied by a
+      line printing every verdict at once. The fifth (fail-closed on too few readings) passes under
+      both, which is honest rather than a catch.
+    - **The `readFileSync` the seam needed was missing and the suite caught it on the first run** —
+      all five cases died on a `ReferenceError` rather than on a verdict. A guard's own test seam is
+      code like any other.
+    - **A FIFTH, WEAK RECORD AGREES WITH THE REPAIR, and it is stated as weak.** Park Butte's route
+      stores `gain_ft` 7,600 against a summit pin of 10,781 — so the old trailhead left **19 ft** of
+      re-gain across a glacier route with the Railroad Grade in it, and the repaired one leaves
+      **179**. Written by a different pass from either record. Corroboration, not proof.
+    - **The neighbouring field was checked BEFORE the write**, as this batch's own header demands:
+      raising a trailhead LOWERS the trailhead-to-summit rise, so `gainBelowOwnPins` moves further
+      from firing rather than closer. Silent before and after.
   - **A MEASURED NON-FINDING BESIDE IT, recorded so nobody builds the detector: a pin NAME that
     embeds a height is a THIRD record inside the same object, and it never disagrees.** 73 WA pins
     name one (`Point 4555'`, `Steep Heather/Meadow Ridge Below Point 6066`), **68 agree with their
@@ -10984,7 +11049,7 @@ the correction knows the screen is wrong, and they have no way to report it.
     name-embedded number is qualified by its own preposition, so separating them needs English read
     rather than matched. *A detector for a class of zero is the thing this repo keeps refusing to
     build.*
-  - Injection-tested **9/9** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
+  - Injection-tested **14/14** (`scripts/oneoff/inject-pin-elev-prose-cases.mjs`), driven by
     `--fixture` so the whole harness runs **offline** and nothing writes to the live project — the
     mechanism `audit:trailhead-road` sets, because these faults live in the DATA and a case cannot
     inject one by editing code. **SIX must stay SILENT** and they are the load-bearing half: a case

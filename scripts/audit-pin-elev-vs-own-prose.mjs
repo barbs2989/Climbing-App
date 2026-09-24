@@ -13,11 +13,19 @@
 // A number written into the pin's own sentence is outside all three by construction.
 //
 // REPORT ONLY. Both records are the pin's own, so neither is privileged; `--ground` asks the USGS
-// DEM, which derives from neither, and it is what separates a real disagreement from a sentence
-// that legitimately names a SECOND feature with its own height (see `wa_osceola_peak_scramble`).
+// DEM, which derives from neither.
+//
+// WHAT THE GROUND CAN AND CANNOT SAY, because this line used to claim more than it had. It can
+// refuse the PIN: a pin IS the coordinate, so "nothing near this height exists here" is about the
+// pin and nothing else. It CANNOT rule on a refused SENTENCE — a sentence legitimately names a
+// second feature with its own height, and four of the six live findings do (Cascade Pass at 5,392
+// ft, Slate Pass at 6,900, Longs Pass at 6,200, a switchback at ~5,600). Only reading tells a wrong
+// number from a number about somewhere else, and the old verdict asserted "the sentence is the
+// wrong half" about two of them.
 //
 // Read-only, anon key. NOT a build gate: a property of the DB rather than of the checkout, so no
 // code change can cause or fix it — the reasoning that keeps `check:counts` out.
+import { readFileSync } from "node:fs";
 import { anonKey, selectAll } from "./lib/supabase-env.mjs";
 
 const arg = (n, d) => { const a = process.argv.find(x => x.startsWith(`--${n}=`)); return a ? a.split("=").slice(1).join("=") : d; };
@@ -25,6 +33,11 @@ const STATE = arg("state", "wa");
 const TOL_FT = Number(arg("tol", 100));   // a rounded pin and rounded prose legitimately differ
 const WANT_GROUND = process.argv.includes("--ground");
 const FIXTURE = arg("fixture", null);
+const GROUND_FIXTURE = arg("ground-fixture", null);
+// The placement slop audit:waypoint-elevations measured for a hand-placed pin. Taking the TOP of
+// its 118-183 m band deliberately: over-stating the uncertainty widens the box, which errs toward
+// UNSETTLED, and a report that flags correct work is one people learn to ignore.
+const SLOP_M = 183;
 
 // AN ELEVATION IS NOT A GAIN, AND A BARE "N ft" CANNOT TELL THEM APART. This prose is full of
 // amounts — "gaining about 450 ft", "a ~150-ft rappel", "losing around 1,900 ft" — and reading one
@@ -111,28 +124,76 @@ if (!trailheads) { console.error("FAIL: no pin is typed Trailhead — the scan c
 if (!withProse) { console.error("FAIL: no trailhead pin carries prose — the scan cannot fire."); process.exit(1); }
 if (!comparable) { console.error("FAIL: no trailhead pin's own naming sentence states a height — the scan cannot fire."); process.exit(1); }
 
-let ground = null;
-if (WANT_GROUND) ({ elevationAt: ground } = await import("./lib/terrain.mjs"));
+// --- THE GROUND'S RESOLVING POWER IS NOT A CONSTANT, AND THE BAR USED TO BE -------------------
+//
+// This block compared ONE reading against a flat bar: the closer record had to be within 50 ft and
+// the other at least 3x further, floored at 150. That bar cannot tell 193 ft of terrain relief from
+// 616 ft, and over the six live findings it was wrong TWICE, in opposite directions — it refused a
+// verdict the ground decides plainly at the Park Butte trailhead (193 ft of relief; the pin sits 92
+// ft below anything the terrain holds within its own uncertainty) and issued one the ground cannot
+// support at Osceola Peak (486 ft of relief, which admits both figures comfortably).
+//
+// So ask the terrain instead of a constant: sample the ground across the pin's own rounding box
+// plus placement slop, and ask whether each claimed height is something that box could innocently
+// produce. See scripts/lib/ground-box.mjs, which is the same arithmetic audit:waypoint-elevations
+// uses — extracted rather than copied.
+//
+// AND THE TWO VERDICTS ARE NOT SYMMETRIC, WHICH IS THE PART THE OLD RULE GOT WRONG.
+//
+//   the box refuses the PIN            -> a verdict. A pin IS the coordinate, so "the ground here
+//                                         holds nothing near this height" is a statement about the
+//                                         pin and nothing else.
+//   the box refuses the STATED height  -> NOT a verdict about which half is wrong. A sentence can
+//                                         legitimately name a SECOND feature with its own height,
+//                                         and FOUR of these six do: Cascade Pass at 5,392 ft, Slate
+//                                         Pass at 6,900, Longs Pass at 6,200, a switchback at
+//                                         ~5,600. The ground cannot tell a wrong number from a
+//                                         number about somewhere else — only reading can. The old
+//                                         line asserted "the sentence is the wrong half" about two
+//                                         of them, which is the direction that has somebody edit
+//                                         correct prose.
+let boxOf = null, boxAdmits = null;
+if (WANT_GROUND) {
+  const lib = await import("./lib/ground-box.mjs");
+  boxAdmits = lib.boxAdmits;
+  // A TEST SEAM, like --fixture: --ground-fixture supplies the nine readings per route so the
+  // verdict can be proven without a network. 3DEP is the default and nothing else changes.
+  let canned = null;
+  if (GROUND_FIXTURE) canned = JSON.parse(readFileSync(GROUND_FIXTURE, "utf8"));
+  boxOf = async (f) => {
+    if (!canned) return lib.groundBox(f.lat, f.lng, SLOP_M, { tries: 8 });
+    const q = (canned[f.route] || []).slice();
+    return lib.groundBox(f.lat, f.lng, SLOP_M, { read: async () => (q.length ? q.shift() : null) });
+  };
+}
 
 findings.sort((a, b) => b.gap - a.gap);
+let settled = 0, ambiguous = 0;
 for (const f of findings) {
   console.log(`${f.gap.toLocaleString()} ft  ${f.route}`);
   console.log(`   "${f.name}" stores ${f.elev.toLocaleString()} ft; its own sentence says ${f.stated.map(n => n.toLocaleString()).join(", ")}`);
   console.log(`   ${f.sentence.slice(0, 260)}`);
-  if (!ground) continue;
-  const g = await ground(f.lat, f.lng, 8);
-  if (g == null) { console.log("   ground: NOT MEASURED — not agreement, and not a verdict."); continue; }
-  const dS = Math.abs(g - f.elev), dP = Math.abs(g - f.closest);
-  // DEMAND A SEPARATION, NEVER A VERDICT AT THE BOUNDARY — the rule the same-coordinate elevation
-  // repair already records. A flat bar reads its own noise: at +/-250 ft the DEM "admits both" on
-  // six of eight of these while separating every one of them by ratio.
-  const verdict = (dS <= 50 && dP >= 3 * Math.max(dS, 50)) ? "the PIN is right — the sentence is the wrong half"
-    : (dP <= 50 && dS >= 3 * Math.max(dP, 50)) ? "the SENTENCE is right — the pin is the wrong half"
-    : "UNSETTLED — the ground separates neither";
-  console.log(`   ground ${Math.round(g).toLocaleString()} ft (pin off by ${Math.round(dS)}, sentence by ${Math.round(dP)}) => ${verdict}`);
+  if (!boxOf) continue;
+  // FAIL CLOSED. A box built from too few readings is not a statement about the terrain, and a
+  // 3DEP outage must read as "not measured" rather than as a narrow box that settles everything.
+  const box = await boxOf(f);
+  if (!box) { console.log("   ground: NOT MEASURED — not agreement, and not a verdict."); continue; }
+  const pinOk = boxAdmits(box, f.elev);
+  const statedOk = f.stated.some(n => boxAdmits(box, n));
+  const verdict = (!pinOk && statedOk)
+    ? "the PIN is the wrong half — the ground under it holds nothing near that height"
+    : (pinOk && !statedOk)
+      ? "the stated height is not AT this coordinate — the sentence is either wrong or naming a different feature, and the ground cannot tell those apart. READ it."
+      : pinOk
+        ? "UNSETTLED — this terrain admits both figures"
+        : "UNSETTLED — this terrain admits neither, so the pin's own elevation is in question too";
+  if (!pinOk && statedOk) settled++; else if (pinOk && !statedOk) ambiguous++;
+  console.log(`   ground ${box.centre == null ? "?" : Math.round(box.centre).toLocaleString()} ft; across this pin's own uncertainty the terrain runs ${Math.round(box.lo).toLocaleString()}-${Math.round(box.hi).toLocaleString()} ft (${Math.round(box.relief)} ft of relief, ${box.read}/9 read)`);
+  console.log(`   => ${verdict}`);
 }
+if (WANT_GROUND) console.log(`\n${settled} pin(s) the ground decides; ${ambiguous} where the stated height is simply not here — read those, the ground cannot rule on them.`);
 
 console.log(`\n${rows.length} routes, ${pins} pins, ${trailheads} typed Trailhead, ${withProse} of those carrying prose, ${comparable} whose own naming sentence states a height.`);
 console.log(`${findings.length} disagree by more than ${TOL_FT} ft.`);
 if (!WANT_GROUND) console.log("Pass --ground to ask the USGS DEM which half each one is; it derives from neither record.");
-console.log("Report only: a sentence may legitimately name a SECOND feature with its own height, and only the ground tells that from a real disagreement.");
+console.log("Report only: a sentence may legitimately name a SECOND feature with its own height, and the ground cannot tell that from a wrong number — it can only refuse the PIN, which is the coordinate itself.");
