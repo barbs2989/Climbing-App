@@ -12,7 +12,7 @@ import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
-import { shortGrade, gradeNumFrom, displayGrade } from "./grade";
+import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
 import { clickable } from "./clickable";
 import { effDistKm } from "./outing";
 
@@ -705,16 +705,23 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
   );
 }
 
-// ── Route finder: search + Filters sheet (discipline, sort, stars, pitches,
-// length), paged via routes_in_subtree (0015; filters added in 0018). Grade
-// range is deliberately NOT offered here: grade_num is only comparable
-// within a single grading system (a YDS 5.9 and a V9 boulder problem both
-// have grade_num≈9 but mean nothing alike), and for alpine routes the
-// static catalog's own display grades ("Grade I", "Class 3") don't match
-// the import pipeline's grade_num parser, so a range filter there could
-// silently exclude routes it shouldn't. Sorting by grade still works safely
-// since unparsed routes just sort last, so it's offered once a single
-// discipline is picked (where the comparison is at least meaningful). ──
+// ── Route finder: search + Filters sheet (discipline, grade, sort, stars, pitches,
+// length), paged via routes_in_subtree (0015; filters added in 0018). ──
+//
+// GRADE RANGE IS OFFERED ONLY ONCE A DISCIPLINE IS PICKED, AND NOT FOR EVERY DISCIPLINE.
+// grade_num is only comparable within one grading system — a YDS 5.9 and a V9 boulder problem
+// are both ≈9 — so with "All" selected no range means anything. Within a discipline it is sound
+// only where the column holds ONE scale: sport/trad/rock (YDS), bouldering (V), scrambling (Class).
+//
+// ALPINE, MOUNTAINEERING, ICE, MIXED AND AID ARE DELIBERATELY LEFT OUT (measured — see
+// GRADE_RANGE_DISC). gradeNumFrom (lib/grade.js) takes a YDS number wherever the grade string has
+// one and otherwise falls back to Class, WI, M, a French alpine grade (AD = 3) or a commitment
+// numeral (Grade III = 3), so on those disciplines one number means different grades on different
+// rows. Offering it there needs a filter on the typed columns (rock_grade / ice_grade /
+// aid_grade / commitment), which routes_in_subtree does not take.
+//
+// The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
+// no readable grade. The sheet says so rather than letting the count drop unexplained. ──
 // [key, labelLoFt, labelHiFt, queryLoM, queryHiM]. THE LABEL NUMBERS ARE FEET AND THE QUERY BOUNDS
 // ARE METRES, and that is not a muddle — it is what makes the label true in both units. The stored
 // column is metric and the bounds are half-open (61/183/457), which are exactly 200/600/1500 ft
@@ -742,8 +749,32 @@ const lenLabel = (o, uElevN, uElevUnit) => {
   if (o[2] == null) return uElevN(o[1]) + "+ " + u;
   return uElevN(o[1]) + "–" + uElevN(o[2]) + " " + u;
 };
+/* The grade options a range can be set from, per grading system, on the SAME number line as
+   gradeNumFrom (lib/grade.js). Each entry is [label, lo, hi]: `lo` is the bound used when the
+   grade is the MINIMUM, `hi` when it is the MAXIMUM, so a pick means "this grade" at either end.
+   YDS letters sit on quarter steps (5.10a = 10.25 … 5.10d = 11, the catalog's unanimous
+   convention). A bare "5.10" stores 10, so 5.10a as the MINIMUM uses 10 — otherwise a route
+   written without a letter falls out of the 5.10 band it belongs to. The one collision is in the
+   DATA, not here: 5.10d and a bare 5.11 are both stored as 11, so they travel together there. */
+const GRADE_SCALES = (() => {
+  const yds = [];
+  for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
+  for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
+  const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5) };
+})();
+// AN ALLOW-LIST, and each entry was MEASURED rather than assumed
+// (scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs, 2026-09-24, all 205,543 routes):
+// sport/trad/rock and bouldering are 100% graded on one scale, scrambling 90.6% on Class. The rest
+// store more than one scale in grade_num, so a range there would match the wrong routes: AID holds
+// its YDS free grade on 1,196 of 1,259 rows (an "A2" bound would match 5.2 routes); 42 of 168 ICE
+// rows are YDS; MIXED runs to 13, where 8 is M8 or 5.8 depending on the row; alpine and
+// mountaineering mix YDS, Class, AD and Grade III. Re-run the measurement before widening this.
+const GRADE_RANGE_DISC = { sport: 1, trad: 1, rock: 1, bouldering: 1, scrambling: 1 };
+const gradeScaleFor = disc => GRADE_RANGE_DISC[disc] ? (GRADE_SCALES[gradeSystemForDiscipline(disc)] || null) : null;
+const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
 function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
-  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any" };
+  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gLo: "", gHi: "" };
   const [q, setQ] = useState("");
   const [af, setAf] = useState(DEF);
   const [df, setDf] = useState(DEF);
@@ -753,7 +784,12 @@ function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
   const [page, setPage] = useState(0);
   const [all, setAll] = useState([]);
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
-  const queryArgs = { q, disc: af.disc, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
+  // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
+  // never be read on another's number line (a "V5" bound is not a 5.5 bound).
+  const gScale = gradeScaleFor(af.disc);
+  const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
+  const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
+  const queryArgs = { q, disc: af.disc, minGrade: gLoO ? gLoO[1] : null, maxGrade: gHiO ? gHiO[2] : null, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
   const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
 
@@ -780,9 +816,10 @@ function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
   const areaIds = useMemo(() => [...new Set(all.map(r => r.area_id).filter(Boolean))], [all]);
   const { data: areaNames } = useAreaNamesByIds(areaIds);
 
-  const nF = (af.disc ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
+  const nF = (af.disc ? 1 : 0) + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
   const afChips = [];
-  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
+  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", gLo: "", gHi: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
+  if (gLoO || gHiO) afChips.push({ k: "g", label: gradeRangeLabel(gLoO && gLoO[0], gHiO && gHiO[0]), clear: () => setAf(a => ({ ...a, gLo: "", gHi: "" })) });
   if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
   // The APPLIED-filter chip is a second label site, and it must go through the same formatter or
@@ -790,7 +827,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
   if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
 
-  const chip = (label, on, fn) => <button key={label} onClick={fn} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
   const lab = s => <div style={{ fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, margin: "20px 0 8px", borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{s}</div>;
 
   return (
@@ -830,7 +867,7 @@ function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
           filters on coalesce(stars,0), and 6 routes in 205,492 have a rating, so 4★+ matches
           nothing anywhere in the catalog and 3★+ matches four. Left unexplained the climber
           reads "no routes match" as "this crag is no good" rather than "we have no ratings". */}
-      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{af.minStars ? "No routes match these filters. Almost no climb in the catalog has a star rating yet, so a minimum-star filter rules out nearly everything — try setting it back to Any." : "No routes match these filters."}</div>}
+      {!isLoading && !error && !all.length && <div style={{ fontSize: 13, color: C.textMuted, textAlign: "center", padding: "26px 12px", lineHeight: 1.5 }}>{af.minStars ? "No routes match these filters. Almost no climb in the catalog has a star rating yet, so a minimum-star filter rules out nearly everything — try setting it back to Any." : (gLoO || gHiO) ? "No routes match these filters. Routes without a readable grade are hidden while a grade range is set — try widening it or setting it back to Any." : "No routes match these filters."}</div>}
 
       {/* Portalled to <body>, and not because 300 was too low a z-index. #appscroll — the
           tab's scroll container — carries `animation-fill-mode: both`, which makes it a
@@ -847,17 +884,46 @@ function RouteFinderPanel({ scope, onOpen, onBack, C, uElevN, uElevUnit }) {
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
               <button onClick={() => setSheet(false)} aria-label="Close" style={{ background: C.borderLight, border: "none", color: C.textSub, borderRadius: 8, width: 34, height: 34, fontSize: 20, cursor: "pointer" }}>×</button>
             </div>
-            <div style={{ padding: "0 16px 18px", overflowY: "auto", flex: 1, minHeight: 0 }}>
+            {/* overscrollBehavior: without it a drag that reaches the end of this list keeps going on
+                the page behind the sheet (the document is the scroller here), so the sheet reads as
+                stuck — the same chaining #684 fixed on the other sheets. */}
+            <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], gLo: "", gHi: "", sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
             </div>
+            {lab("Grade")}
+            {(() => {
+              const sc = gradeScaleFor(df.disc);
+              if (!df.disc) return <div style={{ fontSize: 12.5, color: C.textMuted }}>Pick a discipline above to filter by grade — grades aren't comparable across climbing types.</div>;
+              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>Not available for {(DISCIPLINES.find(d => d[0] === df.disc) || [, df.disc])[1].toLowerCase()} yet — these routes store more than one kind of grade (rock, ice, aid or commitment), so a range would include routes it shouldn't. Sorting by grade still works below.</div>;
+              const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
+              const sel = (label, val, opts, set) => (
+                <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
+                  <select aria-label={label + " grade"} value={val} onChange={e => set(e.target.value)} style={{ padding: "10px 10px", borderRadius: 10, border: "1px solid " + (val ? C.blue : C.border), background: val ? C.blueBg : C.surface, color: val ? C.blue : C.text, fontSize: 14, fontWeight: 700 }}>
+                    <option value="">Any</option>
+                    {opts.map(o => <option key={o[0]} value={o[0]}>{o[0]}</option>)}
+                  </select>
+                </label>
+              );
+              return (
+                <div>
+                  {/* Each end only offers grades on its own side of the other, so the pair can never
+                      describe an empty range. */}
+                  <div style={{ display: "flex", gap: 10 }}>
+                    {sel("From", df.gLo, iHi >= 0 ? sc.slice(0, iHi + 1) : sc, v => setDf(d => ({ ...d, gLo: v })))}
+                    {sel("To", df.gHi, iLo >= 0 ? sc.slice(iLo) : sc, v => setDf(d => ({ ...d, gHi: v })))}
+                  </div>
+                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Routes without a readable grade are hidden while a grade range is set.</div> : null}
+                </div>
+              );
+            })()}
             {lab("Sort by")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
               {[["name", "Name A→Z"], ["name_desc", "Name Z→A"], ["area", "By area"], ["stars_desc", "Most starred"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] }))))}
               {df.disc ? [["grade_asc", "↓ Easiest"], ["grade_desc", "↑ Hardest"]].map(o => chip(o[1], df.sortBy === o[0], () => setDf(d => ({ ...d, sortBy: o[0] })))) : null}
             </div>
-            {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade — grades aren't comparable across climbing types.</div> : null}
+            {!df.disc ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Pick a discipline above to sort by grade.</div> : null}
             {lab("Minimum stars")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{[[0, "Any"], [2, "★★+"], [3, "★★★+"], [4, "★★★★+"]].map(o => chip(o[1], df.minStars === o[0], () => setDf(d => ({ ...d, minStars: o[0] }))))}</div>
             {df.minStars ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Star ratings are still missing for almost every climb, so this will hide nearly all of them.</div> : null}
@@ -1346,7 +1412,11 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 7, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px" }}>
             <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ flexShrink: 0, background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "5px 11px", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginRight: 4 }}>{"← Back"}</button>
-            <div ref={crumbStrip} style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "nowrap", overflowX: "auto", overscrollBehavior: "contain", minWidth: 0, flex: 1, scrollbarWidth: "none" }}>
+            {/* overscrollBehaviorX, NOT the shorthand. overflow-x:auto coerces overflow-y to auto too,
+                so this strip is a vertical scroll container with nothing to scroll — and the
+                both-axes shorthand made it a vertical chaining boundary: a swipe up or down that
+                started on the sticky bar went nowhere. Contain the sideways scroll only. */}
+            <div ref={crumbStrip} style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "nowrap", overflowX: "auto", overscrollBehaviorX: "contain", minWidth: 0, flex: 1, scrollbarWidth: "none" }}>
               {[null, ...crumbs].map((c, i) => {
                 const last = i === crumbs.length;
                 return (
