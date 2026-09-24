@@ -82,6 +82,11 @@
       .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
+      /* Links dim on press rather than shrink — scaling a run of inline text reads as a glitch. */
+      a[href]:active { opacity: 0.7; }
+      /* Switch knobs SLIDE between off and on instead of teleporting. The knob is the switch's
+         only child and is positioned by an inline left:3 / left:23. */
+      [role="switch"] > * { transition: left .18s cubic-bezier(.2,.8,.2,1); }
       /* Reduced motion switches off MOTION, never layout. This used to be `* { transform: none
          !important }`, which also stripped the translate(-50%) that centres the fix prompt and the
          lightbox's Remove button, knocked the password eye out of its field, and froze the
@@ -90,6 +95,7 @@
          element's own inline transform. */
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after { animation: none !important; }
+        [role="switch"] > * { transition: none; }
         button:not(:disabled):active, [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: none; }
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
