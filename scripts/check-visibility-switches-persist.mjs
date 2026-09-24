@@ -31,12 +31,15 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const app = read("ClimbMatch.jsx");
-const core = read("ClimbMatchCore.jsx");
+// Through readCoreSource(): the profile editor's switch and the partner card's résumé tile moved
+// out of core to load lazily, and a core-only read would stop seeing either.
+const core = readCoreSource();
 const db = read("lib/db.js");
 const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 
@@ -316,7 +319,7 @@ for (const [name, re] of CLIMBER_SELECTS) {
 const RESUME_ENTRIES = 2;
 // The partner card's stat tile moved with PartnerSearch into lib/ (lazy-loaded). Counting core
 // alone would read it as a route that vanished, and stop checking that it is gated.
-const resumeSrc = core + "\n" + fs.readFileSync(path.join(ROOT, "lib/PartnerSearch.jsx"), "utf8");
+const resumeSrc = core;
 const entries = (resumeSrc.match(/onResume&&onResume\(/g) || []).length;
 const gates = (resumeSrc.match(/resumePublic!==false/g) || []).length;
 if (entries !== RESUME_ENTRIES) {

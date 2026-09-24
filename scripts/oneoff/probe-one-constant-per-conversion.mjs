@@ -21,11 +21,12 @@ import path from "node:path";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { fileURLToPath } from "node:url";
+import { MOVED_FROM_CORE } from "../lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-// PartnerSearch, Leaderboards and CrewFinder moved out of ClimbMatchCore.jsx to load lazily; they are still app source.
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
+// Components moved out of ClimbMatchCore.jsx to load lazily are still app source (see guard-sources.mjs).
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_FROM_CORE];
 const problems = [];
 
 // =======================================================================================

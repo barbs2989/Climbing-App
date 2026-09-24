@@ -55,7 +55,7 @@ const CASES = [
     expect: "fail", must: /refused avatar write resolved|FAILED avatar removal deleted/,
   },
   {
-    file: "ClimbMatchCore.jsx", name: "gate-dropped",
+    file: "lib/EditProfileScreen.jsx", name: "gate-dropped",
     why: "the Remove control renders with no photo to remove, offering a destructive action against " +
          "nothing",
     edit: (s) => s.replace("{(avaPreview||draft.avatar)?<button onClick={removeAva}", "{true?<button onClick={removeAva}"),

@@ -41,10 +41,11 @@ import { overlayStates } from "./lib/overlay-scaffold.mjs";
 const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const coreRaw = readCoreSource();
 
 const CLAIMS = /no .{0,30}? yet|nothing here(?=\s*(?:yet\b|[.<—,)]|$))|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
 const app = maskComments(appRaw, "ClimbMatch.jsx");

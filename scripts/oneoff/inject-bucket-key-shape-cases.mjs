@@ -40,28 +40,28 @@ const CASES = [
   {
     name: "1-descent-chips-come-back",
     why: "REAL DEFECT: rappel/walkoff into routes.descent_text, a PROSE column",
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     repl: '{sf("descent")?<div>{[["rappel","Rappel"],["walkoff","Walk-off"]].map(o=>o[1])}</div>:null}' + IN_FORM,
     expect: /descentText bucket chips are back \(rappel, walkoff\)/,
   },
   {
     name: "2-pitch-chips-come-back",
     why: "REAL DEFECT: single/multi into routes.pitches, an INT — proposal_num turns it into NULL",
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     repl: '{sf("pitches")?<div>{[["single","Single-pitch"],["multi","Multi-pitch"]].map(o=>o[1])}</div>:null}' + IN_FORM,
     expect: /pitchCount bucket chips are back \(single, multi\)/,
   },
   {
     name: "3-SILENT-a-comment-naming-the-keys",
     why: 'MUST PASS — the repair\'s own explanation quotes "rappel"/"walkoff"; a guard firing on it would forbid explaining itself',
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     repl: '{/* never re-add ["rappel","Rappel"] or ["single","Single-pitch"] here */}' + IN_FORM,
     expect: null,
   },
   {
     name: "4-SILENT-a-bare-key-that-is-not-a-pair-head",
     why: 'MUST PASS — "rappel" is ordinary English in this app; only the [key,"Label"] chip shape is the fingerprint',
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     // A BARE ARRAY OF KEYS IS NOT A USABLE DECOY, and the first version of this case proved it:
     // `["rappel","walkoff"]` is character-identical to a [key,"Label"] pair head, so the case was
     // injecting the very shape it claimed was innocent and reported the guard as over-eager. The
@@ -76,7 +76,7 @@ const CASES = [
     // is a catch; this case is judged on the staleness one, which is the half that cannot rot.
     name: "5-the-correct-control-swept-away-goes-stale",
     why: "a whitelist that cannot rot: removing the one group that is RIGHT must fail, not pass",
-    file: CORE, find: '["outback","Out and back"]',
+    file: "lib/AddRoute.jsx", find: '["outback","Out and back"]',
     repl: '["OUTBACK_REMOVED","Out and back"]',
     expect: /chip group \[outback\/loop\/point\] is declared here but is no longer in AddRoute/,
   },
@@ -96,14 +96,14 @@ const CASES = [
     // group whitelist this run would be GREEN on a fresh bucket control.
     name: "7-a-NOVEL-bucket-group-the-blacklist-cannot-see",
     why: "REAL CLASS: a new chip group with unknown keys is invisible to a list of known keys",
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     repl: '{sf("comms")?<div>{[["shady","Mostly shady"],["mixed","Mixed"],["sunny","Mostly sunny"]].map(o=>o[1])}</div>:null}' + IN_FORM,
     expect: /chip group \[shady\/mixed\/sunny\] in AddRoute is not declared/,
   },
   {
     name: "8-SILENT-a-bare-two-string-list-is-not-a-group",
     why: 'MUST PASS — ["cams","nuts"] is a list of gear kinds, character-identical to a pair; only an array OF ARRAYS is a group',
-    file: CORE, find: IN_FORM,
+    file: "lib/AddRoute.jsx", find: IN_FORM,
     repl: '{["cams","nuts","screws","pads"].map(x=>x).length?null:null}' + IN_FORM,
     expect: null,
   },

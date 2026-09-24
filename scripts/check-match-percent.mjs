@@ -27,6 +27,7 @@ import { createRequire } from "node:module";
 import path from "node:path";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -37,7 +38,7 @@ const fail = (m) => { ran++; bad++; console.log("  FAIL  " + m); };
 const dead = (m) => { console.log("  FAIL  " + m); console.log("\nthis run proved nothing."); process.exit(1); };
 
 const corePath = path.join(ROOT, "ClimbMatchCore.jsx");
-const src = fs.readFileSync(corePath, "utf8");
+const src = readCoreSource();
 
 // Comments are stripped before any SOURCE test: this guard's own subject is explained in a comment
 // beside compat() that names the forbidden `Math.min(99,` shape, and a guard that fails on its own

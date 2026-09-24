@@ -22,11 +22,12 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { appSources } from "./lib/guard-sources.mjs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 appSources(ROOT, "check:add-route-fields");
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 let failures = 0;
@@ -289,7 +290,11 @@ else ok("no duplicate keys in the submitted proposal");
 
 // 2. FIELDS entries and rendered inputs agree
 const arStart = core.indexOf("function AddRoute(");
-const arEnd = core.indexOf("function numsClose(");
+// The next TOP-LEVEL function after AddRoute, never a named neighbour: AddRoute moved to
+// lib/AddRoute.jsx (lazy-loaded) and readCoreSource() appends it after the rest of core, so a
+// fixed neighbour like numsClose now sits BEFORE it. In the pre-move file the two were the same.
+const arNext = core.indexOf("\nfunction ", arStart + 10);
+const arEnd = arNext < 0 ? core.length : arNext + 1;
 if (arStart < 0 || arEnd < 0) anchorLost("AddRoute function bounds");
 const ar = core.slice(arStart, arEnd);
 

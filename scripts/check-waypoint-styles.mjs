@@ -27,7 +27,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { assertCovered } from "./lib/guard-sources.mjs";
+import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -42,7 +42,7 @@ const raw = {};
 for (const f of FILES) {
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) { console.error(`\n${GUARD} FAILED — ${f} is missing; the scan would cover a fraction of the app.`); process.exit(1); }
-  raw[f] = fs.readFileSync(p, "utf8");
+  raw[f] = readAppFile(p);
 }
 // Fails closed on a partial read, the guard-sources.mjs rule: a shorter file list is a
 // coverage failure, never a quietly cleaner result.

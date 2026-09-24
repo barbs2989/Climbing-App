@@ -45,6 +45,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readAppFile } from "./lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -70,7 +71,7 @@ const offConvention = [];
 for (const f of FILES) {
   const abs = path.join(ROOT, f);
   if (!fs.existsSync(abs)) dead(`${f} does not exist — the app moved, or this list is stale`);
-  const src = fs.readFileSync(abs, "utf8");
+  const src = readAppFile(abs);
   let ast;
   try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
   catch (e) { dead(`could not parse ${f}: ${e.message}`); }

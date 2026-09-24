@@ -24,6 +24,7 @@ const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
   db: path.join(ROOT, "lib/db.js"),
+  CrewCard: path.join(ROOT, "lib/CrewCard.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-named-as-they-asked.lock");
 
@@ -53,11 +54,11 @@ if (!/ok — a climber is named the way they asked/.test(CLEAN)) {
 
 const CASES = [
   // A — the forged setting, restored verbatim.
-  { name: "invite-pool-forges-shownname", file: "core", expect: "invite-search pool reads the real column",
+  { name: "invite-pool-forges-shownname", file: "CrewCard", expect: "invite-search pool reads the real column",
     find: "showName:!!rp.show_name", repl: "showName:true" },
 
   // C — the bare read on the join-request card.
-  { name: "join-card-reads-name-raw", file: "core", expect: "join-request card names the climber through pubName",
+  { name: "join-card-reads-name-raw", file: "CrewCard", expect: "join-request card names the climber through pubName",
     find: '<div style={{fontSize:14,fontWeight:700}}>{pubName(c)}</div>', repl: '<div style={{fontSize:14,fontWeight:700}}>{c.name}</div>' },
 
   // B — the dropped fields.
@@ -80,7 +81,7 @@ const CASES = [
     find: "function pubName(", repl: "/* the invite pool used to pass showName:true here */function pubName(" },
 
   // SILENT: snake_case is CORRECT in the invite pool -- useProfileSearch returns raw rows.
-  { name: "SILENT-unrelated-field-added-to-the-pool", file: "core", silent: true,
+  { name: "SILENT-unrelated-field-added-to-the-pool", file: "CrewCard", silent: true,
     find: "showName:!!rp.show_name,avatar:rp.avatar", repl: "showName:!!rp.show_name,online:false,avatar:rp.avatar" },
 ];
 

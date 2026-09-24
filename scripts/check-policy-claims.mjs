@@ -27,6 +27,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "@babel/parser";
@@ -37,7 +38,7 @@ const ok = (m) => console.log("  ok    " + m);
 const bad = (m) => { failed++; console.log("  FAIL  " + m); };
 const dead = (m) => { console.error("\ncheck:policy-claims BROKEN: " + m + "\n(reporting nothing is not a pass.)"); process.exit(2); };
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 // ── 1. NO LEGAL SURFACE PROMISES A CONTROL THE APP WITHHOLDS ────────────────────────────────
@@ -355,10 +356,9 @@ if (LABELS.length < 3) dead(`only ${LABELS.length} Settings row label(s) harvest
 // why it is wrong, and a guard that fails on its own documentation is a trap this repo records.
 const stripLine = (t) => t.replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 let paths = 0;
-// The three lib/ screens were core source until they moved out to load lazily; partner browse
-// (lib/PartnerSearch.jsx) holds one of this section's founding sentences, so they must stay scanned.
-const MOVED_FROM_CORE = ["lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]);
-const COPY_SOURCES = [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core], ...MOVED_FROM_CORE];
+// `core` is readCoreSource(): it already carries every component moved out of core to load
+// lazily (partner browse holds one of this section's founding sentences), so nothing is added here.
+const COPY_SOURCES = [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]];
 for (const [name, src] of COPY_SOURCES) {
   for (const m of stripLine(src).matchAll(/Settings\s*(?:→|›|>)\s*(?=[A-Z])([^.,;:"<{}]{2,60})/g)) {
     const phrase = m[1].trim();
