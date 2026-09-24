@@ -139,7 +139,7 @@ for (const f of FIXES) {
   changed++;
 }
 console.log(`\n${DRY ? "would change" : "changed"} ${changed}; ${skipped} skipped`);
-if (DRY || !changed) process.exit(0);
+if (DRY) process.exit(0);
 
 const after = await read();
 const wrong = after.filter(r => r.discipline !== FIXES.find(x => x.id === r.id).to);
