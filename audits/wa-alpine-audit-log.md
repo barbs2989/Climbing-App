@@ -27183,3 +27183,77 @@ intended. No writes were proposed this batch, so `check:sql` was not run.
 Progress file's `last_processed_id` advanced to `wa_lewis_creek_route`. Next batch continues
 in sorted-id order after that id. 187 + 8 = 195 audited this pass through batch 331;
 524 - 195 = **329 in-scope routes remain unaudited this pass**.
+
+## Batch 332 (2026-09-24, pass 6)
+
+Routes: `wa_lexington_tower_east_face`, `wa_liberty_and_injustice_for_all`,
+`wa_liberty_bell_beckey_route`, `wa_liberty_bell_east_face`,
+`wa_liberty_bell_independence_route`, `wa_liberty_bell_nw_face`,
+`wa_liberty_bell_overexposure`, `wa_liberty_bell_serpentine_crack` — all on the Liberty
+Bell Group / Washington Pass wall.
+
+**No new confirmed errors — no SQL file this batch.** This exact cluster was already
+audited in depth in pass 4 (batches 199-200) and pass 5 (batches 265-266), which between
+them fixed several contamination/unit bugs and left five UPDATEs still pending human
+application: `audits/sql/2026-09-10-batch-265.sql` (Fix 1-2: `wa_liberty_and_injustice_for_all`
+`dist_km` round-trip-vs-one-way and null `high_point_ft`; Fix 3-4: `wa_liberty_bell_overexposure`
+same `dist_km` bug and an overstated 4-vs-2 `pitches`; Fix 5: `wa_liberty_bell_nw_face` null
+`loss_ft`) and `audits/sql/2026-09-11-batch-266.sql` (Fix 4: `wa_liberty_bell_serpentine_crack`
+`dist_km`). Re-read all five target rows from the live DB this run: `wa_liberty_and_injustice_for_all`
+still shows `dist_km=8.05` and `high_point_ft=NULL`, and `wa_liberty_bell_overexposure` still
+shows `dist_km=8.69` and `pitches=4` — both batch-265 fixes remain valid and unapplied. By
+contrast `wa_liberty_bell_serpentine_crack`'s `dist_km` is now `5.46`, neither the pre-fix
+`2.5` nor batch-266's proposed `4.184` — the row has evidently been touched by something
+else since batch 266 (not this audit process); 5.46 km one-way is itself a plausible figure
+for this approach and wasn't re-flagged. Not re-emitting duplicate SQL for the two still-valid
+pending fixes since a human already has `batch-265.sql` to run; flagging here only so this
+doesn't read as newly discovered.
+
+**Flagged, not fixed (re-affirmed, not new):** `wa_liberty_bell_nw_face`'s `fa` — "Hans Kraus
+& John Rupley, 1956; Free FA: Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966" — has
+been flagged unresolved twice before (see batch ~131 and batch 199 notes above) because the
+free-FA team echoes a *different* Liberty Bell route's ("Barber Pole") documented FA team
+("S. Bill, C. Burgner, F. Tarver, 1966") without matching it exactly. This run found one more
+piece of suggestive-but-not-conclusive evidence: an AAC Publications piece describing Hans
+Kraus & John Rupley's 1956 ascent refers to it as being on Liberty Bell's **"north face"**
+("the previous ascent of the north face had been made in 1956 by Hans Kraus and John
+Rupley..."), and a separate AAC piece is titled "Liberty Bell Mountain, North Face Variant" —
+both naming a "North Face" as a distinct feature from the "Northwest Face" this row is filed
+under, and this catalog has no separate `wa_liberty_bell` North Face row to check the claim
+against. This is the same shape of bug as the already-fixed Lexington Tower/Liberty-Bell-East-Face
+mixup (batch 18): a name-adjacent route's FA landing on the wrong row. Not confident enough
+to blank the field outright, since "north face" and "northwest face" are used loosely and
+interchangeably in older trip accounts for this exact aspect of the peak, and WebFetch is
+still blocked by the egress proxy for every full-text source that might settle it (Mountain
+Project, SuperTopo, thecrag.com, mountaineers.org, AAC Publications). Left as stored; a human
+with Beckey's *Cascade Alpine Guide* or working WebFetch access should resolve.
+
+**Checked and confirmed correct:** Beckey Route's Sept 27, 1946 FA (Fred Beckey, Jerry
+O'Neil, Charles Welsh) and Liberty Bell's 7,720+ ft high point both match Wikipedia exactly,
+consistent with this same cluster's pass-4 finding. The Independence Route's FA (Alex
+Bertulis & Don McPherson, May 1966, wall-style, 180 pitons + 5 bolts, F8 A4) and FFA (Steve
+Risse & Keith Hertel, 1991) both match AAC Publications/climbing.com exactly, including the
+piton/bolt count. `wa_liberty_and_injustice_for_all`'s FA (Mikey Schaefer, 2014, rope-solo)
+matches climbing.com/CascadeClimbers' original FA trip report. Lexington Tower's 7,560 ft
+high point matches Wikipedia/Peakbagger/SummitPost. Re-checked (not newly flagged) two
+items this cluster's earlier passes already adjudicated as normal source variance rather
+than errors: Lexington Tower East Face's 10-pitch stored count vs. "eight pitches" in
+SummitPost/Mountain Madness/chossclimbers' aggregate description (the row's own 10-entry
+`pitch_detail` is internally self-consistent, lengths summing to within 1m of `length_m`) —
+common Grade-IV pitch-splitting variance, not re-flagged; and `wa_liberty_and_injustice_for_all`'s
+stored grade `5.12b` vs. the original CascadeClimbers FA trip report's `5.12-` — within normal
+a/b-split grade-consensus variance. `wa_liberty_bell_east_face`'s `fa`/`pitches`/`grade`
+(previously found copied from Lexington Tower's East Face and corrected in batch 18) remains
+correctly blanked/4-pitch/5.6, matching its own internally-consistent `pitch_detail` — the
+fix held.
+
+**Verification note:** scheduled run, no `.env`/`.env.local` — read-only anon key only, as
+intended. WebSearch was used throughout; WebFetch was attempted against en.wikipedia.org,
+summitpost.org, supertopo.com, and ncmountainguides.com and blocked by the network egress
+proxy on all four, consistent with every prior batch's experience on this cluster — full-text
+confirmation of the nw_face FA question remains out of reach for this environment. No new
+writes were proposed this batch, so `check:sql` was not run.
+
+Progress file's `last_processed_id` advanced to `wa_liberty_bell_serpentine_crack`. Next batch
+continues in sorted-id order after that id. 195 + 8 = 203 audited this pass through batch 332;
+524 - 203 = **321 in-scope routes remain unaudited this pass**.
