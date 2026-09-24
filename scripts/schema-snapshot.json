@@ -367,6 +367,11 @@
       "route_id",
       "user_id"
     ],
+    "profile_zips": [
+      "updated_at",
+      "user_id",
+      "zip"
+    ],
     "profiles": [
       "account_type",
       "avatar",
@@ -577,6 +582,11 @@
       "id",
       "reason",
       "to_id"
+    ],
+    "zip_centroids": [
+      "lat",
+      "lng",
+      "zip"
     ]
   }
 }

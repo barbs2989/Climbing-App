@@ -14351,6 +14351,45 @@ their own Résumé showed an amber **"Unverified"** chip.
     - **AND IT ASSERTS THAT THE EXAMPLE LIST IS STILL NARROWED BY ALL SEVEN CHIPS.** A rule that only
       says the real list is unfiltered is satisfied by a filter panel that narrows **nothing**, which
       would make the new sentence false in the other direction.
+- **PARTNER SEARCH BY DISTANCE: A ZIP CODE AND "WITHIN N MILES", MODELLED ON MOUNTAIN PROJECT AND
+  FIXING THE ONE THING IT GETS WRONG (`0187`).** Before this, every distance control on Partners
+  filtered the **seed example profiles only**: `profiles` carries free-text `location` and no
+  coordinate, and the sign-in reset clears `ME.lat/lng`, so for a real account every *"within N mi"*
+  read *"Needs your location"* and no real climber was ever filtered, sorted or shown a distance.
+  - **Mountain Project's partner finder** takes a zip and a 25/50/100-mile radius, then displays each
+    result's **self-typed city** — so a *"live within 25 miles of 98101"* search lists somebody in
+    *Las Vegas, NV*. The radius and the displayed place come from different records. Here the
+    distance shown is computed from the **same** record the radius filtered on.
+  - **THE ZIP IS NEVER ON `profiles`, which is public-read.** It lives in `profile_zips`, readable and
+    writable by its owner only. Others learn a **distance rounded UP to the next 5 miles**, and only
+    through `partners_near`, a `SECURITY DEFINER` function that is the one door onto that table. It
+    returns listed (`discoverable`) climbers only, never the caller, and never a climber who blocked
+    the caller (`profile_owner_blocked_me`, reused).
+  - **The radius has a 10-mile FLOOR**, because arbitrary origins plus a tiny radius let a caller walk
+    a circle around somebody. **Distance-only REDUCES disclosure and does not eliminate it**, and the
+    Privacy Policy says so in as many words — `check:policy-claims` pins that limit, since it is the
+    clause a tidier rewrite would drop first.
+  - **"Near me now" reads the phone once, rounds to 2 decimals (~1 km) before it enters state, and
+    sends it only as the query argument** — nothing stores it. That changed two policy sentences
+    (*"not a coordinate"* survives; *"We do not record where you are"* became *"We do not otherwise
+    record…"*), and the pins moved with them.
+  - `zip_centroids` is the 2020 Census ZCTA gazetteer, **33,144 rows**, loaded by
+    `scripts/oneoff/load-zip-centroids.mjs`, which counts the table afterwards rather than trusting
+    the 200s. A zip with no ZCTA (PO-box-only) is refused by the foreign key and reported as
+    unrecognised rather than stored unplaceable.
+  - **Proven with five real accounts on their own JWTs** —
+    `scripts/oneoff/probe-partners-near-with-real-accounts.mjs`, 21 assertions: owner-only reads and
+    writes, the 23503 refusal, the signed-out refusal, radius in and out, unlisted excluded, no
+    zip/coordinate/exact distance returned, 5-mile rounding, nearest first, the floor, and the block.
+    **The service key creates and deletes accounts and nothing else**, since it bypasses RLS.
+  - **`disciplines` IS `jsonb`, NOT `text[]`**, and the first draft of the function's return type said
+    `text[]`. `return query` checks types at RUN time, so it would have created cleanly and failed on
+    the first search. Read `information_schema.columns` before declaring a `returns table`.
+  - **The editor withholds the zip field until the read SUCCEEDS** (`draft.zip===undefined`), because
+    a blank draft saved clears the stored zip — the `check:profile-edit-gate` shape on a new field.
+  - **The onboarding sheet wrote an AREA ID into `profiles.location`** (`homeArea:home`, e.g. `lcc`),
+    which partner rows print as the climber's city. It now sends what the box shows, falling back to
+    the existing value so an untouched box never blanks it.
 - **FIVE SURFACES RENDERED A RAW ISO DATE, IGNORING THE CLIMBER'S OWN dateFmt PREFERENCE.** The app
   stores a date-format choice (`lib/date-pref.js`: auto / US / international) and formats through
   `DLOCALE` in **19** places — a raw `2026-06-17` is neither of the two formats it offers, so these
