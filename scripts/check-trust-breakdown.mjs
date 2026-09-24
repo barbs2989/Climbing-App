@@ -34,6 +34,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { reachableVerificationTypes, partnerlessCeiling, dayOneScore, earnableCeiling } from "./lib/verification-reach.mjs";
 import { parse } from "@babel/parser";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.trustbreakdown-${process.pid}.mjs`);
@@ -404,7 +405,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
 // the group roster's count shape, and the bound above is satisfied by a second copy that happens to
 // agree today -- so the count of copies is asserted separately.
 {
-  const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const core = readCoreSource();
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const { TRUST_TIERS, TRUST_GOAL, SERVER_TRUST_EARNABLE, serverTrustScore, trustTier } = mod;
@@ -651,7 +652,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
 // audit:silent-reverts says in its own closing caveat it cannot see that. The helpers themselves
 // are new names and would be visible; the render sites are not.
 {
-  const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const core = readCoreSource();
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const { reporterTrust, reporterWeightTrust, TRUST_PRIOR, seedAuthor, buildConsensus, trustTier,
@@ -814,7 +815,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   // Only JSX-expression comments are stripped, deliberately NOT a general comment blanker: this
   // repo records one wiping 21% of RouteDetail.jsx because a quote inside a string desynchronised
   // it. `{/* ... */}` is the shape this file writes in JSX and the fix explains itself in one.
-  const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const src = readCoreSource();
   const fpStart = src.indexOf("function FullProfile(");
   if (fpStart < 0) dead("ClimbMatchCore.jsx has no FullProfile — ANCHOR LOST");
   const fpEnd = src.indexOf("\nfunction ", fpStart + 1);

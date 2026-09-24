@@ -28,6 +28,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -35,7 +36,8 @@ const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+// Through readCoreSource(): CrewCard, which holds the invite pool and join card, moved to lib/.
+const core = readCoreSource(ROOT);
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 const db = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8");
 

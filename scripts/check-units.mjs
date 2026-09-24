@@ -54,6 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readCoreSource, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -118,8 +119,7 @@ const RAW_IMPERIAL_OK = 6;
 // Screens moved out of ClimbMatchCore.jsx so they load lazily. They were core source when the
 // assertions below were written, so every core read must include them or it silently stops
 // looking at three whole screens while still printing ok.
-const MOVED_FROM_CORE = ["lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
-const readCoreAndMoved = () => [CORE_PATH, ...MOVED_FROM_CORE.map(f => path.join(ROOT, f))].map(f => fs.readFileSync(f, "utf8")).join("\n");
+const readCoreAndMoved = () => readCoreSource();
 const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_FROM_CORE];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
@@ -636,7 +636,7 @@ async function runReports() {
   // THE FORM cannot be rendered here (LogAscent needs App state), so its three links are asserted
   // as SOURCE. This is the half a stale-base squash takes: the helpers would still convert
   // perfectly while the form went back to storing whatever was typed.
-  const CORE = fs.readFileSync(CORE_PATH, "utf8");
+  const CORE = readCoreSource();
   let ast;
   try { ast = parse(CORE, { sourceType: "module", plugins: ["jsx"] }); }
   catch (e) { dead("ClimbMatchCore.jsx did not parse: " + (e && e.message)); }
@@ -767,7 +767,7 @@ async function runItinerary() {
   // a button, so the wiring is read from the file, exactly as check:topo-outage-copy reads its prop
   // chain. Matched on the EXPRESSION rather than the helper's name, so the comment beside the fix
   // (which names uDistMiIn while explaining it) cannot satisfy it.
-  const core = fs.readFileSync(CORE_PATH, "utf8");
+  const core = readCoreSource();
   if (core.includes("distMi:distMi?uDistMiIn(distMi):undefined")) ok("the bail form submits through uDistMiIn, so km typed by a metric climber is stored as miles");
   else fail("the bail form stores what was typed — the waypoint column is miles, and its reader converts");
   if (!core.includes("distMi:distMi?Number(distMi):undefined")) ok("the raw submit expression is gone");
@@ -1294,7 +1294,7 @@ async function runProfile() {
   // ── FullProfile: both readouts. Matched on the HELPER, never on one spelling of its argument —
   //    `uDistMi(dist)` is a different rounding, not a units defect, and pinning the expression
   //    would forbid improving it (the `disclaimer-reworded` lesson).
-  const core = fs.readFileSync(CORE_PATH, "utf8");
+  const core = readCoreSource();
   const a = core.indexOf("function FullProfile");
   const b = core.indexOf("\nfunction ", a + 10);
   const fp = a < 0 ? "" : core.slice(a, b < 0 ? core.length : b);

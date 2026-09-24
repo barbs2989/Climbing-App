@@ -102,6 +102,51 @@ restoreQueryCache(queryClient).finally(() => {
   );
 });
 
+// A deploy replaces every hashed chunk in dist/, and Pages serves only the new ones. So a tab
+// opened BEFORE a deploy still holds the old index chunk, whose lazy imports name files that no
+// longer exist: the first visit to a lazily-loaded screen (Partners, Ranks, a route page) 404s,
+// the import throws, and AppErrorBoundary shows "This screen hit a bug" — which a reload fixes,
+// because the reload fetches the new index.html (sw.js is network-first for navigations).
+// Vite fires `vite:preloadError` for exactly that failure, so do the reload for the climber.
+// ONCE: a second failure within the window is not a stale deploy (offline, or a genuinely
+// missing file), and reloading again would loop — let it reach the boundary instead. If
+// sessionStorage is unavailable the guard cannot be recorded, so do not reload at all.
+const CHUNK_RELOAD_KEY = "climbmatch:chunk-reload-at";
+window.addEventListener("vite:preloadError", (event) => {
+  try {
+    const last = Number(window.sessionStorage.getItem(CHUNK_RELOAD_KEY)) || 0;
+    if (Date.now() - last < 30 * 1000) return;
+    window.sessionStorage.setItem(CHUNK_RELOAD_KEY, String(Date.now()));
+  } catch { return; }
+  event.preventDefault();
+  window.location.reload();
+});
+
+// The screens split off the startup bundle (React.lazy in ClimbMatch.jsx) are fetched once the
+// first screen is up and the browser is idle, so a climber opening Crew or Logbook later gets
+// the tab at once rather than a skeleton — the split buys a faster start without making every
+// later tab switch pay for it. Each import() resolves to the same chunk React.lazy loads, so
+// nothing downloads twice.
+//
+// Two conditions keep it from misfiring, and the second exists because of the handler above:
+//   - Save-Data: those bytes are then fetched only when the screen is actually opened.
+//   - OFFLINE: a failed import() fires `vite:preloadError`, and the handler above answers that
+//     with a RELOAD. A prefetch that fails for want of a signal must not reload the page out from
+//     under a climber at the trailhead. (A prefetch failing because a deploy landed seconds after
+//     load reloads onto the new build, which is what the handler is for.)
+const prefetchSplitScreens = () => {
+  if (typeof navigator !== "undefined" && navigator.onLine === false) return;
+  if (typeof navigator !== "undefined" && navigator.connection && navigator.connection.saveData) return;
+  [() => import("./RouteDetail.jsx"), () => import("./lib/CrewCard.jsx"), () => import("./lib/ListsManager.jsx"),
+   () => import("./lib/PartnerSearch.jsx"), () => import("./lib/Leaderboards.jsx"), () => import("./lib/CrewFinder.jsx"),
+   () => import("./lib/LogAscent.jsx"), () => import("./lib/TripReport.jsx"), () => import("./lib/AddRoute.jsx"),
+   () => import("./lib/EditProfileScreen.jsx")].forEach((load) => load().catch(() => {}));
+};
+window.addEventListener("load", () => {
+  const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));
+  setTimeout(() => idle(prefetchSplitScreens, { timeout: 5000 }), 1500);
+});
+
 // Registered only in production builds so it never interferes with Vite's
 // dev-server module graph / HMR.
 if (import.meta.env.PROD && "serviceWorker" in navigator) {

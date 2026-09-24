@@ -49,7 +49,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-import { ListsManager } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import ListsManager from ${JSON.stringify(path.join(ROOT, "lib", "ListsManager.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 // The tick-list route rows. They render route columns into pills and live in core, so

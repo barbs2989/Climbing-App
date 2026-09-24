@@ -31,12 +31,10 @@ const CHILD_NOUN = { crag: "Areas", peak: "Peaks", canyon: "Canyons", range: "Ra
 // These keys are sent verbatim to routes_in_subtree, which filters on the raw
 // `routes.discipline` column (`r.discipline = disc`) — so a discipline with no
 // entry here is unreachable by any filter, however well the rest of the app
-// understands it. "rock" (7,444 rows) and "mixed" (59) were both missing:
-// "rock" is what the catalog stores when the source never split sport from trad,
-// and the route rows already title-case it to "Rock", so filtering by Rock now
-// matches the label the list shows. It is deliberately not folded into Trad —
-// there is no `style` column in the DB to tell the two apart.
-const DISCIPLINES = [["", "All"], ["sport", DL.sport], ["trad", DL.trad], ["rock", DL.rock], ["bouldering", DS.bouldering], ["alpine", DL.alpine], ["ice", DL.ice], ["mixed", DL.mixed], ["mountaineering", DL.mountaineering], ["aid", DL.aid], ["scrambling", DS.scrambling]];
+// understands it. "toprope" (7,437 rows) was stored as "rock" until 0202: they are
+// OpenBeta's top-rope-only climbs (its count matched ours crag for crag), typed the way
+// Mountain Project types them. There is no "Rock" type anywhere (owner decision).
+const DISCIPLINES = [["", "All"], ["sport", DL.sport], ["trad", DL.trad], ["toprope", DL.toprope], ["bouldering", DS.bouldering], ["alpine", DL.alpine], ["ice", DL.ice], ["mixed", DL.mixed], ["mountaineering", DL.mountaineering], ["aid", DL.aid], ["scrambling", DS.scrambling]];
 
 function haversineMi(a, b) {
   const R = 3958.8, toRad = d => d * Math.PI / 180;
@@ -68,7 +66,7 @@ const titleRow = (title, C) => (
 
 function RouteRow({ r, onOpen, C, areaName }) {
   const stars = r.stars ? Math.round(r.stars) : 0;
-  const sub = [areaName || null, r.discipline ? r.discipline[0].toUpperCase() + r.discipline.slice(1) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
+  const sub = [areaName || null, r.discipline ? (DL[r.discipline] || r.discipline) : null, r.sort_order != null ? "#" + r.sort_order + " in this area" : null].filter(Boolean).join(" · ");
   return (
     <div {...clickable(() => onOpen(r))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "11px 12px", marginBottom: 8, background: C.card, border: "1px solid " + C.border, borderRadius: 11, cursor: "pointer" }}>
       <div style={{ flex: 1, minWidth: 0 }}>
@@ -780,13 +778,13 @@ const GRADE_SCALES = (() => {
 const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
-//   sport / trad / rock / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
+//   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
 //   aid and mixed: the grade stored is the 5.x FREE grade on nearly every row (aid 1,254 of 1,259),
 //     and OpenBeta publishes no A/C or M grade at all, so a 5.x range is what the data supports.
 //   ice: two scales — the WI grades imported from OpenBeta (scripts/pipeline/import-ice-wi.mjs) and
 //     the older rows whose only grade is 5.x — so ice offers both and filters on grade_system.
 // Re-run the measurements before widening this.
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], rock: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["yds"], mixed: ["yds"], ice: ["wi", "yds"] };
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["yds"], mixed: ["yds"], ice: ["wi", "yds"] };
 // The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
 // range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
 // corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
@@ -1042,7 +1040,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
-  // alpine; "rock" is never listed), so a mostly-sport crag with trad lines shows under both.
+  // alpine; top rope is its own type since 0202), so a mostly-sport crag with trad lines shows under both.
   // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 
@@ -1056,7 +1054,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll = data && data.rows;
-  const typesOf = a => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline && a.dominant_discipline !== "rock" ? [a.dominant_discipline] : []);
+  const typesOf = a => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline ? [a.dominant_discipline] : []);
   const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
   const discsInView = useMemo(() => {
     const n = {};

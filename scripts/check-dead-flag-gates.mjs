@@ -32,6 +32,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
@@ -82,7 +83,7 @@ function scrub(src) {
 const sources = new Map();
 const unreadable = [];
 for (const f of FILES) {
-  try { sources.set(f, scrub(fs.readFileSync(path.join(ROOT, f), "utf8"))); }
+  try { sources.set(f, scrub(readAppFile(path.join(ROOT, f)))); }
   catch (e) { unreadable.push(f + " (" + e.code + ")"); }
 }
 // Fail closed. Swallowing the read error made an earlier run of this script print

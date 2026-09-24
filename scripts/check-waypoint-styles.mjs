@@ -27,7 +27,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { assertCovered } from "./lib/guard-sources.mjs";
+import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -42,7 +42,7 @@ const raw = {};
 for (const f of FILES) {
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) { console.error(`\n${GUARD} FAILED — ${f} is missing; the scan would cover a fraction of the app.`); process.exit(1); }
-  raw[f] = fs.readFileSync(p, "utf8");
+  raw[f] = readAppFile(p);
 }
 // Fails closed on a partial read, the guard-sources.mjs rule: a shorter file list is a
 // coverage failure, never a quietly cleaner result.
@@ -253,9 +253,9 @@ else if (rawEquality.length) {
 // NORMALISER should reach. That exercises WP_TYPE_MAP -> wpType -> WP_STYLE end to end, which
 // is the whole path that was broken, and it fails if the waypoint list stops rendering at all.
 const probe = {
-  id: "probe_wp", name: "Probe Route", grade: "5.9", pitches: 3, discipline: "trad",
+  id: "probe_wp", name: "Probe Route", grade: "5.9", pitches: 3, discipline: "alpine",
   mountainId: "probe_area",
-  _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Washington", lat: 47.5, lng: -121.0 },
+  _dbArea: { id: "probe_area", name: "Probe Area", areaType: "peak", region: "Washington", lat: 47.5, lng: -121.0 },
   waypoints: [
     { type: "Base", name: "Start of the climbing", lat: 47.50, lng: -121.00, elev: 5000, distMi: 1.0 },
     { type: "Climbing area", name: "The crag", lat: 47.51, lng: -121.01, elev: 5100, distMi: 1.2 },
@@ -323,6 +323,36 @@ export function render(route, tab) {
     if (html.includes("📍")) bad("the fallback 📍 still renders — a waypoint type is reaching the screen unstyled");
     else ok("no fallback 📍 anywhere in the rendered route");
   }
+  /* A CRAG route (trad/sport/bouldering, not on a peak) carries no WAYPOINTS list and no "What
+     to expect" card — a product decision, and the probe above is alpine for that reason. The
+     inverse is asserted so the decision cannot quietly revert: the same waypoints on a sport
+     route off a crag must render NEITHER heading on either tab. The map (and its legend) stays,
+     so this matches the section HEADING, never a glyph. */
+  const crag = { ...probe, discipline: "sport", _dbArea: { ...probe._dbArea, areaType: "crag" } };
+  let cragHtml = "";
+  try { cragHtml = render(crag, "overview") + render(crag, "planner"); }
+  catch (e) { bad(`RouteDetail threw rendering a crag route with waypoints: ${e.message.slice(0, 120)}`); }
+  if (cragHtml.length < 2000) bad(`the crag render is only ${cragHtml.length} chars — every "must NOT contain" below would pass vacuously`);
+  else {
+    if (/>WAYPOINTS</.test(cragHtml)) bad("a sport route off a crag still renders a WAYPOINTS section");
+    else ok("a crag route renders no WAYPOINTS section");
+    if (cragHtml.includes(">What to expect<")) bad("a sport route off a crag still renders the \"What to expect\" card");
+    else ok("a crag route renders no \"What to expect\" card");
+  }
+  if (html && !/>WAYPOINTS</.test(html)) bad("the ALPINE probe renders no WAYPOINTS heading — the crag rule has over-reached");
+  /* "Trad that climbs a peak is called alpine, always" (user decision). catOf() folds it into
+     alpine, so the crag rule above must NOT reach it. A trad route filed on a peak-typed area
+     keeps its WAYPOINTS; the same route on a crag loses them — both directions, or a rule that
+     only ever admits is indistinguishable from having no rule. */
+  const tradPeak = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "peak" } };
+  const tradCrag = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "crag" } };
+  let tpHtml = "", tcHtml = "";
+  try { tpHtml = render(tradPeak, "planner"); tcHtml = render(tradCrag, "overview") + render(tradCrag, "planner"); }
+  catch (e) { bad(`RouteDetail threw rendering a trad probe: ${e.message.slice(0, 120)}`); }
+  if (tpHtml && !/>WAYPOINTS</.test(tpHtml)) bad("a TRAD route on a PEAK renders no WAYPOINTS — catOf() is not calling it alpine");
+  else if (tpHtml) ok("a trad route on a peak is treated as alpine and keeps its WAYPOINTS");
+  if (tcHtml && />WAYPOINTS</.test(tcHtml)) bad("a trad route on a CRAG still renders WAYPOINTS — the peak rule has over-reached");
+  else if (tcHtml) ok("a trad route on a crag stays a crag route (no WAYPOINTS)");
 }
 
 console.log();
