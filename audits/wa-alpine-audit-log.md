@@ -27065,3 +27065,75 @@ anon key only). No SQL file this batch — no confirmed-fixable error was found,
 Progress file's `last_processed_id` advanced to `wa_kimtah_peak_scramble`. Next batch
 continues in sorted-id order after that id. 171 + 8 = 179 audited this pass through batch
 329; 524 - 179 = **345 in-scope routes remain unaudited this pass**.
+
+## Batch 330 (2026-09-24, pass 6)
+
+Routes: `wa_king_kong_gorillas_direct_direct`, `wa_klawatti_peak_southeast_face`,
+`wa_klawatti_peak_sw_buttress`, `wa_koala_krack`, `wa_kololo_peaks_standard`,
+`wa_kyes_peak_glaciated_scramble`, `wa_kyes_peak_northeast_ridge`, `wa_labor_pains`.
+
+**Fixed (1):**
+- `wa_king_kong_gorillas_direct_direct` (Mount Stuart, King Kong - Gorillas Direct Direct):
+  the row contradicted itself — `fa` named Sol Wertkin's Sept 9, 2016 first-free-ascent
+  partner as "Tyree Johnson", while the row's own `beta` field said "First ascent:
+  September 9, 2016 by Sol Wertkin and Jon Gleason" for the identical climb. Verified
+  against Wertkin's own trip report/blog on this specific route and the AAC Publications
+  article "Mt. Stuart, King Kong" — both independently name Jon Gleason. Tyree Johnson is a
+  real Wertkin climbing partner on Mount Stuart (a headwall-crack pitch during the
+  multi-year King Kong project, and separately an Ulrich's Couloir splitboard descent) but
+  no source ties him to this send. `fa` corrected to match what `beta` already had right.
+
+**Flagged, not fixed (2):**
+- `wa_kololo_peaks_standard`: `gain_ft`/`loss_ft` are 6120/9500, a ~3,380 ft gap, despite the
+  row's own `rappels` field ("None typically needed — descent reverses the ascent route")
+  and `descent_text` both stating the descent reverses the identical out-and-back line back
+  to the same trailhead. For a true reversed round trip, cumulative gain and loss must be
+  equal — undulating terrain inflates both numbers by the same amount, it can't make them
+  diverge. A closely-related GPS-tracked trip report for the same North Fork Sauk → White
+  Chuck Glacier approach (stephabegg.com) confirms the approach really is undulating enough
+  to push both numbers well above the naive trailhead-to-summit difference, and separately
+  shows gain/loss swapping cleanly when the return leg uses a genuinely different trail —
+  which is exactly the reversal principle this route's own stored descent method violates.
+  6120 looks plausible for the round trip; 9500 does not. No independently-verifiable
+  correct replacement value was found, so per the standing rule against guessing a fix,
+  this is left as stored for a human to re-derive `loss_ft` from the route's own GPX track.
+- `wa_klawatti_peak_southeast_face`: one `gpx` point (`[48.5136, -121.1964]`) sits roughly
+  5.8 km west-northwest of the Eldorado Creek trailhead — displaced away from the
+  Eldorado/Klawatti approach corridor the rest of the route's waypoints and prose describe,
+  rather than along it. No authoritative source for the actual ground track was found to
+  confirm or refute this specific point, so it is a plausible geometric inconsistency for
+  human review rather than a confirmed error.
+
+**Checked and confirmed correct (no action):** Mount Stuart's 9,415 ft high point and its
+West Face Wall / 8-pitch structure (4 pitches of Gorillas in the Mist, 2 of Gorillas Direct,
+2-pitch direct finish) both match AAC Publications and Wertkin's own account exactly.
+Klawatti Peak's 8,485 ft (both routes) and its shared July 7, 1940
+Anderson/Boyer/Gorton first ascent (also the peak's own FA) both check out against
+Wikipedia/PeakVisor; the SE Face route's pre-existing self-flagged "South Face vs Southeast
+Face" naming note was independently corroborated by SummitPost's route breakdown, not
+re-litigated as new. Koala Krack's 5.4/1-pitch stats on Kangaroo Temple (7,572 ft, matching
+SummitPost/ListsOfJohn) and its Washington Pass hairpin-turnout trailhead all check out; its
+pre-existing "no MP/SuperTopo page found for this route" gap was independently re-searched
+and not resolved further — left as already flagged. Kyes Peak's 7,280 ft high point (both
+routes) and its former names "Goblin Peak"/"Mount Michigan" match Wikipedia/PeakVisor; the
+Northeast Ridge route's solo Mike Heath FA (Sept 14, 1968) is corroborated by his own
+first-person AAC Publications note, and its Quartz Creek Trail/Curry Gap approach — correctly
+distinct from the sibling route's Blanca Lake Trailhead — matches WTA/Gaia GPS/Discover
+Darrington. (The NE Ridge route's waypoints list only the summit, no trailhead pin, unlike
+every other route in this batch — a data-completeness gap worth a human adding a Quartz
+Creek trailhead waypoint, but not a factual error, so left unflagged as a fix item.) Labor
+Pains' Grade III/5.11a/5-pitch stats, its Sept. 1988 Risse/McBain FA, and North Early Winters
+Spire's 7,760 ft high point all check out across SummitPost/SuperTopo/CascadeClimbers
+sourcing; one search briefly surfaced a Beckey/Beckstead 1965 FA that turned out to belong to
+the neighboring West Face route on the same peak, not Labor Pains — a search-engine artifact,
+not a real conflict.
+
+**Verification note:** same as prior batches — this scheduled run has no `.env`/`.env.local`;
+ran `check:sql` by exporting `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` directly into the
+shell. It confirmed the single write target in this batch's SQL file exists in the live DB,
+and a direct read confirmed the row's live `fa` value matches the guard in the `WHERE`
+clause exactly before the fix was written.
+
+Progress file's `last_processed_id` advanced to `wa_labor_pains`. Next batch continues in
+sorted-id order after that id. 179 + 8 = 187 audited this pass through batch 330;
+524 - 187 = **337 in-scope routes remain unaudited this pass**.
