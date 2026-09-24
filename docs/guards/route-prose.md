@@ -986,3 +986,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     live), applied by `scripts/oneoff/apply-misplaced-prose-repairs.mjs` (`--dry` first), which
     refuses the whole run on one stale edit and re-reads every row after writing.
   - Read-only, anon key, fails closed on a read under 100k rows. **Not a build gate.**
+  - **Section 4, SOURCE NAMED, added 2026-09-24 after the owner restated the rule** (*"as a rule we
+    cant say per summit post"*). `audit:prose-citations` reads **WA routes and a fixed column list**, so
+    *"5.2 (5.5 at the overhanging band per SummitPost)"* in `rock_grade` sat outside its reach — as did
+    camp notes, crowd estimates, every other state and the area blurbs. Section 4 walks **every rendered
+    string, every state, plus `areas.blurb`**, with that audit's own `NAMED` and `COMMON_NOUN` (lifted by
+    anchor, never retyped) and a generic `SOURCING` needle (*"trip reports describe"*, *"one account"*,
+    *"published beta"*, *"depending on source"*).
+    - **First run 946 strings on 583 rows → 0.** 1,068 edits (`scripts/oneoff/remove-all-sources-edits.json`)
+      then 17 (`…-2.json`), applied by `scripts/oneoff/apply-remove-all-sources.mjs`. Its post-condition
+      re-runs both needles on every rewritten string — it refused 7 on the first dry run, **2 of them
+      rewrites that had swapped one sourcing phrase for another** ("limited published beta" → "little
+      available beta"). *"The find text is gone"* would have passed both.
+    - **Round 2 exists because a value can hold TWO citations.** The scan reported one match per string,
+      the drafting pointed at it, and 16 long `approach`/`descent_text` values kept their second
+      *"trip reports describe"*. Re-run the audit after any batch; do not trust the batch's own count.
+    - **Not rendered, so not scanned:** `data_quality` (8,785 "sourced from CalTopo" gaps — no reader),
+      `corrections`, `name_search` (a route is literally named *The Source*), `lists`, `verif`.
+    - **The bare word "source" is not a cue** — in this catalog it is mostly water (*"the last reliable
+      source"*) and Source Lake. Verbs are whole words (*"noted"* is not *"note"*).
+    - **26 named-but-not-a-source values are exempt BY NAME in `KEEP`**, each read: a club as the OPERATOR
+      of trips or owner of a grading scale, a guidebook a climber is told to CARRY (the owner's KEEP),
+      a map app as a TOOL, a first-ascent credit, area naming history.
