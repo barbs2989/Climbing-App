@@ -782,7 +782,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     own declaration through `--known`, since there is no longer one in the file to make stale.
 
 - **`check:search-norm`** asserts that the two halves of "how a typed name is matched" are one
-  rule. Migration `0189` made every DB-backed search forgive spelling — before it, all of them
+  rule. Migration `0190` made every DB-backed search forgive spelling — before it, all of them
   matched `name ilike '%q%'`, one verbatim substring, and the catalog spells one word several
   ways: **243** area names start "Mount" and **149** start "Mt", **1,910** carry an apostrophe,
   **118** a non-ASCII letter. "mt baker" returned one area, a highway ("Bellingham and Mt Baker
@@ -800,7 +800,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     for the global route search, the offline fallbacks and the seed `fuzzyMatch`.
     `useRouteSearch` filters the SQL-built column with JS-built words, and its exact-area leg is
     an `eq` between `name_search` and a JS `searchNorm()` — so a spelling added on one side
-    only matches in one box and silently misses in the next, the defect `0189` exists to fix.
+    only matches in one box and silently misses in the next, the defect `0190` exists to fix.
   - Reads the NEWEST migration defining `search_forms()` and compares every row both ways,
     compares `search_clean()`'s accent-fold strings with JS, then asserts behaviour (the
     reported "mt baker" case among them) and that tokens never carry a LIKE metacharacter,
@@ -810,7 +810,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `check:function-drift` does.
   - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold
     drifts, JS stops folding mt), each restored byte-identically.
-  - **Traps met building 0189, recorded so they are not re-met.** A stored GENERATED column is
+  - **Traps met building 0190, recorded so they are not re-met.** A stored GENERATED column is
     the obvious storage and cannot be applied here: it rewrites 205k routes under ACCESS
     EXCLUSIVE, outlived the Management API's 100 s limit (HTTP 524), and blocked every live
     read while it ran. Altering `areas` then `routes` in sequence deadlocked (40P01) against a

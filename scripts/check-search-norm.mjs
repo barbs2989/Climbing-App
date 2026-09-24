@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 // check:search-norm — the JS and SQL halves of "how a typed name is matched" are ONE rule.
 //
-// Migration 0189 made every search forgive spelling: "mt baker" finds Mount Baker, "bobs wall"
+// Migration 0190 made every search forgive spelling: "mt baker" finds Mount Baker, "bobs wall"
 // finds Bob's Wall, "ne face" finds Northeast Face. The rule exists twice, necessarily:
 //   SQL  search_forms / search_clean  — builds `name_search` and tokenises for the RPCs
 //   JS   lib/search.js                — tokenises for the global route search (PostgREST),
 //                                       the offline fallbacks, and the seed fuzzyMatch
 // useRouteSearch filters the SQL-built `name_search` with JS-built words, and its exact-area leg
 // compares `name_search` to a JS-built searchNorm() with `eq`. A spelling added on one side only
-// matches in one box and silently misses in the next — exactly the defect 0189 fixes.
+// matches in one box and silently misses in the next — exactly the defect 0190 fixes.
 //
 // Static and DB-free, so it runs in the build:
 //   1. the newest migration defining search_forms() maps every word to the SAME forms as JS

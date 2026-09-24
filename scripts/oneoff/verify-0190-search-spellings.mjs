@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Is 0189 applied, backfilled, and does the DATABASE's spelling rule equal lib/search.js's?
+// Is 0190 applied, backfilled, and does the DATABASE's spelling rule equal lib/search.js's?
 //
 // check:search-norm compares the two TABLES statically; this compares OUTPUTS on real names,
 // which is the only thing that catches a difference in the parts no table expresses (how
@@ -52,5 +52,5 @@ await expect("mt rainer", "Mount Rainier");
 const fz = await rpc("search_names_fuzzy", { q: "shucksan", lim: 3 });
 console.log(`search_names_fuzzy("shucksan") -> ${fz.map((x) => x.kind + ":" + x.name).join(" | ")}`);
 if (!fz.some((x) => /shuksan/i.test(x.name))) { bad++; console.log("  MISSING: a Shuksan row"); }
-console.log(bad ? `FAILED (${bad})` : "OK — 0189 applied, backfilled, and the DB agrees with lib/search.js");
+console.log(bad ? `FAILED (${bad})` : "OK — 0190 applied, backfilled, and the DB agrees with lib/search.js");
 process.exit(bad ? 1 : 0);

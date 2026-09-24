@@ -1,5 +1,8 @@
 -- SEARCH FORGIVES HOW A NAME IS SPELLED: "mt baker" finds Mount Baker.
 --
+-- APPLIED LIVE 2026-09-24 while this file was numbered 0189; renumbered to 0190 before merge
+-- because #1804 claimed 0189. The number is a label only — the SQL is unchanged.
+--
 -- Every DB-backed search box matched `name ilike '%' || q || '%'` — the typed string, verbatim,
 -- as one contiguous substring. The catalog spells the same word several ways, so whichever way
 -- a climber typed it, half the catalog was unreachable. Measured on the live `areas` table
