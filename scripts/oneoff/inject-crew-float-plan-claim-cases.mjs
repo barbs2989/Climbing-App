@@ -22,7 +22,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"].map((f) => path.join(ROOT, f));
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/CrewCard.jsx"].map((f) => path.join(ROOT, f));
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex");
 
 const CASES = [
@@ -50,7 +50,7 @@ const CASES = [
     expect: "an emergency contact is settable now",
     why: "once a climber can set one, saying the app holds it is CORRECT — report a moved premise, do not go on forbidding it" },
 
-  { name: "plan-becomes-rendered", file: "ClimbMatchCore.jsx", fires: true,
+  { name: "plan-becomes-rendered", file: "lib/CrewCard.jsx", fires: true,
     find: "{crew.floatPlan?\"✓ Float plan set\":\"⚠ Set float plan\"}",
     repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"⚠ Set float plan\"}",
     expect: "a screen reads the stored crew float plan",

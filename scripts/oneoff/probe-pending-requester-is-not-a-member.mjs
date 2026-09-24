@@ -15,6 +15,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -22,7 +23,8 @@ const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+// Through readCoreSource(): CrewCard, which owns every reader asserted here, moved to lib/ to load lazily.
+const src = readCoreSource(ROOT);
 
 // The rule, lifted from source rather than retyped -- a copy would agree with itself whatever the
 // app did, which is the whole question.

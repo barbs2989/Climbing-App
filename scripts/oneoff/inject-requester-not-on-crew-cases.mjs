@@ -25,6 +25,7 @@ const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
   ps: path.join(ROOT, "lib/PartnerSearch.jsx"),
+  CrewCard: path.join(ROOT, "lib/CrewCard.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-requester-not-on-crew.lock");
 
@@ -79,7 +80,7 @@ const CASES = [
     repl: 'const otherMem=cr.members.filter(m=>m.climberId!==0);' },
 
   // OVER-REACH. A fix that only ever removes requesters is satisfied by removing them everywhere.
-  { name: "OVER-REACH-sweep-the-roster", file: "core", expect: "member LIST still shows the requester",
+  { name: "OVER-REACH-sweep-the-roster", file: "CrewCard", expect: "member LIST still shows the requester",
     find: 'const mem=crew.members.filter(m=>m.climberId!==0).map(',
     repl: 'const mem=crewInCrew(crew).filter(m=>m.climberId!==0).map(' },
 

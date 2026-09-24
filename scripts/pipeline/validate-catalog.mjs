@@ -10,7 +10,7 @@ import { readFileSync } from "node:fs";
 const [, , areasPath = "utah_areas.json", routesPath = "utah_routes.json"] = process.argv;
 
 const AREA_TYPES = new Set(["world", "country", "state", "range", "region", "canyon", "peak", "crag", "wall"]);
-const DISCIPLINES = new Set(["rock", "bouldering", "ice", "mixed", "alpine", "aid", "scrambling", "mountaineering", "hiking"]);
+const DISCIPLINES = new Set(["rock", "toprope", "bouldering", "ice", "mixed", "alpine", "aid", "scrambling", "mountaineering", "hiking"]);
 const ROUTE_HOST_TYPES = new Set(["crag", "wall", "peak"]); // routes should hang off these
 const KNOWN_ROOTS = new Set(["world", "usa"]);              // parentId may point here even if absent from the file
 const BANNED_KEYS = ["desc", "blurb", "beta", "description", "photos", "photo", "topo", "topos",
@@ -79,8 +79,11 @@ if (Array.isArray(areas) && Array.isArray(routes)) {
     if (!DISCIPLINES.has(r.discipline)) err(`${where}: invalid discipline "${r.discipline}"`);
     if (r.discipline === "rock" && r.style != null && r.style !== "Trad" && r.style !== "Sport")
       err(`${where}: rock style must be "Trad"/"Sport" (got "${r.style}")`);
+    // "rock" is only the catalog's carrier for a Trad/Sport style; load-state resolves it to
+    // trad/sport. Without a style it would load as a "rock" type, which the app no longer has
+    // (0202) — a top-rope-only climb is "toprope".
     if (r.discipline === "rock" && r.style == null)
-      warn(`${where}: rock route missing style (Trad/Sport) — trad/sport features won't apply`);
+      err(`${where}: rock route missing style (Trad/Sport) — type it trad, sport or toprope`);
     if (r.discipline !== "rock" && r.style != null)
       warn(`${where}: non-rock route has style "${r.style}" (omit it)`);
     if (typeof r.pitches !== "number") warn(`${where}: pitches not a number`);

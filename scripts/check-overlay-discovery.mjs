@@ -22,6 +22,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { overlayStates, buildOpener, buildRouteDetailOpener, OVERLAY_PAYLOADS, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 // The anchor used by check:signed-in and check:overlay-scroll. check:zero injects at its own
@@ -34,7 +35,7 @@ const fail = (m) => { console.error("  FAIL " + m); fails++; };
 const ok = (m) => console.log("  ok   " + m);
 
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 
 const all = overlayStates(app, core);
 const flags = all.filter((s) => s.kind === "flag");

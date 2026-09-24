@@ -41,10 +41,11 @@ import { overlayStates } from "./lib/overlay-scaffold.mjs";
 const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const coreRaw = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const coreRaw = readCoreSource();
 
 const CLAIMS = /no .{0,30}? yet|nothing here(?=\s*(?:yet\b|[.<—,)]|$))|none yet|no results|no custom lists|\bno(?: \w+){0,2} (?:climbs?|crews?|routes?|areas?|objectives?|friends?|groups?|invites?|lists?|reports?|catches|vouches|chats?|messages?|photos?)\b|\b0 (?:climb|crew|route|area|objective|logged|joined|friend|group|invite)/gi;
 const app = maskComments(appRaw, "ClimbMatch.jsx");
@@ -235,6 +236,13 @@ const CHECKED = {
   aboutOpen: 'renders no such copy of its own -- it sits beside <Help> at the same render site, so the 3000-char window attributes Help\'s FAQ to it; see helpOpen',
 
   legal: "LegalView is static copy; the certifications/skills/events lines come from GuideDashboard, which is seed-backed (DEMO_FILLERS)",
+
+  /* SharedListView (0199) reads ONE list through useSharedList and branches on the query itself, not
+     on a named xUnavailable flag: q.isError renders "Couldn't load this list…", a null result (RLS
+     answers a private or deleted list with zero rows) renders "This list is private, or its owner has
+     deleted it.", and only a list that WAS read and holds no route ids reaches "No climbs on this list
+     yet". The other three phrases are FullProfile's, which renders beside it — see eventInvite. */
+  sharedListId: 'SharedListView says "No climbs on this list yet" only after the list was READ and holds no route ids — q.isError renders "Couldn’t load this list…" instead; the other three phrases are FullProfile\'s, attributed by the 3000-char window (see eventInvite)',
 
   /* The two below were EXPOSED by the attribution fix — each had been counted as gated on the
      Inbox's flags and so was dropped before anything examined it. Read one at a time.

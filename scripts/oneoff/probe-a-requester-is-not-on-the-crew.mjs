@@ -24,6 +24,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
@@ -31,8 +32,8 @@ const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
-// PartnerSearch, Leaderboards and CrewFinder moved out of ClimbMatchCore.jsx to load lazily; they are still app source.
-const core = ["ClimbMatchCore.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"].map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
+// Through readCoreSource(): CrewCard and the partner screens moved out of core to load lazily.
+const core = readCoreSource(ROOT);
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 // ---------------------------------------------------------------- 1. the rule itself

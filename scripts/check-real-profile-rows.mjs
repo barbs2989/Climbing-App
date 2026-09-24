@@ -21,14 +21,14 @@
 // Static, so it sits in `npm run build`. It cannot flake and needs no browser.
 import fs from "node:fs";
 import path from "node:path";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
 
 const GUARD = "check:real-profile-rows";
 const ROOT = process.cwd();
 const all = appSources(ROOT, GUARD);
 // The three lib/ screens were moved out of ClimbMatchCore.jsx to load lazily; they render
 // climber rows, so dropping them from this list would silently stop checking those rows.
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", ...MOVED_FROM_CORE];
 for (const f of FILES) {
   if (!all.some((p) => p === f || path.basename(p) === f)) {
     console.error(`${GUARD} FAILED — ${f} was not among the app sources, so nothing was scanned.`);

@@ -31,6 +31,7 @@ import { fileURLToPath } from "node:url";
 import { execFileSync } from "node:child_process";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -50,7 +51,7 @@ const read = (rel) => {
 // Scanning a DIRECTORY is not asserting against a file: read()'s length floor is there to catch
 // a truncated source that would make assertions vacuous, and over 180 migrations it simply trips
 // on the short ones. The file this scan SELECTS still goes through read().
-const readRaw = (rel) => fs.readFileSync(path.join(ROOT, rel), "utf8");
+const readRaw = (rel) => readAppFile(path.join(ROOT, rel));
 const ast = (src, file) => {
   try { return parse(src, { sourceType: "module", plugins: ["jsx"] }); }
   catch (e) { return dead("could not parse " + file + ": " + e.message); }

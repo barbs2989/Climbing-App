@@ -27,7 +27,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { assertCovered } from "./lib/guard-sources.mjs";
+import { assertCovered, readAppFile } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -42,7 +42,7 @@ const raw = {};
 for (const f of FILES) {
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) { console.error(`\n${GUARD} FAILED — ${f} is missing; the scan would cover a fraction of the app.`); process.exit(1); }
-  raw[f] = fs.readFileSync(p, "utf8");
+  raw[f] = readAppFile(p);
 }
 // Fails closed on a partial read, the guard-sources.mjs rule: a shorter file list is a
 // coverage failure, never a quietly cleaner result.
@@ -340,6 +340,19 @@ export function render(route, tab) {
     else ok("a crag route renders no \"What to expect\" card");
   }
   if (html && !/>WAYPOINTS</.test(html)) bad("the ALPINE probe renders no WAYPOINTS heading — the crag rule has over-reached");
+  /* "Trad that climbs a peak is called alpine, always" (user decision). catOf() folds it into
+     alpine, so the crag rule above must NOT reach it. A trad route filed on a peak-typed area
+     keeps its WAYPOINTS; the same route on a crag loses them — both directions, or a rule that
+     only ever admits is indistinguishable from having no rule. */
+  const tradPeak = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "peak" } };
+  const tradCrag = { ...probe, discipline: "trad", _dbArea: { ...probe._dbArea, areaType: "crag" } };
+  let tpHtml = "", tcHtml = "";
+  try { tpHtml = render(tradPeak, "planner"); tcHtml = render(tradCrag, "overview") + render(tradCrag, "planner"); }
+  catch (e) { bad(`RouteDetail threw rendering a trad probe: ${e.message.slice(0, 120)}`); }
+  if (tpHtml && !/>WAYPOINTS</.test(tpHtml)) bad("a TRAD route on a PEAK renders no WAYPOINTS — catOf() is not calling it alpine");
+  else if (tpHtml) ok("a trad route on a peak is treated as alpine and keeps its WAYPOINTS");
+  if (tcHtml && />WAYPOINTS</.test(tcHtml)) bad("a trad route on a CRAG still renders WAYPOINTS — the peak rule has over-reached");
+  else if (tcHtml) ok("a trad route on a crag stays a crag route (no WAYPOINTS)");
 }
 
 console.log();

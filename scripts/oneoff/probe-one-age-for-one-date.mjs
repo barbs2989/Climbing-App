@@ -27,6 +27,7 @@ import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
 import { settledText } from "../lib/render-settle.mjs";
 import { tapByText } from "../lib/tap-by-text.mjs";
+import { MOVED_FROM_CORE } from "../lib/guard-sources.mjs";
 
 // A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
 // as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
@@ -35,8 +36,8 @@ assertQuietBox("probe-one-age-for-one-date.mjs");
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-// PartnerSearch, Leaderboards and CrewFinder moved out of ClimbMatchCore.jsx to load lazily; they are still app source.
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
+// Components moved out of ClimbMatchCore.jsx to load lazily are still app source (see guard-sources.mjs).
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", ...MOVED_FROM_CORE];
 const problems = [];
 
 // =======================================================================================

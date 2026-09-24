@@ -4,6 +4,10 @@
 --   npx supabase db query --linked -f scripts/oneoff/probe-ranks-anti-padding.sql
 -- Expected (verified 2026-09-24): future_refused true, stranger_refused true, b_catches 1,
 -- a_all.logged 8, a_backed.logged 2, a_all.points.sport 80, a_all.points.all 111,
+--   ...until 0203 (re-verified 2026-09-24): a_all.backed 0, a_backed null, a_all.points.all 77,
+--   points.sport 51. Its photo carries no taken-on date and partner B is a brand-new account with
+--   no confirmed email, so NEITHER backs a climb any more; every other value is unchanged. The
+--   0203 rules have their own probe, probe-ranks-anti-collusion.sql.
 -- a_all.onsights.sport.life 1, a_all.peaks.life 1, confirmations_after_edit 0, near_no_origin true.
 -- Route ids are real catalog rows; if one is ever deleted, pick another of the same shape.
 begin;

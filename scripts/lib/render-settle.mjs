@@ -34,6 +34,7 @@
 
 import fs from "fs";
 import path from "path";
+import { readAppFile } from "./guard-sources.mjs";
 
 // Used ONLY to label a short screen as "still fetching" rather than "blank or broken". It
 // never decides when to stop waiting — settledText does that — so a string it misses costs
@@ -72,7 +73,7 @@ export function spinnerCoverage(root = process.cwd()) {
   for (const rel of files) {
     const abs = path.join(root, rel);
     if (!fs.existsSync(abs)) continue;
-    const src = fs.readFileSync(abs, "utf8");
+    const src = readAppFile(abs);
     read++;
     // Quoted string literals and bare JSX text nodes. Placeholders are matched too and that
     // is harmless: `placeholder=` never reaches innerText, so it can only ever add an

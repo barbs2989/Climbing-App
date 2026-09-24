@@ -27,9 +27,10 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
 import { join } from "node:path";
 import { createRequire } from "node:module";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
-const core = readFileSync(join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 const rd = readFileSync(join(ROOT, "RouteDetail.jsx"), "utf8");
 /* Resolve esbuild through NODE'S OWN resolution, never a path under ROOT and never `npx`.
    This repo is worked in git worktrees whose own `node_modules` is EMPTY — packages resolve from

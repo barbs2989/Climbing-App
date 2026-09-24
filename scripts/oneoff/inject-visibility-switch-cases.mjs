@@ -73,7 +73,7 @@ const CASES = [
     why: "saveEdit stops pushing it back — Settings and the editor would disagree until reload",
     find: "setShowRealName(!!d.showRealName);", repl: "" },
 
-  { name: "core-undeclared", file: "ClimbMatchCore.jsx", must: "fail",
+  { name: "core-undeclared", file: "lib/EditProfileScreen.jsx", must: "fail",
     why: "a NEW editor switch in Core must be declared, not silently unchecked",
     find: 'aria-checked={draft.showRealName}',
     repl: 'aria-checked={draft.brandNewEditorFlag}' },
