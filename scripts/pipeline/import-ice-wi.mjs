@@ -40,11 +40,20 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const norm = s => String(s || "").trim().toLowerCase();
 
-function sql(q) {
-  const out = execFileSync("npx", ["supabase", "db", "query", "--linked", q], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024 });
-  const j = JSON.parse(out.slice(out.indexOf("{")));
-  if (!Array.isArray(j.rows)) throw new Error("unexpected db query output");
-  return j.rows;
+// The CLI's login-role handshake times out now and then on a busy project (seen: "Connection
+// terminated due to connection timeout"), so a read is retried rather than failing the whole run.
+function sql(q, tries = 4) {
+  for (let i = 0; ; i++) {
+    try {
+      const out = execFileSync("npx", ["supabase", "db", "query", "--linked", q], { encoding: "utf8", maxBuffer: 512 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
+      const j = JSON.parse(out.slice(out.indexOf("{")));
+      if (!Array.isArray(j.rows)) throw new Error("unexpected db query output: " + out.slice(0, 200));
+      return j.rows;
+    } catch (e) {
+      if (i >= tries - 1) throw e;
+      execFileSync("sleep", [String(5 * (i + 1))]);
+    }
+  }
 }
 async function gql(query, tries = 6) {
   for (let i = 0; i < tries; i++) {
@@ -172,8 +181,14 @@ const pick = ALL ? states : states.filter(s => args.includes(s.id));
 if (!pick.length) { console.error("Name a state id (e.g. colorado) or pass --all. Known: " + states.map(s => s.id).join(", ")); process.exit(1); }
 console.log((APPLY ? "APPLY" : "DRY RUN") + " — " + pick.length + " state(s)");
 const tot = { placed: 0, written: 0, refused: 0, toAdd: 0 };
-for (const st of pick) {
-  try { const r = await runState(st); for (const k in tot) tot[k] += r[k] || 0; }
-  catch (e) { console.error(`${st.name}: FAILED — ${e.message}`); process.exitCode = 1; }
-}
+// A state walk is ~30 min for the largest, and nearly all of it is waiting on OpenBeta, so states
+// run in a small pool (--jobs, default 4). Kept small: OpenBeta answered 502 under load once already.
+const JOBS = Math.max(1, Number((args.find(a => a.startsWith("--jobs=")) || "").slice(7)) || 4);
+const queue = [...pick];
+await Promise.all(Array.from({ length: Math.min(JOBS, queue.length) }, async () => {
+  for (let st; (st = queue.shift());) {
+    try { const r = await runState(st); for (const k in tot) tot[k] += r[k] || 0; }
+    catch (e) { console.error(`${st.name}: FAILED — ${e.message}`); process.exitCode = 1; }
+  }
+}));
 console.log(`TOTAL placed ${tot.placed} | ${APPLY ? "written " + tot.written : "would add " + tot.toAdd} | refused ${tot.refused}`);
