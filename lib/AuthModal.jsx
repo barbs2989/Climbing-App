@@ -5,6 +5,12 @@
 // authenticates you before you have chosen the new password. Password is never stored.
 import { useState } from "react";
 import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updatePassword, useOAuthProviders, signInWithGoogle } from "./auth";
+
+// Must match the project's Auth setting `password_min_length` (raised 6 -> 8 on
+// 2026-09-23). The server is what enforces it; this only gives a clear message before
+// the round trip. Signing IN is deliberately not checked -- an account created under
+// the old 6-character minimum must still be able to sign in.
+const MIN_PASSWORD = 8;
 import { POLICY_VERSION } from "./policy";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
@@ -54,7 +60,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   };
 
   const saveNewPassword = async () => {
-    if (password.length < 6) { setErr("Use at least 6 characters."); return; }
+    if (password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { error } = await updatePassword(password);
     setBusy(false);
@@ -72,6 +78,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     // would not be verified either -- so it collects more and proves the same. Gate the write,
     // not just the checkbox, or the rule is decoration.
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
+    if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { data, error } = mode === "in"
       ? await signIn(email.trim(), password)
