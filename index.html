@@ -40,8 +40,12 @@
       button:not(:disabled):active { opacity: 0.82; transform: scale(0.97); }
       /* Smooth state changes: presses ease back, tab/selection colours & borders glide */
       button, a, input, select, textarea, [style*="cursor: pointer"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
-      /* Tappable cards & chips (not just <button>) press in on tap */
-      [style*="cursor: pointer"]:active { transform: scale(0.985); }
+      /* Tappable cards & chips (not just <button>) press in on tap. Matched by ROLE as well as
+         by cursor: a clickable() control announces itself with a role, and one that never set
+         cursor:pointer used to get no press feedback at all. An inline transform (a centring
+         translate, a rotated chevron) is inline and so outranks this rule — it is never undone. */
+      [style*="cursor: pointer"], [role="button"], [role="tab"], [role="switch"], [role="checkbox"], [role="option"], [role="menuitem"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
+      [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: scale(0.985); }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
@@ -90,8 +94,21 @@
       .cm-stagger > *:nth-child(6){animation-delay:.2s} .cm-stagger > *:nth-child(n+7){animation-delay:.24s}
       /* Bottom sheets (rounded-top containers) slide up when they open */
       [style*="18px 18px 0 0"], [style*="16px 16px 0 0"] { animation: cm-slideup .28s cubic-bezier(.2,.8,.2,1) both; }
+      /* Links dim on press rather than shrink — scaling a run of inline text reads as a glitch. */
+      a[href]:active { opacity: 0.7; }
+      /* Switch knobs SLIDE between off and on instead of teleporting. The knob is the switch's
+         only child and is positioned by an inline left:3 / left:23. */
+      [role="switch"] > * { transition: left .18s cubic-bezier(.2,.8,.2,1); }
+      /* Reduced motion switches off MOTION, never layout. This used to be `* { transform: none
+         !important }`, which also stripped the translate(-50%) that centres the fix prompt and the
+         lightbox's Remove button, knocked the password eye out of its field, and froze the
+         swipe-to-delete row under the finger. The press rules are restated here WITHOUT
+         !important, so they win over the scale above (same selector, later) and still lose to an
+         element's own inline transform. */
       @media (prefers-reduced-motion: reduce) {
-        *, button:not(:disabled):active { animation: none !important; transform: none !important; }
+        *, *::before, *::after { animation: none !important; }
+        [role="switch"] > * { transition: none; }
+        button:not(:disabled):active, [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: none; }
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
