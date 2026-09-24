@@ -2236,7 +2236,11 @@ function GradePicker({scale,value,onChange,label}){
       return <button key={g.stem} aria-label={label+" "+g.stem} aria-pressed={isSel} onClick={function(){pickStem(g);}} style={chip(isSel||g.stem===openStem)}>{g.stem}</button>;
     })}</div>
     {(shown&&shown.variants.length>1)?<div style={{display:"flex",gap:5,flexWrap:"wrap",alignItems:"center",marginTop:7,padding:"7px 9px",background:C.surface,borderRadius:9,border:"1px solid "+C.border}}>
-            {shown.variants.map(function(x){
+            {/* From 5.10 up, YDS grades carry a letter (5.10a-d) or a +/-; a bare "5.10" is rarely
+        written, so it is not offered once letter options exist. It still shows if the route is
+        ALREADY stored as exactly that grade, so the value can be seen and cleared. The bare
+        grade stays in ADDR_YDS itself, which also orders grades for sorting. */}
+      {shown.variants.filter(function(x){return x[0]!==""||value===x[1]||!shown.variants.some(function(y){return /^[a-d]$/.test(y[0]);});}).map(function(x){
         const on=value===x[1];
         return <button key={x[1]} aria-label={label+" "+x[1]} aria-pressed={on} onClick={function(){onChange(on?"":x[1]);}} style={Object.assign({},chip(on),{minWidth:38,textAlign:"center",padding:"7px 10px"})}>{gradeChipLabel(x[1])}</button>;
       })}
