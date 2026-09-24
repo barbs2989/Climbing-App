@@ -27137,3 +27137,49 @@ clause exactly before the fix was written.
 Progress file's `last_processed_id` advanced to `wa_labor_pains`. Next batch continues in
 sorted-id order after that id. 179 + 8 = 187 audited this pass through batch 330;
 524 - 187 = **337 in-scope routes remain unaudited this pass**.
+
+## Batch 331 (2026-09-24, pass 6)
+
+Routes: `wa_lane_peak_r1`, `wa_lane_peak_r2`, `wa_lane_peak_r3` (The Zipper, The Fly, Lover's
+Lane — Lane Peak), `wa_le_conte_mountain_northern_aspect`, `wa_lemah_mountain_east_route`,
+`wa_lemah_two_goatshead_spire`, `wa_lena_lake_to_mt_stone_traverse`, `wa_lewis_creek_route`
+(Gunn Peak).
+
+**No confirmed errors — all 8 clean, no SQL file this batch.**
+
+**Checked and confirmed correct:** Lane Peak's 6,012 ft high point (all three routes) matches
+Wikipedia/willhiteweb.com. All three routes also share one bivy-list entry that reads as if
+written for Unicorn Peak ("the only established camp close enough to matter for Unicorn
+Peak") — on inspection this is a legitimate shared Tatoosh-area camping options list (it
+separately and correctly discusses Lane Peak, Pinnacle, and The Castle logistics in its other
+entries), not a peak-mismatch bug, so left unflagged. Le Conte Mountain's 7,762 ft and its
+`approach_logistics` peak coordinates match Wikipedia/Peakbagger almost exactly (48.3794/
+-121.0618 vs. the row's 48.3794/-121.062); its July 23, 1938 Ptarmigan Club first ascent
+(Calder Bressler, Ray W. Clough, Bill Cox, Tom Myers) also matches, though one source variant
+spells the third name "Ralph" instead of "Ray" — an ambiguity that exists across sources
+themselves, not a resolvable database error, so left as stored per the standing rule against
+guessing a fix. Lemah Mountain's 7,512 ft main-peak high point and July 7, 1923 Wallace Burr
+first ascent match Wikipedia exactly (the row's own overview text already flags the peak's
+historic 7,512-7,520 ft ambiguity, not re-litigated as new). Goatshead Spire's Aug 8, 1982
+Donald Goodman/John Mason first ascent on Lemah Two's east spur matches independent web
+sourcing. Mount Stone's 6,612 ft matches Wikipedia/Peakbagger; its `access` field naming the
+National Park Service as land manager for the Lake of the Angels/summit portion, distinct from
+Olympic National Forest lower down at the Lena Lake trailhead, checked out against WTA/
+ProTrails/SummitPost — the Mount Stone summit genuinely sits inside the Olympic NP boundary
+while the Lena Lake trailhead does not, so the row's two different land-manager mentions are
+both correct rather than contradictory. Gunn Peak's 6,244 ft and the Lewis Creek route's July
+18, 1915 Hinman/Eriksen/Lesh first ascent (on their fifth attempt) match Wikipedia/SummitPost
+exactly — this resolves the row's own pre-existing self-doubt ("recommend spot-checking this
+route_id against source data") without turning up anything that actually needs fixing.
+
+Waypoint elevations, `pitch_detail` length sums (where present), and gain/loss-vs-elevation
+deltas on all 8 rows were internally consistent with each route's own stated shape (simple
+out-and-back couloirs on Lane Peak; a point-to-point shuttle traverse on the Lena Lake/Mount
+Stone route with independently plausible, unequal gain/loss).
+
+**Verification note:** scheduled run, no `.env`/`.env.local` — read-only anon key only, as
+intended. No writes were proposed this batch, so `check:sql` was not run.
+
+Progress file's `last_processed_id` advanced to `wa_lewis_creek_route`. Next batch continues
+in sorted-id order after that id. 187 + 8 = 195 audited this pass through batch 331;
+524 - 195 = **329 in-scope routes remain unaudited this pass**.
