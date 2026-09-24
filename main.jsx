@@ -102,6 +102,26 @@ restoreQueryCache(queryClient).finally(() => {
   );
 });
 
+// A deploy replaces every hashed chunk in dist/, and Pages serves only the new ones. So a tab
+// opened BEFORE a deploy still holds the old index chunk, whose lazy imports name files that no
+// longer exist: the first visit to a lazily-loaded screen (Partners, Ranks, a route page) 404s,
+// the import throws, and AppErrorBoundary shows "This screen hit a bug" — which a reload fixes,
+// because the reload fetches the new index.html (sw.js is network-first for navigations).
+// Vite fires `vite:preloadError` for exactly that failure, so do the reload for the climber.
+// ONCE: a second failure within the window is not a stale deploy (offline, or a genuinely
+// missing file), and reloading again would loop — let it reach the boundary instead. If
+// sessionStorage is unavailable the guard cannot be recorded, so do not reload at all.
+const CHUNK_RELOAD_KEY = "climbmatch:chunk-reload-at";
+window.addEventListener("vite:preloadError", (event) => {
+  try {
+    const last = Number(window.sessionStorage.getItem(CHUNK_RELOAD_KEY)) || 0;
+    if (Date.now() - last < 30 * 1000) return;
+    window.sessionStorage.setItem(CHUNK_RELOAD_KEY, String(Date.now()));
+  } catch { return; }
+  event.preventDefault();
+  window.location.reload();
+});
+
 // Registered only in production builds so it never interferes with Vite's
 // dev-server module graph / HMR.
 if (import.meta.env.PROD && "serviceWorker" in navigator) {
