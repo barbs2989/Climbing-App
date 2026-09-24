@@ -43,8 +43,12 @@ const ENDS = (m) => [parseInt(m[1]), m[2] ? parseInt(m[2]) : null];
 const AGRADE = { F: 1, PD: 2, AD: 3, D: 4, TD: 5, ED: 6 };
 const RGRADE = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7 };
 
-// `sp` = the separator allowed between a prefix and its number; `vf` = the V branch's flags.
-function build({ sp = "", vf = "" } = {}) {
+/* `sp` = the separator allowed between a prefix and its number; `vf` = the V branch's flags;
+   `vbeg` = the value a bare "VB" scores, or null when that branch is not shipped.
+   `vbeg` is a VALUE rather than a boolean because the thing being modelled is a constant, and
+   DERIVING it from the shipped parser rather than writing -1 here is what stops this control
+   rotting the day somebody changes it — the same reason V_SHIPPED and SP_SHIPPED are derived. */
+function build({ sp = "", vf = "", vbeg = null } = {}) {
   const R = {
     YDS: /5\.(\d+)([a-d]?)/g,
     V: new RegExp(`V${sp}(\\d+)(?:\\s*[-–—]\\s*(\\d+))?`, "g" + vf),
@@ -61,6 +65,7 @@ function build({ sp = "", vf = "" } = {}) {
     let m, v;
     if (s === "yds" && (v = maxOver(g, R.YDS, YDS_VAL)) != null) return v;
     if (s === "v" && (v = maxOver(g, R.V, ENDS)) != null) return v;
+    if (s === "v" && vbeg != null && /\bVB\b/i.test(g)) return vbeg;
     if (s === "wi" && (v = maxOver(g, R.WI, ENDS)) != null) return v;
     if (s === "m" && (v = maxOver(g, R.M, ENDS)) != null) return v;
     if (s === "aid" && (v = maxOver(g, R.AID, ENDS)) != null) return v;
@@ -89,7 +94,10 @@ function build({ sp = "", vf = "" } = {}) {
    subject ships. Asking the shipped parser two one-line questions cannot rot. */
 const V_SHIPPED = gradeNumFrom("v1", "v") != null;
 const SP_SHIPPED = gradeNumFrom("WI 2", "wi") != null;
-const CONTROL = build({ vf: V_SHIPPED ? "i" : "", sp: SP_SHIPPED ? "\\s*" : "" });
+/* A VALUE, not a boolean: the V-Beginner branch returns a constant, and asking the parser what it
+   returns models both WHETHER it is shipped and WHAT it scores in one question. */
+const VBEG_SHIPPED = gradeNumFrom("VB", "v");
+const CONTROL = build({ vf: V_SHIPPED ? "i" : "", sp: SP_SHIPPED ? "\\s*" : "", vbeg: VBEG_SHIPPED });
 
 const ALL = [
   { key: "v-insensitive", shipped: V_SHIPPED, why: "the V branch reads lowercase v11/v6", cfg: { vf: "i" } },
@@ -98,9 +106,9 @@ const ALL = [
 // Only the UNSHIPPED ones are candidates; a shipped widening is the control and has no delta.
 const CANDIDATES = ALL.filter((c) => !c.shipped).map((c) => ({
   ...c,
-  parse: build({ vf: V_SHIPPED ? "i" : "", sp: SP_SHIPPED ? "\\s*" : "", ...c.cfg }),
+  parse: build({ vf: V_SHIPPED ? "i" : "", sp: SP_SHIPPED ? "\\s*" : "", vbeg: VBEG_SHIPPED, ...c.cfg }),
 }));
-const WIDEST = build({ vf: "i", sp: "\\s*" });
+const WIDEST = build({ vf: "i", sp: "\\s*", vbeg: VBEG_SHIPPED });
 
 async function readAll() {
   const out = []; let last = "";
@@ -186,9 +194,15 @@ for (const [g, rs] of byVal) {
    behind the whole catalog and are dropped by any range filter - but the cause is not a parser at
    all: nothing ever populated the column. CLAUDE.md records one source ("#814 built the add-a-route
    approval path and does not set it, so every community-approved route landed with a null").
-   REPORTED, NOT SWEPT: filling from the parser alone is a write with no corroborating record, and
-   this file already records refusing exactly that for wa_mount_shuksan_northwest_arete, where the
-   obvious fill understates the route's own hardest recorded climbing. */
+   SWEPT 2026-09-24, AND THIS COMMENT USED TO SAY "REPORTED, NOT SWEPT" — kept in corrected form
+   because the reason it gave was half right and is the more useful half. It said "filling from the
+   parser alone is a write with no corroborating record", citing the wa_mount_shuksan_northwest_arete
+   refusal. That objection is about rows whose OWN RECORDS DISAGREE, not about the operation: 99.98%
+   of the rows that ARE populated store exactly what this parser reads, so a parser fill is the
+   catalog's own operation. 772 were filled and SIX were refused for precisely the Shuksan reason -
+   a same-system second record disagreeing - which is what should be left here on a healthy run.
+   See scripts/oneoff/{measure-readable-but-unpopulated-grades,fix-grade-num-readable-but-unpopulated}.mjs
+   and the shared refusal rule in scripts/lib/grade-corroboration.mjs. */
 const unpopulated = rows.filter((r) => r.grade_num == null && gradeNumFrom(String(r.grade || ""), gradeSystemForDiscipline(r.discipline)) != null);
 const byState = new Map();
 for (const r of unpopulated) {
@@ -198,7 +212,9 @@ for (const r of unpopulated) {
 console.log(`  --- READABLE BUT UNPOPULATED: ${unpopulated.length} routes store a NULL grade_num while`);
 console.log(`      carrying a grade this parser reads. Same consequence as an unreadable grade -`);
 console.log(`      they sort behind the whole catalog - and a different cause: nothing wrote the column.`);
-console.log(`      REPORTED, NOT SWEPT - a fill from the parser alone has no corroborating record.`);
+console.log(`      SWEPT 2026-09-24 (772 filled). What should be left here is the handful REFUSED because a`);
+console.log(`      same-system second record disagrees - the Shuksan rule. A number climbing again is a`);
+console.log(`      NEW population, not the old backlog; measure-readable-but-unpopulated-grades.mjs sorts it.`);
 for (const [st, n] of [...byState.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12)) {
   console.log(`        ${String(n).padStart(5)}  ${st}_*`);
 }
