@@ -181,15 +181,15 @@
     "@supabase/supabase-js": "^2.109.0",
     "@tanstack/react-query": "^5.101.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "ws": "^8.21.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/parser": "^7.26.0",
     "@babel/traverse": "^7.26.0",
     "@vitejs/plugin-react": "^4.3.4",
     "playwright-core": "^1.61.1",
-    "vite": "^6.4.3"
+    "vite": "^6.4.3",
+    "ws": "^8.21.1"
   },
   "engines": {
     "node": ">=22"
