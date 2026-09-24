@@ -27305,3 +27305,47 @@ blocked) and settled every fact checked; no writes were proposed, so `check:sql`
 Progress file's `last_processed_id` advanced to `wa_lichtenberg_mountain_southeast_ridge`.
 Next batch continues in sorted-id order after that id. 203 + 8 = 211 audited this pass through
 batch 333; 524 - 211 = **313 in-scope routes remain unaudited this pass**.
+
+## Batch 334 — 2026-09-24 (pass 6)
+
+Routes: wa_lichtenberg_mountain_west_face, wa_lichtenberg_mountain_west_face_west_rib,
+wa_lincoln_peak_north_ridge, wa_lincoln_peak_standard, wa_little_annapurna_south_face,
+wa_little_annapurna_south_slopes, wa_little_mac_spire_southwest_route,
+wa_little_sister_north_face.
+
+Two confirmed fixes (`audits/sql/2026-09-24-batch-334.sql`, checked clean with
+`check:sql`): wa_little_sister_north_face's `high_point_ft` (6526) contradicted the app's
+own `areas` row for the same peak (6600) and three external sources converging on
+6,600–6,620 ft (SummitPost, Peakbagger, ListsOfJohn) — corrected to 6600.
+wa_lincoln_peak_north_ridge's `watch_out` named "Sherpa, Stuart glaciers" as a hazard;
+those glaciers are on Mount Stuart, ~90+ miles from Lincoln Peak near Mount Baker
+(confirmed via Wikipedia), while this route's own approach/waypoints name only the
+Coleman Glacier with its own icefall/serac hazard — looks like boilerplate copied from a
+Mount Stuart-area route and left unedited; replaced with the correct glacier.
+
+Flagged, not fixed: wa_little_mac_spire_southwest_route's `high_point_ft` (7680) sits 56 ft
+below its own area's `elevation_ft` (7736); no external source was found giving an
+independent figure for this rarely-climbed Southern Pickets spire to say which (if either)
+is right, so left for a human with a topo.
+
+Confirmed correct and not touched: Lichtenberg Mountain's 5,844 ft high point (Wikipedia,
+matches the app's own area row, both routes); Lincoln Peak's 9,085 ft and its identity as
+a Black Buttes subsidiary summit of Mount Baker (Wikipedia/PeakVisor); Little Annapurna's
+8,485 ft (Wikipedia) with its North Slopes route's gain/high-point fields internally
+consistent; the Middle Fork Nooksack Rd (FR-38)/FR-12 washout and Aug-2026 closure details
+stored on both Lincoln Peak Standard's and Little Sister North Face's `road` fields —
+checked against a live Mt. Baker-Snoqualmie NF alert and still accurate, not stale.
+
+**Scope recount:** re-ran the scope query (`routes.discipline in (alpine, mountaineering)
+AND id LIKE 'wa_%' AND area_id IN (areas WHERE area_type = 'peak')`) directly against the
+live DB rather than trusting the progress file's carried-forward count. It returned **702**
+in-scope routes, not the 524 the file had been carrying since pass 5 — the catalog has
+grown substantially since that count was last taken (752 total wa_ alpine/mountaineering-
+tagged routes now exist, up from 574). Progress file's `total_in_scope_last_count` and
+`total_wa_alpine_or_mountaineering_tagged` updated to 702/752 this batch; the "N remaining
+this pass" arithmetic in prior batch notes was tracking against a stale denominator and
+should be re-derived from 702, not continued from 524.
+
+`last_processed_id` advanced to `wa_little_sister_north_face`. No `.env`/`.env.local` this
+run (fresh clone, read-only anon key only, as intended); WebSearch settled every fact
+checked, `check:sql` run and clean before committing the fix file.
