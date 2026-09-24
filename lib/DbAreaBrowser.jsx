@@ -724,16 +724,15 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // length), paged via routes_in_subtree (0015; filters added in 0018). ──
 //
 // GRADE RANGE IS OFFERED ONLY ONCE A DISCIPLINE IS PICKED, AND NOT FOR EVERY DISCIPLINE.
-// grade_num is only comparable within one grading system — a YDS 5.9 and a V9 boulder problem
-// are both ≈9 — so with "All" selected no range means anything. Within a discipline it is sound
-// only where the column holds ONE scale: sport/trad/rock (YDS), bouldering (V), scrambling (Class).
+// grade_num is only comparable within one grading system — a YDS 5.9, a V9 boulder problem and a
+// WI4 are all just numbers on one line — so with "All" selected no range means anything. See
+// DISC_GRADE_SCALES for which scales each discipline offers and why.
 //
-// ALPINE, MOUNTAINEERING, ICE, MIXED AND AID ARE DELIBERATELY LEFT OUT (measured — see
-// GRADE_RANGE_DISC). gradeNumFrom (lib/grade.js) takes a YDS number wherever the grade string has
-// one and otherwise falls back to Class, WI, M, a French alpine grade (AD = 3) or a commitment
-// numeral (Grade III = 3), so on those disciplines one number means different grades on different
-// rows. Offering it there needs a filter on the typed columns (rock_grade / ice_grade /
-// aid_grade / commitment), which routes_in_subtree does not take.
+// ALPINE AND MOUNTAINEERING ARE STILL LEFT OUT. gradeNumFrom (lib/grade.js) takes a YDS number
+// wherever the grade string has one and otherwise falls back to Class, a French alpine grade
+// (AD = 3) or a commitment numeral (Grade III = 3), and their grade_system labels were never
+// corrected (0196 relabelled ice/mixed/aid only), so one number means different grades on
+// different rows there.
 //
 // The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
 // no readable grade. The sheet says so rather than letting the count drop unexplained. ──
@@ -776,20 +775,29 @@ const GRADE_SCALES = (() => {
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
   for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
   const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
-  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5) };
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7) };
 })();
-// AN ALLOW-LIST, and each entry was MEASURED rather than assumed
-// (scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs, 2026-09-24, all 205,543 routes):
-// sport/trad/rock and bouldering are 100% graded on one scale, scrambling 90.6% on Class. The rest
-// store more than one scale in grade_num, so a range there would match the wrong routes: AID holds
-// its YDS free grade on 1,196 of 1,259 rows (an "A2" bound would match 5.2 routes); 42 of 168 ICE
-// rows are YDS; MIXED runs to 13, where 8 is M8 or 5.8 depending on the row; alpine and
-// mountaineering mix YDS, Class, AD and Grade III. Re-run the measurement before widening this.
-const GRADE_RANGE_DISC = { sport: 1, trad: 1, rock: 1, bouldering: 1, scrambling: 1 };
-const gradeScaleFor = disc => GRADE_RANGE_DISC[disc] ? (GRADE_SCALES[gradeSystemForDiscipline(disc)] || null) : null;
+const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice" };
+// AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
+// scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
+//   sport / trad / rock / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
+//   aid and mixed: the grade stored is the 5.x FREE grade on nearly every row (aid 1,254 of 1,259),
+//     and OpenBeta publishes no A/C or M grade at all, so a 5.x range is what the data supports.
+//   ice: two scales — the WI grades imported from OpenBeta (scripts/pipeline/import-ice-wi.mjs) and
+//     the older rows whose only grade is 5.x — so ice offers both and filters on grade_system.
+// Re-run the measurements before widening this.
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], rock: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["yds"], mixed: ["yds"], ice: ["wi", "yds"] };
+// The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
+// range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
+// corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
+// routes the range has always returned.
+const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1 };
+const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
+const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
+const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
 const gradeRangeLabel = (lo, hi) => lo && hi ? (lo === hi ? lo : lo + "–" + hi) : lo ? lo + " and up" : hi ? "Up to " + hi : "";
 function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit }) {
-  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gLo: "", gHi: "" };
+  const DEF = { disc: "", sortBy: "name", minStars: 0, minPitches: 0, len: "any", gSys: "", gLo: "", gHi: "" };
   const [q, setQ] = useState("");
   // Routes | Areas. One text box serves both, so switching carries what you typed across.
   const [mode, setMode] = useState("routes");
@@ -803,10 +811,11 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
   const lenRange = (LEN_BUCKETS.find(l => l[0] === af.len) || LEN_BUCKETS[0]);
   // Resolved against the APPLIED discipline's scale, so a label saved under one discipline can
   // never be read on another's number line (a "V5" bound is not a 5.5 bound).
-  const gScale = gradeScaleFor(af.disc);
+  const gScale = gradeScaleFor(af.disc, af.gSys);
   const gLoO = gScale && af.gLo ? gScale.find(o => o[0] === af.gLo) : null;
   const gHiO = gScale && af.gHi ? gScale.find(o => o[0] === af.gHi) : null;
-  const queryArgs = { q, disc: af.disc, minGrade: gLoO ? gLoO[1] : null, maxGrade: gHiO ? gHiO[2] : null, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
+  const gSysQ = (gLoO || gHiO) && GRADE_SYS_FILTERED[af.disc] ? gradeSysFor(af.disc, af.gSys) : null;
+  const queryArgs = { q, disc: af.disc, gradeSys: gSysQ, minGrade: gLoO ? gLoO[1] : null, maxGrade: gHiO ? gHiO[2] : null, minStars: af.minStars || null, minPitches: af.minPitches || null, minLengthM: lenRange[3], maxLengthM: lenRange[4], sortBy: af.sortBy, page };
   const { data: batch, isLoading, error } = useSubtreeRoutes(scope.id, queryArgs);
   const { data: total } = useSubtreeRouteCount(scope.id, queryArgs);
 
@@ -836,7 +845,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 
   const nF = (af.disc ? 1 : 0) + (gLoO || gHiO ? 1 : 0) + (af.minStars ? 1 : 0) + (af.minPitches ? 1 : 0) + (af.len !== "any" ? 1 : 0) + (af.sortBy !== "name" ? 1 : 0);
   const afChips = [];
-  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", gLo: "", gHi: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
+  if (af.disc) afChips.push({ k: "d", label: (DISCIPLINES.find(d => d[0] === af.disc) || [, af.disc])[1], clear: () => setAf(a => ({ ...a, disc: "", gSys: "", gLo: "", gHi: "", sortBy: a.sortBy === "grade_asc" || a.sortBy === "grade_desc" ? "name" : a.sortBy })) });
   if (gLoO || gHiO) afChips.push({ k: "g", label: gradeRangeLabel(gLoO && gLoO[0], gHiO && gHiO[0]), clear: () => setAf(a => ({ ...a, gLo: "", gHi: "" })) });
   if (af.minStars) afChips.push({ k: "s", label: af.minStars + "★+", clear: () => setAf(a => ({ ...a, minStars: 0 })) });
   if (af.minPitches) afChips.push({ k: "p", label: af.minPitches + "+ pitches", clear: () => setAf(a => ({ ...a, minPitches: 0 })) });
@@ -933,13 +942,14 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
             <div style={{ padding: "0 16px 18px", overflowY: "auto", overscrollBehavior: "contain", flex: 1, minHeight: 0 }}>
             {lab("Discipline")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>
-              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], gLo: "", gHi: "", sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
+              {DISCIPLINES.filter(d => d[0]).map(d => chip(d[1], df.disc === d[0], () => setDf(x => ({ ...x, disc: x.disc === d[0] ? "" : d[0], gSys: "", gLo: "", gHi: "", sortBy: (x.sortBy === "grade_asc" || x.sortBy === "grade_desc") && x.disc === d[0] ? "name" : x.sortBy }))))}
             </div>
             {lab("Grade")}
             {(() => {
-              const sc = gradeScaleFor(df.disc);
+              const sc = gradeScaleFor(df.disc, df.gSys);
               if (!df.disc) return <div style={{ fontSize: 12.5, color: C.textMuted }}>Pick a discipline above to filter by grade — grades aren't comparable across climbing types.</div>;
-              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>Not available for {(DISCIPLINES.find(d => d[0] === df.disc) || [, df.disc])[1].toLowerCase()} yet — these routes store more than one kind of grade (rock, ice, aid or commitment), so a range would include routes it shouldn't. Sorting by grade still works below.</div>;
+              if (!sc) return <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.45 }}>Not available for {(DISCIPLINES.find(d => d[0] === df.disc) || [, df.disc])[1].toLowerCase()} yet — these routes store more than one kind of grade (rock, class or commitment), so a range would include routes it shouldn't. Sorting by grade still works below.</div>;
+              const scales = gradeScalesFor(df.disc), curSys = gradeSysFor(df.disc, df.gSys);
               const iLo = df.gLo ? sc.findIndex(o => o[0] === df.gLo) : -1, iHi = df.gHi ? sc.findIndex(o => o[0] === df.gHi) : -1;
               const sel = (label, val, opts, set) => (
                 <label style={{ flex: 1, display: "flex", flexDirection: "column", gap: 5, fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{label}
@@ -951,13 +961,16 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
               );
               return (
                 <div>
+                  {/* Ice is graded on two scales in this catalog, so the range is set on one at a
+                      time; switching scale clears the bounds, which belong to the old one. */}
+                  {scales.length > 1 ? <div style={{ display: "flex", gap: 7, flexWrap: "wrap", marginBottom: 10 }}>{scales.map(s => chip(SCALE_NAMES[s] || s, curSys === s, () => setDf(d => ({ ...d, gSys: s, gLo: "", gHi: "" }))))}</div> : null}
                   {/* Each end only offers grades on its own side of the other, so the pair can never
                       describe an empty range. */}
                   <div style={{ display: "flex", gap: 10 }}>
                     {sel("From", df.gLo, iHi >= 0 ? sc.slice(0, iHi + 1) : sc, v => setDf(d => ({ ...d, gLo: v })))}
                     {sel("To", df.gHi, iLo >= 0 ? sc.slice(iLo) : sc, v => setDf(d => ({ ...d, gHi: v })))}
                   </div>
-                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>Routes without a readable grade are hidden while a grade range is set.</div> : null}
+                  {df.gLo || df.gHi ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8 }}>{"Routes without a readable grade are hidden while a grade range is set." + (GRADE_SYS_FILTERED[df.disc] ? " So are routes graded only on a different scale." : "")}</div> : null}
                 </div>
               );
             })()}
@@ -1027,9 +1040,10 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
-  // Type-of-climbing filter over what is in view. An area row stores only its MAIN discipline
-  // (`dominant_discipline`, 0051), so that is what this filters on — and the caption says so,
-  // rather than implying a mostly-sport crag holds no trad.
+  // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
+  // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
+  // alpine; "rock" is never listed), so a mostly-sport crag with trad lines shows under both.
+  // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 
   // Full screen just resizes the same Leaflet instance in place (same map div,
@@ -1042,10 +1056,11 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll = data && data.rows;
-  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => a.dominant_discipline === disc) : nearbyAll), [nearbyAll, disc]);
+  const typesOf = a => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline && a.dominant_discipline !== "rock" ? [a.dominant_discipline] : []);
+  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
   const discsInView = useMemo(() => {
     const n = {};
-    (nearbyAll || []).forEach(a => { if (a.dominant_discipline) n[a.dominant_discipline] = (n[a.dominant_discipline] || 0) + 1; });
+    (nearbyAll || []).forEach(a => typesOf(a).forEach(d => { n[d] = (n[d] || 0) + 1; }));
     if (disc && !n[disc]) n[disc] = 0; // keep the active chip on screen so it can be cleared
     return Object.entries(n).sort((a, b) => b[1] - a[1]);
   }, [nearbyAll, disc]);
@@ -1201,7 +1216,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
                 {discChip(null, "All", !disc)}
                 {discsInView.map(([k, n]) => discChip(k, (DL[k] || k) + " · " + n, disc === k))}
               </div>
-              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Filters by each area's main type of climbing — on the map too.</div>
+              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Shows areas with at least one climb of that type — on the map too.</div>
             </div>
           ) : null}
           {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
