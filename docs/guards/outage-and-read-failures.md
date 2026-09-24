@@ -1367,3 +1367,21 @@ that they had none — on the one screen whose whole subject is who you climb wi
     the filter assertion, injection-tested (reverting the gate fails exactly one case), with a
     1,036-character render asserted so the negative cases cannot pass vacuously. Same two bundling
     traps as the Inbox probe — the provider, and `@tanstack/react-query` as `--external`.
+
+- **`check:chunk-reload`** — a lazy screen whose file a DEPLOY removed must reload once, not show
+  *This screen hit a bug*. Every Pages deploy replaces every hashed chunk, so a tab opened before it
+  asks for a file that 404s the first time it visits a lazy screen (hit on Partners 2026-09-24,
+  fixed #1851; the screen itself was fine — `check:signed-in` walked it clean). `main.jsx` answers
+  `vite:preloadError` with ONE reload, guarded by a 30s sessionStorage timestamp; `ClimbMatch.jsx`
+  reopens the tab that was tapped, but only right after that reload; `AppErrorBoundary` names a
+  chunk failure as a download failure. Static: asserts the handler exists while any `import()` does,
+  calls `preventDefault()` + `location.reload()`, keeps its loop guard, that the reload-marker key is
+  the same in both files, and that the boundary's regex matches the Chrome, Firefox and Safari
+  messages. Injection-tested by hand (6 cases, each fails with its own line).
+  - **Structurally blind to the RUNTIME**: no walk crosses a deploy. To exercise it in a browser,
+    404 a chunk with `page.route` in a context with `serviceWorkers: "block"` — `sw.js` precaches
+    chunks and its fetches bypass `page.route`, so without the block an interception reports ZERO
+    requests and proves nothing.
+  - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
+    deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
+    climber at a trailhead.
