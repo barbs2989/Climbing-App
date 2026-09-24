@@ -15,6 +15,7 @@ import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
 import { clickable } from "./clickable";
 import { effDistKm } from "./outing";
+import { POP_BACK, POP_CLOSE } from "./popupChrome.js";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -932,7 +933,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           <div onClick={e => e.stopPropagation()} style={{ background: C.bg, width: "100%", maxWidth: 440, borderRadius: "16px 16px 0 0", maxHeight: "88vh", display: "flex", flexDirection: "column" }}>
             <div style={{ position: "sticky", top: 0, zIndex: 2, background: C.bg, borderRadius: "16px 16px 0 0", borderBottom: "1px solid " + C.border, flexShrink: 0, display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 16px 12px" }}>
               <div style={{ fontSize: 16, fontWeight: 700 }}>Filter routes</div>
-              <button onClick={() => setSheet(false)} aria-label="Close" style={{ background: C.borderLight, border: "none", color: C.textSub, borderRadius: 8, width: 34, height: 34, fontSize: 20, cursor: "pointer" }}>×</button>
+              <button onClick={() => setSheet(false)} aria-label="Close" style={POP_CLOSE}>✕</button>
             </div>
             {/* overscrollBehavior: without it a drag that reaches the end of this list keeps going on
                 the page behind the sheet (the document is the scroller here), so the sheet reads as
@@ -1317,7 +1318,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   return createPortal(
     <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 400, display: "flex", flexDirection: "column" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, padding: "14px 16px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
-        <button onClick={onClose} aria-label="Back" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, padding: "9px 13px", fontSize: 14, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{"← Back"}</button>
+        <button onClick={onClose} aria-label="Back" style={POP_BACK}>{"← Back"}</button>
         <div style={{ minWidth: 0, flex: 1 }}>
           <div style={{ color: C.text, fontSize: 17, fontWeight: 800, borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>All areas</div>
           {/* The subtitle used to read "<state> — tap a name to jump, ▸ to expand", which
@@ -1331,7 +1332,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             {current && current.id !== stateRoot.id ? "Viewing " + current.name + " · " + stateRoot.name : stateRoot.name}
           </div>
         </div>
-        <button onClick={onClose} aria-label="Close" style={{ flexShrink: 0, background: C.surface, border: "1px solid " + C.border, color: C.text, borderRadius: 9, width: 38, height: 38, fontSize: 18, cursor: "pointer" }}>{"×"}</button>
+        <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>{"✕"}</button>
       </div>
       <div style={{ padding: "10px 14px", borderBottom: "1px solid " + C.border, flexShrink: 0 }}>
         <input aria-label="Search areas, crags and peaks" value={q} onChange={e => setQ(e.target.value)} placeholder={"Search " + stateRoot.name + "’s areas, crags and peaks…"} style={{ width: "100%", padding: "10px 12px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 13.5, outline: "none", boxSizing: "border-box" }} />

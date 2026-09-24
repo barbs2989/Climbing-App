@@ -307,6 +307,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     matched the CLOSE glyph only alone (`>✕<`), so a glyph-plus-word close button matched nothing.
     Made symmetric. The widening was verified not to silence the real question: it cleared the map
     and **kept** the other finding until that one was separately shown to be the Suspense fallback.
+- **`check:popup-chrome`** asserts that **every popup's close and back controls look the same** —
+  styled by `POP_CLOSE` / `POP_CLOSE_MEDIA` / `POP_BACK` from `lib/popupChrome.js`. Static, so it
+  sits in `npm run build`. Reported 2026-09-24 as *"sloppy"* and *"not consistent with popups"*.
+  - **Measured before the fix: 8+ close looks and 6 back looks across ~73 popup dismiss controls**
+    — a bare muted `×` at 22px with no visible hit area, 36px circles and squares in three fills,
+    32px and 34px variants, a bordered 16px `×`; back as a zero-padding blue text link or a bordered
+    pill at 13/15/16/17px, spelled `← Back` or `‹ Back`. All 73 moved to the tokens (52 close,
+    21 back); the glyphs were normalised to `✕` and `← Back`.
+  - **Style OBJECTS, not a component, deliberately.** Each popup keeps its own `<button>`, its own
+    `aria-label` and its visible label, which is what `check:dialog-dismiss`, `check:a11y-names`
+    and `check:control-names` read. A `<CloseX/>` wrapper would hide the label from all three.
+  - **The aria-label is what tells a popup's ✕ from a chip's ×.** Rule 1 fires only on a lone
+    glyph whose `aria-label` starts with *Close*; the dozens of *Remove… / Dismiss… / Delete…*
+    ×'s are small by design and out of scope. That made the guard a label audit too: on its first
+    run it flagged the Climbs tab's **delete-saved-search** × and Log a climb's **remove-partner**
+    ×, both announced to a screen reader as *"Close"*. Both relabelled — they were never closes.
+  - Back is scoped to buttons that CLOSE a popup (`onClick={onClose}` or `aria-label="Back"`);
+    in-page navigation (`onBack`, the Climbs tab's area back) keeps its own look.
+  - Injection-tested **3/3** (restyle a close, restyle a back, spell `‹ Back`), restored by checksum.
+    Fails closed under 40 `POP_CLOSE` / 15 `POP_BACK` uses.
 - **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
   worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
   - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
