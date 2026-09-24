@@ -7621,7 +7621,27 @@ the correction knows the screen is wrong, and they have no way to report it.
   `npm run build`.
   - It flags the **text** shape only: a level or score concatenated into a rendered string.
     `vScore()` used for sorting, filtering, or handed to `<TrustBadge score={…}>` is a
-    different question — a badge can gate on `_real`, and `FullProfile` already does.
+    different question — a badge can gate on `_real`, and the crew invite picker does.
+    - **THIS BULLET USED TO SAY `FullProfile` DID TOO, AND IT NEVER HAS.** Its badge was an
+      unconditional `<TrustBadge score={vScore(climber)} compact/>` under the climber's name, so a
+      reader was sent past a live defect by a sentence claiming it was already handled. Measured
+      (`scripts/oneoff/measure-fullprofile-badge-vs-the-ring.mjs`): FullProfile's memo hydrates
+      **received vouches and none of the other client-model inputs**, while their denominators still
+      count — so that badge was **capped at 25** for every real climber however trusted, making
+      **"Trusted" (33) and "Highly Trusted" (65) unreachable**, and anyone with three vouches or
+      fewer read **"New" in red**. The control rules out a flat model: seed climbers span 29-98 and
+      do reach the top tier. Meanwhile the avatar RING inches above it is the **server** score and
+      reaches **84**, so one screen stated one climber's trust twice, from two models.
+    - Fixed by reading the ring's own `ts` — one derivation, so the two cannot disagree — gated on a
+      known score. **`check:trust-breakdown` section 10** pins both halves: 10a is DERIVED and
+      **fails as STALE** if the memo ever hydrates the rest (at which point the client model becomes
+      defensible again), 10b is the wiring, which no execution can see because reverting it moves no
+      identifier. Injection-tested in `inject-fullprofile-trust-ring-cases.mjs`.
+    - **`Resume` HAS THE SAME CAP AND IS DELIBERATELY NOT FIXED HERE.** `onResume(climber)` is
+      called with the memo-hydrated climber, so the shared, exported résumé shows the same capped
+      client score — and it receives **no server score**, so repairing it means threading a new prop
+      from two call sites (`FullProfile` and PartnerSearch's stat tile), neither of which has one.
+      That is plumbing across components rather than polish. Raised, not swept.
   - A site passes when the same expression is **gated** on `_conn`/`_real`/`_profile`, or goes
     through **`climberLine(c)`** — the single honest answer (location · @handle, falling back
     to "On ClimbMatch" rather than to fabricated numbers).

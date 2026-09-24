@@ -775,6 +775,67 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   else fail(`a reporter at the earnable ceiling lands on "${top && top.label}" — the top colour is still unreachable`);
 }
 
+// SECTION 10. FullProfile states one climber's trust TWICE: the gradient RING around the avatar,
+// and the badge under their name. They were two different MODELS — the ring is the server score
+// for a real climber, while the badge was an unconditional `vScore(climber)`. CLAUDE.md's
+// check:real-profile-rows entry asserted in prose that "a badge can gate on `_real`, and
+// FullProfile already does". It did not.
+//
+// Two halves, because either alone is satisfiable without the other. 10a is DERIVED and says WHY
+// the client model must not feed that badge; 10b is the wiring, which no execution can see.
+{
+  const { trustTier: _tier, TRUST_TIERS: _tiers } = mod;
+  if (typeof _tier !== "function" || !Array.isArray(_tiers) || !_tiers.length)
+    dead("core does not export trustTier/TRUST_TIERS — ANCHOR LOST, so section 10 could not judge a tier");
+
+  // 10a. Applied to the shape FullProfile's own memo produces for a real climber, the client model
+  // cannot reach the top tier however trusted they are: the memo hydrates received vouches and
+  // none of the other client-model inputs, while their denominators still count against them. That
+  // is WHY the badge must not read it. This FAILS AS STALE the day the memo hydrates the rest — at
+  // which point feeding it the client model is defensible again and this section wants re-reading
+  // rather than silencing.
+  cases++;
+  const realShape = (n) => ({
+    id: "3f2a1b4c-0000-4000-8000-000000000001", _real: true,
+    vouches: Array.from({ length: n }, () => ({ ratings: { safety: 5 } })),
+    communityVouches: n, certifications: [],
+  });
+  const clientCeiling = Math.max(...[0, 1, 3, 6, 100].map((n) => vScore(realShape(n))));
+  const topTier = _tiers[0];
+  if (clientCeiling < topTier.min)
+    ok(`the client model caps a real climber at ${clientCeiling}, below "${topTier.label}" (${topTier.min}) — which is why the badge must not read it`);
+  else
+    fail(`the client model now reaches ${clientCeiling} for a real climber, at or above "${topTier.label}" (${topTier.min}) — if FullProfile's memo started hydrating the other factors then this section is STALE; re-read it rather than silencing it`);
+
+  // 10b. The wiring. `ts` is the one derivation the ring already uses, so a badge reading it cannot
+  // disagree with the ring. Reverting this moves NO identifier, which audit:silent-reverts says in
+  // its own closing caveat it cannot see.
+  //
+  // Only JSX-expression comments are stripped, deliberately NOT a general comment blanker: this
+  // repo records one wiping 21% of RouteDetail.jsx because a quote inside a string desynchronised
+  // it. `{/* ... */}` is the shape this file writes in JSX and the fix explains itself in one.
+  const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+  const fpStart = src.indexOf("function FullProfile(");
+  if (fpStart < 0) dead("ClimbMatchCore.jsx has no FullProfile — ANCHOR LOST");
+  const fpEnd = src.indexOf("\nfunction ", fpStart + 1);
+  const fp = src.slice(fpStart, fpEnd < 0 ? src.length : fpEnd).replace(/\{\/\*[\s\S]*?\*\/\}/g, "");
+
+  if (fp.indexOf("<TrustBadge") < 0)
+    dead("FullProfile renders no TrustBadge — ANCHOR LOST, so neither assertion below could fire");
+
+  cases++;
+  if (/ts!=null\?<TrustBadgescore=\{ts\}/.test(fp.replace(/\s+/g, "")))
+    ok("FullProfile's badge reads the same `ts` the avatar ring does, gated on a known score");
+  else
+    fail("FullProfile's badge no longer reads the gated `ts` — the ring and the badge can now state one climber's trust as two different numbers");
+
+  cases++;
+  if (/<TrustBadge[^>]*score=\{vScore\(climber\)\}/.test(fp))
+    fail("FullProfile hands vScore(climber) to a TrustBadge again — for a real climber that is the capped client model rather than their score");
+  else
+    ok("no TrustBadge in FullProfile is fed vScore(climber)");
+}
+
 clean();
 if (failures) {
   console.error(`\ncheck:trust-breakdown: ${failures} failure(s) across ${cases} case(s).`);

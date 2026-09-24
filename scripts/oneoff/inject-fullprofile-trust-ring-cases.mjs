@@ -36,6 +36,11 @@ const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest
 const FIXED = "const ts=climber._real?realTrust:vScore(climber),tcol=ts!=null?trustTier(ts).color:C.border;";
 const HISTORICAL = "const ts=climber._real?(realTrust!=null?realTrust:0):vScore(climber),_tt=trustTier(ts),tcol=_tt.color,tlbl=_tt.label;";
 
+// The badge under the climber's name, and the unconditional client-model score it replaced.
+// Section 10 of the guard is what watches these.
+const BADGE = "{ts!=null?<TrustBadge score={ts} compact/>:null}";
+const BADGE_HISTORICAL = "<TrustBadge score={vScore(climber)} compact/>";
+
 // The widened shape test, and the one-sided one-level test it replaced.
 const WIDE_HEAD = 'if (n.type === "ConditionalExpression") {\n          const isV =';
 const NARROW = `if (n.type === "ConditionalExpression" && n.consequent && n.consequent.type === "CallExpression"
@@ -67,6 +72,24 @@ const CASES = [
     name: "SILENT-vscore-against-a-real-value",
     why: "a vScore branch opposite another MEASURED value is correct code; firing on it would forbid the fix",
     edits: [[CORE, FIXED, "const ts=climber._real?realTrust:vScore(climber),tcol=ts!=null?trustTier(ts).color:C.border,_alt=climber._real?vScore(climber):realTrust;void _alt;"]],
+    silent: true,
+  },
+  {
+    name: "badge-back-to-the-client-model",
+    why: "the real defect: an unconditional vScore(climber) badge, capped at 25 for every real climber while the ring beside it reaches 84",
+    edits: [[CORE, BADGE, BADGE_HISTORICAL]],
+    expect: "hands vScore(climber) to a TrustBadge again",
+  },
+  {
+    name: "badge-ungated",
+    why: "dropping the null gate prints a badge for a score that has not arrived, which is what the ring fix exists to avoid",
+    edits: [[CORE, BADGE, "<TrustBadge score={ts} compact/>"]],
+    expect: "no longer reads the gated",
+  },
+  {
+    name: "SILENT-jsx-comment-quoting-the-badge-defect",
+    why: "the fix explains itself in a JSX comment naming the forbidden expression; section 10 strips {/* */} so it cannot fail on its own documentation",
+    edits: [[CORE, BADGE, "{/* never: <TrustBadge score={vScore(climber)} compact/> */}" + BADGE]],
     silent: true,
   },
   {
