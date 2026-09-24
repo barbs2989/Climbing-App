@@ -3747,6 +3747,63 @@ the total when deciding where a new guard belongs.
     consumes it, and the claim stood here and in a comment beside the control at once. These two
     were left outside the
     gate while being just as inert — the *an instance fixed by hand is not a class closed* shape.
+  - **`visibleWhileBrowsing` HAS SINCE SHIPPED, AND IT IS THE ONLY ONE OF THE FIVE THAT COULD.**
+    Reading the paragraph above as a worklist rather than a caveat settled it by MEASURING each
+    gated control's consumers: **only this one is read outside its own switch.** `locPrecise`,
+    `profileVis`, `showOnline` and `crewInviteFrom` are each read by nothing but their own
+    `aria-checked`, background and thumb offset — so shipping one of those would durably keep a
+    promise the app cannot keep, which is what the flag is for. **The count in this file was
+    wrong the whole time**: the flag gated **five**, while CLAUDE.md, the audits and a comment in
+    `ClimbMatchCore.jsx` all said four. Shipping the one that works made the stale number true by
+    accident, which is the worst way for a hand-copied count to end up correct — the one in Core
+    was removed rather than left to rot again.
+    - **ITS ENFORCEMENT IS STRONGER THAN A COLUMN, which is why it needed no migration.**
+      `useRoutePresence` calls `channel.track(visible ? {id,name,avatar,visible:true} :
+      {id,visible:false})`, so with it off a climber's name and avatar are **never transmitted** —
+      omission at source, with no row anywhere for a policy to protect. Its column-backed siblings
+      are weaker: the value sits in a publicly-readable `profiles` row and the switch governs only
+      whether a reader's app surfaces it.
+    - **DEVICE-SCOPED (`lib/browse-visibility-pref.js`), and the asymmetry is deliberate.**
+      Presence is already per-device — you are "viewing now" from the browser you are browsing in —
+      and the cost of not travelling falls in the SAFE direction: the default is "no", so a second
+      device starts invisible and the climber opts in again there. A column that travelled would
+      carry an opt-in onto a device they had not thought about, which is the direction
+      `resume_public` guards against with `!!p.resume_public`.
+    - **A NEW `how` KIND, `device`, WITH FOUR CLAUSES THAT STOP IT BECOMING AN ESCAPE HATCH.** It is
+      the first kind here that rests on no column, so it is the first that could bless a switch
+      nobody notices: the value must go through `definePref` (validated on READ, and safe when
+      localStorage throws or is absent under SSR), come BACK on reload, be SAVED on toggle, and
+      **reach a consumer that is not the switch's own rendering** — plus that consumer must really
+      act on it. **Clause 4 is load-bearing**: every control still behind the flag fails it.
+    - **A COMMENT COULD SATISFY THAT CLAUSE, MEASURED RATHER THAN FEARED.** The first version
+      matched `visible:<flag>` file-wide, and the injection case that writes exactly that into a
+      COMMENT while deleting the real wiring **passed** — the *presence is not use* false pass. The
+      test is scoped to the consumer call's own argument list now, walked with a state machine that
+      tracks strings and comments. That is safe HERE and not over a whole file for a stated reason:
+      a call's arguments are a pure JS expression, so every quote really is a delimiter, where the
+      offsets-preserving blanker desynchronises on JSX **body text** apostrophes.
+    - **UN-GATING CHANGES THE DOCUMENTS TOO**, and this file's own rule is what caught it: **no
+      legal surface described route presence at all**, before or after. Privacy §3 is written
+      ENUMERATIVELY (*"Connecting is also visible in one more way"*), so silence about a new way a
+      climber's name reaches others reads as a complete list that is not. One clause was added to
+      §3 and to the in-app sheet. It says **"without your name or photo"** rather than
+      *"anonymously"* — the presence entry still carries a user id, so an anonymity claim would
+      over-state it, and that is the wording the control's own sub-copy already uses. **A same-day
+      amendment cannot move a DATE version**: `POLICY_VERSION` was bumped to `2026-09-23` hours
+      earlier by #1767, so an account that accepted this morning has a record pointing at slightly
+      different words — the limitation this file already records, not a new one.
+    - Injection-tested **9/9** (`scripts/oneoff/inject-device-switch-cases.mjs`), each case proving
+      its edit landed **by checksum**, restoring every touched file byte-identically, and judged on
+      the guard's **own FAIL lines**; the harness refuses any expectation already present in the
+      clean run. `consumer-gone` is the load-bearing one — it persists perfectly and governs
+      nothing. `enforcement-broken` is the one no wiring test can see: the consumer receives the
+      flag and broadcasts the name anyway. **One must stay SILENT** — a comment quoting the shape
+      BESIDE live wiring is documentation, and a guard firing there would forbid explaining itself.
+    - The feature itself is proven by `scripts/oneoff/probe-browse-visibility-round-trip.mjs` (13
+      assertions, no browser and no database), which lifts the broadcast expression from
+      `lib/presence.js` with `ANCHOR LOST` rather than retyping it and asserts the ON case carries
+      the name **first** — *"the name is absent"* is equally true of an expression that sends
+      nothing at all.
   - **DECLARED, NOT DERIVED, and that is a correction to this guard's own first draft.** It mapped
     a flag to a column by camelCase→snake_case and demanded ONE persistence shape, then reported
     **four healthy controls**: `showRealName` is `show_name`, not `show_real_name`; and
