@@ -773,18 +773,20 @@ const GRADE_SCALES = (() => {
   for (let i = 0; i <= 9; i++) yds.push(["5." + i, i, i]);
   for (let b = 10; b <= 15; b++) for (let k = 0; k < 4; k++) yds.push(["5." + b + "abcd"[k], k === 0 ? b : b + (k + 1) / 4, b + (k + 1) / 4]);
   const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
-  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7) };
+  // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
+  const aid = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid };
 })();
-const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice" };
+const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
-//   aid and mixed: the grade stored is the 5.x FREE grade on nearly every row (aid 1,254 of 1,259),
-//     and OpenBeta publishes no A/C or M grade at all, so a 5.x range is what the data supports.
-//   ice: two scales — the WI grades imported from OpenBeta (scripts/pipeline/import-ice-wi.mjs) and
-//     the older rows whose only grade is 5.x — so ice offers both and filters on grade_system.
+//   ice / mixed / aid: a route can carry several grades at once ("5.8 AI3", "5.9 A2"), so each
+//     offers its own scale — read from the per-scale columns 0203 added, filled from Mountain
+//     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
+//     these rows store as their primary grade.
 // Re-run the measurements before widening this.
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["yds"], mixed: ["yds"], ice: ["wi", "yds"] };
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
 // range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
 // corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop

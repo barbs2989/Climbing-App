@@ -21,6 +21,9 @@ after.json
 
 # regenerable catalog data — lives in Supabase, re-pull via etl-state.mjs
 catalog/**/*.json
+# Mountain Project exports fetched under licence (scripts/pipeline/fetch-mp-ice-mixed-aid.mjs):
+# third-party data, never committed to this repo.
+catalog/_mp/
 supabase/seed-utah.sql
 
 # Supabase CLI scratch state — written by `supabase link` / `functions deploy`,
