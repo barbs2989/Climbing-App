@@ -1216,7 +1216,12 @@ export function ApproachVariants({route,onEdit}){
          because the explanation is worth reading, just not inside a pill. */
       const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
       const seasonPill=seasonShort(seasonFull,48);
-      const facts=[v.hours?v.hours+(/\bh|hour/i.test(String(v.hours))?"":" hr"):null,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
+      /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
+         " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
+         already names its unit is left alone; otherwise the unit goes after the FIRST number range
+         ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
+      const hrsTxt=v.hours?(/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(v.hours))?String(v.hours):String(v.hours).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr")):null;
+      const facts=[hrsTxt,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
       return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
           <div style={{fontSize:13.5,fontWeight:800,color:C.text,minWidth:0,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>

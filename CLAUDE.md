@@ -145,6 +145,7 @@ npm run audit:road-coverage # a route that describes a WALK but nothing about th
 npm run audit:waypoint-distances # a trail cannot be SHORTER than the straight line — needs no gpx
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
+npm run audit:misplaced-prose # ...and every OTHER rendered string, plus a FIRST ASCENT that argues instead of crediting
 npm run audit:summit-pins  # is the SUMMIT pin on the summit? (pin vs the peak's own coordinate)
 npm run audit:peak-coords  # is the PEAK itself where we say it is? (its coordinate vs the ground)
 npm run audit:summit-splits # ...and do a peak's OWN routes agree where it is? (SIXTH pin audit — the ground decides)

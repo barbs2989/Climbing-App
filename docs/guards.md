@@ -13008,6 +13008,48 @@ the correction knows the screen is wrong, and they have no way to report it.
   - Read-only, anon key, fails closed on an empty read and on zero prose values. **Not a build
     gate** — a property of the DB, not the checkout. Injection-tested, 2 cases; `--inject=liveonly`
     must report **0 citations and every value as live**, which is the destructive direction.
+- **`audit:misplaced-prose`** asks whether a rendered string is the thing its place on the page is
+  FOR. Reported by the user on 2026-09-24 from Mount Carru's FIRST ASCENT strap, which read *"…July
+  1933 -- this was the first ascent of the peak overall; the account does not name a specific line,
+  but the cliffed north face makes this … the only plausible non-technical route the 1933 party could
+  have used."* Every word true; none of it a credit. **The research pass arguing with itself in a
+  one-line field.**
+  - **Why no existing guard saw it.** `check:token-boxes` asks about GEOMETRY — the strap wraps, so
+    it is not token-shaped. `check:field-renders` asks about REACH — the column reaches a screen.
+    `audit:note-voice` asks about VOICE, but only in `waypoints[].note`. This extends that cue list
+    to every rendered string and adds a FIRST ASCENT section. **The defect is the voice and the
+    topic, not the shape.**
+  - **Three sections, three repairs.** (1) `fa` PLACEHOLDERS — `"unknown"` alone is **65,237** rows,
+    **68,547** across 101 spellings. Not a backlog: `lib/fa.js` `usableFa` nulls them in
+    `dbRouteToCamel`, so TechStats stops printing *"FIRST ASCENT · unknown"* and
+    `creditFirstAscent()` — which bails on any truthy `fa` — can finally credit a climber's logged FA
+    on those routes. The audit imports that regex rather than copying it. (2) `fa` in RESEARCH VOICE —
+    ~138 WA enrichment rows arguing which line the party took, naming a source (Grokipedia,
+    Mountain Project, AAJ, a resort history page) or recording what was *"stored here previously"*.
+    Repair: who + when, at most *"(first ascent of the peak)"*; null where there is no first ascent to
+    state. (3) PIPELINE VOICE anywhere — **294 strings on 244 routes** on first run, led by **128**
+    `bivy[].notes` (*"No elevation is recorded here because none is reliably sourced"* — camps are
+    copied per route, so 11 sentences cover 86 routes) and **60** `emergency.notes` saying *"County
+    SAR non-emergency line was NOT verified this session"*.
+  - **Simulated against the repair files before handing them over: section 2 falls 82 → 1 and
+    section 3 falls 294 → 0.** The one `fa` left is *"Presumed to be R. Candelaria, perhaps 1980s?"*
+    — a climber's own note, kept. The first simulation left **10** strings; 3 had been read and
+    then dropped from the file by hand, which is the argument for simulating rather than trusting
+    the read.
+  - **The `fa` long tail is NOT the target.** ~110 non-WA values hedge too (*"Probably Dick Cilley"*,
+    *"possibly done previously"*) — that is a climber writing their own FA note, the ordinary voice of
+    the field, not the pipeline. The section-2 cues match research vocabulary, not uncertainty.
+  - **Measured non-findings, exempted by name:** *"Source Lake"* is a place; *"This entry gully"* is a
+    gully you enter (the cue is `this entry is`); the waypoint caveat *"Coordinate is a geometric
+    interpolation … not independently verified"* is REQUIRED by `check:waypoint-caveat`;
+    `access._raw.*` does not render. *"(6,320-6,340 ft depending on source)"* is deliberately not a
+    cue — collapsing it invents a number — and publisher names inside grade columns belong to
+    `audit:prose-citations`' reading list.
+  - Repairs are declared, not derived: `scripts/oneoff/fa-research-voice-rewrites.json` (138 rows)
+    and `scripts/oneoff/pipeline-voice-repairs.json` (find → replace, must match **exactly once**
+    live), applied by `scripts/oneoff/apply-misplaced-prose-repairs.mjs` (`--dry` first), which
+    refuses the whole run on one stale edit and re-reads every row after writing.
+  - Read-only, anon key, fails closed on a read under 100k rows. **Not a build gate.**
 - **`check:dead-flag-gates`** finds UI that can never render because the only thing feeding
   it is a constant seeded from a permanently-false flag. `DEMO_FILLERS` was an unconditional
   `false` when this was written — **#1566 flipped it to TRUE** ("Sample content ON"), so the
