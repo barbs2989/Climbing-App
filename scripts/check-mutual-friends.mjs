@@ -47,6 +47,10 @@ const read = (rel) => {
   if (s.length < 400) dead(rel + " read short (" + s.length + " chars) — a truncated source makes every assertion vacuous");
   return s;
 };
+// Scanning a DIRECTORY is not asserting against a file: read()'s length floor is there to catch
+// a truncated source that would make assertions vacuous, and over 180 migrations it simply trips
+// on the short ones. The file this scan SELECTS still goes through read().
+const readRaw = (rel) => fs.readFileSync(path.join(ROOT, rel), "utf8");
 const ast = (src, file) => {
   try { return parse(src, { sourceType: "module", plugins: ["jsx"] }); }
   catch (e) { return dead("could not parse " + file + ": " + e.message); }
@@ -228,8 +232,18 @@ for (const name of ["FullProfile", "FriendsList", "PartnerSearch"]) {
 // ── 3. THE DEFINER FUNCTION ────────────────────────────────────────────────────────────────
 console.log("\n3. the definer function, as written\n");
 
-const migName = fs.readdirSync(path.join(ROOT, "supabase/migrations")).find((f) => /mutual/.test(f));
-if (!migName) dead("no migration defining mutual_connections — ANCHOR LOST");
+// THE NEWEST DEFINITION WINS, AND `.find()` TOOK THE OLDEST. `create or replace` means the live
+// function is whichever migration defines it LAST, so the moment 0184 added the visibility filter
+// a first-match scan would have gone on asserting against 0182 -- green, against a body the
+// database no longer runs. Filtered to the files that actually DEFINE the function (a migration
+// that merely mentions it is not a definition), sorted, last taken.
+const sqlNoComments = (t) => t.split(String.fromCharCode(10)).map((l) => l.replace(/--.*$/, "")).join(String.fromCharCode(10));
+const migAll = fs.readdirSync(path.join(ROOT, "supabase/migrations"))
+  .filter((f) => /\.sql$/.test(f))
+  .filter((f) => /create\s+or\s+replace\s+function\s+mutual_connections/i.test(sqlNoComments(readRaw("supabase/migrations/" + f))))
+  .sort();
+if (!migAll.length) dead("no migration defining mutual_connections — ANCHOR LOST");
+const migName = migAll[migAll.length - 1];
 // SQL line comments only. This migration's header QUOTES the forbidden `= public` spelling while
 // explaining why it is wrong, so an unstripped scan would pass on the documentation. No string
 // literal in this file contains `--`, which is what makes the line strip safe here.
@@ -250,6 +264,25 @@ else bad("execute is revoked from anon");
 if (/array_length\s*\(\s*others/i.test(mig)) ok("the array is capped, so a friend list cannot be swept in one call");
 else bad("the array is capped");
 
+// THE SWITCH, AT BOTH ENDS (0184). One column is filtered at two points, because two different
+// climbers have an edge revealed by any row: the person NAMED, and the profile being OPENED.
+// Dropping either half leaves somebody who turned it off exposed on one of the two surfaces, and
+// NO RENDER CAN SEE IT -- the map just comes back fuller, which looks like the feature working.
+if (/pm\.mutuals_visible/.test(mig)) ok("a climber who turned it off is not NAMED as a mutual to anyone");
+else bad("a climber who turned it off is not NAMED as a mutual to anyone", "somebody who hid themselves is still named on other people's profiles");
+if (/po\.mutuals_visible/.test(mig)) ok("...and their own profile stops showing a reader who they both know");
+else bad("...and their own profile stops showing a reader who they both know", "somebody who hid themselves still leaks their edges from their own profile");
+
+// NOT NULL, so the switch, the filter and the documents cannot disagree about a third state.
+// `resume_public` needs its `!== false` / `!!` asymmetry precisely because it CAN be absent.
+const colMig = fs.readdirSync(path.join(ROOT, "supabase/migrations"))
+  .filter((f) => /\.sql$/.test(f))
+  .map((f) => sqlNoComments(readRaw("supabase/migrations/" + f)))
+  .find((t) => /add\s+column\s+if\s+not\s+exists\s+mutuals_visible/i.test(t));
+if (!colMig) dead("no migration adds profiles.mutuals_visible — ANCHOR LOST");
+if (/mutuals_visible\s+boolean\s+not\s+null\s+default\s+true/i.test(colMig)) ok("the column is NOT NULL DEFAULT true, so there is no absent case for the filter and the switch to read differently");
+else bad("the column is NOT NULL DEFAULT true, so there is no absent case for the filter and the switch to read differently", "a nullable column needs the resume_public asymmetry spelled out at every reader, and this has two");
+
 // 0182 EXISTS BECAUSE 0087 IS PARTY-ONLY, so that premise is asserted rather than assumed.
 // Carried from the probe this change deletes: a parallel session (#1663) reached the same
 // conclusion independently and asserted the blocker FROM the migration so it fails as STALE
@@ -265,6 +298,26 @@ if (/auth\.uid\(\)\s*=\s*requester\s+or\s+auth\.uid\(\)\s*=\s*addressee/.test(se
   bad("0087's select policy is no longer party-only", "the definer's rationale AND the privacy documents both need re-deriving");
 }
 
+
+// THE DOCUMENTS NAME THE CONTROL. The disclosure shipped in 0182 and the control in 0184; a
+// privacy document that describes the exposure and not the switch is the half-told version, and
+// check:policy-claims asks the opposite question (does a surface claim a control the app LACKS)
+// so it cannot see a control the app HAS going undescribed.
+// SCOPED TO THE DISCLOSURE'S OWN SECTION, never the whole file. A file-wide test was the first
+// version and an injection proved it VACUOUS: `Settings -> Privacy & safety` already appears a
+// SECOND time in ClimbMatchCore.jsx, in the partner-browse copy, so deleting the clause from the
+// mutual-friends disclosure left the assertion green. The legal copy is [title, body] pairs, so
+// the closing quote-bracket is a real structural boundary rather than a character window.
+for (const [file, text, label] of [["ClimbMatchCore.jsx", coreSrc, "the Privacy Policy"], ["ClimbMatch.jsx", appSrc, "the in-app privacy sheet"]]) {
+  const at = text.indexOf("both connected with");
+  if (at < 0) { bad(label + " still discloses mutual friends at all", "the disclosure is gone from " + file); continue; }
+  const end = text.indexOf("\"]", at);
+  if (end < 0) { bad(label + " section can be delimited", "no closing pair-end after the disclosure in " + file); continue; }
+  const section = text.slice(at, end);
+  if (/Settings \u2192 Privacy & safety/.test(section)) ok(label + " points at the control, in the same section that makes the disclosure");
+  else bad(label + " points at the control, in the same section that makes the disclosure", "it discloses that mutual friends are shown and not that " + file + " can turn it off");
+}
+
 } catch (e) {
   if (e instanceof Dead) process.exit(1);
   throw e;
@@ -272,7 +325,8 @@ if (/auth\.uid\(\)\s*=\s*requester\s+or\s+auth\.uid\(\)\s*=\s*addressee/.test(se
 
 // A floor two below a clean run, the convention this repo holds: a floor set to the exact total
 // cannot see its own newest section stop asking.
-const FLOOR = 24;
+
+const FLOOR = 29;
 if (ran < FLOOR) {
   console.error("\ncheck:mutual-friends: only " + ran + " assertions ran (floor " + FLOOR + ") — this run proved less than it claims.\n");
   process.exit(1);
