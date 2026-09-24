@@ -7040,7 +7040,54 @@ the total when deciding where a new guard belongs.
       returns `""` and a caption that never rendered returns `null`, because *"there is no
       warning"* and *"the tile is missing"* want different repairs.
     - The floor rises to **21**, two below a clean 23.
-    - Injection-tested **9/9** (`scripts/oneoff/inject-return-leg-day-cases.mjs`), each case proving
+  - **SECTION 3 — THE MULTI-DAY DISCLAIMER SITTING ON TOP OF THESE TILES RENDERED FOR NOBODY.**
+    Sections 1 and 2 are about the estimate and its labels; the amber *"typically done over N days
+    … the single-push estimate below is a reference only"* box directly above them was gated on
+    **`route.campOptions`, a SEED-ONLY field**. `routes` has no such column under any spelling, the
+    DB store is `bivy`, and `deploy.yml` sets `VITE_USE_DB=true` — so the one sentence telling a
+    climber not to plan a single push off these numbers was absent exactly where the numbers are
+    most absurd.
+    - **MEASURED BY EXECUTING `dbRouteToCamel`, NEVER BY GREPPING IT**
+      (`scripts/oneoff/measure-multiday-disclaimer-reach.mjs`): the mapper **spreads** the row, so a
+      zero grep in `lib/db.js` proves nothing about a column — the mistake this file records a
+      session making about `difficulty`. Run it: `campOptions` survives on **0 of 8,365** WA routes.
+    - **THE APP ALREADY HAD THE RIGHT SIGNAL, IN THE SAME FILE, AND THE PLANNER WAS THE OUTLIER.**
+      `RouteGearEssentialsBox` derives multi-day from the route's own **itinerary day count** and
+      adds a tent, a sleeping bag, a stove and extra food on the strength of it. So on **344**
+      routes the app packed for a bivy while the planner said nothing. The two gates disagreed on
+      **all 344**, which is the `_memN`/`_hfr` shape: one fact, two derivations, one screen. They
+      are one exported `isMultiDayOuting()` in `lib/outing.js` now — the module that already owns
+      itinerary reasoning — so they cannot disagree again.
+    - **PORTING THE OLD GATE TO `bivy` WOULD HAVE LOOKED LIKE A FIX AND CHANGED NOTHING**, which is
+      the measurement worth keeping: the seed shape is `campOptions.some(c => c.stars > 0)` and
+      **0 of the 796 WA routes carrying a bivy entry has a starred camp**. That store does not hold
+      stars. *Measure the replacement, not just the defect.*
+    - **THE ITINERARY IS THE HONEST SIGNAL AND THE CLAIM WAS CHECKED AGAINST THE ROWS**, not
+      assumed: a camp EXISTING means you could sleep there, while a 2+ day itinerary is the route
+      stating its own trip length — and those rows read *"A committing 2-day trip"*, *"A 2-day trip
+      is standard"*, *"A long 4-day round trip"*. The gear box already makes the **stronger**
+      commitment on the same signal, so a signal good enough to pack a tent for is good enough to
+      caveat an estimate.
+    - **THE COPY HAD TO MOVE WITH THE GATE, AND THAT IS THE TRANSFERABLE HALF.** It read *"use the
+      **Plan** tab for a realistic day-by-day plan"* — while sitting **ON** the Plan tab, with
+      `<ItineraryView/>`'s **Trip plan** rendered directly above it. A pointer past the very thing
+      it pointed at, invisible for as long as the box rendered for nobody. **Ask what a
+      newly-reachable surface SAYS, not only that it now reaches somebody** — the same lesson the
+      offline area-jump records, where making a list reachable made everything downstream of it
+      reachable too.
+    - **FOUND BY ITS OWN `data-multiday`, NOT BY ITS SENTENCE, AND THE INJECTION IS WHAT FORCED
+      THAT.** The first version matched the copy, so `SILENT-multiday-copy-reworded-but-still-honest`
+      **FIRED ON CORRECT WORK** — a guard pinned to one phrasing forbids improving it. The attribute
+      is the structural anchor ROUTE BREAKDOWN's rows already use, and it carries the day count so
+      the two cannot drift: the box must also **PRINT** that number, asserted separately and needing
+      no particular wording. The *"above"* claim is asserted as **ORDER** in the raw markup, and the
+      pointer is matched inside the **box's own text** — page-wide it would pass on the strength of
+      the destination existing rather than on the disclaimer naming it.
+    - **BOTH DIRECTIONS.** A rule that only demands the box APPEAR is satisfied by showing it
+      always, which would print *"typically done over 1 days"* on a car-to-car scramble — which is
+      exactly what the reverted gate does to the seed-shaped fixture, and what that fixture is for:
+      restoring the old gate fails the first case, **OR-ing** the two fails only this one.
+    - Injection-tested **14/14** (`scripts/oneoff/inject-return-leg-day-cases.mjs`), each case proving
       its edit landed **by checksum** and restoring `RouteDetail.jsx` byte-identically. Case 1 is the
       defect restored verbatim; cases 2 and 3 revert one tile each so neither can pass on the
       strength of the other. **`next-day-label-deleted` is the load-bearing one** — dropping the

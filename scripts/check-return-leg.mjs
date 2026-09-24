@@ -184,7 +184,64 @@ eq("...while its next-day return is worded like a next-day return", split.ret, n
 const dayOfDecls = (fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8").match(/const dayOf=/g) || []).length;
 eq("dayOf is declared exactly once", dayOfDecls, 1);
 
-const FLOOR = 21;
+/* -- 3. a multi-day route SAYS SO, and points at something that is on the screen ----------------
+   The amber "typically done over N days" box sits directly above these tiles, and it was gated on
+   `route.campOptions` — a SEED-ONLY field. `routes` has no such column under any spelling, the DB
+   store is `bivy`, and deploy.yml sets VITE_USE_DB=true, so it rendered for NOBODY in production:
+   measured by executing dbRouteToCamel rather than grepping it, campOptions survives on 0 of 8,365
+   WA routes. Meanwhile the GEAR box in the same file derived the same fact from the route's own
+   itinerary and added a tent, a sleeping bag and a stove — so on 344 routes the app packed for a
+   bivy and said nothing about the day being multi-day, on exactly the routes whose single-push
+   estimate is least believable.
+
+   BOTH DIRECTIONS, because a rule that only demands the box APPEAR is satisfied by showing it on
+   every route — which would put "typically done over 1 days" on a car-to-car scramble. And the
+   seed-shaped fixture is the anti-revert: restoring the old gate fails the first case, while
+   OR-ing the two fails this one. */
+/* FOUND BY ITS OWN `data-multiday`, NOT BY ITS SENTENCE, and the injection is what forced that:
+   a first version matched the copy, so `SILENT-multiday-copy-reworded-but-still-honest` FIRED ON
+   CORRECT WORK — a guard pinned to one phrasing forbids improving it, which this repo records as
+   a real cost several times over. The attribute is the same structural anchor ROUTE BREAKDOWN's
+   rows already use, and it carries the day count so the two cannot drift: the box must also PRINT
+   that number, which is asserted separately and needs no particular wording to do it. */
+const discl = (r) => {
+  const html = render(r);
+  const m = html.match(/data-multiday="(\d+)"/);
+  if (!m) return null;
+  return { days: m[1], saysIt: text(html).includes(" " + m[1] + " days") };
+};
+const md3 = route({ distKm: 30, gainM: 6000 / FT, lossM: 6000 / FT, itinerary: { days: [{ n: 1 }, { n: 2 }, { n: 3 }] } });
+const md1 = route({ distKm: 30, gainM: 6000 / FT, lossM: 6000 / FT, itinerary: { days: [{ n: 1 }] } });
+const mdNone = route({ distKm: 30, gainM: 6000 / FT, lossM: 6000 / FT });
+/* The seed shape the gate used to read, on a route whose OWN itinerary is a single day. */
+const mdSeed = route({ distKm: 30, gainM: 6000 / FT, lossM: 6000 / FT, itinerary: { days: [{ n: 1 }] }, campOptions: [{ name: "High camp", stars: 5 }] });
+
+eq("a route whose own itinerary runs 3 days says it is a multi-day outing", !!discl(md3), true);
+eq("...derived from that itinerary's own day count", discl(md3) && discl(md3).days, "3");
+eq("...and PRINTS it, rather than saying 'multiple' or carrying it only in the markup", discl(md3) && discl(md3).saysIt, true);
+eq("a single-day itinerary does NOT get the multi-day disclaimer", discl(md1), null);
+eq("a route with no itinerary at all does NOT get it either", discl(mdNone), null);
+eq("a starred seed campOption does NOT drive it — that field reaches no real route", discl(mdSeed), null);
+
+/* THE POINTER MUST NAME SOMETHING ON THE SCREEN. The old copy read "use the Plan tab for a
+   realistic day-by-day plan" while sitting ON the Plan tab, with <ItineraryView/>'s "Trip plan"
+   rendered directly ABOVE it — a pointer past the very thing it pointed at, invisible for as long
+   as the box rendered for nobody. Asserted as ORDER rather than mere presence, because "above" is
+   the claim being made. */
+const md3Html = render(md3);
+const iPlan = md3Html.indexOf(">Trip plan<"), iDiscl = md3Html.search(/data-multiday="/);
+eq("ANCHOR: the Trip plan section rendered on the same tab", iPlan >= 0, true);
+eq("...and it really is ABOVE the disclaimer that points at it", iPlan >= 0 && iDiscl > iPlan, true);
+/* The box's OWN text, sliced from its anchor to the first closing tag — it holds one <b> and no
+   nested div. Scoped rather than matched page-wide, because "Trip plan" is also the heading of the
+   section being pointed AT, so a page-wide test would pass on the strength of the destination
+   existing rather than on the disclaimer naming it. The rule is that the pointer names a
+   destination, never that it is worded one way. */
+const box = md3Html.slice(iDiscl).split("</div>")[0];
+eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
+eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
+
+const FLOOR = 31;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
