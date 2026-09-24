@@ -57,9 +57,17 @@ const CASES = [
     find: 'crewInCrew(safetyCrewObj).filter(m=>m.climberId!==0).map(m=>crewMemberById(m.climberId))',
     repl: 'safetyCrewObj.members.filter(m=>m.climberId!==0).map(m=>crewMemberById(m.climberId))' },
 
+  // REPOINTED: readiness was derived twice and the two disagreed about whose confirmation counts, so
+  // the member test folded into `crewAllConfirmed` and this case's old anchor -- isReady's own raw
+  // expression -- stopped matching. The PROPERTY is unchanged (isReady must ask the requester rule);
+  // only where it asks moved. The case below it cuts the shared link, which is the other half.
   { name: "isready", file: "core", expect: "isReady asks the same question",
-    find: 'function isReady(c,hasMessages){return !!(c&&crewInCrew(c).filter(m=>m.climberId!==0)',
-    repl: 'function isReady(c,hasMessages){return !!(c&&(c.members||[]).filter(m=>m.climberId!==0)' },
+    find: 'function isReady(c,hasMessages){return !!(c&&crewAllConfirmed(c)&&',
+    repl: 'function isReady(c,hasMessages){return !!(c&&(c.members||[]).filter(m=>m.climberId!==0).every(m=>m.status==="confirmed")&&' },
+
+  { name: "shared-link-cut", file: "core", expect: "crewAllConfirmed carries the rule",
+    find: 'function crewAllConfirmed(c){var inC=crewInCrew(c);',
+    repl: 'function crewAllConfirmed(c){var inC=((c&&c.members)||[]);' },
 
   { name: "invite-prompt-size", file: "app", expect: "the invite prompt's size",
     find: 'const roster=ex?crewSize(ex):0;',
