@@ -984,6 +984,10 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
+  // Type-of-climbing filter over what is in view. An area row stores only its MAIN discipline
+  // (`dominant_discipline`, 0051), so that is what this filters on — and the caption says so,
+  // rather than implying a mostly-sport crag holds no trad.
+  const [disc, setDisc] = useState(null);
 
   // Full screen just resizes the same Leaflet instance in place (same map div,
   // same markers, same zoom/pan) rather than tearing it down and rebuilding it
@@ -994,7 +998,14 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     return () => clearTimeout(t);
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
-  const nearby = data && data.rows;
+  const nearbyAll = data && data.rows;
+  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => a.dominant_discipline === disc) : nearbyAll), [nearbyAll, disc]);
+  const discsInView = useMemo(() => {
+    const n = {};
+    (nearbyAll || []).forEach(a => { if (a.dominant_discipline) n[a.dominant_discipline] = (n[a.dominant_discipline] || 0) + 1; });
+    if (disc && !n[disc]) n[disc] = 0; // keep the active chip on screen so it can be cleared
+    return Object.entries(n).sort((a, b) => b[1] - a[1]);
+  }, [nearbyAll, disc]);
 
   const readBounds = map => {
     try {
@@ -1107,6 +1118,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, bounds, center]);
+  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   return (
     <div>
@@ -1140,14 +1152,24 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
-          {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {discsInView.length > 1 || disc ? (
+            <div style={{ marginBottom: 8 }}>
+              <div role="group" aria-label="Filter areas by type of climbing" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4 }}>
+                {discChip(null, "All", !disc)}
+                {discsInView.map(([k, n]) => discChip(k, (DL[k] || k) + " · " + n, disc === k))}
+              </div>
+              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Filters by each area's main type of climbing — on the map too.</div>
+            </div>
+          ) : null}
+          {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {disc && (nearby.length > sorted.length || (data && data.total > nearbyAll.length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + " areas — zoom in to see more."}</div> : null}
           {sorted.map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
-          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs in view — pan or zoom out to see more.</div> : null}
+          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + " areas in view — pan, zoom out, or tap All." : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}
     </div>
