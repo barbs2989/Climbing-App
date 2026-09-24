@@ -26963,3 +26963,52 @@ exceeds the SQL Editor's ~4KB safe-paste size — split it into ~1.5KB chunks wh
 Progress file's `last_processed_id` advanced to `wa_hourglass_gully_winter`. Next batch
 continues in sorted-id order after that id. 155 + 8 = 163 audited this pass through batch
 327; 524 - 163 = **361 in-scope routes remain unaudited this pass**.
+
+## Batch 328 (2026-09-24, pass 6)
+
+Routes: `wa_hozomeen_mountain_north_peak_north_route`, `wa_hozomeen_mountain_southeast_face`,
+`wa_hurry_up_peak_south_ridge`, `wa_icy_peak_ruth_icy_traverse`, `wa_icy_peak_southwest_route`,
+`wa_ingalls_peak_east_route`, `wa_ingalls_peak_south_ridge`, `wa_inner_constance_northwest_buttress`.
+
+**Fixed (1):**
+- `wa_hozomeen_mountain_southeast_face`: `high_point_ft` still read 8,071 ft — Hozomeen's
+  North Peak elevation — even though every other field on this row was already rewritten
+  by an earlier research pass to describe the *South* Peak (8,003 ft): `face` reads "South
+  Peak (8,003 ft - the lower of Hozomeen's two main summits)", `fa` explicitly says "this
+  route climbs the SOUTH Peak (8,003 ft)" (Beckey, 30 May 1947), and the `waypoints` array
+  ends at a "Hozomeen Mountain, South Peak" summit pin at 8,003 ft. Only `high_point_ft`
+  was never brought along. Re-verified independently (Wikipedia, ListsOfJohn both give
+  North 8,071 ft / South 8,003 ft, matching what this row's own fields already settled
+  on) and corrected `high_point_ft` to 8,003 to match the row's own prior decision, not a
+  new elevation judgment.
+
+**Flagged, not fixed (0 new):** the row's own pre-existing `corrections` note already
+raises the broader, structural question — whether this route entry (named/id'd "Southeast
+Face" but coordinate-matched to the North Peak area) should be renamed, re-pointed, or
+split into a separate South Peak entry for the true Southeast Buttress line. That call is
+unchanged by this batch's fix and is still a human-review item, exactly as the existing
+note already says.
+
+**Checked and confirmed correct (no action):** Hozomeen North Peak's 8,071 ft and its
+1904 Tatum/Loudon Boundary Survey first ascent (`wa_hozomeen_mountain_north_peak_north_route`)
+both match Wikipedia. Hurry-up Peak's 7,821 ft (`wa_hurry_up_peak_south_ridge`) matches
+Wikipedia/ListsOfJohn. Icy Peak's 7,073 ft (both `wa_icy_peak_ruth_icy_traverse` and
+`wa_icy_peak_southwest_route`) matches Wikipedia/ListsOfJohn, as does the Ruth Mountain
+bivy waypoint's 7,115 ft on the southwest-route row. Ingalls Peak East Peak's 7,480 ft and
+its November 1952 Prater/Prater/Butchart first ascent (`wa_ingalls_peak_east_route`) both
+check out. Ingalls Peak main summit's 7,662 ft and its May 30, 1941 first ascent
+(`wa_ingalls_peak_south_ridge`) both check out, though sources spell the climber's name two
+ways — Wikipedia gives "Keith Lankin", other sources "Keith Rankin" — a genuine cross-source
+name discrepancy, not something this pass can resolve, so left as stored. Inner Constance's
+7,670 ft and its 1983 Hardee/Coffey first ascent of the Northwest Buttress
+(`wa_inner_constance_northwest_buttress`) both check out. All six peak-area placements in
+the hierarchy (`wa_hozomeen_mountain`, `wa_hurry_up_peak`, `wa_icy_peak`, `wa_ingalls_peak`,
+`wa_ingalls_peak_east`, `wa_inner_constance`) resolve to sensible WA parent chains.
+
+**Verification note:** same as prior batches — this scheduled run has no `.env`/`.env.local`;
+ran `check:sql` by exporting `VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY` directly into the
+shell. It confirmed the single write target in this batch's SQL file exists in the live DB.
+
+Progress file's `last_processed_id` advanced to `wa_inner_constance_northwest_buttress`.
+Next batch continues in sorted-id order after that id. 163 + 8 = 171 audited this pass
+through batch 328; 524 - 171 = **353 in-scope routes remain unaudited this pass**.
