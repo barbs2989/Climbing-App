@@ -407,7 +407,7 @@ Scoped to the ids the CARDS need rather than reusing openGrpProfilesQ, which is 
 narrowed to the one open group. The owner rides along because _orgName needs it and the
 trigger seats the creator in group_members anyway, so it is usually already in the set. */const _grpCardIds=useMemo(function(){var out=[];(createdGroups||[]).forEach(function(g){if(!g||!g._db)return;((groupMembers||{})[g.id]||g.memberIds||[]).forEach(function(v){if(typeof v==="string"&&/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(v))out.push(v);});if(typeof g.ownerId==="string")out.push(g.ownerId);});return Array.from(new Set(out));},[createdGroups,groupMembers]);const grpCardProfilesQ=useProfilesByIds(_grpCardIds);const mySearchesQ=useMySavedSearches(uid);/* Declared immediately after its query, because these are `const` and a flag hoisted above the query it reads is the TDZ that blanked the app in #1206. */var searchesUnavailable=!!(uid&&mySearchesQ&&mySearchesQ.isError);const myListsQ=useMyLists(uid);var listsUnavailable=!!(uid&&myListsQ&&myListsQ.isError);  const onCreateList=function(f){
     if(!uid)return;
-    createListRow(uid,{name:f.name,routeIds:f.routeIds}).then(function(){myListsQ.refetch&&myListsQ.refetch();}).catch(function(){
+    createListRow(uid,{name:f.name,description:f.description,routeIds:f.routeIds}).then(function(){myListsQ.refetch&&myListsQ.refetch();}).catch(function(){
       setUserLists(function(ls){return (ls||[]).filter(function(l){return l.id!==f.localId;});});
       showToast("Couldn't save that list — try again.");
     });
