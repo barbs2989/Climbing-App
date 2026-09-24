@@ -10,12 +10,18 @@
 //
 // Rides the same scaffold check:a11y-badges uses — `?zr=1` calls the app's own openRoute() from
 // inside the opener, which no slow list or moved control can defeat.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { spawn } from "node:child_process";
 import fs from "fs";
 import net from "node:net";
 import path from "path";
 import { fileURLToPath } from "url";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-map-markers-onscreen.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const free = p => new Promise(res => { const s = net.createServer(); s.once("error", () => res(false)); s.once("listening", () => s.close(() => res(true))); s.listen(p, "127.0.0.1"); });

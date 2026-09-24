@@ -38,12 +38,18 @@
 // a database. Even so: confirm()/alert() are auto-dismissed (an open dialog blocks everything
 // after it), controls whose accessible name reads destructive or navigates away are SKIPPED by
 // name, and the page is reloaded between tabs so one click cannot poison the next screen.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { settledText } from "../lib/render-settle.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-do-controls-do-anything.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const PORT = 5330;

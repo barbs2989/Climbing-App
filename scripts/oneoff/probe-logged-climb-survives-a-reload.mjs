@@ -40,6 +40,7 @@
 //     persistence defect and was the probe reading the wrong screen. Dumping the text is what
 //     settled it, which is why the dump is still here on failure.
 
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import { spawn } from "node:child_process";
 import net from "node:net";
@@ -49,6 +50,11 @@ import { fileURLToPath } from "node:url";
 import { createFixture, sessionForStorage, STORAGE_KEY } from "../lib/ui-fixture.mjs";
 import { durableFixture, durableCredsPresent } from "../lib/durable-fixture.mjs";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-logged-climb-survives-a-reload.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const PORT = 5310;

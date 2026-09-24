@@ -28,11 +28,17 @@
 //
 // Other legitimate no-ops: a radio already selected, a backdrop shield stopping propagation.
 // The output is candidates, not defects.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import net from "node:net";
 import fs from "node:fs";
 import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { overlayStates, NEEDS_EXTRA_STATE } from "../lib/overlay-scaffold.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-dead-controls-overlays.mjs");
 
 const ROOT = new URL("../..", import.meta.url).pathname;
 const ONLY = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);

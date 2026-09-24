@@ -9,9 +9,15 @@
 //
 // So measure the thing the sweep could not: the chip's own computed style, its aria state, and
 // whether the modal's Continue button changes as a selection is made.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
 import net from "node:net";
 import { spawn } from "node:child_process";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-onboarding-discipline-chips.mjs");
 
 const ROOT = new URL("../..", import.meta.url).pathname;
 async function claimPort(start) {

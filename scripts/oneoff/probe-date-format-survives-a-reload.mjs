@@ -16,6 +16,7 @@
 // between them the round trip is closed without a fragile drive.
 //
 // --static-only skips the browser and can never print a pass.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
@@ -23,6 +24,11 @@ import { spawn } from "node:child_process";
 import { chromium } from "playwright-core";
 import { fileURLToPath } from "node:url";
 import { settledText } from "../lib/render-settle.mjs";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-date-format-survives-a-reload.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const STATIC_ONLY = process.argv.includes("--static-only");

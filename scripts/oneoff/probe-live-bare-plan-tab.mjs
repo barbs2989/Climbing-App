@@ -7,7 +7,13 @@
 //
 // A leak scan cannot see that. It is not a forbidden string; it is a confident number computed
 // from nothing. So: dump the tab and look for a time estimate presented without its inputs.
+import { assertQuietBox } from "../lib/quiet-box.mjs";
 import { chromium } from "playwright-core";
+
+// A browser verdict from an oversubscribed box is not evidence in either direction — a miss reads
+// as a live defect, a pass can be vacuous because nothing settled. Refuses above 6x cores; --anyway
+// runs regardless and stamps the output as not evidence. See scripts/lib/quiet-box.mjs.
+assertQuietBox("probe-live-bare-plan-tab.mjs");
 
 const SITE = "https://barbs2989.github.io/Climbing-App/";
 const id = process.argv[2] || "wa_gully_1";

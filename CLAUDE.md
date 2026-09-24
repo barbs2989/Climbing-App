@@ -122,6 +122,7 @@ npm run check:flex-scroll # no scroll pane in a flex column that cannot actually
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
+npm run check:quiet-box-wiring # every BROWSER probe refuses an oversubscribed box BEFORE launching one (in build)
 npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
