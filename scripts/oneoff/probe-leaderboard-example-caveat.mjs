@@ -26,7 +26,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Leaderboards, CLIMBERS, FILLER_CLIMBERS } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
+import { CLIMBERS, FILLER_CLIMBERS } from "${path.join(ROOT, "ClimbMatchCore.jsx")}";
+import Leaderboards from "${path.join(ROOT, "lib", "Leaderboards.jsx")}";
 const noop = () => {};
 export function seedCount() { return CLIMBERS.length + FILLER_CLIMBERS.length; }
 // Replace the seed pool with climbers carrying uuid ids — what a real profile looks like — so

@@ -280,7 +280,8 @@ const DUPLICATES = {
     ["()=>{setSharedRoute(null);setProfileModal(c);}",
      "avatar beside a sibling running the identical handler and already named — a second tab stop to the same profile is noise, not access"],
   ],
-  "ClimbMatchCore.jsx": [
+  // PartnerSearch moved out of ClimbMatchCore.jsx (lazy-loaded), and this control with it.
+  "lib/PartnerSearch.jsx": [
     ["()=>onViewProfile(c)",
      "same shape: the climber's NAME beside it carries the tab stop"],
   ],

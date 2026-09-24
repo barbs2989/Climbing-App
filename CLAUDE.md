@@ -124,6 +124,7 @@ npm run check:bare # renders a route with NO enrichment — the shape 99.5% of t
 npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
+npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
 npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
@@ -189,6 +190,7 @@ npm run audit:trailhead-road # routes sharing ONE trailhead/road — open? same 
 npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
+npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, or a FIRST ASCENT that argues instead of crediting?
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
@@ -216,6 +218,7 @@ npm run check:grade-parser  # grade_num is parsed in one place, and so is the DI
 npm run audit:grade-num-drift # ...and does the STORED grade_num still agree with that parser?
 
 # ── Database, migrations and git history — notes: docs/guards/database-and-history.md ──
+npm run check:search-norm # "mt baker" finds Mount Baker — the JS and SQL spelling rules are ONE table (in build)
 npm run check:approve-route-columns # nothing may fork approve_new_route again (in build)
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?

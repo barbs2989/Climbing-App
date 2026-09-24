@@ -31,7 +31,8 @@ const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("\nBROKEN PROBE: " + m); process.exit(2); };
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+// PartnerSearch, Leaderboards and CrewFinder moved out of ClimbMatchCore.jsx to load lazily; they are still app source.
+const core = ["ClimbMatchCore.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"].map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 
 // ---------------------------------------------------------------- 1. the rule itself

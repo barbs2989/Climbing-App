@@ -355,7 +355,11 @@ if (LABELS.length < 3) dead(`only ${LABELS.length} Settings row label(s) harvest
 // why it is wrong, and a guard that fails on its own documentation is a trap this repo records.
 const stripLine = (t) => t.replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 let paths = 0;
-for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]]) {
+// The three lib/ screens were core source until they moved out to load lazily; partner browse
+// (lib/PartnerSearch.jsx) holds one of this section's founding sentences, so they must stay scanned.
+const MOVED_FROM_CORE = ["lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]);
+const COPY_SOURCES = [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core], ...MOVED_FROM_CORE];
+for (const [name, src] of COPY_SOURCES) {
   for (const m of stripLine(src).matchAll(/Settings\s*(?:→|›|>)\s*(?=[A-Z])([^.,;:"<{}]{2,60})/g)) {
     const phrase = m[1].trim();
     paths++;
@@ -388,7 +392,7 @@ if (settable) {
   bad(`an emergency contact is settable now (${contactStorable ? "a profiles column" : "the profile editor"} carries it), so section 4b's premise has moved. Re-read the FAQ and the float-plan toast: copy directing a climber to set one is CORRECT now, and this rule must be re-aimed rather than left standing.`);
 } else {
   ok(`nothing can set an emergency contact — ${profileCols.length} profiles columns and ${draftKeys.length} editor fields, none a contact`);
-  for (const [name, src] of [["ClimbMatch.jsx", app], ["ClimbMatchCore.jsx", core]]) {
+  for (const [name, src] of COPY_SOURCES) {
     const t = stripLine(src);   // ONE string: match and window must share offsets, or the window
                                 // slices a different file and prints markup at you.
     for (const m of t.matchAll(/emergency[- ]contact[^"<]{0,80}?(in Settings|in your profile|on your profile|under Settings)/gi)) {

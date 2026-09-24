@@ -24,7 +24,8 @@ import { fileURLToPath } from "node:url";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"];
+// PartnerSearch, Leaderboards and CrewFinder moved out of ClimbMatchCore.jsx to load lazily; they are still app source.
+const FILES = ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx", "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
 const problems = [];
 
 // =======================================================================================

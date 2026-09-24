@@ -115,7 +115,12 @@ const APP_PATH = path.join(ROOT, "ClimbMatch.jsx");
 //   4  GettingThere -- one of the three Climbs-tab components gated on `selArea`, which is
 //      written only on the seed path. Dead in production by a closed decision.
 const RAW_IMPERIAL_OK = 6;
-const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx"];
+// Screens moved out of ClimbMatchCore.jsx so they load lazily. They were core source when the
+// assertions below were written, so every core read must include them or it silently stops
+// looking at three whole screens while still printing ok.
+const MOVED_FROM_CORE = ["lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx"];
+const readCoreAndMoved = () => [CORE_PATH, ...MOVED_FROM_CORE.map(f => path.join(ROOT, f))].map(f => fs.readFileSync(f, "utf8")).join("\n");
+const RAW_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "lib/DbAreaBrowser.jsx", "lib/FireMap.jsx", "lib/FireNearRoute.jsx", ...MOVED_FROM_CORE];
 // " in" is EXCLUDED: it is the English preposition far more often than inches, and including it
 // reported `"APPROACHES · "+n+" way"+(s)+" in"` as a defect on the first run. A count is only as
 // good as its tokeniser.
@@ -853,7 +858,7 @@ async function runFilters() {
   //    against a version that stopped at section 3 -- the trap the bail form already recorded:
   //    assert the HELPER and a reverted call site stays green. Matched on the EXPRESSION rather
   //    than the helper's name, so the comment beside the fix cannot satisfy it.
-  const src = fs.readFileSync(CORE_PATH, "utf8");
+  const src = readCoreAndMoved();
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
   if (/ROUTE_LENGTHS\.map\(\s*b\s*=>\s*\[\s*b\[0\]\s*,\s*routeLengthLabel\(/.test(mask))
     ok("the length chips are BUILT from ROUTE_LENGTHS, not a second literal map");

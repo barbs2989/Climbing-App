@@ -19,7 +19,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"].map((f) => path.join(ROOT, f));
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "lib/PartnerSearch.jsx"].map((f) => path.join(ROOT, f));
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex");
 
 const CASES = [
@@ -35,7 +35,7 @@ const CASES = [
     expect: "points a climber at a place to set or control an emergency contact",
     why: "the real historical toast, restored verbatim — the branch that fires for every real account" },
 
-  { name: "settings-privacy-section", file: "ClimbMatchCore.jsx", fires: true,
+  { name: "settings-privacy-section", file: "lib/PartnerSearch.jsx", fires: true,
     find: "under Settings → Privacy & safety.",
     repl: "under Settings → Privacy.",
     expect: 'Settings renders no such section or control',
@@ -58,7 +58,7 @@ const CASES = [
     repl: "// the old copy sent people to Settings → Privacy, which is not a section\nexport function wpPlaced",
     why: "section 4 strips comments, or it fails on its own documentation" },
 
-  { name: "SILENT-path-naming-a-control", file: "ClimbMatchCore.jsx", fires: false,
+  { name: "SILENT-path-naming-a-control", file: "lib/PartnerSearch.jsx", fires: false,
     find: "under Settings → Privacy & safety.",
     repl: "under Settings → Show me on leaderboards.",
     why: "a path may name a CONTROL Settings renders, not only a section" },

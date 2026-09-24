@@ -730,6 +730,63 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     column, a **SILENT** hoist to a local (section 8 is behavioural, so it cannot be defeated by
     how the call is spelled), and the shape-blind halving, which is the one that edits
     `lib/outing.js` rather than the app file.
+- **`check:trailhead-direction-shape`** asserts that `approach_logistics.trailheadDirection` says
+  how to **reach** the trailhead and stops there. The TRAILHEAD card prints it under the trailhead's
+  name beside *Drive here*, and the contribute form labels it *"Driving directions"*. Static in the
+  build; `--live` scans the catalog daily (`trailhead-direction-shape.yml`, anon key).
+  - **IT IS THE FOURTH COLUMN TO TAKE PROSE IN THE WRONG SHAPE**, after `season`, `grade` and
+    `bivy[]` (CLAUDE.md, *Enrichment prose must not be written into a display field*). On 2026-09-24
+    **230 routes** carried the walk here: *"From Slate Pass (~6,900 ft) at the end of Harts Pass Road:
+    backpack ~13 miles via the Whistler Cutoff toward the Pasayten base camps"*, seven Rainier routes
+    reading *"From Paradise: Skyline Trail to Camp Muir…"*, **ten bare compass words** (*"North"*,
+    *"West then North"*) and **two strings cut off mid-sentence** (*"From Glacier, drive Mt."*). The
+    column was populated, so `check:field-renders` and every coverage audit read it as done.
+    `check:trailhead-directions` asks how many drive CONTROLS a screen has, not what the prose says.
+  - **THE ORIGIN IS THE HAND-WRITTEN SQL, and `check:sql` now refuses it.** 31 of the 48 values
+    the committed `.sql` files write fail the test, most of them from `alpine_trailhead_enrichment.sql`
+    (*"North-northeast via glacier traversals"*). `scripts/lib/trailhead-direction-sql.mjs` reads
+    the three shapes those files use (a `jsonb_set` JSON string, `to_jsonb('…')`, a whole JSON object)
+    and `check:sql` exits before any DB read if one fails. The `wa-enrich-batch` workflow does NOT
+    write this key, which is why the fix is there and not in the workflow prompt.
+  - **THE RULE: the value ENDS AT THE TRAILHEAD.** It may name the trail you start on (*"via
+    Trail #677"*). It may not say where that trail goes, how far or how long on foot, what you cross,
+    or what terrain you reach, and it must name somewhere you can drive to. A first cut drew the line
+    by feel and was **inconsistent**: it kept *"via Trail #677 to the Coleman Glacier moraine"* while
+    flagging *"via Killen Creek Trail #113 to the PCT and High Camp"*, the same shape. Writing a
+    detector exposed that, and ~20 values joined the repair so one rule decides all of them.
+  - **A DENY-LIST OVER ENGLISH, SO IT IS HELD TO A CORPUS, BOTH DIRECTIONS.**
+    `scripts/trailhead-directions-reviewed.json` is every distinct live value on 2026-09-24 (377),
+    each read by hand, plus the 79 new values the repair wrote: **302 drive, 154 not**. Section 1
+    fails on any disagreement. A false alarm matters as much as a miss, because
+    `TrailheadCard` **hides** a refused value (reader-side defence, the `seasonShort()` precedent),
+    so a detector that widened silently would delete good directions from the page. The drafts
+    measured the hazard: keyword rules first ran **35 missed / 36 false**, then **11 / 63**. Words
+    like *summit* (*"Stevens Pass summit"*), *glacier* (the town of **Glacier, WA**; *Glacier Creek
+    Road*), *cross* (*"cross the Sauk River bridge"*) and *walk* (*"walk or bike ~8 miles to the
+    Whiskey Bend Trailhead"*, which is the way TO the start) are all legitimate drive vocabulary. What
+    fixed it was structure rather than more words: **a value that names nowhere you can drive to**
+    (no trailhead, lot, pullout, road, gate) cannot be driving directions, and an on-foot mileage that
+    ends *at a trailhead* is access, not the walk.
+  - **THE CORPUS FOUND DEFECTS THE HAND REVIEW MISSED**, which is the argument for having one: two
+    values the reviewer had passed turned out to be truncated (*"…has, in recent years, added a bike
+    or"*) or trail description (*"which climbs steadily through forest"*). The review also mislabelled
+    four values by writing LINE numbers where it meant INDEX numbers in the second half of the file.
+    **Key a hand review by the TEXT, not by a position in a listing.**
+  - **WHAT IT CANNOT SEE.** Agreement with 456 values is not proof on new prose; a phrasing none of
+    them used can slip through, which is why the live scan runs daily. It does not judge whether the
+    directions are TRUE, only whether they are the right KIND. A climber's contributed value that
+    fails is hidden by the card with no message to the contributor. That's accepted: the form's
+    placeholder already shows the drive shape, and a contributed hike narrative belongs in `approach`.
+  - **WHEN IT FIRES:** repair the ROW (cut it back to the drive part, or clear the key; the walk is in
+    `approach`). If the DETECTOR is wrong, add the value to the corpus with its verdict **first**,
+    then change the rule until both agree. Never widen the rule without a corpus row that proves why.
+  - The repair is `scripts/oneoff/apply-trailhead-direction-repair.mjs` over
+    `research-data/trailhead-direction-repair-2026-09-24.json` (`old` is the rollback; `--rollback`
+    restores it). It refused any row changed since review, and refused to clear a row whose own
+    `approach` was under 50 characters. **230 written, 230 re-read holding the target, 0 skipped.**
+    Injection-tested **3/3** (`scripts/oneoff/inject-trailhead-direction-shape-cases.mjs`): a walk
+    labelled drive FAILS, good directions labelled walk FAIL, a correct row PASSES; each edit proven
+    landed by checksum, corpus restored byte-identically.
 - **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
   nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
   `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
