@@ -6350,12 +6350,43 @@ the total when deciding where a new guard belongs.
       - **14 rows differ in total and 11 are MASKED by `route.timing`**, not immune: `techH` prefers
         a published or derived summit time, so those activate the day that column is dropped. The
         largest is `wa_liberty_crack` (12 pitches, `gn` 11.25 -> 13.5). Small **today**.
-      - **THE REAL OPTIMISM DEFECT IS TWO ORDERS OF MAGNITUDE BIGGER AND IS NOT `gn()`'S:**
-        **120,474** roped routes store `pitches = 0` against **611** with a real count, and
-        `techHrs` returns **0** for those — no climbing leg at all. That is `0074`'s documented
+      - **THE `pitches = 0` POINTER IS NOW MEASURED (#1780), AND THE COLUMN COUNT OVERSTATED IT BY
+        FOUR ORDERS OF MAGNITUDE: the answer is SIX ROUTES.** **128,020** roped routes store 0 or
+        null against **617** with a real count, and `techHrs` returns **0** for those — `0074`'s
         *"0 means unknown for a roped route and no pitches for a boulder problem"* conflation
-        landing on the time model. **NOT measured here: how many of those actually RENDER an
-        estimate** (the Plan tab is content-gated), so this is a pointer, not a finding.
+        landing on the time model. That is a fact about a COLUMN. On screen:
+
+              121,860  are a CRAG discipline, so <Calculator/> is never mounted at all
+                6,098  have no Plan tab (hasPlanContent false)
+                   11  render "N/A"
+                   45  carry a published or derived summit time — THAT is the climbing leg
+                    6  render a number with a zero climbing leg   <- the defect
+
+      - **THE GATE THAT DECIDES IT IS `{!cragOnly ? <Calculator/> : null}`.** A trad or sport route
+        **never renders a time estimate at all**, and those two dominate the roped catalog — so
+        most of the 128,020 cannot make a false claim by construction. Two further things protect
+        it, both worth knowing: `hasAnyEstimate` ends in **`!!route.pitches`**, which is **FALSY at
+        0**, so a zero-pitch route does not claim an estimate on the strength of its pitch count
+        (a falsy-zero test that is normally a bug and here is the thing preventing one); and the
+        **Climbing tile already renders `N/A`** rather than `0.0hr`.
+      - **WHAT IS LEFT IS 6 ALPINE ROUTES, AND THE SHARP END IS 3.** Three already carry the **`≥`**
+        marker, because their hike inputs are incomplete and the app is already saying the number is
+        a lower bound. The other three — `wa_guye_peak_southeast_gully`,
+        `wa_colchuck_peak_north_buttress_couloir`, `wa_lane_peak_r3` — have COMPLETE hike inputs, so
+        they present an **exact** Total beside a Climbing tile reading **N/A**, and *"Est. return"*
+        equal to *"Est. summit"* (the walk branch of `retH` fires when `pitches` is falsy, so the
+        descent is zero too). **REPORTED, NOT FIXED**, for the reason this entry reaches one bullet
+        up about `gn()`: a handful of routes does not justify moving a safety-adjacent estimate.
+        The consistent repair, if it is ever taken, is to extend the **existing** `approachUnknown`
+        marker to an unknown CLIMBING leg — which can only ever make the app hedge MORE, never less.
+      - **THE STATIC PREDICATE WAS WRONG AND THE RENDER VALIDATION IS WHAT CAUGHT IT.** The first
+        version of `scripts/oneoff/measure-zero-pitch-estimate-reach.mjs` computed these buckets
+        from columns alone and missed `cragOnly` entirely; rendering a sample through the real
+        `RouteDetail` reported **21 of 28 rows disagreeing** because the tile was not on the page.
+        *A bucket count derived from columns is a claim about the renderer*, so that script renders
+        real rows and FAILS if the screen disagrees in either direction — including `absent` cases,
+        which are the load-bearing half, since a validation of only the rows that DO render would
+        have re-confirmed the very prediction that was wrong.
       - Two further `gn()` limits fall out of the same run and are reported, not fixed: **20 of the
         394 routes it decides fall through every branch to the `7.5` default** (14 carry no usable
         grade at all), and the app sees **`usableGrade(r)`**, not `routes.grade` — a bare class
