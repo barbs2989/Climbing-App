@@ -6139,13 +6139,86 @@ the total when deciding where a new guard belongs.
     the camp-elevation and clickable-shield work.
   - Fails **closed** twice: zero routes for the state, and zero grades the parser can read, are each
     a broken scan rather than a clean catalog.
-  - **THE "WHICH END OF A RANGE" QUESTION IS CLOSED, AND IT WAS NEVER A DECISION — measured by
+  - **DECIDED BY THE USER, 2026-09-23: THE GRADE IS THE HIGHEST GRADE — and the parser, the column
+    and the filter now all say so.** The entry below measured this and concluded there was nothing
+    to decide, on the strength of a 93% low-end convention in the stored data. **That reading was
+    overtaken by a product call**, which is the right way round: the measurement said what the
+    catalog *did*, never what it *should* do. `gradeNumFrom` now resolves a grade to the highest
+    grade in the string rather than the first.
+    - **IT REMOVES A DIALECT RATHER THAN ADDING ONE, which is the only reason a change here was
+      allowed at all.** The standing objection recorded below is that *"a fifth dialect is the
+      problem, not the fix"*, and it would have applied in full to inventing a new rule. This
+      invents nothing: the grade FILTER has always parsed the same string and taken the MAXIMUM
+      (`routeBandIdx`, *"Difficulty=crux, so a range route surfaces when you filter for its top
+      grade"*), so `"Class 3-4"` filtered as **4** and sorted as **3**. One fact, two derivations.
+      The sortable column now agrees with the filter the app already ships.
+    - **THE CHANGE IS EXACTLY "max instead of first", AND THE EXACTNESS IS ENFORCED RATHER THAN
+      CLAIMED.** Each branch keeps its original pattern, spacing, digit count and case flag, with
+      only a range tail and `/g` added — so `verify-highest-grade-equivalence.mjs`'s **0 GAINED** is
+      a guarantee by construction rather than an accident of today's data. A first version injected
+      `\s*` after every prefix, which reads as harmless and silently made `"WI 2-3"` newly
+      parseable; only `verify-climbing-grade-vocabulary.mjs` surfaced it. **A widening that changes
+      no row today still changes the rule.**
+    - **THE RANGE CAPTURE IS THE PART "just take the max" GETS WRONG.** `"5.4-5.6"` is already two
+      separate YDS matches so it needs nothing; `"Class 3-4"` is ONE match of `/class\s*(\d)/` and a
+      bare max over that pattern still scores 3. The systems that write a range as a single token
+      (class, V, WI/AI, M, aid) capture both ends.
+    - **THE DATA FOLLOWED, because a parser change alone is worse than neither.** Measured
+      catalog-wide: **8,908 rows move, every one UPWARD — 0 lowered, 0 lost, 0 newly parsed.**
+      Leaving them would have `audit:grade-num-drift` reporting 8,908 rows forever *and* left the
+      filter/column disagreement standing on exactly the rows the change is about.
+      `fix-grade-num-to-highest-grade.mjs` swept **8,892**, writes only where the stored value
+      agreed with the OLD parser (so the move is attributable to the rule rather than hiding
+      pre-existing drift inside a bulk write), only ever upward, through `patchRow`, behind a
+      rollback file, reconciled by read-back.
+    - **THE 16 IT SKIPPED ARE THE READING LIST, and they are a different question:** stored
+      disagrees with the old parser too, so those rows were already drifting — `wa_sahale_mountain_r1`
+      stores 3 where the old parser says 0, `wa_mount_challenger_challenger_glacier` stores 5 where
+      it says 6. That is `audit:grade-num-drift`'s subject, not this sweep's.
+    - **AND THE EIGHT "OUTLIERS" BELOW WERE ALREADY RIGHT — SEVEN OF THEM STORE EXACTLY WHAT THE NEW
+      RULE PRODUCES.** They appear in the sweep's SKIPPED list precisely because their stored value
+      already equals the highest grade: `wa_mount_stuart_west_ridge` 6, `wa_cathedral_rock_standard`
+      4, `wa_mount_logan_fremont_glacier` 4, and four more. **The adjudication that found "zero
+      repairs" and the rule change agree**, by two completely different routes — one reading each
+      row's own `rock_grade`, one applying a rule decided afterwards. The eighth,
+      `wa_guye_peak_r2`, is unmoved by either.
+    - **TWO REAL DEFECTS WERE FOUND AND DELIBERATELY NOT FIXED HERE**, because widening two things
+      at once makes a before/after unreadable: ~12 rows graded lowercase **`v11`/`v6`** score
+      **null** and therefore sort behind the whole catalog (the V branch is case-sensitive, and
+      making it insensitive is a second change), and **`"WI 2-3"`** — a space between the prefix and
+      the number — is unreadable to every branch. Both are one-line fixes with their own
+      before/after to measure.
+    - **AND A THIRD PARSER READS A GRADE FOR THE TIME MODEL AND STILL TAKES THE FIRST MATCH —
+      `gn()` in `ClimbMatchCore.jsx`, 5 call sites.** It is NOT `grade_num` and not a fifth dialect
+      of it: it maps every system onto one difficulty axis for `techHrs` (WI -> 6+n, M -> 7+0.6n,
+      aid -> 8+n), which is a different question. But it reads the same range strings, and it takes
+      the **easier** end — so a route graded `"5.9-5.10a"` is timed as 5.9.
+      **THE DIRECTION IS THE WORRYING PART**: an easier grade means a FASTER climbing leg, so
+      Est. summit and Est. return come out optimistic and the "After dark" warning fires less
+      often. That is the #641 direction this file records throughout.
+      **Not changed here, deliberately.** It moves time estimates app-wide on a safety-adjacent
+      surface, so it needs its own before/after over the catalog rather than riding along on a
+      sorting change. Raised with the direction stated, which is what makes it actionable.
+    - `scripts/oneoff/measure-highest-grade-rule.mjs` is the measurement,
+      `scripts/oneoff/verify-highest-grade-equivalence.mjs` the check that the shipped parser only
+      raises (its reference is loaded from **git**, never retyped), and
+      `scripts/oneoff/fix-grade-num-to-highest-grade.mjs` the sweep.
+    - **`verify-grade-parser-equivalence.mjs` DECLARES THE CHANGE AS A RULE, NOT A LIST.** It holds
+      a verbatim fossil of the pipeline parser as a second opinion, so 68 range strings started
+      reporting as unexpected drift. Enumerating them would be bookkeeping that rots on the first
+      new range value imported, and would say nothing about whether the change is sound. It declares
+      the **invariant** instead — a highest-wins parser can only return a LARGER number than a
+      first-match one — so `lib > pipeline` is intended and a lowering, a loss or a newly-parsed
+      value still exits 1.
+  - **THE "WHICH END OF A RANGE" QUESTION WAS MEASURED FIRST, AND THE MEASUREMENT SAID THERE WAS
+    NOTHING TO DECIDE — true of the catalog, and overtaken by the decision above — measured by
     `scripts/oneoff/measure-class-range-end.mjs`.** It had been carried as an open product call
     (*"`Class 3-4` → 3 or 4?, 129 low / 16 high"*), which reads as a catalog genuinely split down
     the middle and waiting on somebody to pick. It is not: of **171** WA routes stating a range of
     two grades in one system, **159 store the LOW end, 8 the high, 0 the midpoint** — a 93%
     convention that `gradeNumFrom` already implements (169 low / 2 high), because its
-    `/class\s*(\d)/i` takes the first digit. **There is nothing to sweep and nothing to decide**;
+    `/class\s*(\d)/i` took the first digit. **There was nothing to sweep and — on the catalog's own
+    evidence — nothing to decide**;
     what remained was 8 outlier rows to read, **and they have now been read — NONE is a defect.**
     - **The quoted 129/16 was wrong, and the shape of the error is the useful part**: a number
       carried in prose rather than re-derived. Re-run the script rather than quoting this line,
@@ -6230,13 +6303,16 @@ the total when deciding where a new guard belongs.
         *consistent with the filter's stated convention* and *inconsistent with the column's* — so
         "sweep them to the low end" would align them with one mechanism by moving them away from the
         other. Another reason the answer here is zero repairs.
-      - **The open question is the DISAGREEMENT, not the eight rows**, and it is not settled here
-        because it is a product call with app-wide effect: whether the sortable column should mean
-        *the crux* (matching the filter, and matching how climbers quote a grade) or *the easiest
-        ground* (matching 93% of the catalog as loaded). Raised, not swept — and **not** to be
-        "reconciled" by rewriting `grade_num`, which would be the fifth dialect.
-    - Report only, for this audit's own reason: `gradeNumFrom` matches `load-state.mjs` **verbatim**
-      on purpose, and a fifth dialect is the problem rather than the fix.
+      - **The open question was the DISAGREEMENT, not the eight rows** — whether the sortable column
+        should mean *the crux* (matching the filter, and how climbers quote a grade) or *the easiest
+        ground* (matching 93% of the catalog as loaded). It was raised rather than swept because it
+        is a product call with app-wide effect, **and the user took it the same day: the crux.** See
+        the DECIDED entry above; the column now matches the filter.
+    - **"Report only" APPLIED TO THIS AUDIT AND NOT TO A DECISION.** The reason below — that
+      `gradeNumFrom` matches `load-state.mjs` verbatim and a fifth dialect is the problem rather
+      than the fix — still governs anyone tempted to *improve* the parser on their own judgement. It
+      never governed the product owner choosing what the number means, and the change made above
+      removes a dialect rather than adding one.
 - **`check:approve-route-columns`** asserts that nothing may fork `approve_new_route` again.
   That function is the whole consume half of the add-a-route flow: it turns a pending
   `new_route` contribution into a row in `routes`, and it is a `SECURITY DEFINER` RPC precisely
