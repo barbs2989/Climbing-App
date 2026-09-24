@@ -27012,3 +27012,56 @@ shell. It confirmed the single write target in this batch's SQL file exists in t
 Progress file's `last_processed_id` advanced to `wa_inner_constance_northwest_buttress`.
 Next batch continues in sorted-id order after that id. 163 + 8 = 171 audited this pass
 through batch 328; 524 - 171 = **353 in-scope routes remain unaudited this pass**.
+
+## Batch 329 (2026-09-24, pass 6)
+
+Routes: `wa_inner_constance_standard`, `wa_inspiration_peak_west_ridge`,
+`wa_jack_mountain_nohokomeen_headwall`, `wa_jack_mountain_northeast_glacier`,
+`wa_jack_mountain_south_face`, `wa_johannesburg_mountain_cj_couloir`,
+`wa_johannesburg_mountain_northeast_buttress`, `wa_kimtah_peak_scramble`.
+(`wa_j_tnar`, the next id after the prior batch's stopping point, was skipped — its area
+`wa_j_tunheim` is `area_type='crag'`, out of scope.)
+
+**Fixed (0):** none this batch.
+
+**Flagged, not fixed (1):**
+- `wa_inner_constance_standard`: `high_point_ft` is 7672 (its own `overview` attributes
+  this to "by LiDAR"), which disagrees by 2 ft with its sibling route on the same peak,
+  `wa_inner_constance_northwest_buttress` (7670) — a figure batch 328 already
+  independently confirmed against Wikipedia and Peakbagger, both of which give 7,670 ft
+  with no source found for 7,672. Left both values as stored rather than picking a side:
+  a genuinely more precise LiDAR resurvey superseding an older topo-derived figure can't
+  be ruled out from secondary web sources, so this needs a human with GIS/LiDAR access
+  rather than a guess.
+
+**Checked and confirmed correct (no action):** Johannesburg Mountain's 8,200 ft high
+point (both routes) matches Wikipedia (8,200+ ft NGVD29) and ListsOfJohn (8,212 ft).
+Its two documented first ascents both check out: the 1938 Bressler/Cox/Clough/Myers
+Cascade-Johannesburg Couloir/East Ridge line (Wikipedia, Peakbagger trip-report
+sourcing), and the 1951 Tom Miller/Dave Harrah Northeast Buttress left-rib line — Harrah's
+own AAC Publications account independently uses the same "left (1951) rib" framing this
+row already carries. Inspiration Peak's Aug 29, 1940 Fred/Helmy Beckey West Ridge FA
+matches SummitPost/Mountaineers/AAC sourcing, including that it was one of several
+Southern Pickets first ascents the Beckey brothers made that same summer. Kimtah Peak's
+June 1970 John Roper/Jerry Swanson FA matches Rhinoclimbs' North Cascades first-ascents
+list and the AAC Publications Kimtah Peak article, both of which independently record the
+same detail this row carries — that the party initially proposed the name "Gendarmes
+Peak". Jack Mountain's `high_point_ft` (9075, all three routes) was not re-litigated: this
+is the same 9,066-vs-9,075 cross-source split this catalog's own `wa_jack_mountain_south_face`
+already documents in its `data_quality.gaps` field, and this pass's own web search
+reproduced the identical ambiguity with nothing to resolve it further.
+`wa_jack_mountain_northeast_glacier`'s 1978 Beckey/Kloke/Tindall FA could not be
+independently corroborated — a thin public record, as this row's own `pro_tips` field
+already acknowledges — but nothing contradicts it either, so it was left as stored rather
+than flagged, per the standing rule against flagging claims that simply can't be found
+either way. All five peak area-hierarchy placements resolve to sensible WA parent chains,
+and every checked coordinate (waypoints, `approach_logistics`) falls within a plausible
+bounding box for its named peak/region.
+
+**Verification note:** no `.env`/`.env.local` this run, as intended (scheduled, read-only
+anon key only). No SQL file this batch — no confirmed-fixable error was found, so
+`check:sql` was not run.
+
+Progress file's `last_processed_id` advanced to `wa_kimtah_peak_scramble`. Next batch
+continues in sorted-id order after that id. 171 + 8 = 179 audited this pass through batch
+329; 524 - 179 = **345 in-scope routes remain unaudited this pass**.
