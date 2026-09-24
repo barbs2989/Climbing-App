@@ -806,6 +806,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     reported "mt baker" case among them) and that tokens never carry a LIKE metacharacter,
     since they go into `ilike` patterns unescaped. Fails closed with `ANCHOR LOST` if it parses
     fewer than 10 table rows.
+  - **Section 4 — every search FUNCTION still uses the rule.** `0196` re-created
+    `routes_in_subtree` / `_count` to add `grade_sys`, copying "0074's verbatim" bodies, and put
+    `r.name ilike '%' || q || '%'` back 17 minutes after `0190` shipped. Sections 1-3 passed
+    throughout, because they read the spelling table and never the finders. A climber then typed
+    "NE Buttress" in an area's route list and got nothing, while the global search found it.
+    `0200` restored the match. Section 4 now reads the NEWEST definition of `routes_in_subtree`,
+    `routes_in_subtree_count`, `areas_in_subtree` and `search_names_fuzzy` and fails on a
+    verbatim `name ilike … q`. Injection: delete `0200` and it names both 0196 finders.
+    **Lesson: a migration that re-creates a function must start from the NEWEST body, not the
+    one its author last read.**
   - **Structurally cannot see** whether the live database runs that migration —
     `check:function-drift` does.
   - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold

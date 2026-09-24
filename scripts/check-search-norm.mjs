@@ -14,6 +14,10 @@
 //   1. the newest migration defining search_forms() maps every word to the SAME forms as JS
 //   2. search_clean()'s accent-fold strings are the same two strings JS uses
 //   3. behaviour: the cases below, including the reported one, hold in JS
+//   4. the NEWEST definition of every search function matches through name_search, not a verbatim
+//      `name ilike '%' || q || '%'`. 0196 re-created both route finders from a pre-0190 body and
+//      put the verbatim ilike back 17 minutes after 0190 shipped: "NE Buttress" then found nothing
+//      in an area's route list. Sections 1-3 passed throughout — they never read the finders.
 //
 // It does NOT prove the live database runs that migration — check:function-drift does.
 import fs from "fs";
@@ -68,6 +72,7 @@ const MATCH = [
   ["mount st helens", "Mount St. Helens"], ["mt saint helens", "Mount St. Helens"],
   ["mount st", "Mount Stuart"],              // a half-typed word is not rewritten into "saint"
   ["bobs wall", "Bob's Wall"], ["bob's wall", "Bobs Wall"], ["ne face", "Northeast Face"],
+  ["NE Buttress", "Northeast Buttress"], ["northeast buttress", "NE Buttress"],
   ["north ridge", "N Ridge"], ["sauk mtn", "Sauk Mountain"], ["cafe", "Café Crack"], ["x-ray", "X Ray"],
 ];
 for (const [q, name] of MATCH) if (!S.searchMatches(q, name)) fails.push(`"${q}" should find "${name}" and does not`);
@@ -83,9 +88,30 @@ for (const q of ["100% pure", "a_b", "50% off \\ back"]) {
   if (S.searchTokens(q).some((t) => /[%_\\]/.test(t))) fails.push(`searchTokens("${q}") leaks a LIKE metacharacter`);
 }
 
+// ── 4. every search function still USES the rule ────────────────────────────────────────────
+const SEARCH_FNS = ["routes_in_subtree", "routes_in_subtree_count", "areas_in_subtree", "search_names_fuzzy"];
+const migFiles = fs.readdirSync(MIG).filter((f) => f.endsWith(".sql")).sort();
+for (const fn of SEARCH_FNS) {
+  const head = new RegExp(`create or replace function (public\\.)?${fn}\\s*\\(`, "i");
+  let last = null;
+  for (const f of migFiles) {
+    const sql = fs.readFileSync(path.join(MIG, f), "utf8");
+    let i = sql.search(head);
+    if (i < 0) continue;
+    // take the LAST definition in the file: a later one in the same file replaces the earlier
+    for (let j; (j = sql.slice(i + 1).search(head)) >= 0;) i += j + 1;
+    const open = sql.indexOf("$$", i), close = sql.indexOf("$$", open + 2);
+    if (open < 0 || close < 0) { fails.push(`${f}: ${fn}() has no $$ body — ANCHOR LOST`); continue; }
+    last = { f, body: sql.slice(open, close) };
+  }
+  if (!last) { fails.push(`no migration defines ${fn}() — ANCHOR LOST, not a pass`); continue; }
+  if (/\bname\s+ilike\s+'%'\s*\|\|\s*q\b/i.test(last.body)) fails.push(`${last.f}: the newest ${fn}() matches \`name ilike '%' || q || '%'\` — a verbatim substring; "NE Buttress" stops finding Northeast Buttress. Match through name_search / search_patterns(q) (see 0190)`);
+  else if (!/search_patterns\(|name_search|search_clean\(/.test(last.body)) fails.push(`${last.f}: the newest ${fn}() never reads name_search — it cannot forgive spelling`);
+}
+
 if (fails.length) {
   console.error(`check:search-norm FAILED (${fails.length})`);
   for (const f of fails) console.error("  - " + f);
   process.exit(1);
 }
-console.log(`check:search-norm OK — SQL and JS spelling rules agree; ${MATCH.length + NOMATCH.length} match cases hold`);
+console.log(`check:search-norm OK — SQL and JS spelling rules agree; ${MATCH.length + NOMATCH.length} match cases hold; ${SEARCH_FNS.length} search functions match through name_search`);
