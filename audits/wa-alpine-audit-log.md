@@ -26674,3 +26674,122 @@ continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries (307
 through 324): 131 audited through batch 323 + 8 this batch = 139 audited, 524 - 139 = **385
 in-scope routes remain unaudited this pass**.
+
+## Batch 325 (2026-09-24, pass 6)
+
+Checked 8 routes, all on/around Glacier Peak plus three neighboring peaks: Glacier Peak
+(Cool Glacier/Gerdine Ridge, Disappointment Peak Cleaver, Frostbite Ridge, Kennedy Glacier,
+Sitkum Glacier), Goat Mountain (South Ridge), Golden Horn (North Face), Mount Goode
+(Megalodon Ridge).
+
+**Confirmed errors fixed — see `audits/sql/2026-09-24-batch-325.sql`:**
+
+- `wa_glacier_peak_disappointment_peak_cleaver`: `waypoints` and `itinerary` were
+  contaminated with an entirely unrelated approach — Trinity Trailhead → Buck Creek Pass →
+  "Cool/Gerdine Basin Camp" on the Chiwawa River side, a drainage that has no documented
+  connection to Glacier Peak at all (Buck Creek Pass accesses Fortress Mountain/Flora
+  Mountain/Liberty Cap country on the far side of the Cascade crest; confirmed via WTA/
+  Wenatchee Outdoors that it merely offers *views* of Glacier Peak, leaving the PCT at
+  Miners Creek). Every other field on the same row (`approach`, `road`, `descent`,
+  `descent_text`, most of `hazards`) instead consistently describes the real approach —
+  North Fork Sauk River Trailhead → Mackinaw Shelter → White Pass → the White Chuck
+  Glacier/Glacier Gap basin → the Cool Glacier — which matches the sibling
+  `wa_glacier_peak_cool_glacier_gerdine` route almost exactly and is independently
+  corroborated by The Mountaineers' own route page (confirms the 9,100–9,600 ft col range
+  this row's own `corrections` field already documents) and by WTA/trip-report sources for
+  the North Fork Sauk Trail's own mileposts (Red Creek ford 3.5 mi, Mackinaw Shelter 5 mi,
+  White Pass ~9 mi — matching this row's `approach` text word for word). `waypoints[0]`
+  itself carried a garbled half-correction note admitting the coordinate/elevation were
+  actually Trinity Trailhead's rather than North Fork Sauk's, without fixing anything.
+  Fixed by keeping the real North Fork Sauk trailhead pin (correcting its elevation to
+  2,050 ft to match this row's own approach text, and dropping the confused note), removing
+  the two Trinity/Buck-Creek-Pass waypoints outright (there is no way to "correct" them into
+  this route's real Glacier Gap/Cool Glacier waypoints without inventing coordinates the row
+  has no record of), and keeping the summit waypoint (already correct). `itinerary` is
+  nulled rather than rewritten, since reconstructing a real day-by-day/hour schedule for the
+  correct approach is not something any field on this row supports without fabricating
+  numbers.
+- `wa_glacier_peak_frostbite_ridge`: the mirror-image problem. `approach` and `road`
+  described the wrong trailheads (White Chuck River Trailhead via Kennedy Ridge Trail, or
+  North Fork Sauk Trailhead via White Pass — both belonging to Glacier Peak's *other*
+  routes), while this row's own `itinerary` field already correctly describes the real
+  approach: Suiattle River Road (FR 26) to its end at Sulfur Creek Campground, the Suiattle
+  Pass Trail (~7 mi) to a bridge over the Suiattle River, then the PCT south (~9 mi) to a
+  base camp in the East Fork Milk Creek basin (~5,600 ft) on the peak's north/northwest
+  side. Confirmed via WebSearch against The Mountaineers' published Glacier Peak/Frostbite
+  Ridge route page, which describes this exact chain of trailhead/trail/mileage almost
+  verbatim, and this row's own `itinerary.cal` note already correctly names the same
+  road/trail ("The Suiattle River Road (FR 26) has had washout closures in recent years and
+  the Milk Creek Trail itself has been in disrepair for a decade-plus"). Rewrote `approach`
+  (only the trailhead-to-camp portion — everything from "From high camp, the route proper
+  begins..." onward was already correct and already matches the itinerary's day-3 detail)
+  and `road` to name the real Suiattle River Road/Sulfur Creek Campground access, reusing
+  this row's own existing washout-history hedge rather than asserting a new, unverifiable
+  claim about the road's current (2026) status.
+- `wa_glacier_peak_sitkum_glacier`: `dist_km` (14.5 km = 9.01 mi one-way) directly
+  contradicted this row's own `waypoints` array, which states an explicit one-way
+  trailhead-to-summit distance of 14 mi (North Fork Sauk TH distMi 0 → White Pass 8 →
+  Boulder Basin Camp 12 → Glacier Peak Summit 14). The sibling
+  `wa_glacier_peak_cool_glacier_gerdine` route's `dist_km` (27.4 km = 17.03 mi) matches its
+  own approach text's trailhead-to-summit total almost exactly, confirming this field is
+  meant to hold the full one-way distance rather than a shorter partial figure. Corrected
+  dist_km to 22.53 km (14 mi × 1.609344) to match this row's own waypoint chain.
+- `wa_goat_mountain_south_ridge`: internal self-contradiction on the false (west) summit's
+  elevation — `beta` correctly states 6,721 ft (confirmed via WebSearch against SummitPost's
+  cross-checked figure for Goat Mountain's West Peak, 6,721 ft; Wikipedia gives a very close
+  6,725 ft), while `descent`, `watch_out[0]`, and `hazards[5]` all instead call the same
+  feature "6,600 ft" — a value with no support anywhere. Corrected all three occurrences to
+  6,721 ft to match the externally-corroborated figure already present in this row's own
+  `beta` field.
+
+**Flagged for human review (not confirmed errors — no SQL written):**
+
+- `wa_glacier_peak_kennedy_glacier`: `dist_km` (12.4 km = 7.7 mi) matches only this row's
+  own "Kennedy Ridge Trail / PCT junction" waypoint (distMi 7.7), an intermediate point
+  roughly halfway up the approach — not a trailhead-to-summit distance. The waypoint chain
+  continues to at least a distMi-13.5 "Kennedy Glacier crevasse band" waypoint, with the
+  true summit further still, so the correct one-way distance is probably ~14.5–15 mi
+  (23.3–24.1 km) but that number would have to be extrapolated rather than read directly
+  off any field on this row, unlike the Sitkum Glacier fix above where distMi=14 to the
+  summit was explicitly stated. Flagging rather than writing an estimated figure with no
+  stated basis.
+- `wa_glacier_peak_sitkum_glacier`: separately from the dist_km fix above, this row's own
+  `approach` text describes the White Chuck River Trailhead (confirmed via WebSearch against
+  an external trip-report matching the White Chuck Trail/Kennedy Hot Springs mileposts
+  almost exactly) as the primary access, while `waypoints` instead starts from the North
+  Fork Sauk River Trailhead (matching 4 of the other 5 Glacier Peak routes in this dataset).
+  Both are real, documented approaches to this general area, but this same dataset's sibling
+  routes (Kennedy Glacier, Disappointment Peak Cleaver) establish that the White Chuck Trail
+  has been effectively closed/impassable since a 2003 flood and is additionally under a
+  currently-active FS-23 road closure order — meaning the North Fork Sauk approach in
+  `waypoints` may now be the more accurate/current one. Rewriting the multi-paragraph
+  `approach` prose to match would require composing new approach detail (how the North Fork
+  Sauk/White Pass access actually reaches Boulder Basin) not otherwise present or
+  independently confirmed here — flagging for a future pass rather than guessing at the
+  connecting detail.
+- `wa_glacier_peak_disappointment_peak_cleaver`: `hazards[0]` additionally mentions a third,
+  separate eastern approach "via the Little Wenatchee River Trail (13.8 mi to White Pass
+  from the Little Wenatchee Ford Trailhead)... from the Lake Wenatchee side" — plausible
+  (a real trail reaching the PCT near this area from the east) and not clearly wrong, but
+  not independently verified this pass; left as-is.
+
+**Checked and confirmed correct (no action):** Golden Horn North Face's FA (Fred Beckey and
+Roe "Duke" Watson, 1958 — confirmed this is specifically the *north face's* first ascent,
+distinct from the peak's overall 1946 FA by Beckey/Rankin/Walsh via the Southwest Route) and
+elevation (8,366 ft, matching Wikipedia — this row's own `corrections` field already
+correctly identifies Mountain Project's 7,639 ft as the outlier). Mount Goode's Megalodon
+Ridge FA (Blake Herrington and Sol Wertkin, September 6, 2007 — confirmed via
+climbing.com/Alpinist, exact date match) and its descent beta (Southwest Couloir/Black Tooth
+Notch, three rappels trending skier's-right to the notch then three more straight down the
+couloir fall line on a 60m rope with 30m rappels) — confirmed almost verbatim against an
+independent trip-report source. Mount Goode's elevation (9,220 ft, the highest point in North
+Cascades National Park) confirmed via Wikipedia/NPS. `wa_glacier_peak_cool_glacier_gerdine`
+audited clean throughout (FA, approach mileposts, col elevations, waypoints all internally
+consistent and externally corroborated).
+
+Progress file's `last_processed_id` advanced to `wa_goode_mountain_megalodon_ridge`. Next
+batch continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries (307
+through 325): 139 audited through batch 324 + 8 this batch = 147 audited, 524 - 147 = **377
+in-scope routes remain unaudited this pass**.
