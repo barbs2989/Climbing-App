@@ -172,9 +172,15 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         setError('GPS submission is not configured in this build (VITE_SUPABASE_URL is unset).')
         return // the finally below clears `submitting`
       }
+      // The Edge Functions gateway runs with verify_jwt on and rejects a request that
+      // carries no key — these three calls sent none, so every live submission got a
+      // 401. The publishable key is public by design; the functions do their own
+      // rate limiting and never trust a recipient or text from this request.
+      const ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY
+      const fnHeaders = { 'Content-Type': 'application/json', apikey: ANON_KEY, Authorization: `Bearer ${ANON_KEY}` }
       const response = await fetch(`${SUPABASE_URL}/functions/v1/validate-gps`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: fnHeaders,
         body: JSON.stringify({
           routeId,
           gpxData: parsed,
@@ -204,16 +210,12 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
 
       // Notify climber. Email is optional on this form, and the function rejects a
       // blank one — skip the round-trip rather than fire a request that 400s.
+      // Only the id: the function reads the address, name and route from the
+      // submission row itself, so it cannot be used to mail anyone else.
       if (climbEmail) fetch(`${SUPABASE_URL}/functions/v1/notify-gps-climber`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          submissionId,
-          climberEmail: climbEmail,
-          climberName: climbName || 'Climber',
-          routeName,
-          qualityScore
-        })
+        headers: fnHeaders,
+        body: JSON.stringify({ submissionId })
       }).then(r => r.json())
         .then(d => { if (d && d.emailed) setEmailed(true) })
         .catch(err => console.error('Climber notification failed:', err))
@@ -221,14 +223,8 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
       // Notify admin
       fetch(`${SUPABASE_URL}/functions/v1/notify-gps-admin`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          submissionId,
-          routeName,
-          qualityScore,
-          climberName: climbName,
-          climberEmail: climbEmail
-        })
+        headers: fnHeaders,
+        body: JSON.stringify({ submissionId })
       }).catch(err => console.error('Admin notification failed:', err))
 
       // Success - update modal with actual quality score from server

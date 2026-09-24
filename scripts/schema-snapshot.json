@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-10",
+  "generatedAt": "2026-09-23",
   "tables": {
     "areas": [
       "area_type",
@@ -205,6 +205,12 @@
       "note",
       "status",
       "user_id"
+    ],
+    "edge_rate_events": [
+      "bucket",
+      "created_at",
+      "id",
+      "key"
     ],
     "gps_notifications": [
       "action_url",
