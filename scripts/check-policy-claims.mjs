@@ -240,7 +240,13 @@ const text = html.replace(/&#x27;/g, "'").replace(/&quot;/g, '"').replace(/&amp;
 for (const [claim, why] of [
   ["home area you type in", "the profile field is typed text"],
   ["not a coordinate", "and explicitly not a coordinate"],
-  ["We do not record where you are", "profiles carries no lat/lng column"],
+  // "We do not record where you are" was true until 0188: a base check-in stores the device
+  // position against the account. The policy must now DISCLOSE that, and say what others see.
+  ["that position is not stored", "the find-me control's position is still not stored"],
+  ["do we store that position against your account", "§4 discloses that a base check-in is stored against the account (0188)"],
+  ["never who or when", "§4 says others see the spot, not the climber or the time — route_base_checkin_points() returns neither"],
+  ["you can remove your check-in", "§4 says a check-in can be withdrawn — the table carries a delete-own policy"],
+  ["If you check in at the base of a climb, we store the position", "§1 lists the check-in among what is collected"],
   ["corners of the map you are then looking at are sent to us", "the map-bounds disclosure — the nearby query sends that box"],
   // climb_logs.gpx_track IS written and read back, so a flat "we store no location" would replace
   // one false claim with another. The exception has to stay stated.
@@ -273,6 +279,7 @@ for (const [gone, why] of [
   // stale bookkeeping, and here it would have forbidden the policy from describing a live privacy
   // control -- a guard arguing with correct work. Removed rather than reworded.
   ["governed by your privacy settings", "§3 does not defer to profile-visibility settings the app withholds"],
+  ["We do not record where you are", "no blanket denial — a base check-in IS recorded (0188)"],
 ]) {
   if (text.includes(gone)) bad(`the rendered Privacy Policy says "${gone}" again — a claim the app cannot support`);
   else ok(why);
