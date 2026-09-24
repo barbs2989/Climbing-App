@@ -107,6 +107,14 @@ value, put the reasoning somewhere else.**
     count is only as good as its tokeniser**, including the count you are using to decide
     whether a rule is safe.
 
+- **`approach_logistics.trailheadDirection` is how to DRIVE there, and it ends AT the trailhead.**
+  The TRAILHEAD card prints it under the trailhead's name beside *Drive here*. **230 routes** had the
+  walk in it, e.g. *"…at the end of Harts Pass Road: backpack ~13 miles via the Whistler Cutoff"*,
+  *"From Paradise: Skyline Trail to Camp Muir"*, a bare *"North"*. Most came from hand-written
+  enrichment SQL. Name the start and the road to it, and put the walk in **`approach`**.
+  `check:sql` now refuses a file that writes the walk here, the card hides such a value, and
+  `check:trailhead-direction-shape` holds the rule (its entry is in `docs/guards/route-page.md`).
+
 The rule generalises: **before writing a researched string into an existing column, look at
 where that column renders.** `npm run check:field-renders` will tell you; a column that
 reaches a header, a pill, a chip or a table cell takes a value, and its explanation belongs

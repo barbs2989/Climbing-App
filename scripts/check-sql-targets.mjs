@@ -32,6 +32,8 @@
 
 import fs from "fs";
 import { SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
+import { trailheadDirectionsInSql } from "./lib/trailhead-direction-sql.mjs";
+import { trailheadDirectionProblem } from "../lib/trailheadDirectionShape.js";
 
 const argv = process.argv.slice(2);
 const arg = (n, d) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
@@ -61,6 +63,23 @@ const code = sql
   .split("\n")
   .map(l => (l.trim().startsWith("--") ? "" : l.replace(/--.*$/, "")))
   .join("\n");
+
+// A trailheadDirection that describes the WALK is refused before anything else is checked, and
+// without a DB read: it is wrong whatever its targets are. This is the path that wrote them — 31 of
+// the 48 values the committed enrichment .sql files carry fail the same test, and 230 live rows
+// had to be repaired on 2026-09-24 (see lib/trailheadDirectionShape.js for the rule).
+{
+  const vals = trailheadDirectionsInSql(code);
+  const bad = vals.map(v => [v, trailheadDirectionProblem(v)]).filter(([, why]) => why);
+  if (bad.length) {
+    console.error(`\ncheck:sql FAILED — ${bad.length} of ${vals.length} trailheadDirection value(s) in this file are not a way to DRIVE to the trailhead:`);
+    for (const [v, why] of bad) console.error(`  ${why}: ${JSON.stringify(v.length > 140 ? v.slice(0, 140) + "…" : v)}`);
+    console.error("That field renders under the trailhead's name as driving directions. End it at the trailhead;");
+    console.error("the walk belongs in `approach`.");
+    process.exit(1);
+  }
+  if (vals.length) console.log(`ok    ${vals.length} trailheadDirection value(s) end at the trailhead`);
+}
 
 // Split on semicolons at statement level. Good enough: these files are generated
 // UPDATE/DELETE/INSERT lists, not procedural SQL with embedded blocks.
