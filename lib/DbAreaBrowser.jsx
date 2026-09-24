@@ -996,9 +996,10 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
-  // Type-of-climbing filter over what is in view. An area row stores only its MAIN discipline
-  // (`dominant_discipline`, 0051), so that is what this filters on — and the caption says so,
-  // rather than implying a mostly-sport crag holds no trad.
+  // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
+  // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
+  // alpine; "rock" is never listed), so a mostly-sport crag with trad lines shows under both.
+  // Falls back to the main type for a row read before that column existed.
   const [disc, setDisc] = useState(null);
 
   // Full screen just resizes the same Leaflet instance in place (same map div,
@@ -1011,10 +1012,11 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
   const nearbyAll = data && data.rows;
-  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => a.dominant_discipline === disc) : nearbyAll), [nearbyAll, disc]);
+  const typesOf = a => Array.isArray(a.disciplines) ? a.disciplines : (a.dominant_discipline && a.dominant_discipline !== "rock" ? [a.dominant_discipline] : []);
+  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => typesOf(a).includes(disc)) : nearbyAll), [nearbyAll, disc]);
   const discsInView = useMemo(() => {
     const n = {};
-    (nearbyAll || []).forEach(a => { if (a.dominant_discipline) n[a.dominant_discipline] = (n[a.dominant_discipline] || 0) + 1; });
+    (nearbyAll || []).forEach(a => typesOf(a).forEach(d => { n[d] = (n[d] || 0) + 1; }));
     if (disc && !n[disc]) n[disc] = 0; // keep the active chip on screen so it can be cleared
     return Object.entries(n).sort((a, b) => b[1] - a[1]);
   }, [nearbyAll, disc]);
@@ -1170,7 +1172,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
                 {discChip(null, "All", !disc)}
                 {discsInView.map(([k, n]) => discChip(k, (DL[k] || k) + " · " + n, disc === k))}
               </div>
-              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Filters by each area's main type of climbing — on the map too.</div>
+              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Shows areas with at least one climb of that type — on the map too.</div>
             </div>
           ) : null}
           {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
