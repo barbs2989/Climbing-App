@@ -13,6 +13,7 @@
 // Static and DB-free, so it runs in the build:
 //   1. the newest migration defining search_forms() maps every word to the SAME forms as JS
 //   2. search_clean()'s accent-fold strings are the same two strings JS uses
+//   1b. search_clean()'s two-part-direction join ("North-East" -> "northeast") is JS's, verbatim
 //   3. behaviour: the cases below, including the reported one, hold in JS
 //   4. the NEWEST definition of every search function matches through name_search, not a verbatim
 //      `name ilike '%' || q || '%'`. 0196 re-created both route finders from a pre-0190 body and
@@ -52,6 +53,13 @@ if (!defining.length) {
     if (js === w) continue; // a word JS maps to itself (a one-way compass canonical) needs no SQL row
     if (!sqlMap.has(w)) fails.push(`lib/search.js maps '${w}' -> '${js}', but ${file}'s search_forms() has no row for it`);
   }
+  // ── 1b. the two-part-direction join in search_clean() is the same two patterns as JS ─────
+  const cleanSql = sql.slice(sql.search(/create or replace function search_clean\s*\(/i));
+  const cleanBody = cleanSql.slice(0, cleanSql.indexOf("$$;"));
+  const jsSrc = fs.readFileSync(path.join(ROOT, "lib/search.js"), "utf8");
+  const joins = [...jsSrc.matchAll(/\.replace\(\/(\(\^\| \)[^/]+)\/g, "\$1\$2\$3"\)/g)].map((m) => m[1]);
+  if (joins.length !== 2) fails.push(`lib/search.js: expected 2 direction-join patterns in searchClean, found ${joins.length} — ANCHOR LOST`);
+  for (const j of joins) if (!cleanBody.includes(`'${j}', '\\1\\2\\3', 'g'`)) fails.push(`${file}: search_clean() lacks the direction join /${j}/ that lib/search.js applies — "North-East" would match in one box and not the next`);
   // ── 2. the accent fold ────────────────────────────────────────────────────────────────────
   const clean = sql.slice(sql.search(/create or replace function search_clean\s*\(/i));
   // translate()'s first argument holds a comma of its own (`coalesce(t, '')`), so anchor on the
@@ -73,10 +81,20 @@ const MATCH = [
   ["mount st", "Mount Stuart"],              // a half-typed word is not rewritten into "saint"
   ["bobs wall", "Bob's Wall"], ["bob's wall", "Bobs Wall"], ["ne face", "Northeast Face"],
   ["NE Buttress", "Northeast Buttress"], ["northeast buttress", "NE Buttress"],
+  // 0201 — every measured abbreviation, both directions, and a direction written in two parts
+  ["se ridge", "Southeast Ridge"], ["southwest face", "SW Face"], ["ne gully", "North-East Gully"],
+  ["southeast ridge", "South East Ridge"], ["ne face", "N.E. Face"], ["se side", "Round Rock (S E Side)"],
+  ["north ridge", "NNE Ridge"], ["northeast ridge", "NNE Ridge"],
+  ["dir", "Beckey Direct"], ["direct", "Dir. Route"], ["var", "Standard Variation"], ["variation", "Var. Finish"],
+  ["1st", "First Lead"], ["first", "1st Pitch"], ["dr", "Doctor Rock"], ["doctor", "Dr. Rock"],
+  ["rdg", "West Ridge"], ["gl", "Coleman Glacier"], ["gully", "Gulley Route"], ["couloir", "Coulior"],
+  ["route 1", "Route One"], ["lt", "Left Side"], ["upr", "Upper Wall"], ["jr", "Junior Varsity"],
   ["north ridge", "N Ridge"], ["sauk mtn", "Sauk Mountain"], ["cafe", "Café Crack"], ["x-ray", "X Ray"],
 ];
 for (const [q, name] of MATCH) if (!S.searchMatches(q, name)) fails.push(`"${q}" should find "${name}" and does not`);
-const NOMATCH = [["mt baker", "Mount Rainier"], ["north ridge", "South Face"]];
+const NOMATCH = [["mt baker", "Mount Rainier"], ["north ridge", "South Face"],
+  // acronyms are not directions; a plain North Ridge is not an NNE one; L/R/TR are not mapped
+  ["ne", "N.E.R.F."], ["nne", "North Ridge"], ["left", "L Crack"], ["trail", "TR Crack"]];
 for (const [q, name] of NOMATCH) if (S.searchMatches(q, name)) fails.push(`"${q}" should NOT find "${name}"`);
 // Exactness is what ranks a peak first: canon must equate spellings of one name.
 for (const [a, b] of [["mt baker", "Mount Baker"], ["Mt. St. Helens", "mount saint helens"]]) {
