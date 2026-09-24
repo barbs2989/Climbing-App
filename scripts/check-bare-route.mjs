@@ -141,18 +141,17 @@ for (const [label, extra] of PARTIALS) {
   else ok("a fully-populated route still shows a plain estimate");
 }
 
-// 3. #655 — the per-discipline safety advice must be REACHABLE for crag disciplines. It used to
-//    be asserted on Overview, because the Safety tab was hidden for exactly those three
-//    disciplines and Overview was the only place left. The tab is unconditional now, so the
-//    advice is asserted where it actually lives — but the question #655 asked is unchanged, and
-//    it is the reachability, not the location, that this guards.
-for (const d of CRAG) {
-  const html = cache.get(d + "/safety");
-  if (!html) { fail(`could not render ${d}/safety`); continue; }
+// 3. The per-discipline safety boxes ("Spotting & landing", "Clipping & lowering", … and
+//    "Watch out for on this type of climb") were REMOVED by user decision: the same canned
+//    lines on every route of a discipline, i.e. advice about climbing in general rather than
+//    about this climb. #655 once made them reachable for crag routes; this now pins that they
+//    stay gone, on every discipline, so a revert cannot quietly put them back.
+for (const d of [...CRAG, "alpine"]) {
+  const html = cache.get(d + "/safety") || render(bare(d, d === "alpine" ? "5.6" : "5.8"), "safety");
   const t = text(html);
-  if (!t.includes("What matters most for this discipline") || !t.includes("Watch out for on this type of climb")) {
-    fail(`${d}: discipline safety advice is unreachable (#655 regressed)`);
-  } else ok(`${d}: discipline safety advice reachable on Safety`);
+  const hit = ["What matters most for this discipline", "Watch out for on this type of climb", "Watch out for on this climb", "Spotting & landing", "Clipping & lowering", "Gear & anchors"].filter((p) => t.includes(p));
+  if (hit.length) fail(`${d}: generic discipline safety box is back on Safety (${hit.join(", ")})`);
+  else ok(`${d}: no generic discipline safety box`);
 }
 
 // 4. PLAN is gated on CONTENT, not discipline; SAFETY is offered on every route. The two are
@@ -163,7 +162,7 @@ for (const d of CRAG) {
 //    an approach, a descent, permits, four hazards and two watch-outs behind tabs the strip never
 //    rendered, and Overview showed none of it.
 //    Safety: always offered, because that tab is never empty even for a route with no safety
-//    fields of its own — the discipline advice, the forecast links and the nearby-fire panel all
+//    fields of its own — the forecast links and the nearby-fire panel all
 //    render regardless. Gating it meant 99.5% of the catalog had nowhere to show a live wildfire.
 //    Whole-line matching, so "Plan" cannot pass on the strength of "Trip plan".
 {
@@ -174,14 +173,12 @@ for (const d of CRAG) {
   const bl = lines(render(cragBase, "overview"));
   if (bl.includes("Plan")) fail("bare crag route: offered a Plan tab with no content to put in it");
   else ok("bare crag route: no Plan tab");
-  if (!bl.includes("Safety")) fail("bare crag route: no Safety tab — the advice, the forecasts and the fire panel have nowhere to render");
+  if (!bl.includes("Safety")) fail("bare crag route: no Safety tab — the forecasts and the fire panel have nowhere to render");
   else ok("bare crag route: Safety tab offered anyway");
-  // It is on Safety now, so a copy left on Overview would print it twice.
-  if (bl.filter((l) => l === ADVICE).length !== 0) fail(`bare crag route: discipline advice duplicated onto Overview (got ${bl.filter((l) => l === ADVICE).length})`);
-  else ok("bare crag route: discipline advice not left behind on Overview");
+  // The generic discipline advice was removed; it must be on neither tab.
   const bs = lines(render(cragBase, "safety"));
-  if (bs.filter((l) => l === ADVICE).length !== 1) fail(`bare crag route: discipline advice should appear exactly once on Safety (got ${bs.filter((l) => l === ADVICE).length})`);
-  else ok("bare crag route: discipline advice on Safety exactly once");
+  if (bl.includes(ADVICE) || bs.includes(ADVICE)) fail("bare crag route: generic discipline advice is rendering again");
+  else ok("bare crag route: no generic discipline advice on Overview or Safety");
 
   const rich = { ...cragBase, id: "probe_rich", approach: "Walk up the gully.", descent: "Walk off west.",
     hazards: ["Loose rock in the gully"], objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] };
@@ -190,8 +187,6 @@ for (const d of CRAG) {
   else ok("enriched crag route: Plan tab offered");
   if (!rl.includes("Safety")) fail("enriched crag route: hazards on file but no Safety tab");
   else ok("enriched crag route: Safety tab offered");
-  if (rl.filter((l) => l === ADVICE).length !== 0) fail("enriched crag route: discipline advice duplicated on Overview and Safety");
-  else ok("enriched crag route: discipline advice not duplicated");
   const rp = text(render(rich, "planner"));
   if (!rp.includes("Walk up the gully") || !rp.includes("Walk off west")) fail("enriched crag route: Plan tab does not render its approach/descent");
   else ok("enriched crag route: approach and descent render on Plan");
