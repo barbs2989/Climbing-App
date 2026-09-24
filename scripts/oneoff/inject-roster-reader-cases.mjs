@@ -15,7 +15,8 @@ import { execFileSync } from "child_process";
 import { fileURLToPath } from "url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const SRC = path.join(ROOT, "ClimbMatchCore.jsx");
+// CrewCard (every reader these cases edit) moved to lib/ to load lazily.
+const SRC = path.join(ROOT, "lib", "CrewCard.jsx");
 const PROBE = path.join(ROOT, "scripts/oneoff/probe-pending-requester-is-not-a-member.mjs");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
 

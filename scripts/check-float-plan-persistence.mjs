@@ -47,6 +47,7 @@ import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -165,7 +166,7 @@ else fail("the float plan state is not declared above the branch that unmounts t
 // likely to be tapped mid-fill is the one that clears the form. It is asserted HERE rather than in
 // a second probe so the two call sites cannot drift — FloatPlan's internal fallback means a site
 // that quietly stops opting in still renders perfectly.
-const coreBare = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8")
+const coreBare = readCoreSource()
   .replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
 
 const crewTag = coreBare.match(/<FloatPlan\b[^>]*>/);

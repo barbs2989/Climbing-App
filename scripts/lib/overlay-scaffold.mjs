@@ -27,6 +27,7 @@
 // overlay. See dialogOverlays() for the two precision rules that keep it honest.
 
 import { readFileSync, existsSync } from "node:fs";
+import { readCoreSource } from "./guard-sources.mjs";
 
 // Overlays whose RENDERER is gated on state beyond their own flag, so flipping the flag
 // alone cannot mount them. These are correct code, not bugs: the walk simply cannot reach
@@ -238,6 +239,26 @@ function matchBrace(s, i) {
 
 const TAG = /<([A-Za-z][\w$.]*)/;
 
+// The component a region RENDERS, looking through a leading <Suspense> wrapper. Screens split off
+// the startup bundle render as <Suspense fallback={<…Skeleton/>}><LogAscent …/></Suspense>, so
+// the region's first tag is Suspense and the next one is the fallback's — neither is the dialog.
+// Skip the whole Suspense opening element (its props hold JSX) and read the tag after it.
+function firstRenderedTag(seg) {
+  const t = TAG.exec(seg);
+  if (!t || t[1] !== "Suspense") return t;
+  let d = 0;
+  for (let k = t.index + t[0].length; k < seg.length; k++) {
+    const c = seg[k];
+    if (c === "{") d++;
+    else if (c === "}") d--;
+    else if (c === ">" && d === 0) {
+      const inner = TAG.exec(seg.slice(k + 1));
+      return inner ? Object.assign(inner, { index: inner.index + k + 1 }) : null;
+    }
+  }
+  return null;
+}
+
 // Shape 2: state of any name or initial value whose JSX renders a dialog.
 //
 // Two precision rules, both of which were wrong in the first draft:
@@ -263,7 +284,7 @@ export function dialogOverlays(appCode, coreCode) {
       const end = matchBrace(appCode, r.index);
       if (end < 0) continue;
       const seg = appCode.slice(r.index, end);
-      const t = TAG.exec(seg);
+      const t = firstRenderedTag(seg);
       if (!t) continue;
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');
@@ -323,7 +344,7 @@ export function screenOverlays(appCode) {
 }
 
 export function overlayStates(code, coreCode) {
-  const core = coreCode != null ? coreCode : readFileSync(new URL("../../ClimbMatchCore.jsx", import.meta.url), "utf8");
+  const core = coreCode != null ? coreCode : readCoreSource();
   const first = [...flagOverlays(code), ...dialogOverlays(code, core)];
   const have = new Set(first.map((o) => o.name));
   // Shapes 1 and 2 win: an early return that also renders a dialog is already opened
@@ -385,7 +406,7 @@ export function routeDetailOverlays(rdCode) {
       const end = matchBrace(rdCode, r.index);
       if (end < 0) continue;
       const seg = rdCode.slice(r.index, end);
-      const t = TAG.exec(seg);
+      const t = firstRenderedTag(seg);
       if (!t) continue;
       if (dlg.has(t[1])) { evidence = "renders <" + t[1] + ">"; break; }
       const d = seg.indexOf('role="dialog"');

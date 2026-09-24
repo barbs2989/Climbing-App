@@ -56,6 +56,7 @@
 import fs from "node:fs";
 import { selectAll, SUPABASE_URL, anonKey, headers } from "./lib/supabase-env.mjs";
 import { trackIsJustTheWaypoints } from "../lib/track.js";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 // ---------------------------------------------------------------------------
 // args
@@ -316,7 +317,7 @@ const F = {
    The question is also not "is this string in a list": the app resolves a raw value through
    WP_TYPE_MAP first and only then looks it up in WP_STYLE. So mirror `wpType()` and ask what
    the app asks — after canonicalisation, can WP_STYLE DRAW it? */
-const CORE = fs.readFileSync(new URL("../ClimbMatchCore.jsx", import.meta.url), "utf8");
+const CORE = readCoreSource();
 function parseBlock(name) {
   const i = CORE.indexOf(`const ${name}={`);
   if (i < 0) return null;

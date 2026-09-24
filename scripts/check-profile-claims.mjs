@@ -38,7 +38,7 @@ import path from "node:path";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
-import { appSources } from "./lib/guard-sources.mjs";
+import { readCoreSource, appSources } from "./lib/guard-sources.mjs";
 import { reachableVerificationTypes } from "./lib/verification-reach.mjs";
 
 const GUARD = "check:profile-claims";
@@ -176,7 +176,7 @@ else {
   else fail("the toast does not say it is a preview");
 }
 
-const coreSrc = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const coreSrc = readCoreSource();
 if (/Verify \(demo\)/.test(coreSrc)) ok("the button still reads 'Verify (demo)'");
 else fail("the button no longer says '(demo)' — re-check what this control now claims");
 

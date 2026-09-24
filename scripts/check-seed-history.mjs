@@ -36,6 +36,7 @@ import fs from "fs";
 import os from "os";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource, readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require_ = createRequire(import.meta.url);
@@ -46,7 +47,7 @@ const fail = (msg) => { console.error("  FAIL " + msg); fails++; };
 const ok = (msg) => console.log("  ok   " + msg);
 
 // ---------------------------------------------------------------- static half
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource();
 
 // Blank comments and string/template contents in ONE stateful pass, preserving offsets, so
 // line numbers stay true and prose that merely MENTIONS a pattern cannot trip the scan.
@@ -85,7 +86,7 @@ for (const m of re.exec ? [...core.matchAll(re)] : []) {
   if (!inGate) calls.push({ index: m.index, ctx: core.slice(Math.max(0, m.index - 90), m.index + 40).replace(/\s+/g, " ") });
 }
 for (const f of ["ClimbMatch.jsx", "RouteDetail.jsx"]) {
-  const s = fs.readFileSync(path.join(ROOT, f), "utf8");
+  const s = readAppFile(path.join(ROOT, f));
   for (const m of s.matchAll(/\bticksFor\s*\(/g)) {
     calls.push({ file: f, ctx: s.slice(Math.max(0, m.index - 90), m.index + 40).replace(/\s+/g, " ") });
   }
@@ -104,7 +105,7 @@ if (calls.length) {
 // silently re-weight a derived consensus. Must go through seedAuthor().
 const authorHits = [];
 for (const f of ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]) {
-  const src = blank(fs.readFileSync(path.join(ROOT, f), "utf8"));
+  const src = blank(readAppFile(path.join(ROOT, f)));
   for (const m of src.matchAll(/===\s*ME\.name\s*\?\s*ME\b/g)) {
     authorHits.push(`${f}:${src.slice(0, m.index).split("\n").length}`);
   }
@@ -134,7 +135,7 @@ if (authorHits.length) {
    heuristic. */
 const nameVsUser = [];
 for (const f of ["ClimbMatchCore.jsx", "ClimbMatch.jsx", "RouteDetail.jsx"]) {
-  const src = blank(fs.readFileSync(path.join(ROOT, f), "utf8"));
+  const src = blank(readAppFile(path.join(ROOT, f)));
   // Either order: `c.name===x.a.user` or `x.a.user===c.name`.
   const RE = /(?:\w+(?:\.\w+)*\.name\s*===\s*\w+(?:\.\w+)*\.user|\w+(?:\.\w+)*\.user\s*===\s*\w+(?:\.\w+)*\.name)\b/g;
   for (const m of src.matchAll(RE)) {

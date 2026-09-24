@@ -42,6 +42,7 @@ import net from "node:net";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -114,7 +115,7 @@ try {
 function iconNames() {
   const names = new Set();
   for (const f of ["ClimbMatch.jsx", "ClimbMatchCore.jsx"]) {
-    const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+    const src = readAppFile(path.join(ROOT, f));
     for (const m of src.matchAll(/icon:"([a-z][a-z0-9]*)"/g)) names.add(m[1]);
   }
   return names;

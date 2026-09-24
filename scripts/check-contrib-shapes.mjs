@@ -44,6 +44,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { appSources } from "./lib/guard-sources.mjs";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const GUARD = "check:contrib-shapes";
@@ -52,7 +53,8 @@ appSources(ROOT, GUARD);
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const APP = read("ClimbMatch.jsx");
 const RD = read("RouteDetail.jsx");
-const CORE = read("ClimbMatchCore.jsx");
+// Through readCoreSource(): AddRoute (whose `_nr` object this reads) moved to lib/ to load lazily.
+const CORE = readCoreSource();
 
 let fails = 0;
 const die = (msg) => { console.error(`\n${GUARD} FAILED — ${msg}\n`); process.exit(1); };
