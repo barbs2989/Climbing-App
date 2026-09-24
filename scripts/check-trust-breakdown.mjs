@@ -871,6 +871,106 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     fail(`${inlined.map(([n]) => n).join(" and ")} re-inlined the real-id test instead of calling realProfileId — the two trust surfaces can now disagree about who counts as real`);
   else
     ok("FullProfile and Resume both ask realProfileId who is real — one derivation");
+
+  // 10e. THE CREW JOIN-REQUEST CARD, which is the same defect deciding something about a stranger.
+  // A previous change fixed the requester's NAME in this very expression and left the badge beside
+  // it on vScore(c) -- for a profile from useProfilesByIds that is 0, i.e. "New" in red, on the card
+  // an organiser accepts or declines from. CrewCard already held the correct pattern 200 characters
+  // away on its invite-search row, and a batched realTrust map to serve it; only the join-request
+  // ids were missing from the fetch.
+  const ccStart = src.indexOf("function CrewCard(");
+  if (ccStart < 0) dead("ClimbMatchCore.jsx has no CrewCard — ANCHOR LOST");
+  const ccEnd = src.indexOf("\nfunction ", ccStart + 1);
+  const cc = src.slice(ccStart, ccEnd < 0 ? src.length : ccEnd);
+
+  // Anchored on the requester's own NAME: a bare marginTop:2 div also opens the crew safety check's
+  // copy, and lifting that would judge a paragraph of prose instead of a badge.
+  const JR_ANCHOR = "{pubName(c)}</div><div style={{marginTop:2}}>";
+  const jrHits = cc.split(JR_ANCHOR).length - 1;
+  if (jrHits !== 1)
+    dead(`the join-request badge anchor occurs ${jrHits} time(s) in CrewCard — ANCHOR LOST, so 10e could not judge it`);
+  const jrBadge = cc.slice(cc.indexOf(JR_ANCHOR) + JR_ANCHOR.length, cc.indexOf("</div>", cc.indexOf(JR_ANCHOR) + JR_ANCHOR.length));
+
+  cases++;
+  if (/realTrust\[c\.id\]!=null\?<TrustBadgescore=\{realTrust\[c\.id\]\}/.test(jrBadge.replace(/\s+/g, "")))
+    ok("the join-request badge states the fetched server score, gated on a known one");
+  else
+    fail("the join-request badge no longer reads a gated realTrust[c.id] — a real requester is back to the capped client model, which scores them 0 (\"New\", in red)");
+
+  cases++;
+  // vScore(c) is CORRECT here for a seed requester, whose inputs the client model has in full. What
+  // it must never be is UNGATED -- so the assertion is that a seed identity is required, not that
+  // the call is absent. A rule demanding its absence would be satisfied by showing nobody a badge.
+  if (/seedIdentity\(c\)\?<TrustBadgescore=\{vScore\(c\)\}/.test(jrBadge.replace(/\s+/g, "")))
+    ok("and vScore(c) is reached only behind seedIdentity — so the unresolvable \"Climber\" fallback gets no badge either");
+  else
+    fail("the join-request badge's vScore(c) is no longer gated on seedIdentity — either a real climber or the unresolved fallback can be handed the client model again");
+
+  cases++;
+  // The gate is worth nothing if nothing ever fills the map for these ids. Only the invite search
+  // fed it, and a requester is not a search result.
+  const ccEff = cc.slice(cc.indexOf("const [realTrust,setRealTrust]=useState({})"));
+  const ccEffEnd = ccEff.indexOf("]);");
+  const idsExpr = ccEffEnd > 0 ? ccEff.slice(0, ccEffEnd) : "";
+  if (/joinReqs/.test(idsExpr) && /\[realInvSearch\.data,joinReqs\]/.test(ccEff.slice(0, ccEffEnd + 3)))
+    ok("CrewCard's batched fetch covers the join requests, and re-runs when they change");
+  else
+    fail("CrewCard's realTrust fetch no longer covers joinReqs (or no longer depends on them) — the badge would be gated on a score that never arrives, showing nothing forever");
+
+  // 10f. THE CHAT HEADER. Four of the eight setChatWith call sites can hand it a real profile --
+  // FullProfile, FriendsList, Resume and an inbox thread partner -- and CLAUDE.md already records
+  // FriendsList rendering "undefined · 0" for a real connection from exactly that shape.
+  // READ RAW, AND DO NOT ADD A COMMENT STRIP HERE. 10b and 10c strip {/* */} from a small SLICE of
+  // core and that is safe; measured over the whole of ClimbMatch.jsx the same regex removes 58.8%
+  // of the file -- 329,776 characters, one phantom match running 169,287 -- because a `{/*` inside
+  // an ordinary JS comment or a string starts a comment that runs to the next `*/}` thousands of
+  // lines away. CLAUDE.md records the same blanker eating 21% of RouteDetail.jsx and calling a live
+  // flag dead. The pattern below needs `<TrustBadge` with no `>` before `score={vScore(chatWith)}`,
+  // so PROSE naming the old expression cannot satisfy it; only a comment reproducing the whole
+  // element could, and the cure for that is to not write one.
+  const app10 = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+
+  cases++;
+  if (/<TrustBadge[^>]*score=\{vScore\(chatWith\)\}/.test(app10))
+    fail("the chat header hands vScore(chatWith) to a TrustBadge again — for a real connection that is 0, \"New\" in red, beside the name of somebody you may have climbed with for years");
+  else
+    ok("no TrustBadge reads vScore(chatWith)");
+
+  cases++;
+  if (/chatTs!=null\?<TrustBadgescore=\{chatTs\}/.test(app10.replace(/\s+/g, "")))
+    ok("the chat header's badge reads a gated chatTs");
+  else
+    fail("the chat header's badge no longer reads a gated chatTs — it is either showing an ungated score or has lost the badge entirely");
+
+  cases++;
+  const chatDecl = app10.match(/const chatTs=[^;]*;/);
+  if (chatDecl && /realProfileId\(/.test(chatDecl[0]) && /chatRealTrust/.test(chatDecl[0]) && /vScore\(chatWith\)/.test(chatDecl[0]))
+    ok("chatTs is the server score for a real connection and the client model only for a seed one");
+  else
+    fail("chatTs no longer chooses between the two models on realProfileId — a seed partner has lost its score, or a real one has been handed the client model");
+
+  // 10g. ONE WAY TO ASK. FullProfile and Resume held this effect byte-identically but for the
+  // variable names, which is the four-grade-parsers shape: the chat header would have been a third
+  // copy. A fourth is forbidden by counting the CALLS rather than by naming the surfaces, so a
+  // brand-new surface writing its own is caught too.
+  //
+  // CrewCard's batched map is deliberately NOT a violation: N rows cannot each call a hook, so it
+  // answers a different shape of the question rather than giving a second answer to it.
+  cases++;
+  const coreCalls = (src.match(/fetchTrustScore\(/g) || []).length;
+  if (coreCalls === 2)
+    ok("core calls fetchTrustScore twice: the shared hook, and CrewCard's batched map");
+  else if (coreCalls < 2)
+    dead(`core calls fetchTrustScore ${coreCalls} time(s) — ANCHOR LOST, so 10g is judging a file it does not recognise`);
+  else
+    fail(`core calls fetchTrustScore ${coreCalls} times — a surface has written its own copy of the single-score effect instead of calling useRealTrustScore, which is how FullProfile and Resume came to hold it twice`);
+
+  cases++;
+  const viaHook = [["FullProfile", fp], ["Resume", rs]].filter(([, body]) => /useRealTrustScore\(/.test(body));
+  if (viaHook.length === 2 && /useRealTrustScore\(/.test(app10))
+    ok("FullProfile, Resume and the chat header all ask through useRealTrustScore");
+  else
+    fail(`only ${viaHook.length} of FullProfile/Resume call useRealTrustScore${/useRealTrustScore\(/.test(app10) ? "" : ", and the chat header does not either"} — the copies are back`);
 }
 
 clean();

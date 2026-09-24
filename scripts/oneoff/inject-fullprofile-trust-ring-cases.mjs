@@ -28,6 +28,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+const APP = path.join(ROOT, "ClimbMatch.jsx");
 const GUARD = path.join(ROOT, "scripts", "check-trust-breakdown.mjs");
 
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
@@ -45,6 +46,24 @@ const BADGE_HISTORICAL = "<TrustBadge score={vScore(climber)} compact/>";
 const RESUME_BADGE = "{rts!=null?<TrustBadge score={rts}/>:null}";
 const REALID = "const _realId=realProfileId(climber.id);";
 const REALID_INLINE = 'const _realId=(typeof climber.id==="string"&&/^[0-9a-f]{8}-/.test(climber.id))?climber.id:null;';
+
+// SECTIONS 10e-10g. The crew JOIN-REQUEST card and the CHAT HEADER each handed a real climber's
+// object to the client model, which scores a useProfilesByIds shape 0 -- "New", in red. The card
+// already had the correct pattern on its invite-search row and a batched map to serve it; only the
+// requesters' ids were missing from the fetch.
+const JR_BADGE = "{c._real?(realTrust[c.id]!=null?<TrustBadge score={realTrust[c.id]}/>:null):(seedIdentity(c)?<TrustBadge score={vScore(c)}/>:null)}</div>";
+const JR_SEED_BRANCH = "(seedIdentity(c)?<TrustBadge score={vScore(c)}/>:null)";
+const JR_IDS = "var ids=(realInvSearch.data||[]).map(function(rp){return rp.id;}).concat((joinReqs||[]).map(function(jr){return jr.climberId;}).filter(function(id){return !!realProfileId(id);})).filter(function(id,i,a){return a.indexOf(id)===i&&realTrust[id]===undefined;});";
+const JR_IDS_HISTORICAL = "var ids=(realInvSearch.data||[]).map(function(rp){return rp.id;}).filter(function(id){return realTrust[id]===undefined;});";
+
+const CHAT_BADGE = "{chatTs!=null?<TrustBadge score={chatTs}/>:null}";
+const CHAT_TS = "const chatTs=!chatWith?null:(realProfileId(chatWith.id)?chatRealTrust:vScore(chatWith));";
+const CHAT_HOOK = "const chatRealTrust=useRealTrustScore(chatWith&&chatWith.id);";
+
+// ONE way to ask. FullProfile and Resume held this effect byte-identically but for the variable
+// names; a fourth copy is what section 10g forbids.
+const FP_HOOK = "const realTrust=useRealTrustScore(climber.id);";
+const FP_OWN_COPY = "const [realTrust,setRealTrust]=useState(null);useEffect(function(){var on=true;if(_realId)fetchTrustScore(_realId).then(function(s){if(on)setRealTrust(s);}).catch(function(){});return function(){on=false;};},[_realId]);";
 
 // The widened shape test, and the one-sided one-level test it replaced.
 const WIDE_HEAD = 'if (n.type === "ConditionalExpression") {\n          const isV =';
@@ -116,6 +135,60 @@ const CASES = [
     expect: "re-inlined the real-id test",
   },
   {
+    name: "crew-joinreq-badge-back-to-the-client-model",
+    why: "the real defect: an organiser deciding on a stranger was shown that stranger as \"New\" in red, scored 0 by a model with none of its inputs",
+    edits: [[CORE, JR_BADGE, "<TrustBadge score={vScore(c)}/></div>"]],
+    expect: "no longer reads a gated realTrust",
+  },
+  {
+    name: "crew-joinreq-vscore-ungated",
+    why: "vScore(c) is CORRECT for a seed requester and must stay behind seedIdentity — ungated it also catches the unresolvable \"Climber\" fallback, which scores 0 too",
+    edits: [[CORE, JR_SEED_BRANCH, "<TrustBadge score={vScore(c)}/>"]],
+    expect: "no longer gated on seedIdentity",
+  },
+  {
+    name: "crew-fetch-loses-the-requesters",
+    why: "the gate is worth nothing if nothing fills the map for these ids: only the invite search fed it, and a requester is not a search result",
+    edits: [[CORE, JR_IDS, JR_IDS_HISTORICAL], [CORE, "},[realInvSearch.data,joinReqs]);", "},[realInvSearch.data]);"]],
+    expect: "no longer covers joinReqs",
+  },
+  {
+    name: "chat-badge-back-to-the-client-model",
+    why: "the same defect beside the name of somebody you may have climbed with for years",
+    edits: [[APP, CHAT_BADGE, "<TrustBadge score={vScore(chatWith)}/>"]],
+    expect: "hands vScore(chatWith) to a TrustBadge again",
+  },
+  {
+    name: "chat-ts-always-the-client-model",
+    why: "dropping the realProfileId test hands every chat partner the client model, which is the defect with the badge still gated",
+    edits: [[APP, CHAT_TS, "const chatTs=!chatWith?null:vScore(chatWith);"]],
+    expect: "no longer chooses between the two models",
+  },
+  {
+    name: "chat-badge-loses-its-gate",
+    why: "an ungated chatTs prints a score before the fetch resolves; 10f's second assertion is what sees it",
+    edits: [[APP, CHAT_BADGE, "<TrustBadge score={chatTs}/>"]],
+    expect: "no longer reads a gated chatTs",
+  },
+  {
+    name: "fourth-copy-of-the-single-score-effect",
+    why: "FullProfile and Resume held this effect byte-identically but for the names; a surface writing its own again is the four-grade-parsers shape",
+    edits: [[CORE, FP_HOOK, FP_OWN_COPY]],
+    expect: "written its own copy",
+  },
+  {
+    name: "chat-header-stops-asking-through-the-hook",
+    why: "the fetch count stays at two, so only the who-calls-the-hook assertion can see this",
+    edits: [[APP, CHAT_HOOK, "const chatRealTrust=null;"]],
+    expect: "the copies are back",
+  },
+  {
+    name: "SILENT-prose-naming-the-chat-defect",
+    why: "10f reads ClimbMatch.jsx RAW — a {/* */} strip removes 58.8% of that file — so prose naming the old expression must be invisible to it, which it is because the pattern needs an adjacent <TrustBadge",
+    edits: [[APP, CHAT_HOOK, "/* never again: score={vScore(chatWith)} */" + CHAT_HOOK]],
+    silent: true,
+  },
+  {
     name: "old-guard-is-blind",
     why: "A/B: with the defect restored AND the scan narrowed back, the run must go GREEN — that is what shows the widening is load-bearing rather than decorative",
     edits: [[CORE, FIXED, HISTORICAL], [GUARD, WIDE_HEAD, "SPLICE_NARROW"]],
@@ -143,7 +216,7 @@ function narrowGuard(src) {
   return src.slice(0, i) + NARROW.replace(/^\s+/, "") + src.slice(end + "\n        }".length);
 }
 
-const before = { [CORE]: sum(CORE), [GUARD]: sum(GUARD) };
+const before = { [CORE]: sum(CORE), [APP]: sum(APP), [GUARD]: sum(GUARD) };
 
 console.log("Capturing the clean run first — an expectation that already matches it proves nothing.\n");
 const clean = runGuard();
