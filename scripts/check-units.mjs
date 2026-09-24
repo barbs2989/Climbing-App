@@ -464,9 +464,24 @@ async function runWeather() {
   //    blind to what unit one of them is rendered in.
   const appMask = fs.readFileSync(APP_PATH, "utf8")
     .replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  //    THE CONTRACT MOVED (log-form rework): both hydrations now carry the RAW NUMBER as
+  //    `freezingFt`, and the conversion happens where it is DRAWN. Hydrating to uElev()'s string
+  //    was itself a units defect: the log form re-seeded from that "3,353 m" and saved it back as
+  //    3353 FEET, so every metric edit shrank the value 3.28x. So assert all four links: each
+  //    hydration keeps the number, and each place a reader sees it converts.
   for (const [label, m] of [["RouteDetail", mask], ["ClimbMatch", appMask]]) {
-    if (/uElev\((?:r|row)\.freezing_level_ft\)/.test(m)) ok(`${label}'s climb_logs hydration converts the freezing level through uElev()`);
-    else fail(`${label}'s climb_logs hydration no longer converts freezing_level_ft — a metric climber reads another climber's report in feet`);
+    if (/uElev\((?:r|row)\.freezing_level_ft\)/.test(m)) fail(`${label}'s climb_logs hydration bakes freezing_level_ft into a uElev() STRING — the log form re-seeds from it and re-saves metres as feet`);
+    else if (/\.freezingFt=(?:r|row)\.freezing_level_ft;/.test(m)) ok(`${label}'s climb_logs hydration carries the freezing level as a NUMBER (freezingFt)`);
+    else fail(`${label}'s climb_logs hydration no longer carries freezing_level_ft as freezingFt — another climber's freezing level is lost or unconverted`);
+  }
+  {
+    const coreMask = readCoreSource().replace(/\/\*[\s\S]*?\*\//g, "");
+    if (/\["Freezing lvl",uElev\(cond\.freezingFt\)\]/.test(coreMask)) ok("ReportStats draws a reported freezing level through uElev()");
+    else fail("ReportStats no longer converts cond.freezingFt — a metric climber reads another climber's report in feet");
+    if (/p\[0\]==="freezingFt"\?uElev\(cd\.value\)/.test(mask)) ok("CONDITIONS NOW draws the freezing-level consensus through uElev()");
+    else fail("CONDITIONS NOW no longer converts the freezingFt consensus — a metric climber reads it in feet");
+    if (/o\.freezingFt=\(v!==""&&ft!=null\)\?ft:""/.test(coreMask) && /var ft=uElevIn\(v\)/.test(coreMask)) ok("the log form stores the freezing level through uElevIn() (canonical feet)");
+    else fail("the log form no longer converts the typed freezing level through uElevIn — a metric climber writes metres into a FEET column");
   }
 
   // -- AND THE GENERAL RULE, APP-WIDE, BECAUSE THE CHECK ABOVE COULD ONLY SEE ` mph`. This
@@ -651,7 +666,7 @@ async function runReports() {
   else fail("nothing calls uTempIn — the form stores the typed number, so a metric climber writes Celsius into a Fahrenheit column");
   if (sawSeed) ok("the form seeds an existing report in the climber's own unit");
   else fail("the editor seeds from raw tempF — a metric climber reopening their report sees Fahrenheit in the box");
-  if (/TEMP "\+\(uImp\(\)\?/.test(CORE)) ok("the field LABEL names the unit being asked for");
+  if (/TEMP(?:ERATURE)? "\+\(uImp\(\)\?/.test(CORE)) ok("the field LABEL names the unit being asked for");
   else fail('the label is fixed text — it must say which scale it wants, or a metric climber types Celsius under a "degF" heading');
   // ...and no display site may hard-code the scale again.
   const baked = (CORE.match(/tempF\s*\+\s*"\\u00b0F"|tempF\+"\u00b0F"/g) || []).length;

@@ -113,6 +113,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       metric climber read **another climber's report** in feet. This file already records that
       this pair DRIFTS when only one half is touched, so both are fixed and both are asserted.
       `check:log` guards which COLUMNS each hydration carries and is blind to the unit.
+    - **...AND THEN THE CONTRACT MOVED (2026-09-24, log-form rework).** Hydrating to `uElev()`'s
+      STRING was itself a units defect one step later: the log form re-seeded its box from
+      `"3,353 m"`, `syncLogToDb` pulled the first digits out of it and stored **3353 as feet**, so
+      every metric edit shrank the value 3.28x. Both hydrations now carry the raw number as
+      `cond.freezingFt`, and the conversion happens where it is DRAWN (`ReportStats`, CONDITIONS
+      NOW) and where it is TYPED (`uElevIn` in the form). The guard asserts all four links and
+      FAILS on the old `uElev(row.freezing_level_ft)` shape rather than accepting it. The legacy
+      prose `cond.freezing` (seed routes) still renders as written.
     - **The imperial output is NOT byte-identical here and that is stated rather than glossed**:
       `11000+" ft"` becomes `uElev(11000)` = `"11,000 ft"`. A thousands separator, matching the 35
       other `uElev` call sites in that file. The forecast tile IS byte-identical, since `freezeMax`
