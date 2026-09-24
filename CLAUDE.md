@@ -3479,12 +3479,24 @@ the total when deciding where a new guard belongs.
       is exercised on five constructed pairs first — it must ACCEPT a real conversion and REJECT
       the unconverted number, a wrong figure, and a metric run still showing feet — and one
       implementation serves the self-test and the live comparison so they cannot drift.
-    - **WHAT HAS AND HAS NOT BEEN OBSERVED, stated rather than implied.** Observed: the self-test
-      (5/5), the imperial leg capturing the tile (`16,404 ft`, label found), and the not-rendered
-      gate printing NOT MEASURED instead of accusing the app. **NOT observed: a live METRIC
-      render of this tile** — every attempt hit a box at 51x-103x where the metric leg returned no
-      forecast at all. The remaining gap is a property of the box, not of the code, and it closes
-      with one run on a quiet one.
+    - **THE METRIC LEG IS OBSERVED NOW, AND THIS BULLET USED TO SAY IT NEVER HAD BEEN.** It read
+      *"NOT observed: a live METRIC render of this tile — every attempt hit a box at 51x-103x where
+      the metric leg returned no forecast at all … it closes with one run on a quiet one."* That run
+      happened (2026-09-23, load 3.6x), and **both legs captured every one of the five values**:
+
+          imperial   hi/lo 54/38   wind 4 mph     precip 0.11"   delta 8   freeze 13,878 ft
+          metric     hi/lo 12/3    wind 6 km/h    precip 2.8 mm  delta 4   freeze 4,230 m
+
+      The two assertions that could only ever be made live both hold: **13,878 ft renders as
+      4,230 m**, so the tile converts rather than swapping a unit word; and **the provider
+      disagreement goes 8° to 4°, not −13°**, so a difference is converted with the scale and not
+      the offset — the historical defect, caught in a browser for the first time.
+    - **The rest of the observation list stands**: the self-test (5/5), and the not-rendered gate
+      printing NOT MEASURED instead of accusing the app. **What is still unobserved is the
+      not-rendered branch firing on a genuinely absent tile** rather than on a loaded box — the
+      same shape one level down, and it needs a route with no forecast rather than a quiet machine.
+      *A stated limitation is a worklist*, so when that one is exercised, replace this sentence with
+      the measurement instead of deleting it.
 - **`check:match-percent`** asserts that **the partner Match % blends what the screen says it
   blends**. Static (one esbuild bundle of core, no browser and no database), so it sits in
   `npm run build`.
