@@ -26573,3 +26573,104 @@ Next batch continues in sorted-id order after that id.
 Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch
 entries (307 through 323): 123 audited through batch 322 + 8 this batch = 131
 audited, 524 - 131 = **393 in-scope routes remain unaudited this pass**.
+
+## 2026-09-24 — Pass 6, Batch 324
+
+Eight routes across six peaks, continuing sorted-id order after `wa_fortune_peak_east_slope`:
+Fortune Peak (Standard Route); South Early Winters Spire (Free Mojo); Frenzel Spitz (South
+Route); Little Tahoma (Frying Pan / Whitman Glaciers); Ghost Peak (South Route); Gilbert
+Peak (Conrad Glacier, Meade Glacier, West Route).
+
+**Confirmed correct, independently corroborated:**
+- `wa_fortune_peak_standard_route`: trailhead (Esmeralda Trailhead #1394, 4,269 ft),
+  driving directions (FR-9737, ~9.6 mi from pavement's end), and fee/pass structure all
+  reproduce WTA/Gaia GPS/USFS descriptions of Trail #1394 essentially verbatim.
+- `wa_free_mojo`: FA credit (Blake Herrington and Graham Zimmerman) is corroborated by
+  Herrington's own 2013 trip account of establishing a direct free-climbing start on Mojo
+  Rising (South Early Winter Spire) — the line that became known as "Free Mojo." Grade
+  (5.11-) is consistent with the first pitch's sourced 10+/11- rating.
+- `wa_frenzel_spitz_south_route`: FA (Ed Cooper, Glen Denny, Joan Firey, Joe Firey, George
+  Whitmore — Sept 10, 1961) matches an AAC Publications account exactly, including the
+  peak's own stated elevation (7,440 ft). North Cascades NP backcountry-permit details
+  (60%/40% reservable/walk-up split, $10/person/night + $6 Recreation.gov fee, youth 15-
+  and-under free, 2026 Early Access Lottery window Mar 2-13, Wilderness Information Center
+  in Marblemount) all independently reproduce the park's current 2026 permit system —
+  identical language also appears on `wa_ghost_peak_south_route`, both correct.
+- `wa_frying_pan_whitman_glaciers`: FA (J.B. Flett and Henry H. Garrison, August 29, 1894,
+  via Summerland/east shoulder) matches independent sources exactly. Mount Rainier's $82/
+  person climbing cost-recovery fee and $12/person/night wilderness camping fee (May 1-Sep
+  15) both confirmed as the *current* 2026 figures — the camping fee rose from $10 to $12
+  between 2025 and 2026, and this row already carries the updated number. Its own
+  `data_quality.gaps` flags this route as likely the same physical line as sibling route
+  `wa_little_tahoma_east_shoulder`; confirmed that sibling exists in the live DB with an
+  identical FA/grade, so the cross-reference is accurate rather than dangling.
+- `wa_ghost_peak_south_route`: FA (Carla Firey, Joan Firey, David Knudson, Peter Renz, July
+  17, 1970) matches Wikipedia exactly. An independent narrative account of the FA ("south
+  face to the south arete and then to the west face") corroborates the row's own
+  `face`/`overview` text, so the "South Route" name and the "south and west sides" face
+  description are not in conflict with the source describing it as a "West Face Route."
+- `wa_gilbert_peak_conrad_glacier` / `..._meade_glacier` / `..._west_route`: trail numbers
+  (South Fork Tieton #1120, Snowgrass #96), place names (Klickton Divide, Snowgrass Flats,
+  Goat Ledges/Goat Ribs), and trailhead elevations (~4,044 ft vs. sourced ~4,100 ft; ~4,650
+  ft vs. sourced ~4,600 ft — both within normal "~" rounding) all check out. Meade Glacier's
+  `dist_km` (16.09, i.e. 10.0 mi one-way) is a clean internal cross-check against its own
+  `beta` text's independent claim of "~20 miles round trip" — exactly 2x, as the app's
+  `distKm * 2` display convention expects.
+
+**Flagged for human review (not confirmed errors — no SQL written):**
+- `wa_frenzel_spitz_south_route`: four of its six interior waypoints (Terror Creek Log Jam
+  Crossing, Terror Basin, The Barrier, Ottohorn-Himmelhorn Col) carry lat/lng values whose
+  fractional parts are exact repeating decimals (5/9, 1/3, 2/3, 8/9 — e.g.
+  `48.71854555555556`, `-121.28306666666667`) while the trailhead and summit points on the
+  same list are clean, non-repeating coordinates. This is the documented
+  `audit:synthetic-waypoints` fingerprint for a pin computed by linear interpolation
+  between two real endpoints rather than an independently recorded fix — CLAUDE.md's own
+  description of the pattern ("a distinctive repeating decimal tail... the residue of
+  dividing a span into equal parts"). The named features, elevations, and narrative
+  (Terror Basin as base camp, The Barrier as the loose ridge crossing, the col as the route
+  departure point) are all independently corroborated by Southern Pickets trip-report
+  literature, so nothing about *what* is at each point looks wrong — only the precise
+  coordinate is suspect, and there is no independent source (these are informal,
+  unsurveyed features) to correct the interior points to. Left as-is per CLAUDE.md's
+  standing guidance that a fabricated pin with no source "stays where it is"; flagging for
+  the specialized synthetic-waypoint tooling rather than hand-editing coordinates with
+  no basis.
+- `wa_ghost_peak_south_route`: the row's `grade` ("Grade III, Class 4") and `rock_grade`
+  ("5th class, easy to moderate (FA account: 'easy to moderate fifth-class pitches')")
+  describe two different levels of technical difficulty on the same row — Class 4 is
+  typically unroped scrambling, "fifth-class pitches" implies roped rock climbing. No
+  primary FA account (AAJ/Beckey) was reachable to confirm which is more accurate, and a
+  Class-4-rated alpine route legitimately having a short 5th-class step is common enough
+  that this may not be a real contradiction — flagging rather than guessing. Separately,
+  `grade_system` is stored as `"yds"` though the grade text uses NCCS/class notation; this
+  reproduces `gradeSystem(disc)`'s discipline-driven default for `discipline: "alpine"`
+  (matching the documented, deliberate behavior in
+  `audits/2026-08-07-class-grade-vs-discipline.md`) and does not change the derived
+  `grade_num` (still correctly 4 via the class-pattern branch), so it is noted rather than
+  changed.
+- `wa_gilbert_peak_west_route`: the row's own `corrections` field already documents an
+  unresolved ambiguity between two possible "West Route" identities — a Klickton-Divide-
+  based line from the South Fork Tieton trailhead (the source of the stored `gain_ft`,
+  4,000 ft) versus the Snowgrass Flat/Goat Ledges traverse the row's `approach`/`beta`
+  actually describe. No additional source found this pass to resolve which trailhead the
+  route is really keyed to; the existing self-documented caveat still accurately describes
+  an open question rather than being stale, so left alone.
+
+**Checked and confirmed correct (no action):** Gilbert Peak's elevation (8,184 ft, matching
+Wikipedia/USGS and the area row) and Ghost Peak's (8,000 ft vs. listsofjohn.com's LIDAR
+figure of 7,993 ft — a 7 ft/0.09% difference within normal survey tolerance for an informal
+summit, not flagged). `data_quality`/`corrections` fields on all 8 routes read as honest,
+internally-consistent hedges rather than stale or contradicted provenance notes.
+
+0 confirmed errors this batch — no `audits/sql/2026-09-24-batch-324.sql` file. Every
+route in scope reproduced its facts against at least one authoritative source with no
+material discrepancy strong enough to write a SQL fix for; the two class-of-issue items above
+(synthetic waypoint coordinates, an internal grade-vs-rock_grade tension) are recorded for the
+dedicated tooling/a human rather than hand-patched without a real source to correct to.
+
+Progress file's `last_processed_id` advanced to `wa_gilbert_peak_west_route`. Next batch
+continues in sorted-id order after that id.
+
+Recomputed "remain this pass" by summing `route_ids` across all `pass: 6` batch entries (307
+through 324): 131 audited through batch 323 + 8 this batch = 139 audited, 524 - 139 = **385
+in-scope routes remain unaudited this pass**.
