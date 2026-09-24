@@ -17,9 +17,10 @@
 // functions under test are the ones that ship.
 import { readFileSync } from "node:fs";
 import { crewGearFor, routeRackFor, DISC_RACK } from "../lib/rack.js";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = new URL("..", import.meta.url);
-const CORE = readFileSync(new URL("ClimbMatchCore.jsx", ROOT), "utf8");
+const CORE = readCoreSource();
 
 if (CORE.length < 100000) {
   console.error("check:crew-gear FAILED — ClimbMatchCore.jsx looks truncated; nothing was verified.");

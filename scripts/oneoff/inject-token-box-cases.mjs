@@ -12,7 +12,7 @@ import { execSync } from "child_process";
 import crypto from "crypto";
 import fs from "fs";
 
-const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx"];
+const FILES = ["RouteDetail.jsx", "ClimbMatchCore.jsx", "lib/ListsManager.jsx"];
 const ORIGINAL = Object.fromEntries(FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
 const sum = (s) => crypto.createHash("sha1").update(s).digest("hex").slice(0, 8);
 
@@ -67,7 +67,7 @@ const CASES = [
     want: null, // expect a clean run
   },
   {
-    file: "ClimbMatchCore.jsx",
+    file: "lib/ListsManager.jsx",
     // Proves the SEVENTH screen is really inspected. ListsManager renders route columns into
     // pills and lives in core, so mounting RouteDetail cannot reach it — which is how the last
     // raw `r.grade` in the app survived every other guard. Grades run to 77 characters in the

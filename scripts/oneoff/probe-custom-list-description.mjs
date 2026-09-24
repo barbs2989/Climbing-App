@@ -12,12 +12,13 @@
 import { build } from "esbuild";
 import path from "path"; import os from "os"; import fs from "fs";
 import { createRequire } from "module";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "../..");
 const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { ListsManager } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import ListsManager from ${JSON.stringify(path.join(ROOT, "lib", "ListsManager.jsx"))};
 export function render(props) { return renderToStaticMarkup(React.createElement(ListsManager, props)); }`;
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), "cm-lists-"));
 process.on("exit", () => { try { fs.rmSync(dir, { recursive: true, force: true }); } catch (_e) {} });
@@ -55,7 +56,8 @@ const t2 = strip(raw({ ...base, userLists: [{ id: "ul_3", name: "Old list", rout
 ok(t2.includes("Old list"), "a list with no description field at all still renders");
 
 // SOURCE half: the expanded copy, the editor and the create-sheet field.
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+// Through readCoreSource(): ListsManager moved to lib/ to load lazily.
+const src = readCoreSource(ROOT);
 ok(src.includes("No climbs on this list yet — add some below."), "an opened empty list says it is empty");
 ok(/aria-label="List description"/.test(src), "the create sheet asks for a description");
 ok(/onCreateList\(\{localId:_newId,name:_newName,description:_newDesc/.test(src), "a new list's description is handed to the write");

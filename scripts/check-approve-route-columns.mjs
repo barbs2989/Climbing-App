@@ -38,6 +38,7 @@
 
 import fs from "fs";
 import path from "path";
+import { readCoreSource } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const MIGRATIONS = path.join(ROOT, "supabase", "migrations");
@@ -237,7 +238,7 @@ if (!call) {
 // map would rot exactly where this guard needs to be right.
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 let core;
-try { core = fs.readFileSync(CORE, "utf8"); } catch (e) {
+try { core = readCoreSource(); } catch (e) {
   console.error(`FAIL  cannot read ${CORE}: ${e.message}`); process.exit(1);
 }
 const fIdx = core.indexOf("const FIELDS={rock:[");

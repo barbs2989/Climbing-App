@@ -18,10 +18,10 @@ const run = () => {
 };
 
 const CASES = [
-  { file: "ClimbMatchCore.jsx", name: "the REAL defect: unwrap the MY OBJECTIVES comment",
+  { file: "lib/ListsManager.jsx", name: "the REAL defect: unwrap the MY OBJECTIVES comment",
     edit: s => s.replace("{/* With logs down the badge stops saying", "/* With logs down the badge stops saying")
                 .replace("so say which it is. */}", "so say which it is. */"),
-    wantFail: true, want: /ClimbMatchCore\.jsx:\d+ renders a comment/ },
+    wantFail: true, want: /lib\/ListsManager\.jsx:\d+ renders a comment/ },
 
   // CHILDREN position, which is the whole point. The first version of this case injected before
   // `<WaypointList` — but that sits inside `{…}`, an EXPRESSION container, where `/* */` really is

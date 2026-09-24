@@ -72,3 +72,50 @@ export function assertCovered(files, root, guard, required = REQUIRED) {
   }
   return files;
 }
+
+// ── Components moved OUT of ClimbMatchCore.jsx so they load lazily ─────────────────────────
+// Splitting the startup bundle moved these whole components, verbatim, into lib/<Name>.jsx
+// (each one's default export). Most guards were written while they were core source and read
+// core by text — so after a move they do not fail, they go BLIND: every pattern that used to
+// match inside the component matches nothing, and a rule that only ever forbids passes.
+//
+// readCoreSource() rebuilds the text core had before the moves: core, then each moved file
+// with its import lines dropped and `export default function` turned back into `function`.
+// That is a valid module (the moved imports were core's own bindings or core's own imports),
+// so text scans, regexes and Babel parses all see the moved code as they did before. A guard
+// that reads core by text should read it through here; one that BUNDLES core to execute it
+// must import the moved component from lib/ instead, since a bundle cannot be rebuilt this way.
+//
+// A moved file that is missing is a HARD failure, for the reason at the top of this file.
+export const MOVED_FROM_CORE = [
+  "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx",
+  "lib/CrewCard.jsx", "lib/AddRoute.jsx", "lib/LogAscent.jsx",
+  "lib/ListsManager.jsx", "lib/TripReport.jsx", "lib/EditProfileScreen.jsx",
+];
+export function movedAsCoreText(text, file = "a moved file") {
+  const body = text.replace(/^import [^\n]*\n/gm, "");
+  const n = (body.match(/^export default function /gm) || []).length;
+  if (n !== 1) throw new Error(`${file}: expected exactly one "export default function", found ${n}`);
+  return body.replace(/^export default function /m, "function ");
+}
+// For a guard that loops over a fixed list of app files which does NOT include lib/: reading
+// core through here keeps the moved components in view without scanning anything twice.
+// (A guard that already walks lib/ sees them as lib files and must keep reading core raw.)
+export function readAppFile(abs) {
+  if (path.basename(abs) === "ClimbMatchCore.jsx") return readCoreSource(path.dirname(abs));
+  return fs.readFileSync(abs, "utf8");
+}
+
+// The checkout this module lives in — never another worktree's (check:script-roots).
+const OWN_ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..", "..");
+export function readCoreSource(root = OWN_ROOT, guard = "a guard") {
+  const coreP = path.join(root, "ClimbMatchCore.jsx");
+  if (!fs.existsSync(coreP)) bail(guard, "ClimbMatchCore.jsx is missing");
+  let out = fs.readFileSync(coreP, "utf8");
+  for (const f of MOVED_FROM_CORE) {
+    const p = path.join(root, f);
+    if (!fs.existsSync(p)) bail(guard, `${f} (a component moved out of ClimbMatchCore.jsx) is missing, so it would go unscanned`);
+    out += "\n" + movedAsCoreText(fs.readFileSync(p, "utf8"), f);
+  }
+  return out;
+}
