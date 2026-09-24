@@ -257,8 +257,16 @@ else bad("the function is SECURITY DEFINER");
 // pg_temp is itself named, so a caller could shadow `connections` with a temp table.
 if (/set\s+search_path\s*=\s*public\s*,\s*pg_temp/i.test(mig)) ok("...with pg_temp named in search_path, not merely `= public`");
 else bad("...with pg_temp named in search_path");
-if (/profile_owner_blocked_me/.test(mig)) ok("a climber who blocked you is not readable through this side door");
-else bad("a climber who blocked you is not readable through this side door");
+// THE BLOCK, AT BOTH ENDS. A bare presence test is what let 0182 through: the name appeared
+// once, filtering the profile OPENED and not the person NAMED, and a climber who had blocked
+// you could still be surfaced to you in a mutual list. 0095 exists to make a blocker invisible
+// to the blocked party, and this was that rule's second door. Asserted per END, exactly as the
+// visibility switch below is, because "the function mentions the block helper" is satisfied by
+// half a fix.
+if (/profile_owner_blocked_me\s*\(\s*t\.oid\s*\)/.test(mig)) ok("the profile being OPENED is checked, so a blocker's mutuals are not readable through this side door");
+else bad("the profile being OPENED is checked, so a blocker's mutuals are not readable through this side door", "0182's half of the block filter is gone");
+if (/profile_owner_blocked_me\s*\(\s*t\.fid\s*\)/.test(mig)) ok("...and the person being NAMED is checked, so a climber who blocked you is never surfaced to you");
+else bad("...and the person being NAMED is checked, so a climber who blocked you is never surfaced to you", "a climber who blocked the caller can still be named as a mutual; blocking does not sever the connection, so this is reachable");
 if (/revoke[\s\S]{0,80}from\s+anon/i.test(mig)) ok("execute is revoked from anon rather than left to the body to refuse");
 else bad("execute is revoked from anon");
 if (/array_length\s*\(\s*others/i.test(mig)) ok("the array is capped, so a friend list cannot be swept in one call");
@@ -326,7 +334,7 @@ for (const [file, text, label] of [["ClimbMatchCore.jsx", coreSrc, "the Privacy 
 // A floor two below a clean run, the convention this repo holds: a floor set to the exact total
 // cannot see its own newest section stop asking.
 
-const FLOOR = 29;
+const FLOOR = 30;
 if (ran < FLOOR) {
   console.error("\ncheck:mutual-friends: only " + ran + " assertions ran (floor " + FLOOR + ") — this run proved less than it claims.\n");
   process.exit(1);
