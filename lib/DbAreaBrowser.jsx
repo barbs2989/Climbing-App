@@ -1193,7 +1193,13 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
 // state can run to thousands of areas, so unlike the static version (which
 // preloads and expands the whole subtree from the in-memory MOUNTAINS array)
 // this fetches each node's children only once it's actually expanded. ──
-function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate, C }) {
+// The state you are browsing, and the country above it, are listed FIRST among their
+// siblings. The tree opens with the country expanded, and its states are alphabetical,
+// so Washington used to sit halfway down a list of fifty — the one row you came from was
+// the one you had to scroll to find. Everything else keeps its order.
+const pinFirst = (list, pinIds) => pinIds && pinIds.length ? [...list].sort((a, b) => (pinIds.includes(b.id) ? 1 : 0) - (pinIds.includes(a.id) ? 1 : 0)) : list;
+
+function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, onNavigate, C }) {
   const isOpen = expanded.has(area.id);
   // `error` is destructured because without it a FAILED children fetch left `children`
   // undefined and fell through to "No sub-areas." — an affirmative claim that a
@@ -1218,7 +1224,7 @@ function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate
         isLoading
           ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
           : children && children.length
-            ? children.map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
+            ? pinFirst(children, pinIds).map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
               ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
               : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
@@ -1238,13 +1244,13 @@ function DbAreaTreeNode({ area, depth, currentId, expanded, onToggle, onNavigate
 // country picker on the area screen has already run, so opening the tree costs no
 // request. Children below this are still fetched only on expand — the catalog is 47k
 // areas and eagerly walking it has never been affordable.
-function DbAreaTreeRoots({ currentId, expanded, onToggle, onNavigate, C }) {
+function DbAreaTreeRoots({ currentId, pinIds, expanded, onToggle, onNavigate, C }) {
   const { data: roots, isLoading, error } = useCountries();
   const pad = { padding: "14px 16px", color: C.textMuted, fontSize: 12.5 };
   if (isLoading) return <div style={pad}>Loading…</div>;
   if (error) return <div style={{ ...pad, color: C.amber }}>Couldn’t load the area tree.</div>;
   if (!roots || !roots.length) return <div style={pad}>No areas.</div>;
-  return roots.map(r => <DbAreaTreeNode key={r.id} area={r} depth={0} currentId={currentId} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />);
+  return pinFirst(roots, pinIds).map(r => <DbAreaTreeNode key={r.id} area={r} depth={0} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />);
 }
 
 function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C }) {
@@ -1325,7 +1331,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             ) : null}
           </>
         ) : (
-          <DbAreaTreeRoots currentId={current.id} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
+          <DbAreaTreeRoots currentId={current.id} pinIds={[stateRoot.parent_id, stateRoot.id].filter(Boolean)} expanded={expanded} onToggle={toggle} onNavigate={onNavigate} C={C} />
         )}
       </div>
     </div>,
