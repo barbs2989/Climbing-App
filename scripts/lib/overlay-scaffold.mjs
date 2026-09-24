@@ -138,6 +138,10 @@ export const OVERLAY_PAYLOADS = {
   logCatchWith: { expr: "CLIMBERS[0]" },
   mutualModal: { expr: "CLIMBERS[0]" },
   profileModal: { expr: "CLIMBERS[0]" },
+  // The `?list=<uuid>` link viewer (0199). Its one setter passes the uuid read from the address bar.
+  // No list has the nil uuid, so the walk sees the "private, or deleted" state — still the dialog,
+  // its heading and its ✕, which is what the walks assert on.
+  sharedListId: { expr: "'00000000-0000-0000-0000-000000000000'" },
   reportUser: { expr: "CLIMBERS[0]" },
   // Resume is also opened on yourself (`setResumeFor(ME)`), and that is the branch that
   // matters — `logs={resumeFor.id===0?logs:[]}` and the seed-history gate both key on it.

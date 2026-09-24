@@ -185,6 +185,8 @@
       "dismissed",
       "float_plan",
       "id",
+      "itinerary",
+      "itinerary_by",
       "meet_place",
       "meet_time",
       "route_id"
@@ -406,13 +408,6 @@
       "rating",
       "text"
     ],
-    "route_duplicate_names": [
-      "area_id",
-      "area_name",
-      "copies",
-      "route_ids",
-      "route_name"
-    ],
     "route_base_checkins": [
       "accuracy_m",
       "created_at",
@@ -424,6 +419,13 @@
       "samples",
       "updated_at",
       "user_id"
+    ],
+    "route_duplicate_names": [
+      "area_id",
+      "area_name",
+      "copies",
+      "route_ids",
+      "route_name"
     ],
     "routes": [
       "access",
@@ -552,6 +554,12 @@
       "id",
       "name",
       "trust_score"
+    ],
+    "user_itineraries": [
+      "itinerary",
+      "route_id",
+      "updated_at",
+      "user_id"
     ],
     "user_lists": [
       "created_at",
