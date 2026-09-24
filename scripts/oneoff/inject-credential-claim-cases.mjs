@@ -1,6 +1,6 @@
 // Is section 5 of check:guard-wiring measuring anything?
 //
-// Its healthy output is "no CLAUDE.md line calls any of the N privileged guards anon-safe", which
+// Its healthy output is "no line in the N doc files calls any of the N privileged guards anon-safe", which
 // is exactly what a scan that matches nothing prints. So the real historical sentence is put back
 // -- verbatim, as it stood on main from 2026-09-02 to 2026-09-04 -- plus the two shapes that must
 // stay SILENT, because a rule that fires on a precedent citation would tell an author to delete
@@ -9,7 +9,8 @@ import fs from "fs";
 import crypto from "crypto";
 import { execFileSync } from "child_process";
 
-const MD = "CLAUDE.md";
+// The credential paragraph moved out of CLAUDE.md with the rest of the Supabase-scripts notes.
+const MD = "docs/codebase/supabase-scripts.md";
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex");
 
 const ANCHOR = "`check:column-drift` needs **no link** — it does not shell out to the CLI — but it is **not**";
@@ -33,7 +34,7 @@ const CASES = [
 
 const before = sum(MD);
 const orig = fs.readFileSync(MD, "utf8");
-if (orig.split(ANCHOR).length - 1 !== 1) { console.error("ANCHOR LOST in CLAUDE.md"); process.exit(2); }
+if (orig.split(ANCHOR).length - 1 !== 1) { console.error("ANCHOR LOST in " + MD); process.exit(2); }
 
 // The clean run first: it proves the tree is clean before anything is injected, AND refuses any
 // expectation that matches the healthy output -- the trap that made two cases report MISSED
@@ -66,6 +67,6 @@ for (const c of CASES) {
   console.log(`${c.name}: ${verdict}   (edit landed: ${landed}, restored byte-identical: ${restored}, exit ${code})`);
   console.log(`   ${c.why}\n`);
 }
-if (sum(MD) !== before) { console.error("CLAUDE.md was NOT restored"); process.exit(2); }
+if (sum(MD) !== before) { console.error(MD + " was NOT restored"); process.exit(2); }
 console.log(bad ? `FAILED — ${bad} case(s) wrong` : `ok — ${CASES.length}/${CASES.length}, section 5 fires on the real defect and stays quiet on correct prose`);
 process.exit(bad ? 1 : 0);

@@ -581,7 +581,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors}) {
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors, onFireMap}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -617,7 +617,19 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
         {area.coords_approx ? <div style={{ fontSize: 11.5, color: C.amber, marginTop: 4, lineHeight: 1.45 }}>Coordinates are approximate — the map pin, any distance shown, and the Directions link are rough.</div> : null}
         {chips.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 9 }}>{chips.map((t, i) => <span key={i} style={{ fontSize: 11.5, fontWeight: 600, color: C.text, background: "rgba(255,255,255,0.12)", border: "1px solid " + C.border, borderRadius: 7, padding: "3px 9px" }}>{t}</span>)}</div> : null}
         {area.blurb ? <div style={{ marginTop: 8, fontSize: 13, color: C.textSub, lineHeight: 1.6 }}>{area.blurb}</div> : null}
-        <div style={{ fontSize: 13, color: C.blue, marginTop: 8 }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 10, flexWrap: "wrap", marginTop: 8 }}>
+          <div style={{ fontSize: 13, color: C.blue }}>{children && children.length ? children.length + " " + noun + " · " + area.route_count + " climbs" : area.route_count + " climb" + (area.route_count !== 1 ? "s" : "")}</div>
+          {/* The Fire map entry. It used to be a full-width card at the very top of the Climbs
+              tab, above the path and the area itself; it lives here now, on the area it opens
+              focused on. It makes no claim about whether anything is burning — the map is where
+              that data lives, and it is honest about loading and failing. */}
+          {onFireMap ? (
+            <button onClick={() => onFireMap(area)} aria-label={"Fire map — active wildfires and red-flag warnings near " + area.name} style={{ display: "inline-flex", alignItems: "center", gap: 6, background: C.redBg, border: "1px solid " + C.red + "66", color: C.red, borderRadius: 9, padding: "6px 11px", fontSize: 12.5, fontWeight: 800, cursor: "pointer", whiteSpace: "nowrap" }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2c1 3.5 5 6 5 11a5 5 0 0 1-10 0c0-2.5 1.5-4 2.5-5 .3 1.7 1.2 2.7 2.5 3 0-3.5-1-6.5 0-9z" /></svg>
+              {"Fire map"}
+            </button>
+          ) : null}
+        </div>
       </div>
 
       {area.route_count > 0 ? (
@@ -984,6 +996,10 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [locating, setLocating] = useState(false);
   const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
+  // Type-of-climbing filter over what is in view. An area row stores only its MAIN discipline
+  // (`dominant_discipline`, 0051), so that is what this filters on — and the caption says so,
+  // rather than implying a mostly-sport crag holds no trad.
+  const [disc, setDisc] = useState(null);
 
   // Full screen just resizes the same Leaflet instance in place (same map div,
   // same markers, same zoom/pan) rather than tearing it down and rebuilding it
@@ -994,7 +1010,14 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     return () => clearTimeout(t);
   }, [fullscreen]);
   const { data, isLoading, error } = useNearbyAreas(bounds);
-  const nearby = data && data.rows;
+  const nearbyAll = data && data.rows;
+  const nearby = useMemo(() => nearbyAll && (disc ? nearbyAll.filter(a => a.dominant_discipline === disc) : nearbyAll), [nearbyAll, disc]);
+  const discsInView = useMemo(() => {
+    const n = {};
+    (nearbyAll || []).forEach(a => { if (a.dominant_discipline) n[a.dominant_discipline] = (n[a.dominant_discipline] || 0) + 1; });
+    if (disc && !n[disc]) n[disc] = 0; // keep the active chip on screen so it can be cleared
+    return Object.entries(n).sort((a, b) => b[1] - a[1]);
+  }, [nearbyAll, disc]);
 
   const readBounds = map => {
     try {
@@ -1107,6 +1130,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, bounds, center]);
+  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   return (
     <div>
@@ -1140,14 +1164,24 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
           {isLoading && bounds ? <div style={{ color: C.textMuted, fontSize: 12 }}>Loading nearby climbs…</div> : null}
-          {data && data.total != null && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {discsInView.length > 1 || disc ? (
+            <div style={{ marginBottom: 8 }}>
+              <div role="group" aria-label="Filter areas by type of climbing" style={{ display: "flex", gap: 6, overflowX: "auto", paddingBottom: 4 }}>
+                {discChip(null, "All", !disc)}
+                {discsInView.map(([k, n]) => discChip(k, (DL[k] || k) + " · " + n, disc === k))}
+              </div>
+              <div style={{ fontSize: 11, color: C.textMuted, marginTop: 2 }}>Filters by each area's main type of climbing — on the map too.</div>
+            </div>
+          ) : null}
+          {data && data.total != null && !disc && data.total > sorted.length ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing the busiest " + sorted.length + " of " + data.total + " areas in view — zoom in to see more."}</div> : null}
+          {disc && (nearby.length > sorted.length || (data && data.total > nearbyAll.length)) ? <div style={{ color: C.textMuted, fontSize: 11.5, marginBottom: 8 }}>{"Showing " + sorted.length + " " + (DL[disc] || disc).toLowerCase() + " areas — zoom in to see more."}</div> : null}
           {sorted.map(a => (
             <div key={a.id} {...clickable(() => onOpenArea(a))} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text }}>{a.name}</span>
               <span style={{ color: C.textMuted, fontSize: 12 }}>{a._mi != null ? (uDistMi ? uDistMi(a._mi) : a._mi.toFixed(1) + " mi") + " · " : ""}{a.route_count} climb{a.route_count !== 1 ? "s" : ""}</span>
             </div>
           ))}
-          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>No climbs in view — pan or zoom out to see more.</div> : null}
+          {!isLoading && bounds && !sorted.length && !error ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>{disc && nearbyAll && nearbyAll.length ? "No " + (DL[disc] || disc).toLowerCase() + " areas in view — pan, zoom out, or tap All." : "No climbs in view — pan or zoom out to see more."}</div> : null}
         </>
       ) : null}
     </div>
@@ -1299,7 +1333,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onStatePicked, onAddClimb, TopContributors }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1308,16 +1342,6 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
   const crumbs = stateNode ? [stateNode, ...stack] : [];
-
-  // The crumb strip is one non-wrapping scrollable line, so on a deep path the area you are
-  // actually standing in — the LAST crumb — is the part scrolled off the right edge. Pin it
-  // back into view whenever the path changes, so the sticky bar always answers "where am I"
-  // rather than "which state did you start in".
-  const crumbStrip = useRef(null);
-  useEffect(() => {
-    const el = crumbStrip.current;
-    if (el) el.scrollLeft = el.scrollWidth;
-  }, [crumbs.length, current && current.id]);
 
   // Report where the user is browsing to the parent. This exists because App's
   // `selArea` is only ever written on the SEED catalog path, and production builds
@@ -1332,14 +1356,6 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
       : null);
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
-
-  // Whether a state has been chosen at all. Reported separately from onAreaContext
-  // because that one goes null for any area without a coordinate, so it cannot say
-  // "the climber is still on the country/state picker". App uses this to keep the
-  // Fire map entry off the top of the Climbs tab until a state is picked.
-  useEffect(() => {
-    if (onStatePicked) onStatePicked(!!stateNode);
-  }, [onStatePicked, !!stateNode]);
 
   const jump = i => {
     setScreen("areas");
@@ -1405,30 +1421,31 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
           reads as a view switch rather than an exit, and nothing else said how to get out.
           On a sub-screen Back returns to the area page rather than popping the area stack —
           the panel is a layer over the area you are standing on, not a step deeper into it.
-          The crumb strip is one non-wrapping scrollable line (it used to wrap, and a deep
-          path could eat several lines of a viewport that is now permanently occupied) and
-          auto-scrolls to the end so the area you are actually in is the part you can see. */}
+          The owner then reported both halves as too hard to use: a small grey "← Back" was
+          hard to find, and the path, squeezed into one sideways-scrolling line beside it, was
+          cut off. So the bar is now two rows and taller on purpose — a solid blue Back button
+          that NAMES where it goes, and under it the full path, WRAPPING rather than scrolling,
+          so every level is visible and tappable and the area you are in ends it in bold. */}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 7, background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "9px 11px" }}>
-            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ flexShrink: 0, background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "5px 11px", fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginRight: 4 }}>{"← Back"}</button>
-            {/* overscrollBehaviorX, NOT the shorthand. overflow-x:auto coerces overflow-y to auto too,
-                so this strip is a vertical scroll container with nothing to scroll — and the
-                both-axes shorthand made it a vertical chaining boundary: a swipe up or down that
-                started on the sticky bar went nowhere. Contain the sideways scroll only. */}
-            <div ref={crumbStrip} style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "nowrap", overflowX: "auto", overscrollBehaviorX: "contain", minWidth: 0, flex: 1, scrollbarWidth: "none" }}>
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
+            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ alignSelf: "flex-start", maxWidth: "100%", display: "flex", alignItems: "center", gap: 7, background: C.blueSolid, border: "none", color: "#fff", borderRadius: 10, padding: "10px 16px", fontSize: 15, fontWeight: 800, cursor: "pointer", minHeight: 44 }}>
+              <span style={{ fontSize: 17, lineHeight: 1 }}>{"←"}</span>
+              <span style={{ minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
+            </button>
+            <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
               {[null, ...crumbs].map((c, i) => {
                 const last = i === crumbs.length;
                 return (
-                  <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 5, flexShrink: 0, whiteSpace: "nowrap" }}>
-                    {i > 0 ? <span style={{ color: C.textSub, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
+                  <span key={c ? c.id : "root"} style={{ display: "inline-flex", alignItems: "center", gap: 6, minWidth: 0, maxWidth: "100%" }}>
+                    {i > 0 ? <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 16, fontWeight: 700 }}>{"›"}</span> : null}
                     {last && screen === "areas"
-                      ? <span style={{ color: C.text, fontWeight: 800, fontSize: 15.5 }}>{c ? c.name : ""}</span>
-                      : <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: last ? C.text : C.blue, fontSize: 15, cursor: "pointer", fontWeight: last ? 800 : 700, padding: 0, whiteSpace: "nowrap" }}>{c ? c.name : "All areas"}</button>}
+                      ? <span aria-current="page" style={{ color: C.text, fontWeight: 800, fontSize: 17, lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : ""}</span>
+                      : <button onClick={() => { setScreen("areas"); jump(c ? i - 1 : -1); }} style={{ background: "transparent", border: "none", color: last ? C.text : C.blue, fontSize: last ? 17 : 14.5, cursor: "pointer", fontWeight: last ? 800 : 700, padding: "2px 0", textAlign: "left", lineHeight: 1.3, overflowWrap: "anywhere" }}>{c ? c.name : "All areas"}</button>}
                   </span>
                 );
               })}
-            </div>
+            </nav>
           </div>
         </div>
       ) : null}
@@ -1441,7 +1458,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
