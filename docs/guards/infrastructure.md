@@ -409,8 +409,30 @@ asks before a probe spends anything, and it is the fourth precondition in this f
       `page.evaluate: Execution context was destroyed, most likely because of a navigation` at
       2.4x, which is a probe-side race of exactly the kind a loaded box produces. **Re-run both
       alone on a quiet box before believing either.**
-    - **The sweep is STILL not complete.** This box ran at 1.0x for about fifteen minutes and was
-      back over 19x before the runner could be fixed and re-aimed.
+    - **AND THE SWEEP IS RESUMABLE, BECAUSE WAITING FOR A QUIET HOUR IS NOT A STRATEGY ON THIS
+      BOX.** Measured 2026-09-24 with a watcher armed to fire at `QUIET_X`: it waited **52
+      minutes**, fired at **1.8x**, got **ONE probe through in 78s**, and the box was back at
+      **76-97x by the second** — so probes 2-6 refused through every retry and a reboot ended the
+      run at 6 of 57. The windows here are a probe long, not an hour. So each run **banks** what it
+      managed and the next continues; a run now costs whatever quiet it finds instead of needing a
+      window this machine does not produce.
+      - **A REFUSAL IS NEVER BANKED**, which is the same principle the summary already encodes:
+        persisting one would convert *"we could not look"* into *"we looked"*, arriving through
+        the state file instead of the tally. Only PASS/FAIL/TIMEOUT/BROKEN are results, and the
+        cumulative line reports the remainder as **UNRESOLVED** rather than folding it into a
+        pass rate.
+      - Banked **after each probe**, not at the end — the run this was written for died to a
+        reboot. A state file that will not parse is **reported and ignored**, never guessed at.
+      - `--fresh` ignores the bank. All of it is proven against the `--dir` fixture: bank, resume,
+        retry-a-refusal, `--fresh`, and the corrupt-state path.
+    - **IT ALSO PRINTED A VERDICT IT DID NOT RECORD.** The row was built from the FIRST attempt
+      while the tally used the LAST, so a probe that refused and then passed on retry printed
+      `REFUSED` and counted as `PASS` — a row disagreeing with the summary it is part of, which is
+      `check:count-matches-its-list`' subject arriving in a guard's own output. Latent in the run
+      that exposed it, because every retry there also refused. Proven by A/B: revert the one
+      variable and the fixture prints `REFUSED` above `3 pass`.
+    - **The sweep is STILL not complete** — 1 of 57 has a result. It now accumulates rather than
+      restarting, so the remaining 56 are a matter of runs rather than of one improbable window.
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
 tests `merge(head, base)` as base stood **when that run started**. So a PR that went green

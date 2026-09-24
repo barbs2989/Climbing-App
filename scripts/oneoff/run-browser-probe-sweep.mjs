@@ -44,6 +44,7 @@ const FLOOR = dirArg ? 1 : 40;
 const CAP = Number(process.argv.find((a) => a.startsWith("--cap="))?.slice(6) || 480) * 1000;
 const SETTLE_MS = Number(process.argv.find((a) => a.startsWith("--settle="))?.slice(9) || 240) * 1000;
 const RETRIES = Number(process.argv.find((a) => a.startsWith("--retries="))?.slice(10) || 2);
+const FRESH = process.argv.includes("--fresh");
 const OUT = process.argv.find((a) => a.startsWith("--out="))?.slice(6)
   || path.join(process.env.TMPDIR || "/tmp", "browser-probe-sweep");
 
@@ -66,6 +67,29 @@ if (probes.length < FLOOR) {
 }
 
 fs.mkdirSync(OUT, { recursive: true });
+
+// THE SWEEP HAS TO BE RESUMABLE, BECAUSE THIS BOX DOES NOT STAY QUIET.
+// Measured 2026-09-24: a watcher waited 52 minutes for <=2x, fired, got ONE probe through in 78s,
+// and the box was back at 76-97x by the second -- so probes 2-6 refused through every retry and a
+// reboot ended the run at 6 of 57. Waiting for a single hour-long window is not a strategy here;
+// the windows are a probe long. So each run banks whatever it managed and the next one continues.
+//
+// A REFUSAL IS NEVER BANKED. It is the absence of a result, so persisting one would quietly
+// convert "we could not look" into "we looked" -- the same confusion #1806 fixed in the summary,
+// arriving through the state file instead. Only PASS/FAIL/TIMEOUT/BROKEN are results.
+const TERMINAL = new Set(["PASS", "FAIL", "TIMEOUT", "BROKEN"]);
+const STATE = process.argv.find((a) => a.startsWith("--state="))?.slice(8) || path.join(OUT, "_state.json");
+let banked = {};
+if (!FRESH && fs.existsSync(STATE)) {
+  try {
+    const raw = JSON.parse(fs.readFileSync(STATE, "utf8"));
+    for (const [k, v] of Object.entries(raw)) if (v && TERMINAL.has(v.verdict)) banked[k] = v;
+  } catch (e) {
+    console.error(`state file ${STATE} is unreadable (${e.message}) -- starting fresh rather than guessing.`);
+    banked = {};
+  }
+}
+const saveState = () => fs.writeFileSync(STATE, JSON.stringify(banked, null, 2));
 console.log(`${probes.length} browser probes — ${loadLine(boxLoad())}`);
 console.log(`logs: ${OUT}\n`);
 
@@ -104,16 +128,21 @@ const settle = async (label) => {
   return b;
 };
 
+const todo = probes.filter((f) => !banked[path.basename(f, ".mjs")]);
+if (banked && Object.keys(banked).length) {
+  console.log(`resuming: ${Object.keys(banked).length} already have a result, ${todo.length} to go`);
+  console.log(`state: ${STATE}   (--fresh to ignore it)\n`);
+}
+
 const rows = [];
-for (const [i, file] of probes.entries()) {
+for (const [i, file] of todo.entries()) {
   const base = path.basename(file, ".mjs");
   const log = path.join(OUT, base + ".txt");
   await settle(base);
   const started = Date.now();
 
-  const verdict = await runOne(file, log);
-
-  let v = verdict, secs = ((Date.now() - started) / 1000).toFixed(0);
+  let v = await runOne(file, log);
+  let secs = ((Date.now() - started) / 1000).toFixed(0);
   for (let attempt = 0; v === "REFUSED" && attempt < RETRIES; attempt++) {
     console.log(`     REFUSED — box too loaded; waiting, then retrying ${base}`);
     await settle(base);
@@ -122,13 +151,34 @@ for (const [i, file] of probes.entries()) {
     secs = ((Date.now() - t0) / 1000).toFixed(0);
   }
   rows.push({ base, verdict: v, secs });
-  console.log(`${String(i + 1).padStart(2)}/${probes.length}  ${verdict.padEnd(7)} ${secs.padStart(4)}s  ${base}`);
+
+  // PRINT WHAT WE RECORDED. The previous version printed the FIRST attempt's verdict while
+  // recording the last, so a probe that refused and then passed read as REFUSED in the log and
+  // counted as PASS in the summary -- a row disagreeing with the tally it is part of.
+  console.log(`${String(i + 1).padStart(2)}/${todo.length}  ${v.padEnd(7)} ${secs.padStart(4)}s  ${base}`);
+
+  // Bank after EACH probe, not at the end: the run this was written for died to a reboot.
+  if (TERMINAL.has(v)) { banked[base] = { verdict: v, secs, at: new Date().toISOString() }; saveState(); }
 }
 
 const by = (v) => rows.filter((r) => r.verdict === v);
-console.log(`\n${by("PASS").length} pass, ${by("FAIL").length} fail, ${by("TIMEOUT").length} timeout, `
+console.log(`\nthis run: ${by("PASS").length} pass, ${by("FAIL").length} fail, ${by("TIMEOUT").length} timeout, `
   + `${by("BROKEN").length} broken, ${by("REFUSED").length} REFUSED`);
-for (const r of rows.filter((r) => r.verdict !== "PASS")) console.log(`  ${r.verdict.padEnd(8)} ${r.base}  —  ${path.join(OUT, r.base + ".txt")}`);
+
+// THE CUMULATIVE LINE IS THE ONE THAT MATTERS, and it must never round a refusal up into
+// coverage: "N of M have a result" counts banked results only, and the remainder is stated as
+// UNRESOLVED rather than folded into a pass rate.
+const allB = Object.values(banked);
+const cnt = (v) => allB.filter((r) => r.verdict === v).length;
+const resolved = allB.length, total = probes.length;
+console.log(`cumulative: ${resolved}/${total} have a RESULT  (${cnt("PASS")} pass, ${cnt("FAIL")} fail, `
+  + `${cnt("TIMEOUT")} timeout, ${cnt("BROKEN")} broken) — ${total - resolved} still UNRESOLVED`);
+if (resolved < total) console.log(`Re-run to continue; results are banked in ${STATE}.`);
+const nonPass = [...rows.filter((r) => r.verdict !== "PASS")];
+for (const [b, r] of Object.entries(banked)) {
+  if (r.verdict !== "PASS" && !nonPass.some((x) => x.base === b)) nonPass.push({ base: b, verdict: r.verdict });
+}
+for (const r of nonPass) console.log(`  ${r.verdict.padEnd(8)} ${r.base}  —  ${path.join(OUT, r.base + ".txt")}`);
 if (by("REFUSED").length) {
   console.log(`\n${by("REFUSED").length} probe(s) REFUSED even after ${RETRIES} retries. A refusal is the ABSENCE`);
   console.log(`of a result, not a result -- do not read these as findings. Re-run them on a quieter box.`);
