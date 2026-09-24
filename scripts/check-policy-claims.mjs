@@ -243,6 +243,15 @@ for (const [claim, why] of [
   // "We do not record where you are" was true until 0188: a base check-in stores the device
   // position against the account. The policy must now DISCLOSE that, and say what others see.
   ["that position is not stored", "the find-me control's position is still not stored"],
+  // 0189 added a zip code, kept in an owner-only table and disclosed to others ONLY as a rounded
+  // distance through partners_near. These four clauses are what make the zip honest: who can read
+  // it, what others see instead, that "Near me now" stores nothing, and the LIMIT (repeated
+  // searches can narrow it down). The limit is the clause a tidier rewrite would drop first, which
+  // is why it is pinned rather than trusted.
+  ["Only you can read your zip", "profile_zips is owner-only under RLS (0189)"],
+  ["never your zip", "others learn a rounded distance through partners_near, not the zip"],
+  ["to find listed climbers near it, and it is not stored", "the Near-me-now origin is a query argument and is written nowhere"],
+  ["could still narrow down roughly which area you live in", "the stated LIMIT of distance-only disclosure"],
   ["do we store that position against your account", "§4 discloses that a base check-in is stored against the account (0188)"],
   ["never who or when", "§4 says others see the spot, not the climber or the time — route_base_checkin_points() returns neither"],
   ["you can remove your check-in", "§4 says a check-in can be withdrawn — the table carries a delete-own policy"],
