@@ -182,12 +182,19 @@ if (markup.includes("+" + rawPts.pts)) {
 // The runtime half of this defence lives in the app: the Profile compares its local total against
 // the number the server returned and withholds the itemisation unless they agree. This section is
 // the build-time half, and it is the one that fires when a migration re-weights the model.
-const sqlPath = path.join(ROOT, "supabase", "migrations", "0038_trust_vouches.sql");
-if (!fs.existsSync(sqlPath)) dead("supabase/migrations/0038_trust_vouches.sql is gone — ANCHOR LOST, the server weights cannot be read");
-const sqlAll = fs.readFileSync(sqlPath, "utf8");
-const fnStart = sqlAll.indexOf("function compute_trust_score");
-if (fnStart < 0) dead("0038 no longer defines compute_trust_score — ANCHOR LOST");
-const sql = sqlAll.slice(fnStart, sqlAll.indexOf("$$ language plpgsql", fnStart));
+// THE MIGRATION THAT LAST DEFINES THE FUNCTION is the live one -- 0038 wrote it, 0203 replaced it
+// (same weights, counted inputs, a definer). Reading 0038 forever would assert a function the
+// database no longer runs; `check:function-drift` is what ties the newest definition to the live one.
+const MIG_DIR = path.join(ROOT, "supabase", "migrations");
+const sqlFile = fs.readdirSync(MIG_DIR).filter((f) => /^\d{4}_.*\.sql$/.test(f)).sort()
+  .filter((f) => /create or replace function compute_trust_score\s*\(/i.test(fs.readFileSync(path.join(MIG_DIR, f), "utf8"))).pop();
+if (!sqlFile) dead("no migration defines compute_trust_score — ANCHOR LOST, the server weights cannot be read");
+const sqlAll = fs.readFileSync(path.join(MIG_DIR, sqlFile), "utf8");
+const fnStart = sqlAll.search(/function compute_trust_score\s*\(/);
+const fnEnds = ["$$ language plpgsql", "\nend $$"].map((m) => sqlAll.indexOf(m, fnStart)).filter((i) => i > 0);
+if (!fnEnds.length) dead(`${sqlFile}: cannot find where compute_trust_score ends — ANCHOR LOST`);
+const sql = sqlAll.slice(fnStart, Math.min(...fnEnds));
+ok(`SERVER MODEL: reading compute_trust_score from ${sqlFile}, the migration that last defines it`);
 // Comments are stripped: 0038's own header lists the component ranges in prose ("verification
 // (0-20), tenure (0-20) …"), and those numbers are NOT the weights. Reading them would assert the
 // documentation rather than the code.

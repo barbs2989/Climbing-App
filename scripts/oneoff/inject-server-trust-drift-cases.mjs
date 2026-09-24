@@ -21,6 +21,12 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const SQL = path.join(ROOT, "supabase", "migrations", "0038_trust_vouches.sql");
+// The weights live in whichever migration LAST defines compute_trust_score (0203 now), and that is
+// the file check:trust-breakdown reads -- so the re-weight cases must edit THAT one, or they test a
+// definition nobody reads. The ID-verification case scans every migration and stays on 0038.
+const MIG = path.join(ROOT, "supabase", "migrations");
+const LATEST = path.join(MIG, fs.readdirSync(MIG).filter((f) => /^\d{4}_.*\.sql$/.test(f)).sort()
+  .filter((f) => /create or replace function compute_trust_score\s*\(/i.test(fs.readFileSync(path.join(MIG, f), "utf8"))).pop());
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
@@ -33,10 +39,10 @@ const CASES = [
   { name: "js-divisor-drift", file: CORE, expect: "fail",
     why: "the JS pays a point per 4 logged climbs where 0038 pays one per 5", says: /FAIL\s+SERVER MODEL: Logged climbs/,
     from: 'pts:Math.min(Math.floor(lg/5),15)', to: 'pts:Math.min(Math.floor(lg/4),15)' },
-  { name: "sql-reweight", file: SQL, expect: "fail",
+  { name: "sql-reweight", file: LATEST, expect: "fail",
     why: "the MIGRATION re-weights vouches to 30 and the JS is not told — the case that actually happens", says: /FAIL\s+SERVER MODEL: Peer vouches/,
     from: "base_score := base_score + least(vouch_count, 20);", to: "base_score := base_score + least(vouch_count, 30);" },
-  { name: "sql-cap-reweight", file: SQL, expect: "fail",
+  { name: "sql-cap-reweight", file: LATEST, expect: "fail",
     why: "the MIGRATION raises the overall cap and the JS still says 99", says: /FAIL\s+SERVER MODEL: the cap is/,
     from: "return least(base_score, 99);", to: "return least(base_score, 95);" },
   { name: "rows-prop-dropped", file: CORE, expect: "fail",
@@ -57,7 +63,7 @@ const CASES = [
   // MUST STAY SILENT. A comment in the migration that names a different number is documentation:
   // 0038's own header lists component RANGES ("verification (0-20)") that are not the weights, and a
   // guard reading those would fail on the file explaining itself.
-  { name: "sql-comment-only", file: SQL, expect: "pass",
+  { name: "sql-comment-only", file: LATEST, expect: "pass",
     why: "a comment naming other numbers is prose, not a weight",
     from: "-- Vouches: 1 point per unique vouch, capped at 20",
     to: "-- Vouches: 1 point per unique vouch, capped at 20 (was 44 before, and 77 in an older draft)" },
