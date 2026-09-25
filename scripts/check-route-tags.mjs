@@ -144,8 +144,48 @@ ok("raptor closure from access prose", hasTag({ access: { seasonal: "Peregrine f
 ok("raptor closure from hazards", hasTag({ hazards: ["Seasonal raptor nesting closure on the upper wall"] }, "raptor_closure"));
 ok("no false raptor tag", !hasTag({ overview: "A fine granite arete above the road." }, "raptor_closure"));
 
+// --- the two derived chips, against strings copied VERBATIM from the catalog (2026-09-25) ------
+// Both used to fire on a bare word anywhere in the prose. Glaciated sat on 659 routes and 328 of
+// them — Vesper Peak's North Face, 96 boulder problems, 55 trad routes — cross no glacier. Raptor
+// closure sat on 1,189 and 1,127 of those are closed by nothing. Each case below is one of the
+// shapes that produced them; do not "tidy" the strings, they are what the enrichment writes.
+const G = (route, want, label) => ok(`glaciated ${want ? "ON " : "off"}: ${label}`, hasTag(route, "glaciated") === want, route);
+G({ discipline: "alpine", name: "North Face (Ragged Edge)",
+  approach: "An alternative start via a small notch/col overlooking the Vesper Glacier is also used.",
+  access: { rules: "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation." } },
+  false, "Vesper N Face: a view of a glacier and a wilderness's name");
+G({ discipline: "sport", access: { rules: "Pack out human waste (blue bags) — no burial or glacier deposition." } }, false, "a sport route's access boilerplate (109 routes)");
+G({ discipline: "scrambling", approach: "From Glacier, WA, drive Mt. Baker Highway (SR 542) east about 12.5 miles" }, false, "the town of Glacier");
+G({ discipline: "scrambling", overview: "Mount Blum (7,685 ft) is a rugged, glacier-draped granite peak. Two small glaciers cling to its north flank." }, false, "scenery: glaciers that cling");
+G({ discipline: "scrambling", overview: "is unrelated to Mount Olympus — don't plan a Hoh River/Blue Glacier approach for it" }, false, "a negated approach");
+G({ discipline: "alpine", overview: "5.9 crux pitches and views of Rainier during the climb and Glacier, Baker, and Stuart from the top." }, false, "Glacier Peak in a list of volcanoes");
+G({ discipline: "scrambling", hazards: ["Class 3 ridge with a brief Class 4 crux", "Steep drop-offs on the glacier side"], approach: "Cross the rock glacier in the amphitheater on a faint, cairned path" }, false, "a rock glacier, and a drop-off");
+G({ discipline: "mountaineering", overview: "climbable to a true summit without ever setting foot on a glacier.", hazards: ["Rockfall and icefall in the three chutes climbers cross to reach the Success Glacier headwall"] }, false, "the route's own 'no glacier' outranks the rest");
+G({ discipline: "bouldering", hazards: ["A persistent moat/crevasse crosses the approach roughly halfway between camp and the notch"] }, false, "a boulder problem never earns 'rope, crevasse rescue kit'");
+G({ discipline: "scrambling", hazards: ["persistent steep snow and a possible bergschrund below the summit pass into August"] }, false, "a snowfield bergschrund on a scramble");
+G({ discipline: "alpine", approach: "Stuart Pass to Goat Pass, then east across the Stuart Glacier to the North Ridge notch" }, true, "across the Stuart Glacier (not 'Stuart, and Glacier')");
+G({ discipline: "mountaineering", hazards: ["Crevasse hazard on the shared Coleman Glacier approach"] }, true, "crevasses");
+G({ discipline: "alpine", approach: "via Ruth Creek and Price Lake moraine, but instead of ascending toward Price Glacier, traverse to the East Nooksack Glacier." }, true, "the glacier the route does take, beside the one it does not");
+G({ discipline: "mountaineering", name: "Squak Glacier", hazards: ["A bergschrund near the top can become difficult to navigate"] }, true, "a route named for its glacier");
+G({ discipline: "mountaineering", hazards: ["Bergschrund below the Hogsback"] }, true, "a bergschrund on a mountaineering route");
+G({ discipline: "ice", name: "Eliot Glacier Headwall" }, true, "a route with no prose, named for its glacier");
+G({ discipline: "trad", name: "Glacier Geeks and Wombats" }, false, "a rock climb whose name starts with the word");
+G({ discipline: "mixed", name: "Glacier Pons" }, false, "an ice climb whose name starts with the word");
+
+const R = (route, want, label) => ok(`raptor ${want ? "ON " : "off"}: ${label}`, hasTag(route, "raptor_closure") === want, route);
+R({ hazards: ["Basalt columns fracture in \"dinner-plate\" style; rattlesnakes are present roughly May-September, and raptor nesting closures are sometimes posted seasonally -- check the trailhead kiosk"] }, false, "a hedge (568 Frenchman Coulee routes)");
+R({ hazards: ["some belay stations sit directly under the Iron Horse Trail trestle; a recurring peregrine falcon nesting closure (roughly Feb-Aug depending on nesting activity) affects parts of this area seasonally -- check current status before climbing"] }, false, "'parts of this area' (480 routes)");
+const BEACON = "poison oak is present on several routes/faces (NW, W, SW); a seasonal peregrine falcon closure (roughly Feb 1 - Jul 15) affects the South Face and its access trail, and the East Face is closed year-round for a sensitive plant species";
+R({ area_id: "wa_south_face_4", hazards: [BEACON] }, true, "Beacon Rock's closure, on its South Face");
+R({ area_id: "wa_west_face_7", hazards: [BEACON] }, false, "Beacon Rock's closure, on its West Face");
+R({ area_id: "co_main_wall", hazards: ["Raptor closure: Bridge Creek Wall area (1/2 mile buffer) closed January 1 - August 15 for golden eagle nesting"] }, false, "Bridge Creek Wall's closure pasted onto a Colorado route");
+R({ area_id: "wa_bridge_creek_wall", hazards: ["Raptor closure: Bridge Creek Wall area (1/2 mile buffer) closed January 1 - August 15 for golden eagle nesting"] }, true, "Bridge Creek Wall's closure, on Bridge Creek Wall");
+R({ hazards: ["No seasonal closure affects this route; the raptor closure at Bridge Creek Wall (January 1 - August 15, 1/2-mile buffer) is near mile 9 of Icicle Creek Road, well away from the Hook Creek approach"] }, false, "a closure the route says is elsewhere");
+R({ access: { closures: "Hozomeen Lake (well north of this route) is closed April 1 - May 31 for loon nesting" } }, false, "loons");
+R({ overview: "Bald Eagle Peak (6,259 ft) rises above the Foss River valley near Skykomish" }, false, "a peak named Eagle");
+
 console.log(t.join("\n"));
-if (fail) { console.error(`\ncheck:route-tags: ${fail} FAILED — list prose no longer reaches a key, so chips and challenges disagree.`); process.exit(1); }
+if (fail) { console.error(`\ncheck:route-tags: ${fail} FAILED — a list no longer reaches its chip, or a derived chip (Glaciated / Raptor closure) claims what the route's own text does not.`); process.exit(1); }
 console.log(`\ncheck:route-tags: ok — ${t.length} assertions; every real list string resolves, and every chip agrees with routeInList.`);
 
 // ---------------------------------------------------------------------------
@@ -160,3 +200,9 @@ console.log(`\ncheck:route-tags: ok — ${t.length} assertions; every real list 
 //
 // Case 2 is the one that matters: it is the shape of the original defect, where a consumer
 // looked for a value the data never contained and reported 0 forever.
+//
+// Injection-tested 2026-09-25 for the derived chips:
+//  5. Restore the bare-word glacier rule (`return /glacier/i.test(text)`) => 9 glaciated cases fail.
+//  6. Restore the bare-word raptor rule => 6 fail: the hedge, 'parts of this area', West Face,
+//     pasted Bridge Creek, 'well away' and Bald Eagle Peak. The loon case passes under the old
+//     rule; it pins the clause rule, whose first draft counted bare "nesting" as a bird.
