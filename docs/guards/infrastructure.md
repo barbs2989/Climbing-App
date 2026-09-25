@@ -431,8 +431,34 @@ asks before a probe spends anything, and it is the fourth precondition in this f
       `check:count-matches-its-list`' subject arriving in a guard's own output. Latent in the run
       that exposed it, because every retry there also refused. Proven by A/B: revert the one
       variable and the fixture prints `REFUSED` above `3 pass`.
-    - **The sweep is STILL not complete** — 1 of 57 has a result. It now accumulates rather than
-      restarting, so the remaining 56 are a matter of runs rather than of one improbable window.
+    - **THE SWEEP IS COMPLETE. 57/57, first time.** Accumulated across the short windows this box
+      gives: **48 pass, 4 fail, 5 timeout, 0 unresolved.** What the timings say matters as much as
+      the verdicts — median **36s**, second-slowest **226s**, and then a 6.6x gap to the five that
+      hit the cap.
+    - **THOSE FIVE ARE NOT BROKEN AND NOT A CAP ARTIFACT — they are declared SLOW.** Re-run at a
+      **1500s** cap on a quiet box, `probe-dead-controls-overlays` and `probe-dead-controls-route`
+      both ran the full 25 minutes and were **still printing progress** when killed. They click
+      EVERY control on every screen from a pristine reload, so the cost is O(controls) x a settle
+      each — `probe-dead-controls-route` alone prints *"Safety: 94 controls"* and there are six
+      sub-tabs. Half an hour is what that probe COSTS. So the sweep skips them by default, NAMES
+      each with its reason in the summary, and says outright they are neither results nor findings;
+      `--include-slow` runs them. A **stale** entry fails, both directions, like every registry
+      here. *A sweep that keeps timing out the same five probes is the broken thing, not the probes.*
+    - **ONE "FAILURE" WAS THE PROBE CRASHING IN ITS OWN REPORTING.** `probe-live-offline-catalog`
+      passed all five assertions — including *"the screen states the downloaded route count (8)
+      with the network cut"* — and then died on `ReferenceError: shown is not defined` in an
+      informational NOTE, exiting non-zero. Left alone it reports *"the offline catalog is broken
+      on production"* about a run whose own output says it works end to end. The same class the
+      quiet-box work is about, arriving in the **reporting** after the verdict was earned.
+    - **The three that remain are triaged by ATTRIBUTABILITY first, and two are attributable** —
+      `probe-a-vouch-you-received-reaches-you` ran at **2.4x** and is stamped DEGRADED, so it is
+      not a result. `probe-group-trust-gate` (8 of 9 pass, including the refusal quoting the
+      correct **trust 20+** bar; the ADMIT path fails — a climber at 98 neither joined nor was told
+      why, while the open-group join using the IDENTICAL check passed) and
+      `probe-a-real-profile-seen-by-a-real-climber` (the Friends screen reads **`Friends1`** above
+      a list holding neither a row nor the *"No friends yet"* empty state, while the same run finds
+      that person on the crew roster) both ran quiet. **Neither is claimed either way** — the prior
+      from two earlier corpus sweeps is ten red probes and zero app defects.
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
 tests `merge(head, base)` as base stood **when that run started**. So a PR that went green

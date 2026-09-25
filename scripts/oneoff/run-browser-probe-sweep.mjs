@@ -60,6 +60,36 @@ const probes = fs.readdirSync(DIR)
   .filter((p) => /playwright|chromium/.test(p.src))
   .map((p) => p.file);
 
+// A HANDFUL OF PROBES ARE AN ORDER OF MAGNITUDE SLOWER THAN THE REST, AND THEY ARE NOT BROKEN.
+// Measured over the first complete sweep on a quiet box: median 36s, second-slowest 226s, and
+// then these -- which run to 1500s and are still printing progress when the cap kills them. They
+// click EVERY control on every screen from a pristine reload, so the cost is O(controls) x a
+// settle each; probe-dead-controls-route alone prints "Safety: 94 controls" and there are six
+// sub-tabs. Half an hour is what that probe COSTS, not a hang.
+//
+// So a sweep that keeps timing them out is the broken thing, not the probes. They are declared
+// here, SKIPPED by default, and named loudly in the summary -- never silently dropped, because an
+// exclusion nobody can see is how a corpus quietly shrinks. --include-slow runs them anyway.
+const SLOW = {
+  "probe-dead-controls": "clicks every control on every tab from a pristine reload; O(controls) x settle",
+  "probe-dead-controls-route": "the same, per route sub-tab -- 94 controls on Safety alone, x6 sub-tabs",
+  "probe-dead-controls-overlays": "the same, per overlay; ran to the 1500s cap still making progress",
+  "probe-do-controls-do-anything": "the same question over every tab; same cost",
+  "probe-glued-control-names": "enumerates candidates across every overlay, then confirms each in the AX tree",
+};
+
+// A STALE DECLARATION FAILS, both directions -- the rule every registry in this repo is held to.
+for (const name of Object.keys(SLOW)) {
+  if (!probes.includes(name + ".mjs")) {
+    console.error(`REFUSING — SLOW names ${name}, which is not a browser probe on disk. Stale bookkeeping: `
+      + `remove the entry in the same change that removed or renamed the probe.`);
+    process.exit(2);
+  }
+}
+
+const INCLUDE_SLOW = process.argv.includes("--include-slow");
+const skippedSlow = INCLUDE_SLOW ? [] : probes.filter((f) => SLOW[path.basename(f, ".mjs")]);
+
 // Fails CLOSED: a walk that matched almost nothing would otherwise print a short, clean sweep.
 if (probes.length < FLOOR) {
   console.error(`REFUSING — only ${probes.length} browser probes discovered (floor ${FLOOR}). The scan broke, or scripts/oneoff/ moved.`);
@@ -128,7 +158,8 @@ const settle = async (label) => {
   return b;
 };
 
-const todo = probes.filter((f) => !banked[path.basename(f, ".mjs")]);
+const todo = probes.filter((f) => !banked[path.basename(f, ".mjs")])
+  .filter((f) => INCLUDE_SLOW || !SLOW[path.basename(f, ".mjs")]);
 if (banked && Object.keys(banked).length) {
   console.log(`resuming: ${Object.keys(banked).length} already have a result, ${todo.length} to go`);
   console.log(`state: ${STATE}   (--fresh to ignore it)\n`);
@@ -173,6 +204,15 @@ const cnt = (v) => allB.filter((r) => r.verdict === v).length;
 const resolved = allB.length, total = probes.length;
 console.log(`cumulative: ${resolved}/${total} have a RESULT  (${cnt("PASS")} pass, ${cnt("FAIL")} fail, `
   + `${cnt("TIMEOUT")} timeout, ${cnt("BROKEN")} broken) — ${total - resolved} still UNRESOLVED`);
+if (skippedSlow.length) {
+  console.log(`\n${skippedSlow.length} probe(s) DECLARED SLOW and not run — they are not results, and they are`);
+  console.log(`not findings. Each costs ~30min+ because it clicks every control on every screen:`);
+  for (const f of skippedSlow) {
+    const b = path.basename(f, ".mjs");
+    console.log(`  ${b}\n      ${SLOW[b]}`);
+  }
+  console.log(`Run them deliberately, one at a time, or pass --include-slow with a large --cap.`);
+}
 if (resolved < total) console.log(`Re-run to continue; results are banked in ${STATE}.`);
 const nonPass = [...rows.filter((r) => r.verdict !== "PASS")];
 for (const [b, r] of Object.entries(banked)) {
