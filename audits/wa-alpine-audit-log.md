@@ -27766,3 +27766,92 @@ JSON string values to avoid an embedded semicolon splitting the checker's plain-
 statement parser mid-string (same class of issue noted in batch 339's log entry), aside from
 the routine paste-size WARN on this file's length (10.9 KB against the 4 KB soft limit) —
 split into ~1.5 KB chunks before pasting into the SQL Editor.
+
+## 2026-09-25 — Pass 6, Batch 341
+
+Audited (next 8 alphabetically after batch 340, index 364→371 of 702 in-scope):
+`wa_mount_constance_finger_traverse`, `wa_mount_constance_west_arete`,
+`wa_mount_crowder_northeast_ridge`, `wa_mount_crowder_southwest_route`,
+`wa_mount_cruiser_nw_face_corner`, `wa_mount_cruiser_south_corner`,
+`wa_mount_custer_standard`, `wa_mount_daniel_daniel_glacier`.
+
+Two research agents ran in parallel, one per peak cluster (Constance+Crowder, and
+Cruiser+Custer+Daniel). WebFetch was egress-blocked network-wide in this environment
+(nps.gov, wikipedia.org, summitpost.org, mountaineers.org, fs.usda.gov, and even
+google.com all returned EGRESS_BLOCKED); every finding below rests on WebSearch snippet
+synthesis instead of a direct primary-source fetch.
+
+**Confirmed errors fixed — 4, see the SQL file for exact old/new values and sources:**
+- `wa_mount_crowder_southwest_route.fa`: nulled out. The row credited this route with the
+  peak's 1962 first ascent (Magnusson/Ardussi/Mech/Schmechel, "Old Brownie"), while the
+  row's own `corrections` field says outright that ascent "climbed the NE Ridge line, not
+  this Southwest Route/SW Flank — so no 'fa' credit is attached to this route entry" — a
+  self-contradiction, not an external-source correction. Not moved to the sibling
+  `wa_mount_crowder_northeast_ridge` route (which already carries `fa = NULL`) because no
+  source reached in this pass independently confirms which flank the 1962 party actually
+  climbed — AAC Publications' Northern Pickets history corroborates the FA of the peak
+  itself but not the specific line.
+- `wa_mount_cruiser_nw_face_corner.road.status` and `.access.closures`: this row was never
+  refreshed after Forest Road 24 and the Staircase entrance reopened. USFS Olympic National
+  Forest's own reopening release, corroborated by KING5 and myclallamcounty.com, confirms
+  FS-24/Staircase reopened July 8, 2026 — the sibling `wa_mount_cruiser_south_corner` row
+  (`access_checked_at` 2026-08-27) already reflected this, but this row still described the
+  road/entrance itself as closed. The North Fork Skokomish River Trail and Flapjack Lakes
+  Trail beyond the entrance remain closed with no stated reopening date, so the practical
+  bottom line (no current legal approach to Cruiser via Flapjack Lakes) is preserved —
+  only the road/entrance status is corrected. `access_checked_at` also backfilled (was
+  null) to record this pass.
+- `wa_mount_cruiser_nw_face_corner.waypoints[0].note` and the same field on
+  `wa_mount_cruiser_south_corner`: both still carried the pre-reopening "Staircase area is
+  currently closed" text, the latter directly contradicting its own already-correct
+  `road.status` field. Updated to reflect the reopening on both rows.
+- `wa_mount_cruiser_south_corner.access._raw.permit_cost`: a stale, unrefreshed ingest
+  leftover ("$10 park entry fee (7 days) + $5 group fee + $2 per night camping") that
+  disagreed with the correct, already-present `access.parking_pass` ($30/vehicle 7-day /
+  $55 annual) and the $6 Recreation.gov reservation fee + $8/person/night backcountry fee
+  cited elsewhere on the sibling route — both confirmed current via NPS's entrance-fee and
+  Olympic wilderness fee schedules.
+
+**Flagged for human review (not fixed) — 5 items:**
+- `wa_mount_constance_finger_traverse` and `wa_mount_constance_west_arete`: both describe
+  ascending via the South Chute and descending via the Finger/Terrible Traverse (on the
+  North Chute side), but some independent trip-report synthesis instead describes the more
+  common pattern as ascending via the North Chute and descending south — real parties
+  appear to run this loop both directions depending on conditions, and primary sources
+  (SummitPost, Eric's Base Camp) were egress-blocked, so this is flagged rather than
+  reversed on a guess.
+- `wa_mount_crowder_northeast_ridge` and `wa_mount_crowder_southwest_route` (shared `bivy`
+  array): the 2026 Luna Fire and its Big Beaver/Beaver Pass/Luna Camp closures are
+  confirmed real (Cascadia Daily News, late Jul–early Aug 2026), but the exact camp-level
+  closure boundaries asserted in this row's text could not be matched precisely against
+  NPS's own fire-closures page (nps.gov/noca/planyourvisit/fire-closures.htm), which was
+  blocked from direct fetch — a human with browser access should verify the specific camp
+  list there before trusting it.
+- `wa_mount_custer_standard`: a stored "US/Canada border marker" waypoint (Monument 65) sits
+  roughly 1.1 miles south of the 49th-parallel border by latitude, which reads as
+  suspicious given the treaty-fixed border line, but Monument 65's own official coordinates
+  could not be independently confirmed (International Boundary Commission, USGS GNIS, and
+  Wikipedia were all blocked) — flagged as needing human verification rather than a
+  confirmed error, since the trail need not run due-north/south between the two points
+  compared. Also flagged: whether any updated CBP self-reporting requirement (e.g. a ROAM
+  app pilot, as rolled out at other remote NPS border crossings) now applies to this
+  unmonitored foot-crossing — no source specific to Depot Creek/Monument 65 was found
+  either way.
+
+**Checked and confirmed correct, not touched:** `wa_mount_custer_standard`'s FA (Dawe/
+Mason/Teichman, 1958), NPS backcountry permit fee, and summit coordinates/elevation, and
+`wa_mount_daniel_daniel_glacier` in full — FA (1925 Mountaineers party via the Lynch
+Glacier), the East/Middle/West summit elevations, the ~700 m Daniel Glacier retreat-since-
+1992 figure (independently confirmed against the North Cascade Glacier Climate Project's
+2005/2023 retreat figures), and the free self-issue Alpine Lakes Wilderness permit — all
+independently confirmed current, no SQL changes needed on either row.
+
+`last_processed_id` advanced to `wa_mount_daniel_daniel_glacier`; 694 in-scope routes remain
+unaudited this pass. No `.env`/`.env.local` present at run start (fresh clone); created
+`.env.local` with only the read-only anon key to run `check:sql` (no service key used or
+present — no writes were made). `check:sql` initially warned one UPDATE's id predicate was
+unparseable because a new JSON string value contained a literal semicolon (same class of
+issue noted in batches 339 and 340); rephrased it and re-ran clean (7 write targets across 9
+statements, all ids live, no DELETE statements), aside from the routine paste-size WARN on
+this file's length (7.6 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before
+pasting into the SQL Editor.
