@@ -1,0 +1,247 @@
+{
+ "batches": ["b109.json", "b110.json", "b111.json", "b112.json"],
+ "routes_read": 11,
+ "routes": [
+  {
+   "id": "wa_cathedral_rock_northwest_couloir",
+   "name": "Northwest Couloir",
+   "area": "Cathedral Rock",
+   "contradictions": [
+    {
+     "fact": "Climbing season window",
+     "severity": "low",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Jul-Oct"}
+     ],
+     "why": "best_season extends a month beyond the stated season window (no seasonal_guidance field exists on this route to reconcile them), so a climber reading best_season would plan for October while season says the window ends in September.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+     "severity": "medium",
+     "claims": [
+      {"field": "beta", "says": "It is frequently used as a descent route after climbing the Southwest Face or Northeast Buttress."},
+      {"field": "overview", "says": "used both as an alternate ascent line and as the standard descent from the summit"},
+      {"field": "wa_cathedral_rock_northeast_buttress.descent", "says": "Descend the south side (the ordinary Southwest Face route) back to Cathedral Pass, with a few short fourth-class sections."},
+      {"field": "wa_cathedral_rock_northeast_buttress.bail", "says": "Once you are on the summit, the south-side descent is the escape route in any conditions."}
+     ],
+     "why": "This route's own beta claims it is commonly used to descend after climbing the Northeast Buttress, but the Northeast Buttress route's own descent, descent_text and bail fields unanimously name only the Southwest Face/south-side line as the descent and never mention the Northwest Couloir.",
+     "internal_resolution": "The Northeast Buttress route has three of its own fields (descent, descent_text, bail) independently agreeing on the Southwest Face as the descent; the Northwest Couloir's claim about being used for that descent is a single, uncorroborated sentence.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "Cathedral Rock",
+   "contradictions": [
+    {
+     "fact": "Whether the Northwest Couloir is the standard descent after climbing the Northeast Buttress",
+     "severity": "medium",
+     "claims": [
+      {"field": "descent", "says": "Descend the south side (the ordinary Southwest Face route) back to Cathedral Pass, with a few short fourth-class sections."},
+      {"field": "descent_text", "says": "From the summit, work down the south side rather than trying to reverse the buttress... Follow the Southwest Face line."},
+      {"field": "bail", "says": "Once you are on the summit, the south-side descent is the escape route in any conditions."},
+      {"field": "wa_cathedral_rock_northwest_couloir.beta", "says": "It is frequently used as a descent route after climbing the Southwest Face or Northeast Buttress."}
+     ],
+     "why": "This route's own descent, descent_text and bail fields unanimously specify the Southwest Face/south side as the descent and never mention the Northwest Couloir, while the Northwest Couloir route's beta claims parties commonly descend it after the Northeast Buttress.",
+     "internal_resolution": "Three of this route's own fields agree on the Southwest Face descent; the Northwest Couloir's contrary claim is unsupported here.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chikamin_peak_southeast_slopes",
+   "name": "Southeast Slopes",
+   "area": "Chikamin Peak",
+   "contradictions": [
+    {
+     "fact": "Approach mileage to Kendall Katwalk and Ridge Lake",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[1] (Kendall Katwalk).distMi", "says": "6.6"},
+      {"field": "approach", "says": "hits the exposed rock-cut traverse of Kendall Katwalk around mile 5 (~5,400 ft)"},
+      {"field": "waypoints[2] (Ridge Lake / Gravel Lake saddle camps).distMi", "says": "7.9"},
+      {"field": "approach", "says": "Continue north past Ridge Lake (~mile 6.5, reliable camping and water)"}
+     ],
+     "why": "The same named landmarks (Kendall Katwalk, Ridge Lake) are given materially different one-way distances from the trailhead in the waypoints list versus the prose approach text (about 1.4-1.6 miles / 20-32% different), which would throw off pace planning on this long approach even though the elevations quoted for each landmark do agree.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_face_6",
+   "name": "East Face",
+   "area": "Chimney Rock",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6000"},
+      {"field": "loss_ft", "says": "6000"},
+      {"field": "overview", "says": "roughly 19 miles and 6,000 ft of elevation gain/loss round trip"},
+      {"field": "itinerary.days[*].gainFt (sum)", "says": "1850 + 3080 + 0 = 4930"},
+      {"field": "itinerary.days[*].lossFt (sum)", "says": "0 + 3080 + 1850 = 4930"},
+      {"field": "waypoints (Pete Lake Trailhead elev 2800 to Main Summit elev 7727)", "says": "difference = 4927 ft"}
+     ],
+     "why": "The header/overview gain and loss figures (6,000 ft) run about 22% higher than the sum of the itinerary's own day-by-day gain/loss figures (4,930 ft), which itself closely matches the elevation difference between this route's own trailhead and summit waypoints (4,927 ft).",
+     "internal_resolution": "The itinerary day sums and the waypoint elevation difference independently agree at ~4,930 ft; the 6,000 ft gain_ft/loss_ft/overview figures appear inflated.",
+     "needs_research": true
+    },
+    {
+     "fact": "Hardest grade of the summit pitches",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.3"},
+      {"field": "rock_grade", "says": "5.3"},
+      {"field": "pitch_detail[2] (pitch 3, crux:true).grade", "says": "5.3"},
+      {"field": "climbing_route[3] (n:4, Summit pitches).notes", "says": "with the hardest moves around 5.4 to 5.6"}
+     ],
+     "why": "grade, rock_grade and the crux entry in pitch_detail all state the hardest climbing on this route is 5.3, but the climbing_route array's own summit-pitches entry, describing the same three summit pitches, states the hardest moves are 5.4 to 5.6 -- a full letter grade harder.",
+     "internal_resolution": "grade, rock_grade and pitch_detail (3 independent fields) agree at 5.3; climbing_route is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels on the standard descent",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "Single ~165 ft rope; 2 rappels near the bergschrund plus downclimbing between them"},
+      {"field": "rappel_detail", "says": "2 entries (n:1, n:2)"},
+      {"field": "rappel_count_note", "says": "Applies to the standard route; the harder Direct East Face variant is reported to need as many as 5-6 rappels instead."},
+      {"field": "descent_text", "says": "the two-rappel descent via the saddle/gully is the more commonly reported line for the standard East Face route"},
+      {"field": "climbing_route[4] (n:5, Rappel descent).notes", "says": "two rappels from the summit back to the Key Ledge, then on the order of six more to reach the glacier"}
+     ],
+     "why": "Four fields (rappels, rappel_detail, rappel_count_note, descent_text) agree the standard East Face descent uses 2 rappels and explicitly contrast this with the harder Direct variant's 5-6 rappels; but climbing_route's own rappel-descent step for this same route describes roughly eight rappels total (two to the Key Ledge, then about six more to the glacier) -- the count the other fields attribute only to the different Direct route.",
+     "internal_resolution": "rappels/rappel_detail/rappel_count_note/descent_text (4 fields) agree on 2 rappels; climbing_route is the outlier and its count matches what rappel_count_note attributes to the harder Direct variant instead.",
+     "needs_research": true
+    },
+    {
+     "fact": "Overall commitment/alpine grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "alpine_grade", "says": "Grade IV"},
+      {"field": "commitment", "says": "IV"},
+      {"field": "climbing_route[3] (n:4, Summit pitches).notes", "says": "Grade II overall"}
+     ],
+     "why": "alpine_grade and commitment both rate this route Grade IV, but the climbing_route array's summit-pitches entry calls the same climb 'Grade II overall.'",
+     "internal_resolution": "alpine_grade and commitment agree at IV; the climbing_route phrase may be intended to describe only the final summit-pitch section, but it is not labeled that way and reads as the route's overall grade.",
+     "needs_research": true
+    },
+    {
+     "fact": "Name of the notch between the South and Main summits",
+     "severity": "low",
+     "claims": [
+      {"field": "beta", "says": "scramble exposed 4th-class ledges to the Main Notch between the South and Main peaks"},
+      {"field": "approach_variants[0].baseFinding", "says": "the U-Gap, the notch that almost every party climbing this peak passes through. Chimney Rock is the second peak to the RIGHT of the U-Gap"}
+     ],
+     "why": "The same notch on this route's line is called the 'Main Notch' in beta and the 'U-Gap' in the approach_variants baseFinding, which could read as two different features.",
+     "internal_resolution": "Likely the same notch under two names, since both are described as lying between the South and Main peaks.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_chimney_rock_east_face_direct",
+   "name": "East Face Direct",
+   "area": "Chimney Rock",
+   "contradictions": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "name": "West Face / South Summit (Standard)",
+   "area": "Chimney Rock",
+   "contradictions": [
+    {
+     "fact": "Hardest technical rock grade on the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 5.6"},
+      {"field": "rock_grade", "says": "4th Class"},
+      {"field": "pitch_detail[0] (pitch 1, crux:true).grade", "says": "5.6"},
+      {"field": "detailed_rack", "says": "Bring a comprehensive trad rack including stoppers (even and odd sizes), full set of single cams from BD #0 to #3..."}
+     ],
+     "why": "rock_grade states the route is only 4th class (exposed scrambling), but the route's own grade field, its own crux pitch_detail entry, and its detailed_rack (a full trad rack to protect the crux) all describe a 5.6 technical rock climb. Because the header grade pill and the Overview's grade chips both read rock_grade, this would understate the route's real difficulty to a climber checking that field.",
+     "internal_resolution": "grade, pitch_detail, and detailed_rack (3 independent fields) agree the route is 5.6; rock_grade is the outlier and is inconsistent with the rest of the record.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_four_brothers_southwest_route",
+   "name": "Southwest Route",
+   "area": "Four Brothers",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "name": "Standard Scramble",
+   "area": "Hibox Mountain",
+   "contradictions": [
+    {
+     "fact": "Bail-out destination",
+     "severity": "medium",
+     "claims": [
+      {"field": "bail", "says": "Descend to the Rampart Lakes basin."},
+      {"field": "approach", "says": "the bootpath climbs steeply... From there head right (east) along the south side of the summit rocks to a gully on the east side"},
+      {"field": "descent_text", "says": "Once back on Rachel Lake Trail #1313, it's an easy, well-graded 2+ miles back to the trailhead."}
+     ],
+     "why": "The bail field sends a retreating party to the Rampart Lakes basin, but this route's own approach/beta/descent_text fields never mention Rampart Lakes and consistently describe reversing the Box Ridge boot path back to the Rachel Lake Trail instead. Elsewhere in this data, Rampart Lakes basin is documented as the base for Alta Mountain, reached by climbing out of the Rachel Lake basin and contouring WEST -- a different line from this route's Box Ridge ascent.",
+     "internal_resolution": "The route's own approach/beta/descent_text consistently describe reversing the Box Ridge line back to Rachel Lake Trail; the bail field's Rampart Lakes reference appears to be contamination from a different peak's data.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_huckleberry_mountain_south_face",
+   "name": "South Face",
+   "area": "Huckleberry Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "name": "West Route",
+   "area": "Huckleberry Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "3377"},
+      {"field": "loss_ft", "says": "3377"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "2700 + 3620 = 6320"},
+      {"field": "itinerary.days[1].lossFt", "says": "6320"},
+      {"field": "itinerary.totalNote", "says": "A 2-day trip for most parties (~22 miles RT, ~6,300 ft gain)"},
+      {"field": "approach", "says": "this route's full ~6,320 ft of cumulative gain in"},
+      {"field": "waypoints (PCT North Trailhead elev 3000 to summit elev 6320)", "says": "difference = 3320 ft"}
+     ],
+     "why": "gain_ft/loss_ft (3,377 ft) closely match this route's own trailhead-to-summit waypoint elevation difference (3,320 ft), but the itinerary's own day-by-day gain/loss figures, its totalNote, and the approach text all state roughly double that (~6,300-6,320 ft) for the same round trip.",
+     "internal_resolution": "gain_ft/loss_ft and the waypoint elevation difference agree closely (~3,320-3,377 ft); the itinerary day sums, totalNote and approach text's '~6,320 ft of cumulative gain' are the outliers, roughly double the supported figure.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_huckleberry_mountain_east_ridge",
+   "name": "East Ridge",
+   "area": "Huckleberry Mountain",
+   "contradictions": [
+    {
+     "fact": "Total cumulative elevation gain for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "4600"},
+      {"field": "itinerary", "says": "A round trip of roughly 20+ miles and ~5,800+ ft of cumulative gain overall."}
+     ],
+     "why": "The route's own gain_ft header stat (4,600 ft) disagrees with its own itinerary field's stated cumulative gain (~5,800+ ft) by about 26%, for the same round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

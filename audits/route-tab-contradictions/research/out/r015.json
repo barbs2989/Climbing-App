@@ -1,0 +1,392 @@
+{
+ "file": "r015.json",
+ "results": [
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Whether the south/southeast ridge line is a variation of this route or a separate route",
+   "verdict": "fixed",
+   "correct_value": "The glacier-free south-west slope / south-east ridge line is a separate route on Luahna, reached from the same Boulder Basin cirques; it is an alternative to this route, not a variation of it.",
+   "evidence": "A detailed trip report documents the Southwest Slope-Southeast Ridge as its own route from Boulder Basin via the sheepherder's traverse through Clark, Luahna and Chalangin basins with no glacier crossing. A second party deliberately chose the scramble line on Luahna's southwest side specifically to avoid carrying glacier gear, while the glaciated east-side route crosses the Richardson Glacier to the East Ridge. The catalog also carries it as a separate route row. Only the label of step 4 is changed; its content (a glacier-free alternative) is correct.",
+   "sources": [
+    "https://trailcatjim.com/boulder-basin-luahna-peak-via-southwest-slope-southeast-ridge/",
+    "https://www.countryhighpoints.com/luahna-peak-and-clark-mountain/",
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm"
+   ],
+   "patches": [
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Whether the south/southeast ridge line is a variation of this route or a separate route",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "label"
+     ],
+     "find": "Variation: south/southeast ridge (avoids the glacier)",
+     "replace": "Alternative: the separate south-west slope and south-east ridge route (avoids the glacier)"
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Whether this route is glaciated",
+   "verdict": "fixed",
+   "correct_value": "This route crosses the upper Richardson Glacier from the col west of Clark Mountain to Luahna's East Ridge; it is not a non-glaciated route.",
+   "evidence": "One detailed trip report describes a rising traverse from the col west of Clark onto the upper Richardson Glacier, crossing it to reach Luahna's East Ridge near 8,000 ft (moat present), then a short class 4-ish step on the ridge. The Clark-Luahna double route description lists glacier travel on the Walrus and Richardson Glaciers with crevasse hazard and requires rope and crampon skills. A route description summary likewise says to drop onto the Richardson Glacier and bear north to the East Ridge. The avalanche.zone label is the outlier and is corrected.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://fastestknowntime.com/route/clark-and-luahna-peak-double-wa",
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Whether this route is glaciated",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "N/A - non-glaciated summer scree/talus route",
+     "replace": "N/A - summer route over scree, talus and the upper Richardson Glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Overview BETA describes a glacier-free south-ridge line, not this route's Richardson Glacier / East Ridge line",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Beta should describe the Richardson Glacier crossing to the East Ridge, with the short low Class 4 step often bypassed on ledges and a side gully.",
+   "evidence": "The beta said the route gains the south ridge and 'is glacier-free', which describes the separate southwest-slope route and contradicts approach, climbing_route, crevasses, rope_note and itinerary. One trip report crossed the upper Richardson Glacier to the East Ridge, met a short class 4-ish step and bypassed it on ledges and a parallel class 3 gully; the Clark-Luahna route description confirms Richardson Glacier travel. Rewritten in original wording.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://fastestknowntime.com/route/clark-and-luahna-peak-double-wa"
+   ],
+   "patches": [
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Overview BETA describes a glacier-free south-ridge line, not this route's Richardson Glacier / East Ridge line",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "The standard line climbs scree, talus, and broken ledges on Luahna's east/south-facing slopes to gain the south ridge, then follows the ridge crest toward the summit. It is described as a 2nd-class line, but most parties encounter a short Class 3-3+ traverse or step to bypass a gap in the ridge below the true summit. The route is glacier-free but crosses persistent snow and loose rock well into summer, and is commonly",
+     "replace": "The standard line crosses the upper Richardson Glacier from the col west of Clark Mountain to reach Luahna's East Ridge, then follows the ridge crest west to the summit. Most of the ridge is easy scrambling, but a short, steep step low on it goes at about low Class 4 and is often avoided on ledges and a parallel gully to one side. The glacier has been thinning and breaking up, snow and loose rock persist well into summer, and the route is commonly"
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "This route approaches from White River over Boulder Pass and crosses the Richardson Glacier as its standard line; the Pilz Glacier / Little Giant Pass / Butterfly Butte approach is a different route on the north side.",
+   "evidence": "The Pilz Glacier route on Luahna is a separate 3-day trip from the Little Giant Pass trailhead across the Napeequa to a Butterfly Butte camp and the toe of the Pilz Glacier. The White River / Boulder Pass line crosses the Richardson Glacier to the East Ridge as its normal way. The row's own baseFinding says the Pilz and Butterfly Glaciers belong to the separate Napeequa-side route; obj_haz, partner_requirements, gear, hazards, pro_tips, watch_out and pro_needs contradicted that. requiredSkills' Napeequa crossing is left because the row's waypoints do cross the Napeequa.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-07-24-0628992715",
+    "https://www.mountaineers.org/activities/routes-places/luahna-peak-pilz-glacier",
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://fastestknowntime.com/route/clark-and-luahna-peak-double-wa"
+   ],
+   "patches": [
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      0
+     ],
+     "find": "Crevasses on the Pilz and Butterfly Glaciers",
+     "replace": "Crevasses and moats on the upper Richardson Glacier"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "via Little Giant Pass and the Napeequa valley",
+     "replace": "over Boulder Pass and across the cirques below Clark Mountain"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "commonly 2+ days to a high camp such as Butterfly Butte before a summit push",
+     "replace": "commonly a full day or more to a high camp in upper Boulder Basin before a summit push"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "crampons (early season, or for the Richardson/Pilz Glacier variant)",
+     "replace": "crampons (for the Richardson Glacier crossing and early-season snow)"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      3
+     ],
+     "find": "upper Richardson/Pilz Glacier margin",
+     "replace": "upper Richardson Glacier margin"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "Richardson/Pilz Glacier crossing",
+     "replace": "Richardson Glacier crossing"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      1
+     ],
+     "find": "Richardson/Pilz Glacier margins",
+     "replace": "Richardson Glacier margins"
+    },
+    {
+     "id": "wa_luahna_peak_east_slopes",
+     "fact": "Other fields name the Pilz/Butterfly Glaciers, Little Giant Pass and Butterfly Butte, or call the Richardson Glacier a 'variant', on a route whose standard line is the Richardson Glacier from White River",
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "None on the standard line -- it is climbed unroped. A rope, a few slings, and a light rack may be prudent for parties uncomfortable with the exposed Class 3+ traverse near the summit, or if approaching via the alternate, glaciated East Ridge/Richardson Glacier variant instead.",
+     "replace": "No rock protection is needed for the scrambling, which is climbed unroped. A glacier rope with crevasse-rescue gear is needed for the upper Richardson Glacier crossing, and a few slings for a natural rappel anchor at the short step below the East Ridge; parties uneasy on the exposed Class 3+ ground near the summit may want a light rack as well."
+    }
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Total round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The waypoints follow a different line (over Boulder Pass, down to a Napeequa ford, up the east-face basin), which the row's own approach_variants acknowledges, so their 16.5 mi is not the same quantity as the itinerary. dist_km (23.5 mi) matches the itinerary ROUND TRIP but renders as 'Approach (one way)', so it looks mislabelled; however external figures for the Boulder Pass / Richardson line disagree: one party logged 'more than 20 miles' round trip for Clark plus Luahna, a Clark-Luahna route listing gives 28 miles, another party 22 miles on foot, and the separate south-west route was logged at 30 miles. No two sources agree on a one-way figure, so no patch.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://fastestknowntime.com/route/clark-and-luahna-peak-double-wa",
+    "https://www.countryhighpoints.com/luahna-peak-and-clark-mountain/",
+    "https://trailcatjim.com/boulder-basin-luahna-peak-via-southwest-slope-southeast-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Itinerary days sum to 6,520 ft gain and 6,520 ft loss, and totalNote says ~6,500 ft, while gain_ft and loss_ft say 6,150 (which is just summit minus trailhead and ignores the ~1,000 ft lost and regained on the sheepherder traverse). External figures are for Clark plus Luahna together (about 7,500 ft; 8,600 ft), not Luahna alone, so neither value is externally confirmed. No patch.",
+   "sources": [
+    "http://ericsbasecamp.net/trips/ClarkLuahna/ClarkLuahna.htm",
+    "https://fastestknowntime.com/route/clark-and-luahna-peak-double-wa"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Luahna-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Serves this route: 'Boulder Pass and Thunder Basin, White River' (same trailhead and Boulder Creek/Boulder Pass approach). Does NOT serve it: the five Glacier Peak camps (Mackinaw Shelter, White Pass/Foam Creek, Glacier Gap, Kennedy Ridge, Boulder Basin above Sitkum Creek) and Buck Creek Pass/High Pass. 'Napeequa Valley floor near Louis Creek' and 'Butterfly Butte and the Pilz Glacier basin camps' serve Luahna's separate Little Giant/Pilz Glacier route, not this White River/Richardson line (contrary to the reader's note).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_luahna_peak_southwest_slope_southeast_ridge",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Luahna-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "This route starts at White River and uses Boulder Creek and Boulder Basin. Serves it: 'Boulder Pass and Thunder Basin, White River' (the Boulder Creek/Boulder basin camps). Does NOT serve it: the five Glacier Peak camps, Buck Creek Pass/High Pass, Napeequa Valley floor near Louis Creek, and Butterfly Butte/Pilz Glacier basin (those belong to the Little Giant/Pilz approach on the north side).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "fact": "totalNote understates both distance and gain vs. the itinerary's own days",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 24 miles round trip with roughly 9,200 ft of cumulative gain.",
+   "evidence": "Five row fields agree against totalNote: day miles sum to 24, day gain sums to 9,200, day loss sums to 9,200, and gain_ft and loss_ft are both 9,200. Externally, the Little Giant Pass trail alone is about 10 miles and 4,000-4,100 ft round trip to the pass, with the pass near 6,400 ft; add the ~2,000 ft drop to the Napeequa floor (regained on the way out) and the climb from the valley to the 7,948 ft summit, and the total is well over 8,000 ft, which supports the day figures rather than 7,000-8,000.",
+   "sources": [
+    "https://www.hikeoftheweek.com/2023/09/21/little-giant-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-16.9521573278"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_berge_southwest_route",
+     "fact": "totalNote understates both distance and gain vs. the itinerary's own days",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~20-22 mile round trip with roughly 7,000-8,000 ft of cumulative gain",
+     "replace": "~24 mile round trip with roughly 9,200 ft of cumulative gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "fact": "Waypoint distance jump at the summit",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The summit waypoint's 16.92 mi (tagged distFrom: track) is inconsistent with everything else, but the right value is not settled: the waypoint chain via the 7,840 ft notch puts the summit about 7.6 mi out, while the itinerary (10.5 mi to a treeline camp plus a summit day) and dist_km (12 mi one way) imply roughly 11-12 mi. No external source gives a one-way distance to Berge's summit by the Little Giant/Napeequa approach, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/mount-berge/664777",
+    "https://www.hikeoftheweek.com/2023/09/21/little-giant-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "fact": "CAMPING & BIVY list is the generic Glacier Peak camp set, not Berge-specific",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Serves this route: 'Napeequa Valley floor near Louis Creek' (on the Little Giant/Napeequa approach this route uses) and 'Buck Creek Pass and the High Pass camps' (names Berge and serves its Trinity-side approaches listed in approach_variants). Does NOT serve it: the five Glacier Peak camps, 'Butterfly Butte and the Pilz Glacier basin camps' (Luahna/Chalangin), and 'Boulder Pass and Thunder Basin, White River' (Clark/Tenpeak).",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_berge_east_ridge",
+   "fact": "Pitch count vs. ROUTE BREAKDOWN rows",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The two pitch_detail rows are explicitly named sections ('Lower Ridge', 'Knife-edge, notch & crux') of 300 m each, totalling 600 m against length_m 610; that is about 15 rope-lengths, so the 15-pitch header and the sectional breakdown describe the same climb at different granularity.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_berge_east_ridge",
+   "fact": "Rendered descent_text names a website as the source",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Same sentence with the website citation removed.",
+   "evidence": "descent_text renders on the Plan tab DESCENT section and ends with a parenthetical website citation, which the app forbids (no sources anywhere in the app). The patch removes only the citation; the fact is unchanged.",
+   "sources": [],
+   "patches": [
+    {
+     "id": "wa_mount_berge_east_ridge",
+     "fact": "Rendered descent_text names a website as the source",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "also summiting Buck Mountain (climberkyle.com).",
+     "replace": "also summiting Buck Mountain."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_bigelow_scramble",
+   "fact": "Round-trip distance (dist_km vs itinerary miles)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach (6.3 mi, matching the 6.2 mi to Upper Eagle Lake and the 6.65 mi summit waypoint), while itinerary miles are per-day and sum to a round trip; the two are different quantities, not a conflict. Trail figures (5.7 mi to the Upper Eagle Lake junction plus 0.5 mi spur) confirm the one-way scale.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+    "https://www.adventuresnw.com/a-larch-pilgrimage-to-upper-eagle-lake/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "fact": "Route distance (dist_km as one-way to base vs round-trip car-to-car mileage)",
+   "verdict": "fixed",
+   "correct_value": "One-way approach about 6.6-6.7 mi (6.2 trail miles to Upper Eagle Lake plus ~0.45 mi to the base) = 10.7 km; ~13 mi round trip.",
+   "evidence": "The trail to Upper Eagle Lake is 5.7 mi to the 431A junction plus a 0.5 mi spur (about 6.2 mi one way, 12.4-12.5 mi round trip) in two independent descriptions. The row's own itinerary gives ~13 mi round trip and its approach puts the base 0.4-0.5 mi beyond the lake, so the one-way figure is ~6.65 mi (10.7 km). dist_km 12.9 (8.0 mi) came from the FA party's loose 'more or less' estimate, which stays in the approach as their quote.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+    "https://www.adventuresnw.com/a-larch-pilgrimage-to-upper-eagle-lake/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_bigelow_tribute_to_richard",
+     "fact": "Route distance (dist_km as one-way to base vs round-trip car-to-car mileage)",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.9,
+     "value": 10.7
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_bigelow_tribute_to_richard",
+   "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "6.2 mi from the Crater Creek Trailhead to Upper Eagle Lake.",
+   "evidence": "Two independent descriptions give 5.7 mi on Eagle Lakes Trail #431 to the Upper Eagle Lake junction plus a 0.5 mi spur, about 6.2 mi one way (12.4-12.5 mi round trip). The sibling Standard Scramble row on the same peak already says 6.2 mi. Every copy of 5.9 on this row is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/eagle-lakes",
+    "https://www.adventuresnw.com/a-larch-pilgrimage-to-upper-eagle-lake/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_bigelow_tribute_to_richard",
+     "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 5.9 trail miles",
+     "replace": "about 6.2 trail miles"
+    },
+    {
+     "id": "wa_mount_bigelow_tribute_to_richard",
+     "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "hike the 5.9 miles of Eagle Lakes Trail #431",
+     "replace": "hike the 6.2 miles of Eagle Lakes Trail #431"
+    },
+    {
+     "id": "wa_mount_bigelow_tribute_to_richard",
+     "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "about 5.9 trail miles",
+     "replace": "about 6.2 trail miles"
+    },
+    {
+     "id": "wa_mount_bigelow_tribute_to_richard",
+     "fact": "Trail distance to Upper Eagle Lake stated as 5.9 mi (sister route and external sources: 6.2 mi)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 5.9,
+     "value": 6.2
+    }
+   ]
+  }
+ ]
+}

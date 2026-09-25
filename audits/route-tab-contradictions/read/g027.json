@@ -1,0 +1,392 @@
+{
+ "batches": ["b105.json", "b106.json", "b107.json", "b108.json"],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Bald Eagle Peak",
+   "contradictions": [
+    {
+     "fact": "Road number for the trailhead (FR 68 vs FR 6835)",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].schedule[0].detail", "says": "Park along FR 6835 off Foss River Road; no formal trail, route-find directly up the North Ridge."},
+      {"field": "road.name", "says": "Foss River Road (FR 68)"},
+      {"field": "waypoints[0].name", "says": "Foss River Road (FR 68) roadside pullout, mile 5.2"},
+      {"field": "approach_logistics.trailhead", "says": "Foss River Road (FR-68) pullout near mile 5.2"}
+     ],
+     "why": "The itinerary's first schedule step sends a climber to 'FR 6835', a different road than the 'FR 68 / Foss River Road' named consistently in road, waypoints, approach, and approach_logistics.",
+     "internal_resolution": "Four other fields agree on Foss River Road / FR 68; 'FR 6835' in the schedule detail is the outlier and is very likely an error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach the summit (summitTimeHrs)",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "10"},
+      {"field": "itinerary.days[0].schedule[3]", "says": "time '~10:30-11:00 AM', label 'Summit (6,259 ft)' (from a 5:00 AM start)"},
+      {"field": "timing.totalHrs", "says": "10"}
+     ],
+     "why": "The published schedule reaches the summit about 5.5-6 hours after the 5:00 AM start, but summitTimeHrs claims 10 hours to the summit — the same value as totalHrs (the full car-to-car time).",
+     "internal_resolution": "totalHrs=10 matches the schedule's 'Back at trailhead ~3:00-4:00 PM' and the totalNote's '9-11 hours' car-to-car; summitTimeHrs appears to have been mistakenly set equal to totalHrs instead of the ~5.5-6 hr time-to-summit the schedule shows.",
+     "needs_research": false
+    },
+    {
+     "fact": "Land manager's ranger district",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Alpine Lakes Wilderness)"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District)"},
+      {"field": "emergency.rangerStation", "says": "Skykomish Ranger District, Mt. Baker-Snoqualmie National Forest: (360) 677-2414"}
+     ],
+     "why": "landManager and land_manager name two different ranger districts (Skykomish vs Snoqualmie) for the same forest and route.",
+     "internal_resolution": "emergency.rangerStation agrees with landManager on 'Skykomish Ranger District', so land_manager's 'Snoqualmie Ranger District' looks like the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance (dist_km vs itinerary miles)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "5.3 (≈3.3 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "6.6"}
+     ],
+     "why": "dist_km reads as roughly half of the itinerary's round-trip mileage, consistent with dist_km being recorded one-way while itinerary.miles is round-trip; flagged per the known dist_km convention issue, low priority since the header prefers itinerary miles when present.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "seasonal_guidance optimalWindow vs its own monthBreakdown",
+     "severity": "low",
+     "claims": [
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through October; driest, most stable weeks in Aug-Sept are most reliable"},
+      {"field": "seasonal_guidance.monthBreakdown.July.status", "says": "good"},
+      {"field": "seasonal_guidance.monthBreakdown.October.status", "says": "marginal"}
+     ],
+     "why": "optimalWindow claims a Jul-Oct span, but its own per-month breakdown only rates August/September as 'optimal', with July 'good' and October 'marginal' — the summary range overstates what its own detail supports.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_infinite_beauty",
+   "name": "Infinite Beauty",
+   "area": "Bears Breast Mountain",
+   "contradictions": [
+    {
+     "fact": "Distance to Waptus Lake",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "roughly 12 flat miles one-way to Waptus Lake and a camp near the Waptus River PCT bridge"},
+      {"field": "approach_variants[0].notes", "says": "hike the Waptus River Trail about nine miles to Waptus Lake"}
+     ],
+     "why": "The top-level approach field and the approach_variants notes give different one-way distances (12 mi vs 9 mi) to the same landmark, Waptus Lake.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Crux / summit-block grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.6"},
+      {"field": "rock_grade", "says": "5.6"},
+      {"field": "pitch_detail[1].grade", "says": "5.6+"},
+      {"field": "overview", "says": "finishing on the shared 3-pitch (5.6+) summit block"}
+     ],
+     "why": "The headline/rock grade (5.6) is lower than the summit-block pitch grade documented in pitch_detail and overview (5.6+).",
+     "internal_resolution": "pitch_detail and overview agree the summit block is 5.6+; grade/rock_grade appear to understate the route's crux by one notch.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead access during the 2026 fire closure",
+     "severity": "high",
+     "claims": [
+      {"field": "road.status", "says": "Paved; trailhead open roughly late May through early November."},
+      {"field": "access.closures", "says": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026."}
+     ],
+     "why": "road.status claims the trailhead is open through the whole late-May-to-November window, but access.closures states it is actually closed for a large chunk of that same window (late Aug-Oct 2026) by an active fire closure order.",
+     "internal_resolution": "access.closures is the more specific, dated claim (cites an order number) and is likely correct; road.status appears to be a generic/stale statement that ignores the active closure.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "name": "Southwest Face",
+   "area": "Bears Breast Mountain",
+   "contradictions": [
+    {
+     "fact": "One-way / round-trip distance to Dutch Miller Gap and the climb",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Hike the Middle Fork Snoqualmie / Williams Creek corridor roughly 15 miles to Dutch Miller Gap (~4.8 hrs), then continue to a camp below the SW Face. Total round-trip trail distance for the outing is about 22 miles."},
+      {"field": "waypoints[1].distMi", "says": "11 (one-way, to the summit)"},
+      {"field": "approach_variants[0].distMi", "says": "15"}
+     ],
+     "why": "If Dutch Miller Gap alone is 15 miles one-way (before continuing further to camp and the climb), the round trip cannot be only 'about 22 miles' — that would require roughly 11 miles one-way, which is what waypoints[1].distMi (11) implies. The approach field's own two numbers do not reconcile with each other or with the waypoint distance.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappel rope length requirement",
+     "severity": "low",
+     "claims": [
+      {"field": "rappels", "says": "3 single-rope rappels off the summit block (60m rope, or two 50m ropes for parties of 3+)"},
+      {"field": "detailed_rack", "says": "A single 50m rope is enough for the rappels, but 60m or two 50m ropes let 3-person parties reach belay stances more comfortably."},
+      {"field": "descent_text", "says": "make three single-rope rappels (a single 50m rope is sufficient)"}
+     ],
+     "why": "The rappels field's parenthetical omits that a single 50m rope suffices (stated plainly in detailed_rack, pro_tips, and descent_text), reading as though 60m/double-50m is required.",
+     "internal_resolution": "rappel_detail's one recorded rappel length (25 m) plus three other fields agree 50m is sufficient; rappels' phrasing is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_timeless_treasure",
+   "name": "Timeless Treasure",
+   "area": "Bears Breast Mountain",
+   "contradictions": [
+    {
+     "fact": "Crux / summit-block grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.6"},
+      {"field": "rock_grade", "says": "5.6"},
+      {"field": "pitch_detail[1].grade", "says": "5.6+"},
+      {"field": "beta", "says": "finishing on the same 3-pitch (5.6+) summit block as Infinite Beauty"}
+     ],
+     "why": "Same pattern as its sibling route Infinite Beauty: headline/rock grade (5.6) is lower than the documented summit-block pitch grade (5.6+).",
+     "internal_resolution": "pitch_detail and beta agree the summit block is 5.6+; grade/rock_grade understate it.",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead access during the 2026 fire closure",
+     "severity": "high",
+     "claims": [
+      {"field": "road.status", "says": "Paved; trailhead open roughly late May through early November."},
+      {"field": "access.closures", "says": "Salmon la Sac Trailhead and Salmon La Sac Campground are CLOSED by Okanogan-Wenatchee closure order 06-17-03-2026-36 (Three Queens Fire), effective 24 Aug 2026 through 31 Oct 2026. ... The order also closes the Pacific Crest Trail from Snoqualmie Pass to Deception Pass."}
+     ],
+     "why": "Same trailhead/closure conflict as Infinite Beauty: road.status claims the trailhead is open through the whole late-May-November window while access.closures documents an active fire closure covering late Aug-Oct 2026.",
+     "internal_resolution": "access.closures is the specific, dated claim and is likely correct; road.status looks stale.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bears_breast_mountain_se_mega_slab",
+   "name": "SE Mega Slab",
+   "area": "Bears Breast Mountain",
+   "contradictions": [
+    {
+     "fact": "Distance to summit vs distance to base of slab",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[1].distMi", "says": "12 (labeled as the Summit waypoint)"},
+      {"field": "approach", "says": "about 12 miles one-way and roughly 4.5 hours from the vehicle to the base of the slab"}
+     ],
+     "why": "The approach text says 12 miles reaches only the base of the slab, yet the summit waypoint reuses the same 12 mi figure, even though the summit is roughly 3,000+ additional vertical feet of climbing beyond the base.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+   "name": "East Ridge (Hardscrabble) Route",
+   "area": "Big Snow Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window start month",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep"},
+      {"field": "best_season", "says": "Snow-free travel is most reliable June through September; the road walk itself is passable much of the year, but the upper gully and col can hold snow into early summer."}
+     ],
+     "why": "best_season states June as part of the most-reliable window, a month before the stated season window (Jul-Sep) even begins.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snow_mountain_north_slope_dingford_route",
+   "name": "North Slope (Dingford) Route",
+   "area": "Big Snow Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window start month",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "Jul-Sep (best after gullies/couloirs melt out)"},
+      {"field": "best_season", "says": "Best climbed high summer into early fall (roughly June through September) once the approach gullies and Big Snow Lake basin have shed most snow."}
+     ],
+     "why": "best_season places June inside the best-climbing window, a month before the stated season field (Jul-Sep) begins.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_big_snow_mountain_east_buttress",
+   "name": "East Buttress",
+   "area": "Big Snow Mountain",
+   "contradictions": [
+    {
+     "fact": "First-ascent year",
+     "severity": "medium",
+     "claims": [
+      {"field": "fa", "says": "Jeff Dial and Don Williamson, May 11, 1971"},
+      {"field": "overview", "says": "first climbed with aid at NCCS III, 5.7, A1 in 1972 and later freed at 5.10 by Pete Doorish"},
+      {"field": "aid_grade", "says": "A1 (original 1972 ascent)"}
+     ],
+     "why": "The fa field gives a specific date in 1971, while overview and aid_grade both state the first (aid) ascent was in 1972.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Burnt Boot Peak",
+   "contradictions": [
+    {
+     "fact": "First-ascent year",
+     "severity": "low",
+     "claims": [
+      {"field": "fa", "says": "Don Williamson, Bill Bucher, and Tom Oas, c. 1972"},
+      {"field": "overview", "says": "established in 1971-72"},
+      {"field": "(sibling route) wa_burnt_boot_peak_north_route.descent_text", "says": "a separate, much harder roped North Ridge line on this peak (1971 first ascent by Williamson/Oas/Bucher, three leads of 5th-class granite)"}
+     ],
+     "why": "This route hedges the FA as 'c. 1972' / '1971-72', while the sibling North Route's descent_text asserts a firm '1971' for the same first ascent.",
+     "internal_resolution": "Within the hedge, not a hard contradiction, but the two routes state it with different confidence/values.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "name": "North Route",
+   "area": "Burnt Boot Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5140"},
+      {"field": "loss_ft", "says": "4100"},
+      {"field": "itinerary.days[0].gainFt + days[1].gainFt + days[2].gainFt", "says": "1400 + 2600 + 100 = 4100"}
+     ],
+     "why": "gain_ft (5140) does not match the itinerary's own day-by-day gain total (4100), which does match loss_ft (4100) — expected for a route explicitly described as 'reverse the ascent route.'",
+     "internal_resolution": "loss_ft and the itinerary's daily gainFt values agree on 4100; gain_ft=5140 is the outlier (confirmed by the batch's own detector: gain_ft 5140 vs itinerary gainFt sum 4100).",
+     "needs_research": false
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[0].elev", "says": "2862"},
+      {"field": "approach", "says": "Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft"},
+      {"field": "approach_logistics.trailheadDirection", "says": "elev. ~2,500 ft"}
+     ],
+     "why": "The waypoint records the trailhead at 2,862 ft, about 360 ft higher than the ~2,500 ft stated twice in prose — over the ~250 ft materiality threshold.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "One-way distance from trailhead to summit",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "One-way distance from the trailhead is roughly 3.5 mi (the logged 6.92 km is evidently round trip)"},
+      {"field": "waypoints[6].distMi", "says": "2 (Burnt Boot Peak summit)"},
+      {"field": "itinerary.days[1].miles", "says": "4.3 (round-trip camp-to-summit day)"}
+     ],
+     "why": "The approach text is self-contradictory (6.92 km round trip implies ~2.15 mi one-way, not 3.5 mi) and its '3.5 mi one-way' figure also conflicts with the summit waypoint's cumulative distMi of 2, and with the day-2 itinerary's 4.3 mi round trip (≈2.15 mi one-way).",
+     "internal_resolution": "The waypoint (2 mi) and itinerary day-2 mileage (4.3 mi round trip ≈ 2.15 mi one-way) agree closely; the approach text's '3.5 mi' is the outlier and inconsistent with its own parenthetical.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "name": "Standard Route (Southwest Face)",
+   "area": "Cathedral Rock",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "4.8 (≈3.0 mi)"},
+      {"field": "itinerary.days[0].miles", "says": "8"},
+      {"field": "pro_tips", "says": "Pairs naturally with a Squaw Lake or Peggys Pond overnight to split up the ~8-mile, 3,400-ft round trip"},
+      {"field": "approach", "says": "roughly 2,700-3,000 ft over 4+ miles of trail [one-way, to the base of the climbing]"}
+     ],
+     "why": "dist_km (≈3 mi) is far short of the itinerary's stated 8-mile round trip and the 4+ mile one-way distance described in the approach text, an unreconciled gap of well over 25%. (Confirmed by the batch's own detector: dist_km 4.8 (3.0 mi) vs itinerary miles 8.)",
+     "internal_resolution": "itinerary.miles, pro_tips, and approach all agree on roughly 8 mi round trip / 4+ mi one-way; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Time to reach the summit (summitTimeHrs)",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.summitTimeHrs", "says": "10.5"},
+      {"field": "timing.totalHrs", "says": "10.5"},
+      {"field": "itinerary.days[0].schedule[4]", "says": "time '+5.5 hr', label 'Summit (6,724 ft)' (from a 5:00 AM start)"}
+     ],
+     "why": "The schedule reaches the summit about 5.5 hours after the start, but summitTimeHrs claims 10.5 hours — identical to totalHrs, the full car-to-car time.",
+     "internal_resolution": "totalHrs=10.5 matches the schedule's 'Back at trailhead ~3:30-4:30 PM' and the totalNote's '10-12 hrs car-to-car'; summitTimeHrs appears to duplicate totalHrs by mistake, the same defect pattern seen on wa_bald_eagle_peak_scramble.",
+     "needs_research": false
+    },
+    {
+     "fact": "2026 fire closure of the Cathedral Pass Trail / trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "access.closures", "says": "No route-specific closures found as of mid-2026, but the Cle Elum River corridor has had periodic seasonal restoration-area closures in past years — check current Okanogan-Wenatchee NF alerts before a trip."},
+      {"field": "bivy (entry 'Peggy's Pond and Squaw Lake, Cathedral Pass').notes", "says": "Honest caveat for 2026: the Deception Pass trail and this whole area were inside the Cle Elum Ranger District fire closure through the summer, scheduled to run to the end of October — check before driving out."}
+     ],
+     "why": "The route's own access.closures field claims no route-specific closures exist, while the route's own bivy entry for the exact same trail corridor (Cathedral Pass/Squaw Lake, which this route uses) states it was inside an active 2026 wildfire closure through October.",
+     "internal_resolution": "The bivy note is the more specific, dated statement; access.closures reads as stale/incorrect for the 2026 season.",
+     "needs_research": false
+    },
+    {
+     "fact": "Count of other technical routes on the peak",
+     "severity": "low",
+     "claims": [
+      {"field": "overview", "says": "Three harder roped routes also exist: the Northwest Couloir (Class 3), Southeast Face Chimney (5.6), and Northeast Buttress (5.7)."},
+      {"field": "(sibling route) wa_cathedral_rock_northeast_ridge_2003_variation.grade", "says": "5.9, named 'Northeast Ridge (2003 Variation)' — not in the list of three"}
+     ],
+     "why": "The overview presents the list of other technical routes as exhaustive ('Three harder roped routes also exist'), but a fourth technical route (5.9) exists in the same catalog and is not named.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_southeast_face_chimney",
+   "name": "Southeast Face Chimney",
+   "area": "Cathedral Rock",
+   "contradictions": []
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "name": "Northeast Ridge (2003 Variation)",
+   "area": "Cathedral Rock",
+   "contradictions": [
+    {
+     "fact": "Crux grade vs headline grade",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "5.9"},
+      {"field": "rock_grade", "says": "5.9"},
+      {"field": "pitch_detail[4].grade", "says": "5.9+ (pitch P5)"},
+      {"field": "watch_out[2]", "says": "A short 5.9+ left-leaning crack high on the route is the technical crux above the corner."}
+     ],
+     "why": "The headline/rock grade (5.9) is lower than the documented crux pitch grade (5.9+), which watch_out independently confirms as the route's technical crux.",
+     "internal_resolution": "pitch_detail and watch_out agree the crux is 5.9+; grade/rock_grade understate it by one notch.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

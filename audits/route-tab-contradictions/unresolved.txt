@@ -1,0 +1,31 @@
+wa_abernathy_peak_north_ridge: Approach mileage/gain figures citing the wrong route's trailhead (Scatter Lake)
+wa_abernathy_peak_north_ridge: Which approach/trailhead the North Ridge uses: approach/itinerary/timing say North Creek Trail #413 from the Gilbert (North Creek) trailhead at ~3,660 ft with a mine trail at mile 2; approach_variants/detailed_rack/what_to_bring say every recorded ascent comes via Wolf Creek and Gardner Meadows and the North Creek side is undescribed; the Trailhead waypoint is named Scatter Creek Trailhead at 3,150 ft (coordinates at Scatter Creek) yet its note calls it the start of North Creek Trail #413; bivy says the north ridge is reached from the Scatter Lake basin
+wa_agnes_mountain_west_route: overall grade (Class 3-4) vs the route's own technical crux (5.6-5.8, roped, rappelled)
+wa_agnes_mountain_west_route: route identity: claimed 1936 'West Fork of Agnes Creek' line vs the actual body content describing the Asa Peak NE Ridge/South Ridge line
+wa_agnes_mountain_west_route: Summit elevation: waypoint elev/elevFt and itinerary totalNote say 8,131 ft; schedule says 8,131-8,198; high_point_ft says 8,119; bivy says 8,115
+wa_agnes_mountain_west_route: Overnight permit on the Agnes Creek corridor: access.permit/access.fees say only the first ~2 mi need an NPS permit and the high camps take a free self-issue USFS permit; itinerary.cal and the Fivemile/Swamp Creek bivy permit texts say a North Cascades NP backcountry permit is required for camps along the Agnes Creek/PCT corridor; access.fees calls the NPS permit free while the NPS lists $10/person + $6
+wa_south_face_12: Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass
+wa_argonaut_peak_east_ridge: Pitch count: 8 (pitches field / prose) vs 6 (approach text and pitch_detail rows)
+wa_argonaut_peak_east_ridge: Route name 'Southeast Ridge' vs prose describing the 'East Ridge' from the Argonaut-Colchuck col
+wa_argonaut_peak_east_ridge: Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157
+wa_buck_mountain_south_ridge: Approach/camp line: King Lake + east-ridge notch vs. Buck Creek Pass + Liberty Cap + Louis Creek Basin
+wa_cannon_mountain_south_slopes: Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)
+wa_cashmere_mountain_west_ridge: 'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp
+wa_cashmere_mountain_west_ridge: Recommended start time from high camp — 5:00 AM vs ~6:00 AM
+wa_chalangin_peak_southwest_face: Climbing season: 'May-Jun' header vs. a season description running through September
+wa_colchuck_peak_northeast_couloir: Summit-day length and start time: partner_requirements vs timing/itinerary
+wa_colchuck_peak_holsten_hilden: Commitment grade: IV vs III
+wa_colchuck_peak_holsten_hilden: Season window: Jan-Feb vs a wider Dec-March window
+wa_courtney_peak_scramble: Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)
+wa_courtney_peak_scramble: Wilderness permit: itinerary.cal 'self-issue wilderness permit' vs permit/access.permit 'no wilderness permit required'
+wa_courtney_peak_scramble: Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass
+wa_lichtenberg_mountain_southeast_ridge: Round-trip distance (dist_km vs. stated mileage)
+wa_lichtenberg_mountain_southeast_ridge: Waypoint list includes a landmark from a different trail/approach
+wa_lichtenberg_mountain_se_route: Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint
+wa_luahna_peak_east_slopes: Total round-trip distance
+wa_luahna_peak_east_slopes: Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)
+wa_mount_berge_southwest_route: Waypoint distance jump at the summit
+wa_mount_mastiff_south_route: Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi
+wa_mount_mastiff_south_route: Line of the route: descent_text/beta/itinerary go via the Crescent Lake basin and ~3.5 mi of Nason Ridge Trail, but waypoints put the Mastiff boot path ~1 mi past the Merritt junction
+wa_union_peak_se_route: Car-to-car distance: waypoint distMi (summit 2.7 mi one way) and itinerary 5.4 mi round trip look too long for the geometry
+wa_union_peak_se_route: Parking pass: access.fees / access.passRequired say no Northwest Forest Pass, while permit, the Trailhead waypoint note and the Smithbrook bivy entry say one is required

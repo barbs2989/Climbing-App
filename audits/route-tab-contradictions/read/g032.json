@@ -1,0 +1,323 @@
+{
+ "batches": ["b125.json", "b126.json", "b127.json", "b128.json"],
+ "routes_read": 18,
+ "routes": [
+  {
+   "id": "wa_doorway_flake",
+   "name": "Doorway Flake",
+   "area": "South Face",
+   "contradictions": [
+    {
+     "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[1] (type=Topout, elev 3249)", "says": "name: 'Grassy saddle (South Face routes)', note: 'Shares the same ~3 hr approach as the wall's other South Face routes.'"},
+      {"field": "waypoints[2] (type=Base/bivy, elev 3249)", "says": "name: 'South Face grassy saddle'"}
+     ],
+     "why": "Two waypoint entries at identical coordinates/elevation (3,249 ft) label the same grassy saddle two conflicting ways — 'Topout' (implying the top of the climb) and 'Base/bivy' (the start) — when approach_variants text confirms this is where the approach ENDS and climbing BEGINS, not a topout.",
+     "internal_resolution": "'Base/bivy' matches approach_variants' description (the saddle is reached ~3 hrs in, before climbing starts); 'Topout' appears mislabeled.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_concerto_in_c_for_drill_and_hammer",
+   "name": "Concerto in C for Drill and Hammer",
+   "area": "South Face",
+   "contradictions": [
+    {
+     "fact": "DESCENT field describes glacier/crevasse terrain on a 14-pitch rock rappel route",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Retrace the ascent route for descent, utilizing established snow/ice slopes or scramble terrain. Watch for crevasse hazards and falling rock. Allow ample time for safe descent."},
+      {"field": "descent_text", "says": "Rappel the line of ascent on fixed chain/bolt anchors; parties typically rappel to the Pitch 13 chain anchor near the summit before continuing down."},
+      {"field": "rappels", "says": "Rappel the line of ascent on its fixed Fixe chain anchors; some rappels are a full 60 m"},
+      {"field": "bail", "says": "Retreat is via the route's own rappel line — there is no separate walk-off, so descent options mid-route are limited to lowering/rappelling from the nearest fixed anchor below."}
+     ],
+     "why": "'descent' describes generic snow/ice/crevasse/scramble terrain appropriate to a glaciated mountaineering route, not this dry granite slab climb; it flatly contradicts descent_text, rappels, and bail, which all agree the descent is rappelling bolted/chain anchors. Because the page renders the LONGER of descent/descent_text and 'descent' (180 chars) is longer than descent_text (152 chars) here, the contaminated glacier/crevasse text is the one that would actually display, hiding the correct rappel instructions.",
+     "internal_resolution": "descent_text, rappels, and bail all agree (rappel via chain/bolt anchors on a rock wall); 'descent' looks like contaminated boilerplate copied from a glacier mountaineering route and should read like descent_text.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_primal_scream",
+   "name": "Primal Scream",
+   "area": "South Face",
+   "contradictions": []
+  },
+  {
+   "id": "wa_skeena26",
+   "name": "Skeena26",
+   "area": "South Face",
+   "contradictions": [
+    {
+     "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[1] (type=Topout, elev 3249)", "says": "name: 'Grassy saddle (South Face routes)', note: 'Brilliant white slab starting near the saddle, mostly 5.4-5.6 with a 5.9 opening pitch.'"},
+      {"field": "waypoints[2] (type=Base/bivy, elev 3249)", "says": "name: 'South Face grassy saddle'"}
+     ],
+     "why": "Same saddle, same coordinates/elevation, two conflicting waypoint types ('Topout' vs 'Base/bivy') for what is actually the start of the climb.",
+     "internal_resolution": "'Base/bivy' is the accurate label; 'Topout' appears mislabeled (same pattern as Doorway Flake and Western Dihedral on this wall).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_miracle_ramps",
+   "name": "Miracle Ramps",
+   "area": "South Face",
+   "contradictions": []
+  },
+  {
+   "id": "wa_natures_way",
+   "name": "Nature's Way",
+   "area": "South Face",
+   "contradictions": []
+  },
+  {
+   "id": "wa_western_dihedral",
+   "name": "Western Dihedral",
+   "area": "South Face",
+   "contradictions": [
+    {
+     "fact": "Grassy saddle waypoint typed both 'Topout' and 'Base/bivy'",
+     "severity": "low",
+     "claims": [
+      {"field": "waypoints[1] (type=Topout, elev 3249)", "says": "name: 'Grassy saddle (South Face routes)', note: 'Climbs the obvious reddish right-facing corner visible from the saddle; crux liebacking/stemming and a finger traverse on pitches 2-3.'"},
+      {"field": "waypoints[2] (type=Base/bivy, elev 3249)", "says": "name: 'South Face grassy saddle'"}
+     ],
+     "why": "Same saddle, same coordinates/elevation, two conflicting waypoint types for what is actually the start of the climb.",
+     "internal_resolution": "'Base/bivy' is the accurate label; 'Topout' appears mislabeled.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_waterfall_buttress",
+   "name": "Waterfall Buttress",
+   "area": "Waterfall Basin",
+   "contradictions": []
+  },
+  {
+   "id": "wa_roofer_madness",
+   "name": "Roofer Madness",
+   "area": "Waterfall Basin",
+   "contradictions": [
+    {
+     "fact": "gain_ft implies a 4,200 ft climb for a 2-pitch, 49-foot sport route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "4200"},
+      {"field": "length_m", "says": "15"},
+      {"field": "overview", "says": "A short, bolt-protected 2-pitch 5.11+ sport testpiece on the downhill side of the Martha's Place bivy boulder..."},
+      {"field": "itinerary", "says": "Usually climbed as a short add-on before/after approaching to Roan Wall, or while based at the Martha's Place bivy, rather than as a standalone full-day objective."}
+     ],
+     "why": "gain_ft (4,200 ft) is wildly inconsistent with a 15 m (49 ft), 2-pitch sport route that the route's own text calls a short add-on rather than a full-day objective; even the ~1,560 ft approach-only gain into the basin plus the tiny route doesn't approach 4,200 ft. This number renders prominently as the header's Gain stat and would badly overstate the route's effort.",
+     "internal_resolution": "gain_ft appears to be a data error; the route's own overview and itinerary describe it as short and low-commitment.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_flight_of_the_falcon",
+   "name": "Flight of the Falcon",
+   "area": "Waterfall Basin",
+   "contradictions": [
+    {
+     "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.approachTimeHrs", "says": "6"},
+      {"field": "waypoints[1].note (Waterfall Basin, 'base of walls')", "says": "~3-3.5 hr approach via old roadbed, streambed, and a Squire Creek ford into the basin below Three Fingers' east face."},
+      {"field": "approach_variants[0].hours", "says": "2"},
+      {"field": "watch_out[0]", "says": "The approach is long (6+ hours) and involves route-finding through brush, boulders, and a creek crossing."},
+      {"field": "itinerary", "says": "Given the 6+ hour approach, parties typically either commit to a single very-early (pre-dawn) push..."}
+     ],
+     "why": "timing/itinerary/watch_out agree the approach is 6+ hours, but the approach_variants entry says 2 hours and the waypoint marking the 'base of walls' (i.e., end of the approach) says 3-3.5 hours — a party planning a turnaround time off the wrong figure could be off by 2.5-4 hours.",
+     "internal_resolution": "timing.approachTimeHrs, itinerary, and watch_out (three independent fields) agree on 6+ hours; the approach_variants entry and waypoint note look like shared Waterfall-Basin boilerplate reused verbatim from the other, closer routes without being updated for this route's more remote objective (Salish Peak, beyond the basin).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_roan_wall_center_stage",
+   "name": "Roan Wall - Center Stage",
+   "area": "Waterfall Basin",
+   "contradictions": []
+  },
+  {
+   "id": "wa_roan_wall_stage_right",
+   "name": "Roan Wall - Stage Right",
+   "area": "Waterfall Basin",
+   "contradictions": [
+    {
+     "fact": "Pitch count (10) vs itemized ROUTE BREAKDOWN (8 pitches)",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "10"},
+      {"field": "overview", "says": "A 10-pitch, roughly 1,400-foot Grade III route up the rightward slab of Roan Wall..."},
+      {"field": "pitch_detail", "says": "Only 8 entries, numbered P1 through P8"}
+     ],
+     "why": "The route states 10 pitches in both 'pitches' and the overview prose, but the itemized ROUTE BREAKDOWN only lists 8 numbered pitches, so a climber counting rows in that section would see 2 fewer pitches than the route claims to have.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_dome_peak_indian_summer",
+   "name": "Indian Summer",
+   "area": "Dome Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_dome_peak_dome_glacier",
+   "name": "Dome Glacier",
+   "area": "Dome Peak",
+   "contradictions": [
+    {
+     "fact": "dist_km (~10 mi) vs itinerary round-trip total (29 mi)",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "16.1"},
+      {"field": "itinerary.totalNote", "says": "A 3-day round trip is the norm: ~29 miles and roughly 7,900-8,400 ft of cumulative gain..."},
+      {"field": "itinerary.days[*].miles", "says": "12 + 5 + 12 = 29 miles"}
+     ],
+     "why": "dist_km (16.1 km ≈ 10.0 mi) is roughly a third of the route's own itinerary round-trip total (29 mi), even allowing for a one-way vs round-trip reading (10x2=20, still well short of 29).",
+     "internal_resolution": "The itinerary (detailed day-by-day miles/gain that match the timing.sectionBreakdown hours exactly) is the more reliable figure; dist_km appears stale or wrong.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_elephant_head_standard",
+   "name": "Standard Route",
+   "area": "Elephant Head",
+   "contradictions": [
+    {
+     "fact": "rappels field says 0 while descent_text describes a possible rappel",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "0"},
+      {"field": "descent_text", "says": "...a single short, awkward rock step some parties encounter low on the ridge or near the summit rocks that a few climbers choose to rappel rather than downclimb... if used, this is a single-pitch rappel (30-60 ft) off a natural anchor a party builds themselves..."}
+     ],
+     "why": "The RAPPELS field flatly states zero rappels, but the route's own DESCENT text describes a conditional single rappel some parties use, so a climber reading only the rappels count would not expect to need any rope work for descent.",
+     "internal_resolution": "rappels=0 likely means no rappel is standard/required (it's optional per descent_text), but the flat '0' value doesn't communicate that nuance.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km appears one-way while itinerary total is round-trip, presented as the same 'distance'",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "23.35"},
+      {"field": "itinerary.days[*].miles", "says": "11.5 + 6 + 11.5 = 29 miles"},
+      {"field": "itinerary.totalNote", "says": "A strenuous ~29-mile round trip..."}
+     ],
+     "why": "dist_km (23.35 km ≈ 14.5 mi) is almost exactly half the itinerary's round-trip total (29 mi) — consistent with dist_km being one-way, but the page could present both as if describing the same quantity.",
+     "internal_resolution": "itinerary is round-trip; dist_km appears to be one-way (14.5 x 2 ≈ 29).",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "name": "Cool Glacier / Gerdine Ridge",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "gain_ft/loss_ft (9,400/9,400) vs itinerary's own totals (~7,750/7,800)",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "9400"},
+      {"field": "loss_ft", "says": "9400"},
+      {"field": "itinerary.totalNote", "says": "A 3-day trip for most parties (~30-32 miles RT, ~7,650-7,750 ft gain)..."},
+      {"field": "itinerary.days[*].gainFt", "says": "5100 + 2650 + 0 = 7750"},
+      {"field": "itinerary.days[*].lossFt", "says": "100 + 2650 + 5050 = 7800"}
+     ],
+     "why": "gain_ft/loss_ft are roughly 20% higher than both the route's own itinerary day-by-day sums (~7,750/7,800 ft) and its own totalNote (~7,650-7,750 ft gain) — the header Gain stat and the itinerary's TOTAL row would show materially different numbers for the same trip.",
+     "internal_resolution": "The itinerary (day-by-day figures that match timing.sectionBreakdown hours exactly) is self-consistent and more likely correct; gain_ft/loss_ft appear inflated.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km (~17 mi) vs itinerary round-trip total (~30-32 mi)",
+     "severity": "medium",
+     "claims": [
+      {"field": "dist_km", "says": "27.4"},
+      {"field": "itinerary.totalNote", "says": "~30-32 miles RT"},
+      {"field": "itinerary.days[*].miles", "says": "11 + 7 + 12 = 30"}
+     ],
+     "why": "dist_km (27.4 km ≈ 17.0 mi) is roughly half the route's own itinerary round-trip total.",
+     "internal_resolution": "itinerary is the more detailed, self-consistent figure; dist_km appears low/stale.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "name": "Sitkum Glacier",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Grade II glacier climb"},
+      {"field": "commitment", "says": "I-II"},
+      {"field": "alpine_grade", "says": "III"}
+     ],
+     "why": "Three fields state three different commitment grades for the same standard route. Since this route has no rock_grade or ice_grade, the header grade pill (which checks rock_grade → ice_grade → alpine_grade → grade → commitment) would show 'III' from alpine_grade, while the grade and commitment fields both suggest something easier (I-II) — and the overview itself calls it a non-technical route with 'no technical crux.'",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "dist_km (~9 mi) vs itinerary round-trip total (~21-25 mi)",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "14.5"},
+      {"field": "itinerary.totalNote", "says": "A 4-day standard trip (~21-25 miles RT, 8,210 ft gain)..."},
+      {"field": "itinerary.days[*].miles", "says": "7 + 2 + 7 + 9 = 25"}
+     ],
+     "why": "dist_km (14.5 km ≈ 9.0 mi) is little more than a third of the route's own itinerary total.",
+     "internal_resolution": "itinerary (four detailed days matching timing.sectionBreakdown) is more reliable; dist_km appears stale.",
+     "needs_research": false
+    },
+    {
+     "fact": "Structured waypoints/road/approach_logistics describe a different trailhead than the approach/itinerary prose",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "From the White Chuck River Trailhead (2,350 ft, end of White Chuck River Road/FR 23), follow the White Chuck River Trail (FST 643) upstream... At about 5.5 miles reach the former Kennedy Hot Springs/Kennedy Guard Station area..."},
+      {"field": "itinerary.days[0].note", "says": "Follow the White Chuck River Trail past Kennedy Hot Springs to a campsite near the Sitkum Creek/PCT junction."},
+      {"field": "waypoints[0]", "says": "name: 'North Fork Sauk River Trailhead', elev 2100, lat/lng 48.0579,-121.2882"},
+      {"field": "waypoints[1]", "says": "name: 'White Pass (PCT)', elev 5900"},
+      {"field": "waypoints[2]", "says": "name: 'Boulder Basin Camp', elev 6200"},
+      {"field": "road.name", "says": "North Fork Sauk Road / Sloan Creek Road (FR 49)"},
+      {"field": "approach_logistics.trailhead", "says": "North Fork Sauk River Trailhead"}
+     ],
+     "why": "The approach prose and itinerary describe the primary approach as starting at the White Chuck River Trailhead via Kennedy Hot Springs, but the structured waypoints list, road field, and approach_logistics all instead describe the North Fork Sauk Trailhead / White Pass / Boulder Basin approach (which matches the OTHER Glacier Peak route in this batch, Cool Glacier/Gerdine Ridge) with no mention of White Chuck or Kennedy Hot Springs. A climber navigating by the WAYPOINTS list or map pins would drive to and hike from a different trailhead than the one described in the approach narrative.",
+     "internal_resolution": "approach and itinerary.days[0] (which independently both mention Kennedy Hot Springs) are this route's own written narrative; waypoints/road/approach_logistics appear to have been copied from the Cool Glacier/Gerdine Ridge route's North Fork Sauk approach.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_frostbite_ridge",
+   "name": "Frostbite Ridge",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "Two approach_variants both flagged as the primary approach",
+     "severity": "low",
+     "claims": [
+      {"field": "approach_variants[0].primary (White Chuck River and Kennedy Ridge)", "says": "true"},
+      {"field": "approach_variants[2].primary (North Fork Sauk to White Pass, then north)", "says": "true"}
+     ],
+     "why": "Two different approach options are each flagged primary:true, which could render as two competing 'the' recommended approaches rather than one clear primary plus alternates.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}
