@@ -546,7 +546,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     climbers carry no availability is a product argument, not evidence of a defect. Recorded so it is
     not re-derived as one — and note the five `availability:` fields that look like counter-examples
     are **guides**, where it is a STRING (*"Booking ~2 weeks out"*) that `availOf` correctly refuses.
-  - Proven by `scripts/oneoff/probe-partner-filters-say-what-they-narrow.mjs` — 23 assertions,
+  - Was proven by `probe-partner-filters-say-what-they-narrow` (deleted 2026-09-25 with the caption it checked) — 23 assertions,
     **source-only**, and the reason is stated rather than implied: the real-accounts block is gated on
     `USE_DB && DB_UID`, so reaching it means stubbing `./lib/supabase` to flip a module constant AND
     standing up PartnerSearch's full prop set, which is far more than a copy claim is worth.
