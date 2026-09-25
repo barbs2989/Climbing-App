@@ -43,6 +43,16 @@ function sql(text, tries = 4) {
   }
 }
 
+// Retries a NETWORK failure ("fetch failed" — seen on three states across two runs) and never an
+// HTTP error, which is a real answer. An insert that landed before the connection dropped fails its
+// retry on the primary key and the run stops loudly; a re-run then finds the row as existing.
+async function fetchRetry(url, opts, tries = 4) {
+  for (let i = 0; ; i++) {
+    try { return await fetch(url, opts); }
+    catch (e) { if (i >= tries - 1) throw e; await new Promise(r => setTimeout(r, 3000 * (i + 1))); }
+  }
+}
+
 // Minimal RFC-4180 CSV parser (quoted fields, doubled quotes, commas inside quotes).
 function parseCsv(text) {
   const rows = []; let row = [], f = "", inq = false;
@@ -224,7 +234,7 @@ async function runState(st) {
   // Areas first, parents before children (planned order already is), one at a time so the path
   // trigger sees each parent; each read back before a route is pointed at it.
   for (const a of newAreas) {
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/areas`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(a) });
+    const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/areas`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(a) });
     const txt = await r.text();
     if (!r.ok || JSON.parse(txt).length !== 1) throw new Error(`${st.name}: area ${a.id} insert failed ${r.status} ${txt.slice(0, 200)}`);
   }
@@ -235,13 +245,13 @@ async function runState(st) {
   }
 
   for (const { id, p } of patches) {
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(p) });
+    const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}`, { method: "PATCH", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(p) });
     const got = r.ok ? JSON.parse(await r.text()) : null;
     if (!got || got.length !== 1) throw new Error(`${st.name}: patch ${id} did not land (${r.status})`);
   }
   for (let i = 0; i < inserts.length; i += 200) {
     const batch = inserts.slice(i, i + 200);
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(batch) });
+    const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(batch) });
     const txt = await r.text();
     if (!r.ok) throw new Error(`${st.name}: insert failed ${r.status} ${txt.slice(0, 300)}`);
     if (JSON.parse(txt).length !== batch.length) throw new Error(`${st.name}: insert count mismatch`);
