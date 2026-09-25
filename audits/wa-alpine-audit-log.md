@@ -27576,3 +27576,104 @@ intended); `check:sql` ran cleanly this time (4 write targets across 8 statement
 live, no destructive-delete risk) aside from its routine paste-size WARN on this file's length
 (6.4 KB against its 4 KB soft limit) — a human pasting this into the SQL Editor should split it
 into the ~1.5 KB chunks the tool suggests rather than pasting it whole.
+
+## 2026-09-25 — Pass 6, Batch 339
+
+Audited (next 8 alphabetically after batch 338, index 347→355 of 702 in-scope):
+`wa_mount_baker_boulder_park_cleaver`, `wa_mount_baker_cockscomb_ridge`,
+`wa_mount_baker_coleman_deming`, `wa_mount_baker_coleman_headwall`,
+`wa_mount_baker_easton_glacier`, `wa_mount_barnes_scramble`, `wa_mount_berge_east_ridge`,
+`wa_mount_bigelow_tribute_to_richard`.
+
+This run's research agent's page fetches (Wikipedia, SummitPost, Peakbagger,
+CascadeClimbers, WTA, fs.usda.gov) were all egress-blocked; only WebSearch snippets came
+through, and a spot-check found those snippets self-contradictory on at least one fact (two
+searches gave the Heliotrope Ridge trailhead elevation as both "~3,700 ft" and "4,978-5,899
+ft"). Every fix below was therefore re-verified independently — against this app's own live
+rows (sibling routes sharing the same trailhead, a route's own gpx track) rather than taken
+on the agent's word — before being written as SQL; anything that rested only on a
+search-snippet claim was downgraded to flagged, not fixed.
+
+**Fixed (4):**
+- `wa_mount_baker_cockscomb_ridge` had a contaminated trailhead — the same shape as batch
+  325's Glacier Peak fix. `road` and waypoints[1]-[3] all describe the real approach
+  (Glacier Creek Road/FR-39 to Heliotrope Ridge, then up to the Coleman-Roosevelt col), and
+  form a smooth, monotonic lat/lng progression toward the summit. But waypoints[0] and
+  `approach_logistics` instead named Artist Point / the Ptarmigan Ridge Trailhead — a real
+  Baker trailhead, but for the mountain's east side, roughly 13 km from Heliotrope Ridge
+  Camp and on the wrong side of the summit's own longitude to connect to it. Swapped in the
+  Heliotrope Ridge Trailhead's coordinates, taken directly from this route's own sibling
+  `wa_mount_baker_coleman_headwall` (identical trailhead) — restores the monotonic chain.
+  Also fixed: `road.status`/`driveNote` still described the FR-39/Glacier Creek Road washout
+  as an open, in-progress closure; the sibling Coleman Headwall row already carries the
+  corrected text confirming the Forest Service's 20 August 2026 reopening announcement
+  (Cascadia Daily News, cross-checked by Whatcom News and the Spokesman-Review) — updated to
+  match.
+- `wa_mount_baker_coleman_deming` had the identical stale Glacier Creek Road closure text in
+  three separate fields (`road.status`, `approach_logistics.seasonalNotes`, and
+  waypoints[0]'s own `directions` string), all still saying the road was closed through
+  October 2026. Updated all three to the same 20 August 2026 reopening already correctly
+  recorded on the sibling Coleman Headwall row.
+- `wa_mount_baker_boulder_park_cleaver`'s waypoints[1] ("High Camp below Boulder-Park
+  Cleaver," 48.79/-121.84/8,000 ft) and its 3-point `gpx` line sit northwest of the summit —
+  on the opposite side of the mountain from both this route's own trailhead (Boulder Ridge,
+  east side) and the Boulder/Park glaciers the camp is named for (roughly 48.77-48.79/-121.80
+  per Wikipedia). Removed rather than replaced — this row has no record of the camp's real
+  position, and guessing coordinates would mean fabricating data. Trailhead and summit
+  waypoints, consistent with the sibling Boulder Glacier route sharing the same trailhead,
+  are untouched.
+- `wa_mount_baker_easton_glacier`'s waypoints[1] ("Sandy Camp / Railroad Grade Camp",
+  48.7985/-121.88/5,900 ft) is 5.2 km from the nearest point on this route's own 795-point
+  `gpx` track (verified directly by computing the distance from the stored point to every
+  track vertex) — the real Railroad Grade high camp is on the south side, and this pin sits
+  in Heliotrope Ridge (north side) territory instead. Removed for the same reason as the
+  Boulder-Park Cleaver fix above.
+
+**Flagged for human review (not fixed) — 8 items, see the SQL file's trailing comment block
+for the full reasoning on each:**
+- `wa_mount_baker_coleman_headwall`: a prior read of this row's waypoints[0].elev (3,437 ft)
+  as wrong turned out to be a false alarm — it falls inside this row's own stated "roughly
+  3,400 to 3,700 ft" range. Also: `alpine_grade` "Grade IV" contradicts this row's own
+  `grade` "III+".
+- `wa_mount_baker_cockscomb_ridge`: waypoints[2]/[3] positions (possible small offset vs.
+  the Roosevelt Glacier's own coordinate); unconfirmed `fa`; `commitment` "I" vs.
+  `alpine_grade` "Grade II"; a descent-route mismatch against Mountain Project.
+- `wa_mount_baker_boulder_park_cleaver`: unconfirmed `fa`; same commitment/alpine_grade
+  mismatch as Cockscomb Ridge.
+- `wa_mount_baker_easton_glacier`: `alpine_grade` "Grade I" vs. its own `grade` "Grade II
+  glacier climb".
+- `wa_mount_barnes_scramble` (Elwha Basin Scramble): a much larger contamination than the
+  single-waypoint fixes above — `gpx` is the Elwha River trail from Whiskey Bend and never
+  gets within 6.4 km of the summit, while `waypoints`/`approach_logistics`/`beta`/
+  `pitch_detail` all describe a Sol Duc/Heart Lake/High Divide approach, and `bivy` lists
+  Graves Creek/Enchanted Valley camps belonging to neither. waypoints[3] ("The Catwalk")
+  also breaks the route's own distMi ordering, sitting west of an earlier waypoint on a
+  route that's otherwise heading east. Too tangled to safely partial-fix without a human
+  picking which approach the row's other prose actually belongs to. `high_point_ft` and the
+  summit coordinate are correct and untouched. Also flagged: an access-closure date
+  ("since Sept 2024") that may be a misread "as of" date — nps.gov is egress-blocked here
+  and couldn't be read directly to check.
+- `wa_mount_berge_east_ridge`: `high_point_ft` 7,948 (matching its area row) vs. conflicting
+  outside figures (~7,951, ~7,953) with no way to tell which a definitive source would back —
+  sources disagree, so left alone per this audit's own rule against guessing.
+- `wa_mount_bigelow_tribute_to_richard`: `beta` claims "No pitch count, protection details,
+  or topo are available," contradicting this row's own detailed 4-entry `pitch_detail`; a
+  three-way small distance disagreement on the Upper Eagle Lake junction; `access.fees`/
+  `passRequired` are null though the Forest Service names an accepted pass at this
+  trailhead (a missing value, not a wrong one).
+
+**Checked and confirmed correct, not touched:** Mount Baker's summit elevation (10,781 ft,
+Grant Peak) on all five Baker routes in this batch. Mount Berge's FR 6200 closure beyond
+Atkinson Flat (effective 20 May 2026 through 31 Dec 2027) and its East Ridge route
+description (Grade III 5.8, Buck Creek approach, Beckey-recommended) both check out. Mount
+Bigelow's `high_point_ft` (8,449 ft) and first-ascent date/grade (23 Aug 2011, 5.10c, East
+Face) both check out, as does its "no wilderness permit" access claim.
+
+`last_processed_id` advanced to `wa_mount_baker_easton_glacier`; 347 in-scope routes remain
+unaudited this pass. No `.env`/`.env.local` this run (fresh clone, read-only anon key only,
+as intended); `check:sql` ran cleanly (8 write targets across 10 statements, all ids live, no
+DELETE statements) after rephrasing two JSON string values that contained a literal
+semicolon, which the checker's plain-text statement-splitter treats as a statement
+terminator even inside a quoted string, aside from the routine paste-size WARN on this
+file's length (13.8 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before
+pasting into the SQL Editor.
