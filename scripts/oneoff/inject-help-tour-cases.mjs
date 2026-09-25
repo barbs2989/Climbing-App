@@ -22,6 +22,7 @@ import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
+// The tour entries are HELP_FEATS in core (#1881): Help renders them, and each tab's "?" reads them too.
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const APP = path.join(ROOT, "ClimbMatch.jsx");
 const HTML = path.join(ROOT, "index.html");
@@ -32,7 +33,7 @@ const CASES = [
   { name: "1 my-crew", edits: [[CORE, '["","Crew","', '["","My Crew","']], expect: "fail", why: "the real defect: the tour called the Crew tab 'My Crew'" },
   { name: "2 no-home", edits: [[CORE, '["","Home","', '["","Home2","']], expect: "fail", why: "the real defect: Home, the landing tab, had no entry" },
   { name: "3 nav-rename", edits: [[APP, 'label:"Ranks"', 'label:"Leaderboards"'], [HTML, "<div><b></b>Ranks</div>", "<div><b></b>Leaderboards</div>"]], expect: "fail", why: "a tab renamed in NAV must drag the tour with it (boot shell renamed too, so only section 2 can fail)" },
-  { name: "4 anchor", edits: [[CORE, "const feats=[", "const featsX=["]], expect: "fail", why: "a renamed tour must fail closed, never pass" },
+  { name: "4 anchor", edits: [[CORE, "const HELP_FEATS=[", "const HELP_FEATSX=["]], expect: "fail", why: "a renamed tour must fail closed, never pass" },
   { name: "5 extra-section", edits: [[CORE, '["","Groups","', '["","Weather","Not a tab.",["a."]],["","Groups","']], expect: "pass", why: "MUST STAY SILENT — a non-tab section is legitimate" },
 ];
 

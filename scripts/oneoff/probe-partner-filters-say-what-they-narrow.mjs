@@ -21,9 +21,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const src = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const src = readCoreSource(ROOT);
 let pass = 0, fail = 0;
 const ok = (c, m) => { if (c) { pass++; console.log("  ok    " + m); } else { fail++; console.log("  FAIL  " + m); } };
 

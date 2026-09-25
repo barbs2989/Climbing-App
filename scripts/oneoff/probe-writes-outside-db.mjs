@@ -17,6 +17,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readAppFile } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx",
@@ -75,7 +76,7 @@ let grand = 0;
 const rows = [];
 for (const f of FILES) {
   let src;
-  try { src = fs.readFileSync(path.join(ROOT, f), "utf8"); } catch { continue; }
+  try { src = readAppFile(path.join(ROOT, f)); } catch { continue; }
   for (const s of SURFACES) {
     s.re.lastIndex = 0;
     let m;

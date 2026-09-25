@@ -27,12 +27,17 @@ import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { readCoreSource, coreModuleEntry } from "./lib/guard-sources.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { parse } from "@babel/parser";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+
+// Bundle an entry that re-exports core AND the components moved out of it (lib/ default exports),
+// so `mod.<Component>` resolves exactly as it did before they moved.
+const __coreEntry = coreModuleEntry(ROOT);
+process.on("exit", __coreEntry.cleanup);
 let failed = 0;
 const ok = (m) => console.log("  ok    " + m);
 const bad = (m) => { failed++; console.log("  FAIL  " + m); };
@@ -215,7 +220,7 @@ const cacheDir = path.join(ROOT, "node_modules", ".cache");
 fs.mkdirSync(cacheDir, { recursive: true });
 const out = path.join(cacheDir, `policy-claims-${process.pid}.mjs`);
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync("npx", ["esbuild", __coreEntry.path,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic", "--loader:.jsx=jsx",
     `--define:import.meta.env=${JSON.stringify({ VITE_USE_DB: "false" })}`,
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",

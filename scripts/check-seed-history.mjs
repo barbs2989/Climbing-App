@@ -233,7 +233,7 @@ if (!demo.includes(MARK)) {
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { GiveVouch } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(friend) {
@@ -245,9 +245,12 @@ export function render(friend) {
   const stub = (useDb) => ({
     name: "stub-supabase",
     setup(b) {
-      b.onResolve({ filter: /lib\/supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
+      // `./lib/supabase` from core and `./supabase` from inside lib/ — GiveVouch moved to lib/ to
+      // load lazily, so matching only the first spelling silently left the picker in seed mode.
+      b.onResolve({ filter: /(^|\/)supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
       b.onLoad({ filter: /.*/, namespace: "sb" }, () => ({
-        contents: `export const USE_DB = ${useDb}; export const supabase = null;`, loader: "js",
+        // Every export lib/supabase.js has: the stub now also answers lib/auth.js's import.
+        contents: `export const USE_DB = ${useDb}; export const supabase = null; export const RECOVERY_LINK = false;`, loader: "js",
       }));
     },
   });

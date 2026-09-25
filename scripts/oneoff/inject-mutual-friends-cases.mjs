@@ -209,7 +209,7 @@ const CASES = [
     expect: "fail", must: /NOT NULL DEFAULT true/,
   },
   {
-    file: "ClimbMatchCore.jsx", name: "policy-stops-naming-the-control",
+    file: "lib/LegalView.jsx", name: "policy-stops-naming-the-control",
     why: "the Privacy Policy discloses the exposure and not the switch -- the half-told version. " +
          "check:policy-claims cannot see it: that guard asks whether a surface claims a control the " +
          "app LACKS, never whether a control the app HAS goes undescribed",

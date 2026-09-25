@@ -39,7 +39,7 @@ if (LABELS.length < 5) { console.error(`ANCHOR LOST — NAV parsed only ${LABELS
 const entry = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { Help } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import Help from ${JSON.stringify(path.join(ROOT, "lib", "Help.jsx"))};
 import fs from "node:fs";
 const html = renderToStaticMarkup(React.createElement(Help, { onClose: () => {}, onReplay: () => {} }));
 fs.writeFileSync(${JSON.stringify(MARKUP)}, html);

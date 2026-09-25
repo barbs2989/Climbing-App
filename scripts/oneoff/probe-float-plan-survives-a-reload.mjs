@@ -24,6 +24,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
 import { installIdbShim } from "../lib/idb-shim.mjs";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 installIdbShim();
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
@@ -137,7 +138,7 @@ is(cleared && cleared.form.contact === "" && cleared.form.ret === "21:00",
 // site, because that changes no identifier: `audit:silent-reverts` says in its own closing caveat
 // that it cannot see a change of that shape, and the form would silently go back to losing eleven
 // fields with every assertion here green. Four links, each asserted where it lives.
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource(ROOT);
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
 for (const [label, hay, needle] of [
@@ -148,7 +149,7 @@ for (const [label, hay, needle] of [
   ["SafetyTab accepts who/scope", core, "function SafetyTab({members,meAnswers,onComplete,who,scope})"],
   ["SafetyTab forwards them to FloatPlan", core, "<FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={scope}/>"],
   ["App scopes the crew plan by CREW", app, 'scope={safetyCrew?"crew:"+safetyCrew:null}'],
-  ["App hands RouteDetail the account", app, "<RouteDetail key={selRoute.id} who={uid}"],
+  ["App hands RouteDetail the account", app, "key={selRoute.id} who={uid}"],
   ["RouteDetail destructures who", rd, "function RouteDetail({route,who,presence,"],
   ["RouteDetail scopes its plan by ROUTE", rd, 'who={who} scope={route.id?"route:"+route.id:null}'],
 ]) {

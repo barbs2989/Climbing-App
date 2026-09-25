@@ -18,6 +18,7 @@
 import fs from "fs";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readAppFile } from "../lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 // (list identifier -> the flag that says its read failed). Hand-specified: deriving this needs
@@ -52,7 +53,7 @@ const isNullish = (n) =>
   (n.type === "JSXFragment" && (!n.children || !n.children.length));
 
 for (const f of FILES) {
-  const src = fs.readFileSync(f, "utf8");
+  const src = readAppFile(f);
   const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
   traverse(ast, {
     MemberExpression(p) {

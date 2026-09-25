@@ -35,7 +35,8 @@ const entry = path.join(tmp, "entry.js"), out = path.join(tmp, "bundle.mjs");
 process.on("exit", () => { try { fs.rmSync(tmp, { recursive: true, force: true }); } catch {} });
 
 fs.writeFileSync(entry,
-  `export { Inbox, CLIMBERS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n`);
+  `export { CLIMBERS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};\n` +
+  `export { default as Inbox } from ${JSON.stringify(path.join(ROOT, "lib", "Inbox.jsx"))};\n`);
 try {
   execFileSync("npx", ["esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",

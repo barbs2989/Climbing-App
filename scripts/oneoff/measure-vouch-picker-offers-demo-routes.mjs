@@ -22,6 +22,7 @@ import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const require_ = createRequire(import.meta.url);
@@ -30,7 +31,7 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { GiveVouch } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(friend) {
@@ -44,9 +45,9 @@ export function render(friend) {
 const stub = (useDb) => ({
   name: "stub-supabase",
   setup(b) {
-    b.onResolve({ filter: /lib\/supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
+    b.onResolve({ filter: /(^|\/)supabase$/ }, () => ({ path: "stub", namespace: "sb" }));
     b.onLoad({ filter: /.*/, namespace: "sb" }, () => ({
-      contents: `export const USE_DB = ${useDb}; export const supabase = null;`,
+      contents: `export const USE_DB = ${useDb}; export const supabase = null; export const RECOVERY_LINK = false;`,
       loader: "js",
     }));
   },
@@ -72,7 +73,7 @@ const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ")
 const dbFriend = { id: "8f14e45f-ce9a-4b0e-9c1a-2b3c4d5e6f70", name: "Robin Belay", avatar: "" };
 
 // Seed route names, read from the app rather than typed, so this cannot pass on a stale guess.
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource(ROOT);
 const seedNames = [...core.matchAll(/\{id:"(?:kings_hf|olympus_wf|lcc_[a-z_]+)",[^]{0,400}?name:"([^"]{4,60})"/g)]
   .map((m) => m[1]).slice(0, 6);
 
