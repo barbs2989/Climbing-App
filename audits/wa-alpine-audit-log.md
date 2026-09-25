@@ -27492,3 +27492,87 @@ the app's own pre-existing wording for this permit zone, already live on several
 Verified the target manually instead: re-queried `wa_milk_n_honey` live immediately before
 writing the file and confirmed `permit` was still NULL and the row still exists, so the
 UPDATE's `WHERE id = ... AND permit IS NULL` will match exactly the one intended row.
+
+## 2026-09-25 — Pass 6, Batch 338
+
+Audited (next 8 alphabetically after batch 337, index 339→347 of 702 in-scope):
+`wa_mount_adams_lyman_glacier`, `wa_mount_adams_mazama_glacier_headwall`,
+`wa_mount_adams_north_ridge`, `wa_mount_adams_northwest_ridge`, `wa_mount_adams_south_climb`,
+`wa_mount_adams_wilson_glacier_headwall`, `wa_mount_anderson_eel_glacier`,
+`wa_mount_baker_boulder_glacier`.
+
+**Fixed (3):**
+- `wa_mount_adams_mazama_glacier_headwall`'s top-level `permit` column (rendered standalone on
+  the route's Overview tab) held the generic Forest-Service "Mt. Adams Climbing Pass" text
+  shared by the FS-side routes, contradicting this row's own `approach` ("Bird Creek Road
+  trailhead ... on the Yakama Reservation side") and its own already-correct `access.permit`
+  (which the Planner tab's ACCESS & REGULATIONS panel reads instead) — the two tabs were
+  showing two different permit regimes for the same route. Corrected the top-level column to
+  match: a Yakama Indian Reservation Tract-D tribal-use permit, non-tribal access restricted to
+  roughly Jul 1-Oct 1. Corroborated by three sibling Mount Adams routes in this same batch that
+  independently carry the identical boilerplate calling out Mazama Glacier/Bird Creek Meadows
+  as the one Yakama-land exception, and by outside trip-report sources.
+- `wa_mount_adams_wilson_glacier_headwall`'s `access` JSON carried three fields that
+  contradicted each other and the row's own approach text (which starts at the Cold
+  Springs/South Climb trailhead — Forest Service land, per this row's own boilerplate
+  `access.rules` sentence): `landManager` said "Yakama Nation (Tract D...)" while the row's own
+  canonical `land_manager` already said "U.S. Forest Service" (the field the app's display code
+  actually prefers) — looks like a leftover copy from the Mazama Glacier Headwall row, corrected
+  to match. `closures` repeated the same inapplicable Yakama Tract D restriction — cleared
+  rather than inventing a replacement fact. `notes` said "No specific climbing permit," directly
+  contradicted two keys away by this same row's own `fees` ($20/person) and `permit` ("Mt. Adams
+  Climbing Activity Pass") — the false clause was dropped, keeping the unrelated Northwest
+  Forest Pass sentence (confirmed applicable at the same trailhead by South Climb's own
+  `parking_pass` field).
+- `areas.elevation_ft` for `wa_mount_anderson` stored 7,323 ft; Mount Anderson's
+  USGS/NGS-sourced elevation is 7,330 ft (Wikipedia cites the "Anderson USGS 1955" survey), and
+  this app's own `wa_mount_anderson_eel_glacier` route already stores `high_point_ft` = 7,330 —
+  the area row was the one out of step with both the outside source and this app's own route
+  data for the same peak.
+
+**Flagged for human review (not fixed):**
+- `wa_mount_adams_northwest_ridge`'s `name` field reads "North Ridge (West Face)", but its id
+  says `northwest_ridge` and its content (Grade III, AI1-2; steep snow/ice to 50°; FA "Molenaar,
+  Johnson, Ostro, and Startzell, September 1960") doesn't match either of the two distinct,
+  independently-confirmed real routes it could be: the plain "Northwest Ridge" (a
+  non-technical ridge scramble to the Pinnacle, per SummitPost) or "North Face of Northwest
+  Ridge"/NFNWR (a Grade II-III ice line, per Mountaineers.org/wildsnow.com/
+  engineeredforadventure.com) — NFNWR's difficulty profile is the closer match. Not fixed:
+  WebFetch to SummitPost, Mountaineers.org, wildsnow.com and engineeredforadventure.com is
+  egress-blocked from this environment, so the exact correct name/FA split couldn't be
+  independently confirmed from the source pages themselves, only from search snippets.
+- `wa_mount_adams_lyman_glacier`'s `gain_ft`/`loss_ft` (5,000/5,000) look like they may cover
+  only the High-Camp-to-summit segment, not the full trip: this route shares the same Killen
+  Creek trailhead and the same 12,276 ft summit as sibling `wa_mount_adams_north_ridge`, whose
+  own `approach` text states ~2,300 ft of gain is needed just to reach High Camp — yet North
+  Ridge's own `gain_ft` (7,691) accounts for the whole trailhead-to-summit trip while Lyman
+  Glacier's (5,000) is nearly 2,700 ft short of that on the same basis, matching the
+  "partial-segment-saved-as-the-total" bug documented elsewhere in this audit (see batch 289's
+  Phantom Peak note). Not fixed: the Lava/Lyman side's own high-camp elevation isn't
+  independently confirmed, so the correct total can't be computed without guessing. Relatedly,
+  `dist_km` conventions are inconsistent between these same two sibling routes (North Ridge:
+  5.6 km, reads as a route-only/summit-day figure; Lyman Glacier: 37.3 km, reads as a full
+  car-to-car round trip) — worth a closer look together with the gain/loss question above.
+
+**Checked and confirmed correct, not touched:** the 1854 first ascent of Mount Adams (A.G.
+Aiken, Edward J. Allen, Andrew J. Burge — some sources substitute Benjamin Franklin Shaw) is
+correctly attributed to `wa_mount_adams_north_ridge`, not `south_climb` — search corroboration
+(independent of this app) says the 1854 party approached from the north side and "likely
+followed the North Cleaver," which is this route's other name (confirmed via a Mazamas trip
+listing "Mt. Adams Climb North Cleaver up/South side down"); this also explains why a prior
+batch correctly stripped the same 1854 attribution off `south_climb` (a true south-side route).
+Mount Baker Boulder Glacier's FA field ("LaConnor Expedition, 1891") is not an error: Sue
+Nevin, an artist from La Conner, WA, made the first ascent of this route on Aug 24, 1891 (per
+a Western Libraries Archives & Special Collections exhibit and HistoryLink.org) — "LaConnor"
+is a mangled-but-substantively-correct reference to her party's hometown, not a fabricated
+name. Coordinates for Mount Adams, Mount Baker and Mount Anderson (areas table) all plausibly
+match their named peaks. Mount Adams's Northwest Ridge route (as a real route distinct from
+North Ridge) is independently confirmed to exist (SummitPost, AllTrails) — the id itself isn't
+wrong, only the `name` field (see flagged item above).
+
+`last_processed_id` advanced to `wa_mount_baker_boulder_glacier`; 355 in-scope routes remain
+unaudited this pass. No `.env`/`.env.local` this run (fresh clone, read-only anon key only, as
+intended); `check:sql` ran cleanly this time (4 write targets across 8 statements, all ids
+live, no destructive-delete risk) aside from its routine paste-size WARN on this file's length
+(6.4 KB against its 4 KB soft limit) — a human pasting this into the SQL Editor should split it
+into the ~1.5 KB chunks the tool suggests rather than pasting it whole.
