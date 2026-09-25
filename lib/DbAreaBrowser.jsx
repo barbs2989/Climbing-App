@@ -782,7 +782,7 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
 //   ice / mixed / aid: a route can carry several grades at once ("5.8 AI3", "5.9 A2"), so each
-//     offers its own scale — read from the per-scale columns 0203 added, filled from Mountain
+//     offers its own scale — read from the per-scale columns 0206 added, filled from Mountain
 //     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
 //     these rows store as their primary grade.
 // Re-run the measurements before widening this.
