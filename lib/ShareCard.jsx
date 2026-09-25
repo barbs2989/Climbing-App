@@ -2,6 +2,7 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
 import { Av, C, HERO_BG, HERO_SHEEN, TrustBadge, vScore } from "../ClimbMatchCore.jsx";
+import { POP_CLOSE } from "./popupChrome.js";
 
 export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavailable}){
   const [copied,setCopied]=useState("");
@@ -23,7 +24,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
   const tweet="https://twitter.com/intent/tweet?text="+encodeURIComponent(summary);
   return <div onClick={onClose} role="dialog" aria-label="Share your climbing profile" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:850,display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"16px 12px",overflowY:"auto",overscrollBehavior:"contain"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:420,border:`1px solid ${C.border}`,overflow:"hidden"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:`1px solid ${C.border}`}}><div style={{fontSize:16,fontWeight:700}}>Share your climbing profile</div><button onClick={onClose} aria-label="Close" style={{background:C.borderLight,border:"none",color:C.textSub,borderRadius:8,width:36,height:36,fontSize:20,cursor:"pointer"}}>✕</button></div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:`1px solid ${C.border}`}}><div style={{fontSize:16,fontWeight:700}}>Share your climbing profile</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button></div>
       <div style={{padding:16}}>
         <div style={{background:HERO_BG,boxShadow:HERO_SHEEN,borderRadius:14,padding:16,marginBottom:14,border:`1px solid ${C.border}`}}>
           <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:12}}><Av src={climber.avatar} size={56}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700}}>{climber.name}</div><div style={{fontSize:12,color:C.textSub}}>{idLine||"Add your level and home area to fill this in"}</div><div style={{marginTop:4}}><TrustBadge score={vScore(climber)}/></div></div></div>

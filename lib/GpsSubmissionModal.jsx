@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { parseGpxXml, parseCoordinateList, validateGpxQuality, calculateQualityScore, detectGpxFormat, formatCoordinatesForDisplay } from './gpxParser'
+import { POP_CLOSE } from "./popupChrome.js";
 
 const C = {
   bg: '#1a1a1a',
@@ -277,7 +278,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
         <div style={{...styles.header}}>
           <h2 style={{...styles.heading}}>Submit GPS Track</h2>
           <p style={{...styles.subheading}}>{routeName}</p>
-          <button aria-label="Close" style={{...styles.closeButton}} onClick={onClose}>✕</button>
+          <button aria-label="Close" style={POP_CLOSE} onClick={onClose}>✕</button>
         </div>
 
         {error && (

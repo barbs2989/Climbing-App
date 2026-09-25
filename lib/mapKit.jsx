@@ -42,7 +42,22 @@ const LEAFLET = {
   },
 };
 
-export function loadLeaflet(onReady, onError) {
+// PINCHING PAST THE DEEPEST ZOOM BLANKED THE WHOLE MAP. Leaflet's default `bounceAtZoomLimits`
+// lets a pinch carry the map's zoom beyond the tile layer's maxZoom (19 satellite, 17 topo) and
+// rubber-band back on release. While it is over, GridLayer._pruneTiles() opens with
+// `if (map.getZoom() > this.options.maxZoom) this._removeAllTiles()` -- and _tileReady schedules
+// that prune on a bare setTimeout(250) that the pinch's own _noPrune guard does not cover. So a
+// tile finishing its load mid-pinch deleted EVERY tile: the map went to its dark background until
+// release, then snapped back and reloaded. Reproduced on the live route map, driving Leaflet's own
+// TouchZoom handler: pinch zoom 19.81, tiles 4 -> 0; with this off, zoom clamps at 19, tiles 4 -> 4.
+// Set once on the class, before any map exists, so every map in the app gets it.
+function tuneLeaflet() {
+  const L = window.L;
+  if (L && L.Map && !L.Map.prototype.options.__cmTuned) L.Map.mergeOptions({ bounceAtZoomLimits: false, __cmTuned: true });
+}
+
+export function loadLeaflet(onReadyRaw, onError) {
+  const onReady = () => { tuneLeaflet(); onReadyRaw(); };
   if (window.L) { onReady(); return; }
   if (!document.getElementById("leaflet-css")) {
     const lk = document.createElement("link");

@@ -13,6 +13,7 @@ import {
   submitInquiry, submitReview,
   dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
 } from "./db";
+import { POP_BACK } from "./popupChrome.js";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -103,7 +104,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   return createPortal((
     <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
-        <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+        <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
