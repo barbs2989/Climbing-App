@@ -187,6 +187,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     included"* caveat goes quiet on an all-real board. With the flag on, **twelve `FILLER_CLIMBERS`
     with numeric ids survive that**, so the caveat correctly stayed — and the probe reported the app
     as *"unconditional, not counted"* when the app was right. It empties both pools now.
+  - **REMOVED 2026-09-25 at the user's request** ("I don't need any text like this in the app"): every note telling a climber that profiles or listings are EXAMPLES, including the caveats above. The probes that asserted them (`probe-leaderboard-example-caveat`, `probe-partner-filters-say-what-they-narrow`) are deleted. The Partners intro ("Use the filters below…" / "Climbers who share one of your saved objectives…") now renders only when no real-accounts list sits between it and the filters, so it cannot describe the wrong list. Do not re-add an example caveat.
   - The flip also silently widened `check:overlay-discovery`'s payload coverage: `events` and
     `GROUPS` resolve where the entry says they are skipped. **A flag flip is a change to every
     conclusion that was reasoned from the old value**, and this file's own entries are where those

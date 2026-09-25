@@ -537,6 +537,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     once — the objectives one (*"Climbers who share one of your saved objectives — your tightest
     matches"*) mis-describes the interposed list for the same reason, since `_cand` cannot carry an
     objective.
+  - **REMOVED 2026-09-25 at the user's request** ("I don't need any text like this in the app"): every note telling a climber that profiles or listings are EXAMPLES, including the caveats above. The probes that asserted them (`probe-leaderboard-example-caveat`, `probe-partner-filters-say-what-they-narrow`) are deleted. The Partners intro ("Use the filters below…" / "Climbers who share one of your saved objectives…") now renders only when no real-accounts list sits between it and the filters, so it cannot describe the wrong list. Do not re-add an example caveat.
   - **THE AVAILABILITY FILTER EXCLUDING UNKNOWNS IS A DOCUMENTED DECISION AND WAS DELIBERATELY LEFT
     ALONE.** `if(!_av.length||!availMatch(...))return false` drops a climber whose availability is
     unknown — the mirror of the pace defect — but #532 chose that, the comment above `dateFit` records
