@@ -27391,3 +27391,52 @@ H.H. Prouty, Winthrop Stone, C.W. Whittlesey — Wikipedia); Phantom Peak/Luna G
 `last_processed_id` advanced to `wa_luna_glacier`. No `.env`/`.env.local` this run (fresh
 clone, read-only anon key only, as intended); WebSearch settled every fact checked,
 `check:sql` run and clean before committing the fix file.
+
+---
+
+## 2026-09-25 — Pass 6, Batch 336
+
+Eight routes, six peaks (Luna Peak 1, Lundin Peak 2, Magic Mountain 2, Martin Peak 1,
+Morning Star Peak 1, McMillan Spire (West) 1): Southeast Slopes (Luna Peak); South Face
+Left, West Ridge (Lundin Peak); North Face, Northeast Couloir (Magic Mountain); West Ridge
+(Martin Peak); Marvin's Ear (Morning Star Peak / Vega Tower); Southwest Ridge (West
+McMillan Spire).
+
+**Confirmed error → fix in `sql/2026-09-25-batch-336.sql`:**
+- Marvin's Ear's `high_point_ft` was NULL. AAC Publications ("Morning Star Peak, Vega
+  Tower, Marvin's Ear", Morgan Zentler, 2018) gives Vega Tower's elevation as 5,480 ft —
+  filled the gap. Also used that article to confirm the route's area filing under
+  `wa_morning_star_peak` is correct, not a misplacement: Vega Tower is a subsidiary summit
+  on Morning Star Peak's (6,020 ft) north ridge, the same convention already used for this
+  route's siblings Mile High Club and Beyond Redlining (both also on nearby Vega
+  North/Eros Tower, filed under the same area).
+
+**Flagged for human review (not fixed):**
+- Luna Peak Southeast Slopes' `gpx` track is degenerate: 4 points spanning ~20 m near
+  48.7755,-121.058 (in the Ross Lake corridor, plausibly the boat-taxi segment), while the
+  route's own `waypoints` correctly span Ross Dam Trailhead to the summit 24 mi away at
+  48.831,-121.273. The stored `waypoints` are fine; the raw `gpx` polyline is not a route
+  track and needs a real replacement sourced from a GPS log or CalTopo, which this pass
+  doesn't have — left as-is rather than fabricate a line.
+- Lundin Peak South Face Left's FA ("Mike Preiss & Don Preiss, 2004") could not be
+  independently confirmed — Mountain Project and AAC Publications are both egress-blocked
+  from this environment and no other source surfaced the claim. Not contradicted either;
+  left as-is.
+
+**Checked and confirmed correct, not touched:** Luna Peak's 8,311 ft / Sept 1938 FA (Bill
+Cox, Will F. Thompson — Wikipedia, matches the area row and the route's own overview);
+Lundin Peak's 6,057 ft (area and both routes) and its 1931 rename from "Snoqualmie Little
+Sister" honoring ranger John Lundin (Wikipedia); Lundin's documented Oct 11, 1980 fatality
+(Jerry Pruitt, unroped fall on descent — AAC Publications accident report) cited in the
+route's `hazards`/`emergency` text; Magic Mountain's 7,610 ft (area and both routes), and
+the Yawning Glacier (6,200-6,800 ft) / Magic-Pelton Col (6,480 ft) figures used throughout
+both routes' `pitch_detail`/`beta` (Wikipedia); Martin Peak's 8,509 ft and its July 1936
+solo FA by Ida Zacher Darr (Wikipedia, Mazamas bulletin); the Holden Village / FSR-8301
+closure text on Martin Peak's `access`/`road` fields, re-verified against current (March
+2026) reporting — still accurate, not stale; West McMillan Spire's 8,004 ft (area and
+route).
+
+`last_processed_id` advanced to `wa_mcmillan_spire_west_southwest_ridge`. No `.env`/
+`.env.local` this run (fresh clone, read-only anon key only, as intended); WebSearch
+settled every fact checked except the two flagged items above, `check:sql` run and clean
+before committing the fix file.
