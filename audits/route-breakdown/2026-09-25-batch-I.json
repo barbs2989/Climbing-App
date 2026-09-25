@@ -1,0 +1,376 @@
+{
+  "wa_mount_rainier_disappointment_cleaver": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Paradise → Camp Muir",
+        "grade": "Trail, then snowfield",
+        "notes": "Skyline Trail to Pebble Creek (~7,200 ft), then a long leftward arc up the unglaciated Muir Snowfield to Camp Muir (10,080 ft). No shelter from wind or sun above treeline. The snowfield is where most rescues on the route happen: in cloud it is featureless, and a boot track can drift over within minutes, so carry GPS plus map and compass."
+      },
+      {
+        "pitch": "Camp Muir → Cathedral Gap",
+        "grade": "Glacier, rockfall",
+        "notes": "Rope up at Muir and make a rising traverse across the upper Cowlitz Glacier, which may pass directly under Cathedral Rocks, then climb loose rock and scree into Cathedral Gap (10,800 ft). The Beehive and Gibraltar Rock shed rock onto this traverse. Shorten the rope and keep it off the ground in the gap so it does not pull stones onto parties below."
+      },
+      {
+        "pitch": "Ingraham Flats",
+        "grade": "Glacier, crevassed",
+        "notes": "From the top of the gap turn west onto the Ingraham Glacier and cross mostly snow, with rocks strewn from Cathedral Ridge, to the Ingraham Flats camp (~11,200 ft; 36-person limit, no toilet, blue-bag everything). Above the camp the route climbs straight uphill past a large crevasse system, often crossed on a guide-placed ladder, before turning right toward the Cleaver."
+      },
+      {
+        "pitch": "Icebox and Bowling Alley",
+        "grade": "Glacier, serac/rockfall",
+        "notes": "The rightward traverse onto the Cleaver crosses two objective-hazard zones back to back: the Icebox, under seracs of the Ingraham Glacier near 12,000 ft that regularly send debris across the track, and then the Bowling Alley, recognizable by rocks lying on the snow, hit by rockfall from the cliffs above and from parties on the Cleaver. Move through without stopping and regroup only on either side."
+      },
+      {
+        "pitch": "Disappointment Cleaver",
+        "grade": "Loose rock/snow, Class 3–4",
+        "crux": true,
+        "notes": "About 1,200 vertical ft of the steepest ground on the route up the rock rib to its top at 12,300 ft. No crevasse hazard here, so short-rope and keep the rope off the loose rock. In the dark the lower Cleaver is a maze of rock paths where tired parties go wrong; follow the wands, and if the climbing is harder than 3rd or 4th class you are off route. Snow cover makes it simpler to follow but more slippery."
+      },
+      {
+        "pitch": "Upper glacier to crater rim",
+        "grade": "Glacier, crevassed, steep",
+        "notes": "From the top of the Cleaver, a common turnaround point, the route is entirely glacier through the accumulation zone: a maze of large crevasses and steep slopes with no fixed landmarks, where avalanche and icy-slope hazard exist all season. The line is direct to the rim early in summer and swings north toward the Emmons Shoulder later; belay steep or bridged crossings rather than just stretching the rope out."
+      },
+      {
+        "pitch": "Crater to Columbia Crest",
+        "grade": "Crater rim, snow",
+        "notes": "The track usually enters the crater at its south point beside Guide Rock (~14,150 ft), often over a snow bridge above an ice cave. Most parties unrope and walk across to Columbia Crest (14,410 ft) on the northwest rim, passing Register Rock and its fumaroles; allow about 45 minutes round trip. Thin snow over steam caves on and near the rim has injured climbers, and the summit plateau is easy to leave on the wrong heading in cloud."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "5 → 7 entries. Kept all five labels; added the Icebox/Bowling Alley traverse (the route's main objective hazard, previously only in `beta`) and the crater-to-Columbia-Crest finish. Replaced the Cleaver's '35–40°' chip with the NPS 'Class 3–4 at most' framing; notes now carry elevations, the ladder above the Flats, the off-route test on the Cleaver, and the seasonal drift of the upper line. No lengthM was stored and none added.",
+      "sources_consulted": [
+        "https://www.nps.gov/mora/planyourvisit/upload/Disappointment-Cleaver-Routebrief-2017_FINAL.pdf",
+        "https://mountrainierclimbing.blogspot.com/2026/08/disappointment-cleaver-route-update.html (search snippet: High Crack ladder ~11,200 ft)",
+        "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-disappointment-cleaver (search snippet)"
+      ],
+      "other_findings": "`rappels` reads 'Fixed ladders mid-route; no traditional rappelling' — ladders are crevasse crossings, not rappel gear; harmless but arguably filed in the wrong column. `grade` 'Grade II–III glacier' is fine."
+    }
+  },
+  "wa_mount_rainier_gibraltar_ledges": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Camp Muir to Gibraltar Rock",
+        "grade": "Glacier, rockfall",
+        "notes": "Climb the western edge of the upper Cowlitz Glacier beneath the Cowlitz Cleaver, pass under the Beehive (~10,800 ft), and cross the cleaver through a notch to the saddle at the base of Gibraltar Rock. Early-morning snow is usually firm here. Both the Beehive and Gibraltar drop rock onto this line; go only in cold conditions and start early."
+      },
+      {
+        "pitch": "Gibraltar Ledges",
+        "grade": "Exposed snow ledges",
+        "notes": "From the saddle traverse west along the obvious ledge system at the foot of Gibraltar Rock, with the cliff overhead and steep, firm slopes falling away below. Ideally the ledges carry firm snow or ice; in thinner conditions there is short rock scrambling. Place pickets where the exposure demands it. Overhead rockfall is the main hazard, so be across before the sun reaches the south face."
+      },
+      {
+        "pitch": "Broken ledge and gully",
+        "grade": "Exposed downclimb, steep snow",
+        "notes": "Part way along, the ledge has fallen away: make a short, very exposed downclimb onto a steep snow slope, cross it, and climb a steep gully to regain the ledges. Several more exposed stretches follow before the ledges meet the upper part of Gibraltar Chute. This section changes with snow cover, so expect the exact line to vary from trip to trip."
+      },
+      {
+        "pitch": "Gibraltar Chute",
+        "grade": "40–50° snow/ice",
+        "crux": true,
+        "notes": "Climb the chute between Gibraltar Rock and the upper Nisqually ice cliff to the saddle on top of Gibraltar (Camp Comfort, ~12,600 ft). Wind-packed snow may need only one tool and running belays; firm or icy conditions call for two tools and ice screws. The chute is exposed to rock- and icefall from both sides, so keep moving."
+      },
+      {
+        "pitch": "Summit slopes",
+        "grade": "Glacier, crevassed",
+        "notes": "From Camp Comfort rope up for about 2,000 ft of glacier across the upper Ingraham and Nisqually glaciers to the east crater rim, typically tying into the Ingraham Direct or Disappointment Cleaver track around 13,500 ft. Crevasses and unstable snow bridges are the hazard here. Cross the crater to Columbia Crest for the true summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 → 5 entries. Kept all four labels; split the ledges into the traverse and the broken-ledge downclimb/gully (described in two independent sources). Dropped the unsourced '4th-class rock' chip and the 'steep ice' chip (sources say a 40–50° snow slope that can be icy). Notes add Camp Comfort, protection, and the junction with the Ingraham Direct/DC track. No lengthM stored or added.",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/paradise-area-review/mount-rainier-gibraltar-ledges (via r.jina.ai)",
+        "https://www.summitpost.org/gibralter-ledges/160662 (via r.jina.ai)",
+        "https://www.mountainproject.com/route/107467946/gibraltar-ledges",
+        "https://mountrainierclimbing.blogspot.com/2019/05/gibraltar-ledges-may-8-2019.html"
+      ],
+      "other_findings": "`climbing_route` calls the Gibraltar Chute 'a roughly 50° snow slope dropping to the Nisqually Glacier' and the ledges 'the crux'; the Mountaineers route names the chute as the crux. Minor, not changed."
+    }
+  },
+  "wa_mount_rainier_ptarmigan_ridge": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "High camp to bergschrund",
+        "grade": "Glacier descent, avalanche",
+        "notes": "From the high camp at about 10,200–10,300 ft below the Ptarmigan ice cliffs, descend onto the Mowich Glacier to the bergschrund at about 9,800 ft, crossing avalanche-prone slopes on the way. The usual crossing is a snow bridge just left of a rock outcrop near the middle of the face."
+      },
+      {
+        "pitch": "Lower schrund/snow",
+        "grade": "40–45° snow",
+        "notes": "Above the schrund make a rising traverse back east toward the ice cliffs, threading an obvious passage through the rock bands on about 1,000 ft of 40–45° snow. Staying close under the cliffs on the right keeps the route-finding simple as far as the hourglass. Lower-face snow can be rotten and unsupportive once it warms."
+      },
+      {
+        "pitch": "Hourglass/buttress",
+        "grade": "45–55° snow",
+        "notes": "At a steep rock band traverse left into the hourglass-shaped snow face and climb it on either side to the base of the big rock buttress that splits the upper route (~11,500 ft). Exposed; protect with pickets and screws, and belay if rockfall is active. At the buttress the 1935 line goes left and contours onto the slopes between the buttress and the icefall (45–55°, often icy); most parties now go right."
+      },
+      {
+        "pitch": "Right variation: ice slope and exit chute",
+        "grade": "Blue ice to 55°, rock step",
+        "crux": true,
+        "notes": "From the toe of the buttress climb a short way to the final ice slope, typically several hundred feet of blue ice around 55°, then cross a rock rib and traverse snow or ice to the exit chute, the first major break in the ridge's cliffs. The chute is easy 5th class with a near-vertical step that may hold a fixed pin or two; rock is fractured, so bring screws plus a light rock rack and pins."
+      },
+      {
+        "pitch": "Liberty Cap Glacier to Liberty Cap",
+        "grade": "Glacier, crevassed",
+        "notes": "Above the chute, easier scrambling leads onto the Liberty Cap Glacier. Climb about 1,000 ft of glacier slopes, cut back right to the ridge crest through the crevasse pattern, and follow easy slopes along the crest to Liberty Cap (~14,110 ft). Good bivy sites exist on the lower Liberty Cap Glacier. Surface conditions decide whether this is quick or a grind."
+      },
+      {
+        "pitch": "Liberty Saddle to Columbia Crest",
+        "grade": "Glacier, cornices",
+        "notes": "Columbia Crest is more than a mile away: drop about 600 ft into Liberty Saddle and climb about 800 ft back up to the summit. Stay roped, since crevasses between Liberty Cap and the crest can be thinly bridged and deep, and large cornices form on the east side of the saddle. The descent via the Emmons–Winthrop leaves from the saddle."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 → 6 entries. Kept both labels; added the descent to the schrund from high camp, the right-hand ice/exit-chute crux (the route's technical section, previously absent), the Liberty Cap Glacier finish, and the Liberty Saddle leg to Columbia Crest. Ice angles and chute grade differ between sources (200 ft of 55° ice; 'several hundred feet'; one party found ~AI3 on the left option); notes state the common range. No lengthM stored or added.",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/mount-rainier-ptarmigan-ridge (via r.jina.ai)",
+        "https://www.summitpost.org/ptarmigan-ridge/156184 (via r.jina.ai)",
+        "https://www.mountainproject.com/route/106846325/ptarmigan-ridge",
+        "http://mountrainierclimbing.blogspot.com/2018/06/ptarmigan-ridge.html",
+        "https://www.jeffreyjhebert.com/adventures/ptarmigan-ridge-on-mount-rainier",
+        "https://www.nps.gov/mora/planyourvisit/upload/Liberty-Ridge-Routebrief.pdf (Liberty Cap / Liberty Saddle / Columbia Crest figures)"
+      ],
+      "other_findings": "`beta` says the summit push starts at '~9,800 ft vs. Liberty Ridge's 10,700 ft from Thumb Rock' — 9,800 ft is the bergschrund; high camp is ~10,200–10,300 ft. `overview` mentions 'a short rock pitch above 12,000 ft' — consistent."
+    }
+  },
+  "wa_mount_rainier_tahoma_glacier": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Trail, moraine",
+        "notes": "From the Westside Road gate (2,900 ft) walk the road to the Tahoma Creek Trail, then the Wonderland Trail north to about 5,600 ft, and follow the moraine northeast to camp on Emerald Ridge (~6,100 ft) between the two lobes of the Tahoma Glacier. Tahoma Creek is prone to sudden glacial outburst floods; know the warning sounds and head for high ground. Some parties instead approach from Round Pass to a Puyallup Cleaver camp near 9,600 ft."
+      },
+      {
+        "pitch": "Lower glacier",
+        "grade": "Glacier, ~30°",
+        "notes": "Zigzag up the south side of the Tahoma Glacier to about 7,200 ft, then make a long diagonal traverse to the far (north) side, reaching it around 9,000 ft. From the Puyallup Cleaver side, only a few spots give safe access to the glacier; a snow ramp just below lower St. Andrews Rock is preferred, and cliffs near 8,500 ft block the mid-cleaver."
+      },
+      {
+        "pitch": "Mid glacier",
+        "grade": "Glacier, heavily crevassed",
+        "notes": "Traverse back south to near the glacier edge at about 10,000 ft, then north again, weaving between crevasse bands; around 9,800 ft cracks run in several directions and bridges can be thin. A camp safe from serac fall is commonly made near 10,440 ft, roughly level with St. Andrews Rock. Crevasses are the main problem on this glacier even in June."
+      },
+      {
+        "pitch": "Serac moat at 10,800 ft",
+        "grade": "Seracs, moat crossing",
+        "notes": "Finish the northward traverse to the glacier edge and climb through seracs to cross the crevasse moat at about 10,800 ft. Then traverse south to about 11,000 ft before turning north again toward the Sickle at about 11,200 ft. Below 12,000 ft the glacier is at its most broken."
+      },
+      {
+        "pitch": "The Sickle",
+        "grade": "Steep glacier chute",
+        "notes": "The Sickle is the chute on the far left (north) edge of the glacier that bypasses the central icefall. Climb it on its north side, keeping left of the icy ridges, to a plateau at about 12,600 ft. Ice avalanches from the summit ice cap sweep this chute; climb it early and cold, and treat it as a no-go when there is fresh debris or warm conditions."
+      },
+      {
+        "pitch": "Upper glacier to summit",
+        "grade": "Glacier, crescent crevasses",
+        "notes": "From the plateau make a gradual rising traverse south to the summit cone. Above 12,000 ft the glacier is less broken and travel is faster, but the upper slopes carry large crescent-shaped crevasses. Reach the crater rim and cross the summit plateau to Columbia Crest (14,410 ft)."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 → 6 entries. Kept all four labels (including the existing Approach stage); added the serac/moat crossing near 10,800 ft and the Sickle (previously only in `overview`). Notes add the high-camp options, the Puyallup Cleaver access limits, and the Sickle's ice-avalanche exposure. No lengthM stored or added.",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/mt-rainier-tahoma-glacier (via r.jina.ai)",
+        "https://www.summitpost.org/tahoma-glacier/161584 (via r.jina.ai)",
+        "http://mountrainierclimbing.blogspot.com/2017/06/tahoma-glacier-conditions-6272017.html"
+      ],
+      "other_findings": "The stored mid-glacier chip 'up to ~45°' is loosely supported (the route is described as 30–45° overall); changed it to a terrain chip. The Westside Road gate and Tahoma Creek Trail status should be checked against current NPS access before relying on the approach."
+    }
+  },
+  "wa_mount_rainier_willis_wall": {
+    "skip_reason": "The route id names a whole 3,600-ft face with at least four distinct lines (West Rib, East Rib, Central Rib, Thermogenesis couloir, and variants), and no source gives a pitch- or section-level description of any one of them beyond first-ascent narratives. Writing one sequence would mean picking a line the row does not name. The stored table's 'M5+' grade for the lower wall also has no source I could find — worth review."
+  },
+  "wa_mount_rainier_curtis_ridge": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Rappel at 10,300 ft",
+        "grade": "Rappel, committing",
+        "notes": "Technical climbing starts at the narrow point of the ridge at 10,300 ft. Drop about 100 ft down and right to a rappel station around a large boulder, and rappel about 70 ft to snow slopes. Retreat past here is hard, so treat it as the point of no return; carry cord for the anchor and watch for the rope snagging on the pull."
+      },
+      {
+        "pitch": "Ridge crest to the gendarme",
+        "grade": "Snow ridge, rock steps",
+        "notes": "Follow the ridge crest up toward the prominent rock gendarme, going around rock steps on whichever side goes. A good bivy site sits a few hundred feet before the gendarme. The line moves between the Winthrop and Carbon sides of the crest. Rockfall is serious on this ridge, so aim to be past the first cliff band before sunrise."
+      },
+      {
+        "pitch": "First cliff band",
+        "grade": "4th class",
+        "notes": "Contour right for roughly 200 yards below the first cliff band, then climb steep snow or ice back left up a snow chute to a 4th-class ledge system that gets through the band. Snow-covered ice steps here can be harder than they look. A light alpine rack with a few pins, nuts and cams is enough."
+      },
+      {
+        "pitch": "Gendarme/cliff band",
+        "grade": "4th class",
+        "notes": "Above, weave across snowfields to the second rock band and again traverse right on the snow to find the weakness through it. The scramble through the rock is easy but very exposed. Route-finding through the maze of bands and snowfields is the main difficulty of the whole climb."
+      },
+      {
+        "pitch": "Final gully",
+        "grade": "Snow/ice gullies",
+        "notes": "Climb the exit gullies above, with small rock steps and possible ice; a steep right-trending snow gully above the Winthrop crevasse field is exposed. The last gully tops out above the whole cliff section at 12,500 ft."
+      },
+      {
+        "pitch": "Upper ridge to 13,800 ft",
+        "grade": "Easy snow, glacier",
+        "notes": "From 12,500 ft easy snow leads to the top of Curtis Ridge at about 13,800 ft on the upper mountain, where it meets the Emmons–Winthrop glacier slopes that lead on to the crater rim. The Emmons–Winthrop route is also the way down, to Camp Schurman."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 6 entries. Kept all three labels; added the ridge-crest section to the gendarme, the first cliff band (contour right, snow chute, 4th-class ledges) and the upper snow to 13,800 ft. Gave the rappel a terrain chip instead of null. No lengthM stored or added; the 70-ft rappel stays in notes and is not a climbing length.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/110037673/curtis-ridge (and via r.jina.ai)",
+        "https://cascadeclimbers.com/forum/topic/94984-tr-mount-rainier-curtis-ridge-6142014/ (via r.jina.ai)"
+      ],
+      "other_findings": "`descent_text` says the ridge tops out and parties descend Emmons–Winthrop to Camp Schurman — consistent. `rappels` prose is consistent with the single 70-ft rappel."
+    }
+  },
+  "wa_mount_rainier_nisqually_icefall": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Debris slope",
+        "grade": "~40° debris slope",
+        "notes": "The first-ascent line started from the crevassed Nisqually cirque, reached from Camp Muir, and climbed a debris-covered slope of roughly 500 ft at about 40°, with the final stretch steep enough to need cut steps, to about 11,500 ft. The icefall's shape changes from year to year, so treat this as the pattern rather than a fixed line."
+      },
+      {
+        "pitch": "Icefall maze",
+        "grade": "Seracs, crevasses",
+        "crux": true,
+        "notes": "About 1,500 vertical ft of leaning seracs, fallen blocks and deep crevasses, climbed by linking ice ridges, thin ice bridges and steeply banked ledges. Route-finding is the whole problem; carry pickets and ice screws and move fast, since the ground sits under active icefall. The first ascent took about ten hours of ice work from the base."
+      },
+      {
+        "pitch": "Upper icefall to Wapowety Cleaver",
+        "grade": "Ice blocks, knife-edge",
+        "notes": "Around 12,500 ft work to the left side of the glacier and through the jumble of blocks below the bergschrund that borders the rocks of Wapowety Cleaver. A knife-edge ice ridge leads onto the cleaver just below the 13,000-ft saddle, where the Kautz route arrives from the other side."
+      },
+      {
+        "pitch": "Upper Nisqually Glacier to Kautz route",
+        "grade": "Glacier, crevassed",
+        "notes": "Getting from the cleaver back onto the upper Nisqually is often awkward: the glacier is badly broken along the cleaver, and belays across thin bridges may be needed. Beyond, crevasses usually push the line east, then back west near 13,500 ft, into the saddle between the crater rim and Point Success; the last ~500 ft to the rim often has a bergschrund."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 4 entries. Kept all three labels; split the icefall into the maze and the upper left-side exit to Wapowety Cleaver, and filled the upper glacier from the NPS Kautz brief (shared ground above 13,000 ft). The lower icefall is described from the 1948 first-ascent account because no modern section-level description could be found; notes say the icefall changes yearly. No lengthM stored or added.",
+      "sources_consulted": [
+        "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall",
+        "https://www.nps.gov/mora/planyourvisit/upload/Kautz-Glacier-Routebrief.pdf"
+      ],
+      "other_findings": "`approach` describes a Paradise start via the lower Nisqually alongside Wapowety Cleaver to a bergschrund at 9,900 ft with 40–50 ft of steep ice; the first ascent came from Camp Muir across the Nisqually cirque, and I found no source for the 9,900-ft schrund detail — the approach text may borrow from the Wapowety Cleaver/Kautz access. `length_m` 457 is unexplained. Worth a human look."
+    }
+  },
+  "wa_little_tahoma_cowlitz_ingraham_glaciers": {
+    "area": "wa_little_tahoma",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Cowlitz/Ingraham glacier traverse to south face base",
+        "grade": "Glacier, crevassed",
+        "notes": "Leave the Camp Muir route below Anvil Rock and traverse east across the Paradise and Cowlitz glaciers, holding about 8,600 ft to stay above the cliff and serac band below. Pass through the obvious notch in the Cathedral Rocks cleaver and cross the Ingraham Glacier toward the snow or rock ramp at the base of the face (~8,900 ft). Best in winter to early spring; the glaciers get more dangerous later."
+      },
+      {
+        "pitch": "Ingraham–Whitman saddle",
+        "grade": "Steep snow couloir, loose rock",
+        "notes": "Gain the saddle between the Ingraham and Whitman glaciers by a steep snow couloir, topped by a short scramble up loose rock with a Class 4 move or two. Knock nothing down on your own party in the couloir."
+      },
+      {
+        "pitch": "Upper Frying Pan Glacier corner into gully",
+        "grade": "Glacier, then gully",
+        "notes": "Climb the glacier above toward the summit block and leave it at its upper left-hand corner, entering the gully that splits the summit rocks. Sun cups can be deep on the upper glacier by early summer. From the Paradise side this is the Whitman Glacier."
+      },
+      {
+        "pitch": "Gully to headwall step",
+        "grade": "Loose gully",
+        "notes": "Climb about two-thirds of the way up the gully to a short step at a headwall. The rock is loose throughout; keep the party close together so any rock knocked loose has little room to gain speed."
+      },
+      {
+        "pitch": "Headwall step",
+        "grade": "Short rock step",
+        "lengthM": 2,
+        "notes": "A short, steep step blocks the gully at the headwall. Climb it directly; a light rock rack is useful here and for the summit scramble if the party wants protection."
+      },
+      {
+        "pitch": "Gully-chimney to summit notch",
+        "grade": "Class 3–4 chimney",
+        "notes": "Above the step, continue up a gully that narrows into a chimney and ends at the notch below the summit. Loose and sometimes mixed with snow or ice early in the season."
+      },
+      {
+        "pitch": "Final ridge-crest scramble",
+        "grade": "Class 3–4, exposed",
+        "lengthM": 9,
+        "notes": "From the notch make a short, loose and very exposed scramble along the ridge crest to the true summit (11,138 ft); the summit block has two rock horns separated by a shallow gully. Down-climb the same way with care."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "6 → 7 entries. Kept all six labels; added the steep couloir and loose scramble to the Ingraham–Whitman saddle (single source: a 2021 SummitPost trip report). Dropped the lengthM values for four rows (0, 137, 122, 85 m) because no source gives them; kept 2 m (the ~6 ft step) and 9 m (the ~30 ft summit scramble), which are sourced. Replaced the three 'Low 5th class' chips with Class 3–4 / terrain chips: the Paradise-side sources give exposed 3rd–4th class, and low 5th belongs to the separate South Shoulder option.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/122049367/cowlitzingraham-glaciers (via r.jina.ai)",
+        "https://www.mountaineers.org/activities/routes-places/paradise-area-review/little-tahoma-south-face (via r.jina.ai)",
+        "https://mountrainierclimbing.blogspot.com/2019/05/little-tahoma-from-paradise-april-24.html",
+        "https://www.summitpost.org/2021-05-30-little-tahoma-trip-report/1061304 (via r.jina.ai)",
+        "https://www.turns-all-year.com/trip-reports/june-22-2013-little-tahoma-from-paradise"
+      ],
+      "other_findings": "The stored label names the 'Upper Frying Pan Glacier', but the three from-Paradise sources (NPS 2019, SummitPost 2021, TAY 2013) all climb the Whitman Glacier to the summit block. The label is kept to preserve per-pitch comments and the notes say Whitman; a human may want to rename it. Stored `grade` is null; the Mountaineers route gives 'Grade II'. The route name '(South Face)' mixes two Mountaineers options (South Shoulder with low 5th vs the easier East Shoulder finish this table describes)."
+    }
+  },
+  "wa_mount_adams_north_ridge": {
+    "area": "wa_mount_adams",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Killen Creek TH → High Camp",
+        "grade": "Trail",
+        "notes": "Killen Creek Trail #113 climbs through forest and meadow to the Pacific Crest Trail, then a climbers' path continues to High Camp at about 6,900 ft. The last stretch crosses an exposed talus slope above a permanent snowfield. Some parties bivy higher, on scree or snow near 8,000 ft, to shorten summit day."
+      },
+      {
+        "pitch": "High Camp → ridge base",
+        "grade": "Snowfields, moraine",
+        "notes": "Head southeast from High Camp onto the foot of the North Ridge, which is gained almost right away above the camp. Early in the season snow can hide the path, so carry a compass. The approach does not require a glacier crossing."
+      },
+      {
+        "pitch": "North Ridge",
+        "grade": "Class 2–3 loose scree",
+        "notes": "About 2,500 ft of scrambling up rock, scree and gritty pumice, mostly Class 2 with some Class 3. Stay on the crest where you can and wind from side to side around obstacles, occasionally dropping to the west side. Rockfall is the real crux: move gently and wear a helmet. Earlier in the season there is less scree."
+      },
+      {
+        "pitch": "Upper ridge snow",
+        "grade": "Steep snow, no runout",
+        "notes": "From around 10,000 ft the ridge turns to snowfields. One steep section has no runout and falls toward the Lava Glacier far below; crampons and an axe are needed, and it is safest while the snow is firm in the morning. On the way down it needs careful downclimbing, and a narrow rocky shelf may deserve a belay."
+      },
+      {
+        "pitch": "Upper mountain → summit",
+        "grade": "Ice cap, gentle",
+        "notes": "The ridge reaches the ice cap around 12,000 ft and the angle eases. Walk about a mile across the summit plateau to the true summit (12,276 ft). The ice cap has held small crevasses in the past, and the high point is hard to pick out in cloud, so mark the ridge exit for the descent."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 → 5 entries. Kept all four labels; split the ridge into the lower scree scramble and the upper snow section with its no-runout slope above the Lava Glacier. Replaced chips the sources do not support: 'rope for crevasses between Adams/Lava glaciers' (no source mentions a glacier crossing to the ridge base) and 'steep snow 40–45°, sustained' (sources describe a Class 2–3 scree ridge with snow above ~10,000 ft; no angle given). No lengthM stored or added.",
+      "sources_consulted": [
+        "https://www.summitpost.org/north-ridge-north-cleaver/550764 (via r.jina.ai)",
+        "https://www.mountainproject.com/route/107223000/north-ridge",
+        "http://www.mattandmaren.com/adams_9307.html",
+        "https://www.alpinewanderlust.com/hot-pa-pahto-north-ridge-adams/",
+        "https://engineeredforadventure.com/mtadams/",
+        "https://www.wta.org/go-hiking/hikes/high-camp (search snippet)"
+      ],
+      "other_findings": "`grade` 'Grade II, moderate snow' is fine, but the stored description of the ridge as sustained 40–45° snow with cornices overstates it; sources rate the ridge Class 2–3. `descent_text` says most parties descend the South Climb; MP says the descent follows the same route. Both happen."
+    }
+  }
+}
