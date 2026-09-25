@@ -1,4 +1,4 @@
-// Proves picker_grade_num() (0207, SQL) gives the SAME scale and number as lib/grade.js
+// Proves picker_grade_num() (0210, SQL) gives the SAME scale and number as lib/grade.js
 // gradeNumFrom for every grade the contribute form's picker can submit. The SQL function exists so
 // an agreed grade correction can reach routes.grade_num without the client supplying the number;
 // if the two ever disagree, a corrected route sorts and filters somewhere its grade does not say.
