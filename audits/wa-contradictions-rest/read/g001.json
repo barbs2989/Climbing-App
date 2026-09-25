@@ -1,0 +1,615 @@
+{"batches": ["b001.json", "b002.json", "b003.json", "b004.json"], "routes_read": 9, "routes": [
+{"id": "wa_mount_fury_west_west_ridge", "name": "West Ridge / Northwest Route", "area": "Mount Fury (West Peak)",
+ "contradictions": [
+  {"fact": "Which line this route is (East Fury traverse vs NW glacier/ledges vs Perfect Pass chimneys)", "severity": "high",
+   "claims": [
+    {"field": "beta", "says": "The West Peak route starts from the East Peak via the Southeast Glacier approach. The traverse between summits is a wild and fun scramble"},
+    {"field": "itinerary.days[1].objective", "says": "Climb East Fury, traverse to West Fury, and return to Luna Col"},
+    {"field": "approach_variants[0].baseFinding", "says": "THIS ROUTE IS ENTERED FROM A SMALL GLACIER, NOT FROM A RIDGE, AND THAT IS THE DISCRIMINATOR."},
+    {"field": "climbing_route[0].label", "says": "Small glacier northwest of the peak"},
+    {"field": "pitch_detail[0].notes", "says": "Hannegan Pass Trail to Whatcom Pass (~18 mi one-way per the original account), then across the crevassed Whatcom Icefall to the cliffs above the Challenger Glacier, descending to a Perfect Pass base camp."},
+    {"field": "pitch_detail[1].notes", "says": "Two steep, loose, 'unpromising' shallow chimneys directly beneath and about 1,000 ft below the west summit"}
+   ],
+   "why": "Overview/beta/itinerary/timing/waypoints describe the East Fury-to-West Fury ridge traverse, climbing_route and approach_variants describe a northwest-glacier-and-ledges line (explicitly 'not from a ridge'), and ROUTE BREAKDOWN describes a Whatcom/Perfect Pass approach to chimneys below the west summit.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Route distance (trailhead to Luna Col / round trip)", "severity": "medium",
+   "claims": [
+    {"field": "dist_km", "says": "38.6"},
+    {"field": "itinerary.days[0].miles", "says": "12"},
+    {"field": "itinerary.totalNote", "says": "~41 miles round trip"},
+    {"field": "waypoints[5].distMi", "says": "22 (Luna Col)"},
+    {"field": "approach", "says": "total distance from the trailhead to a camp near this col is roughly 17 miles"}
+   ],
+   "why": "Itinerary days sum to 28.5 mi (header Dist), totalNote says ~41 mi, waypoints put Luna Col at 22 mi one way (44 RT), approach says ~17 mi to the col, and dist_km is 24 mi.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Northwest Forest Pass at Ross Dam Trailhead", "severity": "medium",
+   "claims": [
+    {"field": "waypoints[0].note", "says": "SR 20 milepost 134 parking lot; Northwest Forest Pass required."},
+    {"field": "waypoints[0].directions", "says": "A Northwest Forest Pass is required to leave a car here."},
+    {"field": "access.passRequired", "says": "No Northwest Forest Pass is needed — the trailhead and route lie within the National Park"}
+   ],
+   "why": "The trailhead waypoint requires a NW Forest Pass while ACCESS says none is needed.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Luna zone permit reservable in advance vs walk-up only", "severity": "medium",
+   "claims": [
+    {"field": "itinerary.cal", "says": "NPS wilderness permits (advance reservation via recreation.gov) and a Ross Lake water taxi reservation are both required"},
+    {"field": "access.permit", "says": "Reserve in advance via Recreation.gov"},
+    {"field": "bivy[0].permit", "says": "WALK-UP ONLY — this zone cannot be reserved in advance"}
+   ],
+   "why": "The trip plan tells the party to reserve in advance, but the Luna Col high camp's zone is stated to be walk-up only.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Route high point (East Fury 8,356 vs West Fury 8,303)", "severity": "medium",
+   "claims": [
+    {"field": "high_point_ft", "says": "8303"},
+    {"field": "itinerary.days[1].schedule[4].detail", "says": "High point of the route."},
+    {"field": "waypoints[6].elev", "says": "8356 (East Fury (ridge traverse start))"},
+    {"field": "overview", "says": "East Fury is actually roughly 51 ft taller than West Fury (8,356 ft ±8 ft vs. 8,305 ft ±10 ft)"}
+   ],
+   "why": "The route crosses East Fury, which the row itself says is 51 ft higher, yet West Fury is given as the route's high point.",
+   "internal_resolution": "high_point_ft should be East Fury's 8,356 per overview and waypoints[6]", "needs_research": false},
+  {"fact": "West Fury push: separate extra day vs one day with East Fury", "severity": "medium",
+   "claims": [
+    {"field": "partner_requirements.approachTime", "says": "reaching West Fury itself typically adds a full additional 16+ hour day (with possible forced bivouac) beyond the East Fury summit"},
+    {"field": "itinerary.days[1].hours", "says": "14 (East Fury, traverse to West Fury, and return to Luna Col in one day)"}
+   ],
+   "why": "Partner requirements say West Fury adds a separate 16+ hour day beyond East Fury, while the itinerary does both summits and the return in a single 14-hour day.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Number of rappels", "severity": "low",
+   "claims": [
+    {"field": "rappels", "says": "1-2 rappels on 50-60 meter rope"},
+    {"field": "descent_text", "says": "realistically a handful of short raps (estimate 2-4)"}
+   ],
+   "why": "RAPPELS says 1-2, the displayed descent says 2-4.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "High camp location/elevation (Access Col ~6,100 vs Luna Col 7,200)", "severity": "low",
+   "claims": [
+    {"field": "approach", "says": "a notch around 6,100 ft (Access Col) ... total distance from the trailhead to a camp near this col is roughly 17 miles"},
+    {"field": "itinerary.days[0].objective", "says": "Reach high camp at Luna Col (~7,200 ft)"},
+    {"field": "waypoints[5].elev", "says": "7200 (Luna Col)"}
+   ],
+   "why": "Approach puts the day-1 camp near 6,100-ft Access Col; itinerary and waypoints put it at 7,200-ft Luna Col beyond a long sidehill traverse.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Access Creek crossing elevation vs Luna Camp", "severity": "low",
+   "claims": [
+    {"field": "waypoints[3].elev", "says": "2000 (Access Creek crossing, 'About 1.5 miles past Luna Camp')"},
+    {"field": "waypoints[2].elev", "says": "2432 (Luna Camp)"}
+   ],
+   "why": "The crossing is 1.5 mi further up-valley than Luna Camp yet listed ~430 ft lower.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Rock quality/protection", "severity": "low",
+   "claims": [
+    {"field": "pro_needs", "says": "most experienced climbers can protect themselves with basic anchors in the granite"},
+    {"field": "climbing_route[2].notes", "says": "the rock takes gear poorly"},
+    {"field": "hazards[0]", "says": "extremely loose 'choss' rock on the East-West Fury connecting ridge"}
+   ],
+   "why": "PROTECTION presents sound granite that protects readily while the rest of the row says the rock is choss that takes gear poorly.",
+   "internal_resolution": "hazards, beta, climbing_route and descent_text agree the rock is loose and protects poorly; pro_needs is the outlier", "needs_research": false},
+  {"fact": "Season end", "severity": "low",
+   "claims": [
+    {"field": "season", "says": "Jul-Aug"},
+    {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through early September"},
+    {"field": "seasonal_guidance.monthBreakdown.September.status", "says": "good"}
+   ],
+   "why": "The best window extends into September, outside the Jul-Aug season.",
+   "internal_resolution": null, "needs_research": false}
+ ]},
+{"id": "wa_ridge_traverse_from_east_fury", "name": "Ridge Traverse from East Fury", "area": "Mount Fury (West Peak)",
+ "contradictions": [
+  {"fact": "Access text copied from an Olympic Mountains route", "severity": "high",
+   "claims": [
+    {"field": "access.closures", "says": "Best June-August; winter snow closure typical Nov-May; Glacier Meadows permits limited and first-come first-served."},
+    {"field": "access._raw.special_requirements", "says": "Limited permits for Elk Lake and Glacier Meadows basecamp. ... No camping between Glacier Meadows and Blue Glacier."},
+    {"field": "season", "says": "Jul-Sep"}
+   ],
+   "why": "Glacier Meadows/Elk Lake/Blue Glacier are Mount Olympus features, not the Pickets, and the 'Best June-August' window also disagrees with the route's Jul-Sep season.",
+   "internal_resolution": "access.closures' first sentence is contaminated; the Luna Fire part and the rest of the row describe the Pickets", "needs_research": false},
+  {"fact": "Luna Camp elevation / identity", "severity": "medium",
+   "claims": [
+    {"field": "itinerary", "says": "hike 9.4 miles to Luna Camp (7,200 ft)"},
+    {"field": "bivy[1].elev", "says": "2432 (Luna Camp, Big Beaver Trail)"},
+    {"field": "waypoints[3].elev", "says": "7200 (Luna Col)"}
+   ],
+   "why": "The itinerary gives Luna Camp (a valley camp at 2,432 ft) the elevation of Luna Col, 4,800 ft higher.",
+   "internal_resolution": "bivy and waypoints agree Luna Camp is ~2,432 ft and Luna Col ~7,200 ft; itinerary conflates them", "needs_research": false},
+  {"fact": "Summit-day timing from Luna Camp", "severity": "medium",
+   "claims": [
+    {"field": "timing.recommendedStart", "says": "0600 from Luna Camp"},
+    {"field": "timing.totalHrs", "says": "5"},
+    {"field": "timing.approachTimeHrs", "says": "0.5"},
+    {"field": "approach_variants[0].notes", "says": "Budget the East Fury ascent as a full day in its own right before this one begins"},
+    {"field": "itinerary", "says": "Day 2: Ascend to East Fury summit, traverse to West Fury, return to East Fury summit."}
+   ],
+   "why": "Timing starts at Luna Camp (a valley camp) with a 0.5-hr approach and 5-hr total, while the row says reaching East Fury alone is a full day.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Trip length (days)", "severity": "medium",
+   "claims": [
+    {"field": "itinerary", "says": "Day 1 ... Day 4: Complete descent to Ross Lake and water taxi return."},
+    {"field": "approach", "says": "Allow about a week for the round trip."}
+   ],
+   "why": "The itinerary is 4 days; the approach says about a week.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Traverse duration / roped vs solo", "severity": "medium",
+   "claims": [
+    {"field": "pro_tips[3]", "says": "Most experienced parties can complete the traverse in under an hour"},
+    {"field": "timing.summitTimeHrs", "says": "2.5"},
+    {"field": "rappels", "says": "About 6 rappels, reversing the towers you climbed."}
+   ],
+   "why": "Under an hour for the traverse conflicts with a 2.5-hr summit time and about 6 rappels.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Permit fee", "severity": "medium",
+   "claims": [
+    {"field": "access.fees", "says": "N/A"},
+    {"field": "access.overnight_permit.what", "says": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free"}
+   ],
+   "why": "Fees say N/A while the overnight permit is stated to carry a per-person fee.",
+   "internal_resolution": "overnight_permit.what is correct; fees N/A is the outlier", "needs_research": false},
+  {"fact": "Luna zone permit reservable vs walk-up only", "severity": "low",
+   "claims": [
+    {"field": "access.notes", "says": "60% of sites are reservable in advance via Recreation.gov"},
+    {"field": "bivy[0].permit", "says": "WALK-UP ONLY — this zone cannot be reserved in advance"}
+   ],
+   "why": "ACCESS implies advance reservation while the high camp's zone is walk-up only.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Trailhead elevation / cell coverage note", "severity": "low",
+   "claims": [
+    {"field": "comms", "says": "Verizon occasionally has coverage at Ross Lake trailhead (8,000+ ft)."},
+    {"field": "waypoints[0].elev", "says": "1602"},
+    {"field": "waypoints[0].directions", "says": "From the parking it is a 15-20 minute descent to Ross Lake."}
+   ],
+   "why": "Comms puts the trailhead at 8,000+ ft, the waypoint at 1,602 ft (lake level), while the directions say the trailhead sits above the lake.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Pitch count", "severity": "low",
+   "claims": [
+    {"field": "pitches", "says": "0"},
+    {"field": "pitch_detail", "says": "6 rows (Descent from East Fury summit, Tower 1, Tower 2, Tower 3, Final gendarmes, Summit slabs)"}
+   ],
+   "why": "The header says 0 pitches while ROUTE BREAKDOWN lists six roped/scrambling sections.",
+   "internal_resolution": null, "needs_research": false},
+  {"fact": "Winter road access", "severity": "low",
+   "claims": [
+    {"field": "road.status", "says": "this lower-elevation western section of Highway 20 is open year-round"},
+    {"field": "climate.winter", "says": "Access restricted by road closure."}
+   ],
+   "why": "Road says year-round access; climate says winter access is restricted by closure.",
+   "internal_resolution": null, "needs_research": true}
+ ]},
+{"id": "wa_mount_fury_east_mongo_ridge", "name": "Mongo Ridge (Southwest Buttress)", "area": "Mount Fury (West Peak)",
+ "contradictions": [
+  {"fact": "Where the dozen rappels (and the Pole of Remoteness) are: on Mongo Ridge ascent vs on the West-to-East Fury connecting-ridge descent", "severity": "high",
+   "claims": [
+    {"field": "rope_note", "says": "The bottom half has four narrow towers requiring summit-and-rappel tactics with long double-rope rappels"},
+    {"field": "pitch_detail[23].notes", "says": "Climbs to the summit of the Pole of Remoteness itself ... The rappel off its far side is where a rope was famously severed"},
+    {"field": "descent_text", "says": "The technical crux of the descent is the ridge traverse itself: getting off each of the roughly half-dozen major gendarmes and pinnacles (including the tower nicknamed the 'Pole of Remoteness') requires rappelling ... roughly a dozen rappels total along the ridge crest before regaining East Fury"},
+    {"field": "rappel_detail[11].notes", "says": "Final rappel regaining East Fury, after which the descent continues via the Southeast Glacier route toward Luna Pass."}
+   ],
+   "why": "Pitch breakdown, rope note and itinerary put the tower rappels and the Pole of Remoteness on the Mongo Ridge ascent, while descent_text and rappel_detail place the same dozen rappels and tower on the descent back to East Fury.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Glacier travel on approach/descent", "severity": "medium",
+   "claims": [
+    {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel on the ridge itself, though some approach variations may cross glaciated terrain"},
+    {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer alpine rock route"},
+    {"field": "hazards[9]", "says": "The approach and descent both cross glaciated terrain with crevasse hazard."},
+    {"field": "approach", "says": "the crevassed Southeast Glacier with a ~7,900-ft bergschrund"}
+   ],
+   "why": "SEASONAL HAZARDS calls it non-glaciated with glacier only on 'some' variations, but the only approach and descent described cross the crevassed Southeast Glacier.",
+   "internal_resolution": "hazards, obj_haz, approach, descent_text and gear agree the standard approach/descent is glaciated", "needs_research": false},
+  {"fact": "Location of the technical crux", "severity": "medium",
+   "claims": [
+    {"field": "rope_note", "says": "the crux Rooster Comb section near the top requires more rappels"},
+    {"field": "pitch_detail[12].notes", "says": "The technical crux ... This is the pitch that gives the route its 5.10 grade. (pitch 13, Tower 3)"},
+    {"field": "pitch_detail[19].notes", "says": "A snow gully marks the start of the Rooster Comb bypass section, a lower-angle stretch"},
+    {"field": "watch_out[4]", "says": "A 5.11 headwall near the top can catch parties off guard"}
+   ],
+   "why": "The crux is placed at the Rooster Comb/near the top in rope_note and watch_out, but at pitch 13 on Tower 3 (mid-route) in the breakdown, where the Rooster Comb is Class 4 bypass terrain and no 5.11 headwall appears.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Distance units/total", "severity": "medium",
+   "claims": [
+    {"field": "dist_km", "says": "38.6"},
+    {"field": "itinerary.days[*].miles", "says": "13+4+1.5+1+3+16 = 38.5 mi"},
+    {"field": "itinerary.totalNote", "says": "~40-48 mi"}
+   ],
+   "why": "dist_km 38.6 km (24 mi) vs itinerary 38.5 mi and totalNote 40-48 mi; the km value looks like the mile figure stored in km.",
+   "internal_resolution": "itinerary and totalNote agree on ~38-48 miles round trip; dist_km is the outlier", "needs_research": false},
+  {"fact": "Trailhead elevation", "severity": "low",
+   "claims": [
+    {"field": "waypoints[0].elev", "says": "1640"},
+    {"field": "approach", "says": "From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft)"}
+   ],
+   "why": "The trailhead is 1,640 ft in waypoints and 2,150 ft in the approach.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Total gain vs loss on a round trip", "severity": "low",
+   "claims": [
+    {"field": "gain_ft", "says": "10000"},
+    {"field": "loss_ft", "says": "10700"},
+    {"field": "itinerary.totalNote", "says": "roughly 10,000+ ft of cumulative gain each way"}
+   ],
+   "why": "A trip starting and ending at the same trailhead shows 700 ft more loss than gain, and totalNote says 10,000+ each way against a 10,000 total.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Day-1 schedule vs approach times", "severity": "low",
+   "claims": [
+    {"field": "itinerary.days[0].schedule[1]", "says": "~2:00 PM Water taxi to Big Beaver Landing"},
+    {"field": "itinerary.days[0].schedule[2]", "says": "7:00 PM Reach Access Basin camp"},
+    {"field": "approach", "says": "Big Beaver Creek Trail 11.5 miles up-valley (flat, well-graded, ~5 hours) ... This is a genuine bushwhack: roughly 1 mile and 1,900 ft of gain"}
+   ],
+   "why": "Taxi at 2 PM leaves 5 hours for 11.5 mi of trail (~5 h alone) plus the Access Creek bushwhack, and 6 hours to cover a 1-mile walk to the dock.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "First-ascent date", "severity": "low",
+   "claims": [
+    {"field": "fa", "says": "Wayne Wallace, solo — 2006 (month uncertain: July or August)"},
+    {"field": "beta", "says": "first ascended August 24-27, 2006, in four days"},
+    {"field": "overview", "says": "soloed by Wayne Wallace over four days in August 2006"}
+   ],
+   "why": "fa calls the month uncertain while overview and beta give August with exact dates.",
+   "internal_resolution": "overview and beta agree on August 2006", "needs_research": false},
+  {"fact": "Rack size", "severity": "low",
+   "claims": [
+    {"field": "gear[7]", "says": "Single rack to 4in (doubles in finger/hand sizes)"},
+    {"field": "detailed_rack", "says": "an alpine rack of cams to ~3 in"}
+   ],
+   "why": "Largest cam 4 in vs 3 in.",
+   "internal_resolution": "detailed_rack, sling_rack and rack agree on ~3 in", "needs_research": false},
+  {"fact": "Season end", "severity": "low",
+   "claims": [
+    {"field": "season", "says": "Jul-Aug"},
+    {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through early September, matching the established best season"},
+    {"field": "itinerary.cal", "says": "most parties target July-September"}
+   ],
+   "why": "Best window and itinerary extend into September, beyond the Jul-Aug season.",
+   "internal_resolution": null, "needs_research": false}
+ ]},
+{"id": "wa_phantom_peak_south_route", "name": "South Route", "area": "Phantom Peak",
+ "contradictions": [
+  {"fact": "Total gain/loss", "severity": "high",
+   "claims": [
+    {"field": "gain_ft", "says": "1916"},
+    {"field": "loss_ft", "says": "1000"},
+    {"field": "itinerary.days[*].gainFt", "says": "2500+3000+2400+300+200 = 8400"},
+    {"field": "itinerary.days[*].lossFt", "says": "200+300+2400+3000+2500 = 8400"}
+   ],
+   "why": "Header gain 1,916 ft (the summit-minus-saddle figure) vs 8,400 ft for the trip the itinerary describes; loss 1,000 vs 8,400.",
+   "internal_resolution": "gain_ft/loss_ft cover only the climb from the 6,100-ft saddle; itinerary sums are the whole trip", "needs_research": false},
+  {"fact": "Trailhead / road", "severity": "high",
+   "claims": [
+    {"field": "road.name", "says": "Goodell Creek / Ross Lake access"},
+    {"field": "approach_logistics.trailhead", "says": "Hannegan Pass Trailhead (end of Ruth Creek Rd / FR-32)"},
+    {"field": "approach_logistics.trailheadDirection", "says": "From the Nooksack Cirque Trailhead at the end of FR-34 off Hannegan Pass Road (FR-32)"},
+    {"field": "waypoints[5].note", "says": "This route is reached from the west side of the range over Hannegan Pass, not from Ross Lake."},
+    {"field": "approach", "says": "Option one, the Luna Creek approach: from Ross Lake Resort, take the water taxi"}
+   ],
+   "why": "GETTING THERE names Goodell Creek/Ross Lake, the trailhead card names Hannegan Pass TH but its direction names the Nooksack Cirque TH on FR-34, and a waypoint says the route is not reached from Ross Lake while the approach offers a Ross Lake option.",
+   "internal_resolution": "itinerary, timing, approach_variants (primary) and waypoints use Hannegan Pass TH; road.name and trailheadDirection are outliers", "needs_research": false},
+  {"fact": "Hannegan TH to Whatcom Pass: one 9-mile day vs several days", "severity": "medium",
+   "claims": [
+    {"field": "itinerary.days[0]", "says": "hours 6, miles 9, Hannegan TH to Whatcom Pass"},
+    {"field": "bivy[3].notes", "says": "Parties coming that way typically chain Boundary, Copper Creek or US Cabin, then Graybeal on Brush Creek, then here — three or four days of walking before any climbing begins."}
+   ],
+   "why": "The itinerary reaches Whatcom Pass in 6 hours/9 miles on day 1, while the Whatcom Camp card says that approach is three or four days of walking.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Moraine camp elevation vs 1,000-ft descent to the 6,100-ft saddle", "severity": "medium",
+   "claims": [
+    {"field": "waypoints[2].elev", "says": "7800 (Crooked Thumb Glacier moraine high camp)"},
+    {"field": "waypoints[3].note", "says": "Gained via a roughly 1,000 ft descending traverse from the moraine camp"},
+    {"field": "waypoints[3].elev", "says": "6100"},
+    {"field": "approach", "says": "a roughly 1,000-ft descending traverse east ... then up a snowfield to a saddle around 6,100 ft"}
+   ],
+   "why": "A 1,000-ft descent then a climb from a 7,800-ft camp cannot end at a 6,100-ft saddle (a 1,700-ft net drop).",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Distance to Luna Camp", "severity": "medium",
+   "claims": [
+    {"field": "waypoints[0].note", "says": "~10 mi up the Big Beaver Trail"},
+    {"field": "approach", "says": "it's about 14 miles of maintained, mostly flat, forested trail up the Big Beaver Creek drainage ... to Luna Camp"},
+    {"field": "bivy[2].notes", "says": "walk eight to ten miles of nearly flat old-growth trail"}
+   ],
+   "why": "Luna Camp is 8-10 mi from the landing in two fields and 14 mi in the approach.",
+   "internal_resolution": "waypoint and bivy agree on ~10 mi; approach is the outlier", "needs_research": false},
+  {"fact": "Waypoint list mixes the two approaches", "severity": "low",
+   "claims": [
+    {"field": "waypoints[1].name", "says": "Luna Creek bushwhack (distMi 11.5)"},
+    {"field": "waypoints[2].name", "says": "Crooked Thumb Glacier moraine high camp (distMi 14.5)"},
+    {"field": "approach_variants[0].name", "says": "Hannegan Pass, Whatcom Pass and Perfect Pass to a camp on the Crooked Thumb Glacier moraine"}
+   ],
+   "why": "The distance sequence runs from the Big Beaver/Luna Creek approach into the moraine camp that belongs only to the Whatcom Pass approach.",
+   "internal_resolution": null, "needs_research": false},
+  {"fact": "Avalanche/glacier status", "severity": "medium",
+   "claims": [
+    {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer route"},
+    {"field": "gear[0]", "says": "Glacier travel kit (rope, crevasse-rescue hardware)"},
+    {"field": "pitch_detail[1].grade", "says": "Glacier travel"}
+   ],
+   "why": "Called non-glaciated while the route crosses a pocket glacier with a bergschrund and the approach crosses the Whatcom/Challenger glaciers.",
+   "internal_resolution": "gear, hazards, crevasses and pitch_detail agree it is glaciated", "needs_research": false},
+  {"fact": "Rope length", "severity": "low",
+   "claims": [
+    {"field": "rope_length_m", "says": "50"},
+    {"field": "descent_text", "says": "A single 60m rope handles the two ~75-ft rappels comfortably"},
+    {"field": "rappel_detail[1].notes", "says": "a single 60m rope handles both rappels comfortably"}
+   ],
+   "why": "Kit says a 50 m rope; the descent fields specify 60 m.",
+   "internal_resolution": null, "needs_research": false},
+  {"fact": "Number of pickets", "severity": "low",
+   "claims": [
+    {"field": "gear[1]", "says": "3-4 snow pickets or flukes"},
+    {"field": "sling_rack.pickets", "says": "2-3 snow pickets"},
+    {"field": "pro_tips[3]", "says": "Carry 3-4 flukes/pickets — parties have placed four on the glacier section alone"}
+   ],
+   "why": "Rack says 2-3 pickets while gear and pro tips say 3-4, with four placed on the glacier alone.",
+   "internal_resolution": null, "needs_research": false},
+  {"fact": "Season window", "severity": "low",
+   "claims": [
+    {"field": "season", "says": "Late Jun-Aug"},
+    {"field": "seasonal_guidance.optimalWindow", "says": "Mid-July through early September"},
+    {"field": "seasonal_guidance.monthBreakdown.September.status", "says": "good"},
+    {"field": "climate.bySeason.spring", "says": "Approach trails and creek crossings are typically unsafe/impassable due to high water and lingering snow into June."}
+   ],
+   "why": "The season opens in late June, which climate calls impassable, and ends in August, while September is rated good and inside the optimal window.",
+   "internal_resolution": null, "needs_research": true}
+ ]},
+{"id": "wa_phantom_peak_west_ridge", "name": "West Ridge", "area": "Phantom Peak",
+ "contradictions": [
+  {"fact": "Glacier gear vs glaciated approach", "severity": "medium",
+   "claims": [
+    {"field": "gear[4]", "says": "Approach shoes or light boots for the glacier/4th-class sections"},
+    {"field": "approach_variants[0].hazards[1]", "says": "Crevasses on the Challenger Glacier"},
+    {"field": "approach", "says": "climbing through Perfect Pass and over the Challenger Glacier, then descending and traversing steep snow, talus, and more glacier"}
+   ],
+   "why": "The approach crosses a crevassed glacier and steep snow, but the kit lists approach shoes or light boots for the glacier and no axe, crampons or crevasse gear.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Bivy card describes a different peak", "severity": "low",
+   "claims": [
+    {"field": "bivy[0].notes", "says": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached"},
+    {"field": "approach", "says": "to a bivy site under Ghost Peak"}
+   ],
+   "why": "The main camp card on this Phantom Peak route says it is how Spectre Peak is reached.",
+   "internal_resolution": null, "needs_research": false}
+ ]},
+{"id": "wa_luna_glacier", "name": "Luna Glacier", "area": "Phantom Peak",
+ "contradictions": [
+  {"fact": "Access Creek approach trailhead", "severity": "high",
+   "claims": [
+    {"field": "road.driveNote", "says": "the Access Creek approach instead starts from a Thunder Creek-corridor trailhead off SR-20"},
+    {"field": "road.name", "says": "or the Access Creek/Thunder Creek trailheads near Diablo"},
+    {"field": "approach", "says": "Most contemporary parties instead approach via Access Creek, which branches off that same Big Beaver Trail rather than a separate trailhead"}
+   ],
+   "why": "GETTING THERE sends the Access Creek approach from a Thunder Creek trailhead near Diablo, while the approach says Access Creek branches off the Big Beaver Trail with no separate trailhead.",
+   "internal_resolution": "approach, approach_variants and approach_logistics (Ross Dam TH) agree Access Creek leaves the Big Beaver Trail", "needs_research": false},
+  {"fact": "Distance from Luna Camp to the Access Creek turnoff", "severity": "medium",
+   "claims": [
+    {"field": "approach", "says": "parties continue on the maintained trail roughly 15-17.5 miles past Luna Camp to the unmarked Access Creek/Big Beaver Creek confluence"},
+    {"field": "bivy[1].notes", "says": "The climbers' path leaves the maintained trail roughly a mile and a half beyond and crosses Big Beaver Creek near the Access Creek confluence"}
+   ],
+   "why": "The turnoff is 15-17.5 mi past Luna Camp in one field and ~1.5 mi in another.",
+   "internal_resolution": "bivy agrees with the other Fury rows (~1.5 mi past Luna Camp)", "needs_research": false},
+  {"fact": "Approach line (Wiley Ridge vs Access Creek/Luna Creek)", "severity": "medium",
+   "claims": [
+    {"field": "itinerary.days[1].note", "says": "Leave the trail and climb steep timber and brush onto Wiley Ridge, then traverse cross-country into Luna Basin"},
+    {"field": "approach", "says": "Most contemporary parties instead approach via Access Creek"},
+    {"field": "waypoints[0].note", "says": "approach to Luna Cirque/Phantom Peak via Ross Lake, Big Beaver Trail, Access Creek, Luna Pass."}
+   ],
+   "why": "The trip plan uses a Wiley Ridge approach that neither the approach text nor the approach variant describes.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Which face the glacier is on", "severity": "medium",
+   "claims": [
+    {"field": "overview", "says": "the small hanging glacier that clings to the peak's east face above Luna Cirque"},
+    {"field": "aspect", "says": "S"},
+    {"field": "face", "says": "South-facing hanging glacier above Luna Cirque"},
+    {"field": "approach_variants[0].baseFinding", "says": "the hanging glacier that lies directly south of Phantom"}
+   ],
+   "why": "The overview puts the glacier on the east face; aspect, face and route beta say south.",
+   "internal_resolution": "aspect, face, climbing_route and approach_variants agree on south (pitch_detail says southeast); overview is the outlier", "needs_research": false},
+  {"fact": "Season opening (June)", "severity": "medium",
+   "claims": [
+    {"field": "season", "says": "Jun-early Aug (glacier crux may close out by late season)"},
+    {"field": "seasonal_guidance.monthBreakdown.June.status", "says": "good"},
+    {"field": "itinerary.cal", "says": "Northern Pickets approaches are typically not in good condition until mid-July"}
+   ],
+   "why": "The season and guidance rate June good, while the trip plan says the approach is not in condition until mid-July.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Permit fees", "severity": "medium",
+   "claims": [
+    {"field": "access.fees", "says": "None beyond the parking or entrance fee this route already lists."},
+    {"field": "access.overnight_permit.what", "says": "fee per person, not free"},
+    {"field": "access._raw.permit_cost", "says": "$10 per person + $6 non-refundable reservation fee"}
+   ],
+   "why": "Fees say none beyond parking while the overnight permit carries a per-person fee.",
+   "internal_resolution": "overnight_permit and _raw agree there is a per-person permit fee", "needs_research": false},
+  {"fact": "Rock grade of the slab pitches", "severity": "low",
+   "claims": [
+    {"field": "climbing_route[2].class", "says": "4"},
+    {"field": "climbing_route[3].notes", "says": "the climbing overall is rated 4th class with a move of easy 5th"},
+    {"field": "pitch_detail[2].grade", "says": "Low 5th (5.2-5.4)"},
+    {"field": "beta", "says": "Two to three pitches of easy 5th-class slab climbing"}
+   ],
+   "why": "The slab pitches are Class 4 in CLIMBING ROUTE but low/easy 5th (to 5.4) in ROUTE BREAKDOWN and beta.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Day-1 gain on a 'nearly flat' trail", "severity": "low",
+   "claims": [
+    {"field": "itinerary.days[0].gainFt", "says": "1800"},
+    {"field": "bivy[1].notes", "says": "the Big Beaver landing near 1,600 ft and then walk eight to ten miles of nearly flat old-growth trail"},
+    {"field": "bivy[1].elev", "says": "2432"}
+   ],
+   "why": "Landing ~1,600 ft to Luna Camp 2,432 ft is ~830 ft, not 1,800 ft.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Trailhead elevation", "severity": "low",
+   "claims": [
+    {"field": "waypoints[0].elev", "says": "1480"},
+    {"field": "bivy[1].notes", "says": "the Big Beaver landing near 1,600 ft"}
+   ],
+   "why": "The car trailhead on SR-20 is shown below the lake landing it descends to.",
+   "internal_resolution": null, "needs_research": true}
+ ]},
+{"id": "wa_poltergeist_pinnacle_north_route", "name": "East Face", "area": "Poltergeist Pinnacle",
+ "contradictions": [
+  {"fact": "Descent: rappel the face vs traverse over Challenger", "severity": "high",
+   "claims": [
+    {"field": "descent_text", "says": "this ridge traverse, not a rappel down the just-climbed face, is the standard way off Poltergeist Pinnacle"},
+    {"field": "rappels", "says": "Not a rappel descent - team downclimbs/simulclimbs the ridge to Mount Challenger's summit and descends Challenger's standard glacier route"},
+    {"field": "itinerary.days[2].schedule[4].detail", "says": "Rappel/downclimb back to the glacier."},
+    {"field": "itinerary.days[2].note", "says": "before reversing the route and re-crossing the glacier back to camp"},
+    {"field": "waypoints[7].note", "says": "rappel the route to reverse back to the glacier and camp."}
+   ],
+   "why": "The descent, rappels, gear, climbing_route and approach_variants say descend over Challenger, not down the face, while the itinerary and summit waypoint say rappel the route.",
+   "internal_resolution": "descent_text, rappels, gear[5], climbing_route[3] and approach_variants agree on the Challenger traverse", "needs_research": false},
+  {"fact": "Perfect Pass elevation", "severity": "medium",
+   "claims": [
+    {"field": "approach", "says": "up to Perfect Pass (~5,800 ft)"},
+    {"field": "waypoints[3].elev", "says": "6198"},
+    {"field": "itinerary.days[1].note", "says": "Perfect Pass (6,300 ft)"},
+    {"field": "bivy[0].elev", "says": "6300"}
+   ],
+   "why": "Perfect Pass is ~5,800 ft in the approach vs 6,198-6,300 ft elsewhere.",
+   "internal_resolution": "waypoints, itinerary and bivy agree on ~6,200-6,300 ft; approach is the outlier", "needs_research": false},
+  {"fact": "Commitment grade and rock quality", "severity": "medium",
+   "claims": [
+    {"field": "grade", "says": "Grade IV, 5.9"},
+    {"field": "commitment", "says": "IV"},
+    {"field": "seasonal_hazards.exposure", "says": "Grade III alpine rock on a slender, loose-rock pinnacle"},
+    {"field": "pro_needs", "says": "the rock is sound and protects well"}
+   ],
+   "why": "SEASONAL HAZARDS calls it Grade III on loose rock; the grade is IV and the gear fields say the rock is sound.",
+   "internal_resolution": "grade, commitment and overview agree on IV; pro_needs, detailed_rack and gear agree the rock is sound", "needs_research": false},
+  {"fact": "Required leading grade", "severity": "medium",
+   "claims": [
+    {"field": "partner_requirements.requiredSkills[1]", "says": "Confident traditional multipitch leading at 5.7 on an alpine tower"},
+    {"field": "beta", "says": "Confident, composed 5.9 face-climbing ability and comfort well above sparse pro are essential"}
+   ],
+   "why": "PARTNER REQUIREMENTS asks for 5.7 leading on a route with a 5.9 R crux.",
+   "internal_resolution": "grade, rock_grade, beta and pitch_detail agree on a 5.9 (R) crux", "needs_research": false},
+  {"fact": "Pitch count", "severity": "medium",
+   "claims": [
+    {"field": "pitches", "says": "4"},
+    {"field": "overview", "says": "via three pitches of sustained 5.8-5.9+ face and corner climbing ... followed by two long simul-climbed pitches up the connecting ridge"}
+   ],
+   "why": "The overview implies 5 pitches while pitches, pitch_detail and climbing_route show 4.",
+   "internal_resolution": "pitches, pitch_detail, climbing_route and itinerary agree on 4", "needs_research": false},
+  {"fact": "Approach days", "severity": "medium",
+   "claims": [
+    {"field": "partner_requirements.fitnessSpec.hiking", "says": "Multi-day (typically 2-3 days each way)"},
+    {"field": "itinerary.days[3].note", "says": "reverse the entire approach in one long push"},
+    {"field": "approach", "says": "a full, long day (8-12+ hours) for a fast party, and worth splitting into two days for most"}
+   ],
+   "why": "Partner requirements say 2-3 days each way; the itinerary walks in over 2 days and out in one 9-hour day.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Wilderness permit reservable vs walk-up only", "severity": "medium",
+   "claims": [
+    {"field": "access.permit", "says": "Perfect Pass/Whatcom Pass/Picket Range is a walk-up-only cross-country zone with no advance reservation"},
+    {"field": "itinerary.cal", "says": "a North Cascades NP wilderness permit is required for the Perfect Pass/Whatcom Pass zone and is worth reserving ahead in peak season"},
+    {"field": "waypoints[0].directions", "says": "is worth reserving ahead in peak season"}
+   ],
+   "why": "The trip plan and trailhead say reserve ahead; ACCESS and the Perfect Pass bivy say the zone cannot be reserved.",
+   "internal_resolution": "access.permit, access.fees and bivy[0].permit agree it is walk-up only", "needs_research": false},
+  {"fact": "Trailhead-to-Perfect Pass distance / waypoint mileage", "severity": "low",
+   "claims": [
+    {"field": "waypoints[3].distMi", "says": "13 (Perfect Pass)"},
+    {"field": "approach", "says": "Trailhead to camp is roughly 16 miles one-way"},
+    {"field": "waypoints[2].distMi", "says": "9 (Imperfect Impasse)"},
+    {"field": "itinerary.days[0].note", "says": "drops to the Chilliwack River crossing (~2,750 ft, 9 mi in)"}
+   ],
+   "why": "Perfect Pass is at 13 mi in waypoints vs 16 mi in approach/itinerary, and the Imperfect Impasse sits at mile 9, the same mileage the itinerary gives the river crossing far below Easy Ridge.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Distance and gain presentation", "severity": "low",
+   "claims": [
+    {"field": "dist_km", "says": "28.17"},
+    {"field": "itinerary.totalNote", "says": "~35 mi round trip"},
+    {"field": "gain_ft", "says": "11100"},
+    {"field": "loss_ft", "says": "10700"}
+   ],
+   "why": "dist_km is a one-way 17.5 mi against a ~35-38 mi round-trip itinerary, and an out-and-back shows 400 ft more gain than loss.",
+   "internal_resolution": null, "needs_research": false}
+ ]},
+{"id": "wa_spectre_peak_haunted_wall", "name": "Haunted Wall", "area": "Spectre Peak",
+ "contradictions": [
+  {"fact": "First-ascent year", "severity": "medium",
+   "claims": [
+    {"field": "fa", "says": "Wayne Wallace and Mike Layton, August 2006"},
+    {"field": "beta", "says": "Established in August 2007 by Wayne Wallace and Mike Layton"}
+   ],
+   "why": "The FA year is 2006 in fa and 2007 in beta.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Whether rappels are required", "severity": "medium",
+   "claims": [
+    {"field": "rappels", "says": "No rappel descent is recorded for this wall"},
+    {"field": "watch_out[2]", "says": "A fully committing rappel sequence is required in places"},
+    {"field": "hazards[2]", "says": "Committing rappels with few options to bail"},
+    {"field": "descent", "says": "Downclimb steep snow on the mountain's opposite (north) side to ledges"}
+   ],
+   "why": "Watch-outs say a committing rappel sequence is required; RAPPELS and DESCENT say no rappel is recorded and the way down is a downclimb.",
+   "internal_resolution": null, "needs_research": true}
+ ]},
+{"id": "wa_spectre_peak_south_route", "name": "South Ridge (\"Spirited Away\")", "area": "Spectre Peak",
+ "contradictions": [
+  {"fact": "Where to leave the maintained trail after Hannegan Pass", "severity": "high",
+   "claims": [
+    {"field": "approach", "says": "At the pass, leave the maintained trail: a boot path/climbers' route ... breaks off toward Easy Ridge rather than continuing down to Boundary Camp/Chilliwack River."},
+    {"field": "waypoints[1].note", "says": "stay on the maintained trail here and descend into the Chilliwack valley; the cross-country toward Easy Ridge starts far below, after the river ford"},
+    {"field": "waypoints[2].directions", "says": "From the pass the maintained trail keeps going, and this is the stretch people get wrong: do not leave it here."}
+   ],
+   "why": "The approach says leave the trail at Hannegan Pass for Easy Ridge; the waypoints say do not leave it there, but descend and ford the Chilliwack first.",
+   "internal_resolution": "waypoints[1], waypoints[2], approach_variants and bivy[0] agree on descending to the Chilliwack ford", "needs_research": false},
+  {"fact": "Ascent rappels vs descent rappels; descent line", "severity": "high",
+   "claims": [
+    {"field": "pitch_detail[11].notes", "says": "top out with a ~30m rappel from the last tower to a big grassy ledge, then downclimb roughly 600 ft of 3rd/4th-class terrain ... to the summit"},
+    {"field": "beta", "says": "finishing through narrow hoodoo towers before a ~30m rappel and a 600-ft scramble to the summit"},
+    {"field": "rappel_detail[0].notes", "says": "Key technical rappel of the descent, from the final hoodoo tower down to a grassy ledge system, within the ~600 ft downclimb from the summit."},
+    {"field": "itinerary.days[2].schedule[5].detail", "says": "30m rappel off the summit to a grassy ledge system to start the way down."},
+    {"field": "rappels", "says": "the descent itself is a downclimb/retrace, not a rappel descent"},
+    {"field": "descent_text", "says": "Below the rappels/downclimbing, the descent drops onto Spectre's east-facing slopes back toward the Challenger Col/Easy Ridge approach line"}
+   ],
+   "why": "The 30 m hoodoo rappel (and the 25 m P7 rappel) happen on the ascent below the 600-ft summit scramble in beta and pitch_detail, but rappel_detail and the schedule call them descent rappels off the summit. The descent is a retrace in RAPPELS and the east-facing slopes in descent_text.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Rope note describes the Haunted Wall", "severity": "medium",
+   "claims": [
+    {"field": "rope_note", "says": "~800ft of runout climbing into a chimney, a rappel into a notch, then exposed face climbing to a gendarme."},
+    {"field": "overview", "says": "Haunted Wall (IV 5.9+, 2,100', Wayne Wallace and Mike Layton, Aug 2006) and this South Ridge line"}
+   ],
+   "why": "The rope note describes the Haunted Wall's 800 ft of runout and chimney, not this 12-pitch ridge route.",
+   "internal_resolution": "pitch_detail, beta and gear describe the South Ridge; rope_note is contaminated", "needs_research": false},
+  {"fact": "Commitment grade", "severity": "medium",
+   "claims": [
+    {"field": "grade", "says": "IV 5.9"},
+    {"field": "commitment", "says": "IV"},
+    {"field": "partner_requirements.fitnessSpec.packWeight", "says": "a stripped-down summit-day pack for the Grade III climb itself"},
+    {"field": "partner_requirements.requiredSkills[4]", "says": "Efficient multi-pitch systems needed to complete a Grade III route in a day from a remote camp"}
+   ],
+   "why": "PARTNER REQUIREMENTS calls it Grade III; everything else says IV.",
+   "internal_resolution": "grade, commitment, beta and itinerary agree on IV", "needs_research": false},
+  {"fact": "Round-trip gain", "severity": "medium",
+   "claims": [
+    {"field": "gain_ft", "says": "8100"},
+    {"field": "approach", "says": "roughly a 46-mile, ~17,500 ft round-trip approach-and-climb outing (74 km)"}
+   ],
+   "why": "Header/itinerary gain is 8,100 ft; the approach says ~17,500 ft.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Crux pitch number", "severity": "low",
+   "claims": [
+    {"field": "itinerary.days[2].schedule[2].label", "says": "Crux pitch (P2)"},
+    {"field": "pitch_detail[2]", "says": "pitch 3, crux true, 5.9R"},
+    {"field": "beta", "says": "an overhanging 5.9R choss crux (P3)"}
+   ],
+   "why": "The schedule puts the crux on P2; everything else says P3.",
+   "internal_resolution": "pitch_detail, beta, obj_haz and waypoint directions agree on P3", "needs_research": false},
+  {"fact": "Distance (km vs round trip) and waypoint mileage", "severity": "low",
+   "claims": [
+    {"field": "dist_km", "says": "37.02"},
+    {"field": "approach", "says": "roughly a 46-mile ... round-trip ... (74 km)"},
+    {"field": "waypoints[3].distMi", "says": "14.5 (Bivy beyond Easy Peak)"},
+    {"field": "itinerary.days[0].miles", "says": "13"}
+   ],
+   "why": "dist_km is the one-way half of the 74 km the approach states, and the day-1 bivy is at 14.5 mi in waypoints vs 13 mi in the itinerary.",
+   "internal_resolution": null, "needs_research": false},
+  {"fact": "Chilliwack ford elevation", "severity": "low",
+   "claims": [
+    {"field": "waypoints[2].elev", "says": "3600"},
+    {"field": "waypoints[2].directions", "says": "losing about 1,500 ft over roughly three miles to the Copper Creek area at a little over 3,000 ft ... drop to the Chilliwack River ford ... this low point at 3,600 ft"}
+   ],
+   "why": "The ford is described as a drop below the ~3,000-ft Copper Creek area yet given as 3,600 ft.",
+   "internal_resolution": null, "needs_research": true},
+  {"fact": "Range named as Southern Pickets / Terror group", "severity": "low",
+   "claims": [
+    {"field": "seasonal_hazards.avalanche.zone", "says": "non-glaciated summer alpine rock route in the Southern Pickets"},
+    {"field": "pro_tips[0]", "says": "Combine with neighboring Terror-group towers"},
+    {"field": "overview", "says": "sits on the western slope of the Northern Pickets"}
+   ],
+   "why": "Spectre is in the Northern Pickets per overview and area path; two fields place it among Southern Pickets/Terror-group peaks.",
+   "internal_resolution": "overview and area path say Northern Pickets", "needs_research": false}
+ ]}
+]}

@@ -1,0 +1,185 @@
+{
+ "file": "r282.json",
+ "results": [
+  {
+   "id": "wa_lefty",
+   "fact": "Discipline (trad vs fully bolted)",
+   "verdict": "unresolved",
+   "correct_value": "sport (bolted, quickdraws only)",
+   "evidence": "The route's own listing types it Sport/Alpine with 'no widgets necessary', and the crag's route table lists Lefty as Sport; every protection field on the row agrees it is bolted. The only wrong field is `discipline`, which is out of patch scope, and only one independent source exists; owner should reclassify discipline to sport.",
+   "sources": [
+    "https://www.mountainproject.com/route/125126360/lefty",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_friction_therapy",
+   "fact": "Discipline (trad vs fully bolted)",
+   "verdict": "unresolved",
+   "correct_value": "sport (6 bolts to a bolted anchor)",
+   "evidence": "The route's listing types it Sport with '6 bolts to bolted anchor with rap rings', and the crag table lists it Sport; all row gear fields agree. Only `discipline` is wrong, and it is out of patch scope; single independent source. Owner should reclassify discipline to sport.",
+   "sources": [
+    "https://www.mountainproject.com/route/124743128/friction-therapy",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_caravan",
+   "fact": "Line after the 3rd bolt",
+   "verdict": "unresolved",
+   "correct_value": "goes straight up after the 3rd bolt",
+   "evidence": "The route's only published description says it shares Chitlins' start 'but go straight up after 3rd bolt', matching the row's beta and pitch_detail; the overview's 'breaking right' (and the Chitlins row's beta saying Caravan 'breaks right') look like misreadings. Only one external source and only two row fields agree against the overview, short of the 4-field bar, so no patch. Suggested fix: overview 'before breaking right at the third bolt' -> 'before going straight up from the third bolt'.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728691/caravan"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_caravan",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_django",
+   "fact": "Route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only source lists Django as 2 pitches, 70 ft (21 m), with a 50 ft 5.10 second pitch, so the source carries the same inconsistency; 70 ft most likely describes P1 alone (total ~120 ft / ~37 m), but no source states P1's length or the total. No second source found.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728672/django"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_django",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hottentot",
+   "fact": "Protection on P2",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's listing gives protection as 'Bolts' and type Sport, and says P2 'moves right and up slab (12? not freed as of 2015)' - unfreed, which is not the same as unprotected. That supports the gear list's 'bolt-protected' against the row's majority (pro_needs, detailed_rack) calling P2 protection unresolved. The single source cuts against the internal majority, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728825/hottentot"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hottentot",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chitlins_con_carne",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_summertime",
+   "fact": "Descent from the top",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route's listing (Trad/Alpine, 5 pitches, 400 ft, Grade II) describes the pitches and chained anchors but gives no descent; no second source describes how parties get off the clifftop. The itinerary and rappels claim a rappel of the route while descent_text says the descent is unknown; neither can be confirmed. Note: the same source numbers the crux as pitch 4 with pitch 5 the 5.10 finish, while pitch_detail labels it 'P3 (crux)' and 'P4-P5' - single source, left as is.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728801/summertime"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_summertime",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "fact": "Sport vs mixed protection",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "small trad gear in the lower seam/crack, then bolts past the flake and over the roof",
+   "evidence": "The route's listing gives protection as 'some small gear, then bolts' and describes the seam/crack 'w small gear' before the bolted flake and roof. Row fields pro_needs, detailed_rack, beta and pitch_detail all agree small gear is needed low; the gear list alone calls the gear optional and the line a pure sport route. Patched the two gear items.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728819/alice-in-wonderland"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      0
+     ],
+     "expect": "Quickdraws for the bolted face pitch (it is a sport route)",
+     "value": "Quickdraws for the bolted flake-and-roof finish",
+     "id": "wa_alice_in_wonderland",
+     "fact": "Sport vs mixed protection"
+    },
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "expect": "A few small cams or wires as optional backup in the seam/crack past the flake, though the line is bolt-protected",
+     "value": "A few small cams or wires for the seam/crack at the start, which is not bolted",
+     "id": "wa_alice_in_wonderland",
+     "fact": "Sport vs mixed protection"
+    }
+   ]
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "fact": "Lower-off distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route starts atop Summertime P1 and is 40 ft (12 m); Summertime is 400 ft in 5 pitches, so its P1 is likely ~20-25 m and the Alice anchor ~30-37 m up, which a single 60 m rope may not lower or rappel to the ground. No source states Summertime P1's length or how parties descend from Alice, so the descent cannot be settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/110728819/alice-in-wonderland",
+    "https://www.mountainproject.com/route/110728801/summertime"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_alice_in_wonderland",
+   "fact": "Approach gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The crag's approach is described as parking at the largest pullout below the SR-20 hairpin, walking down the highway, descending a scree slope to a log crossing of the creek, then climbing up through a boulder field to the wall, 20-30 min; no source gives a vertical figure for the walk. The row's trailhead and crag pins share one coordinate and elevation (5231, the crag's listed point), so their equal heights are an artifact, not evidence. A descend-cross-reclimb approach could plausibly involve a few hundred feet, so neither 500 ft nor 'minimal elevation change' can be confirmed; no second source found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "patches": []
+  }
+ ]
+}

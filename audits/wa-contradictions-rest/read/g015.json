@@ -1,0 +1,1866 @@
+{
+ "batches": [
+  "b057.json",
+  "b058.json",
+  "b059.json",
+  "b060.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_tower_mountain_southwest_route",
+   "name": "Southwest Route / Standard",
+   "area": "Tower Mountain",
+   "contradictions": [
+    {
+     "fact": "Granite Pass elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].elev",
+       "says": "6270"
+      },
+      {
+       "field": "bivy[3].elev",
+       "says": "6300"
+      },
+      {
+       "field": "approach",
+       "says": "Granite Pass (~6,600 ft, roughly 6.5-7 mi from the trailhead)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Granite Pass at about 6,600 ft"
+      }
+     ],
+     "why": "Approach prose gives Granite Pass the same ~6,600 ft as Cutthroat Pass, while the waypoint and bivy put it ~300 ft lower.",
+     "internal_resolution": "Waypoint (6270) and bivy (6300) agree, and the waypoint calls it the 'Second, lower saddle' past Cutthroat Pass; the 6,600 ft in approach/approach_variants looks copied from Cutthroat Pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Hardest climbing grade",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (YDS)"
+      },
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "pitch_detail[3].grade",
+       "says": "Class 4 (to ~5.4)"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Exposed Class 4 scrambling with short low-fifth-class crux moves"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "consistent with published assessments that it should never exceed class 3"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[4]",
+       "says": "willingness to rope up for the short 5.4 crux section"
+      }
+     ],
+     "why": "The header pill (rock_grade) and a pro tip say class 3 max while the breakdown, pro_needs and partner requirements put a class 4 / 5.4 crux on the route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 2-day, ~23-mile round trip"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9.5"
+      },
+      {
+       "field": "itinerary.days[1].miles",
+       "says": "13.5"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "roughly twenty miles round trip"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "roughly 11-13 miles round trip"
+      },
+      {
+       "field": "dist_km",
+       "says": "19"
+      }
+     ],
+     "why": "Partner requirements give 11-13 mi round trip where the itinerary gives ~23 mi and the bivy ~20 mi.",
+     "internal_resolution": "Itinerary, approach (10-11 mi one-way) and waypoints (camp at 11 mi, summit at 13 mi) agree on ~20-23 mi round trip; the partner-requirements 11-13 mi is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Miles to Snowy Lakes spur / camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "watch_out[1]",
+       "says": "The Snowy Lakes trail junction (~mile 9.2)"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "10.5"
+      },
+      {
+       "field": "approach",
+       "says": "Roughly 10 miles in, just past Methow Pass"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "9.5"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "11"
+      }
+     ],
+     "why": "The spur junction is placed at 9.2, ~10 and 10.5 mi, and camp at 9.5 vs 11 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the Snowy Lakes spur is signed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[1].notes",
+       "says": "a signed spur climbs half a mile of well-graded switchbacks to the lakes"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Small, easy-to-miss unmarked spur"
+      },
+      {
+       "field": "waypoints[3].directions",
+       "says": "the spur is an unsigned use path"
+      },
+      {
+       "field": "watch_out[1]",
+       "says": "poorly marked - watch for a boot path, not a signed junction"
+      }
+     ],
+     "why": "Bivy calls the spur signed and well-graded; waypoints and watch_out call it unsigned and easy to miss.",
+     "internal_resolution": "Three fields (waypoint note, directions, watch_out) say unsigned; the bivy note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Water at Cutthroat Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "THIS STRETCH HAS ONLY INTERMITTENT SMALL STREAMS, SO TOP OFF AT THE PASS"
+      },
+      {
+       "field": "approach",
+       "says": "top off water here"
+      },
+      {
+       "field": "bivy[2].water",
+       "says": "NONE AT THE PASS, and this is the planning problem of the whole approach"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "fill up at the last of them"
+      }
+     ],
+     "why": "The approach variant tells parties to top off at Cutthroat Pass while the bivy says there is no water at the pass.",
+     "internal_resolution": "Bivy and the Cutthroat Pass waypoint directions both say fill up at the last streams below the pass; 'top off at the pass' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No wilderness camping permit required"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "None."
+      },
+      {
+       "field": "access.permit",
+       "says": "A free self-issue Wilderness permit (available at the trailhead kiosk) is required for overnight camping"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit and Northwest Forest Pass required at the kiosk"
+      }
+     ],
+     "why": "Some fields say no permit is needed to camp at Snowy Lakes; access.permit and the trailhead waypoint say a self-issue wilderness permit is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best time of year",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul–Sep"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through mid-September"
+      },
+      {
+       "field": "best_season",
+       "says": "through early-to-mid October. Late September into early October is prime"
+      }
+     ],
+     "why": "best_season calls late Sep-early Oct 'prime', which is partly outside the Jul-Sep season and the mid-Jul to mid-Sep optimal window.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day time (timing.summitTimeHrs)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[1].schedule[2].time",
+       "says": "~9:00-9:30 AM (Summit, after 6:00 AM camp departure)"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole climb-and-hike-out day (10 h), while the schedule reaches the summit ~3.5 h after leaving camp.",
+     "internal_resolution": "The itinerary schedule is specific; 10 h is the full day-2 duration, not time to summit.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "name": "Southeast Slopes / Standard Scramble",
+   "area": "Whistler Mountain",
+   "contradictions": [
+    {
+     "fact": "Trailhead vs ascent line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[0].label",
+       "says": "Leave Rainy Pass PCT trailhead"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Rising traverse through meadow to intersect the level part of the south ridge near 6,180 ft."
+      },
+      {
+       "field": "waypoints[4].name",
+       "says": "Rainy Pass Trailhead (PCT North parking lot, SR-20)"
+      },
+      {
+       "field": "approach",
+       "says": "Option B (highway turnout approach, reaches the true south ridge): from the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass"
+      },
+      {
+       "field": "approach_variants[1].baseFinding",
+       "says": "Marked lot and west ridge, or unmarked turnout and south ridge."
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "Boot path from the SR-20 turnout ... to a meadow basin at roughly 6,100 ft."
+      }
+     ],
+     "why": "The itinerary, timing and Trailhead waypoint start at the Rainy Pass PCT lot but follow the south-ridge line (6,180 ft) that the approach and approach_variants say starts at the unmarked turnout 3.1 mi east; the waypoints (first at 0.5 mi, ~3 km east of the Rainy Pass pin) belong to the turnout line.",
+     "internal_resolution": "approach and both approach_variants clearly pair PCT lot -> meadow basin 6,100 ft -> west ridge, and turnout -> south ridge 6,180 ft; the itinerary/timing and the Trailhead waypoint mix the two.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip vs one-way distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Able to sustain ~4 miles one-way"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "4"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 4 miles round trip"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 3.7 miles"
+      },
+      {
+       "field": "dist_km",
+       "says": "3.2"
+      }
+     ],
+     "why": "Partner requirements call ~4 mi a one-way figure; itinerary and approach give ~4 mi round trip.",
+     "internal_resolution": "Itinerary, approach and both approach_variants agree on ~3.7-4 mi round trip; waypoints put the summit band at 1.7 mi.",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction at the 6,800 ft fork",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "staying right at ~6,800 ft onto the southwest slope"
+      },
+      {
+       "field": "approach",
+       "says": "cross a couple of gullies left (north) onto gentler southwest-facing slopes"
+      },
+      {
+       "field": "waypoints[2].note",
+       "says": "parties can cut left across gullies onto the gentler southwest slope"
+      },
+      {
+       "field": "climbing_route[3].notes",
+       "says": "cross a couple of gullies left (north)"
+      }
+     ],
+     "why": "The pro tip says go right at 6,800 ft; approach, waypoint and climbing_route say go left.",
+     "internal_resolution": "Three fields say left; the pro tip is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Aspect of the route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "SE"
+      },
+      {
+       "field": "face",
+       "says": "Southeast Slopes"
+      },
+      {
+       "field": "overview",
+       "says": "The standard route climbs the mountain's south ridge and southwest slope"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the ascent route down the south ridge / southwest slope."
+      }
+     ],
+     "why": "Aspect/face call it the southeast slopes, while prose describes the south ridge, southwest slope and (Option A) the west ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Scrambling grade required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.experienceLevel",
+       "says": "Comfortable, unroped Class 2 scrambler"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Class 2 walking/scrambling terrain"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (Class 3–4 on some lines)"
+      },
+      {
+       "field": "beta",
+       "says": "It is class 3 scrambling throughout, with class 4 moves possible"
+      }
+     ],
+     "why": "Partner requirements and seasonal hazards describe a class 2 outing; the grade and beta call it class 3 throughout with class 4 moves.",
+     "internal_resolution": "grade, rock_grade, beta, pitch_detail and itinerary all say class 3 (to 3-4); the class 2 descriptions are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "County",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "in Chelan County"
+      },
+      {
+       "field": "emergency.county",
+       "says": "Chelan County (summit)"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "This is WHISTLER MOUNTAIN ABOVE RAINY PASS in Okanogan County"
+      }
+     ],
+     "why": "The approach variant puts the peak in Okanogan County; overview and emergency say Chelan County.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts"
+      },
+      {
+       "field": "hazards[0]",
+       "says": "Wet-slab and cornice avalanche danger in the gullies during spring snow season"
+      },
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC – Washington Pass zone"
+      }
+     ],
+     "why": "The avalanche panel says N/A while the hazards list and turnaround discuss wet-slab avalanche danger in the gullies (spring/early summer, outside the Jul-Oct season).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time (timing.summitTimeHrs)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "7"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "10:30 AM (summit, after 6:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs equals the whole 7 h car-to-car day while the schedule reaches the summit after 4.5 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "name": "Southeast Face / South Ridge",
+   "area": "American Border Peak",
+   "contradictions": [
+    {
+     "fact": "First ascent of this line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "fa",
+       "says": "Alec Dalgleish, Tom Fyles, Stan Henderson, R. A. Fraser — Sept 14, 1930 (peak's first ascent)"
+      },
+      {
+       "field": "beta",
+       "says": "The standard/easiest line on the peak, first climbed by Baker, Beckey, and Dudra in 1952."
+      }
+     ],
+     "why": "The fa field gives a 1930 party and the beta says this line was first climbed in 1952 by a different party.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Number of rappels",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "2-3 rappels with a single 60 m rope"
+      },
+      {
+       "field": "descent_text",
+       "says": "Expect two to four short rappels"
+      },
+      {
+       "field": "itinerary.days[1].schedule[4].detail",
+       "says": "Reverse the steep steps with 1-2 rappels"
+      },
+      {
+       "field": "rope_note",
+       "says": "three rappels done on a single 60m rope"
+      },
+      {
+       "field": "rappel_detail",
+       "says": "5 rows (n 1-5)"
+      }
+     ],
+     "why": "The rappel count is given as 1-2, 2-3, 2-4, three and five in different fields.",
+     "internal_resolution": "rappel_count_note says the five-row table is one party's descent on two 25 m ropes; most fields agree on 2-3 with a 60 m rope, and the itinerary's 1-2 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ridge the route follows",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "name",
+       "says": "Southeast Face / South Ridge"
+      },
+      {
+       "field": "rope_note",
+       "says": "'South Ridge 5.4'"
+      },
+      {
+       "field": "overview",
+       "says": "works up the southeast side and west ridge"
+      },
+      {
+       "field": "descent_text",
+       "says": "reversing the Southeast Face/West Ridge line"
+      }
+     ],
+     "why": "The name and rope note say south ridge; overview and descent_text say west ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Position of De Gaulle's Nose",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[2].notes",
+       "says": "Easier chockstone steps lead up past the 'De Gaulle's Nose' feature to the summit."
+      },
+      {
+       "field": "approach",
+       "says": "the rock feature climbers call \"De Gaulle's Nose\" (~7,300 ft)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "DE GAULLE'S NOSE IS THE AIMING MARK ON THE FAR SIDE OF THE RED FACE, at about 7,300 ft"
+      }
+     ],
+     "why": "The breakdown puts De Gaulle's Nose on the last pitch below the 7,998 ft summit, while the approach puts it at ~7,300 ft on the red face below the gullies.",
+     "internal_resolution": "approach and approach_variants agree on ~7,300 ft on the lower face.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and gain to High Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 2 miles and about 750 ft of gain from the trailhead"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "roughly two and a half miles with a little over a thousand feet of gain"
+      }
+     ],
+     "why": "High Pass is put at 1, 2 and 2.5 mi from the trailhead, with 750 vs over 1,000 ft of gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction from High Pass to Gargett Mine",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "follow the climbers' path east/northeast down to the old Gargett Mine"
+      },
+      {
+       "field": "waypoints[1].note",
+       "says": "drop and follow the climbers' path east/northeast"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From High Pass a boot path drops north and west into the basin"
+      }
+     ],
+     "why": "Approach and waypoint send parties east/northeast from High Pass to the mine; the bivy says north and west.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Overnight wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Free self-issue wilderness permit at the Twin Lakes register."
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight wilderness permit required"
+      },
+      {
+       "field": "access.permit",
+       "says": "None for day use; wilderness practices"
+      }
+     ],
+     "why": "The permit field and bivy require a self-issue wilderness permit; access.overnight_permit says none is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time (timing.summitTimeHrs)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].time",
+       "says": "~10:00 AM (Summit, after 4:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole 11 h summit-and-walk-out day; the schedule reaches the summit 6 h after leaving the bivy.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_american_border_peak_northeast_face",
+   "name": "Northeast Face",
+   "area": "American Border Peak",
+   "contradictions": [
+    {
+     "fact": "Overnight wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight wilderness permit required"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Free self-issue wilderness permit at the Twin Lakes register."
+      },
+      {
+       "field": "bivy[3].permit",
+       "says": "Free self-issue wilderness permit at the Twin Lakes register."
+      }
+     ],
+     "why": "The access panel says no overnight permit; the camps listed on the same page require a free self-issue wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "name": "Diobsud Creek / Green Lake Glacier",
+   "area": "Bacon Peak",
+   "contradictions": [
+    {
+     "fact": "Trailhead and approach line",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Drive Baker Lake Road (FR-11) to FR-1106, then FR-1107 to its end at the Watson Lakes Trailhead (~4,360 ft"
+      },
+      {
+       "field": "approach_logistics.trailhead",
+       "says": "Watson Lakes Trailhead"
+      },
+      {
+       "field": "waypoints[0].name",
+       "says": "Watson Lakes Trailhead"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "From the Bacon Creek Road trailhead (~800 ft), follow the old, downed-tree-choked roadbed for about 2.5 miles ... up the southeast ridge past Peak 4800"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "From the Bacon Creek Road trailhead (~800 ft)"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "FR-1107 (Anderson-Watson Road) is closed at Mile Post 3.8 ... Bacon Creek Road (FR-1060) ... is currently the only drivable approach"
+      }
+     ],
+     "why": "Approach, trailhead card, waypoints, approach_variants and descent_text use the Watson Lakes trailhead (~4,360 ft) via Anderson Lakes; the itinerary and timing describe a different approach from the Bacon Creek Road trailhead (~800 ft) up the southeast ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "6261"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 6,300 ft of gain"
+      },
+      {
+       "field": "approach",
+       "says": "Watson Lakes Trailhead (~4,360 ft)"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "7070"
+      }
+     ],
+     "why": "~6,300 ft of gain matches the ~800 ft Bacon Creek start, not the Watson Lakes trailhead (~4,360 ft) used by the approach and waypoints, where the net gain is ~2,700 ft plus the ups and downs.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trailhead elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4300"
+      },
+      {
+       "field": "waypoints[0].elevFt",
+       "says": "800"
+      }
+     ],
+     "why": "The trailhead waypoint gives two elevations, 4,300 ft and 800 ft.",
+     "internal_resolution": "The waypoint is named Watson Lakes Trailhead and approach puts it at ~4,360 ft, so 4,300 fits; 800 is the Bacon Creek Road trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "High camp location and elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a 6,250 ft saddle camp"
+      },
+      {
+       "field": "itinerary.days[0].objective",
+       "says": "Reach the ~6,250-6,300 ft saddle camp near Peak 4800, north of Canadian Bacon"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "4900 (Diobsud basin, Campsite)"
+      },
+      {
+       "field": "bivy[0]",
+       "says": "Upper Diobsud Lakes, elev 6000"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "A good camp sits at 5,900 ft, half a mile northeast of Bacon Peak."
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "a high camp near Berdeen Lake/the glacier"
+      },
+      {
+       "field": "what_to_bring[9]",
+       "says": "a camp near Green Lake or the Diobsud/Bacon Tarns basin"
+      }
+     ],
+     "why": "The high camp is put at a 6,250 ft saddle, a 4,900 ft Diobsud basin, 6,000 ft Upper Diobsud Lakes, a 5,900 ft northeast camp, near Berdeen Lake, and near Green Lake.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach variant vs approach prose (glacier or not)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "this line reaches the summit without crossing a glacier at all"
+      },
+      {
+       "field": "approach",
+       "says": "Once on the south ridge, broad snow slopes lead onto the toe of the Diobsud Creek Glacier. Rope up here"
+      },
+      {
+       "field": "grade",
+       "says": "Class 2-3 (glacier travel)"
+      }
+     ],
+     "why": "The only approach variant goes to a northeast camp with no glacier crossing, while the approach prose and the route's name and grade cross the Diobsud Creek Glacier from Diobsud Lakes.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rope_note",
+       "says": "descent is via glissading/walking down the Green Lake Glacier snow slopes"
+      },
+      {
+       "field": "descent_text",
+       "says": "The standard descent reverses the ascent line: ... back onto and down the Diobsud Creek Glacier"
+      },
+      {
+       "field": "descent",
+       "says": "Reverse the glacier and approach"
+      }
+     ],
+     "why": "The rope note says the descent goes down the Green Lake Glacier; descent and descent_text reverse the route down the Diobsud Creek Glacier.",
+     "internal_resolution": "descent, descent_text and bail all reverse via the Diobsud Creek Glacier; the Green Lake descent is only for the northward traverse.",
+     "needs_research": false
+    },
+    {
+     "fact": "Commitment grade",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "commitment",
+       "says": "III"
+      },
+      {
+       "field": "alpine_grade",
+       "says": "II"
+      }
+     ],
+     "why": "Two grade chips give different commitment grades, III and II.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Land manager / wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Mt. Baker-Snoqualmie National Forest (Noisy-Diobsud Wilderness) for the approach"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness"
+      }
+     ],
+     "why": "The two land-manager fields name different wilderness areas.",
+     "internal_resolution": "approach, waypoints and bivy all name the Noisy-Diobsud Wilderness.",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit required for camps within the Noisy-Diobsud Wilderness (national forest) portion"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required on the national forest side"
+      }
+     ],
+     "why": "The permit field says every overnight needs a backcountry permit; access says camps on the national-forest side need none.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip miles",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.totalNote",
+       "says": "about 16 miles round trip"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "7.5 + 2.5 + 7.7 = 17.7 mi"
+      }
+     ],
+     "why": "The itinerary days add up to 17.7 mi; the total note says about 16 mi.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_excavation_aka_the_crack",
+   "name": "Excavation, AKA The Crack",
+   "area": "Shuksan Crag",
+   "contradictions": [
+    {
+     "fact": "Permit / land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required"
+      }
+     ],
+     "why": "The permit field describes National Park rules, but the access panel puts the crag on national forest land.",
+     "internal_resolution": "access, road and emergency all name Mt. Baker-Snoqualmie NF; the permit text is copied from a National Park route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Winter access for dry-tooling",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "cold-season for M5+ dry-tooling training"
+      },
+      {
+       "field": "climate.winter",
+       "says": "Heavy snowfall typically makes Hannegan Pass Road impassable to vehicles; this is when climbers use the wall for dry-tooling."
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Closed to vehicles Nov 1 – Mar 31 under an annual Forest Service closure order"
+      }
+     ],
+     "why": "The route is sold as a cold-season dry-tooling venue, but the road shows it closed to vehicles all winter. No field says to walk in from the highway.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_last_chance_for_gas_aka_tricky_start",
+   "name": "Last Chance for Gas, AKA Tricky Start",
+   "area": "Shuksan Crag",
+   "contradictions": [
+    {
+     "fact": "Permit / land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit"
+      },
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required"
+      }
+     ],
+     "why": "The permit field describes National Park rules, but the access panel puts the crag on national forest land.",
+     "internal_resolution": "access, road and emergency all name Mt. Baker-Snoqualmie NF; the permit text is copied from a National Park route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Winter access for dry-tooling",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "cold-season for M6+ dry-tooling training"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "Closed to vehicles Nov 1 – Mar 31 under an annual Forest Service closure order"
+      }
+     ],
+     "why": "The route is sold as a cold-season dry-tooling venue, but the road shows it closed to vehicles all winter.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "name": "Church Lake Scramble",
+   "area": "Bearpaw Mountain",
+   "contradictions": [
+    {
+     "fact": "Road status",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Open (high-clearance recommended)"
+      },
+      {
+       "field": "access.closures",
+       "says": "FS 31 (Canyon Creek Road) closed at mile 4 by landslide debris, which also blocks the FS 3160 spur used for this route"
+      }
+     ],
+     "why": "Getting There says the road is open; the access panel says it is closed by a landslide that blocks the spur to the trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Church Lake elevation / gain from trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[0].elev",
+       "says": "4900"
+      },
+      {
+       "field": "waypoints[2].elev",
+       "says": "5150"
+      },
+      {
+       "field": "approach",
+       "says": "about 0.6-0.7 mile and roughly 400 ft of gain to Church Lake"
+      },
+      {
+       "field": "beta",
+       "says": "an easy but steep unofficial path drops about 0.6 miles to Church Lake"
+      }
+     ],
+     "why": "The waypoints show a 250 ft climb to the lake, the approach says ~400 ft of gain, and the beta says the path 'drops' to the lake.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which side of the lake and basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Skirt the lake along its east/left shore ... keep left (west) up the basin rim"
+      },
+      {
+       "field": "waypoints[3].directions",
+       "says": "Skirt the lake along its east/left shore ... then start up the rim of the basin on the left (west)"
+      }
+     ],
+     "why": "'Left' is given as east for the shoreline and as west for the rim in the same sentence.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Maintained trail vs boot path",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "what_to_bring[0]",
+       "says": "trekking poles for the short, steep maintained trail to Church Lake"
+      },
+      {
+       "field": "approach",
+       "says": "an unmaintained but well-worn boot path — not a numbered Forest Service trail"
+      }
+     ],
+     "why": "what_to_bring calls the lake path a maintained trail; everything else calls it an unmaintained user path.",
+     "internal_resolution": "overview, beta, approach, waypoints and access all say unmaintained/unofficial.",
+     "needs_research": false
+    },
+    {
+     "fact": "Point 6066: col or knoll",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE 6,066 FT SADDLE IS THE TOP OF THE APPROACH, AND IT IS A COL"
+      },
+      {
+       "field": "waypoints[5].name",
+       "says": "Point 6066 Knoll"
+      },
+      {
+       "field": "waypoints[5].directions",
+       "says": "the broad high point on the ridge"
+      }
+     ],
+     "why": "The same 6,066 ft point is described as a col/low point in one field and as a knoll/high point in another.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "July conditions",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "July-September"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-August through September"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.July.status",
+       "says": "marginal"
+      }
+     ],
+     "why": "best_season includes all of July, while seasonal guidance rates July marginal and makes the optimal window start mid-August.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness / land manager",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.land_manager",
+       "says": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness"
+      },
+      {
+       "field": "access.rules",
+       "says": "Standard Mt. Baker-Snoqualmie NF regulations apply"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camp only at designated sites where they exist, such as the Chain Lakes."
+      }
+     ],
+     "why": "One access field places the route in the Mount Baker Wilderness and the overnight note refers to the Chain Lakes, which are unrelated to this route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit time (timing.summitTimeHrs)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "4.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "10:15 AM (summit scramble, after 8:00 AM start)"
+      }
+     ],
+     "why": "summitTimeHrs equals the whole 4.5 h round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "name": "Twin Sisters Olivine Scramble",
+   "area": "Cinderella Peak",
+   "contradictions": [
+    {
+     "fact": "Glacier travel",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - no glacier travel; route is dunite/olivine rock scrambling"
+      },
+      {
+       "field": "partner_requirements.fitnessSpec.packWeight",
+       "says": "no glacier travel gear required"
+      },
+      {
+       "field": "approach",
+       "says": "Cross the low-angle glacier (crevasse hazard is generally low here but rises later season; carry basic glacier gear)"
+      },
+      {
+       "field": "beta",
+       "says": "combining glacier travel with class 3-4 scrambling"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "step off the Green Creek (Sisters) Glacier and onto rock. This is where parties stow glacier gear."
+      }
+     ],
+     "why": "The Safety tab and partner requirements say there is no glacier travel, while the approach, beta, waypoints, pitch_detail and climbing_route all cross the Green Creek (Sisters) Glacier with glacier gear.",
+     "internal_resolution": "Approach, approach_variants, waypoints, pitch_detail, climbing_route, beta, turnaround and obj_haz all include the glacier crossing; the crevasses N/A and 'no glacier travel gear required' are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach line and access (gated logging roads / Sister Divide vs Green Creek)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Start by biking the washed-out lower Middle Fork Nooksack logging road ... hike the Elbow Lake Trail up through old growth to the Sister Divide basin"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "about 4 mi / 3,000 ft to the Sister Divide highpoint area near Elbow Lake"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "multi-hour approach via the Twin Sisters gated road network before gaining the southern ridge near Little Sister"
+      },
+      {
+       "field": "permit",
+       "says": "the approach crosses private and DNR timberland - check current access, and carry a Discover Pass"
+      },
+      {
+       "field": "approach",
+       "says": "Once across, pick up the Elbow Lake Trail proper and climb through forest for about 1.5 miles to a switchback near Hildebrand Creek, where ... 'Green Creek Climber's Trail' splits off"
+      },
+      {
+       "field": "access.landManager",
+       "says": "not private industrial timberland"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Access from this side does not cross the private timberland"
+      }
+     ],
+     "why": "The itinerary, permit and partner requirements describe a gated logging-road / private-timberland approach to the Sister Divide. The approach, waypoints, approach_variants and bivy leave the Elbow Lake Trail at Hildebrand Creek for the Green Creek climbers' trail and say no private timberland is crossed.",
+     "internal_resolution": "approach, approach_variants, waypoints, descent_text, bivy and access agree on the Elbow Lake Trail -> Green Creek climbers' trail -> glacier -> notch line with a Northwest Forest Pass; the itinerary, permit and partner text appear to describe a different Twin Sisters approach.",
+     "needs_research": true
+    },
+    {
+     "fact": "Position of the Middle Fork Nooksack crossing",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "The trail immediately meets the Middle Fork Nooksack River"
+      },
+      {
+       "field": "waypoints[1].directions",
+       "says": "The trail meets the Middle Fork Nooksack within a few minutes of the car"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "2.6 (Middle Fork Nooksack River crossing, after the 2.0 mi climbers'-trail split)"
+      },
+      {
+       "field": "waypoints[3].note",
+       "says": "Climbers' trail drops back down to an unofficial log/logjam crossing of the Middle Fork Nooksack"
+      }
+     ],
+     "why": "The crossing waypoint sits at 2.6 mi after the climbers'-trail split, while the approach and another waypoint put the crossing at the start of the trail.",
+     "internal_resolution": "approach, approach_variants, descent_text and the Elbow Lake waypoint directions all put the ford at the trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day trip vs overnight",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Nearly all parties do this as a single long car-to-car day, not a backpack."
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "done in a day like nearly every party's report"
+      },
+      {
+       "field": "approach",
+       "says": "most parties treat this as a multi-day trip, camping near Elbow Lake or in the Green Creek basin"
+      },
+      {
+       "field": "beta",
+       "says": "Most parties reach the peak as an overnight trip"
+      }
+     ],
+     "why": "The itinerary says nearly everyone does it in a day; the approach, approach_variants, beta and a waypoint say most parties camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total time (timing)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "timing.totalHrs",
+       "says": "0"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].hrs",
+       "says": "0"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 11-12 hours car-to-car"
+      }
+     ],
+     "why": "The published times give 0 hours; the itinerary gives 11-12 h.",
+     "internal_resolution": "The itinerary schedule (4:30 AM - 4:30 PM) supports ~12 h; the 0 is a placeholder.",
+     "needs_research": false
+    },
+    {
+     "fact": "North Face pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "The North Face, a separate 3-pitch 5.2 line"
+      },
+      {
+       "field": "overview",
+       "says": "a North Face route (5.2, Grade II, ~8 pitches)"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "North Face (5.2, Grade II, ~8 pitches)"
+      }
+     ],
+     "why": "The neighbouring North Face line is described as 3 pitches in the breakdown and ~8 pitches in overview/pro tips.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rappels on descent",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "rappels",
+       "says": "0"
+      },
+      {
+       "field": "descent_text",
+       "says": "no rappelling required (0 rappels)"
+      },
+      {
+       "field": "climbing_route[2].notes",
+       "says": "parties have also rappelled the north face ... Carry two ropes if the rappel is the plan."
+      }
+     ],
+     "why": "The rappels field says 0 while climbing_route offers a double-rope rappel descent option.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "N/A - non-glaciated summer scramble route"
+      },
+      {
+       "field": "hazards[4]",
+       "says": "spring avalanche hazard off the nearby 'Mythic Wall' for parties descending on snow"
+      }
+     ],
+     "why": "The avalanche panel says N/A and 'non-glaciated', but the hazards list spring avalanche danger (and the route crosses a glacier).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_fords_theatre",
+   "name": "Ford's Theatre",
+   "area": "Colfax Peak",
+   "contradictions": [
+    {
+     "fact": "Length of the ice section / pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "it is about 500 ft of AI4+: three pitches of steep ice"
+      },
+      {
+       "field": "overview",
+       "says": "climbing three pitches of steep ice"
+      },
+      {
+       "field": "pitch_detail[0].lengthM",
+       "says": "70"
+      },
+      {
+       "field": "pitch_detail[0].notes",
+       "says": "The first ascent split it into three pitches on hanging screw belays; in good ice it has gone as one full 70 m rope-length"
+      },
+      {
+       "field": "pitches",
+       "says": "4"
+      },
+      {
+       "field": "length_m",
+       "says": "152"
+      }
+     ],
+     "why": "The ice step is described as ~500 ft over three pitches in one place and as 70 m (230 ft) that can be climbed in one rope length in another. The pitch count also varies (pitches 4, three ice pitches, three breakdown rows).",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_cosley_houston",
+   "name": "Cosley-Houston Couloir",
+   "area": "Colfax Peak",
+   "contradictions": [
+    {
+     "fact": "Best season window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Oct-May"
+      },
+      {
+       "field": "best_season",
+       "says": "Late October to May; ... many of the best/safest ascents happen November-March"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "April through June, with April-May generally offering the firmest, coldest conditions"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.March.status",
+       "says": "risky"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "good"
+      }
+     ],
+     "why": "Seasonal guidance calls April-June optimal and March risky ('couloir often not fully formed'), while season/best_season run Oct-May with Nov-March the best and safest.",
+     "internal_resolution": "season, best_season, overview, pro_tips, itinerary.cal and the bivy all say late October-May; the seasonal_guidance April-June window is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Which summit to descend around",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "descend toward the subsidiary (false) summit, work around its south side"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "descend toward the false (west) summit, around its south side"
+      },
+      {
+       "field": "descent_text",
+       "says": "follow the boot track ... toward Colfax's secondary/eastern summit, then contour around its south side"
+      }
+     ],
+     "why": "The summit waypoint names the false summit as west; descent_text calls it eastern.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Ropes / rappels",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[4]",
+       "says": "Two ropes for the rappels"
+      },
+      {
+       "field": "rappels",
+       "says": "None required — walk-off descent via the Coleman-Deming route"
+      },
+      {
+       "field": "descent_text",
+       "says": "There is no rappelling on the standard descent."
+      },
+      {
+       "field": "detailed_rack",
+       "says": "60 m rope"
+      }
+     ],
+     "why": "The gear list says to bring two ropes for the rappels, while rappels/descent say there are none and the rack lists one 60 m rope.",
+     "internal_resolution": "rappels, descent, descent_text and detailed_rack agree on a walk-off with a single 60 m rope; rappels are only a bail option.",
+     "needs_research": false
+    },
+    {
+     "fact": "Route length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "a meandering ~600 ft, 4-pitch WI4 route"
+      },
+      {
+       "field": "length_m",
+       "says": "305"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "55+45+50+50 = 200 m"
+      }
+     ],
+     "why": "Overview gives ~600 ft (~183 m), the breakdown adds up to 200 m, and length_m says 305 m (1,000 ft).",
+     "internal_resolution": "overview and pitch_detail roughly agree (~600-650 ft); length_m 305 matches the Polish Route's 1,000 ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation of the route base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5].elev",
+       "says": "6250 (Bergschrund below the north face)"
+      },
+      {
+       "field": "waypoints[6].elev",
+       "says": "6500 (Crux ice pillar)"
+      },
+      {
+       "field": "waypoints[4].elev",
+       "says": "7200 (Coleman Glacier crevasse field, crossed before the schrund)"
+      },
+      {
+       "field": "approach",
+       "says": "Total gain to the route base near 8,000 ft"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "to gain the base of the couloir/gully system ... near 8,000 ft"
+      }
+     ],
+     "why": "The waypoints put the bergschrund at 6,250 ft and the crux at 6,500 ft, below the glacier crossing at 7,200 ft, while the approach and climbing_route put the base near 8,000 ft.",
+     "internal_resolution": "approach, climbing_route and the bivy note all say ~8,000 ft; the schrund/crux waypoint elevations are wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier Creek Road status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "as of June 30, 2026 the road is closed to all vehicles at the Glacier Creek bridge (MP 3.0) ... expected to last through October 2026"
+      },
+      {
+       "field": "access.closures",
+       "says": "closure to all vehicles at MP 3.0 ... expected through October 2026"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "reopened to vehicles all the way to the Heliotrope Ridge trailhead on 20 August 2026"
+      }
+     ],
+     "why": "Getting There and access say FR 39 is closed at MP 3.0 through October 2026; the bivy note says it reopened to the trailhead on 20 August 2026.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Mt. Baker Wilderness permit at the kiosk"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      }
+     ],
+     "why": "Some fields tell parties to self-issue a wilderness permit; the overnight-permit panel says there is no wilderness permit.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "11.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "3:00 AM start, back 3:30-4:30 PM (12.5-13.5 h)"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11.5"
+      }
+     ],
+     "why": "The schedule adds up to 12.5-13.5 h against the stated 11.5 h, and summitTimeHrs holds the full car-to-car total.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_kimchi_suicide_volcano",
+   "name": "Kimchi Suicide Volcano",
+   "area": "Colfax Peak",
+   "contradictions": [
+    {
+     "fact": "Glacier Creek Road status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "Closed to vehicles at mile 3 for washout repairs (as of July 2026)"
+      },
+      {
+       "field": "access.closures",
+       "says": "Glacier Creek Road (FS-39) closed to vehicles at mile 3 for washout repair as of July 2026"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "reopened to vehicles all the way to the Heliotrope Ridge trailhead on 20 August 2026"
+      }
+     ],
+     "why": "Getting There and access say FS-39 is closed at mile 3; the bivy note says it reopened to the trailhead on 20 August 2026.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_colfax_peak_polish_route",
+   "name": "Polish Route",
+   "area": "Colfax Peak",
+   "contradictions": [
+    {
+     "fact": "Descent method",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Most parties rappel/downclimb the route itself using V-thread anchors"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].detail",
+       "says": "Most parties rappel the route itself on V-thread anchors back to the bergschrund"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "descend via a series of V-thread rappels reversing the route"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "a rappel descent of the route"
+      },
+      {
+       "field": "rappels",
+       "says": "No rappel descent is on record. Parties who top out descend on foot to the Colfax-Baker saddle"
+      },
+      {
+       "field": "descent_text",
+       "says": "No first-hand account describes a rappel descent from this route."
+      }
+     ],
+     "why": "The descent field, itinerary and summit waypoint say most parties rappel the route on V-threads, while rappels and descent_text say no rappel descent is on record and parties walk off via the Colfax-Baker saddle.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best season window",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Nov-May"
+      },
+      {
+       "field": "best_season",
+       "says": "the route has gone in good shape anywhere from December through May"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "can form as early as October, holding into May"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "April through June, with April-May offering the firmest, most consistent ice"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.March.status",
+       "says": "risky"
+      }
+     ],
+     "why": "Seasonal guidance makes April-June the window and rates March risky; the season, best_season and itinerary run Nov/Dec-May with ascents as early as February, and June lies outside the season.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation of the route base",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[4].elev",
+       "says": "6300 (Bergschrund / mixed traverse)"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "7200 (Coleman Glacier, crossed before the schrund)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].label",
+       "says": "Reach the bench below Colfax (~6,600 ft)"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "all start off the Coleman somewhere near 8,000 ft"
+      }
+     ],
+     "why": "The bergschrund is put at 6,300 ft, below the 7,200 ft glacier waypoint crossed before it, the bench at ~6,600 ft, and the bivy says the lines start near 8,000 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which pitch is the WI6 crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Pitch 2 (crux): Steep ice for approximately 30 feet, easing briefly, then rising to a free-hanging ice dagger grading WI6."
+      },
+      {
+       "field": "pitch_detail[1]",
+       "says": "pitch 2, WI4, crux false"
+      },
+      {
+       "field": "pitch_detail[2]",
+       "says": "pitch 3, WI6, crux true"
+      }
+     ],
+     "why": "The beta calls pitch 2 the dagger crux; the breakdown puts the crux on pitch 3.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "How often the crux dagger forms",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[6].note",
+       "says": "only climbable in select conditions (formed only a handful of times per decade)"
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "North-facing ice here is unusually reliable for the range"
+      },
+      {
+       "field": "best_season",
+       "says": "the route has gone in good shape anywhere from December through May (recent trip reports include a February 2025 ascent and a May 2015 ascent)"
+      }
+     ],
+     "why": "One waypoint says the dagger forms only a handful of times per decade; the itinerary and best_season describe reliable, frequently formed ice.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Aspect",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "N"
+      },
+      {
+       "field": "approach",
+       "says": "Because the face is northwest-facing"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "this northwest-facing finish"
+      }
+     ],
+     "why": "The aspect field says N; the prose calls the face northwest-facing.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Ropes carried",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[4]",
+       "says": "Two ropes — for the climb and for retreat off the route"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "60 m rope"
+      }
+     ],
+     "why": "The gear list calls for two ropes; the rack lists a single 60 m rope.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Mount Baker Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue Mt. Baker Wilderness permit at the kiosk"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "No climbing or wilderness permit."
+      }
+     ],
+     "why": "Some fields tell parties to self-issue a wilderness permit; the overnight-permit panel says there is none.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "an ~11-hour car-to-car day"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "12.5"
+      },
+      {
+       "field": "itinerary.days[0].schedule",
+       "says": "3:00-3:30 AM start, back 4:30-5:30 PM (13-14.5 h)"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12.5"
+      }
+     ],
+     "why": "Car-to-car time is given as ~11 h, 12.5 h and 13-14.5 h (from the schedule), and summitTimeHrs holds the full total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road closure still current?",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "road.status",
+       "says": "the Forest Service announced on 20 August 2026 that those repairs are complete"
+      },
+      {
+       "field": "road.seasonalGate",
+       "says": "the current 2026 repair closure can force a longer walk-in"
+      }
+     ],
+     "why": "The road field says the 2026 closure was lifted, yet its seasonal-gate line still calls it current.",
+     "internal_resolution": "road.status, road.driveNote, access.closures and the bivy all say it reopened 20 Aug 2026.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,372 @@
+{
+ "applied": [
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Drive distance on Eightmile Creek Road"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Gain vs net rise"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Gain vs net rise"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "Gain vs net rise"
+  },
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "Gain vs net rise"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach line and first camp"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Approach line and first camp"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Approach line and first camp"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Trailhead name"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Harts Pass / Slate Peak road opening"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Harts Pass / Slate Peak road opening"
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total trip mileage"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_big_craggy_peak_scramble",
+   "before": {
+    "approach": "From the Copper Glance Trailhead (3,800–3,810 ft, small pullout signboard, parking for roughly 7 cars) on FR 5130 (Eightmile Creek Road), follow Copper Glance Trail #519. The first ~1.5 miles follows an old jeep track/mining tramway grade (FSR 505) that served the historic Copper Glance claims — a gentle, steady climb through forest. Around 1.5 miles (~5,100 ft) the track passes the ruins of the Copper Glance Mine; the old adits and structures are hazardous and should not be entered. Just past the mine the route narrows to true single-track and fords Copper Glance Creek (~1.6 miles) near an old bridge that has partially collapsed — expect a careful boulder-hop or wet ford, and note the crossing is explicitly not passable for stock. Beyond the creek the trail crosses a stretch of burned-out forest with heavy blowdown that can slow summer travel considerably (early-season snow actually eases this stretch by burying the deadfall). Watch closely for an easy-to-miss, unsigned climbers' path splitting right off the main Copper Glance Trail below Copper Glance Lake/Basin — this is the cutoff onto Isabella Ridge and Big Craggy's southeast ridge, and it's frequently walked past, especially where snow patches obscure the junction. Take this cutoff up through meadows and talus onto Isabella Ridge, then leave maintained tread around 5,900 ft and climb open slopes toward the southeast ridge proper. A small bench/flat spot roughly 1,300 ft below the summit (~7,800 ft) marks where the angle steepens and the terrain shifts to tedious, loose ('garbage' rock) scree for the final push to the 8,478 ft summit; early-season snow cover on this upper scree is strongly preferred over the bare, ball-bearing talus of late summer. There is no reliable water past Copper Glance Creek, so fill up there (or at Copper Glance Basin/Lake if camping partway). Total car-to-summit distance/gain runs roughly 12–16 miles round trip with 4,500–5,800 ft of gain depending on the exact line taken and whether West Craggy is tagged in the same push.",
+    "itinerary": {
+     "cal": "Snow lingers on the approach into June (patches from ~4,600 ft, solid snowpack by ~5,500 ft per late-May/June reports); check Copper Glance Road (FR-5130/Eightmile Creek Rd) conditions before driving in.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the Copper Glance Trail up along Copper Glance Creek, crossing a broken bridge, to a camp at ~6,600 ft on a knoll near a seasonal tarn (some parties camp instead at Copper Glance Lake a bit further on). Trail is bare at the start with snow patches showing up higher in early season.",
+       "hours": 3.3,
+       "miles": 3.3,
+       "title": "Approach to Copper Glance Basin camp",
+       "gainFt": 2800,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach camp on the knoll near the seasonal tarn in Copper Glance Basin"
+      },
+      {
+       "n": 2,
+       "note": "Leave camp early for the ridge; most parties tag West Craggy first by mid-morning, then continue to Big Craggy's summit, before retracing the route back to camp (~7.4 hr round trip). The southeast slope has loose, rubbly scree with some rockfall danger in the last 500 ft below the summit. After returning to camp, pack up and hike the 3.3 mi back down to the trailhead.",
+       "hours": 10,
+       "miles": 6.8,
+       "title": "Summit push (Big Craggy + West Craggy) and hike out",
+       "gainFt": 1900,
+       "lossFt": 4700,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Light day-pack for the summit push, headed up toward the connecting saddle."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "West Craggy summit",
+         "detail": "~2.6 hr / 1,800 ft from camp; reached by mid-morning."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Big Craggy summit",
+         "detail": "~5.6 hr from camp via the connecting saddle and southeast ridge scree."
+        },
+        {
+         "time": "1:30 PM",
+         "label": "Back at camp",
+         "detail": "~7.4 hr round trip for both summits."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Break camp, start hike out",
+         "detail": "Full pack back down Copper Glance Trail."
+        },
+        {
+         "time": "5:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Reverse the ~3.3 mi / 2,800 ft descent."
+        }
+       ],
+       "objective": "Climb Big Craggy (and typically West Craggy via the connecting saddle), then break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day overnight trip for most parties: ~3.3 mi / 2,800 ft up to a Copper Glance Basin camp on Day 1, then a ~7.4-hour round-trip summit push (commonly tagging West Craggy too via the connecting saddle) plus the hike out on Day 2 — roughly 10 mi and 4,500+ ft total; strong parties instead do the whole thing car-to-car in one long day (~11-12 mi, ~5,600 ft if adding West Craggy)."
+    },
+    "road": {
+     "name": "West Chewuch Road (County Rd 1213) to Forest Road 5130 (Eightmile Creek Road)",
+     "status": "gravel, narrow/single-lane in spots",
+     "driveNote": "From Winthrop, take West Chewuch Road (County Rd 1213) north about 8 miles, then continue onto FR 5130 (Eightmile Creek Road) for about 15 miles northwest along Eightmile Creek to the small signed Copper Glance Trailhead pullout on the right (3,800 ft). Passable to most cars in season, but call the Methow Valley Ranger District for current washout status before a trip.",
+     "seasonalGate": "Not gated, but typically snow-blocked from late fall through late spring; realistic access is roughly June-October depending on snowpack."
+    },
+    "gain_ft": 4570,
+    "loss_ft": 4500
+   }
+  },
+  {
+   "id": "wa_blackcap_mountain_scramble",
+   "before": {
+    "approach": "Blackcap sits deep in the Pasayten Wilderness and is reached almost entirely off-trail after a long, multi-day trail approach — there is no short car-to-summit option. The standard approach starts at the Robinson Creek/Buckskin Ridge Trailhead (~6,900 ft) at the end of Slate Peak Road (FS-5400, the spur above Harts Pass), the highest trailhead in Washington reached by road. From the trailhead, follow the ridge/trail over Slate Pass and drop down into the West Fork Pasayten drainage, picking up Robinson Creek/Middle Fork Pasayten Trail #478 (the full trail runs ~23 miles one-way through this country). Continue down-valley past Robinson Pass to the Middle Fork Pasayten River (roughly 9 miles in, then a further ~3-mile descent to the river) — most parties camp here or push on the first day (about 5 hours trailhead-to-camp at a backpacking pace). Day two, follow the Middle Fork Pasayten downstream, then turn up past Fred's Lake (a reliable water source and common camp) and climb to 7,100-ft Rolo Pass on the ridge crest above the lake; Lake Doris is a short side trip from here. From Rolo Pass, drop into Upper Eureka Creek (another dependable water source) and cross east into scenic Shellrock Basin, then climb to 7,500-ft Shellrock Pass — a full trail day of roughly 2.5-3 hours from Fred's Lake. Camp is typically made in Shellrock Basin, just below and east of the pass. From camp, leave the trail at Shellrock Pass and traverse SSW across an open, grassy/rocky basin, staying below the cliff bands, to the base of a talus slope; work the left (east) edge of the talus south to a saddle/col just west of the cliff terminus, directly below Blackcap's east face — this off-trail link is about 1-1.5 miles and 1,000-1,500 ft of gain/loss with real route-finding (a steep snowfield below Shellrock Pass often needs to be bypassed on the left in early season — carry an axe if snow persists). From the col, scramble up loose scree and talus on Blackcap's east face to gain the northeast ridge, where the rock transitions to distinctive black hornfels/shale; follow the ridge (staying on its left/south side as terrain allows) on easy Class 2-3 with some exposure and loose rock near the top to the summit. Camp-to-summit is about 5-6 hours round trip. An alternate eastern approach exists via the Monument Creek Trail, leaving it a few miles before Butte Pass where Monument Creek bends west into the open Monument-Blackcap basin, then climbing that basin's cliff band on either flank to reach the same upper mountain — but the Shellrock Pass approach described above is the standard, most-traveled line. Either way this is a serious wilderness undertaking: expect 30-35+ round-trip miles and 3-5 days car-to-car, with the Middle Fork Pasayten River crossing running high and cold in early season and long stretches of trail that can be brushy or storm-damaged in a given year.",
+    "descent_text": "This is a scramble with no rappelling — descend by reversing the ascent line. From the black-hornfels summit, downclimb the northeast ridge (Class 2-3, loose in spots) back down to the east-face scree/talus, which is noticeably looser and more hazardous descending than ascending — plan on a slow, controlled downclimb with attention to kicking rock onto anyone below. Continue down the scree/talus to the col, then reverse the off-trail traverse (talus edge, then NNE across the grassy/rocky basin) back over to Shellrock Pass, re-bypassing the snowfield if it was present on the way in, and drop back to camp in Shellrock Basin. From there the return to the trailhead simply reverses the multi-day trail approach: Shellrock Basin to Shellrock Pass, over Rolo Pass, past Fred's Lake, down to and along the Middle Fork Pasayten River, back up over Slate Pass, and out to the Robinson Creek/Buckskin Ridge Trailhead. No technical gear (rope, rack, harness) is needed anywhere on this route; a helmet and trekking poles/ice axe (for any lingering snow near Shellrock Pass) are the only extras worth carrying. This is a full walk-off/downclimb.",
+    "waypoints": [
+     {
+      "lat": 48.7323,
+      "lng": -120.6683,
+      "elev": 6900,
+      "name": "Buckskin Ridge Trailhead (Slate Pass)",
+      "note": "Self-issue wilderness permit and Northwest Forest Pass at the kiosk; trail #498 starts at the second switchback beyond the horse-loading area on Slate Peak Road.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "FS-5400 runs about 20 miles of narrow gravel from Mazama up to Harts Pass, and the Slate Peak spur climbs a further 3.5 miles to the road end at roughly 6,900 ft — the highest drivable road in Washington. It is usually not snow-free until mid-to-late June, and parking at the top is limited."
+     },
+     {
+      "lat": 48.7697,
+      "lng": -120.6393,
+      "elev": 5280,
+      "name": "Whistler Cutoff / Middle Fork Pasayten Trail (478) junction",
+      "note": "0.9 mi of Buckskin Ridge Trail then 3.1 mi of the Whistler Cutoff drop you into the Middle Fork Pasayten drainage here; go left/north up the Middle Fork Pasayten Trail.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "The trail crosses the ridge crest and then a signed cut-off drops off it into the Pasayten drainage, losing about 1,600 ft to reach the valley trail. A longer alternative stays on the trail system and comes round to the same valley by way of Robinson Pass."
+     },
+     {
+      "lat": 48.82287,
+      "lng": -120.59824,
+      "elev": 6507,
+      "name": "Fred's Lake",
+      "note": "Established camp and reliable water 4.8 mi up the Middle Fork Pasayten Trail from the Whistler Cutoff junction; the usual first-night camp for Blackcap parties out of Slate Pass.",
+      "type": "Campsite",
+      "distMi": 8.8,
+      "directions": "About five miles up-valley on trail #478, gaining a little over 1,200 ft. It is trail the whole way, but expect brush and storm blowdown in some years, and a cold, pushy river crossing during snowmelt. Most parties reach the lake in around five hours from the road and camp there."
+     },
+     {
+      "lat": 48.81956,
+      "lng": -120.59041,
+      "elev": 7100,
+      "name": "Rolo Pass",
+      "note": "Cross-country ridge-crest pass gained the next morning above Fred's Lake; drops you into the upper Eureka Creek drainage toward Shellrock Basin.",
+      "type": "Junction",
+      "distMi": 10.3,
+      "directions": "Climb east out of the lake basin onto the ridge crest, about 600 ft of gain, on the first morning out of camp. Lake Doris sits a short detour off the crest here."
+     },
+     {
+      "lat": 48.815736317021276,
+      "lng": -120.54036534893616,
+      "elev": 6800,
+      "name": "Shellrock Basin",
+      "note": "Meadow benches below Shellrock Pass; the standard base camp for Blackcap, Mt. Lago and Mt. Carru, and the target camp for this route.",
+      "type": "Campsite",
+      "distMi": 12.6,
+      "directions": "Drop east off the pass into upper Eureka Creek — dependable water, but historically bridgeless and an awkward ford during snowmelt — then climb back out east into the basin below Shellrock Pass. Reckon on two and a half to three hours from Fred's Lake for the whole stretch."
+     },
+     {
+      "lat": 48.814042,
+      "lng": -120.5266473,
+      "elev": 7500,
+      "name": "Col southwest of Shellrock Pass",
+      "note": "Cross-country saddle where the climb leaves the basin and turns onto Blackcap's east face; cairned in places but easy to lose in fog.",
+      "type": "Junction",
+      "distMi": 13.5,
+      "directions": "Climb from camp to Shellrock Pass and leave the trail there. Traverse south-southwest across the open grassy and rocky basin, staying beneath the cliff bands, to the foot of a talus slope, then work its left (east) edge south to the saddle just past where the cliffs end. This is a mile or so of genuine route-finding with 1,000-1,500 ft of gain and loss; a steep snowfield below the pass often lingers and is normally bypassed on the left, so carry an axe if snow is still in. Some parties instead follow the ridge crest itself southwest from the pass, which includes a true knife-edge stretch at Class 2-3."
+     },
+     {
+      "lat": 48.808803999999995,
+      "lng": -120.53474065,
+      "elev": 7950,
+      "name": "East face scree/talus slope",
+      "note": "Loose, unconsolidated scree and talus on the direct ascent line — space parties out to avoid kicking rock onto climbers below.",
+      "type": "Hazard",
+      "distMi": 14.3,
+      "directions": "From the col turn up onto Blackcap's east face and climb it directly, gaining about 450 ft toward the northeast ridge. There is no path, and this same ground is markedly worse to descend than to climb."
+     },
+     {
+      "lat": 48.80347,
+      "lng": -120.54274,
+      "elev": 8402,
+      "name": "Blackcap Mountain summit",
+      "note": "Broad summit capped in dark hornfels/shale (the ridge's rock visibly changes color just below the top) with views to Mt. Lago, Carru and the Pickets.",
+      "type": "Summit",
+      "distMi": 15.1,
+      "directions": "Gain the northeast ridge, where the rock changes abruptly to dark hornfels and shale, and follow it to the top, staying on its left (south) side where the terrain allows. Easy Class 2-3 with loose rock and some exposure near the summit. Camp-to-summit and back runs about five to six hours."
+     }
+    ],
+    "itinerary": {
+     "cal": "The Slate Peak road (trailhead access, WA's highest drivable road) typically isn't snow-free until mid-to-late June, and the Pasayten's remoteness means this route is really only a July-September outing.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Buckskin Ridge/Slate Peak trailhead (~6,900 ft), climb over Slate Pass and drop past Fred's Lake, then continue through the Eureka Creek valley and up into Shellrock Basin, camping at or just below Shellrock Pass (~7,200 ft). Trip reports split this into two shorter days via a Fred's Lake camp, but strong parties do it in one long push.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Backpack in to Shellrock Basin",
+       "gainFt": 3600,
+       "lossFt": 3300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach high camp near Shellrock Pass"
+      },
+      {
+       "n": 2,
+       "note": "An early start from camp, up onto Shellrock Pass and along Blackcap's northeast ridge — a Class 2-3 scramble with maybe one or two harder moves, finishing on the distinctive black hornfels summit cap. Round trip from camp runs about 5 hours, leaving the afternoon free to rest or tag Mt. Lago/Mt. Carru if water and energy allow.",
+       "hours": 5,
+       "miles": 6,
+       "title": "Summit day: Blackcap Mountain",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "Begin the climb from the Shellrock Pass bivy/camp."
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Reach Shellrock Pass",
+         "detail": "Gain the ridge crest for morning views before traversing toward Blackcap."
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach the summit",
+         "detail": "Class 2-3 northeast ridge scramble tops out on the black hornfels summit block."
+        },
+        {
+         "time": "8:45 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge route back toward camp."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp",
+         "detail": "Round trip from camp runs roughly 5 hours."
+        }
+       ],
+       "objective": "Climb Blackcap via the northeast ridge"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: down through Eureka Creek, back over the Rolo Pass/Fred's Lake area and Slate Pass, and out to the Buckskin Ridge/Slate Peak trailhead. Some parties split this into two shorter days with a camp on the Pasayten River flats instead.",
+       "hours": 8,
+       "miles": 14,
+       "title": "Hike out",
+       "gainFt": 2900,
+       "lossFt": 3500,
+       "packLb": 28,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A remote 3-day, roughly 30-34 mile round trip into the Pasayten Wilderness with about 8,000-8,500 ft of cumulative gain; many parties instead stretch it to 4-5 days to also tag nearby Mt. Lago and Mt. Carru from the same Shellrock Basin camp."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day backpacking fitness; typical itineraries cover 50+ miles with sustained elevation gain over several days to/from a basecamp",
+      "packWeight": "Overnight/multi-day pack weight (roughly 30-45 lb with camp gear and food) since a long approach makes a single-day car-to-car push impractical"
+     },
+     "approachTime": "Long - typically 1-2 days of trail plus cross-country travel from the Pasayten trailhead(s) to a basecamp (e.g. near Dorothy Lake or Shellrock Pass) before a summit push; not a casual day-trip objective",
+     "requiredSkills": [
+      "Class 3 scrambling on loose rock/talus",
+      "off-trail routefinding and navigation",
+      "steep talus/scree travel technique",
+      "backcountry camping and Leave No Trace practice",
+      "stream crossings",
+      "remote self-rescue judgment (no cell coverage, long evacuation)"
+     ],
+     "experienceLevel": "Solid scrambler comfortable with sustained Class 3 terrain and loose talus, plus multi-day wilderness travel experience - this peak is typically combined with neighboring summits on a multi-day Pasayten traverse rather than climbed as an isolated day trip"
+    }
+   }
+  }
+ ]
+}
