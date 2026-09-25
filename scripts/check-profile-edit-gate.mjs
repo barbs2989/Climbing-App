@@ -78,7 +78,11 @@ ok("...but NOT on PGRST116, which is `.single()` reporting zero rows", /PGRST116
 // ---- 2. the failure is recorded and the latch is released ---------------------------------------
 console.log("\n— ClimbMatch.jsx: the failure has to survive the effect —");
 const hyStart = anchor(app, "const profileHydratedRef=useRef(false)", "the profile hydration");
-const hy = app.slice(hyStart, hyStart + 2200);
+// To the end of the effect (its `},[uid]);`), not a fixed 2200 chars: main already sat at 2158, so any
+// field added to the hydration (0207 added three) pushed the .catch out of view and read as a SWALLOWED failure.
+const hyEnd = app.indexOf("},[uid]);", hyStart);
+if (hyEnd < 0) { console.error("ANCHOR LOST — the profile hydration effect has no `},[uid]);` close."); process.exit(1); }
+const hy = app.slice(hyStart, hyEnd + 9);
 ok("the sign-in reset still empties bio/location (the premise)",
   /setProfile\(\{homeArea:"",[^)]*bio:"",location:""/.test(app),
   "if the reset stopped emptying these, re-derive this whole guard — the stake has changed");

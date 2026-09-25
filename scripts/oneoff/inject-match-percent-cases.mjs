@@ -107,12 +107,16 @@ const cases = [
     expect: "no longer explains the missing match %",
   },
   {
-    name: "_cand widens, so the score branch can render and the refusal copy is no longer what shows",
-    // Not a defect — a column would have to be added first — but it invalidates section 6, so it
-    // must fail as STALE rather than pass quietly. The same standard KNOWN and PARTIAL_ON_PURPOSE
-    // are held to elsewhere in this repo.
-    edits: [['objectiveIds:[]};', 'objectiveIds:Array.isArray(p.objectiveIds)?p.objectiveIds:[],availability:p.availability,hikingSpeedFtHr:p.hikingSpeedFtHr};']],
-    expect: "signals unknown, so the score branch CAN render",
+    name: "_cand narrows back to the pre-0207 projection, so every real climber reads the refusal again",
+    // The regression 0207 closed: objectives hardcoded empty and the new columns dropped.
+    edits: [['objectiveIds:Array.isArray(objIds)?objIds:[]};', 'objectiveIds:[]};'],
+            ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', '']],
+    expect: "for a COMPLETE profile",
+  },
+  {
+    name: "the objectives gate is removed, so an UNREAD list scores as zero shared objectives",
+    edits: [['{!_objReady?<div', '{false?<div']],
+    expect: "before its objectives are read",
   },
   {
     name: "SILENT: the refusal is REWORDED, truthfully and differently",
@@ -123,7 +127,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the old wording",
-    edits: [['function RealClimberRow({p,onOpen}){', '/* this used to read "New profile — …score a match yet" */\nfunction RealClimberRow({p,onOpen}){']],
+    edits: [['function RealClimberRow({p,onOpen,objIds,objErr}){', '/* this used to read "New profile — …score a match yet" */\nfunction RealClimberRow({p,onOpen,objIds,objErr}){']],
     expect: null,
   },
   {

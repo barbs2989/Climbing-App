@@ -177,11 +177,12 @@ for (const [i, sentence] of COPY_SITES.entries()) {
 // ---- 6. THE BROWSE ROW MUST NOT BLAME THE CLIMBER FOR WHAT ITS OWN PROJECTION DROPS.
 //
 // Sections 1-5 are about the number. This is about the sentence shown when there is no number,
-// and it is a separate question because the row that renders it can never reach section 4's
-// signals: `_cand` -- RealClimberRow's own projection of a `profiles` row -- hardcodes
-// `objectiveIds:[]`, and `profiles` has no availability or pace column for anyone. So
-// compatUnknown is >= 3 for a complete profile and a bare one alike, the score branch has never
-// rendered, and every real climber on Partners reads the refusal. It used to say
+// and it is a separate question because, until 0207, the row that renders it could never reach
+// section 4's signals: `_cand` hardcoded `objectiveIds:[]` and `profiles` had no availability or
+// pace column, so compatUnknown was >= 3 for a complete profile and a bare one alike and every
+// real climber read the refusal. 0207 added the columns and the list now passes each row its
+// objectives, so 6a asserts BOTH halves: a complete row scores, a bare one still refuses. The
+// refusal used to say
 //
 //     "New profile — not enough shared info to score a match yet"
 //
@@ -202,19 +203,27 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
-const buildCand = new Function("p", "return {" + candSrc + "};");
+const buildCand = new Function("p", "objIds", "return {" + candSrc + "};");
 const richRow = {
   id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb",
   show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",
   disciplines: ["sport", "trad", "alpine"], sport_grade: "5.11a", trad_grade: "5.10a",
   boulder_grade: "V4",
-  // Fields a maximally-complete row could carry IF the columns existed. They do not; that is
-  // the point, and passing them proves the projection drops them rather than the fixture.
-  availability: ["weekends", "weekday_am"], hikingSpeedFtHr: 1000, objectiveIds: ["o1", "o2"],
+  // The COLUMN names (0207), not camelCase: the projection must read what PostgREST returns.
+  availability: ["weekends", "weekday_am"], avail_week: ["sat_am", "sun_am"], hiking_speed_ft_hr: 1000,
 };
-const unkRich = M.compatUnknown(ME, buildCand(richRow));
-if (unkRich >= 3) ok(`the browse row cannot score even a complete profile (compatUnknown = ${unkRich}), so the refusal is what renders`);
-else fail(`_cand now leaves only ${unkRich} signals unknown, so the score branch CAN render. That may be correct work — a column was added — but it is not what the refusal copy below was written for. Re-derive with scripts/oneoff/measure-browse-row-match-percent.mjs and re-check this section.`);
+const RICH_OBJ = (ME.objectiveIds && ME.objectiveIds.length) ? ME.objectiveIds.slice(0, 1).concat(["o2"]) : ["o1", "o2"];
+const unkRich = M.compatUnknown(ME, buildCand(richRow, RICH_OBJ));
+if (unkRich < 3) ok(`a complete real row can be scored (compatUnknown = ${unkRich}) — the projection reads the 0207 columns and the objectives it is handed`);
+else fail(`_cand leaves ${unkRich} signals unknown for a COMPLETE profile, so every real climber reads the refusal again — the projection is dropping availability, pace or objectives (0207). Re-derive with scripts/oneoff/measure-browse-row-match-percent.mjs.`);
+const bareRow = { id: "3f2a91cc-0000-4000-8000-000000000002", name: "Bare", disciplines: [] };
+const unkBare = M.compatUnknown(ME, buildCand(bareRow, []));
+if (unkBare >= 3) ok(`...and a bare row still refuses (compatUnknown = ${unkBare}) rather than scoring absences as a low match`);
+else fail(`a row that shares nothing leaves only ${unkBare} signals unknown, so it renders a % built from absences — #612's defect`);
+// Objectives not yet read (or failed) must not score as "has none": the row gates on them first.
+const gateAt = row.indexOf("!_objReady?"), refuseAt = row.indexOf("_unk>=3?");
+if (gateAt >= 0 && refuseAt > gateAt) ok("...and no score renders before the row's objectives have been read");
+else fail("RealClimberRow can render a match % before its objectives are read — an unread list would score as ZERO shared objectives");
 
 // 6b. THE REFUSAL'S OWN TEXT, lifted rather than matched in place, so the assertions below are
 // about the sentence a climber reads and not about anything else in the row.
