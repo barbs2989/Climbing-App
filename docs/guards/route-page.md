@@ -230,6 +230,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     legitimate state that renders perfectly. *A verification nobody runs is not a verification*, on
     a surface whose entire contract is when to speak and when not to. The promotion is the fix for
     that; the rule change below is the fix for what it found.
+  - **ITS EXPECTED PERMIT IS READ OFF THE FIXTURE, NOT PINNED (2026-09-25).** The "states the shared
+    permit verbatim" assertion used to hold a literal copy of Baker's live permit sentence. It went red
+    on main the day a sourced correction rewrote all nine rows to a new sentence they still SHARE — the
+    invariant held, only the copy of the data rotted. It now asserts the panel states whatever single
+    permit the rows carry, and dies loudly if they stop agreeing (the fixture then tests nothing).
+    Rule for this guard: assert the RELATION between rows and panel, never a copy of a row's text.
   - **AGREEMENT WAS A PREFIX TEST, AND A PREFIX IS ORDER-SENSITIVE.** `sharedFact` asked whether
     every stated value was a prefix of the longest once spelling was normalised — so one agency
     written **agency-first** and **place-first** read as a disagreement. Baker's nine routes carry
