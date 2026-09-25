@@ -1,11 +1,11 @@
--- 0211: the catalog directory — look here BEFORE adding a peak, area or route.
+-- 0214: the catalog directory — look here BEFORE adding a peak, area or route.
 --
 -- Requested directly: "we need to make sure that you don't add routes or peaks in areas and
 -- such that we already have. Can you create a table that has all this information stored by
 -- hierarchy so that you can reference it before adding new peaks, routes, etc? Make it
 -- formatted to how we structured the climbs search so it's easy to understand and navigate."
 --
--- Why: 0210. The MP importer created `North Cascades > Mt. Baker` beside our
+-- Why: 0213. The MP importer created `North Cascades > Mt. Baker` beside our
 -- `Bellingham and Mt Baker Hwy > Mount Baker` because it only ever asked "does THIS PARENT
 -- have a child with this exact name?". The same peak under a different parent, or spelled
 -- "Mt." instead of "Mount", was invisible to it. Everything here answers the wider question:

@@ -1,4 +1,4 @@
--- 0210: Mt. Baker, Colfax, Shuksan and friends were filed twice — once under
+-- 0213: Mt. Baker, Colfax, Shuksan and friends were filed twice — once under
 -- "Bellingham and Mt Baker Hwy", and again as MP-named copies under "North Cascades".
 --
 -- Reported directly: "why is Mt. Baker under the North Cascades area? We already have Mount
