@@ -1,0 +1,391 @@
+{
+ "applied": [
+  {
+   "id": "wa_rock_mountain_west_route",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Time to reach summit vs total car-to-car time"
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance and gain in partner requirements / October guidance (11 mi, 4,300 ft) vs 8 mi, 4,050 ft everywhere else"
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "October",
+    "reason"
+   ],
+   "fact": "Round-trip distance and gain in partner requirements / October guidance (11 mi, 4,300 ft) vs 8 mi, 4,050 ft everywhere else"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "basecamp drainage for the approach"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "whether the route is ever climbed in avalanche season"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Approach trail named 'North Fork Entiat / Snow Brushy Creek Trail corridor' vs North Fork Entiat + Pyramid Creek trails everywhere else"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Approach trail named 'North Fork Entiat / Snow Brushy Creek Trail corridor' vs North Fork Entiat + Pyramid Creek trails everywhere else"
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km (35.41 km = 22 mi) shown as one-way approach vs summit ~11 mi from the trailhead"
+  }
+ ],
+ "rejected": [
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    0,
+    "permit"
+   ],
+   "find": "of the trailheads serving this crest only Nason Ridge is a fee site, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads are fee sites, at $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "find occurs 0x at bivy[0,\"permit\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    1,
+    "permit"
+   ],
+   "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "find occurs 0x at bivy[1,\"permit\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    4,
+    "permit"
+   ],
+   "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_west_route",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "not a string at bivy[4,\"permit\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    0,
+    "permit"
+   ],
+   "find": "of the trailheads serving this crest only Nason Ridge is a fee site, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads are fee sites, at $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_northeast_ridge",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "find occurs 0x at bivy[0,\"permit\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    1,
+    "permit"
+   ],
+   "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_northeast_ridge",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "find occurs 0x at bivy[1,\"permit\"]"
+  },
+  {
+   "op": "replace_text",
+   "column": "bivy",
+   "path": [
+    4,
+    "permit"
+   ],
+   "find": "Nason Ridge is the one fee trailhead on this crest, at $5 a day or $30 a year.",
+   "replace": "the Nason Ridge and Round Mountain trailheads charge $5 a day or $30 a year.",
+   "id": "wa_rock_mountain_northeast_ridge",
+   "fact": "Which Nason Ridge trailheads charge a fee",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/round-mountain-trailhead",
+    "https://www.wta.org/go-hiking/hikes/alpine-lookout",
+    "https://www.wta.org/go-hiking/hikes/rock-mountain",
+    "https://www.wta.org/go-hiking/hikes/merritt-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/nason-ridge-trail"
+   ],
+   "why": "not a string at bivy[4,\"permit\"]"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_rock_mountain_west_route",
+   "before": {
+    "timing": {
+     "totalHrs": 8.5,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "5:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "A single relentless day: roughly 90-99 switchbacks climb southeast-facing, largely shadeless slopes from the Hwy 2 trailhead up through Ponderosa forest into alpine meadows near Ro…",
+       "fromTo": "Car-to-car via Rock Lake / Trail #1587",
+       "section": "Climb"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong aerobic fitness required — 11 mi round trip with ~4,300 ft gain at an average grade over 18%, with steep switchbacks concentrated early in the hike",
+      "packWeight": "Light day-hiking load, roughly 15-25 lb (water, layers, navigation, snow gear if early season)"
+     },
+     "approachTime": "Full day; 5-7 hours round trip is typical, longer if snow lingers or party is less conditioned",
+     "requiredSkills": [
+      "Sustained steep trail hiking / pacing on relentless switchbacks",
+      "Basic Class 2 scrambling and route-finding along the summit ridge",
+      "Snow travel / self-arrest awareness and route-finding if climbing early season while snow lingers on upper switchbacks",
+      "Heat management — trail is exposed and reported as hot with little shade"
+     ],
+     "experienceLevel": "Intermediate hiker comfortable with sustained steep grades and basic Class 2 off-trail/ridge scrambling near the summit; not a beginner-friendly trail due to relentless switchbacks"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through September as the leading edge of the window; conditions remain climbable into October",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season opens as snow melts out; lingering snow on the trail early in the month, and wildflower bloom is beginning",
+       "status": "good"
+      },
+      "August": {
+       "reason": "Peak wildflower meadows and most reliable dry, snow-free footing on the switchbacks",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early snow/ice possible at elevation and on the exposed switchbacks; shorter daylight window for the full 11-mile round trip",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Stable dry weather, fall colors, fewer bugs; one of the best months for the steep exposed trail",
+       "status": "optimal"
+      }
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_saska_peak_emerald_saska_col",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong multi-day hiking fitness - approach is long and remote (typically via high camp in Leroy or Phelps Creek basin), often paired with summiting Emerald Peak the same trip",
+      "packWeight": "Overnight/backpacking load for the approach (camp gear, several days of food) plus a light summit pack for the scramble day"
+     },
+     "approachTime": "Multi-day trip typical; long approach via North Fork Entiat River Trail to a high basin camp before the summit scramble, consistent with the remote-approach note",
+     "requiredSkills": [
+      "Class 2-3 scrambling on loose rock",
+      "off-trail routefinding",
+      "backcountry navigation (map/compass or GPS - route is not signed or consistently cairned)",
+      "self-arrest/snow travel judgment for lingering snow in the col early season",
+      "comfort with remote, low-traffic terrain (no expectation of rescue or other parties nearby)"
+     ],
+     "experienceLevel": "Comfortable on unmaintained trail and off-trail travel with prior Class 3 scrambling experience; should be capable of basic routefinding through cairned, loose terrain without a set path"
+    },
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "East-Cascades continental summer pattern - warm, dry days at elevation with cold nights; consistent with the south-aspect, high-basin setting",
+      "probability": "Afternoon thunderstorms are a known hazard on this route - most common July-August; plan to be off exposed ridge/summit terrain by early afternoon"
+     },
+     "exposure": "Moderate - Class 2-3 terrain with loose rock and routefinding between summits; a slip on loose sections or in the lingering col snow could result in a serious fall, compounded by the remote approach and lack of nearby help",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue a forecast specific to the Entiat Mountains and this route is not climbed in avalanche season",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "itinerary": {
+     "cal": "Approach trail and high basin typically hold snow into early summer; most trip reports for this peak are from late May-June, so expect snow travel on the col and south slopes early season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the North Fork Entiat / Snow Brushy Creek Trail corridor into the basin below Emerald, Saska and Cardinal. The first miles cross old burn/blowdown before climbing steadily to a meadow camp used by most parties as their base for the col and summit push.",
+       "hours": 7,
+       "miles": 10,
+       "title": "Backpack in to basin camp",
+       "gainFt": 4200,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp near the Emerald-Saska basin (~6,800-7,200 ft)"
+      },
+      {
+       "n": 2,
+       "note": "An early, light start from camp up into the basin and onto the Emerald-Saska col, then Class 2-3 scrambling up the south slopes to the 8,404 ft summit. Most parties are back at camp by early-mid afternoon with time to rest before hiking out the next day.",
+       "hours": 6,
+       "miles": 2,
+       "title": "Summit push via Emerald-Saska col",
+       "gainFt": 1600,
+       "lossFt": 1600,
+       "packLb": 13,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave camp",
+         "detail": "Light day pack, cross the basin toward the col."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Gain the Emerald-Saska col",
+         "detail": "Saddle between the two peaks; south slopes route begins here."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start south slopes scramble",
+         "detail": "Class 2-3 terrain, loose in spots; follow path of least resistance."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Summit (8,404 ft)",
+         "detail": "Views across the Glacier Peak Wilderness and Chelan Mountains."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the south slopes and col."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Back at camp",
+         "detail": "Rest, refill water, prep for hike-out the next day."
+        }
+       ],
+       "objective": "Climb Saska Peak's south slopes from the col and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach trail back down through the basin and along the Entiat drainage to the trailhead. A straightforward but long descent day.",
+       "hours": 6,
+       "miles": 10,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 4200,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Break camp and hike back to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpacking trip: roughly 22 miles round trip with about 6,000 ft of gain, one full day each way for the approach/exit and a dedicated summit day via the Emerald-Saska col and Saska's south slopes."
+    },
+    "timing": {
+     "totalHrs": 19,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 6,
+     "approachTimeHrs": 7,
+     "recommendedStart": "4:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "Hike the North Fork Entiat / Snow Brushy Creek Trail corridor into the basin below Emerald, Saska and Cardinal. The first miles cross old burn/blowdown before climbing steadily to …",
+       "fromTo": "Backpack in to basin camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "An early, light start from camp up into the basin and onto the Emerald-Saska col, then Class 2-3 scrambling up the south slopes to the 8,404 ft summit. Most parties are back at cam…",
+       "fromTo": "Summit push via Emerald-Saska col",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Reverse the approach trail back down through the basin and along the Entiat drainage to the trailhead. A straightforward but long descent day.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "dist_km": 35.41
+   }
+  }
+ ]
+}

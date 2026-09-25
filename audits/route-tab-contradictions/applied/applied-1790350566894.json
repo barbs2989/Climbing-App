@@ -1,0 +1,268 @@
+{
+ "applied": [
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "season",
+   "path": [],
+   "fact": "Season window (Jul-Aug) vs. wider optimal/best-season claims"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "aspect",
+   "path": [],
+   "fact": "Route aspect vs. the ridge/face it actually climbs"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "gear",
+   "path": [
+    3
+   ],
+   "fact": "Bear canister requirement"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance: itinerary days (24 mi) vs totalNote (~19 mi) vs crowds/partner (35-40 mi) vs dist_km (38.6 km in a one-way column)"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "avalanche",
+    "zone"
+   ],
+   "fact": "Location: overview says the peak is NOT in the Entiat Mountains; seasonal_hazards.avalanche.zone calls it an 'Entiat-area summit'"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit fee: permit/access.permit say $10/person/night; bivy entries call the permit free"
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit fee: permit/access.permit say $10/person/night; bivy entries call the permit free"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain for the full trip"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "total gain for the full trip"
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "column": "high_point_ft",
+   "path": [],
+   "fact": "High point: high_point_ft 8963 vs summit elevation 8,956 in overview and summit waypoint"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_needle_peak_south_route",
+   "before": {
+    "season": "Jul–Aug (inferred from the dates of all documented ascents: Aug 19 2006, Jul 9 2023, Aug 30 2018 x2)",
+    "aspect": "S",
+    "gear": [
+     "Helmet (essential — loose rock throughout)",
+     "Light rope (~30m) and a few slings for the crux notch/downclimb",
+     "Rock shoes or sticky-soled approach shoes for the polished slab and summit moves",
+     "Bear canister (recommended/required for NPS backcountry camping)"
+    ],
+    "itinerary": {
+     "cal": "Requires a North Cascades NP backcountry camping permit for the Swamp Creek zone, and access depends on the Stehekin ferry/shuttle and the seasonal High Bridge shuttle (roughly June-Sept); best conditions are mid-July through September once the approach trail and gully snow have melted out.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Ferry/shuttle to Stehekin then High Bridge, then a leisurely 9-mile hike on the PCT/Agnes Creek Trail up-valley to Swamp Creek, gaining about 1,200 ft along the way. Camp here and scout the route for tomorrow.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Approach to Swamp Creek camp",
+       "gainFt": 1200,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish base camp at Swamp Creek"
+      },
+      {
+       "n": 2,
+       "note": "The crux day: leave the unmaintained Swamp Creek Trail around 3,200 ft, work up through brush and slabs below the north face, and climb the west gully on the north ridge, weaving through cliff bands on a sustained, exposed Class 3-4 crux around 7,300-7,400 ft before a final loose gully to the summit block.",
+       "hours": 12,
+       "miles": 6,
+       "title": "Needle Peak north ridge",
+       "gainFt": 5100,
+       "lossFt": 5100,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave Swamp Creek camp",
+         "detail": "Follow the unmaintained Swamp Creek Trail north toward the peak."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Leave the trail near 3,200 ft",
+         "detail": "Begin bushwhacking and slab-walking below the north face."
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Crux band, 7,300-7,400 ft",
+         "detail": "Exposed Class 3-4 scrambling through cliff bands via the west gully; helmet recommended."
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Summit (7,896 ft)",
+         "detail": "Final loose/choss gully leads to a summit block that's easier than it looks from a distance."
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent line (or descend the parallel east gully) back toward the north ridge base."
+        },
+        {
+         "time": "6:00 PM",
+         "label": "Back at Swamp Creek camp"
+        }
+       ],
+       "objective": "Summit Needle Peak (7,896 ft) and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back down the Agnes Creek Trail/PCT to High Bridge, then pick up the shuttle to Stehekin and the ferry/floatplane back to Chelan.",
+       "hours": 5,
+       "miles": 9,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 1200,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to High Bridge and catch the shuttle/ferry"
+      }
+     ],
+     "totalNote": "A 3-day, ~19-mile round-trip backpack via ferry/shuttle to High Bridge and the Agnes Creek/Swamp Creek Trail, built around one long summit day that gains roughly 5,100 ft on exposed Class 3-4 terrain above camp."
+    },
+    "crowds": {
+     "peakTraffic": "Rarely climbed; the ~38-39 mile round trip from High Bridge via the PCT (with a multi-day approach through Swamp Creek/Agnes Creek country) strongly limits day-trip and casual traffic to essentially none",
+     "solitudeRating": 5,
+     "estimatePerSeason": "unknown - low-traffic, plausibly single-digit to low-double-digit parties per season given the remote, multi-day wilderness approach"
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strong backcountry fitness - the approach alone (High Bridge via PCT to a Swamp Creek-area base camp) is on the order of 35-40 miles round trip with substantial elevation gain, typically broken into a multi-day trip rather than a single push",
+      "packWeight": "Overnight/multi-day pack weight (shelter, food, water treatment for a multi-day wilderness approach) for at least the approach and camp portion, dropping to a light summit-day pack for the scramble itself"
+     },
+     "approachTime": "Long - a multi-day wilderness approach (roughly 35-40 miles round trip from High Bridge via the PCT to high basins on the south side), not a single-day car-to-summit outing",
+     "requiredSkills": [
+      "Class 3 scrambling on talus and broken rock",
+      "comfort with exposure at the narrow, exposed summit step",
+      "wilderness navigation (off-trail route-finding above the basins, no maintained summit trail)",
+      "multi-day backcountry travel / camp skills for the long approach",
+      "loose rock (choss) management and careful foot/handhold testing"
+     ],
+     "experienceLevel": "Solid Class 3 scrambling experience with comfort on loose rock and exposed terrain; ideally someone who has done similar exposed summit scrambles, since the crux is a short but consequential exposed step just below the narrow summit"
+    },
+    "dist_km": 38.6,
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "East Cascades summer pattern - generally warm and dry with cool nights at elevation, consistent with the Stehekin/Lake Chelan backcountry location",
+      "probability": "Afternoon thunderstorms/convective buildups are a realistic risk on east-slope Cascades summits in summer, which would compound the loose-rock and exposure hazards near the summit"
+     },
+     "exposure": "Consequential but localized - the primary fall exposure is concentrated at the final summit step, where a slip on loose rock could result in a serious fall; the broader talus approach is lower-consequence but still requires care due to loose rock underfoot",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; NWAC does not issue forecasts during the July-September climbing season, and no NWAC winter zone is specific to this remote Entiat-area summit",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel; this is a talus/rock scramble route"
+    },
+    "permit": "NPS wilderness/backcountry permit required for overnight camping in the North Cascades NP/Lake Chelan NRA portion of the approach ($10/person/night plus a $6 non-refundable reservation fee); free, self-issued permit once past the wilderness boundary into the Glacier Peak Wilderness (USFS) near Swamp Creek and the peak itself.",
+    "access": {
+     "fees": "Lady of the Lake ferry from Chelan (fares vary by boat/season) or floatplane charter to reach Stehekin; Stehekin shuttle bus to High Bridge is about $10/adult, $5/child one-way. No separate climbing fee.",
+     "rules": "Standard NPS wilderness regulations apply in the park/NRA portion (permit and, where applicable, designated-site camping, bear canister recommended); standard Leave No Trace and USFS wilderness group-size limits apply once past the wilderness boundary.",
+     "permit": "An NPS wilderness/backcountry permit is required for any overnight camping within the North Cascades National Park Complex boundary (the lower Agnes Creek Trail corridor) — $10/person/night plus a $6 non-refundable reservation fee if booked in advance via recreation.gov, or self-issued at the Stehekin Ranger Station when the Wilderness Information Center is unstaffed. Once across into the Glacier Peak Wilderness (USFS) near Swamp Creek, permits are free, self-issued trailhead registers.",
+     "closures": "Stehekin Valley Road and the village have faced wildfire evacuation closures in recent fire seasons (e.g., the 2024 Pioneer Fire) — check NPS and Chelan County alerts before a trip.",
+     "landManager": "North Cascades National Park Complex / Lake Chelan National Recreation Area (NPS) covers the Stehekin–High Bridge–lower Agnes Creek corridor; the route transitions into the Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) for the Swamp Creek approach and the peak itself.",
+     "passRequired": "None for day use of the National Forest portion; an NPS wilderness camping permit (see Permit) is required for overnight stays within the Park/NRA portion.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+      "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_north_gardner_mountain_southwest",
+   "before": {
+    "gain_ft": 6013,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - reported ~27 miles round trip with ~8,100 ft of gain via the Wolf Creek drainage to the high basin",
+      "packWeight": "Multi-day capable pack (most parties camp near the basin rather than day-tripping) with self-sufficient overnight gear given the remote, no-quick-exit setting"
+     },
+     "approachTime": "Long - full-day approach up the Wolf Creek drainage to the high basin between Gardner and North Gardner before the summit push; most parties treat this as a multi-day trip",
+     "requiredSkills": [
+      "scrambling on loose scree/talus",
+      "routefinding on broad, featureless slopes",
+      "self-arrest/snow travel competence for early-season snow patches",
+      "backcountry navigation/map-and-compass (cell coverage unlikely)",
+      "sound judgment around afternoon thunderstorms"
+     ],
+     "experienceLevel": "Solid scrambling experience (comfortable on sustained Class 2-3 terrain) plus backcountry navigation skills for a long, remote approach; not a beginner objective"
+    },
+    "high_point_ft": 8963
+   }
+  }
+ ]
+}

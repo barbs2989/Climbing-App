@@ -1,0 +1,1659 @@
+{
+ "file": "r041.json",
+ "results": [
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Total route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km (5.8 km = 3.6 mi) is the one-way approach to Lake Serene, where the off-trail scramble begins. It matches the row's own Lake Serene waypoint (distMi 3.6) and the published 7.2 mi round trip for the Lake Serene trail. The itinerary's ~11 mi is the full round trip to the summit (3.6 mi of trail plus ~1.7 mi off-trail each way), so the two figures measure different things and agree.",
+   "sources": [
+    "https://forterra.org/visit/lake-serene/",
+    "https://www.mountaineers.org/activities/routes-places/lake-serene"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Season window (Nov-Jun) vs. an explicitly 'optimal' July-August climbing window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources confirm the peak is climbed both as a winter/early-spring snow scramble (Mountaineers winter-scramble listing; February 2025 trip reports) and as a summer alpine scramble (Mountaineers alpine-scramble trip report). So 'Nov-Jun' is too narrow. Meanwhile the row's pro_tips/best_season (winter preferred) and seasonal_guidance (Jul-Sep optimal) disagree about which window is best. Which window is 'optimal' is a preference, not a fact that two sources settle, so this needs an editorial decision (e.g. a year-round season with one agreed preferred window).",
+   "sources": [
+    "https://www.mountaineers.org/activities/activities/winter-scramble-philadelphia-mountain",
+    "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-philadelphia-mountain",
+    "https://www.lucasmountainknowledge.com/post/philadelphia-mountain-feb-2025"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Distance to Lake Serene in the itinerary schedule",
+   "verdict": "fixed",
+   "correct_value": "About 3.6 mi from the trailhead to Lake Serene",
+   "evidence": "The schedule says Lake Serene is reached at 1.7 mi, but 1.7 mi is the Bridal Veil Falls junction (the row's own waypoint). The Lake Serene trail is 7.2 mi round trip (3.6 mi one way) with ~1,920-2,000 ft of gain. That matches the row's Lake Serene waypoint (distMi 3.6) and the approach text (~3.5 mi).",
+   "sources": [
+    "https://forterra.org/visit/lake-serene/",
+    "https://www.mountaineers.org/activities/routes-places/lake-serene"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "1.7 mi via the Bridal Veil Falls junction",
+     "replace": "About 3.6 mi via the Bridal Veil Falls junction",
+     "id": "wa_philadelphia_mountain_scramble",
+     "fact": "Distance to Lake Serene in the itinerary schedule"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Best time of year: rope_note says May/June is best, best_season says avoid late April-May",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "rope_note calls May/June the best time, because snow covers the underbrush. best_season says to avoid the rotten-snow shoulder season of late April-May, and seasonal_guidance rates June marginal. This is the same seasonal-preference question as the season contradiction, and no two sources settle the preferred month.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "fact": "Descent time from summit to trailhead",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly 3.5-4 hours (about 1.5 h summit to Rainy Lake, about 2 h lake to car)",
+   "evidence": "These all give ~3.5-4 h: descent_text's own splits (1.5 h + 2+ h), the itinerary schedule (summit break ends ~11:30, Rainy Lake ~1:00, trailhead ~3:00), the schedule details (~1.5 h, final ~2 h) and the day note (descent faster than the climb). Only the headline '5 hours' disagrees. A detailed trip report logs 1 h 30 m from the summit to Rainy Lake and 2 h from Rainy Lake to the trailhead (3.5 h). One other report took 5 h down, so slower parties may take longer.",
+   "sources": [
+    "https://www.yellowleaf.org/scramble/g/r/2004-08-15-Preacher-Mountain-via-Rainy-Lake.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Descent time is roughly 5 hours (about",
+     "replace": "Descent time is roughly 3.5-4 hours (about",
+     "id": "wa_preacher_mountain_scramble",
+     "fact": "Descent time from summit to trailhead"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "total route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The published route page gives 450 ft total AND per-pitch lengths of ~120, ~200, ~100 and ~170 ft (~590 ft), which is what pitch_detail stores (35/60/30/50 m). Another report gives 4 pitches, 450 ft. The discrepancy is in the published beta itself (the pitch lengths probably include rope stretch and diagonal travel). No source settles either figure, so no change.",
+   "sources": [
+    "https://www.mountainproject.com/route/203227680/boving-christensen",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "descent method off the top",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Two genuine options are documented. One: a single 60 m rappel down the north side from the top of the route, then a scramble to the base (the shared Solid Gold descent). Two: finish the West Ridge and use its raps, or downclimb below the P4 anchor and make two tat rappels to the West Ridge base. descent/descent_text give the first option; rappels gives the second.",
+   "sources": [
+    "https://www.mountainproject.com/route/203227680/boving-christensen",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "approach elevation gain to Gnome Tarn camp/base",
+   "verdict": "fixed",
+   "correct_value": "~4,600 ft of gain one way (itinerary day 1 gain and day 3 loss 4,600 ft; round trip ~5,800 ft)",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_boving_christensen",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_boving_christensen",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5200,
+     "value": 5800,
+     "id": "wa_boving_christensen",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5200,
+     "value": 5800,
+     "id": "wa_boving_christensen",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~5,200 ft round-trip estimated",
+     "replace": "~5,800 ft round-trip estimated",
+     "id": "wa_boving_christensen",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+   "verdict": "fixed",
+   "correct_value": "Approach 6.5 h / Climb 5 h / Descent 5.5 h",
+   "evidence": "The 'section' tags are swapped relative to each leg's own fromTo and note: the approach leg is tagged Climb and the climbing leg Descent. That also puts the approach time in summitTimeHrs and the climb time in descentTimeHrs. Relabelled the legs Approach/Climb/Descent and reset the top-level hours from the breakdown (approach 6.5, climb = day 2, hike out 5.5), matching how the sibling Stanley-Burgner row stores the same trip. This is a structural fix; no external fact changes.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach",
+     "id": "wa_boving_christensen",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb",
+     "id": "wa_boving_christensen",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6.5,
+     "value": 5,
+     "id": "wa_boving_christensen",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 10.5,
+     "value": 5.5,
+     "id": "wa_boving_christensen",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 6.5,
+     "id": "wa_boving_christensen",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "overnight group size cap",
+   "verdict": "fixed",
+   "correct_value": "8 people",
+   "evidence": "The maximum group size inside the Enchantment Permit Area is 8. The 12-person limit is the Alpine Lakes Wilderness-wide rule that applies outside the permit area. access.rules and group_limit (8) are right; the raw 12 is the wilderness-wide figure, mislabelled for this permit area.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://campflare.com/permit/enchantment",
+    "https://www.recreation.gov/camping/poi/233273"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "group_size_limits"
+     ],
+     "expect": "Maximum party 12 people",
+     "value": "Maximum party 8 people (Enchantment Permit Area)",
+     "id": "wa_boving_christensen",
+     "fact": "overnight group size cap"
+    }
+   ]
+  },
+  {
+   "id": "wa_boving_christensen",
+   "fact": "Itinerary day 2 says the route is descended by rappelling the route",
+   "verdict": "fixed",
+   "correct_value": "One rappel down the north side, then a short scramble back to the base",
+   "evidence": "The day-2 note says to rappel the route itself. The actual descent is one full-length rappel down the north side followed by a ~30 min scramble around to the base (or two tat rappels to the West Ridge base). Nobody rappels the south-face line.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+    "https://www.mountainproject.com/route/203227680/boving-christensen"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Descend by rappelling the route back to the base.",
+     "replace": "Descend with one rappel down the north side and a short scramble back to the base.",
+     "id": "wa_boving_christensen",
+     "fact": "Itinerary day 2 says the route is descended by rappelling the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Descend by r…",
+     "replace": "Descend by one north-side r…",
+     "id": "wa_boving_christensen",
+     "fact": "Itinerary day 2 says the route is descended by rappelling the route"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "fact": "total route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Published totals vary: 500 ft (route database), 600 ft, and 650 ft (trip report). The row's length_m (600 ft) and its ~650 ft note both fall inside that range. No source gives per-pitch lengths that would let the pitch_detail lengths (summing to ~778 ft) be corrected, so they stay flagged.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808515/stanley-burgner",
+    "https://stephabegg.com/trip-reports/washington/prusik-burgner-stanley/",
+    "https://www.summitpost.org/south-face-stanley-burgner/202982"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "fact": "hardest free-climbing grade of the route",
+   "verdict": "fixed",
+   "correct_value": "5.9+",
+   "evidence": "A magazine route profile and a detailed trip report both publish the route as III 5.9+. That matches every pitch in the row's pitch table (crux 5.9+) and best_season's historic grade. One route database lists 5.10a overall, but its own pitch list tops out at 5.9+. The companion Burgner-Stanley row also uses 5.9+. Header grade set to 5.9+; the itinerary's '5.9+/5.10a' already acknowledges the upgrade.",
+   "sources": [
+    "https://www.climbing.com/places/stanley-burgner-iii-59-six-pitches/",
+    "https://stephabegg.com/trip-reports/washington/prusik-burgner-stanley/",
+    "https://www.mountainproject.com/route/105808515/stanley-burgner"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "5.10a",
+     "value": "5.9+",
+     "id": "wa_stanley_burgner",
+     "fact": "hardest free-climbing grade of the route"
+    },
+    {
+     "op": "set",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.10a",
+     "value": "5.9+",
+     "id": "wa_stanley_burgner",
+     "fact": "hardest free-climbing grade of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "fact": "approach elevation gain to Gnome Tarn camp/base",
+   "verdict": "fixed",
+   "correct_value": "~4,600 ft of gain one way (round trip ~6,000 ft)",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_stanley_burgner",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_stanley_burgner",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5400,
+     "value": 6000,
+     "id": "wa_stanley_burgner",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5400,
+     "value": 6000,
+     "id": "wa_stanley_burgner",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~5,400 ft round-trip",
+     "replace": "~6,000 ft round-trip",
+     "id": "wa_stanley_burgner",
+     "fact": "approach elevation gain to Gnome Tarn camp/base"
+    }
+   ]
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "fact": "Itinerary schedule descends the West Ridge, but the descent is north-face rappels",
+   "verdict": "fixed",
+   "correct_value": "Rappel the north face, then walk back around to the base",
+   "evidence": "descent, descent_text and rappels all describe rappelling the north face from the summit, but the schedule says to downclimb/rappel the West Ridge. Published descents agree with the rappel fields: walk east from the summit and rappel the north face on slung stations (1 or 2 ropes), or five single-rope rappels off slung blocks on the north face, then scramble around to the base.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808515/stanley-burgner",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Downclimb/rappel the West Ridge back toward the notch",
+     "replace": "Rappel the north face, then walk back around to the base",
+     "id": "wa_stanley_burgner",
+     "fact": "Itinerary schedule descends the West Ridge, but the descent is north-face rappels"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "fact": "total route length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed report gives 5 pitches, 450 ft, which agrees with length_m and rope_note. No source gives per-pitch lengths, so research cannot correct the pitch_detail lengths (summing to ~541 ft). Left flagged.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "fact": "total round-trip elevation gain",
+   "verdict": "fixed",
+   "correct_value": "~5,800 ft round trip (day 1 gain and day 3 loss 4,600 ft)",
+   "evidence": "totalNote's ~4,500 ft is less than the one-way climb to Aasgard Pass alone. The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 corrected, the day sum is 4,600+500+700 = 5,800 ft, and gain_ft/loss_ft/totalNote are set to that.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_energizer_bunny",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_energizer_bunny",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5200,
+     "value": 5800,
+     "id": "wa_energizer_bunny",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5200,
+     "value": 5800,
+     "id": "wa_energizer_bunny",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,500 ft round-trip estimated",
+     "replace": "~5,800 ft round-trip estimated",
+     "id": "wa_energizer_bunny",
+     "fact": "total round-trip elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+   "verdict": "fixed",
+   "correct_value": "Approach 6.5 h / Climb 5.5 h / Descent 5.5 h",
+   "evidence": "The 'section' tags are swapped relative to each leg's own fromTo and note: the approach leg is tagged Climb and the climbing leg Descent. That also puts the approach time in summitTimeHrs and the climb time in descentTimeHrs. Relabelled the legs Approach/Climb/Descent and reset the top-level hours from the breakdown (approach 6.5, climb = day 2, hike out 5.5), matching how the sibling Stanley-Burgner row stores the same trip. This is a structural fix; no external fact changes.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach",
+     "id": "wa_energizer_bunny",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb",
+     "id": "wa_energizer_bunny",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6.5,
+     "value": 5.5,
+     "id": "wa_energizer_bunny",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 11,
+     "value": 5.5,
+     "id": "wa_energizer_bunny",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 6.5,
+     "id": "wa_energizer_bunny",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "7 pitches (pitches 2 and 3 are described together as one row)",
+   "evidence": "The route database, a peak-profile trip report and a detailed trip report all give seven pitches. The database describes pitches 2-3 together, pitch 4 as the 5.5 ledge traverse, pitch 5 as the 5.9 crux and pitch 7 as the summit finish. That is exactly what the row's six pitch_detail rows describe, with pitches 2-3 merged. Renumbered the rows (2-3, 4, 5, 6, 7) and changed the 'six pitches' copies in the itinerary objective, totalNote and rope_note to seven; the itinerary's 'crux at P5' now matches the table.",
+   "sources": [
+    "https://www.mountainproject.com/route/108228989/beckey-davis",
+    "https://thepeakoftheweek.com/2017/07/24/prusik-peak-south-face-beckey-davis/",
+    "https://stephabegg.com/trip-reports/washington/prusik-beckey-davis/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "pitch"
+     ],
+     "expect": 2,
+     "value": "2-3",
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "pitch"
+     ],
+     "expect": 3,
+     "value": 4,
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      3,
+      "pitch"
+     ],
+     "expect": 4,
+     "value": 5,
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "pitch"
+     ],
+     "expect": 5,
+     "value": 6,
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      5,
+      "pitch"
+     ],
+     "expect": 6,
+     "value": 7,
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "find": "(5.9, 6 pitches)",
+     "replace": "(5.9, 7 pitches)",
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "6 pitches, 700ft",
+     "replace": "7 pitches, 700ft",
+     "id": "wa_beckey_davis",
+     "fact": "pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "fact": "total round-trip elevation gain",
+   "verdict": "fixed",
+   "correct_value": "~6,050 ft round trip",
+   "evidence": "totalNote's ~4,500 ft is less than the one-way climb to Aasgard Pass alone. The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 corrected, the day sum is 4,600+750+700 = 6,050 ft. totalNote is replaced whole, which also changes its '6-pitch' to '7-pitch'.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_beckey_davis",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_beckey_davis",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5450,
+     "value": 6050,
+     "id": "wa_beckey_davis",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5450,
+     "value": 6050,
+     "id": "wa_beckey_davis",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "expect": "A 3-day trip (~19.5 mi, ~4,500 ft round-trip estimated) around a sustained 6-pitch 5.9 line just right of Stanley-Burgner on the south face.",
+     "value": "A 3-day trip (~19.5 mi, ~6,050 ft round-trip estimated) around a sustained 7-pitch 5.9 line just right of Stanley-Burgner on the south face.",
+     "id": "wa_beckey_davis",
+     "fact": "total round-trip elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "fact": "approach elevation gain to Gnome Tarn camp/base",
+   "verdict": "fixed",
+   "correct_value": "~4,600 ft of gain one way",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. (This row's patches sit on its 'total round-trip elevation gain' result: day 1 gainFt and day 3 lossFt 4,000 -> 4,600.)",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_beckey_davis",
+   "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+   "verdict": "fixed",
+   "correct_value": "Approach 6.5 h / Climb 7 h / Descent 5.5 h",
+   "evidence": "The 'section' tags are swapped relative to each leg's own fromTo and note: the approach leg is tagged Climb and the climbing leg Descent. That also puts the approach time in summitTimeHrs and the climb time in descentTimeHrs. Relabelled the legs Approach/Climb/Descent and reset the top-level hours from the breakdown (approach 6.5, climb = day 2, hike out 5.5), matching how the sibling Stanley-Burgner row stores the same trip. This is a structural fix; no external fact changes.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach",
+     "id": "wa_beckey_davis",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb",
+     "id": "wa_beckey_davis",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6.5,
+     "value": 7,
+     "id": "wa_beckey_davis",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 12.5,
+     "value": 5.5,
+     "id": "wa_beckey_davis",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 6.5,
+     "id": "wa_beckey_davis",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    }
+   ]
+  },
+  {
+   "id": "wa_beckey_davis",
+   "fact": "overnight group size cap",
+   "verdict": "fixed",
+   "correct_value": "8 people",
+   "evidence": "The maximum group size inside the Enchantment Permit Area is 8. The 12-person limit is the Alpine Lakes Wilderness-wide rule that applies outside the permit area. access.rules and group_limit (8) are right; the raw 12 is the wilderness-wide figure, mislabelled for this permit area.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://campflare.com/permit/enchantment",
+    "https://www.recreation.gov/camping/poi/233273"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "group_size_limits"
+     ],
+     "expect": "Maximum party 12 people",
+     "value": "Maximum party 8 people (Enchantment Permit Area)",
+     "id": "wa_beckey_davis",
+     "fact": "overnight group size cap"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "fact": "rope count needed for the rappel descent",
+   "verdict": "fixed",
+   "correct_value": "A single 60 m rope",
+   "evidence": "Solid Gold is descended with one rappel down the north side, for which a single 60 m rope is enough, then a ~30 min scramble to the base. The route database says to rap the back side or continue to the summit, and lists a single-rope rack. No source requires two ropes. rack, what_to_bring, detailed_rack, pro_tips and watch_out changed to one rope and one rappel.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+    "https://www.mountainproject.com/route/107618376/solid-gold",
+    "https://www.mountaineers.org/activities/trip-reports/solid-gold-stanley-burgner-prusik-peak"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "rack",
+     "path": [
+      0
+     ],
+     "expect": "Two 60m ropes (route requires two ropes for the rappel descent, per route beta)",
+     "value": "One 60m rope (a single rope reaches the one north-side rappel)",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "rope count needed for the rappel descent"
+    },
+    {
+     "op": "set",
+     "column": "what_to_bring",
+     "path": [
+      2
+     ],
+     "expect": "two 60m ropes",
+     "value": "one 60m rope",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "rope count needed for the rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "and two 60m ropes for the rappels.",
+     "replace": "and a single 60m rope for the rappel.",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "rope count needed for the rappel descent"
+    },
+    {
+     "op": "set",
+     "column": "pro_tips",
+     "path": [
+      3
+     ],
+     "expect": "Manage two ropes carefully on the steep rappels.",
+     "value": "Manage the rope carefully on the steep north-side rappel.",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "rope count needed for the rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Descent involves multiple rappels",
+     "replace": "Descent involves a rappel off natural anchors",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "rope count needed for the rappel descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "fact": "which face the rappel descent is on",
+   "verdict": "fixed",
+   "correct_value": "One rappel down the north side, then a scramble back to the base of the south face",
+   "evidence": "The published descent is one rappel down the north side from the top of the route (single 60 m rope), then a scramble back around to the base. The route database says to rap the back side or continue to the summit. Nothing rappels the south face. Fixed descent, plus the itinerary day-2 note, schedule label and timing note that said 'rappel the route'.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+    "https://www.mountainproject.com/route/107618376/solid-gold"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Rappel the south face route back to the base.",
+     "value": "Make one rappel down the north side, then scramble back around to the base of the south face.",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "which face the rappel descent is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Rappel the route (~30 min with no traffic) back to the base.",
+     "replace": "Make one rappel down the north side and scramble (~30 min with no traffic) back to the base.",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "which face the rappel descent is on"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "label"
+     ],
+     "expect": "Rappel the route",
+     "value": "Rappel the north side",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "which face the rappel descent is on"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "Rappel the route (~…",
+     "replace": "One north-side rappel (~…",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "which face the rappel descent is on"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "fact": "total gain/loss for the round trip",
+   "verdict": "fixed",
+   "correct_value": "~5,800 ft gain and ~5,800 ft loss round trip",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 gain and day 3 loss corrected to 4,600 ft, the day sums are 5,800/5,800. gain_ft, loss_ft and totalNote are set to match, since the route returns to the same trailhead.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6200,
+     "value": 5800,
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4608,
+     "value": 5800,
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,600 ft round-trip",
+     "replace": "~5,800 ft round-trip",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "total gain/loss for the round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "fact": "overnight group size cap",
+   "verdict": "fixed",
+   "correct_value": "8 people",
+   "evidence": "The maximum group size inside the Enchantment Permit Area is 8. The 12-person limit is the Alpine Lakes Wilderness-wide rule that applies outside the permit area. access.rules and group_limit (8) are right; the raw 12 is the wilderness-wide figure, mislabelled for this permit area.",
+   "sources": [
+    "https://fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments",
+    "https://campflare.com/permit/enchantment",
+    "https://www.recreation.gov/camping/poi/233273"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "_raw",
+      "group_size_limits"
+     ],
+     "expect": "Maximum party 12 people",
+     "value": "Maximum party 8 people (Enchantment Permit Area)",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "overnight group size cap"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "fact": "Approach text gives the trailhead as 3,600 ft and Gnome Tarn as ~7,800-8,000 ft",
+   "verdict": "fixed",
+   "correct_value": "Trailhead ~3,400 ft; Gnome Tarn ~7,400 ft",
+   "evidence": "The row's own trailhead waypoint says 3,400 ft. The Lake Stuart hike (5,065 ft high point, 1,665 ft gain) and the Colchuck Lake hike (5,580 ft, 2,280 ft gain) put the trailhead at ~3,300-3,400 ft. Gnome Tarn is mapped at 7,411-7,415 ft, below Aasgard Pass (7,841 ft), not at 7,800-8,000 ft.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/stuart-lakes-trail",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Stuart Lake Trailhead (3,600 ft)",
+     "replace": "Stuart Lake Trailhead (3,400 ft)",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "Approach text gives the trailhead as 3,600 ft and Gnome Tarn as ~7,800-8,000 ft"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Gnome Tarn (~7,800–8,000 ft)",
+     "replace": "Gnome Tarn (~7,400 ft)",
+     "id": "wa_prusik_peak_solid_gold",
+     "fact": "Approach text gives the trailhead as 3,600 ft and Gnome Tarn as ~7,800-8,000 ft"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "fact": "number of sections/pitches on the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed source describes ten pitches in total: eight to the lower (initial) summit, plus two added later to reach the true summit, 670 ft. So 'ten-section' (overview) and 8 (pitches) both come from the same description, counting to different summits. A second independent source (the first-ascent write-up) could not be retrieved to confirm which count the row should carry.",
+   "sources": [
+    "https://www.mountainproject.com/route/124913765/taylor-wood-route",
+    "https://www.summitpost.org/new-route-the-taylor-wood-route-on-prusik-peak-wa/1080379"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "fact": "hardest free-climbing grade of the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "5.11+ and 5.11d/12a name the same difficulty band. The route database grades both the route and its pitch 1 crux 5.11+; a detailed trip report calls the route 5.11+/12- with pitch 1 at 5.11d/12a. The header, pitch table and itinerary give the same grade written two ways.",
+   "sources": [
+    "https://www.mountainproject.com/route/107641573/der-sportsman",
+    "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "fact": "total gain/loss for the round trip",
+   "verdict": "fixed",
+   "correct_value": "~6,000 ft gain and ~6,000 ft loss round trip",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 gain and day 3 loss corrected to 4,600 ft, the day sums are 6,000/6,000. gain_ft, loss_ft and totalNote are set to match.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_der_sportsman",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_der_sportsman",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6200,
+     "value": 6000,
+     "id": "wa_prusik_peak_der_sportsman",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4500,
+     "value": 6000,
+     "id": "wa_prusik_peak_der_sportsman",
+     "fact": "total gain/loss for the round trip"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,500 ft round-trip",
+     "replace": "~6,000 ft round-trip",
+     "id": "wa_prusik_peak_der_sportsman",
+     "fact": "total gain/loss for the round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "fact": "overall commitment grade (roman numeral)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources split evenly. The Mountaineers route page / Beckey guide and a day-ascent report give Grade II, 5.7; the route database and another trip report give Grade III. With no two-source majority, grade, commitment and alpine_grade are left unchanged pending a decision.",
+   "sources": [
+    "https://mountainlessons.com/climbing/west-ridge-of-prusik-peak-in-a-day",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/prusik-peak-west-ridge",
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://spokalpine.com/2016/07/17/prusik-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "fact": "Stuart Lake Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "~3,400 ft",
+   "evidence": "The Stuart Lake trailhead at the end of FR 7601 sits at ~3,400 ft: the Lake Stuart hike climbs 1,665 ft to a 5,065 ft high point, and the Colchuck Lake hike climbs 2,280 ft to 5,580 ft. The row's own approach says ~3,400-3,600 ft, and the other Prusik rows use 3,400 for the same coordinates. 1,300 ft is roughly the Snow Lakes trailhead. Set the waypoint elev/elevFt to 3,400 and rewrote the note, which described the Snow Lakes track, to describe this trailhead.",
+   "sources": [
+    "https://www.alltrails.com/trail/us/washington/stuart-lakes-trail",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://spokalpine.com/2016/07/17/prusik-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 1300,
+     "value": 3400,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "Stuart Lake Trailhead elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 1300,
+     "value": 3400,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "Stuart Lake Trailhead elevation"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Also reachable via the Stuart Lake/Colchuck Lake Trailhead (~47.528,-120.820) over Aasgard Pass — a genuinely different, commonly-used alternate approach — but this route's own recorded GPS track starts at Snow Lakes TH, not Stuart Lake TH.",
+     "value": "Start of the Colchuck Lake and Aasgard Pass approach, at about 3,400 ft. The Snow Lakes Trailhead is the longer, lower alternative into the same basin.",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "Stuart Lake Trailhead elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "fact": "total gain/loss/round-trip figure",
+   "verdict": "fixed",
+   "correct_value": "~5,900 ft gain and ~5,900 ft loss round trip",
+   "evidence": "The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 gain and day 3 loss corrected to 4,600 ft, the day sums are 5,900/5,900 (the row's own approach also says ~4,600 ft one way). gain_ft, loss_ft and totalNote are set to match.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "total gain/loss/round-trip figure"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "total gain/loss/round-trip figure"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6200,
+     "value": 5900,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "total gain/loss/round-trip figure"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4608,
+     "value": 5900,
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "total gain/loss/round-trip figure"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~4,700 ft round-trip",
+     "replace": "~5,900 ft round-trip",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "total gain/loss/round-trip figure"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "fact": "Itinerary descends by downclimbing the ridge, but the descent is north-side rappels",
+   "verdict": "fixed",
+   "correct_value": "Rappel the north side, then walk back over Prusik Pass",
+   "evidence": "descent_text and rappels describe single-rope rappels down the north side and a walk back to Prusik Pass, but the day-2 note and schedule say to rappel/downclimb the ridge. Published descents match the rappel fields: four single raps to the north side and a walk back over Prusik Pass, or five rappels to the north side.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808527/west-ridge",
+    "https://mountainlessons.com/climbing/west-ridge-of-prusik-peak-in-a-day"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "Descend by rappelling/downclimbing the ridge back to the notch,",
+     "replace": "Descend by rappelling the north side and walking back over Prusik Pass,",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "Itinerary descends by downclimbing the ridge, but the descent is north-side rappels"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "Downclimb/rappel the ridge back toward the notch",
+     "replace": "Rappel the north side, then walk back over Prusik Pass",
+     "id": "wa_prusik_peak_west_ridge",
+     "fact": "Itinerary descends by downclimbing the ridge, but the descent is north-side rappels"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "fact": "which way the route is descended",
+   "verdict": "fixed",
+   "correct_value": "Rappel the north face (about five single-rope rappels), then walk back around to the base",
+   "evidence": "The published descent is to walk east from the summit and rappel the north face on slung stations with one or two ropes: five single-rope rappels off slung blocks, then a scramble around to the base. The West Ridge is not the descent. Fixed descent, the itinerary day-2 note, the schedule and the timing note. totalNote also carries the corrected gain, so it is replaced in the gain result below.",
+   "sources": [
+    "https://www.mountainproject.com/route/105808515/stanley-burgner",
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "descent",
+     "path": [],
+     "expect": "Descend via the standard West Ridge downclimb/rappels toward the Enchantments basin.",
+     "value": "Walk east from the summit and rappel the north face (about five single-rope rappels), then walk back around to the base.",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "which way the route is descended"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "then descend via the standard West Ridge downclimb/rappels.",
+     "replace": "then descend by rappelling the north face.",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "which way the route is descended"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Downclimb/rappel the West Ridge back toward the notch",
+     "replace": "Rappel the north face, then walk back around to the base",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "which way the route is descended"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "then descend via the st…",
+     "replace": "then rappel the north face…",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "which way the route is descended"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "fact": "number of rappels on the north-face descent",
+   "verdict": "fixed",
+   "correct_value": "About five single-rope rappels",
+   "evidence": "A detailed trip report of this route describes five single-rope rappels off slung blocks on the north face, nearly all ~30 m. A club trip report on the same descent also counts 5 raps. This matches rappel_detail (5 stations), the rope_note and the waypoint note, so the '3-4' in descent_text and rappel_count_note is changed.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/prusik-solid-gold/",
+    "https://www.mountaineers.org/activities/trip-reports/solid-gold-stanley-burgner-prusik-peak",
+    "https://stephabegg.com/trip-reports/washington/prusik-der-sportsman/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Plan on 3–4 single-rope rappels",
+     "replace": "Plan on about five single-rope rappels",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "number of rappels on the north-face descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "Reported as 3-4 single-rope rappels depending on party choices",
+     "replace": "About five single-rope rappels, depending on party choices",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "number of rappels on the north-face descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "fact": "total round-trip elevation gain",
+   "verdict": "fixed",
+   "correct_value": "~6,000 ft round trip",
+   "evidence": "totalNote's ~4,500 ft is less than the one-way climb to Aasgard Pass alone. The Stuart Lake trailhead is ~3,400 ft and Aasgard Pass is 7,841 ft. Reaching camp therefore takes at least ~4,440 ft of climbing, before the ~400-700 ft drop to Gnome Tarn (7,411-7,415 ft). The Enchantments traverse from this trailhead is published at 4,500 ft of gain with a 7,800 ft high point. So the itinerary's day-1 gain of 4,000 ft (and day-3 loss of 4,000 ft) is impossible, and the approach text and approach_variants (~4,600 ft one way) are right. The waypoint difference (4,015 ft) is net elevation only and leaves out the climb over the pass. With day 1 corrected, the day sum is 4,600+700+700 = 6,000 ft. gain_ft/loss_ft are set to match, and totalNote is replaced, which also fixes its West Ridge descent wording.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/enchantment-lakes",
+    "https://en.wikipedia.org/wiki/Aasgard_Pass",
+    "https://www.wta.org/go-hiking/hikes/colchuck-lake",
+    "https://www.flickr.com/photos/delphinusorca/52480179116/",
+    "https://mapcarta.com/23936848"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 4000,
+     "value": 4600,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5400,
+     "value": 6000,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5400,
+     "value": 6000,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "total round-trip elevation gain"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "expect": "A 3-day trip (~19.5 mi, ~4,500 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending via the West Ridge.",
+     "value": "A 3-day trip (~19.5 mi, ~6,000 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending by rappel down the north face.",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "total round-trip elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "fact": "timing.sectionBreakdown section labels vs. what each leg actually is",
+   "verdict": "fixed",
+   "correct_value": "Approach 6.5 h / Climb 7.5 h / Descent 5.5 h",
+   "evidence": "The 'section' tags are swapped relative to each leg's own fromTo and note: the approach leg is tagged Climb and the climbing leg Descent. That also puts the approach time in summitTimeHrs and the climb time in descentTimeHrs. Relabelled the legs Approach/Climb/Descent and reset the top-level hours from the breakdown (approach 6.5, climb = day 2, hike out 5.5), matching how the sibling Stanley-Burgner row stores the same trip. This is a structural fix; no external fact changes.",
+   "sources": [],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "section"
+     ],
+     "expect": "Climb",
+     "value": "Approach",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "section"
+     ],
+     "expect": "Descent",
+     "value": "Climb",
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 6.5,
+     "value": 7.5,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "descentTimeHrs"
+     ],
+     "expect": 13,
+     "value": 5.5,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 6.5,
+     "id": "wa_prusik_peak_south_face_burgner_stanley",
+     "fact": "timing.sectionBreakdown section labels vs. what each leg actually is"
+    }
+   ]
+  }
+ ]
+}

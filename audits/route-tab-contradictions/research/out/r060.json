@@ -1,0 +1,68 @@
+{"file": "r060.json", "results": [
+ {"id": "wa_rimrock_ridge_scramble", "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear", "verdict": "fixed_internal_plus_one",
+  "correct_value": "No glacier crossing; Class 3 scramble with no rope or crevasse-rescue kit",
+  "evidence": "The Le Conte Glacier lies on the Cascade crest, on the southeast flank of Le Conte Mountain and the northeast slope of Sentinel Peak, on the line of the Ptarmigan Traverse; Rimrock Ridge sits about two miles east of that crest above Flat Creek / West Fork Agnes Creek. The row's own approach, waypoints, grade, gear, rope_type, rope_note and seasonal_hazards.crevasses all describe a non-glaciated Class 3 scramble reached from Stehekin with no glacier crossing; only pro_needs, detailed_rack and climate.summer (apparently copied from Old Guard/Sentinel records) say otherwise.",
+  "sources": ["https://en.wikipedia.org/wiki/Le_Conte_Mountain", "https://en.wikipedia.org/wiki/Sentinel_Peak_(Washington)", "https://www.summitpost.org/le-conte-mountain/539474"],
+  "patches": [
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear", "op": "replace_text", "column": "pro_needs", "path": [], "find": "Rope up for the Le Conte Glacier crossing — it is repeatedly singled out as the most broken/crevassed glacier on the Ptarmigan Traverse — with a full crevasse-rescue kit (prusiks, pulleys, carabiners, pickets).", "replace": "No rope or protection is needed for the Class 3 crest in dry conditions; the route stays off the glaciers. Carry a helmet, and an ice axe early in the season for lingering snow."},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear", "op": "replace_text", "column": "detailed_rack", "path": [], "find": "the relevant gear is a standard glacier-travel kit for the adjoining Le Conte Glacier crossing (rope, harness, crevasse-rescue hardware) rather than a rock rack.", "replace": "the route is a Class 3 scramble that never touches a glacier, so a helmet and, early in the season, an ice axe are the relevant gear rather than a rack or a glacier kit."},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear", "op": "replace_text", "column": "climate", "path": ["summer"], "find": "The Le Conte Glacier remains actively crevassed through summer and is described as the most broken glacier on the Ptarmigan Traverse; conditions vary significantly year to year.", "replace": "Summer is the working window: the approach brush and the ridge are usually snow-free from late July, with hot days, cool nights and a risk of afternoon thunderstorms; snow cover varies a lot from year to year."}
+  ]},
+ {"id": "wa_rimrock_ridge_scramble", "fact": "Which wilderness/region the approach and summit are in", "verdict": "fixed",
+  "correct_value": "Stehekin backcountry / Glacier Peak Wilderness (Chelan County), not William O. Douglas/Goat Rocks",
+  "evidence": "Rimrock Ridge (7,260 ft) is in the Stehekin area of Chelan County, bounding the upper Flat Creek valley; the Flat Creek trail from the Stehekin valley leaves North Cascades National Park after about two miles and enters the Okanogan-Wenatchee National Forest. The Agnes Creek side likewise runs from High Bridge into the Glacier Peak Wilderness of that forest. Goat Rocks / William O. Douglas are South Cascades wildernesses near White Pass, unrelated to this peak; the itinerary references are contamination.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/flat-creek", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/agnes-gorge-trail", "https://listsofjohn.com/peak/49353"],
+  "patches": [
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Which wilderness/region the approach and summit are in", "op": "replace_text", "column": "itinerary", "path": ["cal"], "find": "Access roads to trailheads in this remote corner of the William O. Douglas/Goat Rocks vicinity are typically", "replace": "Approach trails in this remote corner of the Stehekin backcountry are typically"},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Which wilderness/region the approach and summit are in", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "into the William O. Douglas/Goat Rocks vicinity,", "replace": "into the Stehekin backcountry,"},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Which wilderness/region the approach and summit are in", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "into the William O. Douglas/Goat Rocks vicinity,", "replace": "into the Stehekin backcountry,"},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Which wilderness/region the approach and summit are in", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "schedule", 2, "detail"], "find": "Views across the Goat Rocks/William O. Douglas Wilderness; short break.", "replace": "Views across the Glacier Peak Wilderness; short break."}
+  ]},
+ {"id": "wa_rimrock_ridge_scramble", "fact": "Whether day 1 of the approach is entirely on-trail", "verdict": "fixed",
+  "correct_value": "Day 1 ends on trailless, brushy ground; it is not on-trail the whole way",
+  "evidence": "Whichever drainage is used, the ridge lies beyond any usable trail: the Flat Creek trail gains only about 500 ft and ends about 4.2 miles up, short of the valley head, and the West Fork Agnes Creek trail that leaves the PCT at Fivemile Camp has all but vanished into a rough bushwhack. The row's own approach text also describes a bushwhack through thick brush with a creek ford, and a 13-mile, 2,600-ft day cannot be done on trail alone.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/flat-creek", "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek"],
+  "patches": [
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether day 1 of the approach is entirely on-trail", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "gaining most of the day's elevation on maintained trail before", "replace": "gaining much of the day's elevation on brushy, trailless ground before"},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether day 1 of the approach is entirely on-trail", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "gaining most of the day's elevation on maintained trail before", "replace": "gaining much of the day's elevation on brushy, trailless ground before"},
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Whether day 1 of the approach is entirely on-trail", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "Terrain is on-trail the whole way, so travel is straightforward even with an overnight pack.", "replace": "The last part leaves the trail for thick brush and a creek crossing, so expect slow going with an overnight pack."}
+  ]},
+ {"id": "wa_rimrock_ridge_scramble", "fact": "Which drainage/trail the approach to Rimrock Ridge uses", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "No ascent account of Rimrock Ridge was found, so no source names an established approach. The ridge divides upper Flat Creek (north) from the West Fork Agnes Creek (south); the Flat Creek trail ends about 4.2 mi up short of the valley head, and the West Fork Agnes trail heading west from Fivemile Camp (~5.5 mi up the PCT) is now a bushwhack. The row's approach text (continue to Swamp Creek Camp ~8.5 mi, then bushwhack EAST into 'Agnes Creek/Blue Basin') looks geographically wrong, since the summit pin (48.372,-121.000) lies northwest of Fivemile Camp and well north of Swamp Creek Camp (48.310), but with no source describing a real line, rewriting the approach would be invention. Both Flat Creek and West Fork Agnes are plausible options (the beta already names both). Needs a human with a map.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/flat-creek", "https://www.wta.org/go-hiking/hikes/west-fork-agnes-creek", "https://en.wikipedia.org/wiki/Le_Conte_Mountain"],
+  "patches": []},
+ {"id": "wa_rimrock_ridge_scramble", "fact": "Which national forest manages the approach", "verdict": "fixed", "discovered": true,
+  "correct_value": "Okanogan-Wenatchee National Forest (not Mt. Baker-Snoqualmie)",
+  "evidence": "partner_requirements.approachTime says the access is Mt. Baker-Snoqualmie NF, while access.landManager/land_manager say Okanogan-Wenatchee NF. The Flat Creek trail leaves the park into the Okanogan-Wenatchee National Forest, and the Agnes Creek side runs from High Bridge into the Glacier Peak Wilderness of the Okanogan-Wenatchee National Forest.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/flat-creek", "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/agnes-gorge-trail"],
+  "patches": [
+   {"id": "wa_rimrock_ridge_scramble", "fact": "Which national forest manages the approach", "op": "replace_text", "column": "partner_requirements", "path": ["approachTime"], "find": "(Mt. Baker-Snoqualmie NF)", "replace": "(Okanogan-Wenatchee NF)"}
+  ]},
+ {"id": "wa_sentinel_peak_standard", "fact": "Cache Col elevation", "verdict": "fixed",
+  "correct_value": "6900",
+  "evidence": "Cache Col is listed at 6,903 ft, and independent Ptarmigan Traverse route descriptions give it as 6,900 ft. The row's waypoint and approach already say ~6,900 ft; only bivy[0].elev (6,400) disagrees.",
+  "sources": ["https://en.wikipedia.org/wiki/Cache_Col", "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/", "https://summitborn.com/ptarmigan-traverse-trail/"],
+  "patches": [
+   {"id": "wa_sentinel_peak_standard", "fact": "Cache Col elevation", "op": "set", "column": "bivy", "path": [0, "elev"], "expect": 6400, "value": 6900}
+  ]},
+ {"id": "wa_sentinel_peak_standard", "fact": "Total round-trip distance for the Standard Route", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "One detailed out-and-back report gives 12.7 mi from the Cascade Pass trailhead to the Le Conte-Sentinel col (plus 2 mi of road walk from a washout) and 32.6 mi total including the road walk, Old Guard and a camp move to Yang Yang Lakes. That supports ~14 mi one-way to the summit (waypoints) and ~28 mi / 45 km round trip from the trailhead (approach text), and suggests dist_km 26.2 (16.3 mi) is half of the 32.6-mi total with road walk and extras rather than the one-way approach; the itinerary's 34 mi includes Old Guard and camp moves. A second independent source for the trailhead-to-col mileage was not found and only two row fields agree, so no patch.",
+  "sources": ["https://onehikeaweek.com/2020/07/05/sentinel-peak/"],
+  "patches": []},
+ {"id": "wa_sentinel_peak_standard", "fact": "Which counties this route is in", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "The summit sits on the Snohomish/Chelan county line, while the Cascade Pass trailhead side is Skagit County and Downey Creek is Snohomish; the field labels the peak fact and each approach fact separately, and all are correct.",
+  "sources": ["https://en.wikipedia.org/wiki/Sentinel_Peak_(Washington)", "https://en.wikipedia.org/wiki/Cache_Col"],
+  "patches": []},
+ {"id": "wa_sentinel_peak_standard", "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake", "verdict": "fixed", "discovered": true,
+  "correct_value": "South from Cascade Pass to Cache Col, then down the col's south side to Kool-Aid Lake",
+  "evidence": "The approach text says to go cross-country NORTH from Cascade Pass, calls the col's far lip its NORTH lip, and drops off the NORTH side to Kool-Aid Lake, while the row's own waypoints (Cascade Pass 48.468, Cache Col 48.448, Kool-Aid Lake 48.432) and their notes/directions say south. Cache Col lies south of Cascade Pass, and the traverse heads cross-country to the south over Cache Col.",
+  "sources": ["https://en.wikipedia.org/wiki/Cache_Col", "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/"],
+  "patches": [
+   {"id": "wa_sentinel_peak_standard", "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake", "op": "replace_text", "column": "approach", "path": [], "find": "go cross-country north on a boot path", "replace": "go cross-country south on a boot path"},
+   {"id": "wa_sentinel_peak_standard", "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake", "op": "replace_text", "column": "approach", "path": [], "find": "The col's far (north) lip", "replace": "The col's far (south) lip"},
+   {"id": "wa_sentinel_peak_standard", "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake", "op": "replace_text", "column": "approach", "path": [], "find": "Drop steeply off the north side of Cache Col", "replace": "Drop steeply off the south side of Cache Col"}
+  ]}
+]}

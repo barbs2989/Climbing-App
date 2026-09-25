@@ -1,0 +1,61 @@
+{"file": "r044.json", "results": [
+ {"id": "wa_drilling_me_softly", "fact": "Access road / trailhead for the crag", "verdict": "fixed",
+  "correct_value": "I-90 Exit 54 (Hyak), Hyak Drive, then gravel FS Road 9070 past the PCT crossing at Olallie Meadow; left fork to a rough road-end turnaround below Silver Basin (high clearance advised).",
+  "evidence": "The crag's area page gives the approach as Hyak Drive from Exit 54 onto NF-9070 to Olallie Meadow/PCT, then the left fork to a turnaround below Silver Basin, and warns the left fork has oil-pan-ripping rocks and water bars (high clearance advisable). An independent hiking guide for Silver Peak gives the same drive: Exit 54, Hyak Drive until pavement ends, then potholed FR 9070 to the PCT crossing; a third hiking page agrees on Exit 54 / Hyak Drive East / FR 9070. The road field's Alpental Road / Exit 52 text is Guye Peak boilerplate.",
+  "sources": ["https://www.mountainproject.com/area/120477448/the-citidel", "https://www.wta.org/go-hiking/hikes/silver-peak", "http://www.willhiteweb.com/snoqualmie_pass/silver_peak/pacific_crest_trail_210.htm"],
+  "patches": [
+   {"id": "wa_drilling_me_softly", "fact": "Access road / trailhead for the crag", "op": "set", "column": "road", "path": ["name"], "expect": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel", "value": "Hyak Drive / FS Road 9070, Snoqualmie Pass (I-90 Exit 54), for The Citadel"},
+   {"id": "wa_drilling_me_softly", "fact": "Access road / trailhead for the crag", "op": "set", "column": "road", "path": ["status"], "expect": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure.", "value": "Pavement ends on Hyak Drive and the road continues as gravel FS Road 9070 to the PCT crossing at Olallie Meadow; the left fork beyond it to the turnaround below Silver Basin is rough, with sharp rocks and deep water bars, so a high-clearance vehicle is recommended. Not plowed in winter."},
+   {"id": "wa_drilling_me_softly", "fact": "Access road / trailhead for the crag", "op": "replace_text", "column": "road", "path": ["driveNote"], "find": "via I-90 to Exit 52.", "replace": "via I-90 to Exit 54, then a slow gravel drive up FS Road 9070."}
+  ]},
+ {"id": "wa_drilling_me_softly", "fact": "Elevation gain to the crag", "verdict": "unresolved", "correct_value": null,
+  "evidence": "The reader's internal resolution (65 ft) is not supported: both waypoints sit on the same crag coordinate, and the 4585 'trailhead' elevation is the Citidel area's listed elevation, not the road end. USGS 3DEP gives ~4,670 ft at the crag coordinate and ~4,230-4,250 ft at the end of the left-fork road spur (located from OSM geometry of FS 9070-310), implying roughly 450 ft of gain, but the crag coordinate is itself approximate and no source states the approach gain. Neither 750 nor 65 can be adopted from two agreeing sources; waypoint[0].elev (4585) also looks wrong for a road-end trailhead but its pin sits on the crag, so it is not patched.",
+  "sources": ["https://www.mountainproject.com/area/120477448/the-citidel", "https://www.mountainproject.com/area/120477509/sofa-king-buttress", "https://epqs.nationalmap.gov/v1/json?x=-121.45564&y=47.36741&units=Feet&wkid=4326", "https://epqs.nationalmap.gov/v1/json?x=-121.4569001&y=47.37239&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_drilling_me_softly", "fact": "Number of quickdraws needed", "verdict": "fixed_internal_plus_one", "correct_value": "12",
+  "evidence": "The route's own page lists protection as 12 bolts with chains at top. Inside the row, pro_needs (12 quickdraws), detailed_rack (12 bolts), beta and pitch_detail (12 bolts) all agree; alpine_draws=10 is the lone outlier. No second independent source exists for this obscure 2020 route (other listings mirror the same page).",
+  "sources": ["https://www.mountainproject.com/route/120477565/drilling-me-softly"],
+  "patches": [
+   {"id": "wa_drilling_me_softly", "fact": "Number of quickdraws needed", "op": "set", "column": "alpine_draws", "path": [], "expect": 10, "value": 12}
+  ]},
+ {"id": "wa_drilling_me_softly", "fact": "How well-documented the crag/route is", "verdict": "fixed_internal_plus_one", "correct_value": "The crag and route are documented (Sofa King Buttress, The Citidel, Silver Basin near Snoqualmie Pass; FA Wylie Moreshead 2020; 12 bolts to chains). rope_note's claim that the area is unindexed and a Washington Pass granite crag is false.",
+  "evidence": "The crag has a published area page (Sofa King Buttress, 4,650 ft, 2 routes, under The Citidel, Snoqualmie Pass Area) and the route has its own page naming FA Wylie Moreshead 2020, 5.10b/c, 12 bolts to chains, furthest-left line. The rock is volcanic metamorphic, not Washington Pass granite. Inside the row, approach, waypoints, beta, fa, pitch_detail, detailed_rack and face all describe this documented Silver Basin crag; rope_note is the outlier. rope_note is rewritten to a neutral gear note; the non-rendered 'corrections' and 'gear_confidence' fields still carry the stale 'unverified' claim and were left alone.",
+  "sources": ["https://www.mountainproject.com/area/120477509/sofa-king-buttress", "https://www.mountainproject.com/route/120477565/drilling-me-softly", "https://www.mountainproject.com/area/120477448/the-citidel"],
+  "patches": [
+   {"id": "wa_drilling_me_softly", "fact": "How well-documented the crag/route is", "op": "set", "column": "rope_note", "path": [], "expect": "Area ('Sofa King Buttress') could not be found in any published index. Inferred from grade/regional style as a short bolted granite pitch typical of Washington Pass sport crags.", "value": "Single-pitch bolted sport route; one single rope lowers off the chain anchor."}
+  ]},
+ {"id": "wa_drilling_me_softly", "fact": "Season / when the access road is open", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "best_season says 'June through October when FS Road 9070 is open', while approach says the road is generally clear of snow only from about July through November, season is Jul-Sep, and climate.spring says the road may still be closed. One hiking guide states FR-9070 is generally snow-free from July until November; no second independent source for the road's opening month was found and the row does not meet the internal threshold, so no patch.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/silver-peak"],
+  "patches": []},
+
+ {"id": "wa_spraying_mantis", "fact": "Access road / trailhead for the crag", "verdict": "fixed",
+  "correct_value": "I-90 Exit 54 (Hyak), Hyak Drive, then gravel FS Road 9070 past the PCT crossing at Olallie Meadow; left fork to a rough road-end turnaround below Silver Basin (high clearance advised).",
+  "evidence": "Same crag and same evidence as Drilling Me Softly: the crag's area page gives Exit 54 / Hyak Drive / NF-9070 left fork to a turnaround below Silver Basin with a rough, high-clearance left fork; an independent Silver Peak hiking guide gives Exit 54, Hyak Drive, then potholed FR 9070 to the PCT crossing; a third hiking page agrees. Alpental Road / Exit 52 is Guye Peak boilerplate.",
+  "sources": ["https://www.mountainproject.com/area/120477448/the-citidel", "https://www.wta.org/go-hiking/hikes/silver-peak", "http://www.willhiteweb.com/snoqualmie_pass/silver_peak/pacific_crest_trail_210.htm"],
+  "patches": [
+   {"id": "wa_spraying_mantis", "fact": "Access road / trailhead for the crag", "op": "set", "column": "road", "path": ["name"], "expect": "Alpental Road, Snoqualmie Pass (I-90 Exit 52), for The Citadel", "value": "Hyak Drive / FS Road 9070, Snoqualmie Pass (I-90 Exit 54), for The Citadel"},
+   {"id": "wa_spraying_mantis", "fact": "Access road / trailhead for the crag", "op": "set", "column": "road", "path": ["status"], "expect": "Paved road from I-90 Exit 52 to a large gravel lot at Alpental; well-maintained but subject to seasonal snow closure.", "value": "Pavement ends on Hyak Drive and the road continues as gravel FS Road 9070 to the PCT crossing at Olallie Meadow; the left fork beyond it to the turnaround below Silver Basin is rough, with sharp rocks and deep water bars, so a high-clearance vehicle is recommended. Not plowed in winter."},
+   {"id": "wa_spraying_mantis", "fact": "Access road / trailhead for the crag", "op": "replace_text", "column": "road", "path": ["driveNote"], "find": "via I-90 to Exit 52.", "replace": "via I-90 to Exit 54, then a slow gravel drive up FS Road 9070."}
+  ]},
+ {"id": "wa_spraying_mantis", "fact": "Elevation gain to the crag", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Same as Drilling Me Softly: both waypoints share the crag coordinate and 4585 is the area's listed elevation, not the road end, so 65 ft is not a valid internal resolution. USGS 3DEP gives ~4,670 ft at the crag coordinate and ~4,230-4,250 ft at the left-fork road end (OSM geometry), roughly 450 ft of gain, but no source states the approach gain and the crag coordinate is approximate. No patch.",
+  "sources": ["https://www.mountainproject.com/area/120477448/the-citidel", "https://www.mountainproject.com/area/120477509/sofa-king-buttress", "https://epqs.nationalmap.gov/v1/json?x=-121.45564&y=47.36741&units=Feet&wkid=4326", "https://epqs.nationalmap.gov/v1/json?x=-121.4569001&y=47.37239&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_spraying_mantis", "fact": "Number of quickdraws needed", "verdict": "fixed_internal_plus_one", "correct_value": "12",
+  "evidence": "The route's own page lists protection as 12 bolts with a chain anchor. Inside the row, pro_needs (12 quickdraws), detailed_rack (12 bolts), beta and pitch_detail (12 bolts) all agree; alpine_draws=10 is the lone outlier. No second independent source exists for this route.",
+  "sources": ["https://www.mountainproject.com/route/120477698/spraying-mantis"],
+  "patches": [
+   {"id": "wa_spraying_mantis", "fact": "Number of quickdraws needed", "op": "set", "column": "alpine_draws", "path": [], "expect": 10, "value": 12}
+  ]},
+ {"id": "wa_spraying_mantis", "fact": "How well-documented the crag/route is", "verdict": "fixed_internal_plus_one", "correct_value": "The crag and route are documented (Sofa King Buttress, The Citidel; FA Wylie Moreshead 2020; 100 ft / 30 m, 12 bolts to chains). rope_note's 'unverified area' claim is false.",
+  "evidence": "The crag has a published area page listing both routes, and this route has its own page: 5.10b/c, 100 ft (30 m), single pitch, FA Wylie Moreshead 2020, starts left of the bolt line with a straddle over a low nose, 12 bolts to chains. Inside the row, approach, waypoints, beta, fa, pitch_detail, detailed_rack, length_m and rappels all describe this documented route; rope_note is the outlier and is rewritten to a neutral gear note. Non-rendered 'corrections'/'gear_confidence' left alone.",
+  "sources": ["https://www.mountainproject.com/area/120477509/sofa-king-buttress", "https://www.mountainproject.com/route/120477698/spraying-mantis", "https://www.mountainproject.com/area/120477448/the-citidel"],
+  "patches": [
+   {"id": "wa_spraying_mantis", "fact": "How well-documented the crag/route is", "op": "set", "column": "rope_note", "path": [], "expect": "Same unverified area as Drilling Me Softly (Sofa King Buttress). Inferred bolted-sport gear from grade/regional style.", "value": "Single-pitch bolted sport route of about 30 m; a single 60 m rope lowers off the chain anchor."}
+  ]},
+ {"id": "wa_spraying_mantis", "fact": "Season / when the access road is open", "discovered": true, "verdict": "unresolved", "correct_value": null,
+  "evidence": "best_season says 'June through October when FS Road 9070 is open', while approach says the road is generally clear of snow only from about July through November, season is Jul-Sep, and climate.spring says the road may still be closed. Only one independent source (FR-9070 generally snow-free July to November) was found, so no patch.",
+  "sources": ["https://www.wta.org/go-hiking/hikes/silver-peak"],
+  "patches": []}
+]}

@@ -1,0 +1,22 @@
+{"file": "r049.json", "results": [
+{"id": "wa_roofer_madness",
+ "fact": "gain_ft implies a 4,200 ft climb for a 2-pitch, 49-foot sport route",
+ "verdict": "fixed",
+ "correct_value": "gain_ft should not claim 4,200 ft. The whole outing, from the Squire Creek road end to the Martha's Place boulder at the base of Roan Wall and back, gains well under 3,500 ft: roughly the ~1,600 ft between the ~1,100 ft road end and the ~2,660 ft basin. No two sources give an exact car-to-boulder figure, so the wrong value is removed (null) rather than replaced with a computed number.",
+ "evidence": "The Waterfall Basin area page puts the basin at 2,659 ft, about 2 hours from parking, with Martha's Place (the overhung sport boulder) at the base of Roan Wall. An independent trip report gives 3,500 ft of gain over 6+ miles for the much longer approach to Salish Peak's base. That approach passes Martha's Place and then scrambles up beside the 1,000-ft Roan Wall, so the boulder takes much less gain to reach. The whole Squire Creek trail to the ~4,000-ft pass above the basin gains only about 2,400-3,000 ft. All three agree that 4,200 ft cannot be right.",
+ "sources": ["https://www.mountainproject.com/area/109502647/waterfall-basin", "https://www.mountainproject.com/route/106257989/roan-wall-center-stage", "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/", "https://www.hikingproject.com/trail/7065649/squire-creek"],
+ "patches": [
+  {"id": "wa_roofer_madness", "fact": "gain_ft implies a 4,200 ft climb for a 2-pitch, 49-foot sport route", "op": "set", "column": "gain_ft", "path": [], "expect": 4200, "value": null}
+ ]},
+{"id": "wa_flight_of_the_falcon",
+ "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields",
+ "verdict": "fixed",
+ "correct_value": "The 2-hour and 3-3.5-hour figures are correct, but they are the times to Waterfall Basin and the base of Roan Wall, not to this route. Salish Peak's base is farther on, reached by scrambling up the left side of Roan Wall. From the car to the base of this route takes about 6 hours, as timing, watch_out and itinerary already say. The fix limits the approach variant hours and the basin waypoint note to the basin, and says that Salish Peak's base is farther.",
+ "evidence": "The Center Stage route page gives 3-3.5 hours to the base of Roan Wall, and about 2 hours from the car to where the trail comes out into the open basin. An independent party took about 5 hours from the trailhead to the base of Roan Wall, then climbed it and continued to Salish Peak above. A Flight of the Falcon trip report records 6 hours from the car to Salish Peak's base (6+ miles, 3,500 ft). It says Salish is reached by scrambling up the left side of Roan Wall, and gives 17h50m car to car. All agree Salish Peak's base is well beyond the basin, so 2 hours is not this route's approach time.",
+ "sources": ["https://www.mountainproject.com/route/106257989/roan-wall-center-stage", "https://galenweld.com/blog", "https://stephabegg.com/trip-reports/washington/salish-flight-of-falcon/", "https://www.mountainproject.com/area/109502647/waterfall-basin"],
+ "patches": [
+  {"id": "wa_flight_of_the_falcon", "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields", "op": "set", "column": "approach_variants", "path": [0, "hours"], "expect": "2", "value": "~2 hr to the basin"},
+  {"id": "wa_flight_of_the_falcon", "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields", "op": "replace_text", "column": "approach_variants", "path": [0, "notes"], "find": "keep on as the trail fades along the underground creek bed until the basin opens, about two hours from the car.", "replace": "keep on as the trail fades along the underground creek bed until the basin opens, about two hours from the car. That is only the basin: Salish Peak's base is higher still, reached by scrambling up the left side of Roan Wall, and the full approach to this route runs about six hours."},
+  {"id": "wa_flight_of_the_falcon", "fact": "Approach time to the route's base disagrees by 2.5-4 hours across fields", "op": "replace_text", "column": "waypoints", "path": [1, "note"], "find": "~3-3.5 hr approach via old roadbed, streambed, and a Squire Creek ford into the basin below Three Fingers' east face.", "replace": "~3-3.5 hr to the basin and the base of Roan Wall via old roadbed, streambed, and a Squire Creek ford, below Three Fingers' east face. Salish Peak's base is farther on, up the left side of Roan Wall."}
+ ]}
+]}

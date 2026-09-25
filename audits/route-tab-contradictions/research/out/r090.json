@@ -1,0 +1,298 @@
+{
+ "file": "r090.json",
+ "results": [
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "fact": "Cache Col elevation",
+   "verdict": "fixed",
+   "correct_value": "Cache Col ~6,900 ft (6,903 ft)",
+   "evidence": "Cache Col is mapped at 6,903 ft, and a climbing route description of the Cascade Pass area gives it as 6,900 ft. The approach prose (~6,900 ft) is right; the bivy entry's 6,400 is the outlier.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mount-formidable-south-route"
+   ],
+   "patches": [
+    {
+     "id": "wa_spider_mountain_north_ridge",
+     "fact": "Cache Col elevation",
+     "op": "set",
+     "column": "bivy",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 6400,
+     "value": 6900
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Trailhead identity and location",
+   "verdict": "fixed",
+   "correct_value": "Colonial Creek Campground trailhead on SR-20 just past milepost 130, ~1,200 ft",
+   "evidence": "The Thunder Creek trail starts in Colonial Creek Campground just past SR-20 milepost 130; the trailhead sits at about 1,240 ft beside Diablo Lake (lake surface 1,201 ft). The waypoint's note described Rainy Pass (MP ~158) and its elev 4,875 is the Rainy Pass figure, contradicting the waypoint's own name, coordinates, directions and road.driveNote.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/thunder-creek-1",
+    "https://www.hikeoftheweek.com/2021/06/03/thunder-creek-stroll-alongside-a-tumultuous-creek-through-a-striking-old-growth-forest/",
+    "https://en.wikipedia.org/wiki/Diablo_Lake"
+   ],
+   "patches": [
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Trailhead identity and location",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Drive-to trailhead on SR-20 at Rainy Pass (milepost ~158); hike south on the Bridge Creek Trail/PCT ~9.5 mi (with ~2000 ft loss) to North Fork Group Camp, then leave trail cross-country toward the basin south of Storm King. Some parties instead approach from the south via the Lady of the Lake ferry to Stehekin + shuttle to High Bridge Camp, joining the same Bridge Creek/North Fork trail system. The current DB trailhead (Thunder Creek Trailhead / Colonial Creek Campground, ~48.6855,-121.0925) is a different, unconnected drainage well north of here and is very likely wrong.",
+     "replace": "Drive-to trailhead in Colonial Creek Campground on SR-20, just past milepost 130; the Thunder Creek Trail leaves from the south end of the campground near the amphitheater. The alternative southern start is by boat to Stehekin and shuttle to High Bridge, then up the Park Creek Trail."
+    },
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Trailhead identity and location",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 4875,
+     "value": 1200
+    },
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Trailhead identity and location",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 4875,
+     "value": 1200
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Total round-trip mileage",
+   "verdict": "fixed",
+   "correct_value": "roughly 33 miles round trip for the Stehekin/Park Creek itinerary the days describe",
+   "evidence": "The itinerary days describe the Stehekin approach: High Bridge to Park Creek is about 7.5-8 miles on foot, then ~2 miles up the Park Creek trail to Two Mile Camp, matching day 1's 9.5 mi; the day sum (33.5 mi) is consistent. The 40-45 mi figure in totalNote corresponds to the much longer Thunder Creek approach (waypoint distMi ~22 one way), not the itinerary shown.",
+   "sources": [
+    "https://www.summitpost.org/storm-king/273954",
+    "https://www.countryhighpoints.com/mt-storm-king/"
+   ],
+   "patches": [
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Total round-trip mileage",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 40-45 mile round-trip trip",
+     "replace": "roughly 33-mile round-trip trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Rappel count and rope length for the descent",
+   "verdict": "fixed",
+   "correct_value": "Most parties downclimb; rappelling off the fixed slings is optional, and even with a 60 m rope some Class 3 downclimbing remains",
+   "evidence": "One route description says a rappel off the east side returns you to the north-side ledge and that even with a 60 m rope some class 3 must be downclimbed; a detailed trip report downclimbed the route, noting slings near the summit show some parties rappel. One other party reported two rappels, so no count is stated in the new text; the '30 m is sufficient' claim is contradicted.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/storm-king-southwest-route",
+    "https://stephabegg.com/trip-reports/washington/thunder-slam/",
+    "https://www.countryhighpoints.com/mt-storm-king/"
+   ],
+   "patches": [
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Rappel count and rope length for the descent",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "parties typically make two short rappels off fixed slings (in-situ tat/webbing — inspect it and back it up before committing) to get back down through the ~15-ft crux crack and the exposed, Class 4 ledge just below it. Each rappel is short enough that a single 30m rope is sufficient, though many parties carry a 60m anyway for flexibility if linking up with nearby Goode or Buckner objectives on the same trip.",
+     "replace": "most parties downclimb the ~15-ft crux crack and the exposed Class 4 ledge just below it. Some instead rappel off the fixed slings (in-situ tat/webbing — inspect it and back it up before committing) back to the ledge on the north side; even with a 60 m rope, expect to downclimb some Class 3 terrain."
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Descent line below the summit (Black Tooth Notch / southwest couloir belong to Goode)",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": "Descent reverses the ascent: back through the right-most notch and down the loose talus/scree to the cirque",
+   "evidence": "descent_text sent parties down to 'Black Tooth Notch' and a southwest couloir, which is Goode Mountain's terrain; the row's own approach, beta, pitch_detail, waypoints and approach_variants (which names Black Tooth Notch as where Goode's routes go) all put Storm King's line through the right-most notch and up/down the loose talus. A trip report on this route descended the same line it climbed. The sentence also named 'trip reports' as a source.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/thunder-slam/"
+   ],
+   "patches": [
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Descent line below the summit (Black Tooth Notch / southwest couloir belong to Goode)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Below the rappels, downclimb Class 3–4 to a notch some trip reports refer to as 'Black Tooth Notch,' then downclimb the loose southwest couloir (Class 3) back to the base of the approach talus slope, staying on climber's left ledges to avoid cliffing out on the way down.",
+     "replace": "From the ledge, cross back through the right-most notch and descend the loose talus and scree slope to the cirque."
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "Two Mile Camp is on the Park Creek (Stehekin/south) side of Park Creek Pass, not on the Thunder Creek ascent",
+   "evidence": "Two Mile Camp sits in Park Creek valley, about two miles up the Park Creek trail from the Stehekin road; descending south from Park Creek Pass the trail passes Five Mile Camp before Two Mile Camp. The row's own itinerary puts Two Mile Camp on the Stehekin approach, yet the Thunder Creek narrative (approach, Park Creek Pass waypoint, approach variant) had parties pass it on the way UP to the pass from Thunder Creek.",
+   "sources": [
+    "https://thedyrt.com/camping/washington/two-mile-campground",
+    "https://blog.ncascades.org/adventures/park-creek-pass-a-tale-of-two-hikes/",
+    "https://www.countryhighpoints.com/mt-storm-king/"
+   ],
+   "patches": [
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "then pick up the signed Park Creek Pass Trail junction a couple miles beyond, which climbs roughly 2 miles to Two Mile Camp (3,400 ft) before switchbacking up through meadows to Park Creek Pass.",
+     "replace": "then pick up the signed Park Creek Pass Trail junction a couple miles beyond and follow it up through meadows to Park Creek Pass."
+    },
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      2,
+      "directions"
+     ],
+     "find": "; it climbs roughly two miles to Two Mile Camp before switchbacking up through meadows to the pass.",
+     "replace": "; it switchbacks up through meadows to the pass."
+    },
+    {
+     "id": "wa_storm_king_southwest_scramble",
+     "fact": "Two Mile Camp placed on the Thunder Creek side of Park Creek Pass",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then the Park Creek Pass trail junction and about two miles up to Two Mile Camp and the switchbacks to PARK CREEK PASS.",
+     "replace": "then the Park Creek Pass trail junction and the switchbacks to PARK CREEK PASS."
+    }
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Where the climbers' path leaves the maintained trail (Park Creek Pass traverse vs the ~4,100 ft washout on the Park Creek trail)",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "approach, the rib-camp waypoint directions and approach_variants say to leave the trail AT Park Creek Pass and traverse west/southwest about a mile to the cirque, while itinerary day 2 (and the approach variant's Stehekin sentence) leave the Park Creek trail at a large washout near 4,100 ft and climb to a 7,400 ft basin. A route description has Thunder Creek parties cross the pass and descend into Park Creek, and a trip report descended from the basin to the Park Creek trail, which favours the low washout start; the row's own coordinates also place Storm King east of the pass, not west. Rewriting the whole Thunder Creek narrative and several waypoint directions was not attempted without a clearer second description of the high traverse.",
+   "sources": [
+    "https://www.summitpost.org/storm-king/273954",
+    "https://stephabegg.com/trip-reports/washington/thunder-slam/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "fact": "Summit descent method (rappel vs downclimb)",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Rappel ~25 ft off the large summit flake down the north face to a ledge, then walk back to the ledge below the gendarme",
+   "evidence": "rappels, the summit waypoint note, pitch_detail[1].anchor (summit flake), itinerary day 2 note and its schedule all say the summit is rappelled; descent_text alone says downclimb. A peak description says rappelling is highly recommended, off a large summit flake about 25 ft down the north face to a big ledge, then walking back to the ledge below the gendarme. No second independent description was found.",
+   "sources": [
+    "https://www.summitpost.org/the-needle/909712"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_needle_neve_glacier",
+     "fact": "Summit descent method (rappel vs downclimb)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Reverse the ascent: down-climb the low 5th-class move and ridge back to the glacier rim",
+     "replace": "Rappel about 25 ft off the large summit flake down the north face to a ledge, walk back to the ledge below the gendarme, and reverse the ridge to the glacier rim"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_needle_neve_glacier",
+   "fact": "Emergency/dispatch phone numbers",
+   "verdict": "fixed",
+   "correct_value": "Emergency: 911 or Skagit County Sheriff dispatch (360) 336-9450; Wilderness Information Center (360) 854-7245",
+   "evidence": "The park's contact page lists Visitor Information (360) 854-7200 and the Wilderness Information Center (360) 854-7245, and its climbing-safety page says to call 911 or Skagit County Sheriff's Office dispatch (360) 336-9450. The (360) 873-4500 dispatch number in comms appears nowhere; 854-7200 is the general visitor line, not the WIC. The 873-4590 ext. 37 and 856-5700 ext. 515 figures in emergency.notes are corroborated only by one dated compilation and are left untouched; the rangerStation 'park main line 856-5700' is replaced with the WIC number the park publishes.",
+   "sources": [
+    "https://www.nps.gov/noca/contacts.htm",
+    "https://www.nps.gov/noca/planyourvisit/climb-safely.htm",
+    "https://www.nps.gov/noca/learn/news/new-phone-numbers.htm",
+    "http://www.cohp.org/emergency/National_Parks_SAR_data.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_the_needle_neve_glacier",
+     "fact": "Emergency/dispatch phone numbers",
+     "op": "replace_text",
+     "column": "comms",
+     "path": [],
+     "find": "Park dispatch can be reached at (360) 873-4500 ext. 37 in emergency situations, though response times may be slow. The Wilderness Information Center in Marblemount at (360) 854-7200 can provide emergency coordination.",
+     "replace": "In an emergency call 911, or Skagit County Sheriff's Office dispatch at (360) 336-9450. The Wilderness Information Center in Marblemount is at (360) 854-7245."
+    },
+    {
+     "id": "wa_the_needle_neve_glacier",
+     "fact": "Emergency/dispatch phone numbers",
+     "op": "replace_text",
+     "column": "emergency",
+     "path": [
+      "rangerStation"
+     ],
+     "find": "park main line (360) 856-5700",
+     "replace": "(360) 854-7245"
+    }
+   ]
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "fact": "Total gain figure",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "gain_ft 3920 is exactly the net rise from the 3,600 ft trailhead to the 7,520 ft summit, the range a trip report gives (9.3 mi round trip, 3,600-7,520 ft); loss_ft, itinerary gainFt/lossFt and totalNote say ~5,410, which would include the height lost dropping from the ridge to the glacier and bumps on the ridge. No source states the total gain, so neither figure could be confirmed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-14.185358501475",
+    "https://stevensong.com/usa/washington/the-triad/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "fact": "Number and length of the summit rappel",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The only detailed report found downclimbed several spots and then made two 30 m rappels (rope plus tagline) from stations on the east ridge, which is the basis of the rappels field; it noted a rappel station on the ridge. descent/pitch_detail/itinerary describe one short single-rope rappel off the summit tower, and descent_text says downclimb. No second source on the rappel count or length was found.",
+   "sources": [
+    "https://stevensong.com/usa/washington/the-triad/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "fact": "Camps listed for this route's approach corridor",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Every bivy entry (Boston Basin lower/upper camps, Sahale Glacier Camp, Pelton Basin, Johannesburg Camp, informal bivouacs above the Boston/Sahale basins) serves the Boston Basin / Cascade Pass zone further up the Cascade River Road; none serves the Triad, which is approached from the Hidden Lake Trailhead over Sibley Creek Pass. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

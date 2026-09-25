@@ -1,0 +1,360 @@
+{
+ "applied": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Rope length needed"
+  },
+  {
+   "id": "wa_blood_sport",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_blood_sport",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_blood_sport",
+   "column": "approach",
+   "path": [],
+   "fact": "Where to park for the approach"
+  },
+  {
+   "id": "wa_south_rib",
+   "column": "grade",
+   "path": [],
+   "fact": "Hardest/crux grade of the route"
+  },
+  {
+   "id": "wa_south_rib",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_south_rib",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_south_rib",
+   "column": "approach",
+   "path": [],
+   "fact": "Where to park for the approach"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "title"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "fromTo"
+   ],
+   "fact": "Which trailhead/approach this route uses"
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Land manager and required parking pass"
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "column": "approach",
+   "path": [],
+   "fact": "Where to park for the approach (Erste Strasse vs access.notes / private-road closure)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "before": {
+    "detailed_rack": "No rock protection needed as this is a scramble, not a rock climbing route. However, carry 1-2 runners/slings and carabiners if planning to use rappel station above hidden ramp section. A 50-60 meter rope is optional but recommended for groups with inexperienced members or for emergency descents."
+   }
+  },
+  {
+   "id": "wa_blood_sport",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+     "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+     "permit": "Unknown",
+     "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "permitZone": "Unknown",
+     "group_limit": 12,
+     "landManager": "Unknown - specific location and land manager not identified in research",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+     "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+     "passRequired": "Unknown"
+    },
+    "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road. For the south-face/rock routes, the crag rises directly above the parking area with essentially no approach hike required. For routes on other aspects of the mountain, use the Commonwealth Basin/PCT North Trailhead a short distance up the highway instead, following the Pacific Crest Trail into Commonwealth Basin before cutting up toward the peak. Because of the short, direct access, Guye Peak is climbed both summer and winter, though rock routes are primarily a snow-free-season (summer-fall) objective."
+   }
+  },
+  {
+   "id": "wa_south_rib",
+   "before": {
+    "grade": "4th",
+    "access": {
+     "_raw": {
+      "note": "Superseded by the sibling access.* fields on this row (added in a later enrichment pass) — land_manager, parking_pass, and rules there are the current researched values. This _raw block is kept only as a record of an earlier failed auto-lookup, same pattern already fixed on this peak's wa_blood_sport route in batch 3."
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "The Alpental approach road crosses private Alpental Community Club land — a rerouted public approach to the talus field is used following a 2021 access dispute; check current beta before relying on the old direct approach.",
+     "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+     "permit": "A free, self-issued Alpine Lakes Wilderness permit is required for both day and overnight use from May 15 to October 31. Fill one out at the trailhead or a ranger station and carry your copy; there is no quota and no fee.",
+     "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "permitZone": "Unknown",
+     "group_limit": 12,
+     "landManager": "Unknown - specific location and land manager not identified in research",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+     "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+     "passRequired": "Unknown",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the Alpental trailhead kiosk. A Northwest Forest Pass is needed to park, and Denny Creek and Tinkham campsites are reserved on Recreation.gov."
+     }
+    },
+    "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road. For the south-face/rock routes, the crag rises directly above the parking area with essentially no approach hike required. For routes on other aspects of the mountain, use the Commonwealth Basin/PCT North Trailhead a short distance up the highway instead, following the Pacific Crest Trail into Commonwealth Basin before cutting up toward the peak. Because of the short, direct access, Guye Peak is climbed both summer and winter, though rock routes are primarily a snow-free-season (summer-fall) objective.",
+    "grade_num": 4
+   }
+  },
+  {
+   "id": "wa_guye_peak_r2",
+   "before": {
+    "itinerary": {
+     "cal": "The 2021 Alpental Community Club road closure affects the West Face/Improbable Traverse talus approach, not this route — the North Route uses the established Cave Ridge Trail from the Snow Lake trailhead and is unaffected. Climb June-October.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Snow Lake trailhead, approach via the non-established talus route toward Guye Peak's north side, then climb the North Rib -- moderate 3rd/4th-class rock with some low-5th-class sections -- to the summit. Descend via the standard South Rib/Cave Ridge saddle scramble/rappel route back to the trailhead.",
+       "hours": 7,
+       "miles": 3,
+       "title": "Car-to-car: talus approach, North Rib, summit",
+       "gainFt": 2000,
+       "lossFt": 2000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:00 AM",
+         "label": "Leave Snow Lake trailhead",
+         "detail": "Non-established talus approach avoiding the closed Alpental Community Club roads."
+        },
+        {
+         "time": "+1.5 hr",
+         "label": "Reach base of the North Rib",
+         "detail": "Talus approach around to the peak's north side."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Climb the North Rib to the summit",
+         "detail": "3rd/4th-class rock with low-5th sections; roughly comparable in length to the neighboring West Face route."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Summit (5,169 ft)",
+         "detail": ""
+        },
+        {
+         "time": "+4.5 to 7 hr",
+         "label": "Descend the standard scramble/rappel route",
+         "detail": "South Rib / Cave Ridge saddle back to the Snow Lake trailhead."
+        }
+       ],
+       "objective": "Summit Guye Peak via the North Rib"
+      }
+     ],
+     "totalNote": "A roadside day similar in scope to Guye Peak's other lines: roughly 6-7 hrs car-to-car for about 2,000 ft of gain."
+    },
+    "timing": {
+     "totalHrs": 7,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "7:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "From the Snow Lake trailhead, approach via the non-established talus route toward Guye Peak's north side, then climb the North Rib -- moderate 3rd/4th-class rock with some low-5th-…",
+       "fromTo": "Car-to-car: talus approach, North Rib, summit",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_south_gully_south_spur",
+   "before": {
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Standard USFS wilderness group-size limit of 12 people (combined with stock) per party.",
+     "permit": "A free, self-issued Alpine Lakes Wilderness permit is required for both day and overnight use from May 15 to October 31. Fill one out at the trailhead or a ranger station and carry your copy; there is no quota and no fee.",
+     "seasonal": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+     "permitZone": "Unknown",
+     "group_limit": 12,
+     "landManager": "Unknown - specific location and land manager not identified in research",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Snoqualmie Ranger District) — Alpine Lakes Wilderness",
+     "parking_pass": "Alpental/Snow Lake Trailhead day-use fee: $5/day, or a Northwest Forest Pass ($30/yr) / America the Beautiful pass.",
+     "passRequired": "Unknown",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the Alpental trailhead kiosk. A Northwest Forest Pass is needed to park, and Denny Creek and Tinkham campsites are reserved on Recreation.gov."
+     }
+    },
+    "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road. For the south-face/rock routes, the crag rises directly above the parking area with essentially no approach hike required. For routes on other aspects of the mountain, use the Commonwealth Basin/PCT North Trailhead a short distance up the highway instead, following the Pacific Crest Trail into Commonwealth Basin before cutting up toward the peak. Because of the short, direct access, Guye Peak is climbed both summer and winter, though rock routes are primarily a snow-free-season (summer-fall) objective."
+   }
+  }
+ ]
+}

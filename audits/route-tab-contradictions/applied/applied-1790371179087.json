@@ -1,0 +1,934 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether a special access permit is required (private Hampton Resources timberland)"
+  },
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Whether a special access permit is required (private Hampton Resources timberland)"
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Name of the approach trail"
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "column": "crowds",
+   "path": [
+    "estimatePerSeason"
+   ],
+   "fact": "Name of the approach trail"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "miles"
+   ],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "gainFt"
+   ],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "lossFt"
+   ],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "dist_km",
+   "path": [],
+   "fact": "total gain/loss/distance vs the itinerary's own day-by-day sums"
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Car-to-car gain stated in partner_requirements"
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "column": "permit",
+   "path": [],
+   "fact": "whether an Enchantment-zone lottery permit is required"
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "column": "permit",
+   "path": [],
+   "fact": "whether an Enchantment-zone lottery permit is required"
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "column": "approach",
+   "path": [],
+   "fact": "Pass reached at mile 2.5 in the shared approach text (Longs Pass vs Ingalls Pass)"
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "column": "approach",
+   "path": [],
+   "fact": "Pass reached at mile 2.5 in the shared approach text (Longs Pass vs Ingalls Pass)"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "season",
+   "path": [],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "Climbing season window"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    5,
+    "label"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Standard descent route"
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "1956 first ascent (of the lower/original North Ridge) partner name"
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "column": "waypoints",
+   "path": [
+    4,
+    "elev"
+   ],
+   "fact": "Elevation of the Complete North Ridge's toe/base"
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Elevation of the Complete North Ridge's toe/base"
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "column": "approach_variants",
+   "path": [
+    1,
+    "baseFinding"
+   ],
+   "fact": "Elevation of the Complete North Ridge's toe/base"
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "column": "approach",
+   "path": [],
+   "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead"
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "column": "approach",
+   "path": [],
+   "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead"
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "column": "permit",
+   "path": [],
+   "fact": "whether an Enchantment-zone lottery permit is required"
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Standard descent route and exit trailhead"
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "Standard descent route and exit trailhead"
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Standard descent route and exit trailhead"
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Glacier crossed on the approach (partner_requirements says Stuart Glacier)"
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    0,
+    "detail"
+   ],
+   "fact": "Starting trailhead and pass reached on the standard itinerary"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "label"
+   ],
+   "fact": "Starting trailhead and pass reached on the standard itinerary"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "beta",
+   "path": [],
+   "fact": "First-ascent partner name"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Trailhead / permit regime described in access.notes"
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "column": "approach",
+   "path": [],
+   "fact": "Pass reached at mile 2.5 in the approach text (Longs Pass vs Ingalls Pass)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_persis_west_ridge",
+   "before": {
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "access": {
+     "fees": "Recreational access permit/fee required for the private-timberland portion of the approach.",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "Hampton Resources recreational access permit (program formerly run by Weyerhaeuser) required to drive/hike FR-62; verify current permit requirements and gate status before the trip.",
+     "closures": "Gate at Highway 2 is frequently locked at the landowner's discretion, sometimes forcing an additional several miles of road approach on foot or bike.",
+     "landManager": "Private industrial timberland (Hampton Resources, formerly Weyerhaeuser) for the approach road and lower trail; Mount Baker-Snoqualmie National Forest near the upper mountain/summit.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "Hampton Resources recreation permit (private land); no federal pass required beyond that for the trailhead itself.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "comfortable with a long day (~10 mi round trip, 4,000+ ft gain) including sustained slow off-trail travel",
+      "packWeight": "light day pack (15-25 lb) - no technical rack needed, but bring layers, navigation tools, and a time buffer for brush"
+     },
+     "approachTime": "long - Snow Lake trail approach plus a slow, brush-heavy off-trail gain to the north slopes typically makes this a full car-to-car day (8-12+ hours depending on brush conditions and party pace)",
+     "requiredSkills": [
+      "off-trail route-finding/navigation (map, compass, or GPS - maintained trail ends well below the summit)",
+      "comfort with sustained brush/devil's club bushwhacking on the approach",
+      "basic Class 2-3 scrambling on loose rock, talus, and short rock steps",
+      "turnaround/time discipline given the approach's unpredictable pace"
+     ],
+     "experienceLevel": "intermediate scrambler comfortable with off-trail travel, brush-bashing, and unroped Class 2-3 rock; not a beginner objective despite the easy grade because of route-finding and bushwhacking demands"
+    },
+    "crowds": {
+     "peakTraffic": "scattered weekend attempts July-September; negligible midweek and shoulder-season traffic",
+     "solitudeRating": 4,
+     "estimatePerSeason": "low - likely a handful to low dozens of parties per season; the Snow Lake trail itself is one of the most heavily used trails near Seattle, but very few hikers leave the maintained trail to continue up Mount Price's brushy north slopes to the summit"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_stuart_cascadian_couloir",
+   "before": {
+    "itinerary": {
+     "cal": "The Teanaway approach road is typically snowed in until early-mid June.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Esmeralda/Ingalls trailhead, climb over Longs Pass and drop into the Ingalls Creek valley to camp within striking distance of the couloir. A moderate half-day approach for most parties.",
+       "hours": 3.5,
+       "miles": 5.3,
+       "title": "Approach to Ingalls Creek camp",
+       "gainFt": 1800,
+       "lossFt": 1300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a camp near the base of the Cascadian Couloir"
+      },
+      {
+       "n": 2,
+       "note": "An early start up the couloir's scree/snow gains the false summit and then the true summit in 5-8 hours for most parties; the route is reversed back through camp and out the same day for a long finish.",
+       "hours": 10.5,
+       "miles": 10.6,
+       "title": "Summit via the Cascadian Couloir and exit",
+       "gainFt": 3375,
+       "lossFt": 3875,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": ""
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach the false summit notch",
+         "detail": ""
+        },
+        {
+         "time": "~1:30 PM",
+         "label": "Summit",
+         "detail": "7-8 hrs from camp is typical for an average-fitness party"
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Back at camp",
+         "detail": "Break camp"
+        },
+        {
+         "time": "~7:00 PM",
+         "label": "Out at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the couloir to the false and true summits, then return to the trailhead"
+      }
+     ],
+     "totalNote": "A moderate 2-day trip: roughly 8,100+ ft of cumulative gain/loss (the profile crosses Longs Pass twice) over about 12 mi round trip; strong parties do it car-to-car in a single long day instead."
+    },
+    "dist_km": 19.3,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very strong — a ~12hr, 4,600+ ft gain/loss car-to-car day over rough terrain",
+      "packWeight": "Light day pack, ~15-20 lb"
+     },
+     "approachTime": "Long — over Longs Pass, down to Ingalls Creek, then up the Cascadian Couloir before the summit push; full-day commitment",
+     "requiredSkills": [
+      "Class 2-3 scrambling on loose rock/scree",
+      "off-trail route-finding (cairns/tape exist but are not a substitute for judgment)",
+      "avoiding the false summit and finding the true summit",
+      "early-season snow/glissade skills if climbing before the couloir fully melts out"
+     ],
+     "experienceLevel": "Intermediate scrambler with off-trail Class 2-3 experience and very strong physical conditioning"
+    }
+   }
+  },
+  {
+   "id": "wa_upper_north_ridge_w_great_gendarme",
+   "before": {
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead."
+   }
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "before": {
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+    "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5. For the Cascadian Couloir and South Headwall, descend the rocky climbers' trail on the far side of Longs Pass to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the South Face (Gorillas in the Mist / Gorillas Direct / King Kong), instead continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the South Face wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or down at Ingalls Creek depending on the objective. The North Ridge routes can also be reached from the opposite (Mountaineer Creek) side."
+   }
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "before": {
+    "season": "Jun-Aug",
+    "approach_variants": [
+     {
+      "name": "Stuart Lake trailhead and the Mountaineer Creek valley to the 5,400 ft basin",
+      "notes": "Start at the Stuart Lake trailhead at the end of Eightmile Road, about 3,400 ft. Follow the main trail to the first fork, roughly two and a half to three miles in near 4,600 ft, and stay RIGHT for Stuart Lake. Left is Colchuck Lake, a different basin on the other side of the ridge. About a mile to a mile and a half past that junction, the Stuart Lake trail turns uphill and swings right, away from the water, and begins switchbacking. That turn is your cue. Leave the trail there and stay flat in the valley bottom with Mountaineer Creek. The test is simple and works in poor visibility: if you are gaining elevation on switchbacks you are walking to Stuart Lake and you have missed it. Cross Mountaineer Creek on logs. There is no single canonical log and parties describe several sporty crossings that shift with the snowpack; early season, snowbanks make dropping onto a log awkward. On the far side, pick up the climbers' path along the creek. It is unmaintained, full of blowdown and re-routes, and the cairns are not to be trusted: they invite you up and right into a boulder slope around 4,675 ft. Two parties independently say stay LOW beside the creek instead, with the creek on your left — the path is unpleasant but the better line. Some parties do use the boulder field deliberately to avoid the creek crossings, so treat it as a genuine choice rather than a mistake. After about a mile and a half the valley steepens. Turn right and west and climb talus and forest into a hanging flat basin at about 5,400 ft, under the Sherpa and Ice Cliff glaciers. That right-turn-and-climb out of a steepening valley into flat ground is the arrival cue for the bivy.",
+      "season": "Roughly Jun-Aug; the ice cliff and the couloir exit get harder and more broken as the season runs on",
+      "hazards": [
+       "Serac fall from the hanging ice cliff you traverse beneath — a party watched a large piece break away and shatter on the ledge below them",
+       "Rockfall and avalanche in the couloir",
+       "Crevasses and thin snow bridges on the lower glacier",
+       "A cornice at the couloir exit, which becomes the crux when large",
+       "An unmaintained climbers' trail with blowdown and misleading cairns",
+       "Sporty log crossings of Mountaineer Creek, worse under early-season snow"
+      ],
+      "primary": true,
+      "baseFinding": "THE NORTH RIDGE ROCK RIB IS THE DISCRIMINATOR, not the look of the ice. Standing in the 5,400 ft basin facing the mountain, in order from your left: Sherpa Glacier, then Ice Cliff Glacier, then the enormous rock rib of the North Ridge, then the Stuart Glacier beyond it.\n\nSo: if that rib is on your RIGHT, you are on the Ice Cliff. If you have walked around the rib and it is now on your LEFT, you are on the Stuart Glacier and have gone too far west. If there is no hanging ice anywhere above you and the slope is a uniform moderate angle, you are on the Sherpa and have gone too far east.\n\nThe name is the second test. Ice Cliff is the only one of the three carrying a hanging ice cliff and serac band partway up. Sherpa has none.\n\nThe move itself: walk the moraine up to the FOOT of the North Ridge, then cut hard LEFT and traverse east under the ice cliff at about 6,600 ft. You are aiming under the cliff, not up the rib.\n\nTOUCH TEST at the base, and it is unmistakable in cloud: the ground is not clean snow. It is frozen avalanche debris mixed with fallen chunks of glacier ice, set solid — a talus field made of snow and ice. Standing on that is direct evidence you are underneath the ice cliff.\n\nBoth the far left and the far right side of the icefall are used, and which one goes is a conditions question rather than a route question. The same is true of the bergschrund: one published description passes it on the climber's right, another on the left. Do not treat either as fixed, and look before committing.\n\nExit: surmounting the cornice puts you on the south-facing ridge just BELOW the false summit near 8,600 ft. Standard descent is the Sherpa Glacier, immediately east of the couloir exit, starting around 8,200 ft and dropping back into the same basin — so a party reversing the Ice Cliff is doing something unusual."
+     },
+     {
+      "name": "Early-season approach with the Eightmile road gated",
+      "notes": "When Eightmile Road is snowed or gated below the trailhead, add roughly two and a half miles of road before the trail proper. Parties walk that stretch and then put skis on, skinning the Stuart Lake trail, before continuing on foot.\n\nThis is a genuinely different day rather than a longer walk: the valley is snow-covered, the log crossings may be buried or may be harder to reach off a snowbank, and the boulder-field-versus-creek question largely disappears under snow. Postholing on the cross-country section is the common complaint.\n\nNo reliable published trailhead-to-bivy time exists for either version, so plan from your own pace rather than from a number.",
+      "season": "Spring, roughly Apr-May, when the route is in as snow and ice",
+      "hazards": [
+       "Avalanche on the approach slopes and in the couloir",
+       "Buried or unreachable log crossings",
+       "Deep postholing once off skis",
+       "Extra road mileage each way when the gate is down"
+      ],
+      "baseFinding": "The identification is the same and the North Ridge rib is still the thing to steer by — Sherpa left, Ice Cliff centre, the rib on your right, Stuart Glacier beyond it.\n\nWhat changes in spring is that the frozen-debris touch test at the base may be buried or covered by fresh avalanche deposit, so it is less useful. Fall back on the geometry: you want to be under the ice cliff with the North Ridge rib immediately to your right, having cut left off the moraine at the foot of the rib rather than continuing up alongside it."
+     }
+    ],
+    "pro_tips": [
+     "Climb it early season when the seracs are frozen and stable",
+     "Move fast under the ice cliff — minimize exposure time",
+     "Bring enough screws for the steep bypass pitch and belays",
+     "Descend the Cascadian, not the route"
+    ],
+    "itinerary": {
+     "cal": "A spring/early-summer ice climb — best April through early June before the glacier opens up.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Leave the Stuart Lake Trail below Colchuck junction and follow Mountaineer Creek into the basin below the glacier, carrying a full ice rack.",
+       "hours": 5.5,
+       "miles": 6.5,
+       "title": "Approach to a bivy near the glacier",
+       "gainFt": 3000,
+       "lossFt": 200,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Reach a bivy near the Ice Cliff Glacier moraine"
+      },
+      {
+       "n": 2,
+       "note": "A pre-dawn start crosses the glacier and exits the crux ice/cornice while conditions are firm. The route tops out near the top of the Cascadian Couloir, which is then descended to exit.",
+       "hours": 14,
+       "miles": 8,
+       "title": "Climb the Ice Cliff Glacier to the summit, descend Cascadian",
+       "gainFt": 3015,
+       "lossFt": 5815,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave bivy",
+         "detail": ""
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Reach base of the Ice Cliff Glacier headwall",
+         "detail": ""
+        },
+        {
+         "time": "AM",
+         "label": "Climb the glacier and exit couloir past the cornice",
+         "detail": "AI2, snow/ice to 55-70°"
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "PM",
+         "label": "Descend Cascadian Couloir to Ingalls Creek",
+         "detail": ""
+        },
+        {
+         "time": "Evening",
+         "label": "Exit over Longs Pass",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the glacier and crux ice past the cliff to the summit, then exit via the Cascadian Couloir"
+      }
+     ],
+     "totalNote": "A 2-day ice route: ~6,000 ft gain over ~15 mi round trip; some strong parties instead push it car-to-car in 20-21.5 hrs."
+    },
+    "timing": {
+     "totalHrs": 19.5,
+     "summitTimeHrs": 14,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 5.5,
+     "recommendedStart": "3:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 5.5,
+       "note": "Leave the Stuart Lake Trail below Colchuck junction and follow Mountaineer Creek into the basin below the glacier, carrying a full ice rack.",
+       "fromTo": "Approach to a bivy near the glacier",
+       "section": "Approach"
+      },
+      {
+       "hrs": 14,
+       "note": "A pre-dawn start crosses the glacier and exits the crux ice/cornice while conditions are firm. The route tops out near the top of the Cascadian Couloir, which is then descended to …",
+       "fromTo": "Climb the Ice Cliff Glacier to the summit, descend Cascadian",
+       "section": "Climb"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "before": {
+    "overview": "One of the most celebrated alpine rock climbs in the Cascades and one of the original Fifty Classic Climbs of North America, capped by the dramatic Great Gendarme. The lower/original North Ridge was first climbed by John Rupley and Don Gordon in 1956 (they bypassed the Gendarme); the Gendarme itself was first climbed directly by James Wickwire and Fred Stanley in 1964. About 11 pitches of low-to-mid 5th class \"bomber rock\" lead from the notch above the Stuart Glacier to the base of the Gendarme, followed by two crux 5.9 pitches (a steep lieback into a strenuous offwidth), then several more pitches of 4th/low-5th class to the summit — roughly 18 pitches and 3,000 ft total.",
+    "waypoints": [
+     {
+      "lat": 47.5278,
+      "lng": -120.8205,
+      "elev": 3400,
+      "name": "Stuart Lake Trailhead",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive to Leavenworth and head up Icicle Creek Road, then turn onto Forest Road 7601 (signed as Eightmile Road) and follow it to its end, around 3,540 feet, where the Stuart Lake Trailhead and the Stuart/Colchuck Lake Trail begin."
+     },
+     {
+      "lat": 47.444,
+      "lng": -120.924,
+      "elev": 6300,
+      "name": "Longs Pass",
+      "type": "Pass",
+      "distMi": 3.5
+     },
+     {
+      "lat": 47.456,
+      "lng": -120.913,
+      "elev": 7600,
+      "name": "Goat Pass",
+      "type": "Junction",
+      "distMi": 5
+     },
+     {
+      "lat": 47.465,
+      "lng": -120.911,
+      "elev": 7400,
+      "name": "Stuart Glacier Crossing",
+      "type": "Hazard",
+      "distMi": 5.3
+     },
+     {
+      "lat": 47.47,
+      "lng": -120.91,
+      "elev": 7200,
+      "name": "North Ridge Base",
+      "type": "Junction",
+      "distMi": 5.5
+     },
+     {
+      "lat": 47.475,
+      "lng": -120.908,
+      "elev": 9000,
+      "name": "Great Gendarme",
+      "type": "Hazard",
+      "distMi": 5.8
+     },
+     {
+      "lat": 47.475,
+      "lng": -120.904,
+      "elev": 9415,
+      "name": "Mount Stuart Summit",
+      "type": "Summit",
+      "distMi": 6
+     }
+    ],
+    "approach_variants": [
+     {
+      "name": "North side — Stuart Lake TH via Mountaineer Creek",
+      "hours": "4-5",
+      "notes": "Park at the Stuart Lake Trailhead at the end of FR 7601 (Eightmile Road) out of Leavenworth and walk the Stuart Lake Trail up Mountaineer Creek. At the signed split roughly two miles along, ignore the Colchuck Lake branch on the right and carry straight on. A short distance further you leave maintained tread altogether, well before Stuart Lake, ford Mountaineer Creek and follow its south fork upstream cross-country. Late in the season there is a cairned climbers' path through much of this; early in the season there is not, and the creek runs hard.\n\nAbove the streamside travel a steep, unstable talus and boulder slope lifts you into the hanging basin under Sherpa Peak and the Sherpa Glacier. This basin holds the usual bivies. From it you angle up onto the glacier bench beneath the ridge.\n\nThis is the shorter, lower-gain way in and it puts you at the toe with the most in the tank, but it commits you to a car shuttle: the standard descent is the Cascadian Couloir, which spills out on the far side of the range at Ingalls Creek. Parties report the shuttle drive between the two trailheads costing several hours round trip. In June and early July the Sherpa Glacier is a reasonable way back down to this side and removes the shuttle problem — later in the summer it is not.\n\nThere is running snowmelt near the toe of the ridge (reported around 47.48095, -120.89454); above the 8,200 ft notch there is no reliable water once the last snow patch there melts out.",
+      "distMi": 6.5,
+      "gainFt": 3300,
+      "season": "Jun to mid-Jul is the sweet spot; workable through Sep",
+      "hazards": [
+       "Mountaineer Creek and its south fork run high and fast in early-season melt",
+       "Loose talus and boulder slope below the Sherpa Glacier basin — poor footing, rockfall onto parties below",
+       "Serac and icefall exposure if you drift east under the Ice Cliff Glacier",
+       "No reliable water above the 8,200 ft notch once its snow patch is gone",
+       "Committing: standard descent exits on the opposite side of the range, so a shuttle or a very long walk-around is required"
+      ],
+      "primary": true,
+      "baseFinding": "You are climbing the COMPLETE North Ridge, which begins at about 6,700 ft — roughly 1,500 ft of roped ground below the point where most people who say 'North Ridge' actually start. The toe is the lowest rock of the rib that separates the two glaciers: Stuart Glacier on its west side, Ice Cliff Glacier on its east. Standing at the base with the Ice Cliff Glacier and its seracs on your left and the Stuart Glacier hidden around the corner to your right, you are in the right place. If you are underneath hanging ice you have drifted too far east onto the Ice Cliff side and need to come back west to the rib's lowest rock.\n\nThe feature to NOT mistake for the start is the notch at 8,200 ft. That notch is obvious — a saddle in the crest with a scatter of bivy platforms and, usually, a small lingering snowfield for water — and it is where the Upper (original) North Ridge begins. It is reached by a rock gully climbed from the edge of the Stuart Glacier at about 7,700 ft, on the ridge's west flank. If you find yourself scrambling a gully up from snow toward a bivy saddle, you have skipped the lower 1,500 ft and are on the Upper route, not the Complete.\n\nIn cloud, use the glaciers rather than the rock: the toe is where the moraine/snow of the basin runs out against the first continuous rock, and the ice above and left of you belongs to the Ice Cliff Glacier. The 8,200 ft notch is above and right of that, reached only after the ridge has already risen well above the ice."
+     },
+     {
+      "name": "South side — Esmeralda TH over Longs Pass and Goat Pass",
+      "hours": "8",
+      "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway River Road (FR 9737), take the trail over Longs Pass and up Ingalls Creek to Goat Pass, then traverse east beneath the Stuart Glacier, staying above the large moraine mound, and aim for the toe of the ridge.\n\nAbout 2,000 ft of the day is descent, so the round trip is more work than the raw gain suggests, and parties consistently report it taking longer than planned — budget eight hours and expect route-finding on the traverse rather than tread.\n\nThe reason to accept the longer, higher approach is that it removes the shuttle entirely. The Cascadian Couloir descent drops to Ingalls Creek on this side, so a party that walked in from Esmeralda walks out to its own car. Parties who came in from the north do not.\n\nHow much snow remains on the Goat Pass traverse is the recurring gear question here: sections have been reported at around 40 degrees, and whether you need an axe and traction changes week to week through the summer. Recent photos and current reports are worth more than any fixed answer.",
+      "distMi": 9,
+      "gainFt": 4800,
+      "season": "Jul-Sep, once the traverse under the Stuart Glacier has melted or consolidated",
+      "hazards": [
+       "Snow slopes on the Goat Pass traverse reported near 40 degrees; conditions change through the summer",
+       "~2,000 ft of descent on the way in, all of which must be regained on the way out",
+       "Long day with no bail-out once past Goat Pass",
+       "Approach consistently underestimated; parties arrive at the toe late and tired"
+      ],
+      "baseFinding": "Coming from Goat Pass you arrive at the ridge from below and to the WEST, which is the opposite side from the northern approach — so the Ice Cliff Glacier is not your handrail here, the Stuart Glacier is. Keep the Stuart Glacier snow on your left as you traverse east and stay above the big moraine mound; the toe of the Complete ridge is the first continuous rock the traverse runs into, at about 6,700 ft.\n\nThe decision point is unmissable once you know to look for it: from the edge of the Stuart Glacier at roughly 7,700 ft a rock gully leads up the ridge's west side to the notch at 8,200 ft. Taking that gully puts you on the Upper North Ridge and skips the lower 1,500 ft. Continuing the traverse past and below it, down to the lowest rock, is what starts the Complete route. In poor visibility: if the snow you are standing on is still rising to your right toward a saddle, you are too high; the toe is below, where the snow ends."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "before": {
+    "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5. For the Cascadian Couloir and South Headwall, descend the rocky climbers' trail on the far side of Longs Pass to Ingalls Creek, cross on a log bridge, and follow the climbers' path up the meadow into the base of the Cascadian Couloir (South Headwall lies further up-basin via the same drainage). For West Ridge, the North Ridge routes, and the South Face (Gorillas in the Mist / Gorillas Direct / King Kong), instead continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder below Stuart's West Ridge and contour northwest to Goat Pass (7,600 ft) — the South Face wall with the Gorillas routes sits in the amphitheater roughly midway between Stuart Pass and Goat Pass, while West Ridge and North Ridge climbers continue over or along Goat Pass toward their respective start points. Camping is common near Goat Pass or down at Ingalls Creek depending on the objective. The North Ridge routes can also be reached from the opposite (Mountaineer Creek) side.",
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead."
+   }
+  },
+  {
+   "id": "wa_mount_stuart_girth_pillar",
+   "before": {
+    "descent_text": "Girth Pillar is climbed in three sustained crack pitches above the four approach pitches: a steep P1 handcrack (5.10), a P2 crux of thin fingers and finger-locks (5.11-), and a P3 of sustained hands (5.10+), topping out on easier ground leading to the false summit above the Ice Cliff Glacier and on to Stuart's true summit. There is no reasonable way to reverse the route — down-climbing or rappelling back through the Ice Cliff Glacier's icefall and crevasse hazard is considerably more dangerous than finishing over the top, so continuing to the summit is effectively mandatory. From the true summit, descend as for the standard south-side line: east ridge toward the false summit, traverse the south face to round it at its easiest point (~9,000'), then down the broad Cascadian Couloir — about 4,600 feet of Class 2-3 scree, talus, and snow — to Ingalls Creek, and back out over Longs Pass to the Esmeralda Basin/Ingalls Creek trailhead. This is a walk-off with no rappelling required on the standard descent; note that this trailhead is not the Mountaineer Creek trailhead used for the approach, so a car shuttle (or a long overland return) is part of planning this route as a car-to-car day. If a party needs to bail from partway up the pillar itself, the crack pitches would need to be rappelled on natural gear anchors (no fixed hardware is reported on the pillar) — a real possibility to plan for given the route's commitment, but not part of the standard descent.",
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike in via Mountaineer Creek to a bivy positioned between the two glaciers, allowing an early start up the Ice Cliff the next morning.",
+       "hours": 6,
+       "miles": 6.5,
+       "title": "Approach to a bivy between the glaciers",
+       "gainFt": 3200,
+       "lossFt": 200,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach a bivy in the scree between the Sherpa and Ice Cliff glaciers"
+      },
+      {
+       "n": 2,
+       "note": "In good conditions the Ice Cliff Glacier can be soloed to the base of the pillar in under 2 hours; the pillar itself offers 11 pitches with a crux of sustained crack climbing (~5.9) before easier ground leads to the summit ridge.",
+       "hours": 14,
+       "miles": 8.5,
+       "title": "Climb the Ice Cliff Glacier and Girth Pillar to the summit",
+       "gainFt": 2800,
+       "lossFt": 6000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave bivy",
+         "detail": ""
+        },
+        {
+         "time": "AM",
+         "label": "Climb the Ice Cliff Glacier to the base of the pillar",
+         "detail": "~1-2 hr"
+        },
+        {
+         "time": "AM",
+         "label": "Begin Girth Pillar",
+         "detail": "11 pitches, crux finger cracks ~5.9"
+        },
+        {
+         "time": "Midday",
+         "label": "Top out near the summit ridge",
+         "detail": ""
+        },
+        {
+         "time": "PM",
+         "label": "Descend the Cascadian Couloir and exit over Longs Pass",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the glacier to the base of the pillar, then the pillar's 11 pitches to the summit"
+      }
+     ],
+     "totalNote": "A 2-day rock route above the Ice Cliff Glacier: 11 pitches and ~6,000 ft gain over ~15 mi round trip; strong parties occasionally link it car-to-car."
+    },
+    "turnaround": "Set a turnaround that leaves daylight for the summit and the long Cascadian descent.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Excellent — a remote glacier approach followed by sustained hard climbing",
+      "packWeight": "Alpine rack plus glacier-travel gear, ~25-30 lb"
+     },
+     "approachTime": "Long, remote approach over the Stuart Glacier to the base of the pillar; likely requires a bivy",
+     "requiredSkills": [
+      "sustained hard crack climbing (5.10+)",
+      "glacier travel",
+      "self-sufficient multi-day alpine climbing",
+      "committing-retreat/rappel management"
+     ],
+     "experienceLevel": "Expert alpine rock climber and 5.10+ crack specialist with glacier-approach experience"
+    }
+   }
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.52808,
+      "lng": -120.82071,
+      "elev": 2930,
+      "name": "Stuart Lake Trailhead (end of FR 7601, Eightmile Creek Rd)",
+      "type": "Trailhead",
+      "elevFt": 2930
+     },
+     {
+      "lat": 47.47854,
+      "lng": -120.88416,
+      "elev": 6600,
+      "name": "Sherpa Glacier toe/icefall",
+      "note": "Glacier terminates as an icefall here; crevasses present, cross high where the glacier is flatter.",
+      "type": "Hazard",
+      "distMi": 6
+     },
+     {
+      "lat": 47.47227,
+      "lng": -120.89263,
+      "elev": 7600,
+      "name": "Top of Sherpa Glacier",
+      "note": "Tops out at the notch gaining Mount Stuart's upper North Ridge.",
+      "type": "Topout",
+      "distMi": 6.5
+     },
+     {
+      "lat": 47.4751179,
+      "lng": -120.9031444,
+      "elev": 9415,
+      "name": "Mount Stuart summit",
+      "type": "Summit",
+      "elevFt": 9415
+     }
+    ],
+    "approach_logistics": {
+     "peakLat": 47.475118,
+     "peakLng": -120.903144,
+     "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+     "trailheadLat": 47.5282,
+     "trailheadLng": -120.82036,
+     "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,540 ft), via the Mountaineer Creek drainage"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "",
+     "days": [
+      {
+       "n": 1,
+       "note": "A pre-dawn start over Longs Pass and Stuart Pass reaches the base of the ridge; the ridge itself (5.6) climbs quickly, and the long day is finished off by descending the Cascadian Couloir back to the trailhead.",
+       "hours": 12,
+       "miles": 16.5,
+       "title": "Car-to-car via the West Ridge",
+       "gainFt": 5175,
+       "lossFt": 5175,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Stuart Lake TH"
+        },
+        {
+         "time": "8:00 AM",
+         "label": "Reach Stuart Pass",
+         "detail": "~4.5 hr approach"
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Summit via the West Ridge",
+         "detail": "~2.5 hr climb"
+        },
+        {
+         "time": "PM",
+         "label": "Descend the Cascadian Couloir to Longs Pass",
+         "detail": "~4.5 hr"
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at trailhead",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the West Ridge and descend the Cascadian Couloir, all in one day"
+      }
+     ],
+     "totalNote": "A long single day car-to-car: ~11-14 hrs, 5,175 ft gain over ~16.5 mi; some parties camp at Ingalls Creek to split it into two easier days."
+    }
+   }
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "before": {
+    "beta": "Grade: IV 5.11+ alpine rock climb (5.12a on some topos). Route length: 900 feet (8 pitches) on West Face Wall. First ascent: September 9, 2016 by Sol Wertkin and Jon Gleason. Route climbs first 4 pitches of Gorillas in the Mist, moves left onto Gorillas Direct (2 pitches), then climbs 2-pitch direct finish up aesthetic splitter crack on overhanging headwall (5.11d crux). Connector pitch (5.10b): roof bulge, stem-box, runout overhanging jug climbing. Headwall pitch (5.11d): slabby steps, vertical features, meaty hand/fist jams, wild layback sequences. Required gear: double rack cams/nuts (small-medium), two fixed nuts at headwall top. Best season: late summer through early September (before fall storms and snow). Hazards: significant runouts between protection placements, loose rock with hidden chock stones, 30+ meters of overhanging exposure on headwall, alpine weather exposure risk (unplanned bivy possible).",
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Permits: America the Beautiful Pass or Northwest Forest Pass required. Backcountry camping permit required for overnight stays (online application with fee). Enchantments area requires Recreation.gov permit for May 15–October 31. Road access: FR 7601 closes during winter (typically November–May). Parking: 20–30 car spaces with toilet at Stuart Lake trailhead. Dogs not allowed in Stuart Lake area.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Free Self-Issue Day Permit",
+     "seasonal": null,
+     "group_limit": 8,
+     "land_manager": "U.S. Forest Service",
+     "parking_pass": "Northwest Forest Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Alpine Lakes Wilderness permit",
+      "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead."
+     }
+    },
+    "approach": "From the Esmeralda/Lake Ingalls Trailhead at the end of FS-9737, hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5, then continue past Ingalls Lake toward Stuart Pass, follow the climbers' trail onto the talus shoulder below Stuart's West Ridge, and contour northwest to Goat Pass (7,600 ft). The West Face Wall, home to the Gorillas routes (Gorillas in the Mist / Gorillas Direct / King Kong), sits in the amphitheater roughly midway between Stuart Pass and Goat Pass. Camping is common near Goat Pass or down at Ingalls Creek."
+   }
+  }
+ ]
+}

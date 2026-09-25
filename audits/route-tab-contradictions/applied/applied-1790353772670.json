@@ -1,0 +1,251 @@
+{
+ "applied": [
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "Crux difficulty (5.0 vs a reported 5.4 move)"
+  },
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "column": "overview",
+   "path": [],
+   "fact": "Crux difficulty (5.0 vs a reported 5.4 move)"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "best_season",
+   "path": [],
+   "fact": "Season / water-availability window"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "access",
+   "path": [
+    "_raw"
+   ],
+   "fact": "Land manager / permitting agency (NPS vs USFS)"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "Land manager / permitting agency (NPS vs USFS)"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Lake Serene Trailhead elevation"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Lake Serene Trailhead elevation"
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass: passRequired 'None' vs parking_pass requiring a Northwest Forest Pass"
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count on the North Face section"
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "column": "turnaround",
+   "path": [],
+   "fact": "Turnaround plan vs. the route's own multi-day schedule"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "season",
+   "path": [],
+   "fact": "Season window for a route named '(Winter)'"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "rope_length_m",
+   "path": [],
+   "fact": "Rope count/length"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "rope_type",
+   "path": [],
+   "fact": "Rope count/length"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "timing",
+   "path": [
+    "approachTimeHrs"
+   ],
+   "fact": "Timing component hours don't sum to totalHrs"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "timing",
+   "path": [
+    "descentTimeHrs"
+   ],
+   "fact": "Timing component hours don't sum to totalHrs"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager: 'N/A' vs a named agency in the same access object"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Parking pass: passRequired 'N/A' vs parking_pass requiring a Northwest Forest Pass"
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "column": "approach",
+   "path": [],
+   "fact": "Main Peak elevation (~5,502 ft in approach vs 5,991 ft)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "before": {
+    "rock_grade": "Easy 5th (low 5th, with a reported 5.4 crux move)",
+    "overview": "Lundin Peak is a jagged, three-horned summit — the westernmost horn is the true summit — on the ridge connecting Snoqualmie Mountain (6,278 ft) to Red Mountain, immediately north of Snoqualmie Pass in the Alpine Lakes Wilderness. Formerly named 'Snoqualmie Little Sister,' it was renamed in 1931 to honor district forest ranger John Lundin. Short approaches from I-90 and a mix of scrambling/low-5th rock make it one of the most popular half-day alpine objectives near Seattle, but the summit block is genuinely technical: expect Class 4 and low-5th (5.0-5.4) climbing with real exposure on the final pitch, not a walk-up scramble."
+   }
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "before": {
+    "best_season": "Mid to late season (July-September) for water availability and less snow. Early season (May-June) offers better route definition with snow but requires avalanche understanding.",
+    "access": {
+     "_raw": {
+      "note": "Limited specific information available - confirm exact location and permit requirements with park directly",
+      "contact": "(360) 854-7245 or noca_wilderness@nps.gov",
+      "permit_type": "Backcountry wilderness permit",
+      "land_manager": "National Park Service - North Cascades National Park (presumed)",
+      "parking_pass": "North Cascades National Park entrance fee",
+      "cost_structure": {
+       "youth_15_and_under": "Free",
+       "per_person_per_night": "$10 per person",
+       "non_refundable_reservation_fee": "$6"
+      },
+      "permit_location": "Wilderness Information Center in Marblemount or online via Recreation.gov",
+      "wilderness_zone": "North Cascades National Park",
+      "group_size_limit": "4-12 people depending on campsite",
+      "seasonal_closures": {
+       "typical": "Year-round permits available"
+      },
+      "pickup_requirement": "Reserved permits must be picked up by 11am on trip start date"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "Backcountry wilderness permit",
+     "closures": "N/A",
+     "permitZone": "North Cascades National Park",
+     "landManager": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "None",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.8177,
+      "lng": -121.5514,
+      "elev": 1000,
+      "name": "Lake Serene Trailhead (Bridal Veil Falls TH, US-2 near Index, WA)",
+      "note": "Traverse starts 'at the lake' (Lake Serene basin) and climbs the skyline right-to-left, summiting North Peak first then continuing over Middle and Main.",
+      "type": "Trailhead",
+      "elevFt": 1000,
+      "directions": "Take US-2 to milepost 35.2 and turn south onto Mount Index Road, following it 0.3 miles to the Lake Serene trailhead, also signed for Bridal Veil Falls. The maintained Lake Serene Trail #1068 leaves from here. Expect to be starting by headlamp: parties commonly need 12 to 15 hours or more, and many bivy."
+     },
+     {
+      "lat": 47.78194,
+      "lng": -121.57028,
+      "elev": 2526,
+      "name": "Lake Serene (approach basin below North Peak)",
+      "type": "Junction",
+      "distMi": 4.1,
+      "elevFt": 2526
+     },
+     {
+      "lat": 47.77453,
+      "lng": -121.58093,
+      "elev": 5338,
+      "name": "Mount Index - North Peak (first of three summits climbed on the traverse)",
+      "type": "Summit",
+      "elevFt": 5338
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_index_north_peak_traverse",
+   "before": {
+    "pitches": 4,
+    "turnaround": "Turn around by 2 PM if still climbing after 5 hours; summit will not be reached by safe descent time."
+   }
+  },
+  {
+   "id": "wa_hourglass_gully_winter",
+   "before": {
+    "season": "Late Apr-Oct for the general scramble; best as a snow climb roughly May-Jun when the gully's crux rock step is still snow-bridged; not recommended in mid-late summer (bare wet rock, brutal bushwhacking) or unstable winter conditions",
+    "rope_length_m": 60,
+    "rope_type": "single dynamic (for rappels)",
+    "timing": {
+     "totalHrs": 15,
+     "summitTimeHrs": 4,
+     "descentTimeHrs": 3,
+     "approachTimeHrs": 2.5,
+     "recommendedStart": "2:30-3:00 AM from trailhead for day push; 4:30 AM from lake if camping"
+    },
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "permit": "N/A",
+     "closures": "N/A",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    },
+    "approach": "Start at the Lake Serene Trailhead and follow Trail #1068 about 4 miles and 2,000 ft of gain to Lake Serene, then traverse talus and boulders around the west side of the lake to its south end. From there head east to a saddle and climb the ridge/gully system southwest of it toward Main Peak, the massif's highest and most technical summit (~5,502 ft). Expect roughly 5,500 ft of total elevation gain, thick brush low on the route, and sustained moderate rock climbing higher up; most parties plan for a 15+ hour car-to-car day or an overnight."
+   }
+  }
+ ]
+}

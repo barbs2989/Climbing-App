@@ -1,55 +1,68 @@
-# Route-page contradiction audit — Washington (started 2026-09-24)
+# Route-page contradiction audit — Washington (2026-09-24 → 2026-09-25)
 
 **Ask:** every field on a route's tabs (Overview · Plan · Reports · Safety · Partners) must agree with
 every other field. Audit all WA routes; where two fields disagree, settle it with at least two external
 sources and fix every copy of the wrong value.
 
-## Status — PAUSED at the account's weekly usage limit (resets 2026-09-30)
+## Status — COMPLETE for this session's half of the catalog
 
-| Stage | Done | Total |
-|---|---|---|
-| Enriched WA routes read in full (reader groups) | 373 routes (29 groups) | 1,122 routes (95 groups) |
-| Contradictions found by the readers | 648 | — |
-| Contradictions researched (incl. 46 found during research) | 166 | — |
-| Patches applied to the live DB, each re-read and verified | **306 on 42 routes** | — |
+The work was split by route id with a second session ("wa routes data validation", branch
+`wa-contradictions-rest`). **This record covers reader groups g001–g053 (batches b001–b212): 617 of the
+1,122 enriched WA routes.** The other 505 are that session's.
 
-Research verdicts so far: 96 fixed (2+ sources), 12 fixed from the row plus one source, 21 not a
-contradiction, 31 unresolved (sources disagree — deliberately left unchanged, listed in
-`unresolved.txt`), 6 regional camp lists (see below).
+| | |
+|---|---|
+| Routes read in full | **617** (every one accounted for) |
+| Contradictions found by the readers | 1,198 |
+| Research results (incl. 303 found during research) | 1,297 |
+| Fixed, 2+ agreeing external sources | 648 |
+| Fixed, row's own fields + 1 external source | 121 |
+| Not actually a contradiction | 154 |
+| **Unresolved — sources disagree or too few** (left unchanged by design, see `unresolved.txt`) | 327 |
+| Regional camp-list entries (handled by the camp session) | 47 |
+| **Patches applied live** | **1,913 on 346 routes** |
+| Re-verified against the live DB at the end | 1,845 of 1,868 patched values hold; 23 since changed by other sessions |
 
-Scope is the WA area SUBTREE (`areas.path` under `usa.washington`): 8,447 routes, of which 1,122 carry
-the enrichment that can contradict itself. The other ~7,300 are crag stubs (grade / pitches / FA only).
+Every write was compare-and-set against the live row, re-read after writing, and its previous value is in
+`applied/` for rollback. New text never names a source (the app shows none).
 
 ## What kept turning up
-- A block copied from a SIBLING route: an itinerary, timing breakdown, road or access block naming
-  another trailhead, pass or road (Mount Stuart West Ridge's itinerary started at Stuart Lake TH; True
-  Grit, a Vantage sport route, carried a Mountain Loop alpine road block).
-- `gain_ft` / `loss_ft` / `dist_km` disagreeing with the row's own itinerary day totals.
-- `permit` vs `access.permit` (lottery required vs not).
-- The commitment numeral in `grade` vs `commitment` / `alpine_grade`.
-- A route grade that disagrees with its own crux pitch.
+- **A block copied from a sibling route** — the single biggest class: an itinerary, timing breakdown,
+  road, access or permit block naming another route's trailhead, pass, road, wilderness or ranger
+  district (e.g. True Grit, a Vantage sport route, carried a Mountain Loop alpine road block; North Star
+  Mountain's summit day described a Colorado peak of the same name; Vesper Peak called itself Glacier
+  Peak Wilderness).
+- `gain_ft` / `loss_ft` / `dist_km` disagreeing with the row's own itinerary — often a stored gain below
+  the trailhead-to-summit rise, which is impossible.
+- `permit` vs `access.permit`; `access.fees` "None" beside a charged pass.
+- Grades: the commitment numeral in `grade` vs `commitment`, and route grade vs its own crux pitch.
+- `summitTimeHrs` holding the car-to-car total (repaired by nulling, per the settled convention).
 
-## Decided, not swept
-- **CAMPING & BIVY is a regional zone list** on 610 of the 799 WA routes that have one; each entry says
-  which peaks it serves, and only 4 of 4,958 entries have coordinates. It is not a per-route
-  contradiction and is not edited here. Showing a route's own camps first is a UI decision.
-- `high_point_ft` on crag routes tracks the base of the climb (settled convention).
+## Needs an owner decision (research can't settle these; no patch written)
+These rows describe **two different routes or approaches at once**, so there is no single fact to fix:
+- `wa_chimney_rock_west_face` — pitch/rappel text describes a Chimney Rock in **Idaho**; should the row exist?
+- Mount Index North Norwegian Buttress — top stats are Jötnar, the pitch table is Bluebell.
+- `wa_east_ridge_7` — is Lundin Peak's East Ridge, filed under Red Mountain (re-file).
+- Tepeh Towers — header shows Eldorado's elevation because the row is filed under Eldorado (re-file).
+- Duplicate or merged lines: Agnes West Route (≈ South Ridge body), Needle Peak "South Route" (= North
+  Ridge), Gunn Peak Lewis Creek (≈ Southeast Route), Guye West Face (ramp route + Improbable Traverse),
+  Davis Peak North Face (Burdo/Cairns + Kloke-Simon), Little Big Chief West Route.
+- Two genuine approaches blended: Buck Mountain, Esmeralda Peaks, Bryant Peak, Iron Cap, Lizard Mountain,
+  Bear Mountain (both routes), Hard Mox, CJ Couloir, Sitkum Spire (White Chuck trail is gone).
+- Naming vs content: Mount Saul "Southeast Slopes" (every account climbs the east side), Old Guard Peak
+  "Southwest Route" (couloir is on the northwest side), Deep Blue filed `trad` (reported bolted).
+
+## Out of this pass's scope (flagged in the research outputs)
+- **Map pins** — several trailhead/camp pins sit at the wrong place (Poltergeist Pinnacle at Ross Dam,
+  Primus South Ridge, Buckner North Face, Grotto Mountain, Trapper Mountain, Hibox "Rampart Lakes").
+  Coordinates were never edited here.
+- **CAMPING & BIVY lists** — owned by the camp session (user decision: show only camps on/near the route).
 
 ## How it works (`scripts/oneoff/route-tab-contradictions/`)
 `snapshot.mjs` (live rows) → `detect.mjs` (mechanical hints) → `dossiers.mjs` (batches + `groups.txt`)
 → READER agents (`reader-instructions.md`, read-only) write `read/gNNN.json` → `mkresearch.mjs` →
-RESEARCH agents (`research-instructions.md`, web) write `research/out/rNNN.json` → `go.sh rNNN`
-(`extract.mjs` keeps only sourced fixes; `apply.mjs` compare-and-sets against the LIVE row, rejects
-any new text that cites a source, PATCHes one row at a time and re-reads it). Every applied change's
-previous value is in `applied/` for rollback. `status.mjs` shows progress; `tally.mjs` the totals.
-
-## Resuming
-1. Symlink `.env`, `.env.local` from the main checkout (a worktree has no credentials).
-2. `node scripts/oneoff/route-tab-contradictions/snapshot.mjs && node .../detect.mjs && node .../dossiers.mjs`
-   — re-snapshot, because 306 fixes changed the rows. `dossiers.mjs` rewrites `groups.txt` the same way
-   only if the enriched set is unchanged; compare before trusting old group numbers.
-3. Readers still to run: groups **29-31 and 33-95** (29-31 were cut off by the limit and discarded).
-4. Research: rebuild inputs with `node .../mkresearch.mjs "g0(0[3-9]|1[0-9]|2[0-8]|32)"` for the read-but-
-   unresearched contradictions (r009, r012, r013, r017-r021 and r023-r049 never completed), then for each
-   new reader group. Replace `<AUDIT_DIR>` in the two instruction files with this folder's absolute path.
-5. Apply each finished research file with `bash .../go.sh rNNN`.
+RESEARCH agents (`research-instructions.md`, web, 2-source rule, settled conventions listed) write
+`research/out/rNNN.json` → `go.sh rNNN` (`extract.mjs` keeps only sourced fixes; `apply.mjs`
+compare-and-sets against the LIVE row with a key-order-insensitive check, rejects any new text that cites
+a source, PATCHes one row at a time and re-reads it). `verify-live.mjs` re-reads every patched path;
+`status.mjs` / `tally.mjs` report progress.

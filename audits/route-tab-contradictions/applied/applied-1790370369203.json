@@ -1,0 +1,399 @@
+{
+ "applied": [
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "column": "beta",
+   "path": [],
+   "fact": "Icefall traverse direction (left vs right) to reach the main wall"
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "column": "beta",
+   "path": [],
+   "fact": "ice_grade 'M1' vs beta's description of 'vertical mixed terrain'"
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Cascade River Road access beyond the Eldorado gate: this route says currently gated by 2026 landslide damage, but sibling routes on the same peak describe normal seasonal access"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "overview",
+   "path": [],
+   "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "best_season",
+   "path": [],
+   "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "August",
+    "reason"
+   ],
+   "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "July",
+    "reason"
+   ],
+   "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent method: `rappels` describes a specific 3-5 rappel reversal of the ridge itself, while descent/descent_text/bail say no such descent beta exists and recommend against reversing the ridge"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "waypoints",
+   "path": [
+    7,
+    "distMi"
+   ],
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "dist_km",
+   "path": [],
+   "fact": "dist_km 25.43 (15.8 mi shown as the one-way approach) vs the 3.2 mi approach to Boston Basin high camp in the itinerary"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Direction the first-ascent party continued after Boston's summit (descent_text says toward Sharkfin/Forbidden; overview, itinerary and the ascent account say they came from there and went on to Sahale)"
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "column": "climbing_route",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "climbing_route[2] says the first-ascent party abandoned the traverse and rappelled to the Quien Sabe Glacier from this ridge, while overview/descent/descent_text say they continued the traverse over the summit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "before": {
+    "beta": "From a camp near the head of Park Creek, climb easier cliffs to a small glacier at the base of the face, then traverse left across an icefall (reported as a genuinely exposed, 'frightening' crossing) to reach the main rock wall. Follow a prominent central rib essentially straight up the face on generally sound Cascade granodiorite/orthogneiss, through a crumbly red rock stratum that crosses the whole face at roughly mid-height, to a 100-foot notch near the summit, then on to the top. The face averages about 70 degrees and is over 3,000 feet high."
+   }
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "before": {
+    "beta": "The route begins below the west face and climbs steep snow heading NE for two pitches (belays under a bulge, then where a gully opens to the east), then follows a large gully east on pitch 3 (occasional rock hooks in the snow), continues up on pitch 4 to about 200 ft north of the summit, and finishes on pitch 5 across an exposed ridge to the true summit after a short rock step. A winter ascent found the climbing ranging from low-angle snow to vertical mixed terrain near the top, with significant rime-ice removal required and a bergschrund circumvented by climbing to climber's right.",
+    "road": {
+     "name": "Cascade River Road",
+     "status": "Open to Eldorado Trailhead (MP 20) as of mid-2026; gated there following spring-2026 landslide/storm damage near MP 18",
+     "driveNote": "In winter/spring conditions, expect to approach entirely from the Eldorado gate on skis or foot — no vehicle access beyond MP 20.",
+     "seasonalGate": "Typically gated in winter/spring; the documented winter ascent approached from this same Eldorado gate on skis/bike"
+    }
+   }
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "before": {
+    "overview": "Boston Peak's northwest ridge is an obscure, seriously run-out line linking the Sharkfin-Boston col to Boston's summit. Its only known ascent is Sam Boyce and Kyle Willis's August 2018 'Boston Marathon,' a west-to-east enchainment that circled Boston Basin over Forbidden Peak, Sharkfin Tower, Boston Peak, and beyond (VI 5.8 R overall). On the ridge itself the pair found deep, virgin choss — rock the consistency of feta cheese — including a two-pitch à cheval traverse and roughly 1,000 more feet of climbing rated 5.5 X, much of it unroped. No other ascents are known; treat this as an unrepeated, essentially unprotectable objective for very experienced parties rather than an established route.",
+    "best_season": "Likely July through September, matching the broader Boston Basin window; the only documented ascent was in August.",
+    "seasonal_guidance": {
+     "optimalWindow": "August",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Workable but variable",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Snow-covered, not a realistic window",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Best-documented conditions — the one known ascent was in this window",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early snow return likely",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still workable, cooling",
+       "status": "good"
+      }
+     }
+    },
+    "descent_text": "No descent-only beta exists for this ridge — the first-ascent party continued their traverse onward (toward/over Sharkfin Tower and Forbidden) rather than retreating back down it, so nobody has published what going down this way actually looks like. A party that climbed the ridge and topped out on Boston's summit would most sensibly descend via the Southwest Face's established rappel line (3 rappels down the southeast/east face on fixed slings to the Boston Glacier — see that route) rather than reversing the ridge, since that is the only descent off this peak with known, documented anchors. Retreating directly back down the Northwest Ridge itself should be assumed to mean natural, self-built anchors the whole way (slung horns/chockstones or gear placements) with zero documented stations and the same loose rock the route is known for — a serious, committing proposition that should not be planned around finding fixed gear. This is an honest estimate reasoned from the peak's only known descent, not sourced route-specific beta.",
+    "itinerary": {
+     "cal": "No independent descent exists for this ridge, so plan on using the standard Southwest Face rappel descent to get off the summit; best attempted in a stable, dry weather window (typically Aug-Sept) given the sustained exposure and lack of established bail options.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Same Cascade River Road approach as Boston's other routes: a steep trail and boot track climb from the trailhead (~3,200 ft) into Boston Basin. Camp at the high site (~6,400 ft) to shorten the long ridge day ahead.",
+       "hours": 4,
+       "miles": 3.2,
+       "title": "Approach to Boston Basin camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach a high camp positioned under Sharkfin/Boston"
+      },
+      {
+       "n": 2,
+       "note": "This ridge is the connecting link used by parties traversing on from Sharkfin Tower/Forbidden Peak toward Boston and Sahale — it sees very few standalone ascents, so treat it as a serious, sustained, exposed alpine ridge with real routefinding rather than a well-beaten path. Because the first-ascent party continued onward rather than descending it, the safest way off is not to reverse the ridge: once you top out on Boston's true summit, walk off via the standard southeast-side ledges and three 25m rappels shared with the Southwest Face route, back to the Boston Basin high camp.",
+       "hours": 13,
+       "miles": 8.5,
+       "title": "Northwest Ridge to the summit",
+       "gainFt": 3200,
+       "lossFt": 3200,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "3:00 AM",
+         "label": "Leave high camp",
+         "detail": "Very early start given the length and seriousness of the day."
+        },
+        {
+         "time": "+2-3 hr",
+         "label": "Gain the ridge system",
+         "detail": "Approach via glacier/col terrain toward Sharkfin-Boston to reach the start of the ridge proper."
+        },
+        {
+         "time": "+6-8 hr",
+         "label": "Sustained ridge climbing",
+         "detail": "Low 5th-class climbing and downclimbing through notches and gendarmes, with big exposure (reported 1,500-2,000 ft) on either side; expect this to be the technical and time crux of the day."
+        },
+        {
+         "time": "Mid-late afternoon",
+         "label": "Reach Boston's true summit",
+         "detail": "Tie into the standard summit terrain."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Descend via SE ledges + 3 rappels",
+         "detail": "Use the established Southwest Face walk-off/rappel descent rather than reversing the ridge."
+        }
+       ],
+       "objective": "Climb the ridge from the Sharkfin-Boston area to Boston's summit and walk off"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back down to the Cascade River Road trailhead.",
+       "hours": 3,
+       "miles": 3.2,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A serious 3-day trip built around one very long, technical ridge day (~13 hrs, roughly 3,200 ft of climbing along a sustained, exposed ridge); this route is rarely done in isolation — most parties who climb it are mid-traverse from Sharkfin Tower/Forbidden Peak toward Boston and Sahale."
+    },
+    "rappels": "3–5 rappels down the standard south-face route, threading around several gendarmes back toward the Boston–Sahale col",
+    "waypoints": [
+     {
+      "lat": 48.48055,
+      "lng": -121.07979,
+      "elev": 3200,
+      "name": "Boston Basin Trailhead",
+      "note": "Small unmarked pullout at roughly mile 22 of Cascade River Road across from Johannesburg Mountain; room for only 6-8 cars and no facilities.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Cascade River Road from Marblemount to the small unmarked pullout just past mile marker 22, across from Johannesburg Mountain, at roughly 3,200 ft. There is room for only six to eight cars and no facilities, so a full pullout leaves you no good options. From the car the route follows the old mining road about three quarters of a mile to the historic mine site before the steep, eroded Boston Basin climbers' path begins."
+     },
+     {
+      "lat": 48.495285503823006,
+      "lng": -121.06747915612374,
+      "elev": 5300,
+      "name": "Old miner's cabin site (Boston Basin mine relic)",
+      "note": "Remains of a historic mining cabin mark the trail breaking out of forest onto the open basin slopes; steep, eroded tread up to this point.",
+      "type": "Junction",
+      "distMi": 4.3
+     },
+     {
+      "lat": 48.498778993522855,
+      "lng": -121.06547071801339,
+      "elev": 5600,
+      "name": "South Fork Boston Creek crossing",
+      "note": "Last easy, reliable creek crossing just below the lower Boston Basin camps; fill up here before heading into the alpine.",
+      "type": "Water",
+      "distMi": 5.2
+     },
+     {
+      "lat": 48.494755,
+      "lng": -121.063487,
+      "elev": 5700,
+      "name": "Lower Boston Basin Camp",
+      "note": "Established backcountry campsites just above treeline; NPS wilderness permit required and food must be stored per park regulations.",
+      "type": "Campsite",
+      "distMi": 5.3
+     },
+     {
+      "lat": 48.50304881426711,
+      "lng": -121.06301596032296,
+      "elev": 6400,
+      "name": "Western edge of Quien Sabe Glacier",
+      "note": "Climbers leave the upper basin meadows/moraine here and rope up for glacier travel toward Sharkfin Col.",
+      "type": "Junction",
+      "distMi": 6.3
+     },
+     {
+      "lat": 48.49971120802525,
+      "lng": -121.05126691518167,
+      "elev": 7200,
+      "name": "Quien Sabe Glacier crevasses / Sharkfin bergschrund",
+      "note": "Large crevasses open on this glacier by late season and a substantial bergschrund forms beneath the couloir below Sharkfin Tower; probe or find a snow bridge.",
+      "type": "Hazard",
+      "distMi": 7
+     },
+     {
+      "lat": 48.501633,
+      "lng": -121.045319,
+      "elev": 7720,
+      "name": "Sharkfin Col",
+      "note": "Low point on the ridge just west of Sharkfin Tower; the FA route gains the crest here via a loose, chossy couloir off Sharkfin before traversing onto Boston's northwest ridge.",
+      "type": "Junction",
+      "distMi": 7.4
+     },
+     {
+      "lat": 48.49583,
+      "lng": -121.03579,
+      "elev": 8894,
+      "name": "Boston Peak",
+      "note": "True summit; final ridge is extremely loose, friable rock (5.5 X) with serious exposure, and the FA party simply continued their traverse rather than downclimbing, so a separate descent must be planned.",
+      "type": "Summit",
+      "distMi": 7.9
+     }
+    ],
+    "dist_km": 25.43,
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "Hanging snow slope to the ridge base",
+      "notes": "The only documented ascent gained this ridge after climbing Sharkfin Tower, descending from it, and traversing a steep hanging snow slope directly to the base of the ridge. There is no established independent approach to the foot of the crest, so the snow condition on that traverse is the gatekeeper and it is committing terrain to cross in poor conditions."
+     },
+     {
+      "n": 2,
+      "class": "5.5",
+      "label": "A cheval section",
+      "notes": "The distinctive feature of the ridge is two pitches climbed a cheval, straddling a crest of rock described as having the consistency of feta cheese. The ridge carries an X rating in its only published account, meaning protection is effectively absent and a fall would not be held. Nothing on this section should be trusted as an anchor."
+     },
+     {
+      "n": 3,
+      "label": "Upper ridge to the summit",
+      "notes": "Roughly another 1,000 ft of climbing remains above the a cheval section to reach the 8,894 ft summit, all of it on previously unclimbed and consistently chossy rock. Retreat is the defining hazard: the party that made the ascent reported the rock too poor to rappel reliably and ultimately abandoned their intended continuation of the ridge traverse, descending instead by rappels and traversing to the Quien Sabe Glacier. There is no route description for the crest beyond, and the line has not been repeated — treat it as unrepeated ground rather than an established route."
+     }
+    ]
+   }
+  }
+ ]
+}

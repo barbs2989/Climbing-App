@@ -1,0 +1,634 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_pugh_stujack",
+   "column": "permit",
+   "path": [],
+   "fact": "whether a wilderness permit is required"
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "column": "bivy",
+   "path": [
+    2,
+    "permit"
+   ],
+   "fact": "whether a wilderness permit is required"
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "column": "seasonal_guidance",
+   "path": [
+    "optimalWindow"
+   ],
+   "fact": "season window / whether October is part of the optimal season"
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "column": "best_season",
+   "path": [],
+   "fact": "season window / whether October is part of the optimal season"
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "season"
+   ],
+   "fact": "season window / whether October is part of the optimal season"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "how exposed the route is"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "column": "approach",
+   "path": [],
+   "fact": "total round-trip mileage / one-way distance to Airplane Lake and the summit"
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Olney Creek Road gate elevation"
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Olney Creek Road gate elevation"
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "column": "approach_logistics",
+   "path": [
+    "trailhead"
+   ],
+   "fact": "Olney Creek Road gate elevation"
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total route elevation gain"
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "column": "approach",
+   "path": [],
+   "fact": "one-way distance from the trailhead"
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "distMi"
+   ],
+   "fact": "one-way distance from the trailhead"
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "one-way distance from the trailhead"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total route elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total route elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total route elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "gainFt"
+   ],
+   "fact": "Total route elevation gain/loss"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "waypoints",
+   "path": [
+    6,
+    "name"
+   ],
+   "fact": "Pitch count and which pitch is the crux"
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "column": "pro_tips",
+   "path": [
+    4
+   ],
+   "fact": "Pitch count and which pitch is the crux"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_pugh_stujack",
+   "before": {
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+    "bivy": [
+     {
+      "elev": 1900,
+      "name": "Mount Pugh road end, Forest Road 2095",
+      "role": "main",
+      "type": "bivy",
+      "notes": "The staging point for MOUNT PUGH, which most parties climb in a single long day from here — around five and a half miles and well over five thousand feet to the summit, with the character changing three times on the way. Forest and stream crossings to the lake at a mile and a half, then a steady climb to the pass, then a rough exposed ridge with a genuine scrambling section around the head of a small remnant glacier before it eases to the top. Sleeping at the car is the honest plan for that day: the spur is short enough that a party staying at any of the valley campgrounds can drive up in the dark, and the trail's first miles are straightforward walking that goes quickly by headtorch. The spur climbs steeply and is rough in places but is normally passable to an ordinary car driven with care. The road in from Darrington is the county-maintained section of the loop and stays open through the year to the seasonal gate further south, which puts this trailhead on the right side of the winter closure — but it is landslide ground and has been blocked outright by a slide within recent memory, so confirm before driving from any distance rather than assuming. Season for the peak is roughly July into October; the ridge above the pass with snow on it is a mountaineering proposition rather than a scramble.",
+      "water": "None at the road end and none for the first mile and a half of trail. Everything gets carried up from the valley or drawn at the lake above.",
+      "permit": "Mt Baker-Snoqualmie National Forest, and the trailhead itself sits OUTSIDE designated wilderness — Glacier Peak Wilderness begins high on the mountain above Stujack Pass, not at the road. Reports differ on whether a fee pass is enforced at this particular trailhead; a Northwest Forest Pass or interagency pass costs nothing extra to carry and settles the question. No self-issue permit at the road. Seasonal forest-wide fire restrictions apply and from midsummer normally mean no open flame.",
+      "capacity": "Car bivy only, and a thin one. Parking is a few turnouts along the last of the spur rather than a car park, with no sites, no tables and no toilet. Half a dozen vehicles fills it and there is nowhere to overflow to without blocking the road."
+     },
+     {
+      "elev": 3260,
+      "name": "Lake Metan, Mount Pugh trail",
+      "role": "main",
+      "type": "camp",
+      "notes": "A mile and a half and about thirteen hundred feet up from the road end, on a short signed spur off the main trail, this is the only established camping on the Pugh approach and it turns a punishing day into a manageable one. Its real value is for a party that wants the ridge above Stujack Pass in the cool of the morning without a two-hour drive and a headtorch start, or for one that arrives too late in the day to sensibly begin. It buys about a third of the climbing but leaves the hardest two thirds — a further two and a half miles to the pass and then the ridge — for the summit day, so treat it as a soft first night rather than a high camp. The setting is wooded and enclosed, mosquito-heavy in early summer and cold in the shade well into the morning. Snow lingers around the lake into June in an ordinary year. Because it is the last water, an efficient party often does not sleep here at all but stops for twenty minutes to load up, and that is a perfectly good use of the place.",
+      "water": "The lake, and this is the LAST WATER on the entire route. Nothing above it is dependable, and above the pass there is nothing at all except late-lying snow. Fill everything here going up and note it for the descent.",
+      "permit": "National forest outside designated wilderness at this elevation, so no wilderness permit, no quota and no party-size limit for camping here. A Northwest Forest Pass covers the vehicle. Fires are subject to whatever seasonal restrictions are in force and are usually prohibited from midsummer; carry a stove regardless, because this is a small lake basin that takes heavy day-hiker traffic and does not need fire rings.",
+      "capacity": "A few primitive spots in the trees on the short spur down to the lake — two or three tents on flat, well-used forest ground, with no built structures of any kind."
+     },
+     {
+      "elev": 5750,
+      "name": "Stujack Pass and the benches just below it",
+      "role": "route",
+      "type": "bivy",
+      "notes": "This is a high bivouac rather than a camp, and it exists for one purpose — putting a party on the exposed upper ridge of MOUNT PUGH at first light rather than in the afternoon, when the scrambling section around the head of the small glacier is more pleasant and the weather is more predictable. From the saddle the remaining mile and a half of ridge is rough, narrow in places and genuinely exposed, and it is much better done rested and early than at the end of a five-thousand-foot day from the car. The trade is severe and should be weighed honestly: you carry all your water up, you camp on ground with nothing to hide behind, and the pass funnels wind hard enough to make a marginal forecast miserable. Anyone who is not committed to the summit is better off at the lake. Snow holds on the north side of the pass and in the gullies below it long after the trail lower down is clear, and an early-season party will be kicking steps to reach it. In a thunderstorm this is the wrong place to be — the ridge above is the highest ground for some way and there is no descent that is quick. Camp on gravel or bare rock, not on the heather, which is thin and slow to come back.",
+      "water": "NONE, and this is the defining constraint. There is no source at or near the pass. Late-lying snow patches on the north side can be melted early in the season and are gone by August, after which every litre comes up from the lake nearly two and a half miles and two and a half thousand feet below.",
+      "permit": "The pass itself is the boundary — camping in the saddle sits at the very edge of GLACIER PEAK WILDERNESS, and the ridge and summit above are inside it. Where wilderness applies, so does the free self-issue permit from the trailhead box and the twelve-person party limit counting people and stock together. No fires: this is thin subalpine ground with no wood and nothing that recovers from a scar. Northwest Forest Pass at the road.",
+      "capacity": "Small and rough — a couple of tents at most on gravel and heather pockets in the saddle and on the shelves a little below it on the approach side. Nothing established, no flat platform, and no shelter of any kind from wind."
+     }
+    ],
+    "seasonal_guidance": {
+     "optimalWindow": "Mid-July through October — late July/August offers the most reliably snow-free ridge",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Season opens mid-July; early-month ascents can still encounter residual snow on the ridge in heavy-snow years",
+       "status": "good"
+      },
+      "June": {
+       "reason": "Snow typically still covers the upper trail and ridge above Stujack Pass; existing beta explicitly warns of early-season snow turning the exposed traverse dangerous (crumbling/slushy snow over a cliff)",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most reliably dry and stable conditions on the trail and upper scramble ridge",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Early-season snow can return to the exposed ridge and the long trail/road approach gets colder and wetter; this caps the window",
+       "status": "marginal"
+      },
+      "September": {
+       "reason": "Still dry and stable; cooler temps and thinner crowds than midsummer",
+       "status": "optimal"
+      }
+     }
+    },
+    "best_season": "mid-July through October",
+    "approach_variants": [
+     {
+      "name": "Mt. Pugh Trail #644 from FR-2095 to Stujack Pass",
+      "notes": "From Darrington, follow the Mountain Loop Highway south for roughly 12.5 to 14 miles — the accounts differ — to a prominent Mount Pugh sign where FR-2095 branches left. It is narrow, one-lane and unpaved; the signed trailhead is on the right at the second switchback near 1,900 ft. Parking is a handful of cars, and the large pullout at the switchback below is the reliable overflow. Note that FR-2095 is gated 16 October to 1 June for wildlife, on top of any Mountain Loop Highway winter closure. Trail #644 climbs about 1.5 miles through old growth with several stream crossings to Lake Metan near 3,200 ft. That is the LAST RELIABLE WATER on the route — everything above is dry and fully sun-exposed, so tank up there. Above the lake the trail rounds the north side and switchbacks hard up steep forest, breaking into an open boulder basin near 4,900 ft, and tops out at Stujack Pass at 5,700 ft after about 4.5 miles. This is one of the largest elevation gains of any maintained Washington trail that reaches a true summit, and the trail is an old fire-lookout line that is eroding and sloughing in places.",
+      "season": "Roughly mid-Jul-Oct. Before mid-July the permanent snowfield beside the upper ridge is the crux of the day and wants an axe; October is quiet and superb but the daylight runs short for a 5,300 ft climb",
+      "hazards": [
+       "Stray cairns above Stujack Pass that lead to cliff bands and force unplanned Class 4 downclimbing",
+       "A knife-edge crest where the climbing is Class 2-3 and the consequence of a slip is not — two fatal falls are on record on this mountain",
+       "A small permanent snowfield beside the upper ridge that holds hard snow early and late in the day",
+       "An eroding, sloughing old lookout trail, worst on the meadow and talus switchbacks below the pass",
+       "No water above Lake Metan at 1.5 miles, on a fully sun-exposed 5,300 ft climb"
+      ],
+      "baseFinding": "STUJACK PASS IS THE BASE, AND IT IS THE ONE PLACE ON THIS MOUNTAIN YOU CANNOT MISTAKE IN CLOUD: it is where the MAINTAINED TRAIL STOPS. Up to there you have graded tread and switchbacks under your feet; above it you have a rough climbers' path on heather and then blasted ledges on a crest. If you are still walking on built trail, you have not reached the pass. It also marks the Glacier Peak Wilderness boundary.\n\nWHAT HAPPENS IMMEDIATELY ABOVE IT, so you can confirm it from the other side: the path climbs LEFT out of the notch onto heather, contours the EAST side of the ridge, and crosses the head of a small permanent snowfield. Left, then east side, then snow. A path that stays on the crest straight out of the pass is not the route.\n\nTHE NEGATIVE MARKER IS ABOUT CAIRNS, AND IT HAS HURT PEOPLE HERE. Multiple parties warn against following whatever cairn appears next: stray cairns on this mountain lead toward vertical cliff bands that then need unplanned Class 4 downclimbing to escape. Several boot paths braid the upper ridge and they are NOT all equal. Pick the line that keeps the crest or the blasted ledges under you; do not let a rock pile choose for you.\n\nTHE HANDRAIL ABOVE THE PASS IS THE CREST ITSELF — a razorback with drops on both sides, skirting the head of a small glacier. It is only Class 2-3, and the consequence of a slip is out of all proportion to that grade. There is an iron ring on the short chimney section; use it as a handhold, and downclimb that section facing in, because the exposure faces you on the way down and every account says it feels worse descending.\n\nTHE SUMMIT IS NOT THE FLAT GROUND. The plateau at the top has a roughly 10 ft boulder at its edge that has to be scrambled to tag the true high point. Standing on the flat is not standing on the summit."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Afternoon thunderstorms are a noted hazard, so mornings are the safer weather window",
+      "probability": "Afternoon thunderstorms common in the July-August window"
+     },
+     "exposure": "Low-to-moderate fall exposure typical of sustained Class 2 talus/scree; the primary consequence is loose rock underfoot and slips on scree rather than sheer exposure",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer scramble route; no NWAC forecast zone specifically covers this peak, and the July-October season falls outside the avalanche forecast period",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "October": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    },
+    "waypoints": [
+     {
+      "lat": 47.9627,
+      "lng": -120.945,
+      "elev": 2300,
+      "name": "White River / Indian Creek Trailhead",
+      "note": "End of White River Road/FS-6400 past Coles Corner; self-issue wilderness permit and a Northwest Forest Pass are required at the kiosk here.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Leavenworth take US-2 west 15 miles to Coles Corner, turn onto SR-207 (Lake Wenatchee Highway) for 10.5 miles, then follow White River Road/FS-6400 the final 10 miles to its end at the White River Trailhead, also called the Indian Creek Trailhead, at 2,300 ft. A Northwest Forest Pass is required, and there is a self-issue wilderness permit at the kiosk. The Indian Creek Trail leaves from the road end."
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 2350,
+      "name": "White River bridge crossing",
+      "note": "Trail crosses the glacier-fed White River on a footbridge here; the bridge has washed out in past years, forcing hikers to ford instead.",
+      "type": "Junction",
+      "distMi": 0.3
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 3300,
+      "name": "Leave-trail point near Airplane Creek",
+      "note": "Party leaves maintained Indian Creek Trail #1502 here to bushwhack up the Airplane Creek drainage toward Airplane Lake; unflagged and easy to lose route in brush or fog.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4300,
+      "name": "Snow line on Airplane Creek bushwhack",
+      "note": "Snow cover typically begins near 4,000 ft and becomes continuous by about 4,700 ft on this steep, brushy climb; step-kicking needed on firm snow.",
+      "type": "Hazard",
+      "distMi": 3.8
+     },
+     {
+      "lat": 48.002594,
+      "lng": -121.006674,
+      "elev": 5282,
+      "name": "Airplane Lake",
+      "note": "9-acre alpine basin lake and the last reliable water/flat camp before the summit push; roughly a 2,000-ft bushwhack gain from Airplane Creek.",
+      "type": "Campsite",
+      "distMi": 4.5
+     },
+     {
+      "lat": 48.004196,
+      "lng": -121.0183,
+      "elev": 6200,
+      "name": "Base of upper east face",
+      "note": "Three lines diverge here toward the summit — the northeast ridge, a direct ascent of the upper east face, and a connecting gully; choose based on snow coverage.",
+      "type": "Junction",
+      "distMi": 5.2
+     },
+     {
+      "lat": 48.001823,
+      "lng": -121.023293,
+      "elev": 7293,
+      "name": "Mount Saul",
+      "note": "True summit with a short exposed Class 3 rock scramble for the final feet; nearly all parties descend the same ascent line back to the trailhead.",
+      "type": "Summit",
+      "distMi": 6
+     }
+    ],
+    "approach": "Drive to the White River Trailhead (also called the Indian Creek Trailhead) at the end of White River Road/FS-6400: from Leavenworth take US-2 west 15 miles to Coles Corner, turn onto SR-207 (Lake Wenatchee Highway) for 10.5 miles, then continue on White River Road/FS-6400 for a final 10 miles to the trailhead (2,300 ft). Follow the Indian Creek Trail north/west, crossing the White River and Indian Creek bridge, for roughly 4.5-6 miles. Near Airplane Creek, leave the maintained trail and bushwhack/scramble about 2,000 ft up to Airplane Lake (this leg runs 1.5-2 miles); from the lake, continue off-trail to the upper east slopes and summit via one of the three route options. Round trip is roughly 16 miles with about 5,300 ft of gain; a logged first-hand ascent recorded closer to 12 miles and 5,000 ft via a more direct Airplane Creek line, taking about 7.3 hours up and 4.4 hours down. From Airplane Lake, three lines reach the summit: the northeast ridge (working around a hidden, non-obvious cliff band north of the lake), a direct ascent of the clean upper east face slabs, or a looser steep-talus variation. Favoring the drainage about a quarter-mile downstream of Airplane Creek reportedly avoids the worst of the brush on the bushwhack in."
+   }
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.94902,
+      "lng": -121.68729,
+      "elev": 1800,
+      "name": "Olney Creek Road Gate",
+      "note": "Gated logging-road junction on Sultan Basin Road ~11.2-11.5 mi north of Sultan; no formal lot, park on the road shoulder.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From Sultan, follow Sultan Basin Road north about 11.2 to 11.5 miles to the gated junction with Olney Creek Road. Olney Creek Road is closed to public vehicle travel, so that gate is where the drive ends. There is no formal lot — park on the road shoulder at the junction. The day starts on foot from the gate, walking the closed logging road uphill."
+     },
+     {
+      "lat": 47.932818269230765,
+      "lng": -121.6600875,
+      "elev": 3700,
+      "name": "Second Switchback / Climbers' Path",
+      "note": "Closed Olney Creek logging road levels off at the second switchback here; a boot path breaks off to the right and follows the ridge crest toward the summit.",
+      "type": "Junction",
+      "distMi": 2.25
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4050,
+      "name": "Ridge Path Fade-Out",
+      "note": "The climbers' path peters out on the ridge crest around 4,000-4,200 ft; leave it and traverse cross-country southeast toward One Acre Lake.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 47.91294,
+      "lng": -121.6175,
+      "elev": 4200,
+      "name": "One Acre Lake",
+      "note": "Small alpine lake passed on its east side; last reliable water before the dry summit basin, but no confirmed shoreline coordinate found.",
+      "type": "Water",
+      "distMi": 3.7
+     },
+     {
+      "lat": null,
+      "lng": null,
+      "elev": 4500,
+      "name": "Upper Drainage Tarns",
+      "note": "Ascend the drainage above the lake to a cluster of small tarns; flattish ground here works as a rough bivy for an overnight attempt.",
+      "type": "Water",
+      "distMi": 4.5
+     },
+     {
+      "lat": 47.90941576923076,
+      "lng": -121.620795,
+      "elev": 4900,
+      "name": "Summit Basin Gully",
+      "note": "Rocky basin/boulder field below the final ridge; the gully to the summit crest is wet, muddy, easy 4th class and can hold old snow or cornice debris into early summer — many parties carry a rope to rappel it.",
+      "type": "Hazard",
+      "distMi": 5.5
+     },
+     {
+      "lat": 47.902325,
+      "lng": -121.608525,
+      "elev": 5307,
+      "name": "Mount Stickney Summit",
+      "note": "True summit gained via a short, airy walk/scoot across an exposed ridge section past a small plateau to the final rock hump.",
+      "type": "Summit",
+      "distMi": 6.5
+     }
+    ],
+    "approach": "From the gate on Olney Creek Road (the drive-in ends here, at roughly 2,100 ft, since the road has been closed to public vehicle travel), the route starts as a road-walk. Follow the closed logging road uphill for about 2.25 miles, past a first switchback and on to a second switchback where the grade eases around 3,700 ft — this is the key junction. Leave the road here and pick up an unsigned but well-established climbers' path on the right (north) side, which climbs onto and follows a forest ridge crest. The path fades out around 4,050-4,200 ft; from that point, leave any tread and traverse southeast cross-country, aiming for a small pond just northeast of point 4875, then continue southeast to a second minor ridge. Cross open slopes on this ridge into the rocky basin holding One Acre Lake (roughly 6 miles and ~3,000 ft of gain from the road gate/Sultan Basin Road) — this is the last reliable water source and a common camp for parties splitting the trip over two days. From the lake, work up and around toward the base of the prominent summit block, aiming for the bowl directly below it. The final approach pitch is a steep slope/gully leading to the notch just below the summit ridge; expect a mix of dirt, talus, and (in early season) snow, with the gully becoming genuinely difficult — muddy, loose, and exposed — once it melts out in mid-to-late summer. Route-finding through the mid-mountain traverse (road-walk to ridge path to cross-country bench) is the crux of the approach itself and is easy to lose in fog or on a first visit; the mapped road alignment is reportedly inaccurate here, so trust the on-the-ground second-switchback landmark over the map. Winter and spring ascents cross at least one avalanche-prone slope below the summit bowl — one trip report noted watching roughly 20 slides release nearby during a single outing, so avoid this line in or after a storm cycle or during rapid warming.",
+    "approach_logistics": {
+     "peakLat": 47.902325,
+     "peakLng": -121.608525,
+     "trailhead": "Olney Creek Road gate (~2,100 ft)",
+     "trailheadDirection": "From the Olney Creek Road gate"
+    }
+   }
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "before": {
+    "gain_ft": 3600,
+    "approach": "From the PCT North Trailhead at I-90 Exit 52 (~3,000 ft), follow the Pacific Crest Trail north through Commonwealth Basin and up onto the Kendall Ridge switchbacks. At roughly 5.5-5.7 miles you reach the Kendall Katwalk, the exposed rock traverse blasted into the cliff band that most parties use as a progress checkpoint. Continue north past Ridge Lake and Gravel/Alaska Lake — the last reliable water before the high basin and ridge — for another 0.3-2 miles to the base of Bumblebee Pass. A short, steep, unmaintained climbers' path (loose tread, care warranted with a pack) climbs to the 5,400 ft pass, then drops down the north side into the open basin directly below Mount Thomson's south face (this basin doubles as the standard camp for West Ridge parties). From the basin, aim for the steep heather-and-talus slope leading to an obvious notch at about 5,600 ft on the East (ESE) Ridge — loose talus and minor route-finding here are the main approach-specific hazards. From the notch, scramble up and traverse left (mostly Class 2-3) along the ridge crest to the base of the final summit block. Total one-way distance from the trailhead to the summit is roughly 6-7 miles with about 3,600 ft of cumulative gain (the up-and-over at Bumblebee Pass adds extra elevation beyond the net summit height). Expect a long day: parties commonly report 3-5 hours car-to-basin and a full 9-11 hour round trip.",
+    "approach_variants": [
+     {
+      "name": "PCT to Bumblebee Pass, into the south-face basin, then the heather-and-talus slope to the ESE notch",
+      "notes": "From the PCT North trailhead at I-90 exit 52, about 3,000 ft, follow the PCT north through Commonwealth Basin and up the Kendall Ridge switchbacks. At roughly 5.5 to 5.7 miles you cross the Kendall Katwalk, the exposed cut in the cliff band most parties use as a progress checkpoint.\n\nContinue north past Ridge Lake and Gravel Lake, the last reliable water before the high basin, and on to the foot of Bumblebee Pass. A short, steep, unmaintained climbers' path with loose tread climbs to the 5,400 ft pass, then drops down the north side into the open basin directly below Mount Thomson's south face — the same basin West Ridge parties camp in.\n\nRoughly six to seven miles one way with about 3,600 ft of cumulative gain, since the up-and-over at Bumblebee adds height beyond the net summit gain. Three to five hours car to basin, nine to eleven hours round trip is typical.",
+      "distMi": 6.5,
+      "gainFt": 3600,
+      "season": "July to September",
+      "hazards": [
+       "The Kendall Katwalk when icy or windy",
+       "Loose tread on the unmaintained Bumblebee Pass path, awkward with a pack",
+       "Loose talus and minor route-finding on the slope to the notch",
+       "A short but exposed class 4 step at the summit, downclimbed or rappelled on the way back",
+       "A long day with an up-and-over on the return"
+      ],
+      "baseFinding": "FROM THE BASIN, LOOK FOR THE STEEP HEATHER-AND-TALUS SLOPE THAT LEADS TO AN OBVIOUS NOTCH AT ABOUT 5,600 FT ON THE EAST-SOUTHEAST RIDGE. Heather and talus rather than clean rock is the signal you are on the correct slope; the West Ridge side is scree and gendarmes.\n\nTHE ALTITUDE IS THE DISCRIMINATOR BETWEEN THE PEAK'S TWO ROUTES, AND IT IS WORTH SETTING YOUR ALTIMETER FOR: this notch is at about 5,600 ft on the ESE side. The West Ridge notch is at about 5,960 ft on the other end of the mountain. Roughly 360 ft and a full traverse of the peak separate them.\n\nWHAT FOLLOWS CONFIRMS IT: from the notch, scramble up and TRAVERSE LEFT along the ridge crest on mostly class 2-3 ground to the base of the final summit block. Easy scrambling with a leftward traverse is right for this route. Chimneys and fifth-class corners are the West Ridge.\n\nAND THE ROUTE ENDS AT ONE SPECIFIC OBSTACLE, WHICH IS THE BEST CONFIRMATION OF ALL: a short, exposed 20 ft CLASS 4 STEP guarding the true summit. Most parties protect it with a rope or a handline. If you reached a summit without meeting that step, you are on a false one.\n\nUSEFUL CONTEXT: this is the easiest way up the peak and it is also the standard descent for West Ridge parties, so a party coming down at you is normal rather than a sign of a mistake."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed July-September once the basin and gullies are snow-free; a 35m rope is enough for the East Ridge rappels. A free self-issue wilderness permit is filled out at the trailhead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Most parties do this as one long day: PCT approach over Bumblebee Pass into the basin, contour to the West Ridge notch (~5,960 ft), then five pitches of low 5th class (crux a 5.6 bulge on pitch 2) to the summit. The descent is Class 3 downclimbing on the East Ridge broken up by one to three rope-length rappels back to the south-face basin — followed by the same PCT approach in reverse.",
+       "hours": 11,
+       "miles": 16.5,
+       "title": "Car-to-car: West Ridge up, East Ridge down",
+       "gainFt": 3600,
+       "lossFt": 3600,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave Snoqualmie Pass / PCT North trailhead",
+         "detail": "Alpine start; full day is 16-17 mi with technical climbing in the middle."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Pass Kendall Katwalk",
+         "detail": "~2.25 hr benchmark from several trip reports."
+        },
+        {
+         "time": "~6:45 AM",
+         "label": "Bumblebee Pass (5,400 ft), drop into the basin",
+         "detail": ""
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Rope up at the West Ridge notch (5,960 ft)",
+         "detail": "~4 hr / 8.5 mi one-way from the car; first pitch starts just left of the notch."
+        },
+        {
+         "time": "~12:00 PM",
+         "label": "Top out after 5 pitches of low 5th class",
+         "detail": "The summit is typically reached around midday to early afternoon depending on party speed."
+        },
+        {
+         "time": "~5:00-6:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Down the East Ridge (Class 3 + 1-3 rappels) then reverse the PCT approach; 10-12 hr car-to-car is typical."
+        }
+       ],
+       "objective": "Climb the 5-pitch West Ridge (5.6) to Mount Thomson's summit and descend via the East Ridge"
+      }
+     ],
+     "totalNote": "A long single day for most parties: ~10-12 hrs car-to-car, ~16-17 miles, ~3,600 ft gain/loss, 5 pitches of low 5th class (5.6 crux) up and the Class 3 + rappel descent down."
+    },
+    "approach_variants": [
+     {
+      "name": "PCT to Bumblebee Pass, into the basin, then the lowest notch on the west ridge",
+      "notes": "Park at the PCT North / Commonwealth Basin trailhead at Snoqualmie Pass, about 3,000 ft: cross under I-90, take the first right, lot on the right. Follow the PCT northbound through timber on long switchbacks for roughly 5.5 to 6 miles to the Kendall Katwalk at about 5,400 ft, a narrow ledge blasted into the rock of Kendall Peak's south side — solid underfoot, very exposed, and worth care if icy or windy.\n\nContinue north about a mile past the Katwalk, dropping slightly, to Ridge Lake at about 5,260 ft, the last reliable water and a common camp; roughly two to two and a half hours and about seven miles from the car.\n\nAbout 0.4 to 0.5 mile past Ridge Lake, watch for an unsigned but obvious climbers' boot path branching LEFT (west) off the PCT. It climbs a steep 200 ft to Bumblebee Pass at about 5,400 ft, above Alaska Lake. Drop off the far side into Bumblebee Basin, then contour and climb northwest across talus and scree toward the ridge.\n\nAbout 8 to 8.5 miles and 2,900 to 3,000 ft to the base, typically four to five hours for a fit party.",
+      "distMi": 8.25,
+      "gainFt": 5200,
+      "season": "July to September",
+      "hazards": [
+       "The Kendall Katwalk, exposed and dangerous when icy or windy",
+       "Loose and eroded tread on both sides of the Bumblebee Pass boot path",
+       "Talus and scree in the basin below the ridge",
+       "A descent by the East Ridge, meaning a route-finding descent on unfamiliar ground at the end of a long day",
+       "A long day: many parties climb it car to car"
+      ],
+      "baseFinding": "AIM FOR THE LOWEST POINT IN THE RIDGE, AND KNOW IN ADVANCE THAT IT IS FURTHER LEFT THAN IT LOOKS. From Bumblebee Basin, scrambling up scree, the beginning of the ridge that you can see from below is NOT where you want to be. The notch you want is LEFT of it, at the ridge's lowest point, around 5,960 ft. That single correction is the most useful thing on this approach, because the eye pulls you right every time.\n\nTHE NOTCH IS SMALL, AND ITS SIZE IS THE CONFIRMATION: it holds about three people at most. If you have topped out on a broad, comfortable saddle, you are not at the start of the West Ridge.\n\nEXPECT SHORT FOURTH-CLASS SCRAMBLING AROUND GENDARMES to reach it. Once you top out on the ridge you scramble over a small gendarme, traversing rightward toward the crest, to gain the notch itself.\n\nTHE FIRST MOVE SETTLES IT ABSOLUTELY: pitch one begins with a STEP LEFT INTO A WELL-FEATURED CHIMNEY. That step-left-into-a-chimney is the signature of this route and is probably the crux of the whole climb. If your first pitch is a face or a slab, you are not in the right notch. The first two leads run up a series of chimneys in solid rock.\n\nAND THE OTHER ROUTE ON THIS PEAK IS ON THE OPPOSITE SIDE: the East Ridge is class 3-4 and is gained from a notch at about 5,600 ft on the ESE side, from the same basin. If you are on easy scrambling ground the whole way, you are on the East Ridge and you have circled to the wrong end of the mountain."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.4277,
+      "lng": -121.4136,
+      "elev": 3000,
+      "name": "PCT North Trailhead, Snoqualmie Pass (I-90 Exit 52)",
+      "note": "Large paved lot just north of I-90 exit 52; $5 self-issue Northwest Forest Pass fee, then north on the PCT into Alpine Lakes Wilderness.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Take I-90 to Exit 52 at Snoqualmie Pass. Cross under the freeway and take the first right; the PCT North (Commonwealth Basin) trailhead lot is a large paved lot on the right, at about 3,000 feet. Self-issue a Northwest Forest Pass ($5) at the trailhead before heading north on the Pacific Crest Trail into the Alpine Lakes Wilderness."
+     },
+     {
+      "lat": 47.4517,
+      "lng": -121.3786,
+      "elev": 5387,
+      "name": "Kendall Katwalk",
+      "note": "150-yard path blasted into a steep granite cliff face on Kendall Peak's north ridge; narrow and exposed, can hold snow/ice into early July.",
+      "type": "Hazard",
+      "distMi": null
+     },
+     {
+      "lat": 47.46498,
+      "lng": -121.36914,
+      "elev": 5123,
+      "name": "Gravel Lake",
+      "note": "Reliable water at the lake outlet; established sites only, no fires permitted above 4,000 ft in this basin.",
+      "type": "Water",
+      "distMi": 7.4
+     },
+     {
+      "lat": 47.46136,
+      "lng": -121.36717,
+      "elev": 5195,
+      "name": "Ridge Lake",
+      "note": "Established PCT campsites on the far shore and on the slope down to Gravel Lake; last easy camp before the Bumblebee Pass turnoff, 0.4 mi ahead.",
+      "type": "Campsite",
+      "distMi": 7.6
+     },
+     {
+      "lat": 47.470063,
+      "lng": -121.3728,
+      "elev": 5400,
+      "name": "Bumblebee Pass",
+      "note": "Leave the PCT here on a steep, poorly-marked climber's path up a short gully; easy to walk past in fog or low light.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 47.470585,
+      "lng": -121.37001,
+      "elev": 5300,
+      "name": "Bumblebee Basin",
+      "note": "Small scenic basin on the far side of the pass, standard bivy for the climb; only intermittent tarns for water, check conditions before relying on them.",
+      "type": "Campsite",
+      "distMi": 8.3
+     },
+     {
+      "lat": 47.471801,
+      "lng": -121.363501,
+      "elev": 6200,
+      "name": "Crux 5.6 Bulge (Pitch 3)",
+      "note": "Pull over the route's technical crux here on otherwise solid rock; rope up for pitches 1-4 before easing off into the Class 3-4 traverse.",
+      "type": "Hazard",
+      "distMi": 9
+     },
+     {
+      "lat": 47.472301,
+      "lng": -121.360643,
+      "elev": 6554,
+      "name": "Mount Thomson",
+      "note": "True summit gained via a final scramble over ledges and cracks (P6); descend the East Ridge with one to three rappels from established stations.",
+      "type": "Summit",
+      "distMi": 9.3
+     }
+    ],
+    "pro_tips": [
+     "Start very early — the long approach plus a multi-pitch ridge climb plus descent makes for a full day; many parties instead camp in Bumblebee Basin and split it over two days.",
+     "Rock is generally sound andesite but has loose, dirty sections, especially in the lower chimneys — test holds and manage rope drag on wandering pitches.",
+     "Many parties combine the West Ridge ascent with the East Ridge descent for a natural loop rather than reversing the West Ridge.",
+     "Watch the weather: afternoon thunderstorms are common in August in this part of the Central Cascades.",
+     "A commonly reported six-pitch breakdown: P1-2 climb chimney systems; P3 is the crux, a 5.6 bulge; P4 a 5.4 face with real exposure; P5 a Class 3-4 traverse across a large slab; P6 ledges and cracks to the summit — though many parties link it into just 4-5 pitches."
+    ]
+   }
+  }
+ ]
+}
