@@ -1,0 +1,1029 @@
+{
+ "file": "r182.json",
+ "results": [
+  {
+   "id": "wa_liberty_bell_freedom_rider",
+   "fact": "Whether Medusa's Roof (P12) is a crux",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "P12 (Medusa's Roof, 5.8+) is exposed but secure; the route's crux is P3a/P3b.",
+   "evidence": "The route's pitch_detail (P12 5.8+, 'well within the grade'), beta and watch_out (crux at P3a 5.10d) all agree; the external route description grades P12 5.8+ and calls it exposed but absurdly secure climbing around a chockstone. Only the hazard line called it a technical crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/109496572/freedom-rider"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "a notable technical/psychological crux late in a long day",
+     "replace": "an exposed but secure pitch late in a long day",
+     "id": "wa_liberty_bell_freedom_rider",
+     "fact": "Whether Medusa's Roof (P12) is a crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Two options: finish up Thin Red Line's upper pitches to the summit and take the standard Liberty Bell (Beckey-side) descent, or stop at M&M Ledge and rappel Thin Red Line's line (four double-rope rappels off bolts) to the East Face base.",
+   "evidence": "The route description gives 11 pitches with P9-P11 following Thin Red Line to a summit topout, so the summit/Beckey-side descent in the itinerary and descent column is valid. Thin Red Line's own description gives the M&M Ledge option: work climber's left to good bolts and make four double-rope rappels to the ground (the first rap may be from a fixed pin and wire). The displayed descent_text wrongly merged the two into one ('finishing up ... and descending via ... from M&M Ledge').",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "https://www.mountainproject.com/route/108257819/thin-red-line"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "In practice this means finishing up Thin Red Line's upper pitches and descending via Thin Red Line's rap line: from M&M Ledge, rappel",
+     "replace": "Parties who finish on the summit descend by the standard Liberty Bell rappels and downclimb on the west side. Parties who stop at M&M Ledge can instead take Thin Red Line's rap line: from M&M Ledge, rappel",
+     "id": "wa_live_free_or_die",
+     "fact": "Descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "No natural or v-thread anchors are involved — all stations on this exit are bolted.",
+     "replace": "No natural or v-thread anchors are involved — every station after the first is bolted.",
+     "id": "wa_live_free_or_die",
+     "fact": "Descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "DESCENT, WHICH IS THIN RED LINE'S: from M&M Ledge, rappel",
+     "replace": "DESCENT FROM M&M LEDGE, FOR PARTIES WHO DO NOT TOP OUT, IS THIN RED LINE'S: from the ledge, rappel",
+     "id": "wa_live_free_or_die",
+     "fact": "Descent line"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "All stations on that exit are bolted; no natural or v-thread anchors are involved.",
+     "replace": "Every station after the first is bolted; no natural or v-thread anchors are involved. Parties who finish on the summit take the standard Liberty Bell descent on the west side instead.",
+     "id": "wa_live_free_or_die",
+     "fact": "Descent line"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Pitch count and where the route ends",
+   "verdict": "fixed",
+   "correct_value": "11 pitches to the summit (8 new pitches to M&M Ledge, then 3 up Thin Red Line).",
+   "evidence": "The route description lists 11 pitches, P9-P11 following Thin Red Line to the summit; the first-ascent report describes eight new pitches to M&M Ledge with the final pitches to the summit shared with other routes. The itinerary's '8-pitch' counts only the pitches to M&M Ledge.",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "An 8-pitch multi-pitch line on Liberty Bell",
+     "replace": "An 11-pitch multi-pitch line on Liberty Bell",
+     "id": "wa_live_free_or_die",
+     "fact": "Pitch count and where the route ends"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Climb the 8-pitch line to the summit area",
+     "replace": "Climb the 11-pitch line to the summit",
+     "id": "wa_live_free_or_die",
+     "fact": "Pitch count and where the route ends"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "An 8-pitch multi-pitch line on Liberty Bell",
+     "replace": "An 11-pitch multi-pitch line on Liberty Bell",
+     "id": "wa_live_free_or_die",
+     "fact": "Pitch count and where the route ends"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Rope for the descent",
+   "verdict": "fixed",
+   "correct_value": "A single 70 m rope is the listed rope for the climb and the summit (west-side) descent; two ropes are needed only to rappel Thin Red Line's line from M&M Ledge.",
+   "evidence": "The route's own gear list specifies a 70 m rope and the route tops out on the summit, whose standard descent does not need two ropes. Thin Red Line's rap line from M&M Ledge is four double-rope rappels. The hazard 'Two ropes needed for the descent' is true only for the M&M Ledge option; now scoped to it (descent_text rewritten under 'Descent line').",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "https://www.mountainproject.com/route/105797867/beckey-route-sw-face"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      3
+     ],
+     "find": "Two ropes needed for the descent",
+     "replace": "Two ropes needed to rappel from M&M Ledge",
+     "id": "wa_live_free_or_die",
+     "fact": "Rope for the descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Crux pitch grade",
+   "verdict": "fixed",
+   "correct_value": "P4 crux is 5.12 (V5 boulder move, about 5.12b for shorter climbers).",
+   "evidence": "The first-ascensionist gives pitch 4 as about 5.12a-b ('5.12b for taller folks' is not easier for short climbers); the first-ascent report describes the bouldery bits as 5.12-range with the crux a thin traverse ending in a downclimb. Hazards and pitch_detail already say 5.12/5.12b; beta's '5.11' reflected a 5.11-plus-V5 notation.",
+   "sources": [
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "https://www.mountainproject.com/route/113615727/live-free-or-die"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "P4 (5.11, V5 crux)",
+     "replace": "P4 (5.12, V5 crux)",
+     "id": "wa_live_free_or_die",
+     "fact": "Crux pitch grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Route treated as a boulder problem",
+   "verdict": "fixed",
+   "correct_value": "A 11-pitch bolted/trad face and crack route with short bouldery cruxes, not bouldering terrain.",
+   "evidence": "Both the route description and the first-ascent report describe a 1,200 ft, multi-pitch route of mostly 5.10-5.11 face climbing with a few short bouldery sections; lower pitches are well bolted. watch_out's 'boulder problem terrain' and 'bouldering sections' lines were outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die",
+    "http://blakeclimbs.blogspot.com/2017/11/live-free-or-die-on-liberty-bell.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Boulder problem grade terrain - V5+ requires high technical difficulty and commitment\nLimited protection on bouldering sections; serious consequences for falls",
+     "replace": "Short, height-dependent bouldery cruxes (to about V5) within long multi-pitch face climbing\nThe pitch 4 crux traverse ends in a downclimb with real fall potential",
+     "id": "wa_live_free_or_die",
+     "fact": "Route treated as a boulder problem"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [],
+     "find": "Weather exposure on exposed bouldering terrain creates instability risk",
+     "replace": "Weather exposure on a long east-face day with no quick escape above the lower pitches",
+     "id": "wa_live_free_or_die",
+     "fact": "Route treated as a boulder problem"
+    }
+   ]
+  },
+  {
+   "id": "wa_live_free_or_die",
+   "fact": "Total gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No outside source states a car-to-car gain for this route. From the hairpin pullout (row gives about 5,100-5,200 ft) to the 7,720 ft summit is roughly 2,500-2,600 ft, which sits between the two stored figures, and a party that rappels from M&M Ledge gains less. Not settled; no patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/113615727/live-free-or-die",
+    "http://publications.americanalpineclub.org/articles/13201214486/Liberty-Bell-Live-Free-or-Die"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Extent of the variation",
+   "verdict": "fixed",
+   "correct_value": "A one-pitch variation to P3 of the Northwest Face (5.7 crack into a 5.10 flared groove past two bolts); P4-5 are the standard route.",
+   "evidence": "Both route descriptions call it a variation to the third pitch of the NW Face: instead of the 5.8+ flakes to the right, climb the crack straight above the belay into a flared 5.10 groove past two bolts to the same ledge. The overview's 'upper half of the face ... in place of the standard route's easier finish' was the outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/112059390/nw-face-var-remsberg-variation",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Liberty-Bell-Remsberg-Variation",
+    "https://climberkyle.com/2019/08/03/liberty-bell-nw-face-5-9/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Adds flaring 5.10d crack climbing through the upper half of the face in place of the standard route's easier finish.",
+     "replace": "Replaces the standard route's third pitch with a direct crack and a flared 5.10d groove past two bolts, then rejoins the standard line for the last two pitches.",
+     "id": "wa_nw_face_var_remsberg_variation",
+     "fact": "Extent of the variation"
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Rappel count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The standard Liberty Bell descent genuinely comes in two versions: downclimbing to the first bolted station gives two single-rope 60 m rappels, while starting from the tree anchor gives three single-rope rappels (or two with a double-rope final rap). The displayed DESCENT (descent_text) and RAPPELS ('3') describe the tree-anchor version consistently; the shorter 'descent' column (hidden on screen) describes the downclimb version. Both are real options.",
+   "sources": [
+    "https://www.mountainproject.com/route/105797867/beckey-route-sw-face",
+    "https://rocknropenw.com/2024/06/13/liberty-bell-beckey-route/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Blue Lake Trailhead distance from Washington Pass",
+   "verdict": "fixed",
+   "correct_value": "About 1 mile west of Washington Pass.",
+   "evidence": "The trail description puts the trailhead 'a little under a mile' past the Washington Pass Overlook heading west; a Washington Pass climbing guide says the Blue Lake Trailhead is 'yet another mile west' of the overlook road. No source supports 1.5 miles (that figure matches the trail distance to the meadow). One source puts it 0.25 mi beyond the overlook and was not adopted.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/blue-lake",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/blue-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "~1.5 miles west of Washington Pass",
+     "replace": "~1 mile west of Washington Pass",
+     "id": "wa_nw_face_var_remsberg_variation",
+     "fact": "Blue Lake Trailhead distance from Washington Pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_nw_face_var_remsberg_variation",
+   "fact": "Blue Lake Trailhead elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Row's own trailhead waypoint says 5,200 ft while approach_logistics.trailheadDirection (and the bivy entry) says 5,400 ft. Outside figures seen: 5,200 ft (a hiking summary) and 5,300 ft (a climbing trip report); no two agreeing topo-derived sources found. No patch.",
+   "sources": [
+    "https://rocknropenw.com/2024/06/13/liberty-bell-beckey-route/",
+    "https://www.wta.org/go-hiking/hikes/blue-lake"
+   ],
+   "discovered": true,
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Difficulty of the route",
+   "verdict": "fixed",
+   "correct_value": "Grade II, 5.8: two sustained 5.7-5.8 finger-crack/lieback pitches plus scrambling.",
+   "evidence": "Two independent route descriptions give Overexposure as two pitches of high-quality 5.8 finger cracks and laybacking, sustained in the 5.7-5.8 range; it is also the common rappel line and gets busy. Partner requirements' 5.10-5.11 and crowds' 'hard test-piece' were outliers.",
+   "sources": [
+    "https://www.ncmountainguides.com/routes/climbing/liberty-bell-overexposure",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Liberty-Bell-Over-Exposure"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      0
+     ],
+     "find": "5.10-5.11 sustained face/crack leading",
+     "replace": "solid 5.8 finger-crack and lieback leading",
+     "id": "wa_liberty_bell_overexposure",
+     "fact": "Difficulty of the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Strong 5.10-5.11 free climber comfortable with high exposure on a short but sustained route",
+     "replace": "Solid 5.8 trad leader comfortable with high exposure on a short but sustained route",
+     "id": "wa_liberty_bell_overexposure",
+     "fact": "Difficulty of the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "A short, hard test-piece that draws only strong free climbers looking for a quick, exposed outing",
+     "replace": "A short, exposed 5.8 that draws parties looking for a quick outing",
+     "id": "wa_liberty_bell_overexposure",
+     "fact": "Difficulty of the route"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "An aptly named, exposed hard free climb",
+     "replace": "An aptly named, exposed moderate free climb",
+     "id": "wa_liberty_bell_overexposure",
+     "fact": "Difficulty of the route"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Pitch count",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The row counts 4 pitches (2 roped 5.8 pitches plus 2 scrambling pitches to the summit, as pitch_detail shows); the '2-pitch' wording refers only to the technical pitches, which is what outside descriptions also call the route. Clearly labelled, not incompatible.",
+   "sources": [
+    "https://www.ncmountainguides.com/routes/climbing/liberty-bell-overexposure"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_overexposure",
+   "fact": "Commitment grade vs alpine grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Grade II, 5.8 is supported by outside descriptions, but no source gives an alpine (IFAS-style) letter grade for this route, so there is nothing to set alpine_grade to; clearing or changing 'D' would be a guess. No patch.",
+   "sources": [
+    "https://www.ncmountainguides.com/routes/climbing/liberty-bell-overexposure",
+    "http://www.supertopo.com/rock-climbing/Washington-Pass-Liberty-Bell-Over-Exposure"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Descent line",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The route description offers two ropes 'if rapping route' and the descent column gives scramble-to-summit or rappel the route, so the itinerary's Beckey-side descent (after topping out) and a rappel descent are both legitimate options. What is not confirmed by any source is that this route's rappel line is Thin Red Line's M&M Ledge exit (the specific pin/wire + four bolted raps in descent_text/rappel_detail). The false premise ('joins Thin Red Line for its upper pitches') is fixed under 'Upper pitches'; the exact rappel line stays open.",
+   "sources": [
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+    "http://publications.americanalpineclub.org/articles/13201214121/Liberty-Bell-A-Slave-to-Liberty"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Upper pitches: new pitches or Thin Red Line's",
+   "verdict": "fixed",
+   "correct_value": "The route joins Thin Red Line only just below its third-pitch anchor, then climbs eight new pitches of its own (P4-P11).",
+   "evidence": "The first-ascent report states it climbs Freedom or Death's first three pitches, steps right to join Thin Red Line just before its third-pitch anchor, then eight new pitches (four at 5.12) with the 5.13 crux slab on P8. The route description agrees the pitches after joining go up and right on new ground rather than following Thin Red Line.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214121/Liberty-Bell-A-Slave-to-Liberty",
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "then steps right to join Thin Red Line for its upper pitches. Descent therefore follows Thin Red Line's exit:",
+     "replace": "then steps right onto Thin Red Line just below its third-pitch anchor and continues up eight new pitches of its own. From the top, either scramble to the summit roped and take the standard Liberty Bell descent, or rappel with two ropes; the rappel line given here is Thin Red Line's exit:",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "Upper pitches: new pitches or Thin Red Line's"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "then steps right to join Thin Red Line for its upper pitches.",
+     "replace": "then steps right onto Thin Red Line just below its third-pitch anchor before eight new pitches of its own.",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "Upper pitches: new pitches or Thin Red Line's"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "where the route joins Thin Red Line's upper pitches and descent.",
+     "replace": "where the rappel joins Thin Red Line's descent.",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "Upper pitches: new pitches or Thin Red Line's"
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "First-ascent style",
+   "verdict": "fixed",
+   "correct_value": "Belayed free ascent: Mikey Schaefer led every pitch in one day on August 6, 2016, with Shanjean Lee belaying; the rope-soloing was during the earlier equipping (to the base of the crux pitch).",
+   "evidence": "The first-ascent report says he rope-soloed to the base of the crux pitch in 2015, returned in July 2016 to finish the upper pitches, then made a one-day free ascent on August 6 leading every pitch with Shanjean Lee's support. The route description quotes him: Shanjean came up to give him a belay on the redpoint attempt. So the FA itself was not rope-solo.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214121/Liberty-Bell-A-Slave-to-Liberty",
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      0
+     ],
+     "find": "Mikey Schaefer rope-soloed the FA specifically to make it more challenging",
+     "replace": "Mikey Schaefer equipped much of the line rope-solo before leading every pitch free in a single day",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "First-ascent style"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "This route was established rope-solo in August 2016",
+     "replace": "This route was equipped largely rope-solo and first freed in August 2016",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "First-ascent style"
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Total day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The first-ascent account says pitch 11 was finished almost exactly 11 hours after starting to climb (not car to car), which supports the schedule's '~11 hrs on route' and makes 11.5 hrs car-to-car (timing.totalHrs, itinerary hours, totalNote, and hazards[1]'s 'car-to-car') look too short. But no source gives a car-to-car figure for this route, so the replacement total cannot be settled with two sources. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Repeat ascents",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found documenting an Alex Honnold repeat (the route description and the first-ascent report do not mention one), and none confirming that no repeats exist. Cannot settle. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty",
+    "http://publications.americanalpineclub.org/articles/13201214121/Liberty-Bell-A-Slave-to-Liberty"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Cams #1-#3: singles or doubles",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Single set #1 to #3 (doubles only from #0 C3 to #.75).",
+   "evidence": "detailed_rack, rack and sling_rack all say a single set of #1-#3; the route description's gear list reads '2x #0 C3 to #.75 / 1x #1 to #3'. gear[1] was the only outlier.",
+   "sources": [
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gear",
+     "path": [
+      1
+     ],
+     "expect": "two sets #1 to #3",
+     "value": "one set #1 to #3",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "Cams #1-#3: singles or doubles"
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Crux pitch",
+   "verdict": "fixed",
+   "correct_value": "The crux is P8 (5.13- slab); P5 is 5.12-.",
+   "evidence": "The first-ascent report puts the crux 5.13 slab on pitch 8; the route description grades P8 5.13- as the hard slab pitch. Beta's 'P5, 5.12- crux' mislabelled P5.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214121/Liberty-Bell-A-Slave-to-Liberty",
+    "https://www.mountainproject.com/route/112083555/a-servant-to-liberty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "(P5, 5.12- crux)",
+     "replace": "(P5, 5.12-)",
+     "id": "wa_a_servant_to_liberty",
+     "fact": "Crux pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_a_servant_to_liberty",
+   "fact": "Parking pass at the hairpin pullout",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "One Washington Pass overview states no Northwest Forest Pass is needed at the east-side hairpin pullout, but it was only seen via a search summary; a second guide describes the hairpin parking without mentioning a pass, and no official source was found. The fee/overnight lines are generic Forest Pass statements. Not settled with two sources. No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Trailhead and approach side",
+   "verdict": "fixed",
+   "correct_value": "East Face approach from the SR-20 hairpin/pond pullout east of Washington Pass, about 45 min-1 hr to the base.",
+   "evidence": "Washington Pass guides describe the east-side routes as approached from a pullout by the pond at the hairpin east of the pass, with the Blue Lake Trailhead serving the west faces; a Thin Red Line trip report parks at the east-side pullout by the pond and gives about 45 minutes car to base. The route's own approach, approach_logistics, approach_variants and rappel line (which lands at the East Face base) agree. Patched the prose that routed the party from Blue Lake; waypoints 1-3 (Blue Lake Trail water, junction, west-face bench) remain wrong for this route but have no researched east-side replacement, so they are left and flagged separately.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+     "replace": "Roadside pullout on the north side of SR-20 at the hairpin turn east of Washington Pass, beside a small pond; the East Face climbers' path starts here.",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Approach from Blue Lake TH to the base",
+     "replace": "Approach from the hairpin pullout to the East Face base",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "Approach from Blue Lake TH to the base",
+     "replace": "Approach from the hairpin pullout to the East Face base",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "find": "WA-20 (North Cascades Highway) to Blue Lake Trailhead",
+     "replace": "WA-20 (North Cascades Highway) to the hairpin pullout east of Washington Pass",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "to the Blue Lake Trailhead near Washington Pass.",
+     "replace": "to the hairpin turn just east of Washington Pass.",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "Blue Lake Trailhead approach to the west face",
+     "replace": "East Face approach from the SR-20 hairpin pullout",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Roughly 1.5-2 hours from the Blue Lake Trailhead",
+     "replace": "Roughly 45 minutes to 1 hour from the SR-20 hairpin pullout",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Trailhead and approach side"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "West-side approach waypoints on an East Face route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "waypoints[1] 'Stream crossing near meadow', [2] 'Climbers' path junction' (leave the Blue Lake Trail toward the west side) and [3] 'West face base / sloping bench' describe the Blue Lake approach to the west face, not this route's East Face approach. No researched east-side equivalents (names, elevations, distances) were found to replace them, and deleting waypoints is out of scope. Left for the waypoint clean-up.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "discovered": true,
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Which face the route climbs",
+   "verdict": "fixed",
+   "correct_value": "East Face.",
+   "evidence": "Both route descriptions place Thin Red Line on the East Face of Liberty Bell, right of Liberty Crack. The two hazard texts saying 'west face' were outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "high exposure on the west face",
+     "replace": "high exposure on the East Face",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Which face the route climbs"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "high exposure on the west face",
+     "replace": "high exposure on the East Face",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Which face the route climbs"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Crux pitch",
+   "verdict": "fixed",
+   "correct_value": "The crux pitches are 5 and 6 (5.12 / 5.12c); pitch 9 is 5.9.",
+   "evidence": "One description names P5 (5.12 traverse), P6 (5.12 bouldery roof) and P8 (5.11) as the cruxes; a trip report gives P5 and P6 as the hardest pitches. The row's pitch_detail marks P6 (5.12c) as the crux and grades P9 5.9. The itinerary's 'crux by pitch 9' was wrong.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "(5.10-5.12, crux by pitch 9)",
+     "replace": "(5.10-5.12, cruxes on pitches 5 and 6)",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Crux pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "(5.10-5.12, crux by pitch 9)",
+     "replace": "(5.10-5.12, cruxes on pitches 5 and 6)",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Crux pitch"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Free-climb Thin Red Line to the crux at pitch 9",
+     "replace": "Free-climb Thin Red Line through the pitch 5-6 cruxes",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Crux pitch"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Descent recommendation",
+   "verdict": "fixed",
+   "correct_value": "Two options: most parties rappel from M&M Ledge (work left to bolts, four double-rope rappels to the East Face base); parties who top out use the standard Beckey Route descent on the west side.",
+   "evidence": "The route description gives the M&M Ledge option (work climber's left to good bolts, four double-rope raps to the ground) and the alternative of continuing to the summit. The summit waypoint's 'not back down the route' contradicted this.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "; descend via the standard Beckey Route rappels/downclimb into the gully, not back down the route.",
+     "replace": "; from the summit descend via the standard Beckey Route rappels/downclimb into the gully (most parties instead rappel the East Face from M&M Ledge without topping out).",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Descent recommendation"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Gain and distance in the header",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The itinerary's 5 miles/2,400 ft (and loss_ft) were built on the Blue Lake approach, which is wrong for this route; the header's 1.0 mi one-way matches the East Face approach ('about a mile' from the pond). But no outside source gives a car-to-car gain for the hairpin approach plus 11 pitches (the summit is 7,720 ft, the pullout roughly 5,100-5,200 ft), and loss_ft may only change on a stated car-to-car figure. No patch.",
+   "sources": [
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Commitment grade",
+   "verdict": "fixed",
+   "correct_value": "Grade IV (the free route; the original aid ascent was harder/longer).",
+   "evidence": "The route description grades Thin Red Line IV, and a climbing film of the route is titled '5.12, Grade IV'; the row's grade, commitment and beta also say IV. (One 2009 second-free-ascent blog title used V.) The 'Grade V' mentions in the summit waypoint and crowds were outliers.",
+   "sources": [
+    "https://www.mountainproject.com/route/108257819/thin-red-line",
+    "https://www.youtube.com/watch?v=18lnAEhykAA",
+    "http://jensholsten.blogspot.com/2009/09/thin-red-line-v-512c-2nd-free-ascent.html"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      5,
+      "note"
+     ],
+     "find": "Grade V outing tops out",
+     "replace": "Grade IV outing tops out",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Commitment grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "estimatePerSeason"
+     ],
+     "find": "A serious grade V test-piece",
+     "replace": "A serious grade IV test-piece",
+     "id": "wa_liberty_bell_thin_red_line",
+     "fact": "Commitment grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "fact": "Total day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule (leave 4:30-5:00 AM, back 4:30-6:00 PM = 11.5-13.5 hrs) disagrees with timing.totalHrs 10.5 and the 10-11 hr totalNote; no outside source gives a car-to-car time for this route (a trip report gives only ~45 min car to base). No patch.",
+   "sources": [
+    "http://thebigwidewest.blogspot.com/2011/09/thin-red-line.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "fact": "Beta describes a different route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. The beta (10 pitches, offwidth crux past a 2x4) matches Lexington Tower's East Face; replacing it would mean writing beta for a route that may not exist. Flag the row for an identity review. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/105797864/liberty-bell",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/",
+    "https://www.theoutbound.com/washington/rock-climbing/climb-to-the-summit-of-liberty-bell-via-the-beckey-route-5-6"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "fact": "Trailhead and approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. Which approach is right depends on which route this row really is (East Face lines use the hairpin pullout; the Beckey-like 4-pitch 5.6 uses Blue Lake). No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+    "https://stephabegg.com/trip-reports/washington/washington-pass/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_liberty_bell_east_face",
+   "fact": "Popularity",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Outside descriptions of Liberty Bell's East Face list only hard lines (Liberty Crack, Thin Red Line, Freedom Rider etc., 5.10-5.13); the Grade II 5.6 four-pitch line on Liberty Bell is the Beckey Route on the southwest side. The row's own corrections note says its original facts were copied from Lexington Tower's East Face. No source documents a 4-pitch 5.6 'East Face' route on Liberty Bell, so the row's identity is in doubt and no field can be researched against it. Popularity cannot be researched for an unidentified route. No patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/105797864/liberty-bell"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "fact": "Crux grade",
+   "verdict": "fixed",
+   "correct_value": "5.13+, crux pitch 4 with a V9/V10 boulder problem.",
+   "evidence": "The first-ascent report and the route description both give IV 5.13+, 10 pitches, with pitch 4 (5.13+) holding a V9/V10 boulder problem. The itinerary's '5.13d' and '5.12 boulder problems' were outliers.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215339",
+    "https://www.mountainproject.com/route/117673432/dark-side-of-liberty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Free-climb Dark Side of Liberty (5.13d)",
+     "replace": "Free-climb Dark Side of Liberty (5.13+)",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Crux grade"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "11 pitches, crux pitch 4 (5.12 boulder problems)",
+     "replace": "10 pitches, crux pitch 4 (V9/V10 boulder problem)",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Crux grade"
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "fact": "Pitch count",
+   "verdict": "fixed",
+   "correct_value": "10 pitches.",
+   "evidence": "The first-ascent report and the route description both list 10 pitches. The itinerary's '11 pitches' and 'topped out pitch 11 about 11 hrs after starting' were copied from A Servant to Liberty's first-ascent account; the Dark Side first ascent reached the top just as it got dark after a late start. (The schedule detail is fixed under 'Crux grade'.)",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215339",
+    "https://www.mountainproject.com/route/117673432/dark-side-of-liberty"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "topped out pitch 11 about 11 hrs after starting.",
+     "replace": "topped out the tenth and final pitch late in the day.",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "topped out pitch 11 about 11 hrs after starting.",
+     "replace": "topped out the tenth and final pitch late in the day.",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "climb"
+     ],
+     "find": "over 10–11 pitches",
+     "replace": "over 10 pitches",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Pitch count"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "Final ~6 of the 10-11 pitches",
+     "replace": "Final ~6 of the 10 pitches",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Pitch count"
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "fact": "Trailhead and approach time",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 20 minutes from the SR-20 hairpin pullout east of Washington Pass.",
+   "evidence": "The first-ascent report says the wall is about 20 minutes from the road; the row's approach, approach_variants, approach_logistics and road all use the hairpin pullout with ~20 min. East-side routes are approached from the hairpin, not Blue Lake. Partner requirements (1.5-2.5 hr from Blue Lake) and the schedule's 1.5 hr walk to the base were outliers.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215339",
+    "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~1.5–2.5 hrs from Blue Lake trailhead toward the East/NE Face (estimate based on neighboring East Face routes — no route-specific approach beta documented)",
+     "replace": "About 20 minutes from the SR-20 hairpin pullout east of Washington Pass",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Trailhead and approach time"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "time"
+     ],
+     "expect": "5:30 AM",
+     "value": "4:30 AM",
+     "id": "wa_dark_side_of_liberty",
+     "fact": "Trailhead and approach time"
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_side_of_liberty",
+   "fact": "Total day length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The schedule spans 15-16 hrs while PUBLISHED TIMES say 12. The '~11 hrs on route, per the FA timing' figure was borrowed from A Servant to Liberty; the Dark Side first ascent is described only as a late start finishing at dark. No outside car-to-car figure found. No patch.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215339",
+    "https://www.mountainproject.com/route/117673432/dark-side-of-liberty"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,264 @@
+{
+ "applied": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "beta",
+   "path": [],
+   "fact": "First ascent of this line"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Number of rappels"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "overview",
+   "path": [],
+   "fact": "Ridge the route follows"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Ridge the route follows"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Position of De Gaulle's Nose"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "fact": "Distance and gain to High Pass"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction from High Pass to Gargett Mine"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Direction from High Pass to Gargett Mine"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "directions"
+   ],
+   "fact": "Direction from High Pass to Gargett Mine"
+  },
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Direction from High Pass to Gargett Mine"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_american_border_peak_southeast_face",
+   "before": {
+    "beta": "The standard/easiest line on the peak, first climbed by Baker, Beckey, and Dudra in 1952. From High Pass the route crosses talus, scree, and heather on Mount Larrabee's flank toward a saddle below the peak, then ascends slabby ledges and a snow gully to the base of the Great Chimney. Two short technical pitches (5.3 entry, 5.4 exit past a large chockstone, with a tight 'keyhole' squeeze) provide the crux; reported difficulty varies by party and conditions, with some describing sections up to 5.8. Above the chimney, a loose, dirty trough leads to the summit ridge and an exposed step-across move to the top. Rock quality is poor throughout and route-finding is nontrivial — helmets and route-finding experience are essential.",
+    "itinerary": {
+     "cal": "Best conditions are typically July–September after the Twin Lakes access road (FS 3065) melts out; earlier in the season the chimney pitches can be snow/ice-choked.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From Twin Lakes trailhead (~5,200 ft), hike over Low Pass and High Pass, then drop and traverse cross-country toward the boulders and flat spots below the American Border Peak–Mt. Larrabee ridge. About 80% of this is off-trail on talus, scree, and heather; water can be scarce late season so carry enough to camp dry if needed.",
+       "hours": 4.5,
+       "miles": 4.3,
+       "title": "Approach to high bivy",
+       "gainFt": 1400,
+       "lossFt": 300,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Reach a bivy site near the ABP–Larrabee ridge / \"3rd bowl\""
+      },
+      {
+       "n": 2,
+       "note": "An early start gets the technical ground done while rock is cold and other parties haven't kicked rock down. From the bivy, gain the notch/col below the face, traverse in, and climb the 3-pitch chimney system (rated 5.4, though several parties found it stiffer and harder to protect, more like sustained 5.8 in spots). Reverse the route with rappels over the steep steps, retrieve camp, and hike all the way back out to the car.",
+       "hours": 11,
+       "miles": 5.4,
+       "title": "Summit push and full descent to trailhead",
+       "gainFt": 1400,
+       "lossFt": 2900,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave bivy",
+         "detail": "Alpine start to be off the face before afternoon rockfall risk and thunderstorm buildup."
+        },
+        {
+         "time": "~6:00 AM",
+         "label": "Reach the base of the Southeast Face",
+         "detail": "Cross scree/talus to the start of the technical climbing."
+        },
+        {
+         "time": "7:00 AM – 9:30 AM",
+         "label": "Climb the 3-pitch chimney system",
+         "detail": "Class 3-4 face climbing into a chimney with a low-5th-class (5.4-5.8) crux; some parties solo, others pitch it out."
+        },
+        {
+         "time": "~10:00 AM",
+         "label": "Summit (7,998 ft)",
+         "detail": "Views to Mt. Larrabee, the Canadian Border Peak, and the Pickets."
+        },
+        {
+         "time": "10:30 AM – 1:00 PM",
+         "label": "Rappel/downclimb back to the col",
+         "detail": "Reverse the steep steps with 1-2 rappels; loose rock demands care on the descent."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at bivy, break camp",
+         "detail": "Pack up and start the long walk out via High Pass and Low Pass."
+        }
+       ],
+       "objective": "Climb the Southeast Face chimney to the summit, then descend all the way out"
+      }
+     ],
+     "totalNote": "A committing 2-day trip: ~9.7 miles and ~2,800 ft of net gain, but with a long, mostly off-trail approach and 3 pitches of loose, sustained class 4-5.8 climbing — most parties bivy once near the ABP-Larrabee ridge rather than pushing it car-to-car."
+    },
+    "overview": "A steep, prominent peak rising directly on the international boundary in the rugged Border Peaks group, American Border Peak is the higher and more frequently climbed of the namesake pair. The standard route works up the southeast side and west ridge, blending scrambling with short rock steps on notoriously loose stone to a striking summit.",
+    "descent_text": "Descend by reversing the Southeast Face/West Ridge line back down to the South AmBo Saddle — the terrain is loose and complex enough that there is no clean walk-off alternative. Expect two to four short rappels through the summit chimney/gully system, with the count depending on party size, rope handling, and which chockstone squeeze you take: the standard, recommended line threads the low \"keyhole\"/tunnel beneath a large chockstone (pull packs off, push them through, crawl after), giving a clean, low-angle rappel; parties who instead rig over the lip of the chockstone get a harder, overhanging drop and sometimes add an extra rappel to manage it. A single 60m rope, doubled, is sufficient for the individual rappels (each reported at around 75 ft/~23 m), so plan on doubled-strand rappels off a 60m rope rather than needing two ropes. Anchors are entirely natural — slung chockstones and horns with in-place webbing that is often sun-bleached and aged — there are no bolts on this route, so inspect and back up (or replace) any tat you find and carry your own cord/rap rings; at least one party describes sacrificing a rope that got stuck in a rappel crack, so a pull-cord or a stuck-rope contingency is worth planning for. After the last rappel off the southeast rib, downclimb loose 3rd-class terrain back into the red talus bowl, then reverse the long sidehill traverse below Mt. Larrabee back to Gargett Mine and High Pass, and finish on the High Pass Trail to Twin Lakes. Loose rock remains the dominant hazard for the entire descent — keep the party tight through the gullies and budget real time for the tedious traverse back across scree and heather, especially late in the day; parties camped at Gargett Basin typically descend only as far as camp the first evening and walk out to the trailhead the next morning.",
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.3",
+      "notes": "Cross slabs, ledges, and gullies to the entrance of the summit chimney system on notoriously loose rock.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "A smooth face move surmounts a large chockstone, ending at a tight 'cannonhole' squeeze where packs must be pushed through ahead of the climber — the technical crux.",
+      "pitch": 2,
+      "anchor": "Gear/chockstone",
+      "lengthM": 25
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.3",
+      "notes": "Easier chockstone steps lead up past the 'De Gaulle's Nose' feature to the summit.",
+      "pitch": 3,
+      "anchor": "Walk-off (summit)",
+      "lengthM": 25
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 48.95176,
+      "lng": -121.63534,
+      "elev": 5200,
+      "name": "Twin Lakes Trailhead",
+      "note": "Start of the High Pass Trail; Northwest Forest Pass required at the trailhead.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Twin Lakes Road to its end at about 5,200 ft. The final miles are rough and deeply rutted, and many parties park short and walk them rather than risk the car. A Northwest Forest Pass is required; the signed High Pass Trail starts from the parking area."
+     },
+     {
+      "lat": 48.9539,
+      "lng": -121.6365,
+      "elev": 5960,
+      "name": "High Pass",
+      "note": "Leave the maintained trail here; drop and follow the climbers' path east/northeast toward the old Gargett Mine.",
+      "type": "Junction",
+      "distMi": 1,
+      "directions": "About a quarter mile up, the short spur to the Winchester Mountain lookout splits off — stay north on the High Pass Trail. It contours the west side of Winchester, dips through the minor saddle known as Low Pass with open views west to Tomyhoi, then climbs steadily to High Pass. This is maintained tread the whole way, roughly 750 ft of gain; Mount Baker comes into view south when you top out."
+     },
+     {
+      "lat": 48.97152,
+      "lng": -121.64847,
+      "elev": 5400,
+      "name": "Gargett Mine",
+      "note": "Old mine workings; last reliable water source until lingering snow patches high on the peak. Coordinate is the surveyed mine adit (elev 5708 ft) - parties camp in the basin just below at ~5400 ft.",
+      "type": "Water",
+      "distMi": 2.5,
+      "directions": "Leave the maintained tread at the pass and follow the climbers' path east and northeast, dropping about 550 ft to the old mine workings. Tent space here is limited, so most parties bivy rather than camp properly. Fill up: the mine creek is the last easy water until lingering snow patches high on the peak."
+     },
+     {
+      "lat": 48.9777,
+      "lng": -121.65278,
+      "elev": 6300,
+      "name": "Notch (Mt. Larrabee NW rib)",
+      "note": "Reached after a long, unmarked sidehill traverse below Larrabee's southwest and west flanks; drop slightly beyond into the red talus/moraine bowl. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+      "type": "Junction",
+      "distMi": 3.2,
+      "directions": "From the mine, traverse north across Larrabee's timbered southwest rib in the first quarter mile, then commit to a full mile of unmarked sidehill below Larrabee's west flank — steep talus, scree, heather and slick herbaceous slopes with no tread. A small scree chute at the end leads to the notch in Larrabee's rocky northwest rib. Do not start this traverse on wet grass or wet rock; helmets go on here and stay on, since rockfall is the defining hazard of the whole approach."
+     },
+     {
+      "lat": 48.98343,
+      "lng": -121.65678,
+      "elev": 6850,
+      "name": "South AmBo Saddle",
+      "note": "Scrambling and low 5th-class climbing begins here, below the rock feature climbers call 'De Gaulle's Nose'. Coordinate is a geometric interpolation (elevation-scaled) between Gargett Mine and the summit — estimated, not surveyed.",
+      "type": "Junction",
+      "distMi": 3.8,
+      "directions": "Beyond the notch, descend a steep dirt chute between snow and rock, then contour at roughly 5,800 ft above the moraine bowl. From there angle north through a series of steep gullies and ribs to the saddle. Route-finding, not difficulty, is what costs time on this section, and the red talus is loose throughout."
+     },
+     {
+      "lat": 48.99524,
+      "lng": -121.66493,
+      "elev": 7998,
+      "name": "American Border Peak summit",
+      "note": "Views to Mt. Larrabee, Canadian Border Peak, and the Pickets.",
+      "type": "Summit",
+      "distMi": 4.3,
+      "directions": "Follow a faint climbers' path along the crest for about two hundred yards, then traverse right onto slabby red ledges near a rock rib. A cleft just left of the rib and more slabby ledges gain a flat step on top of it; a down-sloping bench then crosses to the mouth of a steep snow gully, where a tall snow fin splits the gully and you take a moat on either side or the hole through the fin itself. From the notch above, three pitches of the Great Chimney lead to the top — a 5.3 entry, a smooth 5.4 face move over a large chockstone, and a squeeze so tight that packs have to be pushed through ahead of the climber. Above the chimney a dirty slabby trough, a row of horns and gaps, and one dramatically exposed step-across finish the climb."
+     }
+    ],
+    "approach": "Start at the Twin Lakes trailhead (~5,200 ft), the rough, rutted end of Twin Lakes Road (many parties park short and walk the final rutted miles, as the road note indicates). From the parking area pick up the signed High Pass Trail; at about a quarter mile it splits from the short spur up Winchester Mountain Lookout — stay left/north on the High Pass Trail. The trail contours along the west side of Winchester Mountain, dips across an unnamed minor saddle often called Low Pass (open views west to Tomyhoi Peak), then climbs steadily to High Pass itself (~5,960 ft, roughly 2 miles and about 750 ft of gain from the trailhead), where Mount Baker comes into view to the south. At High Pass, leave the maintained tread and follow the climbers' path east/northeast down to the old Gargett Mine workings (~5,400 ft) — the mine creek is the last reliable water source until you reach lingering snow patches high on the peak. From the mine, traverse north and contour onto Mount Larrabee's southwest and west flanks: this is a long, unmarked, exposed sidehill (well over a mile) across steep talus, scree, heather, and brush, aiming for a notch around 6,200-6,300 ft on Larrabee's northwest rib. Drop slightly into the red talus/moraine bowl beyond the notch and climb to the South AmBo (American Border) Saddle at roughly 6,840-6,850 ft, where the scrambling and low 5th-class climbing begins below the rock feature climbers call \"De Gaulle's Nose\" (~7,300 ft). Given the ~9-10 mile round trip, over 2,800 ft of gain, and loose rock-fall-prone terrain, most parties treat this as an overnight, camping at Gargett Basin or in the moraine bowl below the saddle rather than pushing summit day in one push from the car. Helmets should go on for the Larrabee traverse and stay on through the face — chronic rockfall is the defining hazard of this approach — and the sidehill section should never be attempted on wet grass or wet rock, which several trip reports flag as a genuine no-go condition.",
+    "approach_variants": [
+     {
+      "name": "High Pass and the Gargett Mine, then the long sidehill under Larrabee to the South AmBo Saddle",
+      "notes": "CONTAMINATION WARNING BEFORE ANYTHING ELSE: this is AMERICAN Border Peak, 7,998 ft, in Washington. CANADIAN Border Peak is about a kilometre north across the international line and is a different mountain with its own routes, reached from British Columbia. Beta for the two is routinely mixed up because both are called 'Border Peak'. Everything here is the Washington approach from Twin Lakes.\n\nFrom the Twin Lakes trailhead at about 5,200 ft, take the High Pass Trail; at a quarter mile it splits from the short spur up Winchester Mountain — stay LEFT, north. The trail contours the west side of Winchester, dips across Low Pass, and climbs to High Pass near 5,960 ft, about two miles and 750 ft of gain, where Mount Baker comes into view south.\n\nAt High Pass leave the maintained tread and follow the climbers' path east and northeast DOWN to the old Gargett Mine workings around 5,400 ft. The mine creek is the last reliable water until lingering snow high on the peak.\n\nFrom the mine, traverse north and contour onto Mount Larrabee's southwest and west flanks. This is a long, unmarked, exposed sidehill of well over a mile across steep talus, scree, heather and brush.\n\nMost parties camp at Gargett Basin or in the moraine bowl and climb from there rather than pushing summit day from the car.",
+      "season": "Roughly Jul-Sep, and never on wet grass or wet rock",
+      "hazards": [
+       "Chronic rockfall — the defining hazard of this approach, helmets on from the Larrabee traverse",
+       "A long unmarked exposed sidehill on steep talus, scree, heather and brush",
+       "Wet grass or wet rock on the sidehill is a documented no-go condition",
+       "Two 60 m gullies of loose rock with climber-triggered rockfall onto the party below",
+       "Two to four rappels on descent off aged natural tat, with at least one recorded stuck and abandoned rope"
+      ],
+      "baseFinding": "THE 6,200-6,300 FT NOTCH ON LARRABEE'S NORTHWEST RIB IS THE FIRST GATE, AND THE SOUTH AMBO SADDLE AT ABOUT 6,840 FT IS THE SECOND. Those two are the whole navigation of this approach and both are cols — places where the ridge is low and you can stand on the crest with ground falling away on the far side. In cloud you are counting cols, not looking at the peak.\n\nBETWEEN THEM IS A RED TALUS AND MORAINE BOWL. From the notch you drop slightly into it and then climb north out of it, up and across a series of steep gullies and ribs, to the saddle. Red rock underfoot after the first col is the confirmation you are in the right bowl.\n\nARRIVAL AT THE SADDLE: it is on the ridge crest DIRECTLY SOUTH of the summit. Standing there, the peak is north of you and Larrabee is behind you to the south. That bearing is the check — this is not a saddle you reach with the mountain to one side.\n\nWHERE THE CLIMBING ACTUALLY STARTS IS 200 YARDS ABOVE THE SADDLE, NOT AT IT. From the saddle, go up the ridge crest on a faint climbers' path for roughly 200 yards, THEN start traversing RIGHTWARD on slabby RED LEDGES. The rock scrambling begins where the angle steepens noticeably at a distinctive rock rib: the first real move is up a small Class 3.5 cleft CLOSELY LEFT OF THAT RIB.\n\nDE GAULLE'S NOSE IS THE AIMING MARK ON THE FAR SIDE OF THE RED FACE, at about 7,300 ft. The rising traverse across the red slopes goes toward it and the crossing feels very exposed. Beyond it come two 60-metre gullies with a sand-covered ledge traverse between them, and a chimney at the top of the second reached by a very airy ledge. If your route has no red traverse and no pair of long gullies, it is not this one.\n\nAND THE HARD CONDITION RULE: do not attempt the Larrabee sidehill on wet grass or wet rock. Parties flag that as a genuine no-go rather than a discomfort."
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,317 @@
+{
+ "file": "r306.json",
+ "results": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Trailhead vs ascent line",
+   "verdict": "fixed",
+   "correct_value": "Two distinct lines: Rainy Pass PCT lot -> forest -> meadow basin ~6,100 ft -> west ridge; SR-20 turnout 3.1 mi east -> meadow -> south ridge at 6,180 ft. The itinerary/timing follow the south-ridge line, so their start is set to the turnout; pitch_detail step 1 drops the forest/downed-log detail of the other line.",
+   "evidence": "One route description puts the start at a turnout 3.1 mi past Rainy Pass (0.7 mi before Blue Lake TH, 5,000 ft), boot path through a meadow, rising traverse to the level south ridge at 6,180 ft. A trip report starting at Rainy Pass by Road 600 climbs steep forest to a meadow basin near 6,100 ft and goes up the west ridge. So the itinerary mixed the two. The Trailhead waypoint pin (Rainy Pass) is out of scope; it remains the primary variant's trailhead.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+    "https://onehikeaweek.com/2021/06/27/whistler-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "label"
+     ],
+     "find": "Leave Rainy Pass PCT trailhead",
+     "replace": "Leave the SR-20 turnout"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Park at the Pacific Crest Trail North lot (~4,850 ft) and head east through open timber.",
+     "replace": "Park at the unmarked pullout on SR-20 about 3.1 miles east of Rainy Pass (~5,000 ft), walk back along the shoulder and pick up the boot path at the west edge of a stand of trees."
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "from the Rainy Pass PCT trailhead (4,850 ft): climb through open forest and meadow to gain",
+     "replace": "from the SR-20 turnout east of Rainy Pass (about 5,000 ft): climb through a meadow to gain"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "from the Rainy Pass PCT trailhead (4,850 ft): climb through open forest and meadow to gain",
+     "replace": "from the SR-20 turnout east of Rainy Pass (about 5,000 ft): climb through a meadow to gain"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "and return to Rainy Pass",
+     "replace": "and return to the highway turnout"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "car-to-car from Rainy Pass",
+     "replace": "car-to-car from the highway turnout"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Trailhead vs ascent line",
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Boot path from the SR-20 turnout through open forest with some downed logs to a meadow basin at roughly 6,100 ft.",
+     "replace": "Boot path from the SR-20 turnout, leaving from the west edge of a stand of trees and climbing up through a meadow."
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Round-trip vs one-way distance",
+   "verdict": "fixed",
+   "correct_value": "~4 miles round trip",
+   "evidence": "One route description gives 4 miles and 3,000 ft for the outing; a trip report gives 3.7 miles round trip via Rainy Pass. The partner-requirements 'one-way' wording is the outlier.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+    "https://onehikeaweek.com/2021/06/27/whistler-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Round-trip vs one-way distance",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "~4 miles one-way",
+     "replace": "~4 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Direction at the 6,800 ft fork",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Cut left across gullies at ~6,800 ft onto the southwest slope",
+   "evidence": "Approach, beta, waypoint note, climbing_route and approach_variants all say left; an external route description says to head left crossing gullies at about 6,800 ft to the gentler southwest slope. Only one external source describes the fork.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Direction at the 6,800 ft fork",
+     "op": "replace_text",
+     "column": "pro_tips",
+     "path": [
+      1
+     ],
+     "find": "staying right at ~6,800 ft onto the southwest slope",
+     "replace": "cutting left across gullies at ~6,800 ft onto the southwest slope"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Aspect of the route",
+   "verdict": "fixed",
+   "correct_value": "aspect SW; face South Ridge / Southwest Slope",
+   "evidence": "The south-ridge line finishes on the southwest slope (route description); the Rainy Pass line climbs the west ridge (trip report) with the west-facing gully alongside (ski report). No source describes a southeast line. The route NAME 'Southeast Slopes / Standard Scramble' still says southeast but name is out of scope.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain",
+    "https://onehikeaweek.com/2021/06/27/whistler-mountain/",
+    "https://climberkyle.com/2021/05/15/whistler-mountain-west-gully/"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Aspect of the route",
+     "op": "set",
+     "column": "aspect",
+     "path": [],
+     "expect": "SE",
+     "value": "SW"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Aspect of the route",
+     "op": "set",
+     "column": "face",
+     "path": [],
+     "expect": "Southeast Slopes",
+     "value": "South Ridge / Southwest Slope"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Aspect of the route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "down the southeast slopes/south ridge.",
+     "replace": "down the south ridge."
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Aspect of the route",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "via the Southeast Slopes / South Ridge",
+     "replace": "via the South Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Scrambling grade required",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Class 2-3, with class 3 on the upper ridge/gully",
+   "evidence": "An encyclopedia entry gives the standard route as class 3 scrambling; grade, rock_grade, beta, pitch_detail, approach and itinerary all say class 2-3 to 3 (3-4 moves). The class 2-only descriptions are outliers. A second route description calls it only a 'moderate scramble' without a class number.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Whistler_Mountain_(Washington)",
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Scrambling grade required",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Comfortable, unroped Class 2 scrambler",
+     "replace": "Comfortable, unroped Class 3 scrambler"
+    },
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Scrambling grade required",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Class 2 walking/scrambling terrain",
+     "replace": "Class 2-3 scrambling terrain"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "County",
+   "verdict": "fixed",
+   "correct_value": "Chelan County",
+   "evidence": "The encyclopedia entry places Whistler Mountain in Chelan County; the GNIS-derived peak list gives Chelan County, Washington Pass quad.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Whistler_Mountain_(Washington)",
+    "https://ftp.climber.org/data/peaks/WApeaksW.html"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "County",
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "in Okanogan County",
+     "replace": "in Chelan County"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Summit elevation",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "7,790 ft",
+   "evidence": "partner_requirements says summit 7,792 ft while overview, waypoints, high_point_ft and itinerary say 7,790 ft. The encyclopedia entry and peakery both give 7,790 ft; a trip report also gives 7,790.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Whistler_Mountain_(Washington)",
+    "https://peakery.com/whistler-mountain-washington/",
+    "https://onehikeaweek.com/2021/06/27/whistler-mountain/"
+   ],
+   "patches": [
+    {
+     "id": "wa_whistler_mountain_scramble",
+     "fact": "Summit elevation",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "summit 7,792 ft",
+     "replace": "summit 7,790 ft"
+    }
+   ]
+  },
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "fact": "Compass direction of the 6,800 ft gully crossing",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "approach, approach_variants[1].baseFinding and climbing_route[3] say to cross gullies 'left (north)' onto southwest-facing slopes, but going up a south ridge 'left' is west, and a southwest slope lies west, not north. The external description says only 'left'; no source gives the compass direction, so no patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whistler-mountain"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,252 @@
+{
+ "applied": [
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Trailhead and approach line"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Trailhead elevation"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "objective"
+   ],
+   "fact": "High camp location and elevation"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "High camp location and elevation"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "what_to_bring",
+   "path": [
+    9
+   ],
+   "fact": "High camp location and elevation"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Descent line"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "access",
+   "path": [
+    "land_manager"
+   ],
+   "fact": "Land manager / wilderness"
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Trailhead waypoint note says it does not serve the Diobsud Creek Glacier side"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "before": {
+    "itinerary": {
+     "cal": "Best climbed July–September once the unmaintained Bacon Creek Road approach and the Diobsud Creek Glacier are snow-covered/consolidated; the brushy old-roadbed and gully approach make this a seldom-visited, remote objective best done on a dry-weather window.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Bacon Creek Road trailhead (~800 ft), follow the old, downed-tree-choked roadbed for about 2.5 miles, then climb open forest that steepens and brushes up around 2,000 ft. Continue up the southeast ridge past Peak 4800 (the route's crux scrambling) to a camp on the shoulder of the Diobsud Creek Glacier.",
+       "hours": 7.5,
+       "miles": 7.5,
+       "title": "Approach to high camp",
+       "gainFt": 5500,
+       "lossFt": 100,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach the ~6,250-6,300 ft saddle camp near Peak 4800, north of Canadian Bacon"
+      },
+      {
+       "n": 2,
+       "note": "Many parties walk up the east slope at sunrise for a Picket Range view before breakfast, then rope up and cross the Diobsud Creek Glacier, angling northwest and probing for crevasses (often filled-in enough that some parties solo it in firm conditions). The final approach to the modest summit comes from the southwest; most groups linger roughly an hour on top before reversing the glacier back to camp.",
+       "hours": 5.5,
+       "miles": 2.5,
+       "title": "Summit day via Diobsud Creek Glacier",
+       "gainFt": 900,
+       "lossFt": 900,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "Sunrise",
+         "label": "Optional ridge walk for Picket Range views",
+         "detail": "Then back to camp for breakfast."
+        },
+        {
+         "time": "+1 hr",
+         "label": "Rope up, leave high camp",
+         "detail": "Cross the Diobsud Creek Glacier heading northwest, probing for crevasses."
+        },
+        {
+         "time": "+3 hr",
+         "label": "Gain the south ridge",
+         "detail": "Ascend wide-open snow/glacier slopes toward the summit block."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Summit Bacon Peak (7,070 ft)",
+         "detail": "Approach the top from the southwest; most parties spend about an hour here."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Back at high camp",
+         "detail": "Reverse the glacier and gully to camp for the night."
+        }
+       ],
+       "objective": "Climb Bacon Peak (7,070 ft) and return to high camp"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the route back through Peak 4800's crux terrain and down the southeast ridge, then follow the brushy old roadbed (with some shortcut variations near the first road bend) back to the car.",
+       "hours": 7,
+       "miles": 7.7,
+       "title": "Descend to trailhead",
+       "gainFt": 100,
+       "lossFt": 5700,
+       "packLb": 32,
+       "schedule": [],
+       "objective": "Return to Bacon Creek Road"
+      }
+     ],
+     "totalNote": "A remote 2-night/3-day trip: about 16 miles round trip with roughly 6,300 ft of gain to the 7,070 ft summit, with almost all the elevation gained on the first day's approach and only a short push to the top on summit day."
+    },
+    "waypoints": [
+     {
+      "lat": 48.6746,
+      "lng": -121.6147,
+      "elev": 4300,
+      "name": "Watson Lakes Trailhead",
+      "note": "This is the Anderson and Watson Lakes trailhead, which serves the north-east side of the peak — the Green Lake Glacier and Watson Lakes approach — not the Diobsud Creek Glacier side this route is named for.",
+      "type": "Trailhead",
+      "elevFt": 800
+     },
+     {
+      "lat": 48.66527,
+      "lng": -121.597939,
+      "elev": 4700,
+      "name": "Wilderness-boundary saddle",
+      "note": "Trail forks here — right drops 0.5mi to Lower Anderson Lake, left climbs into the Noisy-Diobsud Wilderness toward Watson Lakes.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 48.666798,
+      "lng": -121.592418,
+      "elev": 4400,
+      "name": "Watson Lakes",
+      "note": "Last reliable water and the only legal campsites before the cross-country push into Diobsud basin; designated sites only, campfires prohibited.",
+      "type": "Campsite",
+      "distMi": 2
+     },
+     {
+      "lat": 48.655038,
+      "lng": -121.558583,
+      "elev": 4900,
+      "name": "Diobsud basin",
+      "note": "Off-trail descent from the Watson/Diobsud divide into the Diobsud Creek drainage; drop straight to the valley floor rather than contouring from the lakes, which is slower.",
+      "type": "Campsite",
+      "distMi": 5
+     },
+     {
+      "lat": 48.657482,
+      "lng": -121.532496,
+      "elev": 5800,
+      "name": "Access gully to Diobsud Creek Glacier",
+      "note": "Loose rock and slick dirt in the chute leading to the glacier's toe once snow has melted out — expect to claw up steep, loose dirt gullies here.",
+      "type": "Hazard",
+      "distMi": 7
+     },
+     {
+      "lat": 48.667118,
+      "lng": -121.529214,
+      "elev": 6400,
+      "name": "Diobsud Creek Glacier crossing",
+      "note": "Rope up here — crevasses open on the icecap by mid-to-late season; probe and stay roped through to the saddle below the summit block.",
+      "type": "Hazard",
+      "distMi": 8
+     },
+     {
+      "lat": 48.662665,
+      "lng": -121.520525,
+      "elev": 7070,
+      "name": "Bacon Peak",
+      "type": "Summit",
+      "elevFt": 7070
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Expedition-level fitness for a long, arduous, notoriously brushy approach plus glacier travel and a Class 2-3 summit scramble; sustained effort over multiple days",
+      "packWeight": "Heavy overnight/glacier pack (rope, crevasse rescue gear, camping gear for a multi-day approach)"
+     },
+     "approachTime": "Long — typically a multi-day approach in to a high camp near Berdeen Lake/the glacier due to the notoriously brushy Diobsud Creek approach",
+     "requiredSkills": [
+      "roped glacier travel and crevasse rescue",
+      "off-trail route-finding through dense brush",
+      "basic snow travel",
+      "Class 2-3 scrambling on loose rock",
+      "multi-day backcountry camping/self-rescue judgment given the remote, hard-to-evacuate approach"
+     ],
+     "experienceLevel": "Experienced glacier travelers only; not appropriate for a first mountaineering objective. Partner should be comfortable with sustained off-trail/brush navigation and self-sufficient multi-day trip logistics."
+    },
+    "what_to_bring": [
+     "mountaineering boots",
+     "crampons",
+     "ice axe",
+     "helmet",
+     "snowshoes (spring/early-summer approach)",
+     "glacier rope + crevasse-rescue kit (harness, prusiks/Tibloc, pulley, locking biners)",
+     "trekking poles (brushy/loose lower approach)",
+     "gaiters",
+     "sun protection/glacier glasses (open glacier exposure)",
+     "overnight camping/bivy gear (most parties do this as a 2-day trip with a camp near Green Lake or the Diobsud/Bacon Tarns basin)"
+    ],
+    "rope_note": "No rappelling occurs on this route — descent is via glissading/walking down the Green Lake Glacier snow slopes, not rope-assisted rappels, so there is no basis for a double-rope rappel setup. A single lightweight glacier-travel rope (~30m, often carried in coils between 2-3 climbers) is the standard tool here, used for glacier-crossing security and potential crevasse rescue, not for climbing pitches or raps. Experienced parties are reported crossing unroped in low-crevasse-hazard (well snow-filled) conditions, but carrying the rope + crevasse-rescue kit is the safe default given open crevasses and a moat found in other seasons.",
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Leave No Trace/wilderness travel rules apply on the Noisy-Diobsud Wilderness approach; National Park backcountry regulations apply once inside North Cascades National Park near the summit; pack it in/pack it out throughout.",
+     "permit": "No wilderness permit required for camps within the Noisy-Diobsud Wilderness (national forest) portion; an NPS backcountry/wilderness permit is required only if camping inside the North Cascades National Park boundary near the summit.",
+     "landManager": "Mt. Baker-Snoqualmie National Forest (Noisy-Diobsud Wilderness) for the approach; the summit icecap and upper mountain lie within North Cascades National Park.",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "Northwest Forest Pass required for parking at the Anderson & Watson Lakes Trailhead (FR-1107) or the Bacon Creek Road (NF-1064) trailhead.",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness",
+      "what": "No overnight permit required on the national forest side; camp only in designated sites at Watson Lakes",
+      "where": "A recreation pass is required to park at the Watson Lakes trailhead."
+     }
+    }
+   }
+  }
+ ]
+}

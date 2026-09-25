@@ -1,0 +1,611 @@
+{
+ "file": "r321.json",
+ "results": [
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "FS 37 closure point",
+   "verdict": "fixed",
+   "correct_value": "FS 37 is currently closed to vehicles at mile 0.03 (since 1 June 2026) while repair of the 2021 flood washout at milepost 3.1 is under way; the milepost-3.1 'no repair date' wording is out of date.",
+   "evidence": "The Mt. Baker-Snoqualmie alerts page lists 'FS Road 37 Deadhorse Creek CLOSED Until Further Notice' — flood damage repair underway, road closed at mile 0.03, alert start June 1, 2026 (the trailhead page still carries the older mile-3.1 text). Cascadia Daily News (16 Jun 2026) reports Deadhorse Road repairs beginning in June with a roughly two-year construction timeline. Both agree repair is now under way, so 'no repair date / impassable at 3.1' is stale and the current closure point is mile 0.03.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts",
+    "https://www.cascadiadaily.com/2026/jun/16/flood-damaged-forest-roads-are-eroding-access-for-outdoor-enthusiasts/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "As of the Forest Service's current alert, FS 37 is impassable at milepost 3.1 due to 2021 flood damage with no estimated repair date, so the trailhead is not currently reachable by vehicle.",
+     "replace": "FS 37 is currently closed to vehicles at mile 0.03 while the 2021 flood washout at milepost 3.1 is repaired, so the trailhead is not currently reachable by vehicle.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "FS 37 closure point"
+    },
+    {
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "As of the current Forest Service alert, FS Road 37 is washed out at milepost 3.1 with no repair date, making",
+     "replace": "FS Road 37 is closed to vehicles at mile 0.03 while the 2021 washout at milepost 3.1 is repaired, making",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "FS 37 closure point"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Under the Forest Service's current alert FS-37 is impassable at milepost 3.1 from 2021 flood damage with no estimated repair date, so the trailhead is not reachable by vehicle.",
+     "replace": "FS-37 is currently closed to vehicles at mile 0.03 while the 2021 flood washout at milepost 3.1 is repaired, so the trailhead is not reachable by vehicle.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "FS 37 closure point"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hazards",
+      0
+     ],
+     "find": "FS-37 impassable at milepost 3.1 with no repair date — the trailhead may not be drivable at all",
+     "replace": "FS-37 closed at mile 0.03 during washout repair — the trailhead is not drivable until the work ends",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "FS 37 closure point"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "seasonalGate"
+     ],
+     "find": "access is presently blocked by the unrepaired washout regardless of season",
+     "replace": "access is presently blocked by the repair closure regardless of season",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "FS 37 closure point"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Total gain vs trailhead-to-summit relief",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real contradiction: gain_ft 2,818 is below the 3,265 ft net rise between the route's own 4,250 ft trailhead and 7,515 ft summit pins. The 2,818 figure matches the FKT route page exactly; other published totals disagree widely — Gaia ~2,989 ft one way, a Mountaineers scramble listing 4,700 ft / 13 mi, a ClubTread report ~5,000 ft / 14+ mi. No two independent sources agree on a replacement value, so no patch; the pro_tips '3,300+' line is also unsupported as stated.",
+   "sources": [
+    "https://fastestknowntime.com/route/hadley-peak-wa",
+    "https://www.gaiagps.com/hike/235506/hadley-peak/",
+    "https://www.mountaineers.org/activities/routes-places/hadley-peak",
+    "https://forums.clubtread.com/37-washington-state/76218-skyline-divide-chowder-ridge-hadley-peak-sept-11-16-a.html"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Snow-free from July, but the best window is mid-August into early October (bugs heavy July-August); the Aug-Oct chip stands and climate.summer should not call July-September prime.",
+   "evidence": "Best Hikes BC's Hadley Peak guide (covering both divides) gives a ~July-October season but names mid-August to early October as the ideal window because of snow on the climb to Chowder Ridge and heavy mosquitoes. The Forest Service Skyline Divide trail page says biting insects are abundant in July and August and abate in September. Both support the Aug-Oct chip and contradict 'prime July-September'.",
+   "sources": [
+    "https://besthikesbc.ca/hadley-peak/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+    "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "Prime season (July-September); trail generally snow-free by July, though",
+     "replace": "Trail generally snow-free by July, but biting insects are heavy through July and August and the best window runs mid-August into early October;",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Distance to the ridge crest",
+   "verdict": "fixed",
+   "correct_value": "The trail reaches the ridge crest at about 2 miles and continues about 2.5 miles over a series of knolls to its 6,563 ft high point at ~4.5 miles; the 4.4-4.5 mi figure is the end of the trail, not the first ridge-crest viewpoint.",
+   "evidence": "WTA's Skyline Divide entry: the trail gains 1,500 ft in two miles to reach the ridgeline, then continues 2.5 more miles over knolls to 6,563 ft (9.0 mi round trip). Uprooted Traveler independently describes 1,500 ft in the first two miles to the ridge, then two and a half miles over six knolls to 6,563 ft. So beta/approach mislabel the 4.5-mile point as the first crest viewpoint, and pitch 2's ~1.5 miles (the Forest Service's shorter figure) undercounts the crest section.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/skyline-divide",
+    "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "switchbacks through forest and into alpine meadows for about 4.4–4.5 miles to the first ridge-crest viewpoint (~6,600 ft).",
+     "replace": "switchbacks through forest to the ridge crest at about 2 miles, then rolls over a series of knolls along the open crest to the trail's high point (~6,563 ft) at about 4.5 miles.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "~1.5 miles of established trail",
+     "replace": "~2.5 miles of established trail",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "into meadows (~4.4–4.5 mi) to the ridge crest, then continue",
+     "replace": "into meadows on the ridge crest (~2 mi), follow the crest to the trail's high point (~6,563 ft, ~4.5 mi), then continue",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "reaches the ridge crest at about 4.4-4.5 miles.",
+     "replace": "reaches the ridge crest at about 2 miles and its high point near 6,563 ft at about 4.5 miles.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "The first viewpoint on the crest near 6,600 ft is the landmark",
+     "replace": "The trail's high point on the crest near 6,563 ft is the landmark",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "back to the first viewpoint (~6,600 ft)",
+     "replace": "back to the trail's high point (~6,563 ft)",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Distance to the ridge crest"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Direction of travel along the ridge",
+   "verdict": "fixed",
+   "correct_value": "From the end of the trail the route runs south along Skyline Divide and then southeast along Chowder Ridge to Hadley (the pins put the summit south-southeast of the trailhead).",
+   "evidence": "WTA's Skyline Divide entry describes moving southward along the divide toward Baker with Chowder Ridge ahead; Uprooted Traveler likewise has hikers turn toward Mount Baker to the south along the ridge. A 2023 WTA trip report looks southeast from Chowder Ridge to Hadley and sees the use trail heading southeast toward it. Neither 'north' (pitch 3) nor 'east' (variant) is right.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/skyline-divide",
+    "https://uprootedtraveler.com/skyline-divide-mount-baker-hikes/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Cross-country north along the ridge",
+     "replace": "Cross-country south along the ridge",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Direction of travel along the ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "From the viewpoint the route runs EAST along the ridge for roughly three miles to Chowder Ridge.",
+     "replace": "From the viewpoint the route runs SOUTH along the ridge and then SOUTHEAST along Chowder Ridge, roughly three miles in all.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Direction of travel along the ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "because everything east of it is three miles",
+     "replace": "because everything beyond it is three miles",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Direction of travel along the ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "the long open ridge east to Chowder Ridge",
+     "replace": "the long open ridge south to Chowder Ridge",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Direction of travel along the ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Overnight-permit text names another area's trailheads",
+   "verdict": "fixed",
+   "correct_value": "The pass applies at the Skyline Divide trailhead; the route lies wholly in Mount Baker Wilderness — no part of Mount Baker is in North Cascades National Park.",
+   "evidence": "The Forest Service Skyline Divide trailhead/trail pages require a valid recreation pass (NW Forest / Interagency, $5/day) at Skyline Divide Trailhead and put the trail in Mt. Baker Wilderness (party size 12, no campfires). Wikipedia's Mount Baker Wilderness article and Lauren Danner's history both state Mount Baker was excluded from North Cascades National Park in 1968, the wilderness only bordering the park to the east, so the NPS-permit sentence and the 'crossing into the national park' clause do not apply.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678",
+    "https://www.wta.org/go-hiking/hikes/skyline-divide",
+    "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness",
+    "https://laurendanner.com/why-isnt-mt-baker-a-national-park/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "to park at the Heliotrope Ridge and Park Butte trailheads",
+     "replace": "to park at the Skyline Divide trailhead",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "replace": "The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": "Mount Baker Wilderness",
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Summit elevation (high_point_ft 7,522 vs summit pin 7,515)",
+   "verdict": "fixed",
+   "correct_value": "7,515 ft",
+   "evidence": "Lists of John gives Hadley Peak 7,515 ft; PeakVisor gives 2,290 m (~7,513 ft) and Best Hikes BC 2,291 m (7,516 ft). The row's own summit waypoint says 7,515; high_point_ft 7,522 has no support.",
+   "sources": [
+    "https://listsofjohn.com/peak/49192",
+    "https://peakvisor.com/peak/hadley-peak-united-states.html",
+    "https://besthikesbc.ca/hadley-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 7522,
+     "value": 7515,
+     "id": "wa_hadley_peak_skyline_divide",
+     "fact": "Summit elevation (high_point_ft 7,522 vs summit pin 7,515)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_hadley_peak_skyline_divide",
+   "fact": "Wilderness permit: required self-issue vs none",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "permit, access.permit and what_to_bring say a free self-issue wilderness permit is needed at the trailhead, while access.overnight_permit says there is no wilderness permit. The Forest Service Skyline Divide pages list only a recreation pass and wilderness regulations (no self-issue permit mentioned), but no second source settled whether Mount Baker Wilderness uses trailhead self-issue permits, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/skyline-divide-trailhead",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+   ],
+   "patches": [],
+   "discovered": true
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Direction from the Cougar Divide high point to Hadley",
+   "verdict": "fixed",
+   "correct_value": "The route runs south along Cougar Divide to Chowder Ridge, then southeast along Chowder Ridge to Hadley (the pins put the summit south-southwest of the trailhead).",
+   "evidence": "Dave Tucker's Cougar Divide guide says the unmaintained trail heads south from the trailhead along the north-south ridge. A 2023 WTA trip report climbs to Chowder Ridge heading south/southwest from the trail's end and sees the use trail heading southeast toward Hadley; a 2025 blog report labels Chowder Ridge southwest and Hadley southeast from the divide. 'Northeast' and 'north' are wrong; bivy[0]'s 'east' is left to the camping clean-up.",
+   "sources": [
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756",
+    "https://www.withmytwofeet.com/post/cougar-divide-trail"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "then continue cross-country northeast along the open ridge",
+     "replace": "then continue cross-country south along the open ridge",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction from the Cougar Divide high point to Hadley"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Chowder Ridge traverse north on",
+     "replace": "Chowder Ridge traverse southeast on",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction from the Cougar Divide high point to Hadley"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "name"
+     ],
+     "find": "the open ridge northeast to Chowder Ridge",
+     "replace": "the open ridge south to Chowder Ridge",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction from the Cougar Divide high point to Hadley"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "continue northeast along the open ridge",
+     "replace": "continue south along the open ridge",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction from the Cougar Divide high point to Hadley"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "stay on the crest, going northeast,",
+     "replace": "stay on the crest, going south,",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Direction from the Cougar Divide high point to Hadley"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Trail #601 maintained vs unmaintained",
+   "verdict": "fixed",
+   "correct_value": "Cougar Divide Trail is unmaintained (blowdown, erosion ruts).",
+   "evidence": "Dave Tucker's geology guide calls it 'the unmaintained trail', rough and rutted from erosion. Best Hikes BC says it is not a maintained trail and has blowdown for lack of maintenance; a 2023 WTA trip report contrasts it with the better-maintained Skyline Divide trail. Beta, descent and descent_text wrongly call it maintained.",
+   "sources": [
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/",
+    "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-09-03.4326670756"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "the maintained Cougar Divide Trail #601",
+     "replace": "the unmaintained Cougar Divide Trail #601",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Trail #601 maintained vs unmaintained"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "follow the maintained trail back to the trailhead",
+     "replace": "follow the trail back to the trailhead",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Trail #601 maintained vs unmaintained"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "Follow the maintained Cougar Divide Trail #601",
+     "replace": "Follow the unmaintained Cougar Divide Trail #601",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Trail #601 maintained vs unmaintained"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "That high point is where maintained tread ends",
+     "replace": "That high point is where the trail tread ends",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Trail #601 maintained vs unmaintained"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Gain to the trail high point",
+   "verdict": "fixed",
+   "correct_value": "About 1,000 ft net from the ~4,920 ft trailhead to the ~5,920 ft high point; 1,790 ft is the round-trip cumulative gain for the 6.2-mile out-and-back trail hike.",
+   "evidence": "WTA lists Cougar Divide as 6.2 miles round trip with 1,790 ft gain and a 5,920 ft high point; Best Hikes BC lists 6.2 mi / 1,788 ft round trip, a 4,921 ft start and ~5,906 ft high point, noting the undulation. Dave Tucker puts the trailhead at 4,930 ft. So ~1,790 ft is the round-trip figure, not the one-way gain to the high point.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cougar-divide",
+    "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+    "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-cougar-divide-mount-baker/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "~1,790 ft gain to ~5,920 ft",
+     "replace": "about 1,000 ft net gain, with some up-and-down, to ~5,920 ft",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Gain to the trail high point"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Season window",
+   "verdict": "fixed",
+   "correct_value": "Road open from July 7, but the best window is mid-August into early October; climate.summer should not call July prime.",
+   "evidence": "Best Hikes BC's Cougar Divide and Hadley pages both give a full season of July-October with the best period mid-August to early October because of heavy early-summer mosquitoes and lingering snow; the Forest Service notes biting insects abundant in July-August on the neighbouring divide, abating in September. best_season, climate.fall and the Aug-Oct chip already agree.",
+   "sources": [
+    "https://besthikesbc.ca/hiking-cougar-divide-in-the-mount-baker-wilderness/",
+    "https://besthikesbc.ca/hadley-peak/",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/skyline-divide-trail-678"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "climate",
+     "path": [
+      "summer"
+     ],
+     "find": "Prime season once the road gate opens in July;",
+     "replace": "Reachable once the road gate opens in July, though the best window starts in mid-August;",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Season window"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Overnight-permit text names another area's trailheads",
+   "verdict": "fixed",
+   "correct_value": "Parking pass applies at the Cougar Divide trailhead; the route lies wholly in Mount Baker Wilderness, not North Cascades National Park.",
+   "evidence": "WTA lists a Northwest Forest / America the Beautiful pass for the Cougar Divide trailhead, agreeing with the row's fees, parking_pass, passRequired and what_to_bring. Wikipedia's Mount Baker Wilderness article and Lauren Danner's history both state Mount Baker was left out of North Cascades National Park, so the national-park sentence and clause are wrong for this route.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/cougar-divide",
+    "https://en.wikipedia.org/wiki/Mount_Baker_Wilderness",
+    "https://laurendanner.com/why-isnt-mt-baker-a-national-park/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "to park at the Heliotrope Ridge and Park Butte trailheads",
+     "replace": "to park at the trailhead",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "replace": "The route stays inside Mount Baker Wilderness, where party size is capped at 12 and campfires are prohibited.",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "replace": "Mount Baker Wilderness",
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Overnight-permit text names another area's trailheads"
+    }
+   ]
+  },
+  {
+   "id": "wa_hadley_peak_cougar_divide",
+   "fact": "Summit elevation (summit pin 7,470 vs high_point_ft 7,522)",
+   "verdict": "fixed",
+   "correct_value": "7,515 ft",
+   "evidence": "Lists of John gives Hadley Peak 7,515 ft; PeakVisor 2,290 m (~7,513 ft) and Best Hikes BC 2,291 m (7,516 ft). The 7,470 pin is the older rounded map figure and the 7,522 has no support; the sister Skyline route's pin already says 7,515.",
+   "sources": [
+    "https://listsofjohn.com/peak/49192",
+    "https://peakvisor.com/peak/hadley-peak-united-states.html",
+    "https://besthikesbc.ca/hadley-peak/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elev"
+     ],
+     "expect": 7470,
+     "value": 7515,
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Summit elevation (summit pin 7,470 vs high_point_ft 7,522)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "elevFt"
+     ],
+     "expect": 7470,
+     "value": 7515,
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Summit elevation (summit pin 7,470 vs high_point_ft 7,522)"
+    },
+    {
+     "op": "set",
+     "column": "high_point_ft",
+     "path": [],
+     "expect": 7522,
+     "value": 7515,
+     "id": "wa_hadley_peak_cougar_divide",
+     "fact": "Summit elevation (summit pin 7,470 vs high_point_ft 7,522)"
+    }
+   ],
+   "discovered": true
+  }
+ ]
+}

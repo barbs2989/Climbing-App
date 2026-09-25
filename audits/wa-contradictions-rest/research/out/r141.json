@@ -1,0 +1,337 @@
+{
+ "file": "r141.json",
+ "results": [
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Total elevation gain",
+   "verdict": "fixed",
+   "correct_value": "7,400 ft for the linked Gardner + North Gardner outing (car to car)",
+   "evidence": "A GPS-tracked 26.1-mile trip over both peaks recorded 7,373 ft of gain; another page gives 7,000-9,000 ft for climbing both peaks. The 5,800 ft figure is a Gardner-only ascent (24 mi RT). The row's itinerary days already sum to 7,400 and totalNote/partner_requirements say ~7,000-8,000.",
+   "sources": [
+    "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain",
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 5800,
+     "value": 7400,
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Total elevation gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Total elevation loss",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "7,400 ft (out-and-back returns to the same trailhead, so loss equals gain)",
+   "evidence": "The outing starts and ends at the Wolf Creek Trailhead, so total loss must equal the 7,400 ft total gain (tracked trip: 7,373 ft gain). loss_ft 5800 was the Gardner-only figure; the itinerary loss sum (7,500) exceeded its own gain sum (7,400) by 100 ft, so day 3 loss is trimmed to 3,400 (camp at ~6,100 = 2,900 + 3,300 - 100; out: +200 / -3,400).",
+   "sources": [
+    "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain",
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 5800,
+     "value": 7400,
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Total elevation loss"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 3500,
+     "value": 3400,
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Total elevation loss"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km 16.9 km = 10.5 mi is the ONE-WAY approach to Gardner Meadows (sources give 10.4-10.5 mi one-way), which is what the 'Approach (one way)' stat shows; the itinerary's 25 mi is the round trip including the summit day. Different quantities, both correct.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/",
+    "https://www.wta.org/go-hiking/hikes/wolf-creek"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Gardner Meadows elevation",
+   "verdict": "fixed",
+   "correct_value": "Gardner Meadows (trail's end) is at about 5,700 ft; the waypoint's 5,700 is right and the prose '6,000 ft' is wrong",
+   "evidence": "The trail guide lists the high point of the Wolf Creek trail to Gardner Meadows as 5,738 ft; USGS 3DEP at the Gardner Meadows pin reads 5,738 ft. The ~6,000-6,250 ft figures describe the higher basin camp above the meadows, not the meadows themselves.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wolf-creek",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point elevations)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "a broad, wildflower-and-lupine-filled basin at about 6,000 ft",
+     "replace": "a broad, wildflower-and-lupine-filled basin at about 5,700 ft",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Gardner Meadows elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "From Gardner Meadows around 6,000 ft",
+     "replace": "From Gardner Meadows around 5,700 ft",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Gardner Meadows elevation"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "backpack in to a ~6,000-6,250 ft camp at Gardner Meadows/Wolf Creek Basin",
+     "replace": "backpack in to Gardner Meadows (~5,700 ft) or the basin camp above it (~6,200 ft)",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Gardner Meadows elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "North Fork Wolf Creek crossing distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources disagree: one trail guide puts the North Fork crossing (a fire-damaged log bridge) at 2.6 miles, another older route description puts the ford at 2.3 miles. No two independent sources agree, so neither the 2.3 (waypoint, hazards) nor the 2.6 (approach) is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/wolf-creek",
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Difficulty of the Gardner-North Gardner connecting ridge",
+   "verdict": "fixed",
+   "correct_value": "Crest between Gardner and Point 8487: class 3-4 over gendarmes if taken direct (a lower bypass under the cliffs avoids it); Point 8487 to North Gardner: mostly class 2",
+   "evidence": "Two descriptions agree the traverse from Point 8487 to North Gardner does not exceed class 2 (one tracked party calls it all class 2), while the crest between Gardner and Point 8487 ('Gardner Traverse') has pinnacles/tricky scrambling rated class 3-4 with a safer drop to ~7,400 ft under the cliffs; another party met some 4th class when off-line on the ridge. beta and descent_text each described only one half; both now name both sections.",
+   "sources": [
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+    "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain",
+    "https://www.summitpost.org/gardner-mountain/632655",
+    "https://hike2hike.com/scrambling/north-gardner-mountain-winthrop-bulger-peaks/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "from which the 'Gardner Traverse' continues north — that connecting ridge is notably harder (class 3-4, gendarmes, occasional unexpected class 4) than the ascent of Gardner itself.",
+     "replace": "from which the ridge continues north over Point 8487 to North Gardner. Taken along the crest, the stretch between Gardner and Point 8487 is notably harder than the ascent of Gardner itself (class 3-4 around gendarmes and pinnacles; a lower line below the cliffs avoids the hardest of it), while the ridge from Point 8487 on to North Gardner stays mostly class 2.",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Difficulty of the Gardner-North Gardner connecting ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From that saddle, the ridge toward Point 8487 and North Gardner Mountain is generally class 2, but includes a gendarme or two and cliff bands that look intimidating from a distance; if conditions",
+     "replace": "From that saddle, the crest up to Point 8487 has gendarmes and cliff bands that go at class 3-4 if taken direct, while the ridge from Point 8487 on to North Gardner Mountain is generally class 2; if conditions",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Difficulty of the Gardner-North Gardner connecting ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Elevation of the small meadow basin above Gardner Meadows",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "about 6,200 ft",
+   "evidence": "A route description puts the small meadow basin above Gardner Meadows at 6,200 ft (meadows give way to scree near 7,100 ft). The row's approach, approach_variants, climbing_route, bivy[1] (6,250) and the off-trail waypoint (6,200) all agree; only the itinerary day-2 note, its schedule line and the timing note said 7,000.",
+   "sources": [
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "to a small basin around 7,000 ft",
+     "replace": "to a small basin around 6,200 ft",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Elevation of the small meadow basin above Gardner Meadows"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "toward the 7,000 ft basin below the west ridge",
+     "replace": "toward the 6,200 ft basin below the west ridge",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Elevation of the small meadow basin above Gardner Meadows"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "find": "to a small basin around 7,000 ft",
+     "replace": "to a small basin around 6,200 ft",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Elevation of the small meadow basin above Gardner Meadows"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Direction from Gardner summit toward North Gardner / Point 8,487",
+   "verdict": "fixed",
+   "correct_value": "From Gardner's summit the ridge runs WEST down to the low point, then north over Point 8487 to North Gardner (which lies about a mile NW overall)",
+   "evidence": "One route description says to descend west from Gardner's top onto the ridge to the low point between the peaks, then traverse up to North Gardner; a party report puts North Gardner to the northwest. A USGS 3DEP elevation grid shows the crest falling due west from the summit (8,828 -> ~7,860 ft) to the low point and then rising north to North Gardner at ~48.516,-120.502. 'Southwest' in beta and descent_text is wrong; the overview's 'northwest' is right.",
+   "sources": [
+    "https://fastestknowntime.com/route/gardner-north-gardner-wa",
+    "https://www.lucasmountainknowledge.com/post/gardner-mountain-north-gardner-mountain",
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point elevations)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "descend southwest along the summit ridge",
+     "replace": "descend west along the summit ridge",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Direction from Gardner summit toward North Gardner / Point 8,487"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "From Gardner's summit the route continues southwest along the summit ridge",
+     "replace": "From Gardner's summit the route continues west along the summit ridge",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Direction from Gardner summit toward North Gardner / Point 8,487"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Access text copied from the Washington Pass area",
+   "verdict": "fixed",
+   "correct_value": "Pass at the Wolf Creek Trailhead ($5/day, $30 annual, NW Forest Pass or Interagency honored); no Cutthroat Lake rule; the WA-20 pass closure does not block the Winthrop-side drive",
+   "evidence": "The Forest Service page for the Wolf Creek Trailhead lists $5/day or $30 annual, honoring the Northwest Forest Pass and Interagency passes; a second route description also says a NW Forest Pass is required at this trailhead. WSDOT gates the winter closure between MP 134 and the Silver Star gate (MP 171) near Mazama, west of Winthrop, from which the trailhead is reached via Twin Lakes and Wolf Creek roads. Cutthroat Lake is a Washington Pass-area lake unrelated to this route.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/wolf-creek-trailhead",
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/",
+    "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+    "http://www.wsdot.wa.gov/Traffic/Passes/NorthCascades/closurehistory.htm"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "find": "required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads",
+     "replace": "required at the Wolf Creek Trailhead",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Access text copied from the Washington Pass area"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "find": "Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires",
+     "replace": "Dispersed camping capped at 10 days; no campfires",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Access text copied from the Washington Pass area"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "find": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "replace": "WA-20 (North Cascades Highway) closes over Washington Pass roughly early December–mid/late April, but its east-side gate sits west of Mazama; the Wolf Creek Trailhead is reached from Winthrop, so the pass closure blocks only a drive over the range from the west side.",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Access text copied from the Washington Pass area"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Wilderness named in avalanche zone",
+   "verdict": "fixed",
+   "correct_value": "Lake Chelan-Sawtooth Wilderness summit",
+   "evidence": "Gardner Mountain is described as the highest point of the Lake Chelan-Sawtooth Wilderness, and the Wolf Creek trail is described as lying within that wilderness; it is not in the Pasayten.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2017/01/22/gardner-mountain/",
+    "https://www.willhiteweb.com/north_cascades/gardner_mountain/wolf_creek_trail_385.htm",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/wolf-creek-trailhead"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "this Pasayten/Okanogan summit",
+     "replace": "this Lake Chelan-Sawtooth Wilderness summit",
+     "id": "wa_gardner_mountain_west_ridge",
+     "fact": "Wilderness named in avalanche zone"
+    }
+   ]
+  },
+  {
+   "id": "wa_gardner_mountain_west_ridge",
+   "fact": "Elevation of the Gardner-Point 8487 connecting saddle",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "descent names a '~7,900 ft saddle' while the 'Connecting saddle below Point 8,487' waypoint says 8,131 ft. USGS 3DEP reads 8,131 ft at the pin itself, but a 3DEP grid puts the ridge low point west of the summit near ~7,860 ft, so the pin may sit above the true low point; pin positions are out of scope and no two external sources state the saddle height.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json (USGS 3DEP point elevations)"
+   ],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

@@ -1,0 +1,242 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "gainFt"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Distance and gain from trailhead to high camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Days needed to reach camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Days needed to reach camp"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach drainage"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "pitches",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "rope_note",
+   "path": [],
+   "fact": "Pitch count"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road seasonal status"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "column": "road",
+   "path": [
+    "seasonalGate"
+   ],
+   "fact": "Road seasonal status"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "before": {
+    "itinerary": {
+     "cal": "North Cascades NP backcountry camping requires a wilderness permit, and the Crescent/Terror Creek approach is typically not snow-free and reliably passable until mid-to-late July.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then a steep, sometimes brushy climbers' path south of Terror Creek (wading the creek), climbing relentlessly to a ~6,200 ft spur on the Barrier ridge before dropping to a flat camp around 5,800 ft. It's a brutal, sustained ~4,000+ ft grind with little flat ground until camp.",
+       "hours": 7,
+       "miles": 5.5,
+       "title": "Approach to Southern Pickets high camp",
+       "gainFt": 4300,
+       "lossFt": 300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach camp near the Barrier / Terror Basin"
+      },
+      {
+       "n": 2,
+       "note": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin, then climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a couple of short, exposed low-5th-class moves near the summit plateau; parties typically make one short rappel (fixed-line/anchor reported at the top) to regain the south-side ledges on descent rather than down-climbing the exposed step. Often combined with an adjacent objective (e.g. West Ridge of Terror) on the same day if time and conditions allow.",
+       "hours": 7,
+       "miles": 3,
+       "title": "Chopping Block summit via South Route",
+       "gainFt": 1400,
+       "lossFt": 1400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "Alpine start, cross the Barrier toward Stump Hollow/Crescent Creek Basin."
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Reach base of south side",
+         "detail": "Traverse slabs/heather below the Chopping Block's south aspect."
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Scramble to summit plateau",
+         "detail": "Low 5th-class moves near the top; stay near the east side to avoid the hardest ground."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Summit",
+         "detail": ""
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin descent",
+         "detail": "Short rappel down the south side to regain scramble ledges."
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Back at camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Climb the Chopping Block and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: climb back over the Barrier spur and descend the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush make the descent slow and hard on the knees despite being downhill.",
+       "hours": 6,
+       "miles": 5.5,
+       "title": "Descend to Goodell Creek trailhead",
+       "gainFt": 300,
+       "lossFt": 4300,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Hike out"
+      }
+     ],
+     "totalNote": "A 3-day Southern Pickets trip (~14 mi and ~4,300 ft each way to camp); the Chopping Block itself is a moderate scramble/rappel day out of high camp and is commonly tacked on as a warm-up alongside another Southern Pickets objective."
+    },
+    "approach": "Drive SR 20 to Newhalem, which is reachable year-round from the west (Marblemount/Concrete) since the seasonal highway closure gate sits farther east near Ross Dam/Diablo. Park at the Goodell Creek trailhead on the north side of SR 20, across from Newhalem Campground (take the left just past crossing Goodell Creek, past the gravel pit, to road's end by the creek). Hike the old Goodell Creek Trail — a former logging-road bed — roughly 4 miles up-valley to the Terror Creek Trail junction, marked by a large cairn. Ford Terror Creek (calf-deep by late summer; the last reliable water before high camp), then climb one of the steepest maintained climbers' trails in the Cascades, gaining the ridge crest between Terror and Crescent Creeks via roots and 3rd-class dirt scrambling. Once on the crest — brushy with blueberry bushes and prone to fading in and out — follow it northwest several miles toward Stump Hollow (~5,600 ft) or the Chopping Block/Barrier Ridge camps overlooking Crescent Creek Basin and Mount Terror. Fit parties can reach camp in a long day; most take two, camping at Terror Creek or Stump Hollow. Total approach is roughly 8-9 miles with well over 5,000 ft of gain to camp.",
+    "dist_km": 22.53,
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Strenuous multi-day off-trail approach with heavy bushwhacking and elevation gain/loss via Stetattle Creek/Ridge or Crescent Creek basin; sustained fitness for consecutive long days carrying full alpine kit",
+      "packWeight": "Heavy (multi-day self-supported alpine load, typically 40-50+ lbs including camping/climbing gear for the approach)"
+     },
+     "approachTime": "Multi-day (typically 2+ days to reach the basin before summit day) via Stetattle Ridge or Crescent Creek basin",
+     "requiredSkills": [
+      "off-trail routefinding/navigation",
+      "bushwhack tolerance",
+      "low 5th class rock scrambling (5.4)",
+      "comfort on loose rock and exposed terrain",
+      "basic rope/belay skills for roped scrambling pitches",
+      "self-sufficient wilderness camping/backcountry travel"
+     ],
+     "experienceLevel": "Experienced alpine climber/scrambler comfortable with remote, unmaintained North Cascades terrain - this is not a beginner objective; prior Pickets or similarly remote North Cascades experience strongly recommended"
+    },
+    "pitches": 5,
+    "rope_note": "5-pitch intermediate alpine rock route (graded 5.4-5.5, Grade II) via access gullies on the south side to a heather ledge. Standard trad rack for moderate 5th-class pitches; remote Southern Pickets approach via Terror Basin.",
+    "road": {
+     "name": "Goodell Creek access",
+     "status": "Seasonal",
+     "driveNote": "Standard Southern Pickets approach",
+     "seasonalGate": "Winter closures"
+    }
+   }
+  }
+ ]
+}

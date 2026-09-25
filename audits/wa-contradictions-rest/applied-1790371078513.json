@@ -1,0 +1,102 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "waypoints",
+   "path": [
+    1,
+    "elev"
+   ],
+   "fact": "Summit elevation"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Permit requirement"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_type"
+   ],
+   "fact": "Permit requirement"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_pickup_location"
+   ],
+   "fact": "Permit requirement"
+  },
+  {
+   "id": "wa_north_ridge_west_side",
+   "column": "access",
+   "path": [
+    "_raw",
+    "permit_application_method"
+   ],
+   "fact": "Permit requirement"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_ridge_west_side",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5181,
+      "lng": -120.7331,
+      "elev": 4855,
+      "name": "Rainy Pass PCT Trailhead",
+      "note": "PCT north trailhead off Highway 20 at Rainy Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.5394,
+      "lng": -120.70807,
+      "elev": 7077,
+      "name": "Molar Tooth",
+      "note": "Follow the PCT ~1.5 mi to near Porcupine Creek, then ascend the ridge NE to the peak between Cutthroat Pass and Cutthroat Peak.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "access": {
+     "_raw": {
+      "permit_cost": "Free",
+      "permit_type": "Free self-issue day-use wilderness permit (May 15 - Oct 31)",
+      "land_manager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+      "special_requirements": "No overnight camping within 0.25 miles of Cutthroat Lake. No tents allowed above Cutthroat Pass due to fragile wildflower meadows. Class 4 scrambling route; rappel gear required for descent.",
+      "parking_pass_required": "Northwest Forest Pass ($5 day pass or $30 annual) or pay $5 cash at trailhead",
+      "permit_pickup_location": "Self-issue at Cutthroat Pass trailhead",
+      "seasonal_closure_dates": "Access typically May 15 - Oct 31; snow may close access earlier/later",
+      "permit_application_method": "Self-issue at trailhead"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "Free self-issue day-use wilderness permit (May 15 - Oct 31)",
+     "closures": "Access typically May 15 - Oct 31; snow may close access earlier/later",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "landManager": "USDA Forest Service (Okanogan-Wenatchee National Forest)",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass ($5 day pass or $30 annual) or pay $5 cash at trailhead",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "General Okanogan-Wenatchee National Forest land; a day-use fee or Northwest Forest Pass covers parking. No camping is allowed within a quarter mile of Cutthroat Lake."
+     }
+    }
+   }
+  }
+ ]
+}

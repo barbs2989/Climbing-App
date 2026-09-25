@@ -1,0 +1,393 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Which summit is the true summit / side of approach"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "beta",
+   "path": [],
+   "fact": "Which summit is the true summit / side of approach"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "face",
+   "path": [],
+   "fact": "Which summit is the true summit / side of approach"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Which summit is the true summit / side of approach"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "permit",
+   "path": [],
+   "fact": "Permit requirement"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Which lake the route passes"
+  },
+  {
+   "id": "wa_mount_watson_scramble",
+   "column": "crowds",
+   "path": [
+    "peakTraffic"
+   ],
+   "fact": "Which lake the route passes"
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "column": "gear",
+   "path": [
+    2
+   ],
+   "fact": "Descent rappels and rope"
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "column": "access",
+   "path": [
+    "rules"
+   ],
+   "fact": "NPS overnight permit cost"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "overview",
+   "path": [],
+   "fact": "Route identity: North Face vs East Ridge"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "Route identity: North Face vs East Ridge"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "rappel_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Route identity: North Face vs East Ridge"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Trip duration / summit-day hours"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Trip duration / summit-day hours"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Where to park / trailhead location"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "road",
+   "path": [
+    "driveNote"
+   ],
+   "fact": "Where to park / trailhead location"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Where to park / trailhead location"
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Where to park / trailhead location"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_watson_scramble",
+   "before": {
+    "beta": "From a base camp or day-hike start at Watson Lakes, leave the maintained trail and work up open slopes/ridge on the mountain's south side toward the notch between the West and true (East) summits. Cross a short but steep snow finger / remnant glacier apron in the notch (ice axe and crampons or microspikes advisable for most of the season), then scramble loose, mossy class 3 terrain around the south side of the West Summit and along a narrow, knife-edge ridge crest to the true summit. Most parties descend the same way; some instead drop east onto the shrinking Watson Glacier to shortcut back toward the lakes.",
+    "face": "South Face / summit ridge between the West and true (East) summits",
+    "detailed_rack": "Not a roped rock climb for most parties; carry a lightweight ice axe and crampons (or aggressive microspikes) for the snow/glacier notch, plus a helmet for the loose, mossy scrambling around the West Summit and the exposed summit ridge. Some parties carry a short rope/basic glacier gear for the small Watson Glacier remnant depending on conditions.",
+    "permit": "Free self-issue Noisy-Diobsud Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Comfortable with an 8-10 mile round trip on trail (to Anderson/Watson Lakes) plus sustained off-trail ascent on talus and open slopes to the summit ridge; expect a full day",
+      "packWeight": "Light day-pack (~15-20 lb) unless combining with a lake camp, in which case overnight pack weight to Watson/Anderson Lakes"
+     },
+     "approachTime": "~1.5-2.5 hrs on trail to Upper Anderson Lake, then additional off-trail scrambling to the summit ridge",
+     "requiredSkills": [
+      "Off-trail routefinding on benches and open slopes above the lakes",
+      "Comfort with exposure crossing the ~30-ft Class 2-3 summit ridge (drops on both sides)",
+      "Early-season snowfield travel/kick-stepping if climbing before snow fully melts out",
+      "Basic navigation (map/GPS) since the climbers' path is described as faint"
+     ],
+     "experienceLevel": "Intermediate scrambler - needs prior Class 2-3 off-trail scrambling experience and comfort making routefinding decisions once the maintained trail ends"
+    },
+    "crowds": {
+     "peakTraffic": "Weekends July-August see the lakes/campsites fill quickly in good weather; the summit scramble beyond Upper Anderson Lake stays lightly traveled even then since it requires leaving the maintained trail",
+     "solitudeRating": 3,
+     "estimatePerSeason": "Roughly 15-35 scramble parties per season reach the true summit (the Anderson/Watson Lakes trail itself sees far more day-hikers and backpackers, but most turn around at the lakes)"
+    }
+   }
+  },
+  {
+   "id": "wa_nooksack_tower_south_face",
+   "before": {
+    "gear": [
+     "Rock climbing harness",
+     "Helmet (essential due to rockfall)",
+     "60-meter rope",
+     "Carabiners (8-10)",
+     "Runners (multiple)",
+     "Pitons or stoppers for marginal protection",
+     "Ice screws (2-4 for ice bulges)",
+     "Rappel device",
+     "Belay device"
+    ],
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "rules": "Pack out human waste (blue bags) — no burial or glacier deposition. Some approaches cross into North Cascades National Park land on the upper mountain, where a free NPS backcountry permit is required only if camping overnight past the boundary.",
+     "permit": "Backcountry Use Permit required",
+     "closures": "Forest roads to the trailhead have experienced washouts in recent years — check current status",
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit for camps inside the park — not free",
+      "where": "Reserve on Recreation.gov, or pick up a walk-up permit at the Glacier Public Service Center. Camps in the Mount Baker Wilderness need only the free trailhead registration."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_nooksack_tower_beckey_route",
+   "before": {
+    "overview": "A dramatic and serious rock spire on the northeast side of Mount Shuksan's main massif, ringed by the Price, East Nooksack, and West Nooksack Glaciers, Nooksack Tower is one of the more committing summits in the North Cascades, with a reputation for loose rock and a demanding approach. The East Ridge (Beckey-Schmidtke) route is the classic line, first climbed in 1946 by Fred Beckey and Cliff Schmidtke.",
+    "itinerary": {
+     "cal": "NPS backcountry permit required in North Cascades National Park for overnight stays — $10 per person plus a $6 reservation fee, reserved on Recreation.gov; best climbed July-August when the couloir holds consolidated neve rather than bare/rotten ice.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the climbers' boot path off the Mt Baker Highway, hike Ruth Creek/Price Lake trail through steep forest, cross the Nooksack's North Fork on a large log, then grind up moraine above Price Lake to a ridge goat-path that leads to a flat rock bivy site (room for 2-3 bivies) overlooking the Price and East Nooksack Glaciers. Expect brush, an exposed log crossing, and real route-finding; most parties reach camp by mid-afternoon.",
+       "hours": 7,
+       "miles": 5,
+       "title": "Approach to high camp",
+       "gainFt": 3900,
+       "lossFt": 0,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Reach the 5,900 ft bivy camp on the ridge above Price Lake"
+      },
+      {
+       "n": 2,
+       "note": "This is the crux day and it is very long: an 800 ft, 50-60 degree (one 70 degree step) snow/ice couloir off the bergschrund leads into loose rock, then roughly 10 pitches of exposed class 4-5 climbing along the arete to the summit. The descent reverses the route with about ten 60m rappels plus downclimbing, often finishing in the dark; strong parties are back at camp 18-21 hours after leaving.",
+       "hours": 20,
+       "miles": 2.5,
+       "title": "Summit push via the East Ridge couloir",
+       "gainFt": 2400,
+       "lossFt": 2400,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "2:00 AM",
+         "label": "Wake at high camp",
+         "detail": "Quick brew-up and gear check before an alpine start."
+        },
+        {
+         "time": "3:00 AM",
+         "label": "Leave camp",
+         "detail": "Cross onto the Price/East Nooksack glacier under headlamp."
+        },
+        {
+         "time": "~5:00 AM",
+         "label": "Reach the bergschrund",
+         "detail": "Start up the 800 ft, 50-60 degree snow/ice couloir on the north face."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Top of the couloir",
+         "detail": "Swap to rock shoes and traverse into the loose rock trough below the arete."
+        },
+        {
+         "time": "1:00-2:30 PM",
+         "label": "Summit",
+         "detail": "Class 4-5 climbing up the north arete's ~10 pitches gains the top after roughly 10 hours of climbing."
+        },
+        {
+         "time": "3:00 PM - midnight",
+         "label": "Rappel and downclimb back to camp",
+         "detail": "About ten 60m raps down the couloir/face, finishing with downclimbing in the dark; return to camp 18-21 hrs after departure is typical."
+        }
+       ],
+       "objective": "Climb the north-face ice couloir and the class 4-5 north arete to the summit, then rappel back to camp"
+      },
+      {
+       "n": 3,
+       "note": "Reverse the approach: goat-path off the ridge, down the moraine past Price Lake, steep forest, and the log crossing back to the trailhead. Legs are tired and the log crossing/brush demand care on tired legs, but it's straightforward compared to the day before.",
+       "hours": 6,
+       "miles": 5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3900,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Descend to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip: a steep, brushy approach to a 5,900 ft high camp, an extremely long (18-21 hr) round-trip summit day up the ice couloir and rock ridge with roughly ten rappels back down, then a hike out; a few very strong parties compress it into a two-day weekend but most build in the extra day of margin given how long the descent takes."
+    },
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": "Double ropes. Parties run on the order of ten 60 m rappels from here down to the glacier.",
+      "notes": "First rappel off the summit area on double ropes, capped near 30m.",
+      "anchor": "fixed anchor (pin/sling)",
+      "hazards": [
+       "There is nothing fixed to inspect here — the anchor is whatever you can build out of what is stacked on the summit"
+      ],
+      "lengthM": 30,
+      "station": "Comes straight off the summit block, rigged around a stack of blocks rather than any fixed gear."
+     },
+     {
+      "n": 2,
+      "notes": "Continues down the steep, complex east-ridge terrain; loose rock requires care with rope pull.",
+      "anchor": "gear anchor (cams/nuts)",
+      "hazards": [
+       "This face sheds rock steadily and the couloir is the funnel it all comes down — anchoring on the flanking wall keeps you and the ropes out of the middle of it"
+      ],
+      "lengthM": 30,
+      "station": "Into the upper couloir. The anchors are on the rock walls flanking the couloir rather than in the ice — that is where the first ascent placed pins on the way down, and where later parties still rig. Where the flanking rock gives out, at least one party rappelled off a buried picket."
+     },
+     {
+      "n": 3,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 4,
+      "notes": "Continues down the ridge.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 5,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 6,
+      "notes": "Continues down the ridge.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 7,
+      "notes": "Continues down the ridge.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 8,
+      "notes": "Continues down the ridge, nearing the col/bivy site.",
+      "anchor": "gear anchor (cams/nuts)",
+      "lengthM": 30
+     },
+     {
+      "n": 9,
+      "notes": "Continues down toward the glacier.",
+      "anchor": "fixed anchor (pin/sling)",
+      "lengthM": 30
+     },
+     {
+      "n": 10,
+      "notes": "Final rappel reaching the glacier below the tower.",
+      "anchor": "gear anchor (cams/nuts)",
+      "hazards": [
+       "The bergschrund at the foot of the north-face couloir still has to be crossed to reach the glacier, and it is the last thing you deal with after a long technical descent"
+      ],
+      "lengthM": 30,
+      "station": "The rappels do not necessarily reach the bottom. Parties commonly stop rappelling partway and downclimb the rest of the couloir, frequently in the dark."
+     }
+    ],
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - a brutal, mostly off-trail approach via the Nooksack Cirque with brush, river fords, talus, and glacier travel to a high camp around 5,900 ft, followed by a long (often 10+ hour) summit push and descent",
+      "packWeight": "Moderate-heavy overnight alpine load (glacier travel gear, technical rock rack, camp/bivy gear) carried through bushwhacking and boulder-hopping terrain, not maintained trail"
+     },
+     "approachTime": "Multi-day: typically a full day (6-10+ hrs) up the Nooksack Cirque via brush, river fords, and glacier travel to high camp, followed by a long summit day (10+ hrs round trip) that includes roughly ten rappels back down to the glacier",
+     "requiredSkills": [
+      "Glacier travel and crevasse rescue (East Nooksack/Price Glacier approach)",
+      "Multi-pitch traditional leading up to 5.6 on loose, featured alpine rock",
+      "Route-finding on complex, unmarked, loose terrain",
+      "Steep snow/ice couloir climbing (reported up to ~50 degrees)",
+      "Building and trusting rappel anchors, including deadman/picket anchors, for a long multi-rappel descent",
+      "Strong off-trail navigation and bushwhacking stamina",
+      "Self-sufficiency and sound judgment - this is a remote committing objective with no realistic quick rescue"
+     ],
+     "experienceLevel": "Experienced alpine climbing team only - a serious Grade IV North Cascades objective; partners should have prior success on remote, multi-day alpine rock routes with glacier approaches before attempting this"
+    },
+    "road": {
+     "name": "Hannegan Pass Road #32 to Nooksack Cirque Road #34",
+     "status": "Gravel Forest Service roads; Road #34 is short (about 1 mile) and dead-ends at the trailhead.",
+     "driveNote": "Passenger cars can usually reach the trailhead in dry conditions, but spring washouts are common on North Cascades forest roads — check current Mount Baker Ranger District road status before driving.",
+     "seasonalGate": "Not gated at this low elevation; verify current status with the ranger district since nearby forest roads sometimes have seasonal closures."
+    },
+    "approach": "From Bellingham, exit Interstate 5 at Sunset Drive/Mount Baker exit. Drive Mount Baker Highway (Washington 542) east through the town of Glacier (last resupply for groceries) and continue 13 miles to the Nooksack River bridge. Immediately before the bridge, turn left on Nooksack River Road (USFS #32). Stay left at 0.5 miles, stay right at 1.4 miles from highway. Continue to the washout at 2.3 miles from the highway and park at Ruth Creek (elevation 2,156 feet). Hike the abandoned road beyond the washout for two miles to the Nooksack Cirque trailhead at 2,550 feet. River ford the Nooksack (use the log crossing at the original location noted at N48.87097 W121.61267; new logs are often swept away). Proceed up the forested mountainside east of the creek, starting up the west bank of Price Creek until finding a good log crossing. Continue to the moraine above Price Lake (3,911 feet), then hike the ridgeline between Price and East Nooksack Glaciers upward from the moraine to a rock slab bivouac spot at approximately 5,900 feet. From the bivouac, gain the glacier, traverse climber's right along the glacier to an exposed snow saddle below Nooksack Tower, then drop down and work onto the main lobe of the Price Glacier.",
+    "approach_variants": [
+     {
+      "name": "Ruth Creek washout, Nooksack Cirque, Price Lake moraine and the ridge to the 5,900 ft slab bivy",
+      "notes": "From the Mount Baker Highway, turn left onto Nooksack River Road (FS-32) immediately before the Nooksack River bridge, about 13 miles past Glacier. Stay left at 0.5 miles, right at 1.4 miles, and park at the washout at 2.3 miles from the highway, by Ruth Creek at about 2,156 ft. Walk the abandoned road beyond the washout for two miles to the Nooksack Cirque trailhead at 2,550 ft. Ford the Nooksack. There is a recorded log crossing near N48.87097 W121.61267 — new logs get swept away every year, so treat the coordinate as where to start looking rather than as a bridge. Go up the forested mountainside east of the creek, starting on the west bank of Price Creek until a good log turns up. Continue to the moraine above Price Lake at 3,911 ft, then follow the ridgeline BETWEEN the Price and East Nooksack Glaciers up to a rock slab bivouac around 5,900 ft. From the bivy, get onto the glacier, traverse climber's right to an exposed snow saddle below the Tower, then drop down and work onto the main lobe of the Price Glacier. This route belongs to Nooksack Tower and not to Mount Shuksan — it was merged from a duplicate Shuksan entry, and the Price Glacier route on Shuksan is a different climb sharing much of the same ground.",
+      "season": "Roughly Jun-Aug. Earlier the river is high and the couloir is safer; later the river drops but the couloir bakes and sheds rock",
+      "hazards": [
+       "Fording the Nooksack on logs that are swept away and replaced yearly",
+       "Rockfall down the couloir, recorded on the first ascent and in every account since",
+       "A hollow bergschrund that has forced parties to swing wide left",
+       "A descent of roughly ten 60 m rappels off gear you build yourself — fixed anchors here should not be trusted",
+       "Parties routinely still on the couloir or the lower approach after dark; one fast team recorded 21 hours car to car"
+      ],
+      "baseFinding": "THE BERGSCHRUND AT ROUGHLY 6,500 FT IS THE BASE, AND THE COULOIR ABOVE IT IS THE ONLY ONE. Beckey and Schmidtke's own account of the first ascent puts them at the bergschrund at the foot of the final north face at 6,500 ft, with 800 ft of 50-degree ice couloir above. That is the arrival: a schrund, then a single steep couloir that guards the Tower.\n\nTHE RIDGE BETWEEN THE TWO GLACIERS IS THE HANDRAIL. From the Price Lake moraine you climb a rib with the Price Glacier on one side and the East Nooksack on the other. In cloud you do not need the Tower: keep a glacier on each side of you and go up. If you only have ice on one side, you have come off the rib.\n\nTHE SADDLE IS THE HINGE, AND IT IS COUNTERINTUITIVE. From the bivy the traverse is climber's RIGHT to an exposed snow saddle below the Tower, and then you DROP DOWN onto the main lobe of the Price Glacier. Losing height here feels wrong and is correct. A party that refuses to descend off the saddle stays high on the wrong side and never reaches the couloir.\n\nCONFIRM AT THE SCHRUND: the couloir starts around 50 degrees and steepens to about 60 at the top, with a single 70-degree step where it hits rock. If your line eases off rather than steepens, it is not the couloir. Parties have found the schrund hollow and swung WIDE LEFT to avoid it entirely — that is a known variation, not a sign you are lost.\n\nWHAT GOING TOO FAR LOOKS LIKE: continuing up the Price Glacier past the Tower's couloir puts you on the Price Glacier route on SHUKSAN, which is a different mountain's climb reached from the same basin. Nooksack Tower is the freestanding tower below and north of Shuksan's summit; if the ground above your couloir keeps going for thousands of feet rather than ending on a tower in about 1,200 ft of fourth class, you are on Shuksan."
+     }
+    ]
+   }
+  }
+ ]
+}

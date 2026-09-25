@@ -1,0 +1,147 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total gain"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Parking pass at Nooksack Cirque Trailhead"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Parking pass at Nooksack Cirque Trailhead"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "access",
+   "path": [
+    "overnight_permit",
+    "where"
+   ],
+   "fact": "Parking pass at Nooksack Cirque Trailhead"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Which side the Wall Street Couloir route is on"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which side the Wall Street Couloir route is on"
+  },
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "column": "best_season",
+   "path": [],
+   "fact": "Which side the Wall Street Couloir route is on"
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Overnight permit"
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Overnight permit"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_sefrit_southwest_ridge",
+   "before": {
+    "gain_ft": 4500,
+    "access": {
+     "fees": "Northwest Forest Pass (or America the Beautiful interagency pass) required to park at the Nooksack Cirque Trailhead — $5/day or $30/annual.",
+     "rules": "No pets allowed within the North Cascades National Park boundary; no campfires, hunting, or mushroom collecting within the Park; secure food and scented items — black bears are common in the valley.",
+     "permit": "No permit needed for a day climb. Overnight camping within the North Cascades National Park portion of the approach requires a paid backcountry permit — $10/person plus a non-refundable $6 fee during the mid-May-to-early-October fee season (no charge the rest of the year). Reserve in advance via Recreation.gov (email-issued permits for the Mount Baker Highway/Nooksack area), or pick one up in person at the Glacier Public Service Center, which now issues NCNP backcountry permits only on Thursdays and Fridays (seasonally) — the Forest Service itself stopped issuing NCNP permits there in September 2023.",
+     "closures": "Ruth Creek has no bridge at the trailhead; wade or cross on a log if one is present — logs can be submerged and the ford can become too high to safely wade in early summer. Nooksack Cirque Road #34 and Trail #750 are primitive with limited maintenance (brush, blowdown).",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mount Baker Ranger District; the uppermost approach passes near/into the North Cascades National Park boundary (roughly a mile past the wilderness boundary).",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Mt. Baker Ranger District) — Mount Baker Wilderness, with some upper routes crossing into North Cascades National Park",
+     "parking_pass": "Northwest Forest Pass required at most trailheads — $30/year or $5/day.",
+     "passRequired": "None required at the Nooksack Cirque Trailhead.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Mount Baker Wilderness",
+      "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park."
+     }
+    },
+    "approach": "From Glacier, drive Mt. Baker Highway (SR 542) east about 12.5 miles, turn left on Hannegan Pass Road (FR 32), continue just over a mile to the junction with Nooksack Cirque Road (FR 34), and follow FR 34 one mile to its end at the Nooksack Cirque Trailhead (do not confuse with the separate Hannegan Pass Trailhead further up FR 32). Ford Ruth Creek right at the trailhead — there is no bridge, and early-summer high water can make it difficult or unsafe to cross. Follow the old roadbed/Trail #750 up the North Fork Nooksack valley for roughly 50 minutes, then leave the trail and make an ascending traverse onto Sefrit's west/southwest ridge, passing through/around a cliff band, to reach the base of the summit gully system. Above the cliff band, the summit gully splits into several forks; the leftmost fork (or the one just west of a snow couloir to its right) is easiest, and rock is generally solid low but looser near the summit ridge. Note a separate, lower-angle SE-side line — via Wall Street Couloir and the Northwest Glacier — is Class 2 with one exposed ~100 ft Class 3 traverse, and is reportedly the more commonly climbed route on the peak; don't confuse the two lines when planning.",
+    "approach_variants": [
+     {
+      "name": "Nooksack Cirque Trailhead at the end of FR-34, then an ascending traverse through the cliff band",
+      "notes": "From Glacier, drive SR-542 east about 12.5 miles, turn left on Hannegan Pass Road (FR-32), continue just over a mile to the junction with Nooksack Cirque Road (FR-34), and follow FR-34 one mile to its end at the Nooksack Cirque Trailhead. This is a DIFFERENT trailhead from the Hannegan Pass Trailhead further up FR-32, and from the milepost-3 pullout the Wall Street route uses.\n\nFord Ruth Creek right at the trailhead — there is no bridge.\n\nFollow the old roadbed and Trail #750 up the North Fork Nooksack valley for roughly 50 minutes, then leave the trail and make an ascending traverse onto Sefrit's west and southwest ridge, passing through or around a cliff band, to reach the base of the summit gully system.\n\nA separate, lower-angle line on the southeast side — Wall Street Couloir and the Northwest Glacier — is Class 2 with one exposed Class 3 traverse and is reportedly the more commonly climbed route on the peak. The two are easily confused in planning and impossible to confuse on the ground, because they start on different roads.",
+      "season": "Roughly Jun-Sep. Early summer high water can make the Ruth Creek ford at the trailhead difficult or unsafe",
+      "hazards": [
+       "An unbridged ford of Ruth Creek at the trailhead, difficult or unsafe at early-summer high water",
+       "A cliff band to be negotiated on an unmarked ascending traverse",
+       "Several similar-looking forks in the summit gully, only one of which is the easy line",
+       "Loose rock near the summit ridge",
+       "Fixed slings of unknown age at the crux step"
+      ],
+      "baseFinding": "THE CLIFF BAND IS THE GATE, AND THE GULLY YOU WANT IS ABOVE IT. Fifty minutes up Trail #750 you leave the trail and traverse upward, passing through or around a cliff band. Everything below the band is approach; the summit gully system starts above it. If you are still under continuous rock, you have not got through the band yet.\n\nTHE GULLY SPLITS, AND THE ANSWER IS LEFTMOST. Above the cliff band the summit gully divides into several forks. Take the LEFTMOST fork — or, put the other way round, the one immediately WEST of a snow couloir lying to its right. Those two descriptions are the same instruction from two sides and together they are checkable in poor visibility: find the snow couloir, then take the rock fork on its left.\n\nTHE ROCK ITSELF IS A CONFIRMATION. On this line the rock is generally solid low down and gets looser near the summit ridge. If your fork is loose from the first moves, you are probably in one of the other forks.\n\nWHICH SIDE OF THE MOUNTAIN AM I ON? This is the coarse test and it is settled by the drive: this route starts on FR-34 at the NOOKSACK CIRQUE trailhead and works up the peak's WEST and SOUTHWEST side. Sefrit's other two routes are both reached from Ruth Creek on the NORTH side and neither of them can be reached from here without going back to the car.\n\nDESCENT NOTE THAT CROSS-CHECKS THE START: parties reverse this line, and some rappel the short crux step off pre-existing slings rather than downclimb it. Slings on a short step above a cliff band is the same feature seen from above."
+     }
+    ],
+    "best_season": "Mid-July through September is best for the rock route once brush and gullies have mostly cleared of snow. April-May can offer a firm-snow alternative via the Wall Street Couloir/Northwest Glacier line to the southeast side, but wet-slide avalanche hazard and cornices build quickly through the day in spring."
+   }
+  },
+  {
+   "id": "wa_mount_sefrit_southeast_ridge",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass / Interagency Recreation Pass required at trailhead",
+     "permit": "No permit for day use; overnight use requires the applicable wilderness permit",
+     "closures": null,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (Mount Baker Wilderness)",
+     "passRequired": "Northwest Forest Pass or Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Mount Baker Wilderness",
+      "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_mount_sefrit_bloody_head_couloir",
+   "before": {
+    "access": {
+     "fees": "Northwest Forest Pass / Interagency Recreation Pass required at trailhead",
+     "permit": "No permit for day use; overnight use requires the applicable wilderness permit",
+     "closures": null,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Mt. Baker Ranger District (Mount Baker Wilderness)",
+     "passRequired": "Northwest Forest Pass or Interagency Pass",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required in the Mount Baker Wilderness",
+      "where": "Fill out the free wilderness registration at the trailhead; a recreation pass is needed to park."
+     }
+    }
+   }
+  }
+ ]
+}

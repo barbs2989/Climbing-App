@@ -1,0 +1,51 @@
+{"file": "r123.json", "results": [
+ {"id": "wa_the_perfect_crime_with_variations", "fact": "Pitch count", "verdict": "fixed_internal_plus_one",
+  "correct_value": "Five numbered pitches plus a short linking pitch (P2.5) with its own tree anchor = 6 belayed pitches; overview should say so, pitches=6 stays",
+  "evidence": "The route's own listing gives a header of 5 pitches but describes six belayed pitches, labelled P1, P2, P2.5 (~25m to a tree anchor), P3, P4, P5 — exactly the six rows stored in pitch_detail. A wall overview says its two original routes run 6-8 pitches (this being the shorter). The pitches column (6) and the six breakdown rows agree; only the overview's bare '5-pitch' conflicts, so it is clarified rather than any count changed.",
+  "sources": ["https://www.mountainproject.com/route/113436085/the-perfect-crime-with-variations", "https://www.mountaineers.org/activities/routes-places/cutthroat-wall"],
+  "patches": [
+   {"id": "wa_the_perfect_crime_with_variations", "fact": "Pitch count", "op": "replace_text", "column": "overview", "path": [], "find": "A 5-pitch, 800-ft moderate trad line", "replace": "A 5-pitch (6 counting the short P2.5 link), 800-ft moderate trad line"}
+  ]},
+ {"id": "wa_the_perfect_crime_with_variations", "fact": "High point equals wall base", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Settled catalog convention: high_point_ft on crag/wall routes tracks the BASE of the climb, so it equalling the Cutthroat Wall base waypoint is intended.",
+  "sources": [], "patches": []},
+ {"id": "wa_the_perfect_crime_with_variations", "fact": "Base elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "One wall description puts the flat area beneath the cliff at about 5,800 ft (matching bivy[3]); the main route database lists the Cutthroat Wall area at 6,120 ft (matching the waypoint) but as an area elevation, not explicitly the base. USGS 1 m DEM samples around the wall rise steadily from ~5,750 to ~6,300 ft across the base zone (the route-start pin reads ~5,950 ft), so neither figure is clearly wrong. The bivy entry is also out of scope for patching.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/cutthroat-wall", "https://www.mountainproject.com/area/113436052/cutthroat-wall", "https://epqs.nationalmap.gov/v1/json?x=-120.6488&y=48.5457&units=Feet&wkid=4326"],
+  "patches": []},
+ {"id": "wa_easy_getaway", "fact": "Descent rope / rappel", "verdict": "fixed",
+  "correct_value": "One rappel from the notch that needs two 60m ropes; a single 60m rope can fall short",
+  "evidence": "A wall overview specifies 60m ropes, at least two for the rappel, and a 60-metre rappel after walking 100-200 ft along the ridge. A trip report on this route says their single 60m rope did not get them all the way down and they had to rap again from a second bench. gear and rappels already say this; descent and descent_text called it a single-rope rappel, so those two are aligned.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/cutthroat-wall", "https://thepeakoftheweek.com/2016/07/08/easy-getaway-no-surrender/"],
+  "patches": [
+   {"id": "wa_easy_getaway", "fact": "Descent rope / rappel", "op": "replace_text", "column": "descent", "path": [], "find": "single-rope rappel from the notch to a ramp", "replace": "one rappel from the notch to a ramp (two 60m ropes; a single 60m can fall short)"},
+   {"id": "wa_easy_getaway", "fact": "Descent rope / rappel", "op": "replace_text", "column": "descent_text", "path": [], "find": "rappel one rope-length over a chockstone tunnel", "replace": "make one rappel (two 60m ropes, since a single 60m can fall short) over a chockstone tunnel"}
+  ]},
+ {"id": "wa_easy_getaway", "fact": "Descent direction after the rappel", "verdict": "fixed_internal_plus_one",
+  "correct_value": "skier's left",
+  "evidence": "The wall's descent beta states the upward-trending gully is on skier's left, then traverses around the head of another gully. Another wall description says only 'contour left' without specifying climber's or skier's. descent, descent_text and the approach variant's baseFinding all say skier's left; only rappels says climbers' left, so that word is aligned.",
+  "sources": ["https://www.mountainproject.com/area/113436052/cutthroat-wall", "https://www.mountaineers.org/activities/routes-places/cutthroat-wall"],
+  "patches": [
+   {"id": "wa_easy_getaway", "fact": "Descent direction after the rappel", "op": "replace_text", "column": "rappels", "path": [], "find": "contour climbers' left around the head of a gully", "replace": "contour skier's left around the head of a gully"}
+  ]},
+ {"id": "wa_easy_getaway", "fact": "High point equals wall base", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Settled catalog convention: high_point_ft on crag/wall routes tracks the BASE of the climb.",
+  "sources": [], "patches": []},
+ {"id": "wa_easy_getaway", "fact": "Base elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Same wall as The Perfect Crime: ~5,800 ft for the flat area under the cliff in one description vs 6,120 ft area elevation in another; USGS DEM around the base spans ~5,750-6,300 ft, so the value cannot be settled, and bivy is out of scope.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/cutthroat-wall", "https://www.mountainproject.com/area/113436052/cutthroat-wall"],
+  "patches": []},
+ {"id": "wa_one_piece_at_a_time", "fact": "High point equals wall base", "verdict": "not_a_contradiction",
+  "correct_value": null,
+  "evidence": "Settled catalog convention: high_point_ft on crag/wall routes tracks the BASE of the climb.",
+  "sources": [], "patches": []},
+ {"id": "wa_one_piece_at_a_time", "fact": "Base elevation", "verdict": "unresolved",
+  "correct_value": null,
+  "evidence": "Same wall: ~5,800 ft (flat area beneath the cliff) vs 6,120 ft (area elevation); this route starts ~150 ft left of and above the patio, and USGS DEM across the base zone spans ~5,750-6,300 ft, so no single value is established; bivy is out of scope.",
+  "sources": ["https://www.mountaineers.org/activities/routes-places/cutthroat-wall", "https://www.mountainproject.com/area/113436052/cutthroat-wall"],
+  "patches": []}
+]}

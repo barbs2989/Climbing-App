@@ -1,0 +1,407 @@
+{
+ "applied": [
+  {
+   "id": "wa_unnamed_6",
+   "column": "pro_tips",
+   "path": [
+    0
+   ],
+   "fact": "Year-round access claim"
+  },
+  {
+   "id": "wa_unnamed_6",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_unnamed_6",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_6",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager"
+  },
+  {
+   "id": "wa_unnamed_3",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_unnamed_3",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_3",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager"
+  },
+  {
+   "id": "wa_unnamed_4",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_unnamed_4",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_4",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager"
+  },
+  {
+   "id": "wa_unnamed_5",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_unnamed_5",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_5",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_5",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_5",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager"
+  },
+  {
+   "id": "wa_unnamed_2",
+   "column": "descent",
+   "path": [],
+   "fact": "Descent method"
+  },
+  {
+   "id": "wa_unnamed_2",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Approach gain"
+  },
+  {
+   "id": "wa_unnamed_2",
+   "column": "access",
+   "path": [
+    "landManager"
+   ],
+   "fact": "Land manager"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_unnamed_6",
+   "before": {
+    "pro_tips": [
+     "This is a quick approach crag accessible year-round on good weather days",
+     "The south-facing aspect means good sun exposure but watch for afternoon thunderstorms",
+     "The granite is exceptionally clean and well-structured compared to other Cascade areas"
+    ],
+    "descent": "Walk off or rappel from bolted anchors at route top",
+    "waypoints": [
+     {
+      "lat": 48.5269,
+      "lng": -120.6506,
+      "elev": 5400,
+      "name": "Washington Pass Hairpin Turn",
+      "note": "Parking on the Hairpin Turn pullout on SR-20 below Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Topout",
+      "distMi": 0.2
+     }
+    ],
+    "access": {
+     "_raw": {
+      "parking_pass_cost": {
+       "annual": "$30",
+       "five_day": "$10"
+      },
+      "climbing_permit_type": "None (parking pass only)",
+      "parking_pass_required": "Northwest Forest Pass",
+      "climbing_permit_required": false,
+      "parking_pass_pickup_locations": "National Forest offices, visitor centers, online at recreation.gov"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_unnamed_3",
+   "before": {
+    "descent": "Walk off or rappel from bolted anchors at route top",
+    "waypoints": [
+     {
+      "lat": 48.5269,
+      "lng": -120.6506,
+      "elev": 5400,
+      "name": "Washington Pass Hairpin Turn",
+      "note": "Parking on the Hairpin Turn pullout on SR-20 below Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Topout",
+      "distMi": 0.2
+     }
+    ],
+    "access": {
+     "_raw": {
+      "parking_pass_cost": {
+       "annual": "$30",
+       "five_day": "$10"
+      },
+      "climbing_permit_type": "None (parking pass only)",
+      "parking_pass_required": "Northwest Forest Pass",
+      "climbing_permit_required": false,
+      "parking_pass_pickup_locations": "National Forest offices, visitor centers, online at recreation.gov"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_unnamed_4",
+   "before": {
+    "descent": "Walk off or rappel from bolted anchors at route top",
+    "waypoints": [
+     {
+      "lat": 48.5269,
+      "lng": -120.6506,
+      "elev": 5400,
+      "name": "Washington Pass Hairpin Turn",
+      "note": "Parking on the Hairpin Turn pullout on SR-20 below Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Topout",
+      "distMi": 0.2
+     }
+    ],
+    "access": {
+     "_raw": {
+      "parking_pass_cost": {
+       "annual": "$30",
+       "five_day": "$10"
+      },
+      "climbing_permit_type": "None (parking pass only)",
+      "parking_pass_required": "Northwest Forest Pass",
+      "climbing_permit_required": false,
+      "parking_pass_pickup_locations": "National Forest offices, visitor centers, online at recreation.gov"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_unnamed_5",
+   "before": {
+    "descent": "Walk off or rappel with placed anchors",
+    "waypoints": [
+     {
+      "lat": 48.51454,
+      "lng": -120.64332,
+      "elev": 5477,
+      "name": "SR-20 Hairpin / Pond Pullout (east of Washington Pass)",
+      "note": "Park at the hairpin turn pullout on Hwy 20 near Washington Pass; ~7 min uphill approach trail to the base of Spire Gully.",
+      "type": "Trailhead",
+      "elevFt": 5477,
+      "directions": "Drive SR-20 to the large pullout at the hairpin turns just east of Washington Pass, the same parking used for Kangaroo Temple, with the pond beside it. Park roadside here at about 5,480 feet. This is one of the shortest approaches at Washington Pass — the gully is directly above the highway, so the pullout is the trailhead and you walk up from the shoulder."
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Topout",
+      "distMi": 0.2
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl (crag base)",
+      "type": "Base",
+      "distMi": null,
+      "elevFt": 5500
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "type": "Summit",
+      "elevFt": 5500
+     }
+    ],
+    "access": {
+     "_raw": {
+      "parking_pass_cost": {
+       "annual": "$30",
+       "five_day": "$10"
+      },
+      "climbing_permit_type": "None (parking pass only)",
+      "parking_pass_required": "Northwest Forest Pass",
+      "climbing_permit_required": false,
+      "parking_pass_pickup_locations": "National Forest offices, visitor centers, online at recreation.gov"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_unnamed_2",
+   "before": {
+    "descent": "Walk off or rappel from bolted anchors at route top",
+    "waypoints": [
+     {
+      "lat": 48.5269,
+      "lng": -120.6506,
+      "elev": 5400,
+      "name": "Washington Pass Hairpin Turn",
+      "note": "Parking on the Hairpin Turn pullout on SR-20 below Washington Pass.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.51355,
+      "lng": -120.64594,
+      "elev": 5500,
+      "name": "Spire Gully right - Alpenkuhl",
+      "note": "~7 minute walk up from the hairpin to this sunny, south-facing crag on Spire Gully's right side.",
+      "type": "Topout",
+      "distMi": 0.2
+     }
+    ],
+    "access": {
+     "_raw": {
+      "parking_pass_cost": {
+       "annual": "$30",
+       "five_day": "$10"
+      },
+      "climbing_permit_type": "None (parking pass only)",
+      "parking_pass_required": "Northwest Forest Pass",
+      "climbing_permit_required": false,
+      "parking_pass_pickup_locations": "National Forest offices, visitor centers, online at recreation.gov"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+     "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+     "permit": "N/A",
+     "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate roughly early December–mid/late April; the entire Washington Pass corridor is car-inaccessible in winter.",
+     "permitZone": "N/A",
+     "landManager": "N/A",
+     "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  }
+ ]
+}

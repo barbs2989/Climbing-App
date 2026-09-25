@@ -1,0 +1,209 @@
+{
+ "file": "r301.json",
+ "results": [
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Trailhead and approach line",
+   "verdict": "fixed",
+   "correct_value": "Two real approaches exist: Watson Lakes trailhead (~4,200-4,360 ft) via Anderson/Watson/Diobsud Lakes, and Bacon Creek Road (~800 ft) via the SE ridge over Peak 4800 (16.2 mi RT, camp at 6,250 ft saddle). The itinerary/timing/dist_km/gain_ft describe the Bacon Creek line; label the itinerary as that approach rather than rewriting it.",
+   "evidence": "A Bacon Creek trip report gives Road 1060/1064 at ~800 ft, SE ridge over Peak 4800, a gully at 4,600 ft to the Diobsud Creek Glacier, a 6,250 ft saddle camp, 16.2 mi round trip — matching the itinerary exactly. Another report starts at the Watson Lakes trailhead (4,200 ft) and reaches Bacon via Diobsud Lakes and gullies; route pages put that trailhead at 4,360 ft. Both approaches are genuine; the fix makes the itinerary say which one it plans.",
+   "sources": [
+    "https://onehikeaweek.com/2023/05/14/bacon-peak/",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+    "https://wyattmullen.com/adventures/20220521-bacon-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Trailhead and approach line",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A remote 2-night/3-day trip: about 16 miles round trip",
+     "replace": "A remote 2-night/3-day trip planned from the Bacon Creek Road trailhead (~800 ft) on the south side, not the Watson Lakes trailhead used in the approach: about 16 miles round trip"
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "6,261 ft is the net rise from the ~800 ft Bacon Creek start to the 7,061 ft summit, so it belongs to the Bacon Creek plan (now labelled in the itinerary), not the Watson Lakes approach. No source states a car-to-car gain for either line: the Bacon Creek report gives only the 800-7,061 ft range and 16.2 mi; another Bacon Creek party by a different line reported ~9,000 ft; the itinerary days sum to 6,500 ft. Rules forbid computing a new total, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2023/05/14/bacon-peak/",
+    "https://wyattmullen.com/adventures/20220521-bacon-peak"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Trailhead elevation",
+   "verdict": "fixed",
+   "correct_value": "4300 (Watson Lakes trailhead; sources 4,200-4,360 ft)",
+   "evidence": "The pin is the Watson Lakes trailhead; one report puts the road-end trailhead at 4,200 ft and the route page at 4,360 ft, and the row's own elev and approach say 4,300/4,360. The 800 ft in elevFt is the Bacon Creek Road start and does not belong on this pin.",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Trailhead elevation",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 800,
+     "value": 4300
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "High camp location and elevation",
+   "verdict": "fixed",
+   "correct_value": "By Bacon Creek: a ~6,250-6,300 ft saddle on the Diobsud Creek Glacier north of Canadian Bacon; by Watson Lakes: Diobsud Lakes (~6,000 ft); the 5,900 ft NE camp belongs to the separately named non-glacier variant. Berdeen Lake, Green Lake/Bacon Tarns and 'near Peak 4800' are wrong for this route.",
+   "evidence": "The Bacon Creek report camps at a 6,250 ft saddle on the Diobsud Creek Glacier after passing Peak 4800 far below; a club trip report camps at the 6,300 ft saddle north of Canadian Bacon. The Watson Lakes report camps at Diobsud Lakes (~6,000 ft) and uses the Bacon Tarns/Green Lake side only when continuing north on a traverse. Berdeen Lake lies east of the peak on neither line. Bivy list untouched (owned elsewhere).",
+   "sources": [
+    "https://onehikeaweek.com/2023/05/14/bacon-peak/",
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-bacon-canadian-bacon-peaks",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "High camp location and elevation",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "saddle camp near Peak 4800, north of Canadian Bacon",
+     "replace": "saddle camp on the Diobsud Creek Glacier, north of Canadian Bacon"
+    },
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "High camp location and elevation",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "a high camp near Berdeen Lake/the glacier",
+     "replace": "a high camp at Diobsud Lakes or a saddle on the Diobsud Creek Glacier"
+    },
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "High camp location and elevation",
+     "op": "replace_text",
+     "column": "what_to_bring",
+     "path": [
+      9
+     ],
+     "find": "a camp near Green Lake or the Diobsud/Bacon Tarns basin",
+     "replace": "a camp at Diobsud Lakes or a saddle on the Diobsud Creek Glacier"
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Approach variant vs approach prose (glacier or not)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The variant is a separately named alternative line (Anderson Lakes and the saddle chain to a 5,900 ft northeast camp) that can reach the summit without glacier travel; the main approach and grade describe the Diobsud Creek Glacier line the route is named for. Two genuine options, each labelled.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Descent line",
+   "verdict": "fixed",
+   "correct_value": "Standard descent reverses the ascent down the Diobsud Creek Glacier; the Green Lake/Bacon Tarns side is only for parties continuing north.",
+   "evidence": "The Bacon Creek report descends by retracing the ascent; the traverse report goes down to the Bacon Tarns below the Green Lake Glacier only because it continues north to Hagan and Blum. descent, descent_text and bail all reverse the Diobsud Creek Glacier.",
+   "sources": [
+    "https://onehikeaweek.com/2023/05/14/bacon-peak/",
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Descent line",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "descent is via glissading/walking down the Green Lake Glacier snow slopes",
+     "replace": "descent reverses the ascent on foot down the Diobsud Creek Glacier snow slopes"
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Commitment grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "No source found giving a commitment grade (II or III) for this route; route pages and trip reports describe it only as a basic glacier climb, 2-3 days. Left for a source that states the grade.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-bacon-canadian-bacon-peaks"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Land manager / wilderness",
+   "verdict": "fixed",
+   "correct_value": "Noisy-Diobsud Wilderness (Mt. Baker-Snoqualmie NF) for the approach; summit in North Cascades National Park.",
+   "evidence": "The Forest Service wilderness page for the Watson Lakes area is the Noisy-Diobsud Wilderness, and route pages place the Bacon/Watson approach in the Noisy-Diobsud Wilderness with the peak inside North Cascades National Park. The Mount Baker Wilderness lies further north and is not crossed.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/noisy-diobsud-wilderness",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/bacon-canadian-bacon-peaks",
+    "https://en.wikipedia.org/wiki/Bacon_Peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Land manager / wilderness",
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "— Mount Baker Wilderness, with",
+     "replace": "— Noisy-Diobsud Wilderness, with"
+    }
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "fact": "Trailhead waypoint note says it does not serve the Diobsud Creek Glacier side",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "The Watson Lakes trailhead is the start of the traverse past the Watson and Diobsud Lakes to the Diobsud Creek Glacier.",
+   "evidence": "A traverse report goes from this trailhead past Watson Lakes to Diobsud Lakes and up the gullies to Bacon's summit snow slopes, and a route summary says the line gains the Diobsud Creek Glacier by a gully at about 6,000 ft. The row's approach, descent_text, bail and waypoints 1-5 all run this trailhead to the Diobsud Creek Glacier, against the single note.",
+   "sources": [
+    "https://trailcatjim.com/bacon-hagan-blum-traverse-bacon-peak-mount-blum/"
+   ],
+   "patches": [
+    {
+     "id": "wa_bacon_peak_diobsud",
+     "fact": "Trailhead waypoint note says it does not serve the Diobsud Creek Glacier side",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "which serves the north-east side of the peak — the Green Lake Glacier and Watson Lakes approach — not the Diobsud Creek Glacier side this route is named for.",
+     "replace": "the start of the long cross-country line past the Watson Lakes and Diobsud Lakes to the Diobsud Creek Glacier."
+    }
+   ]
+  }
+ ]
+}
