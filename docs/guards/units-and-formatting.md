@@ -212,6 +212,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     line-comment pattern protects `://`**: the forecast fetch is an https URL, and a naive `//`
     strip would delete the exact line the canonical-units check is looking for. Two injection cases
     must stay SILENT to pin both halves.
+  - **THE FORECAST FETCH LIVES IN `lib/forecast.js` SINCE 2026-09-24** (`fetchForecastRaw`, shared
+    with the trip pack, which stores the raw responses). The URL pins and the `wind_speed_10m`
+    request are read THERE, and the guard also asserts WeatherPanel still calls `fetchForecastRaw` —
+    without that link the pins could describe a fetch nothing uses. The two URL injection cases were
+    repointed to `lib/forecast.js`; `panel-bypasses-the-shared-fetch` pins the new link.
   - **PROMOTING IT FOUND TWO INJECTION ANCHORS THAT HAD ALREADY ROTTED, and nothing had said so.**
     The guarded read/write moved out of `lib/units-pref.js` into `definePref` in `lib/prefs.js` when
     a third stored preference appeared; two cases kept naming the old file and reported **HARNESS
