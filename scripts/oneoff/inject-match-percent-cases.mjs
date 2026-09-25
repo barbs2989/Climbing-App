@@ -107,8 +107,8 @@ const cases = [
     expect: "no longer explains the missing match %",
   },
   {
-    name: "_cand narrows back to the pre-0207 projection, so every real climber reads the refusal again",
-    // The regression 0207 closed: objectives hardcoded empty and the new columns dropped.
+    name: "_cand narrows back to the pre-0209 projection, so every real climber reads the refusal again",
+    // The regression 0209 closed: objectives hardcoded empty and the new columns dropped.
     edits: [['objectiveIds:Array.isArray(objIds)?objIds:[]};', 'objectiveIds:[]};'],
             ['hikingSpeedFtHr:Number(p.hiking_speed_ft_hr)||undefined,', '']],
     expect: "for a COMPLETE profile",

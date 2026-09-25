@@ -79,7 +79,7 @@ ok("...but NOT on PGRST116, which is `.single()` reporting zero rows", /PGRST116
 console.log("\n— ClimbMatch.jsx: the failure has to survive the effect —");
 const hyStart = anchor(app, "const profileHydratedRef=useRef(false)", "the profile hydration");
 // To the end of the effect (its `},[uid]);`), not a fixed 2200 chars: main already sat at 2158, so any
-// field added to the hydration (0207 added three) pushed the .catch out of view and read as a SWALLOWED failure.
+// field added to the hydration (0209 added three) pushed the .catch out of view and read as a SWALLOWED failure.
 const hyEnd = app.indexOf("},[uid]);", hyStart);
 if (hyEnd < 0) { console.error("ANCHOR LOST — the profile hydration effect has no `},[uid]);` close."); process.exit(1); }
 const hy = app.slice(hyStart, hyEnd + 9);

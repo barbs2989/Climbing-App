@@ -177,10 +177,10 @@ for (const [i, sentence] of COPY_SITES.entries()) {
 // ---- 6. THE BROWSE ROW MUST NOT BLAME THE CLIMBER FOR WHAT ITS OWN PROJECTION DROPS.
 //
 // Sections 1-5 are about the number. This is about the sentence shown when there is no number,
-// and it is a separate question because, until 0207, the row that renders it could never reach
+// and it is a separate question because, until 0209, the row that renders it could never reach
 // section 4's signals: `_cand` hardcoded `objectiveIds:[]` and `profiles` had no availability or
 // pace column, so compatUnknown was >= 3 for a complete profile and a bare one alike and every
-// real climber read the refusal. 0207 added the columns and the list now passes each row its
+// real climber read the refusal. 0209 added the columns and the list now passes each row its
 // objectives, so 6a asserts BOTH halves: a complete row scores, a bare one still refuses. The
 // refusal used to say
 //
@@ -209,13 +209,13 @@ const richRow = {
   show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",
   disciplines: ["sport", "trad", "alpine"], sport_grade: "5.11a", trad_grade: "5.10a",
   boulder_grade: "V4",
-  // The COLUMN names (0207), not camelCase: the projection must read what PostgREST returns.
+  // The COLUMN names (0209), not camelCase: the projection must read what PostgREST returns.
   availability: ["weekends", "weekday_am"], avail_week: ["sat_am", "sun_am"], hiking_speed_ft_hr: 1000,
 };
 const RICH_OBJ = (ME.objectiveIds && ME.objectiveIds.length) ? ME.objectiveIds.slice(0, 1).concat(["o2"]) : ["o1", "o2"];
 const unkRich = M.compatUnknown(ME, buildCand(richRow, RICH_OBJ));
-if (unkRich < 3) ok(`a complete real row can be scored (compatUnknown = ${unkRich}) — the projection reads the 0207 columns and the objectives it is handed`);
-else fail(`_cand leaves ${unkRich} signals unknown for a COMPLETE profile, so every real climber reads the refusal again — the projection is dropping availability, pace or objectives (0207). Re-derive with scripts/oneoff/measure-browse-row-match-percent.mjs.`);
+if (unkRich < 3) ok(`a complete real row can be scored (compatUnknown = ${unkRich}) — the projection reads the 0209 columns and the objectives it is handed`);
+else fail(`_cand leaves ${unkRich} signals unknown for a COMPLETE profile, so every real climber reads the refusal again — the projection is dropping availability, pace or objectives (0209). Re-derive with scripts/oneoff/measure-browse-row-match-percent.mjs.`);
 const bareRow = { id: "3f2a91cc-0000-4000-8000-000000000002", name: "Bare", disciplines: [] };
 const unkBare = M.compatUnknown(ME, buildCand(bareRow, []));
 if (unkBare >= 3) ok(`...and a bare row still refuses (compatUnknown = ${unkBare}) rather than scoring absences as a low match`);

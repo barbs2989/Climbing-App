@@ -812,7 +812,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       — and requires `compatUnknown >= 3`. Widening `_cand` (a column arrives) is correct work, and
       the failure says so while pointing at the measurement, the standard `KNOWN` and
       `PARTIAL_ON_PURPOSE` are held to.
-    - **UPDATE (0207, 2026-09-25): THE COLUMNS ARRIVED, AND 6a WAS RE-DERIVED — IT FIRED EXACTLY AS
+    - **UPDATE (0209, 2026-09-25): THE COLUMNS ARRIVED, AND 6a WAS RE-DERIVED — IT FIRED EXACTLY AS
       DESIGNED.** `profiles` gained `availability`, `avail_week` and `hiking_speed_ft_hr`
       (`partners_near` and `PARTNER_COLS` return them), and `PartnerSearch` reads every row's
       objectives in ONE batched `useObjectivesOfUsers` call and hands them in as `objIds`. 6a now

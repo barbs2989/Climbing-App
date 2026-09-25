@@ -1,4 +1,4 @@
--- 0207 (applied by hand in the SQL Editor on 2026-09-24): the partner-match signals a profile
+-- 0209 (applied by hand in the SQL Editor on 2026-09-24): the partner-match signals a profile
 -- collected and never stored, and crew gear claims.
 --
 -- 1. profiles.availability / avail_week / hiking_speed_ft_hr. The week grid, the Me-tab availability
