@@ -27349,3 +27349,45 @@ should be re-derived from 702, not continued from 524.
 `last_processed_id` advanced to `wa_little_sister_north_face`. No `.env`/`.env.local` this
 run (fresh clone, read-only anon key only, as intended); WebSearch settled every fact
 checked, `check:sql` run and clean before committing the fix file.
+
+---
+
+## 2026-09-25 — Pass 6, Batch 335
+
+Eight routes, six peaks (Little Sister 2, Little Tahoma 2, Liberty Bell 1, Lizard Mountain 1,
+Luahna Peak 1, Phantom Peak 1): Southeast Ridge, West Face (Little Sister); Cowlitz/Ingraham
+Glaciers, East Shoulder (Little Tahoma); Live Free or Die! (Liberty Bell); South Route
+(Lizard Mountain); East Slopes (Luahna Peak); Luna Glacier (Phantom Peak).
+
+**Confirmed errors → fixes in `sql/2026-09-25-batch-335.sql`:**
+- Little Sister West Face's `high_point_ft` (6,526) contradicted the app's own `areas` row
+  for this peak (`wa_little_sister.elevation_ft` = 6,600) — the same bug batch 334 fixed on
+  this peak's North Face route using the same external convergence (SummitPost, Peakbagger,
+  ListsOfJohn all give 6,600-6,620 ft); that batch didn't touch West Face. Corrected to 6,600.
+- Live Free or Die!'s `watch_out` described the whole route as bouldering terrain ("Boulder
+  problem grade terrain", "Limited protection on bouldering sections", "exposed bouldering
+  terrain") — flatly contradicting the row's own `overview` ("Despite its name and grade
+  label, Live Free or Die! is NOT a boulder problem") and `pitch_detail` (8 roped pitches,
+  mostly bolted anchors, 70m rope, quickdraws). The V5 figure names one crimp/pendulum move
+  on the P4 crux, not the route. Rewrote to match the route's own established facts, and
+  fixed the column's shape from a bare string with embedded newlines to the JSON array every
+  other route's `watch_out` uses.
+
+**Flagged for human review (not auto-fixed):**
+- Lizard Mountain: `areas.elevation_ft` (7,399) vs. the route's own `high_point_ft` (7,420).
+  External sources split the same way the route's own `data_quality.gaps` already warned —
+  Peakbagger and ListsOfJohn both give 7,420 ft, PeakVisor's 2,258 m converts to ~7,409 ft,
+  none matches the stored area value exactly. Left as-is; a human with a topo should decide
+  which figure the `areas` row should carry.
+
+**Checked and confirmed correct, not touched:** Little Tahoma's 11,138 ft high point (matches
+both routes and the area row) and its Aug 29, 1894 first ascent by J.B. Flett and Henry H.
+Garrison (Wikipedia); Luahna Peak's 8,445/8,450 ft (area vs. route — within the route's own
+stated range, not a real conflict) and its Aug 13, 1911 Mazamas first ascent (Rodney Glisan,
+H.H. Prouty, Winthrop Stone, C.W. Whittlesey — Wikipedia); Phantom Peak/Luna Glacier's
+8,016 ft high point (exact match, area and route); Little Sister Southeast Ridge's
+`high_point_ft` (6,600, already correct).
+
+`last_processed_id` advanced to `wa_luna_glacier`. No `.env`/`.env.local` this run (fresh
+clone, read-only anon key only, as intended); WebSearch settled every fact checked,
+`check:sql` run and clean before committing the fix file.
