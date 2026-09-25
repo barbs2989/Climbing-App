@@ -1195,7 +1195,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
               <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
             </div>
             <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
-            <button onClick={() => setSel(null)} title="Close" style={{ background: "none", border: "none", color: C.textMuted, fontSize: 17, cursor: "pointer", padding: "0 4px", flexShrink: 0 }}>×</button>
+            <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
           </div>
         ) : null}
       </div>
@@ -1471,14 +1471,15 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
           the panel is a layer over the area you are standing on, not a step deeper into it.
           The owner then reported both halves as too hard to use: a small grey "← Back" was
           hard to find, and the path, squeezed into one sideways-scrolling line beside it, was
-          cut off. So the bar is now two rows and taller on purpose — a solid blue Back button
-          that NAMES where it goes, and under it the full path, WRAPPING rather than scrolling,
+          cut off. So the bar is now two rows and taller on purpose — a Back button that NAMES
+          where it goes (drawn with POP_BACK since 2026-09-25, like every other Back in the app:
+          44px tall with a bright edge, so it is still easy to find without its own colour), and under it the full path, WRAPPING rather than scrolling,
           so every level is visible and tappable and the area you are in ends it in bold. */}
       {crumbs.length ? (
         <div style={{ position: "sticky", top: 0, zIndex: 30, background: C.bg, paddingBottom: 10, marginBottom: 2 }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "stretch", gap: 10, background: C.surface, border: "1px solid " + C.borderHi, borderRadius: 12, padding: "11px 12px" }}>
-            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ alignSelf: "flex-start", maxWidth: "100%", display: "flex", alignItems: "center", gap: 7, background: C.blueSolid, border: "none", color: "#fff", borderRadius: 10, padding: "10px 16px", fontSize: 15, fontWeight: 800, cursor: "pointer", minHeight: 44 }}>
-              <span style={{ fontSize: 17, lineHeight: 1 }}>{"←"}</span>
+            <button onClick={() => { if (screen !== "areas") setScreen("areas"); else back(); }} style={{ ...POP_BACK, alignSelf: "flex-start", maxWidth: "100%" }}>
+              <span aria-hidden="true">{"←"}</span>
               <span style={{ minWidth: 0, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{"Back to " + (screen !== "areas" ? current.name : crumbs.length >= 2 ? crumbs[crumbs.length - 2].name : "All areas")}</span>
             </button>
             <nav aria-label="Area path" style={{ display: "flex", alignItems: "center", flexWrap: "wrap", rowGap: 6, columnGap: 6, minWidth: 0 }}>
