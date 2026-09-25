@@ -1,0 +1,287 @@
+{
+  "wa_dome_peak_dome_glacier": {
+    "area": "wa_dome_peak",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Dome Glacier to the 8,560 ft notch",
+        "class": "Glacier",
+        "notes": "Rope up and work up-glacier on roughly a 115° bearing through the crevasse bands to the obvious notch just north of the summit. A couple of crevasses just below the notch can usually be end-run; late in the season the last 100–200 ft to the notch melts out to talus and scree, and the bergschrund below it can become the deciding obstacle."
+      },
+      {
+        "n": 2,
+        "label": "Snow slope from the notch to the summit ridge",
+        "class": "Moderate snow",
+        "notes": "Cross through the notch and climb about 300 ft of moderate snow, usually in a wide arcing line, to gain the summit ridge east of the summit. On an early start this slope can be bulletproof, so keep crampons on and an axe in hand; there are a few bivy sites at the notch itself."
+      },
+      {
+        "n": 3,
+        "label": "Rock arête to the true summit and the cheval",
+        "class": "Class 3–4",
+        "notes": "About 500 ft of narrow, exposed rock arête leads to the summit; a class 3–4 bulge near the end of the ridge is where parties most often fix a hand line, and the famous straddle-the-crest cheval section is the exposed crux. The true summit is the northeast one, barely higher than the southwest peak that looks higher from below; slings and a nut or two cover it."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "1 section → 3. Kept the stored glacier section (label and bearing) and deepened it; added the snow slope above the notch and the summit arête/cheval, which the stored card omitted entirely.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/116652285/dome-glacier",
+        "http://ericsbasecamp.net/trips/DomePk/DomePk.htm",
+        "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier (search snippet only; page 403)",
+        "https://www.countryhighpoints.com/dome-and-sinister-peaks/",
+        "https://www.jeffreyjhebert.com/adventures/dome-glacier-on-dome-peak"
+      ],
+      "other_findings": "Notch is given as 8,560 ft (Mountaineers) and 8,600 ft (trip report); kept 8,560 as stored. Stored grade 'Class 4, Glacier, 5.5' — no source found gives 5.5; sources give class 3–4 (MP: 4th class). Stored pitches=3 and length_m=427 look inherited from somewhere unsupported."
+    }
+  },
+  "wa_mount_rainier_ingraham_direct": {
+    "area": "wa_mount_rainier",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Ingraham Glacier above Camp Muir",
+        "class": "Glacier",
+        "notes": "Rope up at Camp Muir (10,080 ft) and cross the upper Cowlitz Glacier east to Cathedral Gap, then climb through its rock band and round the corner onto the Ingraham Glacier; the steeper, shorter Cadaver Gap is the alternative. Start around 1–2 AM, and only after a hard overnight freeze, so the snow bridges are firm."
+      },
+      {
+        "n": 2,
+        "label": "Ingraham Flats and the crevassed zone",
+        "class": "Glacier, crevassed",
+        "notes": "Drop into Ingraham Flats (~11,100 ft), a flat bench used as an alternate high camp, then climb into the heavily crevassed band between roughly 11,400 and 11,800 ft. Large cracks here are crossed on thinning snow bridges or on short seasonal ladders with hand lines and fixed protection; these crossings are bottlenecks, and when they fail the route moves over to the Cleaver."
+      },
+      {
+        "n": 3,
+        "label": "Ingraham headwall",
+        "class": "35–45° snow",
+        "notes": "Climb the headwall directly beneath the icefall; the slope is around 45°, but the switchbacking boot track usually lowers it to 35–40°. Large seracs sit on the west side near 12,500 ft — the line trends east above the top of the Cleaver in some years and toward the top of Gibraltar Rock in others, with fixed pickets for running belays on the steepest steps. Do not stop under the serac band."
+      },
+      {
+        "n": 4,
+        "label": "Final 3,400 ft to the crater rim",
+        "class": "30–40° snow",
+        "notes": "Above about 13,000 ft the crevasses are enormous but fewer; expect sagging snow bridges and wide end-runs. Lower-angle switchbacks lead to the crater rim at about 14,100 ft; the altitude, not the terrain, is the difficulty here, and a slip on firm snow when tired is the main hazard."
+      },
+      {
+        "n": 5,
+        "label": "Crater to Columbia Crest",
+        "class": "Snow walk",
+        "notes": "The route reaches the southeast crater rim near Guide Rock. From there, cross the snow-filled summit crater to Columbia Crest (14,411 ft), the high point on the far side, about 20–30 minutes on foot from the rim."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 sections → 5. Kept both stored labels (section 1 and a renamed 'Final 3,400 ft' section 4) and rewrote their notes, which were copied from the approach prose; added Cathedral Gap/Flats, the 11,400–11,800 ft crevasse band, the headwall and the crater crossing.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106812783/ingraham-glacier-direct",
+        "https://mountrainierclimbing.blogspot.com/2026/05/ingraham-direct-route-update-52626.html",
+        "https://mountrainierclimbing.blogspot.com/2018/06/ingraham-direct-route-conditions-june-2.html",
+        "https://www.summitpost.org/ingraham-glacier-direct/158122 (search snippet only; page 403)"
+      ],
+      "other_findings": "The stored beta names 'High Crack' near 11,200 ft; recent ranger updates put the ladder crossings at 11,600–11,800 ft. The line above 12,500 ft varies by year: one source cuts east above the Cleaver, the 2026 ranger update runs toward Camp Comfort atop Gibraltar Rock."
+    }
+  },
+  "wa_dragontail_peak_east_ridge_aasgard_pass": {
+    "area": "wa_dragontail_peak",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Aasgard Pass to the upper snowfield",
+        "class": "Class 2",
+        "notes": "From the top of Aasgard Pass (~7,800 ft) turn southwest up the slope. Cairns mark a path high on the boulder field that keeps you off the snow until about 8,300 ft; when the slope is snow-free, a climbers' trail runs up the scree on its left side."
+      },
+      {
+        "n": 2,
+        "label": "Snow Creek Glacier basin to the east ridge saddle",
+        "class": "Snow to ~30°",
+        "notes": "Cross the small Snow Creek Glacier to the saddle at about 8,500 ft. It is tame, with virtually no crevasses and about 30° at its steepest, but the upper lip can mean a long, steep sidehill traverse with a runout onto rock outcrops 200+ ft below. Carry an axe and crampons through July, and climb it while it is firm in the morning."
+      },
+      {
+        "n": 3,
+        "class": "Class 3",
+        "label": "East ridge to the summit",
+        "notes": "From the saddle turn northwest and follow about 300 ft of bootpath broken by easy granite scrambling to the 8,840 ft summit. The ridge itself is straightforward; the only exposure is short and airy."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "2 sections → 3. Kept both stored labels; split out the cairned boulder field above the pass, added the saddle elevation, the ~30° maximum and the steep-traverse runout hazard to the glacier section, and gave the final ridge a direction and a height.",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/dragontail-peak-aasgard-pass (search snippet only; page 403)",
+        "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-dragontail-peak-aasgard-pass (search snippet only)",
+        "https://www.francisbaileyh.com/2022/07/01/dragontail-peak/",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-22.110714744944 (search snippet only)"
+      ],
+      "other_findings": "The stored pitch_detail row 'Aasgard Pass' says ~2,000 ft of gain; the approach prose says ~2,200 ft. Minor."
+    }
+  },
+  "wa_glacier_peak_cool_glacier_gerdine": {
+    "area": "wa_glacier_peak",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Gentle snow above Glacier Gap camp",
+        "class": "Class 2 snow/scree",
+        "notes": "From the ~7,300 ft Glacier Gap camp head north, sidehilling first on the left slope and then on the right slope below Glacier Gap Peak (7,739 ft), then regain the ridge and follow it to about 8,400 ft. A short scramble of about 15 ft at the top of this section drops onto the glacier."
+      },
+      {
+        "n": 2,
+        "label": "Volcanic scree onto the Gerdine and Cool glaciers",
+        "class": "Glacier",
+        "notes": "Traverse northeast onto the upper Suiattle and Gerdine glacier ice, passing below and right of the cliffs of Disappointment Peak. Few crevasses, but rockfall off that face is frequent and can include very large blocks, worst after about 10 AM — keep a wide berth and do not stop beneath it. Late in the season a short stretch of bare ice appears."
+      },
+      {
+        "n": 3,
+        "label": "Cool Glacier to the saddle",
+        "class": "Glacier, crevassed",
+        "notes": "At about 9,200 ft the ice bends sharply left onto the Cool Glacier; climb it westward to the saddle between Disappointment Peak and the main peak at the glacier's top. This is where the real crevasses are — small cracks at the bend, then snow bridges and crevasse hops that deteriorate fast in late summer — so stay roped."
+      },
+      {
+        "n": 4,
+        "label": "Final steep pitch to the summit",
+        "class": "Scree or steep snow",
+        "notes": "Follow the ridge north on the climbers' trail, up loose pumice and scree that slides back underfoot, to about 10,000 ft, then climb steep snow or loose rock for the last ~500 ft to the 10,541 ft summit, which sits on the west side of the top. Which surface you get depends on the season."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 sections → 4. Kept all three stored labels and rewrote their thin notes with directions, elevations and the Disappointment Peak rockfall hazard; split the Cool Glacier crevassed section out from the traverse.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+        "https://havetent.com/2017/08/28/glacier-peak-via-gerdine-cool-glaciers/",
+        "https://www.summitpost.org/glacier-peak/climbers-log/150318/d-50290 (search snippet only)",
+        "https://www.mountaineers.org/activities/trip-reports/glacier-peak-disappointment-peak-cleaver-10 (search snippet only)"
+      ],
+      "other_findings": "Sources disagree on the glacier's name for the 8,400–9,200 ft traverse: one says the upper Suiattle, another the Gerdine. Section 2 names both. The final 500 ft is described as steep snow by one source and as scree plus a snowfield bootpath by another, so it is framed as seasonal."
+    }
+  },
+  "wa_north_twin_sister_scramble": {
+    "area": "wa_north_twin_sister",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "class": "Class 2–3",
+        "label": "West ridge crest",
+        "notes": "Where the timbered ridge opens onto rock, scramble past small scrub trees, keeping just right of the crest, to the top of a prominent crag on the crest that ends in a drop-off of about 30 ft. The false summit and an obelisk-like tower come into view from here. The rock is grippy, orange-weathered dunite."
+      },
+      {
+        "n": 2,
+        "class": "Class 3",
+        "label": "Right of the crest to the small headwall",
+        "notes": "Drop about 100 ft right of the crest and continue for roughly 800 ft past the drop-off crag, then climb back left on solid rock to a small headwall. Watch the pull to the right: ground that looks easier out there turns into loose, exposed class 4–5. The crest itself also runs class 4–5, so cairns and the obvious worn line are the guide."
+      },
+      {
+        "n": 3,
+        "class": "Steep Class 3",
+        "label": "Over the false summit",
+        "notes": "Start the headwall on its left, pass the last clump of about seven trees on the crest, and climb straight over the false-summit crag on steep class 3 rock. This is the most sustained stretch; the exposure grows but the holds stay good."
+      },
+      {
+        "n": 4,
+        "class": "Class 3–4",
+        "label": "Summit gully and final rocks",
+        "notes": "Beyond the false summit, either climb a broken, exposed chimney or traverse right onto a ridge spur and around a corner into a rock-and-gully system. Steep rock with bucket holds leads to class 3–4 scrambling and the summit; several false tops near the end are easy to mistake for it."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "1 section → 4. Kept the stored 'West ridge crest' label for the lower ridge and replaced the single stay-left note with a sequenced description (drop-off crag, right-side traverse, headwall, false summit, summit gully).",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge (search snippets only; page 403)",
+        "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/",
+        "https://www.adventurespiritguides.com/blog/post/northtwinsister",
+        "https://stephabegg.com/trip-reports/washington/north-twin/"
+      ],
+      "other_findings": "Side-of-crest advice conflicts: one trip report says stay LEFT (as the stored note and approach prose do), a guide service says the trail is mostly climber's RIGHT of the crest, and the Mountaineers sequence uses the right side low and the left side higher. The new notes follow that sequence and drop the blanket 'stay left' rule. The stored OVERVIEW says this line 'approaches from the south/southwest and gains the ridge connecting North and South Twin', which contradicts the row's own beta and approach prose (both describe the west ridge). The stored pitch_detail row 2 names a 'Katie Gap' notch at ~6,300 ft; no source found mentions it — possibly invented."
+    }
+  },
+  "wa_lincoln_peak_standard": {
+    "area": "wa_lincoln_peak",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "label": "Southwest basin and bergschrund",
+        "class": "30–40° snow",
+        "notes": "After an alpine start from the ~6,100 ft treeline camp, traverse around the base of the steep southwest buttress and climb the long snow slope left of a large ice cliff, about 1,500 ft of 30–40°, to the first bergschrund near 7,400–7,600 ft. Expect firm névé with pockets of wind slab; this slope is avalanche terrain after new snow."
+      },
+      {
+        "n": 2,
+        "label": "Bergschrund and serac step",
+        "class": "Up to 70–85° snow/ice",
+        "notes": "This crux varies more than any other part of the climb. In some seasons it is a serac face about 50 ft high, climbed at 70–85° from a narrow bridge over the crack; in a big snow year it can be nearly filled, a thin crack you step across. Gaps can open at both its lower left and its upper right."
+      },
+      {
+        "n": 3,
+        "label": "Lower basin and the hidden gully",
+        "class": "~60° snow",
+        "notes": "Simul-climb on pickets across the lower basin to its left end, then climb the narrow, hidden gully, the steepest sustained slope on the route, crossing deep runnels (2–4 ft) and a second bergschrund that is often snowed over. There are slung horns at the base of the gully and a crack or two that will take a cam."
+      },
+      {
+        "n": 4,
+        "label": "Snow arêtes and leftward traverses",
+        "class": "Exposed snow arête",
+        "notes": "Climb a short knife-edge snow arête, then traverse left across more runnels toward a leaning rock tower, using the moat where the snow meets the rock face. The drop-offs are steep on both sides; protect with pickets and keep each placement deliberate."
+      },
+      {
+        "n": 5,
+        "label": "X Couloir to the summit",
+        "class": "50° snow, loose rock",
+        "notes": "Climb the obvious upper gully, easing to about 50° for roughly a 60 m rope-length, to the summit rocks. The final 15–20 ft are a narrow, icy, exposed crest of loose rock and rime to the 9,085 ft top; conditions on the face get worse quickly once it warms, so climb it while it is frozen."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 sections → 5. Kept both stored labels (first and last) and filled in the ground between: the serac/bergschrund crux, the hidden gully with runnels, and the arête traverses, which the stored card compressed into one sentence.",
+      "sources_consulted": [
+        "https://www.lemkeclimbs.com/lincoln-peak.html",
+        "https://www.countryhighpoints.com/lincoln-peak/",
+        "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+        "https://cascadeclimbers.com/forum/topic/102773-tr-lincoln-peak-x-couloir-05052019/ (search snippet only; page did not render)"
+      ],
+      "other_findings": "Summit is given as 9,080 ft by two trip reports; stored prose says 9,085 ft. Stored grade 'III-IV' and pitches=2 are unsupported by any source read. With so few ascents, each source reflects one season; the order of the gully and the arête differs slightly between reports."
+    }
+  },
+  "wa_ingalls_peak_south_scramble": {
+    "area": "wa_ingalls_peak_south",
+    "replace_climbing_route": true,
+    "climbing_route": [
+      {
+        "n": 1,
+        "class": "Class 2-3",
+        "label": "West-side gullies back to the crest",
+        "notes": "From the North–South col (just left of the small spire in the saddle), do not continue straight up the crest. Drop about 50 ft onto the west side and climb one of several gullies, about 100 ft of class 2–3, back to the crest. The gullies hold loose scree — climb bunched or one at a time. Another option crosses steep slabs from the col to the broad east shoulder."
+      },
+      {
+        "n": 2,
+        "class": "Class 2-3",
+        "label": "Ridge crest to the South Peak summit",
+        "notes": "Follow the ridge south over a mix of snow and blocky rock, with some exposure. The weathered peridotite is rough and grippy, but polished green or black serpentinite on shear surfaces is glassy and insecure — avoid stepping on it, especially when wet or in lingering snow."
+      },
+      {
+        "n": 3,
+        "class": "High Class 3",
+        "label": "Summit step",
+        "notes": "A short move of high class 3 (low class 4 by some counts) on solid rock with good holds and brief exposure gains the upper ridge; squeezing through a large crack between the blocks avoids the worst of the drop. A short, exposed ledge just before the 7,640 ft summit is the last airy spot."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "2 sections → 3. Kept both stored labels and notes' substance; added the loose-gully and serpentinite hazards and a third section for the high-class-3 summit step and squeeze crack, which the stored card omitted (it appears only in beta/overview).",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/ingalls-stuart-area/ingalls-peak-south-peak (search snippet only; page 403)",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-06-20-2014274655 (search snippet only)",
+        "https://stephabegg.com/trip-reports/washington/ingalls-peak/",
+        "https://trailcatjim.com/south-ingalls-peak-via-north-ridge-2020/"
+      ],
+      "other_findings": "Summit is 7,640 ft in stored prose, 7,641 ft in one report. Minor."
+    }
+  },
+  "wa_mount_stuart_north_face": {
+    "skip_reason": "Route identity is unresolved. The row's own beta says no separately named 'North Face' route matching its grade (IV, 5.8, AI2) is known on Mount Stuart, and no source found one: the north side is split among the North Ridge, Ice Cliff Glacier, Stuart Glacier Couloir, Girth Pillar and Lara Kellogg routes. Writing a climbing route for it would mean picking one of those and inventing an identity. This row looks like a candidate for review or deletion rather than enrichment."
+  }
+}

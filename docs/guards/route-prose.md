@@ -390,6 +390,21 @@ the correction knows the screen is wrong, and they have no way to report it.
     check list from what was actually written — an earlier version omitted `climbing_route`, so
     a route setting only that column satisfied every remaining clause vacuously and printed
     "verified" having confirmed nothing.
+  - **`enrich:apply` also writes whole `pitch_detail` tables now (ROUTE BREAKDOWN), and those are
+    RESEARCH, not re-homing** — `check:enrichment-traceable` does not apply to them. Their guards
+    live in `checkPitchDetail()`: replacing a table needs `"replace_pitch_detail": true` per route,
+    fewer rows needs `"allow_fewer_entries"`, a label with comments may not be dropped (comments key
+    on `${routeId}_pitch_${label}`), a grade over 30 chars is refused (it is a heading/chip), and a
+    named source (`SOURCE_RE`/`PER_SOURCE_RE`) is refused, not cleaned. `climbing_route` from a batch
+    gets the same opt-in (`"replace_climbing_route"`) and lint. Every replaced table is kept in
+    `audits/route-breakdown/rollback-*.json`. **A `--from` run applies ONLY the batch's routes** — it
+    used to re-apply every hand-written `DATA` entry too, silently re-writing those `climbing_route`
+    sections over later corrections. First wave (2026-09-24, 55 routes, batches + findings in
+    `audits/route-breakdown/`): research agents repeatedly found stored pitch **lengths that were
+    the route total split evenly** (Triumph NE Ridge, McMillan SW Ridge, Kearney-Thomas, Adams NW
+    Ridge) — `lengthM` feeds the planner, so a rewrite drops an unsourced length rather than keep it.
+    `verify-route-breakdown-renders.mjs` checks the rows reach the Plan tab; it is spent once the
+    rows are edited again.
   - A populated column is not a rendered one. `CLIMBING ROUTE` and `ROUTE BREAKDOWN` are mutually
     exclusive through `isPitched()`; both halves have been confirmed on screen, and the bivy
     section was found **defined and mounted nowhere** after a merge kept main's copy of the
