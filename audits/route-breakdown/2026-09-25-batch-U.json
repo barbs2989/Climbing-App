@@ -1,0 +1,276 @@
+{
+  "wa_mount_stone_putvin": {
+    "area": "wa_mount_stone",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Trailhead to FS road junction",
+        "grade": "Class 1",
+        "notes": "The trail follows the west side of Boulder Creek briefly, then starts a relentless climbing traverse west. Around 1.3 mi it crosses an old logging road where the tread is easy to lose; the continuation is slightly downhill across the road."
+      },
+      {
+        "pitch": "Forest climb to headwall",
+        "grade": "Class 1-2, steep",
+        "notes": "Unrelenting steep tread through forest; the trail gains nearly 3,000 ft in under 4 mi overall and does not ease. Roots and loose dirt make it slow and hard on the knees, especially on the way down."
+      },
+      {
+        "pitch": "Headwall handline section",
+        "grade": "Class 3, fixed handline",
+        "notes": "A short, exposed step of slick rock and roots with an old fixed line looped over a stump. The line has been rotten in past seasons, so test it before weighting it and be ready to climb the step on holds and roots; it is the usual turnaround point for parties when it is wet."
+      },
+      {
+        "pitch": "Park boundary to Lake of the Angels",
+        "grade": "Class 2",
+        "notes": "The maintained tread ends in a small basin; a rougher way trail climbs steep, rocky ground to Lake of the Angels (~4,900 ft) in its grassy cirque. The lake is the last reliable water; above it the route is cross-country."
+      },
+      {
+        "pitch": "Lake of the Angels to the cliff band",
+        "grade": "Class 2, loose scree",
+        "notes": "Climb from the lake on a steep, loose boot path toward St. Peter's Gate, the obvious notch with cliffs on both sides. Snow lingers in this north-facing basin into summer, so carry an axe early season; an eroding path through vegetation next to the scree is better avoided in favour of the talus."
+      },
+      {
+        "pitch": "Traverse under the cliffs to the west-ridge notch",
+        "grade": "Class 2-3, loose",
+        "notes": "Short of the Gate, head left and follow a boot path along the base of the long cliff band on poor scree and loose rock, climbing up and around to a notch on the west ridge. The path goes up a couple of narrow chutes; in fog or fresh snow it is easy to lose, so note the line on the way up."
+      },
+      {
+        "pitch": "West-ridge notch to the hanging basin",
+        "grade": "Class 3, chimney",
+        "notes": "From the notch an easy third-class chimney and a couple hundred feet of scrambling lead up the east side of the ridge into a shallow hanging basin below the summit. Traverse around the basin toward the rounded main summit mass."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3-4",
+        "crux": true,
+        "notes": "The crux: a short crack system of about 15 ft on the summit block, rated anywhere from class 2-3 to class 4 depending on the line taken. It is exposed and has to be reversed on the descent; downclimb facing in, or rig a sling rappel if the party is not comfortable."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept the four stored trail stages (labels unchanged, notes filled out) and added four sections covering the actual scramble from Lake of the Angels to the summit, which the stored table omitted entirely. The summit-block crux flag is sourced (a trip report calls the 15 ft block the crux); no lengths given because no source states section lengths. Chips shortened to plain terrain values.",
+      "sources_consulted": [
+        "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm",
+        "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/",
+        "https://explorerron.com/2023/08/05/false-prophets-angels-pearly-gates-and-peak-bagging/",
+        "https://www.summitpost.org/mount-stone/151845 (search-result excerpt only; page 403)",
+        "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616 (search-result excerpt only; page 403)"
+      ],
+      "other_findings": "Stored climbing_route mixes two different lines: the 800 ft climb onto a rock rib and crossing to its north side (one trip report's variation, which then had to drop ~200 ft to reach the notch) and the standard boot path west under the cliff band to the west-ridge notch. The descent_text states the summit step is 15-20 ft class 4 in a shallow crack; sources rate it variously class 2-3, 3+ and 4. Stored headwall note says '~mile 2.8' while approach says ~4,200 ft; not reconciled here."
+    }
+  },
+  "wa_lena_lake_to_mt_stone_traverse": {
+    "area": "wa_mount_stone",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lena Lake TH to Upper Lena Lake",
+        "grade": "Class 1-2 trail",
+        "notes": "Graded trail to Lena Lake, then a steep, primitive tread up the West Fork Lena Creek to Upper Lena Lake (about 6.5 mi and 4,000 ft from the trailhead). Upper Lena is the last maintained-trail camp and the last dependable water before the traverse leaves the trail."
+      },
+      {
+        "pitch": "Upper Lena Lake to Scout Pass",
+        "grade": "Class 2 way trail",
+        "notes": "Take the primitive Scout Lake way trail past Lena Tarn on a southwesterly traverse over meadows and huckleberry-heather slopes to Scout Pass (~5,200 ft). The tread is overgrown but mostly easy to follow; slow going in berry season."
+      },
+      {
+        "pitch": "Scout Basin to Ullin's Pass",
+        "grade": "Class 2 cross-country",
+        "notes": "Drop to Upper Scout Lake and stay high around Scout Lake rather than descending the steep trail to its shore, then cross Scout Basin to Ullin's Pass (~5,000 ft) above the two small tarns called Ullin's Bathtubs. Off-trail from here on; carry a track, since fog is common and has turned parties around."
+      },
+      {
+        "pitch": "St. Peter's Ramp to St. Peter's Gate",
+        "grade": "Snow, moraine, loose",
+        "crux": true,
+        "notes": "Contour above the Bathtubs and make a rising traverse to a snow ramp angling across the steep slope below Mt Stone; it ends at a loose moraine with a permanent snow/ice patch, and the last ~200 ft to the Gate (5,950 ft) is steep dirt, mud and sliding scree. The snow can be hard ice late season: axe and traction are needed, and the snow-filled line on the right is the one to take."
+      },
+      {
+        "pitch": "Mount Stone summit side-trip",
+        "grade": "Class 3-4 gully",
+        "notes": "From a pack cache below the Gate, follow a vague climber's path; a steep class 3-4 gully on the south face leads into a large rock bowl directly below the summit block. In fog it is easy to end up in the wrong gully, so pick the line before the cloud comes in."
+      },
+      {
+        "pitch": "West ridge finish",
+        "grade": "Class 2-3",
+        "notes": "From the bowl continue up to the west-ridge crest and join the standard route's boot path heading east; the final ~100 ft is enjoyable scrambling on solid pillow basalt to the summit. Descend the well-trodden standard west-ridge and southwest-slope path back toward the cache."
+      },
+      {
+        "pitch": "Lake of the Angels to Putvin TH",
+        "grade": "Class 2-3, handline",
+        "notes": "Half a mile southwest of the Gate lies Lake of the Angels; from there the historic Putvin Trail drops about 3,500 ft through Whitehorse Basin, brutally steep with loose tread. One cliff step has a fixed handline and another is passed using a large exposed tree root; downclimb both carefully."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Filled out all six stored sections (labels kept) and split the summit side-trip into the south-face gully and a separate 'West ridge finish', matching the two-part climbing_route. The Gate approach is flagged crux: two trip reports name it as the hardest part of the traverse. No lengths added. Detail is mostly from one very detailed trip report, confirmed in outline by three more.",
+      "sources_consulted": [
+        "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+        "https://explorerron.com/2024/09/04/the-putvin-traverse/",
+        "https://jaysjourneys.com/2015/09/27/lena-putvin-traverse/",
+        "https://www.mountaineers.org/activities/routes-places/putvin-way (search-result excerpt only)"
+      ],
+      "other_findings": "The stored climbing_route says parties descend about 300 ft from the Gate to the base of a basalt cliff before the south-face gully; I found no source for that figure. One source gives Upper Lena Lake as 7.5 mi from the trailhead (stored: 6.5 mi)."
+    }
+  },
+  "wa_lemah_two_scramble": {
+    "skip_reason": "Identity unclear. Every source for this ground (the Lemah Creek meadow, the glacier remnant, the class 2-3 cliff bands, the moat and wet chimney, the chute, the col between Lemah Two and Lemah Main) describes the standard route to Lemah MAIN (Lemah 3), which only passes BELOW Lemah Two. No source found describes a route from that col up to Lemah Two's own summit; the stored descent_text itself ends by working 'north toward the true summit', i.e. Lemah Main. The row appears to be the Main Peak route filed on Lemah Two, so it is not rewritten. Sources: ericsbasecamp.net/trips/Lemah/Lemah.htm, mountainproject.com/route/124569007/lemah-glacier, mountainproject.com/area/119745946/lemah-mountain."
+  },
+  "wa_north_ridge_2": {
+    "area": "wa_whatcom_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Trail/talus",
+        "notes": "From Whatcom Pass (5,210 ft) leave the maintained trail on a faint climber's path heading directly south onto the broad toe of the north ridge. The path soon gives out on snow patches and broken rock; the rule from here is to stay on or near the crest."
+      },
+      {
+        "pitch": "Lower-mid ridge",
+        "grade": "Class 2-3, moderate snow",
+        "notes": "The ridge narrows and steepens as it rises. Snow patches on the crest can be skirted on the right (west) side on rock, or climbed with axe and traction; the exposure is real, and with a heavy overnight pack the route-finding and commitment are well beyond a casual class 3 scramble."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3-4",
+        "crux": true,
+        "notes": "The rock steepens for the final ~400 ft to the summit. The easiest line stays mostly class 3 with little or no class 4, but the rock is loose in places and very exposed; accounts range from solid enough to a chossy mess. It is unpleasant to reverse, and many parties descend the south side to Perfect Pass instead."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three sections with labels kept; notes now say where to go (skirt snow on the right, final 400 ft steepens) and what the upper rock is like. Crux flag on the upper ridge is sourced (steepening final 400 ft with the only class 4 moves). Dropped the stored 'Eldorado-like snow fins' wording, which no source I could read supports. No lengths.",
+      "sources_consulted": [
+        "https://www.lemkeclimbs.com/whatcom-peak.html",
+        "https://www.mountainproject.com/area/112032394/whatcom-peak",
+        "https://fastestknowntime.com/route/whatcom-peak-wa",
+        "https://www.summitpost.org/whatcom-peak/326232 (search-result excerpt only; page 403)"
+      ],
+      "other_findings": "Rock quality is contested between sources (one calls the final 400 ft solid enough, others loose and extremely exposed). Stored length_m 335 is not checked here."
+    }
+  },
+  "wa_star_peak_sawtooth_scramble": {
+    "area": "wa_star_peak_sawtooth",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Star Lake basin to saddle west of Point 7912",
+        "grade": "Class 2-3 scree",
+        "notes": "From Star Lake climb the bowl south of the lake about 600 ft to the saddle just west of Point 7912. A climber's path helps, but it is very steep with ball-bearing gravel underfoot; snow can linger here into summer, and softening snow late in the day lets rock beneath it pull loose."
+      },
+      {
+        "pitch": "Contour around/over Point 7912 onto the Southwest Spur",
+        "grade": "Class 2 talus",
+        "notes": "Follow the climber's path as it contours around Point 7912 (or scramble over it) and traverse onto the Southwest Spur. Mostly talus hopping on big, sometimes slick boulders; loose rock calls for careful foot and hand placements."
+      },
+      {
+        "pitch": "Southwest Spur to summit",
+        "grade": "Class 2-3",
+        "notes": "Follow the spur up on alternately blocky and sandy ground, then turn east along the ridge to the 8,690 ft summit, with a little easy hands-and-feet scrambling near the top. Descend the same line: the boulder field on the peak's east side is unstable, car-sized talus and should not be used as a shortcut."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three sections, labels kept, notes expanded (600 ft to the saddle, ball-bearing scree, slick boulders, east-side talus warning). REMOVED lengthM 150/120/187: no source gives section lengths, and the three values sum exactly to the route's stored length_m (457), i.e. they appear to be a back-filled split of the total rather than measured figures.",
+      "sources_consulted": [
+        "https://wenatcheeoutdoors.org/2016/05/06/star-lake-star-peak/",
+        "http://trailcatjim.com/north-sawtooth-traverse-prince-creek-to-stehekin-2020/",
+        "https://www.summitpost.org/star-peak/151520 (search-result excerpt only; page 403)",
+        "https://www.wta.org/go-hiking/hikes/star-peak (search-result excerpt only)"
+      ],
+      "other_findings": "Summit elevation: overview says 8,693 ft, sources say 8,690 ft (trivial). The east-side talus warning is from the stored descent_text's trip-report claim; I did not find a second source for it."
+    }
+  },
+  "wa_tepeh_towers": {
+    "area": "wa_main_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Glacier to the moat",
+        "grade": "Glacier, moat",
+        "notes": "About 45 minutes north-northwest of the Eldorado East Ridge camp: climb high on the glacier to where it meets the rock and cross the moat onto the tower. Roped glacier travel; bring crampons, axe and pickets."
+      },
+      {
+        "pitch": "1",
+        "grade": "5.0",
+        "notes": "One short, low fifth-class pitch off the moat. A single rack to 2 in and slings for the anchor are enough."
+      },
+      {
+        "pitch": "Scramble to the summit",
+        "grade": "Scramble",
+        "notes": "Easy scrambling above the pitch to the top. Return by downclimbing, or rappel from the fixed station just below the summit back onto the glacier (bring a 60 m rope)."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "One stored row split into three: the glacier/moat start, the single 5.0 pitch, and the summit scramble. Single-source route (one route page); nothing beyond it was found, so no pitch length, anchor type or crux flag was given.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/119380248/tepeh-towers",
+        "https://engineeredforadventure.com/exploring-the-tepeh-towers-and-the-eggplant/ (did not climb; notes the towers look low 5th class)"
+      ],
+      "other_findings": "The route page lists it as Grade III, which does not fit a 30-minute route; stored grade 5.0 and pitches 1 agree with it. Stored length_m 30 is not supported by any source I read. The row is filed under Eldorado's Main Peak area although the towers are a separate formation off the Inspiration Glacier (the stored approach already says so)."
+    }
+  },
+  "wa_olympus_summit_block_north_face": {
+    "area": "wa_mount_olympus",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": 1,
+        "grade": "5.4",
+        "lengthM": 24,
+        "anchor": "slung boulder",
+        "notes": "From the snow at the north side of the summit block, climb straight up the north face on mostly solid rock; the few 5.3-5.4 moves come low, then it eases. Protect with three or four small-to-medium cams and a few nuts, and belay the party up from the slung boulder on top. Late season a moat at the base can add climbing or force a committing step onto the rock."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Single pitch kept (label and grade unchanged). Added lengthM 24 (80 ft, stated in sources), the slung-boulder anchor, where the hard moves are, the rack, and the late-season moat. No crux flag or bolt count (single-pitch variation; nothing to compare).",
+      "sources_consulted": [
+        "https://goleary.com/travel/mount-olympus",
+        "https://www.theoutbound.com/washington/backpacking/climb-mount-olympus-olympic-np",
+        "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/mt_olympus.html",
+        "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier (search-result excerpt only; page 403)"
+      ],
+      "other_findings": "Sources disagree on rope length for the rappel: one says a 30 m rope does not reach the intermediate station and 2x30 m is needed to reach the base, another prefers 35 m+; stored rappels/descent_text say a 60 m doubled reaches the snow in one. The stored grade is 'Class 5.4' - a mixed token; '5.4' is the value."
+    }
+  },
+  "wa_south_face_of_the_mole": {
+    "area": "wa_hook_creek_drainage",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.7",
+        "lengthM": 5,
+        "anchor": "tree",
+        "notes": "Start in the steep, loose gully on the south side below the giant chockstone; look for a tree above a left-leaning crack. Lieback and stem the short 5.7 crack to belay at the tree, which carries old webbing."
+      },
+      {
+        "pitch": "2",
+        "notes": "Traverse left (west) across ledges to the base of a large corner, with ample cracks for protection. Go far enough west before belaying: stopping short merges this pitch into the next."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.7",
+        "anchor": "ledge",
+        "crux": true,
+        "notes": "Scrambling turns to low fifth class (an awkward 3-4 in crack can be avoided); a flake becomes a chimney, squeezing behind the flake and exiting by a 5.6 downclimb of about 15 ft. Finish up the 5.7 flake, stemming the wall behind it, to a rappel station with a good ledge."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.0",
+        "notes": "Easy fifth-class climbing up through large boulders and trees to the summit, on good rock."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Pitch sequence corrected: the chimney, squeeze and 5.6 downclimb belong to pitch 3, not pitch 2 (pitch 2 is the ledge traverse left to a corner). Pitch 4 grade changed from '3rd/4th class' to 5.0 per both sources. Pitch 2 has no grade (none stated). REMOVED lengthM 29/29/28 on pitches 2-4: no source gives them and they are the 91 m total minus pitch 1 split almost evenly; kept pitch 1's 5 m (15 ft, stated). Crux on pitch 3 is sourced (a trip report calls it the hardest part). Anchors: tree (P1) and ledge rap station (P3) are stated.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/201051811/the-mole-south-face",
+        "https://onehikeaweek.com/2021/05/15/edward-peak/",
+        "http://publications.americanalpineclub.org/articles/12194924800/First-Ascents-in-the-Cashmere-Crags",
+        "https://www.mountainproject.com/area/120755472/rat-creek-spires"
+      ],
+      "other_findings": "The route is catalogued (and was approached in one trip report) from the Rat Creek side, with the chockstone notch at ~6,800 ft; the row is filed under Hook Creek Drainage and the stored approach offers Snow Creek or Hook Creek. Descent: one party rappelled the NORTH side on bolted anchors, 2.5 rope lengths with a 60 m rope; the route page lists a slung boulder with a bolt, a tunnel traverse, or retracing the route. Stored descent_text omits the north-side bolted rappels."
+    }
+  }
+}

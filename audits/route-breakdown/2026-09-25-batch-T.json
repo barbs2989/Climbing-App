@@ -1,0 +1,119 @@
+{
+  "wa_sw_couloir_and_face": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Lower icefall snow", "grade": "Steep snow, 45° at top", "lengthM": 183, "notes": "Start from the upper SE corner of the Lower Curtis Glacier, on the snow slope below the obvious glacier tongue that reaches halfway up the face, aiming for the narrow gully at the right side of the main wall. The slope steepens to about 45° near its top and ends at a large transverse crevasse, crossed on a snow bridge; check the bridge before committing." },
+      { "pitch": "Ice chimney", "grade": "Vertical ice, rock corner", "lengthM": 18, "notes": "Above the crevasse a short band of vertical ice forms in an open-book rock corner, climbed as an ice-filled chimney in its middle, followed immediately by a second, shorter vertical step. This is the steepest ice on the route; carry a tool as well as an axe and a couple of screws." },
+      { "pitch": "Upper icefall snow", "grade": "Steep snow", "lengthM": 46, "notes": "Steep snow continues above the ice chimney to the top of the icefall. Stay in the gully line on the right side of the wall; the rock step that follows is the only way onto the glacier tongue above." },
+      { "pitch": "Rock step", "grade": "5.0", "lengthM": 18, "notes": "A short band of easy fifth-class rock with no protection leads from the top of the icefall onto the narrow glacier tongue. Climb it with care, likely in crampons; with no gear, a slip here would run back down the icefall." },
+      { "pitch": "Glacier tongue", "grade": "Steep snow", "lengthM": 30, "notes": "Steep snow on the tongue leads to a second large transverse crevasse. It crosses easily on its left end; do not try to force it in the middle." },
+      { "pitch": "Ice slope to headwall", "grade": "60–70° ice then snow", "lengthM": 91, "notes": "The steepest sustained ground of the lower route: ice that starts around 60° and steepens to about 70° near the top, turning to snow before the base of the rock headwall. Pickets and screws both have a place here depending on how much snow covers the ice." },
+      { "pitch": "Headwall weakness", "grade": "4th class", "lengthM": 30, "notes": "At the base of the headwall traverse left to a less-than-vertical weakness and climb it on fourth-class rock to a ledge. From the ledge traverse left around a corner to reach the foot of the long buttress." },
+      { "pitch": "SE corner buttress", "grade": "5th class", "lengthM": 305, "notes": "A long buttress of easy fifth-class climbing on good, solid rock with positive holds, climbed for roughly its whole height to the crest of the main SE Ridge south of the Hourglass. A minimal rack of nuts and extra-long slings covers it." },
+      { "pitch": "Across to the Sulphide Glacier", "grade": "Rocky crest, then glacier", "notes": "Drop off the east side of the rocky SE Ridge crest onto the Sulphide Glacier and follow it north to the south side of the summit pyramid. Rope up for the glacier; it is crevassed." },
+      { "pitch": "Summit pyramid", "grade": "4th class", "notes": "Climb the summit pyramid by the regular fourth-class line, or take a direct line of roughly 800 ft of easy fifth-class rock. In low visibility on the way down, stay high and traverse directly below the Hourglass to avoid the Upper Curtis icefall." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "7 → 10 entries. The stored table had the sequence scrambled: 'Section 1' described the SECOND crevasse (100 ft, crossed left) as the first, 'Section 2' merged the 600 ft lower icefall with the 60–70° slope that comes much higher, and 'Section 4' put the 5.0 rock step after the chimney pitch without the snow between. Rebuilt in the order the description gives, added lengths it states (600/60/150/60/100/300/100/~1000 ft), and added the Sulphide Glacier crossing and summit pyramid so the table reaches the top. Labels changed from 'Section N' because every stored section named different ground from its number. Left out: no WI grade on the ice chimney (only the route-level WI3 is given), no 5.2 on the buttress (the route-level 5.2 is not tied to a pitch by any source), no crux flag. Single detailed source.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/112395854/sw-couloir-and-face"
+      ],
+      "other_findings": "Route grade is stored as '5.2' with discipline 'ice'; the source gives WI3/5.2, Grade III, 3,300 ft. Stored overview/beta say '60 degrees at the bottom, 70 near the top' for the 300 ft slope — correct — but the stored beta opens with '100 ft of steep snow leads to a large transverse crevasse (crossed on the left)', which is the SECOND crevasse; it omits the 600 ft lower icefall, the ice chimney and the 5.0 step entirely. The source also states round trip from Lake Ann is ~8 hr (matches descent_text)."
+    }
+  },
+  "wa_mount_rainier_fuhrer_thumb": {
+    "area": "wa_mount_rainier",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Approach traverse", "grade": "Glacier, crevassed", "notes": "Cross the Wilson Glacier from high camp to the foot of the Thumb at about 10,200 ft. One badly crevassed area in the middle is easier to pass on a gentler ramp to its right; scout it the evening before, since the crossing is usually done in the dark. A small bergschrund marks the head of the Wilson Glacier just left of the couloir's base." },
+      { "pitch": "Lower couloir", "grade": "40–45° snow", "notes": "Enter the couloir just above the bergschrund, beside a steep cliff on its right side. It is narrower than the neighbouring Fuhrer Finger with a more sustained fall line; snow ranges from supportive crust to breakable crust. Be well up it before the sun reaches the rock above, as rockfall funnels into it once the slopes warm." },
+      { "pitch": "Upper couloir to ~11,500 ft", "grade": "Sustained 40–45° snow", "notes": "The couloir stays steep and narrow to its top near 11,400–11,500 ft, where it meets the Finger's line on the west side of the Nisqually Glacier. Later in the season a runnel can form in the gully bed, and hard snow can turn to ice. Avalanche hazard is real on this slope after new snow or a warm night." },
+      { "pitch": "Wapowety Cleaver", "grade": "50–55° snow, exposed", "notes": "Above the Thumb the crevasse-free line follows the eastern edge of the Wapowety Cleaver; the alternative traverse east onto the Nisqually Glacier is often badly broken around 12,000 ft. Expect several steep, exposed sidehill sections of 50–55° snow between roughly 12,200 and 12,500 ft above cliffs that drop to the Nisqually, easing to the cleaver's flat top near 13,000 ft." },
+      { "pitch": "Upper Nisqually to the summit", "grade": "Glacier, large crevasses", "notes": "Above 13,000 ft the slopes ease considerably but cross a field of large crevasses that can force long end-runs late in the season. Continue up to Point Success or the crater rim; for Columbia Crest, stay on the flatter ground just outside and below the rim and traverse around to the left and up onto the high point." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 5 entries. Kept the three stored labels (same ground) and rewrote their notes with the foot-of-couloir elevation (~10,200 ft), bergschrund, cliff at the base, 40–45° angle and the top at ~11,400–11,500 ft; added the Wapowety Cleaver (50–55° sidehill 12,200–12,500 ft) and the upper glacier to the summit, which the stored table omitted. Removed 'exposed to icefall' from the traverse — no source ties icefall to the Wilson crossing (that hazard is the Kautz Ice Cliff on the Kautz descent). The couloir and cleaver detail rests mainly on one detailed trip report, with the upper-mountain character from a second route description.",
+      "sources_consulted": [
+        "https://turns-all-year.com/trip-reports/may-4-6-2008-mt-rainier-fuhrer-thumb-survival",
+        "https://turns-all-year.com/trip-reports/6-14-08-mt-rainier-fuhrer-thumb",
+        "https://www.mountainproject.com/route/106636996/fuhrer-finger",
+        "https://www.whereiskylemiller.com/mt-rainier/fuhrer-thumb/"
+      ],
+      "other_findings": "Stored beta calls it a '50° snow/ice couloir' and puts camp at ~9,000 ft; sources give the Thumb itself as 40–45° with 50–55° only on the Wapowety Cleaver above, and high camps on the Wapowety Cleaver/Wilson edge (~9,500 ft per one route summary). Not changed."
+    }
+  },
+  "wa_lincoln_peak_north_ridge": {
+    "skip_reason": "Row mixes two climbs. The name is 'North Ridge / Standard' and the approach text describes the ~1,000 ft north face/ridge first climbed in May 1958 (Cooper and O'Conner), but the stored beta, overview, fa and pitch_detail all describe 'Wilkes-Booth', the ~2,000 ft NW Face WI4 line first climbed in 2015 (Coltrane/Rynkiewicz). Identity must be settled before a breakdown can be written."
+  },
+  "wa_eldorado_peak_northeast_face": {
+    "skip_reason": "Identity unclear and no pitch-level source. Two different climbs go by 'Northeast Face' on Eldorado: a pitched ice line that breaks right from the East Ridge at the bergschrund (~8,400 ft) and climbs AI3–4 ice through the schrund and face, and a set of easy-to-moderate snow traverses across the face (low line below the 8,100 ft crevasse, high line below the schrund, or a direct line above it). The stored row (50–60° running belay beneath a rock band) sits between them. The only detailed pages (SummitPost route page, Mountaineers trip report) were not readable (HTTP 403); nothing found gives the face in sections."
+  },
+  "wa_snoqualmie_mountain_the_snostril": {
+    "area": "wa_snoqualmie_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "WI3+", "lengthM": 60, "notes": "Starts on lower-angle ice just right of a large cave, in a corner roughly halfway between the Thunder Basin exit gully and the Snot Couloir — the last major weakness before the Snot. Slabby ice that is often thin, taking occasional rock gear; a mid-pitch stance lets it be split into two shorter pitches." },
+      { "pitch": "P2", "grade": "WI4- M4", "lengthM": 60, "notes": "Thinner, steeper ice, sometimes all ice and sometimes with an occasional mixed move, climbs into the high cave (the 'snostril') beneath a huge chockstone. A full rope length or slightly more; belay inside the cave. If the crux above is not in, these two pitches still make a worthwhile ice outing with a retreat from here." },
+      { "pitch": "P3", "grade": "WI4+ M5+", "lengthM": 30, "crux": true, "anchor": "rock belay", "notes": "The crux: traverse right out of the cave onto an overhanging mixed wall, then finish on easier snow at the foot of a large couloir. Grades given range from WI4 M5 to WI4+ M5+ and shift with how much snow and ice has formed. Cams and screws are both needed; belay on rock on the left wall." },
+      { "pitch": "P4", "grade": "Snow to 55°", "lengthM": 50, "notes": "Climb the snow couloir above the cave at up to about 55°; parties often simul-climb the lower part. The Post Nasal Drip finish climbs the couloir's left wall above, so watch for it before continuing to the saddle." },
+      { "pitch": "P5", "grade": "WI4 M5", "lengthM": 30, "notes": "The recommended finish is the Post Nasal Drip variation, a steep ice-and-mixed line up the couloir's left wall that often holds the best pure ice on the route. Alternatively continue up the moderate snow couloir, about 45 m, to the saddle. Top out on a western subsummit and descend a steep walk-off down the south side." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "5 → 5 entries, labels kept. Stored lengths were all short and do not match any source (45/45/22/37/33 m); replaced with the stated 60/60+/30/50 m and 30 m for the Post Nasal Drip. Moved the parenthetical out of P5's grade, gave P4 a terrain chip in place of null, marked P3 crux (both sources call the cave exit the crux), added the start location, the cave's chockstone, the rock belay on P3, and the walk-off. Grades: kept WI4+ M5+ for P3 and noted the WI4 M5 figure from the first-ascent account; P4 length differs slightly between sources (50 m vs 55 m) — used 50.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/121835348/the-snostril",
+        "https://publications.americanalpineclub.org/articles/13201215904",
+        "https://cascadeclimbers.com/forum/topic/103864-tr-snoqualmie-mountain-fa-the-snostril-and-post-nasal-drip-01292021/ (not readable; JS-gated)"
+      ],
+      "other_findings": "Stored grade is null; sources give WI4+ M5+ (MP) or WI4 M5 (AAJ), ~250 m total. Stored length_m 183 is short against the ~250 m sum. The stored fa text ('Partial ascent: Mike Preiss and Steve Wick, 1993 (incomplete)') is incomplete: Preiss returned in 2010, rappelled in and rope-soloed the crux, and is credited with the first ascent done piecemeal; the 2021 party made the first integral free ascent."
+    }
+  },
+  "wa_mount_maude_r2": {
+    "area": "wa_mount_maude",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Ablation-zone crossing", "grade": "Receding glacier, crevassed", "notes": "From the notch above Icy Lake, rope up and descend onto the Entiat Glacier, then find a short way across the ablation zone of the shrinking glacier. The crossing is trickier than older photos suggest. Skirt below the rock spur and head up toward the icefall." },
+      { "pitch": "Icefall", "grade": "Crevasses, short ice steps", "notes": "Work rightward beneath the headwall through big crevasses, climbing short vertical ice steps and ramps between them; most parties move on a running belay with screws and a picket. In a big snow year steep snow slopes to one side can bypass part of the ice. The icefall has shrunk greatly and its shape changes from year to year." },
+      { "pitch": "Upper ice slopes", "grade": "35° ice and snow", "notes": "Above the crevasses, gentler slopes of ice and snow at around 35° lead to the base of the rock. The rock above is slower than it looks from here; allow several hours for it rather than a quick scramble." },
+      { "pitch": "Rock ramps", "grade": "low 5th", "notes": "Turn right off the ice onto the rock, where several ramps offer a start. The rock is crumbly and protection is scarce, so running belays are the usual method. Take the line of least resistance, trending slightly toward the ridge crest." },
+      { "pitch": "Upper rock", "grade": "low 5th", "notes": "Continue on loose fourth and low-fifth-class ground toward the crest; the rock section totals roughly 900 vertical feet and commonly takes several hours. Near the top there is a step-across at the head of a couloir. Test holds before weighting them; rockfall onto the party below is the main hazard." },
+      { "pitch": "Summit walk", "grade": "Walk", "notes": "A short walk leads to the heavily cairned 9,082 ft summit. Descend the South Ridge on foot, which is quick in good conditions and returns toward the Icy Lake bivy ledges." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "6 → 6 entries. The stored pitch table (three 61 m ice pitches graded AI2/AI2-3, three 91 m rock pitches) matches no source: the lengths look back-filled by splitting the 1,500 ft total evenly (3×200 ft + 3×300 ft), and no source grades the ice. Removed all lengthM and the AI grades. Replaced numbered pitches with the sections the route actually has (ablation crossing, icefall, 35° upper slopes, rock ramps, upper rock with the couloir step-across, summit), since the icefall is climbed on a running belay rather than in pitches. Labels changed because the stored numbers named invented pitch breaks. Detail comes chiefly from one trip-report/route description with a short second corroborating source.",
+      "sources_consulted": [
+        "http://www.alpinedave.com/maude.html",
+        "https://www.mountainproject.com/route/122154563/entiat-ice-fall",
+        "https://cascadeclimbers.com/forum/topic/87908-tr-mt-maude-entiat-icefall-7232012/ (not readable; JS-gated)",
+        "https://www.summitpost.org/climbing-the-north-face-of-mt-maude/208610 (HTTP 403)"
+      ],
+      "other_findings": "descent_text and rappels are written as testimony ('one trip report recorded', 'one party recorded only about 30 minutes') — should be stated as fact. Stored length_m 457 and pitches 6 come from the MP page (1,500 ft, 6 pitches, Grade III); grade is null where MP gives Grade III with ice screws, pickets, 2 tools, light rock rack."
+    }
+  },
+  "wa_fantasy_falls": {
+    "area": "wa_unicorn_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "WI5", "lengthM": 50, "notes": "Sustained vertical ice straight up the middle of Unicorn Peak's northwest face — the main event and by far the hardest ground. The fall forms only in some winters, so check it from Snow Lake before committing. There are no fixed anchors; build screw belays, and plan on V-threads for any retreat." },
+      { "pitch": "P2", "grade": "50° ice", "lengthM": 50, "notes": "Much easier ice at roughly 50° continues up the face above the steep curtain. Save a few screws for the belay at its top, since about a dozen cover the whole route." },
+      { "pitch": "P3", "grade": "Rime and choss", "lengthM": 30, "notes": "Steep rime over loose, chossy rock leads to the summit; move carefully and keep the rope clear of loose blocks. From the top, rappel the summit block and descend the south side to the col with West Unicorn, then the basin back to Snow Lake." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 → 3 entries, labels and lengths kept (they match the source). Rewrote notes to add the conditions caveat, the total screw count, the absence of fixed anchors/V-thread retreat, and the descent hand-off at the top; changed P3's chip from 'Steep scramble' to 'Rime and choss' and P2's to '50° ice'. Left out a crux flag and any WI grade for P2 because the source gives neither. Single source (the first ascensionist's route page).",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/123494402/fantasy-falls",
+        "https://www.mountainproject.com/area/117385903/unicorn-peak"
+      ],
+      "other_findings": "Stored grade is null; source gives WI5, 3 pitches, 425 ft (129 m) — stored length_m 130 agrees."
+    }
+  },
+  "wa_mount_index_north_peak_traverse": {
+    "skip_reason": "Row identity unclear. The name is 'Main Peak via North Approach' and the stored beta describes reaching the Main Peak by the East Route from Lake Serene or a Proctor Creek approach, while the overview, approach, pitch_detail, rappels and fa describe the North Face of North Index followed by the full North–Middle–Main Index Traverse (Beckey/Schoening 1950). These are different climbs; which one this row is must be settled before a breakdown is written."
+  }
+}
