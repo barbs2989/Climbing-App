@@ -92,6 +92,17 @@ const PLAN2 = [
   ["gardner-north-gardner-wa__3", "reverse", ["wa_north_gardner_mountain_southwest"]],   // then North Gardner at 49%; two recordings descend it on one line (median 7 m apart)
   ["mount-ellinor-roundtrip__1", "trim", ["wa_mount_ellinor_standard"]],                 // began at the lower trailhead
 ];
+// BATCH 3 (--batch 3): a recording of the APPROACH only, for routes whose high camp it reaches.
+//   approach  start -> the recording's highest point (the camp), gated on that end sitting within 500 m of
+//             the route's OWN camp pin instead of on the summit. The line honestly stops at camp; the route
+//             page's own coverage check then says the summit end is missing, which is true.
+// Emmons's trailhead and Glacier Basin pins were repaired first (fix-pins-found-by-recorded-tracks.mjs) —
+// its trailhead pin sat 1.4 km from White River. Checked and NOT applied: Liberty Ridge (its approach
+// goes over St. Elmo Pass, not to Schurman), and Olympus's Blue Glacier routes — their existing line
+// already reaches within 684 m of the summit, and the recording stops at the glacier 3.3 km short.
+const PLAN3 = [
+  ["camp-schurman-roundtrip__1", "approach", ["wa_mount_rainier_emmons_glacier", "wa_mount_rainier_curtis_ridge"], /schurman/i],
+];
 // New routes, inserted by a separate step; processed here so the insert uses the same shaping.
 // [stem, mode, summit/end coordinate for an ascent cut or null]
 const NEW = [
@@ -152,6 +163,7 @@ function resample(pts) {
 
 // Orient to start at the trailhead, then (ascent) cut at the FIRST pass of the summit.
 function shape(raw, mode, th, summit) {
+  if (mode === "approach") { let hi = 0; raw.forEach((p, i) => { if (p[2] != null && p[2] > raw[hi][2]) hi = i; }); return raw.slice(0, hi + 1); }
   if (mode === "forward" || mode === "reverse" || mode === "trim") {
     let best = Infinity; for (const p of raw) best = Math.min(best, dist(summit, p));
     const near = raw.map(p => dist(summit, p) <= best + 25);
@@ -191,7 +203,7 @@ if (EMIT) {
   process.exit(0);
 }
 
-const plan = BATCH === "2" ? PLAN2 : PLAN;
+const plan = BATCH === "3" ? PLAN3 : BATCH === "2" ? PLAN2 : PLAN;
 const ids = plan.flatMap(p => p[2]);
 const rows = await q(`routes?select=id,name,area_id,waypoints,approach_logistics,gpx,elev_pts&id=in.(${ids.join(",")})`);
 const byId = new Map(rows.map(r => [r.id, r]));
@@ -201,7 +213,7 @@ const areaIds = [...new Set(rows.map(r => r.area_id))];
 const areas = new Map((await q(`areas?select=id,name,lat,lng&id=in.(${areaIds.join(",")})`)).map(a => [a.id, a]));
 
 const writes = [], refused = [];
-for (const [stem, mode, targets] of plan) {
+for (const [stem, mode, targets, campRe] of plan) {
   const raw = parseGpx(`${DIR}/${stem}.gpx`);
   if (raw.length < 2) { refused.push([stem, "empty recording"]); continue; }
   for (const id of targets) {
@@ -216,6 +228,11 @@ for (const [stem, mode, targets] of plan) {
     const why = [];
     if (thGap != null && thGap > MAX_TRAILHEAD_GAP_M) why.push(`trailhead ${Math.round(thGap)} m from the line's start`);
     if (sumGap != null && mode === "ascent" && sumGap > MAX_SUMMIT_GAP_M) why.push(`summit ${Math.round(sumGap)} m from the line's end`);
+    if (mode === "approach") {
+      const camp = (r.waypoints || []).find(w => placed(w) && campRe.test(w.name || ""));
+      const cg = camp ? dist([camp.lat, camp.lng], g[g.length - 1]) : null;
+      if (cg == null || cg > 500) why.push(camp ? `camp pin ${Math.round(cg)} m from the line's end` : "route has no camp pin to end at");
+    }
     const tag = `${id.padEnd(50)} ${stem.padEnd(38)} ${mode.padEnd(6)} ${String(g.length).padStart(4)} pts ${(res.lenM / 1609.34).toFixed(1).padStart(5)} mi  TH ${thGap == null ? "—" : Math.round(thGap) + "m"}  top ${sumGap == null ? "—" : Math.round(sumGap) + "m"}  elev ${res.elev ? res.elev[0] + "→" + Math.max(...res.elev) + " ft" : "none"}  (was ${(r.gpx || []).length} pts)`;
     if (why.length) { refused.push([id, why.join("; ")]); console.log("REFUSE " + tag); continue; }
     console.log("  ok   " + tag);
@@ -227,7 +244,7 @@ console.log(`\n${writes.length} to write, ${refused.length} refused`);
 for (const [x, why] of refused) console.log("  refused:", x, "—", why);
 if (!WRITE) { console.log("\nDry run. Re-run with --write to apply."); process.exit(0); }
 
-const rb = new URL(BATCH === "2" ? "../rollback-recorded-wa-tracks-2.json" : "../rollback-recorded-wa-tracks.json", import.meta.url);
+const rb = new URL(BATCH === "3" ? "../rollback-recorded-wa-tracks-3.json" : BATCH === "2" ? "../rollback-recorded-wa-tracks-2.json" : "../rollback-recorded-wa-tracks.json", import.meta.url);
 fs.writeFileSync(rb, JSON.stringify({ note: "gpx/elev_pts before apply-recorded-wa-tracks.mjs; restore with patchRow(routes, id, before)", at: new Date().toISOString(), rows: writes.map(w => ({ id: w.id, before: w.before })) }, null, 1));
 console.log("rollback written:", rb.pathname);
 for (const w of writes) await patchRow("routes", w.id, w.body);

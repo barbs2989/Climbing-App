@@ -1,0 +1,41 @@
+{
+ "note": "gpx/elev_pts before apply-recorded-wa-tracks.mjs; restore with patchRow(routes, id, before)",
+ "at": "2026-09-25T13:57:04.145Z",
+ "rows": [
+  {
+   "id": "wa_mount_rainier_emmons_glacier",
+   "before": {
+    "gpx": [
+     [
+      46.9141,
+      -121.6418
+     ],
+     [
+      46.915,
+      -121.64
+     ],
+     [
+      46.9003,
+      -121.6581
+     ],
+     [
+      46.848,
+      -121.735
+     ],
+     [
+      46.8517,
+      -121.7603
+     ]
+    ],
+    "elev_pts": null
+   }
+  },
+  {
+   "id": "wa_mount_rainier_curtis_ridge",
+   "before": {
+    "gpx": null,
+    "elev_pts": null
+   }
+  }
+ ]
+}
