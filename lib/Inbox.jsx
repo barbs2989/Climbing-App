@@ -5,6 +5,7 @@ import { searchMatches } from "./search";
 import { useProfilesByIds } from "./db";
 import { useState } from "react";
 import { ActionIcon, Av, C, CLIMBERS, ME, ROUTES, SZ5, SwipeRow, crewSize, pubName, vScore } from "../ClimbMatchCore.jsx";
+import { POP_BACK } from "./popupChrome.js";
 
 export default function Inbox({dmUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,routeById}){
   const [itab,setItab]=useState("friends");const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
@@ -19,7 +20,7 @@ export default function Inbox({dmUnavailable,dmLoading,msgs,crews,crewMsgs,conne
   const del={background:"transparent",border:"none",color:C.textMuted,fontSize:16,cursor:"pointer",flexShrink:0,padding:"4px 6px",lineHeight:1};
   return (<div style={{position:"fixed",inset:0,background:C.bg,zIndex:1100,overflowY:"auto",overscrollBehavior:"contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
     <div style={{position:"sticky",top:0,background:C.surface,borderBottom:"1px solid "+C.border,padding:"12px 16px",display:"flex",alignItems:"center",gap:10,zIndex:2}}>
-      <button onClick={onClose} style={{background:C.card,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"12px 14px",fontSize:16,fontWeight:700,cursor:"pointer"}}>← Back</button>
+      <button onClick={onClose} style={POP_BACK}>← Back</button>
       <div style={{fontSize:15,fontWeight:700,color:C.text}}>Messages</div>
     </div>
     <div style={{maxWidth:560,margin:"0 auto",padding:"14px 16px 40px",color:C.text}}>

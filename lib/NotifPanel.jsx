@@ -3,13 +3,14 @@
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { ActionIcon, Av, C, CLIMBERS, SL, SwipeRow, notifTarget, pubName, vScore } from "../ClimbMatchCore.jsx";
+import { POP_CLOSE } from "./popupChrome.js";
 
 export default function NotifPanel({requests,notifs,onAccept,onDecline,onOpenProfile,onGo,onClose,onDismiss,onClearAll,archived,onRestore}){const [archOpen,setArchOpen]=useState(false);
   const av=id=>{const c=CLIMBERS.find(x=>x.id===id);return c?c.avatar:null;};
   const empty=!requests.length&&!notifs.length;
   return <div onClick={onClose} role="dialog" aria-label="Notifications" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:1200,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:440,border:`1px solid ${C.border}`,overflow:"hidden"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:`1px solid ${C.border}`}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Notifications</div><div style={{display:"flex",alignItems:"center",gap:8}}>{notifs.length?<button onClick={()=>onClearAll&&onClearAll()} style={{background:C.card,border:`1px solid ${C.border}`,color:C.textSub,borderRadius:8,padding:"0 11px",height:30,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Clear all</button>:null}<button onClick={onClose} style={{background:C.card,border:`1px solid ${C.border}`,color:C.textSub,borderRadius:8,width:36,height:36,fontSize:16,cursor:"pointer"}} aria-label="Close">×</button></div></div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:`1px solid ${C.border}`}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Notifications</div><div style={{display:"flex",alignItems:"center",gap:8}}>{notifs.length?<button onClick={()=>onClearAll&&onClearAll()} style={{background:C.card,border:`1px solid ${C.border}`,color:C.textSub,borderRadius:8,padding:"0 11px",height:30,fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Clear all</button>:null}<button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div></div>
       <div style={{padding:"12px 14px",maxHeight:"72vh",overflowY:"auto",overscrollBehavior:"contain"}}>
         {requests.length?<div style={{marginBottom:14}}><SL>Friend requests</SL>{/* The two buttons never shrank and the name column had no floor, so at 360px the
         middle column collapsed to ~90px: "wants to be your climbing friend · 53" wrapped
