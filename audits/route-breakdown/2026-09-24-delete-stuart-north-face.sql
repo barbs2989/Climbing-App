@@ -1,4 +1,4 @@
--- NOT YET RUN — awaiting the owner's yes.
+-- RUN 2026-09-25 on the owner's instruction ("if its not online delete it"). Full row saved in deleted-wa_mount_stuart_north_face.json.
 -- wa_mount_stuart_north_face names a route that does not exist: no "North Face" in Mountain
 -- Project's 15 Stuart routes or any other source, its "IV 5.8 AI2" numbers were lifted from the
 -- catalog's own Ice Cliff Glacier row, and its own beta says so (2026-09-24-stuart-north-face.json).

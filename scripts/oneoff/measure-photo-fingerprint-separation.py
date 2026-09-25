@@ -3,6 +3,9 @@
 # scenes, and against the same view shifted 3% sideways. Measured 2026-09-24:
 #   64-bit : copies max 12.5% (8 bits) | different scenes min 18.8% (12) | same view 3% shifted 4.7-7.8%
 #   256-bit: copies max 11.7%          | different scenes min 12.5%      | same view 6.2-10.2%
+# CAUTION (2026-09-25): these are PILLOW's numbers, and Pillow averages areas when it shrinks. The app
+# hashes in the BROWSER, which sampled instead, and there copies drifted 14 bits. The browser
+# function now area-averages with a dead band; probe-photo-fingerprint-browser.mjs measures THAT.
 # so the bigger hash separates no better, 8 catches every copy, and a shot of one view from a step
 # aside cannot be told from a copy by any threshold. Needs Pillow.  python3 <this file>
 # The same difference hash lib/photoEvidence.js computes (9x8 greyscale, left > right = 1), run on
