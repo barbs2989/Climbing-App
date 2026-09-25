@@ -1867,8 +1867,29 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
     </div>
   </div>;
 }
-const PIN_CATEGORIES=[["belay","Belay/anchor",C.blue],["rappel","Rappel",C.purple],["natural","Natural anchor",C.green],["variant","Variant line",C.amber],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
+const PIN_CATEGORIES=[["belay","Belay station",C.blue],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["variant","Variant line",C.amber],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
 function pinColor(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[2]:C.textMuted;}
+function pinLabel(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[1]:"Marker";}
+/* Each pin category draws its own glyph. They used to be bare coloured dots, which asked a
+   climber to remember that blue meant a belay and purple a rappel — on a phone, on a wall, in
+   the sun. The glyphs follow the marks printed topos already use: two bolts joined at a master
+   point for a belay, a ring over a down-arrow for a rappel, a tree for a natural anchor. Drawn
+   in a 16-unit box of their own, NOT inside the topo's 0..100 SVG: that one is stretched by
+   preserveAspectRatio="none", which would squash every icon to the photo's shape. */
+const PIN_GLYPHS={
+  belay:<g><circle cx="4.5" cy="4.5" r="1.6" fill="#fff"/><circle cx="11.5" cy="4.5" r="1.6" fill="#fff"/><path d="M4.5 4.5 L8 11.5 L11.5 4.5" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="8" cy="12" r="1.9" fill="none" stroke="#fff" strokeWidth="1.5"/></g>,
+  rappel:<g><circle cx="8" cy="3.8" r="2.2" fill="none" stroke="#fff" strokeWidth="1.5"/><path d="M8 6 L8 13.5 M4.8 10.4 L8 13.6 L11.2 10.4" fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></g>,
+  natural:<g><path d="M8 2 L13 10 L3 10 Z" fill="#fff"/><rect x="7" y="10" width="2" height="4" fill="#fff"/></g>,
+  variant:<path d="M3 13 L5.5 10.5 M7 9 L9 7 M10.5 5.5 L13 3" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>,
+  bivy:<g><path d="M1.5 13.5 L8 3 L14.5 13.5 Z" fill="#fff"/><path d="M5.8 13.5 L8 9.2 L10.2 13.5 Z" fill="#000" fillOpacity="0.45"/></g>,
+  hazard:<g><rect x="7" y="2.5" width="2" height="7.5" rx="1" fill="#fff"/><circle cx="8" cy="12.8" r="1.3" fill="#fff"/></g>
+};
+function PinIcon({cat,size,on}){
+  var sz=size||18;
+  return <span aria-hidden="true" style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:sz,height:sz,borderRadius:"50%",background:pinColor(cat),border:(on?2:1.5)+"px solid #fff",boxShadow:on?"0 0 0 3px "+C.blue+"66":"0 1px 3px rgba(0,0,0,0.7)",boxSizing:"border-box",flexShrink:0,pointerEvents:"none"}}>
+    <svg viewBox="0 0 16 16" width={Math.round(sz*0.68)} height={Math.round(sz*0.68)} style={{display:"block"}}>{PIN_GLYPHS[cat]||<circle cx="8" cy="8" r="2.5" fill="#fff"/>}</svg>
+  </span>;
+}
 /* A topo point is stored as a percentage, and TopoLineOverlay is `inset:0` with
    preserveAspectRatio="none" — so a stored point means "this far across MY CONTAINER", not
    "this far across the photo". Those are the same thing only when the container IS the
@@ -1895,13 +1916,22 @@ function useImgAspect(){
   return [ar,onLoad];
 }
 const TOPO_IMG={position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",display:"block"};
-function TopoLineOverlay({points,pins}){
+function TopoLineOverlay({points,pins,pinSize}){
   if((!points||points.length<2)&&(!pins||!pins.length))return null;
-  var path=(points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");
-  return <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
-    {path?<path d={path} fill="none" stroke={C.amber} strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{filter:"drop-shadow(0 0 2px rgba(0,0,0,0.8))"}}/>:null}
-    {(pins||[]).map(function(pn,i){return <circle key={i} cx={pn.x} cy={pn.y} r={1.6} fill={pinColor(pn.category)} stroke="#fff" strokeWidth={0.4}/>;})}
-  </svg>;
+  var path=(points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");var sz=pinSize||18;
+  return <>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
+      {path?<path d={path} fill="none" stroke={C.amber} strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{filter:"drop-shadow(0 0 2px rgba(0,0,0,0.8))"}}/>:null}
+    </svg>
+    {(pins||[]).map(function(pn,i){return <span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none",lineHeight:0}}><PinIcon cat={pn.category} size={sz}/></span>;})}
+  </>;
+}
+/* The key under an enlarged topo. A pin's note ("2 bolts, chains", "tree with slings") was
+   collected by the editor and then drawn nowhere — the photo shows an icon, not text. Numbered
+   in the order they were placed, which is how a climber drops them going up the line. */
+function TopoPinKey({pins}){
+  if(!pins||!pins.length)return null;
+  return <div style={{marginBottom:10}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><PinIcon cat={pn.category} size={18}/><div style={{minWidth:0}}><span style={{fontWeight:600,color:C.text}}>{pinLabel(pn.category)}</span>{pn.note?<span style={{color:C.textSub}}>{" — "+pn.note}</span>:null}</div></div>;})}</div>;
 }
 /* The topo editor. Four things it could not do, each of them the difference between a line a
    climber trusts and one they redraw:
@@ -1989,8 +2019,10 @@ function TopoDrawer({initial,onCancel,onSubmit}){
   };
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
   const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
-  const handle=function(kind,i,x,y,col){
+  const handle=function(kind,i,x,y,col,cat){
     const on=sel&&sel.kind===kind&&sel.i===i;
+    if(kind==="pin"){const sz=on?26:20;return <span key={kind+i} data-h={kind+":"+i} title={pinLabel(cat)+" — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat} size={sz} on={on}/></span>;}
     return <span key={kind+i} data-h={kind+":"+i} title={kind==="point"?("Point "+(i+1)+" — drag to move"):"Pin — drag to move"}
       style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:10,height:on?18:10,marginLeft:on?-9:-5,marginTop:on?-9:-5,
         borderRadius:"50%",background:on?col:col+"99",border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(255,255,255,0.6)"),
@@ -1998,8 +2030,8 @@ function TopoDrawer({initial,onCancel,onSubmit}){
   };
   return <div>
     <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
-    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{c[1]}</button>;})}</div>:null}
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Tap where the feature is. Drag any dot to move it."}</div>
+    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag any marker to move it."}</div>
     {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
         scrolling and the drag never reaches these handlers on a touch screen.
 
@@ -2013,20 +2045,20 @@ function TopoDrawer({initial,onCancel,onSubmit}){
     <div ref={frameRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
       style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
       {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
-      <TopoLineOverlay points={points} pins={pins}/>
+      <TopoLineOverlay points={points}/>
       {points.map(function(p,i){return handle("point",i,p.x,p.y,C.amber);})}
-      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category));})}
+      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category),p.category);})}
       {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
         backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*100)+"% "+(LOUPE_Z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
         <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
       </div>:null}
     </div>
     <div style={{display:"flex",gap:7,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>Undo last point</button>
-      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"pin")):"Delete selected"}</button>
+      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>{mode==="line"?"Undo last point":"Undo last marker"}</button>
+      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"marker")):"Delete selected"}</button>
       <button onClick={function(){setPoints([]);setPins([]);setSel(null);}} style={btn}>Clear all</button>
     </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><PinIcon cat={pn.category} size={18}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
@@ -2247,7 +2279,7 @@ function TopoThumb({p,onOpen}){
   const canonical=p.lines[0];
   return <div {...clickable(onOpen)} aria-label={(canonical?"Open topo photo":"Open topo photo — no line drawn yet")+(p.alt?": "+p.alt:"")} style={{flexShrink:0,width:132,aspectRatio:ar||"1 / 1",position:"relative",borderRadius:11,overflow:"hidden",border:"1px solid "+C.border,cursor:"pointer",background:C.card}}>
     <img loading="lazy" decoding="async" src={p.url} alt={photoAlt(p.alt,"Topo photo")} onLoad={arOnLoad} style={TOPO_IMG}/>
-    {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins}/>:null}
+    {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins} pinSize={12}/>:null}
     {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:"#fff",fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
     {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
   </div>;
@@ -2269,11 +2301,12 @@ function TopoPhotoModal({photo,onClose,onDraw,onDescribe}){
       <div style={{background:"#000",textAlign:"center",fontSize:0}}>
         <div style={{position:"relative",display:"inline-block",maxWidth:"100%",lineHeight:0}}>
           <img loading="lazy" decoding="async" src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} style={{display:"block",maxWidth:"100%",maxHeight:"58vh",width:"auto",height:"auto"}}/>
-          {active?<TopoLineOverlay points={active.points} pins={active.pins}/>:null}
+          {active?<TopoLineOverlay points={active.points} pins={active.pins} pinSize={20}/>:null}
         </div>
       </div>
       <div style={{padding:"12px 14px"}}>
         {onDescribe?<PhotoDescribeBox key={photo.id} initial={photo.alt} onSave={function(d){return onDescribe(photo,d);}} style={{position:"static",left:"auto",right:"auto",margin:"0 0 12px",maxWidth:"none",background:C.surface}}/>:null}
+        {active?<TopoPinKey pins={active.pins}/>:null}
         {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
         {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{padding:"8px 12px",borderRadius:16,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{i===0?"Latest":"Alt "+i}</button>;})}</div>:null}
         <button onClick={function(){onDraw(photo);}} style={{width:"100%",padding:"10px",borderRadius:10,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>
