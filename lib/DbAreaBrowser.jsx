@@ -607,7 +607,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
     <div>
       <div style={{ background: HERO_BG, boxShadow: HERO_SHEEN, backgroundSize: "cover", backgroundPosition: "center", borderRadius: 14, padding: 16, marginBottom: 14, position: "relative", border: "1px solid " + C.border }}>
         {area.area_type !== "country" && area.area_type !== "state" ? (
-          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved Areas" : "Save this area"} style={{ position: "absolute", top: 13, right: 13, display: "flex", alignItems: "center", gap: 5, height: 34, padding: "0 12px", background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), borderRadius: 9, fontSize: 12, fontWeight: 800, color: booked ? "#1a1200" : C.text, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>{booked ? "Saved" : "Save area"}</button>
+          <button onClick={onToggleSave} aria-label={booked ? "Remove from Saved" : area.area_type === "peak" ? "Save this peak" : "Save this area"} style={{ position: "absolute", top: 13, right: 13, display: "flex", alignItems: "center", gap: 5, height: 34, padding: "0 12px", background: booked ? C.amber : "rgba(255,255,255,0.08)", border: "1px solid " + (booked ? C.amber : C.border), borderRadius: 9, fontSize: 12, fontWeight: 800, color: booked ? "#1a1200" : C.text, cursor: "pointer", lineHeight: 1, whiteSpace: "nowrap" }}>{booked ? "Saved" : area.area_type === "peak" ? "Save peak" : "Save area"}</button>
         ) : null}
         <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 4, flexWrap: "wrap", paddingRight: 118 }}>
           <div style={{ fontSize: 19, fontWeight: 700, color: C.text }}>{area.name}</div>

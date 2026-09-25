@@ -693,7 +693,7 @@ try {
   await flow("logbook-subtabs-switch", async () => {
     await tap("Logbook");
     const seen = {};
-    for (const sub of ["Objectives", "Completed", "Challenges", "Areas"]) {
+    for (const sub of ["Objectives", "Completed", "Challenges", "Saved"]) {
       if (!(await tap(sub))) throw new Error(`the Logbook sub-tab ${JSON.stringify(sub)} is not present`);
       const t = await page.innerText("body");
       const twin = Object.keys(seen).find((k) => seen[k] === t);
@@ -731,7 +731,7 @@ try {
   await flow("log-a-climb-picker-opens", async () => {
     await tap("Logbook");
     // Flows share one browser and React keeps sub-tab state, so reset to the view
-    // that owns this control -- the previous flow leaves the Logbook on "Areas",
+    // that owns this control -- the previous flow leaves the Logbook on "Saved",
     // where "Log a climb" legitimately does not render.
     await tap("Objectives");
     const before = await page.innerText("body");

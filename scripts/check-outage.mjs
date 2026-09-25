@@ -266,12 +266,13 @@ const PAGE_LOAD_MS = 180000;
 // that: RouteDetail was absent here, the table showed the same twelve screens as before, and the
 // run went green having asked nothing. Caught by reading the table for the row that should have
 // been added rather than by the exit code. ADD A NEW STOP HERE, not just to the walk.
-// The Logbook's FOURTH sub-tab. Its state is `lists` and its BUTTON SAYS "Areas" — a stop keyed
+// The Logbook's FOURTH sub-tab. Its state is `lists` and its BUTTON SAYS "Saved" (it said "Areas"
+// until the view grew routes, peaks, itineraries and states, 2026-09-24) — a stop keyed
 // on the state name would never find the control, and would fail closed on a screen sitting right
 // there. #1238 put `searchesUnavailable` on this view and shipped it saying, in as many words,
 // that no walk reached it; this is that stop.
-const SUBTAB2 = "Logbook:Areas";
-// Both sides added a stop to this list -- Logbook:Areas from main, RouteDetail:Photos here.
+const SUBTAB2 = "Logbook:Saved";
+// Both sides added a stop to this list -- Logbook:Saved (then :Areas) from main, RouteDetail:Photos here.
 // They are independent, so the merge is the UNION: dropping either silently un-walks a screen
 // whose walk code is already below (out[SUBTAB2] and out[ROUTE_PHOTOS] are both written).
 const REPORT = [...TABS, SUBTAB, SUBTAB2, ...CREW_SUBS.map((s) => "Crew:" + s), REVISIT, ROUTE, ROUTE_CONDITIONS, ROUTE_PHOTOS];
@@ -486,11 +487,11 @@ async function walk(browser, base, session, fail) {
   //
   // Clicked by TEXT, because these four buttons carry their own text and `aria-current`, and no
   // aria-label -- tapByName queries [aria-label] and nothing else, so it would return false on a
-  // control sitting right there. The quoted `text="Areas"` is EXACT, which is what keeps it off
-  // "Saved areas" and "0 areas" on the same screen.
-  if (!(await tapByName(page, "Logbook"))) out.__navFail = (out.__navFail || []).concat("Logbook (for Areas)");
+  // control sitting right there. The quoted `text="Saved"` is EXACT, which is what keeps it off
+  // the "Saved routes" / "Saved peaks" / "Saved areas" card headings on the same screen.
+  if (!(await tapByName(page, "Logbook"))) out.__navFail = (out.__navFail || []).concat("Logbook (for Saved)");
   await settle(page);
-  const areas = page.locator(`text="Areas"`).last();
+  const areas = page.locator(`text="Saved"`).last();
   if (await areas.count()) await areas.click({ timeout: 5000 }).catch(() => {});
   const areasText = await waitOutFetch(page, fail);
   // Landmarks from the view's own CARDS, never from the copy under test: a stop asserting on an
@@ -522,7 +523,7 @@ async function walk(browser, base, session, fail) {
   // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
   // WITH`. Matching either case also survives someone dropping the text-transform later.
   out[SUBTAB2] = /saved searches|trip pack/i.test(areasText)
-    ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Areas view\n" + areasText;
+    ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Saved view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an
   // outage empties it back to a bare "Friends" -- so the selector has to accept both, which is

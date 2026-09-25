@@ -155,16 +155,22 @@ for (const alt of ALTS) {
 // ---------------------------------------------------------------- 2. the fix is load-bearing
 // Without this the suite is satisfied by any landmark at all, including the broken one -- so it
 // asserts the REMOVED term really did match the rest of the Logbook.
-if (REST.includes("saved areas")) {
-  ok('the removed "saved areas" DOES match the rest of the Logbook -- the header prose, so the ' +
-     "old landmark really was vacuous and the removal was load-bearing");
+// The header prose that made "saved areas" vacuous was reworded when the sub-view was renamed
+// Saved (2026-09-24): it now reads "...challenges and everything you've saved — all in one place."
+// Same trap, new word: a landmark on bare "saved" would match that header on every sub-tab. So
+// assert the header still carries it (the reason section 1's exclusion test matters) and that no
+// alternative is that bare word or the old vacuous phrase.
+if (REST.includes("you\u2019ve saved") || REST.includes("you've saved")) {
+  ok('the header prose says "everything you\u2019ve saved" on every sub-tab, so a landmark on bare ' +
+     '"saved" would be vacuous -- section 1 is what keeps the alternatives off it');
 } else {
-  bad('"saved areas" no longer appears outside the Areas sub-view, so this probe can no longer ' +
-      "show why the old landmark was vacuous. Re-read the header prose before trusting it.");
+  bad('the Logbook header no longer says "everything you\u2019ve saved". Re-read the header prose ' +
+      "before trusting this probe: it exists to catch a landmark the header satisfies.");
 }
 for (const alt of ALTS) {
-  if (alt.toLowerCase() === "saved areas") {
-    bad('"saved areas" is back in the landmark -- it matches the Logbook header on every sub-tab');
+  const a = alt.toLowerCase();
+  if (a === "saved" || a === "saved areas") {
+    bad('"' + alt + '" is in the landmark -- it matches text outside the Saved view\'s own cards');
   }
 }
 
