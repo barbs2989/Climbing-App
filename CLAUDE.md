@@ -344,6 +344,13 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   `areas` and assert the row's `area_id` before writing; never trust a name-shaped id. `dist_km`
   holds two conventions at once — never normalise it in bulk — and re-importing a legacy state
   duplicates it rather than updating it. → [route-identity.md](docs/codebase/route-identity.md)
+- **Before ADDING any area, peak or route, look it up in the catalog directory (0214).** An
+  import filed MP's `North Cascades › Mt. Baker` beside our `Bellingham and Mt Baker Hwy › Mount
+  Baker` because it only checked the one parent — ~225 copies across 27 states. Ask the whole
+  state, under every spelling: `select * from catalog_find_area('<name>', '<State>', lat, lng)` and
+  `select * from catalog_find_route('<name>', '<target area_id>')`; a hit is a candidate to READ,
+  not proof. Browse a state as the Climbs tab lays it out:
+  `select outline from catalog_directory where state = 'Washington' order by sort_key`.
 - **Before writing a researched string into an existing column, look at where it renders.** A
   column that reaches a header, pill, chip or table cell takes a *value* (`season` is a window,
   `grade` is a grade); its explanation belongs in the prose column beside it. `rappels` is prose
