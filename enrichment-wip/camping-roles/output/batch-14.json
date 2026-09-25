@@ -1,0 +1,456 @@
+{
+  "zones": [
+    {
+      "zone": "ptarmigan-gunsight",
+      "overnightPermit": {
+        "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+        "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov.",
+        "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie"
+      }
+    },
+    {
+      "zone": "quilcene-buckhorn",
+      "overnightPermit": {
+        "what": "No overnight permit required in the Buckhorn Wilderness",
+        "where": "Camps outside Olympic National Park need no permit; a recreation pass is required to park at the national forest trailheads.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_accidental_discharge_east_face",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "From Downey Creek the east-face routes are reached from a high camp at the Dome-Chickamin col, crossing the Chickamin Glacier to Blizzard-Gunsight col; some parties instead come in from Stehekin to a camp above the Blue Glacier, which is not in this list."
+    },
+    {
+      "id": "wa_dome_peak_dome_glacier",
+      "main": [
+        "Itswoot Ridge",
+        "Dome-Dana col"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest camp",
+        "Bachelor Meadows",
+        "Cub Lake"
+      ],
+      "drop": [
+        "Itswoot Ridge camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Itswoot Ridge camp is dropped as a duplicate of Itswoot Ridge; Bachelor Creek forest camp and Bachelor Meadows appear to be different spots on the same leg, so both kept."
+    },
+    {
+      "id": "wa_dome_peak_indian_summer",
+      "main": [
+        "Itswoot Ridge",
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-face rock route on Dome from the western approach; camp at Itswoot Ridge or the Dome Glacier high bivies is inferred from the standard Dome approach, not confirmed for this rarely repeated line."
+    },
+    {
+      "id": "wa_east_face",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Stored approach is Downey Creek, which puts the high camp at the Dome-Chickamin col; many east-face parties instead approach from Stehekin via Agnes Creek to a camp above the Blue Glacier, which is not in this list."
+    },
+    {
+      "id": "wa_gunrunner",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The first-ascent party worked the traverse from the Chickamin Glacier side; high camp at the Dome-Chickamin col is the usual Downey Creek base, the Stehekin/Blue Glacier alternative is not listed."
+    },
+    {
+      "id": "wa_gunsight_peak_standard",
+      "main": [
+        "Chikamin-Dome col",
+        "Itswoot Ridge camp"
+      ],
+      "onRoute": [
+        "Bachelor Flats / Bachelor Meadows",
+        "Cub Lake meadows",
+        "Chikamin Glacier bench below the west face"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "All five camps lie on the Downey Creek line; the col is the usual high camp, with Itswoot Ridge as the fallback."
+    },
+    {
+      "id": "wa_old_guard_peak_east_side_route",
+      "main": [
+        "Yang Yang Lakes",
+        "White Rock Lakes"
+      ],
+      "onRoute": [
+        "Kool-Aid Lake"
+      ],
+      "drop": [
+        "Itswoot Ridge",
+        "Cub Lake",
+        "Bachelor Creek forest and meadow camps",
+        "Spire Col bivouac",
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approach text is empty; assumed the north-end Ptarmigan Traverse approach from Cascade Pass, with Yang Yang Lakes the natural base and White Rock Lakes the option for traverse parties already past the Le Conte Glacier."
+    },
+    {
+      "id": "wa_old_guard_peak_southwest_route",
+      "main": [
+        "Yang Yang Lakes"
+      ],
+      "onRoute": [
+        "Kool-Aid Lake",
+        "White Rock Lakes"
+      ],
+      "drop": [
+        "Itswoot Ridge",
+        "Cub Lake",
+        "Bachelor Creek forest and meadow camps",
+        "Spire Col bivouac",
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approach is from Cascade Pass over Cache Col; Yang Yang Lakes is the base, and White Rock Lakes is listed on-route as the traverse continues beneath Old Guard."
+    },
+    {
+      "id": "wa_sinister_peak_north_face",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs",
+        "Itswoot Ridge"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Route leaves from a high camp on Itswoot Ridge or near the Dome Glacier and crosses the Dome-Chickamin col; ordering favours the col bivies because they shorten summit day."
+    },
+    {
+      "id": "wa_sinister_peak_southwest_route",
+      "main": [
+        "Itswoot Ridge",
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Sixmile Camp",
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard Downey Creek approach; Itswoot Ridge is the usual base with the Dome Glacier col bivies as the high option."
+    },
+    {
+      "id": "wa_south_ridge",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Stored approach is Downey Creek to a Dome-Chickamin col high camp; parties coming from Stehekin camp above the Blue Glacier instead, which is not in this list."
+    },
+    {
+      "id": "wa_spire_point_southwest_face",
+      "main": [
+        "Itswoot Ridge",
+        "Spire Col bivouac"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Spire Col"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Dome Glacier and Dome-Chickamin col high bivouacs",
+        "Itswoot Ridge camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Itswoot Ridge camp dropped as a duplicate of Itswoot Ridge; Spire Col (waypoint, 7000 ft) and Spire Col bivouac (7,760 ft) may be the same col with different elevations, so both kept pending review."
+    },
+    {
+      "id": "wa_sw_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Itswoot Ridge",
+        "Cub Lake",
+        "Bachelor Creek forest and meadow camps",
+        "Spire Col bivouac",
+        "Dome Glacier and Dome-Chickamin col high bivouacs",
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes"
+      ],
+      "add": [
+        {
+          "name": "High camp above the Blue Glacier",
+          "type": "bivy",
+          "capacity": "A few small tent sites on rock and heather knolls",
+          "water": "Snowmelt and small streams in the upper Blue basin",
+          "permit": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+          "notes": "Reached from Stehekin by the shuttle to High Bridge, about ten miles up the Agnes Creek trail, a log crossing of Agnes Creek and a long bushwhack into the upper Blue basin. Camp sits on an exposed rock ridge above the Blue Glacier, directly below the east side of the Gunsight peaks.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Stored approach is from Stehekin via Agnes Creek, so none of the Downey Creek or traverse camps lie on it; the added camp's elevation is not published and is omitted."
+    },
+    {
+      "id": "wa_west_face",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "West-face routes are climbed from the Chickamin Glacier, so the Dome-Chickamin col high camp is the base."
+    },
+    {
+      "id": "wa_west_face_2",
+      "main": [
+        "Dome Glacier and Dome-Chickamin col high bivouacs"
+      ],
+      "onRoute": [
+        "Bachelor Creek forest and meadow camps",
+        "Cub Lake",
+        "Itswoot Ridge"
+      ],
+      "drop": [
+        "Kool-Aid Lake",
+        "Yang Yang Lakes",
+        "White Rock Lakes",
+        "Spire Col bivouac",
+        "Bachelor Flats (Camp 1)",
+        "Chikamin-Dome Col (Camp 2/High Camp)"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Bachelor Flats (Camp 1) dropped as duplicate of Bachelor Creek forest and meadow camps, and Chikamin-Dome Col (Camp 2/High Camp) as duplicate of Dome Glacier and Dome-Chickamin col high bivouacs; parties base at the col."
+    },
+    {
+      "id": "wa_buckhorn_marmot_pass",
+      "main": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Buckhorn Lake — the base for Mount Worthington",
+        "Camp Windy, below Mount Townsend",
+        "Boulder Shelter — the last camp outside the national park",
+        "Home Lake, below Constance Pass — inside the park, and reached from the north"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Camp Mystery and the Marmot Pass bivy both sit on the Upper Big Quilcene line to the summit path."
+    },
+    {
+      "id": "wa_inner_constance_northwest_buttress",
+      "main": [
+        "Home Lake, below Constance Pass — inside the park, and reached from the north"
+      ],
+      "onRoute": [
+        "Boulder Shelter — the last camp outside the national park"
+      ],
+      "drop": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest",
+        "Buckhorn Lake — the base for Mount Worthington",
+        "Camp Windy, below Mount Townsend"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit — reservation and nightly fee required",
+        "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      },
+      "note": "Stored approach is the Upper Dungeness trail, so Home Lake is the base with Boulder Shelter on the way; not confirmed for this rarely climbed buttress."
+    },
+    {
+      "id": "wa_inner_constance_standard",
+      "main": [
+        "Lake Constance"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest",
+        "Buckhorn Lake — the base for Mount Worthington",
+        "Camp Windy, below Mount Townsend",
+        "Boulder Shelter — the last camp outside the national park",
+        "Home Lake, below Constance Pass — inside the park, and reached from the north"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit — Lake Constance is a quota area, reserve early; nightly fee",
+        "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      },
+      "note": "Dosewallips and Lake Constance approach through Avalanche Canyon to Crystal Pass; none of the Quilcene or Dungeness camps lie on it."
+    },
+    {
+      "id": "wa_mount_townsend_standard",
+      "main": [
+        "Camp Windy, below Mount Townsend"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest",
+        "Buckhorn Lake — the base for Mount Worthington",
+        "Boulder Shelter — the last camp outside the national park",
+        "Home Lake, below Constance Pass — inside the park, and reached from the north",
+        "Camp Windy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day hike; Camp Windy is the only camp on the trail. The waypoint Camp Windy is dropped as a duplicate of Camp Windy, below Mount Townsend."
+    },
+    {
+      "id": "wa_mount_worthington_standard",
+      "main": [
+        "Buckhorn Lake — the base for Mount Worthington"
+      ],
+      "onRoute": [
+        "Buckhorn Lake basin (avalanche debris flat)"
+      ],
+      "drop": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest",
+        "Camp Windy, below Mount Townsend",
+        "Boulder Shelter — the last camp outside the national park",
+        "Home Lake, below Constance Pass — inside the park, and reached from the north"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The basin flat sits about 200 ft above the lake and may be the same camping area; kept on-route as the last water before the off-trail climb."
+    },
+    {
+      "id": "wa_warrior_peak_standard",
+      "main": [
+        "Home Lake, below Constance Pass — inside the park, and reached from the north",
+        "Boulder Shelter — the last camp outside the national park"
+      ],
+      "onRoute": [
+        "Camp Handy"
+      ],
+      "drop": [
+        "Camp Mystery — the last water below Marmot Pass",
+        "Marmot Pass — high dry bivy on the crest",
+        "Buckhorn Lake — the base for Mount Worthington",
+        "Camp Windy, below Mount Townsend",
+        "Boulder Shelter",
+        "Home Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness permit — reservation and nightly fee required",
+        "where": "Reserve on Recreation.gov, by phone with the Port Angeles Wilderness Information Center, or in person at a Wilderness Information Center. Camps outside the park boundary need no permit.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      },
+      "note": "Waypoint entries Boulder Shelter and Home Lake dropped as duplicates of the longer-named bivy entries; Home Lake needs a park permit, Boulder Shelter does not."
+    }
+  ],
+  "misassigned": [
+    "wa_sw_ridge: stored approach is from Stehekin via Agnes Creek, but every listed camp belongs to the Downey Creek approach or the Ptarmigan Traverse; added the Blue Glacier high camp.",
+    "wa_inner_constance_standard: all six shared camps belong to the Quilcene and Dungeness approaches; only its own Lake Constance waypoint applies."
+  ]
+}

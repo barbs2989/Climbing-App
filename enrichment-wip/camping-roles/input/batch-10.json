@@ -1,0 +1,1914 @@
+[
+ {
+  "zone": "middle-fork-north-bend",
+  "routes": [
+   {
+    "id": "wa_garfield_mountain_scramble",
+    "name": "Multi-Summit Scramble",
+    "peak": "Garfield Mountain",
+    "area_id": "wa_garfield_mountain",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "high_point_ft": 5519,
+    "overview": "Garfield Mountain is a rugged granodiorite massif of five named summits (Main/East Peak 5,519 ft, West Peak 4,896 ft, North Peak 5,101 ft, plus the Leaning Spire) rising more than 4,400 ft above the Middle Fork Snoqualmie River in barely a mile — one of the steepest, most relief-dense peaks in the w…",
+    "approach": "From I-90 Exit 34 (North Bend), drive Middle Fork Snoqualmie River Road (FR-56) east — paved at first, then good gravel — staying on FR-56 past the Taylor River Road (FR-5620) junction to a wide gravel wash / old borrow-pit pullout on the north side of the road near the base of the mountain (trailhe…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     },
+     {
+      "name": "Glade Saddle Bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "Small bivy site for two tucked into a saddle; most parties reach it roughly three hours in and treat it as the last comfortable rest stop before the upper gulli…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_price_hester_lake_route",
+    "name": "Hester Lake Route",
+    "peak": "Mount Price",
+    "area_id": "wa_mount_price",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5587,
+    "overview": "A longer wilderness approach up Mount Price's south/east side via the Hester Lake basin, gaining the peak's east ridge by a boulder-field scramble and finishing along a steep, partly snow-and-rock ridge to the summit.",
+    "approach": "Drive the Middle Fork Snoqualmie Road (FR 56) to the Dingford Creek Trailhead (~1,400 ft). Hike the Dingford Creek Trail, crossing several creeks, toward the Hester Lake basin (roughly 5-6 miles) before leaving the trail to begin the off-trail scramble.",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_price_north_route",
+    "name": "North Route",
+    "peak": "Mount Price",
+    "area_id": "wa_mount_price",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5587,
+    "overview": "Mount Price is the solitary high point of a ridge system between the Middle Fork Snoqualmie River and Dingford Creek in the Alpine Lakes Wilderness, dwarfed by neighboring Big Snow Mountain but standing out as a distinct summit when viewed from other Alpine Lakes peaks. The north route follows the m…",
+    "approach": "Drive Middle Fork Snoqualmie Road (FR-56) from North Bend roughly 17-18 miles to the Dingford Creek / Dutch Miller Gap Trailhead. Hike Dingford Creek Trail about 3 miles, then follow the unmaintained Hester Lake Trail and off-trail terrain past Hester and Little Hester Lakes to reach the base of Mou…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_teneriffe_kamikaze_trail",
+    "name": "Kamikaze Trail (SW Ridge Scramble)",
+    "peak": "Mount Teneriffe",
+    "area_id": "wa_mount_teneriffe",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 4788,
+    "overview": "A steeper, more direct line that leaves the standard trail near Teneriffe Falls and climbs a boot track up the mountain's southwest (Kamikaze) ridge, gaining roughly 2,300 ft in about a mile before rejoining the upper mountain near the summit — considerably more strenuous than the standard trail.",
+    "approach": "Follow the standard Mount Teneriffe Trail approach from the paved trailhead on SE Mount Si Road to the signed Teneriffe Falls junction at about 2.8 miles. From near the falls, the unofficial but well-traveled Kamikaze Trail boot track climbs directly up the forested southwest ridge/flank of the moun…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_teneriffe_standard_route",
+    "name": "Mount Teneriffe Trail (Standard Route)",
+    "peak": "Mount Teneriffe",
+    "area_id": "wa_mount_teneriffe",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 4788,
+    "overview": "The standard route follows the DNR-built Mount Teneriffe Trail, a long, steadily climbing forest path from the paved trailhead past Teneriffe Falls and over Rachor Pass to a short rocky scramble at the summit — the easiest and most popular way to the top.",
+    "approach": "From I-90 take Exit 31 into North Bend and continue on North Bend Way; turn left (north) on SE Mount Si Road. Continue about 2.9 miles past the Mount Si trailhead to the paved, ~70-car Mount Teneriffe Trailhead lot (Discover Pass required). From the lot, a half-mile access path switchbacks up throug…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     }
+    ]
+   },
+   {
+    "id": "wa_preacher_mountain_scramble",
+    "name": "Standard Scramble",
+    "peak": "Preacher Mountain",
+    "area_id": "wa_preacher_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 5924,
+    "overview": "Preacher Mountain (5,924 ft) is a broad, brushy summit on the ridge system between the Middle Fork Snoqualmie and Taylor River drainages in the Alpine Lakes Wilderness, Mount Baker-Snoqualmie National Forest, about 3 miles northwest of Kaleetan Peak. It sits just north of Rainy Lake and is climbed a…",
+    "approach": "Start at the Middle Fork Snoqualmie Trailhead (large lot at the end of FR 56). From the parking area, follow the Middle Fork Trail a short distance and cross the Middle Fork Snoqualmie River on the footbridge, then pick up the Pratt River/Pratt Connector Trail heading west/southwest — an easy, well-…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     }
+    ]
+   },
+   {
+    "id": "wa_treen_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Treen Peak",
+    "area_id": "wa_treen_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5765,
+    "overview": "Treen Peak is a strenuous, off-trail scramble roughly 1.25 miles northeast of Mount Garfield, in the Alpine Lakes Wilderness above the Middle Fork Snoqualmie River. It's a low-traffic, prominence-driven objective (1,627 ft of clean prominence) rather than a technical prize: the peak rises over 4,150…",
+    "approach": "From North Bend take I-90 exit 34, then follow 468th Ave SE north about 0.6 mi to Middle Fork Snoqualmie River Road (FS Road 56). The road is rough gravel/dirt for its upper miles; high-clearance is recommended. Continue roughly 16 miles up FS 56 (it bends right around the 12-mile mark) to an unsign…",
+    "camps": [
+     {
+      "name": "Middle Fork Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The only developed drive-in camping on the Middle Fork road, and the practical roadhead base for every peak in this zone. It sits at about road mile twelve, a few minutes below the Middle Fork trailhead, so a party sleep…"
+     },
+     {
+      "name": "Middle Fork road pull-outs, Taylor River and Dingford Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Worth reading before driving up with a plan to sleep in the back of the car, because the situation has changed and the change is not obvious on the ground. The lower valley is closed to dispersed camping, so the answer t…"
+     },
+     {
+      "name": "Hester Lake and Myrtle Lake basins",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "This is the real base camp for Mount Price, and the only one. The Dingford Creek trail climbs steeply from the trailhead, passes the Myrtle Lake junction at a little over three miles, and reaches Hester Lake at around fi…"
+     },
+     {
+      "name": "Green Ridge Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3838,
+      "notes": "The staging point for two of this zone's objectives and the one genuinely useful high camp on the north side of the valley. Treen Peak's Green Ridge approach starts here, and so does the East Peak ridge on the Garfield m…"
+     },
+     {
+      "name": "Rainy Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3800,
+      "notes": "Sits directly beneath the exposed south face of Preacher Mountain and is the natural base camp for the Standard Scramble. From the Middle Fork trailhead cross the bridge and follow the Pratt connector west to the junctio…"
+     },
+     {
+      "name": "Garfield Mountain improvised bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for Garfield is that there is no camp, and inventing one would do a party more harm than saying so. It is a low mountain carrying enormous relief straight out of the valley floor, and every documented l…"
+     },
+     {
+      "name": "Mount Teneriffe and the Mount Si conservation area, no overnight",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Recorded because it is the honest answer rather than a place to sleep. Mount Teneriffe is state conservation land at the very front of the range, reached from its own trailhead at the end of the Mount Si road and not fro…"
+     },
+     {
+      "name": "Upper Garfield Mountain Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3960,
+      "notes": "Large lake at the head of the basin, about 800 ft below Point 4840 after the descent; informal shoreline campsites make this the usual overnight base."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "monte-cristo",
+  "routes": [
+   {
+    "id": "wa_cadet_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Cadet Peak",
+    "area_id": "wa_cadet_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7186,
+    "overview": "Cadet Peak (7,186 ft) rises above the Monte Cristo basin near Glacier Basin Falls and is the second-highest summit in the Monte Cristo Group after Kyes Peak. The standard route is an exposed Class 3 scramble up the southwest-facing gullies and ridge above Glacier Basin, on slopes that hold snow well…",
+    "approach": "From the Barlow Pass trailhead (2,360 ft, pavement's end on the Mountain Loop Highway) the climb starts with roughly 4 miles of the old Monte Cristo townsite road — closed to cars, open to bikes and foot traffic — following the South Fork Sauk River to the Monte Cristo townsite (~2,800 ft); most par…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     },
+     {
+      "name": "Ray's Knoll, Glacier Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Cross the footbridge on the far side of the townsite and follow signs onto the Glacier Basin Trail, which climbs steadily beside Glacier Creek past a prominent …"
+     }
+    ]
+   },
+   {
+    "id": "wa_columbia_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Columbia Peak",
+    "area_id": "wa_columbia_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7172,
+    "overview": "Columbia Peak (7,172 ft) is a sharp, glacially-carved summit in the Monte Cristo group of the Henry M. Jackson Wilderness, forming a cirque with neighboring Monte Cristo Peak and Kyes Peak (its line parent) that holds the Columbia Glacier and the popular, turquoise Blanca Lake below. The standard ro…",
+    "approach": "From the Verlot Public Service Center, continue east on the (now fully paved) Mountain Loop Highway roughly 19.5 miles to the large Barlow Pass trailhead/parking area (permit required). From the parking lot, follow the old Monte Cristo mining road — gated to public vehicles — east for about 4 miles …",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_wilmans_spire",
+    "name": "East Wilmans Spire",
+    "peak": "Wilmans Spires",
+    "area_id": "wa_wilmans_spires",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 6270,
+    "overview": "A short, moderate alpine rock route up the easternmost of the three Wilmans Spires, a needle of volcanic breccia dividing Glacier Basin from Seventy-Six Basin, ending on a famously tiny, table-top summit with commanding views over the Monte Cristo group.",
+    "approach": "From Granite Falls, drive the paved Mountain Loop Highway east roughly 31 miles (passing the Verlot Public Service Center) to Barlow Pass, where pavement ends and the Monte Cristo Road is gated to motor vehicles. Hike or mountain-bike the flat, gated road about 4 miles along the South Fork Sauk Rive…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_foggy_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Foggy Peak",
+    "area_id": "wa_foggy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6810,
+    "overview": "Foggy Peak (6,810 ft) is a Class 3-4 scramble rising immediately northeast of the historic Monte Cristo townsite in the Monte Cristo group, within the Henry M. Jackson Wilderness. It is reached via the Glacier Basin Trail (#719) out of Monte Cristo — not via Poodle Dog Pass/Silver Lake Trail (#708),…",
+    "approach": "From Barlow Pass Trailhead (end of pavement on the Mountain Loop Highway, elev. ~2,361 ft, 30.5 mi east of Granite Falls), the approach starts on the gated Monte Cristo Road/Old Monte Cristo Townsite Trail — a flat, easy old railroad grade that parallels the South Fork Sauk River for about 4.1 miles…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_kyes_peak_glaciated_scramble",
+    "name": "Glaciated Scramble (Standard)",
+    "peak": "Kyes Peak",
+    "area_id": "wa_kyes_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + snow/glacier",
+    "high_point_ft": 7280,
+    "overview": "Kyes Peak (7,280+ ft) is the highest summit of the Monte Cristo group, sharing a remote high basin with Columbia Peak and Monte Cristo Peak that holds the shrinking Columbia Glacier on its north/northeast flank above Blanca Lake. Formerly known as 'Goblin Peak' and 'Mount Michigan,' it was renamed f…",
+    "approach": "From the Blanca Lake Trailhead (elev. ~1,950 ft) at the end of North Fork Skykomish River Road (FR 63), follow Blanca Lake Trail #1052 north into the Henry M. Jackson Wilderness. The trail starts climbing almost immediately in a long, punishing series of roughly thirty switchbacks, gaining about 2,9…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     },
+     {
+      "name": "Virgin Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "Trail #1052 starts climbing almost at once and does not relent: roughly thirty switchbacks gain about 2,900 ft in the first three miles to a ridge crest, on tre…"
+     }
+    ]
+   },
+   {
+    "id": "wa_kyes_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "peak": "Kyes Peak",
+    "area_id": "wa_kyes_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7280,
+    "overview": "A more direct historical line up Kyes from the Sauk River (Darrington) side: Quartz Creek Trail to Curry Gap, an up-and-down ridge crossing the Pride Glacier, and a Class 3 rock band to the summit via its southeast corner.",
+    "approach": "From the North Fork Sauk River / Quartz Creek Trailhead (Mt. Baker-Snoqualmie NF, Darrington Ranger District), follow the Quartz Creek Trail about 4 miles, gaining roughly 1,450 ft, to Curry Gap (~4,000 ft) at the Bald Eagle Mountain Trail junction. From Curry Gap head west/southwest along an up-and…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_monte_cristo_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Monte Cristo Peak",
+    "area_id": "wa_monte_cristo_peak",
+    "discipline": "alpine",
+    "grade": "Class 3",
+    "high_point_ft": 7136,
+    "overview": "Monte Cristo Peak (7,136 ft) is the technical centerpiece of the Monte Cristo Group, a tight cluster of peaks (Kyes, Cadet, Columbia, Del Campo) ringing the ghost town of Monte Cristo in the Henry M. Jackson Wilderness. Unlike its neighbors, Monte Cristo has no scramble-only line to the true summit:…",
+    "approach": "From the Barlow Pass Trailhead (end of the paved Mountain Loop Highway drive), the approach is in two clearly different stages before you ever leave a maintained tread. Stage one is 4 flat, easy miles up the gated, washed-out Monte Cristo Road along the South Fork Sauk River to the Monte Cristo ghos…",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     },
+     {
+      "name": "Monte Cristo townsite",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2760,
+      "notes": "Stay on the old road for roughly three more flat miles up the South Fork Sauk to the ghost town at about 2,800 ft, crossing the river on a couple of cable/suspe…"
+     },
+     {
+      "name": "Glacier Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Keep climbing the steep, slick, root-braided rock steps above the falls; the trail crosses into the Henry M. Jackson Wilderness and skirts the northeast edge of…"
+     }
+    ]
+   },
+   {
+    "id": "wa_wilmans_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Wilmans Peak",
+    "area_id": "wa_wilmans_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6880,
+    "overview": "The Wilmans Peaks are a cluster of two main summits and three rock spires on the ridge dividing the Monte Cristo basin from Glacier Basin, within the Henry M. Jackson Wilderness (Mount Baker–Snoqualmie National Forest). The rock is volcanic breccia; the group has no glacier and rises roughly 4,100 f…",
+    "approach": "Barlow Pass Trailhead (2,362 ft) → 4 miles on the gated Monte Cristo Road to the townsite (bike-friendly) → cross the South Fork Sauk River near mile 1 via a large log or ford (no bridge — flooding destroyed the old Twin Bridges) → Glacier Basin Trail #719 toward the basin (~4,400–4,680 ft) → leave …",
+    "camps": [
+     {
+      "name": "Glacier Basin — Ray's Knoll and Mystery Hill",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "This is the working high camp for the northern half of the group. Cadet forms the basin's north arc and Monte Cristo Peak the southeast arc, so both go as reasonable summit days from here rather than the brutal round tri…"
+     },
+     {
+      "name": "Monte Cristo townsite campground, four miles up the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Because the road is gated at Barlow Pass, staging here is the normal plan for this group rather than a luxury: it turns a four-mile approach walk into an evening stroll and puts Glacier Basin, Poodle Dog Pass and every s…"
+     },
+     {
+      "name": "Twin Lakes basin, under the west face of Columbia",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4704,
+      "notes": "The high camp for the southern half of the group. Columbia Peak's west spur rises straight off this basin and is the reason most parties come, and the Columbia Glacier route on Kyes is staged from here too, working up th…"
+     },
+     {
+      "name": "Silver Lake, below Poodle Dog Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4264,
+      "notes": "A short side trail from Poodle Dog Pass drops to the lake, which makes it the softer option on this side of the group: it is a good thousand feet lower than Twin Lakes and it avoids the steep, loose drop into and back ou…"
+     },
+     {
+      "name": "Barlow Pass roadhead",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2361,
+      "notes": "Sleeping at the car is what most parties actually do the night before a long single push into this group, because the four-mile road walk to the townsite is flat and fast enough to be swallowed by a pre-dawn start. It is…"
+     },
+     {
+      "name": "Monte Cristo townsite",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Old mining townsite with an established 6-site Forest Service campground; surface water in the area can contain arsenic and heavy metals from old tailings, so t…"
+     },
+     {
+      "name": "Mystery Hill camp (Glacier Basin)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4680,
+      "notes": "Established campsites on the timbered knoll of Mystery Hill (site of old Pride of the Mountains/Mystery mine adits) mark the basin high point where the maintain…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "mount-saul",
+  "routes": [
+   {
+    "id": "wa_mount_saul_se_route",
+    "name": "Southeast Slopes",
+    "peak": "Mount Saul",
+    "area_id": "wa_mount_saul",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7293,
+    "overview": "Mount Saul is the fourth-highest point on Wenatchee Ridge, a spur of the Cascade crest in the Glacier Peak Wilderness. It has a bare granitic summit with jagged rocks, a sheer northwest face, and a south side that drops nearly 4,000 ft to Indian Creek Valley in about a mile — the mountain punches we…",
+    "approach": "Drive to the White River Trailhead (also called the Indian Creek Trailhead) at the end of White River Road/FS-6400: from Leavenworth take US-2 west 15 miles to Coles Corner, turn onto SR-207 (Lake Wenatchee Highway) for 10.5 miles, then continue on White River Road/FS-6400 for a final 10 miles to th…",
+    "camps": [
+     {
+      "name": "Airplane Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5282,
+      "notes": "This is the camp for Mount Saul and effectively the only one, and camping here is what turns a brutal outing into a reasonable two days. Done in a single push from the road the standard route runs about sixteen miles rou…"
+     },
+     {
+      "name": "The Indian Creek valley camps and the Airplane Lake junction site",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The junction camp is the useful one and it is the landmark as much as the site: the climbers' path for Airplane Lake turns off immediately before it, so a party that reaches an obvious valley campsite and has seen no tur…"
+     },
+     {
+      "name": "White River road end trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2300,
+      "notes": "The staging point for the whole trip, and worth its own entry because the drive is where this approach most often fails. The White River road leaves the Lake Wenatchee end and turns to gravel several miles before the tra…"
+     },
+     {
+      "name": "The east slope above Airplane Lake — no established camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The honest answer for this peak is that Airplane Lake is the camp and there is nothing above it worth having. The lake already puts the summit within a straightforward morning on the east slope and east face, so climbing…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "mountain-loop",
+  "routes": [
+   {
+    "id": "wa_beyond_redlining",
+    "name": "Beyond Redlining",
+    "peak": "Morning Star Peak",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "alpine",
+    "grade": "5.10+",
+    "high_point_ft": null,
+    "overview": "Beyond Redlining climbs the West Face of Vega North Tower (Eros Tower) in 11 sustained pitches (1,200 ft, Grade IV 5.10+; 8 of 11 pitches are 5.10 or harder), topping out on the same summit as Mile High Club. Established by Rad Roberts and Kurt Hicks in July 2020, it is a full grade harder, longer, …",
+    "approach": "Drive to the Sunrise Mine trailhead (Mountain Loop Highway, Forest Road 4065) and start up the Sunrise Mine Trail. Follow it about 2.5 miles, gaining to roughly 4,300 ft, to the last major switchback before the trail begins its final zigzag up toward Headlee Pass — this is the turnoff point, not the…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_diamond_in_the_rough",
+    "name": "Diamond In The Rough",
+    "peak": "Sloan Peak",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "5.11-",
+    "high_point_ft": 7835,
+    "overview": "Diamond in the Rough climbs the Southwest Face of Sloan Peak in 9 pitches (~1,100 ft) up to 5.11-, established by Rad Roberts and Brandon Workman on September 11, 2011. It's one of three independent rock lines (with Fire on the Mountain and Northwest Buttress) sharing the West/Southwest Face approac…",
+    "approach": "Two trailheads reach Sloan's Southwest Face basin. Bedal Creek Trailhead (preferred, fewer crossings): via FR 4096 off the Mountain Loop Highway (18.25 mi south of Darrington, ~1 mi south of Bedal Campground), a rough, narrow spur best done with 4WD/high clearance, to the trailhead at ~2,790 ft. Hik…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_fire_on_the_mountain",
+    "name": "Fire on the Mountain",
+    "peak": "Sloan Peak",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "high_point_ft": 7835,
+    "overview": "Fire on the Mountain climbs 7 pitches of sustained, well-protected alpine rock (to 5.10d) up Sloan's Southwest Face, joining a major ledge that intersects the Corkscrew Route; from there it's roughly 500 ft of 4th-class/low-5th scrambling to the true summit.",
+    "approach": "From the Mountain Loop Highway, turn onto FR 4096 (Bedal Creek Trailhead spur) and park at the trailhead, 2,790–2,800 ft. Follow the Bedal Creek Trail #705 through old-growth forest along Bedal Creek's steep banks; the maintained tread peters out roughly 1.5–2.5 miles in, at a large brushy washout c…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_fish_whistle",
+    "name": "Fish & Whistle",
+    "peak": "Vesper Peak",
+    "area_id": "wa_vesper_peak",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "high_point_ft": 6214,
+    "overview": "Fish & Whistle climbs the broad center slab of Vesper Peak's north face, just left of True Grit. Established by local climber Darin Berdinka on September 11, 2017, it is the hardest and most sustained of Vesper's moderate face routes — five pitches of mostly bolt-protected friction and seam climbing…",
+    "approach": "Same approach as True Grit and Ragged Edge: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead, through Wirtz Basin and Headlee Pass (~4,720 ft, 2.7 mi, loose rock/rockfall in the narrow couloir), down to Vesper Creek and Vesper Lake (Lake Elan, ~4,950 ft, ~3.5 mi/~2,700 ft gain — last water), …",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_marvin_s_ear",
+    "name": "Marvin's Ear",
+    "peak": "Morning Star Peak",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "alpine",
+    "grade": "5.10b",
+    "high_point_ft": null,
+    "overview": "Marvin's Ear climbs the skyline ridge of Vega Tower — the sub-summit just east of Vega North Tower/Eros Tower — via a fully bolted 800-ft, 7-pitch alpine sport line (Grade III, 5.10b) through hard metaconglomerate rock. It was the first technical route up Vega Tower's west ridge proper (the only pri…",
+    "approach": "Same Sunrise Mine Trail approach as Mile High Club and Beyond Redlining: follow the trail roughly 2.5 miles to the last major switchback at about 4,300 ft, then leave the trail for a cairned talus traverse heading northeast across two talus fields toward the Vega towers (shared with the other Vega N…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_morning_star_peak_standard",
+    "name": "Standard Scramble",
+    "peak": "Morning Star Peak",
+    "area_id": "wa_morning_star_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6020,
+    "overview": "Morning Star Peak (6,020 ft) sits above Headlee Pass and the Sunrise Mine basin between Sperry and Del Campo Peaks, in the Mountain Loop Highway corridor of the Mt. Baker-Snoqualmie National Forest (Darrington Ranger District). The standard route follows the Sunrise Mine Trail to Headlee Pass, then …",
+    "approach": "From the Sunrise Mine Trailhead (2,350 ft, end of FR-4065 off the Mountain Loop Highway), follow the Sunrise Mine Trail (Trail #707). The first mile crosses two notable creeks with no bridges — a log crossing, a root crossing, and a more substantial ford — so expect wet feet and exercise real cautio…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northwest_buttress",
+    "name": "Northwest Buttress",
+    "peak": "Sloan Peak",
+    "area_id": "wa_sloan_peak",
+    "discipline": "alpine",
+    "grade": "IV 5.9+",
+    "high_point_ft": 7835,
+    "overview": "A committing 1,800 ft, 9-pitch IV 5.9+ line up the lowest/leftmost corner of Sloan's West Face, first climbed by Mike Preiss and Mark Bunker in 2000. After two funky, thinly-protected opening pitches you're essentially committed to finishing the route and descending the far side of the mountain.",
+    "approach": "Same Bedal Creek approach as Sloan's other West Face routes. From the Mountain Loop Highway take FR 4096 to the Bedal Creek Trailhead (~2,790 ft) and follow Bedal Creek Trail #705 along the creek through old growth until the maintained tread ends at a washout below the West Face basin (roughly 1.5–2…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_ragged_edge",
+    "name": "Ragged Edge",
+    "peak": "Vesper Peak",
+    "area_id": "wa_vesper_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 6214,
+    "overview": "Ragged Edge climbs the right side of Vesper's clean north face via shallow corners, flakes and slabs, established by Darin Berdinka and Gene Pires on August 18, 2013. It's the most popular moderate line on the wall — low-angle, well-featured 5.7 climbing on ~700 ft of granite, capped by an exposed, …",
+    "approach": "Same trailhead and trail as True Grit: Sunrise Mine Trail #707 from the Sunrise Mine Trailhead on the Mountain Loop Highway, through second-growth forest and an early creek crossing of the South Fork Stillaguamish (log crossing, harder in high runoff), up through Wirtz Basin and out onto open, cairn…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sheep_gap_mountain_scramble",
+    "name": "Standard Scramble",
+    "peak": "Sheep Gap Mountain",
+    "area_id": "wa_sheep_gap_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 5814,
+    "overview": "A rarely-visited, multi-summited peak (North Peak, Middle Peak, and the 5,814' main/true summit) on the ridge roughly 3.6 miles southwest of the historic mining town of Monte Cristo, rising above Gothic Basin and the Weden Creek drainage in the Mount Baker-Snoqualmie National Forest. Summit-register…",
+    "approach": "From the Barlow Pass Trailhead (~2,360 ft, on the Mountain Loop Highway about 19.4-19.5 miles east of the Verlot Public Service Center / ~30.5 miles east of Granite Falls; Northwest Forest Pass required), walk south on the flat, gated Monte Cristo Road for roughly 1.5-1.7 miles, paralleling the Sauk…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     },
+     {
+      "name": "Gothic Basin tarns",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5000,
+      "notes": "Two small tarns just below Foggy Lake mark the basin; camping is extremely limited and fragile, day-hike this section if possible."
+     }
+    ]
+   },
+   {
+    "id": "wa_sloan_peak_corkscrew",
+    "name": "Corkscrew Route",
+    "peak": "Sloan Peak",
+    "area_id": "wa_sloan_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II",
+    "high_point_ft": 7835,
+    "overview": "The classic ascent of Sloan Peak's distinctive horn. The route literally spirals around the mountain, crossing the Sloan Glacier and finishing with an exposed Class 3 scramble to the summit. A Mountain Loop landmark visible for miles.",
+    "approach": "The standard approach starts from the unsigned Sloan Peak climbers'-trail pullout on FR 49 (Sloan Creek Road, reached via SR 530 south of Darrington) at roughly 1,900 ft, on the north side of the North Fork Sauk River — not the maintained North Fork Sauk River Trail #649, but a boot path a short dis…",
+    "camps": [
+     {
+      "name": "Bedal Creek roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Worth recording because it is the overnight most Sloan parties actually use. The Corkscrew from Bedal Creek is a reasonable single day of thirteen or fourteen hours for a fit party, and successful ascents in under twelve…"
+     },
+     {
+      "name": "Bedal-Sloan saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The first camp on the ridge, reached by traversing open and partly brushy slopes past a small lake. Usable, but the ridge above is the better camp and most parties who carry a camp go the extra distance. Elevation is giv…"
+     },
+     {
+      "name": "Ridge above the Sloan Glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The preferred high camp, on the crest overlooking the glacier with a long view. From here it is about half a mile of traverse east-southeast to the saddle near 5,900 ft and then up to gain the glacier around 6,800 ft, wh…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sloan_peak_r1",
+    "name": "West Face (Corkscrew route)",
+    "peak": "Sloan Peak",
+    "area_id": "wa_sloan_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7835,
+    "overview": "The upper Corkscrew Route as it finishes on Sloan Peak's Upper West Face: after crossing the Sloan Glacier and circling the South ridge, the standard boot path climbs the final exposed 3rd/4th-class scramble on the west side of the summit block.",
+    "approach": "Identical to the Corkscrew Route: via Bedal Creek trailhead (FR 4096) or the Cougar Creek/North Fork Sauk trailhead (FR 49), joining the Sloan Glacier crossing before the final west-face scramble to the summit.",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_true_grit_2",
+    "name": "True Grit",
+    "peak": "Vesper Peak",
+    "area_id": "wa_vesper_peak",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 6221,
+    "overview": "True Grit is Vesper's most striking crack line, climbing a sustained splitter up the middle of the north face just right of (east of) Ragged Edge. Established by Darin Berdinka in 2015, it's airy, exposed, and considered one of the best moderate alpine rock pitches in the area.",
+    "approach": "Start at the Sunrise Mine Trailhead (Sunrise Mine Trail #707) off the Mountain Loop Highway near Big Four/Barlow Pass. The trail begins in second-growth forest and almost immediately crosses the South Fork Stillaguamish via a log crossing that can be a genuine obstacle during high runoff (early seas…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   },
+   {
+    "id": "wa_vesper_peak_north_face_ragged_edge",
+    "name": "North Face (Ragged Edge)",
+    "peak": "Vesper Peak",
+    "area_id": "wa_vesper_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 6214,
+    "overview": "A 6-pitch 5.7 alpine rock route on the right side of Vesper Peak's north face, following shallow corners, flakes, and low-angle slabs before finishing along an exposed arête to the summit; established in 2013, it is one of the most popular moderate multi-pitch outings in the Mountain Loop Highway co…",
+    "approach": "From Granite Falls, drive the Mountain Loop Highway east approximately 27-28 miles, then turn onto Sunrise Mine Road (Forest Road 4065) and follow the gravel road about 2.3-2.5 miles to its end at the Sunrise Mine Trailhead (~2,400 ft, Trail No. 707; Northwest Forest Pass required, pit toilet on sit…",
+    "camps": [
+     {
+      "name": "Sloan Peak high camp — heather benches above Cougar Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5200,
+      "notes": "Camps here sit on open heather with the Sloan Glacier and the start of the corkscrew ledge system directly above, which makes for a short summit morning. Lower bivy pockets exist around 3,500 ft where the trail eases off…"
+     },
+     {
+      "name": "Vesper Creek basin and Lake Elan, beyond Headlee Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working base camp for Vesper Peak's north side and for Sperry, and it puts Morning Star within reach along the ridge. Getting here means the Sunrise Mine trail's ford of the South Fork Stillaguamish, then the switchb…"
+     },
+     {
+      "name": "Foggy Lake, Gothic Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5223,
+      "notes": "From here both Del Campo and Gothic go as short snow-and-scramble outings, which is why parties carry in rather than push either from the road. The approach leaves Barlow Pass on the old road grade before turning up a st…"
+     },
+     {
+      "name": "Monte Cristo townsite, walk-in from Barlow Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2762,
+      "notes": "Reaching it is a flat four-mile walk on the old road and rail grade from the Barlow Pass gate, which makes it an easy place to stage a long approach without a real backpacking day. Climbers use it mainly as a jumping-off…"
+     },
+     {
+      "name": "Bedal Campground, Mountain Loop Highway",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1246,
+      "notes": "The closest road camp to the Sloan Peak and Bedal Creek trailheads, and the standard place to sleep the night before a Sloan attempt since the useful start time is well before dawn. It sits on the UNPAVED stretch of the …"
+     },
+     {
+      "name": "Verlot corridor campgrounds — Turlo, Verlot and Gold Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These sit on the paved lower half of the loop and stay reachable when the gravel section above Barlow Pass is gated shut, which makes them the fallback base for Vesper, Morning Star, Sperry and the Big Four side of the v…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "mountain-loop-north",
+  "routes": [
+   {
+    "id": "wa_big_four_mountain_northwest_ridge",
+    "name": "Northwest Ridge",
+    "peak": "Big Four Mountain",
+    "area_id": "wa_big_four_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6170,
+    "overview": "The historic original line to Big Four's summit, first climbed in 1931. Modern trip-report literature on Big Four is dominated by the Dry Creek, Tower, and Spindrift Couloir lines, so detailed contemporary route-finding notes for this specific ridge are sparse compared to those routes.",
+    "approach": "Begins from the Big Four viewpoint / Ice Caves Trailhead on the Mountain Loop Highway, as with the peak's other technical routes.",
+    "camps": [
+     {
+      "name": "Big Four north-side staging and base bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Big Four is a car-to-car objective by design: the trailhead sits at low elevation barely a mile from the base of a face that rises about 4,000 feet, so the climbing starts almost immediately and there is no approach wort…"
+     }
+    ]
+   },
+   {
+    "id": "wa_big_four_mountain_spindrift_couloir",
+    "name": "Spindrift Couloir",
+    "peak": "Big Four Mountain",
+    "area_id": "wa_big_four_mountain",
+    "discipline": "mountaineering",
+    "grade": "5.9",
+    "high_point_ft": 6170,
+    "overview": "A serious ice/mixed line up the central couloir system of Big Four's North Face, climbing névé and water ice through a bowl and headwall, with a near-vertical ice crux around three-quarters height, to mixed drytooling terrain and cornices just below the summit ridge.",
+    "approach": "Walk the nearly wheelchair-accessible nature trail from the Big Four Picnic Area toward the Ice Caves, to the open basin below the North Face. From the trail's end, move right to find a break in the lower cliffs -- straightforward with adequate snow cover, but may require bushwhacking on the far rig…",
+    "camps": [
+     {
+      "name": "Big Four north-side staging and base bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Big Four is a car-to-car objective by design: the trailhead sits at low elevation barely a mile from the base of a face that rises about 4,000 feet, so the climbing starts almost immediately and there is no approach wort…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_pilchuck_east_ridge",
+    "name": "East Ridge (Iodine Gulch – Bathtub Lakes)",
+    "peak": "Mount Pilchuck",
+    "area_id": "wa_mount_pilchuck",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5324,
+    "overview": "An off-trail scramble alternative to the standard trail, climbing from Pinnacle Lake through Iodine Gulch to the scenic Bathtub Lakes basin on Mount Pilchuck's east side, with the option to continue west across talus to the summit lookout.",
+    "approach": "From the Verlot Public Service Center on the Mountain Loop Highway, continue east about 4.6 miles and turn right onto Forest Road 4020 (Schweitzer Creek Road, signed for Boardman Lake/Ashland Lakes/Bear-Pinnacle Lake). Follow FR 4020 for 2.7 miles to a junction, take the right fork onto FR 4021, and…",
+    "camps": [
+     {
+      "name": "Bathtub Lakes basin, east of Mount Pilchuck",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4655,
+      "notes": "This is the only real camp on Pilchuck and it serves the east side rather than the standard route. It is reached from below, from the Bear Lake and Pinnacle Lake trailhead on a spur road off the loop east of Verlot, then…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_pilchuck_standard_route",
+    "name": "Mount Pilchuck Trail (Standard Route)",
+    "peak": "Mount Pilchuck",
+    "area_id": "wa_mount_pilchuck",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5324,
+    "overview": "The Mount Pilchuck Trail (USFS Trail #700) is the standard, and essentially only maintained, route to the summit: a short, steep old-growth-forest and heather-meadow trail that ends with a boulder-field crossing and a brief hands-on scramble plus short ladder to the historic fire lookout on the rock…",
+    "approach": "From Granite Falls, follow WA-92 east and then the Mountain Loop Highway roughly 10-11 miles to the Verlot Public Service Center. Continue about 1 mile past Verlot, cross the South Fork Stillaguamish River, and turn right (south) onto Mount Pilchuck Road (FR 42). Follow FR 42 for about 6.8 miles — a…",
+    "camps": [
+     {
+      "name": "Bathtub Lakes basin, east of Mount Pilchuck",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4655,
+      "notes": "This is the only real camp on Pilchuck and it serves the east side rather than the standard route. It is reached from below, from the Bear Lake and Pinnacle Lake trailhead on a spur road off the loop east of Verlot, then…"
+     }
+    ]
+   },
+   {
+    "id": "wa_three_fingers_r1",
+    "name": "North Peak",
+    "peak": "Three Fingers",
+    "area_id": "wa_three_fingers",
+    "discipline": "mountaineering",
+    "grade": "Class 4 (5.1 var.)",
+    "high_point_ft": 6870,
+    "overview": "Contrary to this route's name, the historic Three Fingers fire lookout actually sits on the South Peak, not here — the North Peak is a separate, harder objective and is widely considered (though not unanimously, per conflicting elevation surveys) the true high point of the mountain. There is no main…",
+    "approach": "Start at the Tupso Pass trailhead (end of FR 41) on the Three Fingers-Goat Flats-Saddle Lake Trail #641. The trail climbs through forest, crossing a couple of small seasonal streams, to Saddle Lake at about 2.5 miles (last reliable, easy water before the alpine section; no camping within 200 ft of t…",
+    "camps": [
+     {
+      "name": "Three Fingers Lookout, south summit",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6854,
+      "notes": "This is the reason to come here overnight and it is genuinely one of the few summit cabins in the state a climbing party can sleep in. It sits on the southernmost of the three summits, on ground that was blasted flat to …"
+     },
+     {
+      "name": "Tin Can Gap high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5600,
+      "notes": "The last flat ground before the glacier, roughly a mile short of the lookout, and the correct camp for a party that wants the summit block early and cold rather than soft. The maintained trail effectively ends here, so e…"
+     },
+     {
+      "name": "Goat Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Open subalpine meadow about two miles beyond the lake, and the default base for anything on Three Fingers — the lookout, the middle summit, or a look at the south face. From here the gap and the glacier are within a stra…"
+     },
+     {
+      "name": "Saddle Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3785,
+      "notes": "About two and a half miles in from the road end, in dense timber, and low enough that it is a contingency rather than a plan for anyone climbing. It matters for two reasons. First, the road: the Tupso Pass road has a lon…"
+     }
+    ]
+   },
+   {
+    "id": "wa_three_fingers_r2",
+    "name": "Middle Peak (South Face)",
+    "peak": "Three Fingers",
+    "area_id": "wa_three_fingers",
+    "discipline": "mountaineering",
+    "grade": "Class 4 / low fifth",
+    "high_point_ft": 6800,
+    "overview": "The middle of the three summits and the harder of the trio to reach, Middle Peak is typically climbed from a glacier camp near the col between it and the North Peak rather than as a standalone 'south face' outing — most parties combine it with the North Peak in a two- or three-summit push. It sees f…",
+    "approach": "Follow the same approach as the other two summits: Trail #641 from Tupso Pass over Saddle Lake (2.5 mi) and Goat Flats (~4.5 mi) to Tin Can Gap (~6.2-7 mi), then drop ~400 ft off-trail onto the Queest-Alb Glacier and cross it (moat and possible crevasse hazard — crampons/axe recommended, rope up if …",
+    "camps": [
+     {
+      "name": "Three Fingers Lookout, south summit",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6854,
+      "notes": "This is the reason to come here overnight and it is genuinely one of the few summit cabins in the state a climbing party can sleep in. It sits on the southernmost of the three summits, on ground that was blasted flat to …"
+     },
+     {
+      "name": "Tin Can Gap high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5600,
+      "notes": "The last flat ground before the glacier, roughly a mile short of the lookout, and the correct camp for a party that wants the summit block early and cold rather than soft. The maintained trail effectively ends here, so e…"
+     },
+     {
+      "name": "Goat Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Open subalpine meadow about two miles beyond the lake, and the default base for anything on Three Fingers — the lookout, the middle summit, or a look at the south face. From here the gap and the glacier are within a stra…"
+     },
+     {
+      "name": "Saddle Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3785,
+      "notes": "About two and a half miles in from the road end, in dense timber, and low enough that it is a contingency rather than a plan for anyone climbing. It matters for two reasons. First, the road: the Tupso Pass road has a lon…"
+     }
+    ]
+   },
+   {
+    "id": "wa_three_fingers_south_peak_lookout",
+    "name": "South Peak via Lookout",
+    "peak": "Three Fingers",
+    "area_id": "wa_three_fingers",
+    "discipline": "mountaineering",
+    "grade": "Grade II",
+    "high_point_ft": 6854,
+    "overview": "A long, storied outing to the historic fire lookout perched on the South Peak of Three Fingers, crossing the Queest-Alb Glacier. The L-4 gable lookout was built 1930-1932 by Darrington-area mountaineers Harold Engles and Frank Benesh (with Harry Bedal having assisted in the 1929 feasibility scout), …",
+    "approach": "From the Tupso Pass trailhead, follow Three Fingers Trail #641 through forest to Saddle Lake (~2.5 mi, last easy water — no fires or camping within 200 ft of the lake past this point), then continue up through meadows to Goat Flats (~4.5 mi total), a broad subalpine bench with the best camping on th…",
+    "camps": [
+     {
+      "name": "Saddle Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3785,
+      "notes": "Two and a half miles in from Tupso Pass on a rough, root-bound forest trail — the first water and the first flat ground, but low and far from the mountain. Volunteers built a shelter at the meadow edge here in the early …"
+     },
+     {
+      "name": "Goat Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The main camp for the peak, an open subalpine meadow on a ridge crest a little over two miles beyond Saddle Lake and roughly two and a half miles short of the lookout, with a view west to Puget Sound. Bears work the area…"
+     },
+     {
+      "name": "Tin Can Gap",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5752,
+      "notes": "The last ground before the climbing starts: the Forest Service names it Tin Pan Gap, most climbers say Tin Can Gap, and it is where the route stops being a walk and starts needing equipment and judgement. accounts disagr…"
+     },
+     {
+      "name": "Three Fingers Lookout",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 6851,
+      "notes": "A 1930s fire lookout on the South Peak that climbers sleep in, reached by ladders with serious exposure — decide for yourself whether the final block is safe on the day. The door is never locked, but in winter and spring…"
+     }
+    ]
+   },
+   {
+    "id": "wa_whitehorse_mountain_nw_shoulder",
+    "name": "Northwest Shoulder",
+    "peak": "Whitehorse Mountain",
+    "area_id": "wa_whitehorse_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II",
+    "high_point_ft": 6852,
+    "overview": "Rises dramatically above Darrington with one of the largest vertical reliefs in the Cascades — the north face gains about 6,000 ft in under 2 miles. Standard mountaineering line: a difficult, brushy trail hike up to Lone Tree Pass and High Pass, a crossing of the small So-Bahli-Ahli (Whitehorse) Gla…",
+    "approach": "Start at the Niederprum Trailhead (Trail #653, ~918 ft) at the end of Old Mine Road. Because the Moose Creek bridge just past the gate has been closed and barricaded with boulders for years, you now park at the gate, scramble over the boulder barricade, and cross the old wooden bridge on foot to rej…",
+    "camps": [
+     {
+      "name": "Moose Creek bridge roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The bridge on the Mine Road was closed and barricaded in 2008 and the ground beside it is where parties sleep in their vehicles. The route's own description recommends it, and the reason is the length of the day: twelve …"
+     },
+     {
+      "name": "Whitehorse Ridge platform above Lone Tree Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The one large flat area on the entire route, about fifteen minutes of traversing beyond Lone Tree Pass, and by common consent where everyone camps; there is no ambiguity about where a party has pitched. Ground is usually…"
+     },
+     {
+      "name": "Below High Pass at the first running water",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The mid-summer alternative, once the snow patch below Lone Tree Pass has melted and the ridge camp has no water at all. It costs another long traverse but puts you at the head of the basin, below the large talus field th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_whitehorse_mountain_r1",
+    "name": "Northwest Shoulder / Northwest Face (ice/snow)",
+    "peak": "Whitehorse Mountain",
+    "area_id": "wa_whitehorse_mountain",
+    "discipline": "mountaineering",
+    "grade": "Grade II-III",
+    "high_point_ft": 6852,
+    "overview": "A serious snow-and-ice ascent of the Northwest Shoulder, following the same Lone Tree Pass/High Pass line as the standard route but climbed while the couloir and So-Bahli-Ahli (Whitehorse) Glacier are still consolidated snow rather than open crevasse and bare-ice terrain. Sustained steep snow/glacie…",
+    "approach": "This is the same Northwest Shoulder line to High Pass and the Whitehorse (So-Bahli-Ahli) Glacier — same Niederprum Trailhead, same Moose Creek bridge barricade detour, same Trail #653 to 'the flat,' same couloir to Lone Tree Pass, same traverse to High Pass — climbed specifically as an early-season …",
+    "camps": [
+     {
+      "name": "Whitehorse high camp, benches near Lone Tree Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "This is the high camp for the Northwest Shoulder, and most parties who do not intend a twelve-to-sixteen hour car-to-car day use it. The route is around 6,000 to 7,000 feet of gain from a low trailhead and the lower trai…"
+     },
+     {
+      "name": "Whitehorse Community Park campground, Darrington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 526,
+      "notes": "The nearest developed drive-in base to the Mine Road, sitting just outside Darrington with the mountain itself directly in view, which makes it a useful place to look at conditions on the northwest side the evening befor…"
+     },
+     {
+      "name": "Whitehorse Ridge Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "Broad snow platform just beyond Lone Tree Pass with room for several tents and views from Mt. Baker to Dome Peak; the standard high camp for a two-day ascent."
+     }
+    ]
+   }
+  ]
+ }
+]

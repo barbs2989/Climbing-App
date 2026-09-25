@@ -1,0 +1,833 @@
+{
+ "zones": [
+  {
+   "zone": "cascade-pass-mid-traverse",
+   "overnightPermit": {
+    "what": "No permit for camps south of Cache Col; North Cascades NP wilderness permit for any camp on the Cascade Pass side",
+    "where": "Park permits come from Recreation.gov or the Marblemount Wilderness Information Center. South of Cache Col is Glacier Peak Wilderness, where no permit is needed.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "cascade-river-road",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit, quota, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "chilliwack",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit for Boundary Camp and beyond, quota, not free",
+    "where": "Reserve on Recreation.gov or pick up at the Glacier Public Service Center or the Marblemount Wilderness Information Center. Hannegan Camp, before the pass, needs no permit.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "constance",
+   "overnightPermit": {
+    "what": "Olympic NP wilderness camping permit; Lake Constance is a quota area",
+    "where": "Reserve on Recreation.gov well ahead for May through September. Bear canisters are required at the lake.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_elephant_head_standard",
+   "main": [
+    "Cub Lake meadows camp"
+   ],
+   "onRoute": [
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "drop": [
+    "Cache Col and the Cache Glacier shoulder",
+    "Spider-Formidable Col",
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Le Conte Pass",
+    "Sentinel Pass and Lizard Col"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required (Glacier Peak Wilderness)",
+    "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted.",
+    "url": null
+   },
+   "note": "Downey and Bachelor Creek approach camps at Cub Lake; the crest bivouacs are the high option; the northern traverse camps serve other peaks."
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "main": [
+    "Le Conte Pass"
+   ],
+   "onRoute": [
+    "Cache Col and the Cache Glacier shoulder",
+    "Spider-Formidable Col"
+   ],
+   "drop": [
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Sentinel Pass and Lizard Col",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "add": [
+    {
+     "name": "Yang Yang Lakes",
+     "type": "camp",
+     "elev": 5840,
+     "capacity": "Many established sites, the best at the south end of the south lake",
+     "water": "The lakes and a stream",
+     "permit": "No permit required (Glacier Peak Wilderness)",
+     "notes": "Reached by crossing Spider-Formidable Col and descending snow and scree. The standard camp for Le Conte, which is climbed from here in a day.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Yang Yang Lakes is the standard camp and was missing; Le Conte Pass above it is a good alternative."
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "main": [
+    "White Rock Lakes"
+   ],
+   "onRoute": [
+    "Sentinel Pass and Lizard Col",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "drop": [
+    "Cache Col and the Cache Glacier shoulder",
+    "Spider-Formidable Col",
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Le Conte Pass",
+    "Kool-Aid Lake",
+    "Yang Yang Lakes"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required (Glacier Peak Wilderness)",
+    "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted.",
+    "url": null
+   },
+   "note": "Stated approach is the Downey Creek southern leg, so the northern traverse camps are dropped although traverse parties pass them."
+  },
+  {
+   "id": "wa_mount_formidable_south_face",
+   "main": [
+    "Kool-Aid Lake",
+    "Spider-Formidable Col"
+   ],
+   "onRoute": [
+    "Ridge benches above Yang Yang Lakes",
+    "Yang Yang Lakes"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Parties camp at Kool-Aid Lake or the col itself, or on benches just south of the col; the lakes make a longer summit day."
+  },
+  {
+   "id": "wa_northeast_face_direct",
+   "main": [
+    "Spider-Formidable Col"
+   ],
+   "onRoute": [
+    "Cache Col and the Cache Glacier shoulder"
+   ],
+   "drop": [
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Le Conte Pass",
+    "Sentinel Pass and Lizard Col",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "add": [
+    {
+     "name": "Kool-Aid Lake",
+     "type": "camp",
+     "elev": 6120,
+     "capacity": "Several tent sites on rock and heather benches around the lake",
+     "water": "The lake and snowmelt",
+     "permit": "No permit required; the lake is outside the national park",
+     "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Rarely climbed; Kool-Aid Lake and the Spider-Formidable Col are the likely bases but the exact approach to the Formidable Glacier face is uncertain."
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "main": [
+    "Sentinel Pass and Lizard Col"
+   ],
+   "onRoute": [
+    "Cache Col and the Cache Glacier shoulder",
+    "Kool-Aid Lake",
+    "Spider-Formidable Col",
+    "Le Conte Pass",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "drop": [
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps"
+   ],
+   "add": [
+    {
+     "name": "White Rock Lakes",
+     "type": "camp",
+     "capacity": "Several sites on slabs and heather near the lakes",
+     "water": "The lakes and snowmelt",
+     "permit": "No permit required (Glacier Peak Wilderness)",
+     "notes": "The camp at the south end of the high traverse, under the Dana and Chickamin glaciers. Sentinel and Old Guard are climbed from here or from the col above.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Sentinel is a side climb from White Rock Lakes (missing, added) or the Sentinel-Lizard saddles; the northern traverse camps are on the way in."
+  },
+  {
+   "id": "wa_spider_mountain_north_face",
+   "main": [],
+   "onRoute": [
+    "Cache Col and the Cache Glacier shoulder",
+    "Spider-Formidable Col"
+   ],
+   "drop": [
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Le Conte Pass",
+    "Sentinel Pass and Lizard Col",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "add": [
+    {
+     "name": "Kool-Aid Lake",
+     "type": "camp",
+     "elev": 6120,
+     "capacity": "Several tent sites on rock and heather benches around the lake",
+     "water": "The lake and snowmelt",
+     "permit": "No permit required; the lake is outside the national park",
+     "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Parties camp at Kool-Aid Lake (missing, added) and cross to Arts Knoll; the col is on the usual descent."
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "main": [
+    "Spider-Formidable Col"
+   ],
+   "onRoute": [
+    "Cache Col and the Cache Glacier shoulder"
+   ],
+   "drop": [
+    "Drop Creek high camp",
+    "South Fork Cascade River valley camps",
+    "Le Conte Pass",
+    "Sentinel Pass and Lizard Col",
+    "Crest bivouacs above the South Cascade and Chickamin glaciers"
+   ],
+   "add": [
+    {
+     "name": "Kool-Aid Lake",
+     "type": "camp",
+     "elev": 6120,
+     "capacity": "Several tent sites on rock and heather benches around the lake",
+     "water": "The lake and snowmelt",
+     "permit": "No permit required; the lake is outside the national park",
+     "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Kool-Aid Lake (added) is the usual camp; the col is the start of the gully and a good high bivy."
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "main": [
+    "Boston Basin high camp"
+   ],
+   "onRoute": [
+    "Boston Basin low camp"
+   ],
+   "drop": [
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Boston Basin camps; the generic Boston Basin pin is dropped as a duplicate of the high camp."
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "main": [],
+   "onRoute": [
+    "Johannesburg Camp"
+   ],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [
+    {
+     "name": "Cascade-Johannesburg Col bivy",
+     "type": "bivy",
+     "capacity": "A few small bivy sites at the col and on the heather bench below it",
+     "water": "Snow at the col; running water on the bench below early in the season",
+     "permit": "North Cascades NP wilderness permit required",
+     "notes": "Top of the CJ Couloir between Cascade Peak and Johannesburg. Most parties sleep here and climb to the summit the next morning.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Usual bivy at the Cascade-Johannesburg col was missing and is added; the Boston Basin, Sahale and Pelton camps serve other approaches."
+  },
+  {
+   "id": "wa_forbidden_peak_east_ledges",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Boston Basin camps."
+  },
+  {
+   "id": "wa_forbidden_peak_east_ridge",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Boston Basin camps; the generic Boston Basin pin is a duplicate of the high camp."
+  },
+  {
+   "id": "wa_forbidden_peak_north_ridge",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin High Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Upper basin camp is standard; the Boston Basin High Camp pin duplicates it."
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin High Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Upper basin camp is standard; the Boston Basin High Camp pin duplicates it."
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin High Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Upper basin camp, sometimes moved up to benches near 7,500 ft by the Quien Sabe; duplicate high-camp pin dropped."
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "main": [
+    "Boston Basin high camp"
+   ],
+   "onRoute": [
+    "Treeline emergency bivy"
+   ],
+   "drop": [
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; the generic Boston Basin pin duplicates the high camp."
+  },
+  {
+   "id": "wa_johannesburg_mountain_cj_couloir",
+   "main": [],
+   "onRoute": [
+    "Johannesburg Camp"
+   ],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [
+    {
+     "name": "Cascade-Johannesburg Col bivy",
+     "type": "bivy",
+     "capacity": "A few small bivy sites at the col and on the heather bench below it",
+     "water": "Snow at the col; running water on the bench below early in the season",
+     "permit": "North Cascades NP wilderness permit required",
+     "notes": "Top of the CJ Couloir between Cascade Peak and Johannesburg. Most parties sleep here and climb to the summit the next morning.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Most parties bivy at the Cascade-Johannesburg col (missing, added); Johannesburg Camp is the staging camp near the trailhead."
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "main": [
+    "Buttress bivy at the heather-to-rock transition"
+   ],
+   "onRoute": [
+    "Chopped platforms on the upper glacier"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Both entries are route-specific bivies; fine as given."
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "main": [
+    "Pelton Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Pelton Basin is the stated and standard camp for the Yawning Glacier side."
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "main": [
+    "Pelton Basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Pelton Basin is the base for the Yawning Glacier and Magic-Pelton col."
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "main": [
+    "Kool-Aid Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": {
+    "what": "No overnight permit required (Glacier Peak Wilderness)",
+    "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted.",
+    "url": null
+   },
+   "note": "Climbed from Kool-Aid Lake via the Magic-Hurry-up col; Pelton Basin is on the other side of Cascade Pass."
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [
+    {
+     "name": "Kool-Aid Lake",
+     "type": "camp",
+     "elev": 6120,
+     "capacity": "Several tent sites on rock and heather benches around the lake",
+     "water": "The lake and snowmelt",
+     "permit": "No permit required; the lake is outside the national park",
+     "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "No overnight permit required (Glacier Peak Wilderness)",
+    "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted.",
+    "url": null
+   },
+   "note": "Shares the South Ridge approach, so Kool-Aid Lake (missing) is added as the camp."
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [
+    {
+     "name": "Kool-Aid Lake",
+     "type": "camp",
+     "elev": 6120,
+     "capacity": "Several tent sites on rock and heather benches around the lake",
+     "water": "The lake and snowmelt",
+     "permit": "No permit required; the lake is outside the national park",
+     "notes": "About one mile and 700 ft below Cache Col on a boot path. The usual first camp south of Cascade Pass and the base for Spider, Formidable and the south side of Magic.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "No overnight permit required (Glacier Peak Wilderness)",
+    "where": "Camps south of Cache Col are outside the national park. Register at the trailhead if a register is posted.",
+    "url": null
+   },
+   "note": "Uncertain which side parties reach the west-face pocket glacier from; Kool-Aid Lake assumed, Pelton Basin possible."
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "main": [
+    "Johannesburg Camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Normally a long day from the car; Johannesburg Camp is the nearest legal staging camp and there is no camping at the pass or on Mixup Arm."
+  },
+  {
+   "id": "wa_mount_torment_south_ridge",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Boston Basin camps; generic Boston Basin pin is a duplicate."
+  },
+  {
+   "id": "wa_mount_torment_torment_forbidden_traverse",
+   "main": [
+    "Boston Basin high camp"
+   ],
+   "onRoute": [
+    "Torment Basin camp below the southeast face",
+    "Mid-traverse ridge bivy"
+   ],
+   "drop": [
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; generic Boston Basin pin is a duplicate of the high camp."
+  },
+  {
+   "id": "wa_north_ridge_7",
+   "main": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Half-day climb from the Boston Basin camps."
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "main": [
+    "Johannesburg Camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Rarely climbed; likely a long day or an on-route bivy from the Cascade Pass trailhead; the CJ col may serve but the line leaves the couloir below it."
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Lower Boston Basin Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Only known ascent was a multi-day link-up from Forbidden; the Lower Boston Basin Camp pin duplicates the lower camp."
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Boston Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Boston Basin camps; generic pin is a duplicate."
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "main": [
+    "Boston Basin upper (high) camp",
+    "Boston Basin lower camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Half-day climb from the Boston Basin camps."
+  },
+  {
+   "id": "wa_southeast_face",
+   "main": [
+    "Boston Basin upper (high) camp"
+   ],
+   "onRoute": [
+    "Boston Basin lower camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "drop": [
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same camps as the Southeast Ridge."
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "main": [
+    "Marble Creek / Triad basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Boston Basin lower camp",
+    "Boston Basin upper (high) camp",
+    "Sahale Glacier Camp",
+    "Pelton Basin",
+    "Johannesburg Camp",
+    "Informal snow and rock bivouacs above the basins"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Entire Boston Basin/Cascade Pass list belongs to another approach; the Marble Creek pin is the only relevant camp. Camping near Hidden Lake or on the Triad Glacier also occurs."
+  },
+  {
+   "id": "wa_indian_mountain_baker_scramble",
+   "main": [
+    "Graybeal Camp"
+   ],
+   "onRoute": [
+    "Hannegan Camp, below Hannegan Pass",
+    "Boundary Camp",
+    "US Cabin Camp, Chilliwack River"
+   ],
+   "drop": [
+    "Copper Lake Camp, Copper Ridge",
+    "Ouzel Lake basin, head of Depot Creek",
+    "Basin below the Bear Mountain saddle"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Assumes a Brush Creek side approach from Graybeal; no detailed route description for this peak was found."
+  },
+  {
+   "id": "wa_mount_constance_finger_traverse",
+   "main": [
+    "Lake Constance — the standard base for the South Chute"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dosewallips road-end camps, staging for the washed-out road",
+    "Home Lake, below Constance Pass — NOT the standard Constance camp",
+    "Lake Constance"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Constance is the only camp; the road-end camp lies about 1.5 mi past the trail turnoff and Home Lake serves Constance Pass; the lake pin is a duplicate."
+  },
+  {
+   "id": "wa_mount_constance_north_chute",
+   "main": [
+    "Lake Constance — the standard base for the South Chute"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dosewallips road-end camps, staging for the washed-out road",
+    "Home Lake, below Constance Pass — NOT the standard Constance camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Constance is the only camp; the road-end camp lies about 1.5 mi past the trail turnoff and Home Lake serves Constance Pass; the lake pin is a duplicate."
+  },
+  {
+   "id": "wa_mount_constance_terrible_traverse",
+   "main": [
+    "Lake Constance — the standard base for the South Chute"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dosewallips road-end camps, staging for the washed-out road",
+    "Home Lake, below Constance Pass — NOT the standard Constance camp",
+    "Lake Constance"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Constance is the only camp; the road-end camp lies about 1.5 mi past the trail turnoff and Home Lake serves Constance Pass; the lake pin is a duplicate."
+  },
+  {
+   "id": "wa_mount_constance_west_arete",
+   "main": [
+    "Lake Constance — the standard base for the South Chute"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Dosewallips road-end camps, staging for the washed-out road",
+    "Home Lake, below Constance Pass — NOT the standard Constance camp",
+    "Lake Constance"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake Constance is the only camp; the road-end camp lies about 1.5 mi past the trail turnoff and Home Lake serves Constance Pass; the lake pin is a duplicate."
+  },
+  {
+   "id": "wa_mount_constance_north_chimney",
+   "main": [
+    "Lake Constance"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Only camp, correct."
+  }
+ ],
+ "misassigned": [
+  "wa_the_triad_east_peak: list is the Boston Basin / Cascade Pass set; the Triad is approached from Hidden Lake / Marble Creek.",
+  "wa_cascade_peak_east_ridge, wa_johannesburg_mountain_cj_couloir, wa_northeast_ridge_1963_route: given the Boston Basin / Cascade Pass list; the real camp is at the Cascade-Johannesburg col.",
+  "wa_magic_mountain_southwest_cirque, wa_magic_mountain_west_ridge, wa_mix_up_peak_east_face: given the Boston Basin list; the south side of Magic uses Kool-Aid Lake and Mixup is a day climb.",
+  "wa_elephant_head_standard, wa_lizard_mountain_south_route: stated Downey Creek approach but given the Cascade Pass traverse list."
+ ]
+}
