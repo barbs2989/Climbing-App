@@ -530,6 +530,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     that lists what you have must keep naming what you do not, which is §4 and is the load-bearing
     half: **a guard that only ever demands the mechanism EXISTS is satisfied by claiming
     everything.**
+  - **...AND THE PACK CARRIES A SNAPSHOT NOW (2026-09-24, user-approved), SO §4 AND §5 MOVED AGAIN
+    AND §10 WAS ADDED.** `packRouteWithSnapshot()` (lib/db.js) stores, beside the row, the latest
+    **20 trip reports** with their authors' public profile fields, the route's **contributions
+    minus photos**, and — taken by the route page while a packed route is open online, kept under
+    3 h old — the **raw forecast responses** (`lib/forecast.js`, shared with WeatherPanel so one
+    parser processes live and saved data). The climber's **own itineraries** are mirrored per
+    account in `meta`. Each reader falls back through `orOfflineExact`, and the two array readers
+    return a `_packedAt` stamp that survives only because their hooks set
+    **`structuralSharing: false`** — drop that and the saved copy renders exactly like a live one,
+    the over-claim in its worst form. §10 asserts write + read + stamp + dated copy for each; the
+    `stamp-lost`, `reports-fallback-gone`, `photos-in-snapshot` and `row-write-gone` injection
+    cases prove it fires. "Other climbers' reports" came OFF the §4 disclaimer and the §5 deny-list
+    for the same reason reports came off the not-stored list: they are stored. Photos, topo images
+    and map tiles still are not. Verified end to end as a real signed-in climber with the data
+    network cut by `scripts/oneoff/verify-trip-pack-offline.mjs`.
   - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
     twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
     the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
