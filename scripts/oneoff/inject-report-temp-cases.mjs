@@ -23,7 +23,7 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 
 const CASES = [
   { name: "consensus-bakes-F", file: CORE, expect: "fail",
-    find: ':Math.round(mean),n:pool.length}', repl: ':Math.round(mean)+"°F",n:pool.length}',
+    find: ':Math.round(mean),n:pool.length,', repl: ':Math.round(mean)+"°F",n:pool.length,',
     says: /buildConsensus stores tempF as string|chip reads|Fahrenheit figure survives/ },
   { name: "chip-does-not-convert", file: RD, expect: "fail",
     find: '{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>', repl: '{p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>',
