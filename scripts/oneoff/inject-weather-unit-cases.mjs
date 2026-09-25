@@ -23,6 +23,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const RD = path.join(ROOT, "RouteDetail.jsx");
+// The forecast FETCH moved to lib/forecast.js (shared with the trip pack), so its URL cases target it.
+const FX = path.join(ROOT, "lib", "forecast.js");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -69,11 +71,21 @@ const CASES = [
     must: /a broken scan, not a clean file/,
   },
   {
+    name: "panel-bypasses-the-shared-fetch",
+    why: "the panel stops fetching through lib/forecast.js, so the unit pins asserted THERE no longer " +
+         "describe the request the panel makes — every pin check would pass about dead code",
+    file: RD,
+    find: "fetchForecastRaw(w).then(",
+    repl: "Promise.reject(new Error(\"bypassed\")).then(",
+    expect: "fail",
+    must: /no longer calls fetchForecastRaw/,
+  },
+  {
     name: "fetch-converts-at-the-source",
     why: "the forecast is re-fetched in the climber's own units. That looks tidier and is wrong " +
          "twice: the colour thresholds are calibrated in Fahrenheit, and the response is cached " +
          "per coordinate, so the setting would leak into the cache key",
-    file: RD,
+    file: FX,
     find: "temperature_unit=fahrenheit",
     repl: "temperature_unit=celsius",
     expect: "fail",
@@ -136,7 +148,7 @@ const CASES = [
     name: "fetch-drops-the-10m-series",
     why: "the gate keeps its shape and loses its input — wind10Max is null every day, so the " +
          "gust shows unconditionally and the same-height comparison is not happening at all",
-    file: RD,
+    file: FX,
     find: "weather_code,wind_speed_10m,wind_speed_80m,",
     repl: "weather_code,wind_speed_80m,",
     expect: "fail",
