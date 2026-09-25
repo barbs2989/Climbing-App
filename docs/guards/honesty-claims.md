@@ -545,6 +545,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     for the same reason reports came off the not-stored list: they are stored. Photos, topo images
     and map tiles still are not. Verified end to end as a real signed-in climber with the data
     network cut by `scripts/oneoff/verify-trip-pack-offline.mjs`.
+    - **The fresher ROW wins, not the pack (2026-09-25).** `offlineRoutesByIds` used to serve a
+      packed row unconditionally, so a June pack hid a September state download. It now compares the
+      pack's `refreshedAt` (else `packedAt`) with the state's COMPLETED `savedAt`; ties, unknown times
+      and incomplete downloads keep the pack. `scripts/oneoff/verify-pack-vs-state-freshness.mjs`
+      runs the real module against real IndexedDB in 8 cases, and fails exactly the two newer-state
+      cases against the old code.
   - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
     twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
     the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
