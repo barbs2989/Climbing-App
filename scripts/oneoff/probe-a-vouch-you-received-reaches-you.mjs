@@ -217,10 +217,31 @@ try {
   if (opened) {
     await settledText(page);
     const factors = await page.evaluate(() => document.body.innerText);
-    must(/Peer vouches/i.test(factors), "the breakdown lists a Peer vouches factor");
-    const received = (factors.match(/(\d+) received/) || [])[1];
-    log(`  the Peer vouches factor reads: "${received === undefined ? "(no 'N received' line)" : received + " received"}"`);
-    must(received === "1", `the trust breakdown counts the vouch (reads ${received ? `"${received} received"` : "nothing"}, expected "1 received")`);
+
+    // THE PANEL HAS TWO CORRECT STATES AND THIS ASSERTED ONE OF THEM. It itemises only when its
+    // own factors add up to the headline; when they do not it WITHHOLDS the list and says so --
+    // "The itemised list is hidden until the two agree — a breakdown that does not add up to the
+    // score above it would be worse than none." That is the contract check:trust-breakdown
+    // enforces, so demanding the row reports a CORRECT app as broken, which is what this did.
+    //
+    // Accepting either would be too loose on its own: the defect this probe exists for is a
+    // "Peer vouches" row reading "0 received" for an account that HAS been vouched for. So each
+    // branch keeps its own teeth -- if the list is shown it must count the vouch, and if it is
+    // withheld the panel must SAY so and its stated local total must be non-zero, which is
+    // itself evidence the vouch reached the model (one vouch = one point, and it reads 1).
+    const withheld = /itemised list is hidden until the two agree/i.test(factors);
+    const localSum = (factors.match(/These add up to (\d+) here/i) || [])[1];
+
+    if (withheld) {
+      log(`  the breakdown is WITHHELD, honestly: its own factors total ${localSum} against the headline`);
+      must(localSum !== undefined && Number(localSum) > 0,
+        `the withheld panel states a non-zero local total (reads ${localSum === undefined ? "nothing" : localSum}) — a vouch is worth a point, so 0 would mean it never reached the model`);
+    } else {
+      must(/Peer vouches/i.test(factors), "the breakdown lists a Peer vouches factor");
+      const received = (factors.match(/(\d+) received/) || [])[1];
+      log(`  the Peer vouches factor reads: "${received === undefined ? "(no 'N received' line)" : received + " received"}"`);
+      must(received === "1", `the trust breakdown counts the vouch (reads ${received ? `"${received} received"` : "nothing"}, expected "1 received")`);
+    }
   }
 
   // ---- 4. and does the LIST agree with the COUNT? ----

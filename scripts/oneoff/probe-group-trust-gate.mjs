@@ -113,6 +113,16 @@ const cardSaysJoined = async (marker) => {
   return t === null ? null : /Joined/.test(t);
 };
 
+// ADMITTED IS NOT THE SAME AS JOINED, and conflating them made this probe accuse a correct app.
+// A policy:"open" group joins outright and the card reads "Joined". A policy:"trust" group gates
+// on the bar and THEN the organizer confirms -- its own card says "Trust 20+ · organizer confirms"
+// -- so clearing the bar yields "Requested". Asserting "Joined" there demands a behaviour the
+// policy does not have, and the failure reads exactly like the gate being broken for everyone.
+const cardSaysAdmitted = async (marker) => {
+  const t = await cardText(marker);
+  return t === null ? null : /Joined|Requested/.test(t);
+};
+
 const tapJoinOn = (marker) => page.evaluate(new Function("mk", `
   const cardOf=${CARD_FN};
   const card = cardOf(mk);
@@ -156,10 +166,13 @@ else {
     const msg = (/This group is for climbers at trust[^\n]*/.exec(after) || [""])[0];
     ok("refused, and said why: " + JSON.stringify(msg.slice(0, 110)));
   }
-  // Refusing has to mean NOT JOINED. A toast beside a completed join would be worse than silence.
-  const joined = await cardSaysJoined("ZZTRUSTZZ");
-  if (joined) fail("the group says Joined despite the refusal — the toast is decorative and the gate does not gate");
-  else ok("the group was not joined");
+  // Refusing has to mean NOT ADMITTED, and "not JOINED" is too weak to say that. On a trust group
+  // the admitted state is "Requested", so a gate that leaked would show exactly that -- and a
+  // Joined-only test reads a leak as a clean refusal. The mirror of the defect that made run 3
+  // demand "Joined" on this same group: ADMITTED is the concept on both sides of the bar.
+  const admitted = await cardSaysAdmitted("ZZTRUSTZZ");
+  if (admitted) fail("the card says Joined/Requested despite the refusal — the toast is decorative and the gate does not gate");
+  else ok("the group was not joined, and not requested either");
 }
 
 // ── Run 2 (control): an OPEN group must still join. Without this, a join path broken for every
@@ -218,7 +231,9 @@ if (!(await loadGroups("?ztrust=1&ztboost=1"))) {
   const boosted = await page.evaluate(() => window.__zTrustBoost);
   if (typeof boosted !== "number") {
     fail("the trust boost did not land (window.__zTrustBoost = " + JSON.stringify(boosted) + ") — refusing to judge the ADMIT path on it");
-  } else if (boosted < 55) {
+    // 20 is GROUP_TRUST_MIN today; this read 55 until the bar moved and only survived because the
+    // boost overshoots to 98. A floor pinned to an old constant is stale bookkeeping waiting.
+  } else if (boosted < 20) {
     fail(`the boost only reached trust ${boosted}, still under the bar — the ADMIT path was not exercised`);
   } else {
     ok(`trust raised to ${boosted}, above the bar`);
@@ -227,10 +242,19 @@ if (!(await loadGroups("?ztrust=1&ztboost=1"))) {
     else {
       await settledText(page, { min: 30, timeout: 20000 }).catch(() => {});
       const after = await bodyText();
-      const joined = await cardSaysJoined("ZZTRUSTZZ");
+      const joined = await cardSaysAdmitted("ZZTRUSTZZ");
       if (/for climbers at trust \d+\+/.test(after)) fail("a climber ABOVE the bar was still refused — the gate blocks everyone");
-      else if (!joined) fail("a climber above the bar neither joined nor was told why");
-      else ok("a climber above the bar joins");
+      else if (!joined) {
+        // A MISS MUST CARRY THE SCREEN. Without this the failure says only that neither branch
+        // matched, and the next reader spends a run learning what the card actually said -- the
+        // trap this repo records for the crew-roster probe, which cost three runs to one screen.
+        const card = await cardText("ZZTRUSTZZ");
+        fail("a climber above the bar was neither admitted (Joined/Requested) nor told why");
+        console.log("  --- the trust-gated card after the tap ---");
+        console.log(card === null ? "  (no card found)" : card.split("\n").map((l) => "  " + l).join("\n"));
+        console.log("  --- end ---");
+      }
+      else ok("a climber above the bar is admitted — on a trust group that is \"Requested\", pending the organizer");
     }
   }
 }
