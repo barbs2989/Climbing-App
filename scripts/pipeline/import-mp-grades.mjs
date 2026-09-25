@@ -188,7 +188,7 @@ async function runState(st) {
     const hits = new Map();
     for (let i = 0; i < vals.length; i += 300) for (const h of sql(`
       select v.id, (select a.id || ' (' || a.name || ')' from areas a
-                     where a.path <@ ${q(st.id)}::ltree
+                     where a.path <@ (select path from areas where id = ${q(st.id)})
                        and case when v.lat is not null
                            then catalog_key(a.name) = catalog_key(v.name) and a.lat between v.lat - 0.02 and v.lat + 0.02
                                 and catalog_km(v.lat, v.lng, a.lat, a.lng) <= 1.5
@@ -263,7 +263,7 @@ async function runState(st) {
                    left join areas a on a.id = v.area_id)
       select v.id, (select r.id || ' (' || r.name || ' on ' || n.name || ')'
                       from areas n join routes r on r.area_id = n.id
-                     where n.path <@ ${q(st.id)}::ltree
+                     where n.path <@ (select path from areas where id = ${q(st.id)})
                        and ((catalog_key(n.name) = catalog_key(v.aname) and (v.lat is null or n.lat is null or catalog_km(v.lat, v.lng, n.lat, n.lng) <= 5))
                             or (v.lat is not null and n.lat between v.lat - 0.005 and v.lat + 0.005 and catalog_km(v.lat, v.lng, n.lat, n.lng) <= 0.3))
                        and catalog_key(r.name) = catalog_key(v.name)
