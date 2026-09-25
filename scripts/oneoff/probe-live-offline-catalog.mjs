@@ -221,7 +221,12 @@ if (offText) {
       // probe stops at 6.2s, which is mid-resolution — do not read it as a stuck spinner.
       console.log('   NOTE: a "Loading…" is on screen at this instant. Measured elsewhere: it clears by ~8s into an honest line plus the downloaded areas (probe-live-offline-loading.mjs). Not a stuck spinner.');
     }
-    if (/Couldn.t load|check your connection/i.test(after) && shown.length) {
+    // `shown` never existed -- this NOTE crashed the probe with a ReferenceError AFTER all five
+    // assertions had passed, so the sweep recorded FAIL for a run reporting that the offline
+    // catalog works end to end. A false red manufactured by the reporting, not by the app.
+    // The question it means to ask is whether offline data is on screen beside the error line,
+    // which is exactly what the two branches above already computed.
+    if (/Couldn.t load|check your connection/i.test(after) && (countShown || named.length)) {
       console.log("   NOTE: an error line renders ALONGSIDE working offline data — 'data outranks error' may not hold on this path");
     }
   }
