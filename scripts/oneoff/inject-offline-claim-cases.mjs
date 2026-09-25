@@ -82,9 +82,27 @@ function moveHydrationAboveReset(src) {
 }
 
 const CASES = [
-  { name: "write-gone", file: CM, must: "fail", expect: "never calls packRouteOffline",
+  { name: "write-gone", file: CM, must: "fail", expect: "never calls packRouteWithSnapshot",
     why: "§1 — the pack button stops writing, so the beta is not on the device at all",
-    find: "packRouteOffline(id,{seed:seed})", repl: "Promise.resolve({seed:seed})" },
+    find: "packRouteWithSnapshot(id,{seed:seed})", repl: "Promise.resolve({seed:seed})", all: true },
+
+  /* The SECOND link of the write: the button still calls the wrapper, the wrapper stops writing the
+   * row. The snapshot would then be saved beside a route that is not there. */
+  { name: "row-write-gone", file: DB, must: "fail", expect: "no longer calls packRouteOffline",
+    why: "§1 — the wrapper saves the snapshot and never the route row",
+    find: "const res = await packRouteOffline(routeId, opts);", repl: "const res = { seed: !!(opts && opts.seed) };" },
+
+  /* §10's three silent links. Each leaves every render and name intact. */
+  { name: "reports-fallback-gone", file: DB, must: "fail", expect: "useRouteTripReports lost its pack fallback",
+    why: "§10 — reports are saved with the pack and never read back",
+    find: "() => offlinePackReports(routeId)", repl: "() => undefined" },
+  { name: "stamp-lost", file: DB, must: "fail", expect: "useRouteContributions lost its pack fallback or its stamp",
+    why: "§10 — structural sharing strips `_packedAt`, so saved corrections render undated",
+    find: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId,\n    structuralSharing: false,",
+    repl: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId," },
+  { name: "photos-in-snapshot", file: DB, must: "fail", expect: "no longer filters out photo rows",
+    why: "§10 — photo rows are saved without their images",
+    find: '(contribs || []).filter((c) => c.kind !== "photo")', repl: "(contribs || [])" },
 
   { name: "store-gone", file: OFF, must: "fail", expect: "writes into no `pack` store",
     why: "§1 — packRouteOffline stops putting the row in the pack store",
@@ -125,7 +143,7 @@ const CASES = [
 
   { name: "disclaimer-gone", file: RD, must: "fail", expect: "no longer says what is NOT saved",
     why: "§4 — the card lists what you have and stops naming what you do not",
-    find: "<b style={{color:C.text}}>Photos, topo images and other climbers’ reports are not</b>, and neither are map tiles.",
+    find: "<b style={{color:C.text}}>Photos, topo images and map tiles are not</b>, and anything newer needs a connection.",
     repl: "Everything you need is here." },
 
   { name: "claims-photos", file: RD, must: "fail", expect: "claims something is on the device",

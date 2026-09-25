@@ -430,10 +430,18 @@ async function runWeather() {
   // walks the AST and an AST does not see comments.
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 
+  // THE FETCH MOVED to lib/forecast.js (fetchForecastRaw), shared with the trip pack, which saves
+  // its raw responses. So the URL pins are read THERE, and the panel is asserted to still call it —
+  // otherwise the pinned fetch could be one nothing uses while the panel fetched raw metric data.
+  const FX_PATH = path.join(ROOT, "lib", "forecast.js");
+  if (!fs.existsSync(FX_PATH)) dead("ANCHOR LOST: lib/forecast.js is gone — the forecast fetch's unit pins are unchecked");
+  const fxMask = fs.readFileSync(FX_PATH, "utf8").replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  if (/fetchForecastRaw\(/.test(mask)) ok("WeatherPanel fetches through lib/forecast.js fetchForecastRaw — the pins below are the ones it uses");
+  else fail("WeatherPanel no longer calls fetchForecastRaw — the unit pins checked in lib/forecast.js no longer describe what the panel fetches");
   // The fetch must stay canonical: converting at the source would leak the setting into the cache
   // key, and the colour thresholds above are calibrated in Fahrenheit and mph.
   for (const need of ["temperature_unit=fahrenheit", "wind_speed_unit=mph", "precipitation_unit=inch"]) {
-    if (!mask.includes(need)) fail(`the forecast fetch no longer pins ${need} — the data must stay canonical and convert at display`);
+    if (!fxMask.includes(need)) fail(`the forecast fetch no longer pins ${need} — the data must stay canonical and convert at display`);
     else ok(`the forecast fetch still pins ${need}`);
   }
   // And no display site may hard-code the imperial unit again.
@@ -534,7 +542,7 @@ async function runWeather() {
   // tile still calls it, or whether the 10 m series it reads is still fetched and bucketed. A
   // stale-base squash takes exactly that half and moves NO identifier, which audit:silent-reverts
   // says in its own closing caveat it cannot see.
-  if (mask.includes("wind_speed_10m,")) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
+  if (fxMask.includes("wind_speed_10m,")) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
   else fail("the forecast fetch no longer asks for wind_speed_10m — wind10Max is null on every day and the gate degrades to always-show");
   if (/if\(h\.wind_speed_10m\)dd\.winds10\.push\(h\.wind_speed_10m\[i\]\);/.test(mask)) ok("the hourly loop buckets the 10 m series");
   else fail("the hourly loop no longer buckets wind_speed_10m into winds10 — the fetched field reaches nothing");
@@ -617,7 +625,9 @@ async function runReports() {
     id: "probe_temp", name: "Probe", grade: "5.9", gradeSystem: "yds", discipline: "trad",
     pitches: 4, mountainId: "probe_area",
     _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Colorado" },
-    activity: [act(50, "2026-08-01"), act(60, "2026-08-02")],
+    // RELATIVE dates: CONDITIONS NOW is only "now" for reports inside RECENT_DAYS -- older ones are
+    // relabelled LAST REPORTED CONDITIONS -- so fixed dates aged this anchor out from under it.
+    activity: [act(50, new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10)), act(60, new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10))],
   };
   const shot = (u) => { M.__set_UNITS(u); const h = M.renderRoute(route, "conditions"); M.__set_UNITS("imperial"); return h; };
   const impT = strip(shot("imperial")), metT = strip(shot("metric"));

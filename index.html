@@ -46,6 +46,12 @@
          translate, a rotated chevron) is inline and so outranks this rule — it is never undone. */
       [style*="cursor: pointer"], [role="button"], [role="tab"], [role="switch"], [role="checkbox"], [role="option"], [role="menuitem"] { transition: transform .09s ease, opacity .12s ease, background-color .16s ease, border-color .16s ease, color .15s ease, box-shadow .18s ease; }
       [style*="cursor: pointer"]:active, [role="button"]:not([aria-disabled="true"]):active, [role="tab"]:active, [role="switch"]:active, [role="checkbox"]:not([aria-disabled="true"]):active, [role="option"]:active, [role="menuitem"]:active { transform: scale(0.985); }
+      /* ...but NOT a map pin. Leaflet places each pin by rewriting its inline `transform` every pinch
+         frame and after every zoom, and a Climbs-map pin is role="button" (keyboard-reachable), so the
+         two rules above eased it 0.09s behind the map: pins wobbled while pinching and slid into place
+         after each zoom. Measured 16 of 16 pins carrying the transition. Leaflet's own zoom-animation
+         rule (.leaflet-zoom-anim .leaflet-zoom-animated) is more specific and still wins mid-zoom. */
+      .leaflet-marker-icon, .leaflet-marker-shadow { transition: none; }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }

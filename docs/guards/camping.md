@@ -584,6 +584,29 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       **waypoint** store, which is 98% populated — the *check the existing files before
       researching* lesson, one store over. And 1,763 is a ROW count: the unit of work is the 230
       distinct names behind it.
+- **THE WHOLE-CATALOG CAMP-FIT SWEEP (2026-09-25) — "0 candidates" WAS NOT "clean".** Every one of
+  the 799 routes carrying camps was read per CORRIDOR (routes sharing a byte-identical list kept
+  together), judged against its own trailhead, researched ways in (`approach_variants`, incl.
+  `primary`), prose and descent — the evidence matrix the Mountain Loop and Sultan splits used, run
+  everywhere instead of on the pairs one audit could see. `audit:camp-route-fit` read **0** before
+  and after; the sweep removed **1,539** foreign camps from **443** routes (4,938 → 3,408 pairs).
+  - **TWO INDEPENDENT READINGS PER REMOVAL.** A reviewer proposed; a separate ADVERSARIAL verifier,
+    told to find removals that are WRONG (descent camps, traverse camps, a stated second way in),
+    rejected **58 of 1,597** — e.g. Silver Star Creek camps on the Wine Spires (a documented early-
+    season approach to Burgundy Col), Camp Muir/Ingraham Flats on the Mowich headwalls (they descend
+    the DC), Mount Stuart's Ingalls camps on the Stuart Glacier Couloir (a south approach via Goat
+    Pass). Only camps BOTH agreed on were removed. Rollbacks and every verdict:
+    `audits/camp-fit/`; writer `scripts/oneoff/remove-foreign-camps.mjs` (declared-state: the whole
+    current list must match, or the row is refused; a same-name Campsite pin goes too, because
+    `campSites()` would merge it straight back; a pin the drawn line passes through refuses the row).
+  - **A ROUTE MAY END WITH NO CAMPS**, only via an explicit `allowEmpty` set when both readings found
+    EVERY listed camp foreign (12 routes: e.g. Mount Baker's Boulder/Park routes, whose Portals and
+    Boulder Ridge camps were never in their list; Mount Prophet East). Another mountain's camps are
+    worse than none. Adding the right camps is enrichment, not this repair.
+  - **BATCH 2 IS REVIEWED BUT NOT APPLIED** (332 proposed on 82 routes: US-2 Index/Skykomish, Glacier
+    Peak east, SE and N Olympics, Stevens Pass, Stehekin, Pasayten, Lincoln Peak, Snowking) — its
+    verifier did not run. `audits/camp-fit/review-batch2.json` + `evidence-batch2.json` hold what a
+    verifier needs; run one, then `buildremovals` its intersection through the same writer.
 - **`audit:camp-route-fit`** asks the question `audit:camp-elevations` surfaced and could not
   answer: **is this camp plausibly usable FOR THIS ROUTE?** `wa_ellation`, a 5,000 ft route, was
   offered *"Ruth Mountain summit camp"* at 7,100 ft — a real camp with a correct elevation, on a
