@@ -25,6 +25,7 @@
 //   node scripts/oneoff/apply-recorded-wa-tracks.mjs --gpx-dir DIR            # dry run: prints the plan
 //   node scripts/oneoff/apply-recorded-wa-tracks.mjs --gpx-dir DIR --write    # writes + rollback + re-read
 //   node scripts/oneoff/apply-recorded-wa-tracks.mjs --gpx-dir DIR --emit OUT # processes the NEW-route tracks only
+//   add --batch 2 to run PLAN2 (link-ups cut to one peak) instead; its rollback is ...-2.json
 import fs from "fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
 
@@ -72,6 +73,25 @@ const PLAN = [
   ["west-mcmillan-spire__1", "ascent", ["wa_mcmillan_spire_west_west_ridge"]],
   ["west-ridge-forbidden-peak-c2c__1", "ascent", ["wa_forbidden_peak_west_ridge"]],
 ];
+// BATCH 2 (--batch 2): tracks that record MORE than one route, or start somewhere else, cut down to
+// the part that IS the route. Loop order was read off the recording, never assumed:
+//   forward  start -> first pass of the summit, never re-oriented (a loop's end can sit nearer the
+//            trailhead than its start, and flipping it would hand a peak the OTHER peak's leg)
+//   reverse  last pass of the summit -> end, flipped to run trailhead -> summit: the descent leg,
+//            used for the SECOND peak of a loop so its line does not run over the first peak
+//   trim     the ascent from the point nearest the route's trailhead pin (the recording began lower)
+// Checked and NOT applied: Oval Peak — both recordings start 6.9 km from our trailhead pin, and a
+// third recording described as starting at Eagle Creek TH starts 20 m from that pin, so ours is right
+// and those runners used another trailhead. Luahna — the Clark–Luahna double reaches it by a
+// different approach (our Napeequa ford pin is 1.2 km off it).
+const PLAN2 = [
+  ["clark-and-luahna-peak-double-wa__1", "forward", ["wa_clark_mountain_west_ridge"]],
+  ["big-craggy-west-craggy-loop-wa__1", "forward", ["wa_big_craggy_peak_scramble"]],
+  ["big-craggy-west-craggy-loop-wa__1", "reverse", ["wa_west_craggy_peak_standard_route"]],
+  ["gardner-north-gardner-wa__3", "forward", ["wa_gardner_mountain_west_ridge"]],        // tops Gardner at 43% of the recording
+  ["gardner-north-gardner-wa__3", "reverse", ["wa_north_gardner_mountain_southwest"]],   // then North Gardner at 49%; two recordings descend it on one line (median 7 m apart)
+  ["mount-ellinor-roundtrip__1", "trim", ["wa_mount_ellinor_standard"]],                 // began at the lower trailhead
+];
 // New routes, inserted by a separate step; processed here so the insert uses the same shaping.
 // [stem, mode, summit/end coordinate for an ascent cut or null]
 const NEW = [
@@ -89,7 +109,7 @@ const MAX_POINTS = 800;
 
 const args = process.argv.slice(2);
 const opt = n => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
-const DIR = opt("--gpx-dir"), WRITE = args.includes("--write"), EMIT = opt("--emit");
+const DIR = opt("--gpx-dir"), WRITE = args.includes("--write"), EMIT = opt("--emit"), BATCH = opt("--batch") || "1";
 if (!DIR) { console.error("--gpx-dir DIR is required"); process.exit(2); }
 
 const R = 6371000, rad = x => x * Math.PI / 180;
@@ -132,6 +152,15 @@ function resample(pts) {
 
 // Orient to start at the trailhead, then (ascent) cut at the FIRST pass of the summit.
 function shape(raw, mode, th, summit) {
+  if (mode === "forward" || mode === "reverse" || mode === "trim") {
+    let best = Infinity; for (const p of raw) best = Math.min(best, dist(summit, p));
+    const near = raw.map(p => dist(summit, p) <= best + 25);
+    const first = near.indexOf(true), last = near.lastIndexOf(true);
+    if (mode === "reverse") return raw.slice(last).reverse();
+    let from = 0;
+    if (mode === "trim" && th) for (let i = 0; i <= first; i++) if (dist(th, raw[i]) < dist(th, raw[from])) from = i;
+    return raw.slice(from, first + 1);
+  }
   let pts = raw.slice();
   if (th && dist(th, pts[pts.length - 1]) < dist(th, pts[0])) pts.reverse();
   if (mode === "ascent" && summit) {
@@ -162,7 +191,8 @@ if (EMIT) {
   process.exit(0);
 }
 
-const ids = PLAN.flatMap(p => p[2]);
+const plan = BATCH === "2" ? PLAN2 : PLAN;
+const ids = plan.flatMap(p => p[2]);
 const rows = await q(`routes?select=id,name,area_id,waypoints,approach_logistics,gpx,elev_pts&id=in.(${ids.join(",")})`);
 const byId = new Map(rows.map(r => [r.id, r]));
 const missing = ids.filter(id => !byId.has(id));
@@ -171,7 +201,7 @@ const areaIds = [...new Set(rows.map(r => r.area_id))];
 const areas = new Map((await q(`areas?select=id,name,lat,lng&id=in.(${areaIds.join(",")})`)).map(a => [a.id, a]));
 
 const writes = [], refused = [];
-for (const [stem, mode, targets] of PLAN) {
+for (const [stem, mode, targets] of plan) {
   const raw = parseGpx(`${DIR}/${stem}.gpx`);
   if (raw.length < 2) { refused.push([stem, "empty recording"]); continue; }
   for (const id of targets) {
@@ -197,7 +227,7 @@ console.log(`\n${writes.length} to write, ${refused.length} refused`);
 for (const [x, why] of refused) console.log("  refused:", x, "—", why);
 if (!WRITE) { console.log("\nDry run. Re-run with --write to apply."); process.exit(0); }
 
-const rb = new URL("../rollback-recorded-wa-tracks.json", import.meta.url);
+const rb = new URL(BATCH === "2" ? "../rollback-recorded-wa-tracks-2.json" : "../rollback-recorded-wa-tracks.json", import.meta.url);
 fs.writeFileSync(rb, JSON.stringify({ note: "gpx/elev_pts before apply-recorded-wa-tracks.mjs; restore with patchRow(routes, id, before)", at: new Date().toISOString(), rows: writes.map(w => ({ id: w.id, before: w.before })) }, null, 1));
 console.log("rollback written:", rb.pathname);
 for (const w of writes) await patchRow("routes", w.id, w.body);
