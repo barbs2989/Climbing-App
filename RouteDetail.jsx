@@ -1379,12 +1379,25 @@ export function campingGate(route){
   return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);
 }
 function campSites(route){
-  const bivy=Array.isArray(route.bivy)?route.bivy:[];
+  /* role "hidden" is a STUB naming a Campsite PIN that does not belong in this route's list (another
+     approach's camp, or a second pin for a place already listed). The pin stays on the map; only the
+     camping list skips it. It lives in `bivy`, not on the pin, because the waypoint editor rebuilds
+     every pin from a fixed key list and would wipe a flag the next time anybody edited a waypoint. */
+  const _all=Array.isArray(route.bivy)?route.bivy:[];
+  const _hk=v=>String((v==null?"":v)).trim().toLowerCase();
+  const hidden=new Set(_all.filter(b=>b&&String(b.role||"").toLowerCase()==="hidden").map(b=>_hk(b.name)));
+  const bivy=_all.filter(b=>!(b&&String(b.role||"").toLowerCase()==="hidden"));
   const thFt=trailheadFt(route);
   const gainOf=function(ft){return (ft==null||thFt==null)?null:ft-thFt;};
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
-  const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
+  const wpAll=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite"));
+  const wps=wpAll.filter(w=>!seen.has(key(w&&w.name))&&!hidden.has(key(w&&w.name)));
+  /* A researched site and a Campsite PIN with the same name are one place, and the pin is the half
+     that knows how far up the trail it is (92% of pins carry a distance, 0 of the bivy store do).
+     The pin used to be DROPPED on a name match, taking its distance with it; now the site keeps
+     the researched prose and borrows the pin's distance and its "on the track" chip. */
+  const pinOf=function(b){const k=key(b&&b.name);return k?wpAll.find(w=>key(w&&w.name)===k)||null:null;};
   /* AND THE SAME TEST THE WAYPOINT LIST APPLIES TO A LEG, applied to the whole walk in. A camp's
      `distMi` is cumulative from the trailhead, so it cannot be less than the straight line from
      the trailhead PIN either — and 35 of the 412 distances this panel prints are.
@@ -1407,8 +1420,15 @@ function campSites(route){
      carry the same two conventions the bivy store does, so reading one spelling silently rendered
      no elevation for the sites that use the other — and an elevation missing is also a GAIN
      missing, so the defect compounds now rather than merely showing one blank. */
-  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
+  /* `role` says what the site is FOR on this route: "main" = where a typical party on this route
+     sleeps, "route" = on the route's own line, kept for a slow party, weather or an emergency.
+     Researched per route (enrichment-wip/camping-roles), because one corridor-wide list had been
+     handed to every route in it — 799 routes shared 174 lists, up to 16 camps each. A Campsite
+     pin is on the route's own track by definition, so an unmatched pin is "route". A site with no
+     role (a contribution from before the field existed) is null and renders under OTHER SITES. */
+  const ROLE={main:"main",route:"route"};
+  return bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()])};})
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route"})));
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1493,7 +1513,47 @@ function CampingPanel({route,onEdit}){
         4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
         that are not there. Claim it only when at least one site actually is on the track. */}
     <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
-    {sites.map((b,i)=><CampSite key={i} b={b} i={i}/>)}
+    <OvernightPermit route={route}/>
+    {campGroups(sites).map(function(g){return <div key={g.key} style={{marginTop:g.title?4:0}}>
+      {g.title?<div style={{marginBottom:7}}><div style={{fontSize:11,fontWeight:700,color:C.text,letterSpacing:0.5}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
+      {g.sites.map(function(s){return <CampSite key={s.i} b={s.b} i={s.i}/>;})}
+    </div>;})}
+  </div>;
+}
+/* MAIN CAMPS first, then ON THE ROUTE, then anything unsorted. Grouping only happens once at least
+   one site carries a researched role; a route whose list was never sorted renders exactly the flat
+   list it always did, rather than filing every site under OTHER SITES. Order WITHIN a group is the
+   stored order — the research wrote main camps most-used first and on-route sites in the order you
+   reach them, and a sort would undo both. Exported so check:camping can ask it directly. */
+export function campGroups(sites){
+  const all=(sites||[]).map(function(b,i){return {b:b,i:i};});
+  if(!all.some(function(s){return s.b&&s.b.sorted;}))return [{key:"all",title:null,blurb:null,sites:all}];
+  return [
+    {key:"main",title:"MAIN CAMPS",blurb:"Where most parties on this route sleep.",sites:all.filter(function(s){return s.b.role==="main";})},
+    {key:"route",title:"ON THE ROUTE",blurb:"Further sites on the route's own line — for a slow day, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role==="route";})},
+    {key:"other",title:"OTHER SITES",blurb:"Added by climbers and not yet sorted.",sites:all.filter(function(s){return !s.b.role;})}
+  ].filter(function(g){return g.sites.length;});
+}
+/* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
+   DAY question on most rows ("None required for day climbing"), each site's own `permit` prose says
+   which permit without saying where to get it, and the ACCESS panel links only four agencies by a
+   name match. `access.overnight_permit` = {what, where, url} is researched per zone; `url` is the
+   issuing agency's own page and nothing else (check-camp-role-output.mjs enforces the host). */
+export function overnightPermitOf(route){
+  const p=route&&route.access&&route.access.overnight_permit;
+  if(!p||typeof p!=="object")return null;
+  const what=String(p.what||"").trim(),where=String(p.where||"").trim();
+  let url=null;try{const u=new URL(String(p.url||""));if(u.protocol==="https:")url=u.href;}catch(e){url=null;}
+  return (what||where)?{what:what,where:where,url:url}:null;
+}
+function OvernightPermit({route}){
+  const p=overnightPermitOf(route);
+  if(!p)return null;
+  return <div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
+    <div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,letterSpacing:0.5,marginBottom:3}}>{"OVERNIGHT PERMIT"}</div>
+    {p.what?<div style={{fontSize:12.5,fontWeight:700,color:C.text,lineHeight:1.45}}>{p.what}</div>:null}
+    {p.where?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55,marginTop:3}}>{p.where}</div>:null}
+    {p.url?<a href={p.url} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
   </div>;
 }
 export function PitchComments({targetId,comments,commentsUnavailable,onAdd}){
@@ -2591,9 +2651,10 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
   const blankSec=function(){return {label:"",cls:"",notes:""};};
   const MAX_VAR=8;
   const blankVar=function(){return {name:"",season:"",distMi:"",gainFt:"",hours:"",notes:"",hazards:""};};
-  const blankBivy=function(){return {name:"",type:"camp",elev:"",capacity:"",water:"",permit:"",notes:""};};
-  const routeBivy=(Array.isArray(route.bivy)&&route.bivy.length)
-    ? route.bivy.map(function(b){return {name:b.name||"",type:b.type||"camp",elev:b.elev!=null?String(b.elev):(b.elevM!=null?String(Math.round(b.elevM*3.28084)):""),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||""};})
+  const blankBivy=function(){return {name:"",type:"camp",role:"",elev:"",capacity:"",water:"",permit:"",notes:""};};
+  const _bivyShown=(Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return !(b&&b.role==="hidden");});
+  const routeBivy=_bivyShown.length
+    ? _bivyShown.map(function(b){return {name:b.name||"",type:b.type||"camp",role:b.role||"",elev:b.elev!=null?String(b.elev):(b.elevM!=null?String(Math.round(b.elevM*3.28084)):""),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||""};})
     :[blankBivy()];
   const bivies=vals.bivy||routeBivy;
   const setBivies=function(fn){setVals(function(v){return Object.assign({},v,{bivy:fn(v.bivy||routeBivy)});});};
@@ -2774,6 +2835,9 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
         <select aria-label={"Site "+(idx+1)+" type"} value={b.type} onChange={function(e){setBivy(idx,"type",e.target.value);}} style={Object.assign({},fld,{flex:1,marginBottom:0})}>
           <option value="camp">{"Camp"}</option><option value="bivy">{"Bivy"}</option><option value="hut">{"Hut"}</option>
         </select>
+        <select aria-label={"Site "+(idx+1)+" role"} value={b.role||""} onChange={function(e){setBivy(idx,"role",e.target.value);}} style={Object.assign({},fld,{flex:1,marginBottom:0})}>
+          <option value="">{"Not sure"}</option><option value="main">{"Main camp"}</option><option value="route">{"On the route"}</option>
+        </select>
         <input aria-label={"Site "+(idx+1)+" elevation"} inputMode="numeric" value={b.elev} onChange={function(e){setBivy(idx,"elev",e.target.value);}} placeholder={uImp()?"Elevation (ft)":"Elevation (m)"} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
       <input aria-label={"Site "+(idx+1)+" water"} value={b.water} onChange={function(e){setBivy(idx,"water",e.target.value);}} placeholder="Water — is there any, and is it reliable?" style={fld}/>
@@ -2830,8 +2894,10 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
      Only `elevM` is never written here — the read side converts the legacy spelling, and the
      write side should not add to it. */
   var _e=String(b.elev||"").trim();var _n=_e?parseInt(_e,10):null;
-  return {name:String(b.name).trim(),type:b.type||"camp",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
-});if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_dget(_src,k[0]);if(v==null)return;v=String(v).trim();if(!v)return;
+  return {name:String(b.name).trim(),type:b.type||"camp",role:(b.role==="main"||b.role==="route")?b.role:"",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
+/* The form never shows the role:"hidden" stubs (they name Campsite PINS the camping list skips), so
+   they are carried through untouched — otherwise one climber's edit would bring every hidden pin back. */
+}).concat((Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return b&&b.role==="hidden"&&b.name;}).map(function(b){return {name:b.name,role:"hidden"};}));if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_dget(_src,k[0]);if(v==null)return;v=String(v).trim();if(!v)return;
 /* A key marked numeric merges back as a NUMBER. The hour fields are arithmetic — the planner
    derives the summit time as totalHrs-approachTimeHrs-descentTimeHrs — so a string would
    concatenate instead of subtract, silently. Non-numeric input is dropped rather than stored
@@ -3151,7 +3217,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
       <div style={{position:"relative",zIndex:2,marginTop:14,padding:"0 3px"}}><div style={{display:"flex",gap:4,marginBottom:8,flexWrap:"wrap"}}>{route.classic?<Pill label="★ Classic" color={C.amber} bg={C.amberBg} sm/>:null}<Pill icon={<DiscIcon d={catOf(route)} size={12} color={dc.color}/>} label={dc.label} color={dc.color} bg={dc.bg} sm/>{gradeLabel(route)?<Pill label={gradeLabel(route)} color={C.amber} bg={C.amberBg} sm/>:null}</div><div style={{color:"rgba(255,255,255,0.9)",fontSize:11.5,fontWeight:700,letterSpacing:0.7,textTransform:"uppercase",textShadow:"0 1px 4px rgba(0,0,0,0.8)",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{<Lbl s={"📍 "+mtn.name}/>}</div><div title={route.name} style={{color:"white",fontSize:(route.name||"").length>52?17.5:(route.name||"").length>34?20.5:25,fontWeight:800,letterSpacing:-0.4,lineHeight:1.14,marginTop:3,textShadow:"0 2px 9px rgba(0,0,0,0.68)",display:"-webkit-box",WebkitBoxOrient:"vertical",WebkitLineClamp:2,overflow:"hidden"}}>{route.name}</div><div style={{color:"rgba(255,255,255,0.8)",fontSize:12.5,fontWeight:600,marginTop:5,paddingRight:160,minHeight:30,textShadow:"0 1px 4px rgba(0,0,0,0.7)",lineHeight:1.35,display:"-webkit-box",WebkitBoxOrient:"vertical",WebkitLineClamp:2,overflow:"hidden"}}>{strapTrim(route.discipline==="bouldering"?((route.rockType?route.rockType+" · ":"")+seasonShort(route.season)):((mtn.elevation!=null?uElev(mtn.elevation)+" · ":"")+(route.pitches>0?(route.pitches+"p · "):"")+(["trad","sport"].includes(catOf(route))?"":(seasonShort(route.season)||"Season TBD"))))}</div></div>
     </div>
     {(()=>{const cells=(route.discipline==="bouldering"?[["Grade",gradeLabel(route),"amber",C.amber],["Approach",effDistKm(route),"textSub",C.textSub],["Height",route.routeFt,"green",C.green],["★",avgS,"amber",C.amber],["Reports",activity.length,"blue",C.blue]]:[["Grade",gradeLabel(route),"amber",C.amber],["trad","sport"].includes(catOf(route))?null:["Dist",effDistKm(route),"textSub",C.textSub],protOf(route)?null:["Gain",routeAscentFt(route),"green",C.green],["★",avgS,"amber",C.amber],["Reports",activity.length,"blue",C.blue]]).filter(Boolean);return <div style={{display:"grid",gridTemplateColumns:"repeat("+cells.length+",1fr)",background:C.surface,borderTop:`1px solid ${C.border}`,borderBottom:`1px solid ${C.border}`}}>{cells.map((x,xi)=>{const hasValue=(x[0]==="Grade"?!!gradeLabel(route):x[0]==="Approach"?effDistKm(route)!=null:x[0]==="Height"?route.routeFt!=null:x[0]==="★"?avgS!=null:x[0]==="Dist"?effDistKm(route)!=null:x[0]==="Gain"?routeAscentFt(route)!=null:x[0]==="Reports"?true:true);const val=(x[0]==="Grade"?gradeLabel(route):x[0]==="Approach"?effDistKm(route)!=null?uDist(effDistKm(route)):null:x[0]==="Height"?route.routeFt!=null?uElev(route.routeFt):null:x[0]==="★"?avgS?avgS.toFixed(1):null:x[0]==="Dist"?effDistKm(route)!=null?uDist(effDistKm(route)):null:x[0]==="Gain"?routeAscentFt(route)!=null?"↑"+uElev(routeAscentFt(route)):null:x[0]==="Reports"?activity.length:null);return <div key={x[0]} style={{padding:"7px 3px",textAlign:"center",borderRight:xi===cells.length-1?"none":`1px solid ${C.border}`}}><div style={{fontSize:12,fontWeight:700,color:hasValue?x[3]:C.amber}}>{val==null||val===""?"—":val}</div><div style={{fontSize:12,color:C.textMuted,marginTop:1}}>{x[0]}</div></div>;})}</div>;})()}
-    {!cragOnly?null:(()=>{var crag=cragSibs;var ci=crag.findIndex(function(x){return x.id===route.id;});var pv=crag[ci-1],nx=crag[ci+1];if(!pv&&!nx)return null;var cell=function(r,dir){return <button onClick={function(){if(r&&onOpenRoute)onOpenRoute(r);}} disabled={!r} style={{flex:"1 1 0",minWidth:0,display:"flex",alignItems:"center",justifyContent:dir<0?"flex-start":"flex-end",gap:4,padding:"8px 11px",background:"transparent",border:"none",cursor:r?"pointer":"default",opacity:r?1:0.3}}>{dir<0?<span style={{color:C.textMuted,fontSize:15,flexShrink:0}}>{"‹"}</span>:null}<div style={{minWidth:0,textAlign:dir<0?"left":"right"}}><div style={{fontSize:12.5,color:C.textSub,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{r?r.name:"—"}</div>{r?<div style={{fontSize:10,color:C.textMuted,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{((CAT[catOf(r)]||{}).label||catOf(r))+(gradeLabel(r)?" · "+gradeLabel(r):"")}</div>:null}</div>{dir>0?<span style={{color:C.textMuted,fontSize:15,flexShrink:0}}>{"›"}</span>:null}</button>;};return <div style={{display:"flex",alignItems:"stretch",background:C.surface,borderBottom:"1px solid "+C.border}}>{cell(pv,-1)}<button onClick={function(){if(onOpenCrag)onOpenCrag();}} style={{flexShrink:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:1,padding:"0 12px",background:"none",border:"none",borderLeft:"1px solid "+C.border,borderRight:"1px solid "+C.border,cursor:"pointer"}}><span style={{fontSize:12,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.25}}>Routes</span><span style={{fontSize:12,fontWeight:800,color:C.blue,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.25}}>next door ›</span></button>{cell(nx,1)}</div>;})()}<div style={{display:"flex",gap:5,background:C.surface,borderBottom:`1px solid ${C.border}`,padding:"10px 8px",overflowX:"auto",WebkitOverflowScrolling:"touch"}}>{[["overview","Overview"],["planner","Plan"],["conditions",cragOnly?"Send Reports":"Reports"],["safety","Safety"],["partners","Partners"],["photos","Photos"]].filter(x=>x[0]==="planner"?showPlan:true).map(x=><button key={x[0]} onClick={()=>setTab(x[0])} aria-current={tab===x[0]?"true":undefined} style={{flex:"1 0 auto",padding:"10px 8px",textAlign:"center",borderRadius:9,border:"1px solid "+(tab===x[0]?C.blue:C.border),background:tab===x[0]?C.blueBg:C.surface,color:tab===x[0]?C.blue:C.textSub,fontSize:11.5,fontWeight:tab===x[0]?"800":"600",cursor:"pointer",whiteSpace:"nowrap"}}>{x[1]}</button>)}</div>
+    {!cragOnly?null:(()=>{var crag=cragSibs;var ci=crag.findIndex(function(x){return x.id===route.id;});var pv=crag[ci-1],nx=crag[ci+1];if(!pv&&!nx)return null;var cell=function(r,dir){return <button onClick={function(){if(r&&onOpenRoute)onOpenRoute(r);}} disabled={!r} style={{flex:"1 1 0",minWidth:0,display:"flex",alignItems:"center",justifyContent:dir<0?"flex-start":"flex-end",gap:4,padding:"8px 11px",background:"transparent",border:"none",cursor:r?"pointer":"default",opacity:r?1:0.3}}>{dir<0?<span style={{color:C.textMuted,fontSize:15,flexShrink:0}}>{"‹"}</span>:null}<div style={{minWidth:0,textAlign:dir<0?"left":"right"}}><div style={{fontSize:12.5,color:C.textSub,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{r?r.name:"—"}</div>{r?<div style={{fontSize:10,color:C.textMuted,fontWeight:600,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{((CAT[catOf(r)]||{}).label||catOf(r))+(gradeLabel(r)?" · "+gradeLabel(r):"")}</div>:null}</div>{dir>0?<span style={{color:C.textMuted,fontSize:15,flexShrink:0}}>{"›"}</span>:null}</button>;};return <div style={{display:"flex",alignItems:"stretch",background:C.surface,borderBottom:"1px solid "+C.border}}>{cell(pv,-1)}<button onClick={function(){if(onOpenCrag)onOpenCrag();}} style={{flexShrink:0,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:1,padding:"0 12px",background:"none",border:"none",borderLeft:"1px solid "+C.border,borderRight:"1px solid "+C.border,cursor:"pointer"}}><span style={{fontSize:12,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.25}}>Routes</span><span style={{fontSize:12,fontWeight:800,color:C.blue,textTransform:"uppercase",letterSpacing:0.4,lineHeight:1.25}}>next door ›</span></button>{cell(nx,1)}</div>;})()}<div style={{display:"flex",gap:5,background:C.surface,borderBottom:`1px solid ${C.border}`,padding:"10px 8px",overflowX:"auto",scrollPaddingInline:8,WebkitOverflowScrolling:"touch"}}>{[["overview","Overview"],["planner","Plan"],["conditions",cragOnly?"Send Reports":"Reports"],["safety","Safety"],["partners","Partners"],["photos","Photos"]].filter(x=>x[0]==="planner"?showPlan:true).map(x=><button key={x[0]} onClick={e=>{setTab(x[0]);/* The six tabs are 399px of a bar that scrolls: 390px on a phone, 360 on a small one. Tapping Photos selected it and left its last 30px under the edge, so the tab you had just picked read "Pho". "nearest" moves the bar only as far as it must, and not at all when the tab is already in view; the page does not scroll. The bar's scrollPaddingInline keeps its 8px inset at whichever end the tab lands. */e.currentTarget.scrollIntoView({block:"nearest",inline:"nearest"});}} aria-current={tab===x[0]?"true":undefined} style={{flex:"1 0 auto",padding:"10px 8px",textAlign:"center",borderRadius:9,border:"1px solid "+(tab===x[0]?C.blue:C.border),background:tab===x[0]?C.blueBg:C.surface,color:tab===x[0]?C.blue:C.textSub,fontSize:11.5,fontWeight:tab===x[0]?"800":"600",cursor:"pointer",whiteSpace:"nowrap"}}>{x[1]}</button>)}</div>
     <div style={{padding:"13px 14px"}}>
       {shareOpen?createPortal(<div onClick={()=>setShareOpen(false)} role="dialog" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:230,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:"10px 18px 18px",maxHeight:"86vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderBottom:"none",boxShadow:"0 -10px 44px rgba(0,0,0,0.55)"}}><div {...clickable(()=>setShareOpen(false))} title="Collapse" style={{width:42,height:5,borderRadius:3,background:C.border,margin:"0 auto 12px",cursor:"pointer"}}></div><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:4}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Share this route</div><button aria-label="Close share" onClick={()=>setShareOpen(false)} style={POP_CLOSE}>✕</button></div><div style={{fontSize:13,color:C.textSub,marginBottom:15}}>{route.name+" · "+route.grade+" · "+mtnOf(route)}</div><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Send to a partner</div>{(function(){var q=shareSearch.trim().toLowerCase();var conn=(connections||[]);var others=CLIMBERS.filter(function(c){return c.id!==0&&!conn.some(function(f){return f.id===c.id;});});var pool=conn.concat(others);var matches=q?pool.filter(function(c){return (c.name||"").toLowerCase().indexOf(q)>=0;}):pool;return <div style={{marginBottom:16}}><input aria-label="Search climbers by name" value={shareSearch} onChange={function(e){setShareSearch(e.target.value);}} placeholder="Search climbers by name" style={{width:"100%",padding:"9px 11px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13.5,boxSizing:"border-box",outline:"none"}}/>{matches.length?<div style={{maxHeight:236,overflowY:"auto",overscrollBehavior:"contain",marginTop:8}}>{matches.slice(0,40).map(function(c){var fr=conn.some(function(f){return f.id===c.id;});return <div key={c.id} style={{display:"flex",alignItems:"center",gap:10,padding:"7px 0"}}><Av src={c.avatar} size={34}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{c.name}</div><div style={{fontSize:11.5,color:C.textMuted}}>{(fr?"Partner":"Climber")+(vScore(c)?" · "+vScore(c):"")}</div></div><button onClick={function(){if(onShareRoute)onShareRoute(route,c);setShareOpen(false);setShareSearch("");}} style={{flexShrink:0,padding:"9px 15px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Send</button></div>;})}</div>:<div style={{fontSize:12.5,color:C.textSub,marginTop:10,lineHeight:1.5}}>{q?("No climbers match “"+shareSearch+"”."):"Add partners to send routes straight into chat — or copy the link below."}</div>}</div>;})()}<div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Route link</div><div style={{display:"flex",gap:7,marginBottom:15}}><div style={{flex:1,minWidth:0,background:C.card,border:"1px solid "+C.border,borderRadius:9,padding:"9px 11px",fontSize:12.5,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{shareLink}</div><button onClick={()=>{var _p;try{_p=navigator.clipboard&&navigator.clipboard.writeText(shareLink);}catch(e){}if(_p&&_p.then)_p.then(function(){setLinkCopied(true);setTimeout(()=>setLinkCopied(false),1600);}).catch(function(){});}} style={{flexShrink:0,padding:"9px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{linkCopied?"✓ Copied":"Copy"}</button></div><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Or copy & export</div><textarea aria-label="Route summary to copy" readOnly value={""+route.name+" ("+route.grade+")\n"+mtnOf(route)+"\n"+shareLink+"\n\nShared from ClimbMatch · open the link for the full route page: conditions, recorded tracks, gear beta and trip reports."} rows={6} style={{width:"100%",padding:"10px 11px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:12.5,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit",lineHeight:1.5,overscrollBehavior:"contain"/* six rows against a summary that overflows them by 48px: without this the drag chains to the route page behind the sheet */}}/><div style={{fontSize:12,color:C.textMuted,marginTop:5,lineHeight:1.4}}>Copy this to share anywhere · text, email, or socials.</div></div></div>,document.body):null}{showGpsModal&&route&&createPortal(<Suspense fallback={null}><GpsSubmissionModal routeId={route.id} routeName={route.name} onClose={()=>setShowGpsModal(false)} onSuccess={()=>{/* Deliberately does NOT close the modal. The modal sets showSuccess and calls onSuccess in the same tick, so unmounting here meant its success screen — quality score, review window, emailed-receipt line — could never paint. The user closes it with its own Done button, which calls onClose. */}} /></Suspense>,document.body)}{tab==="overview"?<div>{/* No fire panel here: its home is the Safety tab (see fireEl above), which
     every route now has. It did start on `conditions`, and that is worth not repeating — that tab is

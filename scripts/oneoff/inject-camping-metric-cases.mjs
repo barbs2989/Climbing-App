@@ -33,9 +33,12 @@ const CASES = [
     name: "7. DERIVE a distance from lat/lng for bivy sites (a chord posing as a trail)",
     want: /DISTANCE rendered for a bivy site/i,
     // The tempting bug, written the tempting way: a great-circle distance from the trailhead pin.
+    // Repointed when campSites began borrowing a same-named PIN's distance: a researched site with
+    // no pin still gets null, and this case makes that null a chord instead.
     edit: (s) => s.replace(
-      "  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,",
-      "  const _th=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,\"Trailhead\"))[0];\n  const _chord=b=>{if(!b||b.lat==null||_th==null||_th.lat==null)return null;const dx=(Number(b.lng)-Number(_th.lng))*46,dy=(Number(b.lat)-Number(_th.lat))*69;return Math.sqrt(dx*dx+dy*dy);};\n  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:_chord(b),"),
+      "  return bivy.map(b=>{const p=pinOf(b);",
+      "  const _th=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,\"Trailhead\"))[0];\n  const _chord=b=>{if(!b||b.lat==null||_th==null||_th.lat==null)return null;const dx=(Number(b.lng)-Number(_th.lng))*46,dy=(Number(b.lat)-Number(_th.lat))*69;return Math.sqrt(dx*dx+dy*dy);};\n  return bivy.map(b=>{const p=pinOf(b);")
+      .replace("distMi:p?_campMi(p):null,", "distMi:p?_campMi(p):_chord(b),"),
   },
   {
     name: "8. trailheadFt() returns a CONSTANT instead of null (a gain with no anchor)",

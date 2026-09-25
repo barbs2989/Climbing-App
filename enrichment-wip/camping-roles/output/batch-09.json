@@ -1,0 +1,793 @@
+{
+ "zones": [
+  {
+   "zone": "horseshoe-basin",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit — quota, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Parties starting from Stehekin can arrange the permit by email.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "hozomeen",
+   "overnightPermit": {
+    "what": "North Cascades NP wilderness permit for the lake and cross-country camps; none for the drive-in campground",
+    "where": "Reserve on Recreation.gov or get one at the Marblemount Wilderness Information Center before the trip. Hozomeen Campground itself is first come, first served.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "kangaroo-ridge",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Nothing to obtain for a night on the climbers' trails. The Early Winters valley campgrounds charge a nightly fee.",
+    "url": null
+   }
+  },
+  {
+   "zone": "kindy-found-illabot",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Sign the wilderness register at the trailhead where one exists.",
+    "url": null
+   }
+  },
+  {
+   "zone": "lincoln-peak-middle-fork",
+   "overnightPermit": {
+    "what": "No overnight permit required",
+    "where": "Mount Baker Wilderness rules apply; a recreation pass is needed to park at the Heliotrope Ridge trailhead.",
+    "url": null
+   }
+  },
+  {
+   "zone": "little-tahoma-tatoosh",
+   "overnightPermit": {
+    "what": "Mount Rainier NP wilderness permit, plus climbing registration and fee for the glaciers",
+    "where": "Reserve on Recreation.gov or get a walk-up permit at the White River Wilderness Information Center; register and pay the climbing fee before the climb.",
+    "url": "https://www.nps.gov/mora/planyourvisit/wilderness-permit.htm"
+   }
+  },
+  {
+   "zone": "massie-peak",
+   "overnightPermit": {
+    "what": "Free self-issue Glacier Peak Wilderness permit",
+    "where": "Fill one out at the Trinity trailhead kiosk.",
+    "url": null
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "main": [
+    "Buckner cross-country zone bivy",
+    "Sahale Glacier Camp"
+   ],
+   "onRoute": [
+    "Pelton Basin Camp",
+    "Basin Creek Camp",
+    "Doubtful Lake Camp"
+   ],
+   "drop": [
+    "Cottonwood Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Parties either camp at the Sahale Glacier camps and drop into Horseshoe Basin, or bivy on slabs in the upper basin; the valley line via Pelton and Basin Creek is the slower alternative."
+  },
+  {
+   "id": "wa_hurry_up_peak_south_ridge",
+   "main": [
+    "Kool-Aid Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Basin Creek Camp",
+    "Cottonwood Camp",
+    "Pelton Basin Camp",
+    "Sahale Glacier Camp",
+    "Doubtful Lake Camp",
+    "Buckner cross-country zone bivy"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Climbed from Kool-Aid Lake over Cache Col; the Stehekin-side and Sahale camps serve other approaches."
+  },
+  {
+   "id": "wa_trapper_mountain_north_couloir",
+   "main": [],
+   "onRoute": [
+    "Pelton Basin Camp"
+   ],
+   "drop": [
+    "Basin Creek Camp",
+    "Cottonwood Camp",
+    "Sahale Glacier Camp",
+    "Doubtful Lake Camp",
+    "Buckner cross-country zone bivy"
+   ],
+   "add": [
+    {
+     "name": "Trapper Lake",
+     "type": "camp",
+     "elev": 4170,
+     "capacity": "A few informal tent sites near the shore; cross-country camping, no established site",
+     "water": "Lake water, treat it",
+     "permit": "North Cascades National Park wilderness permit (cross-country zone)",
+     "notes": "Glacial lake directly below the north couloir. Reached from the Cascade Pass side over Alliteration Col, or by a steep, poorly marked path up from the upper Stehekin River trail. The slopes above it slide often in spring.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Usually a long day from the Cascade Pass road via Alliteration Col and Trapper Lake; Trapper Lake added as the camp when split, and whether Pelton is actually passed depends on the col chosen."
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "main": [
+    "Trapper Lake"
+   ],
+   "onRoute": [
+    "Cottonwood Camp"
+   ],
+   "drop": [
+    "Basin Creek Camp",
+    "Pelton Basin Camp",
+    "Sahale Glacier Camp",
+    "Doubtful Lake Camp",
+    "Buckner cross-country zone bivy"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Trapper Lake is the base; the steep path to it leaves the upper Stehekin valley near Cottonwood, but the exact junction relative to Basin Creek Camp is not certain."
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_north_route",
+   "main": [
+    "Hozomeen Campground, north end of Ross Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Hozomeen Lake camp",
+    "Willow Lake camp",
+    "Improvised bivouacs in the western basin between the peaks"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Starts east from the ranger station toward the north cirque, away from the lake trail and the western basin; no established high camp on this side could be confirmed, so parties likely bivy where the day ends."
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+   "main": [
+    "Improvised bivouacs in the western basin between the peaks",
+    "Hozomeen Campground, north end of Ross Lake"
+   ],
+   "onRoute": [
+    "Hozomeen Lake camp"
+   ],
+   "drop": [
+    "Willow Lake camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route rises from the basin between the peaks toward the south-peak saddle, reached via the Hozomeen Lake trail; little route-specific information exists."
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "main": [
+    "Improvised bivouacs in the western basin between the peaks",
+    "Hozomeen Campground, north end of Ross Lake"
+   ],
+   "onRoute": [
+    "Hozomeen Lake camp",
+    "6,200-ft saddle below the SE buttress"
+   ],
+   "drop": [
+    "Willow Lake camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard line leaves the Hozomeen Lake trail for the basin and saddle between the peaks; the 6,200-ft saddle belongs to the southern shoulder approach from Willow Lake and is kept only as a possible bivy."
+  },
+  {
+   "id": "wa_beckey_tate",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [
+    "Kangaroo Pass and the upper Early Winters Creek meadows"
+   ],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day climb from the hairpin; the upper Early Winters meadows lie along the approach but camping there is discouraged."
+  },
+  {
+   "id": "wa_big_kangaroo_west_face",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [
+    "Kangaroo Pass and the upper Early Winters Creek meadows"
+   ],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day climb from the hairpin; the east-side basin serves the other side of the ridge."
+  },
+  {
+   "id": "wa_blue_s_buttress",
+   "main": [
+    "Blue Lake trailhead roadside parking",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Starts from the Blue Lake trailhead, so the car there or the valley campgrounds serve as base; normally a day climb."
+  },
+  {
+   "id": "wa_clean_break",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Approached up the Wine Spires trail to the bench camp; long route, so many parties camp there, though fast teams go car-to-car."
+  },
+  {
+   "id": "wa_ellen_pea",
+   "main": [
+    "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Roadside wall climbed in a day; the M&M pullout is not one of the two named pullouts, so the pullout entry is only approximately right."
+  },
+  {
+   "id": "wa_first_amendment",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short approach from a highway pullout across Early Winters Creek; a day climb."
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [
+    "Kangaroo Pass and the upper Early Winters Creek meadows"
+   ],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day climb from the hairpin toward Kangaroo Pass; camping in the meadows is possible but discouraged."
+  },
+  {
+   "id": "wa_koala_krack",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short day climb from the hairpin."
+  },
+  {
+   "id": "wa_northwest_face_2",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short day climb from the hairpin."
+  },
+  {
+   "id": "wa_playing_not_spraying",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Silver Horn shares the Burgundy Col approach, so the bench camp is the natural base."
+  },
+  {
+   "id": "wa_rampage",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Paisano is often a day climb from the Wine Spires pullout, with the bench camp used when split."
+  },
+  {
+   "id": "wa_south_face",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout"
+   ],
+   "onRoute": [
+    "The Ledge Bivy"
+   ],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Vasiliki Tower is based from the bench camp; the ledge bivy lies on the trail below it."
+  },
+  {
+   "id": "wa_south_face_4",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Longest Kangaroo Temple route but still a day climb from the hairpin."
+  },
+  {
+   "id": "wa_spontaneity_arete",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Popular day climb from a highway pullout."
+  },
+  {
+   "id": "wa_spontaneous_distraction",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day climb beside Spontaneity Arete."
+  },
+  {
+   "id": "wa_summertime",
+   "main": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short roadside crag near the hairpin; day climb."
+  },
+  {
+   "id": "wa_the_chalice",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same Burgundy Col approach as the other Silver Horn route."
+  },
+  {
+   "id": "wa_the_exorcism_of_mark_hanna",
+   "main": [
+    "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short roadside route; day climb."
+  },
+  {
+   "id": "wa_the_l_h_route_free_variation",
+   "main": [
+    "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Roadside wall; day climb."
+  },
+  {
+   "id": "wa_the_tiger",
+   "main": [
+    "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Long but roadside; done in a day."
+  },
+  {
+   "id": "wa_vasiliki_ridge_standard",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout"
+   ],
+   "onRoute": [
+    "The Ledge bivy"
+   ],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo",
+    "Lone Fir, Klipchuck and Early Winters campgrounds",
+    "The Bench"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The Bench waypoint is the same basin as Bench Camp and is dropped as a duplicate of Bench Camp — larch bench above the Wine Spires pullout."
+  },
+  {
+   "id": "wa_west_ridge_2",
+   "main": [
+    "Bench Camp — larch bench above the Wine Spires pullout",
+    "Lone Fir, Klipchuck and Early Winters campgrounds"
+   ],
+   "onRoute": [],
+   "drop": [
+    "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+    "Blue Lake trailhead roadside parking",
+    "Kangaroo Pass and the upper Early Winters Creek meadows",
+    "Upper Cedar Creek basin, east of Big Kangaroo"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Popular day climb from the Wine Spires pullout, bench camp when split."
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "main": [
+    "Cyclone Lake and the lakes just north of it"
+   ],
+   "onRoute": [
+    "Found Lake and the Kindy Ridge saddle",
+    "Kindy Ridge crest camps"
+   ],
+   "drop": [
+    "Slide Lake",
+    "Enjar Lake and Hamar Lake",
+    "Cyclone Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Kindy Ridge approach to Cyclone Lake; the Cyclone Lake waypoint duplicates Cyclone Lake and the lakes just north of it; the western lakes are a different approach."
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "main": [
+    "Head of Kindy Creek and the Kindy-Buck Creek pass"
+   ],
+   "onRoute": [
+    "Kindy Creek Cirque"
+   ],
+   "drop": [
+    "Found Lake and the Kindy Ridge saddle",
+    "Kindy Ridge crest camps",
+    "Slide Lake"
+   ],
+   "add": [
+    {
+     "name": "Horse Lake saddle camp",
+     "type": "camp",
+     "elev": 5360,
+     "capacity": "A few tent sites just above the saddle",
+     "water": "Horse Lake and snowmelt nearby; treat it",
+     "permit": "No overnight permit required",
+     "notes": "First-night camp on the Green Mountain approach, past the south shoulder of Green Mountain. Beyond it the traverse toward Misch and Buckindy is slow sidehill travel.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Low confidence: the Green Mountain approach has first-night camps near Horse Lake saddle (added), but where parties base for the north-side route (Kindy head vs a basin west of Misch) is thinly documented."
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "main": [
+    "Jug Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Found Lake and the Kindy Ridge saddle",
+    "Kindy Ridge crest camps",
+    "Slide Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Illabot and Arrow Creek approach leads to Jug Lake, the usual camp; the Kindy and Slide Lake camps serve Snowking."
+  },
+  {
+   "id": "wa_mutchler_peak_scramble",
+   "main": [
+    "Cyclone Lake and the lakes just north of it"
+   ],
+   "onRoute": [
+    "Found Lake and the Kindy Ridge saddle",
+    "Kindy Ridge crest camps"
+   ],
+   "drop": [
+    "Cyclone Lake Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Mutchler is climbed from the Cyclone Lake benches; the Cyclone Lake Basin waypoint duplicates Cyclone Lake and the lakes just north of it."
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "main": [
+    "Cyclone Lake and the lakes just north of it"
+   ],
+   "onRoute": [
+    "Found Lake and the Kindy Ridge saddle",
+    "Boggy meadow low camp",
+    "Kindy Ridge crest camps",
+    "High camp on rock/snow benches"
+   ],
+   "drop": [
+    "Slide Lake",
+    "Enjar Lake and Hamar Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Kindy Ridge approach to Cyclone Lake; the western lakes serve the other approach. Order of Found Lake and the boggy meadow is inferred from elevation."
+  },
+  {
+   "id": "wa_lincoln_peak_north_ridge",
+   "main": [
+    "Black Buttes basin camp"
+   ],
+   "onRoute": [
+    "Kulshan Cabin site"
+   ],
+   "drop": [
+    "Wallace Creek basin ridge camp",
+    "East Rankin Lake",
+    "Saddle tarns above Rankin Creek",
+    "Middle Fork Nooksack road switchbacks"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "This is the Heliotrope Ridge approach to the northwest face; first ascent was car-to-car, and the bench below the Black Buttes is the logical camp when split. The Rankin/Wallace camps serve the southern approach."
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "main": [
+    "Wallace Creek basin ridge camp"
+   ],
+   "onRoute": [
+    "Middle Fork Nooksack road switchbacks",
+    "East Rankin Lake",
+    "Saddle tarns above Rankin Creek"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Middle Fork Nooksack and Rankin Creek approach; all four camps belong to this line."
+  },
+  {
+   "id": "wa_frying_pan_whitman_glaciers",
+   "main": [
+    "Meany Crest",
+    "Summerland Camp"
+   ],
+   "onRoute": [
+    "Toe of the Fryingpan Glacier",
+    "Whitman Glacier notch camp"
+   ],
+   "drop": [
+    "Silver Springs Campground"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Meany Crest is the usual high camp above Summerland; the campground outside the park is a staging option, not on the route."
+  },
+  {
+   "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Summerland Camp",
+    "Meany Crest",
+    "Toe of the Fryingpan Glacier",
+    "Whitman Glacier notch camp",
+    "Silver Springs Campground"
+   ],
+   "add": [
+    {
+     "name": "Camp Muir",
+     "type": "hut",
+     "elev": 10188,
+     "capacity": "Public stone shelter for about 25, first come, plus tent sites on the snowfield",
+     "water": "None; melt snow",
+     "permit": "Mount Rainier wilderness permit and climbing registration",
+     "notes": "The main high camp on the south side of Mount Rainier, reached from Paradise. From here the route traverses east across the Cowlitz and Ingraham glaciers to Little Tahoma. Toilets on site; exposed to wind.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": {
+    "what": "Mount Rainier NP wilderness permit plus climbing registration and fee",
+    "where": "Reserve on Recreation.gov or get a walk-up permit at the Paradise climbing information center; register and pay the climbing fee before going onto the glaciers.",
+    "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm"
+   },
+   "note": "All listed camps are on the Fryingpan side; this route goes from Paradise via Camp Muir."
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "main": [
+    "Meany Crest",
+    "Summerland Camp"
+   ],
+   "onRoute": [
+    "Toe of the Fryingpan Glacier",
+    "Whitman Glacier notch camp"
+   ],
+   "drop": [
+    "Silver Springs Campground",
+    "Summerland"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Summerland waypoint duplicates Summerland Camp; Meany Crest is the standard high camp."
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "main": [
+    "Massie Lake basin"
+   ],
+   "onRoute": [
+    "Trinity trailhead roadhead",
+    "The Chiwawa River trail camps above the bridge",
+    "The benches above Massie Lake — no established camp"
+   ],
+   "drop": [
+    "Massie Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Massie Lake is the only real base; the Massie Lake waypoint duplicates Massie Lake basin."
+  }
+ ],
+ "misassigned": [
+  "wa_little_tahoma_cowlitz_ingraham_glaciers: every listed camp is on the Fryingpan/Summerland side; this route starts at Paradise and bases at Camp Muir (added).",
+  "wa_lincoln_peak_north_ridge: four of six camps belong to the Middle Fork/Rankin approach; this route comes from Heliotrope Ridge.",
+  "wa_mount_buckindy_scramble: the list is Kindy/Snowking-side camps, while this route's approach is from Green Mountain on the Suiattle side (Horse Lake saddle camp added).",
+  "wa_mount_chaval_scramble: three of four camps serve Snowking and Kindy Ridge, not Chaval.",
+  "wa_trapper_mountain_north_couloir: its list lacks Trapper Lake, the only camp below the couloir (added)."
+ ]
+}

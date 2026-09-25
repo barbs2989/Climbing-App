@@ -1,0 +1,1783 @@
+[
+ {
+  "zone": "rainier",
+  "routes": [
+   {
+    "id": "rainier_central_mowich_face",
+    "name": "Central Mowich Face",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 14112,
+    "overview": "A northwest-facing ice/snow face route above Mowich Lake, with an easier original line (Grade III) and a harder, more direct variation (Grade IV) both topping out on the Liberty Cap glacier.",
+    "approach": "Wonderland Trail from Mowich Lake for 4 miles to Spray Park. Climbers trail ascends lower Ptarmigan Ridge. At 8,300 ft, descend 1,000 ft to North Mowich Glacier.",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "rainier_north_mowich_headwall",
+    "name": "North Mowich Headwall",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 14112,
+    "overview": "A Grade IV ice route on the northwest side climbing directly up the North Mowich Glacier headwall to Liberty Cap, with a short rock band crux partway up.",
+    "approach": "Northwest corner of Mount Rainier National Park via SR 165",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_cap_liberty_ridge_finish",
+    "name": "Liberty Cap via Liberty Ridge",
+    "peak": "Liberty Cap",
+    "area_id": "wa_liberty_cap",
+    "discipline": "mountaineering",
+    "grade": "Grade IV-V, AI3+",
+    "high_point_ft": 14112,
+    "overview": "Liberty Ridge is the sharp buttress splitting Rainier's glaciated north face — the Liberty Wall to climber's left, the infamous Willis Wall to the right — and is widely regarded as the most striking, and most dangerous, of the mountain's standard routes. First climbed in 1935 by Ome Daiber, Arnie Ca…",
+    "approach": "Start at White River Campground (4,400 ft) off WA-410 (the driving approach is covered separately). Follow the Glacier Basin Trail up the White River valley about 3.5 miles, gaining roughly 1,500 ft, crossing the West Fork White River on a footbridge, to Glacier Basin camp (~5,900 ft) beneath the In…",
+    "camps": [
+     {
+      "name": "Glacier Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5900,
+      "notes": "PLANNED first camp for parties not pushing straight to Thumb Rock. Composting toilet, bear boxes. Last dependable running water on the route — from here it is snow and ice, and Thumb Rock has none."
+     },
+     {
+      "name": "Curtis Ridge / Carbon Glacier access bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": 7300,
+      "notes": "PLANNED intermediate camp, and the usual way to split what is otherwise a 7-10 hour push from the car to Thumb Rock. Established sites sit in the ramp that gains the Carbon at about 7,300 ft, with more ground on the ridg…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": null,
+      "elev": 10775,
+      "notes": "PLANNED high camp and the standard one — flat, partly wind-sheltered tent sites tucked behind the rock buttress, reached by moderate snow and loose rock bands. Reports place the platforms anywhere from about 10,400 to 10…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": null,
+      "elev": 9460,
+      "notes": "DESCENT camp. Liberty Ridge tops out near Liberty Cap and most parties come down the Emmons-Winthrop, so this is where a slow summit day ends rather than a forced night out high on the ice. Ranger hut and solar toilet, b…"
+     },
+     {
+      "name": "Glacier Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5935,
+      "notes": "Pick up the Glacier Basin Trail from the upper campground loop and follow it up the White River valley, about 3.5 miles and 1,500 ft, crossing the West Fork on …"
+     },
+     {
+      "name": "Lower Curtis Ridge / Carbon Glacier camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "Carry on around the toe of Curtis Ridge to the flat ground at the edge of the Carbon Glacier, where there is room for a couple of small tents. The whole travers…"
+     }
+    ]
+   },
+   {
+    "id": "wa_liberty_cap_ptarmigan_ridge_finish",
+    "name": "Liberty Cap via Ptarmigan Ridge",
+    "peak": "Liberty Cap",
+    "area_id": "wa_liberty_cap",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.6, AI2-3",
+    "high_point_ft": 14112,
+    "overview": "A sustained ridge/face route up Mount Rainier's north side between Willis Wall and the Mowich Face, mixing moderate alpine ice with a short crux rock/ice chimney, topping out on Liberty Cap.",
+    "approach": "Via Mowich Lake (4,929 ft, reached by gravel road off Carbon River Road near Buckley, often not opening until early-mid July): approach toward Spray Park and the Mowich Face/upper glaciers to gain the base of the ridge. Alternatively approach from White River via St. Elmo Pass (7,400 ft) and the upp…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     },
+     {
+      "name": "Camp Schurman (Emmons-Winthrop descent)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 9400,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_curtis_ridge",
+    "name": "Curtis Ridge",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "IV",
+    "high_point_ft": 13800,
+    "overview": "A long, serious ridge separating the Carbon and Winthrop Glaciers on Rainier's north side, running directly alongside the infamous Willis Wall. From White River Campground, climbers hike to Glacier Basin, ascend to St. Elmo Pass, then descend onto the Winthrop Glacier (crossing it between roughly 7,…",
+    "approach": "From White River Campground (reached via WA-410 and White River Road — check nps.gov/mora road status for early/late-season openings), hike the Glacier Basin Trail roughly 3.5 miles and about 1,700 ft of gain to Glacier Basin (~5,900 ft), a broad basin with the last reliable running water and a comm…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_disappointment_cleaver",
+    "name": "Disappointment Cleaver",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "Grade II–III glacier",
+    "high_point_ft": 14406,
+    "overview": "The Disappointment Cleaver is Rainier's most-traveled line to the top and the route nearly every guided party follows. From Paradise it climbs the Muir Snowfield to the high camp at Camp Muir, crosses the Cowlitz Glacier to Cathedral Gap, traverses the Ingraham Flats, then grinds up the rocky rib of…",
+    "approach": "From Paradise (5,420 ft), follow the Skyline Trail through Panorama Point (~6,800 ft) and past Pebble Creek (~7,200 ft, ~2.3 mi in — the last reliable water on the way up) to McClure Rock (~7,385 ft), where the maintained trail ends and the route continues onto the Muir Snowfield. The snowfield is a…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     },
+     {
+      "name": "Ingraham Flats High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 11200,
+      "notes": "Rope up at Muir. Traverse the upper Cowlitz Glacier, then scramble the Cathedral Rocks ridge through Cathedral Gap — shorten the rope between partners here, bec…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_edmunds_headwall",
+    "name": "Edmunds Headwall",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "Steep snow/ice 45–50°",
+    "high_point_ft": 14112,
+    "overview": "A sustained, direct line dropping off Liberty Cap on Rainier's northwest side, from roughly 13,400' to 9,900'; best documented as a ski-mountaineering descent rather than an ascent route.",
+    "approach": "From Mowich Lake, hike through Spray Park and up the lower Ptarmigan Ridge to camps near 9,600 ft between the North Mowich and Edmunds glaciers, then drop to the Edmunds Glacier and the base of the headwall.",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_emmons_glacier",
+    "name": "Emmons–Winthrop Glacier",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "Grade II–III glacier",
+    "high_point_ft": 14406,
+    "overview": "The Emmons–Winthrop is Rainier's second-most-popular summit route and the standard alternative to the Disappointment Cleaver. It approaches from the quieter northeast side via the White River, climbs the Inter Glacier to the high camp at Camp Schurman, then ascends the broad Emmons Glacier — the lar…",
+    "approach": "From White River Campground (4,400 ft) on SR 410, the Glacier Basin Trail climbs 3.5 miles through forest along the Inter Fork of the White River — several creek crossings and old avalanche/slide paths cross the trail — to Glacier Basin Campground (5,935 ft), which has six designated sites, a camp t…",
+    "camps": [
+     {
+      "name": "Glacier Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The last forested camp on the route, in the valley below Mount Ruth and Burroughs Mountain, about 3.5 mi up the Glacier Basin Trail from White River Campground. There is a composting toilet a short walk from the sites an…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Sits on the rock of Steamboat Prow where the Emmons and Winthrop glaciers part. There is a ranger hut with an emergency radio mounted on the outside that reaches dispatch when no ranger is in residence, and a single sola…"
+     },
+     {
+      "name": "Emmons Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A bench a tenth or two of a mile up and over the hill from Camp Schurman, five minutes' walk in good conditions. Several large crevasses lie between the two camps, bridged in early season and not always later, so move be…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_fuhrer_finger",
+    "name": "Fuhrer Finger",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "high_point_ft": 14406,
+    "overview": "A prominent snow/ice couloir ('finger') splitting the cliffs between the Nisqually and Wilson Glaciers, giving one of the more direct lines up Rainier's south side. From Paradise the route crosses the Nisqually Glacier to high camps on Wapowety Cleaver at the edge of the Wilson Glacier, then crosses…",
+    "approach": "From Paradise (5,400 ft), follow the Skyline Trail about a mile to Glacier Vista (about 6,300 ft), the usual rope-up point, and descend onto the Nisqually Glacier. Cross it and climb the gully on its far (west) side onto Wapowety Cleaver, then follow the cleaver crest to high camps, with old rock wi…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_fuhrer_thumb",
+    "name": "Fuhrer Thumb",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 14406,
+    "overview": "A narrower, steeper variation of the Fuhrer Finger, climbing the couloir immediately to its west before rejoining the Finger route on the west side of the Nisqually Glacier at about 11,500'.",
+    "approach": "South-southwest from trailhead via Nisqually Moraine descent to Nisqually Glacier, cross glacier westward, ascend Wilson Gully/Wilson Bench/Wilson Chute on west side of glacier to Lower Castle camp, then continue northwest to Fuhrer Thumb couloir",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_gibraltar_ledges",
+    "name": "Gibraltar Ledges",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "II-III",
+    "high_point_ft": 14406,
+    "overview": "The historic 1870 Stevens-Van Trump first-ascent route, traversing exposed ledges beneath the cliff of Gibraltar Rock on the south side. From Camp Muir the route ascends the western edge of the Cowlitz Glacier below the Cowlitz Cleaver, passes beneath a rock feature called the Beehive, and crosses t…",
+    "approach": "From Paradise (5,400 ft), follow the Skyline Trail up past Panorama Point and Pebble Creek onto the Muir Snowfield, climbing roughly 4.5 miles and about 4,700 ft to Camp Muir (10,080 ft) — the standard high camp for this route as well as the Disappointment Cleaver and Ingraham Direct routes. There i…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_ingraham_direct",
+    "name": "Ingraham Direct",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "Grade II–III glacier",
+    "high_point_ft": 14406,
+    "overview": "The Ingraham Direct is the early-season twin of the Disappointment Cleaver, climbing straight up the Ingraham Glacier headwall beneath the Ingraham icefall instead of detouring onto the Cleaver's rock rib. It's usually in best shape from late May through June while the headwall is still filled and c…",
+    "approach": "The Ingraham Direct on Mount Rainier begins at Paradise (5,400 ft). Follow the paved Skyline Trail through subalpine meadows and past Panorama Point (~5-7 hours) to Camp Muir (10,080 ft), gaining 4,000 ft. Above Camp Muir, traverse the heavily crevassed Ingraham Glacier—rope-team travel mandatory. A…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": null,
+      "elev": 10080,
+      "notes": "The planned high camp for the route, on the saddle between the snowfield and the Cowlitz Glacier, with a ranger station and toilets. It is the most sheltered option on this side of the mountain and the public hut is the …"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": null,
+      "elev": 11100,
+      "notes": "A planned camp that takes a thousand feet off summit day, and the reason parties accept the trade-offs. It has no toilet, so all solid waste is packed out. Large crevasses ring the flat ground — stay roped any time you l…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_kautz_glacier",
+    "name": "Kautz Glacier",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "Grade III, AI3",
+    "high_point_ft": 14406,
+    "overview": "The Kautz Glacier is Rainier's classic intermediate route — a step up from the standard glacier slogs, with one or two genuine pitches of alpine ice in the Kautz ice chute. It climbs the south side from Paradise via the Nisqually Glacier and Wapowety Cleaver area to a high camp around Camp Hazard, t…",
+    "approach": "Two approaches are used, both arduous. The Paradise approach (5,420 ft) follows the Skyline Trail to the Nisqually Moraine Trail, then a climbers' path along the moraine to about 6,300 ft, where several boot paths drop onto the Nisqually Glacier itself; most parties rope up here, since the crossing …",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     },
+     {
+      "name": "Camp Hazard",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 12500,
+      "notes": "From the top of the gully follow the ridge line up past the string of established camps — Wilson Moraine, then Lower and Upper Castle, which is where most parti…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_kautz_headwall",
+    "name": "Kautz Headwall",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 14406,
+    "overview": "A steeper ice-headwall variation rising directly above the Kautz Glacier on the south side, giving a more technical finish than the standard Kautz Glacier route. The approach crosses the Nisqually Glacier to the west edge of the Wilson Glacier, ascends the Wilson Glacier to about 9,500 ft, and conti…",
+    "approach": "From Paradise (5,400 ft), the most common approach uses the Camp Muir route via the Skyline Trail and Muir Snowfield partway, then cuts west; alternatively climbers use the Comet Falls/Van Trump Park approach from the Comet Falls Trailhead (~3,650 ft), directly from the Nisqually entrance area. Eith…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_liberty_ridge",
+    "name": "Liberty Ridge",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "alpine",
+    "grade": "Grade IV–V, steep snow/ice to ~60–70°",
+    "high_point_ft": 14112,
+    "overview": "Liberty Ridge is the most famous hard route on Mount Rainier and one of the classic North American alpine climbs — a soaring ice-and-snow arête splitting the mountain's enormous north face between the Willis Wall and Liberty Wall. It is steep, sustained, committing, and seriously exposed to rock and…",
+    "approach": "Northeast side of Mount Rainier; from trailhead proceed via Glacier Basin Trail, cross White River, ascend to St. Elmo Pass (7,400 ft), descend onto lower Winthrop Glacier, traverse Curtis Ridge, ascend Carbon Glacier to Liberty Ridge base",
+    "camps": [
+     {
+      "name": "Curtis Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The standard first night, on the broad snow shoulder near the gully used to drop onto the Carbon Glacier, reached over St. Elmo Pass and across the lower Winthrop. Flat ground and comparatively little rockfall exposure. …"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The one real camp on the ridge itself, in the saddle just above the rock feature, reached by 45-55 degree snow and ice. Published elevations for it disagree — reports place it anywhere from about 10,400 to 10,800 ft. It …"
+     },
+     {
+      "name": "Mowich Lake Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4900,
+      "notes": ""
+     },
+     {
+      "name": "Puyallup Winthrop Junction Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7300,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_mowich_face",
+    "name": "Mowich Face",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 14112,
+    "overview": "A broad, steep northwest-facing route above Mowich Lake with two named variations. The original (easier) line cuts left around 12,500 ft into an hourglass of snow, ice, and rock, gaining a ledge and then a 40-50° snow ramp to the top (Grade III). A harder variation cuts right instead, crossing a cou…",
+    "approach": "From the Mowich Lake trailhead (reached via the Mowich Lake Road, which typically opens later in the season than White River Road), follow the Wonderland Trail roughly 3-4 miles through Spray Park, passing Spray Falls. Where the Wonderland Trail begins to descend toward the Carbon River, leave it an…",
+    "camps": [
+     {
+      "name": "Ptarmigan Ridge bivy above Observation Rock",
+      "store": "bivy",
+      "type": null,
+      "elev": 8600,
+      "notes": "PLANNED camp and the most sheltered ground on this side of the mountain: old stacked rock windbreaks sit here and parties describe it as the best bivy shelter in the area. The catch is position, not comfort — from here y…"
+     },
+     {
+      "name": "Edmunds/North Mowich glacier divide camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 8100,
+      "notes": "PLANNED alternative used by parties who cross the North Mowich above Needle Rock rather than staying high on Ptarmigan Ridge. Puts you on the correct side of the glacier for the face, at the cost of more elevation to reg…"
+     },
+     {
+      "name": "High camp below the North Mowich headwall",
+      "store": "bivy",
+      "type": null,
+      "elev": 10000,
+      "notes": "PLANNED camp closest to the base of the face, and the most exposed of the three. Parties who have used it wore helmets in camp because of rockfall and icefall shedding off the deteriorating headwall above; there is no fu…"
+     },
+     {
+      "name": "Liberty Cap saddle",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "EMERGENCY bivy only, on the broad saddle between Liberty Cap and the summit, used by at least one party benighted after topping out. It is more sheltered than the true summit and less wind-hammered than climbers expect, …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_nisqually_icefall",
+    "name": "Nisqually Icefall",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 14406,
+    "overview": "A direct line threading the steep, broken ice of the Nisqually Glacier icefall on the south side. An engaging steep-ice and serac-navigation objective that demands cold conditions and speed through threatened terrain.",
+    "approach": "From Paradise (5,400 ft), follow the Skyline Trail up past Glacier Vista/Pan Point and drop onto the Nisqually Glacier — the standard access point used for both the Nisqually Icefall and the neighboring Wapowety Cleaver routes. Rope up for glacier travel here; there is no maintained trail once you'r…",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_ptarmigan_ridge",
+    "name": "Ptarmigan Ridge",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "IV",
+    "high_point_ft": 14112,
+    "overview": "A long, elegant, and committing ~11,000+ vertical foot technical climb on Rainier's north side, slightly more sustained overall than Liberty Ridge and typically done in 3-4 days. The route works up through rock bands via a rising traverse toward the Ice Cliffs, climbing roughly 1,000 ft of 45-50° sn…",
+    "approach": "The road to Mowich Lake is closed indefinitely: the Fairfax Bridge on SR 165 was permanently closed in April 2025, and there is no public access to Mowich Lake even on foot, so the White River side is the only start a car can currently reach. Historically approached either from the west via Mowich L…",
+    "camps": [
+     {
+      "name": "Glacier Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5900,
+      "notes": "PLANNED camp and the last established campground on the White River approach. Composting toilet a short walk away and bear boxes on site. Melts out early and is the last dependable running water before the route goes ont…"
+     },
+     {
+      "name": "Curtis Ridge camp",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED first-night option when the traverse from White River is split over two days; the park's own route notes list it as the standard intermediate camp before Ptarmigan high camp. Sits on the crest between the Winthro…"
+     },
+     {
+      "name": "Ptarmigan Ridge high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 10300,
+      "notes": "PLANNED high camp and the one the route is built around. Comfortable bivy ground on the ridge crest, deliberately sited just outside the serac fall line off the Liberty Wall — that icefall is the single largest objective…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": null,
+      "elev": 9460,
+      "notes": "DESCENT camp, not an ascent camp — most parties come off Ptarmigan Ridge down the Emmons-Winthrop and use this. Has a ranger hut and a solar toilet, but both can be buried in snow well into the season, so plan to be self…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_sunset_ridge",
+    "name": "Sunset Ridge",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "IV",
+    "high_point_ft": 14112,
+    "overview": "Sunset Ridge climbs the long spine separating the upper Mowich Face from the Sunset Amphitheater on Rainier's remote west/northwest side. After the long Westside Road/Wonderland Trail approach to St. Andrews Park, the route climbs a series of steep 50-55° gullies and open faces; at about 12,800 ft t…",
+    "approach": "From the Westside Road gate (~2,900 ft, about a mile past the Nisqually entrance), walk the road roughly 3.5 miles to Round Pass, then follow the South Puyallup River Trail to the Wonderland Trail and on to Saint Andrews Park. Leave the trail and climb north through alpine meadows to the Puyallup Cl…",
+    "camps": [
+     {
+      "name": "Colonnade Ridge",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED camp, the first reasonable stopping point once you leave the Wonderland Trail and start up toward the Puyallup Cleaver. It is a snow camp, so it depends entirely on coverage — in a dry year the ground here is bar…"
+     },
+     {
+      "name": "Puyallup Cleaver high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 9000,
+      "notes": "PLANNED camp and the usual high camp for the route, on the cleaver at roughly this height before it is left at about 8,500 ft for the glacier traverse. Mixed snow and rock, wind-exposed on a west-facing rib with nothing …"
+     },
+     {
+      "name": "Open bivouac near 9,600 ft",
+      "store": "bivy",
+      "type": null,
+      "elev": 9600,
+      "notes": "PLANNED but committing — used specifically to cut the summit day down, and on record as an open bivouac rather than a sheltered site. There is nothing here but what you dig. In a dry season the transition from this heigh…"
+     },
+     {
+      "name": "Bergschrund camp in the Sunset Amphitheater",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED camp reached by leaving the cleaver near 8,500 ft, traversing the Puyallup and South Mowich glaciers and climbing a steep snow gully to a small bergschrund with good ground beside it. The caution is the amphithea…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_tahoma_glacier",
+    "name": "Tahoma Glacier",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "III",
+    "high_point_ft": 14406,
+    "overview": "A classic, remote west-side glacier route. From the toe of the Tahoma Glacier the route ascends a series of diagonal zigzags — first up the glacier's south side to about 7,200 ft, then traversing to the opposite (north) side by ~9,000 ft, with further traverses between sides up to roughly 10,000 ft.…",
+    "approach": "From the Westside Road gate at Dry Creek Trailhead: Tahoma Creek Trail to the Wonderland Trail (~5,600 ft), then onto the southern side of the Tahoma Glacier.",
+    "camps": [
+     {
+      "name": "Camp Muir",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 10080,
+      "notes": "The standard high camp for the Disappointment Cleaver, Ingraham Direct and Gibraltar routes, reached by the roughly 4,500 ft slog up the Muir Snowfield from Paradise. The Public Shelter is first-come and cannot be reserv…"
+     },
+     {
+      "name": "Ingraham Flats",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 11100,
+      "notes": "About a thousand feet above Camp Muir past Cathedral Gap, this bench shortens summit day meaningfully and is the usual overflow when the Muir quota is full. The trade is real: less acclimatisation, a colder and more expo…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9440,
+      "notes": "The high camp for the Emmons-Winthrop, the standard north-side route, approached from the White River Campground through Glacier Basin and up the Inter Glacier. There is an NPS ranger hut with an emergency radio on its e…"
+     },
+     {
+      "name": "Thumb Rock",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 10760,
+      "notes": "The standard and effectively only bivouac on Liberty Ridge, a notch of snow and rock partway up the ridge on the Carbon Glacier side. It is exposed to rockfall from Thumb Rock itself and from the bands above, and a fatal…"
+     },
+     {
+      "name": "White River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The roadhead camp for the Emmons-Winthrop, five miles up White River Road off Highway 410, and the Glacier Basin trail to Camp Schurman starts here. Being the highest of the park's drive-in campgrounds it is normally the…"
+     },
+     {
+      "name": "Cougar Rock Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3180,
+      "notes": "Between Longmire and Paradise on the southwest side, the practical roadhead camp for anything staging out of Paradise — Disappointment Cleaver, Ingraham Direct and Gibraltar. Because the Nisqually entrance road is kept o…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_rainier_willis_wall",
+    "name": "Willis Wall",
+    "peak": "Mount Rainier",
+    "area_id": "wa_mount_rainier",
+    "discipline": "mountaineering",
+    "grade": "V",
+    "high_point_ft": 14112,
+    "overview": "A notorious ~3,600-foot north face — the headwall of the Carbon Glacier's cirque — capped by a 200-300 ft band of hanging ice (seracs) that has historically deterred most attempts and is the wall's defining objective hazard. Named for geological engineer Bailey Willis, who helped build the first tra…",
+    "approach": "Traditionally approached via the Carbon River Road to Ipsut Creek and the Carbon Glacier — but SR-165's Fairfax Bridge (the only public access to Carbon River) was permanently closed by WSDOT in April 2025 with no detour, making this a ~19-mile one-way wilderness approach via the Wonderland Trail. M…",
+    "camps": [
+     {
+      "name": "Glacier Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5900,
+      "notes": "PLANNED camp on the White River approach, which is now the practical way in — the Carbon River side lost public vehicle access when the Fairfax Bridge closed. Composting toilet and bear boxes. Last dependable running wat…"
+     },
+     {
+      "name": "St Elmo Pass bivy",
+      "store": "bivy",
+      "type": null,
+      "elev": 7400,
+      "notes": "PLANNED staging bivy at the pass where parties change into glacier gear before stepping onto the Winthrop. A short rock wall gives some wind shelter and the site is out of any fall line. Useful when a late trailhead star…"
+     },
+     {
+      "name": "Curtis Ridge camp",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED high camp for the wall, on the northeast side of the ridge dividing the Carbon from the Winthrop. This is the camp the route is climbed from — parties leave here before midnight to reach the avalanche cones at th…"
+     },
+     {
+      "name": "Camp Schurman",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 9440,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "rainy-easy-pass",
+  "routes": [
+   {
+    "id": "wa_black_peak_east_buttress",
+    "name": "East Buttress",
+    "peak": "Black Peak",
+    "area_id": "wa_black_peak",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8970,
+    "overview": "A quieter, less-traveled alternative on Black Peak's east side: easy lower terrain leads into a gully-and-buttress system with a series of class 3-4 steps on generally solid rock.",
+    "approach": "As for the other routes: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to Wing Lake camp; the East Buttress is accessed from the east side of the Wing Lake basin rather than the south col or NE ridge notch.",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     }
+    ]
+   },
+   {
+    "id": "wa_black_peak_northeast_ridge",
+    "name": "Northeast Ridge",
+    "peak": "Black Peak",
+    "area_id": "wa_black_peak",
+    "discipline": "alpine",
+    "grade": null,
+    "high_point_ft": 8970,
+    "overview": "A sustained, position-rich ridge climb: moderate snow gains the ridge crest at a notch, which is then followed over several towers and along an airy crest through mostly 3rd/4th-class terrain with a low-5th-class crux roughly halfway to the summit.",
+    "approach": "As for the South Ridge: Rainy Pass/Lake Ann trailhead on SR-20, via Heather Pass and Lewis Lake to a camp at Wing Lake (~6,900 ft). From camp, ascend snow (a small permanent snowfield/mini-glacier can persist below the col into September) toward the low point in the Northeast Ridge — following the h…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     }
+    ]
+   },
+   {
+    "id": "wa_corteo_peak_southwest_ridge",
+    "name": "Southwest Ridge / Standard Route",
+    "peak": "Corteo Peak",
+    "area_id": "wa_corteo_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8107,
+    "overview": "Corteo Peak (8,107 ft) is a double-summited peak on the eastern boundary of North Cascades National Park, 1.7 mi southeast of Black Peak (8,970 ft), rising above the Heather-Maple Pass trail corridor near Rainy Pass. It was first climbed in July 1935 by John Lehmann and Hermann Ulrichs. Two routes a…",
+    "approach": "From the paved pullout at Rainy Pass (4,855 ft) on SR-20 — signed 'Rainy Pass Trailhead,' 52 miles east of Marblemount, right where the PCT crosses the highway — start on the Lake Ann/Maple Pass Trail (well-graded, heavily used). At roughly 1.5 miles, stay right at the Lake Ann junction (the lake it…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     },
+     {
+      "name": "Lewis Lake larch bench",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5707,
+      "notes": "Leave the maintained trail at the pass and drop west off the far side on talus and lingering snow, then work around the south side of Lewis Lake to the larch be…"
+     }
+    ]
+   },
+   {
+    "id": "wa_inspiration_traverse",
+    "name": "Inspiration Traverse",
+    "peak": "Alpine and Technical Traverses",
+    "area_id": "wa_alpine_and_technical_traverses",
+    "discipline": "mountaineering",
+    "grade": "5.7",
+    "high_point_ft": 8868,
+    "overview": "A glaciated high traverse through the heart of the North Cascades that links five of the range's big summits: Eldorado Peak, Dorado Needle, Klawatti Peak, Austera Peak and Primus Peak. This version starts and ends at the Eldorado Creek trailhead on the Cascade River Road, crossing the Eldorado, Insp…",
+    "approach": "From the Eldorado Creek trailhead on the Cascade River Road, walk a short way down the road and cross the Cascade River on a log. A steep climbers' trail then gains roughly 1,800 ft through forest to a large boulder field around 4,000 ft. Cross the boulder field and Eldorado Creek into the open Eldo…",
+    "camps": [
+     {
+      "name": "Eldorado Creek basin",
+      "store": "bivy",
+      "type": null,
+      "elev": 5600,
+      "notes": "Open basin above the boulder field; a lower camp for parties splitting the approach."
+     },
+     {
+      "name": "Inspiration Glacier high camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 7500,
+      "notes": "Rock outcrops at the edge of the Inspiration Glacier below Eldorado's East Ridge. The standard base for Eldorado and the start of the traverse."
+     },
+     {
+      "name": "Klawatti col",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "Rock tent sites on the col below the south side of Klawatti Peak with running water and big views; well placed for Klawatti, Austera and Primus."
+     }
+    ]
+   },
+   {
+    "id": "wa_katsuk_peak_gully",
+    "name": "Southwest Gully",
+    "peak": "Katsuk Peak",
+    "area_id": "wa_katsuk_peak",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "high_point_ft": 8683,
+    "overview": "Katsuk sits between Mesahchie and Kimtah on Ragged Ridge, on a sub-ridge locally called the Jagged Edge; the Katsuk Glacier clings to its north slopes. The peak has two nearly identical summits (west and east, measured within roughly half a foot of each other in a 2023 GPS survey, with no definitive…",
+    "approach": "Start at the Easy Pass Trailhead on SR-20 (milepost ~151, roughly 30 miles east of Newhalem / ~37 miles from Marblemount). Follow Easy Pass Trail (Green Trails Mt. Logan No. 49) 3.5-3.6 miles and about 2,700-3,000 ft of gain to Easy Pass at 6,550 ft — figure 2-3 hours. The trail crosses Granite Cree…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     },
+     {
+      "name": "Basin camp south of Mesahchie Peak",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Past the waterfall the traverse carries on west over more of the same loose sidehill into the basin, half a mile that eats far more time than the distance sugge…"
+     }
+    ]
+   },
+   {
+    "id": "wa_kimtah_peak_scramble",
+    "name": "Southwest Slopes / Gully",
+    "peak": "Kimtah Peak",
+    "area_id": "wa_kimtah_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8649,
+    "overview": "Kimtah is the westernmost of the four standard Ragged Ridge Bulgers — Mesahchie, Katsuk, Kimtah, and Cosho, east to west — all included on Washington's Bulger List of the state's 100 highest peaks. It sits above the Kimtah Glacier on its northwest slopes and the Katsuk Glacier to the northeast, in t…",
+    "approach": "Start at the Easy Pass Trailhead on the south side of SR 20 (milepost ~151, elev. ~3,800 ft). Follow the Easy Pass Trail — a well-graded but relentless climb through old-growth forest and switchbacks along Easy Creek — for about 3.5-3.6 miles and roughly 2,800 ft of gain to Easy Pass itself (~6,550 …",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     },
+     {
+      "name": "Ragged Ridge Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Past the creek, regain the contour and keep west below Mesahchie Peak for another half mile into the basin holding the camps. Water comes from snowmelt streams …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mesahchie_peak_west_ridge",
+    "name": "West Ridge / Southwest Gully",
+    "peak": "Mesahchie Peak",
+    "area_id": "wa_mesahchie_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4",
+    "high_point_ft": 8795,
+    "overview": "Mesahchie Peak (8,795 ft) is the highest of four Bulger List summits on Ragged Ridge, 0.25 mi east of Katsuk Peak, between the Fisher Creek and Thunder Creek drainages in North Cascades National Park. First climbed in 1966. It's often cited as one of the hardest non-technical Bulgers on the list: th…",
+    "approach": "Start at the Easy Pass/Fisher Creek Trailhead on SR-20 (marked pullout near milepost 151, about 5 miles west of Rainy Pass, elevation ~3,700 ft; room for roughly 10 cars, pit toilet, no water at the lot). Follow the Easy Pass Trail, which climbs steadily through forest and then open meadows/talus, g…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     },
+     {
+      "name": "Fisher Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5350,
+      "notes": "From the pass the trail switchbacks down the far side, losing roughly 1,400 ft over three miles into the Fisher Creek valley. Every foot of that has to be climb…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_arriva_scramble",
+    "name": "Southwest Slopes",
+    "peak": "Mount Arriva",
+    "area_id": "wa_mount_arriva",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8215,
+    "overview": "Mount Arriva (8,215 ft) is a long, broken summit ridge at the east end of the Ragged Ridge group in North Cascades National Park, about 1.6 mi southwest of Easy Pass — though it stays hidden from both the pass and SR-20 despite that proximity. The ridge has two high points: East Peak (~8,160+ ft), f…",
+    "approach": "There is no trail to Mount Arriva itself; the standard approach is a 2-3 day off-trail trip via Fisher Creek Basin and Silent Lakes. From the Easy Pass Trailhead (3,700 ft, SR-20 between mileposts 151 and 152), hike the Easy Pass Trail 3.5-3.6 mi and about 2,800 ft to Easy Pass (~6,500 ft), then des…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     }
+    ]
+   },
+   {
+    "id": "wa_ptarmigan_traverse",
+    "name": "Ptarmigan Traverse",
+    "peak": "Alpine and Technical Traverses",
+    "area_id": "wa_alpine_and_technical_traverses",
+    "discipline": "mountaineering",
+    "grade": "3rd",
+    "high_point_ft": 8920,
+    "overview": "The Ptarmigan Traverse is a legendary 30+ mile, multi-day alpine ridge traverse in Washington's North Cascades that weaves between a dozen glaciated peaks, connecting Cascade Pass in the north to the Suiattle River drainage in the south. This remote, unmarked high route requires advanced glacier tra…",
+    "approach": "The standard start is the Cascade Pass Trailhead at the end of Cascade River Road out of Marblemount. A well-maintained trail switchbacks 3.7 miles to Cascade Pass (5,392 ft); the traverse proper begins there, leaving the trail southward across heather and talus toward the Cache Glacier and the notc…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 6120,
+      "notes": "PLANNED camp, and the standard first night on the traverse — the first place with water and flat ground after Cache Col. Sites sit on the lip of a steep slope that drops thousands of feet toward the valley, so pitch back…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": null,
+      "elev": 5830,
+      "notes": "PLANNED camp, the usual second night, in heather meadow among granite boulders below the Le Conte Glacier. It is a low point on the traverse and melts out later than its elevation suggests — a party in late June found no…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": null,
+      "elev": 6200,
+      "notes": "PLANNED camp, the last true alpine camp and the one most parties would not skip, looking straight across at the icefalls of Dome and Sinister. Dry dirt bivy platforms are usable by late June, earlier than the lower camps…"
+     },
+     {
+      "name": "Cub Lake meadows / Itswoot Ridge",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED camp, the last night for parties exiting south to Downey Creek, in heather meadow below Itswoot Ridge. Melts out late — a late-June party found the lake still largely frozen, the basin barely opened up, and a mar…"
+     },
+     {
+      "name": "Yang-Yang Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5852,
+      "notes": "Second common bivy, below Spider-Formidable Col."
+     },
+     {
+      "name": "White Rock Lakes / South Cascade Glacier Col",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6500,
+      "notes": "Third bivy; crosses the flat South Cascade Glacier en route to Spire Point."
+     },
+     {
+      "name": "Cub Lake / Itswoot Ridge",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Fourth bivy on Itswoot Ridge above Cub and Itswoot Lakes."
+     }
+    ]
+   },
+   {
+    "id": "wa_ragged_ridge",
+    "name": "Ragged Ridge",
+    "peak": "Alpine and Technical Traverses",
+    "area_id": "wa_alpine_and_technical_traverses",
+    "discipline": "mountaineering",
+    "grade": "5.5",
+    "high_point_ft": 8795,
+    "overview": "A rugged, mostly non-technical scramble traverse linking the summits of Mesahchie, Katsuk, Kimtah, and Cosho Peaks along Ragged Ridge above Easy Pass, involving sustained Class 3-4 terrain, glacier crossings, and an exposed 'red ledge' passage.",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well. From the Rainy Pass west lot the loop trail is followed for a little over a mile, then a right fork leads to Heather Pass;…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Lewis sits in the bowl below Wing, reached by dropping off Heather Pass and picking a way through talus on goat paths around the left-hand shore. Most parties treat it as a waypoint rather than a destination, but it is a…"
+     },
+     {
+      "name": "Rainy Pass trailhead lots, and the quarter-mile camping closures",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4860,
+      "notes": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend. It is also where the Pacific Crest Trail heads north, so the lots serve two entirely different sets of objectives and are busie…"
+     },
+     {
+      "name": "Easy Pass trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3700,
+      "notes": "This is the only practical trailhead for Mesahchie, Katsuk, Kimtah and Mount Arriva, and it is worth understanding what the walk in costs before committing to it. The trail climbs roughly three thousand feet in a little …"
+     },
+     {
+      "name": "Mesahchie basin, below the col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6600,
+      "notes": "This is the base for Mesahchie and the usual first night of any Ragged Ridge traverse. From Easy Pass the line goes cross-country west-northwest, sidehilling on heather and tiresome scree at around six thousand eight hun…"
+     },
+     {
+      "name": "Ragged Ridge crest bivy, south of Mesahchie Col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7000,
+      "notes": "This is the higher and more committing of the two Ragged Ridge camps, about a mile west-northwest of Easy Pass. Two ways reach it: sidehill west at roughly six thousand eight hundred feet on heather and scree, or climb t…"
+     },
+     {
+      "name": "Fisher Camp, Fisher Creek basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5136,
+      "notes": "Fisher Camp sits in the forested basin west of and well below Easy Pass, reached by carrying on over the pass and descending into Fisher Creek. It is the comfortable option and it is also the alternative approach to Kimt…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_ridge_3",
+    "name": "South Ridge",
+    "peak": "Black Peak",
+    "area_id": "wa_black_peak",
+    "discipline": "scrambling",
+    "grade": "4th",
+    "high_point_ft": 8970,
+    "overview": "The South Ridge is Black Peak's original 1926 first-ascent line and remains the standard, easiest way to the 8,970 ft summit — a Grade II day combining talus-field hiking, a permanent snowfield, and class 3-4 rock scrambling above Wing Lake. It is one of the more accessible of Washington's 'Bulger' …",
+    "approach": "Start at the Rainy Pass Picnic Area/Lake Ann trailhead on SR 20 (milepost ~157.5, elev. ~4,850 ft; 40-car lot with privy). Follow the Lake Ann/Maple Pass Trail (#740) about 1-1.5 miles to a signed junction and take the right fork toward Heather Pass (left continues to Lake Ann/Maple Pass loop). Clim…",
+    "camps": [
+     {
+      "name": "Wing Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The standard base camp for Black Peak, roughly 6,900 ft in a basin of scree and boulders directly beneath the peak, with larches around the shore that turn gold in late September. It sits about 1,200 ft above Lewis Lake,…"
+     },
+     {
+      "name": "Lewis Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "About 5,700 ft, the first lake past Heather Pass and the lower fallback if the light goes or the boulder field above looks unappealing. It is a legitimate base — parties do summit and return from here — but it adds 1,200…"
+     },
+     {
+      "name": "Wing Lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "Standard base camp for Black Peak climbers; best established tent sites are here rather than Lewis Lake."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "rimrock-ridge",
+  "routes": [
+   {
+    "id": "wa_rimrock_ridge_scramble",
+    "name": "Standard Scramble",
+    "peak": "Rimrock Ridge",
+    "area_id": "wa_rimrock_ridge",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7255,
+    "overview": "Rimrock Ridge is a minor, infrequently climbed 7,255' crest in the Ptarmigan Mountains subgroup of the Glacier Peak Wilderness, rising above the headwaters of Agnes Creek in Chelan County. It sits near Agnes Mountain (8,115') and Devore Peak, on the dry east side of the Cascade crest above Lake Chel…",
+    "approach": "Access to the trailhead is by boat, floatplane, or trail only — no road connects Stehekin to the outside world. Take the Lady of the Lake ferry from Chelan up 50-mile-long Lake Chelan to Stehekin Landing (Lady Express ~2.5 hrs, Lady II ~4 hrs). From there it is 11 miles up-valley on Stehekin Valley …",
+    "camps": [
+     {
+      "name": "Tumwater Camp, Stehekin valley road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1687,
+      "notes": "The first camp of consequence above the shuttle's turnaround at High Bridge, and its job on this trip is to absorb the arrival day. The boat gets in around the middle of the day and the last shuttle up the valley goes in…"
+     },
+     {
+      "name": "Shady Camp, Stehekin valley road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1927,
+      "notes": "Further up the old road than Tumwater and the only camp on this stretch that is held back from the booking system entirely, which is exactly why it is worth knowing about. A party whose permit request comes back with a h…"
+     },
+     {
+      "name": "Park Creek Camp, at the valley road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "THIS IS THE CAMP THE PARK ITSELF POINTS OVERNIGHT PARTIES TO NOW THAT FLAT CREEK IS SHUT, and that closure is the single most important planning fact for this peak. The camp at the Flat Creek trailhead, which would other…"
+     },
+     {
+      "name": "Cottonwood Camp, end of the closed road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2776,
+      "notes": "At the very end of the closed road section, something under four miles past the Flat Creek junction, roughly twenty-three miles up from the landing. It is the upper valley's anchor camp and the obvious base for a larger …"
+     },
+     {
+      "name": "Bivouacs in the upper Flat Creek basin, beyond the end of the trail",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Rimrock Ridge is an obscure summit and should be described as one. It forms the southern rim of the upper Flat Creek valley — everything falling off its far side goes into the West Fork of Agnes Creek instead — and it lo…"
+     },
+     {
+      "name": "Swamp Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom to…"
+     }
+    ]
+   }
+  ]
+ }
+]

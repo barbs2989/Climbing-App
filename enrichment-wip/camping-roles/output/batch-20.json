@@ -1,0 +1,700 @@
+{
+  "zones": [
+    {
+      "zone": "stuart",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead.",
+        "url": null
+      }
+    },
+    {
+      "zone": "stuart-outer-ingalls",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_gorillas_direct",
+      "main": [
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Headlight Basin designated sites"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "West Face Wall is reached over Stuart Pass; parties bivy in the boulder basin near 6,000 ft below the wall or at Headlight Basin, otherwise car-to-car; descent camp use unclear."
+    },
+    {
+      "id": "wa_king_kong_gorillas_direct_direct",
+      "main": [
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Headlight Basin designated sites"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same West Face Wall approach as Gorillas Direct; treated identically."
+    },
+    {
+      "id": "wa_mount_stuart_cascadian_couloir",
+      "main": [
+        "Ingalls Creek basin camp, below Longs Pass"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard camp is on Ingalls Creek at about 4,800 ft after dropping over Longs Pass; confident."
+    },
+    {
+      "id": "wa_mount_stuart_girth_pillar",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [
+        {
+          "name": "Mountaineer Creek basin below the Sherpa Glacier",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Several small tent sites on flat ground in the basin",
+          "water": "Creek runs through the basin",
+          "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+          "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North-side route from the Stuart Lake trailhead; its real base in the Mountaineer Creek basin was missing, so it was added."
+    },
+    {
+      "id": "wa_mount_stuart_ice_cliff_glacier",
+      "main": [],
+      "onRoute": [
+        "Ice Cliff Glacier base bivy"
+      ],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [
+        {
+          "name": "Mountaineer Creek basin below the Sherpa Glacier",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Several small tent sites on flat ground in the basin",
+          "water": "Creek runs through the basin",
+          "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+          "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Base camp is the Mountaineer Creek basin (added); the 7,000 ft glacier-base bivy is kept as an on-route option."
+    },
+    {
+      "id": "wa_mount_stuart_north_face",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [
+        {
+          "name": "Mountaineer Creek basin below the Sherpa Glacier",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Several small tent sites on flat ground in the basin",
+          "water": "Creek runs through the basin",
+          "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+          "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Generic north-face entry sharing the Mountaineer Creek basin approach; basin added as main."
+    },
+    {
+      "id": "wa_mount_stuart_north_ridge",
+      "main": [
+        "Mountaineer Creek basin (beneath the Sherpa and Ice Cliff glaciers)",
+        "Goat Pass"
+      ],
+      "onRoute": [
+        "The 8,200 ft notch on the North Ridge"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North approach camp in the basin, or Goat Pass from the Ingalls side; notch is the classic mid-route bivy. Confident."
+    },
+    {
+      "id": "wa_mount_stuart_stuart_glacier_couloir",
+      "main": [
+        "Basin below Sherpa Glacier",
+        "Goat Pass bivies"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Basin below the Sherpa Glacier is the usual base; Goat Pass is the Ingalls-side alternative. Notch dropped as the couloir does not pass it."
+    },
+    {
+      "id": "wa_mount_stuart_the_gendarme",
+      "main": [
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Treated like the Upper North Ridge (Goat Pass or the notch); a party doing the complete ridge would instead use the Mountaineer Creek basin, not listed here."
+    },
+    {
+      "id": "wa_mount_stuart_west_ridge",
+      "main": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Headlight Basin designated sites"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Stated approach is over Longs Pass to Ingalls Creek; many parties instead go via Lake Ingalls and Headlight Basin, and many bivy at the gully base below Stuart Pass."
+    },
+    {
+      "id": "wa_sherpa_glacier",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [
+        {
+          "name": "Mountaineer Creek basin below the Sherpa Glacier",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Several small tent sites on flat ground in the basin",
+          "water": "Creek runs through the basin",
+          "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+          "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North-side route leaves the trail before Lake Stuart; the Mountaineer Creek basin (added) is the base. Lake Stuart itself is off the line."
+    },
+    {
+      "id": "wa_south_headwall",
+      "main": [
+        "Ingalls Creek basin camp, below Longs Pass"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart",
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-side route off the Ingalls Creek trail near the Cascadian area; shares the Ingalls Creek camp. Confident."
+    },
+    {
+      "id": "wa_the_direct_north_ridge_w_gendarme",
+      "main": [
+        "Goat Pass bivies"
+      ],
+      "onRoute": [
+        "North Ridge notch bivy"
+      ],
+      "drop": [
+        "Ingalls Creek basin camp, below Longs Pass",
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Lake Stuart"
+      ],
+      "add": [
+        {
+          "name": "Mountaineer Creek basin below the Sherpa Glacier",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Several small tent sites on flat ground in the basin",
+          "water": "Creek runs through the basin",
+          "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+          "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Starts at the toe of the ridge, reached either from the Mountaineer Creek basin (added) or over Goat Pass; the notch lies on the route."
+    },
+    {
+      "id": "wa_upper_north_ridge_w_great_gendarme",
+      "main": [
+        "Goat Pass bivies",
+        "North Ridge notch bivy"
+      ],
+      "onRoute": [
+        "Headlight Basin designated sites",
+        "Upper Ingalls Creek meadows, below Stuart Pass",
+        "Ingalls Creek basin camp, below Longs Pass"
+      ],
+      "drop": [
+        "Lake Stuart"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approach via Lake Ingalls, Stuart Pass and Goat Pass to the notch, descent by the Cascadian Couloir to Ingalls Creek; confident."
+    },
+    {
+      "id": "wa_argonaut_peak_east_ridge",
+      "main": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides"
+      ],
+      "onRoute": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Basin below south Stuart Range"
+      ],
+      "drop": [
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Beverly Turnpike to Ingalls Creek and up the south side; the 6,000 ft basin waypoint is assumed to be on this route's gully, not verified."
+    },
+    {
+      "id": "wa_argonaut_peak_northeast_couloir",
+      "main": [
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North side from the Stuart Lake trailhead via the eastern fork; often a long day; unsure whether the Mountaineer Creek bench sits on this line, so dropped."
+    },
+    {
+      "id": "wa_cannon_mountain_northeast_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [
+        {
+          "name": "Icicle Creek Road campgrounds near Eightmile Road",
+          "type": "camp",
+          "capacity": "Developed Forest Service campgrounds with numbered sites",
+          "water": "Seasonal; varies by campground",
+          "permit": "Campground fee; reserve on Recreation.gov where offered",
+          "notes": "The route is normally done in one long day from the Stuart Lake trailhead parking, so parties sleep at the car campgrounds along Icicle Creek Road near the Eightmile Road turn.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "No wilderness permit needed for a day climb; car campgrounds charge a fee",
+        "where": "Reserve or pay at the campground.",
+        "url": null
+      },
+      "note": "Day route from the gated road behind the Stuart Lake trailhead parking; none of the listed camps serve it. Mountaineer Creek bench dropped despite its note naming Cannon."
+    },
+    {
+      "id": "wa_cannon_mountain_south_slopes",
+      "main": [],
+      "onRoute": [
+        "Nada Lake",
+        "Basin below Cannon"
+      ],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline"
+      ],
+      "add": [
+        {
+          "name": "Snow Lakes",
+          "type": "camp",
+          "elev": 5400,
+          "capacity": "Many established sites around Upper and Lower Snow Lake",
+          "water": "Lakes and inlet streams; filter",
+          "permit": "Enchantment Permit Area overnight permit (Snow zone) from May 15 to October 31",
+          "notes": "Common base for climbing Cannon from the Snow Lakes side, about 6.5 miles up the trail; the summit day continues past Lake Viviane into the upper basin.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Snow zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Parties camp at Snow Lakes or in the core zone; the 6,200 ft 'Basin below Cannon' waypoint location is unverified."
+    },
+    {
+      "id": "wa_cashmere_mountain_west_ridge",
+      "main": [
+        "Lake Caroline and Little Caroline"
+      ],
+      "onRoute": [
+        "Below west ridge"
+      ],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Eightmile/Caroline zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "Lake Caroline is the usual camp for Cashmere; Windy Pass basin also used. Confident."
+    },
+    {
+      "id": "wa_ingalls_peak_east_route",
+      "main": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [
+        {
+          "name": "Headlight Basin designated sites",
+          "type": "camp",
+          "capacity": "Designated sites only; several small groups",
+          "water": "Headlight Creek and snowmelt; filter",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead",
+          "notes": "Designated sites just past Ingalls Pass, about half a mile before Lake Ingalls. Camping is not allowed at the lake itself, so this is the overnight option for parties who split the climb.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Usually a day climb from the Esmeralda trailhead; Headlight Basin added as the in-wilderness option on the approach."
+    },
+    {
+      "id": "wa_ingalls_peak_south_ridge",
+      "main": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [
+        {
+          "name": "Headlight Basin designated sites",
+          "type": "camp",
+          "capacity": "Designated sites only; several small groups",
+          "water": "Headlight Creek and snowmelt; filter",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead",
+          "notes": "Designated sites just past Ingalls Pass, about half a mile before Lake Ingalls. Camping is not allowed at the lake itself, so this is the overnight option for parties who split the climb.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Usually a day climb from the Esmeralda trailhead; Headlight Basin added as the in-wilderness option on the approach."
+    },
+    {
+      "id": "wa_ingalls_peak_south_scramble",
+      "main": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [
+        {
+          "name": "Headlight Basin designated sites",
+          "type": "camp",
+          "capacity": "Designated sites only; several small groups",
+          "water": "Headlight Creek and snowmelt; filter",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead",
+          "notes": "Designated sites just past Ingalls Pass, about half a mile before Lake Ingalls. Camping is not allowed at the lake itself, so this is the overnight option for parties who split the climb.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Usually a day climb from the Esmeralda trailhead; Headlight Basin added as the in-wilderness option on the approach."
+    },
+    {
+      "id": "wa_northwest_arete",
+      "main": [
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col"
+      ],
+      "onRoute": [
+        "Lower basin below Argonaut's north face"
+      ],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North approach from Stuart Lake trailhead; exact relation of the 6,800 ft lower basin waypoint to the north basin bivies is uncertain."
+    },
+    {
+      "id": "wa_sherpa_balanced_rock_ne_couloir",
+      "main": [
+        "Upper Mountaineer Creek bench"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North side approach via the climbers' path off the Stuart Lake trail; bench assumed as base, often done in a day."
+    },
+    {
+      "id": "wa_sherpa_peak_east_ridge",
+      "main": [
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin"
+      ],
+      "onRoute": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Stuart basin bivy"
+      ],
+      "drop": [
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "South-side approach over Longs Pass; 'Stuart basin bivy' at 6,300 ft may be the same place as the Sherpa south basin camp, not merged."
+    },
+    {
+      "id": "wa_sherpa_peak_north_ridge",
+      "main": [
+        "Upper Mountaineer Creek bench"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides",
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": {
+        "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+        "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season.",
+        "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits"
+      },
+      "note": "North approach from Stuart Lake trailhead to the Mountaineer Creek basin; confident on approach, less on how often parties camp."
+    },
+    {
+      "id": "wa_sherpa_peak_west_ridge",
+      "main": [
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin"
+      ],
+      "onRoute": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Camps at 6,200 ft or Table Rock at 7,400 ft above Ingalls Creek; confident."
+    },
+    {
+      "id": "wa_south_face_12",
+      "main": [
+        "Fourth Creek / Ingalls Creek confluence camp",
+        "Ingalls Creek valley camps below the Sherpa and Argonaut south sides"
+      ],
+      "onRoute": [
+        "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps"
+      ],
+      "drop": [
+        "Sherpa south basin camp",
+        "Table Rock bivy, upper Sherpa basin",
+        "Upper Mountaineer Creek bench",
+        "Argonaut north basin bivies, below the Colchuck-Argonaut col",
+        "Lake Caroline and Little Caroline",
+        "Nada Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Established camp is by Ingalls Creek just west of the Fourth Creek crossing; the generic valley-camps entry may describe the same area."
+    }
+  ],
+  "misassigned": [
+    "wa_mount_stuart_girth_pillar: north-side route given only Ingalls-side camps; Mountaineer Creek basin added",
+    "wa_mount_stuart_north_face: north-side route given only Ingalls-side camps; Mountaineer Creek basin added",
+    "wa_sherpa_glacier: north-side route given only Ingalls-side camps; Mountaineer Creek basin added",
+    "wa_cannon_mountain_northeast_ridge: entire list belongs to other approaches; car campgrounds added",
+    "wa_cannon_mountain_south_slopes: list belongs to Stuart Range approaches except Nada Lake; Snow Lakes added",
+    "wa_ingalls_peak_east_route, wa_ingalls_peak_south_ridge, wa_ingalls_peak_south_scramble: every camp except the roadside one serves Argonaut, Sherpa or Cashmere"
+  ]
+}

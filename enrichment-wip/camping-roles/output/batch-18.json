@@ -1,0 +1,747 @@
+{
+ "zones": [
+  {
+   "zone": "snoqualmie-crest",
+   "overnightPermit": {
+    "what": "Free self-issue Alpine Lakes Wilderness permit",
+    "where": "Fill one out at the trailhead kiosk and carry it with you.",
+    "url": null
+   }
+  },
+  {
+   "zone": "southern-pickets",
+   "overnightPermit": {
+    "what": "North Cascades NP backcountry permit for the cross-country zone, with a fee",
+    "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center; walk-up permits are issued there the day of or the day before.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_alta_mountain_scramble",
+   "main": [
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin"
+   ],
+   "onRoute": [
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Rachel and Rampart Lakes are the standard overnights on this line; Kachess Campground is the drive-in on the way to the trailhead."
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Short day scramble from Alpental; none of the listed camps is on its line, and Melakwa Lake is reached from Denny Creek, not this approach."
+  },
+  {
+   "id": "wa_chikamin_peak_southeast_slopes",
+   "main": [
+    "Park Lakes basin"
+   ],
+   "onRoute": [
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk"
+   ],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Kachess Campground, I-90 exit 62",
+    "Ridge Lake / Gravel Lake saddle camps"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Park Lakes is the base from either approach; Ridge/Gravel Lake is the stop on the PCT approach. Dropped as duplicates: Ridge Lake / Gravel Lake saddle camps (duplicate of Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk)."
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "A half-day scramble from the Alpental lot; nobody camps for it and no listed camp is on its line."
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "main": [
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Ridge/Gravel Lake is the standard PCT camp for Thomson; the basin below Thomson over Bumblebee Pass is also used but is not in this route's list."
+  },
+  {
+   "id": "wa_four_brothers_southwest_route",
+   "main": [
+    "Park Lakes basin"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Kachess Campground, I-90 exit 62",
+    "Park Lakes Basin (Upper Park Lake)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Upper Park Lakes is the camp from Mineral Creek. Dropped as duplicates: Park Lakes Basin (Upper Park Lake) (duplicate of Park Lakes basin)."
+  },
+  {
+   "id": "wa_hibox_mountain_standard",
+   "main": [
+    "Rachel Lake designated sites",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Usually a day scramble; the boot path leaves the Rachel Lake trail near 3,300 ft, so Rachel Lake is the split-trip camp rather than on the line."
+  },
+  {
+   "id": "wa_huckleberry_mountain_west_route",
+   "main": [
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk"
+   ],
+   "onRoute": [
+    "Commonwealth Basin and Red Pond",
+    "Alaska Lake and Joe Lake, Gold Creek"
+   ],
+   "drop": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Ridge/Gravel Lake is the usual camp; Red Pond sits on the Commonwealth shortcut, and Alaska/Joe Lakes lie below the PCT near the peak but need a descent off the trail."
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "main": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62",
+    "Melakwa Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Melakwa Lake is the standard camp for Kaleetan. Dropped as duplicates: Melakwa Lake (duplicate of Melakwa Lake and Upper Melakwa Lake designated sites)."
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Normally a day scramble that leaves the PCT before the Katwalk; Ridge/Gravel Lake is past the objective."
+  },
+  {
+   "id": "wa_lundin_peak_south_face_left",
+   "main": [
+    "Commonwealth Basin and Red Pond"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Commonwealth Basin sits directly below Lundin's south face."
+  },
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "main": [
+    "Commonwealth Basin and Red Pond"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Commonwealth Basin is the natural camp under the west ridge notch; most parties do it in a day."
+  },
+  {
+   "id": "wa_mount_roosevelt_standard",
+   "main": [
+    "Gem Lake"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Usually a day trip; Gem Lake is on the line and is the camp if split. Snow Lake camps are not in this list."
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "main": [
+    "Bumblebee Basin",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Commonwealth Basin and Red Pond",
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62",
+    "Ridge Lake"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Most parties camp in the basin over Bumblebee Pass after taking water at Ridge Lake. Dropped as duplicates: Ridge Lake (duplicate of Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk)."
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_standard",
+   "main": [
+    "Commonwealth Basin and Red Pond"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day scramble; Red Pond in Commonwealth Basin is the camp on its line if split."
+  },
+  {
+   "id": "wa_south_face_7",
+   "main": [
+    "Commonwealth Basin and Red Pond"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Melakwa Lake and Upper Melakwa Lake designated sites",
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Rachel Lake designated sites",
+    "Rampart Lakes basin",
+    "Alaska Lake and Joe Lake, Gold Creek",
+    "Park Lakes basin",
+    "Kachess Campground, I-90 exit 62"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Day scramble from the Commonwealth Creek trail; Commonwealth Basin is the camp at its foot."
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ],
+   "drop": [
+    "Stump Hollow bench",
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_east_ridge_4",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Inspiration's East Ridge is climbed from Terror Basin camp."
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "Crescent Creek Basin (Chopping Block Camp)",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_east_twin_needle_thread_of_ice",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "North-side couloir with little published approach beta; assumed to be reached from Crescent Creek Basin over a crest col, which is uncertain."
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [
+    "Terror Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night. Dropped as duplicates: Terror Basin (duplicate of Terror Basin camp)."
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_inspiration_peak_west_ridge",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Crescent Creek Basin camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ],
+   "drop": [
+    "Stump Hollow bench",
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_mcmillan_spire_west_southwest_ridge",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ],
+   "drop": [
+    "Stump Hollow bench",
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_mcmillan_spire_west_west_ridge",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "main": [
+    "Crescent Creek Basin camp",
+    "Chopping Block Saddle Camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench"
+   ],
+   "drop": [
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Degenhardt's south side is climbed from Crescent Creek Basin or the Chopping Block saddle; some parties do it from Terror Basin via the Terror Glacier."
+  },
+  {
+   "id": "wa_mount_terror_north_face",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench"
+   ],
+   "drop": [
+    "High bivouacs at the western end of the crest",
+    "Terror Basin bivy"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night. Dropped as duplicates: Terror Basin bivy (duplicate of Terror Basin camp)."
+  },
+  {
+   "id": "wa_mount_terror_southeast_face",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench"
+   ],
+   "drop": [
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_mount_terror_stoddard_buttress",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench"
+   ],
+   "drop": [
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_mount_terror_west_ridge",
+   "main": [
+    "Crescent Creek Basin camp",
+    "Chopping Block saddle camp"
+   ],
+   "onRoute": [
+    "Terror Basin camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror's West Ridge is climbed from Crescent Creek Basin or the Chopping Block saddle above it; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_ottohorn_southeast_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  },
+  {
+   "id": "wa_ottohorn_west_ridge",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "New-route line with no published camp; Crescent Creek Basin is assumed as for the other Crescent Creek Spires."
+  },
+  {
+   "id": "wa_plan_9_from_outer_space",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "The Blob sits north of the Himmelhorn, so the Crescent Creek Basin camp and high crest bivouacs are assumed; exact camp not confirmed."
+  },
+  {
+   "id": "wa_south_face_5",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ],
+   "drop": [
+    "Stump Hollow bench",
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin is the standard base for the McMillan Spires, Inspiration and the Terror Glacier routes; Crescent Creek and Stump Hollow are across the Barrier."
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "main": [
+    "Stump Hollow bench"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp"
+   ],
+   "drop": [
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest",
+    "Stump Hollow"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Stump Hollow is the standard high camp for the South Route. Dropped as duplicates: Stump Hollow (duplicate of Stump Hollow bench)."
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "main": [
+    "Terror Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing"
+   ],
+   "drop": [
+    "Stump Hollow bench",
+    "Crescent Creek Basin camp",
+    "High bivouacs at the western end of the crest"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Terror Basin via the Terror Glacier is the usual base for the south side; some parties reach the Pyramid from Crescent Creek Basin instead, so this is a judgement call."
+  },
+  {
+   "id": "wa_the_rake_traverse_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [
+    "Terror Creek Basin Camp",
+    "Crescent Creek Basin High Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night. Dropped as duplicates: Terror Creek Basin Camp (duplicate of Terror Basin camp); Crescent Creek Basin High Camp (duplicate of Crescent Creek Basin camp)."
+  },
+  {
+   "id": "wa_west_twin_needle_south_route",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [
+    "Crescent Creek Basin camp (below Mt. Terror)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night. Dropped as duplicates: Crescent Creek Basin camp (below Mt. Terror) (duplicate of Crescent Creek Basin camp)."
+  },
+  {
+   "id": "wa_west_twin_needle_west_slope",
+   "main": [
+    "Crescent Creek Basin camp"
+   ],
+   "onRoute": [
+    "Goodell Creek Campground, roadhead staging",
+    "Old Goodell Creek roadbed near the Terror Creek crossing",
+    "Terror Basin camp",
+    "Stump Hollow bench",
+    "High bivouacs at the western end of the crest"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Crescent Creek Basin, over the Barrier from Terror Basin, is the working camp for Terror and the western spires; Terror Basin is the usual first night."
+  }
+ ],
+ "misassigned": [
+  "wa_bryant_peak_southeast_slopes: its whole camp list belongs to other approaches (day scramble from Alpental; no camp added).",
+  "wa_denny_mountain_north_slopes: its whole camp list belongs to other approaches (half-day scramble from Alpental; no camp added).",
+  "wa_kendall_peak_standard: no listed camp serves it; it is a day scramble off the PCT short of the Katwalk."
+ ]
+}

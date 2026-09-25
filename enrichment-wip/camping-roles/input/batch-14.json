@@ -1,0 +1,1419 @@
+[
+ {
+  "zone": "ptarmigan-gunsight",
+  "routes": [
+   {
+    "id": "wa_accidental_discharge_east_face",
+    "name": "Accidental Discharge (East Face)",
+    "peak": "South Peak",
+    "area_id": "wa_south_peak",
+    "discipline": "mountaineering",
+    "grade": "5.10",
+    "high_point_ft": 8100,
+    "overview": "A new route on the steep east face of South Peak featuring challenging crack and face climbing on white granite.",
+    "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typicall…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_dome_peak_dome_glacier",
+    "name": "Dome Glacier",
+    "peak": "Dome Peak",
+    "area_id": "wa_dome_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4, Glacier, 5.5",
+    "high_point_ft": 8920,
+    "overview": "Dome Peak is the glaciated centerpiece and customary high point of the famed Ptarmigan Traverse, crowning a sea of ice deep in the Glacier Peak Wilderness. Its broad summit rewards climbers with one of the great panoramas of the North Cascades.",
+    "approach": "From the Downey Creek Campground trailhead (~1,450 ft) on Suiattle River Road (FR 26), take the Downey Creek Trail #768, staying on the east bank of Downey Creek through old-growth forest. The trail is rough and lightly maintained — expect brush, downed timber, and washed-out sections; a footlog or …",
+    "camps": [
+     {
+      "name": "Bachelor Creek forest camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A timbered camp on the creek partway up the Bachelor Creek leg, used by parties who lose the day to the brush, blowdown and washed-out sections below. It is a bail-out night rather than a plan: car to Cub Lake is commonl…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "The lake camp at the top of the Bachelor Creek climb, reached after a drop of several hundred feet into the basin that most parties find unwelcome at the end of a long day. Water and flat ground are easy, which is why it…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5880,
+      "notes": "The camp parties call the best on this approach, on the ridge crest roughly 900 ft above Cub Lake, with the lakes below and the Ptarmigan country opening out. Water is at hand and the ground is good. Expect mosquitoes. M…"
+     },
+     {
+      "name": "Dome-Dana col",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A high perch around 7,300 ft used by parties who want to shorten summit day or who are linking the Ptarmigan Traverse. It puts you above the traverse and its route-finding, with the upper Dome Glacier — which parties des…"
+     },
+     {
+      "name": "Bachelor Meadows",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "Beyond the creek the climbers' path turns steeply uphill through brush, avalanche debris and old timber, climbing out of the valley toward timberline. It crosse…"
+     },
+     {
+      "name": "Itswoot Ridge camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "A climbers' trail switchbacks up out of the lake basin onto the ridge above; allow about an hour from the lake. It costs 900 ft with a full pack but takes that …"
+     }
+    ]
+   },
+   {
+    "id": "wa_dome_peak_indian_summer",
+    "name": "Indian Summer",
+    "peak": "Dome Peak",
+    "area_id": "wa_dome_peak",
+    "discipline": "mountaineering",
+    "grade": "5.10-",
+    "high_point_ft": 8920,
+    "overview": "A 7-pitch, 5.10- granite rock climb up Dome Peak's South Face, established as a new route around September 2, 2011 — a rarely-repeated alternative to the standard Dome Glacier route for parties seeking real rock climbing on the peak.",
+    "approach": "Western approach (the recommended option): roughly 10 miles with about 7,800 ft of gain via the Ptarmigan Traverse trail toward Spire Point — described as a 'brutal approach' with significant bushwhacking. A longer eastern approach via Chelan also exists but adds a full extra day each way.",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_face",
+    "name": "East Face",
+    "peak": "Middle Peak",
+    "area_id": "wa_middle_peak",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "high_point_ft": 8200,
+    "overview": "A stunning 6-7 pitch alpine climb on the east face of Middle Gunsight featuring exceptional granite quality with a hidden line that unfolds piece by piece offering mostly continuous 5.9-5.10+ climbing in a stunning remote setting.",
+    "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Middle Gunsight's east face is a known technical objective once on the ridge; expect a mult…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_gunrunner",
+    "name": "Gunrunner",
+    "peak": "Middle Peak",
+    "area_id": "wa_middle_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "high_point_ft": 8200,
+    "overview": "A major traverse connecting all four Gunsight peaks (Northeast, North, Middle, South), offering sustained alpine crack climbing on excellent granite with breathtaking remote alpine positioning.",
+    "approach": "Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek) to reach the range's ridge. Middle Gunsight's east face is a known technical objective once on the ridge; expect a mult…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_gunsight_peak_standard",
+    "name": "Standard Route",
+    "peak": "Middle Peak",
+    "area_id": "wa_middle_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 5.6 / glacier",
+    "high_point_ft": 8198,
+    "overview": "Gunsight Peak is a multi-towered granite spire in the remote Dome Peak massif of the Glacier Peak Wilderness, guarded by the Chikamin Glacier to the west and Blue Glacier to the east. It neighbors Dome and Sinister Peaks on the classic Ptarmigan Traverse and requires a full 2-day approach (either fr…",
+    "approach": "From the Downey Creek Trailhead (1,400', end of the drivable Suiattle River Road/FR-26 — note the road itself is currently gated by a washout about 4.5 miles short of the actual trailhead, adding road-walking/biking mileage many trip reports don't separate from the hike), follow Downey Creek Trail #…",
+    "camps": [
+     {
+      "name": "Bachelor Flats / Bachelor Meadows",
+      "store": "bivy",
+      "type": null,
+      "elev": 4500,
+      "notes": "PLANNED camp, the standard first night after leaving maintained trail at the Bachelor Creek crossing. An informal but heavily used forest camp in a clearing — sheltered, buggy, and low. Most parties stop here because the…"
+     },
+     {
+      "name": "Cub Lake meadows",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "PLANNED camp in heather meadow past Cub Pass, and the busiest ground on the approach — a summer weekend has been described with a dozen or more parties spread through these meadows and several more on Itswoot Ridge above…"
+     },
+     {
+      "name": "Chikamin-Dome col",
+      "store": "bivy",
+      "type": null,
+      "elev": 8500,
+      "notes": "PLANNED high camp and the one most parties use for Gunsight — an established site on the col reached by roping up at Itswoot Pass and crossing the Dome Glacier. Room is genuinely tight: one party spent half an hour of ea…"
+     },
+     {
+      "name": "Chikamin Glacier bench below the west face",
+      "store": "bivy",
+      "type": null,
+      "elev": 7000,
+      "notes": "PLANNED advanced camp, about ninety minutes of descending traverse below the col and directly under Gunsight's west face. Parties move here to shorten summit day rather than day-climbing from the col. It is a glacier ben…"
+     },
+     {
+      "name": "Itswoot Ridge camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Drop roughly 700 ft off the far side of the pass to Cub Lake, then cross the meadows beyond it and climb back up to gain Itswoot Ridge and Itswoot Pass. That de…"
+     }
+    ]
+   },
+   {
+    "id": "wa_old_guard_peak_east_side_route",
+    "name": "East Side Route",
+    "peak": "Old Guard Peak",
+    "area_id": "wa_old_guard_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "A short, roped alternative to the standard scramble: 2 to 3 pitches of easy/moderate 5th-class climbing rising directly from the LeConte Glacier up Old Guard's east side.",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_old_guard_peak_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Old Guard Peak",
+    "area_id": "wa_old_guard_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 8260,
+    "overview": "Old Guard Peak rises near Le Conte Mountain and Sentinel Peak along the southern half of the Ptarmigan Traverse, just south of Cache Col in Glacier Peak Wilderness, overlooking the Le Conte and South Cascade Glaciers. A precision differential-GPS survey puts it at 8,260 ft, a few feet above neighbor…",
+    "approach": "Drive Cascade River Road east from Marblemount roughly 23 miles (paved for about the first 10, then good gravel) to its end at the Cascade Pass Trailhead (3,660 ft; parking area and vault toilet, North Cascades NP wilderness permit required for overnight camps). From the trailhead, follow the Cascad…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sinister_peak_north_face",
+    "name": "North Face",
+    "peak": "Sinister Peak",
+    "area_id": "wa_sinister_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8444,
+    "overview": "A sustained 45-50 degree névé/ice face rising directly to the summit off the Chickamin Glacier — a striking, moderate (NCCS Grade II) alpine snow/ice line and one of the more scenic technical routes along the Ptarmigan Traverse.",
+    "approach": "Follow the same multi-day approach as the Southwest Route to a high camp on Itswoot Ridge or near the Dome Glacier, then continue over the Dome-Chickamin Glacier col (~8,500 ft) and descend onto the Chickamin Glacier, traversing beneath Sinister's north side to reach the base of the face. The origin…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_sinister_peak_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Sinister Peak",
+    "area_id": "wa_sinister_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4, Glacier",
+    "high_point_ft": 8444,
+    "overview": "Sinister Peak is a sharp, ice-clad summit on Washington's Bulger List (the state's 100 highest peaks), rising along a high connecting ridge about 1 mile east of Dome Peak above the Chickamin and Dome Glaciers in the Glacier Peak Wilderness. It sits on the classic Ptarmigan Traverse corridor and is o…",
+    "approach": "From the Downey Creek Trailhead (elev. ~1,450') on the Suiattle River Road (FR 26), follow Downey Creek Trail #768 for 6.5 miles (easy, well-graded, mostly flat, forested trail with a suspension-bridge crossing of Downey Creek) to Sixmile Camp (2,440'), a good first-night camp with reliable water fr…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     },
+     {
+      "name": "Sixmile Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2300,
+      "notes": "Follow Downey Creek Trail #768 for 6.5 miles from the trailhead — easy, well-graded and mostly flat through forest, with a suspension-bridge crossing of Downey …"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_ridge",
+    "name": "South Ridge",
+    "peak": "South Peak",
+    "area_id": "wa_south_peak",
+    "discipline": "mountaineering",
+    "grade": "5.8",
+    "high_point_ft": 8100,
+    "overview": "The classic route on South Peak following a scenic south-facing ridge. Features clean granite climbing with exposure and memorable features including a notable gap called the 'cannon hole'.",
+    "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typicall…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_spire_point_southwest_face",
+    "name": "Southeast Face",
+    "peak": "Spire Point",
+    "area_id": "wa_spire_point",
+    "discipline": "alpine",
+    "grade": "Class 4",
+    "high_point_ft": 8264,
+    "overview": "Spire Point (8,264 ft) is a sharp granite tower on Itswoot Ridge in the Glacier Peak Wilderness, between the Dana Glacier (east) and Spire Glacier (northwest), along the classic Ptarmigan Traverse. Its summit is famously tiny — room for only one climber at a time — with roughly 1,000+ vertical feet …",
+    "approach": "Start at the Downey Creek Trailhead (end of FR 26/Suiattle River Road, elev. ~1,450'). Follow the Downey Creek Trail (#792) roughly 6.5 miles of gentle, well-graded old-growth forest walking — recent Forest Service work has added boardwalks and new log bridges — to Sixmile Camp and the final log cro…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     },
+     {
+      "name": "Itswoot Ridge camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Drop about 500 ft on steep talus and switchbacks to the lake, which also has good camping, skirt its north shore, and regain the ridge heading toward Itswoot. A…"
+     },
+     {
+      "name": "Spire Col",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": "Hike north up Itswoot Ridge, staying on talus on its west side near the stream to bypass the rock towers directly above camp; the crest itself is only walkable …"
+     }
+    ]
+   },
+   {
+    "id": "wa_sw_ridge",
+    "name": "Southwest Ridge",
+    "peak": "Middle Peak",
+    "area_id": "wa_middle_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8200,
+    "overview": "A short, classic 5-pitch ridge route up Middle Gunsight's southwest side, starting with loose blocky climbing and finishing with enjoyable, easier climbing on cracks and knobs along an exposed ridge crest.",
+    "approach": "Same multi-day approach as the East Face and Gunrunner: Lady of the Lake ferry from Chelan to Stehekin, NPS shuttle to High Bridge, ~9-10 miles on the PCT/Agnes Creek Trail, then an off-trail bushwhack and glacier approach (~5,000 ft gain) to a high camp below the peaks.",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_west_face",
+    "name": "West Face",
+    "peak": "South Peak",
+    "area_id": "wa_south_peak",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 8100,
+    "overview": "",
+    "approach": "The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typicall…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     }
+    ]
+   },
+   {
+    "id": "wa_west_face_2",
+    "name": "West Face",
+    "peak": "North Peak",
+    "area_id": "wa_north_peak",
+    "discipline": "mountaineering",
+    "grade": "5.11+",
+    "high_point_ft": 8160,
+    "overview": "The West Face of North Peak is one of the Cascades' sheerest and cleanest granite faces, offering world-class alpine rock climbing. The route ascends the center of the face with excellent crack and face climbing on solid white granite. Originally established as an aid route in 1986, the first free a…",
+    "approach": "Note: this area's stored coordinates place it at Washington Pass on SR-20, but the real-world Gunsight Range is a remote granite sub-range near Dome Peak in the Glacier Peak Wilderness, roughly 20+ miles south/southwest of Washington Pass — not reachable from the SR-20 pass corridor, likely a data/g…",
+    "camps": [
+     {
+      "name": "Kool-Aid Lake",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6320,
+      "notes": "The first camp on the traverse coming from Cascade Pass, reached by climbing to Cache Col and dropping a short but awkward distance southwest to the tarn. It is where the permit regime changes, which is the practical rea…"
+     },
+     {
+      "name": "Yang Yang Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5850,
+      "notes": "The second camp for most north-to-south parties, sitting in a shallow bowl below Le Conte Mountain after the drop off the Middle Cascade Glacier. It is the natural base for Old Guard Peak, whose summit is reached from th…"
+     },
+     {
+      "name": "White Rock Lakes",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6200,
+      "notes": "The third camp and the one most parties remember, reached from Yang Yang across the Le Conte Glacier and the Le Conte-Sentinel col, then down a long traverse under Sentinel and Old Guard. It looks straight across at Dome…"
+     },
+     {
+      "name": "Itswoot Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5880,
+      "notes": "This is the working base for the southern peaks and the camp most parties coming in from Downey Creek actually use. Camps are quoted anywhere between roughly 5,900 and 6,400 ft depending on which bench you take, so the n…"
+     },
+     {
+      "name": "Cub Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5338,
+      "notes": "Roughly 12 miles and about 3,900 ft of gain from the Downey Creek trailhead, reached by a steep switchbacking descent off the Bachelor Creek meadows and a walk around the north shore. Parties report anywhere from six hou…"
+     },
+     {
+      "name": "Bachelor Creek forest and meadow camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "This exists because of the brush, and the brush is the single most important thing to understand about the south end. From the Downey Creek trailhead at 1,440 ft the Downey Creek trail runs about six easy forested miles …"
+     },
+     {
+      "name": "Spire Col bivouac",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The col at 7,760 ft between Itswoot Ridge and the upper Dana Glacier, and the highest useful bivouac for Spire Point. Taking it saves an hour or more off summit morning on the Southwest Face and puts you above the sectio…"
+     },
+     {
+      "name": "Dome Glacier and Dome-Chickamin col high bivouacs",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the camps that put the eastern peaks in range, and they are the reason parties carry a full glacier kit past Itswoot Ridge. The col between the Dana and Dome glaciers holds a couple of rock rings around 7,470 f…"
+     },
+     {
+      "name": "Bachelor Flats (Camp 1)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3500,
+      "notes": ""
+     },
+     {
+      "name": "Chikamin-Dome Col (Camp 2/High Camp)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 8500,
+      "notes": ""
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "quilcene-buckhorn",
+  "routes": [
+   {
+    "id": "wa_buckhorn_marmot_pass",
+    "name": "Southwest Slope via Marmot Pass",
+    "peak": "Buckhorn Mountain",
+    "area_id": "wa_buckhorn_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2 (off-trail talus/scree)",
+    "high_point_ft": 6988,
+    "overview": "Buckhorn Mountain is a double-summit peak in the Buckhorn Wilderness (Olympic National Forest), immediately outside the Olympic National Park boundary. The nearly-level west and east summits, about 1,200 ft apart across a smooth saddle, were thought to resemble deer antlers, giving the mountain its …",
+    "approach": "From the Upper Big Quilcene Trailhead (~2,650 ft, end of FR-2750), the route follows the Upper Big Quilcene River Trail #833. The first 2.5 miles are an easy, mostly rolling grade through old-growth cedar and hemlock forest with the Big Quilcene River alongside you the whole way — this stretch is yo…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     }
+    ]
+   },
+   {
+    "id": "wa_inner_constance_northwest_buttress",
+    "name": "Northwest Buttress",
+    "peak": "Inner Constance",
+    "area_id": "wa_inner_constance",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7670,
+    "overview": "The original 1983 line up Inner Constance's northwest buttress; the 2021 route Sean's Route/Second Wind climbs a variation finish on this same buttress.",
+    "approach": "Drive to the Upper Dungeness Trailhead (Trail #833.2) in Olympic National Forest: from US 101 near Sequim Bay State Park turn onto Louella Road, continue about a mile to Palo Alto Road and turn left for roughly 1.1 miles to the forest boundary, where Palo Alto becomes Forest Service Road 28. Turn ri…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     }
+    ]
+   },
+   {
+    "id": "wa_inner_constance_standard",
+    "name": "Standard Route (Northeast summit via Crystal Pass)",
+    "peak": "Inner Constance",
+    "area_id": "wa_inner_constance",
+    "discipline": "alpine",
+    "grade": "Class 4 / low 5th",
+    "high_point_ft": 7672,
+    "overview": "Inner Constance (7,672 ft by LiDAR) is the fifth-highest summit in the Olympic Mountains, a rugged pyramid just west of Mount Constance (its line parent, 0.9 mi east) across the glacially carved Avalanche Canyon, within the Daniel J. Evans Wilderness of Olympic National Park. The mountain is built o…",
+    "approach": "From the Dosewallips River Road washout (roughly 1 mile in from the old trailhead gate, elev. ~600 ft), the road has been closed to motor vehicles since a 2002 flood took out a ~300-ft section, but it remains open to foot and bicycle travel — most parties bike the flat, mostly-shaded roadbed to save…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     },
+     {
+      "name": "Lake Constance",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "From the bench the path resumes its steep push, gaining the last 1,700 ft to the lake at 4,800 ft, cupped in a rock bowl at the mouth of Avalanche Canyon. Campi…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_townsend_standard",
+    "name": "Mount Townsend Trail (standard)",
+    "peak": "Mount Townsend",
+    "area_id": "wa_mount_townsend",
+    "discipline": "mountaineering",
+    "grade": "Class 1-2 (maintained trail)",
+    "high_point_ft": 6282,
+    "overview": "Mount Townsend is one of the most-visited summits in the northeastern Olympics, rising above the Quilcene valley in the Buckhorn Wilderness of Olympic National Forest. The maintained Mt. Townsend Trail (#839) climbs through old-growth Douglas-fir/rhododendron forest, crosses a series of increasingly…",
+    "approach": "Start at the Mt. Townsend Upper Trailhead (elev. ~3,400 ft), reached via Forest Road 27 off Penny Creek Road out of Quilcene — the trailhead has a large gravel lot and a Buckhorn Wilderness boundary sign where Trail #839 begins. From the lot, the trail climbs immediately into dense, heavily wooded s…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     },
+     {
+      "name": "Camp Windy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "Established camp reached after switchbacking through three ravines and an open meadow; an unmarked spur leads to Windy Lake for water."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_worthington_standard",
+    "name": "Standard Route",
+    "peak": "Mount Worthington",
+    "area_id": "wa_mount_worthington",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6938,
+    "overview": "Mount Worthington (6,938 ft) is a double-summited peak (main summit plus Northeast Worthington, 6,880 ft) in the Buckhorn Wilderness of the eastern Olympic Mountains, Jefferson County — reached via the Tubal Cain Trail system, not via Royal Basin/Gray Wolf Ridge (a separate trailhead and drainage to…",
+    "approach": "Start at the Tubal Cain Trailhead (elev. ~3,300 ft, reached via FR 2870/2880), and follow the Tubal Cain Trail #840 (Copper Creek drainage) south. The trail climbs gently through second-growth and old-growth conifer forest, gaining roughly 2,800 ft over the first ~5.5-6 miles. At about 3 miles, pass…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     },
+     {
+      "name": "Buckhorn Lake basin (avalanche debris flat)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "Established camp area in an open flat about 200 ft above and south of Buckhorn Lake; last reliable camp/water before leaving the trail."
+     }
+    ]
+   },
+   {
+    "id": "wa_warrior_peak_standard",
+    "name": "Southeast Peak Standard (Home Lake approach)",
+    "peak": "Warrior Peak",
+    "area_id": "wa_warrior_peak",
+    "discipline": "alpine",
+    "grade": "Class 4 / low 5th",
+    "high_point_ft": 7320,
+    "overview": "A striking twin-summit massif in the eastern Olympics, rising immediately north of Mount Constance (its nearest higher neighbor, 0.8 mi south-southeast) within the Daniel J. Evans Wilderness of Olympic National Park. Warrior is the 11th-highest peak in the Olympic Range, built of Eocene-era pillow b…",
+    "approach": "Drive Highway 101 to Sequim Bay State Park area, turn left on Louella Road for 1 mile, then left on Palo Alto Road for 1.1 miles to the Forest Boundary. Palo Alto becomes FS Road 28. Turn right onto FS Road 2880, drive past Dungeness Forks Campground for 1 mile, stay left onto FS Road 2870 for 8.7 m…",
+    "camps": [
+     {
+      "name": "Camp Mystery — the last water below Marmot Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard base for Buckhorn Mountain, sitting at 4.6 miles and about 5,400 ft on the Upper Big Quilcene trail, roughly half a mile and 500 ft below Marmot Pass. From here the summit day is short: over the pass at 5,95…"
+     },
+     {
+      "name": "Marmot Pass — high dry bivy on the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5950,
+      "notes": "The obvious camp for anyone whose objective is Buckhorn Mountain and who is willing to haul water, because the summit path leaves directly from the pass and a party sleeping here is on top for sunrise with an hour of wal…"
+     },
+     {
+      "name": "Buckhorn Lake — the base for Mount Worthington",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Mount Worthington has no maintained trail to its summit and no route that anyone would call standard, so the camp does most of the work. Buckhorn Lake sits about half a mile off the Tubal Cain trail on a spur leaving at …"
+     },
+     {
+      "name": "Camp Windy, below Mount Townsend",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "The only real camp on Mount Townsend, sitting somewhere around 5,200 ft at roughly two and a half to three miles up the trail — published elevations for it vary by about a hundred feet, which is fair given it is a spread…"
+     },
+     {
+      "name": "Boulder Shelter — the last camp outside the national park",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "The working base for Warrior Peak, and the cheapest night in this zone by a wide margin because nothing has to be booked. It sits at about 4,950 ft and roughly 6.3 miles from the Upper Dungeness trailhead at 2,500 ft, pa…"
+     },
+     {
+      "name": "Home Lake, below Constance Pass — inside the park, and reached from the north",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "The high camp for both Warrior Peak and the northwest side of Inner Constance, and the natural next step up from Boulder Shelter once you want to be closer to the peaks. Reach it from the UPPER DUNGENESS trailhead by way…"
+     },
+     {
+      "name": "Camp Handy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3100,
+      "notes": "Riverfront meadow with a cedar-shingle shelter along the Dungeness River; popular first-night camp and last easy water before the climb steepens."
+     },
+     {
+      "name": "Boulder Shelter",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4950,
+      "notes": "Shelter structure amid large boulders after a steep 1,800+ ft climb from Camp Handy; the creek here is the most reliable water source before Home Lake."
+     },
+     {
+      "name": "Home Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5330,
+      "notes": "Small alpine lake walled in by Mt. Constance and Warrior Peak; standard base camp for the climb, sits just below Constance Pass. Olympic NP wilderness permit (R…"
+     }
+    ]
+   }
+  ]
+ }
+]

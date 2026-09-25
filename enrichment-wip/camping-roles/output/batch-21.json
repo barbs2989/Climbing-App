@@ -1,0 +1,807 @@
+{
+  "zones": [
+    {
+      "zone": "tatoosh",
+      "overnightPermit": {
+        "what": "Mount Rainier National Park wilderness camping permit",
+        "where": "Reserve online via Recreation.gov, or get a walk-up permit in person at a park Wilderness Information Center; required year-round for any overnight stay, including cross-country-zone camping below Unicorn Peak or The Castle.",
+        "url": "https://www.nps.gov/mora/planyourvisit/wilderness-camping-and-hiking.htm"
+      }
+    },
+    {
+      "zone": "teanaway",
+      "overnightPermit": {
+        "what": "Free self-issue Alpine Lakes Wilderness permit",
+        "where": "Fill one out at the trailhead kiosk. This is distinct from the quota Enchantment Permit Area to the west.",
+        "url": null
+      }
+    },
+    {
+      "zone": "thunder-creek",
+      "overnightPermit": {
+        "what": "North Cascades National Park wilderness permit — quota reservation or walk-up",
+        "where": "Reserve a night-by-night itinerary online via Recreation.gov during the early-access lottery, or get a walk-up permit in person (about 40% of sites) at the Wilderness Information Center in Marblemount up to 24 hours ahead.",
+        "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm"
+      }
+    },
+    {
+      "zone": "tiffany-mountain",
+      "overnightPermit": {
+        "what": "No overnight permit required",
+        "where": "Free, no-reservation camping at Tiffany Springs Campground and along the approach; a Northwest Forest Pass covers trailhead parking.",
+        "url": null
+      }
+    },
+    {
+      "zone": "twin-lakes-larrabee",
+      "overnightPermit": {
+        "what": "No overnight wilderness permit required",
+        "where": "A Northwest Forest Pass is required to park at the trailhead; camp on snow, rock or bare ground at the designated tarns/sites and pack out human waste.",
+        "url": null
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_castle_peak_tatoosh_southeast_face",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Snow Lake Camp"
+      ],
+      "drop": [
+        "Reflection Lakes area winter snow camp",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Usually a day trip from Reflection Lakes via the Pinnacle Saddle Trail; parties who split it overnight in the cross-country zone below Unicorn/Castle, reached past Snow Lake."
+    },
+    {
+      "id": "wa_classic_route_2",
+      "main": [
+        "Snow Lake Camp"
+      ],
+      "onRoute": [
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      ],
+      "drop": [
+        "Reflection Lakes area winter snow camp",
+        "Cougar Rock Campground",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Snow Lake Camp is the established camp for Unicorn Peak; parties wanting to camp closer under the summit block continue past it into the cross-country zone."
+    },
+    {
+      "id": "wa_classic_route_3",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lane Peak lines are normally done car-to-car; the Reflection Lakes winter snow camp only matters when Stevens Canyon Road is gated and shortens the road walk."
+    },
+    {
+      "id": "wa_east_ridge_8",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pinnacle Peak is normally a day trip from Reflection Lakes; the winter snow camp only matters when the road is gated."
+    },
+    {
+      "id": "wa_lane_peak_r1",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lane Peak lines are normally done car-to-car; the Reflection Lakes winter snow camp only matters when Stevens Canyon Road is gated and shortens the road walk."
+    },
+    {
+      "id": "wa_lane_peak_r2",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lane Peak lines are normally done car-to-car; the Reflection Lakes winter snow camp only matters when Stevens Canyon Road is gated and shortens the road walk."
+    },
+    {
+      "id": "wa_lane_peak_r3",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Lane Peak lines are normally done car-to-car; the Reflection Lakes winter snow camp only matters when Stevens Canyon Road is gated and shortens the road walk."
+    },
+    {
+      "id": "wa_open_book_2",
+      "main": [
+        "Snow Lake Camp"
+      ],
+      "onRoute": [
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      ],
+      "drop": [
+        "Reflection Lakes area winter snow camp",
+        "Cougar Rock Campground",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Snow Lake Camp is the established camp for Unicorn Peak; parties wanting to camp closer under the summit block continue past it into the cross-country zone."
+    },
+    {
+      "id": "wa_pinnacle_peak_tatoosh_r1",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pinnacle Peak is normally a day trip from Reflection Lakes; the winter snow camp only matters when the road is gated."
+    },
+    {
+      "id": "wa_plummer_peak_r1",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shares the Pinnacle Saddle Trail approach; done as a day trip from Reflection Lakes."
+    },
+    {
+      "id": "wa_scramble_route",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Reflection Lakes area winter snow camp",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Eagle Peak's own trailhead is near Longmire, close to Cougar Rock Campground; the Reflection Lakes/Snow Lake camps belong to the other Tatoosh trailheads and are not on this line."
+    },
+    {
+      "id": "wa_southwest_scramble",
+      "main": [
+        "Cougar Rock Campground"
+      ],
+      "onRoute": [
+        "Reflection Lakes area winter snow camp"
+      ],
+      "drop": [
+        "Snow Lake Camp",
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pinnacle Peak is normally a day trip from Reflection Lakes; the winter snow camp only matters when the road is gated."
+    },
+    {
+      "id": "wa_the_roof",
+      "main": [
+        "Snow Lake Camp"
+      ],
+      "onRoute": [
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      ],
+      "drop": [
+        "Reflection Lakes area winter snow camp",
+        "Cougar Rock Campground",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Snow Lake Camp is the established camp for Unicorn Peak; parties wanting to camp closer under the summit block continue past it into the cross-country zone."
+    },
+    {
+      "id": "wa_unicorn_peak_r1",
+      "main": [
+        "Snow Lake Camp"
+      ],
+      "onRoute": [
+        "Tatoosh cross-country zone bivy, basins below Unicorn and The Castle"
+      ],
+      "drop": [
+        "Reflection Lakes area winter snow camp",
+        "Cougar Rock Campground",
+        "Paradise designated winter group camping area",
+        "Ohanapecosh Campground"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Snow Lake Camp is the established camp for Unicorn Peak; parties wanting to camp closer under the summit block continue past it into the cross-country zone."
+    },
+    {
+      "id": "wa_earl_peak_southwest_ridge",
+      "main": [
+        "Bean Creek Basin meadows",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Stafford Creek meadow camps below Navaho Pass",
+        "Lake Ann bench and the upper Esmeralda Basin camps",
+        "Iron Peak saddle dry camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Earl is normally a day climb from the car; Bean Creek Basin is the contingency camp when a party splits it, and the low-valley campgrounds are the practical night-before base."
+    },
+    {
+      "id": "wa_esmeralda_peaks_scramble",
+      "main": [
+        "Lake Ann bench and the upper Esmeralda Basin camps",
+        "Esmeralda Basin camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Bean Creek Basin meadows",
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Stafford Creek meadow camps below Navaho Pass",
+        "Iron Peak saddle dry camp",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Esmeralda Peaks are scrambled directly from the basin; the upper Lake Ann bench camps and the lower established Esmeralda Basin camps both serve it, at different points along the same trail."
+    },
+    {
+      "id": "wa_fortune_peak_east_slope",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Bean Creek Basin meadows",
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Stafford Creek meadow camps below Navaho Pass",
+        "Lake Ann bench and the upper Esmeralda Basin camps",
+        "Iron Peak saddle dry camp",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "add": [
+        {
+          "name": "Headlight Basin",
+          "type": "camp",
+          "elev": 6500,
+          "capacity": "A handful of tent sites",
+          "water": "Seasonal snowmelt/small streams; can be dry by late summer",
+          "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead",
+          "notes": "Open basin below Ingalls Pass on the Ingalls/Fortune ridge; the standard overnight base for this route, reached via the Esmeralda Basin and Ingalls Way trails.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "None of this route's listed camps sit on the Ingalls Pass / Headlight Basin line — they serve the Esmeralda Basin / Lake Ann side of the valley instead."
+    },
+    {
+      "id": "wa_fortune_peak_standard_route",
+      "main": [
+        "Lake Ann bench and the upper Esmeralda Basin camps"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Bean Creek Basin meadows",
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Stafford Creek meadow camps below Navaho Pass",
+        "Iron Peak saddle dry camp",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard line starts from the pass above Lake Ann, matching the camp built for it."
+    },
+    {
+      "id": "wa_iron_peak_teanaway_scramble",
+      "main": [
+        "Iron Peak saddle dry camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Bean Creek Basin meadows",
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Stafford Creek meadow camps below Navaho Pass",
+        "Lake Ann bench and the upper Esmeralda Basin camps",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Iron Peak's approach offers no other overnight option than the saddle dry camp; most parties day-hike it from the De Roux trailhead instead."
+    },
+    {
+      "id": "wa_navaho_peak_south_slopes",
+      "main": [
+        "Stafford Creek meadow camps below Navaho Pass"
+      ],
+      "onRoute": [
+        "Upper meadow camp"
+      ],
+      "drop": [
+        "Bean Creek Basin meadows",
+        "Beverly Turnpike camps at the Fourth Creek junction",
+        "Lake Ann bench and the upper Esmeralda Basin camps",
+        "Iron Peak saddle dry camp",
+        "Teanaway Community Forest campgrounds — 29 Pines, Teanaway Campground and Indian Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Stafford Creek meadow camp is the only one worth using for Navaho's south side; the upper meadow is a higher option further up the same trail."
+    },
+    {
+      "id": "wa_booker_mountain_northeast_face",
+      "main": [
+        "Thunder Basin Hiker Camp"
+      ],
+      "onRoute": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "drop": [
+        "Fremont Glacier moraine high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Reached via the long Thunder Creek Trail approach toward Park Creek Pass; Thunder Basin is the staging camp, the others are valley stopovers on a multi-day trip. The Fremont Glacier moraine camp is specific to Mount Logan's approach, not Booker's."
+    },
+    {
+      "id": "wa_booker_mountain_northwest_route",
+      "main": [
+        "Thunder Basin Hiker Camp"
+      ],
+      "onRoute": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "drop": [
+        "Fremont Glacier moraine high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Reached via the long Thunder Creek Trail approach toward Park Creek Pass; Thunder Basin is the staging camp, the others are valley stopovers on a multi-day trip. The Fremont Glacier moraine camp is specific to Mount Logan's approach, not Booker's."
+    },
+    {
+      "id": "wa_booker_mountain_south_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "add": [
+        {
+          "name": "Sahale Camp",
+          "type": "camp",
+          "elev": 7600,
+          "capacity": "About 6 designated sites",
+          "water": "Snowmelt near camp early season; may require melting snow/ice late season",
+          "permit": "North Cascades National Park wilderness permit — reserve via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+          "notes": "NPS-designated high camp on the Sahale Glacier, reached via Cascade Pass and the Sahale Arm Trail; parties continue cross-country from here into Horseshoe Basin to reach Booker's south gully.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "The standard South Ridge route approaches via Cascade Pass/Sahale Arm, a completely different trailhead and drainage from the Thunder Creek corridor camps listed for this route — none of them are on this line."
+    },
+    {
+      "id": "wa_mount_logan_fremont_glacier",
+      "main": [
+        "Moraine camp above the pass",
+        "Meadows north of Park Creek Pass"
+      ],
+      "onRoute": [
+        "Junction Camp",
+        "Valley camps on the walk in",
+        "Point 8248 / Fremont Glacier saddle camp"
+      ],
+      "drop": [
+        "Fremont Glacier saddle"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "'Fremont Glacier saddle' and 'Point 8248 / Fremont Glacier saddle camp' describe the same highest bivy option; kept the more specific one (duplicate of Point 8248 / Fremont Glacier saddle camp)."
+    },
+    {
+      "id": "wa_mount_logan_r1",
+      "main": [],
+      "onRoute": [
+        "Neve Camp"
+      ],
+      "drop": [
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "add": [
+        {
+          "name": "Fisher Creek lake camp below the Banded Glacier",
+          "type": "camp",
+          "elev": 5160,
+          "capacity": "A few tent sites",
+          "water": "Lake at camp",
+          "permit": "North Cascades National Park wilderness permit — reserve via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+          "notes": "Reached via the Fisher Creek Trail fork off the Thunder Creek Trail (~9 miles in); the standard overnight camp below the Banded Glacier.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "This route forks onto the Fisher Creek Trail at about 9 miles, before Junction/Skagit Queen/Thunder Basin are reached; only Neve Camp (near the start) is genuinely on its line."
+    },
+    {
+      "id": "wa_mount_logan_r2",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "add": [
+        {
+          "name": "Fisher Basin campsites",
+          "type": "camp",
+          "capacity": "A few tent sites",
+          "water": "Fisher Creek",
+          "permit": "North Cascades National Park wilderness permit — reserve via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+          "notes": "Established campsites on the Fisher Creek valley floor below Easy Pass; the standard first-night camp for the Douglas Glacier route.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "This route approaches from Easy Pass Trailhead into Fisher Basin — an entirely different trailhead and drainage from the Thunder Creek corridor camps listed here."
+    },
+    {
+      "id": "wa_neve_glacier_west_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "add": [
+        {
+          "name": "Colonial-Neve col",
+          "type": "camp",
+          "capacity": "A few sites",
+          "water": "Snowmelt/glacier meltwater nearby",
+          "permit": "North Cascades National Park wilderness permit — reserve via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+          "notes": "High camp on the col between the Colonial and Neve glaciers, reached via the climbers' path above Pyramid Lake; the same approach and camp Snowfield's standard Neve Glacier route uses, since the West Ridge is its summit finish.",
+          "role": "main"
+        },
+        {
+          "name": "Colonial Basin",
+          "type": "camp",
+          "capacity": "Several sites, exposed to wind",
+          "water": "Snowmelt in the basin",
+          "permit": "North Cascades National Park wilderness permit — reserve via Recreation.gov or walk-up at the Marblemount Wilderness Information Center",
+          "notes": "Basin below Colonial and Pyramid peaks, reached first on the climbers' path above Pyramid Lake before continuing up to the Colonial-Neve col.",
+          "role": "onRoute"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "The West Ridge is described as the standard Neve Glacier route's own summit finish, approached from Pyramid Lake — not the Thunder Creek corridor camps listed for this route, which belong to Booker/Logan's approach instead."
+    },
+    {
+      "id": "wa_snowfield_peak_neve_glacier",
+      "main": [
+        "Colonial-Neve col",
+        "Colonial Basin"
+      ],
+      "onRoute": [
+        "Lower camp below the basin",
+        "Colonial Glacier moraine camp"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Colonial Glacier moraine camp's note describes bypassing Pyramid Peak's summit on the way to the glacier — likely an alternate ridge line into the same basin rather than a separate objective; kept as an on-route option."
+    },
+    {
+      "id": "wa_storm_king_north_face",
+      "main": [
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approached east/northeast from High Bridge via the Park Creek drainage (the east/Stehekin side), matching Five Mile Camp rather than the west-side Colonial Creek camps."
+    },
+    {
+      "id": "wa_storm_king_southwest_scramble",
+      "main": [
+        "Rib camp below Storm King/Goode basin"
+      ],
+      "onRoute": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "drop": [
+        "Fremont Glacier moraine high camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "A remote, multi-day, multi-trailhead objective; the Rib camp is the actual base below the peak, the rest are legitimate valley stopovers on the various approaches that converge there. The Fremont Glacier moraine camp serves Mount Logan's different basin instead."
+    },
+    {
+      "id": "wa_the_needle_neve_glacier",
+      "main": [
+        "Colonial Glacier moraine-lake camp"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Neve Camp",
+        "Junction Camp",
+        "Skagit Queen Camp",
+        "Thunder Basin Hiker Camp",
+        "Fremont Glacier moraine high camp",
+        "Five Mile Camp, Park Creek trail"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The Needle sits beside Snowfield Peak and shares its Pyramid Lake approach; the Colonial Glacier moraine-lake camp is explicitly the standard base for it. The Thunder Creek corridor camps belong to Booker/Logan's approach, not this one."
+    },
+    {
+      "id": "wa_north_tower_ridge_route",
+      "main": [
+        "Tiffany Springs Campground"
+      ],
+      "onRoute": [
+        "Tiffany Lake and Little Tiffany Lake",
+        "Honeymoon Pass",
+        "The talus and benches below the north face"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The campground doubles as the trailhead; the face is under an hour away, so most parties sleep at the car. The upper sites are kept as alternates for a slower party or a dawn start."
+    },
+    {
+      "id": "wa_tower_arete",
+      "main": [
+        "Tiffany Springs Campground"
+      ],
+      "onRoute": [
+        "Tiffany Lake and Little Tiffany Lake",
+        "Honeymoon Pass",
+        "The talus and benches below the north face"
+      ],
+      "drop": [],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The campground doubles as the trailhead; the face is under an hour away, so most parties sleep at the car. The upper sites are kept as alternates for a slower party or a dawn start."
+    },
+    {
+      "id": "wa_american_border_peak_northeast_face",
+      "main": [
+        "Gargett Mine basin bivy"
+      ],
+      "onRoute": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+        "Twin Lakes basin road-end camp",
+        "High Pass camp"
+      ],
+      "drop": [
+        "Winchester Mountain Lookout",
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+        "Tomyhoi Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Gargett Mine basin bivy is the stated base camp for American Border Peak; the road/Twin Lakes/High Pass sites are the stages a party passes on the way in."
+    },
+    {
+      "id": "wa_american_border_peak_southeast_face",
+      "main": [
+        "Gargett Mine basin bivy"
+      ],
+      "onRoute": [
+        "Twin Lakes basin road-end camp",
+        "High Pass camp"
+      ],
+      "drop": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+        "Winchester Mountain Lookout",
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+        "Tomyhoi Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Same base camp as the Northeast Face; the standard line."
+    },
+    {
+      "id": "wa_mount_larrabee_south_ridge",
+      "main": [
+        "High Pass camp"
+      ],
+      "onRoute": [
+        "Twin Lakes basin road-end camp",
+        "Gargett Mine basin bivy"
+      ],
+      "drop": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+        "Winchester Mountain Lookout",
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+        "Tomyhoi Lake",
+        "Twin Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Gargett Mine basin bivy is described as the west-side base (American Border Peak); Larrabee's South Ridge is reached more directly from High Pass. 'Twin Lakes' duplicates Twin Lakes basin road-end camp."
+    },
+    {
+      "id": "wa_the_pleiades_scramble",
+      "main": [
+        "Twin Lakes basin road-end camp",
+        "High Pass camp"
+      ],
+      "onRoute": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts"
+      ],
+      "drop": [
+        "Winchester Mountain Lookout",
+        "Gargett Mine basin bivy",
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+        "Tomyhoi Lake",
+        "Isthmus between the Twin Lakes"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Reached via the High Pass Trail out of Twin Lakes. 'Isthmus between the Twin Lakes' duplicates Twin Lakes basin road-end camp."
+    },
+    {
+      "id": "wa_tomyhoi_peak_southeast_ridge",
+      "main": [
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)"
+      ],
+      "onRoute": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts"
+      ],
+      "drop": [
+        "Twin Lakes basin road-end camp",
+        "Winchester Mountain Lookout",
+        "High Pass camp",
+        "Gargett Mine basin bivy",
+        "Tomyhoi Lake",
+        "Yellow Aster tarns / meadows"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The tarns/meadows camp is explicitly the standard camp for this ridge; Tomyhoi Lake is called out as NOT the camp for this peak despite the name. 'Yellow Aster tarns / meadows' duplicates Yellow Aster Butte tarns (Yellow Aster Meadows)."
+    },
+    {
+      "id": "wa_winchester_mountain_south_trail",
+      "main": [
+        "Winchester Mountain Lookout"
+      ],
+      "onRoute": [
+        "Twin Lakes basin road-end camp"
+      ],
+      "drop": [
+        "Twin Lakes Road upper section and the Yellow Aster Butte trailhead pullouts",
+        "High Pass camp",
+        "Gargett Mine basin bivy",
+        "Yellow Aster Butte tarns (Yellow Aster Meadows)",
+        "Tomyhoi Lake"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "The lookout itself is open to sleep in first-come; most parties day-hike this short trail from Twin Lakes."
+    }
+  ],
+  "misassigned": [
+    "wa_fortune_peak_east_slope: its camp list belongs to the Esmeralda Basin/Lake Ann side of the valley, not the Headlight Basin/Ingalls Pass line this route actually climbs — added the correct main camp.",
+    "wa_booker_mountain_south_ridge: its camp list is the Thunder Creek/Park Creek corridor (used by Booker's NE Face/NW Route and Mount Logan), but the standard South Ridge approaches via Cascade Pass/Sahale Arm/Horseshoe Basin instead — added Sahale Camp.",
+    "wa_mount_logan_r1 (Banded Glacier): most of its listed camps sit past the Fisher Creek Trail fork on the main Thunder Creek Trail and are not reached on this route — added the actual Fisher Creek lake camp below the Banded Glacier.",
+    "wa_mount_logan_r2 (Douglas Glacier): approaches from the Easy Pass Trailhead into Fisher Basin, an entirely different trailhead/drainage from the Thunder Creek corridor camps listed — added the Fisher Basin campsites.",
+    "wa_neve_glacier_west_ridge (Snowfield Peak): its camp list is the Thunder Creek corridor (Booker/Logan's approach via Colonial Creek Campground), but this route actually approaches via the Pyramid Lake Trailhead like the rest of Snowfield's routes — added Colonial-Neve col and Colonial Basin.",
+    "wa_the_needle_neve_glacier: most of its listed camps are the Thunder Creek corridor and are not on its Pyramid Lake approach; its own 'Colonial Glacier moraine-lake camp' entry is the correct one and was kept as main.",
+    "wa_storm_king_north_face: its camp list is mostly the west-side Colonial Creek corridor, but this route is approached from the east via High Bridge/Park Creek, matching only Five Mile Camp."
+  ]
+}

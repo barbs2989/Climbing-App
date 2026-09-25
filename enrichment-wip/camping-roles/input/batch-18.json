@@ -1,0 +1,2415 @@
+[
+ {
+  "zone": "snoqualmie-crest",
+  "routes": [
+   {
+    "id": "wa_alta_mountain_scramble",
+    "name": "Rampart Ridge Scramble",
+    "peak": "Alta Mountain",
+    "area_id": "wa_alta_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "high_point_ft": 6275,
+    "overview": "Alta Mountain is a popular scramble on the long Rampart Ridge above Rachel Lake near Snoqualmie Pass. From the Rachel Lake trail and Rampart Lakes, an enjoyable Class 2 ridge walk and scramble leads along the crest to the summit with excellent views over the Alpine Lakes country.",
+    "approach": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313. The first ~2.75 miles follow Box Canyon Creek on gentle grade, crossing several side streams and cascades (reliable water throughout — no need to carry much from the…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_bryant_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "peak": "Bryant Peak",
+    "area_id": "wa_bryant_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5801,
+    "overview": "Bryant Peak (5,801 ft) sits on the ridge between Chair Peak and The Tooth above the Source Lake and Snow Lake basins in the Alpine Lakes Wilderness, about 0.65 miles southeast of Chair Peak. Originally named Hemlock Peak, it was renamed in 1925 for Sidney V. Bryant; the peak was first climbed in 192…",
+    "approach": "From the Alpental day-use trailhead (~3,120 ft, at the end of Alpental Road via I-90 Exit 52), start on the Snow Lake Trail (#1013), a wide, well-graded trail that climbs through old avalanche-path brush and second-growth forest below the ski area's lower lift line. At roughly 1.8 miles and about 72…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_chikamin_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "peak": "Chikamin Peak",
+    "area_id": "wa_chikamin_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6994,
+    "overview": "Chikamin Peak (6,994 ft) is a high, prominent summit on the Pacific Crest Trail divide between Snoqualmie Pass and the Lemah Mountain/Chimney Rock country, in the heart of the Alpine Lakes Wilderness. It's the highest point on Chikamin Ridge, six miles northeast of Snoqualmie Pass, with sweeping vie…",
+    "approach": "Two established approaches reach the southeast-side gullies, and both are worth knowing since parties come at this route from either direction. (1) PCT from Snoqualmie Pass: From the PCT North Trailhead (Trail #2000) off Exit 52, the trail switchbacks up through timber and avalanche paths, crosses b…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     },
+     {
+      "name": "Ridge Lake / Gravel Lake saddle camps",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "A little over a mile beyond the Katwalk, with the trail dropping slightly onto the saddle. Take water here whether or not you stop: from this point the PCT cont…"
+     }
+    ]
+   },
+   {
+    "id": "wa_denny_mountain_north_slopes",
+    "name": "North Slopes",
+    "peak": "Denny Mountain",
+    "area_id": "wa_denny_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 5614,
+    "overview": "Denny Mountain rises directly above the Alpental ski area at Snoqualmie Pass, making it one of the most accessible summits in the corridor. Its long, jagged, roughly one-mile ridge runs NNW, with Alpental's ski runs (International, Edelweiss, Armstrong) climbing the peak's eastern flank and this rou…",
+    "approach": "Park at the large Alpental Ski Area lot at the end of Alpental Road (about 1.4 miles/2 miles up from I-90 Exit 52, per differing trip-report odometers), elevation roughly 3,100 ft. There is no signed trailhead or maintained trail for Denny Mountain itself — climbers cross the base area and pick up b…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_ridge_6",
+    "name": "East Ridge",
+    "peak": "Mount Thomson",
+    "area_id": "wa_mount_thomson",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6554,
+    "overview": "The East Ridge is Mount Thomson's easiest natural line and the standard descent for parties climbing the West Ridge. It's sustained Class 3 scrambling on solid rock with one short, exposed Class 4 chimney (~20 ft) just below the summit. The peak's original 1917 ascent (Joe Hazard and B. French) is g…",
+    "approach": "From the PCT North Trailhead at I-90 Exit 52 (~3,000 ft), follow the Pacific Crest Trail north through Commonwealth Basin and up onto the Kendall Ridge switchbacks. At roughly 5.5-5.7 miles you reach the Kendall Katwalk, the exposed rock traverse blasted into the cliff band that most parties use as …",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_four_brothers_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Four Brothers",
+    "area_id": "wa_four_brothers",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 6485,
+    "overview": "Four Brothers is a cluster of four rocky summits (climbers commonly refer to a 'south peak' and the 'north two' peaks) strung along Chikamin Ridge in the Alpine Lakes Wilderness, about 4 miles northeast of Snoqualmie Pass and 0.7 mile southeast of Chikamin Peak, its taller parent. The peaks were nam…",
+    "approach": "Four Brothers sits on Chikamin Ridge in the Alpine Lakes Wilderness, and the standard approach starts at the Mineral Creek Trailhead (Trail #1331, ~2,375 ft), reached via SR 903 north from Cle Elum ~17 mi, then Cooper Lake Rd/FR-46 roughly 9-10 mi to the signed trailhead. From the trailhead the trai…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     },
+     {
+      "name": "Park Lakes Basin (Upper Park Lake)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "Grind up the steep pitch that starts immediately above the ford — roughly 1,500 ft of gain in a bit over a mile, and the sustained crux of the approach — to rea…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hibox_mountain_standard",
+    "name": "Standard Scramble",
+    "peak": "Hibox Mountain",
+    "area_id": "wa_hibox_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6548,
+    "overview": "Hibox Mountain (6,548 ft) is the high point of Box Ridge, a rugged sub-ridge of the Alpine Lakes Wilderness about 5 miles east of Snoqualmie Pass, rising above the popular Rachel Lake basin. It's one of the most-climbed scrambles near I-90, combining an easy trail approach with a steep, loose Class …",
+    "approach": "Start at the Rachel Lake Trailhead (Trail #1313, elev. ~2,800 ft) at the end of Box Canyon Road/FR-4930. Follow the Rachel Lake Trail as it climbs gently through forest along the Box Canyon Creek drainage — the grade is easy and well-graded here, mostly Class 1 hiking. At roughly 2–2.2 miles and abo…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_huckleberry_mountain_west_route",
+    "name": "West Route",
+    "peak": "Huckleberry Mountain",
+    "area_id": "wa_huckleberry_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "high_point_ft": 6320,
+    "overview": "Huckleberry Mountain (6,320-6,340 ft) is a small but striking andesite peak on the Cascade Crest ridgeline between Mount Thomson and Chikamin Peak, about 5 miles northeast of Snoqualmie Pass in the Alpine Lakes Wilderness. It is not near the Middle Fork Snoqualmie/Dutch Miller Gap trail system — it'…",
+    "approach": "Park at the PCT North Trailhead at Snoqualmie Pass (I-90 Exit 52, large lot off SR 906/Alpental Rd; Northwest Forest Pass or America the Beautiful pass required). Head north on the Pacific Crest Trail; most parties cut the corner via the Commonwealth Basin/Red Pass climbers' shortcut, which rejoins …",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_kaleetan_peak_south_ridge",
+    "name": "South Ridge",
+    "peak": "Kaleetan Peak",
+    "area_id": "wa_kaleetan_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6259,
+    "overview": "Kaleetan Peak (~6,259-6,260 ft) is a sharp, prominent granite summit above Melakwa Lake in the Alpine Lakes Wilderness, about four miles northwest of Snoqualmie Pass in the Cascades' Snoqualmie Pass corridor. \"Kaleetan\" is Chinook Jargon for \"arrow\"; the name was given by early Mountaineers club mem…",
+    "approach": "Start at the Denny Creek Trailhead (~2,280 ft), reached via Forest Road 58 (Denny Creek Road) off I-90 Exit 47. From the trailhead, follow Denny Creek Trail #1014 north/east up the valley. At roughly 1.2-1.3 miles the trail crosses Denny Creek at the 'Slippery Slab' — smooth cascading bedrock and po…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     },
+     {
+      "name": "Melakwa Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4505,
+      "notes": "At the pass the Melakwa Lake Trail #1011 junction sends its right/east fork toward Lower Tuscohatchie Lake — take the other branch and descend gently about half…"
+     }
+    ]
+   },
+   {
+    "id": "wa_kendall_peak_standard",
+    "name": "Standard Scramble (off the PCT)",
+    "peak": "Kendall Peak",
+    "area_id": "wa_kendall_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2",
+    "high_point_ft": 5799,
+    "overview": "Kendall Peak sits directly above the Kendall Katwalk, a narrow trail blasted into a cliff face on the Pacific Crest Trail roughly 6 miles north of the PCT Northbound trailhead at Snoqualmie Pass. The mountain has four nearly equal sub-summits; the northernmost is the true high point (~5,799 ft) and …",
+    "approach": "From I-90 Exit 52 (West Snoqualmie Pass), the Pacific Crest Trailhead (PCT northbound) lot sits just off the exit ramp on a short dirt spur (Northwest Forest Pass required; the ~50-car lot fills early on weekends). From the trailhead (~3,000 ft), follow the PCT north through second-growth forest: a …",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_lundin_peak_south_face_left",
+    "name": "South Face Left",
+    "peak": "Lundin Peak",
+    "area_id": "wa_lundin_peak",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "high_point_ft": 6057,
+    "overview": "A harder, more sustained line up the center of Lundin's south face, starting up an obvious hand-crack layback and finishing near the top of the West Ridge.",
+    "approach": "Follow the Commonwealth Creek trail (PCT to Commonwealth Creek trail) until soon after crossing a stream and moving onto the flank of Red Mountain; leave the trail and head northwest into Commonwealth Basin to reach the south face of Lundin Peak.",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_lundin_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Lundin Peak",
+    "area_id": "wa_lundin_peak",
+    "discipline": "alpine",
+    "grade": "Class 4-5.0",
+    "high_point_ft": 6057,
+    "overview": "Lundin Peak is a jagged, three-horned summit — the westernmost horn is the true summit — on the ridge connecting Snoqualmie Mountain (6,278 ft) to Red Mountain, immediately north of Snoqualmie Pass in the Alpine Lakes Wilderness. Formerly named 'Snoqualmie Little Sister,' it was renamed in 1931 to h…",
+    "approach": "Two standard ways to reach the base of the West Ridge, both converging on the ridge's low-point notch around 5,800 ft where the technical climbing starts. (1) Commonwealth/Lundin Basin approach: from the PCT-North/Commonwealth Basin trailhead off Alpental Rd (elev. ~3,000 ft), follow the Pacific Cre…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_roosevelt_standard",
+    "name": "Standard Scramble",
+    "peak": "Mount Roosevelt",
+    "area_id": "wa_mount_roosevelt",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 5835,
+    "overview": "Mount Roosevelt (5,835 ft) is a rocky, twin-summited peak in the Alpine Lakes Wilderness, rising directly above the west shore of Snow Lake about six miles northwest of Snoqualmie Pass. It sits two miles north of its taller neighbor, Kaleetan Peak (6,259 ft), and is often paired with it for a longer…",
+    "approach": "Trailhead: Alpental Ski Area day-use lot at the end of Alpental Road, reached via I-90 Exit 52 (Snoqualmie Pass) — go north on Alpental Rd about 1.3 miles to the upper lot (~3,100 ft), the same trailhead used for Snow Lake, Denny Creek and Source Lake. Follow Snow Lake Trail #1013 about 2.6 miles (s…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     },
+     {
+      "name": "Gem Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4857,
+      "notes": "Quieter basin above Snow Lake with established backcountry campsites on the west side; last reliable water before committing to the ridge climb toward Roosevelt…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_thomson_west_ridge",
+    "name": "West Ridge",
+    "peak": "Mount Thomson",
+    "area_id": "wa_mount_thomson",
+    "discipline": "alpine",
+    "grade": "Class 5.6",
+    "high_point_ft": 6554,
+    "overview": "Mount Thomson (6,554 ft; spelled 'Thompson' in most published descriptions, 'Thomson' on USGS/Green Trails maps) is a sharp, Matterhorn-like andesite peak on the PCT divide roughly 4 miles northeast of Snoqualmie Pass, in the Alpine Lakes Wilderness (Mount Baker-Snoqualmie National Forest, Snoqualmi…",
+    "approach": "Park at the PCT North (Commonwealth Basin) Trailhead lot just off the frontage road at Exit 52, Snoqualmie Pass (~3,000 ft) — cross under I-90, take the first right, and the lot is on the right. From the trailhead, follow the Pacific Crest Trail northbound; it climbs steadily through timber via long…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     },
+     {
+      "name": "Ridge Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5195,
+      "notes": "Established PCT campsites on the far shore and on the slope down to Gravel Lake; last easy camp before the Bumblebee Pass turnoff, 0.4 mi ahead."
+     },
+     {
+      "name": "Bumblebee Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5300,
+      "notes": "Small scenic basin on the far side of the pass, standard bivy for the climb; only intermittent tarns for water, check conditions before relying on them."
+     }
+    ]
+   },
+   {
+    "id": "wa_red_mountain_snoqualmie_standard",
+    "name": "Standard Scramble",
+    "peak": "Red Mountain",
+    "area_id": "wa_red_mountain_snoqualmie",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 5890,
+    "overview": "Red Mountain (5,890 ft) is the distinctive rust-red peak rising above Commonwealth Basin, 3 miles north of Snoqualmie Pass in the Alpine Lakes Wilderness. One of the popular 'Snoqualmie Ten,' it's a non-technical but genuinely loose scramble: the red color comes from iron-oxide staining on heavily f…",
+    "approach": "Start at the Pacific Crest Trailhead (PCT trailhead) at Snoqualmie Pass West, reached via I-90 Exit 52 — this is the road-access endpoint; from the trailhead the hike itself begins on the newer rerouted Pacific Crest Trail heading north. Follow the PCT for roughly 2–2.5 miles of well-graded, well-ma…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face_7",
+    "name": "South Face",
+    "peak": "Red Mountain",
+    "area_id": "wa_red_mountain_snoqualmie",
+    "discipline": "scrambling",
+    "grade": "4th",
+    "high_point_ft": 5890,
+    "overview": "The South Face climbs a solid red-rock ramp on Red Mountain's south side via several class 3 pitches, typically done unroped given moderate exposure; most parties finish left onto the class 2 scrambling route on the west side of the south ridge. Climbers wanting more technical terrain can continue d…",
+    "approach": "From the PCT trailhead at Exit 52, hike the Pacific Crest Trail north to the Commonwealth Creek Trail junction, then follow it roughly 2 miles until Red Mountain comes into view. Traverse on heather across the base of the mountain until you reach the bright red rock gully/ramp that marks the start o…",
+    "camps": [
+     {
+      "name": "Commonwealth Basin and Red Pond",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the natural overnight for Lundin Peak and for Red Mountain, and it is the only site here that sits directly beneath its objectives rather than across a ridge from them. From the pass the PCT runs north about two …"
+     },
+     {
+      "name": "Melakwa Lake and Upper Melakwa Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "The camp for Kaleetan Peak and Bryant Peak, and the reason both are practical objectives at all. It is about four and a quarter miles and 2,700 ft from the Denny Creek trailhead, over Hemlock Pass at roughly 4,600 ft and…"
+     },
+     {
+      "name": "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5270,
+      "notes": "These sit about seven and a half miles out on the PCT, a mile or so past the Kendall Katwalk. For Kendall Peak itself they are past the objective — the scramble leaves the PCT well before the Katwalk — so this is a conti…"
+     },
+     {
+      "name": "Rachel Lake designated sites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800…"
+     },
+     {
+      "name": "Rampart Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5082,
+      "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,…"
+     },
+     {
+      "name": "Alaska Lake and Joe Lake, Gold Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4230,
+      "notes": "The direct way into Chikamin Peak and Huckleberry Mountain from the freeway, off Gold Creek Pond on the north shore of Keechelus Lake. Be clear-eyed about what this is: the Gold Creek trail is maintained for about five m…"
+     },
+     {
+      "name": "Park Lakes basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far easte…"
+     },
+     {
+      "name": "Kachess Campground, I-90 exit 62",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2275,
+      "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "southern-pickets",
+  "routes": [
+   {
+    "id": "wa_east_mcmillan_spire_west_ridge",
+    "name": "West Ridge / Southwest Face",
+    "peak": "East McMillan Spire",
+    "area_id": "wa_east_mcmillan_spire",
+    "discipline": "mountaineering",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 7992,
+    "overview": "East McMillan Spire (7,992 ft) is the lower, eastern summit of the McMillan Spires, twin granite towers just 0.14 mile apart in the Southern Pickets, North Cascades National Park. It sits directly across a low-fifth-class connecting ridge from its taller twin, West McMillan Spire (8,004 ft), and the…",
+    "approach": "From SR 20 near Newhalem, park at the Goodell Creek Group Campground (~600 ft) just east of Goodell Creek. The climbers' path starts behind a large boulder at the back of the campground and climbs steeply north through forest, gaining a timbered ridge crest around 3,200 ft within the first 1.5-2 mil…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_ridge_4",
+    "name": "East Ridge",
+    "peak": "Inspiration Peak",
+    "area_id": "wa_inspiration_peak",
+    "discipline": "mountaineering",
+    "grade": "IV, 5.9",
+    "high_point_ft": 7891,
+    "overview": "Widely regarded as one of the best rock routes in the Picket Range and among Fred Beckey's favorite North American climbs. First climbed by Fred Beckey, Dave Collins, and Ed Cooper in October 1958 (weekend of Oct 5), on a second attempt at the then-unclimbed east ridge. The route starts at the base …",
+    "approach": "This route shares the Goodell Creek trailhead and the same long approach as the West Ridge/South Face routes: the Goodell Creek Trail runs ~4 easy miles along the creek from the trailhead (near the group campground west of Newhalem, off SR-20) to about 1,600 ft, where the last reliable water is foun…",
+    "camps": [
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The base camp for the whole Southern Pickets and the one this route is built around: parties sleep here, climb, and come back to it, so plan two nights rather than moving camp. It sits about 400 ft below the 6,200 ft sad…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_twin_needle_south_route",
+    "name": "South Route",
+    "peak": "East Twin Needle",
+    "area_id": "wa_east_twin_needle",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.10a",
+    "high_point_ft": 7868,
+    "overview": "East Twin Needle (7,868 ft) is the eastern and slightly lower of the Twin Needles pinnacles in the Southern Pickets, 0.55 mi west of Mount Terror and just east of its taller sister summit, West Twin Needle (7,936 ft). Both needles were first climbed together on August 17, 1932 by William Degenhardt,…",
+    "approach": "Start at the Goodell Creek Cross-Country Zone Access Trailhead off SR-20 near milepost 119 (elev. ~600'). Follow the Goodell Creek Trail, an old forestry roadbed running through open forest along Goodell Creek, for roughly 4-4.5 miles. Near the trail's end, leave the maintained tread at a large cair…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Crescent Creek Basin (Chopping Block Camp)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Established bivy sites on the saddle below Mount Terror, used as base camp for both Twin Needles; talus/scree basin below the south-facing summit gullies."
+     }
+    ]
+   },
+   {
+    "id": "wa_east_twin_needle_thread_of_ice",
+    "name": "Thread of Ice",
+    "peak": "East Twin Needle",
+    "area_id": "wa_east_twin_needle",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": null,
+    "overview": "A 1,200-foot mixed snow/ice/rock couloir splitting the north side of the Twin Needles, first climbed in June 2009.",
+    "approach": "Approached from the north side of the Twin Needles rather than the standard Crescent Creek Basin/Eye Col south approach; specific trailhead-to-base beta beyond the first-ascent account has not been published.",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_frenzel_spitz_south_route",
+    "name": "South Route",
+    "peak": "Frenzel Spitz",
+    "area_id": "wa_frenzel_spitz",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 7440,
+    "overview": "Frenzel Spitz (7,440 ft) is the smallest and most remote of the three-summit Crescent Creek Spires cluster in the Southern Pickets, tucked directly beneath the north face of Ottohorn on the ridge connecting the Southern and Northern Pickets. Because it sits off the main crest and is only reachable a…",
+    "approach": "Start at the Goodell Creek trailhead (~600 ft, off Hwy 20 near Newhalem, North Cascades NP/Ross Lake NRA). Follow the old roadbed/climbers' path paralleling Goodell Creek for about 4 miles, gaining only ~1,000 ft, to a junction around 1,700 ft marked by a stone/rock arrow, post, and large cairn — th…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Terror Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5700,
+      "notes": "Past the creek the boot path turns relentlessly steep, gaining roughly 4,000-4,700 ft in well under three horizontal miles through old-growth and brush; expect …"
+     }
+    ]
+   },
+   {
+    "id": "wa_himmelhorn_southeast_route",
+    "name": "Southeast Route",
+    "peak": "Himmelhorn",
+    "area_id": "wa_himmelhorn",
+    "discipline": "alpine",
+    "grade": "Grade IV, 5.8",
+    "high_point_ft": 7880,
+    "overview": "Himmelhorn (originally Himmelgeisterhorn, \"Horn of the Sky Spirit\") is one of the most sought-after summits of the Southern Pickets, sitting on the crest between Ottohorn/Frenzel Spitz to the west and Twin Needles/Mount Terror to the east, with the small Mustard Glacier draped on its north side. It …",
+    "approach": "From the Goodell Creek Campground/Trailhead on SR 20 just west of Newhalem (~600 ft), follow the old decommissioned logging roadbed along the true left (south) side of Goodell Creek. This grassy/gravel roadbed is flat and easy hiking for roughly 4 to 4.5 miles, gaining only a few hundred feet to abo…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_inspiration_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Inspiration Peak",
+    "area_id": "wa_inspiration_peak",
+    "discipline": "mountaineering",
+    "grade": "III, 5.7",
+    "high_point_ft": 7891,
+    "overview": "The original 1940 first-ascent line, climbed by teenage brothers Fred and Helmy Beckey on August 29, 1940 — one of the routes Beckey later named among his 100 favorite North American climbs. From a moat crossing at the toe of the ridge, about 1,300 vertical feet of sustained 5.6/5.7 climbing follows…",
+    "approach": "Park at the Goodell Creek trailhead/group campground just west of Newhalem off SR-20 and pick up the Goodell Creek Trail. The first ~4 miles follow an old streamside roadbed/trail at easy grades along Goodell Creek (roughly 500 to 1,600 ft), crossing the creek and passing the last reliable flowing w…",
+    "camps": [
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5800,
+      "notes": "This is the standard base camp for the whole Southern Pickets and a genuinely comfortable one — a small flat gravelly basin with flowers, running water and a full view of the range, sitting about 400 ft below the notch i…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "From the notch at the top of the rib, drop onto the snow ramp running down the far side, which is an easy descent while it still holds snow and turns into loose…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_mac_spire_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Little Mac Spire",
+    "area_id": "wa_little_mac_spire",
+    "discipline": "alpine",
+    "grade": "Grade II-III, 5.4",
+    "high_point_ft": 7680,
+    "overview": "Little Mac Spire is a minor rock pinnacle in the Southern Pickets, immediately adjacent to East McMillan Spire within the McMillan Spires group, North Cascades National Park. It is rarely climbed as a stand-alone objective — most ascents happen when parties already engaged with the McMillan Spires o…",
+    "approach": "From the Upper Goodell Creek Group Campground trailhead (end of the short Goodell Creek Road spur off the North Cascades Highway near Newhalem, ~600 ft), follow the unmaintained but well-trodden Goodell Creek climbers' trail, which runs along an old overgrown logging road bed paralleling Goodell Cre…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mcmillan_spire_west_southwest_ridge",
+    "name": "Southwest Ridge",
+    "peak": "McMillan Spire (West)",
+    "area_id": "wa_mcmillan_spire_west",
+    "discipline": "alpine",
+    "grade": "5.8-",
+    "high_point_ft": 8004,
+    "overview": "A sustained six-pitch 5.8- alpine rock line up West McMillan Spire's southwest ridge, harder and more technical than the standard West Ridge scramble but sharing the same long approach via Terror Basin and the Terror Glacier.",
+    "approach": "Identical to the West Ridge approach: Goodell Creek trailhead to Terror Basin over the 6,200' notch, then traverse benches/slabs to the glacial lake outlet and up slabs onto the Terror Glacier. From there, continue to the east end of the Terror Glacier to reach the base of the southwest ridge (rathe…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mcmillan_spire_west_west_ridge",
+    "name": "West Ridge / Southwest Approach",
+    "peak": "McMillan Spire (West)",
+    "area_id": "wa_mcmillan_spire_west",
+    "discipline": "mountaineering",
+    "grade": "Grade II, 4th class (3rd class below)",
+    "high_point_ft": 8004,
+    "overview": "West McMillan Spire is the taller of the twin McMillan Spires and, by Southern Picket standards, a relatively attainable summit — most parties treat it as their introduction to the range. The technical climbing itself is moderate (a snow gully to a 7,200 ft col between Inspiration Peak and West McMi…",
+    "approach": "From the Goodell Creek (Upper Group Campground) trailhead just east of Goodell Creek Campground off SR-20 near Newhalem, pick up the unsigned climbers'-path (no trail number — this is a boot path, not a maintained Park trail) that starts behind a large boulder near the campground. There is reliable …",
+    "camps": [
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5800,
+      "notes": "The planned camp for this route and effectively the only one — a flat gravelly basin roughly 400 ft below and north of the 6,200 to 6,350 ft notch that the approach crosses. Comfortable ground, water at hand, and a direc…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_degenhardt_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Mount Degenhardt",
+    "area_id": "wa_mount_degenhardt",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 8107,
+    "overview": "Mount Degenhardt (8,107 ft) is a remote Southern Pickets summit at the north end of The Barrier, between Mount Terror and Inspiration Peak, with the Terror Glacier on its southeast flank. Named for William Degenhardt, an early Cascades pioneer who made the first ascent in 1931 with Herbert Strandber…",
+    "approach": "Start at the Goodell Creek Trailhead (Goodell Creek Group Camp, ~500-600 ft) off SR-20 just west of Newhalem. The first stretch follows an old logging-road grade/climbers' path along Goodell Creek for a little over a mile before it narrows to a boot-beaten track. Roughly 1.5-2 miles in, near Roost C…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Chopping Block Saddle Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Follow the narrow crest north as the path merges into Stump Hollow, continuing to the flat gravel tent sites on the saddle east of the Chopping Block. Snowmelt …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_terror_north_face",
+    "name": "North Face / North Buttress",
+    "peak": "Mount Terror",
+    "area_id": "wa_mount_terror",
+    "discipline": "mountaineering",
+    "grade": "Grade III, 5.7",
+    "high_point_ft": 8151,
+    "overview": "Mount Terror is the highest peak of the savage Southern Pickets. Its north side is the serious side: a 2,500-foot wall of rock, snow, and broken glacier ice dropping into McMillan Cirque, one of the most remote and rarely-visited big walls in the North Cascades. By contrast the south side rises only…",
+    "approach": "From the Goodell Creek Group Camp trailhead (elev. ~600 ft, reached via the unpaved Goodell Creek Road that turns north off Highway 20 directly across from Newhalem Campground), follow the old abandoned roadbed/boot path northeast along Goodell Creek for roughly 4 to 4.5 miles — gentle grade, easy w…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Terror Basin bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Small flat gravelly basin just below the notch with running water; NPS caps overnight parties here at ~6, so book ahead in peak season."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_terror_southeast_face",
+    "name": "East Ridge",
+    "peak": "Mount Terror",
+    "area_id": "wa_mount_terror",
+    "discipline": "alpine",
+    "grade": "Grade III-IV, 5.6",
+    "high_point_ft": 8151,
+    "overview": "This is Mount Terror's East Ridge — in practice, most parties only climb it when linking the full Southern Pickets traverse (Inspiration Peak → the McMillan Spires → Terror → Degenhardt, or the reverse) rather than as a stand-alone objective. From Crescent Creek Basin it climbs slabs up to the narro…",
+    "approach": "From the Goodell Creek trailhead off SR-20 near Newhalem, follow the old roadbed and Terror Basin climbers' path (~4 miles, then a steep, cairned side trail) to the 5,800' Terror Basin camp, then continue over the roughly 6,400' Chopping Block col into Crescent Creek Basin. The saddle between Terror…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_terror_stoddard_buttress",
+    "name": "Stoddard Buttress",
+    "peak": "Mount Terror",
+    "area_id": "wa_mount_terror",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.8",
+    "high_point_ft": 8151,
+    "overview": "A left-trending, more aesthetic variation of the original 1961 North Buttress, climbing thousands of feet of low-fifth to 5.8 rock up the buttress crest between McMillan Cirque and the summit, finishing across two exposed knife-edge pitches.",
+    "approach": "Same as the North Buttress: Goodell Creek trailhead to Terror Camp in Crescent Creek Basin (~6,000 ft gain, ~7-7.5 hrs), then on the climbing day cross the Ottohorn-Himmelhorn col and descend the Mustard Glacier to the base of the north face (2-3 hrs from camp). Stoddard's original approach used a t…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_terror_west_ridge",
+    "name": "West Ridge",
+    "peak": "Mount Terror",
+    "area_id": "wa_mount_terror",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.6",
+    "high_point_ft": 8151,
+    "overview": "The technically easiest and most-traveled route to Terror's summit: a steep, loose gully leads to the low notch between Terror and The Rake, followed by about 100 ft of low-5th climbing and roughly 250 ft of 3rd/4th-class scrambling to the true summit.",
+    "approach": "From Goodell Creek trailhead, follow the old roadbed ~4.5 miles, cross Terror Creek, and climb a steep climber's track (pink flagging, moss-covered cliffs) gaining roughly 1,600 ft to reach Crescent Creek Basin; total approach elevation gain to basecamp is nearly 6,000 ft.",
+    "camps": [
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The usual first night for parties heading to Terror, about 400 ft below the 6,200 ft saddle at the top of the Goodell Creek boot path. It is not the camp you climb Terror from — from here you still have to traverse and c…"
+     },
+     {
+      "name": "Chopping Block saddle camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The saddle on the Chopping Block ridge overlooking Crescent Creek Basin, and the camp parties rate most highly on this side of the range — an open grandstand on the Southern Pickets. It is a dry, exposed perch, so the tr…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "The working camp for Terror, in the basin under the peak. Published camps sit between roughly 6,000 and 6,200 ft — there is talk among parties of a named 'Crescent Camp' that several have gone looking for and not found, …"
+     }
+    ]
+   },
+   {
+    "id": "wa_ottohorn_southeast_route",
+    "name": "Southeast Route",
+    "peak": "Ottohorn",
+    "area_id": "wa_ottohorn",
+    "discipline": "alpine",
+    "grade": "Grade III-IV, 5.7",
+    "high_point_ft": 7840,
+    "overview": "The Ottohorn is a slender granite spire in the Southern Pickets, rising directly across the Ottohorn-Himmelhorn col from its larger neighbor Himmelgeisterhorn, deep in North Cascades National Park's Crescent Creek Basin. It was first climbed on September 10, 1961 by Ed Cooper, Glen Denny, Joan Firey…",
+    "approach": "From the Goodell Creek trailhead (~600 ft, reached via the gravel road that forks off Hwy 20 across from Newhalem and dead-ends at a gravel pit — there's parking but no trailhead sign), follow the old abandoned logging roadbed paralleling the true-left/east bank of Goodell Creek. The first ~1.5 mile…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_ottohorn_west_ridge",
+    "name": "West Ridge",
+    "peak": "Ottohorn",
+    "area_id": "wa_ottohorn",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7840,
+    "overview": "A 2017 first-ascent line up Ottohorn's west ridge, climbed during the same outing that established two nearby new routes ('Beep' and 'Honk') in the Southern Pickets. Its grade, pitch count and length are not recorded.",
+    "approach": "There is no trail to this peak; the approach is the trip. From SR 20 just west of Newhalem, turn north opposite the North Cascades Visitor Center entrance road, go left at the immediate T-junction, past a gravel quarry, then right and uphill on a narrow but well-graded gravel road to the signed Good…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_plan_9_from_outer_space",
+    "name": "Plan 9 from Outer Space",
+    "peak": "Ed Wood Memorial Buttress",
+    "area_id": "wa_ed_wood_memorial_buttress",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 7840,
+    "overview": "A long, moderate alpine rock line up the right-edge buttress of \"The Blob,\" the rock formation just north of the Himmelhorn in the Southern Pickets, finishing across the exposed \"Bela Lugosi Traverse\" and up a summit dihedral.",
+    "approach": "Inspiration Peak shares the same approach as West McMillan Spire: from Goodell Creek Campground, an unmaintained path climbs the Goodell Creek valley for roughly 4 to 4.5 miles before a steep, brushy climbers' track gains about 1,500 feet in under half a mile to reach the alpine notch above Terror B…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face_5",
+    "name": "South Face",
+    "peak": "Inspiration Peak",
+    "area_id": "wa_inspiration_peak",
+    "discipline": "mountaineering",
+    "grade": "III, 5.8",
+    "high_point_ft": 7891,
+    "overview": "The most direct line up Inspiration Peak: about 600 ft (4 pitches) of clean rock, reached by crossing the glacier to a small buttress under the south face. Climb up and right to a right-trending ramp, belay below a corner system, then trend up and left to connect with the obvious 'Great Gash' — a ch…",
+    "approach": "Park at the small pullout just before Goodell Creek Campground (~600 ft) and pick up the Goodell Creek Trail heading north from the highway 20 corridor. The first ~3.75-4 miles follow an old, gently-graded forest roadbed along Goodell Creek — brushy and with some downed logs in the first mile, and c…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_chopping_block_south_route",
+    "name": "South Route",
+    "peak": "The Chopping Block",
+    "area_id": "wa_the_chopping_block",
+    "discipline": "alpine",
+    "grade": "Grade II, 5.5",
+    "high_point_ft": 6819,
+    "overview": "Officially \"Pinnacle Peak\" on USGS maps, but almost universally called The Chopping Block for its distinctive squarish, blocky summit block. It sits at the south end of the Barrier Ridge in the Southern Pickets, North Cascades National Park, dividing Terror Creek Basin from Crescent Creek Basin, and…",
+    "approach": "Drive SR 20 to Newhalem, which is reachable year-round from the west (Marblemount/Concrete) since the seasonal highway closure gate sits farther east near Ross Dam/Diablo. Park at the Goodell Creek trailhead on the north side of SR 20, across from Newhalem Campground (take the left just past crossin…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Stump Hollow",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Open, gentle slabby/heather basin between the Barrier and Chopping Block ridge — the standard high camp for the South Route."
+     }
+    ]
+   },
+   {
+    "id": "wa_the_pyramid_picket_south_route",
+    "name": "South Route",
+    "peak": "The Pyramid",
+    "area_id": "wa_the_pyramid_picket",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.6",
+    "high_point_ft": 7920,
+    "overview": "The Pyramid is a compact, seldom-visited summit on the crest of the Southern Pickets, set on the ridge between Mount Degenhardt to the west and Inspiration Peak to the east. At roughly 7,920 ft it is the shortest of the range's named summits, overshadowed by its 8,000-ft-plus neighbors, and is almos…",
+    "approach": "From the Goodell Creek trailhead (~600 ft elevation, an unsigned pullout on an unpaved spur road off SR-20 directly across from Newhalem/Goodell Creek Campground), the climbers' trail parallels Goodell Creek for an easier 4.5 miles before a punishing 2.5-mile, ~4,700 ft push to treeline in Terror Ba…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_rake_traverse_route",
+    "name": "Ridge Traverse Route",
+    "peak": "The Rake",
+    "area_id": "wa_the_rake",
+    "discipline": "alpine",
+    "grade": "IV, 5.9",
+    "high_point_ft": 7869,
+    "overview": "The Rake is a serrated, ~7,869 ft summit in the Southern Pickets, on the ridge crest between Mount Terror and the McMillan/Himmelhorn group above upper Crescent Creek Basin. Its jagged, saw-toothed skyline — visible from the Terror Basin/Crescent Creek approach — gives the peak its name. The only do…",
+    "approach": "From the Goodell Creek Trailhead off the North Cascades Highway (SR-20) near Newhalem, follow the Goodell Creek climbers' path, crossing two branches of the creek before a steep, cairned ascent (roughly 4 miles in) into the Terror Creek drainage. From there, either climb the steep Terror Basin route…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Terror Creek Basin Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Established campsite about 400 ft below a 6,200-ft saddle, with views of The Barrier, Degenhardt, Pyramid and the McMillan Spires."
+     },
+     {
+      "name": "Crescent Creek Basin High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "High camp on the south side of Mount Terror, reached via an easy snow-ramp descent off the Barrier notch; also where enchainment parties arrive via the Otto-Him…"
+     }
+    ]
+   },
+   {
+    "id": "wa_west_twin_needle_south_route",
+    "name": "South Route",
+    "peak": "West Twin Needle",
+    "area_id": "wa_west_twin_needle",
+    "discipline": "alpine",
+    "grade": "Grade III, 5.7",
+    "high_point_ft": 7936,
+    "overview": "West Twin Needle (7,936 ft) is the taller, western spire of the Twin Needles, a pair of rock pinnacles in the Southern Pickets immediately west of Mount Terror. Its slightly lower twin to the east (about 7,840+ ft) is the more technically serious of the pair; West Twin Needle carries easier class 3-…",
+    "approach": "Start at the Goodell Creek Cross-Country Zone trailhead off SR-20 just west of Newhalem (this is the drive-in endpoint). From the trailhead, follow the climbers' path up the old, overgrown Goodell Creek logging-road corridor through open forest for roughly 3.5 miles; beyond the fork where the mainta…",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     },
+     {
+      "name": "Crescent Creek Basin camp (below Mt. Terror)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Established high camp on a flat bench below Mount Terror with meltwater from two overhead slab streams; the basin runs 6,050–6,440 ft."
+     }
+    ]
+   },
+   {
+    "id": "wa_west_twin_needle_west_slope",
+    "name": "West Slope - East Arete (Original Route)",
+    "peak": "West Twin Needle",
+    "area_id": "wa_west_twin_needle",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 7936,
+    "overview": "The peak's original 1932 line: a moderate class 2 scramble up the west slope from the Himmelhorn-West Twin Needle notch, most often climbed today as one link in the multi-day Southern Picket enchainment/traverse; continuing off the summit onto the class 3 east arete toward East Twin Needle is part o…",
+    "approach": "Same general Southern Pickets approach as the South Route — via Goodell Creek, The Barrier, and Crescent Creek Basin — continuing to the notch/saddle between Himmelhorn and West Twin Needle rather than climbing directly from the basin.",
+    "camps": [
+     {
+      "name": "Goodell Creek Campground, roadhead staging",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 500,
+      "notes": "The pavement-level staging camp rather than a mountain camp, and most parties use it to get a few hours of sleep before starting the approach in the dark. Bear boxes, tables and vault toilets mean food and rubbish can be…"
+     },
+     {
+      "name": "Old Goodell Creek roadbed near the Terror Creek crossing",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2000,
+      "notes": "The roughly four miles of overgrown roadbed to the cairn near the Terror Creek crossing is walking rather than climbing, and a party leaving the car late often ends the first day somewhere near here. That is defensible, …"
+     },
+     {
+      "name": "Stump Hollow bench",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Stump Hollow is the open slabby heather ground at timberline between the Barrier ridge and the Chopping Block, and the first place after the forest where a tent actually goes down comfortably. Parties heading for the nor…"
+     },
+     {
+      "name": "Terror Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "The standard base for the south side of the range, and the place the Terror Creek climbers' path is trying to reach. From the flat gravel the basin runs up to a notch on its eastern rim near 6,200 ft, and the Chopping Bl…"
+     },
+     {
+      "name": "Crescent Creek Basin camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6050,
+      "notes": "Crescent Creek Basin sits on the north side of the crest and is what you cross the Barrier for, reached over the roughly 6,400 ft saddle northeast of the Chopping Block. It is the working base for East and West McMillan …"
+     },
+     {
+      "name": "High bivouacs at the western end of the crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The western summits — the Twin Needles, Ottohorn, Himmelhorn and Frenzel Spitz — are far enough along the crest that a party working from a basin camp faces a very long day, so some take a bivouac high on the traverse in…"
+     }
+    ]
+   }
+  ]
+ }
+]

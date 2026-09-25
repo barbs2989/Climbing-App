@@ -1,0 +1,841 @@
+{
+ "zones": [
+  {
+   "zone": "northern-pickets",
+   "overnightPermit": {
+    "what": "North Cascades NP backcountry permit (cross-country zone), fee per person, not free",
+    "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center. Hannegan-side permits can also be picked up at the Glacier Public Service Center on its limited summer days.",
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+   }
+  },
+  {
+   "zone": "olympics-remaining",
+   "overnightPermit": {
+    "what": "Olympic NP wilderness camping permit, nightly fee per person",
+    "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. There are no self-issue permits at trailheads.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   }
+  },
+  {
+   "zone": "olympus",
+   "overnightPermit": {
+    "what": "Olympic NP wilderness camping permit, quota on the Hoh River Trail, nightly fee per person",
+    "where": "Reserve in advance on Recreation.gov, by phone, or in person at a Wilderness Information Center. Glacier Meadows and the Hoh River camps are quota sites.",
+    "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+   }
+  }
+ ],
+ "routes": [
+  {
+   "id": "wa_crooked_thumb_peak_east_face",
+   "main": [
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "onRoute": [
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [
+    {
+     "name": "Crooked Thumb Glacier moraine camp",
+     "type": "bivy",
+     "capacity": "A few tents on a narrow moraine",
+     "water": "Snowmelt and glacier melt only",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Narrow lateral moraine at the southern edge of the Crooked Thumb Glacier, reached from Perfect Pass across the Challenger Glacier and down through the notch west of Challenger. The base camp for Crooked Thumb and Phantom from the north. Fully exposed to weather.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Base is the Crooked Thumb Glacier moraine from the Hannegan side, which the list lacked, so it is added; Perfect Pass is the night before."
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "main": [
+    "Crooked Thumb Glacier lateral moraine",
+    "Perfect Pass"
+   ],
+   "onRoute": [
+    "Copper Creek / Boundary Camp",
+    "Whatcom Camp",
+    "Ledge at 7,800 ft on the peak's ridge"
+   ],
+   "drop": [
+    "West Challenger Notch / Crooked Thumb Glacier moraine camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Moraine is the base; the moraine waypoint duplicates the moraine bivy entry."
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "main": [
+    "Luna Cirque high camp (near Lousy Lake)"
+   ],
+   "onRoute": [
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor",
+    "Whatcom Pass",
+    "Perfect Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Low confidence: south route base taken from the route's own waypoints; the Whatcom Pass and Perfect Pass waypoints duplicate the listed camps."
+  },
+  {
+   "id": "wa_luna_glacier",
+   "main": [
+    "Luna Cirque floor",
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Luna Creek approach from Luna Camp into the cirque; the cirque floor camp is assumed as the base for the east-face glacier."
+  },
+  {
+   "id": "wa_luna_peak_southeast_slopes",
+   "main": [
+    "Access Creek headwaters basin",
+    "Luna Camp (Big Beaver Trail)"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Luna Camp",
+    "Access Creek Basin"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Waypoint entries duplicate the two bivy entries."
+  },
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "main": [
+    "Perfect Pass"
+   ],
+   "onRoute": [
+    "Boundary Camp",
+    "Copper Creek camp",
+    "Whatcom Pass camp"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Perfect Pass is the standard high camp; valley camps kept for the Whatcom Pass approach."
+  },
+  {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "main": [],
+   "onRoute": [],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [
+    {
+     "name": "Pickell Pass",
+     "type": "bivy",
+     "capacity": "A few tents",
+     "water": "Snowmelt",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Open camp at the pass at the foot of the ridge, used by traverse parties who climb Crowder from Wild Lake and descend this ridge to the pass.",
+     "role": "main"
+    },
+    {
+     "name": "Wild Lake",
+     "type": "camp",
+     "capacity": "A few tents",
+     "water": "Lake",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Remote lake below the southwest flank of Crowder, the start of the normal line up the peak before continuing down this ridge.",
+     "role": "onRoute"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Ridge is a traverse descent from Crowder to Pickell Pass; none of the listed camps serve it. Pickell Pass and Wild Lake added without elevation."
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "main": [],
+   "onRoute": [
+    "Terror Basin Camp",
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [
+    {
+     "name": "Wild Lake",
+     "type": "camp",
+     "capacity": "A few tents",
+     "water": "Lake",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Remote lake at the foot of the southwest flank, where the normal line up the peak begins. Reached only on multi-day traverses of the range.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Wild Lake added as base without elevation; Terror Basin kept for the southern corridor; low confidence on corridor camps."
+  },
+  {
+   "id": "wa_mount_fury_east_mongo_ridge",
+   "main": [],
+   "onRoute": [
+    "Luna Camp, Big Beaver Trail",
+    "Luna Col bivy, Luna cross-country zone"
+   ],
+   "drop": [
+    "Beaver Pass Camp",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [
+    {
+     "name": "Access Creek headwaters basin",
+     "type": "camp",
+     "capacity": "Several tents on gravel and boulders",
+     "water": "Creek and snowmelt",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Open basin at the top of the Access Creek bushwhack above Luna Camp. The usual first night before climbing past Luna Col to East Fury.",
+     "role": "main"
+    },
+    {
+     "name": "East Fury summit bivy",
+     "type": "bivy",
+     "elev": 8280,
+     "capacity": "One or two tents on flat rock",
+     "water": "Snow only",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Flat rock on the summit of East Fury used as the second night. The long descent to the base of the ridge starts here, and the bivy is often left in place for the return.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "Approach goes over East Fury and descends about 4,000 ft to the ridge base; both real camps were missing and are added."
+  },
+  {
+   "id": "wa_mount_fury_west_west_ridge",
+   "main": [
+    "Luna Col bivy, Luna cross-country zone",
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [
+    "Access Creek headwaters basin",
+    "Luna Cirque floor"
+   ],
+   "drop": [
+    "Beaver Pass Camp",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Camp",
+    "Luna Col"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Luna Col and Luna Camp waypoints duplicate the bivy entries."
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "main": [
+    "Thirtynine Mile Creek Camp"
+   ],
+   "onRoute": [
+    "Saddle camp below Point 6690, South Ridge"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Base at Thirtynine Mile Creek Camp; Luna Camp is farther up the valley."
+  },
+  {
+   "id": "wa_mount_prophet_southwest_rib",
+   "main": [
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route text names Luna Camp as base; not independently confirmed."
+  },
+  {
+   "id": "wa_north_ridge_2",
+   "main": [
+    "Whatcom Camp, Brush Creek below Whatcom Pass"
+   ],
+   "onRoute": [
+    "Twin Rocks and Stillwell Camps, Little Beaver"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Whatcom Camp at the pass is the base; Little Beaver camps kept for the east approach."
+  },
+  {
+   "id": "wa_phantom_peak_south_route",
+   "main": [
+    "Luna Cirque floor",
+    "Crooked Thumb Glacier moraine high camp"
+   ],
+   "onRoute": [
+    "Luna Camp, Big Beaver Trail",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "drop": [
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Two approaches: Luna Creek to the cirque, or Hannegan to the moraine camp; the Luna Camp waypoint duplicates the bivy entry."
+  },
+  {
+   "id": "wa_phantom_peak_west_ridge",
+   "main": [
+    "Easy Ridge bivouac ground below Easy Peak"
+   ],
+   "onRoute": [
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [
+    {
+     "name": "Crooked Thumb Glacier moraine camp",
+     "type": "bivy",
+     "capacity": "A few tents on a narrow moraine",
+     "water": "Snowmelt and glacier melt only",
+     "permit": "North Cascades NP backcountry permit (cross-country zone)",
+     "notes": "Moraine camp at the southern edge of the Crooked Thumb Glacier, below Ghost Peak, reached from Perfect Pass across the Challenger Glacier. The bivy for the west ridge, which starts from a 6,100 ft saddle below. Fully exposed to weather.",
+     "role": "main"
+    }
+   ],
+   "overnightPermit": null,
+   "note": "First-ascent style two-day approach: Easy Ridge night, then a bivy under Ghost Peak on the Crooked Thumb Glacier side (added)."
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "main": [
+    "Challenger Arm camp",
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "onRoute": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge"
+   ],
+   "drop": [
+    "Luna Col bivy, Luna cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor",
+    "Boundary Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Route text uses the Ross Lake approach, so Challenger Arm via Wiley Ridge; Perfect Pass was the first-ascent base; the Boundary Camp waypoint is on the Hannegan side."
+  },
+  {
+   "id": "wa_poltergeist_pinnacle_north_route",
+   "main": [
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "onRoute": [
+    "Easy Ridge bivouac ground below Easy Peak"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor",
+    "Perfect Pass",
+    "Perfect Pass (high camp)"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Perfect Pass via Easy Ridge; both Perfect Pass waypoints duplicate the bivy entry."
+  },
+  {
+   "id": "wa_ridge_traverse_from_east_fury",
+   "main": [
+    "Luna Col bivy, Luna cross-country zone",
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Beaver Pass Camp",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard Access Creek to Luna Col line for East Fury; Access Creek basin is not in the list."
+  },
+  {
+   "id": "wa_south_ridge_2",
+   "main": [
+    "Luna Col bivy, Luna cross-country zone",
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [],
+   "drop": [
+    "Beaver Pass Camp",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Luna Col and Luna Camp; Access Creek basin is also used but is not listed."
+  },
+  {
+   "id": "wa_south_spur",
+   "main": [
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "onRoute": [
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Whatcom Camp, Brush Creek below Whatcom Pass"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Perfect Pass base via Easy Ridge or the low line from Whatcom Pass."
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "main": [
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger"
+   ],
+   "onRoute": [
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor",
+    "Bivy beyond Easy Peak"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "First-ascent pattern: bivy near Easy Peak, then a bivy on the south side of the Challenger ridge; the waypoint duplicates the Easy Ridge entry."
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "main": [
+    "Luna Col bivy, Luna cross-country zone",
+    "Luna Camp, Big Beaver Trail"
+   ],
+   "onRoute": [
+    "Luna Cirque floor"
+   ],
+   "drop": [
+    "Beaver Pass Camp",
+    "Perfect Pass, Perfect Pass cross-country zone",
+    "Whatcom Camp, Brush Creek below Whatcom Pass",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Swiss is done only as part of crest traverses; Luna Col base assumed from the Big Beaver approach text; low confidence."
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "main": [
+    "Whatcom Camp, Brush Creek below Whatcom Pass"
+   ],
+   "onRoute": [
+    "Graybeal Camp",
+    "Perfect Pass, Perfect Pass cross-country zone"
+   ],
+   "drop": [
+    "Luna Camp, Big Beaver Trail",
+    "Beaver Pass Camp",
+    "Luna Col bivy, Luna cross-country zone",
+    "Twin Rocks and Stillwell Camps, Little Beaver",
+    "Challenger Arm camp",
+    "Eiley Lake benches, lower Wiley Ridge",
+    "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+    "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+    "Easy Ridge bivouac ground below Easy Peak",
+    "Tapto Lakes cross-country zone",
+    "Luna Cirque floor"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Whatcom Camp base; Graybeal is on the Brush Creek trail below."
+  },
+  {
+   "id": "wa_chimney_peak_standard",
+   "main": [
+    "Pyrites Creek — where the Chimney Peak approach leaves the trail"
+   ],
+   "onRoute": [
+    "O'Neil Creek Camp"
+   ],
+   "drop": [
+    "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "Elip Creek and the lower North Fork Quinault camps",
+    "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+    "O'Neil Pass and the upper Duckabush shelf",
+    "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass",
+    "Pyrites Creek Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Pyrites Creek base per the approach; the Pyrites Creek Camp waypoint duplicates it; medium confidence."
+  },
+  {
+   "id": "wa_mount_la_crosse_scramble",
+   "main": [
+    "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain"
+   ],
+   "onRoute": [
+    "Five Mile Camp",
+    "Ten Mile Camp"
+   ],
+   "drop": [
+    "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "Elip Creek and the lower North Fork Quinault camps",
+    "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+    "O'Neil Pass and the upper Duckabush shelf",
+    "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Lake LaCrosse basin is the base from the Duckabush."
+  },
+  {
+   "id": "wa_mount_lawson_standard",
+   "main": [
+    "Sixteen Mile Camp — the base directly under Mount Lawson"
+   ],
+   "onRoute": [
+    "Wolf Bar",
+    "Halfway House",
+    "Elip Creek Camp"
+   ],
+   "drop": [
+    "Elip Creek and the lower North Fork Quinault camps",
+    "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+    "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+    "O'Neil Pass and the upper Duckabush shelf",
+    "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Sixteen Mile base; route text also mentions Low Divide and the Skyline trail, so the exact line is uncertain; the Elip Creek group entry duplicates listed camps."
+  },
+  {
+   "id": "wa_white_mountain_olympics_scramble",
+   "main": [
+    "Honeymoon Meadows Camp",
+    "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain"
+   ],
+   "onRoute": [
+    "Diamond Meadows Camp"
+   ],
+   "drop": [
+    "Sixteen Mile Camp — the base directly under Mount Lawson",
+    "Elip Creek and the lower North Fork Quinault camps",
+    "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+    "O'Neil Pass and the upper Duckabush shelf",
+    "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Honeymoon Meadows from the Dosewallips; the Honeymoon Meadows group entry duplicates the waypoint."
+  },
+  {
+   "id": "wa_mount_olympus_blue_glacier",
+   "main": [
+    "Glacier Meadows",
+    "Snow Dome"
+   ],
+   "onRoute": [
+    "Elk Lake"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard route; Glacier Meadows base, Snow Dome for a shorter summit day."
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "main": [
+    "Glacier Meadows — the standard Blue Glacier base camp"
+   ],
+   "onRoute": [
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier"
+   ],
+   "drop": [
+    "Snow Dome high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Same Blue Glacier approach; the Snow Dome waypoint duplicates the bivy entry."
+  },
+  {
+   "id": "wa_mount_tom_scramble",
+   "main": [
+    "Glacier Meadows — the standard Blue Glacier base camp"
+   ],
+   "onRoute": [
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail"
+   ],
+   "drop": [
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+    "Elk Lake camp",
+    "Glacier Meadows high camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Glacier Meadows base; waypoints duplicate the bivy entries; Snow Dome is off this line."
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "main": [
+    "Glacier Meadows — the standard Blue Glacier base camp"
+   ],
+   "onRoute": [
+    "Olympus Guard Station",
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier"
+   ],
+   "drop": [
+    "Glacier Meadows"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard; the Glacier Meadows waypoint duplicates the bivy entry."
+  },
+  {
+   "id": "wa_olympus_summit_block_west_edge",
+   "main": [
+    "Glacier Meadows — the standard Blue Glacier base camp"
+   ],
+   "onRoute": [
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier"
+   ],
+   "drop": [
+    "Glacier Meadows Camp"
+   ],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Variation finish of the standard route."
+  },
+  {
+   "id": "wa_olympus_traverse",
+   "main": [
+    "Glacier Meadows — the standard Blue Glacier base camp",
+    "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier"
+   ],
+   "onRoute": [
+    "Lewis Meadows Camp, Hoh River trail",
+    "Elk Lake Camp, Hoh River trail"
+   ],
+   "drop": [],
+   "add": [],
+   "overnightPermit": null,
+   "note": "Standard approach; a Snow Dome camp suits the longer day."
+  }
+ ],
+ "misassigned": [
+  "wa_mount_crowder_northeast_ridge: every listed camp belongs to the Big Beaver, Hannegan or Wiley Ridge approaches; the ridge runs from Crowder down to Pickell Pass (added).",
+  "wa_mount_crowder_southwest_route: the Northern Pickets list does not include Wild Lake, the base for the southwest flank (added).",
+  "wa_mount_fury_east_mongo_ridge: the list lacks the Access Creek basin and East Fury summit bivy that the approach actually uses (added).",
+  "wa_poltergeist_pinnacle: the Boundary Camp waypoint is on the Hannegan side while the route text describes the Ross Lake approach."
+ ]
+}
