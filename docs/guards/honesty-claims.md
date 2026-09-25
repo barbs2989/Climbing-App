@@ -818,6 +818,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       — and requires `compatUnknown >= 3`. Widening `_cand` (a column arrives) is correct work, and
       the failure says so while pointing at the measurement, the standard `KNOWN` and
       `PARTIAL_ON_PURPOSE` are held to.
+    - **UPDATE (0209, 2026-09-25): THE COLUMNS ARRIVED, AND 6a WAS RE-DERIVED — IT FIRED EXACTLY AS
+      DESIGNED.** `profiles` gained `availability`, `avail_week` and `hiking_speed_ft_hr`
+      (`partners_near` and `PARTNER_COLS` return them), and `PartnerSearch` reads every row's
+      objectives in ONE batched `useObjectivesOfUsers` call and hands them in as `objIds`. 6a now
+      asserts BOTH halves, executing `_cand(p, objIds)`: a **complete** row scores (`_unk < 3`) and
+      a **bare** row still refuses (`_unk >= 3`). A third assertion requires the `!_objReady` gate
+      to precede the refusal: **an UNREAD objectives list must never score as zero shared
+      objectives** — the same failed-read-reads-as-empty class `check:read-failures` polices. The
+      threshold was NOT moved; the row was given the signals. Everything above about the refusal
+      being correct still holds for a climber who shares little.
     - **6b/6c test the LIFTED TEXT for two forbidden claims and a length, never for today's
       phrasing** — a guard pinned to one sentence forbids improving it, which this file records for
       `check:offline-claims`' `disclaimer-reworded`. And 6c exists because **a rule that only
