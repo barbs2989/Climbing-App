@@ -23,22 +23,22 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 
 const CASES = [
   { name: "consensus-bakes-F", file: CORE, expect: "fail",
-    find: '/ws),n:pool.length}', repl: '/ws)+"°F",n:pool.length}',
+    find: ':Math.round(mean),n:pool.length}', repl: ':Math.round(mean)+"°F",n:pool.length}',
     says: /buildConsensus stores tempF as string|chip reads|Fahrenheit figure survives/ },
   { name: "chip-does-not-convert", file: RD, expect: "fail",
-    find: '{p[0]==="tempF"?uTempU(cd.value):cd.value}</span>', repl: '{cd.value}</span>',
+    find: '{p[0]==="tempF"?uTempU(cd.value):p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>', repl: '{p[0]==="freezingFt"?uElev(cd.value):cd.value}</span>',
     says: /could not read the Temp chip|chip reads|metric chip/ },
   { name: "reportstats-bakes-F", file: CORE, expect: "fail",
     find: '["Temp",uTempU(cond.tempF)]', repl: '["Temp",cond.tempF+"°F"]',
     says: /Fahrenheit figure survives|still append a fixed/ },
   { name: "form-stores-what-was-typed", file: path.join(ROOT, "lib/LogAscent.jsx"), expect: "fail",
-    find: 'if(temp!=="")o.tempF=uTempIn(temp);', repl: 'if(temp!=="")o.tempF=Number(temp);',
+    find: 'var _t=uTempIn(temp);', repl: 'var _t=Number(temp);',
     says: /nothing calls uTempIn/ },
   { name: "form-seeds-raw-fahrenheit", file: path.join(ROOT, "lib/LogAscent.jsx"), expect: "fail",
     find: 'String(uTempN(x.cond.tempF))', repl: 'String(x.cond.tempF)',
     says: /seeds from raw tempF/ },
   { name: "label-is-fixed-text", file: path.join(ROOT, "lib/LogAscent.jsx"), expect: "fail",
-    find: '>{"TEMP "+(uImp()?"°F":"°C")+" (optional)"}</div>', repl: '>TEMP °F (optional)</div>',
+    find: '>{"TEMPERATURE "+(uImp()?"°F":"°C")}</div>', repl: '>TEMPERATURE °F</div>',
     says: /label is fixed text/ },
   // MUST STAY SILENT. The forecast prints a bare degree by design (#1567); only the climber's
   // own chip carries the scale letter, because that one is labelled just "Temp".
