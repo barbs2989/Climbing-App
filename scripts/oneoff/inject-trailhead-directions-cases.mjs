@@ -10,22 +10,22 @@
 // consolidation could have stranded. Cases 6 and 7 must stay SILENT — they are the two false
 // positives the counting method was chosen to avoid, and a guard that fired on either would be
 // telling authors to rewrite real trailhead prose or to delete a working control.
-// Cases 8-10 are section 7: the Approach tile's SOURCE. 8 is the real defect (the raw column
-// under a one-way label), 9 is the over-reach that halves unconditionally, and 10 must stay
-// SILENT -- the rule is about which source is read, not what the local is named.
+// Case 8 is section 7: the stat tiles (Elevation, Approach, To the peak) come back onto the
+// TRAILHEAD card. They were removed because TECH STATS already states them. Cases 9-10 guarded
+// the removed Approach tile's SOURCE and were retired with it.
 // Cases 11-13 are section 8: the PLANNER, the last reader on this page still on the raw column.
 // 11 is that revert, 12 must stay SILENT (a rename), and 13 edits lib/outing.js rather than the
 // app file -- an effDistKm that halves regardless of the recorded trip shape.
 //
 // CASE 13 IS WHY THESE ARE JUDGED ON THE GUARD'S OWN FAIL LINES AND NOT ON AN EXIT CODE. It
-// trips section 7 AND section 8, so a suite reading only the status would credit section 8 with
-// its neighbour's catch -- "an injection that produces a different failure is not a catch". Each
+// used to trip the old tile section AND section 8, so a suite reading only the status would credit
+// section 8 with its neighbour's catch -- "an injection that produces a different failure is not a catch". Each
 // case may name the text its own failure must carry, matched against FAIL lines only, and the
 // harness REFUSES any expectation that already appears in the clean run.
 //
 // IT ALSO FOUND A WEAKNESS IN THE GUARD RATHER THAN IN THE APP, which is what a suite is for:
-// section 8's point-to-point control was section 7's 30 km, and against that a shape-blind
-// halving still reads LONGER, so case 13 passed silently while section 7 correctly failed. The
+// section 8's point-to-point control was once 30 km, and against that a shape-blind halving still
+// reads LONGER, so case 13 passed silently while the old tile section correctly failed. The
 // control is 70 km now, between the halved and the full figure, and only then does the case fire.
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
@@ -55,8 +55,8 @@ const CASES = [
   },
   {
     name: "3. the coordinates drop off the surviving control",
-    find: '{copied?"Copied":lat.toFixed(5)+", "+lng.toFixed(5)}',
-    repl: '{copied?"Copied":"Copy"}',
+    find: '>{lat.toFixed(5)+", "+lng.toFixed(5)}</span>',
+    repl: '>Coordinates</span>',
     expect: "fail",
   },
   {
@@ -94,36 +94,18 @@ const CASES = [
   },
   {
     name: "7. SILENT: a handler-only button is still a control (no href to count)",
-    find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none"}}>Drive here</a>',
-    repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700}}>Drive here</button>',
+    find: '<a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Drive here</a>',
+    repl: '<button onClick={()=>window.open("https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng,"_blank")} style={{flex:"0 0 auto",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700}}>Drive here</button>',
     expect: "pass",
   },
   {
-    /* THE REAL HISTORICAL DEFECT. The tile is labelled "one way" and read the stored column,
-       which on 215 of the 335 differing WA routes holds the ROUND TRIP -- so the page printed
-       two different one-way approaches for one climb, this one and the TECH STATS tile. */
-    name: "8. the Approach tile reads the raw dist_km column again",
-    find: '  const _appKm=effDistKm(route);\n  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);',
-    repl: '  if(route.distKm!=null&&route.distKm>0)tiles.push(["Approach (one way)",uDist(route.distKm),C.green]);',
+    /* The stat tiles come back. TECH STATS already states the elevation and approach, and the
+       user asked for the TRAILHEAD card to carry only where it is and how to drive there. */
+    name: "8. the TRAILHEAD card prints an Elevation / Approach tile again",
+    find: '    {(dir&&!dup)?<div style={{fontSize:12.5,',
+    repl: '    <div><div>{uElev(2400)}</div><div>Elevation</div><div>Approach (one way)</div></div>\n    {(dir&&!dup)?<div style={{fontSize:12.5,',
     expect: "fail",
-  },
-  {
-    /* OVER-REACH IN THE OTHER DIRECTION, and the reason section 7 renders TWO fixtures. Halving
-       unconditionally satisfies the out-and-back assertion and is wrong for a recorded
-       point-to-point, which does not retrace its approach. A suite that only proved the guard
-       can fail would be satisfied by a rule that always halves. */
-    name: "9. the tile halves unconditionally, ignoring the recorded outing shape",
-    find: '  const _appKm=effDistKm(route);',
-    repl: '  const _appKm=(route.distKm!=null?route.distKm/2:null);',
-    expect: "fail",
-  },
-  {
-    /* SILENT. The rule is about which SOURCE the tile prefers, not what the local is called.
-       A guard pinned to the name would forbid an ordinary rename. */
-    name: "10. SILENT: the local is renamed, still reading effDistKm",
-    find: '  const _appKm=effDistKm(route);\n  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);',
-    repl: '  const _oneWayKm=effDistKm(route);\n  if(_oneWayKm!=null&&_oneWayKm>0)tiles.push(["Approach (one way)",uDist(_oneWayKm),C.green]);',
-    expect: "pass",
+    expectText: "the TRAILHEAD card prints stat tiles again",
   },
   {
     /* THE REAL DEFECT SECTION 8 EXISTS FOR. The planner was the last reader on this page still

@@ -105,7 +105,7 @@ const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "cr
    that list, which is why a crag Overview can never carry a drive control — see section 1. */
 const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, noCoord, cragOv, cragDup, cragPlan, gateOnly, itinOutback, itinPoint, rawKm100, rawKm70, estPoint;
+let plan, tilesProbe, noCoord, cragOv, cragDup, cragPlan, gateOnly, itinOutback, rawKm100, rawKm70, estPoint;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
@@ -122,27 +122,21 @@ try {
   // A seasonal gate with NO road status — the one shape that could have lost the gate when
   // TrailheadCard's own road line was dropped.
   gateOnly = render(ROUTE({ road: { name: "Probe River Road (FR 99)", seasonalGate: "Gated 1 Nov to 1 Jun" } }), "planner");
-  /* Section 7's pair. The tile is LABELLED "one way" and `dist_km` holds two conventions at
-     once, so a raw read prints a there-and-back total under a one-way label. TWO fixtures,
-     because a fix that simply HALVED would satisfy the first and fail the second: an outback
-     trip halves its itinerary total, a recorded `point` does not. */
+  // Section 7: every input the old stat tiles read -- pin elevation, a distance, a peak coordinate.
+  tilesProbe = render(ROUTE({ distKm: 10, approachLogistics: { trailhead: "Probe Trailhead", trailheadLat: LAT, trailheadLng: LNG, trailheadDirection: "From the highway, turn north.", peakLat: 48.7, peakLng: -121.1 } }), "planner");
+  // Section 8's outback fixture: its column holds the ROUND TRIP of a 31 mi each-way itinerary.
   itinOutback = render(ROUTE({ distKm: 100, itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
-  itinPoint = render(ROUTE({ distKm: 30, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
   /* Section 8's PAIRS: each fixture against a CONTROL identical but for the itinerary, which is
      the state effDistKm hands back untouched. The itinerary reaches the estimate through
      effDistKm and nothing else (gainCoversWholeOuting reads gain/loss, publishedIsWholeDay reads
      timing, sectionsCoveredByItinerary touches only the published-times block), which is what
      makes any movement attributable to this one change.
 
-     THE POINT-TO-POINT PAIR CARRIES ITS OWN STORED COLUMN, 70 rather than section 7's 30, AND
-     THAT NUMBER IS LOAD-BEARING -- the injection is what found it. Its itinerary totals 62 mi
-     (99.8 km), so a SHAPE-BLIND halving yields 49.9 km. Against a 30 km control that is still
-     LONGER, so the assertion below passed against exactly the over-reach it exists to reject
-     while section 7 correctly failed. A control BETWEEN the halved and the full figure separates
-     them: 99.8 > 70 only when the recorded trip shape is honoured.
-
-     Section 8 keeps its own fixture rather than widening section 7's, so a later edit to one
-     section's data cannot silently weaken the other's assertion. */
+     THE POINT-TO-POINT PAIR'S STORED COLUMN IS 70, AND THAT NUMBER IS LOAD-BEARING -- the
+     injection is what found it. Its itinerary totals 62 mi (99.8 km), so a SHAPE-BLIND halving
+     yields 49.9 km. Against a 30 km control that is still LONGER, so the assertion below passed
+     against exactly the over-reach it exists to reject. A control BETWEEN the halved and the full
+     figure separates them: 99.8 > 70 only when the recorded trip shape is honoured. */
   rawKm100 = render(ROUTE({ distKm: 100 }), "planner");
   rawKm70 = render(ROUTE({ distKm: 70 }), "planner");
   estPoint = render(ROUTE({ distKm: 70, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
@@ -268,39 +262,31 @@ else fail("a route with no trailhead coordinate says nothing about it");
 if (/Gated 1 Nov to 1 Jun/.test(text(gateOnly))) ok("a seasonal gate with no road status still reaches the screen");
 else fail("a route whose road has a seasonal gate and NO status renders the gate nowhere — it lost its only other render site");
 
-/* -- 7. the Approach tile is the ONE-WAY figure, not the stored column --------------------------
-   The tile says "Approach (one way)" while `dist_km` holds two conventions at once -- measured,
-   215 of the 335 WA routes where the two figures differ store the ROUND TRIP -- so a raw read
-   labelled a there-and-back total as a one-way walk, while the TECH STATS tile on the SAME route
-   already read effDistKm. One page, two different one-way approaches for one climb.
-
-   This asserts which SOURCE the tile prefers and settles NOTHING about the column, which
-   CLAUDE.md forbids normalising in bulk. NON-VACUITY: the tile must be on screen at all, or
-   "does not show the raw figure" passes against a card that renders no approach. */
-const approachTile = (html) => {
+/* -- 7. the TRAILHEAD card carries no stat tiles ---------------------------------------------
+   It used to print Elevation, "Approach (one way)" and a straight-line "To the peak" bearing above
+   its directions. The first two restated TECH STATS on the same page, and the user asked for them
+   gone so the card answers only WHERE the trailhead is and HOW to drive there. The fixture carries
+   every input those tiles read -- a placed Trailhead pin with an elevation, a distance, and a peak
+   coordinate -- so a tile that came back WOULD render here.
+   NON-VACUITY: the card must be found, and it must carry the coordinates, or "has no tile" passes
+   against a card that did not render at all. */
+const trailheadCard = (html) => {
   const t = text(html);
   const h = t.indexOf("TRAILHEAD");
   if (h < 0) return null;
   const after = t.slice(h + "TRAILHEAD".length);
   const nx = after.search(/\b[A-Z][A-Z][A-Z &’'-]{4,}\b/);
-  const card = nx > 0 ? after.slice(0, nx) : after.slice(0, 600);
-  return /Approach \(one way\)/.test(card) ? card : null;
+  return nx > 0 ? after.slice(0, nx) : after.slice(0, 600);
 };
-const obCard = approachTile(itinOutback), ptCard = approachTile(itinPoint);
-if (!obCard || !ptCard) dead("the Approach tile did not render on a route carrying an itinerary - ANCHOR LOST, so nothing in section 7 was checked");
-// 100 km stored against a 62 mi out-and-back itinerary -> 31.0 mi one way, not 62.1 mi.
-if (obCard.includes("31.0 mi")) ok("the Approach tile states the itinerary-derived one-way figure");
-else fail("the Approach tile does not state the route's own one-way approach");
-if (!obCard.includes("62.1 mi")) ok("...and not the stored round-trip column under a one-way label");
-else fail('the Approach tile prints the stored round-trip distance under the label "one way"');
-// A recorded point-to-point does NOT retrace, so its itinerary total IS the one-way distance:
-// 62.0 mi, not the stored 18.6. A fix that always halved would fail here.
-if (ptCard.includes("62.0 mi")) ok("a recorded point-to-point keeps its whole itinerary total, so the rule is not a blanket halving");
-else fail("a recorded point-to-point route does not state its whole itinerary total - either the tile is reading the stored column again, or it is halving unconditionally; the other two assertions above say which");
+const tCard = trailheadCard(tilesProbe);
+if (!tCard || !tCard.includes(COORD)) dead("the TRAILHEAD card did not render with its coordinates - ANCHOR LOST, so nothing in section 7 was checked");
+const tileHits = ["Approach (one way)", "To the peak", "Elevation"].filter((l) => tCard.includes(l));
+if (!tileHits.length) ok("the TRAILHEAD card restates none of TECH STATS' figures");
+else fail("the TRAILHEAD card prints stat tiles again (" + tileHits.join(", ") + ") - those figures live in TECH STATS");
 
-/* -- 8. the PLANNER reads the same distance the tile shows ------------------------------------
-   Section 7 pins the TILE. The planner is a second reader of the same fact on the same page and
-   was the last one still on the raw column, so the page stated the approach two ways and computed
+/* -- 8. the PLANNER reads the same distance TECH STATS shows ------------------------------------
+   TECH STATS states the one-way approach from effDistKm. The planner is a second reader of the
+   same fact on the same page and was the last one still on the raw column, so the page stated the approach two ways and computed
    Est. summit / Est. return / the "After dark" warning from the one it did not show.
 
    BEHAVIOURAL, NOT A SPELLING. Reverting `scarfHrs(effDistKm(route), ...)` to `route.distKm`
@@ -311,7 +297,7 @@ else fail("a recorded point-to-point route does not state its whole itinerary to
    estimate cannot move at all.
 
    BOTH DIRECTIONS, because a rule that only ever demands a SHORTER estimate is satisfied by an
-   unconditional halving -- the same trap section 7 records, and the reason a recorded point-to-
+   unconditional halving -- and the reason a recorded point-to-
    point fixture exists. An outback halves its itinerary total and gets SHORTER; a `point` does not
    retrace, so its total IS the one-way distance and it gets LONGER. */
 const estSummit = (html) => {
@@ -319,7 +305,7 @@ const estSummit = (html) => {
   const i = t.indexOf("Est. summit");
   if (i < 0) return null;
   // fmt() emits "3:41 PM", optionally "≥"-prefixed (approach inputs incomplete) and optionally
-  // suffixed "(+1d)". Read the LAST such time before the label, since the tile prints the value
+  // suffixed "(+1d)". Read the LAST such time before the label, since the planner tile prints the value
   // immediately above its own caption.
   const before = t.slice(0, i);
   const m = [...before.matchAll(/(\d{1,2}):(\d{2})\s+(AM|PM)(?:\s*\(\+(\d+)d\))?/g)].pop();
@@ -333,7 +319,7 @@ const ePT = estSummit(estPoint), ePTc = estSummit(rawKm70);
 if (eOB == null || eOBc == null || ePT == null || ePTc == null) {
   dead("an Est. summit time did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
 }
-if (eOB !== eOBc) ok("the planner's estimate moves with the route's own itinerary, so it reads the same source the tile does");
+if (eOB !== eOBc) ok("the planner's estimate moves with the route's own itinerary, so it reads the same source TECH STATS does");
 else fail("the planner's estimate is UNCHANGED by the route's itinerary - it is reading the raw dist_km column, so this page states the approach distance one way and computes its times from another");
 if (eOB < eOBc) ok("...and an out-and-back whose column holds the ROUND TRIP gets a shorter walk, not a longer one");
 else fail("an out-and-back route whose stored column holds the round trip did not get a SHORTER estimate - the direction is inverted");
