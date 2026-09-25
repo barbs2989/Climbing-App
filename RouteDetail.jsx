@@ -1035,23 +1035,9 @@ function RouteBreakdown({route,focus,onEdit,comments,commentsUnavailable,onComme
 /* The trailhead was one line of text — `Trailhead: Killen Creek Trailhead (Trail #113,
    FR-2329)` — followed by prose. Everything else the row already knew was somewhere else or
    nowhere: the coordinates (650 routes carry trailheadLat/Lng and none of them rendered as a
-   number you could read out or paste into a GPS), the elevation the Trailhead waypoint
-   stores, the bearing and straight-line distance from the car to the peak, the approach
-   distance and gain from the route itself, and the seasonal gate that decides whether the
-   road is even open. Those are the facts you check standing at an unmarked junction in the
-   dark, so they belong in one block above the prose rather than spread across GETTING THERE,
-   WAYPOINTS and the header stat strip.
-
-   Everything here is DERIVED from stored fields. Nothing is inferred: a tile is omitted when
-   its input is missing rather than filled with a plausible number, which is the failure mode
-   this file has hit repeatedly (see scarfHrs coercing a missing approach to a zero one). */
-function compass16(lat1,lng1,lat2,lng2){
-  const R=Math.PI/180;
-  const y=Math.sin((lng2-lng1)*R)*Math.cos(lat2*R);
-  const x=Math.cos(lat1*R)*Math.sin(lat2*R)-Math.sin(lat1*R)*Math.cos(lat2*R)*Math.cos((lng2-lng1)*R);
-  const deg=(Math.atan2(y,x)/R+360)%360;
-  return ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"][Math.round(deg/22.5)%16];
-}
+   number you could read out or paste into a GPS). The card is the trailhead's name, its driving
+   directions, and one compact row: Drive here + the copyable coordinates. Elevation and
+   approach figures live in TECH STATS and are not repeated here. */
 function TrailheadCard({route,onEdit}){
   const [copied,setCopied]=useState(false);
   const al=route.approachLogistics||{};
@@ -1093,27 +1079,11 @@ function TrailheadCard({route,onEdit}){
      start" is true either way. */
   const _dirIsOther=_nameFollows&&!!al.trailhead;
   const name=(_nameFollows&&tp.name)?tp.name:(al.trailhead||(wp&&wp.name)||(tp&&tp.name)||null);
-  /* The elevation is the PIN's, so it may only be shown beside the PIN's coordinate. Printing a
-     pin's height next to a logistics coordinate welds two records into one claim. */
-  const elev=(tp&&wp&&wpPlaced(wp)&&Number(wp.lat)===Number(tp.lat)&&Number(wp.lng)===Number(tp.lng)&&wp.elev!=null)?wp.elev:null;
-  // Straight-line only, and labelled as such — the trail is always longer, and a "distance to
-  // the peak" a climber mistook for trail mileage would understate the day.
-  const toPeak=(hasCoord&&al.peakLat!=null&&al.peakLng!=null)
-    ?{dir:compass16(lat,lng,al.peakLat,al.peakLng),mi:distMiles({lat,lng},{lat:al.peakLat,lng:al.peakLng})}
-    :null;
-  if(!name&&!hasCoord)return null;
-  const tiles=[];
-  if(elev!=null)tiles.push(["Elevation",uElev(elev),C.blue]);
-  /* effDistKm, NOT the raw column, and the label is why: this tile says "one way" while
-     `dist_km` holds two conventions at once — on 215 of the 335 WA routes where the two figures
-     differ, the stored value is the ROUND TRIP, so the raw read labelled a there-and-back total
-     as a one-way walk. The TECH STATS tile on this same route already reads effDistKm, so the
-     page was printing two different one-way approaches for one climb. This changes only WHICH
-     SOURCE a reader prefers — lib/outing.js's own contract — and settles nothing about the
-     column, which CLAUDE.md forbids normalising in bulk. */
-  const _appKm=effDistKm(route);
-  if(_appKm!=null&&_appKm>0)tiles.push(["Approach (one way)",uDist(_appKm),C.green]);
-  if(toPeak)tiles.push(["To the peak",toPeak.dir+" "+uDistMi(Math.round(toPeak.mi*10)/10),C.orange]);
+  /* NO STAT TILES. This card used to print Elevation, "Approach (one way)" and a straight-line
+     "To the peak" bearing above the directions. The first two restated TECH STATS a scroll away
+     and the third was a figure a climber could mistake for trail mileage, so the card now answers
+     only where the trailhead is and how to drive there. check:trailhead-directions section 7
+     keeps them from coming back. */
   /* A value that describes the WALK is not shown here. This line sits under the trailhead's name as
      its driving directions, and 230 routes once carried "backpack ~13 miles via the Whistler Cutoff",
      "Skyline Trail to Camp Muir" or a bare "North" in it. Those rows were repaired and
@@ -1128,7 +1098,7 @@ function TrailheadCard({route,onEdit}){
     var _p;try{_p=navigator.clipboard&&navigator.clipboard.writeText(lat.toFixed(5)+", "+lng.toFixed(5));}catch(e){}if(_p&&_p.then)_p.then(function(){setCopied(true);setTimeout(()=>setCopied(false),1600);}).catch(function(){});
   };
   return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginTop:12}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:tiles.length?9:6}}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:8}}>
       <div style={{display:"flex",gap:8,minWidth:0,alignItems:"flex-start"}}>
         <span aria-hidden="true" style={{color:WP_STYLE.Trailhead.color,fontSize:14,lineHeight:1.35,flexShrink:0}}>{WP_STYLE.Trailhead.glyph}</span>
         <div style={{minWidth:0}}>
@@ -1138,11 +1108,10 @@ function TrailheadCard({route,onEdit}){
       </div>
       {onEdit?<EditIconButton onClick={onEdit} title="Edit trailhead and approach"/>:null}
     </div>
-    {tiles.length?<div style={{display:"grid",gridTemplateColumns:"repeat("+tiles.length+",1fr)",gap:7,marginBottom:9}}>{tiles.map(t=><div key={t[0]} style={{background:C.card,borderRadius:8,padding:"7px 8px",textAlign:"center",minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:t[2],overflowWrap:"anywhere"}}>{t[1]}</div><div style={{fontSize:10.5,color:C.textMuted,marginTop:2,lineHeight:1.3}}>{t[0]}</div></div>)}</div>:null}
-    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:9}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
-    {hasCoord?<div style={{display:"flex",gap:6,flexWrap:"wrap"}}>
-      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"1 1 150px",textAlign:"center",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none"}}>Drive here</a>
-      <button onClick={copy} style={{flex:"1 1 150px",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:copied?C.green:C.textSub,fontSize:12.5,fontWeight:700,cursor:"pointer",fontVariantNumeric:"tabular-nums"}}>{copied?"Copied":lat.toFixed(5)+", "+lng.toFixed(5)}</button>
+    {(dir&&!dup)?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:10}}>{_dirIsOther?<span style={{color:C.textMuted}}>{"Directions on file describe a different start \u2014 "+al.trailhead+": "}</span>:null}{dir}</div>:null}
+    {hasCoord?<div style={{display:"flex",gap:6,alignItems:"stretch"}}>
+      <a href={"https://www.google.com/maps/dir/?api=1&destination="+lat+","+lng} target="_blank" rel="noreferrer" style={{flex:"0 0 auto",display:"flex",alignItems:"center",justifyContent:"center",padding:"7px 14px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.greenBg,color:C.green,fontSize:12.5,fontWeight:700,textDecoration:"none",whiteSpace:"nowrap"}}>Drive here</a>
+      <button onClick={copy} aria-label={copied?"Coordinates copied":"Copy coordinates "+lat.toFixed(5)+", "+lng.toFixed(5)} style={{flex:"1 1 auto",minWidth:0,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"7px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.textSub,cursor:"pointer",textAlign:"left"}}><span style={{fontSize:12,fontWeight:600,fontVariantNumeric:"tabular-nums",whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",minWidth:0}}>{lat.toFixed(5)+", "+lng.toFixed(5)}</span><span style={{flexShrink:0,fontSize:10.5,fontWeight:700,letterSpacing:0.4,color:copied?C.green:C.textMuted}}>{copied?"COPIED":"COPY"}</span></button>
     </div>:<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45}}>No trailhead coordinates on file yet.</div>}
   </div>;
 }
