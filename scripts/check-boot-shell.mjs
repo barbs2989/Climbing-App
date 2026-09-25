@@ -64,17 +64,17 @@ if (!/Climb<span>Match<\/span>/.test(html)) fail("the boot shell wordmark is mis
 
 // ---- section 2: the Help modal's tab tour must cover every tab ----------------
 const core = readCoreSource();
-const fi = core.indexOf("const feats=[");
-if (fi < 0) fail("could not find `const feats=[` in ClimbMatchCore.jsx — the Help tour was renamed; update this check.");
+const fi = core.indexOf("const HELP_FEATS=[");
+if (fi < 0) fail("could not find `const HELP_FEATS=[` in ClimbMatchCore.jsx — the Help tour was renamed; update this check.");
 // balance brackets rather than taking a fixed window: the entries are long prose
 // and this file packs everything onto one physical line.
 let depth = 0, end = -1;
-const open = core.indexOf("[", fi + "const feats=".length);
+const open = core.indexOf("[", fi + "const HELP_FEATS=".length);
 for (let k = open; k < core.length; k++) {
   if (core[k] === "[") depth++;
   else if (core[k] === "]" && --depth === 0) { end = k; break; }
 }
-if (end < 0) fail("the `feats` array in ClimbMatchCore.jsx does not close — could not parse the Help tour.");
+if (end < 0) fail("the `HELP_FEATS` array in ClimbMatchCore.jsx does not close — could not parse the Help tour.");
 const tourTitles = [...core.slice(open, end + 1).matchAll(/\["","([^"]+)"/g)].map((m) => m[1]);
 if (tourTitles.length < 5) fail(`parsed only ${tourTitles.length} Help tour entr(ies) — the tour's shape changed, so this check is not reading it.`);
 
@@ -88,7 +88,7 @@ if (missing.length) {
   console.error("is missing from the one place that explains the app. A title that merely");
   console.error("resembles the tab is not enough — it must match the nav label exactly, or a");
   console.error('reader scanning the bar for it will not find it (this is how "My Crew" drifted');
-  console.error("from the tab actually labelled \"Crew\"). Add or rename an entry in `feats`.");
+  console.error("from the tab actually labelled \"Crew\"). Add or rename an entry in `HELP_FEATS`.");
   process.exit(1);
 }
 
