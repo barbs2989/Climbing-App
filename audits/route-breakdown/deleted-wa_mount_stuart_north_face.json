@@ -1,0 +1,199 @@
+{
+ "id": "wa_mount_stuart_north_face",
+ "area_id": "wa_mount_stuart",
+ "name": "North Face",
+ "discipline": "mountaineering",
+ "grade": "5.8",
+ "grade_system": "yds",
+ "grade_num": 8,
+ "pitches": null,
+ "length_m": null,
+ "sort_order": null,
+ "stars": null,
+ "fa": null,
+ "lat": null,
+ "lng": null,
+ "aspect": "N",
+ "season": "Jun-Aug",
+ "description": null,
+ "gear": [
+  "Glacier rope (shared 30m per 2, or single 60m split across a rope team)",
+  "Crampons",
+  "Ice axe + second ice tool",
+  "2-4 ice screws",
+  "2-3 snow pickets",
+  "Crevasse-rescue kit (pulley, 2 prusiks, 2-3 locking carabiners, cordelette)",
+  "Light alpine rock rack (set of nuts + small-mid cams to ~2in)",
+  "Helmet",
+  "Harness"
+ ],
+ "hazards": [
+  "Crevasses and icefall on the north-side glaciers",
+  "Loose rock typical of Cascades granite at altitude",
+  "Rapid weather changes"
+ ],
+ "verif": {
+  "status": "unverified"
+ },
+ "overview": "Mount Stuart's north side rises roughly 3,000 ft in a broad, glaciated face split by the Stuart, Ice Cliff, and Sherpa Glaciers — the setting for the mountain's hardest technical lines (Stuart Glacier Couloir, Ice Cliff Glacier, Girth Pillar) rather than a single independent 'North Face' route.",
+ "beta": "No separately named \"North Face\" route matching this grade (IV, 5.8, AI2) is known on the mountain. The north side is instead divided among the named North Ridge, Ice Cliff Glacier, Stuart Glacier Couloir, and Girth Pillar routes, plus the Lara Kellogg Memorial Route on the adjacent northeast face above Ice Cliff Glacier.",
+ "turnaround": null,
+ "auto_generated": false,
+ "alpine_grade": "D",
+ "rock_grade": "5.8",
+ "ice_grade": "AI2",
+ "gain_ft": null,
+ "loss_ft": null,
+ "dist_km": null,
+ "max_angle": null,
+ "rappels": null,
+ "commitment": null,
+ "face": "North side (general aspect; no distinct named line confirmed)",
+ "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+ "comms": null,
+ "descent": "Sherpa Glacier (shared standard descent for north-side routes)",
+ "obj_haz": [
+  "crevasse",
+  "icefall",
+  "loose rock"
+ ],
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "type": "Trailhead",
+   "elevFt": 3400
+  },
+  {
+   "lat": 47.475,
+   "lng": -120.9022,
+   "elev": 9415,
+   "name": "Mount Stuart summit",
+   "type": "Summit",
+   "elevFt": 9415
+  }
+ ],
+ "gpx": [
+  [
+   47.5278,
+   -120.8205
+  ],
+  [
+   47.475,
+   -120.9022
+  ]
+ ],
+ "elev_pts": null,
+ "disciplines": null,
+ "timing": null,
+ "detailed_rack": "Glacier travel gear (rope, crevasse-rescue kit) for the approach, ice tools and 2-4 screws for the AI2 ice sections, 2-3 pickets for the couloir, and a light rock rack (nuts + small-to-mid cams to ~2in) for the 5.8 rock finish.",
+ "what_to_bring": null,
+ "pro_tips": null,
+ "watch_out": null,
+ "pro_needs": null,
+ "best_season": "Best snow/ice conditions Apr-Jun; the north side's rock lines dry out by Jul-Aug.",
+ "high_point_ft": 9415,
+ "aid_grade": null,
+ "approach": "Via Stuart Lake Trailhead (Icicle Rd) to the Mountaineer Creek/Sherpa Glacier basin — the same approach shared by Ice Cliff Glacier, Stuart Glacier Couloir, and Girth Pillar.",
+ "descent_text": null,
+ "bail": null,
+ "pitch_detail": null,
+ "itinerary": null,
+ "access": {
+  "fees": "$5/day or $30/annual Northwest Forest Pass",
+  "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+  "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+  "permit": "Free self-issued wilderness permit at trailhead",
+  "closures": null,
+  "group_limit": 8,
+  "landManager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness",
+  "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+  "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+  "passRequired": "Northwest Forest Pass or Interagency pass",
+  "overnight_permit": {
+   "url": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/enchantments-overnight-permits",
+   "what": "Enchantment Permit Area overnight permit (Stuart zone), required May 15 to October 31 — limited, not free",
+   "where": "Apply to the advance lottery on Recreation.gov in late February; leftover and daily permits are released on Recreation.gov after the lottery. No permit needed for a day climb or outside the season."
+  }
+ },
+ "road": {
+  "name": "Icicle Road / FR-7601 to Stuart Lake TH",
+  "status": "Paved (Icicle Rd) then gravel/washboarded, high-clearance recommended (FR-7601)",
+  "driveNote": "From US-2 near Leavenworth, Icicle Rd ~8.5 mi, left on Eightmile Rd (FR-7600), then FR-7601 to the Stuart Lake Trailhead (3,400 ft).",
+  "seasonalGate": "FR-7601 has winter vehicle closures"
+ },
+ "climate": {
+  "fall": "Cold, marginal",
+  "spring": "Full snow/ice conditions",
+  "summer": "Glaciers recede, rock lines come into condition",
+  "winter": "Full winter mountaineering conditions",
+  "typical": "Shaded north aspect holds snow/ice much later in the season than the south side",
+  "forecastZone": "NWAC East Slopes Central / Stevens Pass zone"
+ },
+ "emergency": {
+  "notes": null,
+  "county": "Chelan County (Stuart Lake/Icicle Rd approach)",
+  "rangerStation": "Leavenworth Ranger District",
+  "nearestHospital": "Cascade Medical Center, Leavenworth, WA",
+  "sheriffDispatch": "Chelan County Sheriff (911)"
+ },
+ "lists": null,
+ "crowds": null,
+ "partner_requirements": null,
+ "seasonal_guidance": null,
+ "seasonal_hazards": null,
+ "data_quality": null,
+ "difficulty": null,
+ "approach_logistics": {
+  "peakLat": 47.475118,
+  "peakLng": -120.903144,
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadLat": 47.5282,
+  "trailheadLng": -120.82036,
+  "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,540 ft), via the Mountaineer Creek drainage"
+ },
+ "sling_rack": null,
+ "alpine_draws": null,
+ "rope_type": null,
+ "rope_length_m": null,
+ "rope_note": null,
+ "ascender": null,
+ "corrections": "\"North Face\" is not a distinct documented route on Mount Stuart in any primary source checked (Mountain Project's Mt Stuart area page lists 15 routes, none by this name). Numeric stats (5.8 rock, AI2 ice, Sherpa Glacier descent) match the already-present wa_mount_stuart_ice_cliff_glacier almost exactly -- this appears to be a fabricated duplicate, not a separate route. Flagged 2026-07-28; not deleted (may have user-generated content attached), but marked unverified with a pointer to the real route.",
+ "gear_confidence": "inferred",
+ "rappel_detail": null,
+ "rappel_count_note": null,
+ "rack": null,
+ "features": null,
+ "classic": false,
+ "gear_bucket": null,
+ "assumed_gear": null,
+ "gps_contributor_name": null,
+ "outing_shape": null,
+ "approach_variants": null,
+ "climbing_route": null,
+ "bivy": [
+  {
+   "elev": 5400,
+   "name": "Mountaineer Creek basin below the Sherpa Glacier",
+   "role": "main",
+   "type": "camp",
+   "notes": "The standard base for the north side of Mount Stuart. Leave the Stuart Lake trail before the final switchbacks, cross the creek and follow the climbers' path up the south fork of Mountaineer Creek to the flat valley below the Sherpa and Stuart glaciers.",
+   "water": "Creek runs through the basin",
+   "permit": "Enchantment Permit Area overnight permit (Stuart zone) from May 15 to October 31",
+   "capacity": "Several small tent sites on flat ground in the basin"
+  }
+ ],
+ "prot_rating": null,
+ "start_type": null,
+ "landing": null,
+ "pads": null,
+ "rock": null,
+ "crux": null,
+ "access_checked_at": null,
+ "name_search": "north face",
+ "ice_grade_num": null,
+ "mixed_grade_num": null,
+ "aid_grade_num": null
+}
