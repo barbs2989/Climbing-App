@@ -1,0 +1,54 @@
+{
+ "wa_whistler_mountain_scramble": {
+  "area_id": "wa_whistler_mountain_okanogan",
+  "expect": [
+   "Rainy Pass PCT north trailhead",
+   "Cutthroat Pass, PCT crest camps",
+   "Granite Pass",
+   "Snowy Lakes basin",
+   "Methow Pass and the PCT meadow camps below Snowy Lakes",
+   "Swamp Creek highway pullout, for Mount Hardy's south face"
+  ],
+  "remove": [
+   "Granite Pass",
+   "Snowy Lakes basin",
+   "Methow Pass and the PCT meadow camps below Snowy Lakes",
+   "Swamp Creek highway pullout, for Mount Hardy's south face"
+  ],
+  "roles": [
+   [
+    "Granite Pass",
+    null
+   ],
+   [
+    "Snowy Lakes basin",
+    null
+   ],
+   [
+    "Methow Pass and the PCT meadow camps below Snowy Lakes",
+    null
+   ],
+   [
+    "Swamp Creek highway pullout, for Mount Hardy's south face",
+    null
+   ]
+  ]
+ },
+ "wa_mount_stickney_scramble": {
+  "area_id": "wa_mount_stickney",
+  "expect": [
+   "San Juan Campground, Index-Galena road",
+   "One Acre Lake, under Mount Stickney",
+   "Sultan Basin road pullouts and the Olney Creek gate"
+  ],
+  "remove": [
+   "San Juan Campground, Index-Galena road"
+  ],
+  "roles": [
+   [
+    "San Juan Campground, Index-Galena road",
+    null
+   ]
+  ]
+ }
+}

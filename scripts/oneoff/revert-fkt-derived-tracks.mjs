@@ -25,7 +25,8 @@ const WRITE = process.argv.includes("--write");
 const k = requireServiceKey();
 const get = async p => { const r = await fetch(`${SUPABASE_URL}/rest/v1/${p}`, { headers: headers(k) }); const t = await r.text(); if (!r.ok) throw new Error(`${p} -> ${r.status} ${t.slice(0, 200)}`); return JSON.parse(t); };
 const load = f => JSON.parse(fs.readFileSync(new URL(f, import.meta.url)));
-const restores = [...load("../rollback-recorded-wa-tracks.json").rows, ...load("../rollback-recorded-wa-tracks-2.json").rows];
+const restores = ["../rollback-recorded-wa-tracks.json", "../rollback-recorded-wa-tracks-2.json", "../rollback-recorded-wa-tracks-3.json"]
+  .filter(f => fs.existsSync(new URL(f, import.meta.url))).flatMap(f => load(f).rows);
 const created = load("./data/wa-fkt-gap-climbs.json").routes;
 
 const ids = [...restores.map(r => r.id), ...created.map(r => r.id)];
