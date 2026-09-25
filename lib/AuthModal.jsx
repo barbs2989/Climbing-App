@@ -12,6 +12,7 @@ import { signIn, signUp, rememberEmail, recallEmail, requestPasswordReset, updat
 // the old 6-character minimum must still be able to sign in.
 const MIN_PASSWORD = 8;
 import { POLICY_VERSION } from "./policy";
+import { POP_CLOSE } from "./popupChrome.js";
 
 const c = { bg: "#0d1117", card: "#161b22", border: "#30363d", text: "#e6edf3", sub: "#8b949e", blue: "#2f81f7", red: "#f85149", green: "#3fb950" };
 const field = { width: "100%", boxSizing: "border-box", background: "#0d1117", border: "1px solid " + c.border, borderRadius: 10, padding: "11px 13px", color: c.text, fontSize: 15, marginBottom: 10, outline: "none" };
@@ -139,7 +140,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
               the live site: Escape and × both left the modal up, with no page error to show for
               it. Worse for a screen reader, which announced an actionable "Close" that wasn't.
               The reset screen below is the same shape: also no onClose, also no ×. */}
-          {onClose && <button onClick={onClose} aria-label="Close" style={{ background: "none", border: "none", color: c.sub, fontSize: 22, cursor: "pointer", lineHeight: 1 }}>×</button>}
+          {onClose && <button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button>}
         </div>
         <div style={{ fontSize: 13, color: c.sub, marginBottom: 16, lineHeight: 1.5 }}>{BLURB[mode]}</div>
         {/* Sign-in and sign-up only: on "forgot" there is no account to federate yet, and on

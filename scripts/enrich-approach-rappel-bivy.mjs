@@ -288,6 +288,11 @@ function checkPitchDetail(id, spec, before, commented) {
   const had = Array.isArray(before.pitch_detail) ? before.pitch_detail : [];
   if (had.length && !spec.replace_pitch_detail) errs.push(`it already has ${had.length} pitch_detail entries — set "replace_pitch_detail": true if replacing them is the point`);
   if (next.length < had.length && !spec.allow_fewer_entries) errs.push(`the new table has ${next.length} entries, fewer than the ${had.length} stored — set "allow_fewer_entries" with the reason in review.changed`);
+  // Stripping an unsourced lengthM is its own, narrower edit: the stored table minus that key and
+  // nothing else. It is judged on that exact equality, not on the content lint below — the stored
+  // rows it leaves alone may predate that lint (McMillan's P2-P4 carry no notes at all).
+  const minusLengths = had.map(p => { const q = { ...p }; delete q.lengthM; return q; });
+  if (had.length && JSON.stringify(minusLengths) === JSON.stringify(next)) return errs;
   const labels = next.map(pitchLabel);
   if (new Set(labels).size !== labels.length) errs.push(`duplicate labels ${JSON.stringify(labels)} — comments are keyed on the label`);
   for (const l of commented) if (!labels.includes(l)) errs.push(`label ${JSON.stringify(l)} has comments and the new table drops it`);
@@ -460,10 +465,12 @@ for (const id of ids) {
   }
   if (DRY) { console.log("   --dry, not written"); continue; }
 
-  if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length)) {
+  if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length) || spec.set) {
     rollback[id] = { area: before.area_id };
     if (body.pitch_detail) rollback[id].pitch_detail = before.pitch_detail;
     if (body.climbing_route) rollback[id].climbing_route = before.climbing_route;
+    // A `set` correction replaces a whole prose value, so the value it replaced is kept too.
+    if (spec.set) for (const k of Object.keys(spec.set)) rollback[id][k] = before[k];
     fs.writeFileSync(ROLLBACK, JSON.stringify(rollback, null, 1) + "\n");
   }
   await patchRow("routes", id, body);

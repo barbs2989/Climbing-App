@@ -1,0 +1,333 @@
+{
+  "wa_cutthroat_peak_cauthorn_wilson_couloir": {
+    "area": "wa_cutthroat_peak",
+    "set": {
+      "beta": "Grade III, WI4. Roughly 400 ft of snow or névé leads to a WI3 ice step at the couloir's pinch, then a sustained WI4 crux pitch that eases to about WI3+, followed by three or four pitches of snow, ice or mixed ground to the ridgeline. An early-season route, best soon after SR-20 reopens; the east face takes sun for most of the day and is avalanche-prone in warm weather."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta ('Grade II, 5.7 climbing. Short approach from highway. Rock improves significantly higher on ridge...') describes this ice route",
+          "verdict": "CONFIRMED",
+          "evidence": "The stored beta is a verbatim copy of wa_cutthroat_west_ridge's beta and describes a summer rock ridge. Both sources describe this line as an east-face ice couloir: ~400 ft snow/névé, a WI3-WI3+ step, a sustained WI4 crux easing to WI3+, then 3-4 pitches of snow/ice/mixed to the ridgeline; early season only (as soon as SR-20 opens); sun-exposed, avalanche-prone east slopes. The replacement restates only these facts, all consistent with the row's own pitch_detail, overview and approach.",
+          "sources": [
+            "https://www.mountainproject.com/route/109740367/cauthorn-wilson",
+            "https://www.summitpost.org/east-face-wilson-cauthorn-route/157682"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "III, WI4",
+          "evidence": "Mountain Project lists WI4, Grade III, 800 ft, 7 pitches; SummitPost describes a sustained WI4 crux. Stored 'III+' carries no ice grade, so the route's defining difficulty never appears in the grade pill."
+        }
+      }
+    }
+  },
+  "wa_cutthroat_west_ridge": {
+    "area": "wa_cutthroat_peak",
+    "set": {
+      "beta": "Grade II, 5th-class climbing to about 5.6 (harder direct variations reach 5.7). Short approach from highway. Rock improves significantly higher on ridge. Fair granite in approach, improves on ridge. Moderate exposure. Quick alpine climb from Rainy Pass. Uncrowded route."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta headline says 'Grade II, 5.7 climbing'",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project rates the route 5.6, Grade II (the row's own grade column is also 5.6), and its description has only low-5th belayed steps. SummitPost gives Grade II, Class 5, with more direct variations on the start and summit block ranging 5.5-5.7. So 5.7 is the top of the harder variations, not the route's grade. Only the grade clause is changed; the other sentences are left as stored.",
+          "sources": [
+            "https://www.mountainproject.com/route/110174839/west-ridge",
+            "https://www.summitpost.org/west-ridge/164274"
+          ]
+        }
+      ],
+      "classification": {
+        "length_m": {
+          "proposed": "review (no replacement number proposed)",
+          "evidence": "Stored 975 m equals Mountain Project's '3200 ft (970 m)', which is the whole outing's gain from the road, not the ridge's technical length. No source gives the technical length, so no number is proposed; a human should decide whether length_m means outing gain here or should be nulled."
+        }
+      }
+    }
+  },
+  "wa_mount_baker_boulder_glacier": {
+    "area": "wa_mount_baker",
+    "set": {
+      "beta": "From a high camp below the Boulder Glacier (~5,500 ft), cross the lower Boulder Glacier northwest to the toe of the Boulder-Park Cleaver (~6,800 ft) and follow the cleaver up. Above about 9,300 ft, choose between a moderate 25-35° snow traverse toward Sherman Crater, or a harder 4th-class rock buttress direct to the summit area.",
+      "approach": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82, turn north on Baker Lake Highway (FR 11) for about 18 miles, then (after Boulder Creek Campground) turn onto FR 1130 for about 1 mile to FR 1131, and follow it to the Boulder Ridge Trailhead. Hike the Boulder Ridge Trail (maintained about 2 miles to the wilderness boundary), then a steep, unmaintained boot path with a 3rd-class rock band around 3.4 mi/4,700 ft, continuing up the moraine to a high camp around 5,500 ft just below the Boulder Glacier."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta: 'follow the Boulder-Park Cleaver northwest onto the lower Boulder Glacier' (order reversed)",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project: from high camp 'cross the lower Boulder Glacier heading NW to the toe of the cleaver' then follow the cleaver up, with the snow-vs-rock-buttress choice at ~9,300 ft. SummitPost: same sequence, with a camp option 'at the toe of the cleaver around 6800''. A separate trip report puts the cleaver base at ~6,800 ft. The stored pitch_detail also runs lower glacier -> cleaver. Only the first sentence's order is fixed; the 9,300 ft choice is kept as stored.",
+          "sources": [
+            "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+            "https://www.summitpost.org/boulder-glacier-cleaver/165032",
+            "http://ericsbasecamp.net/trips/Boulder-Park/Boulder-Park.htm"
+          ]
+        },
+        {
+          "claim": "approach: 'continuing along a lateral moraine to the Boulder/Park Glacier near 6,300 ft and a high camp around 5,500 ft' (reaches the glacier at 6,300 ft and then camps 800 ft lower)",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project puts bivy sites 'at around 5,500ft just below the Boulder Glacier', reached by the moraine trail; SummitPost says camps start around 5,200 ft. No source puts the glacier at 6,300 ft on the way to a 5,500 ft camp. The unsupported 6,300 ft figure is removed and the camp is placed below the glacier. The 3rd-class rock band at 3.4 mi/4,700 ft was not checked and is left as stored.",
+          "sources": [
+            "https://www.mountainproject.com/route/107467457/boulder-park-cleaver",
+            "https://www.summitpost.org/boulder-glacier-cleaver/165032"
+          ]
+        }
+      ],
+      "classification": {
+        "name": {
+          "proposed": "no change required; optional 'Boulder Glacier / Boulder-Park Cleaver'",
+          "evidence": "Mountain Project files the line as 'Boulder-Park Cleaver'; SummitPost as 'Boulder Glacier / Cleaver'. The stored name is recognisable; this is optional."
+        }
+      }
+    }
+  },
+  "wa_upper_north_ridge_w_great_gendarme": {
+    "area": "wa_mount_stuart",
+    "set": {
+      "approach": "From I-90 Exit 85, take Highway 970 east 7 miles to Teanaway Road, then bear right onto North Fork Teanaway Road continuing 22.5 miles total. From trailhead: via Lake Ingalls and Stuart Pass to Goat Pass, then east across the Stuart Glacier to the North Ridge notch",
+      "fa": "Upper North Ridge (bypassing the Great Gendarme): John Rupley & Don Gordon, 1956; first ascent directly over the Great Gendarme: James Wickwire & Fred Stanley, 1964"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach: 'northeast via Lake Ingalls to Goat Pass (east-northeast), then south to Stuart Glacier and North Ridge notch'",
+          "verdict": "CONFIRMED",
+          "evidence": "Goat Pass (7,600 ft) sits between Pt 7893 on Jack Ridge and Stuart's West Ridge, north-west of the summit. Sources route parties past Ingalls Lake, over Stuart Pass, north below Stuart's west wall to Goat Pass, then 'traverse east below the Stuart Glacier' to the 4th-class gully up to the North Ridge notch. 'South to Stuart Glacier' is wrong (the glacier lies east of Goat Pass, on the north face). Rewritten with the correct sequence; the driving directions are kept as stored.",
+          "sources": [
+            "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+            "https://wenatcheeoutdoors.org/2016/06/06/stuart-mt-north-ridge-upper/",
+            "https://www.mountainproject.com/route/106245725/direct-north-ridge"
+          ]
+        },
+        {
+          "claim": "fa: 'Great Gendarme: John Rupley & Don Gordon, 1956; complete upper-ridge linkup: James Wickwire & Fred Stanley, 1964'",
+          "verdict": "CONFIRMED",
+          "evidence": "The stored text misreads Mountain Project's FA field, which reads 'John Rupley & Don Gordon (1956) [Great Gendarme] James Wickwire & Fred Stanley (1964)': the bracket labels Wickwire & Stanley as the Gendarme party. Rupley and Gordon rappelled around the Gendarme in 1956 and did not climb it (the Alpine Institute route profile says so directly). The AAJ's account of Fred Stanley says he and Wickwire 'pioneered the first ascent of a wall known as the Great Gendarme' in 1964. Don Gordon is the same person as the 'Don Claunch' on the sibling row (born Don Gordon Claunch, later took the name Gordon; AAJ obituary 'Don Gordon, 1931-2016').",
+          "sources": [
+            "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+            "http://publications.americanalpineclub.org/articles/13199606800/Fall-on-SnowCrampon-Caught-in-Clothing-Unable-to-Self-Arrest-Washington-Mount-Stuart",
+            "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/",
+            "http://publications.americanalpineclub.org/articles/13201213892/Don-Gordon-1931-2016"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_the_direct_north_ridge_w_gendarme": {
+    "area": "wa_mount_stuart",
+    "set": {
+      "fa": "North Ridge (original line, bypassing the Great Gendarme): Don Claunch & John Rupley, September 9, 1956. Complete North Ridge, via the lower ridge's west side: Fred Beckey & Steve Marts, 1963. First ascent climbing directly over the Great Gendarme: James Wickwire & Fred Stanley, 1964. Direct lower-ridge start variation (from the true toe): Mead Hargis & Jay Ossiander, 1970"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "fa: 'First ascent climbing directly over the Great Gendarme: Fred Beckey & Steve Marts, 1963'",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project's FA field and the AAJ's account of Fred Stanley both credit the first ascent of the Great Gendarme to James Wickwire & Fred Stanley, 1964. The 1963 Beckey & Marts climb was the first complete North Ridge, coming up the lower ridge's west side by a loose 5th-class gully to the North Ridge Notch. The Alpine Institute profile words it loosely ('Complete North Ridge, including the Great Gendarme... 1963'), which is where the stored claim comes from, but it does not say they climbed the Gendarme directly. The 1963 Beckey & Marts line is kept, credited for what it was, and the Gendarme credit goes to the 1964 party. The two Stuart rows now agree.",
+          "sources": [
+            "https://www.mountainproject.com/route/106050599/upper-north-ridge-wgreat-gendarme",
+            "http://publications.americanalpineclub.org/articles/13199606800/Fall-on-SnowCrampon-Caught-in-Clothing-Unable-to-Self-Arrest-Washington-Mount-Stuart",
+            "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/"
+          ]
+        },
+        {
+          "claim": "fa: Direct start dated 1970 vs the 1963 date on the Direct North Ridge page",
+          "verdict": "REFUTED",
+          "evidence": "Mountain Project's Direct North Ridge FA field says 'Mead Hargis & Jay Ossiander (1963)', but its own description says the direct variation came 'seven years later' than Beckey & Marts's 1963 ascent, i.e. 1970. The Alpine Institute profile independently says Hargis and Ossiander developed it 'seven years later'. The stored 1970 is correct; the 1963 in MP's FA field is the error. Kept unchanged.",
+          "sources": [
+            "https://www.mountainproject.com/route/106245725/direct-north-ridge",
+            "https://www.alpineinstitute.com/route-profile-north-ridge-of-mt-stuart-5-7-5-9-iv/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_stuart_west_ridge": {
+    "area": "wa_mount_stuart",
+    "set": {
+      "approach": "Start at the Esmeralda Trailhead (end of North Fork Teanaway Road, ~4,243 ft) and follow the Ingalls Way Trail. At about 0.4 mile, stay right/straight at the Longs Pass junction rather than continuing to Ingalls Basin, and switchback up open slopes to Longs Pass (5 mi, ~2,100 ft gain from the trailhead, cresting around 6,400 ft) — the pass gives the first clear look at Stuart's west aspect. From the pass, descend steep, sometimes dusty/scree-y trail on the north side, losing close to 1,000 ft, to reach Ingalls Creek in the timber below. Cross the creek (a straightforward rock-hop or wade in normal summer flow, the last reliable water source before the ridge) and pick up the climber's path heading east/upvalley toward Stuart Pass. Well short of the pass itself (roughly 6,200–6,400 ft), leave the trail and traverse climber's-left (north) across open talus and heather benches toward the base of the West Ridge — this cross-country traverse is where parties most commonly go astray, since there is no maintained tread and several minor gullies look similar; aim for the obvious deep gully (the middle of three parallel gullies) marked by a large, house-sized boulder at its base. An alternate, longer northern approach via the Stuart Lake Trailhead and Stuart Pass exists but adds significant mileage and is not the standard line. Plan on 3.5–5 hours car-to-base depending on route-finding and snow conditions; some parties camp near Ingalls Lake or in the upper Ingalls Creek basin to break the day up. Hazards: the Longs Pass descent and creek-crossing slopes hold snow into early summer and can be icy at dawn; the final talus traverse to the ridge is loose and exposed to rockfall from parties above; there is no water beyond the Ingalls Creek crossing, so tank up there for the long day ahead. Getting past Long John Tower and the exposed West Ridge Notch traverse are the route's main route-finding dilemmas; high on the route, below the summit, a short dihedral with a fixed piton (5.4) or a layback further along the ledge (5.6) leads to easier fifth-class climbing to the top."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "approach: 'The route works past Long John Tower via either a short dihedral with a fixed piton (5.4) or a layback further along the ledge (5.6) before regaining the ridge crest'",
+          "verdict": "CONFIRMED",
+          "evidence": "The 5.4-piton-dihedral / 5.6-layback choice is real, but sources place it at the end of the route: SummitPost says it 'lead[s] to easier fifth class climbing along the south rib and to the summit'. Trip reports describe the final crux as a 5.6 dihedral or twin cracks with a fixed piton, just below the summit (one notes Beckey calls it 5.4). Steph Abegg puts the 5.6 crux 'high on the route at the summit pyramid', with old pitons in the final step. Mountain Project describes the Long John Tower passage as getting to the notch behind the tower on its right side, with no such dihedral. The choice is moved to where it belongs and Long John Tower stays as a route-finding dilemma. Everything else in the approach is left as stored.",
+          "sources": [
+            "https://www.summitpost.org/west-ridge/164032",
+            "https://climberkyle.com/2020/07/11/mt-stuart-west-ridge-5-6/",
+            "https://stephabegg.com/trip-reports/washington/stuart-west-ridge/",
+            "https://www.mountainproject.com/route/106502853/west-ridge"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_vanishing_point": {
+    "area": "wa_dolomite_tower",
+    "set": {
+      "beta": "Vanishing Point is approximately as steep a route as one could find on the mountain—sustained, largely overhanging climbing, with most pitches at 5.11–5.12 and several at 5.10. The route was established over several years and fully modernized in 2020 with new stainless-steel anchors and improved protection. Notable features include the crux 5.12 pitch out a huge roof (pitch 11), a collapsed roof section, and several intentionally runout pitches. The approach involves 800 feet of mostly roped-up slab climbing with fixed lines and bolts. Published pitch counts vary between 14 and 20 depending on how the climbing is split or linked; the pitch-by-pitch breakdown here uses the 14-pitch convention.",
+      "rappels": "Rappel anchors have been updated to stainless steel, and the approach can be reversed with a single 70 m rope where the updated anchors allow it. Most parties do not rappel the route — they top out and walk off via the BASE-jumper trail."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta: 'nearly every pitch involves relentless overhanging terrain at 5.11–5.12'",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project's pitch list: P1 5.10, P2 5.10, P3 5.11, P4 5.11, P5 5.11-, P6 5.11+, P7 5.12-, P8 5.10, P9 5.12, P10 5.11, P11 5.12, P12 5.10+, P13 5.10-, P14 5.10-. That is 8 of 14 at 5.11-5.12 and 6 at 5.10, so 'nearly every pitch' overstates it. Reworded to 'most pitches at 5.11–5.12 and several at 5.10'.",
+          "sources": ["https://www.mountainproject.com/route/119221029/vanishing-point"]
+        },
+        {
+          "claim": "beta: 'pitch 5 (crux, 5.12+)'",
+          "verdict": "CONFIRMED",
+          "evidence": "Mountain Project grades P5 5.11- and names the P11 boulder problem as 'probably the crux of the route'. Nathan Hadley's 2020 modernization write-up describes 'the 5.12 pitch out the huge roof' on P11. The 5.12+ for P5 is one climber's impression ('felt like techy 5.12+') of a pitch graded 5.11c, repeated as fact. The row's own pitch_detail marks P11 as the crux.",
+          "sources": [
+            "https://www.mountainproject.com/route/119221029/vanishing-point",
+            "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/?category=climbing"
+          ]
+        },
+        {
+          "claim": "beta: 'the pitch-by-pitch breakdown here uses the 20-pitch convention' (not in the original finding; found while verifying)",
+          "verdict": "CONFIRMED",
+          "evidence": "The stored pitch_detail has 14 entries, matching Mountain Project's 14-pitch list, not 20. The sentence now names the 14-pitch convention.",
+          "sources": ["https://www.mountainproject.com/route/119221029/vanishing-point"]
+        },
+        {
+          "claim": "rappels: anchors 'spaced roughly 30-35 m apart on the tower and along the fixed-line sections of the approach'",
+          "verdict": "CONFIRMED (unsupported, safety-relevant — removed)",
+          "evidence": "No source gives anchor spacing. The 2020 write-up supports only that all anchors were replaced with stainless and that reversing the approach with a single 70 m rope works. Anchor spacing decides what rope a retreating party needs, so the unsupported spacing clause is removed. The supported claims are kept.",
+          "sources": ["https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/?category=climbing"]
+        },
+        {
+          "claim": "overview: 'A nearly 1,500-foot overhanging prow'",
+          "verdict": "UNCLEAR",
+          "evidence": "Mountain Project lists 1,400 ft (424 m) of route; other write-ups call it a 1,300-ft prow (~400 m); one route description itself uses 'nearly 1500ft overhanging prow'. 'Nearly 1,500' is at the high end but within the published range. Not changed.",
+          "sources": [
+            "https://www.mountainproject.com/route/119221029/vanishing-point",
+            "https://www.climbing.com/travel/long-moderate-sport-climbs-in-washington/",
+            "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html"
+          ]
+        }
+      ],
+      "classification": {
+        "pitches": {
+          "proposed": "14",
+          "evidence": "Mountain Project's headline says 20 pitches but its own pitch list has 14; the stored pitch_detail has 14. The 20 likely counts roped approach slab pitches below the tower."
+        }
+      }
+    }
+  },
+  "wa_snoqualmie_mountain_standard_route": {
+    "area": "wa_snoqualmie_mountain",
+    "set": {
+      "overview": "Snoqualmie Mountain is the highest summit rising directly above the Alpental ski area at Snoqualmie Pass, one of the most-climbed scrambles near Seattle for its short approach and big views of Chair Peak, The Tooth, and Guye Peak across the valley. The peak actually has two summits about 550 ft apart: the popular west summit reached by this standard climbers' path, and a slightly higher east summit (about 3 ft taller per a 2023 professional GPS survey). The direct ridge between them involves an exposed 5th-class downclimb; the easier way drops around the south side of the summit block and gains the east summit by an exposed 3rd-class east ridge — most parties doing the standard route skip it."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview: east summit 'requires down-climbing into a notch and an exposed 4th-class move across a gap'",
+          "verdict": "CONFIRMED",
+          "evidence": "The 2023 survey report (the source of the '3 ft taller' figure the overview already cites) finds the direct west ridge very exposed with a 5th-class downclimb. The easier way it describes goes down steep heather and rock on the south side of the summit block, traverses east under the cliff, climbs a 3rd-class gully onto the east ridge and follows the narrowing crest ('exposed 3rd class'). Mountaineers scramble trip reports for the East Peak describe Class 3 ground with a short exposed step around a ledge. No source gives a 4th-class gap move. The row's own climbing_route rates the east summit 'Exposed Class 3'. Only that clause is rewritten; the survey figures and '550 ft apart' (545 ft in the survey) are kept.",
+          "sources": [
+            "https://www.countryhighpoints.com/snoqualmie-mtn-survey/",
+            "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-snoqualmie-mountain-east-peak"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_icy_peak_ruth_icy_traverse": {
+    "area": "wa_icy_peak",
+    "set": {
+      "beta": "From Hannegan Pass, parties gain Ruth Mountain (via its glacier/snow slopes), then descend south and west from Ruth's summit toward a gully on its west side and continue down to the Ruth-Icy Saddle, from which Icy Peak is clearly visible. From the saddle, cross talus and slabs below a rock ridge onto Icy's glacier and climb firm snow to a notch just west of Icy's Northwest Spire, near 6,500 ft; from there, 2nd-3rd class climbing on mostly good rock leads to a 100-ft 4th-class summit gully and the true (Southeast) summit. A harder, rarely climbed alternative goes from the notch between the Northwest and Southeast summits up the Southeast Peak's steep, loose, very exposed Northwest Ridge to a Class 4 knife-edge summit ridge."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta: descends Ruth's 'south ridge' on 'talus and slabs below a rock ridge' with casual 2nd-3rd class climbing on good rock; climbs toward the notch between Icy's NW and SE summits; Northwest Ridge 'steep, loose, wildly exposed' to a Class 4 knife-edge ridge; finishes with a 100-ft 4th-class summit gully",
+          "verdict": "CONFIRMED",
+          "evidence": "The stored beta welds two different lines together. On Mountain Project's standard traverse, parties descend ~800 ft 'south and west from the summit toward a gully on the west side', then to the low Ruth-Icy saddle, then cross 'talus and slabs below a rock ridge' (this ground is on the Icy side of the saddle, not Ruth's south ridge) onto the glacier to 'a notch/saddle west of the Northwest Spire of Icy at about 6500 ft', then ~500 ft of 2nd-3rd class on 'mostly pretty good' rock ('casual') to the 100-ft 4th-class summit gully. The 'NW-SE notch', 'steep, loose, wildly exposed' ridge and 'Class 4 knife-edge summit ridge' come from one trip report of a different, rarely climbed line. The rewrite gives the standard line in order, matching the row's own climbing_route (notch near 6,500 ft, ridge scramble, Class 4 gully), and keeps the harder line as a clearly separate alternative. The rewrite also drops the quoted source phrasing (hard rules 2 and 3).",
+          "sources": [
+            "https://www.mountainproject.com/route/112189865/ruth-icy-traverse",
+            "https://trailcatjim.com/ruth-mountain-and-southeast-icy-peak/",
+            "https://www.summitpost.org/icy-peak-via-ruth-mountain/855906"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 4",
+          "evidence": "Mountain Project grades the Ruth-Icy Traverse '4th' (the 100-ft 4th-class summit gully is the crux); the stored grade is null. The earlier agent reported 'Grade II, 4th class'; the Grade II commitment rating was not visible on the page as fetched, so only 'Class 4' is proposed."
+        }
+      }
+    }
+  },
+  "wa_north_twin_sister_scramble": {
+    "area": "wa_north_twin_sister",
+    "set": {
+      "overview": "North Twin Sister (6,644 ft) is the second-highest and northernmost summit of the Twin Sisters Range, a massif of dunite (mantle-derived, olivine-rich rock) about 10 miles southwest of Mount Baker. This line follows the mountain's standard west ridge on solid, high-friction olivine to the north summit - the same route as the separate West Ridge entry, described here as the unroped scramble most parties make."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview: this line 'approaches from the south/southwest and gains the ridge connecting North and South Twin ... reached via a different line up the mountain'",
+          "verdict": "CONFIRMED",
+          "evidence": "The row's own beta says North Twin has a single standard line (the west ridge) and that this entry is the scrambling description of that same route. The approach prose ends at the base of the west ridge. The Mountaineers, Steph Abegg and hiking guides all describe the standard scramble as the West Ridge, reached ~5 miles up logging roads from the Middle Fork Nooksack. No source describes a south/southwest line via the North-South Twin connecting ridge. The first sentence is kept; the second is rewritten to match the row's beta.",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/north-twin-sister-w-ridge",
+            "https://stephabegg.com/trip-reports/washington/north-twin/",
+            "https://hike2hike.com/scrambling/north-twin-sister-bellingham-washington/"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_glacier_peak_disappointment_peak_cleaver": {
+    "area": "wa_glacier_peak",
+    "set": {
+      "beta": "Where the standard route leaves the cleaver around 8,500-8,600 ft for a rising traverse under Disappointment Peak onto the upper Gerdine and Cool glaciers, a variant instead continues directly up the nose of the cleaver on a climber's trail (when melted out), steepening into mostly 3rd/4th class terrain (with a few 5th-class moves) between about 8,500 ft and Disappointment Peak's 9,755 ft summit. From there, descend slightly to the saddle above the Cool Glacier to rejoin the standard route to Glacier Peak's summit. The variant's main appeal is avoiding most of the glacier travel and crevasse hazard, traded for sustained loose, rockfall-prone scrambling."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta frames going over Disappointment Peak as 'this variant' and says the standard route 'would traverse onto the Suiattle Glacier around 8,000-8,500 ft', while overview/pitch_detail treat the traverse under the peak as the line",
+          "verdict": "CONFIRMED",
+          "evidence": "Sources say the usual line follows the cleaver to ~8,600 ft, then makes a rising traverse right under Disappointment Peak onto the upper Gerdine and Cool glaciers to the ~9,100 ft col, with going directly over Disappointment Peak (4th class) as the option. Northwest Alpine Guides' description goes 'around Disappointment Peak to the Cool Glacier'. The Suiattle Glacier is only touched at the ~7,300 ft col before the cleaver, not at 8,000-8,500 ft. The glacier name is fixed, 'this variant' becomes 'a variant' so the beta agrees with the row's overview and pitch_detail, and the over-the-peak description is otherwise kept. 'Avoiding glacier travel and crevasse hazard entirely' is softened to 'most of', because even the over-the-peak line rejoins the snow route above the Cool Glacier saddle.",
+          "sources": [
+            "https://www.summitpost.org/disappointment-cleaver-gerdine-ridge/155642",
+            "https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+            "https://www.northwestalpineguides.com/northwest-climbs/glacier-peak/"
+          ]
+        }
+      ],
+      "classification": {
+        "length_m": {
+          "proposed": "990",
+          "evidence": "Glacier Gap ~7,250-7,300 ft to the ~10,541 ft summit is ~3,240 ft, about 990 m of climbing; the stored 366 m (1,200 ft) is far below that. A human should confirm length_m means vertical from the climb's start for mountaineering rows."
+        }
+      },
+      "note": "Not changed, but worth a human look: descent_text says to 'downclimb the Disappointment Peak Cleaver ridge back to the 9,600 ft col, then descend the Cool Glacier to the 9,100 ft col'. That sequence mixes the over-the-peak variant with the glacier route and may need its own pass."
+    }
+  },
+  "wa_mount_rainier_sunset_ridge": {
+    "skip_reason": "finding UNCLEAR — see review; no correction written",
+    "review": {
+      "findings": [
+        {
+          "claim": "descent_text: 'Descend Emmons-Winthrop to White River' (carryover to the far side)",
+          "verdict": "UNCLEAR",
+          "evidence": "No source names the Emmons-Winthrop as the descent for Sunset Ridge. The one route write-up that addresses descent (The Mountaineers page, seen only as a search excerpt because the page returned 403) says to carry over and descend the Disappointment Cleaver with a car shuttle arranged beforehand, or, early season, to camp on the Puyallup Cleaver and descend the Tahoma Glacier. One 2025 attempt reversed the ridge itself. Descending the Emmons is still a real carryover option from the summit, so the stored text is not clearly false. It is incomplete: it names no shuttle, and White River is on the opposite side from the Westside Road start. Suggested text for a human to consider: 'Carry over and descend a standard route, most often the Disappointment Cleaver to Paradise; arrange a car shuttle back to the Westside Road. Early in the season, a party camped on the Puyallup Cleaver can instead descend the Tahoma Glacier route back to the west side. The Emmons-Winthrop to White River also works as a carryover, with a longer shuttle.'",
+          "sources": [
+            "https://www.mountaineers.org/activities/routes-places/mount-rainier-sunset-ridge",
+            "https://spokalpine.com/2025/07/03/rainier-sunset-ridge-attempt/",
+            "https://www.mountainproject.com/route/112479245/sunset-ridge"
+          ]
+        }
+      ]
+    }
+  }
+}

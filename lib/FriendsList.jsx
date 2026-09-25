@@ -3,6 +3,7 @@
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { ActionIcon, Av, C, DiscIcon, Lbl, ME, ROUTES, catOf, fuzzyMatch, mutualCount, pubName, seedIdentity, vScore } from "../ClimbMatchCore.jsx";
+import { POP_CLOSE } from "./popupChrome.js";
 
 export default function FriendsList({unavailable,friends,onClose,onOpenProfile,onMessage,onRemove,onFormCrew,onVouch,hasVouched,mutuals,onKudos,kudosGiven}){
   const [q,setQ]=useState("");
@@ -24,7 +25,7 @@ export default function FriendsList({unavailable,friends,onClose,onOpenProfile,o
   const chipStyle=(on)=>({flexShrink:0,padding:"9px 11px",borderRadius:14,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12,fontWeight:600,cursor:"pointer",whiteSpace:"nowrap"});
   return <div onClick={onClose} role="dialog" aria-label="Friends" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:1150,overflowY:"auto",overscrollBehavior:"contain",display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"12px 8px"}}>
     <div onClick={e=>e.stopPropagation()} style={{background:C.surface,borderRadius:18,width:"100%",maxWidth:460,border:"1px solid "+C.border,overflow:"hidden"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Friends ("+friends.length+")"}</div><button onClick={onClose} style={{background:C.card,border:"1px solid "+C.border,color:C.textSub,borderRadius:8,width:36,height:36,fontSize:16,cursor:"pointer"}} aria-label="Close">×</button></div>
+      <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:"1px solid "+C.border}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Friends ("+friends.length+")"}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
       <div style={{padding:"12px 14px"}}>
         {friends.length>4?<input aria-label="Search friends" value={q} onChange={e=>setQ(e.target.value)} placeholder="Search friends…" style={{width:"100%",boxSizing:"border-box",padding:"9px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:14,outline:"none",marginBottom:9}}/>:null}
         {friends.length>1?<div style={{display:"flex",gap:6,overflowX:"auto",paddingBottom:3,marginBottom:8}}>{SORTS.map(x=><button key={x[0]} onClick={()=>setSort(x[0])} aria-current={sort===x[0]?"true":undefined} style={chipStyle(sort===x[0])}>{x[1]}</button>)}</div>:null}

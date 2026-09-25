@@ -2,6 +2,7 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
 import { ActionIcon, Av, C, DOW, FloatPlan, Pill, Questionnaire, RISK_LEVELS, RiskBadge, SL, analyzeAlignment, floatPlanState, hasSlot } from "../ClimbMatchCore.jsx";
+import { POP_BACK } from "./popupChrome.js";
 
 export default function SafetyTab({members,meAnswers,onComplete,who,scope}){
   /* THE OTHER HALF OF THE SAME DEFECT, and the worse half. `{view==="float"?<FloatPlan/>:…}`
@@ -12,7 +13,7 @@ export default function SafetyTab({members,meAnswers,onComplete,who,scope}){
   const [view,setView]=useState("alignment"),[show,setShow]=useState(false),[floatPlan,setFloatPlan]=useState(()=>floatPlanState());
   const analysis=analyzeAlignment(members);
   const readyCol=analysis.ready?C.green:analysis.discussion?C.amber:C.blue,readyBg=analysis.ready?C.greenBg:analysis.discussion?C.amberBg:C.blueBg,readyMsg=analysis.ready?"Team Ready to Climb":analysis.discussion?"Discussion Required Before Confirming":!analysis.allDone?"Waiting for All Members to Complete Questionnaire":"Analyzing…";
-  if(show)return <div><button onClick={()=>setShow(false)} style={{background:"transparent",border:"none",color:C.blue,fontSize:17,cursor:"pointer",fontWeight:600,marginBottom:6,padding:"8px 10px",marginLeft:-10}}>← Back</button><Questionnaire onComplete={a=>{onComplete(a);setShow(false);}}/></div>;
+  if(show)return <div><button onClick={()=>setShow(false)} style={POP_BACK}>← Back</button><Questionnaire onComplete={a=>{onComplete(a);setShow(false);}}/></div>;
   return <div>
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:7,marginBottom:14}}>{[["alignment","Team Alignment"],["float","Float Plan"]].map(x=><button key={x[0]} onClick={()=>setView(x[0])} aria-current={view===x[0]?"true":undefined} style={{padding:"10px 6px",borderRadius:12,border:`1.5px solid ${view===x[0]?C.blue:C.border}`,background:view===x[0]?C.blueBg:C.surface,color:view===x[0]?C.blue:C.textSub,cursor:"pointer",fontSize:13,fontWeight:600}}>{x[1]}</button>)}</div>
     {view==="float"?<FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={scope}/>:<div>
