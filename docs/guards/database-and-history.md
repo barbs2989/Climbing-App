@@ -806,6 +806,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     reported "mt baker" case among them) and that tokens never carry a LIKE metacharacter,
     since they go into `ilike` patterns unescaped. Fails closed with `ANCHOR LOST` if it parses
     fewer than 10 table rows.
+  - **Section 4 — every search FUNCTION still uses the rule.** `0196` re-created
+    `routes_in_subtree` / `_count` to add `grade_sys`, copying "0074's verbatim" bodies, and put
+    `r.name ilike '%' || q || '%'` back 17 minutes after `0190` shipped. Sections 1-3 passed
+    throughout, because they read the spelling table and never the finders. A climber then typed
+    "NE Buttress" in an area's route list and got nothing, while the global search found it.
+    `0200` restored the match. Section 4 now reads the NEWEST definition of `routes_in_subtree`,
+    `routes_in_subtree_count`, `areas_in_subtree` and `search_names_fuzzy` and fails on a
+    verbatim `name ilike … q`. Injection: delete `0200` and it names both 0196 finders.
+    **Lesson: a migration that re-creates a function must start from the NEWEST body, not the
+    one its author last read.**
+  - **`0201` widened the table to every abbreviation route names were MEASURED to use** (whole-word
+    counts over 205k names): dir/var/rte/ext/alt/orig, rdg/gl/ck/lk/cyn/pt/rd, lt/rt/upr/lwr/mid/ctr,
+    1st–5th, one–ten ↔ digits, dr/mr/jr/sr, gulley/coulior misspellings, NNE-style points one way,
+    and a direction written in two parts ("South East", "North-East", "N.E.") joined in
+    `search_clean`. Deliberately NOT mapped: L/R/I/V/X, tr, ft, no, sec, cr — each means
+    something else in a route name first. Section **1b** compares the join patterns SQL vs JS
+    (injection: drift one → fails naming it). Backfill touched 16,220 areas and 22,582 routes;
+    SQL and JS `search_norm` agreed on 27 edge names live. Offline packs now derive the form from
+    the NAME, not their stored `name_search`, so an old pack cannot keep the old rule. The three
+    remaining verbatim route/area-name boxes (add-route dupes seed half, AreaTree filter, inbox
+    crew-thread route name) now use `searchMatches`.
   - **Structurally cannot see** whether the live database runs that migration —
     `check:function-drift` does.
   - Injection-tested **4/4** (SQL drops a row, JS adds an alias SQL lacks, the SQL accent fold
