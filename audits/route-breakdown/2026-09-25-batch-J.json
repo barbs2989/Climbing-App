@@ -1,0 +1,276 @@
+{
+  "wa_mount_shuksan_sulphide_glacier": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Section 1",
+        "grade": "Trail, then open ridge",
+        "notes": "Follow the Shannon Ridge Trail's old roadbed to about 3,800 ft, then real trail onto the ridge crest to timberline near 4,600 ft, where snow often lingers into midsummer. Stay on the broad crest to the pass near 5,400 ft where the glacier and summit pyramid first appear; the camps sit on the glacier's edge at roughly 6,200 and 6,500 ft, with no reliable water late in the season."
+      },
+      {
+        "pitch": "Section 2",
+        "grade": "Glacier, crevassed",
+        "notes": "Rope up at camp and climb north up the west side of the Sulphide Glacier over a series of rolling steps. Near 7,600 ft the angle eases; bear north-northeast across the flatter upper glacier to the foot of the summit pyramid around 8,400-8,500 ft. Large crevasses lie near high camp, bridges thin and blue ice appears as summer goes on, and old GPS tracks stop matching the open cracks late in the season."
+      },
+      {
+        "pitch": "Section 3",
+        "grade": "3rd class",
+        "notes": "The central gully up the south face of the pyramid, roughly 600 ft to the summit: start up the face just above the rock step at its base and trend slightly left. Early season it is steep snow; later it is blocky, stair-stepped rock that is solid for the Cascades but collects loose stones, and with parties above and below it becomes a rockfall chute. If the rock is iced, turn around. The descent comes back down this gully by rappel and downclimbing."
+      },
+      {
+        "pitch": "Southeast Ridge (alternative)",
+        "grade": "Exposed rock ridge",
+        "notes": "Instead of the gully, the ridge on its right (southeast) edge gives a roped alternative: a half-dozen or more short pitches, mostly 4th class with low-5th-class steps and big exposure. It suits a dry pyramid when the gully snow is rotten; plan to descend the central gully regardless, and carry a small rock rack and slings."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Kept the three Section labels on the same ground (trail, glacier, summit gully) with far fuller notes; added the Southeast Ridge as its own alternative entry (it was a parenthetical in Section 3). 3 -> 4 entries. No lengths stored or added.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108833562/sulphide-glacier",
+        "https://ncmountainguides.com/routes/climbing-routes/mount-shuksan-sulphide-glacier",
+        "https://www.rmiguides.com/north-cascades/shuksan-sulphide-glacier",
+        "https://summitborn.com/mount-shuksan-sulphide-glacier-summit-guide/",
+        "https://www.turns-all-year.com/trip-reports/tay-32-7-2020-66-mount-shuksan-where-was-this-class-3-scramble",
+        "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier (search excerpt only; page returned 403)"
+      ],
+      "other_findings": "The beta and descent_text columns say the Southeast Ridge has 'two unavoidable pitches rated 5.6 and 5.7'. The sources found describe it as mostly 4th class with low-5th sections; no 5.6/5.7 rating was found. Worth checking."
+    }
+  },
+  "wa_mount_shuksan_price_glacier": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Section 1",
+        "grade": "AI2",
+        "notes": "From the slab bivy, gain the ridge crest and the glacier margin, traverse right to the exposed snow saddle below Nooksack Tower, then drop and work onto the main lobe near 6,500 ft; the gully under the tower is a rock- and icefall path, so cross it fast. Above, weave up steep snow and alpine ice (AI2-AI3) between seracs and slough chutes. Late season means bare ice and climbing into and out of the overhanging walls of crevasses."
+      },
+      {
+        "pitch": "Section 2",
+        "grade": "AI3",
+        "crux": true,
+        "notes": "The bergschrund band near 7,800 ft, which may be one crack or several. There are three ways over: rock on the left, an ice line in the middle, or mixed ground on the right. Which one goes changes with the season, from an AI3 ice rib to an AI4 ice chimney late in the year; in a big-snow year the left edge can be filled in. Carry screws, pickets and a small rock rack."
+      },
+      {
+        "pitch": "Section 3",
+        "grade": "Steep snow/ice, crevassed",
+        "notes": "Above the schrund, climb the steep snow or ice field to the glacier plateau below the summit pyramid, then cross the plateau and swing around to the pyramid's south side. Crevasses remain on the plateau, and the snow here softens early on a warm day."
+      },
+      {
+        "pitch": "Section 4",
+        "grade": "4th class",
+        "notes": "Finish up the easy gullies on the south side of the summit pyramid (4th to low 5th class), the same central gully the Sulphide route uses, with a few rock moves low and again near the top. Expect other parties and rockfall; the descent reverses this gully toward Hell's Highway."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same four sections on the same ground. Folded the Nooksack Tower traverse into Section 1, added the season-dependent schrund options and grades to Section 2 (marked crux), and described the plateau and the south-side finish. Grade tokens reduced to single values (AI2, AI3, 4th class) with ranges moved to notes. 4 -> 4 entries.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106238998/price-glacier",
+        "https://mazamas.org/activity/302/",
+        "https://www.jeffreyjhebert.com/adventures/price-glacier-on-mount-shuksan",
+        "https://www.summitpost.org/price-glacier-mount-shuksan/758377 (search excerpt only; page returned 403)",
+        "https://jdmartin86.github.io/articles/18/price"
+      ],
+      "other_findings": "descent_text says the pyramid descent is down 'the gully system on the pyramid's west side'. The ascent sources put the standard gully on the south side, and it is the same gully the Sulphide route descends. Worth checking."
+    }
+  },
+  "wa_mount_shuksan_north_face": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Section 1",
+        "grade": "Crevassed glacier",
+        "notes": "From the bivy at about 5,500 ft, where the ridge meets the face, traverse left across the base through the lower glacier's cracks. The first few hundred feet hold the largest crevasses; trend climber's right of the main runnel to stay out from under icefall off the Hanging Glacier. Late season, a schrund can block the direct start; a left-leaning snow gully gets around it."
+      },
+      {
+        "pitch": "Section 2",
+        "grade": "~45° snow/ice",
+        "notes": "Climb the long, continuous face on snow and runnels at about 45 degrees. Near 6,900 ft the line passes through a notch between two rock outcrops, and above it there is less cliff on either side. The upper face gets little early sun and stays firmer. In good snow it is often climbed unroped; late season it turns icy and a second tool and ice screws are needed."
+      },
+      {
+        "pitch": "Section 3",
+        "grade": "45-50° snow/ice",
+        "notes": "The face steepens to about 50 degrees just below the exit, then tops out onto the broad shoulder between the Crystal and Hanging Glaciers, around 8,400 ft and northeast of the summit pyramid. On firm snow this is the most sustained ground of the route, with the whole face below."
+      },
+      {
+        "pitch": "Section 4",
+        "grade": "Snow traverse, Class 3-4",
+        "notes": "From the shoulder, traverse the ice plateau around the east side of the summit pyramid to its south face, then finish up the central gully of the standard route (mostly 3rd-4th class with a few harder moves). The usual descent is the Fisher Chimneys to Lake Ann or the White Salmon Glacier back toward the cars, not the face."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Kept the three Section labels on the same ground with concrete notes (crevasses and staying right of icefall at the start, the ~6,900 ft notch, the 50-degree exit onto the ~8,400 ft shoulder). Added Section 4 for the shoulder-to-summit finish, which the old table left out. 3 -> 4 entries.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107476295/north-face",
+        "https://stephabegg.com/trip-reports/washington/shuksan-nf/",
+        "https://thepeakoftheweek.com/2016/05/11/mt-shuksan-north-face/",
+        "https://www.jeffreyjhebert.com/adventures/north-face-of-mount-shuksan",
+        "https://www.mountaineers.org/activities/routes-places/mt-shuksan-n-face (search excerpt only; page returned 403)"
+      ]
+    }
+  },
+  "wa_mount_shuksan_hanging_glacier": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Section 1",
+        "grade": "Class 3-4, then glacier",
+        "notes": "From a camp above the Fisher Chimneys, descend about 1,000 ft down the White Salmon Glacier, then cross the Northwest Rib, the narrow rock spur that divides the White Salmon and Hanging Glaciers, to reach the foot of the Hanging Glacier. From the White Salmon valley instead, traverse left beneath the upper ice, staying well right of the North Face's avalanche paths."
+      },
+      {
+        "pitch": "Section 2",
+        "grade": "Ice to 65°",
+        "notes": "Climb the Hanging Glacier, mixing roped glacier travel with ice steps up to about 65 degrees; steeper lines are there for those who want them. A large crevasse high on the glacier has to be outflanked. The glacier's top joins the Crystal Glacier, which leads onto the upper plateau beside the summit pyramid. Serac fall is a real hazard here, and the glacier is retreating, so conditions change from year to year."
+      },
+      {
+        "pitch": "Section 3",
+        "grade": "5.6",
+        "notes": "Finish on the east ridge of the summit pyramid: roped rock climbing at about 5.3 to 5.6 to the summit. Descend the pyramid's central gully on its south side."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same three sections. Section 1 now names the Northwest Rib crossing and the White Salmon-side alternative; Section 2 adds the high crevasse, the Crystal Glacier join and serac hazard; Section 3 gives the 5.3-5.6 range. Only one detailed source covers this route, so the notes stay general. 3 -> 3 entries.",
+      "sources_consulted": [
+        "https://kurthicks.com/2009/08/30/mt-shuksans-hanging-glacier/",
+        "https://en.wikipedia.org/wiki/Hanging_Glacier_(Mount_Shuksan)",
+        "https://www.alpineinstitute.com/route-profile-northwest-rib-mt-shuksan-5-7-iii/ (search excerpt: the NW Rib separates the White Salmon and Hanging Glaciers)",
+        "https://engineeredforadventure.com/shuksan-northwest-couloir-hanging-glacier/",
+        "https://cascadeclimbers.com/forum/topic/87973-tr-mt-shuksan-hanging-glacier-via-the-nw-rib-and-the-nw-ar%C3%AAte-8112012/ (did not load)"
+      ]
+    }
+  },
+  "wa_mount_shuksan_white_salmon_glacier": {
+    "area": "wa_mount_shuksan",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Section 1",
+        "grade": "Glacier, crevassed",
+        "notes": "From the bivy among the rock outcrops on the glacier's east edge, rope up and climb the White Salmon Glacier, weaving around outcrops and crevasses to the foot of Winnie's Slide near 6,800 ft. The valley below and this lower glacier sit under the very active Hanging Glacier, whose avalanches can sweep the whole area, so move through early and don't linger."
+      },
+      {
+        "pitch": "Section 2",
+        "grade": "40-45° snow, steeper top",
+        "notes": "Climb Winnie's Slide, a short, steep snow slope of about 40-45 degrees that steepens past 50 near the top, for a few hundred feet until you can step onto the Upper Curtis Glacier. Late season it can be hard snow or ice, when an ice screw or two for protection makes sense. It is often downclimbed in a boot pack on the way out."
+      },
+      {
+        "pitch": "Section 3",
+        "grade": "Glacier travel",
+        "notes": "Cross the Upper Curtis Glacier southward: it starts steep, eases, then loses height to the base of Hell's Highway. Early on the crevasses are well bridged; by late summer they open wide and the bridges weaken, so keep the rope tight."
+      },
+      {
+        "pitch": "Section 4",
+        "grade": "Steep snow/ice step",
+        "notes": "Climb Hell's Highway, a short (about 60 m) chute of steep snow or alpine ice between rock cliffs, onto the upper west edge of the Sulphide Glacier. Watch for a moat where snow meets rock. Then follow the Sulphide northeast to the foot of the summit pyramid."
+      },
+      {
+        "pitch": "Section 5",
+        "grade": "Class 3-4 rock or snow",
+        "notes": "Finish on the summit pyramid by the central gully on its south face (3rd-4th class, steep snow early season) or by the West Ridge (4th class). The gully sheds loose rock under traffic late in the season. Descend the gully, then reverse Hell's Highway, the Curtis Glacier and Winnie's Slide."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Kept the four Section labels on the same ground. Split the old Section 4 into Hell's Highway (Section 4) and the summit pyramid (new Section 5). Added the Hanging Glacier avalanche hazard, Winnie's Slide steepening past 50 degrees, the moat, and the finish options. 4 -> 5 entries.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107476711/white-salmon-glacier",
+        "https://www.whereiskylemiller.com/mt-baker-542/mount-shuksan/",
+        "https://karl-helser.com/mt-shuksan-white-salmon-glacier/",
+        "https://angelatravels.com/scrambling-and-glaciers-how-to-climb-mount-shuksans-fisher-chimneys-route/",
+        "https://www.summitpost.org/mount-shuksan-fisher-chimneys/218055 (search excerpt: Winnie's Slide / Hell's Highway / moat)",
+        "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mt-shuksan-fisher-chimneys (search excerpt only)"
+      ],
+      "other_findings": "The beta column describes a 'Grade II-III alpine ice/mixed route, up to 50-degree ice ... Mixed rock and ice. High exposure with steep glacier headwall', which reads like the North Face or Hanging Glacier. It contradicts the stored grade 'Grade II, Easy Snow', the overview, and every source (MP rates it Easy Snow). The beta should be rewritten."
+    }
+  },
+  "wa_mount_baker_cockscomb_ridge": {
+    "area": "wa_mount_baker",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Glacier approach",
+        "grade": "Low-moderate snow",
+        "notes": "From the Heliotrope Ridge side, rope up and cross the Coleman and then the Roosevelt Glacier northeastward, about 2-3 hours of crevassed glacier, then take low-to-moderate snow ramps to the foot of the ridge at roughly 7,500-7,800 ft. Thin bridges over a crevasse maze are the main hazard here."
+      },
+      {
+        "pitch": "Lower ridge",
+        "grade": "Moderate snow",
+        "notes": "Climb the lower ridge on moderate snow, passing a pinnacle on its right side. Keep on snow where you can; the rock here is poor."
+      },
+      {
+        "pitch": "Towers/icefall",
+        "grade": "4th class, loose rock",
+        "notes": "Junky towers and bergschrunds block the crest. Get around them to the left (east) on low-to-moderate ramps through the icefall; a long contour east near 9,000 ft skirts a schrund on the ridge. The rock before the Cockscomb is extremely loose out of season, so this ridge is a spring and early-summer climb."
+      },
+      {
+        "pitch": "Cockscomb",
+        "grade": "Steep snow",
+        "crux": true,
+        "notes": "The Cockscomb Tower, about 300 ft high, is passed on its left (east) side by steep snow, taking the most direct line around it. Late in the season, when that snow is gone, the alternative is to drop onto the Park Glacier and climb its headwall (AI3), which needs several screws."
+      },
+      {
+        "pitch": "Upper ridge to summit",
+        "grade": "Moderate snow",
+        "notes": "Regain the crest above the tower. The ridge broadens into the summit plateau; cross it to Grant Peak. Descend the Coleman-Deming route."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same five labels on the same ground. Added the Coleman/Roosevelt crossing and ridge-base elevation, the ~9,000 ft schrund contour, the 300 ft tower passed east by steep snow (marked crux) with the AI3 Park Headwall late-season alternative, and the plateau finish. 5 -> 5 entries.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/113499467/cockscomb-ridge",
+        "http://publications.americanalpineclub.org/articles/12196136001/North-America-United-States-WashingtonCascades-Mount-Baker-Cockscomb-Ridge"
+      ],
+      "other_findings": "(1) The approach column says the approach is Artist Point -> Ptarmigan Ridge -> Rainbow/Park Glacier and explicitly says the Coleman and Roosevelt are NOT crossed. Both the first-ascent account (1961: Kulshan Cabin -> Coleman -> Roosevelt to the ridge base at 7,800 ft) and Mountain Project say the opposite, and so do this route's own beta column and old pitch_detail. The approach column looks wrong. (2) fa says 'E. Vielbig'; the first-ascent account names Klindt Vielbig. (3) pitches is 0; Mountain Project lists 5 pitches."
+    }
+  },
+  "wa_mount_baker_squak_glacier": {
+    "area": "wa_mount_baker",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Trailhead to Crag View camp",
+        "grade": "Trail/climbers' path",
+        "notes": "Take the Scott Paul Trail from the Park Butte trailhead and leave it near 4,600 ft for the climbers' path north to the edge of the Squak Glacier. Camp near Crag View (point 6,513 ft) at about 6,200-6,700 ft; staying on the east side of the Crag View rock buttress leads to sites just north of it. About 3.5 miles and 3,300 ft of gain, non-technical."
+      },
+      {
+        "pitch": "Camp to Sherman Peak area",
+        "grade": "Glacier travel",
+        "notes": "Rope up and head north up the Squak Glacier on wide, steady snow, passing west of the rock Prow and weaving through crevasses toward Sherman Peak. Around 9,400 ft, below Sherman Peak, the slope eases. This line is quieter than the Easton, so expect to break your own track and navigate by wands in poor visibility."
+      },
+      {
+        "pitch": "Sherman Crater rim traverse",
+        "grade": "Glacier, crevassed",
+        "notes": "Traverse northwest toward the Sherman Crater rim near 9,600 ft, aiming for the horn between Sherman Peak and the Roman Wall, where the route meets the Easton line. Later in the season a bergschrund on this part of the route gets hard to get across, so it is best early. Volcanic gas with a sulphur smell drifts out of the crater."
+      },
+      {
+        "pitch": "Join Easton route to summit",
+        "grade": "35-40° snow",
+        "notes": "Climb the Roman Wall, about 1,000 ft of 35-40 degree snow and the steepest ground of the climb, weaving around large crevasses. It is dangerous if icy. At the top, walk north across the broad summit plateau to Grant Peak, the high point. Descend the same way."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same four labels on the same ground with concrete notes (the Prow, the ~9,400 ft easing, the crater-rim horn, the late-season bergschrund, the Roman Wall's 35-40 degrees). DROPPED the stored lengthM values 700/400/205: no source gives them, and they add up exactly to the route's length_m of 1305, so they look like the total split into three. 4 -> 4 entries.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108224628/squak-glacier",
+        "https://www.alpineinstitute.com/articles/summit-mt-baker-your-guide-to-the-easton-squak-and-coleman-deming-routes/",
+        "https://www.theoutbound.com/washington/backpacking/climb-mt-baker-via-squak-glacier",
+        "https://www.mountaineers.org/activities/routes-places/sherman-peak-squak-glacier-mount-baker (search excerpt only)",
+        "https://www.rmiguides.com/north-cascades/baker-easton-glacier",
+        "https://backcountrysights.com/mount-baker-easton-glacier-route/"
+      ],
+      "other_findings": "grade is null; Mountain Project rates the route Easy Snow, Grade III."
+    }
+  },
+  "wa_mount_baker_boulder_park_cleaver": {
+    "skip_reason": "DUPLICATE of wa_mount_baker_boulder_glacier. Both rows describe the same climb: the same Boulder Ridge Trail #605 trailhead (~2,700 ft), the same high camp below the Boulder Glacier, the same crossing to the toe of the Boulder-Park Cleaver at ~6,800 ft, the same cleaver, and the same ~9,300 ft rock buttress with its rockfall exposure. wa_mount_baker_boulder_glacier's own name is 'Boulder Glacier / Boulder Cleaver' and its second entry is labelled 'Boulder-Park Cleaver'. Sources describe the Boulder Glacier route as most often climbed by this cleaver to avoid the crevassed middle glacier (Mountain Project 'Boulder-Park Cleaver' page; turns-all-year Boulder Glacier reports). The only real differences are fa (Morovits 1894 vs LaConnor 1891) and this row's claim that the route crosses the Park Glacier to the cleaver toe; one source (ericsbasecamp) does step onto the Park Glacier side to reach it, which is the same line. Recommend merging or retiring this row rather than enriching it."
+  }
+}

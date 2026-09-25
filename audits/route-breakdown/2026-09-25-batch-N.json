@@ -1,0 +1,157 @@
+{
+  "wa_mount_index_north_norwegian_buttress": {
+    "skip_reason": "Route identity is unresolved, so no single pitch list can be matched to this row. The row is a generic 'North Norwegian Buttress' route. Its grade (5.9) and pitch count (16) match Jötnar (VI 5.9 A3+, 16 pitches, FA Boyce/Chapko/Willis 2020). But its stored table (Toe / Shield / Roofs / Slab / Headwall / Summit) and its rappels text describe Bluebell (5.13-, all bolted, the free line, FFA Hadley et al. 2023). Its FA field names the Doorish 1980s solo aid line. Detailed pitch-by-pitch descriptions exist for both documented lines on Mountain Project: Bluebell has 17 pitches in six named sections (P5 5.13- dike boulder, P12 5.13- Big Overhang), and Jötnar has 16 pitches (P4 A3+ crux, all anchors bolted except P15). A human should decide which climb this row is, or split it, before a breakdown is written. OTHER FINDINGS: the stored table's grade cells are not grade tokens ('up to 5.13- / V5-V6 boulder problem', 'easier (5.8-ish)'). It places the headwall at ~P12-15 while also giving a separate roofs row at ~P12-13; in Bluebell the roofs are P7-8. Bluebell's pitch count is 17 on Mountain Project but 21 in the AAJ article. Sources: https://www.mountainproject.com/route/124804426/bluebell, https://www.mountainproject.com/route/120300835/jotnar, https://publications.americanalpineclub.org/articles/13201216755"
+  },
+
+  "wa_traverse_of_mount_index": {
+    "area": "wa_main_peak_2",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "North Face ascent", "grade": "Brushy Class 4+", "notes": "From the talus west of Lake Serene, climb grass and brush onto the bushy NE spur and scramble up to the first slab, keeping right of the crest. Above, an exposed corner, a short leftward traverse into a gully, and a hidden ledge cutting right around the skyline lead to a brushy gully and a rightward ramp into the open basin on the true north face. Bushes are often better protection than gear; old pins and rap slings mark the line." },
+      { "pitch": "North Face basin gully", "grade": "Snow or slabby rock", "notes": "From the basin, climb three to four leads up the steep, right-curving gully above its left side. It holds snow into midsummer. When dry the slabby rock is hard to protect, and it is marginal when wet. Near the top, move right up a broad ramp to the notch at the foot of the sharp North Rib." },
+      { "pitch": "North Rib", "grade": "5.5", "notes": "Two to three exposed leads straight up the rib on the best rock of the day, ending at an open grassy bench. Above the rib the ground drops to mostly exposed 4th class. Follow the bench left toward the east face into a brushy gully, take its left fork through trees, then climb heather to the crest." },
+      { "pitch": "False summit to North Peak", "grade": "Class 3–4, exposed", "notes": "Follow the crest right over easy rock to the false summit, then scramble a line of steep gendarmes. The moves are easy but the exposure is severe. Drop a little to avoid a cliff and reach the true summit on its north side over heather and broken rock. Late snow patches near the false summit may be the only water on the upper route. This is the last point where retreat down the North Face is still straightforward." },
+      { "pitch": "North to Middle traverse", "grade": "Rappels, Class 3–4", "notes": "The descent to the North–Middle notch weaves around the gendarmes south of the summit and takes several rappels (commonly three to four) plus downclimbing, switching sides of the ridge. Expect a first rappel west off a slung block tucked behind the first gendarme and a later rappel west from a heavily slung block between the second and third gendarmes. Fixed tat is old, so carry slings to replace it." },
+      { "pitch": "Out of the North–Middle notch", "grade": "5.7", "crux": true, "notes": "The technical crux. The notch is walled in on all sides with huge drops. The right-hand line up a gully system is a poorly protected 5.7 on paper, and has been found closer to 5.9 with sparse gear. The alternative traverses about 50 ft left to a shallow east-facing corner that leads to the ridge. The rock is solid but short on cracks, so plan belays before committing." },
+      { "pitch": "Middle Peak section", "grade": "Exposed ridge, rappel", "notes": "Follow a knife-edge crest for three to four pitches over the Middle false summit. One slightly overhanging rappel drops into the notch between the false and true Middle summits, where a flat slab makes a good bivy and snow may linger for water. From there traverse onto the east face and climb broken slabs and heather to the Middle summit." },
+      { "pitch": "Middle to Main traverse", "grade": "Downclimb, 2+ rappels", "notes": "The route down to the Middle–Main notch is more involved than it looks. It changes sides of the crest several times: down an east gully past the first gendarme, a short rappel west onto a ledge system, across light-colored slabby ledges (snow or running water early season), then steep steps east. It ends with a rappel from a tree down a steep reddish gully beneath a chockstone, then a traverse into the notch." },
+      { "pitch": "Main Peak north side", "grade": "5.5", "notes": "Leave the notch by a short chimney or rock up and left (around 5.5), then continue on low 5th ground to the ridge rising from the South Norwegian Buttress. Climb the ridge through trees and a left-facing corner to the Wedge gendarme. Beyond it, cross the big reddish gully high on a loose bench, then take ledges through a notch to the west side, where heather slopes lead to the Main summit." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "4 thin rows became 9 ordered sections covering the full north-to-south traverse. The four existing labels are kept for the same ground. New rows: the basin gully, North Rib, the upper North Peak, the North–Middle notch crux and Main's north side. The stored per-section grades (5.6-5.7 / 5.6 / 5.5-5.6 / 5.4-5.5) had no source and were replaced with sourced ones. No lengths are given because none is sourced.",
+      "sources_consulted": [
+        "http://porridge.freehostia.com/outdoor/beckey/beckey.html (excerpt of the North Face route description)",
+        "https://cascadeclimbers.com/forum/topic/104091-tr-mt-index-north-middle-main-traverse-07102021/",
+        "https://cascadeclimbers.com/forum/topic/74763-tr-mt-index-traverse-north-gt-middle-gt-main/",
+        "https://waynewallace.wordpress.com/2010/07/08/index-traverse-north-middle-and-main/",
+        "https://www.mountainproject.com/route/120466607/traverse-of-mount-index"
+      ],
+      "other_findings": "The stored pitches value (4) is not a real pitch count: the traverse is dozens of leads plus many rappels. The '4 pitches' comes from the Mountain Project listing. The stored descent_text says 'several 30-50 foot rappels' and '2-3 hour descent from Main Peak to Lake Serene via rappels'. The traverse ends on Main, and no source consulted supports those figures."
+    }
+  },
+
+  "wa_vesper_peak_north_face_ragged_edge": {
+    "area": "wa_vesper_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "P1", "grade": "5.6", "lengthM": 50, "anchor": "gear", "notes": "Two starts. The better one drops by an exposed 3rd-class traverse around the toe of the buttress to a clean layback flake, then a low-angle groove to 3rd-class slabs. The original start scrambles a gully over a large flake-chockstone. Either way, traverse hard right along a grassy ledge system to a gear belay below the faint white dike splitting the slab. This rightward jog is where parties most often go off route." },
+      { "pitch": "P2", "grade": "5.7", "lengthM": 27, "bolts": 3, "anchor": "fixed", "notes": "Climb the thin white dike past three bolts to a narrow ledge, then traverse right and up a short gully to a fixed anchor on the skyline. Some parties rate this slab the crux of the route. Keep slings long on the traverse to manage rope drag, and watch for parties above in the gully." },
+      { "pitch": "P3", "grade": "5.7", "lengthM": 29, "anchor": "gear", "notes": "Step right, then traverse left on positive edges toward the skyline past bolt protection. Go up the arête past old fixed pins through a short, fun dihedral, and belay on gear at a heather ledge. Back up the old pins rather than trusting them alone." },
+      { "pitch": "P4", "grade": "5.7", "lengthM": 29, "anchor": "fixed", "notes": "Climb steep stacked blocks, then easier zig-zag cracks to a fixed anchor. Loose rock is the hazard here: a large detached block sits on this ground and can take away gear options. Test holds, keep the rope off loose edges, and keep the belayer out of the fall line." },
+      { "pitch": "P5", "grade": "5.7", "lengthM": 24, "bolts": 2, "anchor": "fixed", "crux": true, "notes": "Often called the crux: an airy face traverse out along the ragged east edge of the north face. Pass two bolts, then traverse right about 50 ft to a fixed anchor on the skyline. The exposure is big but the rock takes gear well. Protect the traverse for the follower as well as the leader." },
+      { "pitch": "P6", "grade": "5.5", "lengthM": 40, "anchor": "bolted", "notes": "The finish: a long, easy romp up the arête to a last bit of heather and the summit, where there is a bolted anchor. From the top, walk off the southeast side to rejoin the standard route. No rappels are needed." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same 6 pitches with the same labels, but the length ranges in each note became lengthM. The main source's own ranges are 160-170 ft for P1 (50 m used) and 60-90 ft for P2 (the 90 ft in its description used). Added bolt counts (P2: 3, P5: 2), anchors, the two P1 start options, the off-route trap on P1, and the crux flag on P5. P2 notes that some parties call it the crux.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/111130499/ragged-edge",
+        "https://climberkyle.com/2021/08/10/vesper-peak-the-ragged-edge-5-7/",
+        "http://cnmtstuartclimbproject.blogspot.com/2017/11/route-vesper-peak-ragged-edgenorth-face.html?m=1",
+        "https://drdirtbag.com/2021/07/26/vesper-true-grit-5-8-ragged-edge-5-7/"
+      ],
+      "other_findings": "Stored length_m (192) is close to the sum of the published pitch lengths (~199 m). P3 has bolts of unknown count, so none is stored. Anchors on P2/P4/P5 are described as 'fixed' in the main source; one report says most belays are bolted."
+    }
+  },
+
+  "wa_sperry_peak_upper_south_ridge": {
+    "skip_reason": "No independent source found. Mountain Project lists only the East Face (2002) on Sperry Peak. The SummitPost peak page (read through a text proxy) covers only the standard west ridge/slope. The Mountaineers route page, the likely origin of the stored description, is behind a bot wall. No trip report of the south ridge turned up in searches of CascadeClimbers, NWHikers or SummitPost. The stored table already restates the only description on record, and nothing can be added without inventing it. OTHER FINDINGS: the stored grade cell '5.4 (downclimb)' is not a grade token, and each row carries 'lengthM': null. The stored pitches value (8) looks derived from 'a couple of ropelengths' phrases rather than a count. A human may want to drop the null lengthM keys and check the grade cell."
+  },
+
+  "wa_three_fingers_r1": {
+    "area": "wa_three_fingers",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Glacier traverse to base", "grade": "Steep snow, glacier", "notes": "From Tin Can Gap, drop about 400 ft down steep snow onto the Queest-Alb Glacier. Early season it is a plain snow descent. By late summer expect hard, slippery snow or bare ice and a moat where the snow meets the rock, so axe and crampons are needed. Crevasses open by midsummer; rope up when they are snow-covered." },
+      { "pitch": "West Couloir", "grade": "~40° snow or loose rock", "notes": "Cross the glacier and climb back up roughly 1,000 ft to the col between the Middle and North Peaks. In a high-snow year this goes by a snow tongue and a short couloir of about 40° with moats on both sides. In a low-snow year it becomes loose rock and scree. This climb is the route-finding crux of the day." },
+      { "pitch": "South Face crux", "grade": "low 5th", "crux": true, "notes": "Above the col, the climbing is sustained 4th class to a chimney that holds the one real 5th-class move. The rock is loose to fair, so place gear and test holds. Grades given range from Class 4 with a single 5th-class move up to a 40 m lead with harder moves for parties that strayed off the easiest line. An old piton marks one variation." },
+      { "pitch": "Summit ridge", "grade": "Class 2–3, exposed", "notes": "Above the chimney the ground eases along an exposed, knife-edged crest with big drops east and west. Finish up an easy grassy ramp and over a few blocks to the summit. A short extra low-5th step may be needed depending on the line taken. Rope up for the ridge if the party is unsure: the exposure is serious." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 rows became 4 with the three existing labels kept. The glacier row now carries the 400 ft drop and the moat and ice hazard. The couloir row now names its goal, the Middle–North col roughly 1,000 ft up, with snow-year and dry-year conditions. The crux row notes the range of grades reported. A new summit-ridge row covers the exposed crest and grassy ramp. No lengthM, because the one 40 m figure is from a party off the easiest line.",
+      "sources_consulted": [
+        "https://r.jina.ai/https://www.summitpost.org/three-fingers/climbers-log/150549/d-59190 (SummitPost climber's log: Tin Can Gap to col, pitch and ridge beta)",
+        "https://trailcatjim.com/three-fingers-north-peak-via-west-couloir-south-face/",
+        "https://www.summitpost.org/three-fingers/150549",
+        "search summary of SummitPost climber's log entries (snow tongue, ~40° couloir with moats in high-snow years)"
+      ],
+      "other_findings": "The row's name is 'North Peak' and its route id is wa_three_fingers_r1; its overview says as much. The row has a separate climbing_route column that says the chimney is reached by a ramp 'leading left then angling right'. That direction was not confirmed by any source found, so it is left out here. The stored rappels = 3 and the descent_text's 2-3 rappels were also not confirmed by any source found. Grade 'Class 4 (5.1 var.)' matches the reports."
+    }
+  },
+
+  "wa_mount_constance_terrible_traverse": {
+    "area": "wa_mount_constance",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Lake Constance Trail", "grade": "Steep climbers' trail", "notes": "An unrelenting boot path gains about 3,300–3,400 ft in roughly 2 miles from the Dosewallips Road to Lake Constance. The lower part runs through an old burn. It is steep from the start, with roots and rock steps that need hands and a few exposed spots. Camps sit at the lake's north end; treat water from the creek or lake." },
+      { "pitch": "Avalanche Canyon", "grade": "Talus, snow patches", "notes": "From the north end of the lake, head up Avalanche Canyon between Mount Constance and Inner Constance on boulders and talus, with snow patches into summer. Firm snow is faster and safer than bare scree. A climbers' path threads the talus in places. Start before dawn to be off the upper route before the snow softens." },
+      { "pitch": "South Chute to ~7,300 ft notch", "grade": "Class 2–3 loose scree", "notes": "Pass the Thumb and climb the long South Chute, marked by the Cat Ears, to a saddle near 6,600 ft with heather benches and bivy spots. It narrows and gets loose near the top. From the saddle drop about 175 ft, then turn left up a wide scree gully that narrows to a notch in the east–west ridge. A ledge up its left side is easier and safer. Rockfall between parties is constant, so keep close together." },
+      { "pitch": "Notch to the traverses", "grade": "Steep snow or hard scree", "notes": "From the notch, drop about 75 ft on steep snow or loose scree, then turn left and contour toward the north–south summit ridge. Here the line splits. The Finger Traverse is up and around a corner on an exposed ledge. The Terrible Traverse is reached by crossing hard-packed scree with a bad runout to a cairned ledge that leads north." },
+      { "pitch": "Terrible Traverse / Finger Traverse", "grade": "45–50° snow above cliff", "crux": true, "notes": "A steep snow cirque whose danger is the runout: a funnel into a cliff of roughly 500 ft. When it holds hard snow, pickets and front-pointing are standard. Late season it melts back to scree and rock-and-heather benches beneath it. The alternative Finger Traverse is a Class 3 but very exposed down-sloping ledge, with a crack at its top edge for the hands. It can be bypassed west of the crest via a short chockstone chimney." },
+      { "pitch": "Key Ledge and summit ridge", "grade": "Class 2–3 ledges", "notes": "Past the traverse, drop to talus on the east side and follow the Key Ledge, a broad sidewalk-like ledge along the foot of a vertical wall, onto the upper scree slope. Climb to the crest of the headwall and follow it east around to the southeast corner of the summit block. The pillow-basalt rock is fun but still loose in places." },
+      { "pitch": "Summit block", "grade": "4th class", "lengthM": 12, "notes": "Solid 4th-class rock on the block's southeast corner. A short Class 3 chimney leads to a couple of exposed 4th-class moves and the top. On the way down, many parties rappel the block from a fixed sling rather than downclimbing it. Inspect that sling before trusting it." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "5 rows became 7, with all five existing labels kept. New rows: the notch-to-traverses stage and the Key Ledge / summit ridge stage. Unsourced details were removed: 'stay low past the Thumb', the 'Class 4 (one low 5th-class move)' summit grade and '~20-30 ft'. The summit block now has the sourced ~40 ft (12 m) of 4th class. The crux grade chip is shortened to a terrain token.",
+      "sources_consulted": [
+        "https://r.jina.ai/https://www.mountaineers.org/locations-lodges/seattle-branch/committees/seattle-climbing-committee/seattle-climbing-website/beta-brews-presentations/mt-constance-route-info-cebe-wallace-BnB2018",
+        "https://r.jina.ai/https://www.summitpost.org/south-chute/446329",
+        "https://www.nwhikers.net/forums/viewtopic.php?p=1023049",
+        "http://www.thesuns.net/hiking/2013/Mt%20Constance,%209-8-2013/Mt%20Constance.htm",
+        "https://cascadeclimbers.com/forum/topic/96476-tr-mt-constance-north-chuteterrible-traverse-1a-1112015/",
+        "https://ericsbasecamp.net/trips/Constance/MtConstance.htm"
+      ],
+      "other_findings": "The route's climbing_route column and approach text say the Terrible Traverse is reached via the North Chute. Sources disagree on chute naming. One party went up the North Chute to the Finger Traverse and down the South Chute via the Terrible Traverse. Another took the South Chute and a second scree chute to reach both traverses. A 2015 report calls the Terrible Traverse line the 'North Chute (1A/Mountaineer Route)'. A human should settle which chute this row means. The '~7,300 ft' in the kept label was not confirmed by any source; the saddle atop the South Chute is given as ~6,580 ft. The Terrible Traverse is given at ~7,435 ft. Its angle is reported as ~45° in one source and 50+° in another. Stored grade 'Grade II' and discipline 'scrambling' may understate a steep-snow crux that is standardly protected with pickets."
+    }
+  },
+
+  "wa_glacier_peak_sitkum_glacier": {
+    "area": "wa_glacier_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Trailhead → high camp", "grade": "Trail, steep climbers' path", "notes": "Follow the White Chuck River Trail about 5.5 miles to the old Kennedy Hot Springs site, then 1.5 miles more to Sitkum Creek and the PCT. Go north on the PCT about half a mile to a forest camp near 4,100 ft, then take the steep, unmaintained climbers' path up the ridge south of Sitkum Creek to Boulder Basin (5,500–6,000 ft), the usual high camp. Confirm road and trail status before going." },
+      { "pitch": "Camp → Sitkum Glacier", "grade": "Snowfields, moraine", "notes": "From Boulder Basin, head southeast up snowfields, or a climbers' path later in the season, into a wide snow bowl below the glacier. Do not take the left-hand moraine. It leads to an awkward traverse under a wall of loose rock and then across a steep snowfield to get back on line. Scout the entry the evening before if arriving late, and rope up where the snow meets the ice." },
+      { "pitch": "Sitkum Glacier", "grade": "Glacier, crevassed", "notes": "Climb slightly south to the corridor beside the rock feature that splits the lower glacier, then trend northeast. Above that gap the angle eases. Aim for the saddle near 9,500 ft just east of Sitkum Spire, the obvious rock finger on the west summit ridge. Crevasses are not abundant but include hidden ones, even low down, and late season turns stretches to bare ice. Leave camp early, before the snow softens." },
+      { "pitch": "Sitkum Ridge pumice", "grade": "Loose pumice", "notes": "From the saddle, follow the pumice ridge toward the summit block. The footing is loose and tiring with no technical difficulty, and most parties unrope here. The saddle can be icy or rimed early in the day, so keep crampons handy. Note where you left the glacier: finding that spot again in a whiteout is the key to the descent." },
+      { "pitch": "Summit pinnacles", "grade": "Snow chute, Class 2–3", "notes": "Keep right of and slightly below the summit, traversing pumice or snow to one of several chutes that climb to the top on its right. The alternative turns left across the upper Scimitar Glacier, then climbs steeply right up the summit snow to the top. The summit gully can hold avalanche debris and a steep final headwall after storms. Descend the same way." }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "4 rows became 5, with all four existing labels kept. A new row covers the Sitkum Ridge pumice between the saddle and the summit block. The unsourced 'snow 30–40°' chip was replaced with 'Glacier, crevassed'. Added the left-moraine trap, the corridor through the split lower glacier, the Sitkum Spire saddle and both summit finishes. The existing climbing_route's bergschrund-below-the-saddle claim was not carried over because no source found mentions it.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/121086767/sitkum-glacier",
+        "https://r.jina.ai/https://www.summitpost.org/sitkum-glacier/155846",
+        "https://www.danielarndt.com/trips/48-glacier-peak-climb-via-sitkum-glacier",
+        "http://www.willhiteweb.com/washington_climbing/darrington/glacier_peak_washington_428.htm",
+        "https://turns-all-year.com/trip-reports/may-31-june-1-2003-glacier-peak-sitkum-ridge",
+        "https://trailcatjim.com/glacier-peak/"
+      ],
+      "other_findings": "The row's climbing_route column mentions a bergschrund below the 9,500 ft saddle, which no source found confirms. Its 'firn line ... retreating' remark is also unsourced and reads as general commentary. The stored grade 'Grade II glacier climb' differs from Mountain Project's 'Grade III, Easy Snow'."
+    }
+  },
+
+  "wa_glacier_peak_kennedy_glacier": {
+    "area": "wa_glacier_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "pitch": "Kennedy Ridge to foot of glacier", "grade": "Climbers' trail, easy snow", "notes": "From the camps at the Glacier Creek crossing on the PCT, follow a climbers' trail up a gully to the crest of Kennedy Ridge. Then drop down its right side to the toe of the Kennedy Glacier. Rope up at the glacier edge: it is a small glacier squeezed between two ridges, with deep crevasses." },
+      { "pitch": "Lower to upper Kennedy Glacier", "grade": "Glacier, deeply crevassed", "notes": "Climb the lower glacier on its right side, then move to the center for the upper glacier. The crevasses here are large and deep, and the maze grows through the summer. Expect to zig-zag, and probe bridges late in the season. Route finding is not hard in good visibility, but mark the line, since the descent normally goes another way." },
+      { "pitch": "Bergschrund to headwall", "grade": "~40° snow/ice", "crux": true, "notes": "Bear left to the top of a snow dome below the bergschrund at the head of the glacier and find a snow bridge across it. Climb the center of the headwall, staying left of but close to the prominent rock outcrops, and top out between two large rocky knobs. Conditions run from ice to slush; carry pickets and a few ice screws. Avoid descending this face: its runout ends in a deep crevasse." },
+      { "pitch": "Crater and summit slope", "grade": "~45° snow, often icy", "lengthM": 55, "notes": "From the rim, descend about 100 ft and cross a flat old crater. Then climb a steep slope, often icy, to an easy ridge leading right to the summit. For the descent, most parties go east past the Rabbit Ears rock formation onto Frostbite Ridge and the Vista Glacier rather than reversing the headwall." }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "3 rows became 4, with the three existing labels kept. A new row covers the crater crossing and the ~45° summit slope, with its 180 ft (55 m) length from the route description. The crux flag is on the headwall. Terrain chips were shortened. Notes now carry the deep-crevasse and do-not-descend-the-headwall hazards.",
+      "sources_consulted": [
+        "https://r.jina.ai/https://www.summitpost.org/kennedy-glacier/158306",
+        "https://www.summitpost.org/kennedy-glacier/158306",
+        "search summaries of Kennedy Glacier trip reports (deep crevasses; descend the ridge rather than the headwall above a deep crevasse)",
+        "http://ericsbasecamp.net/trips/GlacierPk/GlacierPk.htm"
+      ],
+      "other_findings": "Stored grade 'Class 2-3, Glacier' understates the route. Its crux is a ~40° headwall above a bergschrund and a ~45° often-icy summit slope, and the route description lists pickets and 4 ice screws as essential. The stored overview calls it a 'popular ski-mountaineering descent'; no source found supports that. Section-level detail rests mainly on one route description, hence medium confidence."
+    }
+  }
+}
