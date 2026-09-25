@@ -19,9 +19,14 @@ import fs from "node:fs";
 const argv = process.argv.slice(2);
 const since = (argv.includes("--since") ? argv[argv.indexOf("--since") + 1] : null);
 
+// LegalView moved out of ClimbMatchCore.jsx into its own lazily-loaded file (#1883), so each
+// surface lists every file it has lived in, newest first, and a --since commit from before the
+// move still compares. The Accessibility statement (#1810) is a third document in the same view.
+const LEGAL_FILES = ["lib/LegalView.jsx", "ClimbMatchCore.jsx"];
 const SURFACES = [
-  ["Terms of Service", "ClimbMatchCore.jsx", "const TERMS="],
-  ["Privacy Policy", "ClimbMatchCore.jsx", "const PRIVACY="],
+  ["Terms of Service", LEGAL_FILES, "const TERMS="],
+  ["Privacy Policy", LEGAL_FILES, "const PRIVACY="],
+  ["Accessibility statement", LEGAL_FILES, "const ACCESS="],
 ];
 
 // Extract the array literal following `anchor`, skipping string contents so apostrophes and
@@ -44,17 +49,22 @@ function literalAfter(src, anchor) {
   return { err: `unbalanced literal after ${anchor}` };
 }
 
-const read = (sha, file) => sha
-  ? execFileSync("git", ["show", `${sha}:${file}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024 })
-  : fs.readFileSync(file, "utf8");
+const readOne = (sha, file) => { try { return sha
+  ? execFileSync("git", ["show", `${sha}:${file}`], { encoding: "utf8", maxBuffer: 64 * 1024 * 1024, stdio: ["ignore", "pipe", "ignore"] })
+  : fs.readFileSync(file, "utf8"); } catch { return null; } };
+// The first file that carries the anchor. A surface found in NONE is ANCHOR LOST, as before.
+const locate = (sha, files, anchor) => {
+  for (const f of files) { const src = readOne(sha, f); if (src && src.includes(anchor)) return { file: f, ...literalAfter(src, anchor) }; }
+  return { err: `ANCHOR LOST: ${anchor} (looked in ${files.join(", ")})` };
+};
 
 // The passages, for a readable diff. Only long double-quoted literals are body copy; short ones
 // are keys and section headings.
 const passages = (t) => (t.match(/"[^"]{25,}"/g) || []);
 
 let failed = false;
-for (const [label, file, anchor] of SURFACES) {
-  const cur = literalAfter(read(null, file), anchor);
+for (const [label, files, anchor] of SURFACES) {
+  const cur = locate(null, files, anchor), file = cur.file;
   if (cur.err) { console.error(`FAIL ${label}: ${cur.err}`); failed = true; continue; }
   const body = passages(cur.text);
   if (!body.length) { console.error(`FAIL ${label}: extracted ${cur.text.length} chars but no body copy — the shape changed`); failed = true; continue; }
@@ -63,8 +73,9 @@ for (const [label, file, anchor] of SURFACES) {
   if (!since) for (const p of body) console.log("  " + JSON.parse(p));
 
   if (since) {
-    const old = literalAfter(read(since, file), anchor);
-    if (old.err) { console.error(`  cannot compare with ${since}: ${old.err}`); failed = true; continue; }
+    const old = locate(since, files, anchor);
+    // A document that did not exist at `since` is wholly NEW, not a failure to compare.
+    if (old.err) { console.log(`  *** NEW since ${since} *** — absent then (${old.err}); all ${body.length} passage(s) are new`); for (const x of body) console.log(`\n  NEW:  ${JSON.parse(x)}`); continue; }
     if (old.text === cur.text) { console.log(`  UNCHANGED since ${since}`); continue; }
     const A = new Set(passages(old.text)), B = new Set(body);
     const added = body.filter((x) => !A.has(x));
