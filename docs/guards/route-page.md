@@ -37,6 +37,28 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     links and the fire panel all render without the route carrying one safety field of its own.
     While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
     `hasSafetyContent()` is gone; `hasPlanContent()` stays.
+- **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
+  **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
+  and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
+  way in, while nothing said which way people actually take. Measured 2026-09-24: 796 routes
+  carry both, and on 771 the paragraph is the long-form account of the FIRST variant, so it now
+  renders **inside the main way in's card** ("Full description"). The main way in is the variant
+  with `primary:true`, else index 0; it is drawn first, and badged **Most used** only when that is a
+  RECORDED mark on a route with two or more — never on array order alone. When a variant carries
+  `longForm:true`, the paragraph and the route-level numbers hang under IT instead (research found
+  ~20 routes whose paragraph describes a way in that is not the most used one). Gated by `npm run build`. Injection-tested: moving the paragraph out of the
+  main card, or ignoring `primary`, trips 6 assertions.
+  - **The paragraph is never collapsed.** `check:field-renders` proves `approach` reaches a screen
+    by server-rendering the page; a "read more" whose tail is behind `useState(false)` is not in that
+    markup, so the column would read as unrendered.
+  - **The Stream crossing chip reads `hazards` only**, never `notes` or `name`: 546 approach texts
+    say "creek", and almost all are places ("Icicle Creek Road"). The chip only repeats a hazard
+    already on the card.
+  - **Route-level numbers backfill the MAIN card only, under Overview's own labels.** On a summit
+    route `gain_ft` is the whole ascent — printing it as "approach gain" would claim the trail
+    climbs 5,500 ft before the route starts. Section 7 pins that.
+  - **Structurally blind to whether `primary` is TRUE on the ground.** That is research data; this
+    proves only that the screen honours the column.
 - **`check:field-renders`** asks, for every enriched `routes` column, whether its value ever
   reaches a screen. A column can be mapped in `dbRouteToCamel`, offered in the fix form, and
   displayed **nowhere**: `descent_text` was populated on 1,021 routes and rendered on none

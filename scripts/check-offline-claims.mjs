@@ -84,8 +84,14 @@ else fail("unpackRouteOffline() is gone or no longer deletes — a packed route 
  * `packRouteOffline(`, so a bare substring test could never fail while the removal path existed.
  * The `write-gone` case deleted the write and the guard reported it green. A needle that one of
  * its own siblings satisfies is a dead branch, and dead branches here read as coverage. */
-if (/(?<![A-Za-z0-9_$])packRouteOffline\(/.test(cmS)) ok("ClimbMatch.jsx calls it when a climb is packed");
-else fail("ClimbMatch.jsx never calls packRouteOffline() — the pack button writes nothing again");
+/* The button goes through lib/db.js packRouteWithSnapshot (the row, THEN the reports/corrections
+ * snapshot — §10), so the write is a TWO-LINK chain and both links are asserted: ClimbMatch calls
+ * the wrapper, and the wrapper still calls the row write. Either one missing and nothing is stored. */
+if (/(?<![A-Za-z0-9_$])packRouteWithSnapshot\(/.test(cmS)) ok("ClimbMatch.jsx calls packRouteWithSnapshot() when a climb is packed");
+else fail("ClimbMatch.jsx never calls packRouteWithSnapshot() — the pack button writes nothing again");
+const packWrap = dbS.match(/export async function packRouteWithSnapshot[\s\S]*?\n}/);
+if (packWrap && /(?<![A-Za-z0-9_$])packRouteOffline\(/.test(packWrap[0])) ok("...and packRouteWithSnapshot() still calls packRouteOffline() for the row");
+else fail("packRouteWithSnapshot() no longer calls packRouteOffline() — the snapshot is saved beside a route row that never is");
 if (/unpackRouteOffline\(/.test(cmS)) ok("...and calls unpackRouteOffline() when one is removed");
 else fail("ClimbMatch.jsx never calls unpackRouteOffline() — removing leaves the row on the device");
 
@@ -141,13 +147,16 @@ else fail("lib/offline.js no longer defines packedRouteIds()");
  * the surface that promises the rest must keep saying which. Positive form, so it needs no
  * vocabulary of absence — check:outage's own design rule. */
 console.log("\n4. THE DISCLAIMER — the surfaces still name what is NOT on the device:");
-if (/Photos, topo images and other climbers’ reports are not/.test(rdS))
-  ok("the Plan-tab pack card still names photos, topo images and others' reports as not saved");
+/* Other climbers' REPORTS came off this list when the pack began saving the latest of them (§10
+ * asserts that save and its reader). Photos, topo images and map tiles still are not stored. */
+if (/Photos, topo images and map tiles are not/.test(rdS))
+  ok("the Plan-tab pack card still names photos, topo images and map tiles as not saved");
 else fail("the Plan-tab pack card no longer says what is NOT saved. Packing stores the route's own\n"
   + "       row and nothing else — a card listing what you have with no mention of what you do not\n"
   + "       is the over-claim this guard has always existed to prevent, in its new form.");
-if (/neither are map tiles/.test(rdS)) ok("...and that map tiles are not cached either");
-else fail("the pack card stopped saying map tiles are not cached — the map is blank with no signal");
+if (/anything newer needs a connection/.test(rdS)) ok("...and that anything newer than the saved copy needs a connection");
+else fail("the pack card stopped saying that anything newer needs a connection — a saved snapshot of reports\n"
+  + "       and forecast would read as current, which is the over-claim a climber cannot check.");
 
 /* ── 5. A NARROW, LIVE DENY-LIST. ────────────────────────────────────────────────────────────
  * Scoped structurally, as before: the regions are the innermost function or JSX element around a
@@ -159,7 +168,9 @@ else fail("the pack card stopped saying map tiles are not cached — the map is 
  * It is a deny-list and will be short again one day; that is stated rather than hidden. Its
  * shelf life is tied to §4, which is the positive assertion doing the real work. */
 const TRIGGERS = new Set(["offline", "setOffline", "offlineSaved", "onToggleOffline", "packBusy", "offlinePending"]);
-const NOT_STORED = /\b(?:photos?|topo images?|conditions snapshot|trip reports?|other climbers)\b/i;
+/* `trip reports` and `other climbers` came OFF this list with the snapshot (§10): the pack now saves
+ * the latest reports, and a surface saying so is true — §10 is what keeps it true. */
+const NOT_STORED = /\b(?:photos?|topo images?|conditions snapshot)\b/i;
 /* `to this device` as well as `on this device`: the natural way to write this claim is
  * "Saves the beta and every photo TO this device", and a needle wanting only `on` missed it —
  * caught by the `claims-photos` injection, not by reading the rule. A deny-list is beaten by one
@@ -328,9 +339,51 @@ else if (/orOfflineExact\(/.test(namesHook[0]) && /offlineAreaNamesByIds\(/.test
 else fail("useAreaNamesByIds does not fall back through orOfflineExact/offlineAreaNamesByIds —\n"
   + "       with no signal every area name degrades to its placeholder.");
 
+
+/* ── 10. WHAT RIDES WITH THE PACK IS BACKED, AND DATED. ──────────────────────────────────────
+ * The pack stores more than the route row now: the latest trip reports and their authors'
+ * public names, the community's corrections, a forecast, and — keyed by account — the climber's
+ * own plan. Each is a promise the card makes ("Latest 3 trip reports", "Forecast · 2 hr ago"),
+ * so each needs the same chain §1-§3 demand of the row: WRITTEN, READ BACK through the query the
+ * page already uses, and SAID TO BE OLD. The third link is the one a render cannot see: drop the
+ * stamp and the saved copy renders exactly like a live one, which is the over-claim in its most
+ * dangerous form — last Tuesday's "firm snow" read as today's. */
+console.log("\n10. THE SNAPSHOT — reports, corrections, forecast and your plan are written, read back, and dated:");
+const hookBody = (name) => { const m = dbS.match(new RegExp("export function " + name + "[\\s\\S]*?\\n}")); if (!m) dead("ANCHOR LOST: " + name + " is gone from lib/db.js"); return m[0]; };
+const SNAP = [
+  [packWrap && /savePackSnapshot\([\s\S]*reports/.test(packWrap[0]) && /contribs/.test(packWrap[0]),
+    "packRouteWithSnapshot saves the reports and corrections with the row",
+    "packRouteWithSnapshot no longer saves reports + corrections — the card's chips describe nothing stored"],
+  [packWrap && /kind\s*!==\s*"photo"/.test(packWrap[0]),
+    "...and leaves PHOTOS out of the saved corrections",
+    "the snapshot no longer filters out photo rows — offline they render as broken tiles, or as an empty gallery"],
+  [/offlinePackReports\(/.test(hookBody("useRouteTripReports")) && /structuralSharing:\s*false/.test(hookBody("useRouteTripReports")),
+    "useRouteTripReports falls back to the saved reports, with the `_packedAt` stamp kept",
+    "useRouteTripReports lost its pack fallback or its structuralSharing:false — reports vanish offline, or render undated"],
+  [/offlinePackContribs\(/.test(hookBody("useRouteContributions")) && /structuralSharing:\s*false/.test(hookBody("useRouteContributions")),
+    "useRouteContributions falls back to the saved corrections, with the stamp kept",
+    "useRouteContributions lost its pack fallback or its stamp — agreed corrections silently revert offline"],
+  [/offlinePackProfiles\(/.test(hookBody("useProfilesByIds")),
+    "useProfilesByIds names the saved reports' authors from the pack",
+    "useProfilesByIds has no pack fallback — every saved report reads as an anonymous climber offline"],
+  [/cacheItineraries\(/.test(hookBody("useMyItineraries")) && /cachedItineraries\(/.test(hookBody("useMyItineraries")),
+    "useMyItineraries mirrors the plan to the device and reads it back",
+    "useMyItineraries no longer mirrors/reads the device copy — the climber's own plan is gone at the trailhead"],
+  [/packForecast\(/.test(rdS) && /snapshotPackForecast\(/.test(rdS),
+    "the route page takes the forecast snapshot and WeatherPanel falls back to it",
+    "the forecast snapshot is no longer taken or no longer read — the Safety tab has no forecast offline"],
+  [/reportsPackedAt/.test(rdS) && (rdS.match(/saved with your trip pack/g) || []).length >= 2,
+    "the page SAYS a saved report or forecast is the pack's copy, and how old",
+    "the page stopped dating the saved reports/forecast — an old snapshot now reads as live"],
+  [/_packedAt/.test(cmS.match(/var photosUnavailable=[^;]*;/) ? cmS.match(/var photosUnavailable=[^;]*;/)[0] : ""),
+    "a pack-served (photo-less) contributions list reads as photos-unavailable, not 'no photos'",
+    "photosUnavailable ignores the pack stamp — a packed route claims it has NO photos when it is offline"],
+];
+for (const [cond, good, why] of SNAP) { if (cond) ok(good); else fail(why); }
+
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 34;
+const EXPECTED = 44;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");

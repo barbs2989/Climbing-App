@@ -121,3 +121,12 @@ reaches a header, a pill, a chip or a table cell takes a value, and its explanat
 in the prose column beside it. Note what that guard could **not** catch here: it asks whether a
 column reaches a screen, and all three of these did — correctly, in full, in the wrong shape.
 **Reaching a screen and fitting the element it reaches are different questions.**
+- **`approach_variants[].primary` says which way in MOST PARTIES TAKE, and `approach` is ITS
+  long form.** Since 2026-09-24 the Plan tab has one APPROACH section: the variant with
+  `primary:true` (else index 0) is drawn first and badged *Most used*, and the route's `approach`
+  paragraph renders **inside that card** as its full description. So with two or more ways in:
+  mark exactly **one** `primary:true` (the writer refuses two) — an unmarked route shows NO badge —
+  and if `approach` describes a different way in than the most used one, mark that variant
+  `longForm:true` so the paragraph and the route-level miles/gain hang under the right card. Give every variant a `season` that says why you would pick it over the main one —
+  two variants that both read `"Jul-Sep"` leave a climber no reason to choose. A crossing only
+  shows its *Stream crossing* chip when it is in that variant's `hazards`, not its `notes`.

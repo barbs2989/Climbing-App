@@ -15,10 +15,11 @@ import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, waypointCaveat, trackCov
 import { accessCheckedLine } from "./lib/road";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB, supabase } from "./lib/supabase";
-import {checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useRouteTripReports} from "./lib/db";
+import {usePackMeta,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useRouteTripReports} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
-import { downloadStateOffline, offlineDownloads, removeStateOffline } from "./lib/offline";
+import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
+import { fetchForecastRaw, snapshotPackForecast } from "./lib/forecast";
 import { useSession, signOut, getProfile, saveProfile } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
 import AuthModal from "./lib/AuthModal";
@@ -140,7 +141,7 @@ _aid:{summary:"A big-wall objective where heat and sun exposure are the limiting
    loose-rock sentence), so counting them opened a Plan or Safety tab on 4,568 routes whose
    whole payload was one copied paragraph. They still render once a route qualifies on
    something route-specific. */
-function hasPlanContent(route){if(!route)return false;const w=route.waypoints;return !!(route.road||route.driveMinSLC||route.approach||route.descent||route.descentText||route.approachLogistics||(w&&w.length)||route.rappels!=null);}
+function hasPlanContent(route){if(!route)return false;const w=route.waypoints;return !!(route.road||route.driveMinSLC||route.approach||(Array.isArray(route.approachVariants)&&route.approachVariants.some(Boolean))||route.descent||route.descentText||route.approachLogistics||(w&&w.length)||route.rappels!=null);}
 /* hasSafetyContent() lived here and gated the Safety tab the way hasPlanContent still gates Plan. It
    was removed when the Safety tab became unconditional: unlike Plan, that tab is never empty — the
    per-discipline advice, the forecast links and the nearby-fire panel all render without the route
@@ -1199,52 +1200,108 @@ export function ClimbingRouteTable({route,onEdit}){
   </div>;
 }
 
-/* APPROACH — one card per distinct way in, because a route usually has more than one and the
-   single `approach` paragraph could only ever describe whichever one the writer had in mind.
-   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is
-   the answer to "how do I know I'm at the start of the climbing", which is the question that
-   actually gets parties lost, and burying it mid-paragraph is exactly how it got lost before.
-   Renders ALONGSIDE the existing `approach` prose, never instead of it — the prose is the
-   long-form account and is often the only thing a route has. */
-export function ApproachVariants({route,onEdit}){
-  const vars=Array.isArray(route.approachVariants)?route.approachVariants:[];
-  if(!vars.length)return null;
-  return <div style={{marginBottom:12}}>
-    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the approaches"/>:null}>{"APPROACHES · "+vars.length+" way"+(vars.length!==1?"s":"")+" in"}</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>Which one is right depends on the season — read the window on each before you pick.</div>
-    {vars.map((v,i)=>{
-      const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
-      /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
-         routes) hold a paragraph instead — up to 392 characters. It rendered in a pill carrying
-         BOTH white-space:nowrap AND flex-shrink:0, so the text could neither wrap nor shrink and
-         a long value pushed the row past the edge of a 390px phone. Worse than the camping chips,
-         which at least wrapped into a blob.
-         Defended the way the header strap already defends the top-level `season` column, with the
-         same seasonShort() — and the full sentence renders as PROSE below rather than being lost,
-         because the explanation is worth reading, just not inside a pill. */
-      const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
-      const seasonPill=seasonShort(seasonFull,48);
-      /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
-         " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
-         already names its unit is left alone; otherwise the unit goes after the FIRST number range
-         ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
-      const hrsTxt=v.hours?(/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(v.hours))?String(v.hours):String(v.hours).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr")):null;
-      const facts=[hrsTxt,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
-      return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
-          <div style={{fontSize:13.5,fontWeight:800,color:C.text,minWidth:0,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>
-          {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
+/* APPROACH — ONE section, holding every way in. It used to be two: "APPROACHES · N ways in"
+   (the `approach_variants` cards) and, under it, a separate APPROACH box holding the `approach`
+   paragraph. Read top to bottom that paragraph looked like a THIRD way in, and nothing said which
+   of the ways in people actually take. Measured 2026-09-24: 796 routes carry both, and on 771 of
+   them the paragraph is the long-form account of the FIRST variant — so it now renders INSIDE
+   the main way in's card as its full description, not as a sibling of it.
+   The MAIN way in is the variant marked `primary:true`, else index 0 (the enrichment has always
+   written the standard way in first), and it is drawn first. It is badged MOST USED only when that
+   is a RECORDED decision — `primary:true` on a route with a choice to make — never on array order
+   alone: research on the 124 multi-way routes moved the answer off index 0 on 16 of them.
+   The paragraph and the route-level numbers follow `longForm:true` when a variant carries it: on
+   ~20 routes the paragraph describes a way in that is NOT the most used one (a road since washed
+   out, a trail closed since 2003), and hanging it under the MOST USED card would put the long
+   account, and its miles and gain, under the wrong way in. Without the mark they follow the main
+   card, which is where the paragraph belongs on 771 of 796 routes.
+   The other ways in keep their season window, which is the reason to pick one.
+   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is the
+   answer to "how do I know I'm at the start of the climbing", which is the question that actually
+   gets parties lost, and burying it mid-paragraph is exactly how it got lost before. */
+/* A crossing is read from the way in's own HAZARDS, never its notes or name: "Icicle Creek Road"
+   and "Mountaineer Creek trail" are places, not fords. The chip only repeats a hazard already
+   recorded on the card, so it can never claim a crossing nobody wrote down. */
+export const APPROACH_CROSSING_RE=/\b(?:ford(?:s|ed|ing)?|wad(?:e|es|ed|ing)|(?:creek|river|stream) crossings?|cross(?:es|ed|ing)? (?:the )?[\w'’ -]{0,30}?(?:creek|river|stream|fork))\b/i;
+/* A LOG bridge or log crossing over a creek is a crossing too, and the first pattern missed it:
+   "Slick or partly submerged log bridges over Mountaineer Creek early season" is the Colchuck
+   outlet hazard every Let it Burn party meets. It counts only when the same hazard names the water,
+   so "downed logs" in an avalanche path does not. Measured over all 4,634 stored hazards; the
+   remaining non-matches that say "crossing" are railway, glacier, moat, rib and border crossings. */
+export const APPROACH_LOG_CROSSING_RE=/\blog (?:bridges?|crossings?)\b/i;
+export const approachHasCrossing=haz=>haz.some(h=>{const t=String(h||"");return APPROACH_CROSSING_RE.test(t)||(APPROACH_LOG_CROSSING_RE.test(t)&&/\b(?:creek|river|stream)\b/i.test(t));});
+export const primaryApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.primary===true);return i>=0?i:0;};
+export const longFormApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.longForm===true);return i>=0?i:primaryApproachIndex(vars);};
+export function ApproachVariants({route,onEdit,onEditProse}){
+  const vars=Array.isArray(route.approachVariants)?route.approachVariants.filter(Boolean):[];
+  const prose=route.approach?String(route.approach):"";
+  if(!vars.length&&!prose)return null;
+  const pIdx=primaryApproachIndex(vars);const lfIdx=vars.length?longFormApproachIndex(vars):-1;const marked=vars.some(v=>v.primary===true);
+  const order=vars.length?[pIdx,...vars.map((_,i)=>i).filter(i=>i!==pIdx)]:[-1];
+  /* Route-level numbers backfill ONE card — the one the paragraph describes — because they measure
+     the same approach the paragraph does, and
+     888 of 1,001 variants carry no distance of their own. Each keeps the label TechStats gives it on
+     Overview, because on a summit route gain_ft is the whole ascent, not the walk in, and printing it
+     as "approach gain" would claim the trail climbs 5,500 ft before the route starts. */
+  const disc=catOf(route);const summitDisc=disc==="alpine"||disc==="mountaineering"||disc==="hiking";
+  const rAsc=routeAscentFt(route);const rKm=effDistKm(route);const rHrs=route.timing&&route.timing.approachTimeHrs;
+  const routeFacts={
+    hours:rHrs!=null&&rHrs!==""?String(rHrs):null,
+    dist:rKm!=null&&rKm>0?uDist(rKm)+(effDistIsWholeTrip(route)?" whole outing":" one way"):null,
+    gain:rAsc!=null&&rAsc>0?"↑ "+uElev(rAsc)+(summitDisc||gainCoversWholeOuting(route)?" total ascent":" approach gain"):null};
+  /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
+     " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
+     already names its unit is left alone; otherwise the unit goes after the FIRST number range
+     ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
+  const hrsFmt=hv=>/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(hv))?String(hv):String(hv).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr");
+  const card=(v,i,main)=>{
+    const own=i===lfIdx;
+    const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
+    /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
+       routes) hold a paragraph instead — up to 392 characters. It rendered in a pill carrying
+       BOTH white-space:nowrap AND flex-shrink:0, so the text could neither wrap nor shrink and
+       a long value pushed the row past the edge of a 390px phone. Defended with the same
+       seasonShort() the header strap uses — and the full sentence renders as PROSE below rather
+       than being lost, because the explanation is worth reading, just not inside a pill. */
+    const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
+    const seasonPill=seasonShort(seasonFull,48);
+    const hrsTxt=v.hours?hrsFmt(v.hours):(own&&routeFacts.hours?hrsFmt(routeFacts.hours)+" approach":null);
+    const distTxt=v.distMi!=null?uDistMi(v.distMi):(own?routeFacts.dist:null);
+    const gainTxt=v.gainFt!=null?uElev(v.gainFt)+" gain":(own?routeFacts.gain:null);
+    const facts=[hrsTxt,distTxt,gainTxt].filter(Boolean);
+    const crossing=approachHasCrossing(haz);
+    const badge=main&&marked&&vars.length>1;
+    const titled=!!(vars.length||seasonPill);
+    return <div key={i} data-approach-card={main?"main":"other"} style={{background:C.card,border:"1px solid "+(badge?C.greenDim:C.border),borderRadius:12,padding:"11px 13px",marginBottom:9}}>
+      {titled?<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
+        <div style={{minWidth:0}}>
+          {badge?<div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Most used</div>:null}
+          {vars.length?<div style={{fontSize:13.5,fontWeight:800,color:C.text,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>:null}
         </div>
-        {facts.length?<div style={{display:"flex",flexWrap:"wrap",gap:10,marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}</div>:null}
-        {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
-        {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
-        {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
-          <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
-          <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
-        </div>:null}
-        {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
-      </div>;
-    })}
+        {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
+      </div>:null}
+      {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
+      {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
+      {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
+      {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
+          this column reaches a screen by server-rendering the page, and a collapsed paragraph is
+          not in that markup. It is labelled only when a summary sits above it. */}
+      {own&&prose?<div style={{marginTop:v.notes?9:0}}>
+        {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
+        {splitParagraphs(prose).map((p,pi)=><p key={pi} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:pi===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}
+      </div>:null}
+      {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
+        <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
+        <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
+      </div>:null}
+      {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
+    </div>;
+  };
+  const editFn=vars.length?onEdit:onEditProse;
+  return <div style={{marginBottom:12}}>
+    <SL action={editFn?<EditIconButton onClick={editFn} title={vars.length?"Edit the approaches":"Edit approach information"}/>:null} prov={sectionProvenance(route,"approach")}>APPROACH</SL>
+    {vars.length>1?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>{vars.length+" ways in."+(marked?" Most parties take the first; the others are for when its season window says otherwise.":" Read the season window on each before you pick.")}</div>:null}
+    {order.map((i,k)=>card(i<0?{}:vars[i],i<0?-1:i,k===0))}
   </div>;
 }
 
@@ -1867,8 +1924,29 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
     </div>
   </div>;
 }
-const PIN_CATEGORIES=[["belay","Belay/anchor",C.blue],["rappel","Rappel",C.purple],["natural","Natural anchor",C.green],["variant","Variant line",C.amber],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
+const PIN_CATEGORIES=[["belay","Belay station",C.blue],["rappel","Rappel station",C.purple],["natural","Natural anchor",C.green],["variant","Variant line",C.amber],["bivy","Bivy",C.teal],["hazard","Hazard",C.red]];
 function pinColor(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[2]:C.textMuted;}
+function pinLabel(cat){var f=PIN_CATEGORIES.find(function(p){return p[0]===cat;});return f?f[1]:"Marker";}
+/* Each pin category draws its own glyph. They used to be bare coloured dots, which asked a
+   climber to remember that blue meant a belay and purple a rappel — on a phone, on a wall, in
+   the sun. The glyphs follow the marks printed topos already use: two bolts joined at a master
+   point for a belay, a ring over a down-arrow for a rappel, a tree for a natural anchor. Drawn
+   in a 16-unit box of their own, NOT inside the topo's 0..100 SVG: that one is stretched by
+   preserveAspectRatio="none", which would squash every icon to the photo's shape. */
+const PIN_GLYPHS={
+  belay:<g><circle cx="4.5" cy="4.5" r="1.6" fill="#fff"/><circle cx="11.5" cy="4.5" r="1.6" fill="#fff"/><path d="M4.5 4.5 L8 11.5 L11.5 4.5" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"/><circle cx="8" cy="12" r="1.9" fill="none" stroke="#fff" strokeWidth="1.5"/></g>,
+  rappel:<g><circle cx="8" cy="3.8" r="2.2" fill="none" stroke="#fff" strokeWidth="1.5"/><path d="M8 6 L8 13.5 M4.8 10.4 L8 13.6 L11.2 10.4" fill="none" stroke="#fff" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"/></g>,
+  natural:<g><path d="M8 2 L13 10 L3 10 Z" fill="#fff"/><rect x="7" y="10" width="2" height="4" fill="#fff"/></g>,
+  variant:<path d="M3 13 L5.5 10.5 M7 9 L9 7 M10.5 5.5 L13 3" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round"/>,
+  bivy:<g><path d="M1.5 13.5 L8 3 L14.5 13.5 Z" fill="#fff"/><path d="M5.8 13.5 L8 9.2 L10.2 13.5 Z" fill="#000" fillOpacity="0.45"/></g>,
+  hazard:<g><rect x="7" y="2.5" width="2" height="7.5" rx="1" fill="#fff"/><circle cx="8" cy="12.8" r="1.3" fill="#fff"/></g>
+};
+function PinIcon({cat,size,on}){
+  var sz=size||18;
+  return <span aria-hidden="true" style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:sz,height:sz,borderRadius:"50%",background:pinColor(cat),border:(on?2:1.5)+"px solid #fff",boxShadow:on?"0 0 0 3px "+C.blue+"66":"0 1px 3px rgba(0,0,0,0.7)",boxSizing:"border-box",flexShrink:0,pointerEvents:"none"}}>
+    <svg viewBox="0 0 16 16" width={Math.round(sz*0.68)} height={Math.round(sz*0.68)} style={{display:"block"}}>{PIN_GLYPHS[cat]||<circle cx="8" cy="8" r="2.5" fill="#fff"/>}</svg>
+  </span>;
+}
 /* A topo point is stored as a percentage, and TopoLineOverlay is `inset:0` with
    preserveAspectRatio="none" — so a stored point means "this far across MY CONTAINER", not
    "this far across the photo". Those are the same thing only when the container IS the
@@ -1895,13 +1973,33 @@ function useImgAspect(){
   return [ar,onLoad];
 }
 const TOPO_IMG={position:"absolute",inset:0,width:"100%",height:"100%",objectFit:"contain",display:"block"};
-function TopoLineOverlay({points,pins}){
+/* The number a marker carries on the photo AND in the key beside it. Three belay stations on
+   one line are three identical icons; without a shared number, a note ("2 bolts, chains") in
+   the key cannot be matched to the station it describes. */
+function PinNum({n,style}){
+  return <span aria-hidden="true" style={Object.assign({display:"inline-flex",alignItems:"center",justifyContent:"center",minWidth:14,height:14,padding:"0 3px",borderRadius:7,background:"#111",color:"#fff",border:"1px solid #fff",fontSize:9,fontWeight:800,lineHeight:1,boxSizing:"border-box",pointerEvents:"none"},style||{})}>{n}</span>;
+}
+/* Every icon and what it means, so a climber reading a topo never has to guess one. */
+function TopoPinLegend({style}){
+  return <div role="list" aria-label="Topo marker key" style={Object.assign({display:"flex",flexWrap:"wrap",gap:"6px 12px"},style||{})}>{PIN_CATEGORIES.map(function(c){return <span key={c[0]} role="listitem" style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,color:C.textSub}}><PinIcon cat={c[0]} size={16}/>{c[1]}</span>;})}</div>;
+}
+function TopoLineOverlay({points,pins,pinSize,numbered}){
   if((!points||points.length<2)&&(!pins||!pins.length))return null;
-  var path=(points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");
-  return <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
-    {path?<path d={path} fill="none" stroke={C.amber} strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{filter:"drop-shadow(0 0 2px rgba(0,0,0,0.8))"}}/>:null}
-    {(pins||[]).map(function(pn,i){return <circle key={i} cx={pn.x} cy={pn.y} r={1.6} fill={pinColor(pn.category)} stroke="#fff" strokeWidth={0.4}/>;})}
-  </svg>;
+  var path=(points||[]).map(function(p,i){return (i===0?"M":"L")+p.x+","+p.y;}).join(" ");var sz=pinSize||18;
+  return <>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
+      {path?<path d={path} fill="none" stroke={C.amber} strokeWidth={0.6} vectorEffect="non-scaling-stroke" style={{filter:"drop-shadow(0 0 2px rgba(0,0,0,0.8))"}}/>:null}
+    </svg>
+    {(pins||[]).map(function(pn,i){return <span key={i} style={{position:"absolute",left:pn.x+"%",top:pn.y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,pointerEvents:"none",lineHeight:0}}><PinIcon cat={pn.category} size={sz}/>{numbered?<PinNum n={i+1} style={{position:"absolute",right:-8,bottom:-6}}/>:null}</span>;})}
+  </>;
+}
+/* The key under an enlarged topo. A pin's note ("2 bolts, chains", "tree with slings") was
+   collected by the editor and then drawn nowhere — the photo shows an icon, not text. Each row
+   carries the number its marker wears on the photo (TopoLineOverlay `numbered`), in the order
+   they were placed, which is how a climber drops them going up the line. */
+function TopoPinKey({pins}){
+  if(!pins||!pins.length)return null;
+  return <div style={{marginBottom:10}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:8,alignItems:"flex-start",marginBottom:5,fontSize:12.5,lineHeight:1.4}}><PinNum n={i+1} style={{marginTop:2}}/><PinIcon cat={pn.category} size={18}/><div style={{minWidth:0}}><span style={{fontWeight:600,color:C.text}}>{pinLabel(pn.category)}</span>{pn.note?<span style={{color:C.textSub}}>{" — "+pn.note}</span>:null}</div></div>;})}</div>;
 }
 /* The topo editor. Four things it could not do, each of them the difference between a line a
    climber trusts and one they redraw:
@@ -1989,8 +2087,10 @@ function TopoDrawer({initial,onCancel,onSubmit}){
   };
   const sm=on=>({padding:"8px 12px",borderRadius:15,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:C.surface,color:on?C.blue:C.textSub,fontSize:12.5,fontWeight:600,cursor:"pointer"});
   const btn={flex:1,padding:8,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:12.5,cursor:"pointer"};
-  const handle=function(kind,i,x,y,col){
+  const handle=function(kind,i,x,y,col,cat){
     const on=sel&&sel.kind===kind&&sel.i===i;
+    if(kind==="pin"){const sz=on?26:20;return <span key={kind+i} data-h={kind+":"+i} title={pinLabel(cat)+" — drag to move"}
+      style={{position:"absolute",left:x+"%",top:y+"%",width:sz,height:sz,marginLeft:-sz/2,marginTop:-sz/2,lineHeight:0,cursor:"grab",touchAction:"none"}}><PinIcon cat={cat} size={sz} on={on}/><PinNum n={i+1} style={{position:"absolute",right:-8,bottom:-6}}/></span>;}
     return <span key={kind+i} data-h={kind+":"+i} title={kind==="point"?("Point "+(i+1)+" — drag to move"):"Pin — drag to move"}
       style={{position:"absolute",left:x+"%",top:y+"%",width:on?18:10,height:on?18:10,marginLeft:on?-9:-5,marginTop:on?-9:-5,
         borderRadius:"50%",background:on?col:col+"99",border:(on?2:1.5)+"px solid "+(on?"#fff":"rgba(255,255,255,0.6)"),
@@ -1998,8 +2098,8 @@ function TopoDrawer({initial,onCancel,onSubmit}){
   };
   return <div>
     <div style={{display:"flex",gap:6,marginBottom:8}}>{[["line","Draw line"],["pin","Add pins"]].map(function(m){return <button key={m[0]} onClick={function(){setMode(m[0]);setSel(null);}} style={sm(mode===m[0])}>{m[1]}</button>;})}</div>
-    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{c[1]}</button>;})}</div>:null}
-    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Tap where the feature is. Drag any dot to move it."}</div>
+    {mode==="pin"?<div style={{display:"flex",gap:5,flexWrap:"wrap",marginBottom:8}}>{PIN_CATEGORIES.map(function(c){return <button key={c[0]} onClick={function(){setPinCat(c[0]);}} aria-current={pinCat===c[0]?"true":undefined} style={{padding:"8px 11px",borderRadius:14,border:"1px solid "+(pinCat===c[0]?c[2]:C.border),background:pinCat===c[0]?c[2]+"22":C.surface,color:pinCat===c[0]?c[2]:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:6}}><PinIcon cat={c[0]} size={16}/>{c[1]}</button>;})}</div>:null}
+    <div style={{fontSize:11.5,color:C.textMuted,marginBottom:6,lineHeight:1.45}}>{mode==="line"?"Drag along the line to draw it, or tap point by point. Drag any dot to move it.":"Pick a marker — belay station, rappel station… — then tap where it is on the rock. Drag any marker to move it."}</div>
     {/* touchAction:"none" is load-bearing: without it the browser claims the gesture for
         scrolling and the drag never reaches these handlers on a touch screen.
 
@@ -2013,20 +2113,20 @@ function TopoDrawer({initial,onCancel,onSubmit}){
     <div ref={frameRef} onPointerDown={onDown} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}
       style={{position:"relative",width:"100%",aspectRatio:ar||"4 / 3",background:C.card,borderRadius:9,overflow:"hidden",cursor:"crosshair",marginBottom:9,border:"1px solid "+C.border,touchAction:"none",userSelect:"none"}}>
       {photo?<img loading="lazy" decoding="async" src={photo} alt="Photo to draw the topo line on" onLoad={arOnLoad} draggable={false} style={TOPO_IMG}/>:<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",fontSize:12,color:C.textMuted}}>Tap to place points</div>}
-      <TopoLineOverlay points={points} pins={pins}/>
+      <TopoLineOverlay points={points}/>
       {points.map(function(p,i){return handle("point",i,p.x,p.y,C.amber);})}
-      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category));})}
+      {pins.map(function(p,i){return handle("pin",i,p.x,p.y,pinColor(p.category),p.category);})}
       {(loupe&&photo)?<div style={{position:"absolute",top:8,right:8,width:104,height:104,borderRadius:"50%",overflow:"hidden",border:"2px solid "+C.blue,boxShadow:"0 6px 18px rgba(0,0,0,0.55)",pointerEvents:"none",
         backgroundImage:"url("+photo+")",backgroundRepeat:"no-repeat",backgroundSize:(LOUPE_Z*100)+"% "+(LOUPE_Z*100)+"%",backgroundPosition:loupe.x+"% "+loupe.y+"%"}}>
         <span style={{position:"absolute",left:"50%",top:"50%",width:11,height:11,marginLeft:-5.5,marginTop:-5.5,borderRadius:"50%",border:"1.5px solid "+C.blue,background:"rgba(255,255,255,0.25)"}}/>
       </div>:null}
     </div>
     <div style={{display:"flex",gap:7,marginBottom:9}}>
-      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>Undo last point</button>
-      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"pin")):"Delete selected"}</button>
+      <button onClick={function(){if(mode==="line")setPoints(function(p){return p.slice(0,-1);});else setPins(function(p){return p.slice(0,-1);});setSel(null);}} style={btn}>{mode==="line"?"Undo last point":"Undo last marker"}</button>
+      <button onClick={delSel} disabled={!sel} style={Object.assign({},btn,{opacity:sel?1:0.45,cursor:sel?"pointer":"default"})}>{sel?("Delete "+(sel.kind==="point"?"point "+(sel.i+1):"marker")):"Delete selected"}</button>
       <button onClick={function(){setPoints([]);setPins([]);setSel(null);}} style={btn}>Clear all</button>
     </div>
-    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><span style={{width:9,height:9,borderRadius:"50%",background:pinColor(pn.category),flexShrink:0}}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><PinNum n={i+1}/><PinIcon cat={pn.category} size={18}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
     <div style={{display:"flex",gap:7}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
       <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
@@ -2226,6 +2326,7 @@ export function TopoSection({route}){
         <span style={{fontSize:22}}>+</span>Add photo
       </div>
     </div>}
+    {photos.some(function(p){return p.lines[0]&&p.lines[0].pins&&p.lines[0].pins.length;})?<TopoPinLegend style={{marginTop:8}}/>:null}
     {(viewerIdx!=null&&photos[viewerIdx])?<TopoPhotoModal photo={photos[viewerIdx]} onClose={function(){setViewerIdx(null);}} onDraw={function(p){setDrawFor(p);}} onDescribe={(USE_DB&&photos[viewerIdx].db&&photos[viewerIdx].mine)?function(p,d){return updateTopoAlt(p.id,d).then(function(){return dbTopos.refetch();});}:undefined}/>:null}
     {drawFor?createPortal(<div onClick={function(){setDrawFor(null);}} role="dialog" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.85)",zIndex:9500,display:"flex",alignItems:"flex-end",justifyContent:"center"}}>
       <div onClick={function(e){e.stopPropagation();}} style={{background:C.bg,borderTopLeftRadius:18,borderTopRightRadius:18,width:"100%",maxWidth:520,padding:"16px 16px 22px",border:"1px solid "+C.border,maxHeight:"92vh",overflowY:"auto",overscrollBehavior:"contain",boxSizing:"border-box"}}>
@@ -2247,7 +2348,7 @@ function TopoThumb({p,onOpen}){
   const canonical=p.lines[0];
   return <div {...clickable(onOpen)} aria-label={(canonical?"Open topo photo":"Open topo photo — no line drawn yet")+(p.alt?": "+p.alt:"")} style={{flexShrink:0,width:132,aspectRatio:ar||"1 / 1",position:"relative",borderRadius:11,overflow:"hidden",border:"1px solid "+C.border,cursor:"pointer",background:C.card}}>
     <img loading="lazy" decoding="async" src={p.url} alt={photoAlt(p.alt,"Topo photo")} onLoad={arOnLoad} style={TOPO_IMG}/>
-    {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins}/>:null}
+    {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins} pinSize={12}/>:null}
     {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:"#fff",fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
     {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
   </div>;
@@ -2269,11 +2370,13 @@ function TopoPhotoModal({photo,onClose,onDraw,onDescribe}){
       <div style={{background:"#000",textAlign:"center",fontSize:0}}>
         <div style={{position:"relative",display:"inline-block",maxWidth:"100%",lineHeight:0}}>
           <img loading="lazy" decoding="async" src={photo.url} alt={photoAlt(photo.alt,"Topo photo, enlarged")} style={{display:"block",maxWidth:"100%",maxHeight:"58vh",width:"auto",height:"auto"}}/>
-          {active?<TopoLineOverlay points={active.points} pins={active.pins}/>:null}
+          {active?<TopoLineOverlay points={active.points} pins={active.pins} pinSize={20} numbered/>:null}
         </div>
       </div>
       <div style={{padding:"12px 14px"}}>
         {onDescribe?<PhotoDescribeBox key={photo.id} initial={photo.alt} onSave={function(d){return onDescribe(photo,d);}} style={{position:"static",left:"auto",right:"auto",margin:"0 0 12px",maxWidth:"none",background:C.surface}}/>:null}
+        {active?<TopoPinKey pins={active.pins}/>:null}
+        {(active&&active.pins&&active.pins.length)?<TopoPinLegend style={{paddingTop:9,marginBottom:12,borderTop:"1px solid "+C.border}}/>:null}
         {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
         {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{padding:"8px 12px",borderRadius:16,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub,fontSize:11.5,fontWeight:600,cursor:"pointer"}}>{i===0?"Latest":"Alt "+i}</button>;})}</div>:null}
         <button onClick={function(){onDraw(photo);}} style={{width:"100%",padding:"10px",borderRadius:10,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:13,fontWeight:700,cursor:"pointer"}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>
@@ -2522,6 +2625,10 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
         distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),
         _orig:{distMi:v.distMi,gainFt:v.gainFt},
         hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",
+        /* Not edited here, but CARRIED: the form has no box for them, and dropping them on submit
+           meant any edit to a way in silently deleted its base-finding note, its MOST USED mark and
+           the mark saying which way in the route's paragraph describes. */
+        baseFinding:v.baseFinding||"",primary:v.primary===true,longForm:v.longForm===true,
         hazards:(Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[])).join("\n")};})
     :[blankVar()];
   const avars=vals.approachVariants||routeVars;
@@ -2697,6 +2804,9 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     var d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;
     var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;
     var h=String(x.hours||"").trim();if(h)o.hours=h;
+    var bf=String(x.baseFinding||"").trim();if(bf)o.baseFinding=bf;
+    if(x.primary===true)o.primary=true;
+    if(x.longForm===true)o.longForm=true;
     return o;}).filter(function(x){return x.name||x.notes;});
   if(f.type==="sections")return (vals.climbingRoute||[]).map(function(x,i){return {n:i+1,label:String(x.label||"").trim(),class:String(x.cls||"").trim(),notes:String(x.notes||"").trim()};}).filter(function(x){return x.label||x.notes;});
   if(f.type==="pitches")return (vals.pitchDetail||[]).map(function(p,i){
@@ -2945,7 +3055,7 @@ function ProtectionCard({route,myReports,onEdit}){
   return <div style={{marginBottom:14}}><SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit protection information"/>:null}>PROTECTION</SL><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:11,padding:"11px 13px"}}><div style={{fontSize:14,fontWeight:700,color:C.text,lineHeight:1.45}}>{pro}</div><div style={{fontSize:11,color:C.textMuted,marginTop:8,paddingTop:8,borderTop:"1px solid "+C.borderLight,fontWeight:600}}>{rc?("Confirmed on "+rc+" logged ascent"+(rc>1?"s":"")):"No ascents logged here yet"}</div></div></div>;
 }
 function GapNote({what,why,cta,onFix,mt}){return <div style={{marginTop:(mt||0)+2,marginBottom:11,paddingLeft:9,borderLeft:"2px solid "+C.borderLight}}><span style={{fontSize:11.5,color:C.textMuted,lineHeight:1.55}}>{what}{why?" — "+why:""}</span>{onFix?<button onClick={onFix} style={{display:"block",marginTop:1,padding:"5px 0",border:"none",background:"none",color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{(cta||"Add what you know")+" →"}</button>:null}</div>;}
-function RouteDetail({route,who,presence,autoFix,onAutoFixDone,onAddPhotos,onRemovePhoto,onReportPhoto,canModeratePhotos,dbPhotos,photosUnavailable,onSubTab,initialSubTab,myReports,onBack,onPlan,onViewProfile,connections,onConnect,friendState,saved,onToggleSave,onLog,onOpenReport,onOpenRoute,hzVotes,onVoteHazard,offlineSaved,offlinePending,onToggleOffline,onShareRoute,onContribute,onRequestJoin,requested,onFindPartners,diffRatings,setDiffRatings,logged,onOpenCrag,comments,commentsUnavailable,onCommentAdd,onCommentEdit,onCommentDelete,onCommentLike,onCommentReply,onAddTopo,topoConsensus,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,myStars,setMyStars,onOpenFireMap,notify}){
+function RouteDetail({route,who,presence,autoFix,onAutoFixDone,onAddPhotos,onRemovePhoto,onReportPhoto,canModeratePhotos,dbPhotos,photosUnavailable,onSubTab,initialSubTab,myReports,onBack,onPlan,onViewProfile,connections,onConnect,friendState,saved,onToggleSave,onLog,onOpenReport,onOpenRoute,hzVotes,onVoteHazard,offlineSaved,offlinePending,onToggleOffline,onRefreshPack,onShareRoute,onContribute,onRequestJoin,requested,onFindPartners,diffRatings,setDiffRatings,logged,onOpenCrag,comments,commentsUnavailable,onCommentAdd,onCommentEdit,onCommentDelete,onCommentLike,onCommentReply,onAddTopo,topoConsensus,myItin,onSaveMyItin,crewsForRoute,onShareItinToCrew,myStars,setMyStars,onOpenFireMap,notify}){
   /* Other climbers' trip reports. Until now the consensus was built from seed `activity`
      (empty for every DB-backed route) plus the CURRENT USER'S own logs — so a "community
      consensus" was really a solo view, and a second climber reporting the same route saw
@@ -2967,7 +3077,7 @@ function RouteDetail({route,who,presence,autoFix,onAutoFixDone,onAddPhotos,onRem
     const el=mapWrapRef.current;
     if(el&&el.scrollIntoView){try{el.scrollIntoView({behavior:"smooth",block:"center"});}catch(e){el.scrollIntoView();}}
   },[]);
-  const tripQ=useRouteTripReports(USE_DB?route.id:null);/* Derived here rather than beside any other declaration: `tripQ` is a `const`, so a flag reading it from higher up the component is a temporal dead zone — the #1206 blank screen. */const reportsUnavailable=!!(USE_DB&&tripQ&&tripQ.isError);
+  const tripQ=useRouteTripReports(USE_DB?route.id:null);/* Derived here rather than beside any other declaration: `tripQ` is a `const`, so a flag reading it from higher up the component is a temporal dead zone — the #1206 blank screen. */const reportsUnavailable=!!(USE_DB&&tripQ&&tripQ.isError);/* NO SIGNAL, PACKED ROUTE: the reports below are the copy saved with the pack (lib/db.js stamps `_packedAt`), so every line that describes them says how old they are instead of passing them off as live. */const reportsPackedAt=(tripQ&&tripQ.data&&tripQ.data._packedAt)||null;const packMetaQ=usePackMeta();const _pm=offlineSaved?((packMetaQ.data||EMPTY_ARR).find(function(m){return m.id===route.id;})||null):null;/* THE FORECAST RIDES WITH THE PACK. While a packed route is open with a signal, keep its saved forecast under 3 hours old, so the copy on the device is the one the climber last had a chance to read. Guarded on packMetaQ.data so it runs once the age is known; a failed fetch changes nothing and does not retry in a loop. */useEffect(function(){if(!offlineSaved||!route||!route.id||!packMetaQ.data)return;if(typeof navigator!=="undefined"&&navigator.onLine===false)return;if(_pm&&_pm.wxAt&&Date.now()-_pm.wxAt<3*3600000)return;var pts=pickForecastWaypoints(route.waypoints);if(!pts.length)return;var live=true;snapshotPackForecast(route.id,pts).then(function(ok){if(live&&ok&&packMetaQ.refetch)packMetaQ.refetch();}).catch(function(){});return function(){live=false;};},[offlineSaved,route&&route.id,packMetaQ.data]);
   const _tripRows=tripQ&&tripQ.data||EMPTY_ARR;
   const _reporterIds=useMemo(function(){return [...new Set(_tripRows.map(function(r){return r.user_id;}).filter(Boolean))];},[_tripRows]);
   const _reporterQ=useProfilesByIds(_reporterIds);
@@ -3076,7 +3186,7 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
     so with no reports every pattern above is the generic discipline picture, and calling that
     "a consensus from recent trip reports" claimed a consensus that does not exist. On the route
     this was found on the page header read "0 Reports" a few hundred pixels above this line. */}
-<Lbl s={reportsUnavailable?"Couldn’t load this route's trip reports, so what follows is the general picture for the discipline rather than this route's own conditions — try again in a moment":rtags.size?"This is a consensus from recent trip reports, not one person's edit — climbed it recently? Log a report to help keep it accurate":(activity.length?("No trip reports in the last "+RECENT_DAYS+" days, so this is the general picture for the discipline rather than current conditions — climbed it recently? Log a report to help keep it accurate"):"Nobody has logged a trip report here yet, so this is the general picture for the discipline rather than this route's own conditions — climb it and log one to start a real consensus")}/></div></div>;})()}{cragOnly?null:(()=>{const cc=ovCC;const recent=[...(activity||[])].sort((x,y)=>(y.date||"").localeCompare(x.date||"")).slice(0,3);const confCol=cc?(cc.confidence==="high"?C.green:cc.confidence==="medium"?C.amber:C.red):C.textMuted;const mtn=MOUNTAINS.find(m=>m.id===route.mountainId)||route._dbArea||{};const hz=cc&&cc.hazards&&cc.hazards.length?[...new Set(cc.hazards.flatMap(h=>h.tags))]:[];return <div style={{background:C.card,borderRadius:14,border:`1px solid ${hz.length?C.red+"55":C.border}`,padding:"13px 15px",marginBottom:13}}>{cc&&cc.clearedTags&&cc.clearedTags.length?<div style={{fontSize:11.5,color:C.green,fontWeight:700,marginBottom:10,lineHeight:1.4,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"7px 10px"}}>{"✓ Reported cleared: "+cc.clearedTags.join(", ")}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><div style={{fontSize:14,fontWeight:700}}>Conditions & recent activity</div><div style={{display:"flex",gap:5,alignItems:"center"}}>{cc&&cc.lastDate?(()=>{const dd=Math.floor((Date.now()-new Date(cc.lastDate).getTime())/86400000);const fr=dd<=14?["• Fresh",C.green]:dd<=60?["• Recent",C.amber]:["Stale",C.red];return <Pill label={fr[0]} color={fr[1]} bg={fr[1]+"22"} sm/>;})():null}{cc?<Pill label={`${cc.confidence} · ${cc.reportCount}`} color={confCol} bg={`${confCol}22`} sm/>:null}</div></div>{hz.length?<div style={{background:C.redBg,border:`1px solid ${C.red}55`,borderRadius:9,padding:"8px 11px",marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:2}}>Recent hazards reported</div><div style={{fontSize:12,color:C.textSub}}>{hz.slice(0,4).join(" · ")}</div></div>:null}{cc?<div style={{fontSize:12,color:C.textSub,marginBottom:recent.length?12:0}}><span style={{color:C.textMuted}}>{cc.recentCount?("In the last "+RECENT_DAYS+" days: "):"Latest reported: "}</span>{((cc.recentCount?cc.recentTags:cc.topTags)||[]).slice(0,3).map(t=>t.tag).join(" · ")||"—"}{cc.lastDate?<span style={{color:C.textMuted}}>{" · last report "+ago(cc.lastDate)}</span>:null}</div>:<div style={{fontSize:12,color:C.textMuted}}>{reportsUnavailable?"Couldn’t load this route's reports — try again in a moment.":"No reports yet — be the first to log this climb and tell others if it's in."}</div>}{recent.length?<div><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Recently climbed</div>{recent.map((aa,i)=>{const summ=/summit/i.test(aa.tickType||"");const att=/attempt|bail|retreat|turn/i.test(aa.tickType||"");const _out=summ?"✓ Summited":att?"Attempt":aa.tickType;return <div key={i} aria-label={aa.user+", "+String(_out||"report").replace("✓ ","")+", "+ago(aa.date)} {...clickable(()=>onOpenReport&&onOpenReport({route,mtn,user:aa.user,avatar:aa.avatar,date:aa.date,tickType:aa.tickType,stars:aa.stars,condTags:aa.condTags,text:aa.text,partners:aa.partners,cond:aa.cond,photos:aa.photos,gpxName:aa.gpxName}))} style={{display:"flex",alignItems:"center",gap:9,padding:"7px 0",borderTop:i?`1px solid ${C.borderLight}`:"none",cursor:"pointer"}}><Av src={aa.avatar} size={28}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600}}>{aa.user}<span style={{marginLeft:7,fontSize:12,fontWeight:700,color:summ?C.green:att?C.amber:C.blue}}>{_out}</span></div><div style={{fontSize:12,color:C.textMuted}}>{ago(aa.date)+" · "+aa.date}</div></div><span style={{color:C.blue,fontSize:14,flexShrink:0}}>›</span></div>;})}</div>:null}<div {...clickable(()=>setTab("conditions"))} style={{marginTop:12,textAlign:"center",fontSize:12,color:C.blue,fontWeight:600,cursor:"pointer",paddingTop:10,borderTop:`1px solid ${C.borderLight}`}}>View all reports & conditions →</div></div>;})()}{(()=>{const ph=activity.flatMap(a=>(a.photos||[]).map(u=>({u,a})));if(!ph.length)return null;const nC=new Set(ph.map(x=>x.a.user)).size;return <div style={{marginBottom:13}}><div style={SZ4}><div style={{fontSize:14,fontWeight:700}}>Photos from climbers</div><span style={{fontSize:12,color:C.textMuted}}>{ph.length} photo{ph.length!==1?"s":""} · {nC} climber{nC!==1?"s":""}</span></div><PhotoRow items={ph.slice(0,12)}/></div>;})()}<ElevChart pts={route.elevPts} color={dc.color}/><div style={{marginTop:12}}/>
+<Lbl s={reportsUnavailable?"Couldn’t load this route's trip reports, so what follows is the general picture for the discipline rather than this route's own conditions — try again in a moment":reportsPackedAt?("No signal — this reads the trip reports saved with your trip pack "+savedAgo(reportsPackedAt)+". Newer ones need a connection"):rtags.size?"This is a consensus from recent trip reports, not one person's edit — climbed it recently? Log a report to help keep it accurate":(activity.length?("No trip reports in the last "+RECENT_DAYS+" days, so this is the general picture for the discipline rather than current conditions — climbed it recently? Log a report to help keep it accurate"):"Nobody has logged a trip report here yet, so this is the general picture for the discipline rather than this route's own conditions — climb it and log one to start a real consensus")}/></div></div>;})()}{cragOnly?null:(()=>{const cc=ovCC;const recent=[...(activity||[])].sort((x,y)=>(y.date||"").localeCompare(x.date||"")).slice(0,3);const confCol=cc?(cc.confidence==="high"?C.green:cc.confidence==="medium"?C.amber:C.red):C.textMuted;const mtn=MOUNTAINS.find(m=>m.id===route.mountainId)||route._dbArea||{};const hz=cc&&cc.hazards&&cc.hazards.length?[...new Set(cc.hazards.flatMap(h=>h.tags))]:[];return <div style={{background:C.card,borderRadius:14,border:`1px solid ${hz.length?C.red+"55":C.border}`,padding:"13px 15px",marginBottom:13}}>{cc&&cc.clearedTags&&cc.clearedTags.length?<div style={{fontSize:11.5,color:C.green,fontWeight:700,marginBottom:10,lineHeight:1.4,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"7px 10px"}}>{"✓ Reported cleared: "+cc.clearedTags.join(", ")}</div>:null}<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10}}><div style={{fontSize:14,fontWeight:700}}>Conditions & recent activity</div><div style={{display:"flex",gap:5,alignItems:"center"}}>{cc&&cc.lastDate?(()=>{const dd=Math.floor((Date.now()-new Date(cc.lastDate).getTime())/86400000);const fr=dd<=14?["• Fresh",C.green]:dd<=60?["• Recent",C.amber]:["Stale",C.red];return <Pill label={fr[0]} color={fr[1]} bg={fr[1]+"22"} sm/>;})():null}{cc?<Pill label={`${cc.confidence} · ${cc.reportCount}`} color={confCol} bg={`${confCol}22`} sm/>:null}</div></div>{hz.length?<div style={{background:C.redBg,border:`1px solid ${C.red}55`,borderRadius:9,padding:"8px 11px",marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.red,marginBottom:2}}>Recent hazards reported</div><div style={{fontSize:12,color:C.textSub}}>{hz.slice(0,4).join(" · ")}</div></div>:null}{cc?<div style={{fontSize:12,color:C.textSub,marginBottom:recent.length?12:0}}><span style={{color:C.textMuted}}>{cc.recentCount?("In the last "+RECENT_DAYS+" days: "):"Latest reported: "}</span>{((cc.recentCount?cc.recentTags:cc.topTags)||[]).slice(0,3).map(t=>t.tag).join(" · ")||"—"}{cc.lastDate?<span style={{color:C.textMuted}}>{" · last report "+ago(cc.lastDate)}</span>:null}</div>:<div style={{fontSize:12,color:C.textMuted}}>{reportsUnavailable?"Couldn’t load this route's reports — try again in a moment.":"No reports yet — be the first to log this climb and tell others if it's in."}</div>}{recent.length?<div><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Recently climbed</div>{recent.map((aa,i)=>{const summ=/summit/i.test(aa.tickType||"");const att=/attempt|bail|retreat|turn/i.test(aa.tickType||"");const _out=summ?"✓ Summited":att?"Attempt":aa.tickType;return <div key={i} aria-label={aa.user+", "+String(_out||"report").replace("✓ ","")+", "+ago(aa.date)} {...clickable(()=>onOpenReport&&onOpenReport({route,mtn,user:aa.user,avatar:aa.avatar,date:aa.date,tickType:aa.tickType,stars:aa.stars,condTags:aa.condTags,text:aa.text,partners:aa.partners,cond:aa.cond,photos:aa.photos,gpxName:aa.gpxName}))} style={{display:"flex",alignItems:"center",gap:9,padding:"7px 0",borderTop:i?`1px solid ${C.borderLight}`:"none",cursor:"pointer"}}><Av src={aa.avatar} size={28}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600}}>{aa.user}<span style={{marginLeft:7,fontSize:12,fontWeight:700,color:summ?C.green:att?C.amber:C.blue}}>{_out}</span></div><div style={{fontSize:12,color:C.textMuted}}>{ago(aa.date)+" · "+aa.date}</div></div><span style={{color:C.blue,fontSize:14,flexShrink:0}}>›</span></div>;})}</div>:null}<div {...clickable(()=>setTab("conditions"))} style={{marginTop:12,textAlign:"center",fontSize:12,color:C.blue,fontWeight:600,cursor:"pointer",paddingTop:10,borderTop:`1px solid ${C.borderLight}`}}>View all reports & conditions →</div></div>;})()}{(()=>{const ph=activity.flatMap(a=>(a.photos||[]).map(u=>({u,a})));if(!ph.length)return null;const nC=new Set(ph.map(x=>x.a.user)).size;return <div style={{marginBottom:13}}><div style={SZ4}><div style={{fontSize:14,fontWeight:700}}>Photos from climbers</div><span style={{fontSize:12,color:C.textMuted}}>{ph.length} photo{ph.length!==1?"s":""} · {nC} climber{nC!==1?"s":""}</span></div><PhotoRow items={ph.slice(0,12)}/></div>;})()}<ElevChart pts={route.elevPts} color={dc.color}/><div style={{marginTop:12}}/>
         <div style={{marginBottom:12}}><DiffRadar d={route.difficulty} disc={catOf(route)} ratings={(diffRatings||{})[route.id]} onRate={setDiffRatings?(axis,val)=>setDiffRatings(p=>{const o=Object.assign({},p);const ro=Object.assign({},o[route.id]);const ao=Object.assign({},ro[axis]);ao[ME.id]=val;ro[axis]=ao;o[route.id]=ro;return o;}):undefined}/></div>
         
         <TopoSection route={route}/>{/* PITCH-BY-PITCH and all of the rappel information moved to the Plan tab, which is where
@@ -3104,8 +3214,8 @@ const mtn=(function(){const _s=MOUNTAINS.find(m=>m.id===route.mountainId);if(_s&
       {tab==="conditions"?<div>{!logged?<button onClick={()=>onLog(route)} style={{width:"100%",padding:"9px",marginBottom:13,background:C.greenBg,color:C.green,border:"1px solid "+C.greenDim,boxSizing:"border-box",borderRadius:11,fontSize:13.5,cursor:"pointer",fontWeight:700}}>✓ Log your ascent</button>:null}
       {(function(){const cl=route.climate;if(!cl||typeof cl!=="object")return null;const _bs=(cl.bySeason&&typeof cl.bySeason==="object")?cl.bySeason:{};const sv=k=>cl[k]||_bs[k]||null;const SEAS=[["spring","Spring"],["summer","Summer"],["fall","Fall"],["winter","Winter"]].filter(s=>sv(s[0]));if(!cl.typical&&!SEAS.length&&!cl.forecastZone)return null;return <div style={{background:C.card,borderRadius:12,padding:"13px 15px",marginBottom:12,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",gap:7,marginBottom:8}}><div style={{fontSize:12,fontWeight:700,color:C.teal}}>CLIMATE & SEASON</div><ProvChip prov={sectionProvenance(route,"climate")}/></div>{cl.typical?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.55,marginBottom:SEAS.length?10:0}}>{cl.typical}</div>:null}{SEAS.map(function(s,i){return <div key={s[0]} style={{display:"flex",gap:9,alignItems:"flex-start",padding:"5px 0",borderTop:i===0?"none":`1px solid ${C.borderLight}`}}><span style={{fontSize:11,fontWeight:700,color:C.textMuted,width:52,flexShrink:0,paddingTop:1}}>{s[1]}</span><span style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,flex:1,minWidth:0}}>{sv(s[0])}</span></div>;})}{cl.forecastZone?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingTop:8,borderTop:`1px solid ${C.borderLight}`,lineHeight:1.45}}>{"Forecast zone — "+cl.forecastZone}</div>:null}</div>;})()}{gapSeason(route)?<GapNote what="No season guidance" why="Nothing records when this is in — which months hold snow, when the moat opens, or when it dries out." cta="Add the season" onFix={()=>{setFixOpenSection("season");setFixOpen(true);}}/>:null}
         <BetaDiff route={route}/><ConsensusPanel route={route} activity={activity} hzVotes={hzVotes} onVote={onVoteHazard} reportsUnavailable={reportsUnavailable}/><RoadReports activity={activity} reportsUnavailable={reportsUnavailable} onReport={onLog?function(){onLog(route,"road");}:undefined}/>
-        <div id="trip-reports-section" style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:6}}><span style={{fontSize:14,fontWeight:700}}>{cragOnly?"Send Reports":"Trip Reports"}</span><button onClick={()=>onLog&&onLog(route)} style={{flexShrink:0,fontSize:11.5,fontWeight:800,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:8,padding:"5px 11px",cursor:"pointer"}}>{cragOnly?"Log / send":<Lbl s={"Log / report"}/>}</button></div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:11,lineHeight:1.5}}>{"These come straight from climbers logging their ascents — log yours and your conditions, beta & rating appear here automatically."}</div>
-        {(activity&&activity.length)||reportsUnavailable?null:<div style={{textAlign:"center",padding:"24px 16px",color:C.textMuted,fontSize:13}}>Add a trip report from your logbook — be the first to log this climb.</div>}
+        <div id="trip-reports-section" style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:6}}><span style={{fontSize:14,fontWeight:700}}>{cragOnly?"Send Reports":"Trip Reports"}</span><button onClick={()=>onLog&&onLog(route)} style={{flexShrink:0,fontSize:11.5,fontWeight:800,color:C.green,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:8,padding:"5px 11px",cursor:"pointer"}}>{cragOnly?"Log / send":<Lbl s={"Log / report"}/>}</button></div><div style={{fontSize:11.5,color:C.textMuted,marginBottom:11,lineHeight:1.5}}>{"These come straight from climbers logging their ascents — log yours and your conditions, beta & rating appear here automatically."}</div>{reportsPackedAt?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,marginBottom:10}}>{"No signal — these are the "+(tripQ.data.length)+" trip report"+(tripQ.data.length!==1?"s":"")+" saved with your trip pack "+savedAgo(reportsPackedAt)+". Newer ones need a connection."}</div>:null}
+        {(activity&&activity.length)||reportsUnavailable||reportsPackedAt?null:<div style={{textAlign:"center",padding:"24px 16px",color:C.textMuted,fontSize:13}}>Add a trip report from your logbook — be the first to log this climb.</div>}
         {(activity||[]).map((a,i)=><div key={i} /* Hand TripReport the WHOLE row. This used to copy thirteen keys by hand, and TripReport
    renders nine more that were not on the list — beta, gearBeta, sunVote, sunNote, fa,
    developed, itinerary, outcomeReasons, outcomeNote. So the send beta and the rack beta a
@@ -3146,11 +3256,11 @@ const landMgrVal=ac.land_manager||ac.landManager;const closuresVal=ac.closures||
    links gained, 1 moved. Do not "tidy" display and matching back into one expression. */
 const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+" "+(feesVal||"")).toLowerCase();/* Match the agency name only where it is ASSERTED, never where it is disclaimed. This haystack is land manager + permit + fees, and 1,282 WA routes carry the fees line "None - no climbing fee (National Forest, not Mount Rainier NP)". A bare /rainier/ test reads that as Rainier and sends a climber on a Snoqualmie or Index route to Mount Rainier's climbing-permit page - contradicting the very sentence it matched. 1,308 of the 1,941 routes showing a permit link were pointed at the wrong agency this way. Same defect the rack summary already guards with RACK_NEG ("ice screws are not worth carrying" must not advertise screws). */const _pmUrl=_pmSays(_pmLm,/enchantment/g)?["Enchantment Permit Area lottery — Recreation.gov","https://www.recreation.gov/permits/233273"]:_pmSays(_pmLm,/north cascades/g)?["North Cascades NP backcountry permits — nps.gov","https://www.nps.gov/noca/planyourvisit/permits.htm"]:_pmSays(_pmLm,/rainier/g)?["Mount Rainier climbing permits — nps.gov","https://www.nps.gov/mora/planyourvisit/climbing.htm"]:_pmSays(_pmLm,/olympic national park/g)?["Olympic NP wilderness permits — nps.gov","https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"]:_pmSays(_pmLm,/recreation\.gov/g)?["Reserve on Recreation.gov","https://www.recreation.gov"]:null;return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>ACCESS & REGULATIONS</div>{/* Points at `access`, not `permit`. Every row above comes from the `access` block; `permit` is the separate top-level column, so this button opened a form section that could not change one line of what it labels. */}<EditIconButton onClick={function(){setFixOpenSection("access");setFixOpen(true);}} title="Edit access & permit information"/></div>{rows.map(r=><div key={r[0]} style={{marginBottom:7}}><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{r[0]}</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>)}{/* The route's OWN permit link, rehomed here from Overview. It comes first because it is specific to this climb, where `_pmUrl` below is inferred from the land-manager string and only ever points at an agency's general permit page. `rel` gains `noopener` — the Overview copy had `noreferrer` alone, and while every current browser implies the one from the other, stating it is what the two other external links in this panel already do. */}{_ownPermitUrl?<a href={_ownPermitUrl} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:12.5,fontWeight:700,textAlign:"center",textDecoration:"none"}}>{(_ownPermit||"Get the permit")+" →"}</a>:null}{_pmUrl?<a href={_pmUrl[1]} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{_pmUrl[0]+" →"}</a>:null}<div style={{fontSize:12,color:C.textMuted,marginTop:8,fontStyle:"italic"}}>Confirm current permits and closures with the land manager before you go.</div></div>;})()}{/* The structured approaches come FIRST, then the long-form prose below. A climber
     choosing a way in wants the comparison (which one, what season, how long) before the
-    narrative; the narrative is what you read once you have chosen. */}<ApproachVariants route={route} onEdit={()=>{setFixOpenSection("approachVariants");setFixOpen(true);}}/>{/* GATED ON THE PROSE ALONE since the trailhead moved to the top of the tab. The old gate also
-           admitted a route that merely had a trailhead, because the card underneath was the thing
-           being shown; with the card gone that route would render the APPROACH heading over an empty
-           box. It takes the GapNote below instead, which is true — the trailhead is on screen above
-           and the walk from it genuinely is not written down. */}{route.approach?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>} prov={sectionProvenance(route,"approach")}>APPROACH</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`}}>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div></div>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{/* TURNAROUND used to be its own box HERE, between the approach and the protection.
+    narrative; the narrative is what you read once you have chosen. */}{(route.approach||(Array.isArray(route.approachVariants)&&route.approachVariants.some(Boolean)))?<ApproachVariants route={route} onEdit={()=>{setFixOpenSection("approachVariants");setFixOpen(true);}} onEditProse={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{/* GATED ON THE WALK ITSELF — the prose or a way in — never on the trailhead alone. The old gate
+           also admitted a route that merely had a trailhead, because a card underneath was the thing
+           being shown; with that card at the top of the tab such a route would render the APPROACH
+           heading over an empty box. It takes the GapNote above instead, which is true — the trailhead
+           is on screen and the walk from it genuinely is not written down. */}{/* TURNAROUND used to be its own box HERE, between the approach and the protection.
     It is gone from the Plan tab: a turnaround is not a plan item, it is the condition
     under which you abandon the plan, and every one of the 1,009 values is prose about
     when to retreat ("turn around before committing above the rock band", "be willing
@@ -3201,7 +3311,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
        promised a gear list and a topo it does not hold. Two of those five have also come off:
        photos and other climbers' condition reports live in `contributions`, not in the route
        row, so they are still not on the device and the caveat below says so. */}
-    <div style={{display:"flex",flexWrap:"wrap",gap:6}}>{[["Description",!!(route.beta||route.overview||route.approach)],["Pitch-by-pitch"+(route.pitchDetail&&route.pitchDetail.length?" · "+route.pitchDetail.length+"p":""),!!(route.pitchDetail&&route.pitchDetail.length)],["Gear list",!!(route.gear&&route.gear.length)],["Hazards",!!(route.hazards&&route.hazards.length)],["GPX track",!!(route.gpxPts&&route.gpxPts.length)]].filter(x=>x[1]).map(x=><span key={x[0]} style={{fontSize:12,fontWeight:600,color:C.green,background:C.surface,border:"1px solid "+C.greenDim,borderRadius:7,padding:"3px 8px"}}>{x[0]}</span>)}</div><div style={{fontSize:11,color:C.textSub,marginTop:9,lineHeight:1.5}}>Saved on this device — this page opens with no signal. <b style={{color:C.text}}>Photos, topo images and other climbers’ reports are not</b>, and neither are map tiles. Tap <b style={{color:C.text}}>Download GPX</b> to open the track in a dedicated GPS/mapping app.</div></>:null}</div></div></>}{noWaypoints?null:<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>} prov={sectionProvenance(route,"waypoints")}>WAYPOINTS</SL>{(function(){var _wpCav=waypointCaveat(route.id,route.waypoints);return _wpCav?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{_wpCav}</div>:null;})()}{<WaypointList waypoints={route.waypoints} onFocus={focusWaypoint} emptyCopy={cragOnly?"No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag.":"No named waypoints yet — the track above is a raw GPS line with no key points marked. Add the trailhead, camps, junctions and summit to unlock a turn-by-turn list here and per-point weather forecasts on the Safety tab."} onAdd={function(){setFixOpenSection("waypoints");setFixOpen(true);}}/>}</div>}{catOf(route)!=="bouldering"?<RouteGearCheck route={route} rack={routeRackFor(route)||DISC_RACK[catOf(route)]||[]} rackGeneric={!routeRackFor(route)} essentials={route.whatToBring} onEditEssentials={function(){setFixOpenSection("whatToBring");setFixOpen(true);}} onEditRopeNote={function(){setFixOpenSection("ropeNote");setFixOpen(true);}} onEditRack={cur=>{setFixOpenSection("rack");setFixPrefill(cur?{rack:{note:cur}}:null);setFixOpen(true);}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}}/>:null}{catOf(route)!=="bouldering"?<div {...clickable(()=>{setFixOpenSection("rack");setFixOpen(true);})} style={{marginTop:9,padding:"9px 12px",borderRadius:10,border:"1px dashed "+C.border,background:C.surface,fontSize:12,color:C.blue,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:7}}><Lbl s={"✏️ Brought different gear? Suggest a gear update for this route"}/></div>:null}</div>:null}
+    <div style={{display:"flex",flexWrap:"wrap",gap:6}}>{[["Description",!!(route.beta||route.overview||route.approach)],["Pitch-by-pitch"+(route.pitchDetail&&route.pitchDetail.length?" · "+route.pitchDetail.length+"p":""),!!(route.pitchDetail&&route.pitchDetail.length)],["Gear list",!!(route.gear&&route.gear.length)],["Hazards",!!(route.hazards&&route.hazards.length)],["GPX track",!!(route.gpxPts&&route.gpxPts.length)],[(_pm&&_pm.reports)?("Latest "+_pm.reports+" trip report"+(_pm.reports!==1?"s":"")):"Trip reports",!!(_pm&&_pm.reports)],["Community corrections",!!(_pm&&_pm.corrections)],["Forecast"+(_pm&&_pm.wxAt?" · "+savedAgo(_pm.wxAt):""),!!(_pm&&_pm.wxAt)]].filter(x=>x[1]).map(x=><span key={x[0]} style={{fontSize:12,fontWeight:600,color:C.green,background:C.surface,border:"1px solid "+C.greenDim,borderRadius:7,padding:"3px 8px"}}>{x[0]}</span>)}</div><div style={{fontSize:11,color:C.textSub,marginTop:9,lineHeight:1.5}}>Saved on this device — this page opens with no signal, along with the latest trip reports, agreed corrections and a forecast (and any plan you saved to your account). <b style={{color:C.text}}>Photos, topo images and map tiles are not</b>, and anything newer needs a connection. Tap <b style={{color:C.text}}>Download GPX</b> to open the track in a dedicated GPS/mapping app.</div>{_pm?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:10,marginTop:9}}><span style={{fontSize:11.5,color:C.textMuted}}>{"Updated "+savedAgo(_pm.updatedAt)}</span>{onRefreshPack?<button onClick={onRefreshPack} disabled={offlinePending} style={{flexShrink:0,padding:"6px 12px",borderRadius:8,border:"1px solid "+C.greenDim,background:C.surface,color:C.green,fontSize:12,fontWeight:700,cursor:offlinePending?"default":"pointer"}}>{offlinePending?"Refreshing…":"Refresh now"}</button>:null}</div>:null}</>:null}</div></div></>}{noWaypoints?null:<div style={{marginTop:12}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("waypoints");setFixOpen(true);}} title="Edit waypoints"/>} prov={sectionProvenance(route,"waypoints")}>WAYPOINTS</SL>{(function(){var _wpCav=waypointCaveat(route.id,route.waypoints);return _wpCav?<div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:8}}>{_wpCav}</div>:null;})()}{<WaypointList waypoints={route.waypoints} onFocus={focusWaypoint} emptyCopy={cragOnly?"No named waypoints yet — add the parking/approach point (and anchor, if useful) to help other climbers find this crag.":"No named waypoints yet — the track above is a raw GPS line with no key points marked. Add the trailhead, camps, junctions and summit to unlock a turn-by-turn list here and per-point weather forecasts on the Safety tab."} onAdd={function(){setFixOpenSection("waypoints");setFixOpen(true);}}/>}</div>}{catOf(route)!=="bouldering"?<RouteGearCheck route={route} rack={routeRackFor(route)||DISC_RACK[catOf(route)]||[]} rackGeneric={!routeRackFor(route)} essentials={route.whatToBring} onEditEssentials={function(){setFixOpenSection("whatToBring");setFixOpen(true);}} onEditRopeNote={function(){setFixOpenSection("ropeNote");setFixOpen(true);}} onEditRack={cur=>{setFixOpenSection("rack");setFixPrefill(cur?{rack:{note:cur}}:null);setFixOpen(true);}} onSeeReports={()=>{setTab("conditions");setTimeout(()=>{if(typeof document!=="undefined"){var el=document.getElementById("trip-reports-section");if(el&&el.scrollIntoView)el.scrollIntoView({behavior:"smooth",block:"start"});}},60);}}/>:null}{catOf(route)!=="bouldering"?<div {...clickable(()=>{setFixOpenSection("rack");setFixOpen(true);})} style={{marginTop:9,padding:"9px 12px",borderRadius:10,border:"1px dashed "+C.border,background:C.surface,fontSize:12,color:C.blue,fontWeight:600,cursor:"pointer",display:"flex",alignItems:"center",gap:7}}><Lbl s={"✏️ Brought different gear? Suggest a gear update for this route"}/></div>:null}</div>:null}
       {tab==="safety"?<div>{fireEl}{/* CAMPING & BIVY used to mount HERE, and moved to the Planner tab: where you sleep is a
     planning decision, not a hazard, and on Safety it sat behind a tab nobody opens for
     logistics. Its mount was silently lost once already — it lived on this exact dense line,
@@ -3209,7 +3319,7 @@ const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+
     rendered NOWHERE. No guard catches that: check:dead-props sees props, not unmounted
     components, and the column was populated so a data check would have looked healthy too.
     The mount is now on the planner line beside <Calculator/>; if you touch either line,
-    confirm CAMPING & BIVY still reaches the screen. */}{(["alpine","mountaineering","ice","mixed"].includes(route.discipline)||(route.gainFt||0)>=3000||(route.routeFt||0)>=1000)?<div style={{marginBottom:14}}><div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:12,padding:"11px 13px",marginBottom:10,fontSize:12.5,color:C.text,lineHeight:1.5}}><b style={{color:C.amber}}>Committing objective.</b> {(rxOf(route.id).comms||{}).coverage==="good"?"File a float plan below in case something still goes wrong.":"File a float plan below before you lose cell service."}</div><FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={route.id?"route:"+route.id:null} defaults={{route:route.name}} coords={(mtn&&mtn.lat!=null&&mtn.lng!=null)?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null}/></div>:null}<WeatherPanel waypoints={route.waypoints} showPlan={showPlan}/><div style={{marginTop:14,marginBottom:14}}><SL>Weather & mountain forecasts</SL><div style={{fontSize:12,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Cross-check several forecasts before committing — mountain weather turns fast.</div><div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:12,overflow:"hidden"}}>{(mtn.lat!=null&&mtn.lng!=null?[{n:"NWS point forecast",u:"https://forecast.weather.gov/MapClick.php?lon="+mtn.lng+"&lat="+mtn.lat},{n:"NWS hourly graph",u:"https://forecast.weather.gov/MapClick.php?lon="+mtn.lng+"&lat="+mtn.lat+"&FcstType=graphical"}]:[]).concat([{n:"Mountain-Forecast.com",u:"https://www.google.com/search?q="+encodeURIComponent("site:mountain-forecast.com "+mtn.name)},{n:"OpenSnow forecast",u:"https://opensnow.com/"},{n:"Fire & smoke — AirNow",u:"https://www.airnow.gov/"},{n:"Active fires — InciWeb",u:"https://inciweb.wildfire.gov/"}]).concat(mtn.avyZone?[{n:"Avalanche forecast ("+mtn.avyZone+")",u:avyCenterFor(mtn)[2]}]:[]).map(function(a,i,arr){return <a key={i} href={a.u} target="_blank" rel="noreferrer" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 13px",borderBottom:i<arr.length-1?`1px solid ${C.borderLight}`:"none",textDecoration:"none"}}><span style={{fontSize:13,color:C.text}}>{a.n}</span><span style={{fontSize:12,color:C.blue,fontWeight:700}}>Open →</span></a>;})}</div></div><SafetyMatrix route={route} activity={activity} mountain={mtn} hzVotes={hzVotes} onVote={onVoteHazard} onOpenContribute={()=>{setFixOpenSection("bailout");setFixOpen(true);}} onOpenStartLoc={()=>{setFixOpenSection("startLocation");setFixOpen(true);}} onOpenHazards={(seed)=>{setFixOpenSection("haz");setFixPrefill(seed?{haz:seed}:null);setFixOpen(true);}} onOpenTurnaround={()=>{setFixOpenSection("turn");setFixOpen(true);}}/>{(()=>{const cm=rxOf(route.id).comms;/* Cell coverage is contributable (the `comms` field) and this was the only panel on the Safety tab with no way to correct what it says — every neighbour here has an EditIconButton. Coverage is also the one fact on this screen that changes with a carrier and a new tower rather than with the rock, so it is exactly the kind of thing the last party knows better than the catalog. */
+    confirm CAMPING & BIVY still reaches the screen. */}{(["alpine","mountaineering","ice","mixed"].includes(route.discipline)||(route.gainFt||0)>=3000||(route.routeFt||0)>=1000)?<div style={{marginBottom:14}}><div style={{background:C.amberBg,border:`1px solid ${C.amber}55`,borderRadius:12,padding:"11px 13px",marginBottom:10,fontSize:12.5,color:C.text,lineHeight:1.5}}><b style={{color:C.amber}}>Committing objective.</b> {(rxOf(route.id).comms||{}).coverage==="good"?"File a float plan below in case something still goes wrong.":"File a float plan below before you lose cell service."}</div><FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={route.id?"route:"+route.id:null} defaults={{route:route.name}} coords={(mtn&&mtn.lat!=null&&mtn.lng!=null)?{lat:mtn.lat,lng:mtn.lng,name:mtn.name}:null}/></div>:null}<WeatherPanel waypoints={route.waypoints} showPlan={showPlan} packId={offlineSaved?route.id:null}/><div style={{marginTop:14,marginBottom:14}}><SL>Weather & mountain forecasts</SL><div style={{fontSize:12,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Cross-check several forecasts before committing — mountain weather turns fast.</div><div style={{background:C.card,border:`1px solid ${C.border}`,borderRadius:12,overflow:"hidden"}}>{(mtn.lat!=null&&mtn.lng!=null?[{n:"NWS point forecast",u:"https://forecast.weather.gov/MapClick.php?lon="+mtn.lng+"&lat="+mtn.lat},{n:"NWS hourly graph",u:"https://forecast.weather.gov/MapClick.php?lon="+mtn.lng+"&lat="+mtn.lat+"&FcstType=graphical"}]:[]).concat([{n:"Mountain-Forecast.com",u:"https://www.google.com/search?q="+encodeURIComponent("site:mountain-forecast.com "+mtn.name)},{n:"OpenSnow forecast",u:"https://opensnow.com/"},{n:"Fire & smoke — AirNow",u:"https://www.airnow.gov/"},{n:"Active fires — InciWeb",u:"https://inciweb.wildfire.gov/"}]).concat(mtn.avyZone?[{n:"Avalanche forecast ("+mtn.avyZone+")",u:avyCenterFor(mtn)[2]}]:[]).map(function(a,i,arr){return <a key={i} href={a.u} target="_blank" rel="noreferrer" style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"10px 13px",borderBottom:i<arr.length-1?`1px solid ${C.borderLight}`:"none",textDecoration:"none"}}><span style={{fontSize:13,color:C.text}}>{a.n}</span><span style={{fontSize:12,color:C.blue,fontWeight:700}}>Open →</span></a>;})}</div></div><SafetyMatrix route={route} activity={activity} mountain={mtn} hzVotes={hzVotes} onVote={onVoteHazard} onOpenContribute={()=>{setFixOpenSection("bailout");setFixOpen(true);}} onOpenStartLoc={()=>{setFixOpenSection("startLocation");setFixOpen(true);}} onOpenHazards={(seed)=>{setFixOpenSection("haz");setFixPrefill(seed?{haz:seed}:null);setFixOpen(true);}} onOpenTurnaround={()=>{setFixOpenSection("turn");setFixOpen(true);}}/>{(()=>{const cm=rxOf(route.id).comms;/* Cell coverage is contributable (the `comms` field) and this was the only panel on the Safety tab with no way to correct what it says — every neighbour here has an EditIconButton. Coverage is also the one fact on this screen that changes with a carrier and a new tower rather than with the rock, so it is exactly the kind of thing the last party knows better than the catalog. */
         if(!cm)return route.comms?<div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginTop:14,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:5}}><div style={{fontSize:12,fontWeight:700,color:C.blue,textTransform:"uppercase",letterSpacing:0.4}}>Cell / sat coverage</div><EditIconButton onClick={()=>{setFixOpenSection("comms");setFixOpen(true);}} title="Edit cell / satellite coverage"/></div><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{route.comms}</div></div>:null;const COV={none:{t:"No service",c:C.red,bg:C.redBg},spotty:{t:"Spotty signal",c:C.amber,bg:C.amberBg},good:{t:"Good signal",c:C.green,bg:C.greenBg}};return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginTop:14,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",gap:7,marginBottom:cm.note?5:0}}><span style={{fontSize:12,fontWeight:700,color:C.blue,textTransform:"uppercase",letterSpacing:0.4}}>Cell coverage</span><span style={{fontSize:11.5,fontWeight:700,color:(COV[cm.coverage]||COV.none).c,background:(COV[cm.coverage]||COV.none).bg,padding:"2px 8px",borderRadius:10}}>{(COV[cm.coverage]||COV.none).t}</span></div>{cm.note?<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>{cm.note}</div>:null}</div>;})()}</div>:null}
       {/* On Overview this prompt is rendered UP beside the BETA box instead — see `betaCta`.
     It asks "got beta?", so it belongs where the route's beta is, not stranded past the
@@ -3280,7 +3390,7 @@ function pickForecastWaypoints(waypoints){
   }
   return [trailhead,mid,summit].filter(Boolean);
 }
-function WeatherPanel({waypoints,showPlan}){
+function WeatherPanel({waypoints,showPlan,packId}){
   const points=pickForecastWaypoints(waypoints);
   const [data,setData]=useState({});
   const [expandedDay,setExpandedDay]=useState({});
@@ -3299,7 +3409,7 @@ function WeatherPanel({waypoints,showPlan}){
       // canonical value to the climber's own unit is a different operation
       // from the re-conversion this warns about, and skipping it is what left
       // the Freezing level tile reading feet to a metric climber.
-      const omUrl="https://api.open-meteo.com/v1/forecast?latitude="+w.lat+"&longitude="+w.lng+(w.elev!=null?"&elevation="+Math.round(w.elev/3.28084):"")+"&hourly=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,wind_speed_80m,wind_direction_80m,wind_gusts_10m,precipitation_probability,precipitation,snowfall,freezing_level_height,uv_index&forecast_days=16&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timezone=auto";
+      // The three requests live in lib/forecast.js now (fetchForecastRaw), shared with the trip pack.
       // Open-Meteo, NWS, and MET Norway run different models from different
       // organizations and can legitimately disagree by several degrees over
       // complex mountain terrain — fetch both secondary sources' own series too
@@ -3308,15 +3418,20 @@ function WeatherPanel({waypoints,showPlan}){
       // alone still drives the full 16-day view and is the only one broken into
       // AM/PM/Night + hourly detail — the secondary sources stay lighter (a
       // high/low, wind, and one weather label) by design, not full parity.
-      const nwsPromise=fetch("https://api.weather.gov/points/"+w.lat.toFixed(4)+","+w.lng.toFixed(4)).then(function(r){return r.ok?r.json():null;}).then(function(pj){return pj?fetch(pj.properties.forecastGridData).then(function(r){return r.ok?r.json():null;}):null;}).catch(function(){return null;});
       // MET Norway (api.met.no) — an independent forecast from a different
       // national weather service (ECMWF-derived outside the Nordics), not
       // affiliated with NOAA. Browsers won't let JS set a custom User-Agent
       // (a forbidden fetch header), so this relies on the browser's own UA —
       // fine at this request volume, but MET Norway's own guidance prefers an
       // identifying one for high-traffic server-side use.
-      const metPromise=fetch("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat="+w.lat.toFixed(4)+"&lon="+w.lng.toFixed(4)+(w.elev!=null?"&altitude="+Math.round(w.elev/3.28084):"")).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});
-      Promise.all([fetch(omUrl).then(function(r){return r.json();}),nwsPromise,metPromise]).then(function(res){
+      // NO SIGNAL, AND THIS ROUTE IS PACKED: the responses saved with it are processed by exactly the
+      // code below, and the card says WHEN they were fetched (savedAt). Days already past are dropped,
+      // so a two-day-old snapshot does not open on a "today" that is gone.
+      fetchForecastRaw(w).then(function(res){return {res:res,at:null};},function(err){
+        if(!packId)throw err;
+        return packForecast(packId).then(function(wx){var r=wx&&wx.raw&&wx.raw[k];if(!r)throw err;return {res:r,at:wx.at};});
+      }).then(function(o){
+        const res=o.res;
         const json=res[0],nwsJson=res[1],metJson=res[2];
         const h=json&&json.hourly;
         if(!h||!h.temperature_2m||!h.time)throw new Error("no data");
@@ -3400,7 +3515,8 @@ function WeatherPanel({waypoints,showPlan}){
           const wxCode=modeOf(d.codes);
           return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
         });
-        setData(function(p){return Object.assign({},p,{[k]:{days:days}});});
+        const _today=toLocalDay(new Date().toISOString());
+        setData(function(p){return Object.assign({},p,{[k]:o.at?{days:days.filter(function(dy){return dy.date>=_today;}),savedAt:o.at}:{days:days}});});
       }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
     });
   },[key]);
@@ -3418,7 +3534,7 @@ function WeatherPanel({waypoints,showPlan}){
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
         <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{w.name+(w.elev!=null?" · "+uElev(w.elev):"")}</div>
       </div>
-      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
+      {!d?<div style={{fontSize:12,color:C.textMuted}}>Loading forecast…</div>:d.error?<div style={{fontSize:12,color:C.textMuted}}>Forecast unavailable — check your connection.</div>:(d.savedAt&&!d.days.length)?<div style={{fontSize:12,color:C.amber,lineHeight:1.45}}>{"No signal, and the forecast saved with your trip pack ("+savedAgo(d.savedAt)+") has no days left in it."}</div>:<>{d.savedAt?<div style={{fontSize:11.5,color:C.amber,lineHeight:1.45,marginBottom:7}}>{"No signal — this is the forecast saved with your trip pack "+savedAgo(d.savedAt)+". Conditions may have changed since."}</div>:null}<div style={{display:"flex",gap:9,overflowX:"auto",paddingBottom:3}}>{d.days.map(function(dy,di){
         const dt=new Date(dy.date+"T12:00:00");
         const lbl=di===0?"Today":dt.toLocaleDateString(DLOCALE,{weekday:"short"});
         const sub=dt.toLocaleDateString(DLOCALE,{month:"short",day:"numeric"});
@@ -3467,7 +3583,7 @@ function WeatherPanel({waypoints,showPlan}){
           {isExpanded?<div style={{marginTop:8,maxHeight:230,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph);return <div key={hi} style={{display:"flex",alignItems:"center",gap:6,padding:"5px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none",fontSize:10.5}}><span style={{width:46,flexShrink:0,color:C.textMuted,textAlign:"left"}}>{hourLabel(hh.hr)}</span><span style={{flex:1,display:"flex",alignItems:"center",gap:5,color:C.textSub,textAlign:"left",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={12}/>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontWeight:700,color:wxTempColor(t),flexShrink:0}}>{uTemp(t)}</span><span style={{color:wxWindColor(wm),flexShrink:0,minWidth:64,textAlign:"right"}}>{uWind(wm)+" "+(degToCompass(hh.dir)||"")}</span></div>;})}</div>:null}
           </div>:null}
         </div>;
-      })}</div>}
+      })}</div></>}
     </div>;})}</div>
   </div>;
 }
