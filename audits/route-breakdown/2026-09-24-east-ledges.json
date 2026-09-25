@@ -1,0 +1,66 @@
+{
+  "wa_forbidden_peak_east_ledges": {
+    "area": "wa_forbidden_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Upper Boston Basin to the East Ridge saddle",
+        "grade": "Snow, slabs, loose gully",
+        "notes": "From the upper basin, head north toward Forbidden's South Face and climb the snow slopes and gully below and right of it to the saddle just northwest of the Solitary Gendarme, about 8,300–8,400 ft. The gully is loose rock and scree late in the season; stay out of the fall line of parties above. Axe and crampons are usually needed here; late-season parties can leave them at the saddle."
+      },
+      {
+        "pitch": "Gully off the East Ridge crest",
+        "grade": "Class 3–4 gully",
+        "notes": "From the saddle, drop down the dirty gully on the north (Boston Glacier) side of the crest for roughly 100 ft, then exit left (northwest) onto the ledges. Do not descend further: the gully steepens into cliffs below. The upper end holds a 4th-class red section that the higher line of cairns avoids by scrambling blocks just beside it."
+      },
+      {
+        "pitch": "Ledges",
+        "grade": "Class 3, short 4th",
+        "notes": "Traverse northwest along sandy, grassy and rubbly ledges and down-sloping slabs well below the crest, crossing about five rock ribs with short 4th-class moves at each. Hold roughly the level at which the gully was left: lower runs into cliffs above the Boston Glacier, higher into steeper, corrugated ribs and gullies. After the first two ribs a higher and a lower line of cairns usually mark the easiest crossings. Almost none of this can be protected; a climber died on this traverse in 1975."
+      },
+      {
+        "pitch": "Lower northeast face",
+        "grade": "Class 3–4 ledges",
+        "notes": "The traverse ends where the North Ridge blocks further progress, directly below the summit. Climb up the small face mostly on 3rd-class ledges, past the rappel stations that descending parties use; a short step near the bottom is sometimes rappelled on the way down instead of downclimbed. The slung anchors can serve as belays if the party wants a rope."
+      },
+      {
+        "pitch": "Traverse",
+        "grade": "Class 4 grass",
+        "notes": "A short, exposed grassy traverse leads west to the next rock rib and the start of the upper face. The danger is an unroped slip on grass rather than hard moves; keep the party together and move one at a time where it steepens."
+      },
+      {
+        "pitch": "Upper northeast face to the summit",
+        "grade": "Class 4, steepening",
+        "crux": true,
+        "notes": "Climb the upper face as it grows progressively steeper toward the summit rocks; expect some Class 4, and many parties belay this section, using the rappel stations (slung tat on rock, not bolts) as belays and adding a runner. A few small cams and nuts cover the rest. It tops out at the horn near the summit from which descending parties start their rappels."
+      }
+    ],
+    "set": {
+      "overview": "The East Ledges (also called the 'NE Ledge' in older and casual usage - a naming overlap that has caused confusion with the distinct, genuinely technical Northeast Face ice route on the same aspect) is technically the easiest route to the summit of Forbidden Peak, at Class 4. From the East Ridge saddle beside the Solitary Gendarme it drops briefly onto the north side, traverses a long band of grassy, rubbly ledges across about five rock ribs, then climbs the small northeast face directly below the summit. What it lacks in difficulty it makes up in consequence: most of the ground is exposed, sloping and cannot reliably be protected, so a slip on the ledges is likely to be fatal, and a party must be comfortable moving unroped on 3rd- and 4th-class terrain. The same line, reversed with rappels on the upper face, is the most commonly used descent off the summit for parties who climbed the West Ridge, East Ridge Direct, North Ridge or Northeast Face.",
+      "approach": "Start at the Boston Basin trailhead off the Cascade River Road. A steep climbers' trail with several creek crossings (Boston Creek can run high on warm afternoons) climbs to the camps in Boston Basin; overnight stays there need a park backcountry permit. From the upper basin, head north toward Forbidden's South Face and climb the snow slopes and loose gully below and right of it to the East Ridge saddle just northwest of the Solitary Gendarme, about 8,300–8,400 ft. Allow about 4 hours from the trailhead to the saddle, or about 2 hours from the basin camps. Axe and crampons are usually needed for this snow; late in the season they can be left at the saddle.",
+      "beta": "From the East Ridge saddle beside the Solitary Gendarme, downclimb the dirty gully on the north side for roughly 100 ft and exit left (northwest) onto the ledges - going lower runs into cliffs. Traverse northwest across roughly five rock ribs on sandy, grassy ledges and down-sloping slabs, mostly 3rd class with short 4th-class moves at each rib, staying close to the level at which the gully was left: too low meets the cliffs above the Boston Glacier, too high the steeper, corrugated ribs. Cairns mark the easiest line across most rib crossings (a higher and lower cairn at each rib). Where the North Ridge stops the traverse, climb the small northeast face below the summit: 3rd-class ledges, a short grassy traverse west to the next rib, then steepening Class 4 to the summit rocks. The face is lined with slung rappel stations that can double as belays; many parties belay the upper part. Carry a single 50-60 m rope, a few small cams and nuts, and runners. Allow about 2 hours from the saddle to the summit, more if belaying.",
+      "descent_text": "The usual descent is the ascent line reversed. From a horn near the summit, make the first of five single-rope rappels (roughly 400 ft total) down the northeast side to a series of ledges, then follow the ledges east - mostly 3rd class with short 4th-class moves at rib crossings - across roughly five rock ribs before a short gully leads back up to the East Ridge crest near the solitary gendarme. There is no easy way off Forbidden Peak - this line is unprotectable in places and has had a fatality (1975) on the ledge traverse. Cairns (a higher and lower option at most rib crossings) mark the easiest line; recent parties describe the terrain as more straightforward than its reputation suggests when the cairned line is followed carefully, but conditions and route-finding difficulty vary by party experience and weather. From the gendarme, continue down the East Ridge's standard gully system to Boston Basin."
+    },
+    "review": {
+      "confidence": "medium",
+      "changed": "Table rewritten top-down to bottom-up (6 entries -> 6). The old 'Descent to Boston Basin' row became the ascent's first section (upper basin to the East Ridge saddle); 'Gully to the East Ridge crest' relabelled 'Gully off the East Ridge crest' (it is descended off the crest going in); 'Ledges' and 'Traverse' labels kept; 'Raps 4-5' and 'Raps 1-3' relabelled 'Lower northeast face' and 'Upper northeast face to the summit' because read upward they are climbing, not rappels. overview/approach/beta rewritten as an ascent; descent_text unchanged except one leading sentence saying it is the ascent line reversed. rappels untouched.",
+      "sources_consulted": [
+        "https://www.summitpost.org/east-ledges/166482 (read via web.archive.org snapshot 2016-03-21; live page is Cloudflare-blocked. The one source written as an ASCENT: approach as East Ridge Direct, ~4 h TH to the 8,300-ft saddle / ~2 h from camps, axe+crampons; dirty Class 3 gully ~100 ft down from the saddle NW of the gendarme, exit left/NW; ledges within ~100 ft of that level, cliffs below / corrugated ribs above; traverse until the North Ridge stops you; East Face mostly Class 3 ledges steepening, some Class 4, belay may be necessary, belay from rap anchors; 2 h saddle to summit; gear 50-60 m rope, ~2 cams 4 nuts, runners, no rock shoes; one comment from a party who climbed it UP, mostly unroped)",
+        "https://cascadeclimbers.com/forum/topic/44689-tr-forbidden-peak-east-ledges-8272006/ (solo ASCENT and downclimb, Aug 2006: upper basin slabs, gully toward the solitary gendarme, ledge traverse, started up too soon; snow-free late August, no axe needed)",
+        "https://www.nwhikers.net/forums/viewtopic.php?p=1192485 (solo ASCENT Jul 2020: snow couloir from the upper basin to rock at 8,000 ft, col ~8,400 ft, dropped ~100 ft to the ledges, traversed at ~8,300 ft toward the North Ridge, went up too early; less intimidating than its reputation)",
+        "https://www.nps.gov/noca/blogs/east-ridge-forbidden-7-27-2016.htm (5 rappel anchors before the ledges, slung block first anchor on the NE face; only for parties comfortable soloing exposed 3rd/4th class)",
+        "https://home.nps.gov/noca/blogs/climbing-conditions-boston-basin-area-2023.htm (approach gully loose rock and scree; Boston Creek crossing; water above the upper bivy sites)",
+        "https://www.mountainproject.com/route/107244142/east-ridge-direct (approach from camp north toward the South Face to the notch by the first gendarme; descent 5 raps then traversing)",
+        "http://ericsbasecamp.net/trips/Forbidden/Forbidden.htm (descent: 5 single-rope 60 m raps plus a short 6th, traverse class 2/3 with occasional class 4, cairns, narrow snow gully to the East Ridge notch)",
+        "https://www.mountaineers.org/activities/trip-reports/forbidden-peak-east-ridge-direct (bivy near the Solitary Gendarme; East Ledges descent)"
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "Class 4 (no change)",
+          "evidence": "The one ascent-oriented route description rates it Class 4: ledges mostly Class 3 with short 4th-class moves at the ribs, and the upper face below the summit steepening to some Class 4 where a belay may be wanted. Two solo ascent reports (2006, 2020) are consistent. No source gives the upward face a 5th-class grade, and none gives section lengths, so no lengthM values were set."
+        }
+      },
+      "other_findings": "1) No first-ascent or history for the East Ledges as a route was found; nothing was written about it. The 1975 fatality is carried over from the stored descent_text (SummitPost confirms a fatality on the traverse but gives no year). 2) The 'Class 4 grass' chip and the 4th-class red gully / higher-cairn bypass are carried over from the stored table; the red-gully detail was not independently re-found in this pass. 3) Direction: the summit lies west-northwest of the gendarme, so the ascent traverse runs northwest (the stored descent text's 'east' is correct for descending). 4) length_m 260 (~850 ft) is unverified: ~400 ft of face plus a long, mostly level traverse; no source states a route length. 5) The permit sentence in approach (overnight in Boston Basin needs a park backcountry permit) rests on the trip reports' mention of obtaining a Boston Basin camping permit, not on an NPS page read in this pass."
+    }
+  }
+}
