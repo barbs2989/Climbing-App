@@ -27677,3 +27677,92 @@ semicolon, which the checker's plain-text statement-splitter treats as a stateme
 terminator even inside a quoted string, aside from the routine paste-size WARN on this
 file's length (13.8 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before
 pasting into the SQL Editor.
+
+## 2026-09-25 — Pass 6, Batch 340
+
+Audited (next 8 alphabetically after batch 339, index 355→363 of 702 in-scope):
+`wa_mount_blum_north_ridge`, `wa_mount_buckindy_scramble`, `wa_mount_cameron_standard`,
+`wa_mount_carrie_standard`, `wa_mount_challenger_challenger_glacier`,
+`wa_mount_chaval_north_ridge`, `wa_mount_christie_west`, `wa_mount_claywood_standard`.
+
+Bookkeeping note: `last_processed_id` in the progress file had been left at
+`wa_mount_baker_easton_glacier` after batch 339 instead of that batch's true last route
+(`wa_mount_bigelow_tribute_to_richard`) — a stray field update, not a re-audit gap; batch
+339's own route_ids list and log entry both already cover the full eight routes through
+Bigelow. Confirmed via a live query that the next in-scope id after Bigelow is
+`wa_mount_blum_north_ridge`, consistent with the batch-338→339 id continuity, and started
+this batch there. Fixed in the progress file.
+
+Four research agents ran in parallel this batch, one per peak pair. As in batch 339, their
+direct page fetches (wikipedia.org, summitpost.org, nps.gov, wta.org, peakbagger.com,
+americanalpineclub.org, fs.usda.gov) were egress-blocked; WebSearch snippets worked and were
+the only source used. Every fix below was independently re-verified with a direct WebSearch
+by this run itself (not just taken on an agent's word) — including re-confirming the Baker
+Lake Road reopening date and the Olympic NP park-wide bear-canister policy from their primary
+alert/policy pages' indexed snippets — before being written as SQL.
+
+**Fixed (6 statements, `audits/sql/2026-09-25-batch-340.sql`):**
+- `wa_mount_blum_north_ridge`'s `road.status`/`access.closures` gave the Baker Lake Road
+  (FR-11) Shannon Creek Bridge closure an end date of "end of August 2026." The USFS's own
+  alert page states construction began ~July 15, 2026 and is expected to reopen **September
+  11, 2026** — both fields updated.
+- `wa_mount_challenger_challenger_glacier`'s headline `grade` field said "5.6-5.7" for the
+  summit pitch, but this row's own `rock_grade`, `pitch_detail[0].grade`, and
+  `itinerary.days[1].note` already agreed on "5.5" (matching Mountain Project's route page) —
+  the two outlying fields (`hazards[2]`, `waypoints[7].note`) brought in line with the other
+  three, not the reverse.
+- `wa_mount_christie_west`'s `high_point_ft` (6181) turned out to be the *correct* field — it
+  matches Wikipedia's 6,181 ft (NAVD88) for Mount Christie — while three other places on this
+  row and its parent area repeated 6,182 instead (`overview` prose, `waypoints[7].elev`, and
+  the `areas.wa_mount_christie.elevation_ft` row). All three fixed to 6181.
+- `wa_mount_claywood_standard`'s "Cameron Pass" waypoint sat ~9 miles northeast of the real
+  pass, near the shared Obstruction Point Trailhead rather than near Mount Cameron. Its
+  sibling `wa_mount_cameron_standard` has its own correctly-placed "Cameron Pass snow
+  slopes" waypoint immediately next to the Mount Cameron summit (which matches
+  `areas340`'s coordinate for the peak) — used as the source for the fix. Elevation (6448)
+  already matched and was untouched; only lat/lng were wrong.
+- `wa_mount_carrie_standard`'s `access.rules` scoped the bear-canister requirement to "the
+  Sol Duc/Seven Lakes Basin zone," but Olympic National Park expanded Animal Resistant Food
+  Container requirements park-wide across all Olympic Wilderness — confirmed via NPS's own
+  food-storage policy page (indexed snippet). The sibling `wa_mount_christie_west` row
+  already states the newer park-wide rule correctly; Carrie's was stale.
+
+**Flagged for human review (not fixed) — 9 items, see the SQL file's trailing comment block
+for full reasoning on each:**
+- `wa_mount_challenger_challenger_glacier`: `access.closures` correctly states Whatcom Camp
+  is fire-closed (2022 Chilliwack Complex, still in effect), but this row's own
+  `itinerary`/`bivy`/`waypoints` all plan an overnight there anyway with no caveat — an
+  internal contradiction that needs a human with current trip beta to pick a real
+  alternate camp, not a guess. Also a ~0.15 mi trailhead-coordinate difference between two
+  of its own fields, within plausible tolerance.
+- `wa_mount_claywood_standard`: an unreconciled "Hayden Pass" (matches the real 1920
+  first-ascent account found via search) vs "Lost Pass" (used everywhere else on the row)
+  naming split; 6 of 8 `bivy` entries actually describe the Upper Dungeness/Needles-cluster
+  approach rather than this route's own Obstruction Point Road start — same
+  regional-cluster copy-paste pattern flagged on `wa_mount_barnes_scramble` in batch 339,
+  too tangled to partial-fix; unconfirmed FA name/date specifics; a Grand Pass waypoint
+  that differs ~1 mi from the sibling Cameron row's own Grand Pass point with no tiebreaker.
+- `wa_mount_carrie_standard`: this row's own `corrections` field already flags an unresolved
+  Carrie Glacier/route-line geography mismatch — left as is, no new source found.
+- `wa_mount_christie_west`: headline `grade` ("Class 2-3") doesn't reflect this row's own
+  documented mandatory Class 4 step below the high col, and no `alpine_grade` is set; its
+  own `approach_variants[0].notes` also flags that the route's `_west` id/name doesn't
+  match its actual north-facing aspect — both internal inconsistencies with no sourced fix.
+- `wa_mount_chaval_north_ridge`: route-specific grade/FA/hazards/road name could not be
+  confirmed either way — no guidebook or trip report found describing this specific
+  (obscure) line, only the peak's standard West Route.
+
+**Checked and confirmed correct, not touched:** `wa_mount_buckindy_scramble` (its own
+`data_quality.gaps` already documents the 7,279–7,352 ft elevation-range disagreement across
+public sources and why 7,320 ft was chosen — nothing new to add) and
+`wa_mount_cameron_standard` (elevation, coordinates, the Dosewallips-Road-closed-since-2002
+claim, and NPS fee figures all independently confirmed).
+
+`last_processed_id` advanced to `wa_mount_claywood_standard`; re-counted scope this batch:
+still 702 in scope (unchanged), 335 remain unaudited this pass. No `.env`/`.env.local` this
+run (fresh clone, read-only anon key only, as intended); `check:sql` ran cleanly (9 write
+targets across 11 statements, all ids live, no DELETE statements) after rephrasing three new
+JSON string values to avoid an embedded semicolon splitting the checker's plain-text
+statement parser mid-string (same class of issue noted in batch 339's log entry), aside from
+the routine paste-size WARN on this file's length (10.9 KB against the 4 KB soft limit) —
+split into ~1.5 KB chunks before pasting into the SQL Editor.
