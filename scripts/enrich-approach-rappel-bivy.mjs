@@ -18,6 +18,11 @@
 //
 // Usage:  node scripts/enrich-approach-rappel-bivy.mjs [--dry] [--only <routeId>]
 //                                                     [--from batch.json] (repeatable)
+//
+// A batch entry may also carry a whole `pitch_detail` table (the ROUTE BREAKDOWN section). That
+// path is RESEARCH, not re-homing, so check:enrichment-traceable does not apply to it; its guards
+// are the ones in checkPitchDetail() below, and the batch file under audits/route-breakdown/ is the
+// review surface — its `review` block (sources, confidence) is never written to the row.
 
 import fs from "fs";
 import { patchRow, SUPABASE_URL, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
@@ -186,8 +191,14 @@ const DATA = {
 // An entry whose climbing_route is EMPTY is dropped with its stated reason rather than written.
 // Writing [] would look identical to "enriched" on every count-based check while putting an
 // empty section on the route, which is the failure mode this whole change exists to remove.
-for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
+// A --from run applies ONLY the batch's routes. It used to fall through to every hand-written
+// entry in DATA as well, and climbing_route there has no replace guard — so applying any batch
+// silently re-wrote those sections over whatever a climber had corrected since.
+const FROM = args.filter((a, i) => args[i - 1] === "--from");
+const fromIds = new Set();
+for (const f of FROM) {
   const raw = JSON.parse(fs.readFileSync(f, "utf8"));
+  for (const id of Object.keys(raw)) fromIds.add(id);
   for (const [id, spec] of Object.entries(raw)) {
     // `rappel_add` has to count as content. It is an object keyed by rappel number rather than
     // an array, so an array-only test drops a rappel-enrichment batch entirely — and drops it
@@ -196,6 +207,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
       || (spec.rappel_add && Object.keys(spec.rappel_add).length > 0)
       || (Array.isArray(spec.rappel_detail) && spec.rappel_detail.length > 0)
       || (Array.isArray(spec.rappel_lengths) && spec.rappel_lengths.length > 0)
+      || (Array.isArray(spec.pitch_detail) && spec.pitch_detail.length > 0)
       || (spec.set && Object.keys(spec.set).length > 0);
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
@@ -208,7 +220,7 @@ for (const f of args.filter((a, i) => args[i - 1] === "--from")) {
 const key = anonKey();
 // Named so the settable-column assertion below can check itself against them rather than against a
 // string somebody has to remember to keep in step.
-const readSelect = "id,name,area_id,discipline,pitches,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa";
+const readSelect = "id,name,area_id,discipline,pitches,pitch_detail,rappel_detail,rappel_count_note,rappels,descent_text,approach,waypoints,overview,beta,hazards,pro_tips,watch_out,pro_needs,bail,road,face,approach_variants,climbing_route,bivy,approach_logistics,fa";
 // `face` is prose describing the wall, the same class as `overview` — NOT a classification column.
 // It is settable because it is where a wrong route NAME leaves its residue: a row renamed in the
 // catalog keeps a `face` written to justify the old name, and four rows in the 2026-08-14
@@ -252,8 +264,52 @@ const readRoute = async id => {
   return rows[0] || null;
 };
 
+// ── pitch_detail (ROUTE BREAKDOWN) ──────────────────────────────────────────────────────────
+// Per-pitch comments are keyed `${routeId}_pitch_${label}` (RouteDetail's PitchComments), so a
+// replacement table that renames or drops a label someone has commented on orphans that thread
+// with no error anywhere. Read with the service key when there is one: a count that decides a
+// refusal must not be an RLS-shaped zero.
+const commentedPitchLabels = async id => {
+  let k; try { k = requireServiceKey(); } catch { k = key; }
+  const prefix = `${id}_pitch_`;
+  const url = `${SUPABASE_URL}/rest/v1/comments?select=target_id&target_id=like.${encodeURIComponent(prefix + "*")}`;
+  const res = await fetch(url, { headers: { apikey: k, Authorization: "Bearer " + k } });
+  if (!res.ok) throw new Error(`comments read for ${id} -> ${res.status}`);
+  return new Set((await res.json()).map(r => r.target_id.slice(prefix.length)));
+};
+const pitchLabel = (p, i) => String(p.pitch != null ? p.pitch : (p.n != null ? p.n : i + 1));
+// The app's no-sources rule reaches this text: it renders verbatim on the route page. A batch that
+// names where a fact came from is refused, not cleaned — the sentence has to be rewritten by
+// whoever can see what it was saying.
+const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|beckey(?! route)|nelson|guide ?book|trip report|according to|reported by|the mountaineers)\b/i;
+const PER_SOURCE_RE = /\b[Pp]er (?:the )?[A-Z]/; // "per Nelson", not "per pitch" — case-sensitive on purpose
+function checkPitchDetail(id, spec, before, commented) {
+  const errs = [], next = spec.pitch_detail;
+  const had = Array.isArray(before.pitch_detail) ? before.pitch_detail : [];
+  if (had.length && !spec.replace_pitch_detail) errs.push(`it already has ${had.length} pitch_detail entries — set "replace_pitch_detail": true if replacing them is the point`);
+  if (next.length < had.length && !spec.allow_fewer_entries) errs.push(`the new table has ${next.length} entries, fewer than the ${had.length} stored — set "allow_fewer_entries" with the reason in review.changed`);
+  const labels = next.map(pitchLabel);
+  if (new Set(labels).size !== labels.length) errs.push(`duplicate labels ${JSON.stringify(labels)} — comments are keyed on the label`);
+  for (const l of commented) if (!labels.includes(l)) errs.push(`label ${JSON.stringify(l)} has comments and the new table drops it`);
+  next.forEach((p, i) => {
+    const at = `entry ${i + 1} (${pitchLabel(p, i)})`;
+    if (!p || typeof p !== "object" || Array.isArray(p)) { errs.push(`${at} is not an object`); return; }
+    if (p.pitch == null && p.n == null) errs.push(`${at} has no label`);
+    if (!String(p.notes || p.note || "").trim()) errs.push(`${at} has no notes`);
+    // A pitch grade is a heading and a stage grade is a chip; neither has room for a sentence.
+    if (p.grade != null && String(p.grade).length > 30) errs.push(`${at} grade is ${String(p.grade).length} chars — a grade token, qualifiers belong in notes`);
+    if (p.lengthM != null && !(typeof p.lengthM === "number" && p.lengthM > 0 && p.lengthM < 1500)) errs.push(`${at} lengthM ${JSON.stringify(p.lengthM)} is not a plausible number of metres`);
+    if (p.bolts != null && !Number.isInteger(p.bolts)) errs.push(`${at} bolts ${JSON.stringify(p.bolts)} is not an integer`);
+    for (const k of ["pitch", "grade", "notes", "note", "anchor"]) { const m = p[k] != null && (String(p[k]).match(SOURCE_RE) || String(p[k]).match(PER_SOURCE_RE)); if (m) errs.push(`${at} ${k} names a source: ${JSON.stringify(m[0])}`); }
+  });
+  return errs;
+}
+// Every table replaced (pitch_detail, or climbing_route sections already on file) is kept, so a researched write can be undone without re-deriving it.
+const ROLLBACK = `audits/route-breakdown/rollback-${Date.now()}.json`;
+const rollback = {};
+
 if (!DRY) requireServiceKey();
-const ids = Object.keys(DATA).filter(id => !ONLY || id === ONLY);
+const ids = Object.keys(DATA).filter(id => (!ONLY || id === ONLY) && (!FROM.length || fromIds.has(id)));
 if (!ids.length) { console.error("no matching route ids"); process.exit(1); }
 
 for (const id of ids) {
@@ -269,6 +325,21 @@ for (const id of ids) {
 
   const body = {};
   if (spec.approach_variants) body.approach_variants = spec.approach_variants;
+  // A batch that REPLACES existing sections must say so per route, the same opt-in pitch_detail and
+  // rappel_detail demand: sections on file may carry a climber's correction.
+  if (spec.climbing_route && fromIds.has(id) && (before.climbing_route || []).length && !spec.replace_climbing_route) {
+    console.error(`REFUSING ${id} — it already has ${before.climbing_route.length} climbing_route sections. Set "replace_climbing_route": true in the batch if replacing them is the point.`);
+    process.exitCode = 1; continue;
+  }
+  if (spec.climbing_route && fromIds.has(id)) {
+    const errs = [];
+    spec.climbing_route.forEach((s, i) => {
+      if (!String(s.notes || "").trim()) errs.push(`section ${i + 1} has no notes`);
+      if (s.class != null && String(s.class).length > 24) errs.push(`section ${i + 1} class is ${String(s.class).length} chars — it renders in a nowrap chip`);
+      for (const k of ["label", "class", "notes"]) { const m = s[k] != null && (String(s[k]).match(SOURCE_RE) || String(s[k]).match(PER_SOURCE_RE)); if (m) errs.push(`section ${i + 1} ${k} names a source: ${JSON.stringify(m[0])}`); }
+    });
+    if (errs.length) { errs.forEach(e => console.error(`REFUSING ${id} — ${e}`)); process.exitCode = 1; continue; }
+  }
   if (spec.climbing_route) body.climbing_route = spec.climbing_route;
   if (spec.bivy) body.bivy = spec.bivy;
   // A WHOLE table, for a route that has none — and, with an explicit opt-in, for one whose stored
@@ -337,6 +408,11 @@ for (const id of ids) {
     if (bad) { process.exitCode = 1; continue; }
     body.rappel_detail = next;
   }
+  if (Array.isArray(spec.pitch_detail) && spec.pitch_detail.length) {
+    const errs = checkPitchDetail(id, spec, before, await commentedPitchLabels(id));
+    if (errs.length) { errs.forEach(e => console.error(`REFUSING ${id} — ${e}`)); process.exitCode = 1; continue; }
+    body.pitch_detail = spec.pitch_detail;
+  }
   // A CORRECTION path for the scalar prose columns beside the table. It exists because the
   // rappel-length defect is not repairable without it: a table can be fixed while
   // `rappel_count_note` still states the methodology that produced the wrong number, and the
@@ -384,6 +460,12 @@ for (const id of ids) {
   }
   if (DRY) { console.log("   --dry, not written"); continue; }
 
+  if (body.pitch_detail || (body.climbing_route && (before.climbing_route || []).length)) {
+    rollback[id] = { area: before.area_id };
+    if (body.pitch_detail) rollback[id].pitch_detail = before.pitch_detail;
+    if (body.climbing_route) rollback[id].climbing_route = before.climbing_route;
+    fs.writeFileSync(ROLLBACK, JSON.stringify(rollback, null, 1) + "\n");
+  }
   await patchRow("routes", id, body);
 
   // Re-read and reconcile. A 200 is not evidence the data changed.
@@ -405,6 +487,11 @@ for (const id of ids) {
   if (body.rappel_detail) {
     const got = after.rappel_detail || [];
     checks.push(got.length === body.rappel_detail.length && body.rappel_detail.every((want, i) =>
+      Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
+  }
+  if (body.pitch_detail) {
+    const got = after.pitch_detail || [];
+    checks.push(got.length === body.pitch_detail.length && body.pitch_detail.every((want, i) =>
       Object.keys(want).every(k => JSON.stringify(got[i] && got[i][k]) === JSON.stringify(want[k]))));
   }
   // Scalars compare directly; the array-valued prose columns (hazards, pro_tips, watch_out)

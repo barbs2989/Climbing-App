@@ -1,0 +1,471 @@
+{
+  "wa_chair_peak_voie_de_chaise": {
+    "area": "wa_chair_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "P1",
+        "grade": "5.7",
+        "lengthM": 37,
+        "anchor": "bolted",
+        "notes": "The hardest moves come right off the ground, a few tricky 5.7 steps onto the slab; after that the pitch settles into sustained, clean 5.6 slab on solid rock with bolts throughout. The P1 anchor is also the last rappel station, and a rap from it drops straight down rather than back to the true base."
+      },
+      {
+        "pitch": "P2",
+        "grade": "5.8",
+        "lengthM": 30,
+        "anchor": "bolted",
+        "notes": "Three distinct sections: an awkward 5.8 move over an overlap, an easy left-facing corner, then a steeper 5.8 finish. Put a long sling on the bolt before the line trends right, or rope drag builds quickly."
+      },
+      {
+        "pitch": "P3",
+        "grade": "5.7",
+        "lengthM": 30,
+        "anchor": "bolted",
+        "notes": "Head right off the belay, passing a rappel station on the way, then make a few insecure slab moves up through a series of small overlaps (5.7). Easier slab leads to the next anchor; do not confuse the passed rap station with the P3 belay."
+      },
+      {
+        "pitch": "P4",
+        "grade": "5.6",
+        "lengthM": 27,
+        "anchor": "bolted",
+        "notes": "A lower-angle pitch of mostly moderate climbing that ends on a flat ledge nicknamed the Heli pad, directly beneath the steep band that holds the crux. Get comfortable here; the next pitch starts steep straight off the belay."
+      },
+      {
+        "pitch": "P5",
+        "grade": "5.9",
+        "lengthM": 21,
+        "anchor": "bolted",
+        "crux": true,
+        "notes": "The crux, known as the 30 Seconds Out pitch. Step right off the belay and aim for the weakness marked by a small but obvious triangular roof, then work through it with laybacks and high steps. Short but steep, and some moves feel committing between bolts."
+      },
+      {
+        "pitch": "P6",
+        "grade": "5.3",
+        "lengthM": 30,
+        "anchor": "bolted",
+        "notes": "Easy climbing up and left, then straight up, but this is where the rock quality drops: the pitch is dirty and holds loose stones, so clear debris only when no party is below. Belay at the anchor without chains; the chained anchor off to the right is a rappel station."
+      },
+      {
+        "pitch": "P7",
+        "grade": "5.6",
+        "lengthM": 30,
+        "anchor": "bolted",
+        "notes": "A lower-angle 5.6 slab to the last bolted belay. Rock remains looser than on the lower pitches, so move carefully and watch for anything dislodged by the rope."
+      },
+      {
+        "pitch": "P8",
+        "grade": "4th class",
+        "lengthM": 37,
+        "bolts": 3,
+        "anchor": "tree",
+        "notes": "Follow a faint path a few feet left, then cut back right on a faint trail beneath a small slab protected by three bolts (3rd–4th class). A belay at a tree with a webbing anchor precedes the climbers' trail that trends right to the summit ridge. Belay back down this section on descent rather than rappelling it, which knocks loose rock onto parties below."
+      }
+    ],
+    "review": {
+      "confidence": "high",
+      "changed": "Same 8 pitches and labels; grades reduced to single tokens (qualifiers moved to notes), P6 'Mostly easy' becomes 5.3, lengths rounded to whole metres from the stated feet, P8 gains its 3 bolts and tree belay, and every row now has actionable notes. P8 lengthM (37) is carried from the stored table; no source gives a P8 length.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/123412608/voie-de-chaise",
+        "https://gethighonaltitude.com/2023/06/23/chair-peak-voie-de-chaise/",
+        "https://www.bcadventureguides.com/trip/chair-peak-voie-de-chaise/ (search snippet only)"
+      ],
+      "other_findings": "Stored grade 5.9- vs a 5.9 crux pitch in the only full description; minor."
+    }
+  },
+  "wa_mount_index_north_face": {
+    "area": "wa_north_peak_2",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Brushy NE spur",
+        "grade": "Class 3–4 brush, slab",
+        "notes": "From the talus and grass above the rockslide on the west side of Lake Serene, scramble several hundred feet up the broken, bushy northeast spur to the first slab, staying just right of the crest until a vertical face blocks the way. Downsloping holds and moss make this slow and serious when wet, with big consequences for a slip."
+      },
+      {
+        "pitch": "Exposed corner",
+        "grade": "Roped, very exposed",
+        "notes": "At the vertical face go sharply left and back onto the crest, then climb an exposed corner and traverse about 15 ft left into a gully perched just above a sheer wall, with roughly 1,000 ft of air toward the lake. Moves are moderate but the position is serious; old piton anchors exist in this area."
+      },
+      {
+        "pitch": "Rock bowl and hidden ledge",
+        "grade": "Exposed slab traverse",
+        "notes": "Climb about 50 ft up the rock bowl, then cut sharply right behind a block and around the skyline on the hidden ledge, which becomes an exposed slab with a short stretch of small holds. The common error is continuing up the bowl's headwall (slow, poorly protected 5.5); finding the ledge saves time for the upper rib."
+      },
+      {
+        "pitch": "Brushy gully",
+        "grade": "Steep brush, 2 leads",
+        "notes": "Round a corner to the base of a steep, shallow, brushy gully and climb it for two leads. Protection is mostly bushes and small trees, which are generally more useful here than rock gear; short vertical steps in mud and moss are the difficulty."
+      },
+      {
+        "pitch": "Ramp to the open basin",
+        "grade": "Slanting ramp",
+        "notes": "The gully tops out on a slanting ramp system that bears right for about 400 ft to the large open basin on the true north face. The basin can hold snow until mid-season, and without snow its loose, vegetated ground is hard to protect."
+      },
+      {
+        "pitch": "Right-curving gully",
+        "grade": "Snow or slabby rock",
+        "notes": "Climb three to four leads up the steep, right-curving gully above the left side of the basin, on snow early in the season or rock later. Snow-free, its slabby rock is hard to protect and marginal when wet; rain on this face also starts stonefall."
+      },
+      {
+        "pitch": "North Rib",
+        "grade": "5.5",
+        "notes": "As the gully ends, take a broad ramp slanting right onto the sharp North Rib and climb it for three leads, the first two on solid, exposed 5.5 rock with good protection. The rib ends at an open, grassy bench. Alternatively the rib can be gained directly from the basin by a rising traverse right, finishing over a near-vertical gendarme on good rock."
+      },
+      {
+        "pitch": "Bench and upper gully",
+        "grade": "Brush and trees",
+        "notes": "Follow the bench left around the corner toward the east face until it ends at a prominent gully. Climb about 100 ft of scrub and brush, and where the gully forks take the left branch through larger trees for two leads to a steep heather slope just below the crest."
+      },
+      {
+        "pitch": "Crest to the summit",
+        "grade": "Easy rock, heather",
+        "notes": "Follow the crest right on easy rock to the first false summit, then follow a small depression southwest to the second point and drop about 50 ft to bypass a cliff. The summit spire is climbed by heather and broken rock on its north side. Expect the descent to take about as long as the climb."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "The 6 stored numbered rows (grades 5.2–5.7 that no source supports per pitch) are replaced by 9 named sections following the route's published sequence, spur to summit. Only the North Rib carries a climbing grade (5.5), the one per-section grade the sources give; the rest are terrain chips so they render as stages. No lengths given anywhere, so none stored. Per-pitch comment keys '1-2','3-4','5','6-7','8-11','12' are dropped because none mapped to a definite piece of ground.",
+      "sources_consulted": [
+        "http://porridge.freehostia.com/outdoor/beckey/beckey.html (reproduces the standard guidebook description)",
+        "https://climberkyle.com/2020/07/05/north-index-attempt/",
+        "https://www.mountainwerks.org/cma/2001/mtindex.html",
+        "http://ericsbasecamp.net/trips/IndexNPk/IndexNPk.htm"
+      ],
+      "other_findings": "Stored pitches=12 and length_m=427 are not supported by any source; the route is described in leads per section, which sum to roughly 12+ with the brushy sections, but parties routinely go off-route. rappels text claims 'rockfall-damaged bolts' — not found in any source consulted; descents described use bushes, trees and slings. beta says the rib is gained 'from a wooded ridge' and 'three leads' right after the lake — it conflates the lower spur with the upper North Rib; the 5.5 rib is high on the route."
+    }
+  },
+  "wa_big_four_mountain_tower_route": {
+    "skip_reason": "No pitch-level description of the 1972 Guydelkon/Miller Tower Route exists in any source found; the only account (the 1972 AAJ note) is the four-sentence summary the stored table already paraphrases. The one detailed pitch-by-pitch description found (CascadeClimbers TR, 2005) is a different line, the Direct Tower Route (13 pitches, 5.9+/10a, to the first tower only), so it must not be used here. OTHER FINDINGS: the AAJ rates the 1972 route NCCS IV F7 (= 5.7), but the stored grade is 5.9 — possibly conflated with the Direct Tower Route's grade. Worth a human check."
+  },
+  "wa_the_brothers_traverse": {
+    "area": "wa_the_brothers",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Terraces to the 6,100 ft notch",
+        "grade": "4th class, occasional",
+        "notes": "From the terraces near 5,500 ft (a possible bivy), head roughly north over ground that is occasionally fourth class, aiming for the notch in the South Brother's southeast ridge at about 6,100 ft."
+      },
+      {
+        "pitch": "Great Basin to the North Brother",
+        "grade": "Steep snow, then contour",
+        "notes": "Pass through the notch into the Great Basin, descend steep snow and contour north to the couloir that leads to just below the North Brother's summit. The route is best in early season (April–May); snow cover changes it drastically, and later in the year the gullies fill with dense brush."
+      },
+      {
+        "pitch": "1",
+        "grade": "Moderate snow",
+        "notes": "The roped traverse starts below the North Brother: scramble down easy rock to a flat spot to rope up, then belay a pitch of moderate snow on the east side of the ridge, protected with pickets and rock gear."
+      },
+      {
+        "pitch": "2",
+        "grade": "Moderate snow",
+        "notes": "A second moderate snow pitch continuing south along the east side of the ridge on pickets and rock gear, to the point where the line crosses to the west side."
+      },
+      {
+        "pitch": "3",
+        "grade": "Easy 5th",
+        "notes": "Cross to the west side of the ridge for a rock traverse with sparse protection."
+      },
+      {
+        "pitch": "4",
+        "grade": "Rock traverse",
+        "notes": "Another traversing rock pitch leads to a further notch in the ridge."
+      },
+      {
+        "pitch": "5",
+        "grade": "Snow, moat belay",
+        "notes": "From the notch go down and west to reach snow and build a belay in a moat."
+      },
+      {
+        "pitch": "6",
+        "grade": "Mixed rock and snow",
+        "notes": "A mixed rock-and-snow pitch leads to a second moat at the foot of a steep couloir."
+      },
+      {
+        "pitch": "7",
+        "grade": "Steep snow couloir",
+        "notes": "Climb the steep couloir. At its top, an easy unroped scramble left leads into the gully beside the South Brother's summit and up to the top."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "The stored table labelled the approach scramble and the Great Basin descent as pitches 1–2 and ran the roped pitches 3–7 as five, which squeezed the published 7 belayed pitches into 5 and mis-numbered them. Now: 2 named approach sections (the ascent to the 6,100 ft notch and the Great Basin to North Brother), then roped pitches 1–7 in order as described. 7 → 9 entries. Labels '1'-'7' are reused, but for the correct pitches; any per-pitch comments on the old labels would now sit on different ground.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/106494582/brothers-traverse",
+        "https://www.summitpost.org/o-brother-where-art-thou/889752 (search snippet only)",
+        "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse (search snippet only)"
+      ],
+      "other_findings": "The only pitch-level description is from a thin-snow June 2009 ascent; it states the route changes drastically with snow cover, so pitch character varies. The stored 'descent_text' says 'reverse the ridge traverse' — nothing consulted describes reversing it; parties finish on the South Brother and descend its standard route."
+    }
+  },
+  "wa_mount_stone_lake_of_angels": {
+    "area": "wa_mount_stone",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Putvin Trail approach",
+        "grade": "Steep trail",
+        "notes": "An unmaintained, very steep climbers' trail from Hamma Hamma River Road that climbs roughly 3,000 ft in about 3 miles to Lake of the Angels. Carry water: the lower trail is largely dry, and roots and steps are slick when wet."
+      },
+      {
+        "pitch": "Headwall to meadow",
+        "grade": "Class 2–3, hands on",
+        "notes": "Midway up, the trail meets a rock headwall climbed hand over hand on roots, sometimes with a fixed handline. Above it a climbers' path leads to a small meadow near 4,400 ft. Downclimb it facing in on the way out."
+      },
+      {
+        "pitch": "Meadow to St. Peter's Gate",
+        "grade": "Class 2",
+        "notes": "Continue north from the meadow and the lake toward St. Peter's Gate, the notch in the ridge above the basin. This ground can stay snow-covered into summer."
+      },
+      {
+        "pitch": "Traverse to west-ridge notch",
+        "grade": "Class 3",
+        "notes": "Just before the Gate, turn sharply left (south) and traverse along the base of the cliffs to a notch in the west ridge. Parties who lose the faint path here are drawn up into steeper Class 3–4 gullies on the south face; stay with the cliff base."
+      },
+      {
+        "pitch": "West ridge to hanging basin",
+        "grade": "Class 3",
+        "notes": "Turn right at the notch and scramble a couple of hundred feet to a first sub-summit, finishing up a short low-Class-3 chimney. Beyond it, a shallow hanging basin with a small lingering snowfield leads across toward the summit block."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3, Class 4 moves",
+        "notes": "A short, somewhat exposed ridge reaches the base of the summit spire. Climb the groove on its left side, which bends right, then a faint path to the top; the rock is solid pillow basalt, with a few Class 4 moves reported. Reverse the same line to descend."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same 6 sections and labels (the stored table already includes the approach as sections). Notes rewritten from fragments into route-finding beta: the south-face gully trap on the cliff-base traverse, the chimney to the sub-summit, the hanging basin snowfield, and the left-side groove on the summit spire. Unsourced figures dropped from notes (the 5,950 ft Gate elevation, 3,300–3,400 ft gain).",
+      "sources_consulted": [
+        "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616 (search snippet)",
+        "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm",
+        "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/",
+        "https://trailcatjim.com/st-peters-traverse-mt-stone-2021/",
+        "https://chossclimbers.com/testing/us/washington/olympics/mount-stone/"
+      ],
+      "other_findings": "Stored grade 'Class 3' while beta and some sources mention Class 4 moves on the summit block; sources split (Class 2–3 crack vs Class 4). The stored approach text calls the lake ~4,850 ft; one source puts it c. 4,500 ft."
+    }
+  },
+  "wa_waterfall_buttress": {
+    "area": "wa_waterfall_basin",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.8+",
+        "bolts": 6,
+        "anchor": "bolted",
+        "notes": "Boulder and scramble about 50 ft to a ledge, then angle up with only occasional gear for roughly another 50 ft before the first bolt. From there six bolts protect the rounded rib to a bolted anchor. The base is often buried under old avalanche snow well into the season."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.9",
+        "notes": "Move up to a lower-angle slab, then take the obvious finger crack up the steeper wall on the right. It becomes a thin crack and flare with fiddly small gear placements, supplemented by bolts; bring plenty of pieces under 1 inch."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.9+",
+        "notes": "From the belay angle left past five bolts to a cedar bush, then launch up the flaring slot on the right, a dirty and awkward section, before easier face climbing above the arch."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.4",
+        "notes": "An easy, blocky pitch up the lower-angle part of the rib. A loose block sits near the start; avoid pulling on it or dropping it on the belayer. On rappel, stay skier's right here to avoid being pulled into the gully and creek beside the waterfall slab."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.9+",
+        "bolts": 4,
+        "crux": true,
+        "notes": "Cross over the crest past four bolts onto a steeper face split by a thin crack, then follow the crack in an airy position. Protection in the crack is thin; small cams and nuts are the key."
+      },
+      {
+        "pitch": "6",
+        "grade": "5.7",
+        "anchor": "bolted",
+        "notes": "Optional. Nondescript climbing slightly left of the crest to a bolted anchor behind a cedar."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "The combined '1-3' row is split into pitches 1, 2 and 3 with their own grades (5.8+, 5.9, 5.9+), bolt counts added where stated (P1 6, P5 4), and all notes rewritten with the route-finding and hazards (late-season avalanche debris at the base, loose block on P4, rappel line on P4). 4 → 6 entries. No pitch lengths published, so none stored.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/113865042/waterfall-buttress",
+        "https://cascadeclimbers.com/forum/topic/88662-tr-squire-creek-valley-waterfall-buttress-9222012/ (did not load)"
+      ],
+      "other_findings": "Pitch 5 is marked crux as the airier of the two 5.9+ pitches; the source grades P3 and P5 the same."
+    }
+  },
+  "wa_first_amendment": {
+    "area": "wa_le_petit_cheval",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.4",
+        "lengthM": 30,
+        "notes": "From the base of Spontaneity Arête, traverse about 250 yards toward the middle of the northwest face on 3rd- and 4th-class ledges to the start. The first pitch is a chimney and hand crack to a large ledge."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.8",
+        "lengthM": 46,
+        "notes": "A hands-and-fists corner, somewhat vegetated, which begins just around the corner from a 5.10 splitter finger crack."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.9",
+        "lengthM": 37,
+        "notes": "Continue up the same corner, then break right onto thin face climbing to a ledge with a cave, a loose, chossy belay. Protection on the face moves is minimal."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.8+",
+        "lengthM": 37,
+        "notes": "Good finger cracks lead to a large, slabby ledge."
+      },
+      {
+        "pitch": "5",
+        "grade": "Traverse",
+        "notes": "Traverse right off the ledge to another ledge. The line to the left does not go."
+      },
+      {
+        "pitch": "6",
+        "grade": "5.9",
+        "notes": "A quality finger crack. Small cams and nuts carry most of the protection from here up."
+      },
+      {
+        "pitch": "7",
+        "grade": "5.10+",
+        "lengthM": 46,
+        "notes": "A series of corners and roofs with very thin protection; knifeblade and Lost Arrow pitons are useful, and small TCUs and micro-nuts are essential."
+      },
+      {
+        "pitch": "8",
+        "grade": "5.11a",
+        "crux": true,
+        "notes": "The crux comes immediately off the belay in the same super-thin crack system, then continues through more corners and roofs."
+      },
+      {
+        "pitch": "9",
+        "grade": "5.6",
+        "notes": "Mostly easier ground that joins Spontaneity Arête for its last one-and-a-half scrambly ridge pitches, via the Goldie Crack, to the summit."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Same 9 pitches, labels and grades (all from the first-ascent account); pitch 5's null grade becomes the chip 'Traverse' so it renders as a stage, lengths added where the first-ascent account gives feet (P1 100 ft, P2 150, P3 120, P4 120, P7 150), and notes rewritten with approach traverse, gear, belay character.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12201108900/Le-Petit-Cheval-First-Amendment",
+        "https://www.mountainproject.com/route/109581071/first-amendment",
+        "http://www.supertopo.com/rock-climbing/Washington-Pass-Le-Petit-Cheval-The-First-Amendement (not read)"
+      ],
+      "other_findings": "The route description on the major route database disagrees with the first-ascent account: 7 pitches, crux 5.10c (P6), a 5.10a thin crack or 5.8 crack start, and a choss cave with bolts atop P2. It may be a different split or a variation. The stored grade 5.11a and 9 pitches follow the first-ascent account. A human may want to reconcile."
+    }
+  },
+  "wa_vanishing_point": {
+    "area": "wa_dolomite_tower",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "1",
+        "grade": "5.10",
+        "lengthM": 20,
+        "anchor": "bolted",
+        "notes": "Starts just left of the prominent arete dividing Dolomite Tower; the first two bolts are visible from the ground. Pull left under a small overhang straight off the ground, then follow bolts up and left and back right around the arete. Graded 5.10 to 5.10c. Often linked with pitch 2."
+      },
+      {
+        "pitch": "2",
+        "grade": "5.10",
+        "lengthM": 40,
+        "anchor": "bolted",
+        "notes": "Straight up, then trend left on bolts, turn the corner and pull back onto the arete to a bolted stance on a pedestal. Optional finger-sized gear, or a hand crack to the right at 5.10a. A 60 m rope barely links pitches 1 and 2."
+      },
+      {
+        "pitch": "3",
+        "grade": "5.11",
+        "lengthM": 35,
+        "notes": "Scramble up a ledge, clip a bolt and traverse right onto a pedestal of stacked blocks, then climb the corner on three bolts and gear. Before the 2020 bolt additions this pitch was runout and loose. Ends on a good ledge."
+      },
+      {
+        "pitch": "4",
+        "grade": "5.11",
+        "lengthM": 30,
+        "notes": "Steep finger and thin-hand crack in the corner beside a crystalline face, with the hardest moves just above the anchor. The main gear pitch. Belay on a ledge out left about 25 ft below the roof; do not climb past it."
+      },
+      {
+        "pitch": "5",
+        "grade": "5.11-",
+        "bolts": 7,
+        "notes": "Up steep blocks and left onto a face with three bolts, then jog right on two more; do not head out to the arete. A large part of the original roof has fallen away. Parties who climbed the older line felt it far harder than its 5.11c grade."
+      },
+      {
+        "pitch": "6",
+        "grade": "5.11+",
+        "notes": "Step down and right off the belay, then follow roughly 10–12 bolts through a band of poor rock, with a 5.11c section near the top on the arete. Test holds; the bolting is close enough that a broken hold is not a disaster."
+      },
+      {
+        "pitch": "7",
+        "grade": "5.12-",
+        "lengthM": 30,
+        "notes": "Steep arete climbing just left of the prow, with a thin, hard sequence close to the belay and tricky moves above. A small piece protects the final moves. Some parties rate the key move 5.12+."
+      },
+      {
+        "pitch": "8",
+        "grade": "5.11",
+        "bolts": 4,
+        "notes": "Three bolts of 5.11 on the arete, then veer left into a slabby, shallow dihedral with a bolt on the arete. The most serious pitch on the route: the upper section has runouts of about 25 ft on 5.7–5.9 ground. Bring small and medium nuts."
+      },
+      {
+        "pitch": "9",
+        "grade": "5.12",
+        "bolts": 16,
+        "notes": "One of the two best pitches: a crimpy boulder problem on the arete, a rest at deep pockets, then a second hard boulder. Bring every draw."
+      },
+      {
+        "pitch": "10",
+        "grade": "5.11",
+        "bolts": 9,
+        "notes": "Past four bolts in lichen-covered rock to the old death-flake anchor, then clip the bolt above the roof and traverse right on jugs. The 2020 reroute avoids the loose death flake entirely."
+      },
+      {
+        "pitch": "11",
+        "grade": "5.12",
+        "crux": true,
+        "notes": "Pull back left out the roof on big jugs to a hard boulder problem on the vertical headwall, just out of sight from the belay. Short, all bolts, and the likely crux of the route (5.12b)."
+      },
+      {
+        "pitch": "12",
+        "grade": "5.10+",
+        "notes": "Pockets and crimps up steep ground, then back right to the arete and a belay perched on the prow. All bolts. It can be linked with pitch 11 to avoid the poor intermediate belay."
+      },
+      {
+        "pitch": "13",
+        "grade": "5.10-",
+        "lengthM": 35,
+        "notes": "Straight up past a bolt onto ledgy climbing, with gear and one or two more bolts, to chains on a slab."
+      },
+      {
+        "pitch": "14",
+        "grade": "5.10-",
+        "lengthM": 35,
+        "anchor": "bolted",
+        "notes": "Two bolts up a dirty slab to a juggy hand crack, over a bolted roof, then slab to a two-bolt anchor right at the lip and the edge of the woods. Scramble down heather to pick up the BASE-jumper descent trail."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "20 → 14 entries. Both pitch-by-pitch descriptions found (current route database, post-2020, and a detailed 2012 blog) describe the tower in 14 pitches. The stored rows 15–20 (e.g. '5.9 summit terrain; walk-off') match nothing in any source and look filled in to reach the headline count of 20. The stored 1–14 grades also did not match: stored P5 '5.11c roof crux' is now a 5.11- bolted face that avoids the collapsed roof, and the real cruxes are P7, P9 and P11. Grades follow the current post-2020 description; notes give the older grade where it differs.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/119221029/vanishing-point",
+        "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html",
+        "https://cascadeclimbers.com/forum/topic/101032-tr-dolomite-tower-mt-baring-vanishing-point-vi-512b-9222017/",
+        "https://www.mountainproject.com/area/119221018/dolomite-tower",
+        "https://nathanhadley.com/stories/vanishing-point-2-0-a-classic-route-modernized/ (would not load)"
+      ],
+      "other_findings": "pitches=20 is the route database's headline number but its own description has 14; the 20 likely counts the roped approach slabs (a 5.8 bolted slab, groove pitches and more below the tower). beta says 'nearly every pitch involves relentless overhanging terrain at 5.11–5.12' and 'pitch 5 (crux, 5.12+)': the crux is P11 now, and several pitches are 5.10. rappels says anchors 'spaced roughly 30–35 m apart on the tower' — unverified. overview's 'nearly 1,500-foot overhanging prow' vs the 2012 description's ~400 m prow."
+    },
+    "allow_fewer_entries": true
+  }
+}
