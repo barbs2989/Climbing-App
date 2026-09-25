@@ -625,7 +625,9 @@ async function runReports() {
     id: "probe_temp", name: "Probe", grade: "5.9", gradeSystem: "yds", discipline: "trad",
     pitches: 4, mountainId: "probe_area",
     _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Colorado" },
-    activity: [act(50, "2026-08-01"), act(60, "2026-08-02")],
+    // RELATIVE dates: CONDITIONS NOW is only "now" for reports inside RECENT_DAYS -- older ones are
+    // relabelled LAST REPORTED CONDITIONS -- so fixed dates aged this anchor out from under it.
+    activity: [act(50, new Date(Date.now() - 3 * 864e5).toISOString().slice(0, 10)), act(60, new Date(Date.now() - 2 * 864e5).toISOString().slice(0, 10))],
   };
   const shot = (u) => { M.__set_UNITS(u); const h = M.renderRoute(route, "conditions"); M.__set_UNITS("imperial"); return h; };
   const impT = strip(shot("imperial")), metT = strip(shot("metric"));
