@@ -1,0 +1,2566 @@
+[
+ {
+  "zone": "adams",
+  "routes": [
+   {
+    "id": "adams_avalanche_glacier",
+    "name": "Avalanche Glacier",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 12276,
+    "overview": "A quieter, moderate glacier route up the mountain's southwest side, offering more solitude than the crowded South Spur while still being a snow-slope (not technical ice) climb under normal conditions.",
+    "approach": "From Cold Springs trailhead, traverse via round-the-mountain trail to the northwest side of Mount Adams, approach glacier directly from southwest.",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. It sits anywhere from roughly …"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   },
+   {
+    "id": "adams_northwest_ridge",
+    "name": "North Face of the Northwest Ridge",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "alpine",
+    "grade": null,
+    "high_point_ft": 12276,
+    "overview": "A distinct, more technical ice/snow line squeezed between the Adams Glacier and the loose rock of the Northwest Ridge crest — a sustained 2,000-3,000 ft snow-and-ice face rather than the moderate ridge scramble the Northwest Ridge name usually refers to.",
+    "approach": "Forest Service Road 2329 from Taklakh Lake area (5.7 miles). Killen Creek Trail (#113) to Pacific Crest Trail junction, then High Camp Trail (#10) to meadow camp at 6,900 ft.",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. It sits anywhere from roughly …"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_adams_glacier",
+    "name": "Adams Glacier",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "Grade III, steep glacier ice/snow",
+    "high_point_ft": 12276,
+    "overview": "Mt Adams' North Face route — more an icefall tumbling between the North Ridge and Northwest Ridge than a true face — widely regarded as the finest moderate ice/glacier climb on the mountain. Because it's an active icefall, the exact line and difficulty shift from year to year and even day to day dep…",
+    "approach": "Start at the Killen Creek Trailhead (~4,600 ft), accessed via Forest Roads 23, 21, and 2329 from the Randle/Trout Lake side (FR-2329 is frequently snow-blocked into early summer — several parties have had to park lower and walk or bushwhack an extra mile-plus of road/forest to reach the actual trail…",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     },
+     {
+      "name": "High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": "Another mile on the High Camp Trail ends it at the edge of the Adams Glacier's lateral moraine. Sheltered bivy sites sit slightly higher, in a shallow snow gull…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_lava_glacier_headwall",
+    "name": "Lava Glacier Headwall",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 12276,
+    "overview": "A steep snow/ice headwall filling the triangle between the North Ridge and Lava Ridge, above the Lava Glacier. The historic line crosses the lowest of three bergschrunds on the glacier's west side beneath the North Ridge, then climbs diagonally up the headwall using rock outcrops for protection from…",
+    "approach": "Same trailhead and trail as the Lyman Glacier approach: Killen Creek Trail #113 from the Killen Creek Trailhead, about 3.1 miles through lodgepole forest (crossing East Fork Adams Creek near mile 2.5) to the PCT at ~6,100 ft, then the High Camp Trail #10 another 1.0 mile to High Camp/Adams Glacier M…",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_lyman_glacier",
+    "name": "Lyman Glacier",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "III",
+    "high_point_ft": 12276,
+    "overview": "Ascends the Lyman Glacier, tucked between the Adams and Lava Glaciers on the north side. From High Camp, parties traverse lava fields and the Lava Glacier around the toe of Lava Ridge to the base of the Lyman Glacier (~8,000 ft, about 1 hour from camp), then climb up and diagonal left as terrain all…",
+    "approach": "From the Killen Creek Trailhead (FS Rd 2329, ~3 miles from Takhlakh Lake), follow Killen Creek Trail #113 through open, dusty lodgepole forest. Around 2.5 miles in you cross East Fork Adams Creek and its meadows (last reliable easy water before the high basin), then the trees thin as the trail climb…",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_mazama_glacier_headwall",
+    "name": "Mazama Glacier Headwall",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "Steep snow to 45°",
+    "high_point_ft": 12276,
+    "overview": "A big, scenic, mostly non-technical glacier climb up the east side of Mount Adams from Bird Creek Meadows, with an optional short technical pitch near the top.",
+    "approach": "Start from the Bird Creek Road trailhead (~5,700 ft) on the Yakama Reservation side; route-finding across moraines and glacier fields begins around 6,700 ft, reaching Sunrise Camp at 8,300 ft.",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     },
+     {
+      "name": "Sunrise Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 8500,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_north_ridge",
+    "name": "North Ridge",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "Grade II, moderate snow",
+    "high_point_ft": 12276,
+    "overview": "Also called the North Cleaver, the North Ridge is Adams' second most-popular summit route and a scenic, less-crowded alternative to the South Climb. It climbs the rock-and-snow rib between the Adams and Lava Glaciers, reached via the quiet Killen Creek approach on the north side, and is most pleasan…",
+    "approach": "Killen Creek Trailhead (Trail #113, off FR 2329 via FR 23) climbs through forest and meadow ~3.1 mi/1,400 ft to the PCT, then continues to High Camp — roughly 4 mi and 2,300 ft of gain total from the trailhead — the shared base camp for the North Ridge, Adams Glacier, and Northwest Ridge routes.",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     },
+     {
+      "name": "High Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_northwest_ridge",
+    "name": "North Ridge (West Face)",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "alpine",
+    "grade": "Grade III, AI1-2",
+    "high_point_ft": 12276,
+    "overview": "A straightforward snow/ice line up the west face of Mount Adams's North Ridge, a more technical companion route to the standard North Ridge scramble.",
+    "approach": "Same approach as the standard North Ridge route, via the Killen Creek Trail and PCT.",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_south_climb",
+    "name": "South Climb (South Spur)",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "Grade I",
+    "high_point_ft": 12276,
+    "overview": "Mount Adams's standard, non-technical route: a long snow slog up the broad southern flank via Crescent/Suksdorf Ridge, the Lunch Counter camp, and the false summit ('Piker's Peak') to the true summit beyond a shallow crater traverse.",
+    "approach": "From Trout Lake, drive north on Mt Adams Rd to the Forest Road 23 junction; bear right about a mile to the signed FR 80 junction for South Climb, turn left and follow FR 80 for 3.7 miles to FR 8040, then follow FR 8040 (steep, narrow, sharp switchbacks — no RVs/trailers) for 8.1 miles to its end at …",
+    "camps": [
+     {
+      "name": "The Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The standard high camp, a broad rubble-and-snow bench up the South Spur above the Crescent Glacier; its height is given anywhere from about 9,000 to 9,400 ft depending which shelf you stop on. Wind is the defining proble…"
+     },
+     {
+      "name": "Morrison Creek drainage",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "Lower option below the Crescent Glacier, used by parties who would rather not sleep in the crowds and wind at the Lunch Counter. It costs you elevation on summit day. Morrison Creek Campground further down the road is al…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_adams_wilson_glacier_headwall",
+    "name": "Wilson Glacier Headwall",
+    "peak": "Mount Adams",
+    "area_id": "wa_mount_adams",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 12276,
+    "overview": "A steep, committing snow/ice headwall on Adams' northeast side, below Roosevelt Cliff, fed by the Wilson Glacier — one of the mountain's most serious and rarely repeated headwall lines, grouped with the neighboring Rusk Glacier Headwall as among the most dangerous routes on the peak. Rockfall is a m…",
+    "approach": "The Wilson Glacier sits on the east side of Mount Adams, descending from around 10,600 ft to a terminus near 7,400 ft — a less-visited, less-documented flank than the standard south or north-side routes. Parties reach it via the Cold Springs/South Climb trailhead (5,600 ft, FS Rd 8040 off FS Rd 80):…",
+    "camps": [
+     {
+      "name": "Lunch Counter",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 9300,
+      "notes": "The standard high camp for the South Climb and effectively the only sheltered ground on the route, a wide rubble bench under Suksdorf Ridge about four miles and 3,700 ft above Cold Springs. Its height is given anywhere f…"
+     },
+     {
+      "name": "Cold Springs / South Climb trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Most South Climb parties sleep here the night before, either to acclimatise a little or to get an alpine start without carrying a camp to the Lunch Counter. Facilities are primitive — a vault toilet, no piped water, no d…"
+     },
+     {
+      "name": "Morrison Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4675,
+      "notes": "The fallback camp when the upper road defeats a vehicle or when Cold Springs is full, about three miles below the South Climb trailhead on the same road. The 2012 Cascade Creek fire burned through here, so shade is patch…"
+     },
+     {
+      "name": "High Camp (Adams Creek Meadows)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6900,
+      "notes": "The base for the north side, reached by the Killen Creek trail from about 4,600 ft to the PCT and then a boot path up to the meadows below the Adams Glacier. Roughly four miles and 2,300 ft of gain, an easy carry compare…"
+     },
+     {
+      "name": "Adams Glacier moraine bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7700,
+      "notes": "Parties attacking the Adams Glacier sometimes move above High Camp onto the moraines below the icefall to shorten summit day, with usable ground reported roughly between 7,100 and 7,700 ft depending on which rib and how …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "alpine-lakes-interior",
+  "routes": [
+   {
+    "id": "wa_big_snow_mountain_east_ridge_hardscrabble_route",
+    "name": "East Ridge (Hardscrabble) Route",
+    "peak": "Big Snow Mountain",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6680,
+    "overview": "The historically preferred line: approach past Hardscrabble Lakes to a col, drop onto open granite slabs on the north slope, then follow the east ridge to the summit. Considered easier route-finding than the Dingford/north-slope line, but now a much longer trip since the access road was gated at Din…",
+    "approach": "Start at the Dingford Creek Trailhead gate and walk (or mountain-bike) the closed Middle Fork Snoqualmie River Road about 7 miles to the boot path for Hardscrabble Lakes, which starts roughly half a mile short of the old Hardscrabble Horse Camp, across the road from a large fallen log. Follow the cl…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_big_snow_mountain_north_slope_dingford_route",
+    "name": "North Slope (Dingford) Route",
+    "peak": "Big Snow Mountain",
+    "area_id": "wa_big_snow_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6680,
+    "overview": "The shorter and most commonly climbed line to the summit: an off-trail push from Myrtle Lake past Big Snow and Snowflake Lakes, up steep gullies/chutes to broad rock and snow slopes on the mountain's north side, finishing on class 2-3 terrain to the summit.",
+    "approach": "Drive to the Dingford Creek Trailhead gate via Middle Fork Snoqualmie River Rd / FSR 56 (about 18 mi from North Bend; the last several miles are rough gravel, high-clearance recommended). Hike the Dingford Creek Trail roughly 3.2 mi to the Hester Lake Trail junction, continue left (east) toward Myrt…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_burnt_boot_peak_north_ridge",
+    "name": "North Ridge",
+    "peak": "Burnt Boot Peak",
+    "area_id": "wa_burnt_boot_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6540,
+    "overview": "A rarely repeated technical new route established in 1971-72 up Burnt Boot Peak's north ridge: three leads of low-to-mid class 5 granite culminating on a knife-edge crest, followed by three easier leads of class 3-4 scrambling to the summit.",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_burnt_boot_peak_north_route",
+    "name": "North Route",
+    "peak": "Burnt Boot Peak",
+    "area_id": "wa_burnt_boot_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6540,
+    "overview": "Burnt Boot Peak (6,540 ft) is a remote, lightly-visited summit in the western Alpine Lakes Wilderness, about 6.5 miles northeast of Snoqualmie Pass in eastern King County. It sits near the head of Burnboot Creek, roughly 1.3 miles from Lemah Mountain, and is reached from the Middle Fork Snoqualmie R…",
+    "approach": "Park at the very end of Middle Fork Snoqualmie Road (FS Road 56), the Dutch Miller Gap Trailhead (Trail #1030), elev. ~2,500 ft — the last few miles of FS 56 are pitted with potholes and washboard, so high-clearance is strongly recommended. Do not follow the maintained Dutch Miller Gap trail; instea…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_cathedral_rock_northwest_couloir",
+    "name": "Northwest Couloir",
+    "peak": "Cathedral Rock",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 6724,
+    "overview": "A class 3 gully on Cathedral Rock's northwest side, used both as an alternate ascent line and as the standard descent from the summit.",
+    "approach": "Approached the same way as the Southwest Face route, via Salmon la Sac, Forest Road 4330, and the Cathedral Rock trail to Cathedral Pass, then around toward the northwest side of the summit block.",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Peggy's Pond — standard base camp and water source",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5600,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_cathedral_rock_standard",
+    "name": "Standard Route (Southwest Face)",
+    "peak": "Cathedral Rock",
+    "area_id": "wa_cathedral_rock",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 6724,
+    "overview": "Cathedral Rock is a striking, freestanding plug of intrusive andesite — remnants of Oligocene-age volcanism later sculpted by Pleistocene glaciation — that towers above Cathedral Pass and Peggys Pond in the Alpine Lakes Wilderness, guarding the north end of the Mount Daniel–Mount Hinman ridge. At 6,…",
+    "approach": "Park at the Cathedral Rock Trailhead (elev. ~3,350 ft) at the end of FR-4330 past Salmon La Sac, and start on the signed Cathedral Pass Trail (#1345, Okanogan-Wenatchee NF / Alpine Lakes Wilderness). The trail crosses the Cle Elum River on a footbridge near the start and enters the Alpine Lakes Wild…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chimney_rock_east_face_direct",
+    "name": "East Face Direct",
+    "peak": "Chimney Rock",
+    "area_id": "wa_chimney_rock",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7727,
+    "overview": "A harder, more direct 1954 variation of the East Face that climbs solid 5.6 rock through the lower face — avoiding the loose ('choss') sections of the standard route at the cost of a moat crossing — before rejoining the East Face about halfway up.",
+    "approach": "Same as the standard East Face: Pete Lake Trailhead (2,800 ft) via Pete Lake Trail/PCT and the Chimney Creek climber's path to high camp at Sunrise Knob (~4,600-4,800 ft).",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chimney_rock_west_face",
+    "name": "West Face / South Summit (Standard)",
+    "peak": "Chimney Rock",
+    "area_id": "wa_chimney_rock",
+    "discipline": "mountaineering",
+    "grade": "Class 5.6",
+    "high_point_ft": 7440,
+    "overview": "Chimney Rock is one of the most striking and sought-after technical summits of the Alpine Lakes high country, a twin-towered spire rising above the Lemah and Summit Chief peaks. The standard line gains the higher south summit by a committing glacier approach and several pitches of moderate rock high…",
+    "approach": "This route shares the same trailhead-to-basin approach as the East Face: from the Pete Lake Trailhead off FR 4616, hike the Pete Lake Trail #1323 (~4 easy miles to Pete Lake, then ~2 more miles) to the Pacific Crest Trail junction, head north on the PCT about a mile to the Chimney Creek avalanche-pa…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Sunrise Knob",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4650,
+      "notes": "Steep, brushy climbing up the east bank, crossing several ravines, to the rock buttress at the top. Budget four to five hours from the car to here — the mileage…"
+     }
+    ]
+   },
+   {
+    "id": "wa_east_face_6",
+    "name": "East Face",
+    "peak": "Chimney Rock",
+    "area_id": "wa_chimney_rock",
+    "discipline": "mountaineering",
+    "grade": "5.3",
+    "high_point_ft": 7727,
+    "overview": "The East Face is Chimney Rock's most commonly climbed and documented line to the true Main/Central Summit (7,727 ft) — the same summit reached by the peak's 1930 first ascent. From a high camp near the toe of the Chimney Glacier, parties rope up and cross the glacier and its bergschrund/moat to reac…",
+    "approach": "From the Pete Lake Trailhead off FR 4616 (elev. ~2,850 ft), follow the Pete Lake Trail #1323 west and north through open, nearly-flat forest along Cooper River/Lemah Meadow terrain — easy tread and wildflower meadows for about 4 miles to the south shore of Pete Lake, a popular first camp and reliabl…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Sunrise Knob",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4650,
+      "notes": "Standard 2-3 day basecamp on a knob just below the moraine overlooking the falls, roughly 6 hours' hike from the trailhead."
+     }
+    ]
+   },
+   {
+    "id": "wa_iron_cap_mountain_south_route",
+    "name": "South Route",
+    "peak": "Iron Cap Mountain",
+    "area_id": "wa_iron_cap_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6347,
+    "overview": "Iron Cap Mountain (6,347 ft) rises above the Williams Lake and La Bohn Gap country near the heart of the Alpine Lakes Wilderness. Despite its modest elevation, it has striking local relief, climbing about 2,500 feet above the Middle Fork Snoqualmie River Valley in less than a mile. The mountain stra…",
+    "approach": "The South Route begins at the Dingford Creek Trailhead (also signed/known as the Dutch Miller Gap Trailhead, ~1,550 ft), reached via I-90 Exit 34 and the rough, high-clearance/4WD-recommended Middle Fork Snoqualmie Road (FR 56) — the old Dutch Miller Gap Trailhead further up the road is no longer ve…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "Old road tread ends here at an established horse camp with views of rockslides and waterfalls; trail narrows beyond, crossing Hardscrabble Creek into the Alpine…"
+     },
+     {
+      "name": "Pedro Camp / steel bridge",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3300,
+      "notes": "Locally-known campsite where the trail crosses a steel bridge back over the Middle Fork; open avalanche-slope views of Burntboot Peak, Overcoat Peak and Iron Ca…"
+     },
+     {
+      "name": "Williams Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "Subalpine lake basin at the base of Bear's Breast Mountain; established campsites on the west shore, boot paths head up toward the high country from here."
+     }
+    ]
+   },
+   {
+    "id": "wa_lemah_mountain_east_route",
+    "name": "East Route (Main Peak)",
+    "peak": "Lemah Mountain",
+    "area_id": "wa_lemah_mountain",
+    "discipline": "alpine",
+    "grade": "Class 4-5.0",
+    "high_point_ft": 7512,
+    "overview": "Lemah Mountain is the highest and most complex peak of the Cascade Crest's Lemah massif — a jagged, five-summited ridge (Lemah One 6,960', Two 7,280', Main/Three ~7,512-7,520', Four 7,200', Five 7,040') rising above the Pete Lake and Spectacle Lake basins in the Alpine Lakes Wilderness. The name com…",
+    "approach": "Start at the Pete Lake Trailhead (aka Cooper Lake / Cooper River trailhead, ~2,800') at the end of Cooper Lake Road (FS-46); a Northwest Forest Pass is required to park. Follow the Cooper River Trail (Trail #1323) roughly 4 flat, forested miles to Pete Lake (~2,980'). Continue along the lakeshore an…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Pete Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2984,
+      "notes": "Four flat, forested miles on the Cooper River Trail #1323 with barely 200 ft of gain — the easiest walking of the trip, and no measure of what follows it."
+     }
+    ]
+   },
+   {
+    "id": "wa_lemah_two_goatshead_spire",
+    "name": "Goatshead Spire",
+    "peak": "Lemah Two",
+    "area_id": "wa_lemah_two",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7000,
+    "overview": "A separate rock tower (~7,000 ft) on the eastern spur of Lemah Two — the upper of two towers there, the lower being more massive — distinct from the standard walk-up/scramble to Lemah Two's main summit.",
+    "approach": "Identical to the Lemah Glacier approach, which is the only documented way into this cirque. From I-90 exit 80 (Roslyn / Salmon la Sac) go north on Bullfrog Road 2.8 miles through two roundabouts, continue on WA-903 past Cle Elum Lake (about 16.8 miles total from the freeway), turn west on FR-46 and …",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lemah_two_scramble",
+    "name": "Standard Scramble",
+    "peak": "Lemah Two",
+    "area_id": "wa_lemah_two",
+    "discipline": "scrambling",
+    "grade": "Class 4",
+    "high_point_ft": 7280,
+    "overview": "Lemah Two (7,280 ft) is the second-highest of five distinct summits along the serrated, mile-long Lemah crest — Lemah One (6,960'), Lemah Two (7,280'), the Main/Lemah Three summit (7,512', the massif's true high point), Lemah Four (7,200'), and Lemah Five (7,040') — rising above Spectacle Lake and P…",
+    "approach": "From I-90 exit 80 (Roslyn/Salmon la Sac), drive north on SR-903 for 16.8 miles through Roslyn and past Cle Elum Lake, then west on Forest Road 46 for 4.7 miles and right on FR-4616 for 1 mile to the Cooper Lake/Pete Lake trailhead. Follow the Pete Lake Trail #1323 along the Cooper River about 4.5 mi…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Lemah Meadows basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "Climbers' bivy sites in the boggy meadow below Lemah's east face, reached via an overgrown climbers' path north of the creek; last reliable water before the bas…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_big_chief_mountain_northeast_face",
+    "name": "Northeast Face",
+    "peak": "Little Big Chief Mountain",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "4th",
+    "high_point_ft": 7225,
+    "overview": "The peak's original 1939 first-ascent line and its easiest way up: heather, talus and snowfield travel along the northeast ridge to a cirque below the east face, finished by one or two short belayed pitches of 3rd-4th class (occasionally low 5th) rock to the summit.",
+    "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by l…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_big_chief_mountain_west_route",
+    "name": "West Route",
+    "peak": "Little Big Chief Mountain",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7225,
+    "overview": "Little Big Chief Mountain (7,225 ft) sits on the King–Kittitas county line immediately southwest of Dutch Miller Gap in the Alpine Lakes Wilderness, just over half a mile from its taller neighbor Summit Chief Mountain (7,464 ft), with which it shares a long crest running toward Chimney Rock and Midd…",
+    "approach": "From the Salmon La Sac Trailhead (end of Salmon La Sac Rd/FR-4330, ~19 mi north of Cle Elum), pick up the Waptus River Trail #1310 heading east into the Alpine Lakes Wilderness. The first mile or so rolls over a couple of low forested hills before the trail settles into a long, gentle grade alongsid…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Hour Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2750,
+      "notes": "The trail settles into a long, gentle grade alongside the Waptus River, crossing a string of small feeder creeks — water is reliable this whole stretch — and pa…"
+     },
+     {
+      "name": "Talus Basin Below the Summit Chief Group",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": "Leave the trail at the ford and work up through timber on no tread, aiming for the open ground below the peak's west side. It is roughly 2,500 ft of gain, and t…"
+     }
+    ]
+   },
+   {
+    "id": "wa_northwest_face_4",
+    "name": "Northwest Face",
+    "peak": "Little Big Chief Mountain",
+    "area_id": "wa_little_big_chief_mountain",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 7225,
+    "overview": "A long, sustained 15-pitch alpine rock route up the remote Northwest Face of Little Big Chief on excellent gneiss, graded IV 5.9; also known as the Falcon Route, it sees very few ascents due to its deep, cross-country approach into Summit Chief Valley.",
+    "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached by l…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_overcoat_peak_southeast_route",
+    "name": "Southeast Route",
+    "peak": "Overcoat Peak",
+    "area_id": "wa_overcoat_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 4-5.0",
+    "high_point_ft": 7432,
+    "overview": "Overcoat Peak (7,432 ft) is the rugged, glacier-draped satellite summit immediately northwest of taller Chimney Rock, both crowning the ridge above the head of the Overcoat Glacier in the Alpine Lakes Wilderness. It was named by USGS surveyor Albert H. Sylvester after he left his coat on the summit …",
+    "approach": "From the Dingford Creek Trailhead (end of FR 56, Middle Fork Snoqualmie River Road), the fastest approach uses the gated continuation of the road as a mountain-bike/hike-in: roughly 7-8 miles of old roadbed (NF-5620) to Hardscrabble Horse Camp near the old Dutch Miller Gap Trailhead, saving signific…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Overcoat Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The continuation of the road past the gate is roughly 7-8 miles of old roadbed to Hardscrabble Horse Camp, and most parties bike it rather than walk it. Beyond …"
+     },
+     {
+      "name": "Rock benches above Overcoat Glacier",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Above the ford the ground climbs steeply through brush into a rocky corridor of waterfalls and steep faces before opening onto snow and benches. Snow lingers he…"
+     }
+    ]
+   },
+   {
+    "id": "wa_summit_chief_mountain_south_route",
+    "name": "South Route",
+    "peak": "Summit Chief Mountain",
+    "area_id": "wa_summit_chief_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 7467,
+    "overview": "The highest of the 'Chief' cluster — Middle Chief (7,120') and Little Big Chief (7,225') sit nearby — Summit Chief anchors the divide between the Waptus and Cooper/Pete Lake country deep in the Alpine Lakes Wilderness, on the King-Kittitas county line about 9 miles northeast of Snoqualmie Pass. Chim…",
+    "approach": "Start at the Pete Lake Trailhead (~2,840 ft) at the end of Cooper Lake Road (Forest Road 46) off the Salmon La Sac Road. Follow the Pete Lake Trail (#1323) roughly 4.5 miles of gentle, mostly flat forest walking along the Cooper River to Pete Lake. From Pete Lake, continue up the Lemah Creek/Lemah M…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     },
+     {
+      "name": "Vista Lakes (upper lake)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Established high camp at the upper Vista Lake tarn; warm swimming water and the standard bivy for a summit push."
+     }
+    ]
+   },
+   {
+    "id": "wa_three_queens_middle_peak",
+    "name": "Middle Peak via South Face - South Chimney",
+    "peak": "Three Queens",
+    "area_id": "wa_three_queens",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6600,
+    "overview": "A distinct line up Three Queens' Middle Peak (6,600 ft), climbing the south face to a rock gable below the summit and finishing up a class 4 chimney system; it has been climbed solo, car-to-car, as a day scramble/climb.",
+    "approach": "Same trailhead and initial trail as the East/Main Peak standard route: Mineral Creek Trailhead (2,400 ft), across the Kachess River ford, 1.7 miles of trail to the Mineral Creek crossing, then about 1 mile through vine maple brush to the base of the south-side talus slope below Middle Peak.",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_three_queens_standard",
+    "name": "Standard Scramble",
+    "peak": "Three Queens",
+    "area_id": "wa_three_queens",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6693,
+    "overview": "Three Queens is a triple-summited peak on Chikamin Ridge in the Alpine Lakes Wilderness, the second-highest point on the ridge after Chikamin Peak (6,994 ft). The East Peak (6,693 ft) is the true summit; the Middle (~6,600 ft) and West (~6,400 ft) peaks are linked to it by a narrow, exposed connecti…",
+    "approach": "Trailhead: Mineral Creek Trailhead (Trail #1331), roughly 2,360-2,400 ft, reached via FR-4600 over Cooper Pass. From the parking area the trail promptly crosses the Kachess River — look for logs spanning it; when they're not in place it's a short, easy wade. The trail then climbs gently north throug…",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   },
+   {
+    "id": "wa_three_queens_west_peak",
+    "name": "West Peak via West Ridge - West Face",
+    "peak": "Three Queens",
+    "area_id": "wa_three_queens",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6400,
+    "overview": "A rock scramble/climb up Three Queens' West Peak (6,400 ft) via its West Ridge and West Face, approached from a high camp at Spectacle Point after a multi-day hike in via Mineral Creek and Park Lakes.",
+    "approach": "From the Mineral Creek Trailhead (2,400 ft), follow the Kachess River/Mineral Creek approach through Park Lakes to Spectacle Point (5,800 ft) — a longer multi-day approach (16 miles round trip in the accounts report) than the Middle Peak day-route.",
+    "camps": [
+     {
+      "name": "Pete Lake and the Lemah Meadows camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2986,
+      "notes": "The workhorse camp of the entire western half of this zone. From the trailhead at the north end of Cooper Lake the trail runs about four gentle miles along the Cooper River to Pete Lake, and roughly two and a half more t…"
+     },
+     {
+      "name": "Chimney Glacier hanging basin — the big boulder bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4800,
+      "notes": "THIS IS CHIMNEY ROCK'S REAL BASE, and it is the reason parties take the Cle Elum side rather than the Middle Fork. From Pete Lake continue to the PCT, turn north, and at the second switchback where the trail starts up to…"
+     },
+     {
+      "name": "Escondido Ridge tarns",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The high camp on the Pacific Crest Trail between Lemah Meadows and Waptus Pass, reached by the long string of switchbacks up onto Escondido Ridge. It is the camp for Little Big Chief Mountain from the south and west, and…"
+     },
+     {
+      "name": "Waptus Lake, with Spade Lake above it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2792,
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it …"
+     },
+     {
+      "name": "Park Lakes Basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4880,
+      "notes": "The base for THREE QUEENS, and the reason that peak sits in this zone at all — it shares the Cooper River road with Pete Lake and nothing else. Drive the Cooper River road past Cooper Lake and over Cooper Pass to the Min…"
+     },
+     {
+      "name": "Hardscrabble Horse Camp, Middle Fork Snoqualmie",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2828,
+      "notes": "The staging camp for the whole Middle Fork half of this zone, and the answer to the question of what to do with a seven-mile road walk. Forest Road 56 is rough — potholes, ruts and washed river-rock sections that want hi…"
+     },
+     {
+      "name": "Upper Hardscrabble Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4598,
+      "notes": "The high camp for BIG SNOW MOUNTAIN's east ridge, which is the easier and much less confusing of that peak's two routes. From the boot path junction on the old road the trail climbs steeply and roughly to lower Hardscrab…"
+     },
+     {
+      "name": "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The upper-valley camp of the Middle Fork, and the base for IRON CAP MOUNTAIN's south route. From the Dingford Creek gate it is about seven miles of closed road to the horse camp and roughly seven more of trail up the val…"
+     },
+     {
+      "name": "Peggy's Pond and Squaw Lake, Cathedral Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The base for CATHEDRAL ROCK, which sits at the far eastern end of this zone and shares nothing but a wilderness boundary with the Middle Fork peaks. Drive the Cle Elum River road north from Salmon la Sac about twelve mil…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "anderson-bacon-creek",
+  "routes": [
+   {
+    "id": "wa_bacon_peak_diobsud",
+    "name": "Diobsud Creek / Green Lake Glacier",
+    "peak": "Bacon Peak",
+    "area_id": "wa_bacon_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 (glacier travel)",
+    "high_point_ft": 7070,
+    "overview": "Bacon Peak carries a small icecap divided into three named glaciers — Diobsud Creek (SE), Green Lake (NE), and Noisy Creek (NW) — high above the Baker Lake / Noisy-Diobsud Wilderness country. The standard climb approaches via the Anderson & Watson Lakes Trailhead (or a shorter, brushier route from B…",
+    "approach": "Drive Baker Lake Road (FR-11) to FR-1106, then FR-1107 to its end at the Watson Lakes Trailhead (~4,360 ft, Noisy-Diobsud Wilderness boundary nearby). Start on the Anderson-Watson Lakes Trail (Trail #611), which climbs gently through forest for about 1 mile to a junction with the Anderson Butte Trai…",
+    "camps": [
+     {
+      "name": "Watson Lakes designated camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The substance of this zone and the best camping anywhere near these three peaks. It is a genuinely short walk — about two miles from the road end, through forest to a meadow junction, over a saddle at around 4,700 ft and…"
+     },
+     {
+      "name": "Lower Anderson Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Half a mile down from the second trail junction and a hundred feet above the Watson Lakes, and the more useful of the two basins for anyone climbing rather than hiking, because BACON PEAK'S APPROACH RUNS DIRECTLY ABOVE I…"
+     },
+     {
+      "name": "Anderson Creek road end, Watson Lakes trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the road rather than a campsite, because on this side of the massif the road decides what the trip is. It is a rare thing in this range — a driveable gravel road that delivers you to 4,200 ft, within two miles of…"
+     },
+     {
+      "name": "Northeast Bacon camp, above the glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The high camp for Bacon Peak from the Anderson Creek road, and the reason the peak is a two-day trip rather than an epic. It is reached by leaving the Watson Lakes trail at the saddle, climbing the ridge above Lower Ande…"
+     },
+     {
+      "name": "Upper Diobsud Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The highest comfortable camp on the massif and the natural pivot for anyone crossing it, in the upper Diobsud Creek basin on the far side of Bacon Peak from the Anderson Creek road. It is the camp a party reaches at the …"
+     },
+     {
+      "name": "Berdeen Lake benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5016,
+      "notes": "The camp for Berdeen Peak and the substance of the Bacon Creek side of this zone. The documented approach starts at the Bacon Creek road end at valley-bottom elevation, scrambles up Porkbelly Ridge, crosses the east side…"
+     },
+     {
+      "name": "Bacon Creek road end and Porkbelly Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 850,
+      "notes": "THERE IS NO ESTABLISHED CAMPING ON THIS APPROACH and the honest answer is to start early and reach the lake basin in one push. The road leaves the highway a few miles east of Marblemount and runs up the valley to a road …"
+     },
+     {
+      "name": "Watson Lakes",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "Last reliable water and the only legal campsites before the cross-country push into Diobsud basin; designated sites only, campfires prohibited."
+     },
+     {
+      "name": "Diobsud basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "Off-trail descent from the Watson/Diobsud divide into the Diobsud Creek drainage; drop straight to the valley floor rather than contouring from the lakes, which…"
+     }
+    ]
+   },
+   {
+    "id": "wa_berdeen_peak_scramble",
+    "name": "Berdeen Peak Scramble",
+    "peak": "Berdeen Peak",
+    "area_id": "wa_berdeen_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6420,
+    "overview": "Berdeen Peak rises above remote, turquoise Berdeen Lake in the Bacon Creek drainage of North Cascades National Park, about 1.25 miles east of 7,080-ft Hagan Mountain, within the NPS-designated 'Berdeen' cross-country zone. There is no trail: the peak is reached by a long, brushy off-trail approach f…",
+    "approach": "From the end of Bacon Creek Road (~850 ft, Mt. Baker-Snoqualmie NF), an intermittent boot path continues briefly along the old roadbed and the east-bank benches of Bacon Creek before angling up onto Porkbelly Ridge, the broad forested spur that climbs northeast toward Berdeen Peak. There is no maint…",
+    "camps": [
+     {
+      "name": "Watson Lakes designated camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The substance of this zone and the best camping anywhere near these three peaks. It is a genuinely short walk — about two miles from the road end, through forest to a meadow junction, over a saddle at around 4,700 ft and…"
+     },
+     {
+      "name": "Lower Anderson Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Half a mile down from the second trail junction and a hundred feet above the Watson Lakes, and the more useful of the two basins for anyone climbing rather than hiking, because BACON PEAK'S APPROACH RUNS DIRECTLY ABOVE I…"
+     },
+     {
+      "name": "Anderson Creek road end, Watson Lakes trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the road rather than a campsite, because on this side of the massif the road decides what the trip is. It is a rare thing in this range — a driveable gravel road that delivers you to 4,200 ft, within two miles of…"
+     },
+     {
+      "name": "Northeast Bacon camp, above the glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The high camp for Bacon Peak from the Anderson Creek road, and the reason the peak is a two-day trip rather than an epic. It is reached by leaving the Watson Lakes trail at the saddle, climbing the ridge above Lower Ande…"
+     },
+     {
+      "name": "Upper Diobsud Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The highest comfortable camp on the massif and the natural pivot for anyone crossing it, in the upper Diobsud Creek basin on the far side of Bacon Peak from the Anderson Creek road. It is the camp a party reaches at the …"
+     },
+     {
+      "name": "Berdeen Lake benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5016,
+      "notes": "The camp for Berdeen Peak and the substance of the Bacon Creek side of this zone. The documented approach starts at the Bacon Creek road end at valley-bottom elevation, scrambles up Porkbelly Ridge, crosses the east side…"
+     },
+     {
+      "name": "Bacon Creek road end and Porkbelly Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 850,
+      "notes": "THERE IS NO ESTABLISHED CAMPING ON THIS APPROACH and the honest answer is to start early and reach the lake basin in one push. The road leaves the highway a few miles east of Marblemount and runs up the valley to a road …"
+     },
+     {
+      "name": "High camp above Berdeen Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Established high camp roughly 800 ft above Berdeen Lake, used as the base for the summit push; Day 1 totals 6.3 mi / 6,550 ft gain to this camp."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_watson_scramble",
+    "name": "South/East Scramble",
+    "peak": "Mount Watson",
+    "area_id": "wa_mount_watson",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 6221,
+    "overview": "Mount Watson (6,221 ft) is the highest point in the 14,666-acre Noisy-Diobsud Wilderness, rising above the sub-alpine Anderson and Watson Lakes basins on the Mt. Baker Ranger District west of Baker Lake. Its nearest higher neighbor is Bacon Peak, 2.6 mi to the east, and a small glacial remnant (Wats…",
+    "approach": "Park at the Watson Lakes Trailhead at the end of FS Road 1107 (elev. ~4,200 ft), reached via Baker Lake Road (FS-11) south around Baker Lake on FS-1106 and out FS-1107 to road's end. From the trailhead, follow the Anderson-Watson Lakes Trail #611 into the woods; at about 1 mile you'll pass the junct…",
+    "camps": [
+     {
+      "name": "Watson Lakes designated camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4400,
+      "notes": "The substance of this zone and the best camping anywhere near these three peaks. It is a genuinely short walk — about two miles from the road end, through forest to a meadow junction, over a saddle at around 4,700 ft and…"
+     },
+     {
+      "name": "Lower Anderson Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4500,
+      "notes": "Half a mile down from the second trail junction and a hundred feet above the Watson Lakes, and the more useful of the two basins for anyone climbing rather than hiking, because BACON PEAK'S APPROACH RUNS DIRECTLY ABOVE I…"
+     },
+     {
+      "name": "Anderson Creek road end, Watson Lakes trailhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the road rather than a campsite, because on this side of the massif the road decides what the trip is. It is a rare thing in this range — a driveable gravel road that delivers you to 4,200 ft, within two miles of…"
+     },
+     {
+      "name": "Northeast Bacon camp, above the glacier",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The high camp for Bacon Peak from the Anderson Creek road, and the reason the peak is a two-day trip rather than an epic. It is reached by leaving the Watson Lakes trail at the saddle, climbing the ridge above Lower Ande…"
+     },
+     {
+      "name": "Upper Diobsud Lakes",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "The highest comfortable camp on the massif and the natural pivot for anyone crossing it, in the upper Diobsud Creek basin on the far side of Bacon Peak from the Anderson Creek road. It is the camp a party reaches at the …"
+     },
+     {
+      "name": "Berdeen Lake benches",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5016,
+      "notes": "The camp for Berdeen Peak and the substance of the Bacon Creek side of this zone. The documented approach starts at the Bacon Creek road end at valley-bottom elevation, scrambles up Porkbelly Ridge, crosses the east side…"
+     },
+     {
+      "name": "Bacon Creek road end and Porkbelly Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 850,
+      "notes": "THERE IS NO ESTABLISHED CAMPING ON THIS APPROACH and the honest answer is to start early and reach the lake basin in one push. The road leaves the highway a few miles east of Marblemount and runs up the valley to a road …"
+     },
+     {
+      "name": "Camp on slopes below Mount Watson (~5,400 ft)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "Established bivy sites on open slopes beneath the peak with views of Mt Baker and Mt Shuksan; last practical camp before the summit push."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "arrowhead-mountain",
+  "routes": [
+   {
+    "id": "wa_arrowhead_mountain_south_route",
+    "name": "South Route",
+    "peak": "Arrowhead Mountain",
+    "area_id": "wa_arrowhead_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6030,
+    "overview": "Arrowhead Mountain (6,030 ft) is a summit in the Chiwaukum Mountains on the boundary of the Alpine Lakes Wilderness, about 6 miles east of Stevens Pass in the Okanogan-Wenatchee National Forest. It's a popular but unofficial scramble — and a well-known backcountry ski/snowshoe objective in winter — …",
+    "approach": "From the unofficial roadside pullout on US-2 (room for roughly 2-3 cars, no permit needed but watch for posted no-parking signs) about 6-7 miles east of Stevens Pass near a WSDOT maintenance/tunnel-entrance yard, walk back (west) along the highway shoulder and cross to the north side just after the …",
+    "camps": [
+     {
+      "name": "The US 2 pullout by the maintenance yard",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2800,
+      "notes": "This is the roadhead and, realistically, the accommodation. The pullout sits roughly seven miles east of Stevens Pass at the east tunnel end. The route walks west along the highway shoulder for a few hundred yards, cross…"
+     },
+     {
+      "name": "The clearcut benches on the north ridge, around 4,200 feet",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Included as a contingency and as an honest negative. There is no reason to sleep on Arrowhead: the whole outing is six miles and three thousand feet and a fit party is up and down in seven or eight hours, so the only sit…"
+     },
+     {
+      "name": "Tumwater Canyon campgrounds on US 2",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed drive-in camping to Arrowhead that is not already recorded in a neighbouring zone file, deliberately chosen over the Lake Wenatchee corridor camps for that reason. It is a drive of half an hour or s…"
+     },
+     {
+      "name": "The lower spur and Henry Creek flat",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Recorded chiefly as the water point rather than as a camp, because knowing where Henry Creek is matters more on this mountain than knowing where you could pitch. The spur climbs east-southeast off the highway after the N…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "azurite-ballard",
+  "routes": [
+   {
+    "id": "wa_azurite_peak_southeast",
+    "name": "South Ridge / Southwest Gully",
+    "peak": "Azurite Peak",
+    "area_id": "wa_azurite_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 8444,
+    "overview": "Azurite Peak is a high summit near the head of Mill Creek between the Methow and the upper Skagit divide, within the Pasayten Wilderness. The standard route climbs from Azurite Pass up the south ridge to roughly a 7,400-ft shoulder, then crosses loose ribs and gullies on the south/southwest face and…",
+    "approach": "From the West Fork Methow River Trailhead (River Bend Campground, ~2,700 ft, at the end of Lost River Road/FR 5400), follow the West Fork Methow River Trail roughly 8 miles up-valley to its junction with the Pacific Crest Trail (PCT) at Brush Creek. Turn left (south/west) on the PCT and follow it ab…",
+    "camps": [
+     {
+      "name": "Canyon Creek trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1900,
+      "notes": "This is the western door to Azurite and Ballard, and the drive alone puts it a long way from anywhere — roughly thirty-three miles east of Marblemount and sixteen west of Rainy Pass, with no services in either direction.…"
+     },
+     {
+      "name": "Mill Creek valley and the old Azurite Mine",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the honest middle of the western approach and the reason parties allow three days rather than two. The Mill Creek trail has had almost no use since the mine closed and it shows — long sections are faint, missing …"
+     },
+     {
+      "name": "Azurite Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6713,
+      "notes": "This is the hinge of the whole zone and the only camp that serves both summits well. Azurite Peak rises directly north of the pass and Mount Ballard stands about two miles further north again along the same ridge, so a p…"
+     },
+     {
+      "name": "River Bend and Ballard campgrounds, Lost River Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the staging camps for the eastern approach and the comfortable answer to the night before. From Winthrop the drive runs west on SR 20 and then up the Lost River Road through Mazama to the end of the pavement, c…"
+     },
+     {
+      "name": "Horse Heaven Camp, West Fork Methow",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4350,
+      "notes": "This is the natural first night on the eastern approach to Azurite Pass and it breaks a walk that is otherwise too long to enjoy. From the trailhead near two thousand seven hundred feet the trail follows the West Fork Me…"
+     },
+     {
+      "name": "Horse Heaven Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4350,
+      "notes": "Turn south and west on the PCT and follow it roughly two miles, crossing Jet Creek, to the timbered meadow camp near the river. This is the last easy water befo…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_ballard_south",
+    "name": "South Slopes",
+    "peak": "Mount Ballard",
+    "area_id": "wa_mount_ballard",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8371,
+    "overview": "Mount Ballard is a remote, double-summit peak sharing a long ridgeline with its higher neighbor Azurite Peak, near the head of Mill Creek and about 2 miles south of Azurite Pass. It ranks 84th on Washington's 100 highest peaks and rises about 4,000 ft above Mill Creek within roughly a mile, giving i…",
+    "approach": "Standard approach: drive Highway 20 to the Canyon Creek Trailhead near Mazama and follow the Mill Creek/Azurite Pass Trail (#755) up Canyon Creek then Mill Creek — about 5 miles to the site of the defunct Azurite Mine, then a further ~3 increasingly faint, brush-choked miles (slide alder and downed …",
+    "camps": [
+     {
+      "name": "Canyon Creek trailhead, SR 20",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1900,
+      "notes": "This is the western door to Azurite and Ballard, and the drive alone puts it a long way from anywhere — roughly thirty-three miles east of Marblemount and sixteen west of Rainy Pass, with no services in either direction.…"
+     },
+     {
+      "name": "Mill Creek valley and the old Azurite Mine",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the honest middle of the western approach and the reason parties allow three days rather than two. The Mill Creek trail has had almost no use since the mine closed and it shows — long sections are faint, missing …"
+     },
+     {
+      "name": "Azurite Pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6713,
+      "notes": "This is the hinge of the whole zone and the only camp that serves both summits well. Azurite Peak rises directly north of the pass and Mount Ballard stands about two miles further north again along the same ridge, so a p…"
+     },
+     {
+      "name": "River Bend and Ballard campgrounds, Lost River Road",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the staging camps for the eastern approach and the comfortable answer to the night before. From Winthrop the drive runs west on SR 20 and then up the Lost River Road through Mazama to the end of the pavement, c…"
+     },
+     {
+      "name": "Horse Heaven Camp, West Fork Methow",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4350,
+      "notes": "This is the natural first night on the eastern approach to Azurite Pass and it breaks a walk that is otherwise too long to enjoy. From the trailhead near two thousand seven hundred feet the trail follows the West Fork Me…"
+     },
+     {
+      "name": "Azurite Mine",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5899,
+      "notes": "Flat ground amid the old defunct copper/silver mine workings on Mill Creek; the common overnight camp before pushing toward the Ballard basin."
+     },
+     {
+      "name": "Azurite–Ballard basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Reached via roughly 3 more brush-choked miles above the mine; open basin at the base of Ballard's south slopes and a typical bivy before the summit push."
+     }
+    ]
+   }
+  ]
+ }
+]

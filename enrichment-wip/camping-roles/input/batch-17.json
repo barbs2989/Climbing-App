@@ -1,0 +1,2153 @@
+[
+ {
+  "zone": "skykomish-us2",
+  "routes": [
+   {
+    "id": "wa_baring_mountain_northwest_ridge",
+    "name": "Northwest Ridge",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_3",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 6127,
+    "overview": "The standard route and the only non-technical way up Baring Mountain: a brutally steep climbers' boot path up the west/northwest side to a talus basin, then a gully to the notch between the north and south summits and an easy class-3 ridge scramble to the top. It is short in distance and enormous in…",
+    "approach": "Drive US Highway 2 to milepost 42 in Baring — the turnoff is directly across from Der Baring Store — and turn north onto Barclay Creek Road (Forest Service Road 6024). Cross the railroad tracks immediately, and about 0.2 miles up bear left at the fork. Follow the gravel road roughly 4.3-4.5 miles to…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_baring_mountain_r1",
+    "name": "North Face",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_3",
+    "discipline": "alpine",
+    "grade": "Grade IV-V, steep alpine rock/mixed",
+    "high_point_ft": 6127,
+    "overview": "Baring Mountain's North Face is one of the largest and most serious rock walls in the Cascades, rising roughly 3,000 feet above Barclay Lake. It is a committing, infrequently climbed alpine rock and mixed objective with significant loose rock and routefinding.",
+    "approach": "Park at the Barclay Lake Trailhead (~2,280 ft, end of gravel Forest Road 6024/Barclay Creek Road off US-2 near the town of Baring); a Northwest Forest Pass is required at the self-issue kiosk. This is the same trailhead used for the Barclay Lake day-hike and for Baring's easier South/West Ridge rout…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     },
+     {
+      "name": "Couloir Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "Roughly another 1,200 ft of steep forested and brushy hillside above the creek section reaches the camp. It is the last flat ground before technical climbing, a…"
+     }
+    ]
+   },
+   {
+    "id": "wa_baring_mountain_south_route",
+    "name": "South Route",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_3",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6127,
+    "overview": "Baring Mountain is the dramatic, steep-sided peak rising directly above the town of Baring on US-2, famous for its sheer north face. The standard south route is a notoriously brushy and steep climb with exposed scrambling to a small summit far harder than its elevation suggests.",
+    "approach": "Park at the Barclay Lake Trailhead (~2,200 ft, end of FS Road 6024/Barclay Creek Road, 4WD recommended for the last stretch), which is shared parking for the Barclay Lake hike and the unofficial Baring/Gunn Peak climbers' paths. From the trailhead, go around the outhouse/toilet and pick up an old, o…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     },
+     {
+      "name": "Summit basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Regain the ridge above the cliff bands and follow the faint path into the boulder-and-heather basin under the twin summits, crossing it toward its east side. Th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_eagle_rock_scramble",
+    "name": "Standard Scramble",
+    "peak": "Eagle Rock",
+    "area_id": "wa_eagle_rock",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 5614,
+    "overview": "Eagle Rock is a prominent, blocky summit (5,614 ft, about 1,400 ft of prominence) on the ridge between the Beckler River and Skykomish valleys near Stevens Pass. From the FR6517 trailhead (elev. ~4,150 ft), it's roughly 0.8 miles one-way and about 1,460 ft of gain to the top — a short outing (often …",
+    "approach": "Drive the Beckler River Road (FR-65) out of Skykomish and follow it into the FR-6510/FR-6514/FR-6517 spur network (about 10.8 miles of gravel/dirt forest road past the pavement) to road's end, roughly 0.5 mile east of and nearly level with Eagle Rock's summit — this is the trailhead; there is no mai…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_grotto_mountain_e_route",
+    "name": "East Ridge Scramble",
+    "peak": "Grotto Mountain",
+    "area_id": "wa_grotto_mountain",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 5618,
+    "overview": "Grotto Mountain (5,618 ft) is a rugged, lightly-visited peak in the Wild Sky Wilderness (Mount Baker-Snoqualmie National Forest), rising east of Baring Mountain above the South Fork Skykomish River near the US-2 communities of Baring and Grotto. There is no maintained trail to the summit. The line d…",
+    "approach": "Grotto Mountain (5,618') sits east of the more famous Baring Mountain, above the South Fork Skykomish River near the Wild Sky Wilderness boundary. The drive-in is variable and should be reconfirmed with the Skykomish Ranger District, but the trailhead itself is the end of FS spur NF-6514-410, off Be…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_gunn_peak_southeast_route",
+    "name": "Southeast Route",
+    "peak": "Gunn Peak",
+    "area_id": "wa_gunn_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6244,
+    "overview": "Gunn Peak is an extraordinarily prominent summit above the Sultan Basin and Skykomish valley — the highest point in the Wild Sky Wilderness and the 29th-most prominent peak in Washington, its 3,600-plus feet of prominence making it a coveted objective. First climbed July 18, 1915 by Dr. Harry B. Hin…",
+    "approach": "From the Barclay Lake Trailhead (~2,200 ft, end of FS Rd 6024 out of Baring) do not follow the maintained Barclay Lake Trail #1055; instead walk back down the access road roughly a quarter mile and pick up the old, deactivated Barclay Creek spur road (parties who know the route often park directly a…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_gunnshy_peak_standard_route",
+    "name": "Gunnshy Peak Standard Route (Barclay Lake Approach)",
+    "peak": "Gunnshy Peak",
+    "area_id": "wa_gunnshy_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 6218,
+    "overview": "Gunnshy Peak (Peak 6218), the second-highest summit in the Wild Sky Wilderness, is reached by an unmaintained climber's path that leaves the Barclay Lake trailhead spur, crosses Barclay Creek, climbs a steep forested headwall and a seasonal waterfall gully, then follows brushy ridge and basin terrai…",
+    "approach": "From Monroe, drive east on US-2 to the town of Baring. Near milepost 41-42, across from a convenience store, turn left (north) onto 635th Place NE. Cross the railroad tracks and continue about 0.3 mile to a junction; keep left on 635th Place NE for another 0.1 mile, where the road becomes Forest Roa…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hourglass_gully_winter",
+    "name": "Hourglass Gully (Winter)",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_2",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 5991,
+    "overview": "A classic winter alpine ascent of Mount Index's Main Peak via a steep gully and exposed ridge, offering 1,900 feet of technical snow/ice climbing with significant avalanche and rockfall hazard.",
+    "approach": "Start at the Lake Serene Trailhead and follow Trail #1068 about 4 miles and 2,000 ft of gain to Lake Serene, then traverse talus and boulders around the west side of the lake to its south end. From there head east to a saddle and climb the ridge/gully system southwest of it toward Main Peak, the mas…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_j_tnar",
+    "name": "Jötnar",
+    "peak": "Jötunheim",
+    "area_id": "wa_j_tunheim",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 5527,
+    "overview": "Jötnar is the most sustained aid route in Washington State, ascending the left side of Mount Index's North Norwegian Buttress via a continuous crack system located approximately 100 yards left of the Doorish line. The route features 2,000 feet of mixed free and aid climbing across 16 pitches on gran…",
+    "approach": "From the Lake Serene Trailhead, hike Trail #1068 about 4 miles and 2,000 ft of gain to Lake Serene, then traverse talus and huge boulders around the lake toward its south/southeast end below the Middle Peak (Jötunheim) massif. This cirque holds the Norwegian Buttresses, home to big-wall routes like …",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lewis_creek_route",
+    "name": "Lewis Creek Route",
+    "peak": "Gunn Peak",
+    "area_id": "wa_gunn_peak",
+    "discipline": "scrambling",
+    "grade": "3rd",
+    "high_point_ft": 6244,
+    "overview": "The Lewis Creek Route is the original 1915 first-ascent line up Gunn Peak, named for the Lewis Creek drainage the FA party used on their approach. It is rated 3rd Class (3 stars) and its modern access is via overgrown logging roads leading to a climbers' trail beginning around 3,200 ft on the ragged…",
+    "approach": "From the Barclay Lake Trailhead (2,200 ft, end of FR-6024), do not take the maintained Barclay Lake Trail; instead walk back down the access road a short distance to an old spur/climbers' path dropping toward Barclay Creek. Ford Barclay Creek — parties describe essentially two back-to-back crossings…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_merchant_peak_south_route",
+    "name": "South Route",
+    "peak": "Merchant Peak",
+    "area_id": "wa_merchant_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 6113,
+    "overview": "Merchant Peak (6,113 ft) is a rugged summit in the Skykomish Mountains above Baring, forming one of the steepest, brushiest walls visible from US-2, alongside neighbors Baring Mountain (1.5 mi south) and Gunn Peak (1.3 mi northwest, the parent peak). It lies within the Wild Sky Wilderness (Mt. Baker…",
+    "approach": "From the Barclay Lake Trailhead at the end of FR-6024 (Barclay Creek Road, ~2,280 ft), start up the maintained Barclay Lake Trail #1055 — an easy, well-graded path through old-growth forest paralleling Barclay Creek. After only about 0.3–0.5 mile, a few hundred feet past the log bridge that crosses …",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_index_north_norwegian_buttress",
+    "name": "North Norwegian Buttress",
+    "peak": "North Norwegian Buttress",
+    "area_id": "wa_north_norwegian_buttress",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 5527,
+    "overview": "The North Norwegian Buttress is a striking, roughly 2,000-foot buttress on Mount Index's northwest aspect, plainly visible from busy US 2 above Lake Serene, separated from the smaller South Norwegian Buttress by a deep cleft between the Main and Middle summits. Despite its prominence it saw little t…",
+    "approach": "From the Lake Serene Trailhead (~600 ft) off Mount Index Road, follow the maintained Lake Serene Trail — roughly 3.6-4.1 miles (accounts vary slightly) and about 2,000 ft of gain, passing the Bridal Veil Falls spur around mile 1.6 and switchbacking up to Lake Serene (~2,600 ft). At the lake, leave t…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_index_north_peak_traverse",
+    "name": "Main Peak via North Approach",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_2",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "high_point_ft": 5991,
+    "overview": "Mount Index is the dramatic, three-summited massif (North, Middle, and Main peaks) towering above the town of Index and the Skykomish valley, one of the most photographed peaks on the US-2 corridor. This route follows the historic North Face line up the North Peak (5,357 ft) — a broad, right-slantin…",
+    "approach": "Start at the Lake Serene Trailhead (~600 ft) off Mount Index Road and follow the maintained Lake Serene Trail roughly 4.1 miles and about 2,000 ft of gain — passing the Bridal Veil Falls viewpoint spur around mile 1.6 — up to Lake Serene itself (~2,600 ft). At the lake, leave the maintained trail an…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_index_northeast_buttress",
+    "name": "Northeast Buttress",
+    "peak": "North Peak",
+    "area_id": "wa_north_peak_2",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": null,
+    "overview": "Alpine rock climbing on the northeast-facing aspect of Mount Index, featuring Class 4-5 scrambling and mixed rock pitches on primarily solid granite.",
+    "approach": "From US-2 at Milepost 35.2, drive south on Mount Index Road 0.3 miles to Lake Serene trailhead (600 ft). Hike Lake Serene trail 3.6 miles to the lake (2,000 ft gain, 1.5-2 hours). Traverse the lake and approach the northeast-facing slopes from the east side. Route-finding to the base requires good t…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_persis_the_hexorcist",
+    "name": "The Hexorcist",
+    "peak": "Mount Persis",
+    "area_id": "wa_mount_persis",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5464,
+    "overview": "A difficult, multi-pitch technical alpine rock climb up Mount Persis's sheer north face, established by prolific North Cascades first-ascentionist Bryan Burdo.",
+    "approach": "No maintained trail reaches the north face. Parties generally leave the West Ridge boot path or approach cross-country from the Anderson Creek drainage / FR 6220 area, bushwhacking through steep second-growth and old-growth timber to gain the base of the wall; expect substantial off-trail forest tra…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_persis_west_ridge",
+    "name": "West Ridge",
+    "peak": "Mount Persis",
+    "area_id": "wa_mount_persis",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 5464,
+    "overview": "The standard, non-technical route to Mount Persis's summit: a steep boot path that gains the peak's west ridge from Forest Road 62 and follows it east, past Point 5017 (NW Persis) and two small ponds, to the true summit.",
+    "approach": "From US Highway 2 near Index, turn onto Forest Road 62 (also called No Name Creek Road / Proctor Creek Road / Cavanaugh Lake Road). Follow FR-62 about 3.4-3.5 miles to the first junction (~1,600-1,650 ft) and bear left. Continue about 1 mile to a second junction (~2,380 ft) and bear left again. Driv…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_philadelphia_mountain_scramble",
+    "name": "Standard Scramble",
+    "peak": "Philadelphia Mountain",
+    "area_id": "wa_philadelphia_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 4258,
+    "overview": "Philadelphia Mountain is a forested, seldom-climbed 4,258 ft summit rising above Lake Serene and Bridal Veil Falls in the Mt. Baker-Snoqualmie National Forest near Index, WA, on the US 2 corridor. It shares its approach with one of the most popular day hikes in the Skykomish valley — the Lake Serene…",
+    "approach": "Park at the Lake Serene Trailhead (from Hwy 2 ~21 mi east of Monroe, turn onto FR 6020, then FR 6020-109; Northwest Forest Pass required, two outhouses at the lot) and start up Lake Serene Trail #1068, a well-graded, heavily-used maintained trail through second-growth forest. At roughly 1.6 miles a …",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_traverse_of_mount_index",
+    "name": "Traverse of Mount Index",
+    "peak": "Main Peak",
+    "area_id": "wa_main_peak_2",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "high_point_ft": 5991,
+    "overview": "The first recorded traverse of all three summits of Mount Index (North, Middle, and Main peaks), linking them via exposed scrambles and rock climbing along the skyline. Classic alpine route first done in 1950 by Schoening and Beckey, now completed by modern parties in one night.",
+    "approach": "From the Lake Serene Trailhead, follow the maintained Lake Serene Trail #1068 roughly 4 miles and about 2,000 ft of gain to the lake basin. Traverse around the west side of the lake over talus and boulders to its south end, then climb steep brush and a gully system (snow-covered into early summer) t…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   },
+   {
+    "id": "wa_vanishing_point",
+    "name": "Vanishing Point",
+    "peak": "Dolomite Tower",
+    "area_id": "wa_dolomite_tower",
+    "discipline": "alpine",
+    "grade": "5.12b",
+    "high_point_ft": 5708,
+    "overview": "A nearly 1,500-foot overhanging prow of very sustained alpine climbing at 5.11+/5.12, featuring multiple roof systems, technical arete climbing, and serious exposure throughout. One of the most demanding alpine climbs in the Cascades.",
+    "approach": "Start at Barclay Lake trailhead (74920 NE Stevens Pass Hwy, Skykomish, WA 98288). Follow the pleasant level main trail for about 20 minutes to a bridge crossing a large creek (~1 mile). Before the bridge, break right into forest around a large boulder, then walk through relatively open forest or alo…",
+    "camps": [
+     {
+      "name": "Barclay Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2420,
+      "notes": "This is the one genuinely established camp in the zone and the obvious base for the Barclay Creek peaks. It sits at 2,420 ft in a narrow trench with Baring Mountain's north face rising straight out of the south shore and…"
+     },
+     {
+      "name": "Eagle Lake and the old cabin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3900,
+      "notes": "The high camp for the north side of the Barclay Creek trench, at about 3,900 ft. Two ways in, and they are very different. From the east end of Barclay Lake a steep, rough, unmaintained two miles climbs directly to it — …"
+     },
+     {
+      "name": "Lake Serene basin and the talus under the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 2520,
+      "notes": "This is the honest awkward centre of the zone. Everything on Mount Index — the Main Peak's north approach, the Hourglass Gully in winter, the North Peak's Northeast Buttress, and the whole Jotunheim cirque with the Norwe…"
+     },
+     {
+      "name": "On-wall ledges, Jotunheim and the Norwegian Buttresses",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "These are the only walls in this zone big enough that a party sleeps on them. The Jotunheim cirque holds the North and South Norwegian Buttresses, separated by a deep cleft, and the long free lines up the north buttress …"
+     },
+     {
+      "name": "Middle Peak crest bivouac, Mount Index traverse",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The traverse of Mount Index's three peaks is the one objective in this zone that is genuinely an overnight rather than a long day, and this is where parties sleep. The line links South, Middle and North Peaks along a cre…"
+     },
+     {
+      "name": "Money Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 880,
+      "notes": "The nearest drive-in campground to the middle of this zone, on the old highway loop south of US 2 at about milepost 46, roughly three miles west of Skykomish and low down at 880 ft in old growth on the river. It sits alm…"
+     },
+     {
+      "name": "Beckler River Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6…"
+     },
+     {
+      "name": "Troublesome Creek Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "Listed here because it is the classic answer to where to sleep near Index, and because that answer is currently wrong. It sits about eleven miles up the Index-Galena Road from US 2 at roughly 1,200 ft on the North Fork S…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "snoqualmie",
+  "routes": [
+   {
+    "id": "wa_chair_bryant_traverse",
+    "name": "Chair-Bryant Traverse",
+    "peak": "Chair Peak",
+    "area_id": "wa_chair_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": null,
+    "overview": "An alpine ridge linkup that starts on Chair Peak's north ridge and follows the crest toward Bryant Peak, with parties often extending the traverse further to The Tooth or even Denny Mountain for a longer high-route day.",
+    "approach": "Begins on Chair Peak's north ridge, reached via the East Face/Northeast Buttress approach (Alpental parking, Snow Lake Trail, Source Lake fork, then a gully to roughly 4,800 ft and the basin below), then continues along the crest over/past Bryant Peak.",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chair_peak_east_face",
+    "name": "East Face",
+    "peak": "Chair Peak",
+    "area_id": "wa_chair_peak",
+    "discipline": "alpine",
+    "grade": "5.2",
+    "high_point_ft": 6238,
+    "overview": "A moderate 3rd-to-low-5th-class rock line directly up the east face to the summit, one of the more accessible summer scrambling/climbing routes on the peak, with a well-known overhanging band crux.",
+    "approach": "From the Alpental parking lot, take the Snow Lake Trail; at about 1.5 miles turn off toward Source Lake. Ascend a 3rd-class rocky gully starting around 4,200 ft, reach a small cliff around 4,800 ft, traverse through a notch, then cross a snowy basin to the base of the route around 5,500 ft.",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chair_peak_north_face",
+    "name": "North Face",
+    "peak": "Chair Peak",
+    "area_id": "wa_chair_peak",
+    "discipline": "alpine",
+    "grade": "III",
+    "high_point_ft": 6238,
+    "overview": "Chair Peak's North Face is one of Washington's most popular winter alpine ice-and-mixed classics, easily reached from Snoqualmie Pass. A moderate face of snow, ice, and mixed steps gives a superb, accessible introduction to winter alpine climbing when conditions are right.",
+    "approach": "Park at the upper Alpental parking lot (end of Alpental Road, shared with the Snow Lake / Source Lake trailhead). Pick up the maintained Alpental Valley trail, which runs along and above the South Fork Snoqualmie River on the old ski-area service road/cat track for about the first 0.5 mile before na…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chair_peak_northeast_buttress",
+    "name": "Northeast Buttress",
+    "peak": "Chair Peak",
+    "area_id": "wa_chair_peak",
+    "discipline": "alpine",
+    "grade": "Class 5.6",
+    "high_point_ft": 6238,
+    "overview": "Chair Peak is the iconic chair-shaped summit at the head of the Alpental valley, one of the most recognizable peaks above Snoqualmie Pass. The northeast buttress is a classic moderate alpine rock climb, while the peak is equally famous as a winter mountaineering objective.",
+    "approach": "From the upper Alpental parking lot (I-90 Exit 52, end of Alpental Road), follow the Alpental Valley/Source Lake trail: the first 0.5 mile follows the old ski-area cat track, then it becomes a standard trail climbing gently through forest for about 0.75 mile to Source Lake (roughly 1.25-1.75 miles a…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_chair_peak_northwest_ridge",
+    "name": "Northwest Ridge",
+    "peak": "Chair Peak",
+    "area_id": "wa_chair_peak",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 6238,
+    "overview": "A longer, sustained 5.7 ridge climb on Chair Peak, following the crest over false summits with a mix of solid and notably loose rock — the longest documented rock route on the peak by pitch count.",
+    "approach": "Follow the East Face approach to the 'Thumbtack Rock' landmark, then head right up a grassy gully over the ridge toward the start of the Northwest Ridge.",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_guye_peak_improbable_traverse",
+    "name": "Improbable Traverse",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": "5.8 R",
+    "high_point_ft": 5168,
+    "overview": "A technical alpine rock climb on Guye Peak's prominent west face offering a classic 5.8 traverse pitch with stellar views from Interstate 90. Once popular, the route was heavily damaged by rockfall in November 2021; current conditions are marginal and downclimbing on the traverse is now required.",
+    "approach": "From Alpental Ski Area parking lot (3,120 ft), walk through residential area on Ober Strasse Road to talus cone base beneath west face (note: as of 2021, private road access is contested; climbers must use new non-established approach avoiding Alpental Community Club private roads). Approach time ~3…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_guye_peak_r1",
+    "name": "West Face",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": "Grade II-III alpine rock",
+    "high_point_ft": 5169,
+    "overview": "Guye Peak's steep, sun-exposed West Face rises directly above the Alpental valley and is one of the most visible alpine rock walls from I-90 at Snoqualmie Pass. It holds several moderate multi-pitch lines on generally featured but often dirty and loose Cascade rock, following discontinuous ramp and …",
+    "approach": "From the Alpental/Snow Lake trailhead (~3,100-3,120 ft, I-90 Exit 52), pick up the unsigned climbers' path that leaves the pavement about 100 ft south of the signed Snow Lake trailhead sign. It fords a small stream almost immediately, then climbs steeply — dirt, roots, loose talus — straight up Guye…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_guye_peak_r2",
+    "name": "North Route (\"Hidden Ridge\" variation)",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": "Class 3-4 scramble (NCCS Grade I, optional 5.4 rappel/toprope variation)",
+    "high_point_ft": 5168,
+    "overview": "The north side of Guye Peak is reached via the separate Cave Ridge Trail rather than the West Face talus approach, and is best known as the 'North Route' — a class 3-4 scramble to the north summit that is also run as a scrambling-course objective, not a sustained roped rock climb. A short optional '…",
+    "approach": "The documented north-side line to Guye Peak leaves from the Alpental/Snow Lake trailhead (~3,080-3,120 ft) via the separate, signed Cave Ridge/Snoqualmie Mountain boot path, which splits off about 100 ft south of the Snow Lake Trail sign — this is a different trailhead path than the West Face/Improb…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_guye_peak_southeast_gully",
+    "name": "Southeast Gully",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": null,
+    "high_point_ft": 5168,
+    "overview": "A 1,400-foot snow gully on Guye's southeast side that starts at a mellow 45 degrees and steepens steadily to about 70 degrees before topping out on the ridge between the true and false summits.",
+    "approach": "Start from the Pacific Crest Trail North (Snoqualmie Pass North) trailhead at about 47.4284, -121.4155, just off I-90 exit 52. Follow the old Commonwealth Basin trail north for approximately 1.4 miles, until Guye Peak lies directly west or northwest of you. From there head straight upslope - the gul…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_snoqualmie_mountain_standard_route",
+    "name": "Standard Route (Southwest Slopes)",
+    "peak": "Snoqualmie Mountain",
+    "area_id": "wa_snoqualmie_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6278,
+    "overview": "Snoqualmie Mountain is the highest summit rising directly above the Alpental ski area at Snoqualmie Pass, one of the most-climbed scrambles near Seattle for its short approach and big views of Chair Peak, The Tooth, and Guye Peak across the valley. The peak actually has two summits about 550 ft apar…",
+    "approach": "Park in the Alpental lot at the end of Alpental Rd (NW Forest Pass required at the trailhead kiosk). Walk toward the signed Snow Lake trailhead, but instead of taking that trail, look for an unsigned boot path/old roadbed about 50 ft downhill (south) of the Snow Lake trailhead sign, dropping into a …",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_gully_south_spur",
+    "name": "South Gully/South Spur",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": "Easy 5th",
+    "high_point_ft": 5168,
+    "overview": "Alpine gully route up Guye Peak's south side: climbs a chockstone-choked gully, then exits onto the South Spur for the final push to the summit. Popular moderate objective near Snoqualmie Pass, climbed as a summer/fall scramble and, under snow, in winter.",
+    "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road. For the south-face/rock routes, the crag rises directly above the parking area with essentially …",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_rib",
+    "name": "South Rib",
+    "peak": "Guye Peak",
+    "area_id": "wa_guye_peak",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 5168,
+    "overview": "Ascends Guye Peak's prominent, south-facing rib in five pitches of easy 5th-class rock and 3rd/4th-class scrambling, gradually easing toward the summit block.",
+    "approach": "From I-90 Exit 52, follow Alpental Road up to the ski area and park along Erste Strasse near the base chalets, taking care to respect posted no-parking signs on the private-property sections of the road. For the south-face/rock routes, the crag rises directly above the parking area with essentially …",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_southwest_face",
+    "name": "Southwest Face",
+    "peak": "The Tooth",
+    "area_id": "wa_the_tooth",
+    "discipline": "alpine",
+    "grade": "5.5",
+    "high_point_ft": 5606,
+    "overview": "A quieter four-pitch alternative to the crowded South Face, climbing open-book corners and a left-facing slab up the path of least resistance between the South Face and the Tooth Fairy.",
+    "approach": "From Alpental parking (~3,100 ft) off I-90 Exit 52, take the Snow Lake Trail about 1.5 miles, fork toward Source Lake, cross talus, and climb the steep gully to Pineapple Pass. This route takes the standard Tooth approach but breaks off north of the Pineapple Pass gully rather than continuing to the…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_tooth_fairy",
+    "name": "The Tooth Fairy",
+    "peak": "The Tooth",
+    "area_id": "wa_the_tooth",
+    "discipline": "alpine",
+    "grade": "5.9",
+    "high_point_ft": 5606,
+    "overview": "A well-bolted, seven-pitch (six roped pitches plus a short summit scramble) sport line up The Tooth's west-facing wall, with two sustained 5.9 crux pitches and views of Rainier during the climb and Glacier, Baker, and Stuart from the top.",
+    "approach": "Same Alpental to Snow Lake Trail to Source Lake fork to Pineapple Pass approach as the standard Tooth routes (~3,100 ft trailhead); near the top, continue left past the Southwest Face to a bolted line on the west-facing wall. Early season, a moat between snow and rock may require extra scrambling to…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_tooth_r1",
+    "name": "Northeast Slabs",
+    "peak": "The Tooth",
+    "area_id": "wa_the_tooth",
+    "discipline": "alpine",
+    "grade": "WI3, low 5th",
+    "high_point_ft": 5606,
+    "overview": "This is the peak's documented winter/spring mixed line on the northeast side, generally referred to as the Northeast Slab (the name 'Catscratch Couloir' is not established for The Tooth, and does not appear in any coverage of this peak). It's a roughly 5-6 pitch snow/neve/ice/rock route close to the…",
+    "approach": "Start at the Alpental Ski Area parking lot (~3,100 ft; I-90 Exit 52, north on Alpental Rd). Follow the Snow Lake Trail north into the valley on climber's-left of the outlet creek. In summer, stay on the maintained tread about 1.8-2 miles to the signed Source Lake Trail junction (~4,100 ft); in winte…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_tooth_south_face",
+    "name": "South Face (Standard)",
+    "peak": "The Tooth",
+    "area_id": "wa_the_tooth",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 5606,
+    "overview": "The Tooth is a fin-like andesite pinnacle above Source Lake, one of the most popular alpine rock objectives in Washington. Its South Face was first climbed in 1928 by Lloyd Anderson (who later co-founded REI) and Herman Wunderling, and remains a classic entry-level multi-pitch alpine rock route than…",
+    "approach": "From the Alpental (Snow Lake) trailhead at the end of Alpental Road (~3,100–3,250 ft), follow the Snow Lake Trail (Trail #1013) north for about 2 miles, climbing steadily through forest to roughly 4,100 ft, where a small signed junction splits the Source Lake fork from the Snow Lake fork (bear towar…",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   },
+   {
+    "id": "wa_tooth_chair_traverse",
+    "name": "Tooth - Chair Traverse",
+    "peak": "The Tooth",
+    "area_id": "wa_the_tooth",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 6238,
+    "overview": "A long ridge-crest linkup that continues past The Tooth's summit along the connecting ridge — over or past Bryant Peak — to finish atop Chair Peak, staying on or near the crest for nearly its full length.",
+    "approach": "Begin via any Tooth route (historically the South Face) from the Alpental/Source Lake approach (~3,100 ft trailhead), then follow the crest toward Chair Peak: a short forested walking section right after the Tooth, exposed 4th/low-5th-class ridge travel, and a mandatory rappel off Bryant.",
+    "camps": [
+     {
+      "name": "Source Lake basin, Alpental valley",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 3780,
+      "notes": "The honest finding for this zone is that all three peaks are day climbs from the Alpental lot at about 3,100 ft, and almost nobody camps for them — a full car-to-car day on Chair Peak's Northeast Buttress runs 10-12 hour…"
+     },
+     {
+      "name": "Snow Lake designated campsites",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4020,
+      "notes": "The busiest destination in the Alpine Lakes Wilderness, and a lake basin rather than a climbers' camp, so expect company. It sits north of the divide from the Alpental valley, which means using it as a base for Chair Pea…"
+     },
+     {
+      "name": "Chair Peak basin snow camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "Parties climbing Chair Peak's north face or Northeast Buttress in winter sometimes carry up and camp in the basin near the Thumb Tack, which removes the last stretch of approach from a long summit day. Whether that is a …"
+     },
+     {
+      "name": "Denny Creek Campground, I-90 exit 47",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2283,
+      "notes": "The nearest developed campground to the Alpental trailhead, roughly a twenty-minute drive back down I-90 and then three miles up the Denny Creek road. The sensible answer for a party arriving late the night before a Toot…"
+     },
+     {
+      "name": "Tinkham Campground, I-90 exit 42",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1535,
+      "notes": "Further down the valley than Denny Creek, about 1.5 miles in on Forest Road 55 from exit 42, and the usual fallback when Denny Creek is booked out. The extra driving costs perhaps fifteen minutes on the approach next mor…"
+     }
+    ]
+   }
+  ]
+ }
+]

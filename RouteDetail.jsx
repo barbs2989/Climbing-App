@@ -1379,12 +1379,25 @@ export function campingGate(route){
   return ["alpine","mountaineering","scrambling","ice","mixed"].includes(catOf(route))||climbsAPeak(route);
 }
 function campSites(route){
-  const bivy=Array.isArray(route.bivy)?route.bivy:[];
+  /* role "hidden" is a STUB naming a Campsite PIN that does not belong in this route's list (another
+     approach's camp, or a second pin for a place already listed). The pin stays on the map; only the
+     camping list skips it. It lives in `bivy`, not on the pin, because the waypoint editor rebuilds
+     every pin from a fixed key list and would wipe a flag the next time anybody edited a waypoint. */
+  const _all=Array.isArray(route.bivy)?route.bivy:[];
+  const _hk=v=>String((v==null?"":v)).trim().toLowerCase();
+  const hidden=new Set(_all.filter(b=>b&&String(b.role||"").toLowerCase()==="hidden").map(b=>_hk(b.name)));
+  const bivy=_all.filter(b=>!(b&&String(b.role||"").toLowerCase()==="hidden"));
   const thFt=trailheadFt(route);
   const gainOf=function(ft){return (ft==null||thFt==null)?null:ft-thFt;};
   const key=v=>String((v==null?"":v)).trim().toLowerCase();
   const seen=new Set(bivy.map(b=>key(b&&b.name)).filter(Boolean));
-  const wps=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite")&&!seen.has(key(w&&w.name)));
+  const wpAll=(Array.isArray(route.waypoints)?route.waypoints:[]).filter(w=>wpIs(w,"Campsite"));
+  const wps=wpAll.filter(w=>!seen.has(key(w&&w.name))&&!hidden.has(key(w&&w.name)));
+  /* A researched site and a Campsite PIN with the same name are one place, and the pin is the half
+     that knows how far up the trail it is (92% of pins carry a distance, 0 of the bivy store do).
+     The pin used to be DROPPED on a name match, taking its distance with it; now the site keeps
+     the researched prose and borrows the pin's distance and its "on the track" chip. */
+  const pinOf=function(b){const k=key(b&&b.name);return k?wpAll.find(w=>key(w&&w.name)===k)||null:null;};
   /* AND THE SAME TEST THE WAYPOINT LIST APPLIES TO A LEG, applied to the whole walk in. A camp's
      `distMi` is cumulative from the trailhead, so it cannot be less than the straight line from
      the trailhead PIN either — and 35 of the 412 distances this panel prints are.
@@ -1407,8 +1420,15 @@ function campSites(route){
      carry the same two conventions the bivy store does, so reading one spelling silently rendered
      no elevation for the sites that use the other — and an elevation missing is also a GAIN
      missing, so the defect compounds now rather than merely showing one blank. */
-  return bivy.map(b=>({name:b&&b.name,elev:campElevFt(b),gainFt:gainOf(campElevFt(b)),distMi:null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:false}))
-    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true})));
+  /* `role` says what the site is FOR on this route: "main" = where a typical party on this route
+     sleeps, "route" = on the route's own line, kept for a slow party, weather or an emergency.
+     Researched per route (enrichment-wip/camping-roles), because one corridor-wide list had been
+     handed to every route in it — 799 routes shared 174 lists, up to 16 camps each. A Campsite
+     pin is on the route's own track by definition, so an unmatched pin is "route". A site with no
+     role (a contribution from before the field existed) is null and renders under OTHER SITES. */
+  const ROLE={main:"main",route:"route"};
+  return bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()])};})
+    .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route"})));
 }
 /* CAPACITY, WATER and PERMIT are PROSE, and they used to render as CHIPS. Measured on the live
    catalog: median 130 / 136 / 297 characters, up to 1,386 — so 5,001 / 5,008 / 5,020 of 5,083
@@ -1493,7 +1513,47 @@ function CampingPanel({route,onEdit}){
         4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
         that are not there. Claim it only when at least one site actually is on the track. */}
     <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
-    {sites.map((b,i)=><CampSite key={i} b={b} i={i}/>)}
+    <OvernightPermit route={route}/>
+    {campGroups(sites).map(function(g){return <div key={g.key} style={{marginTop:g.title?4:0}}>
+      {g.title?<div style={{marginBottom:7}}><div style={{fontSize:11,fontWeight:700,color:C.text,letterSpacing:0.5}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
+      {g.sites.map(function(s){return <CampSite key={s.i} b={s.b} i={s.i}/>;})}
+    </div>;})}
+  </div>;
+}
+/* MAIN CAMPS first, then ON THE ROUTE, then anything unsorted. Grouping only happens once at least
+   one site carries a researched role; a route whose list was never sorted renders exactly the flat
+   list it always did, rather than filing every site under OTHER SITES. Order WITHIN a group is the
+   stored order — the research wrote main camps most-used first and on-route sites in the order you
+   reach them, and a sort would undo both. Exported so check:camping can ask it directly. */
+export function campGroups(sites){
+  const all=(sites||[]).map(function(b,i){return {b:b,i:i};});
+  if(!all.some(function(s){return s.b&&s.b.sorted;}))return [{key:"all",title:null,blurb:null,sites:all}];
+  return [
+    {key:"main",title:"MAIN CAMPS",blurb:"Where most parties on this route sleep.",sites:all.filter(function(s){return s.b.role==="main";})},
+    {key:"route",title:"ON THE ROUTE",blurb:"Further sites on the route's own line — for a slow day, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role==="route";})},
+    {key:"other",title:"OTHER SITES",blurb:"Added by climbers and not yet sorted.",sites:all.filter(function(s){return !s.b.role;})}
+  ].filter(function(g){return g.sites.length;});
+}
+/* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
+   DAY question on most rows ("None required for day climbing"), each site's own `permit` prose says
+   which permit without saying where to get it, and the ACCESS panel links only four agencies by a
+   name match. `access.overnight_permit` = {what, where, url} is researched per zone; `url` is the
+   issuing agency's own page and nothing else (check-camp-role-output.mjs enforces the host). */
+export function overnightPermitOf(route){
+  const p=route&&route.access&&route.access.overnight_permit;
+  if(!p||typeof p!=="object")return null;
+  const what=String(p.what||"").trim(),where=String(p.where||"").trim();
+  let url=null;try{const u=new URL(String(p.url||""));if(u.protocol==="https:")url=u.href;}catch(e){url=null;}
+  return (what||where)?{what:what,where:where,url:url}:null;
+}
+function OvernightPermit({route}){
+  const p=overnightPermitOf(route);
+  if(!p)return null;
+  return <div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"9px 11px",marginBottom:10}}>
+    <div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,letterSpacing:0.5,marginBottom:3}}>{"OVERNIGHT PERMIT"}</div>
+    {p.what?<div style={{fontSize:12.5,fontWeight:700,color:C.text,lineHeight:1.45}}>{p.what}</div>:null}
+    {p.where?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55,marginTop:3}}>{p.where}</div>:null}
+    {p.url?<a href={p.url} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:8,padding:"8px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{"Get the permit →"}</a>:null}
   </div>;
 }
 export function PitchComments({targetId,comments,commentsUnavailable,onAdd}){
@@ -2591,9 +2651,10 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
   const blankSec=function(){return {label:"",cls:"",notes:""};};
   const MAX_VAR=8;
   const blankVar=function(){return {name:"",season:"",distMi:"",gainFt:"",hours:"",notes:"",hazards:""};};
-  const blankBivy=function(){return {name:"",type:"camp",elev:"",capacity:"",water:"",permit:"",notes:""};};
-  const routeBivy=(Array.isArray(route.bivy)&&route.bivy.length)
-    ? route.bivy.map(function(b){return {name:b.name||"",type:b.type||"camp",elev:b.elev!=null?String(b.elev):(b.elevM!=null?String(Math.round(b.elevM*3.28084)):""),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||""};})
+  const blankBivy=function(){return {name:"",type:"camp",role:"",elev:"",capacity:"",water:"",permit:"",notes:""};};
+  const _bivyShown=(Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return !(b&&b.role==="hidden");});
+  const routeBivy=_bivyShown.length
+    ? _bivyShown.map(function(b){return {name:b.name||"",type:b.type||"camp",role:b.role||"",elev:b.elev!=null?String(b.elev):(b.elevM!=null?String(Math.round(b.elevM*3.28084)):""),capacity:b.capacity||"",water:b.water||"",permit:b.permit||"",notes:b.notes||""};})
     :[blankBivy()];
   const bivies=vals.bivy||routeBivy;
   const setBivies=function(fn){setVals(function(v){return Object.assign({},v,{bivy:fn(v.bivy||routeBivy)});});};
@@ -2774,6 +2835,9 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
         <select aria-label={"Site "+(idx+1)+" type"} value={b.type} onChange={function(e){setBivy(idx,"type",e.target.value);}} style={Object.assign({},fld,{flex:1,marginBottom:0})}>
           <option value="camp">{"Camp"}</option><option value="bivy">{"Bivy"}</option><option value="hut">{"Hut"}</option>
         </select>
+        <select aria-label={"Site "+(idx+1)+" role"} value={b.role||""} onChange={function(e){setBivy(idx,"role",e.target.value);}} style={Object.assign({},fld,{flex:1,marginBottom:0})}>
+          <option value="">{"Not sure"}</option><option value="main">{"Main camp"}</option><option value="route">{"On the route"}</option>
+        </select>
         <input aria-label={"Site "+(idx+1)+" elevation"} inputMode="numeric" value={b.elev} onChange={function(e){setBivy(idx,"elev",e.target.value);}} placeholder={uImp()?"Elevation (ft)":"Elevation (m)"} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>
       <input aria-label={"Site "+(idx+1)+" water"} value={b.water} onChange={function(e){setBivy(idx,"water",e.target.value);}} placeholder="Water — is there any, and is it reliable?" style={fld}/>
@@ -2830,8 +2894,10 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
      Only `elevM` is never written here — the read side converts the legacy spelling, and the
      write side should not add to it. */
   var _e=String(b.elev||"").trim();var _n=_e?parseInt(_e,10):null;
-  return {name:String(b.name).trim(),type:b.type||"camp",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
-});if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_dget(_src,k[0]);if(v==null)return;v=String(v).trim();if(!v)return;
+  return {name:String(b.name).trim(),type:b.type||"camp",role:(b.role==="main"||b.role==="route")?b.role:"",elev:(_n!=null&&!isNaN(_n))?(uImp()?_n:Math.round(_n*3.28084)):null,capacity:(b.capacity||"").trim(),water:(b.water||"").trim(),permit:(b.permit||"").trim(),notes:(b.notes||"").trim()};
+/* The form never shows the role:"hidden" stubs (they name Campsite PINS the camping list skips), so
+   they are carried through untouched — otherwise one climber's edit would bring every hidden pin back. */
+}).concat((Array.isArray(route.bivy)?route.bivy:[]).filter(function(b){return b&&b.role==="hidden"&&b.name;}).map(function(b){return {name:b.name,role:"hidden"};}));if(OBJ_KEYS[f.type]){var _ks=OBJ_KEYS[f.type],_src=vals[f.k]||{},_o={};_ks.forEach(function(k){var v=_dget(_src,k[0]);if(v==null)return;v=String(v).trim();if(!v)return;
 /* A key marked numeric merges back as a NUMBER. The hour fields are arithmetic — the planner
    derives the summit time as totalHrs-approachTimeHrs-descentTimeHrs — so a string would
    concatenate instead of subtract, silently. Non-numeric input is dropped rather than stored

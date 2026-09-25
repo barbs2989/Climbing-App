@@ -1,0 +1,341 @@
+{
+  "zones": [
+    {
+      "zone": "elwha-quinault",
+      "overnightPermit": {
+        "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+        "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas.",
+        "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_andersons_thumb_standard",
+      "main": [
+        "Anderson Tarn high camp"
+      ],
+      "onRoute": [
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range"
+      ],
+      "add": [
+        {
+          "name": "Honeymoon Meadows",
+          "type": "camp",
+          "elev": 3527,
+          "capacity": "Several established tent sites",
+          "water": "West Fork Dosewallips River and side streams",
+          "permit": "Olympic National Park wilderness permit required",
+          "notes": "Established camp on the West Fork Dosewallips trail about 8 miles past the old ranger station, below Anderson Pass. The usual base for the Anderson Glacier side of the massif.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Approach given is the Dosewallips side, so Honeymoon Meadows (missing) is added as the usual base and Anderson Tarn kept for faster parties; the Enchanted Valley entry is kept onRoute only for its Anderson Pass half, and Graves Creek drops as the other valley."
+    },
+    {
+      "id": "wa_mount_barnes_scramble",
+      "main": [
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones"
+      ],
+      "onRoute": [
+        "Upper Ferry Basin / Ferry Glacial Lake",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Barnes is climbed from the basin north of Dodwell-Rixon Pass or from the Elwha Basin side; Ferry Basin is on the northern traverse line and the Elwha trail camps on the southern one, so onRoute mixes two approaches."
+    },
+    {
+      "id": "wa_mount_christie_west",
+      "main": [
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+      ],
+      "onRoute": [
+        "Wolf Bar",
+        "Halfway House Camp",
+        "Trapper Shelter"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "North Fork Quinault approach to Low Divide, climbed via Martins Park; Elwha camps dropped because this route's approach is the Quinault side; Trapper Shelter is emergency-only."
+    },
+    {
+      "id": "wa_mount_dana_scramble",
+      "main": [
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb",
+        "Mary's Falls Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Least certain of the batch: no clear record of Dana's standard camp; the upper Elwha / Bailey Range bivies and Chicago Camp are the reasonable bases; Dodger Point might serve a ridge approach but is unconfirmed; Mary's Falls Camp dropped as a duplicate of the Lillian/Mary's entry."
+    },
+    {
+      "id": "wa_mount_ferry_standard",
+      "main": [
+        "Ferry Basin"
+      ],
+      "onRoute": [
+        "Deer Lake"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Ferry is climbed from Ferry Basin on the Bailey Range traverse from Sol Duc; all Elwha and Quinault camps are on other approaches."
+    },
+    {
+      "id": "wa_mount_meany_standard",
+      "main": [
+        "Elwha Basin",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Meany is climbed via the Noyes-Meany col from either the Elwha Basin or the Low Divide/Seattle Basin side; the Elwha Basin waypoint overlaps the broader upper-bivy entry, kept onRoute for the Dodwell-Rixon line."
+    },
+    {
+      "id": "wa_mount_norton_scramble",
+      "main": [
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Elkhorn Guard Station"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Norton rises directly above Hayes River; the Elkhorn Guard Station waypoint overlaps the Hayes/Elkhorn entry but is kept onRoute as the earlier stop."
+    },
+    {
+      "id": "wa_mount_noyes_standard",
+      "main": [
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Low Divide is the stated base; the Elwha trail camps are on the northern access; the Noyes-Meany col is also reachable from Elwha Basin but that is not this route's line."
+    },
+    {
+      "id": "wa_mount_pulitzer_standard",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [
+        {
+          "name": "Ferry Basin",
+          "type": "camp",
+          "capacity": "Several tent sites on meadow benches",
+          "water": "Tarns and snowmelt streams",
+          "permit": "Olympic National Park wilderness permit required",
+          "notes": "Meadow basin with tarns below Mount Ferry on the Bailey Range traverse. The usual camp for Pulitzer and Ferry, reached by off-trail travel from High Divide.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Every listed camp is on the Elwha or Quinault side; Pulitzer is climbed from Ferry Basin, added without an elevation because the existing records disagree (5,400 vs 5,700 ft)."
+    },
+    {
+      "id": "wa_mount_queets_south",
+      "main": [
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Queets is reached from Dodwell-Rixon Pass, with camps at the lake just west of the pass or in the upper basin; the Elwha Basin waypoint is the camp below the pass."
+    },
+    {
+      "id": "wa_mount_seattle_noyes_basin",
+      "main": [
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "No approach text; Low Divide is the base for all three Seattle routes; could not confirm which side Noyes Basin is entered from, so Elwha trail camps are kept onRoute tentatively."
+    },
+    {
+      "id": "wa_mount_seattle_seattle_creek",
+      "main": [
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [
+        {
+          "name": "Seattle Meadows",
+          "type": "camp",
+          "elev": 4550,
+          "capacity": "A few tent sites in meadow",
+          "water": "Streams in the upper basin",
+          "permit": "Olympic National Park wilderness permit required",
+          "notes": "High camp in Upper Seattle Basin above Seattle Creek, below the summit's west side. The closest camp to the peak.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Seattle Creek is a Quinault tributary reached from the North Fork Quinault trail, so Elwha camps drop; Seattle Meadows added as the high camp in this basin, listed after Low Divide which is more used."
+    },
+    {
+      "id": "wa_mount_seattle_south",
+      "main": [
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Seattle Meadows"
+      ],
+      "onRoute": [
+        "Three Lakes",
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Low Divide and Seattle Meadows are both used as bases; Three Lakes is on the Skyline corridor and the Elwha camps on the northern corridor; Graves Creek drops because it serves the East Fork, not the North Fork."
+    },
+    {
+      "id": "wa_mount_wilder_scramble",
+      "main": [
+        "Chicago Camp — the last established camp in the upper Elwha"
+      ],
+      "onRoute": [
+        "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton"
+      ],
+      "drop": [
+        "Graves Creek Campground — drive-in staging for the East Fork Quinault",
+        "Elwha Basin, Queets Basin and the upper cross-country bivy zones",
+        "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "Dodger Point Camp — the southern gateway to the Bailey Range",
+        "Enchanted Valley and Anderson Pass — the approach to Anderson's Thumb",
+        "Mary's Falls Camp"
+      ],
+      "add": [],
+      "overnightPermit": null,
+      "note": "Wilder is climbed by its south ridge from the upper Elwha; Chicago Camp is the listed nearest camp but has little water, and Camp Wilder about 4 miles earlier on the trail may be better but was not added; Mary's Falls Camp dropped as a duplicate of the Lillian/Mary's entry."
+    }
+  ],
+  "misassigned": [
+    "wa_mount_pulitzer_standard: every listed camp belongs to the Elwha/Quinault approaches; Pulitzer is reached from Sol Duc via High Divide and climbed from Ferry Basin (added).",
+    "wa_mount_ferry_standard: the eight shared Elwha/Quinault camps serve other approaches; only Ferry Basin and Deer Lake are on its line."
+  ]
+}

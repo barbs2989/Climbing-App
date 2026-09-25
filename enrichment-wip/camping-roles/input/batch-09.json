@@ -1,0 +1,2174 @@
+[
+ {
+  "zone": "horseshoe-basin",
+  "routes": [
+   {
+    "id": "wa_horseshoe_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Horseshoe Peak",
+    "area_id": "wa_horseshoe_peak",
+    "discipline": "alpine",
+    "grade": "Class 3, 5.2",
+    "high_point_ft": 8480,
+    "overview": "Horseshoe Peak (8,480+ ft per the 1963 USGS Cascade Pass quad) is the high point of Ripsaw Ridge, a knife-edge arête connecting Boston Peak to Mt. Buckner, about a quarter-mile west of Buckner's summit, on the Skagit/Chelan county line deep in the Cascade Pass / Sahale Arm high country of North Casc…",
+    "approach": "From the Cascade Pass Trailhead (end of the Cascade River Road — gravel/washboard, high-clearance/AWD recommended), climb the well-graded Cascade Pass Trail switchbacks 3.7 mi and about 1,800 ft to the broad 5,400-ft saddle at Cascade Pass. Two standard lines converge on Horseshoe Peak from here, bo…",
+    "camps": [
+     {
+      "name": "Basin Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3244,
+      "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box a…"
+     },
+     {
+      "name": "Cottonwood Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2776,
+      "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. ACCESS IS…"
+     },
+     {
+      "name": "Pelton Basin Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin w…"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up fro…"
+     },
+     {
+      "name": "Doubtful Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5390,
+      "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass…"
+     },
+     {
+      "name": "Buckner cross-country zone bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading be…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hurry_up_peak_south_ridge",
+    "name": "South Ridge",
+    "peak": "Hurry-Up Peak",
+    "area_id": "wa_hurry_up_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 3-4",
+    "high_point_ft": 7821,
+    "overview": "Hurry-up Peak (7,821 ft) lies on the Skagit-Chelan county line at the northern end of the Ptarmigan Traverse, just south of Cascade Pass and Cache Col, between Magic Mountain and Spider Mountain (its line parent). It is not part of the Sahale-Boston/Horseshoe Basin group on the opposite side of the …",
+    "approach": "Start at the Cascade Pass Trailhead (~3,600 ft) at the end of Cascade River Road (about 23 miles of pavement then gravel from Marblemount; the upper gravel section is gated and typically doesn't open until snow clears, often not until late June/July). From the trailhead, follow the well-graded, heav…",
+    "camps": [
+     {
+      "name": "Basin Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3244,
+      "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box a…"
+     },
+     {
+      "name": "Cottonwood Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2776,
+      "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. ACCESS IS…"
+     },
+     {
+      "name": "Pelton Basin Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin w…"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up fro…"
+     },
+     {
+      "name": "Doubtful Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5390,
+      "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass…"
+     },
+     {
+      "name": "Buckner cross-country zone bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading be…"
+     },
+     {
+      "name": "Kool-Aid Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "From the col drop and traverse south-southeast about a mile over loose rock, heather benches and occasional snowfields to the tarn. It is the only dependable wa…"
+     }
+    ]
+   },
+   {
+    "id": "wa_trapper_mountain_north_couloir",
+    "name": "North Couloir",
+    "peak": "Trapper Mountain",
+    "area_id": "wa_trapper_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7530,
+    "overview": "A prominent north-facing snow/ice couloir splitting Trapper Mountain's summit block above Trapper Lake, climbed on foot and skied/split-boarded as a steep ski-mountaineering descent.",
+    "approach": "From the Cascade Pass Trailhead (end of Cascade River Road, ~23.1 mi from Marblemount), travel via Cascade Pass or the nearby Alliteration Col and descend/traverse east through the Pelton Basin area to Trapper Lake (el. ~4,170 ft), sitting just northeast of Trapper Mountain. From the lake, boot or s…",
+    "camps": [
+     {
+      "name": "Basin Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3244,
+      "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box a…"
+     },
+     {
+      "name": "Cottonwood Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2776,
+      "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. ACCESS IS…"
+     },
+     {
+      "name": "Pelton Basin Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin w…"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up fro…"
+     },
+     {
+      "name": "Doubtful Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5390,
+      "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass…"
+     },
+     {
+      "name": "Buckner cross-country zone bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading be…"
+     }
+    ]
+   },
+   {
+    "id": "wa_trapper_mountain_south_slopes",
+    "name": "South Slopes",
+    "peak": "Trapper Mountain",
+    "area_id": "wa_trapper_mountain",
+    "discipline": "scrambling",
+    "grade": "Grade II, Class 3",
+    "high_point_ft": 7530,
+    "overview": "Trapper Mountain (7,530 ft) rises on the crest of the North Cascades southeast of Cascade Pass, on the shared boundary of North Cascades National Park and the Glacier Peak Wilderness, about 0.7 mile east of Hurry-up Peak (7,821 ft) near the head of the Ptarmigan Traverse country. Runoff from the pea…",
+    "approach": "There is no road access to the Trapper Mountain area — reach Stehekin first via the Lady of the Lake ferry (Lake Chelan Boat Company) or floatplane (Chelan Airways) from Chelan, WA. From Stehekin Landing, take the Stehekin Valley Road (or park shuttle) about 4.5 miles to Harlequin Campground. Figure…",
+    "camps": [
+     {
+      "name": "Basin Creek Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3244,
+      "notes": "The closest designated camp to the Horseshoe Basin trail junction, which sits at about 3,600 ft on the valley trail, so it is the practical base for anything up in the cirque. It has a separate cooking area, a bear box a…"
+     },
+     {
+      "name": "Cottonwood Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2776,
+      "notes": "The eastern gateway to the basin, at the end of what used to be the upper Stehekin Valley road. It has a privy, fire rings, picnic table and bear boxes, though the boxes are set well back from the cooking area. ACCESS IS…"
+     },
+     {
+      "name": "Pelton Basin Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4770,
+      "notes": "Pelton Basin sits about half a mile east of and below Cascade Pass, on the Stehekin side, which makes it the obvious first night for a party coming in over the pass rather than up from the lake. It puts Horseshoe Basin w…"
+     },
+     {
+      "name": "Sahale Glacier Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7400,
+      "notes": "A set of hand-built rock-walled tent platforms at the toe of the glacier, at the top of Sahale Arm. It is high, exposed and above the last dependable water, so late-season parties should plan to melt snow or carry up fro…"
+     },
+     {
+      "name": "Doubtful Lake Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5390,
+      "notes": "Doubtful Lake lies in a cirque below Sahale Arm, reached by a spur that drops off the arm trail. It is the natural middle camp on the Sahale Arm variation of the approach, breaking up a long crossing between Cascade Pass…"
+     },
+     {
+      "name": "Buckner cross-country zone bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The option for climbers who want to sleep on the route rather than at a valley camp — high bivies on moraine, slab or snow under Buckner's north side and the Ripsaw Ridge peaks. Zone rules are strict and worth reading be…"
+     },
+     {
+      "name": "Trapper Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4170,
+      "notes": "Glacial lake fed by meltwater off Hurry-up Peak and Magic Mountain, reached by a steep, poorly-marked fisherman's path/bushwhack up from the Upper Stehekin Rive…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "hozomeen",
+  "routes": [
+   {
+    "id": "wa_hozomeen_mountain_north_peak_north_route",
+    "name": "North Route (North Peak)",
+    "peak": "Hozomeen Mountain",
+    "area_id": "wa_hozomeen_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8071,
+    "overview": "A long, mostly-Class-2-3 line up the North Peak's north ridge that drops into the north cirque, crosses its snowfields and finishes on the northeast ridge - the practical variation for parties starting from the Hozomeen ranger station rather than the Canadian trail system.",
+    "approach": "Drive Silver-Skagit Road from Hope, B.C. to its southern end at Hozomeen (subject to the NPS border-gate closure - verify first). Start at the Hozomeen ranger station, elevation about 1,600 ft, and follow the little Trail of the Obelisk loop. Leave it eastward, cross Howlett Creek, and climb cross-c…",
+    "camps": [
+     {
+      "name": "Hozomeen Campground, north end of Ross Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1650,
+      "notes": "This is the roadhead for every route on the mountain and the only developed camping anywhere near it. It sits in deep forest on flat ground by the lake, with vault toilets, boat ramps and no trash service, so everything …"
+     },
+     {
+      "name": "Hozomeen Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2827,
+      "notes": "Something under four miles in from the campground's upper loop on an established trail, this is the obvious first night for anyone who wants to start the climb from higher than the road. It is a genuinely pleasant forest…"
+     },
+     {
+      "name": "Willow Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2857,
+      "notes": "Roughly two trail miles south of the junction for Hozomeen Lake, on the long north-south trail that runs the entire east shore of Ross Lake. It matters to this peak mainly as an overflow and as the link to the alternativ…"
+     },
+     {
+      "name": "Improvised bivouacs in the western basin between the peaks",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "The mountain is two rock summits above a basin, and the approach to that basin from the lake is the crux of the whole trip for most parties: a slow grind through blowdown and heavy brush with no path, on which fifteen mi…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+    "name": "South Ridge (North Peak)",
+    "peak": "Hozomeen Mountain",
+    "area_id": "wa_hozomeen_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8071,
+    "overview": "One of the North Peak's easier class 3-4 scrambling lines, ascending the ridge toward the South Peak saddle.",
+    "approach": "",
+    "camps": [
+     {
+      "name": "Hozomeen Campground, north end of Ross Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1650,
+      "notes": "This is the roadhead for every route on the mountain and the only developed camping anywhere near it. It sits in deep forest on flat ground by the lake, with vault toilets, boat ramps and no trash service, so everything …"
+     },
+     {
+      "name": "Hozomeen Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2827,
+      "notes": "Something under four miles in from the campground's upper loop on an established trail, this is the obvious first night for anyone who wants to start the climb from higher than the road. It is a genuinely pleasant forest…"
+     },
+     {
+      "name": "Willow Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2857,
+      "notes": "Roughly two trail miles south of the junction for Hozomeen Lake, on the long north-south trail that runs the entire east shore of Ross Lake. It matters to this peak mainly as an overflow and as the link to the alternativ…"
+     },
+     {
+      "name": "Improvised bivouacs in the western basin between the peaks",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "The mountain is two rock summits above a basin, and the approach to that basin from the lake is the crux of the whole trip for most parties: a slow grind through blowdown and heavy brush with no path, on which fifteen mi…"
+     }
+    ]
+   },
+   {
+    "id": "wa_hozomeen_mountain_southeast_face",
+    "name": "Southeast Face (Standard)",
+    "peak": "Hozomeen Mountain",
+    "area_id": "wa_hozomeen_mountain",
+    "discipline": "alpine",
+    "grade": "Class 4 / low 5th",
+    "high_point_ft": 8071,
+    "overview": "Hozomeen Mountain is a dramatic, dark twin-summited peak rising directly from the east shore of Ross Lake near the Canadian border in North Cascades National Park/Ross Lake National Recreation Area. The higher North Peak (~8,071-8,072 ft) and slightly lower South Peak (8,003 ft) are built of Hozomee…",
+    "approach": "Because there is no public road to Hozomeen from the US side, the drive-in (SR-20 to Ross Lake Resort, then the resort's water taxi ~24 miles north up Ross Lake) drops you at the Hozomeen Ranger Station/Campground at the lake's head, around 1,650 ft — treat everything below as the hike from there. F…",
+    "camps": [
+     {
+      "name": "Hozomeen Campground, north end of Ross Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1650,
+      "notes": "This is the roadhead for every route on the mountain and the only developed camping anywhere near it. It sits in deep forest on flat ground by the lake, with vault toilets, boat ramps and no trash service, so everything …"
+     },
+     {
+      "name": "Hozomeen Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2827,
+      "notes": "Something under four miles in from the campground's upper loop on an established trail, this is the obvious first night for anyone who wants to start the climb from higher than the road. It is a genuinely pleasant forest…"
+     },
+     {
+      "name": "Willow Lake camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2857,
+      "notes": "Roughly two trail miles south of the junction for Hozomeen Lake, on the long north-south trail that runs the entire east shore of Ross Lake. It matters to this peak mainly as an overflow and as the link to the alternativ…"
+     },
+     {
+      "name": "Improvised bivouacs in the western basin between the peaks",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 4900,
+      "notes": "The mountain is two rock summits above a basin, and the approach to that basin from the lake is the crux of the whole trip for most parties: a slow grind through blowdown and heavy brush with no path, on which fifteen mi…"
+     },
+     {
+      "name": "6,200-ft saddle below the SE buttress",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "Ridge saddle directly beneath the southeast buttress, used as a bivouac by the 1988 first-ascent party; no reported water — carry up from Willow Lake."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "kangaroo-ridge",
+  "routes": [
+   {
+    "id": "wa_beckey_tate",
+    "name": "Beckey-Tate",
+    "peak": "Big Kangaroo",
+    "area_id": "wa_big_kangaroo",
+    "discipline": "alpine",
+    "grade": "5.9+",
+    "high_point_ft": 8326,
+    "overview": "The Beckey-Tate route climbs Big Kangaroo's south face in six pitches (roughly 900 ft) to 5.9+, established by Fred Beckey and Dan Tate in 1967. It's the classic harder alternative to the moderate West Face/Southwest Rib route on the same peak, moving from low-5th-class ramp climbing through sustain…",
+    "approach": "From the Hairpin Turn pullout on SR-20, follow the cairned climbers' trail south along the west side of Early Winters Creek toward Kangaroo Temple/Wallaby Peak, but stay on the trail (right/west side of the creek) longer than the Southwest Rib/West Face line does — do not cross the creek where that …",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_big_kangaroo_west_face",
+    "name": "West Face / West Route",
+    "peak": "Big Kangaroo",
+    "area_id": "wa_big_kangaroo",
+    "discipline": "alpine",
+    "grade": "Grade II",
+    "high_point_ft": 8326,
+    "overview": "Big Kangaroo (8,326 ft) is the highest tower on Kangaroo Ridge, a jagged line of granite spires rising about two miles east of Washington Pass. This route — known as the West Face or West Route — is the original first-ascent line, climbed by Fred and Helmy Beckey with Walt Varney on June 21, 1942. I…",
+    "approach": "From the Hairpin Turn pullout on SR-20 (about 1 mile east of Washington Pass, near milepost 163), pick up the cairned climbers' trail on the west side of Early Winters Creek — the same start used for Kangaroo Temple and Wallaby Peak. Follow it roughly 0.5-0.7 mile through open timber to where it mee…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_blue_s_buttress",
+    "name": "Blue's Buttress",
+    "peak": "Poster Peak",
+    "area_id": "wa_poster_peak",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7565,
+    "overview": "The leftmost of two prominent northeast buttresses on Poster Peak offering moderate alpine rock climbing with a mix of scrambling and technical pitches. Known for delightful rock quality on the ridge crest and a choose-your-own-adventure feel with manageable grade and short approach.",
+    "approach": "From Seattle, drive I-5 north to Burlington/Sedro-Woolley, then east on SR-20 through Marblemount and over Rainy Pass to Washington Pass; from Winthrop/Mazama it's a quick 20-30 minute drive west on SR-20 instead. Park at the Blue Lake Trailhead (about 5,200 ft, Northwest Forest Pass required), on t…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_clean_break",
+    "name": "Clean Break",
+    "peak": "Juno Tower",
+    "area_id": "wa_juno_tower",
+    "discipline": "alpine",
+    "grade": "5.10b/c",
+    "high_point_ft": 7940,
+    "overview": "Clean Break rises 1,500 feet above the valley floor on the steep east buttress of Juno Tower, taking its name from the immaculate splitter-crack at pitch 1. With 7 of 15 pitches at 5.10 grade, this sustained granite route is regarded as one of the finest long multi-pitch climbs at this grade in Wash…",
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 …",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_ellen_pea",
+    "name": "Ellen Pea",
+    "peak": "M&M wall (AKA \"Supercave Wall\")",
+    "area_id": "wa_m_m_wall_aka_supercave_wall",
+    "discipline": "alpine",
+    "grade": "5.11",
+    "high_point_ft": null,
+    "overview": "The wall's original modern free line: a sustained 7-pitch 5.11c up the right side of M&M Wall, intersecting the huge Supercave feature at mid-height — one of the most popular and (relatively) easiest routes at the crag.",
+    "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass sum…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_first_amendment",
+    "name": "First Amendment",
+    "peak": "Le Petit Cheval",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.11a",
+    "high_point_ft": 6386,
+    "overview": "First Amendment (IV 5.11a, 9 pitches) climbs the northwest/west face of Le Petit Cheval at Washington Pass, established by Chris McNamara and Ian Nicholson in September 2009.",
+    "approach": "From the pullout, an unmarked but well-worn climbers' trail drops steeply from the west/southwest end of the turnout through loose dirt and rock into the trees, marked intermittently by cairns. The path crosses Early Winters Creek (on logs) before climbing into an open rocky drainage/talus below the…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_half_moon_southwest_slopes",
+    "name": "Southwest Slopes / Standard Scramble",
+    "peak": "Half Moon",
+    "area_id": "wa_half_moon",
+    "discipline": "alpine",
+    "grade": "Class 3-4",
+    "high_point_ft": 7960,
+    "overview": "Half Moon is a crescent-shaped granite fin on the north half of Kangaroo Ridge, between Wallaby Peak (0.23 mi south, the peak's higher neighbor) and Big Kangaroo (8,326 ft) to the north. It sits about two miles east of, and in clear view from, the North Cascades Highway at Washington Pass. The rock …",
+    "approach": "Park at the large Hairpin Turn pullout on Highway 20 near milepost 163 (roughly 5,100 ft), just east of Washington Pass — this doubles as the trailhead for Kangaroo Pass. From the east end of the pullout, drop into the woods and pick up the unsigned but well-used climbers' path (no official trail nu…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Kangaro…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_koala_krack",
+    "name": "Koala Krack",
+    "peak": "Kangaroo Temple",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 7572,
+    "overview": "A short, wide diagonal crack on the summit block that links the standard summit-scramble terrain to the bolted rappel station used to descend Kangaroo Temple.",
+    "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, thro…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Kangaro…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_northwest_face_2",
+    "name": "Northwest Face",
+    "peak": "Kangaroo Temple",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.7+",
+    "high_point_ft": 7572,
+    "overview": "A five-pitch, 500-ft line of cracks, chimneys, and a friction slab up Kangaroo Temple's Northwest Face, combining sustained 5.7 climbing with notably sparse protection in places.",
+    "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, thro…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_playing_not_spraying",
+    "name": "Playing Not Spraying",
+    "peak": "Silver Horn, The",
+    "area_id": "wa_silver_horn_the",
+    "discipline": "alpine",
+    "grade": "5.10",
+    "high_point_ft": 8351,
+    "overview": "Playing Not Spraying (5.10, Grade III, 8 pitches, 800 ft) climbs the clean white granite south face of Silver Horn, a rarely-climbed sub-summit of Silver Star Mountain at Washington Pass.",
+    "approach": "The Silver Horn is a subsidiary point on Silver Star Mountain's north ridge among the Wine Spires cluster, sharing the same approach as Burgundy Spire and Silver Star Mountain: talus down to Early Winters Creek, up the timbered rib to the ~6,500 ft basin/camp, then to Burgundy Col (~7,720 ft), from …",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_rampage",
+    "name": "Rampage",
+    "peak": "Paisano Pinnacle",
+    "area_id": "wa_paisano_pinnacle",
+    "discipline": "alpine",
+    "grade": "5.10d",
+    "high_point_ft": 7910,
+    "overview": "Rampage climbs a striking corner system up the right side of Paisano Pinnacle's main wall, delivering sustained, clean 5.10 crack and corner climbing regarded as some of the best hard free climbing at Washington Pass.",
+    "approach": "Follow the shared Wine Spires trail: boot path down talus to Early Winters Creek, cross on a log, then climb steeply up the timbered rib north of Burgundy Creek to the ~6,500 ft basin/camp (roughly 2 hours from the car). Paisano Pinnacle's West Ridge route starts lower than Burgundy Spire's and is c…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and many parties say so plainly: the meadows and the pass take damage quickly and most parties simply do Ka…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face",
+    "name": "South Face",
+    "peak": "Vasiliki Tower",
+    "area_id": "wa_vasiliki_tower",
+    "discipline": "alpine",
+    "grade": "5.6",
+    "high_point_ft": 7663,
+    "overview": "A friendly two-pitch alpine rock route on solid granite offering excellent views and moderate technical climbing with good protection opportunities.",
+    "approach": "From the pullout, find a faint boot path descending loose talus/scree to the east into the trees, passing a trail register, then crossing Early Winters Creek on a log (~4,080 ft). The trail climbs the timbered rib north of Burgundy Creek, steeply gaining elevation to a basin/camp bench around 6,500 …",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     },
+     {
+      "name": "The Ledge Bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Common bivy area partway up to Burgundy Col."
+     }
+    ]
+   },
+   {
+    "id": "wa_south_face_4",
+    "name": "South Face",
+    "peak": "Kangaroo Temple",
+    "area_id": "wa_kangaroo_temple",
+    "discipline": "alpine",
+    "grade": "5.8",
+    "high_point_ft": 7572,
+    "overview": "A seven-pitch, III 5.8 line up Kangaroo Temple's South Face — the longest and most sustained of the peak's moderate routes, with variable rock quality and genuine route-finding challenge.",
+    "approach": "The Temple (Kangaroo Temple, on Kangaroo Ridge) is reached from the large pullout at the hairpin turns on SR-20 just east of Washington Pass — the same parking area used for the neighboring Hairpin Crags/Spire Gully climbs. From the pullout, a climber's trail heads south across a boulder field, thro…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_spontaneity_arete",
+    "name": "Spontaneity Arete",
+    "peak": "Le Petit Cheval",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.7",
+    "high_point_ft": 6386,
+    "overview": "A six-pitch (plus optional 7th) 5.7 alpine rock route climbing the long, prominent arête of Le Petit Cheval; short, well-protected cruxes are broken up by long scrambling sections between pitches, giving it an alpine-adventure feel more than a sustained rock outing.",
+    "approach": "From the pullout, an unmarked but well-worn climbers' trail drops steeply from the west/southwest end of the turnout through loose dirt and rock into the trees, marked intermittently by cairns. The path crosses Early Winters Creek (on logs) before climbing into an open rocky drainage/talus below the…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_spontaneous_distraction",
+    "name": "Spontaneous Distraction",
+    "peak": "Le Petit Cheval",
+    "area_id": "wa_le_petit_cheval",
+    "discipline": "alpine",
+    "grade": "5.10a",
+    "high_point_ft": 6386,
+    "overview": "A four-pitch, partly-bolted 5.10 route beside Spontaneity Arête, combining a couple of well-protected face/crack pitches with easier finishing cracks.",
+    "approach": "From the pullout, an unmarked but well-worn climbers' trail drops steeply from the west/southwest end of the turnout through loose dirt and rock into the trees, marked intermittently by cairns. The path crosses Early Winters Creek (on logs) before climbing into an open rocky drainage/talus below the…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_summertime",
+    "name": "Summertime",
+    "peak": "Summertime Crag",
+    "area_id": "wa_summertime_crag",
+    "discipline": "alpine",
+    "grade": "5.11c",
+    "high_point_ft": null,
+    "overview": "The crag's namesake and longest route: a 5-pitch, Grade II trad/sport line that 'meanders around following the easiest line' up the tallest formation, with a bolted-plus-small-gear crux roof pitch (5.11c) partway up.",
+    "approach": "Summertime Crag uses a different trailhead than the other four areas' shared Blue Lake approach. From Winthrop, drive west on SR-20 through Mazama toward Washington Pass (or, coming from Seattle, continue past Washington Pass toward Mazama on SR-20); park at a small pullout on the east side of the h…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_chalice",
+    "name": "The Chalice",
+    "peak": "Silver Horn, The",
+    "area_id": "wa_silver_horn_the",
+    "discipline": "alpine",
+    "grade": "5.10-",
+    "high_point_ft": 8351,
+    "overview": "An 8-pitch route up the right side of Silver Horn's true South Face, climbing flakes/corners/splitters to a broad mid-height ledge, then the upper face beside a prominent central arete before finishing over blocky ground to the summit.",
+    "approach": "The Silver Horn is a subsidiary point on Silver Star Mountain's north ridge among the Wine Spires cluster, sharing the same approach as Burgundy Spire and Silver Star Mountain: talus down to Early Winters Creek, up the timbered rib to the ~6,500 ft basin/camp, then to Burgundy Col (~7,720 ft), from …",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_exorcism_of_mark_hanna",
+    "name": "The Exorcism of Mark Hanna",
+    "peak": "M&M wall (AKA \"Supercave Wall\")",
+    "area_id": "wa_m_m_wall_aka_supercave_wall",
+    "discipline": "alpine",
+    "grade": "5.11a",
+    "high_point_ft": null,
+    "overview": "A shorter, 3-pitch 5.11a trad route on M&M Wall reached via the Supercave approach gully; a quicker outing than the wall's big multi-pitch free lines.",
+    "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass sum…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_l_h_route_free_variation",
+    "name": "The L & H Route (Free Variation)",
+    "peak": "M&M wall (AKA \"Supercave Wall\")",
+    "area_id": "wa_m_m_wall_aka_supercave_wall",
+    "discipline": "alpine",
+    "grade": "5.12",
+    "high_point_ft": null,
+    "overview": "The free version of the 1969 Langdon-Hargis aid line up M&M Wall, freed in 2015 by Blake Herrington and Max Tepfer; an 8-pitch outing on immaculate granite with a sustained 5.12 crux pitch widely regarded as one of the best pitches of 5.12 on granite anywhere in the state.",
+    "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass sum…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_the_tiger",
+    "name": "The Tiger",
+    "peak": "M&M wall (AKA \"Supercave Wall\")",
+    "area_id": "wa_m_m_wall_aka_supercave_wall",
+    "discipline": "alpine",
+    "grade": "5.12-",
+    "high_point_ft": null,
+    "overview": "An 11-pitch free line up the center of M&M Wall, widely considered one of the best free routes at Washington Pass, rivaling the Thin Red Line in quality and difficulty; climbs through a cave feature (\"Tiger Belly's Lair\") and a striking flake (\"Tiger Flake\") en route to the ridge.",
+    "approach": "M&M Wall, also known as Supercave Wall for the tennis-court-sized cave crossing the cliff at mid-height, is one of the largest roadside walls at Washington Pass. Park at a pullout near milepost 166 on SR-20, about 3 miles east of the hairpin turns (and a similar distance from the Washington Pass sum…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   },
+   {
+    "id": "wa_vasiliki_ridge_standard",
+    "name": "Standard Route (Ares Tower)",
+    "peak": "Vasiliki Ridge (Ares Tower high point)",
+    "area_id": "wa_vasiliki_ridge",
+    "discipline": "alpine",
+    "grade": "Grade II-III, 5th class",
+    "high_point_ft": 8190,
+    "overview": "Ares Tower is the highest of several named granite spires — Charon Tower, The Acropolis, Ares Tower, Vasiliki Tower, the Juno-Jupiter Towers, Aphrodite Tower, and Baccus Tower — strung along Vasiliki Ridge, which radiates north from the Wine Spires/Silver Star Mountain massif above Washington Pass. …",
+    "approach": "Park at the unsigned 'Wine Spires' pullout on SR-20, about 3.7 miles east of Washington Pass (roughly 0.7 mile past the Cutthroat Lake Road turnoff, near milepost 166), at about 4,300 ft elevation. A boot path drops down loose, scree-covered talus into the trees, passes a trail register, and crosses…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     },
+     {
+      "name": "The Ledge bivy",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Small established bivy shelf passed on the climbers' trail about two miles in, below the main Bench basin."
+     },
+     {
+      "name": "The Bench",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6460,
+      "notes": "Flat camping basin (~2 hrs up from the highway) used as a base camp for Wine Spires/Vasiliki Ridge objectives; last dependable water before the col in early sea…"
+     }
+    ]
+   },
+   {
+    "id": "wa_west_ridge_2",
+    "name": "West Ridge",
+    "peak": "Paisano Pinnacle",
+    "area_id": "wa_paisano_pinnacle",
+    "discipline": "alpine",
+    "grade": "5.8+",
+    "high_point_ft": 7910,
+    "overview": "The West Ridge climbs the crest of Paisano Pinnacle in 7-8 pitches of sustained, high-quality 5.8+ hand and finger cracks with big comfortable belay ledges, widely regarded as one of the best moderate alpine rock routes at Washington Pass.",
+    "approach": "Follow the shared Wine Spires trail: boot path down talus to Early Winters Creek, cross on a log, then climb steeply up the timbered rib north of Burgundy Creek to the ~6,500 ft basin/camp (roughly 2 hours from the car). Paisano Pinnacle's West Ridge route starts lower than Burgundy Spire's and is c…",
+    "camps": [
+     {
+      "name": "SR 20 climbers' pullouts — the hairpin and the Silver Star Creek pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "THIS IS THE HONEST ANSWER FOR MOST OBJECTIVES HERE: they are day climbs from the car, and the usual overnight plan is to arrive late and sleep at the pullout. The hairpin lot serves Kangaroo Temple, Half Moon, Big Kangar…"
+     },
+     {
+      "name": "Bench Camp — larch bench above the Wine Spires pullout",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6450,
+      "notes": "The one genuinely used high camp on the Kangaroo Ridge side, reached by a steep switchbacking climbers' trail that gains roughly 2,000 ft from the highway. It is the sensible base for Vasiliki Ridge and Vasiliki Tower, f…"
+     },
+     {
+      "name": "Blue Lake trailhead roadside parking",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5200,
+      "notes": "Parties climbing the Liberty Bell group frequently sleep here, and it works as a fallback for the Kangaroo Ridge and roadside objectives when the hairpin lot is full, since it is only a few minutes' drive west. Be clear …"
+     },
+     {
+      "name": "Kangaroo Pass and the upper Early Winters Creek meadows",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The approach from the hairpin is short enough that camping up here is widely DISCOURAGED rather than encouraged, and several parties say so plainly: the meadows and the pass take damage quickly and most parties simply do…"
+     },
+     {
+      "name": "Upper Cedar Creek basin, east of Big Kangaroo",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Anything on the east side of Kangaroo Ridge is far enough from the road that a bivy makes sense, and the barren upper basin east of Big Kangaroo is the accepted place for it. The usual way in is to follow the Half Moon n…"
+     },
+     {
+      "name": "Lone Fir, Klipchuck and Early Winters campgrounds",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The nearest developed options and the standard choice for a party wanting a table, a toilet and a guaranteed spot rather than a night in a gravel pullout. They descend eastward down the Early Winters Creek valley — Lone …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "kindy-found-illabot",
+  "routes": [
+   {
+    "id": "wa_east_ridge_2",
+    "name": "East Ridge",
+    "peak": "Snowking Mountain",
+    "area_id": "wa_snowking_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 7433,
+    "overview": "The East Ridge is Snowking Mountain's fastest, least-technical, non-glaciated line to the summit. It shares the same brushy FR-1570/Kindy Ridge approach and Cyclone Lake camp as the standard glacier route, then climbs heather benches and easy slabs up the ridge on the mountain's east side rather tha…",
+    "approach": "From Marblemount, drive Cascade River Road ~14.2 miles to the signed FR-1570 (Kindy Creek Road) junction and turn right. Cross the Cascade River on a concrete bridge and continue ~0.4 mile to a Y junction where the right fork is blocked by boulders — park here (roughly 1,150-1,300 ft; a long-standin…",
+    "camps": [
+     {
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4000,
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several cree…"
+     },
+     {
+      "name": "Cyclone Lake and the lakes just north of it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5442,
+      "notes": "THE BASE CAMP FOR SNOWKING MOUNTAIN AND MUTCHLER PEAK, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south …"
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few work…"
+     },
+     {
+      "name": "Slide Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3110,
+      "notes": "The western gateway, and by a long way the easiest walking: about 2.5 miles round trip and 300 feet of gain to a lake formed when a landslide dammed the creek. For a climber it is a staging camp rather than an objective,…"
+     },
+     {
+      "name": "Enjar Lake and Hamar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working camps on the western side of Snowking Mountain, reached by continuing past Slide Lake for roughly four hours of increasingly rough going. Either lake serves; parties pick whichever the light allows. From here…"
+     },
+     {
+      "name": "Cyclone Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5354,
+      "notes": "Common overnight bivy for the East Ridge route."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_buckindy_scramble",
+    "name": "Buckindy Glacier/Scramble Route",
+    "peak": "Mount Buckindy",
+    "area_id": "wa_mount_buckindy",
+    "discipline": "mountaineering",
+    "grade": "Class 4 + glacier",
+    "high_point_ft": 7320,
+    "overview": "Mount Buckindy (7,320 ft) is the second-highest summit of the remote Buckindy Range (Buckindy Ridge), a cluster of glaciated, rust-orange-tinted peaks between the Cascade River and Suiattle River drainages, about 20 miles east-northeast of Darrington and southeast of Marblemount, WA. The range's hig…",
+    "approach": "From Darrington, drive north on SR 530 roughly 7-8 miles, turning right onto Suiattle River Road (FR 26) just after crossing the Sauk River bridge. Follow FR 26 (pavement then gravel) about 20 miles, turn left onto FR 2680, and continue 6 miles to the Green Mountain Trailhead (~3,200 ft). Hike Green…",
+    "camps": [
+     {
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4000,
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several cree…"
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few work…"
+     },
+     {
+      "name": "Head of Kindy Creek and the Kindy-Buck Creek pass",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "THE GROUND THAT PUTS MOUNT BUCKINDY IN RANGE. Buckindy's standard route is a class 4 scramble on the north slopes, with glaciers on the north and east flanks, and the parties who climb it are camping either in the basins…"
+     },
+     {
+      "name": "Slide Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3110,
+      "notes": "The western gateway, and by a long way the easiest walking: about 2.5 miles round trip and 300 feet of gain to a lake formed when a landslide dammed the creek. For a climber it is a staging camp rather than an objective,…"
+     },
+     {
+      "name": "Kindy Creek Cirque",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5100,
+      "notes": "Open heather basin below Buckindy's north face used as a base camp by parties traversing the Buckindy Range; flat tent sites, exposed to weather."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_chaval_scramble",
+    "name": "West Route",
+    "peak": "Mount Chaval",
+    "area_id": "wa_mount_chaval",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 7127,
+    "overview": "Mount Chaval (7,127 ft) is a craggy, three-summited peak straddling an east-west ridge (East Peak and Middle Peak, each 7,040 ft, plus the true 7,127-ft summit) in the Glacier Peak Wilderness of the Mt. Baker-Snoqualmie National Forest, roughly 15 miles northeast of Darrington in Skagit County. It s…",
+    "approach": "The hike-in starts where FR-16 (Illabot Creek Road) reaches the Arrow Creek switchback (~2,220 ft) — this is the trailhead, not a formal one. A boot/fisherman's path leaves the road roughly 20 yards west of the Arrow Creek crossing and follows the south (right) bank of Illabot Creek upstream through…",
+    "camps": [
+     {
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4000,
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several cree…"
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few work…"
+     },
+     {
+      "name": "Slide Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3110,
+      "notes": "The western gateway, and by a long way the easiest walking: about 2.5 miles round trip and 300 feet of gain to a lake formed when a landslide dammed the creek. For a climber it is a staging camp rather than an objective,…"
+     },
+     {
+      "name": "Jug Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3911,
+      "notes": "THE BASE FOR MOUNT CHAVAL, which sits immediately southwest of Snowking and has three standard approaches and one longer non-standard one, none of them simple and all of them brushy. This is the most used of them. Park a…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mutchler_peak_scramble",
+    "name": "Mutchler Peak Scramble",
+    "peak": "Mutchler Peak",
+    "area_id": "wa_mutchler_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7150,
+    "overview": "Mutchler Peak (7,150 ft; referenced in some older trip reports as 'Snowqueen') is a remote summit in the Buckindy Group of the Cascade River backcountry, part of the rugged, semi-glaciated ridge system southeast of Marblemount that also includes Snowking Mountain (7,433'), Mount Buckindy (7,320'), M…",
+    "approach": "Park at the Cascade River Road washout roughly 14.2 miles from Marblemount, about 100 yards past the Cascade River crossing near the FR 1570 junction (signed for Kindy Ridge/Found Lake). The old FR 1570 spur is now permanently closed to vehicles, so the hike starts on the abandoned roadbed near Vee …",
+    "camps": [
+     {
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4000,
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several cree…"
+     },
+     {
+      "name": "Cyclone Lake and the lakes just north of it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5442,
+      "notes": "THE BASE CAMP FOR SNOWKING MOUNTAIN AND MUTCHLER PEAK, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south …"
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few work…"
+     },
+     {
+      "name": "Cyclone Lake Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5354,
+      "notes": "Largest and highest of the alpine lakes on Snowking's flanks; established rough campsites on the benches above the lake serve as the usual base camp for Mutchle…"
+     }
+    ]
+   },
+   {
+    "id": "wa_snowking_mountain_standard",
+    "name": "Standard Route / Snowking Glacier",
+    "peak": "Snowking Mountain",
+    "area_id": "wa_snowking_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3 + glacier",
+    "high_point_ft": 7433,
+    "overview": "Snowking Mountain is a remote, heavily glaciated high point in the Mount Baker-Snoqualmie National Forest, about 18 miles northeast of Darrington and roughly 10 miles southwest of Cascade Pass. Its summit massif spans more than 10 square miles with two subsidiary summits (West Peak, ~7,425 ft; Middl…",
+    "approach": "Drive Cascade River Road ~14.2 miles from Marblemount and turn right onto FR-1570 (Kindy Creek Road). The road crosses the Cascade River on a concrete bridge; within roughly 0.4 mile the right fork is blocked by boulders/washout and parking is at that Y-junction (around 1,160-1,200ft). From here the…",
+    "camps": [
+     {
+      "name": "Found Lake and the Kindy Ridge saddle",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4000,
+      "notes": "The first useful camp on the eastern approach and the one most parties reach on a late start. From where road 1570 becomes impassable you walk the blocked, overgrown roadbed for roughly three miles, crossing several cree…"
+     },
+     {
+      "name": "Cyclone Lake and the lakes just north of it",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5442,
+      "notes": "THE BASE CAMP FOR SNOWKING MOUNTAIN AND MUTCHLER PEAK, and the standard end of the Kindy Ridge approach. From the lakes the route follows the Kindy and Found ridge crest south-southwest above Cyclone Lake, keeping south …"
+     },
+     {
+      "name": "Kindy Ridge crest camps",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The Kindy Ridge crest, also described as the northeast ridge, is a long undulating plod rather than a climb, and the honest description of camping on it is that parties stop where the day ends. There are quite a few work…"
+     },
+     {
+      "name": "Slide Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3110,
+      "notes": "The western gateway, and by a long way the easiest walking: about 2.5 miles round trip and 300 feet of gain to a lake formed when a landslide dammed the creek. For a climber it is a staging camp rather than an objective,…"
+     },
+     {
+      "name": "Enjar Lake and Hamar Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The working camps on the western side of Snowking Mountain, reached by continuing past Slide Lake for roughly four hours of increasingly rough going. Either lake serves; parties pick whichever the light allows. From here…"
+     },
+     {
+      "name": "Boggy meadow low camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "The path climbs hard and unrelentingly, first through brush and then into old growth, on boot-beaten tread over roots and rock. There is no water on this sectio…"
+     },
+     {
+      "name": "High camp on rock/snow benches",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6200,
+      "notes": "Work counterclockwise around the lake to the head of its outlet stream. A rock wall lines the east side of the outlet; drop toward the lake about fifty feet eas…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "lincoln-peak-middle-fork",
+  "routes": [
+   {
+    "id": "wa_lincoln_peak_north_ridge",
+    "name": "North Ridge / Standard",
+    "peak": "Lincoln Peak",
+    "area_id": "wa_lincoln_peak",
+    "discipline": "mountaineering",
+    "grade": "IV WI4 (AI4+)",
+    "high_point_ft": 9085,
+    "overview": "This slot corresponds to 'Wilkes-Booth,' a ~2,000-ft ice/mixed line on Lincoln Peak's NW Face — the only established route on the mountain besides the historic SW Face X Couloir. First climbed by Michal Rynkiewicz and Daniel Coltrane on March 13, 2015, in an 18.5-hour car-to-car push from the Heliot…",
+    "approach": "Same trailhead and lower approach as the standard line: start at the Heliotrope Ridge Trailhead (FS Road 39, Trail #677) near Glacier, WA, and follow the Heliotrope Ridge Trail roughly 2.7-3 miles through old-growth forest and several avalanche-chute creek crossings to the flat former Kulshan Cabin …",
+    "camps": [
+     {
+      "name": "Wallace Creek basin ridge camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the established high camp for Lincoln and the one nearly every ascent uses. It sits on the ridge overlooking the Wallace Creek basin, right at the last stand of trees, with the Black Buttes and the summit block i…"
+     },
+     {
+      "name": "East Rankin Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5120,
+      "notes": "The lower of the two natural stopping places on the approach, in the Rankin Creek basin below the saddle. It is the sensible camp for a party that started late, that is walking extra road miles because of the washout, or…"
+     },
+     {
+      "name": "Saddle tarns above Rankin Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5480,
+      "notes": "The small saddle north of the Rankin basin, with a pair of tarns beside it, sitting between east Rankin Lake and the climb east into the upper basin below Seward. It is a stopgap rather than a destination: only a few hun…"
+     },
+     {
+      "name": "Middle Fork Nooksack road switchbacks",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Sleeping at the vehicle the night before is the normal way to start this climb, because the approach is long and parties want to be walking in the dark. The switchbacks above the road's lower section give rough pullouts …"
+     },
+     {
+      "name": "Kulshan Cabin site",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "A short, steepening 0.2 mi carries on through thinning forest to the flat bench where the cabin stood, with a backcountry toilet as the obvious landmark. That t…"
+     },
+     {
+      "name": "Black Buttes basin camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7200,
+      "notes": "From the toe the travel is roped glacier across to the 7,200 ft bench beneath the Black Buttes. The line passes under serac bands on the Coleman's icefall, so i…"
+     }
+    ]
+   },
+   {
+    "id": "wa_lincoln_peak_standard",
+    "name": "X Couloir (Southwest Face) / Standard Route",
+    "peak": "Lincoln Peak",
+    "area_id": "wa_lincoln_peak",
+    "discipline": "mountaineering",
+    "grade": "III-IV",
+    "high_point_ft": 9085,
+    "overview": "Lincoln Peak's SW Face route, known as the 'X Couloir' (sometimes referenced as 'X Couloir – Emancipation Proclamation'), is the historic line up this seldom-climbed, seriously loose Black Buttes summit. First climbed by Fred Beckey, Wesley Grande, John Rupley, and Herb Staley on July 22, 1956, it w…",
+    "approach": "The X Couloir is approached from the south via the Middle Fork Nooksack River Road (FR-38), not from Heliotrope Ridge (that trailhead serves Lincoln's separate NW Face/Wilkes-Booth line). Drive FR-38 toward its mile-12.5 switchback and start hiking/bushwhacking the old decommissioned road around Pt.…",
+    "camps": [
+     {
+      "name": "Wallace Creek basin ridge camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "This is the established high camp for Lincoln and the one nearly every ascent uses. It sits on the ridge overlooking the Wallace Creek basin, right at the last stand of trees, with the Black Buttes and the summit block i…"
+     },
+     {
+      "name": "East Rankin Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5120,
+      "notes": "The lower of the two natural stopping places on the approach, in the Rankin Creek basin below the saddle. It is the sensible camp for a party that started late, that is walking extra road miles because of the washout, or…"
+     },
+     {
+      "name": "Saddle tarns above Rankin Creek",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5480,
+      "notes": "The small saddle north of the Rankin basin, with a pair of tarns beside it, sitting between east Rankin Lake and the climb east into the upper basin below Seward. It is a stopgap rather than a destination: only a few hun…"
+     },
+     {
+      "name": "Middle Fork Nooksack road switchbacks",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Sleeping at the vehicle the night before is the normal way to start this climb, because the approach is long and parties want to be walking in the dark. The switchbacks above the road's lower section give rough pullouts …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "little-tahoma-tatoosh",
+  "routes": [
+   {
+    "id": "wa_frying_pan_whitman_glaciers",
+    "name": "Frying Pan / Whitman Glaciers",
+    "peak": "Little Tahoma Peak",
+    "area_id": "wa_little_tahoma",
+    "discipline": "mountaineering",
+    "grade": "Grade II+, Class 3-4",
+    "high_point_ft": 11138,
+    "overview": "This is the standard glacier line up Little Tahoma, named for the two glaciers it crosses (Fryingpan and Whitman) rather than for the east-shoulder terrain feature; modern route guides describe \"Fryingpan/Whitman Glaciers\" and \"East Shoulder\" as the same standard route — same Summerland approach, sa…",
+    "approach": "Start at the Fryingpan Creek Trailhead (~3,800-3,900 ft) on the Sunrise/White River Road, about 5 miles past the White River entrance station. Follow the signed Fryingpan Creek Trail, which climbs gently along Fryingpan Creek through old-growth forest. At roughly 3.2 miles / ~1,400 ft of gain (about…",
+    "camps": [
+     {
+      "name": "Summerland Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The subalpine meadow basin that everything on this side of the mountain stages from, a little over four miles up the Wonderland Trail from the Fryingpan Creek bridge. For Little Tahoma it is the lower of the two realisti…"
+     },
+     {
+      "name": "Meany Crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "The standard high camp for Little Tahoma, and the one that makes the climb reasonable. It is a large flat area within the cliff band directly above Summerland, gained by the climbers' path and scrambling out of the basin…"
+     },
+     {
+      "name": "Toe of the Fryingpan Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A slightly higher and more committed alternative to Meany Crest, on the moraine and snow where the Fryingpan Glacier begins. It shaves a little more off summit morning and puts you on the ice within minutes of leaving th…"
+     },
+     {
+      "name": "Whitman Glacier notch camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 8900,
+      "notes": "The highest of the three camps, in the prominent gap on the crest between the Fryingpan and Whitman glaciers, just under the base of the peak itself. It reduces summit day to a short glacier walk and the East Shoulder sc…"
+     },
+     {
+      "name": "Silver Springs Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2650,
+      "notes": "The practical roadhead base for a Little Tahoma trip, on the White River about a mile outside the park's White River entrance and a short drive from the Fryingpan Creek trailhead. Its usefulness is timing: the park's own…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_tahoma_cowlitz_ingraham_glaciers",
+    "name": "Cowlitz/Ingraham Glaciers (South Face)",
+    "peak": "Little Tahoma Peak",
+    "area_id": "wa_little_tahoma",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 11138,
+    "overview": "A less-common, longer glacier approach to Little Tahoma from Paradise, crossing the Paradise, Cowlitz, and Ingraham glaciers past the Cathedral Rocks cleaver to reach the peak's south/east face, finishing up a gully-chimney and a short exposed scramble to the summit. Mainly a winter-to-early-spring …",
+    "approach": "From the Paradise parking lot, climb the standard Camp Muir route to about 8,600 ft, then traverse east onto the Paradise Glacier and across the Cowlitz Glacier (maintaining elevation, avoiding the cliff/serac band below), through a notch in the Cathedral Rocks cleaver, and across the Ingraham Glaci…",
+    "camps": [
+     {
+      "name": "Summerland Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The subalpine meadow basin that everything on this side of the mountain stages from, a little over four miles up the Wonderland Trail from the Fryingpan Creek bridge. For Little Tahoma it is the lower of the two realisti…"
+     },
+     {
+      "name": "Meany Crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "The standard high camp for Little Tahoma, and the one that makes the climb reasonable. It is a large flat area within the cliff band directly above Summerland, gained by the climbers' path and scrambling out of the basin…"
+     },
+     {
+      "name": "Toe of the Fryingpan Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A slightly higher and more committed alternative to Meany Crest, on the moraine and snow where the Fryingpan Glacier begins. It shaves a little more off summit morning and puts you on the ice within minutes of leaving th…"
+     },
+     {
+      "name": "Whitman Glacier notch camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 8900,
+      "notes": "The highest of the three camps, in the prominent gap on the crest between the Fryingpan and Whitman glaciers, just under the base of the peak itself. It reduces summit day to a short glacier walk and the East Shoulder sc…"
+     },
+     {
+      "name": "Silver Springs Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2650,
+      "notes": "The practical roadhead base for a Little Tahoma trip, on the White River about a mile outside the park's White River entrance and a short drive from the Fryingpan Creek trailhead. Its usefulness is timing: the park's own…"
+     }
+    ]
+   },
+   {
+    "id": "wa_little_tahoma_east_shoulder",
+    "name": "East Shoulder",
+    "peak": "Little Tahoma Peak",
+    "area_id": "wa_little_tahoma",
+    "discipline": "mountaineering",
+    "grade": "Grade II+, Class 3-4",
+    "high_point_ft": 11138,
+    "overview": "Little Tahoma Peak (11,138 ft) is the third-highest summit in Washington and the most prominent remnant of the much larger, older Mount Rainier edifice that has since eroded away, standing as a jagged andesite pyramid on Rainier's east flank above the Fryingpan and Whitman glaciers. First climbed Au…",
+    "approach": "From the Fryingpan Creek Trailhead (3,800 ft) on the Sunrise/White River Road (WA-410), follow the Wonderland Trail south along Fryingpan Creek about 4.5 mi to Summerland (~5,900-5,950 ft), a subalpine meadow with a stock/hiker shelter and toilet. Leave the maintained trail there and climb north of …",
+    "camps": [
+     {
+      "name": "Summerland Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5900,
+      "notes": "The subalpine meadow basin that everything on this side of the mountain stages from, a little over four miles up the Wonderland Trail from the Fryingpan Creek bridge. For Little Tahoma it is the lower of the two realisti…"
+     },
+     {
+      "name": "Meany Crest",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "The standard high camp for Little Tahoma, and the one that makes the climb reasonable. It is a large flat area within the cliff band directly above Summerland, gained by the climbers' path and scrambling out of the basin…"
+     },
+     {
+      "name": "Toe of the Fryingpan Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "A slightly higher and more committed alternative to Meany Crest, on the moraine and snow where the Fryingpan Glacier begins. It shaves a little more off summit morning and puts you on the ice within minutes of leaving th…"
+     },
+     {
+      "name": "Whitman Glacier notch camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 8900,
+      "notes": "The highest of the three camps, in the prominent gap on the crest between the Fryingpan and Whitman glaciers, just under the base of the peak itself. It reduces summit day to a short glacier walk and the East Shoulder sc…"
+     },
+     {
+      "name": "Silver Springs Campground",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2650,
+      "notes": "The practical roadhead base for a Little Tahoma trip, on the White River about a mile outside the park's White River entrance and a short drive from the Fryingpan Creek trailhead. Its usefulness is timing: the park's own…"
+     },
+     {
+      "name": "Summerland",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5950,
+      "notes": "Subalpine meadow camp with a stone shelter below Little Tahoma's east face; a reserved wilderness permit is required to camp here, and it's the jumping-off poin…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "massie-peak",
+  "routes": [
+   {
+    "id": "wa_massie_peak_west_route",
+    "name": "West Route",
+    "peak": "Massie Peak",
+    "area_id": "wa_massie_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 7533,
+    "overview": "Massie Peak is a remote, seldom-visited summit on the ridge above Massie Lake in the Phelps Creek/Chiwawa River high country of the Glacier Peak Wilderness. It has no maintained trail to its summit and is usually climbed as a side-trip from longer backcountry loops through Buck Creek Pass, High Pass…",
+    "approach": "From the Trinity Trailhead (~2,820 ft, at the end of Chiwawa River/Chiwawa Valley Road, Forest Road 6200, reached via Coles Corner and Hwy 207), pick up the Chiwawa River Trail #1550 and follow it upstream through forest for roughly 4 miles. Watch the left (west) side of the trail for an 'M' blazed/…",
+    "camps": [
+     {
+      "name": "Massie Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the climbing camp for Massie Peak and effectively the only one, because everything above it is dry and everything below it is a long way down. From the Trinity trailhead the Buck Creek trail runs a mile and a hal…"
+     },
+     {
+      "name": "The Chiwawa River trail camps above the bridge",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These are the first-night camps for a party that has driven a long way, or the last-night camps for one walking out, and on this approach both cases are common. The river bridge where the Buck Creek trail crosses is the …"
+     },
+     {
+      "name": "Trinity trailhead roadhead",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2764,
+      "notes": "The staging point, and it is recorded because the drive is the part of this trip that most often goes wrong. In a normal year the Chiwawa River road runs about twenty-two miles from the Lake Wenatchee end, with the last …"
+     },
+     {
+      "name": "The benches above Massie Lake — no established camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Recorded honestly: Massie Peak is a day objective from the lake and there is no practical reason to sleep higher. The scramble from the basin is short enough that the only argument for going up is to be on the crest at f…"
+     },
+     {
+      "name": "Massie Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "Two established fire-ring campsites on the lakeshore with good fishing and reliable water, reached via a steep, poorly-marked boot path climbing ~1,500 ft from …"
+     }
+    ]
+   }
+  ]
+ }
+]

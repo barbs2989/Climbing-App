@@ -1,0 +1,2910 @@
+[
+ {
+  "zone": "northern-pickets",
+  "routes": [
+   {
+    "id": "wa_crooked_thumb_peak_east_face",
+    "name": "East Face",
+    "peak": "Crooked Thumb Peak",
+    "area_id": "wa_crooked_thumb_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": null,
+    "overview": "A more direct, easier line up the peak's east side than the standard northwest-couloir route: climbed straight up the east face from the glacier below at moderate Class 3-4 difficulty.",
+    "approach": "Shares the same remote, multi-day approach as the peak's northwest-couloir route: via Hannegan Pass Trail and Whatcom/Perfect Pass to the Challenger Glacier and West Challenger Notch, descending to a camp on the Crooked Thumb Glacier below the peak's north/east side (or via the alternate Big Beaver …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_crooked_thumb_peak_south_route",
+    "name": "South Route",
+    "peak": "Crooked Thumb Peak",
+    "area_id": "wa_crooked_thumb_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.8+ (or 5.2 A1)",
+    "high_point_ft": 8129,
+    "overview": "Crooked Thumb Peak (8,129 ft) sits on the Northern Pickets crest exactly 0.5 mi south of Mount Challenger and 0.5 mi north of Phantom Peak, in North Cascades National Park's Whatcom County backcountry. The true summit is a striking, narrow 'fin' of white gneiss/granite only about 5 ft high — Fred an…",
+    "approach": "Start at Hannegan Trailhead (3,100 ft) at the end of Ruth Creek Road (FR 32). Take the Hannegan Pass Trail roughly 4 miles and ~2,500 ft of gain up through subalpine forest and meadow to Hannegan Pass (5,066 ft). From the pass, drop off the north side on the Chilliwack River Trail into the Chilliwac…",
+    "camps": [
+     {
+      "name": "Whatcom Camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5500,
+      "notes": "PLANNED camp, flat dry ground near Whatcom Pass at the end of the maintained trail and the last comfortable night of the trip — reports describe it as vastly more pleasant than anything above. This is where the route lea…"
+     },
+     {
+      "name": "Perfect Pass",
+      "store": "bivy",
+      "type": null,
+      "elev": 6300,
+      "notes": "PLANNED camp, and widely rated one of the finest bivy sites in the range — granite slabs, reliable running water, and the Challenger Glacier starting at the doorstep. It is the standard last camp before roping up. Open a…"
+     },
+     {
+      "name": "Crooked Thumb Glacier lateral moraine",
+      "store": "bivy",
+      "type": null,
+      "elev": 7200,
+      "notes": "PLANNED camp and the base for the climb itself, on the narrow lateral moraine at the southern edge of the glacier after crossing the high bench near 8,100 ft and dropping through the West Challenger notch. Fully exposed …"
+     },
+     {
+      "name": "Ledge at 7,800 ft on the peak's ridge",
+      "store": "bivy",
+      "type": null,
+      "elev": 7800,
+      "notes": "EMERGENCY ledge, not a camp — a small stair-stepped shelf on the descent ridge overlooking the precipitous east face, where a party spent an unplanned full night out. No water, no shelter, cold, and highly exposed. On a …"
+     },
+     {
+      "name": "Copper Creek / Boundary Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "From the pass the trail drops off the north side into the Chilliwack River drainage, giving back most of the elevation just gained. The camp sits a few miles do…"
+     },
+     {
+      "name": "West Challenger Notch / Crooked Thumb Glacier moraine camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7800,
+      "notes": "From the pass climb firm snow to rock outcrops, then traverse steep slopes west onto the Challenger Glacier and climb it roped to the high bench near 8,100 ft, …"
+     }
+    ]
+   },
+   {
+    "id": "wa_ghost_peak_south_route",
+    "name": "South Route",
+    "peak": "Ghost Peak",
+    "area_id": "wa_ghost_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4",
+    "high_point_ft": 8000,
+    "overview": "Ghost Peak is a Northern Pickets summit near Crooked Thumb and Challenger, completing the spectral naming theme of the range. Its infrequent ascents make it a quiet objective for those deep in the Pickets.",
+    "approach": "Ghost Peak sits deep in the Northern Pickets, just south of Crooked Thumb Peak and about 0.3 mi NNE of Phantom Peak, so this is a multi-day wilderness approach, not a day hike to a base. Standard access is from the Hannegan Pass Trailhead at the end of Ruth Creek Road (FR 32, ~3,100 ft) - not Ross L…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Whatcom Pass",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5210,
+      "notes": "From the pass bear south past the Copper Ridge junction and drop into the Chilliwack River valley, following the valley trail to the forest camps near Copper Cr…"
+     },
+     {
+      "name": "Perfect Pass",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6300,
+      "notes": "Leave the trail at the pass and rope up. The standard line traverses the Whatcom Glacier around Whatcom Peak's flank to Perfect Pass; parties who would rather n…"
+     },
+     {
+      "name": "Luna Cirque high camp (near Lousy Lake)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "Remote bivy on the Luna Cirque floor near the Lousy Lake tarn, ringed by the south faces of Challenger, Crooked Thumb, and Phantom Peaks; staging point for the …"
+     }
+    ]
+   },
+   {
+    "id": "wa_luna_glacier",
+    "name": "Luna Glacier",
+    "peak": "Phantom Peak",
+    "area_id": "wa_phantom_peak",
+    "discipline": "mountaineering",
+    "grade": "Easy 5th",
+    "high_point_ft": 8016,
+    "overview": "The Luna Glacier route is Phantom Peak's original 1940 first-ascent line, named for the small hanging glacier that clings to the peak's east face above Luna Cirque (not an officially named glacier, but the moniker stuck). It's a moderate snow-and-easy-rock outing by Pickets standards — Grade II, Eas…",
+    "approach": "Reaching Luna Cirque is the crux of the trip. The historical approach follows the Big Beaver Trail from Ross Lake (a $35 water taxi from Ross Lake Resort cuts about 6 miles off the hike) up to Luna Camp, then climbs steeply beside Luna Creek into the cirque — Fred Beckey himself described this bushw…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_luna_peak_southeast_slopes",
+    "name": "Southeast Slopes",
+    "peak": "Luna Peak",
+    "area_id": "wa_luna_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 8311,
+    "overview": "Luna Peak is the highest summit of the Picket Range and a coveted viewpoint over the savage skyline of the Southern and Northern Pickets. First climbed in September 1938 by Bill Cox and Will F. Thompson, it is also one of Washington's highest-prominence peaks (required for the WA 2,000+ ft prominenc…",
+    "approach": "The trip starts at the Ross Dam Trailhead on SR 20 (North Cascades Highway, ~2,050ft), where parking is right off the highway. From there it's about a 0.8-mile hike down the Ross Dam Trail to Ross Lake, then a boat shuttle (Ross Lake Resort water taxi, or a paddled canoe/packraft for parties without…",
+    "camps": [
+     {
+      "name": "Luna Camp (Big Beaver Trail)",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The signed camp about 8 miles up the Big Beaver Trail from the boat landing, in old-growth cedar and only modestly above lake level. It is a trail camp, not a mountain one, and it earns its place because the water-taxi t…"
+     },
+     {
+      "name": "Access Creek headwaters basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The open basin at the top of the Access Creek approach, roughly 1,700 ft above Luna Camp and the standard base for the peak. Getting here is the hard part: valley-bottom devil's club, a crossing to the north bank, then a…"
+     },
+     {
+      "name": "Luna Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2650,
+      "notes": "Last maintained-trail camp before leaving Big Beaver Trail; onward travel to Access Creek is off-trail bushwhacking."
+     },
+     {
+      "name": "Access Creek Basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "Boulder-strewn basin used as base camp, with a flat-top boulder as a common tent platform; last reliable water before the high traverse to Luna Pass."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_challenger_challenger_glacier",
+    "name": "Challenger Glacier",
+    "peak": "Mount Challenger",
+    "area_id": "wa_mount_challenger",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4, Glacier, 5.6-5.7",
+    "high_point_ft": 8207,
+    "overview": "Mount Challenger is the northern anchor of the Picket Range, one of the most remote and rugged sub-ranges in North Cascades National Park. The peak has five summits/highpoints strung along its crest, with the true (highest) summit on the eastern end. Its defining feature is the Challenger Glacier — …",
+    "approach": "Two approaches are in common use, both starting from the Hannegan Pass Trailhead (end of FS Road 32/Ruth Creek Rd off WA-542). Hannegan Pass Trail #674 climbs a well-graded ~2,000 ft over 4 miles to Hannegan Pass (5,100 ft), the last reliable easy water and the split point for both options. Route A …",
+    "camps": [
+     {
+      "name": "Perfect Pass",
+      "store": "bivy",
+      "type": null,
+      "elev": 6278,
+      "notes": "The planned high camp for this route and the one everything else is scheduled around. Ground is limited: early in the season much of the pass is still snow-covered and parties either camp on the snow or scout the sandy p…"
+     },
+     {
+      "name": "Whatcom Pass camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 5210,
+      "notes": "The last established camp before the committing ground, used by parties coming in on the Chilliwack River approach. From here you still have to get around Whatcom Peak to reach Perfect Pass — the direct north ridge is lo…"
+     },
+     {
+      "name": "Copper Creek camp",
+      "store": "bivy",
+      "type": null,
+      "elev": 3146,
+      "notes": "About 7.5 miles in on the valley approach, with reliable water and a pit toilet. It is a trail camp, not a mountain one, and it exists on this list because the approach to Challenger is long enough that most parties slee…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Marks the Mt. Baker National Forest / North Cascades National Park boundary; established campsites with pit toilet at the bottom of the roughly 2,500 ft descent…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_crowder_northeast_ridge",
+    "name": "Northeast Ridge",
+    "peak": "Mount Crowder",
+    "area_id": "wa_mount_crowder",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7082,
+    "overview": "A direct, technical ridge line dropping northeast off Crowder's summit toward Pickell Pass. It is documented as a descent used by parties continuing a Pickets high-route traverse northward, not as a recommended way to reach Crowder's summit, and is significantly harder and more hazardous than the So…",
+    "approach": "Reached only by first climbing Mount Crowder (typically via the Southwest Route/SW Flank from Wild Lake) and continuing down the far side; there is no separate trailhead approach to this ridge on its own.",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_crowder_southwest_route",
+    "name": "Southwest Route",
+    "peak": "Mount Crowder",
+    "area_id": "wa_mount_crowder",
+    "discipline": "mountaineering",
+    "grade": "Class 4",
+    "high_point_ft": 7082,
+    "overview": "Mount Crowder (7,082 ft) is a remote outlying summit on the eastern crest of the Picket Range, North Cascades National Park, sitting near the divide between the Goodell Creek and Picket Creek (Baker River) drainages roughly 1.6 mi southwest of Mount Fury and just south of its parent peak, Phantom Pe…",
+    "approach": "Mount Crowder has no trailhead and no maintained trail — every ascent is layered onto a multi-day, off-trail traverse through the heart of the Picket Range, and Crowder is almost never climbed as a standalone objective. Parties reach it via one of two corridors. From the south: the Goodell Creek cli…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Terror Basin Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Flat gravel basin below a 6,200' notch with reliable meltwater; standard base camp for Southern Pickets objectives after ~6,000' of gain from the trailhead."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fury_east_mongo_ridge",
+    "name": "Mongo Ridge (Southwest Buttress)",
+    "peak": "Mount Fury (West Peak)",
+    "area_id": "wa_mount_fury_west",
+    "discipline": "alpine",
+    "grade": "Grade VI, 5.10",
+    "high_point_ft": 8303,
+    "overview": "Mongo Ridge is the immense south-west buttress of Mount Fury's West Peak — a mile-long, roughly 4,000 ft knife-edge crossing half a dozen gendarmes including the 'Rooster Comb' and the remote 'Pole of Remoteness'. The biggest, most sustained alpine rock ridge in the Cascades, and famous for its firs…",
+    "approach": "The approach is identical to the standard East Peak route for its first 12+ miles, then continues much farther. From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft), walk about 1 mile down to the Ross Lake water taxi dock and cross to Big Beaver Landing. From there follow th…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_fury_west_west_ridge",
+    "name": "West Ridge / Northwest Route",
+    "peak": "Mount Fury (West Peak)",
+    "area_id": "wa_mount_fury_west",
+    "discipline": "mountaineering",
+    "grade": "Grade III-IV, Class 5",
+    "high_point_ft": 8303,
+    "overview": "West Peak carries the official USGS 'Mount Fury' benchmark and, via its long, loose connecting ridge from East Fury, is markedly harder than its twin summit — West Fury is routinely listed among the '10 hardest peaks in Washington by their easiest route.' An October 2022 theodolite survey by Eric Gi…",
+    "approach": "From the Ross Dam Trailhead (SR 20, milepost 134, ~28 miles east of Marblemount), reaching the Northern Pickets and the base of West Fury's ridge is itself a multi-day approach, not a day hike. The standard option follows the Big Beaver Trail: hike (or take the seasonal Ross Lake Resort water taxi, …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Luna Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "Self-issue a wilderness permit at the kiosk, then follow the maintained Big Beaver Creek Trail up-valley through old-growth cedar. It is about 8 to 10 trail mil…"
+     },
+     {
+      "name": "Access Creek headwaters basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Climb steep, pathless forest and heather along the north flank of Access Creek. The cairned path crosses to the south bank near 3,700 ft where the brush thicken…"
+     },
+     {
+      "name": "Luna Col",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7200,
+      "notes": "Continue up-basin past the camping area at the headwaters, then climb a steep gully and heather system to the notch near 6,100 ft that first opens the view nort…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_prophet_east",
+    "name": "South Ridge / Southeast Ridge",
+    "peak": "Mount Prophet",
+    "area_id": "wa_mount_prophet",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 7673,
+    "overview": "Mount Prophet is a heavily forested, remote summit west of Ross Lake inside North Cascades National Park — Washington's 18th-most-prominent peak. The standard route is a long, brushy multi-day approach up Big Beaver Trail followed by a Class 2-3 scramble along the south/southeast ridge crest, with a…",
+    "approach": "From Ross Dam Trailhead (SR-20, MP 134) hike the Ross Lake shoreline trail ~7 mi to the Big Beaver Trail junction (or take the Ross Lake Resort water taxi to Big Beaver Landing to shorten this), then continue ~5 mi up Big Beaver Trail to Thirtynine Mile Creek/Camp. Leave the trail there and climb a …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Thirtynine Mile Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1720,
+      "notes": "Tent sites on the west bank, stock/horse camp on the east bank of Thirtynine Mile Creek; the last reliable running water and last legal campsite before leaving …"
+     },
+     {
+      "name": "Saddle camp below Point 6690, South Ridge",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "Informal saddle campsite used to split the climb into two days; no running water — carry up from Thirtynine Mile Creek."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_prophet_southwest_rib",
+    "name": "Southwest Rib",
+    "peak": "Mount Prophet",
+    "area_id": "wa_mount_prophet",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 7673,
+    "overview": "The other standard line up Mount Prophet: a forested rib climbed from the Big Beaver/Luna Camp basin, through a short Class 4 chimney crux on a rock wall, then a snow-ramp bypass of a cliff band into the southwest cirque and a ridge finish to the summit. Best done in spring/early summer before corni…",
+    "approach": "As for the South/Southeast Ridge: SR-20 to the Ross Dam Trailhead (MP 134), then the Ross Dam Trail and Big Beaver Trail (or the Ross Lake Resort water taxi to Big Beaver Landing) up the Big Beaver Creek valley to Luna Camp, the base camp for this route.",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_north_ridge_2",
+    "name": "North Ridge",
+    "peak": "Whatcom Peak",
+    "area_id": "wa_whatcom_peak",
+    "discipline": "scrambling",
+    "grade": "3rd",
+    "high_point_ft": 7574,
+    "overview": "The North Ridge is the fastest, most direct way to Whatcom Peak's summit: from Whatcom Pass you simply leave the trail and head south, gaining the peak on a moderate 3rd-class rock/scree ridge. It's a popular add-on for parties already camped at Whatcom Pass, or the descent leg of an Easy Ridge-Nort…",
+    "approach": "Two long approaches reach Whatcom Pass (~5,200 ft), and both are roughly comparable in mileage (~16-17 miles one-way). From the west: start at the Hannegan Pass Trailhead (end of Hannegan Pass Rd/FS-32, ~3,100 ft) and follow Trail #674 about 4 miles/2,000 ft to Hannegan Pass (~5,050-5,100 ft), then …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_phantom_peak_south_route",
+    "name": "South Route",
+    "peak": "Phantom Peak",
+    "area_id": "wa_phantom_peak",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4",
+    "high_point_ft": 8016,
+    "overview": "Phantom Peak is a fittingly named, elusive summit of the Northern Pickets between Fury and the Challenger group, rimming the glacier-draped Luna Cirque. The Southwest Glacier–South Couloir–Southwest Ridge line — the peak's easiest way up (Class 4) — links a pocket glacier, a broken rock step, and a …",
+    "approach": "There are two real approach options for the South (Southwest) Route on Phantom Peak, and both are serious multi-day North Cascades bushwhacks — this is not a trail hike. Option one, the Luna Creek approach: from Ross Lake Resort, take the water taxi across Ross Lake (roughly $35, saves about 6 miles…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Luna Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2500,
+      "notes": "Established NPS backcountry campsite ~10 mi up the Big Beaver Trail (permit reserved at the Marblemount Wilderness Information Center); base camp for leaving th…"
+     },
+     {
+      "name": "Crooked Thumb Glacier moraine high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7800,
+      "notes": "High camp on the glacier's lateral moraine per route beta; last reliable tent sites and meltwater before dropping toward Phantom Peak's southwest buttress."
+     }
+    ]
+   },
+   {
+    "id": "wa_phantom_peak_west_ridge",
+    "name": "West Ridge",
+    "peak": "Phantom Peak",
+    "area_id": "wa_phantom_peak",
+    "discipline": "mountaineering",
+    "grade": "5.10 (sustained 5.7+)",
+    "high_point_ft": 8016,
+    "overview": "A 2021 first ascent up Phantom Peak's previously-unclimbed west ridge: ten pitches of mostly sustained 5.7+ ridge climbing (one 5.10-ish crux stemming move over an airy gap) from a 6,100' saddle, finishing with about 400 ft of 4th-class soloing to the summit.",
+    "approach": "An involved two-day approach: ~10 miles on trail up and over Hannegan Pass, wading the Chilliwack River, traversing the scenic 5-mile Easy Ridge, soloing exposed 4th-class terrain across the 'Imperfect Impasse,' climbing through Perfect Pass and over the Challenger Glacier, then descending and trave…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_poltergeist_pinnacle",
+    "name": "Poltergeist Pinnacle",
+    "peak": "Mount Challenger",
+    "area_id": "wa_mount_challenger",
+    "discipline": "mountaineering",
+    "grade": "5.9",
+    "high_point_ft": 8200,
+    "overview": "East Face route on Poltergeist Pinnacle, the southernmost subsummit between Mount Challenger and Crooked Thumb in the Picket Range, approached via a glacier crossing to a dike-streaked granite shield. First climbed by Dan Aylward and Forrest Murphy, 2004.",
+    "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead, then descend roughly 15-20 minutes to Ross Lake, where most parties arrange a paid water taxi from Ross Lake Resort (or paddle/walk) to the Big Beaver Trail landing rather than hiking the long lakeshore trail. From Big Beaver Landing it…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Boundary Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3200,
+      "notes": "Camp in the Chilliwack River valley below the climb to Whatcom Pass."
+     }
+    ]
+   },
+   {
+    "id": "wa_poltergeist_pinnacle_north_route",
+    "name": "East Face",
+    "peak": "Poltergeist Pinnacle",
+    "area_id": "wa_poltergeist_pinnacle",
+    "discipline": "mountaineering",
+    "grade": "Grade IV, 5.9",
+    "high_point_ft": 8198,
+    "overview": "Poltergeist Pinnacle is a slender granite tower immediately south of Mount Challenger's summit in the Northern Pickets — one of the last named summits in the range to see a first ascent. Its sole documented route, the East Face (Grade IV, 5.9), climbs a striking shield of dark granite streaked with …",
+    "approach": "Start at the Hannegan Pass Trailhead (end of FR 32, ~3,100 ft) on Trail #674. Climb steadily through forest for about 4 miles to Hannegan Pass (5,050 ft), then descend the climbers' path toward the Chilliwack River/Boundary Camp area (last reliable water for a while) before regaining elevation onto …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Perfect Pass",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6198,
+      "notes": "Established high bivy on the ridge crest between Easy Ridge and Mount Challenger; the standard base camp for Challenger and Poltergeist Pinnacle climbs (alterna…"
+     },
+     {
+      "name": "Perfect Pass (high camp)",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6198,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_ridge_traverse_from_east_fury",
+    "name": "Ridge Traverse from East Fury",
+    "peak": "Mount Fury (West Peak)",
+    "area_id": "wa_mount_fury_west",
+    "discipline": "alpine",
+    "grade": "5.4",
+    "high_point_ft": 8305,
+    "overview": "A wild and exposed scramble traverse connecting East Fury (8,280 ft) to West Fury (8,305 ft), involving three main towers with Class 2-4 descent to saddle and Class 4-5 climbing on towers. This is the standard method of traversing between the two peaks and involves significant exposure, loose rock, …",
+    "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead, then descend roughly 15-20 minutes to Ross Lake, where most parties arrange a paid water taxi from Ross Lake Resort (or paddle/walk) to the Big Beaver Trail landing rather than hiking the long lakeshore trail. From Big Beaver Landing it…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_ridge_2",
+    "name": "South Ridge",
+    "peak": "Luna Peak",
+    "area_id": "wa_luna_peak",
+    "discipline": "alpine",
+    "grade": "4th",
+    "high_point_ft": 8311,
+    "overview": "Effectively Luna Peak's standard technical line: from Luna Col/Luna Pass (reached via the Access Creek approach shared with the Southeast Slopes route), climb the broad south ridge on Class 2–3 talus to the false summit, then complete the exposed Class 3–4 traverse across the notch to the true (nort…",
+    "approach": "Start at the Ross Lake Trailhead off Hwy 20 near Ross Dam. Most parties take the seasonal Ross Lake Resort water taxi across the reservoir to the Big Beaver Trailhead (~1,600 ft) to skip roughly 7 rolling lakeshore miles; without the taxi, hike the Ross Lake East Bank trail north to the same point. …",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_south_spur",
+    "name": "South Spur",
+    "peak": "Whatcom Peak",
+    "area_id": "wa_whatcom_peak",
+    "discipline": "scrambling",
+    "grade": "4th",
+    "high_point_ft": 7574,
+    "overview": "Whatcom Peak's easier, more commonly-climbed south side (4th class, PG13 — real exposure on otherwise moderate terrain). It's normally reached from Perfect Pass, either via the long Easy Ridge traverse out of Hannegan Pass, or by a lower traversing line ('low orbit') around the peak's east side dire…",
+    "approach": "The standard approach begins at the Hannegan Pass Trailhead (end of Hannegan Pass Rd/FS-32 off SR 542, ~3,100 ft), following Hannegan Pass Trail #674 about 4 miles and 2,000 ft of gain to Hannegan Pass (~5,050-5,100 ft). From the pass, the trail switchbacks down the far side into the Chilliwack Rive…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_spectre_peak_south_route",
+    "name": "South Ridge (\"Spirited Away\")",
+    "peak": "Spectre Peak",
+    "area_id": "wa_spectre_peak",
+    "discipline": "alpine",
+    "grade": "IV 5.9",
+    "high_point_ft": 7952,
+    "overview": "Spectre Peak (7,952'; listsofjohn.com's LIDAR-based figure is 7,953') sits on the western slope of the Northern Pickets — it's grouped thematically with neighboring Ghost Peak and Phantom Peak near Swiss Peak and Mount Challenger, part of the Northern Pickets traverse line (Luna-Fury-Swiss-Spectre-P…",
+    "approach": "Start at the Hannegan Pass Trailhead (elev. ~3,120 ft) at the end of Ruth Creek Road (FS-32). From the trailhead, follow the maintained Hannegan Pass Trail #674 gently up the Ruth Creek valley (views of Mt. Sefrit and Nooksack Ridge) for about 4 miles and roughly 2,000 ft of gain to 5,050 ft Hannega…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Bivy beyond Easy Peak",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6600,
+      "notes": "From the river, switchback steeply back up onto Easy Ridge and then follow the crest itself. This is a hot, dry, open, south-facing ridge with almost no shade; …"
+     }
+    ]
+   },
+   {
+    "id": "wa_swiss_peak_standard_route",
+    "name": "Standard Route (Southwest Face)",
+    "peak": "Swiss Peak",
+    "area_id": "wa_swiss_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 7988,
+    "overview": "Swiss Peak has no independently approached line — it is climbed as a link in Picket Range crest traverses. The most-documented ascent gains the West Fury–Swiss col over a small glacier/snowfield, then climbs unusually solid rock up Swiss's southwest face to the broad NW–SE summit ridge; an alternate…",
+    "approach": "Drive WA-20 (North Cascades Highway) to the Ross Dam Trailhead (MP 134). Descend about 1 mile on the Ross Dam trail/service road to Ross Lake, then cross via the Ross Lake Resort water taxi (on-demand, ~$4-5/person) or by hiking/paddling around, and pick up the Big Beaver Trail north along the lake.…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     }
+    ]
+   },
+   {
+    "id": "wa_whatcom_peak_southwest_route",
+    "name": "Southwest Route (Whatcom Glacier)",
+    "peak": "Whatcom Peak",
+    "area_id": "wa_whatcom_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3, Glacier",
+    "high_point_ft": 7574,
+    "overview": "Whatcom Peak stands guard at the northwest gateway to the Picket Range above Whatcom Pass, one of the more accessible summits in a range known for brutal approaches. This Southwest/Whatcom Glacier line is the standard way to combine Whatcom Peak with neighboring Mount Challenger. Like most Picket Ra…",
+    "approach": "From the Hannegan Pass Trailhead (~3,100 ft, at the end of Ruth Creek Rd/FR 32 off the Mt. Baker Highway) follow the Hannegan Pass Trail (#674) 4.2-4.6 miles and about 2,000 ft of gain, alongside Ruth Creek through forest and subalpine meadows, to Hannegan Pass (5,066 ft) — the last easy, reliable w…",
+    "camps": [
+     {
+      "name": "Luna Camp, Big Beaver Trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2432,
+      "notes": "The standard staging camp for the Access Creek side of the Northern Pickets — Mount Fury's west peak and the Luna Cirque generally. Most parties take the Ross Lake water taxi to the Big Beaver landing near 1,600 ft and t…"
+     },
+     {
+      "name": "Beaver Pass Camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3620,
+      "notes": "A broad forested saddle about thirteen miles up from Ross Lake, and the jumping-off point for Wiley Ridge, which is the walking line onto the Challenger Glacier from the east. It is the largest camp on this side, with gr…"
+     },
+     {
+      "name": "Luna Col bivy, Luna cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7200,
+      "notes": "Open bivy ground on the col above the Luna Cirque, reached by leaving the Big Beaver trail near Access Creek and climbing trackless ground to Access Col. It is the working high camp for Mount Fury's west peak and for Lun…"
+     },
+     {
+      "name": "Perfect Pass, Perfect Pass cross-country zone",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6300,
+      "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter …"
+     },
+     {
+      "name": "Whatcom Camp, Brush Creek below Whatcom Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5286,
+      "notes": "The last trail camp beneath Whatcom Pass and the one that serves the Hannegan Pass and Chilliwack River approach to Whatcom Peak and Mount Challenger. Parties coming that way typically chain Boundary, Copper Creek or US …"
+     },
+     {
+      "name": "Twin Rocks and Stillwell Camps, Little Beaver",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These two sit at the hinge between the Little Beaver and Big Beaver trails and are what make the water-taxi loop practical: get dropped at the Little Beaver landing, walk up to Whatcom Pass for Whatcom Peak and Challenge…"
+     },
+     {
+      "name": "Challenger Arm camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6800,
+      "notes": "A rock cleaver at the eastern edge of the Challenger Glacier, reached at around 6,700 ft up a steep rock field, and the working high camp for anyone who has come in over Wiley Ridge rather than over Whatcom Pass. It is t…"
+     },
+     {
+      "name": "Eiley Lake benches, lower Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first real camp on the eastern walking approach to Mount Challenger, roughly six hours along the ridge from Beaver Pass. Parties climbing Challenger from this side commonly use it for two nights, going to the summit …"
+     },
+     {
+      "name": "East Wiley Basin and the Wiley Lake benches, upper Wiley Ridge",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6100,
+      "notes": "The upper half of Wiley Ridge, on the south-facing side, and the last bivouac ground before the glacier. A party that gets this far on the second day has a genuinely short summit day left: the ridge rolls over a gentle k…"
+     },
+     {
+      "name": "Improvised bivouacs on the Challenger Glacier and the crest south of Challenger",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Spectre Peak sits well down the crest south of Challenger and Poltergeist Pinnacle is a multi-pitch rock climb off the glacier, so parties working the far end of the chain sometimes take a night out on the ice rather tha…"
+     },
+     {
+      "name": "Easy Ridge bivouac ground below Easy Peak",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "This is the Hannegan Pass approach rather than a Ross Lake one, and it is how Spectre Peak is actually reached — in past ascents parties bivouacked near the summit of Easy Peak, dropped to the Imperfect Impasse and climb…"
+     },
+     {
+      "name": "Tapto Lakes cross-country zone",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "A basin of one large lake and several small ones in heather meadow, reached by an unmaintained boot route that climbs about 800 ft north out of Whatcom Pass over a ridge and then drops through boulders to the water. It l…"
+     },
+     {
+      "name": "Luna Cirque floor",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The floor of the great bowl beneath Luna Peak, walled on three sides, and the low point of the traverse that enters by Access Creek and Luna Pass and leaves over Challenger Gap onto Wiley Ridge. It sits directly under th…"
+     },
+     {
+      "name": "Graybeal Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3400,
+      "notes": "Established camp about 2 miles up the Brush Creek Trail; the camp itself is dry by late summer, so fill water bottles at Brush Creek roughly a half mile before …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "olympics-remaining",
+  "routes": [
+   {
+    "id": "wa_chimney_peak_standard",
+    "name": "Standard Route",
+    "peak": "Chimney Peak",
+    "area_id": "wa_chimney_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 6917,
+    "overview": "Chimney Peak (6,917 ft, correcting the older 6,913 ft figure) is a rugged, remote summit in the central Olympics on the west side of the Mount Anderson massif (parent peak West Peak, 7,365 ft, 3.4 mi NE). It sits immediately north above Enchanted Valley, the \"Valley of Ten Thousand Waterfalls,\" with…",
+    "approach": "From the Graves Creek Trailhead in the SW corner of Olympic National Park, follow the East Fork Quinault River Trail (Enchanted Valley Trail) east. The first roughly 2 miles follow an old roadbed through big firs and cedar before a short, steep drop to river level; at 2.5 miles the trail crosses Pon…",
+    "camps": [
+     {
+      "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2021,
+      "notes": "This is the camp for MOUNT LAWSON and effectively the only one. The peak rises about 3,800 ft above the river in a mile and a third, straight out of the drainage the camp sits in, and the climb is a class 2 slog on steep…"
+     },
+     {
+      "name": "Elip Creek and the lower North Fork Quinault camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These break the walk to Sixteen Mile rather than serving any summit directly, and that matters more than it sounds: the drive to the North Fork trailhead is long, most parties arrive in the afternoon, and twelve miles wi…"
+     },
+     {
+      "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the camp for CHIMNEY PEAK, and the reason it rather than the chalet meadow is that the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and yo…"
+     },
+     {
+      "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "THE camp for both MOUNT LA CROSSE and WHITE MOUNTAIN, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft g…"
+     },
+     {
+      "name": "O'Neil Pass and the upper Duckabush shelf",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "A high, exposed alternative to the lake basin for a party that wants to be moving early on WHITE MOUNTAIN or that is traversing rather than going in and back. The pass sits at roughly 4,900 ft on the long shelf that carr…"
+     },
+     {
+      "name": "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the eastern way to LaCrosse Basin and the one to use when the East Fork Quinault quota is gone. From the road end the trail runs up to Dose Forks at about 7.6 miles, Big Timber at 10.3, Diamond Meadow at 12.7 and…"
+     },
+     {
+      "name": "O'Neil Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 950,
+      "notes": "Four more miles of rolling old-growth rainforest — spruce, alder, bigleaf maple — with very little net gain. The camp sits immediately past the O'Neil Creek cro…"
+     },
+     {
+      "name": "Pyrites Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1500,
+      "notes": "Continue up-valley on the same gentle grade, crossing No Name Creek around mile 8 before reaching Pyrites. Sites are split across both banks of the creek, so ch…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_la_crosse_scramble",
+    "name": "Mount La Crosse Scramble",
+    "peak": "Mount La Crosse",
+    "area_id": "wa_mount_la_crosse",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 6417,
+    "overview": "Mount La Crosse is a Class 2 scramble summit on the Duckabush/Dosewallips divide in the seldom-visited southern interior of Olympic National Park, part of what is locally called the 'Dosewallips Group.' It rises above La Crosse Pass and Lake La Crosse (the peak's namesake), with White Mountain 0.95 …",
+    "approach": "From US 101 near Brinnon, take Duckabush River Road (FR 2510) west — paved for the first 3.6 miles, then gravel for a total of about 6 miles — to the Duckabush trailhead (FR 2510-060). Follow the Duckabush River Trail into the interior toward La Crosse Basin/O'Neil Pass (16.1 miles from the park bou…",
+    "camps": [
+     {
+      "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2021,
+      "notes": "This is the camp for MOUNT LAWSON and effectively the only one. The peak rises about 3,800 ft above the river in a mile and a third, straight out of the drainage the camp sits in, and the climb is a class 2 slog on steep…"
+     },
+     {
+      "name": "Elip Creek and the lower North Fork Quinault camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These break the walk to Sixteen Mile rather than serving any summit directly, and that matters more than it sounds: the drive to the North Fork trailhead is long, most parties arrive in the afternoon, and twelve miles wi…"
+     },
+     {
+      "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the camp for CHIMNEY PEAK, and the reason it rather than the chalet meadow is that the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and yo…"
+     },
+     {
+      "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "THE camp for both MOUNT LA CROSSE and WHITE MOUNTAIN, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft g…"
+     },
+     {
+      "name": "O'Neil Pass and the upper Duckabush shelf",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "A high, exposed alternative to the lake basin for a party that wants to be moving early on WHITE MOUNTAIN or that is traversing rather than going in and back. The pass sits at roughly 4,900 ft on the long shelf that carr…"
+     },
+     {
+      "name": "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the eastern way to LaCrosse Basin and the one to use when the East Fork Quinault quota is gone. From the road end the trail runs up to Dose Forks at about 7.6 miles, Big Timber at 10.3, Diamond Meadow at 12.7 and…"
+     },
+     {
+      "name": "Five Mile Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "Established riverside camp along the Duckabush River Trail; reliable river water, treat before drinking."
+     },
+     {
+      "name": "Ten Mile Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 1400,
+      "notes": "Last established campsite before the trail turns south for La Crosse Pass; sits at 1,400 ft with river water nearby."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_lawson_standard",
+    "name": "Standard Scramble",
+    "peak": "Mount Lawson",
+    "area_id": "wa_mount_lawson",
+    "discipline": "mountaineering",
+    "grade": "Class 3",
+    "high_point_ft": 5401,
+    "overview": "Mount Lawson (5,401 ft) is a heavily timbered, rarely climbed summit deep in the southern Olympic interior, within Olympic National Park's Daniel J. Evans Wilderness. Its 2,521 ft of prominence ranks it among the more prominent secondary peaks in the range (roughly #6 by prominence in the Olympic Mo…",
+    "approach": "Via the North Fork Quinault Trailhead (North Shore Road), hike the North Fork Quinault River Trail roughly 16 miles to Low Divide — fords at Wild Rose Creek, Elip Creek, and 16-Mile Creek can be difficult or impassable in high water — then follow the primitive, unmaintained Skyline Ridge Trail towar…",
+    "camps": [
+     {
+      "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2021,
+      "notes": "This is the camp for MOUNT LAWSON and effectively the only one. The peak rises about 3,800 ft above the river in a mile and a third, straight out of the drainage the camp sits in, and the climb is a class 2 slog on steep…"
+     },
+     {
+      "name": "Elip Creek and the lower North Fork Quinault camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These break the walk to Sixteen Mile rather than serving any summit directly, and that matters more than it sounds: the drive to the North Fork trailhead is long, most parties arrive in the afternoon, and twelve miles wi…"
+     },
+     {
+      "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the camp for CHIMNEY PEAK, and the reason it rather than the chalet meadow is that the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and yo…"
+     },
+     {
+      "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "THE camp for both MOUNT LA CROSSE and WHITE MOUNTAIN, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft g…"
+     },
+     {
+      "name": "O'Neil Pass and the upper Duckabush shelf",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "A high, exposed alternative to the lake basin for a party that wants to be moving early on WHITE MOUNTAIN or that is traversing rather than going in and back. The pass sits at roughly 4,900 ft on the long shelf that carr…"
+     },
+     {
+      "name": "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the eastern way to LaCrosse Basin and the one to use when the East Fork Quinault quota is gone. From the road end the trail runs up to Dose Forks at about 7.6 miles, Big Timber at 10.3, Diamond Meadow at 12.7 and…"
+     },
+     {
+      "name": "Wolf Bar",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 560,
+      "notes": "Established riverside camp (6-7 sites) with bear wires on the west bank of the North Fork Quinault; reliable river water but treat before drinking."
+     },
+     {
+      "name": "Halfway House",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 780,
+      "notes": "Site of a long-gone Press Expedition-era lodge, now sandy riverside campsites; good water and a natural turnaround/rest point."
+     },
+     {
+      "name": "Elip Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 870,
+      "notes": "Backcountry camp near the Elip Creek/Skyline Trail junction (old sign reads 'Skyline Trail 4.6'); last reliable, easy water before leaving the maintained trail …"
+     }
+    ]
+   },
+   {
+    "id": "wa_white_mountain_olympics_scramble",
+    "name": "White Mountain Scramble",
+    "peak": "White Mountain",
+    "area_id": "wa_white_mountain_olympics",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 6378,
+    "overview": "White Mountain (6,378 ft) sits in the remote southern interior of Olympic National Park, 0.95 mi southwest of its higher neighbor Mount La Crosse (6,417 ft), with an unnamed glacier occupying the north cirque between the two summits. It rises above the headwaters of the Duckabush and West Fork Dosew…",
+    "approach": "Dosewallips approach (north): from the current road closure near the old Elkhorn Campground area, hike or bike the abandoned roadbed ~5.5-7 mi (~1,900 ft gain) to the former Dosewallips Ranger Station, then continue on the West Fork Dosewallips Trail to Honeymoon Meadows camp (~mile 15, established …",
+    "camps": [
+     {
+      "name": "Sixteen Mile Camp — the base directly under Mount Lawson",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2021,
+      "notes": "This is the camp for MOUNT LAWSON and effectively the only one. The peak rises about 3,800 ft above the river in a mile and a third, straight out of the drainage the camp sits in, and the climb is a class 2 slog on steep…"
+     },
+     {
+      "name": "Elip Creek and the lower North Fork Quinault camps",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "These break the walk to Sixteen Mile rather than serving any summit directly, and that matters more than it sounds: the drive to the North Fork trailhead is long, most parties arrive in the afternoon, and twelve miles wi…"
+     },
+     {
+      "name": "Pyrites Creek — where the Chimney Peak approach leaves the trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the camp for CHIMNEY PEAK, and the reason it rather than the chalet meadow is that the approach leaves the East Fork Quinault trail at about nine miles, which is where this camp sits. Push on to the chalet and yo…"
+     },
+     {
+      "name": "Lake LaCrosse and Hart Lake — the base for Mount La Crosse and White Mountain",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4800,
+      "notes": "THE camp for both MOUNT LA CROSSE and WHITE MOUNTAIN, which stand less than a mile apart on either side of a small unnamed glacier directly above the basin. Both are scrambles rather than climbs — La Crosse at 6,417 ft g…"
+     },
+     {
+      "name": "O'Neil Pass and the upper Duckabush shelf",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4900,
+      "notes": "A high, exposed alternative to the lake basin for a party that wants to be moving early on WHITE MOUNTAIN or that is traversing rather than going in and back. The pass sits at roughly 4,900 ft on the long shelf that carr…"
+     },
+     {
+      "name": "Honeymoon Meadows and Camp Siberia — the West Fork Dosewallips side of LaCrosse Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the eastern way to LaCrosse Basin and the one to use when the East Fork Quinault quota is gone. From the road end the trail runs up to Dose Forks at about 7.6 miles, Big Timber at 10.3, Diamond Meadow at 12.7 and…"
+     },
+     {
+      "name": "Diamond Meadows Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2900,
+      "notes": "Last established backcountry camp before Honeymoon Meadows; river-adjacent water source, elevation estimated by interpolating between Dose Forks and Honeymoon M…"
+     },
+     {
+      "name": "Honeymoon Meadows Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3527,
+      "notes": "Forested backcountry campsite just below the actual meadows, the standard base camp for the White Mountain scramble day, at about mile 15."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "olympus",
+  "routes": [
+   {
+    "id": "wa_mount_olympus_blue_glacier",
+    "name": "Blue Glacier (Standard Route)",
+    "peak": "Mount Olympus (West Peak)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "mountaineering",
+    "grade": "Grade II, 5.3-5.4 (Mod. Snow)",
+    "high_point_ft": 7980,
+    "overview": "The standard route on Mount Olympus and the classic way to the highest, most prominent summit in the Olympic Mountains. A long rainforest approach up the Hoh River leads to the Blue Glacier; moderate glacier travel over Snow Dome and Crystal Pass gains the summit pyramid, capped by a short technical…",
+    "approach": "Start at the Hoh Ranger Station/Hoh Rain Forest trailhead (578 ft) inside Olympic National Park and follow the Hoh River Trail east. The first 10.5 miles to Lewis Meadows (1,005 ft) are gentle, shaded old-growth rainforest walking along the braided, glacially-fed Hoh River, with numerous log/stream …",
+    "camps": [
+     {
+      "name": "Glacier Meadows",
+      "store": "bivy",
+      "type": null,
+      "elev": 4200,
+      "notes": "The standard base camp at roughly 17 miles in, shaded and comfortable, with shelters, a bear wire and two working privies — the last toilets before the glacier. It sits about 4,175 to 4,300 ft depending on which part of …"
+     },
+     {
+      "name": "Snow Dome",
+      "store": "bivy",
+      "type": null,
+      "elev": 6600,
+      "notes": "A high camp rather than an emergency bivy, and the reason parties use it is that it removes the glacier's lower miles from summit day. Reaching it means roped crevasse travel from the glacier toe, so it is not a place yo…"
+     },
+     {
+      "name": "Elk Lake",
+      "store": "bivy",
+      "type": null,
+      "elev": 2500,
+      "notes": "About 15 miles in, where the Hoh River Trail stops being flat and starts climbing. It is the standard place to break the approach for parties who cannot make Glacier Meadows in a day, and the fallback if the snow slopes …"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_olympus_west_ridge",
+    "name": "West Ridge",
+    "peak": "Mount Olympus (West Peak)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "mountaineering",
+    "grade": "Grade II, 5.4 PG13 (Easy Snow)",
+    "high_point_ft": 7980,
+    "overview": "A rarely climbed ridge line to the summit of Mount Olympus reached from the same Blue Glacier approach as the standard route. Never harder than 5.4 and never easier than class 3, it would be a classic if not for variable rock quality and demanding route-finding; the difficulty for the grade lies in …",
+    "approach": "Same 17.4–17.5-mi Hoh River Trail and Blue Glacier approach to Glacier Meadows as the standard route (5-Mile Island, Olympus Guard Station/High Hoh Bridge, Lewis Meadow ~11 mi/1,000 ft as the common overnight, Elk Lake, Glacier Meadows at 4,300 ft), including the ~0.8-mi way-path to the lateral mora…",
+    "camps": [
+     {
+      "name": "Glacier Meadows — the standard Blue Glacier base camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the mor…"
+     },
+     {
+      "name": "Elk Lake Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the s…"
+     },
+     {
+      "name": "Lewis Meadows Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a perm…"
+     },
+     {
+      "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day int…"
+     },
+     {
+      "name": "Snow Dome high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6700,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_tom_scramble",
+    "name": "Glacier/Scramble Route",
+    "peak": "Mount Tom",
+    "area_id": "wa_mount_tom",
+    "discipline": "mountaineering",
+    "grade": "Class 3 + glacier",
+    "high_point_ft": 7076,
+    "overview": "Mount Tom (7,076 ft) is a glaciated satellite summit on the western edge of the Mount Olympus massif, at the head of the Hoh River in one of the wettest, most remote corners of the Olympics. It holds the White Glacier on its northeast slope — noted as the westernmost glacier in the contiguous US — a…",
+    "approach": "From the Hoh River Trailhead (end of Upper Hoh Road, roughly 18 miles east of US-101 south of Forks), follow the Hoh River Trail upriver — a well-graded, mostly flat rainforest path through old-growth Sitka spruce and big-leaf maple for its first ~12 miles. Checkpoints: Mount Tom Creek camp (~mile 2…",
+    "camps": [
+     {
+      "name": "Glacier Meadows — the standard Blue Glacier base camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the mor…"
+     },
+     {
+      "name": "Elk Lake Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the s…"
+     },
+     {
+      "name": "Lewis Meadows Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a perm…"
+     },
+     {
+      "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day int…"
+     },
+     {
+      "name": "Elk Lake camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Reservable backcountry camp with privy and bear wire; last reliable easy water before the trail climbs steeply to Glacier Meadows."
+     },
+     {
+      "name": "Glacier Meadows high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "Old ranger-station camp near timberline; no camping is permitted between here and the Blue Glacier moraine."
+     }
+    ]
+   },
+   {
+    "id": "wa_olympus_blue_glacier_east_ramps",
+    "name": "Blue Glacier / Snow Dome — East Face Ramps Finish (Standard)",
+    "peak": "Mount Olympus (West Peak)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "mountaineering",
+    "grade": "Grade III; Class 4 with a Class 5 step",
+    "high_point_ft": 7980,
+    "overview": "This is the standard finish on the highest summit in the Olympics, reached after one of the longest approaches in the Lower 48. After miles of rainforest and a glacier crossing, the climb tops out by winding up a series of loose ramps on the east face of the summit pinnacle. The moves are moderate, …",
+    "approach": "This is the same approach as the standard North Ridge/Blue Glacier route to the point where the routes diverge on the final summit pyramid. From the Hoh Ranger Station (578 ft), follow the Hoh River Trail roughly 17.2-17.5 miles and about 3,700 ft of gain to Glacier Meadows (4,200-4,300 ft), via Lew…",
+    "camps": [
+     {
+      "name": "Glacier Meadows — the standard Blue Glacier base camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the mor…"
+     },
+     {
+      "name": "Elk Lake Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the s…"
+     },
+     {
+      "name": "Lewis Meadows Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a perm…"
+     },
+     {
+      "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day int…"
+     },
+     {
+      "name": "Olympus Guard Station",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 948,
+      "notes": ""
+     },
+     {
+      "name": "Glacier Meadows",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4200,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_olympus_summit_block_west_edge",
+    "name": "Summit Block — Northwest Edge Finish (variation)",
+    "peak": "Mount Olympus (West Peak)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "alpine",
+    "grade": "Grade III; 5.4",
+    "high_point_ft": 7980,
+    "overview": "A variation finishing up the solid northwest edge of the summit block, offering better rock quality than the East Face ramps but with more exposure.",
+    "approach": "Same as Blue Glacier/East Face route approach until reaching the summit block base. Approach time is identical.",
+    "camps": [
+     {
+      "name": "Glacier Meadows — the standard Blue Glacier base camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the mor…"
+     },
+     {
+      "name": "Elk Lake Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the s…"
+     },
+     {
+      "name": "Lewis Meadows Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a perm…"
+     },
+     {
+      "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day int…"
+     },
+     {
+      "name": "Glacier Meadows Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4175,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_olympus_traverse",
+    "name": "Mount Olympus Traverse (West–Middle–East Peaks)",
+    "peak": "Mount Olympus (West Peak)",
+    "area_id": "wa_mount_olympus",
+    "discipline": "mountaineering",
+    "grade": "Grade III; glacier with Class 4-5 summit work",
+    "high_point_ft": 7980,
+    "overview": "A more complete tour of the Olympus massif that links all three of its main summits in one outing. After climbing the West Peak you continue over the Middle and East peaks, then drop off the far side via Glacier Pass — a longer, more committing day than the standard climb but a far fuller experience…",
+    "approach": "Same Hoh River Trail (17.4 mi) and Blue Glacier approach to Glacier Meadows as the standard route (5-Mile Island, Olympus Guard Station/High Hoh Bridge, Lewis Meadow ~11 mi as the common overnight, Elk Lake, Glacier Meadows at 4,300 ft), then the ~1-mi lateral-moraine crossing onto the glacier. From…",
+    "camps": [
+     {
+      "name": "Glacier Meadows — the standard Blue Glacier base camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4300,
+      "notes": "The standard base camp, roughly seventeen miles from the Hoh trailhead and the last established camp before the Blue Glacier — the park does not permit camping between here and the ice. From the meadows you climb the mor…"
+     },
+     {
+      "name": "Elk Lake Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 2600,
+      "notes": "Elk Lake sits about fifteen miles up the Hoh, where the trail finally starts climbing hard, and it is the fallback base for parties who miss out on Glacier Meadows. From here the summit day is long — you still have the s…"
+     },
+     {
+      "name": "Lewis Meadows Camp, Hoh River trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1000,
+      "notes": "The last low-elevation river camp on the Hoh before the trail leaves the valley floor, roughly ten miles in from the Hoh Rain Forest visitor centre. Climbers use it mainly to break the walk in when they cannot get a perm…"
+     },
+     {
+      "name": "Snow Dome / Caltech Rocks high bivy, on the Blue Glacier",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "Strong parties skip the pre-dawn start from Glacier Meadows by carrying a light camp onto the ice, either into the rocks below the Snow Dome or onto the dome near the old weather station. It turns a brutal summit day int…"
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,991 @@
+{
+  "zones": [
+    {
+      "zone": "ross-lake-corridor",
+      "overnightPermit": {
+        "what": "North Cascades National Park Complex backcountry permit (covers Ross Lake NRA) - quota, not free",
+        "where": "Reserve on Recreation.gov, or get a walk-up permit at the Wilderness Information Center in Marblemount. Cross-country climbing camps need a permit for the zone you camp in.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    },
+    {
+      "zone": "sawtooth-lake-chelan",
+      "overnightPermit": {
+        "what": "Free self-issue Lake Chelan-Sawtooth Wilderness permit",
+        "where": "Fill one out at the trailhead registration box. Most trailheads also need a Northwest Forest Pass to park.",
+        "url": null
+      }
+    },
+    {
+      "zone": "shuksan",
+      "overnightPermit": {
+        "what": "North Cascades National Park backcountry permit for any camp inside the park - quota, not free",
+        "where": "Reserve on Recreation.gov, or get a walk-up permit at the Glacier Public Service Center (in season) or the Wilderness Information Center in Marblemount. Camps below the park boundary, such as Lake Ann and lower Shannon Ridge, are in the Mount Baker Wilderness and need only the free self-issue permit at the trailhead.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "id": "wa_colonial_peak_west_ridge",
+      "main": [
+        "Basin camp below Colonial Glacier",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "car campground",
+        "Neve-Colonial col high bivy": "Snowfield approach, above the Colonial route",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties camp in the flat basin at the foot of the Colonial Glacier (about 6,100 ft) or on the ridge knolls lower down; the Neve-Colonial col is on the Snowfield line, not Colonial's."
+    },
+    {
+      "id": "wa_cosho_peak_scramble",
+      "main": [
+        "Cosho Camp, Fisher Creek"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side",
+        "Cosho Camp"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach",
+        "Cosho Camp": "duplicate of Cosho Camp, Fisher Creek"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Cosho Camp is the designated Fisher Creek camp over Easy Pass; the waypoint entry is the same place."
+    },
+    {
+      "id": "wa_crater_mountain_standard_route",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "further along Jackita Ridge trail past the Crater Mountain junction",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "Crater Lake, below Crater Mountain",
+          "type": "camp",
+          "capacity": "A few tent sites on the rocky rise above the tarn",
+          "water": "Small shallow tarn; treat, and carry extra late in the season",
+          "permit": "Ross Lake NRA backcountry permit",
+          "notes": "Small tarn at the base of the south ridge, about 1.1 miles past the Crater Mountain junction on the Jackita Ridge trail. Parties splitting the climb camp on the rocky ground just above it; many do the whole route in one long day.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "The camp for this route is Crater Lake, which was missing; Devils Park is on the Jackita Ridge trail beyond the junction. Crater Lake elevation not confirmed, so omitted."
+    },
+    {
+      "id": "wa_jack_mountain_east_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "the route is reached from the eastern glacier, not the Jerry Lakes side"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "No established approach or camp for the East Ridge could be found, so nothing was added."
+    },
+    {
+      "id": "wa_jack_mountain_nohokomeen_headwall",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "High camp below the Nohokomeen Glacier",
+          "type": "camp",
+          "elev": 5200,
+          "capacity": "Open slopes and ridge snow; room for a few tents",
+          "water": "Snowmelt; early-season trips camp on snow",
+          "permit": "Ross Lake NRA backcountry permit for a cross-country camp",
+          "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge.",
+          "role": "main"
+        },
+        {
+          "name": "May Creek Camp, Ross Lake",
+          "type": "camp",
+          "capacity": "Designated lakeshore camp with several tent sites",
+          "water": "Ross Lake and May Creek; treat",
+          "permit": "Ross Lake NRA backcountry permit",
+          "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+          "role": "onRoute"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "None of the listed camps serve the north side; added the high camp below the Nohokomeen Glacier (standard) and May Creek Camp on the East Bank Trail."
+    },
+    {
+      "id": "wa_jack_mountain_north_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "May Creek Camp, Ross Lake",
+          "type": "camp",
+          "capacity": "Designated lakeshore camp with several tent sites",
+          "water": "Ross Lake and May Creek; treat",
+          "permit": "Ross Lake NRA backcountry permit",
+          "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "No published approach for the North Ridge; May Creek Camp is the East Bank Trail camp for the north flank, but the actual high camp is unknown."
+    },
+    {
+      "id": "wa_jack_mountain_northeast_glacier",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "High camp below the Nohokomeen Glacier",
+          "type": "camp",
+          "elev": 5200,
+          "capacity": "Open slopes and ridge snow; room for a few tents",
+          "water": "Snowmelt; early-season trips camp on snow",
+          "permit": "Ross Lake NRA backcountry permit for a cross-country camp",
+          "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge.",
+          "role": "main"
+        },
+        {
+          "name": "May Creek Camp, Ross Lake",
+          "type": "camp",
+          "capacity": "Designated lakeshore camp with several tent sites",
+          "water": "Ross Lake and May Creek; treat",
+          "permit": "Ross Lake NRA backcountry permit",
+          "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+          "role": "onRoute"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Sparse record; assumed to share the Nohokomeen approach from May Creek, so it gets the same camps."
+    },
+    {
+      "id": "wa_jack_mountain_south_face",
+      "main": [
+        "Crater Creek Meadows bench",
+        "Jerry Lakes basin"
+      ],
+      "onRoute": [
+        "Jerry Lakes Peak south saddle"
+      ],
+      "drop": [
+        "Jerry Lakes / Crater Creek Meadows camp"
+      ],
+      "dropReasons": {
+        "Jerry Lakes / Crater Creek Meadows camp": "duplicate of Crater Creek Meadows bench and Jerry Lakes basin"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "A party record camps at the 6,000 ft basin WNW of point 7001 after passing Jerry Lakes; order of the two mains is a judgment call, and whether these camps are in Ross Lake NRA or the Pasayten Wilderness is not confirmed."
+    },
+    {
+      "id": "wa_jack_mountain_southwest_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "serves a different peak or approach",
+        "Colonial Basin bench camps, below the Pyramid-Colonial col": "serves a different peak or approach",
+        "Neve-Colonial col high bivy": "serves a different peak or approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "Little Jack camp, knoll northwest of Little Jack",
+          "type": "camp",
+          "elev": 6600,
+          "capacity": "Open heather knoll; a few tent sites",
+          "water": "Snowmelt only; may be dry late in the season",
+          "permit": "Ross Lake NRA backcountry permit on the west side of the crest; free self-issue Pasayten Wilderness permit on the east side",
+          "notes": "High camp on a small hump just northwest of Little Jack, reached by the old Little Jack trail from the East Bank trailhead. It looks straight across the head of Crater Creek at Jack Mountain and is the usual place to split the Southwest Ridge.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Added the Little Jack knoll camp; water there and which side of the boundary it sits on are not confirmed, and fast parties do the route car-to-car."
+    },
+    {
+      "id": "wa_pyramid_peak_colonial_standard",
+      "main": [
+        "Colonial Basin bench camps, below the Pyramid-Colonial col"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Colonial Creek South Campground, Diablo Lake",
+        "Neve-Colonial col high bivy",
+        "Cosho Camp, Fisher Creek",
+        "Devils Park Shelter, Jackita Ridge trail",
+        "Jerry Lakes basin, Jack Mountain south side"
+      ],
+      "dropReasons": {
+        "Colonial Creek South Campground, Diablo Lake": "car campground",
+        "Neve-Colonial col high bivy": "Snowfield approach",
+        "Cosho Camp, Fisher Creek": "serves a different peak or approach",
+        "Devils Park Shelter, Jackita Ridge trail": "serves a different peak or approach",
+        "Jerry Lakes basin, Jack Mountain south side": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Pyramid is usually a day climb; parties who camp use the ridge knolls below the peak on the shared Colonial climbers' path."
+    },
+    {
+      "id": "wa_abernathy_peak_north_ridge",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves the south-side Scatter Lake route, not the North Creek approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "The North Ridge is normally a day climb from the North Creek trailhead; no standard camp was found, so nothing was added."
+    },
+    {
+      "id": "wa_abernathy_peak_south_ridge",
+      "main": [
+        "Scatter Lake basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Scatter Lake is the standard camp directly under the south route."
+    },
+    {
+      "id": "wa_courtney_peak_scramble",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "different approach from Eagle Creek",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "reached over Horsehead Pass or from Prince Creek, not from West Fork Buttermilk",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "Star Lake",
+          "type": "camp",
+          "elev": 7460,
+          "capacity": "Several established sites around the basin",
+          "water": "Lake; treat",
+          "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit",
+          "notes": "Larch basin about half a mile past Fish Creek Pass, 7.5 miles from the West Fork Buttermilk trailhead. The usual camp for Courtney and Star. Camp at least 200 ft from the lake.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Courtney from West Fork Buttermilk goes over Fish Creek Pass; Star Lake is the usual camp and was missing from this list."
+    },
+    {
+      "id": "wa_devore_peak_west_ridge",
+      "main": [
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp": "duplicate of Bird Creek Camp, Devore Creek trail"
+      },
+      "add": [],
+      "overnightPermit": {
+        "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+        "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      },
+      "note": "Parties camp at Bird Creek Camp at the Devore-Bird Creek junction; the higher Bird Creek basin camp is not in this route's list."
+    },
+    {
+      "id": "wa_hoodoo_peak_sawtooth_scramble",
+      "main": [
+        "Libby Lake"
+      ],
+      "onRoute": [
+        "North Fork Libby Creek crossing"
+      ],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "Old cabin camp, Libby Creek trail",
+          "type": "camp",
+          "elev": 7170,
+          "capacity": "Several sites near the old cabin",
+          "water": "Creek nearby",
+          "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit",
+          "notes": "Camp by the old 1900s cabin about 5 miles up the Libby Creek trail, just below Libby Lake. A common base for Hoodoo: the scramble starts up the boulder field and gully from here.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Parties camp at the old cabin or at Libby Lake just above; the cabin camp was missing. Its water source is assumed, not confirmed."
+    },
+    {
+      "id": "wa_mount_bigelow_scramble",
+      "main": [
+        "Upper Eagle Lake and Horsehead Pass"
+      ],
+      "onRoute": [
+        "Eagle Lakes Trail backcountry camp"
+      ],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Boiling Lake basin": "over Horsehead Pass, beyond the route",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Both standard lines start from the Eagle Lakes basin."
+    },
+    {
+      "id": "wa_oval_peak_scramble",
+      "main": [
+        "Oval Lakes basin - West and Middle Oval"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail",
+        "Middle Oval Lake outflow"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach",
+        "Middle Oval Lake outflow": "duplicate of Oval Lakes basin - West and Middle Oval"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Camp at the Oval Lakes; the waypoint is the same basin."
+    },
+    {
+      "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+      "main": [],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves the standard Libby Lake route, a different basin",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [
+        {
+          "name": "Crater Lakes, Crater Creek trail",
+          "type": "camp",
+          "capacity": "Several established sites, best at the upper lake",
+          "water": "Lakes; treat",
+          "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit",
+          "notes": "Lakes at the head of the Crater Creek trail from the Crater Creek trailhead. The natural camp for the southeast ridge; many parties do the route in a day.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Added Crater Lakes as the camp for this approach; elevation not confirmed, and the route is often done in a day."
+    },
+    {
+      "id": "wa_raven_ridge_standard_route",
+      "main": [
+        "Libby Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Libby Lake sits at the foot of the gully the route climbs."
+    },
+    {
+      "id": "wa_reynolds_peak_scramble",
+      "main": [
+        "Reynolds Creek upper basin"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail",
+        "Upper Reynolds Creek basin"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach",
+        "Upper Reynolds Creek basin": "duplicate of Reynolds Creek upper basin"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Single standard camp in the upper Reynolds Creek basin."
+    },
+    {
+      "id": "wa_star_peak_sawtooth_scramble",
+      "main": [
+        "Star Lake"
+      ],
+      "onRoute": [],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "different approach from Eagle Creek",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "reached over Horsehead Pass or from Prince Creek, not from West Fork Buttermilk",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Star Lake past Fish Creek Pass is the standard camp from West Fork Buttermilk."
+    },
+    {
+      "id": "wa_switchback_mountain_scramble",
+      "main": [
+        "Cooney Lake"
+      ],
+      "onRoute": [
+        "Upper Eagle Lake and Horsehead Pass"
+      ],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp, Devore Creek trail": "serves a different peak or approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Cooney Lake is the standard base; Upper Eagle Lake is only on the way for parties doing the Eagle Lakes loop, a judgment call."
+    },
+    {
+      "id": "wa_tupshin_peak_scramble",
+      "main": [
+        "Bird Creek basin high camp"
+      ],
+      "onRoute": [
+        "Bird Creek Camp, Devore Creek trail"
+      ],
+      "drop": [
+        "Scatter Lake basin",
+        "Reynolds Creek upper basin",
+        "Oval Lakes basin - West and Middle Oval",
+        "Libby Lake",
+        "Upper Eagle Lake and Horsehead Pass",
+        "Boiling Lake basin",
+        "Prince Creek Campground - boat-in",
+        "Bird Creek Camp"
+      ],
+      "dropReasons": {
+        "Scatter Lake basin": "serves a different peak or approach",
+        "Reynolds Creek upper basin": "serves a different peak or approach",
+        "Oval Lakes basin - West and Middle Oval": "serves a different peak or approach",
+        "Libby Lake": "serves a different peak or approach",
+        "Upper Eagle Lake and Horsehead Pass": "serves a different peak or approach",
+        "Boiling Lake basin": "serves a different peak or approach",
+        "Prince Creek Campground - boat-in": "serves a different peak or approach",
+        "Bird Creek Camp": "duplicate of Bird Creek Camp, Devore Creek trail"
+      },
+      "add": [],
+      "overnightPermit": {
+        "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+        "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin.",
+        "url": "https://www.nps.gov/noca/planyourvisit/permits.htm"
+      },
+      "note": "Parties camp either in the Bird Creek basin (about 5,400-5,800 ft) or at Bird Creek Camp on the trail; both are used."
+    },
+    {
+      "id": "wa_mount_shuksan_fisher_chimneys",
+      "main": [
+        "Lake Ann",
+        "Rock rib above Winnie's Slide"
+      ],
+      "onRoute": [
+        "Top of the Chimneys rock outcrop"
+      ],
+      "drop": [
+        "White Salmon Glacier Lower Bivouac"
+      ],
+      "dropReasons": {
+        "White Salmon Glacier Lower Bivouac": "serves the White Salmon Glacier approach, not this line"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Most parties camp at Lake Ann or above Winnie's Slide; the White Salmon lower bivy is on another route."
+    },
+    {
+      "id": "wa_mount_shuksan_hanging_glacier",
+      "main": [
+        "North Face bivy, where the rib meets the face"
+      ],
+      "onRoute": [
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "only on a Fisher Chimneys descent that ends at a different trailhead"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Shares the North Face approach and bivy; the upper Fisher Chimneys camps are on the usual descent."
+    },
+    {
+      "id": "wa_mount_shuksan_north_face",
+      "main": [
+        "North Face bivy, where the rib meets the face"
+      ],
+      "onRoute": [
+        "North Face Base Camp",
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "only on a Fisher Chimneys descent that ends at a different trailhead"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard bivy is at 5,500 ft where the ridge meets the face; the 7,000 ft North Face Base Camp waypoint is unverified and kept as on-route."
+    },
+    {
+      "id": "wa_mount_shuksan_northeast_ridge",
+      "main": [
+        "North Face bivy, where the rib meets the face"
+      ],
+      "onRoute": [
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "only on a Fisher Chimneys descent that ends at a different trailhead"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Reached after a north-side route, so it inherits that bivy; little record of this route exists."
+    },
+    {
+      "id": "wa_mount_shuksan_northwest_arete",
+      "main": [
+        "North Face bivy, where the rib meets the face"
+      ],
+      "onRoute": [
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "only on a Fisher Chimneys descent that ends at a different trailhead"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "No bivy record found for the arete; assumed to use the shared White Salmon approach ridge and bivy, which is uncertain."
+    },
+    {
+      "id": "wa_mount_shuksan_price_glacier",
+      "main": [
+        "Price Glacier Base Camp"
+      ],
+      "onRoute": [
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin",
+        "North Face bivy, where the rib meets the face"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "only on a Fisher Chimneys descent that ends at a different trailhead",
+        "North Face bivy, where the rib meets the face": "reached from the White Salmon side, not the Nooksack Cirque approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Parties bivy on the slabs or saddle above Price Lake below the glacier; descent route varies, so the Fisher Chimneys camps as on-route is a judgment call."
+    },
+    {
+      "id": "wa_mount_shuksan_sulphide_glacier",
+      "main": [
+        "Lower bivy site"
+      ],
+      "onRoute": [
+        "The Notch",
+        "Upper bivy site"
+      ],
+      "drop": [
+        "Shannon Ridge / Sulphide Glacier Camp"
+      ],
+      "dropReasons": {
+        "Shannon Ridge / Sulphide Glacier Camp": "duplicate of Lower bivy site"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Standard Sulphide camps; the waypoint at 6,245 ft is the lower bivy site."
+    },
+    {
+      "id": "wa_mount_shuksan_white_salmon_glacier",
+      "main": [],
+      "onRoute": [
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide"
+      ],
+      "drop": [
+        "Sulphide Glacier camp",
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp",
+        "Lake Ann basin",
+        "North Face bivy, where the rib meets the face"
+      ],
+      "dropReasons": {
+        "Sulphide Glacier camp": "serves a different peak or approach",
+        "Shannon Ridge crest camps, below the park boundary": "serves a different peak or approach",
+        "Sulphide Glacier high camp": "serves a different peak or approach",
+        "Lake Ann basin": "Fisher Chimneys approach",
+        "North Face bivy, where the rib meets the face": "North Face approach diverges before the glacier"
+      },
+      "add": [
+        {
+          "name": "Rock outcrop bivy, east edge of the lower White Salmon Glacier",
+          "type": "bivy",
+          "capacity": "Small flat spots among rock outcrops; a few tents",
+          "water": "Snowmelt and glacial runoff",
+          "permit": "North Cascades National Park backcountry permit",
+          "notes": "Bivy on the rock outcrops along the eastern edge of the White Salmon Glacier near its foot. Camp here rather than in the approach valley, which is under icefall from the Hanging Glacier.",
+          "role": "main"
+        }
+      ],
+      "overnightPermit": null,
+      "note": "Added the lower White Salmon bivy, which was missing; elevation omitted as not confirmed."
+    },
+    {
+      "id": "wa_southeast_ridge_se_corner",
+      "main": [
+        "Sulphide Glacier camp"
+      ],
+      "onRoute": [
+        "Shannon Ridge crest camps, below the park boundary",
+        "Sulphide Glacier high camp"
+      ],
+      "drop": [
+        "Lake Ann basin",
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+        "North Face bivy, where the rib meets the face"
+      ],
+      "dropReasons": {
+        "Lake Ann basin": "Fisher Chimneys approach",
+        "Fisher Chimneys camps, White Salmon and above Winnie's Slide": "Fisher Chimneys route",
+        "North Face bivy, where the rib meets the face": "north-side approach"
+      },
+      "add": [],
+      "overnightPermit": null,
+      "note": "Approached up Shannon Ridge and the Sulphide Glacier, so it uses the Sulphide camps."
+    }
+  ],
+  "misassigned": [
+    "wa_crater_mountain_standard_route: none of the listed camps is on this route; its camp is Crater Lake (added)",
+    "wa_jack_mountain_east_ridge: every listed camp belongs to other approaches; no camp for this route could be established",
+    "wa_jack_mountain_nohokomeen_headwall: listed camps are all other approaches or peaks; north-side camps added",
+    "wa_jack_mountain_north_ridge: listed camps are all other approaches; May Creek Camp added",
+    "wa_jack_mountain_northeast_glacier: listed camps are all other approaches; Nohokomeen camps added",
+    "wa_jack_mountain_southwest_ridge: listed camps are all other approaches; Little Jack camp added",
+    "wa_abernathy_peak_north_ridge: only south-side and other peaks' camps listed; no North Creek camp found",
+    "wa_courtney_peak_scramble: list lacks Star Lake, the camp on its West Fork Buttermilk approach (added)",
+    "wa_raven_ridge_southeast_ridge_crater_lake: list lacks Crater Lakes, the camp on its approach (added)",
+    "wa_mount_shuksan_white_salmon_glacier: list lacks the lower White Salmon Glacier bivy (added)"
+  ]
+}

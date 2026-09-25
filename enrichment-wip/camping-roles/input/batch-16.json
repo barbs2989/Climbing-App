@@ -1,0 +1,2008 @@
+[
+ {
+  "zone": "ross-lake-corridor",
+  "routes": [
+   {
+    "id": "wa_colonial_peak_west_ridge",
+    "name": "West Ridge / Colonial Glacier",
+    "peak": "Colonial Peak",
+    "area_id": "wa_colonial_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4 glacier + summit rock",
+    "high_point_ft": 7771,
+    "overview": "Colonial Peak is one of the steepest-rising summits in the North Cascades, gaining roughly 6,500+ ft above Diablo Lake's Thunder Arm in under 2.5 horizontal miles. It lies in the North Unit of North Cascades National Park, accessed through the Ross Lake National Recreation Area corridor along SR 20,…",
+    "approach": "Start at the signed Pyramid Lake Trailhead on SR 20 (small pullout on the north side of the highway, ~21 miles east of Marblemount and just past the Diablo turnoff, elev. ~1,150 ft; Northwest Forest Pass to park, NPS backcountry permit if camping). Follow the maintained Pyramid Lake Trail — a well-u…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     },
+     {
+      "name": "Basin camp below Colonial Glacier",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6100,
+      "notes": "Follow the climbers' path along the ridge crest over several knolls toward the base of Pyramid Peak — the knoll around 5,400-5,500 ft is the customary bivy for …"
+     }
+    ]
+   },
+   {
+    "id": "wa_cosho_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Cosho Peak",
+    "area_id": "wa_cosho_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 8332,
+    "overview": "Cosho Peak (8,332 ft), nicknamed \"Ragged End,\" is the westernmost and lowest of the four standard Ragged Ridge Bulger scrambles (Mesahchie, Katsuk, Kimtah, Cosho), sitting above the Kimtah Glacier on its northeast flank deep in North Cascades National Park. The name comes from Chinook Jargon \"cosho\"…",
+    "approach": "Start at the Easy Pass Trailhead on the south side of SR 20 (Easy Pass Trail, North Cascades National Park, backcountry permit required for camping). The trail climbs steadily through forest, crossing Easy Pass Creek three times, and breaks out into subalpine meadows and heather benches before the f…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     },
+     {
+      "name": "Cosho Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "Another mile west on the valley trail through dense forest, still following the creek downstream."
+     }
+    ]
+   },
+   {
+    "id": "wa_crater_mountain_standard_route",
+    "name": "Standard Route (Southeast Ridge via Jackita Ridge / Crater Lake Trail)",
+    "peak": "Crater Mountain",
+    "area_id": "wa_crater_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8132,
+    "overview": "A long approach-heavy trail hike from the Canyon Creek Trailhead up Jackita Ridge Trail to Crater Lake basin, then an off-trail southeast-ridge scramble past a false summit to a loose, exposed 3rd-class gully near 7,600 ft that is marked with fading yellow paint and cairns, finishing on scree/talus …",
+    "approach": "From the Canyon Creek Trailhead (1,900 ft) on SR 20 (32.8 mi east of Marblemount / 55.1 mi west of Winthrop), take Jackita Ridge Trail #738, fording Canyon Creek and Granite Creek near the start. The trail climbs steeply through timber via numerous switchbacks (roughly 55) gaining about 3,400 ft ove…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_east_ridge",
+    "name": "East Ridge",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 9075,
+    "overview": "A Grade II, class 4 ridge line on the peak's east side.",
+    "approach": "No single approach is established as standard. The record of the Skoog ascents places the start low on the glacier on the east side of the mountain, so the route is gained from the glaciated eastern flank rather than from the Jerry Lakes side. Practical access to that side is either from the Canyon …",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_nohokomeen_headwall",
+    "name": "Nohokomeen Glacier and Headwall",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 9075,
+    "overview": "The classic north-side snow route on Jack Mountain and by far the best documented line on the peak: the East Bank Trail to May Creek, a steep bushwhack to the Nohokomeen Glacier, then roughly 2,100 ft of crevassed glacier and a 700-800 ft headwall of sustained 50-60 degree snow to a corniced summit …",
+    "approach": "From SR 20 milepost 138, park at the East Bank Trailhead (~1,800 ft) and descend briefly to the bridge over Ruby Creek. Follow the East Bank Trail — mostly flat and fast — roughly 8 miles north along Ross Lake to the May Creek camp. (Ross Lake Resort's water taxi will drop parties on the eastern sho…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_north_ridge",
+    "name": "North Ridge",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 9075,
+    "overview": "A Grade II, class 4 ridge line on the peak's north side.",
+    "approach": "No turn-by-turn approach is published. The north flank of Jack Mountain is reached from the Ross Lake East Bank Trail, which begins at the East Bank Trailhead on SR 20 near milepost 138 (~1,800 ft); Ross Lake Resort's water taxi will also drop parties at points along the eastern shore, which shorten…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_northeast_glacier",
+    "name": "Northeast Glacier",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 9075,
+    "overview": "A glacier route ascending the peak's northeast side, near the Nohokomeen Glacier basin.",
+    "approach": "North from May Creek; northeast face of mountain via glacier approach",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_south_face",
+    "name": "South Face / Southeast Ridge",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 3-4 (occasional low 5th)",
+    "high_point_ft": 9075,
+    "overview": "Jack Mountain (9,069 ft) is a massive, glaciated summit rising directly east of the south end of Ross Lake, on the boundary between the Ross Lake National Recreation Area (North Cascades National Park Complex, NPS) and the Pasayten Wilderness (Okanogan-Wenatchee National Forest). It is one of only t…",
+    "approach": "From the Canyon Creek Trailhead on SR-20 (about 16 miles west of Rainy Pass, elevation ~1,900ft), cross Canyon Creek on a log/plank crossing (can wash out in high water, check current conditions) and follow the Crater Lake/Jackita Ridge Trail (FST 738) as it climbs steeply through forest — roughly 3…",
+    "camps": [
+     {
+      "name": "Crater Creek Meadows bench",
+      "store": "bivy",
+      "type": null,
+      "elev": 6000,
+      "notes": "PLANNED camp and the standard staging point for the south face, on a heather bench above Crater Creek northwest of point 7001. Reached in roughly eight hours and eleven miles from the car, after the Jerry Glacier travers…"
+     },
+     {
+      "name": "Jerry Lakes basin",
+      "store": "bivy",
+      "type": null,
+      "elev": 6350,
+      "notes": "PLANNED camp, a grassy boulder-strewn bowl with several separate sites; the best of them sits by the small lake between the two large ones. Snow-free by mid-August. It is the more pleasant camp of the two and the obvious…"
+     },
+     {
+      "name": "Jerry Lakes Peak south saddle",
+      "store": "bivy",
+      "type": null,
+      "elev": null,
+      "notes": "EMERGENCY ledge, not a camp — on record only as an unplanned night out, sat through in a bivy sack and an emergency blanket with little wind protection and a cold, sleepless result. Worth knowing exists if a party is cau…"
+     },
+     {
+      "name": "Jerry Lakes / Crater Creek Meadows camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6000,
+      "notes": "Continue down off the ice into the lakes basin, losing around 800 ft over heather, slabs and boulders with no set line to follow. Fill water at the lakes: this …"
+     }
+    ]
+   },
+   {
+    "id": "wa_jack_mountain_southwest_ridge",
+    "name": "Southwest Ridge",
+    "peak": "Jack Mountain",
+    "area_id": "wa_jack_mountain",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 9075,
+    "overview": "A class 4 ridge line on the peak's southwest side.",
+    "approach": "Park at the Panther Creek / East Bank trailhead on SR 20 near milepost 138 (~1,800 ft), 18.5 miles east of Newhalem. Follow the East Bank Trail 2.4 miles west to a multi-way junction, then take the rightmost branch — the old Little Jack Trail, built by the Forest Service in the early 1900s for pack-…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   },
+   {
+    "id": "wa_pyramid_peak_colonial_standard",
+    "name": "Standard Route / Southeast Scramble",
+    "peak": "Pyramid Peak",
+    "area_id": "wa_pyramid_peak_colonial",
+    "discipline": "scrambling",
+    "grade": "Class 3",
+    "high_point_ft": 7189,
+    "overview": "Pyramid Peak (7,189 ft) is the northernmost summit in a dramatic chain above Diablo Lake that also includes Colonial Peak, Snowfield Peak, Paul Bunyan's Stump, and Pinnacle Peak, all linked by one long, south-trending ridge and reached via the shared Pyramid Lake climbers' trail. Its steep, pyramid-…",
+    "approach": "From the SR-20 pullout near milepost 126.8 (about 6.5 miles east of Newhalem, on the north shoulder just east of Diablo Lake), cross the highway to the signed Pyramid Lake trailhead (roughly 1,150–1,200 ft) at the base of Pyramid Creek's cascades. The maintained, National Park Service-built tread cl…",
+    "camps": [
+     {
+      "name": "Colonial Creek South Campground, Diablo Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1200,
+      "notes": "The practical staging ground for the whole west end of the corridor: directly under Colonial Peak and a short drive from the Pyramid Lake and Thunder Creek trailheads. Because it lies west of the usual winter gate at the…"
+     },
+     {
+      "name": "Colonial Basin bench camps, below the Pyramid-Colonial col",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 5400,
+      "notes": "The standard first-night camp for Snowfield, Neve and Colonial, reached by a steep sustained climb from the Pyramid Lake trailhead with no easy water for much of it. Early in the season the ground is still under snow and…"
+     },
+     {
+      "name": "Neve-Colonial col high bivy",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Parties heading for Snowfield sometimes push past the basin and sleep at the pass above the Colonial Glacier to shorten summit day and get onto the Neve Glacier early. The trade is weather: this notch funnels wind badly …"
+     },
+     {
+      "name": "Cosho Camp, Fisher Creek",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 3880,
+      "notes": "This forested camp on the north side of Fisher Creek is the usual base for Cosho Peak and the eastern end of Ragged Ridge, reached over Easy Pass from the SR 20 trailhead and then down roughly 1,400 ft of switchbacks to …"
+     },
+     {
+      "name": "Devils Park Shelter, Jackita Ridge trail",
+      "store": "bivy",
+      "type": "hut",
+      "elev": 5800,
+      "notes": "The obvious overnight stop for Crater Mountain and the eastern approaches, about eight miles in from Canyon Creek up a long hot climb through McMillan Park. The shelter is unmaintained and its condition is reported incon…"
+     },
+     {
+      "name": "Jerry Lakes basin, Jack Mountain south side",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6350,
+      "notes": "Reached by leaving the Crater Mountain trail and travelling several miles cross-country, this basin is the usual high camp for the south face of Jack Mountain. It is a long committing day from the Canyon Creek trailhead …"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "sawtooth-lake-chelan",
+  "routes": [
+   {
+    "id": "wa_abernathy_peak_north_ridge",
+    "name": "North Ridge",
+    "peak": "Abernathy Peak",
+    "area_id": "wa_abernathy_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8321,
+    "overview": "Abernathy Peak is the high point of Abernathy Ridge, between the Twisp River and Wolf Creek drainages in the Lake Chelan-Sawtooth Wilderness. The more heavily traveled standard route climbs from Scatter Lake on the south side (class 2); the North Ridge described here is a quieter, more sustained cla…",
+    "approach": "From the North Creek Trailhead (officially the Gilbert Trailhead; ~3,660 ft, reached via Twisp River Road/FR-44 roughly 22-25 miles west of Twisp), pick up North Creek Trail #413. The first ~50 feet of tread is shared with the Twisp Pass Trail — bear right (north) to stay on North Creek Trail. The l…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     }
+    ]
+   },
+   {
+    "id": "wa_abernathy_peak_south_ridge",
+    "name": "South Ridge (Scatter Lake)",
+    "peak": "Abernathy Peak",
+    "area_id": "wa_abernathy_peak",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8321,
+    "overview": "The standard, most-traveled line up Abernathy: a long trail hike to alpine Scatter Lake followed by a talus and ridge scramble up the peak's south side to the summit.",
+    "approach": "From Twisp, drive Twisp River Road west approximately 22-24 miles to the Scatter Creek/Scatter Lake trailhead (~3,100-3,200 ft), about 50 yards past the Slate Creek Trail junction sign. Follow the Scatter Creek Trail through timber alongside Scatter Creek for about 4.2-4.5 miles to alpine Scatter La…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     }
+    ]
+   },
+   {
+    "id": "wa_courtney_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Courtney Peak",
+    "area_id": "wa_courtney_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8394,
+    "overview": "Courtney Peak (8,394 ft) is a Class 2-3 scramble on Sawtooth Ridge in the Methow Mountains, within the Lake Chelan-Sawtooth Wilderness. Its parent peak is Star Peak (8,690 ft), 0.83 mi to the southeast; Courtney is widely regarded among Washington scramblers as having one of the best summit panorama…",
+    "approach": "From the West Fork Buttermilk Trailhead (elev. ~3,960 ft, at the end of FR-4300-500 off East Buttermilk Creek Road/FR-43, reached via Twisp River Road west of Twisp), follow the West Fork Buttermilk Trail #411 into the Lake Chelan–Sawtooth Wilderness. The trail climbs steadily up the West Fork of Bu…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     }
+    ]
+   },
+   {
+    "id": "wa_devore_peak_west_ridge",
+    "name": "Southeast Ridge",
+    "peak": "Devore Peak",
+    "area_id": "wa_devore_peak",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8382,
+    "overview": "Devore Peak (8,382 ft) is the high point of a long, remote north-south ridge in the Glacier Peak Wilderness dividing Company and Hilgard Creeks (west) from Devore Creek (east), about 6 miles WSW of Stehekin on Lake Chelan. It is composed of granodiorite and is one of Washington's Bulger '100 Highest…",
+    "approach": "Devore Peak is only reachable by a multi-day approach out of Stehekin, at the head of Lake Chelan — there is no road access. Drive to Fields Point Landing (or Chelan) and take the Lady of the Lake II or Lady Express passenger ferry up-lake to Stehekin (roughly a 2-4 hour boat ride depending on which…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Bird Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5800,
+      "notes": "Turn uphill and climb hard: roughly 30 switchbacks in about two miles carry the trail through rock bluffs and open forest to the Wilderness boundary near 2,300 …"
+     }
+    ]
+   },
+   {
+    "id": "wa_hoodoo_peak_sawtooth_scramble",
+    "name": "Standard Scramble",
+    "peak": "Hoodoo Peak",
+    "area_id": "wa_hoodoo_peak_sawtooth",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 8475,
+    "overview": "Hoodoo Peak (8,475 ft) is a Methow Mountains summit — the easternmost sub-range of the North Cascades — within the Okanogan-Wenatchee National Forest's Lake Chelan-Sawtooth Wilderness, near the southern end of the range above Lake Chelan. It ranks among the higher summits on Washington's Bulger List…",
+    "approach": "From the Libby Lake Trailhead (a.k.a. Libby Creek Trailhead, ~4,430 ft; no parking fee or pass required at this trailhead) at the end of Libby Creek Road, follow Libby Creek Trail No. 415 southwest into the Lake Chelan–Sawtooth Wilderness. The trail climbs gradually through mixed conifer forest and …",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "North Fork Libby Creek crossing",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5970,
+      "notes": "Ford the North Fork of Libby Creek; an established campsite on the far bank is the last reliable water before the cabin."
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_bigelow_scramble",
+    "name": "Standard Scramble",
+    "peak": "Mount Bigelow",
+    "area_id": "wa_mount_bigelow",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8449,
+    "overview": "Mount Bigelow (8,449 ft; figures of 8,440-8,451 ft are also given) is the fifth-highest peak on Sawtooth Ridge and the southernmost summit in the Lake Chelan-Sawtooth Wilderness, straddling the Chelan/Okanogan county line. Two standard lines exist from the Eagle Lakes basin: an easier walk-up of the…",
+    "approach": "Drive to the Crater Creek Trailhead (4,750 ft): from Twisp, take WA-20 east 2 miles to WA-153, then south 12 miles to County Rd 1029/1034 (signed for Foggy Dew Campground) and follow it about 6 miles as it becomes FR 4340 - pavement ends around mile 4 (bear right) - then continue on FR 4340-300 roug…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Eagle Lakes Trail backcountry camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": null,
+      "notes": "Established campsite roughly at the halfway point, a common overnight stop before pushing on to Upper Eagle Lake."
+     }
+    ]
+   },
+   {
+    "id": "wa_oval_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Oval Peak",
+    "area_id": "wa_oval_peak",
+    "discipline": "mountaineering",
+    "grade": "Class 2",
+    "high_point_ft": 8795,
+    "overview": "Oval Peak (8,800 ft) is the highest summit in the Sawtooth Range and in the Methow Mountains subrange of the North Cascades, and the high point of the Lake Chelan-Sawtooth Wilderness on the Okanogan-Wenatchee National Forest. It rises between Lake Chelan and the Methow Valley, with roughly 2,730 ft …",
+    "approach": "Park at the Eagle Creek/Oval trailhead (~3,000 ft) at the end of FR 4420-080, reached via Twisp River Road/FR 44 (~12.5 mi west of Twisp) and the West Buttermilk/FR 4420 spur. From the trailhead, follow Eagle Creek Trail #410 for about 1.5 miles up the Eagle Creek valley (trail parallels the creek, …",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Middle Oval Lake outflow",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6940,
+      "notes": "Maintained trail ends at the lake outflow; established stock/backpacker camp with fishing (cutthroat) — this is where you leave the trail and start up open heat…"
+     }
+    ]
+   },
+   {
+    "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+    "name": "Southeast Ridge (Crater Lake Approach)",
+    "peak": "Raven Ridge",
+    "area_id": "wa_raven_ridge",
+    "discipline": "mountaineering",
+    "grade": null,
+    "high_point_ft": 8572,
+    "overview": "An alternate, less-traveled line up Raven Ridge's south side: approach via the Crater Creek Trail to Crater Lake, then climb the southeast ridge to an ~8,000 ft col before a short boulder scramble to the summit. Documented both as a summer scramble and as a January ski-mountaineering objective.",
+    "approach": "From Twisp, take Highway 20 south ~2 miles to WA-153, then south on WA-153 to County Rd 1029 (Gold Creek Loop), continuing onto County Rd 1034 (Gold Creek Road), which becomes Forest Road 4340 after about 6 miles. Turn onto FR 4340-300 (Crater Creek Road) and follow it about 4.6 miles to the Crater …",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     }
+    ]
+   },
+   {
+    "id": "wa_raven_ridge_standard_route",
+    "name": "Raven Ridge Standard Route (Libby Lake Gully-Ridge)",
+    "peak": "Raven Ridge",
+    "area_id": "wa_raven_ridge",
+    "discipline": "scrambling",
+    "grade": null,
+    "high_point_ft": 8572,
+    "overview": "The standard route follows the Libby Lake Trail to alpine Libby Lake, then climbs a steep, very loose ~900-ft talus gully to gain the Raven Ridge crest, finishing with an exposed Class 3–4 scramble east along the ridge to the true (east) summit at 8,572 ft.",
+    "approach": "From Twisp, drive WA-20 east a short distance to WA-153, then south/east on WA-153 (about 1.4–9.4 miles depending on where you start measuring) to Libby Creek Road (County Road 1049/1045). Follow Libby Creek Road to Forest Road 43 (turn, ~5.1–5.5 miles), then left onto Forest Road 4340 (~1.2–1.5 mil…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     }
+    ]
+   },
+   {
+    "id": "wa_reynolds_peak_scramble",
+    "name": "Standard Scramble",
+    "peak": "Reynolds Peak",
+    "area_id": "wa_reynolds_peak",
+    "discipline": "scrambling",
+    "grade": "Class 3-4",
+    "high_point_ft": 8517,
+    "overview": "Reynolds Peak (8,517 ft) is a high, horned, twin-summited peak on the divide between the Twisp River and Lake Chelan country, within the Lake Chelan-Sawtooth Wilderness (Methow Mountains, North Cascades), about 6 miles northeast of Stehekin. It is one of the most visually striking summits in the Che…",
+    "approach": "From the Reynolds Creek Trailhead (~3,100–3,170 ft, reached via Forest Road 4435, which crosses the Twisp River near Mystery Campground before the Spur 4435-015 turnoff to the trailhead), the route follows Reynolds Creek Trail #402, an unmaintained, primitive Forest Service trail entering the Lake C…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Upper Reynolds Creek basin",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6700,
+      "notes": "Open basin below Reynolds' east face where trees give way to scree and talus; last flat ground and reliable creek water before the summit push."
+     }
+    ]
+   },
+   {
+    "id": "wa_star_peak_sawtooth_scramble",
+    "name": "Standard Scramble",
+    "peak": "Star Peak",
+    "area_id": "wa_star_peak_sawtooth",
+    "discipline": "scrambling",
+    "grade": "Class 2-3",
+    "high_point_ft": 8693,
+    "overview": "Star Peak (8,693 ft) is the second-highest summit in the Lake Chelan-Sawtooth Wilderness, a rugged, five-ridged peak (NW, SW, S, SE and E ridges) in the Methow Mountains subrange of the North Cascades, straddling the Chelan/Okanogan county line above its namesake Star Lake. It was first climbed in 1…",
+    "approach": "Trailhead is the West Fork Buttermilk Creek Trailhead (Trail #411), reached via Twisp River Road ~10.7-10.8 miles from Twisp, then left on Buttermilk Creek Road ~4.5 miles to a fork where the upper road (West Fork Buttermilk Creek Road) reaches the trailhead at about 3,960 ft. From there Trail #411 …",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Star Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7460,
+      "notes": "Standard basecamp for Star, Courtney, Buttermilk, Grey, and Oval Peaks; camp at least 200 ft from the lake edge per wilderness regulation."
+     }
+    ]
+   },
+   {
+    "id": "wa_switchback_mountain_scramble",
+    "name": "Standard Scramble",
+    "peak": "Switchback Mountain",
+    "area_id": "wa_switchback_mountain",
+    "discipline": "mountaineering",
+    "grade": "Class 2-3",
+    "high_point_ft": 8321,
+    "overview": "Switchback Peak — commonly called Cooney Peak in published descriptions, after Cooney Lake just below its summit — is an 8,300+ ft summit on Sawtooth Ridge in the Methow Mountains subrange of the North Cascades, on Okanogan-Wenatchee National Forest land within the Lake Chelan-Sawtooth Wilderness ne…",
+    "approach": "Two trailheads reach Cooney Lake and the SE Ridge. (1) Foggy Dew Trailhead (end of FR 4340-200, 3,400 ft) — from Twisp, take SR 20 east ~2 mi, then SR 153 south ~12 mi, then Gold Creek Loop Rd/County Rd 1034 and FR 4340 to the FR 4340-200 spur. Hike Foggy Dew Creek Trail #417 up the North Fork throu…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Cooney Lake",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7246,
+      "notes": "Larch-rimmed alpine lake with established camps near the outlet; last reliable water before climbing to the pass."
+     }
+    ]
+   },
+   {
+    "id": "wa_tupshin_peak_scramble",
+    "name": "South Ridge",
+    "peak": "Tupshin Peak",
+    "area_id": "wa_tupshin_peak",
+    "discipline": "alpine",
+    "grade": "Class 4 / low 5th",
+    "high_point_ft": 8348,
+    "overview": "Tupshin Peak (8,347 ft) is one of the 'Stehekin Seven,' a knot of rarely visited summits above the Stehekin valley in the Glacier Peak Wilderness. The mountain is built of several rock turrets running south, east, and northwest from a central high point roughly 200 ft above its neighbors. First clim…",
+    "approach": "No road reaches the mountain. Take the Lady of the Lake or Lady Express passenger ferry from Fields Point Landing up Lake Chelan to Stehekin Landing, then ride the Stehekin shuttle bus (or walk) roughly 4.4 miles up-valley to Harlequin Bridge, cross it, and continue about 3 more miles on the Steheki…",
+    "camps": [
+     {
+      "name": "Scatter Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7050,
+      "notes": "This is the camp for Abernathy Peak and it sits directly under both of its routes. From Twisp the Twisp River road runs about 22 miles, turning off on an unpaved spur immediately after the Scatter Creek crossing; pavemen…"
+     },
+     {
+      "name": "Reynolds Creek upper basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "The obvious camp for the Reynolds Peak scramble, and it turns an 11-mile day with 5,300 ft of gain into a comfortable two. Access is easy to get wrong: drive the Twisp River road about 19 miles to Mystery Campground, cro…"
+     },
+     {
+      "name": "Oval Lakes basin - West and Middle Oval",
+      "store": "bivy",
+      "type": "camp",
+      "elev": null,
+      "notes": "This is the base for Oval Peak and the northern approach to Courtney and Star, all three of which are walk-and-scramble summits off the Chelan Summit trail once you are on the crest. It is not a casual trip: about 20 mil…"
+     },
+     {
+      "name": "Libby Lake",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7618,
+      "notes": "The camp for both Raven Ridge routes and the usual base for Hoodoo Peak. Getting here is a different drive from the Twisp River trailheads: from Twisp go east on Highway 20 then south on Highway 153 about nine miles and …"
+     },
+     {
+      "name": "Upper Eagle Lake and Horsehead Pass",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 7110,
+      "notes": "The hub of the southern Sawtooth and the practical base for Switchback Mountain, with Hoodoo and Raven Ridge also within reach along the crest. Access is the Gold Creek side, not the Twisp River: turn off the highway ont…"
+     },
+     {
+      "name": "Boiling Lake basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6932,
+      "notes": "The high camp for Star Peak and Courtney Peak, sitting on the west side of the crest under Sawtooth Ridge, and the natural meeting point of the two access systems. From the road it is reached over Horsehead Pass from Upp…"
+     },
+     {
+      "name": "Prince Creek Campground - boat-in",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 1100,
+      "notes": "The lake-side gateway to Star, Courtney and the southern crest. The boat drops you at roughly 1,100 ft, lake level, and the Chelan Summit trail climbs from there toward Boiling Lake and the Sawtooth crest - a serious fir…"
+     },
+     {
+      "name": "Bird Creek Camp, Devore Creek trail",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4200,
+      "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore…"
+     },
+     {
+      "name": "Bird Creek Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 4250,
+      "notes": "Forested camp alongside Devore Creek Trail with creek water nearby; the trail is well-maintained to here but grows overgrown with blowdowns above."
+     },
+     {
+      "name": "Bird Creek basin high camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5600,
+      "notes": "Open subalpine basin (reported anywhere from ~5,400 to ~5,800 ft) reached by bushwhacking blueberry brush and slide alder off-trail; used as the launch point fo…"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "zone": "shuksan",
+  "routes": [
+   {
+    "id": "wa_mount_shuksan_fisher_chimneys",
+    "name": "Fisher Chimneys",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "Grade III, Class 4 / low 5th",
+    "high_point_ft": 9131,
+    "overview": "One of the most popular routes to the summit of Mount Shuksan, the Fisher Chimneys climbs the west side of the peak through a rocky chimney system before crossing the Upper Curtis and Sulphide Glaciers to the summit pyramid. It is a quintessential North Cascades outing, mixing scrambling, glacier tr…",
+    "approach": "Park at the Lake Ann Trailhead on the east side of SR 542 (Mount Baker Highway), about 1 mile below Artist Point. Follow Lake Ann Trail #600, which immediately loses roughly 700-800 ft over its first ~1.7 miles through heather and blueberry slopes (a minor creek crossing near the low point), then cl…",
+    "camps": [
+     {
+      "name": "Lake Ann",
+      "store": "bivy",
+      "type": null,
+      "elev": 4700,
+      "notes": "A comfortable planned camp about four miles in, reached by a short spur off the climbers' path at the saddle. It is the easy, low-commitment option and the one most parties use, but it leaves the whole talus traverse and…"
+     },
+     {
+      "name": "Top of the Chimneys rock outcrop",
+      "store": "bivy",
+      "type": null,
+      "elev": 6700,
+      "notes": "A planned bivy for parties splitting the route, sitting on dry ground just past the top of the chimney system near the edge of the upper glacier. Everything you sleep in has to be carried up a thousand feet of 4th-class …"
+     },
+     {
+      "name": "Rock rib above Winnie's Slide",
+      "store": "bivy",
+      "type": null,
+      "elev": 7200,
+      "notes": "The highest and best-positioned planned camp, on dry ground on a narrow spur bordering the Upper Curtis Glacier, with the summit day cut down to the glaciers and the summit pyramid. It is also the most committing: it is …"
+     },
+     {
+      "name": "White Salmon Glacier Lower Bivouac",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 5500,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_hanging_glacier",
+    "name": "Hanging Glacier",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "IV",
+    "high_point_ft": 9131,
+    "overview": "One of Shuksan's original technical lines, historically known as the '1939 Route' - the Hanging Glacier carried the first technical ascent of the mountain in 1939. It climbs the Hanging Glacier on the peak's north side, between the Price Glacier and White Salmon Glacier cirques, and is currently ret…",
+    "approach": "Note: the Hanging Glacier/North Face approach lies in the White Salmon Creek drainage, one valley east of Price Lake, rather than on the Nooksack/Ruth Creek side with which it is sometimes grouped. Drive the Mount Baker Highway to Glacier, WA and get a free backcountry permit at the Glacier Public S…",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_north_face",
+    "name": "North Face",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "Grade II-III, AI2-3",
+    "high_point_ft": 9131,
+    "overview": "The North Face of Mount Shuksan is a classic North Cascades ice climb, offering a sustained snow-and-ice face that comes into prime condition in late spring and early summer. It is a coveted line for its aesthetic position and quality climbing high on one of the range's most photographed peaks.",
+    "approach": "Park near the White Salmon day-lodge area on SR 542 (White Salmon Road, FS 3075), just before the Mt. Baker Ski Area's White Salmon lodge. Hike the old road, then traverse brushy ('schwacky') slide-alder slopes to open terrain near 3,300 ft, and continue up to the 5,500 ft saddle at the base of the …",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     },
+     {
+      "name": "North Face Base Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 7000,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_northeast_ridge",
+    "name": "Northeast Ridge",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "5.7",
+    "high_point_ft": 9131,
+    "overview": "The NE Ridge of the summit pyramid is a harder, seldom-done technical finish (up to 5.7) used as an alternative to the standard pyramid gully by parties topping out from the North Face, Hanging Glacier, or NW Rib lines on Shuksan's north side.",
+    "approach": "Typically reached after climbing the North Face or Hanging Glacier route to the upper mountain, or via the NW Rib between the White Salmon and Hanging Glaciers.",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_northwest_arete",
+    "name": "Northwest Arete",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "Grade III-IV, Class 4-5 (mixed rock and snow)",
+    "high_point_ft": null,
+    "overview": "A long, little-traveled adventure route following the crest of Shuksan's northwest arête above the White Salmon Glacier, combining bushwhacking, loose rock low down, moderate alpine ice, and glacier travel with a stretch of sustained, surprisingly good rock on the arête itself.",
+    "approach": "Two realistic approach options both start by parking at the lower White Salmon lodge on SR 542 (White Salmon Road, FR-3075) and following a dirt road up the White Salmon Creek drainage for under a mile. The more direct option drops off-trail across White Salmon Creek and climbs to the ridgecrest dir…",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_price_glacier",
+    "name": "Price Glacier",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "IV-V",
+    "high_point_ft": 9131,
+    "overview": "Shuksan's great north-side alpine ice classic, first climbed in 1945 by Fred Beckey, Jack Schwabland, and Bill Granston, and later included in Steck & Roper's 'Fifty Classic Climbs of North America.' The route weaves up the steep, broken, serac-threatened Price Glacier to the summit pyramid.",
+    "approach": "Trailhead is the Nooksack Cirque Trail #750, reached via Ruth Creek Road (FS-32) off the Mount Baker Highway near the Hannegan Pass Road junction. The first obstacle is Ruth Creek itself, which has no bridge at the trailhead — cross on a large logjam/log crossing just downstream, then pick up the tr…",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     },
+     {
+      "name": "Price Glacier Base Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6500,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_sulphide_glacier",
+    "name": "Sulphide Glacier",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Class 4",
+    "high_point_ft": 9131,
+    "overview": "The Sulphide Glacier is the most straightforward glacier route on Mount Shuksan and the standard line for many parties, especially as a ski mountaineering objective in spring. It climbs the broad southern glacier to the base of the summit pyramid, finishing with the same rock scramble shared by othe…",
+    "approach": "From the end of FS Road 1152-014 (~2,500 ft), the route starts on the Shannon Ridge Trail #742, an old roadbed heading northeast. Follow it about 2 miles to where the road tread gives out around 3,800 ft, then continue on the true trail, angling left through brush onto the open ridge crest. Roughly …",
+    "camps": [
+     {
+      "name": "The Notch",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The first place worth stopping, where the ridge crest gives out against the mountainside around 5,400-5,500 ft. It is the low-commitment choice and leaves a long summit day: everything above, including the glacier and th…"
+     },
+     {
+      "name": "Lower bivy site",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "The site most parties use, at roughly 6,100-6,200 ft where the ridge broadens toward the glacier toe. It has a composting toilet, it melts out earlier than the upper site, and it is far enough along the traverse that sum…"
+     },
+     {
+      "name": "Upper bivy site",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": null,
+      "notes": "About a thousand feet above the col at the edge of the Sulphide Glacier, roughly 6,400 ft. It shortens summit day the most and holds snow far later, so plan on camping on snow and on a colder, windier night than the lowe…"
+     },
+     {
+      "name": "Shannon Ridge / Sulphide Glacier Camp",
+      "store": "waypoint",
+      "type": "camp",
+      "elev": 6245,
+      "notes": ""
+     }
+    ]
+   },
+   {
+    "id": "wa_mount_shuksan_white_salmon_glacier",
+    "name": "White Salmon Glacier",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "Grade II, Easy Snow",
+    "high_point_ft": 9131,
+    "overview": "An easy glacier ascent/descent on Shuksan's north side, often used as the descent for northside routes and a moderate ski/snow climb in its own right.",
+    "approach": "From the small pull-off at the old White Salmon Lodge on the Mount Baker Highway, walk around the gate and follow the old road past the lodge site for about a mile to where it ends at an old clearcut. With good snow cover, descend northeast to White Salmon Creek and follow the valley up to the toe o…",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     }
+    ]
+   },
+   {
+    "id": "wa_southeast_ridge_se_corner",
+    "name": "Southeast Ridge (SE Corner)",
+    "peak": "Mount Shuksan",
+    "area_id": "wa_mount_shuksan",
+    "discipline": "mountaineering",
+    "grade": "5.3",
+    "high_point_ft": 9131,
+    "overview": "The classic technical finish to Shuksan's Summit Pyramid, climbed after approaching via Fisher Chimneys or Sulphide Glacier: six pitches of good-quality rock up to 5.3 gaining the pyramid's SE corner.",
+    "approach": "East-northeast up Shannon Ridge, then traverse Sulphide Glacier to reach southeast ridge base",
+    "camps": [
+     {
+      "name": "Sulphide Glacier camp",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 6400,
+      "notes": "The standard high camp for the most straightforward route on Shuksan and the best launching point for the summit pyramid. The plateau is flat, spacious and well positioned, and a privy has been maintained on the ridgelin…"
+     },
+     {
+      "name": "Shannon Ridge crest camps, below the park boundary",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4600,
+      "notes": "The fallback for parties who could not get a North Cascades backcountry permit, and honestly worse than the camp above — lower, drier, and leaving a much longer summit day. The trade is administrative rather than scenic,…"
+     },
+     {
+      "name": "Sulphide Glacier high camp",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 7500,
+      "notes": "Some parties carry above the main plateau to shorten summit day to the pyramid, camping on the glacier around 7,500 ft. It is fully exposed, on snow, and above any water, so it only makes sense for a party comfortable wi…"
+     },
+     {
+      "name": "Lake Ann basin",
+      "store": "bivy",
+      "type": "camp",
+      "elev": 4700,
+      "notes": "The usual first night for both the Fisher Chimneys and the North Face, and the jurisdictional line running just past it is the single most useful thing to understand about camping on this side of Shuksan — one night at t…"
+     },
+     {
+      "name": "Fisher Chimneys camps, White Salmon and above Winnie's Slide",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 6800,
+      "notes": "Camping above the chimneys is what makes Fisher Chimneys a comfortable two- or three-day climb rather than a very long push, and it puts the party above the loose, route-finding-heavy section for summit day. The lower si…"
+     },
+     {
+      "name": "North Face bivy, where the rib meets the face",
+      "store": "bivy",
+      "type": "bivy",
+      "elev": 5500,
+      "notes": "North Face parties share the early approach with the White Salmon Glacier route through a brushy section before the two diverge, and the usual bivy sits near 5,500 ft where the rib abuts the face, above Price Lake. It is…"
+     }
+    ]
+   }
+  ]
+ }
+]

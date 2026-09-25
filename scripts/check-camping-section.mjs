@@ -51,8 +51,8 @@ const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
-export { campDetail, campFromTrailhead, campingGate, climbsAPeak };
+import RouteDetail, { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf };
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -74,7 +74,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak } = require_(out);
+const { render, campDetail, campFromTrailhead, campingGate, climbsAPeak, campGroups, overnightPermitOf } = require_(out);
 
 // renderToStaticMarkup ESCAPES: "CAMPING & BIVY" is emitted as "CAMPING &amp; BIVY".
 // Un-escape before matching, or the heading reads as absent and a false NO looks like a
@@ -151,7 +151,11 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     bivy: [SITE], waypoints: [{ name: "Boston Basin", type: "Campsite", lat: 48.4, lng: -121.0 }],
   }), "planner"));
   const start = t.indexOf(HEAD);
-  const after = t.indexOf("ROUTE TRACK", start);
+  // Skip the panel's OWN intro sentence ("...also a pin under ROUTE TRACK."): since a same-named pin
+  // now lends its distance and on-track chip to the researched site, that sentence renders here too,
+  // and bounding on it sliced the panel off before its first site.
+  const intro = t.indexOf("pin under ROUTE TRACK", start);
+  const after = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + "pin under ROUTE TRACK".length : start);
   if (start < 0) fail("dedupe case: the panel did not render at all");
   else if (after < 0) fail("ANCHOR LOST: 'ROUTE TRACK' no longer follows the panel — this slice cannot be bounded");
   else {
@@ -386,6 +390,56 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
 // ── 9. No camping data anywhere → no section, and no crash.
 if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
 else ok("no camping data renders no section");
+
+
+// ── 12. MAIN CAMPS vs ON THE ROUTE. A researched `role` splits the list, main camps first; a list
+//    nobody has sorted stays the flat list it always was (no heading filing everything as OTHER).
+{
+  const sorted = [
+    { name: "Side Bivy", role: "route" }, { name: "Base Camp Alpha", role: "main" }, { name: "Loose Site" },
+  ];
+  const t = text(render(route("alpine", { bivy: sorted }), "planner"));
+  const iM = t.indexOf("MAIN CAMPS"), iR = t.indexOf("ON THE ROUTE"), iO = t.indexOf("OTHER SITES");
+  if (iM >= 0 && iR > iM && iO > iR) ok("sorted sites render MAIN CAMPS, then ON THE ROUTE, then OTHER SITES");
+  else fail(`group headings missing or out of order (main ${iM}, route ${iR}, other ${iO})`);
+  const a = t.indexOf("Base Camp Alpha"), b = t.indexOf("Side Bivy"), c = t.indexOf("Loose Site");
+  if (a > iM && a < iR && b > iR && b < iO && c > iO) ok("each site renders under its own group");
+  else fail("a site rendered under the wrong group");
+  const flat = text(render(route("alpine", { bivy: [SITE, { name: "Other Place" }] }), "planner"));
+  if (!/MAIN CAMPS|ON THE ROUTE|OTHER SITES/.test(flat)) ok("an unsorted list renders flat, with no group headings");
+  else fail("an unsorted list was given group headings");
+  const g = campGroups([{ name: "Pin", role: "route", onTrack: true }]);
+  if (g.length === 1 && g[0].title === null) ok("a Campsite pin's default role alone does not trigger grouping");
+  else fail("a pin's default role triggered grouping on an unsorted route");
+}
+
+// ── 12b. A role:"hidden" stub hides the same-named Campsite PIN from the list, and itself.
+{
+  const t = text(render(route("alpine", {
+    bivy: [{ name: "Base Camp Alpha", role: "main" }, { name: "Wrong Valley Camp", role: "hidden" }],
+    waypoints: [{ name: "Wrong Valley Camp", type: "Campsite", lat: 48.4, lng: -121.0 }],
+  }), "planner"));
+  const start = t.indexOf(HEAD), intro = t.indexOf("pin under ROUTE TRACK", start);
+  const end = t.indexOf("ROUTE TRACK", intro >= 0 ? intro + 21 : start);
+  const panel = t.slice(start, end > start ? end : undefined);
+  if (start >= 0 && !panel.includes("Wrong Valley Camp") && panel.includes("Base Camp Alpha")) ok("a hidden stub keeps its pin out of the camping list");
+  else fail("a role:hidden stub did not hide its pin (or hid the whole panel)");
+}
+
+// ── 13. OVERNIGHT PERMIT: what + where + the agency link, and only an https link.
+{
+  const acc = { overnight_permit: { what: "Free self-issue wilderness permit", where: "Fill one out at the trailhead kiosk.", url: "https://www.fs.usda.gov/x" } };
+  const t = text(render(route("alpine", { bivy: [SITE], access: acc }), "planner"));
+  const html = render(route("alpine", { bivy: [SITE], access: acc }), "planner");
+  if (t.includes("OVERNIGHT PERMIT") && t.includes("Free self-issue wilderness permit") && t.includes("trailhead kiosk")) ok("the overnight permit renders what and where");
+  else fail("the overnight permit did not render inside the camping panel");
+  if (html.includes('href="https://www.fs.usda.gov/x"')) ok("the permit link renders");
+  else fail("the permit link did not render");
+  if (overnightPermitOf({ access: { overnight_permit: { what: "x", url: "javascript:alert(1)" } } }).url === null) ok("a non-https permit url is refused");
+  else fail("a non-https permit url was accepted");
+  if (overnightPermitOf({ access: {} }) === null) ok("no overnight permit renders nothing");
+  else fail("an empty access block produced a permit");
+}
 
 console.log(failures
   ? `\ncheck:camping: ${failures} failure(s).`
