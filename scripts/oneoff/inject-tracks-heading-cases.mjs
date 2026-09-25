@@ -100,7 +100,7 @@ const cases = [
     name: "SILENT: the heading is renamed and the FAQ follows it",
     edits: [
       [RD, HEAD, ">Recent tracks and trip reports<"],
-      [CORE, FAQ_HEAD, "Recent tracks and trip reports lists recent parties"],
+      [HELP, FAQ_HEAD, "Recent tracks and trip reports lists recent parties"],
     ],
     expect: null,
   },

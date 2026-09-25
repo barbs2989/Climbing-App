@@ -78,7 +78,7 @@ const cases = [
   },
   {
     name: "SILENT: a comment naming the forbidden shape",
-    edits: [["function GiveVouch({friend,onClose,onSave}){", "/* the list was once ROUTES.filter for everyone */function GiveVouch({friend,onClose,onSave}){"]],
+    edits: [["export default function GiveVouch({friend,onClose,onSave}){", "/* the list was once ROUTES.filter for everyone */\nexport default function GiveVouch({friend,onClose,onSave}){"]],
     expect: null,
   },
 ];

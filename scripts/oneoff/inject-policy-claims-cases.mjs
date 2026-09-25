@@ -56,12 +56,15 @@ const CASES = [
   },
   {
     name: "anchorlost",
-    why: "LegalView is renamed — the guard must report a BROKEN scan, not a clean policy",
+    // Renaming the function was the anchor loss while LegalView was a named export of core. It is a
+    // default export of lib/LegalView.jsx now, so a rename changes nothing; losing the default
+    // export is what would leave the guard with no LegalView to read, and it must refuse.
+    why: "lib/LegalView.jsx stops default-exporting the component — the guard must refuse, not report a clean policy",
     file: "lib/LegalView.jsx",
-    find: "function LegalView({kind,onBack})",
-    repl: "function LegalViewRenamed({kind,onBack})",
-    expect: /BROKEN|ANCHOR LOST/,
-    wantExit: 2,
+    find: "export default function LegalView({kind,onBack})",
+    repl: "export function LegalView({kind,onBack})",
+    expect: /expected exactly one "export default function"/,
+    wantExit: 1,
   },
   {
     // The ORIGINAL §3, restored verbatim. Note WHY it is still a defect: the name choice it
