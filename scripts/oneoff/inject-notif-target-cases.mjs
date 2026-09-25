@@ -24,6 +24,7 @@ const PROBE = path.join(ROOT, "scripts/oneoff/probe-a-notification-that-goes-som
 const FILES = {
   core: path.join(ROOT, "ClimbMatchCore.jsx"),
   app: path.join(ROOT, "ClimbMatch.jsx"),
+  NotifPanel: path.join(ROOT, "lib/NotifPanel.jsx"),
 };
 const LOCK = path.join(ROOT, ".inject-notif-target.lock");
 
@@ -48,7 +49,7 @@ if (!/ok — a notification that goes somewhere says so/.test(CLEAN)) {
 
 const CASES = [
   // THE REAL DEFECT, restored verbatim.
-  { name: "affordance-list-omits-recap-and-goto", file: "core", expect: "[wiring] ...and the OLD hand-written list is gone",
+  { name: "affordance-list-omits-recap-and-goto", file: "NotifPanel", expect: "[wiring] ...and the OLD hand-written list is gone",
     find: "const _t=notifTarget(n);const tappable=!!_t;",
     repl: "const _t=notifTarget(n);const tappable=n.climberId!=null||!!n.tab||!!n.route||!!n.group;" },
 
@@ -60,7 +61,7 @@ const CASES = [
     find: 'if(n.goto)return {kind:"go",to:{tab:"crew",view:n.goto}};', repl: "" },
 
   // A row with no destination announced as a control -- the inert-control class held at zero.
-  { name: "spread-becomes-unconditional", file: "core", expect: "[wiring] the spread is CONDITIONAL",
+  { name: "spread-becomes-unconditional", file: "NotifPanel", expect: "[wiring] the spread is CONDITIONAL",
     find: "{...(_t?clickable(", repl: "{...(true?clickable(" },
 
   // The helper claiming a target for everything: every row becomes a button, some doing nothing.

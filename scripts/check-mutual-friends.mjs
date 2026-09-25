@@ -44,7 +44,7 @@ const dead = (m) => { console.error("\ncheck:mutual-friends: " + m + "\nThis run
 const read = (rel) => {
   const p = path.join(ROOT, rel);
   if (!fs.existsSync(p)) dead("missing " + rel);
-  const s = fs.readFileSync(p, "utf8");
+  const s = readAppFile(p);
   if (s.length < 400) dead(rel + " read short (" + s.length + " chars) — a truncated source makes every assertion vacuous");
   return s;
 };

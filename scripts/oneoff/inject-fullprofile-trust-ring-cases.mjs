@@ -29,6 +29,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const APP = path.join(ROOT, "ClimbMatch.jsx");
+const CREWCARD = path.join(ROOT, "lib", "CrewCard.jsx");   // moved out of core by the startup split
 const GUARD = path.join(ROOT, "scripts", "check-trust-breakdown.mjs");
 
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
@@ -137,19 +138,19 @@ const CASES = [
   {
     name: "crew-joinreq-badge-back-to-the-client-model",
     why: "the real defect: an organiser deciding on a stranger was shown that stranger as \"New\" in red, scored 0 by a model with none of its inputs",
-    edits: [[CORE, JR_BADGE, "<TrustBadge score={vScore(c)}/></div>"]],
+    edits: [[CREWCARD, JR_BADGE, "<TrustBadge score={vScore(c)}/></div>"]],
     expect: "no longer reads a gated realTrust",
   },
   {
     name: "crew-joinreq-vscore-ungated",
     why: "vScore(c) is CORRECT for a seed requester and must stay behind seedIdentity — ungated it also catches the unresolvable \"Climber\" fallback, which scores 0 too",
-    edits: [[CORE, JR_SEED_BRANCH, "<TrustBadge score={vScore(c)}/>"]],
+    edits: [[CREWCARD, JR_SEED_BRANCH, "<TrustBadge score={vScore(c)}/>"]],
     expect: "no longer gated on seedIdentity",
   },
   {
     name: "crew-fetch-loses-the-requesters",
     why: "the gate is worth nothing if nothing fills the map for these ids: only the invite search fed it, and a requester is not a search result",
-    edits: [[CORE, JR_IDS, JR_IDS_HISTORICAL], [CORE, "},[realInvSearch.data,joinReqs]);", "},[realInvSearch.data]);"]],
+    edits: [[CREWCARD, JR_IDS, JR_IDS_HISTORICAL], [CREWCARD, "},[realInvSearch.data,joinReqs]);", "},[realInvSearch.data]);"]],
     expect: "no longer covers joinReqs",
   },
   {
@@ -216,7 +217,7 @@ function narrowGuard(src) {
   return src.slice(0, i) + NARROW.replace(/^\s+/, "") + src.slice(end + "\n        }".length);
 }
 
-const before = { [CORE]: sum(CORE), [APP]: sum(APP), [GUARD]: sum(GUARD) };
+const before = { [CORE]: sum(CORE), [APP]: sum(APP), [CREWCARD]: sum(CREWCARD), [GUARD]: sum(GUARD) };
 
 console.log("Capturing the clean run first — an expectation that already matches it proves nothing.\n");
 const clean = runGuard();

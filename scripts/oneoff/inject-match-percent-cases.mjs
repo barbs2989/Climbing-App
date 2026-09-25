@@ -20,6 +20,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+const PARTNER_SEARCH = path.join(ROOT, "lib", "PartnerSearch.jsx");
 const LOCK = path.join(ROOT, ".match-pct-injection.lock");
 
 // Two runs of one suite must never overlap: both snapshot, edit and restore the same file, so a
@@ -83,6 +84,7 @@ const cases = [
   },
   {
     name: "the copy promises a signal nothing wires (belay catches)",
+    file: PARTNER_SEARCH,   // the Find-partners copy moved out of core with PartnerSearch
     edits: [['blends your shared objectives, grade range, disciplines, availability overlap and verified trust.', 'blends your shared objectives, grade range, disciplines, availability overlap and belay catches.']],
     expect: "which this guard cannot tie to any signal",
   },
@@ -147,7 +149,11 @@ for (const c of cases) {
 
 let problems = 0;
 for (const c of cases) {
-  let s = ORIGINAL;
+  // A case edits core unless it names its own file.
+  const F = c.file || CORE;
+  const orig = F === CORE ? ORIGINAL : fs.readFileSync(F, "utf8");
+  const baseSha = sha(F);
+  let s = orig;
   let landed = true, why = "";
   for (const [find, repl] of c.edits) {
     const n = s.split(find).length - 1;
@@ -156,11 +162,11 @@ for (const c of cases) {
   }
   if (!landed) { console.log(`  HARNESS BUG  ${c.name}\n      ${why}`); problems++; continue; }
 
-  fs.writeFileSync(CORE, s);
-  const moved = sha(CORE) !== BASE_SHA;
+  fs.writeFileSync(F, s);
+  const moved = sha(F) !== baseSha;
   const r = run();
-  fs.writeFileSync(CORE, ORIGINAL);
-  if (sha(CORE) !== BASE_SHA) { console.error("TREE NOT RESTORED — stopping."); process.exit(1); }
+  fs.writeFileSync(F, orig);
+  if (sha(F) !== baseSha) { console.error("TREE NOT RESTORED — stopping."); process.exit(1); }
 
   let verdict;
   if (c.expect === null) {

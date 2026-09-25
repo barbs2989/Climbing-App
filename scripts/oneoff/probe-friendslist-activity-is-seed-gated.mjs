@@ -19,13 +19,14 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 let bad = 0;
 const ok = (m) => console.log("  ok   " + m);
 const fail = (m) => { bad++; console.log("  FAIL " + m); };
 
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource(ROOT);
 
 console.log("\n1. both halves of FriendsList's activity feed carry the gate\n");
 

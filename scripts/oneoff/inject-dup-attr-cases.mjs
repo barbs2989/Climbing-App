@@ -36,7 +36,7 @@ const CASES = [
     'onClick={()=>setSection(x[0])} aria-current={on?"true":undefined}',
     'onClick={()=>setSection(x[0])} aria-current={on?"true":undefined} aria-current={on?"true":undefined}',
     true, "aria-current"],
-  ["2  the real ClimbMatchCore border duplicate", "ClimbMatchCore.jsx",
+  ["2  the real ClimbMatchCore border duplicate (CrewCard, since moved to lib/)", "lib/CrewCard.jsx",
     'fontWeight:700,color:C.blue,background:C.blueBg,borderRadius:10,padding:"11px 10px",border:"1.5px solid "+C.blueDim',
     'fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:10,padding:"11px 10px",border:"1.5px solid "+C.blueDim',
     true, '"border"'],

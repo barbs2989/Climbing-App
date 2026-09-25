@@ -2,7 +2,7 @@
 // Injection cases for check:seed-history's VOUCH PICKER section.
 //
 // Its healthy output is "everything passed", which is also what a guard asking nothing prints.
-// Each case proves its edit LANDED by checksum, restores ClimbMatchCore.jsx byte-identically, and
+// Each case proves its edit LANDED by checksum, restores lib/GiveVouch.jsx byte-identically, and
 // names the text its OWN failure must carry — matched against FAIL lines only, because an
 // expectation taken from the text an assertion prints when it PASSES reports MISSED against a
 // guard firing correctly. The harness also refuses any expectation already present in the GREEN
@@ -21,7 +21,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILE = path.join(ROOT, "ClimbMatchCore.jsx");
+// GiveVouch moved out of core to load lazily; every case below edits it there.
+const FILE = path.join(ROOT, "lib", "GiveVouch.jsx");
 const LOCK = path.join(ROOT, ".vouch-picker-injection.lock");
 
 try { fs.writeFileSync(LOCK, String(process.pid), { flag: "wx" }); }
@@ -116,7 +117,7 @@ for (const c of cases) {
   if (!good) console.log("      " + (fails.split("\n")[0] || "(no FAIL line)"));
 }
 
-if (sha() !== BASE) { console.log("\nTREE NOT RESTORED — ClimbMatchCore.jsx differs from the baseline."); process.exit(1); }
+if (sha() !== BASE) { console.log("\nTREE NOT RESTORED — lib/GiveVouch.jsx differs from the baseline."); process.exit(1); }
 console.log("\nrestored byte-identically");
 console.log(`RESULT: ${cases.length - problems}/${cases.length} as expected`);
 process.exit(problems ? 1 : 0);

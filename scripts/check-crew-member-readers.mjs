@@ -27,7 +27,7 @@
 //   node scripts/check-crew-member-readers.mjs
 import fs from "node:fs";
 import path from "node:path";
-import { appSources } from "./lib/guard-sources.mjs";
+import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const GUARD = "check:crew-member-readers";
 const ROOT = process.cwd();
@@ -122,7 +122,7 @@ let refSites = 0;
 const findings = [];
 let scanned = 0, sites = 0;
 for (const rel of FILES) {
-  const raw = fs.readFileSync(path.join(ROOT, rel), "utf8");
+  const raw = readAppFile(path.join(ROOT, rel));
   const src = stripComments(raw);
   scanned++;
   for (const pat of ["CLIMBERS.find(", "FILLER_CLIMBERS.find(", "cById("]) {

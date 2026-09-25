@@ -91,6 +91,9 @@ export const MOVED_FROM_CORE = [
   "lib/PartnerSearch.jsx", "lib/Leaderboards.jsx", "lib/CrewFinder.jsx",
   "lib/CrewCard.jsx", "lib/AddRoute.jsx", "lib/LogAscent.jsx",
   "lib/ListsManager.jsx", "lib/TripReport.jsx", "lib/EditProfileScreen.jsx",
+  "lib/Help.jsx", "lib/LegalView.jsx", "lib/Calendar.jsx", "lib/FriendsList.jsx", "lib/Inbox.jsx",
+  "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
+  "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
 ];
 export function movedAsCoreText(text, file = "a moved file") {
   const body = text.replace(/^import [^\n]*\n/gm, "");
@@ -98,6 +101,21 @@ export function movedAsCoreText(text, file = "a moved file") {
   if (n !== 1) throw new Error(`${file}: expected exactly one "export default function", found ${n}`);
   return body.replace(/^export default function /m, "function ");
 }
+// For a guard that BUNDLES core to execute or render it: an entry file exporting everything core
+// exports PLUS each moved component under its old name (they are lib/ default exports now), so the
+// bundle has the module shape it had before the moves and `mod.Inbox` still resolves. Written
+// inside the checkout (react must resolve from its node_modules), pid-scoped; call cleanup().
+export function coreModuleEntry(root = OWN_ROOT) {
+  const p = path.join(root, `.core-entry-${process.pid}-${Math.random().toString(36).slice(2, 8)}.jsx`);
+  const lines = [`export * from "./ClimbMatchCore.jsx";`];
+  for (const f of MOVED_FROM_CORE) {
+    if (!fs.existsSync(path.join(root, f))) throw new Error(`${f} is missing — it cannot be re-exported`);
+    lines.push(`export { default as ${path.basename(f, ".jsx")} } from "./${f}";`);
+  }
+  fs.writeFileSync(p, lines.join("\n") + "\n");
+  return { path: p, cleanup: () => fs.rmSync(p, { force: true }) };
+}
+
 // For a guard that loops over a fixed list of app files which does NOT include lib/: reading
 // core through here keeps the moved components in view without scanning anything twice.
 // (A guard that already walks lib/ sees them as lib files and must keep reading core raw.)

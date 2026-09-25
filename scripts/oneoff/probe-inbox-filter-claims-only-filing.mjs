@@ -24,10 +24,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource(ROOT);
 const problems = [];
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); problems.push(m); };

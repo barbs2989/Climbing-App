@@ -25,7 +25,7 @@ const CASES = [
   {
     name: "oldtext",
     why: "the real pre-#1522 §4 sentence, restored verbatim — a switch nobody has, plus float plans and search-and-rescue",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: `["Location","Your profile carries the home area you type in — a city or region, not a coordinate — and, if you add one, your zip code. Only you can read your zip. When another signed-in climber searches for partners near them, you appear only if you chose to be listed, and they see roughly how far away you are — measured between zip-code centres and rounded up to the next 5 miles — never your zip. Someone who searched repeatedly from different places could still narrow down roughly which area you live in; leave the zip blank if that matters to you. Your device’s position is read only when you tap for it. A map’s find-me control reads it to centre that map and mark you on it, and the corners of the map you are then looking at are sent to us to find the climbs in view; that position is not stored. “Near me now” in partner search reads it, rounded to about a kilometre, to find listed climbers near it, and it is not stored. “I’m at the base” on a climb reads it to check you are standing at the start of that climb, and only if the check passes do we store that position against your account — with no signal, the reading waits on your phone until it can be sent. Other climbers see a checked-in spot and how many climbers stood there, never who or when, and you can remove your check-in from the climb’s page. A GPS track is stored only when you attach one to a climb you log. Nothing runs in the background, and no feature reports your position to emergency services — the rescue numbers the app shows are a directory you call yourself."]`,
     repl: `["Location","You control location sharing. “Approximate location only” shares your city rather than your exact spot. Precise location, when enabled, powers nearby routes, weather, and — if you opt in — float plans and search-and-rescue."]`,
     expect: /You control location sharing/,
@@ -33,7 +33,7 @@ const CASES = [
   {
     name: "collect",
     why: "§1 goes back to promising the same absent enablement — the half a §4-only fix would have missed. Re-anchored when section 5 took 'optional emergency contacts' out of the collection list: the phrase was only this case's ANCHOR, never its subject, and check:injection-anchors is what caught the rot.",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: "climbing logs, float plans you file against a crew, the home area you type in, your zip code if you add one, and the basic technical data",
     repl: "climbing logs, float plans you file against a crew, approximate or precise location when you enable it, and the basic technical data",
     expect: /location when you enable it/,
@@ -41,7 +41,7 @@ const CASES = [
   {
     name: "dropgps",
     why: "the GPS-track exception is dropped, so the policy claims location is never stored while climb_logs.gpx_track is written",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: " A GPS track is stored only when you attach one to a climb you log.",
     repl: "",
     expect: /A GPS track is stored only when you attach one/,
@@ -49,7 +49,7 @@ const CASES = [
   {
     name: "versiondrift",
     why: "the rendered date is hardcoded, so shown and recorded drift — the invariant lib/policy.js states in a comment and nothing asserted",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: "Last updated {policyVersionLabel(POLICY_VERSION)}.",
     repl: "Last updated August 19, 2026.",
     expect: /a reader cannot see which version they are being asked to accept/,
@@ -57,7 +57,7 @@ const CASES = [
   {
     name: "anchorlost",
     why: "LegalView is renamed — the guard must report a BROKEN scan, not a clean policy",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: "function LegalView({kind,onBack})",
     repl: "function LegalViewRenamed({kind,onBack})",
     expect: /BROKEN|ANCHOR LOST/,
@@ -70,7 +70,7 @@ const CASES = [
     // half of it wrong -- which is exactly why the guard tests the clauses separately.
     name: "s3original",
     why: "§3 goes back to the original sentence, whose \"governed by your privacy settings\" still names a control the app withholds",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     // Anchored on the FIRST sentence only: the rankings/tagged-partner disclosure (0194) now sits
     // between it and the connections sentence, and the case is about the opening clause.
     find: `["What others can see","Other climbers see your public profile — your username, or your real name if you choose to show it — along with the profile you fill in and the trust signals built from your climbing activity.`,
@@ -82,7 +82,7 @@ const CASES = [
     // tempting "simplification" -- the policy would read cleanly and be quietly misleading.
     name: "s3limit",
     why: "§3 keeps the name choice but drops the limit, so it implies the switch governs every surface — FriendsList and CrewCard still show the account name either way",
-    file: "ClimbMatchCore.jsx",
+    file: "lib/LegalView.jsx",
     find: ` Climbers you have connected with see the name on your account either way, in your friends list and crew rosters.`,
     repl: ``,
     // Match the guard's FAILURE message, not its ok() wording. The first version of this expected

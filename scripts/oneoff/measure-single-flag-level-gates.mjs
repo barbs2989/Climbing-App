@@ -17,6 +17,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readAppFile } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
@@ -52,7 +53,7 @@ let total = 0;
 const rows = [];
 for (const f of FILES) {
   let src;
-  try { src = blank(fs.readFileSync(path.join(ROOT, f), "utf8")); } catch { continue; }
+  try { src = blank(readAppFile(path.join(ROOT, f))); } catch { continue; }
   /* DEDUPE BY SITE, NOT BY MATCH, and this is the correction that changed the answer.
      The four needles overlap: `c.level + " · " + vScore(c)` matches three of them at three
      DIFFERENT offsets, so an offset-keyed Set still counted one expression three times. The first

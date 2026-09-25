@@ -36,9 +36,15 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { coreModuleEntry } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const out = path.join(ROOT, `.outage-copy-${process.pid}.mjs`);
+// Bundle an entry that re-exports core AND the components moved out of it (lib/ default exports),
+// so `mod.<Component>` resolves exactly as it did before they moved.
+const __coreEntry = coreModuleEntry(ROOT);
+process.on("exit", __coreEntry.cleanup);
+
 
 let failures = 0;
 const fail = (m) => { console.log("  FAIL  " + m); failures++; };
@@ -55,7 +61,7 @@ try {
   // Bundle INSIDE the project: node resolves `react` from the nearest node_modules, so a bundle
   // in the OS temp dir throws ERR_MODULE_NOT_FOUND. `lib/supabase.js` reads import.meta.env at
   // module scope, so it must be defined or the import throws before anything renders.
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync("npx", ["esbuild", __coreEntry.path,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}", "--external:react", "--external:react-dom",
     "--external:@tanstack/react-query", "--external:react-dom/server",

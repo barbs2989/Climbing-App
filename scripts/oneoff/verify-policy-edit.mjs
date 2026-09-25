@@ -6,6 +6,7 @@ import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readCoreSource } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const balanced = (src, start) => {
@@ -35,7 +36,7 @@ const at = (ref) => {
   const g = (f) => execFileSync("git", ["show", `${ref}:${f}`], { cwd: ROOT, encoding: "utf8", maxBuffer: 1 << 28 });
   return parse(g("ClimbMatchCore.jsx"), g("ClimbMatch.jsx"));
 };
-const now = parse(fs.readFileSync(ROOT + "/ClimbMatchCore.jsx", "utf8"), fs.readFileSync(ROOT + "/ClimbMatch.jsx", "utf8"));
+const now = parse(readCoreSource(ROOT), fs.readFileSync(ROOT + "/ClimbMatch.jsx", "utf8"));
 const before = at("origin/main");
 
 let bad = 0;

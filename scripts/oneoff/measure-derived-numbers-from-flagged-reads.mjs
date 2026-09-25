@@ -39,6 +39,7 @@
 import fs from "fs";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { readAppFile } from "../lib/guard-sources.mjs";
 const traverse = _traverse.default || _traverse;
 
 const SEEDS = {
@@ -55,7 +56,7 @@ const NOT_A_NUMBER = /^(set[A-Z]|on[A-Z]|open|notify|add|edit|reply|remove|delet
 let calls = 0, seeded = 0;
 const rows = [];
 for (const file of ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]) {
-  const src = fs.readFileSync(file, "utf8");
+  const src = readAppFile(file);
   const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
 
   // ---- taint, keyed on the BINDING identifier node, to a fixpoint ------------------------------

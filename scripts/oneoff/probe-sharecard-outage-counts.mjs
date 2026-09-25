@@ -10,6 +10,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import esbuild from "esbuild";
+import { coreModuleEntry } from "../lib/guard-sources.mjs";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 
@@ -17,8 +18,11 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 // The bundle MUST be written inside the project or node resolves `react` from the OS temp dir.
 const OUT = path.join(ROOT, "scripts", "oneoff", ".sharecard-probe.mjs");
 
+// Core plus the components moved out of it, so `mod.ShareCard` resolves as it did before the move.
+const __coreEntry = coreModuleEntry(ROOT);
+process.on("exit", __coreEntry.cleanup);
 await esbuild.build({
-  entryPoints: [path.join(ROOT, "ClimbMatchCore.jsx")],
+  entryPoints: [__coreEntry.path],
   bundle: true, format: "esm", outfile: OUT, jsx: "automatic",
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   external: ["react", "react-dom", "react/jsx-runtime", "@tanstack/react-query", "@supabase/supabase-js"],

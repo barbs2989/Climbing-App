@@ -140,7 +140,10 @@ const prefetchSplitScreens = () => {
   [() => import("./RouteDetail.jsx"), () => import("./lib/CrewCard.jsx"), () => import("./lib/ListsManager.jsx"),
    () => import("./lib/PartnerSearch.jsx"), () => import("./lib/Leaderboards.jsx"), () => import("./lib/CrewFinder.jsx"),
    () => import("./lib/LogAscent.jsx"), () => import("./lib/TripReport.jsx"), () => import("./lib/AddRoute.jsx"),
-   () => import("./lib/EditProfileScreen.jsx")].forEach((load) => load().catch(() => {}));
+   () => import("./lib/EditProfileScreen.jsx"), () => import("./lib/MyAscents.jsx"), () => import("./lib/SafetyTab.jsx"),
+   () => import("./lib/Inbox.jsx"), () => import("./lib/Calendar.jsx"), () => import("./lib/FriendsList.jsx"),
+   () => import("./lib/NotifPanel.jsx"), () => import("./lib/ShareCard.jsx"), () => import("./lib/GiveVouch.jsx"),
+   () => import("./lib/Onboarding.jsx"), () => import("./lib/Help.jsx"), () => import("./lib/LegalView.jsx")].forEach((load) => load().catch(() => {}));
 };
 window.addEventListener("load", () => {
   const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 1500));

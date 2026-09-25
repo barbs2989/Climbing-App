@@ -26,6 +26,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const RD = path.join(ROOT, "RouteDetail.jsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+const HELP = path.join(ROOT, "lib", "Help.jsx");   // the FAQ moved out of core with Help
 const LOCK = path.join(ROOT, ".tracks-heading-injection.lock");
 
 try { fs.writeFileSync(LOCK, String(process.pid), { flag: "wx" }); }
@@ -40,9 +41,10 @@ const run = () => {
   return { code: r.status, out: (r.stdout || "") + (r.stderr || "") };
 };
 
-const ORIGINAL = { [RD]: fs.readFileSync(RD, "utf8"), [CORE]: fs.readFileSync(CORE, "utf8") };
-const BASE = { [RD]: sha(RD), [CORE]: sha(CORE) };
-const restore = () => { for (const f of [RD, CORE]) fs.writeFileSync(f, ORIGINAL[f]); };
+const STAGED_FILES = [RD, CORE, HELP];
+const ORIGINAL = Object.fromEntries(STAGED_FILES.map((f) => [f, fs.readFileSync(f, "utf8")]));
+const BASE = Object.fromEntries(STAGED_FILES.map((f) => [f, sha(f)]));
+const restore = () => { for (const f of STAGED_FILES) fs.writeFileSync(f, ORIGINAL[f]); };
 
 const clean = run();
 if (clean.code !== 0) { console.error("BASELINE NOT GREEN — fix the guard first.\n" + clean.out.slice(-1500)); process.exit(1); }
@@ -83,7 +85,7 @@ const cases = [
   },
   {
     name: "THE REAL DEFECT: the Help FAQ promises recorded tracks outright",
-    edits: [[CORE, "Rarely — almost no route carries one yet.", "Yes."]],
+    edits: [[HELP, "Rarely — almost no route carries one yet.", "Yes."]],
     expect: 'with "Yes."',
   },
   {
@@ -118,7 +120,7 @@ for (const c of cases) {
 
 let problems = 0;
 for (const c of cases) {
-  const staged = { [RD]: ORIGINAL[RD], [CORE]: ORIGINAL[CORE] };
+  const staged = { ...ORIGINAL };
   let landed = true, why = "";
   for (const [file, find, repl] of c.edits) {
     const n = staged[file].split(find).length - 1;
@@ -127,7 +129,7 @@ for (const c of cases) {
   }
   if (!landed) { console.log(`  HARNESS BUG  ${c.name}\n      ${why}`); problems++; continue; }
 
-  for (const f of [RD, CORE]) fs.writeFileSync(f, staged[f]);
+  for (const f of STAGED_FILES) fs.writeFileSync(f, staged[f]);
   const moved = c.edits.every(([f]) => sha(f) !== BASE[f]);
   const r = run();
   restore();
@@ -144,9 +146,9 @@ for (const c of cases) {
   if (!good) console.log("      " + (fails.split("\n")[0] || "(no FAIL line)"));
 }
 
-for (const f of [RD, CORE]) {
+for (const f of STAGED_FILES) {
   if (sha(f) !== BASE[f]) { console.log(`\nTREE NOT RESTORED — ${path.basename(f)} differs from the baseline.`); process.exit(1); }
 }
-console.log("\nboth files restored byte-identically");
+console.log(`\nall ${STAGED_FILES.length} files restored byte-identically`);
 console.log(`RESULT: ${cases.length - problems}/${cases.length} as expected`);
 process.exit(problems ? 1 : 0);

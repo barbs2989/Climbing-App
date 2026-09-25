@@ -19,11 +19,11 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "lib/PartnerSearch.jsx"].map((f) => path.join(ROOT, f));
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "lib/PartnerSearch.jsx", "lib/Help.jsx"].map((f) => path.join(ROOT, f));
 const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("hex");
 
 const CASES = [
-  { name: "faq-settings-control", file: "ClimbMatchCore.jsx", fires: true,
+  { name: "faq-settings-control", file: "lib/Help.jsx", fires: true,
     find: '"Is my emergency contact private?","There is no emergency-contact field on your profile.',
     repl: '"Is my emergency contact private?","Yes. You control who can see it in Settings — keep it private, share with your crew only, or show it to partners.","XX',
     expect: "claims a Settings control over an emergency contact",
@@ -47,7 +47,7 @@ const CASES = [
     expect: "section 4b's premise has moved",
     why: "if the field becomes settable the rule must report a MOVED PREMISE, not keep forbidding a claim that would then be true" },
 
-  { name: "faq-answer-deleted", file: "ClimbMatchCore.jsx", fires: true,
+  { name: "faq-answer-deleted", file: "lib/Help.jsx", fires: true,
     find: '"Is my emergency contact private?"',
     repl: '"Is my emergency contact PRIVATE?"',
     expect: "no longer answers",
@@ -63,7 +63,7 @@ const CASES = [
     repl: "under Settings → Show me on leaderboards.",
     why: "a path may name a CONTROL Settings renders, not only a section" },
 
-  { name: "SILENT-answer-reworded", file: "ClimbMatchCore.jsx", fires: false,
+  { name: "SILENT-answer-reworded", file: "lib/Help.jsx", fires: false,
     find: '"There is no emergency-contact field on your profile. You write one into a float plan',
     repl: '"ClimbMatch keeps no emergency contact for you. Put one in a float plan',
     why: "a guard pinned to one phrasing forbids improving it — the rule is that the answer still names where a contact goes" },

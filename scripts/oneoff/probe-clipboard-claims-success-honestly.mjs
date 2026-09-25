@@ -19,6 +19,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { readCoreSource, readAppFile } from "../lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"];
@@ -30,7 +31,7 @@ let fail = 0, sites = 0, guarded = 0;
 const ok = (c, m) => { console.log(`  ${c ? "ok  " : "FAIL"}  ${m}`); if (!c) fail++; };
 
 for (const f of FILES) {
-  const src = fs.readFileSync(path.join(ROOT, f), "utf8");
+  const src = readAppFile(path.join(ROOT, f));
   let from = 0;
   for (;;) {
     const i = src.indexOf("clipboard.writeText(", from);
@@ -56,7 +57,7 @@ console.log(`\n${sites} clipboard write site(s); ${guarded} either claim nothing
 ok(sites >= 6, `found the expected call sites (${sites})`);
 // An await inside a try is only honest if the success call is INSIDE that try too — the profile
 // copy had the await and still announced success from outside it.
-const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
+const core = readCoreSource(ROOT);
 ok(/await navigator\.clipboard\.writeText\(text\);setCopied\(what\);/.test(core),
   "the awaited copy sets its label INSIDE the try, not after it");
 ok(/catch\(e\)\{setCopied\("Couldn't copy"\)/.test(core),

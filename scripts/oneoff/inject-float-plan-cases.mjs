@@ -37,7 +37,7 @@ const CASES = [
   },
   {
     name: "crew-site-drops-plan",
-    file: CORE,
+    file: path.join(ROOT, "lib/SafetyTab.jsx"),
     why: "THE HISTORICAL MISS: #1577 fixed the route tab and left this one. Team Alignment / Float Plan are a two-button pair, so the control most likely to be tapped mid-fill is the one that cleared the form.",
     expect: /SafetyTab's call site does not pass plan\/onPlan/,
     // TARGET THE TAG THAT CARRIES plan=, not the first <FloatPlan. Core quotes `<FloatPlan/>`
@@ -73,7 +73,7 @@ const CASES = [
   },
   {
     name: "shape-duplicated-at-the-crew-site",
-    file: CORE,
+    file: path.join(ROOT, "lib/SafetyTab.jsx"),
     why: "seeding the crew site from a hand-written literal instead of floatPlanState() puts the eleven-key shape in two places, and they drift. The props are still passed, so only the seeding assertion sees it.",
     expect: /crew site does not seed from floatPlanState/,
     edit: (s) => s.replace(/(\[floatPlan,setFloatPlan\]=useState\(\(\)=>)floatPlanState\(\)/,
