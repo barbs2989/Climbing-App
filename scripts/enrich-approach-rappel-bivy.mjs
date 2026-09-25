@@ -212,6 +212,17 @@ for (const f of FROM) {
     if (!hasContent) { console.log(`skip ${id} — ${spec.skip_reason || "nothing to write"}`); continue; }
     if (!spec.area) { console.error(`skip ${id} — batch entry has no area to assert against`); process.exitCode = 1; continue; }
     for (const k of ["climbing_route", "approach_variants", "bivy"]) if (Array.isArray(spec[k]) && !spec[k].length) delete spec[k];
+    /* `primary:true` marks the way in MOST parties take; the APPROACH section draws it first,
+       badges it Most used, and hangs the route's `approach` paragraph under it — unless another
+       variant carries `longForm:true`, meaning the paragraph describes THAT way in. Two of either
+       mark would be a coin toss (the reader takes the first), so a batch carrying two is refused.
+       With two or more ways in, mark one: an unmarked route shows no badge at all. */
+    if (Array.isArray(spec.approach_variants)) {
+      const marks = spec.approach_variants.filter(v => v && v.primary === true).length;
+      const lf = spec.approach_variants.filter(v => v && v.longForm === true).length;
+      if (marks > 1 || lf > 1) { console.error(`skip ${id} — ${marks} marked primary and ${lf} marked longForm; mark at most ONE of each`); process.exitCode = 1; continue; }
+      if (spec.approach_variants.length > 1 && !marks) console.warn(`warn ${id} — ${spec.approach_variants.length} ways in and none marked primary; no way in will be badged Most used`);
+    }
     DATA[id] = spec;
   }
 }

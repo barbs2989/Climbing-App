@@ -139,7 +139,7 @@ _aid:{summary:"A big-wall objective where heat and sun exposure are the limiting
    loose-rock sentence), so counting them opened a Plan or Safety tab on 4,568 routes whose
    whole payload was one copied paragraph. They still render once a route qualifies on
    something route-specific. */
-function hasPlanContent(route){if(!route)return false;const w=route.waypoints;return !!(route.road||route.driveMinSLC||route.approach||route.descent||route.descentText||route.approachLogistics||(w&&w.length)||route.rappels!=null);}
+function hasPlanContent(route){if(!route)return false;const w=route.waypoints;return !!(route.road||route.driveMinSLC||route.approach||(Array.isArray(route.approachVariants)&&route.approachVariants.some(Boolean))||route.descent||route.descentText||route.approachLogistics||(w&&w.length)||route.rappels!=null);}
 /* hasSafetyContent() lived here and gated the Safety tab the way hasPlanContent still gates Plan. It
    was removed when the Safety tab became unconditional: unlike Plan, that tab is never empty — the
    per-discipline advice, the forecast links and the nearby-fire panel all render without the route
@@ -1198,52 +1198,108 @@ export function ClimbingRouteTable({route,onEdit}){
   </div>;
 }
 
-/* APPROACH — one card per distinct way in, because a route usually has more than one and the
-   single `approach` paragraph could only ever describe whichever one the writer had in mind.
-   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is
-   the answer to "how do I know I'm at the start of the climbing", which is the question that
-   actually gets parties lost, and burying it mid-paragraph is exactly how it got lost before.
-   Renders ALONGSIDE the existing `approach` prose, never instead of it — the prose is the
-   long-form account and is often the only thing a route has. */
-export function ApproachVariants({route,onEdit}){
-  const vars=Array.isArray(route.approachVariants)?route.approachVariants:[];
-  if(!vars.length)return null;
-  return <div style={{marginBottom:12}}>
-    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit the approaches"/>:null}>{"APPROACHES · "+vars.length+" way"+(vars.length!==1?"s":"")+" in"}</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>Which one is right depends on the season — read the window on each before you pick.</div>
-    {vars.map((v,i)=>{
-      const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
-      /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
-         routes) hold a paragraph instead — up to 392 characters. It rendered in a pill carrying
-         BOTH white-space:nowrap AND flex-shrink:0, so the text could neither wrap nor shrink and
-         a long value pushed the row past the edge of a 390px phone. Worse than the camping chips,
-         which at least wrapped into a blob.
-         Defended the way the header strap already defends the top-level `season` column, with the
-         same seasonShort() — and the full sentence renders as PROSE below rather than being lost,
-         because the explanation is worth reading, just not inside a pill. */
-      const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
-      const seasonPill=seasonShort(seasonFull,48);
-      /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
-         " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
-         already names its unit is left alone; otherwise the unit goes after the FIRST number range
-         ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
-      const hrsTxt=v.hours?(/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(v.hours))?String(v.hours):String(v.hours).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr")):null;
-      const facts=[hrsTxt,v.distMi!=null?uDistMi(v.distMi):null,v.gainFt!=null?uElev(v.gainFt)+" gain":null].filter(Boolean);
-      return <div key={i} style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",marginBottom:9}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
-          <div style={{fontSize:13.5,fontWeight:800,color:C.text,minWidth:0,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>
-          {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
+/* APPROACH — ONE section, holding every way in. It used to be two: "APPROACHES · N ways in"
+   (the `approach_variants` cards) and, under it, a separate APPROACH box holding the `approach`
+   paragraph. Read top to bottom that paragraph looked like a THIRD way in, and nothing said which
+   of the ways in people actually take. Measured 2026-09-24: 796 routes carry both, and on 771 of
+   them the paragraph is the long-form account of the FIRST variant — so it now renders INSIDE
+   the main way in's card as its full description, not as a sibling of it.
+   The MAIN way in is the variant marked `primary:true`, else index 0 (the enrichment has always
+   written the standard way in first), and it is drawn first. It is badged MOST USED only when that
+   is a RECORDED decision — `primary:true` on a route with a choice to make — never on array order
+   alone: research on the 124 multi-way routes moved the answer off index 0 on 16 of them.
+   The paragraph and the route-level numbers follow `longForm:true` when a variant carries it: on
+   ~20 routes the paragraph describes a way in that is NOT the most used one (a road since washed
+   out, a trail closed since 2003), and hanging it under the MOST USED card would put the long
+   account, and its miles and gain, under the wrong way in. Without the mark they follow the main
+   card, which is where the paragraph belongs on 771 of 796 routes.
+   The other ways in keep their season window, which is the reason to pick one.
+   `baseFinding` gets its own highlighted block rather than a sentence inside `notes`: it is the
+   answer to "how do I know I'm at the start of the climbing", which is the question that actually
+   gets parties lost, and burying it mid-paragraph is exactly how it got lost before. */
+/* A crossing is read from the way in's own HAZARDS, never its notes or name: "Icicle Creek Road"
+   and "Mountaineer Creek trail" are places, not fords. The chip only repeats a hazard already
+   recorded on the card, so it can never claim a crossing nobody wrote down. */
+export const APPROACH_CROSSING_RE=/\b(?:ford(?:s|ed|ing)?|wad(?:e|es|ed|ing)|(?:creek|river|stream) crossings?|cross(?:es|ed|ing)? (?:the )?[\w'’ -]{0,30}?(?:creek|river|stream|fork))\b/i;
+/* A LOG bridge or log crossing over a creek is a crossing too, and the first pattern missed it:
+   "Slick or partly submerged log bridges over Mountaineer Creek early season" is the Colchuck
+   outlet hazard every Let it Burn party meets. It counts only when the same hazard names the water,
+   so "downed logs" in an avalanche path does not. Measured over all 4,634 stored hazards; the
+   remaining non-matches that say "crossing" are railway, glacier, moat, rib and border crossings. */
+export const APPROACH_LOG_CROSSING_RE=/\blog (?:bridges?|crossings?)\b/i;
+export const approachHasCrossing=haz=>haz.some(h=>{const t=String(h||"");return APPROACH_CROSSING_RE.test(t)||(APPROACH_LOG_CROSSING_RE.test(t)&&/\b(?:creek|river|stream)\b/i.test(t));});
+export const primaryApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.primary===true);return i>=0?i:0;};
+export const longFormApproachIndex=vars=>{const i=vars.findIndex(v=>v&&v.longForm===true);return i>=0?i:primaryApproachIndex(vars);};
+export function ApproachVariants({route,onEdit,onEditProse}){
+  const vars=Array.isArray(route.approachVariants)?route.approachVariants.filter(Boolean):[];
+  const prose=route.approach?String(route.approach):"";
+  if(!vars.length&&!prose)return null;
+  const pIdx=primaryApproachIndex(vars);const lfIdx=vars.length?longFormApproachIndex(vars):-1;const marked=vars.some(v=>v.primary===true);
+  const order=vars.length?[pIdx,...vars.map((_,i)=>i).filter(i=>i!==pIdx)]:[-1];
+  /* Route-level numbers backfill ONE card — the one the paragraph describes — because they measure
+     the same approach the paragraph does, and
+     888 of 1,001 variants carry no distance of their own. Each keeps the label TechStats gives it on
+     Overview, because on a summit route gain_ft is the whole ascent, not the walk in, and printing it
+     as "approach gain" would claim the trail climbs 5,500 ft before the route starts. */
+  const disc=catOf(route);const summitDisc=disc==="alpine"||disc==="mountaineering"||disc==="hiking";
+  const rAsc=routeAscentFt(route);const rKm=effDistKm(route);const rHrs=route.timing&&route.timing.approachTimeHrs;
+  const routeFacts={
+    hours:rHrs!=null&&rHrs!==""?String(rHrs):null,
+    dist:rKm!=null&&rKm>0?uDist(rKm)+(effDistIsWholeTrip(route)?" whole outing":" one way"):null,
+    gain:rAsc!=null&&rAsc>0?"↑ "+uElev(rAsc)+(summitDisc||gainCoversWholeOuting(route)?" total ascent":" approach gain"):null};
+  /* `hours` is free text as often as a number: "Multi-day", "2 days", "4–5 from camp". Appending
+     " hr" to the END printed "Multi-day hr" and "4–5 from camp hr" (15 of 197 values). A value that
+     already names its unit is left alone; otherwise the unit goes after the FIRST number range
+     ("under 1" -> "under 1 hr"). The unit test is whole words: `\bh` matched "high camp". */
+  const hrsFmt=hv=>/\b(?:hrs?|hours?|days?)\b|\d\s*h\b/i.test(String(hv))?String(hv):String(hv).replace(/(~?\d+(?:\.\d+)?(?:\s*(?:[-–]|to)\s*\d+(?:\.\d+)?)?)/,"$1 hr");
+  const card=(v,i,main)=>{
+    const own=i===lfIdx;
+    const haz=Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[]);
+    /* `season` on an approach variant is a WINDOW, and 534 of 801 variants (67%, across 470
+       routes) hold a paragraph instead — up to 392 characters. It rendered in a pill carrying
+       BOTH white-space:nowrap AND flex-shrink:0, so the text could neither wrap nor shrink and
+       a long value pushed the row past the edge of a 390px phone. Defended with the same
+       seasonShort() the header strap uses — and the full sentence renders as PROSE below rather
+       than being lost, because the explanation is worth reading, just not inside a pill. */
+    const seasonFull=String(v.season||"").trim().replace(/\s+/g," ");
+    const seasonPill=seasonShort(seasonFull,48);
+    const hrsTxt=v.hours?hrsFmt(v.hours):(own&&routeFacts.hours?hrsFmt(routeFacts.hours)+" approach":null);
+    const distTxt=v.distMi!=null?uDistMi(v.distMi):(own?routeFacts.dist:null);
+    const gainTxt=v.gainFt!=null?uElev(v.gainFt)+" gain":(own?routeFacts.gain:null);
+    const facts=[hrsTxt,distTxt,gainTxt].filter(Boolean);
+    const crossing=approachHasCrossing(haz);
+    const badge=main&&marked&&vars.length>1;
+    const titled=!!(vars.length||seasonPill);
+    return <div key={i} data-approach-card={main?"main":"other"} style={{background:C.card,border:"1px solid "+(badge?C.greenDim:C.border),borderRadius:12,padding:"11px 13px",marginBottom:9}}>
+      {titled?<div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:6}}>
+        <div style={{minWidth:0}}>
+          {badge?<div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:2}}>Most used</div>:null}
+          {vars.length?<div style={{fontSize:13.5,fontWeight:800,color:C.text,wordBreak:"break-word"}}>{v.name||("Approach "+(i+1))}</div>:null}
         </div>
-        {facts.length?<div style={{display:"flex",flexWrap:"wrap",gap:10,marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}</div>:null}
-        {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
-        {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
-        {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
-          <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
-          <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
-        </div>:null}
-        {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
-      </div>;
-    })}
+        {seasonPill?<span style={{flexShrink:0,fontSize:11,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:20,padding:"2px 9px",whiteSpace:"nowrap"}}>{seasonPill}</span>:null}
+      </div>:null}
+      {facts.length||crossing?<div style={{display:"flex",flexWrap:"wrap",gap:10,alignItems:"center",marginBottom:7}}>{facts.map((f,fi)=><span key={fi} style={{fontSize:11.5,color:C.textSub}}>{f}</span>)}{crossing?<span style={{display:"inline-flex",alignItems:"center",gap:4,fontSize:11,fontWeight:700,color:C.amber,background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:20,padding:"1px 8px"}}><ActionIcon name="alert" size={11} color={C.amber}/>Stream crossing</span>:null}</div>:null}
+      {seasonPill&&seasonPill!==seasonFull?<p style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:"0 0 7px"}}>{seasonFull}</p>:null}
+      {v.notes?splitParagraphs(v.notes).map((p,pi)=><p key={pi} style={{fontSize:12.5,color:C.textSub,lineHeight:1.6,margin:pi===0?"0 0 7px":"7px 0 0"}}>{p}</p>):null}
+      {/* The full account renders IN FULL, never behind a "read more": check:field-renders proves
+          this column reaches a screen by server-rendering the page, and a collapsed paragraph is
+          not in that markup. It is labelled only when a summary sits above it. */}
+      {own&&prose?<div style={{marginTop:v.notes?9:0}}>
+        {v.notes?<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:4}}><div style={{fontSize:9.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.5}}>Full description</div>{onEditProse?<EditIconButton onClick={onEditProse} title="Edit the full approach description"/>:null}</div>:null}
+        {splitParagraphs(prose).map((p,pi)=><p key={pi} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:pi===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}
+      </div>:null}
+      {v.baseFinding?<div style={{marginTop:7,background:C.greenBg,border:"1px solid "+C.greenDim,borderRadius:9,padding:"8px 10px"}}>
+        <div style={{fontSize:9.5,fontWeight:800,color:C.green,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}}>Finding the base of the climbing</div>
+        <div style={{fontSize:12.5,color:C.text,lineHeight:1.55}}>{v.baseFinding}</div>
+      </div>:null}
+      {haz.length?<div style={{marginTop:7,display:"flex",flexDirection:"column",gap:4}}>{haz.map((h,hi)=><div key={hi} style={{display:"flex",gap:6,alignItems:"flex-start",background:C.amberBg,border:"1px solid "+C.amber+"55",borderRadius:8,padding:"5px 8px"}}><span style={{flexShrink:0,marginTop:1}}><ActionIcon name="alert" size={12} color={C.amber}/></span><span style={{fontSize:11.5,color:C.text,lineHeight:1.45}}>{h}</span></div>)}</div>:null}
+    </div>;
+  };
+  const editFn=vars.length?onEdit:onEditProse;
+  return <div style={{marginBottom:12}}>
+    <SL action={editFn?<EditIconButton onClick={editFn} title={vars.length?"Edit the approaches":"Edit approach information"}/>:null} prov={sectionProvenance(route,"approach")}>APPROACH</SL>
+    {vars.length>1?<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,margin:"-4px 0 9px"}}>{vars.length+" ways in."+(marked?" Most parties take the first; the others are for when its season window says otherwise.":" Read the season window on each before you pick.")}</div>:null}
+    {order.map((i,k)=>card(i<0?{}:vars[i],i<0?-1:i,k===0))}
   </div>;
 }
 
@@ -2517,6 +2573,10 @@ function SuggestFix({route,onClose,onSubmit,onLog,scrollTo,pending,peakCoord,pre
         distMi:itinDraftVal(v,"distMi"),gainFt:itinDraftVal(v,"gainFt"),
         _orig:{distMi:v.distMi,gainFt:v.gainFt},
         hours:v.hours!=null?String(v.hours):"",notes:v.notes||"",
+        /* Not edited here, but CARRIED: the form has no box for them, and dropping them on submit
+           meant any edit to a way in silently deleted its base-finding note, its MOST USED mark and
+           the mark saying which way in the route's paragraph describes. */
+        baseFinding:v.baseFinding||"",primary:v.primary===true,longForm:v.longForm===true,
         hazards:(Array.isArray(v.hazards)?v.hazards.filter(Boolean):(v.hazards?[v.hazards]:[])).join("\n")};})
     :[blankVar()];
   const avars=vals.approachVariants||routeVars;
@@ -2692,6 +2752,9 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
     var d=itinStoreVal(x,"distMi");if(d!=null&&isFinite(d))o.distMi=d;
     var g=itinStoreVal(x,"gainFt");if(g!=null&&isFinite(g))o.gainFt=g;
     var h=String(x.hours||"").trim();if(h)o.hours=h;
+    var bf=String(x.baseFinding||"").trim();if(bf)o.baseFinding=bf;
+    if(x.primary===true)o.primary=true;
+    if(x.longForm===true)o.longForm=true;
     return o;}).filter(function(x){return x.name||x.notes;});
   if(f.type==="sections")return (vals.climbingRoute||[]).map(function(x,i){return {n:i+1,label:String(x.label||"").trim(),class:String(x.cls||"").trim(),notes:String(x.notes||"").trim()};}).filter(function(x){return x.label||x.notes;});
   if(f.type==="pitches")return (vals.pitchDetail||[]).map(function(p,i){
@@ -3141,11 +3204,11 @@ const landMgrVal=ac.land_manager||ac.landManager;const closuresVal=ac.closures||
    links gained, 1 moved. Do not "tidy" display and matching back into one expression. */
 const _pmLm=((ac.land_manager||"")+" "+(ac.landManager||"")+" "+(ac.permit||"")+" "+(feesVal||"")).toLowerCase();/* Match the agency name only where it is ASSERTED, never where it is disclaimed. This haystack is land manager + permit + fees, and 1,282 WA routes carry the fees line "None - no climbing fee (National Forest, not Mount Rainier NP)". A bare /rainier/ test reads that as Rainier and sends a climber on a Snoqualmie or Index route to Mount Rainier's climbing-permit page - contradicting the very sentence it matched. 1,308 of the 1,941 routes showing a permit link were pointed at the wrong agency this way. Same defect the rack summary already guards with RACK_NEG ("ice screws are not worth carrying" must not advertise screws). */const _pmUrl=_pmSays(_pmLm,/enchantment/g)?["Enchantment Permit Area lottery — Recreation.gov","https://www.recreation.gov/permits/233273"]:_pmSays(_pmLm,/north cascades/g)?["North Cascades NP backcountry permits — nps.gov","https://www.nps.gov/noca/planyourvisit/permits.htm"]:_pmSays(_pmLm,/rainier/g)?["Mount Rainier climbing permits — nps.gov","https://www.nps.gov/mora/planyourvisit/climbing.htm"]:_pmSays(_pmLm,/olympic national park/g)?["Olympic NP wilderness permits — nps.gov","https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm"]:_pmSays(_pmLm,/recreation\.gov/g)?["Reserve on Recreation.gov","https://www.recreation.gov"]:null;return <div style={{background:C.card,borderRadius:10,padding:"11px 12px",marginBottom:8,border:`1px solid ${C.border}`}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:7}}><div style={{fontSize:12,fontWeight:700,color:C.blue}}>ACCESS & REGULATIONS</div>{/* Points at `access`, not `permit`. Every row above comes from the `access` block; `permit` is the separate top-level column, so this button opened a form section that could not change one line of what it labels. */}<EditIconButton onClick={function(){setFixOpenSection("access");setFixOpen(true);}} title="Edit access & permit information"/></div>{rows.map(r=><div key={r[0]} style={{marginBottom:7}}><div style={{fontSize:13,fontWeight:700,color:C.text,textTransform:"uppercase",letterSpacing:0.5,marginBottom:8,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{r[0]}</div><div style={{fontSize:13,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>)}{/* The route's OWN permit link, rehomed here from Overview. It comes first because it is specific to this climb, where `_pmUrl` below is inferred from the land-manager string and only ever points at an agency's general permit page. `rel` gains `noopener` — the Overview copy had `noreferrer` alone, and while every current browser implies the one from the other, stating it is what the two other external links in this panel already do. */}{_ownPermitUrl?<a href={_ownPermitUrl} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.greenBg,color:C.green,border:`1px solid ${C.greenDim}`,borderRadius:9,fontSize:12.5,fontWeight:700,textAlign:"center",textDecoration:"none"}}>{(_ownPermit||"Get the permit")+" →"}</a>:null}{_pmUrl?<a href={_pmUrl[1]} target="_blank" rel="noopener noreferrer" style={{display:"block",marginTop:9,padding:"9px 12px",background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:9,color:C.blue,fontSize:12.5,fontWeight:700,textDecoration:"none",textAlign:"center"}}>{_pmUrl[0]+" →"}</a>:null}<div style={{fontSize:12,color:C.textMuted,marginTop:8,fontStyle:"italic"}}>Confirm current permits and closures with the land manager before you go.</div></div>;})()}{/* The structured approaches come FIRST, then the long-form prose below. A climber
     choosing a way in wants the comparison (which one, what season, how long) before the
-    narrative; the narrative is what you read once you have chosen. */}<ApproachVariants route={route} onEdit={()=>{setFixOpenSection("approachVariants");setFixOpen(true);}}/>{/* GATED ON THE PROSE ALONE since the trailhead moved to the top of the tab. The old gate also
-           admitted a route that merely had a trailhead, because the card underneath was the thing
-           being shown; with the card gone that route would render the APPROACH heading over an empty
-           box. It takes the GapNote below instead, which is true — the trailhead is on screen above
-           and the walk from it genuinely is not written down. */}{route.approach?<div style={{marginBottom:14}}><SL action={<EditIconButton onClick={()=>{setFixOpenSection("approach");setFixOpen(true);}} title="Edit approach information"/>} prov={sectionProvenance(route,"approach")}>APPROACH</SL><div style={{background:C.card,borderRadius:10,padding:"10px 12px",border:`1px solid ${C.border}`}}>{splitParagraphs(route.approach).map((p,i)=><p key={i} style={{fontSize:13,color:C.textSub,lineHeight:1.7,margin:i===0?"0 0 8px":"8px 0 0"}}>{p}</p>)}</div></div>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{/* TURNAROUND used to be its own box HERE, between the approach and the protection.
+    narrative; the narrative is what you read once you have chosen. */}{(route.approach||(Array.isArray(route.approachVariants)&&route.approachVariants.some(Boolean)))?<ApproachVariants route={route} onEdit={()=>{setFixOpenSection("approachVariants");setFixOpen(true);}} onEditProse={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>:<GapNote what="No approach description" why="Getting from the trailhead to the start of the climbing is not written down yet." cta="Describe the approach" onFix={()=>{setFixOpenSection("approach");setFixOpen(true);}}/>}{/* GATED ON THE WALK ITSELF — the prose or a way in — never on the trailhead alone. The old gate
+           also admitted a route that merely had a trailhead, because a card underneath was the thing
+           being shown; with that card at the top of the tab such a route would render the APPROACH
+           heading over an empty box. It takes the GapNote above instead, which is true — the trailhead
+           is on screen and the walk from it genuinely is not written down. */}{/* TURNAROUND used to be its own box HERE, between the approach and the protection.
     It is gone from the Plan tab: a turnaround is not a plan item, it is the condition
     under which you abandon the plan, and every one of the 1,009 values is prose about
     when to retreat ("turn around before committing above the rock band", "be willing
