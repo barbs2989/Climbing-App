@@ -67,7 +67,8 @@ export const COUNT_GROUPS = [
     name: "friends",
     reads: [
       { screen: "Crew:Friends", label: "Friends badge", re: /\bFriends\s*\n?\s*(\d+)\b/i },
-      { screen: "Crew:Friends", label: "See all (N)",   re: /See all \((\d+)\)/i },
+      // The link reads "See all friends (N) →" since it moved into the Crew tab's headline box (#1881).
+      { screen: "Crew:Friends", label: "See all (N)",   re: /See all (?:friends )?\((\d+)\)/i },
     ],
     equal: ["Crew:Friends", "Crew:Friends"],   // both reads are on one screen; compared pairwise below
     sameScreenPair: true,
