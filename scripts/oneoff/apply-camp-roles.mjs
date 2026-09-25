@@ -63,6 +63,7 @@ const rollback = []; let wrote = 0, skipped = 0, same = 0; const tallies = { mai
 for (const p of plan) {
   const live = await readRow(p.id);
   const liveNames = names(live.bivy);
+  if ((live.bivy || []).some(b => b && b.role)) { same++; continue; } // already applied: never re-sort a sorted list
   let trimmedElsewhere = false;
   if (JSON.stringify(liveNames) !== JSON.stringify(p.snapshot)) {
     // A parallel writer TRIMMED 443 lists while the research ran (entries removed, none added or
@@ -73,7 +74,6 @@ for (const p of plan) {
     if (!pure) { skipped++; console.log("SKIP (bivy edited since research)", p.id); continue; }
     trimmedElsewhere = true; trimmedCount++;
   }
-  if ((live.bivy || []).some(b => b && b.role)) { same++; continue; }
   const bivy = build(live, p);
   for (const b of bivy) tallies[b.role]++;
   if (!bivy.some(b => b.role === "main")) noMain.push(p.id);
