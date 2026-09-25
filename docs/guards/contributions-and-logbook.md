@@ -312,3 +312,39 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - What it does **not** prove: that the ranked routes are *good*, or that the section is
     reachable on screen. It tests which disciplines survive and which query fetches them.
     Grade/gain scoring is stubbed — unchanged by this work and drags in the whole grade scale.
+
+- **`check:route-tags`** pins the route page's chip row (`RouteTagRow`, the one consumer of
+  `lib/routeTags.js`): every real `routes.lists` string reaches its list chip, every chip agrees
+  with `routeInList`, and — since the 2026-09-25 tag audit — the two DERIVED chips claim only what
+  the route's own text supports. Static, in `npm run build`.
+  - **Both derived chips fired on a bare word, and both were mostly wrong.** Measured over all
+    211,716 routes: *Glaciated* sat on 659 and **328 crossed no glacier** — 170 on a place name
+    alone (Glacier Peak Wilderness, the town of Glacier on SR 542, Glacier Basin), 109 on one
+    access-rules line ("no burial or glacier deposition") copied onto sport crags and boulders.
+    *Raptor closure* sat on 1,189 and **1,127 are closed by nothing**: a hedge on 568 Frenchman
+    Coulee routes ("closures are sometimes posted"), "affects parts of this area" on 480 Exit 38
+    routes, Beacon Rock's *South Face* closure on its West and Northwest faces, and Eagle Lakes /
+    Bald Eagle Peak / "the Falcon Route". The user's report was Vesper Peak's North Face.
+  - **Glaciated now needs evidence of TRAVEL**, read only from approach/overview/hazards (never
+    access rules, permits or season, which regulate a whole area): crevasses, "glacier
+    travel/approach/crossing", a travel verb landing on a glacier, a route NAMED for one, or a
+    bergschrund on a mountaineering route. Names, views, negations, "instead of … Glacier" and
+    falls "onto the X Glacier" are stripped first; the route's own "no glacier travel" wins; sport,
+    top-rope and boulder routes never get it. Result: 360 routes — 333 of the 659 kept, and 27
+    that never had it: 5 whose prose states crevasses, and 22 NAMED for their glacier that carry
+    no prose at all (Eliot Glacier Headwall, Hotlum Glacier Route, Stuart's Ice Cliff Glacier).
+  - **Raptor closure is judged clause by clause**: bird AND closure in one clause, not hedged or
+    scoped elsewhere; a named wall ("Bridge Creek Wall") or face ("the South Face") applies only
+    to routes filed there. Result: 62 routes, all Beacon Rock South Face.
+  - **The regex is a heuristic, and the review was by hand.** Every drop and every keep outside
+    mountaineering was read; the cases in the guard are the shapes that decided it. A new prose
+    phrasing can still fool it — when a chip looks wrong, add the real string as a case first.
+  - **Data defects seen and NOT fixed here:** Bridge Creek Wall's closure sentence is pasted into
+    the hazards of `co_main_wall`, `ca_macondo_cliff` and `il_f_the_promised_land`, and Top Gun
+    (Pinto Rock sport) carries an alpine "Glacier/snow approach" hazard. The chips no longer read
+    them; the hazard text still renders.
+  - **Stored `features`** (410 routes) were read against their own text by hand in 8 batches:
+    13 chips were contradicted and removed (`scripts/oneoff/fix-contradicted-feature-chips.mjs`,
+    backup beside it) — a chip taken from the NAME ("Notta Slab" is vertical), from a
+    NEIGHBOURING line on the same peak, or a rock-feature chip on a Class 2-4 scramble. Six
+    more, where the text disagrees with itself, were left alone. No guard can see this class.
