@@ -27941,3 +27941,73 @@ made). `check:sql` ran clean on the first pass (3 write targets across 4 stateme
 ids live, no DELETE statements), aside from the routine paste-size WARN on this file's
 length (4.5 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before pasting into
 the SQL Editor.
+
+---
+
+## 2026-09-25 — Pass 6, Batch 343
+
+Six peaks, 8 routes: South Slopes/Bailey Range (Mount Ferry); South Face/Southeast Ledges
+(Mount Formidable); Standard Scramble/Constance Pass–Home Lake (Mount Fricaba); Direct East
+Ridge, North Buttress, Southeast Glaciers (Mount Fury East Peak); Mongo Ridge/Southwest
+Buttress (filed under Mount Fury West Peak — see note below); West Ridge/Northwest Route
+(Mount Fury West Peak).
+
+**Confirmed errors → fixes in `sql/2026-09-25-batch-343.sql`:**
+- `wa_mount_fricaba_standard`: `access.parking_pass` named a "Quilcene Ranger District" that
+  doesn't exist — Quilcene is the Hood Canal Ranger District's office town, not a district
+  name. Same exact bug already fixed on `wa_mount_deception_standard` in batch 342; this
+  row's own `emergency.rangerStation` field already correctly says "Hood Canal Ranger
+  District, Quilcene Office." Confirmed via USFS Olympic National Forest's district
+  structure (only Pacific and Hood Canal districts exist).
+- `wa_mount_fury_east_north_buttress`: `high_point_ft` and its own East Fury summit waypoint
+  both stored 8,322 ft, an outlier against `areas.wa_mount_fury_east` (8,356 ft) and this
+  same peak's other two routes in this batch, both already 8,356 ft. Confirmed via Eric
+  Gilbertson's Oct 22, 2022 theodolite survey of both Fury summits (countryhighpoints.com),
+  which set East Fury at 8,356 ± 8 ft — the figure summitpost.org and Wikipedia both now
+  cite. West Fury (8,303–8,305 ft per the same survey) is unaffected.
+- `wa_mount_fury_east_southeast_glaciers`: `loss_ft` (13,000) was more than double `gain_ft`
+  (6,200) on a route whose own `descent` field says to reverse the ascent line — a
+  car-to-car reversal should return roughly matching gain/loss. The row's own `itinerary`
+  JSON sums its daily gain/loss to ~6,900 ft / ~7,200 ft, in the same range as `gain_ft` and
+  nowhere near the stored `loss_ft`; `loss_ft` looks like it picked up the itinerary's
+  "~13,000 ft cumulative gain+loss" total-note figure instead of the descent-only number.
+  Corrected to match `gain_ft` — an internal-consistency fix, not sourced from an outside
+  guidebook.
+
+**Flagged for human review (not auto-fixed):**
+- `wa_mount_fury_east_mongo_ridge`'s own id embeds "east" (`wa_mount_fury_east_mongo_ridge`)
+  but its `area_id` correctly files it under `wa_mount_fury_west` — Mongo Ridge is genuinely
+  the Southwest Buttress of Fury's *West* Peak, confirmed via WebSearch (AAC Publications,
+  Alpine Vagabonds). The row's content is correct; only the id string is misleading. Same
+  category as batch 3's `wa_big_kangaroo_southwest_rib` — an id rename is a human judgment
+  call, not a value patch, so left alone.
+- `wa_mount_formidable_south_face`'s "fatal fall in August 2006" claim on the exposed
+  rib/chasm crossing below the true summit could not be independently corroborated this
+  pass (no accident report surfaced) — not contradicted either, so left as stated rather
+  than removed.
+- FA claims that could not be independently corroborated this pass (not contradicted,
+  just unverifiable via WebSearch snippets with WebFetch egress-blocked again — see below):
+  `wa_mount_fury_east_north_buttress`'s "Fred Beckey and Dan Davis, July 1962" and
+  `wa_mount_fury_east_southeast_glaciers`'s "Don Keller, Joan Firey, and Joe Firey, 1960."
+
+**Checked and confirmed correct, not touched:** Mount Ferry's 6,195 ft elevation, Bailey
+Range 8th-highest-peak ranking, and Mount Pulitzer prominence relationship (Wikipedia);
+Mount Formidable's 8,325 ft elevation and July 25, 1938 Ptarmigan Club FA (Bressler/Clough/
+Cox/Myers — name spellings match at least one source exactly, a minor source-to-source
+spelling variance left alone); Mount Fricaba's 7,139 ft elevation and 1957 Bechlem/Newman FA
+(Wikipedia); Mount Fury West Peak's August 19, 1958 FA (Watson/Sharpe/Spickard/Josendal/
+Muzzy, via alpenglow.org's Duke Watson interview); Mongo Ridge's August 2006 solo FA date
+and four-day/twelve-rappel/twenty-five-pitch stats (AAC Publications, Alpine Vagabonds); and
+`wa_mount_fury_east_southeast_glaciers`'s June 29, 2025 bergschrund-fall/helicopter-rescue
+claim, independently confirmed against The Mountaineers' published accident report for that
+exact date.
+
+`last_processed_id` advanced to `wa_mount_fury_west_west_ridge`; re-counted scope this
+batch: 701 in-scope routes (unchanged from last count), 310 remain unaudited this pass.
+No `.env`/`.env.local` present at run start (fresh clone); created `.env.local` with only
+the read-only anon key to run `check:sql` (no service key used or present — no writes were
+made). `check:sql` ran clean (3 write targets across 3 statements, all ids live, no DELETE
+statements), aside from the routine paste-size WARN (4.6 KB against the 4 KB soft limit,
+same as most other multi-fix batches this pass) — split into ~1.5 KB chunks before pasting.
+WebFetch was egress-blocked for en.wikipedia.org and other reference domains again this
+run; all research used WebSearch snippet synthesis only.
