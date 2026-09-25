@@ -9,7 +9,8 @@ import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys";
 import { USE_DB, supabase } from "./lib/supabase";
 import { POLICY_VERSION, policyVersionLabel } from "./lib/policy";
 import { exportedTrackNotes, waypointCaveat } from "./lib/track";
-import {useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useAreaChildren, useAreaSearch, useAreaPath, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useSharedList, usePublicLists} from "./lib/db";
+import {useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useAreaTopContributors, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useRoutesWithLists, useStates, useCountries, useAreaChildren, useAreaSearch, useAreaPath, uploadProfilePhoto, removeProfileAvatar, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useDiscoverableProfiles, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useSharedList, usePublicLists} from "./lib/db";
+import {subdivisionNoun, countryOfArea} from "./lib/countries";
 import {searchClean, searchNorm, searchMatches} from "./lib/search";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import { clickable } from "./lib/clickable"
@@ -2841,6 +2842,24 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
   const states=statesQ.data||[];
   const stateId=chain.length?chain[0].id:"";
   const chosen=chain.length?chain[chain.length-1]:null;
+  /* COUNTRY FIRST. useStates returns every child of every root in one alphabetical list, so the
+     state select used to read "…Arkansas, British Columbia, California…" — a Canadian province
+     filed among US states, and a list that only gets worse with each country added. The country
+     is DERIVED from the chosen state when there is one (an area resolved from seedAreaId or a
+     search hit sets the chain without touching this select), else it is whatever was picked.
+     One country is not a choice, so the step is skipped until there are two; a country read that
+     FAILS must not gate the state step either (useCountries has no offline fallback, useStates
+     does) — the same two rules StatePicker on the Climbs tab follows. */
+  const countriesQ=useCountries();
+  const countries=countriesQ.data||[];
+  const [countryPick,setCountryPick]=useState("");
+  const onlyCountry=countries.length===1?countries[0].id:"";
+  const countriesUnavailable=countriesQ.isError;
+  const noCountryStep=!!onlyCountry||countriesUnavailable;
+  const stateRow=stateId?states.find(function(x){return x.id===stateId;}):null;
+  const countryId=countryOfArea(stateRow)||countryPick||onlyCountry;
+  const noun=subdivisionNoun(countryId);
+  const inCountry=states.filter(function(x){return !countryId||countryOfArea(x)===countryId;});
   /* Search is scoped to the chosen state because `areas_in_subtree` takes ONE root and the
      catalog has TWO (usa, canada) — picking either silently excludes the other. It is also
      the difference between a usable result set and an unusable one: "mount" matches 216
@@ -2870,22 +2889,28 @@ function DbAreaPicker({chain,onChain,sel,fld,seedAreaId,isLeaf,settled,kidsUnava
   },[resolveId,pathData,states,onChain]);
   const crumb=chain.map(function(a){return a.name;}).join(" › ");
   return <div>
-    <div style={{position:"relative",marginBottom:7}}>
-      <select aria-label="State or province" value={stateId} onChange={e=>{const v=e.target.value;const st=v?states.find(x=>x.id===v):null;setResolveId(null);onChain(st?[{id:st.id,name:st.name}]:[]);setQ("");}} style={sel}>
-        <option value="">{statesQ.isLoading?"Loading states…":"Choose a state"}</option>
-        {states.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
+    {noCountryStep?null:<div style={{position:"relative",marginBottom:7}}>
+      <select aria-label="Country" value={countryId} onChange={e=>{setCountryPick(e.target.value);setResolveId(null);onChain([]);setQ("");}} style={sel}>
+        <option value="">{countriesQ.isLoading?"Loading countries…":"Choose a country"}</option>
+        {countries.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
       </select>
-    </div>
+    </div>}
+    {(countryId||noCountryStep)?<div style={{position:"relative",marginBottom:7}}>
+      <select aria-label={countryId?("Choose a "+noun):"State or province"} value={stateId} onChange={e=>{const v=e.target.value;const st=v?states.find(x=>x.id===v):null;setResolveId(null);onChain(st?[{id:st.id,name:st.name}]:[]);setQ("");}} style={sel}>
+        <option value="">{statesQ.isLoading?("Loading "+noun+"s…"):("Choose a "+noun)}</option>
+        {inCountry.map(o=><option key={o.id} value={o.id}>{o.name}</option>)}
+      </select>
+    </div>:null}
     {statesQ.isError?<div style={{fontSize:12,color:C.amber,marginBottom:7,lineHeight:1.45}}>{"Couldn’t load the state list — this is not a claim the catalog is empty. Try again in a moment."}</div>:null}
     {stateId?<div style={{marginBottom:8}}>
-      <input aria-label="Search for a crag or peak" value={q} onChange={e=>setQ(e.target.value)} placeholder={"Search "+((chain[0]&&chain[0].name)||"this state")+" for a crag or peak…"} style={fld}/>
+      <input aria-label="Search for a crag or peak" value={q} onChange={e=>setQ(e.target.value)} placeholder={"Search "+((chain[0]&&chain[0].name)||("this "+noun))+" for a crag or peak…"} style={fld}/>
       {searchQ.isError?<div style={{fontSize:12,color:C.amber,marginTop:5,lineHeight:1.45}}>{"Couldn’t run that search — this is not a claim nothing matched."}</div>
         :hits.length?<div style={{marginTop:4,border:"1px solid "+C.border,borderRadius:10,overflow:"hidden",background:C.surface,maxHeight:230,overflowY:"auto",overscrollBehavior:"contain"}}>{hits.map(function(m){
           return <div key={m.id} {...clickable(function(){setResolveId(m.id);setQ("");})} style={{padding:"9px 12px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}>
             <div style={{fontSize:13.5,fontWeight:700,color:C.text}}>{hlMatch(m.name,q)}</div>
             <div style={{fontSize:11.5,color:C.textMuted,marginTop:1}}>{[m.parent_name,m.area_type,m.route_count?(m.route_count+" climb"+(m.route_count===1?"":"s")):null].filter(Boolean).join(" · ")}</div>
           </div>;})}</div>
-        :(q.trim().length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5}}>{"Nothing in "+((chain[0]&&chain[0].name)||"this state")+" matches that. Drill down below, or add it as a new crag."}</div>:null}
+        :(q.trim().length>=2&&!searchQ.isLoading)?<div style={{fontSize:12,color:C.textMuted,marginTop:5}}>{"Nothing in "+((chain[0]&&chain[0].name)||("this "+noun))+" matches that. Drill down below, or add it as a new crag."}</div>:null}
     </div>:null}
     {resolveId?<div style={{fontSize:12,color:C.textMuted,padding:"6px 2px"}}>Opening that area…</div>:null}
     {chain.map(function(a,i){
@@ -3584,14 +3609,31 @@ function Guides({notify,onDash,onInquire}){
     </div>,document.body):null}
   </div>);
 }
+/* One country's area hits for DbClimbPicker's root search. A component per country because
+   `areas_in_subtree` takes one root and a hook cannot be called in a loop. Each country states
+   its own "no match", so a miss in Canada is never read as a miss everywhere. */
+function DbCountryAreaHits({country,q,showName,rowStyle,onOpen}){
+  const _q=(q||"").trim();
+  const searchQ=useAreaSearch(country.id,q);
+  const hits=searchQ.data||[];
+  return <div style={{marginBottom:showName?10:0}}>{showName?<div style={{fontSize:11,fontWeight:800,letterSpacing:0.5,textTransform:"uppercase",color:C.textMuted,padding:"6px 4px 2px"}}>{country.name}</div>:null}{searchQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{searchQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}{hits.map(function(a){return <div key={a.id} {...clickable(function(){onOpen(a);})} aria-label={"Open "+a.name+(a.parent_name?" in "+a.parent_name:"")} style={rowStyle}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.parent_name||""}</div></div>{a.route_count>0?<span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{a.route_count+" ›"}</span>:null}</div>;})}{(!searchQ.isLoading&&!searchQ.error&&!hits.length)?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>{"No area"+(showName?" in "+country.name:"")+" matches “"+_q+"”."}</div>:null}</div>;
+}
 function DbClimbPicker({onPickRoute,selectedIds,onViewRoute}){
   const [pStack,setPStack]=useState([]);const [pq,setPq]=useState("");
   const pArea=pStack.length?pStack[pStack.length-1]:null;
+  /* COUNTRY FIRST. The root used to be useStates() — every child of every root in one
+     alphabetical list, so British Columbia sat between Arkansas and California — and the root
+     search was scoped to the literal "usa", so no Canadian crag could be found from here at all.
+     The root now lists the countries, and a country is an ordinary level of the drill-down
+     (country → state/province → …). useStates is kept ONLY as the offline fallback: useCountries
+     has none, and a downloaded state must stay reachable with no signal. */
+  const countriesQ=useCountries();
   const statesQ=useStates();
+  const countries=(countriesQ.data||[]).filter(function(c){return (c.route_count||0)>0;});
   const childrenQ=useAreaChildren(pArea?pArea.id:null,{enabled:!!pArea});
   const routesQ=useAreaRoutes(pArea?pArea.id:null);
-  const scopeId=pArea?pArea.id:"usa";
-  const areaSearchQ=useAreaSearch(scopeId,pq);
+  const atCountry=!!pArea&&pArea.area_type==="country";
+  const areaSearchQ=useAreaSearch(pArea?pArea.id:null,pq);
   /* Route search is scoped to an area on purpose, and the null root is not a tidy-up: at
      root_id "usa" `routes_in_subtree` exceeds the 3s anon statement_timeout every time —
      measured at 3.1s/3.8s/6.7s, always 57014, never a result. This hook took `scopeId`,
@@ -3599,8 +3641,9 @@ function DbClimbPicker({onPickRoute,selectedIds,onViewRoute}){
      on mount (q null, so it was asking for "the first 40 routes in the United States") and
      again on every keystroke. Nothing showed, because its output only renders inside the
      pArea branch. Areas ARE searchable nationwide — `areas_in_subtree` over 47k rows
-     answers in ~0.5s — so that is what the root offers. */
-  const routeSearchQ=useSubtreeRoutes(pArea?scopeId:null,{q:pq.trim()||undefined,pageSize:40});
+     answers in ~0.5s — so that is what the root offers. A COUNTRY is the same case as the old
+     root (it IS a root), so route search stays off there too and only areas are searched. */
+  const routeSearchQ=useSubtreeRoutes(pArea&&!atCountry?pArea.id:null,{q:pq.trim()||undefined,pageSize:40});
   const up=function(){setPStack(function(s){return s.slice(0,-1);});setPq("");};
   const kids=(childrenQ.data||[]).filter(function(c){return (c.route_count||0)>0;});
   const here=routesQ.data||[];
@@ -3611,12 +3654,20 @@ function DbClimbPicker({onPickRoute,selectedIds,onViewRoute}){
     /* Until now the only way in was to scroll fifty states and drill state → region → crag →
        route. If you knew you wanted Liberty Bell you still had to know it was in Washington.
        Searching areas from here answers that directly, and jumping to a match puts you in the
-       drill-down with its climbs already listed. */
+       drill-down with its climbs already listed. `areas_in_subtree` takes ONE root, so the
+       search runs once per country and each country's hits are listed under its own name. */
     var _q=pq.trim();
-    var _hits=areaSearchQ.data||[];
-    return <div><input aria-label="Search crags, peaks and areas" value={pq} onChange={function(e){setPq(e.target.value);}} placeholder="Search a crag, peak or area…" style={{width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",marginBottom:9}}/>{_q?<div>{areaSearchQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{areaSearchQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}{_hits.map(function(a){return <div key={a.id} {...clickable(function(){setPStack([a]);setPq("");})} aria-label={"Open "+a.name+(a.parent_name?" in "+a.parent_name:"")} style={climbRow}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.parent_name||""}</div></div>{a.route_count>0?<span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{a.route_count+" ›"}</span>:null}</div>;})}{(!areaSearchQ.isLoading&&!areaSearchQ.error&&!_hits.length)?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>{"No area matches “"+_q+"”."}</div>:null}<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,padding:"8px 4px 0"}}>Searching areas. Open one to search its climbs by name.</div></div>:<div><div style={{fontSize:12,color:C.textMuted,marginBottom:9,lineHeight:1.5}}>Or pick a state to drill into its crags &amp; climbs.</div>{statesQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Loading states…</div>:null}{statesQ.error?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't load states — check your connection.</div>:null}{(statesQ.data||[]).map(function(st){return <div key={st.id} {...clickable(function(){setPStack([st]);setPq("");})} style={rowStyle}><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text}}>{st.name}</span><span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{(st.route_count||0)+((st.route_count||0)===1?" climb ›":" climbs ›")}</span></div>;})}</div>}</div>;
+    var _multi=countries.length>1;
+    var _countryRow=function(c){return <div key={c.id} {...clickable(function(){setPStack([c]);setPq("");})} style={rowStyle}><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text}}>{c.name}</span><span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{(c.route_count||0).toLocaleString()+((c.route_count||0)===1?" climb ›":" climbs ›")}</span></div>;};
+    /* The countries read failed (it has no offline fallback) but the states read did not: list
+       the states as before rather than show nothing with a downloaded state in IndexedDB. */
+    var _offlineStates=!!countriesQ.error&&(statesQ.data||[]).length>0;
+    /* ...and search those states' countries, read off their paths, so offline search still runs. */
+    var _searchRoots=_offlineStates?Object.keys((statesQ.data||[]).reduce(function(m,st){var c=countryOfArea(st);if(c)m[c]=1;return m;},{})).map(function(id){return {id:id,name:id};}):countries;
+    _multi=_searchRoots.length>1;
+    return <div><input aria-label="Search crags, peaks and areas" value={pq} onChange={function(e){setPq(e.target.value);}} placeholder="Search a crag, peak or area…" style={{width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",marginBottom:9}}/>{_q?<div>{_searchRoots.map(function(c){return <DbCountryAreaHits key={c.id} country={c} q={pq} showName={_multi} rowStyle={climbRow} onOpen={function(a){setPStack([a]);setPq("");}}/>;})}{countriesQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Searching…</div>:null}{(countriesQ.error&&!_offlineStates)?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't run that search — check your connection.</div>:null}<div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,padding:"8px 4px 0"}}>Searching areas. Open one to search its climbs by name.</div></div>:<div><div style={{fontSize:12,color:C.textMuted,marginBottom:9,lineHeight:1.5}}>{_offlineStates?"Or pick a state to drill into its crags & climbs.":"Or pick a country to drill into its crags & climbs."}</div>{countriesQ.isLoading?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Loading countries…</div>:null}{(countriesQ.error&&!_offlineStates)?<div style={{fontSize:12.5,color:C.red,padding:"12px 4px",textAlign:"center"}}>Couldn't load countries — check your connection.</div>:null}{_offlineStates?(statesQ.data||[]).map(function(st){return <div key={st.id} {...clickable(function(){setPStack([st]);setPq("");})} style={rowStyle}><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text}}>{st.name}</span><span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{(st.route_count||0)+((st.route_count||0)===1?" climb ›":" climbs ›")}</span></div>;}):countries.map(_countryRow)}</div>}</div>;
   }
-  return <div><div style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><button onClick={up} style={{flexShrink:0,background:C.surface,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"6px 10px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"← "+(pStack.length===1?"States":((pStack[pStack.length-2]&&pStack[pStack.length-2].name)||"Back"))}</button><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{pArea.name}</span></div><input aria-label={"Search "+pArea.name} value={pq} onChange={function(e){setPq(e.target.value);}} placeholder={"Search "+pArea.name+"…"} style={{width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",marginBottom:9}}/>{pq.trim()?<div>{(areaSearchQ.data||[]).map(function(a){return <div key={a.id} {...clickable(function(){setPStack(function(s){return s.concat(a);});setPq("");})} style={climbRow}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted}}>{a.parent_name||""}</div></div>{a.route_count>0?<span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{a.route_count+" ›"}</span>:null}</div>;})}{(routeSearchQ.data||[]).map(climbRowItem)}{!(areaSearchQ.data||[]).length&&!(routeSearchQ.data||[]).length?((areaSearchQ.error||routeSearchQ.error)?<div style={{fontSize:13,color:C.amber,padding:"12px 4px",textAlign:"center"}}>Couldn’t search — try again in a moment.</div>:<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>No matches.</div>):null}{/* Same reasoning as the browse branch below, which already had it: both search queries yield [] on failure, so without this a failed read asserts that the climber’s search found nothing. Combining the two is right HERE and only here -- one sentence is drawn from both, so either failing makes the result set incomplete; everywhere else a flag keys on ONE query. `.error` rather than `.isError` to match the neighbour rather than introduce a second idiom two lines away. */}</div>:<div>{kids.map(function(ch){return <div key={ch.id} {...clickable(function(){setPStack(function(s){return s.concat(ch);});setPq("");})} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"10px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text}}>{ch.name}</span><span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{(ch.route_count||0)+" ›"}</span></div>;})}{here.map(climbRowItem)}{!kids.length&&!here.length?((childrenQ.error||routesQ.error)?<div style={{fontSize:13,color:C.amber,padding:"12px 4px",textAlign:"center"}}>Couldn’t load this area.</div>:<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Nothing here yet.</div>):null}{/* the error branch is not decoration: both queries yield [] on failure, so without it a failed read asserted "Nothing here yet." about an area that may hold hundreds of climbs */}</div>}</div>;
+  return <div><div style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><button onClick={up} style={{flexShrink:0,background:C.surface,border:"1px solid "+C.border,color:C.text,borderRadius:8,padding:"6px 10px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>{"← "+(pStack.length===1?"Countries":((pStack[pStack.length-2]&&pStack[pStack.length-2].name)||"Back"))}</button><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{pArea.name}</span></div><input aria-label={"Search "+pArea.name} value={pq} onChange={function(e){setPq(e.target.value);}} placeholder={"Search "+pArea.name+"…"} style={{width:"100%",padding:"10px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:14,boxSizing:"border-box",outline:"none",marginBottom:9}}/>{pq.trim()?<div>{(areaSearchQ.data||[]).map(function(a){return <div key={a.id} {...clickable(function(){setPStack(function(s){return s.concat(a);});setPq("");})} style={climbRow}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{a.name}</div><div style={{fontSize:10.5,color:C.textMuted}}>{a.parent_name||""}</div></div>{a.route_count>0?<span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{a.route_count+" ›"}</span>:null}</div>;})}{(routeSearchQ.data||[]).map(climbRowItem)}{!(areaSearchQ.data||[]).length&&!(routeSearchQ.data||[]).length?((areaSearchQ.error||routeSearchQ.error)?<div style={{fontSize:13,color:C.amber,padding:"12px 4px",textAlign:"center"}}>Couldn’t search — try again in a moment.</div>:<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>No matches.</div>):null}{/* Same reasoning as the browse branch below, which already had it: both search queries yield [] on failure, so without this a failed read asserts that the climber’s search found nothing. Combining the two is right HERE and only here -- one sentence is drawn from both, so either failing makes the result set incomplete; everywhere else a flag keys on ONE query. `.error` rather than `.isError` to match the neighbour rather than introduce a second idiom two lines away. */}</div>:<div>{kids.map(function(ch){return <div key={ch.id} {...clickable(function(){setPStack(function(s){return s.concat(ch);});setPq("");})} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"10px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text}}>{ch.name}</span><span style={{fontSize:12,color:C.textMuted,flexShrink:0,whiteSpace:"nowrap"}}>{(ch.route_count||0)+" ›"}</span></div>;})}{here.map(climbRowItem)}{!kids.length&&!here.length?((childrenQ.error||routesQ.error)?<div style={{fontSize:13,color:C.amber,padding:"12px 4px",textAlign:"center"}}>Couldn’t load this area.</div>:<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Nothing here yet.</div>):null}{/* the error branch is not decoration: both queries yield [] on failure, so without it a failed read asserted "Nothing here yet." about an area that may hold hundreds of climbs */}</div>}</div>;
 }
 function LogRoutePicker({onClose,onPick}){
   const [pArea,setPArea]=useState(null);const [pq,setPq]=useState("");
