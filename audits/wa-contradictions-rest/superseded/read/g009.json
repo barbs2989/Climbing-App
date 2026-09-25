@@ -1,0 +1,352 @@
+{
+ "batches": ["b033.json", "b034.json", "b035.json", "b036.json"],
+ "routes_read": 9,
+ "routes": [
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "name": "Standard Scramble",
+   "area": "Star Peak",
+   "contradictions": [
+    {
+     "fact": "whether a wilderness permit is required",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Lake Chelan-Sawtooth Wilderness permit at the trailhead; no quota or fee."},
+      {"field": "waypoints[0].note", "says": "no day-use fee but Lake Chelan-Sawtooth Wilderness rules (self-issue permit) apply once you enter the wilderness boundary"},
+      {"field": "approach", "says": "fill out the self-issue permit before you start up Trail #411"},
+      {"field": "access.permit", "says": "No wilderness permit is required to hike, climb, or camp in the Lake Chelan-Sawtooth Wilderness (unlike some neighboring National Park Complex wilderness)."}
+     ],
+     "why": "permit, the trailhead waypoint note, and the approach text all say a self-issue permit is required, while access.permit (which renders in the same ACCESS box as `permit`) says none is required.",
+     "internal_resolution": "3 fields (permit, waypoint note, approach) agree a self-issue permit is required; access.permit is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "driving route to the West Fork Buttermilk Creek Trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "Twisp River Road ~10.7-10.8 miles from Twisp, then left on Buttermilk Creek Road ~4.5 miles to a fork where the upper road (West Fork Buttermilk Creek Road) reaches the trailhead"},
+      {"field": "waypoints[0].directions", "says": "turn left onto Buttermilk Creek Road. Stay on it roughly 4.5 miles to a fork, then take the upper road — West Fork Buttermilk Creek Road — to the West Fork Buttermilk Creek trailhead"},
+      {"field": "road.driveNote", "says": "left on (West) Buttermilk Creek Road, stay left onto East Buttermilk Road toward Black Pine Lake, then right onto the signed FS spur (Road 500) for ~2.7 mi to the trailhead"}
+     ],
+     "why": "Two different final legs are given for the same trailhead: approach/waypoint directions say the fork leads directly onto West Fork Buttermilk Creek Road to the trailhead, while road.driveNote sends drivers onto East Buttermilk Road toward Black Pine Lake and then a signed FS spur (Road 500) for 2.7 more miles — a materially different route that could send a party to the wrong road.",
+     "internal_resolution": "approach and the trailhead waypoint's own directions agree with each other (2 of 3); road.driveNote is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "bivy list is for unrelated peaks, not Star Peak's own camp",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0-3,5].notes", "says": "camps described are explicitly for Abernathy Peak, Reynolds Peak, Oval Peak/Courtney/Star (Oval Lakes basin), Raven Ridge/Hoodoo Peak (Libby Lake), and Switchback Mountain (Upper Eagle Lake)"},
+      {"field": "waypoints", "says": "Star Lake (distMi 7.5) is named as the 'Standard basecamp for Star, Courtney, Buttermilk, Grey, and Oval Peaks'"},
+      {"field": "bivy", "says": "Star Lake itself never appears as a bivy[] entry; only 'Boiling Lake basin' and 'Prince Creek Campground' bivy entries are actually about Star Peak"}
+     ],
+     "why": "5 of 7 CAMPING & BIVY entries describe camps for other named peaks entirely (Abernathy, Reynolds, Oval, Raven Ridge/Hoodoo, Switchback), and the route's own standard basecamp (Star Lake, per its waypoints) is not listed among them.",
+     "internal_resolution": "waypoints clearly identify Star Lake as this route's basecamp; the bivy array appears to be a shared/contaminated block reused across multiple unrelated routes in the region.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km represents only the one-way distance to Star Lake, not the route's total distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "12.1 (≈7.52 mi, matching the one-way distance to Star Lake per waypoints/itinerary day 1)"},
+      {"field": "itinerary.totalNote", "says": "18.6 mi round trip"}
+     ],
+     "why": "dist_km reads as a one-way distance to camp while the itinerary's round-trip total is 18.6 mi; if both are shown as 'the route's distance' on different tabs this is confusing, though the header prefers the itinerary total when present.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_star_peak_sawtooth_nw_ridge",
+   "name": "Northwest Ridge",
+   "area": "Star Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_switchback_mountain_west_ridge",
+   "name": "West Ridge / West Face (via Boiling Lake)",
+   "area": "Switchback Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "name": "Standard Scramble",
+   "area": "Switchback Mountain",
+   "contradictions": [
+    {
+     "fact": "camp name and summit line: Sunrise Lake/Northwest Ridge vs Cooney Lake/Southeast Ridge",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].note/title/objective", "says": "'Approach to Sunrise Lake camp' — 'follow Foggy Dew Creek Trail #417 up through forest and past Foggy Dew Falls, then climb steadily to the Sunrise Lake basin... campsites sit on the north end of the lake (~7,100 ft)'"},
+      {"field": "itinerary.days[1].note/title", "says": "'Summit push and hike out' — 'follow the open ridge/parkland northeast of Sunrise Lake onto Switchback Mountain's northwest ridge, an easy Class 2 scramble to the 8,321 ft summit'"},
+      {"field": "timing.sectionBreakdown[0-1].fromTo/note", "says": "same Sunrise Lake / northwest ridge text as the itinerary"},
+      {"field": "beta", "says": "'From Cooney Lake, a boot path continues about a mile to gain the broad Southeast Ridge...'"},
+      {"field": "waypoints", "says": "Foggy Dew TH → Foggy Dew Falls → Merchants Basin/Cooney Lake Trail split → Cooney Lake (Campsite) → Cooney Pass → Southeast Ridge scramble → summit — no Sunrise Lake waypoint exists"},
+      {"field": "descent_text", "says": "'Reverse the Southeast Ridge down to Cooney Pass and Cooney Lake'"},
+      {"field": "pitch_detail[0].pitch", "says": "'Final summit scramble (Southeast Ridge)'"},
+      {"field": "climbing_route[0-1].label", "says": "'Cooney Lake to the southeast ridge' / 'Southeast ridge to the summit'"},
+      {"field": "approach_variants[0].name", "says": "'Foggy Dew Creek and Merchants Basin to Cooney Lake'"},
+      {"field": "face", "says": "'Southeast Ridge'"}
+     ],
+     "why": "itinerary and timing (which both render on the Plan tab) name a completely different basecamp (Sunrise Lake) and summit line (northwest ridge) than every other field on the same tab (waypoints, beta, approach, descent_text, pitch_detail, climbing_route, approach_variants, face), all of which agree on Cooney Lake and the Southeast Ridge. A climber reading the Plan tab would see two different plans for the same route.",
+     "internal_resolution": "The itinerary/timing numeric totals (gain 3760+1800=5560, loss 5560, hours 4.5+10=14.5) exactly match gain_ft/loss_ft/totalHrs, so the underlying plan belongs to this route — only the place/trail NAMES (Sunrise Lake, northwest ridge) are wrong and should read Cooney Lake / Southeast Ridge, matching the other 7 fields.",
+     "needs_research": false
+    },
+    {
+     "fact": "boat schedule logistics hazard on a road-accessed route",
+     "severity": "medium",
+     "claims": [
+      {"field": "watch_out", "says": "'boat schedule logistics'"},
+      {"field": "road.driveNote", "says": "'No boat access is used to reach this route.'"},
+      {"field": "approach", "says": "describes only the Foggy Dew and Eagle Lakes/Crater Creek road trailheads"}
+     ],
+     "why": "watch_out warns about boat-schedule logistics, but the route's own road/approach fields explicitly state no boat is used to reach it.",
+     "internal_resolution": "road.driveNote explicitly rules out boat access; 'boat schedule logistics' in watch_out appears to be contaminated from a different (boat-access) route.",
+     "needs_research": false
+    },
+    {
+     "fact": "bivy list is mostly for unrelated peaks",
+     "severity": "medium",
+     "claims": [
+      {"field": "bivy[0-3,5].notes", "says": "camps explicitly described for Abernathy Peak, Reynolds Peak, Oval Peak/Courtney/Star, Raven Ridge/Hoodoo Peak, and Star/Courtney Peak (Boiling Lake, Prince Creek)"},
+      {"field": "bivy[4]", "says": "'Upper Eagle Lake and Horsehead Pass' is the one entry explicitly named as 'the practical base for Switchback Mountain'"}
+     ],
+     "why": "Only 1 of 6 bivy entries is actually for Switchback Mountain; the rest describe camps for unrelated peaks (Abernathy, Reynolds, Oval, Raven Ridge/Hoodoo, Star/Courtney).",
+     "internal_resolution": "Same contaminated/shared bivy block seen on other routes in this region.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km reflects only one leg, not the route's round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "15.8 (≈9.82 mi, close to half the itinerary round trip)"},
+      {"field": "itinerary.totalNote", "says": "'~19 miles round trip'"}
+     ],
+     "why": "dist_km reads as roughly one-way while the itinerary total is round-trip; potentially shown as the same 'distance' fact on different tabs.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "name": "South Ridge",
+   "area": "Tupshin Peak",
+   "contradictions": [
+    {
+     "fact": "rappel/rope length: 30 m vs 60 m",
+     "severity": "high",
+     "claims": [
+      {"field": "rope_length_m", "says": "30"},
+      {"field": "gear", "says": "'30 m rope for rappelling the crux and upper pyramid'"},
+      {"field": "rappels", "says": "'One short rappel reported near the summit (~30 m rope sufficient)...'"},
+      {"field": "rack", "says": "'30m rope for rappelling the crux'"},
+      {"field": "detailed_rack", "says": "'...plus a 60m rope for the crux pitch and descent rappels.'"}
+     ],
+     "why": "Four fields (rope_length_m, gear, rappels, rack) agree the rope needed is 30 m; detailed_rack alone says 60 m. Bringing the wrong rope length for a rappel is a safety-relevant planning error.",
+     "internal_resolution": "4 of 5 fields say 30 m; detailed_rack's '60m' is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total gain/loss: 7,248 ft (columns) vs 8,300 ft (itinerary)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "7248"},
+      {"field": "loss_ft", "says": "7248"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "5000 + 3300 = 8300"},
+      {"field": "itinerary.totalNote", "says": "'...roughly 22-25 miles and 8,000+ ft total, matching the recorded 36 km round-trip distance...'"}
+     ],
+     "why": "gain_ft/loss_ft (used in the header and Overview TECHNICAL STATS) say 7,248 ft, but the itinerary's own day-by-day gain sums to 8,300 ft and its own totalNote states '8,000+ ft total' — a ~14.5% discrepancy between what the Overview and Plan tabs claim for total ascent.",
+     "internal_resolution": "itinerary days (8300) and the itinerary's own totalNote ('8,000+ ft') agree with each other; gain_ft/loss_ft (7248) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Bird Creek Camp access route: Stehekin River Trail/Harlequin Bridge vs Company Creek Road/Weaver Point",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "'...ride the Stehekin shuttle bus...roughly 4.4 miles up-valley to Harlequin Bridge, cross it, and continue about 3 more miles on the Stehekin River Trail toward Weaver Point to the signed Devore Creek Trail junction...'"},
+      {"field": "waypoints", "says": "Stehekin River Trail TH (Harlequin Bridge) → Devore Creek Trail junction (near Weaver Point) → Bird Creek Camp"},
+      {"field": "bivy[6] ('Bird Creek Camp, Devore Creek trail').notes", "says": "'The usual way in is a ferry to the Stehekin landing, then the Company Creek road, with the Devore Creek trail reached from Weaver Point on the far side of the head of the lake; Bird Creek Camp sits about four miles up that trail at around 4,200 ft.'"}
+     ],
+     "why": "The route's own approach/waypoints reach Bird Creek Camp via the Stehekin River Trail from Harlequin Bridge; the bivy entry for the same camp instead describes reaching it via the Company Creek road, a different access route.",
+     "internal_resolution": "approach and waypoints (2 fields, internally detailed and consistent with each other) describe Stehekin River Trail/Harlequin Bridge access; the bivy note's 'Company Creek road' is the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "bivy list mostly for unrelated peaks",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[0-4].notes", "says": "camps explicitly described for Abernathy Peak, Reynolds Peak, Oval Peak/Courtney/Star, Raven Ridge/Hoodoo Peak, and Switchback Mountain"}
+      ],
+     "why": "5 of 7 bivy entries describe camps for other named peaks with no connection to Tupshin Peak.",
+     "internal_resolution": "Same contaminated/shared bivy block seen on other routes in this region.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_tupshin_peak_east_face",
+   "name": "East Face",
+   "area": "Tupshin Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_agnes_mountain_south_ridge",
+   "name": "South Ridge (via Asa Peak NE Ridge)",
+   "area": "Agnes Mountain",
+   "contradictions": [
+    {
+     "fact": "rappel count: 3 vs 'two or three'",
+     "severity": "low",
+     "claims": [
+      {"field": "rappels", "says": "'3 rappels through the headwall/chimney band...'"},
+      {"field": "descent_text", "says": "'...with 3 rappels total...'"},
+      {"field": "bail", "says": "'...same 3 rappels through the chimney/headwall band...'"},
+      {"field": "climbing_route[4].notes", "says": "'Descent is by two or three rappels back down the summit block...'"}
+     ],
+     "why": "Three fields commit to exactly 3 rappels; climbing_route hedges with 'two or three.'",
+     "internal_resolution": "3 of 4 fields agree on 3 rappels; climbing_route's hedge is the outlier but not strictly incompatible.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "name": "West Route",
+   "area": "Agnes Mountain",
+   "contradictions": [
+    {
+     "fact": "overall grade (Class 3-4) vs the route's own technical crux (5.6-5.8, roped, rappelled)",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "'Class 3-4'"},
+      {"field": "rock_grade", "says": "'5.6'"},
+      {"field": "hazards", "says": "'exposed 5.6-5.8 crux pitch on the summit block'"},
+      {"field": "descent_text", "says": "'...down to reach the upper gully/notch below the crux 5.8 chimney and the roped 5.5–5.8 pitches climbed on the way up...three rappels...'"},
+      {"field": "climbing_route[3].class/notes", "says": "'5.6-5.8' — 'the hardest climbing on the peak...treat 5.8 as the planning figure'"},
+      {"field": "gear", "says": "'60m single rope', 'light rock rack (nuts + small-to-medium cams)'"}
+     ],
+     "why": "The `grade` field (Class 3-4, i.e. unroped scrambling) is shown on the Overview tab as the 'crux grade' right alongside the rock_grade chip (5.6) and directly contradicts every other difficulty-describing field, which agree this route has a roped 5.6-5.8 crux pitch requiring rappels.",
+     "internal_resolution": "rock_grade, hazards, descent_text, climbing_route, and the gear list all agree on a roped 5.6-5.8 technical crux; `grade`='Class 3-4' is the outlier and understates the route.",
+     "needs_research": false
+    },
+    {
+     "fact": "route identity: claimed 1936 'West Fork of Agnes Creek' line vs the actual body content describing the Asa Peak NE Ridge/South Ridge line",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "'First climbed in 1936 by W. Ronald Frazier and Dan O'Brien via the West Fork of Agnes Creek...'"},
+      {"field": "fa", "says": "'W. Ronald Frazier and Dan O'Brien, 1936 (via the West Fork of Agnes Creek)'"},
+      {"field": "beta", "says": "'This is the original first-ascent line established by Frazier and O'Brien in 1936.'"},
+      {"field": "approach", "says": "describes crossing Icy-Spruce Pass and gaining 'the crest of Agnes' south ridge just south of Point 7760...The standard line follows Asa Peak's northeast ridge onto Agnes' south ridge...'"},
+      {"field": "climbing_route[0-1]", "says": "'Icy-Spruce Pass to the south ridge crest' / 'South ridge' — identical line to route wa_agnes_mountain_south_ridge"},
+      {"field": "approach_variants[0].name", "says": "'Agnes Creek trail, Spruce Creek and the brush climb to Upper Blue Basin' (not a West Fork Agnes Creek line)"},
+      {"field": "descent_text / rappel_detail", "says": "describe the same 3-rappel chimney/south-col/couloir descent as the South Ridge (via Asa Peak NE Ridge) route"}
+     ],
+     "why": "The route's name and its overview/beta/fa all claim this is the distinct, original 1936 line up the West Fork of Agnes Creek, but its own approach, climbing_route, approach_variants, and descent_text/rappel_detail describe the Asa Peak NE Ridge → South Ridge → chimney crux line — essentially identical to the OTHER route on this peak (wa_agnes_mountain_south_ridge). A field on this route (the body) describes what reads as a different, already-catalogued route.",
+     "internal_resolution": "The detailed body fields (approach, climbing_route, approach_variants, descent_text, rappel_detail — 5 fields, internally consistent with each other and with the other Agnes route) all describe the Asa Peak/South Ridge line; only the opening of overview, beta, and fa claim a separate 'West Fork of Agnes Creek' line. Which route this page is actually meant to represent cannot be settled from the row alone.",
+     "needs_research": true
+    },
+    {
+     "fact": "total gain: 4,000 ft (column) vs 6,700 ft (itinerary sum) / ~6,500 ft (totalNote)",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "4000"},
+      {"field": "itinerary.days[0-3].gainFt", "says": "3400 + 3200 + 100 + 0 = 6700"},
+      {"field": "itinerary.totalNote", "says": "'...~34 mi, ~6,500 ft gain to the 8,131 ft summit...'"}
+     ],
+     "why": "gain_ft (header/Overview) understates total ascent by ~40% versus the itinerary's own day sums and its own totalNote.",
+     "internal_resolution": "itinerary days (6700) and totalNote (~6,500) agree; gain_ft=4000 is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "total distance: dist_km ≈8.5 mi vs itinerary sum 34.2 mi",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "13.7 (≈8.5 mi)"},
+      {"field": "itinerary.days[0-3].miles", "says": "9.7 + 5 + 10.7 + 8.8 = 34.2"},
+      {"field": "itinerary.totalNote", "says": "'A long 4-day round trip from High Bridge (~34 mi, ~6,500 ft gain...)'"},
+      {"field": "waypoints[1].distMi", "says": "14.66 (one-way trailhead-to-summit track distance)"}
+     ],
+     "why": "dist_km implies a round trip of only 8.5 mi, roughly a quarter of the itinerary's own 34.2-mile total and even shorter than the one-way track distance (14.66 mi) to the summit.",
+     "internal_resolution": "itinerary days, totalNote, and the one-way track distMi all point to a much longer route; dist_km=13.7 km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "access.parking_pass names an unrelated trailhead system (Mountain Loop Highway)",
+     "severity": "high",
+     "claims": [
+      {"field": "access.parking_pass", "says": "'Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.'"},
+      {"field": "access.passRequired", "says": "'None — no day-use pass on either the NPS or USFS wilderness portions; only a free wilderness permit is needed.'"},
+      {"field": "road.driveNote", "says": "'No road access; reached via Lady of the Lake/Lady Express passenger ferry or floatplane to Stehekin...'"}
+     ],
+     "why": "Mountain Loop Highway is an unrelated west-side Cascades road system nowhere near boat-only Stehekin/Agnes Mountain; access.parking_pass appears to be contaminated from a different route and directly contradicts this route's own passRequired ('None') and its road-access description (no road at all).",
+     "internal_resolution": "access.passRequired and road.driveNote agree there is no road/parking pass situation here at all; access.parking_pass is contaminated from an unrelated route.",
+     "needs_research": false
+    },
+    {
+     "fact": "pitches (5) vs the CLIMBING ROUTE list (2 numbered steps)",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "5"},
+      {"field": "climbing_route", "says": "only 2 numbered entries (n1 'Icy-Spruce Pass to the south ridge crest', n2 'South ridge')"}
+     ],
+     "why": "No pitch_detail array exists for this route, so CLIMBING ROUTE (2 rows) is what renders under ROUTE BREAKDOWN; it does not match the stated pitch count of 5.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "bivy list mostly for unrelated peaks",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[1-3].notes", "says": "camps explicitly described for McGregor Mountain, Agnes/Dark Peak (Fivemile Camp), and Needle Peak/Mount Lyall/Dark Peak (Swamp Creek Camp)"},
+      {"field": "bivy[4]", "says": "'West Fork Agnes Creek — the bivy under Agnes Mountain' is the one entry actually for this peak"}
+     ],
+     "why": "Most bivy entries describe camps that are explicitly for other named peaks along the same corridor, not Agnes Mountain.",
+     "internal_resolution": "Only 1 of 6 entries is for this peak; the rest are shared corridor content.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_flora_mountain_southwest_slope",
+   "name": "Southwest Slope (Standard Route)",
+   "area": "Flora Mountain",
+   "contradictions": [
+    {
+     "fact": "season window (Jun-Sep) doesn't include the best_season's recommended October",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "'Jun-Sep (snow lingers on approach benches into early July; class 2-3 talus mostly melts out by late Jul-Aug)'"},
+      {"field": "best_season", "says": "'...plan for the route to be most straightforward roughly August through October.'"}
+     ],
+     "why": "best_season recommends a window running through October, which lies outside the stated season (which caps at September) — the opposite of a 'best window inside a wider season.'",
+     "internal_resolution": "season and best_season disagree on the end of the recommended window; neither is clearly the error without more research.",
+     "needs_research": true
+    },
+    {
+     "fact": "whether overnight camping at Bird Creek Camp requires a wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {"field": "permit", "says": "'...all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).'"},
+      {"field": "access.permit", "says": "'...camping at Bird Creek Camp falls within the Glacier Peak Wilderness (USFS), which does not require a wilderness permit, though the initial corridor out of Stehekin passes through NPS-managed Lake Chelan National Recreation Area.'"}
+     ],
+     "why": "The top-level permit field states a blanket permit requirement for all overnight stays, while access.permit (rendering in the same ACCESS box) specifically exempts the route's own camp (Bird Creek Camp) from needing a wilderness permit — a direct disagreement about whether this trip needs a permit.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "bivy list mostly for unrelated peaks",
+     "severity": "low",
+     "claims": [
+      {"field": "bivy[0-3].notes", "says": "camps explicitly described for the Stehekin boat landing, McGregor Mountain, Agnes/Dark Peak, and Needle Peak/Mount Lyall/Dark Peak"},
+      {"field": "bivy[5]", "says": "the 'Company Creek and Hilgard Pass' entry, the one about Flora, explicitly labels itself as an alternate to this route's own Bird Creek Camp approach"}
+     ],
+     "why": "Most bivy entries are for other named peaks along the same corridor, not Flora Mountain, and the one Flora-relevant entry is a disclosed alternate rather than this route's own camp.",
+     "internal_resolution": "Same shared corridor bivy block seen on other routes; the alternate-route disclosure means this part is not itself a contradiction, only the unrelated-peak entries are noise.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

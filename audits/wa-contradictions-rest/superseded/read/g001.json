@@ -1,0 +1,333 @@
+{
+ "batches": ["b001.json", "b002.json", "b003.json", "b004.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_true_grit",
+   "name": "True Grit",
+   "area": "Postal Wall",
+   "contradictions": [
+    {
+     "fact": "Hardest grade quoted for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "5.10c"},
+      {"field": "rock_grade", "says": "5.8"}
+     ],
+     "why": "The header grade pill renders rock_grade first, so the page would show '5.8' while the route's actual name/redpoint grade is 5.10c — a two-letter-grade gap for a single-pitch sport route with no other grade field to reconcile them.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Road/approach corridor for this crag",
+     "severity": "high",
+     "claims": [
+      {"field": "road.name", "says": "Mountain Loop Highway to Sunrise Mine Road (FR 4065)"},
+      {"field": "road.status", "says": "Mountain Loop Highway is paved the entire way from Granite Falls to the Sunrise Mine Road turnoff; FR 4065 itself is a narrow, rough single-lane gravel road for its final ~2.2-2.5 miles to the trailhead."},
+      {"field": "access.permit", "says": "Northwest Forest Pass required at the trailhead"},
+      {"field": "timing.recommendedStart", "says": "Early start given the 3+ hour approach shared with the peak's other technical routes"},
+      {"field": "area.path", "says": "usa.washington.wa_central_region.wa_frenchman_coulee_aka_vantage.wa_frenchman_coulee.wa_postal_wall"}
+     ],
+     "why": "This route is filed on Postal Wall at Frenchman Coulee/Vantage (a roadside basalt sport crag), but road/access/timing describe the Mountain Loop Highway–Sunrise Mine Road corridor out of Granite Falls (a different, distant Cascades trailhead) with a 3+ hour approach and a Northwest Forest Pass wilderness-style trailhead, plus a stray reference to 'the peak's other technical routes' — none of which fits a short sport crag.",
+     "internal_resolution": "The area record (Postal Wall / Frenchman Coulee / Vantage) is authoritative; road/access/timing look copied from an unrelated mountain route.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_big_chiwaukum_west_ridge",
+   "name": "West Ridge via Wildhorse Creek",
+   "area": "Big Chiwaukum",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bulls_tooth_standard",
+   "name": "Standard Scramble",
+   "area": "Bulls Tooth",
+   "contradictions": [
+    {
+     "fact": "Whether the 'standard' approach climbs the South Ridge",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[2].note", "says": "Standard approach for Bulls Tooth: hike south on the PCT from Stevens Pass, then leave the trail near Lake Josephine to drop into Icicle Creek and climb ~1,800 ft into the Chain Lakes basin, then to Bullseye Pass before ascending the south ridge (class 3-4) to the summit."},
+      {"field": "itinerary.days[1].note", "says": "...The standard line is a Class 2-3 scramble via a ledge system on the west side that gains the ridge crest just below the top; the technical south-ridge (Class 4/5.0) line seen in some trip reports is a harder variant, not the standard way up..."},
+      {"field": "approach", "says": "...The final pitch to the top is Class 2-3 scrambling on solid granite; the easiest line works around the right (east/south) side of the summit block rather than the left, finishing with an exposed but short Class 3 step and mantle onto the summit."},
+      {"field": "detailed_rack", "says": "No real rack for the standard Class 3 line... Harder direct/technical variations documented nearby (south ridge, west face) go up to sustained 5th class -- well beyond this scramble and requiring a full rock rack; do not confuse them with the standard route."}
+     ],
+     "why": "One waypoint note calls the South Ridge (class 3-4) part of the 'standard approach', while the route's own beta, approach text, itinerary day-2 note, and detailed_rack all explicitly say the South Ridge is a separate, harder technical variant that is NOT the standard way up (the standard line is a Class 2-3 west-side ledge scramble).",
+     "internal_resolution": "The majority (beta, approach, itinerary note, climbing_route, detailed_rack) agree the standard route avoids the South Ridge; the one waypoint note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the standard route requires rappelling",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "0"},
+      {"field": "descent_text", "says": "...This is a walk-off/downclimb descent with no rappelling on the standard route: 0 rappels."},
+      {"field": "bivy[0].notes", "says": "...most parties rappel the top section on the way down rather than reversing it, so a rope and a small rack of slings for the anchors belongs on the list even though the outing is graded as a scramble."}
+     ],
+     "why": "The route's rappels count, descent_text, climbing_route and detailed_rack all agree the standard scramble has zero rappels and needs no rack, but the CAMPING & BIVY entry for Chiwaukum Chain Lakes says 'most parties rappel the top section' and recommends carrying a rope/sling rack for exactly that reason.",
+     "internal_resolution": "rappels/descent_text/climbing_route/detailed_rack are mutually consistent at zero rappels; the bivy note is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Doelle Lakes' elevation relative to Chain Lakes",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[0].elev", "says": "5775"},
+      {"field": "approach", "says": "...to the Middle/Upper Chain Lakes basin (~5,700 ft), the last reliable water and the standard base camp for the peak..."},
+      {"field": "bivy[1].notes", "says": "About one and eight tenths miles and six hundred feet above the Chain Lakes, this is the higher and more scenic option..."}
+     ],
+     "why": "The bivy write-up says Doelle Lakes sits about 600 ft above Chain Lakes, but the route's own waypoint elevation for Doelle Lakes (5,775 ft) is only ~75 ft above the ~5,700 ft the approach text gives for Chain Lakes.",
+     "internal_resolution": "The waypoint elevation and approach-text elevation for Chain Lakes agree with each other; the bivy note's '600 feet above' figure is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Day-1 elevation loss into Icicle Creek",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.days[0].lossFt", "says": "300"},
+      {"field": "approach", "says": "Descend the Icicle Creek Trail about 2.6 miles, losing roughly 900 ft as it drops toward the head of the valley near Josephine Lake, to the junction with Chain Lakes Trail #1569."}
+     ],
+     "why": "The approach prose explicitly describes a ~900 ft descent into Icicle Creek on day 1, but the itinerary's day-1 lossFt is only 300 ft, well outside the ~10% rounding tolerance.",
+     "internal_resolution": "The detailed approach narrative's 900 ft figure is specific and consistent with the described trail; itinerary.days[0].lossFt looks like the error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Mileage/gain to reach the Chain/Doelle Lakes camp",
+     "severity": "low",
+     "claims": [
+      {"field": "pro_tips[0]", "says": "Plan an overnight given the long approach -- it is 24.6 mi RT / ~5,000 ft just to reach Chain and Doelle Lakes"},
+      {"field": "itinerary.days[0].miles", "says": "11"},
+      {"field": "itinerary.days[0].gainFt", "says": "3600"},
+      {"field": "itinerary.days[2].miles", "says": "11"}
+     ],
+     "why": "The pro_tip's '24.6 mi RT / ~5,000 ft' figure for reaching camp doesn't match the itinerary's day-1+day-3 round trip to Chain Lakes camp (22 mi, 3,600 ft one-way gain) even allowing for a Doelle Lakes side trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_bulls_tooth_south_ridge",
+   "name": "South Ridge (Bullseye Traverse variant)",
+   "area": "Bulls Tooth",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bonanza_peak_mary_green_glacier",
+   "name": "Mary Green Glacier (Standard Route)",
+   "area": "Bonanza Peak",
+   "contradictions": [
+    {
+     "fact": "Best/safest month on the Mary Green Glacier (bergschrund/crevasse timing)",
+     "severity": "high",
+     "claims": [
+      {"field": "best_season", "says": "Roughly late June through mid-July — early enough to avoid heavy snow choking the summit gully, but before the glacier gets too broken up. After about July 20 the Mary Green Glacier typically opens into a heavily crevassed maze that makes the route much harder; some parties still succeed into August/September in low-snow years."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Late July through early September month of August; early-to-mid July can also work in low-snow years for an easier bergschrund crossing"},
+      {"field": "seasonal_guidance.monthBreakdown.August", "says": "status: optimal, reason: In season; Prime summer, with the driest, most stable glacier and rock conditions"},
+      {"field": "watch_out[1]", "says": "Late-season bergschrund: after about July 20 the Mary Green Glacier typically opens into a maze of crevasses that can end the climb."}
+     ],
+     "why": "best_season and watch_out both warn that the glacier becomes much harder/crevassed after ~July 20 and treat August as only a low-snow-year exception, while seasonal_guidance calls August the 'optimal'/'Prime' month with no such caveat — opposite guidance about the safest month to cross the bergschrund.",
+     "internal_resolution": "best_season and watch_out agree with each other on the July-20 cutoff; seasonal_guidance's 'August optimal' framing is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of rappels on the standard descent",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "1-3 rappels commonly used on the upper rock; rest is downclimbed"},
+      {"field": "descent_text", "says": "The established descent uses 6–7 fixed rappel stations... typically consolidated into about four rappels using a 60m x 8mm rope..."},
+      {"field": "rappel_count_note", "says": "Six to seven fixed natural stations run along the rock band. Parties typically consolidate them into about four rappels on a doubled 60 m x 8 mm rope."},
+      {"field": "rappel_detail", "says": "4 numbered rappel entries (n1-n4)"}
+     ],
+     "why": "The top-level rappels field says '1-3 rappels', but descent_text, rappel_count_note, and the 4-entry rappel_detail table all describe roughly four rappels as standard.",
+     "internal_resolution": "descent_text, rappel_count_note, and rappel_detail (4 entries) agree with each other on ~4 rappels; the rappels field's '1-3' is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_soviet_route",
+   "name": "Soviet Route",
+   "area": "Bonanza Peak",
+   "contradictions": [
+    {
+     "fact": "Pitch count for the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "22"},
+      {"field": "pitch_detail", "says": "14 numbered pitch rows (pitch 1 through pitch 14)"},
+      {"field": "beta", "says": "...a 1996 ascent using modern gear and 200-ft ropes compressed it to roughly 14 pitches plus 4 belay moves."},
+      {"field": "detailed_rack", "says": "A long route (14 pitches of full 60m/200ft length on the 2012 ascent; the 1975 FA logged 22 pitches)"}
+     ],
+     "why": "The header 'pitches' field (22) reflects the 1975 first-ascent count, but the ROUTE BREAKDOWN (pitch_detail) that actually renders on the Plan tab lists only 14 pitches, matching the modern consolidated count the rest of the row (beta, detailed_rack) describes — the numeric header field was not updated to match what pitch_detail shows.",
+     "internal_resolution": "beta and detailed_rack both explain 14 is the modern/current pitch count matching pitch_detail; pitches=22 reflects the superseded 1975 count and is the outlier on today's ROUTE BREAKDOWN.",
+     "needs_research": false
+    },
+    {
+     "fact": "Timing breakdown sums to the stated total",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "33.5"},
+      {"field": "timing.approachTimeHrs", "says": "5.5"},
+      {"field": "timing.summitTimeHrs", "says": "6"},
+      {"field": "timing.descentTimeHrs", "says": "27.5"},
+      {"field": "timing.sectionBreakdown", "says": "hrs 6, 21.5, 6 (sums to 33.5)"}
+     ],
+     "why": "approachTimeHrs + summitTimeHrs + descentTimeHrs = 39, not the stated totalHrs of 33.5 (off by 5.5 hrs); sectionBreakdown's own hours (6+21.5+6) do correctly sum to 33.5, so the approach/summit/descent split doesn't match either the total or the section breakdown.",
+     "internal_resolution": "sectionBreakdown sums correctly to totalHrs (33.5), and partner_requirements.fitnessSpec also cites the 33.5-hour total; the approachTimeHrs/summitTimeHrs/descentTimeHrs subdivision is the error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Bonanza Peak",
+   "contradictions": [
+    {
+     "fact": "Which trailhead/range this route describes",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "Bonanza Peak is the highest point in the Wenatchee Mountains, a popular mountaineering objective. The North Ridge is the most direct approach to the summit, a straightforward Class 2 scramble over talus and low-angle rock with good routefinding."},
+      {"field": "beta", "says": "From the Middle Fork Snoqualmie trailhead, approach via the alpine meadows to the north ridge base. Follow the ridge crest, staying on solid rock and stable talus."},
+      {"field": "watch_out[3]", "says": "Stream crossing — Middle Fork crossing can be dangerous high water (June-July); consider trekking poles."},
+      {"field": "approach", "says": "From Ballpark Campground at Holden Village (~3,300 ft), take Railroad Creek Trail (#1240) about 1 mile to its junction with Holden Lake Trail (#1251)..."},
+      {"field": "waypoints[0].name", "says": "Holden Village / Ballpark Campground"}
+     ],
+     "why": "overview, beta, and one watch_out entry describe a 'Middle Fork Snoqualmie trailhead' and call Bonanza 'the highest point in the Wenatchee Mountains', while this same route's own approach/waypoints/access/road/bivy fields — and the sibling Mary Green Glacier route on the same peak — consistently describe the real Holden Village/Railroad Creek approach and identify Bonanza as Washington's highest non-volcanic summit and the Chelan County highpoint.",
+     "internal_resolution": "approach, waypoints, access, road, and bivy are mutually consistent on Holden Village/Railroad Creek (and match the sibling Mary Green Glacier route); overview/beta/watch_out look copied from an unrelated route near Middle Fork Snoqualmie.",
+     "needs_research": false
+    },
+    {
+     "fact": "Technical difficulty of the route",
+     "severity": "high",
+     "claims": [
+      {"field": "grade", "says": "Class 2"},
+      {"field": "overview", "says": "...a straightforward Class 2 scramble over talus and low-angle rock with good routefinding."},
+      {"field": "pitch_detail[1]", "says": "grade: Class 3-4, ~500-900 ft; notes: Loose, sustained scrambling; route-find between two gully/rib systems to a notch on the upper NE ridge."},
+      {"field": "pitch_detail[2]", "says": "grade: Class 3-4; notes: Short exposed ridge scramble from the notch to the true summit."},
+      {"field": "detailed_rack", "says": "A single rope (or two thin ropes for full-length rappels) plus a standard glacier kit — harness, crampons, ice axe, a few pickets or screws, and prusiks/crevasse-rescue gear... helmet is essential given the loose orthogneiss."}
+     ],
+     "why": "The headline grade (Class 2, 'straightforward scramble') disagrees with the route's own ROUTE BREAKDOWN, which documents sustained Class 3-4 rock plus roped glacier travel and crevasse-rescue gear — materially harder terrain than 'Class 2' implies.",
+     "internal_resolution": "pitch_detail, detailed_rack, the gear list, and descent_text (rappels off slung horns/blocks) all describe Class 3-4 terrain with glacier travel; grade='Class 2' undersells it and is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier/crevasse hazard omitted from KNOWN HAZARDS",
+     "severity": "medium",
+     "claims": [
+      {"field": "hazards", "says": "Talus and scree field approach; Exposure on ridge sections; Weather development; Stream crossings in approach canyon — no glacier/crevasse entry"},
+      {"field": "pitch_detail[0]", "says": "grade: Roped glacier travel, moderate snow; notes: Ascend along the north edge of the Mary Green Glacier; watch for crevasses/bergschrund."},
+      {"field": "gear", "says": "glacier travel kit (crampons, ice axe, harness); pickets or screws"}
+     ],
+     "why": "The Safety tab's KNOWN HAZARDS list never mentions the glacier crossing or crevasse/bergschrund risk that this route's own pitch_detail and gear list both require guarding against.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Timing breakdown sums to the stated total",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "8.5"},
+      {"field": "timing.approachTimeHrs", "says": "5"},
+      {"field": "timing.summitTimeHrs", "says": "4.5"},
+      {"field": "timing.descentTimeHrs", "says": "3.5"}
+     ],
+     "why": "approachTimeHrs + summitTimeHrs + descentTimeHrs = 13, not the stated totalHrs of 8.5; the sibling Mary Green Glacier route on the same peak uses the same three fields and they DO sum correctly to its totalHrs (5+9+5=19), so this row's total looks wrong relative to its own three components.",
+     "internal_resolution": "The itinerary (string) mentions a summit-day 'total climbing day ~8-9 hrs', which is close to totalHrs (8.5) but is only one part of the approach+summit+descent trip, not their sum — the three sub-fields don't reconcile with totalHrs however it's read.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_northeast_buttress",
+   "name": "Northeast Buttress",
+   "area": "Bonanza Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain/loss for the route",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6300"},
+      {"field": "loss_ft", "says": "6300"},
+      {"field": "itinerary.days[0].gainFt", "says": "4000"},
+      {"field": "itinerary.days[1].gainFt", "says": "3300"},
+      {"field": "itinerary.days[2].gainFt", "says": "0"},
+      {"field": "itinerary.days[0].lossFt", "says": "0"},
+      {"field": "itinerary.days[1].lossFt", "says": "3300"},
+      {"field": "itinerary.days[2].lossFt", "says": "4000"},
+      {"field": "approach", "says": "...which explains this route's noticeably larger overall gain (~7,500') compared to the standard Mary Green line."}
+     ],
+     "why": "gain_ft/loss_ft (6,300) is about 1,000-1,200 ft lower than both the itinerary's own day-by-day gain/loss sum (7,300) and the approach prose's explicit claim of '~7,500\\'' total gain — the header Gain figure (which uses gain_ft when present) would understate the climb shown on the Plan tab's own itinerary table.",
+     "internal_resolution": "The itinerary day sums (7,300) and the approach prose (~7,500') agree with each other; gain_ft/loss_ft (6,300) is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_bonanza_peak_cascadian_route",
+   "name": "Cascadian Route",
+   "area": "Bonanza Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_bonanza_peak_oregonian_route",
+   "name": "Oregonian Route",
+   "area": "Bonanza Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "name": "Southwest Slopes",
+   "area": "Buckskin Mountain",
+   "contradictions": [
+    {
+     "fact": "CAMPING & BIVY options listed for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy[0].notes", "says": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak..."},
+      {"field": "overview", "says": "...It is NOT a Holden/boat-access peak like its Railroad Creek neighbors — the standard approach is the long Entiat River Trail up the Entiat River valley on the east (Entiat) side of the range, making this primarily a multi-day backpack-and-scramble trip."},
+      {"field": "approach", "says": "From the Entiat River Trailhead (3,150 ft, end of Entiat River Road), follow the Entiat River Trail #1400..."}
+     ],
+     "why": "The CAMPING & BIVY list for Buckskin Mountain (reached solely via the Entiat River Trail, a drive-to trailhead) is the identical Holden Village/Holden Lake/Holden Pass ferry-access camp list used on Bonanza Peak's own routes; those camps have no bearing on reaching Buckskin, whose own approach/waypoints describe camping at 'Entiat Meadows camp (5,100' clearing)' instead.",
+     "internal_resolution": "overview/approach/waypoints are mutually consistent on the Entiat River Trail approach; the bivy array is copy-paste contamination from the Bonanza Peak routes.",
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche hazard on the route",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts this remote Entiat Mountains peak, and it is climbed outside the winter/spring avalanche forecasting season"},
+      {"field": "obj_haz[1]", "says": "avalanche and wet-slide potential on the south face in early season"},
+      {"field": "climate.spring", "says": "Heavy lingering snowpack on the route's upper slopes and ridge into June; avalanche hazard on steeper slopes."},
+      {"field": "gear[1]", "says": "crampons (May-June ascents)"}
+     ],
+     "why": "The Safety tab's AVALANCHE section calls avalanche risk N/A because the route is 'climbed outside the winter/spring avalanche forecasting season', but the route's own gear list explicitly acknowledges May-June ascents, and both obj_haz and climate.spring flag real avalanche/wet-slide hazard in that same early-season window.",
+     "internal_resolution": "obj_haz, climate.spring, and the gear list's May-June crampons entry agree there is real early-season avalanche exposure; seasonal_hazards.avalanche's blanket N/A is the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_carne_mountain_trail_route",
+   "name": "Carne Mountain Trail",
+   "area": "Carne Mountain",
+   "contradictions": [
+    {
+     "fact": "CAMPING & BIVY options listed for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy[0].notes", "says": "This is the base for Bonanza, Copper, Dumbell's eastern side, and the Railroad Creek walk in to Hart and Lyman Lakes. Its unusual value to a climber is that you can sleep indoors and eat three meals at 3,200 ft the night before starting up a 9,500 ft peak..."},
+      {"field": "itinerary.totalNote", "says": "A single, long day hike/scramble: roughly 6-7 hours car-to-car, ~7.6-8 miles round trip with 3,600 ft gain — no overnight camp needed."},
+      {"field": "approach", "says": "From the Phelps Creek Trailhead (~3,500 ft, end of FR 6211), start on the wide, gently graded Phelps Creek Trail #1511..."}
+     ],
+     "why": "Carne Mountain's own itinerary states this is a single-day car-to-car hike needing no overnight camp, yet its CAMPING & BIVY list is the identical Bonanza-area/Holden Village ferry-access camp list (plus Lyman Lakes, Ice Lakes, Leroy Basin) used on Bonanza Peak's routes — none of which sit on or serve Carne's own Phelps Creek Trail approach.",
+     "internal_resolution": "approach/waypoints/itinerary are mutually consistent on a single-day Phelps Creek Trailhead hike; the bivy array is copy-paste contamination from the Bonanza-area routes.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

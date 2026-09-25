@@ -1,0 +1,1695 @@
+{
+ "batches": [
+  "b457.json",
+  "b458.json",
+  "b459.json",
+  "b460.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_johannesburg_mountain_northeast_rib_1951_route",
+   "name": "Northeast Rib (1951 Route)",
+   "area": "Johannesburg Mountain",
+   "contradictions": [
+    {
+     "fact": "1957 variation start: lower or higher than the 1951 start",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "a 1957 variation that starts lower and adds roughly 500 ft of climbing"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "The 1957 start avoids the 1951 Route's scary 5.7 pitch at the cost of about 500 extra feet of climbing"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The 1957 variation gains rock HIGHER, close to where the couloir visibly pinches down"
+      }
+     ],
+     "why": "Beta says the 1957 variation starts lower (adding 500 ft) while the base-finding text says it gains rock higher up the couloir than the 1951 start.",
+     "internal_resolution": "beta and approach_variants[0].notes both say the 1957 start is lower and adds ~500 ft; baseFinding is the outlier",
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier on the descent (Sill vs Cache)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "hazards[2]",
+       "says": "Rockfall risk on the shared East Ridge/Sill Glacier descent"
+      },
+      {
+       "field": "obj_haz[3]",
+       "says": "Icefall/rockfall on the shared East Ridge/Sill Glacier descent"
+      },
+      {
+       "field": "descent",
+       "says": "down the Cache Glacier to the Cascade Pass trail"
+      },
+      {
+       "field": "descent_text",
+       "says": "then descend the Cache Glacier back to the Cascade Pass trail"
+      }
+     ],
+     "why": "The hazard lists name a Sill Glacier descent, but both descent fields send the party down the Cache Glacier.",
+     "internal_resolution": "descent and descent_text agree on the Cache Glacier; the Sill Glacier mentions look carried over from another route",
+     "needs_research": true
+    },
+    {
+     "fact": "Height of the climb vs length_m and gain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "length_m",
+       "says": "1524"
+      },
+      {
+       "field": "overview",
+       "says": "up the same 5,000-ft face"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "to reach the rock, at roughly 4,400 ft"
+      },
+      {
+       "field": "area.elevation_ft",
+       "says": "8200"
+      }
+     ],
+     "why": "Rock gained at ~4,400 ft to an 8,200 ft summit is ~3,800 ft, not the 1,524 m (5,000 ft) climb length shown in Technical Stats.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_katsuk_peak_gully",
+   "name": "Southwest Gully",
+   "area": "Katsuk Peak",
+   "contradictions": [
+    {
+     "fact": "Total gain",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "8100"
+      },
+      {
+       "field": "itinerary.days[*].gainFt",
+       "says": "2900 + 2100 + 150 = 5150"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~2,900 ft of net gain to the basin camp"
+      },
+      {
+       "field": "waypoints",
+       "says": "Trailhead 3700 ft to summit 8683 ft"
+      }
+     ],
+     "why": "gain_ft 8,100 is ~57% more than the itinerary's 5,150 ft total and far above the ~5,000 ft trailhead-to-summit difference.",
+     "internal_resolution": "itinerary day gains and waypoint elevations agree on ~5,000-5,200 ft; gain_ft 8100 is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance and gain from trailhead to camp",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "this is realistically an overnight approach (roughly 7-8 miles and 4,500-5,000+ ft to camp)"
+      },
+      {
+       "field": "itinerary.days[0]",
+       "says": "miles: 5, gainFt: 2900"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "5 (Basin camp south of Mesahchie Peak, 6600 ft)"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~12 miles round trip"
+      },
+      {
+       "field": "dist_km",
+       "says": "19.31"
+      }
+     ],
+     "why": "The approach says 7-8 mi and 4,500-5,000+ ft to camp, while the itinerary and waypoints put camp at 5 mi and ~2,900 ft, and the 12-mi round trip only fits the latter.",
+     "internal_resolution": "itinerary, waypoints and dist_km (12 mi RT) agree on ~5-6 mi to camp; approach's 7-8 mi / 4,500-5,000 ft is the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of the sidehill traverse from Easy Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "leave the trail and sidehill traverse east across scree, talus, and grassy benches"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "then leave the trail and sidehill traverse east across scree"
+      },
+      {
+       "field": "approach",
+       "says": "sidehill northwest across scree, talus, grass and blocky terrain"
+      },
+      {
+       "field": "waypoints[3].directions",
+       "says": "From there sidehill west across scree, talus, grass and blocky steps"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From Easy Pass the line goes cross-country west-northwest"
+      }
+     ],
+     "why": "The itinerary and timing send the party east from Easy Pass; the approach, waypoints and bivy send it west/northwest, where the camp actually lies.",
+     "internal_resolution": "approach, waypoints, bivy and the camp's coordinates (west of the pass) agree on west; 'east' in itinerary/timing is wrong",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit block difficulty",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "watch_out[0]",
+       "says": "The final ~50 ft summit block (class 4) has huge exposure"
+      },
+      {
+       "field": "descent",
+       "says": "downclimb the exposed class 4 summit block via its west side first"
+      },
+      {
+       "field": "itinerary.days[1].schedule[3].detail",
+       "says": "Exposed class 4 scramble up the final summit block."
+      },
+      {
+       "field": "beta",
+       "says": "The summit block itself is climbed via a series of blocks on its west side, Class 3."
+      },
+      {
+       "field": "pitch_detail[3]",
+       "says": "grade: 3rd class — Summit block: series of blocks on its west side"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The block itself is climbed on its west side by a series of blocks at class 3."
+      }
+     ],
+     "why": "The summit block is class 4 in the hazards, descent and itinerary but class 3 in the beta, pitch breakdown and base-finding text.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the class 4 crux",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "the standard route ascends a gully on the southwest side with a class 4 crux near the top"
+      },
+      {
+       "field": "beta",
+       "says": "a bench around 7,400 ft (the last ~100 ft is Class 4)"
+      },
+      {
+       "field": "rope_note",
+       "says": "~100ft of Class 4 scrambling near a 'mushroom' summit block"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "4th class (scree to the saddle)"
+      }
+     ],
+     "why": "One set of fields puts the ~100 ft of class 4 just below the 7,400 ft bench; another puts it at the summit block.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain from camp to the col/bench",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From camp, gain a further 200-600 ft to a saddle/bench"
+      },
+      {
+       "field": "climbing_route[0].notes",
+       "says": "gain a further 200-600 ft to a saddle/bench"
+      },
+      {
+       "field": "itinerary.days[1].schedule[1].detail",
+       "says": "roughly 800-1,000 ft of gain"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Gain the bench via 800 ft of class 3-4 climbing up ribs/gullies above camp"
+      }
+     ],
+     "why": "Camp-to-bench gain is 200-600 ft in the approach but 800-1,000 ft in the itinerary and waypoints (6,600 to 7,400 ft).",
+     "internal_resolution": "waypoint elevations (6600 camp, 7400 bench) support ~800 ft",
+     "needs_research": false
+    },
+    {
+     "fact": "Time for the sidehill traverse from Easy Pass to camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "sidehill northwest ... along the south side of the ridge (about an hour)"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2]",
+       "says": "9:00 AM - 12:00 PM Sidehill traverse to basin"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "sidehilling on heather and tiresome scree ... for roughly three hours"
+      }
+     ],
+     "why": "The traverse takes about an hour in the approach but about three hours in the itinerary and camp notes.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Cost of the overnight permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "A free NPS backcountry permit is required to camp here."
+      },
+      {
+       "field": "itinerary.cal",
+       "says": "North Cascades NP requires a free backcountry camping permit for the basin camp"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person camping fee plus a $6 non-refundable permit reservation fee"
+      }
+     ],
+     "why": "The approach and trip plan call the camping permit free, while ACCESS lists a $10/person fee plus $6.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Snow-filled gully cutoff month",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "In early season (before roughly July) the entire gully holds steep snow"
+      },
+      {
+       "field": "climbing_route[1].notes",
+       "says": "In early season (before roughly July) the entire gully holds steep snow"
+      },
+      {
+       "field": "beta",
+       "says": "In early season (before roughly August) this gully can hold continuous steep snow"
+      },
+      {
+       "field": "gear[1]",
+       "says": "ice axe (mandatory before August"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[2]",
+       "says": "if attempted before mid-July when the gully is still snow-filled"
+      }
+     ],
+     "why": "Fields disagree on when the gully stops being a steep-snow climb (July vs mid-July vs August).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Drive distance to Easy Pass Trailhead",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "roughly 30 miles east of Newhalem / ~37 miles from Marblemount"
+      },
+      {
+       "field": "road.driveNote",
+       "says": "drive SR 20 east about 45 miles (from Newhalem, about 30 miles)"
+      }
+     ],
+     "why": "Marblemount-to-trailhead is ~37 mi in the approach but ~45 mi in GETTING THERE, with the same 30 mi from Newhalem.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Avalanche terrain in June",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.reason",
+       "says": "spring/early-season snow makes gullies avalanche/steep-snow terrain"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "N/A"
+      }
+     ],
+     "why": "SEASONAL GUIDANCE calls the June gullies avalanche terrain while the AVALANCHE panel lists June as N/A.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "How Katsuk is climbed from the basin camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bivy[0].notes",
+       "says": "Katsuk lies about half a mile further west along the crest by its south spur and east ridge"
+      },
+      {
+       "field": "name",
+       "says": "Southwest Gully"
+      }
+     ],
+     "why": "The camp note says Katsuk goes by its south spur and east ridge, which is not this route's Southwest Gully.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_kimtah_peak_scramble",
+   "name": "Southwest Slopes / Gully",
+   "area": "Kimtah Peak",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "23.17"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "7.5 + 5 + 7.5 = 20"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 15 miles"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "7.2 (summit)"
+      },
+      {
+       "field": "waypoints[3].distMi",
+       "says": "5.3 (Ragged Ridge Camp)"
+      },
+      {
+       "field": "approach",
+       "says": "roughly 5 hours and 5-6 miles of travel from the trailhead"
+      }
+     ],
+     "why": "The itinerary days add up to 20 mi (7.5 mi to camp), but its own total note, dist_km (14.4 mi), the approach and the waypoints put camp at 5-6 mi and the round trip at ~15 mi.",
+     "internal_resolution": "dist_km, totalNote, approach and waypoints agree on ~5.3 mi to camp / ~14.4-15 mi RT; the 7.5-mi day values are the outlier",
+     "needs_research": false
+    },
+    {
+     "fact": "Direction of the sidehill traverse from Easy Pass",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "then leave the trail and sidehill east along the 6,600-6,700 ft contour"
+      },
+      {
+       "field": "timing.sectionBreakdown[0].note",
+       "says": "then leave the trail and sidehill east along the 6,600-6,700 ft contour"
+      },
+      {
+       "field": "approach",
+       "says": "begin a cross-country sidehill traverse west along the south side of the ridge"
+      },
+      {
+       "field": "waypoints[2].directions",
+       "says": "From the pass, sidehill west along the south side of Ragged Ridge"
+      }
+     ],
+     "why": "The itinerary sends the party east from Easy Pass; the approach and waypoints (and the camp's position) say west.",
+     "internal_resolution": "approach, waypoints and coordinates agree on west",
+     "needs_research": false
+    },
+    {
+     "fact": "Length of the gendarme downclimb",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "the standard line downclimbs about 150 ft down a buttress"
+      },
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "crux is a ~150 ft downclimb of a buttress"
+      },
+      {
+       "field": "detailed_rack",
+       "says": "the ~150 ft class 4 buttress downclimb/bypass"
+      },
+      {
+       "field": "hazards[4]",
+       "says": "~250-300 ft airy class-4 down-climb around a prominent gendarme"
+      },
+      {
+       "field": "descent",
+       "says": "roughly 250-300 ft of careful, airy class-4 down-climbing"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "downclimb 250-300 ft of exposed 4th-class rock"
+      }
+     ],
+     "why": "The crux downclimb is ~150 ft in the beta, pitches and rack but 250-300 ft in the hazards, descent and waypoint.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit block in the descent",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "down-climb the class-4 summit block via its west side, cross back through the snow moat/snowfield on the southwest face"
+      },
+      {
+       "field": "beta",
+       "says": "finishing with a short class 3 scramble across a scree saddle between the west and east (true, 8,649 ft) summits"
+      },
+      {
+       "field": "waypoints[7].note",
+       "says": "final push is class 3 scrambling east along the ridge crest from the gully topout"
+      }
+     ],
+     "why": "The descent describes downclimbing a class 4 summit block and a snow moat, but every ascent field describes a class 3 scramble across a scree saddle (this wording matches the Katsuk route).",
+     "internal_resolution": "beta, pitch_detail and waypoints agree on a class 3 finish; the descent text looks copied from Katsuk",
+     "needs_research": false
+    },
+    {
+     "fact": "Kimtah's position on Ragged Ridge",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "Kimtah is the westernmost of the four standard Ragged Ridge Bulgers — Mesahchie, Katsuk, Kimtah, and Cosho, east to west"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Many parties continue west to tag Cosho Peak"
+      }
+     ],
+     "why": "The overview calls Kimtah the westernmost, then lists Cosho west of it, and the itinerary continues west to Cosho.",
+     "internal_resolution": "the overview's own east-to-west list and the itinerary put Cosho farther west",
+     "needs_research": false
+    },
+    {
+     "fact": "Season start",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "late Jun-Sep"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "risky — too early for most parties"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Considerable"
+      },
+      {
+       "field": "best_season",
+       "says": "typically mid-to-late July into August"
+      }
+     ],
+     "why": "The header season opens in late June, while the seasonal guidance rates June as risky and too early.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pack weight on the hike out",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[2].packLb",
+       "says": "0"
+      },
+      {
+       "field": "itinerary.days[0].packLb",
+       "says": "35"
+      }
+     ],
+     "why": "The hike-out day shows a 0 lb pack for carrying the whole camp out, while the hike in carries 35 lb.",
+     "internal_resolution": "the day-1 value shows the camp pack is ~35 lb",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_north_ridge",
+   "name": "North Ridge",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Cost of the overnight permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Free backcountry permit required for overnight stays"
+      },
+      {
+       "field": "access.fees",
+       "says": "costs $10 per person plus a $6 fee"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      }
+     ],
+     "why": "ACCESS calls the permit free in one line and $10 + $6 / 'not free' in the next.",
+     "internal_resolution": "fees and overnight_permit agree it is not free",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope need for the glacier approach",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear",
+       "says": "Rope (optional)"
+      },
+      {
+       "field": "approach_variants[0].hazards[0]",
+       "says": "Crevasses on the Inspiration and the upper McAllister lobe"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "so it is a roped, crevassed approach rather than a walk"
+      }
+     ],
+     "why": "The gear list marks the rope optional, but the approach crosses crevassed glaciers that the page describes as roped travel.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Difficulty of the terrain",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "Terrain is Class 3 scrambling throughout"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (Class 4 in spots)"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The LOWEST notch is class 5 downclimbing; a crossing to the RIGHT ... is class 4"
+      }
+     ],
+     "why": "The bail text says class 3 throughout, but the grade has class 4 sections and the col moat is class 4-5.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "name": "Klawatti Peak SW Buttress",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Cost of the overnight permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "requires a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "approach",
+       "says": "Any overnight stay requires a free North Cascades National Park backcountry permit"
+      },
+      {
+       "field": "access.fees",
+       "says": "$10 per person recreation fee for backcountry camping"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      }
+     ],
+     "why": "The approach and trailhead directions call the permit free; ACCESS lists a $10/person fee and 'not free'.",
+     "internal_resolution": "access.fees, overnight_permit and bivy ('Not free') agree it costs money",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the zone is quota-managed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Klawatti sits in a cross-country zone, not one of the park's quota-lottery zones"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "North Cascades National Park Complex wilderness permit — quota, not free"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The Eldorado cross-country zone is quota-managed: roughly 60% reservable through Recreation.gov (a March early-access lottery"
+      }
+     ],
+     "why": "ACCESS says Klawatti is not a quota-lottery zone, while the overnight permit and camp entries describe a quota zone with a lottery.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Approach text describes Eldorado Peak",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "climbing toward Eldorado's famous narrow snow ridge and the 8,868-foot summit, typically another 3-5 hours"
+      },
+      {
+       "field": "approach",
+       "says": "IMPORTANT — this route is NOT on Eldorado Peak itself, despite being filed under the same area"
+      },
+      {
+       "field": "area",
+       "says": "Klawatti Peak"
+      }
+     ],
+     "why": "The approach describes climbing Eldorado's summit ridge and says the route is filed under Eldorado, but it is filed under Klawatti Peak and goes to Klawatti Col.",
+     "internal_resolution": "approach_variants[0].notes describes the correct traverse to Klawatti Col",
+     "needs_research": false
+    },
+    {
+     "fact": "Number of low-5th pitches",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "2-3 short low-5th-class pitches leading to scrambling on the summit"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "two or three short low-fifth pitches, then class 4, then scrambling"
+      },
+      {
+       "field": "pitches",
+       "says": "3"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P1 5.3, P2 Class 4, P3 Class 3-2"
+      }
+     ],
+     "why": "The prose gives 2-3 low-5th pitches followed by class 4 and scrambling, but the 3-pitch breakdown has only one low-5th pitch.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "name": "Southeast Face / Klawatti Glacier",
+   "area": "Klawatti Peak",
+   "contradictions": [
+    {
+     "fact": "Hardest rock grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3-4 (scrambling)"
+      },
+      {
+       "field": "grade",
+       "says": "Grade III, Class 4 / low 5th"
+      },
+      {
+       "field": "pitch_detail[0].grade",
+       "says": "5.2 (Class 4-5)"
+      }
+     ],
+     "why": "The header grade pill (from rock_grade) shows Class 3-4 scrambling, but the grade and the crux pitch are low 5th (5.2).",
+     "internal_resolution": "grade, pitch_detail and approach_variants all describe a 4th-to-easy-5th crux step",
+     "needs_research": false
+    },
+    {
+     "fact": "Character of the climb (beta vs breakdown)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "with 2 pitches of Class 4-5 rock climbing and 45-50 degree snow slopes. Lower sections feature Class 4 rock; upper sections Class 3 scrambling"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P1 5.2 rock step 30 m; P2 Snow 40-55° 60 m"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "IF THE ROCK KEEPS GOING ABOVE THE STEP, a second and third pitch of it and no snow slope, YOU ARE ON THE SOUTHWEST BUTTRESS"
+      }
+     ],
+     "why": "The beta describes two rock pitches with scrambling above, which is how the base-finding text identifies the SW Buttress, not this one-rock-step-then-snow route.",
+     "internal_resolution": "pitch_detail, climbing_route, pro_needs and baseFinding agree on one rock step then snow",
+     "needs_research": false
+    },
+    {
+     "fact": "Order of snow and rock near the summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[7].note",
+       "says": "the final few hundred feet above the schrund are 40-55° snow leading to low-5th-class rock"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "P1 low-5th rock step at the bergschrund, P2 snow to the summit"
+      }
+     ],
+     "why": "The summit waypoint puts the low-5th rock at the top, above the snow, while the pitch breakdown puts it at the bottom at the schrund.",
+     "internal_resolution": "pitch_detail, climbing_route and itinerary put the rock step first",
+     "needs_research": false
+    },
+    {
+     "fact": "Waypoint positions for the glacier crossing and bergschrund",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[5]",
+       "says": "Klawatti Glacier crossing lat 48.512121"
+      },
+      {
+       "field": "waypoints[6]",
+       "says": "Bergschrund below the southeast face lat 48.4976"
+      },
+      {
+       "field": "waypoints[0]",
+       "says": "Trailhead lat 48.49261"
+      },
+      {
+       "field": "waypoints[7]",
+       "says": "Klawatti Peak lat 48.554293"
+      }
+     ],
+     "why": "The glacier-crossing and bergschrund pins sit near the trailhead, 4-6 km south of the summit, though the schrund is directly below the face.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Low camp elevation",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Roush Creek rib (~5,400 ft) and the Eldorado Basin benches (~5,600-6,000 ft) are the usual flat, low-impact camp spots"
+      },
+      {
+       "field": "approach",
+       "says": "re-ascending to bivy sites around 6,100-6,400 ft at the toe of the Eldorado Glacier"
+      },
+      {
+       "field": "waypoints[2]",
+       "says": "Roush Creek Basin camps elev 6200 — 6,100-6,400 ft"
+      }
+     ],
+     "why": "The trip plan places the Roush Creek camp near 5,400 ft; the approach and waypoint put it at 6,100-6,400 ft.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Camping in Eldorado Basin",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "(camping is closed within Eldorado Basin proper)"
+      },
+      {
+       "field": "bivy[4]",
+       "says": "Eldorado Basin camp, elev 6100 — The usual bail-out camp"
+      }
+     ],
+     "why": "The trip plan says camping is closed in Eldorado Basin, while CAMPING & BIVY lists Eldorado Basin camp as the usual bail-out camp.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Klawatti Col camp character",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days[1].note",
+       "says": "Flat rock benches right at the col make an excellent, wind-sheltered high camp next to the glacier for water"
+      },
+      {
+       "field": "pro_tips[0]",
+       "says": "Camp on the rock outcrop at the col near Klawatti ... sheltered high camp"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "It is high, fully exposed and entirely on snow"
+      },
+      {
+       "field": "bivy[0].water",
+       "says": "Snowmelt only, with no running water at any point in the season"
+      }
+     ],
+     "why": "The trip plan and tips describe a sheltered rock-bench camp; the camp entry says it is fully exposed and entirely on snow.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Trip length in days",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.days",
+       "says": "4 days"
+      },
+      {
+       "field": "approach",
+       "says": "most parties treat this as a 2-3 day trip"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "A 3-4 day glacier trip"
+      }
+     ],
+     "why": "The itinerary shows 4 days while the approach calls it a 2-3 day trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Time from col to summit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].notes",
+       "says": "roughly an hour and a half up and an hour down from the col"
+      },
+      {
+       "field": "itinerary.days[2].schedule",
+       "says": "4:00 AM leave camp ... 8:00 AM Summit ... 9:00 AM-12:00 PM Descend"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "6"
+      }
+     ],
+     "why": "The approach gives about 1.5 h up and 1 h down from the col, while the schedule has 4 h up and 3 h down (6 h summit time).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Self-issue vs in-person permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].note",
+       "says": "self-issue wilderness permit required for overnight camping in North Cascades NP"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "Cascade River Road permits must be collected IN PERSON at the Marblemount Wilderness Information Center"
+      },
+      {
+       "field": "access.permit",
+       "says": "obtain in person (walk-up, first-come) or online in advance via recreation.gov"
+      }
+     ],
+     "why": "The trailhead waypoint says the permit is self-issued there; ACCESS and the camp entries say it comes from Recreation.gov or in person at Marblemount.",
+     "internal_resolution": "access and bivy agree on Recreation.gov / Marblemount",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether the zone is quota-managed",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Klawatti sits in a cross-country zone, not one of the park's quota-lottery zones"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "quota, not free"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "The Eldorado cross-country zone is quota-managed"
+      }
+     ],
+     "why": "ACCESS says the zone is not quota-managed while the overnight permit and camp entries say it is.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass requirement",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.notes",
+       "says": "Northwest Forest Pass required ($5/day or $30/annual)."
+      },
+      {
+       "field": "access.passRequired",
+       "says": "Northwest Forest Pass or none required for Cascade River Road trailhead parking"
+      }
+     ],
+     "why": "One ACCESS line says a Northwest Forest Pass is required; the next says possibly none.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Boulder field elevation",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "gaining about 1,500 ft to a talus/boulder field around 4,000 ft"
+      },
+      {
+       "field": "waypoints[1]",
+       "says": "Talus/boulder field entry elev 3650"
+      }
+     ],
+     "why": "The boulder field is ~4,000 ft in the approach but 3,650 ft on the waypoint.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Snow/ski season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Apr-Jun for the snow/ski line while the south face is still consolidated"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June",
+       "says": "risky — full winter glacier conditions with elevated avalanche hazard"
+      },
+      {
+       "field": "best_season",
+       "says": "A distinct spring window (April) also exists"
+      }
+     ],
+     "why": "The season line advertises Apr-Jun, but the seasonal guidance rates June risky and best_season limits the spring window to April.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche forecast zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.forecastZone",
+       "says": "East Slopes Northern Cascades / North Cascades National Park backcountry"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "Nearest NWAC coverage is the West Slopes North forecast zone"
+      }
+     ],
+     "why": "Reports names the East Slopes zone while the Safety tab names the West Slopes North zone.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_northwest_ridge",
+   "name": "Northwest Ridge",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the ascent route."
+      },
+      {
+       "field": "descent_text",
+       "says": "Reverse the short NW-face scramble to the notch, then downclimb the chimney and steep rock"
+      },
+      {
+       "field": "itinerary",
+       "says": "descend the South Ridge back to camp"
+      },
+      {
+       "field": "turnaround",
+       "says": "a comfortable margin for the South Ridge descent and the Cache Col crossing"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "Plan the South Ridge descent in advance"
+      }
+     ],
+     "why": "DESCENT says to reverse the route, while the itinerary, turnaround and tips plan a South Ridge descent.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "9.3 (summit)"
+      },
+      {
+       "field": "itinerary",
+       "says": "Day 1 ... camp at Kool-Aid Lake (about 8 miles, ~5 hours)"
+      }
+     ],
+     "why": "dist_km shows 8.0 mi, but the summit waypoint is 9.3 mi one way and Kool-Aid Lake alone is ~8 mi in.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Glacier on the way to this route",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "IF YOU CROSSED A GLACIER TO GET WHERE YOU ARE STANDING, YOU ARE ON THE NORTH FACE."
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "over the Cache Glacier ... over CACHE COL"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "The Cache Glacier on the approach is crevassed"
+      }
+     ],
+     "why": "The base-finding test says crossing any glacier means you are on the North Face, yet this route's own approach crosses the Cache Glacier.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_southwest_cirque",
+   "name": "Southwest Cirque",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Overnight permit at Kool-Aid Lake",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "access.permit",
+       "says": "Wilderness permit required for all overnights, including a bivy at Kool-Aid Lake"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required (Glacier Peak Wilderness)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camps south of Cache Col are outside the national park."
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No permit required; the lake is outside the national park"
+      }
+     ],
+     "why": "ACCESS requires an NPS wilderness permit for Kool-Aid Lake, while the overnight-permit line and the camp entry say none is needed.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "Descend the ascent route."
+      },
+      {
+       "field": "descent_text",
+       "says": "Reverse the heathery gully back down into the southwest cirque."
+      },
+      {
+       "field": "itinerary",
+       "says": "descend the South Ridge to camp"
+      },
+      {
+       "field": "pro_tips[4]",
+       "says": "Combine it with the South Ridge as an up-one-down-the-other loop"
+      }
+     ],
+     "why": "The descent fields say to reverse the gully, while the itinerary plans a South Ridge descent.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "itinerary",
+       "says": "a car-to-car day is about 19 miles round trip"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "for a 19-mile round trip"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "9.3 (summit)"
+      }
+     ],
+     "why": "dist_km shows 8.0 mi, while the itinerary, timing and summit waypoint give ~19 mi round trip (9.3 mi one way).",
+     "internal_resolution": "itinerary, timing and waypoints agree on ~19 mi RT",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_north_face",
+   "name": "North Face",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jun-Aug"
+      },
+      {
+       "field": "best_season",
+       "says": "Jul-Sep, with route conditions (glacier cover, couloir snow/ice) varying more year to year"
+      },
+      {
+       "field": "climate.summer",
+       "says": "Late June to early August gives the best combination"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-Aug"
+      }
+     ],
+     "why": "best_season runs to September, outside the Jun-Aug season, and leaves out June, which the season and climate include.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "name": "South Ridge / Southeast Slopes",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "8.9"
+      },
+      {
+       "field": "itinerary.days[*].miles",
+       "says": "6.5 + 3.5 + 6.5 = 16.5"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 16-17 miles"
+      },
+      {
+       "field": "approach",
+       "says": "given the ~19-20 mile round trip"
+      },
+      {
+       "field": "waypoints[7].distMi",
+       "says": "6.4 (summit)"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "5.5 (Kool-Aid Lake)"
+      }
+     ],
+     "why": "Distance is 5.5 mi (dist_km), 12.8 mi RT (waypoints), 16-17 mi (itinerary) or 19-20 mi (approach) depending on the field.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Direction from Cascade Pass to Cache Col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "then leave trail and climb cross-country north to Cache Col"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "begin cross-country travel north toward Cache Col"
+      },
+      {
+       "field": "approach",
+       "says": "pick up a climber's path bearing south-southeast"
+      },
+      {
+       "field": "waypoints[4].directions",
+       "says": "Do not continue north over the col."
+      }
+     ],
+     "why": "The itinerary sends the party north to Cache Col; the approach and waypoints go south-southeast (Cache Col is south of the pass).",
+     "internal_resolution": "approach, waypoints and coordinates agree on south-southeast",
+     "needs_research": false
+    },
+    {
+     "fact": "Getting from Kool-Aid Lake to the Magic–Hurry-up col",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "From Kool-Aid Lake, descend about 600 ft on the Ptarmigan Traverse path, then traverse and climb to a 7,100 ft col east of the lake."
+      },
+      {
+       "field": "approach",
+       "says": "From Kool-Aid Lake, the final approach climbs about 1,000 ft directly up heather and scree slopes to the col (~7,100 ft)"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "Climb roughly 1,000 ft from Kool-Aid Lake to this saddle"
+      }
+     ],
+     "why": "The beta says to descend 600 ft from the lake first; every other field climbs ~1,000 ft straight up from the lake to the col (the 600 ft drop is Cache Col down to the lake).",
+     "internal_resolution": "approach, pitch_detail, waypoints and itinerary agree on a direct ~1,000 ft climb",
+     "needs_research": false
+    },
+    {
+     "fact": "Overnight permit for Kool-Aid Lake",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "a backcountry camping permit is required from North Cascades National Park for overnight stays at Kool-Aid Lake"
+      },
+      {
+       "field": "waypoints[0].directions",
+       "says": "need a North Cascades backcountry camping permit for Kool-Aid Lake, picked up in person in Marblemount"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required (Glacier Peak Wilderness)"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "Camps south of Cache Col are outside the national park."
+      },
+      {
+       "field": "access.fees",
+       "says": "free if self-issued at the trailhead"
+      }
+     ],
+     "why": "Several fields require an NPS permit for Kool-Aid Lake picked up in person, while the overnight-permit line says none is needed and the fees line offers a free trailhead self-issue.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Northwest Forest Pass at the trailhead",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[0].directions",
+       "says": "A Northwest Forest Pass is required to park here."
+      },
+      {
+       "field": "approach",
+       "says": "A Northwest Forest Pass is needed to park at the trailhead"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "A Northwest Forest Pass covers the parking"
+      },
+      {
+       "field": "access.passRequired",
+       "says": "None — this is NPS land, so no Northwest Forest Pass or Discover Pass is required"
+      }
+     ],
+     "why": "Three fields require a Northwest Forest Pass to park; ACCESS says none is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rope needed for the rappel",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "a short single-rope rappel (roughly 50-80 ft, well within a 30m or 60m single strand, or a doubled 30m rope)"
+      },
+      {
+       "field": "gear[1]",
+       "says": "30m rope"
+      }
+     ],
+     "why": "A doubled 30 m rope gives only ~49 ft of rappel, which is short of the 50-80 ft rappel described with the 30 m rope the kit specifies.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Pitch count",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "1"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "5 rows (Cascade Pass to Cache Col ... False summit to true summit)"
+      }
+     ],
+     "why": "The header shows 1 pitch, while ROUTE BREAKDOWN lists 5 rows.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Summit day duration",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "then a ~5hr round-trip scramble day"
+      },
+      {
+       "field": "itinerary.days[1].hours",
+       "says": "8"
+      },
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "8"
+      }
+     ],
+     "why": "The partner requirements call the summit day ~5 h; the itinerary and timing give 8 h.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_northeast_couloir",
+   "name": "Northeast Couloir",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Couloir length vs col and summit elevations",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "THE LINE STARTS AT THE COL ... This is snow, 40-45 degrees low down and 45-50 above, for about 2,000 ft."
+      },
+      {
+       "field": "length_m",
+       "says": "610"
+      },
+      {
+       "field": "beta",
+       "says": "follow the glacier to the Magic–Pelton Col at 6,480 ft"
+      },
+      {
+       "field": "area.elevation_ft",
+       "says": "7610"
+      }
+     ],
+     "why": "A couloir starting at the 6,480 ft col and ending on the 7,610 ft summit can only be ~1,130 ft long, not the 2,000 ft stated.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_west_ridge",
+   "name": "West Ridge",
+   "area": "Magic Mountain",
+   "contradictions": [
+    {
+     "fact": "Pitch count",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitches",
+       "says": "7"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "Seven pitches: shelves to a blocky open book, the 5.6 open book, the slab ... and an easy chimney"
+      },
+      {
+       "field": "itinerary",
+       "says": "climb the route in four pitches or so"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "the whole day for four pitches plus a South Ridge walk-off"
+      },
+      {
+       "field": "pitch_detail",
+       "says": "7 rows, of which P1-P4 are climbing pitches (others: approach, bergschrund, finish)"
+      }
+     ],
+     "why": "The header says 7 pitches, but the itinerary, timing and the numbered P1-P4 rows describe four; the 'Seven pitches' prose lists only four.",
+     "internal_resolution": "itinerary, timing and pitch_detail P1-P4 agree on four climbing pitches",
+     "needs_research": false
+    },
+    {
+     "fact": "Descent route",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "descent_text",
+       "says": "Reverse the chimney and slab, downclimb the open book, and re-cross the schrund"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "there is no walk-off from this side"
+      },
+      {
+       "field": "pro_tips[3]",
+       "says": "remember you walk off the South Ridge, not back to your stash"
+      },
+      {
+       "field": "itinerary",
+       "says": "descend the South Ridge to camp"
+      },
+      {
+       "field": "timing.recommendedStart",
+       "says": "plus a South Ridge walk-off"
+      }
+     ],
+     "why": "The descent text and base-finding say to reverse the route with no walk-off, while the tips, itinerary and timing plan a South Ridge walk-off.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.9"
+      },
+      {
+       "field": "waypoints[2].distMi",
+       "says": "9.3 (summit)"
+      },
+      {
+       "field": "itinerary",
+       "says": "camp at Kool-Aid Lake (about 8 miles, ~5 hours)"
+      }
+     ],
+     "why": "dist_km shows 8.0 mi, but the summit is 9.3 mi one way and the camp alone is ~8 mi in.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "name": "West Ridge / Southwest Gully",
+   "area": "Mesahchie Peak",
+   "contradictions": [
+    {
+     "fact": "Approach line from Easy Pass",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "From Easy Pass, drop about 1,400-1,500 ft on the Fisher Creek Trail into the Fisher Creek valley, passing Fisher Camp"
+      },
+      {
+       "field": "waypoints[2..4]",
+       "says": "Fisher Camp -> Off-trail turnoff above Fisher Camp -> 8,050 ft ridge shoulder"
+      },
+      {
+       "field": "approach_variants[0].name",
+       "says": "Easy Pass into Fisher Creek, then the south basin"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "leave the trail for cross-country ridge travel west along the Ragged Ridge crest, sidehilling below Point 7,690, crossing the 7,450 ft saddle south of Kitling Peak, and scrambling over Cub Peak"
+      },
+      {
+       "field": "watch_out[2]",
+       "says": "Hard, steep snow below Kitling Peak on the ridge traverse"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "From Easy Pass the line goes cross-country west-northwest, sidehilling ... to reach the basin below Mesahchie Col"
+      }
+     ],
+     "why": "The approach, waypoints and approach variant drop into Fisher Creek, while the itinerary follows the Ragged Ridge crest past Kitling and Cub Peaks and the camp entry describes a high sidehill traverse.",
+     "internal_resolution": "approach, approach_variants and all waypoints agree on the Fisher Creek line",
+     "needs_research": true
+    },
+    {
+     "fact": "Header grade (rock_grade)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "rock_grade",
+       "says": "Class 3 (YDS)"
+      },
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "a Class 4 move past a chockstone in a notch"
+      },
+      {
+       "field": "hazards[2]",
+       "says": "exposed Class 4 traverse around the north side of a false summit block"
+      }
+     ],
+     "why": "The header grade pill (from rock_grade) shows Class 3, but the route has several required class 4 moves.",
+     "internal_resolution": "grade and every route description agree on Class 3-4",
+     "needs_research": false
+    },
+    {
+     "fact": "Glacier travel",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "crevasses if traversing Mesahchie Glacier. Required skills: Rock scrambling Class 3/4, crevasse awareness"
+      },
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "N/A - this route (West Ridge/Southwest Gully) stays on rock/gully terrain and does not cross glaciers"
+      },
+      {
+       "field": "overview",
+       "says": "the standard lines need no rope or glacier travel"
+      }
+     ],
+     "why": "The beta lists crevasse hazard and crevasse skills, while the Safety tab and overview say the route crosses no glacier.",
+     "internal_resolution": "overview and crevasses field agree no glacier; beta's glacier line is conditional/out of place",
+     "needs_research": false
+    },
+    {
+     "fact": "Drop into the climbing gully",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "At 8,100 ft, descend 100 feet to enter south-side Class 3 gully with beige rock."
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "you step DOWN a few feet to the south, on your left, to enter the first gully"
+      },
+      {
+       "field": "waypoints[4].note",
+       "says": "descend a few feet south to enter the climbing gully"
+      }
+     ],
+     "why": "The beta drops 100 ft into the gully; the base-finding text and waypoint say a few feet.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of the rappel sling",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "downclimbing the crux Class 4 chockstone gully (a fixed rappel sling has been reported at this spot"
+      },
+      {
+       "field": "descent_text",
+       "says": "parties report an existing sling/rap anchor on or near the summit block ... the short exposed class 4 step right off the top"
+      }
+     ],
+     "why": "The descent puts the rappel sling at the chockstone gully (~8,300 ft); descent_text puts it on the summit block.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Fisher Camp elevation and distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[2]",
+       "says": "Fisher Camp elev 5350, distMi 6.5 (3 mi past the pass)"
+      },
+      {
+       "field": "approach",
+       "says": "passing Fisher Camp (~5,100 ft)"
+      },
+      {
+       "field": "bivy[2].elev",
+       "says": "5136"
+      },
+      {
+       "field": "access.permit",
+       "says": "Fisher Camp (~2 mi past the pass)"
+      }
+     ],
+     "why": "Fisher Camp is 5,350 ft and 3 mi past the pass on the waypoint, but ~5,100 ft in the approach and camp entry and ~2 mi past the pass in ACCESS.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,193 @@
+{
+ "applied": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Boulder Basin camp elevation"
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Boulder Basin camp elevation"
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only"
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Approach side of Colchuck Lake — waypoint routes via Aasgard Pass (west) while approach/approach_variants explicitly say EAST shoreline only"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "before": {
+    "itinerary": {
+     "cal": "Boulder Creek fords and lingering snow on the glacier approach are easiest from mid-July through August; the road to White River Trailhead is normally clear by late May but the glacier itself is best climbed before it opens up too much in late summer.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the White River Trailhead (2,300 ft), hike the White River Trail about 4 miles, then turn up the Boulder Creek/Boulder Pass Trail, fording Boulder Creek where it braids into several shallow channels. Camp in the basin anywhere from about 4,900 to 6,000 ft with a view of Clark Mountain's south side.",
+       "hours": 5.6,
+       "miles": 7.5,
+       "title": "Approach to Boulder Basin camp",
+       "gainFt": 3100,
+       "lossFt": 0,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "Morning",
+         "label": "Leave White River Trailhead",
+         "detail": "Elevation 2,300 ft; follow White River Trail ~4 miles."
+        },
+        {
+         "time": "",
+         "label": "Turn onto Boulder Creek/Boulder Pass Trail",
+         "detail": "Ford Boulder Creek's braided channels."
+        },
+        {
+         "time": "Afternoon",
+         "label": "Reach Boulder Basin camp",
+         "detail": "Campsites spread from about 4,900 to 6,000 ft; set up base camp."
+        }
+       ],
+       "objective": "Establish base camp in Boulder Basin"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start from Boulder Basin gains Boulder Pass and the east-ridge bench before dropping onto the Walrus Glacier. Rope up and pick a line up the moderately steep chute on the glacier's left (southern) margin, watching for narrow crevasses, then finish with a Class 3 scramble and a short 45-50 degree snow traverse to the summit block. Reverse the same line back to camp.",
+       "hours": 11.5,
+       "miles": 8,
+       "title": "Summit push via Walrus Glacier",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "~4:00 AM",
+         "label": "Leave Boulder Basin camp",
+         "detail": "Alpine start with light day packs; rope and glacier gear carried."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Gain Boulder Pass / east-ridge bench",
+         "detail": "Boulder Pass ~6,300 ft, bench ~6,700 ft."
+        },
+        {
+         "time": "+3-4 hr",
+         "label": "Onto the Walrus Glacier",
+         "detail": "Ascend the chute on the glacier's left margin, stepping over crevasses."
+        },
+        {
+         "time": "~5.9 hr from camp",
+         "label": "Summit block",
+         "detail": "Class 3 rock scramble plus a soft 45-50 degree snow traverse to the top."
+        },
+        {
+         "time": "~5.9 hr mark",
+         "label": "Summit (8,602 ft)",
+         "detail": ""
+        },
+        {
+         "time": "~5.6 hr descent",
+         "label": "Back at Boulder Basin camp",
+         "detail": "Reverse the glacier and ridge line; full round trip from camp runs roughly 11.5 hours."
+        }
+       ],
+       "objective": "Climb Clark Mountain (8,602 ft) via the Walrus Glacier and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the Boulder Creek/Boulder Pass Trail and White River Trail back to the car, re-fording Boulder Creek along the way.",
+       "hours": 4.6,
+       "miles": 7.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 3100,
+       "packLb": 40,
+       "schedule": [],
+       "objective": "Return to White River Trailhead"
+      }
+     ],
+     "totalNote": "A 3-day backpack trip: ~7.5 mi/~3,100 ft up to Boulder Basin camp on day 1, an ~8-mile, ~11.5-hour round-trip summit push via the Walrus Glacier on day 2, and the ~7.5-mile hike out on day 3 — roughly 23 miles and 6,500 ft gained/lost total."
+    }
+   }
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.52779,
+      "lng": -120.82082,
+      "elev": 3400,
+      "name": "Stuart Lake Trailhead",
+      "note": "Trail #1599 up Mountaineer Creek.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.513,
+      "lng": -120.833,
+      "elev": 4200,
+      "name": "Stuart/Colchuck Trail Split",
+      "note": "Colchuck Lake Trail breaks left from the Stuart Lake Trail.",
+      "type": "Junction",
+      "distMi": 2.3
+     },
+     {
+      "lat": 47.4919578,
+      "lng": -120.8335801,
+      "elev": 5574,
+      "name": "Colchuck Lake",
+      "note": "Popular camp/bivy at the lake outlet, below Dragontail and Colchuck Peak.",
+      "type": "Water",
+      "distMi": 4.2
+     },
+     {
+      "lat": 47.487,
+      "lng": -120.825,
+      "elev": 6000,
+      "name": "Aasgard Pass Gully Break",
+      "note": "Leave the Aasgard Pass boot path ~400 ft above the lake, traverse brush to the gully leading to Balanced Rock.",
+      "type": "Junction",
+      "distMi": 4.8
+     },
+     {
+      "lat": 47.491356,
+      "lng": -120.818863,
+      "elev": 8240,
+      "name": "Colchuck Balanced Rock",
+      "note": "Summit via the NW Ridge.",
+      "type": "Summit",
+      "distMi": 5.5
+     }
+    ]
+   }
+  }
+ ]
+}

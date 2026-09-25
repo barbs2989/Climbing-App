@@ -1,0 +1,560 @@
+{
+ "file": "r003.json",
+ "results": [
+  {
+   "id": "wa_cloudy_peak_southwest_slopes",
+   "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)",
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (Class 2 walk-up to a short, exposed Class 3-4 summit block)",
+   "evidence": "A 2017 trip report on the peak calls the final move onto the summit block Class 4+ and notes some parties bring rock gear; a separate Trinity-to-Holden trip report calls the peak a walk-up except the summit block, which needed class 4 moves; a route summary describes the final summit block as Class 3-4. The row's own overview, hazards, watch_out, beta, waypoint note and climbing_route all agree, so grade/grade_num/rope_note and the Partners and Safety lines that called it Class 2 are brought into line.",
+   "sources": [
+    "https://hikingtales.com/further-afield/glacier-peak-wilderness-2017/day-7-cloudy-peak/",
+    "https://lemkeclimbs.com/buck-creek-pass-cloudy-peak-spider-gap",
+    "https://www.summitpost.org/cloudy-peak/694457"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 2",
+     "value": "Class 3-4",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)"
+    },
+    {
+     "op": "set",
+     "column": "grade_num",
+     "path": [],
+     "expect": 2,
+     "value": 4,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)"
+    },
+    {
+     "op": "set",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Class 2 walk-up on the SW slopes; no rope or technical protection used on this specific line (other Cloudy Peak approaches have 3rd/4th class sections, but the SW Slopes route itself is non-technical).",
+     "value": "Class 2 walking up the southwest slopes and ridge, but the true summit is a short, exposed Class 3-4 block that most parties solo; a cautious party can belay the last few moves with a short rope and a sling over a horn.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "prior scrambling experience helpful given the loose scree hazard, but no technical climbing background required",
+     "replace": "the true summit adds a short, exposed Class 3-4 block, so prior scrambling experience is needed, though no technical climbing background is required",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "terrain is not sustained cliff-exposed",
+     "replace": "terrain is not sustained cliff-exposed until the short Class 3-4 summit block, which has real exposure and a steep drop",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Route grade (Class 2) vs. the summit block's own stated difficulty (Class 3-4/4+)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cloudy_peak_southwest_slopes",
+   "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)",
+   "verdict": "fixed",
+   "correct_value": "Itinerary follows the Phelps Creek / Spider Gap approach: ~13 mi, ~4,450 ft gain and ~1,500 ft loss to Cloudy Pass, the reverse on the way out; ~7,550 ft gain car to car",
+   "evidence": "Elevations agree across sources: Phelps Creek trailhead ~3,500 ft, Spider Gap ~7,100 ft, Lyman Lake ~5,500 ft (a hiking guide, and a GPS-logged trip report with min 3,491 / max 7,073 ft, 6.5 mi and 1,900 ft to Spider Meadow, 1.8 mi Lower Lyman to Cloudy Pass). Distance: one trip report logs 7.2 mi to the upper Spider Meadow camps plus 4.5 mi over the gap to the north end of Lyman Lake, then 1.5-1.8 mi to the pass (~13 mi); a trail database gives 13.7 mi to Cloudy Pass; the row's own approach prose (Spider Gap 7.7 + 3.5 + 1.8) sums to 13.0, so the Cloudy Pass waypoint's 11.0 (and the partner lines built on it) was the outlier. Gains are computed from the agreed elevations and the row's own Lower Lyman (5,587) and Cloudy Pass (6,440) figures. dist_km stored the round trip (39.59 km, self-described as such in the approach prose) and is reset to the one-way figure to the summit (~14.3 mi = 23.0 km). Day hours and timing hours are left unchanged (not in dispute).",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/spider-gap-buck-creek-pass-loop",
+    "https://destinationhikers.com/spider-gap-and-lyman-lakes-glacier-peak-wilderness/",
+    "https://wenatcheeoutdoors.org/2016/07/15/spider-meadows-to-holden-traverse/",
+    "https://hiiker.app/hikes/washington/chelan-county/phelps-creek-lyman-lake-hart-lake-and-cloudy-pass-trail",
+    "https://onehikeaweek.com/2018/08/12/north-star-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "expect": "Most parties reach Cloudy Peak via Holden Village (Lady of the Lake ferry across Lake Chelan, then bus to the village) and hike the Railroad Creek / Hart-Lyman Lake trail up the valley. It's a long but gentle, well-graded trail past Hart Lake and Crown Point Falls to Lyman Lake, with Cloudy Pass just beyond — camp at Lyman Lake or up at the pass itself.",
+     "value": "Drive to the Phelps Creek Trailhead and follow Trail #1511 up the valley to Spider Meadow, then climb through upper Phelps Basin and up the permanent snowfield to Spider Gap. Drop down the north side past the Lyman Glacier and Upper Lyman Lakes to Lower Lyman Lake, then climb the meadows to Cloudy Pass — camp at Lower Lyman Lake or up at the pass itself.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 9,
+     "value": 13,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3100,
+     "value": 4450,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 0,
+     "value": 1500,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "expect": "Pack up and retrace the Railroad Creek trail back down through Lyman Lake and Hart Lake to Holden Village in time for the return ferry.",
+     "value": "Pack up and retrace the approach: down to Lower Lyman Lake, back up and over Spider Gap, and down Phelps Creek Trail #1511 to the Phelps Creek Trailhead.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 9.5,
+     "value": 13,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "gainFt"
+     ],
+     "expect": 0,
+     "value": 1500,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 3100,
+     "value": 4450,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "objective"
+     ],
+     "expect": "Return to Holden Village",
+     "value": "Return to the Phelps Creek Trailhead",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "expect": "A 3-day trip for most parties: roughly 24 miles and ~3,100 ft of approach gain round trip via Holden Village, with a single scramble day (class 3-4 at the summit block) done from a Lyman Lake/Cloudy Pass camp.",
+     "value": "A 3-day trip for most parties: roughly 31 miles and ~7,550 ft of gain round trip from the Phelps Creek Trailhead over Spider Gap, with a single scramble day (class 3-4 at the summit block) done from a Lyman Lake/Cloudy Pass camp.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "expect": "Glacier Peak Wilderness requires a free self-issue wilderness permit at the trailhead; the Holden Village approach needs a Lady of the Lake ferry reservation, while the longer, ferry-free alternative is via the Trinity trailhead over Spider Gap (glacier travel, more gain, not needed just for this peak).",
+     "value": "Glacier Peak Wilderness requires a free self-issue wilderness permit at the trailhead. The Phelps Creek approach crosses the permanent snowfield below Spider Gap in both directions, so carry an ice axe and traction. Longer alternatives reach Cloudy Pass from Trinity over Buck Creek Pass or from Holden Village up Railroad Creek.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "expect": "Most parties reach Cloudy Peak via Holden Village (Lady of the Lake ferry across Lake Chelan, then bus to the village) and hike the Railroad Creek / Hart-Lyman Lake trail up the va…",
+     "value": "From the Phelps Creek Trailhead, up Trail #1511 to Spider Meadow, over Spider Gap, down past the Lyman Lakes and up to a Lower Lyman Lake or Cloudy Pass camp.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "expect": "Pack up and retrace the Railroad Creek trail back down through Lyman Lake and Hart Lake to Holden Village in time for the return ferry.",
+     "value": "Pack up and retrace the approach over Spider Gap and down Phelps Creek Trail #1511 to the trailhead.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4700,
+     "value": 7550,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4700,
+     "value": 7550,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 11,
+     "value": 13,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 11.8,
+     "value": 13.8,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 12.1,
+     "value": 14.1,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 12.3,
+     "value": 14.3,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 39.59,
+     "value": 23.0,
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "which is the one matching the round-trip distance (~39.6 km) and the Leavenworth/US-2 road drive",
+     "replace": "which is the one the Leavenworth/US-2 road drive serves",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "roughly 22 miles round trip with about 4,700 ft of gain",
+     "replace": "roughly 26 miles round trip with about 6,000 ft of gain",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "roughly 11 miles one-way from the Phelps Creek trailhead to Cloudy Pass (about 22 miles round trip)",
+     "replace": "roughly 13 miles one-way from the Phelps Creek trailhead to Cloudy Pass (about 26 miles round trip)",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Trailhead/approach named in itinerary+timing (Holden Village) vs. everywhere else (Phelps Creek)"
+    }
+   ]
+  },
+  {
+   "id": "wa_cloudy_peak_southwest_slopes",
+   "fact": "Crevasse/glacier hazard on Safety tab vs. the approach's own Spider Gap glacier crossing",
+   "verdict": "fixed",
+   "correct_value": "No glacier travel on the climb itself, but the approach crosses the permanent snowfield (former Spider Glacier) below Spider Gap both ways",
+   "evidence": "Hiking guides and trip reports agree the Phelps Creek approach climbs a permanent snowfield, the remains of the Spider Glacier, to Spider Gap, with an axe or traction recommended and the snow dangerous when hard or refrozen; one forum thread records it as downgraded to a snowfield and raises hollowing underneath. Sources do not firmly document true crevasses, so the rewritten Safety line states the snowfield crossing and its early-season/refrozen hazard without asserting crevasses.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/spider-gap-buck-creek-pass-loop",
+    "https://www.oregonhikers.org/forum/viewtopic.php?t=20217",
+    "https://backpackers-review.com/trip-reports/spider-gap-buck-creek-pass-loop/",
+    "https://destinationhikers.com/spider-gap-and-lyman-lakes-glacier-peak-wilderness/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; the route climbs open heather and talus directly from Cloudy Pass to the summit, not the nearby Spider Glacier/snowfield",
+     "value": "None on the climb itself — the route climbs open heather and talus from Cloudy Pass to the summit. The approach, though, crosses the permanent snowfield left by the shrinking Spider Glacier below Spider Gap on the way in and again on the way out; treat it with care early in the season and whenever it has refrozen hard.",
+     "id": "wa_cloudy_peak_southwest_slopes",
+     "fact": "Crevasse/glacier hazard on Safety tab vs. the approach's own Spider Gap glacier crossing"
+    }
+   ]
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent",
+   "verdict": "fixed",
+   "correct_value": "No rappel on the Southeast Glacier route; the class 3+/4 step is downclimbed (optionally belayed). Rappels belong to the Copper-Fernow ridge traverse, not this route.",
+   "evidence": "Route descriptions of the Southeast Glacier line give a loose Class 3 gully to the correct notch, a steep snow traverse that may need a belay, and Class 3 on the upper NE ridge, with no rappel. Trip reports mention downclimbing an airy class 3+ move near a notch; the rappels reported around Copper Peak are on the Copper-Fernow ridge traverse around towers and cliffs. So 'rappel' is removed from the gear/rack text, keeping the belay option.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/copper-peak-se-glacier/",
+    "https://www.summitpost.org/southeast-glacier/160346",
+    "https://www.summitpost.org/copper-peak/152404"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "gear",
+     "path": [
+      2
+     ],
+     "find": "and optional rappel of the class 4 step",
+     "replace": "and an optional belay of the class 4 step",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "where some parties prefer to belay or rappel rather than solo them",
+     "replace": "where some parties prefer to belay rather than solo them",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "let you belay or rappel that rather than solo it",
+     "replace": "let you belay that rather than solo it",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rack",
+     "path": [
+      1
+     ],
+     "find": "30m rope for the crossing and optional rappel",
+     "replace": "30m rope for the crossing and an optional belay",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Optional rappel of the class 4 step vs. explicit no-rappel descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "fact": "Route name/aspect/face (South, SE) vs. the actual described terrain (East face, Northeast Ridge)",
+   "verdict": "fixed",
+   "correct_value": "Aspect SE is correct: the route climbs the southeast-facing glacier remnant (the 'Southeast Glacier') on the peak's east side, south of a spur ridge, and finishes on the upper NE ridge",
+   "evidence": "A route description calls it the southeast-facing glacier draining into the upper basin; the standard route is catalogued by name as Copper Peak/Southeast Glacier, and a trip report titles it SE Glacier/East Face. The row's pins put the glacier south of a spur ridge that carries the notches on its north side, which fits a southeast-facing glacier. aspect/face stay as they are; only the approach-variant note claiming the published terrain contradicts the SE label is corrected.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/copper-peak-se-glacier/",
+    "https://www.mountaineers.org/activities/routes-places/copper-peak-southeast-glacier",
+    "https://cascadeclimbers.com/forum/topic/81924-tr-copper-peak-from-holden-village-se-glaciereast-face-7312011/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "A NOTE ON THE ROUTE'S NAME: this route is listed as the South Route with a south-east aspect, and everything published about it describes the EAST-facing glacier remnant and the upper NORTH-EAST ridge. Navigate by the glacier and the notch, not by the compass point in the name.",
+     "replace": "A NOTE ON THE ROUTE'S NAME: the south-east in this route's aspect is the glacier remnant itself, which faces south-east from under the spur ridge on the peak's east side; the finish is on the upper NORTH-EAST ridge. Navigate by the glacier and the notch, not by the compass point in the name.",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Route name/aspect/face (South, SE) vs. the actual described terrain (East face, Northeast Ridge)"
+    }
+   ]
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)",
+   "verdict": "fixed",
+   "correct_value": "Copper Peak lies in NWAC's East Slopes Central zone",
+   "evidence": "The official NWAC forecast-zone polygons (public avalanche.org map layer) place Copper Peak's summit coordinate inside East Slopes Central; NWAC's own zone descriptions define East Slopes Central as Lake Chelan to south of I-90 (East Slopes North is the Canadian border to Lake Chelan). The Safety line also wrongly called the route non-glaciated, which the row's own crevasse field contradicts, so the whole line is rewritten.",
+   "sources": [
+    "https://api.avalanche.org/v2/public/products/map-layer/NWAC",
+    "https://admin.nwac.us/about-forecasts/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "expect": "N/A - non-glaciated summer/fall scramble route; not covered by any of NWAC's 10 forecast zones",
+     "value": "NWAC East Slopes Central zone (forecasts are issued in winter only); in the summer and fall climbing season the avalanche concern is limited to lingering snow on the glacier remnant and the steep snowfield beyond the notch",
+     "id": "wa_copper_peak_south_route",
+     "fact": "NWAC forecast-zone coverage: Reports tab (climate) vs. Safety tab (avalanche)"
+    }
+   ]
+  },
+  {
+   "id": "wa_copper_peak_south_route",
+   "fact": "Summit scrambling class in obj_haz (class 4-5) vs. grade/rock_grade/waypoints (Class 3-4)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "Class 3-4 (class 5 only in the wrong notches)",
+   "evidence": "Two route descriptions give a loose Class 3 gully to the correct notch and Class 3 on the upper NE ridge, noting that the other notches in the spur ridge would need Class 5; the row's grade, rock_grade, waypoints and pitch_detail all say Class 3-4. One hiking-database entry rates the peak 'Class 4-5' overall, which appears to fold in the wrong notches; the obj_haz line is aligned with the route.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/copper-peak-se-glacier/",
+    "https://www.summitpost.org/southeast-glacier/160346",
+    "https://www.wta.org/go-hiking/hikes/copper-peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "obj_haz",
+     "path": [
+      1
+     ],
+     "find": "class 4-5 summit scrambling",
+     "replace": "class 3-4 summit scrambling",
+     "id": "wa_copper_peak_south_route",
+     "fact": "Summit scrambling class in obj_haz (class 4-5) vs. grade/rock_grade/waypoints (Class 3-4)"
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "fact": "Season window (Jun-Jul) vs. best_season's stated 'sweet spot' (June into August)",
+   "verdict": "fixed",
+   "correct_value": "Best window June-July; from August the glacier opens up",
+   "evidence": "A July 2018 trip report found minimal crevasse danger mid-July and records an earlier August attempt turned back by sketchy late-season conditions on the Dark Glacier; a route summary says early season is best for the brush and that later in the year crevasses are more open and the neve icy. Both put the best window before August, matching season, pro_tips and climate.summer; best_season's own later sentence already says August-October exposes more crevasses.",
+   "sources": [
+    "https://www.countryhighpoints.com/dark-peak-bonanza-peak-and-martin-peak/",
+    "https://www.summitpost.org/dark-peak/154166"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "(roughly June into August)",
+     "replace": "(roughly June through July)",
+     "id": "wa_dark_peak_dark_glacier_route",
+     "fact": "Season window (Jun-Jul) vs. best_season's stated 'sweet spot' (June into August)"
+    }
+   ]
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "fact": "Land manager for the peak: two disagreeing access fields",
+   "verdict": "fixed",
+   "correct_value": "Okanogan-Wenatchee National Forest, Chelan Ranger District (run jointly with Entiat as the Entiat-Chelan district) - Glacier Peak Wilderness",
+   "evidence": "The Forest Service page for the PCT from Lake Chelan to the Suiattle (the Agnes Creek approach) lists the managing office as the Entiat-Chelan Ranger District in Chelan, with the trail in Glacier Peak Wilderness after its first two miles in the Lake Chelan NRA; the Chelan Ranger District page covers the Stehekin valley trails and Glacier Peak Wilderness access. Dark Peak's glacier drains to Swamp Creek, an Agnes Creek tributary, not to the Chiwawa (Wenatchee River district).",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pacific-crest-trail-lake-chelan-suiattle",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/chelan-ranger-district",
+    "https://www.summitpost.org/dark-peak/154166"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "land_manager"
+     ],
+     "find": "(Chiwawa/Entiat Ranger Districts)",
+     "replace": "(Chelan Ranger District)",
+     "id": "wa_dark_peak_dark_glacier_route",
+     "fact": "Land manager for the peak: two disagreeing access fields"
+    }
+   ]
+  }
+ ]
+}

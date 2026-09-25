@@ -1,0 +1,314 @@
+{
+"batches": ["batches/b013.json", "batches/b014.json", "batches/b015.json", "batches/b016.json"],
+"routes_read": 7,
+"routes": [
+{
+"id": "wa_north_star_mountain_east_route",
+"name": "East Route",
+"area": "North Star Mountain",
+"contradictions": [
+ {
+  "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge",
+  "severity": "high",
+  "claims": [
+   {"field": "overview", "says": "the standard route climbs the peak's south side above Lyman Lake"},
+   {"field": "beta", "says": "hike cross-country across open meadow, then up talus and scree (Class 2) on the south side of the mountain"},
+   {"field": "approach", "says": "roughly 16 miles up the Railroad Creek Trail to Lyman Lake (no ridge, pass, or Magnolia Mine mentioned)"},
+   {"field": "waypoints[5].name/directions", "says": "South/east flank talus-scree slope ... trending onto its south and east side; there is no tread and no cairns"},
+   {"field": "approach_variants[0].baseFinding", "says": "Cross the meadow, round onto the south and southeast side, and climb to it [the snowfield]... a notch on the crest from which the ridge runs to the top"},
+   {"field": "itinerary.days[1].title/note", "says": "East Ridge summit push ... Hike up to Cloudy Pass, then leave trail to gain the class 2+ East Ridge, skirting old mine workings near Magnolia Mine before following the ridge crest to the summit"},
+   {"field": "timing.sectionBreakdown[1].fromTo/note", "says": "East Ridge summit push ... Hike up to Cloudy Pass, then leave trail to gain the class 2…"}
+  ],
+  "why": "overview, beta, approach, waypoints and approach_variants (5 independent fields) unanimously describe a direct cross-country scramble up the south/southeast flank from Lyman Lake with no ridge crest or pass involved, while itinerary day 2 and the matching timing.sectionBreakdown instead describe gaining a distant East Ridge via Cloudy Pass and Magnolia Mine — a materially different line that matches the neighboring Cloudy Peak Traverse route's own starting point, not this route's own waypoints.",
+  "internal_resolution": "overview + beta + approach + waypoints + approach_variants agree; itinerary.days[1] and timing.sectionBreakdown[1] are the outliers, likely copy-contaminated from the Cloudy Peak Traverse route which does start at Cloudy Pass.",
+  "needs_research": false
+ },
+ {
+  "fact": "Distance from North Star Mountain to Cloudy Peak",
+  "severity": "low",
+  "claims": [
+   {"field": "beta", "says": "commonly combined with adjacent Cloudy Peak (about 0.9 mi away)"},
+   {"field": "pro_tips[2]", "says": "A harder alternative approaches from Cloudy Peak (~1.5 mi one-way) via Class 3-4 climbing on its east ridge"}
+  ],
+  "why": "Two different one-way distances (0.9 mi vs 1.5 mi) are given for the same named place, Cloudy Peak, a >50% difference.",
+  "internal_resolution": null,
+  "needs_research": false
+ },
+ {
+  "fact": "Crevasse/glacier-travel hazard on the Spider Gap approach",
+  "severity": "high",
+  "claims": [
+   {"field": "seasonal_hazards.crevasses", "says": "N/A - no glacier travel; this is a talus/heather scramble to the summit ridge"},
+   {"field": "watch_out[2]", "says": "Spider Gap glacier travel: moats and crevasses, ice axe required"},
+   {"field": "obj_haz[2]", "says": "permanent snowfield/glacier remnant crossing on the approach"},
+   {"field": "approach_variants[0].hazards[4]", "says": "Glacier travel with moats and crevasses if you come over Spider Gap"},
+   {"field": "bivy[4] (Lyman Lakes and Cloudy Pass).notes", "says": "crossing the permanent snowfield below the gap and dropping onto the Lyman Glacier, which puts an ice axe and traction on the packing list even in August"},
+   {"field": "detailed_rack", "says": "Carry an ice axe... for the Spider Gap snowfield/glacier crossing if approaching via Phelps Creek"}
+  ],
+  "why": "The Safety-tab field claims flatly there is no glacier travel and 'N/A' crevasse hazard, while five other fields on the same route (including the current standard approach, since Holden is closed) describe crossing the Lyman Glacier and its moats/crevasses at Spider Gap.",
+  "internal_resolution": "The majority (5 fields) describe real glacier travel on the now-standard Spider Gap approach; seasonal_hazards.crevasses is the outlier and is wrong for this route as currently accessed.",
+  "needs_research": false
+ },
+ {
+  "fact": "Total trip distance (dist_km vs itinerary/totalNote)",
+  "severity": "medium",
+  "claims": [
+   {"field": "dist_km", "says": "20.1"},
+   {"field": "itinerary.days[0].miles + itinerary.days[1].miles + itinerary.days[2].miles", "says": "8.2 + 8 + 8.2 = 24.4 mi"},
+   {"field": "itinerary.totalNote", "says": "A 3-day, ~25-mile round-trip backpack"}
+  ],
+  "why": "dist_km (20.1 km = 12.5 mi) is roughly half the ~24-25 mile round trip that the itinerary days and totalNote agree on.",
+  "internal_resolution": "itinerary.days and totalNote agree with each other at ~24-25 mi round trip; dist_km is the outlier.",
+  "needs_research": false
+ }
+]
+},
+{
+"id": "wa_north_star_mountain_cloudy_peak_traverse",
+"name": "Cloudy Peak Traverse (South Ridge)",
+"area": "North Star Mountain",
+"contradictions": []
+},
+{
+"id": "wa_seven_fingered_jack_southwest_slopes",
+"name": "Southwest Slopes",
+"area": "Seven Fingered Jack",
+"contradictions": [
+ {
+  "fact": "Total round-trip distance (dist_km vs approach/itinerary)",
+  "severity": "high",
+  "claims": [
+   {"field": "dist_km", "says": "8.4"},
+   {"field": "approach", "says": "round trip is roughly 13 miles with 5,600 ft of gain"},
+   {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "5 + 8 = 13 mi"},
+   {"field": "itinerary.totalNote", "says": "~13 miles and 5,600 ft gain round trip"}
+  ],
+  "why": "dist_km (8.4 km = 5.2 mi) is less than half the ~13-mile round trip that the approach prose, itinerary days, and totalNote all independently agree on.",
+  "internal_resolution": "approach + itinerary.days + totalNote (3 fields) agree at ~13 mi; dist_km is the outlier.",
+  "needs_research": false
+ },
+ {
+  "fact": "Avalanche hazard claimed N/A but also described as present in early season",
+  "severity": "medium",
+  "claims": [
+   {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route"},
+   {"field": "seasonal_hazards.avalanche.byMonth", "says": "July/August/September all \"N/A\""},
+   {"field": "hazards[5]", "says": "Steep snow in the entry gully out of Leroy Basin in early season, with avalanche potential on the approach slopes"},
+   {"field": "obj_haz[2]", "says": "avalanche/wet-slide activity (early season)"}
+  ],
+  "why": "The route's own hazards/obj_haz fields flag avalanche potential in the entry gully in early season, while seasonal_hazards.avalanche makes a blanket 'N/A - non-glaciated' claim (its byMonth table only covers Jul-Sep, but the top-level zone claim reads as unqualified).",
+  "internal_resolution": "hazards + obj_haz agree there is early-season avalanche potential; seasonal_hazards.avalanche.zone's blanket 'N/A' statement is the outlier (detector hint confirmed).",
+  "needs_research": false
+ },
+ {
+  "fact": "Elevation where the two basin entry lines (gully vs ridge) merge",
+  "severity": "medium",
+  "claims": [
+   {"field": "waypoints[5] (Boot Path End / Talus Slope Start).elev/note", "says": "elev 6700; \"two ways up this lower step... rejoin at a flat spot\""},
+   {"field": "pitch_detail[0].notes", "says": "terrain eases at a large bench (~6,800 ft)"},
+   {"field": "approach", "says": "two parallel lines lead out of the basin... and they merge in a flat shoulder around 7,200-7,800 ft where the wide, rocky southwest slope proper begins"},
+   {"field": "climbing_route[0].label", "says": "Out of Leroy Basin to the 7,200-7,800 ft shoulder"},
+   {"field": "approach_variants[0].baseFinding", "says": "climb to the BASE OF CLIFFS at about 7,200 ft, then cut RIGHT to a BENCH at about 7,800 ft"}
+  ],
+  "why": "waypoints and pitch_detail place the merge of the two entry lines at ~6,700-6,800 ft, while approach, climbing_route, and approach_variants place the same merge at 7,200-7,800 ft — a >900 ft difference (route's own waypoints separately confirm a second, higher '7,800 ft Bench' near the summit spires, so this looks like a conflation of two distinct benches).",
+  "internal_resolution": "waypoints (georeferenced) + pitch_detail agree the merge is ~6,700-6,800 ft; approach/climbing_route/approach_variants appear to conflate it with the separate, higher 7,800 ft bench below the summit spires.",
+  "needs_research": false
+ },
+ {
+  "fact": "Distance from the Leroy Creek crossing to Leroy Basin camp",
+  "severity": "medium",
+  "claims": [
+   {"field": "approach", "says": "leave the maintained trail... which follows the north side of Leroy Creek and gains roughly 2,000 ft in about 1.5 miles"},
+   {"field": "descent_text", "says": "roughly 2,000 ft of descent in 1.5 miles on loose, sometimes braided boot-tread"},
+   {"field": "waypoints[2].distMi (Leroy Creek Crossing)", "says": "3.5"},
+   {"field": "waypoints[3].distMi (Leroy Basin)", "says": "6"},
+   {"field": "itinerary.days[0].miles", "says": "5"},
+   {"field": "approach_variants[0].distMi", "says": "5"}
+  ],
+  "why": "approach and descent_text both say the climbers'-trail segment from the Leroy Creek ford to camp is about 1.5 miles, and itinerary day 1 total (5 mi) plus approach_variants' own distMi (5) agree camp sits at ~5 mi from the trailhead; but the waypoints' own distMi values put Leroy Basin at 6.0 mi, i.e. 2.5 mi past the 3.5 mi ford — a full mile more than the prose states for that same leg.",
+  "internal_resolution": "approach + descent_text + itinerary.days[0] + approach_variants (4 fields) agree camp is ~5 mi out; the waypoints[3].distMi value (6) is the outlier.",
+  "needs_research": false
+ }
+]
+},
+{
+"id": "wa_spectacle_buttes_west_route",
+"name": "West Route",
+"area": "Spectacle Buttes",
+"contradictions": [
+ {
+  "fact": "Total cumulative gain/loss (route-level fields vs itinerary day sums)",
+  "severity": "high",
+  "claims": [
+   {"field": "gain_ft", "says": "7554"},
+   {"field": "loss_ft", "says": "7554"},
+   {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt + itinerary.days[2].gainFt", "says": "1900 + 3800 + 0 = 5700"},
+   {"field": "itinerary.days[0].lossFt + itinerary.days[1].lossFt + itinerary.days[2].lossFt", "says": "0 + 3800 + 1900 = 5700"},
+   {"field": "itinerary.totalNote", "says": "~7,500 ft of cumulative gain, most of it on day 2"}
+  ],
+  "why": "gain_ft/loss_ft (7554) and totalNote (~7,500 ft) agree with each other but disagree with the itinerary's own day-by-day gainFt/lossFt values, which sum to only 5,700 ft — a 1,854 ft (32%) gap the day breakdown itself does not account for (detector hint confirmed).",
+  "internal_resolution": "gain_ft/loss_ft and totalNote agree at ~7,500 ft; the itinerary.days gainFt/lossFt values are the outlier and undercount by ~1,850 ft.",
+  "needs_research": false
+ },
+ {
+  "fact": "Order of the summit-ridge scree ramp vs. the final approach to the summit",
+  "severity": "high",
+  "claims": [
+   {"field": "climbing_route[2].label/notes", "says": "Final 400 ft scree-and-talus ramp ... The final roughly 400 ft to the summit is a scree-and-talus ramp"},
+   {"field": "waypoints[6] (Base of the southwest ridge).note", "says": "a scree ramp gains the southwest ridge crest; Class 3 scrambling begins about 400 ft above here"},
+   {"field": "approach_variants[0].baseFinding", "says": "THE CLIMBING STARTS AT A RAMP: from the basin floor, a SCREE-AND-TALUS RAMP of about 400 ft gains the crest of the south-west ridge. Ramp first, ridge second."},
+   {"field": "descent_text", "says": "Below the gendarmes, descend the scree-and-talus ramp roughly 400 ft into the open basin floor between the two Buttes [i.e. the ramp is the LOWEST section, reached last on descent]"}
+  ],
+  "why": "climbing_route places the 400 ft scree-and-talus ramp as the FINAL step reaching the summit, but waypoints, approach_variants, and descent_text all agree the ramp is the FIRST technical section (basin floor to ridge crest, well below the summit), with the true final approach being ledges on the summit block above ~8,100 ft that climbing_route omits entirely.",
+  "internal_resolution": "waypoints + approach_variants + descent_text (3 fields, with precise directions) agree the ramp comes first; climbing_route's ordering is the outlier and could send a climber looking for an easy scree finish when the actual final terrain is exposed summit-block ledges.",
+  "needs_research": false
+ },
+ {
+  "fact": "Distance from the trailhead to Leroy Basin camp",
+  "severity": "medium",
+  "claims": [
+   {"field": "itinerary.days[0].miles", "says": "6.5"},
+   {"field": "itinerary.days[2].miles", "says": "6.5"},
+   {"field": "waypoints[1] (Leroy Basin camp).distMi", "says": "5.4"},
+   {"field": "approach", "says": "3.5 miles [to ford] ... 1.9 miles into Leroy Basin [i.e. 5.4 mi total]"}
+  ],
+  "why": "itinerary days 1 and 3 both state 6.5 miles for the trailhead-to-camp leg, but the route's own approach prose (3.5 + 1.9 = 5.4 mi) and the waypoint's own distMi (5.4) agree on a shorter distance, 1.1 mi less.",
+  "internal_resolution": "approach + waypoints agree at 5.4 mi; itinerary.days[0] and [2] are the (matching) outlier.",
+  "needs_research": false
+ },
+ {
+  "fact": "Trailhead/road for this route's approach",
+  "severity": "high",
+  "claims": [
+   {"field": "approach_logistics.trailhead", "says": "Phelps Creek Trailhead (Trail #1511)"},
+   {"field": "approach", "says": "The standard approach is a long, mostly cross-country line from the Phelps Creek Trailhead at the end of Phelps Creek Road (FR 6211)"},
+   {"field": "road.name", "says": "Chiwawa River Road (FR 6200) to Phelps Creek Road (FR 6211)"},
+   {"field": "waypoints[0].name", "says": "Phelps Creek Trailhead"},
+   {"field": "emergency.nearestHospital", "says": "roughly 40 miles / ~1.25 hr drive from the Phelps Creek Trailhead via Chiwawa River Rd and US-2"},
+   {"field": "partner_requirements.approachTime", "says": "remote trailhead reached via ~38 miles of Entiat River Road, then a multi-mile trail approach into the upper Entiat/Ice Lakes basin"}
+  ],
+  "why": "Every other field on this route (approach_logistics, approach, road, waypoints, emergency) agrees the trailhead and access road are Phelps Creek Trailhead / Chiwawa River Road (FR 6200/6211); partner_requirements.approachTime instead describes a completely different access road (~38 mi of Entiat River Road) and drainage (Entiat/Ice Lakes basin), which a climber checking Partners-tab requirements would read as the way in.",
+  "internal_resolution": "approach_logistics + approach + road + waypoints + emergency (5 fields) agree on Phelps Creek Trailhead/Chiwawa River Road; partner_requirements.approachTime is the outlier, apparently contaminated from a different Entiat-drainage route.",
+  "needs_research": false
+ },
+ {
+  "fact": "Naming of the summit ridge: 'West Ridge' vs 'southwest ridge'",
+  "severity": "low",
+  "claims": [
+   {"field": "climbing_route[0].label", "says": "West Ridge from the toe"},
+   {"field": "rope_note", "says": "West Ridge/West Gully line up; gentle Class 2-3 with a minor cliff band (~6,800ft)"},
+   {"field": "overview", "says": "follows the southwest ridge/west-facing slopes — the standard line on South Spectacle Butte"},
+   {"field": "pitch_detail[0].pitch", "says": "Ridge base to ~7,700 ft [southwest ridge, per grade/notes]"}
+  ],
+  "why": "climbing_route and rope_note both call the feature the 'West Ridge', while overview, beta, approach, waypoints, and approach_variants (6+ occurrences) consistently call it the 'southwest ridge'.",
+  "internal_resolution": "The large majority of fields say 'southwest ridge'; climbing_route/rope_note's 'West Ridge' naming is the outlier.",
+  "needs_research": false
+ }
+]
+},
+{
+"id": "wa_buck_mountain_south_ridge",
+"name": "South Ridge",
+"area": "Buck Mountain",
+"contradictions": [
+ {
+  "fact": "Approach/camp line: King Lake + east-ridge notch vs. Buck Creek Pass + Liberty Cap + Louis Creek Basin",
+  "severity": "high",
+  "claims": [
+   {"field": "beta", "says": "climb forested, brushy, and open slopes southwestward to King Lake (5,940 ft)... climb directly south to a notch on Buck's east ridge, cross to the south side of the ridge... An alternative, longer approach reaches the peak's west/southwest slopes via Buck Creek Pass and High Pass."},
+   {"field": "pitch_detail[0].notes / pitch_detail[1].notes", "says": "off-trail southwest to King Lake (5,940 ft) ... From King Lake, climb south to a notch on Buck's east ridge and cross to its south side"},
+   {"field": "itinerary.days[0].note", "says": "...contours around Mt. Berge's east side toward King Lake (5,940 ft) and on to an upper basin camp near 6,800 ft"},
+   {"field": "itinerary.days[2].note / timing.sectionBreakdown[2].note", "says": "down through King Lake basin, around Mt. Berge, back across Buck Creek..."},
+   {"field": "approach", "says": "...into the upper basin below Buck Mountain's south and west aspects (Louis Creek Basin, ~6,700 ft)... pick up the well-used climbers'/boot path that switchbacks up toward Liberty Cap and the High Pass Trail junction (no King Lake mentioned)"},
+   {"field": "descent_text", "says": "descend the pumice and talus slopes back to the Louis Creek Basin camp (~6,700 ft). From there, traverse back east below Liberty Cap to rejoin the boot path down to Buck Creek Pass (no King Lake mentioned)"},
+   {"field": "waypoints[2] (Buck Creek Pass, elev 5900, distMi 9.6) / waypoints[3] (Basin below Buck's south/southwest slopes, elev 7400, distMi 11)", "says": "route passes through Buck Creek Pass, not King Lake"},
+   {"field": "approach_variants[0].name/baseFinding", "says": "Trinity to Buck Creek Pass, then the High Pass high route around the west side... an easy walk-off down into Louis Creek Basin"}
+  ],
+  "why": "beta's primary paragraph, pitch_detail, both itinerary day notes, and timing.sectionBreakdown all describe reaching camp via King Lake and a notch on Buck's east ridge (with Buck Creek Pass/High Pass explicitly called 'an alternative'); but the top-level approach field, descent_text, the georeferenced waypoints, and approach_variants all instead describe (and only describe) the Buck Creek Pass/Liberty Cap/High Pass/Louis Creek Basin line, never mentioning King Lake at all. The route's fields effectively describe two different, non-overlapping approach lines to two different-elevation, differently-named camps.",
+  "internal_resolution": "Ambiguous — 4 fields favor each line, and the georeferenced waypoints/approach/descent_text/approach_variants track the Buck Creek Pass/Louis Creek Basin line while beta/pitch_detail/itinerary/timing track King Lake; which is truly 'standard' for this route ID cannot be settled from the row alone.",
+  "needs_research": true
+ },
+ {
+  "fact": "Avalanche hazard claimed N/A but described as present on the approach",
+  "severity": "medium",
+  "claims": [
+   {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route climbed outside the NWAC forecast season"},
+   {"field": "climate.bySeason.spring", "says": "Deep, avalanche-prone snowpack on the approach slopes and summit gullies"},
+   {"field": "obj_haz[4]", "says": "lingering snowfields and avalanche terrain into early summer"}
+  ],
+  "why": "climate.bySeason.spring and obj_haz both explicitly flag avalanche-prone terrain on this route's approach/summit gullies, contradicting seasonal_hazards.avalanche's blanket 'N/A' claim (detector hint confirmed).",
+  "internal_resolution": "climate.bySeason.spring + obj_haz agree avalanche terrain exists in early season; seasonal_hazards.avalanche.zone is the outlier.",
+  "needs_research": false
+ }
+]
+},
+{
+"id": "wa_chalangin_peak_little_giant_pass_luahna_col",
+"name": "Little Giant Pass – Luahna Col Route",
+"area": "Chalangin Peak",
+"contradictions": [
+ {
+  "fact": "Aspect/face of the climbing line: southeast vs. the north side of the peak",
+  "severity": "medium",
+  "claims": [
+   {"field": "aspect", "says": "SE"},
+   {"field": "face", "says": "Southeast Ridge / Luahna-Chalangin Col"},
+   {"field": "overview", "says": "A Forest Service description of this same trailhead/valley approach frames the target line as Chalangin's southeast ridge."},
+   {"field": "beta", "says": "traverse granite slabs and tarns below Chalangin's north ridge, and gain the ridge via a scree gully around 8,000 ft"},
+   {"field": "approach_variants[0].notes", "says": "passing north of the crevassed glacier, over granite slabs and past tarns beneath the peak's north ridge"},
+   {"field": "approach_variants[0].baseFinding", "says": "weave through massive granite slabs and pockets of standing water below the north ridge... Two notches present themselves, one northeast and one southwest; the line takes the northeastern of them"},
+   {"field": "pitch_detail[2].notes", "says": "skirting north of the crevassed Pilz Glacier... gaining the ridge via a scree gully around 8,000 ft"}
+  ],
+  "why": "aspect and face both label the line southeast, and overview explicitly attributes this label to an outside Forest Service description; but the route's own beta, approach_variants, and pitch_detail (3 independently-detailed fields) all describe skirting the Pilz Glacier's NORTH side and gaining a NORTH ridge via a notch to its northeast — the opposite side of the mountain from 'southeast'.",
+  "internal_resolution": "beta + approach_variants + pitch_detail agree the climb approaches and gains the ridge from the north; aspect/face's 'southeast' appears to be carried over from the outside FS description overview itself flags as a different characterization.",
+  "needs_research": false
+ },
+ {
+  "fact": "dist_km appears to be one-way, not the round-trip total this multi-day itinerary implies",
+  "severity": "low",
+  "claims": [
+   {"field": "dist_km", "says": "21.7"},
+   {"field": "waypoints[1] (Chalangin Peak Summit).distMi", "says": "13.5"},
+   {"field": "itinerary", "says": "Day 1... Day 2... Day 3: Hike out via Napeequa Valley and Little Giant Pass [i.e. a there-and-back multi-day trip]"}
+  ],
+  "why": "dist_km (21.7 km = 13.5 mi) matches the waypoints' one-way trailhead-to-summit distance exactly, not a round trip, even though the route is described as a 3-day out-and-back.",
+  "internal_resolution": "dist_km is one-way while the page would present it as the route's overall distance; low priority per convention.",
+  "needs_research": false
+ }
+]
+},
+{
+"id": "wa_chalangin_peak_southwest_face",
+"name": "Southwest Face",
+"area": "Chalangin Peak",
+"contradictions": [
+ {
+  "fact": "Climbing season: 'May-Jun' header vs. a season description running through September",
+  "severity": "high",
+  "claims": [
+   {"field": "season", "says": "May-Jun"},
+   {"field": "best_season", "says": "Late May through September is the working window. Late May-June gives a supportive snow climb via crampons... By mid-to-late summer the Thunder Creek ford drops to knee-deep or lower and the face becomes a mostly dry scramble above the cliff band."},
+   {"field": "climate.summer", "says": "The prime climbing window; the Thunder Creek ford drops to knee-deep or lower... mostly a dry scramble above the cliff band"},
+   {"field": "climate.fall", "says": "Generally stable and dry through September"}
+  ],
+  "why": "The header season chip ('May-Jun') implies the route is unclimbable after June, but best_season explicitly calls the working window 'Late May through September', and climate.summer separately calls summer 'the prime climbing window' — directly contradicting the header (detector hint confirmed).",
+  "internal_resolution": "best_season + climate.summer + climate.fall (3 fields) agree the season runs into September; the short 'season' field is the outlier and understates the window by about 3 months.",
+  "needs_research": false
+ },
+ {
+  "fact": "Road/trailhead currently closed (access.closures) vs. road section describing it as open",
+  "severity": "high",
+  "claims": [
+   {"field": "access.closures", "says": "CLOSED RIGHT NOW: Okanogan-Wenatchee closure order 06-17-07-2026-40 (Little Giant Fire), effective 3 September 2026 through 31 October 2026 unless rescinded sooner, closes FSR 6400 to the end of the road and lists the White River Trailhead, which is this route's access."},
+   {"field": "road.status", "says": "Open seasonally; mix of paved and gravel, generally passable to passenger cars in summer."},
+   {"field": "road.driveNote", "says": "From Coles Corner on US-2, drive WA-207... then continue on White River Road/FR 6400 for about 10 miles to the road-end trailhead at 2,300 ft. (no closure mentioned)"},
+   {"field": "road.seasonalGate", "says": "null"}
+  ],
+  "why": "The GETTING THERE (road.*) section gives unqualified driving directions and says the road is generally passable, with no seasonal gate, while the ACCESS section on the same Plan tab states the exact same road and trailhead are currently closed by an active fire-closure order through Oct 31, 2026 — a climber reading only the road section would not learn the trailhead is currently inaccessible.",
+  "internal_resolution": "access.closures is specific, dated, and names an active order; road.status/driveNote/seasonalGate simply omit it and are the stale/incomplete side of the contradiction.",
+  "needs_research": false
+ }
+]
+}
+]
+}

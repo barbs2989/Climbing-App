@@ -1,0 +1,1638 @@
+{
+ "batches": [
+  "b417.json",
+  "b418.json",
+  "b419.json",
+  "b420.json"
+ ],
+ "routes_read": 13,
+ "routes": [
+  {
+   "id": "wa_wilmans_peak_scramble",
+   "name": "Standard Scramble",
+   "area": "Wilmans Peak",
+   "contradictions": [
+    {
+     "fact": "Approach line (Glacier Basin vs Poodle Dog Pass)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.sectionBreakdown[0].fromTo",
+       "says": "Car-to-car scramble via Monte Cristo and Poodle Dog Pass"
+      },
+      {
+       "field": "itinerary.days[0].title",
+       "says": "Car-to-car scramble via Monte Cristo and Glacier Basin"
+      },
+      {
+       "field": "approach",
+       "says": "Glacier Basin Trail #719 toward the basin"
+      }
+     ],
+     "why": "PUBLISHED TIMES names Poodle Dog Pass while the itinerary, approach, waypoints and approach_variants all go via Glacier Basin.",
+     "internal_resolution": "Glacier Basin: approach, approach_variants, waypoints and itinerary title all agree; the timing fromTo is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time equals car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule[4].time",
+       "says": "12:00 PM - 12:30 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the whole 12-hr car-to-car total, while the itinerary reaches the summit ~7 hrs after a 5:00 AM start.",
+     "internal_resolution": "The itinerary schedule (summit ~7 hrs in) is consistent with the 12-hr total; summitTimeHrs=12 is the car-to-car figure misfiled.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "10"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "13.7"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "7.5"
+      }
+     ],
+     "why": "dist_km 10 (6.2 mi) matches neither the 13.7-mi itinerary nor the 7.5-mi one-way summit waypoint (15 mi round trip).",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Which ridge/basin the col divides",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "on the ridge dividing the Monte Cristo basin from Glacier Basin"
+      },
+      {
+       "field": "waypoints[5].note",
+       "says": "the col on the dividing ridge between Glacier Basin and Seventy-Six Basin"
+      },
+      {
+       "field": "beta",
+       "says": "toward the col ('moat') between Columbia Peak and Wilmans Peaks"
+      }
+     ],
+     "why": "Three fields name three different cols/dividing ridges as the route's key col.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Final line: NW ridge vs gully between the spires",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "the line gains it by the NORTH-WEST ridge from the col"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].detail",
+       "says": "Traverse/ascend the basin and gully between the spires"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "up the ridge/col between the Wilmans spires to the summit"
+      },
+      {
+       "field": "waypoints[5].lat/lng",
+       "says": "47.966393, -121.35245 (ESE of the summit pin 47.97205, -121.36511)"
+      }
+     ],
+     "why": "The itinerary routes the party up a gully between the spires (the line the overview and baseFinding warn leads to the wrong objective), and the col pin sits southeast of the summit, not on its northwest ridge.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Route grade (Class 3 vs Class 4)",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 4"
+      },
+      {
+       "field": "climbing_route[1].class",
+       "says": "Class 4"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Class 3 terrain on loose rock"
+      },
+      {
+       "field": "partner_requirements.requiredSkills[0]",
+       "says": "Class 3 scrambling on loose rock"
+      }
+     ],
+     "why": "Safety and Partners tabs describe Class 3 terrain while the grade chip and climbing route call the summit block Class 4.",
+     "internal_resolution": "Class 4 summit block: rock_grade, climbing_route, approach and hazards agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required beyond the trailhead parking pass"
+      }
+     ],
+     "why": "One field says a self-issue wilderness permit applies, the other says nothing is required beyond parking.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "River crossing waypoint location",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "waypoints[1].distMi",
+       "says": "1"
+      },
+      {
+       "field": "waypoints[1].lat/lng",
+       "says": "47.966561, -121.391286"
+      },
+      {
+       "field": "waypoints[2].lat",
+       "says": "47.98556 (Monte Cristo townsite, distMi 4)"
+      }
+     ],
+     "why": "The mile-1 Sauk crossing is pinned south of the mile-4 townsite, i.e. beyond it, contradicting its distance.",
+     "internal_resolution": "distMi 1 agrees with approach, access.closures and bivy text; the coordinate is wrong.",
+     "needs_research": false
+    },
+    {
+     "fact": "Climate description",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.typical",
+       "says": "West-slope Cascade climate; heavy snowpack"
+      },
+      {
+       "field": "seasonal_hazards.weather.typical",
+       "says": "Warm, dry summer conditions typical of the Cascades interior"
+      }
+     ],
+     "why": "Reports tab calls it west-slope climate while Safety calls it interior (east-side) weather.",
+     "internal_resolution": "West slope: Monte Cristo is on the west slope; the Safety text is generic.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_wilmans_spire",
+   "name": "East Wilmans Spire",
+   "area": "Wilmans Spires",
+   "contradictions": [
+    {
+     "fact": "Which wilderness",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Group size capped at 12 ... in Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "Darrington Ranger District) — Glacier Peak Wilderness"
+      },
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "Inside the HENRY M. JACKSON WILDERNESS"
+      }
+     ],
+     "why": "Access names Glacier Peak Wilderness while the permit, overnight permit and camps name Henry M. Jackson Wilderness.",
+     "internal_resolution": "Henry M. Jackson: permit, access.overnight_permit and both bivy entries agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Rope length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gear[4]",
+       "says": "50m+ rope"
+      },
+      {
+       "field": "pro_tips[2]",
+       "says": "A 50m rope is sufficient for the route"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "parties carry a 60 m half rope"
+      }
+     ],
+     "why": "Kit says a 50 m single rope suffices; the rappel note says parties carry a 60 m half rope.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Best season / snow in gully",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "season",
+       "says": "May-Oct (best May-Jun)"
+      },
+      {
+       "field": "best_season",
+       "says": "roughly May-June, while the approach gully is still snow-covered"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Jun-mid Jul, on snow"
+      },
+      {
+       "field": "hazards[1]",
+       "says": "The approach gully sheds rockfall once it melts out of snow, typically by mid/late July."
+      }
+     ],
+     "why": "The season chip and best_season put the best window in May-June, while the approach variant puts the snow window at June to mid-July.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Location of river washout",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.closures",
+       "says": "A washout near the Twin Bridges beyond Monte Cristo may require fording"
+      },
+      {
+       "field": "bivy[1].notes",
+       "says": "About a mile up, the old road bridge over the South Fork Sauk is long gone"
+      }
+     ],
+     "why": "Access puts the washout beyond Monte Cristo; the camp note puts it about a mile up from Barlow Pass.",
+     "internal_resolution": "About a mile up: the bivy note and the neighbouring Wilmans Peak route agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit required",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required — free self-issue wilderness permits available"
+      }
+     ],
+     "why": "Permit field treats the self-issue permit as the requirement while access says none is required.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Text copied from other areas",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures"
+      },
+      {
+       "field": "access.parking_pass",
+       "says": "(e.g. Sunrise Mine TH for Vesper Peak)"
+      }
+     ],
+     "why": "Access text refers to Glacier Peak's Suiattle road and Vesper Peak's trailhead, not this route's Barlow Pass access.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_you_moss_be_joking",
+   "name": "You Moss Be Joking",
+   "area": "Mossy Loaf",
+   "contradictions": [
+    {
+     "fact": "Crag location (roadside vs 4 mi at townsite)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "walk the closed road ... approximately 4 miles to the Monte Cristo townsite ... Mossy Loaf's coordinates place it essentially at/immediately adjacent to the townsite"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "Mossy Loaf sits directly off a paved, drive-to highway near Barlow Pass"
+      },
+      {
+       "field": "waypoints[1].lat/lng",
+       "says": "48.03015, -121.44552 (≈0.3 mi from Barlow Pass TH 48.0264, -121.4443)"
+      },
+      {
+       "field": "climate.typical",
+       "says": "Low-elevation (~2,300-2,360 ft) ... near Barlow Pass"
+      }
+     ],
+     "why": "The approach sends parties 4 miles to the townsite, but the crag's own coordinates, elevation (2,301 ft vs townsite ~2,760 ft), emergency and climate text place it at Barlow Pass by the highway.",
+     "internal_resolution": "Barlow Pass roadside: the coordinates, elevation, emergency, climate and 'back to road level' descent all agree; the approach misreads the coordinates.",
+     "needs_research": false
+    },
+    {
+     "fact": "Elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "500"
+      },
+      {
+       "field": "length_m",
+       "says": "11"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "2301"
+      },
+      {
+       "field": "approach_logistics.trailheadDirection",
+       "says": "From Barlow Pass ... (~2,360 ft)"
+      }
+     ],
+     "why": "A 500 ft gain is shown for an 11 m roadside pitch whose base (2,301 ft) is below the trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness / permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "N/A"
+      },
+      {
+       "field": "access.rules",
+       "says": "inside Glacier Peak Wilderness"
+      }
+     ],
+     "why": "Three different permit/wilderness statements for a roadside crag.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "High point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "high_point_ft",
+       "says": "2301"
+      },
+      {
+       "field": "waypoints[3].elev",
+       "says": "2400 (Mossy Loaf crag top-out)"
+      }
+     ],
+     "why": "High point equals the crag base while the top-out waypoint is 2,400 ft.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "name": "Moss Out For Harambe",
+   "area": "Mossy Loaf",
+   "contradictions": [
+    {
+     "fact": "Crag location (roadside vs 4 mi at townsite)",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "walk the closed road ... approximately 4 miles to the Monte Cristo townsite ... Mossy Loaf's coordinates place it essentially at/immediately adjacent to the townsite"
+      },
+      {
+       "field": "emergency.notes",
+       "says": "Mossy Loaf sits directly off a paved, drive-to highway near Barlow Pass"
+      },
+      {
+       "field": "waypoints[1].lat/lng",
+       "says": "48.03015, -121.44552 (≈0.3 mi from Barlow Pass TH 48.0264, -121.4443)"
+      },
+      {
+       "field": "climate.typical",
+       "says": "Low-elevation (~2,300-2,360 ft) ... near Barlow Pass"
+      }
+     ],
+     "why": "The approach sends parties 4 miles to the townsite, but the crag's own coordinates, elevation (2,301 ft vs townsite ~2,760 ft), emergency and climate text place it at Barlow Pass by the highway.",
+     "internal_resolution": "Barlow Pass roadside: the coordinates, elevation, emergency, climate and 'back to road level' descent all agree; the approach misreads the coordinates.",
+     "needs_research": false
+    },
+    {
+     "fact": "Which tier",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "Upper tier"
+      },
+      {
+       "field": "overview",
+       "says": "A one-pitch 5.7 trad line up Mossy Loaf's lower tier"
+      }
+     ],
+     "why": "Face says upper tier, overview says lower tier.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rack size",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gear[0]",
+       "says": "Rack to 5 inches (single set)"
+      },
+      {
+       "field": "pro_needs",
+       "says": "Gear to 5 inches"
+      },
+      {
+       "field": "rack[0]",
+       "says": "Cams 0.4-2.5in, single set (rack to 5 inches)"
+      },
+      {
+       "field": "sling_rack.cams",
+       "says": "0.4-2.5in single set"
+      }
+     ],
+     "why": "The rack is given as cams to 2.5 in and as a rack to 5 in, even within one rack line.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "500"
+      },
+      {
+       "field": "length_m",
+       "says": "14"
+      },
+      {
+       "field": "waypoints[1].elev",
+       "says": "2301"
+      }
+     ],
+     "why": "A 500 ft gain is shown for a 14 m roadside pitch whose base is below the ~2,360 ft trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness / permit",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Henry M. Jackson Wilderness permit"
+      },
+      {
+       "field": "access.permit",
+       "says": "N/A"
+      },
+      {
+       "field": "access.rules",
+       "says": "inside Glacier Peak Wilderness"
+      }
+     ],
+     "why": "Three different permit/wilderness statements for a roadside crag.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_beyond_redlining",
+   "name": "Beyond Redlining",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "Permit / wilderness",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue wilderness permit"
+      },
+      {
+       "field": "access.rules",
+       "says": "in Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.permitZone",
+       "says": "Adjacent to Wild Sky Wilderness / WA DNR Morning Star NRCA, not Glacier Peak Wilderness."
+      }
+     ],
+     "why": "Permit says no wilderness permit, access says a self-issue wilderness permit, and access rules say Glacier Peak Wilderness while permitZone says it is not in it.",
+     "internal_resolution": "Not in Glacier Peak Wilderness: permitZone, land_manager and overnight_permit agree; access.permit and access.rules are generic carry-overs.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time equals car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "14"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "14"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "3:00 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the 14-hr car-to-car total while the itinerary tops out 10.5 hrs after a 4:30 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Day length",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "14"
+      },
+      {
+       "field": "itinerary.days[0].schedule[0].time",
+       "says": "4:30 AM"
+      },
+      {
+       "field": "itinerary.days[0].schedule[5].time",
+       "says": "8:30 PM"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "roughly 13-14 hrs car-to-car"
+      }
+     ],
+     "why": "The schedule runs 4:30 AM to 8:30 PM (16 hrs), not the stated 13-14 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch 1 as bail point",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "bail",
+       "says": "The long (55m) pitch 1 is treated by most parties as the last easy bail-back-to-the-ground point"
+      },
+      {
+       "field": "hazards[4]",
+       "says": "the 55m opening pitch is long and committing before the first real bail option"
+      },
+      {
+       "field": "approach_variants[0].hazards[4]",
+       "says": "The fifty-five-metre opening pitch commits you before any real bail option"
+      }
+     ],
+     "why": "Bail calls pitch 1 the easy bail point; hazards say pitch 1 commits you before any bail option.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Text copied from other areas",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.seasonal",
+       "says": "Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures"
+      }
+     ],
+     "why": "Access cites Glacier Peak's Suiattle road, which is not this route's access (access._raw itself says it is a different watershed).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "name": "Marvin's Ear",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "Rappel lengths vs route length",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "rappel_detail[*].lengthM",
+       "says": "35, 35, 35, 35 (4 raps)"
+      },
+      {
+       "field": "length_m",
+       "says": "244"
+      },
+      {
+       "field": "descent_text",
+       "says": "linking some of the 30m-spaced stations into longer raps and reduces the rappel count to roughly four full-length raps"
+      },
+      {
+       "field": "rope_length_m",
+       "says": "70"
+      }
+     ],
+     "why": "Four 35 m rappels cover only ~140 m of a 217-244 m route, and a 70 m rope (35 m single-strand) cannot link two 30 m stations.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Leave-trail point (Headlee Pass vs switchback)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Approach via the Sunrise Mine Trail and Headlee Pass"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Via Headlee Pass and the cairned talus/heather traverse."
+      },
+      {
+       "field": "approach",
+       "says": "follow the trail roughly 2.5 miles to the last major switchback at about 4,300 ft, then leave the trail"
+      }
+     ],
+     "why": "The itinerary routes via Headlee Pass while the approach leaves the trail at the switchback below it.",
+     "internal_resolution": "Switchback: approach, approach_variants and pro_tips agree; the itinerary is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time equals car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "11"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "11"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "1:00 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the 11-hr car-to-car total while the itinerary tops out 7.5 hrs after a 5:30 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Permit / wilderness",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "No climbing or wilderness permit required"
+      },
+      {
+       "field": "access.permit",
+       "says": "Free self-issue wilderness permit"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "— Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required outside the wilderness"
+      }
+     ],
+     "why": "Permit fields disagree on whether a wilderness permit is needed and whether the route is in Glacier Peak Wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Aspect",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "aspect",
+       "says": "N"
+      },
+      {
+       "field": "overview",
+       "says": "Marvin's Ear climbs the skyline ridge of Vega Tower ... the first technical route up Vega Tower's west ridge proper"
+      }
+     ],
+     "why": "Aspect is N while the route is described as the west ridge, only skirting the north face high up.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Rock type",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "through hard metaconglomerate rock"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "up the broad, golden-granite ridge crest"
+      }
+     ],
+     "why": "Overview says metaconglomerate, pitch 4 says granite.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "name": "Standard Scramble",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "Scramble grade",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "rock_grade",
+       "says": "Class 2-3"
+      },
+      {
+       "field": "climbing_route[0].class",
+       "says": "Class 3-4"
+      },
+      {
+       "field": "approach",
+       "says": "sustained exposed class 3 with sections bordering class 4"
+      }
+     ],
+     "why": "The grade pill says Class 2-3 while the climbing route and approach say class 3-4.",
+     "internal_resolution": "The route text (approach, climbing_route, overview 'tougher than the Class 2-3 label') consistently describes class 3 bordering 4.",
+     "needs_research": true
+    },
+    {
+     "fact": "Route breakdown describes a different line",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "pitch_detail[1].notes",
+       "says": "ascend main gully/slabs to 3,700 ft basin"
+      },
+      {
+       "field": "pitch_detail[3].notes",
+       "says": "Traverse snow-covered slabs northwest to southeast ridge notch (5,600 ft)"
+      },
+      {
+       "field": "approach",
+       "says": "Reach Headlee Pass at roughly 4,600 ft after about 2.7 miles ... From the pass ... work generally north along and below Morning Star's south ridge"
+      }
+     ],
+     "why": "ROUTE BREAKDOWN describes a gully to a 3,700 ft basin and a southeast-ridge notch, not the trail to Headlee Pass then the south ridge used by every other field.",
+     "internal_resolution": "Headlee Pass/south ridge: approach, approach_variants, climbing_route and itinerary agree.",
+     "needs_research": true
+    },
+    {
+     "fact": "Traverse direction above the pass",
+     "severity": "high",
+     "claims": [
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "Cairned route northeast toward the Mile High Buttress."
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "traverse cairned talus and heather benches below the Mile High Buttress"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "if you have left the trail lower down on open talus, following cairns northeast toward a rock tower, you are on the climbers' traverse to the towers ... not the summit scramble"
+      },
+      {
+       "field": "approach",
+       "says": "work generally north along and below Morning Star's south ridge"
+      }
+     ],
+     "why": "The itinerary sends the party northeast on cairns toward the Mile High Buttress, which the approach variant names as the wrong-route marker.",
+     "internal_resolution": "North along the south ridge: approach, approach_variants and climbing_route agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time equals car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "9"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "11:00 AM"
+      }
+     ],
+     "why": "summitTimeHrs holds the 9-hr car-to-car total while the itinerary summits 5 hrs after a 6:00 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "Full day out (8 hrs total)"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "Roughly 3-4 hrs one-way ... based on the 8-hr round-trip total"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "9"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "9"
+      }
+     ],
+     "why": "Partners tab says 8 hrs while Plan says 9 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Gain vs loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "3670"
+      },
+      {
+       "field": "loss_ft",
+       "says": "3800"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3800"
+      }
+     ],
+     "why": "Out-and-back route lists 3,670 ft gain but 3,800 ft loss, and the itinerary uses 3,800 for gain.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "in Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.land_manager",
+       "says": "— Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.permit",
+       "says": "No wilderness permit or self-issue permit required for day trips."
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "OUTSIDE any wilderness"
+      }
+     ],
+     "why": "Access places the route in Glacier Peak Wilderness while the permit and camp text say it is outside any wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Snow-free month",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "itinerary.cal",
+       "says": "the trail is typically snow-free and brushy June through October"
+      },
+      {
+       "field": "seasonal_guidance.monthBreakdown.June.status",
+       "says": "risky"
+      },
+      {
+       "field": "climate.bySeason.spring",
+       "says": "Deep, unstable snow lingers in the Headlee Pass gully ... into June"
+      }
+     ],
+     "why": "The itinerary calendar calls the trail snow-free from June while season guidance rates June risky for snow.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche forecast zone",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "climate.forecastZone",
+       "says": "NWAC West Slopes North"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "West Slopes Central (NWAC) covers the Mountain Loop Highway/Sunrise Mine area"
+      }
+     ],
+     "why": "Two different NWAC zones named.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Lake name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Lake Elon/Vesper Lake"
+      },
+      {
+       "field": "bivy[1].name",
+       "says": "Vesper Creek basin and Lake Elan, beyond Headlee Pass"
+      }
+     ],
+     "why": "Same lake spelled Elon and Elan.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mile_high_club",
+   "name": "Mile High Club",
+   "area": "Morning Star Peak",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2700"
+      },
+      {
+       "field": "itinerary.days[0].gainFt",
+       "says": "3500"
+      },
+      {
+       "field": "waypoints[0].elev",
+       "says": "2350"
+      },
+      {
+       "field": "high_point_ft",
+       "says": "5280"
+      }
+     ],
+     "why": "gain_ft 2,700 is less than the 2,930 ft between the trailhead and the route's high point, and disagrees with the itinerary's 3,500.",
+     "internal_resolution": "gain_ft 2700 is impossible (below the TH-to-top difference); the itinerary's 3,500 is at least feasible.",
+     "needs_research": true
+    },
+    {
+     "fact": "Leave-trail point (Headlee Pass vs switchback)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "itinerary.days[0].note",
+       "says": "Same Sunrise Mine Trail / Headlee Pass approach as the scramble"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].detail",
+       "says": "Via Headlee Pass approach then cairned talus/heather traverse."
+      },
+      {
+       "field": "approach",
+       "says": "reaches the last major switchback (~4,300 ft) just before the tread begins zig-zagging steeply up toward Headlee Pass. Leave the maintained trail here"
+      },
+      {
+       "field": "approach_variants[0].notes",
+       "says": "That switchback is where you leave the trail; the pass is NOT."
+      }
+     ],
+     "why": "The itinerary routes via Headlee Pass while the approach explicitly says to leave the trail at the switchback, not the pass.",
+     "internal_resolution": "Switchback: approach and approach_variants agree and explicitly reject the pass.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit time equals car-to-car total",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "timing.summitTimeHrs",
+       "says": "12"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      },
+      {
+       "field": "itinerary.days[0].schedule[3].time",
+       "says": "1:00 PM"
+      }
+     ],
+     "why": "summitTimeHrs holds the 12-hr car-to-car total while the itinerary tops out 7 hrs after a 6:00 AM start.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car day length",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "turnaround",
+       "says": "Given the ~8-10 hour car-to-car day"
+      },
+      {
+       "field": "itinerary.days[0].hours",
+       "says": "12"
+      },
+      {
+       "field": "timing.totalHrs",
+       "says": "12"
+      }
+     ],
+     "why": "Turnaround says 8-10 hrs while the itinerary and timing say 12.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Approach time",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "approach",
+       "says": "Plan roughly 1–1.5 hours from the trailhead to the base"
+      },
+      {
+       "field": "itinerary.days[0].schedule[1].time",
+       "says": "8:30 AM (left 6:00 AM)"
+      }
+     ],
+     "why": "Approach says 1-1.5 hrs to the base; the itinerary allows 2.5 hrs.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Rope needed for the rappels",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "descent",
+       "says": "8 single-rope rappels down the route (60m rope minimum)"
+      },
+      {
+       "field": "rappel_count_note",
+       "says": "a single 60 m rope is documented as sufficient for every one of them"
+      },
+      {
+       "field": "descent_text",
+       "says": "A single 70m rope is sufficient for all 8 raps; ... some parties carry a single 60m instead but report tighter/more numerous transitions"
+      },
+      {
+       "field": "rappel_detail[7].notes",
+       "says": "a single 70m rope is sufficient for the whole sequence"
+      }
+     ],
+     "why": "Some fields say a single 60 m suffices; the descent text presents 70 m as the standard and 60 m as a compromise.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Water on approach",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "pro_tips[1]",
+       "says": "The approach gully has a seasonal seep for water — no need to carry extra on the hike in"
+      },
+      {
+       "field": "approach",
+       "says": "A convenient seep ... is the only reliable water on the approach, and only runs through mid-season"
+      }
+     ],
+     "why": "Pro tip says no need to carry water; approach says the seep only runs through mid-season.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Tower name",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "face",
+       "says": "Vegan Tower (subsidiary summit at 5,280')"
+      },
+      {
+       "field": "overview",
+       "says": "southwest arête of Eros Tower (aka Vega North Tower)"
+      }
+     ],
+     "why": "Face names Vegan Tower while overview and approach name Eros/Vega North Tower.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "4.3"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "5.6"
+      }
+     ],
+     "why": "dist_km (2.7 mi) looks one-way while the itinerary gives 5.6 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pilchuck_east_ridge",
+   "name": "East Ridge (Iodine Gulch – Bathtub Lakes)",
+   "area": "Mount Pilchuck",
+   "contradictions": [
+    {
+     "fact": "Ranger district",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.landManager",
+       "says": "Mount Baker-Snoqualmie National Forest (Skykomish Ranger District)"
+      },
+      {
+       "field": "emergency.rangerStation",
+       "says": "Verlot Public Service Center"
+      }
+     ],
+     "why": "Access names Skykomish Ranger District while emergency points to Verlot (Darrington district), as does the neighbouring standard route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "10 miles round trip, 2,800 ft gain"
+      },
+      {
+       "field": "dist_km",
+       "says": "8"
+      }
+     ],
+     "why": "dist_km 8 (5 mi) versus 10 mi round trip in beta; likely one-way vs round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pilchuck_standard_route",
+   "name": "Mount Pilchuck Trail (Standard Route)",
+   "area": "Mount Pilchuck",
+   "contradictions": [
+    {
+     "fact": "Wilderness",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "access.rules",
+       "says": "Group size capped at 12 ... inside Glacier Peak Wilderness"
+      },
+      {
+       "field": "access.overnight_permit.where",
+       "says": "there is no wilderness permit for this route"
+      },
+      {
+       "field": "access.landManager",
+       "says": "the upper trail and summit lie within Mount Pilchuck State Park"
+      }
+     ],
+     "why": "Access rules cite Glacier Peak Wilderness for a route that is on NF/State Park land with no wilderness permit.",
+     "internal_resolution": "Not wilderness: landManager and overnight_permit agree; access.rules is a generic carry-over.",
+     "needs_research": false
+    },
+    {
+     "fact": "Gain vs loss",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "gain_ft",
+       "says": "2300"
+      },
+      {
+       "field": "loss_ft",
+       "says": "2200"
+      }
+     ],
+     "why": "Out-and-back route lists different gain and loss.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pugh_pika_slab",
+   "name": "Pika Slab",
+   "area": "Mount Pugh",
+   "contradictions": [
+    {
+     "fact": "First ascent / location published",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "Detailed pitch-by-pitch beta, first-ascent info, and exact location are not published."
+      },
+      {
+       "field": "fa",
+       "says": "Leland Windham, July 2023"
+      },
+      {
+       "field": "approach",
+       "says": "the Pika Slab crag band is on the heather slopes immediately above the trail between that step and the summit"
+      }
+     ],
+     "why": "Beta says FA and location are unpublished while fa and approach give both.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_pugh_stujack",
+   "name": "Stujack Pass + Summit Scramble",
+   "area": "Mount Pugh",
+   "contradictions": [
+    {
+     "fact": "Season window",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "season",
+       "says": "Jul-Sep"
+      },
+      {
+       "field": "best_season",
+       "says": "mid-July through October"
+      },
+      {
+       "field": "seasonal_guidance.optimalWindow",
+       "says": "Mid-July through October"
+      },
+      {
+       "field": "approach_variants[0].season",
+       "says": "Roughly mid-Jul-Oct"
+      }
+     ],
+     "why": "The season chip ends in September while best_season, seasonal guidance and approach variants run through October.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Wilderness permit",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "permit",
+       "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead"
+      },
+      {
+       "field": "access.permit",
+       "says": "None required"
+      },
+      {
+       "field": "access.overnight_permit.what",
+       "says": "No overnight permit required"
+      },
+      {
+       "field": "bivy[0].permit",
+       "says": "No self-issue permit at the road."
+      },
+      {
+       "field": "bivy[2].permit",
+       "says": "so does the free self-issue permit from the trailhead box"
+      }
+     ],
+     "why": "Fields disagree on whether a self-issue wilderness permit is required and whether it is at the trailhead.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "FR-2095 winter status",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "road.seasonalGate",
+       "says": "FR-2095 itself is gated Oct 16–Jun 1 for wildlife protection"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "stays open through the year to the seasonal gate further south, which puts this trailhead on the right side of the winter closure"
+      }
+     ],
+     "why": "The road field says the spur is gated Oct 16-Jun 1 while the camp note says the trailhead is reachable all year.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where the wilderness begins",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "overview",
+       "says": "follows Mt. Pugh Trail #644 through the Glacier Peak Wilderness past Lake Metan to Stujack Pass"
+      },
+      {
+       "field": "bivy[1].permit",
+       "says": "National forest outside designated wilderness at this elevation"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].detail",
+       "says": "Reach Stujack Pass ... enter Glacier Peak Wilderness."
+      }
+     ],
+     "why": "Overview puts the lower trail and Lake Metan in the wilderness; other fields say it begins at Stujack Pass.",
+     "internal_resolution": "Stujack Pass: itinerary, access.rules, approach_variants and bivy agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "7.2"
+      },
+      {
+       "field": "beta",
+       "says": "roughly 5.2 miles one-way"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "11"
+      },
+      {
+       "field": "bivy[2].notes",
+       "says": "From the saddle the remaining mile and a half of ridge"
+      }
+     ],
+     "why": "dist_km (4.5 mi) equals the distance to Stujack Pass only; other fields give 5.2-6 mi one-way or 11 mi round trip.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Gain and time to Stujack Pass",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "partner_requirements.fitnessSpec.hiking",
+       "says": "sustain ~5,300 ft gain over ~5-5.5 miles one-way to the pass"
+      },
+      {
+       "field": "partner_requirements.approachTime",
+       "says": "4-6 hours to Stujack Pass"
+      },
+      {
+       "field": "itinerary.days[0].schedule[2].time",
+       "says": "+3.5 hr"
+      },
+      {
+       "field": "waypoints (pass)",
+       "says": "Stujack Pass ~5,700 ft from a 1,900 ft trailhead"
+      }
+     ],
+     "why": "Partners puts all 5,300 ft of gain and 4-6 hrs below the pass; the pass is ~3,800 ft and 3.5 hrs up per the itinerary.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Avalanche season",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.avalanche.zone",
+       "says": "route is climbed outside avalanche season"
+      },
+      {
+       "field": "seasonal_hazards.avalanche.byMonth.June",
+       "says": "Considerable"
+      }
+     ],
+     "why": "The zone says the route is out of avalanche season while June is rated Considerable.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Crossing the snowfield/glacier remnant",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "seasonal_hazards.crevasses",
+       "says": "route passes near a small glacier remnant below the ridge but does not cross it"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "crosses the head of a small permanent snowfield"
+      }
+     ],
+     "why": "Safety says the route does not cross the remnant; the approach says it crosses the snowfield's head.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "name": "Southeast Slopes",
+   "area": "Mount Saul",
+   "contradictions": [
+    {
+     "fact": "Leave-trail distance",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "waypoints[2].distMi",
+       "says": "3"
+      },
+      {
+       "field": "itinerary.days[0].note",
+       "says": "follow the flat Indian Creek Trail for 4.5 easy miles, then turn off"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "It leaves the Indian Creek trail at about four and a half miles"
+      },
+      {
+       "field": "waypoints[4].distMi",
+       "says": "4.5 (Airplane Lake)"
+      },
+      {
+       "field": "itinerary.days[0].miles",
+       "says": "6"
+      }
+     ],
+     "why": "The waypoints put the turnoff at 3 mi and the lake at 4.5 mi, while the itinerary and camp put the turnoff at 4.5 mi and the lake at 6 mi.",
+     "internal_resolution": "4.5 mi turnoff: itinerary, bivy and approach ('roughly 4.5-6 miles') agree; the waypoint distances are the outlier.",
+     "needs_research": true
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "dist_km",
+       "says": "12.5"
+      },
+      {
+       "field": "waypoints[6].distMi",
+       "says": "6"
+      },
+      {
+       "field": "approach",
+       "says": "Round trip is roughly 16 miles"
+      },
+      {
+       "field": "itinerary.days",
+       "says": "6 + 9 = 15 mi"
+      }
+     ],
+     "why": "dist_km (7.8 mi) matches neither the 12-mi waypoint round trip nor the 15-16 mi itinerary/approach.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Summit line (SE ridge saddle vs east face)",
+     "severity": "medium",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "climbs steeply past Airplane Lake to a saddle on the peak's southeast ridge"
+      },
+      {
+       "field": "approach_variants[0].baseFinding",
+       "says": "The one to aim for is the direct ascent of the clean upper east-face slabs"
+      },
+      {
+       "field": "itinerary.days[1].note",
+       "says": "beeline toward the low point on the ridge east of the summit, then follow the ridge crest"
+      },
+      {
+       "field": "crowds.estimatePerSeason",
+       "says": "both describing the East Slope/East Face approach via Airplane Lake rather than this Southeast Slopes line specifically"
+      }
+     ],
+     "why": "Beta, approach_variants and itinerary each describe a different final line, and crowds says the sources are not this route.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Where parties camp",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "beta",
+       "says": "or as an overnight with a camp along Indian Creek"
+      },
+      {
+       "field": "itinerary.totalNote",
+       "says": "~6 mi/3,400 ft in to a camp at Airplane Lake"
+      },
+      {
+       "field": "bivy[0].notes",
+       "says": "This is the camp for Mount Saul and effectively the only one"
+      }
+     ],
+     "why": "Beta puts the overnight on Indian Creek while the itinerary and camps put it at Airplane Lake.",
+     "internal_resolution": "Airplane Lake: itinerary, bivy and timing agree.",
+     "needs_research": false
+    },
+    {
+     "fact": "Exposure / class",
+     "severity": "low",
+     "claims": [
+      {
+       "field": "grade",
+       "says": "Class 3"
+      },
+      {
+       "field": "seasonal_hazards.exposure",
+       "says": "Low-to-moderate fall exposure typical of sustained Class 2 talus/scree"
+      },
+      {
+       "field": "waypoints[6].note",
+       "says": "a short exposed Class 3 rock scramble"
+      }
+     ],
+     "why": "Safety describes Class 2 talus with little exposure while the grade and summit note describe exposed Class 3.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}
