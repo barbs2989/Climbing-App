@@ -27855,3 +27855,89 @@ issue noted in batches 339 and 340); rephrased it and re-ran clean (7 write targ
 statements, all ids live, no DELETE statements), aside from the routine paste-size WARN on
 this file's length (7.6 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before
 pasting into the SQL Editor.
+
+## 2026-09-25 — Pass 6, Batch 342
+
+Audited (next 8 alphabetically after batch 341, index 375→382 of 701 in-scope):
+`wa_mount_daniel_lynch_glacier`, `wa_mount_deception_standard`,
+`wa_mount_degenhardt_southwest_route`, `wa_mount_despair_east_route`,
+`wa_mount_despair_northeast_buttress`, `wa_mount_ellinor_standard`,
+`wa_mount_fairchild_standard`, `wa_mount_fernow_southeast_face`.
+
+Two research agents ran in parallel: one on Daniel/Deception/Degenhardt, one on
+Despair/Ellinor/Fairchild/Fernow. WebFetch was egress-blocked this run for
+en.wikipedia.org, recreation.gov, AAC Publications, summitpost.org, fs.usda.gov, and
+kiddle.co (consistent with — and extending — the block list from prior batches); every
+finding below rests on WebSearch snippet synthesis, not a direct primary-source fetch.
+
+**Confirmed errors fixed — 3, see the SQL file for exact old/new values and sources:**
+- `wa_mount_deception_standard`'s "Mount Deception" summit waypoint carried a stale
+  7,786 ft in both `elev` and `elevFt`, while the row's own `overview` text and
+  `high_point_ft` column already said 7,788 ft — external sources (Wikipedia,
+  olympicpeninsula.org) agree on 7,788 ft, so the waypoint was the outlier and is now
+  corrected to match.
+- `wa_mount_deception_standard.access.parking_pass` named a "Quilcene Ranger District" —
+  Olympic National Forest's org structure has only Pacific and Hood Canal ranger
+  districts; Quilcene is the Hood Canal district's office town, not a district name.
+  Corrected to "Hood Canal Ranger District," matching this same row's own
+  `access.landManager` and `emergency.rangerStation` fields, which already said so.
+- `wa_mount_despair_east_route.access.passRequired` claimed no parking pass was needed
+  because the Thornton Lakes Trailhead "lies inside North Cascades National Park" — the
+  trailhead actually sits on Mt. Baker-Snoqualmie National Forest land (multiple
+  independent trip-report sources confirm a Northwest Forest Pass is required there),
+  and the trail doesn't cross into NCNP until roughly mile 4. This also contradicted the
+  row's own `waypoints[0].note` for the same trailhead, which already correctly
+  mentioned needing a Northwest Forest Pass.
+
+**Flagged for human review (not fixed) — 9 items:**
+- `wa_mount_daniel_lynch_glacier`'s `bivy` fire-closure dates are time-sensitive and
+  couldn't be independently reconfirmed this pass.
+- `wa_mount_deception_standard`'s exact current NPS wilderness fee schedule (a possible
+  additional $8/person/night fee beyond the $6 reservation fee) and an
+  `emergency.county` claim splitting Clallam vs. Jefferson County at the trailhead —
+  neither confirmable without nps.gov/recreation.gov access, both blocked this run.
+- `wa_mount_degenhardt_southwest_route`: external sources describing what looks like
+  this exact line (slot → north ridge → face → west ridge → south ridge) call it the
+  "Corkscrew Route," not "Southwest Route" — this row's own `rope_note` dismissing the
+  Corkscrew name as a separate, better-known line may have it backwards. Its 5.6 crux
+  grade also remains unconfirmed (row's own `gear_confidence` already flags it as
+  inferred). Separately: this route is in the North Cascades' Southern Pickets, not an
+  Olympics satellite of Mount Deception — this batch grouped the two by name-string
+  similarity only; noting so the mistaken geography isn't propagated later.
+- `wa_mount_despair_northeast_buttress`'s "North Summit" waypoint shares identical
+  coordinates with the sibling East Route's main-summit waypoint on what the row's own
+  text describes as a twin-summited peak — no source found gives separate coordinates
+  for Despair's two summits to confirm or deny this.
+- `wa_mount_fairchild_standard`'s FA climber names (year 1963 confirmed, the four
+  individual names not independently corroborated), and more seriously, its `timing`
+  and `itinerary` JSON blocks describe an entirely different approach — Whiskey
+  Bend/Elwha River Trail/Long Ridge/Fitzhenry — that doesn't match this row's own
+  `approach`/`waypoints`/`gpx`/`descent_text` (all consistently Sol Duc/Appleton
+  Pass/Catwalk/Carrie/Fairchild Glacier) and closely matches a published route
+  description for the neighboring Mount Fitzhenry. This looks like cross-route
+  contamination from enrichment, not a simple value swap — needs a re-enrichment pass,
+  left unfixed here.
+- `wa_mount_fernow_southeast_face`'s `dist_km` (8 km / ~5 mi) appears to be one-way
+  mileage to Leroy Basin rather than the full round trip — the row's own
+  `itinerary.totalNote` states a ~17.5 mi round trip. This is the same `dist_km`
+  dual-convention issue `docs/codebase/route-identity.md` warns must not be bulk-fixed;
+  flagged as a targeted, individually-verified candidate rather than patched here.
+
+**Checked and confirmed correct, not touched:** `wa_mount_daniel_lynch_glacier`'s summit
+elevation/coordinates and 1925 Mountaineers FA; `wa_mount_ellinor_standard` in full
+(elevation, 1879 FA, coordinates, gain, NW Forest Pass fee, Hood Canal Ranger District
+contact info); `wa_mount_fernow_southeast_face`'s elevation, coordinates, 1932 FA, route
+description, and its already-current Chiwawa River Road FR 6200 closure text (storm
+damage, effective through Dec 2027 — confirmed still accurate today); and
+`wa_mount_despair_northeast_buttress`'s FA (Wehrly/Larson, 2014), name, grade, length,
+and descent, all independently confirmed against an AAC Publications article
+(reached via WebSearch snippet only).
+
+`last_processed_id` advanced to `wa_mount_fernow_southeast_face`; re-counted scope this
+batch: 701 in-scope routes (down 1 from 702 last count), 318 remain unaudited this pass.
+No `.env`/`.env.local` present at run start (fresh clone); created `.env.local` with only
+the read-only anon key to run `check:sql` (no service key used or present — no writes were
+made). `check:sql` ran clean on the first pass (3 write targets across 4 statements, all
+ids live, no DELETE statements), aside from the routine paste-size WARN on this file's
+length (4.5 KB against the 4 KB soft limit) — split into ~1.5 KB chunks before pasting into
+the SQL Editor.
