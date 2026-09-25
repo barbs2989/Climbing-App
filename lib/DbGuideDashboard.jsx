@@ -11,6 +11,7 @@ import {
   updateInquiryStatus, postGuideReply, reconcileGuideVerification,
   isGuideVerified, guideProfileMissingCopy, CERT_TRACK_LABELS,
 } from "./db";
+import { POP_BACK } from "./popupChrome.js";
 
 const SECTIONS = [["credentials", "Credentials"], ["inquiries", "Inquiries"], ["reviews", "Reviews"], ["profile", "Profile"]];
 const DAYS_TO_EXPIRY_WARNING = 60;
@@ -91,13 +92,13 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
 
   if (!session) {
     return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
-      <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+      <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
       <div style={{ marginTop: 40, textAlign: "center", color: C.textSub, fontSize: 14 }}>Sign in with a real account to view your guide dashboard.</div>
     </div>, document.body);
   }
   if (!profile) {
     return createPortal(<div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, padding: 16 ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
-      <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+      <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
       {/* Says where to apply, because this screen is reachable in exactly this state and had no
           way out of it. Settings offers a guide-dashboard button unconditionally, directly under
           "Become a guide", so a climber who has not applied lands here on a screen that states
@@ -115,7 +116,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
     <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
-          <button onClick={onClose} style={{ background: C.card, border: "1px solid " + C.border, color: C.text, borderRadius: 8, padding: "9px 11px", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>{"← Back"}</button>
+          <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
           <div><div style={{ fontSize: 15, fontWeight: 700 }}>Guide dashboard</div><div style={{ fontSize: 12, color: C.textSub }}>{"Status: " + profile.status + (newInquiries ? " · " + newInquiries + " new inquiries" : "")}</div></div>
         </div>
         <div style={{ display: "flex", gap: 6, overflowX: "auto" }}>{SECTIONS.map(x => { const on = section === x[0]; return <button key={x[0]} onClick={() => setSection(x[0])} aria-current={on?"true":undefined} style={{ flexShrink: 0, padding: "6px 12px", borderRadius: 16, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>{x[1]}</button>; })}</div>
