@@ -1,0 +1,543 @@
+{
+ "applied": [
+  {
+   "id": "wa_southeast_face",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Boston Basin backcountry permit cost"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "Boston Basin backcountry permit cost"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "pitch_detail",
+   "path": [
+    0,
+    "grade"
+   ],
+   "fact": "crux pitch grade vs headline route grade"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "crux pitch grade vs headline route grade"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "crux pitch grade vs headline route grade"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "crux pitch grade vs headline route grade"
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "class"
+   ],
+   "fact": "crux pitch grade vs headline route grade"
+  },
+  {
+   "id": "wa_sitkum_spire_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "White Chuck River trail described as maintained"
+  },
+  {
+   "id": "wa_sitkum_spire_standard",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "White Chuck River trail described as maintained"
+  },
+  {
+   "id": "wa_sitkum_spire_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "White Chuck River trail described as maintained"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "grade"
+   ],
+   "fact": "Crux pitch grade vs. stated route grade"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "overview",
+   "path": [],
+   "fact": "Crux pitch grade vs. stated route grade"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Crux pitch grade vs. stated route grade"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "route name in the itinerary schedule and objective"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "route name in the itinerary schedule and objective"
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "rappels",
+   "path": [],
+   "fact": "Number of rappels on the descent"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_southeast_face",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Backcountry overnight permit required; Boston Basin extremely popular, permits limited",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+      "special_hazards": "Alpine weather, glacier exposure, rockfall, very high demand limiting availability, mountaineering experience helpful",
+      "wilderness_zone": "North Cascades National Park (Boston Basin area)",
+      "group_size_limits": "4-12 people depending on specific campsite",
+      "seasonal_closures": "State Route 20 mid-November to mid-April; Boston Basin permits frequently unavailable mid-summer on weekends",
+      "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October); phone: (360) 873-4500",
+      "altitude_restrictions": "Boston Basin camps at 5,300 ft (low) and 6,400 ft (high)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+      "permit_pickup_location": "Wilderness Information Center, Marblemount, WA or in-person walk-up at Marblemount office"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit required; Boston Basin extremely popular, permits limited",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park (Boston Basin area)",
+     "group_limit": 12,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_sharkfin_tower_southeast_ridge",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Backcountry overnight permit required; Boston Basin extremely popular, permits limited",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+      "special_hazards": "Alpine weather, glacier exposure, rockfall, very high demand limiting availability, mountaineering experience helpful",
+      "wilderness_zone": "North Cascades National Park (Boston Basin area)",
+      "group_size_limits": "4-12 people depending on specific campsite",
+      "seasonal_closures": "State Route 20 mid-November to mid-April; Boston Basin permits frequently unavailable mid-summer on weekends",
+      "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October); phone: (360) 854-7245",
+      "altitude_restrictions": "Boston Basin camps at 5,300 ft (low) and 6,400 ft (high)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $30 annual) or Interagency Pass",
+      "permit_pickup_location": "Wilderness Information Center, Marblemount, WA or in-person walk-up at Marblemount office"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 12 in the Boston Basin/Eldorado/Sulphide Glacier high-occupancy cross-country zones and on-trail corridors (6 in other cross-country zones). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit required; Boston Basin extremely popular, permits limited",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park (Boston Basin area)",
+     "group_limit": 12,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "None — there are no trailhead or parking fees for trails that begin on National Park Service land, and there is no fee to enter the North Cascades National Park Service Complex.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+      "what": "North Cascades NP wilderness permit, quota, not free",
+      "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+     }
+    },
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Skirts the ridge on its climber's-right side across large blocks, then follows a short dihedral to the crest for the belay, onto the north face before reaching the notch at the base of the steep south-facing ridge; solid, featured granite throughout.",
+      "pitch": 1,
+      "anchor": "Gear (block/horn)",
+      "lengthM": 30
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Continues up the exposed crest on solid rock with good gear, staying a few feet left of the crest; passes an old fixed rappel anchor about 30 ft below where the ridge steepens into a layback. Published descriptions call it 5.4/5.0+ but several parties feel it climbs harder and more awkward than the route's nominal grade, making it the pitch most people remember.",
+      "pitch": 2,
+      "anchor": "Gear (near an old fixed rap anchor)",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.2",
+      "notes": "Combines the route's final rope-lengths: moderate class-4/low-5th climbing at or just right of the crest through the summit blocks, finishing with a few reachy, exposed moves to the small, airy summit (8,120 ft) with views into the Ptarmigan Traverse country.",
+      "pitch": 3,
+      "anchor": "Walk-off (no belay)",
+      "lengthM": 30
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "5.0",
+      "label": "Notch to the ridge crest",
+      "notes": "From the notch at the top of the approach gully, skirt the ridge on climber's right over large blocks, then take a dihedral for a couple of moves back up to the crest and belay. The granite here is solid — the tower is regarded as some of the best rock in the state — and the pitch protects well with a light alpine rack. The blocks at the start are the loosest thing on the route and sit directly above anyone still in the gully."
+     },
+     {
+      "n": 2,
+      "class": "5.4",
+      "label": "Exposed crest pitch",
+      "notes": "The crux, following the ridge proper on clean rock with good gear. Sources split on the grade: the route is often given 5.0 overall but this pitch is commonly felt to be nearer 5.4, largely because of how exposed it is rather than how hard the moves are. A weakness slightly left of the crest offers the same difficulty with less air under your feet if the position is unwelcome."
+     },
+     {
+      "n": 3,
+      "class": "4th-low 5th",
+      "label": "Upper crest to the summit",
+      "notes": "Scramble at or just right of the crest to the summit on continued solid rock. Exposure increases toward the top while the climbing eases. Descent reverses the route with some downclimbing plus several rappels; fixed tat and rings exist at various stances but are of unknown age and blocky terrain means anchor choice matters — a 2005 accident on this peak involved a rappel anchor failure after a party had already committed to the wrong gully on approach, so build or back up your own anchors rather than trusting what is there."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_sitkum_spire_standard",
+   "before": {
+    "itinerary": {
+     "cal": "FS Road 23 (White Chuck River Road) has an active washout closure near MP 3.7-4 (in effect through at least Dec 2025, per Mt. Baker-Snoqualmie NF alerts) that adds extra road-walking miles beyond the standard trailhead distances used above — check current NF alerts before you go and budget a long exit day or a 4th buffer day.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the maintained trail from the White Chuck River Trailhead past Kennedy Hot Springs, then pick up the steep climbers' path that leaves the PCT and switchbacks up forest and heather slopes to Boulder Basin (~6,000-6,500 ft), the standard base camp with flat sites and running water.",
+       "hours": 6.5,
+       "miles": 9.5,
+       "title": "Approach to Boulder Basin",
+       "gainFt": 4300,
+       "lossFt": 200,
+       "packLb": 42,
+       "schedule": [],
+       "objective": "Establish high camp at Boulder Basin"
+      },
+      {
+       "n": 2,
+       "note": "An alpine start to rope up and cross the Sitkum Glacier while it's firm, threading between crevasse bands on the lower and upper glacier to reach the saddle just east of Sitkum Spire, then a short class 2/3 pumice-ridge scramble to the summit before retracing the same line back to camp.",
+       "hours": 9,
+       "miles": 6,
+       "title": "Glacier climb to the saddle and Sitkum Spire",
+       "gainFt": 3400,
+       "lossFt": 3400,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "2:00-2:30 AM",
+         "label": "Leave Boulder Basin camp",
+         "detail": "Rope up for glacier travel before first light while the snow is firm."
+        },
+        {
+         "time": "~4:30 AM",
+         "label": "Gain the Sitkum Glacier proper",
+         "detail": "Weave around crevasse bands; route-finding shifts through the season."
+        },
+        {
+         "time": "~7:30 AM",
+         "label": "Reach the saddle (~9,500 ft)",
+         "detail": "East of Sitkum Spire, separating the Sitkum and Scimitar Glaciers."
+        },
+        {
+         "time": "~8:00-8:30 AM",
+         "label": "Summit Sitkum Spire",
+         "detail": "Short class 2/3 scramble up the pumice ridge from the saddle."
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Begin descent",
+         "detail": "Retrace the glacier route while snow is still supportive."
+        },
+        {
+         "time": "~1:00-2:00 PM",
+         "label": "Back at Boulder Basin camp",
+         "detail": "Typical round trip from camp is 8-11 hours depending on party size and conditions."
+        }
+       ],
+       "objective": "Climb the Sitkum Glacier to the ~9,500 ft saddle and tag Sitkum Spire"
+      },
+      {
+       "n": 3,
+       "note": "Retrace the climbers' path and trail back down to the White Chuck River Trailhead. Treat this as a long day, especially given the current FR 23 washout, which adds extra road-walking miles beyond the standard trailhead distance used above.",
+       "hours": 6,
+       "miles": 9.5,
+       "title": "Hike out",
+       "gainFt": 200,
+       "lossFt": 4300,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Break camp and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day, roughly 25-mile round trip from the White Chuck River Trailhead: hike in to Boulder Basin, an alpine-start glacier climb to the ~9,500 ft saddle and Sitkum Spire, then hike out — most parties treat the exit as a long day (or add a 4th buffer day) given the current road washout."
+    },
+    "timing": {
+     "totalHrs": 21.5,
+     "summitTimeHrs": 9,
+     "descentTimeHrs": 6,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "2:00-2:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Hike the maintained trail from the White Chuck River Trailhead past Kennedy Hot Springs, then pick up the steep climbers' path that leaves the PCT and switchbacks up forest and hea…",
+       "fromTo": "Approach to Boulder Basin",
+       "section": "Approach"
+      },
+      {
+       "hrs": 9,
+       "note": "An alpine start to rope up and cross the Sitkum Glacier while it's firm, threading between crevasse bands on the lower and upper glacier to reach the saddle just east of Sitkum Spi…",
+       "fromTo": "Glacier climb to the saddle and Sitkum Spire",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6,
+       "note": "Retrace the climbers' path and trail back down to the White Chuck River Trailhead. Treat this as a long day, especially given the current FR 23 washout, which adds extra road-walki…",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "approach": "The White Chuck approach described below is effectively gone: White Chuck River Trail #643 has been listed as inaccessible since the 2003 flood, and the White Chuck Road (FR 23) is closed to vehicles at milepost 3.7, about 5 miles of old roadbed short of the old trailhead, beyond which the valley is unmaintained travel with a river ford. Parties now come in from the North Fork Sauk River Trailhead instead, climbing to the Pacific Crest Trail at White Pass and following it north over Red Pass to the Sitkum Creek junction. From the White Chuck River Trailhead (end of FR 23, ~2,300 ft, reached from Darrington), follow White Chuck River Trail #643 up-valley through old-growth and second-growth forest along the White Chuck River. There are several tributary creek crossings (some bridged, some not) in the first few miles — treat them with caution in early season or after rain. At roughly 5.5-6 miles you reach the site of the old Kennedy Hot Springs / Kennedy Guard Station (~3,300 ft); the springs themselves were largely buried by debris in the 2003 flood and there are no facilities, but it remains a natural rest/camp point. Continue about 1.5 miles farther, fording Sitkum Creek, to the junction with the Pacific Crest Trail (~3,850 ft) — this crossing can run high with snowmelt in June/July. At the PCT junction, look for a cairn marking the start of the unmaintained but well-trodden 'Sitkum Trail' climbers' path, which switchbacks steeply east up a forested-to-heather ridge, gaining roughly 1,800 ft in a little over a mile, to the campsites of Boulder Basin (~5,700 ft) — the standard base camp, with reliable water from snowmelt tarns and streams through midsummer. Total distance to Boulder Basin is roughly 9-11 miles with 4,000-4,500 ft of gain. From Boulder Basin the route goes cross-country and onto glacier: head southeast onto the toe of the Sitkum Glacier, staying in the corridor left (north) of the rock rib/icefall that splits the lower glacier, then trend northeast up-glacier to a broad saddle at approximately 9,500 ft immediately east of Sitkum Spire. The upper Sitkum Glacier carries real crevasse hazard in both its lower and upper sections — rope up for glacier travel, carry standard crevasse-rescue gear, and expect more open crevasses by late summer. From the saddle, a short, loose pumice-and-rock ridge scramble (class 2-3 with a class 3-4 step near the top) leads to the summit block of Sitkum Spire itself. Route-finding on the broad, featureless summit plateau and glacier can be tricky in flat light or whiteout — a GPS track or careful compass bearing is worthwhile. Note separately that FR 23 access to the White Chuck River Trailhead has a history of washouts/closures (2003 flood, and more recent 2025 flood damage) and should be checked for current status before relying on this approach."
+   }
+  },
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "From the high notch on the west ridge, climb a distinctive black-and-white mottled face (an FA-era account calls out a light-colored 'white column'/'brow' feature on this part of the tower) on rock that is surprisingly solid for this peak; low 5th class with deliberately placed, sparse gear, ending at a blocky horn rigged for rappel.",
+      "pitch": 1,
+      "anchor": "Slung horn",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "The route's technical crux: roughly 130-140 ft trending up and right past a white rock brow, curving left then back right above it. Exposure is sustained and the rock disconcertingly loose in spots, so protection is spaced and deliberate; the pitch ends at a solid horn anchor.",
+      "pitch": 2,
+      "anchor": "Slung horn",
+      "lengthM": 40
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "A blocky, loose rib leads up and across the summit ridge to the true summit; mostly class 3-4 scrambling but kept roped for the exposure, consistent with Beckey's own warning that anything harder than 5.5 here means you're off route.",
+      "pitch": 3,
+      "anchor": "Gear",
+      "lengthM": 25
+     }
+    ],
+    "overview": "Southeast Mox Peak (\"Hard Mox,\" 8,504 ft) is the true, higher summit of the Twin Spires and is generally regarded as the hardest peak on Washington's Bulger List (100 highest summits) and one of the state's \"Difficult Ten.\" This standard route climbs from the Col of the Wild — the notch separating Hard Mox from Northwest/Easy Mox — over the Ridge of Gendarmes and up a loose gully system to a notch on the peak's west side, then three roped pitches (5.5-5.6, easing to sparse-pro Class 4 near the top) to the summit. The peak's own west-ridge line was first climbed in 1941 by a Fred Beckey party; that route saw its first winter ascent in December 2023 (Eric Gilbertson and Nick Roy, 5 pitches WI2 M5 with rime-covered rock, ~18-hour summit push).",
+    "waypoints": [
+     {
+      "lat": 49.033,
+      "lng": -121.4025,
+      "elev": 2350,
+      "name": "Depot Creek Road parking / trailhead",
+      "note": "\"Standard Depot Creek/Chilliwack Lake Road (Canada) trailhead for Mox Peaks/Redoubt approaches, via Depot Creek Falls and Ouzel Lake.\"",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "This trailhead is on the Canadian side of the border: follow Chilliwack Lake Road in BC to the abandoned logging spur at Depot Creek, where the parking sits at roughly 2,350 ft. From there the approach walks the old roadway grade, taking the left-hand fork, about a mile to the Monument 65 border marker, where you cross into North Cascades National Park and should sign in at the wilderness-permit kiosk."
+     },
+     {
+      "lat": 49.0009153,
+      "lng": -121.3348472,
+      "elev": 2850,
+      "name": "Monument 65 (US-Canada border)",
+      "note": "Border obelisk and North Cascades NP trail register/kiosk in old growth ~200 yd past the parking intersection; register for backcountry entry here.",
+      "type": "Junction",
+      "distMi": 1.2
+     },
+     {
+      "lat": 48.977306,
+      "lng": -121.284785,
+      "elev": 4760,
+      "name": "Depot Creek Falls handline/cable step",
+      "note": "Class 3 scramble past a ~967-ft waterfall on wet, slippery rock; an old cable/handline aids a steep, misty 8-ft rock step.",
+      "type": "Hazard",
+      "distMi": 4.5
+     },
+     {
+      "lat": 48.96444,
+      "lng": -121.26472,
+      "elev": 5700,
+      "name": "Ouzel Lake camp",
+      "note": "Flat sandy/gravelly moraine benches above the lake outlet; established high-camp for Chilliwack-range climbs, ~9+ hrs / 3,550 ft above the cars.",
+      "type": "Campsite",
+      "distMi": 6.2
+     },
+     {
+      "lat": 48.95682248780488,
+      "lng": -121.26132985365854,
+      "elev": 7150,
+      "name": "Redoubt Glacier saddle / high camp",
+      "note": "Broken buttress SW of Ouzel Lake tops out on rock outcrops at this glacier-edge saddle; rope up here for crevassed glacier travel, visibility often poor.",
+      "type": "Junction",
+      "distMi": 8
+     },
+     {
+      "lat": 48.95047456097561,
+      "lng": -121.25850473170732,
+      "elev": 8200,
+      "name": "Col of the Wild",
+      "note": "Contour ~2 mi of moderately steep snow on the Redoubt Glacier to this col between the Mox Peaks; final ~100 ft is loose talus over sand.",
+      "type": "Hazard",
+      "distMi": 9.5
+     },
+     {
+      "lat": 48.94835858536585,
+      "lng": -121.25756302439024,
+      "elev": 8300,
+      "name": "Gendarme notch below SE Mox",
+      "note": "Class 2-3 ledges and a Class 4 headwall gain the high notch on the west side of the summit tower; rock is notably loose with high exposure.",
+      "type": "Hazard",
+      "distMi": 10
+     },
+     {
+      "lat": 48.947089,
+      "lng": -121.256998,
+      "elev": 8504,
+      "name": "Southeast Mox Peak (Hard Mox) summit",
+      "note": "Three 5.6 pitches (mostly Class 3-4 on the final pitch) above the notch to the true summit; descend by downclimbing/short-rappelling back to the notch.",
+      "type": "Summit",
+      "distMi": 10.3
+     }
+    ],
+    "itinerary": {
+     "cal": "The Ross Lake water taxi to Little Beaver only runs 8 AM-5 PM and must be booked in advance; a North Cascades NP backcountry permit is required for the overnight bivy.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A Ross Lake water taxi crosses the lake to the Little Beaver dock, then it's a steep, brushy climb up the Perry Creek drainage to a bivy site around 5,000 ft, set up for an alpine-start summit day.",
+       "hours": 13,
+       "miles": 8,
+       "title": "Boat taxi + hike to a high bivy",
+       "gainFt": 3400,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach a bivy around 5,000 ft below the peak"
+      },
+      {
+       "n": 2,
+       "note": "A 3:30 AM alpine start crosses talus and scree to an upper snowfield, then three pitches of Class 5 rock through the notch lead to the summit tower. The route is reversed with rappels, followed by a long hike and boat ride back to the car — all in one huge day.",
+       "hours": 19,
+       "miles": 14,
+       "title": "Alpine start, summit, rappel, and boat out",
+       "gainFt": 3500,
+       "lossFt": 6900,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "3:30 AM",
+         "label": "Leave the bivy",
+         "detail": "Navigate talus and scree by headlamp."
+        },
+        {
+         "time": "~7:00 AM",
+         "label": "Reach the upper snowfield",
+         "detail": "Rope up and switch to crampons for the approach to the summit notch."
+        },
+        {
+         "time": "~9:30 AM",
+         "label": "Summit",
+         "detail": "Top out the Southeast Rib (Class 5, 3 pitches) at 8,504 ft."
+        },
+        {
+         "time": "10:00 AM",
+         "label": "Begin rappel descent",
+         "detail": "Reverse the route with rappels back toward the bivy."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at the bivy",
+         "detail": "Break camp and start the long hike out."
+        },
+        {
+         "time": "8:00 PM",
+         "label": "Depart by boat",
+         "detail": "Water taxi back across the lake; arrive at the car around 10:30 PM."
+        }
+       ],
+       "objective": "Climb the Southeast Rib and return to the car the same day"
+      }
+     ],
+     "totalNote": "A fast, technical 2-day trip for a fit, competent party: hike/boat in and bivy around 5,000 ft on day one, then a massive ~19-hour summit-and-out day two (3:30 AM alpine start to a roughly 10:30 PM return to the car)."
+    },
+    "rappels": "3 single-rope rappels from the summit, plus 6-7 improvised rappels/lowers (slung rock horns, knotted runners in cracks) down the gully and snow/talus below"
+   }
+  }
+ ]
+}

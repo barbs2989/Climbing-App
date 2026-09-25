@@ -1,0 +1,82 @@
+{"file": "r081.json", "results": [
+ {"id": "wa_southeast_face", "fact": "Boston Basin backcountry permit cost", "verdict": "fixed",
+  "correct_value": "An overnight wilderness permit costs $10 per person (age 15 and under free) plus a $6 non-refundable fee. Day climbs need no permit and pay no permit fee.",
+  "evidence": "The park's own permits page states permits cost $10 per person plus a $6 fee, youth 15 and under free. The WTA Boston Basin page gives the same $10 + $6 non-refundable reservation fee, and a North Cascades fee guide says it applies to reservations and walk-ups alike and that day trips need no permit. access.fees claiming nothing is owed beyond parking is wrong.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.wta.org/go-hiking/hikes/boston-basin", "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"],
+  "patches": [
+   {"id": "wa_southeast_face", "fact": "Boston Basin backcountry permit cost", "op": "set", "column": "access", "path": ["fees"], "expect": "None beyond the parking or entrance fee this route already lists.", "value": "An overnight wilderness permit costs $10 per person (age 15 and under free) plus a $6 non-refundable fee. Day climbs need no permit and pay no permit fee."}
+  ]},
+ {"id": "wa_southeast_face", "fact": "round-trip distance (Dist stat)", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km renders as 'Approach (one way)'; 9.3 km (~5.8 mi) one-way is a different quantity from the itinerary's ~10 mi round trip, and is roughly half of it as expected. No change.",
+  "sources": [], "patches": []},
+ {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "Boston Basin backcountry permit cost", "verdict": "fixed",
+  "correct_value": "An overnight wilderness permit costs $10 per person (age 15 and under free) plus a $6 non-refundable fee. Day climbs need no permit and pay no permit fee.",
+  "evidence": "The park's own permits page states permits cost $10 per person plus a $6 fee, youth 15 and under free. The WTA Boston Basin page gives the same $10 + $6 non-refundable reservation fee, and a North Cascades fee guide says it applies to reservations and walk-ups alike and that day trips need no permit. access.fees claiming nothing is owed beyond parking is wrong.",
+  "sources": ["https://www.nps.gov/noca/planyourvisit/permits.htm", "https://www.wta.org/go-hiking/hikes/boston-basin", "https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits"],
+  "patches": [
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "Boston Basin backcountry permit cost", "op": "set", "column": "access", "path": ["fees"], "expect": "None beyond the parking or entrance fee this route already lists.", "value": "An overnight wilderness permit costs $10 per person (age 15 and under free) plus a $6 non-refundable fee. Day climbs need no permit and pay no permit fee."}
+  ]},
+ {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "round-trip distance (Dist stat)", "verdict": "not_a_contradiction", "correct_value": null,
+  "evidence": "dist_km renders as 'Approach (one way)'; 9.3 km (~5.8 mi) one-way is a different quantity from the itinerary's ~10 mi round trip, and is roughly half of it as expected. No change.",
+  "sources": [], "patches": []},
+ {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "verdict": "fixed",
+  "correct_value": "Route and every pitch graded 5.0 (crux pitch 2 feels nearer 5.4 with the exposure)",
+  "evidence": "The route database lists the Southeast Ridge at 5.0, 3 pitches. A detailed trip report grades pitch 1 5.0, pitch 2 '5.0+' (felt like 5.4 only because of the exposure) and pitch 3 5.0; a guide service describes it as low fifth class. The 5.0 headline is right; the 5.4/5.2 pitch grades were feel-grades stored as grades, and pitch 3's 5.2 even exceeded the marked crux.",
+  "sources": ["https://www.mountainproject.com/area/108338245/sharkfin-tower", "https://stephabegg.com/trip-reports/washington/sharkfin-tower/", "https://ncmountainguides.com/routes/climbing-routes/sharkfin-tower-southeast-ridge"],
+  "patches": [
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "op": "set", "column": "pitch_detail", "path": [0, "grade"], "expect": "5.4", "value": "5.0"},
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "op": "set", "column": "pitch_detail", "path": [1, "grade"], "expect": "5.4", "value": "5.0"},
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "op": "set", "column": "pitch_detail", "path": [2, "grade"], "expect": "5.2", "value": "5.0"},
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "op": "replace_text", "column": "pitch_detail", "path": [1, "notes"], "find": "Published descriptions call it 5.4/5.0+ but several parties feel it climbs harder and more awkward", "replace": "It is graded 5.0, but several parties feel it climbs nearer 5.4, harder and more awkward"},
+   {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "crux pitch grade vs headline route grade", "op": "set", "column": "climbing_route", "path": [1, "class"], "expect": "5.4", "value": "5.0"}
+  ]},
+ {"id": "wa_sharkfin_tower_southeast_ridge", "fact": "parking pass at the Boston Basin trailhead", "verdict": "unresolved", "discovered": true, "correct_value": null,
+  "evidence": "access.passRequired says no pass is needed (NPS land), but access._raw.parking_pass_required says Northwest Forest Pass; the sibling Southeast Face row puts Northwest Forest Pass in passRequired. A North Cascades fee guide says there is no NPS parking fee at Boston Basin, while an older climbing page says a Northwest Forest Pass is required. Sources disagree; no patch.",
+  "sources": ["https://cascadesfieldguide.com/topics/north-cascades-fees-passes-permits", "https://www.summitpost.org/boston-basin/243271"], "patches": []},
+ {"id": "wa_sitkum_spire_standard", "fact": "Bivy list includes camps for other Glacier Peak routes/peaks, and one entry denies this route's own approach still exists", "verdict": "bivy_zone_list", "correct_value": null,
+  "evidence": "bivy[4] (Boulder Basin) is this route's own base camp and does serve it; its account of the White Chuck approach is correct (the Forest Service trail page marks the trail inaccessible, washed away in 2003, under a third surviving by 2006, no plans to restore). bivy[0-3] (Mackinaw, White Pass, Glacier Gap, Kennedy Ridge) serve other Glacier Peak routes; bivy[5-8] (Buck Creek Pass, Napeequa, Butterfly Butte, Boulder Pass/Thunder Basin) serve other peaks. The false side is the row's own 'maintained trail' wording, handled as a separate discovered result.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/white-chuck-river-trail-643", "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/"], "patches": []},
+ {"id": "wa_sitkum_spire_standard", "fact": "White Chuck River trail described as maintained", "verdict": "fixed", "discovered": true,
+  "correct_value": "The White Chuck trail is unmaintained and largely destroyed since the 2003 flood",
+  "evidence": "The Forest Service trail page marks Trail 643 'inaccessible, no road or trail access', washed away by the 2003 flood, with no restoration planned. A 2020 trip report found the road bed and old trailhead choked with dozens of blowdowns and followed the river edge past washed-out banks. The itinerary/published-times text calling it a 'maintained trail' is wrong, and the approach presents it as a normal trail.",
+  "sources": ["https://www.fs.usda.gov/r06/mbs/recreation/trails/white-chuck-river-trail-643", "https://www.countryhighpoints.com/glacier-peak-via-white-chuck-river/"],
+  "patches": [
+   {"id": "wa_sitkum_spire_standard", "fact": "White Chuck River trail described as maintained", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "Hike the maintained trail from", "replace": "Follow what remains of the unmaintained, flood-damaged trail from"},
+   {"id": "wa_sitkum_spire_standard", "fact": "White Chuck River trail described as maintained", "op": "replace_text", "column": "timing", "path": ["sectionBreakdown", 0, "note"], "find": "Hike the maintained trail from", "replace": "Follow what remains of the unmaintained, flood-damaged trail from"},
+   {"id": "wa_sitkum_spire_standard", "fact": "White Chuck River trail described as maintained", "op": "replace_text", "column": "approach", "path": [], "find": "follow White Chuck River Trail #643 up-valley", "replace": "follow what remains of White Chuck River Trail #643 (unmaintained, and largely destroyed by the 2003 flood) up-valley"}
+  ]},
+ {"id": "wa_sitkum_spire_standard", "fact": "Best/optimal season window extends past the stated season", "verdict": "unresolved", "correct_value": null,
+  "evidence": "Within the row, seasonal_guidance, best_season and climate.bySeason.summer include September while season and climate.summer say June-August, so the row is split rather than overwhelming. Externally only generic statements were found (July the best month; the peak climbed May-October); no two sources fix a window for this route. No patch.",
+  "sources": ["https://www.summitpost.org/glacier-peak/150318"], "patches": []},
+ {"id": "wa_sitkum_spire_standard", "fact": "saddle waypoint higher than the summit it leads to", "verdict": "unresolved", "discovered": true, "correct_value": null,
+  "evidence": "The 'Sitkum-Scimitar saddle' waypoint and the approach/itinerary put the saddle at ~9,500 ft, above the Sitkum Spire summit waypoint at 9,355 ft (one topo-derived listing gives the spire 2,851 m, ~9,354 ft). A saddle cannot sit above the summit climbed from it; one of the two is wrong, but no second source was found for the saddle elevation. No patch.",
+  "sources": ["https://peakvisor.com/park/glacier-peak-wilderness.html"], "patches": []},
+ {"id": "wa_southeast_mox_peak_se_rib", "fact": "Crux pitch grade vs. stated route grade", "verdict": "fixed",
+  "correct_value": "5.5 is the hardest climbing on the route; no pitch is 5.6",
+  "evidence": "The route database grades the Beckey Route (West Ridge) 5.5, 3 pitches, fourth to low fifth class. A detailed trip report grades it 5.5 overall: pitch 1 a short 5.5 traverse then 4th class, pitch 2 ~140 ft of 5.2, pitch 3 mostly class 4. Nothing supports 5.6; the 5.6 in pitch_detail, overview and the summit waypoint note is the outlier. Pitch 2 is set to 5.5 (not above the route grade) rather than re-assigning the crux flag.",
+  "sources": ["https://www.mountainproject.com/route/124368565/beckey-route-west-ridge", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"],
+  "patches": [
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "Crux pitch grade vs. stated route grade", "op": "set", "column": "pitch_detail", "path": [1, "grade"], "expect": "5.6", "value": "5.5"},
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "Crux pitch grade vs. stated route grade", "op": "replace_text", "column": "overview", "path": [], "find": "three roped pitches (5.5-5.6, easing", "replace": "three roped pitches (up to 5.5, easing"},
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "Crux pitch grade vs. stated route grade", "op": "replace_text", "column": "waypoints", "path": [7, "note"], "find": "Three 5.6 pitches (mostly", "replace": "Three pitches up to 5.5 (mostly"}
+  ]},
+ {"id": "wa_southeast_mox_peak_se_rib", "fact": "Approach/trailhead used for this route", "verdict": "unresolved",
+  "correct_value": "Depot Creek approach (from BC) via Ouzel Lake / Redoubt Glacier to the Col of the Wild",
+  "evidence": "The fact itself is settled: the route database and two trip reports approach this route from Depot Creek to a ~7,200 ft camp at the head of Depot Creek and the Col of the Wild, agreeing with approach, waypoints, approach_variants and approach_logistics. But the itinerary (both days, cal, totalNote) and timing (totals and sectionBreakdown) describe the Ross Lake / Little Beaver / Perry Creek approach of a different route, with hours, miles, gain and loss all built on it; a correct fix needs a rebuilt Depot Creek day plan (and a re-check of gain_ft/loss_ft/timing totals), not a text patch, and no sourced per-day figures were established. Left for a rebuild; no patch.",
+  "sources": ["https://www.mountainproject.com/route/124368565/beckey-route-west-ridge", "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"], "patches": []},
+ {"id": "wa_southeast_mox_peak_se_rib", "fact": "route name in the itinerary schedule and objective", "verdict": "fixed", "discovered": true,
+  "correct_value": "West Ridge",
+  "evidence": "The itinerary calls the climb 'the Southeast Rib', but the row's name is West Ridge (Beckey Route); the route database names it Beckey Route (West Ridge), and a trip report climbs the west face of the summit tower from the gendarme notch.",
+  "sources": ["https://www.mountainproject.com/route/124368565/beckey-route-west-ridge", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"],
+  "patches": [
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "route name in the itinerary schedule and objective", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "schedule", 2, "detail"], "find": "Top out the Southeast Rib", "replace": "Top out the West Ridge"},
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "route name in the itinerary schedule and objective", "op": "replace_text", "column": "itinerary", "path": ["days", 1, "objective"], "find": "Climb the Southeast Rib", "replace": "Climb the West Ridge"}
+  ]},
+ {"id": "wa_southeast_mox_peak_se_rib", "fact": "Number of rappels on the descent", "verdict": "fixed",
+  "correct_value": "3 single-rope rappels from the summit to the high notch; below it, one long double-rope rappel into the gully in typical snow-free conditions, or 6-7 improvised rappels/lowers down the gully when snow lingers",
+  "evidence": "One trip report made three single-rope rappels from the summit to the high notch, then six or seven long rappels down a snowy gully. Another made the same three single-rope rappels and then downclimbed the gully. Both agree on three from the summit; the extra 6-7 depend on gully snow, as rappel_count_note and descent_text already say. The rappels prose presented the snow-case total as the norm.",
+  "sources": ["https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/"],
+  "patches": [
+   {"id": "wa_southeast_mox_peak_se_rib", "fact": "Number of rappels on the descent", "op": "set", "column": "rappels", "path": [], "expect": "3 single-rope rappels from the summit, plus 6-7 improvised rappels/lowers (slung rock horns, knotted runners in cracks) down the gully and snow/talus below", "value": "3 single-rope rappels from the summit to the high notch; below it, one long double-rope rappel into the gully in typical snow-free conditions, or 6-7 improvised rappels/lowers (slung rock horns, knotted runners in cracks) down the gully and snow/talus when snow lingers"}
+  ]}
+]}

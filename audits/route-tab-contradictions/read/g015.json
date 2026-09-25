@@ -1,0 +1,430 @@
+{
+  "batches": ["b057.json", "b058.json", "b059.json", "b060.json"],
+  "routes_read": 11,
+  "routes": [
+    {
+      "id": "wa_mount_stuart_ice_cliff_glacier",
+      "name": "Ice Cliff Glacier",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Climbing season window",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Jun-Aug"},
+            {"field": "best_season", "says": "Late April through June generally offers the most consolidated snow/ice and the least glacier crevassing; by July the glacier is more broken up..."},
+            {"field": "seasonal_guidance.optimalWindow", "says": "May through early July, when ice and seracs are frozen and most stable"},
+            {"field": "seasonal_guidance.monthBreakdown", "says": "May: optimal, June: good, July: marginal, April: risky"},
+            {"field": "approach_variants[1].season", "says": "Spring, roughly Apr-May, when the route is in as snow and ice"}
+          ],
+          "why": "The stated season (Jun-Aug) starts after the route's own best_season/seasonal_guidance say conditions are already declining (July rated only 'marginal', August not mentioned as good at all), while April-June — mostly outside the stated season — is repeatedly called the best window.",
+          "internal_resolution": "best_season, seasonal_guidance.optimalWindow, monthBreakdown, and an approach_variant all independently agree the route is best climbed April/May-June/early July; the top-level 'season' field (Jun-Aug) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Standard descent route",
+          "severity": "high",
+          "claims": [
+            {"field": "descent", "says": "Descend via the Sherpa Glacier (starting near the false summit, ~8,200 ft) back into the basin below the Sherpa/Ice Cliff glaciers, then retrace the approach to the Stuart Lake Trailhead. Do not down-climb the ice route."},
+            {"field": "descent_text", "says": "Descend via the Sherpa Glacier, starting near the false summit (~8,200 ft), back down into the basin below the Sherpa and Ice Cliff glaciers, then retrace the approach to the Stuart Lake Trailhead."},
+            {"field": "pro_tips", "says": "Descend the Cascadian, not the route"},
+            {"field": "itinerary.days[1].schedule", "says": "Descend Cascadian Couloir to Ingalls Creek / Exit over Longs Pass"},
+            {"field": "timing.sectionBreakdown[1].fromTo", "says": "Climb the Ice Cliff Glacier to the summit, descend Cascadian"},
+            {"field": "pitch_detail[6].notes", "says": "Descend by the Sherpa Glacier or the Cascadian Couloir; do not reverse the ice route."}
+          ],
+          "why": "descent and descent_text both definitively describe returning via the Sherpa Glacier to the SAME (Stuart Lake, north-side) trailhead, while pro_tips, the itinerary schedule, and timing.sectionBreakdown all describe exiting via the Cascadian Couloir to Ingalls Creek and over Longs Pass to a completely different (south-side) trailhead — a climber would plan car logistics very differently depending on which field they read.",
+          "internal_resolution": "descent and descent_text agree with each other and are the most explicit, purpose-built DESCENT fields; no waypoint in this route names Longs Pass, Ingalls Creek, or the Cascadian Couloir (unlike the North Ridge route, whose own itinerary uses near-identical wording 'Descend Cascadian Couloir to Ingalls Creek' / 'Exit over Longs Pass'), suggesting the itinerary/timing/pro_tips Cascadian references are contamination copied from a different Stuart route.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_north_ridge",
+      "name": "North Ridge (Complete)",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "1956 first ascent (of the lower/original North Ridge) partner name",
+          "severity": "medium",
+          "claims": [
+            {"field": "fa", "says": "Don Claunch & John Rupley first climbed the upper ridge alone in 1956"},
+            {"field": "overview", "says": "The lower/original North Ridge was first climbed by John Rupley and Don Gordon in 1956 (they bypassed the Gendarme)"}
+          ],
+          "why": "Both fields describe what is presented as the same 1956 first ascent alongside John Rupley, but name a different partner (Don Claunch vs. Don Gordon).",
+          "internal_resolution": null,
+          "needs_research": true
+        },
+        {
+          "fact": "Total pitch count",
+          "severity": "high",
+          "claims": [
+            {"field": "pitches", "says": "20"},
+            {"field": "pitch_detail", "says": "18 numbered rows (pitch 1 through pitch 18)"},
+            {"field": "overview", "says": "roughly 18 pitches and 3,000 ft total"},
+            {"field": "pro_tips", "says": "Bivy near the base to give yourself a full day for ~18 pitches"},
+            {"field": "itinerary.totalNote", "says": "~18 pitches and 6,000 ft gain over ~15.5 mi round trip"}
+          ],
+          "why": "The top-level pitches field says 20, but the itemized pitch_detail array has only 18 rows, and three separate prose fields (overview, pro_tips, totalNote) all independently say 18 pitches.",
+          "internal_resolution": "pitch_detail's own row count plus three independent prose mentions all agree on 18; the 'pitches' field (20) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Elevation of the Complete North Ridge's toe/base",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints (North Ridge Base)", "says": "elev 7200"},
+            {"field": "approach_variants[0].baseFinding", "says": "the toe is the lowest rock of the rib... at about 6,700 ft"},
+            {"field": "approach_variants[1].baseFinding", "says": "the toe of the Complete ridge is the first continuous rock the traverse runs into, at about 6,700 ft"}
+          ],
+          "why": "The waypoint literally named 'North Ridge Base' places the ridge's start 500 ft higher than the route's own approach_variants text states twice, and 500 ft exceeds the elevation-disagreement threshold for the same named feature.",
+          "internal_resolution": "Both approach variants (north and south approach) independently and explicitly give ~6,700 ft as the toe/base elevation; the single 'North Ridge Base' waypoint (7,200 ft) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Whether June is a good time to attempt the route",
+          "severity": "low",
+          "claims": [
+            {"field": "itinerary.cal", "says": "The north-side approach works best June through mid-July"},
+            {"field": "season", "says": "Jul-Sep"},
+            {"field": "seasonal_guidance.monthBreakdown.June", "says": "status: marginal — Stuart Glacier crossing is harder and snowier; more crevasse hazard"}
+          ],
+          "why": "itinerary.cal recommends June for the approach while the route's own season window and month-by-month guidance treat June as outside/marginal.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "Route length vs. sum of individual pitch lengths",
+          "severity": "low",
+          "claims": [
+            {"field": "length_m", "says": "853"},
+            {"field": "pitch_detail", "says": "18 pitch lengthM values summing to 755"}
+          ],
+          "why": "The stated total length (853 m) is about 13% more than the sum of the route's own itemized pitch lengths (755 m), slightly outside normal rounding/approximation.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_gorillas_direct",
+      "name": "Gorillas Direct",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Name/elevation of the pass at mile 2.5 from the Esmeralda trailhead",
+          "severity": "high",
+          "claims": [
+            {"field": "approach", "says": "hike the Ingalls Way Trail up switchbacks past several waterfalls to Longs Pass (6,200 ft) at about mile 2.5"},
+            {"field": "waypoints[1]", "says": "Ingalls Pass, elev 6457, distMi 2.5"},
+            {"field": "approach_variants[0].notes", "says": "follow the Ingalls Way trail over Ingalls Pass and past Ingalls Lake toward Stuart Pass"}
+          ],
+          "why": "The approach prose names the 2.5-mile landmark 'Longs Pass' at 6,200 ft, but the route's own structured waypoint list and its approach_variants narrative both call the same point 'Ingalls Pass' at 6,457 ft — two different real passes near Mount Stuart, not just a rounding difference (257 ft and a different name).",
+          "internal_resolution": "The waypoints list and the approach_variants text (a separate field) agree with each other on 'Ingalls Pass'; the top-level 'approach' field's 'Longs Pass' mention is the outlier and appears to misname the pass.",
+          "needs_research": false
+        },
+        {
+          "fact": "Bergschrund/glacier hazard on a rock-route approach that has no glacier",
+          "severity": "medium",
+          "claims": [
+            {"field": "watch_out", "says": "Bergschrund crossing at base of climbers' trail—may require downclimbing on snow/ice; assess conditions carefully in spring/early summer"},
+            {"field": "approach", "says": "hike... to Longs Pass... continue past Ingalls Lake toward Stuart Pass, then follow the climbers' trail onto the talus shoulder... contour northwest to Goat Pass"},
+            {"field": "hazards", "says": "Loose rock and dirt on the upper mountain, particularly on the final traverse back right above the headwall"},
+            {"field": "obj_haz", "says": "sparse protection on some slab traverses; remote alpine setting"}
+          ],
+          "why": "The route's approach is entirely trail/talus (no glacier is mentioned anywhere in approach, hazards, or obj_haz), yet watch_out asserts a bergschrund crossing — a glacier feature — which nothing else in the route corroborates.",
+          "internal_resolution": "No other field (approach, hazards, obj_haz, approach_variants) mentions a glacier or bergschrund on this route; likely contamination from a glaciated Stuart route (e.g. Ice Cliff Glacier or North Ridge).",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_south_headwall",
+      "name": "South Headwall",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Round-trip/one-way distance",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "9.2 (≈5.7 mi)"},
+            {"field": "waypoints (Mount Stuart summit area)", "says": "distMi 7.5 (one-way from trailhead)"}
+          ],
+          "why": "dist_km (5.7 mi) is shorter than even the route's own one-way waypoint mileage to the summit (7.5 mi), let alone a round trip; the Dist figure a climber sees would understate the outing.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_girth_pillar",
+      "name": "Girth Pillar",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Standard descent route and exit trailhead",
+          "severity": "high",
+          "claims": [
+            {"field": "descent", "says": "Descend the north side, back to the basin you camped in... returns you to the Ice Cliff/Sherpa moraine camp, then out the Mountaineer Creek climbers' trail to the Stuart Lake trailhead. ...Continuing over the summit and down the Cascadian Couloir to Longs Pass is possible but exits at a trailhead roughly 70 road miles away and abandons your camp; sources treat it as a penalty rather than the plan."},
+            {"field": "descent_text", "says": "...descend as for the standard south-side line: east ridge toward the false summit... then down the broad Cascadian Couloir... to Ingalls Creek, and back out over Longs Pass to the Esmeralda Basin/Ingalls Creek trailhead... a car shuttle (or a long overland return) is part of planning this route as a car-to-car day."},
+            {"field": "itinerary.days[1].schedule", "says": "Descend the Cascadian Couloir and exit over Longs Pass"},
+            {"field": "gain_ft / loss_ft", "says": "6016 / 6000"},
+            {"field": "itinerary.days totals", "says": "gainFt 3200+2800=6000, lossFt 200+6000=6200"},
+            {"field": "outing_shape", "says": "outback"}
+          ],
+          "why": "descent explicitly says the standard, planned descent returns north to the SAME camp/trailhead and calls the Cascadian-to-Longs-Pass option an unplanned 'penalty' 70 road miles away; descent_text and the itinerary schedule instead present the Cascadian/Longs Pass/Esmeralda exit AS the standard descent, requiring a car shuttle to a different trailhead entirely.",
+          "internal_resolution": "loss_ft (6000) and the itinerary's own day totals (loss ≈6200) closely match a return to the same Stuart Lake trailhead (9415-3400≈6015), not the Esmeralda exit (9415-4269≈5146); outing_shape='outback' (out-and-back) also matches the descent field's same-camp return rather than descent_text's cross-mountain loop with a shuttle. descent + gain/loss + outing_shape agree with each other; descent_text and the itinerary schedule's Cascadian narrative are the contradicting outlier, likely contamination from a route that genuinely does exit via Longs Pass (e.g. North Ridge or Stuart Glacier Couloir).",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_sherpa_glacier",
+      "name": "Sherpa Glacier",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Stuart Lake Trailhead elevation",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints[0] (Stuart Lake Trailhead)", "says": "elev 2930, elevFt 2930"},
+            {"field": "approach_logistics.trailheadDirection", "says": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,540 ft), via the Mountaineer Creek drainage"}
+          ],
+          "why": "The same route names the same trailhead at two elevations 610 ft apart, well over the ~250 ft materiality threshold.",
+          "internal_resolution": "gain_ft (6000) is much closer to 9415-3540≈5875 than to 9415-2930≈6485, and this trailhead is listed at ~3,400-3,540 ft on every other Mount Stuart route in this dataset, so the waypoint's 2,930 ft figure looks like the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Round-trip car-to-car distance",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "21.73 (≈13.5 mi)"},
+            {"field": "partner_requirements.fitnessSpec", "says": "Serious approach — ~27 mi / 6,000 ft gain car-to-car logged"}
+          ],
+          "why": "dist_km (13.5 mi) is almost exactly half of the ~27 mi car-to-car figure quoted elsewhere on the same route, consistent with dist_km being stored one-way here while other fields present the round-trip figure.",
+          "internal_resolution": "27 mi ≈ 2 × 13.5 mi, so dist_km appears to be one-way while partner_requirements states round trip; low priority per the known dist_km convention issue, but worth flagging since the header would show the smaller (one-way) figure.",
+          "needs_research": false
+        },
+        {
+          "fact": "Season window vs. approach_variant's climbing season",
+          "severity": "low",
+          "claims": [
+            {"field": "season", "says": "Apr-Jun"},
+            {"field": "approach_variants[0].season", "says": "Roughly Jun-Jul while the glacier still carries continuous snow"},
+            {"field": "seasonal_guidance.monthBreakdown.July", "says": "marginal — early July possibly the last date the bergschrund is crossable without a rappel"}
+          ],
+          "why": "The approach_variants text recommends June-July as the climbing window, extending a month past the stated Apr-Jun season and into a month (July) the route's own monthBreakdown rates only marginal.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_stuart_glacier_couloir",
+      "name": "Stuart Glacier Couloir",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Round-trip vs. one-way distance",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "12.07 (≈7.5 mi)"},
+            {"field": "waypoints (Mount Stuart summit)", "says": "distMi 7.5 (one-way)"},
+            {"field": "itinerary", "says": "day1 miles 7 + day2 miles 8 = 15; totalNote '~15 mi round trip'"}
+          ],
+          "why": "dist_km (7.5 mi) matches the route's own one-way mileage to the summit, but the itinerary presents a 15-mi round trip — the header's Dist figure (dist_km, absent itinerary override) would read as half the actual round-trip distance.",
+          "internal_resolution": "dist_km matches the one-way waypoint distance exactly, while the itinerary's day-by-day miles and totalNote independently sum to the round-trip figure; low priority per the known dist_km one-way/round-trip convention issue.",
+          "needs_research": false
+        },
+        {
+          "fact": "Maximum slope angle",
+          "severity": "low",
+          "claims": [
+            {"field": "max_angle", "says": "80"},
+            {"field": "watch_out", "says": "Water ice pitches up to 60 degrees - hardest ice conditions"},
+            {"field": "waypoints (West Ridge notch)", "says": "a narrow ice/snow section that can run 40-60 degrees"},
+            {"field": "overview", "says": "sometimes 100 ft of water ice up to 60°"}
+          ],
+          "why": "max_angle (80°) is not supported anywhere else in the route; every narrative description of the steepest terrain caps out at 60°.",
+          "internal_resolution": "Three independent narrative mentions (watch_out, waypoint note, overview) agree on 60° as the steepest angle; max_angle (80°) is the outlier. Likely low-priority since max_angle does not appear to render on the route page.",
+          "needs_research": false
+        },
+        {
+          "fact": "grade_num encoding for a roman-numeral commitment grade",
+          "severity": "low",
+          "claims": [
+            {"field": "grade", "says": "IV"},
+            {"field": "grade_num", "says": "3"}
+          ],
+          "why": "grade_num (3) doesn't correspond to a IV commitment grade (which would be 4) or to any of the route's other grade fields (rock_grade M5-, ice_grade WI2-3); likely a non-rendered internal field but numerically inconsistent.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_the_gendarme",
+      "name": "The Gendarme",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Descent direction",
+          "severity": "low",
+          "claims": [
+            {"field": "descent", "says": "Descend via the standard descent route, retracing the ascent when possible."},
+            {"field": "descent_text", "says": "From the summit, descend east to the false summit through blocky terrain, then down the Cascadian Couloir to Ingalls Creek."}
+          ],
+          "why": "'Retracing the ascent' reads as reversing the North Ridge climb back down, but descent_text (and every other Stuart North Ridge route in this dataset) makes clear the ridge is never reversed — the standard descent is the Cascadian Couloir, a different direction entirely. The wording in 'descent' is ambiguous enough that a climber could misread it as down-climbing the ridge.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_north_face",
+      "name": "North Face",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Season window vs. best conditions",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Jun-Aug"},
+            {"field": "best_season", "says": "Best snow/ice conditions Apr-Jun; the north side's rock lines dry out by Jul-Aug."}
+          ],
+          "why": "best_season states conditions degrade for July-August (the tail of the stated season) and that the real best window (April-June) runs mostly before the stated season even begins.",
+          "internal_resolution": "best_season is the more detailed, specific claim and directly contradicts the coarser 'season' field's Jun-Aug window; this route is explicitly a disambiguation/overview entry (no single named line), so the finding carries less weight than on a real, single route.",
+          "needs_research": false
+        },
+        {
+          "fact": "Combined grade referenced in beta but not stored in any grade field",
+          "severity": "low",
+          "claims": [
+            {"field": "beta", "says": "No separately named \"North Face\" route matching this grade (IV, 5.8, AI2) is known on the mountain."},
+            {"field": "alpine_grade", "says": "D"},
+            {"field": "commitment", "says": "(field absent)"}
+          ],
+          "why": "beta refers to a 'IV, 5.8, AI2' grade, but the route stores alpine_grade as 'D' (not 'IV') and has no commitment field at all, so the 'IV' beta cites is not present anywhere in the row's own grade fields.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_stuart_west_ridge",
+      "name": "West Ridge",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Commitment grade",
+          "severity": "medium",
+          "claims": [
+            {"field": "grade", "says": "III, 5.4-5.6"},
+            {"field": "alpine_grade", "says": "II"},
+            {"field": "commitment", "says": "II"}
+          ],
+          "why": "The embedded commitment grade in 'grade' (III) disagrees with both alpine_grade and commitment, which agree with each other at II.",
+          "internal_resolution": "alpine_grade and commitment agree at II (two independent fields); the 'III' embedded in the compound 'grade' string is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Round-trip distance",
+          "severity": "medium",
+          "claims": [
+            {"field": "dist_km", "says": "32.2 (≈20.0 mi)"},
+            {"field": "itinerary.days[0].miles", "says": "16.5"},
+            {"field": "itinerary.totalNote", "says": "~11-14 hrs, 5,175 ft gain over ~16.5 mi"}
+          ],
+          "why": "dist_km implies a 20.0 mi day, about 21% more than the itinerary's own stated 16.5 mi, which is corroborated twice (day miles and totalNote).",
+          "internal_resolution": "itinerary.days[0].miles and itinerary.totalNote agree with each other at 16.5 mi; dist_km (20.0 mi) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Starting trailhead and pass reached on the standard itinerary",
+          "severity": "high",
+          "claims": [
+            {"field": "itinerary.days[0].schedule[0]", "says": "label 'Leave trailhead', detail 'Stuart Lake TH'"},
+            {"field": "itinerary.days[0].schedule[1]", "says": "label 'Reach Stuart Pass', detail '~4.5 hr approach'"},
+            {"field": "waypoints[0]", "says": "Esmeralda Basin Trailhead, elev 4243, distMi 0"},
+            {"field": "approach", "says": "Start at the Esmeralda Trailhead (end of North Fork Teanaway Road, ~4,243 ft)... An alternate, longer northern approach via the Stuart Lake Trailhead and Stuart Pass exists but adds significant mileage and is not the standard line."},
+            {"field": "approach_logistics.trailhead", "says": "Esmeralda Basin Trailhead (FR-9737)"},
+            {"field": "approach_variants[0].baseFinding", "says": "You leave it well SHORT of Stuart Pass, in the upper meadows at roughly 6,200-6,400 ft, and traverse climber's-left..."},
+            {"field": "road.name", "says": "Teanaway Road / FR 9737 to Esmeralda Basin"}
+          ],
+          "why": "The itinerary's own schedule labels the standard-route start as 'Stuart Lake TH' and a checkpoint as 'Reach Stuart Pass,' but every other field on this route (waypoints, approach, approach_logistics, road, approach_variants) agrees the standard approach starts at the Esmeralda Basin Trailhead via Longs Pass and explicitly stops well short of Stuart Pass — and the route's own approach text separately says the Stuart Lake/Stuart Pass approach is a non-standard, longer alternative, not the plan reflected in this itinerary.",
+          "internal_resolution": "Five independent fields (waypoints, approach, approach_logistics, road, approach_variants) all agree on Esmeralda Basin TH via Longs Pass, stopping short of Stuart Pass; the itinerary schedule's 'Stuart Lake TH' / 'Reach Stuart Pass' labels are the outlier and appear to be copied from a different, north-side route.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_king_kong_gorillas_direct_direct",
+      "name": "King Kong - Gorillas Direct Direct",
+      "area": "Mount Stuart",
+      "contradictions": [
+        {
+          "fact": "Hardest/crux rock grade",
+          "severity": "high",
+          "claims": [
+            {"field": "grade", "says": "5.11d"},
+            {"field": "rock_grade", "says": "5.12a"},
+            {"field": "overview", "says": "a two-pitch direct headwall finish up a striking splitter crack ('Empire State Building', 5.12a)"},
+            {"field": "pitch_detail[7] (pitch 8)", "says": "5.12-"},
+            {"field": "beta", "says": "Grade: IV 5.11+ alpine rock climb (5.12a on some topos)... Headwall pitch (5.11d): slabby steps, vertical features, meaty hand/fist jams, wild layback sequences."}
+          ],
+          "why": "The route's headline crux grade is given as 5.11d in one field and 5.12a in another, with pitch_detail's own crux row landing at 5.12- (close to 5.12a but still a third value), and beta itself internally cites both 5.11+/5.12a and a separate 5.11d for what appears to be the same headwall pitch.",
+          "internal_resolution": "rock_grade, overview, and pitch_detail's crux row all cluster around 5.12a/5.12-, while the top-level 'grade' field and one sentence of beta say 5.11d; no clean unanimous resolution, but the majority leans toward ~5.12a.",
+          "needs_research": true
+        },
+        {
+          "fact": "First-ascent partner name",
+          "severity": "medium",
+          "claims": [
+            {"field": "fa", "says": "Sol Wertkin & Tyree Johnson, 2016 (freed by Sol Wertkin)"},
+            {"field": "beta", "says": "First ascent: September 9, 2016 by Sol Wertkin and Jon Gleason."}
+          ],
+          "why": "Both fields describe the same 2016 first ascent with Sol Wertkin, but name a different second climber (Tyree Johnson vs. Jon Gleason).",
+          "internal_resolution": null,
+          "needs_research": true
+        },
+        {
+          "fact": "Total elevation gain",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft", "says": "1663"},
+            {"field": "waypoints", "says": "Esmeralda Basin Trailhead elev 4269 → Mount Stuart summit area elev 9415"},
+            {"field": "approach_variants[0].notes", "says": "Identical to the approach for the other West Face Wall routes"}
+          ],
+          "why": "gain_ft (1663 ft) is far below the route's own trailhead-to-summit elevation difference (9415-4269 ≈ 5146 ft) and far below the nearly identical sister route Gorillas Direct's gain_ft (6150 ft), which this route's own approach text says it shares.",
+          "internal_resolution": "The route's own waypoints imply ~5,150 ft of gain, and its approach is explicitly stated to be identical to Gorillas Direct's (gain_ft 6150); gain_ft (1663) is a clear outlier, understating the true elevation gain by roughly two-thirds.",
+          "needs_research": false
+        },
+        {
+          "fact": "Round-trip distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "7.2 (≈4.5 mi)"},
+            {"field": "waypoints", "says": "distMi 7.5 (one-way to summit)"},
+            {"field": "approach_variants[0].notes", "says": "Identical to the approach for the other West Face Wall routes"}
+          ],
+          "why": "dist_km (4.5 mi) is far shorter than the route's own one-way waypoint distance (7.5 mi), and the route explicitly shares its approach with Gorillas Direct, whose dist_km is 24.1 km (~15 mi).",
+          "internal_resolution": "The route's own waypoints and its 'identical approach' claim both point to a ~15 mi round trip like Gorillas Direct; dist_km (4.5 mi) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "Trailhead / permit regime described in access.notes",
+          "severity": "high",
+          "claims": [
+            {"field": "access.notes", "says": "Road access: FR 7601 closes during winter (typically November–May). Parking: 20–30 car spaces with toilet at Stuart Lake trailhead. Dogs not allowed in Stuart Lake area. Enchantments area requires Recreation.gov permit for May 15–October 31."},
+            {"field": "permit", "says": "The Esmeralda Basin / Ingalls Creek approach is outside the Enchantment Permit Area, so no lottery permit applies."},
+            {"field": "waypoints[0]", "says": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"},
+            {"field": "approach_logistics.trailhead", "says": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)"},
+            {"field": "emergency.county", "says": "Kittitas County (south approach)"}
+          ],
+          "why": "access.notes describes the Stuart Lake Trailhead (FR 7601, north side, Chelan County, Enchantment lottery zone) — a different trailhead than the one this route actually uses (Esmeralda Basin Trailhead, Teanaway/south side), and directly contradicts this route's own top-level 'permit' field, which correctly states the approach is outside the Enchantment Permit Area.",
+          "internal_resolution": "permit, waypoints, approach_logistics, and emergency.county all agree this route is approached from the south (Esmeralda/Kittitas County, no lottery); access.notes is the outlier and appears to be copied from a Stuart Lake Trailhead route.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "batches": ["b209.json", "b210.json", "b211.json", "b212.json"],
+  "routes_read": 8,
+  "routes": [
+    {
+      "id": "wa_ghost_peak_south_route",
+      "name": "South Route",
+      "area": "Ghost Peak",
+      "contradictions": [
+        {
+          "fact": "exit route/trailhead on descent",
+          "severity": "high",
+          "claims": [
+            {"field": "approach", "says": "Standard access is from the Hannegan Pass Trailhead at the end of Ruth Creek Road (FR 32, ~3,100 ft) - not Ross Lake, which instead serves Luna Peak and Mount Fury further south via the Big Beaver Trail/Access Creek approach."},
+            {"field": "itinerary.days[5].title", "says": "Hike out to the Hannegan Pass trailhead"},
+            {"field": "descent_text", "says": "...and out the Big Beaver Trail to Ross Lake and the dam."}
+          ],
+          "why": "The route's own approach text explicitly rules out Ross Lake/Big Beaver as this peak's access (says it serves Luna/Fury instead), yet descent_text's final sentence sends the party out that exact way.",
+          "internal_resolution": "Overview, approach (twice, explicitly denying Ross Lake), all 6 itinerary days, and the waypoint list unanimously describe a Hannegan Pass entry AND exit; only the last sentence of descent_text names Ross Lake, so that sentence is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "bivy list contains camps for other peaks/approaches",
+          "severity": "medium",
+          "claims": [
+            {"field": "approach", "says": "Standard access is from the Hannegan Pass Trailhead... deep multi-day approach via Whatcom Pass/Perfect Pass"},
+            {"field": "bivy[]", "says": "Luna Camp, Big Beaver Trail / Beaver Pass Camp / Twin Rocks and Stillwell Camps / Challenger Arm camp / Eiley Lake benches / Tapto Lakes cross-country zone, etc."}
+          ],
+          "why": "Most of the CAMPING & BIVY list describes camps on the Ross Lake/Big Beaver or Wiley Ridge sides used for Luna Peak, Mount Fury, Mount Challenger and Whatcom Peak, none of which lie on this route's own Hannegan Pass approach.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "distance to the high camp",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints (Luna Cirque high camp).distMi", "says": "21"},
+            {"field": "itinerary.days[0-2].miles sum", "says": "8.2 + 8 + 7.5 = 23.7"},
+            {"field": "approach", "says": "roughly 23-24 mi and three days in"}
+          ],
+          "why": "The waypoint list puts the high camp 21 miles in while the itinerary's own day mileages and the approach prose put it at ~23.7-24 miles for the same camp, a ~13% gap.",
+          "internal_resolution": "Itinerary day sums (23.7mi) and approach prose (\"23-24 mi\") agree with each other against the single waypoint distMi, suggesting the waypoint value is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "crux technical grade (4th vs 5th class)",
+          "severity": "low",
+          "claims": [
+            {"field": "grade", "says": "Grade III, Class 4"},
+            {"field": "rock_grade", "says": "5th class, easy to moderate (FA account: 'easy to moderate fifth-class pitches')"},
+            {"field": "climbing_route[0].class", "says": "low-5th/Class 4"}
+          ],
+          "why": "The header pill (drawn from rock_grade) would read '5th class' while the crux-grade stat (drawn from grade) would read 'Class 4' for the same climbing.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "existence of route-specific trip-report beta",
+          "severity": "low",
+          "claims": [
+            {"field": "rope_note", "says": "No route-specific trip report found. Inferred rope/rack..."},
+            {"field": "beta", "says": "The first-ascent party's own account: 'The route was from the notch south of the peak which was gained from the west...'"}
+          ],
+          "why": "rope_note claims no route-specific source exists, but beta and approach_variants directly quote the first-ascent party's own account of this exact line.",
+          "internal_resolution": "beta/approach_variants clearly do quote route-specific FA beta, so rope_note's premise is contradicted elsewhere on the same row.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_luna_peak_southeast_slopes",
+      "name": "Southeast Slopes",
+      "area": "Luna Peak",
+      "contradictions": [
+        {
+          "fact": "optional rope length for the summit traverse",
+          "severity": "medium",
+          "claims": [
+            {"field": "rope_length_m", "says": "30"},
+            {"field": "gear", "says": "optional 30-35m rope and a few slings/light pro..."},
+            {"field": "detailed_rack", "says": "Optional: 50-60m rope for belayed crux; many solo."}
+          ],
+          "why": "Three fields give three different lengths (30m field, 30-35m gear, 50-60m detailed_rack) for the same optional protection rope.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "avalanche hazard on this route",
+          "severity": "medium",
+          "claims": [
+            {"field": "obj_haz", "says": "[\"avalanche\", \"rockfall\", \"exposure\"]"},
+            {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route in the North Cascades NP interior; no NWAC forecast zone provides point coverage"},
+            {"field": "seasonal_hazards.avalanche.byMonth.July", "says": "Low"}
+          ],
+          "why": "obj_haz lists avalanche as a real objective hazard on this route while seasonal_hazards.avalanche calls the route non-glaciated/N/A (and then still rates July 'Low' rather than N/A, contradicting its own zone note).",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "total distance (one-way vs round trip)",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "38.62"},
+            {"field": "itinerary.totalNote", "says": "A remote 3-day trip out of Ross Dam: roughly 48 mi round trip..."},
+            {"field": "waypoints (Luna Peak summit).distMi", "says": "23"}
+          ],
+          "why": "dist_km (38.62km/24mi) matches the one-way distance to the summit (waypoint distMi=23) rather than the itinerary's round-trip total of ~48mi; low priority per the known one-way/round-trip convention split.",
+          "internal_resolution": "dist_km appears to be one-way; itinerary is round-trip.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_south_ridge_2",
+      "name": "South Ridge",
+      "area": "Luna Peak",
+      "contradictions": [
+        {
+          "fact": "whether the route involves any rappelling",
+          "severity": "high",
+          "claims": [
+            {"field": "rappels", "says": "0"},
+            {"field": "descent_text", "says": "The South Ridge route as described (turning back at or near the false summit rather than continuing to Luna's true summit) is a walk/scramble the entire way - no fixed anchors, bolts, or rope work are needed or reported for this line."},
+            {"field": "itinerary.days[1].note", "says": "Rather than free-scrambling the exposed Class 3-4 step to the true summit, most South Ridge parties belay or fix a hand line for the single short pitch before downclimbing/rappelling it on return."},
+            {"field": "itinerary.days[1].schedule (Back at camp).detail", "says": "Reverse the route, rappelling or downclimbing the summit pitch."},
+            {"field": "bail", "says": "The Class 3-4 step between the false and true summits is easily downclimbed, or a short handline/rappel can be rigged from a horn for less confident parties."}
+          ],
+          "why": "rappels='0' and descent_text flatly state no rope work exists anywhere on the route, but the itinerary's own note/schedule and the bail field both describe rappelling as a real option on the summit step.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "optional rope length for the summit step",
+          "severity": "medium",
+          "claims": [
+            {"field": "rope_length_m", "says": "40"},
+            {"field": "gear", "says": "...a 30-35m rope for parties wanting a running belay across the false-to-true-summit traverse..."},
+            {"field": "detailed_rack", "says": "...a 30 m rope) is a reasonable option..."}
+          ],
+          "why": "Three different lengths (40m field, 30-35m gear, 30m detailed_rack) are given for essentially the same optional rope.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "round-trip distance",
+          "severity": "medium",
+          "claims": [
+            {"field": "dist_km", "says": "38.62"},
+            {"field": "approach", "says": "...the recorded ~77 km round-trip distance reflects the long lakeshore/Big Beaver Trail miles plus off-trail basin approach..."},
+            {"field": "itinerary.days miles sum", "says": "19 + 10 + 19 = 48 (mi, round trip)"}
+          ],
+          "why": "The approach text explicitly asserts the route's own recorded distance is ~77 km, but the stored dist_km field holds only 38.62 km - not a rounding difference.",
+          "internal_resolution": "The itinerary's own 48-mile round-trip total (~77 km) supports the approach text's claim over the smaller stored dist_km value, so dist_km looks mis-set to a one-way figure while being described elsewhere as the round trip.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_poltergeist_pinnacle",
+      "name": "Poltergeist Pinnacle",
+      "area": "Mount Challenger",
+      "contradictions": [
+        {
+          "fact": "which trailhead/approach reaches this route",
+          "severity": "high",
+          "claims": [
+            {"field": "waypoints[0].note", "says": "This is the sole approach used for all Northern Pickets objectives near Mount Challenger; route continues via Whatcom Pass and Perfect Pass (~6300 ft)..."},
+            {"field": "approach_logistics.trailhead", "says": "Ross Dam Trailhead (SR-20 milepost 134)"},
+            {"field": "approach", "says": "Drive SR-20... to the Ross Dam Trailhead... water taxi... Big Beaver Trail landing... about 13-14 miles of trail up the Big Beaver valley to Beaver Pass..."},
+            {"field": "itinerary", "says": "Day 1: Drive to the Hannegan Pass Trailhead and hike roughly 16 mi via Hannegan Pass, the Chilliwack River ford, Easy Ridge, and the Imperfect Impasse to camp at Perfect Pass..."}
+          ],
+          "why": "waypoints and approach_logistics call Ross Dam Trailhead 'the sole approach,' and the approach field describes a Ross Dam->Big Beaver->Beaver Pass routing, but the itinerary text instead starts the trip at the separate, distant Hannegan Pass Trailhead - three different trailhead/route descriptions on one row.",
+          "internal_resolution": "Ross Dam is named by 3 fields (waypoints, approach_logistics, approach) against itinerary's lone Hannegan Pass claim, but the waypoint list itself then places 'Hannegan Pass' and 'Whatcom Pass' only 4.2-12 miles from Ross Dam, which is geographically impossible, so the row cannot fully resolve itself.",
+          "needs_research": true
+        },
+        {
+          "fact": "pitch count",
+          "severity": "medium",
+          "claims": [
+            {"field": "pitches", "says": "6"},
+            {"field": "pitch_detail", "says": "4 entries: P1, P2, P3, 'P4-6 (ridge, simul-climbed)'"},
+            {"field": "rope_note", "says": "Grade IV 5.9, 4 pitches (P1 5.9/180ft, P2 5.8/200ft, P3 5.8/200ft, P4+ 5.7/800ft in blocks)."}
+          ],
+          "why": "The structured pitch count (6) doesn't match the route's own pitch-by-pitch breakdown or its explicit '4 pitches' statement.",
+          "internal_resolution": "rope_note and pitch_detail agree the route is effectively 4 pitches (the upper ~800ft ridge is simul-climbed rather than pitched out), so pitches=6 looks like the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "season window excludes September, but best/optimal windows include it",
+          "severity": "medium",
+          "claims": [
+            {"field": "season", "says": "Jul-Aug"},
+            {"field": "best_season", "says": "Peak season in the Picket Range is a short summer window, roughly July through September..."},
+            {"field": "seasonal_guidance.optimalWindow", "says": "August-September"},
+            {"field": "seasonal_guidance.monthBreakdown.September.status", "says": "optimal"}
+          ],
+          "why": "September is called 'optimal' and part of 'peak season' elsewhere, yet the primary season field (Jul-Aug) excludes it entirely.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "total route distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "4.8"},
+            {"field": "approach", "says": "...13-14 miles of trail up the Big Beaver valley to Beaver Pass, a full day's hike with a loaded pack..."},
+            {"field": "itinerary", "says": "Day 1: ...hike roughly 16 mi via Hannegan Pass..."}
+          ],
+          "why": "dist_km (4.8km, ~3mi) is far smaller than even a single day's stated hiking distance (13-16mi) on this same route, let alone a multi-day round trip.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "bivy list contains camps for other peaks/approaches",
+          "severity": "low",
+          "claims": [
+            {"field": "bivy[]", "says": "Luna Camp, Big Beaver Trail / Beaver Pass Camp / Luna Col bivy / Tapto Lakes cross-country zone, etc."}
+          ],
+          "why": "Most of the bivy list describes camps used for Luna Peak, Mount Fury and Whatcom Peak rather than for reaching Poltergeist Pinnacle via Perfect Pass/Challenger Arm.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_challenger_challenger_glacier",
+      "name": "Challenger Glacier",
+      "area": "Mount Challenger",
+      "contradictions": [
+        {
+          "fact": "crux rock grade",
+          "severity": "high",
+          "claims": [
+            {"field": "rock_grade", "says": "5.5"},
+            {"field": "grade", "says": "Class 3-4, Glacier, 5.6-5.7"},
+            {"field": "climbing_route[3].class", "says": "5.5-5.7"},
+            {"field": "approach", "says": "...a short (~50 ft), well-protected 5.5-5.7 rock pitch"},
+            {"field": "detailed_rack", "says": "...short 5.6-5.7 summit pitch"}
+          ],
+          "why": "The header grade pill (from rock_grade) would read '5.5' while the crux-grade stat (from grade) and most of the prose call it 5.6-5.7, on the same Overview tab.",
+          "internal_resolution": "pitch_detail's single pitch is graded '5.5' (matching rock_grade), but grade, climbing_route, approach, detailed_rack and pro_tips all say 5.6-5.7 or 5.5-5.7, so rock_grade/pitch_detail look like the minority.",
+          "needs_research": false
+        },
+        {
+          "fact": "total round-trip distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "30.5"},
+            {"field": "approach", "says": "...the full car-to-summit distance by either line is roughly 37 miles (matching this route's recorded ~59.5 km distance)..."},
+            {"field": "itinerary.totalNote", "says": "\"...roughly 37 miles and ~10,000 ft of cumulative gain round trip...\""},
+            {"field": "itinerary.days miles sum", "says": "10.4 + 9 + 10.4 = 29.8"}
+          ],
+          "why": "The approach text explicitly claims the route's recorded distance should read '~59.5 km,' but dist_km actually holds 30.5 km; separately, totalNote's 'roughly 37 miles' doesn't match the itinerary's own day-by-day mileage total of 29.8 mi.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "a Ross Lake/Wiley Ridge approach is promised but never documented",
+          "severity": "low",
+          "claims": [
+            {"field": "overview", "says": "reaching the mountain requires 2-3 days of approach (via Hannegan/Whatcom Pass or via Ross Lake and Wiley Ridge)"},
+            {"field": "approach_variants", "says": "both named variants start at 'Hannegan Pass Trailhead'"}
+          ],
+          "why": "overview promises a Ross Lake/Wiley Ridge alternative that neither approach_variants, waypoints, nor itinerary ever document.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_fury_east_southeast_glaciers",
+      "name": "Southeast Glaciers (Standard)",
+      "area": "Mount Fury (East Peak)",
+      "contradictions": [
+        {
+          "fact": "total elevation loss vs. gain and vs. the itinerary's own days",
+          "severity": "high",
+          "claims": [
+            {"field": "loss_ft", "says": "13000"},
+            {"field": "gain_ft", "says": "6200"},
+            {"field": "itinerary.days lossFt sum", "says": "0 + 300 + 1500 + 5400 = 7200"},
+            {"field": "itinerary.days gainFt sum", "says": "2700 + 2700 + 1500 + 0 = 6900"}
+          ],
+          "why": "For a round trip returning to the same ~2,150 ft trailhead, cumulative loss should track cumulative gain (~6,900-7,200 ft per the itinerary's own days), not the stored 13,000 ft.",
+          "internal_resolution": "The itinerary's own day sums (6900 gain / 7200 loss) are mutually consistent and close to gain_ft (6200); loss_ft (13000) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "total round-trip mileage",
+          "severity": "medium",
+          "claims": [
+            {"field": "descent_text", "says": "...the full round trip (camp to camp to trailhead) as a 4-day, ~42-mile, ~13,000 ft trip."},
+            {"field": "itinerary.totalNote", "says": "A remote 4-day round trip (~35-40 mi, ~13,000 ft of cumulative gain/loss)..."},
+            {"field": "itinerary.days miles sum", "says": "12 + 3 + 5 + 15 = 35"}
+          ],
+          "why": "descent_text's '~42-mile' figure exceeds both totalNote's '~35-40 mi' and the itinerary's own day-mileage sum (35 mi) by up to ~20%.",
+          "internal_resolution": "totalNote and the day-by-day sum agree (35-40mi); descent_text's '~42-mile' is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "rappel rope length",
+          "severity": "low",
+          "claims": [
+            {"field": "rope_length_m", "says": "30"},
+            {"field": "pro_needs", "says": "One 25-meter rope can be established for the short rappel descent."}
+          ],
+          "why": "Two different lengths (30m vs 25m) given for the same short rappel.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_mount_fury_east_direct_east_ridge",
+      "name": "Direct East Ridge",
+      "area": "Mount Fury (East Peak)",
+      "contradictions": []
+    },
+    {
+      "id": "wa_mount_fury_east_north_buttress",
+      "name": "North Buttress",
+      "area": "Mount Fury (East Peak)",
+      "contradictions": [
+        {
+          "fact": "total cumulative gain/loss vs. the route's own approach + climb + exit figures",
+          "severity": "high",
+          "claims": [
+            {"field": "gain_ft", "says": "7000"},
+            {"field": "loss_ft", "says": "7000"},
+            {"field": "approach", "says": "The whole approach runs about 17 miles and 7,000 ft of gain from the Ross Lake water-taxi dock, and the descent from Luna Col into the cirque costs another 2,400 ft that has to be regained on the way out."},
+            {"field": "overview", "says": "roughly 4,000 ft and about 20 pitches of mixed snow and rock rising out of Luna Cirque to East Fury's summit"}
+          ],
+          "why": "By the route's own account, reaching camp alone costs ~7,000 ft of cumulative gain, the climb itself is a separate ~4,000 ft of ascent (matching length_m=1219m and the pitch_detail lengthM sum of 1219), and the exit separately 'regains' another 2,400 ft to Luna Col - together already over 13,000 ft, yet the stored total gain_ft/loss_ft is only 7,000 ft.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "total distance (one-way vs round trip)",
+          "severity": "low",
+          "claims": [
+            {"field": "dist_km", "says": "27.4"},
+            {"field": "approach", "says": "The whole approach runs about 17 miles and 7,000 ft of gain from the Ross Lake water-taxi dock..."}
+          ],
+          "why": "dist_km (27.4km/~17mi) matches the stated one-way approach distance to camp, not a round trip; low priority per the known one-way/round-trip convention split.",
+          "internal_resolution": "dist_km appears to be one-way.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

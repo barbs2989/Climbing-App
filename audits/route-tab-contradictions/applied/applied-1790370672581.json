@@ -1,0 +1,324 @@
+{
+ "applied": [
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain"
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Time to reach Lake Ouzel camp"
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Time to reach Lake Ouzel camp"
+  },
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Time to reach Lake Ouzel camp"
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "column": "beta",
+   "path": [],
+   "fact": "beta describes a different route (East Slope) than this one"
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "pitch_detail describes a different route (East Slope) than this one"
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "column": "turnaround",
+   "path": [],
+   "fact": "turnaround and comms describe the Thunder Creek approach, not this route"
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "column": "comms",
+   "path": [],
+   "fact": "turnaround and comms describe the Thunder Creek approach, not this route"
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Whether the North Ridge is reached via Lucky Pass"
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Round-trip distance"
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "column": "beta",
+   "path": [],
+   "fact": "First-ascent year of the North Ridge (overview/fa 1986 vs beta 1987)"
+  },
+  {
+   "id": "wa_sahale_mountain_sahale_glacier",
+   "column": "descent_text",
+   "path": [],
+   "fact": "whether the summit-block rappel is required or optional"
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "column": "access",
+   "path": [
+    "permitZone"
+   ],
+   "fact": "wilderness zone / camp contaminated from the wrong route"
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "column": "access",
+   "path": [
+    "_raw",
+    "wilderness_zone"
+   ],
+   "fact": "wilderness zone / camp contaminated from the wrong route"
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "column": "access",
+   "path": [
+    "_raw",
+    "altitude_restrictions"
+   ],
+   "fact": "wilderness zone / camp contaminated from the wrong route"
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "column": "access",
+   "path": [
+    "fees"
+   ],
+   "fact": "camping fee amount"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_northwest_mox_peak_standard",
+   "before": {
+    "gain_ft": 5450,
+    "approach": "Drive 31.7 miles on Chilliwack River Road from Chilliwack, BC, then turn left onto narrow Depot Creek Road (high-clearance 4WD recommended for the upper 2.5 miles). Park at 2,350 ft where the road becomes impassable. Follow old logging road 2 miles to the Washington state border and official trail start. The trail climbs steeply in the final 0.5 miles through forest to Depot Creek Falls. Scramble up a climber's trail past the waterfall (fixed ropes assist) to reach Ouzel Lake (5,700 ft) in 5-6 hours with 3,500 ft elevation gain. From Ouzel Lake, scramble up the steep Class 3 buttress southwest of the lake to access Redoubt Glacier. Ascend the glacier approximately 2 miles, traversing WSW and climbing to a flat area around 7,300 ft, then contour southeast to the saddle below the col between the spires at approximately 7,200 ft (3.2 hours, 1,550 ft gain from lake). Total approach: 8-10 hours from trailhead to high camp.",
+    "itinerary": {
+     "cal": "NPS backcountry permit required (issued at the Marblemount Wilderness Information Center); the Depot Creek FSR approach from the BC side needs a high-clearance 4x4 and is best done July-September once the road and upper glacier/saddle are clear.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Depot Creek Road trailhead (BC side, ~2,350 ft), hike past Monument 65 and up through old-growth forest and brush to Depot Creek Falls, then continue to Lake Ouzel (~5,700 ft). This is notoriously slow, bushwhacky terrain despite the modest mileage — real parties report 8-9+ hours for this leg.",
+       "hours": 9.3,
+       "miles": 7.5,
+       "title": "Approach to Lake Ouzel",
+       "gainFt": 3550,
+       "lossFt": 0,
+       "packLb": 45,
+       "schedule": [
+        {
+         "time": "8:50 AM",
+         "label": "Leave trailhead",
+         "detail": "Depot Creek Road parking, ~2,350 ft."
+        },
+        {
+         "time": "+1.4 hr",
+         "label": "Monument 65",
+         "detail": "Border marker; +500 ft."
+        },
+        {
+         "time": "+4.8 hr",
+         "label": "Depot Creek Falls",
+         "detail": "~1,600 ft cumulative gain."
+        },
+        {
+         "time": "+9.3 hr",
+         "label": "Arrive Lake Ouzel camp",
+         "detail": "~5,700 ft, ~3,550 ft cumulative gain."
+        }
+       ],
+       "objective": "Reach the Lake Ouzel bivy/camp"
+      },
+      {
+       "n": 2,
+       "note": "Short but steep carry above Lake Ouzel over ledgey rock onto the toe of the Redoubt Glacier, roping up for the flat, low-crevasse-hazard glacier crossing to a rock-outcrop camp on the saddle. Many parties use this as a half-day and rest/prep gear in the afternoon.",
+       "hours": 3.2,
+       "miles": 2,
+       "title": "Move to Redoubt Glacier saddle high camp",
+       "gainFt": 1550,
+       "lossFt": 100,
+       "packLb": 45,
+       "objective": "Establish high camp at ~7,150-7,400 ft"
+      },
+      {
+       "n": 3,
+       "note": "A long roped traverse of the Redoubt Glacier (visibility can drop to ~50 yards in cloud) leads to the base of the NE ridge headwall, where two pitches of low 5th class rock gain the ridge crest before class 3-4 scrambling to the 8,407 ft summit. \"Easy\" is relative — this is a full, long day with real exposure and route-finding.",
+       "hours": 14.2,
+       "miles": 5,
+       "title": "Summit push: Northwest Spire (Easy Mox)",
+       "gainFt": 1900,
+       "lossFt": 1900,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave high camp",
+         "detail": "Roped travel across the Redoubt Glacier."
+        },
+        {
+         "time": "+4.1 hr",
+         "label": "Reach ridge crest",
+         "detail": "Via the headwall's low 5th class rock, ~900 ft gained."
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Summit",
+         "detail": "8.9 hr from camp; final scrambling to the 8,407 ft top."
+        },
+        {
+         "time": "~4:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge and headwall, downclimbing/rappelling as needed."
+        },
+        {
+         "time": "Just before dark",
+         "label": "Back at high camp",
+         "detail": "~5.3 hr descent."
+        }
+       ],
+       "objective": "Climb the Northeast Ridge to the NW (Easy Mox) summit and return to high camp"
+      },
+      {
+       "n": 4,
+       "note": "Break camp and reverse the full approach in one long push — down off the glacier, past Lake Ouzel, Depot Creek Falls and Monument 65 back to the road. Some parties split this into two days if the crew is tired or the crossings are running high.",
+       "hours": 8,
+       "miles": 9.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 5050,
+       "packLb": 40,
+       "objective": "Return to the Depot Creek trailhead"
+      }
+     ],
+     "totalNote": "A remote 4-day trip (strong parties compress to 3): roughly 21-24 miles round trip with ~6,000-7,000 ft of cumulative gain to the 8,407 ft summit, with two long, slow approach/exit days bracketing a hard Class 4-5 glacier-and-headwall summit day from a Redoubt Glacier saddle camp."
+    }
+   }
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "before": {
+    "beta": "Primus Peak's difficulty lies almost entirely in its remoteness and glacier approach rather than technical climbing. The standard line (also called the 'East Slope') is 3rd class, with class 2-3 scrambling and moderate snow once above Lucky Pass. Most parties treat it as a 3-day trip with a high camp above Borealis Lake. A harder 'North Ridge' variant (5.6 trad, loose and exposed) exists for parties wanting technical climbing.",
+    "pitch_detail": [
+     {
+      "grade": "Trail",
+      "notes": "~6 mi, ~600 ft gain on the Thunder Creek Trail from Colonial Creek Campground; ford Thunder Creek near a logjam.",
+      "pitch": "Trailhead to McAllister Camp"
+     },
+     {
+      "grade": "Class 2-3 off-trail",
+      "notes": "~4 mi, ~4,000 ft gain up forested Lucky Ridge (below Tricouni Peak) through brush and devil's club, with two short cliff-band scrambles (~2,300 ft and ~4,250 ft), to a bivy above Borealis Lake (~6,000-6,700 ft).",
+      "pitch": "McAllister Camp to high camp"
+     },
+     {
+      "grade": "Glacier travel, roped",
+      "notes": "From ~6,700-7,000 ft, rope up and cross the glacier, staying right/east of a central icefall, to the Primus-Tricouni col ('Lucky Pass,' ~7,200 ft).",
+      "pitch": "Borealis Glacier crossing"
+     },
+     {
+      "grade": "Class 2-3",
+      "notes": "Scramble/steep snow up the east ridge/slopes, traversing climber's-left around a false summit (~8,270 ft), to the 8,508 ft true summit.",
+      "pitch": "Lucky Pass to summit"
+     }
+    ],
+    "turnaround": "Because the approach is roughly 9-10 miles one-way with substantial elevation gain and ends in a creek ford that grows more hazardous later in the day as snowmelt increases flow, parties should set a firm summit turnaround time that leaves enough daylight and margin to re-cross Thunder Creek and descend Lucky Ridge before dark.",
+    "comms": "No reliable cell coverage in the Thunder Creek valley or on the Borealis Glacier/Primus massif; sporadic signal is occasionally reported on higher ridgelines. A satellite communicator (e.g., inReach) is strongly advised given the remoteness and multi-day approach."
+   }
+  },
+  {
+   "id": "wa_north_ridge_4",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.6855,
+      "lng": -121.0925,
+      "elev": 1200,
+      "name": "Thunder Creek Trailhead",
+      "note": "South end of Colonial Creek Campground on Hwy 20.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 48.581894,
+      "lng": -121.091957,
+      "elev": 8510,
+      "name": "Primus Peak",
+      "note": "Via McAllister Camp (~6 mi in), then the ridge below Tricouni Peak to the Borealis Glacier and Lucky Pass (7,200 ft) col, finishing up Primus's ridge.",
+      "type": "Summit",
+      "distMi": 11
+     }
+    ],
+    "dist_km": 11.3,
+    "beta": "First recorded climbed by Mark Bebie on September 7, 1987, who reached it by descending a couloir onto an unnamed glacier north of Primus (accessed from the North Klawatti Glacier after climbing Austera Peak the same day) and traversing to the ridge's base. The ridge took about an hour to climb once gained. It is very rarely repeated and only lightly documented; other parties have approached instead from McAllister Camp via Tricouni Peak's lower north ridge, or via a north-south Primus-Eldorado glacier traverse."
+   }
+  },
+  {
+   "id": "wa_sahale_mountain_sahale_glacier",
+   "before": {
+    "descent_text": "Below Sahale Glacier Camp, descent is simply a reverse of the Sahale Arm and Cascade Pass trails back to the trailhead. Getting off the summit block itself, however, requires a rappel rather than a downclimb. Parties commonly rappel the south side, where the rock strata slopes away from the face and is comparatively free of loose blocks, off a well-used natural anchor - typically a cluster of several slings (often faded/sun-worn and worth backing up) wrapped around a large boulder, sometimes with rap rings added. With a 60m rope doubled (about 30m of rope per strand), most parties reach easier ground or a second station in a single rappel; with a 30m single line or 50m doubled, expect an awkward down-scramble to bridge the remaining gap, and some parties instead break it into two shorter rappels. From the base of the rappel, a short 3rd-class scramble/downclimb regains the top of the Sahale Glacier, which is then recrossed roped back to camp. No unusual descent hazards beyond the rappel itself and standard glacier crevasse hazard, which increases as the season progresses and the glacier opens up."
+   }
+  },
+  {
+   "id": "wa_sahale_mountain_r1",
+   "before": {
+    "access": {
+     "_raw": {
+      "permit_type": "Backcountry overnight permit required; high-demand early-access lottery system",
+      "land_manager": "National Park Service (North Cascades National Park)",
+      "cost_structure": "$10 per person + $6 non-refundable reservation fee; youth 15 and under free",
+      "special_hazards": "Alpine weather, glacier travel, bear country (bear canisters mandatory), high elevation, group coordination required",
+      "wilderness_zone": "North Cascades National Park (Cascade Pass area)",
+      "group_size_limits": "4-12 people depending on specific campsite; Sahale Glacier Camp typically 4-6 person limit",
+      "seasonal_closures": "State Route 20 mid-November to mid-April; Cascade Pass area no reservations before July 1 due to snow; high-demand lottery May 15 - October 10",
+      "permit_pickup_hours": "7:00 AM - 11:30 AM, 12:30 PM - 4:00 PM (Mid-May to Mid-October); must pick up by 11:00 AM on trip start date",
+      "altitude_restrictions": "Sahale Glacier Camp at 7,600 feet (one of highest elevation campsites in park)",
+      "parking_pass_required": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+      "permit_pickup_location": "Wilderness Information Center, Marblemount, WA"
+     },
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "rules": "Group size capped at 12 in the Boston Basin/Eldorado/Sulphide Glacier high-occupancy cross-country zones and on-trail corridors (6 in other cross-country zones). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "permit": "Backcountry overnight permit required; high-demand early-access lottery system",
+     "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+     "permitZone": "North Cascades National Park (Cascade Pass area)",
+     "group_limit": 12,
+     "landManager": "National Park Service (North Cascades National Park)",
+     "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+     "passRequired": "Northwest Forest Pass ($5 day / $35 annual) or Interagency Pass",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+      "what": "North Cascades National Park wilderness permit — quota, paid reservation",
+      "where": "Reserve on Recreation.gov (early-access lottery in March, then general on-sale at least 2 days ahead); about 40% of sites are held for walk-up permits issued in person up to 24 hours before the trip at a Wilderness Information Center."
+     }
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,430 @@
+{
+ "file": "r045.json",
+ "results": [
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Wilderness permit requirement",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The contradiction is real: the permit field names a Wild Sky Wilderness self-issue permit while access.permit says no permit. Wild Sky Wilderness lies north of Index and Skykomish with the Henry M. Jackson Wilderness adjoining it to the east, so Spinnaker (on the crest just north of Stevens Pass) is not in Wild Sky. Whether the summit lies inside the Henry M. Jackson Wilderness could not be settled: the Forest Service PCT page says the trail enters that wilderness about three miles north of Stevens Pass, while other sources put the boundary near Lake Valhalla (~5 mi). The summit is in King County (west side, Mt. Baker-Snoqualmie NF) while the Yodelin approach is in Chelan County (Okanogan-Wenatchee NF), so access.landManager is right for the trailhead and not for the summit. Needs a boundary-map check before any patch.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Wild_Sky_Wilderness",
+    "https://en.wikipedia.org/wiki/Henry_M._Jackson_Wilderness",
+    "http://www.fs.usda.gov/r06/mbs/recreation/trails/pacific-crest-trail-2000-stevens-pass-north-skykomish-and-wenatchee-river",
+    "https://www.summitpost.org/martin-benchmark-martin-peak/711814"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Best season for climbing Spinnaker Peak",
+   "verdict": "fixed",
+   "correct_value": "A winter/spring snow climb, roughly Dec-Apr; summer is a brush bushwhack",
+   "evidence": "The peak's own route page describes Spinnaker as a winter off-trail objective and says it is not a good summer destination because the vegetation makes the off-trail bushwhack intense. An independent trip write-up describes a snowshoe ascent via Yodelin and the ridge past Point 5261 in winter/early-spring conditions. seasonal_guidance, the seasonal_hazards weather/avalanche months and the crowds text had been copied from a summer scramble and are rewritten to the snow season; the season chip is trimmed to its window.",
+   "sources": [
+    "https://www.summitpost.org/spinnaker-peak/709148",
+    "https://onehikeaweek.com/2013/04/25/spinnaker-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "set",
+     "column": "season",
+     "path": [],
+     "expect": "Dec-Apr (documented snowshoe/scramble ascents); summer conditions unconfirmed",
+     "value": "Dec-Apr"
+    },
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "set",
+     "column": "seasonal_guidance",
+     "path": [],
+     "expect": {
+      "optimalWindow": "Jul-Sep",
+      "monthBreakdown": {
+       "July": {
+        "reason": "Early in the dry-season window; lingering snow or wet brush possible at lower elevations, and route-finding through the south-facing bands may be complicated by residual snow patches",
+        "status": "good"
+       },
+       "August": {
+        "reason": "Peak dry-season conditions with heather and rock bands clear, matching the best-season window",
+        "status": "optimal"
+       },
+       "September": {
+        "reason": "Still within the season but shorter days and higher chance of early-season weather changes in the Cascades",
+        "status": "good"
+       }
+      }
+     },
+     "value": {
+      "optimalWindow": "Dec-Apr, on a consolidated snowpack; March and April usually give the most dependable travel",
+      "monthBreakdown": {
+       "December": {
+        "status": "good",
+        "reason": "Snow buries the brush and talus, but the early pack can be thin or unstable; check the avalanche forecast"
+       },
+       "January": {
+        "status": "good",
+        "reason": "Deep snow makes the basin and ridge straightforward snowshoe travel; short days and storm cycles are the limit"
+       },
+       "February": {
+        "status": "good",
+        "reason": "Reliable snow cover; wait for a settled spell after storms before crossing the basin and ridge"
+       },
+       "March": {
+        "status": "optimal",
+        "reason": "Consolidating snowpack and longer days; firm or corn snow makes the basin and the col quick"
+       },
+       "April": {
+        "status": "optimal",
+        "reason": "Often the most dependable month for firm snow and corn cycles before the lower slopes melt out"
+       },
+       "August": {
+        "status": "marginal",
+        "reason": "Snow-free: the approach turns into a thick brush and slide-alder bushwhack, and the route is rarely done in summer"
+       }
+      }
+     }
+    },
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "typical"
+     ],
+     "find": "A Jul-Sep dry-season scramble in the Index/US-2 corridor",
+     "replace": "A Dec-Apr snow climb on the Cascade crest just north of Stevens Pass"
+    },
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "weather",
+      "probability"
+     ],
+     "expect": "Cascade summer afternoon convection is a general regional pattern worth checking forecasts for",
+     "value": "Winter storms and whiteouts can arrive quickly near the crest; turn back if visibility drops on the ridge"
+    },
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "byMonth"
+     ],
+     "expect": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     },
+     "value": {
+      "December": "Active season — check the NWAC Stevens Pass zone forecast",
+      "January": "Active season — check the NWAC Stevens Pass zone forecast",
+      "February": "Active season — check the NWAC Stevens Pass zone forecast",
+      "March": "Active season — check the NWAC Stevens Pass zone forecast; watch for warming on the open slopes",
+      "April": "Wet-slide cycles on warm afternoons; start early and be off the basin slopes before they soften"
+     }
+    },
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Best season for climbing Spinnaker Peak",
+     "op": "replace_text",
+     "column": "crowds",
+     "path": [
+      "peakTraffic"
+     ],
+     "find": "clear-weather summer weekends (Jul-Sep)",
+     "replace": "clear-weather winter and spring weekends (Dec-Apr) on a stable snowpack"
+    }
+   ]
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Total elevation gain",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": 2500,
+   "evidence": "gain_ft 2045 is simply the net difference between the 3,600 ft trailhead and the ~5,645 ft summit (the range one trip write-up quotes); the route drops to Nason Creek and adds the Martin Peak side trip, so cumulative gain is higher. The companion Martin Peak page gives about 2,500 ft of gain for the double-summit outing, matching loss_ft, both itinerary gainFt/lossFt and totalNote on the row.",
+   "sources": [
+    "https://www.summitpost.org/martin-benchmark-martin-peak/711814",
+    "https://onehikeaweek.com/2013/04/25/spinnaker-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "Total elevation gain",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 2045,
+     "value": 2500
+    }
+   ]
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "One-way approach distance (dist_km)",
+   "verdict": "fixed",
+   "discovered": true,
+   "correct_value": "6.3 km (about 3.9 mi one way)",
+   "evidence": "dist_km 12.5 km equals 7.8 mi, the round-trip figure (also the itinerary's miles), but the field renders as the one-way approach. Trip write-ups give 7.8 mi round trip and 7.3 mi round trip for Spinnaker with Martin, so one way is about 3.7-3.9 mi; the summit waypoint sits at 3.6 mi.",
+   "sources": [
+    "https://onehikeaweek.com/2013/04/25/spinnaker-peak/",
+    "https://www.summitpost.org/martin-benchmark-martin-peak/711814"
+   ],
+   "patches": [
+    {
+     "id": "wa_spinnaker_peak_s_route",
+     "fact": "One-way approach distance (dist_km)",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.5,
+     "value": 6.3
+    }
+   ]
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Summit elevation",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "high_point_ft says 5,645 ft while the summit waypoint, itinerary schedule and objective say 5,654 ft. One trip write-up gives an elevation range topping out at 5,645 ft; no second topo-derived source could be fetched (the peak databases returned 403), so the 9 ft split is left open.",
+   "sources": [
+    "https://onehikeaweek.com/2013/04/25/spinnaker-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "What grade is actually \"published\" for the summit ridge",
+   "verdict": "fixed",
+   "correct_value": "Mostly Class 3 ridge with two short Class 4-5 sections (row grade Class 3-4)",
+   "evidence": "Both the Mountaineers route summary and the SummitPost peak page describe the west ridge as mostly Class 3 with short stretches of Class 4 and 5 where a rope may be wanted, which is what grade/rock_grade/pitch_detail already say. The hazards and watch_out lines framed the route's rating as a 'published Class 3', contradicting the Class 3-4 shown on the same page; they are reworded to compare the step with the surrounding Class 3 ridge instead.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/spire-mountain",
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ],
+   "patches": [
+    {
+     "id": "wa_spire_mountain_scramble",
+     "fact": "What grade is actually \"published\" for the summit ridge",
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      2
+     ],
+     "find": "— harder than the published Class 3 rating suggests",
+     "replace": "— a clear step up from the Class 3 ridge around it"
+    },
+    {
+     "id": "wa_spire_mountain_scramble",
+     "fact": "What grade is actually \"published\" for the summit ridge",
+     "op": "replace_text",
+     "column": "watch_out",
+     "path": [
+      0
+     ],
+     "find": "The published 'Class 3' rating undersells two short sections that are genuinely Class 4-5",
+     "replace": "The ridge is mostly Class 3, but two short sections are genuinely Class 4-5"
+    }
+   ]
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "permit and access.permit say a free self-issue wilderness permit is taken at the trailhead, while the trailhead waypoint directions and itinerary.cal say no permits are needed. The Forest Service Wild Sky Wilderness and North Fork Skykomish trail pages mention only a recreation pass and that wilderness regulations apply, without stating whether a self-issue permit exists, so it could not be settled.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/north-fork-skykomish-trail-1051"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Avalanche hazard during the climbing season",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Wet-slide potential on lingering couloir snow in June/early July; N/A once melted out",
+   "evidence": "Two trip reports (late May 2009 and early June 2020) describe climbing the Tailgunner Couloir on snow, the latter on steep refrozen snow needing crampons, confirming the couloir holds steep snow within the row's Jun-Sep season. obj_haz, hazards, gear, pitch_detail and climate all describe that snow; the blanket 'N/A - non-glaciated' avalanche entry (with no June) contradicted them, so it now states the early-season wet-slide exposure. The wet-slide point itself rests on the row's own obj_haz.",
+   "sources": [
+    "https://trailcatjim.com/tailgunner-peak-via-barclay-creek-tailgunner-pass-south-slope/",
+    "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/"
+   ],
+   "patches": [
+    {
+     "id": "wa_tailgunner_peak_w_route",
+     "fact": "Avalanche hazard during the climbing season",
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche"
+     ],
+     "expect": {
+      "zone": "N/A - non-glaciated summer scramble route",
+      "byMonth": {
+       "July": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "value": {
+      "zone": "No NWAC forecast covers the summer window, but the Tailgunner Couloir and north slope hold steep snow into early summer, and that snow can release wet slides on warm afternoons — climb it while it is firm.",
+      "byMonth": {
+       "June": "Wet-slide potential on the couloir and north-slope snow during warm spells; be off it before it softens",
+       "July": "Low; wet-slide potential only where snow still lingers in the couloir early in the month",
+       "August": "N/A — the line is normally melted out",
+       "September": "N/A"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the ONE-WAY approach: 5.15 km = 3.2 mi, exactly half the itinerary's 6.4 mi round trip, and consistent with the approach text's 5-7 mi round trip.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Car-to-car elevation gain (itinerary vs gain_ft)",
+   "verdict": "fixed_internal_plus_one",
+   "discovered": true,
+   "correct_value": 3540,
+   "evidence": "The itinerary day and totalNote give 3,200 ft of gain/loss, less than the net climb from the ~2,280-2,300 ft trailhead to the 5,842 ft summit (about 3,540 ft) — impossible. gain_ft and loss_ft (3,540), the trailhead and summit waypoints, and the approach text's trailhead elevation all agree on ~3,540 ft; a trip report independently gives the summit as 5,842 ft (its 4,500 ft total includes Gunn Point).",
+   "sources": [
+    "https://trailcatjim.com/tailgunner-peak-via-barclay-creek-tailgunner-pass-south-slope/"
+   ],
+   "patches": [
+    {
+     "id": "wa_tailgunner_peak_w_route",
+     "fact": "Car-to-car elevation gain (itinerary vs gain_ft)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3200,
+     "value": 3540
+    },
+    {
+     "id": "wa_tailgunner_peak_w_route",
+     "fact": "Car-to-car elevation gain (itinerary vs gain_ft)",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 3200,
+     "value": 3540
+    },
+    {
+     "id": "wa_tailgunner_peak_w_route",
+     "fact": "Car-to-car elevation gain (itinerary vs gain_ft)",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~3,200 ft gain",
+     "replace": "~3,540 ft gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "permit says a free self-issue Wild Sky Wilderness permit or trailhead registration applies, while access.permit says no self-issue permit system was found. The Forest Service Wild Sky page mentions only recreation passes and wilderness regulations; not settled.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "climbing season window",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: best_season and seasonal_guidance run to October, past the season chip's Sep. Ascents/attempts found are in June (2001, 2005, 2013) and September (2015), supporting Jun-Sep, but no source was found that confirms or rules out October as part of the climbing season, so neither side is changed.",
+   "sources": [
+    "https://trailcatjim.com/nada-lake-the-temple-attempt-via-north-chute/",
+    "https://cascadeclimbers.com/forum/topic/98164-tr-temple-ridge-the-temple-9192015/",
+    "https://cascadeclimbers.com/forum/topic/34092-tr-enchantments-climbing-the-temple-high-priest-prusik-642005/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "crux grade (3-way disagreement)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely split. The Mountaineers route description gives the bolt-protected friction face as 5.6 moves, and a 2015 trip report calls it 'a couple 5.6 moves'. Wikipedia gives the easiest route as 5.3, and a 2001 attempt report says the blank face is 'reported to be 5.3' (both likely from the older guidebook grade). No source supports the 5.4 in climbing_route. The grade column ('Grade II, Class 3 to 4') also disagrees with the 5.6 rock_grade; whichever grade is adopted, grade, rock_grade, pitch_detail[0], climbing_route[2], hazards[1], overview, beta, descent_text, pro_tips[3], approach_variants hazards and the itinerary day-2 text must be aligned together.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side",
+    "https://cascadeclimbers.com/forum/topic/98164-tr-temple-ridge-the-temple-9192015/",
+    "https://en.wikipedia.org/wiki/The_Temple_(Washington)",
+    "https://trailcatjim.com/nada-lake-the-temple-attempt-via-north-chute/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "number/type of summit rappels",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: rappels implies one rap on a single 60 m rope, descent_text two (maybe three) and climbing_route three. A Mountaineers trip report describes one double-rope rappel over an overhang; another describes rappelling the slab using trees; the Mountaineers route page says only 'rappel and downclimb'. That supports one rap with two ropes, but nothing settles the single-60 m count.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/basic-rock-climb-mount-temple-west-side",
+    "https://www.mountaineers.org/activities/routes-places/enchantments-area-review/mount-temple-west-side"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "one-way / round-trip approach distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Round trips found: about 17 mi / 7,300 ft via Snow Lakes trail (trip report summary) and about 18 mi / 7,400 ft with a Temple Canyon camp (2001 report). The row's 16-16.5 mi (approach, turnaround, hazards, itinerary.cal, totalNote car-to-car) and 19-20 mi (3-day totalNote) bracket these; the waypoints' Prusik Pass at 9.5 mi appear to describe a different approach (via the Core) than Temple Canyon. No single figure is confirmed by two sources, so nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102606",
+    "https://trailcatjim.com/nada-lake-the-temple-attempt-via-north-chute/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "gain_ft 8,000 and loss_ft 6,995 (the net trailhead-to-summit difference) disagree with each other and with the itinerary's 7,200 ft total gain/loss. Reports give about 7,300 ft and about 7,400 ft; close but not one agreed value, so left for a decision.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002102606",
+    "https://trailcatjim.com/nada-lake-the-temple-attempt-via-north-chute/"
+   ],
+   "patches": []
+  }
+ ]
+}

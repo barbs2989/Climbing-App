@@ -1,0 +1,736 @@
+{
+ "file": "r018.json",
+ "results": [
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge",
+   "verdict": "fixed",
+   "correct_value": "Summit day climbs cross-country from the Lyman Lakes basin up the south/southeast flank talus (Class 2, final Class 2-3), roughly 4-4.5 mi round trip from camp; there is no 'East Ridge' route past Magnolia Mine on this peak.",
+   "evidence": "The published route description for this Washington peak is a cross-country hike from Lyman Lake across meadow then Class 2 talus/scree on the south side, a little over 4 mi round trip and ~2,600 ft from the lake. The 'East Ridge ... Magnolia Mine' text matches the standard East Ridge route of the unrelated 13,614 ft North Star Mountain in Colorado, where the Magnolia Mine claims sit on the ridge approach - copied from the wrong peak. WTA confirms the Washington peak is reached by off-trail scrambling from the Lyman Lakes/Cloudy Pass trail area with no summit trail.",
+   "sources": [
+    "https://www.summitpost.org/north-star-mountain/901196",
+    "https://www.wta.org/go-hiking/hikes/north-star-mountain",
+    "https://www.climb13ers.com/colorado-13ers/north-star-mountain",
+    "https://onehikeaweek.com/2018/08/12/north-star-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "title"
+     ],
+     "expect": "East Ridge summit push",
+     "value": "South-flank summit push",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "expect": "An early alpine start from Lyman Lakes camp beats the afternoon thunderstorms this exposed ridge is prone to in summer. Hike up to Cloudy Pass, then leave trail to gain the class 2+ East Ridge, skirting old mine workings near Magnolia Mine before following the ridge crest to the summit.",
+     "value": "An early alpine start from Lyman Lakes camp beats the afternoon thunderstorms common in this basin in summer. Leave the trail, cross the open meadow and round onto the south and southeast side of the mountain, climb to the snowfield at the foot of the flank, then follow the ledge and gully above it to a notch on the crest and scramble the final Class 2-3 rock to the summit. Reverse the same line to camp.",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "miles"
+     ],
+     "expect": 8,
+     "value": 4.5,
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "objective"
+     ],
+     "expect": "Climb the East Ridge/East Route to the 8,096 ft summit and return to camp",
+     "value": "Climb the south flank to the 8,096 ft summit and return to camp",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Early start to beat afternoon thunderstorm buildup on the exposed ridge.",
+     "value": "Early start to beat afternoon thunderstorm buildup on the upper mountain.",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      1,
+      "label"
+     ],
+     "expect": "Reach Cloudy Pass",
+     "value": "Leave the trail and cross the meadow toward the south flank",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Gain the East Ridge proper",
+     "value": "Reach the notch on the crest",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "expect": "Class 2+ scrambling, staying on the ridge crest to avoid old mine sites and loose slopes below.",
+     "value": "Class 2 talus from the snowfield near 7,000 ft, then the ledge and gully to the notch; do not try to gain the cliffed southwest ridge lower down.",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "one full day scrambling the exposed class 2+ East Ridge from a Lyman Lakes base camp",
+     "replace": "one full day scrambling the south-side talus to the summit from a Lyman Lakes base camp",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "fromTo"
+     ],
+     "expect": "East Ridge summit push",
+     "value": "South-flank summit push",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      1,
+      "note"
+     ],
+     "expect": "An early alpine start from Lyman Lakes camp beats the afternoon thunderstorms this exposed ridge is prone to in summer. Hike up to Cloudy Pass, then leave trail to gain the class 2…",
+     "value": "An early alpine start from Lyman Lakes camp beats the afternoon thunderstorms common in this basin in summer. Cross the meadow, round onto the south and southeast side and climb the talus to a notch on the crest, then scramble Class 2-3 rock to the summit.",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Summit-day line: direct south/southeast-flank scramble vs. Cloudy Pass + East Ridge"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "fact": "Crevasse/glacier-travel hazard on the Spider Gap approach",
+   "verdict": "fixed",
+   "correct_value": "No glacier travel on the climb itself, but the current Spider Gap approach climbs a permanent snowfield/small glacier to the gap and descends a steep, often snowy path toward Upper Lyman Lake; an ice axe is recommended.",
+   "evidence": "WTA's Spider Gap description says an ice axe or poles are highly recommended for climbing up the Spider Glacier to the ~7,100 ft gap, and that the boot path down toward Upper Lyman Lakes can be treacherous when snow- or ice-covered. A 2019 trip report describes the permanent snowfield on the gap's south side and a large melt hole on the descent. So 'N/A - no glacier travel' is wrong for the route as it is reached now, but the summit climb itself has no glacier.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/spider-gap-buck-creek-pass-loop",
+    "https://havetent.com/2019/08/19/spider-meadows-lyman-lakes-cloudy-pass/",
+    "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/spider-meadows-spider-gap-lyman-lakes-buck-creek-pass"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; this is a talus/heather scramble to the summit ridge",
+     "value": "None on the climb itself, which is a talus/heather scramble. The current Spider Gap approach climbs a permanent snowfield (the small Spider Glacier) to the gap and drops down a steep, often snowy path toward Upper Lyman Lake; carry an ice axe, and watch for moats and melt holes as the snow thins in late summer.",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Crevasse/glacier-travel hazard on the Spider Gap approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "fact": "Total trip distance (dist_km vs itinerary/totalNote)",
+   "verdict": "fixed",
+   "correct_value": "One-way Holden-to-summit distance is about 10 mi (~8 mi Holden to Lower Lyman Lake plus ~2 mi cross-country), so round trip ~21 mi; dist_km 16.4.",
+   "evidence": "dist_km is the one-way figure, so comparing it with the round trip was not the defect in itself - 20.1 km (12.5 mi) is half of a 25-mile round trip made via the Cloudy Pass trail, not the direct south-flank line this route describes. Holden Village to Lower Lyman Lake is about 8 mi (4 mi to Hart Lake plus 4 mi on to the lower lake), and the direct line from Lyman Lake is a little over 4 mi round trip, which agrees with the route's own waypoints (summit at 10.2 mi). Once day 2 was corrected to the direct line, the totals became 8.2 + 4.5 + 8.2 = ~21 mi, and dist_km 16.4 km (10.2 mi) matches.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/18/hart-lyman-lakes/",
+    "https://www.summitpost.org/north-star-mountain/901196",
+    "https://www.holdenvillage.org/program/outdoor-recreation/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 20.1,
+     "value": 16.4,
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Total trip distance (dist_km vs itinerary/totalNote)"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "A 3-day, ~25-mile round-trip backpack",
+     "replace": "A 3-day, ~21-mile round-trip backpack",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Total trip distance (dist_km vs itinerary/totalNote)"
+    }
+   ]
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "fact": "Holden Village to Lyman Lake trail distance (approach prose)",
+   "verdict": "fixed",
+   "correct_value": "About 8 miles one way from Holden Village to Lower Lyman Lake.",
+   "evidence": "The approach prose said 'roughly 16 miles up the Railroad Creek Trail to Lyman Lake', while the itinerary (8.2 mi) and waypoints (Lower Lyman Lake at 8.1 mi) say about 8. One published description gives 4 mi to Hart Lake and 4 more to Lower Lyman Lake, and Holden Village lists the Lyman Lake hike at 18-21 mi round trip, so about 8-10 mi one way. 16 mi was the round-trip figure.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/18/hart-lyman-lakes/",
+    "https://www.holdenvillage.org/program/outdoor-recreation/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "roughly 16 miles up the Railroad Creek Trail to Lyman Lake",
+     "replace": "roughly 8 miles up the Railroad Creek Trail to Lyman Lake",
+     "id": "wa_north_star_mountain_east_route",
+     "fact": "Holden Village to Lyman Lake trail distance (approach prose)"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_oval_peak_scramble",
+   "fact": "total round-trip distance",
+   "verdict": "fixed",
+   "correct_value": "One way from the Eagle Creek/Oval trailhead to the summit is about 11.5 mi (9.5 mi to Middle Oval Lake plus ~2 mi off-trail), so dist_km 18.5; round trip ~23-24 mi.",
+   "evidence": "dist_km is the one-way figure, but 10 km (6.2 mi) matches no leg of this route. The Forest Service gives 1.9 mi on Eagle Creek Trail #410 plus 6 mi on Oval Creek Trail #410A just to reach the start of Oval Lakes Trail #410B, and a second description puts Middle Oval Lake at 9.5 mi from the trailhead. The route's own waypoints put the summit at 11.5 mi, which agrees with the itinerary's ~24 mi round trip.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/oval-lakes-trail",
+    "https://wenatcheeoutdoors.org/2017/01/06/oval-pass-and-eagle-pass-trails-and-climbs/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 10,
+     "value": 18.5,
+     "id": "wa_oval_peak_scramble",
+     "fact": "total round-trip distance"
+    }
+   ]
+  },
+  {
+   "id": "wa_oval_peak_scramble",
+   "fact": "total gain/loss",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 5,800 ft total gain and loss (trailhead ~3,000 ft to an 8,795-8,800 ft summit).",
+   "evidence": "The trailhead is at about 3,000 ft (Forest Service) and the summit at 8,795-8,800 ft, so the net rise alone is about 5,760 ft. The stored 4,987 ft is less than the elevation difference, which is impossible. The itinerary days (4,400 + 1,400), totalNote (~5,800) and waypoints (3,036 to 8,800) all agree on ~5,800. No published figure for the exact car-to-car gain was found, and it may be somewhat higher because the Oval Lakes trail climbs over a moraine before dropping to the lake.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/eagle-creek-oval-trailhead",
+    "https://wenatcheeoutdoors.org/2017/01/06/oval-pass-and-eagle-pass-trails-and-climbs/",
+    "https://www.wta.org/go-hiking/hikes/oval-lakes"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4987,
+     "value": 5800,
+     "id": "wa_oval_peak_scramble",
+     "fact": "total gain/loss"
+    },
+    {
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4987,
+     "value": 5800,
+     "id": "wa_oval_peak_scramble",
+     "fact": "total gain/loss"
+    }
+   ]
+  },
+  {
+   "id": "wa_oval_peak_scramble",
+   "fact": "distance/gain to Middle Oval Lake",
+   "verdict": "fixed",
+   "correct_value": "About 9.5 mi and ~4,400 ft of gain from the car to Middle Oval Lake; Oval Creek Trail #410A and the Oval Lakes trail run ~7.5 more mi past West Oval Lake to it.",
+   "evidence": "The Forest Service gives 1.9 + 6 mi just to the start of the Oval Lakes Trail, so Middle Oval Lake cannot be 7.5 mi from the car. A second description puts West Oval Lake at 7.4 mi and Middle Oval Lake at 9.5 mi. That agrees with the route's waypoints and itinerary day 1 (9.5 mi / 4,400 ft). The stated ~3,700 ft is also less than the net rise from a ~3,000 ft trailhead to the ~6,900 ft lake.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/oval-lakes-trail",
+    "https://wenatcheeoutdoors.org/2017/01/06/oval-pass-and-eagle-pass-trails-and-climbs/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "for roughly 6 more miles, passing West Oval Lake",
+     "replace": "for roughly 7.5 more miles, passing West Oval Lake",
+     "id": "wa_oval_peak_scramble",
+     "fact": "distance/gain to Middle Oval Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "about 7.5 miles and ~3,700 ft of gain from the car",
+     "replace": "about 9.5 miles and ~4,400 ft of gain from the car",
+     "id": "wa_oval_peak_scramble",
+     "fact": "distance/gain to Middle Oval Lake"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "and six or so more miles of steady forest and old burn",
+     "replace": "and seven and a half more miles of steady forest and old burn",
+     "id": "wa_oval_peak_scramble",
+     "fact": "distance/gain to Middle Oval Lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_oval_peak_scramble",
+   "fact": "Eagle Creek Trail distance to the Oval Creek junction",
+   "verdict": "fixed",
+   "correct_value": "1.9 mi from the trailhead to the Oval Creek Trail #410A junction.",
+   "evidence": "The approach, descent and approach-variant prose said 1.5 mi (a mile and a half), but the waypoint and itinerary say 1.9 mi. The Forest Service gives 1.9 mi on Eagle Creek Trail #410 to the fork, and another description gives about 2 mi.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/oval-lakes-trail",
+    "https://wenatcheeoutdoors.org/2017/01/06/oval-pass-and-eagle-pass-trails-and-climbs/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "follow Eagle Creek Trail #410 for about 1.5 miles",
+     "replace": "follow Eagle Creek Trail #410 for about 1.9 miles",
+     "id": "wa_oval_peak_scramble",
+     "fact": "Eagle Creek Trail distance to the Oval Creek junction"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "follow that 1.5 miles back to the trailhead",
+     "replace": "follow that 1.9 miles back to the trailhead",
+     "id": "wa_oval_peak_scramble",
+     "fact": "Eagle Creek Trail distance to the Oval Creek junction"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "a mile and a half of valley trail reaches the Oval Creek fork",
+     "replace": "about two miles of valley trail reaches the Oval Creek fork",
+     "id": "wa_oval_peak_scramble",
+     "fact": "Eagle Creek Trail distance to the Oval Creek junction"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_pinnacle_mountain_entiat_scramble",
+   "fact": "trailhead and pass used by the standard route",
+   "verdict": "fixed",
+   "correct_value": "There are two genuine approaches. (1) North Fork Entiat Trailhead (end of FR 5606) up Trail #1437 to the Pyramid junction/Fox Camp, over Saska Pass, down into the Snow Brushy burn and up to the crest saddle just south of the peak - this is the line the route's waypoints, map and approach variant follow, so it goes on the trailhead card. (2) Entiat River Trailhead near Cottonwood, 7 mi up the Entiat River Trail to the 45-Mile Sheep Driveway, then off-trail via Aurora Creek into the Pinnacle Creek drainage below Borealis Ridge to the same saddle. There is no 'Emerald Park' on either line, and neither ascends 'via Borealis Pass'.",
+   "evidence": "One published guide describes the Entiat River Trail route: 7 mi to the 45-Mile Sheep Driveway, off-trail via Aurora Creek into Pinnacle Creek, camps at 6,500/7,200/7,600 ft on Borealis Ridge, then easy south slopes from the saddle south of Pinnacle on the Chelan Mountains crest. Borealis Pass appears only on its day-2 exit toward Choral Mountain. Two independent 'Chelan Slam' trip reports start from the North Fork Entiat Trailhead, pass the Pyramid Mountain trail junction, and camp at the head of the North Fork. One crosses the Saska saddle, drops over 1,000 ft through the burn and climbs a gully to Pinnacle. So both approaches are real. The itinerary's 'Emerald Park' is wrong for both, and the row's 'Borealis Pass' ascent references are wrong. The fix sets the trailhead card to match the waypoints and labels the itinerary as the Entiat River Trail option.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/02/pinnacle-mountain-entiat/",
+    "https://www.alpinewanderlust.com/bike-hike-scramble-camp-chelan-slam-emerald-saska-pinnacle/",
+    "https://www.thewildoutsiders.com/adventure-journal/chelan-slam"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Cottonwood Camp Trailhead",
+     "value": "North Fork Entiat Trailhead",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the Entiat River/Cottonwood Camp Trailhead",
+     "value": "From the North Fork Entiat Trailhead at the end of FR 5606",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "then day-trip the summit via Borealis Pass",
+     "replace": "then day-trip the summit by dropping into Snow Brushy Creek and climbing to the crest saddle just south of the peak",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "before leaving camp or Borealis Pass",
+     "replace": "before leaving camp or Saska Pass",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "from the saddle below Borealis Pass toward",
+     "replace": "from the Chelan Mountains crest saddle just south of the peak toward",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "from Borealis Pass;",
+     "replace": "from the crest saddle just south of the peak;",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "title"
+     ],
+     "expect": "Backpack in to high camp",
+     "value": "Backpack in to high camp (Entiat River Trail option)",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "then climb toward Emerald Park and the Saska/Borealis Ridge area",
+     "replace": "about 7 miles to the 45-Mile Sheep Driveway, then climb off-trail via Aurora Creek into the Pinnacle Creek drainage below Borealis Ridge",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "~6,900 ft basin below Emerald Peak",
+     "replace": "~6,500 ft in the Pinnacle Creek drainage",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "label"
+     ],
+     "expect": "Enter Emerald Park / burn zone",
+     "value": "Enter the Pinnacle Creek drainage / burn zone",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "the ~6,900 ft meadow below Emerald Peak",
+     "replace": "~6,500 ft in the Pinnacle Creek drainage",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "expect": "Reach a high camp near Borealis Ridge / Emerald Park below Pinnacle",
+     "value": "Reach a high camp near Borealis Ridge / Pinnacle Creek below Pinnacle",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "on the south slopes from the Saska/Borealis saddle",
+     "replace": "on the south slopes from the crest saddle just south of the peak",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "expect": "Light/day pack; cross toward Saska Pass or Borealis Pass depending on camp location.",
+     "value": "Light/day pack; climb from camp to the crest saddle just south of the peak.",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "a long backpack in to a high camp near Emerald Park/Borealis Ridge",
+     "replace": "a long backpack in via the Entiat River Trail to a high camp in the Pinnacle Creek drainage/Borealis Ridge",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "fromTo"
+     ],
+     "expect": "Backpack in to high camp",
+     "value": "Backpack in to high camp (Entiat River Trail option)",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "then climb toward Emerald Park and the Saska/Borealis Ridge area",
+     "replace": "about 7 miles to the 45-Mile Sheep Driveway, then climb off-trail via Aurora Creek into the Pinnacle Creek drainage below Borealis Ridge",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "(Entiat River / Emerald Park)",
+     "replace": "(North Fork Entiat over Saska Pass, or Entiat River / Pinnacle Creek)",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "Entiat River Trail and Emerald Park approach",
+     "replace": "North Fork Entiat and Entiat River Trail approaches",
+     "id": "wa_pinnacle_mountain_entiat_scramble",
+     "fact": "trailhead and pass used by the standard route"
+    }
+   ]
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "fact": "total route distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach, and 6.3 km (3.9 mi) is the one-way trail approach to Crater Lake. The approach, beta and itinerary all present the off-trail ridge above the lake as the climb, not the approach, so nothing on the row is contradicted.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "fact": "Corax Peak identity/elevation",
+   "verdict": "fixed",
+   "correct_value": "Corax Peak is the name of Raven Ridge's true high point, the 8,572 ft east summit. The small lower point just west of the summit saddle is not Corax, so this route's waypoint is right and the sibling Standard Route's beta is wrong.",
+   "evidence": "Wikipedia's Raven Ridge article says the highest point of Raven Ridge is Corax Peak on the east end, with Libby Peak (8,555 ft) the high point at the west end. Peakery lists the summit as 'Raven Ridge (Corax Peak)', and a climber there notes Corax lay several bumps east of an initial false summit. So the SE Ridge waypoint label is correct, and the Standard Route beta's 'separate, lower sub-summit called Corax (~8,380 ft) west of the saddle' is the error. 8,380 ft is the saddle elevation the Standard Route's own climbing_route gives. The patch is on the sibling row wa_raven_ridge_standard_route.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Raven_Ridge_(Washington)",
+    "https://peakery.com/raven-ridge-corax-peak-washington/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "A separate, lower sub-summit called \"Corax\" (~8,380 ft) sits just west of the main summit saddle.",
+     "replace": "The true east summit is also known as Corax Peak; a separate, lower point sits just west of the main summit saddle.",
+     "id": "wa_raven_ridge_standard_route",
+     "fact": "Corax Peak identity/elevation"
+    }
+   ]
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "fact": "total round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way distance. 10.5 km (6.5 mi) fits the route's own one-way legs: 5.1-5.5 mi of trail to Libby Lake, the ~900 ft gully and ~0.5 mi of ridge to the summit. Comparing it with the round trip was the reader's error. The round-trip figure itself was understated and is handled as a separate item.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "fact": "round-trip distance to the summit stated in the itinerary",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Roughly 12-13 miles round trip with about 4,200 ft of gain.",
+   "evidence": "The itinerary said 10-11 mi round trip, but the trail to Libby Lake alone is 10.2 mi round trip and 3,210 ft of gain, and the Forest Service gives 5.3 mi one way. The summit adds the ~900 ft gully and ~0.5 mi of ridge each way. The row's dist_km (6.5 mi one way), gain_ft 4,200, pitch_detail and climbing_route all imply ~12-13 mi. A route summary for the standard route gives about 13 mi and 4,200 ft round trip, but it was seen only in a search summary because the page blocked a direct fetch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/libby-lake",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/libby-creek-trail",
+    "https://www.summitpost.org/raven-ridge/916382"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "roughly 10–11 miles round trip with about 4,100+ ft of gain",
+     "replace": "roughly 12–13 miles round trip with about 4,200 ft of gain",
+     "id": "wa_raven_ridge_standard_route",
+     "fact": "round-trip distance to the summit stated in the itinerary"
+    }
+   ],
+   "discovered": true
+  },
+  {
+   "id": "wa_raven_ridge_standard_route",
+   "fact": "whether a parking pass is required at Libby Lake Trailhead",
+   "verdict": "fixed",
+   "correct_value": "No parking fee or pass is required at the Libby Lake Trailhead.",
+   "evidence": "The Forest Service's Libby Lake Trailhead page states 'No parking fee or pass required'. WTA's Libby Lake hike page lists the parking pass as 'None'. No current source requiring a Northwest Forest Pass was found.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/libby-lake-trailhead",
+    "https://www.wta.org/go-hiking/hikes/libby-lake"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "The Forest Service states that no parking fee or pass is required at the Libby Lake Trailhead, though some parties report that a Northwest Forest Pass is expected — confirm current signage locally",
+     "value": "No parking fee or pass is required at the Libby Lake Trailhead",
+     "id": "wa_raven_ridge_standard_route",
+     "fact": "whether a parking pass is required at Libby Lake Trailhead"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Conflicting reports — the Forest Service says none is required at Libby Lake Trailhead, but a Northwest Forest Pass is also reported as needed",
+     "value": "None required at Libby Lake Trailhead",
+     "id": "wa_raven_ridge_standard_route",
+     "fact": "whether a parking pass is required at Libby Lake Trailhead"
+    }
+   ]
+  }
+ ]
+}

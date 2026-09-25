@@ -1,0 +1,586 @@
+{
+ "applied": [
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "column": "rappels",
+   "path": [],
+   "fact": "Descent direction: which face/gully the first rappel(s) drop onto"
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "column": "rappel_detail",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Descent direction: which face/gully the first rappel(s) drop onto"
+  },
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Enchantment overnight permit season: May 15-Oct 31 (permit, access.permit) vs June 15-October 15 (access.notes)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Access/closure info names the wrong trailhead system (Teanaway/Ingalls Creek instead of Stuart Lake/Icicle Creek)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "access",
+   "path": [
+    "closures"
+   ],
+   "fact": "Access/closure info names the wrong trailhead system (Teanaway/Ingalls Creek instead of Stuart Lake/Icicle Creek)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "hours"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "hrs"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "seasonal_guidance",
+   "path": [
+    "monthBreakdown",
+    "September",
+    "reason"
+   ],
+   "fact": "Day-2 elapsed time in the schedule (14.5 hrs) vs the day's stated hours (11)"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "waypoints",
+   "path": [
+    7,
+    "note"
+   ],
+   "fact": "Descent: itinerary/timing/summit waypoint say reverse the arete and rappel/downclimb the couloir; descent, descent_text, rappel_detail say traverse east with ~4 rappels to the Argonaut-Colchuck col"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "waypoints",
+   "path": [
+    1,
+    "note"
+   ],
+   "fact": "Colchuck/Stuart trail fork: waypoint says take the Colchuck side; approach says stay straight/right toward Stuart Lake"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "access",
+   "path": [
+    "notes"
+   ],
+   "fact": "Overnight permit: access.permit/access.fees/permit say Enchantment quota permit; access.notes and itinerary.cal say this approach is non-quota"
+  },
+  {
+   "id": "wa_northwest_arete",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Overnight permit: access.permit/access.fees/permit say Enchantment quota permit; access.notes and itinerary.cal say this approach is non-quota"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "approach",
+   "path": [],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "grade"
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "crux"
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "anchor"
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "notes"
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "rack",
+   "path": [
+    2
+   ],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "bail",
+   "path": [],
+   "fact": "Chockstone gully identity: crux of this 5.6 route, or the finish of the scramble line"
+  },
+  {
+   "id": "wa_south_face_12",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Route distance: dist_km 8.85 (~5.5 mi one way) vs itinerary 15 mi round trip"
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Descent rappels: 2 rappels on natural anchors vs detailed_rack's '4 rappels with established anchors'"
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Overnight permit: Enchantment quota lottery (permit) vs outside the permit area (access.fees/notes/permit)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_argonaut_peak_northeast_couloir",
+   "before": {
+    "rappels": "2 rappels down slabs north of the exit gully (one party used two 30m ropes), plus a protected wet-ledge traverse",
+    "rappel_detail": [
+     {
+      "n": 1,
+      "pull": null,
+      "notes": null,
+      "anchor": "Natural, and not guaranteed to be in place — you may need to rig the anchor yourself, and one earlier party describes rappelling from a slung tree on the southeast-facing ledge. Carry webbing and nuts for this descent.",
+      "hazards": [
+       "No reliable fixed station — arriving expecting one and finding nothing is the failure mode here",
+       "You are committing off the summit onto a face on the opposite side of the peak from the couloir you climbed"
+      ],
+      "lengthM": null,
+      "station": "From the summit, descend back to the upper rock band; the single rappel from there drops onto the ledge on the southeast face."
+     },
+     {
+      "n": 2,
+      "pull": null,
+      "notes": null,
+      "anchor": "Natural / rigged; an older two-rope description used a stopper anchor part way up the southeast face.",
+      "hazards": [
+       "Gully terrain, loose",
+       "Anchors may have to be built from nuts and left behind"
+      ],
+      "lengthM": null,
+      "station": "First of the rappels down the gully lying east of the top of the Northeast Couloir, entered from the southeast-face ledge."
+     },
+     {
+      "n": 3,
+      "pull": null,
+      "notes": "A third rappel in this gully is described as sometimes necessary, so treat the count as two or three here rather than fixed.",
+      "anchor": "Natural / rigged.",
+      "hazards": [
+       "Loose gully; the transition onto snow at the bottom may need axe and crampons depending on season"
+      ],
+      "lengthM": null,
+      "station": "Continues down the same gully; the sequence ends on the snow slopes below, from which parties traverse toward the Colchuck-Dragontail notch or glissade the Colchuck Glacier."
+     }
+    ],
+    "access": {
+     "fees": "$5/day or $30/annual Northwest Forest Pass",
+     "notes": "Day-use permit: free, self-issue at trailhead, required May 15-October 31. Overnight: an Alpine Lakes Wilderness Enchantments overnight permit is required June 15-October 15 (limited availability, application-based). Parking is $5 per vehicle per day (or $30 annual Northwest Forest Pass), at the Stuart Lake Trailhead parking lot, right side of FR 7601 only. Forest Road 7601 typically closed November to May; recommended season is June through October (climbing season May-June for snow/ice conditions). Restrictions: parking only on right side of FR 7601; no dispersed camping between FR 7601 and Icicle Creek; dogs not allowed in Alpine Lakes Wilderness; motorized equipment prohibited.",
+     "permit": "Self-issued day-use wilderness permit at the trailhead; overnight permit required May 15-Oct 31 for camping",
+     "closures": null,
+     "landManager": "Okanogan-Wenatchee National Forest - Alpine Lakes Wilderness",
+     "passRequired": "Northwest Forest Pass"
+    }
+   }
+  },
+  {
+   "id": "wa_northwest_arete",
+   "before": {
+    "access": {
+     "fees": "Overnight camping in this basin is inside the Enchantment Permit Area, so the paid lottery applies: $5.00 per person per day for the overnight permit, May 15 - October 31, plus a $6 non-refundable lottery application fee. There is no fee for a day climb beyond the free self-issued trailhead permit.",
+     "notes": "Do not confuse this approach with the actual Enchantment Permit Area lottery (Stuart/Colchuck/Snow Lakes/Eightmile/Core zones, reached via the Stuart Lake or Snow Lakes trailheads) — Argonaut Peak's standard approaches are separate, non-quota Alpine Lakes Wilderness trailheads.",
+     "rules": "Standard USFS Alpine Lakes Wilderness group-size limit of 12 (people + stock). Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Overnight camping in this basin is inside the Enchantment Permit Area's Stuart Zone and needs a quota permit obtained in advance through the Recreation.gov lottery (May 15 - October 31). Day use needs only the free self-issued permit at the trailhead.",
+     "closures": "Beverly Creek/Fourth Creek Pass (FR-9737-112, Beverly Turnpike Trailhead) and several nearby Teanaway trails (Longs Pass, Ingalls Way, Standup Creek, etc.) were closed under a USFS order effective May 20-Dec 31, 2026 following the 2025 Labor Mountain Fire — confirm current status with the Cle Elum Ranger District before planning a Teanaway-side approach.",
+     "group_limit": 12,
+     "landManager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass ($5/day or $30/annual) at the Teanaway/Ingalls Creek trailheads."
+    },
+    "itinerary": {
+     "cal": "Approach from the Stuart Lake trailhead via Mountaineer Creek; a self-issue wilderness permit is required (no quota) and snow can linger on the upper approach/glacier into summer — a 2023 Labor Day party found 4 in. of fresh snow up high.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike from the Stuart Lake trailhead via Mountaineer Creek, then bushwhack up toward the basin below the couloir/notch, camping near water around 6,000 ft.",
+       "hours": 4.5,
+       "miles": 6,
+       "title": "Approach to basin camp",
+       "gainFt": 2600,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Reach a camp in the basin below Argonaut's north side"
+      },
+      {
+       "n": 2,
+       "note": "Climb the approach couloir to the notch, then 7 pitches up the Northwest Arête (mostly Class 4-5.6) to the summit. Reverse to the notch, rappel/downclimb, break camp, and hike out.",
+       "hours": 11,
+       "miles": 6,
+       "title": "Couloir, NW Arete, and out",
+       "gainFt": 2457,
+       "lossFt": 5057,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "4:00 AM",
+         "label": "Leave camp",
+         "detail": "Up the couloir toward the notch."
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Reach notch, rope up",
+         "detail": "Start of the 7-pitch arête."
+        },
+        {
+         "time": "9:30 AM",
+         "label": "Reach summit",
+         "detail": ""
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Begin descent",
+         "detail": "Reverse to the notch, rappels down the couloir."
+        },
+        {
+         "time": "3:00 PM",
+         "label": "Back at camp",
+         "detail": "Break camp for the hike out."
+        },
+        {
+         "time": "6:30 PM",
+         "label": "Reach trailhead",
+         "detail": "Fast parties instead push the whole route car-to-car in ~17 hrs."
+        }
+       ],
+       "objective": "Climb to the notch, up the arête, and exit to the trailhead"
+      }
+     ],
+     "totalNote": "Standard plan is 2 days (basin bivy + a big summit/exit day, ~11 hrs); strong parties also do the whole thing car-to-car in a single ~17 hr push, and some parties stretch it to 3 relaxed days with side-scrambles of Colchuck or Dragontail."
+    },
+    "timing": {
+     "totalHrs": 15.5,
+     "summitTimeHrs": 11,
+     "descentTimeHrs": null,
+     "approachTimeHrs": 4.5,
+     "recommendedStart": "4:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 4.5,
+       "note": "Hike from the Stuart Lake trailhead via Mountaineer Creek, then bushwhack up toward the basin below the couloir/notch, camping near water around 6,000 ft.",
+       "fromTo": "Approach to basin camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 11,
+       "note": "Climb the approach couloir to the notch, then 7 pitches up the Northwest Arête (mostly Class 4-5.6) to the summit. Reverse to the notch, rappel/downclimb, break camp, and hike out.",
+       "fromTo": "Couloir, NW Arete, and out",
+       "section": "Climb"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": "Fit for a long, full-value day (~15.5 hrs)",
+     "requiredSkills": [
+      "Real snow/ice competence — self-arrest, crampon/axe on firm 30-40°+ approach couloir terrain that can hold firm snow/ice into July",
+      "Route-finding judgment — a ledge/gendarme maze near the top is repeatedly cited as the navigation crux",
+      "Brush/bushwhack tolerance on the Mountaineer Creek approach"
+     ],
+     "experienceLevel": "Solid 5.7-5.8 trad leader (crux can reportedly feel stiffer than 5.6)"
+    },
+    "seasonal_guidance": {
+     "optimalWindow": "August-early September",
+     "monthBreakdown": {
+      "July": {
+       "reason": "Early July couloir often still consolidating, may need full snow/ice kit; mid-to-late July usually melted/consolidated",
+       "status": "marginal"
+      },
+      "June": {
+       "reason": "Couloir typically firm snow/ice, avalanche-adjacent, brush approach snow-covered",
+       "status": "risky"
+      },
+      "August": {
+       "reason": "Most reliably dry/consolidated, longest daylight for the long day",
+       "status": "optimal"
+      },
+      "October": {
+       "reason": "Daylight and early snow risk",
+       "status": "risky"
+      },
+      "September": {
+       "reason": "Optimal early-to-mid month; late September marginal given the 15.5-hr day length versus daylight, plus early snow risk",
+       "status": "optimal"
+      }
+     }
+    },
+    "waypoints": [
+     {
+      "lat": 47.5278,
+      "lng": -120.8205,
+      "elev": 3400,
+      "name": "Stuart Lake Trailhead",
+      "note": "Self-issue day-use wilderness permit at the kiosk; parking is very limited and the Enchantment Permit Area prohibits dogs.",
+      "type": "Trailhead",
+      "distMi": 0
+     },
+     {
+      "lat": 47.503532,
+      "lng": -120.845759,
+      "elev": 4400,
+      "name": "Colchuck Lake / Stuart Lake trail fork",
+      "note": "Trail flattens at a signed fork — Colchuck Lake left, Stuart Lake right; take the Colchuck side toward Mountaineer Creek.",
+      "type": "Junction",
+      "distMi": 2.2
+     },
+     {
+      "lat": 47.498516,
+      "lng": -120.861207,
+      "elev": 4700,
+      "name": "Cross-country departure into Mountaineer Creek drainage",
+      "note": "Leave the maintained trail here for brushy, off-trail travel through Devil's Club, slide alder, and boulder-strewn creek terrain toward Argonaut's north side.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 47.479735,
+      "lng": -120.864637,
+      "elev": 6800,
+      "name": "Lower basin below Argonaut's north face",
+      "note": "Rough rest/bivy basin where the bushwhack ends and the technical approach up the granite slab begins.",
+      "type": "Campsite",
+      "distMi": 4.7
+     },
+     {
+      "lat": 47.475187,
+      "lng": -120.86096,
+      "elev": 7300,
+      "name": "Snow-covered granite slab",
+      "note": "Steep, partly snow-covered granite slab leading into the couloir; slick and exposed when wet or icy.",
+      "type": "Hazard",
+      "distMi": 5.1
+     },
+     {
+      "lat": 47.471558,
+      "lng": -120.862146,
+      "elev": 7900,
+      "name": "40+ degree snow/ice couloir",
+      "note": "Couloir steepens to 40+ degrees near its top; crampons recommended for the final pitch to the notch.",
+      "type": "Hazard",
+      "distMi": 5.4
+     },
+     {
+      "lat": 47.470795,
+      "lng": -120.863477,
+      "elev": 8050,
+      "name": "Notch below the Northwest Arete",
+      "note": "Gain the ridge here and rope up for roughly seven pitches of Class 4 to 5.6+ climbing up the arete.",
+      "type": "Junction",
+      "distMi": 5.6
+     },
+     {
+      "lat": 47.470119,
+      "lng": -120.861477,
+      "elev": 8457,
+      "name": "Argonaut Peak summit (west summit, true)",
+      "note": "True summit is the west of two nearly equal summits (SE and W); most parties reverse the arete with short rappels through the crux, then downclimb the couloir.",
+      "type": "Summit",
+      "distMi": 6
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_south_face_12",
+   "before": {
+    "approach": "From the Beverly Turnpike Trailhead (Bean Creek/Beverly Creek TH) off the North Fork Teanaway River Road (FR-9737-112), the approach is well-documented with concrete checkpoints: at about 0.5 mile, bear left onto signed Trail #1391 (Beverly Turnpike Trail) — a wrong fork onto the Bean Creek Trail here is a commonly reported mistake, so double-check the sign. At about 3.1 miles, turn right onto Trail #1226.1 (Fourth Creek Trail). At about 3.6 miles you crest Fourth Creek Pass with the first open views of Argonaut, Colchuck, and Dragontail. Continue down the far side to about 6 miles and ~4,200 ft, where you ford Ingalls Creek (wading or a footlog) to reach good flat camping at the Fourth Creek/Ingalls Creek confluence — day one is roughly 6 miles and 2,000 ft of gain. From camp, follow the Ingalls Creek Trail west for about half a mile, then cut sharply left (north) and start climbing straight upslope toward Argonaut's south face: expect brushy 'jackstraw' forest for the first 300 vertical feet and then dense slide alder for close to 1,000 feet above that (progress can slow to a few hundred feet per hour in the thick of it — stay right/climber's-right to minimize brush where possible). At about 5,200 ft the brush relents onto open slopes; ascend the left side of a large drainage gully up to about 6,600 ft, then continue up the gully itself. At about 7,100 ft the gully forks — the standard line is the left branch (the right also goes but is less traveled). Climb to the right side of the summit face and find the route's technical crux: a 50-foot gully with a chockstone near its top (Class 4 — step right at the overhang to avoid harder class 5 moves), which tops out on the east ridge; follow this a short distance to the summit. Hazards: the Ingalls Creek ford, sustained brush-bashing on the lower slopes, and possible snow in the gully in shoulder season (carry an axe/crampons if conditions warrant).",
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.4",
+      "notes": "Start in the short left-facing corner with a crack in it and follow blocky, generally solid granite up the lower face; watch for loose blocks right at the base.",
+      "pitch": 1,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.6",
+      "notes": "Continue up the broad face on good rock — climbers can pick their own line here since the face is featured almost anywhere — working toward the right side of the summit wall to set up for the top-out gully.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "Class 4 (exposed)",
+      "notes": "The 50-foot gully with a chockstone near its top is Class 3 until the final stepping-right move past the chockstone (step right at the overhang to dodge a harder 5th-class option); short and only Class 4, but it's the route's real crux thanks to the exposure and a heavily-worn sling anchor right above it — back it up with fresh webbing. Tops directly onto the east ridge a short walk from the summit.",
+      "pitch": 3,
+      "anchor": "Sling/webbing anchor above chockstone",
+      "lengthM": 20
+     }
+    ],
+    "detailed_rack": "Short route — 300ft/3 pitches of blocky Class 5.6 on generally good granite directly below the summit. A single set of nuts plus cams in the 0.4-2in range (with extra pieces in the 0.75-1in range, reported as the most useful crux size) is sufficient; nothing larger is recorded as needed. Bring webbing or a cordelette specifically for building/backing up the crux-pitch anchor.",
+    "gear": [
+     "rock shoes",
+     "helmet",
+     "small-to-mid rack (nuts + cams ~0.4-2in)",
+     "60m single rope",
+     "webbing/cordelette for the crux belay/rap anchor"
+    ],
+    "rack": [
+     "Nuts, small-medium set",
+     "Cams 0.4-2in (extra pieces in 0.75-1in)",
+     "Webbing/cordelette for crux belay/rap anchor",
+     "Single 60m rope"
+    ],
+    "bail": "Retreat via the same 50-ft rappel back into the gully, then downclimb class 2-4 terrain toward Ingalls Creek.",
+    "dist_km": 8.85
+   }
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "before": {
+    "detailed_rack": "Single set of nuts and cams from finger-size through ~3in covers the ridge's crack and corner systems; nothing larger is reported as needed. The East Ridge is most commonly encountered as the standard rappel descent off the Northwest Arete (Argonaut-Colchuck Col in 4 rappels) with established anchors found at each station, so bring cordelette/webbing to back up or replace tat if worn.",
+    "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead."
+   }
+  }
+ ]
+}

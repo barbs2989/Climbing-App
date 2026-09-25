@@ -1,0 +1,409 @@
+{
+ "file": "r068.json",
+ "results": [
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "fact": "Icefall traverse direction (left vs right) to reach the main wall",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Ascend left up the small glacier to the icefall, then traverse RIGHT through and under the icefall to a ledge onto the face",
+   "evidence": "The first-ascent account of the Northeast Face says the party climbed easier cliffs to the small glacier, ascended left up it to a surprisingly large icefall, then made a frightening traverse to the right, through and under the icefall, to a ledge leading onto the face. The row's approach_variants notes and baseFinding already say this; only beta said 'traverse left'. No second independent description of this rarely repeated route was found.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196541002/North-America-United-States-Washington-Cascade-Mountains-Mount-Booker-Northeast-Face"
+   ],
+   "patches": [
+    {
+     "id": "wa_booker_mountain_northeast_face",
+     "fact": "Icefall traverse direction (left vs right) to reach the main wall",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "then traverse left across an icefall (reported as a genuinely exposed, 'frightening' crossing) to reach the main rock wall",
+     "replace": "then go left up the glacier to an icefall and traverse right through and under it (reported as a genuinely exposed, 'frightening' crossing) to reach the main rock wall"
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "fact": "Total route distance: dist_km (2.5 mi) vs itinerary days total (11.9 mi)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the ONE-WAY approach figure while 11.9 mi is the whole three-day trip; 2.5 mi one way to a Boston Basin camp matches a published 2.5 mi / 3,100 ft day to camp, and the 3.2 mi itinerary leg sits inside the published 3-4 mi to high camp, so the two fields measure different quantities rather than disagree.",
+   "sources": [
+    "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day",
+    "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boston_peak_southeast_face",
+   "fact": "Cascade River Road access beyond the Eldorado gate (MP20) to Boston Basin trailhead: this route and Northwest Ridge describe normal seasonal access, but the sibling West Face route says the road is currently gated there by 2026 landslide damage",
+   "verdict": "not_a_contradiction",
+   "correct_value": "Cascade River Road open to its end (Cascade Pass trailhead) in summer 2026; the spring-2026 gate at Eldorado (MP 20) was lifted by early July",
+   "evidence": "This row's road text (normal season-only gating at Eldorado) is current: the park's road-conditions page (updated July 3, 2026) lists Cascade River Road as OPEN with no closure note, and a July 30, 2026 day-hike report to Cascade Pass records the road as rough but passable. A June 17, 2026 news report confirms the spring gate at MP 20 after landslide repairs at MP 18, which is the stale state the sibling West Face row still describes; that sibling is patched under wa_boston_peak_west_face.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-31.091859315466",
+    "https://www.spokesman.com/stories/2026/jun/17/wa-mountain-access-faces-long-road-to-recovery-as-/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "fact": "ice_grade 'M1' vs beta's description of 'vertical mixed terrain'",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "M1 steep snow/rime; the winter ascent stayed on steep snow and rime and avoided the harder mixed direct gully",
+   "evidence": "The published route listing grades the West Face 'M1 Steep Snow' and describes all five pitches as steep snow/gully climbing. The first winter ascent account (Feb 10, 2024) describes steep, increasingly icy snow full of rime, gear found by clearing rime from rock, and says the steep direct gully looked like tough mixed climbing so they stuck to snow; nothing describes vertical mixed ground. The row's overview, approach_variants notes and ice_grade all agree with steep snow; beta's 'vertical mixed terrain' is the outlier. Both external pages likely come from the same party, so they are counted as one.",
+   "sources": [
+    "https://www.mountainproject.com/route/201572908/west-face-of-boston",
+    "https://www.countryhighpoints.com/boston-peak-winter-ascent/"
+   ],
+   "patches": [
+    {
+     "id": "wa_boston_peak_west_face",
+     "fact": "ice_grade 'M1' vs beta's description of 'vertical mixed terrain'",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "found the climbing ranging from low-angle snow to vertical mixed terrain near the top, with significant rime-ice removal required",
+     "replace": "found steep snow that grew icier and more rime-choked toward the north ridge, stayed on snow rather than take the harder mixed direct gully, and needed significant rime-ice removal to find gear"
+    }
+   ]
+  },
+  {
+   "id": "wa_boston_peak_west_face",
+   "fact": "Cascade River Road access beyond the Eldorado gate: this route says currently gated by 2026 landslide damage, but sibling routes on the same peak describe normal seasonal access",
+   "verdict": "fixed",
+   "correct_value": "Open to the Cascade Pass trailhead by July 2026; the spring-2026 gate at Eldorado (MP 20) after landslide damage near MP 18 is past",
+   "evidence": "A June 17, 2026 news report says the road was gated at MP 20 (Eldorado) after a spring landslide, with repairs at MP 18 finished June 10. The park's road-conditions page, updated July 3, 2026, lists Cascade River Road as OPEN with no current closure, and a July 30, 2026 Cascade Pass day-hike report records the road as rough but passable. The West Face row's 'gated there' is therefore stale; the sibling rows' normal seasonal description is current.",
+   "sources": [
+    "https://www.nps.gov/noca/planyourvisit/road-conditions.htm",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-31.091859315466",
+    "https://www.spokesman.com/stories/2026/jun/17/wa-mountain-access-faces-long-road-to-recovery-as-/"
+   ],
+   "patches": [
+    {
+     "id": "wa_boston_peak_west_face",
+     "fact": "Cascade River Road access beyond the Eldorado gate: this route says currently gated by 2026 landslide damage, but sibling routes on the same peak describe normal seasonal access",
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "find": "Open to Eldorado Trailhead (MP 20) as of mid-2026; gated there following spring-2026 landslide/storm damage near MP 18",
+     "replace": "Open to the Cascade Pass trailhead as of July 2026; spring-2026 landslide damage near MP 18 kept it gated at the Eldorado Trailhead (MP 20) into June"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+   "verdict": "fixed",
+   "correct_value": "July 2018",
+   "evidence": "The climbers' own narrative of the Boston Marathon says 'Come July 2018' they packed for four days and made the traverse; the route listing gives FA 'Boyce-Willis July 2018'; and the climbers' trip report is dated 07/10/2018. Only the journal's photo captions say August 2018. So `fa` is right and overview, best_season and the August month note are wrong.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon",
+    "https://www.mountainproject.com/route/118250903/northwest-ridge",
+    "https://cascadeclimbers.com/forum/topic/102654-tr-north-cascades-boston-basin-the-boston-marathon-07102018/"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "Kyle Willis's August 2018 'Boston Marathon,'",
+     "replace": "Kyle Willis's July 2018 'Boston Marathon,'"
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+     "op": "replace_text",
+     "column": "best_season",
+     "path": [],
+     "find": "the only documented ascent was in August.",
+     "replace": "the only documented ascent was in July."
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "Best-documented conditions — the one known ascent was in this window",
+     "replace": "Core of the late-summer window for the glacier approach and dry rock"
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "First-ascent date: 'fa' says July 2018; three other fields say August 2018",
+     "op": "replace_text",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "July",
+      "reason"
+     ],
+     "find": "Workable but variable",
+     "replace": "Workable but variable; the one known ascent was made in July"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "Southeast Face (the standard route, whose descent is the three rappels on the south side)",
+   "evidence": "Boston Peak's standard route is the Southeast Face, with a separate standard rappel line on the south face; no 'Southwest Face' route exists. The sibling row named Southeast Face carries exactly the three 25 m rappels to the Boston Glacier that this row describes, and the row's own schedule label 'Descend via SE ledges + 3 rappels' already says SE.",
+   "sources": [
+    "https://www.countryhighpoints.com/boston-peak-winter-ascent/",
+    "https://www.mountainproject.com/route/118250903/northwest-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "descend via the Southwest Face's established rappel line",
+     "replace": "descend via the Southeast Face route's established rappel line"
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "standard Southwest Face rappel descent",
+     "replace": "standard Southeast Face rappel descent"
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "shared with the Southwest Face route",
+     "replace": "shared with the Southeast Face route"
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Recommended descent route is named 'Southwest Face' three times, but no such route exists on Boston Peak — the described mechanics match 'Southeast Face'",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "established Southwest Face walk-off/rappel descent",
+     "replace": "established Southeast Face walk-off/rappel descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "Descent method: `rappels` describes a specific 3-5 rappel reversal of the ridge itself, while descent/descent_text/bail say no such descent beta exists and recommend against reversing the ridge",
+   "verdict": "fixed",
+   "correct_value": "3-5 rappels occur ON the ridge (en route, to pass gendarmes, off threaded cord); the way down from the summit is the standard rappel line on the south side",
+   "evidence": "The first-ascent party's route description says to expect 3-5 rappels en route to get past the many gendarmes, threading the rope through 5-6 mm cord, and then to descend the standard rappel route down the south face. The winter-ascent account also names the south face as the standard rappel route, and the journal account shows the party rappelling and traversing along the ridge system before continuing over to Sahale. So the rappels field wrongly put the 3-5 gendarme rappels on the descent; once it is placed on the ridge it agrees with descent, descent_text and bail (no fixed stations, no documented reversal).",
+   "sources": [
+    "https://www.mountainproject.com/route/118250903/northwest-ridge",
+    "https://www.countryhighpoints.com/boston-peak-winter-ascent/",
+    "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Descent method: `rappels` describes a specific 3-5 rappel reversal of the ridge itself, while descent/descent_text/bail say no such descent beta exists and recommend against reversing the ridge",
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "3–5 rappels down the standard south-face route, threading around several gendarmes back toward the Boston–Sahale col",
+     "replace": "3–5 rappels on the ridge itself to get past its gendarmes, off threaded cord rather than fixed stations; the way off the summit is the standard rappel line down the south side, shared with the Southeast Face route"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+   "verdict": "fixed",
+   "correct_value": "About 3-4 mi to Boston Basin high camp (itinerary's 3.2 mi is right); the waypoint distances of 4.3-7.9 mi are inflated",
+   "evidence": "A guide service lists the Boston Basin approach as 3-4 miles and 3,200 ft to high camp at 6,400 ft (low camp 5,300 ft); another lists 2.5 miles and 3,100 ft to the basin camp. The itinerary's 3.2 mi/3,100 ft day is consistent; the waypoint chain (5.3 mi to low camp, 6.3 mi at 6,400 ft) is not. No source gives per-waypoint distances, so the wrong distMi values are cleared rather than replaced with computed numbers.",
+   "sources": [
+    "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/",
+    "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 4.3,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 5.2,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      3,
+      "distMi"
+     ],
+     "expect": 5.3,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": 6.3,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      5,
+      "distMi"
+     ],
+     "expect": 7,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      6,
+      "distMi"
+     ],
+     "expect": 7.4,
+     "value": null
+    },
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Approach distance to camp: itinerary day 1 (3.2 mi) vs the route's own waypoint chain (5.3 mi to the lower basin camp alone)",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": 7.9,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "dist_km 25.43 (15.8 mi shown as the one-way approach) vs the 3.2 mi approach to Boston Basin high camp in the itinerary",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "about 3.2 mi (5.15 km) one way to Boston Basin high camp",
+   "evidence": "dist_km 25.43 km is exactly twice the inflated 7.9 mi waypoint chain, i.e. a round-trip figure built on distances the sources contradict. Published approach figures are 3-4 mi to high camp and 2.5 mi to the basin camp; the row's own itinerary day 1 is 3.2 mi, so the one-way figure is set to 3.2 mi.",
+   "sources": [
+    "https://www.northwestalpineguides.com/northwest-climbs/forbidden-peak/",
+    "https://www.mountainbureau.com/scheduled-programs-blog/north-cascades-boston-basin-3day"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "dist_km 25.43 (15.8 mi shown as the one-way approach) vs the 3.2 mi approach to Boston Basin high camp in the itinerary",
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 25.43,
+     "value": 5.15
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "Direction the first-ascent party continued after Boston's summit (descent_text says toward Sharkfin/Forbidden; overview, itinerary and the ascent account say they came from there and went on to Sahale)",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The party came from Forbidden and Sharkfin Tower and continued from Boston's summit over to Sahale and down Sahale Arm",
+   "evidence": "The journal account says that from Boston's summit 'a relatively casual jaunt' took them over Sahale's summit and down the Sahale Glacier and Sahale Arm; they had come from Forbidden and Sharkfin Tower. The route description likewise starts from the base of Sharkfin. descent_text's 'toward/over Sharkfin Tower and Forbidden' reverses the direction the overview and itinerary give.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon",
+    "https://www.mountainproject.com/route/118250903/northwest-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "Direction the first-ascent party continued after Boston's summit (descent_text says toward Sharkfin/Forbidden; overview, itinerary and the ascent account say they came from there and went on to Sahale)",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "(toward/over Sharkfin Tower and Forbidden)",
+     "replace": "(over to Sahale Peak and down Sahale Arm)"
+    }
+   ]
+  },
+  {
+   "id": "wa_northwest_ridge_2",
+   "fact": "climbing_route[2] says the first-ascent party abandoned the traverse and rappelled to the Quien Sabe Glacier from this ridge, while overview/descent/descent_text say they continued the traverse over the summit",
+   "discovered": true,
+   "verdict": "fixed",
+   "correct_value": "The rock-too-poor-to-rappel episode and the rappels/downclimb to the Quien Sabe Glacier happened between Forbidden and Sharkfin, before this ridge; after the ridge the party continued over Boston's summit to Sahale",
+   "evidence": "The journal account places the 'no reasonable way to rappel' rock, the chossy couloir, and the rappels and downclimbing to the northern edge of the Quien Sabe Glacier at the terminus of Forbidden, before Sharkfin Tower; after the northwest ridge they reached Boston's summit and continued to Sahale. The route description also treats the ridge as climbed to the summit and descended by the standard south-side rappels. climbing_route[2] misplaced that retreat onto this ridge.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201214976/Boston-Basin-Boston-Marathon",
+    "https://www.mountainproject.com/route/118250903/northwest-ridge"
+   ],
+   "patches": [
+    {
+     "id": "wa_northwest_ridge_2",
+     "fact": "climbing_route[2] says the first-ascent party abandoned the traverse and rappelled to the Quien Sabe Glacier from this ridge, while overview/descent/descent_text say they continued the traverse over the summit",
+     "op": "replace_text",
+     "column": "climbing_route",
+     "path": [
+      2,
+      "notes"
+     ],
+     "find": "Retreat is the defining hazard: the party that made the ascent reported the rock too poor to rappel reliably and ultimately abandoned their intended continuation of the ridge traverse, descending instead by rappels and traversing to the Quien Sabe Glacier.",
+     "replace": "Retreat is the defining hazard: the ridge has no fixed stations, the gendarmes already take several rappels off threaded cord on the way up, and the only party known to have climbed it went over the summit and on toward Sahale rather than reversing any of it."
+    }
+   ]
+  }
+ ]
+}

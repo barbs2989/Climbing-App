@@ -1,0 +1,251 @@
+{
+ "batches": ["b117.json", "b118.json", "b119.json", "b120.json"],
+ "routes_read": 6,
+ "routes": [
+  {
+   "id": "wa_mount_daniel_lynch_glacier",
+   "name": "Lynch Glacier",
+   "area": "Mount Daniel",
+   "contradictions": [
+    {
+     "fact": "Which approach/trailhead is the standard one for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_variants[0].primary", "says": "true (variant name: \"Cathedral Pass and Peggy's Pond, then the east ridge and Lynch draw\")"},
+      {"field": "approach_variants[1].longForm", "says": "true (variant name: \"Deception Pass, Marmot and Jade Lakes, and Dip Top Gap from the east\") -- i.e. flagged as the LONGER option, not primary"},
+      {"field": "approach", "says": "\"From the Deception Pass Trailhead, hike to Marmot/Jade Lakes, continue to Dip Top Gap, then traverse west...\" -- describes approach_variants[1], not the flagged-primary [0]"},
+      {"field": "approach_logistics.trailhead", "says": "\"Deception Pass Trailhead\""},
+      {"field": "descent", "says": "\"...over Dip Top Gap, past Marmot/Jade Lakes, to the Deception Pass Trailhead\" -- again the east/[1] line"}
+     ],
+     "why": "The structured approach_variants data flags the Cathedral Pass/Peggy's Pond line as \"primary\", but every top-level narrative field (approach, approach_logistics.trailhead, descent) instead describes the other, non-primary variant (Deception Pass Trail via Marmot/Jade Lakes and Dip Top Gap). A climber reading the header/Plan-tab prose would take a different trailhead and trail than the one the row's own primary flag names.",
+     "internal_resolution": "Ambiguous which is authoritative -- variant[0] is explicitly primary:true and is also the approach used for the neighboring Daniel Glacier / SE Slopes route on the same peak (Cathedral Pass to Peggy's Pond), which weakly favors it being the intended standard line, with the top-level approach/descent/approach_logistics fields being the stale/wrong ones.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_daniel_daniel_glacier",
+   "name": "Daniel Glacier / Southeast Slopes",
+   "area": "Mount Daniel",
+   "contradictions": [
+    {
+     "fact": "Distance and gain from trailhead to Peggy's Pond camp",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_variants[0].distMi", "says": "7.5"},
+      {"field": "approach_variants[0].gainFt", "says": "5100"},
+      {"field": "approach_variants[0].notes", "says": "\"...About 12 km and 5,100 ft.\" (closing line, describing the same Cathedral Pass-to-Peggy's-Pond leg)"},
+      {"field": "itinerary.days[0].miles", "says": "7.5 (title: \"Approach to Peggy's Pond\")"},
+      {"field": "itinerary.days[0].gainFt", "says": "2700"},
+      {"field": "approach", "says": "\"...Cathedral Pass (~5500 ft, roughly 4.2-4.5 miles in)...Peggy's Pond (~5,560 ft, about 5-5.5 miles from the trailhead)\""},
+      {"field": "pitch_detail[0]+[1]", "says": "\"Cathedral Rock Trailhead to Cathedral Pass (4.5 miles)\" + \"Cathedral Pass to Peggy's Pond (1 mile)\" = 5.5 miles total"}
+     ],
+     "why": "Two independent, detailed sources (the approach prose and the pitch_detail table) agree the trailhead-to-Peggy's-Pond leg is about 5-5.5 miles with roughly 2,700 ft of gain (matching itinerary.days[0].gainFt); approach_variants[0] instead states 7.5 miles and 5,100 ft (the latter equal to the ENTIRE route's top-level gain_ft, i.e. trailhead-to-summit-and-back, not just the approach), a distance error of ~35-40% and a gain error of ~89% for the same leg.",
+     "internal_resolution": "The approach prose, pitch_detail, and itinerary.days[0].gainFt agree closely (~5.5 mi / ~2,700 ft); approach_variants[0]'s distMi (matches itinerary's 7.5mi, oddly) and gainFt (5,100, duplicating the route's total gain_ft) look like the outlier/miscomputed values.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total time for summit day (day 2) vs its own schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].hours", "says": "11"},
+      {"field": "timing.summitTimeHrs", "says": "11"},
+      {"field": "timing.totalHrs", "says": "15.5 (= approachTimeHrs 4.5 + summitTimeHrs 11)"},
+      {"field": "itinerary.days[1].schedule", "says": "Leave camp 4:30 AM -> Back at Peggy's Pond 3:30 PM (11 h) -> Trailhead ~7:30 PM (an additional ~4 h not counted anywhere)"}
+     ],
+     "why": "The day-2 schedule's own clock times run from 4:30 AM to ~7:30 PM, a 15-hour day (matching the return-to-camp leg at 11h, but then adding ~4 more hours to hike all the way out to the trailhead the same day, per the day's own note). Yet day2.hours/summitTimeHrs/totalHrs all treat the day as only 11 hours, so the stated car-to-car total (15.5h) undercounts the schedule's own trailhead-arrival time by roughly 4 hours (~26%).",
+     "internal_resolution": "The schedule's clock times (ending ~7:30 PM at the trailhead) are the more granular, self-consistent source; timing.descentTimeHrs is null, meaning the ~4h hike-out after returning to camp was never added into totalHrs/day2.hours.",
+     "needs_research": false
+    },
+    {
+     "fact": "Start of the best climbing window",
+     "severity": "low",
+     "claims": [
+      {"field": "season", "says": "\"Jul-Sep\""},
+      {"field": "best_season", "says": "\"Late June/July through September is the standard window...\""}
+     ],
+     "why": "best_season opens in late June, a few weeks before the season field's stated July start; the monthBreakdown also only covers July-September, not June.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "name": "Hinman Glacier / Standard",
+   "area": "Mount Hinman",
+   "contradictions": [
+    {
+     "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_variants[0].gainFt", "says": "6100 (variant name: \"Necklace Valley to La Bohn Gap and the lakes\")"},
+      {"field": "itinerary.days[0].gainFt", "says": "4200 (title: \"Backpack in to La Bohn Lakes / Jade Lake\", same leg)"},
+      {"field": "approach", "says": "\"...total approach to La Bohn Gap is about 10-11 miles one-way with ~5,000+ ft of cumulative gain...\""},
+      {"field": "gain_ft (top-level, whole route)", "says": "6100"}
+     ],
+     "why": "approach_variants[0].gainFt (6100) is identical to the ROUTE'S total gain_ft (trailhead all the way to the summit and back, itinerary day1 4200 + day2 1900 = 6100), even though this variant is explicitly scoped to just the approach leg (trailhead to La Bohn Gap). The itinerary's own day-1 figure (4200) and the approach prose (\"~5,000+ ft\") agree the approach-only gain is well under 6100 ft.",
+     "internal_resolution": "itinerary.days[0].gainFt (4200) and the approach prose (\"~5,000+ ft\") are mutually consistent for the approach-only leg; approach_variants[0].gainFt duplicates the whole-route total and is the likely error.",
+     "needs_research": false
+    },
+    {
+     "fact": "Summit-day duration vs its own schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[1].hours", "says": "7"},
+      {"field": "timing.summitTimeHrs", "says": "7"},
+      {"field": "itinerary.days[1].schedule", "says": "Leave high camp 3:45 AM -> Back at camp ~1:00 PM"}
+     ],
+     "why": "3:45 AM to 1:00 PM is about 9 hours 15 minutes, roughly 32% more than the 7 hours the day/timing fields claim for the same round trip to the summit and back to camp.",
+     "internal_resolution": "The schedule's clock times (3:45 AM departure, 1:00 PM return) are internally consistent and more granular; the \"7\" figure appears to undercount them. One schedule note hedges that the ~3-hour summit push is what \"fast parties report,\" which may be the source of the optimistic total.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km as one-way vs itinerary total as round trip",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "20.1 (~12.5 mi)"},
+      {"field": "itinerary.totalNote", "says": "\"roughly 23 miles round trip and ~6,000 ft of cumulative gain\""},
+      {"field": "waypoints[-1] (Mount Hinman summit).distMi", "says": "11.5 (one-way)"}
+     ],
+     "why": "dist_km (~12.5 mi) is close to the one-way summit distance (11.5 mi) but is filed as a flat route-level field that could be read alongside the itinerary's round-trip 23 mi as if describing the same quantity.",
+     "internal_resolution": "dist_km is one-way (matches the one-way waypoint distance closely); the itinerary/totalNote figure is round trip. Not a hard contradiction unless both are presented as the same number on one screen.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_east_ridge_6",
+   "name": "East Ridge",
+   "area": "Mount Thomson",
+   "contradictions": [
+    {
+     "fact": "Total route elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "3600"},
+      {"field": "loss_ft", "says": "4900"},
+      {"field": "itinerary.days[0].gainFt", "says": "4900"},
+      {"field": "itinerary.days[0].lossFt", "says": "4900"},
+      {"field": "itinerary.totalNote", "says": "\"...~16-17 miles round trip with ~4,900 ft of gain...\""}
+     ],
+     "why": "This is a car-to-car round trip that returns to the trailhead, so gain should equal loss; the itinerary and loss_ft agree at 4,900 ft (also matching the route's own totalNote), but gain_ft states 3,600 ft -- a ~36% shortfall that also breaks the gain=loss expectation of an out-and-back day, and would show as a mismatch between the route header's \"Gain\" figure and the itinerary TOTAL row.",
+     "internal_resolution": "loss_ft, itinerary.gainFt/lossFt, and totalNote all agree at 4,900 ft; gain_ft (3,600) looks like a one-way/net figure (roughly trailhead 3,020 ft to summit 6,554 ft = 3,534 ft) mistakenly used as the route-level cumulative gain.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "name": "West Ridge",
+   "area": "Mount Thomson",
+   "contradictions": [
+    {
+     "fact": "Total route elevation gain/loss",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5200"},
+      {"field": "loss_ft", "says": "5200"},
+      {"field": "approach_variants[0].gainFt", "says": "5200"},
+      {"field": "itinerary.days[0].gainFt", "says": "3600"},
+      {"field": "itinerary.days[0].lossFt", "says": "3600"},
+      {"field": "itinerary.totalNote", "says": "\"...~3,600 ft gain/loss...\""},
+      {"field": "approach", "says": "\"Total trailhead-to-base distance is about 8-8.5 miles with roughly 2,900-3,000 ft of gain...\" (to the route's base, before any summit-block climbing)"},
+      {"field": "waypoints", "says": "Trailhead 3,000 ft; West Ridge notch/base ~5,960 ft; summit 6,554 ft"}
+     ],
+     "why": "The trailhead (3,000 ft), the route's own base elevation (~5,960 ft, matching the approach's \"2,900-3,000 ft to the base\"), and the summit (6,554 ft) only support a total gain of roughly 3,550-3,600 ft, exactly matching the itinerary/totalNote figure of 3,600. gain_ft/loss_ft (5,200) and approach_variants[0].gainFt (5,200) disagree by ~44%, and approach_variants[0]'s own prose (\"2,900 to 3,000 ft to the base\") directly contradicts its own gainFt field of 5,200.",
+     "internal_resolution": "Waypoint elevations, approach prose, itinerary, and totalNote all converge on ~3,600 ft; gain_ft/loss_ft and approach_variants[0].gainFt (5,200) are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "Pitch count and which pitch is the crux",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "6"},
+      {"field": "pitch_detail", "says": "only 5 entries (P1-P5); the crux (\"crux\": true, the 5.6 roof/bulge pitch) is entry n=2"},
+      {"field": "waypoints (\"Crux 5.6 Bulge\")", "says": "labeled \"(Pitch 3)\""},
+      {"field": "pro_tips", "says": "\"A commonly reported six-pitch breakdown: P1-2 climb chimney systems; P3 is the crux, a 5.6 bulge; P4 a 5.4 face...P5...P6 ledges and cracks to the summit -- though many parties link it into just 4-5 pitches.\""},
+      {"field": "bail", "says": "\"From below pitch 3: down-climb via Class 4-5 terrain to belay 2...\""}
+     ],
+     "why": "The top-level pitches field (6), the waypoint's crux label (\"Pitch 3\"), pro_tips's six-pitch breakdown, and the bail field all use a 6-pitch numbering where the crux is pitch 3 -- but the row's own pitch_detail array (the rendered ROUTE BREAKDOWN) has only 5 pitches and marks the crux as pitch 2, one number off from every other reference to it.",
+     "internal_resolution": "pro_tips itself notes parties commonly link the raw topo into \"just 4-5 pitches,\" which may explain the discrepancy, but the stored pitch_detail (5 entries, crux at n=2) is what actually renders as the numbered breakdown, so a climber cross-referencing it against the waypoint/pro_tips/bail text's \"Pitch 3\" would be looking at the wrong pitch.",
+     "needs_research": false
+    },
+    {
+     "fact": "Car-to-car total time vs its own schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "11"},
+      {"field": "itinerary.days[0].hours", "says": "11"},
+      {"field": "itinerary.totalNote", "says": "\"~10-12 hrs car-to-car...\""},
+      {"field": "itinerary.days[0].schedule", "says": "Leave trailhead 3:30 AM -> Back at trailhead ~5:00-6:00 PM (detail text on that same entry: \"10-12 hr car-to-car is typical\")"}
+     ],
+     "why": "3:30 AM to 5:00-6:00 PM is 13.5-14.5 hours elapsed, roughly 27-32% more than the stated 11-hour total; even the schedule's own final entry, which gives the clock time producing that 14-hour span, simultaneously asserts \"10-12 hr car-to-car is typical\" in its detail text -- the schedule contradicts its own summary claim in the same entry.",
+     "internal_resolution": "None -- the clock times and the narrative total inside the same schedule array do not agree with each other.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "name": "Southeast Route",
+   "area": "Overcoat Peak",
+   "contradictions": [
+    {
+     "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+     "severity": "high",
+     "claims": [
+      {"field": "pitch_detail[1] (\"Col to south ridge\")", "says": "\"Shed glacier gear at the col and step directly onto the south ridge\""},
+      {"field": "pitch_detail[2] (\"West-side ledge traverse\")", "says": "\"A ledge traverses the west side of the south ridge with real exposure...\""},
+      {"field": "climbing_route[0]-[2]", "says": "Snow finger off the glacier -> \"Heathery slot to the notch\" (step out onto rock, matching the east-face waypoint) -> \"Angled chimney to the saddle\""},
+      {"field": "waypoints (\"Snow finger to east face\")", "says": "\"Find the snow finger leading off the glacier onto the east face here, then pick up the Class 3-4 ledges and heathery gully toward the summit block.\""},
+      {"field": "descent", "says": "\"...exits via heather ledges and a dihedral on the peak's east side, finishing with two full rope-length rappels...\""},
+      {"field": "overview", "says": "\"...demanding sustained class 4 (occasionally low 5th-class) climbing...climb the exposed fourth class rock on the northeast side of the summit pyramid\" (beta field, same wording)"},
+      {"field": "approach_variants[0].baseFinding", "says": "\"...the summit pyramid is gained on its EAST or NORTH-EAST side. Nobody describes climbing it from the south-east. If you are working around to the south side of the block looking for a way up, you have gone the wrong way round.\""}
+     ],
+     "why": "Every other field that names a side of the mountain (climbing_route, the waypoints, descent, overview/beta, and the approach_variants baseFinding, which explicitly warns against the south side) agrees the route climbs the peak's east/northeast face via a snow finger, heathery slot and angled chimney. pitch_detail instead routes the party from a \"col\" onto the \"south ridge\" and across a \"west-side ledge traverse\" -- exactly the wrong-side line the row's own baseFinding warns climbers away from. This reads as pitch_detail being contaminated with a different route's data (the same bivy text elsewhere on this peak describes neighboring Chimney Rock's separate \"West Face and South Summit line by way of the glacier and the notch,\" which matches pitch_detail's col/south-ridge/west-side wording).",
+     "internal_resolution": "climbing_route, waypoints, descent, overview/beta and the approach_variants baseFinding all independently agree on an east/northeast-side ascent; pitch_detail is the sole outlier and appears to describe a different route.",
+     "needs_research": false
+    },
+    {
+     "fact": "Approach-day (day 1) duration vs its own schedule",
+     "severity": "high",
+     "claims": [
+      {"field": "itinerary.days[0].hours", "says": "9"},
+      {"field": "timing.approachTimeHrs", "says": "9"},
+      {"field": "timing.totalHrs", "says": "26 (= 9 + 10 + 7)"},
+      {"field": "itinerary.days[0].schedule", "says": "Leave trailhead 5:30 AM -> Reach glacier camp 5:30 PM"}
+     ],
+     "why": "5:30 AM to 5:30 PM is exactly 12 hours, a third more than the 9 hours the day/timing fields state for the identical leg.",
+     "internal_resolution": "The schedule's own clock times (5:30 AM to 5:30 PM) are the more granular source and directly contradict the 9-hour total assigned to the same day.",
+     "needs_research": false
+    },
+    {
+     "fact": "Whether June is part of the recommended season",
+     "severity": "medium",
+     "claims": [
+      {"field": "itinerary.cal", "says": "\"Best climbed roughly June-August when the approach road/trail are passable and the snow finger above the glacier is still climbable with crampons...\""},
+      {"field": "best_season", "says": "\"Late July into August is the classic window...this is not sensible as a pre-July objective given the long, brushy, low-elevation approach.\""},
+      {"field": "season", "says": "\"Jul-Sep\""}
+     ],
+     "why": "itinerary.cal recommends June as part of the best window, while best_season explicitly rules out anything before July as \"not sensible,\" and the season field itself starts in July -- direct opposite guidance about whether a June attempt is advisable.",
+     "internal_resolution": "season and best_season agree with each other (and best_season gives a specific reason June/pre-July is discouraged); itinerary.cal's \"June-August\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "32.5 (~20.2 mi)"},
+      {"field": "waypoints[-1] (Overcoat Peak summit).distMi", "says": "14.5 (one-way)"},
+      {"field": "approach", "says": "\"Total trailhead-to-camp distance is on the order of 15-16 miles...\" (to camp, short of the summit)"},
+      {"field": "itinerary.totalNote", "says": "\"~40 miles round trip...\""}
+     ],
+     "why": "20.2 mi does not cleanly match either the one-way summit distance (~14.5-16 mi per waypoints/approach) or the round-trip total (~40 mi per the itinerary); it sits roughly midway between the two, so a reader can't tell which quantity it's meant to represent.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  }
+ ]
+}

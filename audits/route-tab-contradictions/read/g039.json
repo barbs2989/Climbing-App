@@ -1,0 +1,396 @@
+{
+ "batches": ["b153.json", "b154.json", "b155.json", "b156.json"],
+ "routes_read": 16,
+ "routes": [
+  {
+   "id": "wa_vesper_peak_standard_route",
+   "name": "Standard Route (Headlee Pass)",
+   "area": "Vesper Peak",
+   "contradictions": []
+  },
+  {
+   "id": "wa_fish_whistle",
+   "name": "Fish & Whistle",
+   "area": "Vesper Peak",
+   "contradictions": [
+    {
+     "fact": "Fish & Whistle total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4115"},
+      {"field": "loss_ft", "says": "4400"},
+      {"field": "itinerary.days[0].gainFt", "says": "4400"},
+      {"field": "itinerary.days[0].lossFt", "says": "4400"}
+     ],
+     "why": "TECHNICAL STATS shows total ascent gain_ft=4,115 ft, but the route's own loss_ft and the Trip Plan day's gain/loss both say 4,400 ft, for a car-to-car route that returns to the same trailhead (gain should equal loss).",
+     "internal_resolution": "loss_ft and the itinerary agree at 4,400 ft; gain_ft (4,115) is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Fish & Whistle car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "11.5"},
+      {"field": "itinerary.days[0].hours", "says": "11.5"},
+      {"field": "itinerary.days[0].schedule[0].time/label", "says": "4:00-4:30 AM, Leave trailhead"},
+      {"field": "itinerary.days[0].schedule[5].time/label", "says": "5:00-5:30 PM, Back at trailhead"}
+     ],
+     "why": "The schedule's own leave/return times span about 13 hours, roughly 1.5 hours more than the 11.5-hour total stated by timing.totalHrs and itinerary.days[0].hours.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.permit", "says": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel."},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.rules", "says": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation."},
+      {"field": "access.landManager", "says": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District"}
+     ],
+     "why": "This route's access block treats the Sunrise Mine Trailhead/Vesper Peak area as inside Glacier Peak Wilderness (wilderness permit language, 12-person Glacier Peak Wilderness group cap), but the sibling route on the same peak (True Grit, id wa_true_grit_2) carries a preserved access._raw block stating the same trailhead is 'Outside protected wilderness areas (no permit required)' and 'outside North Cascades National Park and wilderness boundaries.' Glacier Peak Wilderness is reached via the separate Suiattle River Road, not Sunrise Mine Road.",
+     "internal_resolution": "True Grit's access._raw (3 fields) on the same peak corroborates the non-wilderness reading; the Glacier Peak Wilderness language looks copied from a template.",
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_true_grit_2",
+   "name": "True Grit",
+   "area": "Vesper Peak",
+   "contradictions": [
+    {
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "severity": "medium",
+     "claims": [
+      {"field": "access._raw.wilderness_zone", "says": "Outside protected wilderness areas (no permit required)"},
+      {"field": "access._raw.notes", "says": "Route via Sunrise Mine Trail; outside North Cascades National Park and wilderness boundaries"},
+      {"field": "access._raw.group_size_limit", "says": "No specific restriction (outside wilderness)"},
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.rules", "says": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness"}
+     ],
+     "why": "The route's own preserved _raw research block says the trailhead is outside any wilderness with no group-size restriction, while the outer land_manager and rules fields on the SAME route apply a Glacier Peak Wilderness designation and its 12-person cap.",
+     "internal_resolution": "The _raw block (3 mutually consistent fields, explicitly researched) contradicts land_manager/rules (2 fields); _raw matches the geography since Sunrise Mine Trail is not in Glacier Peak Wilderness.",
+     "needs_research": false
+    },
+    {
+     "fact": "True Grit car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "10.5"},
+      {"field": "itinerary.days[0].hours", "says": "10.5"},
+      {"field": "itinerary.days[0].schedule[0].time/label", "says": "4:30 AM, Leave trailhead"},
+      {"field": "itinerary.days[0].schedule[5].time/label", "says": "4:30-5:00 PM, Back at trailhead"}
+     ],
+     "why": "Leave/return times in the same day's schedule span about 12 to 12.5 hours, 1.5-2 hours more than the stated 10.5-hour total.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_vesper_peak_north_face_ragged_edge",
+   "name": "North Face (Ragged Edge)",
+   "area": "Vesper Peak",
+   "contradictions": [
+    {
+     "fact": "Vesper Peak / Sunrise Mine Trailhead wilderness status",
+     "severity": "low",
+     "claims": [
+      {"field": "access.land_manager", "says": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness"},
+      {"field": "access.rules", "says": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness"}
+     ],
+     "why": "Same Glacier Peak Wilderness designation as the sibling True Grit/Fish & Whistle routes on this peak, which True Grit's own access._raw record says is outside any wilderness.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_ragged_edge",
+   "name": "Ragged Edge",
+   "area": "Vesper Peak",
+   "contradictions": [
+    {
+     "fact": "Ragged Edge total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "4115"},
+      {"field": "loss_ft", "says": "4400"},
+      {"field": "itinerary.days[0].gainFt", "says": "4400"},
+      {"field": "itinerary.days[0].lossFt", "says": "4400"}
+     ],
+     "why": "gain_ft (4,115 ft) disagrees with loss_ft and the itinerary day's gain, both 4,400 ft, for a round trip that should return to the same trailhead elevation.",
+     "internal_resolution": "loss_ft and itinerary agree at 4,400 ft; gain_ft is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Ragged Edge car-to-car time",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "10.5"},
+      {"field": "itinerary.days[0].schedule[0].time/label", "says": "4:30 AM, Leave trailhead"},
+      {"field": "itinerary.days[0].schedule[5].time/label", "says": "4:15 PM, Back at trailhead"}
+     ],
+     "why": "Leave/return times span about 11 hours 45 minutes, over an hour longer than the stated 10.5-hour total.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Ragged Edge total route length",
+     "severity": "low",
+     "claims": [
+      {"field": "length_m", "says": "244"},
+      {"field": "pro_tips[0]", "says": "Total length is roughly 700 ft over 6 pitches"},
+      {"field": "pitch_detail[*].lengthM (sum)", "says": "50+25+30+30+25+40 = 200m (~656 ft)"}
+     ],
+     "why": "Three stated route lengths disagree: 244 m (801 ft) at the top level, ~700 ft (213 m) in pro_tips, and 200 m (656 ft) summed from the six pitch lengths.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "name": "Northwest Shoulder / Northwest Face (ice/snow)",
+   "area": "Whitehorse Mountain",
+   "contradictions": [
+    {
+     "fact": "Prime climbing season / best months",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Late Apr-Jun (early season snow cover)"},
+      {"field": "best_season", "says": "April to June (stable snow)"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "April to June (stable snow) - May is typically the sweet spot"},
+      {"field": "pro_tips[0]", "says": "Target February-April, ideally right after a low-elevation snowstorm and a solid refreeze, for the firmest, most predictable conditions"},
+      {"field": "itinerary.cal", "says": "Best done Feb-April in a high-pressure window after a refreeze"},
+      {"field": "access.closures", "says": "access is frequently snowed-in during this route's prime Feb-April season"}
+     ],
+     "why": "Two groups of fields disagree about when to climb: season/best_season/seasonal_guidance say the window is April-June (May optimal, April only 'good'), while pro_tips, the itinerary calendar note, and access.closures independently call February-April the 'prime' season — in avalanche terrain, following one set over the other sends a party out in materially different, and differently hazardous, months.",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain, car-to-car",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "7000"},
+      {"field": "loss_ft", "says": "7000"},
+      {"field": "itinerary.days[0].gainFt", "says": "6400"},
+      {"field": "itinerary.days[0].lossFt", "says": "6400"}
+     ],
+     "why": "TECHNICAL STATS gain (7,000 ft) is 600 ft (9%) higher than the Trip Plan day's stated gain/loss of 6,400 ft for the same single-day round trip.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of technical pitches/sections",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "1"},
+      {"field": "pitch_detail", "says": "4 entries: Approach to Whitehorse Ridge/glacier edge; Glacier traverse; Steep rollover; So-Bahli-Ahli Glacier to summit block"},
+      {"field": "climbing_route", "says": "2 entries: Continuous snow/ice on the shoulder and face; Final steep pitch below the summit"}
+     ],
+     "why": "The header's pitch count (1) disagrees with both the 4 rows of ROUTE BREAKDOWN and the 2 entries of CLIMBING ROUTE describing the same climb.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_nw_shoulder",
+   "name": "Northwest Shoulder",
+   "area": "Whitehorse Mountain",
+   "contradictions": [
+    {
+     "fact": "Prime climbing season / best months",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Late Apr-Jun (early season snow cover)"},
+      {"field": "best_season", "says": "February through June — best after a low-elevation snowstorm has buried the approach brush; April-June is the most common window"},
+      {"field": "seasonal_guidance.optimalWindow", "says": "February through June — best after a low-elevation snowstorm buries the approach brush and while the glacier crevasses/moat remain well-bridged; April-June is the most common window"}
+     ],
+     "why": "best_season and seasonal_guidance both open the recommended window two months earlier (February) than the season field's stated 'Late Apr-Jun' start, so a climber following season would rule out months the other two fields call good. (Flagged by the mechanical detector as a season-window mismatch and confirmed on reading.)",
+     "internal_resolution": null,
+     "needs_research": true
+    },
+    {
+     "fact": "Total elevation gain, car-to-car",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "7000"},
+      {"field": "loss_ft", "says": "7000"},
+      {"field": "itinerary.days[0].gainFt", "says": "6300"},
+      {"field": "itinerary.days[0].lossFt", "says": "6300"}
+     ],
+     "why": "TECHNICAL STATS gain (7,000 ft) is 700 ft (10%) higher than the Trip Plan day's 6,300 ft for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "Number of technical pitches/sections",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "1"},
+      {"field": "pitch_detail", "says": "5 entries: Niederprum Trail (maintained); Boot path/brush to alpine bench; Snow slopes to Lone Tree Pass; Traverse to High Pass; Glacier and summit block"}
+     ],
+     "why": "pitches states 1 but ROUTE BREAKDOWN lists 5 named sections of the climb.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_north_route",
+   "name": "North Route (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "12.1"},
+      {"field": "approach", "says": "Round trip is roughly 15 miles with 6,800 ft of gain and the same in loss."}
+     ],
+     "why": "dist_km (12.1 km = 7.5 mi) is almost exactly half the round-trip distance the route's own approach text states (15 mi) — reads as one-way vs. round-trip.",
+     "internal_resolution": "dist_km is likely one-way; 7.5 mi x 2 = 15 mi matches the approach text.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total route length",
+     "severity": "low",
+     "claims": [
+      {"field": "length_m", "says": "732"},
+      {"field": "pitch_detail[*].lengthM (sum)", "says": "275+76+215+90+143 = 799"}
+     ],
+     "why": "The summed pitch lengths (799 m) run about 9% longer than the stated length_m (732 m).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southeast_buttress",
+   "name": "Southeast Buttress (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_north_peak_south_ridge",
+   "name": "South Ridge (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "name": "Southeast Face (Standard)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Which approach/route the waypoints describe",
+     "severity": "high",
+     "claims": [
+      {"field": "waypoints[0].name/note", "says": "Lightning Creek boat landing / trail junction ... this is mile ~16 of the SR-20 approach trail"},
+      {"field": "waypoints[0].distMi", "says": "11"},
+      {"field": "waypoints[1].name/note", "says": "Willow Lake (~mile 20); last reliable water before leaving the maintained trail"},
+      {"field": "waypoints[1].distMi", "says": "15"},
+      {"field": "waypoints[4].name", "says": "Southeast buttress — loose rock / crux chimney"},
+      {"field": "approach", "says": "the drive-in ... water taxi ... drops you at the Hozomeen Ranger Station/Campground ... pick up the maintained Hozomeen Lake Trail ... Near 5,000 ft the drainage narrows into a boulder-choked gully ... a broad saddle/basin around 6,800 ft, which is the standard high camp"},
+      {"field": "approach_variants[0].name (primary:true)", "says": "Water taxi up Ross Lake to the campground at the head of the lake"}
+     ],
+     "why": "The waypoints array documents the East Bank Trail approach via Lightning Creek and Willow Lake to a 6,200-ft saddle beneath the 'Southeast buttress' — the approach that belongs to the separate Southeast Buttress route (wa_hozomeen_mountain_south_peak_southeast_buttress) — while this route's own approach, primary approach_variant, and 2-day itinerary describe a different water-taxi-to-Hozomeen-Campground approach via the Hozomeen Lake Trail to a 6,800-ft high camp near a slab wall. The waypoints also disagree with their own note text on distance (distMi 11 vs. 'mile ~16'; distMi 15 vs. 'mile ~20').",
+     "internal_resolution": "approach, the primary approach_variant, and the itinerary all agree with each other on the Hozomeen Lake Trail line; the waypoints array is the outlier and appears copied from the Southeast Buttress route.",
+     "needs_research": false
+    },
+    {
+     "fact": "This route's summit/high point elevation",
+     "severity": "medium",
+     "claims": [
+      {"field": "high_point_ft", "says": "8071"},
+      {"field": "face", "says": "South Peak (8,003 ft - the lower of Hozomeen's two main summits)"},
+      {"field": "overview", "says": "The South Peak's nearly 1,000-foot near-vertical face ... South Peak, May 30 1947 ... The Southeast/South Face line described here"}
+     ],
+     "why": "high_point_ft (8,071 ft) is the North Peak's elevation, but every route-specific field (face, overview, and the whole route description) says this line climbs the South Peak, whose summit is 8,003 ft.",
+     "internal_resolution": "face and overview agree with each other and with the peak geography that this is a South Peak route; high_point_ft looks defaulted from the area's (North Peak) elevation_ft.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "12.9"},
+      {"field": "approach", "says": "Given the ~19 km round-trip distance and roughly 6,400+ ft of total gain from lake level"},
+      {"field": "itinerary.days[0].miles + itinerary.days[1].miles", "says": "7 + 5 = 12"}
+     ],
+     "why": "dist_km (12.9 km = 8.0 mi) does not match the approach text's own explicit '~19 km round-trip' figure, though the 12-mile itinerary total (~19.3 km) does.",
+     "internal_resolution": "the itinerary and the approach prose's ~19 km figure agree with each other; dist_km is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "Total elevation gain",
+     "severity": "low",
+     "claims": [
+      {"field": "gain_ft", "says": "6800"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt", "says": "6300 + 0 = 6300"}
+     ],
+     "why": "TECHNICAL STATS gain (6,800 ft) is 500 ft (about 8%) higher than the itinerary's total stated gain (6,300 ft).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_west_face",
+   "name": "West Face (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_southwest_route",
+   "name": "Southwest Route (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_southwest_buttress",
+   "name": "Southwest Buttress (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_south_peak_north_ridge",
+   "name": "North Ridge (South Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "name": "Northeast Buttress (North Peak)",
+   "area": "Hozomeen Mountain",
+   "contradictions": [
+    {
+     "fact": "Total elevation gain vs. loss for a car-to-car round trip",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "6266"},
+      {"field": "loss_ft", "says": "545"}
+     ],
+     "why": "This is a round trip returning to the same trailhead (a 2-day out-and-back with a full walk-out), so gain and loss should be roughly equal, but loss_ft (545 ft) is 91% less than gain_ft (6,266 ft) — off well past the 25% threshold for a high-severity gain/time mismatch.",
+     "internal_resolution": "545 ft exactly matches the 'drop about 545 ft to the 5,800 ft saddle' figure named in the approach/bail text — loss_ft appears to capture only that one downhill segment near camp, not the round trip's total descent back to the trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "Round-trip distance",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "16.9"},
+      {"field": "approach", "says": "10.5 miles in"}
+     ],
+     "why": "dist_km (16.9 km = 10.5 mi) equals the one-way approach distance to camp stated in the approach text, not a round-trip figure, yet is what the header would show as the route's overall Dist.",
+     "internal_resolution": "dist_km reads as one-way here, matching the approach text's one-way mileage to camp.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

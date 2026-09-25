@@ -1,0 +1,251 @@
+{
+ "applied": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "pro_needs",
+   "path": [],
+   "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "climate",
+   "path": [
+    "summer"
+   ],
+   "fact": "Whether the route crosses the Le Conte Glacier and needs glacier/crevasse-rescue gear"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "itinerary",
+   "path": [
+    "cal"
+   ],
+   "fact": "Which wilderness/region the approach and summit are in"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which wilderness/region the approach and summit are in"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Which wilderness/region the approach and summit are in"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Which wilderness/region the approach and summit are in"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Whether day 1 of the approach is entirely on-trail"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "Whether day 1 of the approach is entirely on-trail"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Whether day 1 of the approach is entirely on-trail"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "column": "partner_requirements",
+   "path": [
+    "approachTime"
+   ],
+   "fact": "Which national forest manages the approach"
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake"
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake"
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "column": "approach",
+   "path": [],
+   "fact": "Direction of travel from Cascade Pass over Cache Col to Kool-Aid Lake"
+  }
+ ],
+ "rejected": [
+  {
+   "id": "wa_sentinel_peak_standard",
+   "fact": "Cache Col elevation",
+   "op": "set",
+   "column": "bivy",
+   "path": [
+    0,
+    "elev"
+   ],
+   "expect": 6400,
+   "value": 6900,
+   "sources": [
+    "https://en.wikipedia.org/wiki/Cache_Col",
+    "https://www.alpineinstitute.com/programs/the-ptarmigan-traverse-technical-backpacking-and-climbing/",
+    "https://summitborn.com/ptarmigan-traverse-trail/"
+   ],
+   "why": "expect mismatch at bivy[0,\"elev\"]: live undefined"
+  }
+ ],
+ "rollback": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "before": {
+    "pro_needs": "Rope up for the Le Conte Glacier crossing — it is repeatedly singled out as the most broken/crevassed glacier on the Ptarmigan Traverse — with a full crevasse-rescue kit (prusiks, pulleys, carabiners, pickets).",
+    "detailed_rack": "No technical rock rack is documented for this ridge; the relevant gear is a standard glacier-travel kit for the adjoining Le Conte Glacier crossing (rope, harness, crevasse-rescue hardware) rather than a rock rack.",
+    "climate": {
+     "summer": "The Le Conte Glacier remains actively crevassed through summer and is described as the most broken glacier on the Ptarmigan Traverse; conditions vary significantly year to year.",
+     "typical": "Dry east-Cascades climate in the rain shadow of the crest — hot summer days, cool nights, and a much shorter, drier snow season than the west-side Cascades. Afternoon thunderstorms are common in July and August.",
+     "forecastZone": "Not covered by NWAC avalanche forecasts (this is a summer, snow-free-window scramble; no winter forecast zone applies)."
+    },
+    "itinerary": {
+     "cal": "Access roads to trailheads in this remote corner of the William O. Douglas/Goat Rocks vicinity are typically not reliably snow-free until mid-to-late July, with the best window July through September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike the long trail approach into the William O. Douglas/Goat Rocks vicinity, gaining most of the day's elevation on maintained trail before dropping a bit to a flat, water-adjacent camp spot below the ridge. Terrain is on-trail the whole way, so travel is straightforward even with an overnight pack.",
+       "hours": 7,
+       "miles": 13,
+       "title": "Backpack in to high camp",
+       "gainFt": 2600,
+       "lossFt": 200,
+       "packLb": 34,
+       "schedule": [],
+       "objective": "Reach a camp near the base of the summit ridge"
+      },
+      {
+       "n": 2,
+       "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full approach trail back out the same day, making for a long but standard single 'summit + out' day.",
+       "hours": 9,
+       "miles": 12,
+       "title": "Summit push and hike out",
+       "gainFt": 1700,
+       "lossFt": 4100,
+       "packLb": 20,
+       "schedule": [
+        {
+         "time": "4:30 AM",
+         "label": "Leave camp",
+         "detail": "Light day pack, headlamp start to catch cool morning temps on exposed rock."
+        },
+        {
+         "time": "+2.5 hr",
+         "label": "Gain the ridge crest",
+         "detail": "Cross-country travel on scree, slabs, and broken rock — no maintained trail on the ridge itself."
+        },
+        {
+         "time": "+4 hr",
+         "label": "Reach Rimrock Ridge summit",
+         "detail": "Views across the Goat Rocks/William O. Douglas Wilderness; short break."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Back at camp",
+         "detail": "Reverse the ascent line; break camp and shoulder full pack."
+        },
+        {
+         "time": "~6:30 PM",
+         "label": "Back at trailhead",
+         "detail": "Full hike-out on trail after breaking camp."
+        }
+       ],
+       "objective": "Climb Rimrock Ridge and return to the trailhead"
+      }
+     ],
+     "totalNote": "A 2-day, 1-night trip: roughly 25 miles round trip and ~4,300 ft of cumulative gain to a 7,255 ft summit, with the second day combining the summit scramble and the full hike out."
+    },
+    "timing": {
+     "totalHrs": 16,
+     "summitTimeHrs": 7,
+     "descentTimeHrs": 9,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "Hike the long trail approach into the William O. Douglas/Goat Rocks vicinity, gaining most of the day's elevation on maintained trail before dropping a bit to a flat, water-adjacen…",
+       "fromTo": "Backpack in to high camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 9,
+       "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full …",
+       "fromTo": "Summit push and hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Long wilderness approach fitness - full-day (or overnight) endurance typical of Glacier Peak Wilderness access; exact approach mileage not confirmed in sources",
+      "packWeight": "Light scrambling kit for the ridge itself; overnight/backpacking load (roughly 20-30 lb) likely needed for the approach given the remote access"
+     },
+     "approachTime": "Long/remote approach consistent with Glacier Peak Wilderness (Mt. Baker-Snoqualmie NF) access",
+     "requiredSkills": [
+      "route-finding on an unmaintained approach and along the ridge crest",
+      "exposed Class 3 scrambling, including negotiating rock steps and notches",
+      "sound judgment downclimbing loose rock",
+      "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain"
+     ],
+     "experienceLevel": "Solid, independent Class 3 scrambler comfortable on an infrequently traveled ridge with loose rock and no fixed protection; not a beginner objective given the remote Glacier Peak Wilderness setting"
+    }
+   }
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "before": {
+    "approach": "Start at the Cascade Pass Trailhead at the end of Cascade River Road (paved/gravel Forest Road 15, inside North Cascades NP boundary — verify current road/washout status at nps.gov/noca before driving). Take the maintained Cascade Pass Trail 3.7 miles and about 1,800 ft of gain up open switchbacks and through Basin Creek/Doubtful Lake side-valley scenery to Cascade Pass (5,392 ft), the last reliable trail tread and a good water stop. From the pass, leave the maintained trail and go cross-country north on a boot path, climbing the Cache Glacier snowfield (permanent snow into late season; crampons and axe recommended) to Cache Col (~6,900 ft). The col's far (north) lip commonly corniced through mid-summer — this is a real hazard on both the ascent and the descent back over it. Drop steeply off the north side of Cache Col to the Kool-Aid Lake basin (established camps, reliable water). From Kool-Aid Lake, contour east around the toe of the Cache Glacier and climb to the 'Red Ledge,' a narrow, exposed rock ledge running beneath Art's Knoll that is the standard (least-technical) way through a cliff band and is considered one of the route-finding/exposure cruxes of the whole approach; in low-snow years the alternate Middle Cascade Glacier line can bypass it. Past Red Ledge, traverse to Yang Yang Lakes (~6,300 ft, good camping and water — most parties treat this or Kool-Aid Lake as their overnight base). From Yang Yang Lakes, ascend the broad Le Conte Glacier — a genuine crevassed glacier requiring roped travel — to the Le Conte-Sentinel Col (~7,300 ft), a flat notch atop the glacier with dry bivy sites and the jump-off point for the peak itself. From the col, easy scrambling leads onto snow filling the basin against Sentinel's west face; climb increasingly steep snow (can exceed 35-40°, crampons/axe useful) to its top, then follow an obvious ledge leftward (north) across the face past a short cliff band, then turn straight up steep, gravelly/scree terrain to a short step of upper-class-3/low-class-5 climbing, finishing with roughly 600 ft up the broad west ridge to the summit. Given the ~45 km round trip and glacier travel, this is realistically a multi-day trip (camp at Kool-Aid Lake or Yang Yang Lakes) rather than a car-to-car day climb for most parties."
+   }
+  }
+ ]
+}

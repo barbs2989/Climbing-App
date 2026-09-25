@@ -1,0 +1,1597 @@
+{
+ "applied": [
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    1,
+    "detail"
+   ],
+   "fact": "Distance to Lake Serene in the itinerary schedule"
+  },
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Descent time from summit to trailhead"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "access",
+   "path": [
+    "_raw",
+    "group_size_limits"
+   ],
+   "fact": "overnight group size cap"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Itinerary day 2 says the route is descended by rappelling the route"
+  },
+  {
+   "id": "wa_boving_christensen",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "Itinerary day 2 says the route is descended by rappelling the route"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "grade",
+   "path": [],
+   "fact": "hardest free-climbing grade of the route"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "rock_grade",
+   "path": [],
+   "fact": "hardest free-climbing grade of the route"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "approach elevation gain to Gnome Tarn camp/base"
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "Itinerary schedule descends the West Ridge, but the descent is north-face rappels"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "pitch_detail",
+   "path": [
+    1,
+    "pitch"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "pitch_detail",
+   "path": [
+    2,
+    "pitch"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "pitch_detail",
+   "path": [
+    3,
+    "pitch"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "pitch_detail",
+   "path": [
+    4,
+    "pitch"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "pitch_detail",
+   "path": [
+    5,
+    "pitch"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "objective"
+   ],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "rope_note",
+   "path": [],
+   "fact": "pitch count"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_beckey_davis",
+   "column": "access",
+   "path": [
+    "_raw",
+    "group_size_limits"
+   ],
+   "fact": "overnight group size cap"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "rack",
+   "path": [
+    0
+   ],
+   "fact": "rope count needed for the rappel descent"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "what_to_bring",
+   "path": [
+    2
+   ],
+   "fact": "rope count needed for the rappel descent"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "detailed_rack",
+   "path": [],
+   "fact": "rope count needed for the rappel descent"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "pro_tips",
+   "path": [
+    3
+   ],
+   "fact": "rope count needed for the rappel descent"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "watch_out",
+   "path": [],
+   "fact": "rope count needed for the rappel descent"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "descent",
+   "path": [],
+   "fact": "which face the rappel descent is on"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "which face the rappel descent is on"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "label"
+   ],
+   "fact": "which face the rappel descent is on"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "which face the rappel descent is on"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "access",
+   "path": [
+    "_raw",
+    "group_size_limits"
+   ],
+   "fact": "overnight group size cap"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text gives the trailhead as 3,600 ft and Gnome Tarn as ~7,800-8,000 ft"
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "column": "approach",
+   "path": [],
+   "fact": "Approach text gives the trailhead as 3,600 ft and Gnome Tarn as ~7,800-8,000 ft"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total gain/loss for the round trip"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "note"
+   ],
+   "fact": "Stuart Lake Trailhead elevation"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total gain/loss/round-trip figure"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total gain/loss/round-trip figure"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain/loss/round-trip figure"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total gain/loss/round-trip figure"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total gain/loss/round-trip figure"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "Itinerary descends by downclimbing the ridge, but the descent is north-side rappels"
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    3,
+    "detail"
+   ],
+   "fact": "Itinerary descends by downclimbing the ridge, but the descent is north-side rappels"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "descent",
+   "path": [],
+   "fact": "which way the route is descended"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "note"
+   ],
+   "fact": "which way the route is descended"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "schedule",
+    4,
+    "detail"
+   ],
+   "fact": "which way the route is descended"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "which way the route is descended"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "descent_text",
+   "path": [],
+   "fact": "number of rappels on the north-face descent"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "rappel_count_note",
+   "path": [],
+   "fact": "number of rappels on the north-face descent"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "lossFt"
+   ],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "total round-trip elevation gain"
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "total round-trip elevation gain"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "before": {
+    "itinerary": {
+     "cal": "Most parties climb it snow-covered (winter-spring) to bury the boulder-field gaps and suppress brush; summer ascents are viable but noticeably slower and brushier.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single long day: steep, forested trail to Lake Serene (past Bridal Veil Falls), then off-trail through a boulder field above the lake and up easy west-ridge slopes to the flat, wooded (viewless) summit. Real trip-report splits put the trail portion to Lake Serene at ~1h50m and the ridge/summit push at ~2h50m from the lake, with car-to-car totals of 6-9+ hours depending on brush (summer) or snow depth/consolidation (winter-spring).",
+       "hours": 8.5,
+       "miles": 11,
+       "title": "Car-to-car scramble via Lake Serene",
+       "gainFt": 3650,
+       "lossFt": 3650,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave trailhead",
+         "detail": "Early start for the ~11-mile round-trip day."
+        },
+        {
+         "time": "7:20 AM",
+         "label": "Reach Lake Serene",
+         "detail": "1.7 mi via the Bridal Veil Falls junction; roughly 1,900 ft already gained."
+        },
+        {
+         "time": "7:30 AM",
+         "label": "Leave trail onto the ridge",
+         "detail": "Cross the boulder field above the lake, then follow the ridge east onto Philadelphia Mountain's west ridge; south side of the ridge has cliffs, stay on the crest/north side."
+        },
+        {
+         "time": "10:10 AM",
+         "label": "Reach summit (4,258 ft)",
+         "detail": "Flat, tree-covered top with essentially no views; ~2h50m of climbing from Lake Serene."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Begin descent",
+         "detail": "Reverse the ridge, boulder field, and trail."
+        },
+        {
+         "time": "~2:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Total car-to-car time typically 6-9+ hours depending on conditions."
+        }
+       ],
+       "objective": "Summit Philadelphia Mountain via the Lake Serene trail and west ridge, round trip in a day"
+      }
+     ],
+     "totalNote": "A single car-to-car day, roughly 8-8.5 hours for a fit party (range 6-9+ hrs depending on brush/snow), ~11 miles round trip and ~3,650 ft gain — no camp, no permit."
+    }
+   }
+  },
+  {
+   "id": "wa_preacher_mountain_scramble",
+   "before": {
+    "descent_text": "This is a walk-off/scramble-down, not a rappelling route — no fixed anchors or rope work are used on the standard line. Reverse the ascent line exactly: off the summit, follow the ridge north back to the 5,800 ft saddle, then descend north-northwest off the ridge to the small tarn/bench at 5,200 ft, staying well back from any cornice edge if there is snow. From the tarn, drop back down the open slopes and skirt the cliff bands on the lake (west) side of the ridge as before, downclimbing the short rock band around 3,700 ft with care (the single spot on this route with real exposure), then pick up the Rainy Creek climbers' path back down through the brush to the Pratt Connector Trail and out to the Middle Fork Trailhead. Descent time is roughly 5 hours (about 1.5 hours from summit to Rainy Lake, 2+ hours from the lake back to the car), reflecting the loose talus, brush, and route-finding on the way down being as slow as the way up. Descent-specific hazards: the mossy slab and rock band near 3,700 ft are more consequential to downclimb than to ascend and are the likeliest spot for a slip; the boot path is easy to lose in failing light or fog since it's unofficial and unmarked; and in early/mid season, lingering snow on the upper slopes plus possible cornicing on the summit ridge call for caution and, if conditions warrant, an ice axe."
+   }
+  },
+  {
+   "id": "wa_boving_christensen",
+   "before": {
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; expect to camp at or near Gnome Tarn.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn below Prusik's south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "The shortest of Prusik's moderate south-face lines at roughly 450 ft -- one of the quicker technical days on the peak, leaving time to explore or climb a second route. Descend by rappelling the route back to the base.",
+       "hours": 5,
+       "miles": 1.1,
+       "title": "Climb Boving-Christensen",
+       "gainFt": 500,
+       "lossFt": 500,
+       "packLb": 12,
+       "schedule": [],
+       "objective": "Send the Boving-Christensen route (5.10, 4 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~5,200 ft round-trip estimated) around a shorter, moderate 4-pitch 5.10 line on the south face — one of the quicker technical days on Prusik."
+    },
+    "gain_ft": 5200,
+    "loss_ft": 5200,
+    "access": {
+     "_raw": {
+      "notes": "Highly competitive lottery (typically <10% acceptance); only ONE permit per person per season; 30% of permits reserved for daily lottery walk-ups; permits must be printed online within 14 days before trip",
+      "permit_type": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+      "land_manager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "special_hazards": "No campfires above 5,000 ft or within 1/2 mile of lakes; dogs prohibited on Colchuck Lake, Stuart Lake trails, and Enchantments area",
+      "wilderness_zone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "group_size_limits": "Maximum party 12 people",
+      "permit_pickup_hours": "Daily lottery application: 7:00am-10:00am weekdays only (May 15-Oct 31); ranger station: must pick up by 4:00pm same day",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass at Enchantments trailheads",
+      "permit_cost_structure": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+      "advanced_lottery_dates": "Registration opens Feb 15, closes March 1; results posted ~March 15; unclaimed permits released April 1 at 7:00am PT",
+      "permit_pickup_location": "Online via recreation.gov (advanced lottery); Wenatchee River Ranger Station in Leavenworth (daily lottery pick-up by 4pm same day)",
+      "seasonal_closure_dates": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+      "ranger_district_contact": "Wenatchee River Ranger Station, 600 Sherbourne, Leavenworth WA 98826 (for daily lottery); Okanogan-Wenatchee Supervisor's Office: 215 Melody Lane, Wenatchee WA 98801, (509) 664-9200"
+     },
+     "fees": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+     "closures": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+     "permitZone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass at Enchantments trailheads",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/233273",
+      "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+      "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+     }
+    },
+    "timing": {
+     "totalHrs": 17,
+     "summitTimeHrs": 6.5,
+     "descentTimeHrs": 10.5,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn below Prusik's south face.",
+       "fromTo": "Approach to Gnome Tarn camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5,
+       "note": "The shortest of Prusik's moderate south-face lines at roughly 450 ft -- one of the quicker technical days on the peak, leaving time to explore or climb a second route. Descend by r…",
+       "fromTo": "Climb Boving-Christensen",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "wa_stanley_burgner",
+   "before": {
+    "grade": "5.10a",
+    "rock_grade": "5.10a",
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; fit parties without one sometimes push the whole route car-to-car in ~20-24 hrs instead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "A classic moderate big-route: chimneys and corners for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5.5 hrs of pure climbing.",
+       "hours": 7.5,
+       "miles": 1.4,
+       "title": "Climb the South Face (Stanley-Burgner)",
+       "gainFt": 700,
+       "lossFt": 700,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "~15-20 min to the base of the south face"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "P1 chimney or crack (5.7-5.8+) to a tree belay"
+        },
+        {
+         "time": "",
+         "label": "Continue P2-P5",
+         "detail": "Corner systems and a chockstone chimney (5.8-5.9)"
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Top out",
+         "detail": "P6 strenuous crack/corner to the summit; ~5.5 hrs of climbing typical"
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Descend",
+         "detail": "Downclimb/rappel the West Ridge back toward the notch"
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at camp"
+        }
+       ],
+       "objective": "Send the Stanley-Burgner route (5.9+/5.10a, 6 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~5,400 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line."
+    },
+    "gain_ft": 5400,
+    "loss_ft": 5400,
+    "grade_num": 10.25
+   }
+  },
+  {
+   "id": "wa_energizer_bunny",
+   "before": {
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; expect to camp at or near Gnome Tarn, close to the south face routes.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn just below Prusik's south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "A striking crack line on the south face named for the bunny-ear cracks near the top, where it joins Solid Gold. Pitch 1 is a bit burly and dirty; the cracks above are clean splitters with one short 5.11+/12- section some parties aid through.",
+       "hours": 5.5,
+       "miles": 1.1,
+       "title": "Climb Energizer Bunny",
+       "gainFt": 500,
+       "lossFt": 500,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "",
+         "label": "Leave camp",
+         "detail": "~15-20 min to the base of the south face"
+        },
+        {
+         "time": "",
+         "label": "Start climbing",
+         "detail": "P1 is burly/dirty; cleaner splitter cracks follow"
+        },
+        {
+         "time": "~4 hrs later",
+         "label": "Top out",
+         "detail": "Route joins Solid Gold near pitch 4; one recorded ascent logged ~4 hrs of climbing"
+        },
+        {
+         "time": "",
+         "label": "Rappel the route",
+         "detail": "Back to the base, similar to neighboring Solid Gold"
+        },
+        {
+         "time": "",
+         "label": "Back at camp"
+        }
+       ],
+       "objective": "Send the Energizer Bunny route (5.10+, 5 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the approach back over Aasgard Pass to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~4,500 ft round-trip estimated) around a striking 5-pitch 5.10+ line that finishes by joining Solid Gold near the top of the wall."
+    },
+    "gain_ft": 5200,
+    "loss_ft": 5200
+   }
+  },
+  {
+   "id": "wa_beckey_davis",
+   "before": {
+    "pitch_detail": [
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Climb the left-side chimney between two prominent V-shaped features on the south face; move left atop the chimney onto knobby terrain to belay.",
+      "pitch": 1,
+      "anchor": "Gear (tree)",
+      "lengthM": 30
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.7",
+      "notes": "Sustained knobby face, slabs, and cracks up toward a gully/chimney system; route-finding is somewhat ambiguous through this stretch on the way to Snafflehound Ledge.",
+      "pitch": 2,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.5",
+      "notes": "Traverse right across the obvious Snafflehound Ledge to a small tree, then a short steep step to the base of the crux pitch.",
+      "pitch": 3,
+      "anchor": "Gear/tree",
+      "lengthM": 20
+     },
+     {
+      "crux": true,
+      "bolts": 0,
+      "grade": "5.9",
+      "notes": "Route crux: a shallow left-facing dihedral forces you right until an overhang forces a step-across left into a flaring jam crack; eases above the bulge on face holds and chicken-heads.",
+      "pitch": 4,
+      "anchor": "Gear",
+      "lengthM": 35
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Crack system/steep gully bypassing a chockstone on the left to the small notch east of the summit horn; watch for loose blocks in the gully.",
+      "pitch": 5,
+      "anchor": "Gear",
+      "lengthM": 45
+     },
+     {
+      "crux": false,
+      "bolts": 0,
+      "grade": "5.8",
+      "notes": "Delicate friction traverse on a ramp finishing on a good jam crack to the summit; a harder 5.10a thin-hands splitter variant climbs straight out of the notch for parties wanting more technical finish.",
+      "pitch": 6,
+      "anchor": "Walk-off (summit)",
+      "lengthM": 35
+     }
+    ],
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; expect to camp at or near Gnome Tarn.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments basin, then camp at Gnome Tarn below Prusik's south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "Starts just right of Stanley-Burgner; the lower pitches are unremarkable but the upper half above Snafflehound Ledge gives sustained, steep 5.9 cracks to a laybacking crux at P5. Descend by rappel/downclimb back toward camp.",
+       "hours": 7,
+       "miles": 1.4,
+       "title": "Climb Beckey-Davis",
+       "gainFt": 750,
+       "lossFt": 750,
+       "packLb": 12,
+       "schedule": [],
+       "objective": "Send the Beckey-Davis route (5.9, 6 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~4,500 ft round-trip estimated) around a sustained 6-pitch 5.9 line just right of Stanley-Burgner on the south face."
+    },
+    "rope_note": "6 pitches, 700ft, original 1962 line up Prusik's south face; some parties finish via a 5.10a splitter variation to the summit.",
+    "gain_ft": 5450,
+    "loss_ft": 5450,
+    "access": {
+     "_raw": {
+      "notes": "Highly competitive lottery (typically <10% acceptance); only ONE permit per person per season; 30% of permits reserved for daily lottery walk-ups; permits must be printed online within 14 days before trip",
+      "permit_type": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+      "land_manager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "special_hazards": "No campfires above 5,000 ft or within 1/2 mile of lakes; dogs prohibited on Colchuck Lake, Stuart Lake trails, and Enchantments area",
+      "wilderness_zone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "group_size_limits": "Maximum party 12 people",
+      "permit_pickup_hours": "Daily lottery application: 7:00am-10:00am weekdays only (May 15-Oct 31); ranger station: must pick up by 4:00pm same day",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass at Enchantments trailheads",
+      "permit_cost_structure": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+      "advanced_lottery_dates": "Registration opens Feb 15, closes March 1; results posted ~March 15; unclaimed permits released April 1 at 7:00am PT",
+      "permit_pickup_location": "Online via recreation.gov (advanced lottery); Wenatchee River Ranger Station in Leavenworth (daily lottery pick-up by 4pm same day)",
+      "seasonal_closure_dates": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+      "ranger_district_contact": "Wenatchee River Ranger Station, 600 Sherbourne, Leavenworth WA 98826 (for daily lottery); Okanogan-Wenatchee Supervisor's Office: 215 Melody Lane, Wenatchee WA 98801, (509) 664-9200"
+     },
+     "fees": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+     "closures": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+     "permitZone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass at Enchantments trailheads",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/233273",
+      "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+      "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+     }
+    }
+   }
+  },
+  {
+   "id": "wa_prusik_peak_solid_gold",
+   "before": {
+    "rack": [
+     "Two 60m ropes (route requires two ropes for the rappel descent, per route beta)",
+     "Double rack of cams, fingertip-#2, single #3"
+    ],
+    "what_to_bring": [
+     "helmet",
+     "rock shoes",
+     "two 60m ropes",
+     "double rack plus nuts",
+     "chalk",
+     "wind layer",
+     "sun protection",
+     "1.5 to 2 liters of water",
+     "satellite communicator"
+    ],
+    "detailed_rack": "A double rack of cams from 0.3 to 3 inches to protect the splitter cracks, a set of nuts, about 10 alpine draws, and two 60m ropes for the rappels.",
+    "pro_tips": [
+     "Be solid at 5.11 before committing to the crux.",
+     "Bring doubles for the splitter cracks.",
+     "Climb early to beat the afternoon heat and storms.",
+     "Manage two ropes carefully on the steep rappels."
+    ],
+    "watch_out": "Sustained 5.11a climbing with exposure\nHigh altitude (8,000+ ft) creates rapid weather deterioration\nWeather sensitivity - afternoon conditions dangerous\nRoute-finding complexity\nDescent involves multiple rappels",
+    "descent": "Rappel the south face route back to the base.",
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits (required May 15-Oct 31) are won via a competitive winter lottery or the 2-day-ahead rolling walk-up window.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stuart Lake/Colchuck trailhead, hike past Colchuck Lake then up the steep talus gully of Aasgard Pass into the core Enchantments basin. Camp at Gnome Tarn, a small pool right below Prusik's south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "A sustained, well-protected ~450 ft crack-and-corner line on the shorter west side of the south face, topping out on the West Ridge rather than the true summit. Rappel the route (~30 min with no traffic) back to the base.",
+       "hours": 6,
+       "miles": 1.2,
+       "title": "Climb Solid Gold",
+       "gainFt": 500,
+       "lossFt": 500,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave camp",
+         "detail": "~15 min to the base of the south face"
+        },
+        {
+         "time": "6:30 AM",
+         "label": "Start P1",
+         "detail": "5.10d right-leaning crack system"
+        },
+        {
+         "time": "",
+         "label": "Climb P2-P4",
+         "detail": "Crux 5.11a roof/corner pitch, then a slab and the final splitter corner"
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Top out",
+         "detail": "Route joins the West Ridge below the true summit"
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Rappel the route",
+         "detail": "~30 min back to the base"
+        },
+        {
+         "time": "12:45 PM",
+         "label": "Back at camp"
+        }
+       ],
+       "objective": "Send Solid Gold (5.11a, 5 pitches, south face)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and retrace the route back over Aasgard Pass and down past Colchuck Lake to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out via Aasgard Pass",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Stuart Lake trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~4,600 ft round-trip) centered on a sustained 5-pitch 5.11a rock climb on Prusik's south face."
+    },
+    "timing": {
+     "totalHrs": 18,
+     "summitTimeHrs": 6,
+     "descentTimeHrs": 5.5,
+     "approachTimeHrs": 6.5,
+     "recommendedStart": "6:00 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "From the Stuart Lake/Colchuck trailhead, hike past Colchuck Lake then up the steep talus gully of Aasgard Pass into the core Enchantments basin. Camp at Gnome Tarn, a small pool ri…",
+       "fromTo": "Approach to Gnome Tarn camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 6,
+       "note": "A sustained, well-protected ~450 ft crack-and-corner line on the shorter west side of the south face, topping out on the West Ridge rather than the true summit. Rappel the route (~…",
+       "fromTo": "Climb Solid Gold",
+       "section": "Climb"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Break camp and retrace the route back over Aasgard Pass and down past Colchuck Lake to the trailhead.",
+       "fromTo": "Hike out via Aasgard Pass",
+       "section": "Descent"
+      }
+     ]
+    },
+    "gain_ft": 6200,
+    "loss_ft": 4608,
+    "access": {
+     "_raw": {
+      "notes": "Highly competitive lottery (typically <10% acceptance); only ONE permit per person per season; 30% of permits reserved for daily lottery walk-ups; permits must be printed online within 14 days before trip",
+      "permit_type": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+      "land_manager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "special_hazards": "No campfires above 5,000 ft or within 1/2 mile of lakes; dogs prohibited on Colchuck Lake, Stuart Lake trails, and Enchantments area",
+      "wilderness_zone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+      "group_size_limits": "Maximum party 12 people",
+      "permit_pickup_hours": "Daily lottery application: 7:00am-10:00am weekdays only (May 15-Oct 31); ranger station: must pick up by 4:00pm same day",
+      "altitude_restrictions": "None documented",
+      "parking_pass_required": "Northwest Forest Pass at Enchantments trailheads",
+      "permit_cost_structure": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+      "advanced_lottery_dates": "Registration opens Feb 15, closes March 1; results posted ~March 15; unclaimed permits released April 1 at 7:00am PT",
+      "permit_pickup_location": "Online via recreation.gov (advanced lottery); Wenatchee River Ranger Station in Leavenworth (daily lottery pick-up by 4pm same day)",
+      "seasonal_closure_dates": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+      "ranger_district_contact": "Wenatchee River Ranger Station, 600 Sherbourne, Leavenworth WA 98826 (for daily lottery); Okanogan-Wenatchee Supervisor's Office: 215 Melody Lane, Wenatchee WA 98801, (509) 664-9200"
+     },
+     "fees": "$6 non-refundable lottery application fee; $5 per person per night for overnight permit (May 15-Oct 31)",
+     "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+     "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+     "permit": "Overnight wilderness permit required (May 15-Oct 31); Advanced lottery or daily walk-up lottery",
+     "closures": "Permit required May 15-Oct 31; permits not required Nov 1-May 14",
+     "permitZone": "Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "group_limit": 8,
+     "landManager": "Okanogan-Wenatchee National Forest, Alpine Lakes Wilderness (Enchantments Permit Area)",
+     "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+     "passRequired": "Northwest Forest Pass at Enchantments trailheads"
+    },
+    "approach": "From the Stuart Lake Trailhead (3,600 ft) at the end of FS Road 7601, follow the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail (#1599A) junction. Turn right, cross Mountaineer Creek (a rock-hop/log crossing and the last reliable, easy water source for a while), and switchback up 1.6 miles through forest to Colchuck Lake (5,570 ft) — roughly 4.1 miles and 2,000 ft from the car. Boulder-hop along the lake's east shore to the boulder field at its south end (about 5.5 miles in, 2,500 ft gained), then pick up the climbers' trail/talus leading to the base of Aasgard Pass. Aasgard Pass itself gains about 2,000 ft in only 1.25 miles of steep, loose dirt and scree — physically the crux of the approach. It's cairned when snow-free, but in early season (often into July) snow can bridge a hidden creek/moat on the left side of the gully that has caused serious injuries and at least one fatality when climbers post-holed or glissaded into it; the slope is also avalanche-prone with a spring/early-summer snowpack. From the top of the pass (7,841 ft) descend gently into the upper Core basin past Isolation/Tranquil Lake, then continue cross-country roughly 1–1.5 miles north over granite slabs and heather benches toward Prusik Pass and Gnome Tarn (~7,800–8,000 ft); Prusik's south face and the Solid Gold start are about 15–20 minutes from a Gnome Tarn camp. Total is roughly 7.5–8 miles and 4,600 ft one-way from the trailhead. Overnight camping in the Core Zone requires an Enchantments lottery/walk-up permit, so many parties either link the whole climb car-to-car in a long day or secure a permit to camp at Gnome Tarn. When the Stuart Lake/Colchuck approach or Aasgard Pass is closed (wildfire, avalanche danger), the Snow Lakes Trail is a much longer (9+ miles one-way) but lower-angle alternative that eventually requires cross-country travel past Lake Viviane to reach the same south-face base."
+   }
+  },
+  {
+   "id": "wa_prusik_peak_der_sportsman",
+   "before": {
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; Gnome Tarn camp puts you a short walk from the south face for an early, fresh start on a hard route.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass (one strong party climbed the 2,200 ft pass in 59 min) into the core Enchantments. Camp at Gnome Tarn, about 20 minutes from the base of Prusik's south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "One of the Enchantments' hardest and most sustained testpieces -- real trip reports log about 7 hours base-to-summit for strong parties climbing fix-and-follow with a haul bag. Descend the north side with 5 single-rope rappels.",
+       "hours": 9,
+       "miles": 1.3,
+       "title": "Climb Der Sportsman",
+       "gainFt": 700,
+       "lossFt": 700,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:00 AM",
+         "label": "Leave camp",
+         "detail": "~20 min to the base of the south face"
+        },
+        {
+         "time": "5:30 AM",
+         "label": "Start P1",
+         "detail": "5.11+ crux pitch up a left-leaning crack to twin cracks"
+        },
+        {
+         "time": "",
+         "label": "Continue P2-P5",
+         "detail": "5.10+ to 5.11- corners and cracks"
+        },
+        {
+         "time": "12:30 PM",
+         "label": "Summit",
+         "detail": "~7 hrs base to summit is typical for strong parties"
+        },
+        {
+         "time": "1:00 PM",
+         "label": "Begin rappels",
+         "detail": "5 single-rope raps down the north side"
+        },
+        {
+         "time": "3:30 PM",
+         "label": "Back at camp"
+        }
+       ],
+       "objective": "Send Der Sportsman (5.11+/12-, 6 pitches) base to summit"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike out via Aasgard Pass, or via the Snow Lakes Trail if a car shuttle is arranged (as the source trip report did).",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A serious 3-day outing (~19.5 mi, ~4,500 ft round-trip) for one of the Enchantments' hardest testpieces -- a 7-hour, 6-pitch 5.11+/12- climb best done fresh from camp."
+    },
+    "gain_ft": 6200,
+    "loss_ft": 4500
+   }
+  },
+  {
+   "id": "wa_prusik_peak_west_ridge",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 47.5282,
+      "lng": -120.82036,
+      "elev": 1300,
+      "name": "Stuart Lake Trailhead (Trail #1599)",
+      "note": "Also reachable via the Stuart Lake/Colchuck Lake Trailhead (~47.528,-120.820) over Aasgard Pass — a genuinely different, commonly-used alternate approach — but this route's own recorded GPS track starts at Snow Lakes TH, not Stuart Lake TH.",
+      "type": "Trailhead",
+      "elevFt": 1300
+     },
+     {
+      "lat": 47.4803,
+      "lng": -120.8206,
+      "elev": 7841,
+      "name": "Aasgard Pass",
+      "type": "Junction",
+      "distMi": 5.5,
+      "elevFt": 7841
+     },
+     {
+      "lat": 47.483,
+      "lng": -120.795,
+      "elev": 7000,
+      "name": "Core Enchantments",
+      "type": "Campsite",
+      "distMi": 7,
+      "elevFt": 7000
+     },
+     {
+      "lat": 47.4872,
+      "lng": -120.786,
+      "elev": 7700,
+      "name": "West ridge notch",
+      "type": "Junction",
+      "distMi": 7.6,
+      "elevFt": 7700
+     },
+     {
+      "lat": 47.487398,
+      "lng": -120.784552,
+      "elev": 8008,
+      "name": "Prusik Peak summit",
+      "type": "Summit",
+      "elevFt": 8008
+     }
+    ],
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits (required May 15-Oct 31) are won via a competitive winter lottery (roughly 5-10% odds for the Core zone) or the 2-day-ahead rolling walk-up window; many parties without one instead do the whole route car-to-car in one very long day.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Stuart Lake/Colchuck trailhead (~3,400 ft), hike past Colchuck Lake (5,570 ft) then grind up the steep talus gully of Aasgard Pass -- about 2,200 ft in under a mile -- into the core Enchantments basin. Drop toward Prusik Pass and camp at Gnome Tarn, a small pool right below Prusik's south face and 15-20 minutes from most route starts.",
+       "hours": 6.5,
+       "miles": 9.3,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "The classic, easiest technical route on Prusik -- moving parties often simulclimb the low-5th-class ridge in about 90 minutes. Descend by rappelling/downclimbing the ridge back to the notch, leaving the afternoon free to explore the basin.",
+       "hours": 4.5,
+       "miles": 1.4,
+       "title": "Climb the West Ridge",
+       "gainFt": 600,
+       "lossFt": 600,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "6:30 AM",
+         "label": "Leave camp",
+         "detail": "~20-30 min hike/scramble to the base of the West Ridge"
+        },
+        {
+         "time": "7:00 AM",
+         "label": "Start climbing",
+         "detail": "Low 5th-class ridge, often simulclimbed by competent parties"
+        },
+        {
+         "time": "8:30 AM",
+         "label": "Reach the summit",
+         "detail": "~1.5 hrs of climbing for a moving party"
+        },
+        {
+         "time": "9:00 AM",
+         "label": "Begin the descent",
+         "detail": "Downclimb/rappel the ridge back toward the notch"
+        },
+        {
+         "time": "11:00 AM",
+         "label": "Back at camp",
+         "detail": "Rest of the day free to explore the Enchantments basin"
+        }
+       ],
+       "objective": "Summit via the West Ridge (5.7, II, 4 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp, climb back up to Aasgard Pass, then descend the long way back past Colchuck Lake to the trailhead. Efficient parties sometimes skip this third day and hike all the way out the same evening after climbing, making it a 2-day trip.",
+       "hours": 5.5,
+       "miles": 9.3,
+       "title": "Hike out via Aasgard Pass",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the Stuart Lake trailhead"
+      }
+     ],
+     "totalNote": "A relaxed 3-day trip (~20.5 mi, ~4,700 ft round-trip) built around a quick, popular 4-pitch 5.7 climb; strong parties without a permit often compress it into one ~15-16 hr car-to-car day instead."
+    },
+    "gain_ft": 6200,
+    "loss_ft": 4608
+   }
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "before": {
+    "descent": "Descend via the standard West Ridge downclimb/rappels toward the Enchantments basin.",
+    "itinerary": {
+     "cal": "Core Enchantments overnight permits are competitive; fit parties without one sometimes push the whole route car-to-car in ~20-24 hrs instead.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+       "hours": 6.5,
+       "miles": 8.8,
+       "title": "Approach to Gnome Tarn camp",
+       "gainFt": 4000,
+       "lossFt": 700,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Reach camp below Prusik Peak"
+      },
+      {
+       "n": 2,
+       "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5.5 hrs of pure climbing, then descend via the standard West Ridge downclimb/rappels.",
+       "hours": 7.5,
+       "miles": 1.4,
+       "title": "Climb the South Face (Burgner-Stanley)",
+       "gainFt": 700,
+       "lossFt": 700,
+       "packLb": 12,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Leave camp",
+         "detail": "~15-20 min to the base of the south face"
+        },
+        {
+         "time": "6:00 AM",
+         "label": "Start climbing",
+         "detail": "P1 chimney or crack (5.7-5.8+) to a tree belay"
+        },
+        {
+         "time": "",
+         "label": "Continue P2-P5",
+         "detail": "Corner systems and a chockstone chimney (5.8-5.9)"
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Top out",
+         "detail": "P6 strenuous crack/corner to the summit; ~5.5 hrs of climbing typical"
+        },
+        {
+         "time": "12:00 PM",
+         "label": "Descend",
+         "detail": "Downclimb/rappel the West Ridge back toward the notch"
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at camp"
+        }
+       ],
+       "objective": "Send the Burgner-Stanley route (5.9+/5.10a, 6 pitches)"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "hours": 5.5,
+       "miles": 8.8,
+       "title": "Hike out",
+       "gainFt": 700,
+       "lossFt": 4000,
+       "packLb": 30,
+       "schedule": [],
+       "objective": "Return to the trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~19.5 mi, ~4,500 ft round-trip) around Prusik's classic 6-pitch 5.9+ south-face line, descending via the West Ridge."
+    },
+    "timing": {
+     "totalHrs": 19.5,
+     "summitTimeHrs": 6.5,
+     "descentTimeHrs": 13,
+     "approachTimeHrs": null,
+     "recommendedStart": "Early start",
+     "sectionBreakdown": [
+      {
+       "hrs": 6.5,
+       "note": "Hike past Colchuck Lake and up Aasgard Pass into the core Enchantments, passing Tranquil, Isolation, and Perfection Lakes. Camp at Gnome Tarn, close to the south face.",
+       "fromTo": "Approach to Gnome Tarn camp",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7.5,
+       "note": "Chimneys and corner systems for 6 pitches (~650 ft); pitches 1-2 and 3-4 link easily with a 60m rope. Car-to-car parties log about 5.5 hrs of pure climbing, then descend via the st…",
+       "fromTo": "Climb the South Face (Burgner-Stanley)",
+       "section": "Descent"
+      },
+      {
+       "hrs": 5.5,
+       "note": "Break camp and hike back out over Aasgard Pass and past Colchuck Lake to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    "descent_text": "Walk east from the summit and begin the north-face rappel line on slung belay stations — natural anchors (blocks/chockstones with webbing/tat); there's little to no fixed gear at the top. Plan on 3–4 single-rope rappels, most around 25–30m, though the line can also be run with two ropes for fewer, longer rappels. Figure roughly an hour from the summit back to the base if the rap line isn't backed up with other parties, which does happen since several south-face routes share this descent. Bring extra tat to back up aged webbing on the natural anchors.",
+    "rappel_count_note": "Reported as 3-4 single-rope rappels depending on party choices; some parties run the same line with two ropes for fewer, longer rappels. Shared north-side descent used by multiple South Face routes on Prusik Peak, so expect traffic/queuing.",
+    "gain_ft": 5400,
+    "loss_ft": 5400
+   }
+  }
+ ]
+}

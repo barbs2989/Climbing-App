@@ -1,0 +1,545 @@
+{
+ "batches": ["b129.json", "b130.json", "b131.json", "b132.json"],
+ "routes_read": 12,
+ "routes": [
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "name": "Don't Climb That She Said",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "whether approach beta for this boulder exists",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "No route-specific trailhead or approach beta for this boulder problem turned up anywhere online... isn't cross-referenced anywhere against a named boulder or trailhead in the Glacier Peak area."},
+      {"field": "timing.sectionBreakdown[0].note", "says": "This problem sits roughly 8 miles up the North Fork Sauk approach trail toward Glacier Peak, so reaching it is a multi-day wilderness trip requiring a self-issue wilderness permit"},
+      {"field": "itinerary.totalNote", "says": "roughly 8 miles up the North Fork Sauk River trail toward Glacier Peak, as a multi-day wilderness outing"},
+      {"field": "partner_requirements.approachTime", "says": "Roughly 8 miles up the North Fork Sauk River trail, the standard hiking approach toward Glacier Peak."}
+     ],
+     "why": "The approach field flatly denies any known approach beta exists for this boulder, while three other fields on the same route give a specific, consistent approach (8 mi up the North Fork Sauk trail).",
+     "internal_resolution": "timing, itinerary, and partner_requirements agree with each other and give real detail; approach is the outlier and appears to be a stock refusal that was never updated.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "name": "Disappointment Peak Cleaver (Cool Glacier)",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "which approach/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "overview / approach / approach_variants[0] / pitch_detail[0].notes / bail", "says": "North Fork Sauk River Trailhead -> Mackinaw Shelter -> White Pass (~5,900-6,000 ft) -> Glacier Gap (~7,250-7,300 ft), the standard southern approach"},
+      {"field": "waypoints[0].name/note", "says": "\"North Fork Sauk River Trailhead\" at (48.05832,-121.28793), but its own note says: \"Coordinate and elevation as published... for the Trinity Trailhead... The North Fork Sauk River trailhead is 20.2 mi away on a different approach: both of this route's approach waypoints — Buck Creek Pass at 9.5 mi and the Cool/Gerdine Basin camp above it — are reached from Trinity, and the route's own itinerary begins 'Trailhead to Buck Creek Pass, 12 mi'\""},
+      {"field": "waypoints[1]/[2]", "says": "\"Buck Creek Pass\" (5,800 ft, 9.5 mi) and \"Cool/Gerdine Basin Camp\" (6,800 ft, 14 mi) — an eastern Trinity/Chiwawa approach"},
+      {"field": "itinerary.days[0-1]", "says": "Day 1 \"Trailhead to Buck Creek Pass\" (12 mi, 3,200 ft gain); Day 2 \"Continue to eastern high camp\" reaching the Cool/Gerdine Basin"}
+     ],
+     "why": "The route's prose (overview, approach, approach_variants, pitch_detail, bail, bivy) consistently describes the North Fork Sauk / White Pass / Glacier Gap approach, but the waypoints list's own note explicitly says its \"North Fork Sauk Trailhead\" coordinates are actually the Trinity Trailhead, and both the waypoints and the itinerary then route the party via Buck Creek Pass and a \"Cool/Gerdine Basin Camp\" that match neither White Pass nor Glacier Gap in name, elevation, or distance — an entirely different (eastern, Trinity/Chiwawa) approach contaminating the waypoints/itinerary.",
+     "internal_resolution": "overview, approach, approach_variants, pitch_detail, bail, road, and approach_logistics (5 of 7 route fields) all agree on the North Fork Sauk/White Pass/Glacier Gap line; waypoints[1-2] and the itinerary days are the contaminated outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "total elevation gain for the trip",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft / loss_ft", "says": "9846 / 9846"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "3200+1600+2950+0 = 7,750 ft"},
+      {"field": "itinerary.totalNote", "says": "\"A 4-day trip (~34 miles RT, ~7,750 ft gain)\""}
+     ],
+     "why": "gain_ft (9,846 ft) is about 27% higher than the itinerary's own day-by-day gain total and its own totalNote (7,750 ft).",
+     "internal_resolution": "itinerary.days and itinerary.totalNote agree with each other (7,750 ft); gain_ft/loss_ft are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether June is a good/avoid month",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.notes", "says": "\"Best season: July... Avoid June (rain, avalanche hazard from sloughlanches).\""},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "status \"good\", reason \"Approach may still hold snow; cleaver rock less exposed under residual snow cover\""}
+     ],
+     "why": "access.notes tells a climber to avoid June; seasonal_guidance rates June as a \"good\" climbing month.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "commitment/alpine grade vs the stated grade range",
+     "severity": "low",
+     "claims": [
+      {"field": "grade", "says": "\"Grade II–III glacier/snow\""},
+      {"field": "commitment", "says": "\"II\""}
+     ],
+     "why": "grade states a II–III range while commitment pins a single value at the bottom of that range; minor but worth normalizing.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "name": "Kennedy Glacier",
+   "area": "Glacier Peak",
+   "contradictions": [
+    {
+     "fact": "total one-way/round-trip distance",
+     "severity": "high",
+     "claims": [
+      {"field": "dist_km", "says": "12.4 (≈7.7 mi)"},
+      {"field": "itinerary.days[*].miles sum", "says": "8 + 9 + 8 = 25 mi"},
+      {"field": "waypoints[3] Glacier Creek PCT crossing camp", "says": "distMi 9.7 (already farther than dist_km's 7.7 mi total)"}
+     ],
+     "why": "dist_km (7.7 mi) is smaller than the distance to even the FIRST night's camp per the route's own waypoints (9.7 mi) and far smaller than the itinerary's 25-mile round trip.",
+     "internal_resolution": "waypoints and itinerary agree with each other on a long multi-day mileage; dist_km is the outlier and appears far too low for this route.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether August is inside the climbing season",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "\"Jun-Aug\" (includes August)"},
+      {"field": "seasonal_guidance.monthBreakdown.August", "says": "status \"marginal\", reason \"Outside the season window; serac hazard increases as the season progresses\""},
+      {"field": "access.notes", "says": "\"Seasonal access May-September; best conditions late June through mid-September.\""}
+     ],
+     "why": "season includes August, monthBreakdown calls August \"outside the season window,\" and access.notes extends good conditions to mid-September — three different season boundaries on one route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "CAMPING & BIVY list scope",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy[0-2] (Mackinaw Shelter, White Pass, Glacier Gap)", "says": "notes explicitly label these as camps \"for a Glacier Peak climb by the Cool Glacier and Gerdine Ridge\" — i.e. the Disappointment Peak Cleaver route, not Kennedy Glacier"},
+      {"field": "bivy[5] Buck Creek Pass and the High Pass camps", "says": "notes say this is \"the base for three peaks in this zone that have nothing to do with Glacier Peak's own approaches\" (Helmet Butte, Buck Mountain, Mount Berge)"},
+      {"field": "bivy[6] Napeequa Valley floor", "says": "notes say this is \"the way into the Napeequa for Luahna Peak, Chalangin Peak... and Tenpeak's east end\""},
+      {"field": "bivy[7] Butterfly Butte and the Pilz Glacier basin camps", "says": "\"the climbing camp for Luahna Peak and Chalangin Peak and the Napeequa-side base for Clark Mountain\""},
+      {"field": "bivy[8] Boulder Pass and Thunder Basin, White River", "says": "\"the standard base for Clark Mountain\" and Tenpeak Mountain"},
+      {"field": "bivy[3] Kennedy Ridge and the Glacier Creek camps, Suiattle side", "says": "\"This is the base for Glacier Peak's Kennedy Glacier and for the Frostbite Ridge line above it\" — the only entry actually for this route"}
+     ],
+     "why": "Of 10 CAMPING & BIVY entries on the Kennedy Glacier route page, only one is actually this route's own camp; the rest belong to a different Glacier Peak route (Cool Glacier/Cleaver) or to entirely unrelated peaks (Clark, Luahna, Chalangin, Tenpeak, Helmet Butte, Buck Mtn, Mt Berge) — several notes admit this themselves.",
+     "internal_resolution": "bivy[3] (Kennedy Ridge/Glacier Creek) matches this route's own approach (White Chuck/Kennedy Ridge Trail); all other bivy entries are contamination from other routes/peaks sharing the same region.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_painted_traverse",
+   "name": "Painted Traverse",
+   "area": "Glacier Peak Wilderness Traverses",
+   "contradictions": []
+  },
+  {
+   "id": "wa_east_face",
+   "name": "East Face",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "number and total length of rappels",
+     "severity": "high",
+     "claims": [
+      {"field": "rappels", "says": "\"2 double-rope rappels — one from near the summit to the notch between Middle and South Gunsight, one more into the moat at the base of the notch (~4 if you carry only one 60 m rope)\""},
+      {"field": "descent", "says": "\"typically 3-4 rappels on 50-60m lines\""},
+      {"field": "rappel_detail", "says": "4 numbered rows, each lengthM 55 (South-face rappel anchor x4), implying ~220 m of rappelling"},
+      {"field": "rappel_count_note", "says": "\"A first-hand report... describes one double-rope rappel to the notch... then one more... into the moat... The figure of about four rappels on a single 60 m rope is arithmetic from roughly 100 m of descent rather than a published count.\""}
+     ],
+     "why": "The route's own rappel_count_note admits the \"4 rappels\" figure is not a real, documented count (just arithmetic implying ~100 m total), yet the rappel_detail table presents 4 distinct rappels of 55 m each (~220 m total) as if factual, and descent gives yet a third figure (3-4). A climber would plan for a very different number/length of rappels depending which field they read.",
+     "internal_resolution": "rappels + rappel_count_note agree the real, documented descent is 2 double-rope rappels (~100 m); rappel_detail's 4-row/55m table and descent's \"3-4\" are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "whether this route requires aid climbing",
+     "severity": "medium",
+     "claims": [
+      {"field": "detailed_rack", "says": "\"...0.5-1 inch pitons for aid (minimal), ...\""},
+      {"field": "pitch_detail", "says": "7 pitches, all graded 5.9-5.10d free climbing; no pitch mentions aid"},
+      {"field": "beta / overview", "says": "\"mostly continuous 5.9-5.10+ climbing\" / \"offering mostly continuous 5.9-5.10+ climbing\", with no mention of any aid move"},
+      {"field": "rack", "says": "the route's own shorter rack list has no pitons/aid gear at all"}
+     ],
+     "why": "detailed_rack calls for aid pitons, but the route's own pitch-by-pitch description (pitch_detail), beta, overview, and even its own \"rack\" list all describe a fully free 5.9-5.10d climb with no aid.",
+     "internal_resolution": "pitch_detail, beta, overview and rack agree there is no aid on this route; the aid-piton mention in detailed_rack looks like contamination (the neighboring Gunrunner route on the same peak DOES have a documented A1 aid move).",
+     "needs_research": false
+    },
+    {
+     "fact": "total elevation gain",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "5000"},
+      {"field": "itinerary (text)", "says": "Day1 3,100 ft + Day2 2,600 ft + Day3 600 ft = 6,300 ft"}
+     ],
+     "why": "gain_ft is about 26% lower than the sum of the itinerary's own day-by-day gains.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "total trip hours",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "50"},
+      {"field": "timing.approachTimeHrs + summitTimeHrs + descentTimeHrs", "says": "16 + 6 + 4 = 26"}
+     ],
+     "why": "totalHrs is nearly double the sum of the route's own approach/summit/descent hour fields; every sibling route in this batch with the same timing shape (e.g. Disappointment Peak Cleaver, Kennedy Glacier) has these three sub-fields sum exactly to totalHrs, so this looks like a real data error rather than an intentional convention.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "access.parking_pass cites an unrelated trailhead",
+     "severity": "medium",
+     "claims": [
+      {"field": "access.parking_pass", "says": "\"Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.\""},
+      {"field": "approach_logistics.trailhead / road.name", "says": "\"Downey Creek Trailhead (Trail #768, Suiattle River Road)\""}
+     ],
+     "why": "The access.parking_pass example cites the Sunrise Mine Trailhead for Vesper Peak — a different mountain and trailhead system entirely — instead of this route's own Downey Creek Trailhead.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gunrunner",
+   "name": "Gunrunner",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "5000"},
+      {"field": "itinerary (text)", "says": "Day1 3,100 ft + Day2 2,600 ft + Day3 1,500 ft = 7,200 ft"}
+     ],
+     "why": "gain_ft is about 44% lower than the sum of the route's own itinerary day gains — a route that climbs all four Gunsight summits shows the same gain_ft (5000) as the single-summit East Face route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "total trip hours",
+     "severity": "medium",
+     "claims": [
+      {"field": "timing.totalHrs", "says": "48"},
+      {"field": "timing.approachTimeHrs + summitTimeHrs + descentTimeHrs", "says": "16 + 8 + 4 = 28"}
+     ],
+     "why": "Same pattern as East Face: totalHrs does not equal the sum of the route's own approach/summit/descent fields, breaking the convention used elsewhere in this dataset.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "access._raw block describes a different area/trailhead",
+     "severity": "medium",
+     "claims": [
+      {"field": "access._raw.wilderness_zone", "says": "\"Alpine climbing area\""},
+      {"field": "access._raw.group_size_limit", "says": "\"Max 12 people in Mt. Baker Wilderness\""},
+      {"field": "access._raw.permit_pickup / parking_pass", "says": "\"access via Lake Serene/Bridal Veil Trailhead\"; \"Northwest Forest Pass... required for Lake Serene Trailhead\""},
+      {"field": "access.land_manager / approach_logistics.trailhead", "says": "\"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness\" / \"Downey Creek Trailhead\""},
+      {"field": "access.parking_pass", "says": "\"...e.g. Sunrise Mine TH for Vesper Peak...\""}
+     ],
+     "why": "access._raw names \"Mt. Baker Wilderness\" and the Lake Serene/Bridal Veil Trailhead (near Index, a completely different area), and the rendered parking_pass field cites the Sunrise Mine TH for Vesper Peak — none of which is this route's actual wilderness (Glacier Peak Wilderness) or trailhead (Downey Creek).",
+     "internal_resolution": "land_manager, approach, approach_logistics, and road all agree on Glacier Peak Wilderness / Downey Creek Trailhead; access._raw and the Vesper Peak example are contamination.",
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "name": "Standard Route (Gunsight Peak)",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "whether late June is a good/best time to climb",
+     "severity": "medium",
+     "claims": [
+      {"field": "season", "says": "\"Jul-Sep\" (does not include June)"},
+      {"field": "best_season", "says": "\"Late June through September; late June-July is favored for firmer, more continuous glacier snow...\""},
+      {"field": "seasonal_guidance.monthBreakdown.June", "says": "status \"risky\", reason \"...route is rarely in reasonable condition this early\""}
+     ],
+     "why": "best_season calls late June a favored/good time and extends the good window earlier than the stated season itself, while monthBreakdown explicitly rates June as \"risky\" and says the route is rarely in condition that early — the opposite conclusion.",
+     "internal_resolution": "season and monthBreakdown.June agree (June excluded/risky); best_season's \"late June\" claim is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "recommended/actual start time from high camp",
+     "severity": "medium",
+     "claims": [
+      {"field": "turnaround", "says": "\"Leave high camp early enough (commonly 4-5am) to cross the Chikamin Glacier on firm snow...\""},
+      {"field": "timing.recommendedStart", "says": "\"~7:00 AM from camp\""},
+      {"field": "itinerary.days[2].schedule[0]", "says": "\"~7:00 AM — Break high camp at the col\""}
+     ],
+     "why": "turnaround says parties commonly leave camp at 4-5am, but the route's own recommendedStart and its detailed hour-by-hour schedule both put the actual departure at 7:00 AM.",
+     "internal_resolution": "recommendedStart and the itinerary schedule agree (7:00 AM); turnaround's \"4-5am\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "rappel count on the descent",
+     "severity": "low",
+     "claims": [
+      {"field": "descent", "says": "\"...then make 2-3 double-rope (60m) rappels down the chimney/crack system...\""},
+      {"field": "rappels", "says": "\"2 double-rope (2x60 m) rappels down the West Face...\""},
+      {"field": "descent_text", "says": "narrates exactly two rappels: one down the West Face, then \"a second, diagonal double-rope rappel...which allowed us to reach the snow finger in one shot\""},
+      {"field": "rappel_count_note", "says": "\"What is documented for this route is two double-rope rappels...\""}
+     ],
+     "why": "descent's \"2-3\" is the only field that departs from the otherwise-consistent \"2 rappels\" documented everywhere else on this route.",
+     "internal_resolution": "rappels, descent_text and rappel_count_note all agree on exactly 2; descent's \"2-3\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "this route's own summit location vs the area it's filed under",
+     "severity": "medium",
+     "claims": [
+      {"field": "waypoints[-1] / high_point_ft / approach_logistics.peakLat,peakLng", "says": "\"Gunsight Peak summit\" at (48.306555,-120.994285), elev 8198 ft"},
+      {"field": "area.elevation_ft/lat/lng (Middle Peak)", "says": "8185 ft at (48.30571,-120.99439)"},
+      {"field": "sibling routes East Face / Gunrunner waypoints", "says": "both name their summit waypoint \"Middle Peak (Gunsight Range)\" at (48.30571,-120.99439) — matching the area's own coordinate exactly"}
+     ],
+     "why": "This route's own summit is named and located differently (\"Gunsight Peak,\" ~100 m off) from the area's coordinate that the other two Middle Peak routes match exactly, suggesting this route may actually describe a different summit in the Gunsight Range than the \"Middle Peak\" area it's filed under.",
+     "internal_resolution": null,
+     "needs_research": true
+    }
+   ]
+  },
+  {
+   "id": "wa_sw_ridge",
+   "name": "Southwest Ridge",
+   "area": "Middle Peak",
+   "contradictions": [
+    {
+     "fact": "which approach/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "approach", "says": "\"Same multi-day approach as the East Face and Gunrunner: Lady of the Lake ferry from Chelan to Stehekin, NPS shuttle to High Bridge, ~9-10 miles on the PCT/Agnes Creek Trail, then an off-trail bushwhack and glacier approach...\""},
+      {"field": "waypoints / approach_logistics / road", "says": "Trailhead = \"High Bridge (Stehekin Valley Road)\", reached only by ferry + NPS shuttle"},
+      {"field": "wa_east_face.approach / wa_gunrunner.approach (sibling routes)", "says": "\"Middle Peak shares the same approach as South Peak: from Downey Creek Trailhead, follow the southern Ptarmigan Traverse cross-country route (Itswoot Ridge/Cub Lake, Bachelor Creek)...\" — the Suiattle River Road / west-side approach, no ferry"}
+     ],
+     "why": "SW Ridge explicitly claims to share East Face's and Gunrunner's approach, but East Face and Gunrunner actually use the Downey Creek Trailhead (west side, no boat), while SW Ridge's own waypoints/road/approach describe the Stehekin ferry + High Bridge (east side) — a completely different trailhead and access method.",
+     "internal_resolution": "East Face and Gunrunner (2 routes) agree on Downey Creek; SW Ridge's claim of sharing their approach is contradicted by its own stated trailhead.",
+     "needs_research": false
+    },
+    {
+     "fact": "CAMPING & BIVY list scope",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy[]", "says": "Kool-Aid Lake, Yang Yang Lakes, White Rock Lakes, Itswoot Ridge, Cub Lake, Bachelor Creek, Spire Col, Dome-Chickamin col — all camps on the west-side Ptarmigan Traverse/Downey Creek corridor"},
+      {"field": "approach / road / emergency", "says": "this route is reached via the Stehekin ferry and High Bridge (east side), not Downey Creek"}
+     ],
+     "why": "None of the listed camps are reachable from this route's own stated approach (High Bridge/PCT/Agnes Creek); they belong to the unrelated west-side Downey Creek approach used by other routes in this cluster.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face_2",
+   "name": "West Face",
+   "area": "North Peak",
+   "contradictions": [
+    {
+     "fact": "which peak this approach text is describing",
+     "severity": "high",
+     "claims": [
+      {"field": "overview", "says": "\"The West Face of North Peak is one of the Cascades' sheerest and cleanest granite faces...\""},
+      {"field": "approach (last sentence)", "says": "\"Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces...\""}
+     ],
+     "why": "The approach paragraph, on the North Peak West Face route page, ends by naming South Peak's granite faces instead of North Peak's — a mismatched peak reference on the route's own page.",
+     "internal_resolution": "overview, waypoints (North Peak Summit, 8160 ft), and every other field on this route agree it is North Peak; the \"South Peak\" mention in approach is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "which road/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "road.name", "says": "\"Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range\""},
+      {"field": "road.driveNote", "says": "\"Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass...\""},
+      {"field": "approach_logistics.trailhead / approach / waypoints[0]", "says": "\"Downey Creek Trailhead (Trail #768, Suiattle River Road)\""}
+     ],
+     "why": "road describes Barlow Pass and the Monte Cristo Road — the access route for the Monte Cristo/Silvertip area, unrelated to the Gunsight Range — while approach_logistics, approach text, and the waypoints all agree the real trailhead is Downey Creek Trailhead off Suiattle River Road.",
+     "internal_resolution": "approach_logistics, approach, and waypoints (3 fields) agree on Downey Creek; road is the contaminated outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "number of pitches",
+     "severity": "high",
+     "claims": [
+      {"field": "pitches", "says": "6"},
+      {"field": "rope_note", "says": "\"6-pitch, 500ft alpine rock route...\""},
+      {"field": "beta", "says": "\"A premier alpine testpiece featuring five pitches of high-quality granite climbing.\""},
+      {"field": "pitch_detail", "says": "only 5 rows (pitches 1-5)"}
+     ],
+     "why": "pitches and rope_note say 6 pitches; beta and the pitch_detail table (the actual pitch-by-pitch breakdown) show only 5.",
+     "internal_resolution": "pitch_detail and beta agree on 5; pitches/rope_note's \"6\" is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "route length",
+     "severity": "medium",
+     "claims": [
+      {"field": "length_m", "says": "183 (≈600 ft)"},
+      {"field": "rope_note", "says": "\"6-pitch, 500ft alpine rock route\""}
+     ],
+     "why": "length_m converts to ~600 ft; rope_note states 500 ft for the same route — a ~20% discrepancy.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "whether aid climbing is required",
+     "severity": "medium",
+     "claims": [
+      {"field": "aid_grade", "says": "\"A1\""},
+      {"field": "fa", "says": "\"Jim Nelson & Carl Dietrich, 1986 (5.10 A2, with aid); FFA by Max Hasson & Jens Holsten, 2007 (5.11+)\""},
+      {"field": "beta", "says": "\"The onsight first free ascent in 2007 was completed with no falls.\" (describing the modern, fully-free route)"}
+     ],
+     "why": "aid_grade (A1) doesn't even match the route's own historical aid grade (A2) and contradicts beta's framing of the current route as a fully free ascent with no aid.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "time required to descend from the summit to the trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "timing.descentTimeHrs", "says": "5"},
+      {"field": "descent_text", "says": "\"...descend to the Chikamin-Dome Col... From the col, descend... to Bachelor Flats (taking approximately 8-10 hours)... From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours)... Total descent time from summit to vehicle is typically 3-4 days.\""}
+     ],
+     "why": "The structured timing field claims a 5-hour descent while the route's own descent_text details a 14-18+ hour hike-out spread over 3-4 days — the same word \"descent\" is used for two wildly different durations without reconciling them.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "access.* fields say N/A while parallel fields give concrete answers",
+     "severity": "low",
+     "claims": [
+      {"field": "access.landManager / access.permit / access.permitZone / access.passRequired", "says": "all \"N/A\""},
+      {"field": "access.land_manager / access.parking_pass", "says": "\"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness\" / \"Northwest Forest Pass required...\""}
+     ],
+     "why": "Camel-case and snake-case counterparts of the same access facts disagree (N/A vs a real answer) within the same access object.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_accidental_discharge_east_face",
+   "name": "Accidental Discharge (East Face)",
+   "area": "South Peak",
+   "contradictions": [
+    {
+     "fact": "whether a route-specific descent has been published",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "\"No descent specific to this route has been published. What is documented is that... roughly 35 m of rappel north off the summit, then a rappel east onto the ice. Treat that as the working descent until better beta exists... rappelling the line of ascent is a poor idea.\""},
+      {"field": "descent_text", "says": "\"Descend via established rappel routes on the south/east side. Rappel anchors exist on the eastern wall below the summit area... Alternative descent is to downclimb the South Ridge route if conditions allow.\""},
+      {"field": "bail", "says": "\"No documented bail-out beta exists...\""}
+     ],
+     "why": "descent and bail both explicitly say no route-specific descent/bail beta exists (using the shared north-then-east summit rappel as a fallback), while descent_text confidently describes established, specific rappel anchors and even recommends downclimbing — directly contradicting the \"rappelling the line of ascent is a poor idea\" warning in descent.",
+     "internal_resolution": "descent and bail agree with each other (no beta, use the shared descent, don't downclimb the loose line); descent_text is the outlier and reads like generic template text.",
+     "needs_research": false
+    },
+    {
+     "fact": "land manager / permit system for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "access._raw", "says": "\"land_manager\": \"National Park Service - North Cascades National Park\"; permit cost \"$10 per person + $6 non-refundable reservation fee\"; \"permit_pickup_location\": \"Wilderness Information Center, ...Marblemount\""},
+      {"field": "access.permitZone", "says": "\"North Cascades National Park Complex\""},
+      {"field": "access.passRequired", "says": "\"America the Beautiful Annual ($80) or per-vehicle entrance fee\""},
+      {"field": "access.land_manager / access.landManager", "says": "\"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness\" / \"Glacier Peak Wilderness, jointly administered by Mount Baker-Snoqualmie National Forest... and Okanogan-Wenatchee National Forest\""},
+      {"field": "access.parking_pass", "says": "\"Northwest Forest Pass required...\""},
+      {"field": "emergency.rangerStation", "says": "\"North Cascades National Park / Okanogan-Wenatchee National Forest\" — again NPS, not Darrington/USFS"}
+     ],
+     "why": "The route sits in Glacier Peak Wilderness (USFS, free self-issue permit, Northwest Forest Pass — as every sibling route in this batch confirms), but access._raw/permitZone/passRequired describe a paid NPS North Cascades National Park permit system with a Marblemount pickup location, entirely unrelated to this route's actual land manager.",
+     "internal_resolution": "land_manager/landManager/parking_pass agree (Glacier Peak Wilderness, USFS); access._raw/permitZone/passRequired/emergency.rangerStation are the contaminated outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "which road/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "road.name", "says": "\"Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range\""},
+      {"field": "approach_logistics.trailhead / approach / waypoints[0]", "says": "\"Downey Creek Trailhead (Trail #768, Suiattle River Road)\""}
+     ],
+     "why": "Same contamination pattern as other Gunsight Range routes: road names an unrelated trailhead/road system.",
+     "internal_resolution": "approach_logistics, approach and waypoints agree on Downey Creek; road is the outlier.",
+     "needs_research": false
+    },
+    {
+     "fact": "which approach is the \"primary\"/standard one",
+     "severity": "medium",
+     "claims": [
+      {"field": "approach", "says": "\"The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road)...\""},
+      {"field": "approach_variants[0] (Downey Creek)", "says": "flagged \"longForm\": true (not primary)"},
+      {"field": "approach_variants[1] (Agnes Creek from the east)", "says": "flagged \"primary\": true"}
+     ],
+     "why": "The main approach field and approach_logistics call Downey Creek the \"genuine standard approach,\" but the approach_variants array marks the Stehekin/Agnes Creek (east) variant as \"primary\" instead.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_west_face",
+   "name": "West Face",
+   "area": "South Peak",
+   "contradictions": [
+    {
+     "fact": "land manager / ranger district for this route",
+     "severity": "low",
+     "claims": [
+      {"field": "emergency.rangerStation", "says": "\"North Cascades National Park / Okanogan-Wenatchee National Forest\""},
+      {"field": "approach_logistics.trailhead / approach", "says": "\"Downey Creek Trailhead\" (Darrington Ranger District / Mt. Baker-Snoqualmie NF territory, per sibling routes on this same peak)"}
+     ],
+     "why": "Same NPS/Okanogan-Wenatchee contamination seen on the sibling South Peak routes, here only in the emergency contact field (this route has no access/road fields to cross-check further).",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "name": "South Ridge",
+   "area": "South Peak",
+   "contradictions": [
+    {
+     "fact": "which descent line to use, and whether to reverse the route",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "\"Do not reverse the ridge. From the summit a rappel of roughly 35 m drops north off the top, and a second rappel takes you east onto the Blue Glacier...\""},
+      {"field": "bail", "says": "\"Retreat down the same rappel line used for descent (~35 m north, then east to the glacier)...\""},
+      {"field": "descent_text", "says": "\"The most common descent is via rappel anchors on the eastern wall below the summit area. Alternatively, the route can be downclimbed (care needed on the cannon hole feature).\""},
+      {"field": "rappel_detail / rappel_count_note", "says": "3 rappels down the \"eastern wall, retracing the route\"; count \"inferred from the route's 3-pitch length (rappelling the line itself)\""},
+      {"field": "rappels", "says": "\"3\" (a bare count, vs. only 2 rappels described in the descent field's north-then-east account)"}
+     ],
+     "why": "descent explicitly instructs climbers NOT to reverse the ridge and gives a 2-rappel north/east line to the Blue Glacier (matching bail); descent_text instead recommends downclimbing the climbing route itself (through the exposed cannon hole crux) or rappelling the \"eastern wall\" — the opposite of \"do not reverse\" — and rappel_detail/rappel_count_note describe a 3rd, different \"retrace the route\" descent with an inferred (not documented) rappel count.",
+     "internal_resolution": "descent and bail agree with each other on the shared north/east summit descent; descent_text and rappel_detail/rappel_count_note describe a contradictory route-reversal descent that descent explicitly warns against.",
+     "needs_research": false
+    },
+    {
+     "fact": "commitment grade vs alpine grade",
+     "severity": "low",
+     "claims": [
+      {"field": "commitment", "says": "\"II\""},
+      {"field": "alpine_grade", "says": "\"III\""}
+     ],
+     "why": "The two grading fields disagree on the route's overall commitment/seriousness rating.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {
+     "fact": "land manager / permit system for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "access._raw", "says": "\"land_manager\": \"National Park Service - North Cascades National Park\"; paid permit \"$10 per person + $6...\"; Marblemount pickup"},
+      {"field": "access.permitZone / access.passRequired", "says": "\"North Cascades National Park Complex\" / \"America the Beautiful Annual ($80)...\""},
+      {"field": "access.land_manager / access.parking_pass", "says": "\"Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness\" / \"Northwest Forest Pass required...\""}
+     ],
+     "why": "Same NPS-vs-USFS contamination as the sibling Accidental Discharge route on this same peak.",
+     "internal_resolution": "land_manager/parking_pass (and this route's own emergency.rangerStation, \"Darrington Ranger District, Mt. Baker-Snoqualmie National Forest\") agree on USFS/Glacier Peak Wilderness; access._raw/permitZone/passRequired are the outliers.",
+     "needs_research": false
+    },
+    {
+     "fact": "which road/trailhead this route uses",
+     "severity": "high",
+     "claims": [
+      {"field": "road.name", "says": "\"Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range\""},
+      {"field": "approach_logistics.trailhead / approach / waypoints[0]", "says": "\"Downey Creek Trailhead (Trail #768, Suiattle River Road)\""}
+     ],
+     "why": "Same contamination pattern seen on every other Gunsight Range route in this batch.",
+     "internal_resolution": "approach_logistics, approach and waypoints agree on Downey Creek; road is the outlier.",
+     "needs_research": false
+    }
+   ]
+  }
+ ]
+}

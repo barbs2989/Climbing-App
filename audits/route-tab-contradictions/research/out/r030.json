@@ -1,0 +1,475 @@
+{
+ "file": "r030.json",
+ "results": [
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing",
+   "verdict": "fixed",
+   "correct_value": "Class 4 (roped, loose Class 4 with a few low-5th moves; two-rope rappel descent) - not Class 3",
+   "evidence": "The 2001 South Route report on cascadeclimber.com notes the guidebook grades the line without fifth-class climbing, yet the party roped up from the Key Ledge on and made six double-rope rappels. The companion report (mtnphil) says the guidebook grade rose from class 4 to class 4+ and describes 'mid-4th' loose rock plus a few exposed 5th-class slab moves. SummitPost says every summit of the massif requires technical climbing. So 'Class 3' and 'optional handline' are wrong; roped Class 4 with low-5th moves is right.",
+   "sources": [
+    "https://www.cascadeclimber.com/mt__garfield.htm",
+    "http://mtnphil.com/Garfield2/Garfield2.html (read via web.archive.org copy)",
+    "https://www.summitpost.org/garfield-mountain/154546"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "grade",
+     "path": [],
+     "expect": "Class 3",
+     "value": "Class 4",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "hazards",
+     "path": [
+      1
+     ],
+     "find": "mandatory 5th-class climbing and roped rappels on every documented line",
+     "replace": "roped Class 4 to low-5th-class climbing and rappels on every documented line",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "involving sustained 5th-class terrain",
+     "replace": "involving sustained, loose Class 4 and low-5th-class terrain",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      2
+     ],
+     "find": "comfort on loose rock and exposed Class 3 terrain",
+     "replace": "comfort leading and rappelling on loose, exposed Class 4 to low-5th-class rock",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "Comfortable, experienced Class 3 scrambler; the modest technical grade is deceptive",
+     "replace": "Experienced alpine climber comfortable leading loose Class 4 rock and running a long rappel descent; the moderate technical grade is deceptive",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "find": "Moderate technical exposure - Class 3 terrain with loose rock",
+     "replace": "Serious technical exposure - roped Class 4 to low-5th-class terrain with loose rock",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "the standard multi-summit scramble stays around Class 3 while some subsidiary summits require technical 5th-class moves. A short rope/handline is prudent for exposed ridge connections between summits.",
+     "replace": "every summit, the Main Peak included, needs roped Class 4 to low-5th-class climbing, and the descent is a long series of rappels, so two 60m ropes are needed rather than a handline.",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    },
+    {
+     "op": "set",
+     "column": "rope_type",
+     "path": [],
+     "expect": "optional handline",
+     "value": "double ropes",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Whether the standard line is a Class 3 scramble or requires 5th-class roped climbing"
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "fact": "Total number of rappels on the standard descent",
+   "verdict": "fixed",
+   "correct_value": "About 8 rappels: single-rope summit to col, about four double-rope down #2 Gully, single-rope off the wooded ramp, two double-rope down the slab (six double-rope in all)",
+   "evidence": "Both first-hand accounts of the same 2001 descent itemise one sequence: a single-rope rappel from the summit slabs to the col, two double-rope rappels from bolts and two more from trees in #2 Gully (then downclimbing), a single-rope rappel on the wooded ramp, and two double-rope rappels down the lower slab - eight in all. The row's 'six double-rope rappels' is the day's total of double-rope raps, misread as the #2 Gully count; the 'about 10' total double-counted it.",
+   "sources": [
+    "https://www.cascadeclimber.com/mt__garfield.htm",
+    "http://mtnphil.com/Garfield2/Garfield2.html (read via web.archive.org copy)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "Roughly 6-9 rope-length rappels on descent (mix of single- and double-rope, two 60m ropes)",
+     "replace": "About 8 rappels on descent (two single-rope and six double-rope, two 60m ropes)",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "parties describe roughly six double-rope (doubled-strand) rappels through the gully's mixed loose/polished rock",
+     "replace": "parties describe roughly four double-rope (doubled-strand) rappels through the gully's mixed loose/polished rock",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "on the order of 10 rappels total on a typical South Route descent",
+     "replace": "about 8 rappels total on a typical South Route descent",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "and six double-rope rappels on the way down.",
+     "replace": "and about eight rappels, six of them double-rope, on the way down.",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "requires six double-rope rappels (bolted and tree anchors; two 60m ropes recommended) back down",
+     "replace": "requires about eight rappels, six of them double-rope (bolted and tree anchors; two 60m ropes recommended), back down",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      7,
+      "note"
+     ],
+     "find": "descend via six double-rope rappels down the #2 Gully",
+     "replace": "descend via a single-rope rappel to the col and about four double-rope rappels down the #2 Gully",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "descent is via six double-rope rappels down bolted anchors",
+     "replace": "descent is via about eight rappels (six of them double-rope) off bolted anchors",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "Six double-rope rappels (two 60m ropes recommended)",
+     "replace": "About eight rappels, six of them double-rope (two 60m ropes recommended),",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "then reverse via 6 rappels",
+     "replace": "then reverse via about 8 rappels",
+     "id": "wa_garfield_mountain_scramble",
+     "fact": "Total number of rappels on the standard descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "fact": "Total number of rappels on descent",
+   "verdict": "fixed",
+   "correct_value": "About 8: single-rope summit to col, about four double-rope down #2 Gully, single-rope off the wooded ramp, two double-rope down the slab",
+   "evidence": "The 2001 report on cascadeclimber.com (the source of this row's times and the 500-lb block) describes: a single-rope rap to the col, two double-rope raps from bolted stations, 'twice more' off trees, then downclimbing; a single-rope rap on the wooded ramp; two double-rope raps down the slab. Its partner's report (mtnphil) gives the identical sequence (their '4th double rope rappel' was the last in #2 Gully). The photo caption's 'six double rope rappels' is the day's double-rope total, so the #2 Gully count is four, not six, and the total is about 8, not 9-10.",
+   "sources": [
+    "https://www.cascadeclimber.com/mt__garfield.htm",
+    "http://mtnphil.com/Garfield2/Garfield2.html (read via web.archive.org copy)"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappels",
+     "path": [],
+     "find": "~9 rappels on descent: about 6 double-rope raps (two 60 m ropes) down #2 Gully,",
+     "replace": "About 8 rappels on descent: a single-rope rap from the summit slabs to the col, about 4 double-rope raps (two 60 m ropes) down #2 Gully,",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "Total number of rappels on descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "make the first of about six double-rope rappels",
+     "replace": "make the first of about four double-rope rappels",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "Total number of rappels on descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "Reverse the route: about six double-rope rappels from the summit area down #2 Gully",
+     "replace": "Reverse the route: a single-rope rappel to the col and about four double-rope rappels down #2 Gully",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "Total number of rappels on descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "four to five pitches up and six double-rope rappels down",
+     "replace": "four to five pitches up and about four double-rope rappels down",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "Total number of rappels on descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "you need doubles for the six rappels down #2 Gully",
+     "replace": "you need doubles for the double-rope rappels down #2 Gully and the slab",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "Total number of rappels on descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "fact": "How the day's time is split between approach and climbing to the summit",
+   "verdict": "fixed",
+   "correct_value": "Approach (car to the base of the slab at ~2,900 ft) about 2 hrs; slab to summit about 6 hrs (8 hrs car to summit); descent 7.5; total 16",
+   "evidence": "The 2001 party left the car at 6:45 a.m., reached the dirt gully at 2,200 ft 'about an hour in', the Glade Saddle at 9:45, the summit at 2:45 p.m., left at 3:30 and reached the car at 11:05 p.m. The partner's account says they were 'less than 2 hours' to the knoll just below the slabs and totals 16 h 20 min. So the 8 hours is car-to-summit and the approach to the slab base is ~2 hours, not 1 hour on top of 8; the approach variant's '5-7' hours (a car-to-summit budget) was inconsistent with its own base (the slab) for the same reason.",
+   "sources": [
+    "https://www.cascadeclimber.com/mt__garfield.htm",
+    "http://mtnphil.com/Garfield2/Garfield2.html (read via web.archive.org copy)"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": 1,
+     "value": 2,
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "How the day's time is split between approach and climbing to the summit"
+    },
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "summitTimeHrs"
+     ],
+     "expect": 8,
+     "value": 6,
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "How the day's time is split between approach and climbing to the summit"
+    },
+    {
+     "op": "set",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "hours"
+     ],
+     "expect": "5-7",
+     "value": "1.5-2",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "How the day's time is split between approach and climbing to the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Clean rock after an hour of nothing but duff and scree is the confirmation.",
+     "replace": "Clean rock after one to two hours of nothing but duff and scree is the confirmation.",
+     "id": "wa_garfield_mountain_south_route",
+     "fact": "How the day's time is split between approach and climbing to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_leaning_spire_west_route",
+   "fact": "Time required to reach the Y Notch (start of this route's own terrain)",
+   "verdict": "fixed",
+   "correct_value": "The twelve-hour figure is the minimum for the whole Main Peak round trip; reaching the Y Notch takes roughly 4-5 hours (approachTimeHrs 5 stands)",
+   "evidence": "The 2001 South Route report quotes the guidebook's 'twelve hours is an absolute minimum' as the figure for the whole climb; that party reached the Glade Saddle 3 hours after leaving the car, with the wooded ramp and Key Ledge Traverse to the Y Notch just above. SummitPost reports a 13-hour round trip for the whole Main Peak climb. A twelve-hour minimum therefore cannot apply 'before you even reach the Y'.",
+   "sources": [
+    "https://www.cascadeclimber.com/mt__garfield.htm",
+    "https://www.summitpost.org/garfield-mountain/154546"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [],
+     "find": "Beckey's twelve-hour minimum for the South Route approach terrain still applies before you even reach the Y.",
+     "replace": "the shared South Route approach alone takes four to five hours to reach the Y, and a Main Peak round trip on the same terrain is rarely under twelve hours.",
+     "id": "wa_garfield_mountain_leaning_spire_west_route",
+     "fact": "Time required to reach the Y Notch (start of this route's own terrain)"
+    },
+    {
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "find": "the South Route approach terrain alone is a Beckey-stated twelve-hour minimum for the Main Peak, and this route branches off high on it",
+     "replace": "the Main Peak's South Route is a twelve-hour-minimum round trip, and this route branches off high on its approach",
+     "id": "wa_garfield_mountain_leaning_spire_west_route",
+     "fact": "Time required to reach the Y Notch (start of this route's own terrain)"
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "total gain/loss: gain_ft vs itinerary vs approach prose",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2025 report gives road's end 3,480 ft to summit 5,618 ft and 4.8 mi round trip, i.e. 2,138 ft NET, but no cumulative gain; it also describes dropping from the 4,300 ft basin to ~4,000 ft before climbing again. The 2002 report likewise drops ~150 ft toward Grotto Lake and goes 'up and down' along the ridge. So 2,138 is a floor rather than the car-to-car total, and neither source states the total; 3,400 and especially '3,900 ft one-way' are unsupported, but the true figure cannot be set from these sources.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "pro_needs/gear say no rack is used; sling_rack/rope fields describe an actual rack",
+   "verdict": "fixed",
+   "correct_value": "Usually scrambled unroped with no fixed protection, but some parties rope the Class 4 summit moves with a short rope, slings and a couple of cams",
+   "evidence": "The 2002 WTA report calls the finish a Class 4 scramble up a knife-edge ridge and says the party brought a rope, webbing and two cams and used them all. The 2025 report lists only a helmet as essential gear and did the line unroped. Both are true, so pro_needs' blanket 'no rack is used' is the outlier; rope_note and sling_rack describe an optional kit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314",
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "pro_needs",
+     "path": [],
+     "find": "This is an unroped scramble - no fixed protection or rack is used on the standard line.",
+     "replace": "Most parties scramble this unroped and there is no fixed protection, but the Class 4 moves at the summit have been protected with a short rope, a few slings and a couple of small cams.",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "pro_needs/gear say no rack is used; sling_rack/rope fields describe an actual rack"
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "trailhead waypoint coordinates are geometrically impossible for this route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Real: the trailhead pin (47.776833, -121.344633) and its copy in approach_logistics sit ~3.6 mi from the summit, farther than the 2.4 mi one-way route; both trip reports start at the end of the NF-6514-410 spur, and the stored 3,480 ft elevation matches the 2025 report. Pin coordinates are out of scope for this pass, so no patch.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "dist_km holds the round-trip distance, but it renders as the one-way approach",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "dist_km 3.86 (2.4 mi one way)",
+   "evidence": "The 2025 report gives 4.8 mi round trip. The row's own approach ('about 2.4 miles ... one-way'), the summit waypoint distMi 2.4, itinerary miles 4.8 (round trip) and partner_requirements ('~4.8 mile round trip') all agree, and the approach text explicitly calls the stored 7.7 km the round-trip figure. So 7.72 km is the round trip sitting in the one-way column.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 7.72,
+     "value": 3.86,
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "dist_km holds the round-trip distance, but it renders as the one-way approach"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to the 5,618 ft high point, matching the route's 7.7 km round-trip figure)",
+     "replace": "to the 5,618 ft high point)",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "dist_km holds the round-trip distance, but it renders as the one-way approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "recommendedStart says 5:30 AM from the trailhead; the itinerary leaves Seattle at 5:30 and starts hiking at 7:00",
+   "discovered": true,
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "About 7:00 AM from the trailhead (leave Seattle about 5:30 AM)",
+   "evidence": "The row's own schedule leaves Seattle at 5:30 and starts on foot at 7:00, back at 3:30-4:30 PM for a 9-hour day (timing.totalHrs 9). The 2002 report took 9.5 hours round trip, consistent with a ~7 AM start and that return time.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "timing",
+     "path": [
+      "recommendedStart"
+     ],
+     "expect": "5:30 AM from the trailhead",
+     "value": "7:00 AM from the trailhead (leave Seattle about 5:30 AM)",
+     "id": "wa_grotto_mountain_e_route",
+     "fact": "recommendedStart says 5:30 AM from the trailhead; the itinerary leaves Seattle at 5:30 and starts hiking at 7:00"
+    }
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "fact": "Itinerary summits 'via north ridge col' on the 'bouldered east summit', while waypoints/approach reach the main summit via the notch west of the tower",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The 2025 party, finding the east ridge impassable, went from the north ridge at 5,400 ft up the bouldered EAST summit; the 2002 party took a gully to the col between the summit block and an eastern knob, then Class 4 up a knife-edge to the main summit. The itinerary schedule/note ('Summit via north ridge col', 'bouldered east summit') appears to merge the east-summit side trip with the main-summit line, while the waypoints and approach describe a notch west of a tower and a downclimb. Which line the row should present needs a clearer source.",
+   "sources": [
+    "https://onehikeaweek.com/2025/07/19/grotto-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2002110314"
+   ],
+   "patches": []
+  }
+ ]
+}

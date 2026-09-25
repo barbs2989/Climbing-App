@@ -1,0 +1,243 @@
+{
+  "batches": ["b029.json", "b030.json", "b031.json", "b032.json"],
+  "routes_read": 8,
+  "routes": [
+    {
+      "id": "wa_north_gardner_mountain_southwest",
+      "name": "Southwest Slopes / South Ridge",
+      "area": "North Gardner Mountain",
+      "contradictions": [
+        {
+          "fact": "total gain for the full trip",
+          "severity": "medium",
+          "claims": [
+            {"field": "gain_ft", "says": "6013"},
+            {"field": "loss_ft", "says": "7300"},
+            {"field": "approach", "says": "roughly 27 miles round trip with ~7,300 ft of gain for the full trip"},
+            {"field": "pro_tips", "says": "roughly 21-27 miles, 7,000-8,000+ ft of gain"}
+          ],
+          "why": "The route's own approach text and pro_tips both cite ~7,000-8,000+ ft of total gain, which matches the loss_ft value (7300) almost exactly rather than the stated gain_ft (6013), a ~20% discrepancy for a round-trip that should have gain roughly equal to loss.",
+          "internal_resolution": "Approach text and pro_tips (~7,300 ft) agree with loss_ft (7300); gain_ft (6013) is the outlier and looks mislabeled or stale.",
+          "needs_research": false
+        },
+        {
+          "fact": "total round-trip distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "16.6 (km, ≈10.3 mi)"},
+            {"field": "pitch_detail[0].notes", "says": "~10.3 mi one-way on maintained Wolf Creek Trail #527...to Gardner Meadows"},
+            {"field": "approach", "says": "roughly 27 miles round trip with ~7,300 ft of gain for the full trip"},
+            {"field": "pro_tips", "says": "roughly 21-27 miles, 7,000-8,000+ ft of gain"},
+            {"field": "waypoints[1].distMi", "says": "12.03 (one-way, summit, 'from track')"}
+          ],
+          "why": "The header Dist stat (from dist_km) would show ~10.3 miles, but that number matches only the one-way trail distance to Gardner Meadows (not the summit); the route's own prose and the summit waypoint's one-way distance (12.03 mi, ~24 mi round trip) both indicate the true round trip is roughly 21-27 miles — off by more than 2x.",
+          "internal_resolution": "The summit waypoint's one-way distance (12.03 mi) doubled (~24 mi) agrees with the approach/pro_tips prose (21-27 mi); dist_km (10.3 mi) matches only the trail-to-camp segment and is the outlier.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_north_gardner_mountain_nw_couloir",
+      "name": "Northwest Couloir (Cedar Creek approach)",
+      "area": "North Gardner Mountain",
+      "contradictions": []
+    },
+    {
+      "id": "wa_oval_peak_scramble",
+      "name": "Standard Scramble",
+      "area": "Oval Peak",
+      "contradictions": [
+        {
+          "fact": "total round-trip distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "10 (km, ≈6.2 mi)"},
+            {"field": "itinerary.days[0].miles", "says": "9.5"},
+            {"field": "itinerary.days[1].miles", "says": "14.5"},
+            {"field": "itinerary.totalNote", "says": "hike all ~24 miles round trip out on day 2"},
+            {"field": "partner_requirements.fitnessSpec.hiking", "says": "Capable of 20-24+ mile round trip days"}
+          ],
+          "why": "The header Dist stat (from dist_km) would show ~6.2 miles total, nearly 4x shorter than the ~24-mile round trip the route's own itinerary day breakdown, totalNote, and partner requirements all agree on.",
+          "internal_resolution": "Itinerary day miles (9.5+14.5=24), totalNote, and partner_requirements all agree at ~20-24 mi; dist_km is the clear outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "total gain/loss",
+          "severity": "medium",
+          "claims": [
+            {"field": "gain_ft", "says": "4987"},
+            {"field": "loss_ft", "says": "4987"},
+            {"field": "itinerary.days[0].gainFt", "says": "4400"},
+            {"field": "itinerary.days[1].gainFt", "says": "1400"},
+            {"field": "itinerary.days[1].lossFt", "says": "5800"},
+            {"field": "itinerary.totalNote", "says": "~5,800 ft total gain"}
+          ],
+          "why": "The itinerary's own day-by-day gain/loss sums to ~5,800 ft (matching the trailhead-to-summit elevation difference of ~3,000→8,800 ft), an ~16% disagreement with the header gain_ft/loss_ft fields (4987).",
+          "internal_resolution": "Itinerary day sums and totalNote (~5,800 ft), consistent with simple trailhead-to-summit elevation arithmetic, agree with each other; gain_ft/loss_ft (4987) is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "distance to Oval Creek Trail junction",
+          "severity": "low",
+          "claims": [
+            {"field": "approach", "says": "about 1.5 miles up the Eagle Creek valley...to the signed junction with Oval Creek Trail #410A"},
+            {"field": "approach_variants[0].notes", "says": "a mile and a half of valley trail reaches the Oval Creek fork"},
+            {"field": "waypoints[1].distMi", "says": "1.9"},
+            {"field": "itinerary.days[0].note", "says": "about 1.9 miles to the Oval Creek Trail #410A junction"}
+          ],
+          "why": "Two fields (approach prose, approach_variants) put the junction at 1.5 miles from the trailhead while two others (the waypoint and the itinerary day-1 note) put it at 1.9 miles.",
+          "internal_resolution": null,
+          "needs_research": false
+        },
+        {
+          "fact": "distance/gain to Middle Oval Lake",
+          "severity": "high",
+          "claims": [
+            {"field": "approach", "says": "this is about 7.5 miles and ~3,700 ft of gain from the car"},
+            {"field": "waypoints[3].distMi", "says": "9.5 (Middle Oval Lake outflow)"},
+            {"field": "itinerary.days[0].miles", "says": "9.5"},
+            {"field": "itinerary.days[0].gainFt", "says": "4400"}
+          ],
+          "why": "The approach prose understates the distance to camp by ~2 miles (27%) and the gain by ~700 ft (19%) relative to the waypoint and itinerary day-1 figures, which could mislead a party's day-1 time and water planning.",
+          "internal_resolution": "The waypoint distance and itinerary day-1 figures agree (9.5 mi / 4,400 ft); the approach text's '7.5 miles / ~3,700 ft' is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "whether a wilderness permit is required",
+          "severity": "low",
+          "claims": [
+            {"field": "permit", "says": "No wilderness permit is required in the Lake Chelan-Sawtooth Wilderness. Some trailheads require a pass to park."},
+            {"field": "access.permit", "says": "Free, self-issued wilderness permit at the trailhead register; no quota or advance reservation required"}
+          ],
+          "why": "One field tells a climber no permit is needed at all, the other says a free self-issue permit must be filled out at the trailhead register — a climber reading only the first could skip the register.",
+          "internal_resolution": null,
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_pinnacle_mountain_entiat_scramble",
+      "name": "Standard Scramble",
+      "area": "Pinnacle Mountain",
+      "contradictions": [
+        {
+          "fact": "trailhead and pass used by the standard route",
+          "severity": "high",
+          "claims": [
+            {"field": "approach_logistics.trailhead", "says": "Cottonwood Camp Trailhead"},
+            {"field": "approach_logistics.trailheadDirection", "says": "From the Entiat River/Cottonwood Camp Trailhead"},
+            {"field": "itinerary.days[0].schedule[0].detail", "says": "Northwest Forest Pass required; ~38 mi up FS Road 51 from the town of Entiat to reach the TH."},
+            {"field": "timing.sectionBreakdown[0].note", "says": "From the Entiat River Trailhead, follow the Entiat River Trail then climb toward Emerald Park and the Saska/Borealis Ridge area..."},
+            {"field": "pitch_detail[0].notes", "says": "Steep, loose scree ascending/traversing north from the saddle below Borealis Pass toward the base of Pinnacle's summit ridge."},
+            {"field": "rope_note", "says": "Class 2-3 off-trail ridge/talus scramble from Borealis Pass; no rope typically carried."},
+            {"field": "waypoints[0].name", "says": "North Fork Entiat Trailhead (end of FR 5606, elev 3940)"},
+            {"field": "approach_variants[0].name", "says": "North Fork Entiat over Saska Pass and Snow Brushy Creek"},
+            {"field": "waypoints[4].name", "says": "Saska Pass"}
+          ],
+          "why": "A climber following the itinerary/timing/approach_logistics would drive to the Entiat River Trailhead and hike via Emerald Park to 'Borealis Pass', but the route's own GPS waypoints, approach_variants, and bail/descent_text are all written for a different trailhead and pass (North Fork Entiat Trailhead via Saska Pass and the Snow Brushy Creek burn crossing) — a party could drive to the wrong trailhead entirely.",
+          "internal_resolution": "The 6 GPS-located waypoints, approach_variants baseFinding, and bivy notes (reached via 'Fox Camp' off the North Fork Entiat Trail) all consistently describe the North Fork Entiat/Saska Pass line, and its cumulative mileage/gain (13.8 mi, 5,722 ft) match the route's own gain_ft/dist_km; the itinerary/timing/pitch_detail/rope_note language naming the Entiat River Trailhead and 'Borealis Pass' looks like contamination from a neighboring peak (Emerald/Cardinal, which share the same Fox Camp basin per the bivy notes).",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+      "name": "Southeast Ridge (Crater Lake Approach)",
+      "area": "Raven Ridge",
+      "contradictions": [
+        {
+          "fact": "total route distance",
+          "severity": "medium",
+          "claims": [
+            {"field": "dist_km", "says": "6.3 (km, ≈3.9 mi)"},
+            {"field": "approach", "says": "Hike the Crater Creek/Crater Lakes Trail about 3.9 miles one-way...to Crater Lake, then continue off-trail up the southeast ridge to the ~8,000 ft col and on to the summit."},
+            {"field": "itinerary", "says": "A summer visit via the maintained Crater Creek/Crater Lakes Trail (7.8 miles round trip to the lake) could reasonably be done as a single long day or a lighter two-day trip with a camp at the lake."}
+          ],
+          "why": "The header Dist stat (from dist_km) would show only the distance to Crater Lake, not the full route, since the route continues off-trail from the lake up the ridge to the ~8,000 ft col and the summit — a real but unquantified additional distance the same fields describe.",
+          "internal_resolution": "dist_km (3.9 mi one-way) numerically matches the '3.9 miles one-way to Crater Lake' trail-only segment quoted in the approach text and itinerary's 7.8 mi round-trip-to-the-lake figure, confirming it excludes the off-trail summit portion.",
+          "needs_research": false
+        },
+        {
+          "fact": "Corax Peak identity/elevation",
+          "severity": "medium",
+          "claims": [
+            {"field": "waypoints[1].name", "says": "Raven Ridge / Corax Peak summit (elev 8572)"},
+            {"field": "[sibling route wa_raven_ridge_standard_route].beta", "says": "A separate, lower sub-summit called \"Corax\" (~8,380 ft) sits just west of the main summit saddle."}
+          ],
+          "why": "This route's summit waypoint labels the true 8,572 ft summit as 'Corax Peak', but the area's other route describes Corax as a distinct, lower (~8,380 ft) false summit west of the main saddle — a climber could be confused about which point is the true high point.",
+          "internal_resolution": "The Standard Route's beta is explicit and detailed about Corax being a separate lower point (and both routes' own watch_out/pro_tips warn about a lower false summit near the saddle); the SE Ridge route's waypoint name conflating Corax with the true summit appears to be the error.",
+          "needs_research": false
+        }
+      ]
+    },
+    {
+      "id": "wa_raven_ridge_standard_route",
+      "name": "Raven Ridge Standard Route (Libby Lake Gully-Ridge)",
+      "area": "Raven Ridge",
+      "contradictions": [
+        {
+          "fact": "total round-trip distance",
+          "severity": "high",
+          "claims": [
+            {"field": "dist_km", "says": "10.5 (km, ≈6.5 mi)"},
+            {"field": "itinerary", "says": "Most parties climb Raven Ridge as a single long day from the Libby Lake Trailhead (roughly 10-11 miles round trip with about 4,100+ ft of gain)."},
+            {"field": "pitch_detail[0].notes", "says": "~5.1-5.5 mi one-way...to Libby Lake"}
+          ],
+          "why": "dist_km converts to about 6.5 miles, roughly 40-50% short of the route's own stated 10-11 mile round trip; a climber relying on the header Dist stat would badly underestimate the day's length.",
+          "internal_resolution": "The pitch_detail's own one-way trail distance (~5.1-5.5 mi) doubled (~10.2-11 mi) agrees with the itinerary's stated 10-11 mile round trip; dist_km is the outlier.",
+          "needs_research": false
+        },
+        {
+          "fact": "whether a parking pass is required at Libby Lake Trailhead",
+          "severity": "low",
+          "claims": [
+            {"field": "access.fees", "says": "The Forest Service states that no parking fee or pass is required at the Libby Lake Trailhead, though some parties report that a Northwest Forest Pass is expected — confirm current signage locally"},
+            {"field": "access.passRequired", "says": "Conflicting reports — the Forest Service says none is required at Libby Lake Trailhead, but a Northwest Forest Pass is also reported as needed"}
+          ],
+          "why": "The row itself documents an unresolved conflict about whether a pass is required, which could leave a climber unsure whether to buy one before driving out.",
+          "internal_resolution": null,
+          "needs_research": true
+        }
+      ]
+    },
+    {
+      "id": "wa_reynolds_peak_scramble",
+      "name": "Standard Scramble",
+      "area": "Reynolds Peak",
+      "contradictions": []
+    },
+    {
+      "id": "wa_saska_peak_emerald_saska_col",
+      "name": "South Slopes via Emerald-Saska Col",
+      "area": "Saska Peak",
+      "contradictions": [
+        {
+          "fact": "basecamp drainage for the approach",
+          "severity": "high",
+          "claims": [
+            {"field": "partner_requirements.fitnessSpec.hiking", "says": "Strong multi-day hiking fitness - approach is long and remote (typically via high camp in Leroy or Phelps Creek basin), often paired with summiting Emerald Peak the same trip"},
+            {"field": "waypoints[2].name", "says": "Fox Camp (Pyramid Creek Trail junction)"},
+            {"field": "approach", "says": "Standard access is the North Fork Entiat River Trail (#1437)...to the Pyramid Creek/Fern Lake trail junction...most parties camp either at Fox Camp near the junction or push on to a larch-meadow camp directly beneath the Emerald-Saska col"},
+            {"field": "itinerary.days[0].objective", "says": "Reach camp near the Emerald-Saska basin (~6,800-7,200 ft)"}
+          ],
+          "why": "Leroy Basin and Phelps Creek belong to a different drainage system (the Chiwawa-side approach to Mount Fernow, referenced elsewhere in this catalog's Entiat-area data), not this route's North Fork Entiat/Fox Camp approach — a climber reading only this field could plan a trip to the wrong valley entirely.",
+          "internal_resolution": "Every other field on this route (6 GPS waypoints, approach text, all 3 itinerary days, the road/road driveNote, and the bivy list) consistently and specifically describes the North Fork Entiat Trail to Fox Camp/the Emerald-Saska basin; the 'Leroy or Phelps Creek basin' mention is inconsistent with all of them and appears to be contaminated text copied from a different peak's route data.",
+          "needs_research": false
+        },
+        {
+          "fact": "whether the route is ever climbed in avalanche season",
+          "severity": "medium",
+          "claims": [
+            {"field": "seasonal_hazards.avalanche.zone", "says": "N/A - non-glaciated summer scramble route; NWAC does not issue a forecast specific to the Entiat Mountains and this route is not climbed in avalanche season"},
+            {"field": "climate.bySeason.spring", "says": "Essentially a winter snow climb through May in most years, with avalanche and steep-snow hazard on the southwest face; attempted mainly by ski-mountaineers."},
+            {"field": "climate.bySeason.winter", "says": "Full winter mountaineering/ski-mountaineering conditions and serious avalanche terrain; a documented February 2020 ascent via the Grouse Creek/southwest-face line is described as a probable first winter ascent."},
+            {"field": "descent_text", "says": "a documented February 2020 winter-ascent party lost a ski over these cliffs after misjudging the descent line in icy conditions"}
+          ],
+          "why": "The row itself documents a real, named winter ascent with avalanche/steep-snow hazard on the southwest face, directly contradicting the avalanche field's unqualified claim that the route is never climbed in avalanche season; a winter/spring party reading only that field could wrongly conclude there's no avalanche exposure to plan for.",
+          "internal_resolution": "climate.bySeason (spring and winter) and descent_text corroborate each other describing a real, documented winter ascent with avalanche hazard; seasonal_hazards.avalanche.zone's 'not climbed in avalanche season' clause is the outlier, evidently intended to be scoped to the July-September monthBreakdown but stated as an unqualified claim about the whole route.",
+          "needs_research": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+{
+ "file": "r086.json",
+ "results": [
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "CAMPING & BIVY list includes camps for a different peak (Black Peak/Corteo)",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "bivy[0] Wing Lake, bivy[1] Lewis Lake and bivy[2] Rainy Pass trailhead lots serve Black Peak/Corteo from Rainy Pass and do not serve Mesahchie. bivy[3] Easy Pass trailhead, bivy[4] Mesahchie basin, bivy[5] Ragged Ridge crest bivy and bivy[6] Fisher Camp do serve this route. Left for the catalog-wide bivy-zone handling.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "location of the fixed rappel sling",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "An old rap sling and a large cairn sit on the bench at the top of the Class 4 chockstone gully, not at the summit block.",
+   "evidence": "A detailed trip report describes surmounting the Class 4 chockstone at the top of the narrower gully and emerging onto a flat bench with an old rap sling and a large cairn; no source found places an anchor at the summit block. Within the row, pro_tips, the Chockstone notch waypoint, the descent field, the gear list and the approach_variants baseFinding all put the sling at the chockstone; descent_text is the lone outlier. A second trip report and another account of the route mention no summit anchor.",
+   "sources": [
+    "https://www.lemkeclimbs.com/mesahchie-peak.html",
+    "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mesahchie_peak_west_ridge",
+     "fact": "location of the fixed rappel sling",
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "but parties report an existing sling/rap anchor on or near the summit block, and parties uncomfortable with the short exposed class 4 step right off the top sometimes back it off with a single-rope rappel",
+     "replace": "but an old rap sling sits on the bench at the top of the class 4 chockstone gully, and parties uncomfortable downclimbing that chockstone step sometimes back it off with a single-rope rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "glacier/crevasse crossing on this route",
+   "verdict": "fixed",
+   "correct_value": "The West Ridge/Southwest Gully route crosses no glacier; the Mesahchie Glacier is on the peak's north side.",
+   "evidence": "One account of the west-ridge gully route describes only talus and rock scrambling and notes the glaciers are on the north sides of these peaks. A second detailed ascent of the southwest gullies mentions no glacier at all, only snow patches on the crest; a third ascent via the south rib likewise reports no glacier crossing.",
+   "sources": [
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/",
+    "https://www.lemkeclimbs.com/mesahchie-peak.html",
+    "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mesahchie_peak_west_ridge",
+     "fact": "glacier/crevasse crossing on this route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "narrow ridge with significant exposure at summit, crevasses if traversing Mesahchie Glacier.",
+     "replace": "narrow ridge with significant exposure at summit."
+    },
+    {
+     "id": "wa_mesahchie_peak_west_ridge",
+     "fact": "glacier/crevasse crossing on this route",
+     "op": "replace_text",
+     "column": "beta",
+     "path": [],
+     "find": "Rock scrambling Class 3/4, crevasse awareness, exposure comfort.",
+     "replace": "Rock scrambling Class 3/4, exposure comfort."
+    }
+   ]
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "fact": "which approach the trip plan uses, and the one-way distance",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The itinerary (day 1 note and schedule) and timing.sectionBreakdown describe a Ragged Ridge crest traverse from Easy Pass past Kitling Peak and over Cub Peak to a high camp, while the approach, waypoints and approach_variants describe descending into Fisher Creek past Fisher Camp and climbing the south basin. Both approaches are real (one trip report uses the crest over Cub Peak, another the Fisher Creek/south rib line), so the page presents two different approaches as one plan. Separately, dist_km 24.1 (shown as one-way) is the round-trip figure per the approach text itself (~12 km one-way). Not patched: choosing one approach for the itinerary is an editorial decision and the one-way distance of each line was not established from two sources.",
+   "sources": [
+    "https://www.lemkeclimbs.com/mesahchie-peak.html",
+    "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "fact": "commitment grade of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The one route database found lists the East Face as Grade I, easy fifth class, 2 pitches; no source was found giving Grade II. The club route pages checked give a class/technical rating but no commitment grade. With only one source (favouring I, i.e. against the grade column's 'Grade II'), no change was made.",
+   "sources": [
+    "https://www.mountainproject.com/area/110928479/mix-up-peak",
+    "https://mazamas.org/activity/217/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "fact": "typical round-trip time for this route",
+   "verdict": "fixed",
+   "correct_value": "7-9 hours is trailhead-to-summit time, not car-to-car; the full outing is a very long day or two days.",
+   "evidence": "A club route description gives 7-9 hours from trailhead to summit and calls it a very strenuous one-day climb with a car camp; another club lists the trip as car to car in two or more days. The row's own approach_variants already says '7-9 trailhead to summit', and the itinerary gives 10-14 hr car-to-car. The overview's 'half-day, 7-9 hours car-to-car' misstates the trailhead-to-summit figure. (The claim attributed to beta is not in beta; beta is unchanged.)",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/cascade-pass-area-review/mixup-peak-e-face",
+    "https://mazamas.org/activity/217/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mix_up_peak_east_face",
+     "fact": "typical round-trip time for this route",
+     "op": "replace_text",
+     "column": "overview",
+     "path": [],
+     "find": "It's a popular half-day objective (7-9 hours car-to-car from the pass) for parties",
+     "replace": "It's a popular objective (7-9 hours from the trailhead to the summit alone) for parties"
+    },
+    {
+     "id": "wa_mix_up_peak_east_face",
+     "fact": "typical round-trip time for this route",
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "given the 7-9 hour car-to-base/summit estimate",
+     "replace": "given the 7-9 hour trailhead-to-summit estimate"
+    },
+    {
+     "id": "wa_mix_up_peak_east_face",
+     "fact": "typical round-trip time for this route",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "climb as a long (7-9+ hour) car-to-car day,",
+     "replace": "climb as one very long car-to-car day (7-9 hours to the summit alone),"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_buckindy_scramble",
+   "fact": "which trailhead this route starts from",
+   "verdict": "fixed",
+   "correct_value": "Kindy Creek Road (FR-1570) pullout off Cascade River Road; the Green Mountain trailhead (FR 26/FR 2680) is closed to vehicles until January 1, 2028.",
+   "evidence": "The Forest Service closure alert closes Suiattle River Road (FR 26) at milepost 4 and the FR 2680 spur to the Green Mountain Trailhead from April 2, 2026 to January 1, 2028. A June 2026 trip report reached the Buckindy range from the Cascade River side, fording Kindy Creek at the Snowking/Sonny Boy road junction; an older trip report documents the Kindy Creek trail. Green Mountain is the historic southern start (club route page), so the descent keeps it as a named alternative but the card and exit now match the waypoints and itinerary. The approach prose still leads with Green Mountain but flags the closure; its Kindy alternative describes the Kindy Ridge trail rather than the Kindy Creek drainage the waypoints follow, which was not settled here.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/alerts/suiattle-river-road-washout-closure",
+    "https://climberkyle.com/2026/06/19/buckindy-high-route/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2001082511",
+    "https://mazamas.org/activity/248/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_buckindy_scramble",
+     "fact": "which trailhead this route starts from",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Green Mountain Trailhead",
+     "value": "Kindy Creek Road (FR-1570) Pullout"
+    },
+    {
+     "id": "wa_mount_buckindy_scramble",
+     "fact": "which trailhead this route starts from",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From Darrington, drive north on SR 530 roughly 7-8 miles, turning right onto Suiattle River Road (FR 26) just after crossing the Sauk River bridge.",
+     "value": "From Marblemount, drive 14.2 miles up Cascade River Road and turn right onto FR-1570 (Kindy Creek Road) to the small pullout past the Kindy Creek bridge."
+    },
+    {
+     "id": "wa_mount_buckindy_scramble",
+     "fact": "which trailhead this route starts from",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "then drop back into the cirque and retrace the approach over Green Mountain to the Green Mountain trailhead on FR 2680. Note that Buckindy is also approached from the other side, up Kindy Creek from FR-1570 off the Cascade River Road; parties who come in that way exit that way.",
+     "replace": "then drop back into the cirque and retrace the approach down Kindy Creek to the FR-1570 pullout off Cascade River Road. Buckindy is also approached from the south over Green Mountain from FR 2680, but that road is closed to vehicles until 2028; parties who come in that way exit that way."
+    },
+    {
+     "id": "wa_mount_buckindy_scramble",
+     "fact": "which trailhead this route starts from",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "seasonal"
+     ],
+     "expect": "Suiattle River Road (FR 26) and the FR 2680 spur to the Green Mountain Trailhead are the actual access road for this route; check Mt. Baker Ranger District alerts before a trip for the current washout and closure order.",
+     "value": "This route uses Cascade River Road and FR-1570 (Kindy Creek Road). Suiattle River Road (FR 26) and the FR 2680 spur serve only the southern Green Mountain approach, which is closed under the order above; check Mt. Baker Ranger District alerts before a trip."
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "fact": "which trailhead/approach reaches this route",
+   "verdict": "fixed",
+   "correct_value": "Hannegan Pass Trailhead (end of FR 32 off SR 542), via Hannegan Pass, the Chilliwack River, Easy Ridge and the Imperfect Impasse to Perfect Pass, then across the Challenger Glacier.",
+   "evidence": "The first-ascent account says the party hiked to Perfect Pass via Hannegan Pass and Easy Ridge, then traversed around Challenger Arm to the pinnacle; the route database entry starts from the Challenger Glacier (3 miles across it). A second trip report reaches Challenger's west peak via Perfect Pass on the same Hannegan approach. Forest Service/WTA directions: from Glacier 12.5 mi east on SR 542, left on FR 32 for 5 mi to the road-end trailhead, Northwest Forest Pass required. The row's itinerary, approach_variants, waypoints 1-4, descent, turnaround and watch_out already use this line; only waypoint[0] text, approach_logistics, approach and road described Ross Dam. NOTE: waypoint[0] lat/lng and approach_logistics trailheadLat/Lng still sit at Ross Dam and need a pin repair (out of scope here).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://onehikeaweek.com/2020/07/12/mount-challenger-west-peak/",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle",
+    "https://www.fs.usda.gov/r06/mbs/recreation/trails/hannegan-pass-trail-674",
+    "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak"
+   ],
+   "patches": [
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "value": "Hannegan Pass Trailhead"
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "This is the sole approach used for all Northern Pickets objectives near Mount Challenger; route continues via Whatcom Pass",
+     "replace": "From the end of the Hannegan Pass Road the route continues via Hannegan Pass, the Chilliwack valley, Whatcom Pass"
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "expect": "Drive SR-20, the North Cascades Highway, to the Ross Dam Trailhead near milepost 134 and park there. That is the end of the driving: from the car the trail descends roughly 15 to 20 minutes to Ross Lake, and every mile beyond the shore is on foot or on the water. Come prepared for a genuine multi-day trip rather than a long day, since this is one of the most remote and weather-exposed corners of the North Cascades with essentially no bailout options once you are committed.",
+     "value": "Drive the Mount Baker Highway (SR 542) east from Glacier about 12.5 miles, turn left onto the Hannegan Pass Road (FR 32) and follow it about 5 miles to the trailhead at its end, where a Northwest Forest Pass is required to park. That is the end of the driving. Come prepared for a genuine multi-day trip rather than a long day, since this is one of the most remote and weather-exposed corners of the North Cascades with essentially no bailout options once you are committed."
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "value": "Hannegan Pass Trailhead"
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the Ross Dam Trailhead on SR-20 near milepost 134, down to Ross Lake and the water-taxi/trail network",
+     "value": "From the Hannegan Pass Trailhead at the end of the Hannegan Pass Road (FR 32) off SR 542, over Hannegan Pass toward Easy Ridge and Perfect Pass"
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "approach",
+     "path": [],
+     "expect": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead, then descend roughly 15-20 minutes to Ross Lake, where most parties arrange a paid water taxi from Ross Lake Resort (or paddle/walk) to the Big Beaver Trail landing rather than hiking the long lakeshore trail. From Big Beaver Landing it's about 13-14 miles of trail up the Big Beaver valley to Beaver Pass, a full day's hike with a loaded pack. From there, routes diverge onto Wiley Ridge or over Whatcom Pass/Easy Ridge/Perfect Pass to gain the upper basins beneath the Challenger Glacier, with substantial off-trail travel through brush, talus, and heather slopes. The final push crosses the crevassed Challenger Glacier to a short summit rock pitch; this is a genuine multi-day (5+ days) glacier mountaineering expedition into one of the most remote, weather-exposed corners of the North Cascades, with essentially no bailout options once committed.",
+     "value": "Drive the Mount Baker Highway (SR 542) east from Glacier about 12.5 miles and turn left onto the Hannegan Pass Road (FR 32), following it about 5 miles to the trailhead at its end; a Northwest Forest Pass is required to park. Hike the Hannegan Pass Trail about 4 miles to Hannegan Pass, drop into the Chilliwack River valley and cross the river, then climb onto Easy Ridge and follow its long, partly brushy climbers' path east. Cross the Imperfect Impasse, a moat-and-cliff notch that often needs a short low fifth-class downclimb, and climb snowfields to camp at Perfect Pass, roughly 16 miles and a full day from the car. From Perfect Pass, rope up, traverse around the Challenger Arm and cross about three miles of the crevassed Challenger Glacier to the base of the pinnacle. This is a genuine multi-day glacier expedition into one of the most remote, weather-exposed corners of the North Cascades, with essentially no bailout options once committed."
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Ross Lake water taxi (from Ross Dam TH off SR-20) to Little Beaver, Northern Pickets",
+     "value": "Mount Baker Highway (SR 542) to the Hannegan Pass Road (FR 32)"
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "SR-20 to Ross Dam Trailhead is paved; most parties use the Ross Lake Resort water taxi across the reservoir, then a long multi-day approach up the Big Beaver/Little Beaver trail system into the Northern Pickets.",
+     "value": "SR 542 is paved to the turnoff 12.5 miles east of Glacier; the Hannegan Pass Road is about 5 miles of potholed gravel to the trailhead at its end, and low-clearance cars are not recommended."
+    },
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "which trailhead/approach reaches this route",
+     "op": "set",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "expect": "Roughly 3 hours from Seattle via SR-20 to Ross Dam, plus the water taxi crossing and a multi-day wilderness approach.",
+     "value": "From Glacier, 12.5 miles east on SR 542, then left onto FR 32 for about 5 miles to the road-end trailhead; Northwest Forest Pass required to park. The climb itself is a multi-day wilderness approach beyond the car."
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "fact": "pitch count",
+   "verdict": "fixed",
+   "correct_value": "Three roped pitches (5.9+ R, 5.8, 5.8) plus roughly 800 ft of simul-climbed ridge, counted as 6 pitches (P4-6 on the ridge).",
+   "evidence": "The first-ascent account gives three pitches (55 m 5.9+ R, 60 m 5.8, 60 m 5.8) then about 270 m of simul-climbing to the ridge crest; the route database lists the route as 6 pitches with P1-P3 and 'P4+' as 800 ft of 5.7 ridge. No source gives 4 pitches. pitches=6 and pitch_detail's 'P4-6' agree with the 6-pitch count; rope_note's '4 pitches' was the outlier.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200514900/North-America-United-States-Washington-Mt-Challenger-Cascade-Range-Poltergeist-Pinnacle-East-Face",
+    "https://www.mountainproject.com/route/120232096/poltergeist-pinnacle"
+   ],
+   "patches": [
+    {
+     "id": "wa_poltergeist_pinnacle",
+     "fact": "pitch count",
+     "op": "replace_text",
+     "column": "rope_note",
+     "path": [],
+     "find": "Grade IV 5.9, 4 pitches (",
+     "replace": "Grade IV 5.9, 3 roped pitches plus a simul-climbed ridge ("
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "fact": "crux rock grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Sources genuinely disagree on the summit pitch: the route database gives one pitch of 5.5 with fixed protection; other trip reports call it a single 5.6 pitch, and at least one describes a 15-foot dihedral with a 5.7 crux move. No two sources agree on one number. If the owner accepts a range, rock_grade '5.5-5.7', grade 'Class 3-4, Glacier, 5.5-5.7' and pitch_detail[0].grade '5.5-5.7' would match climbing_route and approach, which already say 5.5-5.7.",
+   "sources": [
+    "https://www.mountainproject.com/route/112031867/challenger-glacier",
+    "https://trailcatjim.com/mount-challenger-via-challenger-glacier-northeast-face-northern-pickets/",
+    "https://www.summitpost.org/easy-ridge-challenger-glacier/157040"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_chaval_north_ridge",
+   "fact": "number of pitches vs. ROUTE BREAKDOWN rows",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "The single ROUTE BREAKDOWN row is labelled 'Full route', its grade reads '5.6-5.7 (2 pitches)' and its notes say two roped pitches occur near the top; it states the same 2 pitches as the header, just in one combined row.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "fact": "which trailhead/drainage the route breakdown uses",
+   "verdict": "fixed",
+   "correct_value": "The ROUTE BREAKDOWN should describe the Illabot Creek Road / Arrow Creek switchback approach and the west-face diagonal ramp used by every other field.",
+   "evidence": "One route page and a 2018 trip report titled for the standard western ramp both start at the Arrow Creek switchback (2,220 ft) on Illabot Creek Road, with a faint fisherman's path 20 yards west of the creek, then contour to the short west face. The Jug Creek/Bluff Lake/Cliff Lake approach is a real but different line (other trip reports) that no other field on this row describes. pitch_detail[0] and [1] are rewritten to the Illabot line; comms also named the Jug Creek/Bluff Lake basin and is aligned.",
+   "sources": [
+    "https://www.summitpost.org/mount-chaval/152047",
+    "https://cascadeclimbers.com/forum/topic/102164-tr-mount-chaval-standard-western-ramp-09282018/",
+    "https://trailcatjim.com/mt-chaval-via-west-ridge-northwest-face/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "which trailhead/drainage the route breakdown uses",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      0,
+      "notes"
+     ],
+     "expect": "Trailhead/spur road to Bluff Lake and Cliff Lake via brushy Jug (Found) Creek basin path",
+     "value": "Arrow Creek switchback on Illabot Creek Road, fisherman's path up Illabot Creek, a creek crossing, slide alder, and the cliff-and-gully band at 4,000-4,300 ft to the open west slopes"
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "which trailhead/drainage the route breakdown uses",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "pitch"
+     ],
+     "expect": "West Ridge",
+     "value": "West slopes to the ramp"
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "which trailhead/drainage the route breakdown uses",
+     "op": "set",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "expect": "Ridge crest/heather-slope traverse from the Cliff Lake saddle to the base of the summit pyramid",
+     "value": "Traverse and climb east across the open west-facing slopes, over the ridge pass near 5,920 ft to its north side, to the base of the west face and its diagonal ramp"
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "which trailhead/drainage the route breakdown uses",
+     "op": "replace_text",
+     "column": "comms",
+     "path": [],
+     "find": "through the Jug Creek/Bluff Lake approach basin",
+     "replace": "through the Illabot Creek approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "fact": "permit/fee system for this route",
+   "verdict": "fixed",
+   "correct_value": "Glacier Peak Wilderness (Mt. Baker-Snoqualmie NF): free self-issued wilderness permit, no reservation; group limit 12 people and stock combined. The NPS North Cascades permit system does not apply.",
+   "evidence": "Mount Chaval sits in the Glacier Peak Wilderness, not North Cascades National Park. National-forest wilderness areas in Washington use a free self-registered permit at the trailhead kiosk, while the paid, reserved NPS permit applies only inside the national park. The Forest Service Glacier Peak Wilderness page sets a group limit of 12 in any combination of people and stock.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Chaval",
+    "https://www.wta.org/go-outside/passes/backcountry-wilderness-permit-info",
+    "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "permit/fee system for this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+     "value": "No permit fee: the Glacier Peak Wilderness permit is free and self-issued."
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "permit/fee system for this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "notes"
+     ],
+     "expect": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+     "value": "No reservation, quota or lottery applies; fill out the free wilderness permit yourself and carry it."
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "permit/fee system for this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "rules"
+     ],
+     "expect": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+     "value": "Group size is limited to 12 in any combination of people and pack or saddle animals under Glacier Peak Wilderness rules."
+    },
+    {
+     "id": "wa_mount_chaval_scramble",
+     "fact": "permit/fee system for this route",
+     "op": "set",
+     "column": "access",
+     "path": [
+      "group_limit"
+     ],
+     "expect": 6,
+     "value": 12
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_chaval_scramble",
+   "fact": "total round-trip distance (dist_km vs. beta/itinerary mileage)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach; 8 km is about 5 mi one-way, which matches the ~10 mi round trip in beta and itinerary.totalNote.",
+   "sources": [],
+   "patches": []
+  }
+ ]
+}

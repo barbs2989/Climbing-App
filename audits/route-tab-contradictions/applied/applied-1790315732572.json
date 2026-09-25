@@ -1,0 +1,73 @@
+{
+ "applied": [
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether a self-issue wilderness permit is required at this trailhead"
+  },
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "column": "access",
+   "path": [
+    "permit"
+   ],
+   "fact": "Whether a self-issue wilderness permit is required at this trailhead"
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "total gain: 4,000 ft (column) vs 6,700 ft (itinerary sum) / ~6,500 ft (totalNote)"
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "column": "dist_km",
+   "path": [],
+   "fact": "total distance: dist_km ≈8.5 mi vs itinerary sum 34.2 mi"
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "access.parking_pass names an unrelated trailhead system (Mountain Loop Highway)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_abernathy_peak_north_ridge",
+   "before": {
+    "permit": "Free self-issue Lake Chelan-Sawtooth Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass at developed trailheads.",
+    "access": {
+     "fees": "Northwest Forest Pass ($5/day or $30/annual) or an America the Beautiful/Interagency Pass at the trailhead",
+     "rules": "Wilderness regulations; pack out all waste.",
+     "permit": "No self-issue wilderness permit is required for Lake Chelan-Sawtooth Wilderness via this Forest Service trailhead (self-issue permits are only required when entering the wilderness via the North Cascades National Park Complex, which does not apply to this Twisp River Road approach)",
+     "closures": null,
+     "landManager": "Okanogan-Wenatchee National Forest / Lake Chelan-Sawtooth Wilderness",
+     "passRequired": "Northwest Forest Pass for trailhead parking"
+    }
+   }
+  },
+  {
+   "id": "wa_agnes_mountain_west_route",
+   "before": {
+    "gain_ft": 4000,
+    "dist_km": 13.7,
+    "access": {
+     "fees": "No NPS entrance fee; a free wilderness permit is required for overnight camping. The first ~2 miles from High Bridge (inside North Cascades NP) fall under the NPS backcountry-permit process; beyond that, in the Glacier Peak Wilderness (Okanogan-Wenatchee NF), a free self-issue trailhead permit applies.",
+     "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+     "permit": "Free NPS backcountry permit (Wilderness Information Center/Golden West Visitor Center) only applies if camping within the first ~2 mi from High Bridge, inside North Cascades NP. For camps beyond that boundary — including the standard high camps used for this climb (Icy-Spruce Creek Pass, Upper Blue Basin, etc.) — a free, self-issue USFS wilderness permit obtained at the trailhead covers the Glacier Peak Wilderness portion; no NPS office visit is required for those.",
+     "closures": "Stehekin-area roads/trails have been affected by Dec 2025 flood damage; North Cascades Lodge at Stehekin is not operating public services in 2026 — check the NPS Stehekin Flood Response Update page for current Agnes Creek Trail/High Bridge shuttle status before planning",
+     "group_limit": 12,
+     "landManager": "Most of the route (beyond the first ~2 miles from High Bridge) and the summit itself lie within the Okanogan-Wenatchee National Forest's Glacier Peak Wilderness (USFS) — only the initial ~2 miles of the Agnes Creek Trail from High Bridge are within North Cascades National Park Service Complex (Stephen Mather Wilderness) / Lake Chelan National Recreation Area.",
+     "land_manager": null,
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+     "passRequired": "None — no day-use pass on either the NPS or USFS wilderness portions; only a free wilderness permit is needed."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,313 @@
+{"batches": ["batches/b189.json", "batches/b190.json", "batches/b191.json", "batches/b192.json"], "routes_read": 10, "routes": [
+  {"id": "wa_mesahchie_peak_west_ridge", "name": "West Ridge / Southwest Gully", "area": "Mesahchie Peak",
+   "contradictions": [
+    {"fact": "CAMPING & BIVY list includes camps for a different peak (Black Peak/Corteo)",
+     "severity": "high",
+     "claims": [
+      {"field": "bivy[0] (name: Wing Lake)", "says": "This is the working climbers' camp for Black Peak and the natural first night for Corteo as well... reaches Wing Lake in the cirque under Black Peak."},
+      {"field": "bivy[1] (name: Lewis Lake)", "says": "it is also where the Corteo approach commits: from here the line follows the top of the moraine onto the Lewis Glacier and climbs southeast..."},
+      {"field": "bivy[2] (name: Rainy Pass trailhead lots...)", "says": "This is the door to Black Peak and Corteo and the reason both are approachable in a weekend."}
+     ],
+     "why": "The first three CAMPING & BIVY entries on Mesahchie's own route describe the Rainy Pass trailhead and camps for Black Peak/Corteo, an unrelated peak/trailhead never mentioned anywhere else on this route (whose own trailhead is Easy Pass, ~5+ miles away on SR-20); only entries 4-7 (Easy Pass trailhead, Mesahchie basin, Ragged Ridge crest bivy, Fisher Camp) actually serve Mesahchie.",
+     "internal_resolution": "The route's own waypoints/approach/access/permit fields, and bivy entries 4-7, consistently use Easy Pass and North Cascades NP; entries 1-3 appear to be copied/shared content from a different peak's camp list.",
+     "needs_research": false
+    },
+    {"fact": "whether this route involves any rappelling",
+     "severity": "medium",
+     "claims": [
+      {"field": "rappels", "says": "0"},
+      {"field": "descent", "says": "a fixed rappel sling has been reported at this spot for parties who prefer to rappel it"},
+      {"field": "descent_text", "says": "parties uncomfortable with the short exposed class 4 step right off the top sometimes back it off with a single-rope rappel (one rope length, roughly 30-50 ft, off the existing tat/natural block anchor...)"}
+     ],
+     "why": "rappels states the route has zero rappels, but both descent fields describe an existing rap sling/anchor that some parties actually use to descend the crux step.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {"fact": "location of the fixed rappel sling",
+     "severity": "medium",
+     "claims": [
+      {"field": "pro_tips[0]", "says": "A fixed rappel sling and a large cairn mark the top of the crux chockstone gully"},
+      {"field": "waypoints (Chockstone notch (crux gully), 8,300 ft)", "says": "Rap-sling and cairn-marked gully narrows here"},
+      {"field": "descent_text", "says": "parties report an existing sling/rap anchor on or near the summit block... for the short exposed class 4 step right off the top"}
+     ],
+     "why": "pro_tips and the waypoint list place the fixed rap sling at the chockstone notch (8,300 ft, well below the 8,795 ft summit), while descent_text places it at/near the summit block for the class 4 step right off the top — a different location on the route.",
+     "internal_resolution": "Two independent fields (pro_tips, waypoint) agree the sling is at the chockstone notch; descent_text's 'near the summit block' framing looks like the outlier.",
+     "needs_research": false
+    },
+    {"fact": "glacier/crevasse crossing on this route",
+     "severity": "low",
+     "claims": [
+      {"field": "beta", "says": "Hazards: ...crevasses if traversing Mesahchie Glacier. Required skills: ...crevasse awareness..."},
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - this route (West Ridge/Southwest Gully) stays on rock/gully terrain and does not cross glaciers; note the peak does have a small glacier/icefall on its north side (used by the separate Mesahchie Icefall Couloir route), which is not part of this route."}
+     ],
+     "why": "beta's hazards/required-skills lists mention crevasse hazard and crevasse awareness for this route, while seasonal_hazards explicitly says this route does not cross any glacier.",
+     "internal_resolution": "seasonal_hazards gives a specific, reasoned explanation (glacier is on the north side, used by a different route); beta's crevasse mentions look like leftover generic text.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mix_up_peak_east_face", "name": "East Face / East Buttress", "area": "Mix-up Peak",
+   "contradictions": [
+    {"fact": "commitment grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "Grade II, Class 4 / low 5th"},
+      {"field": "commitment", "says": "I"}
+     ],
+     "why": "grade states this is a Grade II route while the separate commitment field says Grade I — a direct roman-numeral disagreement about the same commitment scale.",
+     "internal_resolution": "The route's own 7-9+ hour length, moat crossing, roped 5th-class pitches, and ~5-rappel descent read as more consistent with Grade II than Grade I, suggesting commitment=\"I\" is the outlier.",
+     "needs_research": false
+    },
+    {"fact": "typical round-trip time for this route",
+     "severity": "medium",
+     "claims": [
+      {"field": "overview", "says": "It's a popular half-day objective (7-9 hours car-to-car) for parties already in the Cascade Pass basin"},
+      {"field": "beta", "says": "It's a popular half-day objective (7-9 hours car-to-car) for parties already in the Cascade Pass basin"},
+      {"field": "turnaround", "says": "given the 7-9 hour car-to-base/summit estimate"},
+      {"field": "timing.totalHrs", "says": "15"},
+      {"field": "itinerary.totalNote", "says": "A 2-day trip is the more relaxed standard approach... strong parties also do the whole thing car-to-car in one very long (roughly 10-14 hr) day."}
+     ],
+     "why": "Overview, beta, and turnaround all repeat that this is a 7-9 hour car-to-car half-day trip, but the route's own timing (totalHrs=15) and itinerary.totalNote (standard is a 2-day trip; even strong parties take 10-14 hours car-to-car, not 7-9) both describe a materially longer outing.",
+     "internal_resolution": "itinerary.totalNote and timing.totalHrs are internally consistent with each other and give a specific hour-by-hour breakdown; the repeated \"7-9 hours car-to-car\" line looks like an error understating the trip.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mount_buckindy_scramble", "name": "Buckindy Glacier/Scramble Route", "area": "Mount Buckindy",
+   "contradictions": [
+    {"fact": "which trailhead this route starts from",
+     "severity": "high",
+     "claims": [
+      {"field": "approach_logistics.trailhead", "says": "Green Mountain Trailhead"},
+      {"field": "approach_logistics.trailheadDirection", "says": "From Darrington, drive north on SR 530 roughly 7-8 miles, turning right onto Suiattle River Road (FR 26) just after crossing the Sauk River bridge."},
+      {"field": "waypoints[0] (type Trailhead)", "says": "Kindy Creek Road (FR-1570) Pullout... Do not plan on the Green Mountain Trailhead approach instead: FR 26, the Suiattle River Road, is closed to all motor vehicles at milepost 4 by a roughly 75-ft-deep washout, under a Forest Service closure order in effect until January 1, 2028."},
+      {"field": "descent", "says": "retrace the approach over Green Mountain to the Green Mountain trailhead on FR 2680."}
+     ],
+     "why": "The TRAILHEAD card (approach_logistics) names Green Mountain Trailhead via Suiattle River Road, but the actual Trailhead waypoint, the full approach prose, and the itinerary all build the trip around the Kindy Creek Road (FR-1570) trailhead off Cascade River Road — a different drainage roughly 70 road miles away — and explicitly warn that the Green Mountain approach is currently closed until 2028.",
+     "internal_resolution": "waypoints, itinerary (all 3 days), and the explicit 2026 road-closure note agree the real approach used here is Kindy Creek Road; approach_logistics.trailhead/trailheadDirection and the descent field's \"Green Mountain trailhead\" close-out are stale/wrong.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mount_chaval_north_ridge", "name": "North Ridge", "area": "Mount Chaval",
+   "contradictions": [
+    {"fact": "number of pitches vs. ROUTE BREAKDOWN rows",
+     "severity": "low",
+     "claims": [
+      {"field": "pitches", "says": "2"},
+      {"field": "pitch_detail", "says": "single row, pitch: \"Full route\", notes: \"...two roped pitches of harder climbing occur on the steepest part of the ridge near the top, with the remainder being alpine scrambling.\""}
+     ],
+     "why": "The header states 2 pitches, but the ROUTE BREAKDOWN table has only one combined row (which does mention two pitches in its own text) rather than two numbered rows.",
+     "internal_resolution": "The single row's own text explains both pitches are folded into it, so this is a structural/display mismatch more than a factual dispute.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mount_chaval_scramble", "name": "West Route", "area": "Mount Chaval",
+   "contradictions": [
+    {"fact": "which trailhead/drainage the route breakdown uses",
+     "severity": "high",
+     "claims": [
+      {"field": "pitch_detail[0] (pitch: Approach)", "says": "Trailhead/spur road to Bluff Lake and Cliff Lake via brushy Jug (Found) Creek basin path"},
+      {"field": "pitch_detail[1] (pitch: West Ridge)", "says": "Ridge crest/heather-slope traverse from the Cliff Lake saddle to the base of the summit pyramid"},
+      {"field": "waypoints[0] (type Trailhead)", "says": "Arrow Creek switchback (Illabot Creek Road / FR-16)... Boot/fisherman's path leaves the road ~20 yards west of the Arrow Creek crossing"},
+      {"field": "approach", "says": "The hike-in starts where FR-16 (Illabot Creek Road) reaches the Arrow Creek switchback (~2,220 ft)... follow it about a mile, then look for a crossing... angle east and uphill... to reach the base of Chaval's broad west face"},
+      {"field": "descent_text", "says": "downclimb the same diagonal west-face ramp back down to roughly 4,000-4,300 ft, re-enter the gully/cliff-band system... to regain Illabot Creek"}
+     ],
+     "why": "The ROUTE BREAKDOWN (pitch_detail) describes an entirely different trailhead and drainage (Jug/Found Creek to Bluff Lake and Cliff Lake, with a \"Cliff Lake saddle\" and \"West Ridge\") than every other field on the route (waypoints, approach, descent_text, road, itinerary), which all use the Arrow Creek switchback trailhead on Illabot Creek Road and a west-face diagonal ramp — with no Bluff Lake, Cliff Lake, or Cliff Lake saddle mentioned anywhere else.",
+     "internal_resolution": "The overview names both as separate options (\"the shorter Illabot Creek Road/west-ramp line, or the longer historical Jug Creek/Bluff Lake/Jug Lake route from the Suiattle side\"); every detailed, GPS-bearing field (waypoints/approach/road/itinerary/descent_text) documents the Illabot Creek/west-ramp line, so pitch_detail appears to describe the alternate historical line without labeling it as such, which would mislead a climber reading only the ROUTE BREAKDOWN.",
+     "needs_research": false
+    },
+    {"fact": "permit/fee system for this route",
+     "severity": "high",
+     "claims": [
+      {"field": "permit", "says": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota or reservation. This peak is on Mt. Baker-Snoqualmie National Forest land, not in the North Cascades National Park complex."},
+      {"field": "access.fees", "says": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free."},
+      {"field": "access.notes", "says": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount."},
+      {"field": "access.rules", "says": "Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft)."}
+     ],
+     "why": "permit and land_manager correctly identify this as a free, self-issue Forest Service Glacier Peak Wilderness route explicitly NOT in North Cascades National Park, but access.fees/notes/rules describe the paid NPS North Cascades backcountry permit system (Boston Basin/Eldorado/Sulphide Glacier, Marblemount Wilderness Information Center, $10+$6 fee) that belongs to a different park/route entirely.",
+     "internal_resolution": "permit and land_manager (\"Mt. Baker-Snoqualmie National Forest, Darrington Ranger District (Glacier Peak Wilderness)\") agree with each other and are correct for this peak; access.fees/notes/rules look copied from an NPS Cascade River Road route (the sibling North Ridge route on the same peak has a clean, correctly-scoped access block with no such contamination).",
+     "needs_research": false
+    },
+    {"fact": "total round-trip distance (dist_km vs. beta/itinerary mileage)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "8"},
+      {"field": "beta", "says": "roughly 10 miles round trip with about 4,600 ft of elevation gain from the historic Grade Creek Road trailhead"},
+      {"field": "itinerary.totalNote", "says": "A standard 2-day trip: ~10 miles and 4,600 ft round trip"}
+     ],
+     "why": "dist_km (8 km ≈ 5 mi) is roughly half the ~10 mi round trip stated by beta and itinerary.totalNote, both of which agree with each other and with gain_ft (4,600 ft).",
+     "internal_resolution": "8 km one-way ≈ 16 km round trip ≈ 9.9 mi, which matches beta/itinerary almost exactly — dist_km is very likely recorded as one-way while gain_ft/itinerary are round-trip, a known convention mismatch rather than a factual error.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mount_formidable_south_face", "name": "South Face / Southeast Ledges", "area": "Mount Formidable", "contradictions": []},
+  {"id": "wa_northeast_face_direct", "name": "Northeast Face Direct", "area": "Mount Formidable",
+   "contradictions": [
+    {"fact": "number of pitches",
+     "severity": "medium",
+     "claims": [
+      {"field": "pitches", "says": "11"},
+      {"field": "pitch_detail", "says": "6 rows labeled P1, P2, P3-P4, P5, P6-P7, P8-P9 (spanning only pitches 1 through 9)"}
+     ],
+     "why": "pitches states 11 total pitches, but the ROUTE BREAKDOWN's numbered pitch labels only go up to P9 across its 6 grouped rows — 2 pitches short of the stated count, with no P10/P11 anywhere.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {"fact": "rope length required",
+     "severity": "low",
+     "claims": [
+      {"field": "rope_length_m", "says": "60"},
+      {"field": "gear", "says": "60-70m rope"},
+      {"field": "detailed_rack", "says": "a 60m or 70m rope"},
+      {"field": "rope_note", "says": "Published rack from a documented second ascent trip report: crampons, 60 or 70m rope..."}
+     ],
+     "why": "rope_length_m gives a single fixed value of 60m, while three other fields consistently describe a 60-70m range/choice, implying a 70m rope may be needed that the single number doesn't convey.",
+     "internal_resolution": "60m is the low end of the range every other field agrees on, so it's a valid but incomplete answer rather than a hard contradiction.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_goode_mountain_northeast_face", "name": "Northeast Face", "area": "Mount Goode",
+   "contradictions": [
+    {"fact": "commitment grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "IV"},
+      {"field": "beta", "says": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing."},
+      {"field": "commitment", "says": "III"},
+      {"field": "alpine_grade", "says": "Grade III (historic, snow/ice + rock)"}
+     ],
+     "why": "grade and beta both state Grade IV, while commitment and alpine_grade both state Grade III for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {"fact": "hardest rock grade on the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "rock_grade", "says": "5.8"},
+      {"field": "beta", "says": "Grade IV 5.5 alpine rock with 6-8 pitches of low 5th class climbing."}
+     ],
+     "why": "rock_grade states 5.8 as the hardest rock grade, but beta's own headline calls the route \"5.5 alpine rock.\"",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {"fact": "total elevation gain",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "4799"},
+      {"field": "itinerary.days[0].gainFt + itinerary.days[1].gainFt + itinerary.days[2].gainFt", "says": "4600 + 2600 + 0 = 7200"}
+     ],
+     "why": "gain_ft (4,799 ft) is 50% lower than the itinerary's own day-by-day gain figures, which sum to 7,200 ft, for the same round-trip climb.",
+     "internal_resolution": "itinerary days are internally additive and match the route's overall multi-day structure; gain_ft looks like the outlier.",
+     "needs_research": false
+    },
+    {"fact": "total round-trip distance (dist_km vs. itinerary mileage)",
+     "severity": "low",
+     "claims": [
+      {"field": "dist_km", "says": "25.7"},
+      {"field": "itinerary.totalNote", "says": "roughly 33 mi and 6,500-7,000 ft of gain round trip"}
+     ],
+     "why": "dist_km (25.7 km ≈ 16 mi) is about half the ~33 mi itinerary.totalNote and the itinerary day-mile sum (14+5+14=33 mi) both state.",
+     "internal_resolution": "25.7 km one-way ≈ 51.4 km ≈ 32 mi round trip, closely matching the itinerary — likely a one-way vs round-trip convention mismatch rather than a factual error.",
+     "needs_research": false
+    },
+    {"fact": "correct climbing season",
+     "severity": "high",
+     "claims": [
+      {"field": "season", "says": "Apr-May (spring snow/ice conditions)"},
+      {"field": "best_season", "says": "Late spring to early summer (roughly May–June) while the face still holds consolidated snow and ice; by mid-to-late summer most of the ice has melted out, leaving loose rock and rubble rather than the mixed climbing this route is rated for."},
+      {"field": "beta", "says": "Best climbing season: mid-July for snowmelt conditions."},
+      {"field": "seasonal_guidance.optimalWindow", "says": "Mid to late summer"},
+      {"field": "seasonal_guidance.monthBreakdown.August", "says": "Best mix of firm ice and dry rock on the face per the best-season (status: optimal)"},
+      {"field": "climate.bySeason.summer", "says": "Primary season; firm ice, dry rock."},
+      {"field": "crowds.peakTraffic", "says": "sporadic attempts only during prime mid-to-late-summer weather windows"}
+     ],
+     "why": "season and best_season both place the climbable window in spring/early summer (April-June) and best_season explicitly warns the route degrades to \"loose rock and rubble\" by summer, but seasonal_guidance, climate, crowds, and even beta's own aside all instead describe mid-to-late summer (especially August/mid-July) as the season/optimal window — the opposite conclusion for the same route.",
+     "internal_resolution": null,
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_mount_goode_northeast_buttress", "name": "Northeast Buttress", "area": "Mount Goode",
+   "contradictions": [
+    {"fact": "hardest pitch grade vs. headline route grade",
+     "severity": "low",
+     "claims": [
+      {"field": "grade", "says": "Grade IV, 5.5"},
+      {"field": "rock_grade", "says": "5.5"},
+      {"field": "pitch_detail (pitch: Mid buttress (~8,000 ft))", "says": "5.7 (unprotectable, usually bypassed)"}
+     ],
+     "why": "The route's headline/crux grade is 5.5, but its own ROUTE BREAKDOWN lists an unprotectable 5.7 slab most parties bypass — a harder grade than the route's stated rating appears anywhere on the same page.",
+     "internal_resolution": "pitch_detail's own note explains the 5.7 is normally avoided in favor of the 5.5-and-under bypass, so the headline grade reflects the practical line most parties climb rather than a true error.",
+     "needs_research": false
+    },
+    {"fact": "total elevation gain/loss",
+     "severity": "high",
+     "claims": [
+      {"field": "gain_ft", "says": "10700"},
+      {"field": "loss_ft", "says": "10700"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4700 + 2800 + 0 + 0 = 7500"},
+      {"field": "itinerary.days[*].lossFt sum", "says": "0 + 0 + 7500 + 1400 = 8900"},
+      {"field": "itinerary.totalNote", "says": "~7,500 ft of climbing gain"}
+     ],
+     "why": "gain_ft/loss_ft (10,700 ft each) are 43% and 20% higher, respectively, than the itinerary's own day-by-day sums (7,500 ft gain / 8,900 ft loss); itinerary.totalNote independently confirms the ~7,500 ft gain figure.",
+     "internal_resolution": "itinerary days and itinerary.totalNote agree with each other; gain_ft/loss_ft are the outliers.",
+     "needs_research": false
+    },
+    {"fact": "total descent distance/time from summit to trailhead",
+     "severity": "high",
+     "claims": [
+      {"field": "descent", "says": "Total descent approximately 9.7 miles, 10 hours."},
+      {"field": "timing.descentTimeHrs", "says": "15"},
+      {"field": "itinerary.days[2] (Descend toward Bridge Creek)", "says": "hours: 10, miles: 10"},
+      {"field": "itinerary.days[3] (Hike out)", "says": "hours: 5, miles: 10"}
+     ],
+     "why": "The descent field's own summary claims a total descent of 9.7 miles in 10 hours, but timing.descentTimeHrs (15) and the itinerary's two descent-labeled days (summing to 15 hours and 20 miles) describe a materially longer descent for the same summit-to-trailhead leg.",
+     "internal_resolution": "timing.descentTimeHrs and the itinerary's two descent days agree with each other (15 hr); the descent field's inline \"9.7 miles, 10 hours\" looks like the outlier.",
+     "needs_research": false
+    }
+   ]
+  },
+  {"id": "wa_goode_mountain_southwest_couloir", "name": "Southwest Couloir", "area": "Mount Goode",
+   "contradictions": [
+    {"fact": "commitment grade of the route",
+     "severity": "medium",
+     "claims": [
+      {"field": "grade", "says": "III"},
+      {"field": "commitment", "says": "II"}
+     ],
+     "why": "grade states Grade III while commitment states Grade II for the same route (alpine_grade's \"Grade II-III\" spans both and doesn't resolve which is right).",
+     "internal_resolution": null,
+     "needs_research": false
+    },
+    {"fact": "total elevation gain/loss",
+     "severity": "medium",
+     "claims": [
+      {"field": "gain_ft", "says": "8400"},
+      {"field": "loss_ft", "says": "8400"},
+      {"field": "itinerary.days[*].gainFt sum", "says": "4600 + 2400 + 0 = 7000"},
+      {"field": "itinerary.days[*].lossFt sum", "says": "0 + 2400 + 4600 = 7000"},
+      {"field": "itinerary.totalNote", "says": "~6,500 ft of gain round trip"}
+     ],
+     "why": "gain_ft/loss_ft (8,400 ft) run 20-29% higher than both the itinerary day-sum (7,000 ft) and itinerary.totalNote (~6,500 ft), which are reasonably close to each other.",
+     "internal_resolution": "itinerary days and totalNote roughly agree with each other; gain_ft/loss_ft look like the outlier.",
+     "needs_research": false
+    },
+    {"fact": "whether the route crosses the Goode Glacier / has crevasse hazard",
+     "severity": "high",
+     "claims": [
+      {"field": "seasonal_hazards.crevasses", "says": "N/A - route is snow/scree/rock with no documented glacier crossing."},
+      {"field": "waypoints (Goode Glacier crossing, 7,400 ft, type Junction)", "says": "Cross the glacier from the moraine camp to reach the couloir base; route-finding is tricky and late-season snow bridges can be deteriorated."},
+      {"field": "approach", "says": "off-trail travel over moraine and glacier remnants (light crampons/axe useful if there's residual snow or open crevasses)"},
+      {"field": "obj_haz", "says": "crevasses/moat on the Goode Glacier portion of the approach"}
+     ],
+     "why": "seasonal_hazards.crevasses flatly denies any glacier crossing on this route, but a named waypoint (\"Goode Glacier crossing\"), the approach prose, and obj_haz all independently describe crossing the Goode Glacier with crevasse/snow-bridge hazard.",
+     "internal_resolution": "waypoints, approach, and obj_haz all agree there is a glacier crossing with crevasse hazard; seasonal_hazards.crevasses is the outlier and appears wrong.",
+     "needs_research": false
+    }
+   ]
+  }
+]}

@@ -1,0 +1,564 @@
+{
+ "applied": [
+  {
+   "id": "wa_west_face_2",
+   "column": "approach",
+   "path": [],
+   "fact": "which peak this approach text is describing"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "road",
+   "path": [],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "access",
+   "path": [
+    "seasonal"
+   ],
+   "fact": "which road/trailhead this route uses"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "pitch_detail",
+   "path": [],
+   "fact": "number of pitches"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "beta",
+   "path": [],
+   "fact": "number of pitches"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "rope_note",
+   "path": [],
+   "fact": "number of pitches"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "descent_text",
+   "path": [],
+   "fact": "elevation of the base of the West Face (descent_text says ~9,000 ft, above the 8,160 ft summit)"
+  },
+  {
+   "id": "wa_west_face_2",
+   "column": "approach",
+   "path": [],
+   "fact": "approach text claims the page's own location is a geocoding error (pipeline note rendered to climbers)"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Old Guard Peak vs. Sentinel Peak: which summit is higher"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "label"
+   ],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "climbing_route",
+   "path": [
+    1,
+    "notes"
+   ],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "note"
+   ],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "objective"
+   ],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "note"
+   ],
+   "fact": "Compass direction of the summit snow ramp/couloir"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Whether a vehicle can drive all the way to the Cascade Pass Trailhead"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Whether a vehicle can drive all the way to the Cascade Pass Trailhead"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation loss for the trip"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "access",
+   "path": [
+    "parking_pass"
+   ],
+   "fact": "Whether a Northwest Forest Pass is needed"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Whether a Northwest Forest Pass is needed"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Whether a Northwest Forest Pass is needed"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "emergency",
+   "path": [
+    "sheriffDispatch"
+   ],
+   "fact": "Which county sheriff/SAR has jurisdiction"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "elevation of Cache Col (itinerary says ~6,100 ft; waypoint and approach say ~6,900 ft)"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    0,
+    "note"
+   ],
+   "fact": "elevation of Cache Col (itinerary says ~6,100 ft; waypoint and approach say ~6,900 ft)"
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "column": "approach",
+   "path": [],
+   "fact": "direction from Cascade Pass to Cache Col (approach says north; waypoints say south and east)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_west_face_2",
+   "before": {
+    "approach": "Note: this area's stored coordinates place it at Washington Pass on SR-20, but the real-world Gunsight Range is a remote granite sub-range near Dome Peak in the Glacier Peak Wilderness, roughly 20+ miles south/southwest of Washington Pass — not reachable from the SR-20 pass corridor, likely a data/geocoding error worth flagging for correction. The genuine standard approach is from the Downey Creek Trailhead (off Suiattle River Road) via the southern end of the Ptarmigan Traverse — a rugged, largely off-trail alpine route over Itswoot Ridge/Cub Lake and Bachelor Creek involving glacier travel and significant bushwhacking. Climbers typically budget a full day (or two) of approach before reaching the base of South Peak's granite faces; this is an experienced-mountaineers-only objective, not a roadside crag.",
+    "road": {
+     "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only) toward the Gunsight Range",
+     "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts, before continuing on trail into the Glacier Peak Wilderness.",
+     "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add significant additional hike/bike time on the closed road plus trail beyond Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+     "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+    },
+    "access": {
+     "fees": "None beyond the parking or entrance fee this route already lists.",
+     "rules": "Group size capped at 12 (people + stock combined) in Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft.",
+     "permit": "N/A",
+     "closures": "CLOSED RIGHT NOW: Suiattle River Road (FR 26) is washed out and closed to vehicles at about milepost 4.5 after the December 2025 flood, under a closure order running to 1 January 2028 unless lifted sooner, so the Downey Creek Trailhead cannot be reached by car. The Downey Creek Trail itself is also closed through 31 December 2026 under a separate fire closure. Call the Darrington Ranger District, (360) 436-1155, before planning a trip.",
+     "seasonal": "Mountain Loop Highway has a seasonal gate closure (Deer Creek–Bedal, ~14 mi), typically Nov–mid/late May. Suiattle River Road (FSR 26), the primary Glacier Peak access, has had storm-damage closures — check current conditions before a trip.",
+     "permitZone": "N/A",
+     "group_limit": 12,
+     "landManager": "N/A",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads (e.g. Sunrise Mine TH for Vesper Peak) — $5/day or $30/year.",
+     "passRequired": "N/A",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    },
+    "pitch_detail": [
+     {
+      "grade": "5.9+",
+      "notes": "Thin cracks and flakes in a shallow corner with delicate climbing. Requires small gear placements. Belay with good anchor at horn.",
+      "pitch": "1"
+     },
+     {
+      "grade": "5.11+",
+      "notes": "Technical crux featuring thin cracks, bulbous knobs, and small roof with overlap. Exceptional granite with solid protection available but demanding lead climbing. Aesthetically striking climbing with hard crack work.",
+      "pitch": "2"
+     },
+     {
+      "grade": "5.10+",
+      "notes": "Committing moves on tricky gear transitioning to wild climbing up flakes. Challenging protection requiring careful placement.",
+      "pitch": "3"
+     },
+     {
+      "grade": "5.10+",
+      "notes": "Continuation along flake and crack systems with knobs. Granular rock but solid climbing with good natural protection.",
+      "pitch": "4"
+     },
+     {
+      "grade": "5.9 to 5.6",
+      "notes": "Stemming over steep terrain, then corner with final mantle move onto terminal terrace. Includes chimney system (5.6) leading to summit. Traversal required to reach actual summit register.",
+      "pitch": "5"
+     }
+    ],
+    "beta": "A premier alpine testpiece featuring five pitches of high-quality granite climbing. The route climbs splitter cracks and exposed face climbing over 600 vertical feet. Pitch 2 contains the crux with thin cracks, bulbous knobs, and a small roof. The climbing features varied terrain including incipient flakes, stemming, and lieback sections. Protection is generally reliable on white granite. The onsight first free ascent in 2007 was completed with no falls. Descent via four double-rope rappels from the summit.",
+    "rope_note": "6-pitch, 500ft alpine rock route; a 60m lead rope, plus a second 60m rope for the double-rope descent rappels. Upper section has newer bolted rap stations; original descent raps off a large chockstone.",
+    "descent_text": "Rappel down the center of the West Face via four consecutive double-rope rappels of roughly 50 m, 50 m, 50 m and 20 m, using natural anchor features and existing bolt/gear anchors established on the granite. Ensure proper rope management to avoid tangling on the steep granite face. Once back at the base of the route (approximately 9,000 feet), descend to the Chikamin-Dome Col via the Chickamin Glacier approach, watching carefully for crevasses and potential moat crossings. From the col, descend the cross-country route back to Bachelor Flats (taking approximately 8-10 hours depending on snow coverage and conditions). From Bachelor Flats, follow the Downey Creek trail back to the trailhead (6-8 hours depending on fitness and pack weight). Total descent time from summit to vehicle is typically 3-4 days."
+   }
+  },
+  {
+   "id": "wa_old_guard_peak_southwest_route",
+   "before": {
+    "approach_variants": [
+     {
+      "name": "Cascade Pass and the traverse corridor to the LeConte Glacier",
+      "notes": "This is a side trip off a multi-day high traverse, not a day climb. From the Cascade Pass Trailhead at the end of the Cascade River Road, the maintained trail switchbacks up a forested rib and eases into a long ascending traverse through meadow and talus to the pass, where the tread ends. Leave the trail there and head south and east, traversing and climbing across the Mixup arm on boot path, talus and snow bands, then onto the Cache Glacier and up it to Cache Col; the step onto the glacier is short but steep and can be corniced, and an axe and crampons are normal here into midsummer. Descend the steep snowfield on the far side to the bench holding Kool-Aid Lake, the usual first camp. From there the Red Ledge bypasses the cliff band west of the knoll above, entered by scrambling through the moat at the snow-rock margin. Past the ledge, the corridor crosses the Middle Cascade Glacier, climbs to the Spider-Formidable col and drops to the Yang Yang Lakes basin, after which a ledge system leads up onto the LeConte snowfield and glacier. Camp near the col between LeConte and Sentinel, or at White Rock Lakes, and climb the peak from there.",
+      "season": "Mid-July through August is most reliable, since the route depends on the whole corridor being passable rather than on local conditions. Early trips face larger cornices at Cache Col and a more consequential Red Ledge; a low-snow autumn exposes more bare glacier ice.",
+      "hazards": [
+       "roped glacier travel with crevasses on the LeConte Glacier, and a bergschrund or moat at the foot of the snow ramp late season",
+       "loose rock on the upper scramble",
+       "remoteness with no easy bail once past Cache Col",
+       "steep early-season snow on the col approaches and on the ramp itself",
+       "the ramp softens to punchy postholing by afternoon, with the runout back onto the glacier"
+      ],
+      "baseFinding": "ONE SNOW RAMP RISES OFF THE GLACIER TO THE SUMMIT RIDGE, AND THE MOAT AT ITS FOOT IS THE GATE. From the LeConte Glacier the peak shows a single moderate, gradually-angled snow finger running up to the summit rocks; that ramp is the route, and getting onto it — finding the spot where the moat or bergschrund at its base allows a step across — is usually the awkward move of the day. It is a few hundred feet of steep snow, best taken early while it is firm, because by afternoon it turns to punchy postholing and the runout is straight back onto the glacier. Above it, the finish is a short scramble of a few hundred feet on blocky, high-friction gabbro that takes hands and stays straightforward. Two negative markers. Sentinel Peak is the adjacent summit immediately WEST of this one and is very slightly the higher of the two — if the peak you are under is the western of the pair, you are below Sentinel. And if the rock above the top of your snow ramp turns into two pitches of mid-fifth-class climbing rather than a hands-on scramble, you are on this peak's east ridge, which is a real route but not this one. Stash the axe and crampons somewhere you will find them; the descent reverses the same ramp."
+     }
+    ],
+    "approach": "Drive Cascade River Road east from Marblemount roughly 23 miles (paved for about the first 10, then good gravel) to its end at the Cascade Pass Trailhead (3,660 ft; parking area and vault toilet, North Cascades NP wilderness permit required for overnight camps). From the trailhead, follow the Cascade Pass Trail, which switchbacks about 30 times up a forested rib, gaining roughly 1,400 ft in the first 2 miles before the grade eases into a long ascending traverse through meadows, talus, and lingering snowfields to Cascade Pass (5,400 ft) at about 3.7 miles — figure 2.5-3.5 hours to the pass. This is only the start: Old Guard Peak sits deep in the Ptarmigan Mountains and is normally reached via the classic Ptarmigan Traverse, not as a day trip from the pass. From Cascade Pass, leave the maintained trail and climb north on a boot path/talus toward Cache Col (~6,900 ft), a rocky saddle roughly 3 hours above the pass; a steep snowfield on the col's far side (often needing an axe and crampons through midsummer) descends to Kool-Aid Lake basin (~6,320-6,800 ft), a common first camp about 6-8 miles and 2,800 ft of gain from the trailhead. From Kool-Aid Lake the route crosses a band of steep snow (pickets useful) to reach the Red Ledge, an exposed but broad Class 3 rock traverse that is the traverse's first real crux, especially if snow-covered. Beyond the ledges, follow the true-left (climber's left) edge of the Middle Cascade Glacier, roping up for crevasse hazard, staying on the less-broken upper glacier, then continue to the Spider-Formidable Col (a whiteout-prone spot where altimeter/compass/GPS route-finding matters). From the col, descend steep snow and a long sidehill traverse over snow and rock down to Yang Yang Lakes, then continue via LeConte Pass and Sentinel Pass to White Rock Lakes/the LeConte Glacier area — the standard second or third camp, roughly 12-14 hours of cumulative travel from the trailhead for parties moving efficiently. Old Guard Peak is climbed from Sentinel Pass: contour onto the LeConte Glacier and ascend a moderate, gradually-angled snow couloir/snowfinger on the peak's southwest side (watch for a bergschrund/moat late season) to gain the summit ridge, then finish on short, low-Class-3 scrambling on solid, high-friction gabbro to the true summit (8,240-8,260 ft). Water is available at Kool-Aid Lake, Yang Yang Lakes, and White Rock Lakes/tarns near the LeConte Glacier; carry a full topo map and glacier gear, as this is committing, remote glacier terrain with no easy bail once past Cache Col.",
+    "climbing_route": [
+     {
+      "n": 1,
+      "label": "LeConte Glacier contour from Sentinel Pass",
+      "notes": "Old Guard Peak is climbed from Sentinel Pass: contour onto the LeConte Glacier. Committing, remote glacier terrain — carry a full topo map and glacier gear; there is no easy bail once past Cache Col."
+     },
+     {
+      "n": 2,
+      "label": "Southwest snow couloir/snowfinger",
+      "notes": "Ascend a moderate, gradually-angled snow couloir/snowfinger on the peak's southwest side to gain the summit ridge; watch for a bergschrund/moat late season."
+     },
+     {
+      "n": 3,
+      "class": "low-Class-3",
+      "label": "Summit ridge",
+      "notes": "Finish on short scrambling on solid, high-friction gabbro to the true summit (8,240-8,260 ft)."
+     }
+    ],
+    "itinerary": {
+     "cal": "Best mid-July through September once North Cascades snow bridges and glacier crossings (Cache/Middle Cascade, LeConte, South Cascade) are stable; a North Cascades NP backcountry permit (recreation.gov, released seasonally) is required and popular camps (Kool-Aid Lake, Yang Yang Lakes, White Rock Lakes) fill fast in peak season.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Cascade Pass trailhead, hike the maintained trail to Cascade Pass, then climb switchbacks to Cache Col (~6,100 ft) before dropping to a camp near Kool-Aid Lake / upper Basin Creek. This is the last on-trail day; everything after is off-trail glacier and ridge travel.",
+       "hours": 7,
+       "miles": 6.5,
+       "title": "Approach to Kool-Aid Lake via Cache Col",
+       "gainFt": 3700,
+       "lossFt": 300,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach high camp below Cache Col"
+      },
+      {
+       "n": 2,
+       "note": "Rope up for the Cascade/Middle Cascade Glacier crossing, traverse the exposed Red Ledge, and cross Spider-Formidable Col before dropping to camp at Yang Yang Lakes. Slow going relative to the mileage due to glacier travel and route-finding.",
+       "hours": 8.5,
+       "miles": 4.5,
+       "title": "Glacier travel to Yang Yang Lakes",
+       "gainFt": 2000,
+       "lossFt": 1800,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Cross to Yang Yang Lakes via Red Ledge and Spider-Formidable Col"
+      },
+      {
+       "n": 3,
+       "note": "The long day of the trip: cross the LeConte Glacier to Sentinel Pass, drop packs, and knock off Old Guard Peak via a steep snowfinger and short Class 3 gabbro scramble on its west/southwest side. Continue on to camp at White Rock Lakes; many parties also tag LeConte Mountain from the same pass.",
+       "hours": 12,
+       "miles": 5.5,
+       "title": "Sentinel Pass and the Old Guard Peak summit",
+       "gainFt": 2600,
+       "lossFt": 2200,
+       "packLb": 40,
+       "schedule": [
+        {
+         "time": "5:30 AM",
+         "label": "Break camp at Yang Yang Lakes",
+         "detail": ""
+        },
+        {
+         "time": "~9:00 AM",
+         "label": "Reach Sentinel Pass",
+         "detail": "Drop overnight packs before the side-summit push."
+        },
+        {
+         "time": "9:15 AM",
+         "label": "Start Old Guard side trip",
+         "detail": "Steep snowfinger/couloir on the west side."
+        },
+        {
+         "time": "~10:45 AM",
+         "label": "Summit Old Guard Peak",
+         "detail": "Short Class 3 scramble on grippy gabbro finishes the route."
+        },
+        {
+         "time": "~11:45 AM",
+         "label": "Back at Sentinel Pass",
+         "detail": "Re-shoulder packs and continue the traverse."
+        },
+        {
+         "time": "~6:00 PM",
+         "label": "Arrive White Rock Lakes camp",
+         "detail": ""
+        }
+       ],
+       "objective": "Summit Old Guard Peak via the southwest snow couloir and Class 3 scramble"
+      },
+      {
+       "n": 4,
+       "note": "Cross South Cascade and Dana Glacier terrain toward Itswoot Ridge, camping near the Dana-Dome Saddle. Many parties use this camp for an optional Dome Peak side summit, though it isn't required for the Old Guard objective.",
+       "hours": 6.5,
+       "miles": 4.5,
+       "title": "Traverse toward the Dome Peak area",
+       "gainFt": 1800,
+       "lossFt": 1400,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Continue south to Itswoot Ridge / Dana-Dome Saddle"
+      },
+      {
+       "n": 5,
+       "note": "A shorter day easing down off the glaciated high country toward timberline camp at Bachelor Meadow, staging for the long exit hike.",
+       "hours": 4.5,
+       "miles": 5,
+       "title": "Descend toward Bachelor Meadow",
+       "gainFt": 300,
+       "lossFt": 2500,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Drop off the high traverse into the Bachelor Creek drainage"
+      },
+      {
+       "n": 6,
+       "note": "A long, brushy exit down the climbers'-path-quality Bachelor Creek trail to Downey Creek and the Suiattle River Road. Expect log crossings and overgrown tread low down; most parties pre-arrange a car shuttle since this is a different trailhead than the Cascade Pass start.",
+       "hours": 7.5,
+       "miles": 9,
+       "title": "Exit via Bachelor and Downey Creek",
+       "gainFt": 200,
+       "lossFt": 4200,
+       "packLb": 0,
+       "schedule": [],
+       "objective": "Hike out to the Suiattle River Road trailhead"
+      }
+     ],
+     "totalNote": "A 6-day, roughly 33-mile glacier traverse (Cascade Pass to the Suiattle River) with on the order of 11,000-12,000 ft of cumulative gain; Old Guard Peak itself is a ~2.5-3 hr round-trip snow-couloir-and-scramble side summit from Sentinel Pass on day 3, not a stand-alone car-to-car objective."
+    },
+    "waypoints": [
+     {
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "elev": 3660,
+      "name": "Cascade Pass Trailhead",
+      "note": "End of Cascade River Road, 23.1 mi from Marblemount; NPS backcountry permit required for overnight stays, self-issue day-use is free.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Drive Cascade River Road east from Marblemount roughly 23 miles to its end at the Cascade Pass Trailhead at 3,660 ft — paved for about the first 10 miles, then good gravel the rest of the way. There is a parking area and a vault toilet at the road end. Day use is free and self-issue; a North Cascades backcountry permit is required for overnight camps, released seasonally through recreation.gov, and the camps along this traverse fill fast in peak season. Because the traverse exits at a different trailhead on the Suiattle River Road, most parties pre-arrange a car shuttle rather than leaving a vehicle here."
+     },
+     {
+      "lat": 48.4676181,
+      "lng": -121.0590796,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Trail tread ends at the pass; leave the maintained trail here and head south/southeast onto the Ptarmigan Traverse cross-country route.",
+      "type": "Junction",
+      "distMi": 3.7,
+      "directions": "The trail switchbacks around thirty times up a forested rib, gaining roughly 1,400 ft in the first two miles, then eases into a long ascending traverse through meadow and talus to the pass. Figure two and a half to three and a half hours. Snowfields can lie across the traverse well into summer."
+     },
+     {
+      "lat": 48.4485,
+      "lng": -121.0529,
+      "elev": 6903,
+      "name": "Cache Col",
+      "note": "Gap between Magic Mountain and Mix-up Peak at the head of Cache Glacier; gain it via a steep snow/scree gully, the crux route-finding point of day one.",
+      "type": "Junction",
+      "distMi": 6.5,
+      "directions": "Leave the trail at the pass and head south and east, traversing and climbing across the Mixup arm on boot path, talus and snow bands. Gain the shoulder, follow the snow ramp up, then drop onto the Cache Glacier and walk it to the col at its head. The step onto the glacier is short but steep and can be corniced, and an axe and crampons are normal here into midsummer."
+     },
+     {
+      "lat": 48.4386686,
+      "lng": -121.0458149,
+      "elev": 6119,
+      "name": "Kool-Aid Lake",
+      "note": "Small tarn on a bench south of Cache Col, the standard first-night bivy/base camp for the traverse; exposed, fog often wafts up from the valley below.",
+      "type": "Campsite",
+      "distMi": 7.7,
+      "directions": "Descend the far side of the col — a steep snowfield that usually needs an axe and crampons well into midsummer — and lose several hundred feet to the bench holding the tarn. The runout below the snow is rocky, so this is not a place to glissade blind into fog."
+     },
+     {
+      "lat": 48.400043,
+      "lng": -121.043071,
+      "elev": 6400,
+      "name": "Red Ledge",
+      "note": "Narrow, exposed rock ledge cutting west from Art's Knoll that bypasses cliffs south of Kool-Aid Lake; can hold an open moat, verglas, or fresh snow that makes the traverse 'spicy' even in summer.",
+      "type": "Hazard",
+      "distMi": null,
+      "directions": "Climb out of the lake basin and traverse toward the cliff band running west off Art's Knoll, which from below looks like it stops the route entirely. Getting established usually means scrambling through the moat at the snow-rock margin and up a few feet of Class 3 to reach the ledge. Once on it the ledge is broad and walkable, unless it is holding snow or verglas."
+     },
+     {
+      "lat": 48.3637,
+      "lng": -121.0357,
+      "elev": 7434,
+      "name": "LeConte Glacier",
+      "note": "Broad glacier basin below Old Guard and Sentinel Peaks; rope up here and cross to the base of Old Guard's west/southwest side, watching for late-season crevasses near the peak's flanks.",
+      "type": "Junction",
+      "distMi": 10,
+      "directions": "This leg is far longer than the mileage on file suggests. Past the ledge the traverse crosses the Middle Cascade Glacier, climbs to the Spider-Formidable col and drops to the Yang Yang Lakes basin, after which the ledge system known as the goat path leads up onto the LeConte snowfield and glacier. It is a full day or more of committing glaciated terrain, travelled roped and with crevasse-rescue gear, not a short hop from the Red Ledge."
+     },
+     {
+      "lat": 48.3597,
+      "lng": -121.0354,
+      "elev": 7900,
+      "name": "Snowfinger / Couloir Base",
+      "note": "Steep snow couloir (Class 2/3) rising off the glacier to the base of the summit rock; firm early-morning snow can require an axe and crampons, softening to punchy postholing by afternoon.",
+      "type": "Hazard",
+      "distMi": 10.3,
+      "directions": "From the glacier work to the foot of the snow finger rising toward the summit rock and get onto it wherever the moat or bergschrund allows — that transition is often the awkward move of the day. It is a few hundred feet of steep snow, best taken early while it is firm, since by afternoon it softens to punchy postholing and the runout is back onto the glacier."
+     },
+     {
+      "lat": 48.3557,
+      "lng": -121.0351,
+      "elev": 8260,
+      "name": "Old Guard Peak",
+      "note": "Short Class 3 scramble up grippy gabbro from the top of the couloir gains the true summit, with views across the LeConte Glacier to Sentinel Peak and Dome Peak.",
+      "type": "Summit",
+      "distMi": 10.6,
+      "directions": "Top out of the couloir and finish on a short Class 3 scramble up blocky gabbro, a few hundred feet on rock that takes hands but stays straightforward. Stash axe and crampons somewhere you will find them again, because the descent reverses this same couloir."
+     }
+    ],
+    "loss_ft": 14100,
+    "access": {
+     "fees": "No fee within Glacier Peak Wilderness (free self-issue permit). An NPS wilderness permit is only needed if camping within North Cascades National Park, i.e. north of Cache Col.",
+     "rules": "Leave No Trace; cross-country regulations",
+     "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; an NPS backcountry permit is required only if camping north of Cache Col inside North Cascades National Park.",
+     "closures": "As of mid-2026: Suiattle River Road (FSR 26) is closed to vehicles at MP 4 (flood damage; closure order in effect April 2, 2026 - January 1, 2028), cutting off the Downey Creek trailhead at MP 20. Cascade River Road is open to vehicles only to Eldorado (MP 20); the final ~3 miles to Cascade Pass Trailhead (MP 23.1) is foot/bike travel only.",
+     "group_limit": 12,
+     "landManager": "Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (Chelan Ranger District) - not North Cascades National Park. The park boundary ends at Cache Col, well north of this summit.",
+     "land_manager": "Okanogan-Wenatchee National Forest (Chelan Ranger District) — Glacier Peak Wilderness",
+     "parking_pass": "No Northwest Forest Pass needed for wilderness travel; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+     "passRequired": "No Northwest Forest Pass needed for wilderness travel; NPS wilderness permit only required if camping within the park (north of Cache Col).",
+     "overnight_permit": {
+      "url": "https://www.fs.usda.gov/r06/mbs/recreation/glacier-peak-wilderness-mt-baker-snoqualmie",
+      "what": "No overnight permit required in Glacier Peak Wilderness; sign the trailhead register",
+      "where": "Sign the register at the trailhead. Camping on the North Cascades National Park side of Cache Col needs a park wilderness permit from the Marblemount Wilderness Information Center or Recreation.gov."
+     }
+    },
+    "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+    "emergency": {
+     "notes": "Remote Ptarmigan Traverse terrain in Glacier Peak Wilderness (not North Cascades National Park - the park boundary is at Cache Col, north of here); self-sufficiency essential. As of 2026 both standard road accesses are constrained by flood/washout damage, which will lengthen any evacuation.",
+     "county": "Chelan County",
+     "rangerStation": "Chelan Ranger District, Okanogan-Wenatchee National Forest, (509) 682-4900 (jurisdiction); Darrington Ranger District, Mt. Baker-Snoqualmie National Forest, administers the western Suiattle River/Downey Creek access side.",
+     "nearestHospital": "Cascade Valley Hospital, Arlington",
+     "sheriffDispatch": "Skagit County Sheriff (non-emergency): (360) 416-1911 — Search & Rescue is dispatched through the Sheriff's Office; Chelan County Sheriff covers the peak's home county"
+    },
+    "timing": {
+     "totalHrs": 46,
+     "summitTimeHrs": 12,
+     "descentTimeHrs": 18.5,
+     "approachTimeHrs": 15.5,
+     "recommendedStart": "5:30 AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 7,
+       "note": "From the Cascade Pass trailhead, hike the maintained trail to Cascade Pass, then climb switchbacks to Cache Col (~6,100 ft) before dropping to a camp near Kool-Aid Lake / upper Bas…",
+       "fromTo": "Approach to Kool-Aid Lake via Cache Col",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8.5,
+       "note": "Rope up for the Cascade/Middle Cascade Glacier crossing, traverse the exposed Red Ledge, and cross Spider-Formidable Col before dropping to camp at Yang Yang Lakes. Slow going rela…",
+       "fromTo": "Glacier travel to Yang Yang Lakes",
+       "section": "Approach"
+      },
+      {
+       "hrs": 12,
+       "note": "The long day of the trip: cross the LeConte Glacier to Sentinel Pass, drop packs, and knock off Old Guard Peak via a steep snowfinger and short Class 3 gabbro scramble on its west/…",
+       "fromTo": "Sentinel Pass and the Old Guard Peak summit",
+       "section": "Climb"
+      },
+      {
+       "hrs": 6.5,
+       "note": "Cross South Cascade and Dana Glacier terrain toward Itswoot Ridge, camping near the Dana-Dome Saddle. Many parties use this camp for an optional Dome Peak side summit, though it is…",
+       "fromTo": "Traverse toward the Dome Peak area",
+       "section": "Descent"
+      },
+      {
+       "hrs": 4.5,
+       "note": "A shorter day easing down off the glaciated high country toward timberline camp at Bachelor Meadow, staging for the long exit hike.",
+       "fromTo": "Descend toward Bachelor Meadow",
+       "section": "Descent"
+      },
+      {
+       "hrs": 7.5,
+       "note": "A long, brushy exit down the climbers'-path-quality Bachelor Creek trail to Downey Creek and the Suiattle River Road. Expect log crossings and overgrown tread low down; most partie…",
+       "fromTo": "Exit via Bachelor and Downey Creek",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

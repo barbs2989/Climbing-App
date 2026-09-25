@@ -1,0 +1,446 @@
+{
+ "applied": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "timing",
+   "path": [
+    "summitTimeHrs"
+   ],
+   "fact": "Time to reach summit vs total car-to-car time"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Fee/pass required at Merritt Lake Trailhead"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "Fee/pass required at Merritt Lake Trailhead"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "pro_tips",
+   "path": [
+    2
+   ],
+   "fact": "Fee/pass required at Merritt Lake Trailhead"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "gainFt"
+   ],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "lossFt"
+   ],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Total elevation gain: gain_ft 3,330 is below the trailhead-to-summit net rise, and partner_requirements says 4,000-4,500 ft"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total elevation gain: 2,100 ft (header) vs. 1,800 ft (beta and itinerary)"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total elevation gain: 2,100 ft (header) vs. 1,800 ft (beta and itinerary)"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "itinerary",
+   "path": [
+    "totalNote"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "waypoints",
+   "path": [
+    4,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "waypoints",
+   "path": [
+    5,
+    "distMi"
+   ],
+   "fact": "Round-trip distance: three disagreeing figures"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "approach",
+   "path": [],
+   "fact": "Road/trailhead access: current closure vs. normal driving directions given elsewhere"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "approach_logistics",
+   "path": [
+    "trailheadDirection"
+   ],
+   "fact": "Road/trailhead access: current closure vs. normal driving directions given elsewhere"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Road/trailhead access: current closure vs. normal driving directions given elsewhere"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Road/trailhead access: current closure vs. normal driving directions given elsewhere"
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "column": "road",
+   "path": [
+    "status"
+   ],
+   "fact": "Road/trailhead access: current closure vs. normal driving directions given elsewhere"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "before": {
+    "timing": {
+     "totalHrs": 8.5,
+     "summitTimeHrs": 8.5,
+     "descentTimeHrs": null,
+     "approachTimeHrs": null,
+     "recommendedStart": "6:00 AM from the trailhead",
+     "sectionBreakdown": [
+      {
+       "hrs": 8.5,
+       "note": "A single long day: hike the Merritt Lake trail through second-growth forest and past the lake, then traverse scree/talus slopes up to the saddle on the Howard-Mastiff ridge before …",
+       "fromTo": "Car-to-car scramble",
+       "section": "Climb"
+      }
+     ]
+    },
+    "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+    "access": {
+     "rules": "Leave No Trace",
+     "landManager": "Okanogan-Wenatchee National Forest",
+     "passRequired": "No fee currently required at Merritt Lake Trailhead per USFS (self-register; no toilet or water on site) — confirm before visiting since fee requirements can change."
+    },
+    "pro_tips": [
+     "A helmet is recommended for the final ~200 ft of talus/boulder scrambling below the summit",
+     "Combine with Mount Howard for a longer Nason Ridge traverse (~13 mi, 5,400+ ft) if doing both peaks in a loop",
+     "Self-register at the trailhead kiosk — no Northwest Forest Pass or day-use fee is currently charged at Merritt Lake Trailhead per the Forest Service recreation site page"
+    ],
+    "gain_ft": 3330,
+    "loss_ft": 3330,
+    "itinerary": {
+     "cal": "Lower slopes are south/east-facing and melt out early, but patchy snow above ~4,400 ft can persist into June-July, so an ice axe/microspikes are worth carrying for early-season attempts.",
+     "days": [
+      {
+       "n": 1,
+       "note": "A single long day: hike the Merritt Lake trail through second-growth forest and past the lake, then traverse scree/talus slopes up to the saddle on the Howard-Mastiff ridge before a short class 2-3 scramble along the ridge crest to the summit. Return the same way. Expect lingering snow on the upper slopes into early summer, which slows travel and can require an axe/microspikes.",
+       "hours": 8.5,
+       "miles": 10,
+       "title": "Car-to-car scramble",
+       "gainFt": 3330,
+       "lossFt": 3330,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave trailhead",
+         "detail": "Start on the Merritt Lake trail; earlier starts are common in summer to beat heat and afternoon thunderstorms."
+        },
+        {
+         "time": "+2 hr",
+         "label": "Reach Merritt Lake",
+         "detail": "About 2.5 mi and ~2,000 ft of the day's gain to the lake basin."
+        },
+        {
+         "time": "+3.5 hr",
+         "label": "Traverse toward Crescent Lake and gain the ridge",
+         "detail": "Cross scree/talus slopes and ascend to the saddle between Mount Howard and Mount Mastiff; snow patches common through June."
+        },
+        {
+         "time": "+5 hr",
+         "label": "Summit Mount Mastiff",
+         "detail": "Short class 2-3 scramble along the ridge crest to the 6,747 ft summit."
+        },
+        {
+         "time": "+5.5 hr",
+         "label": "Begin descent",
+         "detail": "Reverse the ascent route back through the saddle, traverse, and Merritt Lake."
+        },
+        {
+         "time": "+8.5 hr",
+         "label": "Back at trailhead",
+         "detail": "Typical car-to-car time for a fit party is 8-9 hours; parties combining Mastiff with neighboring Mount Howard often take 12-14 hours."
+        }
+       ],
+       "objective": "Summit Mount Mastiff via Merritt Lake and the Howard-Mastiff ridge"
+      }
+     ],
+     "totalNote": "A single, long car-to-car scramble day: roughly 8-9 hours, 10 miles, and 3,330 ft of gain - no camp is used on the standard South Route."
+    },
+    "approach": "From US-2 near milepost 76 (about 11.5 miles east of Stevens Pass / 24 miles west of Leavenworth), turn onto Forest Road 657 (rough, high-clearance recommended) and drive 1.5 miles to the Merritt Lake Trailhead (3,050 ft). Hike the Merritt Lake Trail up toward the ridge, connecting with the Nason Ridge Trail; figure a long day (roughly 10 miles round trip, ~3,300 ft gain for Mastiff alone) or an overnight via Merritt or Lost Lake.",
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~11-13 miles round trip with roughly 4,000-4,500 ft of gain via the Nason Ridge trail and meadows; a long full day on the ridge",
+      "packWeight": "Standard day-scramble pack (~15-20 lb: water, layers, navigation, basic first aid) - no technical rack needed for this route"
+     },
+     "approachTime": "~5 hours to the summit from the Merritt Lake trailhead (per on-the-ground trip reports), longer if combined with Mount Howard",
+     "requiredSkills": [
+      "off-trail routefinding through heather and talus (trail thins above treeline)",
+      "steady footing on loose scree and steep heather slopes",
+      "basic exposure tolerance for narrow ridge sections",
+      "map/GPS navigation - route is not signed or continuously trailed"
+     ],
+     "experienceLevel": "Intermediate scrambler - comfortable with off-trail routefinding, loose talus, and short exposed Class 3 ridge moves; not a beginner hike despite the Class 2-3 grade"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "before": {
+    "gain_ft": 2100,
+    "loss_ft": 2100,
+    "itinerary": {
+     "cal": "Best July-October; the Smithbrook Road access and upper trail typically hold snow into early summer at this elevation.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the Smithbrook trailhead, climb switchbacks through forest to the PCT, follow it south along a gentle rolling grade to the Lake Valhalla basin, then take the McCausland spur trail for a steep, occasionally brushy 0.5-mile push to the north summit. Return the same way, with an optional stop at Lake Valhalla's sandy beach on the way out.",
+       "hours": 5.5,
+       "miles": 7.5,
+       "title": "Car-to-car via Smithbrook Trail and Lake Valhalla",
+       "gainFt": 1800,
+       "lossFt": 1800,
+       "packLb": 0,
+       "schedule": [
+        {
+         "time": "8:00 AM",
+         "label": "Leave Smithbrook trailhead",
+         "detail": "Climb ~1 mile of switchbacks to the PCT junction."
+        },
+        {
+         "time": "+1h45m",
+         "label": "Reach Lake Valhalla basin",
+         "detail": "Gentle, rolling trail along the PCT past the lake."
+        },
+        {
+         "time": "+30 min",
+         "label": "Branch onto Mount McCausland trail",
+         "detail": "Steep half-mile summit spur with a couple of brief Class 2 scramble steps; poles recommended."
+        },
+        {
+         "time": "~3-3.5 hr in",
+         "label": "Reach the summit",
+         "detail": "Views of Glacier Peak, Lichtenberg Mountain, and Lake Valhalla below; summit register in a steel lockbox."
+        },
+        {
+         "time": "+1.5-2 hr",
+         "label": "Descend to trailhead",
+         "detail": "Retrace the route; optional detour to the lake's sandy beach."
+        }
+       ],
+       "objective": "Summit Mount McCausland and return to trailhead"
+      }
+     ],
+     "totalNote": "A single, moderate day hike/scramble: about 7-7.5 miles round trip and 1,800 ft gain, typically 4-6 hours car-to-car (serious hikers can do it in 3-4 hours)."
+    },
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Moderate day-hike fitness; roughly 8-9 miles round trip with a steep push (~650 ft in about half a mile) mid-route to reach Lake Valhalla, then further gain to the summit on a climber's path through heather.",
+      "packWeight": "Light daypack (roughly 10-15 lb) — single-day trip, no technical or glacier gear required."
+     },
+     "approachTime": "Roughly 2-3 hours from the Smithbrook trailhead via the PCT to Lake Valhalla, plus another 1-1.5 hours from the lake up the north slopes to the summit.",
+     "requiredSkills": [
+      "Comfort with loose talus footing on the upper slope",
+      "Basic off-trail route-finding on an unmarked climber's path through heather",
+      "General Class 2 scrambling judgment"
+     ],
+     "experienceLevel": "Beginner-friendly Class 2 scramble; a reasonable first off-trail summit for a hiker moving into scrambling."
+    },
+    "waypoints": [
+     {
+      "lat": 47.8025,
+      "lng": -121.0765,
+      "elev": 4000,
+      "name": "Smithbrook Trailhead",
+      "note": "Dirt lot for ~15 cars; self-register for wilderness travel here and start up the Smithbrook Trail through brush and an old boulder field before entering forest.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Take US 2 to a point about 4 miles east of Stevens Pass and turn onto Smith Brook Road, Forest Road 6700. Follow the gravel road roughly 2.6 to 2.8 miles to the Smithbrook Trailhead at about 4,000 feet. Parking is a dirt lot with room for around 15 cars, and you self-register for wilderness travel here before starting up the trail. The Smithbrook Road access typically holds snow into early summer, so July through October is the dependable window."
+     },
+     {
+      "lat": 47.7956955,
+      "lng": -121.08958517857143,
+      "elev": 4400,
+      "name": "PCT Junction",
+      "note": "Smithbrook Trail tops out at the Pacific Crest Trail; turn south (left) onto a relatively flat, blueberry- and huckleberry-lined stretch of the PCT.",
+      "type": "Junction",
+      "distMi": 1.5
+     },
+     {
+      "lat": 47.78984,
+      "lng": -121.10083,
+      "elev": 4834,
+      "name": "Lake Valhalla",
+      "note": "Alpine lake tucked beneath Lichtenberg Mountain and Mount McCausland just off the PCT; reliable water source and a popular rest/camp spot before the summit turnoff.",
+      "type": "Water",
+      "distMi": 2.8
+     },
+     {
+      "lat": 47.79179371428572,
+      "lng": -121.10155242857144,
+      "elev": 4900,
+      "name": "McCausland Climber's Path Turnoff",
+      "note": "A small cairn (no trail sign) marks where the unofficial boot path leaves the PCT and heads straight up McCausland's north slopes.",
+      "type": "Junction",
+      "distMi": 3
+     },
+     {
+      "lat": 47.79378742857143,
+      "lng": -121.10230485714285,
+      "elev": 5200,
+      "name": "Braided Boot Path / Snow Patches",
+      "note": "Sandy, gravelly climber's path through blueberry and heather crosses a couple of lingering snow patches; several false paths dead-end, so stay on the main cairned line, especially in fog.",
+      "type": "Hazard",
+      "distMi": 3.2
+     },
+     {
+      "lat": 47.797566,
+      "lng": -121.103435,
+      "elev": 5747,
+      "name": "Mount McCausland Summit",
+      "note": "True summit with open views north to Glacier Peak and back down onto Lake Valhalla and Lichtenberg Mountain.",
+      "type": "Summit",
+      "distMi": 3.5
+     }
+    ],
+    "approach": "From US Highway 2 about 4 miles east of Stevens Pass, turn onto Smith Brook Road (Forest Road 6700) and follow the gravel road roughly 2.6-2.8 miles to the Smithbrook Trailhead (el. ~4,000 ft; no fee, no Northwest Forest Pass required). Hike Smithbrook Trail #1590 through old-growth forest, entering the Henry M. Jackson Wilderness at about 0.5 mile, and continue to Union Gap (el. ~4,600-4,688 ft) at roughly 1.0-1.3 miles, where the trail meets the Pacific Crest Trail. Turn south (left) on the PCT for about 1.4 miles through forest with views toward Lichtenberg Mountain and Nason Ridge, to an unnamed gap at about 5,100 ft. Just before/at this gap, an unmarked but obvious boot path breaks off to the north through heather meadows, climbing a steep, sometimes brushy and eroded 0.5 mile (about 650 ft of additional gain) to the true summit.",
+    "approach_logistics": {
+     "peakLat": 47.7975661,
+     "peakLng": -121.1034346,
+     "trailhead": "Smithbrook Trailhead",
+     "trailheadLat": 47.8025,
+     "trailheadLng": -121.0765,
+     "trailheadDirection": "From US Highway 2 about 4 miles east of Stevens Pass, turn onto Smith Brook Road (Forest Road 6700) and follow the gravel road roughly 2.6-2.8 miles to the Smithbrook Trailhead (el. ~4,000 ft; no fee, no Northwest Forest Pass required)."
+    },
+    "approach_variants": [
+     {
+      "name": "Smithbrook Trail to Union Gap and the Lake Valhalla crest trail",
+      "notes": "From the highway east of the pass, take the gravel forest road to the Smithbrook Trailhead and self-register for wilderness travel. Smithbrook Trail #1590 climbs through brush and an old boulder field and then old-growth forest, entering the wilderness within the first half mile, and tops out at Union Gap on the crest trail. Turn south onto a relatively flat, blueberry- and huckleberry-lined stretch with views toward the neighbouring peak and the ridge beyond. The trail runs through forest to an unnamed gap before it begins its drop toward Lake Valhalla, and it is at that gap that the climbers' path leaves it and turns north up the open slope.",
+      "season": "July through October is the dependable window; the access road holds snow into early summer.",
+      "hazards": [
+       "The turnoff carries no sign of any kind and the tread reads as a gully rather than a trail",
+       "The climbers' path braids into several social paths with no signage — pick the one that visibly heads for the summit",
+       "Lingering snow patches cross the path into early summer and can bury the tread",
+       "Steep and eroded going, with sections where you shimmy through foliage",
+       "The summit ridge carries a brief drop and reclimb before the true top, so the first crest is not it"
+      ],
+      "baseFinding": "A SINGLE WHITE ROCK MARKS IT, AND THE LAKE TELLS YOU IF YOU HAVE GONE PAST. Walking south on the crest trail from Union Gap, the climbers' path breaks off uphill to the right just north of the saddle between this peak and its neighbour — so you reach it before the saddle and before the lake, not after them. There is no sign and no cairn; the marker is one conspicuous white stone beside the tread, and the path itself looks more like a gully than a trail where it starts. The negative marker is unmistakable: the crest trail carries on through the saddle and begins descending, and Lake Valhalla comes into view through the trees almost immediately once you are past. If the lake is in sight or the trail is losing height, come back uphill and look for the white rock. Above it the path climbs steeply through huckleberry and heather, braiding into several social paths that go nowhere in particular — take whichever visibly heads for the summit. The crest flattens into an alpine garden, and the true top needs one brief drop to a saddle and a final climb to a rocky north-facing viewpoint."
+     }
+    ],
+    "road": {
+     "name": "Smithbrook Road (FR 6700)",
+     "status": "Closed to vehicles indefinitely (storm damage) as of mid-2026 — no reopening estimate as of the last USFS update; confirm current status before driving.",
+     "driveNote": "Normally gravel off US-2 east of Stevens Pass to the trailhead (~4,000 ft), but FR 6700 has been closed to vehicles since a Forest Service order (effective May 20, 2026) covering storm-damaged Wenatchee River Ranger District roads after Dec 2025 storms.",
+     "seasonalGate": "Currently closed by storm-damage order, not just seasonal snow-gating; historically also snow-gated in winter."
+    }
+   }
+  }
+ ]
+}

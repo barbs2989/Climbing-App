@@ -1,0 +1,121 @@
+{"file": "r080.json", "results": [
+{"id": "wa_northwest_mox_peak_standard", "fact": "Total elevation gain", "verdict": "fixed",
+ "correct_value": "7000 (gain_ft), matching the itinerary days 3,550 + 1,550 + 1,900 and loss_ft 7,050",
+ "evidence": "A detailed Depot Creek report gives 2,350 ft at the road-end parking, +3,550 ft to Ouzel Lake, and +1,550 ft to the Redoubt Glacier saddle at 7,150 ft; the summit is 8,407 ft on topo-derived listings. The net rise from 2,350 ft to 8,407 ft alone is ~6,050 ft, so 5,450 ft is physically impossible; 5,450 is exactly day 1 + day 3, i.e. the day-2 carry to high camp was left out. A second report gives a ~2,300 ft trailhead and 5,700 ft lake, agreeing on the first leg.",
+ "sources": ["https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/", "https://stephabegg.com/trip-reports/washington/chilliwack-slam/", "https://www.peakbagger.com/peak.aspx?pid=1615"],
+ "patches": [
+  {"id": "wa_northwest_mox_peak_standard", "fact": "Total elevation gain", "op": "set", "column": "gain_ft", "path": [], "expect": 5450, "value": 7000}
+ ]},
+{"id": "wa_northwest_mox_peak_standard", "fact": "Total round-trip distance", "verdict": "not_a_contradiction",
+ "correct_value": null,
+ "evidence": "dist_km is the ONE-WAY approach figure (14.5 km ~ 9 mi) while the itinerary miles are per day and sum to a round trip. 9 mi one way is consistent with the itinerary's 7.5 mi to Lake Ouzel + 2 mi to the saddle high camp (and its 9.5 mi hike-out). A one-way figure compared with a round-trip sum is not a contradiction.",
+ "sources": [], "patches": []},
+{"id": "wa_northwest_mox_peak_standard", "fact": "Time to reach Lake Ouzel camp", "verdict": "fixed",
+ "correct_value": "roughly 6-9 hours from the car to Ouzel Lake; roughly 9-12 hours to the saddle high camp",
+ "evidence": "One party recorded 6h15 car to Lake Ouzel; another took 9.3 hours to Ouzel Lake (+3,550 ft) and then 3.2 hours to the 7,150 ft saddle; a third report (Mountaineers) mentions about 8 hours in heat. None supports as little as 5 hours, so the approach text's 5-6 hours is the outlier, while the itinerary's 9.3 h plan sits at the slow end of the range. Patched the approach prose to a 6-9 hour range and its derived trailhead-to-high-camp total, and reworded the itinerary note to the same range without attributing it to reports.",
+ "sources": ["https://stephabegg.com/trip-reports/washington/chilliwack-slam/", "https://trailcatjim.com/hard-mox-peak-easy-mox-peak-depot-creek-falls/"],
+ "patches": [
+  {"id": "wa_northwest_mox_peak_standard", "fact": "Time to reach Lake Ouzel camp", "op": "replace_text", "column": "approach", "path": [], "find": "in 5-6 hours with 3,500 ft", "replace": "in roughly 6-9 hours with 3,500 ft"},
+  {"id": "wa_northwest_mox_peak_standard", "fact": "Time to reach Lake Ouzel camp", "op": "replace_text", "column": "approach", "path": [], "find": "Total approach: 8-10 hours", "replace": "Total approach: roughly 9-12 hours"},
+  {"id": "wa_northwest_mox_peak_standard", "fact": "Time to reach Lake Ouzel camp", "op": "replace_text", "column": "itinerary", "path": ["days", 0, "note"], "find": "real parties report 8-9+ hours for this leg", "replace": "expect roughly 6-9 hours for this leg"}
+ ]},
+{"id": "wa_east_slope", "fact": "Whether September is part of the best/safe climbing window", "verdict": "not_a_contradiction",
+ "correct_value": null,
+ "evidence": "The fields describe a Jul-Sep season with a best window of mid-July through August and a caveat that LATE September can be iced and bare (climate.fall itself says conditions deteriorate after early-mid September). A best window inside a season plus a late-season caveat is consistent; the documented failure was a late-September attempt, not early September.",
+ "sources": ["https://www.lemkeclimbs.com/primus-peak-attempt.html"], "patches": []},
+{"id": "wa_primus_peak_south_ridge", "fact": "beta describes a different route (East Slope) than this one", "verdict": "fixed",
+ "correct_value": "Beta for the Eldorado-side line: class 2-3 snow/talus above the North Klawatti Glacier after the McAllister-Klawatti notch, high camp near Klawatti Col",
+ "evidence": "Two independent reports of Primus from the Eldorado side describe camping at Klawatti Col after crossing the Eldorado and Inspiration glaciers, a short rappel (30 m rope off a slung boulder) or mixed step through the notch onto the North Klawatti Glacier, then unroping and scrambling snow-covered talus and rock to the summit. This matches the row's own overview, approach, approach_variants and climbing_route; the Lucky Pass/Borealis Lake sentences belong to the East Slope.",
+ "sources": ["https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/", "https://onehikeaweek.com/2015/06/21/primus-peak/", "https://www.mountainproject.com/area/106583410/primus-peak"],
+ "patches": [
+  {"id": "wa_primus_peak_south_ridge", "fact": "beta describes a different route (East Slope) than this one", "op": "replace_text", "column": "beta", "path": [], "find": "The standard line (also called the 'East Slope') is 3rd class, with class 2-3 scrambling and moderate snow once above Lucky Pass. Most parties treat it as a 3-day trip with a high camp above Borealis Lake.", "replace": "From this side the summit itself is class 2-3 snow and talus above the North Klawatti Glacier, reached after a short rock step at the McAllister-Klawatti notch. Most parties treat it as a 3-4 day trip with a high camp near Klawatti Col."}
+ ]},
+{"id": "wa_primus_peak_south_ridge", "fact": "pitch_detail describes a different route (East Slope) than this one", "verdict": "fixed",
+ "correct_value": "Route breakdown for the Eldorado Creek / Klawatti Col / North Klawatti Glacier line",
+ "evidence": "Same two Eldorado-side reports as for beta: Eldorado and Inspiration glaciers to a Klawatti Col camp, a short rappel through the McAllister-Klawatti notch, the heavily crevassed North Klawatti Glacier to the west/south ridge of Primus, then a talus scramble to the top. The replacement breakdown is built from the row's own approach/climbing_route text, which these sources confirm; the old entries were the East Slope's Thunder Creek/Lucky Ridge/Lucky Pass line. The false-summit note is kept from the old last entry because it concerns the summit ridge.",
+ "sources": ["https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/", "https://onehikeaweek.com/2015/06/21/primus-peak/"],
+ "patches": [
+  {"id": "wa_primus_peak_south_ridge", "fact": "pitch_detail describes a different route (East Slope) than this one", "op": "set", "column": "pitch_detail", "path": [],
+   "expect": [
+    {"grade": "Trail", "notes": "~6 mi, ~600 ft gain on the Thunder Creek Trail from Colonial Creek Campground; ford Thunder Creek near a logjam.", "pitch": "Trailhead to McAllister Camp"},
+    {"grade": "Class 2-3 off-trail", "notes": "~4 mi, ~4,000 ft gain up forested Lucky Ridge (below Tricouni Peak) through brush and devil's club, with two short cliff-band scrambles (~2,300 ft and ~4,250 ft), to a bivy above Borealis Lake (~6,000-6,700 ft).", "pitch": "McAllister Camp to high camp"},
+    {"grade": "Glacier travel, roped", "notes": "From ~6,700-7,000 ft, rope up and cross the glacier, staying right/east of a central icefall, to the Primus-Tricouni col ('Lucky Pass,' ~7,200 ft).", "pitch": "Borealis Glacier crossing"},
+    {"grade": "Class 2-3", "notes": "Scramble/steep snow up the east ridge/slopes, traversing climber's-left around a false summit (~8,270 ft), to the 8,508 ft true summit.", "pitch": "Lucky Pass to summit"}
+   ],
+   "value": [
+    {"grade": "Climbers' path", "notes": "From the Eldorado Creek trailhead (~2,100 ft), cross the Cascade River and climb the steep path through timber and the boulder field near 4,000 ft into Eldorado Basin and on to the toe of the Eldorado Glacier.", "pitch": "Trailhead to Eldorado camp"},
+    {"grade": "Glacier travel, roped", "notes": "Cross the Eldorado and Inspiration Glaciers, weaving through crevasses, to a camp near Klawatti Col (~7,800 ft).", "pitch": "Eldorado camp to Klawatti Col"},
+    {"grade": "Short rock step (~50 ft)", "notes": "Downclimb or make a short rappel through the notch at the McAllister-Klawatti col onto the North Klawatti Glacier.", "pitch": "McAllister-Klawatti notch"},
+    {"grade": "Glacier travel, roped", "notes": "Traverse east and north across the crevassed North Klawatti Glacier, probing for hidden cracks, to the base of Primus's south/west ridge.", "pitch": "North Klawatti Glacier"},
+    {"grade": "Class 2-3", "notes": "Unrope and scramble snow-covered talus, passing a false summit near 8,270 ft on climber's left, to the 8,508 ft summit.", "pitch": "Summit scramble"}
+   ]}
+ ]},
+{"id": "wa_primus_peak_south_ridge", "fact": "Primary trailhead and one-way distance", "verdict": "unresolved",
+ "correct_value": "Eldorado Creek climbers' trailhead on Cascade River Road (~2,100 ft)",
+ "evidence": "Research confirms this route starts at the Eldorado Creek trailhead (two independent Eldorado-side reports). But the fix requires MOVING pins: waypoints[0] and approach_logistics.trailheadLat/Lng hold Thunder Creek coordinates, and renaming them while the coordinates stay at Colonial Creek would put an Eldorado label on a Thunder Creek pin; the summit waypoint's distMi (11.5) and note are also measured from/describe Thunder Creek. approach_logistics.trailhead/trailheadDirection (which say it is NOT the Eldorado trailhead) must be rewritten together with the pin move. Left for pin work, no patch.",
+ "sources": ["https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/", "https://onehikeaweek.com/2015/06/21/primus-peak/"], "patches": []},
+{"id": "wa_primus_peak_south_ridge", "fact": "turnaround and comms describe the Thunder Creek approach, not this route", "discovered": true, "verdict": "fixed",
+ "correct_value": "Turnaround and cell-coverage text for the Eldorado/Klawatti Col approach",
+ "evidence": "turnaround speaks of a 9-10 mile approach ending in a creek ford, re-crossing Thunder Creek and descending Lucky Ridge; comms names the Thunder Creek valley and Borealis Glacier. The route, confirmed by the two Eldorado-side reports, never enters Thunder Creek: its summit day runs from a Klawatti Col camp through the McAllister-Klawatti notch and across the North Klawatti Glacier and back.",
+ "sources": ["https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/", "https://onehikeaweek.com/2015/06/21/primus-peak/"],
+ "patches": [
+  {"id": "wa_primus_peak_south_ridge", "fact": "turnaround and comms describe the Thunder Creek approach, not this route", "op": "set", "column": "turnaround", "path": [],
+   "expect": "Because the approach is roughly 9-10 miles one-way with substantial elevation gain and ends in a creek ford that grows more hazardous later in the day as snowmelt increases flow, parties should set a firm summit turnaround time that leaves enough daylight and margin to re-cross Thunder Creek and descend Lucky Ridge before dark.",
+   "value": "The summit day runs from a camp near Klawatti Col through the McAllister-Klawatti notch and across the crevassed North Klawatti Glacier, and all of it has to be reversed. Set a firm summit turnaround that gets the party back across the glacier before the afternoon softens its snow bridges, and back up the notch to camp with daylight to spare."},
+  {"id": "wa_primus_peak_south_ridge", "fact": "turnaround and comms describe the Thunder Creek approach, not this route", "op": "replace_text", "column": "comms", "path": [], "find": "in the Thunder Creek valley or on the Borealis Glacier/Primus massif", "replace": "on the Eldorado, Inspiration and North Klawatti glaciers or the Primus massif"}
+ ]},
+{"id": "wa_primus_peak_south_ridge", "fact": "One-way distance: approach says 18-20 miles one way; itinerary totals about 20 miles round trip", "discovered": true, "verdict": "unresolved",
+ "correct_value": null,
+ "evidence": "approach states 'Total one-way distance from trailhead to summit is on the order of 18-20 miles', but the itinerary (7 + 3.5 + ~1.5 mi to the summit) and its totalNote ('roughly 20 miles round trip') imply ~10-12 miles one way, and dist_km is 15.3 km (~9.5 mi). The Eldorado-side reports found give no mileage, so no two sources settle the figure; left unpatched.",
+ "sources": ["https://www.countryhighpoints.com/eldorado-primus-and-austera-peaks/", "https://www.countryhighpoints.com/primus-austera-eldorado-peaks/"], "patches": []},
+{"id": "wa_north_ridge_4", "fact": "Whether the North Ridge is reached via Lucky Pass", "verdict": "fixed",
+ "correct_value": "From the Borealis Glacier bivy, go around the glacial lake and across a short stretch of glacier to the foot of the North Ridge; Lucky Pass is only on the descent",
+ "evidence": "The first-ascent account reached the ridge from an unnamed glacier north of Primus via a couloir off the North Klawatti side, not via Lucky Pass. A September 2012 party went east around Borealis Lake from camp to the north ridge crest, and a 2016 party climbed from the glacier base up the north ridge and descended the standard route to the Primus-Tricouni saddle. All agree Lucky Pass is the descent, not the way onto the ridge.",
+ "sources": ["http://publications.americanalpineclub.org/articles/12198716702/North-America-United-States-Washington-Cascades-Travel-in-the-Austera-Peak-Region-and-Primus-Peak-North-Ridge", "https://www.lemkeclimbs.com/primus-peak-attempt.html", "http://drdirtbag.com/2016/07/24/primus/"],
+ "patches": [
+  {"id": "wa_north_ridge_4", "fact": "Whether the North Ridge is reached via Lucky Pass", "op": "set", "column": "waypoints", "path": [1, "note"],
+   "expect": "Via McAllister Camp (~6 mi in), then the ridge below Tricouni Peak to the Borealis Glacier and Lucky Pass (7,200 ft) col, finishing up Primus's ridge.",
+   "value": "Via McAllister Camp (~6 mi in) and Lucky Ridge to the bivy at the toe of the Borealis Glacier, then around the glacial lake and across a short stretch of glacier to the foot of the North Ridge. The usual descent is the East Ridge to Lucky Pass (7,200 ft) and down the Borealis Glacier."}
+ ]},
+{"id": "wa_north_ridge_4", "fact": "Round-trip distance", "verdict": "fixed",
+ "correct_value": "dist_km 17.7 (~11 mi one way, matching the row's own summit waypoint distMi 11)",
+ "evidence": "dist_km is the one-way figure, so the itinerary round-trip sum is not the comparison; but 11.3 km (~7 mi) is shorter than the ~8 mi to Tricouni Camp where the route LEAVES the trail. One report gives 6 mi of trail to McAllister Camp plus ~2 mi of climbers' trail to the glacier base before the summit push; another gives ~10 mi to high camp plus ~2.7 mi to the summit; both put the one-way distance at 10-12+ mi. 11.3 equals the East Slope's summit distance in MILES, so the stored value appears to be miles written as km. Set to the row's own 11 mi summit waypoint.",
+ "sources": ["http://drdirtbag.com/2016/07/24/primus/", "https://journeywithjoshua.com/trip-reports/primus-peak-borealis-glacier/", "https://www.mountainproject.com/area/106583410/primus-peak"],
+ "patches": [
+  {"id": "wa_north_ridge_4", "fact": "Round-trip distance", "op": "set", "column": "dist_km", "path": [], "expect": 11.3, "value": 17.7}
+ ]},
+{"id": "wa_north_ridge_4", "fact": "First-ascent year of the North Ridge (overview/fa 1986 vs beta 1987)", "discovered": true, "verdict": "fixed",
+ "correct_value": "September 7, 1986",
+ "evidence": "The first-ascent note appears in the 1987 American Alpine Journal (which reports the previous season's climbs), dated only 'September 7'; the peak's route summary on SummitPost gives the North Ridge climb as 1986. The row's fa and overview both say 1986; beta's '1987' is the publication year taken for the climb year.",
+ "sources": ["http://publications.americanalpineclub.org/articles/12198716702/North-America-United-States-Washington-Cascades-Travel-in-the-Austera-Peak-Region-and-Primus-Peak-North-Ridge", "https://www.summitpost.org/primus-peak/152519"],
+ "patches": [
+  {"id": "wa_north_ridge_4", "fact": "First-ascent year of the North Ridge (overview/fa 1986 vs beta 1987)", "op": "replace_text", "column": "beta", "path": [], "find": "on September 7, 1987", "replace": "on September 7, 1986"}
+ ]},
+{"id": "wa_sahale_mountain_sahale_glacier", "fact": "whether the summit-block rappel is required or optional", "verdict": "fixed",
+ "correct_value": "A rappel off the south side is the usual descent, but downclimbing (often belayed) is an option",
+ "evidence": "One route description calls a ~100 ft rappel off the south side the most common descent while noting some parties downclimb the southeast side of the block; one party belayed each other down the crux and downclimbed the rest; another report downclimbed the 4th-class finish with no rappel. The rappel is customary but not required, so descent_text's 'requires a rappel rather than a downclimb' is the outlier.",
+ "sources": ["https://www.theoutbound.com/washington/rock-climbing/climb-sahale-peak-via-the-south-slope-route", "https://climberkyle.com/2016/07/24/sahale-peak/", "https://stephabegg.com/trip-reports/washington/sahale/"],
+ "patches": [
+  {"id": "wa_sahale_mountain_sahale_glacier", "fact": "whether the summit-block rappel is required or optional", "op": "replace_text", "column": "descent_text", "path": [], "find": "Getting off the summit block itself, however, requires a rappel rather than a downclimb.", "replace": "Getting off the summit block itself is usually done by rappel, though some parties downclimb it instead, often with a belay through the crux."}
+ ]},
+{"id": "wa_sahale_mountain_r1", "fact": "hardest technical grade of the summit block", "verdict": "unresolved",
+ "correct_value": null,
+ "evidence": "Sources genuinely split on the same summit block: one route guide rates it 5.0 with a couple of 5.4 moves and another report calls the crux a low-fifth move or two, while others call it 4th class or 'class 3 and a few class 4 moves'. With no two sources agreeing on one grade, rock_grade (4th class) vs grade (Class 3-4/5.0-5.4) is left unpatched.",
+ "sources": ["https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier", "https://www.shane.st/trip-reports/sahale/", "https://stephabegg.com/trip-reports/washington/sahale/", "https://www.theoutbound.com/washington/rock-climbing/climb-sahale-peak-via-the-south-slope-route"], "patches": []},
+{"id": "wa_sahale_mountain_r1", "fact": "wilderness zone / camp contaminated from the wrong route", "verdict": "fixed",
+ "correct_value": "Boston Basin cross-country zone; camping only at Low Camp (~5,300 ft) and High Camp (~6,400 ft)",
+ "evidence": "Boston Basin is its own cross-country zone among the park's reservable zones (with Eldorado and Sulphide), and camping there is limited to two designated sites, low camp ~5,300 ft and high camp ~6,400 ft; the row's own access.rules already says so. Sahale Glacier Camp is on the Cascade Pass/Sahale Arm side and not on this route. These fields do not render on the route page, so this is low priority; bivy entries untouched.",
+ "sources": ["https://www.nps.gov/noca/planyourvisit/cross-country-zones.htm", "https://www.summitpost.org/boston-basin/243271"],
+ "patches": [
+  {"id": "wa_sahale_mountain_r1", "fact": "wilderness zone / camp contaminated from the wrong route", "op": "set", "column": "access", "path": ["permitZone"], "expect": "North Cascades National Park (Cascade Pass area)", "value": "North Cascades National Park (Boston Basin cross-country zone)"},
+  {"id": "wa_sahale_mountain_r1", "fact": "wilderness zone / camp contaminated from the wrong route", "op": "set", "column": "access", "path": ["_raw", "wilderness_zone"], "expect": "North Cascades National Park (Cascade Pass area)", "value": "North Cascades National Park (Boston Basin cross-country zone)"},
+  {"id": "wa_sahale_mountain_r1", "fact": "wilderness zone / camp contaminated from the wrong route", "op": "set", "column": "access", "path": ["_raw", "altitude_restrictions"], "expect": "Sahale Glacier Camp at 7,600 feet (one of highest elevation campsites in park)", "value": "Boston Basin camping only at the two designated sites: Low Camp (~5,300 ft) and High Camp (~6,400 ft)"}
+ ]},
+{"id": "wa_sahale_mountain_r1", "fact": "camping fee amount", "verdict": "fixed",
+ "correct_value": "$10 per person plus a $6 non-refundable reservation fee (mid-May to early October); youth 15 and under free",
+ "evidence": "The park's fee page and its 2024 fee-structure release give summer-season backcountry permits at $10 per person plus a $6 non-refundable fee, youth 15 and under free, charged mid-May through early October; a park-support foundation's permit guide agrees. An overnight in Boston Basin needs that permit, so 'None beyond the parking fee' is wrong.",
+ "sources": ["https://www.nps.gov/noca/planyourvisit/fees.htm", "https://www.nps.gov/noca/learn/news/backcountry-permit-fee-structure-change.htm", "https://wnpf.org/2025/01/10/backcountry-beginners-how-to-secure-a-north-cascades-backcountry-permit/"],
+ "patches": [
+  {"id": "wa_sahale_mountain_r1", "fact": "camping fee amount", "op": "set", "column": "access", "path": ["fees"], "expect": "None beyond the parking or entrance fee this route already lists.", "value": "$10 per person plus a $6 non-refundable reservation fee for an overnight backcountry permit, mid-May through early October (no fee the rest of the year); youth 15 and under free."}
+ ]}
+]}

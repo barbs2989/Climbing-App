@@ -1,0 +1,315 @@
+{
+ "applied": [
+  {
+   "id": "wa_buckner_mountain_southwest_face",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Hike-out distance: descent_text (9.6 mi) vs itinerary day 3 (5.5 mi) and the waypoint chain (5.9 mi one-way)"
+  },
+  {
+   "id": "wa_buckner_mountain_southwest_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "miles"
+   ],
+   "fact": "Hike-out distance: descent_text (9.6 mi) vs itinerary day 3 (5.5 mi) and the waypoint chain (5.9 mi one-way)"
+  },
+  {
+   "id": "wa_buckner_mountain_southwest_face",
+   "column": "itinerary",
+   "path": [
+    "days",
+    2,
+    "miles"
+   ],
+   "fact": "Hike-out distance: descent_text (9.6 mi) vs itinerary day 3 (5.5 mi) and the waypoint chain (5.9 mi one-way)"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Starting trailhead: approach/approach_variants/itinerary/timing all say Boston Basin Trailhead, but approach_logistics and the entire waypoint chain document the Cascade Pass Trailhead / Sahale Arm approach instead"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Starting trailhead: approach/approach_variants/itinerary/timing all say Boston Basin Trailhead, but approach_logistics and the entire waypoint chain document the Cascade Pass Trailhead / Sahale Arm approach instead"
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "column": "gear",
+   "path": [
+    4
+   ],
+   "fact": "Northwest Forest Pass requirement at Pyramid Lake trailhead"
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "column": "waypoints",
+   "path": [
+    0,
+    "directions"
+   ],
+   "fact": "Northwest Forest Pass requirement at Pyramid Lake trailhead"
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "column": "approach",
+   "path": [],
+   "fact": "Northwest Forest Pass requirement at Pyramid Lake trailhead"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_buckner_mountain_southwest_face",
+   "before": {
+    "descent_text": "Descend the same southwest-slopes line used on ascent — this is a walk-off/downclimb route with no rappelling required (rappels: 0). From the summit, downclimb the scree/rubble and re-descend the cowskull snowfield and chute on the fall line to about 7,200 ft; steep snow here is typically managed by facing in and plunge-stepping or downclimbing with an ice-axe self-belay, and less experienced parties often protect it with a running belay on pickets. Continue down and traverse right to re-cross Horseshoe Basin on the broad ledge system at 6,200-6,400 ft (passing back near Davenport Mine), then ascend a short ~100 ft snow finger to regain the rounded ridge above the toe of Sahale's south ridge. From there, scramble back up the class 3 step and class 1-2 south ridge to Sahale Glacier Camp, and descend the Sahale Arm/Cascade Pass Trail 9.6 miles back to the Cascade Pass Trailhead. The main descent hazards are loose scree/rubble near the summit and sustained steep snow on the cowskull section (self-arrest skill required); no technical rope work is needed in normal summer conditions.",
+    "itinerary": {
+     "cal": "Best conditions are July-September once avalanche danger has passed; more snow coverage on the Horseshoe Basin traverse and SW chute (earlier in the season) is reported as easier than late-season loose talus/scree.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Hike from the Cascade Pass trailhead over Cascade Pass and up the Sahale Arm to the popular Sahale Glacier Camp (~7,600 ft), the standard base for Buckner's SW side. Trail is well-graded but the Arm's upper switchbacks and the final scramble to the designated camp are the steepest part.",
+       "hours": 5,
+       "miles": 5.5,
+       "title": "Backpack to Sahale Glacier Camp",
+       "gainFt": 4000,
+       "lossFt": 0,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Establish high camp below the SW approach"
+      },
+      {
+       "n": 2,
+       "note": "A long, mostly non-technical but exposed day: traverse south off Sahale past Doughboy into Horseshoe Basin (snow and loose talus), then climb the SW scree/snow chute to the south ridge near 8,800 ft for a short 3rd-class scramble to the top. This is regularly reported as a 12-14 hour round trip from camp; roped belays are common on the steeper descent snow.",
+       "hours": 13,
+       "miles": 7,
+       "title": "Summit push via Horseshoe Basin and the SW Face",
+       "gainFt": 3000,
+       "lossFt": 3000,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "7:15 AM",
+         "label": "Leave Sahale Glacier Camp",
+         "detail": "Head south toward Horseshoe Basin"
+        },
+        {
+         "time": "",
+         "label": "Traverse Horseshoe Basin",
+         "detail": "Mixed snow and loose talus/scree around 6,600-6,800 ft; better with more snow coverage early season"
+        },
+        {
+         "time": "",
+         "label": "Climb the SW chute to the south ridge",
+         "detail": "Gain the ridge near 8,800 ft; the 'cowskull'-shaped snow patch is a helpful landmark below the summit"
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Summit",
+         "detail": "Short 3rd-class scramble off the south ridge to 9,114 ft"
+        },
+        {
+         "time": "",
+         "label": "Descend the same line",
+         "detail": "Roped belays are common on the steeper snow sections"
+        },
+        {
+         "time": "after dark",
+         "label": "Back at camp",
+         "detail": "Full round trip commonly runs 12-14 hours"
+        }
+       ],
+       "objective": "Reach the 9,114 ft summit and return to camp"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and reverse the Sahale Arm / Cascade Pass trail back to the car — mostly downhill and straightforward after the summit day.",
+       "hours": 3.5,
+       "miles": 5.5,
+       "title": "Hike out",
+       "gainFt": 0,
+       "lossFt": 4000,
+       "packLb": 35,
+       "schedule": [],
+       "objective": "Return to the Cascade Pass trailhead"
+      }
+     ],
+     "totalNote": "A standard 3-day trip (~18-20 mi round trip, ~7,400 ft total gain): backpack in to Sahale Glacier Camp, a very long 12-14 hour summit day through Horseshoe Basin and the SW chute, then hike out; a few exceptionally fit parties have pushed it car-to-car in one very long day, but that is not the norm."
+    }
+   }
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.4754,
+      "lng": -121.0751,
+      "elev": 3600,
+      "name": "Cascade Pass Trailhead",
+      "note": "End of Cascade River Road (FR-15); self-issue wilderness permit required for overnight camping.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Cascade River Road (FR-15) runs east from Marblemount to the road-end loop, a couple of miles past the Boston Basin trailhead at mile 21.7 that this route's alternate approach uses. The upper road is narrow gravel and holds snow into early summer."
+     },
+     {
+      "lat": 48.4683,
+      "lng": -121.06,
+      "elev": 5392,
+      "name": "Cascade Pass",
+      "note": "Leave the PCT/Stehekin trail and climb the Sahale Arm climbers' path north toward Sahale Glacier Camp.",
+      "type": "Junction",
+      "distMi": 3.7,
+      "directions": "From the road-end loop the maintained trail switchbacks up through forest, roughly three dozen short zigzags for about 1,500 ft in the first two miles, then breaks out of the trees and contours east across open slopes to the pass at 3.7 miles. Graded and obvious the whole way."
+     },
+     {
+      "lat": 48.4892,
+      "lng": -121.0465,
+      "elev": 7600,
+      "name": "Sahale Glacier Camp",
+      "note": "High camp used as the base for the north-side approach; permit required, exposed site with no reliable shelter from weather.",
+      "type": "Campsite",
+      "distMi": 5.9,
+      "directions": "Turn north (left) at the pass onto the Sahale Arm path, which switchbacks steeply out of the pass at first. About 0.8 mile up, a signed split sends the right-hand branch down to Doubtful Lake; stay left. Above that the path follows the crest of the arm and steepens near the top, where the tread fades into moraine boulders marked by cairns. Roughly 2.2 miles from the pass."
+     },
+     {
+      "lat": 48.4935,
+      "lng": -121.04,
+      "elev": 8200,
+      "name": "Sahale-Boston col",
+      "note": "Skirt the top of Sahale and cross this saddle (a small 2-person bivy exists here) onto exposed third-class choss en route toward Boston Peak.",
+      "type": "Junction",
+      "distMi": 7,
+      "directions": "Rope up and work up the Sahale Glacier toward the summit pyramid, bearing right onto the gentlest part of the upper slope, then climb over or skirt the summit block and drop down the far side to the saddle. This is where the Boston Basin variant joins, having come up the Quien Sabe Glacier from high camp."
+     },
+     {
+      "lat": 48.471253,
+      "lng": -121.060763,
+      "elev": 7900,
+      "name": "Boston Glacier crossing",
+      "note": "Rope up here — the upper Boston Glacier is described by climbers as viciously crevassed with cracks scattered randomly across the ice.",
+      "type": "Hazard",
+      "distMi": 7.6,
+      "directions": "Follow the loose ridge crest toward Boston Peak over a series of rock humps until an easy ledge system breaks off the ridge and leads down to the ice. Below the ledges is steep snow — take it down in the direction of Buckner rather than continuing along the ridge toward Boston."
+     },
+     {
+      "lat": 48.477583,
+      "lng": -121.067672,
+      "elev": 7900,
+      "name": "North Face bergschrund",
+      "note": "Work left around the bergschrund/moat at the base of the face, then back right to the center of the lower face before starting the ~1,300 ft of 40-50 degree snow and ice.",
+      "type": "Hazard",
+      "distMi": 8,
+      "directions": "Hold a high line across the glacier straight toward the base of the north face rather than losing height into the middle of the basin. Nearer the face, zig-zag around the large crevasses at its toe; getting past the 'schrund itself often takes some scrambling on rock at the edge of the ice. Parties who want a shorter summit day bivy on the glacier around 7,800 ft."
+     },
+     {
+      "lat": 48.4951,
+      "lng": -120.9979,
+      "elev": 9114,
+      "name": "Buckner Mountain (southwest summit)",
+      "note": "Face climb tops out on the summit ridge just below the true summit; upper rock cliffs force a rising traverse leftward to finish.",
+      "type": "Summit",
+      "distMi": 8.6,
+      "directions": "About 1,300 ft of 40-50 degree snow and ice, typically 8-13 pitches and mostly belayed, though strong parties solo it when the face is in good nick. Climb straight up the centre of the lower face until the upper cliffs cut it off, then take several pitches of rising traverse leftward. Within roughly 200 ft of the top, go left around a craggy outcrop at the end of those cliffs before cutting back right to finish. The face is wind-scoured in places and conditions swing between hard scoured ice and moderate powder, so judge it before committing to climbing unroped."
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_colonial_peak_west_ridge",
+   "before": {
+    "gear": [
+     "Ice axe and crampons for the glacier approach and the snow finger below the summit ridge",
+     "Rope and 2-3 pickets for the Colonial Glacier crossing — crevasses open by mid-summer",
+     "Helmet for the rock ridge finish",
+     "Sturdy boots; the last stretch to the summit is exposed 3rd/4th-class scrambling on rock, not technical climbing — no rack needed",
+     "Northwest Forest Pass, plus a backcountry camping permit if overnighting near Pyramid Lake/Colonial Glacier"
+    ],
+    "waypoints": [
+     {
+      "lat": 48.70978,
+      "lng": -121.14513,
+      "elev": 1100,
+      "name": "Pyramid Lake Trailhead",
+      "note": "Small pullout on SR 20 ~6.4 mi east of Newhalem (near milepost 127); cross the highway on foot to pick up the signed trail on the far side of Pyramid Creek.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "The trailhead is a small pullout on SR-20 about 6.4 miles east of Newhalem near milepost 127, with room for roughly six cars. Park on the highway side and cross the road on foot to reach the signed trail. A Northwest Forest Pass covers the parking and an NPS backcountry permit from Marblemount is needed to camp; SR-20 is closed through the winter and normally reopens in April or May, which sets the earliest possible attempt."
+     },
+     {
+      "lat": 48.69482,
+      "lng": -121.12321,
+      "elev": 2600,
+      "name": "Pyramid Lake",
+      "note": "Small tarn reached after the trail's steady 1,500 ft climb; last reliable water before the climb — refill here, then pick up the unmaintained climbers' path around its right (west) side.",
+      "type": "Water",
+      "distMi": 2.1,
+      "directions": "Maintained trail the whole way, but steady and unrelenting — about 1,500 to 1,600 ft of gain in a little over two miles through second-growth and old-growth forest. The maintained tread ends at the lake; everything above it is climbers' path and off-trail travel, so this is the last easy walking of the trip."
+     },
+     {
+      "lat": 48.67913657142857,
+      "lng": -121.12995596825397,
+      "elev": 5800,
+      "name": "Notch below Pyramid Peak",
+      "note": "Steep, often-sloppy-when-wet climbers' trail tops out at this notch on Pyramid Peak's east ridge; mark the spot where the lake-trail/ridge-trail junction is on the way up, it's easy to miss on the descent.",
+      "type": "Junction",
+      "distMi": 4,
+      "directions": "Pick up the boot path around the right (east/north) side of the lake and keep climbing through brush, heather and talus, roughly another 2,000 ft onto the crest of Pyramid Ridge. It is steep and turns slick when wet. Seasonal ponds and puddles near 4,500 ft and up on the ridge are the last water before the glacier, and they are reported dry by late summer in low-snow years."
+     },
+     {
+      "lat": 48.66203,
+      "lng": -121.13904,
+      "elev": 6100,
+      "name": "Basin camp below Colonial Glacier",
+      "note": "Flat, sheltered spot at the toe of the Colonial Glacier reached via scree/boulder traverse from the Pyramid Peak ridge; standard high camp before roping up for the glacier.",
+      "type": "Campsite",
+      "distMi": 5.6,
+      "directions": "Follow the climbers' path along the ridge crest over several knolls toward the base of Pyramid Peak — the knoll around 5,400-5,500 ft is the customary bivy for parties stopping short of the glacier. Then drop and traverse a mix of scree and boulder-hopping beneath Pyramid's crumbly north face to reach the flat basin at the toe of the glacier. That traverse is loose underfoot and exposed to rockfall from the face above; it is the main approach-specific hazard on the route."
+     },
+     {
+      "lat": 48.66458094285714,
+      "lng": -121.1227483031746,
+      "elev": 6600,
+      "name": "Colonial Glacier crevasse zone",
+      "note": "Rope up here — the glacier has open crevasses in its lower-to-mid section that widen through the summer melt season (climb window is roughly Jul-Sep).",
+      "type": "Hazard",
+      "distMi": 5.9,
+      "directions": "Rope up in the basin before stepping onto the ice. Crevasses here are usually well bridged under seasonal snow, but they are present, and the bridges weaken as the day warms — time the crossing for firm early-morning or evening snow rather than midday."
+     },
+     {
+      "lat": 48.66304877142857,
+      "lng": -121.1219896015873,
+      "elev": 7100,
+      "name": "Colonial-Snowfield col",
+      "note": "Gain the col at the head of the glacier, then leave the ice for a loose gully leading up onto the West Ridge — watch for rockfall from parties above in the gully.",
+      "type": "Junction",
+      "distMi": 6.1,
+      "directions": "Ascend the glacier, trending southeast and then east across its upper section toward the col at its head. Cornices build along this traverse and are invisible from the basin below, so give the edge a wide margin and do not navigate it by the line you saw from camp."
+     },
+     {
+      "lat": 48.66147,
+      "lng": -121.12207,
+      "elev": 7771,
+      "name": "Colonial Peak",
+      "note": "Class 3-4 rock scramble up the West Ridge gains the summit horn, which rises directly above Diablo Lake's Thunder Arm with over 6,500 ft of relief in under 3 miles.",
+      "type": "Summit",
+      "distMi": 6.3,
+      "directions": "Leave the ice at the col for the loose gully that breaks through onto the West Ridge, then follow the ridge on Class 3-4 rock with short low-fifth steps to the summit horn. Rock is loose throughout and the exposure is real; a party above you is the rockfall hazard here. A sling-and-horn rappel station sits on the steepest step, used for a short single-rope rappel by some and downclimbed by others — it is not bolted, and there is no other fixed anchor on the route."
+     }
+    ],
+    "approach": "Start at the signed Pyramid Lake Trailhead on SR 20 (small pullout on the north side of the highway, ~21 miles east of Marblemount and just past the Diablo turnoff, elev. ~1,150 ft; Northwest Forest Pass to park, NPS backcountry permit if camping). Follow the maintained Pyramid Lake Trail — a well-used boot path through second-growth and old-growth forest — which climbs a steady, unrelenting ~1,500-1,600 ft over about 2.1-2.3 miles to Pyramid Lake (~2,600 ft). This maintained-trail portion ends at the lake; everything above is climbers'-trail/off-trail travel. Pick up the boot path around the right (east/north) side of the lake and continue climbing, now through brush, heather, and talus, gaining roughly 2,000 more feet up onto the crest of Pyramid Ridge. A knoll around 5,400-5,500 ft on this ridge is the customary high camp/bivy — seasonal ponds and puddles here and near ~4,500 ft (reported dry by late summer in low-snow years) are the last reliable water before the glacier. From the ridge crest, follow the climbers' path along the ridge over several knolls toward the base of Pyramid Peak, then drop and traverse a mix of scree and boulder-hop terrain beneath Pyramid's crumbly north face to reach the flat 6,100 ft basin at the toe of the Colonial Glacier — this traverse is loose underfoot and exposed to rockfall from above, and is the route's main approach-specific hazard. From the glacier-toe basin, rope up for glacier travel and ascend the Colonial Glacier, trending southeast/east across the upper glacier (crevasses are usually well-bridged under seasonal snow but are present and have been reported as a hazard, along with cornices along the traverse toward the Colonial-Snowfield col that are invisible from camp below) to reach the Colonial-Snowfield col or the base of the historic Northeast Gully. From the col, leave the ice for a loose gully leading up onto the West Ridge, which is then followed via Class 3-4 rock scrambling to the summit horn. Total car-to-summit distance runs roughly 10-14 miles round trip (parties differ depending on camp placement) with the ~6,600 ft of gain split roughly evenly between the maintained trail, the ridge/scree traverse, and the glacier-to-summit push."
+   }
+  }
+ ]
+}

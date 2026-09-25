@@ -1,0 +1,408 @@
+{
+ "file": "r077.json",
+ "results": [
+  {
+   "id": "wa_mount_custer_standard",
+   "fact": "Bivy list includes camps reached by an unrelated trailhead (Hannegan Pass)",
+   "verdict": "bivy_zone_list",
+   "correct_value": null,
+   "evidence": "Regional camp list copied across Chilliwack-area routes. Only 'Ouzel Lake basin, head of Depot Creek' serves this Depot Creek approach (matches the route's own approach prose to Lake Ouzel ~5,700 ft). Hannegan Camp, Boundary Camp, Copper Lake Camp, US Cabin Camp and the Bear Mountain saddle basin are Hannegan Pass trailhead camps and do not serve this route. Left for the catalog-wide bivy class.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "Which drainage/trailhead the descent ends at",
+   "verdict": "fixed",
+   "correct_value": "Descent is the Southwest Couloir (Black Tooth Notch) into the Park Creek drainage, then a long trail hike-out (~20 mi) back to the car; not back down North Fork Bridge Creek.",
+   "evidence": "The AAC report of the first ascent says the party bivied on the summit and next day descended to Park Creek and hiked back to their car. The Alpinist newswire says they took the standard descent via Black Tooth Notch and the southwest gully and endured twenty miles of trail before reaching the car. Both agree with descent_text and rappel_detail; the short descent field and the itinerary/timing hike-out lines were wrong.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+    "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "descent",
+     "path": [],
+     "find": "toward the approach side.",
+     "replace": "into the Park Creek drainage, on the far side of the mountain from the approach."
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "note"
+     ],
+     "find": "toward the Bridge Creek drainage rather than",
+     "replace": "into the Park Creek drainage rather than"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "title"
+     ],
+     "find": "Descend toward Bridge Creek",
+     "replace": "Descend toward Park Creek"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      3,
+      "note"
+     ],
+     "find": "Finish down North Fork Bridge Creek and the PCT back to Highway 20.",
+     "replace": "Hike out the Park Creek Trail, then walk back up Bridge Creek on the PCT to the car on Highway 20 (or meet a pre-arranged shuttle)."
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "note"
+     ],
+     "find": "toward the Bridge Creek drainage rather than",
+     "replace": "into the Park Creek drainage rather than"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      2,
+      "fromTo"
+     ],
+     "find": "Descend toward Bridge Creek",
+     "replace": "Descend toward Park Creek"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Which drainage/trailhead the descent ends at",
+     "op": "replace_text",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      3,
+      "note"
+     ],
+     "find": "Finish down North Fork Bridge Creek and the PCT back to Highway 20.",
+     "replace": "Hike out the Park Creek Trail, then walk back up Bridge Creek on the PCT to the car on Highway 20 (or meet a pre-arranged shuttle)."
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "Round-trip distance",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km is the one-way approach (18 km = 11.2 mi), which matches the approach prose (~12 mi) and the first-ascent approach of 9 mi on the PCT plus 2 mi up North Fork Bridge Creek; the itinerary's 35 mi is the full round trip including the Park Creek hike-out. Different quantities, not a conflict.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "Glacier/crevasse exposure on approach",
+   "verdict": "fixed",
+   "correct_value": "No glacier crossing on the approach to the ridge toe; glacier contact (skirting high glacial ice and an icy moat atop/near the Goode Glacier) occurs high on the route near the Southeast Peak.",
+   "evidence": "The AAC report says the party left the North Fork Bridge Creek trail at a clearing and climbed to the toe of the northeast arete, and met an icy moat near the Southeast Peak above the Goode Glacier. Alpinist says after bivying on the ridge they scouted a path around the high glacial ice and climbed through a moat atop the Goode Glacier. So obj_haz 'on approach' and the day-2 'across the glacier' line were wrong, and seasonal_hazards' flat denial of any glacier contact was also wrong.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+    "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
+   ],
+   "patches": [
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Glacier/crevasse exposure on approach",
+     "op": "set",
+     "column": "obj_haz",
+     "path": [
+      5
+     ],
+     "expect": "glacier crevasse hazard on approach",
+     "value": "an icy moat and the edge of the upper Goode Glacier high on the route"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Glacier/crevasse exposure on approach",
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      0,
+      "detail"
+     ],
+     "find": "Approach the base of the ridge across the glacier.",
+     "replace": "Continue up the lower arete from the bivy; reaching the ridge needs no glacier crossing."
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Glacier/crevasse exposure on approach",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "find": "N/A - no glacier travel is documented for this ridge route; approach details near any glaciated terrain are not fully verified",
+     "replace": "Limited - the approach reaches the ridge through brush and rock without crossing the glacier, but high on the route the line skirts the upper Goode Glacier and passes an icy moat; carry ice axe and crampons"
+    },
+    {
+     "id": "wa_goode_mountain_megalodon_ridge",
+     "fact": "Glacier/crevasse exposure on approach",
+     "op": "replace_text",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "find": "non-glaciated summer rock ridge route",
+     "replace": "summer rock ridge route"
+    }
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "fact": "gain_ft 7,500 vs loss_ft 8,700 on a trip that returns to the same car; itinerary hike-out day shows 0 gain",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "The route returns to the car at Rainy Pass/Bridge Creek, so car-to-car gain and loss should be equal; the hike-out from the Stehekin valley up Bridge Creek regains well over 2,000 ft that the itinerary (day 4 gainFt 0) omits. No source gives a car-to-car gain figure for the Park Creek loop, so no numbers were changed.",
+   "sources": [
+    "https://alpinist.com/newswire/massive-ridge-climbed-in-north-cascades/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Primary approach trailhead (Easy Pass vs Thunder Creek)",
+   "verdict": "fixed",
+   "correct_value": "Two genuine approaches: Easy Pass (~10 mi one way, seasonal trailhead) and Thunder Creek/Fisher Creek from Colonial Creek (~13 mi one way, year-round). The APPROACH prose now names both, matching beta, access, itinerary and approach_variants.",
+   "evidence": "A single-day trip report compares the two: about 13 miles via Thunder Creek versus 10 miles via Easy Pass, and used Easy Pass. The Mountaineers route description gives the Thunder Creek Trail 9 miles to the Fisher Creek junction then ~3 miles to the lake outlet at 5,160 ft. A third report approached via Easy Pass to the basin camp. The trailhead card/waypoint (Thunder Creek) remain valid as one of the two options.",
+   "sources": [
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+    "https://www.alpinewanderlust.com/the-unexpected-mt-logan-banded-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Primary approach trailhead (Easy Pass vs Thunder Creek)",
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "to a lake camp near 5,160 ft below the Banded Glacier.",
+     "replace": "to a lake camp near 5,160 ft below the Banded Glacier. When SR-20 is open, the shorter way in (about 10 miles one way) starts at the Easy Pass Trailhead near milepost 151, crosses the 6,500-ft pass and drops into Fisher Basin, then follows the Fisher Creek trail down to the same lake outlet."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Trailhead direction text names the wrong place",
+   "verdict": "fixed",
+   "correct_value": "From the Thunder Creek trailhead at Colonial Creek Campground on SR-20 (~1,200 ft)",
+   "evidence": "The trailheadDirection was copied from a Mount Goode route (Rainy Pass). The Thunder Creek trail for this route starts at Colonial Creek Campground (Mountaineers route description; the Colonial Creek/Thunder Creek trailhead near 1,200 ft is also given in this row's approach_variants and waypoint), and the Easy Pass comparison report names the same Thunder Creek start.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/mt-logan-banded-glacier",
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Trailhead direction text names the wrong place",
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "From the PCT North trailhead parking at Rainy Pass on SR-20 (~4,860 ft)",
+     "value": "From the Thunder Creek trailhead at Colonial Creek Campground on SR-20 (~1,200 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Cumulative gain/loss for an out-and-back route",
+   "verdict": "fixed",
+   "correct_value": "~12,500 ft gain and ~12,500 ft loss car to car via Easy Pass (out and back)",
+   "evidence": "One report gives 29 mi and 12,500 ft gain for the Easy Pass out-and-back; another gives 35 mi and 13,000 ft, with ~4,600 ft of gain on the day to the lake camp. The row's own itinerary totalNote already says ~12,500 ft. Day splits were made consistent with the named elevations: trailhead 3,700 + 4,600 gain - 3,100 loss = lake camp ~5,160; the summit day (lake 5,160 to 9,087 plus the Christmas Tree Col drop onto the glacier) carries the remaining 4,800 ft; day 3 reverses day 1. The per-day split is derived, the total is sourced.",
+   "sources": [
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/",
+    "https://www.alpinewanderlust.com/the-unexpected-mt-logan-banded-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7027,
+     "value": 12500
+    },
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 13000,
+     "value": 12500
+    },
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "lossFt"
+     ],
+     "expect": 300,
+     "value": 3100
+    },
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "gainFt"
+     ],
+     "expect": 3200,
+     "value": 4800
+    },
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "lossFt"
+     ],
+     "expect": 3200,
+     "value": 4800
+    },
+    {
+     "id": "wa_mount_logan_r1",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "gainFt"
+     ],
+     "expect": 300,
+     "value": 3100
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Distance to the summit/lake camp",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "dist_km renders as the one-way approach: 19.3 km = 12.0 mi, which matches the itinerary's 12.5-mi approach day. The 14.51-mi waypoint is one-way to the summit and the 31 mi is the round trip; all are different quantities.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Easy Pass approach length: itinerary day 1 12.5 mi vs beta/access '~10 mi one-way via Easy Pass'",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": null,
+   "evidence": "One report says 10 mi each way via Easy Pass (29 mi round trip including the summit); another describes 11-13 mi on day 1 and 35 mi overall. Sources do not agree closely enough to pick one figure, so nothing was changed.",
+   "sources": [
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/",
+    "https://www.alpinewanderlust.com/the-unexpected-mt-logan-banded-glacier/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "fact": "Cumulative gain/loss for an out-and-back route",
+   "verdict": "fixed",
+   "correct_value": "~9,200 ft gain and ~9,200 ft loss (out and back from Easy Pass Trailhead)",
+   "evidence": "The route is out and back from the Easy Pass Trailhead (3,700 ft) over Easy Pass (~6,500-6,600 ft) to a Fisher Basin camp (~4,800 ft) and the 9,087-ft summit, so loss must equal gain and the minimum from those elevations is ~8,800 ft; the itinerary's symmetric 9,200 ft fits and both 7,000 gain and 1,500 loss do not. Trip reports confirm the Easy Pass Trailhead start at 3,700 ft and the return climbing ~3,000 ft back to Easy Pass before descending the same amount; the summit elevation 9,087 ft is the catalog's agreed figure.",
+   "sources": [
+    "https://trailcatjim.com/mt-logan-attempt-via-douglas-glacier-2022/",
+    "https://www.whereiskylemiller.com/highway-20/mount-logan-douglas-glacier/",
+    "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_logan_r2",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 7000,
+     "value": 9200
+    },
+    {
+     "id": "wa_mount_logan_r2",
+     "fact": "Cumulative gain/loss for an out-and-back route",
+     "op": "set",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 1500,
+     "value": 9200
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r2",
+   "fact": "Which approach/trailhead this route uses",
+   "verdict": "fixed",
+   "correct_value": "Easy Pass Trailhead, over Easy Pass into Fisher Basin, then up Douglas Creek",
+   "evidence": "Two independent trip reports for the Douglas Glacier route both start at the Easy Pass Trailhead on Highway 20, drop into Fisher Basin/Fisher Creek and head for the Douglas Glacier (one via the Douglas Creek bushwhack). Park Creek Pass belongs to the Fremont Glacier route; partner_requirements was copied from it.",
+   "sources": [
+    "https://trailcatjim.com/mt-logan-attempt-via-douglas-glacier-2022/",
+    "https://www.whereiskylemiller.com/highway-20/mount-logan-douglas-glacier/"
+   ],
+   "patches": [
+    {
+     "id": "wa_mount_logan_r2",
+     "fact": "Which approach/trailhead this route uses",
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "the same long, remote Thunder Creek / Park Creek Pass approach used by the other Logan routes",
+     "replace": "the long, remote approach over Easy Pass into Fisher Basin and the slow Douglas Creek brush"
+    }
+   ]
+  }
+ ]
+}
