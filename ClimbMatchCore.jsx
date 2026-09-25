@@ -2985,7 +2985,7 @@ function normEditStr(v){
    days. Sorting those would make two different routes compare equal, which is the opposite
    failure. check:consensus-clustering asserts this covers every `multi` field in the form, so a
    new chip field cannot quietly go back to being order-sensitive. */
-var SET_FIELDS={haz:1,objHaz:1,style:1,condWindow:1};
+var SET_FIELDS={haz:1,objHaz:1,condWindow:1};
 function _agreeJson(v){
   if(v===null||v===undefined)return "null";
   if(typeof v==="string")return JSON.stringify(normEditStr(v));
