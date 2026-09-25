@@ -84,8 +84,14 @@ const CASES = [
   // database a definer that can attest a government ID and the 10 points it is already scored at
   // become earnable, the partnerless ceiling rises to 64, and 55 stops being a finding. A guard
   // holding a hardcoded ceiling would still fail here and would be wrong to.
+  // A LATER SECTION PINS SERVER_TRUST_EARNABLE to the model's derived ceiling, and fails when a
+  // verification becomes earnable without the constant moving -- correctly, that is its job. This
+  // case was written before that pin and went red on it on main (2026-09-24): it modelled half the
+  // change. The whole change is the definer AND the constant moving to the ceiling it implies
+  // (84 + the 10 an ID pays = 94); with both, the thresholds must still come out right, silently.
   { name: "id-verification-becomes-earnable", file: SQL, expect: "pass",
-    why: "an ID-verification definer lifts the ceiling by itself, so a threshold that was unreachable becomes reachable",
+    why: "an ID-verification definer lifts the ceiling, and the constant moves with it — the derived thresholds follow by themselves",
+    also: { file: path.join(ROOT, "ClimbMatchCore.jsx"), from: "export var SERVER_TRUST_EARNABLE=84;", to: "export var SERVER_TRUST_EARNABLE=94;" },
     from: "grant execute on function compute_trust_score(uuid) to authenticated;",
     to: `grant execute on function compute_trust_score(uuid) to authenticated;
 create or replace function verify_my_id() returns verification_records
@@ -128,6 +134,20 @@ for (const c of CASES) {
     console.log(`  BROKEN CASE ${c.name}: edit did not change the file`);
     fs.writeFileSync(c.file, before); fail++; continue;
   }
+  // `also` (one {file, from, to}, or a list of them): further edits that belong to the SAME change -- a case modelling "a verification became
+  // earnable AND the constant moved with it" has to make both, or it models a half-done change.
+  // Each must land exactly once; all are restored with the first.
+  const extra = [];
+  let extraBroken = false;
+  for (const x of [].concat(c.also || [])) {
+    const xb = fs.readFileSync(x.file, "utf8");
+    const xh = xb.split(x.from).length - 1;
+    if (xh !== 1) { console.log(`  BROKEN CASE ${c.name}: an \`also\` anchor appears ${xh} time(s) in ${path.basename(x.file)}`); extraBroken = true; break; }
+    extra.push({ file: x.file, before: xb, sum: sum(x.file) });
+    fs.writeFileSync(x.file, xb.replace(x.from, x.to));
+  }
+  const restoreExtra = () => { for (const e of extra) { fs.writeFileSync(e.file, e.before); if (sum(e.file) !== e.sum) { console.log(`  FATAL ${c.name}: restore of ${e.file} was not byte-identical`); process.exit(1); } } };
+  if (extraBroken) { restoreExtra(); fs.writeFileSync(c.file, before); fail++; continue; }
   let out = "", code = 0;
   try {
     out = execFileSync("node", [path.join(ROOT, "scripts", "check-trust-breakdown.mjs")],
@@ -135,6 +155,7 @@ for (const c of CASES) {
   } catch (e) { code = e.status || 1; out = (e.stdout || "") + (e.stderr || ""); }
   fs.writeFileSync(c.file, before);
   if (sum(c.file) !== beforeSum) { console.log(`  FATAL ${c.name}: restore was not byte-identical`); process.exit(1); }
+  restoreExtra();
 
   const fired = code !== 0;
   // JUDGED ON THE CASE'S OWN FAILURE TEXT. A first version tested /SERVER MODEL/ against the whole
