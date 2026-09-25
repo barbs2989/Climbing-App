@@ -450,15 +450,35 @@ asks before a probe spends anything, and it is the fourth precondition in this f
       informational NOTE, exiting non-zero. Left alone it reports *"the offline catalog is broken
       on production"* about a run whose own output says it works end to end. The same class the
       quiet-box work is about, arriving in the **reporting** after the verdict was earned.
-    - **The three that remain are triaged by ATTRIBUTABILITY first, and two are attributable** —
-      `probe-a-vouch-you-received-reaches-you` ran at **2.4x** and is stamped DEGRADED, so it is
-      not a result. `probe-group-trust-gate` (8 of 9 pass, including the refusal quoting the
-      correct **trust 20+** bar; the ADMIT path fails — a climber at 98 neither joined nor was told
-      why, while the open-group join using the IDENTICAL check passed) and
-      `probe-a-real-profile-seen-by-a-real-climber` (the Friends screen reads **`Friends1`** above
-      a list holding neither a row nor the *"No friends yet"* empty state, while the same run finds
-      that person on the crew roster) both ran quiet. **Neither is claimed either way** — the prior
-      from two earlier corpus sweeps is ten red probes and zero app defects.
+    - **ALL THREE REMAINING FAILURES ARE DIAGNOSED, AND ALL THREE WERE THE PROBE.** Re-run one at
+      a time on a quiet box, every one reproduced, and every one was asserting a behaviour the app
+      does not have. **Thirteen red probes across three corpus sweeps now, and still zero app
+      defects** — the prior held a third time.
+      - `probe-group-trust-gate` demanded **"Joined"** on a `policy:"trust"` group. Clearing a
+        trust bar does not join you to one of those; it lets your REQUEST through, and the card
+        says so in as many words — *"Trust 20+ · organizer confirms"* — so the correct state is
+        **"Requested"**. Only `policy:"open"` joins outright, which the probe's own control two
+        runs earlier proves. **ADMITTED is the concept, not JOINED**, and the failure read exactly
+        like the gate blocking everyone. Its mirror was fixed in the same change: under the bar it
+        asked *"not Joined"*, which a leak to **Requested** would have passed.
+      - `probe-a-real-profile-seen-by-a-real-climber` looked for **"Quinn Fixture"** on the
+        Friends list. The friend WAS there, as **`@quinnfixture`** — `FriendsList` renders through
+        `pubName()`, which falls back to the handle unless `show_name` is set. *Identified, not
+        named*, the rule `check:message-delivery` already records. The same run finds the display
+        name on the CREW roster because `CrewCard` uses a bare `.name`, and that mix is the
+        documented Privacy §3 limit rather than a defect — which is exactly why one screen matched
+        and the other did not. The probe **already knew**: it derived the handle sixty lines lower
+        for the dialog check and accepted either form there.
+      - `probe-a-vouch-you-received-reaches-you` demanded a **"Peer vouches"** row. The panel has
+        TWO correct states and it was asserting one: it itemises only when its factors add up to
+        the headline, and otherwise WITHHOLDS the list saying *"The itemised list is hidden until
+        the two agree — a breakdown that does not add up to the score above it would be worse than
+        none."* That is `check:trust-breakdown`'s own contract. Each branch keeps its teeth: shown,
+        the row must count the vouch; withheld, the stated local total must be **non-zero**, which
+        is itself the evidence the vouch reached the model (one vouch is one point, and it reads 1).
+    - **THREE PROBES IN A ROW FAILED WITHOUT CARRYING THE SCREEN**, and each cost a run to learn
+      what the surface actually said. Every one now dumps it on the miss. *A miss must carry the
+      screen* — the lesson the crew-roster probe already paid three runs for.
 **Does anything check `main` itself?** Now, yes — and until 2026-08-10 nothing did. Every
 green tick this repo collects is earned on a **pull request**, and a `pull_request` run
 tests `merge(head, base)` as base stood **when that run started**. So a PR that went green

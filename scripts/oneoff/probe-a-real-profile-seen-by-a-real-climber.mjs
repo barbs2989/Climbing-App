@@ -127,6 +127,16 @@ try {
 
   const ownerId = fixture.session.user.id;
   const ownerName = "Quinn Fixture";
+  // IDENTIFIED, NOT NAMED. FriendsList renders through pubName(), which falls back to the @handle
+  // unless show_name is set -- and `profiles` cannot carry it for this fixture, so the row really
+  // reads "@quinnfixture". Asserting one form fails against a CORRECT app, which is what this
+  // probe did: it reported "the owner is listed as a friend" as a failure while the owner was on
+  // the list. check:message-delivery's notes record the same rule for the inbox. The crew roster
+  // three assertions down uses a bare .name and DOES show "Quinn Fixture" -- that mix is the
+  // documented Privacy §3 limit, not a defect, and it is why one screen matched and the other did
+  // not. Computed once here; the dialog check below used to derive its own copy.
+  const ownerHandle = "@" + ownerName.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const namesOwner = (t) => t.includes(ownerName) || t.includes(ownerHandle);
 
   // ---- the mate signs in, and vouches for the owner so the profile has something to show ----
   const tokRes = await fetch(`${SUPA}/auth/v1/token?grant_type=password`, {
@@ -165,17 +175,20 @@ try {
   await settledText(page);
 
   const friends = await page.evaluate(() => document.body.innerText);
-  must(friends.includes(ownerName) || friends.includes("Quinn"), `the owner is listed as a friend (looking for "${ownerName}")`);
+  must(namesOwner(friends), `the owner is listed as a friend (looking for "${ownerName}" or "${ownerHandle}")`);
 
   // Tap the owner's row. It is a clickable() control carrying the name, so match on the accessible
   // name rather than on the row's raw text, which also carries the location and handle.
-  const opened = await page.evaluate((nm) => {
+  const opened = await page.evaluate(([nm, hd]) => {
     const rows = [...document.querySelectorAll('[role="button"],button')];
-    const hit = rows.find((r) => (r.getAttribute("aria-label") || r.textContent || "").includes(nm));
+    const hit = rows.find((r) => {
+      const t = r.getAttribute("aria-label") || r.textContent || "";
+      return t.includes(nm) || t.includes(hd);
+    });
     if (!hit) return false;
     hit.click();
     return true;
-  }, ownerName);
+  }, [ownerName, ownerHandle]);
   must(opened, "the owner's row could be tapped");
   await settledText(page);
 
@@ -193,8 +206,7 @@ try {
     // `show_name` COLUMN and nothing anywhere writes one. So another climber sees "@quinnfixture"
     // whatever the owner set. Asserting on the display name would have been asserting a defect
     // as though it were the contract; asserting the handle is what the app correctly does today.
-    const ownerHandle = "@" + ownerName.toLowerCase().replace(/[^a-z0-9]/g, "");
-    must(dlg.includes(ownerName) || dlg.includes(ownerHandle),
+    must(namesOwner(dlg),
       `it is the OWNER's profile, identified as "${ownerName}" or "${ownerHandle}"`);
     if (!dlg.includes(ownerName)) {
       log(`  NOTE: identified as ${ownerHandle}, never by name. The Settings switch "Show my real`);
