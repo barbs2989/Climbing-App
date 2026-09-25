@@ -9,6 +9,9 @@
 --   track_far self, track_wrong_day self, track_short self, rankable_logs_refused true,
 --   trust_self = trust_other, my_counts.logs = a's rankable count (25), my_counts.reports 1
 --   (the one log with notes), counted_catches 1, both internal functions refused to a client.
+--   ...until 0208 (re-verified 2026-09-24): track_near and photo_same_day now read self -- this
+--   probe's track carries no per-point times and its photo no fingerprint, which 0208 requires.
+--   Every other value is unchanged. 0208's own rules: probe-ranks-evidence-0208.sql.
 -- Route ids are real catalog rows; if one is ever deleted, pick another of the same shape.
 begin;
 
