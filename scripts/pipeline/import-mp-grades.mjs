@@ -172,6 +172,42 @@ async function runState(st) {
     if (!p.areaId) { refused[p.why] = (refused[p.why] || 0) + 1; continue; }
     cand.push({ r, tk, areaId: p.areaId });
   }
+  // AN AREA WE ALREADY HAVE, UNDER ANOTHER PARENT OR SPELLING, IS NOT CREATED AGAIN (0213).
+  // `place` only asks "does THIS parent have a child with this exact name?", so MP's
+  // `North Cascades > Mt. Baker` was created beside our `Bellingham and Mt Baker Hwy > Mount
+  // Baker`, and 224 more copies like it across 27 states. Every planned area is checked against
+  // the whole state through catalog_key (0214: "Mt." = "Mount", "Colfax Peak" = "Colfax"):
+  //   with a coordinate  -> the same key within 1.5 km, anywhere in the state
+  //   without one        -> a PEAK in the state spelled the same (search_canon) — intermediate
+  //                         levels arrive with no coordinate, which is how "Mt. Shuksan" did
+  // A route landing in, or anywhere under, such an area is refused rather than re-homed: which of
+  // our areas it belongs in is a judgement (0213 moved one onto Table Mountain, another under the
+  // Hwy region), and a refused route is one a person can place; a wrongly placed one is not seen.
+  if (planned.length) {
+    const vals = planned.map(a => `(${q(a.id)}, ${q(a.name)}, ${a.lat ?? "null"}::float8, ${a.lng ?? "null"}::float8)`);
+    const hits = new Map();
+    for (let i = 0; i < vals.length; i += 300) for (const h of sql(`
+      select v.id, (select a.id || ' (' || a.name || ')' from areas a
+                     where a.path <@ ${q(st.id)}::ltree
+                       and case when v.lat is not null
+                           then catalog_key(a.name) = catalog_key(v.name) and a.lat between v.lat - 0.02 and v.lat + 0.02
+                                and catalog_km(v.lat, v.lng, a.lat, a.lng) <= 1.5
+                           else a.area_type = 'peak' and search_canon(a.name) = search_canon(v.name) end
+                     order by catalog_km(v.lat, v.lng, a.lat, a.lng) nulls last limit 1) hit
+        from (values ${vals.slice(i, i + 300).join(",")}) v(id, name, lat, lng)`)) if (h.hit) hits.set(h.id, h.hit);
+    if (hits.size) {
+      const plannedBy = new Map(planned.map(a => [a.id, a]));
+      const dupOf = id => { for (let x = id; plannedBy.has(x); x = plannedBy.get(x).parent_id) if (hits.has(x)) return x; return null; };
+      const why = "area already in our catalog under another parent or spelling";
+      for (let i = cand.length - 1; i >= 0; i--) {
+        const d = dupOf(cand[i].areaId);
+        if (!d) continue;
+        refused[why] = (refused[why] || 0) + 1;
+        if (SAMPLE) console.log(`  refused (existing area): ${cand[i].r.Route}  ->  planned "${plannedBy.get(d).name}" is our ${hits.get(d)}`);
+        cand.splice(i, 1);
+      }
+    }
+  }
   const areaIds = [...new Set(cand.map(c => c.areaId))];
   const existing = [];
   for (let i = 0; i < areaIds.length; i += 400) existing.push(...sql(`select id, area_id, name, grade, grade_system, ice_grade, aid_grade, ice_grade_num, mixed_grade_num, aid_grade_num from routes where area_id in (${areaIds.slice(i, i + 400).map(q).join(",")})`));
@@ -211,6 +247,36 @@ async function runState(st) {
       pitches: +r.Pitches > 0 ? +r.Pitches : 0, length_m: +r.Length > 0 ? Math.round(+r.Length / 3.28084) : null,
       disciplines: [...new Set([disc, ...types.filter(t => ["trad", "sport", "ice", "mixed", "aid", "alpine"].includes(t))])], auto_generated: false,
     });
+  }
+  // ...AND A CLIMB WE ALREADY HAVE ON A NEIGHBOURING AREA IS NOT ADDED AGAIN. The near-duplicate
+  // check above looks inside the one target area only. This one asks the neighbourhood: any area
+  // with the target's catalog_key within 5 km (our "Mount Baker" for MP's "Mt. Baker", whose
+  // coordinates disagree), or any area within 0.3 km (a second area on the same spot). Same
+  // catalog_key on the route name is the test; placeholder names are never compared.
+  if (inserts.length) {
+    const plannedBy = new Map(planned.map(a => [a.id, a]));
+    const vals = inserts.map(x => { const p = plannedBy.get(x.area_id); return `(${q(x.id)}, ${q(x.name)}, ${q(x.area_id)}, ${q(p ? p.name : "")}, ${p?.lat ?? "null"}::float8, ${p?.lng ?? "null"}::float8)`; });
+    const dupRoute = new Map();
+    for (let i = 0; i < vals.length; i += 300) for (const h of sql(`
+      with v as (select v.id, v.name, coalesce(a.name, nullif(v.aname, '')) aname, coalesce(a.lat, v.lat) lat, coalesce(a.lng, v.lng) lng
+                   from (values ${vals.slice(i, i + 300).join(",")}) v(id, name, area_id, aname, lat, lng)
+                   left join areas a on a.id = v.area_id)
+      select v.id, (select r.id || ' (' || r.name || ' on ' || n.name || ')'
+                      from areas n join routes r on r.area_id = n.id
+                     where n.path <@ ${q(st.id)}::ltree
+                       and ((catalog_key(n.name) = catalog_key(v.aname) and (v.lat is null or n.lat is null or catalog_km(v.lat, v.lng, n.lat, n.lng) <= 5))
+                            or (v.lat is not null and n.lat between v.lat - 0.005 and v.lat + 0.005 and catalog_km(v.lat, v.lng, n.lat, n.lng) <= 0.3))
+                       and catalog_key(r.name) = catalog_key(v.name)
+                       and not route_name_is_placeholder(r.name)
+                     limit 1) hit
+        from v where not route_name_is_placeholder(v.name)`)) if (h.hit) dupRoute.set(h.id, h.hit);
+    const why = "climb already in our catalog on a neighbouring area";
+    for (let i = inserts.length - 1; i >= 0; i--) {
+      if (!dupRoute.has(inserts[i].id)) continue;
+      refused[why] = (refused[why] || 0) + 1;
+      if (SAMPLE) console.log(`  refused (existing climb): ${inserts[i].name}  ->  our ${dupRoute.get(inserts[i].id)}`);
+      inserts.splice(i, 1);
+    }
   }
   const nRef = Object.values(refused).reduce((a, b) => a + b, 0);
   // Keep only planned areas an added route actually lands in, plus their planned ancestors — a
