@@ -131,7 +131,10 @@ try {
   t = await tabText("Reports", /saved with your trip pack/);
   check("offline: the Reports tab says its reports are the pack's saved copy, and how old", /No signal — these are the \d+ trip reports? saved with your trip pack (just now|\d+ min ago)/.test(t), (t.match(/[^\n]*trip report[^\n]*/) || [""])[0]);
   check("offline: the other climber's report is on screen", t.includes(TAG + " report") || /Firm snow/.test(t));
-  check("offline: Reports does NOT say 'be the first to log this climb'", !/be the first to log this climb/.test(t));
+  // ANCHORED on the same capture: it only counts once the tab's own saved-copy note AND the saved
+  // report are both on screen, i.e. the section that would carry the sentence has rendered.
+  check("offline: Reports does NOT say 'be the first to log this climb'",
+    /saved with your trip pack/.test(t) && t.includes(TAG + " report") && !/be the first to log this climb/.test(t));
 
   t = await tabText("Plan", new RegExp(TAG + " approach"));
   check("offline: my own 2-day plan is on the Plan tab", t.includes(`Day 1: ${TAG} approach to high camp`) && t.includes(`Day 2: ${TAG} summit and out`));
@@ -139,8 +142,11 @@ try {
   t = await tabText("Safety", /forecast saved with your trip pack|Forecast unavailable/, 60000);
   check("offline: the forecast renders from the pack and says so", /No signal — this is the forecast saved with your trip pack/.test(t), (t.match(/[^\n]*[Ff]orecast[^\n]*/) || [""])[0]);
 
-  t = await tabText("Photos", /photos/i, 20000);
-  check("offline: Photos does not claim the route has none", !/No photos yet/i.test(t));
+  // ANCHORED, so it cannot pass on an unrendered screen: wait for the gallery's own VERDICT (one of
+  // its two sentences), then require the right one. The old wait matched the tab's own label.
+  t = await tabText("Photos", /Couldn’t load this route’s photos|No photos yet — be the first/, 45000);
+  check("offline: Photos says it could not load them, not that the route has none",
+    /Couldn’t load this route’s photos/.test(t) && !/No photos yet — be the first/.test(t), (t.match(/[^\n]*photos[^\n]*/i) || [""])[0]);
 
   t = await tabText("Plan", /Updated|In your trip pack/, 20000);
   check("offline: the pack card shows its age", /Updated (just now|\d+ min ago)/.test(t));

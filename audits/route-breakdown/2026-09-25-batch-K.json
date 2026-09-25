@@ -1,0 +1,284 @@
+{
+  "wa_forbidden_peak_north_ridge": {
+    "area": "wa_forbidden_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Glacier travel",
+        "notes": "From Sharkfin Col (7,720 ft, reached by a Class 3 gully and a few feet of 5.7 rock) rappel the loose north-side gully onto the Boston Glacier, commonly in two 30 m stages; the lower station sits right above the bergschrund, so move through it quickly. Contour northwest, losing several hundred feet to pass below a large rock spur, then climb back up toward the Boston-Forbidden col."
+      },
+      {
+        "pitch": "Boston-Forbidden col",
+        "grade": "Steep snow, moat",
+        "notes": "The snow slope below the col steepens, and by late summer the moat between snow and rock is large; parties have had to cross a sharp crest of alpine ice or climb steep dirt with tools and crampons to reach the rock. Above it, terraced ledges at about 7,600 ft hold the usual bivy sites at the foot of the ridge."
+      },
+      {
+        "pitch": "Crux",
+        "grade": "5.6",
+        "crux": true,
+        "notes": "From the bivy ledges, scramble up to a short, steep left-facing corner. It is only a few hard moves and takes gear well before easing onto a level section of ridge with a small, very exposed bivy platform. Some parties instead traverse east on ledges and regain the crest near 8,100 ft."
+      },
+      {
+        "pitch": "Mid-ridge",
+        "grade": "low 5th",
+        "notes": "A long, nearly level crest of rock steps and knife-edge snow patches, ranging from exposed walking to low 5th class; most parties simul-climb it. Where the crest is awkward, the ground just east of it often goes more easily. Early in the season the snow sections call for crampons and axe, and they are also the place to melt water."
+      },
+      {
+        "pitch": "Upper ridge",
+        "grade": "5th class",
+        "notes": "Near 8,400 ft the ridge rears up and the rock gets noticeably better, giving the best climbing of the route. The crest looks improbably steep from below but is well supplied with holds and cracks, and the final pitch lands on the summit block; a scramblier line lies a few metres west near the top."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept all four labels and rewrote their notes with concrete features; split the col/moat out of 'Approach' as its own stage (4 -> 5 entries). Stage grades trimmed to chips; 'Mid-ridge' grade '4th/low 5th' -> token 'low 5th'. No lengths added: none is sourced at pitch level.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/108482756/north-ridge",
+        "https://spokalpine.com/2022/08/25/forbidden-peak-north-ridge-iii-5-6/",
+        "https://www.jeffreyjhebert.com/adventures/north-ridge-on-forbidden-peak",
+        "https://mountainmadness.com/blog/north-ridge-of-forbidden-peak",
+        "https://pottinger.net/osm/2018/09/forbidden-peak-via-sharkfin-tower-and-boston-glacier/",
+        "https://gethighonaltitude.com/2020/07/26/forbidden-peak-north-ridge-via-nw-face/"
+      ],
+      "other_findings": "The `beta` column calls the route 'Grade III, 5.7 climbing' and 'Northeast ridge route at ~7,700 ft'. The 5.7 is the short step to Sharkfin Col; the ridge itself is 5.6 and is the North Ridge, not a northeast ridge. The `pitches` value of 8 is not supported by any source consulted: most of the ridge is simul-climbed."
+    }
+  },
+  "wa_eldorado_peak_west_arete": {
+    "area": "wa_main_peak",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower arête",
+        "grade": "5.6",
+        "notes": "Start on the southwest toe of the arete with unnerving scrambling up glacier-polished slabs to a steep open chimney. The first roped pitch is exceptionally loose 5.6: test every hold, keep the rope clear of blocks, and do not stack the belayer directly beneath the leader."
+      },
+      {
+        "pitch": "Middle arête",
+        "grade": "5.7",
+        "notes": "Roughly 1,000 ft of 4th class to 5.7 on the crest, where the pitches blur together through sandy gullies, loose rock and poor protection. Route-finding is confusing throughout; the rule is to stay on or near the crest and avoid being drawn into the gullies on either side."
+      },
+      {
+        "pitch": "Crux towers",
+        "grade": "5.8",
+        "lengthM": 70,
+        "crux": true,
+        "notes": "The towers gain little height but the rock improves and the exposure is relentless on both sides. Pass the first big tower on its left; the crux pitch then makes an old-school traverse left on thin face holds, past a single fixed piton, into a chimney that leads easily to a notch."
+      },
+      {
+        "pitch": "Second tower corner",
+        "grade": "5.8",
+        "notes": "Next, climb the chimney between two towers and exit onto the far side of the ridge. Top the following tower, make a short rappel off it, then climb a steep left-facing corner at 5.8 on the next tower, the best pitch of the route. The remaining towers are mostly avoided by traversing around them."
+      },
+      {
+        "pitch": "Upper arête",
+        "grade": "5.7",
+        "notes": "About 1,500 ft of climbing remain. It is sometimes described as 4th class, but expect real 5.0-5.7 climbing with chimneys and more loose rock. Late on the route a short rappel is a way around a steep snow patch where one lies across the crest."
+      },
+      {
+        "pitch": "Summit pitches",
+        "grade": "Loose, simul-climbed",
+        "notes": "The last three long pitches are usually simul-climbed straight to the summit on dangerously loose, easier ground. Place protection to keep the rope out of loose blocks, and keep the party tight so rocks knocked off do not hit the second."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept all five labels and added 'Second tower corner' (the chimney, short rappel and 5.8 corner after the crux), so 5 -> 6. Range grades '5.0-5.7' became the token '5.7'. Added lengthM 70 to the crux pitch only (from a trip report); no other length is sourced.",
+      "sources_consulted": [
+        "https://spokalpine.com/2025/07/30/eldorado-peak-west-arete-iv-5-8/",
+        "https://www.mountainproject.com/route/116530206/west-arete",
+        "https://www.summitpost.org/west-arete/164100 (search excerpt only; page returned 403)",
+        "https://gethighonaltitude.com/2022/08/19/eldorado-peak-west-ridge/"
+      ],
+      "other_findings": "Sources disagree on the length: one lists 10 pitches over 2,800 ft, and a 2025 party counted 19 pitches (3 of them simul) and took 17 hours base to base. The stored `pitches` value of 19 follows the latter. The first-ascent date is Aug 24, 1969 in the `fa` field but Aug 29, 1969 on the route's database page."
+    }
+  },
+  "wa_sahale_mountain_r1": {
+    "area": "wa_sahale_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Approach",
+        "grade": "Moraine to glacier toe",
+        "notes": "From the upper Boston Basin camps, walk moraine and slabs to the toe of the Quien Sabe Glacier and rope up around 6,700 ft, before stepping onto the ice. The glacier hides crevasses even low down early in the season."
+      },
+      {
+        "pitch": "Lower/mid glacier",
+        "grade": "Snow to 40°, crevassed",
+        "notes": "Make a rising traverse near the cliffs below Sharkfin Tower. The left (north) side is broken but moderate; a more direct line to the right is steeper and more crevassed. The two lines merge about halfway up, where a line must be picked between crevasses on the steeper upper glacier. Pickets are useful on the steeper snow."
+      },
+      {
+        "pitch": "Bergschrund and upper glacier",
+        "grade": "Snow bridges, crevassed",
+        "notes": "Expect snow-bridge crossings near 7,600 ft (above and left of the bergschrund) and again near 8,100 ft, where large open crevasses sit on both sides by late season. Later in summer the usual fix is to go right around the end of the bergschrund, then cut back up and left to the Boston-Sahale col."
+      },
+      {
+        "pitch": "Boston-Sahale col to summit block",
+        "grade": "Exposed snow traverse",
+        "notes": "From the col, traverse right (south) across a short but exposed snow slope to the base of the summit block, with a short rocky step between snow sections. Keep crampons and axe for it even late in the season. A large cornice persists on the ridge into early summer, so stay well off its edge."
+      },
+      {
+        "pitch": "Summit block",
+        "grade": "Class 3-4 loose rock",
+        "notes": "A very exposed, loose scramble of about 60-70 ft to the summit, mostly Class 3 with 4th-class moves. Carry a few slings to protect or back up the anchors. The usual way off is a single-rope rappel of about 30 m to a Class 4 ledge just above the snow; the rappel straight to the snow off the back side is closer to 40 m."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept the three stored labels and added 'Bergschrund and upper glacier' and 'Summit block' (3 -> 5). The null and sentence-shaped stage grades became short chips; the slope angle was cut from '~40-45°' to 40°, the figure sources give.",
+      "sources_consulted": [
+        "https://www.mountainproject.com/route/107848161/quien-sabe-glacier",
+        "https://www.ncmountainguides.com/routes/climbing/sahale-peak-quien-sabe-glacier",
+        "https://www.mountaineers.org/activities/routes-places/boston-basin-area-review/sahale-peak-quien-sabe-glacier (search excerpt only; 403)",
+        "https://www.mountaineers.org/activities/trip-reports/sahale-peak-quien-sabe-glacier-13 (search excerpt only; 403)",
+        "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-18.5726823929 (search excerpt)"
+      ],
+      "other_findings": "The stored `grade` says 'Class 3-4/5.0-5.4 summit block'. No source consulted gives 5th class for the summit block: they give Class 3 with 4th-class moves. The route also has a separate `climbing_route` array covering the same ground, which may now duplicate this table."
+    }
+  },
+  "wa_johannesburg_mountain_cj_couloir": {
+    "area": "wa_johannesburg_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower couloir",
+        "grade": "30-40° snow",
+        "notes": "Climb from the avalanche-debris fan into the couloir, which is walled by rock on both sides and overhung by the Sill Glacier serac on the Johannesburg side. Rock and ice come down as the sun reaches the walls, so be moving early on firm snow. Crevasses and snow-to-rock steps appear as the season goes on."
+      },
+      {
+        "pitch": "Bottleneck",
+        "grade": "AI2",
+        "notes": "The couloir narrows into a choke, often scoured by meltwater from the summits above and carrying a bulge of water ice that may need a belay and a screw or two. A narrower looker's-right line sometimes goes cleanly around it. There is no shelter here from falling debris: do not stop in the choke."
+      },
+      {
+        "pitch": "Upper couloir to col",
+        "grade": "Steep snow, bergschrunds",
+        "notes": "Above the choke, go up and left, then straight up the final couloir to the Cascade-Johannesburg col (about 6,760 ft). In mid- to late season the snow turns discontinuous, with bergschrunds and near-vertical steps; early season is the sensible window. A cornice can span the col, and a way around it has been found against the rock of Cascade Peak on the left."
+      },
+      {
+        "pitch": "East Ridge lower gullies",
+        "grade": "low 5th",
+        "notes": "From the col, climb the steep east side on heather, talus and broken rock bands, mostly Class 3-4. Steep heather here is harder to protect than it looks. Pass rock horns on the shoulder to a red dike, then climb a steep gray gully of about 500 ft to the false summit (about 8,040 ft). Its top has a couple of options, one with low-5th moves."
+      },
+      {
+        "pitch": "Knife-edge ridge traverse",
+        "grade": "Exposed 3rd-4th class",
+        "notes": "From the false summit, drop about 30 ft and traverse south-side ledges roughly 75 ft below the crest, working in and out of many loose ribs and gullies with constant exposure. In cloud this ground is easy to get lost on. A deep slot-gully gives one final Class 3-4 pitch to the true summit. A small bivy site lies not far below the top."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept all five labels and rewrote the notes. Removed the unsourced '~300 vertical ft, 20-50 ft wide' dimensions of the bottleneck. Grades became tokens or short chips ('40-50°, AI2 in spots' -> 'AI2'). Entry count unchanged (5).",
+      "sources_consulted": [
+        "https://trailcatjim.com/johannesburg-mtn-via-east-face-east-ridge/",
+        "https://onehikeaweek.com/2019/09/02/johannesburg-mountain/",
+        "https://turns-all-year.com/trip-reports/cj-couloir-and-cascade-pass-couloir",
+        "https://www.cascadecrusades.org/SkiMountaineering/johannesburg/cj2009/cj2009.htm",
+        "https://www.whereiskylemiller.com/highway-20/cj-couloir/",
+        "https://www.summitpost.org/johannesburg-mountain/154446 (search excerpt only; 403)"
+      ],
+      "other_findings": "`rappels` gives 2-3 60 m rappels to the col. Sources give either two 60 m rappels down the east gully, or about seven short rappels on sling anchors along the crest, with downclimbing the loose gully as an alternative."
+    }
+  },
+  "wa_johannesburg_mountain_northeast_rib_1951_route": {
+    "area": "wa_johannesburg_mountain",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Moat and lower slabs",
+        "grade": "4th class",
+        "notes": "Downclimb into the avalanche-fan moat and gain the rock just before the Cascade-Johannesburg couloir narrows. Work around waterfalls on slabs toward the base of the Sill Glacier. The holds slope downward and carry heavy lichen, protection is creative at best, and this is where most parties rope up."
+      },
+      {
+        "pitch": "Brush to the bowl",
+        "grade": "Vertical brush, 4th class",
+        "notes": "Climb up and right through cliff bands and near-vertical brush, pulling on tree roots and branches more than rock, to a bowl on the NE Rib where the 1951 and 1957 lines meet. The 1951 start is quicker to the rib but less direct, and it has a 5.7 pitch with a reputation for being frightening."
+      },
+      {
+        "pitch": "Heather slopes",
+        "grade": "Steep heather, 4th class",
+        "notes": "On the crest, very steep and exposed heather slopes lead up to the rock. There is almost nothing to protect them, footing and handholds come from the turf itself, and a slip would not stop. Many parties rate this the most dangerous ground on the route."
+      },
+      {
+        "pitch": "Rock rib",
+        "grade": "5.5",
+        "notes": "The rock steepens through 4th class to short vertical walls. The left (1951) rib goes through more brush with a couple of pitches reported at 5.4-5.5. The right (1957) rib, reached by traversing west, gives a longer band of cleaner rock with a belayed 5.6 crux. Both finish on the bivy ledge at the base of the snow arete."
+      },
+      {
+        "pitch": "Bivy ledge to snow arête",
+        "grade": "Snow arête, moat",
+        "notes": "An outstanding bivy ledge sits at about 7,100 ft at the foot of the glacier arete, with meltwater from a snowpatch. Next morning, climb the snow arete to a snow headwall. Expect a crevasse crossing and possibly a moat between ice and rock, and bring tools for a few steep steps."
+      },
+      {
+        "pitch": "Summit ridge",
+        "grade": "Class 3",
+        "notes": "From the top of the snow headwall, scramble right along the summit ridge on Class 3 rock to the summit at about 8,200 ft. Descent is by the East Ridge ledges and rappels to the Cascade-Johannesburg col."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Rebuilt the table (6 -> 6 entries). The stored rows came from an ascent of the 1957 variation start and put the bivy two pitches below the summit; it is at the base of the snow arete, ~1,100 ft below. The numeric labels named sections hundreds of metres long, not pitches, so they became section names. Dropped every lengthM (305/457/18/305/213/226): four had no source, and the other two restated one party's rough footages for whole sections.",
+      "sources_consulted": [
+        "https://stephabegg.com/trip-reports/washington/johannesburg-ne-rib/",
+        "https://spokalpine.com/2020/08/09/johannesburg-57-ne-rib-v-5-6/",
+        "https://www.mountainwerks.org/cma/2004/joburg.html",
+        "https://trailcatjim.com/johannesburg-mtn-via-east-face-east-ridge/"
+      ],
+      "other_findings": "The `beta` and `overview` columns describe the 1957 variation (the ~700-ft 5.6 rock band) as if it were the 1951 Route. The stored grade '5.6-5.7' fits the 1957 rib and the 1951 start's 5.7 pitch; the 1951 rib itself is reported at 5.4-5.5. One 2004 party on the 1957 line reported a 5.8 overhang: grades on this face depend heavily on the line taken."
+    }
+  },
+  "wa_northeast_face_direct": {
+    "skip_reason": "Mount Formidable (area wa_mount_formidable). The only pitch-level account is one 2013 second-ascent report, published on two sites that both refused to load (SummitPost 403, lemkeclimbs 404). The excerpts that could be read are too fragmentary to order the upper pitches safely, and they contradict the stored table: P1 is rubble-covered class 4 (one 70 m rope-length with a single piece), not muddy moat moves; the neve couloir steepens to at least 65° with overhanging chockstones at its top, not 50°; P3-P4 were ~140 m of 4th/low 5th simul-climbing to just below the duolith; the 5.6 pitch traverses right and back on ledges and passes the duolith on its LEFT rather than climbing it; P6 starts up an easy leftward ramp; one pitch has a 5.7 start into a ~100 ft chimney. Those excerpts also put the summit straight above the last pitch, which the stored 'P8-P9 north ridge' row does not match. A human with access to the full report should rebuild this table; until then, the stored 'P2 50°+' and 'P5 climb the Duolith' rows are likely wrong."
+  },
+  "wa_goode_mountain_megalodon_ridge": {
+    "area": "wa_mount_goode",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      {
+        "pitch": "Lower arete",
+        "grade": "5.8",
+        "notes": "Start at the toe of the clean arete that runs northeast off the main ridge. There are bivy benches below the technical ground, and 4th class leads to the first 5th-class pitch. Simul-climb the arete (up to 5.8, gneiss) to the 8,200-ft tower where it joins the southeast extension of the ridge. Rappel about 50 m off that tower; the first-ascent party left a nut."
+      },
+      {
+        "pitch": "Ridge crest",
+        "grade": "5.8",
+        "notes": "Continue along the serrated crest toward the Southeast Peak on running belays, up to 5.8, with huge exposure to the north and south. Easier ground can usually be found by stepping left of the crest. Water is scarce once on the ridge."
+      },
+      {
+        "pitch": "SE Peak Headwall",
+        "grade": "5.9",
+        "notes": "The rock steepens abruptly at the Southeast Peak. Three long pitches up to 5.9 climb it left of the crest; further left, a natural weakness and some 4th class bypass the headwall. The direct line on the crest is two pitches of 5.10 crack climbing, with stemming on loose blocks. Small cams are the most useful gear."
+      },
+      {
+        "pitch": "Saddle beyond the SE Peak",
+        "grade": "Glacier ice, moat",
+        "notes": "Past the Southeast Peak the ridge dips to a saddle that holds snow and glacier ice all year, with bivy sites nearby. Skirt or climb through the icy moat at the top of the Goode Glacier to reach the final gendarmes. Crampons or at least an axe earn their weight here."
+      },
+      {
+        "pitch": "Crux headwall",
+        "grade": "5.10",
+        "crux": true,
+        "notes": "Getting into Black Tooth Notch, the last big gap before the summit, means an overhanging, traversing pitch of 5.10 above the Goode Glacier. Because it traverses, a simple rappel does not work, and the first-ascent party down-led it. A 50 m rappel was used nearby to get around the icy moat by the final gendarmes."
+      },
+      {
+        "pitch": "Summit pitches",
+        "grade": "Easier rock",
+        "notes": "From Black Tooth Notch, a few pitches of easier climbing lead to the summit, where there is room to bivy. Descend by the standard Southwest Couloir rappels into Park Creek, the opposite side of the mountain from the approach."
+      }
+    ],
+    "review": {
+      "confidence": "medium",
+      "changed": "Kept all four labels and added the saddle/moat stage and the summit pitches (4 -> 6). The 'up to 5.8' and '5.9-5.10' grades became tokens; 'Crux headwall' now clearly means the Black Tooth Notch downlead. No lengths: none is sourced per pitch.",
+      "sources_consulted": [
+        "http://publications.americanalpineclub.org/articles/12200813101/North-America-United-States-Goode-Mountain-Megalodon-east-Ridge",
+        "http://www.alpinist.com/doc/web07f/newswire-goode-megalodon-ridge",
+        "https://www.mountainproject.com/route/121051799/megalodon-ridge",
+        "https://www.climbing.com/news/megalodon-man/ (search excerpt only; paywalled)"
+      ],
+      "other_findings": "The route's database page grades it 5.9 over 20 pitches, going left of the crest; the first ascent went 5.10 on the crest and belayed 7-8 pitches. The stored 'IV+, 5.10' / pitches 8 reflect the first ascent only."
+    }
+  },
+  "wa_bonanza_peak_northeast_buttress": {
+    "skip_reason": "Bonanza Peak (area wa_bonanza_peak). The only description found anywhere is the 2004 first-ascent note from the three-summit traverse: base at 8,350 ft, steep and narrow right away, mostly solid but lichen-covered rock, climbing on or around the crest in the 5.7 range with wild exposure, a little under 4 hours to the main summit. It gives no pitches or sections, and no other ascent report turned up. The stored table's 'Lower buttress Class 4 to low 5th' and 'Upper buttress eases to easy 4th class' rows are not supported by that account and may be invented. Other findings: the stored grade 'V' and the 5.7/5.8 in the overview belong to the whole three-summit traverse, not the buttress alone; the stored length_m 354 has no source seen."
+  }
+}
