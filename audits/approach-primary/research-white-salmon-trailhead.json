@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {"name": "OpenStreetMap: White Salmon Day Lodge access road (way 96500711), its junction with SR 542 at the hairpin", "url": "https://www.openstreetmap.org/way/96500711", "lat": 48.85889, "lng": -121.65914},
+    {"name": "CalTopo shared map 'Shuksan - White Salmon Ski Tour': GPS track 'Shuksan via White Salmon 3/17/19' start point (the track ends there too)", "url": "https://caltopo.com/m/B6R02", "lat": 48.85879, "lng": -121.65891},
+    {"name": "CalTopo shared map B6R02: GPS track '2019.03 WS route', end point (a second recorded track)", "url": "https://caltopo.com/m/B6R02", "lat": 48.858735, "lng": -121.65879}
+  ],
+  "agree": true,
+  "lat": 48.8589,
+  "lng": -121.6590,
+  "elevFt": 3573,
+  "trailheadName": "White Salmon Lodge road gate (Mount Baker Highway hairpin)",
+  "trailheadDirection": "At the hairpin on the Mount Baker Highway near mile 52, below the ski area, park in the small pull-off at the gated road to White Salmon Lodge. Don't block the gate.",
+  "waypointTrailheads": [
+    {"name": "Lake Ann Trailhead (Austin Pass)", "lat": 48.8502, "lng": -121.6861, "elev": 3650, "at": "Austin Pass / Lake Ann TH (wrong for this route; matches OSM 'Lake Ann Trailhead' node 48.8500047,-121.686113)"}
+  ],
+  "notes": "The OSM junction and the CalTopo GPS track start are about 20 m apart. The third point, the end of a second GPS track, is about 25 m away. OSM has no gate node on the lodge road. The route's own beta says walk around the gate and follow the road past the lodge, so the gate is on the lodge road before the lodge, at the highway hairpin (the ski lodge turnoff near MP 52). The same CalTopo map also has a 'parking' marker in the White Salmon Lodge lot at 48.86214,-121.65410 (EPQS 3629 ft), about 500 m NE. That is where winter ski tours start when the lodge lot is open. Other tracks on the map also start at the lodge (48.8615-48.8623,-121.6533 to -121.6554). Do not confuse this start with the 'White Salmon Road (NF 3075)' snowshoe trailhead: WTA gives 48.8666,-121.6547 and the Nooksack Nordic club puts its parking at MP 51.5. That is a different road going north. Elevation checks: EPQS at 48.8589,-121.6590 gives 3572.8 ft. The stored Lake Ann TH waypoint claims 3650 ft, but EPQS at its coordinate gives 4754 ft, so its elev is also wrong. Separately, approach_logistics.peakLat/peakLng = 48.8611,-121.8194 is NOT Mount Shuksan. The summit waypoint and Mountain Project put the summit at about 48.8311,-121.6029, and 48.8611,-121.8194 is ~16 km west. Flagged only, not researched further. Mountain Project gives only summit coordinates (48.83109,-121.60294), not the trailhead. The Mountaineers route pages returned 403."
+}
