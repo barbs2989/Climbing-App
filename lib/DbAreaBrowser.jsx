@@ -14,6 +14,7 @@ import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
 import { clickable } from "./clickable";
+import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
@@ -164,12 +165,8 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
 }
 
 // ── state picker: exact match for the static "Pick a state" AreaBrowse ──
-// The subdivision noun differs by country and there is no column that carries it — Canadian
-// provinces are stored with area_type "state" like everywhere else. Named explicitly rather
-// than inferred, with a neutral fallback so a third country reads sensibly on the day it
-// lands instead of calling Bavaria a state.
-const SUBDIVISION = { usa: "state", canada: "province or territory" };
-const subdivisionNoun = id => SUBDIVISION[id] || "region";
+// The subdivision noun and the country an area sits in come from ./countries, shared with
+// the add-a-climb and list/log pickers so the three cannot drift.
 
 function StatePicker({ onPick, C }) {
   const { data: countries, isLoading: lc, error: ec } = useCountries();
@@ -190,9 +187,7 @@ function StatePicker({ onPick, C }) {
   const noCountryStep = !!only || !!ec;
   const country = countryId || only || "";
   const noun = subdivisionNoun(country);
-  // `path` is the materialized ltree and its first label is the root, so this needs no
-  // extra query and cannot disagree with the tree.
-  const inCountry = (states || []).filter(x => !country || String(x.path || "").split(".")[0] === country);
+  const inCountry = (states || []).filter(x => !country || countryOfArea(x) === country);
   const selStyle = { width: "100%", WebkitAppearance: "none", appearance: "none", background: C.card, color: C.text, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 34px 13px 13px", fontSize: 15, fontWeight: 600 };
   return (
     <div style={{ marginBottom: 14 }}>
