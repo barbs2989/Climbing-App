@@ -102,8 +102,7 @@ export function seasonWindowMonths(season){
 }
 
 export function SeasonalGuidancePanel({route, C, ActionIcon}) {
-  const sg = route.seasonalGuidance || {};
-  const {optimalWindow, monthBreakdown} = sg;
+  const {optimalWindow, monthBreakdown} = route.seasonalGuidance || {};
   const sortedMonths = monthBreakdown ? Object.entries(monthBreakdown).sort((a,b)=>monthRank(a[0])-monthRank(b[0])) : [];
   // With no researched breakdown the calendar comes from the route's own season window, and says so.
   const win = sortedMonths.length ? null : seasonWindowMonths(route.season);
