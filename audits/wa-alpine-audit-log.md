@@ -27440,3 +27440,55 @@ route).
 `.env.local` this run (fresh clone, read-only anon key only, as intended); WebSearch
 settled every fact checked except the two flagged items above, `check:sql` run and clean
 before committing the fix file.
+
+## 2026-09-25 — Pass 6, Batch 337
+
+Audited (next 8 alphabetically after batch 336, index 331→339 of 702 in-scope):
+`wa_mcmillan_spire_west_west_ridge`, `wa_mesahchie_peak_west_ridge`, `wa_milk_n_honey`,
+`wa_mix_up_peak_east_face`, `wa_mojo_rising`, `wa_monte_cristo_peak_scramble`,
+`wa_mount_adams_adams_glacier`, `wa_mount_adams_lava_glacier_headwall`.
+
+**Fixed (1):**
+- `wa_milk_n_honey`'s `permit` was NULL. This route climbs Colchuck Balanced Rock via the
+  Stuart Lake/Colchuck Lake Trailhead — the same Enchantment Permit Area trailhead as every
+  other alpine/mountaineering route on this peak and on neighboring Colchuck Peak/Dragontail
+  Peak, all of which already carry the app's standard text for this zone (`wa_nw_ridge_2` on
+  this same peak; `wa_colchuck_peak_north_buttress_couloir`; `wa_dragontail_peak_r3`; etc.).
+  USFS Okanogan-Wenatchee confirms the free self-issue day-use permit (this route's own
+  approach is a 3.5-4hr car-to-base day outing) plus the Recreation.gov advance-lottery quota
+  permit for any overnight stay May 15-Oct 31. Filled with that exact existing wording rather
+  than inventing new phrasing.
+
+**Flagged for human review (not fixed):**
+- Twelve *other* routes on Colchuck Balanced Rock (`wa_the_scoop_2`, `wa_rikki_tikki_tavi`,
+  `wa_leche_la_vaca`, `wa_the_balanced_rock`, etc.) share the identical NULL-`permit` gap just
+  fixed on Milk n' Honey, but are tagged `discipline='rock'`, not alpine/mountaineering, so
+  they're out of this audit's scope — a human or a rock-discipline pass should apply the same
+  fix to them.
+- Mount Adams Lava Glacier Headwall's FA ("Edward Cooper & Mike Swayne, July 3, 1961") and
+  Mojo Rising's FA ("Mark Allen, Tom Smith, Joel Kauffman, 2006") — the AAC Publications,
+  Mazamas, and CascadeClimbers.com pages that would confirm these are all egress-blocked from
+  this environment; WebSearch snippets are consistent with, but don't independently confirm,
+  either full party. Not contradicted; left as-is.
+- Milk n' Honey's own FA party spelling ("Thomas Ramier") is similarly unconfirmable — the
+  CascadeClimbers.com trip-report thread that would settle it is blocked — though the date
+  (Aug 24, 2010) and two of the three names match what search snippets surface.
+
+**Checked and confirmed correct, not touched:** West McMillan Spire's 8,004 ft and Aug 29,
+1940 Beckey-brothers FA (Wikipedia/AAC); Mesahchie Peak's 8,795 ft; Mix-up Peak's 7,440 ft and
+1947 Grande/Kendrick FA (Wikipedia); Monte Cristo Peak's 7,136 ft and 1923 Keyes/Zerum FA
+(already self-flagged in `data_quality` as secondary-sourced — no new information found either
+way); South Early Winters Spire's 7,807 ft; Colchuck Balanced Rock's 8,240 ft; Mount Adams'
+12,276 ft (within normal 12,276-12,281 ft cross-source survey variance, not a real conflict)
+and its July 1945 Beckey/Lind/Mulhall Adams Glacier FA; all seven areas' lat/lng plausibly
+match their named peaks (spot-checked against known trailhead/summit locations).
+
+`last_processed_id` advanced to `wa_mount_adams_lava_glacier_headwall`; 362 in-scope routes
+remain unaudited this pass. No `.env`/`.env.local` this run (fresh clone, read-only anon key
+only, as intended). `check:sql` mis-parsed the one fix statement as two fragments and reported
+"nothing to check" — its statement splitter breaks on the semicolon that sits *inside* the
+permit string literal (`"...(Recreation.gov advance lottery); day trips need..."`), which is
+the app's own pre-existing wording for this permit zone, already live on several other rows.
+Verified the target manually instead: re-queried `wa_milk_n_honey` live immediately before
+writing the file and confirmed `permit` was still NULL and the row still exists, so the
+UPDATE's `WHERE id = ... AND permit IS NULL` will match exactly the one intended row.
