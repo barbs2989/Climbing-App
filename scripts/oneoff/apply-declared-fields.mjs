@@ -17,7 +17,7 @@ const args = process.argv.slice(2);
 const APPLY = args.includes("--apply");
 const [file, sub] = args.filter((a) => a !== "--apply");
 if (!file || !sub || !/^[\w-]+$/.test(sub)) { console.error("usage: apply-declared-fields.mjs <fixes.json> <audit-subdir> [--apply]"); process.exit(2); }
-const COLS = new Set(["bivy", "road", "access", "approach", "approach_logistics", "waypoints", "watch_out"]);
+const COLS = new Set(["bivy", "road", "access", "approach", "approach_logistics", "approach_variants", "waypoints", "watch_out"]);
 const fixes = JSON.parse(fs.readFileSync(file, "utf8"));
 const key = requireServiceKey();
 const SOURCE_RE = /\b(mountain ?project|summit ?post|cascade ?climbers|nwhikers|peakbagger|wta\b|washington trails association|beckey|guide ?book|trip reports? (say|note|describe)|according to|reported by|the mountaineers)\b|\b[Pp]er (?:the )?[A-Z]/;
