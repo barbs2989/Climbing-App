@@ -1,0 +1,809 @@
+{
+ "wa_mount_meany_standard": {
+  "area_id": "wa_mount_meany",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "North Fork Quinault Road (via North Shore Road)",
+     "status": "Open; the final 4 miles are gravel, narrow and winding, and are not recommended for RVs or trailers.",
+     "driveNote": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. North Shore is currently the only way in: South Shore Road is closed by a washout roughly 8 miles from US-101. The Elwha approach via Whiskey Bend is a genuine alternative and is currently foot and bike only: Olympic Hot Springs Road has been shut to vehicles beyond Madison Falls since a washout, adding roughly 6 miles each way.",
+     "seasonalGate": "May close during winter storms; NPS publishes no fixed gate dates, so check current road conditions before travelling."
+    },
+    "value": {
+     "name": "North Fork Quinault Road (via North Shore Road)",
+     "status": "Open; the final 4 miles are gravel, narrow and winding, and are not recommended for RVs or trailers.",
+     "driveNote": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. North Shore is the only way in: South Shore Road is closed by a washout at about mile 8 from US-101, with no reopening date on Olympic National Park's alerts page updated August 27, 2026. The Elwha approach via Whiskey Bend is a genuine alternative but is foot and bike only: Olympic Hot Springs Road has been shut to vehicles beyond Madison Falls since November 2017 flood damage, adding roughly 6 miles each way.",
+     "seasonalGate": "May close during winter storms; NPS publishes no fixed gate dates, so check current road conditions before travelling."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "$8/person/night (16+; free for 15 and under) + $6 non-refundable reservation fee per permit. An optional annual Wilderness Pass ($45/person) covers per-night fees for 12 months but not the $6 reservation fee.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Leave No Trace; bear canisters where required; group size limits in wilderness",
+     "permit": "Wilderness permit required for all overnight stays, reserved in advance via Recreation.gov ($8/person/night plus a $6 reservation fee, or covered by an annual Wilderness Pass). This is a cross-country zone not shown on the standard Wilderness Trip Planner map, so parties must call the Wilderness Information Center directly to book camps in the Meany/Bailey Range area.",
+     "closures": "Whiskey Bend Road has been closed to vehicles since 2021 (washout); Graves Creek Road (Quinault side) reopened May 2026 via a North Shore Road detour after a separate South Shore Road washout. Check the NPS Current Road Conditions page before any trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Park entrance as applicable to trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "value": {
+     "fees": "$8/person/night (16+; free for 15 and under) + $6 non-refundable reservation fee per permit. An optional annual Wilderness Pass ($45/person) covers per-night fees for 12 months but not the $6 reservation fee.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Leave No Trace; bear canisters where required; group size limits in wilderness",
+     "permit": "Wilderness permit required for all overnight stays, reserved in advance via Recreation.gov ($8/person/night plus a $6 reservation fee, or covered by an annual Wilderness Pass). This is a cross-country zone not shown on the standard Wilderness Trip Planner map, so parties must call the Wilderness Information Center directly to book camps in the Meany/Bailey Range area.",
+     "closures": "Whiskey Bend Road has been closed to vehicles since November 2017 flood damage washed out Olympic Hot Springs Road beyond Madison Falls; Graves Creek Road (Quinault side) reopened May 2026 via a North Shore Road detour after a separate South Shore Road washout. Check the NPS Current Road Conditions page before any trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Park entrance as applicable to trailhead",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   }
+  },
+  "why": "Quinault South Shore Road still closed at mile 8 (NPS alerts page updated Aug 27, 2026). Olympic Hot Springs Road still closed to vehicles beyond Madison Falls; the continuous closure dates to the November 2017 flood (NPS release Nov 30, 2017: 'closed to vehicle traffic beyond the Madison Falls parking area'). The '2021' in access.closures was the NPS status-line date (5/7/21), not the washout. Removed 'currently'.",
+  "confidence": "high (South Shore) / medium-high (Elwha start date)"
+ },
+ "wa_mount_noyes_standard": {
+  "area_id": "wa_mount_noyes",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "North Fork Quinault Road (via North Shore Road)",
+     "status": "Open; the final 4 miles are gravel, narrow and winding, and are not recommended for RVs or trailers.",
+     "driveNote": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. North Shore is currently the only way in: South Shore Road is closed by a washout roughly 8 miles from US-101.",
+     "seasonalGate": "May close during winter storms; NPS publishes no fixed gate dates, so check current road conditions before travelling."
+    },
+    "value": {
+     "name": "North Fork Quinault Road (via North Shore Road)",
+     "status": "Open; the final 4 miles are gravel, narrow and winding, and are not recommended for RVs or trailers.",
+     "driveNote": "From US-101 at Lake Quinault take North Shore Road about 14 miles to the North/South Shore intersection, then North Fork Quinault Road about 4 miles to the trailhead and ranger station. North Shore is the only way in: South Shore Road is closed by a washout at about mile 8 from US-101, with no reopening date on Olympic National Park's alerts page updated August 27, 2026.",
+     "seasonalGate": "May close during winter storms; NPS publishes no fixed gate dates, so check current road conditions before travelling."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Park entrance fee",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "National Park wilderness regulations; bear-resistant food storage; pack it in/pack it out",
+     "permit": "Wilderness camping permit required for overnight stays; summer-season (mid-May to mid-October) permits are reserved online via recreation.gov, with walk-up permits available at Wilderness Information Centers",
+     "closures": "Elwha access road closed to vehicles beyond Madison Falls since a September 2024 washout (verify current status); North Fork Quinault Road generally unaffected but may close seasonally in winter",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful pass or an Olympic National Park entrance pass (annual or 7-day) for vehicle/per-person park entry.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "value": {
+     "fees": "Park entrance fee",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "National Park wilderness regulations; bear-resistant food storage; pack it in/pack it out",
+     "permit": "Wilderness camping permit required for overnight stays; summer-season (mid-May to mid-October) permits are reserved online via recreation.gov, with walk-up permits available at Wilderness Information Centers",
+     "closures": "Elwha access road closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026; North Fork Quinault Road generally unaffected but may close seasonally in winter",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "America the Beautiful pass or an Olympic National Park entrance pass (annual or 7-day) for vehicle/per-person park entry.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   },
+   "approach": {
+    "expect": "Two trail approaches reach a Low Divide-area high camp: the Elwha River Trail from Whiskey Bend trailhead (~28 miles one-way to Low Divide; the Elwha access road has been closed to vehicles beyond Madison Falls since a September 2024 washout, adding roughly 7 more miles of hiking/biking each way), or the shorter North Fork Quinault River Trail (~16 miles one-way to Low Divide). From high camp, travel off-trail over talus and heather toward the Noyes-Meany or Seattle-Noyes col and up the standard slopes.",
+    "value": "Two trail approaches reach a Low Divide-area high camp: the Elwha River Trail from Whiskey Bend trailhead (~28 miles one-way to Low Divide; the Elwha access road has been closed to vehicles beyond Madison Falls since November 2017 flood damage, adding roughly 7 more miles of hiking/biking each way), or the shorter North Fork Quinault River Trail (~16 miles one-way to Low Divide). From high camp, travel off-trail over talus and heather toward the Noyes-Meany or Seattle-Noyes col and up the standard slopes."
+   }
+  },
+  "why": "South Shore Road closure at mile 8 still listed (NPS alerts Aug 27, 2026). Elwha closure start was stated as a September 2024 washout; the land manager dates the vehicle closure beyond Madison Falls to the November 2017 flood. Aligned with the other Elwha routes.",
+  "confidence": "high (South Shore) / medium-high (Elwha start date)"
+ },
+ "wa_mount_barnes_scramble": {
+  "area_id": "wa_mount_barnes",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Sol Duc Hot Springs Road (Sol Duc River Road, from US-101)",
+     "status": "Paved, 2WD-accessible to the road-end trailhead",
+     "driveNote": "From US-101 near Lake Crescent, follow Sol Duc Hot Springs Road roughly 14 miles past the resort to the road-end parking area. The Elwha-side alternative via Whiskey Bend is a genuine second approach to this peak and is currently shut: Olympic Hot Springs Road is closed to vehicles beyond Madison Falls after the Sept 2024 flood washout, adding a 6.2-mile one-way walk or bike to reach Whiskey Bend.",
+     "seasonalGate": "Typically gated or closed by snow late October through late March; check NPS current road conditions before driving in."
+    },
+    "value": {
+     "name": "Sol Duc Hot Springs Road (Sol Duc River Road, from US-101)",
+     "status": "Paved, 2WD-accessible to the road-end trailhead",
+     "driveNote": "From US-101 near Lake Crescent, follow Sol Duc Hot Springs Road roughly 14 miles past the resort to the road-end parking area. The Elwha-side alternative via Whiskey Bend is a genuine second approach to this peak but has no car access: Olympic Hot Springs Road has been closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adding a 6.2-mile one-way walk or bike to reach Whiskey Bend.",
+     "seasonalGate": "Typically gated or closed by snow late October through late March; check NPS current road conditions before driving in."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Olympic Wilderness camping: $6 reservation fee plus $8/person/night for ages 16+ (15 and under free), in addition to the standard Olympic NP entrance fee/pass for vehicle access.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear-resistant food canisters are required for all overnight stays anywhere in the Olympic Wilderness, including cross-country zones. Rangers will not deny a permit based on a party's stated skill or gear, so honest self-assessment of the off-trail difficulty is essential.",
+     "permit": "Wilderness camping permit required year-round for all overnight stays, reserved through Recreation.gov — but the Elwha Basin/Bailey Range cross-country camping zones are call-in only and must be booked by phone with the Wilderness Information Center, (360) 565-3100, rather than the standard online quota system.",
+     "closures": "The Olympic Hot Springs Road (drive to Whiskey Bend Trailhead) has been washed out and closed to vehicles about 1 mile south of the park boundary since September 2024 — confirm current status before a trip. The Bailey Range Traverse beyond Cat Basin (which includes the approach to Barnes) was closed during the August 2023 Olympic lightning fires and can be re-closed in future high fire-danger periods; check current fire/trail conditions with the WIC.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "value": {
+     "fees": "Olympic Wilderness camping: $6 reservation fee plus $8/person/night for ages 16+ (15 and under free), in addition to the standard Olympic NP entrance fee/pass for vehicle access.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear-resistant food canisters are required for all overnight stays anywhere in the Olympic Wilderness, including cross-country zones. Rangers will not deny a permit based on a party's stated skill or gear, so honest self-assessment of the off-trail difficulty is essential.",
+     "permit": "Wilderness camping permit required year-round for all overnight stays, reserved through Recreation.gov — but the Elwha Basin/Bailey Range cross-country camping zones are call-in only and must be booked by phone with the Wilderness Information Center, (360) 565-3100, rather than the standard online quota system.",
+     "closures": "The Olympic Hot Springs Road (drive to Whiskey Bend Trailhead) has been washed out about 1 mile south of the park boundary and closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026. The Bailey Range Traverse beyond Cat Basin (which includes the approach to Barnes) was closed during the August 2023 Olympic lightning fires and can be re-closed in future high fire-danger periods; check current fire/trail conditions with the WIC.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   },
+   "approach": {
+    "expect": "No maintained trail leads directly to Mount Barnes — it is a cross-country side-trip off the Bailey Range Traverse. Two main approaches: (1) West via Sol Duc Trailhead — Sol Duc River Trail up to Bogachiel Peak/High Divide (filling water at Heart Lake, the last reliable source for miles), then off-trail east along the Bailey Range crest through Cat Basin, Ferry Basin, and Stephen Peak to Bear Pass — roughly 3-5 days of travel before reaching Barnes. (2) East via the Elwha River Trail — historically from Whiskey Bend Trailhead (about 26 mi one way with ~6,100 ft gain to the trail's end near Elwha Basin/Dodwell-Rixon Pass); as of the September 2024 Olympic Hot Springs Road washout, Whiskey Bend is closed to vehicles, adding an extra 6.2 mi one-way walk or bike from the Madison Falls parking area just to reach the trailhead. From a camp near Bear Pass or a nearby meadow, the final summit push contours scree and lingering snow patches southeast, then curls north on a boot track up a moderate scree slope to the Class 2 summit — a few hours round trip once camp is established.",
+    "value": "No maintained trail leads directly to Mount Barnes — it is a cross-country side-trip off the Bailey Range Traverse. Two main approaches: (1) West via Sol Duc Trailhead — Sol Duc River Trail up to Bogachiel Peak/High Divide (filling water at Heart Lake, the last reliable source for miles), then off-trail east along the Bailey Range crest through Cat Basin, Ferry Basin, and Stephen Peak to Bear Pass — roughly 3-5 days of travel before reaching Barnes. (2) East via the Elwha River Trail — historically from Whiskey Bend Trailhead (about 26 mi one way with ~6,100 ft gain to the trail's end near Elwha Basin/Dodwell-Rixon Pass); since November 2017 flood damage closed Olympic Hot Springs Road to vehicles, Whiskey Bend has had no car access, adding an extra 6.2 mi one-way walk or bike from the Madison Falls parking area just to reach the trailhead. From a camp near Bear Pass or a nearby meadow, the final summit push contours scree and lingering snow patches southeast, then curls north on a boot track up a moderate scree slope to the Class 2 summit — a few hours round trip once camp is established."
+   }
+  },
+  "why": "Elwha closure still in force (NPS alerts Aug 27, 2026). Row said 'Sept 2024 flood washout' in three places; NPS dates the vehicle closure beyond Madison Falls to November 2017 flood damage. All three aligned; 'currently shut' removed.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_dana_scramble": {
+  "area_id": "wa_mount_dana",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Olympic Hot Springs Road to Whiskey Bend Road",
+     "status": "Closed to vehicles at Madison Falls due to washout",
+     "driveNote": "From Port Angeles, drive to the Madison Falls parking area; vehicle access beyond that point is currently closed, requiring an additional ~7 miles each way on foot or bike to reach the Whiskey Bend trailhead."
+    },
+    "value": {
+     "name": "Olympic Hot Springs Road to Whiskey Bend Road",
+     "status": "Closed to vehicles at Madison Falls due to washout",
+     "driveNote": "From Port Angeles, drive to the Madison Falls parking area; vehicle access beyond that point has been closed since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, requiring an additional ~7 miles each way on foot or bike to reach the Whiskey Bend trailhead."
+    }
+   },
+   "approach": {
+    "expect": "Getting to the trailhead is currently part of the approach: a 2023-24 washout closed Olympic Hot Springs Road to vehicles at the Madison Falls parking area, and as of the NPS's 2024-2025 advisories that closure adds roughly 7 miles each way of road walking or biking just to reach the Whiskey Bend trailhead (the road remains open to foot/bike traffic beyond Madison Falls). From Whiskey Bend, the actual hike-in follows the Elwha River Trail, a well-graded historic path along the river's east bank that passes the old Geyser Valley homestead sites (Michael's Cabin, Humes Ranch) in the first mile or two. The trail is mellow by Olympic standards, staying under roughly 2,000 ft of gain through its first 15+ miles, and passes Lillian River junction (~4 mi), Mary's Falls Camp (8.8 mi), Canyon Camp, Elkhorn Guard Station, and Stony Point as it winds upstream through old-growth forest with the Elwha River itself as a constant, reliable water source. Camp Wilder and Hayes River Guard Station mark roughly the trail's halfway point. Continue south to Elwha Basin and Chicago Camp (roughly 24-26 trail miles from Whiskey Bend), where the Elwha River must be forded — NPS explicitly flags this crossing as one to check conditions on beforehand, since it can be genuinely hazardous in early-season high water or after rain. At and beyond Chicago Camp the maintained trail effectively dissolves into the Elwha Basin, and travel becomes cross-country: a boot-beaten climbers' path continues up the valley headwaters toward the obvious white tongue of the Elwha Snow Finger, a permanent, avalanche-fed snowfield filling the bedrock gully that leads to Dodwell-Rixon Pass (4,763'). The Snow Finger is the standard way through this section — carry an ice axe and know self-arrest. Recent parties note the snowpack has been thinning in late summer, exposing an opening moat, running water under the snow, and rockfall funneling off the surrounding walls, so climb it early in the day and reassess if it looks broken up; NPS notes snow can linger above Chicago Camp into July. From the top of the Snow Finger at Dodwell-Rixon Pass, Mount Dana sits several miles east-northeast (its coordinates place it roughly 5 miles from the pass, closer to the Mount Norton/Elwha-headwaters side of the range than to the main Carrie-Ferry-Pulitzer crest). There is no path here; parties pick a line across talus, heather benches, and lingering snow patches toward Dana's western slopes for the final class 2 scramble to the 6,214' summit. Water becomes scarce above the pass, so carry enough for a high camp. Given the roughly 70-mile round-trip distance, this is realistically a multi-day trip (3+ days) with a high camp near Dodwell-Rixon Pass or in the upper Elwha basin, not a car-to-car push, and solid off-trail navigation skill is essential once you're past Chicago Camp.",
+    "value": "Getting to the trailhead is part of the approach: November 2017 flood damage closed Olympic Hot Springs Road to vehicles at the Madison Falls parking area, and that closure, still listed with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adds roughly 7 miles each way of road walking or biking just to reach the Whiskey Bend trailhead (the road remains open to foot/bike traffic beyond Madison Falls). From Whiskey Bend, the actual hike-in follows the Elwha River Trail, a well-graded historic path along the river's east bank that passes the old Geyser Valley homestead sites (Michael's Cabin, Humes Ranch) in the first mile or two. The trail is mellow by Olympic standards, staying under roughly 2,000 ft of gain through its first 15+ miles, and passes Lillian River junction (~4 mi), Mary's Falls Camp (8.8 mi), Canyon Camp, Elkhorn Guard Station, and Stony Point as it winds upstream through old-growth forest with the Elwha River itself as a constant, reliable water source. Camp Wilder and Hayes River Guard Station mark roughly the trail's halfway point. Continue south to Elwha Basin and Chicago Camp (roughly 24-26 trail miles from Whiskey Bend), where the Elwha River must be forded — NPS explicitly flags this crossing as one to check conditions on beforehand, since it can be genuinely hazardous in early-season high water or after rain. At and beyond Chicago Camp the maintained trail effectively dissolves into the Elwha Basin, and travel becomes cross-country: a boot-beaten climbers' path continues up the valley headwaters toward the obvious white tongue of the Elwha Snow Finger, a permanent, avalanche-fed snowfield filling the bedrock gully that leads to Dodwell-Rixon Pass (4,763'). The Snow Finger is the standard way through this section — carry an ice axe and know self-arrest. Recent parties note the snowpack has been thinning in late summer, exposing an opening moat, running water under the snow, and rockfall funneling off the surrounding walls, so climb it early in the day and reassess if it looks broken up; NPS notes snow can linger above Chicago Camp into July. From the top of the Snow Finger at Dodwell-Rixon Pass, Mount Dana sits several miles east-northeast (its coordinates place it roughly 5 miles from the pass, closer to the Mount Norton/Elwha-headwaters side of the range than to the main Carrie-Ferry-Pulitzer crest). There is no path here; parties pick a line across talus, heather benches, and lingering snow patches toward Dana's western slopes for the final class 2 scramble to the 6,214' summit. Water becomes scarce above the pass, so carry enough for a high camp. Given the roughly 70-mile round-trip distance, this is realistically a multi-day trip (3+ days) with a high camp near Dodwell-Rixon Pass or in the upper Elwha basin, not a car-to-car push, and solid off-trail navigation skill is essential once you're past Chicago Camp."
+   }
+  },
+  "why": "Elwha closure still in force (NPS alerts Aug 27, 2026). Approach said a '2023-24 washout' and 'as of the NPS's 2024-2025 advisories'; NPS dates the closure to November 2017 flood damage. Aligned with Mount Seattle; vague wording removed.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_wilder_scramble": {
+  "area_id": "wa_mount_wilder",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "Park entrance fee $30/vehicle (or $15/person on foot or bike), valid 7 days; a $55 Olympic National Park annual pass or an America the Beautiful pass is also accepted. The park is cashless (credit/debit only).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Food storage requirements vary by campsite — consult the current Olympic Wilderness Trip Planner map; some Elwha camps have bear wires, others require a hard-sided canister (free loaner canisters available at the Port Angeles Wilderness Information Center). The Elwha River and its tributaries are closed to fishing.",
+     "permit": "Wilderness camping permit required for any overnight stay (essentially mandatory given the trail mileage involved); reserve via Recreation.gov. Cost is $8 per adult per night plus a non-refundable $6 reservation fee, or cover nightly fees with a $45 annual Olympic Wilderness Pass (reservation fee still applies). Summer-season (May 15-Oct 15) permit reservations release around mid-April.",
+     "closures": "Olympic Hot Springs Road washout beyond Madison Falls currently closes vehicle access to the Whiskey Bend trailhead, adding roughly 7 miles of road approach each way — check NPS alerts before you go.",
+     "group_limit": 12,
+     "landManager": "National Park Service — Olympic National Park, Daniel J. Evans Wilderness",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass/fee at the park boundary",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "value": {
+     "fees": "Park entrance fee $30/vehicle (or $15/person on foot or bike), valid 7 days; a $55 Olympic National Park annual pass or an America the Beautiful pass is also accepted. The park is cashless (credit/debit only).",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Food storage requirements vary by campsite — consult the current Olympic Wilderness Trip Planner map; some Elwha camps have bear wires, others require a hard-sided canister (free loaner canisters available at the Port Angeles Wilderness Information Center). The Elwha River and its tributaries are closed to fishing.",
+     "permit": "Wilderness camping permit required for any overnight stay (essentially mandatory given the trail mileage involved); reserve via Recreation.gov. Cost is $8 per adult per night plus a non-refundable $6 reservation fee, or cover nightly fees with a $45 annual Olympic Wilderness Pass (reservation fee still applies). Summer-season (May 15-Oct 15) permit reservations release around mid-April.",
+     "closures": "Olympic Hot Springs Road has been closed to vehicles beyond Madison Falls since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, so reaching the Whiskey Bend trailhead adds roughly 7 miles of road approach each way — check NPS alerts before you go.",
+     "group_limit": 12,
+     "landManager": "National Park Service — Olympic National Park, Daniel J. Evans Wilderness",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass/fee at the park boundary",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   },
+   "approach": {
+    "expect": "Mount Wilder sits deep in the Elwha drainage and this is a genuine multi-day backpack approach, not a day hike-in. From the Whiskey Bend trailhead (currently reached by an extra ~7-mile road-walk/bike-in from the washout near Madison Falls on Olympic Hot Springs Road, per NPS), follow the Elwha River Trail south along the river's east bank through old-growth lowland forest. Established waypoints/camps along the way (mileages approximate, gathered from NPS and trip-report cross-referencing): the Humes Ranch cutoff around 2.7 mi, Lillian River Camp around 4.9 mi (reliable water, log crossing of the Lillian River), Mary's Falls around 6.9 mi, Canyon Camp around 9.6 mi (trail narrows through a rocky gorge section), Elkhorn around 11.4 mi (old guard-station clearing, bear wire), and Hayes River Guard Station around 12 mi (junction with the Hayes River/Dodger Point trail). Continue upriver to Camp Wilder, roughly 16-17 miles from Whiskey Bend (established campsites, bear wire, small shelter), which sits in the river bottom directly below the peak's steep south face and is the logical base camp for the climb. Water is abundant along the river trail (numerous tributary crossings) but there is no bridge maintenance guarantee on side creeks — expect to rock-hop or ford minor tributaries, higher and faster in early season. From Camp Wilder there is no maintained trail to the summit: leave the river trail and climb north/northeast off-trail, first through streamside brush and old forest, then heather benches and talus, to gain the peak's south ridge. The south aspect of Mount Wilder rises nearly 3,800 feet in under two miles, so expect sustained, steep, trail-less travel on a mix of open slope, talus, and brush, with real route-finding needed to link the cleanest line to the ridge crest — there is no cairned or established scramble path, and this peak has no recorded first ascent date, reflecting how rarely it's visited. Top off water at Camp Wilder or a tributary before starting the climb, since it is scarce higher on the ridge.",
+    "value": "Mount Wilder sits deep in the Elwha drainage and this is a genuine multi-day backpack approach, not a day hike-in. From the Whiskey Bend trailhead (reached by an extra ~7-mile road-walk/bike-in from Madison Falls, where Olympic Hot Springs Road has been closed to vehicles since November 2017 flood damage), follow the Elwha River Trail south along the river's east bank through old-growth lowland forest. Established waypoints/camps along the way (mileages approximate, gathered from NPS and trip-report cross-referencing): the Humes Ranch cutoff around 2.7 mi, Lillian River Camp around 4.9 mi (reliable water, log crossing of the Lillian River), Mary's Falls around 6.9 mi, Canyon Camp around 9.6 mi (trail narrows through a rocky gorge section), Elkhorn around 11.4 mi (old guard-station clearing, bear wire), and Hayes River Guard Station around 12 mi (junction with the Hayes River/Dodger Point trail). Continue upriver to Camp Wilder, roughly 16-17 miles from Whiskey Bend (established campsites, bear wire, small shelter), which sits in the river bottom directly below the peak's steep south face and is the logical base camp for the climb. Water is abundant along the river trail (numerous tributary crossings) but there is no bridge maintenance guarantee on side creeks — expect to rock-hop or ford minor tributaries, higher and faster in early season. From Camp Wilder there is no maintained trail to the summit: leave the river trail and climb north/northeast off-trail, first through streamside brush and old forest, then heather benches and talus, to gain the peak's south ridge. The south aspect of Mount Wilder rises nearly 3,800 feet in under two miles, so expect sustained, steep, trail-less travel on a mix of open slope, talus, and brush, with real route-finding needed to link the cleanest line to the ridge crest — there is no cairned or established scramble path, and this peak has no recorded first ascent date, reflecting how rarely it's visited. Top off water at Camp Wilder or a tributary before starting the climb, since it is scarce higher on the ridge."
+   }
+  },
+  "why": "Elwha closure still in force (NPS alerts Aug 27, 2026); dated to the November 2017 flood. Approach string also had 'per NPS', reworded.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_norton_scramble": {
+  "area_id": "wa_mount_norton",
+  "fields": {
+   "approach": {
+    "expect": "From the Madison Falls trailhead (currently the end of vehicle access), walk or bike roughly 7 miles up the closed road to the Whiskey Bend trailhead, then follow the Elwha River Trail deep into the park interior toward the Elwha Basin/Bailey Range country before leaving the trail to scramble Mount Norton.",
+    "value": "From the Madison Falls trailhead (the end of vehicle access since November 2017 flood damage), walk or bike roughly 7 miles up the closed road to the Whiskey Bend trailhead, then follow the Elwha River Trail deep into the park interior toward the Elwha Basin/Bailey Range country before leaving the trail to scramble Mount Norton."
+   }
+  },
+  "why": "Approach said 'currently the end of vehicle access'; now dated to the November 2017 flood closure (still in force, NPS alerts Aug 27, 2026). Norton's road/closures text was already dated to the Aug 7, 2026 road page and left alone.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_seattle_south": {
+  "area_id": "wa_mount_seattle",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Elwha River area access (Olympic Hot Springs Road)",
+     "status": "Closed to vehicle traffic beyond the Madison Falls parking area since a May 2021 washout; open to foot, bike, and leashed-dog travel (per NPS current road conditions page).",
+     "driveNote": "Elwha-area road access has been affected by washouts in recent years; verify current status before driving.",
+     "seasonalGate": null
+    },
+    "value": {
+     "name": "Elwha River area access (Olympic Hot Springs Road)",
+     "status": "Closed to vehicle traffic beyond the Madison Falls parking area since November 2017 flood damage; open to foot, bike, and leashed-dog travel, with no reopening date on Olympic National Park's alerts page updated August 27, 2026.",
+     "driveNote": "Elwha-area road access has been affected by washouts in recent years; verify current status before driving.",
+     "seasonalGate": null
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Olympic NP wilderness permit reservation: $6 reservation fee plus $8 per person per night for climbers/backpackers age 16+ (15 and under free), as of 2026.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Hard-sided, approved bear-resistant food canisters are required for all overnight stays throughout most of Olympic Wilderness, including the Elwha and Quinault interior zones; bear wires/hangs are not accepted. There is no separate climbing registration — rangers do not certify competency or refuse a permit for lack of gear/experience, so self-sufficiency and route knowledge are entirely on the party.",
+     "permit": "A backcountry wilderness camping permit is required for any overnight stay and must be reserved through recreation.gov before your trip.",
+     "closures": "As of 2025-2026, Olympic Hot Springs Road beyond Madison Falls has been closed to vehicles since a May 2021 washout, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road has a separate washout closure near milepost 8 (use North Shore Road as the detour); North Shore Road itself also had a seasonal construction closure near milepost 10.2 (culvert replacement, closed July 9–Sept 22, 2025). Call the park's Road and Weather Hotline (360-565-3131) or check nps.gov/olym for current status before committing to either approach.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (NPS) / Daniel J. Evans Wilderness",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic NP entrance pass (or interagency \"America the Beautiful\" pass)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    },
+    "value": {
+     "fees": "Olympic NP wilderness permit reservation: $6 reservation fee plus $8 per person per night for climbers/backpackers age 16+ (15 and under free), as of 2026.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Hard-sided, approved bear-resistant food canisters are required for all overnight stays throughout most of Olympic Wilderness, including the Elwha and Quinault interior zones; bear wires/hangs are not accepted. There is no separate climbing registration — rangers do not certify competency or refuse a permit for lack of gear/experience, so self-sufficiency and route knowledge are entirely on the party.",
+     "permit": "A backcountry wilderness camping permit is required for any overnight stay and must be reserved through recreation.gov before your trip.",
+     "closures": "Olympic Hot Springs Road beyond Madison Falls has been closed to vehicles since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road has a separate washout closure near milepost 8 (use North Shore Road as the detour); North Shore Road itself also had a seasonal construction closure near milepost 10.2 (culvert replacement, closed July 9–Sept 22, 2025). Call the park's Road and Weather Hotline (360-565-3131) or check nps.gov/olym for current status before committing to either approach.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (NPS) / Daniel J. Evans Wilderness",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic NP entrance pass (or interagency \"America the Beautiful\" pass)",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+      "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+     }
+    }
+   },
+   "approach": {
+    "expect": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, roughly 16-20 miles one-way depending on the line chosen, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since a 2021 washout, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down.",
+    "value": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, roughly 16-20 miles one-way depending on the line chosen, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since November 2017 flood damage, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down."
+   }
+  },
+  "why": "Row claimed a 'May 2021 washout' in status, closures and approach; 5/7/21 is only the status-line date on the NPS road page. NPS dates the vehicle closure beyond Madison Falls to November 2017 flood damage; aligned with Dana. road.status also had 'per NPS', reworded.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_hopper_standard": {
+  "area_id": "wa_mount_hopper",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Staircase Road (North Fork Skokomish Road, off US-101 at Hoodsport)",
+     "status": "Open — FS-24 and the Staircase developed area reopened 8 July 2026 after a year-long closure following the 2025 Bear Gulch Fire",
+     "driveNote": "With the North Fork Skokomish trail out of Staircase closed, the Duckabush Trailhead (off US-101 near Brinnon) is the currently viable paved, drive-to access point for this peak, via Duckabush Trail #803 toward Marmot Lake.",
+     "seasonalGate": "Open; the road itself is no longer gated for the fire. Verify before travel."
+    },
+    "value": {
+     "name": "Staircase Road (North Fork Skokomish Road, off US-101 at Hoodsport)",
+     "status": "Open — FS-24 and the Staircase developed area reopened 8 July 2026 after a year-long closure following the 2025 Bear Gulch Fire",
+     "driveNote": "With the North Fork Skokomish trail out of Staircase closed since the 2025 Bear Gulch Fire (no reopening date on the park's fire-conditions page updated September 18, 2026), the Duckabush Trailhead (off US-101 near Brinnon) is the viable paved, drive-to access point for this peak, via Duckabush Trail #803 toward Marmot Lake.",
+     "seasonalGate": "Open; the road itself is no longer gated for the fire. Verify before travel."
+    }
+   },
+   "approach": {
+    "expect": "With the historic Staircase (North Fork Skokomish) approach currently closed, the practical way in is now from the Duckabush Trailhead via Duckabush Trail #803. The tread starts easy for about 2.4 miles to Little Hump, then climbs the steep, loose-rock switchbacks of Big Hump before mellowing again to the Olympic National Park boundary around mile 6.2-6.7. Continue up the valley past 5 Mile Camp (a popular fishing/camping flat by the river) and 10 Mile Camp (~mile 12), where the trail's grade eases through old-growth forest along the Duckabush River — reliable water the whole way, though treat it. Beyond 10 Mile Camp the trail steepens again through the rougher upper-valley tread toward the Duckabush Camp junction with the O'Neil Pass/North Fork Skokomish Trail; from there it's a tough, sustained climb — the last mile notably steep — up to Marmot Lake (roughly 20-21 miles from the trailhead), a good base camp near Hart Lake (0.9 mi), Lake LaCrosse (1.4 mi), and O'Neil Pass (1.2 mi). From Marmot Lake, drop back to the Home Sweet Home junction and climb the connector trail over First Divide (4,688 ft) — the old link to the closed Staircase side — then leave maintained trail to angle cross-country/climber's-path up open talus and subalpine meadow toward Mount Hopper's basin below the summit rockwall (high point ~6,120 ft). This upper stretch has real route-finding difficulty: numerous gullies and ribs look equally plausible from below, snow can choke the gully well into summer (ice axe advisable), and the final scramble features loose rock underfoot — expect to backtrack if you pick the wrong line. Given the mileage (~29 miles one-way), most parties treat this as a multi-day trip with a camp at Marmot Lake or Home Sweet Home rather than a car-to-car push.",
+    "value": "With the historic Staircase (North Fork Skokomish) approach closed since the 2025 Bear Gulch Fire, the practical way in is now from the Duckabush Trailhead via Duckabush Trail #803. The tread starts easy for about 2.4 miles to Little Hump, then climbs the steep, loose-rock switchbacks of Big Hump before mellowing again to the Olympic National Park boundary around mile 6.2-6.7. Continue up the valley past 5 Mile Camp (a popular fishing/camping flat by the river) and 10 Mile Camp (~mile 12), where the trail's grade eases through old-growth forest along the Duckabush River — reliable water the whole way, though treat it. Beyond 10 Mile Camp the trail steepens again through the rougher upper-valley tread toward the Duckabush Camp junction with the O'Neil Pass/North Fork Skokomish Trail; from there it's a tough, sustained climb — the last mile notably steep — up to Marmot Lake (roughly 20-21 miles from the trailhead), a good base camp near Hart Lake (0.9 mi), Lake LaCrosse (1.4 mi), and O'Neil Pass (1.2 mi). From Marmot Lake, drop back to the Home Sweet Home junction and climb the connector trail over First Divide (4,688 ft) — the old link to the closed Staircase side — then leave maintained trail to angle cross-country/climber's-path up open talus and subalpine meadow toward Mount Hopper's basin below the summit rockwall (high point ~6,120 ft). This upper stretch has real route-finding difficulty: numerous gullies and ribs look equally plausible from below, snow can choke the gully well into summer (ice axe advisable), and the final scramble features loose rock underfoot — expect to backtrack if you pick the wrong line. Given the mileage (~29 miles one-way), most parties treat this as a multi-day trip with a camp at Marmot Lake or Home Sweet Home rather than a car-to-car push."
+   }
+  },
+  "why": "North Fork Skokomish Trail still closed after the 2025 Bear Gulch Fire, no reopening date (NPS fire-conditions page updated Sept 18, 2026). Removed 'currently'. NOTE not changed: the Duckabush alternative in this approach crosses the Home Sweet Home Trail / First Divide, which the same NPS pages list as CLOSED.",
+  "confidence": "high"
+ },
+ "wa_mount_cruiser_nw_face_corner": {
+  "area_id": "wa_mount_cruiser",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "Olympic NP entrance: $30/vehicle or $15/person for 7 days, $55 annual Olympic pass (nps.gov/olym, 2026 rates). Overnight wilderness camping permit for Flapjack Lakes (a quota/limited-entry area including Gladys Divide) costs a $6 Recreation.gov reservation fee plus $8/person/night (16+, free under 16); summer-season (May 15–Oct 15) permits release April 15 and this is one of the park's highest-demand backcountry zones.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Flapjack Lakes is a quota/limited-use area — no same-day walk-up permits once the season sells out; groups capped at 12, parties of 7+ must use designated group campsites; stick to your permitted itinerary except in emergencies.",
+     "permit": "NPS wilderness/backcountry permit required for any overnight camping at Flapjack Lakes or Gladys Divide, booked in advance on Recreation.gov (Wilderness Information Center, 360-565-3100); no separate climbing permit is needed once past the park boundary into the Mount Skokomish Wilderness.",
+     "closures": "The standard approach is still closed: FS-24 and the Staircase developed area reopened July 8, 2026 after the 2025 Bear Gulch Fire (contained November 12, 2025), but the North Fork Skokomish River Trail beyond the Staircase Rapids Loop and the Flapjack Lakes Trail remain closed for hazard assessment and repairs, with no announced reopening date. Check with Olympic National Park before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Approach trail (Staircase, North Fork Skokomish River Trail, Flapjack Lakes Trail, Gladys Divide) is within Olympic National Park (NPS); the summit and Sawtooth Ridge itself sit just south of the park boundary in the Mount Skokomish Wilderness, Olympic National Forest.",
+     "land_manager": "U.S. Forest Service -- Mount Skokomish Wilderness, Olympic National Forest (summit/Sawtooth Ridge); the approach trail via Staircase lies within Olympic National Park.",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass (or America the Beautiful pass) for vehicle/individual entry at the Staircase entrance station; no Northwest Forest Pass needed since the trailhead itself is inside the National Park boundary.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    },
+    "value": {
+     "fees": "Olympic NP entrance: $30/vehicle or $15/person for 7 days, $55 annual Olympic pass (nps.gov/olym, 2026 rates). Overnight wilderness camping permit for Flapjack Lakes (a quota/limited-entry area including Gladys Divide) costs a $6 Recreation.gov reservation fee plus $8/person/night (16+, free under 16); summer-season (May 15–Oct 15) permits release April 15 and this is one of the park's highest-demand backcountry zones.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Flapjack Lakes is a quota/limited-use area — no same-day walk-up permits once the season sells out; groups capped at 12, parties of 7+ must use designated group campsites; stick to your permitted itinerary except in emergencies.",
+     "permit": "NPS wilderness/backcountry permit required for any overnight camping at Flapjack Lakes or Gladys Divide, booked in advance on Recreation.gov (Wilderness Information Center, 360-565-3100); no separate climbing permit is needed once past the park boundary into the Mount Skokomish Wilderness.",
+     "closures": "The standard approach is still closed: FS-24 and the Staircase developed area reopened July 8, 2026 after the 2025 Bear Gulch Fire (contained November 12, 2025), but the North Fork Skokomish River Trail beyond the Staircase Rapids Loop and the Flapjack Lakes Trail remain closed for hazard assessment and repairs, with no reopening date on the park's fire-conditions page updated September 18, 2026. Check with Olympic National Park before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Approach trail (Staircase, North Fork Skokomish River Trail, Flapjack Lakes Trail, Gladys Divide) is within Olympic National Park (NPS); the summit and Sawtooth Ridge itself sit just south of the park boundary in the Mount Skokomish Wilderness, Olympic National Forest.",
+     "land_manager": "U.S. Forest Service -- Mount Skokomish Wilderness, Olympic National Forest (summit/Sawtooth Ridge); the approach trail via Staircase lies within Olympic National Park.",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass (or America the Beautiful pass) for vehicle/individual entry at the Staircase entrance station; no Northwest Forest Pass needed since the trailhead itself is inside the National Park boundary.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   },
+   "approach": {
+    "expect": "Same approach as the South Corner (Staircase → Flapjack Lakes → Needle Pass, currently closed — see Closures). From Needle Pass, continue along or near the crest of Sawtooth Ridge past the South Corner start line to reach the northwest side of Cruiser's summit pinnacle via exposed 3rd/4th-class ridge scrambling.",
+    "value": "Same approach as the South Corner (Staircase → Flapjack Lakes → Needle Pass, closed since the 2025 Bear Gulch Fire — see Closures). From Needle Pass, continue along or near the crest of Sawtooth Ridge past the South Corner start line to reach the northwest side of Cruiser's summit pinnacle via exposed 3rd/4th-class ridge scrambling."
+   }
+  },
+  "why": "Flapjack Lakes and NF Skokomish trails still closed, no reopening date (NPS fire-conditions page updated Sept 18, 2026). Added the page date; approach's 'currently closed' dated to the 2025 fire.",
+  "confidence": "high"
+ },
+ "wa_mount_lincoln_standard": {
+  "area_id": "wa_mount_lincoln",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "North Fork Skokomish / Staircase Road",
+     "status": "Pavement ends ~1.7 mi onto FR-24 from Hoodsport, then ~3.7 mi of gravel to the Staircase Ranger Station/trailhead. As of mid-2026, the developed Staircase area reopened July 8, 2026 after a year-long closure from the 2025 Bear Gulch Fire, but surrounding wilderness trails - including the Flapjack Lakes/North Fork Skokomish Trail used for this route's approach - remain closed for post-fire repair; verify current status before attempting.",
+     "driveNote": "Access is via the Staircase area of Olympic National Park (North Fork Skokomish). The Staircase developed area (road, campground, ranger station) was closed by the 2025 Bear Gulch Fire and reopened July 8, 2026, but the Flapjack Lakes and North Fork Skokomish trails beyond the developed area remain closed for hazard mitigation as of mid-2026 — confirm current road AND trail status before the trip.",
+     "seasonalGate": "Typically snow-affected/closed November-May in normal (non-fire-closure) years."
+    },
+    "value": {
+     "name": "North Fork Skokomish / Staircase Road",
+     "status": "Pavement ends ~1.7 mi onto FR-24 from Hoodsport, then ~3.7 mi of gravel to the Staircase Ranger Station/trailhead. The developed Staircase area reopened July 8, 2026 after a year-long closure from the 2025 Bear Gulch Fire, but surrounding wilderness trails - including the Flapjack Lakes/North Fork Skokomish Trail used for this route's approach - remain closed for post-fire repair, with no reopening date on the park's fire-conditions page updated September 18, 2026; verify before attempting.",
+     "driveNote": "Access is via the Staircase area of Olympic National Park (North Fork Skokomish). The Staircase developed area (road, campground, ranger station) was closed by the 2025 Bear Gulch Fire and reopened July 8, 2026, but the Flapjack Lakes and North Fork Skokomish trails beyond the developed area remain closed for hazard mitigation, with no reopening date on the park's fire-conditions page updated September 18, 2026 — confirm current road AND trail status before the trip.",
+     "seasonalGate": "Typically snow-affected/closed November-May in normal (non-fire-closure) years."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass at Forest trailheads; National Park fees if approaching via Staircase in Olympic National Park",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Follow wilderness regulations and Leave No Trace; bear canisters are required for food storage at Flapjack Lakes.",
+     "permit": "Wilderness camping permits are limited and reservable year-round (early reservations recommended for the 6/15-9/30 season) if camping within Olympic National Park at Flapjack Lakes; self-issued wilderness registration on Forest land",
+     "closures": "As of mid-2026, the Flapjack Lakes/North Fork Skokomish Trail and surrounding backcountry remain closed following the 2025 Bear Gulch Fire (20,233 acres, 100% contained Nov 2025); the developed Staircase area itself reopened July 8, 2026, but wilderness trail closures were continuing during recovery - confirm current status with Olympic National Park before attempting this route.",
+     "closureNote": "As of the NPS trail-conditions update on 6/5/26, the Flapjack Lakes Trail and North Fork Skokomish River Trail are CLOSED due to the 2025 Bear Gulch Fire, with no reopening date given — verify current status with Olympic National Park before this trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness, trail/approach) and Mount Skokomish Wilderness, Olympic National Forest (summit block)",
+     "land_manager": "National Park Service — Olympic National Park (Daniel J. Evans Wilderness, trail/approach); the summit sits on the boundary with the USDA Forest Service's Olympic National Forest (Mount Skokomish Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass, or an America the Beautiful interagency pass, plus an NPS wilderness permit for overnight travel. No Northwest Forest Pass - Staircase is inside the national park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass at Forest trailheads; National Park fees if approaching via Staircase in Olympic National Park",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Follow wilderness regulations and Leave No Trace; bear canisters are required for food storage at Flapjack Lakes.",
+     "permit": "Wilderness camping permits are limited and reservable year-round (early reservations recommended for the 6/15-9/30 season) if camping within Olympic National Park at Flapjack Lakes; self-issued wilderness registration on Forest land",
+     "closures": "The Flapjack Lakes/North Fork Skokomish Trail and surrounding backcountry have been closed since the 2025 Bear Gulch Fire (20,233 acres, 100% contained Nov 2025); the developed Staircase area itself reopened July 8, 2026, but the wilderness trails remain closed with no reopening date on the park's fire-conditions page updated September 18, 2026 - confirm current status with Olympic National Park before attempting this route.",
+     "closureNote": "As of the NPS trail-conditions update on 6/5/26, the Flapjack Lakes Trail and North Fork Skokomish River Trail are CLOSED due to the 2025 Bear Gulch Fire, with no reopening date given — verify current status with Olympic National Park before this trip.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness, trail/approach) and Mount Skokomish Wilderness, Olympic National Forest (summit block)",
+     "land_manager": "National Park Service — Olympic National Park (Daniel J. Evans Wilderness, trail/approach); the summit sits on the boundary with the USDA Forest Service's Olympic National Forest (Mount Skokomish Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Olympic National Park entrance pass, or an America the Beautiful interagency pass, plus an NPS wilderness permit for overnight travel. No Northwest Forest Pass - Staircase is inside the national park.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness permit, reserved in advance, per-night fee",
+      "where": "Reserve on Recreation.gov before the trip; there are no same-day walk-up permits. Bear canisters are required at Flapjack Lakes, and the Staircase trails are closed after the Bear Gulch Fire, so check status first."
+     }
+    }
+   }
+  },
+  "why": "Staircase developed area reopened July 8, 2026; Flapjack Lakes/NF Skokomish trails still closed with no reopening date (NPS fire-conditions page updated Sept 18, 2026). Replaced three 'as of mid-2026' phrasings.",
+  "confidence": "high"
+ },
+ "wa_mount_skokomish_standard": {
+  "area_id": "wa_mount_skokomish",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "Northwest Forest Pass required to park at Mildred Lakes and Putvin trailheads (no fee at the trailhead itself otherwise). Entering via Staircase/Olympic NP requires the $30 park entrance fee (7-day private-vehicle pass; $15 for a walk-in/bike individual pass) or an interagency pass, plus an $8 per person per night backcountry camping fee (booked via Recreation.gov) for Flapjack Lakes.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Wilderness regulations apply (no bikes/motorized use, max group size limits, camp 200 ft from water). Mountain goats are frequently encountered around the peak's base and Lake of the Angels basin — do not approach or feed them; give them a wide berth as they can be aggressive toward hikers seeking salt.",
+     "permit": "No wilderness permit is required for day trips on Olympic National Forest land (Mildred Lakes, Putvin Trail). Camping at Lake of the Angels, which lies inside Olympic National Park, requires an Olympic National Park wilderness camping permit. If approaching via Flapjack Lakes inside Olympic National Park, an overnight wilderness camping permit is required, reservable on Recreation.gov for the Flapjack Lakes zone (bookable mid-April, camping dates mid-June through mid-October); contact the Wilderness Information Center at (360) 565-3100.",
+     "closures": "UPDATED (as of July 8, 2026): the Mildred Lakes Trail (#822) and Mildred Lakes Trailhead on FS-25 — along with the Mt. Rose Trail/Trailhead, Dry Creek East Trailhead, and the Staircase developed area (campground, ranger station, Rapids Loop Trail) — REOPENED on July 8, 2026 per a joint Olympic National Forest/Olympic National Park press release, ending the closure tied to the 2025 Bear Gulch Fire. Still CLOSED pending hazard-tree removal and infrastructure repair: wilderness trails beyond the developed Staircase area, including the North Fork Skokomish River Trail (from the Staircase Rapids Loop to Home Sweet Home) and the Flapjack Lakes Trail, plus FS-2451 and the Copper Creek Trail. The Putvin Trail/Lake of the Angels approach, on a different drainage further north off Hamma Hamma River Road, was never part of this closure and remains the standard approach to Mount Skokomish. Always check the Olympic National Forest alerts page and NPS Olympic fire-conditions page before a trip, as backcountry trail status keeps changing as repair work continues through summer 2026.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District) for the Mildred Lakes and Putvin trailheads; Olympic National Park (Wilderness Information Center) for the Staircase/North Fork Skokomish/Flapjack Lakes side.",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None for day use; NPS wilderness permit for overnight camping.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit",
+      "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September."
+     }
+    },
+    "value": {
+     "fees": "Northwest Forest Pass required to park at Mildred Lakes and Putvin trailheads (no fee at the trailhead itself otherwise). Entering via Staircase/Olympic NP requires the $30 park entrance fee (7-day private-vehicle pass; $15 for a walk-in/bike individual pass) or an interagency pass, plus an $8 per person per night backcountry camping fee (booked via Recreation.gov) for Flapjack Lakes.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Wilderness regulations apply (no bikes/motorized use, max group size limits, camp 200 ft from water). Mountain goats are frequently encountered around the peak's base and Lake of the Angels basin — do not approach or feed them; give them a wide berth as they can be aggressive toward hikers seeking salt.",
+     "permit": "No wilderness permit is required for day trips on Olympic National Forest land (Mildred Lakes, Putvin Trail). Camping at Lake of the Angels, which lies inside Olympic National Park, requires an Olympic National Park wilderness camping permit. If approaching via Flapjack Lakes inside Olympic National Park, an overnight wilderness camping permit is required, reservable on Recreation.gov for the Flapjack Lakes zone (bookable mid-April, camping dates mid-June through mid-October); contact the Wilderness Information Center at (360) 565-3100.",
+     "closures": "UPDATED (as of July 8, 2026): the Mildred Lakes Trail (#822) and Mildred Lakes Trailhead on FS-25 — along with the Mt. Rose Trail/Trailhead, Dry Creek East Trailhead, and the Staircase developed area (campground, ranger station, Rapids Loop Trail) — REOPENED on July 8, 2026 per a joint Olympic National Forest/Olympic National Park press release, ending the closure tied to the 2025 Bear Gulch Fire. Still CLOSED pending hazard-tree removal and infrastructure repair: wilderness trails beyond the developed Staircase area, including the North Fork Skokomish River Trail (from the Staircase Rapids Loop to Home Sweet Home) and the Flapjack Lakes Trail, with no reopening date on the park's fire-conditions page updated September 18, 2026, plus FS-2451 and the Copper Creek Trail (Olympic National Forest alert updated July 8, 2026). The Putvin Trail/Lake of the Angels approach, on a different drainage further north off Hamma Hamma River Road, was never part of this closure and remains the standard approach to Mount Skokomish. Always check the Olympic National Forest alerts page and NPS Olympic fire-conditions page before a trip, as backcountry trail status keeps changing as repair work continues through summer 2026.",
+     "group_limit": 12,
+     "landManager": "Olympic National Forest (Hood Canal Ranger District) for the Mildred Lakes and Putvin trailheads; Olympic National Park (Wilderness Information Center) for the Staircase/North Fork Skokomish/Flapjack Lakes side.",
+     "land_manager": "Olympic National Forest (Hood Canal Ranger District)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "None for day use; NPS wilderness permit for overnight camping.",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+      "what": "Olympic National Park wilderness camping permit",
+      "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center. Upper Lena Lake is quota-limited, so book early for July to September."
+     }
+    }
+   }
+  },
+  "why": "Trail closures still in force (NPS fire-conditions page updated Sept 18, 2026); FS-2451/Copper Creek still closed (Olympic NF alert updated July 8, 2026). Added the dates to the 'Still CLOSED' sentence.",
+  "confidence": "high"
+ },
+ "wa_mount_anderson_eel_glacier": {
+  "area_id": "wa_mount_anderson",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$8 per person per night plus a non-refundable $6 reservation fee per permit (2026 rates); an optional $45 Annual Wilderness Pass covers per-night camping fees but the $6 reservation fee still applies. Free for youth 15 and under.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for food storage at all designated camps in this corridor (free loaner canisters available at the Wilderness Information Center). No campfires at or above Honeymoon Meadows. Camp only in designated sites: Dose Forks, Big Timber, Diamond Meadows, Honeymoon Meadows, LaCrosse Pass Junction, and Camp Siberia.",
+     "permit": "Wilderness camping permit required for all overnight stays along the Dosewallips/West Fork Dosewallips corridor. Reserve in advance via Recreation.gov (Olympic National Park Wilderness Permit) or obtain by phone/in person at the Wilderness Information Center in Port Angeles, (360) 565-3100.",
+     "closures": "Dosewallips River Road has been closed to motor vehicles since a January 2002 washout roughly 1 mile past the current road-end parking (~8.5 mi from US-101); it remains open to foot, bike, and horse traffic only, adding about 6.5-7 miles (13-14 mi round trip) of extra travel each way to the historic road-end trailhead at the Dosewallips Ranger Station. As of 2026 there is no announced timeline for repair.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/4098362",
+      "what": "Olympic National Park wilderness permit — reservable, not free",
+      "where": "Book on Recreation.gov; $8 per person per night plus a $6 reservation fee, or cover it with an annual Olympic Wilderness Pass. Summer-season reservations open in mid-April."
+     }
+    },
+    "value": {
+     "fees": "$8 per person per night plus a non-refundable $6 reservation fee per permit (2026 rates); an optional $45 Annual Wilderness Pass covers per-night camping fees but the $6 reservation fee still applies. Free for youth 15 and under.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Bear canisters are required for food storage at all designated camps in this corridor (free loaner canisters available at the Wilderness Information Center). No campfires at or above Honeymoon Meadows. Camp only in designated sites: Dose Forks, Big Timber, Diamond Meadows, Honeymoon Meadows, LaCrosse Pass Junction, and Camp Siberia.",
+     "permit": "Wilderness camping permit required for all overnight stays along the Dosewallips/West Fork Dosewallips corridor. Reserve in advance via Recreation.gov (Olympic National Park Wilderness Permit) or obtain by phone/in person at the Wilderness Information Center in Port Angeles, (360) 565-3100.",
+     "closures": "Dosewallips River Road has been closed to motor vehicles since a January 2002 washout roughly 1 mile past the current road-end parking (~8.5 mi from US-101); it remains open to foot, bike, and horse traffic only, adding about 6.5-7 miles (13-14 mi round trip) of extra travel each way to the historic road-end trailhead at the Dosewallips Ranger Station. No repair date is given on the Olympic National Park road-conditions page updated August 7, 2026.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park (Daniel J. Evans Wilderness)",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "overnight_permit": {
+      "url": "https://www.recreation.gov/permits/4098362",
+      "what": "Olympic National Park wilderness permit — reservable, not free",
+      "where": "Book on Recreation.gov; $8 per person per night plus a $6 reservation fee, or cover it with an annual Olympic Wilderness Pass. Summer-season reservations open in mid-April."
+     }
+    }
+   },
+   "approach": {
+    "expect": "From US-101 at Brinnon, turn onto Dosewallips Road and drive roughly 8.5 miles to the road-end parking — the road beyond has been closed to vehicles since a 2002 flood and remains closed indefinitely as of recent seasons; park here (a mountain bike is a real time-saver for the road-walk ahead). Walk about a mile up the closed road and follow the bypass trail around the washout — a short ~0.3-mile detour with a few switchbacks past old-growth trees — then rejoin the abandoned roadbed and continue roughly 5.6 more miles to the Dosewallips Ranger Station (1,600 ft). From the ranger station, pick up the Dosewallips River Trail for 1.4 miles to its junction with the West Fork Dosewallips Trail (Trail #1010); bear onto the West Fork Trail and follow the river upstream past a string of established camps — Dose Forks, Big Timber, Diamond Meadows — to Honeymoon Meadows (3,527 ft, about 8 trail-miles from the ranger station). Expect at least one calf-to-knee-deep ford of the West Fork in this stretch depending on season and snowmelt. Beyond Honeymoon Meadows the trail climbs past Camp Siberia toward Anderson Pass (4,464 ft), the low divide between the Quinault and Dosewallips drainages. Leave the maintained trail here and follow the climbers' path up the moraine to a high camp on a snowy saddle above a small tarn (Anderson/Valkyrie Lake, ~5,100 ft) — most parties budget 7-9 hours trailhead-to-camp. From high camp, traverse above the tarn (often still frozen) and climb the steep snow finger leading up to Flypaper Pass (~6,500 ft); glacier recession has steepened this finger considerably beyond older published descriptions, with the crux section now estimated at 40+ degrees late in the season — plan to be through it before it melts out (ideally spring/early summer) and expect firm or icy snow requiring an ice axe and crampons. Water is reliable along the West Fork the entire way in and again at the tarn near high camp; carry what you need above that.",
+    "value": "From US-101 at Brinnon, turn onto Dosewallips Road and drive roughly 8.5 miles to the road-end parking — the road beyond has been closed to vehicles since a 2002 flood, with no reopening date on the Olympic National Park road-conditions page updated August 7, 2026; park here (a mountain bike is a real time-saver for the road-walk ahead). Walk about a mile up the closed road and follow the bypass trail around the washout — a short ~0.3-mile detour with a few switchbacks past old-growth trees — then rejoin the abandoned roadbed and continue roughly 5.6 more miles to the Dosewallips Ranger Station (1,600 ft). From the ranger station, pick up the Dosewallips River Trail for 1.4 miles to its junction with the West Fork Dosewallips Trail (Trail #1010); bear onto the West Fork Trail and follow the river upstream past a string of established camps — Dose Forks, Big Timber, Diamond Meadows — to Honeymoon Meadows (3,527 ft, about 8 trail-miles from the ranger station). Expect at least one calf-to-knee-deep ford of the West Fork in this stretch depending on season and snowmelt. Beyond Honeymoon Meadows the trail climbs past Camp Siberia toward Anderson Pass (4,464 ft), the low divide between the Quinault and Dosewallips drainages. Leave the maintained trail here and follow the climbers' path up the moraine to a high camp on a snowy saddle above a small tarn (Anderson/Valkyrie Lake, ~5,100 ft) — most parties budget 7-9 hours trailhead-to-camp. From high camp, traverse above the tarn (often still frozen) and climb the steep snow finger leading up to Flypaper Pass (~6,500 ft); glacier recession has steepened this finger considerably beyond older published descriptions, with the crux section now estimated at 40+ degrees late in the season — plan to be through it before it melts out (ideally spring/early summer) and expect firm or icy snow requiring an ice axe and crampons. Water is reliable along the West Fork the entire way in and again at the tarn near high camp; carry what you need above that."
+   }
+  },
+  "why": "Dosewallips Road still closed to vehicles (NPS road-conditions page updated Aug 7, 2026). Replaced 'As of 2026 there is no announced timeline' and the approach's 'as of recent seasons' with the page date.",
+  "confidence": "high"
+ },
+ "wa_mount_angeles_standard": {
+  "area_id": "wa_mount_angeles",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "NPS entrance fee required: $30/private vehicle (7-day pass), $25/motorcycle, $15/person on foot or bike; Olympic-specific annual pass $55; America the Beautiful passes accepted. Park does not accept cash — card/electronic payment only.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Leave No Trace / NPS wilderness rules apply beyond the trailhead: no dogs or bikes on trail, stay on the established boot path on the summit block to limit erosion, pack out all trash.",
+     "permit": "No permit needed for a day scramble. A wilderness permit (via recreation.gov, $8/person/night + $6 non-refundable reservation fee, or covered by the $45 Annual Wilderness Pass) is only required if camping overnight in the backcountry.",
+     "closures": "Hurricane Ridge Road is gated nightly and, in winter (roughly mid-Dec–late March), is plowed and open for uphill travel only Friday–Sunday (plus a few holiday exceptions) from about 9am–4pm; traction tires/chains are often required. The Hurricane Ridge Day Lodge burned down in an unexplained May 2023 fire and has not been rebuilt (the ~$80M rebuild has stalled on funding as of 2025), so there are currently no indoor visitor facilities at the top — only portable restrooms and a temporary contact station. The road has also had periodic multi-day closures for rockfall/unstable slopes, and summer 2026 utility work and meadow-trail construction may cause intermittent weekday impacts. Check the NPS current road conditions page or call (360) 565-3131 before driving up.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park — the Hurricane Ridge day-use corridor is developed, non-wilderness NPS land; the route crosses into the Daniel J. Evans Wilderness along Klahhane Ridge beyond the immediate visitor-center area",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass, checked at the Heart O' the Hills entrance station on Hurricane Ridge Road.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit needed for the day climb",
+      "where": "Heart o' the Hills is a fee campground inside the park; reserve a site on Recreation.gov or take a first-come site."
+     }
+    },
+    "value": {
+     "fees": "NPS entrance fee required: $30/private vehicle (7-day pass), $25/motorcycle, $15/person on foot or bike; Olympic-specific annual pass $55; America the Beautiful passes accepted. Park does not accept cash — card/electronic payment only.",
+     "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+     "rules": "Standard Leave No Trace / NPS wilderness rules apply beyond the trailhead: no dogs or bikes on trail, stay on the established boot path on the summit block to limit erosion, pack out all trash.",
+     "permit": "No permit needed for a day scramble. A wilderness permit (via recreation.gov, $8/person/night + $6 non-refundable reservation fee, or covered by the $45 Annual Wilderness Pass) is only required if camping overnight in the backcountry.",
+     "closures": "Hurricane Ridge Road is gated nightly and, in winter (roughly mid-Dec–late March), is plowed and open for uphill travel only Friday–Sunday (plus a few holiday exceptions) from about 9am–4pm; traction tires/chains are often required. The Hurricane Ridge Day Lodge burned down in an unexplained May 2023 fire and has not been rebuilt: the park's reconstruction page (updated August 25, 2026) lists the project in design, with construction starting in 2028 at the earliest, so there are no indoor visitor facilities at the top — only temporary restroom trailers, and no water or food. The road has also had periodic multi-day closures for rockfall/unstable slopes, and summer 2026 utility work and meadow-trail construction may cause intermittent weekday impacts. Check the NPS current road conditions page or call (360) 565-3131 before driving up.",
+     "group_limit": 12,
+     "landManager": "Olympic National Park — the Hurricane Ridge day-use corridor is developed, non-wilderness NPS land; the route crosses into the Daniel J. Evans Wilderness along Klahhane Ridge beyond the immediate visitor-center area",
+     "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+     "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "NPS entrance pass or America the Beautiful annual pass, checked at the Heart O' the Hills entrance station on Hurricane Ridge Road.",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit needed for the day climb",
+      "where": "Heart o' the Hills is a fee campground inside the park; reserve a site on Recreation.gov or take a first-come site."
+     }
+    }
+   }
+  },
+  "why": "'rebuild has stalled on funding as of 2025' is out of date: NPS reconstruction page (updated Aug 25, 2026) says design contract awarded Sept 19, 2025, construction 2028 at the earliest; post-fire page (May 5, 2026) says restroom trailers, no water/food. Seasonal road-hours text and the unverified 'summer 2026 utility work' clause left as-is.",
+  "confidence": "medium-high"
+ },
+ "wa_mount_la_crosse_scramble": {
+  "area_id": "wa_mount_la_crosse",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Duckabush River Road (FR 2510)",
+     "status": "Open to vehicles as of spring 2026 per Olympic National Forest",
+     "driveNote": "Paved for the first 3.6 miles from US 101 near Brinnon, then gravel for a total of about 6 miles to the Duckabush trailhead (FR 2510-060); the peak itself is deep in the interior, reached only by trail."
+    },
+    "value": {
+     "name": "Duckabush River Road (FR 2510)",
+     "status": "Open to vehicles; no closure is listed for it on the Olympic National Forest alerts page as of September 25, 2026",
+     "driveNote": "Paved for the first 3.6 miles from US 101 near Brinnon, then gravel for a total of about 6 miles to the Duckabush trailhead (FR 2510-060); the peak itself is deep in the interior, reached only by trail."
+    }
+   }
+  },
+  "why": "Duckabush Road (FR 2510): no closure on the Olympic NF alerts page checked Sept 25, 2026 (no Duckabush alert at all). Removed 'as of spring 2026 per Olympic National Forest' (the 'per <Capital>' form is refused by the writer).",
+  "confidence": "medium"
+ },
+ "rainier_north_mowich_headwall": {
+  "area_id": "wa_mount_rainier",
+  "fields": {
+   "access": {
+    "expect": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "$82 climbing registration per person (Pay.gov), $12-26 wilderness permit per person/night (May 1-Sept 15). Mount Rainier National Park requires backcountry permit. CRITICAL: Mowich Lake Road currently CLOSED (SR 165 bridge). When open: mid-July to mid-October. Helmet and rescue gear essential. Permit advance planning required via Recreation.gov.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Free climbing permit, self-register at Mowich Lake ranger station/kiosk",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "group_limit": 12,
+     "landManager": "National Park Service - Mount Rainier National Park",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Annual Climbing Cost Recovery Fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    },
+    "value": {
+     "fees": "$82 per person — Climbing Cost Recovery Fee (2026 rate). Annual: covers unlimited climbs that calendar year. Separate from the park entrance fee.",
+     "notes": "$82 climbing registration per person (Pay.gov), $12-26 wilderness permit per person/night (May 1-Sept 15). Mount Rainier National Park requires backcountry permit. CRITICAL: Mowich Lake Road is CLOSED — WSDOT permanently closed the SR 165 Fairfax Bridge on April 22, 2025, and the park's road-status page (updated September 18, 2026) lists no public access to Mowich Lake from SR 165. When open: mid-July to mid-October. Helmet and rescue gear essential. Permit advance planning required via Recreation.gov.",
+     "rules": "Blue bags required for human waste above high camp — pack out and deposit only in barrels marked \"Human Waste\" at Camp Muir or the trailhead; do not cache on-route. Check-out is required after every climb.",
+     "permit": "Free climbing permit, self-register at Mowich Lake ranger station/kiosk",
+     "closures": "SR 165 Fairfax Bridge permanently closed (April 2025) — no vehicle access to the Mowich Lake trailhead until further notice",
+     "group_limit": 12,
+     "landManager": "National Park Service - Mount Rainier National Park",
+     "parking_pass": "Not a Northwest Forest Pass (that's a USFS pass and doesn't apply inside the park). Standard NPS entrance fee applies: $30/vehicle (7 consecutive days), $55 Mount Rainier annual pass, or $80 America the Beautiful interagency annual pass.",
+     "passRequired": "Annual Climbing Cost Recovery Fee",
+     "overnight_permit": {
+      "url": "https://www.nps.gov/mora/planyourvisit/climbing.htm",
+      "what": "Mount Rainier NP wilderness permit, plus climbing registration (fee) above 10,000 ft or on glaciers",
+      "where": "Reserve a wilderness permit in advance and pay the climbing fee online, then register at a park wilderness information center before the climb; about half of each camp is held for walk-ups."
+     }
+    }
+   }
+  },
+  "why": "Fairfax Bridge closed April 14, 2025, declared permanently closed April 22, 2025 (WSDOT); MORA road-status page updated Sept 18, 2026: no public access to Mowich Lake from SR 165. Dated the 'currently CLOSED' note.",
+  "confidence": "high"
+ },
+ "wa_mount_rainier_curtis_ridge": {
+  "area_id": "wa_mount_rainier",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "White River Road / Sunrise",
+     "status": "Paved, seasonal — this is now effectively the only practical approach road for this route",
+     "driveNote": "Accessed via the White River/Sunrise entrance off SR 410; unaffected by the SR 165 Fairfax Bridge closure on the park's northwest side.",
+     "seasonalGate": "White River Road typically opens early July–September (2025 required timed entry 7am-5pm from July 11, but NPS officially cancelled timed-entry reservations park-wide for 2026 (reverted to active parking management) — reconfirm current-year policy before planning); note the Carbon River-side alternative approach is currently unusable — SR-165's Fairfax Bridge has been permanently closed since April 2025, cutting off vehicle/foot access to Carbon River/Ipsut Creek"
+    },
+    "value": {
+     "name": "White River Road / Sunrise",
+     "status": "Paved, seasonal — this is now effectively the only practical approach road for this route",
+     "driveNote": "Accessed via the White River/Sunrise entrance off SR 410; unaffected by the SR 165 Fairfax Bridge closure on the park's northwest side.",
+     "seasonalGate": "White River Road typically opens early July–September (2025 required timed entry 7am-5pm from July 11, but NPS officially cancelled timed-entry reservations park-wide for 2026 (reverted to active parking management) — reconfirm current-year policy before planning); note the Carbon River-side alternative approach is unusable — WSDOT permanently closed SR-165's Fairfax Bridge on April 22, 2025, and the park's road-status page (updated September 18, 2026) lists no public access to Carbon River/Ipsut Creek from SR 165"
+    }
+   }
+  },
+  "why": "Same Fairfax Bridge closure, still in force (MORA road-status Sept 18, 2026). Removed 'currently'.",
+  "confidence": "high"
+ },
+ "wa_mount_rainier_ptarmigan_ridge": {
+  "area_id": "wa_mount_rainier",
+  "fields": {
+   "approach": {
+    "expect": "The road to Mowich Lake is closed indefinitely: the Fairfax Bridge on SR 165 was permanently closed in April 2025, and there is no public access to Mowich Lake even on foot, so the White River side is the only start a car can currently reach. Historically approached either from the west via Mowich Lake (shorter) or from the east via White River Campground (longer, typically requiring a car shuttle or carryover with descent via the Emmons Glacier). Which of the two is actually available is a seasonal question rather than a fixed one: the Mowich Lake road is summer-only and in a normal year opens well after this route comes into condition, so the shorter approach and the season rarely line up. The White River side is reachable earlier, at the cost of a much longer walk. Check the road status before planning around Mowich Lake.",
+    "value": "The road to Mowich Lake is closed indefinitely: WSDOT permanently closed the Fairfax Bridge on SR 165 on April 22, 2025, and the park's road-status page (updated September 18, 2026) lists no public access to Mowich Lake from SR 165, so the White River side is the only start a car can reach. Historically approached either from the west via Mowich Lake (shorter) or from the east via White River Campground (longer, typically requiring a car shuttle or carryover with descent via the Emmons Glacier). Which of the two is actually available is a seasonal question rather than a fixed one: the Mowich Lake road is summer-only and in a normal year opens well after this route comes into condition, so the shorter approach and the season rarely line up. The White River side is reachable earlier, at the cost of a much longer walk. Check the road status before planning around Mowich Lake."
+   }
+  },
+  "why": "Same Fairfax Bridge closure, still in force. White River Road is open (reopened Sept 5, 2026 after a fire closure). Removed 'currently'.",
+  "confidence": "high"
+ },
+ "wa_bread_loaf": {
+  "area_id": "wa_mount_rainier",
+  "fields": {
+   "approach": {
+    "expect": "From the Ohanapecosh Campground day-use area (1,914 ft), follow the Silver Falls Loop Trail clockwise for about 1 mile; the boulder sits right off the trail and is hard to miss. The Silver Falls Trailhead inside Ohanapecosh Campground is closed in 2026 for the Ohanapecosh reconstruction project, so this loop can't currently be started from the campground side — instead, approach via the Eastside Trail from the Grove of the Patriarchs parking lot, picking up the Silver Falls Loop from that end. This is an easy, well-maintained trail with essentially no gain or route-finding difficulty; Ohanapecosh/Silver Falls has running water nearby but none is needed for the short approach itself.",
+    "value": "From the Ohanapecosh Campground day-use area (1,914 ft), follow the Silver Falls Loop Trail clockwise for about 1 mile; the boulder sits right off the trail and is hard to miss. The Silver Falls Trailhead inside Ohanapecosh Campground is closed for the 2026 season by the Ohanapecosh Campground rehabilitation project, which the park lists as running through November 2026, so this loop can't be started from the campground side — instead, approach via the Eastside Trail from the Grove of the Patriarchs parking lot, picking up the Silver Falls Loop from that end. This is an easy, well-maintained trail with essentially no gain or route-finding difficulty; Ohanapecosh/Silver Falls has running water nearby but none is needed for the short approach itself."
+   }
+  },
+  "why": "Silver Falls Trailhead in Ohanapecosh Campground closed in 2026 (MORA Silver Falls page updated Apr 8, 2026); campground rehabilitation runs through November 2026 (Ohanapecosh page updated Apr 9, 2026). Removed 'currently'.",
+  "confidence": "high"
+ },
+ "wa_kyes_peak_glaciated_scramble": {
+  "area_id": "wa_kyes_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Index-Galena Road (FR 63) from Index, or Beckler Road (FR 65) via Jack Pass (detour, currently closed)",
+     "status": "Index-Galena Road (FR 63) has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline. The Beckler Road/Jack Pass detour is closed too: since June 30, 2026 the Forest Service lists FR 65 as graded only to Jack Pass (milepost 12.3) and closed beyond it for downed trees and a bridge out, and FR 63 as undrivable from the FR 65 side because the North Fork Skykomish bridge is out, so no vehicle route currently reaches the Blanca Lake Trailhead. Check with Snohomish County Public Works and the Skykomish Ranger District, (360) 677-2414, before you go.",
+     "driveNote": "From US-2 near Index, FR 63 runs north along the North Fork Skykomish River, but its final miles to the trailhead are currently impassable to vehicles. When open, the detour is US-2 to Beckler Road (FR 65) near Skykomish, ~12.5 mi to Jack Pass, then ~1.8–2.5 mi on FR 63 to the Blanca Lake Trailhead — gravel, rough in spots, roughly 45 minutes longer than the old Index route; low-clearance cars and RVs can struggle.",
+     "seasonalGate": "The Beckler Road/Jack Pass detour closes seasonally with snow and is typically not reliably open until early summer."
+    },
+    "value": {
+     "name": "Index-Galena Road (FR 63) from Index, or Beckler Road (FR 65) via Jack Pass (detour, closed beyond Jack Pass)",
+     "status": "Index-Galena Road (FR 63) has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline. The Beckler Road/Jack Pass detour is closed too: since June 30, 2026 the Forest Service lists FR 65 as graded only to Jack Pass (milepost 12.3) and closed beyond it for downed trees and a bridge out, and FR 63 as undrivable from the FR 65 side because the North Fork Skykomish bridge is out, so no vehicle route currently reaches the Blanca Lake Trailhead. Check with Snohomish County Public Works and the Skykomish Ranger District, (360) 677-2414, before you go.",
+     "driveNote": "From US-2 near Index, FR 63 runs north along the North Fork Skykomish River, but it has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline on Snohomish County's road-closures page as of September 25, 2026. When open, the detour is US-2 to Beckler Road (FR 65) near Skykomish, ~12.5 mi to Jack Pass, then ~1.8–2.5 mi on FR 63 to the Blanca Lake Trailhead — gravel, rough in spots, roughly 45 minutes longer than the old Index route; low-clearance cars and RVs can struggle.",
+     "seasonalGate": "The Beckler Road/Jack Pass detour closes seasonally with snow and is typically not reliably open until early summer."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "$5/vehicle/day or $30/year (Northwest Forest Pass / Interagency Recreation Pass); payable via the on-site iron ranger or the Forest Service's digital Scan & Pay.",
+     "rules": "No camping at Blanca Lake itself; camp at Virgin Lake (pit toilet) or find durable sites on the ridge.",
+     "permit": "A Recreation Pass is required at the Blanca Lake Trailhead — Northwest Forest Pass, America the Beautiful/Interagency Pass, or the Forest's digital day pass. Washington State Discover Pass is NOT accepted here.",
+     "closures": "The Index-Galena Road (FR 63) — the direct route to the trailhead from Index — has been closed to vehicles roughly between milepost 10 and 14 since a December 2025 flood washed out the Forest Service section of road, and as of mid-2026 there is no confirmed repair timeline (Snohomish County has estimated ~$900,000 for its share, with permitting alone expected to take years). This stretch of road has flip-flopped between open, closed, and under repair for over a decade due to repeated flood damage — check current Mt. Baker-Snoqualmie NF and Snohomish County road-closure pages before you drive.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest — Henry M. Jackson Wilderness (Skykomish Ranger District)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest — Henry M. Jackson Wilderness (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at the Blanca Lake Trailhead — $5/day or $30/year.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Henry M. Jackson Wilderness permit",
+      "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+     }
+    },
+    "value": {
+     "fees": "$5/vehicle/day or $30/year (Northwest Forest Pass / Interagency Recreation Pass); payable via the on-site iron ranger or the Forest Service's digital Scan & Pay.",
+     "rules": "No camping at Blanca Lake itself; camp at Virgin Lake (pit toilet) or find durable sites on the ridge.",
+     "permit": "A Recreation Pass is required at the Blanca Lake Trailhead — Northwest Forest Pass, America the Beautiful/Interagency Pass, or the Forest's digital day pass. Washington State Discover Pass is NOT accepted here.",
+     "closures": "The Index-Galena Road (FR 63) — the direct route to the trailhead from Index — has been closed to vehicles roughly between milepost 10 and 14 since a December 2025 flood washed out the Forest Service section of road, and Snohomish County's road-closures page still gives no repair timeline as of September 25, 2026 (the county has estimated ~$900,000 for its share, with permitting alone expected to take years). This stretch of road has flip-flopped between open, closed, and under repair for over a decade due to repeated flood damage — check current Mt. Baker-Snoqualmie NF and Snohomish County road-closure pages before you drive.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest — Henry M. Jackson Wilderness (Skykomish Ranger District)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest — Henry M. Jackson Wilderness (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass required at the Blanca Lake Trailhead — $5/day or $30/year.",
+     "overnight_permit": {
+      "url": null,
+      "what": "Free self-issue Henry M. Jackson Wilderness permit",
+      "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+     }
+    }
+   }
+  },
+  "why": "Index-Galena Road closed MP 10-14 since December 2025 flood, 'no timeline for repairs' (Snohomish County road-closures page, checked Sept 25, 2026); FR 65 closed past Jack Pass (MBS Skykomish alert, start/updated June 30, 2026, no end date). road.status was already dated and left as fine; fixed name, driveNote and closures.",
+  "confidence": "high"
+ },
+ "wa_spire_mountain_scramble": {
+  "area_id": "wa_spire_mountain",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "FR-65 (Beckler River Rd) to FR-63",
+     "status": "Normally a gravel Forest Service road, drivable in a standard car most of the way with high-clearance recommended for the last stretch — but as of mid-2026 both FR-65 and FR-63 are washed out/closed (downed trees and a bridge failure on FR-65 past Jack Pass; a major FR-63 washout at mileposts 10-14) and the trailhead is not reliably reachable by vehicle. Confirm current status with the Skykomish Ranger District before driving in.",
+     "driveNote": "From Skykomish: US-2 east ~0.8 mi, then north on FR-65 (Beckler River Rd) ~15 mi, then right onto FR-63 for ~4.2 mi to road's end at the trailhead."
+    },
+    "value": {
+     "name": "FR-65 (Beckler River Rd) to FR-63",
+     "status": "Normally a gravel Forest Service road, drivable in a standard car most of the way with high-clearance recommended for the last stretch — but both FR-65 and FR-63 are washed out/closed (the Forest Service alert of June 30, 2026 lists FR-65 closed past Jack Pass for downed trees and a bridge failure; FR-63 has been closed at mileposts 10-14 since December 2025 flood damage) and the trailhead is not reliably reachable by vehicle. Confirm current status with the Skykomish Ranger District before driving in.",
+     "driveNote": "From Skykomish: US-2 east ~0.8 mi, then north on FR-65 (Beckler River Rd) ~15 mi, then right onto FR-63 for ~4.2 mi to road's end at the trailhead."
+    }
+   },
+   "access": {
+    "expect": {
+     "fees": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+     "rules": "Standard Wild Sky Wilderness rules apply: group size capped at 12 people/stock combined (larger groups must split and stay 1+ mile apart), no bikes or other mechanized/motorized equipment, camp stoves recommended over open fires, no cutting of standing trees/snags/boughs, pack out all trash.",
+     "permit": "Free self-issue wilderness permit at the trailhead; no reservation or special-use permit needed beyond that for a day climb.",
+     "closures": "As of mid-2026, both approach roads are washed out and access is effectively cut off: FR-63 (Index-Galena Road) has a major washout between mileposts 10-14 (Snohomish County Public Works estimates roughly $900,000 to repair) and is reported undrivable from the FR-65 side due to a North Fork Skykomish bridge/road failure; FR-65 (Beckler River Rd) itself is closed past Jack Pass (MP 12.3) due to downed trees and a washed-out bridge at the bottom of the valley. No confirmed reopening date at this writing — check the Mount Baker-Snoqualmie NF 'Road Damages/Closures - Skykomish District' alert page and call the Skykomish Ranger Station before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "parking_pass": "Northwest Forest Pass required at the FR-63 trailhead near Skykomish — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass or Interagency Recreation Pass (or pay the day-use fee on site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the trailhead register if one is present; a Northwest Forest Pass is needed to park at the trailhead."
+     }
+    },
+    "value": {
+     "fees": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+     "rules": "Standard Wild Sky Wilderness rules apply: group size capped at 12 people/stock combined (larger groups must split and stay 1+ mile apart), no bikes or other mechanized/motorized equipment, camp stoves recommended over open fires, no cutting of standing trees/snags/boughs, pack out all trash.",
+     "permit": "Free self-issue wilderness permit at the trailhead; no reservation or special-use permit needed beyond that for a day climb.",
+     "closures": "Both approach roads are washed out and access is effectively cut off: FR-63 (Index-Galena Road) has been closed since a December 2025 flood washout between mileposts 10-14 (Snohomish County Public Works estimates roughly $900,000 to repair) and is reported undrivable from the FR-65 side due to a North Fork Skykomish bridge/road failure; FR-65 (Beckler River Rd) itself is closed past Jack Pass (MP 12.3) due to downed trees and a washed-out bridge at the bottom of the valley. Neither closure has a reopening date on the Forest Service alert (June 30, 2026) or Snohomish County's road-closures page (checked September 25, 2026) — check the Mount Baker-Snoqualmie NF 'Road Damages/Closures - Skykomish District' alert page and call the Skykomish Ranger Station before planning a trip.",
+     "group_limit": 12,
+     "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "land_manager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+     "parking_pass": "Northwest Forest Pass required at the FR-63 trailhead near Skykomish — $5/day or $30/year.",
+     "passRequired": "Northwest Forest Pass or Interagency Recreation Pass (or pay the day-use fee on site)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required",
+      "where": "Sign the trailhead register if one is present; a Northwest Forest Pass is needed to park at the trailhead."
+     }
+    }
+   }
+  },
+  "why": "Both closures still in force (MBS alert June 30, 2026; Snohomish County page checked Sept 25, 2026). Replaced 'as of mid-2026' and 'at this writing' with the dates.",
+  "confidence": "high"
+ },
+ "wa_columbia_peak_scramble": {
+  "area_id": "wa_columbia_peak",
+  "fields": {
+   "road": {
+    "expect": {
+     "name": "Mountain Loop Highway to Barlow Pass Trailhead, then the gated Monte Cristo Road (non-motorized)",
+     "driveNote": "Paved the full 34 miles from Granite Falls to Barlow Pass Trailhead. Beyond the trailhead, the Monte Cristo Road is gravel, gated, and closed to motor vehicles — hike or bike the 4 miles to the townsite. Alternate approach to Blanca Lake: from Index, take Index-Galena Road/FR 63 roughly 13.8 miles paved plus 2 miles gravel to the Blanca Lake Trailhead. That road has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline, and the Beckler Road/Jack Pass detour is closed too, so the Blanca Lake Trailhead cannot currently be reached by car; check with the Skykomish Ranger District, (360) 677-2414, before you go."
+    },
+    "value": {
+     "name": "Mountain Loop Highway to Barlow Pass Trailhead, then the gated Monte Cristo Road (non-motorized)",
+     "driveNote": "Paved the full 34 miles from Granite Falls to Barlow Pass Trailhead. Beyond the trailhead, the Monte Cristo Road is gravel, gated, and closed to motor vehicles — hike or bike the 4 miles to the townsite. Alternate approach to Blanca Lake: from Index, take Index-Galena Road/FR 63 roughly 13.8 miles paved plus 2 miles gravel to the Blanca Lake Trailhead. That road has been closed to vehicles between mileposts 10 and 14 since December 2025 flood damage, with no repair timeline, and the Beckler Road/Jack Pass detour is closed too (Forest Service alert of June 30, 2026), so the Blanca Lake Trailhead cannot be reached by car; check with the Skykomish Ranger District, (360) 677-2414, before you go."
+    }
+   }
+  },
+  "why": "FR 63 part already dated (Dec 2025); added the June 30, 2026 Forest Service alert date for the Beckler/Jack Pass closure and removed 'currently'.",
+  "confidence": "high"
+ }
+}

@@ -340,6 +340,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested **3/3** after widening (restyle the route page's Back, turn it into a
     clickable `←` span, restyle a *Dismiss* ✕), restored byte-identical.
     Fails closed under 45 `POP_CLOSE` / 30 `POP_BACK` uses (60 / 36 at the time of writing).
+  - **Rule 4, same day: the REMOVE ✕ got its own token, `POP_REMOVE` / `POP_REMOVE_MEDIA` (32px).**
+    The chip and row ×'s the widening left out were measured: **21 remove controls in 21 looks,
+    18px to 36px**, most a bare muted glyph whose hit area was the glyph itself — a report photo's
+    remover was 18px, a map search's clear 23px with no name. Two photo removers were clickable
+    `<span>`s with **no accessible name at all**; both are `<button aria-label="Remove photo N">`
+    now. 32px rather than 44 because it sits inside rows and chips (the chips hug it with a
+    negative margin, so they grow by a few px, not 12), but the SAME edge and fill as close/back.
+    Rule 4 fires on a lone ✕/× whose aria-label (a literal OR a `{"Remove "+x}` expression) or title
+    starts *Remove / Delete / Withdraw / Clear*, and on any clickable span/div whose label is ✕/×.
+    - **Deliberately NOT matched: the ✕ inside a filter chip that is ITSELF the button** (Climbs
+      filter chips, ListsManager's picked-route chips). That glyph is a `<span>` with no handler —
+      decoration on a control the whole chip already is. 3 such spans, all left alone.
+    - Injection-tested **3/3** (restyle *Remove day*; turn a photo remover back into a clickable
+      span; restyle an expression-labelled `{"Remove "+t}` chip ×), restored byte-identical. Fails
+      closed under 18 `POP_REMOVE` uses (23 at the time of writing).
 - **`check:script-roots`** asserts that **no script reads the app files of somebody ELSE's
   worktree**. Static — one directory walk and a regex, milliseconds — so it sits in `npm run build`.
   - **THE DEFECT WAS ALREADY DOCUMENTED AND NOBODY HAD ASKED HOW BIG IT WAS.** This file records
