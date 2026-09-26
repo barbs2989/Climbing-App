@@ -1,0 +1,40 @@
+[
+ {
+  "id": "wa_accidental_discharge_east_face",
+  "seasonal_guidance": {
+   "optimalWindow": "Late July through August, when Bachelor Creek and Itswoot Ridge are passable and the glacier approach still has bridged crevasses",
+   "monthBreakdown": {
+    "June": {
+     "status": "risky",
+     "reason": "Deep snow on Itswoot Ridge and the Cub Lake basin, avalanche-loaded slopes, and high snowmelt creeks make the multi-day Downey Creek approach impractical."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Snow still covers much of the upper approach, which eases the glacier travel, but early in the month cornices and wet slides remain a hazard."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "The off-trail approach is mostly melted out, glacier bridges are still usable early on, and the granite on the east face is dry and warm."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "The glacier approach is bare and more crevassed, days are much shorter for a one-to-two-day approach, and the first fall storms can arrive."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "Early snow on the high approach, freezing cracks and very short days leave little margin on this remote, loose route."
+    }
+   }
+  },
+  "evidence": [
+   "Row approach/hazards: Downey Creek TH off Suiattle River Road, southern Ptarmigan Traverse via Itswoot Ridge/Cub Lake/Bachelor Creek, glacier travel",
+   "Row best_season: late July through August",
+   "No independent source found for a route named Accidental Discharge on a 'South Peak' (searched Mountain Project and web); guidance rests on the approach's general season"
+  ],
+  "flags": [
+   "Could not verify the route or which 'South Peak' this is; month reasons rest on the row's own approach description and the general southern-Ptarmigan season. Worth a human look before shipping.",
+   "Consistent with stored Jul-Sep and best_season."
+  ],
+  "held": "No independent report of this route or which South Peak it is on; guidance rests only on the row itself."
+ }
+]
