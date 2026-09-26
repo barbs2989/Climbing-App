@@ -1096,7 +1096,7 @@ function TrailheadCard({route,onEdit}){
     if(!hasCoord)return;
     var _p;try{_p=navigator.clipboard&&navigator.clipboard.writeText(lat.toFixed(5)+", "+lng.toFixed(5));}catch(e){}if(_p&&_p.then)_p.then(function(){setCopied(true);setTimeout(()=>setCopied(false),1600);}).catch(function(){});
   };
-  return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginTop:12}}>
+  return <div style={{background:C.surface,borderRadius:10,padding:"11px 12px",border:"1px solid "+C.border,marginTop:12,marginBottom:12}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:8,marginBottom:8}}>
       <div style={{display:"flex",gap:8,minWidth:0,alignItems:"flex-start"}}>
         <span aria-hidden="true" style={{color:WP_STYLE.Trailhead.color,fontSize:14,lineHeight:1.35,flexShrink:0}}>{WP_STYLE.Trailhead.glyph}</span>
