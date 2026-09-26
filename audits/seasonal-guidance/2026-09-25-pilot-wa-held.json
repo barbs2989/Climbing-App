@@ -1,0 +1,74 @@
+[
+ {
+  "id": "wa_mount_adams_mazama_glacier_headwall",
+  "seasonal_guidance": {
+   "optimalWindow": "Whenever the Bird Creek side opens to visitors in late summer; earlier in that window the headwall holds more snow",
+   "monthBreakdown": {
+    "July": {
+     "status": "good",
+     "reason": "Snow fills the moraines and the 45 degree headwall well, but the reservation side is open only in years the Yakama Nation opens it this early."
+    },
+    "August": {
+     "status": "optimal",
+     "reason": "The Bird Creek side has most often been open from late August, and the headwall still carries snow, though moraine route-finding below Sunrise Camp lengthens."
+    },
+    "September": {
+     "status": "good",
+     "reason": "Usually inside the visitor opening, but the headwall and steep exit turn icy as snow thins, and wildfire closures have shut the area."
+    },
+    "October": {
+     "status": "risky",
+     "reason": "The Bird Creek side has typically closed to visitors around October 1, and the thinning headwall is hard ice."
+    }
+   }
+  },
+  "evidence": [
+   "2021: Tract D open Aug 30 - Oct 1, day use only, no camping, $20/vehicle - https://www.oregonhikers.org/forum/viewtopic.php?t=29927",
+   "2020: Tract D open weekdays only for three weeks in September, day use, 7am-6pm - https://www.oregonhikers.org/forum/viewtopic.php?t=29202",
+   "WTA Bird Creek Meadows (2026): in recent years the area has been open only about one month in late summer; closure order for nearby fires noted 8/26/26 - https://www.wta.org/go-hiking/hikes/bird-creek-meadows",
+   "Row's own best_season/access: historically about July 1 - October 1, shorter some years; earlier holds more snow."
+  ],
+  "flags": [
+   "Recent Yakama Nation openings (2020, 2021 and 'recent years') have been late August to about October 1, and DAY USE ONLY with no camping - this conflicts with the row's best_season/access text (July 1 - October 1) and with an approach that camps at Sunrise Camp. The stored Jul-Sep season may be too wide; July is marked good only conditionally. Worth a human look before shipping.",
+   "Exact yearly opening dates could not be verified for 2022-2026; the reasons state the pattern generally. A 2026 fire closure order was in effect in late August.",
+   "The optimalWindow names no calendar month because the window is set by the tribal opening rather than by conditions."
+  ]
+ },
+ {
+  "id": "wa_mount_index_northeast_buttress",
+  "seasonal_guidance": {
+   "optimalWindow": "June, when snow still buries the thick brush band above Lake Serene but the rock has started to dry",
+   "monthBreakdown": {
+    "May": {
+     "status": "marginal",
+     "reason": "Snow covers the brush below the route, but the gullies above Lake Serene still carry avalanche and cornice hazard and the rock is often wet."
+    },
+    "June": {
+     "status": "optimal",
+     "reason": "Lingering snow over the brush band south of Lake Serene speeds the approach, while longer days help on a long, committing route."
+    },
+    "July": {
+     "status": "good",
+     "reason": "Snow melts off the lower slopes and the thick brush is exposed; the rock is drier, but brush and loose rock slow travel and rappels."
+    },
+    "August": {
+     "status": "marginal",
+     "reason": "The brush band is fully exposed and heavy going, rappels through vegetation snag ropes, and the loose rock is at its most exposed."
+    },
+    "September": {
+     "status": "marginal",
+     "reason": "Fall rain returns to this west-slope peak, leaving the vegetated, rotten rock slick, and shorter days squeeze a very long day."
+    }
+   }
+  },
+  "evidence": [
+   "North Peak's easiest route is Grade III 5.7 on vertical dirt, rotten rock and thick brush - https://www.summitpost.org/mount-index/150645",
+   "Brush is extremely thick between 3,000 and 3,600 ft south of Lake Serene; go early season (May or June) when snow covers it; plan 15+ hour days - https://www.mountaineers.org/activities/routes-places/mount-index-east-route",
+   "August 2001 North Peak ascent: extensive brush, eleven rappels with stuck ropes, unplanned bivy - https://www.mountainwerks.org/cma/2001/mtindex.html"
+  ],
+  "flags": [
+   "No trip report specific to a 'Northeast Buttress' of North Peak was found; guidance is inferred from the North Peak north face and Mount Index approach evidence. The route identity and high_point_ft (null) deserve a human look.",
+   "Evidence favours May-June for snow over the brush; May is outside the stored Jun-Sep season and is marked marginal only."
+  ]
+ }
+]
