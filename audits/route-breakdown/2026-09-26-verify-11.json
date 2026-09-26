@@ -1,0 +1,195 @@
+{
+  "wa_south_ridge": {
+    "area": "wa_south_peak",
+    "set": {
+      "overview": "The classic route on South Peak following a scenic south-facing ridge. Features exposed granite climbing, clean in the opening corners but of marginal quality on the crest and around the arch, with memorable features including a notable gap called the 'cannon hole'."
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "overview says the route 'features clean granite climbing'",
+          "verdict": "CONFIRMED",
+          "evidence": "The route description calls only the two opening corners clean; a trip report from a party on the Cannon Hole route calls its rock quality marginal and the arch unstable, and the stored pitch rows themselves describe lichen, poor protection and choss on the crest. A blanket 'clean granite' claim overstates the rock; fixed to clean opening corners, marginal rock above. Everything else in the sentence kept.",
+          "sources": [
+            "https://www.mountainproject.com/route/106324294/south-ridge",
+            "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+          ]
+        },
+        {
+          "claim": "approach says the standard approach is Downey Creek via the Ptarmigan side, while the route description says the corners are approached from Blue Lake",
+          "verdict": "REFUTED",
+          "evidence": "Not a contradiction: Blue Lake is the basin at the foot of the route inside the range; Downey Creek / Bachelor Creek / Cub Pass / Itswoot Ridge is the long approach that reaches the range. The approach column omits the final leg to Blue Lake, but nothing it states is false.",
+          "sources": [
+            "https://www.mountainproject.com/route/106324294/south-ridge",
+            "https://trailcatjim.com/gunsight-peak-and-sinister-peak/"
+          ]
+        }
+      ],
+      "classification": {
+        "discipline": {
+          "proposed": "alpine",
+          "evidence": "Listed as Trad, Alpine, Grade II 5.8, 3 pitches, 300 ft, small alpine rack: a roped alpine rock route, not a snow/glacier mountaineering objective (the glacier is met only on the rappel descent). Grade '5.8', pitches 3 and length_m 91 all match."
+        }
+      }
+    }
+  },
+  "wa_gunsight_peak_standard": {
+    "skip_reason": "report only: identity question, no prose edit",
+    "review": {
+      "findings": [
+        {
+          "claim": "Is this 'Standard Route' the SW line from a cave above the moat, or the dike-and-notch line?",
+          "verdict": "UNCLEAR",
+          "evidence": "Every column on this row (beta, pitch_detail, descent_text, rappels) consistently describes ONE line: the West Face route on the main spire - snow finger between main and south spires, short wall to a ledge, black 5.6 dihedral, reddish-black basalt dike to the main-north notch, downclimb and traverse to a parallel gully of chimneys to 5.5, slung horn, exposed crest to the barstool summit. That matches published trip reports of the route as usually climbed. No accessible source describing a separate SW cave-above-the-moat line of ~5 short pitches was found, so there is no evidence the row mixes two climbs. Left unedited.",
+          "sources": [
+            "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/",
+            "https://trailcatjim.com/gunsight-peak-and-sinister-peak/"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "5.6",
+          "evidence": "'Class 5.6 / glacier' is not a clean grade token. The technical crux is 5.6 in the black dihedral (other moves to 5.5 and low 5th); glacier travel is already stated in the approach and descent prose."
+        }
+      }
+    }
+  },
+  "wa_mount_johnson_standard": {
+    "area": "wa_mount_johnson",
+    "set": {
+      "descent_text": "Reverse the ascent line: downclimb from the summit back to the ~6,900 ft Johnson–Clark notch, then retrace the talus-and-moraine descent down into Surprise Basin and back over its rim to Upper Royal Basin, from which the Royal Basin/Upper Dungeness Trail leads back out to the trailhead. The class 4 terrain near the summit is the crux of the descent as well as the ascent — the rock is loose enough in spots that most reported difficulty on this peak comes from downclimbing it, so face in and test holds on anything above class 3. The summit chimney is downclimbed rather than rappelled; there are no fixed/bolted rappel stations reported on Johnson, so a party that wants a rope on the steepest step, particularly if the rock is wet, must rig it from a natural anchor (horn, chockstone, or slung block) of its own.",
+      "rappels": "0 — the summit chimney is downclimbed"
+    },
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says the route keeps class 3 'by skirting right of Gasp Pinnacle'; reports go left of / behind the spires",
+          "verdict": "REFUTED",
+          "evidence": "A trip report states the party snaked around to the right of Gasp Pinnacle to keep the route at class 3, matching the stored wording. 'Behind' the spires (stored pitch 2) and 'right of Gasp' describe the same line from different viewpoints.",
+          "sources": [
+            "https://peakery.com/mount-johnson-washington/"
+          ]
+        },
+        {
+          "claim": "descent_text offers an optional 30-50 ft rappel below the summit block with a 30 m rope; rappels = 1",
+          "verdict": "CONFIRMED (unsupported, safety-relevant: softened)",
+          "evidence": "No source found reporting any rappel on Johnson's standard line; the one detailed report solo-climbed the class 4 summit chimney and climbed carefully back down it (its only rappel was off neighbouring Sweat Spire). The specific 30-50 ft rappel and 30 m rope claim were unsupported, so those sentences were softened to what is reported (downclimbed, no fixed stations, a natural anchor only if a party chooses to rig one), and rappels changed from 1 to 0. All other sentences kept verbatim.",
+          "sources": [
+            "https://peakery.com/mount-johnson-washington/",
+            "https://en.wikipedia.org/wiki/Mount_Johnson_(Washington)"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_tower_mountain_southwest_route": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta: 'second gully containing roughly 15 ft of slabby class 4 (sometimes wet)' is unsourced",
+          "verdict": "REFUTED",
+          "evidence": "A trip report describes wet slabs in the gully with the crux a class 4 slabby section with water running over it; a route description of the standard line also has the gully narrowing to a smooth slab. The exact '15 ft' figure was not independently found, but the class 4, wet, slabby character is supported. Left unedited.",
+          "sources": [
+            "https://www.lemkeclimbs.com/tower-mountain--golden-horn.html",
+            "http://cnmtstuartclimbproject.blogspot.com/2017/09/route-tower-mountain-golden-horn-north.html"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "no change (optionally 'Class 3')",
+          "verdict": "UNCLEAR",
+          "evidence": "Standard descriptions rate the route class 3 (Technical 3; easiest route class 3), but a trip report rates the wet slab crux class 4, so 'Class 3-4' is defensible for the route as often found. Change to 'Class 3' only if the catalog convention grades the dry standard line."
+        }
+      }
+    }
+  },
+  "wa_mount_logan_r2": {
+    "skip_reason": "all findings REFUTED/UNCLEAR — see review",
+    "review": {
+      "findings": [
+        {
+          "claim": "beta says the route 'traverses to meet Banded Glacier' before the summit block; the Douglas route tops out at the col and climbs rock",
+          "verdict": "REFUTED",
+          "evidence": "The route description has the Douglas Glacier reach the col where it joins the Banded Glacier, then a brief steepish section to the top of the Banded Glacier before rock and the NE ridge to the summit ridge. Reaching the top of the Banded Glacier from the col is what the beta summarises; not false.",
+          "sources": [
+            "https://www.mountainproject.com/route/122977581/douglas-glacier",
+            "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/"
+          ]
+        },
+        {
+          "claim": "descent_text offers descending the Banded Glacier via the col as a routine alternative although the Banded is badly broken",
+          "verdict": "UNCLEAR",
+          "evidence": "The Banded Glacier is Logan's other standard route from the Fisher Creek side and meets the Douglas at the same col; a recent report found its crevasses easy to avoid on the left. No source found calling it too broken to descend. It does drop into a different part of the Fisher basin than a Douglas Creek camp, but the sentence is not shown false. Left unedited.",
+          "sources": [
+            "https://drdirtbag.com/2015/06/23/logan-banded-glacier-29-mi-12500-ft-13h35/",
+            "https://en.wikipedia.org/wiki/Banded_Glacier"
+          ]
+        }
+      ],
+      "classification": {
+        "grade": {
+          "proposed": "no change",
+          "verdict": "REFUTED",
+          "evidence": "The finding said descriptions give Grade III class 3. One route description gives Grade III, 4th class; another widely used route page gives Grade II, Class 4. The class 4 summit tower is agreed; stored 'Grade II, Class 4' is one of two published commitment grades."
+        }
+      }
+    }
+  },
+  "wa_ruby_mountain_northwest_ridge": {
+    "skip_reason": "report only",
+    "review": {
+      "findings": [
+        {
+          "claim": "summit 7,408 ft vs 7,426 ft",
+          "verdict": "REFUTED",
+          "evidence": "Published figures are 7,408 ft and 7,412 ft; no source found for 7,426 ft. The stored 7,408 ft is a published value.",
+          "sources": [
+            "https://www.wta.org/go-hiking/hikes/ruby-mountain",
+            "https://en.wikipedia.org/wiki/Ruby_Mountain_(Washington)"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_carrie_se_route": {
+    "skip_reason": "report only",
+    "review": {
+      "findings": [
+        {
+          "claim": "summit elevation 6,995 vs 7,156 ft",
+          "verdict": "REFUTED",
+          "evidence": "Mount Carrie is published at 6,995 ft (2,132 m), the Bailey Range high point; 7,156 ft is not a published figure for Carrie (it matches a different Olympic summit). Keep 6,995 ft.",
+          "sources": [
+            "https://en.wikipedia.org/wiki/Mount_Carrie",
+            "https://peakvisor.com/peak/mount-carrie.html"
+          ]
+        }
+      ]
+    }
+  },
+  "wa_mount_maude_r3": {
+    "area": "wa_mount_maude",
+    "replace_pitch_detail": true,
+    "pitch_detail": [
+      { "grade": "Class 3", "notes": "Shallow right fork, slabby class 3 climbing on clean rock.", "pitch": "1" },
+      { "grade": "Class 4", "notes": "Brief class 4 step moving right into a second couloir.", "pitch": "2" },
+      { "grade": "Class 3", "notes": "Sustained slabby class 3 to the ridge crest.", "pitch": "3" },
+      { "grade": "Class 4", "notes": "Summit ridge traverse south, around towers on the west side, with brief class 4 moves.", "pitch": "4" }
+    ],
+    "review": {
+      "findings": [
+        {
+          "claim": "lengthM 152/46/198/61 (= 500/150/650/200 ft) may be invented",
+          "verdict": "CONFIRMED",
+          "evidence": "The only published description gives a single total (1500 ft of class 3 and 4) and describes the four sections with no section lengths; the page contains none of 500, 150, 650 or 200 ft. The per-section values were back-filled to sum to length_m 457 (= 1500 ft). Table returned unchanged except the four lengthM keys removed; length_m 457 itself is supported.",
+          "sources": [
+            "https://www.mountainproject.com/route/202193352/nothing-couloir"
+          ]
+        }
+      ]
+    }
+  }
+}
