@@ -16,7 +16,7 @@ import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from
 import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
-import { POP_BACK, POP_CLOSE } from "./popupChrome.js";
+import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -891,7 +891,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           {savedSearches.map(s => (
             <div key={s.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 10px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer" }} {...clickable(() => loadSearch(s))}>
               <div style={{ flex: 1, fontSize: 13, color: C.text, fontWeight: 600 }}>{s.name}</div>
-              <button aria-label="Remove saved search" onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={{ background: "none", border: "none", color: C.textMuted, fontSize: 16, cursor: "pointer", padding: 4 }}>×</button>
+              <button aria-label="Remove saved search" onClick={e => { e.stopPropagation(); deleteSearch(s.id); }} style={POP_REMOVE}>✕</button>
             </div>
           ))}
         </div>
