@@ -1,0 +1,619 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_lyall_south_route",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: keep the Agnes Creek / Swamp Creek southwest-ridge climb; drop the five Holden-side waypoints, rewrite the High Bridge pin note, the itinerary text, the timing notes and three partner_requirements fields",
+   "summary": "The page stays the Southwest Ridge climb from Swamp Creek off the Agnes Creek trail. The Holden Village map pins, the 'South Route' trip plan and the Holden-based partner requirements were rewritten or removed to match it.",
+   "evidence": "An independent ascent account confirms the line: cross Swamp Creek on a log near 3,600 ft, turn uphill at 4,000 ft into the broad basin below Lyall, aim for the 7,300 ft notch on the southwest ridge, pass the white vertical rock strip, then an exposed Class 3 gully with stacked boulders for the last ~200 ft. Trail data puts Swamp Creek Camp about 8 mi from High Bridge at ~2,800 ft. The only Holden-side report found (Black Tower/Sable Ridge via Hilgard Pass) did not climb Lyall, and no summer ascent of Lyall from Holden turned up. Itinerary numbers (miles/gain per day) were left as stored; they were not settled from sources.",
+   "sources": [
+    "https://onehikeaweek.com/2023/09/11/needle-peak/",
+    "https://onehikeaweek.com/2023/07/12/black-tower/",
+    "https://explore.pcta.org/trailheads/high-bridge-trailhead",
+    "https://www.mountaineers.org/activities/routes-places/pacific-crest-trail-routes/pacific-crest-trail-rainy-pass-to-suiattle-river"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "waypoints",
+     "path": [],
+     "expect": [
+      {
+       "lat": 48.3807,
+       "lng": -120.8403,
+       "elev": 1109,
+       "name": "High Bridge (Stehekin Valley Road)",
+       "note": "No road access; reached only by Lady of the Lake passenger ferry from Chelan (~40 mi uplake) to the Lucerne dock, then the Holden Village shuttle (FS Rd 8301, ~11 mi) to Holden, from where trails up Railroad/Tenmile/Company Creek lead to the Tenmile Pass/Hilgard Pass basins used to climb Lyall.",
+       "type": "Trailhead",
+       "elevFt": 1109
+      },
+      {
+       "lat": 48.199064,
+       "lng": -120.774147,
+       "elev": 3218,
+       "name": "Holden Village / Holden Lake Trailhead",
+       "note": "Shuttle drop-off at the former mining village; the Holden Lake Trail begins on the west side of town along Holden Road, following the Railroad Creek valley.",
+       "type": "Junction",
+       "distMi": 11
+      },
+      {
+       "lat": 48.203988,
+       "lng": -120.802644,
+       "elev": 3400,
+       "name": "Holden Lake Trail turnoff (Hart/Lyman Lake Trail junction)",
+       "note": "After about a mile paralleling Railroad Creek, bear right off the Hart/Lyman Lake trail onto the Holden Lake Trail and begin climbing switchbacks.",
+       "type": "Junction",
+       "distMi": 12
+      },
+      {
+       "lat": 48.219326,
+       "lng": -120.811273,
+       "elev": 4400,
+       "name": "Avalanche chute crossings",
+       "note": "Trail crosses several open, south-facing avalanche chutes on dry terrain; tread can be faint and brushy through slide alder after big snow years.",
+       "type": "Hazard",
+       "distMi": 13.5
+      },
+      {
+       "lat": 48.23148,
+       "lng": -120.83355,
+       "elev": 5282,
+       "name": "Holden Lake",
+       "note": "Glacial basin lake with established camping and reliable water; Bonanza Mountain's Mary Green Glacier is visible across the valley — good base camp for the summit push.",
+       "type": "Campsite",
+       "distMi": 15
+      },
+      {
+       "lat": 48.256615,
+       "lng": -120.845313,
+       "elev": 6200,
+       "name": "Basin below Holden Pass",
+       "note": "Leave the trail here and head off-trail cross-country up open basins toward Holden Pass, the jumping-off point for the south-facing talus/heather slopes to Lyall's summit.",
+       "type": "Junction",
+       "distMi": 16
+      },
+      {
+       "lat": 48.2818,
+       "lng": -120.8568,
+       "elev": 7911,
+       "name": "Mount Lyall",
+       "type": "Summit",
+       "elevFt": 7911
+      }
+     ],
+     "value": [
+      {
+       "lat": 48.3807,
+       "lng": -120.8403,
+       "elev": 1109,
+       "name": "High Bridge (Stehekin Valley Road)",
+       "note": "No road access: reach Stehekin by the passenger ferry or a floatplane up Lake Chelan, then ride the valley shuttle to the bridge at the road end. The crest trail heads south from here up Agnes Creek toward Swamp Creek, the way in to Lyall's west basin.",
+       "type": "Trailhead",
+       "elevFt": 1109
+      },
+      {
+       "lat": 48.2818,
+       "lng": -120.8568,
+       "elev": 7911,
+       "name": "Mount Lyall",
+       "type": "Summit",
+       "elevFt": 7911
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Entiat/Glacier Peak Wilderness approach trails typically aren't reliably snow-free until mid-to-late July and can hold lingering blowdown from spring runoff; a late-July through September window is safest.",
+      "days": [
+       {
+        "n": 1,
+        "note": "A long trail approach through remote Entiat/Glacier Peak Wilderness backcountry, gaining the basin below the peak's south slopes. Expect a mix of maintained and lightly-traveled tread with possible stream crossings and blowdown; most parties camp near treeline to shorten the summit day.",
+        "hours": 8,
+        "miles": 15,
+        "title": "Approach to high camp",
+        "gainFt": 2600,
+        "lossFt": 0,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Reach a basin/treeline camp below Mount Lyall's south side"
+       },
+       {
+        "n": 2,
+        "note": "Drop overnight gear at camp and climb the South Route - a sustained but straightforward Class 2-3 scramble up open slopes and talus - to the 7,911 ft summit, then reverse the same line back to camp. Start early to be off any exposed terrain before afternoon thunderstorms build, which are common in this remote range.",
+        "hours": 8,
+        "miles": 5,
+        "title": "Summit day via the South Route",
+        "gainFt": 2200,
+        "lossFt": 2200,
+        "packLb": 12,
+        "schedule": [
+         {
+          "time": "5:00 AM",
+          "label": "Leave camp",
+          "detail": "Light day pack, on the South Route toward the peak's base."
+         },
+         {
+          "time": "+1.5 hr",
+          "label": "Reach base of the south slopes",
+          "detail": "Trail gives way to open talus and scree."
+         },
+         {
+          "time": "+3.5 hr",
+          "label": "Gain the summit ridge",
+          "detail": "Sustained Class 2-3 scrambling on loose rock."
+         },
+         {
+          "time": "~9:30 AM",
+          "label": "Summit",
+          "detail": "Reverse the same line for descent."
+         },
+         {
+          "time": "~1:30 PM",
+          "label": "Back at camp",
+          "detail": "Rest and refill water before next day's hike out."
+         }
+        ],
+        "objective": "Climb the South Route to the summit and return to camp"
+       },
+       {
+        "n": 3,
+        "note": "Break camp and retrace the approach trail back to the trailhead.",
+        "hours": 7,
+        "miles": 14,
+        "title": "Hike out",
+        "gainFt": 0,
+        "lossFt": 2600,
+        "packLb": 30,
+        "schedule": [],
+        "objective": "Return to the trailhead"
+       }
+      ],
+      "totalNote": "A remote 3-day backcountry trip: roughly 34 miles round trip with a Class 2-3 scramble to the 7,911 ft summit on day two; this is well beyond a reasonable single-day car-to-car push for most parties."
+     },
+     "value": {
+      "cal": "The Agnes Creek trail and the Swamp Creek basin are rarely clear of snow before mid-to-late July, and the trip depends on the ferry and valley shuttle running at both ends; late July through September is the usual window.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Take the boat up the lake and the valley shuttle to the bridge at the road end, then follow the crest trail south up Agnes Creek toward Swamp Creek. Camp near Swamp Creek to shorten the summit day; expect blowdown and possible stream crossings on the way in.",
+        "hours": 8,
+        "miles": 15,
+        "title": "Approach to high camp",
+        "gainFt": 2600,
+        "lossFt": 0,
+        "packLb": 35,
+        "schedule": [],
+        "objective": "Reach a camp near Swamp Creek, below Mount Lyall's west side"
+       },
+       {
+        "n": 2,
+        "note": "Cross Swamp Creek and climb through brush and open basin into the broad basin west of the peak, then up talus and old snow to the 7,300 ft notch on the southwest ridge. From the notch, drop round a buttress and traverse below the white rock band to an exposed Class 3 gully and loose Class 3-4 boulders to the 7,911 ft summit, then reverse the line to camp. Start early to be off the exposed ground before afternoon storms build.",
+        "hours": 8,
+        "miles": 5,
+        "title": "Summit day via the Southwest Ridge",
+        "gainFt": 2200,
+        "lossFt": 2200,
+        "packLb": 12,
+        "schedule": [
+         {
+          "time": "5:00 AM",
+          "label": "Leave camp",
+          "detail": "Light day pack; cross Swamp Creek and head up the drainage."
+         },
+         {
+          "time": "+1.5 hr",
+          "label": "Reach the basin below the peak",
+          "detail": "Brush gives way to open basin, then talus and lingering snow."
+         },
+         {
+          "time": "+3.5 hr",
+          "label": "Reach the 7,300 ft notch",
+          "detail": "Drop round the buttress and traverse below the white rock band to the summit gully."
+         },
+         {
+          "time": "~9:30 AM",
+          "label": "Summit",
+          "detail": "Down-climb the gully and loose boulders with care, then reverse the same line."
+         },
+         {
+          "time": "~1:30 PM",
+          "label": "Back at camp",
+          "detail": "Rest and refill water before next day's hike out."
+         }
+        ],
+        "objective": "Climb the Southwest Ridge to the summit and return to camp"
+       },
+       {
+        "n": 3,
+        "note": "Break camp and retrace the approach trail back to the trailhead.",
+        "hours": 7,
+        "miles": 14,
+        "title": "Hike out",
+        "gainFt": 0,
+        "lossFt": 2600,
+        "packLb": 30,
+        "schedule": [],
+        "objective": "Return to the trailhead"
+       }
+      ],
+      "totalNote": "A remote 3-day backcountry trip by boat, valley shuttle and the Agnes Creek trail, with an exposed Class 3-4 scramble to the 7,911 ft summit on day two; not a realistic single-day objective."
+     }
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown"
+     ],
+     "expect": [
+      {
+       "hrs": 8,
+       "note": "A long trail approach through remote Entiat/Glacier Peak Wilderness backcountry, gaining the basin below the peak's south slopes. Expect a mix of maintained and lightly-traveled tr…",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "Drop overnight gear at camp and climb the South Route - a sustained but straightforward Class 2-3 scramble up open slopes and talus - to the 7,911 ft summit, then reverse the same …",
+       "fromTo": "Summit day via the South Route",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Break camp and retrace the approach trail back to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ],
+     "value": [
+      {
+       "hrs": 8,
+       "note": "Boat and valley shuttle to the road end, then the crest trail south up Agnes Creek to a camp near Swamp Creek.",
+       "fromTo": "Approach to high camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 8,
+       "note": "Cross Swamp Creek, climb to the 7,300 ft notch on the southwest ridge, traverse below the white rock band and finish up an exposed Class 3 gully and loose boulders; reverse to camp.",
+       "fromTo": "Summit day via the Southwest Ridge",
+       "section": "Climb"
+      },
+      {
+       "hrs": 7,
+       "note": "Break camp and retrace the approach trail back to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "expect": "Able to sustain long multi-day approach mileage (Railroad Creek/Lake Chelan basin travel) with significant daily elevation gain",
+     "value": "Able to sustain long multi-day approach mileage (the Agnes Creek trail and the off-trail Swamp Creek drainage) with significant daily elevation gain"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "expect": "Long, committing multi-day approach via Railroad Creek or Lake Chelan (Holden Village); not a single-day car-to-summit objective",
+     "value": "Long, committing multi-day approach by boat to Stehekin, the valley shuttle and the Agnes Creek trail; not a single-day car-to-summit objective"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_lyall_south_route",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "expect": "Solid Class 2-3 scrambling experience and wilderness self-sufficiency; comfortable with route-finding on unmarked talus/heather slopes far from help",
+     "value": "Solid Class 3 scrambling with some Class 4 moves on exposed, loose rock, plus wilderness self-sufficiency; comfortable route-finding on unmarked talus far from help"
+    }
+   ],
+   "pin_followups": [
+    "Add pins for the Agnes Creek line: Swamp Creek Camp (~8 mi from High Bridge, ~2,800 ft), the Swamp Creek log crossing (~3,600 ft), the broad basin below the peak, and the 7,300 ft notch on the southwest ridge.",
+    "High Bridge waypoint stores elev/elevFt 1109; the trailhead sits near 1,600 ft.",
+    "Not changed, needs a decision: dist_km 54.72 (one-way, so the app shows ~68 mi round trip), gain_ft 4800 and the approach text's '35-40 miles round trip' all look off against ~8 trail miles to Swamp Creek plus the off-trail climb from ~2,800 ft to 7,911 ft. Itinerary day mileage/gain were left as stored."
+   ]
+  },
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "verdict": "rejected",
+   "resolution": "keep as the Southeast Ridge (no split); rewrite beta only, which was copied from the Northwest Arete and West Ridge descriptions",
+   "summary": "No separate 'East Ridge' climb on Argonaut is documented, so there is nothing to split out and the page stays the Southeast Ridge. Only its route description was replaced, because it had been copied from two other routes on the peak.",
+   "evidence": "The peak's route list names nine lines and no 'East Ridge' route. It gives the Southeast Ridge as II 5.6, 8 pitches to the southeast spire, with two single or one double-rope rappel into the notch. A second route page confirms II 5.6 by the SE spire (false summit) on to the highest point, with blocky, lichen-covered lower pitches, and says the Colchuck Col approach beats the Ingalls Creek bushwhack. The earlier agent's two 'Southeast Ridge' and 'East Ridge' route-page links are for Mount Daniel and Wolfs Head (Wyoming), not Argonaut. The row's beta sentence 'blocky, generally solid but not sustained Class 4 to 5.6 climbing' is word-for-word the Northwest Arete ascent description. 'East faces of towers easier than the west, so you won't cliff out near the crest' is a note about the West Ridge traverse. The 'east ridge to the Argonaut-Colchuck col' appears only as the Northwest Arete's four-rappel descent. Rebuilding the approach, the six-row pitch_detail, descent_text and rappel_detail for the Southeast Ridge needs a full route description that could not be found; those fields are left and flagged.",
+   "sources": [
+    "https://web.archive.org/web/2023/https://www.summitpost.org/argonaut-peak/152581",
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/argonaut%20peak-southeast-ridge",
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/argonaut-peak-northwest-arete",
+    "https://trailcatjim.com/argonaut-peak-via-longs-pass-south-gully-upper-east-ridge-2026/"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_argonaut_peak_east_ridge",
+     "column": "beta",
+     "path": [],
+     "find": "From Colchuck Col, ascend the east ridge featuring blocky, generally solid but not sustained Class 4 to 5.6 climbing. The east faces of towers are typically easier than west sides, making cliff-out less likely if staying near the crest. Multiple pitch sections with good protection opportunities.",
+     "replace": "Climbs the southeast ridge in about eight pitches up to 5.6 to the southeast spire, a false summit and the lowest of Argonaut's three summits, then carries on to the true summit on the west spire. The lower pitches are blocky and awkward, carry a lot of lichen and are somewhat hard to protect. The line includes two single-rope rappels, or one double-rope rappel, into the notch. The main summit needs a short, non-exposed Class 4 move to its highest block after Class 3 ridge traversing. The Colchuck Col side is the better way to the base; the Ingalls Creek side means a long, strenuous bushwhack."
+    }
+   ],
+   "pin_followups": [
+    "Not changed, needs a full Southeast Ridge description: approach ('6 pitches' from a notch west of a lone gendarme reached from the Argonaut-Colchuck col), the six-row pitch_detail, descent_text ('reverse the East Ridge') and rappel_detail[1] (the 'snow ledge toward the east gully' belongs to the Northeast Couloir/East Gully).",
+    "The row id says east_ridge but the climb is the Southeast Ridge; an id rename is out of scope here."
+   ]
+  },
+  {
+   "id": "wa_hozomeen_mountain_southeast_face",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A (adjusted): keep the Hozomeen Lake / 6,800 ft saddle line; rewrite beta, set gain/loss 6,300 and one-way dist_km 9.7, fix itinerary.cal's landing, and drop the Southeast Buttress crux pin; the other pins go to follow-up",
+   "summary": "The page stays the standard South Peak climb from the Hozomeen campground by way of Hozomeen Lake. Its description, gain and distance now match that line, and the map pin marking the neighbouring Southeast Buttress crux was removed.",
+   "evidence": "An independent ascent from the Hozomeen Lake trailhead at the campground leaves the trail after ~1.5 mi at 2,400 ft, crosses Hozomeen Creek, passes a slab wall at 5,800 ft to the 6,800 ft saddle camp, and climbs a 15 ft 5.6 wall on a slanted ledge with Class 3-4 ground and a chimney finish, rappelling at the crux and at an overhang. It is 12 mi round trip from 1,720 to 8,003 ft (~6,300 ft gain). A second South Peak ascent from the same campground by a west-gully line also reports a 5.6 crux bulge near the summit and rappels (15 mi, 7,500 ft). The row's own itinerary already totals 12 mi and 6,300 ft. The app doubles dist_km for the round trip, so 6 mi one way is 9.7 km. The remaining Lightning Creek/Willow Lake pins were kept, since the row documents that as its third approach variant.",
+   "sources": [
+    "https://onehikeaweek.com/2019/07/21/hozomeen-mountain-south-peak/",
+    "https://trailcatjim.com/hozomeen-mtn-south-peak-via-west-gully-south-face-west-ridge/"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "beta",
+     "path": [],
+     "find": "The Southeast Face offers a third-class approach to the summit, though grading varies by route variant and seasonal conditions. Most parties traverse the northeast ridge where it transitions to mixed terrain. Previous climbing experience on exposed, loose rock is essential.",
+     "replace": "Mostly Class 3-4 scrambling on loose, fractured rock above the 6,800 ft saddle camp: slabs and connecting gullies lead up the south side to a slanted ledge below the summit, where a short, exposed wall of about 15 ft at roughly 5.6 is the crux, followed by a chimney finish. Most parties rappel the crux on the way down. Previous climbing experience on exposed, loose rock is essential."
+    },
+    {
+     "op": "set",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6800,
+     "value": 6300
+    },
+    {
+     "op": "set",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 6471,
+     "value": 6300
+    },
+    {
+     "op": "set",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "dist_km",
+     "path": [],
+     "expect": 12.9,
+     "value": 9.7
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "itinerary",
+     "path": [
+      "cal"
+     ],
+     "find": "then boat up-lake to the Lightning Creek/Hozomeen area)",
+     "replace": "then boat up-lake to the Hozomeen campground at the head of the lake)"
+    },
+    {
+     "op": "set",
+     "id": "wa_hozomeen_mountain_southeast_face",
+     "column": "waypoints",
+     "path": [],
+     "expect": [
+      {
+       "lat": 48.94468,
+       "lng": -121.0008,
+       "elev": 1602,
+       "name": "Lightning Creek boat landing / trail junction",
+       "note": "Water-taxi drop point on Ross Lake's east shore (~10 lake-miles north of Ross Dam); pick up the East Bank/Lightning Creek Trail here — this is mile ~16 of the SR-20 approach trail, a designated boat-in camp requiring a backcountry permit.",
+       "type": "Junction",
+       "distMi": 11
+      },
+      {
+       "lat": 48.943791,
+       "lng": -121.006993,
+       "elev": 2857,
+       "name": "Willow Lake",
+       "note": "Small lake along the trail (~mile 20); last reliable water before leaving the maintained trail — the 1988 southeast-buttress party left the trail just beyond Willow Lake to cut east toward the peak.",
+       "type": "Water",
+       "distMi": 15
+      },
+      {
+       "lat": 48.97280875,
+       "lng": -121.00922625,
+       "elev": 5000,
+       "name": "Off-trail brush/ravine to the 5,000-ft shoulder",
+       "note": "Cross-country push through timber and avalanche debris into a deep ravine, then steep dirt-and-brush climbing to a broad timbered shoulder and meadows near 5,000 ft, bypassing cliff bands on their west side.",
+       "type": "Hazard",
+       "distMi": 17
+      },
+      {
+       "lat": 48.977496875,
+       "lng": -121.010630625,
+       "elev": 6200,
+       "name": "6,200-ft saddle below the SE buttress",
+       "note": "Ridge saddle directly beneath the southeast buttress, used as a bivouac by the 1988 first-ascent party; no reported water — carry up from Willow Lake.",
+       "type": "Campsite",
+       "distMi": 18
+      },
+      {
+       "lat": 48.9798409375,
+       "lng": -121.0113328125,
+       "elev": 7500,
+       "name": "Southeast buttress — loose rock / crux chimney",
+       "note": "Divided buttress climbing on often loose, friable rock (hard hat mandatory, protection scarce); crux is a steep chimney (5.6) low on the buttress, followed by a 50° dihedral and a loose upper gully.",
+       "type": "Hazard",
+       "distMi": 18.5
+      },
+      {
+       "lat": 48.7278,
+       "lng": -121.0628,
+       "name": "Ross Dam Trailhead (SR-20) / East Bank Trail to Lightning Creek",
+       "note": "This is a long (~15+ mile) approach via the East Bank Trail, historically used for this specific technical route; most modern non-technical South Peak parties instead use the shorter Hozomeen Lake Trailhead at Hozomeen Campground (Silver-Skagit Road, from the Canadian side)",
+       "type": "Trailhead"
+      },
+      {
+       "lat": 48.97196,
+       "lng": -120.99643,
+       "elev": 8003,
+       "name": "Hozomeen Mountain, South Peak",
+       "type": "Summit",
+       "elevFt": 8003
+      }
+     ],
+     "value": [
+      {
+       "lat": 48.94468,
+       "lng": -121.0008,
+       "elev": 1602,
+       "name": "Lightning Creek boat landing / trail junction",
+       "note": "Water-taxi drop point on Ross Lake's east shore (~10 lake-miles north of Ross Dam); pick up the East Bank/Lightning Creek Trail here — this is mile ~16 of the SR-20 approach trail, a designated boat-in camp requiring a backcountry permit.",
+       "type": "Junction",
+       "distMi": 11
+      },
+      {
+       "lat": 48.943791,
+       "lng": -121.006993,
+       "elev": 2857,
+       "name": "Willow Lake",
+       "note": "Small lake along the trail (~mile 20); last reliable water before leaving the maintained trail — the 1988 southeast-buttress party left the trail just beyond Willow Lake to cut east toward the peak.",
+       "type": "Water",
+       "distMi": 15
+      },
+      {
+       "lat": 48.97280875,
+       "lng": -121.00922625,
+       "elev": 5000,
+       "name": "Off-trail brush/ravine to the 5,000-ft shoulder",
+       "note": "Cross-country push through timber and avalanche debris into a deep ravine, then steep dirt-and-brush climbing to a broad timbered shoulder and meadows near 5,000 ft, bypassing cliff bands on their west side.",
+       "type": "Hazard",
+       "distMi": 17
+      },
+      {
+       "lat": 48.977496875,
+       "lng": -121.010630625,
+       "elev": 6200,
+       "name": "6,200-ft saddle below the SE buttress",
+       "note": "Ridge saddle directly beneath the southeast buttress, used as a bivouac by the 1988 first-ascent party; no reported water — carry up from Willow Lake.",
+       "type": "Campsite",
+       "distMi": 18
+      },
+      {
+       "lat": 48.7278,
+       "lng": -121.0628,
+       "name": "Ross Dam Trailhead (SR-20) / East Bank Trail to Lightning Creek",
+       "note": "This is a long (~15+ mile) approach via the East Bank Trail, historically used for this specific technical route; most modern non-technical South Peak parties instead use the shorter Hozomeen Lake Trailhead at Hozomeen Campground (Silver-Skagit Road, from the Canadian side)",
+       "type": "Trailhead"
+      },
+      {
+       "lat": 48.97196,
+       "lng": -120.99643,
+       "elev": 8003,
+       "name": "Hozomeen Mountain, South Peak",
+       "type": "Summit",
+       "elevFt": 8003
+      }
+     ]
+    }
+   ],
+   "pin_followups": [
+    "The waypoint list follows the Lightning Creek/Willow Lake/Ross Dam variant, not the primary approach. Add pins for the Hozomeen campground trailhead (~1,650-1,720 ft), the turn-off near Hozomeen Lake's outlet (~2,400 ft), the chockstone gully (~5,000 ft), the slab wall (~5,800 ft) and the 6,800 ft saddle camp.",
+    "The 'Ross Dam Trailhead' waypoint note sends parties via the Silver-Skagit road from Canada, which the row elsewhere says is closed. Waypoints [0]/[1] distMi (11, 15) disagree with their notes (mile ~16, ~20)."
+   ]
+  },
+  {
+   "id": "wa_mesahchie_peak_west_ridge",
+   "verdict": "rejected",
+   "resolution": "do not rewrite the itinerary to Fisher Creek; the high traverse from Easy Pass is the better-documented approach for this line. Only dist_km corrected (24.1 -> 12.1 one way); the approach choice is left for an owner decision",
+   "summary": "Most ascents of this line traverse high from Easy Pass rather than dropping into Fisher Creek, so the trip plan was not rewritten. Only the distance was fixed: the round trip had been stored in a one-way field.",
+   "evidence": "Three independent ascents reach Mesahchie's summit gullies by traversing west from Easy Pass without dropping to Fisher Creek. One goes along the crest over Cub Peak to the 8,050 ft flat spot and the beige south-side gully with the chockstone and rap-sling bench, which is exactly the row's baseFinding and beta. One sidehills at 6,600-6,800 ft and crosses a waterfall on a bench near 6,500 ft beneath the peak; the row's approach text borrows that waterfall. One bivies at the 8,200 ft Katsuk-Mesahchie col and climbs the west gully, which matches the row's name and its 'from Mesahchie Col' beta. The single Fisher Creek ascent (down to Fisher Camp, a 6,700 ft ridge-step bivy) climbs a different line, the South Rib and south gullies (16 mi, 8,200 ft). So the Fisher Creek approach text and pins are the odd ones out, not the itinerary. Rewriting approach, approach_variants and pins to the traverse means choosing between traverse variants, so it is not done here. Separately, dist_km is one-way (the app doubles it). The row's own approach says ~12 km one way / 24.1 km round trip, and its itinerary says ~15 mi round trip.",
+   "sources": [
+    "https://www.lemkeclimbs.com/mesahchie-peak.html",
+    "https://www.countryhighpoints.com/mt-logan-mesahchie-katsuk-kimtah-and-cosho-peaks/",
+    "https://www.yellowleaf.org/scramble/g/r/2013-07-20-21-mesachie-kimtah.html",
+    "https://trailcatjim.com/mesahchie-peak-via-south-rib-south-gullies/"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mesahchie_peak_west_ridge",
+     "column": "dist_km",
+     "path": [],
+     "expect": 24.1,
+     "value": 12.1
+    }
+   ],
+   "pin_followups": [
+    "Owner decision: the approach, approach_variants and waypoints describe dropping into Fisher Creek (the South Rib ascent's approach). The itinerary, timing, overview, name and summit beta describe the high traverse from Easy Pass. Suggest making the traverse primary and keeping Fisher Creek as a second variant, with pins re-placed to match.",
+    "The bivy list no longer carries Wing Lake / Lewis Lake / Rainy Pass entries; nothing to do there."
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_disappointment_peak_cleaver",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_glacier_peak_cool_glacier_gerdine (adjusted): keep the surviving row's approach, itinerary, timing, waypoints and gain (internally consistent at 9,400 ft), rename it, carry over the direct-over-Disappointment variant and the fuller descent; the Buck Creek Pass / basin-camp pins are dropped with the retired row",
+   "summary": "This page and 'Cool Glacier / Gerdine Ridge' are the same climb, so they become one page named 'Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)'. It keeps the other page's approach, trip plan and map pins and takes this page's descent and its direct variant over Disappointment Peak.",
+   "evidence": "The club route page for the Disappointment Peak Cleaver follows the North Fork Sauk trail to White Pass, a boot path to a 6,600 ft pass, and the White Chuck Glacier to a col at the Suiattle Glacier edge (7,300 ft). It then goes up the cleaver, off it onto snow near 8,600 ft, on a rising traverse under Disappointment Peak to the 9,100 ft Cool Glacier col, and up the Cool Glacier to the 9,600 ft col and the summit (33 mi RT, 8,200 ft). That is the same line as the Gerdine Ridge/Cool Glacier row's approach, climbing_route and waypoints (Glacier Gap 7,300, Cool Glacier saddle 9,600). Separate guide pages also treat 'Gerdine Ridge/Cool Glacier' and the cleaver as one route, with the direct line over Disappointment Peak as a variant. The surviving row's gain (9,400) matches its own itinerary sum; published totals range 8,200-9,200 ft, so it was left. Its approach and 3-day itinerary were kept instead of the retired row's, because they agree with its own waypoints and partner requirements and match the club description.",
+   "sources": [
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/routes-places/glacier-peak-disappointment-peak-cleaver",
+    "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier",
+    "https://www.mountainproject.com/route/122217045/disappointment-peak-cleavergerdine-ridge-direct",
+    "https://www.alpineascents.com/climbs/glacier-peak/itinerary/"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_glacier_peak_disappointment_peak_cleaver",
+     "into": "wa_glacier_peak_cool_glacier_gerdine"
+    },
+    {
+     "op": "rename",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "expect_name": "Cool Glacier / Gerdine Ridge",
+     "name": "Disappointment Peak Cleaver (Gerdine Ridge / Cool Glacier)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "beta",
+     "path": [],
+     "find": "An alternate avoids all glacier travel by climbing directly up the South Ridge to Disappointment Peak (9,755 ft) before descending slightly to the saddle above the Cool Glacier — useful for parties without full glacier gear or climbing very late season.",
+     "replace": "A variant stays on the nose of the cleaver where the standard line steps onto the glacier near 8,500-8,600 ft, following a climbers' path when melted out up mostly Class 3-4 ground with a few low fifth-class moves over Disappointment Peak (9,755 ft), then drops about 150 ft to the saddle above the Cool Glacier to rejoin the standard route. It avoids most of the glacier travel and crevasse hazard in exchange for sustained loose, rockfall-prone scrambling."
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "descent_text",
+     "path": [],
+     "expect": "Reverse the glacier and ridge to camp.",
+     "value": "No rappelling; reverse the ascent line on foot. From the summit, descend the ridge to the 9,600 ft col, then down the Cool Glacier to the 9,100 ft col. On the traverse back beneath Disappointment Peak, keep lower and farther from the face than on the way in to cut the time spent under its rockfall. Crevasses on the Cool Glacier open wider as summer goes on and snow bridges weaken, so stay roped and probe suspect bridges. From Glacier Gap, return across the White Chuck basin to White Pass and out the North Fork Sauk River Trail."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "overview",
+     "path": [],
+     "find": "approaches Glacier Peak from the southeast,",
+     "replace": "climbs Glacier Peak's south side,"
+    }
+   ],
+   "pin_followups": []
+  }
+ ]
+}

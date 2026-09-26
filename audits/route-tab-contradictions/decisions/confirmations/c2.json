@@ -1,0 +1,691 @@
+{
+ "results": [
+  {
+   "id": "wa_needle_peak_south_route",
+   "verdict": "confirmed",
+   "resolution": "rename to 'North Ridge' (adjusted: crux grade left as is; Mount Lyall details removed from the summit gully instead)",
+   "summary": "Renamed 'South Route' to 'North Ridge', since every field already describes the north ridge from Swamp Creek and no south-side route is documented; the 'narrow summit step' wording is corrected to the real crux in the cliff bands below a broad summit.",
+   "evidence": "The AAJ report (pub. 2007) says the party left the Agnes Creek trail at Swamp Creek and climbed Needle Peak via the north ridge; the Sept 2023 trip report climbs the same long north ridge, crux weaving west of the cliff bands at 7,300-7,400 ft, a narrow final gully under an overhanging crest, and a BROAD summit. Correction to the recommendation: the AAJ's 'low 5th class' refers to the Anonymity Towers, not Needle, so it does not support a 5.0 crux; no source grades Needle's crux, so pitch_detail grades and the row grade are left unchanged (still split Class 3 vs Class 4/5.0 - unresolved). Also found: the row's 'stacked boulders / choss final 200 ft / Class 3 gully' and the 'narrow summit' come from the same report's Mount Lyall and Lyall Ridge ascents, so those phrases are rewritten to Needle's own final gully. The name change collides with sibling wa_needle_peak_north_ridge until that row is refiled/renamed - apply that one first.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge",
+    "https://onehikeaweek.com/2023/09/11/needle-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2024-02-05.8491434130"
+   ],
+   "ops": [
+    {
+     "op": "rename",
+     "id": "wa_needle_peak_south_route",
+     "expect_name": "South Route",
+     "name": "North Ridge"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_south_route",
+     "column": "beta",
+     "path": [],
+     "find": "a narrow, choss-filled Class 3 gully leads through stacked boulders to the summit",
+     "replace": "a narrow gully below the overhanging crest, on sloping rock strewn with loose grains, leads to the broad summit"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_south_route",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Narrow gully through loose, stacked boulders/choss for the final ~200 ft",
+     "replace": "Narrow gully below the overhanging, loose crest to the broad summit; sloping rock strewn with loose grains, so test every hold"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_south_route",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills",
+      1
+     ],
+     "find": "comfort with exposure at the narrow, exposed summit step",
+     "replace": "comfort with sustained exposure in the cliff bands at 7,300-7,400 ft"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_south_route",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "since the crux is a short but consequential exposed step just below the narrow summit",
+     "replace": "since the crux is route-finding through exposed, loose cliff bands at 7,300-7,400 ft, well below the broad summit"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_south_route",
+     "column": "seasonal_hazards",
+     "path": [
+      "exposure"
+     ],
+     "expect": "Consequential but localized - the primary fall exposure is concentrated at the final summit step, where a slip on loose rock could result in a serious fall; the broader talus approach is lower-consequence but still requires care due to loose rock underfoot",
+     "value": "Consequential in the cliff bands at 7,300-7,400 ft and at the notch above them, where loose blocks sit over serious exposure; the talus approach is lower-consequence but still loose underfoot"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_south_route",
+     "column": "seasonal_guidance",
+     "path": [
+      "monthBreakdown",
+      "August",
+      "reason"
+     ],
+     "find": "for the exposed summit step",
+     "replace": "for the exposed cliff bands below the summit"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_needle_peak_north_ridge",
+   "verdict": "confirmed",
+   "resolution": "refile to wa_bonanza_peak and rename 'Northwest Ridge (from Needle Peak)', grade V 5.8",
+   "summary": "Moved this to Bonanza Peak as the Northwest Ridge (from Needle Peak), V 5.8, because it describes a two-day traverse that finishes on Bonanza, and Needle's own north ridge is the other Needle row.",
+   "evidence": "The AAJ report is titled 'Bonanza Peak, Northwest Ridge' and describes one new route (V 5.8) on Bonanza: Needle Peak by its north ridge, first ascents of the Anonymity Towers at low 5th, Dark Glacier and Dark Peak, the crest to Bonanza's west and main summits (5.8 on the last two pitches), descent by the Mary Green Glacier. A later account of the Dark-Bonanza traverse (July 2017) rates it 5.8+, mostly 4th and low 5th on a long knife-edge ridge above glaciers, which confirms the line as a Bonanza route. None of Bonanza's six rows (Mary Green Glacier, Northeast Buttress, Soviet Route, North Ridge, Cascadian Route, Oregonian Route) is this line, so no duplicate. The row's beta misspelled 'Haider' as 'Halder'. Season set to Jul-Aug from the August and July ascents; 'single documented ascent' wording dropped.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200713400/North-America-United-States-Washington-Cascade-Range-Bonanza-Peak-Northwest-Ridge",
+    "https://www.countryhighpoints.com/dark-peak-bonanza-peak-and-martin-peak/",
+    "https://cascadeclimbers.com/forum/topic/100773-tr-dark-bonanza-martin-nw-ridge-mg-glacier-west-ridgeface-712017/",
+    "https://onehikeaweek.com/2023/09/11/needle-peak/"
+   ],
+   "ops": [
+    {
+     "op": "refile",
+     "id": "wa_needle_peak_north_ridge",
+     "expect_area": "wa_needle_peak",
+     "area_id": "wa_bonanza_peak"
+    },
+    {
+     "op": "rename",
+     "id": "wa_needle_peak_north_ridge",
+     "expect_name": "North Ridge",
+     "name": "Northwest Ridge (from Needle Peak)"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "grade",
+     "path": [],
+     "expect": null,
+     "value": "V 5.8"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "grade_system",
+     "path": [],
+     "expect": null,
+     "value": "yds"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "grade_num",
+     "path": [],
+     "expect": null,
+     "value": 8
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "aspect",
+     "path": [],
+     "expect": "N",
+     "value": "NW"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "season",
+     "path": [],
+     "expect": "Aug (single documented ascent date)",
+     "value": "Jul-Aug"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "best_season",
+     "path": [],
+     "expect": "The only documented ascent (August 19–20, 2006) was in mid-to-late summer, consistent with typical North Cascades high-alpine climbing season; the route crosses the Dark Glacier, so late-season timing affects crevasse/moat conditions.",
+     "value": "Mid-to-late summer. The known ascents of the Dark Peak to Bonanza ridge were made in July and August; the line crosses the Dark Glacier and descends the Mary Green Glacier, so later in the season means more open crevasses, and the long exposed crest should only be started in settled weather."
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "overview",
+     "path": [],
+     "expect": "Needle Peak's North Ridge is the peak's one well-documented technical line, climbed in a single push as the opening stage of a two-day, multi-summit traverse (Needle Peak → Anonymity Towers → Dark Peak → Bonanza Peak) that produced the first ascent of Bonanza Peak's Northwest Ridge.",
+     "value": "Bonanza Peak's Northwest Ridge (V 5.8) is a long, rarely repeated link-up that reaches Washington's highest non-volcanic summit from the northwest. This version starts from Swamp Creek off the Agnes Creek trail: it climbs Needle Peak by its north ridge, carries over the North and South Anonymity Towers at low fifth class, crosses the Dark Glacier to Dark Peak, and then follows the high, knife-edged crest joining Dark Peak to Bonanza's west and main summits, with the hardest climbing (5.8) on the last two pitches. It descends the Mary Green Glacier toward Holden."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "beta",
+     "path": [],
+     "find": "Tim Halder",
+     "replace": "Tim Haider"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "peakLat"
+     ],
+     "expect": 48.2795734,
+     "value": 48.238217
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "peakLng"
+     ],
+     "expect": -120.902325,
+     "value": -120.866415
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "name"
+     ],
+     "expect": "Needle Peak Summit",
+     "value": "Needle Peak summit (first summit of the traverse)"
+    },
+    {
+     "op": "set",
+     "id": "wa_needle_peak_north_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Summit",
+     "value": "Landmark"
+    }
+   ],
+   "pin_followups": [
+    "wa_needle_peak_north_ridge: add a Summit waypoint at Bonanza Peak's summit (area record 48.238217, -120.866415, ~9,511-9,516 ft); the only summit pin was Needle Peak (48.279605, -120.902705), now relabelled as a Landmark rather than moved.",
+    "wa_needle_peak_north_ridge: consider pins for Dark Peak and the Mary Green Glacier descent to Holden; the route no longer ends where it starts."
+   ]
+  },
+  {
+   "id": "wa_lewis_creek_route",
+   "verdict": "confirmed",
+   "resolution": "merge_into wa_gunn_peak_southeast_route, carrying over the 1915 fifth-attempt / via Lewis Creek history in fa",
+   "summary": "Folded 'Lewis Creek Route' into Gunn Peak's Southeast Route, keeping only the fact that the 1915 first ascent came up Lewis Creek on the fifth attempt, because no separate modern Lewis Creek climb exists and everything on the row is the standard route.",
+   "evidence": "Independent search found no modern description of any Lewis Creek line on Gunn Peak: the Mountain Project area lists only the class-3 1915 route, which it calls frequently climbed despite brushy access, plus the Burdo rock routes; Wikipedia and current trip reports describe only the Barclay Creek climbers' path with a short class 3/4 crux. Only the 1915 first-ascent record says 'via Lewis Creek'. The row's approach, waypoints, pitch_detail, descent_text and approach_variants are the Barclay Creek/Tailgunner Pass/hidden-ramp route, identical to the Southeast Route row, and its own rope_note says no beta exists under this name.",
+   "sources": [
+    "https://www.mountainproject.com/area/120237182/gunn-peak",
+    "https://en.wikipedia.org/wiki/Gunn_Peak",
+    "https://www.summitpost.org/gunn-peak/151026",
+    "https://climberkyle.com/2024/07/25/gunn-peak/"
+   ],
+   "ops": [
+    {
+     "op": "merge",
+     "from": "wa_lewis_creek_route",
+     "into": "wa_gunn_peak_southeast_route"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_gunn_peak_southeast_route",
+     "column": "fa",
+     "path": [],
+     "find": "July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh",
+     "replace": "July 18, 1915 by Dr. Harry B. Hinman, Walter Eriksen, and Louis Lesh, on their fifth attempt, approaching via Lewis Creek"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_guye_peak_r1",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A: West Face ramp route (low 5th); Improbable Traverse fields rewritten",
+   "summary": "Kept this as the West Face ramp route, a short low-fifth-class climb up the big treed ramp, and removed the 5.8 six-pitch Improbable Traverse details, which belong to that route's own row.",
+   "evidence": "The Mountaineers lists two separate routes: Guye Peak/West Face (basic alpine: rising traverse to the north end of the talus, the streambed, a huge tree-covered ramp rising north to south across the face, 40 ft of Class 4 to low 5th to a grassy ramp, and a final crux of about 30 ft of low 5th easing to Class 4) and Guye Peak/Improbable Traverse (intermediate alpine, 5.8, 7 pitches). Mountain Project's Improbable Traverse is 5.8, Grade III, 6 pitches, 800 ft, FA Hiser/Borghoff 1960, with the Nov 2021 rockfall on the traverse and a tree rappel on the east side. This row's rock_grade, grade_num, pitches, length_m, alpine_grade, fa, pitch_detail, hazards[0], turnaround, bail, descent, rappels and obj_haz[0] came from the Improbable Traverse and are rewritten or cleared; the itinerary's 'South Rib' descent contradicted the row's own descent_text and was aligned with it. Grade 'Easy 5th' follows the sibling rows' format; grade_num 5 is what lib/grade.js parses from it. alpine_grade, pitches, length_m and fa are cleared because no source gives them for the ramp route.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/guye-peak-west-face",
+    "https://www.mountaineers.org/activities/activities/intermediate-alpine-climb-guye-peak-improbable-traverse",
+    "https://www.mountainproject.com/route/107316713/improbable-traverse"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "grade",
+     "path": [],
+     "expect": "Grade II-III alpine rock",
+     "value": "Easy 5th"
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "grade_num",
+     "path": [],
+     "expect": 8,
+     "value": 5
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "rock_grade",
+     "path": [],
+     "expect": "5.8",
+     "value": "Low 5th (about 30 ft), otherwise Class 3-4"
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "II-III",
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "pitches",
+     "path": [],
+     "expect": 6,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "length_m",
+     "path": [],
+     "expect": 610,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "fa",
+     "path": [],
+     "expect": "Dave Hiser and Mike Borghoff, 1960 (first winter ascent by Kit Lewis, 1975)",
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "overview",
+     "path": [],
+     "expect": "Guye Peak's steep, sun-exposed West Face rises directly above the Alpental valley and is one of the most visible alpine rock walls from I-90 at Snoqualmie Pass. It holds several moderate multi-pitch lines on generally featured but often dirty and loose Cascade rock, following discontinuous ramp and slab systems up to the summit ridge; the best-known specific line on this face is the Improbable Traverse. A November 2021 rockfall event stripped a large section of rock from the face and buried lower pitches in dirt and debris, changing conditions from older route descriptions.",
+     "value": "Guye Peak's west face rises above the Alpental valley at Snoqualmie Pass. This is its easiest line and a short, close-to-the-road alpine outing: from the north end of the talus it follows a huge tree-covered ramp that climbs across the whole face from north to south, then a short step of Class 4 to low fifth onto a second grassy ramp, and a final low-fifth crack and face that eases through rock and alpine trees to the south summit. The rock is often dirty and loose. The harder Improbable Traverse on the same face is a separate climb."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "4th-5th class",
+       "notes": "Roughly 300 ft of low-quality, low-angle slab/4th-5th class terrain leading to the 'Lunch Ledge' belay.",
+       "pitch": "1-3"
+      },
+      {
+       "grade": "5.8",
+       "notes": "The route's namesake pitch and best rock; climb ~5.8 moves out right, protected by old fixed pitons. Since a Nov 2021 rockfall, the far end now involves an unprotected 5.9-10- downclimb — verify current condition before committing.",
+       "pitch": "4 (Improbable Traverse)"
+      },
+      {
+       "grade": "4th class",
+       "notes": "Downclimb off the far end of the traverse to a 4th-class ramp, then ascend the ramp toward the summit approach; many parties bypass the loose, exposed true-summit ridge.",
+       "pitch": "5-6"
+      }
+     ],
+     "value": [
+      {
+       "grade": "Class 3-4",
+       "notes": "Rocky streambed at the north end of the talus, often dry; some parties belay its steepest part.",
+       "pitch": "Streambed"
+      },
+      {
+       "grade": "Class 3-4",
+       "notes": "Exit right onto the very large ramp with full-grown trees that rises across the whole face from north to south; most parties scramble it, some belay.",
+       "pitch": "Tree-covered ramp"
+      },
+      {
+       "grade": "Class 4-low 5th",
+       "notes": "At the end of the ramp, about 40 ft of solid rock up to a second, grassy ramp and a notch.",
+       "pitch": "Step to the second ramp"
+      },
+      {
+       "grade": "Low 5th",
+       "notes": "Steep crack and face for about 30 ft, then Class 4 through rock and alpine trees for about half a rope length to the top.",
+       "pitch": "Crux and final pitch"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "hazards",
+     "path": [
+      0
+     ],
+     "expect": "November 2021 rockfall damaged the lower pitches and stripped rock from the traverse area — expect loose blocks and altered belays versus older topos",
+     "value": "Loose rock and climber-triggered rockfall on the talus, the dirty lower slabs and the descent gullies"
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "turnaround",
+     "path": [],
+     "expect": "Because the crux traverse pitch is currently degraded by 2021 rockfall damage and the descent requires downclimbing exposed, loose terrain, turn back if the rock is wet, if daylight is limited, or if any party member is not confident downclimbing loose 5th-class terrain — Cascade afternoon thunderstorms are common in summer and this route has no quick retreat once past the traverse.",
+     "value": "Turn back if the rock is wet or daylight is short. The descent is a loose traverse past the middle summit with a short rappel or downclimb, and it is slower and more dangerous in the wet; afternoon thunderstorms are common here in summer."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "bail",
+     "path": [],
+     "expect": "Retreat is straightforward on the lower pitches by rappelling/downclimbing back toward the talus cone from natural (tree) anchors. Once committed across the crux traverse pitch, it is generally easier to continue to the tree-rappel/gully descent on the east side than to reverse the exposed traverse.",
+     "value": "Below the crux, retreat by downclimbing or rappelling from trees along the ramp back to the talus. Above the crux it is usually simpler to top out and take the normal descent north along the summit ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "descent",
+     "path": [],
+     "expect": "Most parties descend via the South Rib/South Gully line or walk off toward the Cave Ridge saddle and back down to the Alpental/Snow Lake trailhead; some rappel from fixed anchors near the top of the Improbable Traverse pitch. Loose rock on the descent gullies is a real hazard — keep helmets on until back at the talus.",
+     "value": "From the south summit, pass the middle summit on its east side, rappel or downclimb about 100 ft of loose gully, skirt the north summit on the east, and take the scramblers' path from the notch north of it down past a small pond and back west to the Alpental lot."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "obj_haz",
+     "path": [
+      0
+     ],
+     "expect": "Loose/crumbly rock (except the traverse pitch)",
+     "value": "Loose/crumbly rock"
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "rappels",
+     "path": [],
+     "expect": "Rappel from a tree anchor on the east side, then a short gully to bypass the true summit (single-rope rap; length depends on tree used)",
+     "value": "About 100 ft of rappelling or downclimbing on the descent, into the loose gully between the south and middle summits; a single rope covers it."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "Moderate rack; protection varies",
+     "value": "Light alpine rack for one short low-fifth crux; slings for tree and block anchors"
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "Standard rock rack with cams and nuts; slings for blocky/vegetated terrain",
+     "value": "Light rack of nuts and small to mid-size cams for the short low-fifth crux, plus slings for tree and block anchors"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_guye_peak_r1",
+     "column": "partner_requirements",
+     "path": [
+      "experienceLevel"
+     ],
+     "find": "comfortable with Grade II-III terrain and routefinding",
+     "replace": "comfortable on low fifth class and exposed Class 4 terrain and routefinding"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_guye_peak_r1",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "Descend via the South Rib/Cave Ridge saddle back to the trailhead.",
+     "replace": "Descend north past the middle and north summits toward the Cave Ridge saddle and back to the trailhead."
+    },
+    {
+     "op": "set",
+     "id": "wa_guye_peak_r1",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      5,
+      "label"
+     ],
+     "expect": "Descend via South Rib / Cave Ridge saddle",
+     "value": "Descend past the north summit toward the Cave Ridge saddle"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_guye_peak_r1",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Apart from the traverse pitch higher up, the rock on this face is generally poor and loose.",
+     "replace": "The rock on this face is generally poor and loose."
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "verdict": "confirmed",
+   "resolution": "split: this row renamed 'Northeast Face Couloir' (Kloke-Simon; 2005 winter report); new row wa_davis_peak_nc_north_face_burdo_cairns 'North Face' IV 5.10 (Burdo-Cairns)",
+   "summary": "Split this into two routes: this row is now the 'Northeast Face Couloir', which most of its content describes, and a new 'North Face' row (IV 5.10, Burdo and Cairns) holds the chimney-and-rib climb whose overview and pitch list were on it.",
+   "evidence": "The AAJ (pub. 1988) North Face note by Burdo: four pitches up the central chimney (probably the melted-out Kloke-Simon route), three on an exposed rib, a gully of monstrous chockstones, IV 5.10, about 4,000 ft. The NWMJ 2005 note: Northeast Face Couloir (Kloke-Simon, July 1976), winter ascent 13 Mar 2005 by Taylor and Miller: bivy at 4,000 ft at the glacier foot, lower rock band mid-fifth in summer, snowfield traverse, crux iced slabs and a steep chockstone, upper couloir to the ridge at about 6,700 ft. A separate listing names the Burdo-Cairns route on the NE face as distinct from the Kloke-Simon couloir. The two climbs share the chimney/couloir in part, but they are recorded as separate routes with different grades. Adjustments: the approach column (the Burdo account's vague cirque note) moves to the new row and this row gets the 2005 approach its itinerary already describes; gain_ft 4000 and length_m 930 are cleared here because they come from the Burdo climbing figure or from no source; the FA year is given as 1974 or 1976; the Burdo year is left out because the note does not state it (publication 1988).",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12198813004/North-America-United-States-Washington-Cascade-Mountains-Davis-Peak-North-Face-Southern-Pickets",
+    "http://www.alpenglow.org/nwmj/05/051_Shorts4.html",
+    "https://cascadeclimbers.com/forum/topic/32306-tr-davis-peak-ne-face-couloir-3122005/",
+    "https://www.summitpost.org/northeast-couloir/167134"
+   ],
+   "ops": [
+    {
+     "op": "split",
+     "id": "wa_davis_peak_nc_north_face",
+     "new_row": {
+      "id": "wa_davis_peak_nc_north_face_burdo_cairns",
+      "area_id": "wa_davis_peak_nc",
+      "name": "North Face",
+      "discipline": "alpine",
+      "grade": "IV 5.10",
+      "grade_system": "yds",
+      "grade_num": 10,
+      "rock_grade": "5.10",
+      "commitment": "IV",
+      "pitches": 7,
+      "fa": "Bryan Burdo and Andy Cairns",
+      "high_point_ft": 7054,
+      "overview": "A serious, rarely-repeated alpine rock route up Davis Peak's huge north-facing cirque wall: four pitches up a prominent central chimney system, then three pitches out onto an exposed rib of delicate face climbing, finishing through a gully choked with large chockstones to the summit.",
+      "beta": "The route climbs the northern cirque by its prominent central chimney system for four pitches, then exits left onto an exposed rib for three pitches of delicate face climbing before re-entering a gully choked with very large chockstones that leads to the top near the summit. The chimney is probably a melted-out form of the older Kloke-Simon couloir line. About 4,000 ft of climbing; part of the first ascent was done by moonlight.",
+      "pitch_detail": [
+       {
+        "grade": "5.9-5.10",
+        "notes": "Four pitches up the prominent central chimney splitting the north face.",
+        "pitch": "1-4",
+        "lengthM": null
+       },
+       {
+        "grade": "5.10",
+        "notes": "Exit left onto an exposed rib for three pitches of delicate face climbing, then a gully with large chockstones to the summit.",
+        "pitch": "5-7",
+        "lengthM": null
+       }
+      ],
+      "hazards": [
+       "Large, sometimes loose chockstones in the summit gully.",
+       "A serious, committing alpine rock route on one of the biggest, least-documented walls in the North Cascades."
+      ],
+      "watch_out": [
+       "The chimney may follow a melted-out form of the older Kloke-Simon couloir line, so conditions vary with the snow and ice on a rarely repeated route.",
+       "Chockstones in the final gully are very large; test them before weighting them."
+      ],
+      "approach": "Approached through Davis Peak's northern cirque from the Stetattle Creek side, north of the peak; no detailed trailhead-to-base mileage is recorded.",
+      "disciplines": [
+       "alpine"
+      ],
+      "classic": false
+     }
+    },
+    {
+     "op": "rename",
+     "id": "wa_davis_peak_nc_north_face",
+     "expect_name": "North Face",
+     "name": "Northeast Face Couloir"
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "fa",
+     "path": [],
+     "expect": "Dallas Kloke and Bryce Simon, July 1976. First winter ascent (to the summit ridge): Stuart Taylor and Ade Miller, March 13, 2005",
+     "value": "Dallas Kloke and Bryce Simon, July 1974 or 1976 (the year is recorded both ways). First winter ascent (to the summit ridge): Stuart Taylor and Ade Miller, March 13, 2005"
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "overview",
+     "path": [],
+     "expect": "A serious, rarely-repeated alpine rock route up Davis Peak's huge north-facing cirque wall: four pitches up a prominent central chimney system, then three pitches out onto an exposed rib of delicate face climbing, finishing through a gully choked with large chockstones to the summit.",
+     "value": "The Northeast Face Couloir climbs Davis Peak's huge northeast wall above Stetattle Creek, one of the biggest faces in the North Cascades: a compact lower rock band, a traverse left across a large snowfield, belayed crux pitches over iced slabs and a steep chockstone, then a long, exposed upper couloir to the cornices where it meets the summit ridge near 6,700 ft. It goes in summer as a rock-and-snow route and has been climbed in winter; the descent is the long south side."
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "beta",
+     "path": [],
+     "expect": "First climbed by Andy Cairns and Bryan Burdo (Affiliated Climbers of the Montlake Erratic). The route climbs the northern cirque via a central chimney system — possibly a melted-out variant of an earlier 1974 Kloke-Simon line — for four pitches, then exits left onto an exposed rib for three pitches of delicate face climbing, before re-entering a gully with large ('monstrous') chockstones leading to the summit. Part of the first ascent was done by moonlight.",
+     "value": "From a bivouac at about 4,000 ft at the foot of the glacier, climb the glacier to the bergschrund and simul-climb the compact lower rock band (mid-fifth class in summer, hard to protect) to the right side of the large snowfield. Traverse left across the snowfield to the couloir, belay the crux pitches over iced slabs and a steep chockstone, and continue up the long, exposed upper couloir to the cornices where it meets the summit ridge at about 6,700 ft. The summit is a short way along the ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "5.9-5.10",
+       "notes": "Four pitches up the prominent central chimney splitting the north face.",
+       "pitch": "1-4",
+       "lengthM": null
+      },
+      {
+       "grade": "5.10",
+       "notes": "Exit left onto an exposed rib for three pitches of delicate face climbing, then a gully with large chockstones to the summit.",
+       "pitch": "5-7",
+       "lengthM": null
+      }
+     ],
+     "value": [
+      {
+       "grade": "mid-5th",
+       "notes": "Compact lower rock band, simul-climbed with long runouts, to the right side of the big snowfield.",
+       "pitch": "Lower rock band"
+      },
+      {
+       "grade": null,
+       "notes": "Traverse left across the snowfield to the foot of the couloir.",
+       "pitch": "Snowfield traverse"
+      },
+      {
+       "grade": null,
+       "notes": "Belayed: iced-up slabs, then a steep chockstone.",
+       "pitch": "Crux pitches"
+      },
+      {
+       "grade": null,
+       "notes": "Long, exposed couloir to the cornices and the summit ridge near 6,700 ft.",
+       "pitch": "Upper couloir"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "pitches",
+     "path": [],
+     "expect": 7,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "length_m",
+     "path": [],
+     "expect": 930,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4000,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "Large, sometimes loose chockstones in the summit gully.",
+      "A serious, committing alpine rock route on one of the biggest, least-documented walls in the North Cascades."
+     ],
+     "value": [
+      "Cornices over the upper couloir and along the summit ridge.",
+      "Compact, hard-to-protect rock on the lower band and the crux slabs.",
+      "Avalanche and wet-snow hazard on the face and on the sun-hit south-side descent.",
+      "A serious, committing alpine rock route on one of the biggest, least-documented walls in the North Cascades."
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "watch_out",
+     "path": [],
+     "expect": [
+      "The chimney system may follow (in a melted-out form) an earlier 1974 Kloke-Simon line, per the first-ascent report — expect variable/unconfirmed conditions on a rarely-repeated route.",
+      "Chockstones in the final gully are described as 'monstrous' — test them before committing weight."
+     ],
+     "value": [
+      "The lower band and crux slabs take little protection; pitons are the useful gear.",
+      "Above the chockstone, continuing is easier than retreating; decide on the mid-face snowfield."
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_north_face",
+     "column": "approach",
+     "path": [],
+     "expect": "Approached via Davis Peak's northern cirque, gained from the Gorge Creek/Stetattle Creek drainages north of the peak; beyond that the first-ascent account gives no detailed trailhead-to-base mileage.",
+     "value": "From Diablo, take the Stetattle Creek trail about 2 mi, drop about 200 ft to ford the creek opposite Davis Peak, then bushwhack and scramble a Class 3-4 rib, roping up for slabby sections, through slide alder above the cliffs to flat ground at the toe of the glacier, about 4,000 ft. Expect roughly eight or nine hours from the road. The Stetattle Creek trail is currently closed for post-fire hazards."
+    }
+   ],
+   "pin_followups": [
+    "wa_davis_peak_nc_north_face_burdo_cairns: new row has no waypoints; copy the Stetattle Creek trailhead and Davis Peak summit pins from wa_davis_peak_nc_north_face if wanted."
+   ]
+  }
+ ]
+}
